@@ -241,7 +241,7 @@ After you configure the MCP server, test the connection:
 
 If the assistant returns a list of capabilities, the connection works.
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 ### "parcel" command not found
 

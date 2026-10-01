@@ -210,6 +210,6 @@ For applications that need an on-screen keyboard (kiosks, point-of-sale systems,
 
 - [Running on Raspberry Pi](/docs/platform-specific-guides/embedded-linux/raspberry-pi) for a step-by-step hardware tutorial
 - [Virtual keyboard](/controls/input/text-input/virtualkeyboard) for on-screen keyboard support
-- [Deploying to Embedded Linux](/docs/deployment/embedded-linux)
+- [部署到嵌入式 Linux](/docs/deployment/embedded-linux)
 - [Desktop Linux](/docs/platform-specific-guides/linux) for X11 and Wayland environments
 - [Performance optimization](/docs/app-development/performance) for rendering, layout, and binding tuning

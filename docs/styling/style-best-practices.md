@@ -128,7 +128,7 @@ Avalonia does not have a CSS-like `!important`. If your style is not applying, t
 
 Use DevTools (F12) to inspect which value source is winning for a given property.
 
-## Naming conventions
+## 命名约定 {#naming-conventions}
 
 Use kebab-case for style classes, matching CSS conventions:
 

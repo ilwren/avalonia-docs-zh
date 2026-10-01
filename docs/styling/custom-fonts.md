@@ -220,7 +220,7 @@ When Avalonia cannot find an exact match for a requested weight or style, it cre
 
 Most TrueType (`.ttf`) and OpenType (`.otf`, `.ttf`) fonts are supported. Variable fonts are not currently supported (see [Issue #11092](https://github.com/AvaloniaUI/Avalonia/issues/11092)).
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 ### Font not appearing (falls back to default)
 

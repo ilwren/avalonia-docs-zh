@@ -323,7 +323,7 @@ After configuring the MCP server, verify it is working:
 
 If the assistant returns the tree structure, setup is complete.
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 ### "avdt" command not found
 

@@ -1,6 +1,6 @@
 ---
 id: index
-title: Troubleshooting
+title: 排查问题
 sidebar_label: 首页
 ---
 

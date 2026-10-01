@@ -35,7 +35,7 @@ By default, `DeveloperToolsOptions.Runner` is disabled when `IsDesignMode` is `t
 
 Because the runner is disabled, you need to open the Developer Tools application independently (the same approach used for browser and mobile targets).
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 ### Shortcuts are ignored
 

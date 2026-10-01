@@ -4,7 +4,7 @@ title: macOS Deployment
 description: How to publish and deploy XPF applications on macOS, including app bundle structure and code signing.
 ---
 
-## Publishing
+## 发布 {#publishing}
 
 Publish your XPF application for macOS from the command line:
 

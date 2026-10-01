@@ -134,7 +134,7 @@ You must use different certificates for the application and its installer packag
 
 See also Apple's [Mac software packaging guidance](https://developer.apple.com/documentation/xcode/packaging-mac-software-for-distribution) and [Developer ID overview](https://developer.apple.com/support/developer-id/).
 
-### Troubleshooting
+### 排查问题 {#troubleshooting}
 
 See the [macOS troubleshooting page](/troubleshooting/platform-specific-issues/macos#packaging).
 
@@ -355,7 +355,7 @@ Code-sign applications with a Developer ID certificate when available, even with
 
 See the [macOS troubleshooting page](/troubleshooting/platform-specific-issues/macos#notarization).
 
-## Troubleshooting
+## 排查问题 {#troubleshooting-1}
 
 See the [macOS troubleshooting page](/troubleshooting/platform-specific-issues/macos#code-signing).
 

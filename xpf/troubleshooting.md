@@ -1,6 +1,6 @@
 ---
 id: troubleshooting
-title: Troubleshooting
+title: 排查问题
 ---
 
 ## Trouble restoring NuGet packages

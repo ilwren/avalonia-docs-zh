@@ -4,7 +4,7 @@ title: Linux Deployment
 description: How to publish and deploy XPF applications on Linux, including required native libraries and runtime dependencies.
 ---
 
-## Publishing
+## 发布 {#publishing}
 
 Always publish XPF applications from the command line. Visual Studio publishing can produce incomplete output that is missing native libraries such as `libSkiaSharp.so`.
 

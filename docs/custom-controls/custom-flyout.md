@@ -1,21 +1,21 @@
 ---
 id: custom-flyout
 title: Custom Flyout
-description: How to create a custom flyout control by extending PopupFlyoutBase.
+description: 如何通过扩展 PopupFlyoutBase 做一个自定义浮出控件。
 doc-type: how-to
 ---
 
 import CustomFlyoutDemo from '/img/custom-controls/custom-flyout-demo.gif';
 
-This example demonstrates how to create a custom `Flyout` control deriving from `PopupFlyoutBase`. Custom flyouts display a versatile, self-contained UI that appears on demand and is attached to a target control of your choice. A custom flyout can host almost any content, from images to interactive forms.
+本例演示如何派生 `PopupFlyoutBase` 做一个自定义 `Flyout` 控件。自定义浮出控件可以呈现一块自成一体、用途灵活的界面，按需弹出并依附于你指定的目标控件。它几乎能装下任何内容，从图片到可交互的表单都行。
 
 <Image light={CustomFlyoutDemo} alt="A minimal app in which a button labeled 'Show image' is clicked and displays a simple bitmap image." position="center" maxWidth={400} cornerRadius="true"/>
 
-## Creating a custom `Flyout` class
+## 编写自定义 `Flyout` 类 {#creating-a-custom-flyout-class}
 
-1. Add a new C# class to your project deriving from [`PopupFlyoutBase`](/api/avalonia/controls/primitives/popupflyoutbase).
-2. Override the abstract method `CreatePresenter()`. This allows you to replace the default presenter with whatever control you wish to use to display the content of your custom `Flyout`. For this example, the standard `FlyoutPresenter` is used.
-3. Specify the content the presenter should host. In this case, `Image` is chosen.
+1. 往项目里添加一个派生自 [`PopupFlyoutBase`](/api/avalonia/controls/primitives/popupflyoutbase) 的 C# 类。
+2. 重写抽象方法 `CreatePresenter()`。这样你就能把默认的呈现器换成任何你想用来显示自定义 `Flyout` 内容的控件。本例用的是标准的 `FlyoutPresenter`。
+3. 指定呈现器要承载的内容。这里选的是 `Image`。
 
 ```csharp title="MyImageFlyout.cs"
 using Avalonia;
@@ -54,15 +54,15 @@ public class MyImageFlyout : PopupFlyoutBase
 ```
 
 :::caution
-`PopupFlyoutBase` is the base class that provides the popup behavior and the `CreatePresenter()` method. It is the same base used by Avalonia's built-in [`Flyout` control](/controls/layout/containers/flyout).
+`PopupFlyoutBase` 是提供弹出行为和 `CreatePresenter()` 方法的基类。Avalonia 内置的 [`Flyout` 控件](/controls/layout/containers/flyout)用的也是这个基类。
 
-**Do not** use `FlyoutBase`. This is an abstract class and will block compilation if you derive from it.
+**不要**用 `FlyoutBase`。它是抽象类，派生自它会导致编译失败。
 :::
 
-## Showing and dismissing
+## 显示与关闭 {#showing-and-dismissing}
 
-- To show the `Flyout`: Call `ShowAt` and pass the control to which it should be anchored.
-- To dismiss the `Flyout`: Call `Hide`.
+- 显示 `Flyout`：调用 `ShowAt`，并把它要依附的控件传进去。
+- 关闭 `Flyout`：调用 `Hide`。
 
 ```csharp
 // Show the flyout programmatically and have it anchored to a button
@@ -75,22 +75,22 @@ flyout.Hide();
 
 ## 处理事件 {#handling-events}
 
-The base class, `PopupFlyoutBase`, exposes `Opened` and `Closed` events. You can subscribe to these events to react to visibility changes.
+基类 `PopupFlyoutBase` 暴露了 `Opened` 和 `Closed` 两个事件，订阅它们即可对显示状态的变化作出反应。
 
 ```csharp
 flyout.Opened += (s, e) => { /* flyout is now visible */ };
 flyout.Closed += (s, e) => { /* flyout was dismissed */ };
 ```
 
-For more information on routed events, see [Events overview](/docs/events).
+关于路由事件的更多内容，请参阅[事件概述](/docs/events)。
 
-## Using in XAML
+## 在 XAML 中使用 {#using-in-xaml}
 
-1. Declare the XML namespace for your custom flyout class at the top of the file.
-2. Assign the custom flyout (`MyImageFlyout`) as an attached property on a control that supports it, such as `Button`.
-3. Specify the content of the custom flyout. In this example, `MyPicture` is a static resource defined in `Application.Resources`.
+1. 在文件顶部为你的自定义浮出类声明 XML 命名空间。
+2. 把这个自定义浮出控件（`MyImageFlyout`）作为附加属性赋给支持它的控件，比如 `Button`。
+3. 指定自定义浮出控件的内容。本例中 `MyPicture` 是定义在 `Application.Resources` 里的静态资源。
 
-The flyout thus created follows the default behavior of `PopupFlyoutBase`. Clicking the "Show image" button displays the image. Clicking again anywhere in the window except the image dismisses it.
+这样做出来的浮出控件遵循 `PopupFlyoutBase` 的默认行为：点「Show image」按钮会显示图片，再点窗口中图片以外的任何地方则将其关闭。
 
 ```xml title="MainWindow.axaml"
 <Window xmlns="https://github.com/avaloniaui"
@@ -108,13 +108,13 @@ The flyout thus created follows the default behavior of `PopupFlyoutBase`. Click
 </Window>
 ```
 
-For more information on using resources, see [Resources overview](/docs/app-development/resources).
+关于资源用法的更多内容，请参阅[资源概述](/docs/app-development/resources)。
 
-## Displaying interactive content
+## 呈现可交互的内容 {#displaying-interactive-content}
 
-Flyouts are not limited to passive display. You can include buttons, text input, and other interactive controls inside the presenter.
+浮出控件不止能被动展示内容，你完全可以在呈现器里放按钮、文本输入框和其他可交互控件。
 
-The following example is a more advanced custom `Flyout`. This is a confirmation flyout that displays a "Confirm" button and raises a `Confirmed` event when the user clicks the button.
+下面是一个更进阶的自定义 `Flyout` 示例：一个确认浮出控件，显示「Confirm」按钮，用户点击时触发 `Confirmed` 事件。
 
 ```csharp
 public class ConfirmFlyout : PopupFlyoutBase
@@ -148,7 +148,7 @@ public class ConfirmFlyout : PopupFlyoutBase
 
 ## 另请参阅 {#see-also}
 
-- [Flyout](/controls/layout/containers/flyout): Reference for the built-in flyout control.
-- [Defining properties](/docs/custom-controls/defining-properties): Add styled, direct, and attached properties to your flyout class.
-- [Defining events](/docs/custom-controls/defining-events): Add routed events to your flyout class.
-- [Creating custom controls](/docs/custom-controls): Overview of the custom control types.
+- [Flyout](/controls/layout/containers/flyout)：内置浮出控件的参考。
+- [定义属性](/docs/custom-controls/defining-properties)：给你的浮出类添加样式化属性、直接属性和附加属性。
+- [定义事件](/docs/custom-controls/defining-events)：给你的浮出类添加路由事件。
+- [创建自定义控件](/docs/custom-controls)：各类自定义控件概览。

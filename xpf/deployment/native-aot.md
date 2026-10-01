@@ -17,7 +17,7 @@ Add `PublishAot` to your `.csproj`.
 </PropertyGroup>
 ```
 
-## Publishing
+## 发布 {#publishing}
 
 To publish your app, run `dotnet publish` in the command line:
 

@@ -81,7 +81,7 @@ public override void Render(DrawingContext context)
 }
 ```
 
-### Drawing text
+### 绘制文本 {#drawing-text}
 
 Use [`FormattedText`](/api/avalonia/media/formattedtext) to measure and render a single run of text:
 

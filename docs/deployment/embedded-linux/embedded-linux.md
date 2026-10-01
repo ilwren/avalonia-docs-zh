@@ -1,23 +1,23 @@
 ---
 id: embedded-linux
 title: Embedded Linux
-description: Publish, transfer, and run an Avalonia application on an embedded Linux device using DRM/KMS.
+description: 用 DRM/KMS 在嵌入式 Linux 设备上发布、传输并运行 Avalonia 应用。
 doc-type: how-to
 ---
 
-Deploying an Avalonia application to an embedded Linux device differs from desktop deployment in several ways. There is no package manager on the target (in most cases), no desktop environment to integrate with, and the application typically runs as the sole graphical process. This page covers publishing, transferring, and running your application on an embedded Linux target.
+把 Avalonia 应用部署到嵌入式 Linux 设备，与桌面部署有几点不同：目标机上（多数情况下）没有包管理器，没有桌面环境可供集成，应用通常是唯一的图形进程。本文讲的是如何在嵌入式 Linux 目标机上发布、传输并运行你的应用。
 
-## Publishing
+## 发布 {#publishing}
 
-Publish your application as a self-contained, single-file executable targeting the appropriate runtime identifier (RID). Self-contained deployment is strongly recommended for embedded targets because the .NET runtime is unlikely to be pre-installed.
+请把应用发布为自包含的单文件可执行程序，并指定合适的运行时标识（RID）。嵌入式目标机上基本不会预装 .NET 运行时，所以强烈建议采用自包含部署。
 
-Choose the RID that matches your target hardware:
+选择与你目标硬件相匹配的 RID：
 
-| Target architecture | RID | Common devices |
+| 目标架构 | RID | 常见设备 |
 |---|---|---|
-| ARM 32-bit | `linux-arm` | Raspberry Pi (32-bit OS), older ARM SBCs |
-| ARM 64-bit | `linux-arm64` | Raspberry Pi 4/5 (64-bit OS), NVIDIA Jetson, BeagleBone AI, most modern ARM SBCs |
-| x64 | `linux-x64` | Intel NUC, industrial panel PCs, AMD embedded boards |
+| ARM 32 位 | `linux-arm` | 树莓派（32 位系统）、较老的 ARM 单板机 |
+| ARM 64 位 | `linux-arm64` | 树莓派 4/5（64 位系统）、NVIDIA Jetson、BeagleBone AI，以及大多数现代 ARM 单板机 |
+| x64 | `linux-x64` | Intel NUC、工业平板电脑、AMD 嵌入式板卡 |
 
 ```bash
 dotnet publish -c Release -r linux-arm64 --self-contained true \
@@ -27,65 +27,65 @@ dotnet publish -c Release -r linux-arm64 --self-contained true \
   -p:IncludeNativeLibrariesForSelfExtract=true
 ```
 
-Replace `linux-arm64` with the appropriate RID for your device.
+把 `linux-arm64` 换成适合你设备的 RID。
 
-### Publish options explained
+### 发布选项解读 {#publish-options-explained}
 
 | 选项 | 用途 |
 |---|---|
-| `--self-contained true` | Bundles the .NET runtime so it does not need to be installed on the target. |
-| `-p:PublishSingleFile=true` | Produces a single executable file instead of a directory of assemblies. |
-| `-p:PublishTrimmed=true` | Removes unused code, significantly reducing the output size. |
-| `-p:PublishReadyToRun=true` | Pre-compiles assemblies to native code for faster startup. |
-| `-p:IncludeNativeLibrariesForSelfExtract=true` | Embeds native libraries (SkiaSharp, HarfBuzz) inside the single file. |
+| `--self-contained true` | 把 .NET 运行时一并打包，这样目标机上就不必预装。 |
+| `-p:PublishSingleFile=true` | 产出单个可执行文件，而不是一整个装满程序集的目录。 |
+| `-p:PublishTrimmed=true` | 移除未使用的代码，显著缩小产物体积。 |
+| `-p:PublishReadyToRun=true` | 把程序集预编译成原生代码，启动更快。 |
+| `-p:IncludeNativeLibrariesForSelfExtract=true` | 把原生库（SkiaSharp、HarfBuzz）嵌进这个单文件里。 |
 
 :::tip
-Trimming can remove code that your application uses via reflection. If you encounter `MissingMethodException` or similar errors at runtime, configure [trimmer root assemblies](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trimming-options) to preserve the affected types.
+裁剪可能会把你通过反射用到的代码也删掉。若运行时碰到 `MissingMethodException` 之类的错误，请配置[裁剪器根程序集](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trimming-options)来保住受影响的类型。
 :::
 
-## Transferring to the device
+## 传输到设备上 {#transferring-to-the-device}
 
-Copy the published output to the target device. Common approaches:
+把发布产物拷到目标设备。常见做法有：
 
-**SCP (over SSH):**
+**SCP（走 SSH）：**
 ```bash
 scp -r ./publish/ user@device-hostname:/home/user/myapp/
 ```
 
-**rsync (incremental, faster for repeated deployments):**
+**rsync（增量传输，反复部署时更快）：**
 ```bash
 rsync -avz --progress ./publish/ user@device-hostname:/home/user/myapp/
 ```
 
-**USB drive:**
-Copy the publish directory to a USB drive, mount it on the target, and copy the files.
+**U 盘：**
+把发布目录拷到 U 盘上，在目标机上挂载，再把文件复制过去。
 
-## Running the application
+## 运行应用 {#running-the-application}
 
-Set the executable permission and run with the `--drm` flag:
+给可执行文件加上执行权限，并带 `--drm` 参数运行：
 
 ```bash
 chmod +x /home/user/myapp/MyApp
 sudo ./home/user/myapp/MyApp --drm
 ```
 
-The `--drm` argument tells the application to use DRM/KMS output instead of trying to connect to X11 or Wayland. Running with `sudo` is required because DRM device access typically needs root privileges.
+`--drm` 参数告诉应用改用 DRM/KMS 输出，而不是去连 X11 或 Wayland。之所以要加 `sudo`，是因为访问 DRM 设备通常需要 root 权限。
 
 :::tip
-To avoid running as root, add your user to the `video` and `input` groups:
+想避免以 root 身份运行，把你的用户加入 `video` 和 `input` 组：
 ```bash
 sudo usermod -aG video,input $USER
 ```
-Log out and back in for the group changes to take effect. You can then run the application without `sudo`.
+注销再重新登录，组变更才会生效。此后运行应用就不必加 `sudo` 了。
 :::
 
-## Auto-starting on boot
+## 开机自启 {#auto-starting-on-boot}
 
-For kiosk or appliance scenarios, configure the application to start automatically when the device boots.
+面向自助终端或一体机场景时，可以配置应用在设备启动时自动运行。
 
-### Using a systemd service
+### 使用 systemd 服务 {#using-a-systemd-service}
 
-Create a service file at `/etc/systemd/system/myapp.service`:
+在 `/etc/systemd/system/myapp.service` 创建一个服务文件：
 
 ```ini
 [Unit]
@@ -106,49 +106,49 @@ Environment=DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 WantedBy=multi-user.target
 ```
 
-Replace `appuser` with the user account on your device, and adjust the `ExecStart` path to match your deployment location. `/opt/myapp/` is a common convention for application binaries on embedded systems, but any path works.
+把 `appuser` 换成你设备上的用户账号，并把 `ExecStart` 路径改成实际的部署位置。`/opt/myapp/` 是嵌入式系统上存放应用二进制的常见惯例，当然放哪儿都行。
 
-Enable and start the service:
+启用并启动该服务：
 
 ```bash
 sudo systemctl enable myapp.service
 sudo systemctl start myapp.service
 ```
 
-### Viewing logs
+### 查看日志 {#viewing-logs}
 
 ```bash
 journalctl -u myapp.service -f
 ```
 
-## Reducing image size
+## 缩小镜像体积 {#reducing-image-size}
 
-Embedded systems often have limited storage. Several strategies help reduce the deployed application size:
+嵌入式系统的存储往往很紧张。有几招可以缩小部署后的应用体积：
 
-- **Trimming** (enabled above) removes unused .NET assemblies and methods.
-- **Native AOT** compilation produces a smaller, fully native binary with no .NET runtime overhead. See [Native AOT deployment](/docs/deployment/native-aot) for details.
-- **Invariant globalization** (`DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1`) eliminates ICU library dependencies, saving roughly 30 MB. Only use this if your application does not need locale-specific formatting or collation.
+- **裁剪**（上面已启用）会移除未使用的 .NET 程序集和方法。
+- **Native AOT** 编译产出的二进制更小、完全原生，也没有 .NET 运行时的开销。详见 [Native AOT 发布](/docs/deployment/native-aot)。
+- **固定区域性全球化**（`DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1`）可去掉对 ICU 库的依赖，省下约 30 MB。只有当你的应用不需要按区域设置做格式化或排序时才用这招。
 
-## Required libraries on the target
+## 目标机上必需的库 {#required-libraries-on-the-target}
 
-Even with self-contained deployment, certain native Linux libraries must be present on the target. On Debian-based systems (Raspberry Pi OS, Armbian, Ubuntu):
+即便采用自包含部署，目标机上仍需具备若干原生 Linux 库。在基于 Debian 的系统上（Raspberry Pi OS、Armbian、Ubuntu）：
 
 ```bash
 sudo apt-get install libgbm1 libgl1-mesa-dri libegl1-mesa libinput10
 ```
 
-Other distributions will have equivalent packages under slightly different names.
+其他发行版也有对应的包，只是名字略有出入。
 
-| NuGet 包 | What it provides | Why Avalonia needs it |
+| NuGet 包 | 它提供什么 | Avalonia 为何需要它 |
 |---|---|---|
-| `libgbm1` | Generic Buffer Management (GBM) allocator. Creates GPU-accessible buffers that DRM can scan out to the display. | Avalonia allocates its rendering surfaces through GBM when running in DRM mode. Without it, no framebuffers can be created. |
-| `libgl1-mesa-dri` | Mesa's DRI (Direct Rendering Infrastructure) drivers. These are the GPU-specific modules (e.g., `vc4` for Raspberry Pi, `panfrost` for Mali GPUs) that translate OpenGL calls into hardware commands. | Provides the actual GPU acceleration. Even on devices without a dedicated GPU, the software rasterizer (`llvmpipe`) lives here. |
-| `libegl1-mesa` | Mesa's implementation of EGL (originally "Embedded-System Graphics Library", now a standalone name maintained by Khronos). EGL is a platform-independent API that sits between a rendering API (such as OpenGL ES) and the native display system. It handles creating rendering contexts, binding them to drawing surfaces, and managing resources like buffers and sync objects. On desktop Linux with X11, EGL talks to the X server. In an embedded DRM setup, EGL talks directly to GBM surfaces instead. | Avalonia uses EGL to create an OpenGL ES rendering context and bind it to a GBM surface backed by a DRM framebuffer. This is what connects Avalonia's drawing commands to actual pixels on the display. |
-| `libinput10` | The libinput library. Provides a unified API for reading input events from keyboards, mice, touchpads, and touchscreens via the kernel's evdev interface. | Avalonia reads all user input through libinput when running outside a desktop environment. Without it, touch, mouse, and keyboard input will not work. |
+| `libgbm1` | 通用缓冲区管理（GBM）分配器，负责创建 GPU 可访问的缓冲区，供 DRM 扫描输出到显示器。 | 在 DRM 模式下运行时，Avalonia 通过 GBM 分配渲染表面。没有它就创建不出帧缓冲。 |
+| `libgl1-mesa-dri` | Mesa 的 DRI（直接渲染基础设施）驱动，也就是把 OpenGL 调用翻译成硬件指令的那些 GPU 专属模块（比如树莓派的 `vc4`、Mali GPU 的 `panfrost`）。 | 它提供真正的 GPU 加速。即便设备没有独立 GPU，软件光栅化器（`llvmpipe`）也在这里面。 |
+| `libegl1-mesa` | Mesa 对 EGL 的实现（EGL 最初是 "Embedded-System Graphics Library" 的缩写，如今已是 Khronos 维护的一个独立名称）。EGL 是一套与平台无关的 API，夹在渲染 API（比如 OpenGL ES）和原生显示系统之间，负责创建渲染上下文、把它绑定到绘图表面，并管理缓冲区、同步对象等资源。在用 X11 的桌面 Linux 上，EGL 与 X 服务器打交道；而在嵌入式 DRM 方案中，EGL 则直接对接 GBM 表面。 | Avalonia 用 EGL 创建 OpenGL ES 渲染上下文，并把它绑定到由 DRM 帧缓冲支撑的 GBM 表面上。正是这一步，把 Avalonia 的绘图指令连到了显示器上真实的像素。 |
+| `libinput10` | libinput 库。它提供统一的 API，经由内核的 evdev 接口读取键盘、鼠标、触摸板和触摸屏的输入事件。 | 在桌面环境之外运行时，Avalonia 全部的用户输入都经由 libinput 读取。没有它，触摸、鼠标和键盘输入统统失灵。 |
 
 ## 另请参阅 {#see-also}
 
-- [Embedded Linux platform integration](/docs/platform-specific-guides/embedded-linux) for framebuffer and DRM concepts
-- [Running on Raspberry Pi](/docs/platform-specific-guides/embedded-linux/raspberry-pi) for a hardware-specific walkthrough
-- [Desktop Linux deployment](/docs/deployment/linux) for `.deb` packaging
-- [Native AOT deployment](/docs/deployment/native-aot)
+- [嵌入式 Linux 平台集成](/docs/platform-specific-guides/embedded-linux)：帧缓冲与 DRM 的概念
+- [在树莓派上运行](/docs/platform-specific-guides/embedded-linux/raspberry-pi)：针对具体硬件的完整演练
+- [桌面 Linux 部署](/docs/deployment/linux)：关于 `.deb` 打包
+- [Native AOT 发布](/docs/deployment/native-aot)

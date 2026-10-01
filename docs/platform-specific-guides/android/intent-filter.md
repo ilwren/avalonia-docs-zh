@@ -151,7 +151,7 @@ private static void HandleIntent(object? sender, ActivatedEventArgs e)
 }
 ```
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 | Symptom | Possible cause |
 |---|---|

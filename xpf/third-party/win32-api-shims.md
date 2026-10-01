@@ -90,7 +90,7 @@ Key points:
 - Windows messages (such as `WM_ACTIVATEAPP`) are only generated to the extent needed by supported controls
 - Where possible, use WPF or Avalonia APIs directly rather than relying on Win32 API shims
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 ### Application crashes on macOS or Linux with DllNotFoundException
 

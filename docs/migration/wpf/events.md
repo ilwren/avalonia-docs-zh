@@ -157,7 +157,7 @@ Many input events have different names in Avalonia compared to WPF. The followin
 
 Avalonia uses pointer-based event names because it supports pointer devices beyond a mouse, including touch and pen input.
 
-## Custom routed events
+## 自定义路由事件 {#custom-routed-events}
 
 When defining custom routed events, the registration pattern differs between WPF and Avalonia. Below is a complete comparison showing how to define, register, and raise a custom routed event.
 

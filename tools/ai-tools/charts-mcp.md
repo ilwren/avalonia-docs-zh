@@ -515,7 +515,7 @@ The MCP client receives the rendered chart image and generated code. Generated s
 
 Do not include secrets, credentials, or sensitive personal data in JSON, titles, labels, or descriptions, unless the connected MCP client is approved to receive that data.
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 ### `mcp-server-charts` command not found
 

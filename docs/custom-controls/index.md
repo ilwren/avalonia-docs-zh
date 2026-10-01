@@ -1,90 +1,90 @@
 ---
 id: index
-title: Creating custom controls
+title: 创建自定义控件
 sidebar_position: 1
-description: Overview of approaches for building custom controls in Avalonia.
+description: 在 Avalonia 中编写自定义控件的几种思路概览。
 doc-type: overview
 ---
 
 ## 自定义控件 {#custom-controls}
 
-Avalonia allows you to create your own controls, beyond what is available in the [built-in control library](/controls). Define your own properties, events and [pseudoclasses](/docs/styling/pseudoclasses). You can even override visual rendering to draw entirely unique custom controls.
+除了[内置控件库](/controls)提供的控件，Avalonia 还允许你创建自己的控件：定义专属的属性、事件和[伪类](/docs/styling/pseudoclasses)，甚至可以重写视觉渲染，画出完全独一无二的控件。
 
-## Types of custom controls
+## 自定义控件的类型 {#types-of-custom-controls}
 
-Before creating a custom control, first choose the category of control that best suits your use case. There are three main control categories in Avalonia:
+动手之前，先挑一类最契合你需求的控件。Avalonia 中主要有三类控件：
 
-1. [User controls](#user-controls)
+1. [用户控件](#user-controls)
 2. [模板化控件](#templated-controls)
 3. [自绘控件](#custom-drawn-controls)
 
-In addition to these three categories, you can also create custom derivatives of [content controls, headered content controls or items controls](#other-customizable-controls).
+除了这三类，你还可以派生[内容控件、带标题的内容控件或项控件](#other-customizable-controls)来做自定义控件。
 
 ### 用户控件 {#user-controls}
 
-User controls are authored the same way you would author a custom `Window`: by creating a new `UserControl` from a template and adding controls to it. The `UserControl` acts as a container that combines multiple existing controls into a single, cohesive element.
+用户控件的写法和你自定义 `Window` 时别无二致：从模板新建一个 `UserControl`，再往里添控件。`UserControl` 就像一个容器，把多个现有控件组合成一个浑然一体的元素。
 
-This type of control is best for reusable "views" or "pages" that are specific to an application, for example, a user profile view. It is less suited for general-purpose UI elements.
+这类控件最适合做应用专属的可复用「视图」或「页面」，比如用户资料视图；不太适合做通用的 UI 元素。
 
-To create a custom user control:
+创建自定义用户控件的步骤：
 
-1. **Define the XAML.** Create a new `UserControl` in XAML. Decide the layout and appearance of the custom control by placing existing controls, setting properties and applying styles.
-2. **Add code-behind.** Optionally, define code-behind logic to handle events, modify behavior, or add styled properties.
+1. **写 XAML。**在 XAML 中新建一个 `UserControl`，通过摆放现有控件、设置属性和套用样式，定下这个自定义控件的布局和外观。
+2. **加代码隐藏。**视需要编写代码隐藏逻辑，用来处理事件、调整行为或添加样式化属性。
 
-More detailed guidance is documented in the [UserControl reference](/controls/primitives/usercontrol).
+更详细的指引记录在 [UserControl 参考](/controls/primitives/usercontrol)中。
 
-A sample of a custom `UserControl` is [available to clone on GitHub](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/CustomControl).
+一个自定义 `UserControl` 的示例[可以从 GitHub 克隆下来](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/CustomControl)。
 
 ### 模板化控件 {#templated-controls}
 
-Templated controls are lookless, meaning the control's behavior and logic are separate from its appearance. This allows a templated control to be restyled for different themes or applications. The behavior and properties of a `TemplatedControl` are defined in code, while the visual representation is designed in XAML as a `ControlTheme`.
+模板化控件是无外观的，也就是说控件的行为逻辑与外观相互分离。于是同一个模板化控件可以为不同主题或不同应用重新设样式。`TemplatedControl` 的行为和属性在代码中定义，视觉呈现则在 XAML 中以 `ControlTheme` 的形式设计。
 
-This type of control is best for general-purpose UI elements that you wish to share across multiple applications. The majority of [Avalonia's standard controls](/controls) are templated controls.
-
-:::info
-In Avalonia, a custom templated control inherits from `TemplatedControl`. This is unlike WPF or UWP, where you would inherit from the `Control` class.
-:::
-
-To create a custom templated control:
-
-1. **Define the control class.** Create a new class that derives from `TemplatedControl`. Decide the behavior, properties and events of the custom control.
-2. **Add a control template.** Create a [control theme](/docs/styling/control-themes) XAML file. Decide the visual appearance of the control.
-3. **Add further styling.** Further customize the look of the control by adjusting the control template or applying additional styles, if desired.
-
-More detailed guidance is documented in [Templated controls](/docs/custom-controls/templated-controls).
-
-### Custom-drawn controls
-
-Custom-drawn controls draw themselves using geometry by overriding the `Visual.Render` method. By applying the  `DrawingContext` API, you can specify a control's exact appearance. Some controls from [Avalonia's built-in controls](/controls) are drawn this way, e.g., `TextBlock` or `Image`.
-
-This approach gives you fine-grained control over every aspect of the control's visual representation. Use custom-drawn controls for non-interactive graphical elements that do not need to be themed.
+这类控件最适合做那种想在多个应用间共享的通用 UI 元素。[Avalonia 的标准控件](/controls)大多都是模板化控件。
 
 :::info
-In Avalonia, a custom-drawn control inherits from `Control`. This is unlike WPF or UWP, where you would inherit from the `FrameworkElement` class.
+在 Avalonia 中，自定义模板化控件继承自 `TemplatedControl`。这一点与 WPF 或 UWP 不同——在那边你继承的是 `Control` 类。
 :::
 
-To create a custom-drawn control:
+创建自定义模板化控件的步骤：
 
-1. **Define the control class.** Create a new class that derives from `Control`. Decide the behavior and rendering of the control.
-2. **Override the `Render` method.** Override the `Render` method in the control class. Use `DrawingContext` to draw the control.
+1. **定义控件类。**新建一个派生自 `TemplatedControl` 的类，定下这个自定义控件的行为、属性和事件。
+2. **添加控件模板。**创建一个[控件主题](/docs/styling/control-themes) XAML 文件，定下控件的视觉外观。
+3. **继续打磨样式。**如有需要，可进一步调整控件模板或套用额外样式来细化外观。
 
-More detailed guidance is documented in [Custom-drawn controls](/docs/custom-controls/custom-drawn-controls).
+更详细的指引记录在[模板化控件](/docs/custom-controls/templated-controls)中。
 
-### Other customizable controls
+### 自绘控件 {#custom-drawn-controls}
 
-In addition to the three options described above, you can also create custom control classes derived from the following:
+自绘控件通过重写 `Visual.Render` 方法，用几何图形把自己画出来。借助 `DrawingContext` API，你可以精确指定控件的外观。[Avalonia 内置控件](/controls)中就有一些是这么画的，比如 `TextBlock` 和 `Image`。
 
-- `ContentControl`, a control hosting a single piece of content.
-- `HeaderedContentControl`, a control with a header and a content area.
-- `ItemsControl`, a control that displays a collection of items.
+这种办法让你对控件视觉呈现的每一个细节都了如指掌。那些不需要换主题的非交互式图形元素，适合做成自绘控件。
 
-These controls all derive from `Control`, meaning properties like `Width`, `Height`, `Margin`, and `DataContext` are available by default.
+:::info
+在 Avalonia 中，自绘控件继承自 `Control`。这一点与 WPF 或 UWP 不同——在那边你继承的是 `FrameworkElement` 类。
+:::
+
+创建自绘控件的步骤：
+
+1. **定义控件类。**新建一个派生自 `Control` 的类，定下控件的行为和渲染方式。
+2. **重写 `Render` 方法。**在控件类中重写 `Render` 方法，用 `DrawingContext` 把控件画出来。
+
+更详细的指引记录在[自绘控件](/docs/custom-controls/custom-drawn-controls)中。
+
+### 其他可定制的控件 {#other-customizable-controls}
+
+除了上面这三条路，你还可以派生下列类型来做自定义控件类：
+
+- `ContentControl`，承载单块内容的控件。
+- `HeaderedContentControl`，带标题区和内容区的控件。
+- `ItemsControl`，显示一组项的控件。
+
+这些控件都派生自 `Control`，因此 `Width`、`Height`、`Margin`、`DataContext` 等属性默认就能用。
 
 ## 另请参阅 {#see-also}
 
-- [User controls](/controls/primitives/usercontrol): Compose existing controls into a reusable view with XAML and code-behind.
-- [Custom templated controls](/docs/custom-controls/templated-controls): Build a lookless control whose appearance is defined by a control theme.
-- [Custom-drawn controls](/docs/custom-controls/custom-drawn-controls): Create a control that draws itself by overriding `Render`.
-- [Defining properties](/docs/custom-controls/defining-properties): Add styled, direct, and attached properties to a custom control.
-- [Defining events](/docs/custom-controls/defining-events): Add routed events to a custom control.
-- [Custom control library](/docs/custom-controls/custom-control-library): Package custom controls in a class library and reference them from another project.
+- [用户控件](/controls/primitives/usercontrol)：用 XAML 加代码隐藏，把现有控件组合成可复用的视图。
+- [自定义模板化控件](/docs/custom-controls/templated-controls)：编写外观完全交由控件主题决定的无外观控件。
+- [自绘控件](/docs/custom-controls/custom-drawn-controls)：通过重写 `Render` 让控件自己画自己。
+- [定义属性](/docs/custom-controls/defining-properties)：为自定义控件添加样式化属性、直接属性和附加属性。
+- [定义事件](/docs/custom-controls/defining-events)：给自定义控件添加路由事件。
+- [自定义控件库](/docs/custom-controls/custom-control-library)：把自定义控件打进类库，再从别的项目引用。

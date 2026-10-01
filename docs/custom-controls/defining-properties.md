@@ -1,33 +1,33 @@
 ---
 id: defining-properties
-title: Defining properties for custom controls
-sidebar_label: Defining properties
-description: Define styled, direct or attached properties on your custom Avalonia controls.
+title: 为自定义控件定义属性
+sidebar_label: 定义属性
+description: 在 Avalonia 自定义控件上定义样式化属性、直接属性或附加属性。
 doc-type: how-to
 ---
 
 import DefiningPropertyPreviewScreenshot from '/img/custom-controls/defining-property-preview.png';
 import DataValidationCustomControl from '/img/custom-controls/data-validation-custom-control.png';
 
-When creating a custom control, you can give it the following types of properties. This page walks you through registering and using each type, so you can choose the right ones for your control.
+编写自定义控件时，你可以给它加下列几类属性。本文逐一介绍每种属性的注册和用法，帮你为自己的控件挑对类型。
 
-1. [Styled property](#styled-properties): Set by the Avalonia styling system.
-2. [Direct property](#direct-properties): Has a backing C# field, supports data binding.
-3. [Attached property](#attached-properties): Hosted in a separate container class, then configured in XAML.
+1. [样式化属性](#styled-properties)：由 Avalonia 的样式系统赋值。
+2. [直接属性](#direct-properties)：有一个 C# 后备字段，支持数据绑定。
+3. [附加属性](#attached-properties)：承载在单独的容器类中，再于 XAML 中配置。
 
 ## 样式化属性 {#styled-properties}
 
-A styled property stores its value inside the Avalonia property system, not a backing field. As a result, styled properties can participate in styling, animations and value precedence. Use a styled property when you want to allow users to style or animate the property.
+样式化属性的值存在 Avalonia 属性系统里，而不是后备字段中。因此它能参与样式、动画和值优先级的运作。若你希望使用者能为该属性设样式或加动画，就选样式化属性。
 
 :::info
-For more information on using styles in Avalonia, see the [Styles](/docs/styling/styles) guide.
+关于在 Avalonia 中使用样式的更多内容，请参阅[样式](/docs/styling/styles)指南。
 :::
 
-### Naming conventions
+### 命名约定 {#naming-conventions}
 
-The static field must follow the pattern `[PropertyName]Property`, e.g., `BackgroundProperty`, `FontWeightProperty`. Avalonia uses this convention to map XAML attributes to properties automatically.
+静态字段必须遵循 `[PropertyName]Property` 的命名范式，比如 `BackgroundProperty`、`FontWeightProperty`。Avalonia 正是靠这一约定自动把 XAML 特性映射到属性上。
 
-Failure to follow this naming convention may result in "Unable to find suitable setter or adder for property" errors during compilation.
+不遵守这一命名约定，编译时可能报出 "Unable to find suitable setter or adder for property" 错误。
 
 ```csharp title="C#"
 public static readonly StyledProperty<double> CornerRadiusProperty = ...
@@ -39,13 +39,13 @@ public static readonly StyledProperty<double> CornerRadiusProperty = ...
 
 ### 注册样式化属性 {#registering-a-styled-property}
 
-To register a styled property:
+注册样式化属性的步骤：
 
-1. Add a `static readonly` field of type `StyledProperty<T>`.
-2. Use the method `AvaloniaProperty.Register` to register.
-3. Provide a CLR getter and setter that call `GetValue` and `SetValue` respectively.
+1. 添加一个 `StyledProperty<T>` 类型的 `static readonly` 字段。
+2. 用 `AvaloniaProperty.Register` 方法来注册。
+3. 提供一对 CLR getter 和 setter，分别调用 `GetValue` 和 `SetValue`。
 
-The following example registers a `CornerRadius` styled property with a default value of `0.0`:
+下面的例子注册了一个默认值为 `0.0` 的 `CornerRadius` 样式化属性：
 
 ```csharp
 public class MyControl : Control
@@ -62,23 +62,23 @@ public class MyControl : Control
 ```
 
 :::warning
-The CLR property getter/setter must **only** call `GetValue` and `SetValue`. Avoid adding other methods, because some property changes do not use the CLR property.
+CLR 属性的 getter/setter **只应**调用 `GetValue` 和 `SetValue`，别在里面塞别的逻辑——因为有些属性变更压根不走 CLR 属性这条路。
 :::
 
-The `Register` method accepts these optional parameters:
+`Register` 方法接受下列可选参数：
 
 | 参数 | 说明 |
 |---|---|
-| `name` | The property name. Must match the CLR property name. |
-| `defaultValue` | The default value of the property. |
-| `inherits` | Whether the value inherits down the visual tree. |
-| `defaultBindingMode` | The default binding mode (`OneWay`, `TwoWay`, `OneTime`, or `OneWayToSource`). |
-| `validate` | A function that returns `false` for values that should be rejected. |
-| `coerce` | A function that adjusts the value before it is applied. |
+| `name` | 属性名，必须与 CLR 属性名一致。 |
+| `defaultValue` | 属性的默认值。 |
+| `inherits` | 该值是否沿视觉树向下继承。 |
+| `defaultBindingMode` | 默认绑定模式（`OneWay`、`TwoWay`、`OneTime` 或 `OneWayToSource`）。 |
+| `validate` | 一个函数，对应当拒绝的值返回 `false`。 |
+| `coerce` | 一个函数，在值被真正应用之前对其作出调整。 |
 
-### Reusing an existing styled property
+### 复用已有的样式化属性 {#reusing-an-existing-styled-property}
 
-If another control already defines a property you wish to use (e.g., `Background` on `Border`), you can use `AddOwner` instead of registering a new property. By doing so, the properties share a single property identity, meaning styles targeting the property work on all controls that share it.
+如果你想用的属性已由别的控件定义过（比如 `Border` 上的 `Background`），就不必重新注册，用 `AddOwner` 即可。这样一来两者共用同一个属性标识，针对该属性的样式对所有共用它的控件都生效。
 
 ```csharp
 public class MyCustomControl : Control
@@ -94,9 +94,9 @@ public class MyCustomControl : Control
 }
 ```
 
-### Styling a custom property
+### 为自定义属性设样式 {#styling-a-custom-property}
 
-Once a styled property is registered, users can target it in XAML to set its style. The following example sets the `Background` of a custom control through a style:
+样式化属性一经注册，使用者就能在 XAML 中选中它并设置样式。下面的例子通过样式设置了某个自定义控件的 `Background`：
 
 <Tabs>
 
@@ -166,15 +166,15 @@ namespace AvaloniaCCExample.CustomControls
 
 ## 直接属性 {#direct-properties}
 
-A direct property is backed by a conventional C# field. It does not participate in styling or animation, but supports data binding and change notifications. Use a direct property when:
+直接属性由一个常规 C# 字段支撑。它不参与样式和动画，但支持数据绑定和变更通知。下列情形适合用直接属性：
 
-- You need a **read-only** property. (Styled properties cannot be read-only.)
-- You want **better performance**. (Values of direct properties are read directly from the field.)
-- You want a property that **cannot be styled**.
+- 你需要一个**只读**属性。（样式化属性没法做成只读。）
+- 你想要**更好的性能**。（直接属性的值是从字段直接读取的。）
+- 你想要一个**不可被设样式**的属性。
 
 ### 注册直接属性 {#registering-a-direct-property}
 
-Use `AvaloniaProperty.RegisterDirect`. Provide getter and setter delegates that point to your backing field:
+使用 `AvaloniaProperty.RegisterDirect`，并提供指向后备字段的 getter 和 setter 委托：
 
 ```csharp
 public class MyControl : Control
@@ -196,12 +196,12 @@ public class MyControl : Control
 ```
 
 :::warning
-Always use `SetAndRaise` in the CLR setter instead of assigning the backing field directly. `SetAndRaise` updates the field and raises the property-changed notification in a single call. Calling `SetValue` on a direct property will throw an exception.
+CLR setter 中请一律使用 `SetAndRaise`，不要直接给后备字段赋值。`SetAndRaise` 一次调用就同时完成了更新字段和触发属性变更通知两件事。对直接属性调用 `SetValue` 会抛异常。
 :::
 
 ### 只读的直接属性 {#read-only-direct-properties}
 
-To create a read-only property, omit the setter delegate from the registration call and keep the CLR setter `private`:
+要做只读属性，注册时省去 setter 委托，并把 CLR setter 保持为 `private`：
 
 ```csharp
 public class MyControl : Control
@@ -221,9 +221,9 @@ public class MyControl : Control
 }
 ```
 
-## Styled vs. direct properties
+## 样式化属性与直接属性的对比 {#styled-vs-direct-properties}
 
-| 行为 | Styled property | Direct property |
+| 行为 | 样式化属性 | 直接属性 |
 |---|---|---|
 | 参与样式 | Yes | No |
 | 参与动画 | Yes | No |
@@ -235,9 +235,9 @@ public class MyControl : Control
 
 ## 响应属性变化 {#responding-to-property-changes}
 
-For styled and direct properties, you can react to property value changes by overriding `OnPropertyChanged` in your control.
+无论样式化属性还是直接属性，都可以在控件中重写 `OnPropertyChanged` 来响应属性值的变化。
 
-This example demonstrates reacting to a background change by [invalidating the visual](/docs/custom-controls/custom-drawn-controls#manual-invalidation) and thereby updating to the new background.
+下面这个例子演示如何响应背景变化：[让视觉失效](/docs/custom-controls/custom-drawn-controls#manual-invalidation)，从而刷新成新的背景。
 
 ```csharp
 protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -252,26 +252,26 @@ protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs chang
 }
 ```
 
-## Data validation support
+## 数据校验支持 {#data-validation-support}
 
-Data validation lets your control display an error when a bound property is detected as invalid.
+数据校验让控件能在检测到所绑定的属性无效时显示错误。
 
-Starting from [Avalonia v12](/docs/avalonia12-breaking-changes), properties registered with `enableDataValidation: true` report validation errors automatically. (i.e., You no longer need the `UpdateDataValidation` override calling `DataValidationErrors.SetError` from earlier versions of Avalonia.)
+从 [Avalonia v12](/docs/avalonia12-breaking-changes) 起，用 `enableDataValidation: true` 注册的属性会自动报告校验错误。（也就是说，旧版 Avalonia 中那种重写 `UpdateDataValidation` 去调用 `DataValidationErrors.SetError` 的写法不再需要了。）
 
-To add data validation to a custom control:
+给自定义控件加上数据校验的步骤：
 
-1. Register the property with `enableDataValidation: true`.
-2. Wrap the custom control in a [`DataValidationErrors`](/api/avalonia/controls/datavalidationerrors) control, so that errors can be displayed to users.
-3. Optionally, style the `:error` pseudoclass to change the control's appearance when data is invalid.
+1. 注册属性时带上 `enableDataValidation: true`。
+2. 把自定义控件包进 [`DataValidationErrors`](/api/avalonia/controls/datavalidationerrors) 控件，错误才能显示给用户看。
+3. 视需要为 `:error` 伪类设置样式，让数据无效时控件的外观有所变化。
 
-For more information on data validation in Avalonia in general, see [Validation in data binding](/docs/data-binding/binding-validation).
+关于 Avalonia 数据校验的整体介绍，请参阅[数据绑定中的校验](/docs/data-binding/binding-validation)。
 
-### Enabling data validation on a property
+### 为属性启用数据校验 {#enabling-data-validation-on-a-property}
 
-`enableDataValidation` works with both [styled properties](#styled-properties) and [direct properties](#direct-properties). It is set the same way whether you are registering a new property with `Register` or reusing an existing property with `AddOWner`.
+`enableDataValidation` 对[样式化属性](#styled-properties)和[直接属性](#direct-properties)都适用。无论你是用 `Register` 注册新属性，还是用 `AddOWner` 复用已有属性，设置方式都一样。
 
 :::warning
-You must set `BindingMode.TwoWay` on the property. Data validation works by returning the value to the binding source.
+你必须给该属性设置 `BindingMode.TwoWay`，因为数据校验正是靠把值回传给绑定源来工作的。
 :::
 
 ```csharp
@@ -283,11 +283,11 @@ public static readonly StyledProperty<int> ValueProperty =
         enableDataValidation: true);
 ```
 
-### Displaying errors with `DataValidationErrors`
+### 用 `DataValidationErrors` 显示错误 {#displaying-errors-with-datavalidationerrors}
 
-To display data validation errors to the user, enclose your custom control in a [`DataValidationErrors`](/api/avalonia/controls/datavalidationerrors) control. `DataValidationErrors` is a `ContentControl` that provides attached properties to handle error states.
+要把数据校验错误显示给用户，请把自定义控件包进 [`DataValidationErrors`](/api/avalonia/controls/datavalidationerrors) 控件。`DataValidationErrors` 是一个 `ContentControl`，它提供了处理错误状态的附加属性。
 
-Use `DataValidationErrors` within `<UserControl>` for [user controls](/controls/primitives/usercontrol), or within `<ControlTemplate>` for [templated controls](/docs/custom-controls/templated-controls).
+对[用户控件](/controls/primitives/usercontrol)，把 `DataValidationErrors` 放进 `<UserControl>` 中使用；对[模板化控件](/docs/custom-controls/templated-controls)，则放进 `<ControlTemplate>` 中。
 
 ```xml
 <ControlTemplate> / <UserControl>
@@ -297,7 +297,7 @@ Use `DataValidationErrors` within `<UserControl>` for [user controls](/controls/
 </ControlTemplate> / </UserControl>
 ```
 
-While a control has errors, `DataValidationErrors` sets the `:error` pseudoclass. Target the pseudoclass with a `Style` to customize how the control should look when in an error state.
+控件存在错误期间，`DataValidationErrors` 会置上 `:error` 伪类。用 `Style` 选中这个伪类，即可定制控件处于错误状态时的外观。
 
 <Tabs>
 
@@ -327,9 +327,9 @@ While a control has errors, `DataValidationErrors` sets the `:error` pseudoclass
 
 </Tabs>
 
-### Data validation example
+### 数据校验示例 {#data-validation-example}
 
-The following example creates `QuantitySelector`, a control that sets a numeric value using **+** and **-** buttons. Data validation is enabled on `Value`, a styled property representing the number on the selector. It is bound to a view model that rejects quantities outside the range of 1–10. If an invalid value is set, the error state triggers, which turns the border red and displays an error message.
+下面的例子做了一个 `QuantitySelector` 控件，用 **+** 和 **-** 按钮设置数值。数据校验启用在 `Value` 这个样式化属性上，它表示选择器当前的数字，绑定到一个会拒绝 1–10 范围之外数量的视图模型。一旦设成无效值就会触发错误状态：边框变红，并显示一条错误消息。
 
 <Image light={DataValidationCustomControl} maxWidth={250} cornerRadius="true" position="center" alt="A numeric selector showing the number 11. The selector is highlighted in yellow and a text error message is shown underneath." />
 <br />
@@ -500,21 +500,21 @@ public partial class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
 
 ## 附加属性 {#attached-properties}
 
-An attached property lives in its own container class and is configured on compatible controls in XAML. This allows you to have additional properties that are not part of your custom control's own control class. For example, you may wish to use an attached property to allow child elements to specify their own layout positions within the parent custom control. (See [Custom Panel](/docs/custom-controls/custom-panel#adding-an-attached-property) for a practical example.)
+附加属性住在自己的容器类里，并在 XAML 中配置到兼容的控件上。于是你可以拥有一些不属于自定义控件自身控件类的额外属性。举个例子，你可能想用附加属性让子元素在父级自定义控件内指定自己的布局位置。（实战例子见[自定义面板](/docs/custom-controls/custom-panel#adding-an-attached-property)。）
 
-### Naming conventions
+### 命名约定 {#naming-conventions-1}
 
-- Like styled properties, the static field for the attached property follows the pattern `[PropertyName]Property`.
-- The name parameter is `[PropertyName]` alone (without the `Property` suffix).
+- 和样式化属性一样，附加属性的静态字段也遵循 `[PropertyName]Property` 的命名范式。
+- name 参数只写 `[PropertyName]`（不带 `Property` 后缀）。
 
 ### 注册附加属性 {#registering-an-attached-property}
 
-1. Add a new container class inheriting from `AvaloniaObject`.
-2. Use the `AvaloniaProperty.RegisterAttached` method to register the attached property.
-3. Provide a CLR getter and setter that call `GetValue` and `SetValue` respectively.
-4. Further define the behavior of the property, as necessary.
+1. 添加一个继承自 `AvaloniaObject` 的新容器类。
+2. 用 `AvaloniaProperty.RegisterAttached` 方法注册这个附加属性。
+3. 提供一对 CLR getter 和 setter，分别调用 `GetValue` 和 `SetValue`。
+4. 按需进一步定义该属性的行为。
 
-The following example creates an attached property called `IsDimmed` in a standalone file `DimExtensions.cs`. It is a Boolean property that renders a control at 50% opacity when `True`.
+下面的例子在独立文件 `DimExtensions.cs` 中创建了一个名为 `IsDimmed` 的附加属性。它是个布尔属性，为 `True` 时把控件按 50% 不透明度渲染。
 
 ```csharp title="DimExtensions.cs"
 using Avalonia;
@@ -546,11 +546,11 @@ public class DimExtensions : AvaloniaObject
 }
 ```
 
-### Using the attached property in XAML
+### 在 XAML 中使用附加属性 {#using-the-attached-property-in-xaml}
 
-Declare the namespace in XAML. Then, set the attached property using dot notation.
+先在 XAML 中声明命名空间，然后用点号写法设置附加属性。
 
-The following example shows the `IsDimmed` attached property from the previous section applied to two buttons. The second button renders at half opacity because it is given `IsDimmed=True`.
+下面的例子把上一节的 `IsDimmed` 附加属性用在了两个按钮上。第二个按钮因为被设了 `IsDimmed=True`，所以以半透明渲染。
 
 ```xml title="MainWindow.axaml"
 <StackPanel>
@@ -561,16 +561,16 @@ The following example shows the `IsDimmed` attached property from the previous s
 
 ## 常见问题 {#common-pitfalls}
 
-- **Mismatched names.** The `name` argument you pass to `Register` must match the CLR property name exactly. A mismatch causes errors at run-time.
-- **Using `SetValue` with a direct property.** Direct properties require `SetAndRaise`. Calling `SetValue` throws an `InvalidOperationException`.
-- **Adding a backing field for a styled property.** Styled properties store values inside the Avalonia property system. If you read from a local field, you will get stale data. Always use `GetValue` and `SetValue`.
-- **Forgetting to call `base.OnPropertyChanged`.** If you override `OnPropertyChanged`, always call the base implementation first so the framework can process the change.
+- **名字对不上。**传给 `Register` 的 `name` 实参必须与 CLR 属性名完全一致，对不上就会在运行时报错。
+- **对直接属性用 `SetValue`。**直接属性必须用 `SetAndRaise`，调用 `SetValue` 会抛出 `InvalidOperationException`。
+- **给样式化属性加后备字段。**样式化属性的值存在 Avalonia 属性系统中，你若从本地字段读取，拿到的就是过期数据。请始终使用 `GetValue` 和 `SetValue`。
+- **忘了调用 `base.OnPropertyChanged`。**重写 `OnPropertyChanged` 时，务必先调用基类实现，框架才能处理这次变更。
 
 ## 另请参阅 {#see-also}
 
-- [Avalonia property system](/docs/properties): Full reference for styled, direct, and attached properties.
-- [Property value precedence](/docs/properties/value-precedence): How Avalonia resolves competing property values.
-- [Metadata and callbacks](/docs/properties/metadata-and-callbacks): Default values, coercion, and validation.
-- [Validation in data binding](/docs/data-binding/binding-validation): Validation approaches available to a view model, and customizing how errors are displayed.
-- [Defining events](/docs/custom-controls/defining-events): Add routed events to your custom controls.
-- [Creating custom controls](/docs/custom-controls): Overview of the custom control types you can add properties to.
+- [Avalonia 属性系统](/docs/properties)：样式化属性、直接属性和附加属性的完整参考。
+- [属性值优先级](/docs/properties/value-precedence)：Avalonia 如何在相互竞争的属性值之间作裁决。
+- [元数据与回调](/docs/properties/metadata-and-callbacks)：默认值、强制转换和校验。
+- [数据绑定中的校验](/docs/data-binding/binding-validation)：视图模型可用的几种校验方式，以及如何定制错误的呈现。
+- [定义事件](/docs/custom-controls/defining-events)：给自定义控件添加路由事件。
+- [创建自定义控件](/docs/custom-controls)：可以添加属性的各类自定义控件概览。

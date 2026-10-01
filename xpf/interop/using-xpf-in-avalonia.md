@@ -127,7 +127,7 @@ Use an `XpfContainer` to host your XPF content inside an Avalonia control. The `
 
 You can place `XpfContainer` anywhere in your Avalonia visual tree: inside panels, tab controls, split views, or any other layout container.
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
 | Symptom | Likely cause | Fix |
 |---|---|---|

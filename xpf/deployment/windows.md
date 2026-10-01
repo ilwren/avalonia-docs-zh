@@ -5,7 +5,7 @@ description: Learn how to publish, package, and deploy your Avalonia XPF applica
 doc-type: how-to
 ---
 
-## Publishing
+## 发布 {#publishing}
 
 You can publish your XPF application for Windows using the standard .NET CLI. To create a framework-dependent deployment (requires the .NET runtime on the target machine), run:
 
