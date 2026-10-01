@@ -100,7 +100,7 @@ Avalonia runs under WSL 2 distributions, but some libraries that are typically p
 sudo apt install libice6 libsm6 libfontconfig1
 ```
 
-## Accessibility
+## 无障碍 {#accessibility}
 
 Avalonia exposes the accessibility tree to assistive technologies on Linux through the **AT-SPI2** (Assistive Technology Service Provider Interface) protocol. This allows screen readers such as Orca to discover and interact with Avalonia controls, including announcing control names, reading text content, and tracking focus changes.
 

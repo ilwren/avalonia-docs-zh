@@ -1,32 +1,32 @@
 ---
 id: wrappanel
 title: WrapPanel
-description: A panel that arranges child controls in a flowing, wrapping layout.
+description: 一个面板：把子控件按流式布局排布，排不下就换行。
 doc-type: reference
 ---
 
-The `WrapPanel` arranges its child controls sequentially from left to right, wrapping to a new line when there is no remaining space (including any margins and borders).
+`WrapPanel` 把子控件从左到右依次排布，空间不够时（包括各种外边距和边框在内）就换到下一行。
 
-When you set the `Orientation` property to `Vertical`, the arrangement flows from top to bottom, starting a new column when there is no more height available.
+把 `Orientation` 属性设为 `Vertical` 后，排布方向变成自上而下，高度不够时就另起一列。
 
-`WrapPanel` is useful when you need a flexible, flowing layout where child elements automatically reflow as the available space changes. Common use cases include tag lists, thumbnail galleries, and button toolbars.
+当你需要一种灵活的流式布局、让子元素随可用空间变化自动重排时，`WrapPanel` 就派上用场了。常见场景包括标签列表、缩略图画廊和按钮工具栏。
 
 ## 常用属性 {#useful-properties}
 
 | 属性 | 说明 |
 |---|---|
-| `Orientation` | Direction of the arrangement flow: `Horizontal` (default) or `Vertical`. |
-| `ItemSpacing` | Horizontal gap between items. |
-| `LineSpacing` | Vertical gap between rows (or horizontal gap between columns in vertical mode). |
-| `ItemWidth` | Fixed width for all items. If not set, items use their natural width. |
-| `ItemHeight` | Fixed height for all items. If not set, items use their natural height. |
-| `ItemsAlignment` | Controls how items are aligned within their allocated cell. Type: `WrapPanelItemsAlignment`. Values: `Start`, `Center`, `End`. |
+| `Orientation` | 排布的流向：`Horizontal`（默认）或 `Vertical`。 |
+| `ItemSpacing` | 条目之间的水平间隙。 |
+| `LineSpacing` | 行与行之间的垂直间隙（纵向模式下则是列与列之间的水平间隙）。 |
+| `ItemWidth` | 所有条目的固定宽度。不设置时，条目使用各自的自然宽度。 |
+| `ItemHeight` | 所有条目的固定高度。不设置时，条目使用各自的自然高度。 |
+| `ItemsAlignment` | 控制条目在所分配单元格内的对齐方式。类型：`WrapPanelItemsAlignment`。取值：`Start`、`Center`、`End`。 |
 
-## Common usage
+## 常见用法 {#common-usage}
 
-### Uniform item sizing
+### 让条目尺寸统一 {#uniform-item-sizing}
 
-If you want every child to occupy the same amount of space, set `ItemWidth` and `ItemHeight`. This is particularly helpful for grid-like layouts where items have varying content but you want a consistent visual structure.
+若希望每个子元素都占同样大的空间，请设置 `ItemWidth` 和 `ItemHeight`。当各条目内容长短不一、你却想要整齐划一的视觉结构时，这尤其有用。
 
 ```xml
 <WrapPanel ItemWidth="120" ItemHeight="120"
@@ -37,9 +37,9 @@ If you want every child to occupy the same amount of space, set `ItemWidth` and 
 </WrapPanel>
 ```
 
-### Alignment within cells
+### 单元格内的对齐 {#alignment-within-cells}
 
-When you use `ItemWidth` or `ItemHeight`, child controls may be smaller than their allocated cell. Use `ItemsAlignment` to control positioning within each cell.
+用了 `ItemWidth` 或 `ItemHeight` 之后，子控件可能比所分配的单元格更小。此时可以用 `ItemsAlignment` 控制它在单元格内的位置。
 
 ```xml
 <WrapPanel ItemWidth="100" ItemHeight="100"
@@ -52,7 +52,7 @@ When you use `ItemWidth` or `ItemHeight`, child controls may be smaller than the
 
 ## 示例 {#examples}
 
-### Horizontal arrangement (default)
+### 横向排布（默认） {#horizontal-arrangement-default}
 
 <XamlPreview>
 
@@ -70,7 +70,7 @@ When you use `ItemWidth` or `ItemHeight`, child controls may be smaller than the
 
 </XamlPreview>
 
-### Vertical arrangement
+### 纵向排布 {#vertical-arrangement}
 
 <XamlPreview>
 
@@ -93,5 +93,5 @@ When you use `ItemWidth` or `ItemHeight`, child controls may be smaller than the
 
 - [StackPanel](/controls/layout/panels/stackpanel)
 - [DockPanel](/controls/layout/panels/dockpanel)
-- [WrapPanel API reference](/api/avalonia/controls/wrappanel)
+- [WrapPanel API 参考](/api/avalonia/controls/wrappanel)
 - [GitHub 上的 `WrapPanel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/WrapPanel.cs)

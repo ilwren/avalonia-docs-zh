@@ -1,36 +1,36 @@
 ---
 id: layouttransformcontrol
 title: LayoutTransformControl
-description: A decorator control that applies layout-aware transforms such as rotation, scale, and skew to a single child, causing parent panels to measure and arrange around the transformed bounds.
+description: 一个 decorator 控件，为单个子元素应用参与布局的变换（旋转、缩放、倾斜），使父面板按变换后的边界来测量和排列。
 doc-type: reference
 ---
 
-The [`LayoutTransformControl`](/api/avalonia/controls/layouttransformcontrol) applies a transform (rotation, scale, skew) to its child that participates in layout. Unlike `RenderTransform`, which only changes how a control is drawn without affecting surrounding layout, [`LayoutTransformControl`](/api/avalonia/controls/layouttransformcontrol) causes parent panels to measure and arrange around the transformed bounds.
+[`LayoutTransformControl`](/api/avalonia/controls/layouttransformcontrol) 为其子元素应用参与布局的变换（旋转、缩放、倾斜）。`RenderTransform` 只改变控件的绘制方式、不影响周围布局，而 [`LayoutTransformControl`](/api/avalonia/controls/layouttransformcontrol) 则会让父面板按变换后的边界来测量和排列。
 
-This means a rotated control will correctly push adjacent controls aside, and a scaled control will take up the appropriate amount of space in a `StackPanel` or `Grid`.
+这意味着旋转后的控件会把相邻控件妥妥地挤开，缩放后的控件在 `StackPanel` 或 `Grid` 中也会占据相应大小的空间。
 
 ## 常用属性 {#common-properties}
 
 | 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| `LayoutTransform` | `ITransform` | The transform to apply during layout. Supports `RotateTransform`, `ScaleTransform`, `SkewTransform`, `TransformGroup`, and `MatrixTransform` |
-| `UseRenderTransform` | `bool` | When `true`, applies the transform via `RenderTransform` instead of a separate layout pass. Defaults to `false` |
-| `Child` | `Control` | The child control to transform (inherited from `Decorator`) |
-| `Padding` | `Thickness` | Padding around the child (inherited from `Decorator`) |
+| `LayoutTransform` | `ITransform` | 布局期间要应用的变换，支持 `RotateTransform`、`ScaleTransform`、`SkewTransform`、`TransformGroup` 和 `MatrixTransform` |
+| `UseRenderTransform` | `bool` | 为 `true` 时，改用 `RenderTransform` 应用变换，不再单独走一遍布局。默认值为 `false` |
+| `Child` | `Control` | 要变换的子控件（继承自 `Decorator`） |
+| `Padding` | `Thickness` | 子元素四周的内边距（继承自 `Decorator`） |
 
 ## `LayoutTransform` vs. `RenderTransform`
 
 | | `LayoutTransformControl` | `RenderTransform` |
 | :--- | :--- | :--- |
-| Affects layout | Yes, siblings reflow around transformed bounds | No, siblings ignore the transform |
-| 性能 | Re-measures and re-arranges on transform changes | Lightweight, GPU-accelerated |
-| Use when | Surrounding content must respect the transformed size | Animating or visually adjusting without layout impact |
+| 是否影响布局 | 是，同级元素会按变换后的边界重新排布 | 否，同级元素无视该变换 |
+| 性能 | 变换改变时重新测量并重新排列 | 轻量，由 GPU 加速 |
+| 适用场景 | 周围内容必须顾及变换后的尺寸 | 只做动画或视觉微调，不想影响布局 |
 
 ## 示例 {#examples}
 
-### Rotating a control
+### 旋转控件 {#rotating-a-control}
 
-This rotates a button 45 degrees. The parent `StackPanel` allocates space for the rotated bounds, so the text below is not overlapped:
+下面把一个按钮旋转 45 度。父级 `StackPanel` 会为旋转后的边界留出空间，因此下方的文字不会被盖住：
 
 <XamlPreview>
 
@@ -48,9 +48,9 @@ This rotates a button 45 degrees. The parent `StackPanel` allocates space for th
 
 </XamlPreview>
 
-### Scaling a control
+### 缩放控件 {#scaling-a-control}
 
-You can scale a control to twice its size while keeping layout correct:
+可以把控件放大到两倍，同时布局依然正确：
 
 ```xml title="XAML"
 <LayoutTransformControl>
@@ -61,9 +61,9 @@ You can scale a control to twice its size while keeping layout correct:
 </LayoutTransformControl>
 ```
 
-### Combining transforms
+### 组合多个变换 {#combining-transforms}
 
-Use a `TransformGroup` to apply multiple transforms:
+用 `TransformGroup` 可以同时应用多个变换：
 
 ```xml title="XAML"
 <LayoutTransformControl>
@@ -79,9 +79,9 @@ Use a `TransformGroup` to apply multiple transforms:
 </LayoutTransformControl>
 ```
 
-### Binding the angle
+### 绑定角度 {#binding-the-angle}
 
-You can bind the rotation angle to a slider for interactive control:
+把旋转角度绑定到滑块，就能交互式地调节：
 
 ```xml title="XAML"
 <StackPanel Spacing="12">
@@ -99,10 +99,10 @@ You can bind the rotation angle to a slider for interactive control:
 
 ## 实用提示 {#practical-notes}
 
-- **Performance**: Because `LayoutTransformControl` triggers a full measure and arrange pass whenever the transform changes, avoid animating its `LayoutTransform` at high frequency. If you need smooth, frame-rate animations (such as a spinning icon), use `RenderTransform` instead.
-- **Nesting**: You can nest a `LayoutTransformControl` inside another `LayoutTransformControl`. Each one measures its child independently, so transforms compose outward through the layout tree.
-- **`UseRenderTransform`**: Setting this property to `true` applies the transform through `RenderTransform` rather than a separate layout pass. This can be useful when you want the convenience of declaring the transform in `LayoutTransform` syntax but do not need surrounding controls to reflow.
-- **Clipping**: Parent containers that clip their children (for example, a `Border` with `ClipToBounds="True"`) may clip the transformed bounds. Make sure the parent has enough space to display the full transformed area.
+- **性能**：由于每次变换改变都会让 `LayoutTransformControl` 走一整轮测量和排列，请避免高频地对它的 `LayoutTransform` 做动画。若需要跟得上帧率的流畅动画（比如旋转的加载图标），请改用 `RenderTransform`。
+- **嵌套**：`LayoutTransformControl` 可以嵌进另一个 `LayoutTransformControl`。各自独立测量自己的子元素，于是变换沿布局树逐层向外叠加。
+- **`UseRenderTransform`**：把该属性设为 `true` 后，变换将通过 `RenderTransform` 应用，而不再单独走一遍布局。当你图的是用 `LayoutTransform` 语法声明变换的便利、又不需要周围控件重新排布时，这很合适。
+- **裁剪**：会裁剪子元素的父容器（比如设了 `ClipToBounds="True"` 的 `Border`）可能把变换后的边界裁掉。请确保父容器有足够空间完整显示变换后的区域。
 
 ## 另请参阅 {#see-also}
 
@@ -110,5 +110,5 @@ You can bind the rotation angle to a slider for interactive control:
 - [Border](/controls/layout/containers/border)
 - [Viewbox](/controls/layout/containers/viewbox)
 - [Transforms](/docs/graphics-animation/transforms)
-- [LayoutTransformControl API reference](/api/avalonia/controls/layouttransformcontrol)
+- [LayoutTransformControl API 参考](/api/avalonia/controls/layouttransformcontrol)
 - [GitHub 上的 `LayoutTransformControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/LayoutTransformControl.cs)

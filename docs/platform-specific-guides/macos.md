@@ -205,7 +205,7 @@ macOS users expect certain standard keyboard shortcuts and behaviours. Avalonia 
 
 The following shortcuts are conventions that macOS users expect. Configure them using `NativeMenu` gestures or `KeyBinding`:
 
-| Action | Shortcut | Notes |
+| 动作 | Shortcut | Notes |
 |---|---|---|
 | Preferences | <kbd>⌘</kbd> <kbd>,</kbd> | Should open your settings/preferences view |
 | Quit | <kbd>⌘</kbd> <kbd>Q</kbd> | Handled automatically by the native menu |
@@ -319,7 +319,7 @@ You can register your app as the handler for specific file types so that double-
 </array>
 ```
 
-| Key | 说明 |
+| 按键 | 说明 |
 |---|---|
 | `CFBundleTypeName` | A human-readable name for the file type. |
 | `CFBundleTypeExtensions` | Array of file extensions to associate (without the leading dot). |

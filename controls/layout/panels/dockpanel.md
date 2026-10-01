@@ -1,7 +1,7 @@
 ---
 id: dockpanel
 title: DockPanel
-description: Learn how to use the DockPanel in Avalonia to dock child controls to the edges of a container.
+description: 了解如何用 Avalonia 的 DockPanel 把子控件停靠到容器的各个边缘。
 doc-type: reference
 ---
 
@@ -9,43 +9,43 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import DockPanelTopScreenshot from '/img/controls/dockpanel/dockpanel-top.png';
 
-The [`DockPanel`](/api/avalonia/controls/dockpanel) control arranges its child controls along specified 'docking edges' (top, bottom, left, and right) with the last child filling any remaining space. The dock panel can maintain the child control's dimension that is parallel to the docking edge, so that the child fills all the available space along the docking edge.
+[`DockPanel`](/api/avalonia/controls/dockpanel) 控件把子控件沿指定的「停靠边」（上、下、左、右）排布，最后一个子元素则填满剩余空间。dock panel 会保持子控件与停靠边平行的那个方向上的尺寸，让子元素沿停靠边占满可用空间。
 
-For example, if the docking edge on a child control is defined as 'top' and it has a height defined, but no width, it will draw like this:
+举例来说，若某个子控件的停靠边定义为「上」，且只定义了高度、没定义宽度，它会这样绘制：
 
 <Image light={DockPanelTopScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
 :::caution
-You must define the child control dimension perpendicular to the docking edge, or it will not show.
+你必须定义子控件在垂直于停靠边方向上的尺寸，否则它不会显示。
 :::
 
-You can optionally define the dimension that is parallel to the docking edge. In this case, the child will be drawn according to the alignment setting in the same direction. For example, a child with a defined width, docked to the top edge, will obey its horizontal alignment property (default center).
+与停靠边平行方向上的尺寸则可选。一旦定义了它，子元素会按同方向的对齐设置来绘制。比如一个定义了宽度、停靠在上边缘的子元素，会遵循它的水平对齐属性（默认居中）。
 
-Child controls are docked in the sequence that they are defined in the XAML. When Avalonia is sizing a child control, the presence of any previously drawn controls is taken into account. That means there is never any overlap.
+子控件按它们在 XAML 中定义的顺序依次停靠。Avalonia 在为子控件确定尺寸时会把先前已绘制的控件考虑在内，因此绝不会出现重叠。
 
-The last child control defined will fill any remaining space.
+最后定义的那个子控件会填满剩余空间。
 
 :::caution
-You must always define a last child control (with no dock property), or the docking calculation will not perform correctly. This means that a dock panel requires a minimum of two child controls.
+你必须始终定义一个（不带 dock 属性的）末位子控件，否则停靠计算不会正确进行。换句话说，dock panel 至少需要两个子控件。
 :::
 
 ## 常用属性 {#useful-properties}
 
 下面这些属性你多半会经常用到：
 
-<table><thead><tr><th width="266">Property</th><th>说明</th></tr></thead><tbody><tr><td>DockPanel.Dock<code>.Left</code></td><td>Attached to a child control - dock this to the left side.</td></tr><tr><td>DockPanel.Dock<code>.Top</code></td><td>Attached to a child control - dock this to the top edge.</td></tr><tr><td>DockPanel.Dock<code>.Right</code></td><td>Attached to a child control - dock this to the right side.</td></tr><tr><td>DockPanel.Dock<code>.Bottom</code></td><td>Attached to a child control - dock this to the bottom edge.</td></tr><tr><td><code>HorizontalSpacing</code></td><td>Sets horizontal spacing (double, default 0) between docked child controls.</td></tr><tr><td><code>VerticalSpacing</code></td><td>Sets vertical spacing (double, default 0) between docked child controls.</td></tr></tbody></table>
+<table><thead><tr><th width="266">Property</th><th>说明</th></tr></thead><tbody><tr><td>DockPanel.Dock<code>.Left</code></td><td>附加到子控件上——把它停靠到左侧。</td></tr><tr><td>DockPanel.Dock<code>.Top</code></td><td>附加到子控件上——把它停靠到上边缘。</td></tr><tr><td>DockPanel.Dock<code>.Right</code></td><td>附加到子控件上——把它停靠到右侧。</td></tr><tr><td>DockPanel.Dock<code>.Bottom</code></td><td>附加到子控件上——把它停靠到下边缘。</td></tr><tr><td><code>HorizontalSpacing</code></td><td>设置已停靠子控件之间的水平间距（double，默认 0）。</td></tr><tr><td><code>VerticalSpacing</code></td><td>设置已停靠子控件之间的垂直间距（double，默认 0）。</td></tr></tbody></table>
 
-## Sizing to content
+## 按内容确定尺寸 {#sizing-to-content}
 
-If its `Height` and `Width` properties are not specified, `DockPanel` sizes to its content. The size can increase or decrease to accommodate the size of its child elements. However, when these properties are specified and there is no longer room for the next specified child element, `DockPanel` does not display that child element or subsequent child elements and does not measure subsequent child elements.
+若未指定 `Height` 和 `Width` 属性，`DockPanel` 会按内容确定自身尺寸：它可以随子元素的大小而放大或缩小。但一旦指定了这些属性，当空间不足以容纳下一个子元素时，`DockPanel` 就不再显示该子元素及其之后的子元素，也不会再去测量它们。
 
 ## LastChildFill
 
-By default, the last child of a `DockPanel` element will "fill" the remaining, unallocated space. If this behavior is not desired, set the `LastChildFill` property to `false`.
+默认情况下，`DockPanel` 元素的最后一个子元素会「填满」剩余的未分配空间。若不希望如此，请把 `LastChildFill` 属性设为 `false`。
 
 ## Example
 
-Setting the opacity of the orange rectangle to 0.5 demonstrates that there are no overlaps.
+把橙色矩形的不透明度设为 0.5，就能看出它们并无重叠。
 
 <XamlPreview>
 
@@ -62,7 +62,7 @@ Setting the opacity of the orange rectangle to 0.5 demonstrates that there are n
 
 </XamlPreview>
 
-## Defining a DockPanel in code
+## 在代码中定义 DockPanel {#defining-a-dockpanel-in-code}
 
 <Tabs
   defaultValue="xaml"
@@ -168,7 +168,7 @@ myDockPanel.Children.Add(myBorder5);
 
 ## 另请参阅 {#see-also}
 
-- [DockPanel API reference](/api/avalonia/controls/dockpanel)
+- [DockPanel API 参考](/api/avalonia/controls/dockpanel)
 - [GitHub 上的 `DockPanel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DockPanel.cs)
 - [Canvas](/controls/layout/panels/canvas)
 - [Grid](/controls/layout/panels/grid)

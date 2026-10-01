@@ -538,7 +538,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Edit operations
 
-| Action | Gesture | 说明 |
+| 动作 | Gesture | 说明 |
 |---|---|---|
 | `Undo` | Ctrl+Z | Undo the last operation. |
 | `Redo` | Ctrl+Y | Redo the last undone operation. |
@@ -550,7 +550,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Text formatting
 
-| Action | Gesture | 说明 |
+| 动作 | Gesture | 说明 |
 |---|---|---|
 | `Bold` | Ctrl+B | Toggle bold. |
 | `Italic` | Ctrl+I | Toggle italic. |
@@ -563,14 +563,14 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Colors
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `ForegroundColor` | Get or set the text foreground color. |
 | `BackgroundColor` | Get or set the text background (highlight) color. |
 
 ### Block alignment
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `TextAlignmentAction` | Get or set block alignment as a value. |
 | `AlignLeft` | Left-align the blocks. |
@@ -580,7 +580,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Block spacing and styling
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `LineHeight` | Get or set block line height. |
 | `Margin` | Get or set block margin. Uniform on all sides. |
@@ -592,7 +592,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Lists
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `ToggleBulletList` | Wrap or unwrap as an unordered list. |
 | `ToggleNumberedList` | Wrap or unwrap as an ordered list. |
@@ -601,7 +601,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Tables
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `InsertTable` | Insert a table at the caret. Defaults to 3×3. |
 | `InsertRowBefore` | Insert a row above the current row. |
@@ -616,7 +616,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Images
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `InsertImage` | Insert an inline image at the caret. `ExecuteWith` takes the image data directly. |
 | `ReplaceImage` | Replace the selected image. |
@@ -624,7 +624,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Headers and footers
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `GoToHeader` | Enter the header of the caret's page. Creates the running header if none. |
 | `GoToFooter` | Enter the footer of the caret's page. Creates the running footer if none. |
@@ -639,7 +639,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 
 ### Footnotes
 
-| Action | 说明 |
+| 动作 | 说明 |
 |---|---|
 | `InsertFootnote` | Insert a footnote anchor at the caret and open the note. |
 | `GoToFootnote` | Move the caret from an anchor into its note. |
@@ -994,7 +994,7 @@ Toolbar visuals are controlled through dynamic resources and style classes. You 
 
 ### Sizing and color resources
 
-| Resource | 默认值 | 用途 |
+| 资源 | 默认值 | 用途 |
 |---|---|---|
 | `EditorToolbarToolHeight` | 30 | Tool button height. |
 | `EditorToolbarToolMinWidth` | 28 | Minimum tool button width. |

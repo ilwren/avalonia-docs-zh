@@ -1,34 +1,34 @@
 ---
 id: uniformgrid
 title: UniformGrid
-description: A panel that arranges its children in a grid where every cell is the same size.
+description: 一个面板：把子元素排进单元格大小完全相同的网格里。
 doc-type: reference
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The [`UniformGrid`](/api/avalonia/controls/primitives/uniformgrid) divides available space into equally sized cells. You can specify how many rows and columns to create, and each child control is placed into the next available cell in the order it appears. Unlike `Grid`, you do not need to define row and column definitions or assign children to specific cells. This makes `UniformGrid` a good choice when you need a simple, evenly spaced layout such as a toolbar, color palette, or icon grid.
+[`UniformGrid`](/api/avalonia/controls/primitives/uniformgrid) 把可用空间划成大小相同的单元格。你只需指定要几行几列，子控件就会按出现顺序依次填进下一个空格。与 `Grid` 不同，它不需要定义行列尺寸，也不用给子元素指定单元格。因此，当你要的是工具栏、调色板、图标网格这类简单而均匀的布局时，`UniformGrid` 是个好选择。
 
 ## 常用属性 {#common-properties}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Rows` | `int` | Sets the number of equal rows. When set to `0` (the default), the row count is calculated automatically based on the number of children and the `Columns` value. |
-| `Columns` | `int` | Sets the number of equal columns. When set to `0` (the default), the column count is calculated automatically based on the number of children and the `Rows` value. |
-| `FirstColumn` | `int` | Sets the column offset for the first child element. Use this to leave empty cells at the beginning of the first row. |
-| `RowSpacing` | `double` | Sets the vertical gap between rows. |
-| `ColumnSpacing` | `double` | Sets the horizontal gap between columns. |
+| `Rows` | `int` | 设置等高行的数量。为 `0`（默认值）时，行数会根据子元素个数和 `Columns` 的值自动算出。 |
+| `Columns` | `int` | 设置等宽列的数量。为 `0`（默认值）时，列数会根据子元素个数和 `Rows` 的值自动算出。 |
+| `FirstColumn` | `int` | 设置第一个子元素的列偏移。用它可以在第一行开头留出几个空格。 |
+| `RowSpacing` | `double` | 设置行与行之间的垂直间隙。 |
+| `ColumnSpacing` | `double` | 设置列与列之间的水平间隙。 |
 
-## How sizing works
+## 尺寸是怎么算的 {#how-sizing-works}
 
-When you set both `Rows` and `Columns`, the grid creates exactly that many cells. If you set only one dimension, the other is calculated automatically so that every child fits. If you set neither, `UniformGrid` defaults to a square-ish arrangement.
+同时设置 `Rows` 和 `Columns` 时，网格就恰好造出那么多单元格。只设其中一个时，另一个会自动算出，以保证所有子元素都放得下。两个都不设时，`UniformGrid` 默认排成接近正方形的样子。
 
-Each cell is the same width and the same height. The cell size is determined by dividing the total available space (minus spacing) equally among the cells in each direction. Children are stretched to fill their cell by default, but you can control this with `HorizontalAlignment` and `VerticalAlignment` on the individual child controls.
+每个单元格等宽等高：把可用总空间（扣除间距）在各个方向上均分，就是单元格的尺寸。子元素默认被拉伸填满所在单元格，不过你可以在各个子控件上用 `HorizontalAlignment` 和 `VerticalAlignment` 来控制。
 
 ## 基本示例 {#basic-example}
 
-The following example creates a single-row grid with three equally sized colored rectangles.
+下面的例子做了一个单行网格，里面是三个等大的彩色矩形。
 
 <XamlPreview>
 
@@ -45,9 +45,9 @@ The following example creates a single-row grid with three equally sized colored
 
 </XamlPreview>
 
-## Multi-row grid example
+## 多行网格示例 {#multi-row-grid-example}
 
-The following example creates a `UniformGrid` with 3 rows and 4 columns and fills it with 12 rectangles. Each `Rectangle` is automatically assigned to the next cell in row-major order.
+下面的例子创建了一个 3 行 4 列的 `UniformGrid`，并往里放了 12 个矩形。每个 `Rectangle` 都会按行优先的顺序自动落进下一个单元格。
 
 <Tabs
   defaultValue="xaml"
@@ -105,7 +105,7 @@ for (int i = 0; i < 12; i++)
 
 ## Using `FirstColumn`
 
-You can use the `FirstColumn` property to offset the first child, leaving empty cells at the start of the first row. This is useful when you want to create a layout where the content does not begin at the leftmost cell.
+用 `FirstColumn` 属性可以让第一个子元素往后错开，在第一行开头留出空格。当你不希望内容从最左侧的单元格开始时，这很有用。
 
 ```xml
 <UniformGrid Rows="2" Columns="3" FirstColumn="1">
@@ -117,18 +117,18 @@ You can use the `FirstColumn` property to offset the first child, leaving empty 
 </UniformGrid>
 ```
 
-In this example, the first cell in the first row is empty. Button "A" appears in the second column of the first row.
+本例中第一行的第一个单元格是空的，按钮「A」出现在第一行第二列。
 
 ## 小贴士 {#tips}
 
-- If you need cells of different sizes, use `Grid` instead.
-- When you add more children than there are cells, extra children are still laid out but may appear outside the visible area.
-- `UniformGrid` respects `Margin` on child controls, so you can add per-item spacing in addition to `RowSpacing` and `ColumnSpacing`.
+- 如果需要大小不一的单元格，请改用 `Grid`。
+- 当子元素的数量多于单元格时，多出来的子元素仍会参与布局，但可能跑到可见区域之外。
+- `UniformGrid` 会遵守子控件上的 `Margin`，因此除了 `RowSpacing` 和 `ColumnSpacing`，你还可以给单个条目单独加间距。
 
 ## 另请参阅 {#see-also}
 
 - [Grid](/controls/layout/panels/grid)
 - [WrapPanel](/controls/layout/panels/wrappanel)
 - [StackPanel](/controls/layout/panels/stackpanel)
-- [UniformGrid API reference](https://reference.avaloniaui.net/api/Avalonia.Controls.Primitives/UniformGrid/)
+- [UniformGrid API 参考](https://reference.avaloniaui.net/api/Avalonia.Controls.Primitives/UniformGrid/)
 

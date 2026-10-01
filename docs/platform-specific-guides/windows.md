@@ -304,7 +304,7 @@ To minimize your application to the tray instead of the taskbar, set `ShowInTask
 
 For details, see [TrayIcon](/controls/navigation/trayicon).
 
-## Accessibility
+## 无障碍 {#accessibility}
 
 On Windows, Avalonia exposes UI elements to assistive technology through the UI Automation (UIA) framework. Screen readers such as Narrator or NVDA can read and interact with Avalonia applications.
 

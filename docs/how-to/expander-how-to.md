@@ -22,7 +22,7 @@ The simplest `Expander` wraps content you want to show or hide behind a clickabl
 
 The `Expander` can host any single child element. If you need multiple controls, wrap them in a layout panel such as `StackPanel` or `Grid`.
 
-## Initially expanded
+## 初始即展开 {#initially-expanded}
 
 Set `IsExpanded` to `True` so the content is visible when the control first loads:
 
@@ -55,7 +55,7 @@ private bool _showAdvanced;
 
 This two-way binding keeps the view model property in sync whenever the user opens or closes the `Expander`.
 
-## Expand direction
+## 展开方向 {#expand-direction}
 
 The [`ExpandDirection`](/api/avalonia/controls/expanddirection) property controls which direction the content expands relative to the header:
 

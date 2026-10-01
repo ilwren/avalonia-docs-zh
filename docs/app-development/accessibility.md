@@ -1,6 +1,6 @@
 ---
 id: accessibility
-title: Accessibility
+title: 无障碍
 description: Implement accessible Avalonia apps with AutomationProperties, keyboard navigation, and custom peers.
 doc-type: overview
 ---

@@ -49,7 +49,7 @@ Avalonia is used in several resource-constrained environments such as embedded d
 This step is not required for some theme packages such as FluentAvalonia which include all controls by default.
 :::
 
-## Background
+## 背景 {#background}
 
 This control originated as a re-styling of the one in UWP (later WinUI) using the basic designs implemented for the Windows Community Toolkit. The WinUI `ColorPicker` isn't conducive to smaller screen sizes and the overall design/usability of the control left something to be desired for both users and developers.
 
@@ -67,7 +67,7 @@ Main improvements learning from WinUI were:
 
 ## Controls and primitives
 
-| Control | Link |
+| 控件 | Link |
 |---------|------|
 | `ColorPicker` | |
 | `ColorView` | See the dedicated [`ColorView`](/controls/input/selectors/colorview) page. |

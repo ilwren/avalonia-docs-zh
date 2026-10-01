@@ -65,7 +65,7 @@ Override the `Pdf*` resources in `App.axaml` to match your application. The keys
 
 The viewer exposes its states as pseudo-classes for use in style selectors.
 
-| Pseudo-class | State |
+| 伪类 | State |
 |---|---|
 | `:has-document` | A document is open. |
 | `:loading` | A document is loading. |
@@ -111,7 +111,7 @@ Properties ending in `Format` are `string.Format` patterns and must keep their `
 
 Set `Strings` before loading a document. The toolbar updates immediately on a change, but context menus, the **Stamp** dropdown and thumbnail labels only pick up new strings when they are next built. The zoom percentage is formatted with the current culture.
 
-## Accessibility
+## 无障碍 {#accessibility}
 
 - Toolbar and sidebar buttons expose their tooltip as `AutomationProperties.Name`, so a screen reader announces "Highlight" or "Zoom" rather than the control type.
 - The control reports as a document region, named from the document title (or file name) and the current page. Set `AutomationProperties.Name` on the `PdfViewer` to override this.

@@ -84,7 +84,7 @@ The value is returned from the `ShowDialog<T>` call in the parent.
 
 ## Window sizing
 
-### Sizing to content
+### 按内容确定尺寸 {#sizing-to-content}
 
 Set `SizeToContent` to let the window size itself based on its content:
 

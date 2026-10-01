@@ -161,7 +161,7 @@ using var thumbnail = await Viewer.RenderPageToImageAsync(0, scale: 0.25);
 
 These require `EnableKeyboardShortcuts`. Set it to `false` to keep these keystrokes for your own commands. Form input and <kbd>Esc</kbd> are unaffected.
 
-| Shortcut | Action | Notes |
+| Shortcut | 动作 | Notes |
 |---|---|---|
 | <kbd>Cmd</kbd>+<kbd>C</kbd> | Copy the selected annotation, else the selected text | Only handled when something is selected |
 | <kbd>Cmd</kbd>+<kbd>V</kbd> | Paste the copied annotation onto the current page | Needs a copied annotation and `CanEditAnnotations` |
@@ -184,7 +184,7 @@ These require `EnableKeyboardShortcuts`. Set it to `false` to keep these keystro
 
 These are not affected by `EnableKeyboardShortcuts`.
 
-| Shortcut | Action |
+| Shortcut | 动作 |
 |---|---|
 | <kbd>Esc</kbd> | Closes the context menu, clears the annotation or text selection, deactivates the active tool. Only marked handled when something changed |
 | <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> onto the viewer | Enters the first / last form field on the current page |

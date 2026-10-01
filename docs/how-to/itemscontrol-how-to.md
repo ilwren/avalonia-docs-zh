@@ -11,7 +11,7 @@ This guide covers using [`ItemsControl`](/controls/data-display/collections/item
 
 Use `ItemsControl` when you need to display a small-to-medium collection without selection behavior. Use `ListBox` when you need a virtualized, selectable collection.
 
-| Control | Selection | Virtualization | Best For |
+| 控件 | Selection | Virtualization | Best For |
 |---|---|---|---|
 | `ListBox` | Built-in | Yes | Selectable lists |
 | `ItemsControl` | None | No (by default) | Custom layouts |

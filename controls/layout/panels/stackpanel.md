@@ -1,21 +1,21 @@
 ---
 id: stackpanel
 title: StackPanel
-description: A panel that arranges child controls in a single line, either horizontally or vertically.
+description: 一个面板：把子控件横着或竖着排成一条线。
 doc-type: reference
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The [`StackPanel`](/api/avalonia/controls/stackpanel) arranges its child controls by stacking them horizontally or vertically. You will often use a stack panel to arrange a small subsection of your UI on a page.
+[`StackPanel`](/api/avalonia/controls/stackpanel) 把子控件横向或纵向堆叠排布。界面上的小块区域，常常就用堆叠面板来编排。
 
-Inside a `StackPanel`, if you do not set the size property perpendicular to the stack direction on a child control, the child control stretches to fill the available space. For example, in a horizontal orientation, child controls stretch to fill the available height when no explicit `Height` is set.
+在 `StackPanel` 中，若不给子控件设置垂直于堆叠方向的那个尺寸属性，子控件会被拉伸填满可用空间。比如横向排布时，没有显式设置 `Height` 的子控件会被拉伸填满可用高度。
 
-In the direction of the stack, the `StackPanel` always expands to fit all of its child controls.
+在堆叠方向上，`StackPanel` 总会扩展到刚好容纳全部子控件。
 
 :::tip
-`StackPanel` does not scroll. If your stacked content may exceed the available space, wrap the `StackPanel` in a `ScrollViewer`.
+`StackPanel` 本身不滚动。如果堆叠的内容可能超出可用空间，请把 `StackPanel` 包进 `ScrollViewer`。
 :::
 
 ## 常用属性 {#useful-properties}
@@ -24,14 +24,14 @@ In the direction of the stack, the `StackPanel` always expands to fit all of its
 
 | 属性      | 说明                                                                     |
 | ------------- | ------------------------------------------------------------------------------- |
-| [`Orientation`](/api/avalonia/layout/orientation) | Sets the direction of the stack. Choose from `Horizontal` or `Vertical` (default). |
-| `Spacing`     | Creates an even gap between consecutive child controls.                         |
-| `HorizontalAlignment` | Controls how the panel itself is positioned horizontally within its parent. |
-| `VerticalAlignment`   | Controls how the panel itself is positioned vertically within its parent.   |
+| [`Orientation`](/api/avalonia/layout/orientation) | 设置堆叠方向，可选 `Horizontal` 或 `Vertical`（默认）。 |
+| `Spacing`     | 在相邻子控件之间留出均等的间隙。                         |
+| `HorizontalAlignment` | 控制面板自身在其父级中的水平位置。 |
+| `VerticalAlignment`   | 控制面板自身在其父级中的垂直位置。   |
 
 ## Example
 
-The following XAML shows how to create a vertical stack panel. The result shows the child controls stretched to fit the width, and the overall height of the stack panel equal to the sum of the child control heights.
+下面这段 XAML 演示如何创建一个纵向堆叠面板。可以看到子控件被拉伸以填满宽度，而堆叠面板的总高度等于各子控件高度之和。
 
 <XamlPreview>
 
@@ -47,9 +47,9 @@ The following XAML shows how to create a vertical stack panel. The result shows 
 
 </XamlPreview>
 
-## Defining a StackPanel in code
+## 在代码中定义 StackPanel {#defining-a-stackpanel-in-code}
 
-The following example demonstrates how to use a `StackPanel` to create a set of vertically positioned buttons. For horizontal positioning, set the `Orientation` property to `Horizontal`.
+下面的例子演示如何用 `StackPanel` 做出一列纵向排列的按钮。若要横向排列，把 `Orientation` 属性设为 `Horizontal` 即可。
 
 <Tabs
   defaultValue="xaml"
@@ -98,9 +98,9 @@ myStackPanel.Children.Add(myButton3);
 
 </Tabs>
 
-## Centering items
+## 让条目居中 {#centering-items}
 
-To align all children to the center of the stack, set `HorizontalAlignment` to `Center`:
+要让所有子元素在堆叠中居中，请把 `HorizontalAlignment` 设为 `Center`：
 
 ```xml
 <StackPanel HorizontalAlignment="Center" Spacing="8">
@@ -109,9 +109,9 @@ To align all children to the center of the stack, set `HorizontalAlignment` to `
 </StackPanel>
 ```
 
-## Horizontal stack with spacing
+## 带间距的横向堆叠 {#horizontal-stack-with-spacing}
 
-You can create a horizontal button bar by setting `Orientation` to `Horizontal` and adding a `Spacing` value:
+把 `Orientation` 设为 `Horizontal` 并加上 `Spacing`，就能做出一条横向按钮栏：
 
 ```xml
 <StackPanel Orientation="Horizontal" Spacing="12">
@@ -122,14 +122,14 @@ You can create a horizontal button bar by setting `Orientation` to `Horizontal` 
 
 ## 实用提示 {#practical-notes}
 
-- **Sizing behavior**: A `StackPanel` does not constrain children in the stacking direction, so each child receives as much space as it requests. If you need children to share space proportionally, consider using a `Grid` instead.
-- **Performance**: For lists with many items, use `ListBox` instead of placing many controls in a `StackPanel`.
-- **Scrolling**: Because `StackPanel` grows to fit all children, it will never clip its content on its own. Wrap it in a `ScrollViewer` when overflow is possible.
-- **Reverse order**: `StackPanel` does not support reverse stacking. To reverse the visual order, reverse the order of your child elements or use a custom panel.
+- **尺寸行为**：`StackPanel` 不会在堆叠方向上约束子元素，每个子元素要多少空间就给多少。若希望子元素按比例分享空间，不妨改用 `Grid`。
+- **性能**：条目很多的列表请用 `ListBox`，别把一大堆控件塞进 `StackPanel`。
+- **滚动**：由于 `StackPanel` 会撑到容纳全部子元素，它自己永远不会裁剪内容。可能溢出时，请把它包进 `ScrollViewer`。
+- **逆序**：`StackPanel` 不支持反向堆叠。要让视觉顺序倒过来，请把子元素的顺序倒过来写，或改用自定义面板。
 
 ## 另请参阅 {#see-also}
 
-- [StackPanel API reference](/api/avalonia/controls/stackpanel)
+- [StackPanel API 参考](/api/avalonia/controls/stackpanel)
 - [GitHub 上的 `StackPanel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/StackPanel.cs)
 - [DockPanel](/controls/layout/panels/dockpanel)
 - [Grid](/controls/layout/panels/grid)

@@ -7,7 +7,7 @@ doc-type: explanation
 
 Avalonia supports visual effects that add depth and visual interest to controls. The primary effect types are box shadows, clipping, and opacity masks.
 
-## Box shadows
+## 阴影 {#box-shadows}
 
 The [`BoxShadow`](/api/avalonia/media/boxshadow) property on [`Border`](/api/avalonia/controls/border) and `ContentPresenter` adds drop shadows or inset shadows to elements. The syntax follows CSS box-shadow conventions.
 

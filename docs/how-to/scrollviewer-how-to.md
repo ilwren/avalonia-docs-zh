@@ -51,7 +51,7 @@ You control when each scrollbar appears by setting `HorizontalScrollBarVisibilit
 If you set `HorizontalScrollBarVisibility` to `Disabled` (the default), content wider than the viewport will be clipped. Set it to `Auto` or `Visible` when you need horizontal scrolling.
 :::
 
-## Programmatic scrolling
+## 用代码控制滚动 {#programmatic-scrolling}
 
 ### Scroll to a specific position
 

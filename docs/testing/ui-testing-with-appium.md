@@ -14,7 +14,7 @@ This makes Appium tests well suited for end-to-end validation, accessibility ver
 | Speed | Fast (in-process, no GUI) | Slower (launches real app) |
 | Scope | Unit and component tests | End-to-end and integration tests |
 | Platform behavior | Simulated | Real (native windowing, menus, focus) |
-| Accessibility | Not tested | Tested (drives via accessibility tree) |
+| 无障碍 | Not tested | Tested (drives via accessibility tree) |
 | CI/CD | Runs anywhere | Requires a display (or virtual display on Linux) |
 
 Use headless tests for fast feedback on control logic and data binding. Use Appium tests to verify that your application works correctly as a whole, including native platform integration.

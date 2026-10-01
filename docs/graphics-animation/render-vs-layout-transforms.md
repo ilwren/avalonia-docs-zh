@@ -55,7 +55,7 @@ The pivot point for render transforms. In Avalonia, the default is `50%,50%` (ce
 | `SkewTransform` | Skews the control. | `<SkewTransform AngleX="15" />` |
 | `TransformGroup` | Combines multiple transforms. | See below. |
 
-### Combining transforms
+### 组合多个变换 {#combining-transforms}
 
 ```xml
 <Image Source="/assets/photo.jpg" Width="100" Height="100">
@@ -117,7 +117,7 @@ The "Below" button is positioned below the rotated control's full bounds, with n
 
 | 特性 | Render Transform | Layout Transform |
 |---|---|---|
-| Affects layout | No | Yes |
+| 是否影响布局 | No | Yes |
 | Other controls adjust | No | Yes |
 | 性能 | Faster (no re-layout) | Slower (triggers layout pass) |
 | Animatable | Yes | Yes, but causes layout recalculation each frame |

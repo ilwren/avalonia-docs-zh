@@ -164,7 +164,7 @@ For a full list of button events, see the [Button events API reference](/api/ava
 
 `Button` exposes several pseudo-classes you can target in styles:
 
-| Pseudo-class   | Applied when                          |
+| 伪类   | Applied when                          |
 |----------------|---------------------------------------|
 | `:pointerover` | The pointer is hovering over the button. |
 | `:pressed`     | The button is being pressed.          |

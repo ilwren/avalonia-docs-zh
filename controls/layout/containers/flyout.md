@@ -5,15 +5,15 @@ title: Flyout
 
 import FlyoutShowAttachedScreenshot from '/img/controls/flyout/flyout-show-attached.gif';
 
-Flyouts are dismissible containers that can be attached to some classes of 'host' control; although flyouts themselves are not controls. They show when their host control receives the focus, and are hidden again in a number of different ways.
+flyout 是一种可关闭的容器，能挂到某几类「宿主」控件上——不过 flyout 本身并不是控件。宿主控件获得焦点时它会显示出来，随后可以通过多种方式隐藏。
 
-A flyout can contain simple or richer, composed, UI content.
+flyout 既可以装简单内容，也可以装层次丰富的组合界面。
 
-Flyouts can be declared as a resource and shared between two or more host controls in an _Avalonia_ app.
+在 _Avalonia_ 应用中，flyout 可以声明为资源，在两个及以上的宿主控件之间共享。
 
 ## 示例 {#examples}
 
-A flyout is attached to a host control using the host's [`Flyout`](/api/avalonia/controls/flyout) property. For example:
+flyout 通过宿主的 [`Flyout`](/api/avalonia/controls/flyout) 属性挂到宿主控件上。例如：
 
 <XamlPreview>
 
@@ -31,11 +31,10 @@ A flyout is attached to a host control using the host's [`Flyout`](/api/avalonia
 </XamlPreview>
 
 :::caution
-Only the button and split button controls support the `Flyout` property. You can attach a flyout to other _Avalonia_ built-in controls using the `AttachedFlyout` property instead.
+只有 button 和 split button 控件支持 `Flyout` 属性。要把 flyout 挂到其他 _Avalonia_ 内置控件上，请改用 `AttachedFlyout` 属性。
 :::
 
-For controls that do not have the `Flyout` property, use the `AttachedFlyout` property. 
-The flyout will not show automatically, and has to be programmed in the code-behind.
+对于没有 `Flyout` 属性的控件，请使用 `AttachedFlyout` 属性。此时 flyout 不会自动显示，得在代码隐藏中自行控制。
 
 ```xml
 <Border Background="Red" PointerPressed="Border_PointerPressed">
@@ -66,28 +65,28 @@ public void Border_PointerPressed(object sender, PointerPressedEventArgs args)
 
 | 属性          | 说明                                                                          |
 | ----------------- | ------------------------------------------------------------------------------------ |
-| `Content`         | The content displayed inside the flyout.                                             |
-| `ContentTemplate` | A `DataTemplate` applied to the `Content`. Useful when `Content` is bound to a view model object. |
-| `Placement`       | The position where the flyout opens relative to the control to which it is attached. |
-| `ShowMode`        | This describes how the flyout shows and hides. See the options below.                |
+| `Content`         | flyout 内部显示的内容。                                             |
+| `ContentTemplate` | 作用于 `Content` 的 `DataTemplate`。当 `Content` 绑定到视图模型对象时很有用。 |
+| `Placement`       | flyout 相对于其所挂控件的弹出位置。 |
+| `ShowMode`        | 描述 flyout 如何显示和隐藏，可选项见下文。                |
 
-## Show mode
+## 显示模式 {#show-mode}
 
-This setting describes how the flyout shows and hides:
+该设置描述 flyout 如何显示和隐藏：
 
-<table><thead><tr><th width="259">Mode</th><th>说明</th></tr></thead><tbody><tr><td><code>Standard</code></td><td>The flyout shows when the control to which it is attached gets the focus. The flyout hides when the control to which it is attached loses the focus (the user either tabs away or clicks elsewhere). </td></tr><tr><td><code>Transient</code></td><td></td></tr><tr><td><code>TransientWithDismiss OnPointerMoveAway</code></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="259">Mode</th><th>说明</th></tr></thead><tbody><tr><td><code>Standard</code></td><td>所挂控件获得焦点时 flyout 显示；该控件失去焦点时（用户按 Tab 切走或点击别处）flyout 隐藏。 </td></tr><tr><td><code>Transient</code></td><td></td></tr><tr><td><code>TransientWithDismiss OnPointerMoveAway</code></td><td></td></tr></tbody></table>
 
-## Common methods for all flyouts
+## 所有 flyout 通用的方法 {#common-methods-for-all-flyouts}
 
 | 属性                | 说明                                                                             |
 | ----------------------- | --------------------------------------------------------------------------------------- |
-| `ShowAt(Control)`       | Shows the Flyout at the specified target                                                |
-| `ShowAt(Control, bool)` | Shows the Flyout at the specified target, but places it at the current pointer position |
-| `Hide`                  | Hides the Flyout                                                                        |
+| `ShowAt(Control)`       | 在指定目标处显示 flyout                                                |
+| `ShowAt(Control, bool)` | 在指定目标处显示 flyout，但把它摆在当前指针位置 |
+| `Hide`                  | 隐藏 flyout                                                                        |
 
-## Sharing flyouts
+## 共享 flyout {#sharing-flyouts}
 
-You can share flyouts between two or more elements in your app. For example, to share a flyout from the resources collection of a window:
+同一个 flyout 可以在应用中的多个元素之间共享。比如从窗口的资源集合中共享一个 flyout：
 
 ```xml
 <Window.Resources>
@@ -101,9 +100,9 @@ You can share flyouts between two or more elements in your app. For example, to 
 <Button Content="Now click me!" Flyout="{StaticResource MySharedFlyout}" />
 ```
 
-## Styling flyouts
+## 为 flyout 设置样式 {#styling-flyouts}
 
-Although flyouts are not themselves controls, their general appearance can be customized by targeting the presenter the `Flyout` uses to display its content. For a normal `Flyout` this is `FlyoutPresenter` and for `MenuFlyout` this is `MenuFlyoutPresenter`. Because flyout presenters are not exposed, special style classes that should pertain to specific flyouts can be passed using the `FlyoutPresenterClasses` property on `FlyoutBase`
+flyout 本身虽然不是控件，但可以通过定位 `Flyout` 用来显示内容的那个呈现器来定制整体外观：普通 `Flyout` 对应的是 `FlyoutPresenter`，`MenuFlyout` 对应的则是 `MenuFlyoutPresenter`。由于 flyout 呈现器并不对外暴露，若某些样式类只想作用于特定的 flyout，可以通过 `FlyoutBase` 上的 `FlyoutPresenterClasses` 属性传入
 
 ```xml
 <Style Selector="FlyoutPresenter.mySpecialClass">
@@ -117,5 +116,5 @@ Although flyouts are not themselves controls, their general appearance can be cu
 
 ## 另请参阅 {#see-also}
 
-- [Flyout API reference](/api/avalonia/controls/flyout)
+- [Flyout API 参考](/api/avalonia/controls/flyout)
 - [GitHub 上的 `Flyout.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/Flyout.cs)

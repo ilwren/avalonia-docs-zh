@@ -1,47 +1,47 @@
 ---
 id: decorator
 title: Decorator
-description: A base class for controls that wrap and decorate a single child element, providing padding and a foundation for custom wrapper controls.
+description: 一个基类，供那些包裹并装饰单个子元素的控件使用；它提供内边距，也是自定义包装控件的基础。
 doc-type: reference
 ---
 
-The [`Decorator`](/api/avalonia/controls/decorator) control is a base class for controls that wrap and decorate a single child element. It manages hosting one child in both the logical and visual tree, and applies optional padding around it.
+[`Decorator`](/api/avalonia/controls/decorator) 控件是一个基类，供那些包裹并装饰单个子元素的控件使用。它负责把一个子元素同时纳入逻辑树和视觉树，并在其四周应用可选的内边距。
 
-## When to use [`Decorator`](/api/avalonia/controls/decorator)
+## 何时使用 [`Decorator`](/api/avalonia/controls/decorator) {#when-to-use-decorator}
 
-You do not typically use `Decorator` directly in your XAML. Instead, you use one of the built-in controls that derive from it, such as `Border` or `Viewbox`. However, there are two scenarios where `Decorator` is useful:
+一般不会在 XAML 里直接用 `Decorator`，而是用由它派生的内置控件，比如 `Border` 或 `Viewbox`。不过有两种场景下 `Decorator` 很有用：
 
-- **Subclassing**: Create your own subclass of `Decorator` when you need a custom wrapper that adds layout, rendering, or behavioral logic around a single child.
-- **Simple padding wrapper**: Use `Decorator` directly when you need to add padding around a child without any border, background, or other visual treatment.
+- **派生子类**：当你需要一个自定义包装控件，在单个子元素周围加上布局、渲染或行为逻辑时，就从 `Decorator` 派生一个子类。
+- **纯内边距包装**：当你只想给子元素加点内边距，不要边框、背景之类的视觉装饰时，直接用 `Decorator`。
 
-## Built-in decorators
+## 内置的 decorator {#built-in-decorators}
 
-These controls inherit from `Decorator`:
+下列控件继承自 `Decorator`：
 
-| Control | 用途 |
+| 控件 | 用途 |
 | :--- | :--- |
-| [Border](/controls/layout/containers/border) | Draws a border, background, corner radius, and box shadow around its child |
-| [Viewbox](/controls/layout/containers/viewbox) | Scales its child to fit available space |
-| [LayoutTransformControl](/controls/layout/layouttransformcontrol) | Applies a render transform that participates in layout |
+| [Border](/controls/layout/containers/border) | 在子元素四周绘制边框、背景、圆角和阴影 |
+| [Viewbox](/controls/layout/containers/viewbox) | 缩放子元素以适配可用空间 |
+| [LayoutTransformControl](/controls/layout/layouttransformcontrol) | 应用一个参与布局的渲染变换 |
 
 ## 属性 {#properties}
 
 | 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| `Child` | `Control` | The single child control to decorate. Marked as `[Content]`, so you can set it directly in XAML without an explicit property element. |
-| `Padding` | `Thickness` | Space between the decorator's edge and its child. |
+| `Child` | `Control` | 要装饰的那个子控件。它标注为 `[Content]`，因此在 XAML 中可以直接设置，不必写出属性元素。 |
+| `Padding` | `Thickness` | decorator 边缘与其子元素之间的空隙。 |
 
-## How `Decorator` works
+## `Decorator` 的运作原理 {#how-decorator-works}
 
-When you set the `Child` property, `Decorator` automatically adds the child to both its logical and visual trees. During layout, it measures and arranges the child within the area remaining after `Padding` is applied. This means your subclass does not need to handle basic single-child layout, only any additional rendering or measurement logic you want to layer on top.
+设置 `Child` 属性时，`Decorator` 会自动把子元素加入自己的逻辑树和视觉树。布局期间，它在扣除 `Padding` 之后剩下的区域里测量并排列子元素。也就是说，你的子类不必操心单子元素的基础布局，只需专注于想额外加的渲染或测量逻辑。
 
-Because `Decorator` accepts exactly one child, it is lighter weight than panel-based containers like `StackPanel` or `Grid`. Use it when your control conceptually wraps or augments a single piece of content rather than composing multiple children.
+由于 `Decorator` 只接受一个子元素，它比 `StackPanel`、`Grid` 这类基于面板的容器更轻量。当你的控件在概念上只是包裹或增强单块内容、而非编排多个子元素时，就该用它。
 
 ## 示例 {#examples}
 
-### Creating a custom decorator
+### 创建自定义 decorator {#creating-a-custom-decorator}
 
-The following example shows a custom decorator that draws a colored background behind its child. You define a styled property for the brush color, then override `Render` to paint the background before the child draws itself.
+下面的例子做了一个自定义 decorator，在子元素背后绘制一块彩色背景。先为画刷颜色声明一个样式化属性，再重写 `Render`，在子元素自绘之前把背景画出来。
 
 ```csharp
 public class HighlightDecorator : Decorator
@@ -66,7 +66,7 @@ public class HighlightDecorator : Decorator
 }
 ```
 
-You can then use your custom decorator in XAML:
+之后就能在 XAML 中使用这个自定义 decorator：
 
 ```xml
 <local:HighlightDecorator HighlightBrush="LightBlue" Padding="8">
@@ -74,9 +74,9 @@ You can then use your custom decorator in XAML:
 </local:HighlightDecorator>
 ```
 
-### Using `Decorator` directly
+### 直接使用 `Decorator` {#using-decorator-directly}
 
-While uncommon, you can use `Decorator` directly as a simple padding wrapper:
+虽然不常见，但你完全可以把 `Decorator` 当作一个简单的内边距包装来用：
 
 ```xml
 <Decorator Padding="16">
@@ -84,7 +84,7 @@ While uncommon, you can use `Decorator` directly as a simple padding wrapper:
 </Decorator>
 ```
 
-This behaves like a `Border` with no border or background, adding only padding around its child.
+它的表现就像一个没有边框和背景的 `Border`，只给子元素加上内边距。
 
 ## 另请参阅 {#see-also}
 

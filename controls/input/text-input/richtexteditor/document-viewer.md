@@ -20,7 +20,7 @@ Use `FlowDocumentScrollViewer` to display rich documents without editing. This g
 
 Three controls can host a `FlowDocument`:
 
-| Control | 用途 | Selection / Copy | Caret | Undo | Overhead |
+| 控件 | 用途 | Selection / Copy | Caret | Undo | Overhead |
 |---|---|---|---|---|---|
 | `FlowDocumentScrollViewer` | Read-only display in one continuous column | Yes | No | No | Low |
 | `FlowDocumentPageViewer` | Read-only display as discrete page sheets | Yes | No | No | Low |

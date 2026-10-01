@@ -109,7 +109,7 @@ Avalonia uses pseudo-classes (similar to CSS) instead of WPF's VisualStateManage
 
 ### Common pseudo-classes
 
-| Pseudo-class | When active |
+| 伪类 | When active |
 |---|---|
 | `:pointerover` | Pointer is over the control |
 | `:pressed` | Control is being pressed |

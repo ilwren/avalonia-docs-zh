@@ -255,7 +255,7 @@ A value of `1.0` (default) shows a single full page. Values like `0.8` create a 
 
 The `Carousel` supports keyboard navigation when focused:
 
-| Key | Action |
+| 按键 | 动作 |
 |---|---|
 | Left / Up arrow | Moves to the previous item. |
 | Right / Down arrow | Moves to the next item. |
