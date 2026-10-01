@@ -129,4 +129,4 @@ Custom controls automatically inherit pseudoclasses from their base classes, so 
 
 - [Style selectors](/docs/styling/style-selectors)
 - [Style selector syntax](/docs/styling/style-selector-syntax)
-- [Control themes](/docs/styling/control-themes)
+- [控件主题](/docs/styling/control-themes)

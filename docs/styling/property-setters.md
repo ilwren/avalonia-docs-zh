@@ -157,4 +157,4 @@ These buttons specify their `Classes` in different orders. This has no effect on
 
 - [Styles](/docs/styling/styles)
 - [Property value precedence](/docs/properties/value-precedence)
-- [Control themes](/docs/styling/control-themes)
+- [控件主题](/docs/styling/control-themes)

@@ -59,7 +59,7 @@ Options can be set as attributes in XAML or configured via the `TextColumnCreate
 
 | 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
-| `Width` | `Width` | `Auto` | Column width |
+| `Width` | `Width` | `Auto` | 列宽 |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
 | `StringFormat` | Use binding `StringFormat` | 不适用 | Format string for display (e.g. `"{0:C}"` for currency) |
 | `Culture` | 不适用 | `CurrentCulture` | Culture for formatting |
@@ -120,7 +120,7 @@ source.WithCheckBoxColumn(x => x.IsActive, o =>
 
 | 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
-| `Width` | `Width` | `Auto` | Column width |
+| `Width` | `Width` | `Auto` | 列宽 |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
 | `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
 | `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |
@@ -249,7 +249,7 @@ source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell", "CheckBoxC
 
 | 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
-| `Width` | `Width` | `Auto` | Column width |
+| `Width` | `Width` | `Auto` | 列宽 |
 | `TextSearchBinding` | 不适用 | 不适用 | Binding to extract searchable text from the model |
 | `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
 | `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |

@@ -287,7 +287,7 @@ To access macOS-specific APIs (such as Keychain or native cookies) from an XPF a
 MAUI Essentials does not support macOS (only Mac Catalyst). It cannot be used with XPF on macOS.
 :::
 
-## Known limitations
+## 已知限制 {#known-limitations}
 
 - **Multiple UI threads**: macOS allows only one UI thread. WPF patterns that rely on multiple dispatchers (such as splash screens on a separate thread) will not work. Refactor these patterns to use the main dispatcher with `DispatcherPriority.Background` for deferred work.
 - **Transparent window click-through**: XPF does not support per-pixel hit transparency (clicking through transparent regions of a window). Consider embedding content in a single window instead of using transparent overlays.

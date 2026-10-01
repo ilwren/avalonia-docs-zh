@@ -198,12 +198,12 @@ using var thumbnail = await Viewer.RenderPageToImageAsync(0, scale: 0.25);
 | 所在位置 | 按键 |
 |---|---|
 | 就地文本编辑器（文本框或形状上的文字） | <kbd>Esc</kbd> 取消，<kbd>Ctrl</kbd>+<kbd>Enter</kbd> 提交 |
-| 搜索框 | <kbd>Enter</kbd> goes to the next result, <kbd>Esc</kbd> clears and closes |
-| Page number box | <kbd>Enter</kbd> commits, <kbd>Esc</kbd> reverts |
-| Link URL dialog, password, go-to-page and custom zoom overlays | <kbd>Enter</kbd> confirms, <kbd>Esc</kbd> cancels |
-| Hex colour inputs | <kbd>Enter</kbd> applies |
+| 搜索框 | <kbd>Enter</kbd> 跳到下一个结果，<kbd>Esc</kbd> 清空并关闭 |
+| 页码框 | <kbd>Enter</kbd> 提交，<kbd>Esc</kbd> 还原 |
+| 链接 URL 对话框，以及密码、跳转页码和自定义缩放这几个浮层 | <kbd>Enter</kbd> 确认，<kbd>Esc</kbd> 取消 |
+| 十六进制颜色输入框 | <kbd>Enter</kbd> 应用 |
 
-`FocusViewer()` moves keyboard focus to the viewer so the shortcuts apply.
+`FocusViewer()` 会把键盘焦点移到查看器上，这些快捷键才会生效。
 
 ## 另请参阅 {#see-also}
 

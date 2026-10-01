@@ -174,6 +174,6 @@ If you need to specify a dark or light theme variant, see [Theme variants](/docs
 
 ## 另请参阅 {#see-also}
 
-- [Control themes](/docs/styling/control-themes)
+- [控件主题](/docs/styling/control-themes)
 - [Theme variants](/docs/styling/theme-variants)
 - [Styles](/docs/styling/styles)

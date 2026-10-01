@@ -168,4 +168,4 @@ This way, you can make queries for size ranges.
 - [Responsive layouts](/docs/layout/responsive-layouts): Using container queries to build adaptive layouts.
 - [如何构建响应式布局](/docs/how-to/responsive-layout-how-to)：常见响应式套路的分步实践。
 - [Styles](/docs/styling/styles)
-- [Control themes](/docs/styling/control-themes)
+- [控件主题](/docs/styling/control-themes)

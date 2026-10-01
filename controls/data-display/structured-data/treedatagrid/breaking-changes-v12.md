@@ -1,26 +1,20 @@
 ---
 id: breaking-changes-v12
-title: TreeDataGrid v12 breaking changes
+title: TreeDataGrid v12 破坏性变更
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-This document describes the breaking changes between TreeDataGrid 11.x and 12.x and
-provides migration guidance.
+本文梳理 TreeDataGrid 11.x 到 12.x 之间的破坏性变更，并给出迁移指引。
 
-TreeDataGrid 12.0 represents a major refactor of the TreeDataGrid API in an effort to
-future-proof the API and provide API stability promises that were not present for
-TreeDataGrid 11.x.
+TreeDataGrid 12.0 对其 API 作了一次大规模重构，目的是让 API 面向未来，并提供 11.x 时期所不具备的 API 稳定性承诺。
 
-TreeDataGrid 12.x requires Avalonia 12. For Avalonia 12 breaking changes, see the
-[Avalonia 12 breaking changes](https://docs.avaloniaui.net/docs/avalonia12-breaking-changes)
-document.
+TreeDataGrid 12.x 需要 Avalonia 12。Avalonia 12 自身的破坏性变更请参阅 [Avalonia 12 破坏性变更](https://docs.avaloniaui.net/docs/avalonia12-breaking-changes)文档。
 
-## Generic type parameters removed from columns
+## 列类型不再带泛型参数 {#generic-type-parameters-removed-from-columns}
 
-All column classes have had their generic type parameters removed and have been renamed
-with a `TreeDataGrid` prefix. Columns are no longer generic over the model type.
+所有列类都去掉了泛型类型参数，并改用 `TreeDataGrid` 前缀重新命名。列不再按模型类型泛型化。
 
 | 12.x | Replaces |
 |---|---|

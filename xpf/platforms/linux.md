@@ -281,7 +281,7 @@ Wayland is the newer display protocol used by default on recent versions of Fedo
 - **Keyboard isolation**: Only the focused window receives keyboard input. There is no mechanism to direct keyboard input to a non-focused window. If your application needs to isolate keyboard input between windows (for example, for kiosk setups with multiple input devices), this is a Wayland protocol limitation.
 - **Window positioning**: Wayland does not allow applications to set absolute window positions. `Window.Left` and `Window.Top` may be ignored by the compositor.
 
-## Known limitations
+## 已知限制 {#known-limitations}
 
 - **UI test automation**: Avalonia does not currently support the AT-SPI2 accessibility protocol on Linux. Automated UI testing tools that rely on accessibility APIs (such as pywinauto or Appium) have limited functionality.
 - **Transparent window click-through**: As on macOS, XPF does not support clicking through transparent regions of a window on Linux. Mouse clicks on transparent areas are captured by the window rather than passed through to windows underneath. For overlay scenarios, embed content in a single window rather than layering transparent windows.

@@ -140,4 +140,4 @@ For more details about using resources, see the [resources](/docs/app-developmen
 
 - [Resource dictionaries](/docs/app-development/resource-dictionary)
 - [Styles](/docs/styling/styles)
-- [Control themes](/docs/styling/control-themes)
+- [控件主题](/docs/styling/control-themes)

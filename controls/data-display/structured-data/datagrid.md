@@ -13,51 +13,51 @@ import DataGridColumnPreviewScreenshot from '/img/controls/datagrid/datagridtext
 
 <Pill variant="warning">Deprecated</Pill>
 
-The `DataGrid` displays repeating data in a customizable grid. The control can be styled, templated and bound.
+`DataGrid` 以可定制的网格呈现重复数据。该控件支持设置样式、套用模板和数据绑定。
 
-The `DataGrid` needs to be bound to an observable collection in a view model that can be found in a related **data context**.
+`DataGrid` 需要绑定到视图模型中的一个可观察集合，而该视图模型要能从相应的**数据上下文**中找到。
 
 :::warning
-`DataGrid` is deprecated!  
-For read-only tabular data, we recommend using [TableView](/controls/data-display/structured-data/tableview).  
-For advanced editing, we recommend using [TreeDataGrid](/controls/data-display/structured-data/treedatagrid).  
+`DataGrid` 已弃用！  
+只读的表格数据，推荐使用 [TableView](/controls/data-display/structured-data/tableview)。  
+需要较复杂的编辑能力时，推荐使用 [TreeDataGrid](/controls/data-display/structured-data/treedatagrid)。  
 :::
 
 :::info
-To review the concept behind the **data context**, see [Data context](/docs/data-binding/data-context).
+若想回顾**数据上下文**背后的概念，请参阅[数据上下文](/docs/data-binding/data-context)。
 :::
 
 :::info
-The `DataGrid` is in an additional _Avalonia_ package. To use the `DataGrid` in your project, you must reference the **Avalonia.Controls.DataGrid** _NuGet_ package, and reference the styles that it uses, see below.
+`DataGrid` 位于 _Avalonia_ 的一个独立包中。要在项目里用 `DataGrid`，你必须引用 **Avalonia.Controls.DataGrid** _NuGet_ 包，并引入它所依赖的样式，详见下文。
 :::
 
-### NuGet package reference
+### 引用 NuGet 包 {#nuget-package-reference}
 
-You must install the _NuGet_ package for the `DataGrid`. You can do this using one of the following methods. You can use **Manage NuGet Packages** from the project menu of your IDE:
+你必须为 `DataGrid` 安装对应的 _NuGet_ 包，方式有几种。可以用 IDE 项目菜单中的**管理 NuGet 程序包**：
 
 <Image light={DataGridNuGetScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-Alternatively, you can run this instruction from the command line:
+也可以在命令行里执行：
 
 ```bash
 dotnet add package Avalonia.Controls.DataGrid
 ```
 
-Or add package reference directly to the project (`.csproj`) file:
+或者直接把包引用写进项目文件（`.csproj`）：
 
 ```xml
 <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0" />
 ```
 
 :::caution
-Note you must always install the data grid version that matches the _Avalonia_ version you are using.
+注意：安装的 DataGrid 版本必须与你所用的 _Avalonia_ 版本一致。
 :::
 
-### Include DataGrid styles
+### 引入 DataGrid 样式 {#include-datagrid-styles}
 
-You must reference the `DataGrid` themes to include the additional styles that the `DataGrid` uses. You can do this by adding a `<StyleInclude>` element to the application (`App.axaml` file).
+你必须引用 `DataGrid` 主题，才能把 `DataGrid` 所需的额外样式带进来。做法是在应用（`App.axaml` 文件）中添加一个 `<StyleInclude>` 元素。
 
-For example (In case you use `FluentTheme`):
+例如（当你使用 `FluentTheme` 时）：
 
 ```xml
 <Application.Styles>
@@ -67,7 +67,7 @@ For example (In case you use `FluentTheme`):
 ```
 
 :::caution
-The DataGrid-styles need to match the overall theme you use, otherwise you will get conflicts and unresolved resources. For third party themes, please lookup their docs and samples.
+DataGrid 的样式必须与你整体所用的主题相匹配，否则会出现冲突和资源找不到的问题。第三方主题请查阅其自身的文档和示例。
 :::
 
 
@@ -77,16 +77,16 @@ The DataGrid-styles need to match the overall theme you use, otherwise you will 
 
 | 属性                | 说明                                                                                                                     |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `AutoGenerateColumns`   | Whether the columns will automatically generate from the bound items data source property names. (Default is false.)            |
+| `AutoGenerateColumns`   | 是否根据所绑定条目数据源的属性名自动生成列。（默认为 false。）            |
 | `ItemsSource`           | 用作该控件数据源的绑定集合。                                                           |
-| `IsReadOnly`            | Sets the binding direction to one-way when true. The default is false - the grid will accept changes to the bound data.         |
-| `CanUserReorderColumns` | Indicates whether the user can change the column display order by dragging column headers with the pointer. (Default is false.) |
-| `CanUserResizeColumns`  | Indicates whether the user can adjust column widths using the pointer. (Default is false.)                                      |
-| `CanUserSortColumns`    | Indicates whether the user can sort columns by clicking the column header. (Default is true.)                                   |
+| `IsReadOnly`            | 为 true 时把绑定方向设为单向。默认为 false——此时网格会接受对所绑定数据的改动。         |
+| `CanUserReorderColumns` | 用户能否用指针拖动列标题来调整列的显示顺序。（默认为 false。） |
+| `CanUserResizeColumns`  | 用户能否用指针调整列宽。（默认为 false。）                                      |
+| `CanUserSortColumns`    | 用户能否通过点击列标题来排序。（默认为 true。）                                   |
 
 ### 示例 {#examples}
 
-This example will generate a basic `DataGrid`, with column header names auto-generated from the item class. The items data source is bound to the main window view model.
+下面这个例子会生成一个基本的 `DataGrid`，列标题名称由条目类自动生成，条目数据源则绑定到主窗口的视图模型。
 
 ```xml
 <DataGrid Margin="20" ItemsSource="{Binding People}" 
@@ -138,10 +138,10 @@ public class Person
 <Image light={DataGridSortColumnScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
 :::info
-These examples use the MVVM pattern with data binding to an `ObservableCollection`. For more information on the concepts behind data binding, see [Introduction to data binding](/docs/data-binding/introduction-to-data-binding).
+这些例子采用 MVVM 写法，绑定到一个 `ObservableCollection`。数据绑定背后的概念请参阅[数据绑定简介](/docs/data-binding/introduction-to-data-binding)。
 :::
 
-Property names from the item class will generally not make good column names. This example adds custom header names to the grid. It also allows column reordering and resizing and disallows the default column sorting option:
+条目类的属性名通常并不适合直接当列名。下面这个例子为网格加上了自定义的列标题名称，同时允许调整列序和列宽，并关掉了默认的列排序：
 
 ```xml
 <DataGrid Margin="20" ItemsSource="{Binding People}"
@@ -160,7 +160,7 @@ Property names from the item class will generally not make good column names. Th
 
 <Image light={DataGridReorderColumnScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-This example shows how the `DataGrid` can accept changes and update the underlying collection, and use different column types to edit the data:
+下面这个例子展示 `DataGrid` 如何接受改动并更新底层集合，以及如何用不同的列类型来编辑数据：
 
 ```xml
 <DataGrid Margin="20" ItemsSource="{Binding People}"        
@@ -219,19 +219,19 @@ public class Person
 
 ## DataGridTemplateColumn
 
-You can use this column type to customise the display and editing for a data grid column.
+你可以用这种列类型来定制某一列的显示方式和编辑方式。
 
-There are two data templates which you define as attached properties:
+有两个数据模板需要以附加属性的形式定义：
 
-<table><thead><tr><th width="269">Data Template</th><th>说明</th></tr></thead><tbody><tr><td><code>CellTemplate</code> </td><td>The display (not being edited) presentation of the column value. </td></tr><tr><td><code>CellEditingTemplate</code> </td><td>The editing template for the column value.</td></tr></tbody></table>
+<table><thead><tr><th width="269">Data Template</th><th>说明</th></tr></thead><tbody><tr><td><code>CellTemplate</code> </td><td>该列取值在非编辑状态下的呈现方式。 </td></tr><tr><td><code>CellEditingTemplate</code> </td><td>该列取值的编辑模板。</td></tr></tbody></table>
 
 :::info
-If you do not set a editing template, the column will stay read-only.
+如果不设置编辑模板，该列将保持只读。
 :::
 
 ### Example
 
-This example adds a numeric up-down control when the age property for a person is being edited:
+下面这个例子在编辑某人的年龄属性时，呈现一个数值微调控件：
 
 
 
@@ -316,17 +316,17 @@ public class Person
 
 ## DataGridColumn
 
-A `DataGrid` can contain multiple data grid columns and _Avalonia_ has two built-in column types which can be used to display a different data types, and a template type that can customise the column appearance.
+一个 `DataGrid` 可以包含多个数据网格列。_Avalonia_ 内置了两种列类型用于展示不同的数据类型，另有一种模板列类型可用来定制列的外观。
 
 | Column Type              | 说明                                                                                                                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `DataGridTextColumn`     | Presents a text box for display and editing of the column data. You can control font properties like family and size in this column type.                                 |
-| `DataGridCheckBoxColumn` | Presents a check box for display and editing of the column data, when it is Boolean. This column type also supports the three-state check box when the value is nullable. |
-| `DataGridTemplateColumn` | Can be used to customise the presentation of column data, for both display and editing.                                                                                   |
+| `DataGridTextColumn`     | 用文本框来显示和编辑该列数据。这种列类型可以控制字体族、字号等排版属性。                                 |
+| `DataGridCheckBoxColumn` | 当数据为布尔值时，用复选框来显示和编辑该列数据。取值可空时，这种列类型还支持三态复选框。 |
+| `DataGridTemplateColumn` | 可用于定制列数据在显示和编辑两种状态下的呈现方式。                                                                                   |
 
-### Displaying row numbers
+### 显示行号 {#displaying-row-numbers}
 
-Bind to `DataGridRow.Index` to show row numbers in a column:
+绑定到 `DataGridRow.Index` 即可在某一列中显示行号：
 
 ```xml
 <DataGridTextColumn Header="#"
@@ -336,31 +336,31 @@ Bind to `DataGridRow.Index` to show row numbers in a column:
 
 ### 常用属性 {#useful-properties-1}
 
-Most of these properties are common to all three column types:
+下列属性大多为三种列类型所共有：
 
 | 属性         | 说明                                                                                                                                     |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Header`         | The header content of the column.                                                                                                               |
-| `HeaderTemplate` | Uses a data template for the column.                                                                                                            |
-| `IsReadOnly`     | Whether the column is read-only. If the data grid itself is read-only, then the column is also read-only, whatever the value of this  property. |
-| `IsThreeState`   | Check box column only. Enables the third (filled) state when a nullable Boolean value is null.                                                  |
-| `Width`          | The column width can be given in absolute or relative size (see below).                                                                         |
+| `Header`         | 列标题的内容。                                                                                                               |
+| `HeaderTemplate` | 为该列套用数据模板。                                                                                                            |
+| `IsReadOnly`     | 该列是否只读。如果数据网格本身是只读的，那么无论该属性取什么值，列都是只读的。 |
+| `IsThreeState`   | 仅复选框列可用。当可空布尔值为 null 时，启用第三种（填充）状态。                                                  |
+| `Width`          | 列宽可以用绝对尺寸或相对尺寸给出（详见下文）。                                                                         |
 
-### Column width
+### 列宽 {#column-width}
 
-If you do not set the width for a column, it will be resized to fit the contents, and a horizontal scrollbar will be added to the grid if necessary.
+如果不为某一列设置宽度，它会按内容自动调整大小；必要时网格还会加上一条水平滚动条。
 
-You can set the width of a column absolutely, for example:
+你可以为列设置绝对宽度，例如：
 
 ```xml
 <DataGridTextColumn Width="200" />
 ```
 
-This will cause the column content that does not fit to be hidden.
+这样一来，放不下的列内容就会被隐藏。
 
-Alternatively, you can specify relative automatic sizes. This uses \* to represent an equal division of the available width, and then multiples like 2\*.  Any columns without a width specified are sized to their content.
+另一种做法是指定相对的自动尺寸。用 \* 表示均分可用宽度，也可以写成 2\* 这样的倍数。未指定宽度的列则按内容自动调整。
 
-For example to divide a data grid into 3 equal columns:
+比如把一个数据网格均分成 3 列：
 
 ```xml
 <DataGridTextColumn Width="*" />
@@ -370,7 +370,7 @@ For example to divide a data grid into 3 equal columns:
 
 Example
 
-This example improves a data grid by expanding two columns equally across the width:
+下面这个例子让两列均分整个宽度，把数据网格的呈现效果改善了一番：
 
 ```xml
 <Window ... >
@@ -430,10 +430,10 @@ public class Person
 }
 ```
 
-It works in the preview pane because the `<Design.DataContext>` element creates a view model to bind to:
+它之所以能在预览窗格中生效，是因为 `<Design.DataContext>` 元素会创建一个供绑定的视图模型：
 
 <Image light={DataGridColumnPreviewScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
 ## 另请参阅 {#see-also}
 
-- [DataGrid API reference](https://api-docs.avaloniaui.net/docs/T_Avalonia_Controls_DataGrid)
+- [DataGrid API 参考](https://api-docs.avaloniaui.net/docs/T_Avalonia_Controls_DataGrid)

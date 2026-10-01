@@ -205,6 +205,6 @@ Or use theme-variant resources defined in your `App.axaml`:
 - [Styles](/docs/styling/styles)
 - [Style classes](/docs/styling/style-classes)
 - [Style selectors](/docs/styling/style-selectors)
-- [Control themes](/docs/styling/control-themes)
+- [控件主题](/docs/styling/control-themes)
 - [Theme variants](/docs/styling/theme-variants)
 - [Sharing styles](/docs/styling/sharing-styles)

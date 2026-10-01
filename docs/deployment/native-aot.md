@@ -85,7 +85,7 @@ Add a trimmer root descriptor to your `.csproj` file.
 
 For information, please see [Trimming](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file) on the .NET documentation site.
 
-## Known limitations
+## 已知限制 {#known-limitations}
 
 When using Native AOT with Avalonia, be aware of these limitations:
 - Dynamic control creation must be configured in trimmer settings
