@@ -1,192 +1,192 @@
 ---
 id: elements-tool
-title: Elements tool
+title: 元素工具
 doc-type: reference
 ---
 
-The Elements Tree presents a unified view that combines both visual and logical hierarchies. It loads only visible elements to optimize performance, while organizing the structure with the logical tree as the foundation. Template contents are collapsed away within `/template/` node contents.
+元素树把视觉层级和逻辑层级合在一处呈现。为了性能考虑，它只加载可见的元素，并以逻辑树为骨架来组织结构。模板内容则折叠收进 `/template/` 节点里。
 
-![Elements Tool](/img/tools/dev-tools/elements-tool.png)
+![元素工具](/img/tools/dev-tools/elements-tool.png)
 
-## Inspect mode
+## 检视模式 {#inspect-mode}
 
-The Elements Tool offers ways to identify and select specific UI elements directly from your running application:
+元素工具提供了几种方式，可直接从运行中的应用里认出并选中特定的 UI 元素：
 
-- **Focus Tracking** - When enabled, this feature automatically selects the currently focused element in your application within the Elements tree. Toggle this mode with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> (or <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>K</kbd> on macOS) to automatically track focus changes as you interact with your app.
+- **焦点跟踪**——启用后，应用中当前获得焦点的元素会自动在元素树里被选中。用 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>（macOS 上是 <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>K</kbd>）切换该模式，你与应用交互时焦点变化便会被自动跟踪。
 
-- **Inspect Element** - This mode transforms your cursor into an element selector. Once activated with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> (or <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>C</kbd> on macOS), click any element in your application to immediately locate and select it in the Elements tree. This provides a direct bridge between what you see in your application and its underlying structure.
+- **检视元素**——该模式把光标变成元素选取器。用 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>（macOS 上是 <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>C</kbd>）激活后，在应用里点击任意元素，元素树中便会立刻定位并选中它。这样一来，你眼前看到的界面与其底层结构之间就有了一座直通桥。
 
-These inspection modes help you locate elements without manually searching through the element hierarchy.
+有了这两种检视模式，你不必在元素层级里一层层翻找就能定位到目标。
 
 ## 上下文菜单 {#context-menu}
 
-The context menu provides essential actions for navigating and manipulating the element tree:
+右键菜单提供了浏览和操作元素树的常用动作：
 
-When right-clicking on an element, you can access various expansion options to explore the hierarchy at different levels of detail. The "Expand Children" option reveals immediate children, while "Recursively" and "Recursively with templates" provide deeper exploration capabilities.
+右键点击某个元素，可以用到各种展开选项，按不同的详尽程度探查层级。“Expand Children” 展开直接子级，“Recursively” 和 “Recursively with templates” 则可以挖得更深。
 
-Additional actions include collapsing nodes, copying elements or their selectors, focusing elements, bringing them into view, and invalidating visuals. Window elements offer the special capability to render debug overlays such as `FPS`.
+此外还能折叠节点、复制元素或其选择器、让元素获得焦点、把元素滚动到可见范围内，以及使视觉失效重绘。对 Window 元素还有一项特别能力：渲染 `FPS` 这类调试叠加层。
 
-The entire tree supports search functionality, allowing you to quickly locate specific elements by name or type.
+整棵树都支持搜索，你可以按名称或类型迅速找到特定元素。
 
-![Elements Tree Context Menu](/img/tools/dev-tools/elements-context-menu.png)
+![元素树右键菜单](/img/tools/dev-tools/elements-context-menu.png)
 
-## Pseudoclasses selector
+## 伪类选择器 {#pseudoclasses-selector}
 
-For each element, the tool displays pseudoclasses that were defined on it. This feature is particularly valuable for testing how elements respond to different states without having to manually trigger them through user interaction.
+工具会为每个元素显示其上定义的伪类。想测试元素在不同状态下的表现时，这一点尤其有用——不必靠手动交互去一个个触发状态。
 
-When developing custom controls with pseudoclasses, adding the `[PseudoClassesAttribute]` improves integration with the Developer Tools and also enhances IDE auto-completion support.
+开发带伪类的自定义控件时，加上 `[PseudoClassesAttribute]` 能让它与开发者工具配合得更好，IDE 的自动补全也更给力。
 
-## Element properties
+## 元素属性 {#element-properties}
 
-The Properties panel shows detailed information about the selected element in the Elements tree, displaying all properties, styles, and values affecting the element.
+属性面板显示元素树中所选元素的详细信息，列出影响该元素的所有属性、样式和取值。
 
-![Properties list](/img/tools/dev-tools/properties-list.png)
+![属性列表](/img/tools/dev-tools/properties-list.png)
 
-The panel displays all Avalonia properties assigned to the element. Developers can:
-- Filter properties by name
-- Sort properties alphabetically or by value
-- Group properties by categories
-- Edit values using specialized editors (ColorPicker, BrushPicker, Image/Geometry previews)
-- Properties with nested grids are clickable, allowing to preview `DataContext` or `Image.Source`-like properties.
+面板会列出赋给该元素的所有 Avalonia 属性。开发者可以：
+- 按名称筛选属性
+- 按字母顺序或按取值排序
+- 按类别对属性分组
+- 用专门的编辑器修改取值（ColorPicker、BrushPicker、Image/Geometry 预览）
+- 带嵌套网格的属性可以点开，用来预览 `DataContext` 或 `Image.Source` 之类的属性。
 
-### Property details
+### 属性详情 {#property-details}
 
-When a developer selects a property, additional details become available through two specialized tabs.
+选中某个属性后，还可以通过两个专门的选项卡查看更多详情。
 
-#### Styles and values
+#### 样式与取值 {#styles-and-values}
 
-Avalonia properties operate on a priority-based system where multiple values can be assigned to a single property. The Properties panel reveals this layered approach:
+Avalonia 的属性遵循一套基于优先级的机制，同一个属性可以被赋予多个值。属性面板把这种层层叠加的结构摊开给你看：
 
-![Styles setters](/img/tools/dev-tools/properties-style-setters.png)
+![样式 setter](/img/tools/dev-tools/properties-style-setters.png)
 
-Each property can have multiple setters with different priorities and conditions. For example, a button might have different background colors defined for its normal state, hover state, and pressed state. The DevTools shows all these setters, with the currently active one expanded by default.
+每个属性可以有多个 setter，各自带着不同的优先级和条件。比如一个按钮，常态、悬停和按下三种状态下的背景色可能各不相同。DevTools 会把这些 setter 悉数列出，当前生效的那个默认展开。
 
-Inactive setters (those whose conditions aren't currently met) appear collapsed and grayed-out. This visual hierarchy helps developers understand which style is currently applied and why, making it easier to debug styling issues.
+未生效的 setter（条件当前不成立的那些）呈折叠且灰显状态。这种视觉上的层次让开发者一眼看清当前套用的是哪条样式、为什么是它，排查样式问题也就容易多了。
 
-#### Binding expressions
+#### 绑定表达式 {#binding-expressions}
 
-The Binding Expressions tab reveals how properties are connected to data sources:
+“Binding Expressions” 选项卡揭示属性是如何与数据源挂上钩的：
 
-![Binding Expressions](/img/tools/dev-tools/properties-bindings.png)
+![绑定表达式](/img/tools/dev-tools/properties-bindings.png)
 
-When a property uses data binding, this tab shows crucial information about the binding relationship:
-- Source and Path of the binding
-- Validation errors if the binding is failing
-- Additional binding parameters like Mode, Converter, and FallbackValue
+当属性用了数据绑定时，这个选项卡会显示绑定关系的关键信息：
+- 绑定的 Source 和 Path
+- 绑定失败时的校验错误
+- Mode、Converter、FallbackValue 等其他绑定参数
 
-For properties with validation errors, the panel displays the exception type and message, including any inner exceptions that might provide additional context for debugging.
+对于存在校验错误的属性，面板会显示异常类型和消息，连带内部异常也一并列出，为调试提供更多线索。
 
-Some properties use MultiBinding expressions that combine multiple sources:
+有些属性用的是 MultiBinding 表达式，把多个来源合在一起：
 
-![MultiBinding Expressions](/img/tools/dev-tools/properties-multi-bindings.png)
+![MultiBinding 表达式](/img/tools/dev-tools/properties-multi-bindings.png)
 
-## Element 3D viewer
+## 元素 3D 查看器 {#element-3d-viewer}
 
-The 3D Viewer provides a three-dimensional visualization of your application's visual tree, allowing you to explore the layering and hierarchy of UI elements in a spatial context.
+3D 查看器把应用的视觉树以三维形式呈现出来，让你在空间视角下探查 UI 元素的层叠与层级关系。
 
-![3D Viewer Tab](/img/tools/dev-tools/3d-viewer-mini-demo.gif)
+![3D 查看器选项卡](/img/tools/dev-tools/3d-viewer-mini-demo.gif)
 
-### Accessing the 3D Viewer
+### 打开 3D 查看器 {#accessing-the-3d-viewer}
 
-Open the 3D Viewer from the Developer Tools panel by toggling the "3D Viewer" button on the Properties view toolbar.
-Or from "Open 3D Viewer" context menu in the Elements Tree.
+在开发者工具面板中，点击属性视图工具栏上的 “3D Viewer” 按钮即可打开；
+也可以在元素树的右键菜单中选 “Open 3D Viewer”。
 
-Any visual element subtree can be viewed. Templates and root Application cannot.
+任何视觉元素子树都可以查看，模板和根 Application 除外。
 
 :::note
 
-This feature requires Avalonia 11.2.0 or newer.
+此功能需要 Avalonia 11.2.0 或更高版本。
 
 :::
 
-### Features
+### 功能一览 {#features}
 
-The 3D Viewer renders each layer of your visual tree as a separate plane in 3D space.
+3D 查看器把视觉树的每一层渲染成三维空间中的一个平面。
 
-Elements are positioned according to their Z-index and rendering order. Allowing to easily identify overlapping elements and their stacking context
+元素按其 Z-index 和渲染顺序摆放，哪些元素相互重叠、各自处于怎样的层叠上下文，一目了然
 
 #### Navigation Controls
 
-Navigate the 3D space to examine your UI from different angles:
+在三维空间里挪动视角，从不同角度审视你的界面：
 
-- **Rotate**: Click and drag to rotate the view
-- **Pan**: Right-click and drag to move the camera position
-- **Zoom**: Use the mouse wheel to zoom in and out
-- **Reset**: Double-click to reset the view to the default position
+- **旋转**：按住并拖动即可旋转视图
+- **平移**：按住右键拖动可移动相机位置
+- **缩放**：用鼠标滚轮放大或缩小
+- **重置**：双击把视图恢复到默认位置
 
 #### Visualization Settings
 
-Customize how the 3D view renders elements:
+自定义 3D 视图呈现元素的方式：
 
-- **Draw as Gradient**: Toggle to visualize elements with gradient coloring for better depth perception
-- **Draw Borders**: Enable or disable element border rendering for cleaner visualization
-- **Layer Distance**: Adjust the spacing between visual tree layers
-- **Layer Range**: Set minimum and maximum layer indexes to focus on specific depth ranges in the visual tree
+- **Draw as Gradient**：开启后用渐变着色呈现元素，深度感更强
+- **Draw Borders**：启用或禁用元素边框的渲染，画面可以更清爽
+- **Layer Distance**：调整视觉树各层之间的间距
+- **Layer Range**：设定层索引的上下限，专注于视觉树中某一段深度范围
 
 ### 3D Viewer Use Cases
 
-- **Debugging Z-Index Issues**: Identify and resolve element stacking problems
-- **Understanding Complex Layouts**: Visualize how nested panels and controls relate to each other
-- **Optimizing Visual Tree**: Identify unnecessary nesting or redundant containers
-- **Explaining UI Architecture**: Use as a teaching tool to demonstrate visual tree concepts
+- **调试 Z-Index 问题**：找出并解决元素层叠顺序上的毛病
+- **看懂复杂布局**：把嵌套的面板与控件之间的关系可视化
+- **精简视觉树**：发现多余的嵌套或冗余的容器
+- **讲解 UI 架构**：作为教学工具演示视觉树的概念
 
-## In-app overlay
+## 应用内叠加层 {#in-app-overlay}
 
-Avalonia Developer Tools provides visual overlays that display directly on your running application, helping you visualize and debug UI components without code modifications.
+Avalonia 开发者工具能把视觉叠加层直接画在运行中的应用上，让你不改代码就能直观查看、调试 UI 组件。
 
-### Enabling overlays
+### 启用叠加层 {#enabling-overlays}
 
-You can activate overlays in two ways:
+有两种方式可以启用叠加层：
 
 #### 1. Via Elements Tree
 
-Overlays automatically appear when hovering over elements in the Developer Tools tree.
+在开发者工具的元素树中把鼠标悬停到某个元素上，叠加层会自动出现。
 
-![Trigger overlays from the Elements Tree](/img/tools/dev-tools/overlay-tree-inspect.png)
+![从元素树触发叠加层](/img/tools/dev-tools/overlay-tree-inspect.png)
 
-#### 2. Via "Highlight Elements" Mode shortcut
+#### 2. 通过 “Highlight Elements” 模式的快捷键 {#2-via-highlight-elements-mode-shortcut}
 
-Enter inspect mode directly in your application:
-- Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> (Windows/Linux) or <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>H</kbd> (macOS)
-- Hover over any element to see its overlay
-- If necessary, this mode can be disabled by pressing the same shortcut
+直接在你的应用中进入检视模式：
+- 按 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>（Windows/Linux）或 <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>H</kbd>（macOS）
+- 把鼠标悬停到任意元素上即可看到它的叠加层
+- 需要时再按一次同样的快捷键即可关闭该模式
 
-![In-App Overlays inspect via Shortcut](/img/tools/dev-tools/overlay-shortcut-inspect.png)
+![用快捷键检视应用内叠加层](/img/tools/dev-tools/overlay-shortcut-inspect.png)
 
-### Available overlays
+### 可用的叠加层 {#available-overlays}
 
-#### Info tooltip
+#### 信息提示框 {#info-tooltip}
 
-Displays detailed element information when hovering:
+悬停时显示元素的详细信息：
 
-- **Basic Information**: Element type, name, and style classes
-- **Layout Properties**: Dimensions, margins, padding, constraints, and Z-Index
-- **Visual Properties**: Border and background details, colors and opacity
-- **Text Properties**: Foreground color, font settings
-- **Control-Specific Properties**: Selection brushes, image details
+- **基本信息**：元素类型、名称和样式类
+- **布局属性**：尺寸、外边距、内边距、约束和 Z-Index
+- **视觉属性**：边框与背景细节、颜色和不透明度
+- **文本属性**：前景色、字体设置
+- **控件专属属性**：选区画刷、图像细节
 
-![Info Tooltip](/img/tools/dev-tools/overlay-info-tooltip.png)
+![信息提示框](/img/tools/dev-tools/overlay-info-tooltip.png)
 
-#### Layout overlay
+#### 布局叠加层 {#layout-overlay}
 
-Visualizes UI structure with color-coded highlights:
+用不同颜色的高亮呈现 UI 结构：
 
-- **Margin**: Semi-transparent highlighting of margin space
-- **Padding**: Semi-transparent highlighting of padding
-- **Bounds**: Solid border around actual control boundaries
+- **Margin**：以半透明高亮标出外边距所占空间
+- **Padding**：以半透明高亮标出内边距
+- **Bounds**：沿控件实际边界画出实线边框
 
-![Margin Padding layout overlay](/img/tools/dev-tools/overlay-margin-padding.png)
+![外边距/内边距布局叠加层](/img/tools/dev-tools/overlay-margin-padding.png)
 
-#### Ruler overlay
+#### 标尺叠加层 {#ruler-overlay}
 
-Provides measurement references:
+提供度量参照：
 
-- Horizontal and vertical rulers along window edges
-- Guide-lines connecting content boundaries to rulers
+- 沿窗口边缘的水平和垂直标尺
+- 把内容边界连到标尺上的参考线
 
 ![Ruler](/img/tools/dev-tools/overlay-ruler.png)
 
 ## 另请参阅 {#see-also}
 
-- [Events tool](/tools/developer-tools/events-tool)
-- [Developer tools shortcuts](/tools/developer-tools/shortcuts)
+- [事件工具](/tools/developer-tools/events-tool)
+- [开发者工具快捷键](/tools/developer-tools/shortcuts)

@@ -17,10 +17,10 @@ Avalonia Parcel is a packaging tool for Avalonia applications. It provides a gra
 
 | 要求 | Version/Details |
 |------------|-----------------|
-| .NET Runtime | 6.0 or newer |
-| Windows | 10 or newer |
-| macOS | 13 or newer |
-| Linux | X11 and glibc 2.27 or musl 1.22.2 compatible distros |
+| .NET Runtime | 6.0 或更高 |
+| Windows | 10 或更高 |
+| macOS | 13 或更高 |
+| Linux | X11，且兼容 glibc 2.27 或 musl 1.22.2 的发行版 |
 
 ## Step 1: Install Avalonia Parcel
 
@@ -49,7 +49,7 @@ dotnet tool update --global AvaloniaUI.Parcel
 If you use a .NET SDK version earlier than 10, install the package for your platform.
 
 <details>
-<summary>Installation commands</summary>
+<summary>安装命令</summary>
 
 **Windows:**
 
@@ -74,7 +74,7 @@ dotnet tool install --global AvaloniaUI.Parcel.Linux
 Use the command for your platform to update Parcel.
 
 <details>
-<summary>Update commands</summary>
+<summary>更新命令</summary>
 
 **Windows:**
 
@@ -104,7 +104,7 @@ On macOS or Linux, the installer might not add the installation directory to the
 
 Add the tool directory to `PATH`. The default directory is usually `$HOME/.dotnet/tools`.
 
-For more information, see [Troubleshooting .NET tool usage issues](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found).
+更多信息请见[排查 .NET 工具使用问题](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found)。
 :::
 
 ## Step 2: Run the tool
@@ -139,7 +139,7 @@ For the CLI, use the `--license-key` option. Alternatively, set the `AVALONIA_TO
 
 - [Parcel command line reference](/tools/parcel/command-line-reference)
 - [Parcel configuration reference](/tools/parcel/configuration-reference)
-- [Model context protocol (MCP)](/tools/parcel/mcp)
+- [模型上下文协议（MCP）](/tools/parcel/mcp)
 - [Windows packaging](/tools/parcel/packaging-for-windows)
 - [macOS packaging](/tools/parcel/packaging-for-macos)
 - [Linux packaging](/tools/parcel/packaging-for-linux)

@@ -19,24 +19,24 @@ The Parcel MCP server lets AI assistants use Parcel packaging tools. Your assist
 Before you configure the MCP server, make sure that you have these items:
 
 1. **Parcel .NET tool installed.** Follow the [Setup guide](/tools/parcel/setup).
-2. **Valid Avalonia Plus license key.** You can get one from the [Avalonia portal](https://portal.avaloniaui.net/).
+2. **有效的 Avalonia Plus 许可证密钥。**可在 [Avalonia 门户](https://portal.avaloniaui.net/)获取。
 
-### Setting your license key
+### 设置许可证密钥 {#setting-your-license-key}
 
 The MCP server reads the license from the `AVALONIA_TOOLS_LICENSE_KEY` environment variable. Get your license key from the [Avalonia Portal](https://portal.avaloniaui.net/). Parcel MCP is a paid feature and is not included with the Community edition.
 
-Set the key in your shell profile so it persists across sessions:
+把密钥写进 shell 配置，这样跨会话也能一直生效：
 
 <Tabs>
 <TabItem value="macos-linux" label="macOS / Linux">
 
-Add this line to your shell profile (`~/.zshrc`, `~/.bashrc`, or equivalent):
+把这一行加进你的 shell 配置文件（`~/.zshrc`、`~/.bashrc` 或同类文件）：
 
 ```bash
 export AVALONIA_TOOLS_LICENSE_KEY="your-license-key"
 ```
 
-Then reload the profile or open a new terminal:
+然后重新加载配置，或者开一个新终端：
 
 ```bash
 source ~/.zshrc
@@ -45,13 +45,13 @@ source ~/.zshrc
 </TabItem>
 <TabItem value="windows-powershell" label="Windows (PowerShell)">
 
-Set a persistent environment variable for your user account:
+为你的用户账户设置一个持久的环境变量：
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable('AVALONIA_TOOLS_LICENSE_KEY', 'your-license-key', 'User')
 ```
 
-Restart any open terminals and editors to pick up the change.
+重启所有已打开的终端和编辑器，让改动生效。
 
 </TabItem>
 <TabItem value="windows-cmd" label="Windows (Command Prompt)">
@@ -60,12 +60,12 @@ Restart any open terminals and editors to pick up the change.
 setx AVALONIA_TOOLS_LICENSE_KEY "your-license-key"
 ```
 
-Restart any open terminals and editors to pick up the change.
+重启所有已打开的终端和编辑器，让改动生效。
 
 </TabItem>
 </Tabs>
 
-:::caution[Editors launched from GUI shortcuts]
+:::caution[从图形界面快捷方式启动的编辑器]
 If you start your editor from a desktop shortcut or application menu, it might not read environment variables from your shell profile. If the MCP server reports a missing license key, add an `env` block to the MCP configuration:
 
 ```json
@@ -76,7 +76,7 @@ If you start your editor from a desktop shortcut or application menu, it might n
 }
 ```
 
-See the editor-specific setup instructions below for where to place this block.
+这个块该放在哪儿，请见下文针对各编辑器的配置说明。
 :::
 
 :::note
@@ -87,7 +87,7 @@ Parcel MCP is only available with a full [Avalonia Plus](https://avaloniaui.net/
 
 The Parcel MCP server runs as a local process. Its command is `parcel mcp`. You do not need to run this command manually. After configuration, your editor starts the server automatically.
 
-Choose your editor below:
+在下面选择你用的编辑器：
 
 <Tabs groupId="editor">
 <TabItem value="vscode" label="VS Code">
@@ -148,8 +148,8 @@ JetBrains Rider 可通过 AI Assistant 插件和 GitHub Copilot 插件支持 MCP
 **方式 A：设置界面**
 
 1. Open **Settings** > **Tools** > **AI Assistant** > **MCP Servers**.
-2. Click **Add** and select **stdio** as the transport type.
-3. Set the command to `parcel` with argument `mcp`.
+2. 点击 **Add**，传输类型选 **stdio**。
+3. 把命令设为 `parcel`，参数设为 `mcp`。
 4. 服务器名称设为 `parcel`。
 
 **方式 B：手动配置**
@@ -202,7 +202,7 @@ claude mcp list
 </TabItem>
 <TabItem value="claude-desktop" label="Claude Desktop">
 
-1. Open **Settings** > **Developer** and click **Edit Config**.
+1. 打开 **Settings** > **Developer**，点击 **Edit Config**。
 2. Add the Parcel MCP server to `claude_desktop_config.json`:
 
 ```json
@@ -219,10 +219,10 @@ claude mcp list
 }
 ```
 
-3. Save the file and restart Claude Desktop.
+3. 保存文件并重启 Claude Desktop。
 
 :::note
-Claude Desktop does not inherit environment variables from your shell profile, so the license key must be set directly in the configuration as shown above.
+Claude Desktop 不会从你的 shell 配置里继承环境变量，所以许可证密钥必须像上面那样直接写进配置。
 :::
 
 </TabItem>
@@ -232,7 +232,7 @@ Claude Desktop does not inherit environment variables from your shell profile, s
 
 After you configure the MCP server, test the connection:
 
-1. **Check the server is running.** Open your editor's MCP panel or status indicator and confirm `parcel` appears as a connected server. In VS Code, run **MCP: List Servers** from the command palette.
+1. **确认服务器正在运行。**打开编辑器的 MCP 面板或状态指示器，确认 `parcel` 以已连接服务器的身份出现。在 VS Code 中，可从命令面板运行 **MCP: List Servers**。
 2. **用一句提示词试一下。**问问你的 AI 助手：
 
 ```text
@@ -247,14 +247,14 @@ If the assistant returns a list of capabilities, the connection works.
 
 The `parcel` command must be on the system `PATH`. For a global .NET tool installation, check for `$HOME/.dotnet/tools` on macOS and Linux. On Windows, check for `%USERPROFILE%\.dotnet\tools`. If the applicable directory is not in `PATH`, add it.
 
-For more information, see [Troubleshooting .NET tool usage issues](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found).
+更多信息请见[排查 .NET 工具使用问题](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found)。
 
-### License key not detected
+### 检测不到许可证密钥 {#license-key-not-detected}
 
-If the MCP server starts but reports a missing or invalid license key:
+若 MCP 服务器起来了却报告许可证密钥缺失或无效：
 
-- **Confirm the variable is set** by running `echo $AVALONIA_TOOLS_LICENSE_KEY` (macOS/Linux) or `echo %AVALONIA_TOOLS_LICENSE_KEY%` (Windows) in the same terminal where you launch your editor.
-- **If your editor is launched from a GUI shortcut**, it may not inherit shell environment variables. Add an `env` block to your MCP configuration as shown in the [license key setup](#setting-your-license-key) section above.
+- 在你启动编辑器的那个终端里运行 `echo $AVALONIA_TOOLS_LICENSE_KEY`（macOS/Linux）或 `echo %AVALONIA_TOOLS_LICENSE_KEY%`（Windows），**确认变量确实设上了**。
+- **若你的编辑器是从图形界面快捷方式启动的**，它可能不会继承 shell 环境变量。请按上文[设置许可证密钥](#setting-your-license-key)一节所示，在 MCP 配置中加一个 `env` 块。
 
 ### 编辑器里看不到 MCP 服务器 {#mcp-server-does-not-appear-in-the-editor}
 

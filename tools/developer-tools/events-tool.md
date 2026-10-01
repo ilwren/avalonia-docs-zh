@@ -1,53 +1,53 @@
 ---
 id: events-tool
-title: Events tool
+title: 事件工具
 doc-type: reference
 ---
 
-The Events Tool provides real-time monitoring and debugging capabilities for Avalonia's routed event system. Routed events in Avalonia follow a sophisticated event handling mechanism where events can traverse up or down the visual tree. This tool helps developers track event propagation, identify event handlers, and debug event-related issues in their applications.
+事件工具为 Avalonia 的路由事件系统提供实时监视与调试能力。Avalonia 中的路由事件走的是一套颇为精巧的处理机制，事件可以沿视觉树向上或向下传递。借助这个工具，开发者可以追踪事件的传播路径、认出事件处理程序，排查应用中与事件相关的问题。
 
-Visit [Routed Events](https://docs.avaloniaui.net/docs/concepts/input/routed-events) Avalonia documentation for more fundamental information.
+更多基础知识请见 Avalonia 文档中的[路由事件](https://docs.avaloniaui.net/docs/concepts/input/routed-events)。
 
-![List of Raised Events](/img/tools/dev-tools/events-raised-events-list.png)
+![已触发事件列表](/img/tools/dev-tools/events-raised-events-list.png)
 
-## Enabling event listeners
+## 启用事件侦听 {#enabling-event-listeners}
 
-By default, `Button.Click`, `KeyDown`, `KeyUp`, `TextInput`, `PointerReleased`, and `PointerPressed` events are enabled. These defaults can be controlled by the `Default Routed Events` setting; see [Developer Tools Settings](/tools/developer-tools/settings) page.
+默认启用的事件有 `Button.Click`、`KeyDown`、`KeyUp`、`TextInput`、`PointerReleased` 和 `PointerPressed`。这组默认值可通过 `Default Routed Events` 设置项调整，详见[开发者工具设置](/tools/developer-tools/settings)页。
 
-Use the **Event Listeners** flyout button to enable or disable any particular routed event or events group.
+用 **Event Listeners** 浮出按钮可以启用或禁用某个路由事件或某组事件。
 
-![Listeners Filter Flyout](/img/tools/dev-tools/events-listeners-filter.png)
+![侦听器筛选浮出菜单](/img/tools/dev-tools/events-listeners-filter.png)
 
-This list is gathered from statically registered routed events at the time when the tab is first opened.
-If an event isn't displayed in this list, it's likely because it was never referenced in the application.
+这份列表是在该选项卡首次打开时，从静态注册的路由事件中收集而来的。
+若某个事件不在列表里，多半是因为应用里从未引用过它。
 
-## Navigating list of event handlers
+## 浏览事件处理程序列表 {#navigating-list-of-event-handlers}
 
-In Avalonia, routed events have three possible routing strategies:
-- `Tunnel` strategy routes from the root (typically a window) to the source element (typically clicked or focused element).
-- `Bubble` strategy is the opposite and routes from the source back to the window.
-- `Direct` strategy only occurs when an event is raised directly on the source, without routing to any other element.
+Avalonia 的路由事件有三种路由策略：
+- `Tunnel` 策略从根部（通常是窗口）向源元素（通常是被点击或获得焦点的元素）传递。
+- `Bubble` 策略正好相反，从源元素一路传回窗口。
+- `Direct` 策略只在事件直接在源元素上触发时发生，不会路由到任何其他元素。
 
-`Bubble` is the default strategy used in XAML and C# event handlers. The `Tunnel` strategy is often called `Preview` as it allows handling of events before the standard `Bubble`.
+`Bubble` 是 XAML 和 C# 事件处理程序中默认采用的策略。`Tunnel` 策略常被称作 `Preview`，因为它让你赶在标准的 `Bubble` 之前先行处理事件。
 
-While a single raised event can go through multiple element handlers, only one will actually mark the event as handled, stopping the route.
+一次触发的事件可能经过多个元素的处理程序，但真正把事件标记为已处理、从而中断路由的只有一个。
 
-In `Developer Tools`, all three strategies are color-coded.
-The element that has handled the event is visually distinct from the others, indicating the position where the route has stopped.
+在 `Developer Tools` 中，三种策略各有配色。
+处理了该事件的那个元素在视觉上与众不同，标明路由就此止步。
 
-`Developer Tools` will still show the following element handlers, which could receive already-handled event arguments.
+`Developer Tools` 仍会把后面的元素处理程序列出来——它们本可能收到已被处理过的事件参数。
 
-![Raised Event Handlers Chain](/img/tools/dev-tools/events-chain-list.png)
+![已触发事件的处理程序链](/img/tools/dev-tools/events-chain-list.png)
 
-## Inspecting event handler control
+## 检视处理事件的控件 {#inspecting-event-handler-control}
 
-Each element handler is clickable, redirecting the user to the corresponding node in the elements tree.
+每个元素处理程序都可点击，点击后会跳到元素树中对应的节点。
 
-Note: If nothing happens when clicking on an element, it was likely already removed from the elements tree.
+注意：若点击某个元素后毫无反应，多半是它已经从元素树中移除了。
 
-![Inspect Handler](/img/tools/dev-tools/events-inspect-handler.gif)
+![检视处理程序](/img/tools/dev-tools/events-inspect-handler.gif)
 
 ## 另请参阅 {#see-also}
 
 - [元素工具](/tools/developer-tools/elements-tool)
-- [Breakpoints tool](/tools/developer-tools/breakpoints-tool)
+- [断点工具](/tools/developer-tools/breakpoints-tool)

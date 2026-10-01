@@ -37,5 +37,5 @@ Alternatively, when an app is already connected, the settings page is available 
 
 ## 另请参阅 {#see-also}
 
-- [Developer tools options](/tools/developer-tools/options)
-- [Developer tools shortcuts](/tools/developer-tools/shortcuts)
+- [开发者工具选项](/tools/developer-tools/options)
+- [开发者工具快捷键](/tools/developer-tools/shortcuts)

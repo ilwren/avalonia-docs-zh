@@ -3,7 +3,7 @@ id: mcp
 title: DevTools MCP
 sidebar_label: DevTools MCP
 doc-type: how-to
-description: "Set up the DevTools MCP server to let AI assistants inspect, debug, and modify your running Avalonia application."
+description: "配置 DevTools MCP 服务器，让 AI 助手能检视、调试并修改你正在运行的 Avalonia 应用。"
 keywords:
   - mcp
   - model context protocol
@@ -24,9 +24,9 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## What is DevTools MCP?
+## DevTools MCP 是什么？ {#what-is-devtools-mcp}
 
-The DevTools MCP server lets AI assistants connect to a running Avalonia application and interact with it directly. Your assistant can inspect the visual tree, search for elements by type or name, read and modify properties, capture screenshots, and send input events. It can also attach to the XAML previewer, making it a useful companion for iterating on layouts without leaving your editor.
+DevTools MCP 服务器让 AI 助手连上正在运行的 Avalonia 应用并直接与之交互。助手可以检视视觉树，按类型或名称查找元素，读取和修改属性，截图，还能发送输入事件。它也能挂接到 XAML 预览器，让你不必离开编辑器就能反复打磨布局。
 
 关于 MCP 的总体介绍，请见 [AI 工具](/tools/ai-tools/)。
 
@@ -34,29 +34,29 @@ The DevTools MCP server lets AI assistants connect to a running Avalonia applica
 
 配置 MCP 服务器前，请先确认你具备：
 
-1. **DevTools .NET tool** installed. Follow the [Getting Started](/tools/developer-tools/installation) guide.
-2. **Valid Avalonia Plus license key.** You can get one from the [Avalonia portal](https://portal.avaloniaui.net/).
+1. 已安装 **DevTools .NET 工具**。请按[快速上手](/tools/developer-tools/installation)指南操作。
+2. **有效的 Avalonia Plus 许可证密钥。**可在 [Avalonia 门户](https://portal.avaloniaui.net/)获取。
 
-### Setting your license key
+### 设置许可证密钥 {#setting-your-license-key}
 
-The MCP server reads your license from the `AVALONIA_TOOLS_LICENSE_KEY` environment variable. You can find your license key in the [Avalonia customer portal](https://portal.avaloniaui.net/). MCP is a paid feature and is not included with the Community license.
+MCP 服务器从 `AVALONIA_TOOLS_LICENSE_KEY` 环境变量读取你的许可证。许可证密钥可在 [Avalonia 客户门户](https://portal.avaloniaui.net/)中找到。MCP 属于付费功能，Community 许可证不含此项。
 
 :::note
-The `AVALONIA_TOOLS_LICENSE_KEY` variable is used from Avalonia 12.0.0. If you are on Avalonia 11.x.x or earlier versions, please use `ACCELERATE_LICENSE_KEY` instead.
+`AVALONIA_TOOLS_LICENSE_KEY` 变量自 Avalonia 12.0.0 起启用。若你用的是 Avalonia 11.x.x 或更早版本，请改用 `ACCELERATE_LICENSE_KEY`。
 :::
 
-Set the key in your shell profile so it persists across sessions:
+把密钥写进 shell 配置，这样跨会话也能一直生效：
 
 <Tabs>
 <TabItem value="macos-linux" label="macOS / Linux">
 
-Add this line to your shell profile (`~/.zshrc`, `~/.bashrc`, or equivalent):
+把这一行加进你的 shell 配置文件（`~/.zshrc`、`~/.bashrc` 或同类文件）：
 
 ```bash
 export AVALONIA_TOOLS_LICENSE_KEY="your-license-key"
 ```
 
-Then reload the profile or open a new terminal:
+然后重新加载配置，或者开一个新终端：
 
 ```bash
 source ~/.zshrc
@@ -65,13 +65,13 @@ source ~/.zshrc
 </TabItem>
 <TabItem value="windows-powershell" label="Windows (PowerShell)">
 
-Set a persistent environment variable for your user account:
+为你的用户账户设置一个持久的环境变量：
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable('AVALONIA_TOOLS_LICENSE_KEY', 'your-license-key', 'User')
 ```
 
-Restart any open terminals and editors to pick up the change.
+重启所有已打开的终端和编辑器，让改动生效。
 
 </TabItem>
 <TabItem value="windows-cmd" label="Windows (Command Prompt)">
@@ -80,13 +80,13 @@ Restart any open terminals and editors to pick up the change.
 setx AVALONIA_TOOLS_LICENSE_KEY "your-license-key"
 ```
 
-Restart any open terminals and editors to pick up the change.
+重启所有已打开的终端和编辑器，让改动生效。
 
 </TabItem>
 </Tabs>
 
-:::caution[Editors launched from GUI shortcuts]
-If you launch your editor from a desktop shortcut or application menu (rather than from a terminal), it may not inherit environment variables from your shell profile. If the MCP server reports a missing license key, you can set it directly in the MCP configuration by adding an `env` block:
+:::caution[从图形界面快捷方式启动的编辑器]
+如果你的编辑器是从桌面快捷方式或应用菜单启动的（而非从终端启动），它可能不会继承 shell 配置里的环境变量。若 MCP 服务器报告缺少许可证密钥，可以在 MCP 配置中加一个 `env` 块直接设置：
 
 ```json
 {
@@ -96,30 +96,30 @@ If you launch your editor from a desktop shortcut or application menu (rather th
 }
 ```
 
-See the editor-specific setup instructions below for where to place this block.
+这个块该放在哪儿，请见下文针对各编辑器的配置说明。
 :::
 
 :::note
-DevTools MCP is only available with an Avalonia Plus license or higher.
+DevTools MCP 仅对 Avalonia Plus 及以上许可证开放。
 :::
 
-## Prepare your application
+## 准备你的应用 {#prepare-your-application}
 
-The MCP server communicates with your Avalonia application through the `AvaloniaUI.DiagnosticsSupport` package. Without this package and the required startup call, the MCP server cannot discover or attach to your running app.
+MCP 服务器通过 `AvaloniaUI.DiagnosticsSupport` 包与你的 Avalonia 应用通信。没有这个包和必需的启动调用，MCP 服务器既发现不了也挂接不上你运行中的应用。
 
-:::caution[Required for MCP connectivity]
-This step is required for `attach-to-app` to work. If you skip it, the MCP server will repeatedly fail to connect with no clear error. The `attach-to-file` tool (XAML previewer) does not require a running application, but still requires the package to be installed.
+:::caution[MCP 连通性的必备条件]
+这一步是 `attach-to-app` 能跑起来的前提。省了它，MCP 服务器会反复连接失败，还给不出清晰的错误。`attach-to-file` 工具（XAML 预览器）虽然不需要应用在运行，但同样要求装上这个包。
 :::
 
-**1. Add the diagnostics support package to your project:**
+**1. 为项目添加诊断支持包：**
 
 ```bash
 dotnet add package AvaloniaUI.DiagnosticsSupport
 ```
 
-**2. Enable developer tools in your application startup.**
+**2. 在应用启动时启用开发者工具。**
 
-Choose one of the following approaches:
+下面两种做法任选其一：
 
 <Tabs>
 <TabItem value="appbuilder" label="App builder (Program.cs)">
@@ -148,26 +148,26 @@ public override void Initialize()
 </TabItem>
 </Tabs>
 
-For the full installation walkthrough, including platform-specific requirements and activation, see [Installing the Avalonia Plus developer tools](/tools/developer-tools/installation).
+完整的安装流程（含各平台的具体要求和激活步骤）请见[安装 Avalonia Plus 开发者工具](/tools/developer-tools/installation)。
 
 ## 配置 MCP 服务器 {#setting-up-the-mcp-server}
 
-DevTools provides an MCP server that runs as a local process. The underlying command is `avdt mcp`, but you do not need to run it manually. Your editor starts it automatically once configured.
+DevTools 提供的 MCP 服务器以本地进程运行。底层命令是 `avdt mcp`，但你不必手动去跑它——配置好之后编辑器会自动把它拉起来。
 
 :::note
-The `AVALONIA_TOOLS_LICENSE_KEY` variable is used from Avalonia 12.0.0. If you are on Avalonia 11.x.x or earlier versions, please use `ACCELERATE_LICENSE_KEY` instead.
+`AVALONIA_TOOLS_LICENSE_KEY` 变量自 Avalonia 12.0.0 起启用。若你用的是 Avalonia 11.x.x 或更早版本，请改用 `ACCELERATE_LICENSE_KEY`。
 :::
 
-Choose your editor below:
+在下面选择你用的编辑器：
 
 <Tabs groupId="editor">
 <TabItem value="vscode" label="VS Code">
 
-**Option A: One-click install**
+**方式 A：一键安装**
 
-[Install DevTools MCP for VS Code](https://vscode.dev/redirect/mcp/install?name=avalonia_devtools&config=%7b%22type%22%3a%22stdio%22%2c%22command%22%3a%22avdt%22%2c%22args%22%3a%5b%22mcp%22%5d%7d)
+[为 VS Code 安装 DevTools MCP](https://vscode.dev/redirect/mcp/install?name=avalonia_devtools&config=%7b%22type%22%3a%22stdio%22%2c%22command%22%3a%22avdt%22%2c%22args%22%3a%5b%22mcp%22%5d%7d)
 
-**Option B: Command palette**
+**方式 B：命令面板**
 
 1. 打开命令面板（`Ctrl+Shift+P` / `Cmd+Shift+P`）。
 2. Run **MCP: Add Server**.
@@ -176,7 +176,7 @@ Choose your editor below:
 5. 服务器名称设为 `avalonia_devtools`。
 6. 选择把该服务器装到当前工作区还是全局。
 
-**Option C: Manual configuration**
+**方式 C：手动配置**
 
 把下列内容加进工作区根目录的 `.vscode/mcp.json`：
 
@@ -223,8 +223,8 @@ JetBrains Rider 可通过 AI Assistant 插件和 GitHub Copilot 插件支持 MCP
 **方式 A：设置界面**
 
 1. Open **Settings** > **Tools** > **AI Assistant** > **MCP Servers**.
-2. Click **Add** and select **stdio** as the transport type.
-3. Set the command to `avdt` with argument `mcp`.
+2. 点击 **Add**，传输类型选 **stdio**。
+3. 把命令设为 `avdt`，参数设为 `mcp`。
 4. 服务器名称设为 `avalonia_devtools`。
 
 **方式 B：手动配置**
@@ -246,9 +246,9 @@ JetBrains Rider 可通过 AI Assistant 插件和 GitHub Copilot 插件支持 MCP
 </TabItem>
 <TabItem value="cursor" label="Cursor">
 
-**Option A: One-click install**
+**方式 A：一键安装**
 
-[Install DevTools MCP for Cursor](https://cursor.com/en/install-mcp?name=avalonia_devtools&config=eyJ0eXBlIjoic3RkaW8iLCJjb21tYW5kIjoiYXZkdCIsImFyZ3MiOlsibWNwIl19)
+[为 Cursor 安装 DevTools MCP](https://cursor.com/en/install-mcp?name=avalonia_devtools&config=eyJ0eXBlIjoic3RkaW8iLCJjb21tYW5kIjoiYXZkdCIsImFyZ3MiOlsibWNwIl19)
 
 **方式 B：手动配置**
 
@@ -283,8 +283,8 @@ claude mcp list
 </TabItem>
 <TabItem value="claude-desktop" label="Claude Desktop">
 
-1. Open **Settings** > **Developer** and click **Edit Config**.
-2. Add the DevTools MCP server to `claude_desktop_config.json`:
+1. 打开 **Settings** > **Developer**，点击 **Edit Config**。
+2. 把 DevTools MCP 服务器加进 `claude_desktop_config.json`：
 
 ```json
 {
@@ -300,10 +300,10 @@ claude mcp list
 }
 ```
 
-3. Save the file and restart Claude Desktop.
+3. 保存文件并重启 Claude Desktop。
 
 :::note
-Claude Desktop does not inherit environment variables from your shell profile, so the license key must be set directly in the configuration as shown above.
+Claude Desktop 不会从你的 shell 配置里继承环境变量，所以许可证密钥必须像上面那样直接写进配置。
 :::
 
 </TabItem>
@@ -313,30 +313,30 @@ Claude Desktop does not inherit environment variables from your shell profile, s
 
 配置好 MCP 服务器后，按下面的步骤确认它确实在工作：
 
-1. **Check the server is running.** Open your editor's MCP panel or status indicator and confirm `avalonia_devtools` appears as a connected server. In VS Code, run **MCP: List Servers** from the command palette.
-2. **Start your Avalonia application** (or open a XAML file if using the previewer).
+1. **确认服务器正在运行。**打开编辑器的 MCP 面板或状态指示器，确认 `avalonia_devtools` 以已连接服务器的身份出现。在 VS Code 中，可从命令面板运行 **MCP: List Servers**。
+2. **启动你的 Avalonia 应用**（若用的是预览器，则打开一个 XAML 文件）。
 3. **用一句提示词试一下。**问问你的 AI 助手：
 
 ```text
 "Connect to my running Avalonia app and show me the visual tree."
 ```
 
-If the assistant returns the tree structure, setup is complete.
+若助手返回了树形结构，就说明配置完成了。
 
 ## 排查问题 {#troubleshooting}
 
-### "avdt" command not found
+### 找不到 “avdt” 命令 {#avdt-command-not-found}
 
-The `avdt` command must be on your system PATH. If you installed it as a global .NET tool, check if `$HOME/.dotnet/tools` (macOS/Linux) or `%USERPROFILE%\.dotnet\tools` (Windows) is in your PATH. If not, add the directory to your PATH.
+`avdt` 命令必须在系统 PATH 中。若你是作为全局 .NET 工具安装的，请检查 `$HOME/.dotnet/tools`（macOS/Linux）或 `%USERPROFILE%\.dotnet\tools`（Windows）是否在 PATH 里；若不在，把该目录加进去。
 
-For more information, see [Troubleshooting .NET tool usage issues](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found).
+更多信息请见[排查 .NET 工具使用问题](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found)。
 
-### License key not detected
+### 检测不到许可证密钥 {#license-key-not-detected}
 
-If the MCP server starts but reports a missing or invalid license key:
+若 MCP 服务器起来了却报告许可证密钥缺失或无效：
 
-- **Confirm the variable is set** by running `echo $AVALONIA_TOOLS_LICENSE_KEY` (macOS/Linux) or `echo %AVALONIA_TOOLS_LICENSE_KEY%` (Windows) in the same terminal where you launch your editor.
-- **If your editor is launched from a GUI shortcut**, it may not inherit shell environment variables. Add an `env` block to your MCP configuration as shown in the [license key setup](#setting-your-license-key) section above.
+- 在你启动编辑器的那个终端里运行 `echo $AVALONIA_TOOLS_LICENSE_KEY`（macOS/Linux）或 `echo %AVALONIA_TOOLS_LICENSE_KEY%`（Windows），**确认变量确实设上了**。
+- **若你的编辑器是从图形界面快捷方式启动的**，它可能不会继承 shell 环境变量。请按上文[设置许可证密钥](#setting-your-license-key)一节所示，在 MCP 配置中加一个 `env` 块。
 
 ### 编辑器里看不到 MCP 服务器 {#mcp-server-does-not-appear-in-the-editor}
 
@@ -344,26 +344,26 @@ If the MCP server starts but reports a missing or invalid license key:
 - **核对配置文件的位置。**每种编辑器都有各自约定的配置路径，请参照上文中你所用编辑器的配置说明。
 - **检查 JSON 是否合法。**配置文件里的语法错误（漏逗号、多余的尾逗号、括号不配对）会悄无声息地让服务器加载不起来。
 
-### Server connects but cannot find the application
+### 服务器连上了，却找不到应用 {#server-connects-but-cannot-find-the-application}
 
-- **Verify your app has the diagnostics package installed.** The `AvaloniaUI.DiagnosticsSupport` NuGet package must be added to your project, and you must call `.WithDeveloperTools()` on your app builder or `this.AttachDeveloperTools()` in your `Application` class. See [Prepare your application](#prepare-your-application) above.
-- **Ensure your Avalonia application is running** before asking the assistant to connect.
-- If multiple Avalonia apps are running, the assistant will list them and ask which one to attach to.
-- For XAML previewing, use `attach-to-file` instead of `attach-to-app`. This connects to the XAML previewer and does not require a running application.
+- **确认你的应用装了诊断包。**项目中必须添加 `AvaloniaUI.DiagnosticsSupport` NuGet 包，并在 app builder 上调用 `.WithDeveloperTools()`，或在 `Application` 类中调用 `this.AttachDeveloperTools()`。请见上文[准备你的应用](#prepare-your-application)。
+- 在让助手连接之前，**先确保你的 Avalonia 应用已经在运行**。
+- 若同时跑着多个 Avalonia 应用，助手会把它们列出来，问你要挂接哪一个。
+- 预览 XAML 请用 `attach-to-file` 而非 `attach-to-app`。它连的是 XAML 预览器，不需要应用处于运行状态。
 
-### Cannot attach to a running application
+### 挂接不上正在运行的应用 {#cannot-attach-to-a-running-application}
 
-This is the most common issue when first setting up the MCP server. The `attach-to-app` tool requires all of the following:
+这是初次配置 MCP 服务器时最常见的问题。`attach-to-app` 工具要求下列条件全部满足：
 
-1. The `AvaloniaUI.DiagnosticsSupport` package is installed in your project.
-2. `.WithDeveloperTools()` or `.AttachDeveloperTools()` is called at app startup.
-3. The application is running and has fully started (past the splash screen or initialization phase).
+1. 项目中已安装 `AvaloniaUI.DiagnosticsSupport` 包。
+2. 应用启动时调用了 `.WithDeveloperTools()` 或 `.AttachDeveloperTools()`。
+3. 应用正在运行并已完全启动（过了启动画面或初始化阶段）。
 
-If any of these are missing, the MCP server will fail to find your application. Pressing F12 in your app has no effect on MCP connectivity; that shortcut opens the standalone DevTools window, not the MCP connection.
+只要有一条没满足，MCP 服务器就找不到你的应用。在应用里按 F12 对 MCP 连接没有任何帮助——那个快捷键打开的是独立的 DevTools 窗口，不是 MCP 连接。
 
 ### Updating DevTools
 
-If tools behave unexpectedly, ensure you are running the latest version:
+若工具表现得不对劲，请确认你用的是最新版本：
 
 ```bash
 dotnet tool update -g avdt
@@ -375,42 +375,42 @@ dotnet tool update -g avdt
 
 | 工具 | 说明 |
 |------|-------------|
-| `attach-to-app` | Connects to a running Avalonia app. If multiple apps are running, lists them for selection. |
-| `attach-to-file` | Connects to the XAML previewer for a specified file. Recommended over `attach-to-app` for previewing XAML layouts. |
-| `detach` | Disconnects from the current app or previewer session. |
+| `attach-to-app` | 连上正在运行的 Avalonia 应用。若同时跑着多个，会列出来让你选。 |
+| `attach-to-file` | 为指定文件连上 XAML 预览器。预览 XAML 布局时推荐用它，而不是 `attach-to-app`。 |
+| `detach` | 断开当前的应用或预览器会话。 |
 
 ### Inspection
 
 | 工具 | 说明 |
 |------|-------------|
-| `tree` | Returns child elements of a node. Pass a null `nodeId` to get the root elements. |
-| `ancestors` | Returns the parent chain from a node up to the root. |
-| `search` | Finds elements by type name or `x:Name`. |
-| `screenshot` | Captures a PNG screenshot of a specific UI element. |
+| `tree` | 返回某个节点的子元素。传入 null 的 `nodeId` 可取得根元素。 |
+| `ancestors` | 返回从某个节点一路向上直到根的父级链。 |
+| `search` | 按类型名或 `x:Name` 查找元素。 |
+| `screenshot` | 把指定 UI 元素截成 PNG 图片。 |
 
-### Properties and styles
-
-| 工具 | 说明 |
-|------|-------------|
-| `props` | Returns all property values for a node. |
-| `set-prop` | Sets a property value on a node. Use `null` or `unset` to clear a value. |
-| `styles` | Returns applied styles and their setters for a node. |
-| `pseudo-class` | Activates a pseudo-class on a node (for example, `:pointerover`). Omit the pseudo-class name to list available options. |
-
-### Resources and assets
+### 属性与样式 {#properties-and-styles}
 
 | 工具 | 说明 |
 |------|-------------|
-| `resources` | Returns resources defined in the application. Optionally scoped to a specific node. |
-| `assets` | Lists embedded assets (images, fonts). Returns URLs for use with `open-asset`. |
-| `open-asset` | Downloads an embedded asset by its URL (as returned by the `assets` tool). |
+| `props` | 返回某个节点的所有属性值。 |
+| `set-prop` | 设置节点上某个属性的值。用 `null` 或 `unset` 可清除取值。 |
+| `styles` | 返回作用于某个节点的样式及其 setter。 |
+| `pseudo-class` | 在节点上激活某个伪类（比如 `:pointerover`）。不写伪类名则会列出可选项。 |
+
+### 资源与资产 {#resources-and-assets}
+
+| 工具 | 说明 |
+|------|-------------|
+| `resources` | 返回应用中定义的资源，也可限定在某个节点的范围内。 |
+| `assets` | 列出嵌入的资产（图片、字体），返回可配合 `open-asset` 使用的 URL。 |
+| `open-asset` | 按 URL 下载嵌入的资产（URL 由 `assets` 工具返回）。 |
 
 ### Interaction
 
 | 工具 | 说明 |
 |------|-------------|
-| `input` | Sends an input event (click, key press, etc.) to a UI element. |
-| `action` | Performs a higher-level action on a UI element. |
+| `input` | 向某个 UI 元素发送输入事件（点击、按键等）。 |
+| `action` | 在某个 UI 元素上执行更高层级的操作。 |
 
 ## 用法示例 {#usage-examples}
 
@@ -422,33 +422,33 @@ dotnet tool update -g avdt
 "Connect to my running app and show me the visual tree structure."
 ```
 
-**Finding elements:**
+**查找元素：**
 
 ```text
 "Find all Button elements in my application."
 ```
 
-**Debugging styles:**
+**调试样式：**
 
 ```text
 "What styles are applied to the MainWindow?"
 ```
 
-**Taking screenshots:**
+**截图：**
 
 ```text
 "Take a screenshot of the login panel."
 ```
 
-**Modifying properties at runtime:**
+**在运行时修改属性：**
 
 ```text
 "Set the Background of the sidebar panel to #F0F0F0."
 ```
 
-**Iterating on UI design with screenshots:**
+**借助截图打磨界面设计：**
 
-The following prompt demonstrates a complete design iteration workflow. The AI assistant writes XAML, previews it with `attach-to-file`, takes screenshots, and keeps refining until the result matches the target design:
+下面这段提示词演示了一套完整的设计迭代流程。AI 助手写 XAML，用 `attach-to-file` 预览，截图，再不断改进，直到结果贴合目标设计：
 
 ```text
 "Create an Avalonia application and recreate the attached UI. You can write XAML
@@ -460,14 +460,14 @@ enable MCP. Only use the attach-to-file tool. Don't call detach. You don't need 
 rebuild the project on change."
 ```
 
-This prompt works well because it:
+这段提示词之所以好使，是因为它：
 
-- Tells the assistant to use `attach-to-file` (which connects to the XAML previewer without needing to rebuild).
-- Includes the app instrumentation instructions (`DiagnosticsSupport` + `.WithDeveloperTools()`) directly in the prompt, so the assistant sets up the project correctly from the start.
-- Creates a feedback loop where the assistant keeps iterating until the design matches.
+- 明确让助手用 `attach-to-file`（它连的是 XAML 预览器，不必重新构建）。
+- 把应用的接入步骤（`DiagnosticsSupport` + `.WithDeveloperTools()`）直接写进了提示词，助手一上来就能把项目配置对。
+- 构成了一个反馈闭环，助手会一轮轮迭代直到设计吻合。
 
 ## 另请参阅 {#see-also}
 
 - [AI 工具概述](/tools/ai-tools/)
-- [DevTools installation](/tools/developer-tools/installation)
+- [安装 DevTools](/tools/developer-tools/installation)
 - [Parcel MCP](/tools/parcel/mcp)

@@ -1,30 +1,30 @@
 ---
 id: logs-tool
-title: Logs tool
-description: View and filter Avalonia log messages in Developer Tools, integrate with Microsoft.Extensions.Logging, and create custom log sources such as Serilog sinks.
+title: 日志工具
+description: 在开发者工具中查看和筛选 Avalonia 日志消息，与 Microsoft.Extensions.Logging 集成，并创建 Serilog sink 这样的自定义日志源。
 doc-type: reference
 ---
 
-## Viewing Avalonia logs in the tool
+## 在工具中查看 Avalonia 日志 {#viewing-avalonia-logs-in-the-tool}
 
-By default `Avalonia` Warnings and Errors are automatically recorded by `Developer Tools`.
+`Developer Tools` 默认会自动记录 `Avalonia` 的警告和错误。
 
-Main features include:
+主要功能包括：
 
-1. Combined message in the data table.
-2. Filtering by verbosity, message and parameters.
-3. Display of each arguments independently.
-4. If log entry `Source` is an visual element attached to the elements tree, it can be clicked to navigate to this element inside of `Developer Tools`
-5. Integration with third party loggers.
+1. 在数据表中合并显示消息。
+2. 按详尽级别、消息和参数筛选。
+3. 逐个单独展示各个参数。
+4. 若日志条目的 `Source` 是挂在元素树上的视觉元素，点击它即可跳到 `Developer Tools` 中对应的元素
+5. 与第三方日志库集成。
 
-![Logs Tool with Avalonia warnings](/img/tools/dev-tools/logs-avalonia-list.png)
+![显示 Avalonia 警告的日志工具](/img/tools/dev-tools/logs-avalonia-list.png)
 
-## Enabling Microsoft.Extensions.Logging integration
+## 启用 Microsoft.Extensions.Logging 集成 {#enabling-microsoftextensionslogging-integration}
 
-By default, only `Avalonia` logs are redirected to the `Developer Tools` process.
-`Diagnostics Support` library includes built-in integration with Microsoft logging abstractions which can be easily enabled.
+默认只有 `Avalonia` 的日志会被转发到 `Developer Tools` 进程。
+`Diagnostics Support` 库内置了与 Microsoft 日志抽象的集成，开启起来很容易。
 
-To do so, `LoggerFactory` needs to be created as normally. Returned object can be passed to `DevToolsLoggerCollector.WithMicrosoftLogger(ILoggerFactory)` method.
+照常创建 `LoggerFactory` 即可，然后把返回的对象传给 `DevToolsLoggerCollector.WithMicrosoftLogger(ILoggerFactory)` 方法。
 
 ```csharp
 public override void Initialize()
@@ -44,17 +44,17 @@ public override void Initialize()
 }
 ```
 
-For MS Dependency Injection solutions, `ILoggerFactory` interfaces can be stored and retrieved from the `ServiceCollection`.
+若用的是 MS 依赖注入方案，可以把 `ILoggerFactory` 接口存进 `ServiceCollection` 并从中取用。
 
-You can find more details about `DeveloperToolsOptions` on [Reference to DeveloperToolsOptions](/tools/developer-tools/options) page.
+关于 `DeveloperToolsOptions` 的更多细节，请见 [DeveloperToolsOptions 参考](/tools/developer-tools/options)页。
 
-## Attaching custom log source
+## 挂接自定义日志源 {#attaching-custom-log-source}
 
-![Logs Tool with custom Serilog events](/img/tools/dev-tools/logs-custom-serilog.png)
+![显示自定义 Serilog 事件的日志工具](/img/tools/dev-tools/logs-custom-serilog.png)
 
-Let's create a `Serilog` sink as an example, that is configured to redirect logs into `Developer Tools`.
+下面以 `Serilog` sink 为例，把它配置成将日志转发进 `Developer Tools`。
 
-According to `Serilog` [Developing a sink](https://github.com/serilog/serilog/wiki/Developing-a-sink) documentation it's necessary to implement a simple `ILogEventSink` interface. Together with `ILoggerObservable`, which is necessary to connect it with `Developer Tools`:
+按 `Serilog` 的[开发 sink](https://github.com/serilog/serilog/wiki/Developing-a-sink)文档所述，需要实现一个简单的 `ILogEventSink` 接口，再加上把它与 `Developer Tools` 连起来所必需的 `ILoggerObservable`：
 
 ```csharp
 public class DevToolsSerilogSink(string logArea = "Serilog") : ILogEventSink, ILoggerObservable
@@ -62,7 +62,7 @@ public class DevToolsSerilogSink(string logArea = "Serilog") : ILogEventSink, IL
 }
 ```
 
-Start with implementing `ILoggerObservable.Subscribe` by recording a list of observers. `ILoggerObserver` has only two methods: `IsEnabled` and `Log`, both of which are going to be used in this sample. Return value is a disposable that will get called once DevTools is disconnecting.
+先实现 `ILoggerObservable.Subscribe`，把观察者记在一个列表里。`ILoggerObserver` 只有两个方法：`IsEnabled` 和 `Log`，本示例两个都会用到。返回值是一个可释放对象，DevTools 断开连接时会被调用。
 
 ```csharp
 private readonly LinkedList<ILoggerObserver> _observers = [];
@@ -74,7 +74,7 @@ public IDisposable Subscribe(ILoggerObserver observer)
 }
 ```
 
-And `ILogEventSink.Emit` implementation has to convert Serilog log event into parameters compatible with `ILoggerObserver`:
+而 `ILogEventSink.Emit` 的实现则要把 Serilog 的日志事件转换成 `ILoggerObserver` 认得的参数：
 
 ```csharp
 public void Emit(LogEvent logEvent)
@@ -110,7 +110,7 @@ public void Emit(LogEvent logEvent)
 }
 ```
 
-With both interfaces it's now possible to configure both `Serilog` and `Developer Tools` together in `Application.Initialize` method:
+两个接口都备齐后，就可以在 `Application.Initialize` 方法里把 `Serilog` 和 `Developer Tools` 一并配置好：
 
 ```csharp
 public override void Initialize()
@@ -131,7 +131,7 @@ public override void Initialize()
 }
 ```
 
-And then use it somewhere in the code:
+然后在代码的某处用起来：
 
 ```csharp
 private int _clickTimes = 0;
@@ -143,7 +143,7 @@ private void Button_OnClick(object? sender, RoutedEventArgs e)
 ```
 
 <details>
-  <summary>Full listing of DevToolsSerilogSink class</summary>
+  <summary>DevToolsSerilogSink 类完整代码</summary>
   
 ```csharp
 public class DevToolsSerilogSink(string logArea = "Serilog", IFormatProvider? formatProvider = null)
@@ -192,5 +192,5 @@ public class DevToolsSerilogSink(string logArea = "Serilog", IFormatProvider? fo
 
 ## 另请参阅 {#see-also}
 
-- [Developer tools options](/tools/developer-tools/options)
+- [开发者工具选项](/tools/developer-tools/options)
 - [安装开发者工具](/tools/developer-tools/installation)

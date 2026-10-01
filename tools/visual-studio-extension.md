@@ -9,7 +9,7 @@ doc-type: reference
 import TestXamlPreviewer from '/img/guides/ui-development/xaml-preview-and-design-settings/test-xaml-previewer.png';
 import VSOptions from '/img/vs-extension/visual-studio-avalonia-options.png';
 
-## Features
+## 功能一览 {#features}
 
 The Avalonia for Visual Studio extension provides an enhanced way of working with Avalonia XAML files. It does this by providing:
 

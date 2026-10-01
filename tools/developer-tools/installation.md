@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Installing the Avalonia Plus developer tools
+title: 安装 Avalonia Plus 开发者工具
 sidebar_label: 安装
 sidebar_position: 1
 doc-type: tutorial
@@ -10,31 +10,31 @@ tags:
   - avalonia enterprise
 ---
 
-In this tutorial, you install the Avalonia Plus Developer Tools, add the diagnostics support package to your project, and verify the connection between your app and the tool.
+在本教程中，你将安装 Avalonia Plus 开发者工具，为项目添加诊断支持包，并验证应用与工具之间的连接。
 
 ## 前置条件 {#prerequisites}
 
-### Developer Tools requirements
+### 开发者工具的环境要求 {#developer-tools-requirements}
 
 | 要求 | Version/Details |
 |------------|-----------------|
-| .NET Runtime | 6.0 or newer |
-| Windows | 10 or newer |
-| macOS | 13 or newer |
-| Linux | X11 and glibc 2.27 or musl 1.22.2 compatible distros |
+| .NET Runtime | 6.0 或更高 |
+| Windows | 10 或更高 |
+| macOS | 13 或更高 |
+| Linux | X11，且兼容 glibc 2.27 或 musl 1.22.2 的发行版 |
 
-No admin/sudo permissions are required to run the tool. A firewall exception might need to be configured, if you plan to use Developer Tools remotely.
+运行该工具不需要管理员/sudo 权限。若你打算远程使用开发者工具，可能得为防火墙加一条例外规则。
 
-### Diagnostics Support requirements
+### 诊断支持包的要求 {#diagnostics-support-requirements}
 
-Support package requires **Avalonia 11.2.0** or newer, and built on **.NET Standard 2.0** compatible APIs.
+支持包需要 **Avalonia 11.2.0** 或更高版本，并构建在兼容 **.NET Standard 2.0** 的 API 之上。
 
-This package is compatible with Browser and Android/iOS projects.
+该包同样适用于 Browser 和 Android/iOS 项目。
 
 ## Step 1: Installing AvaloniaUI Developer Tools
 
-AvaloniaUI Developer Tools is currently a native [.NET tool](https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools), with update mechanism provided by the SDK.
-This guide demonstrates global installation of the tool. But local installation is possible with a limitation: this tool will only work from the same working directory or descendant as the tool installation solution/project.
+AvaloniaUI 开发者工具目前是一个原生的 [.NET 工具](https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools)，更新机制由 SDK 提供。
+本指南演示的是全局安装。本地安装也可以，但有个限制：这样安装的工具只能在安装它的解决方案/项目所在目录或其子目录下使用。
 
 <Tabs>
 <TabItem value="net10" label=".NET 10+" default>
@@ -43,9 +43,9 @@ This guide demonstrates global installation of the tool. But local installation 
 dotnet tool install --global AvaloniaUI.DeveloperTools
 ```
 
-If you are upgrading app from .NET 8/9 installation, you should first uninstall it with `dotnet tool uninstall --global AvaloniaUI.DeveloperTools.Windows`  or `avdt uninstall`.
+若你是从 .NET 8/9 的安装升级而来，应先用 `dotnet tool uninstall --global AvaloniaUI.DeveloperTools.Windows` 或 `avdt uninstall` 卸载旧版。
 
-Developer Tools can be then updated by running `dotnet tool update` command.
+之后运行 `dotnet tool update` 命令即可更新开发者工具。
 
 ```bash
 dotnet tool update --global AvaloniaUI.DeveloperTools
@@ -54,10 +54,10 @@ dotnet tool update --global AvaloniaUI.DeveloperTools
 </TabItem>
 <TabItem value="net8" label=".NET 8/9">
 
-If you're using .NET SDK older than 10, you must install a specific package depending on the running platform.
+若你用的 .NET SDK 低于 10，就得按运行平台安装对应的专用包。
 
 <details>
-<summary>Installation commands</summary>
+<summary>安装命令</summary>
 
 **Windows:**
 
@@ -79,10 +79,10 @@ dotnet tool install --global AvaloniaUI.DeveloperTools.Linux
 
 </details>
 
-Developer Tools can be then updated by running `dotnet tool update` command.
+之后运行 `dotnet tool update` 命令即可更新开发者工具。
 
 <details>
-<summary>Update commands</summary>
+<summary>更新命令</summary>
 
 **Windows:**
 
@@ -108,20 +108,20 @@ dotnet tool update --global AvaloniaUI.DeveloperTools.Linux
 </Tabs>
 
 :::warning
-On macOS or Linux, the installation location may not be automatically added to the PATH environment variable. This surfaces as a "command not found" error when trying to run `avdt`.
+在 macOS 或 Linux 上，安装位置未必会自动加进 PATH 环境变量，表现为运行 `avdt` 时报 “command not found”。
 
-To resolve this issue, you must append the tool location to the PATH environment variable. The default location is usually `$HOME/.dotnet/tools`.
+要解决这个问题，请把工具所在位置追加到 PATH 环境变量中。默认位置通常是 `$HOME/.dotnet/tools`。
 
-For more information, see [Troubleshooting .NET tool usage issues](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#global-tools).
+更多信息请见[排查 .NET 工具使用问题](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#global-tools)。
 :::
 
-## Step 2: Installing Diagnostics Support package
+## 第 2 步：安装诊断支持包 {#step-2-installing-diagnostics-support-package}
 
-The `Diagnostics Support` package is responsible for establishing a connection bridge between the user app and Developer Tools process.
+`Diagnostics Support` 包负责在用户应用与开发者工具进程之间架起连接的桥梁。
 
-This package can be installed either in the executable project with your Program AppBuilder or shared project with your Application, depending on your application's architecture.
+视你的应用架构而定，这个包既可以装在带 Program AppBuilder 的可执行项目里，也可以装在带 Application 的共享项目里。
 
-In both cases, command is the same:
+两种情况下命令都一样：
 
 ```bash
 dotnet add package AvaloniaUI.DiagnosticsSupport
@@ -129,13 +129,13 @@ dotnet add package AvaloniaUI.DiagnosticsSupport
 
 :::note
 
-Old package `Avalonia.Diagnostics` can be safely removed. It's not used by new `Developer Tools`.
+旧的 `Avalonia.Diagnostics` 包可以放心移除，新的 `Developer Tools` 不再用它。
 
 :::
 
-## Step 3: Configuring your project
+## 第 3 步：配置你的项目 {#step-3-configuring-your-project}
 
-Once the `DiagnosticsSupport` package is installed, you need to enable it in your `Application` class:
+装好 `DiagnosticsSupport` 包之后，你需要在 `Application` 类中把它启用：
 
 ```csharp
 public override void Initialize()
@@ -148,36 +148,36 @@ public override void Initialize()
 }
 ```
 
-Alternatively, it's possible to use `.WithDeveloperTools()` extension method on your AppBuilder.
+此外也可以在 AppBuilder 上使用 `.WithDeveloperTools()` 扩展方法。
 
-These methods also accept `DeveloperToolsOptions` options class allowing to customize `Diagnostics Support` setup. See [Reference to DeveloperToolsOptions](/tools/developer-tools/options) for more details.
+这些方法还接受一个 `DeveloperToolsOptions` 选项类，可用来定制 `Diagnostics Support` 的配置。更多细节见 [DeveloperToolsOptions 参考](/tools/developer-tools/options)。
 
-By default, **29414** is used and should be available. It is configurable via options.
+默认用的是 **29414** 端口，一般都空着可用。该端口可通过选项配置。
 
-## Step 4: Run the tool
+## 第 4 步：运行工具 {#step-4-run-the-tool}
 
-When your target app is running, press <kbd>F12</kbd> to initialize connection.
-`Diagnostics Support` will automatically run `Developer Tools` executable and initiate connection between processes.
-Initial execution on `macOS` might take several seconds due to Gatekeeper validation. Subsequent launches will be faster.
+目标应用跑起来之后，按 <kbd>F12</kbd> 建立连接。
+`Diagnostics Support` 会自动启动 `Developer Tools` 可执行文件，并在两个进程之间发起连接。
+在 `macOS` 上首次执行可能要等上几秒，这是 Gatekeeper 在做校验，之后再启动就快了。
 
-## Step 5: Activate the tool
+## 第 5 步：激活工具 {#step-5-activate-the-tool}
 
-Once the Developer Tools has opened, you will be asked to input `AvaloniaUI Portal` credentials that were used to license the tool. This is the only time when the tool requires an internet connection. After that, the tool can be used offline or until license key session expires.
+开发者工具打开后，会让你输入为该工具授权时所用的 `AvaloniaUI Portal` 凭据。这是整个过程中唯一需要联网的环节，此后工具便可离线使用，直到许可证密钥会话到期为止。
 
-![Tool Activation](/img/tools/dev-tools/tool-activation.png)
+![激活工具](/img/tools/dev-tools/tool-activation.png)
 
-## Step 6: Done!
+## 第 6 步：大功告成！ {#step-6-done}
 
-After activation, the connection with the app will be resumed, and a window with tools will be opened. 
+激活之后，与应用的连接会恢复，工具窗口随之打开。 
 
 ## 另请参阅 {#see-also}
 
-- Documentation on [Elements tool](/tools/developer-tools/elements-tool)
-- Custom [DeveloperToolsOptions configuration](/tools/developer-tools/options) reference
-- [Model context protocol (MCP)](/tools/developer-tools/mcp)
+- [元素工具](/tools/developer-tools/elements-tool)文档
+- 自定义 [DeveloperToolsOptions 配置](/tools/developer-tools/options)参考
+- [模型上下文协议（MCP）](/tools/developer-tools/mcp)
 - [Frequently Asked Questions](/tools/faq)
 - [Settings](/tools/developer-tools/settings)
 - [Shortcuts](/tools/developer-tools/shortcuts)
-- [Attaching Browser or Mobile applications](/tools/developer-tools/attaching-applications)
-- [Attaching to the Remote Tool](/tools/developer-tools/attaching-to-the-remote-tool)
-- [Reporting issues](/troubleshooting/tools/developer-tools)
+- [挂接浏览器或移动端应用](/tools/developer-tools/attaching-applications)
+- [挂接到远程工具](/tools/developer-tools/attaching-to-the-remote-tool)
+- [反馈问题](/troubleshooting/tools/developer-tools)
