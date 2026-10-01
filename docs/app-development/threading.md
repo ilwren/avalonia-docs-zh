@@ -1,6 +1,6 @@
 ---
 id: threading
-title: Threading model
+title: 线程模型
 description: Learn how Avalonia's single-threaded UI model works with dispatchers, async patterns, and background tasks.
 doc-type: explanation
 ---

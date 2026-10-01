@@ -278,7 +278,7 @@ When region clipping is enabled, `MaxDirtyRects` caps how many dirty rects are t
 
 ## Data binding performance
 
-### Compiled bindings
+### 编译绑定 {#compiled-bindings}
 
 Compiled bindings resolve property paths at compile time, avoiding runtime reflection. They are [enabled by default from Avalonia version 12](/docs/avalonia12-breaking-changes#compiled-bindings-are-enabled-by-default).
 

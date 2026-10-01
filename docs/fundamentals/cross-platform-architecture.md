@@ -118,9 +118,9 @@ Start with the simplest approach that meets your needs and move to a more flexib
 
 ## 另请参阅 {#see-also}
 
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)
 - [Setting up a cross-platform solution](/docs/app-development/cross-platform-solution-setup)
 - [Platform-specific .NET](/docs/platform-specific-guides/dotnet)
 - [Platform-specific XAML](/docs/platform-specific-guides/xaml)
 - [Dependency injection](/docs/app-development/dependency-injection)
-- [Application lifetimes](/docs/fundamentals/application-lifetimes)
+- [应用程序生命周期](/docs/fundamentals/application-lifetimes)

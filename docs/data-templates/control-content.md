@@ -1,6 +1,6 @@
 ---
 id: control-content
-title: Control content
+title: 控件内容
 description: Understand how controls display non-control content and why data templates are needed.
 doc-type: explanation
 ---

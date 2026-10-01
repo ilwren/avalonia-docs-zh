@@ -73,7 +73,7 @@ flyout.ShowAt(targetButton);
 flyout.Hide();
 ```
 
-## Handling events
+## 处理事件 {#handling-events}
 
 The base class, `PopupFlyoutBase`, exposes `Opened` and `Closed` events. You can subscribe to these events to react to visibility changes.
 

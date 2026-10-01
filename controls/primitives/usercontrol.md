@@ -53,7 +53,7 @@ In a real project, the confirmation view demonstrated above would typically live
 
 For more information on code-behind, see [Code-behind](/docs/fundamentals/code-behind).
 
-### Handling events
+### 处理事件 {#handling-events}
 
 This example adds event handling logic to allow the Yes/No buttons in the confirmation view to respond to clicks.
 

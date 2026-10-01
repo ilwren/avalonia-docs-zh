@@ -7,7 +7,7 @@ description: Add interactive elements to your app with events and commands.
 
 This guide introduces events and commands with simple examples. Events and commands enable interactivity in your applications, ensuring users can click, type, select, etc. through the user interface.
 
-## Handling events
+## 处理事件 {#handling-events}
 
 Events in Avalonia provide a way to respond to user interactions and control-specific actions. To handle an event:
 

@@ -111,7 +111,7 @@ For the full query syntax, see [Container queries](/docs/styling/container-queri
 | `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"` | `xmlns:controls="using:Avalonia.Controls"` (usually not needed, default namespace covers most controls) |
 | `clr-namespace:` or `using:` for custom types | `using:` (preferred) or `clr-namespace:` |
 
-### Data binding
+### 数据绑定 {#data-binding}
 
 The core binding syntax is the same. WinUI's `x:Bind` (compiled bindings) has an equivalent in Avalonia:
 

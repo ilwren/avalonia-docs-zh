@@ -104,5 +104,5 @@ For more information about the concepts behind the Avalonia **styling** system, 
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml)
 - [Code-behind](/docs/fundamentals/code-behind)
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)
 - [Controls reference](/controls)

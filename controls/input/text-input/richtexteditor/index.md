@@ -429,7 +429,7 @@ Inline elements are used to specify content styles within a block.
 
 The Avalonia rich text editor separates functions into an eight-layer architecture.
 
-| Layer | 名称 | 说明 | Key components |
+| 层 | 名称 | 说明 | Key components |
 | --- | --- | --- | --- |
 | 1 | Document model | Core data storage of text context and document hierarchy. Uses a rope data structure for efficient storage and operations. | `TextDocument`, `FlowDocument` |
 | 2 | Text pointer API | Position tracking and navigation within documents. `TextRange` owns positional mutation. | `TextPointer`, `TextRange`, `LogicalDirection` |

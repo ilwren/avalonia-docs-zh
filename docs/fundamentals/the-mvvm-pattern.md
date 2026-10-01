@@ -48,7 +48,7 @@ You implement a view with an AXAML file and its code-behind, and a view model as
 
 Views are compositions of Avalonia [built-in controls](/controls), [user controls](/docs/fundamentals/ui-composition), and optionally [custom controls](/docs/custom-controls) of your own design.
 
-### Data binding
+### 数据绑定 {#data-binding}
 
 Data binding is the key technology connecting views to view models. You can think of the relationship as two layers joined by bindings:
 
@@ -65,5 +65,5 @@ The model represents everything outside the UI: data storage, network services, 
 ## 另请参阅 {#see-also}
 
 - [Code-behind](/docs/fundamentals/code-behind)
-- [UI composition](/docs/fundamentals/ui-composition)
-- [Introduction to data binding](/docs/data-binding/introduction-to-data-binding)
+- [界面组合](/docs/fundamentals/ui-composition)
+- [数据绑定入门](/docs/data-binding/introduction-to-data-binding)

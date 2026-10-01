@@ -67,7 +67,7 @@ Or with a binding converter:
 <Border Background="{Binding IsActive, Converter={StaticResource BoolToColorConverter}}" />
 ```
 
-## Data binding
+## 数据绑定 {#data-binding}
 
 | WPF | Avalonia | Notes |
 |---|---|---|

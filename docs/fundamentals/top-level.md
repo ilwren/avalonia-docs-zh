@@ -249,8 +249,8 @@ IPlatformHandle? TryGetPlatformHandle()
 
 ## 另请参阅 {#see-also}
 
-- [Main window](/docs/fundamentals/main-window)
-- [Application lifetimes](/docs/fundamentals/application-lifetimes)
+- [主窗口](/docs/fundamentals/main-window)
+- [应用程序生命周期](/docs/fundamentals/application-lifetimes)
 - [Working with screens](/docs/app-development/window-management#working-with-screens): Query monitor resolution, bounds, and scaling.
 - [Custom rendering](/docs/graphics-animation/custom-rendering): Custom drawing and render-thread callbacks.
 - [Composition animations](/docs/graphics-animation/composition-animations): Render-thread property animations.

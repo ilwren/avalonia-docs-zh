@@ -19,7 +19,7 @@ Nothing in this library performs asynchronous I/O: every format tokenizes, build
 If you need to move work off the UI thread, use either the shipped asynchronous pair or `Task.Run` at the call site.
 :::
 
-## Threading model
+## 线程模型 {#threading-model}
 
 ### UI thread required
 

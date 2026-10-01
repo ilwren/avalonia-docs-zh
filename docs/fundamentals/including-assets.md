@@ -85,4 +85,4 @@ Avalonia has a community implementation for an image loader at [AsyncImageLoader
 ## 另请参阅 {#see-also}
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml)
-- [UI composition](/docs/fundamentals/ui-composition)
+- [界面组合](/docs/fundamentals/ui-composition)

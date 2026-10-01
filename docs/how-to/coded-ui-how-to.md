@@ -411,8 +411,8 @@ For a deeper look at the concepts behind each of these patterns, see [Code-Only 
 
 ## 另请参阅 {#see-also}
 
-- [Code-Only UI](/docs/fundamentals/coded-ui)
-- [Application lifetimes](/docs/fundamentals/application-lifetimes)
-- [Binding from code](/docs/data-binding/binding-from-code)
-- [Creating data templates in code](/docs/data-templates/creating-data-templates-in-code)
+- [纯代码构建界面](/docs/fundamentals/coded-ui)
+- [应用程序生命周期](/docs/fundamentals/application-lifetimes)
+- [在代码中绑定](/docs/data-binding/binding-from-code)
+- [在代码中创建数据模板](/docs/data-templates/creating-data-templates-in-code)
 - [Threading](/docs/app-development/threading)

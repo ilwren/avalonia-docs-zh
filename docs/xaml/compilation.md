@@ -16,7 +16,7 @@ When you build an Avalonia project, the XamlX compiler:
 
 This means many errors that would only appear at runtime in WPF are caught during compilation in Avalonia.
 
-## Compiled bindings
+## 编译绑定 {#compiled-bindings}
 
 By default, data bindings use reflection to resolve property paths at runtime. Compiled bindings resolve paths at build time, providing:
 

@@ -200,7 +200,7 @@ Template parts are conventionally named with a `PART_` prefix to distinguish the
 
 Avalonia manages several special layers above the normal control content within each window. These layers handle adorners, custom overlays, and popups:
 
-| Layer | 用途 | Access method |
+| 层 | 用途 | Access method |
 |---|---|---|
 | `AdornerLayer` | Focus indicators, drag adorners, and visual decorations attached to controls. | `AdornerLayer.GetAdornerLayer(visual)` |
 | `OverlayLayer` | Custom overlay content you add on top of normal controls but beneath popups. | `OverlayLayer.GetOverlayLayer(visual)` |

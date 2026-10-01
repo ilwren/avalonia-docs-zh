@@ -131,7 +131,7 @@ window.Closing += (s, e) =>
 
 ## 另请参阅 {#see-also}
 
-- [Main window](/docs/fundamentals/main-window)
+- [主窗口](/docs/fundamentals/main-window)
 - [Window management](/docs/app-development/window-management)
 - [How to: Work with windows](/docs/how-to/window-how-to)
 - [`ContentControl`](/controls/data-display/contentcontrol)

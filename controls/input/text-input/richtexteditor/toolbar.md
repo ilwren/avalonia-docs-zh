@@ -515,7 +515,7 @@ An action's `Gesture` is what tooltips and menu items display. It registers noth
 
 Every singleton is declared as `IEditorAction`. Cast to the interface that carries the state you want.
 
-| Actions | Interface | State accessor |
+| Actions | 接口 | State accessor |
 |---|---|---|
 | `Bold`, `Italic`, `Underline`, `Strikethrough`, `Superscript`, `Subscript`, `BlockBorder`, `AlignLeft`, `AlignCenter`, `AlignRight`, `AlignJustify`, `ToggleBulletList`, `ToggleNumberedList`, `DifferentFirstPage`, `DifferentOddAndEvenPages`, `LinkToPrevious` | `IToggleAction` | `IsChecked(host)` |
 | `FontFamily` | `IPropertyAction<FontFamily>` | `GetValue(host)`, `SetValue(host, value)`, `ClearValue(host)` |

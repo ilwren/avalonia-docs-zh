@@ -31,4 +31,4 @@ Mobile and browser platforms don't have a concept of `Window` in Avalonia. On iO
 ## 另请参阅 {#see-also}
 
 - [Top level](/docs/fundamentals/top-level)
-- [Application lifetimes](/docs/fundamentals/application-lifetimes)
+- [应用程序生命周期](/docs/fundamentals/application-lifetimes)

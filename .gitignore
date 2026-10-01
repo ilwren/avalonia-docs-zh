@@ -26,3 +26,7 @@ yarn-error.log*
 .npmrc
 .vsscripts/i18n/batch.json
 scripts/i18n/tm/*.todo.json
+
+# Python
+__pycache__/
+*.py[cod]

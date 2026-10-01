@@ -1,6 +1,6 @@
 ---
 id: compiled-bindings
-title: Compiled bindings
+title: 编译绑定
 description: Use compiled bindings for compile-time validation and improved performance in Avalonia XAML.
 doc-type: how-to
 ---

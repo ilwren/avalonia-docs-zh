@@ -345,7 +345,7 @@ For more information about displaying validation errors in your views, see [Vali
 
 ## 另请参阅 {#see-also}
 
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)
 - [Binding to commands](/docs/data-binding/binding-to-commands)
 - [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged)
 - [Dependency injection](/docs/app-development/dependency-injection)
