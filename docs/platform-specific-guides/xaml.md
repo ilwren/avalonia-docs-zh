@@ -5,7 +5,7 @@ title: Platform-specific XAML
 
 ## OnPlatform Markup Extension
 
-### Overview
+### 概述 {#overview}
 The OnPlatform markup extension in Avalonia allows developers to specify different values for a property based on the operating system on which the application is running. This is particularly useful for creating cross-platform applications that need to adapt their UI or behavior according to the platform.
 
 ### Basic usage in markup extension syntax
@@ -127,4 +127,4 @@ The `OnFormFactor` markup extension functions similarly to the `OnPlatform` and 
 
 ## 另请参阅 {#see-also}
 
-- [Platform-specific .NET](/docs/platform-specific-guides/dotnet)
+- [平台相关的 .NET](/docs/platform-specific-guides/dotnet)

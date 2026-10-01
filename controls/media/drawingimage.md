@@ -24,7 +24,7 @@ A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Aval
 
 You will probably use these properties most often:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 | :--- | :--- | :--- |
 | `Drawing` | `Drawing` | The vector drawing content to render |
 | `Viewbox` | `Rect` | A rectangular region of the drawing to display, in device-independent pixels |
@@ -117,4 +117,4 @@ Use bitmap images (`Image.Source` with an asset path) when you have photographic
 - [DrawingImage API reference](/api/avalonia/media/drawingimage)
 - [GeometryDrawing API reference](/api/avalonia/media/geometrydrawing)
 - [DrawingGroup API reference](/api/avalonia/media/drawinggroup)
-- [`DrawingImage.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Media/DrawingImage.cs)
+- [GitHub 上的 `DrawingImage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Media/DrawingImage.cs)

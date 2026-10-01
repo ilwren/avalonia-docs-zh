@@ -55,9 +55,9 @@ public ObservableCollection<TreeNode> IndentedTreeData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The root level nodes. | `null` |
 | `ValuePath` | Optional numeric value displayed next to each label. | `null` |

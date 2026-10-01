@@ -50,7 +50,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 ## Common properties (`PolarChart`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of `PolarLineSeries` items. | Empty collection |
 | `ShowGridLines` | Whether to draw angular and radial grid lines. | `true` |
@@ -63,7 +63,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 ## Common properties (`PolarLineSeries`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of polar data points. | `null` |
 | `AnglePath` | Path to the angle value in degrees. | `null` |

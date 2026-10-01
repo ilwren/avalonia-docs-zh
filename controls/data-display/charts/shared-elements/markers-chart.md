@@ -69,7 +69,7 @@ public ObservableCollection<int> PentagonMarkerData { get; } = new() { 35, 50, 4
 
 ## Common properties (applied to Series)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ShowMarkers` | Global toggle for data point symbols. Line-family series default to `false`; some point-focused series override it to `true`. | Series-dependent |
 | `MarkerSize` | Diameter of the marker in pixels. | Series-dependent |

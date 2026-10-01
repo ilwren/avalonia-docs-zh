@@ -13,9 +13,9 @@ You do not usually create instances of `Window` directly. Instead, you subclass 
 `Window` is only available on desktop platforms (Windows, macOS, Linux). If you are targeting mobile or browser, use [`UserControl`](/controls/primitives/usercontrol) with a navigation framework instead.
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 | :--- | :--- | :--- |
 | `Title` | `string` | The text displayed in the title bar. |
 | `Icon` | `WindowIcon` | The icon displayed in the title bar and taskbar. |

@@ -62,7 +62,7 @@ public partial class MainWindow : Window
 
 All events provide a `DragEventArgs` with these properties:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `DataTransfer` | The `IDataTransfer` object containing the dragged data. |
 | `DragEffects` | The allowed and requested drag effects. Set this to indicate what your target accepts. |

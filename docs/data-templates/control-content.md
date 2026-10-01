@@ -15,7 +15,7 @@ You have probably seen what happens if you put a button control into the content
 For more about the zones of an _Avalonia UI_ control, see [Layout](/docs/layout/).
 :::
 
-For example:
+例如：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"

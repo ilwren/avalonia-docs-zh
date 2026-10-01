@@ -50,4 +50,4 @@ This occurs when the user starts a pull gesture while the content is in a positi
 
 ## 另请参阅 {#see-also}
 
-- [`RefreshContainer.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PullToRefresh/RefreshContainer.cs)
+- [GitHub 上的 `RefreshContainer.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PullToRefresh/RefreshContainer.cs)

@@ -19,7 +19,7 @@ Avalonia provides three primary mechanisms for styling controls:
 ## Container queries
 - [Container queries](/docs/styling/container-queries) are a collection of styles that are applied based on the size of a container.
 
-## How it works
+## 运作原理 {#how-it-works}
 
 In essence, the styling mechanism has two steps: selection and substitution. You can define how both steps work in XAML, but often you help the selection step by defining 'class' labels on control elements.
 

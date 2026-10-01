@@ -60,7 +60,7 @@ e.Handled = true;
 
 `SwipeGestureEventArgs` is raised during the gesture:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Id` | `int` | Unique identifier for this gesture sequence. |
 | `Delta` | `Vector` | Pixel delta since the last event. |
@@ -69,7 +69,7 @@ e.Handled = true;
 
 `SwipeGestureEndedEventArgs` is raised when the pointer is released:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Id` | `int` | Unique identifier for this gesture sequence. |
 | `Velocity` | `Vector` | Swipe velocity at the moment the pointer was released. |
@@ -78,7 +78,7 @@ e.Handled = true;
 
 You will probably use these properties most often:
 
-| Property | Type | 说明 | Default |
+| 属性 | Type | 说明 | Default |
 |---|---|---|---|
 | `CanHorizontallySwipe` | `bool` | Enables tracking of horizontal (left/right) swipes. | `false` |
 | `CanVerticallySwipe` | `bool` | Enables tracking of vertical (up/down) swipes. | `false` |

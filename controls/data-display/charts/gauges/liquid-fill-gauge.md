@@ -33,9 +33,9 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 </WrapPanel>
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value. | `50.0` |
 | `MinValue` | The minimum value. | `0.0` |

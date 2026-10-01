@@ -1,7 +1,7 @@
 ---
 id: data-context
-title: Data context
-description: Understand how DataContext provides the default data source for bindings and inherits through the control tree.
+title: 数据上下文
+description: 理解 DataContext 如何为绑定提供默认数据源，以及它在控件树中的继承方式。
 doc-type: explanation
 ---
 
@@ -10,25 +10,25 @@ import DataContextTreeSearchDiagram from '/img/concepts/data-concepts/data-conte
 import DataContextGreetingBindingScreenshot from '/img/concepts/data-concepts/data-context/data-context-greeting.png';
 import DataContextPreviewerScreenshot from '/img/concepts/data-concepts/data-context/data-context-previewer.png';
 
-When Avalonia performs data binding, it must locate an application object to bind to. This location is represented by a **data context**.
+Avalonia 做数据绑定时，必须先找到一个可供绑定的应用对象。这个「去哪儿找」，就由**数据上下文**来表示。
 
 <Image light={DataContextOverviewDiagram} alt="Diagram showing how data context connects controls to view model properties" position="center" maxWidth={400} cornerRadius="true"/>
 
-Every control in Avalonia has a `DataContext` property, including built-in controls, user controls, and windows.
+Avalonia 中每个控件都有 `DataContext` 属性，内置控件、用户控件和窗口概莫能外。
 
-When binding, Avalonia performs a hierarchical search of the logical control tree, starting with the control where you define the binding, until it finds a data context to use.
+绑定时，Avalonia 会从声明绑定的那个控件开始，沿逻辑控件树逐级向上查找，直到找到可用的数据上下文为止。
 
 <Image light={DataContextTreeSearchDiagram} alt="Diagram showing data context inheritance through the control tree" position="center" maxWidth={400} cornerRadius="true"/>
 
-This means that a control defined in a window can use the data context of the window; or (as above) a control in a control in a window can use the window's data context.
+这意味着窗口内的控件可以使用窗口的数据上下文；或者像上面那样，窗口里某个控件内部的控件，同样能用上窗口的数据上下文。
 
 :::info
-For information about the control trees in Avalonia, and how to see them at run-time, see [Control trees](/docs/custom-controls/control-trees).
+关于 Avalonia 中的控件树，以及如何在运行时查看它们，请见[控件树](/docs/custom-controls/control-trees)。
 :::
 
 ## Example
 
-You can see the window's data context being set if you create a new project using the _Avalonia MVVM Application_ template. Open the **App.axaml.cs** file to see the code:
+用 _Avalonia MVVM Application_ 模板新建一个项目，就能看到窗口的数据上下文是怎么设置的。打开 **App.axaml.cs** 文件查看代码：
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -45,7 +45,7 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-You can find the object being set to the window's data context in the file **MainWindowViewModel.cs**:
+被设为窗口数据上下文的那个对象，可以在 **MainWindowViewModel.cs** 文件中找到：
 
 ```csharp
 public class MainWindowViewModel : ViewModelBase
@@ -54,7 +54,7 @@ public class MainWindowViewModel : ViewModelBase
 }
 ```
 
-In the main window file **MainWindow.axaml**, you can see that the window content area contains a `TextBlock` with its `Text` property bound to the `Greeting` property.
+在主窗口文件 **MainWindow.axaml** 中可以看到，窗口的内容区里有一个 `TextBlock`，它的 `Text` 属性绑定到了 `Greeting` 属性。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -76,19 +76,19 @@ In the main window file **MainWindow.axaml**, you can see that the window conten
 </Window>
 ```
 
-When the project runs, the data binder searches up the logical control tree from the text block and finds a data context set at the main window level. So the bound text appears as:
+项目运行时，数据绑定器从该文本块出发沿逻辑控件树向上查找，在主窗口这一级找到了数据上下文。于是绑定的文字显示为：
 
 <Image light={DataContextGreetingBindingScreenshot} alt="App window showing a greeting bound from the data context" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Design-time data context
+## 设计时数据上下文 {#design-time-data-context}
 
-You may have noticed, after you first compiled this project, that the preview pane also shows the greeting.
+你可能注意到了，项目第一次编译之后，预览窗格里也显示出了那句问候语。
 
 <Image light={DataContextPreviewerScreenshot} alt="Design-time preview showing bound data context values" position="center" maxWidth={400} cornerRadius="true"/>
 
-Avalonia can also set a data context for a control for use at design-time. This is useful because the preview pane can show realistic data while you adjust layout and styles.
+Avalonia 也能为控件设置仅在设计时生效的数据上下文。这很实用 —— 你在调整布局和样式时，预览窗格里能看到贴近真实的数据。
 
-You can see the design-time data context being set in the XAML:
+在 XAML 中可以看到设计时数据上下文是这样设置的：
 
 ```xml
 <Design.DataContext>
@@ -97,15 +97,15 @@ You can see the design-time data context being set in the XAML:
 ```
 
 :::tip
-For a more detailed guide about using the design-time data context, see [XAML preview and design settings](/docs/app-development/xaml-preview-and-design-settings).
+关于设计时数据上下文的详细用法，请见 [XAML 预览与设计时设置](/docs/app-development/xaml-preview-and-design-settings)。
 :::
 
 :::info
-Further discussion of data binding requires a background in the MVVM pattern. For an introduction to the concepts of the MVVM pattern, see [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern).
+要再往下聊数据绑定，就得先有 MVVM 模式的基础了。MVVM 模式的概念介绍请见 [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)。
 :::
 
 ## 另请参阅 {#see-also}
 
-- [Introduction to data binding](/docs/data-binding/introduction-to-data-binding): Data binding overview.
-- [Data binding syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.
-- [XAML preview and design settings](/docs/app-development/xaml-preview-and-design-settings): Design-time data context configuration.
+- [数据绑定入门](/docs/data-binding/introduction-to-data-binding)：数据绑定总览。
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定路径、模式与转换器。
+- [XAML 预览与设计时设置](/docs/app-development/xaml-preview-and-design-settings)：设计时数据上下文的配置方法。

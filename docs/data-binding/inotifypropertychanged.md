@@ -1,26 +1,26 @@
 ---
 id: inotifypropertychanged
-title: How to use INotifyPropertyChanged
-description: Implement INotifyPropertyChanged to notify the UI when view model properties change.
+title: 如何使用 INotifyPropertyChanged
+description: 实现 INotifyPropertyChanged，在视图模型属性变化时通知界面。
 doc-type: how-to
 ---
 
-## Introduction
-The `INotifyPropertyChanged` interface is a critical component in the Model-View-ViewModel (MVVM) design pattern that helps create scalable and maintainable applications. By notifying that a property has been changed, it allows the View to update automatically, improving the communication between the components of your application.
+## 引言 {#introduction}
+`INotifyPropertyChanged` 接口是 MVVM（Model-View-ViewModel）设计模式中的关键一环，有了它才谈得上可扩展、好维护的应用。它负责在属性发生变化时发出通知，视图据此自动更新，应用各组件之间的沟通也因此顺畅起来。
 
-## What is INotifyPropertyChanged?
+## 什么是 INotifyPropertyChanged？ {#what-is-inotifypropertychanged}
 
-`INotifyPropertyChanged` is an interface provided by .NET that a class can implement to signal that a property has changed its value. This is especially useful in data-binding scenarios, where an automatic update of the UI can be triggered once the data it's bound to changes.
+`INotifyPropertyChanged` 是 .NET 提供的一个接口，类实现它之后就能对外宣告「某个属性的值变了」。这在数据绑定场景中尤其有用 —— 绑定的数据一变，界面就能自动刷新。
 
-The `INotifyPropertyChanged` interface has one event member, `PropertyChanged`. When a property's value is changed, the object raises a `PropertyChanged` event to notify any bound elements that the property has changed.
+`INotifyPropertyChanged` 接口只有一个事件成员 `PropertyChanged`。当属性值发生变化时，对象引发 `PropertyChanged` 事件，告知所有绑定到它的元素。
 
-## Why is INotifyPropertyChanged important in MVVM?
-In the MVVM pattern, the ViewModel encapsulates the interaction logic for the View and encapsulates the data from the Model. The View binds to properties in the ViewModel, which in turn exposes data contained in Model objects.
+## 为什么 INotifyPropertyChanged 对 MVVM 这么重要？ {#why-is-inotifypropertychanged-important-in-mvvm}
+在 MVVM 模式中，ViewModel 封装了视图的交互逻辑，也封装了来自 Model 的数据。视图绑定到 ViewModel 的属性上，而 ViewModel 又把 Model 对象中的数据暴露出来。
 
-For the MVVM pattern to work as intended, the View needs to be updated whenever the underlying data changes. That's where `INotifyPropertyChanged` comes in. By implementing this interface in your ViewModel, you can notify the View about changes in the Model, which automatically updates the UI.
+要让 MVVM 模式真正跑起来，底层数据一变，视图就得跟着更新 —— 这正是 `INotifyPropertyChanged` 的用武之地。在 ViewModel 中实现这个接口，就能把 Model 的变化通知给视图，界面随之自动刷新。
 
 ## Implementing INotifyPropertyChanged
-Here's an example of how to implement `INotifyPropertyChanged`:
+下面是实现 `INotifyPropertyChanged` 的一个例子：
 
 ```csharp
 public class MyViewModel : INotifyPropertyChanged
@@ -46,12 +46,12 @@ public class MyViewModel : INotifyPropertyChanged
 }
 ```
 
-In this code, whenever the `Name` property is set to a new value, the `OnPropertyChanged` method is called, which raises the `PropertyChanged` event. Any UI elements bound to this property will then update to reflect the new value.
+在这段代码中，每当 `Name` 属性被赋上新值，`OnPropertyChanged` 方法就会被调用，进而引发 `PropertyChanged` 事件。所有绑定到该属性的界面元素都会随之更新，显示出新值。
 
-## Using MVVM Toolkit to simplify INotifyPropertyChanged
-While implementing `INotifyPropertyChanged` isn't particularly complex, it can become tedious if you have many properties in your ViewModel. Luckily, the .NET Community Toolkit's MVVM library offers an even more efficient way to implement `INotifyPropertyChanged` using its `ObservableObject` class and the `[ObservableProperty]` attribute with the help of Source Generators.
+## 用 MVVM Toolkit 简化 INotifyPropertyChanged {#using-mvvm-toolkit-to-simplify-inotifypropertychanged}
+实现 `INotifyPropertyChanged` 本身不算复杂，但 ViewModel 里属性一多就相当啰嗦。好在 .NET Community Toolkit 的 MVVM 库借助源生成器，用 `ObservableObject` 基类加 `[ObservableProperty]` 特性，提供了实现 `INotifyPropertyChanged` 的更高效写法。
 
-Here's how you can achieve the same result as before, but using `ObservableObject`:
+下面是用 `ObservableObject` 达成同样效果的写法：
 
 ```csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -63,15 +63,15 @@ public partial class MyViewModel : ObservableObject
 }
 ```
 
-In this code, the `ObservableObject` class implements `INotifyPropertyChanged`, and the `[ObservableProperty]` attribute is used to indicate that `_name` is an observable property. The Source Generator will then generate the necessary boilerplate code behind the scenes, including the property's getter and setter, and automatically call the `OnPropertyChanged` method when the property changes. This makes the implementation cleaner and less error-prone.
+这段代码中，`ObservableObject` 类实现了 `INotifyPropertyChanged`，而 `[ObservableProperty]` 特性用来标明 `_name` 是一个可观察属性。源生成器会在幕后生成必要的样板代码，包括该属性的 getter 和 setter，并在属性变化时自动调用 `OnPropertyChanged` 方法。这样实现起来更清爽，也更不容易出错。
 
-The MVVM Toolkit provides a range of tools to help simplify the implementation of the MVVM pattern in your .NET applications, including simplifying the use of `INotifyPropertyChanged`. The use of Source Generators makes your code more efficient and readable, while still maintaining the same functionality.
+MVVM Toolkit 提供了一整套工具，帮你简化 .NET 应用中 MVVM 模式的落地，`INotifyPropertyChanged` 的使用只是其中之一。借助源生成器，代码在保持同样功能的前提下更高效、也更易读。
 
 ## 另请参阅 {#see-also}
 
-- [The MVVM Pattern](/docs/fundamentals/the-mvvm-pattern): Introduction to the MVVM architectural pattern.
-- [Data Validation](/docs/data-binding/binding-validation): Validation in data binding with INotifyDataErrorInfo.
-- [Introduction to Data Binding](/docs/data-binding/introduction-to-data-binding): Data binding overview.
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)：MVVM 架构模式入门。
+- [数据校验](/docs/data-binding/binding-validation)：用 INotifyDataErrorInfo 在数据绑定中做校验。
+- [数据绑定入门](/docs/data-binding/introduction-to-data-binding)：数据绑定总览。
 
 
 

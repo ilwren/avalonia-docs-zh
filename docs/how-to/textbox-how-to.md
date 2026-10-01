@@ -75,7 +75,7 @@ Enable multi-line text entry:
          PlaceholderText="Enter your message..." />
 ```
 
-| Property | Effect |
+| 属性 | Effect |
 |---|---|
 | `AcceptsReturn="True"` | Allows pressing Enter to create new lines |
 | `TextWrapping="Wrap"` | Wraps long lines instead of scrolling horizontally |
@@ -277,4 +277,4 @@ TextBox has a built-in context menu with Cut, Copy, and Paste. To customize it:
 
 - [TextBox Control Reference](/controls/input/text-input/textbox): Property summary.
 - [Validation in Data Binding](/docs/data-binding/binding-validation): Data annotation and INotifyDataErrorInfo validation.
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding modes and parameters.
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定模式与各项参数。

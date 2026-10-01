@@ -65,9 +65,9 @@ public ObservableCollection<MonthlyMetric> MonthlyMetrics { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of cartesian series rendered in the chart. | Empty collection |
 | `HorizontalAxis` | Primary horizontal axis used by the mixed series. | `null` |

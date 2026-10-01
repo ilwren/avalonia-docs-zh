@@ -53,9 +53,9 @@ public ObservableCollection<WaterfallFinancialPoint> WaterfallData { get; } = ne
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of changes. | `null` |
 | `CategoryPath` | Path to the label/category. | `null` |

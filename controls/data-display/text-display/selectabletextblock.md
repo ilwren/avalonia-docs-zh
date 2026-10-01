@@ -7,9 +7,9 @@ doc-type: reference
 
 The `SelectableTextBlock` is a read-only label for displaying text that your users can select and copy. It behaves like `TextBlock` but adds built-in support for text selection with mouse or keyboard. It can display multiple lines and provides full control over the font used.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property                   | Type        | 说明                                                                                                                                                                                                           |
+| 属性                   | Type        | 说明                                                                                                                                                                                                           |
 | -------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Text`                     | `string`    | The text to display.                                                                                                                                                                                                  |
 | `SelectionStart`           | `int`       | The character index for the start of the current selection.                                                                                                                                                           |
@@ -97,4 +97,4 @@ You can customize how selected text looks by setting `SelectionBrush` and `Selec
 - [TextBlock](/controls/data-display/text-display/textblock)
 - [Label](/controls/data-display/text-display/label)
 - [SelectableTextBlock API reference](/api/avalonia/controls/selectabletextblock)
-- [`SelectableTextBlock.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SelectableTextBlock.cs)
+- [GitHub 上的 `SelectableTextBlock.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SelectableTextBlock.cs)

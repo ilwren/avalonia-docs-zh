@@ -11,7 +11,7 @@ The `ProgressBar` presents a value as a proportionately filled bar with the opti
 
 You will probably use these properties most often:
 
-| Property             | 说明                                                                                     |
+| 属性             | 说明                                                                                     |
 |----------------------|-------------------------------------------------------------------------------------------------|
 | `Minimum`            | The minimum value of the range. Defaults to `0`.                                                |
 | `Maximum`            | The maximum value of the range. Defaults to `100`.                                              |
@@ -148,4 +148,4 @@ For more advanced customization, you can provide a complete `ControlTheme`:
 
 - [Slider](/controls/input/selectors/slider)
 - [ProgressBar API reference](/api/avalonia/controls/progressbar)
-- [`ProgressBar.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ProgressBar.cs)
+- [GitHub 上的 `ProgressBar.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ProgressBar.cs)

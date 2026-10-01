@@ -45,9 +45,9 @@ public ObservableCollection<Measurement> DensityData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of numeric samples. | `null` |
 | `ValuePath` | Path to the numeric sample value. | `null` |

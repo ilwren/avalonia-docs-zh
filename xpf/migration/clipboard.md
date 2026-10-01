@@ -5,7 +5,7 @@ description: Learn how the WPF Clipboard API works in XPF across Windows, macOS,
 doc-type: reference
 ---
 
-## Overview
+## 概述 {#overview}
 
 XPF implements the WPF clipboard API (`System.Windows.Clipboard`) across all platforms. There are some differences from WPF's native Windows implementation that you should be aware of.
 

@@ -100,4 +100,4 @@ This is an example of a drop shadow:
 ## 另请参阅 {#see-also}
 
 - [Border API reference](/api/avalonia/controls/border)
-- [`Border.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Border.cs)
+- [GitHub 上的 `Border.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Border.cs)

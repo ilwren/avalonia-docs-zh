@@ -135,7 +135,7 @@ A control cannot have both a `ContextFlyout` and a `ContextMenu` attached at the
 
 ## Useful properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `ItemsSource` | `IEnumerable` | Binds menu items to a collection so you can generate them dynamically. |
 | `Opening` | `event` | Raised before the context menu opens. Set `Cancel` to `true` to prevent it. |
@@ -148,4 +148,4 @@ A control cannot have both a `ContextFlyout` and a `ContextMenu` attached at the
 - [MenuFlyout](/controls/menus/menuflyout)
 - [Flyout](/controls/layout/containers/flyout)
 - [ContextMenu API reference](/api/avalonia/controls/contextmenu)
-- [`ContextMenu.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContextMenu.cs)
+- [GitHub 上的 `ContextMenu.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContextMenu.cs)

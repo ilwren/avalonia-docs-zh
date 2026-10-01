@@ -38,7 +38,7 @@ The `RenderTransformOrigin` property defines the point around which transforms a
 
 Rotates an element by a specified angle in degrees.
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Angle` | The rotation angle in degrees. Positive values rotate clockwise. |
 | `CenterX`, `CenterY` | An additional offset from `RenderTransformOrigin` for the center of rotation, in device-independent pixels. Defaults to 0. |
@@ -56,7 +56,7 @@ Rotates an element by a specified angle in degrees.
 
 Scales an element horizontally, vertically, or both.
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `ScaleX` | The horizontal scale factor. 1.0 is normal size, 2.0 is double, 0.5 is half. |
 | `ScaleY` | The vertical scale factor. |
@@ -81,7 +81,7 @@ Scales an element horizontally, vertically, or both.
 
 Shears an element along the X or Y axis.
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `AngleX` | The horizontal skew angle in degrees. |
 | `AngleY` | The vertical skew angle in degrees. |
@@ -99,7 +99,7 @@ Shears an element along the X or Y axis.
 
 Moves an element by a specified offset without affecting layout.
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `X` | The horizontal offset in device-independent pixels. |
 | `Y` | The vertical offset in device-independent pixels. |
@@ -116,7 +116,7 @@ Moves an element by a specified offset without affecting layout.
 
 Applies an arbitrary 2D affine transformation defined by a 3x2 matrix.
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Matrix` | A string in the format `m11,m12,m21,m22,offsetX,offsetY`. |
 

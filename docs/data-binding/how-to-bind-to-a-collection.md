@@ -1,28 +1,28 @@
 ---
 id: how-to-bind-to-a-collection
-title: How to bind to a collection
-description: Bind an ObservableCollection to list controls so the UI updates automatically when items are added, removed, or modified.
+title: 如何绑定到集合
+description: 把 ObservableCollection 绑定到列表控件，让界面在增删或修改元素时自动刷新。
 doc-type: how-to
 ---
 
-When your application needs to display a dynamic list of items, you bind a collection property to a list control such as [`ListBox`](/api/avalonia/controls/listbox), [`ItemsControl`](/api/avalonia/controls/itemscontrol), or `ComboBox`. By using `ObservableCollection<T>`, the UI stays in sync whenever you add, remove, or reorder items. This guide walks you through the common scenarios for collection binding in Avalonia.
+当应用需要展示一份动态的列表时，就把集合属性绑定到 [`ListBox`](/api/avalonia/controls/listbox)、[`ItemsControl`](/api/avalonia/controls/itemscontrol) 或 `ComboBox` 这类列表控件上。借助 `ObservableCollection<T>`，无论你增删元素还是调整顺序，界面都会保持同步。本文带你走一遍 Avalonia 中集合绑定的常见场景。
 
-## Why use `ObservableCollection<T>`
+## 为什么要用 `ObservableCollection<T>` {#why-use-observablecollection}
 
-A standard `List<T>` does not notify the UI when its contents change. If you add an item to a `List<T>` at runtime, the control will not update. `ObservableCollection<T>` implements `INotifyCollectionChanged`, which raises events that Avalonia listens for so the bound control can refresh automatically.
+普通的 `List<T>` 在内容变化时不会通知界面。运行时往 `List<T>` 里加一个元素，控件是不会更新的。`ObservableCollection<T>` 实现了 `INotifyCollectionChanged`，会引发 Avalonia 监听的那些事件，绑定的控件因此能自动刷新。
 
-Use `ObservableCollection<T>` when:
+以下情况请使用 `ObservableCollection<T>`：
 
-- Items are added or removed after the initial load.
-- You need the UI to reflect changes without manually rebinding.
+- 初次加载之后还会增删元素。
+- 你希望界面自动反映变化，而不用手动重新绑定。
 
-If your collection is static (loaded once and never modified), a simple `List<T>` or array works fine.
+如果集合是静态的（加载一次之后不再改动），用普通的 `List<T>` 或数组就够了。
 
-## Bind to a simple `ObservableCollection`
+## 绑定到简单的 `ObservableCollection` {#bind-to-a-simple-observablecollection}
 
-Start with an `ObservableCollection<string>` bound to a `ListBox`.
+先从绑定到 `ListBox` 的 `ObservableCollection<string>` 开始。
 
-Define the collection in your view model:
+在视图模型中定义集合：
 
 ```csharp
 public class MainViewModel : ObservableObject
@@ -42,19 +42,19 @@ public class MainViewModel : ObservableObject
 }
 ```
 
-Bind the collection to a `ListBox` in your AXAML:
+在 AXAML 中把集合绑定到 `ListBox`：
 
 ```xml
 <ListBox ItemsSource="{Binding Items}" />
 ```
 
-When you call `Items.Add("Item 4")` in your view model, the `ListBox` displays the new entry immediately.
+当你在视图模型中调用 `Items.Add("Item 4")` 时，`ListBox` 会立刻显示出新增的那一项。
 
-## Bind to a collection of complex objects
+## 绑定到由复杂对象组成的集合 {#bind-to-a-collection-of-complex-objects}
 
-When your collection contains objects with multiple properties, use a `DataTemplate` to control how each item appears. For property changes on individual items to propagate to the UI, each item class must also implement change notification.
+如果集合里装的是带多个属性的对象，就用 `DataTemplate` 控制每一项的外观。另外，要让单个元素的属性变化也能反映到界面上，元素类自身同样得实现变更通知。
 
-Define a `Person` class that extends `ObservableObject`:
+定义一个继承自 `ObservableObject` 的 `Person` 类：
 
 ```csharp
 public class Person : ObservableObject
@@ -76,7 +76,7 @@ public class Person : ObservableObject
 }
 ```
 
-Expose an `ObservableCollection<Person>` from your view model:
+在视图模型中暴露一个 `ObservableCollection<Person>`：
 
 ```csharp
 public class MainViewModel : ObservableObject
@@ -100,7 +100,7 @@ public class MainViewModel : ObservableObject
 }
 ```
 
-Bind the collection to a `ListBox` with a `DataTemplate`:
+把集合绑定到带 `DataTemplate` 的 `ListBox`：
 
 ```xml
 <ListBox ItemsSource="{Binding People}">
@@ -115,11 +115,11 @@ Bind the collection to a `ListBox` with a `DataTemplate`:
 </ListBox>
 ```
 
-Each `Person` appears with their `Name` and `Age` side by side. Because `Person` extends `ObservableObject`, editing a person's `Name` or `Age` in code updates the corresponding `ListBox` row without any extra work.
+每个 `Person` 的 `Name` 和 `Age` 会并排显示出来。由于 `Person` 继承自 `ObservableObject`，在代码中修改某人的 `Name` 或 `Age`，对应的 `ListBox` 行会自动更新，不需要额外写任何代码。
 
-## Add and remove items at runtime
+## 在运行时增删元素 {#add-and-remove-items-at-runtime}
 
-A common pattern is to pair collection binding with commands that let the user add or remove entries:
+一种常见的做法是把集合绑定和命令搭配起来，让用户自己增删条目：
 
 ```csharp
 public class MainViewModel : ObservableObject
@@ -158,9 +158,9 @@ public class MainViewModel : ObservableObject
 </DockPanel>
 ```
 
-## Use `ItemsControl` for non-selectable lists
+## 不需要选中行为时改用 `ItemsControl` {#use-itemscontrol-for-non-selectable-lists}
 
-If you do not need selection behavior, use `ItemsControl` instead of `ListBox`. It renders each item without selection highlighting or keyboard navigation:
+如果你用不上选中功能，就用 `ItemsControl` 代替 `ListBox`。它只负责渲染每一项，不带选中高亮，也没有键盘导航：
 
 ```xml
 <ItemsControl ItemsSource="{Binding People}">
@@ -174,21 +174,21 @@ If you do not need selection behavior, use `ItemsControl` instead of `ListBox`. 
 </ItemsControl>
 ```
 
-## Common pitfalls
+## 常见问题 {#common-pitfalls}
 
-| Problem | Cause | Solution |
+| 问题 | 原因 | 解决办法 |
 |---|---|---|
-| UI does not update when items are added | Using `List<T>` instead of `ObservableCollection<T>` | Switch to `ObservableCollection<T>` |
-| UI does not update when a property on an item changes | Item class does not implement `INotifyPropertyChanged` | Have your item class extend `ObservableObject` or implement `INotifyPropertyChanged` |
-| Replacing the entire collection does not update the UI | The collection property lacks change notification | Use `SetProperty` (or the `[ObservableProperty]` attribute) for the property that holds the collection |
+| 新增元素后界面不刷新 | 用的是 `List<T>` 而不是 `ObservableCollection<T>` | 改用 `ObservableCollection<T>` |
+| 元素的某个属性变了，界面却不刷新 | 元素类没有实现 `INotifyPropertyChanged` | 让元素类继承 `ObservableObject`，或自行实现 `INotifyPropertyChanged` |
+| 整体替换集合后界面不刷新 | 持有集合的那个属性缺少变更通知 | 给持有集合的属性加上 `SetProperty`（或 `[ObservableProperty]` 特性） |
 
 ## 另请参阅 {#see-also}
 
-- [Collection views](/docs/data-binding/collection-views): Sort, filter, and group bound collections.
-- [Master-detail binding](/docs/data-binding/master-detail): Display details for the selected item in a list.
-- [Data templates](/docs/data-templates/introduction-to-data-templates): Control how items are displayed.
-- [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged): Change notification for view models.
-- [Binding to commands](/docs/data-binding/binding-to-commands): Wire up buttons and other actions.
+- [集合视图](/docs/data-binding/collection-views)：对绑定的集合做排序、筛选和分组。
+- [主从绑定](/docs/data-binding/master-detail)：显示列表中选中项的详细信息。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：控制数据项的呈现方式。
+- [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged)：视图模型的变更通知。
+- [绑定到命令](/docs/data-binding/binding-to-commands)：把按钮等操作接起来。
 
 
 

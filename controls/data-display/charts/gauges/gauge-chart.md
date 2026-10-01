@@ -38,9 +38,9 @@ Gauge charts render a single value on a dial-style arc, with optional needle and
 public double CpuLoad { get; set; } = 67;
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | Current value displayed by the gauge. | `50.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |

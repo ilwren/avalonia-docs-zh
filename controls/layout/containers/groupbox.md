@@ -134,4 +134,4 @@ You can customize the `GroupBox` appearance through theme resources:
 - [Border](/controls/layout/containers/border)
 - [Expander](/controls/layout/containers/expander)
 - [GroupBox API reference](/api/avalonia/controls/groupbox)
-- [`GroupBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/GroupBox.cs)
+- [GitHub 上的 `GroupBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/GroupBox.cs)

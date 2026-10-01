@@ -100,7 +100,7 @@ protected override void OnKeyDown(KeyEventArgs e)
 
 ### Key properties on `KeyEventArgs`
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Key` | The physical key pressed (from the `Key` enum). |
 | `KeyModifiers` | Modifier keys held (Control, Shift, Alt, Meta). |

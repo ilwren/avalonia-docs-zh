@@ -70,9 +70,9 @@ When `HorizontalAxis` is a `DateTimeAxis`, its minimum, maximum, and label forma
 
 Custom overlay series can render in the financial chart coordinate space by implementing `IFinancialChartOverlaySeries`. Implement `IFinancialChartOverlayBoundsProvider` when overlay values should contribute to price-axis bounds. `FinancialOverlayRenderContext` provides the financial data, date-to-index map, visible price bounds, resolved brushes, and helpers such as `TryDateToX`, `ValueToY`, and `TryValueToPoint`.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of financial series and compatible overlay series rendered in the chart. | Empty collection |
 | `HorizontalAxis` | Horizontal axis used for date or category positions. | `null` |

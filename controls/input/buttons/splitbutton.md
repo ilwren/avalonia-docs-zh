@@ -15,9 +15,9 @@ A `SplitButton` should only be composed of similar actions. Fundamentally, this 
 The user-selection action should be invoked immediately when pressing either the primary part or a secondary action in the flyout. All pressed actions, whether primary or secondary, are immediate.
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property  | 说明                                                    |
+| 属性  | 说明                                                    |
 | --------- | -------------------------------------------------------------- |
 | `Content` | The content to display in the primary part                     |
 | [`Flyout`](/api/avalonia/controls/flyout)  | The `Flyout` which shows up when the secondary part is clicked |
@@ -127,5 +127,5 @@ Another common example of the `SplitButton` could be an export button. When the 
 ## 另请参阅 {#see-also}
 
 - [SplitButton API reference](/api/avalonia/controls/splitbutton)
-- [`SplitButton.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitButton/SplitButton.cs)
+- [GitHub 上的 `SplitButton.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitButton/SplitButton.cs)
 

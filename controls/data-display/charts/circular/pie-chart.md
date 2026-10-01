@@ -41,18 +41,18 @@ public ObservableCollection<double> PieChartData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
 ### PieChart
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `InnerRadiusFactor` | Center-hole size applied when a `PieSeries` does not set its own inner radius. Set a value greater than `0.0` to create a [donut](/controls/data-display/charts/circular/donut-chart). | `0.0` |
 | `Palette` | Custom brush collection for the segments. | Auto-generated |
 
 ### PieSeries
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data items. | `null` |
 | `ValuePath` | Path to the property used for the segment values. | `null` |

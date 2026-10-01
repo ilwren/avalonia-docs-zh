@@ -9,11 +9,11 @@ import ControlContentStudentScreenshot from '/img/controls/contentcontrol/conten
 
 [`ContentControl`](/api/avalonia/controls/contentcontrol) is a control that displays a single piece of content. The content can be a string, a control, or a data-bound object rendered through a `DataTemplate`. Many common Avalonia controls, including `Button`, `Window`, and `UserControl`, inherit from `ContentControl`, so understanding how it works is fundamental to building Avalonia applications.
 
-## Common properties
+## 常用属性 {#common-properties}
 
 You will probably use these properties most often:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Content` | The content to display in the control. |
 | `ContentTemplate` | A `DataTemplate` used to render the `Content` object. |
@@ -24,7 +24,7 @@ You will probably use these properties most often:
 
 At its simplest, a `ContentControl` displays the data you assign to its [`Content`](/api/avalonia/controls/contentcontrol#content-property) property.
 
-For example:
+例如：
 
 ```xml
 <ContentControl Content="Hello World!"/>
@@ -138,7 +138,7 @@ If you want an animated transition when the content changes, consider using [`Tr
 ## 另请参阅 {#see-also}
 
 - [ContentControl API reference](/api/avalonia/controls/contentcontrol)
-- [`ContentControl.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContentControl.cs)
+- [GitHub 上的 `ContentControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContentControl.cs)
 - [Data templates](/docs/data-templates/introduction-to-data-templates)
 - [`TransitioningContentControl`](/controls/data-display/transitioningcontentcontrol)
 - [Data binding](/docs/data-binding/data-context)

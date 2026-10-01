@@ -7,7 +7,7 @@ doc-type: how-to
 
 Avalonia lets you embed native Android views inside the Avalonia visual tree by subclassing [`NativeControlHost`](/api/avalonia/controls/nativecontrolhost). You wrap each Android `View` in an [`AndroidViewControlHandle`](/api/avalonia/android/androidviewcontrolhandle) and return it from `CreateNativeControlCore`. This is useful when you need platform-specific controls (such as `WebView`, `MapView`, or media players) that have no Avalonia equivalent.
 
-## How it works
+## 运作原理 {#how-it-works}
 
 `NativeControlHost` reserves space in the Avalonia layout and hands rendering of that region to the native platform. On Android, you:
 

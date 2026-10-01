@@ -26,7 +26,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBar properties
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `PrimaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of primary commands displayed directly in the bar. |
 | `SecondaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of secondary commands displayed in the overflow menu. |
@@ -71,7 +71,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBarButton properties
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Icon` | `object?` | `null` | The icon displayed on the button. Typically a `PathIcon`, `SymbolIcon`, or `BitmapIcon`. |
 | `Label` | `string?` | `null` | The text label for the button. |
@@ -84,7 +84,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBarToggleButton properties
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Icon` | `object?` | `null` | The icon displayed on the toggle button. |
 | `Label` | `string?` | `null` | The text label for the toggle button. |
@@ -537,4 +537,4 @@ private bool _isUnderline;
 - [ContentPage](/controls/navigation/contentpage)
 - [NavigationPage](/controls/navigation/navigationpage)
 - [CommandBar API reference](/api/avalonia/controls/commandbar)
-- [`CommandBar.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CommandBar/CommandBar.cs)
+- [GitHub 上的 `CommandBar.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CommandBar/CommandBar.cs)

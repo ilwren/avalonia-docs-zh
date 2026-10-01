@@ -64,7 +64,7 @@ public ObservableCollection<int> StackedAreaTablet { get; } =
 
 ## Common properties (StackedAreaSeries)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The series name. | `null` |
 | `ItemsSource` | The data collection for this layer. | `null` |

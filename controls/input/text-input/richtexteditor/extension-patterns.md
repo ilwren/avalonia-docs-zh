@@ -737,7 +737,7 @@ To turn recording off, set `TextDocument.UndoManager` to `null`, or keep the ins
 
 `SelectionSnapshot.Capture(selection)` builds a snapshot that `BeginUndoUnit` and `IUndoScope.SetSelectionAfter` accept, so a grouped edit can restore the caret it started from.
 
-## Best practices
+## 实践建议 {#best-practices}
 
 ### Do's
 

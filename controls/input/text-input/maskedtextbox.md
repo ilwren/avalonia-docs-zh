@@ -13,7 +13,7 @@ The mask pattern can also contain literal characters that appear in the input an
 
 You will probably use these properties most often:
 
-| Property    | 说明                                                                  |
+| 属性    | 说明                                                                  |
 |-------------|------------------------------------------------------------------------------|
 | `Mask`      | The mask pattern to use. See the special mask characters in the table below. |
 | `AsciiOnly` | Restricts input to the ASCII letters a-z and A-Z.                            |
@@ -68,4 +68,4 @@ This is a basic example:
 
 ## 另请参阅 {#see-also}
 
-- [`MaskedTextBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/MaskedTextBox.cs)
+- [GitHub 上的 `MaskedTextBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/MaskedTextBox.cs)

@@ -9,7 +9,7 @@ The [`WindowNotificationManager`](/api/avalonia/controls/notifications/windownot
 
 ## Useful properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Position` | `NotificationPosition` | Where notifications appear. Options: `TopLeft`, `TopCenter`, `TopRight`, `BottomLeft`, `BottomCenter`, `BottomRight`. Default: `TopRight`. |
 | `MaxItems` | `int` | Maximum number of notifications visible at one time. Default: `5`. |
@@ -18,7 +18,7 @@ The [`WindowNotificationManager`](/api/avalonia/controls/notifications/windownot
 
 The built-in `Notification` class exposes these properties:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Title` | `string` | The notification title text. |
 | `Message` | `string` | The notification body text. |

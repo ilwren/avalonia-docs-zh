@@ -270,7 +270,7 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 
 `EditorTool` exposes the following on every toolbar item:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `TargetAreas` | `ToolbarTargetAreas` | Contexts in which this tool should appear. Defaults to `CaretAreas`. See [ToolbarTargetAreas](#toolbar-target-areas). |
 | `ActiveTargetAreas` | `ToolbarTargetAreas` | Read-only. The areas the caret is currently in, pushed here by the host toolbar as the selection moves. |
@@ -280,7 +280,7 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 
 `ActionTool` adds the action-bearing surface (inherited by every interactive tool):
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Action` | `IEditorAction?` | The action this tool executes. |
 | `Icon` | `object?` | Display icon for the tool. |
@@ -288,7 +288,7 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 
 `EditorToolbar` itself carries:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Editor` | `RichTextEditor?` | The host this toolbar drives. Reassign it to retarget the toolbar at runtime. |
 | `EditorHost` | `ITextEditorHost?` | The host this toolbar drives that is not a `RichTextEditor`. |
@@ -297,7 +297,7 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 | `ShowShortcuts` | `bool` | Whether tooltips display the action's keyboard gesture. |
 | `ToolSpacing` | `double` | Uniform spacing between items in the toolbar panel. `ToolbarGroup` has one of its own for its children. |
 
-### XAML usage
+### XAML 用法 {#xaml-usage}
 
 ```xml
 <!-- One-shot command -->
@@ -753,7 +753,7 @@ Collection descends the whole tool tree. A nested `ToolbarGroup` contributes its
 
 ### Rules for what collapses
 
-| `CanCollapseOverride` | `OverflowMenuItem` | Result |
+| `CanCollapseOverride` | `OverflowMenuItem` | 结果 |
 |-----------------------|--------------------|---------|
 | `null` | set | Collapsible (default) |
 | `null` | `null` | Not collapsible |

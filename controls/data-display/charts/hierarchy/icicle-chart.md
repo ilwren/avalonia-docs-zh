@@ -44,9 +44,9 @@ public ObservableCollection<TreeMapItem> IcicleData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical data source. | `null` |
 | `ValuePath` | Property name determining rectangle width. | `null` |

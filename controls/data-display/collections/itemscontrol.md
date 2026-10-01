@@ -13,7 +13,7 @@ You can use it with data binding, styling and data templates to create a complet
 
 You will probably use these properties most often:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `ItemsSource` | The bound collection that is used as the data source for the control. |
 | `ItemTemplate` | A `DataTemplate` that controls how each individual item looks. |
@@ -105,5 +105,5 @@ public class MainViewModel
 - [DataGrid](/controls/data-display/structured-data/datagrid)
 - [Data templates](/docs/data-templates/introduction-to-data-templates)
 - [ItemsControl API reference](/api/avalonia/controls/itemscontrol)
-- [`ItemsControl.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ItemsControl.cs)
+- [GitHub 上的 `ItemsControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ItemsControl.cs)
 

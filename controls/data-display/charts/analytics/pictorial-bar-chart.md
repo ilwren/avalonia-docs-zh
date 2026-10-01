@@ -78,7 +78,7 @@ private const string AirplaneIcon = "M21,16v-2l-8-5V3.5C13,2.67,12.33,2,11.5,2S1
 
 ## Common properties (PictorialBarSeries)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Geometry` | The SVG/XAML path data for the icon. | `null` |
 | `RenderMode` | `Stretch`, `Clip`, or `Repeat`. | `Stretch` |

@@ -36,7 +36,7 @@ In this example, a `TextBlock` control is used to display an icon from the `Font
 
 Path icons can draw icons from `Geometry` which includes using paths from the scalable vector graphics (SVG) format that can be customized with size and color. See the [reference](/controls/media/pathicon) for how to use this control.
 
-### Best practices
+### 实践建议 {#best-practices}
 
 While using icons can enhance the usability of your application, it is important to use them wisely. Keep the following tips in mind when using icons:
 

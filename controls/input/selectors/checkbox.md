@@ -16,7 +16,7 @@ Clicking the control toggles the value in the sequence: checked, unchecked, unkn
 
 You will probably use these properties most often:
 
-| Property       | Type    | 说明                                                                 |
+| 属性       | Type    | 说明                                                                 |
 | -------------- | ------- | --------------------------------------------------------------------------- |
 | `IsChecked`    | `bool?` | Gets or sets the checked state. `true` for checked, `false` for unchecked, `null` for indeterminate. |
 | `IsThreeState` | `bool`  | When `true`, the control cycles through three states: checked, unchecked, and indeterminate. |
@@ -141,4 +141,4 @@ partial void OnSelectAllChanged(bool? value)
 - [ToggleSwitch](/controls/input/selectors/toggleswitch)
 - [RadioButton](/controls/input/buttons/radiobutton)
 - [CheckBox API reference](/api/avalonia/controls/checkbox)
-- [`CheckBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CheckBox.cs)
+- [GitHub 上的 `CheckBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CheckBox.cs)

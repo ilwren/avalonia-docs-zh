@@ -10,7 +10,7 @@ import CustomThemeDictionaries from '/img/guides/ui-development/custom-theme-dic
 Because theme variants are deeply integrated into the resource system, it is important to understand Avalonia [resources](/docs/app-development/resource-dictionary).
 :::
 
-## Introduction
+## 引言 {#introduction}
 
 In Avalonia, a *theme variant* refers to a specific visual appearance of a control based on a chosen theme.
 

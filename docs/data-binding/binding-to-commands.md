@@ -1,19 +1,19 @@
 ---
 id: binding-to-commands
-title: Binding to commands
-description: Bind UI controls to commands to handle user actions, using the MVVM pattern.
+title: 绑定到命令
+description: 按 MVVM 模式把界面控件绑定到命令，以响应用户操作。
 doc-type: explanation
 ---
 
-Commands connect user interactions to logic in your code. This page covers how a binding reaches a command: the binding syntax, how a `Command` binding resolves a method, and how `CommandParameter` behaves.
+命令把用户交互和代码里的逻辑连在一起。本文讲的是绑定如何抵达命令：绑定语法、`Command` 绑定怎样解析出目标方法，以及 `CommandParameter` 的行为。
 
-For how to write the commands themselves—the `ICommand` interface, `CanExecute`, async commands, and keyboard shortcuts—see [Commanding](/docs/input-interaction/commanding).
+至于命令本身怎么写 —— `ICommand` 接口、`CanExecute`、异步命令和键盘快捷键 —— 请见[命令](/docs/input-interaction/commanding)。
 
-## Binding with `ICommand`
+## 用 `ICommand` 绑定 {#binding-with-icommand}
 
-Any control that implements `ICommandSource` (such as `Button`, `MenuItem` or `ToggleButton`) has a `Command` property, which you can use in the view model.
+凡是实现了 `ICommandSource` 的控件（例如 `Button`、`MenuItem` 或 `ToggleButton`）都有一个 `Command` 属性，可在视图模型中加以利用。
 
-The example below uses the `[RelayCommand]` attribute from `CommunityToolkit.Mvvm` to generate a `SaveCommand` property of type `IRelayCommand`.
+下面的例子用 `CommunityToolkit.Mvvm` 提供的 `[RelayCommand]` 特性，生成了一个类型为 `IRelayCommand` 的 `SaveCommand` 属性。
 
 ```xml title="XAML"
 <Button Content="Save" Command="{Binding SaveCommand}" />
@@ -31,12 +31,12 @@ public partial class MainViewModel : ObservableObject
 ```
 
 :::note
-The naming convention for commands is to append "Command" to the method name e.g., `SaveCommand`, `UndoCommand`.
+命令的命名惯例是在方法名后面加上 “Command”，例如 `SaveCommand`、`UndoCommand`。
 :::
 
-## Binding directly to a method
+## 直接绑定到方法 {#binding-directly-to-a-method}
 
-As an alternative to `ICommand`, you can bind the `Command` property directly to a method in the data context.
+除了 `ICommand`，你也可以把 `Command` 属性直接绑定到数据上下文中的某个方法。
 
 ```xml title="XAML"
 <Button Content="Save" Command="{Binding Save}" />
@@ -49,27 +49,27 @@ public void Save()
 }
 ```
 
-### How the overload is chosen
+### 重载是怎么选中的 {#how-the-overload-is-chosen}
 
-If you [overload a method](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading), Avalonia resolves the overload using the following rules:
+如果你[重载了方法](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading)，Avalonia 按以下规则确定具体用哪一个：
 
-| Same-name methods | Result |
+| 同名方法的情形 | 结果 |
 |---|---|
-| One overload taking one parameter | Chosen, whatever the parameter type |
-| Two or more one-parameter overloads, one taking `object` | `object` overload is chosen |
-| Two or more one-parameter overloads, none taking `object` | Error |
-| One overload with no parameters | Chosen |
-| Two or more overloads taking more than one parameter | Error |
+| 只有一个重载接受一个参数 | 选中它，参数是什么类型都行 |
+| 两个及以上的单参数重载，其中一个接受 `object` | 选中接受 `object` 的那个重载 |
+| 两个及以上的单参数重载，但没有一个接受 `object` | Error |
+| 只有一个无参重载 | Chosen |
+| 两个及以上的重载都接受多个参数 | Error |
 
-Overloads taking two or more parameters are always ignored.
+接受两个及以上参数的重载一律被忽略。
 
 :::caution
-Compiled bindings do not convert `CommandParameter` to the parameter type. If the types do not match, the cast throws an exception when the command runs. Reflection bindings do convert the value.
+编译绑定不会把 `CommandParameter` 转换成参数类型。类型对不上时，命令执行时类型转换会抛异常。反射绑定则会做这层转换。
 :::
 
-### Enabled state
+### 启用状态 {#enabled-state}
 
-To determine the enabled state on the bound control when you use method binding, add a `bool` method with a name in the format of `Can` followed by the bound method:
+采用方法绑定时，若要决定目标控件的启用状态，请添加一个 `bool` 方法，命名格式为 `Can` 加上所绑定的方法名：
 
 ```csharp
 public void Save()
@@ -81,12 +81,12 @@ public bool CanSave(object? parameter) => !string.IsNullOrWhiteSpace(Name);
 ```
 
 :::note
-This convention applies to method binding only. With `ICommand`, the control uses the command's own `CanExecute` instead. See [Commanding](/docs/input-interaction/commanding#icommand-interface) to learn more about `CanExecute`.
+这条约定只适用于方法绑定。使用 `ICommand` 时，控件走的是命令自带的 `CanExecute`。关于 `CanExecute` 的更多内容见[命令](/docs/input-interaction/commanding#icommand-interface)。
 :::
 
-## Command parameter
+## 命令参数 {#command-parameter}
 
-Pass data from the UI to the command using `CommandParameter`. In this example, the view model receives the parameter to delete an item.
+用 `CommandParameter` 把界面上的数据传给命令。本例中，视图模型借助该参数确定要删除哪一项。
 
 ```xml title="XAML"
 <ListBox ItemsSource="{Binding Items}">
@@ -111,9 +111,9 @@ private void Delete(Item item)
 }
 ```
 
-## Binding commands from a different data context
+## 跨数据上下文绑定命令 {#binding-commands-from-a-different-data-context}
 
-When the command is on a parent view model, but the binding occurs inside a template:
+当命令位于父级视图模型上，而绑定写在模板内部时：
 
 ```xml
 <!-- Using $parent to reach an ancestor's DataContext -->
@@ -125,13 +125,13 @@ When the command is on a parent view model, but the binding occurs inside a temp
         CommandParameter="{Binding}" />
 ```
 
-See [`DataContext` type inference](/docs/data-binding/compiled-bindings#datacontext-type-inference) for more information.
+更多说明见 [`DataContext` 类型推断](/docs/data-binding/compiled-bindings#datacontext-type-inference)。
 
 ## 另请参阅 {#see-also}
 
-- [Commanding](/docs/input-interaction/commanding): Writing commands—`ICommand`, `CanExecute`, async commands, and manual implementations.
-- [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Hotkey and keybinding setup.
-- [How to bind CanExecute](/docs/data-binding/how-to-bind-can-execute): Worked example of a button enabled by `CanExecute`.
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.
-- [Binding debugging](/docs/data-binding/binding-debugging#method-binding-overload-not-resolved): Diagnosing method binding failures.
-- [Adding interactivity](/docs/input-interaction/adding-interactivity): Choosing between events and commands.
+- [命令](/docs/input-interaction/commanding)：怎么写命令 —— `ICommand`、`CanExecute`、异步命令以及手工实现。
+- [键盘与快捷键](/docs/input-interaction/keyboard-and-hotkeys)：快捷键与按键绑定的配置。
+- [如何绑定 CanExecute](/docs/data-binding/how-to-bind-can-execute)：用 `CanExecute` 控制按钮可用状态的完整示例。
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定路径、模式与转换器。
+- [调试数据绑定](/docs/data-binding/binding-debugging#method-binding-overload-not-resolved)：排查方法绑定失败的原因。
+- [添加交互](/docs/input-interaction/adding-interactivity)：事件和命令之间该怎么选。

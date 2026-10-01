@@ -64,8 +64,8 @@ public enum UpdateSourceTrigger
 | --- | --- |
 | [Default](#uid-06aed589ee) | The default [Avalonia.Data.UpdateSourceTrigger](xref:Avalonia.Data.UpdateSourceTrigger) value of the binding target property. This currently defaults to [Avalonia.Data.UpdateSourceTrigger.PropertyChanged](xref:Avalonia.Data.UpdateSourceTrigger.PropertyChanged). |
 | [Explicit](#uid-ebbc6f7463) | Updates the binding source only when you call the [Avalonia.Data.BindingExpressionBase.UpdateSource](xref:Avalonia.Data.BindingExpressionBase.UpdateSource) method. |
-| [LostFocus](#uid-f97bb78415) | Updates the binding source whenever the binding target element loses focus. |
-| [PropertyChanged](#uid-cd9510bdb3) | Updates the binding source immediately whenever the binding target property changes. |
+| [LostFocus](#uid-f97bb78415) | 绑定目标元素失去焦点时才更新绑定源。 |
+| [PropertyChanged](#uid-cd9510bdb3) | 绑定目标属性一变化，就立即更新绑定源。 |
 
 <section className="apiref-page__member-entry">
 
@@ -103,7 +103,7 @@ public Avalonia.Data.UpdateSourceTrigger Explicit
 
 ### LostFocus 字段 {#lostfocus-field}
 
-Updates the binding source whenever the binding target element loses focus.
+绑定目标元素失去焦点时才更新绑定源。
 
 ```csharp
 public Avalonia.Data.UpdateSourceTrigger LostFocus
@@ -117,7 +117,7 @@ public Avalonia.Data.UpdateSourceTrigger LostFocus
 
 ### PropertyChanged 字段 {#propertychanged-field}
 
-Updates the binding source immediately whenever the binding target property changes.
+绑定目标属性一变化，就立即更新绑定源。
 
 ```csharp
 public Avalonia.Data.UpdateSourceTrigger PropertyChanged

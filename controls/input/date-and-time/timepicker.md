@@ -11,7 +11,7 @@ The `TimePicker` presents two to four spinner controls that let users select a t
 
 You will probably use these properties most often:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `SelectedTime` | `TimeSpan?` | The selected time value. `null` when no time is selected. |
 | `ClockIdentifier` | `string` | Sets the clock format. Use `12HourClock` or `24HourClock`. The 12-hour format adds an AM/PM spinner. |
@@ -102,4 +102,4 @@ You can react to changes by subscribing to the `SelectedTimeChanged` event or by
 - [DatePicker](/controls/input/date-and-time/datepicker)
 - [CalendarDatePicker](/controls/input/date-and-time/calendardatepicker)
 - [TimePicker API reference](/api/avalonia/controls/timepicker)
-- [`TimePicker.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DateTimePickers/TimePicker.cs)
+- [GitHub 上的 `TimePicker.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DateTimePickers/TimePicker.cs)

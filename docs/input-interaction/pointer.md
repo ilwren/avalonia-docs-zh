@@ -69,7 +69,7 @@ Avalonia distinguishes between different input device types through the `Pointer
 
 When the pointer type is `Pen`, additional properties are available on `PointerPointProperties`:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Pressure` | `float` | Pressure level from 0 (no pressure) to 1 (maximum pressure). |
 | `XTilt` | `float` | Tilt of the pen along the X axis. |
@@ -197,7 +197,7 @@ private void OnPointerReleased(object? sender, PointerReleasedEventArgs e)
 }
 ```
 
-## More information
+## 更多信息 {#more-information}
 
 For the complete API documentation about pointer and tap events, see the [PointerEventArgs API reference](/api/avalonia/input/pointereventargs).
 

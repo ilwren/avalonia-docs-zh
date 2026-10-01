@@ -11,7 +11,7 @@ This guide covers common patterns for switching between views (pages) in your Av
 
 Before you start, consider which pattern fits your requirements:
 
-| Pattern | Best for |
+| Pattern | 适用场景 |
 |---|---|
 | [`ContentControl`](/api/avalonia/controls/contentcontrol) with data templates | Small apps with a few fixed pages |
 | [`TransitioningContentControl`](/api/avalonia/controls/transitioningcontentcontrol) | Same as above, but with animated transitions |
@@ -47,7 +47,7 @@ The simplest navigation pattern uses a `ContentControl` that displays different 
 </Window>
 ```
 
-The view model:
+视图模型：
 
 ```csharp
 public partial class MainViewModel : ObservableObject

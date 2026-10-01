@@ -4,7 +4,7 @@ title: Windows
 description: Windows-specific considerations when running XPF applications, including Win32 API behavior and compatibility notes.
 ---
 
-## Overview
+## 概述 {#overview}
 
 Windows is the native platform for WPF, and XPF applications run on Windows with full compatibility. This page covers Windows-specific considerations when using XPF rather than standard WPF.
 

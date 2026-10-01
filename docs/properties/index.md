@@ -37,7 +37,7 @@ public class MyControl : Control
 
 The `Register` method accepts the following parameters:
 
-| Parameter | 说明 |
+| 参数 | 说明 |
 |---|---|
 | `name` | The name of the property. Must match the CLR property name. |
 | `defaultValue` | The default value for the property. |

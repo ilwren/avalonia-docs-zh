@@ -115,7 +115,7 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 
 ### Key properties
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Center` | The center of the outermost ellipse, as a percentage of the bounding box. Defaults to `50%,50%`. |
 | `GradientOrigin` | The point where the gradient starts (the innermost color). Defaults to match `Center`. |
@@ -159,7 +159,7 @@ You can create non-circular gradients by giving `RadiusX` and `RadiusY` differen
 
 ### Key properties
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Center` | The center of the sweep. Defaults to `50%,50%`. |
 | `Angle` | The starting angle in degrees, measured clockwise from the top. Defaults to `0`. |
@@ -172,7 +172,7 @@ To create a seamless sweep, set the last `GradientStop` color to match the first
 
 Every gradient brush contains one or more `GradientStop` elements. Each stop defines a `Color` and an `Offset`:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Color` | Any valid color value (hex, named color, `rgb()`, `hsl()`, and so on). |
 | `Offset` | A value from `0.0` to `1.0` indicating the position along the gradient. |

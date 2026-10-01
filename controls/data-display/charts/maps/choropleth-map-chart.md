@@ -84,15 +84,15 @@ public CountryDensityData[] ShapeLayerData { get; } = new CountryDensityData[]
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `DataLayer` | Canonical `ShapeLayer` used to render choropleth regions. A default layer is created automatically. | Auto-created `ShapeLayer` |
 
 ## Common properties (`DataLayer` / `ShapeLayer`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of region data items. | `null` |
 | `GeoJson` | The GeoJSON geometry source. | `null` |

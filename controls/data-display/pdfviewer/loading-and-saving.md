@@ -59,7 +59,7 @@ The document's flags are exposed on the `Permissions` property as `PdfPermission
 
 Your own gates are separate:
 
-| Property | Effect |
+| 属性 | Effect |
 |---|---|
 | `IsReadOnly` | Disables annotation and form editing in one switch. Tools are disarmed, and selected annotations cannot be moved or deleted. |
 | `AllowTextSelection` | Enables text selection and copy. |

@@ -49,9 +49,9 @@ public ObservableCollection<int> ScatterSeriesData { get; } =
     new() { 25, 45, 35, 55, 40, 60, 50, 70, 55, 75 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data points. | `null` |
@@ -86,7 +86,7 @@ The `ScatterLineSeries` extends scatter charts by drawing connecting lines betwe
 
 ### ScatterLineSeries properties
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ShowLines` | Whether to show connecting lines between scatter points. | `true` |
 | `StrokeDashStyle` | Dash style for the connecting lines. When `null`, lines are solid. | `null` |

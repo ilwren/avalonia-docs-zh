@@ -27,7 +27,7 @@ import CarouselPageDataTemplateScreenshot from '/img/controls/carouselpage/carou
 
 You will probably use these properties most often:
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | -------- | ---- | ------- | ----------- |
 | `Pages` | `IEnumerable<Page>?` | `null` | The collection of child pages. This is the XAML content property. Supports any `IEnumerable<Page>`, including observable collections. |
 | `ItemsSource` | `IEnumerable?` | `null` | View-model collection. When set, takes precedence over `Pages` as the item source. Use together with `PageTemplate` to convert each item into a `Page`. |

@@ -22,7 +22,7 @@ The [`BoxShadow`](/api/avalonia/media/boxshadow) property on [`Border`](/api/ava
 
 The shadow parameters are, in order: `offsetX offsetY blur spread color`.
 
-| Parameter | 说明 |
+| 参数 | 说明 |
 |---|---|
 | `offsetX` | Horizontal offset. Positive values move the shadow right. |
 | `offsetY` | Vertical offset. Positive values move the shadow down. |
@@ -101,7 +101,7 @@ The [`Effect`](/api/avalonia/media/effect) property on any `Visual` accepts effe
 </Border>
 ```
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Radius` | The blur radius in pixels. Larger values produce a stronger blur. Default is 5. |
 
@@ -118,7 +118,7 @@ The [`Effect`](/api/avalonia/media/effect) property on any `Visual` accepts effe
 </TextBlock>
 ```
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `OffsetX` | Horizontal shadow offset in pixels. Default is approximately 3.5. |
 | `OffsetY` | Vertical shadow offset in pixels. Default is approximately 3.5. |
@@ -140,7 +140,7 @@ An alternative that uses direction and depth instead of explicit offsets:
 </Border>
 ```
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `ShadowDepth` | Distance of the shadow from the element. Default is 5. |
 | `Direction` | Angle in degrees (0-360) indicating shadow direction. Default is 315 (lower-right). |
@@ -238,7 +238,7 @@ Values range from `0.0` (fully transparent) to `1.0` (fully opaque). Unlike `Opa
 
 ### IsVisible vs Opacity
 
-| Approach | Layout impact | Interaction | Animations |
+| 办法 | Layout impact | Interaction | Animations |
 | --- | --- | --- | --- |
 | `IsVisible="False"` | Element is removed from layout. | Cannot receive input. | [Keyframe animations](/docs/graphics-animation/keyframe-animations) pause by default. |
 | `Opacity="0"` | Element still occupies space. | Can still receive pointer and keyboard input. | [Keyframe animations](/docs/graphics-animation/keyframe-animations) keep running. |

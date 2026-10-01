@@ -88,9 +88,9 @@ public ObservableCollection<TableChartColumn> TableColumns { get; } = new()
 
 `Columns` takes `TableChartColumn` objects. Each column can define a `Header`, `ValuePath`, `Format`, and optional color-scale settings.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The row data source. | `null` |
 | `RowLabelPath` | Path to the text displayed in the left row header column. | `null` |

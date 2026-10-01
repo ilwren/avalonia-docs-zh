@@ -1,22 +1,22 @@
 ---
 id: including-assets
-title: Assets
-description: Include and reference bitmap, style, and resource dictionary assets in Avalonia applications.
+title: 资产
+description: 在 Avalonia 应用中包含并引用位图、样式和资源字典等资产。
 doc-type: reference
 ---
 
 import AssetFileDiagram from '/img/concepts/ui-concepts/assets/asset-file.png';
 import AssetLibraryDiagram from '/img/concepts/ui-concepts/assets/asset-library.png';
 
-Many applications need to include assets such as bitmaps, styles and resource dictionaries. Resource dictionaries contain graphical fundamentals that can be declared in XAML. Styles can also be written in XAML, but bitmap assets are binary files, for example PNG and JPEG formats.
+很多应用都需要带上位图、样式、资源字典之类的资产。资源字典里装的是可以用 XAML 声明的图形基本元素；样式同样能用 XAML 编写；而位图资产则是 PNG、JPEG 这类二进制文件。
 
-## Including assets
+## 把资产包含进来 {#including-assets}
 
 <Image light={AssetFileDiagram} alt="Diagram showing how asset files are included in an Avalonia project" position="center" maxWidth={400} cornerRadius="true"/>
 
-You include assets in an application by using the `<AvaloniaResource>` element in your project file.
+在项目文件中用 `<AvaloniaResource>` 元素即可把资产包含进应用。
 
-For example, the Avalonia .NET Core MVVM App solution template creates a folder called `Assets` (containing the `avalonia-logo.ico` file) and adds an element to the project file to include any files located there. As follows:
+举例来说，Avalonia .NET Core MVVM App 解决方案模板会创建一个名为 `Assets` 的文件夹（里面放着 `avalonia-logo.ico` 文件），并在项目文件中添加一个元素，把该目录下的所有文件都包含进来，就像这样：
 
 ```xml
 <ItemGroup>
@@ -24,16 +24,16 @@ For example, the Avalonia .NET Core MVVM App solution template creates a folder 
 </ItemGroup>
 ```
 
-You can include whatever files you want by adding additional `<AvaloniaResource>` elements in this item group.
+在这个 item group 里继续添加 `<AvaloniaResource>` 元素，想包含什么文件都行。
 
 :::tip
-The element name `AvaloniaResource` here only indicates that the assets will be internally stored as .NET resources by the build. However, in Avalonia terms, these files are called 'Assets' to distinguish them from 'XAML resources'.
+这里的元素名 `AvaloniaResource` 只是表示：构建时这些资产会以 .NET 资源的形式内嵌进去。但在 Avalonia 的语境里，我们把这些文件称作「资产（Assets）」，以便和「XAML 资源（resources）」区分开。
 :::
 
 
-### Referencing included assets
+### 引用已包含的资产 {#referencing-included-assets}
 
-Once asset files are included, they can be referenced as needed in the XAML that defines your UI. For example, these assets are referenced by specifying their relative path:
+资产文件一旦包含进来，就可以在定义界面的 XAML 中按需引用。例如下面这些资产是用相对路径引用的：
 
 ```xml
 <Image Source="icon.png"/>
@@ -41,45 +41,45 @@ Once asset files are included, they can be referenced as needed in the XAML that
 <Image Source="../icon.png"/>
 ```
 
-As an alternative, you can use the rooted path:
+也可以改用以根目录开头的路径：
 
 ```xml
 <Image Source="/Assets/icon.png"/>
 ```
 
-## Library assets
+## 来自类库的资产 {#library-assets}
 
 <Image light={AssetLibraryDiagram} alt="Diagram showing how to reference assets from a library assembly" position="center" maxWidth={400} cornerRadius="true"/>
 
-If the asset is included in a different assembly from the XAML file, then you use the `avares:` URI scheme. For example, if the asset is contained in an assembly called `MyAssembly.dll` in a `Assets` folder, then you use:
+如果资产所在的程序集和 XAML 文件不是同一个，就要用 `avares:` URI 方案。比如资产位于名为 `MyAssembly.dll` 的程序集的 `Assets` 文件夹中，就写成：
 
 ```xml
 <Image Source="avares://MyAssembly/Assets/icon.png"/>
 ```
 
-### Asset type conversion
+### 资产的类型转换 {#asset-type-conversion}
 
-Avalonia has built-in converters which can load assets for bitmaps, icons and fonts out of the box. So an assets Uri can be automatically converted to any of following:
+Avalonia 内置了若干转换器，开箱即可把资产加载为位图、图标和字体。也就是说，一个资产 URI 可以自动转换成下列任意一种：
 
-* Image - `Image` type
-* Bitmap - `Bitmap` type
-* Window Icon - `WindowIcon` type
-* Font - `FontFamily` type
+* Image —— `Image` 类型
+* Bitmap —— `Bitmap` 类型
+* 窗口图标 —— `WindowIcon` 类型
+* 字体 —— `FontFamily` 类型
 
-### Loading assets in code
+### 在代码中加载资产 {#loading-assets-in-code}
 
-You can write code to load assets using the `AssetLoader` static class. For example:
+可以用 `AssetLoader` 静态类编写代码来加载资产。例如：
 
 ```csharp title='C#'
 var bitmap = new Bitmap(AssetLoader.Open(new Uri(uri)));
 ```
 
-The `uri` variable in the above code can contain any valid URI with `avares:` scheme (as described above).
+上面代码中的 `uri` 变量，可以是任何采用 `avares:` 方案的合法 URI（即前文所述的那种）。
 
-Avalonia does not provide support for `file://`, `http://`, or `https://` schemes. If you want to load files from disk or the Web, you must implement that functionality yourself or use community implementations.
+Avalonia 不支持 `file://`、`http://` 和 `https://` 这几种方案。要从磁盘或网络加载文件，得你自己实现，或者借助社区的实现。
 
 :::info
-Avalonia has a community implementation for an image loader at [AsyncImageLoader.Avalonia](https://github.com/AvaloniaUtils/AsyncImageLoader.Avalonia).
+社区实现的图片加载器可参考 [AsyncImageLoader.Avalonia](https://github.com/AvaloniaUtils/AsyncImageLoader.Avalonia)。
 :::
 
 ## 另请参阅 {#see-also}

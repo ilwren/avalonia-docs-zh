@@ -131,7 +131,7 @@ You will probably use these properties most often:
   </table>
 
 
-## More information
+## 更多信息 {#more-information}
 
 :::info
 For the complete API documentation about this gesture recognizer, see the [ScrollGestureRecognizer API reference](/api/avalonia/input/gesturerecognizers/scrollgesturerecognizer).

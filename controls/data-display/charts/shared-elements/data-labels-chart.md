@@ -56,7 +56,7 @@ public ObservableCollection<SalesPoint> SalesData { get; } = new()
 
 ## Common properties (on Series)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ShowLabels` | Toggles values on the series points. | `false` |
 | `LabelFormat` | String format. `{0}` is the value and `{1}` is the category. | `"{0:N0}"` |

@@ -52,7 +52,7 @@ public ObservableCollection<double> RadarSeries2 { get; } = new() { 60, 70, 85, 
 
 ## Common properties (`RadarChart`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `AxisCount` | Number of axes shown around the chart. | `5` |
 | `ShowGridLines` | Whether to draw the concentric radar grid. | `true` |
@@ -62,7 +62,7 @@ public ObservableCollection<double> RadarSeries2 { get; } = new() { 60, 70, 85, 
 
 ## Common properties (`RadarSeries`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The numerical values for the radar axes. | `null` |
 | `Title` | The name of the player/entity (for legend). | `null` |

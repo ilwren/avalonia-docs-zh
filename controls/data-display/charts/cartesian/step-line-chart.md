@@ -45,9 +45,9 @@ public ObservableCollection<int> StepLineSeriesData { get; } =
     new() { 100, 100, 120, 120, 120, 140, 140, 160 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data items. | `null` |

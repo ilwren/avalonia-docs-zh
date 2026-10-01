@@ -29,4 +29,4 @@ To prevent these exceptions appearing, try the following:
 ## 另请参阅 {#see-also}
 
 - [NumericUpDown control](/controls/input/selectors/numericupdown)
-- [Data binding syntax](/docs/data-binding/data-binding-syntax)
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)

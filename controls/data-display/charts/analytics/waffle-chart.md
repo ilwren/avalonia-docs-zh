@@ -32,9 +32,9 @@ Waffle charts (square pie charts) visualize percentages or proportions using a g
 </WrapPanel>
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `0` |
 | `MaxValue` | The maximum value for percentage calculation. | `100` |

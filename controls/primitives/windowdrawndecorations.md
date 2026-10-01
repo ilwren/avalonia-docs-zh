@@ -53,7 +53,7 @@ public class WindowDrawnDecorationsContent : StyledElement
 
 ## 属性 {#properties}
 
-| Property | Type | Visibility | 说明 |
+| 属性 | Type | Visibility | 说明 |
 | --- | --- | --- | --- |
 | `Template` | `WindowDrawnDecorationsTemplate` | Styled | Decorations template. |
 | `DefaultTitleBarHeight` | `double` | Styled | Default titlebar height. Decided by theme if unset. |

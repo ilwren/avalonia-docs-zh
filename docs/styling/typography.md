@@ -178,7 +178,7 @@ Because `LetterSpacing` is an inherited attached property defined on `TextElemen
 
 `LineHeight` and `LineSpacing` control the vertical distance between lines of text in a `TextBlock`.
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 |---|---|---|---|
 | `LineHeight` | `double` | `NaN` | The total height of each line. When set to `NaN`, the font metrics determine line height automatically. |
 | `LineSpacing` | `double` | `0` | Extra distance added between lines, in device-independent pixels. Added on top of the font's natural line height. |
@@ -277,7 +277,7 @@ You can apply decorations to individual `Run` elements within a `TextBlock`:
 
 For control over color, thickness, offset, and dash pattern, define a `TextDecoration` directly.
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Location` | [`TextDecorationLocation`](/api/avalonia/media/textdecorationlocation) | Where the line is drawn: `Underline`, `Strikethrough`, `Overline`, or `Baseline`. |
 | `Stroke` | `IBrush` | The brush used to paint the decoration line. |

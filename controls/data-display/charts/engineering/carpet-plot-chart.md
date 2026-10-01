@@ -46,9 +46,9 @@ public ObservableCollection<CarpetPoint> CarpetData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of measurement points. | `null` |
 | `AAxisPath` | Path to the first independent variable. | `null` |

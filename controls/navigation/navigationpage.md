@@ -31,7 +31,7 @@ The navigation bar is divided into three zones:
 
 ## Useful properties
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The initial root page displayed in the navigation stack. Assigns a [`Page`](/api/avalonia/controls/page) instance. |
 | `PageTransition` | [`IPageTransition?`](/api/avalonia/animation/ipagetransition) | Theme default | The transition animation used when navigating between pages. |
@@ -94,7 +94,7 @@ Navigation methods that change the visible page are asynchronous and return `Tas
 
 ### Stack properties
 
-| Property | 说明 |
+| 属性 | 说明 |
 | --- | --- |
 | `NavigationStack` | Read-only list of pages currently on the navigation stack. |
 | `ModalStack` | Read-only list of pages currently presented as modals. |
@@ -430,4 +430,4 @@ Disable the swipe-to-go-back gesture globally or check whether it is enabled:
 - [DrawerPage](/controls/navigation/drawerpage)
 - [Page Transitions](/docs/graphics-animation/page-transitions)
 - [NavigationPage API reference](/api/avalonia/controls/navigationpage)
-- [`NavigationPage.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/NavigationPage.cs)
+- [GitHub 上的 `NavigationPage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/NavigationPage.cs)

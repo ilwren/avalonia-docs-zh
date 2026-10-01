@@ -47,9 +47,9 @@ public ObservableCollection<MirrorBarItem> MirrorData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of mirrored comparison items. | `null` |
 | `LeftValuePath` | Path to the value rendered on the left side. | `null` |

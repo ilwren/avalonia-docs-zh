@@ -40,13 +40,13 @@ protected override async void OnLoaded(RoutedEventArgs e)
 
 ### Media source properties
 
-| Property | Type        | 说明                                                                 |
+| 属性 | Type        | 说明                                                                 |
 |----------|-------------|-----------------------------------------------------------------------------|
 | Source   | MediaSource | Gets or sets the media source to be played (`UriSource` or `StreamSource`). |
 
 ### Playback properties
 
-| Property       | Type                      | 说明                                                        |
+| 属性       | Type                      | 说明                                                        |
 |----------------|---------------------------|--------------------------------------------------------------------|
 | Position       | TimeSpan                  | Gets or sets the current playback position.                        |
 | Duration       | TimeSpan?                 | Gets the total duration of the media. Null for non-seekable media. |
@@ -54,7 +54,7 @@ protected override async void OnLoaded(RoutedEventArgs e)
 
 ### State properties
 
-| Property         | Type    | 说明                                            |
+| 属性         | Type    | 说明                                            |
 |------------------|---------|--------------------------------------------------------|
 | IsSeekable       | bool    | Gets whether the current media supports seeking.       |
 | IsBuffering      | bool    | Gets whether the media is currently buffering.         |
@@ -64,14 +64,14 @@ protected override async void OnLoaded(RoutedEventArgs e)
 
 ### Audio properties
 
-| Property | Type   | 说明                                 |
+| 属性 | Type   | 说明                                 |
 |----------|--------|---------------------------------------------|
 | Volume   | double | Gets or sets the playback volume (0.0-1.0). |
 | IsMuted  | bool   | Gets or sets whether audio is muted.        |
 
 ### Advanced properties
 
-| Property        | Type            | 说明                                        |
+| 属性        | Type            | 说明                                        |
 |-----------------|-----------------|----------------------------------------------------|
 | Statistics      | MediaStatistics | Gets playback statistics information if available. |
 | ForceVlcBackend | bool (static)   | Forces the use of VLC backend (debugging only).    |
@@ -257,7 +257,7 @@ catch (Exception ex) {
 }
 ```
 
-## Best practices
+## 实践建议 {#best-practices}
 
 1. **Initialization Timing**:
     - Never set `Source` in a constructor. The player is not ready until the UI has loaded.

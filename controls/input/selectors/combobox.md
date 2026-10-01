@@ -15,7 +15,7 @@ import ComboBoxEditable from '/img/controls/combobox/combobox-editable.gif';
 
 You will probably use these properties most often:
 
-| Property                   | Type       | 说明                                                                                                              |
+| 属性                   | Type       | 说明                                                                                                              |
 | -------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `ItemsSource`                    | `IEnumerable?` | The bound collection that is used as the data source for the control. Inherited from [`ItemsControl`](/controls/data-display/collections/itemscontrol).                                                                                           |
 | `SelectedIndex`            | `int`      | The index (zero-based) of the selected item.                                                                             |
@@ -35,7 +35,7 @@ You will probably use these properties most often:
 By default, the width and height of the combo box scale to fit the selected item. If you need a box with a fixed size, you can also set `Width` and `Height` explicitly.
 :::
 
-## Tips
+## 小贴士 {#tips}
 
 - Always set `SelectedIndex` or `SelectedItem` to an initial value if you want the control to display a selection on load. If neither is set, and you have not specified `PlaceholderText`, the control appears blank.
 - Use `PlaceholderText` to give your users a hint when nothing is selected yet. (e.g., "Select an option...")
@@ -306,4 +306,4 @@ When items are complex objects with multiple components (e.g., a user profile co
 - [RadioButton](/controls/input/buttons/radiobutton)
 - [Data templates](/docs/data-templates/introduction-to-data-templates)
 - [ComboBox API reference](/api/avalonia/controls/combobox)
-- [`ComboBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ComboBox.cs)
+- [GitHub 上的 `ComboBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ComboBox.cs)

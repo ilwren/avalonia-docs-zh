@@ -33,9 +33,9 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 </WrapPanel>
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `0.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |

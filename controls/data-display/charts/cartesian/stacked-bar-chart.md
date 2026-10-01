@@ -61,7 +61,7 @@ public ObservableCollection<int> StackedBarProductC { get; } = new()
 
 ## Common properties (StackedBarSeries)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name shown in the legend. | `null` |
 | `ItemsSource` | The collection of data for this specific part of the stack. | `null` |

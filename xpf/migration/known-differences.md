@@ -3,7 +3,7 @@ id: known-differences
 title: Known Differences from WPF
 ---
 
-## Overview
+## 概述 {#overview}
 
 XPF maintains API and binary compatibility with WPF, but there are behavioral differences due to the different rendering engine (Skia instead of MilCore) and cross-platform requirements. This page documents the known differences to help you plan your migration.
 

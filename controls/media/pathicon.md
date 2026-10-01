@@ -13,9 +13,9 @@ Because `PathIcon` uses vector paths rather than raster images, your icons scale
 
 `PathIcon` is most often used as part of a composition inside another control, for example to add an icon to a `Button`, `MenuItem`, or `NavigationViewItem`.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Data` | `Geometry` | The stream geometry that defines the icon shape. |
 | `Foreground` | `IBrush` | The brush used to fill the icon. If you do not set this property, the value is inherited from the parent control. |

@@ -47,9 +47,9 @@ public ObservableCollection<StripPoint> StripData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of observations. | `null` |
 | `CategoryPath` | Path to the grouping category. | `null` |

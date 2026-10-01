@@ -45,9 +45,9 @@ public ObservableCollection<PopulationBand> PopulationData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of population bands. | `null` |
 | `AgeLabelPath` | Path to the band label. | `null` |

@@ -41,7 +41,7 @@ var result = await chart.ExportAsync(stream, width: 1200, height: 800);
 
 ## 方法 {#methods}
 
-| Method | 说明 | Result |
+| Method | 说明 | 结果 |
 | :--- | :--- | :--- |
 | `ExportAsync(string path, int? width = null, int? height = null, double dpi = 96, CancellationToken cancellationToken = default)` | Exports to a file path. If the path has no extension, `.png` is appended. PNG and JPEG are supported for file export. | `ChartExportResult` |
 | `ExportAsync(Stream stream, int? width = null, int? height = null, double dpi = 96, CancellationToken cancellationToken = default)` | Exports a PNG image to a stream. | `ChartExportResult` |

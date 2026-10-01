@@ -75,7 +75,7 @@ The DataGrid-styles need to match the overall theme you use, otherwise you will 
 
 You will probably use these properties most often:
 
-| Property                | 说明                                                                                                                     |
+| 属性                | 说明                                                                                                                     |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `AutoGenerateColumns`   | Whether the columns will automatically generate from the bound items data source property names. (Default is false.)            |
 | `ItemsSource`           | The bound collection that is used as the data source for the control.                                                           |
@@ -338,7 +338,7 @@ Bind to `DataGridRow.Index` to show row numbers in a column:
 
 Most of these properties are common to all three column types:
 
-| Property         | 说明                                                                                                                                     |
+| 属性         | 说明                                                                                                                                     |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Header`         | The header content of the column.                                                                                                               |
 | `HeaderTemplate` | Uses a data template for the column.                                                                                                            |

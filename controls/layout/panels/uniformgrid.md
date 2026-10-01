@@ -10,9 +10,9 @@ import TabItem from '@theme/TabItem';
 
 The [`UniformGrid`](/api/avalonia/controls/primitives/uniformgrid) divides available space into equally sized cells. You can specify how many rows and columns to create, and each child control is placed into the next available cell in the order it appears. Unlike `Grid`, you do not need to define row and column definitions or assign children to specific cells. This makes `UniformGrid` a good choice when you need a simple, evenly spaced layout such as a toolbar, color palette, or icon grid.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Rows` | `int` | Sets the number of equal rows. When set to `0` (the default), the row count is calculated automatically based on the number of children and the `Columns` value. |
 | `Columns` | `int` | Sets the number of equal columns. When set to `0` (the default), the column count is calculated automatically based on the number of children and the `Rows` value. |
@@ -119,7 +119,7 @@ You can use the `FirstColumn` property to offset the first child, leaving empty 
 
 In this example, the first cell in the first row is empty. Button "A" appears in the second column of the first row.
 
-## Tips
+## 小贴士 {#tips}
 
 - If you need cells of different sizes, use `Grid` instead.
 - When you add more children than there are cells, extra children are still laid out but may appear outside the visible area.

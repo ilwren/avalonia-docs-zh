@@ -1,30 +1,30 @@
 ---
 id: how-to-bind-can-execute
-title: How to bind CanExecute
-description: Enable and disable buttons automatically by binding to the CanExecute method of a command.
+title: 如何绑定 CanExecute
+description: 绑定到命令的 CanExecute 方法，让按钮自动在可用与禁用之间切换。
 doc-type: how-to
 ---
 
 import BindCanExecuteScreenshot from '/img/guides/data/bind-canexecute.gif';
 
-## Overview
+## 概述 {#overview}
 
-Whether a control that can initiate an action is in its enabled state is a key part of "revealed functionality" in user experience design. Disabling commands that cannot run reinforces user confidence. For example, if a button or menu item cannot run because the application is in the wrong state, you should present it as inactive rather than showing an error when it is clicked.
+一个能发起操作的控件当下是否可用，是用户体验设计中「功能可见性」的关键一环。把执行不了的命令置灰，能增强用户的信心。举例来说，如果某个按钮或菜单项因为应用处于错误状态而无法执行，就该把它显示成非激活状态，而不是等用户点下去再报错。
 
-This guide shows you how to bind a [`Button`](/api/avalonia/controls/button) to a command whose `CanExecute` logic automatically enables or disables the control. The approach uses the MVVM pattern so that the view and the view model remain clearly separated.
+本文介绍如何把 [`Button`](/api/avalonia/controls/button) 绑定到一个命令上，由该命令的 `CanExecute` 逻辑自动决定控件的可用与禁用。整个做法遵循 MVVM 模式，视图和视图模型始终划分清楚。
 
 ## 前置条件 {#prerequisites}
 
-- A basic Avalonia application with an MVVM structure (a view and a corresponding view model).
-- Familiarity with [data binding](/docs/data-binding/introduction-to-data-binding) and `ICommand`.
+- 一个采用 MVVM 结构的基础 Avalonia 应用（含一个视图和与之对应的视图模型）。
+- 了解[数据绑定](/docs/data-binding/introduction-to-data-binding)和 `ICommand`。
 
 ## Example
 
-In this example, the button can only be clicked when the message is not empty. As soon as the action runs, the message resets to an empty string, which disables the button again.
+本例中，只有消息不为空时按钮才可点击。操作一旦执行，消息就被重置为空字符串，按钮随即再次禁用。
 
-### Define the view
+### 定义视图 {#define-the-view}
 
-The `TextBox` binds to the `Message` property, and the `Button` binds its `Command` to `ExampleCommand`. Avalonia automatically sets the button's `IsEnabled` state based on the value returned by the command's `CanExecute` method.
+`TextBox` 绑定到 `Message` 属性，`Button` 则把自己的 `Command` 绑定到 `ExampleCommand`。Avalonia 会根据命令 `CanExecute` 方法的返回值，自动设置按钮的 `IsEnabled` 状态。
 
 ```xml title='MainWindow.axaml'
 <StackPanel Margin="20">
@@ -37,9 +37,9 @@ The `TextBox` binds to the `Message` property, and the `Button` binds its `Comma
 </StackPanel>
 ```
 
-### Create a simple `RelayCommand`
+### 写一个简单的 `RelayCommand` {#create-a-simple-relaycommand}
 
-If you are not using a framework such as CommunityToolkit.Mvvm or ReactiveUI, you can implement a lightweight `RelayCommand` yourself. The class below wraps an `Action` for execution and an optional `Func<bool>` for the can-execute check.
+如果你没有用 CommunityToolkit.Mvvm 或 ReactiveUI 这类框架，也可以自己实现一个轻量的 `RelayCommand`。下面这个类用一个 `Action` 承担执行逻辑，再用一个可选的 `Func<bool>` 负责「能否执行」的判断。
 
 ```csharp title='RelayCommand.cs'
 using System;
@@ -70,9 +70,9 @@ namespace AvaloniaGuides.ViewModels
 }
 ```
 
-### Implement the view model
+### 实现视图模型 {#implement-the-view-model}
 
-In the constructor, the command is created with two parameters: the action to execute, and a function that determines whether the command can run. Whenever `Message` changes, the property setter calls `RaiseCanExecuteChanged` so the binding system re-evaluates the button's enabled state.
+构造函数中创建命令时传入两个参数：要执行的操作，以及判断命令能否执行的函数。每当 `Message` 发生变化，属性的 setter 就调用 `RaiseCanExecuteChanged`，于是绑定系统会重新评估按钮的可用状态。
 
 ```csharp title='MainWindowViewModel.cs'
 using System.ComponentModel;
@@ -139,25 +139,25 @@ namespace AvaloniaGuides.ViewModels
 
 <Image light={BindCanExecuteScreenshot} alt="App showing a button enabled and disabled based on CanExecute binding" position="center" maxWidth={400} cornerRadius="true"/>
 
-## How it works
+## 运作原理 {#how-it-works}
 
-1. When the user types into the `TextBox`, the `Message` property setter fires.
-2. The setter calls `ExampleCommand.RaiseCanExecuteChanged()`, which raises the `CanExecuteChanged` event.
-3. Avalonia responds to that event by calling `CanExecute` on the command. If the method returns `false`, the bound `Button` is automatically disabled.
-4. When the user clears the text (or the action resets `Message` to an empty string), `CanExecute` returns `false` and the button disables again.
+1. 用户在 `TextBox` 中输入时，`Message` 属性的 setter 被触发。
+2. setter 调用 `ExampleCommand.RaiseCanExecuteChanged()`，后者引发 `CanExecuteChanged` 事件。
+3. Avalonia 响应该事件，调用命令上的 `CanExecute`。若该方法返回 `false`，绑定的 `Button` 就自动置为禁用。
+4. 当用户清空文本（或操作把 `Message` 重置为空字符串）时，`CanExecute` 返回 `false`，按钮再次禁用。
 
-## Tips and edge cases
+## 注意事项与边界情况 {#tips-and-edge-cases}
 
-- **Always call `RaiseCanExecuteChanged`** (or an equivalent notification) from every property setter that your `CanExecute` function depends on. If you forget, the button state will be stale until another event triggers a re-evaluation.
-- **Multiple dependencies.** If `CanExecute` checks more than one property, call `RaiseCanExecuteChanged` in each of those property setters.
-- **Thread safety.** `CanExecuteChanged` should be raised on the UI thread. If you update a property from a background thread, dispatch the change to the UI thread first using `Dispatcher.UIThread.Post`.
-- **Using CommunityToolkit.Mvvm.** The `[RelayCommand(CanExecute = nameof(CanRun))]` source generator eliminates the boilerplate shown above. The generated command automatically raises `CanExecuteChanged` when you call `NotifyCanExecuteChanged()`.
-- **Using ReactiveUI.** `ReactiveCommand.Create` accepts a `canExecute` observable. The command re-evaluates automatically whenever the observable emits a new value, so you do not need to raise the event manually.
-- **`CommandParameter` bindings.** When you pass a `CommandParameter` via the binding, the parameter value is forwarded to `CanExecute(object? parameter)`. Make sure your implementation handles `null` parameters during initial layout, before the binding system has resolved the parameter value.
-- **Menu items.** The same pattern works with `MenuItem`. Bind `MenuItem.Command` to your command and the menu item dims automatically when `CanExecute` returns `false`.
+- **凡是 `CanExecute` 函数依赖的属性，其 setter 中都要调用 `RaiseCanExecuteChanged`**（或等效的通知）。漏掉的话，按钮状态会一直停留在旧值，直到别的事件触发重新评估。
+- **多个依赖项。** 如果 `CanExecute` 检查了不止一个属性，那么这些属性的 setter 中都要调用 `RaiseCanExecuteChanged`。
+- **线程安全。** `CanExecuteChanged` 应当在 UI 线程上引发。若你在后台线程更新属性，请先用 `Dispatcher.UIThread.Post` 把变更调度回 UI 线程。
+- **使用 CommunityToolkit.Mvvm。** `[RelayCommand(CanExecute = nameof(CanRun))]` 源生成器可以免去上面那堆样板代码。你调用 `NotifyCanExecuteChanged()` 时，生成的命令会自动引发 `CanExecuteChanged`。
+- **使用 ReactiveUI。** `ReactiveCommand.Create` 接受一个 `canExecute` 可观察序列。每当该序列推出新值，命令就自动重新评估，无需你手动引发事件。
+- **`CommandParameter` 绑定。** 通过绑定传入 `CommandParameter` 时，参数值会被转交给 `CanExecute(object? parameter)`。请确保你的实现能应对初次布局阶段的 `null` 参数 —— 那时绑定系统还没把参数值解析出来。
+- **菜单项。** 同样的写法对 `MenuItem` 一样适用。把 `MenuItem.Command` 绑定到你的命令，`CanExecute` 返回 `false` 时菜单项会自动置灰。
 
 ## 另请参阅 {#see-also}
 
-- [Binding to commands](/docs/data-binding/binding-to-commands)
+- [绑定到命令](/docs/data-binding/binding-to-commands)
 - [Commanding](/docs/input-interaction/commanding)
-- [Data binding overview](/docs/data-binding/introduction-to-data-binding)
+- [数据绑定总览](/docs/data-binding/introduction-to-data-binding)

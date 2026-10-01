@@ -5,9 +5,9 @@ title: ColorView
 
 Presents a color for user editing using a spectrum, palette and component sliders.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 |
+| 属性 | 说明 |
 |----------|-------------|
 | `Color` | Gets or sets the currently selected color in the RGB color model. For control authors, use `HsvColor` instead to avoid loss of precision and color drifting. |
 | `ColorModel` | Gets or sets the active color model used by the sliders. This property is only applicable to the components tab. The spectrum tab must always be in HSV and the palette tab contains only pre-defined colors. |
@@ -56,4 +56,4 @@ None
 ## 另请参阅 {#see-also}
 
 - [ColorView API reference](/api/avalonia/controls/colorview)
-- [`ColorView.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls.ColorPicker/ColorView/ColorView.cs)
+- [GitHub 上的 `ColorView.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls.ColorPicker/ColorView/ColorView.cs)

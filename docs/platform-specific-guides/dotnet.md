@@ -3,7 +3,7 @@ id: dotnet
 title: Platform-specific .NET
 ---
 
-## Overview 
+## 概述 {#overview}
 
 Conditional compilation in .NET allows different parts of the code to be compiled or omitted based on certain conditions. This is particularly useful in .NET when dealing with code that needs to behave differently on various platforms or under different development environments.
 
@@ -33,7 +33,7 @@ This approach is recommended for simpler scenarios, or when it's desired to keep
 It's the only possible approach to write a conditional .NET code for Linux OS. As .NET doesn't have a special Target Framework for Linux.
 :::
 
-## Conditional compilation
+## 条件编译 {#conditional-compilation}
 
 C# specifically allows to have conditional compilation with `#if`, `#elif`, `#else`, `#endif` - [C# preprocessor directives](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/preprocessor-directives#conditional-compilation).
 
@@ -58,7 +58,7 @@ Similar approach can be used to define special code compilation for .NET Framewo
 ](https://learn.microsoft.com/en-us/dotnet/standard/library-guidance/cross-platform-targeting) documentation for more information.
 :::
 
-### Practical example
+### 实例演示 {#practical-example}
 
 Let's imagine, we want to use platform APIs from C# code. It can be Avalonia APIs, or Xamarin APIs, or anything else really.
 First of all, expected Target Frameworks needs to be defined in the project. To keep it simple, we will have three possible target framework - "net8.0" (default), "net8.0-ios" and "net8.0-android" in `.csproj` file:
@@ -105,7 +105,7 @@ This sample code is referenced from the Microsoft documentation: https://learn.m
 Similarly to the previous approach, it is possible to create bootstrap projects per each platform, and keep shared project with main logic and layouts.
 For example, default Avalonia.Xplat template creates solution with following projects:
 
-| Project | Target Framework |
+| 项目 | Target Framework |
 | --- | --- |
 | Project.Shared | net8.0 |
 | Project.Desktop | net8.0 |
@@ -155,6 +155,6 @@ Each implementation then can be registered using dependency injection library of
 
 ## 另请参阅 {#see-also}
 
-- [Platform-specific XAML](/docs/platform-specific-guides/xaml)
+- [平台相关的 XAML](/docs/platform-specific-guides/xaml)
 - [Deploying on Android](/docs/deployment/android)
 - [Deploying on iOS](/docs/deployment/ios)

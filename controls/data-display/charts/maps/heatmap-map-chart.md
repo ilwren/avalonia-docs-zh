@@ -97,7 +97,7 @@ public EarthquakeItem[] EarthquakeData { get; } = new EarthquakeItem[]
 
 ## Common properties (`HeatmapLayer`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of geographic points to render. | `null` |
 | `LatitudePath` | Property name for latitude values. | `Latitude` |

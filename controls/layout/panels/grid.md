@@ -30,7 +30,7 @@ It is also possible to make a child control span more than one cell in either ro
 
 You will probably use these properties most often:
 
-| Property               | 说明                                                         |
+| 属性               | 说明                                                         |
 |------------------------|---------------------------------------------------------------------|
 | ColumnDefinitions      | Size definitions describing the widths of columns in the `Grid`.    |
 | RowDefinitions         | Size definitions describing the heights of rows in the `Grid`.      |
@@ -423,7 +423,7 @@ grid1.Children.Add(button3);
 ## 另请参阅 {#see-also}
 
 - [Grid API reference](/api/avalonia/controls/grid)
-- [`Grid.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Grid.cs)
+- [GitHub 上的 `Grid.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Grid.cs)
 - [GridSplitter](/controls/layout/panels/gridsplitter)
 - [Canvas](/controls/layout/panels/canvas)
 - [DockPanel](/controls/layout/panels/dockpanel)

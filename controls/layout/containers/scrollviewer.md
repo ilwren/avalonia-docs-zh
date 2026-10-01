@@ -15,7 +15,7 @@ You cannot place a `ScrollViewer` inside a control that has infinite height or w
 
 You will probably use these properties most often:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `HorizontalScrollBarVisibility` | [`ScrollBarVisibility`](/api/avalonia/controls/primitives/scrollbarvisibility) | Controls the horizontal scrollbar: `Auto`, `Visible`, `Hidden`, `Disabled`. |
 | `VerticalScrollBarVisibility` | `ScrollBarVisibility` | Controls the vertical scrollbar: `Auto`, `Visible`, `Hidden`, `Disabled`. |
@@ -140,5 +140,5 @@ To enable horizontal scrolling, set `HorizontalScrollBarVisibility` to `Auto` or
 ## 另请参阅 {#see-also}
 
 - [ScrollViewer API reference](/api/avalonia/controls/scrollviewer)
-- [`ScrollViewer.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ScrollViewer.cs)
+- [GitHub 上的 `ScrollViewer.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ScrollViewer.cs)
 

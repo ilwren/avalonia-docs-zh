@@ -187,4 +187,4 @@ For more detailed guidance on how to add icons to your menus, see [Adding icons]
 ## 另请参阅 {#see-also}
 
 - [Menu API reference](/api/avalonia/controls/menu)
-- [`Menu.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Menu.cs)
+- [GitHub 上的 `Menu.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Menu.cs)

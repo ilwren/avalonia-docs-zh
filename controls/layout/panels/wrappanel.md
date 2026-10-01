@@ -13,7 +13,7 @@ When you set the `Orientation` property to `Vertical`, the arrangement flows fro
 
 ## Useful properties
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Orientation` | Direction of the arrangement flow: `Horizontal` (default) or `Vertical`. |
 | `ItemSpacing` | Horizontal gap between items. |
@@ -94,4 +94,4 @@ When you use `ItemWidth` or `ItemHeight`, child controls may be smaller than the
 - [StackPanel](/controls/layout/panels/stackpanel)
 - [DockPanel](/controls/layout/panels/dockpanel)
 - [WrapPanel API reference](/api/avalonia/controls/wrappanel)
-- [`WrapPanel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/WrapPanel.cs)
+- [GitHub 上的 `WrapPanel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/WrapPanel.cs)

@@ -18,7 +18,7 @@ Before you use Parcel, make sure that you have these items:
 Parcel CLI is only available with an [Avalonia Plus](https://avaloniaui.net/pricing) license.
 :::
 
-## Overview
+## 概述 {#overview}
 
 ```bash
 parcel [command] [options]

@@ -68,7 +68,7 @@ The `ArrangeCore` method evaluates the `DesiredSize` of the child and evaluates 
 
 <Image light={LayoutZonesDiagram} maxWidth="400" alignment="center" alt="A diagram with four overlapping rectangles, representing the layout zones of a UI window." />
 
-## Overlay layers
+## 覆盖层 {#overlay-layers}
 
 In addition to the normal layout system, Avalonia provides overlay layers that render above the regular control content within a window. These are useful when you need to display content on top of everything else, such as a loading indicator, floating toolbar, or notification panel.
 

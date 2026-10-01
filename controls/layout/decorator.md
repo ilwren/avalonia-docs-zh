@@ -26,7 +26,7 @@ These controls inherit from `Decorator`:
 
 ## 属性 {#properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 | :--- | :--- | :--- |
 | `Child` | `Control` | The single child control to decorate. Marked as `[Content]`, so you can set it directly in XAML without an explicit property element. |
 | `Padding` | `Thickness` | Space between the decorator's edge and its child. |
@@ -92,4 +92,4 @@ This behaves like a `Border` with no border or background, adding only padding a
 - [Viewbox](/controls/layout/containers/viewbox)
 - [LayoutTransformControl](/controls/layout/layouttransformcontrol)
 - [`Decorator` API reference](/api/avalonia/controls/decorator)
-- [`Decorator.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Decorator.cs)
+- [GitHub 上的 `Decorator.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Decorator.cs)

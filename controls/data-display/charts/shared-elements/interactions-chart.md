@@ -109,11 +109,11 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 }
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
 ### Zoom and pan
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsZoomEnabled` | Enables the ability to zoom into the chart. | `false` |
 | `IsPanEnabled` | Enables the ability to pan (scroll) the chart view. | `false` |
@@ -127,7 +127,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 
 `CartesianChart` creates embedded `ChartRangeSelector` controls when `IsZoomEnabled`, `ShowRangeSelector`, and the current `ZoomMode` require them. Use `ChartRangeSelector` directly when a separate range selection surface is needed.
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Orientation` | Selector orientation, `Horizontal` or `Vertical`. | `Horizontal` |
 | `Minimum` | Minimum data value represented by the selector. | `0.0` |
@@ -148,7 +148,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 
 ### Hover highlighting
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsHighlightEnabled` | Enables hover highlighting. On series, hovering a data point dims other items in that series. On supported standalone charts, hovering a segment or cell dims the other items in that chart. | `false` |
 
@@ -158,7 +158,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 
 `CartesianChart` can display a trackball guide line and value tooltips while the pointer moves over the plot area.
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `TrackballMode` | Trackball line mode: `None`, `Vertical`, or `Horizontal`. | `None` |
 | `TrackballDisplayMode` | Tooltip display mode: `FloatAllPoints` or `GroupAllPoints`. | `FloatAllPoints` |
@@ -167,7 +167,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 
 ### Selection
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsSelectionEnabled` | Enables pointer selection for supported series or chart items. | `false` |
 | `SelectionMode` | Selection behavior, such as `None`, `Single`, `SingleDeselect`, or `Multiple`. | `SingleDeselect` |

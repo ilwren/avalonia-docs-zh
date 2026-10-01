@@ -49,7 +49,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowChart`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | Collection of `FlowNode` items rendered by the chart. | `null` |
 | `Edges` | Collection of `FlowEdge` connections. | `null` |
@@ -58,7 +58,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowNode`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Id` | Unique node identifier used by edges and groups. | `null` |
 | `Text` | Text displayed inside the node. | `null` |
@@ -73,7 +73,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowEdge`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `SourceId` | Source node identifier. | `null` |
 | `TargetId` | Target node identifier. | `null` |
@@ -82,7 +82,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowGroup`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Id` | Unique group identifier. | `null` |
 | `Label` | Optional label displayed for the group. | `null` |

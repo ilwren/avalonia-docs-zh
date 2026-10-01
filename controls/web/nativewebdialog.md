@@ -7,7 +7,7 @@ title: NativeWebDialog
 
 ## Useful properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Title` | `string?` | The dialog window title. |
 | `CanUserResize` | `bool` | Whether the user can resize the dialog. |

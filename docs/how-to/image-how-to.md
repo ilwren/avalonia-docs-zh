@@ -137,7 +137,7 @@ Control the rendering quality when images are scaled:
        RenderOptions.BitmapInterpolationMode="HighQuality" />
 ```
 
-| Mode | 说明 |
+| 模式 | 说明 |
 |---|---|
 | `None` | Nearest-neighbor, sharp pixels. |
 | `LowQuality` | Bilinear filtering. |
@@ -188,7 +188,7 @@ The target control must be attached to a visible window. To render without displ
 
 ## Key Properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Source` | `IImage` | The image to display (`Bitmap`, `DrawingImage`, and similar). |
 | `Stretch` | `Stretch` | How the image fills its bounds. |

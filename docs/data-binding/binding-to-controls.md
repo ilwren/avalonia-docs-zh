@@ -1,20 +1,20 @@
 ---
 id: binding-to-controls
-title: How to bind to a control
-description: Bind one control's property to another control's property using ElementName or source bindings.
+title: 如何绑定到控件
+description: 借助 ElementName 或源绑定，把一个控件的属性绑定到另一个控件的属性上。
 doc-type: how-to
 ---
 
 
-With _Avalonia UI_, as well as binding to a data context you can also bind one control directly to another.
+在 _Avalonia UI_ 中，除了绑定到数据上下文，你还可以让一个控件直接绑定到另一个控件。
 
 :::info
-Note that this technique does not use a data context at all. When you do this, you are binding directly to another control itself.
+注意这种做法完全不经过数据上下文 —— 你绑定的就是另一个控件本身。
 :::
 
-## Binding to a named control
+## 绑定到具名控件 {#binding-to-a-named-control}
 
-If you want to bind to a property on another named control, you can use the control name prefixed by a `#` character.
+想绑定到另一个具名控件的属性，在控件名前加一个 `#` 字符即可。
 
 ```xml
 <TextBox Name="other">
@@ -23,18 +23,18 @@ If you want to bind to a property on another named control, you can use the cont
 <TextBlock Text="{Binding #other.Text}"/>
 ```
 
-This is the equivalent to the long-form binding that will be familiar to WPF and UWP users:
+它等价于下面这种长写法，WPF 和 UWP 用户应该很熟悉：
 
 ```xml
 <TextBox Name="other">
 <TextBlock Text="{Binding Text, ElementName=other}"/>
 ```
 
-_Avalonia UI_ supports both syntaxes.
+_Avalonia UI_ 两种语法都支持。
 
-## Binding to an ancestor
+## 绑定到祖先元素 {#binding-to-an-ancestor}
 
-You can bind to the (logical control tree) parent of the target using the `$parent` syntax:
+用 `$parent` 语法可以绑定到目标的父级（按逻辑控件树）：
 
 ```xml
 <Border Tag="Hello World!">
@@ -42,7 +42,7 @@ You can bind to the (logical control tree) parent of the target using the `$pare
 </Border>
 ```
 
-Or to any level of ancestor by using an index with the `$parent` syntax:
+配合 `$parent` 语法加上索引，就能绑定到任意层级的祖先：
 
 ```xml
 <Border Tag="Hello World!">
@@ -52,9 +52,9 @@ Or to any level of ancestor by using an index with the `$parent` syntax:
 </Border>
 ```
 
-The index is zero based so `$parent[0]` is equivalent to `$parent`.
+索引从零开始，所以 `$parent[0]` 等价于 `$parent`。
 
-You can also bind to the closest ancestor of a given type, like this:
+也可以这样绑定到最近的某个指定类型的祖先：
 
 ```xml
 <Border Tag="Hello World!">
@@ -64,7 +64,7 @@ You can also bind to the closest ancestor of a given type, like this:
 </Border>
 ```
 
-Finally, you can combine the index and the type:
+最后，索引和类型还能组合使用：
 
 ```xml
 <Border Tag="Hello World!">
@@ -76,7 +76,7 @@ Finally, you can combine the index and the type:
 </Border>
 ```
 
-If you need to include a XAML namespace in the ancestor type, you separate the namespace and class using a colon, like this:
+如果祖先类型需要带上 XAML 命名空间，用冒号分隔命名空间和类名：
 
 ```xml
 <local:MyControl Tag="Hello World!">
@@ -86,7 +86,7 @@ If you need to include a XAML namespace in the ancestor type, you separate the n
 </local:MyControl>
 ```
 
-To access a property of a parent's `DataContext` it will be necessary to cast it with a casting expression `(vm:MyUserControlViewModel)DataContext` to its actual type. Otherwise `DataContext` would be considered as of type `object` and accessing a custom property would result in an compile-time error.
+要访问父级 `DataContext` 上的属性，必须用类型转换表达式 `(vm:MyUserControlViewModel)DataContext` 把它转成实际类型。否则 `DataContext` 会被当作 `object` 类型，访问自定义属性会导致编译错误。
 
 ```xml
 <local:MyControl Tag="Hello World!">
@@ -97,11 +97,11 @@ To access a property of a parent's `DataContext` it will be necessary to cast it
 ```
 
 :::caution
-_Avalonia UI_ also supports WPF/UWP's `RelativeSource` syntax which does something similar, but is _not_ the same. `RelativeSource` works on the _visual_ tree whereas the syntax given here works on the _logical_ tree.
+_Avalonia UI_ 同样支持 WPF/UWP 的 `RelativeSource` 语法，作用相似但_并不等同_：`RelativeSource` 作用于_视觉_树，而本文介绍的语法作用于_逻辑_树。
 :::
 
 ## 另请参阅 {#see-also}
 
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.
-- [Compiled Bindings](/docs/data-binding/compiled-bindings): Type-safe bindings with compile-time validation.
-- [Control Trees](/docs/custom-controls/control-trees): Logical and visual tree structure.
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定路径、模式与转换器。
+- [编译绑定](/docs/data-binding/compiled-bindings)：编译期受校验的类型安全绑定。
+- [控件树](/docs/custom-controls/control-trees)：逻辑树与视觉树的结构。

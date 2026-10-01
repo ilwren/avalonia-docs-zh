@@ -16,7 +16,7 @@ The `Viewbox` is a container control which can scale its contents. The way in wh
 
 You will probably use these properties most often:
 
-| Property           | Default | 说明                                                  |
+| 属性           | Default | 说明                                                  |
 | ------------------ | ------- |--------------------------------------------------------------|
 | `Stretch`          | Uniform | Determines how contents are fitted into the available space. |
 | `StretchDirection` | Both    | Determines when the scaling occurs.                          |
@@ -56,4 +56,4 @@ This set of demonstrations shows the effect of the stretch direction property:
 ## 另请参阅 {#see-also}
 
 - [Viewbox API reference](/api/avalonia/controls/viewbox)
-- [`Viewbox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Viewbox.cs)
+- [GitHub 上的 `Viewbox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Viewbox.cs)

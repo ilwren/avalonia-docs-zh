@@ -3,7 +3,7 @@ id: webauthenticationbroker
 title: WebAuthenticationBroker
 ---
 
-## Overview
+## 概述 {#overview}
 
 `WebAuthenticationBroker` is a utility class that facilitates OAuth and other web-based authentication flows by providing a secure way to handle web authentication in desktop applications.
 
@@ -35,7 +35,7 @@ A `Task<WebAuthenticationResult>` containing the authentication result.
 
 Selects which implementation runs the flow.
 
-| Mode | 说明 | Platforms |
+| 模式 | 说明 | Platforms |
 |------|-------------|-----------|
 | `Auto` | Default. Resolves to the first supported mode, in the order `System`, `NativeWebDialog`, `Browser`. | All |
 | `System` | Uses the platform's native web authentication APIs. | macOS, iOS, Android, Browser |

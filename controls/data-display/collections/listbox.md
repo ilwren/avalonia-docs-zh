@@ -218,4 +218,4 @@ namespace AvaloniaControls.Views
 ## 另请参阅 {#see-also}
 
 - [ListBox API reference](/api/avalonia/controls/listbox)
-- [`ListBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ListBox.cs)
+- [GitHub 上的 `ListBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ListBox.cs)

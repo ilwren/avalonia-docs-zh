@@ -85,7 +85,7 @@ public class RelayCommand : ICommand
 </XamlPreview>
 <br />
 
-:::tip Tips
+:::tip 小贴士
 - This sample defines its own `RelayCommand` class to allow it to run as an in-browser preview. In your app, you can use the [`RelayCommand` attribute from CommunityToolkit.Mvvm](/docs/input-interaction/commanding).
 - The underscore before a letter defines the accelerator key (<kbd>Alt</kbd>+<kbd>key</kbd>). For example, `_File` lets a user press <kbd>Alt</kbd>+<kbd>F</kbd> to open the File menu.
 - Use a `Separator` between `MenuItem` entries to insert a visual divider and group related actions.

@@ -91,7 +91,7 @@ public class MyControl : Control
 
 The `VisualTreeAttachmentEventArgs` provides:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `RootVisual` | `Visual` | The root visual of the tree the control was attached to. |
 | `AttachmentPoint` | `Visual` | The visual that the control was directly attached to or detached from. |

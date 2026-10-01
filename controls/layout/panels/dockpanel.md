@@ -169,7 +169,7 @@ myDockPanel.Children.Add(myBorder5);
 ## 另请参阅 {#see-also}
 
 - [DockPanel API reference](/api/avalonia/controls/dockpanel)
-- [`DockPanel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DockPanel.cs)
+- [GitHub 上的 `DockPanel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DockPanel.cs)
 - [Canvas](/controls/layout/panels/canvas)
 - [Grid](/controls/layout/panels/grid)
 - [Panel](/controls/layout/panels/panel)

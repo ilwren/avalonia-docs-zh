@@ -11,7 +11,7 @@ import PrefixCharacterEllipsis from '/img/reference/text/texttrimming/texttrimmi
 import WordEllipsis from '/img/reference/text/texttrimming/texttrimming-wordellipsis.png';
 import TextWrappingWithTextTrimming from '/img/reference/text/texttrimming/textwrapping-with-texttrimming.png';
 
-## Overview
+## 概述 {#overview}
 
 The [`TextTrimming`](/api/avalonia/media/texttrimming) property allows you to control how text is displayed when it exceeds the maximum available space in a control. This property is accessible by text-displaying controls, such as [`TextBlock`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBlock.cs), [`SelectableTextBlock`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SelectableTextBlock.cs) or [`ContentPresenter`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Presenters/ContentPresenter.cs).
 

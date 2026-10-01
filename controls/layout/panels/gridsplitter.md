@@ -11,7 +11,7 @@ The [`GridSplitter`](/api/avalonia/controls/gridsplitter) control allows a user 
 
 You will probably use these properties most often:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Background` | `IBrush` | Background color for the splitter bar. |
 | `ResizeDirection` | `GridResizeDirection` | The direction of travel for the splitter: `Auto`, `Columns`, `Rows`. See note below. |
@@ -104,4 +104,4 @@ This is a row splitter. Drag the border between the rows to resize them.
 
 - [Grid](/controls/layout/panels/grid)
 - [GridSplitter API reference](/api/avalonia/controls/gridsplitter)
-- [`GridSplitter.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/GridSplitter.cs)
+- [GitHub 上的 `GridSplitter.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/GridSplitter.cs)

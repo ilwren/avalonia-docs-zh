@@ -15,9 +15,9 @@ You can compose the UI in both the header and content zones to suit the requirem
 If you only need the function of the tab headers part of this control, consider using the [tab strip](/controls/navigation/tabstrip) instead.
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `TabStripPlacement` | `Dock` | Position of the tab strip: `Top`, `Bottom`, `Left`, `Right`. Default is `Top`. |
 | `SelectedIndex` | `int` | The zero-based index of the currently selected tab. |
@@ -158,4 +158,4 @@ public class SettingsViewModel : ViewModelBase
 - [TabStrip](/controls/navigation/tabstrip)
 - [Carousel](/controls/data-display/collections/carousel)
 - [TabControl API reference](/api/avalonia/controls/tabcontrol)
-- [`TabControl.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TabControl.cs)
+- [GitHub 上的 `TabControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TabControl.cs)

@@ -101,7 +101,7 @@ e.Handled = true;
 
 `PinchGestureRecognizer` responds to all pointer types (mouse, touch, and pen). If your application needs pinch-to-zoom only from touch input (for example, to reserve pen input for drawing), you need to create a [custom gesture recognizer](/docs/input-interaction/gestures#custom-gesture-recognizers) that filters by `PointerType.Touch`.
 
-## More information
+## 更多信息 {#more-information}
 
 :::info
 View the source code on _GitHub_

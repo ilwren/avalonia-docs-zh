@@ -40,9 +40,9 @@ public double RevenueTarget { get; set; } = 85;
 public double[] RevenueBands { get; } = [30, 60, 90, 100];
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | Primary value displayed by the bar. | `75.0` |
 | `Target` | Target marker value. | `85.0` |

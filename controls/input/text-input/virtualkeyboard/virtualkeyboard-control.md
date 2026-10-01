@@ -14,13 +14,13 @@ The `VirtualKeyboard` is a standalone control that provides an on-screen keyboar
 This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
 :::
 
-## Overview
+## 概述 {#overview}
 
 `VirtualKeyboard` gives you direct control over keyboard placement and behavior. It sends input directly to its designated target, regardless of which control has input focus. This makes it useful for specialized input scenarios where automatic focus-based keyboard display is inappropriate.
 
 ## 属性 {#properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |----------|------|-------------|
 | `Target` | `IInputElement` | Gets or sets the input element to receive keystrokes from the keyboard. |
 | `InputMethods` | `IEnumerable<VirtualKeyboardInputMethod>` | Gets or sets the collection of input methods available to users. |
@@ -97,7 +97,7 @@ myContainer.Children.Add(keyboard);
 - **Simpler integration**: You prefer a container-based approach with fewer configuration options.
 - **Automatic visibility**: You want automatic show/hide behavior based on focus changes.
 
-## Best practices
+## 实践建议 {#best-practices}
 
 1. **Set a valid target.**
    - Always set the `Target` property to a valid input element that can receive keystrokes.

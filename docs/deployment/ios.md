@@ -98,7 +98,7 @@ dotnet publish -f net9.0-ios -c Release \
 
 The following properties can be passed on the command line with `-p:` or set in a `<PropertyGroup>` in your project file:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `ArchiveOnBuild` | Set to `true` to produce the `.ipa`. |
 | `RuntimeIdentifier` | The target runtime. Use `ios-arm64`. |

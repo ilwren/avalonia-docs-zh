@@ -76,4 +76,4 @@ public partial class MainWindow : Window
 ## 另请参阅 {#see-also}
 
 - [Calendar API reference](/api/avalonia/controls/calendar)
-- [`Calendar.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Calendar/Calendar.cs)
+- [GitHub 上的 `Calendar.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Calendar/Calendar.cs)

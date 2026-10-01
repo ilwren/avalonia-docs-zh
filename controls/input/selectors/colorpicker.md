@@ -125,4 +125,4 @@ Several pre-defined color palettes implementing the `IColorPalette` interface ar
 ## 另请参阅 {#see-also}
 
 - [ColorPicker API reference](/api/avalonia/controls/colorpicker)
-- [`ColorPicker.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls.ColorPicker/ColorPicker/ColorPicker.cs)
+- [GitHub 上的 `ColorPicker.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls.ColorPicker/ColorPicker/ColorPicker.cs)

@@ -103,4 +103,4 @@ Use `TabControl` when you want built-in content display. `TabControl` handles bo
 
 - [TabControl](/controls/navigation/tabcontrol)
 - [TabStrip API reference](/api/avalonia/controls/primitives/tabstrip)
-- [`TabStrip.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/TabStrip.cs)
+- [GitHub 上的 `TabStrip.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/TabStrip.cs)

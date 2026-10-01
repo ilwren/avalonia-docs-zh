@@ -61,7 +61,7 @@ The value is returned from the `ShowDialog<T>` call in the parent.
 
 ## Window properties
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Title` | The text displayed in the window title bar. |
 | `Width`, `Height` | Initial size. |
@@ -257,7 +257,7 @@ var screenAtPoint = screens.ScreenFromPoint(new PixelPoint(500, 300));
 
 Each `Screen` object exposes:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Bounds` | `PixelRect` | Full screen bounds in pixels. |
 | `WorkingArea` | `PixelRect` | Usable area excluding taskbars and docks. |

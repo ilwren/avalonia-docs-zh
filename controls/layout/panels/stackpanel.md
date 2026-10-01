@@ -22,7 +22,7 @@ In the direction of the stack, the `StackPanel` always expands to fit all of its
 
 You will probably use these properties most often:
 
-| Property      | 说明                                                                     |
+| 属性      | 说明                                                                     |
 | ------------- | ------------------------------------------------------------------------------- |
 | [`Orientation`](/api/avalonia/layout/orientation) | Sets the direction of the stack. Choose from `Horizontal` or `Vertical` (default). |
 | `Spacing`     | Creates an even gap between consecutive child controls.                         |
@@ -130,7 +130,7 @@ You can create a horizontal button bar by setting `Orientation` to `Horizontal` 
 ## 另请参阅 {#see-also}
 
 - [StackPanel API reference](/api/avalonia/controls/stackpanel)
-- [`StackPanel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/StackPanel.cs)
+- [GitHub 上的 `StackPanel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/StackPanel.cs)
 - [DockPanel](/controls/layout/panels/dockpanel)
 - [Grid](/controls/layout/panels/grid)
 - [WrapPanel](/controls/layout/panels/wrappanel)

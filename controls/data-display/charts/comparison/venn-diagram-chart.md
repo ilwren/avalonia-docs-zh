@@ -43,7 +43,7 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 
 ## Common properties (`VennDiagramChart`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of `VennItem` regions. | `null` |
 | `IsSelectionEnabled` | Whether regions can be selected. | `false` |
@@ -55,7 +55,7 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 
 ## Common properties (`VennItem`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Sets` | Collection of set identifiers, such as `["A"]` or `["A", "B"]`. | Empty collection |
 | `Value` | Numeric value represented by the set or intersection. | `0.0` |

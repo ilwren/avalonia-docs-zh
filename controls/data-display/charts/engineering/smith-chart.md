@@ -44,9 +44,9 @@ public ObservableCollection<ImpedancePoint> ImpedanceData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of impedance points. | `null` |
 | `ResistancePath` | Path to the normalized resistance value. | `null` |

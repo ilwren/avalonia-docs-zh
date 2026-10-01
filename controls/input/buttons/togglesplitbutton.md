@@ -21,9 +21,9 @@ Like a [`SplitButton`](/controls/input/buttons/splitbutton), the most common act
 Pressing a configuration in the `Flyout` should either (1) turn on the feature with the selected configuration, or (2) change the feature to the selected configuration. Pressing a configuration in the `Flyout` should never turn off the feature; that can only be done by toggling the primary part.
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property    | 说明                                                    |
+| 属性    | 说明                                                    |
 | ----------- | -------------------------------------------------------------- |
 | `Content`   | The content to display in the primary part                     |
 | `Flyout`    | The `Flyout` which shows up when the secondary part is clicked |
@@ -110,4 +110,4 @@ Continuing the text editor example from `SplitButton`, a common use case of the 
 ## 另请参阅 {#see-also}
 
 - [ToggleSplitButton API reference](/api/avalonia/controls/togglesplitbutton)
-- [`ToggleSplitButton.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitButton/ToggleSplitButton.cs)
+- [GitHub 上的 `ToggleSplitButton.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitButton/ToggleSplitButton.cs)

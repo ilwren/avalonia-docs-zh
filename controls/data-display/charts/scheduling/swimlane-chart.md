@@ -67,9 +67,9 @@ public ObservableCollection<SwimlaneTask> SwimlaneTasks { get; } = new()
 
 `StartPath` and `EndPath` expect numeric values. Use your own scale, for example days, hours, sprint points, or sequence positions. Overlapping tasks in the same lane are stacked into rows using `TaskSpacing`.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of tasks/items. | `null` |
 | `LanePath` | Determines which lane the task belongs to. | `null` |

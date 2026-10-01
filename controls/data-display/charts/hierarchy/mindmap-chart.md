@@ -160,7 +160,7 @@ public ObservableCollection<FlowEdge> MindmapEdges { get; } = new()
 
 ## Common properties (`FlowChart`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | Collection of `FlowNode` items representing topics. | `null` |
 | `Edges` | Collection of `FlowEdge` items representing relationships. | `null` |

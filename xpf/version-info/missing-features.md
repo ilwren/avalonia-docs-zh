@@ -5,7 +5,7 @@ description: A summary of WPF features that are unavailable, limited, or planned
 doc-type: reference
 ---
 
-## Overview
+## 概述 {#overview}
 
 XPF makes a best effort to implement all WPF APIs, but some features are difficult or impossible to support due to cross-platform constraints or underlying architectural differences. This page lists the features that are currently missing, partially implemented, or unlikely to be added so you can plan your migration accordingly.
 

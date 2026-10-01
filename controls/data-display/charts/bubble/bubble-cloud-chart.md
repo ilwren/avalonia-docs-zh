@@ -44,9 +44,9 @@ public ObservableCollection<TopicBubble> Topics { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of bubble items. | `null` |
 | `LabelPath` | Path to the bubble label. | `null` |

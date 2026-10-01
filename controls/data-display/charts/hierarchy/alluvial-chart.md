@@ -52,9 +52,9 @@ public ObservableCollection<AlluvialLink> AlluvialLinks { get; } = new()
 
 `AlluvialChart` uses the strongly typed `AlluvialNode` and `AlluvialLink` classes. Each node defines an `Id`, `Label`, `Step`, and `Value`.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of categorical nodes (columns). | `null` |
 | `Links` | The collection of connections between nodes. | `null` |

@@ -60,9 +60,9 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 }
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The data source of price data. | `null` |
 | `OpenPath` | Paths of the opening price. | `null` |

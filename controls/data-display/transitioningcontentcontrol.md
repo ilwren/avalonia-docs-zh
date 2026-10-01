@@ -12,11 +12,11 @@ The [`TransitioningContentControl`](/api/avalonia/controls/transitioningcontentc
 
 A common use case is building an image slideshow, but `TransitioningContentControl` is equally useful for switching between views in a navigation scenario.
 
-## Common properties
+## 常用属性 {#common-properties}
 
 You will probably use these properties most often:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Content` | The content to display in the control. |
 | `ContentTemplate` | A `DataTemplate` used to display the content. |

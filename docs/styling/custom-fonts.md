@@ -7,7 +7,7 @@ Avalonia supports custom TrueType (`.ttf`) and OpenType (`.otf`) fonts. You can 
 
 There are three approaches to using custom fonts, each suited to different scenarios:
 
-| Approach | Best for |
+| 办法 | 适用场景 |
 |----------|----------|
 | [Static resource](#static-resource-fonts) | Using a font in specific places via a named resource key |
 | [Embedded font collection](#embedded-font-collections) | Referencing fonts by family name without resource keys |

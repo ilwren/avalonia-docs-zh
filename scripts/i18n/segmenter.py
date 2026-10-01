@@ -445,4 +445,9 @@ class Walker:
 
 
 def transform(text: str, path: str, handler: Handler, **kw) -> str:
-    return Walker(path, handler, **kw).run(text)
+    # 少数源文件带 UTF-8 BOM，会让 YAML frontmatter 识别不出来。
+    # 这里先摘掉 BOM 再解析，输出时原样补回，保证字节级幂等。
+    bom = "\ufeff" if text.startswith("\ufeff") else ""
+    if bom:
+        text = text[1:]
+    return bom + Walker(path, handler, **kw).run(text)

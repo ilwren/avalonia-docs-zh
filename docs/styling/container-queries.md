@@ -9,7 +9,7 @@ Container queries allow styles to be activated for a control based on the size o
 Avalonia's container queries are similar to CSS container queries, with more limited functionality to suit the platforms and form factors Avalonia supports. They can also behave like media queries if the `TopLevel` is set as a container.
 :::
 
-## How it works
+## 运作原理 {#how-it-works}
 
 Container queries rely on an ancestor control being set as a container. Changes to the size of the container activate styles based on queries. Those queries can check either the width or height of the container, or both. Any control can be a container, but a control set as a container can not be affected by styles hosted by a container query linked to it. When a query is activated, all styles hosted in the query will also be activated based on their selectors.
 

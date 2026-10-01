@@ -1,7 +1,7 @@
 ---
 id: how-to-bind-image-files
-title: How to bind image files
-description: Bind image sources from file paths, resources, or streams to display images in Avalonia controls.
+title: 如何绑定图片文件
+description: 把来自文件路径、资源或流的图片源绑定到 Avalonia 控件上显示。
 doc-type: how-to
 ---
 
@@ -9,13 +9,13 @@ doc-type: how-to
 <GitHubSampleLink title="Loading Images" link="https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/LoadingImages"/>
 
 
-In Avalonia UI, binding to an image file opens up opportunities for displaying dynamic image content within your application. This guide provides an overview on how to bind image files from different sources.
+在 Avalonia UI 中，绑定图片文件为应用展示动态图像内容打开了方便之门。本文概览如何绑定来自不同来源的图片文件。
 
-## Binding to image files from different sources
+## 绑定来自不同来源的图片文件 {#binding-to-image-files-from-different-sources}
 
-Assuming you have images from different sources (i.e., a local resource or a web URL) that you want to display in your view, here's how you can achieve this:
+假设你有若干来自不同来源的图片（比如本地资源或网络 URL）想在视图中展示，可以这样做：
 
-First, in your `ViewModel`, you need to define properties that represent these image sources. The properties can be of type `Bitmap` or `Task<Bitmap>` (if loading the image involves an asynchronous operation). The `ImageHelper` class is used to load these images.
+首先在 `ViewModel` 中定义若干属性来表示这些图片源。属性类型可以是 `Bitmap`，也可以是 `Task<Bitmap>`（如果加载图片涉及异步操作）。加载工作由 `ImageHelper` 类完成。
 
 ```csharp
 public class MainWindowViewModel : ViewModelBase
@@ -25,7 +25,7 @@ public class MainWindowViewModel : ViewModelBase
 }
 ```
 
-You'll need to have a helper class `ImageHelper` that provides methods to load images from resources and from a web URL. Here's how you can implement this class:
+你还需要一个辅助类 `ImageHelper`，提供从资源和网络 URL 加载图片的方法。实现如下：
 
 ```csharp
 using System;
@@ -65,9 +65,9 @@ namespace ImageExample.Helpers
 }
 ```
 
-The `LoadFromResource` method takes a resource URI and loads the image using the `AssetLoader` class provided by Avalonia. The `LoadFromWeb` method loads an image from a web URL using the `HttpClient` class.
+`LoadFromResource` 方法接收一个资源 URI，用 Avalonia 提供的 `AssetLoader` 类加载图片；`LoadFromWeb` 方法则用 `HttpClient` 类从网络 URL 加载图片。
 
-Then, in your view, you can bind these image sources to `Image` controls:
+随后在视图中把这些图片源绑定到 `Image` 控件上：
 
 ```xml
 <Grid ColumnDefinitions="*,*,*" RenderOptions.BitmapInterpolationMode="HighQuality">
@@ -77,14 +77,14 @@ Then, in your view, you can bind these image sources to `Image` controls:
 </Grid>
 ```
 
-The `Source` property of the `Image` control can accept various types of image sources including a file path, a URL, or a resource. Please note that for asynchronous image sources, you must use the `^` character after the binding expression to tell Avalonia that this is an asynchronous binding.
+`Image` 控件的 `Source` 属性可以接受多种图片源，包括文件路径、URL 和资源。请注意，对于异步图片源，必须在绑定表达式后面加上 `^` 字符，以告知 Avalonia 这是一个异步绑定。
 
-Ensure that local image file paths are accurate, the image file is accessible, and if it's part of your application resources, it's been correctly included in your project. If you're binding to a web image, ensure that the URL is reachable.
+请确认本地图片路径准确无误、文件可访问；如果图片属于应用资源，还要确认它已正确包含进项目。绑定网络图片时，则要确认 URL 可达。
 
 ## 另请参阅 {#see-also}
 
-- [How to Bind to a Task Result](/docs/data-binding/how-to-bind-to-a-task-result): Async data loading with the `^` operator.
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.
+- [如何绑定到任务结果](/docs/data-binding/how-to-bind-to-a-task-result)：用 `^` 运算符异步加载数据。
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定路径、模式与转换器。
 
 
 

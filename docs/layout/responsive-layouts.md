@@ -9,7 +9,7 @@ Avalonia provides techniques for building layouts that adapt when the available 
 
 ## Approaches at a glance
 
-| Technique | Responds to | Resolves | Best for |
+| Technique | Responds to | Resolves | 适用场景 |
 |-----------|-------------|----------|----------|
 | [Container queries](#container-queries) | Size of an ancestor control | Live, as the control resizes | Reusable components that appear in panels of varying width |
 | [`OnFormFactor`](#onformfactor) | Device type (desktop, mobile) | Once, at startup | Platform-specific layout differences |
@@ -157,7 +157,7 @@ The `OnFormFactor` markup extension selects a value based on the device type. It
 
 ### Form factor values
 
-| Parameter | Matches | Typical platforms |
+| 参数 | Matches | Typical platforms |
 |-----------|---------|-------------------|
 | `Desktop` | Desktop systems | Windows, macOS, Linux |
 | `Mobile` | Mobile systems | iOS, Android |
@@ -183,7 +183,7 @@ Use `OnFormFactor` when your desktop and mobile layouts are structurally differe
 
 The related `OnPlatform` markup extension selects a value based on the operating system rather than the device type. It also resolves once at startup.
 
-| Parameter | Matches |
+| 参数 | Matches |
 |-----------|---------|
 | `Windows` | Windows |
 | `macOS` | macOS |
@@ -272,7 +272,7 @@ Then bind layout properties to the breakpoint flags:
 
 This approach provides full programmatic control but requires code-behind or view model wiring. Prefer container queries when your transitions are purely size-based and can be expressed in XAML.
 
-## Choosing an approach
+## 该选哪种办法 {#choosing-an-approach}
 
 Use the following decision process to select the right technique:
 

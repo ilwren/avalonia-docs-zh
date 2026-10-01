@@ -14,7 +14,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 `TreeDataGridTextColumn` displays property values as text. Values are converted to strings using `ToString()` for display. For editable columns, text input is converted back to the property type using `Convert.ChangeType()`.
 
-### XAML usage
+### XAML 用法 {#xaml-usage}
 
 ```xml
 <!-- Read-only column -->
@@ -82,7 +82,7 @@ Options can be set as attributes in XAML or configured via the `TextColumnCreate
 
 `TreeDataGridCheckBoxColumn` displays Boolean values as checkboxes.
 
-### XAML usage
+### XAML 用法 {#xaml-usage-1}
 
 ```xml
 <!-- Basic checkbox -->
@@ -135,7 +135,7 @@ source.WithCheckBoxColumn(x => x.IsActive, o =>
 
 The expander column wraps an inner column (typically a `TreeDataGridTextColumn` or `TreeDataGridTemplateColumn`) which defines what content appears next to the expander icon.
 
-### XAML usage
+### XAML 用法 {#xaml-usage-2}
 
 Define the expander column in XAML with bindings for children, and nest the inner column as content:
 
@@ -189,7 +189,7 @@ source.WithHierarchicalExpanderColumn(
 
 `TreeDataGridTemplateColumn` uses data templates to render cell content, allowing complete control over appearance and behavior.
 
-### XAML usage
+### XAML 用法 {#xaml-usage-3}
 
 Define the cell template (and optional editing template) inline:
 
@@ -271,7 +271,7 @@ source.WithTemplateColumnFromResourceKeys("Name", "FileNameCell", "FileNameEditC
 
 `TreeDataGridRowHeaderColumn` displays row headers (typically row numbers) in the leftmost column.
 
-### XAML usage
+### XAML 用法 {#xaml-usage-4}
 
 ```xml
 <TreeDataGrid ItemsSource="{Binding Data}">

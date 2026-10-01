@@ -55,7 +55,7 @@ See the [Wikipedia page](https://en.wikipedia.org/wiki/Blend_modes) on blend mod
 Blend mode support depends on the rendering backend. The Skia renderer supports all blend modes listed below.
 :::
 
-## Default behavior
+## 默认表现 {#default-behavior}
 
 The default blend mode is `SourceOver`, meaning replacing all pixels values by the new values, dictated by the alpha channel. This is the standard way most applications overlay two images.
 

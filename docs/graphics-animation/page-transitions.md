@@ -76,7 +76,7 @@ Keep the `Duration` values consistent across child transitions so they start and
 
 ## Choosing the right transition
 
-| Transition | Best for | Notes |
+| Transition | 适用场景 | Notes |
 |---|---|---|
 | `CrossFade` | Tabs, settings panels, content that changes in place | Subtle, non-directional |
 | `PageSlide` (horizontal) | Wizard steps, forward/back navigation | Conveys sequential flow |

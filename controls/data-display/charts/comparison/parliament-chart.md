@@ -42,9 +42,9 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `TotalSeats` | Total number of seats to draw. | `100` |
 | `Rows` | Number of concentric seat rows. | `4` |
@@ -56,7 +56,7 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 
 ## Common properties (`ParliamentParty`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Name` | Party or bloc name. | `string.Empty` |
 | `Seats` | Number of seats assigned to the party. | `0` |

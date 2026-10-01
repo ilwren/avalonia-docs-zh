@@ -217,7 +217,7 @@ The `HotKey` triggers the button's command even when the button does not have fo
 ## 另请参阅 {#see-also}
 
 - [Binding to commands](/docs/data-binding/binding-to-commands): Binding syntax, binding a `Command` straight to a method, and `CommandParameter`.
-- [How to bind CanExecute](/docs/data-binding/how-to-bind-can-execute): Worked example of a button enabled by `CanExecute`.
-- [Adding interactivity](/docs/input-interaction/adding-interactivity): Choosing between events and commands.
+- [如何绑定 CanExecute](/docs/data-binding/how-to-bind-can-execute)：用 `CanExecute` 控制按钮可用状态的完整示例。
+- [添加交互](/docs/input-interaction/adding-interactivity)：事件和命令之间该怎么选。
 - [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Key bindings and keyboard input.
 - [The MVVM Pattern](/docs/fundamentals/the-mvvm-pattern): Architecture for separating UI and logic.

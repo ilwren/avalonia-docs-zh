@@ -20,7 +20,7 @@ Avalonia offers a variety of layout panels that fulfil different UI roles. This 
 
 ## Quick comparison
 
-| Panel | Arrangement | Adapts to window size | Best for |
+| Panel | Arrangement | Adapts to window size | 适用场景 |
 |---|---|---|---|
 | [Grid](/controls/layout/panels/grid) | Rows and columns | Yes | Most general-purpose layouts, forms, dashboards |
 | [DockPanel](/controls/layout/panels/dockpanel) | Edges (top, bottom, left, right) and fill | Yes | App shells with header, sidebar, and content area |

@@ -7,7 +7,7 @@ doc-type: how-to
 
 When displaying images in Avalonia, particularly when scaling them to sizes different from their native resolution, the quality of the rendering depends on the interpolation mode being used. This guide explains how to control image interpolation in your Avalonia applications.
 
-## Default behavior
+## 默认表现 {#default-behavior}
 
 As of Avalonia 11, the default interpolation mode is set to `LowQuality`. This setting prioritizes performance but may result in less smooth image rendering when scaling images, particularly when displaying them at sizes significantly smaller than their original dimensions.
 
@@ -15,7 +15,7 @@ As of Avalonia 11, the default interpolation mode is set to `LowQuality`. This s
 
 Avalonia supports the following bitmap interpolation modes:
 
-| Mode | 说明 |
+| 模式 | 说明 |
 | :--- | :--- |
 | `None` | No interpolation. Pixels are rendered without smoothing |
 | `LowQuality` | Basic interpolation (default). Prioritizes performance |
@@ -81,7 +81,7 @@ To force aliased (sharp, pixelated) edges on a specific control, set `EdgeMode` 
        RenderTransform="rotate(15)" />
 ```
 
-| Mode | 说明 |
+| 模式 | 说明 |
 |---|---|
 | `Unspecified` | The renderer uses its default behavior (antialiased). |
 | `Aliased` | Disables antialiasing. Useful for pixel art or when you need crisp, non-smoothed edges. |

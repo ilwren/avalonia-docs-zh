@@ -57,7 +57,7 @@ For more information on installing Avalonia Pro controls, see [Installing Avalon
 
 You will probably use these properties most often:
 
-| Property               | 说明                                                                                   |
+| 属性               | 说明                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------- |
 | `ItemsSource`          | Binds to a collection for XAML-defined columns.                                               |
 | `Source`               | The data source that drives the control's rows and columns (code-behind approach).            |

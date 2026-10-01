@@ -1,15 +1,15 @@
 ---
 id: multi-binding
 title: MultiBinding
-description: Combine multiple binding sources into a single value using MultiBinding and IMultiValueConverter.
+description: 用 MultiBinding 和 IMultiValueConverter 把多个绑定源合成一个值。
 doc-type: how-to
 ---
 
-[`MultiBinding`](/api/avalonia/data/multibinding) combines values from multiple source properties into a single target property. It is useful when a display value depends on more than one data source, such as formatting a full name from separate first and last name properties, or computing a composite value.
+[`MultiBinding`](/api/avalonia/data/multibinding) 可以把多个源属性的值合成到一个目标属性上。当某个显示值取决于不止一个数据源时它就很有用，比如把分开的姓和名拼成全名，或者算出一个复合值。
 
-## Basic usage with StringFormat
+## 搭配 StringFormat 的基本用法 {#basic-usage-with-stringformat}
 
-The simplest use of `MultiBinding` is combining multiple values into a formatted string:
+`MultiBinding` 最简单的用法，就是把多个值拼成一个格式化字符串：
 
 ```xml
 <TextBlock>
@@ -22,9 +22,9 @@ The simplest use of `MultiBinding` is combining multiple values into a formatted
 </TextBlock>
 ```
 
-Each `Binding` inside the `MultiBinding` maps to a placeholder (`{0}`, `{1}`, and so on) in the `StringFormat` pattern. The format string follows standard .NET `string.Format` rules.
+`MultiBinding` 内部的每个 `Binding` 依次对应 `StringFormat` 模式里的一个占位符（`{0}`、`{1}` 等等）。格式字符串遵循 .NET `string.Format` 的标准规则。
 
-### Formatting numbers
+### 格式化数字 {#formatting-numbers}
 
 ```xml
 <TextBlock>
@@ -38,14 +38,14 @@ Each `Binding` inside the `MultiBinding` maps to a placeholder (`{0}`, `{1}`, an
 ```
 
 :::tip
-When `StringFormat` starts with `{0`, you must escape the opening brace. Prefix the pattern with `{}` or use backslash escaping: `StringFormat='\{0\} items'`.
+当 `StringFormat` 以 `{0` 开头时，必须转义最前面的花括号：在模式前加上 `{}`，或者用反斜杠转义 —— `StringFormat='\{0\} items'`。
 :::
 
-## Using an IMultiValueConverter
+## 使用 IMultiValueConverter {#using-an-imultivalueconverter}
 
-For logic beyond string formatting, implement `IMultiValueConverter`. This converter receives an array of values from all child bindings and returns a single result.
+若逻辑超出了字符串格式化的范畴，就实现 `IMultiValueConverter`。该转换器会收到一个数组，里面装着所有子绑定的值，最终返回单个结果。
 
-### Defining the converter
+### 定义转换器 {#defining-the-converter}
 
 ```csharp
 using System;
@@ -71,9 +71,9 @@ public class AllTrueConverter : IMultiValueConverter
 }
 ```
 
-### Using the converter in XAML
+### 在 XAML 中使用该转换器 {#using-the-converter-in-xaml}
 
-Declare the converter as a resource, then reference it from the `MultiBinding`:
+先把转换器声明为资源，再在 `MultiBinding` 中引用它：
 
 ```xml
 <Window.Resources>
@@ -87,7 +87,7 @@ Declare the converter as a resource, then reference it from the `MultiBinding`:
 </Button>
 ```
 
-Because `MultiBinding` with child bindings requires property element syntax, the full form is:
+由于带子绑定的 `MultiBinding` 必须使用属性元素语法，完整写法是：
 
 ```xml
 <Button Content="Submit">
@@ -101,11 +101,11 @@ Because `MultiBinding` with child bindings requires property element syntax, the
 </Button>
 ```
 
-The button is enabled only when all three bound properties are `true`.
+只有当三个绑定属性全都为 `true` 时，按钮才可用。
 
-## Binding to controls
+## 绑定到控件 {#binding-to-controls}
 
-Child bindings within a `MultiBinding` support the same source options as regular bindings, including `ElementName`, `RelativeSource`, and Avalonia's `#elementName` shorthand:
+`MultiBinding` 内部的子绑定支持与普通绑定相同的各种源选项，包括 `ElementName`、`RelativeSource` 以及 Avalonia 的 `#elementName` 简写：
 
 ```xml
 <StackPanel>
@@ -126,32 +126,32 @@ Child bindings within a `MultiBinding` support the same source options as regula
 </StackPanel>
 ```
 
-## MultiBinding properties
+## MultiBinding 的属性 {#multibinding-properties}
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
-| `Bindings` | The collection of child `Binding` objects. |
-| `Converter` | An `IMultiValueConverter` that processes the bound values. |
-| `ConverterParameter` | A parameter passed to the converter. |
-| `StringFormat` | A format string applied when no converter is specified (or when the converter returns a string). |
-| `FallbackValue` | The value used when the multi-binding cannot produce a result. |
-| `TargetNullValue` | The value used when the converter returns `null`. |
-| `Mode` | The binding mode. `MultiBinding` supports `OneWay` and `OneTime` modes. |
-| `Priority` | The binding priority. |
+| `Bindings` | 子 `Binding` 对象的集合。 |
+| `Converter` | 负责处理这些绑定值的 `IMultiValueConverter`。 |
+| `ConverterParameter` | 传给转换器的参数。 |
+| `StringFormat` | 未指定转换器（或转换器返回字符串）时所应用的格式字符串。 |
+| `FallbackValue` | 多重绑定无法产出结果时所使用的值。 |
+| `TargetNullValue` | 转换器返回 `null` 时所使用的值。 |
+| `Mode` | 绑定模式。`MultiBinding` 支持 `OneWay` 和 `OneTime` 两种模式。 |
+| `Priority` | 绑定优先级。 |
 
 :::info
-`MultiBinding` is one-way by default. Two-way multi-bindings are not supported because there is no general way to reverse a multi-value conversion back to individual source properties.
+`MultiBinding` 默认是单向的。双向多重绑定是不支持的 —— 把一次多值转换反推回各个源属性，并没有通用的办法。
 :::
 
 :::tip
-Unlike WPF, Avalonia supports nesting a `MultiBinding` inside another `MultiBinding`. Each nested `MultiBinding` resolves to a single value in the parent converter's input array.
+与 WPF 不同，Avalonia 支持把一个 `MultiBinding` 嵌套在另一个 `MultiBinding` 里。每个嵌套的 `MultiBinding` 会在父转换器的输入数组中归结为一个值。
 :::
 
 ## FuncMultiValueConverter
 
-Avalonia provides `FuncMultiValueConverter<TIn, TOut>` for simple scenarios where you want to define the conversion logic inline without creating a full class.
+对于那些不想专门写个类、只想就地定义转换逻辑的简单场景，Avalonia 提供了 `FuncMultiValueConverter<TIn, TOut>`。
 
-The converter function receives an `IReadOnlyList<TIn>`, so you can iterate over values or access them by index:
+转换函数收到的是一个 `IReadOnlyList<TIn>`，你可以遍历这些值，也可以按下标取用：
 
 ```csharp
 public static class Converters
@@ -178,9 +178,9 @@ public static class Converters
 </TextBlock>
 ```
 
-## Common patterns
+## 常见写法 {#common-patterns}
 
-### Visibility from multiple conditions
+### 由多个条件共同决定可见性 {#visibility-from-multiple-conditions}
 
 ```csharp
 public class AnyTrueConverter : IMultiValueConverter
@@ -210,7 +210,7 @@ public class AnyTrueConverter : IMultiValueConverter
 </Border>
 ```
 
-### Computing a value from multiple inputs
+### 由多个输入算出一个值 {#computing-a-value-from-multiple-inputs}
 
 ```csharp
 public class RectangleAreaConverter : IMultiValueConverter
@@ -234,6 +234,6 @@ public class RectangleAreaConverter : IMultiValueConverter
 
 ## 另请参阅 {#see-also}
 
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding parameters including StringFormat.
-- [How to Create a Custom Converter](/docs/data-binding/how-to-create-a-custom-data-binding-converter): Single-value converters.
-- [Built-in Data Binding Converters](/docs/data-binding/built-in-data-binding-converters): Converters shipped with Avalonia.
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定参数，含 StringFormat。
+- [如何创建自定义转换器](/docs/data-binding/how-to-create-a-custom-data-binding-converter)：单值转换器。
+- [内置数据绑定转换器](/docs/data-binding/built-in-data-binding-converters)：Avalonia 自带的转换器。

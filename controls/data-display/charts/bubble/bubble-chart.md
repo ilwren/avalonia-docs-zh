@@ -56,7 +56,7 @@ public ObservableCollection<ProductBubble> BubbleData { get; } = new()
 
 ## Common properties (`BubbleSeries`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of data points. | `null` |
 | `CategoryPath` | Path to the X-axis value. | `null` |

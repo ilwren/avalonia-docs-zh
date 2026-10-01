@@ -13,7 +13,7 @@ The `DatePicker` control presents three spinner columns that let your users pick
 
 You will probably use these properties most often:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `SelectedDate` | The selected date as a `DateTimeOffset?` (null when there is no selection). |
 | `DayVisible` | Sets whether the day column is visible. |
@@ -123,4 +123,4 @@ public partial class MyViewModel : ObservableObject
 - [CalendarDatePicker](/controls/input/date-and-time/calendardatepicker)
 - [TimePicker](/controls/input/date-and-time/timepicker)
 - [DatePicker API reference](/api/avalonia/controls/datepicker)
-- [`DatePicker.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DateTimePickers/DatePicker.cs)
+- [GitHub 上的 `DatePicker.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DateTimePickers/DatePicker.cs)

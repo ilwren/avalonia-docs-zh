@@ -150,7 +150,7 @@ public static int GetSlot(Control element) => element.GetValue(SlotProperty);
 public static void SetSlot(Control element, int value) => element.SetValue(SlotProperty, value);
 ```
 
-## Tips
+## 小贴士 {#tips}
 
 - Always call `Measure` on every child in `MeasureOverride`. Children that are not measured will not render correctly.
 - Always call `Arrange` on every child in `ArrangeOverride`. Children that are not arranged will not appear.

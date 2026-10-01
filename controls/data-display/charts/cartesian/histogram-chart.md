@@ -54,9 +54,9 @@ private static ObservableCollection<HistogramItem> CreateScores()
 }
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of raw data points. | `null` |
 | `ValuePath` | Path to the numeric property to bin. | `null` |

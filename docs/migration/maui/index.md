@@ -23,7 +23,7 @@ This gives your MAUI application access to platforms that MAUI does not support 
 
 Because Avalonia draws every control itself, your MAUI application looks and behaves consistently whether it runs on Windows, macOS, Linux, mobile, or in a browser tab.
 
-### How it works
+### 运作原理 {#how-it-works}
 
 At its core, the Avalonia MAUI Backend builds a single set of handlers that map MAUI controls to Avalonia controls. When you create a [`Button`](/api/avalonia/controls/button) in MAUI, it renders as an Avalonia `Button` on every platform, rather than a platform-specific native control.
 

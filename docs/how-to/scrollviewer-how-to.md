@@ -256,7 +256,7 @@ This pattern keeps the header visible at all times. The `ZIndex` on the header `
 
 ## Key properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Offset` | `Vector` | Current scroll position (X, Y) |
 | `Extent` | `Size` | Total size of the scrollable content |

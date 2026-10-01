@@ -1,56 +1,56 @@
 ---
 id: markup-extensions
-title: Markup extensions
-description: Create custom XAML markup extensions that provide values to properties at runtime.
+title: 标记扩展
+description: 编写自定义 XAML 标记扩展，在运行时为属性提供取值。
 doc-type: how-to
 ---
 
 <p>{frontMatter.description}</p>
 
-## About markup extensions
+## 关于标记扩展 {#about-markup-extensions}
 
-A classic markup extension is any class that:
+经典意义上的标记扩展，是指满足以下条件的类：
 
-- Implements `object? ProvideValue(IServiceProvider?)`
-- Optionally inherits from [`MarkupExtension`](/api/avalonia/markup/xaml/markupextension) (not required in Avalonia)
-- Is used from XAML via the `{ns:Extension ...}` syntax
+- 实现 `object? ProvideValue(IServiceProvider?)`
+- 可以继承 [`MarkupExtension`](/api/avalonia/markup/xaml/markupextension)（在 Avalonia 中不作要求）
+- 在 XAML 中通过 `{ns:Extension ...}` 语法使用
 
-In Avalonia, `ProvideValue` is allowed to return **any** type. This means the result can be strongly typed, as the returned value is assigned directly to the target property.
+在 Avalonia 中，`ProvideValue` 允许返回**任意**类型。也就是说返回值可以是强类型的，因为它会被直接赋给目标属性。
 
-Avalonia provides the following markup extensions:
+Avalonia 提供了以下标记扩展：
 
-| MarkupExtension                                                                                  | Assigns to Property                                                |
+| MarkupExtension                                                                                  | 赋给属性的内容                                                |
 |--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| [StaticResource](/docs/app-development/resource-dictionary#static-resource)                    | An existing keyed resource and does not update on changes          |
-| [DynamicResource](/docs/app-development/resource-dictionary#using-resources)                   | Deferred loading of a keyed resource that will update on changes   |
-| Binding                                                                                          | Based on the default binding preference: Compiled or Reflection    |
-| [CompiledBinding](/docs/data-binding/compiled-bindings#reflectionbinding-and-compiledbinding-markup)       | Based on a compiled binding                                        |
-| [ReflectionBinding](/docs/data-binding/compiled-bindings#reflectionbinding-and-compiledbinding-markup)   | Based on a reflection binding                                      |
-| [TemplateBinding](/docs/custom-controls/templated-controls)    | Based on a simplified binding used only within a `ControlTemplate` |
-| [OnPlatform](/docs/platform-specific-guides/xaml#onplatform-markup-extension)     | Conditionally when on the specified platform                       |
-| [OnFormFactor](/docs/platform-specific-guides/xaml#onformfactor-markup-extension) | Conditionally when on the specified factor                         |
+| [StaticResource](/docs/app-development/resource-dictionary#static-resource)                    | 一个已存在的带键资源，且不会随资源变化而更新          |
+| [DynamicResource](/docs/app-development/resource-dictionary#using-resources)                   | 延迟加载的带键资源，会随资源变化而更新   |
+| Binding                                                                                          | 取决于默认的绑定偏好：编译绑定或反射绑定    |
+| [CompiledBinding](/docs/data-binding/compiled-bindings#reflectionbinding-and-compiledbinding-markup)       | 基于编译绑定                                        |
+| [ReflectionBinding](/docs/data-binding/compiled-bindings#reflectionbinding-and-compiledbinding-markup)   | 基于反射绑定                                      |
+| [TemplateBinding](/docs/custom-controls/templated-controls)    | 基于仅在 `ControlTemplate` 内部使用的简化绑定 |
+| [OnPlatform](/docs/platform-specific-guides/xaml#onplatform-markup-extension)     | 在指定平台上有条件地生效                       |
+| [OnFormFactor](/docs/platform-specific-guides/xaml#onformfactor-markup-extension) | 在指定的外形规格上有条件地生效                         |
 
-## Compiler intrinsics
+## 编译器内建项 {#compiler-intrinsics}
 
-These technically fall outside of `MarkupExtension` as part of the XAML compiler, but the XAML syntax is the same.
+严格来说它们属于 XAML 编译器而非 `MarkupExtension`，但 XAML 写法是一样的。
 
-| Intrinsic | Assigns to Property   |
+| 内建项 | 赋给属性的内容   |
 |-----------|-----------------------|
 | x:True    | `true` literal        |
 | x:False   | `false` literal       |
 | x:Null    | `null` literal        |
-| x:Static  | Static member value   |
+| x:Static  | 静态成员的值   |
 | x:Type    | `System.Type` literal |
 
-The `x:True` and `x:False` literals have use cases where the target binding property is `object` and you need to provide a boolean. In these scenarios that lack type information, providing "True" remains a `string`.
+当目标绑定属性是 `object`、而你需要给它一个布尔值时，`x:True` 和 `x:False` 字面量就派上用场了。这类场景缺少类型信息，直接写 "True" 得到的仍然是 `string`。
 
 ```xml
 <Button Command="{Binding SetStateCommand}" CommandParameter="{x:True}" />
 ```
 
-## Creating markup extensions
+## 编写标记扩展 {#creating-markup-extensions}
 
-Derive from `MarkupExtension` or add one of the following signatures which are supported via duck-typing:
+继承 `MarkupExtension`，或者提供下列任一签名 —— 它们通过鸭子类型得到支持：
 
 ```csharp
 T ProvideValue();
@@ -59,7 +59,7 @@ object ProvideValue();
 object ProvideValue(IServiceProvider provider);
 ```
 
-Here is a basic example with a markup extension used for localization:
+下面是一个用于本地化的标记扩展的基础示例：
 
 ```csharp
 public class LocExtension
@@ -78,30 +78,29 @@ public class LocExtension
 <TextBlock Text="{local:Loc Key=WelcomeMessage}" />
 ```
 
-When strong types are used instead of `object`, you will receive compile-time errors when there is a mismatch in the  XAML use of constructor parameters, properties, or the return value in `ProvideValue`. When returning `object`, the actual type returned must match the target property's type, else an `InvalidCastException` is thrown at runtime.
+若用强类型而非 `object`，那么 XAML 中构造函数参数、属性或 `ProvideValue` 返回值类型对不上时，你会直接拿到编译错误。而返回 `object` 时，实际返回的类型必须与目标属性类型相符，否则运行时会抛出 `InvalidCastException`。
 
 ### Using `IServiceProvider`
 
-The `IServiceProvider` passed to `ProvideValue` exposes XAML context services, enabling the extension to understand where it is used.
+传给 `ProvideValue` 的 `IServiceProvider` 暴露了一系列 XAML 上下文服务，扩展借此可以知道自己被用在什么地方。
 
-Common standard services include:
+常用的标准服务包括：
 
-- **`IProvideValueTarget`**: gives access to the target object and property.
-- **`IRootObjectProvider`**: provides the XAML document’s root object.
+- **`IProvideValueTarget`**：用于访问目标对象和目标属性。
+- **`IRootObjectProvider`**：提供 XAML 文档的根对象。
 
-Avalonia also provides additional, XAML-IL specific services:
+Avalonia 还额外提供了若干 XAML-IL 专有服务：
 
-- **`IAvaloniaXamlIlParentStackProvider`**: exposes the parent object stack during XAML parsing.
-- **`IAvaloniaXamlIlXmlNamespaceInfoProvider`**: provides namespace metadata.
+- **`IAvaloniaXamlIlParentStackProvider`**：暴露 XAML 解析过程中的父对象栈。
+- **`IAvaloniaXamlIlXmlNamespaceInfoProvider`**：提供命名空间的元数据。
 
-These services are optional, but essential for more advanced or context-aware extensions.
+这些服务并非必需，但对更高级、需要感知上下文的扩展来说不可或缺。
 
-### Receiving literal parameters
+### 接收字面量参数 {#receiving-literal-parameters}
 
-When parameters are required, use a constructor to receive each parameter in order.
+需要参数时，用构造函数按顺序逐个接收。
 
-For optional or unordered parameters, use properties instead. Mix and matching with multiple constructors is allowed, 
-including parameterless ones.
+可选参数或顺序无关的参数则改用属性。也允许多个构造函数混用，包括无参构造函数。
 
 ```csharp
 public class MultiplyLiteral
@@ -127,11 +126,11 @@ public class MultiplyLiteral
 <TextBlock Text="This has FontSize=40" FontSize="{namespace:MultiplyLiteral 10, 8, Third=0.5}" />
 ```
 
-### Receiving parameters from bindings
+### 从绑定接收参数 {#receiving-parameters-from-bindings}
 
-A common scenario is to transform data coming in from a binding and updating the target property. When all parameters  come from bindings, this can be done by creating a `MultiBinding` with an `IMultiValueConverter`.
+一个常见场景是把绑定送来的数据变换一下再写给目标属性。若所有参数都来自绑定，可以创建一个带 `IMultiValueConverter` 的 `MultiBinding` 来实现。
 
-In the  sample below, `MultiplyBinding` requires two bound parameters. If a mix of literal and bound parameters is necessary,  creating an `IMultiValueConverter` would allow for passing of literals as constructor or `init` parameters. `BindingBase` allows for both `CompiledBinding` and `ReflectionBinding` to be used, but does not allow literals.
+下面的示例中，`MultiplyBinding` 需要两个来自绑定的参数。如果字面量参数和绑定参数需要混用，那么创建一个 `IMultiValueConverter` 就能把字面量作为构造函数参数或 `init` 参数传入。`BindingBase` 虽然 `CompiledBinding` 和 `ReflectionBinding` 都能用，却不接受字面量。
 
 ```csharp
 public class MultiplyBinding
@@ -164,23 +163,23 @@ public class MultiplyBinding
 ```
 
 :::info
-An alternate approach is to return an `IObservable<T>.ToBinding()` instead.
+另一种做法是改为返回一个 `IObservable<T>.ToBinding()`。
 :::
 
-### Returning parameters
+### 返回值 {#returning-parameters}
 
-Avalonia’s markup extension model is flexible: `ProvideValue` may return anything.
+Avalonia 的标记扩展模型相当灵活：`ProvideValue` 想返回什么都行。
 
-This includes:
+包括：
 
-- Static .NET object
-- Typed .NET object, which can be validated at compile time when assigned to a property
-- **Binding** instances
-- **Observables (`IObservable<T>`)** for dynamic, reactive values
+- 静态 .NET 对象
+- 强类型的 .NET 对象 —— 赋给属性时可在编译期校验
+- **Binding** 实例
+- **可观察序列（`IObservable<T>`）** —— 用于动态的响应式取值
 
-Binding-returning or observable-returning markup extensions are supported and integrate with Avalonia’s property and data-binding systems.
+返回绑定或返回可观察序列的标记扩展都是受支持的，并且能与 Avalonia 的属性系统和数据绑定系统无缝衔接。
 
-To make a markup extension compatible with multiple target property types, you can set `ProvideValue` to return an `object` in its method signature, so that each type can be handled individually.
+若希望一个标记扩展能适配多种目标属性类型，可以把 `ProvideValue` 的方法签名改为返回 `object`，这样每种类型都能单独处理。
 
 
 ```csharp
@@ -203,27 +202,27 @@ public object ProvideValue(IServiceProvider provider)
 }
 ```
 
-Constructors can also receive parameter types using the `object` approach, but compile-time errors similarly turn into runtime exceptions.
+构造函数同样可以用 `object` 的方式接收参数类型，但代价也一样 —— 原本的编译错误会变成运行时异常。
 
-### MarkupExtension property attributes
+### MarkupExtension 的属性特性 {#markupextension-property-attributes}
 
-* `[ConstructorArgument]` - Associated property may be initialized by a constructor parameter and should be ignored for 
-    XAML serialization if the constructor is used.
-* `[MarkupExtensionOption]`, `[MarkupExtensionDefaultOption]` - Used with `ShouldProvideOption`, check `OnPlatform` and `OnFormFactor` source for an example.
+* `[ConstructorArgument]` —— 表明关联属性可由构造函数参数初始化；若使用了该构造函数，则 
+    XAML 序列化时应忽略该属性。
+* `[MarkupExtensionOption]`、`[MarkupExtensionDefaultOption]` —— 与 `ShouldProvideOption` 配合使用，示例可参考 `OnPlatform` 和 `OnFormFactor` 的源码。
 
-## Options markup extensions
+## 选项式标记扩展 {#options-markup-extensions}
 
-`OptionsMarkupExtension` is a special type of markup extension, specialized for switch-like expressions. Its purpose is to provide optimization by removing branches that will never be used, allowing trimming by the compiler.
+`OptionsMarkupExtension` 是一类特殊的标记扩展，专门用来表达类似 switch 的分支。它的意义在于优化 —— 把永远走不到的分支去掉，便于编译器做裁剪。
 
-### `OnPlatform` markup extension
+### `OnPlatform` 标记扩展 {#onplatform-markup-extension}
 
-One example of an options markup extension is the built-in `OnPlatform` markup extension. This markup extension defines values per runtime platform (Windows, macOS, Linux, and others) to optimize branches, selecting only those relevant to the platform being compiled for. 
+内置的 `OnPlatform` 标记扩展就是选项式标记扩展的一个例子。它按运行时平台（Windows、macOS、Linux 等）分别定义取值，从而优化分支，只保留与当前编译目标平台相关的那一支。 
 
-With `OnPlatform`, you can, for instance, use the `Markdown` control on Linux and the `WebView` control on other platforms. The unused control would be excluded, thus reducing the binary size.
+举例来说，借助 `OnPlatform`，你可以在 Linux 上使用 `Markdown` 控件，在其他平台上使用 `WebView` 控件。用不上的那个控件会被排除掉，二进制体积随之减小。
 
-### Creating custom options markup extensions
+### 编写自定义的选项式标记扩展 {#creating-custom-options-markup-extensions}
 
-Here is an example of a custom implementation with `RuntimeInformation.ProcessArchitecture`. As shown in this example, we recommend using compiler flags or .NET runtime APIs that are effectively constant.
+下面是用 `RuntimeInformation.ProcessArchitecture` 做的一个自定义实现示例。正如例中所示，我们建议使用编译标志，或者那些取值实际恒定的 .NET 运行时 API。
 
 ```csharp
 public class ArchitectureExtension : IAddChild<On<object>>
@@ -258,13 +257,13 @@ public class ArchitectureExtension : IAddChild<On<object>>
 }
 ```
 
-This class defines several options that are selected through the `ShouldProvideOption` static method. You can then set the options in XAML, like so:
+这个类定义了若干选项，由 `ShouldProvideOption` 静态方法负责选择。随后就可以在 XAML 中这样设置这些选项：
 
 ```xml
 <Border Background="{local:Architecture Default=White, X64=Green, Arm64=Red, Wasm=Blue}" />
 ```
 
-The example above, in a non-optimized .NET build, is equivalent to the following code.
+在未经优化的 .NET 构建中，上面的例子等价于下面这段代码。
 
 ```csharp
 border.Background = ArchitectureExtension.ShouldProvideOption("X64") ? Brushes.Green
@@ -273,7 +272,7 @@ border.Background = ArchitectureExtension.ShouldProvideOption("X64") ? Brushes.G
      : Brushes.White;
 ```
 
-Once optimized and trimmed for specific platform architecture, it is reduced to the following instead.
+而针对特定平台架构优化并裁剪之后，它会被精简成这样。
 
 ```csharp
 border.Background = Brushes.Red; // assuming app was compiled with dotnet publish -r win-arm64;
@@ -281,6 +280,6 @@ border.Background = Brushes.Red; // assuming app was compiled with dotnet publis
 
 ## 另请参阅 {#see-also}
 
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding MarkupExtension reference.
-- [Compiled Bindings](/docs/data-binding/compiled-bindings): CompiledBinding and ReflectionBinding markup.
-- [Platform-specific XAML](/docs/platform-specific-guides/xaml): OnPlatform and OnFormFactor markup extensions.
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：Binding 标记扩展参考。
+- [编译绑定](/docs/data-binding/compiled-bindings)：CompiledBinding 与 ReflectionBinding 标记。
+- [平台相关的 XAML](/docs/platform-specific-guides/xaml)：OnPlatform 与 OnFormFactor 标记扩展。

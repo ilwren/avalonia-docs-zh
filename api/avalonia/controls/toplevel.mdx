@@ -427,7 +427,7 @@ could not be retrieved.
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [PlatformImpl](#uid-3ca4f39e8d) | Gets the platform-specific window implementation. |
 | [Presenter](contentcontrol.mdx#uid-9eb95d7b29) | 从控件模板中获取呈现器。继承自 [ContentControl](contentcontrol.mdx)。 |
-| [RendererDiagnostics](#uid-562a1b9c83) | Gets a value indicating whether the renderer should draw specific diagnostics. |
+| [RendererDiagnostics](#uid-562a1b9c83) | 获取一个值，指示渲染器是否应绘制特定的诊断信息。 |
 | [RenderScaling](#uid-713cad322e) | 暂无摘要。 |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
@@ -599,7 +599,7 @@ public Avalonia.Platform.ITopLevelImpl PlatformImpl { get; set; }
 
 ### RendererDiagnostics 属性 {#rendererdiagnostics-property}
 
-Gets a value indicating whether the renderer should draw specific diagnostics.
+获取一个值，指示渲染器是否应绘制特定的诊断信息。
 
 ```csharp
 public Avalonia.Rendering.RendererDiagnostics RendererDiagnostics { get; set; }
@@ -961,8 +961,8 @@ public Avalonia.StyledProperty<System.Collections.Generic.IReadOnlyList<Avalonia
 | [ActualThemeVariantChanged](../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
-| [BackRequested](#uid-3ef3790149) | Occurs when physical Back Button is pressed or a back navigation has been requested. |
-| [Closed](#uid-feb963478f) | Fired when the window is closed. |
+| [BackRequested](#uid-3ef3790149) | 按下实体返回键、或收到返回导航请求时发生。 |
+| [Closed](#uid-feb963478f) | 窗口关闭时触发。 |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [DataContextChanged](../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -980,7 +980,7 @@ public Avalonia.StyledProperty<System.Collections.Generic.IReadOnlyList<Avalonia
 | [Loaded](control.mdx#uid-c0a1ac2bc3) | 当控件在视觉树中完全构建完毕、且布局与渲染均已完成时发生。继承自 [Control](control.mdx)。 |
 | [LosingFocus](../input/inputelement.mdx#uid-425fe24716) | 在控件即将失去焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LostFocus](../input/inputelement.mdx#uid-2061fc85a1) | 当控件失去焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [Opened](#uid-eec89b4de0) | Fired when the window is opened. |
+| [Opened](#uid-eec89b4de0) | 窗口打开时触发。 |
 | [Pinch](../input/inputelement.mdx#uid-96b68421dc) | 当用户将两个接触点相向靠拢时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PinchEnded](../input/inputelement.mdx#uid-50614bd917) | 当用户松开捏合手势所用的两个接触点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PointerCaptureLost](../input/inputelement.mdx#uid-2121c500a4) | 当控件或其子控件因任何原因失去指针捕获时发生；若捕获被转移给同一父控件下的另一个子控件，则不会为该父控件触发此事件。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -1017,7 +1017,7 @@ public Avalonia.StyledProperty<System.Collections.Generic.IReadOnlyList<Avalonia
 
 ### BackRequested 事件 {#backrequested-event}
 
-Occurs when physical Back Button is pressed or a back navigation has been requested.
+按下实体返回键、或收到返回导航请求时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> BackRequested
@@ -1031,7 +1031,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> BackRequested
 
 ### Closed 事件 {#closed-event}
 
-Fired when the window is closed.
+窗口关闭时触发。
 
 ```csharp
 public event EventHandler Closed
@@ -1045,7 +1045,7 @@ public event EventHandler Closed
 
 ### Opened 事件 {#opened-event}
 
-Fired when the window is opened.
+窗口打开时触发。
 
 ```csharp
 public event EventHandler Opened

@@ -44,9 +44,9 @@ public ObservableCollection<ViolinGroup> ViolinSeries { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data groups. | `null` |
 | `ValuesPath` | Path to the value collection for each category. Supported types are `IEnumerable<double>`, `IEnumerable<int>`, and `double[]`. | `null` |

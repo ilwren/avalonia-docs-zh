@@ -126,7 +126,7 @@ myPanel.AddHandler(Button.ClickEvent, OnButtonClick, RoutingStrategies.Bubble, h
 
 ## `RoutedEventArgs` properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Source` | `object?` | The element that originally raised the event. |
 | `Handled` | `bool` | Whether the event has been handled. Set to `true` to stop routing. |

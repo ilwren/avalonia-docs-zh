@@ -9,9 +9,9 @@ The [`LayoutTransformControl`](/api/avalonia/controls/layouttransformcontrol) ap
 
 This means a rotated control will correctly push adjacent controls aside, and a scaled control will take up the appropriate amount of space in a `StackPanel` or `Grid`.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 | :--- | :--- | :--- |
 | `LayoutTransform` | `ITransform` | The transform to apply during layout. Supports `RotateTransform`, `ScaleTransform`, `SkewTransform`, `TransformGroup`, and `MatrixTransform` |
 | `UseRenderTransform` | `bool` | When `true`, applies the transform via `RenderTransform` instead of a separate layout pass. Defaults to `false` |
@@ -111,4 +111,4 @@ You can bind the rotation angle to a slider for interactive control:
 - [Viewbox](/controls/layout/containers/viewbox)
 - [Transforms](/docs/graphics-animation/transforms)
 - [LayoutTransformControl API reference](/api/avalonia/controls/layouttransformcontrol)
-- [`LayoutTransformControl.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/LayoutTransformControl.cs)
+- [GitHub 上的 `LayoutTransformControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/LayoutTransformControl.cs)

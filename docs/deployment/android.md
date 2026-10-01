@@ -104,7 +104,7 @@ The `env:` prefix isn't supported when `AndroidPackageFormat` is set to `aab`.
 
 The following properties can be passed on the command line with `-p:` or set in a `<PropertyGroup>` in your project file:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `AndroidKeyStore` | Set to `true` to sign the app. Default: `false`. |
 | `AndroidPackageFormats` | Semicolon-delimited. Set to `aab`, `apk`, or `aab;apk`. Default for release: `aab;apk`. |

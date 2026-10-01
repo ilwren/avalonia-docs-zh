@@ -126,4 +126,4 @@ To provide a richer presentation for a tooltip, use a `<ToolTip.Tip>` element. H
 ## 另请参阅 {#see-also}
 
 - [ToolTip API reference](/api/avalonia/controls/tooltip)
-- [`ToolTip.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ToolTip.cs)
+- [GitHub 上的 `ToolTip.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ToolTip.cs)

@@ -78,9 +78,9 @@ public KpiItem Kpi3 { get; } = new(
     Brushes.Green);
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The main numerical value to display. | `0` |
 | `Delta` | The change value (positive or negative) from the previous period. | `0` |

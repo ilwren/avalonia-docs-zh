@@ -36,7 +36,7 @@ Avalonia provides type converters for many common types. Here are the most frequ
 
 ### Thickness (Margins, Padding, BorderThickness)
 
-| String Value | Result |
+| String Value | 结果 |
 |---|---|
 | `"8"` | Uniform: all sides = 8 |
 | `"8,4"` | Left/Right = 8, Top/Bottom = 4 |
@@ -48,7 +48,7 @@ Avalonia provides type converters for many common types. Here are the most frequ
 
 ### CornerRadius
 
-| String Value | Result |
+| String Value | 结果 |
 |---|---|
 | `"4"` | Uniform radius |
 | `"4,4,0,0"` | TopLeft, TopRight, BottomRight, BottomLeft |
@@ -59,7 +59,7 @@ Avalonia provides type converters for many common types. Here are the most frequ
 
 ### GridLength (Column/Row Definitions)
 
-| String Value | Result |
+| String Value | 结果 |
 |---|---|
 | `"Auto"` | Sizes to content |
 | `"*"` | Takes remaining space proportionally |

@@ -52,9 +52,9 @@ public ObservableCollection<MatrixItem> MatrixData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of row data. | `null` |
 | `RowLabelPath` | Path to the row label property. | `null` |

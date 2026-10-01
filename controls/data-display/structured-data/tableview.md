@@ -81,7 +81,7 @@ These examples use the MVVM pattern with data binding to an `ObservableCollectio
 
 You will probably use these `TableView` properties most often:
 
-| Property                | 说明                                                                                                                            |
+| 属性                | 说明                                                                                                                            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `ItemsSource`           | The bound collection used as the data source for the rows.                                                                            |
 | `Columns`               | The collection of `TableViewColumn` objects that define how each column is displayed. See [Columns](#columns). |
@@ -99,7 +99,7 @@ A `TableView` is composed of a `Columns` collection. Each `TableViewColumn` desc
 
 There are two ways to determine what a cell displays:
 
-| Property       | 说明                                                                                                                                           |
+| 属性       | 说明                                                                                                                                           |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Binding`      | Retrieves the cell value from the row's data item through a binding. Intended for simple property displays, e.g., `Binding="{Binding Name}"`.             |
 | `CellTemplate` | Builds the cell content using a data template. The whole row data item is passed as the template's data context, so you can bind to any property.   |
@@ -125,7 +125,7 @@ There are two ways to determine what a cell displays:
 
 ### Column properties
 
-| Property                     | 说明                                                                                                                                                   |
+| 属性                     | 说明                                                                                                                                                   |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Header`                     | The content displayed in the column header.                                                                                                                  |
 | `HeaderTemplate`             | A data template used to display the header content.                                                                                                          |

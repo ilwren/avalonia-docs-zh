@@ -139,7 +139,7 @@ xmlns:alias="definition"
 
 引用代码时，XAML 命名空间特性的定义部分有两种合法写法：
 
-### Using prefix
+### using 前缀 {#using-prefix}
 
 无论命名空间位于当前程序集还是被引用的程序集，都可以用 `using:` 前缀为其起别名，两种情况语法一致。例如：
 

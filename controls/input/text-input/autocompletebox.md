@@ -268,4 +268,4 @@ namespace YourNamespace.Converters
 ## 另请参阅 {#see-also}
 
 - [AutoCompleteBox API reference](/api/avalonia/controls/autocompletebox)
-- [`AutoCompleteBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/AutoCompleteBox/AutoCompleteBox.cs)
+- [GitHub 上的 `AutoCompleteBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/AutoCompleteBox/AutoCompleteBox.cs)

@@ -6,7 +6,7 @@ description: Overview of approaches for building custom controls in Avalonia.
 doc-type: overview
 ---
 
-## Custom controls
+## 自定义控件 {#custom-controls}
 
 Avalonia allows you to create your own controls, beyond what is available in the [built-in control library](/controls). Define your own properties, events and [pseudoclasses](/docs/styling/pseudoclasses). You can even override visual rendering to draw entirely unique custom controls.
 
@@ -20,7 +20,7 @@ Before creating a custom control, first choose the category of control that best
 
 In addition to these three categories, you can also create custom derivatives of [content controls, headered content controls or items controls](#other-customizable-controls).
 
-### User controls
+### 用户控件 {#user-controls}
 
 User controls are authored the same way you would author a custom `Window`: by creating a new `UserControl` from a template and adding controls to it. The `UserControl` acts as a container that combines multiple existing controls into a single, cohesive element.
 
@@ -35,7 +35,7 @@ More detailed guidance is documented in the [UserControl reference](/controls/pr
 
 A sample of a custom `UserControl` is [available to clone on GitHub](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/CustomControl).
 
-### Templated controls
+### 模板化控件 {#templated-controls}
 
 Templated controls are lookless, meaning the control's behavior and logic are separate from its appearance. This allows a templated control to be restyled for different themes or applications. The behavior and properties of a `TemplatedControl` are defined in code, while the visual representation is designed in XAML as a `ControlTheme`.
 

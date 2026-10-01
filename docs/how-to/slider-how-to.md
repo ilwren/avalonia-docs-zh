@@ -75,7 +75,7 @@ Setting `TickFrequency` without `IsSnapToTickEnabled="True"` draws tick marks bu
         LargeChange="0.1" />
 ```
 
-| Property | Trigger | Default |
+| 属性 | Trigger | Default |
 |---|---|---|
 | `SmallChange` | Arrow keys | 1 |
 | `LargeChange` | Clicking the track or pressing Page Up / Page Down | 10 |
@@ -198,7 +198,7 @@ Template part names such as `PART_DecreaseButton` and `PART_IncreaseButton` are 
 
 ## Key properties reference
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Minimum` | `double` | Lower bound. Default: 0. |
 | `Maximum` | `double` | Upper bound. Default: 100. |

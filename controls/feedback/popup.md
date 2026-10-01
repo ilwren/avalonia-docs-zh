@@ -11,7 +11,7 @@ For most scenarios, prefer `Flyout`, `ToolTip`, or `ContextMenu` instead of `Pop
 
 ## Useful properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `IsOpen` | `bool` | Controls whether the popup is currently visible. |
 | `Child` | `Control` | The content displayed inside the popup. |
@@ -65,7 +65,7 @@ private void OnTogglePopup(object sender, RoutedEventArgs e)
 
 The `Placement` property controls where the popup appears:
 
-| Mode | Behavior |
+| 模式 | Behavior |
 |---|---|
 | `Bottom` | Below the target, left-aligned. |
 | `Top` | Above the target, left-aligned. |
@@ -127,7 +127,7 @@ ToolTip.SetCustomPopupPlacementCallback(myControl, placement =>
 | Trigger | Manual (`IsOpen`) | Programmatic or attached | Hover |
 | Light dismiss | Optional | Built-in | Built-in |
 | Keyboard support | Manual | Automatic | N/A |
-| Best for | Custom overlay behavior | Menus, confirmations, pickers | Hover hints |
+| 适用场景 | Custom overlay behavior | Menus, confirmations, pickers | Hover hints |
 
 ## 另请参阅 {#see-also}
 

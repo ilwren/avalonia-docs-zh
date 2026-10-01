@@ -352,4 +352,4 @@ Change the appearance of the placeholder text by targeting the `PlaceholderTextB
 - [ComboBox reference](/controls/input/selectors/combobox)
 - [How to bind to a collection](/docs/data-binding/how-to-bind-to-a-collection): Collection binding basics.
 - [Introduction to data templates](/docs/data-templates/introduction-to-data-templates): Customizing how items are displayed.
-- [Collection views](/docs/data-binding/collection-views): Sorting, filtering, and grouping bound collections.
+- [集合视图](/docs/data-binding/collection-views)：对绑定的集合做排序、筛选和分组。

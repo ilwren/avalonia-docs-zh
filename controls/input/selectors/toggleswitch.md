@@ -9,11 +9,11 @@ The [`ToggleSwitch`](/api/avalonia/controls/toggleswitch) control presents a sli
 
 Use `ToggleSwitch` when you need an immediate on/off setting, such as enabling dark mode or toggling notifications. For form fields where users select multiple options from a list, a `CheckBox` is usually a better fit.
 
-## Common properties
+## 常用属性 {#common-properties}
 
 You will probably use these properties most often:
 
-| Property      | Type      | 说明                                                        |
+| 属性      | Type      | 说明                                                        |
 | ------------- | --------- | ------------------------------------------------------------------ |
 | `IsChecked`   | `bool?`   | Gets or sets the current toggle state. `true` is on, `false` is off. |
 | `OnContent`   | `object`  | Content displayed when the toggle is on. Defaults to "On".         |

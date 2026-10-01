@@ -53,9 +53,9 @@ public ObservableCollection<WordItem> WordCloudData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of word/weight data. | `null` |
 | `WordPath` | Property name for the actual text word. | `null` |

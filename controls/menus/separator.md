@@ -93,7 +93,7 @@ You can target `Separator` in your styles to customize its appearance. For examp
 ## 另请参阅 {#see-also}
 
 - [Separator API reference](/api/avalonia/controls/separator)
-- [`Separator.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Separator.cs)
+- [GitHub 上的 `Separator.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Separator.cs)
 - [Menu](/controls/menus/menu)
 - [ContextMenu](/controls/menus/contextmenu)
 - [MenuFlyout](/controls/menus/menuflyout)

@@ -36,7 +36,7 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 ## Useful properties
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The main content area of the page. |
 | `ContentTemplate` | `IDataTemplate?` | Default page template | A data template for the main content. |
@@ -521,4 +521,4 @@ When the main content is a `NavigationPage`, the hamburger menu icon automatical
 - [NavigationPage](/controls/navigation/navigationpage)
 - [SplitView](/controls/layout/containers/splitview)
 - [DrawerPage API reference](/api/avalonia/controls/drawerpage)
-- [`DrawerPage.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/DrawerPage.cs)
+- [GitHub 上的 `DrawerPage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/DrawerPage.cs)

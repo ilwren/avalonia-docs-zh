@@ -67,7 +67,7 @@ The CLR property getter/setter must **only** call `GetValue` and `SetValue`. Avo
 
 The `Register` method accepts these optional parameters:
 
-| Parameter | 说明 |
+| 参数 | 说明 |
 |---|---|
 | `name` | The property name. Must match the CLR property name. |
 | `defaultValue` | The default value of the property. |
@@ -559,7 +559,7 @@ The following example shows the `IsDimmed` attached property from the previous s
 </StackPanel>
 ```
 
-## Common pitfalls
+## 常见问题 {#common-pitfalls}
 
 - **Mismatched names.** The `name` argument you pass to `Register` must match the CLR property name exactly. A mismatch causes errors at run-time.
 - **Using `SetValue` with a direct property.** Direct properties require `SetAndRaise`. Calling `SetValue` throws an `InvalidOperationException`.

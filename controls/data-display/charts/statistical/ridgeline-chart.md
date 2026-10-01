@@ -41,9 +41,9 @@ public ObservableCollection<CurvePoint> Series2023 { get; } = new() { new(0, 4),
 public ObservableCollection<CurvePoint> Series2024 { get; } = new() { new(0, 3), new(1, 9), new(2, 6) };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of `AreaSeries` distributions. | Empty collection |
 | `Overlap` | Overlap factor between series. | `0.5` |

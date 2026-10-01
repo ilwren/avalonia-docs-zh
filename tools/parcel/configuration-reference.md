@@ -42,7 +42,7 @@ These settings apply to every target platform. They appear on the **Basics** pag
 
 Each entry in `GeneralSettings.FileTypes` has the following properties:
 
-| Property | Type | Required | 说明 |
+| 属性 | Type | Required | 说明 |
 |---|---|---|---|
 | `GeneralSettings.FileTypes[].Name` | String | Yes | Human-readable file type name. |
 | `GeneralSettings.FileTypes[].Extension` | String | Extension or MIME type | Extension with or without a leading period. After normalization, it must contain 1–10 lowercase letters or digits. |
@@ -50,7 +50,7 @@ Each entry in `GeneralSettings.FileTypes` has the following properties:
 
 Each entry in `GeneralSettings.UrlTypes` has the following properties:
 
-| Property | Type | Required | 说明 |
+| 属性 | Type | Required | 说明 |
 |---|---|---|---|
 | `GeneralSettings.UrlTypes[].Name` | String | Yes | Human-readable name for the URL type. |
 | `GeneralSettings.UrlTypes[].Schemes` | String | Yes | One or more RFC 3986 schemes without `://`, separated by commas, semicolons, or spaces. |

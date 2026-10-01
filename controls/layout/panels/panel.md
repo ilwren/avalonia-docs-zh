@@ -11,9 +11,9 @@ The `Panel` is the most basic layout control that can contain multiple child con
 
 Because `Panel` does not arrange children into rows, columns, or any other structure, it is best suited for scenarios where you need overlapping content, such as placing text over an image or stacking decorative elements.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Background` | `IBrush` | The background brush for the panel. You must set this (even to `Transparent`) for the panel to receive pointer events. |
 | `Children` | `Controls` | The collection of child controls contained in the panel. |
@@ -107,5 +107,5 @@ If you need more control over how child elements are positioned, consider one of
 ## 另请参阅 {#see-also}
 
 - [Panel API reference](/api/avalonia/controls/panel)
-- [`Panel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Panel.cs)
+- [GitHub 上的 `Panel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Panel.cs)
 - [Custom panel](/docs/custom-controls/custom-panel)

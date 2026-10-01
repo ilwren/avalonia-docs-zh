@@ -11,7 +11,7 @@ The `RepeatButton` is a control that has the added feature of regularly generati
 
 You will probably use these properties most often:
 
-| Property | 说明                                                                              |
+| 属性 | 说明                                                                              |
 | -------- | ---------------------------------------------------------------------------------------- |
 | `Delay`    | The time (milliseconds) to wait before repeated click generation begins. Default is 300. |
 | `Interval` | The time (milliseconds) between clicks being generated. Default is 100.                  |
@@ -67,4 +67,4 @@ The `RepeatButton` is useful in any scenario where you need continuous action wh
 - [Button](/controls/input/buttons/button)
 - [ButtonSpinner](/controls/input/buttons/buttonspinner)
 - [RepeatButton API reference](/api/avalonia/controls/repeatbutton)
-- [`RepeatButton.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/RepeatButton.cs)
+- [GitHub 上的 `RepeatButton.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/RepeatButton.cs)

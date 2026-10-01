@@ -11,7 +11,7 @@ In MVVM applications, view models contain application logic but have no knowledg
 ViewLocator is optional. You can achieve the same result using [DataTemplates](/docs/data-templates/data-template-collection) defined in XAML. ViewLocator is included in the default Avalonia project templates as a convenience for MVVM applications.
 :::
 
-## How it works
+## 运作原理 {#how-it-works}
 
 ViewLocator implements the [`IDataTemplate`](/api/avalonia/controls/templates/idatatemplate) interface, which means it participates in Avalonia's standard data template resolution. When a [`ContentControl`](/api/avalonia/controls/contentcontrol) or similar presenter needs to display an object that is not a control, it searches for a matching `IDataTemplate`. A registered ViewLocator matches view model objects and builds the corresponding view.
 
@@ -190,9 +190,9 @@ Community packages that provide this:
 
 For building your own source generator, see [Microsoft's Source Generators documentation](https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview).
 
-## Choosing an approach
+## 该选哪种办法 {#choosing-an-approach}
 
-| Approach | AOT compatible | Compile-time safe | Supports DI | Maintenance |
+| 办法 | AOT compatible | Compile-time safe | Supports DI | Maintenance |
 |---|---|---|---|---|
 | Reflection (default) | No | No | No | None |
 | Pattern matching | Yes | Yes | Optional | Add line per view model |

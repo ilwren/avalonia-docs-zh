@@ -46,9 +46,9 @@ public ObservableCollection<RadialPoint> PolarChartData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of segments. | `null` |
 | `ValuePath` | Property determining the radius of the slice. | `null` |

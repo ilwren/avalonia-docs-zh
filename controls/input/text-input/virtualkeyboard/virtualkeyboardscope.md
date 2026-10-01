@@ -15,13 +15,13 @@ The `VirtualKeyboardScope` control is a container that automatically manages [vi
 This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
 :::
 
-## Overview
+## 概述 {#overview}
 
 `VirtualKeyboardScope` is the recommended way to integrate the virtual keyboard into your application. It provides a seamless experience where the keyboard appears only when needed. It also handles input focus and positioning so that the keyboard does not obscure the active input control.
 
 ## 属性 {#properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |----------|------|-------------|
 | `InputMethods` | `IEnumerable\<VirtualKeyboardInputMethod>` | Gets or sets the collection of input methods available to users. |
 
@@ -123,7 +123,7 @@ You can place multiple `VirtualKeyboardScope` controls in your application. Only
 </Grid>
 ```
 
-## Best practices
+## 实践建议 {#best-practices}
 
 - **Place the scope at the right level.** Position `VirtualKeyboardScope` at the root of your `Window` or `UserControl`, or at a level that wraps all the text input controls that should trigger the keyboard.
 - **Choose relevant input methods.** Provide input methods that match your target audience. Consider offering at least one language layout for each region your application supports.

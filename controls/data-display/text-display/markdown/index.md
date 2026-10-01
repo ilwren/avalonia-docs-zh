@@ -58,7 +58,7 @@ Because the control shares the document model with `RichTextEditor`, all documen
 
 ## Usage examples
 
-### XAML usage
+### XAML 用法 {#xaml-usage}
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -173,7 +173,7 @@ The streaming engine runs Markdown parsing on a background thread, diffs the AST
 
 ### 属性 {#properties}
 
-| Property           | Type                        | 说明                                              |
+| 属性           | Type                        | 说明                                              |
 |--------------------|-----------------------------|----------------------------------------------------------|
 | Text               | string?                     | Markdown text to render.                                 |
 | SelectionBrush     | IBrush?                     | Brush for selection highlight.                           |

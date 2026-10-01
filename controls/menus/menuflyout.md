@@ -100,6 +100,6 @@ If you do not set `Placement`, the flyout uses a default position determined by 
 ## 另请参阅 {#see-also}
 
 - [MenuFlyout API reference](/api/avalonia/controls/menuflyout)
-- [`MenuFlyout.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/MenuFlyout.cs)
+- [GitHub 上的 `MenuFlyout.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/MenuFlyout.cs)
 - [Separator](/controls/menus/separator)
 - [Menu](/controls/menus/menu)

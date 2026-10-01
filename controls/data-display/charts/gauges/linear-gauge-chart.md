@@ -60,9 +60,9 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 </StackPanel>
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `50.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |

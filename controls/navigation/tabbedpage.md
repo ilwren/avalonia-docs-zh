@@ -22,7 +22,7 @@ If you need a simple tab strip without page-based navigation features (lifecycle
 
 ## Useful properties
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Pages` | `IEnumerable<Page>?` | Empty list | The collection of [`Page`](/api/avalonia/controls/page) children displayed as tabs. |
 | `ItemsSource` | `IEnumerable?` | `null` | A view-model collection used to generate pages with `PageTemplate`. When set, it takes precedence over `Pages`. |
@@ -383,4 +383,4 @@ You can nest a `TabbedPage` inside a `DrawerPage` to combine a side drawer with 
 - [NavigationPage](/controls/navigation/navigationpage)
 - [TabControl](/controls/navigation/tabcontrol)
 - [TabbedPage API reference](/api/avalonia/controls/tabbedpage)
-- [`TabbedPage.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/TabbedPage.cs)
+- [GitHub 上的 `TabbedPage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/TabbedPage.cs)

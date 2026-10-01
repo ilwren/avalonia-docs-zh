@@ -1,6 +1,6 @@
 ---
 id: markup-extensions
-title: Markup extensions
+title: 标记扩展
 ---
 
 Markup extensions are special expressions enclosed in curly braces `{}` that provide dynamic values in XAML. They extend what you can express beyond simple string literals.
@@ -15,12 +15,12 @@ Creates a data binding between a control property and a source property:
 
 ### Common binding parameters
 
-| Parameter | 说明 |
+| 参数 | 说明 |
 |---|---|
 | `Path` | The property path on the source object. This is the default parameter. |
 | `Mode` | The binding direction: `OneWay`, `TwoWay`, `OneTime`, `OneWayToSource`, `Default`. |
 | `Converter` | An `IValueConverter` that transforms the value. |
-| `ConverterParameter` | A parameter passed to the converter. |
+| `ConverterParameter` | 传给转换器的参数。 |
 | `StringFormat` | A format string applied to the bound value. |
 | `FallbackValue` | The value used when the binding fails. |
 | `TargetNullValue` | The value used when the source value is `null`. |
@@ -196,5 +196,5 @@ To set a property to a literal string that starts with `{`, use an empty set of 
 - [XAML Reference](/docs/xaml): Overview of XAML syntax.
 - [x: Directives](/docs/xaml/directives): XAML language directives.
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Comprehensive binding syntax reference.
-- [Compiled Bindings](/docs/data-binding/compiled-bindings): Compile-time validated bindings.
+- [编译绑定](/docs/data-binding/compiled-bindings)：编译期受校验的绑定。
 - [Markup Extensions (Data Binding)](/docs/data-binding/markup-extensions): Binding-specific markup extension details.

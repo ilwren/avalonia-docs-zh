@@ -181,7 +181,7 @@ You will probably use these properties most often:
   </table>
 
 
-## More information
+## 更多信息 {#more-information}
 
 :::info
 View the source code on _GitHub_

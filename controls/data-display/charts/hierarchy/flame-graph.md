@@ -66,9 +66,9 @@ public ObservableCollection<FlameNode> StackTraceData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Root collection for the flame graph. | `null` |
 | `ValuePath` | Path to the value that controls rectangle width. | `null` |

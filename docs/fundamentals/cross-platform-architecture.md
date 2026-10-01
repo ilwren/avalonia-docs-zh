@@ -1,64 +1,64 @@
 ---
 id: cross-platform-architecture
-title: Cross-platform architecture
-description: Understand how Avalonia shares code across platforms and handles platform differences.
+title: 跨平台架构
+description: 了解 Avalonia 如何在各平台之间共享代码，以及如何应对平台差异。
 doc-type: explanation
 video:
   src: https://youtu.be/-MTKwRgNSyI
-  title: Inside Avalonia's Cross-Platform Architecture (Windows, Mac, Linux, iOS, Android)
+  title: 深入 Avalonia 跨平台架构（Windows、Mac、Linux、iOS、Android）
 ---
 
-Avalonia renders controls using Skia rather than wrapping native platform controls. This means your AXAML views, view models, and business logic all produce identical results on every platform. This page covers what you can share, what needs platform-specific handling, and how to choose the right approach.
+Avalonia 用 Skia 自行绘制控件，而不是去包装各平台的原生控件。这意味着你的 AXAML 视图、视图模型和业务逻辑，在每个平台上跑出来的结果都完全一致。本文讲清楚：哪些东西可以共享、哪些需要分平台处理，以及该怎么选。
 
-## Avalonia's approach to code sharing
+## Avalonia 的代码共享思路 {#avalonias-approach-to-code-sharing}
 
-Because Avalonia draws its own controls, you get a consistent look and behavior across Windows, macOS, Linux, iOS, Android, and the browser. In a typical Avalonia application, the following are fully shared:
+由于控件是 Avalonia 自己画的，Windows、macOS、Linux、iOS、Android 乃至浏览器上的外观和行为都保持一致。在一个典型的 Avalonia 应用中，下列内容是完全共享的：
 
-- **Views** (AXAML files and code-behind)
-- **View models and business logic** (plain C# or F# classes)
-- **Styles and themes**
-- **Platform services** such as [file pickers](/docs/services/storage/storage-provider), [clipboard](/docs/services/clipboard), [launcher](/docs/services/launcher), [dark mode detection](/docs/services/platform-settings), and [safe area handling](/docs/services/insets-manager)
+- **视图**（AXAML 文件及其代码隐藏）
+- **视图模型与业务逻辑**（普通的 C# 或 F# 类）
+- **样式与主题**
+- **平台服务**，例如[文件选择器](/docs/services/storage/storage-provider)、[剪贴板](/docs/services/clipboard)、[启动器](/docs/services/launcher)、[深色模式检测](/docs/services/platform-settings)和[安全区域处理](/docs/services/insets-manager)
 
-The areas that sometimes require platform-specific code include:
+偶尔需要写平台相关代码的，主要是这些方面：
 
-- Hardware sensors (GPS, accelerometer, gyroscope)
-- Push notifications
-- Bluetooth, camera, and biometrics
-- System tray and other OS-level shell integrations
+- 硬件传感器（GPS、加速度计、陀螺仪）
+- 推送通知
+- 蓝牙、摄像头与生物识别
+- 系统托盘等操作系统层面的外壳集成
 
-For device APIs that Avalonia does not abstract, [Microsoft.Maui.Essentials](https://www.nuget.org/packages/Microsoft.Maui.Essentials) provides a common layer that works with Avalonia on .NET 8 and higher. Keep in mind that Maui.Essentials does not cover Linux, browser, or non-Catalyst macOS targets.
+对于 Avalonia 没有抽象的设备 API，[Microsoft.Maui.Essentials](https://www.nuget.org/packages/Microsoft.Maui.Essentials) 提供了一层通用封装，可在 .NET 8 及以上版本中与 Avalonia 配合使用。但要注意，Maui.Essentials 并不覆盖 Linux、浏览器，以及非 Catalyst 的 macOS 目标。
 
-## Structuring your solution
+## 如何组织解决方案 {#structuring-your-solution}
 
-The standard Avalonia cross-platform template creates a set of projects designed for maximum code sharing:
+标准的 Avalonia 跨平台模板会生成一组项目，其结构以最大化代码共享为目标：
 
-| Project | 用途 |
+| 项目 | 用途 |
 |---|---|
-| Core | Views, view models, business logic (shared by all platforms) |
-| Desktop | Entry point for Windows, macOS, and Linux |
-| Android | Entry point for Android |
-| iOS | Entry point for iOS, iPadOS, and Mac Catalyst |
-| Browser | Entry point for WebAssembly |
+| Core | 视图、视图模型、业务逻辑（所有平台共享） |
+| Desktop | Windows、macOS 和 Linux 的入口 |
+| Android | Android 的入口 |
+| iOS | iOS、iPadOS 和 Mac Catalyst 的入口 |
+| Browser | WebAssembly 的入口 |
 
-The core project contains the vast majority of your code. Platform-specific projects are thin entry points that reference the core. See [Setting up a cross-platform solution](/docs/app-development/cross-platform-solution-setup) for a full walkthrough.
+你绝大部分代码都待在核心项目里，各平台项目只是引用核心项目的轻薄入口。完整演练见[搭建跨平台解决方案](/docs/app-development/cross-platform-solution-setup)。
 
-## Handling platform differences
+## 处理平台差异 {#handling-platform-differences}
 
-When you do need platform-specific behavior, Avalonia and .NET offer four approaches, ordered from simplest to most flexible.
+当你确实需要平台相关的行为时，Avalonia 和 .NET 给了四种办法，下面按由简到繁的顺序介绍。
 
-### OnPlatform and OnFormFactor
+### OnPlatform 与 OnFormFactor {#onplatform-and-onformfactor}
 
-For UI-level adjustments, use the `OnPlatform` or `OnFormFactor` markup extensions directly in AXAML:
+界面层面的微调，直接在 AXAML 中用 `OnPlatform` 或 `OnFormFactor` 标记扩展：
 
 ```xml
 <TextBlock Text="{OnPlatform 'Welcome', iOS='Welcome (iOS)', Android='Welcome (Android)'}"/>
 ```
 
-`OnPlatform` targets a specific operating system, while `OnFormFactor` targets a device category such as Desktop or Mobile. See [Platform-specific XAML](/docs/platform-specific-guides/xaml) for the full syntax.
+`OnPlatform` 针对具体的操作系统，`OnFormFactor` 则针对设备类别（如 Desktop 或 Mobile）。完整语法见[平台相关的 XAML](/docs/platform-specific-guides/xaml)。
 
-### Runtime detection
+### 运行时判断 {#runtime-detection}
 
-For simple branching in C# code, use the `OperatingSystem` class:
+C# 代码中要做简单分支，用 `OperatingSystem` 类：
 
 ```csharp
 if (OperatingSystem.IsWindows())
@@ -67,11 +67,11 @@ if (OperatingSystem.IsWindows())
 }
 ```
 
-This works everywhere without changes to your project structure. See [Platform-specific .NET](/docs/platform-specific-guides/dotnet) for the full API reference.
+这种办法到哪儿都能用，也不必改动项目结构。完整 API 参考见[平台相关的 .NET](/docs/platform-specific-guides/dotnet)。
 
-### Conditional compilation
+### 条件编译 {#conditional-compilation}
 
-For code that calls platform-specific APIs, use C# preprocessor directives with OS-specific target frameworks:
+要调用平台专有 API 的代码，可以结合 C# 预处理指令和特定操作系统的目标框架：
 
 ```csharp
 #if ANDROID
@@ -83,11 +83,11 @@ For code that calls platform-specific APIs, use C# preprocessor directives with 
 #endif
 ```
 
-This requires your project to multi-target (for example, `net8.0;net8.0-ios;net8.0-android`). See [Platform-specific .NET](/docs/platform-specific-guides/dotnet) for setup details.
+这要求你的项目做多目标编译（例如 `net8.0;net8.0-ios;net8.0-android`）。配置细节见[平台相关的 .NET](/docs/platform-specific-guides/dotnet)。
 
-### Interface abstraction
+### 接口抽象 {#interface-abstraction}
 
-For complex platform features, define an interface in your shared project and implement it per platform:
+对于复杂的平台功能，在共享项目中定义接口，再分平台各自实现：
 
 ```csharp
 // In Core project
@@ -103,24 +103,24 @@ public class AndroidDeviceOrientation : IDeviceOrientation
 }
 ```
 
-Register each implementation with your dependency injection container so that shared code can consume it without knowing which platform it runs on. See [Platform-specific .NET](/docs/platform-specific-guides/dotnet) for a complete example and [Dependency injection](/docs/app-development/dependency-injection) for DI setup.
+把每个实现注册到依赖注入容器中，共享代码就能在不知道自己跑在哪个平台的情况下直接使用它。完整示例见[平台相关的 .NET](/docs/platform-specific-guides/dotnet)，依赖注入的配置见[依赖注入](/docs/app-development/dependency-injection)。
 
-## Choosing an approach
+## 该选哪种办法 {#choosing-an-approach}
 
-| Approach | Best for | Trade-off |
+| 办法 | 适用场景 | 代价 |
 |---|---|---|
-| OnPlatform / OnFormFactor | UI tweaks (spacing, text, controls) | XAML only |
-| Runtime detection | Simple runtime branching | All platform code ships in every binary |
-| Conditional compilation | Platform-specific API calls | Requires multi-targeting |
-| Interface abstraction | Complex platform features | More files, requires DI |
+| OnPlatform / OnFormFactor | 界面微调（间距、文案、控件） | 仅限 XAML |
+| 运行时判断 | 简单的运行时分支 | 所有平台的代码都会打进每份二进制 |
+| 条件编译 | 调用平台专有 API | 需要多目标编译 |
+| 接口抽象 | 复杂的平台功能 | 文件变多，且需要依赖注入 |
 
-Start with the simplest approach that meets your needs and move to a more flexible one only when necessary.
+先用能满足需求的最简单办法，确有必要时再换更灵活的。
 
 ## 另请参阅 {#see-also}
 
 - [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)
-- [Setting up a cross-platform solution](/docs/app-development/cross-platform-solution-setup)
-- [Platform-specific .NET](/docs/platform-specific-guides/dotnet)
-- [Platform-specific XAML](/docs/platform-specific-guides/xaml)
-- [Dependency injection](/docs/app-development/dependency-injection)
+- [搭建跨平台解决方案](/docs/app-development/cross-platform-solution-setup)
+- [平台相关的 .NET](/docs/platform-specific-guides/dotnet)
+- [平台相关的 XAML](/docs/platform-specific-guides/xaml)
+- [依赖注入](/docs/app-development/dependency-injection)
 - [应用程序生命周期](/docs/fundamentals/application-lifetimes)

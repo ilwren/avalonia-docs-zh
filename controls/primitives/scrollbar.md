@@ -15,9 +15,9 @@ You can configure the range by setting the `Minimum` and `Maximum` properties, a
 In most cases, you will not need to use `ScrollBar` directly. The `ScrollViewer` control manages scroll bars automatically. Use `ScrollBar` only when you need a standalone slider-style input or custom scrolling behavior.
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | [`Orientation`](/api/avalonia/layout/orientation) | `Orientation` | Sets the orientation of the scroll bar. Use `Horizontal` or `Vertical`. The default is `Vertical`. |
 | `Minimum` | `double` | The smallest value the scroll bar can represent. The default is `0`. |
@@ -102,4 +102,4 @@ With this code-behind, the text block displays the current value of the scroll b
 
 - [ScrollViewer](/controls/layout/containers/scrollviewer)
 - [ScrollBar API reference](/api/avalonia/controls/primitives/scrollbar)
-- [`ScrollBar.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/ScrollBar.cs)
+- [GitHub 上的 `ScrollBar.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/ScrollBar.cs)

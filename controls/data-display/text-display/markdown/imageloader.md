@@ -14,7 +14,7 @@ The `Markdown` control resolves image URLs through a `MarkdownImageLoader`. Set 
 This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
 :::
 
-## Default behavior
+## 默认表现 {#default-behavior}
 
 No loader is set by default, so images are not loaded until you supply one. The `MarkdownImageLoader` base class resolves the `http://`, `https://` and `file://` schemes, and returns an `IImage` on success or `null` on failure. For most common uses, you assign the loader directly and write no code:
 

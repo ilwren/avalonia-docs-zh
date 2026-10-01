@@ -55,9 +55,9 @@ public ObservableCollection<NetworkEdge> NetworkEdges { get; } = new()
 
 `NetworkChart` uses `NetworkNode` and `NetworkEdge` objects directly, so labels and weights are defined on those types rather than through extra property-path settings.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of graph nodes. | `null` |
 | `Edges` | The collection of graph edges. | `null` |

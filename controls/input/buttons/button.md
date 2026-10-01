@@ -11,9 +11,9 @@ The [`Button`](/api/avalonia/controls/button) control reacts to pointer actions 
 
 You can handle a click by subscribing to the `Click` event in code-behind, or by binding an `ICommand` instance to the `Command` property. For guidance on binding to a command, see [Adding interactivity](/docs/input-interaction/adding-interactivity).
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property           | 说明                                                         |
+| 属性           | 说明                                                         |
 | ------------------ | ------------------------------------------------------------------- |
 | `ClickMode`        | Describes how the button should react to clicks.                    |
 | `Command`          | An instance of `ICommand` to be invoked when the button is clicked. |
@@ -180,7 +180,7 @@ For a full list of button events, see the [Button events API reference](/api/ava
 ## 另请参阅 {#see-also}
 
 - [Button API reference](/api/avalonia/controls/button)
-- [`Button.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Button.cs)
+- [GitHub 上的 `Button.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Button.cs)
 - [RepeatButton](/controls/input/buttons/repeatbutton)
 - [ToggleButton](/controls/input/buttons/togglebutton)
 - [SplitButton](/controls/input/buttons/splitbutton)

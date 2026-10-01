@@ -43,11 +43,11 @@ public ObservableCollection<double> DonutChartData { get; } = new()
 
 There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFactor` to a value greater than `0.0`.
 
-## Common properties
+## 常用属性 {#common-properties}
 
 ### PieChart
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `InnerRadiusFactor` | The size of the center hole, from `0.0` to `1.0`. | `0.0` |
 | `Title` | Chart title displayed above the donut. | `null` |
@@ -55,7 +55,7 @@ There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFa
 
 ### PieSeries
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data slices. | `null` |
 | `LabelPath` | Path to the text to display on or near slices. | `null` |

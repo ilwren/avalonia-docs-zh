@@ -15,7 +15,7 @@ The [`ToggleButton`](/api/avalonia/controls/primitives/togglebutton) control pre
 
 You will probably use these properties most often:
 
-| Property        | 说明                                                                 |
+| 属性        | 说明                                                                 |
 | --------------- | --------------------------------------------------------------------------- |
 | `IsChecked`     | Gets or sets whether the `ToggleButton` is checked. The value is a nullable `bool`. |
 | `IsThreeState`  | Gets or sets a value indicating whether the control supports three states.  |
@@ -151,4 +151,4 @@ public class MyViewModel : ViewModelBase
 - [ToggleSplitButton](/controls/input/buttons/togglesplitbutton)
 - [RadioButton](/controls/input/buttons/radiobutton)
 - [ToggleButton API reference](/api/avalonia/controls/primitives/togglebutton)
-- [`ToggleButton.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/ToggleButton.cs)
+- [GitHub 上的 `ToggleButton.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/ToggleButton.cs)

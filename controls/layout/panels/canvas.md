@@ -132,7 +132,7 @@ myParentCanvas.Children.Add(myCanvas3);
 ## 另请参阅 {#see-also}
 
 - [Canvas API reference](/api/avalonia/controls/canvas)
-- [`Canvas.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Canvas.cs)
+- [GitHub 上的 `Canvas.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Canvas.cs)
 - [DockPanel](/controls/layout/panels/dockpanel)
 - [Grid](/controls/layout/panels/grid)
 - [Panel](/controls/layout/panels/panel)

@@ -23,9 +23,9 @@ The image displayed can be resized and scaled.  The default settings for scaling
 The scaling settings for an image are the same as for the [Viewbox](/controls/layout/containers/viewbox).
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Source` | `IImage` | The image to display. Can be set from an asset URI string, a `Bitmap`, or a `DrawingImage`. |
 | `Stretch` | `Stretch` | How the image is resized to fill its bounds. See table below. |
@@ -88,4 +88,4 @@ This example is using two images, where the second image is using the `Multiply`
 ## 另请参阅 {#see-also}
 
 - [Image API reference](/api/avalonia/controls/image)
-- [`Image.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Image.cs)
+- [GitHub 上的 `Image.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Image.cs)

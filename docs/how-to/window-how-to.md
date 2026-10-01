@@ -268,7 +268,7 @@ Icon = new WindowIcon(AssetLoader.Open(new Uri("avares://MyApp/Assets/app-icon.i
 
 ## Key Properties
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Title` | `string` | Window title bar text. |
 | `WindowState` | `WindowState` | `Normal`, `Minimized`, `Maximized`, `FullScreen`. |

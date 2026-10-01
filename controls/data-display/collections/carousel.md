@@ -13,7 +13,7 @@ The `Carousel` has an items collection and displays each item as a page, in sequ
 
 You will probably use these properties most often:
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 |---|---|---|---|
 | `PageTransition` | `IPageTransition?` | `null` | Transition animation played when the selected item changes. Built-in options include `PageSlide`, `CrossFade`, `Rotate3DTransition`, and `CompositePageTransition`. |
 | `IsSwipeEnabled` | `bool` | `false` | Enables swipe and pointer-drag gestures to navigate between pages. |
@@ -271,4 +271,4 @@ The `Carousel` supports keyboard navigation when focused:
 - [ItemsControl](/controls/data-display/collections/itemscontrol)
 - [ListBox](/controls/data-display/collections/listbox)
 - [Carousel API reference](/api/avalonia/controls/carousel)
-- [`Carousel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Carousel.cs)
+- [GitHub 上的 `Carousel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Carousel.cs)

@@ -221,4 +221,4 @@ treeView.AddHandler(TreeViewItem.CollapsedEvent, (sender, args) =>
 ## 另请参阅 {#see-also}
 
 - [TreeView API reference](/api/avalonia/controls/treeview)
-- [`TreeView.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TreeView.cs)
+- [GitHub 上的 `TreeView.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TreeView.cs)

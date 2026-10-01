@@ -277,7 +277,7 @@ FlowDocument
 
 All blocks inherit from `Block` and share these properties:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Margin` | `Thickness` | Outer spacing |
 | `Padding` | `Thickness` | Inner spacing |
@@ -290,7 +290,7 @@ All blocks inherit from `Block` and share these properties:
 
 ### Common inline properties
 
-| Property | Type | Available On |
+| 属性 | Type | Available On |
 |---|---|---|
 | `Text` | `string` | `RichRun` |
 | `FontSize` | `double` | All inlines (inherited) |
@@ -400,7 +400,7 @@ Enable `ShowPageBounds` to render visual indicators at the page boundary. This i
 
 ### Viewer properties
 
-| Property | Type | 说明 | Default |
+| 属性 | Type | 说明 | Default |
 |---|---|---|---|
 | `IsSelectionEnabled` | `bool` | Set to `False` to make the viewer a pure display control. The inner view stops being focusable, which matters for a viewer inside an items control. | `true` |
 | `IsCaretVisible` | `bool` | Shows an insertion caret without enabling editing. | `false` |
@@ -532,7 +532,7 @@ When a document is used in a preview-then-export pipeline, create a single `Docu
 
 For more optimization techniques, see the [Performance Tuning](/controls/input/text-input/richtexteditor/performance-tuning) guide.
 
-## Common patterns
+## 常见写法 {#common-patterns}
 
 ### File preview pane
 

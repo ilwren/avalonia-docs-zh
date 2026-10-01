@@ -19,7 +19,7 @@ If you do not set `GroupName`, Avalonia groups radio buttons by their parent con
 
 You will probably use these properties most often:
 
-| Property | 说明 |
+| 属性 | 说明 |
 | ----------- | ----------- |
 | `GroupName` | Defines the name common to a group of options that interact as radio buttons. |
 | `IsChecked` | Whether a radio button option is selected (`true`) or unselected (`false`). |

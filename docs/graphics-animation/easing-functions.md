@@ -236,7 +236,7 @@ The four values (`X1`, `Y1`, `X2`, `Y2`) define two control points of a cubic be
 
 ### Spring parameters
 
-| Parameter | 说明 | Effect of increasing |
+| 参数 | 说明 | Effect of increasing |
 |---|---|---|
 | `Mass` | Weight of the object on the spring | Slower, heavier motion |
 | `Stiffness` | How stiff the spring is | Faster oscillation, snappier |

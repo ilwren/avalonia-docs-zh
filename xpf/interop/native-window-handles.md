@@ -4,7 +4,7 @@ title: Getting native window handles
 description: How to retrieve native platform window handles in XPF applications, including the difference between virtual and native handles.
 ---
 
-## Overview
+## 概述 {#overview}
 
 XPF uses a system where the handles returned from various WPF API calls are _virtual handles_. In this way, XPF can intercept API calls using these handles and automatically translate them into the appropriate cross-platform API. This has the effect that many WPF APIs such as `WindowInteropHelper.Handle` return these virtualized window handles, as well as [emulated Win32 APIs](/xpf/third-party/win32-api-shims).
 

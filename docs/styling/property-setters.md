@@ -15,7 +15,7 @@ Setters are property and value attribute pairs written in XAML in the format:
 <Setter Property="propertyName" Value="newValueString"/>
 ```
 
-For example:
+例如：
 
 ```xml
 <Setter Property="FontSize" Value="24"/>

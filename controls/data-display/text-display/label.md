@@ -7,9 +7,9 @@ doc-type: reference
 
 The [`Label`](/api/avalonia/controls/label) control displays text and transfers focus to a designated target control. When you click the label or press its access key in combination with the Alt key, focus moves to the control specified by the `Target` property. This makes `Label` especially useful for building accessible forms where each input has a corresponding text label.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Content` | `object` | The content to display in the label. You can set this to a string or bind it to a view model property. |
 | `Target` | `IInputElement` | The target control that receives focus when the label is clicked or its access key is pressed. Set this to the `x:Name` of the target control. |
@@ -91,4 +91,4 @@ Use `Label` when you need accessibility and keyboard navigation in forms. Use `T
 - [TextBlock](/controls/data-display/text-display/textblock)
 - [SelectableTextBlock](/controls/data-display/text-display/selectabletextblock)
 - [Label API reference](/api/avalonia/controls/label)
-- [`Label.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Label.cs)
+- [GitHub 上的 `Label.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Label.cs)

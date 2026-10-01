@@ -62,9 +62,9 @@ public ObservableCollection<double> CrosshairData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `CrosshairMode` | `None`, `Vertical`, `Horizontal`, or `Both`. | `None` |
 | `ShowCrosshairLabels` | Toggles value labels on the axes. | `true` |

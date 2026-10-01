@@ -50,7 +50,7 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 
 ## Common properties (`ParallelCoordinatesChart`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Axes` | Content collection of `ParallelAxis` definitions. | Empty collection |
 | `ItemsSource` | Collection of multivariate records. | `null` |
@@ -61,7 +61,7 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 
 ## Common properties (`ParallelAxis`)
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Header` | Axis title. | `null` |
 | `ValuePath` | Path to the value bound to this axis. | `null` |

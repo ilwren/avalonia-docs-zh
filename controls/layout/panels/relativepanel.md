@@ -79,7 +79,7 @@ Here are some notes about the above example:
 ## 另请参阅 {#see-also}
 
 - [RelativePanel API reference](/api/avalonia/controls/relativepanel)
-- [`RelativePanel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/RelativePanel.cs)
+- [GitHub 上的 `RelativePanel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/RelativePanel.cs)
 - [Canvas](/controls/layout/panels/canvas)
 - [DockPanel](/controls/layout/panels/dockpanel)
 - [Grid](/controls/layout/panels/grid)

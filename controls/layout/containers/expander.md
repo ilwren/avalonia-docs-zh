@@ -11,7 +11,7 @@ The [`Expander`](/api/avalonia/controls/expander) control has a header area that
 
 You will probably use these properties most often:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `Header` | `object` | Content displayed in the always-visible header area. Accepts strings, controls, or data templates. |
 | `IsExpanded` | `bool` | Whether the content section is currently visible. Default is `false`. |
@@ -159,6 +159,6 @@ To improve accessibility in your application, set the `Header` to a meaningful l
 ## 另请参阅 {#see-also}
 
 - [Expander API reference](/api/avalonia/controls/expander)
-- [`Expander.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Expander.cs)
+- [GitHub 上的 `Expander.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Expander.cs)
 - [SplitView](/controls/layout/containers/splitview)
 - [GroupBox](/controls/layout/containers/groupbox)

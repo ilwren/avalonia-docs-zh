@@ -15,11 +15,11 @@ You can also type a date directly into the text box. The control accepts multipl
 For details on the calendar portion of this control, see the [Calendar](/controls/input/date-and-time/calendar) reference.
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
 You will probably use these properties most often:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `SelectedDate` | `DateTime?` | The currently selected date, or `null` if no date is selected. |
 | `DisplayDate` | `DateTime` | The month to display when the calendar opens. |
@@ -88,4 +88,4 @@ This example shows a basic single-date-selection calendar when you click the but
 - [DatePicker](/controls/input/date-and-time/datepicker)
 - [TimePicker](/controls/input/date-and-time/timepicker)
 - [CalendarDatePicker API reference](/api/avalonia/controls/calendardatepicker)
-- [`CalendarDatePicker.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CalendarDatePicker/CalendarDatePicker.cs)
+- [GitHub 上的 `CalendarDatePicker.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CalendarDatePicker/CalendarDatePicker.cs)

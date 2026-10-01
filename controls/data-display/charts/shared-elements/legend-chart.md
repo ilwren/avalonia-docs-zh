@@ -62,9 +62,9 @@ public ObservableCollection<int> Data3 { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `ShowLegend` | Toggles the visibility of the legend. | `false` |
 | `LegendPosition` | `None`, `Top`, `Bottom`, `Left`, `Right`, or `Floating`. | `None` |
@@ -76,7 +76,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 `ChartLegend` is the reusable legend control used by charts.
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Items` | Legend item collection to display. | `null` |
 | `Orientation` | Layout direction for legend entries, `Horizontal` or `Vertical`. | `Vertical` |
@@ -87,7 +87,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 Legend entries are represented by `ChartLegendItem`. Built-in series create legend items automatically and choose marker shapes that match the rendered series style, such as line, band, candlestick, radar, OHLC, or point-and-figure markers. Custom series can override `CreateLegendItem` to change the marker, source, or toggle behavior.
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `Text` | Display text for the legend item. | `null` |
 | `Fill` | Fill brush for the marker. | `null` |

@@ -20,7 +20,7 @@ A full rewrite is not a few sprints. It is months at a minimum, often years. Eve
 
 Avalonia XPF is a different path. It replaces the rendering layer underneath WPF with Avalonia's cross-platform engine while keeping the API and binary compatibility your code depends on. Your XAML, your view models, your third-party controls from vendors like Telerik, DevExpress, Infragistics, Actipro, and Syncfusion all continue to work. You are not rewriting your application. You are running it somewhere new.
 
-## How it works
+## 运作原理 {#how-it-works}
 
 XPF swaps out WPF's low-level rendering component (MilCore) with Avalonia's rendering engine. Everything above that layer stays the same. Your application sees the same WPF APIs it always has, but those APIs now work on macOS, Linux, and beyond.
 

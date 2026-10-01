@@ -31,7 +31,7 @@ The `Header` property serves different purposes depending on which container hos
 
 ### ContentPage properties
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The main content to display on the page. This value cannot be another `Page`; use a `NavigationPage`, `TabbedPage`, `DrawerPage`, or another `MultiPage` control to host child pages. |
 | `ContentTemplate` | `IDataTemplate?` | `null` | A data template used to render the content. |
@@ -51,7 +51,7 @@ The `Header` property serves different purposes depending on which container hos
 
 These properties are inherited from `Page` and are available on all page types:
 
-| Property | Type | Default | 说明 |
+| 属性 | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Navigation` | `INavigation?` | `null` | Provides access to the hosting `NavigationPage` for push/pop operations. |
 | `CurrentPage` | `Page?` | `null` | The active child page for page-container controls. This is usually `null` for a `ContentPage`. |
@@ -353,4 +353,4 @@ When used inside a `TabbedPage`, the `Header` and `Icon` properties control the 
 - [TabbedPage](/controls/navigation/tabbedpage)
 - [DrawerPage](/controls/navigation/drawerpage)
 - [ContentPage API reference](/api/avalonia/controls/contentpage)
-- [`ContentPage.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/ContentPage.cs)
+- [GitHub 上的 `ContentPage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/ContentPage.cs)

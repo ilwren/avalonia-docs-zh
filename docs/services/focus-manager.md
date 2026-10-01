@@ -41,7 +41,7 @@ Removes keyboard focus from the currently focused element. After calling this me
 void ClearFocus()
 ```
 
-## Tips
+## 小贴士 {#tips}
 
 ### Focusing a control
 

@@ -46,7 +46,7 @@ The two suggested workflows are:
   ```
 
 - Use `kebab-case` for file and folder names.
-  For example:
+  例如：
   - `/docs/get-started/create-your-first-project.md`
   - `/controls/input/buttons/togglebutton.md`
 

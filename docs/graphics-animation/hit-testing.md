@@ -1,6 +1,6 @@
 ---
 id: hit-testing
-title: Hit testing
+title: 命中测试
 description: How Avalonia determines which visual element is at a given screen coordinate.
 doc-type: explanation
 ---

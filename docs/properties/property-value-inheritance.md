@@ -7,7 +7,7 @@ doc-type: explanation
 
 Property value inheritance allows a property value set on a parent element to propagate down to its descendants in the visual tree, without each descendant needing to set the value explicitly. This is commonly used for properties like `FontSize`, `FontFamily`, `Foreground`, and `FlowDirection`.
 
-## How it works
+## 运作原理 {#how-it-works}
 
 When an Avalonia property is registered with `inherits: true`, the property system checks ancestor elements in the visual tree if no local, styled, or animated value is set on the current element. The first ancestor that has a value for the property provides the inherited value.
 
@@ -17,7 +17,7 @@ Inherited values have the lowest priority in the [value precedence](/docs/proper
 
 Several common properties in Avalonia are registered as inherited:
 
-| Property | Defined On | Effect |
+| 属性 | Defined On | Effect |
 |---|---|---|
 | `FontFamily` | [`TextElement`](/api/avalonia/controls/documents/textelement) | Text controls inherit the font family from their parent. |
 | `FontSize` | `TextElement` | Text controls inherit the font size from their parent. |

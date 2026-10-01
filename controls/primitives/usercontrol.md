@@ -226,4 +226,4 @@ Here is how you might reuse the same `ConfirmationView` from the examples above:
 - [Templated controls](/docs/custom-controls/templated-controls)
 - [Custom-drawn controls](/docs/custom-controls/custom-drawn-controls)
 - [UserControl API reference](/api/avalonia/controls/usercontrol)
-- [`UserControl.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/UserControl.cs)
+- [GitHub 上的 `UserControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/UserControl.cs)

@@ -64,7 +64,7 @@ public void Border_PointerPressed(object sender, PointerPressedEventArgs args)
 
 You will probably use these properties most often:
 
-| Property          | 说明                                                                          |
+| 属性          | 说明                                                                          |
 | ----------------- | ------------------------------------------------------------------------------------ |
 | `Content`         | The content displayed inside the flyout.                                             |
 | `ContentTemplate` | A `DataTemplate` applied to the `Content`. Useful when `Content` is bound to a view model object. |
@@ -79,7 +79,7 @@ This setting describes how the flyout shows and hides:
 
 ## Common methods for all flyouts
 
-| Property                | 说明                                                                             |
+| 属性                | 说明                                                                             |
 | ----------------------- | --------------------------------------------------------------------------------------- |
 | `ShowAt(Control)`       | Shows the Flyout at the specified target                                                |
 | `ShowAt(Control, bool)` | Shows the Flyout at the specified target, but places it at the current pointer position |
@@ -118,4 +118,4 @@ Although flyouts are not themselves controls, their general appearance can be cu
 ## 另请参阅 {#see-also}
 
 - [Flyout API reference](/api/avalonia/controls/flyout)
-- [`Flyout.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/Flyout.cs)
+- [GitHub 上的 `Flyout.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/Flyout.cs)

@@ -59,9 +59,9 @@ public ObservableCollection<double> Series2Data { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | 说明 | Default |
+| 属性 | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsTooltipEnabled` | Global toggle for tooltip visibility. | `true` |
 | `TooltipTemplate` | Custom DataTemplate for the tooltip UI (on series). | System default |

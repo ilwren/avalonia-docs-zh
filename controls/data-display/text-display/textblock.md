@@ -10,9 +10,9 @@ import TextBlockUIContainerScreenshot from '/img/controls/textblock/textblock-ui
 
 The [`TextBlock`](/api/avalonia/controls/textblock) is a read-only label for displaying text. It can display multiple lines and gives you full control over the font used. For text that your users need to select and copy, use `SelectableTextBlock` instead.
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property          | Type                       | 说明                                                                                                                                                                                                           |
+| 属性          | Type                       | 说明                                                                                                                                                                                                           |
 | ----------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Text`            | `string`                   | The text to display.                                                                                                                                                                                                  |
 | `FontSize`        | `double`                   | The size of the font in device-independent pixels.                                                                                                                                                                    |
@@ -196,4 +196,4 @@ The `InlineUIContainer` allows you to embed any `Control` as an inline element w
 - [Label](/controls/data-display/text-display/label)
 - [TextTrimming](/controls/data-display/text-display/texttrimming)
 - [TextBlock API reference](/api/avalonia/controls/textblock)
-- [`TextBlock.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBlock.cs)
+- [GitHub 上的 `TextBlock.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBlock.cs)

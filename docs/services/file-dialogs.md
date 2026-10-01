@@ -112,7 +112,7 @@ public class MyView : UserControl
 
 The returned `SaveFilePickerResult` struct contains:
 
-| Property | Type | 说明 |
+| 属性 | Type | 说明 |
 |---|---|---|
 | `StorageFile` | `IStorageFile?` | The saved file, or `null` if the user cancelled. |
 | `SelectedFileType` | `FilePickerFileType?` | The file type filter the user selected in the dialog. |

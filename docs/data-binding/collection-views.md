@@ -1,17 +1,17 @@
 ---
 id: collection-views
-title: Sorting, filtering, and grouping collections
-description: Sort, filter, and group bound collections using DataGridCollectionView and DynamicData.
+title: 集合的排序、筛选与分组
+description: 借助 DataGridCollectionView 和 DynamicData，对绑定的集合做排序、筛选和分组。
 doc-type: how-to
 ---
 
-Avalonia does not include a built-in `ICollectionView` equivalent like WPF. Instead, sorting, filtering, and grouping are typically handled in the view model before binding to controls. This approach keeps the UI layer simple and makes the logic easier to test.
+Avalonia 没有内置 WPF 那样的 `ICollectionView` 等价物。排序、筛选和分组通常在视图模型里做完，再绑定给控件。这样界面层保持简单，逻辑也更容易测试。
 
-## Filtering a collection
+## 筛选集合 {#filtering-a-collection}
 
-The most common pattern uses a derived collection that reacts to filter changes. Use LINQ or a `CollectionViewSource`-like wrapper:
+最常见的做法是用一个随筛选条件变化的派生集合。可以用 LINQ，也可以用类似 `CollectionViewSource` 的包装：
 
-### Manual filtering with ObservableCollection
+### 用 ObservableCollection 手工筛选 {#manual-filtering-with-observablecollection}
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -67,9 +67,9 @@ public partial class MainViewModel : ObservableObject
 </StackPanel>
 ```
 
-### Using DynamicData (recommended for complex scenarios)
+### 用 DynamicData（复杂场景推荐） {#using-dynamicdata-recommended-for-complex-scenarios}
 
-The [DynamicData](https://github.com/reactivemarbles/DynamicData) library provides reactive collection transformations. It integrates well with Avalonia's reactive model:
+[DynamicData](https://github.com/reactivemarbles/DynamicData) 这个库提供了响应式的集合变换能力，与 Avalonia 的响应式模型配合得相当好：
 
 ```csharp
 using DynamicData;
@@ -115,13 +115,13 @@ public class MainViewModel : ObservableObject
 }
 ```
 
-DynamicData automatically updates `FilteredPeople` when items are added, removed, or the filter text changes.
+当有项被增删、或筛选文本发生变化时，DynamicData 会自动更新 `FilteredPeople`。
 
-## Sorting a collection
+## 集合排序 {#sorting-a-collection}
 
-### Simple sorting
+### 简单排序 {#simple-sorting}
 
-Sort the source collection before binding:
+绑定之前先把源集合排好序：
 
 ```csharp
 public ObservableCollection<Person> People { get; }
@@ -133,9 +133,9 @@ public MainViewModel()
 }
 ```
 
-### Dynamic sorting
+### 动态排序 {#dynamic-sorting}
 
-Use a property to control the sort order:
+用一个属性来控制排序方式：
 
 ```csharp
 [ObservableProperty]
@@ -179,7 +179,7 @@ private void ApplySort()
 </StackPanel>
 ```
 
-### With DynamicData
+### 用 DynamicData 实现 {#with-dynamicdata}
 
 ```csharp
 _source.Connect()
@@ -190,15 +190,15 @@ _source.Connect()
 
 ## Grouping
 
-Avalonia's `ItemsControl` does not have built-in grouping support like WPF's `CollectionViewSource`. To display grouped data, flatten groups into a single collection with group headers.
+Avalonia 的 `ItemsControl` 不像 WPF 的 `CollectionViewSource` 那样内置分组支持。要展示分组数据，就把各个分组摊平成一个集合，中间穿插分组标题。
 
 :::tip
-The `DataGrid` control supports built-in grouping through `DataGridCollectionView`. See the [DataGrid grouping how-to](/docs/how-to/datagrid-how-to#grouping) for details.
+`DataGrid` 控件通过 `DataGridCollectionView` 内置了分组支持，详见 [DataGrid 分组指南](/docs/how-to/datagrid-how-to#grouping)。
 :::
 
-### Using a flat list with headers
+### 用带标题的扁平列表 {#using-a-flat-list-with-headers}
 
-Create a view model that represents both headers and items:
+创建一个既能表示标题、也能表示数据项的视图模型：
 
 ```csharp
 public abstract class ListItem { }
@@ -216,7 +216,7 @@ public class PersonItem : ListItem
 }
 ```
 
-Build the grouped list:
+构建分组后的列表：
 
 ```csharp
 public ObservableCollection<ListItem> GroupedPeople { get; } = new();
@@ -235,7 +235,7 @@ private void BuildGroups()
 }
 ```
 
-Use a `DataTemplateSelector` (via `DataTemplate` with `DataType`) to render headers and items differently:
+用 `DataTemplateSelector`（通过 `DataTemplate` 配合 `DataType`）把标题和数据项渲染成不同样式：
 
 ```xml
 <ListBox ItemsSource="{Binding GroupedPeople}">
@@ -255,7 +255,7 @@ Use a `DataTemplateSelector` (via `DataTemplate` with `DataType`) to render head
 </ListBox>
 ```
 
-### With DynamicData GroupOn
+### 用 DynamicData 的 GroupOn {#with-dynamicdata-groupon}
 
 ```csharp
 _source.Connect()
@@ -265,16 +265,16 @@ _source.Connect()
     .Subscribe();
 ```
 
-## Best practices
+## 实践建议 {#best-practices}
 
-- Keep filtering, sorting, and grouping logic in the view model, not in code-behind.
-- For large collections, use DynamicData for efficient reactive updates instead of rebuilding the collection on every change.
-- When sorting or filtering changes, avoid clearing and re-adding if possible. DynamicData handles incremental updates automatically.
-- Use `ReadOnlyObservableCollection<T>` for the public property to prevent external modification.
-- Consider debouncing filter input (e.g., with `Throttle`) for search boxes that filter on every keystroke.
+- 把筛选、排序、分组的逻辑放在视图模型里，别写进代码隐藏。
+- 集合较大时，用 DynamicData 做高效的响应式更新，不要每次变化都重建整个集合。
+- 排序或筛选条件变化时，尽量避免清空后重新添加。DynamicData 会自动处理增量更新。
+- 对外暴露的属性请用 `ReadOnlyObservableCollection<T>`，防止被外部改动。
+- 对于每敲一个键就触发筛选的搜索框，考虑给输入加上防抖（例如用 `Throttle`）。
 
 ## 另请参阅 {#see-also}
 
-- [How to Bind to a Collection](/docs/data-binding/how-to-bind-to-a-collection): Basic collection binding patterns.
-- [Data Templates](/docs/data-templates/introduction-to-data-templates): Controlling how items are rendered.
-- [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged): Change notification for view models.
+- [如何绑定到集合](/docs/data-binding/how-to-bind-to-a-collection)：集合绑定的基本写法。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：控制数据项的呈现方式。
+- [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged)：视图模型的变更通知。

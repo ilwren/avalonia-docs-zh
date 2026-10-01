@@ -29,7 +29,7 @@ The `UriSource` class represents media content referenced by a URI, which can po
 
 ### 属性 {#properties}
 
-| Property | Type | 说明                                    |
+| 属性 | Type | 说明                                    |
 |----------|------|------------------------------------------------|
 | Source   | Uri  | Gets the URI that points to the media content. |
 
@@ -70,7 +70,7 @@ played.
 
 ### 属性 {#properties-1}
 
-| Property     | Type   | 说明                                          |
+| 属性     | Type   | 说明                                          |
 |--------------|--------|------------------------------------------------------|
 | TargetStream | Stream | Gets the underlying stream containing media data.    |
 | IsSeekable   | bool   | Gets whether the underlying stream supports seeking. |
@@ -146,7 +146,7 @@ The `MediaPlayer` manages the lifecycle automatically:
 - When setting a new Source, the previous Source is disposed.
 - When the player is released or uninitiated, the current Source is disposed.
 
-## Best practices
+## 实践建议 {#best-practices}
 
 1. **Resource Management**:
     - Don't dispose streams passed to a `StreamSource` as it takes ownership.

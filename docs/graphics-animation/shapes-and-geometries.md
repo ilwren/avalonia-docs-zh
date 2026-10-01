@@ -18,7 +18,7 @@ Shape controls are visual elements you place directly in your XAML layout. They 
            Fill="SteelBlue" Stroke="DarkBlue" StrokeThickness="2" />
 ```
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `RadiusX`, `RadiusY` | Corner rounding radius for rounded rectangles. |
 
@@ -97,7 +97,7 @@ The most versatile shape control. Uses a `Geometry` to define its outline:
 
 All shapes inherit from `Shape` and share these properties:
 
-| Property | 说明 |
+| 属性 | 说明 |
 |---|---|
 | `Fill` | The brush that paints the interior. |
 | `Stroke` | The brush that paints the outline. |
@@ -200,7 +200,7 @@ Combines two geometries using a set operation:
 </Path>
 ```
 
-| CombineMode | Result |
+| CombineMode | 结果 |
 |---|---|
 | `Union` | Area covered by either geometry. |
 | `Intersect` | Area covered by both geometries. |

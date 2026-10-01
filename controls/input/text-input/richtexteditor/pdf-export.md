@@ -50,7 +50,7 @@ Despite the above, PDF export does need an initialized Avalonia platform for the
 
 ## Options
 
-| Property | Default | Meaning |
+| 属性 | Default | Meaning |
 |---|---|---|
 | `PageSize` | `null` | Page size in device-independent pixels. `Null` uses the document's fixed `PageWidth` and `PageHeight`, falling back to A4. |
 | `Margins` | `null` | Page margins. `Null` uses the document's `PagePadding`, falling back to 2 cm. |
