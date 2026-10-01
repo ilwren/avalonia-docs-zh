@@ -1,7 +1,7 @@
 ---
 id: linear-gauge-chart
-title: Linear gauge chart
-description: Visualizes a value along a horizontal or vertical bar for comparing metrics or showing progress.
+title: 线性仪表图
+description: 沿横向或纵向条带呈现数值，便于比较各项指标或展示进度。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsGaugesLinear from '/img/controls/charts/charts-gauges-linear-1.png'
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Linear gauge charts visualize a value along a horizontal or vertical bar. They are suited to comparing metrics side by side or showing progress in a linear, space-efficient format.
+线性仪表图沿横向或纵向条带呈现数值。要并排比较多项指标，或以省地方的线性形式展示进度，它很合适。
 
 <Image light={chartsGaugesLinear} maxWidth={400} position="center" cornerRadius="true" alt="Linear gauge chart with a horizontal progress bar and scale ticks showing the current value along a numeric range." />
 
 ## 适用场景 {#when-to-use}
-- **Performance bars**: Comparing multiple metrics in a condensed dashboard.
-- **Volume indicators**: Showing storage levels, audio levels, or tank capacity.
-- **Progress tracking**: Visualizing a sequence of targets in a straight line.
+- **绩效条**：在紧凑的仪表板中比较多项指标。
+- **容量指示**：展示存储空间、音量或储罐容量。
+- **进度追踪**：在一条直线上呈现一连串目标的达成情况。
 
 ## 代码示例 {#code-example}
 
@@ -67,28 +67,28 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 | `Value` | 要显示的当前值。 | `50.0` |
 | `MinValue` | 标尺的最小值。 | `0.0` |
 | `MaxValue` | 标尺的最大值。 | `100.0` |
-| `Orientation` | Orientation of the gauge, `Horizontal` or `Vertical`. | `Horizontal` |
-| `ShowScale` | Whether to display the scale. | `true` |
-| `TrackBrush` | Color of the track. | Uses theme default. |
-| `NeedleBrush` | Color of the needle indicator. | Uses theme default. |
-| `ValueBrush` | Color of the value. | Uses theme default. |
-| `TrackThickness` | Thickness of the track. | `20.0` |
-| `Ranges` | Optional collection of colored ranges drawn behind the indicator. | `null` |
-| `ShowMajorTicks` | Whether to display major ticks. | `false` |
-| `ShowMinorTicks` | Whether to display minor ticks. | `false` |
-| `MajorTickInterval` | Interval between major ticks. | `20.0` |
-| `MinorTickCount` | Number of minor ticks between two major ticks. | `4` |
-| `TickPosition` | Where tick marks are drawn relative to the track. | `Above` |
-| `LabelPosition` | Where scale labels are drawn relative to the track. | `Below` |
+| `Orientation` | 仪表的方向，`Horizontal` 或 `Vertical`。 | `Horizontal` |
+| `ShowScale` | 是否显示刻度。 | `true` |
+| `TrackBrush` | 轨道的颜色。 | 采用主题默认值。 |
+| `NeedleBrush` | 指针的颜色。 | 采用主题默认值。 |
+| `ValueBrush` | 数值的颜色。 | 采用主题默认值。 |
+| `TrackThickness` | 轨道的粗细。 | `20.0` |
+| `Ranges` | 可选的彩色区间集合，绘制在指示器后面。 | `null` |
+| `ShowMajorTicks` | 是否显示主刻度。 | `false` |
+| `ShowMinorTicks` | 是否显示次刻度。 | `false` |
+| `MajorTickInterval` | 主刻度之间的间隔。 | `20.0` |
+| `MinorTickCount` | 两个主刻度之间次刻度的个数。 | `4` |
+| `TickPosition` | 刻度线相对轨道画在哪里。 | `Above` |
+| `LabelPosition` | 刻度标签相对轨道画在哪里。 | `Below` |
 
 ## 刻度位置 {#tick-position}
 
-`TickPosition` places tick marks around the track. Major ticks are 10 px long. Minor ticks are 5 px long.
+`TickPosition` 把刻度线画在轨道两侧。主刻度长 10 像素，次刻度长 5 像素。
 
 | 值 | 说明 |
 | :--- | :--- |
-| `Above` | Above a horizontal track or to the left of a vertical track. Default. |
-| `Below` | Below a horizontal track or to the right of a vertical track. |
-| `Cross` | Centered on the track. |
+| `Above` | 横向轨道的上方，或纵向轨道的左侧。默认值。 |
+| `Below` | 横向轨道的下方，或纵向轨道的右侧。 |
+| `Cross` | 在轨道上居中。 |
 
-In compact layouts, the gauge gives up tick space first, then indicator space, and only then drops scale labels, thinning the track as it goes.
+版面紧张时，仪表会先舍弃刻度所占的空间，再舍弃指示器的空间，最后才丢掉刻度标签，并一路把轨道收细。

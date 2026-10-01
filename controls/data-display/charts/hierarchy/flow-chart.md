@@ -1,7 +1,7 @@
 ---
 id: flow-chart
-title: Flow chart
-description: Visualizes workflows and decision trees as nodes and directed edges, with optional grouping and auto-layout.
+title: 流程图
+description: 用节点和有向边呈现工作流与决策树，可选分组和自动布局。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-`FlowChart` renders nodes, edges, and optional groups for workflows, process maps, and decision trees. When nodes have no explicit positions, the control can lay them out automatically.
+`FlowChart` 绘制节点、边以及可选的分组，用于工作流、流程地图和决策树。当节点没有指定明确位置时，控件可以自动为它们排布。
 
 ## 适用场景 {#when-to-use}
 
-- **Process diagrams**: Render step-by-step business or operational flows.
-- **Decision trees**: Show branches, outcomes, and labeled transitions.
-- **System maps**: Group related nodes into bounded areas.
+- **流程图示**：绘制一步步的业务或运维流程。
+- **决策树**：展示各分支、结果以及带标签的流转条件。
+- **系统图**：把相关节点圈进带边界的区域。
 
 ## 代码示例 {#code-example}
 
@@ -51,48 +51,48 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Nodes` | Collection of `FlowNode` items rendered by the chart. | `null` |
-| `Edges` | Collection of `FlowEdge` connections. | `null` |
-| `Groups` | Optional collection of `FlowGroup` containers. | `null` |
-| `NodeCornerRadius` | Corner radius applied to rounded node shapes. | `10.0` |
+| `Nodes` | 图表所渲染的 `FlowNode` 项集合。 | `null` |
+| `Edges` | `FlowEdge` 连接的集合。 | `null` |
+| `Groups` | 可选的 `FlowGroup` 容器集合。 | `null` |
+| `NodeCornerRadius` | 圆角节点形状所用的圆角半径。 | `10.0` |
 
 ## 常用属性（`FlowNode`） {#common-properties-flownode}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Id` | Unique node identifier used by edges and groups. | `null` |
-| `Text` | Text displayed inside the node. | `null` |
-| `Shape` | Node shape, such as `Rectangle` or `Diamond`. | `Rectangle` |
-| `X` | Explicit X position. | `0` |
-| `Y` | Explicit Y position. | `0` |
-| `Width` | Node width. | `120` |
-| `Height` | Node height. | `60` |
-| `Background` | Optional background brush for the node. | `null` |
-| `Foreground` | Optional text brush for the node. | `null` |
-| `Icon` | Optional icon shown inside the node. | `null` |
+| `Id` | 节点的唯一标识，供边和分组引用。 | `null` |
+| `Text` | 显示在节点内部的文本。 | `null` |
+| `Shape` | 节点形状，比如 `Rectangle` 或 `Diamond`。 | `Rectangle` |
+| `X` | 明确指定的 X 坐标。 | `0` |
+| `Y` | 明确指定的 Y 坐标。 | `0` |
+| `Width` | 节点宽度。 | `120` |
+| `Height` | 节点高度。 | `60` |
+| `Background` | 节点可选的背景画刷。 | `null` |
+| `Foreground` | 节点可选的文字画刷。 | `null` |
+| `Icon` | 显示在节点内部的可选图标。 | `null` |
 
 ## 常用属性（`FlowEdge`） {#common-properties-flowedge}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `SourceId` | Source node identifier. | `null` |
-| `TargetId` | Target node identifier. | `null` |
-| `Label` | Optional edge label. | `null` |
-| `ShowArrow` | Whether to draw the arrow head. | `true` |
+| `SourceId` | 起点节点的标识。 | `null` |
+| `TargetId` | 终点节点的标识。 | `null` |
+| `Label` | 可选的边标签。 | `null` |
+| `ShowArrow` | 是否绘制箭头。 | `true` |
 
 ## 常用属性（`FlowGroup`） {#common-properties-flowgroup}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Id` | Unique group identifier. | `null` |
-| `Label` | Optional label displayed for the group. | `null` |
-| `Bounds` | Explicit bounds of the group container. | `0,0,0,0` |
-| `Background` | Optional background brush for the group. | `null` |
-| `BorderBrush` | Optional border brush for the group. | `null` |
-| `BorderThickness` | Thickness of the group border. | `1.0` |
-| `NodeIds` | Collection of node IDs that belong to the group. | `null` |
+| `Id` | 分组的唯一标识。 | `null` |
+| `Label` | 为该分组显示的可选标签。 | `null` |
+| `Bounds` | 分组容器的明确边界。 | `0,0,0,0` |
+| `Background` | 分组可选的背景画刷。 | `null` |
+| `BorderBrush` | 分组可选的边框画刷。 | `null` |
+| `BorderThickness` | 分组边框的粗细。 | `1.0` |
+| `NodeIds` | 归属于该分组的节点 ID 集合。 | `null` |
 
 ## 另请参阅 {#see-also}
 
-- [Process flow chart](/controls/data-display/charts/hierarchy/process-flow-chart)
-- [Mind map chart](/controls/data-display/charts/hierarchy/mindmap-chart)
+- [工序流程图](/controls/data-display/charts/hierarchy/process-flow-chart)
+- [思维导图](/controls/data-display/charts/hierarchy/mindmap-chart)

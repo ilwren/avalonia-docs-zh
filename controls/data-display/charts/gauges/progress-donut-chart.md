@@ -1,7 +1,7 @@
 ---
 id: progress-donut-chart
-title: Progress donut chart
-description: Donut chart variant for showing progress toward a single 100% goal, used in dashboards and fitness apps.
+title: 进度环形图
+description: 环形图的变体，用来呈现朝单一 100% 目标推进的进度，常见于仪表板和健身类应用。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsGaugesProgressDonut from '/img/controls/charts/charts-pie-progressd
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Progress donut charts are a specialized variation of donut charts designed to show progress toward a single 100% goal. They are often used in fitness apps or system dashboards.
+进度环形图是环形图的特化变体，专门用来呈现朝单一 100% 目标推进的进度，健身应用和系统仪表板中常常见到。
 
 <Image light={chartsGaugesProgressDonut} maxWidth={400} position="center" cornerRadius="true" alt="Progress donut chart showing a circular arc filling proportionally to represent completion toward a 100% goal." />
 
 ## 适用场景 {#when-to-use}
-- **Goal completion**: Showing how close a user is to a target.
-- **Metric summaries**: Visualizing percentage-based data (e.g., Disk Space used).
-- **KPI dashboards**: Providing a quick visual check for key performance indicators.
+- **目标完成度**：展示用户离目标还有多远。
+- **指标摘要**：呈现基于百分比的数据（比如磁盘占用）。
+- **KPI 仪表板**：让人一眼看清关键绩效指标。
 
 ## 代码示例 {#code-example}
 
@@ -37,13 +37,13 @@ Progress donut charts are a specialized variation of donut charts designed to sh
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Value` | The current value (0 to MaxValue). | `0` |
-| `MaxValue` | The maximum value. | `100.0` |
-| `ValueBrush` | Brush for the progress arc. | Theme-dependent |
-| `TrackBrush` | Brush for the empty part of the ring. | Theme-dependent |
-| `RingThickness` | Width of the ring. | `20.0` |
-| `StartAngle` | Start angle in degrees (-90 = top). | `-90.0` |
-| `ShowPercentage` | Whether to show percentage in center. | `true` |
-| `CenterLabel` | Custom center label (overrides percentage). | `null` |
-| `IsValueAnimationEnabled` | Whether to animate changes to the value arc. | `false` |
-| `ShowGlow` | Whether to draw a glow effect around the animated value arc. | `false` |
+| `Value` | 当前值（0 到 MaxValue）。 | `0` |
+| `MaxValue` | 最大值。 | `100.0` |
+| `ValueBrush` | 进度弧所用的画刷。 | Theme-dependent |
+| `TrackBrush` | 圆环空白部分所用的画刷。 | Theme-dependent |
+| `RingThickness` | 圆环的宽度。 | `20.0` |
+| `StartAngle` | 起始角度，单位为度（-90 表示正上方）。 | `-90.0` |
+| `ShowPercentage` | 是否在中心显示百分比。 | `true` |
+| `CenterLabel` | 自定义的中心文字（会覆盖百分比）。 | `null` |
+| `IsValueAnimationEnabled` | 数值弧变化时是否播放动画。 | `false` |
+| `ShowGlow` | 是否在动态数值弧周围绘制辉光效果。 | `false` |

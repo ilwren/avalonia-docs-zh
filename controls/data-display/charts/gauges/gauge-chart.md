@@ -53,9 +53,9 @@ public double CpuLoad { get; set; } = 67;
 | `SweepAngle` | 仪表弧的扫过角度，单位为度。 | `270.0` |
 | `TrackThickness` | 轨道弧的粗细。 | `20.0` |
 | `ShowValue` | 是否显示格式化后的数值文字。 | `true` |
-| `ValueFormat` | Format string used for the value text. | `"{0:F0}"` |
+| `ValueFormat` | 数值文字所用的格式字符串。 | `"{0:F0}"` |
 
 ## 另请参阅 {#see-also}
 
-- [Circular gauge](/controls/data-display/charts/gauges/circular-gauge-chart)
+- [圆形仪表](/controls/data-display/charts/gauges/circular-gauge-chart)
 - [进度环形图](/controls/data-display/charts/gauges/progress-donut-chart)

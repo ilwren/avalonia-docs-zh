@@ -1,7 +1,7 @@
 ---
 id: gradient-ring-chart
-title: Gradient ring chart
-description: Draws multiple concentric progress rings, each representing a labeled value relative to a shared maximum.
+title: 渐变圆环图
+description: 绘制多个同心进度环，每一环代表一个带标签的数值，共用同一个最大值作参照。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Gradient ring charts render several concentric progress rings with one ring per item, so grouped status indicators can be compared in a compact view.
+渐变圆环图把若干同心进度环画在一起，每一项占一环，于是成组的状态指示能在紧凑的版面中两相比较。
 
 ## 适用场景 {#when-to-use}
 
-- **Multi-metric status**: Show several progress measures in one compact control.
-- **Capability dashboards**: Compare completion or health across a small set of categories.
-- **Circular summaries**: Replace a stack of progress donuts when values share the same scale.
+- **多指标状态**：用一个紧凑的控件展示多项进度。
+- **能力仪表板**：比较少数几个类别的完成度或健康度。
+- **环形摘要**：当各项数值共用同一刻度时，用它取代一摞进度环形图。
 
 ## 代码示例 {#code-example}
 
@@ -49,14 +49,14 @@ public ObservableCollection<RingMetric> RingMetrics { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of ring items. | `null` |
-| `LabelPath` | Path to the item label. | `null` |
-| `ValuePath` | Path to the numeric value. | `null` |
-| `MaxValue` | Shared maximum value used for normalization. | `100.0` |
-| `RingThickness` | Thickness of each ring. | `15.0` |
-| `RingGap` | Gap between adjacent rings. | `8.0` |
-| `ShowLabels` | Whether to show the legend labels. | `true` |
-| `ShowValues` | Whether to show numeric values. | `true` |
+| `ItemsSource` | 圆环项的集合。 | `null` |
+| `LabelPath` | 指向项标签的路径。 | `null` |
+| `ValuePath` | 指向数值的路径。 | `null` |
+| `MaxValue` | 用于归一化的共享最大值。 | `100.0` |
+| `RingThickness` | 每一环的粗细。 | `15.0` |
+| `RingGap` | 相邻圆环之间的间隙。 | `8.0` |
+| `ShowLabels` | 是否显示图例标签。 | `true` |
+| `ShowValues` | 是否显示数值。 | `true` |
 
 ## 另请参阅 {#see-also}
 

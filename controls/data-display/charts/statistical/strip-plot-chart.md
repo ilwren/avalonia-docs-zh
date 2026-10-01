@@ -53,7 +53,7 @@ public ObservableCollection<StripPoint> StripData { get; } = new()
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of observations. | `null` |
 | `CategoryPath` | Path to the grouping category. | `null` |
-| `ValuePath` | Path to the numeric value. | `null` |
+| `ValuePath` | 指向数值的路径。 | `null` |
 | `PointRadius` | Radius of each point. | `4.0` |
 | `JitterAmount` | Horizontal jitter factor applied within each category. | `0.3` |
 | `Fill` | Brush used to fill points. | `null` |

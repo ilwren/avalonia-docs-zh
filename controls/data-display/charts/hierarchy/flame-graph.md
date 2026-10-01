@@ -1,7 +1,7 @@
 ---
 id: flame-graph
-title: Flame graph
-description: Visualizes hierarchical stack or call data from bottom to top, commonly used for profiling and trace analysis.
+title: 火焰图
+description: 自下而上呈现层级化的调用栈数据，常用于性能剖析和调用链分析。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Flame graphs display hierarchical cost, duration, or sample data as stacked rectangles, with the root at the bottom and deeper calls above it.
+火焰图把层级化的开销、耗时或采样数据画成层层堆叠的矩形，根部在最下方，越往上调用层级越深。
 
 ## 适用场景 {#when-to-use}
 
-- **Profiler output**: Show CPU, memory, or duration hot spots in a call tree.
-- **Trace inspection**: Understand where time accumulates in nested operations.
-- **Hierarchical cost review**: Compare depth and width across expensive branches.
+- **剖析器输出**：在调用树中找出 CPU、内存或耗时的热点。
+- **调用链检视**：弄清时间都耗在哪些嵌套操作上。
+- **层级开销梳理**：在开销大的分支之间比较深度与宽度。
 
 ## 代码示例 {#code-example}
 
@@ -70,12 +70,12 @@ public ObservableCollection<FlameNode> StackTraceData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Root collection for the flame graph. | `null` |
-| `ValuePath` | Path to the value that controls rectangle width. | `null` |
-| `LabelPath` | Path to the item label. | `null` |
-| `ChildrenPath` | Path to the child collection. | `null` |
+| `ItemsSource` | 火焰图的根集合。 | `null` |
+| `ValuePath` | 指向决定矩形宽度那个数值的路径。 | `null` |
+| `LabelPath` | 指向项标签的路径。 | `null` |
+| `ChildrenPath` | 指向子集合的路径。 | `null` |
 
 ## 另请参阅 {#see-also}
 
-- [Treemap chart](/controls/data-display/charts/hierarchy/treemap-chart)
-- [Flow chart](/controls/data-display/charts/hierarchy/flow-chart)
+- [矩形树图](/controls/data-display/charts/hierarchy/treemap-chart)
+- [流程图](/controls/data-display/charts/hierarchy/flow-chart)

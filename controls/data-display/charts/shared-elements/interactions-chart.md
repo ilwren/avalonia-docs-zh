@@ -170,7 +170,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `IsSelectionEnabled` | Enables pointer selection for supported series or chart items. | `false` |
-| `SelectionMode` | Selection behavior, such as `None`, `Single`, `SingleDeselect`, or `Multiple`. | `SingleDeselect` |
+| `SelectionMode` | 选择行为，比如 `None`、`Single`、`SingleDeselect` 或 `Multiple`。 | `SingleDeselect` |
 | `SelectedIndex` | Two-way index of the primary selected item, or `-1` when nothing is selected. | `-1` |
 | `SelectedIndexes` | Read-only snapshot of selected indexes for multi-selection scenarios. | 空集合 |
 | `SelectionBrush` | Brush used for selected items. | `#314A6E` |

@@ -1,7 +1,7 @@
 ---
 id: arc-diagram-chart
-title: Arc diagram
-description: Network visualization where nodes are placed linearly and connections are drawn as curved arcs, useful for showing relationships in ordered datasets.
+title: 弧线图
+description: 一种网络图：节点沿直线排布，连接以弧线绘制，适合呈现有序数据集中的关系。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsFlowArc from '/img/controls/charts/charts-flow-arc.png';
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Arc diagrams are network visualizations where nodes are placed linearly along an axis. Connections are drawn as curved arcs, with the thickness or color representing link strength.
+弧线图是一种网络图，节点沿一条轴线排布，连接则画成弧线，弧的粗细或颜色表示关联的强弱。
 
 <Image light={chartsFlowArc} maxWidth={400} position="center" cornerRadius="true" alt="Arc diagram with nodes arranged on a horizontal axis connected by curved arcs representing relationships between items." />
 
 ## 适用场景 {#when-to-use}
-- **Sequence analysis**: Showing relationships between items in a fixed order (e.g., chapters in a book).
-- **Dependency mapping**: Visualizing call stacks or structural relationships on a single line.
-- **Categorical proximity**: Highlighting clusters of interactions within a linear dataset.
+- **序列分析**：呈现固定顺序的条目之间的关系（比如书中的各个章节）。
+- **依赖关系梳理**：在一条线上呈现调用栈或结构关系。
+- **类别邻近度**：在线性数据集中凸显互动密集的簇。
 
 ## 代码示例 {#code-example}
 
@@ -64,13 +64,13 @@ public ObservableCollection<ArcLink> ArcLinks { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Nodes` | The collection of items on the axis. | `null` |
-| `Links` | The relationships between nodes. | `null` |
-| `NodeIdPath` | Path to the unique identifier for each node. | `null` |
-| `NodeLabelPath` | Path to the text for each node. | `null` |
-| `SourcePath` | Path to the source node identifier for each link. | `null` |
-| `TargetPath` | Path to the target node identifier for each link. | `null` |
-| `LinkValuePath` | Path determining the arc thickness/size. | `null` |
-| `NodeSize` | Size of the node markers. | `16.0` |
-| `ArcThickness` | Base thickness of the connection arcs. | `2.0` |
-| `ArcOpacity` | Opacity of the connection arcs. | `0.5` |
+| `Nodes` | 轴线上各项的集合。 | `null` |
+| `Links` | 节点之间的关系。 | `null` |
+| `NodeIdPath` | 指向各节点唯一标识的路径。 | `null` |
+| `NodeLabelPath` | 指向各节点文本的路径。 | `null` |
+| `SourcePath` | 指向各连接起点节点标识的路径。 | `null` |
+| `TargetPath` | 指向各连接终点节点标识的路径。 | `null` |
+| `LinkValuePath` | 决定弧线粗细/大小的路径。 | `null` |
+| `NodeSize` | 节点标记的大小。 | `16.0` |
+| `ArcThickness` | 连接弧线的基准粗细。 | `2.0` |
+| `ArcOpacity` | 连接弧线的不透明度。 | `0.5` |

@@ -52,7 +52,7 @@ public ObservableCollection<RadialPoint> RadialBarData { get; } = new()
 | `ItemsSource` | The collection of categorical items. | `null` |
 | `ValuePath` | Numerical property for bar length. | `null` |
 | `CategoryPath` | Property name for category labels. | `null` |
-| `InnerRadiusFactor` | Relative size of the center hole from `0.0` to `1.0`. | `0.2` |
+| `InnerRadiusFactor` | 中心孔洞的相对大小，取值从 `0.0` 到 `1.0`。 | `0.2` |
 | `StartAngle` | The start angle in degrees. | `-90.0` |
 | `GapAngle` | Angle gap between bars. | `2.0` |
 | `ShowLabels` | Whether labels are visible. | `true` |
