@@ -137,8 +137,8 @@ For the CLI, use the `--license-key` option. Alternatively, set the `AVALONIA_TO
 
 ## Further Reading
 
-- [Parcel command line reference](/tools/parcel/command-line-reference)
-- [Parcel configuration reference](/tools/parcel/configuration-reference)
+- [Parcel 命令行参考](/tools/parcel/command-line-reference)
+- [Parcel 配置参考](/tools/parcel/configuration-reference)
 - [模型上下文协议（MCP）](/tools/parcel/mcp)
 - [Windows packaging](/tools/parcel/packaging-for-windows)
 - [macOS packaging](/tools/parcel/packaging-for-macos)

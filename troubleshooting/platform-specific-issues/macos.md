@@ -35,7 +35,7 @@ Note that `CFBundleName` is limited to 15 characters, if your application name i
 
 See [Application name and identity](/docs/platform-specific-guides/macos#application-name-and-identity) for full details on where macOS reads the app name from.
 
-## Packaging
+## 打包 {#packaging}
 
 1. Review Parcel's build logs for error information
 2. Check the [Apple Bundle Programming Guide](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html) for bundle requirements

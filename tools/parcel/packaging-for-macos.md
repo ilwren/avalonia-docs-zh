@@ -1,6 +1,6 @@
 ---
 id: packaging-for-macos
-title: Packaging apps for macOS
+title: 为 macOS 打包应用
 sidebar_label: macOS
 doc-type: reference
 tags:
@@ -12,17 +12,17 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Packaging
+## 打包 {#packaging}
 
-Parcel creates macOS application bundles (`.app`) and packages. Packaging via Parcel can be run on Windows, macOS, or Linux.
+Parcel 能生成 macOS 应用包（`.app`）和安装包。用 Parcel 打包可以在 Windows、macOS 或 Linux 上进行。
 
-| 格式 | CLI code | 最适合 |
+| 格式 | CLI 代号 | 最适合 |
 |---|---|---|
-| DMG image (`.dmg`) | `dmg` | Direct distribution with a branded drag-and-drop experience |
-| PKG installer (`.pkg`) | `pkg` | Managed installation, direct distribution, and Mac App Store submission |
-| ZIP archive (`.zip`) | `zip` | Direct distribution of an app bundle without an installer |
+| DMG 映像（`.dmg`） | `dmg` | 带品牌感的拖放式直接分发 |
+| PKG 安装包（`.pkg`） | `pkg` | 受管安装、直接分发，以及提交 Mac App Store |
+| ZIP 归档（`.zip`） | `zip` | 不带安装程序、直接分发应用包 |
 
-For a complete list of setting names, types, defaults, and environment variables, see the [Parcel configuration reference](/tools/parcel/configuration-reference#macos-settings).
+各设置的完整名称、类型、默认值和环境变量，请见 [Parcel 配置参考](/tools/parcel/configuration-reference#macos-settings)。
 
 ### Bundle Configuration
 
@@ -30,53 +30,53 @@ For a complete list of setting names, types, defaults, and environment variables
 
 **Application Name**:
 
-Display name used for the app display name, as `CFBundleDisplayName`.
+用作应用显示名的名称，即 `CFBundleDisplayName`。
 
 :::note
-Currently cannot be localized.
+目前还不支持本地化。
 :::
 
 **Package Name**:
 
-Package name used as a bundle and output dmg file names.
+用作应用包名和输出 dmg 文件名的包名。
 
 ### Bundle Properties
 
-Essential bundle metadata that defines how an application appears and behaves on macOS.
+决定应用在 macOS 上如何呈现与行事的关键应用包元数据。
 
 **Bundle Identifier**:
 
-A unique reverse-DNS identifier for the application (e.g., `com.Company.AppName`). This must follow Apple's reverse DNS notation guidelines. Avoid special characters except dots and hyphens, and ensure the identifier starts with a letter.
+应用的唯一反向 DNS 标识符（例如 `com.Company.AppName`）。它必须遵循 Apple 的反向 DNS 命名规范：除点和连字符外不要用特殊字符，且必须以字母开头。
 
 **Team ID**:
 
-A unique identifier for your Apple Developer account. Using during signing and notarization process, optional otherwise.
+你 Apple Developer 账户的唯一标识符。签名和公证过程中会用到，其余情况可不填。
 
 **App Category**:
 
-The application category for macOS and App Store classification. This maps to Apple's `public.app-category.*` identifiers.
+用于 macOS 和 App Store 分类的应用类别，对应 Apple 的 `public.app-category.*` 标识符。
 
 **Application Icon**:
 
-An optional macOS icon in **ICNS** or **SVG** format. This icon overrides **Application Icon**. An ICNS file should contain resolutions from 16 x 16 through 1024 x 1024 pixels. Parcel creates the bundle icon structure from the source file.
+可选的 macOS 图标，格式为 **ICNS** 或 **SVG**，会覆盖**应用图标**。ICNS 文件应涵盖 16 x 16 到 1024 x 1024 像素的各档分辨率。Parcel 会根据源文件生成应用包的图标结构。
 
-**Permissions**:
+**权限**：
 
-System permissions with custom usage descriptions. Each permission requires a usage description that appears in macOS permission dialogs.
+带自定义用途说明的系统权限。每项权限都需要一段用途说明，它会出现在 macOS 的权限对话框里。
 
 :::note
-Usage descriptions are mandatory; otherwise, the OS may deny access to system resources.
+用途说明是必填的，否则系统可能会拒绝应用访问相应的系统资源。
 :::
 
 **File Associations**:
 
-Associate the application with specific file types by specifying file extensions (e.g., `.myfile`) and optionally adding MIME types.
+通过指定文件扩展名（例如 `.myfile`）把应用与特定文件类型关联起来，也可以另外补上 MIME 类型。
 
-To handle these files in Avalonia applications, see [Activatable lifetime](/docs/services/activatable-lifetime#handling-uri-activation).
+在 Avalonia 应用中如何处理这些文件，请见[可激活生命周期](/docs/services/activatable-lifetime#handling-uri-activation)。
 
 **URL Schemes**:
 
-Register custom URL schemes for deep linking by defining custom schemes (e.g., `myapp://`, `myprotocol://`). This enables other applications to launch the app with specific parameters.
+定义自定义方案（例如 `myapp://`、`myprotocol://`）即可注册用于深度链接的 URL 方案，其他应用便能带着特定参数启动你的应用。
 
 To handle URL schemes in Avalonia applications, see [Activatable lifetime](/docs/services/activatable-lifetime#handling-uri-activation).
 
@@ -361,6 +361,6 @@ See the [macOS troubleshooting page](/troubleshooting/platform-specific-issues/m
 
 ## 另请参阅 {#see-also}
 
-- [Parcel setup](/tools/parcel/setup)
-- [Parcel configuration reference](/tools/parcel/configuration-reference)
-- [Parcel command line reference](/tools/parcel/command-line-reference)
+- [Parcel 配置准备](/tools/parcel/setup)
+- [Parcel 配置参考](/tools/parcel/configuration-reference)
+- [Parcel 命令行参考](/tools/parcel/command-line-reference)

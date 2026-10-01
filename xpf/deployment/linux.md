@@ -89,7 +89,7 @@ dotnet publish -r linux-x64 -c Release --self-contained
 
 AppImage bundles your application into a single executable file. Use tools like [appimage-builder](https://appimage-builder.readthedocs.io/) or package the published output into an AppImage manually.
 
-### Debian package (.deb)
+### Debian 包（.deb） {#debian-package-deb}
 
 For Debian-based distributions, create a `.deb` package. Use `dpkg-deb` or a tool like [dotnet-packaging](https://github.com/quamotion/dotnet-packaging):
 

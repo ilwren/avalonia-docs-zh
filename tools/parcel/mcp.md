@@ -8,22 +8,22 @@ doc-type: how-to
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## What is Parcel MCP?
+## Parcel MCP 是什么？ {#what-is-parcel-mcp}
 
-The Parcel MCP server lets AI assistants use Parcel packaging tools. Your assistant can create packaging configurations from .NET projects. It can also configure code signing and notarization, and build packages for Windows, macOS, and Linux.
+Parcel MCP 服务器让 AI 助手用上 Parcel 的打包能力。助手可以从 .NET 项目生成打包配置，也可以配置代码签名与公证，并为 Windows、macOS 和 Linux 构建安装包。
 
 关于 MCP 的总体介绍，请见 [AI 工具](/tools/ai-tools/)。
 
 ## 前置条件 {#prerequisites}
 
-Before you configure the MCP server, make sure that you have these items:
+配置 MCP 服务器之前，请确认你备齐了这些：
 
-1. **Parcel .NET tool installed.** Follow the [Setup guide](/tools/parcel/setup).
+1. **已安装 Parcel .NET 工具。**请按[配置指南](/tools/parcel/setup)操作。
 2. **有效的 Avalonia Plus 许可证密钥。**可在 [Avalonia 门户](https://portal.avaloniaui.net/)获取。
 
 ### 设置许可证密钥 {#setting-your-license-key}
 
-The MCP server reads the license from the `AVALONIA_TOOLS_LICENSE_KEY` environment variable. Get your license key from the [Avalonia Portal](https://portal.avaloniaui.net/). Parcel MCP is a paid feature and is not included with the Community edition.
+MCP 服务器从 `AVALONIA_TOOLS_LICENSE_KEY` 环境变量读取许可证。许可证密钥可在 [Avalonia 门户](https://portal.avaloniaui.net/)获取。Parcel MCP 属于付费功能，Community 版不含此项。
 
 把密钥写进 shell 配置，这样跨会话也能一直生效：
 
@@ -66,7 +66,7 @@ setx AVALONIA_TOOLS_LICENSE_KEY "your-license-key"
 </Tabs>
 
 :::caution[从图形界面快捷方式启动的编辑器]
-If you start your editor from a desktop shortcut or application menu, it might not read environment variables from your shell profile. If the MCP server reports a missing license key, add an `env` block to the MCP configuration:
+若你的编辑器是从桌面快捷方式或应用菜单启动的，它可能读不到 shell 配置里的环境变量。当 MCP 服务器报告缺少许可证密钥时，请在 MCP 配置中加一个 `env` 块：
 
 ```json
 {
@@ -80,12 +80,12 @@ If you start your editor from a desktop shortcut or application menu, it might n
 :::
 
 :::note
-Parcel MCP is only available with a full [Avalonia Plus](https://avaloniaui.net/pricing) license.
+Parcel MCP 仅对完整的 [Avalonia Plus](https://avaloniaui.net/pricing) 许可证开放。
 :::
 
 ## 配置 MCP 服务器 {#setting-up-the-mcp-server}
 
-The Parcel MCP server runs as a local process. Its command is `parcel mcp`. You do not need to run this command manually. After configuration, your editor starts the server automatically.
+Parcel MCP 服务器以本地进程运行，命令是 `parcel mcp`。你不必手动跑它——配置好之后编辑器会自动把服务器拉起来。
 
 在下面选择你用的编辑器：
 
@@ -203,7 +203,7 @@ claude mcp list
 <TabItem value="claude-desktop" label="Claude Desktop">
 
 1. 打开 **Settings** > **Developer**，点击 **Edit Config**。
-2. Add the Parcel MCP server to `claude_desktop_config.json`:
+2. 把 Parcel MCP 服务器加进 `claude_desktop_config.json`：
 
 ```json
 {
@@ -230,7 +230,7 @@ Claude Desktop 不会从你的 shell 配置里继承环境变量，所以许可�
 
 ## 验证连接 {#verify-the-connection}
 
-After you configure the MCP server, test the connection:
+配置好 MCP 服务器后，测一下连接：
 
 1. **确认服务器正在运行。**打开编辑器的 MCP 面板或状态指示器，确认 `parcel` 以已连接服务器的身份出现。在 VS Code 中，可从命令面板运行 **MCP: List Servers**。
 2. **用一句提示词试一下。**问问你的 AI 助手：
@@ -239,13 +239,13 @@ After you configure the MCP server, test the connection:
 "List the available Parcel packaging tools."
 ```
 
-If the assistant returns a list of capabilities, the connection works.
+若助手列出了一串能力清单，说明连接没问题。
 
 ## 排查问题 {#troubleshooting}
 
-### "parcel" command not found
+### 找不到 “parcel” 命令 {#parcel-command-not-found}
 
-The `parcel` command must be on the system `PATH`. For a global .NET tool installation, check for `$HOME/.dotnet/tools` on macOS and Linux. On Windows, check for `%USERPROFILE%\.dotnet\tools`. If the applicable directory is not in `PATH`, add it.
+`parcel` 命令必须在系统 `PATH` 中。若装的是全局 .NET 工具，请在 macOS 和 Linux 上查看 `$HOME/.dotnet/tools`，在 Windows 上查看 `%USERPROFILE%\.dotnet\tools`；若相应目录不在 `PATH` 里，把它加进去。
 
 更多信息请见[排查 .NET 工具使用问题](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found)。
 
@@ -264,7 +264,7 @@ The `parcel` command must be on the system `PATH`. For a global .NET tool instal
 
 ### Updating Parcel
 
-If the tools do not work as expected, make sure that you use the latest version:
+若这些工具表现得不对劲，请确认你用的是最新版本：
 
 ```bash
 dotnet tool update --global AvaloniaUI.Parcel
@@ -272,43 +272,43 @@ dotnet tool update --global AvaloniaUI.Parcel
 
 ## Capabilities
 
-Once the MCP server is configured, your AI assistant can help with:
+配置好 MCP 服务器后，你的 AI 助手可以帮你：
 
 ### 项目配置 {#project-configuration}
 
-- **Create Parcel configurations** from existing .NET projects
-- **Configure application properties** like package name, display name, icons, and bundle identifiers
-- **Set up build targets** for multiple platforms and architectures
+- 从既有的 .NET 项目**生成 Parcel 配置**
+- **配置应用属性**，比如包名、显示名、图标和应用包标识符
+- 为多平台、多架构**设置构建目标**
 
-### Code signing setup
+### 配置代码签名 {#code-signing-setup}
 
-- **Windows Azure Artifact Signing** - Configure certificates and signing parameters
-- **macOS Code Signing** - Set up P12 certificates and provisioning profiles
-- **macOS Notarization** - Configure Apple ID and app-specific passwords
+- **Windows Azure Artifact Signing**——配置证书和签名参数
+- **macOS 代码签名**——配置 P12 证书和描述文件
+- **macOS 公证**——配置 Apple ID 和 App 专用密码
 
-### Building and packaging
+### 构建与打包 {#building-and-packaging}
 
-- **Build and package** applications for multiple platforms (Windows, macOS, Linux)
-- **Generate packages** in NSIS, MSIX, DMG, PKG, DEB, RPM, and ZIP formats
-- **Cross-platform packaging** with runtime-specific outputs
+- 为多个平台（Windows、macOS、Linux）**构建并打包**应用
+- **生成** NSIS、MSIX、DMG、PKG、DEB、RPM 和 ZIP 格式的**安装包**
+- **跨平台打包**，输出各运行时对应的产物
 
 ## 用法示例 {#usage-examples}
 
 用自然语言说清你想做什么，AI 助手会自动调用相应的 MCP 工具：
 
-**Project setup:**
+**准备项目：**
 
 ```text
 "Create a packaging config for my Avalonia project and set up macOS signing."
 ```
 
-**Packaging:**
+**打包：**
 
 ```text
 "Package my app for macOS as a DMG with code signing enabled."
 ```
 
-**Configuration management:**
+**管理配置：**
 
 ```text
 "Update my app's display name and icon, then rebuild the Windows installer."
@@ -319,6 +319,6 @@ Once the MCP server is configured, your AI assistant can help with:
 ## 另请参阅 {#see-also}
 
 - [AI 工具概述](/tools/ai-tools/)
-- [Parcel setup](/tools/parcel/setup)
-- [Parcel configuration reference](/tools/parcel/configuration-reference)
+- [Parcel 配置准备](/tools/parcel/setup)
+- [Parcel 配置参考](/tools/parcel/configuration-reference)
 - [DevTools MCP](/tools/developer-tools/mcp)

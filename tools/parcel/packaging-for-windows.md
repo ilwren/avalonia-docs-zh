@@ -9,17 +9,17 @@ tags:
   - avalonia enterprise
 ---
 
-## Packaging
+## 打包 {#packaging}
 
 Parcel creates Windows installers and archives. Packaging via Parcel can be run on Windows, macOS, or Linux.
 
-| 格式 | CLI code | 最适合 |
+| 格式 | CLI 代号 | 最适合 |
 |---|---|---|
 | NSIS installer (`.exe`) | `nsis` | Traditional direct distribution with a customizable installation flow and optional uninstaller |
-| MSIX package (`.msix`) | `msix` | Modern Windows deployment, enterprise management, and Microsoft Store distribution |
-| ZIP archive (`.zip`) | `zip` | Portable distribution that does not require installation or registration |
+| MSIX 包（`.msix`） | `msix` | Modern Windows deployment, enterprise management, and Microsoft Store distribution |
+| ZIP 归档（`.zip`） | `zip` | Portable distribution that does not require installation or registration |
 
-For a complete list of setting names, types, defaults, and environment variables, see the [Parcel configuration reference](/tools/parcel/configuration-reference#windows-settings).
+各设置的完整名称、类型、默认值和环境变量，请见 [Parcel 配置参考](/tools/parcel/configuration-reference#windows-settings)。
 
 ### Package Configuration
 
@@ -30,7 +30,7 @@ For a complete list of setting names, types, defaults, and environment variables
 Display name used for the application install directory, Start Menu entry, and shortcut file name.
 
 :::note
-Currently cannot be localized.
+目前还不支持本地化。
 :::
 
 **Package Name**:
@@ -95,13 +95,13 @@ The **Publisher** setting is the distinguished name in the MSIX identity, such a
 
 For direct distribution, sign the MSIX package with a certificate that the target device trusts. For Microsoft Store distribution, the Store signs the submitted package. Disable **Sign Installer** when another process signs the package after Parcel. See Microsoft's [MSIX signing overview](https://learn.microsoft.com/en-us/windows/msix/package/signing-package-overview) and [Microsoft Store publishing guidance](https://learn.microsoft.com/en-us/windows/apps/publish/get-started).
 
-### Desktop integration
+### 桌面集成 {#desktop-integration}
 
 **File Associations**:
 
 Associate the application with specific file types by specifying file extensions (e.g., `.myfile`) and optionally adding MIME types and custom icons. This creates registry entries for proper Windows Explorer integration.
 
-To handle these files in Avalonia applications, see [Activatable lifetime](/docs/services/activatable-lifetime#handling-uri-activation).
+在 Avalonia 应用中如何处理这些文件，请见[可激活生命周期](/docs/services/activatable-lifetime#handling-uri-activation)。
 
 **URL Schemes**:
 
@@ -304,6 +304,6 @@ Powered by [JSign](https://github.com/ebourg/jsign), and requires Java Runtime.
 
 ## 另请参阅 {#see-also}
 
-- [Parcel setup](/tools/parcel/setup)
-- [Parcel configuration reference](/tools/parcel/configuration-reference)
-- [Parcel command line reference](/tools/parcel/command-line-reference)
+- [Parcel 配置准备](/tools/parcel/setup)
+- [Parcel 配置参考](/tools/parcel/configuration-reference)
+- [Parcel 命令行参考](/tools/parcel/command-line-reference)
