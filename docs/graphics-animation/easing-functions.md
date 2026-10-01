@@ -1,6 +1,6 @@
 ---
 id: easing-functions
-title: Easing functions
+title: 缓动函数
 description: Available easing functions for controlling animation timing curves in Avalonia.
 doc-type: reference
 ---

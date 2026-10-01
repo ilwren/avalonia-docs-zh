@@ -274,7 +274,7 @@ dotnet tool update --global AvaloniaUI.Parcel
 
 Once the MCP server is configured, your AI assistant can help with:
 
-### Project configuration
+### 项目配置 {#project-configuration}
 
 - **Create Parcel configurations** from existing .NET projects
 - **Configure application properties** like package name, display name, icons, and bundle identifiers

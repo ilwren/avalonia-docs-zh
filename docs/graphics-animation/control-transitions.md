@@ -178,4 +178,4 @@ Avalonia also supports WPF-style render transforms such as `RotateTransform` and
 
 - [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Multi-step keyframe animations.
 - [Animation Settings](/docs/graphics-animation/animation-settings): Duration, delay, iteration count, and playback direction.
-- [Easing Functions](/docs/graphics-animation/easing-functions): All available easing functions.
+- [缓动函数](/docs/graphics-animation/easing-functions)：全部可用的缓动函数。

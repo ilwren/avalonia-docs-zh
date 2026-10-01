@@ -200,7 +200,7 @@ Or with a binding converter:
 | WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `Storyboard` | `Animation` | Different API |
-| `DoubleAnimation` | Keyframe animations | Use `KeyFrame` with `Cue` |
+| `DoubleAnimation` | 关键帧动画 | Use `KeyFrame` with `Cue` |
 | `BeginStoryboard` | Animations declared in `Style.Animations` | Triggered by pseudo-classes |
 | `EasingFunction` | `Easing` property | Same easing types available |
 | `Transitions` (UWP) | `Transitions` | Property change animations |

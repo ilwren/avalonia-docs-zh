@@ -84,27 +84,27 @@ Avalonia 的 `.app` 包具有下面这样的结构：
 
 `Info.plist` 全部键的完整清单，请看苹果的 [Information Property List](https://developer.apple.com/documentation/bundleresources/information-property-list) 参考。
 
-If at any point the tooling gives you an error that your assets file doesn't have a target for `osx-64`, add the following [runtime identifiers](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog) to the top `<PropertyGroup>` in your `.csproj`:
+如果工具链在某一步报错说你的 assets 文件没有针对 `osx-64` 的目标，请把下列[运行时标识](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog)加进 `.csproj` 顶部的 `<PropertyGroup>` 中：
 
 ```xml
 <RuntimeIdentifiers>osx-x64</RuntimeIdentifiers>
 ```
 
-Add other runtime identifiers as necessary. Each one should be separated by a semicolon \(;\).
+按需添加其他运行时标识，彼此之间用分号 \(;\) 分隔。
 
-#### Creating icon files
+#### 制作图标文件 {#creating-icon-files}
 
-This type of icon file can be created not only on Apple devices but also on Linux devices.  
-You can find more information about how you can achieve that in this blog post:  
-[Creating macOS Icons (icns) on Linux](https://dentrassi.de/2014/02/25/creating-mac-os-x-icons-icns-on-linux/)
+这类图标文件不只能在苹果设备上做，Linux 设备上同样可以。  
+具体怎么做，可以在这篇博文里找到更多信息：  
+[在 Linux 上制作 macOS 图标（icns）](https://dentrassi.de/2014/02/25/creating-mac-os-x-icons-icns-on-linux/)
 
-#### About the `.app` executable file
+#### 关于 `.app` 可执行文件 {#about-the-app-executable-file}
 
-The file that is actually executed by macOS when starting your `.app` bundle will **not** have the standard `.dll` extension. If your publish folder contents, which go inside the `.app` bundle, do not have both a `MyApp` \(executable\) and a `MyApp.dll`, things are probably not generating properly, and macOS will probably not be able to start your `.app` properly.
+启动你的 `.app` 包时，macOS 真正执行的那个文件**不带**常见的 `.dll` 扩展名。如果要放进 `.app` 包的发布目录里没有同时出现 `MyApp` \(可执行文件\) 和 `MyApp.dll`，那多半是哪里没生成对，macOS 也多半没法正常启动你的 `.app`。
 
-[Some recent changes in the way .NET Core is distributed and notarized on macOS](https://docs.microsoft.com/en-us/dotnet/core/install/macos-notarization-issues) have caused the `MyApp` executable \(also called the "app host" in the linked documentation\) to not be generated. **You need this file to be generated in order for your `.app` to function properly.** To make sure this gets generated, do one of the following:
+[.NET Core 在 macOS 上的分发和公证方式近来有所变动](https://docs.microsoft.com/en-us/dotnet/core/install/macos-notarization-issues)，导致 `MyApp` 可执行文件（在上述文档中又称 "app host"）不再生成。**你的 `.app` 要正常工作，就必须生成这个文件。**要确保它被生成，请采取下面任一做法：
 
-* Add the following to your `.csproj` file:
+* 在 `.csproj` 文件中加上这段：
 
 ```xml
 <PropertyGroup>
@@ -112,19 +112,19 @@ The file that is actually executed by macOS when starting your `.app` bundle wil
 </PropertyGroup>
 ```
 
-* Add `-p:UseAppHost=true` to your `dotnet publish` command.
+* 在 `dotnet publish` 命令中加上 `-p:UseAppHost=true`。
 
-Additionally, you might want to add the '-p:PublishSingleFile=true' to your dotnet command, compiling most of the DLLs into a single application, simplifying the signing and notarizing process. 
+此外，你或许还想给 dotnet 命令加上 '-p:PublishSingleFile=true'，把大部分 DLL 编进单个应用里，这能让签名和公证省心不少。 
 
 ### Manual
 
-First, publish your application \([dotnet publish documentation](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)\):
+首先，发布你的应用 \([dotnet publish 文档](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)\)：
 
 ```bash
 dotnet publish -r osx-x64 --configuration Release -p:UseAppHost=true
 ```
 
-Create your `Info.plist` file, adding or modifying keys as necessary:
+创建 `Info.plist` 文件，按需增删或修改其中的键：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -155,7 +155,7 @@ Create your `Info.plist` file, adding or modifying keys as necessary:
 </plist>
 ```
 
-You can then create your `.app` folder structure as outlined at the top of this page. If you want a script to do it for you, you can use something like this \(macOS/Unix\):
+然后就可以照本文开头所述搭出 `.app` 的目录结构了。若想用脚本一键完成，可以参考下面这段（macOS/Unix）：
 
 ```bash
 #!/bin/bash
@@ -183,53 +183,53 @@ cp "$ICON_FILE" "$APP_NAME/Contents/Resources/$ICON_FILE"
 cp -a "$PUBLISH_OUTPUT_DIRECTORY" "$APP_NAME/Contents/MacOS"
 ```
 
-If you created the `.app` on Windows, make sure to run `chmod +x MyApp.app/Contents/MacOS/AppName` from a Unix machine. Otherwise, the app will not start on macOS.
+如果 `.app` 是在 Windows 上做的，记得到一台 Unix 机器上跑一遍 `chmod +x MyApp.app/Contents/MacOS/AppName`，否则应用在 macOS 上根本起不来。
 
-### Signing your app
+### 给应用签名 {#signing-your-app}
 
-Once you have your `.app` file created, you'll probably want to sign your app so that it can be notarized and distributed to your users without Gatekeeper giving you a hassle. Notarization is required for apps distributed outside the App Store starting in macOS 10.15 \(Catalina\), and you'll have to enable hardened runtime and run `codesign` on your `.app` to notarize it successfully.
+`.app` 文件做好之后，你多半想给应用签名，这样才能完成公证、顺利分发给用户，不至于被 Gatekeeper 刁难。自 macOS 10.15 \(Catalina\) 起，在 App Store 之外分发的应用都必须公证；要让公证通过，你还得启用加固运行时（hardened runtime），并对 `.app` 执行 `codesign`。
 
-Hardened runtime is a macOS security policy that restricts what your app can do at runtime. It prevents things like code injection, unsigned library loading, and access to certain system resources unless you explicitly opt in via entitlements. Apple requires hardened runtime for all notarized apps.
+加固运行时是 macOS 的一项安全策略，限制应用在运行时能做什么。除非你通过 entitlements 显式申请，否则它会拦下代码注入、加载未签名库、访问特定系统资源等行为。苹果要求所有公证应用都启用加固运行时。
 
-You'll need a Mac computer for this step, to run the `codesign` command line tool that comes with Xcode.
+这一步需要一台 Mac，好运行 Xcode 自带的 `codesign` 命令行工具。
 
-### Obtaining a Developer ID certificate
+### 取得 Developer ID 证书 {#obtaining-a-developer-id-certificate}
 
-If you wish to notarize an app and distribute it outside the Mac App Store, you need a Developer ID Application certificate in your login keychain. Without it, `codesign` has nothing to sign with and distribution is impossible.
+若你想公证应用并在 Mac App Store 之外分发，登录钥匙串中就必须有一张 Developer ID Application 证书。没有它，`codesign` 无从签起，分发也就无从谈起。
 
-Note that Xcode defaults to cloud-managed signing certificates, which can be awkward to use with .NET command line tooling. Follow these steps to install a local certificate that `codesign` can use directly. How you install it depends on your role in the Apple Developer account.
+注意 Xcode 默认用的是云端托管的签名证书，配合 .NET 命令行工具用起来比较别扭。按下面的步骤装一张 `codesign` 能直接使用的本地证书。具体怎么装，取决于你在 Apple Developer 账号中的身份。
 
-#### If you own the account
+#### 你就是账号所有者 {#if-you-own-the-account}
 
 1. Open Xcode.
-2. Go to **Xcode → Settings → Accounts**.
-3. Add your Apple ID if it isn't already listed.
-4. Select your team and choose **Download Manual Profiles**. This downloads the certificate into your keychain.
-5. To share the certificate with another developer, find it in Keychain Access, right-click, and choose **Export**. This generates a password-protected `.p12` file.
+2. 打开 **Xcode → Settings → Accounts**。
+3. 若列表中还没有你的 Apple ID，先把它加上。
+4. 选中你的团队，点 **Download Manual Profiles**，证书就会下载进你的钥匙串。
+5. 要把证书分享给其他开发者，在「钥匙串访问」中找到它，右键选 **导出**，这会生成一个有密码保护的 `.p12` 文件。
 
-#### If you do not own the account
+#### 你不是账号所有者 {#if-you-do-not-own-the-account}
 
-1. Ask the account owner to export the Developer ID Application certificate as a `.p12` file. (See above)
-2. Open **Keychain Access** and go to **File → Import Items**.
-3. Select the exported `.p12` file and enter the password.
+1. 请账号所有者把 Developer ID Application 证书导出成 `.p12` 文件（见上文）。
+2. 打开**钥匙串访问**，选 **文件 → 导入项目**。
+3. 选中导出的那个 `.p12` 文件并输入密码。
 
-Verify the certificate is installed by running:
+运行下面的命令确认证书已装好：
 
 ```bash
 security find-identity -v
 ```
 
-You should see a `Developer ID Application` identity listed. Its team ID appears in parentheses after the name. For example, in `Developer ID Application: My Company (ABC123DEF5)` the team ID is `ABC123DEF5`. You'll need it when notarizing.
+你应该能看到列出了一个 `Developer ID Application` 身份，名称后面括号里就是它的团队 ID。比如 `Developer ID Application: My Company (ABC123DEF5)` 中，团队 ID 就是 `ABC123DEF5`。公证时会用到它。
 
-### Running codesign and enabling hardened runtime
+### 运行 codesign 并启用加固运行时 {#running-codesign-and-enabling-hardened-runtime}
 
-Enabling hardened runtime is done in the same step as codesigning. You have to codesign everything in the `.app` bundle under the `Contents/MacOS` folder, which is typically done with a script since there are a lot of files. To sign your files, you need an Apple developer account.
+启用加固运行时和代码签名是同一步完成的。你得给 `.app` 包内 `Contents/MacOS` 目录下的所有东西都签名；文件实在太多，一般都写个脚本来干。要签名，你需要一个 Apple 开发者账号。
 
-To notarize your app, you need a Developer ID certificate, which requires a paid Apple developer subscription. See [Obtaining a Developer ID certificate](#obtaining-a-developer-id-certificate) for instructions on how to install a certificate locally.
+公证应用需要 Developer ID 证书，而这要求订阅付费的 Apple 开发者计划。本地安装证书的步骤请参阅[取得 Developer ID 证书](#obtaining-a-developer-id-certificate)。
 
-You'll also need to have the Xcode command line tools installed. You can get those by installing Xcode and running it or by running `xcode-select --install` on the command line and following the prompts to install the tools.
+你还需要装好 Xcode 命令行工具。装了 Xcode 并运行一次即可，或者在命令行执行 `xcode-select --install` 并按提示安装。
 
-First, enable Hardened Runtime with [exceptions](https://developer.apple.com/documentation/security/hardened_runtime?language=objc) by creating an `MyAppEntitlements.entitlements` file:
+首先创建一个 `MyAppEntitlements.entitlements` 文件，启用带[例外项](https://developer.apple.com/documentation/security/hardened_runtime?language=objc)的加固运行时：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -244,7 +244,7 @@ First, enable Hardened Runtime with [exceptions](https://developer.apple.com/doc
 </plist>
 ```
 
-Then, run this script to do all the code signing for you:
+然后运行这个脚本，代码签名的活儿它全包了：
 
 ```bash
 #!/bin/bash
@@ -264,27 +264,27 @@ echo "[INFO] Signing app file"
 codesign --force --timestamp --options=runtime --entitlements "$ENTITLEMENTS" --sign "$SIGNING_IDENTITY" "$APP_NAME"
 ```
 
-The `--options=runtime` part of the `codesign` line is what enables the hardened runtime with your app. Because [.NET Core may not be fully compatible with hardened runtime](https://github.com/dotnet/runtime/issues/10562#issuecomment-503013071), it is advisable to add exceptions to use JIT-compiled code and allow for Apple Events to be sent. The JIT-compiled code exception is required to run Avalonia apps under hardened runtime. The second exception for Apple Events fixes an error that shows up in `Console.app`.
+`codesign` 那一行中的 `--options=runtime` 部分，正是为你的应用启用加固运行时的开关。由于 [.NET Core 未必能完全兼容加固运行时](https://github.com/dotnet/runtime/issues/10562#issuecomment-503013071)，建议加上两个例外项：允许使用 JIT 编译的代码，以及允许发送 Apple Events。前者是 Avalonia 应用在加固运行时下跑起来的必要条件；后者则用于消除 `Console.app` 中出现的一个错误。
 
-Note: Microsoft lists [some other hardened runtime exceptions](https://docs.microsoft.com/en-us/dotnet/core/install/macos-notarization-issues#default-entitlements) as being required for .NET Core. The only one that is actually needed to run an Avalonia app is `com.apple.security.cs.allow-jit`. The others may impose security risks with your application. Use with caution.
+注意：微软列出了 [.NET Core 所需的另外几项加固运行时例外](https://docs.microsoft.com/en-us/dotnet/core/install/macos-notarization-issues#default-entitlements)。但要跑一个 Avalonia 应用，真正必需的只有 `com.apple.security.cs.allow-jit` 这一项。其余的可能给你的应用带来安全风险，请谨慎使用。
 
-:::caution[Don't use the `--deep` flag]
-Some guides suggest signing the whole bundle in a single pass with `codesign --deep`. Apple recommends avoiding `--deep` because it can leave nested binaries improperly signed. Sign each item explicitly instead, as the script above does, by walking the files first and signing the bundle last.
+:::caution[别用 `--deep` 标志]
+有些教程建议用 `codesign --deep` 一次性给整个包签名。苹果建议不要用 `--deep`，因为它可能让嵌套的二进制签名不正确。正确做法是像上面的脚本那样逐项显式签名：先遍历文件逐个签，最后再签整个包。
 :::
 
-Once your app is code signed, you can verify that it signed properly by making sure that the following command outputs no errors:
+应用签完名后，运行下面的命令，若没有任何报错，就说明签名没问题：
 
 ```bash
 codesign --verify --verbose /path/to/MyApp.app
 ```
 
-### Notarizing your software
+### 为你的软件做公证 {#notarizing-your-software}
 
-Notarization is an automated process where you upload your signed app to Apple's servers for a security scan. Once approved, Apple issues a ticket that confirms your software has been checked for malicious content. When a user downloads your app, macOS verifies this ticket and allows the app to launch without showing an "unidentified developer" warning. Notarization is required for all apps distributed outside the Mac App Store since macOS 10.15 (Catalina).
+公证是一套自动化流程：你把签好名的应用上传到苹果服务器做安全扫描，通过之后苹果会签发一张票据，证明这个软件已查验过无恶意内容。用户下载你的应用时，macOS 会校验这张票据，然后放行启动，不再弹出「来自身份不明的开发者」警告。自 macOS 10.15（Catalina）起，所有在 Mac App Store 之外分发的应用都必须公证。
 
-Notarization uses the `notarytool` command line tool, which ships with Xcode 13 and later. (The older `altool --notarize-app` workflow has been retired by Apple and no longer works.)
+公证使用 `notarytool` 命令行工具，它随 Xcode 13 及更高版本一同提供。（更早的 `altool --notarize-app` 流程已被苹果停用，不再可用。）
 
-Because Apple requires multi-factor authentication on developer accounts, `notarytool` authenticates with an app-specific password that you generate on the [Apple ID account page](https://account.apple.com/account/manage). Store it once in your keychain as a named profile so you don't have to pass credentials on every run:
+由于苹果要求开发者账号启用多因素认证，`notarytool` 改用你在 [Apple ID 账户页面](https://account.apple.com/account/manage)生成的 App 专用密码来认证。把它作为具名配置一次性存进钥匙串，此后每次运行就不必再传凭据了：
 
 ```bash
 xcrun notarytool store-credentials "AC_PASSWORD" \
@@ -293,89 +293,89 @@ xcrun notarytool store-credentials "AC_PASSWORD" \
   --password "your-app-specific-password"
 ```
 
-`AC_PASSWORD` is the profile name you choose, `--team-id` is the team ID from App Store Connect, and `--password` is the app-specific password you generated.
+`AC_PASSWORD` 是你自己取的配置名，`--team-id` 是 App Store Connect 里的团队 ID，`--password` 则是你生成的 App 专用密码。
 
-With the profile stored, notarize your app:
+配置存好之后，公证你的应用：
 
-1. Make sure your `.app` is code signed properly.
-2. Put your `.app` in a `.zip` file. Apple recommends using `ditto` for this step because the `zip` command can cause notarization issues: `ditto -c -k --sequesterRsrc --keepParent MyApp.app MyApp.zip`
-3. Submit the archive and wait for the result. The `--wait` flag polls automatically and returns once notarization succeeds or fails, so no separate status check is needed:
+1. 确认你的 `.app` 已正确完成代码签名。
+2. 把 `.app` 装进一个 `.zip` 文件。这一步苹果建议用 `ditto`，因为 `zip` 命令可能引发公证问题：`ditto -c -k --sequesterRsrc --keepParent MyApp.app MyApp.zip`
+3. 提交这个压缩包并等待结果。`--wait` 标志会自动轮询，公证成功或失败后才返回，所以不必再单独查状态：
 
    ```bash
    xcrun notarytool submit MyApp.zip --keychain-profile "AC_PASSWORD" --wait
    ```
 
-4. If a submission is rejected, fetch the detailed log using the submission ID from the output: `xcrun notarytool log <submission-id> --keychain-profile "AC_PASSWORD"`
-5. If successful, staple the notarization ticket to the app with `xcrun stapler staple MyApp.app`. You can validate this by running `xcrun stapler validate MyApp.app`.
+4. 若提交被拒，用输出中的提交 ID 取回详细日志：`xcrun notarytool log <submission-id> --keychain-profile "AC_PASSWORD"`
+5. 成功之后，用 `xcrun stapler staple MyApp.app` 把公证票据装订到应用上。可以运行 `xcrun stapler validate MyApp.app` 来验证。
 
-Once notarization is complete, you should be able to distribute your application.
+公证一完成，你的应用就可以分发了。
 
-#### Notarizing for .dmg distribution
+#### 为 .dmg 分发做公证 {#notarizing-for-dmg-distribution}
 
-If you distribute your app as a `.dmg`, you must perform an additional notarization step on the `.dmg` itself.
+如果你以 `.dmg` 形式分发应用，还得对 `.dmg` 本身再做一次公证。
 
-1. Notarize your `.app` as normal, in a `.zip` file.
-2. Add your notarized and stapled (`xcrun stapler`) app into the `.dmg`.
-3. Notarize your `.dmg` file using the same `xcrun notarytool submit` command. This time, point it at the `.dmg` file instead of the `.zip`.
-4. Staple the notarization to the `.dmg` file: `xcrun stapler staple MyApp.dmg`.
+1. 照常把 `.app` 装进 `.zip` 文件完成公证。
+2. 把已公证并装订好（`xcrun stapler`）的应用放进 `.dmg` 中。
+3. 用同一条 `xcrun notarytool submit` 命令公证你的 `.dmg` 文件，只是这次指向 `.dmg` 文件而不是 `.zip`。
+4. 把公证票据装订到 `.dmg` 文件上：`xcrun stapler staple MyApp.dmg`。
 
-### App Store packaging
+### App Store 打包 {#app-store-packaging}
 
-You need a lot of things:
+要准备的东西不少：
 
-* Your app satisfies [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/).
-* Your app satisfies [macOS Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines).
-* Apple Developer Account, with your Apple ID connected to it.
-* Your app is registered in [App Store Connect](https://appstoreconnect.apple.com/apps/).
-* Transporter app installed from App Store.
-* Latest Xcode installed with your Apple ID authorized into it.
-* Two certificates: `3rd Party Mac Developer Installer` for signing `.pkg` file and `3rd Party Mac Developer Application` for signing a bundle.
-* App Store Provision Profile. Get it for your app from the [Apple Developer provisioning profiles page](https://developer.apple.com/account/resources/profiles/list).
-* Two entitlements: One for signing `.app` and the other for signing app helpers.
-* Your app content is [bundled correctly](https://developer.apple.com/documentation/bundleresources/placing_content_in_a_bundle).
-* Your bundle is signed correctly.
-* Your `.dylib` files don't contain any non-ARM/x64 architectures. You can remove these by using the `lipo` command line tool.
-* Your app is ready to run inside the macOS sandbox (see the Sandbox section below).
+* 你的应用符合 [App Store 审核指南](https://developer.apple.com/app-store/review/guidelines/)。
+* 你的应用符合 [macOS 人机界面指南](https://developer.apple.com/design/human-interface-guidelines)。
+* 有 Apple Developer 账号，且你的 Apple ID 已与之关联。
+* 你的应用已在 [App Store Connect](https://appstoreconnect.apple.com/apps/) 中注册。
+* 已从 App Store 安装 Transporter 应用。
+* 已安装最新版 Xcode，并在其中授权了你的 Apple ID。
+* 两张证书：`3rd Party Mac Developer Installer` 用于给 `.pkg` 文件签名，`3rd Party Mac Developer Application` 用于给应用包签名。
+* App Store 预置描述文件。在 [Apple Developer 预置描述文件页面](https://developer.apple.com/account/resources/profiles/list)为你的应用获取。
+* 两份 entitlements：一份用于给 `.app` 签名，另一份用于给应用的辅助程序签名。
+* 你的应用内容已[正确打包](https://developer.apple.com/documentation/bundleresources/placing_content_in_a_bundle)。
+* 你的应用包已正确签名。
+* 你的 `.dylib` 文件中不含 ARM/x64 之外的架构。可以用 `lipo` 命令行工具把它们剔除。
+* 你的应用已能在 macOS 沙盒中运行（见下面的沙盒一节）。
 
-### Getting certificates
+### 获取证书 {#getting-certificates}
 
-* Go to **Xcode → Settings → Accounts → Manage Certificates...**
-* Add them if they do not exist.
-* Export them with a password. 
-* Open them and import into KeyChain Access.
-* In KeyChain you should see these certificates: `3rd Party Mac Developer Installer` and `Apple Distribution`. If cert names start with another string, you may have created the wrong certificate. Try again.
-* Expand imported keys in KeyChain and double click on a private key inside.
-* Go to Access Control Tab.
-* Select `Allow all applications to access this item` in case you don't want to enter a Mac profile password for every file sign.
+* 打开 **Xcode → Settings → Accounts → Manage Certificates...**
+* 若证书不存在，就新建它们。
+* 带密码导出。 
+* 打开导出的文件，导入「钥匙串访问」。
+* 在钥匙串中你应当能看到这两张证书：`3rd Party Mac Developer Installer` 和 `Apple Distribution`。若证书名字以别的字符串开头，说明你多半建错了类型，重来一次。
+* 在钥匙串中展开导入的密钥，双击里面的私钥。
+* 切到「访问控制」标签页。
+* 若不想每签一个文件就输一次 Mac 账户密码，请选择 `Allow all applications to access this item`。
 
-### Sandbox and bundle
+### 沙盒与应用包 {#sandbox-and-bundle}
 
-The App Store requires apps to run inside a sandbox. Sandboxing is a security mechanism that isolates your app from the rest of the system. It restricts access to the file system, network, hardware, and other apps unless you explicitly request permission via entitlements. This protects users from malicious or buggy software.
+App Store 要求应用运行在沙盒中。沙盒是一种安全机制，把你的应用与系统其余部分隔离开：除非你通过 entitlements 显式申请权限，否则它对文件系统、网络、硬件和其他应用的访问都受限。这保护用户免受恶意或有缺陷软件的侵扰。
 
-Your app must be prepared for this restricted environment and must not crash if a folder or resource is inaccessible.
+你的应用必须为这种受限环境做好准备，遇到某个目录或资源访问不了时不能崩溃。
 
-If your app crashes when running inside the sandbox, try publishing with the single file option enabled. Example:
+若应用在沙盒中运行时崩溃，试试开启单文件选项再发布。例如：
 
 `dotnet publish src/MyApp.csproj -c Release -f net10.0 -r osx-x64 --self-contained true -p:PublishSingleFile=true`
 
-Your app content must be bundled correctly. macOS expects specific file types in specific directories within the bundle.
+你的应用内容必须正确打包。macOS 要求特定类型的文件出现在应用包内特定的目录中。
 
-The most important rules: 
-* `.dll` files are not considered code by Apple. So they should be placed inside the `/Resources` folder and do not need to be signed.
-* `/MacOS` files should contain only executable mach-o, i.e., your app executable and any other helper executables.
-* All other mach-o `.dylib` files should be inside the `Frameworks/` folder.
+最重要的几条规则： 
+* `.dll` 文件在苹果眼中不算代码，因此应放进 `/Resources` 目录，也不需要签名。
+* `/MacOS` 文件中只应放可执行的 mach-o，也就是你的应用可执行文件和其他辅助可执行程序。
+* 其余所有 mach-o 的 `.dylib` 文件都应放在 `Frameworks/` 目录中。
 
-To satisfy this requirement, you can use relative symlinks from the `MacOS/` folder to `Resources/` and `Frameworks/` folders. As an example:
+要满足这条要求，可以从 `MacOS/` 目录建相对符号链接指向 `Resources/` 和 `Frameworks/` 目录。例如：
 
 `ln -s fromFile toFile`
 
-Also it's better to rewrite your app's resources access scheme to directly access `Resources/` folder without using any symlinks, because over symlinks you might get I/O access issues in sandbox.
+另外，最好把应用访问资源的方式改成直接读取 `Resources/` 目录、不经任何符号链接，因为在沙盒中走符号链接可能遇到 I/O 访问问题。
 
-### Sandbox entitlements and signing
+### 沙盒 entitlements 与签名 {#sandbox-entitlements-and-signing}
 
-Entitlements are key-value pairs that declare the specific capabilities your app needs, such as network access, file system access, or JIT compilation. You declare them in an entitlements `.plist` file, and macOS enforces them at runtime. Choose only the entitlements your app actually requires.
+entitlements 是一组键值对，用来声明你的应用需要哪些具体能力，比如网络访问、文件系统访问或 JIT 编译。你把它们写在一个 entitlements `.plist` 文件里，macOS 会在运行时据此执法。请只申请应用确实需要的那些。
 
-The first entitlements file is for signing all helper executables inside the `.app/Contents/MacOS/` folder. It should look like this.
+第一份 entitlements 文件用于给 `.app/Contents/MacOS/` 目录内所有辅助可执行程序签名，大致长这样。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -390,7 +390,7 @@ The first entitlements file is for signing all helper executables inside the `.a
 </plist>
 ```
 
-The second is for signing the app executable and the whole app bundle. It should contain all of the app's permissions. Here is an example:
+第二份用于给应用可执行文件和整个应用包签名，它应当包含应用所需的全部权限。示例如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -415,7 +415,7 @@ The second is for signing the app executable and the whole app bundle. It should
 </plist>
 ```
 
-Here are some optional permissions your app may need:
+下面是你的应用可能用得上的一些可选权限：
 
 ```xml
     <key>com.apple.security.network.client</key>
@@ -434,9 +434,9 @@ Here are some optional permissions your app may need:
     </array>
 ```
 
-### Packaging script
+### 打包脚本 {#packaging-script}
 
-Here is an example packaging script with comments.
+这是一份带注释的打包脚本示例。
 
 ```bash
 #cleanup folders
@@ -488,23 +488,23 @@ echo "[INFO] Creating AppName.pkg"
 productbuild --component App/AppName.app /Applications --sign "$INSTALLER_SIGNING_IDENTITY" AppName.pkg
 ```
 
-### Testing a package
+### 测试打包结果 {#testing-a-package}
 
-Copy your `.app` into the Applications folder and launch it. If it launches correctly, you did everything right. If it crashes, open `Console.app` and check the crash report.
+把你的 `.app` 拷进「应用程序」文件夹并启动。能正常启动就说明一切无误；若崩溃，打开 `Console.app` 查看崩溃报告。
 
-### Uploading a package to the App Store
+### 把包上传到 App Store {#uploading-a-package-to-the-app-store}
 
-Open the Transporter app, sign in, select your \*.pkg package, and wait for validation and uploading to App Store Connect.
+打开 Transporter 应用，登录，选中你的 \*.pkg 包，然后等待校验并上传到 App Store Connect。
 
-If you receive any errors, fix them, package the app again, remove the file in Transporter, and select it again.
+若报错，先把问题修掉，重新打包，在 Transporter 里移除原文件后再重新选择它。
 
-When the upload succeeds, you will see your package in App Store Connect.
+上传成功后，你就能在 App Store Connect 中看到自己的包了。
 
-### Packaging in GitHub Actions workflow
+### 在 GitHub Actions 工作流中打包 {#packaging-in-github-actions-workflow}
 
-You can build the app in a CI/CD pipeline using the `dotnet` command. For code signing and notarization, a little extra work is required.
+你可以在 CI/CD 流水线里用 `dotnet` 命令构建应用。至于代码签名和公证，还得多做一点功课。
 
-`codesign` and `notarytool` read the certificate and credentials to talk to the notarization service from a Keychain on the build machine:
+`codesign` 和 `notarytool` 会从构建机的钥匙串中读取证书，以及与公证服务通信所需的凭据：
 
 ```bash
 # Create a new keychain
@@ -515,9 +515,9 @@ security default-keychain -s build.keychain
 security unlock-keychain -p "${{ secrets.KEYCHAIN_PASSWORD}}" build.keychain
 ```
 
-`KEYCHAIN_PASSWORD` is a password you generate specifically for this keychain. It can be generated on each build or a password you use for every build.
+`KEYCHAIN_PASSWORD` 是你专为这个钥匙串生成的密码，可以每次构建都重新生成，也可以固定用同一个。
 
-Next, the certificate for signing needs to be imported into the keychain. Because GitHub secrets only support strings, the certificate `.p12` file needs to be stored in base64 encoded form. In the pipeline the string is decoded to a file and added to the keychain:
+接着要把签名证书导入钥匙串。由于 GitHub secrets 只支持字符串，证书 `.p12` 文件需要以 base64 编码形式存放。在流水线中再把这串字符解码成文件并加进钥匙串：
 
 ```bash
 # Decode certificate to file
@@ -526,24 +526,24 @@ echo "${{ secrets.MACOS_CERTIFICATE }}" | base64 --decode > certificate.p12
 security import certificate.p12 -k build.keychain -P "${{ secrets.MACOS_CERTIFICATE_PWD}}" -T /usr/bin/codesign
 ```
 
-`MACOS_CERTIFICATE` is the base64 encoded `.p12` file, `MACOS_CERTIFICATE_PWD` is the password to the `.p12` file.
+`MACOS_CERTIFICATE` 是 base64 编码后的 `.p12` 文件，`MACOS_CERTIFICATE_PWD` 是该 `.p12` 文件的密码。
 
-To prevent authorisation prompt popups during code signing, instruct keychain to allow `codesign` access:
+为避免代码签名过程中弹出授权提示框，请让钥匙串放行 `codesign` 的访问：
 
 ```bash
 # Allow codesign to access keychain
 security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "${{ secrets.KEYCHAIN_PASSWORD}}" build.keychain
 ```
 
-As Apple requires multi-factor authentication (MFA) on developer accounts, `notarytool` uses a dedicated app-password that you can generate on the Apple developer site. Add the app-password for `notarytool` so it can be used later:
+由于苹果要求开发者账号启用多因素认证（MFA），`notarytool` 改用一个专门的 App 专用密码，可在 Apple 开发者网站上生成。把这个密码添加给 `notarytool`，后面就能直接用了：
 
 ```bash
 xcrun notarytool store-credentials "AC_PASSWORD" --apple-id "${{ secrets.APPLE_ID }}" --team-id ${{ env.TEAM_ID }} --password "${{ secrets.NOTARY_TOOL_PASSWORD }}"
 ```
 
-`TEAM_ID` is the team id in App Store Connect, `APPLE_ID` is your Apple account e-mail address, `NOTARY_TOOL_PASSWORD` is the app-password you generated.
+`TEAM_ID` 是 App Store Connect 中的团队 ID，`APPLE_ID` 是你 Apple 账号的邮箱地址，`NOTARY_TOOL_PASSWORD` 则是你生成的 App 专用密码。
 
-To use these steps in your GitHub Actions workflow add them as a step to the job that builds your app:
+要在 GitHub Actions 工作流中用上这几步，把它们作为一个步骤加进构建应用的那个作业里：
 
 ```yaml
 jobs:
@@ -563,17 +563,17 @@ jobs:
         xcrun notarytool store-credentials "AC_PASSWORD" --apple-id "${{ secrets.APPLE_ID }}" --team-id ${{ env.TEAM_ID }} --password "${{ secrets.NOTARY_TOOL_PASSWORD }}"
 ```
 
-When configured like this you will not have to specify a specific keychain file for `codesign` or `notarytool` to use.
+这样配置之后，你就不必再为 `codesign` 或 `notarytool` 指定具体的钥匙串文件了。
 
-The next steps are to publish the app and sign it. 
-Start by adding this environment variable to the job:
+接下来是发布应用并签名。
+先给这个作业加上这个环境变量：
 
 ```yaml
     env:
       SIGNING_IDENTITY: thumbprint_of_certificate_added_to_keychain
 ```
 
-And then add these steps:
+然后加上这几步：
 
 ```yaml
     - name: Publish app
@@ -590,9 +590,9 @@ And then add these steps:
         codesign --force --timestamp --options=runtime --entitlements MyApp.entitlements --sign "${{ env.SIGNING_IDENTITY }}" "$RUNNER_TEMP/MyApp.app"
 ```
 
-> **Note:** `RUNNER_TEMP` is an environment variable provided by GitHub Actions
+> **注意：**`RUNNER_TEMP` 是 GitHub Actions 提供的环境变量
 
-After code signing, the app bundle can now be notarized by adding this step to the job:
+代码签名完成后，再往作业里加上这一步，就能给应用包做公证了：
 
 ```yaml
     - name: Notarise app
@@ -602,15 +602,15 @@ After code signing, the app bundle can now be notarized by adding this step to t
         xcrun stapler staple "$RUNNER_TEMP/MyApp.app"
 ```
 
-When you run this workflow you will have an app bundle that is signed and notarized, ready for packaging in a disk image or installer.
+跑完这套工作流，你就得到一个已签名、已公证的应用包，可以打进磁盘映像或安装器了。
 
-To verify that code signing worked, you will need to download it first to trigger the quarantine functionality of macOS. You can do this by e-mailing it to yourself or using a service like WeTransfer or similar.
+要验证代码签名是否生效，得先把它下载下来，以触发 macOS 的隔离机制。办法可以是把它邮件发给自己，或者用 WeTransfer 之类的服务中转一下。
 
-Once you've downloaded the app bundle and want to start it, you should see the popup from macOS saying that the app was scanned and no malware was found.
+下载好应用包、准备启动时，你应该会看到 macOS 弹窗提示：该应用已扫描，未发现恶意软件。
 
 ## 另请参阅 {#see-also}
 
-- [Packaging for macOS with Parcel](/tools/parcel/packaging-for-macos) to automate bundling, signing, and notarization
-- [macOS platform integration](/docs/platform-specific-guides/macos) for URL schemes, file associations, and native APIs
-- [Deploying to iOS](/docs/deployment/ios) for iOS and Mac Catalyst builds from the same project
-- [Publishing with Native AOT](/docs/deployment/native-aot) for ahead-of-time compiled builds
+- [用 Parcel 为 macOS 打包](/tools/parcel/packaging-for-macos)：自动完成打包、签名和公证
+- [macOS 平台集成](/docs/platform-specific-guides/macos)：URL 方案、文件关联与原生 API
+- [部署到 iOS](/docs/deployment/ios)：用同一个项目构建 iOS 和 Mac Catalyst 版本
+- [用 Native AOT 发布](/docs/deployment/native-aot)：提前编译的构建方式

@@ -238,7 +238,7 @@ Values range from `0.0` (fully transparent) to `1.0` (fully opaque). Unlike `Opa
 
 ### IsVisible vs Opacity
 
-| 办法 | Layout impact | Interaction | Animations |
+| 办法 | Layout impact | Interaction | 动画 |
 | --- | --- | --- | --- |
 | `IsVisible="False"` | Element is removed from layout. | Cannot receive input. | [Keyframe animations](/docs/graphics-animation/keyframe-animations) pause by default. |
 | `Opacity="0"` | Element still occupies space. | Can still receive pointer and keyboard input. | [Keyframe animations](/docs/graphics-animation/keyframe-animations) keep running. |

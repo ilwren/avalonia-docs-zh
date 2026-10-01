@@ -1,6 +1,6 @@
 ---
 id: composition-animations
-title: Composition animations
+title: 组合动画
 description: Code-driven render-thread animations using the composition animation API in Avalonia.
 doc-type: explanation
 ---

@@ -63,33 +63,33 @@ public enum BitmapBlendingMode
 | 名称 | 说明 |
 | --- | --- |
 | [Color](#uid-b1b78b7c3c) | Creates a color with the hue and saturation of the source color and the luminosity of the backdrop color. |
-| [ColorBurn](#uid-0257b1ae21) | Multiplies or screens the colors, depending on the source color value. |
+| [ColorBurn](#uid-0257b1ae21) | 视源色的取值，对颜色作正片叠底或滤色处理。 |
 | [ColorDodge](#uid-32e4f07d1b) | Darkens the backdrop color to reflect the source color. |
 | [Darken](#uid-aa64490829) | Selects the darker of the backdrop and source colors. |
-| [Destination](#uid-036ccef292) | Only the destination will be present. |
-| [DestinationAtop](#uid-5a465af4b4) | Destination which overlaps the source replaces the source. |
-| [DestinationIn](#uid-6fda88e9dc) | Destination which overlaps the source, replaces the source. |
-| [DestinationOut](#uid-0a99a9dbd2) | Destination is placed, where it falls outside of the source. |
-| [DestinationOver](#uid-867ce1e5f8) | Destination is placed over the source. |
-| [Difference](#uid-e6c0d26f4b) | Produces an effect similar to that of the Difference mode but lower in contrast. |
-| [Exclusion](#uid-2603b9403e) | The source color is multiplied by the destination color and replaces the destination |
-| [HardLight](#uid-9a3680a691) | Darkens or lightens the colors, depending on the source color value. |
+| [Destination](#uid-036ccef292) | 只保留目标。 |
+| [DestinationAtop](#uid-5a465af4b4) | 目标中与源重叠的部分取代源。 |
+| [DestinationIn](#uid-6fda88e9dc) | 目标中与源重叠的部分取代源。 |
+| [DestinationOut](#uid-0a99a9dbd2) | 只保留目标落在源之外的部分。 |
+| [DestinationOver](#uid-867ce1e5f8) | 目标叠在源之上。 |
+| [Difference](#uid-e6c0d26f4b) | 效果类似 Difference 模式，但对比度更低。 |
+| [Exclusion](#uid-2603b9403e) | 源色与目标色相乘，结果取代目标 |
+| [HardLight](#uid-9a3680a691) | 视源色的取值，把颜色调暗或调亮。 |
 | [Hue](#uid-c4f43ead4f) | Creates a color with the hue of the source color and the saturation and luminosity of the backdrop color. |
 | [Lighten](#uid-1868734de0) | Selects the lighter of the backdrop and source colors. |
 | [Luminosity](#uid-c8f3d919b7) | Creates a color with the luminosity of the source color and the hue and saturation of the backdrop color. |
 | [Multiply](#uid-48e9195200) | Creates a color with the hue of the source color and the saturation and luminosity of the backdrop color. |
 | [Overlay](#uid-740309ccc9) | Multiplies or screens the colors, depending on the backdrop color value. |
-| [Plus](#uid-0f88edadb2) | Display the sum of the source image and destination image. |
+| [Plus](#uid-0f88edadb2) | 显示源图与目标图之和。 |
 | [Saturation](#uid-505c4c36ac) | Creates a color with the saturation of the source color and the hue and luminosity of the backdrop color. |
 | [Screen](#uid-4fbc97ae36) | Multiplies the complements of the backdrop and source color values, then complements the result. |
-| [SoftLight](#uid-5fe5d770f8) | Subtracts the darker of the two constituent colors from the lighter color. |
-| [Source](#uid-96157a2b3a) | Only the source will be present. |
-| [SourceAtop](#uid-5451bfcdf1) | Source which overlaps the destination, replaces the destination. |
-| [SourceIn](#uid-682507b703) | The source that overlaps the destination, replaces the destination. |
-| [SourceOut](#uid-408da12281) | Source is placed, where it falls outside of the destination. |
+| [SoftLight](#uid-5fe5d770f8) | 用两种颜色中较亮的减去较暗的。 |
+| [Source](#uid-96157a2b3a) | 只保留源。 |
+| [SourceAtop](#uid-5451bfcdf1) | 源中与目标重叠的部分取代目标。 |
+| [SourceIn](#uid-682507b703) | 源与目标重叠的部分取代目标。 |
+| [SourceOut](#uid-408da12281) | 只保留源落在目标之外的部分。 |
 | [SourceOver](#uid-79be6a022c) | Source is placed over the destination. |
 | [Unspecified](#uid-1adc3c04fc) | 暂无摘要。 |
-| [Xor](#uid-a088525682) | The non-overlapping regions of source and destination are combined. |
+| [Xor](#uid-a088525682) | 保留源与目标互不重叠的区域并把它们合并。 |
 
 <section className="apiref-page__member-entry">
 
@@ -111,7 +111,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Color
 
 ### ColorBurn 字段 {#colorburn-field}
 
-Multiplies or screens the colors, depending on the source color value.
+视源色的取值，对颜色作正片叠底或滤色处理。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode ColorBurn
@@ -153,7 +153,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Darken
 
 ### Destination 字段 {#destination-field}
 
-Only the destination will be present.
+只保留目标。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Destination
@@ -167,7 +167,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Destination
 
 ### DestinationAtop 字段 {#destinationatop-field}
 
-Destination which overlaps the source replaces the source.
+目标中与源重叠的部分取代源。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode DestinationAtop
@@ -181,7 +181,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode DestinationAtop
 
 ### DestinationIn 字段 {#destinationin-field}
 
-Destination which overlaps the source, replaces the source.
+目标中与源重叠的部分取代源。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode DestinationIn
@@ -195,7 +195,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode DestinationIn
 
 ### DestinationOut 字段 {#destinationout-field}
 
-Destination is placed, where it falls outside of the source.
+只保留目标落在源之外的部分。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode DestinationOut
@@ -209,7 +209,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode DestinationOut
 
 ### DestinationOver 字段 {#destinationover-field}
 
-Destination is placed over the source.
+目标叠在源之上。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode DestinationOver
@@ -223,7 +223,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode DestinationOver
 
 ### Difference 字段 {#difference-field}
 
-Produces an effect similar to that of the Difference mode but lower in contrast.
+效果类似 Difference 模式，但对比度更低。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Difference
@@ -237,7 +237,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Difference
 
 ### Exclusion 字段 {#exclusion-field}
 
-The source color is multiplied by the destination color and replaces the destination
+源色与目标色相乘，结果取代目标
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Exclusion
@@ -251,7 +251,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Exclusion
 
 ### HardLight 字段 {#hardlight-field}
 
-Darkens or lightens the colors, depending on the source color value.
+视源色的取值，把颜色调暗或调亮。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode HardLight
@@ -335,7 +335,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Overlay
 
 ### Plus 字段 {#plus-field}
 
-Display the sum of the source image and destination image.
+显示源图与目标图之和。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Plus
@@ -377,7 +377,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Screen
 
 ### SoftLight 字段 {#softlight-field}
 
-Subtracts the darker of the two constituent colors from the lighter color.
+用两种颜色中较亮的减去较暗的。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode SoftLight
@@ -391,7 +391,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode SoftLight
 
 ### Source 字段 {#source-field}
 
-Only the source will be present.
+只保留源。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Source
@@ -405,7 +405,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Source
 
 ### SourceAtop 字段 {#sourceatop-field}
 
-Source which overlaps the destination, replaces the destination.
+源中与目标重叠的部分取代目标。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode SourceAtop
@@ -419,7 +419,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode SourceAtop
 
 ### SourceIn 字段 {#sourcein-field}
 
-The source that overlaps the destination, replaces the destination.
+源与目标重叠的部分取代目标。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode SourceIn
@@ -433,7 +433,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode SourceIn
 
 ### SourceOut 字段 {#sourceout-field}
 
-Source is placed, where it falls outside of the destination.
+只保留源落在目标之外的部分。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode SourceOut
@@ -473,7 +473,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Unspecified
 
 ### Xor 字段 {#xor-field}
 
-The non-overlapping regions of source and destination are combined.
+保留源与目标互不重叠的区域并把它们合并。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Xor

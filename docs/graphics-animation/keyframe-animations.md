@@ -123,7 +123,7 @@ You can make an animation repeat for a set number of times, or infinitely, by se
 </Animation>
 ```
 
-### Playback direction
+### 播放方向 {#playback-direction}
 
 By default, an animation plays forward, following the profile of the easing function from left to right. You can alter this behavior by setting the `PlaybackDirection` attribute.
 
@@ -135,7 +135,7 @@ By default, an animation plays forward, following the profile of the easing func
 
 For a full list of `PlaybackDirection` options, see the [animation settings reference](/docs/graphics-animation/animation-settings#playback-direction).
 
-### Fill mode
+### 填充模式 {#fill-mode}
 
 The fill mode attribute of an animation defines how the properties being set will persist after it runs, or during gaps between runs.
 
@@ -147,9 +147,9 @@ The fill mode attribute of an animation defines how the properties being set wil
 
 For a full list of `FillMode` options, see the [animation settings reference](/docs/graphics-animation/animation-settings#fill-mode).
 
-### Playback behavior
+### 播放行为 {#playback-behavior}
 
-By default, a keyframe animation pauses when its target control is not effectively visible. When the control becomes visible again, the animation resumes from where it paused.
+默认情况下，当目标控件实际不可见时，关键帧动画会暂停；控件重新可见后，动画从暂停处接着播。
 
 You can change this behavior by setting the `PlaybackBehavior` attribute.
 
@@ -165,7 +165,7 @@ For a full list of `PlaybackBehavior` options, see the [animation settings refer
 This playback behavior applies to keyframe animations only. [Control transitions](/docs/graphics-animation/control-transitions) and [composition animations](/docs/graphics-animation/composition-animations) are not affected.
 :::
 
-### Easing functions
+### 缓动函数 {#easing-functions}
 
 An easing function defines how a property is varied over time during an animation.
 
@@ -240,6 +240,6 @@ await animation.RunAsync(Rect);
 ## 另请参阅 {#see-also}
 
 - [Animation Settings](/docs/graphics-animation/animation-settings): Duration, delay, iteration count, and playback direction.
-- [Easing Functions](/docs/graphics-animation/easing-functions): All available easing functions.
-- [Control Transitions](/docs/graphics-animation/control-transitions): Animating property changes with transitions.
+- [缓动函数](/docs/graphics-animation/easing-functions)：全部可用的缓动函数。
+- [控件过渡](/docs/graphics-animation/control-transitions)：用过渡为属性变化加动画。
 - [PlaybackBehavior](/api/avalonia/animation/playbackbehavior): API reference for visibility-based playback control.

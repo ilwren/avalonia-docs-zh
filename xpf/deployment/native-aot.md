@@ -7,7 +7,7 @@ doc-type: how-to
 
 Native AOT (Ahead-of-Time) compilation is supported in XPF. Unlike WPF, XPF does not use COM marshalling, which allows it to be compatible with AOT compilation. Large applications using third-party control libraries can be successfully compiled with Native AOT.
 
-## Project configuration
+## 项目配置 {#project-configuration}
 
 Add `PublishAot` to your `.csproj`.
 
@@ -19,15 +19,15 @@ Add `PublishAot` to your `.csproj`.
 
 ## 发布 {#publishing}
 
-To publish your app, run `dotnet publish` in the command line:
+在命令行运行 `dotnet publish` 即可发布应用：
 
 ```
 dotnet publish -r <runtime> -c Release
 ```
 
-As an example, `dotnet publish -r osx-arm64 -c Release` would publish the app for Apple Silicon devices.
+举例来说，`dotnet publish -r osx-arm64 -c Release` 会为 Apple Silicon 设备发布应用。
 
-For more information, please see [Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8#publish-native-aot-using-the-cli) and [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish) on the .NET documentation site.
+更多信息请参阅 .NET 官方文档站上的 [Native AOT 部署](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8#publish-native-aot-using-the-cli)和 [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)。
 
 ## Trimming by the Native AOT linker
 
@@ -46,7 +46,7 @@ If you are experiencing runtime errors due to missing types, check if you are us
 </ItemGroup>
 ```
 
-For information, please see [Trimming](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file) on the .NET documentation site.
+相关说明请参阅 .NET 官方文档站上的[裁剪](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file)。
 
 ## 另请参阅 {#see-also}
 

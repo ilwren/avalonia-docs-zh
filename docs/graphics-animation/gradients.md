@@ -113,7 +113,7 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 </RadialGradientBrush>
 ```
 
-### Key properties
+### 关键属性 {#key-properties}
 
 | 属性 | 说明 |
 |---|---|
@@ -157,7 +157,7 @@ You can create non-circular gradients by giving `RadiusX` and `RadiusY` differen
 </ConicGradientBrush>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-1}
 
 | 属性 | 说明 |
 |---|---|

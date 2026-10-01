@@ -1,7 +1,7 @@
 ---
 id: animation-settings
-title: Animation settings
-description: Configuration options for keyframe animations including easing, fill mode, and playback.
+title: 动画设置
+description: 关键帧动画的各项配置，包括缓动、填充模式和播放方式。
 doc-type: reference
 ---
 
@@ -37,17 +37,17 @@ import SineEaseInScreenshot from '/img/reference/animations-and-graphics/animati
 import SineEaseInOutScreenshot from '/img/reference/animations-and-graphics/animation-settings/sine-ease-in-out.png';
 import SineEaseOutScreenshot from '/img/reference/animations-and-graphics/animation-settings/sine-ease-out.png';
 
-This section describes how `Animation` playback can be customized.
+本节介绍 `Animation` 的播放过程可以怎样定制。
 
-## Easing functions
+## 缓动函数 {#easing-functions}
 
-Easing functions describe how quickly an animated property changes from its starting value into its ending value across the animation time. `Avalonia.Animation.Easings` contains the following easings:
+缓动函数描述的是：在整段动画时间里，被动画的属性从起始值变到结束值的快慢节奏。`Avalonia.Animation.Easings` 提供了下列缓动函数：
 
 | 默认值                                                       |
 |---------------------------------------------------------------|
 | `LinearEasing`<br/><Image light={LinearEasingScreenshot} alt="Graph showing linear easing curve" position="center" maxWidth={400} cornerRadius="true"/> |
 
-| Ease-In                                                                 | Ease-Out                                                                  | Ease-In-Out                                                                   |
+| 缓入（Ease-In）                                                                 | 缓出（Ease-Out）                                                                  | 缓入缓出（Ease-In-Out）                                                                   |
 |-------------------------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 | `SineEaseIn`<br/><Image light={SineEaseInScreenshot} alt="Graph showing SineEaseIn curve" position="center" maxWidth={400} cornerRadius="true"/>               | `SineEaseOut`<br/><Image light={SineEaseOutScreenshot} alt="Graph showing SineEaseOut curve" position="center" maxWidth={400} cornerRadius="true"/>               | `SineEaseInOut`<br/><Image light={SineEaseInOutScreenshot} alt="Graph showing SineEaseInOut curve" position="center" maxWidth={400} cornerRadius="true"/>               |
 | `QuadraticEaseIn`<br/><Image light={QuadraticEaseInScreenshot} alt="Graph showing QuadraticEaseIn curve" position="center" maxWidth={400} cornerRadius="true"/>     | `QuadraticEaseOut`<br/><Image light={QuadraticEaseOutScreenshot} alt="Graph showing QuadraticEaseOut curve" position="center" maxWidth={400} cornerRadius="true"/>     | `QuadraticEaseInOut`<br/><Image light={QuadraticEaseInOutScreenshot} alt="Graph showing QuadraticEaseInOut curve" position="center" maxWidth={400} cornerRadius="true"/>     |
@@ -60,53 +60,53 @@ Easing functions describe how quickly an animated property changes from its star
 | `ElasticEaseIn`<br/><Image light={ElasticEaseInScreenshot} alt="Graph showing ElasticEaseIn curve" position="center" maxWidth={400} cornerRadius="true"/>         | `ElasticEaseOut`<br/><Image light={ElasticEaseOutScreenshot} alt="Graph showing ElasticEaseOut curve" position="center" maxWidth={400} cornerRadius="true"/>         | `ElasticEaseInOut`<br/><Image light={ElasticEaseInOutScreenshot} alt="Graph showing ElasticEaseInOut curve" position="center" maxWidth={400} cornerRadius="true"/>         |
 | `BounceEaseIn`<br/><Image light={BounceEaseInScreenshot} alt="Graph showing BounceEaseIn curve" position="center" maxWidth={400} cornerRadius="true"/>           | `BounceEaseOut`<br/><Image light={BounceEaseOutScreenshot} alt="Graph showing BounceEaseOut curve" position="center" maxWidth={400} cornerRadius="true"/>           | `BounceEaseInOut`<br/><Image light={BounceEaseInOutScreenshot} alt="Graph showing BounceEaseInOut curve" position="center" maxWidth={400} cornerRadius="true"/>           |
 
-Additionally, you can provide your own easing by deriving from `Easing` or by providing parameters to `SplineEasing` or `SpringEasing`.
+此外，你也可以派生 `Easing` 来自定义缓动，或者给 `SplineEasing`、`SpringEasing` 传入参数来调配。
 
-## Fill mode
+## 填充模式 {#fill-mode}
 
-The `FillMode` attribute of an `Animation` defines how the animated property persists after an animation completes and during delays in between runs.
+`Animation` 的 `FillMode` 特性决定了：动画结束之后、以及两次播放之间的延迟期内，被动画的属性该保持什么值。
 
 | 值      | 说明                                                                                               |
 |------------|-----------------------------------------------------------------------------------------------------------|
-| `None`     | Last value does not persist after animation. First value is not applied if the animation is delayed. |
-| `Forward`  | The last interpolated value is persisted after the animation ends.                                     |
-| `Backward` | The first interpolated value is displayed if the animation is delayed.                                        |
-| `Both`     | Both `Forward` and `Backward` behaviors are applied.                                                  |
+| `None`     | 动画结束后不保留末值；若动画有延迟，首值也不会提前生效。 |
+| `Forward`  | 动画结束后保留最后一个插值结果。                                     |
+| `Backward` | 若动画有延迟，延迟期间显示第一个插值结果。                                        |
+| `Both`     | 同时具备 `Forward` 和 `Backward` 两种行为。                                                  |
 
-## Playback direction
+## 播放方向 {#playback-direction}
 
-`PlaybackDirection` defines how the `Animation` is played. By default, an animation plays forward, following the profile of the easing function from left to right.
+`PlaybackDirection` 决定 `Animation` 怎么播。默认是正向播放，即沿缓动函数的曲线从左往右走。
 
 | 值              | 说明                                             |
 |--------------------|---------------------------------------------------------|
-| `Normal`           | (Default) Played forward.                       |
-| `Reverse`          | Played backward.           |
-| `Alternate`        | Played forward first, then backward. |
-| `AlternateReverse` | Played backward first, then forward. |
+| `Normal`           | （默认）正向播放。                       |
+| `Reverse`          | 反向播放。           |
+| `Alternate`        | 先正向播，再反向播。 |
+| `AlternateReverse` | 先反向播，再正向播。 |
 
-## Playback behavior
+## 播放行为 {#playback-behavior}
 
-By default, a keyframe animation pauses when its target control is not effectively visible. When the control becomes visible again, the animation resumes from where it paused.
+默认情况下，当目标控件实际不可见时，关键帧动画会暂停；控件重新可见后，动画从暂停处接着播。
 
-This behavior is intended to avoid waking the CPU to run animations the user cannot see. A control becomes effectively invisible when `IsVisible` is `false` on the control itself, or when an ancestor is hidden.
+这么做是为了避免为用户根本看不见的动画唤醒 CPU。控件自身的 `IsVisible` 为 `false`，或者它的某个祖先被隐藏时，该控件就算实际不可见。
 
 | 值           | 说明             |
 | ----------------| ----------------------- |
-| `Auto`          | (Default) Animation pauses when the control is not effectively visible. Animations started with `RunAsync`, or containing keyframes where `IsVisible="True"`, always play regardless of visibility. |
-| `Always`        | Animation always plays, regardless of visibility. |
-| `OnlyIfVisible` | Animation always pauses when the control is not effectively visible, even if started with `RunAsync`. |
+| `Auto`          | （默认）控件实际不可见时动画暂停。但用 `RunAsync` 启动的动画、以及含有 `IsVisible="True"` 关键帧的动画，无论可见与否都照常播放。 |
+| `Always`        | 动画始终播放，与是否可见无关。 |
+| `OnlyIfVisible` | 只要控件实际不可见，动画就一定暂停——哪怕它是用 `RunAsync` 启动的。 |
 
-## Iteration count
+## 重复次数 {#iteration-count}
 
-The `IterationCount` on an `Animation` element sets how many times it is to be replayed. There are two formats for this setting:
+`Animation` 元素上的 `IterationCount` 设定动画重播多少次。这个设置有两种写法：
 
 | 值      | 说明                                      |
 |------------|--------------------------------------------------|
-| `N`        | Where N is an integer. Play N times. N can be zero. |
-| `infinite` | Repeats forever.                                  |
+| `N`        | 其中 N 为整数，表示播放 N 次，N 可以为零。 |
+| `infinite` | 无限重复。                                  |
 
 ## 另请参阅 {#see-also}
 
-- [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Defining keyframe animations in XAML.
-- [Control Transitions](/docs/graphics-animation/control-transitions): Animating property changes with transitions.
-- [Easing Functions](/docs/graphics-animation/easing-functions): All available easing functions.
+- [关键帧动画](/docs/graphics-animation/keyframe-animations)：在 XAML 中定义关键帧动画。
+- [控件过渡](/docs/graphics-animation/control-transitions)：用过渡为属性变化加动画。
+- [缓动函数](/docs/graphics-animation/easing-functions)：全部可用的缓动函数。

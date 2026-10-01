@@ -8,7 +8,7 @@ doc-type: reference
 Settings page can be accessed from the **Tray Icon** menu (on Windows and Linux) or the **macOS global menu**.
 Alternatively, when an app is already connected, the settings page is available on the **left navigation bar**.
 
-| Category | Setting | 说明 | Default Value |
+| Category | 设置项 | 说明 | Default Value |
 |----------|---------|-------------|---------------|
 | **Appearance** |
 | | Theme Variant | Controls the application's color theme | Dark |

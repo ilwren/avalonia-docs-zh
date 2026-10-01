@@ -348,7 +348,7 @@ Define geometries as resources for reuse across your application:
 
 ## 另请参阅 {#see-also}
 
-- [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Overview of the Avalonia graphics system.
+- [绘制图形](/docs/graphics-animation/drawing-graphics)：Avalonia 图形系统概览。
 - [Brushes](/docs/graphics-animation/brushes): Fill and stroke brushes.
 - [Effects](/docs/graphics-animation/effects): Box shadows, clipping, and opacity masks.
 - [Adding Icons](/docs/graphics-animation/adding-icons): Using icon fonts and vector icons.

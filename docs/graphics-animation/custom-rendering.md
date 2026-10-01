@@ -374,7 +374,7 @@ The message arrives in the `OnMessage` callback, where you can store it for use 
 
 ### When to use CompositionCustomVisualHandler
 
-| 办法 | Thread | Use case |
+| 办法 | Thread | 适用场景 |
 |---|---|---|
 | `TopLevel.RequestAnimationFrame` | UI thread | Simple per-frame updates, property animation loops |
 | `CompositionCustomVisualHandler` | Render thread | Real-time visualizations, game loops, video rendering |

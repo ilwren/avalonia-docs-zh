@@ -254,7 +254,7 @@ Use a `Grid` to keep a header fixed while content scrolls beneath it:
 
 This pattern keeps the header visible at all times. The `ZIndex` on the header `Border` ensures it renders above the scrollable content if they overlap during transitions or animations.
 
-## Key properties
+## 关键属性 {#key-properties}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|

@@ -1,27 +1,27 @@
 ---
 id: native-aot
 title: Native AOT
-description: Publish Avalonia applications as native executables using ahead-of-time compilation.
+description: 用提前编译（AOT）把 Avalonia 应用发布为原生可执行程序。
 doc-type: how-to
 ---
 
-Native AOT (Ahead-of-Time) compilation allows you to publish your Avalonia applications as self-contained executables with native performance characteristics. This guide covers Avalonia-specific considerations and setup for Native AOT deployment.
+Native AOT（提前编译）让你能把 Avalonia 应用发布成自包含的可执行程序，并获得原生级的性能表现。本指南讲的是 Native AOT 部署中与 Avalonia 相关的注意事项和配置方法。
 
-## Benefits for Avalonia applications
+## 它能给 Avalonia 应用带来什么 {#benefits-for-avalonia-applications}
 
-Native AOT compilation provides the following advantages for Avalonia applications:
+对 Avalonia 应用而言，Native AOT 编译有这些好处：
 
-- Faster application startup time, particularly beneficial for desktop applications
-- Reduced memory footprint for resource-constrained environments
-- Self-contained deployment without requiring .NET runtime installation
-- Improved security through reduced attack surface (no JIT compilation)
-- Smaller distribution size when combined with trimming
+- 启动更快，这对桌面应用尤其受用
+- 内存占用更低，适合资源吃紧的环境
+- 自包含部署，目标机上无需安装 .NET 运行时
+- 攻击面更小（没有 JIT 编译），安全性更好
+- 配合裁剪使用时，分发体积更小
 
-## Setting up Native AOT for Avalonia
+## 为 Avalonia 配置 Native AOT {#setting-up-native-aot-for-avalonia}
 
-### Project configuration
+### 项目配置 {#project-configuration}
 
-Add the following to your `.csproj` file(s).
+把下面的内容加进你的 `.csproj` 文件。
 
 ```xml
 <PropertyGroup>
@@ -36,45 +36,45 @@ Add the following to your `.csproj` file(s).
 </PropertyGroup>
 ```
 
-For information, please see [Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/) on the .NET documentation site.
+相关说明请参阅 .NET 官方文档站上的 [Native AOT 部署](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/)。
 
-## Avalonia-specific considerations
+## 与 Avalonia 相关的注意事项 {#avalonia-specific-considerations}
 
-### XAML loading
-When using Native AOT, XAML is compiled into the application at build time. Ensure you:
-- Use `x:CompileBindings="True"` in your XAML files
-- Avoid dynamic XAML loading at runtime
-- Use static resource references instead of dynamic resources where possible
+### XAML 加载 {#xaml-loading}
+使用 Native AOT 时，XAML 会在构建期编译进应用。请确保你：
+- 在 XAML 文件中使用 `x:CompileBindings="True"`
+- 不要在运行时动态加载 XAML
+- 尽可能用静态资源引用，而不是动态资源
 
-### Assets and resources
-- Bundle all assets as embedded resources
-- Use `AvaloniaResource` build action for your assets
-- Avoid dynamic asset loading from external sources
+### 资产与资源 {#assets-and-resources}
+- 把所有资产都作为嵌入资源打包
+- 资产使用 `AvaloniaResource` 生成操作
+- 不要从外部来源动态加载资产
 
-### View models and dependency injection
-- Register your view models at startup
-- Use compile-time DI configuration
-- Avoid reflection-based service location
+### 视图模型与依赖注入 {#view-models-and-dependency-injection}
+- 在启动时注册你的视图模型
+- 采用编译期的 DI 配置
+- 不要用基于反射的服务定位
 
-## Publishing Avalonia Native AOT applications
+## 发布 Avalonia 的 Native AOT 应用 {#publishing-avalonia-native-aot-applications}
 
-To publish your app, run `dotnet publish` in the command line:
+在命令行运行 `dotnet publish` 即可发布应用：
 
 ```
 dotnet publish -r <runtime> -c Release
 ```
 
-As an example, `dotnet publish -r osx-arm64 -c Release` would publish the app for Apple Silicon devices.
+举例来说，`dotnet publish -r osx-arm64 -c Release` 会为 Apple Silicon 设备发布应用。
 
-For more information, please see [Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8#publish-native-aot-using-the-cli) and [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish) on the .NET documentation site.
+更多信息请参阅 .NET 官方文档站上的 [Native AOT 部署](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8#publish-native-aot-using-the-cli)和 [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)。
 
 :::tip
-You can then use Apple's [lipo tool](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary) to combine both Intel and Apple Silicon binaries, enabling you to ship  Universal binaries.
+之后你可以用苹果的 [lipo 工具](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary)把 Intel 和 Apple Silicon 两份二进制合二为一，从而发布通用二进制（Universal binary）。
 :::
 
-## Resolving reflection-related errors
+## 解决反射相关的错误 {#resolving-reflection-related-errors}
 
-Add a trimmer root descriptor to your `.csproj` file.
+在你的 `.csproj` 文件中添加裁剪器根描述符。
 
 ```xml title=".csproj"
 <ItemGroup>
@@ -83,25 +83,25 @@ Add a trimmer root descriptor to your `.csproj` file.
 </ItemGroup>
 ```
 
-For information, please see [Trimming](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file) on the .NET documentation site.
+相关说明请参阅 .NET 官方文档站上的[裁剪](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file)。
 
 ## 已知限制 {#known-limitations}
 
-When using Native AOT with Avalonia, be aware of these limitations:
-- Dynamic control creation must be configured in trimmer settings
-- Some third-party Avalonia controls may not be AOT-compatible
-- Platform-specific features need explicit configuration
-- Live preview in design-time tools may be limited
+在 Avalonia 中使用 Native AOT 时，请留意这些限制：
+- 动态创建控件必须在裁剪器设置中作相应配置
+- 部分第三方 Avalonia 控件可能不兼容 AOT
+- 平台专属功能需要显式配置
+- 设计时工具中的实时预览可能受限
 
 ## 平台支持 {#platform-support}
 
-For platform support, refer to [Platform/architecture restrictions](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/#platformarchitecture-restrictions).
+平台支持情况请参阅[平台/架构限制](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/#platformarchitecture-restrictions)。
 
 ## Avalonia XPF
 
-If you are using [Avalonia XPF](/xpf), Native AOT is also supported. See [XPF: Native AOT](/xpf/deployment/native-aot) for XPF-specific setup and usage.
+若你使用 [Avalonia XPF](/xpf)，它同样支持 Native AOT。XPF 下的配置和用法请参阅 [XPF：Native AOT](/xpf/deployment/native-aot)。
 
 ## 另请参阅 {#see-also}
 
-- [Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet9plus#platformarchitecture-restrictions): Microsoft documentation on Native AOT.
-- [Avalonia sample applications with Native AOT](https://github.com/AvaloniaUI/Avalonia.Samples): Example projects.
+- [Native AOT 部署](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet9plus#platformarchitecture-restrictions)：微软关于 Native AOT 的文档。
+- [使用 Native AOT 的 Avalonia 示例应用](https://github.com/AvaloniaUI/Avalonia.Samples)：示例项目。

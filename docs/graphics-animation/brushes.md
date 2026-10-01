@@ -1,15 +1,15 @@
 ---
 id: brushes
-title: Brushes
-description: Brush types for painting surfaces in Avalonia including solid colors, gradients, and tile brushes.
+title: 画刷
+description: Avalonia 中用于绘制表面的各类画刷：纯色、渐变和平铺画刷。
 doc-type: reference
 ---
 
-Brushes define how surfaces are painted in Avalonia. Every property that accepts a `Brush` (such as `Background`, `Foreground`, `BorderBrush`, `Fill`, and `Stroke`) can use any of the brush types described here.
+画刷决定了 Avalonia 中各个表面如何被绘制。凡是接受 `Brush` 的属性（比如 `Background`、`Foreground`、`BorderBrush`、`Fill` 和 `Stroke`），都能用上本文介绍的任意一种画刷。
 
 ## SolidColorBrush
 
-Fills an area with a single color. This is the most common brush type and is used implicitly when you set a color string on a brush property.
+用单一颜色填充区域。这是最常用的画刷类型——当你给某个画刷属性直接赋一个颜色字符串时，用的就是它。
 
 ```xml
 <Border Background="SteelBlue" />
@@ -22,22 +22,22 @@ Fills an area with a single color. This is the most common brush type and is use
 </Border>
 ```
 
-Colors can be specified as:
+颜色可以这样写：
 
 | 格式 | 示例 | 说明 |
 |---|---|---|
-| Named color | `Red`, `SteelBlue` | Any standard CSS/WPF color name. |
+| 具名颜色 | `Red`, `SteelBlue` | 任意标准的 CSS/WPF 颜色名。 |
 | `#RRGGBB` | `#4682B4` | Hex RGB. |
-| `#AARRGGBB` | `#804682B4` | Hex ARGB (with alpha). |
-| `#RGB` | `#F00` | Short hex RGB. |
-| `rgb()` | `rgb(70, 130, 180)` | CSS RGB function. Values 0-255. |
-| `rgba()` | `rgba(70, 130, 180, 0.8)` | CSS RGB with alpha (0.0-1.0). |
-| `hsl()` | `hsl(207, 44%, 49%)` | CSS HSL (hue, saturation, lightness). |
-| `hsla()` | `hsla(207, 44%, 49%, 0.8)` | CSS HSL with alpha. |
-| `hsv()` | `hsv(207, 61%, 71%)` | HSV (hue, saturation, value). |
-| `hsva()` | `hsva(207, 61%, 71%, 0.8)` | HSV with alpha. |
+| `#AARRGGBB` | `#804682B4` | 十六进制 ARGB（含 alpha）。 |
+| `#RGB` | `#F00` | 简写的十六进制 RGB。 |
+| `rgb()` | `rgb(70, 130, 180)` | CSS 的 RGB 函数写法，取值 0–255。 |
+| `rgba()` | `rgba(70, 130, 180, 0.8)` | 带 alpha 的 CSS RGB（0.0–1.0）。 |
+| `hsl()` | `hsl(207, 44%, 49%)` | CSS HSL（色相、饱和度、亮度）。 |
+| `hsla()` | `hsla(207, 44%, 49%, 0.8)` | 带 alpha 的 CSS HSL。 |
+| `hsv()` | `hsv(207, 61%, 71%)` | HSV（色相、饱和度、明度）。 |
+| `hsva()` | `hsva(207, 61%, 71%, 0.8)` | 带 alpha 的 HSV。 |
 
-These formats work anywhere a brush or color is expected, including XAML attributes, styles, and `Brush.Parse()` / `Color.Parse()` in code.
+凡是需要画刷或颜色的地方，这些写法都通用，XAML 特性、样式，以及代码中的 `Brush.Parse()` / `Color.Parse()` 都包括在内。
 
 ```xml
 <!-- All of these are equivalent -->
@@ -47,7 +47,7 @@ These formats work anywhere a brush or color is expected, including XAML attribu
 <Border Background="hsl(207, 44%, 49%)" />
 ```
 
-### Creating in code
+### 在代码中创建 {#creating-in-code}
 
 ```csharp
 var brush = new SolidColorBrush(Colors.SteelBlue);
@@ -57,11 +57,11 @@ var brush4 = Brush.Parse("hsl(207, 44%, 49%)");
 myBorder.Background = brush;
 ```
 
-`Brush.Parse()` accepts all the same color formats listed above, including named colors, hex values, and CSS color functions.
+`Brush.Parse()` 接受上面列出的全部颜色格式，具名颜色、十六进制值和 CSS 颜色函数都认。
 
 ## LinearGradientBrush
 
-Fills an area with a gradient that transitions between colors along a line. For a focused guide on linear gradients, see [Gradients](/docs/graphics-animation/gradients).
+用沿一条直线在若干颜色之间过渡的渐变填充区域。关于线性渐变的专题讲解，请参阅[渐变](/docs/graphics-animation/gradients)。
 
 ```xml
 <Border Height="80" CornerRadius="8">
@@ -74,17 +74,17 @@ Fills an area with a gradient that transitions between colors along a line. For 
 </Border>
 ```
 
-### Key properties
+### 关键属性 {#key-properties}
 
 | 属性 | 说明 |
 |---|---|
-| `StartPoint` | The starting point of the gradient line. Uses relative (`50%,0%`) or absolute coordinates. |
-| `EndPoint` | The ending point of the gradient line. |
-| [`GradientStops`](/api/avalonia/media/gradientstops) | A collection of `GradientStop` objects defining colors and positions. |
-| `SpreadMethod` | How the gradient fills space beyond its defined area: `Pad` (default), `Reflect`, or `Repeat`. |
-| `Opacity` | Overall opacity of the brush (0.0 to 1.0). |
+| `StartPoint` | 渐变线的起点，可用相对坐标（`50%,0%`）或绝对坐标。 |
+| `EndPoint` | 渐变线的终点。 |
+| [`GradientStops`](/api/avalonia/media/gradientstops) | 一组 `GradientStop` 对象，用来定义各个颜色及其位置。 |
+| `SpreadMethod` | 渐变如何填充其定义区域之外的空间：`Pad`（默认）、`Reflect` 或 `Repeat`。 |
+| `Opacity` | 画刷的整体不透明度（0.0 到 1.0）。 |
 
-### Gradient directions
+### 渐变方向 {#gradient-directions}
 
 ```xml
 <!-- Horizontal (left to right) -->
@@ -99,7 +99,7 @@ Fills an area with a gradient that transitions between colors along a line. For 
 
 ## RadialGradientBrush
 
-Fills an area with a gradient that radiates from a center point outward.
+用自中心点向外辐射的渐变填充区域。
 
 ```xml
 <Ellipse Width="150" Height="150">
@@ -113,12 +113,12 @@ Fills an area with a gradient that radiates from a center point outward.
 </Ellipse>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-1}
 
 | 属性 | 说明 |
 |---|---|
-| `Center` | The center of the outermost circle. Default is `50%,50%`. |
-| `GradientOrigin` | The origin of the gradient (focal point). Offset from center creates a spotlight effect. |
+| `Center` | 最外层圆的圆心，默认为 `50%,50%`。 |
+| `GradientOrigin` | 渐变的原点（焦点）。把它从圆心偏开，就能做出聚光灯一样的效果。 |
 | `RadiusX`, `RadiusY` | The horizontal and vertical radius of the outermost gradient circle. Default is `50%`. |
 | `GradientStops` | Colors and positions along the radius. |
 | `SpreadMethod` | `Pad`, `Reflect`, or `Repeat`. |
@@ -141,7 +141,7 @@ Fills an area with a gradient that sweeps around a center point, transitioning c
 </Ellipse>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-2}
 
 | 属性 | 说明 |
 |---|---|
@@ -164,7 +164,7 @@ Paints an area with an image.
 </Border>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-3}
 
 | 属性 | 说明 |
 |---|---|
@@ -208,7 +208,7 @@ Paints an area using the rendered output of another visual element.
 </Border>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-4}
 
 | 属性 | 说明 |
 |---|---|
