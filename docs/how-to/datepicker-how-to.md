@@ -146,7 +146,7 @@ The `Calendar` displays a full month view for inline date selection:
           SelectionMode="SingleDate" />
 ```
 
-### Selection modes
+### 选择模式 {#selection-modes}
 
 ```xml
 <!-- Single date -->

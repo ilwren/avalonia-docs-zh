@@ -1,7 +1,7 @@
 ---
 id: filtering
-title: Filtering
-description: Learn how to filter rows in the Avalonia TreeDataGrid control using predicate functions, including multi-criteria, enum, null-safe, and hierarchical filtering patterns.
+title: 筛选
+description: 了解如何用谓词函数筛选 Avalonia TreeDataGrid 控件中的行，包括多条件筛选、枚举筛选、空值安全筛选和层级筛选等写法。
 doc-type: reference
 tags:
   - avalonia pro
@@ -12,27 +12,27 @@ tags:
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-Filtering lets you display only the rows that match specific criteria in your `TreeDataGrid`. Both `FlatTreeDataGridSource` and `HierarchicalTreeDataGridSource` support filtering through predicate functions.
+筛选让你只显示 `TreeDataGrid` 中符合特定条件的行。`FlatTreeDataGridSource` 和 `HierarchicalTreeDataGridSource` 都通过谓词函数支持筛选。
 
 :::note
-Filtering requires the code-behind `Source` approach. There is currently no XAML equivalent for filtering. You must create a `FlatTreeDataGridSource` or `HierarchicalTreeDataGridSource` in your view model.
+筛选必须采用代码隐藏中的 `Source` 写法，目前没有对应的 XAML 做法。你需要在视图模型里创建一个 `FlatTreeDataGridSource` 或 `HierarchicalTreeDataGridSource`。
 :::
 
-## Enabling filtering
+## 启用筛选 {#enabling-filtering}
 
-You enable filtering by calling the `Filter` method on your `FlatTreeDataGridSource` or `HierarchicalTreeDataGridSource` with a predicate function. The predicate receives each model item and returns `true` if the item should be visible, or `false` if it should be hidden.
+在 `FlatTreeDataGridSource` 或 `HierarchicalTreeDataGridSource` 上调用 `Filter` 方法并传入一个谓词函数，即可启用筛选。该谓词接收每个模型项，若该项应当可见则返回 `true`，应当隐藏则返回 `false`。
 
-### Basic string filtering
+### 基本的字符串筛选 {#basic-string-filtering}
 
-To filter a model with a string `Name` property according to a value stored in `_filterString`:
+若要按 `_filterString` 中保存的值来筛选模型的字符串属性 `Name`：
 
 ```csharp
 Source.Filter(x => x.Name.Contains(_filterString, StringComparison.CurrentCultureIgnoreCase));
 ```
 
-### Multiple criteria filtering
+### 多条件筛选 {#multiple-criteria-filtering}
 
-You can combine multiple conditions in your filter predicate:
+你可以在筛选谓词中组合多个条件：
 
 ```csharp
 // Filter by name AND minimum age
@@ -47,18 +47,18 @@ Source.Filter(x =>
     x.Email.Contains(_searchText, StringComparison.CurrentCultureIgnoreCase));
 ```
 
-### Enum and category filtering
+### 枚举与分类筛选 {#enum-and-category-filtering}
 
-When your model includes an enum or category property, you can filter against a selected value:
+当模型带有枚举或分类属性时，你可以按选中的取值来筛选：
 
 ```csharp
 // Filter by a selected department enum
 Source.Filter(x => _selectedDepartment == null || x.Department == _selectedDepartment);
 ```
 
-### Null-safe filtering
+### 空值安全的筛选 {#null-safe-filtering}
 
-If the properties you are filtering on can be `null`, guard against `NullReferenceException` in your predicate:
+如果用于筛选的属性可能为 `null`，请在谓词中先挡住 `NullReferenceException`：
 
 ```csharp
 Source.Filter(x =>
@@ -66,9 +66,9 @@ Source.Filter(x =>
     (x.Email?.Contains(_filterString, StringComparison.CurrentCultureIgnoreCase) ?? false));
 ```
 
-### Complex filtering
+### 复杂筛选 {#complex-filtering}
 
-Filter predicates can use any C# expression, including LINQ methods and helper functions:
+筛选谓词里可以写任意 C# 表达式，包括 LINQ 方法和辅助函数：
 
 ```csharp
 // Filter using LINQ methods
@@ -87,9 +87,9 @@ private bool IsMatchingCriteria(Person person)
 }
 ```
 
-## Updating the filter
+## 更新筛选 {#updating-the-filter}
 
-When your filter predicate depends on external variables (such as `_filterString` in the examples above), you need to refresh the filter whenever those variables change. Call `RefreshFilter` to re-evaluate the predicate for every item:
+当筛选谓词依赖外部变量时（比如上面例子中的 `_filterString`），这些变量一变，你就得刷新筛选。调用 `RefreshFilter` 即可对每一项重新求值：
 
 ```csharp
 private string _filterString = string.Empty;
@@ -106,30 +106,30 @@ public string FilterString
 ```
 
 :::info
-You do not need to call `RefreshFilter` when you call `Filter` to replace the predicate itself. Call it only when the external variables that the existing predicate depends on change.
+调用 `Filter` 替换谓词本身时，不必再调用 `RefreshFilter`。只有当现有谓词所依赖的外部变量发生变化时，才需要调用它。
 :::
 
-## Clearing the filter
+## 清除筛选 {#clearing-the-filter}
 
-To remove filtering and show all items again, pass `null` to the `Filter` method:
+若要取消筛选、重新显示全部条目，给 `Filter` 方法传 `null` 即可：
 
 ```csharp
 Source.Filter(null);
 ```
 
-This is useful when your user clears a search box or resets filter controls.
+用户清空搜索框或重置筛选控件时，这一招很有用。
 
-## Hierarchical data filtering
+## 层级数据的筛选 {#hierarchical-data-filtering}
 
-When you filter hierarchical data with `HierarchicalTreeDataGridSource`, the predicate is evaluated independently for each item at every level of the hierarchy. Each item is shown or hidden based solely on whether it matches the filter. The control does not automatically show parent items because their children match, or vice versa.
+用 `HierarchicalTreeDataGridSource` 筛选层级数据时，谓词会对层级中每一层的每一项各自独立求值。每一项是显示还是隐藏，只取决于它自己是否匹配。控件不会因为某项的子项匹配就自动显示该父项，反之亦然。
 
 :::warning
-Filtering large hierarchical trees can be expensive because every node must be visited. If performance is a concern, consider building the filter state into your data model so that you can skip entire subtrees.
+筛选庞大的层级树开销不小，因为每个节点都得走一遍。若在意性能，可以考虑把筛选状态做进数据模型里，这样就能整棵子树一起跳过。
 :::
 
-### Keeping parent items visible
+### 让父项保持可见 {#keeping-parent-items-visible}
 
-If you want parent items to remain visible whenever any of their children match the filter, you need to implement that logic yourself. One approach is to pre-compute a set of matching IDs (including ancestor IDs) and check membership in the predicate:
+如果你希望只要有子项匹配、父项就一直可见，这段逻辑得自己实现。一种做法是预先算出一组匹配项的 ID（连同其祖先的 ID），再在谓词里判断是否在这组 ID 之中：
 
 ```csharp
 var matchingIds = new HashSet<int>();
@@ -159,16 +159,16 @@ Source.Filter(x => matchingIds.Contains(x.Id));
 
 ## 性能考量 {#performance-considerations}
 
-Filter operations run on the UI thread and re-evaluate every item in the source. For large datasets, keep these guidelines in mind:
+筛选操作在 UI 线程上执行，并会对数据源中的每一项重新求值。面对大数据集，请记住以下几点：
 
-- **Throttle user input.** When filtering is driven by a [`TextBox`](/api/avalonia/controls/textbox), use `Observable.Throttle` or a delay timer so the predicate does not run on every keystroke.
-- **Keep predicates fast.** Avoid allocations, regular expressions, or database calls inside the predicate.
-- **Pre-compute expensive values.** Store searchable text in a dedicated property so the predicate only needs a simple string comparison.
-- **Filter upstream for very large collections.** If your dataset has tens of thousands of rows, consider filtering the underlying collection before binding it to the grid.
+- **给用户输入加节流。**当筛选由 [`TextBox`](/api/avalonia/controls/textbox) 驱动时，请用 `Observable.Throttle` 或延时计时器，别让谓词每敲一个键就跑一遍。
+- **让谓词跑得快。**谓词内部要避免分配内存、使用正则表达式或访问数据库。
+- **预先算好开销大的值。**把可检索的文本存进一个专门的属性，这样谓词只需做一次简单的字符串比较。
+- **超大集合请在上游筛选。**如果数据集有几万行，不妨先筛好底层集合，再绑定到网格上。
 
-### Throttled filtering example
+### 节流筛选示例 {#throttled-filtering-example}
 
-You can use Reactive Extensions to throttle filter updates from a `TextBox`:
+你可以用 Reactive Extensions 为来自 `TextBox` 的筛选更新加节流：
 
 ```csharp
 this.WhenAnyValue(x => x.SearchText)
@@ -177,9 +177,9 @@ this.WhenAnyValue(x => x.SearchText)
     .Subscribe(_ => ApplyFilter());
 ```
 
-## Complete example
+## 完整示例 {#complete-example}
 
-The following example wires a search `TextBox` to a `FlatTreeDataGridSource<Person>` filter.
+下面这个例子把一个搜索用的 `TextBox` 接到了 `FlatTreeDataGridSource<Person>` 的筛选上。
 
 **ViewModel:**
 
@@ -250,8 +250,8 @@ public class PersonListViewModel : ViewModelBase
 
 ## 另请参阅 {#see-also}
 
-- [TreeDataGrid overview](/controls/data-display/structured-data/treedatagrid/)
-- [Column types](/controls/data-display/structured-data/treedatagrid/column-types)
+- [TreeDataGrid 总览](/controls/data-display/structured-data/treedatagrid/)
+- [列类型](/controls/data-display/structured-data/treedatagrid/column-types)
 - [Sorting](/controls/data-display/structured-data/treedatagrid/sorting)
-- [Selection modes](/controls/data-display/structured-data/treedatagrid/selection-modes)
-- [Expand and collapse operations](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)
+- [选择模式](/controls/data-display/structured-data/treedatagrid/selection-modes)
+- [展开与折叠操作](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)

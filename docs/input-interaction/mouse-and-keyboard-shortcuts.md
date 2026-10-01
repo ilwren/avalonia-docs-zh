@@ -66,7 +66,7 @@ You can attach a `ContextMenu` to any control. The menu appears when the user ri
 </TextBlock>
 ```
 
-## Complete example
+## 完整示例 {#complete-example}
 
 The following example combines all three techniques in a single view. A `ListBox` displays a list of operating systems. Pressing Enter or double-clicking an item prints it to a `TextBlock`, and right-clicking the `TextBlock` clears the result.
 

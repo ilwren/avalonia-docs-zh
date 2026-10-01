@@ -1,26 +1,26 @@
 ---
 id: selection-modes
-title: Selection modes
+title: 选择模式
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-Two selection modes are supported:
+支持两种选择类型：
 
-- **Row selection** allows the user to select whole rows
-- **Cell selection** allows the user to select individual cells
+- **行选择**让用户整行整行地选
+- **单元格选择**让用户选中一个个单元格
 
-Both selection types support either single or multiple selection. The default selection type is single row selection.
+两种选择类型都支持单选和多选，默认是单行选择。
 
 
 :::info
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Setting the selection mode in XAML
+## 在 XAML 中设置选择模式 {#setting-the-selection-mode-in-xaml}
 
-Set the `SelectionMode` attribute directly on the `TreeDataGrid` control. This works with both `ItemsSource` and `Source`:
+直接在 `TreeDataGrid` 控件上设置 `SelectionMode` 特性即可。`ItemsSource` 和 `Source` 两种写法都适用：
 
 ```xml
 <!-- Single row selection (default) -->
@@ -36,9 +36,9 @@ Set the `SelectionMode` attribute directly on the `TreeDataGrid` control. This w
 <TreeDataGrid ItemsSource="{Binding People}" SelectionMode="Cell,Multiple" />
 ```
 
-## SelectionChanged event
+## SelectionChanged 事件 {#selectionchanged-event}
 
-The `TreeDataGrid` control has a `SelectionChanged` event that fires whenever the selection changes:
+`TreeDataGrid` 控件有一个 `SelectionChanged` 事件，选择一有变化就会触发：
 
 ```csharp
 treeDataGrid.SelectionChanged += (sender, e) =>
@@ -56,15 +56,15 @@ treeDataGrid.SelectionChanged += (sender, e) =>
 };
 ```
 
-This event works with both the XAML (`ItemsSource`) and code-behind (`Source`) approaches. (See [the main reference page](/controls/data-display/structured-data/treedatagrid#two-approaches) for details.)
+该事件在 XAML（`ItemsSource`）和代码隐藏（`Source`）两种写法下都可用。（详见[主参考页](/controls/data-display/structured-data/treedatagrid#two-approaches)。）
 
-## Index paths
+## 索引路径 {#index-paths}
 
-Because `TreeDataGrid` supports hierarchical data, using a simple index to identify a row in the data source isn't enough. Instead indexes are represented using the `IndexPath` struct.
+由于 `TreeDataGrid` 支持层级数据，单凭一个简单的索引已不足以定位数据源中的某一行。为此，索引改用 `IndexPath` 结构体表示。
 
-An `IndexPath` is an array of indexes, each element of which specifies the index at a successively deeper level in the hierarchy of the data.
+`IndexPath` 是一个索引数组，其中每个元素依次指明在数据层级中更深一层上的索引。
 
-Consider the following data source:
+来看下面这个数据源：
 
 ```text
 |- A
@@ -74,7 +74,7 @@ Consider the following data source:
 |- E
 ```
 
-- `A` has an index path of `0` as it is the first item at the root of the hierarchy
+- `A` 的索引路径是 `0`，因为它是层级根部的第一项
 - `B` has an index path of `0,0` as it is the first child of the first item
 - `C` has an index path of `0,1` as it is the second child of the first item
 - `D` has an index path of `0,1,0` as it is the first child of `C`

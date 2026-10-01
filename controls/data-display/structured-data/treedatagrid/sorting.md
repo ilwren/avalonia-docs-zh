@@ -84,5 +84,5 @@ Two separate comparer functions must be provided: one for ascending and one for 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)
 - [Expand and collapse](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)
 - [Filtering](/controls/data-display/structured-data/treedatagrid/filtering)
-- [Selection modes](/controls/data-display/structured-data/treedatagrid/selection-modes)
-- [Column types](/controls/data-display/structured-data/treedatagrid/column-types)
+- [选择模式](/controls/data-display/structured-data/treedatagrid/selection-modes)
+- [列类型](/controls/data-display/structured-data/treedatagrid/column-types)

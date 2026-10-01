@@ -204,7 +204,7 @@ private void OnDragLeave(object? sender, DragEventArgs e)
 }
 ```
 
-## Complete example
+## 完整示例 {#complete-example}
 
 This example creates a drop zone that accepts text and files:
 

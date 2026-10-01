@@ -172,7 +172,7 @@ Add a `ContentTransition` for a smooth expand and collapse animation:
 
 You can substitute `CrossFade` with other transition types such as `PageSlide` or `CompositePageTransition`. See [Page transitions](/docs/graphics-animation/page-transitions) for a full list of built-in options.
 
-## Responding to expand and collapse events
+## 响应展开与折叠事件 {#responding-to-expand-and-collapse-events}
 
 Handle expansion state changes in code-behind by subscribing to the `IsExpandedChanged` event:
 
