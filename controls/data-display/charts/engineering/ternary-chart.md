@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Ternary charts visualize three-component mixtures where each point represents the relative contribution of A, B, and C.
@@ -19,7 +19,7 @@ Ternary charts visualize three-component mixtures where each point represents th
 - **Three-way balance**: Compare proportions that always sum to a whole.
 - **Scientific classification**: Place samples within a triangular decision space.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -35,7 +35,7 @@ Ternary charts visualize three-component mixtures where each point represents th
                                CLabel="Clay" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record TernaryPoint(double Sand, double Silt, double Clay);

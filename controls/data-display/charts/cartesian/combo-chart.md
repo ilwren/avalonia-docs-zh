@@ -1,25 +1,25 @@
 ---
 id: combo-chart
-title: Combo chart
-description: Combines multiple Cartesian series types on shared category axes, with optional support for a secondary Y-axis.
+title: 组合图
+description: 在共享的类别轴上组合多种笛卡尔系列，并可选地支持次 Y 轴。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-`ComboChart` is a `CartesianChart` variant for combining multiple series types such as `BarSeries`, `LineSeries`, and `AreaSeries` on the same horizontal axis. Use it when the chart itself needs to expose an optional secondary Y-axis.
+`ComboChart` 是 `CartesianChart` 的一个变体，用于把 `BarSeries`、`LineSeries`、`AreaSeries` 等多种系列类型放在同一条横轴上。当图表本身需要对外提供一条可选的次 Y 轴时，就用它。
 
 ## 适用场景 {#when-to-use}
 
-- **Mixed visual encodings**: Combine bars, lines, or areas in the same plot.
-- **Dual-scale comparisons**: Plot a secondary metric on a separate Y-axis.
-- **Shared categories**: Align multiple series types to the same category labels.
+- **混合视觉编码**：在同一张图中组合条形、折线或面积。
+- **双刻度对比**：把次要指标画在独立的 Y 轴上。
+- **共享类别**：让多种系列类型对齐到同一组类别标签。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -51,7 +51,7 @@ tags:
 </ComboChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record MonthlyMetric(string Month, double Revenue, double MarginPercent);
@@ -69,21 +69,21 @@ public ObservableCollection<MonthlyMetric> MonthlyMetrics { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Series` | Content collection of cartesian series rendered in the chart. | Empty collection |
-| `HorizontalAxis` | Primary horizontal axis used by the mixed series. | `null` |
-| `VerticalAxis` | Primary vertical axis used by the mixed series. | `null` |
-| `ShowSecondaryAxis` | Whether to show a secondary Y-axis on the right side. | `false` |
-| `SecondaryVerticalAxis` | Optional secondary vertical axis for series assigned to `YAxisPosition.Secondary`. | `null` |
+| `Series` | 图表中所渲染的笛卡尔系列内容集合。 | 空集合 |
+| `HorizontalAxis` | 各混合系列所用的主横轴。 | `null` |
+| `VerticalAxis` | 各混合系列所用的主纵轴。 | `null` |
+| `ShowSecondaryAxis` | 是否在右侧显示次 Y 轴。 | `false` |
+| `SecondaryVerticalAxis` | 可选的次纵轴，供设为 `YAxisPosition.Secondary` 的系列使用。 | `null` |
 
 ## 注释支持情况 {#notes}
 
-- Series are rendered in declaration order.
-- To plot a series against the secondary Y-axis, set that series to `YAxisPosition="Secondary"`.
-- Use the series-specific pages for properties such as `BarWidth`, `MarkerShape`, or `FillOpacity`.
+- 系列按声明顺序渲染。
+- 要让某个系列对齐次 Y 轴，把该系列设为 `YAxisPosition="Secondary"` 即可。
+- `BarWidth`、`MarkerShape`、`FillOpacity` 等属性请查阅各系列自己的页面。
 
 ## 另请参阅 {#see-also}
 
-- [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
-- [Area chart](/controls/data-display/charts/cartesian/area-chart)
-- [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart)
+- [条形图](/controls/data-display/charts/cartesian/bar-chart)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)
+- [面积图](/controls/data-display/charts/cartesian/area-chart)
+- [坐标轴定制](/controls/data-display/charts/shared-elements/axis-customization-chart)

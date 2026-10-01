@@ -10,7 +10,7 @@ tags:
 import chartsFinancialKagi from '/img/controls/charts/charts-financial-kagi.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Kagi charts are time-independent charts that track price movements using vertical lines. They change direction (and line thickness) only when price reaches a certain reversal amount.
@@ -22,7 +22,7 @@ Kagi charts are time-independent charts that track price movements using vertica
 - **Breakout identification**: Using the "Yang" (thick) and "Yin" (thin) lines to spot reversals.
 - **Following trends**: Filtering out small fluctuations that don't meet the reversal threshold.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Kagi charts are time-independent charts that track price movements using vertica
                                         ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 

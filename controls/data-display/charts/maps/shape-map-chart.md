@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 The Shape Map control allows for arbitrary geographic or custom shape visualization. It serves as the base for specialized maps, allowing developers to define custom regions and interactions.
@@ -18,7 +18,7 @@ The Shape Map control allows for arbitrary geographic or custom shape visualizat
 - **Physical layouts**: Mapping data onto a schematic (e.g., a hardware board or factory floor).
 - **Interactive diagrams**: Creating high-performance interactive shape systems.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ The Shape Map control allows for arbitrary geographic or custom shape visualizat
 </ShapeMap>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 Ensure the GeoJSON files are included in your project and available at the specified relative paths at runtime.
 
@@ -94,7 +94,7 @@ public ObservableCollection<RegionalPoint> RegionalData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Layers` | Collection of `MapLayer` instances rendered in order. | Empty collection |
+| `Layers` | Collection of `MapLayer` instances rendered in order. | 空集合 |
 
 ## Common properties (ShapeLayer)
 
@@ -123,7 +123,7 @@ public ObservableCollection<RegionalPoint> RegionalData { get; } = new()
 | `SelectionStroke` | Outline brush used for selected shapes. | `null` |
 | `SelectionStrokeThickness` | Outline thickness used for selected shapes. | `2.0` |
 | `HoverBrush` | Brush applied while a shape is hovered. | `White @ 30% opacity` |
-| `ColorMappings` | Optional explicit color-mapping rules for shapes. | Empty collection |
+| `ColorMappings` | Optional explicit color-mapping rules for shapes. | 空集合 |
 | `Legend` | Optional legend associated with the layer. | `null` |
 
 ## Common properties (MapLegend)
@@ -135,7 +135,7 @@ public ObservableCollection<RegionalPoint> RegionalData { get; } = new()
 | `Source` | Map layer used to generate legend items. | `null` |
 | `Orientation` | Layout orientation for legend entries, `Horizontal` or `Vertical`. | `Vertical` |
 | `ItemTemplate` | Optional template used to render each legend item. | `null` |
-| `Items` | Read-only `AvaloniaList<LegendItem>` generated from the source layer. | Empty collection |
+| `Items` | Read-only `AvaloniaList<LegendItem>` generated from the source layer. | 空集合 |
 
 ## Map layers
 
@@ -149,11 +149,11 @@ Layer collection properties such as `MarkerLayer.Markers`, `VectorLayer.Arcs`, a
 
 Renders individual point markers at geographic coordinates. Markers can be defined manually or bound to a data source.
 
-#### Common properties (`MarkerLayer`)
+#### 常用属性（`MarkerLayer`） {#common-properties-markerlayer}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Markers` | Collection of `MapMarker` objects defined manually. | Empty collection |
+| `Markers` | Collection of `MapMarker` objects defined manually. | 空集合 |
 | `ItemsSource` | Data source for generating markers automatically. | `null` |
 | `LatitudePath` | Property path to the latitude value in the data source items. | `null` |
 | `LongitudePath` | Property path to the longitude value in the data source items. | `null` |
@@ -184,7 +184,7 @@ Renders individual point markers at geographic coordinates. Markers can be defin
 
 Renders connection lines between pairs of geographic points. Line thickness can vary based on a data value. Lines can be drawn as straight or curved.
 
-#### Common properties (`LineLayer`)
+#### 常用属性（`LineLayer`） {#common-properties-linelayer}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -222,15 +222,15 @@ Renders connection lines between pairs of geographic points. Line thickness can 
 
 Renders geometric shapes (lines, arcs, circles, polygons, and polylines) on the map using geographic coordinates. Shapes are defined via layer collections.
 
-#### Common properties (`VectorLayer`)
+#### 常用属性（`VectorLayer`） {#common-properties-vectorlayer}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Lines` | Collection of `MapLine` objects. | Empty collection |
-| `Arcs` | Collection of `MapArc` objects. | Empty collection |
-| `Circles` | Collection of `MapCircle` objects. | Empty collection |
-| `Polygons` | Collection of `MapPolygon` objects. | Empty collection |
-| `Polylines` | Collection of `MapPolyline` objects. | Empty collection |
+| `Lines` | Collection of `MapLine` objects. | 空集合 |
+| `Arcs` | Collection of `MapArc` objects. | 空集合 |
+| `Circles` | Collection of `MapCircle` objects. | 空集合 |
+| `Polygons` | Collection of `MapPolygon` objects. | 空集合 |
+| `Polylines` | Collection of `MapPolyline` objects. | 空集合 |
 | `IsLineAnimationEnabled` | Whether to animate line drawing. | `true` |
 | `IsVisible` | Whether the layer is visible. | `true` |
 | `Opacity` | Opacity of the layer. | `1.0` |
@@ -265,7 +265,7 @@ Renders geometric shapes (lines, arcs, circles, polygons, and polylines) on the 
 
 Draws pie charts at specific geographic coordinates. Each pie chart visualizes a breakdown of values for that location.
 
-#### Common properties (`PieChartMapLayer`)
+#### 常用属性（`PieChartMapLayer`） {#common-properties-piechartmaplayer}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

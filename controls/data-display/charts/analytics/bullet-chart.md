@@ -1,25 +1,25 @@
 ---
 id: bullet-chart
-title: Bullet chart
-description: Shows a single performance measure against a target and qualitative ranges in a compact horizontal or vertical gauge.
+title: 子弹图
+description: 在紧凑的横向或纵向标尺上，把单项绩效指标与目标值以及几段定性区间放在一起比较。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Bullet charts compare a primary value to a target and one or more qualitative ranges in a compact layout.
+子弹图在紧凑的版面里，把一个主值与目标值以及一段或多段定性区间作对比。
 
 ## 适用场景 {#when-to-use}
 
-- **Target tracking**: Compare an actual value to a goal in a dashboard card.
-- **Compact summaries**: Replace a full bar chart when you only need one measure and a target.
-- **Threshold ranges**: Show poor, satisfactory, and good bands behind the main value.
+- **追踪目标**：在仪表板卡片中把实际值与目标值作对比。
+- **紧凑摘要**：只有一个指标和一个目标值时，用它取代整张条形图。
+- **阈值区间**：在主值背后标出「欠佳」「尚可」「良好」几段区间。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Bullet charts compare a primary value to a target and one or more qualitative ra
                       Ranges="{Binding RevenueBands}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public double ActualRevenue { get; set; } = 72;
@@ -44,16 +44,16 @@ public double[] RevenueBands { get; } = [30, 60, 90, 100];
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Value` | Primary value displayed by the bar. | `75.0` |
-| `Target` | Target marker value. | `85.0` |
-| `MinValue` | Minimum value of the scale. | `0.0` |
-| `MaxValue` | Maximum value of the scale. | `100.0` |
-| `Ranges` | Optional collection of qualitative range boundaries. | `null` |
-| `Orientation` | Orientation of the chart, `Horizontal` or `Vertical`. | `Horizontal` |
-| `ValueBrush` | Brush for the main value bar. | `null` |
-| `TargetBrush` | Brush for the target marker. | `null` |
+| `Value` | 条形所表示的主值。 | `75.0` |
+| `Target` | 目标标记的值。 | `85.0` |
+| `MinValue` | 标尺的最小值。 | `0.0` |
+| `MaxValue` | 标尺的最大值。 | `100.0` |
+| `Ranges` | 可选的定性区间边界集合。 | `null` |
+| `Orientation` | 图表的方向，`Horizontal` 或 `Vertical`。 | `Horizontal` |
+| `ValueBrush` | 主值条形所用的画刷。 | `null` |
+| `TargetBrush` | 目标标记所用的画刷。 | `null` |
 
 ## 另请参阅 {#see-also}
 
-- [KPI card](/controls/data-display/charts/analytics/kpi-card)
-- [Linear gauge chart](/controls/data-display/charts/gauges/linear-gauge-chart)
+- [KPI 卡片](/controls/data-display/charts/analytics/kpi-card)
+- [线性仪表图](/controls/data-display/charts/gauges/linear-gauge-chart)

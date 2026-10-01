@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalIndentedtree from '/img/controls/charts/charts-hierarchical-tree.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Indented tree charts represent hierarchies using a layout similar to a standard file explorer or tree view, but within a charting container for advanced styling and interactions.
@@ -22,7 +22,7 @@ Indented tree charts represent hierarchies using a layout similar to a standard 
 - **Bill of materials (BOM)**: Showing a multi-level product structure in manufacturing.
 - **Settings/config**: Grouping complex nested configuration options visually.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Indented tree charts represent hierarchies using a layout similar to a standard 
                             ChildrenPath="Children" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class TreeNode
 {

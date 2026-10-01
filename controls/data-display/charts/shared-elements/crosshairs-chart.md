@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesCrosshairs from '/img/controls/charts/charts-custom-crosshairs.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Crosshairs are interactive guide lines that follow the user's cursor. They help users align data points with axis labels in high-precision charts.
@@ -24,7 +24,7 @@ Crosshair labels use the configured axis formatting. Continuous horizontal axes,
 - **Engineering data**: Measuring values on high-density line charts.
 - **Scientific graphs**: Aligning specific peaks or valleys with coordinates.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -54,7 +54,7 @@ Crosshair labels use the configured axis formatting. Continuous horizontal axes,
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<double> CrosshairData { get; } = new()
 {

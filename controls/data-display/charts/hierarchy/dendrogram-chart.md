@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalDendrogram from '/img/controls/charts/charts-hierarchical-dendrogram.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Dendrograms are tree diagrams frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. They show how items are merged into a single branch.
@@ -22,7 +22,7 @@ Dendrograms are tree diagrams frequently used to illustrate the arrangement of t
 - **Phylogenetic trees**: Showing evolutionary relationships between different species.
 - **Structural merges**: Representing data that stems from many parts but converges into a few groups.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Dendrograms are tree diagrams frequently used to illustrate the arrangement of t
                           ChildrenPath="Children" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class TreeNode
 {
@@ -62,6 +62,6 @@ public ObservableCollection<TreeNode> DendrogramData { get; } = new()
 | `LabelPath` | Property for the leaf or node names. | `null` |
 | `ChildrenPath` | Path to the nested cluster items. | `null` |
 | `DistancePath` | Property for the cluster distance or merge height. | `null` |
-| `Orientation` | Orientation of the chart, `Horizontal` or `Vertical`. | `Horizontal` |
+| `Orientation` | 图表的方向，`Horizontal` 或 `Vertical`。 | `Horizontal` |
 | `LinkStyle` | Style of the lines linking items, `Elbow` or `Straight`. | `Elbow` |
 | `LeafSpacing` | Spacing between leaf nodes. | `25.0` |

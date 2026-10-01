@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesLabels from '/img/controls/charts/charts-datalabel.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Data labels place the actual values directly on the chart series. This lets readers compare values without estimating them from axis positions.
@@ -22,7 +22,7 @@ Data labels place the actual values directly on the chart series. This lets read
 - **Small multiples**: When axes are omitted to save space.
 - **Key milestones**: Highlighting specific values that require attention.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -41,7 +41,7 @@ Data labels place the actual values directly on the chart series. This lets read
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record SalesPoint(string Category, double Value);
 

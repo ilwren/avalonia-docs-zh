@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Violin plots combine a box plot with a kernel density plot, showing both the statistical summary and the probability density of the data at different values.
@@ -19,7 +19,7 @@ Violin plots combine a box plot with a kernel density plot, showing both the sta
 - **Comparison**: Comparing both the ranges (box plot) and the shapes (density) of multiple groups.
 - **Multi-modal data**: Identifying data with multiple peaks (modes) which a box plot might hide.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Violin plots combine a box plot with a kernel density plot, showing both the sta
                            ItemsSource="{Binding ViolinSeries}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record ViolinGroup(string Group, ObservableCollection<double> DataPoints);

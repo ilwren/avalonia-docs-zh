@@ -1,7 +1,7 @@
 ---
 id: histogram-chart
-title: Histogram chart
-description: Groups continuous data into bins and shows the frequency of data points within each bin to reveal distribution of a single variable.
+title: 直方图
+description: 把连续数据分入若干区间，并显示每个区间内数据点的频数，用以揭示单一变量的分布。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsStatisticalHistogram from '/img/controls/charts/charts-statistical-histogram.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Histograms group continuous data into "bins" and show the frequency of data points within each bin. They are essential for understanding the distribution of a single variable.
+直方图把连续数据分入一个个「区间」，并显示每个区间内数据点的频数。要搞清楚单一变量的分布，少不了它。
 
 <Image light={chartsStatisticalHistogram} maxWidth={400} position="center" cornerRadius="true" alt="Histogram chart grouping continuous data into bins showing the frequency distribution of values." />
 
 ## 适用场景 {#when-to-use}
-- **Age distribution**: Visualizing how many users fall into specific age ranges.
-- **Performance logs**: Analyzing the frequency of response times in a system.
-- **Quality assurance**: Evaluating the spread of product dimensions or weights.
+- **年龄分布**：呈现落在各个年龄段的用户有多少。
+- **性能日志**：分析系统响应时间的频数分布。
+- **质量管控**：评估产品尺寸或重量的离散程度。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,7 +35,7 @@ Histograms group continuous data into "bins" and show the frequency of data poin
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 using System.Linq;
@@ -58,10 +58,10 @@ private static ObservableCollection<HistogramItem> CreateScores()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of raw data points. | `null` |
-| `ValuePath` | Path to the numeric property to bin. | `null` |
-| `BinCount` | The number of bars (ranges) to create. | `10` |
-| `BinWidth` | (Optional) Explicit width for each range; overrides BinCount when set. | `null` |
-| `Fill` | Brush used for the frequency bars. | Theme-dependent |
-| `BarWidth` | Width of each histogram bar as a fraction of the bin width. | `0.9` |
-| `BarCornerRadius` | Corner radius for histogram bars. | `CornerRadius(2,2,0,0)` |
+| `ItemsSource` | 原始数据点的集合。 | `null` |
+| `ValuePath` | 指向待分区间的数值属性的路径。 | `null` |
+| `BinCount` | 要划分出多少根条形（区间）。 | `10` |
+| `BinWidth` | （可选）每个区间的显式宽度；设置后会覆盖 BinCount。 | `null` |
+| `Fill` | 频数条形所用的画刷。 | Theme-dependent |
+| `BarWidth` | 每根直方图条形的宽度，以区间宽度的比例表示。 | `0.9` |
+| `BarCornerRadius` | 直方图条形的圆角半径。 | `CornerRadius(2,2,0,0)` |

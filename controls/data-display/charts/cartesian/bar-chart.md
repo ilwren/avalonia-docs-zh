@@ -1,7 +1,7 @@
 ---
 id: bar-chart
-title: Bar chart
-description: Represents data using rectangular bars with lengths proportional to values, for comparing discrete quantities across categories.
+title: 条形图
+description: 用长度与数值成正比的矩形条来表示数据，便于比较各类别之间的离散数量。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianBar from '/img/controls/charts/charts-cartesian-bar.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Bar charts represent data using rectangular bars with lengths proportional to the values they represent.
+条形图用矩形条表示数据，条的长度与它所代表的数值成正比。
 
 <Image light={chartsCartesianBar} maxWidth={400} position="center" cornerRadius="true" alt="Bar chart with vertical rectangular bars of varying heights comparing quarterly revenue across categories." />
 
 ## 适用场景 {#when-to-use}
-- **Comparisons**: Comparing discrete quantities across different categories.
-- **Ranking**: Showing which categories have the highest or lowest values.
-- **Categorical data**: When data is grouped into distinct, non-continuous groups.
+- **对比**：比较不同类别之间的离散数量。
+- **排名**：看出哪些类别数值最高、哪些最低。
+- **分类数据**：数据被划分为彼此独立、非连续的若干组时。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -39,7 +39,7 @@ Bar charts represent data using rectangular bars with lengths proportional to th
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> BarSeriesData { get; } = new()
 {
@@ -51,12 +51,12 @@ public ObservableCollection<int> BarSeriesData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series shown in the legend. | `null` |
-| `ItemsSource` | The collection of data items to display. | `null` |
-| `CategoryPath` | Path to the property used for the X-axis. | `null` |
-| `ValuePath` | Path to the property used for the Y-axis. | `null` |
-| `Fill` | The color/brush used to fill the bars. | Theme-dependent |
-| `Stroke` | The outline color of the bars. | `Transparent` |
-| `ColorByPoint` | Whether each bar uses its own palette color. | `false` |
-| `BarCornerRadius` | The rounding of the bar corners. | `0` |
-| `BarWidth` | The width of each bar as a fraction of the category band (0.0 to 1.0). | `0.7` |
+| `Title` | 在图例中显示的系列名称。 | `null` |
+| `ItemsSource` | 要显示的数据项集合。 | `null` |
+| `CategoryPath` | 指向 X 轴所用属性的路径。 | `null` |
+| `ValuePath` | 指向 Y 轴所用属性的路径。 | `null` |
+| `Fill` | 填充条形所用的颜色/画刷。 | Theme-dependent |
+| `Stroke` | 条形的轮廓颜色。 | `Transparent` |
+| `ColorByPoint` | 每根条形是否各用调色板中的一种颜色。 | `false` |
+| `BarCornerRadius` | 条形的圆角程度。 | `0` |
+| `BarWidth` | 每根条形的宽度，以类别带宽的比例表示（0.0 到 1.0）。 | `0.7` |

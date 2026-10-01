@@ -1,7 +1,7 @@
 ---
 id: pyramid-chart
-title: Pyramid chart
-description: Emphasizes both hierarchy and volume in a stacked triangular layout, commonly used for population and pipeline visualization.
+title: 金字塔图
+description: 以层层堆叠的三角形版面同时体现层级与规模，常用于人口结构和销售管道的可视化。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsAnalyticsPyramid from '/img/controls/charts/charts-analytics-pyramid.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Pyramid charts are a type of stacked area or bar graph that emphasizes both hierarchy and volume. They are the classic choice for population and sales pipeline visualization.
+金字塔图是堆叠面积图或条形图的一种，同时体现层级与规模。呈现人口结构和销售管道时，它是经典之选。
 
 <Image light={chartsAnalyticsPyramid} maxWidth={400} position="center" cornerRadius="true" alt="Pyramid chart with stacked triangular segments representing hierarchical population or pipeline data." />
 
 ## 适用场景 {#when-to-use}
-- **Population pyramids**: Showing age and gender distribution in a region.
-- **Sales pipelines**: Visualizing the funnel from leads to closed deals.
-- **Biological hierarchies**: Showing energy flow or species distribution in an ecosystem.
+- **人口金字塔**：展示某地区的年龄与性别分布。
+- **销售管道**：呈现从线索到成交的漏斗。
+- **生物层级**：展示生态系统中的能量流动或物种分布。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Pyramid charts are a type of stacked area or bar graph that emphasizes both hier
                        LabelPath="Age" ValuePath="Value"/>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record PyramidItem(string Age, double Value);
 
@@ -49,10 +49,10 @@ public ObservableCollection<PyramidItem> PyramidData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of data layers. | `null` |
-| `ValuePath` | Magnitude of each layer. | `null` |
-| `LabelPath` | Text description for each layer. | `null` |
-| `SegmentGap` | Vertical distance between levels. | `2.0` |
-| `ShowLabels` | Whether to display labels on segments. | `true` |
-| `ShowValues` | Whether to display numeric values on the chart. | `true` |
-| `IsHighlightEnabled` | Enables hover highlighting for pyramid segments. | `false` |
+| `ItemsSource` | 数据层的集合。 | `null` |
+| `ValuePath` | 每一层的量值。 | `null` |
+| `LabelPath` | 每一层的文字说明。 | `null` |
+| `SegmentGap` | 各层之间的垂直距离。 | `2.0` |
+| `ShowLabels` | 是否在各段上显示标签。 | `true` |
+| `ShowValues` | 是否在图表上显示数值。 | `true` |
+| `IsHighlightEnabled` | 为金字塔各段启用悬停高亮。 | `false` |

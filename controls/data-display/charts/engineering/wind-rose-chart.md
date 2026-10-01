@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Wind rose charts group values by direction and stack subcategories such as speed bands within each directional sector.
@@ -19,7 +19,7 @@ Wind rose charts group values by direction and stack subcategories such as speed
 - **Directional events**: Compare traffic, movement, or signal occurrences around a compass.
 - **Operational analysis**: Summarize heading-based activity in one compact polar chart.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Wind rose charts group values by direction and stack subcategories such as speed
                                 ValuePath="Frequency" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record WindSample(string Direction, string SpeedBand, double Frequency);

@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesGridlines from '/img/controls/charts/charts-gridlines-customization.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Avalonia Charts lets you customize axis appearance, including label fitting, axis line styling, tick marks, gridline configuration, and multi-axis support.
@@ -23,7 +23,7 @@ Avalonia Charts lets you customize axis appearance, including label fitting, axi
 - **Categorical data**: When axes represent discrete groups rather than continuous numbers.
 - **Time-Series analysis**: Customizing date formats and intervals for historical data.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -49,7 +49,7 @@ Avalonia Charts lets you customize axis appearance, including label fitting, axi
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<int> SalesData { get; } = new() { 35, 28, 34, 32, 40, 32, 35 };
@@ -119,7 +119,7 @@ Use `NumericalAxis.ScaleBreaks` for inline XAML scale breaks or `ScaleBreaksSour
 | `NumericalAxis` | `Maximum` | Explicit maximum value. When `null`, the chart calculates it from data. | `null` |
 | `NumericalAxis` | `MajorStep` | Major tick interval. Invalid or non-positive values fall back to an automatic step. | `null` |
 | `NumericalAxis` | `MinorStep` | Minor tick interval. | `null` |
-| `NumericalAxis` | `ScaleBreaks` | Inline collection of scale breaks. | Empty collection |
+| `NumericalAxis` | `ScaleBreaks` | Inline collection of scale breaks. | 空集合 |
 | `NumericalAxis` | `ScaleBreaksSource` | Bound collection used instead of `ScaleBreaks` when set. | `null` |
 | `DateTimeAxis` | `Minimum` | Explicit minimum date. When `null`, the chart calculates it from data. | `null` |
 | `DateTimeAxis` | `Maximum` | Explicit maximum date. When `null`, the chart calculates it from data. | `null` |
@@ -166,5 +166,5 @@ Use `ChartAxis.PlotBands` to shade ranges on a horizontal or vertical axis. On a
 
 ## 另请参阅 {#see-also}
 
-- [Combo chart](/controls/data-display/charts/cartesian/combo-chart)
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
+- [组合图](/controls/data-display/charts/cartesian/combo-chart)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)

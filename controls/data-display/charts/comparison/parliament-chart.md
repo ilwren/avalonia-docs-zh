@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Parliament charts arrange seats in a semicircle so party representation can be read as both totals and spatial balance.
@@ -19,7 +19,7 @@ Parliament charts arrange seats in a semicircle so party representation can be r
 - **Board representation**: Visualize committee or council membership.
 - **Proportional allocation**: Present seat-based outcomes with a familiar hemicycle layout.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -30,7 +30,7 @@ Parliament charts arrange seats in a semicircle so party representation can be r
                                   Parties="{Binding Parties}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<ParliamentParty> Parties { get; } = new()
@@ -54,7 +54,7 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 | `EndAngle` | End angle in degrees for the right edge of the hemicycle. | `0.0` |
 | `Parties` | Collection of `ParliamentParty` items that define seat allocation. | `null` |
 
-## Common properties (`ParliamentParty`)
+## 常用属性（`ParliamentParty`） {#common-properties-parliamentparty}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

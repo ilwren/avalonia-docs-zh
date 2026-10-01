@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesTrendlines from '/img/controls/charts/charts-trendline-1.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Trendlines are used in Cartesian charts to show the general direction or pattern of data. They filter out noise to highlight underlying trends. They can fit linear, polynomial, power, exponential, logarithmic, or moving average data.
@@ -23,7 +23,7 @@ Trendlines are used in Cartesian charts to show the general direction or pattern
 - **Data smoothing**: Identifying patterns in volatile stock or sensor data.
 - **Performance evaluation**: Visualizing if throughput is generally increasing or decreasing.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -53,7 +53,7 @@ Trendlines are used in Cartesian charts to show the general direction or pattern
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record ChartDataPoint(string Category, double Value);
@@ -68,7 +68,7 @@ public ObservableCollection<ChartDataPoint> LinearData { get; } = new()
 };
 ```
 
-## Common properties (`Trendline`)
+## 常用属性（`Trendline`） {#common-properties-trendline}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -118,7 +118,7 @@ public ObservableCollection<ChartDataPoint> LinearData { get; } = new()
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c-1}
 
 ```csharp
 public record ChartDataPoint(string Category, double Value);
@@ -169,7 +169,7 @@ public ObservableCollection<ChartDataPoint> StandaloneTrendlineData { get; } = n
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c-2}
 
 ```csharp
 using System;
@@ -196,6 +196,6 @@ public ObservableCollection<PricePoint> PriceData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
-- [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart)
-- [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)
+- [散点图](/controls/data-display/charts/cartesian/scatter-chart)
+- [坐标轴定制](/controls/data-display/charts/shared-elements/axis-customization-chart)

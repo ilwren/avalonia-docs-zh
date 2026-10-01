@@ -10,7 +10,7 @@ tags:
 import chartsTimelineSwimlane from '/img/controls/charts/charts-timeline-swimlane.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Swimlane charts organize tasks or processes into distinct horizontal or vertical "lanes." They help visualize workflows across different departments or roles.
@@ -23,7 +23,7 @@ Swimlane charts organize tasks or processes into distinct horizontal or vertical
 - **Project scheduling**: Visualizing task ownership across team members.
 - **Cross-functional flows**: Clarifying responsibilities in a complex business process.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -45,7 +45,7 @@ Swimlane charts organize tasks or processes into distinct horizontal or vertical
                                             LaneBackgroundBrush="{DynamicResource DemoSwimlaneLaneBackgroundBrush}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 using Avalonia.Media;
@@ -88,4 +88,4 @@ public ObservableCollection<SwimlaneTask> SwimlaneTasks { get; } = new()
 ## 另请参阅 {#see-also}
 
 - [Gantt chart](/controls/data-display/charts/scheduling/gantt-chart)
-- [Timeline chart](/controls/data-display/charts/scheduling/timeline-chart)
+- [时间线图](/controls/data-display/charts/scheduling/timeline-chart)

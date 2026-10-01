@@ -10,7 +10,7 @@ tags:
 import chartsRadialRadar from '/img/controls/charts/charts-radial-radar.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Radar charts compare multiple qualitative variables across several categories. They are widely used to visualize "profiles" or signatures of different entities across common metrics.
@@ -22,7 +22,7 @@ Radar charts compare multiple qualitative variables across several categories. T
 - **Product benchmarking**: Comparing different products across price, quality, and features.
 - **Performance profiles**: Displaying multifaceted metrics (e.g., SEO, Speed, Security for a website).
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -36,7 +36,7 @@ Radar charts compare multiple qualitative variables across several categories. T
                      </RadarChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 // Axis labels mapped to categories
@@ -50,7 +50,7 @@ public ObservableCollection<double> RadarSeries1 { get; } = new() { 80, 90, 70, 
 public ObservableCollection<double> RadarSeries2 { get; } = new() { 60, 70, 85, 80, 65, 90 };
 ```
 
-## Common properties (`RadarChart`)
+## 常用属性（`RadarChart`） {#common-properties-radarchart}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -60,7 +60,7 @@ public ObservableCollection<double> RadarSeries2 { get; } = new() { 60, 70, 85, 
 | `AxisLabels` | Labels displayed for each axis. | `null` |
 | `IsHighlightEnabled` | Enables chart-level hover highlighting for radar points. | `false` |
 
-## Common properties (`RadarSeries`)
+## 常用属性（`RadarSeries`） {#common-properties-radarseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

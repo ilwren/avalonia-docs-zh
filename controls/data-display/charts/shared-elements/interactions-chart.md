@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesZoom from '/img/controls/charts/charts-zoom.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Chart interactions allow users to explore data dynamically with zooming, panning, selection, hover highlighting, and trackball inspection.
@@ -23,7 +23,7 @@ Chart interactions allow users to explore data dynamically with zooming, panning
 - **Interactive reports**: Giving users agency to focus on areas of interest.
 - **Hover inspection**: Dimming non-hovered items so the active data point or segment is easier to identify.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -78,7 +78,7 @@ Chart interactions allow users to explore data dynamically with zooming, panning
 </StackPanel>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 
@@ -172,7 +172,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 | `IsSelectionEnabled` | Enables pointer selection for supported series or chart items. | `false` |
 | `SelectionMode` | Selection behavior, such as `None`, `Single`, `SingleDeselect`, or `Multiple`. | `SingleDeselect` |
 | `SelectedIndex` | Two-way index of the primary selected item, or `-1` when nothing is selected. | `-1` |
-| `SelectedIndexes` | Read-only snapshot of selected indexes for multi-selection scenarios. | Empty collection |
+| `SelectedIndexes` | Read-only snapshot of selected indexes for multi-selection scenarios. | 空集合 |
 | `SelectionBrush` | Brush used for selected items. | `#314A6E` |
 | `SelectionStroke` | Optional outline brush for selected items. | `null` |
 | `SelectionStrokeThickness` | Outline thickness for selected items. | `2.0` |
@@ -212,4 +212,4 @@ Charts also support pinch-to-zoom, mouse wheel zoom, and selection zoom.
 
 - [Tooltip](/controls/data-display/charts/shared-elements/tooltip-chart)
 - [Crosshairs](/controls/data-display/charts/shared-elements/crosshairs-chart)
-- [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart)
+- [坐标轴定制](/controls/data-display/charts/shared-elements/axis-customization-chart)

@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Parallel coordinate charts map each record across a sequence of vertical axes so multi-dimensional patterns and outliers can be compared in one view.
@@ -19,7 +19,7 @@ Parallel coordinate charts map each record across a sequence of vertical axes so
 - **Pattern detection**: Spot outliers, clusters, and dominant shapes across metrics.
 - **Model diagnostics**: Inspect how records vary across many inputs at once.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -35,7 +35,7 @@ Parallel coordinate charts map each record across a sequence of vertical axes so
 </ParallelCoordinatesChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record VehicleStats(double Power, double Range, double Efficiency);
@@ -48,18 +48,18 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 };
 ```
 
-## Common properties (`ParallelCoordinatesChart`)
+## 常用属性（`ParallelCoordinatesChart`） {#common-properties-parallelcoordinateschart}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Axes` | Content collection of `ParallelAxis` definitions. | Empty collection |
+| `Axes` | Content collection of `ParallelAxis` definitions. | 空集合 |
 | `ItemsSource` | Collection of multivariate records. | `null` |
 | `BrushPath` | Optional path to an `IBrush` or color string used for each line. | `null` |
 | `LegendLabelPath` | Optional path used for legend labels. | `null` |
 | `StrokeThickness` | Thickness of the data lines. | `2.0` |
 | `CurveTension` | Tension value for curved lines. | `0.0` |
 
-## Common properties (`ParallelAxis`)
+## 常用属性（`ParallelAxis`） {#common-properties-parallelaxis}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Dumbbell charts connect two markers per category so you can compare the gap between a lower and higher value at a glance.
@@ -19,7 +19,7 @@ Dumbbell charts connect two markers per category so you can compare the gap betw
 - **Range review**: Show the spread between two related values for each category.
 - **Target vs actual**: Pair a measured value with a benchmark.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Dumbbell charts connect two markers per category so you can compare the gap betw
                         HighValuePath="Actual" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record RangeComparison(string Label, double Planned, double Actual);

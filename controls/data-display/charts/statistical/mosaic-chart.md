@@ -10,7 +10,7 @@ tags:
 import chartsAnalyticsMosaic from '/img/controls/charts/charts-analytics-mosaic.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Mosaic charts (Marimekko) visualize relationships between categories using area. Both the width and height of segments are scaled to represent percentages of the total.
@@ -22,7 +22,7 @@ Mosaic charts (Marimekko) visualize relationships between categories using area.
 - **Resource expenditure**: Visualizing budget allocation across departments and cost types.
 - **Multi-factor analysis**: Understanding how two different qualitative variables interact.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Mosaic charts (Marimekko) visualize relationships between categories using area.
                       ValuePath="Sales" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record MosaicItem(string Region, string Category, double Sales);
 

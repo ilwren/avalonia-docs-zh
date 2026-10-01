@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Beeswarm plots arrange points within each category to avoid overlap while preserving the distribution of individual observations.
@@ -19,7 +19,7 @@ Beeswarm plots arrange points within each category to avoid overlap while preser
 - **Category comparison**: Compare spread and clustering across groups.
 - **Distribution detail**: Reveal dense stacks that a plain scatter plot would hide.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -31,7 +31,7 @@ Beeswarm plots arrange points within each category to avoid overlap while preser
                                     ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record BeeswarmPoint(string Category, double Value);

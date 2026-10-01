@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Smith charts plot normalized resistance and reactance on a specialized circular grid used in radio frequency (RF), antenna, and impedance-matching work.
@@ -19,7 +19,7 @@ Smith charts plot normalized resistance and reactance on a specialized circular 
 - **Matching networks**: Inspect how a design moves toward or away from the center match point.
 - **Transmission-line work**: Review complex reflection behavior on a familiar grid.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -31,7 +31,7 @@ Smith charts plot normalized resistance and reactance on a specialized circular 
                              ReactancePath="Reactance" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record ImpedancePoint(double Resistance, double Reactance);

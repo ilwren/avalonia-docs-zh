@@ -128,11 +128,11 @@ Charts for summarizing metrics, identifying patterns, and presenting findings.
 
 | Chart | 说明 |
 | --- | --- |
-| [KPI card](/controls/data-display/charts/analytics/kpi-card) | Displays a key metric alongside a trend indicator and a sparkline. |
-| [Heatmap chart](/controls/data-display/charts/analytics/heatmap-chart) | Shows a matrix of values as a color-coded grid. |
+| [KPI 卡片](/controls/data-display/charts/analytics/kpi-card) | Displays a key metric alongside a trend indicator and a sparkline. |
+| [热力图](/controls/data-display/charts/analytics/heatmap-chart) | Shows a matrix of values as a color-coded grid. |
 | [Funnel chart](/controls/data-display/charts/analytics/funnel-chart) | Visualizes a sequential process where volume decreases at each stage. |
 | [Waffle chart](/controls/data-display/charts/analytics/waffle-chart) | Represents a percentage as filled cells in a grid. |
-| [Word cloud chart](/controls/data-display/charts/analytics/word-cloud-chart) | Sizes words by frequency to show prominence in a dataset. |
+| [词云](/controls/data-display/charts/analytics/word-cloud-chart) | Sizes words by frequency to show prominence in a dataset. |
 | [Bullet chart](/controls/data-display/charts/analytics/bullet-chart) | Compares a primary value to a target and qualitative ranges in a compact layout. |
 | [Calendar heatmap chart](/controls/data-display/charts/analytics/calendar-heatmap-chart) | Shows daily activity intensity in a week-by-week calendar grid. |
 | [Matrix chart](/controls/data-display/charts/analytics/matrix-chart) | Displays relationships between two sets of categories in a grid. |
@@ -149,9 +149,9 @@ Charts that encode magnitude with marker size and often omit traditional axes or
 
 | Chart | 说明 |
 | --- | --- |
-| [Bubble chart](/controls/data-display/charts/bubble/bubble-chart) | Plots X and Y values and uses bubble size for a third measure. |
-| [Bubble cloud chart](/controls/data-display/charts/bubble/bubble-cloud-chart) | Arranges sized bubbles in an organic, clustered layout without axes. |
-| [Packed bubble chart](/controls/data-display/charts/bubble/packed-bubble-chart) | Packs category bubbles tightly into a compact space for part-to-whole comparison. |
+| [气泡图](/controls/data-display/charts/bubble/bubble-chart) | Plots X and Y values and uses bubble size for a third measure. |
+| [气泡云图](/controls/data-display/charts/bubble/bubble-cloud-chart) | Arranges sized bubbles in an organic, clustered layout without axes. |
+| [紧凑气泡图](/controls/data-display/charts/bubble/packed-bubble-chart) | Packs category bubbles tightly into a compact space for part-to-whole comparison. |
 
 ### Cartesian charts
 
@@ -159,17 +159,17 @@ Charts that plot data on horizontal and vertical axes. Use these for trends, com
 
 | Chart | 说明 |
 | --- | --- |
-| [Bar chart](/controls/data-display/charts/cartesian/bar-chart) | Compares discrete quantities across categories using rectangular bars. |
-| [Line chart](/controls/data-display/charts/cartesian/line-chart) | Connects data points with straight segments to show trends over time. |
-| [Area chart](/controls/data-display/charts/cartesian/area-chart) | Fills the area below a line to emphasize cumulative totals or volume. |
-| [Combo chart](/controls/data-display/charts/cartesian/combo-chart) | Combines multiple Cartesian series types on one plot, with optional secondary Y-axis support. |
-| [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart) | Plots individual data points to reveal correlations between two variables. |
-| [Spline chart](/controls/data-display/charts/cartesian/spline-chart) | Connects data points with curved lines to show gradual changes in time-dependent data. |
+| [条形图](/controls/data-display/charts/cartesian/bar-chart) | Compares discrete quantities across categories using rectangular bars. |
+| [折线图](/controls/data-display/charts/cartesian/line-chart) | Connects data points with straight segments to show trends over time. |
+| [面积图](/controls/data-display/charts/cartesian/area-chart) | Fills the area below a line to emphasize cumulative totals or volume. |
+| [组合图](/controls/data-display/charts/cartesian/combo-chart) | Combines multiple Cartesian series types on one plot, with optional secondary Y-axis support. |
+| [散点图](/controls/data-display/charts/cartesian/scatter-chart) | Plots individual data points to reveal correlations between two variables. |
+| [样条图](/controls/data-display/charts/cartesian/spline-chart) | Connects data points with curved lines to show gradual changes in time-dependent data. |
 | [Step line chart](/controls/data-display/charts/cartesian/step-line-chart) | Connects points with horizontal and vertical steps for discrete state changes. |
-| [Stacked bar chart](/controls/data-display/charts/cartesian/stacked-bar-chart) | Shows part-to-whole relationships across categories using stacked bars. |
+| [堆叠条形图](/controls/data-display/charts/cartesian/stacked-bar-chart) | Shows part-to-whole relationships across categories using stacked bars. |
 | [Stacked area chart](/controls/data-display/charts/cartesian/stacked-area-chart) | Shows cumulative totals over time using stacked filled areas. |
 | [Range area chart](/controls/data-display/charts/cartesian/range-area-chart) | Displays high-low ranges as a filled band between two values. |
-| [Waterfall chart](/controls/data-display/charts/cartesian/waterfall-chart) | Shows how an initial value changes through a series of positive and negative contributions. |
+| [瀑布图](/controls/data-display/charts/cartesian/waterfall-chart) | Shows how an initial value changes through a series of positive and negative contributions. |
 | [Histogram chart](/controls/data-display/charts/cartesian/histogram-chart) | Groups continuous values into bins to show frequency distribution. |
 | [Pareto chart](/controls/data-display/charts/cartesian/pareto-chart) | Combines bars and a cumulative line to identify significant factors. |
 
@@ -295,7 +295,7 @@ Charts for time-based planning, project management, and sequential data.
 | Chart | 说明 |
 | --- | --- |
 | [Gantt chart](/controls/data-display/charts/scheduling/gantt-chart) | Shows tasks and their durations across a horizontal time axis. |
-| [Timeline chart](/controls/data-display/charts/scheduling/timeline-chart) | Displays events in chronological order along a linear axis. |
+| [时间线图](/controls/data-display/charts/scheduling/timeline-chart) | Displays events in chronological order along a linear axis. |
 | [Swimlane chart](/controls/data-display/charts/scheduling/swimlane-chart) | Organizes tasks into parallel rows to show ownership or phase. |
 | [Spiral timeline chart](/controls/data-display/charts/scheduling/spiral-timeline-chart) | Arranges time-based data along a spiral for cyclical patterns. |
 | [Sparkline chart](/controls/data-display/charts/scheduling/sparkline-chart) | An inline miniature chart for showing trends within a small space. |
@@ -331,7 +331,7 @@ Most chart types share the following configurable elements:
 | [Markers](/controls/data-display/charts/shared-elements/markers-chart) | Adds point symbols at each data value. |
 | [Trendline](/controls/data-display/charts/shared-elements/trendline-chart) | Overlays a regression or moving-average line on a series. |
 | [Annotations](/controls/data-display/charts/shared-elements/annotations-chart) | Places labels, lines, or shapes at specific data coordinates. |
-| [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart) | Controls tick marks, labels, gridlines, and scale. |
+| [坐标轴定制](/controls/data-display/charts/shared-elements/axis-customization-chart) | Controls tick marks, labels, gridlines, and scale. |
 | [Interactions](/controls/data-display/charts/shared-elements/interactions-chart) | Configures zoom, pan, selection, hover highlighting, and trackball behavior. |
 
 ## 另请参阅 {#see-also}

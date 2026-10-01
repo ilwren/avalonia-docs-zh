@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Gradient ring charts render several concentric progress rings with one ring per item, so grouped status indicators can be compared in a compact view.
@@ -19,7 +19,7 @@ Gradient ring charts render several concentric progress rings with one ring per 
 - **Capability dashboards**: Compare completion or health across a small set of categories.
 - **Circular summaries**: Replace a stack of progress donuts when values share the same scale.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Gradient ring charts render several concentric progress rings with one ring per 
                             ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record RingMetric(string Label, double Value);

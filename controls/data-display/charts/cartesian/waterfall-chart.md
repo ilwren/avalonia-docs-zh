@@ -1,7 +1,7 @@
 ---
 id: waterfall-chart
-title: Waterfall chart
-description: Shows a running total as values are added or subtracted, useful for visualizing how sequential positive or negative changes affect an initial value.
+title: 瀑布图
+description: 随着数值的增减展示累计结果，适合呈现一连串正负变化如何改变初始值。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianWaterfall from '/img/controls/charts/charts-cartesian-waterfall.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-A waterfall chart shows a running total as values are added or subtracted. It's useful for understanding how an initial value is affected by a series of intermediate positive or negative values.
+瀑布图随着数值的增减展示累计结果。要弄清一个初始值如何被一连串中间的正负数值所影响，用它正合适。
 
 <Image light={chartsCartesianWaterfall} maxWidth={400} position="center" cornerRadius="true" alt="Waterfall chart with floating bars showing sequential positive and negative changes to a running total." />
 
 ## 适用场景 {#when-to-use}
-- **Financial analysis**: Visualizing P&L (Profit and Loss) statements over time.
-- **Inventory tracking**: Showing how stock levels change with additions and removals.
-- **Process steps**: Modeling the cumulative effect of sequential variables.
+- **财务分析**：呈现一段时期内的损益表。
+- **库存追踪**：展示库存水平如何随着入库和出库而变化。
+- **流程步骤**：刻画一连串变量的累积效应。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -38,7 +38,7 @@ A waterfall chart shows a running total as values are added or subtracted. It's 
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record WaterfallFinancialPoint(string Category, double Value);
 
@@ -57,12 +57,12 @@ public ObservableCollection<WaterfallFinancialPoint> WaterfallData { get; } = ne
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of changes. | `null` |
-| `CategoryPath` | Path to the label/category. | `null` |
-| `ValuePath` | Path to the change value (positive or negative). | `null` |
-| `PositiveBrush` | Brush for positive changes. | Theme-dependent |
-| `NegativeBrush` | Brush for negative changes. | Theme-dependent |
-| `TotalBrush` | Brush for the total (final) bar. | Theme-dependent |
-| `BarWidth` | Width of each bar as a fraction of the available category slot. | `0.7` |
-| `ShowConnectorLines` | Whether to draw connector lines between consecutive bars. | `true` |
-| `TotalCategory` | The category name that represents the final total. | `null` |
+| `ItemsSource` | 各次变化的集合。 | `null` |
+| `CategoryPath` | 指向标签/类别的路径。 | `null` |
+| `ValuePath` | 指向变化值（正或负）的路径。 | `null` |
+| `PositiveBrush` | 正向变化所用的画刷。 | Theme-dependent |
+| `NegativeBrush` | 负向变化所用的画刷。 | Theme-dependent |
+| `TotalBrush` | 总计（末根）条形所用的画刷。 | Theme-dependent |
+| `BarWidth` | 每根条形的宽度，以可用类别槽位的比例表示。 | `0.7` |
+| `ShowConnectorLines` | 是否在相邻条形之间绘制连接线。 | `true` |
+| `TotalCategory` | 表示最终总计的那个类别名称。 | `null` |

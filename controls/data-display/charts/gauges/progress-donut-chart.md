@@ -10,7 +10,7 @@ tags:
 import chartsGaugesProgressDonut from '/img/controls/charts/charts-pie-progressdonut.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Progress donut charts are a specialized variation of donut charts designed to show progress toward a single 100% goal. They are often used in fitness apps or system dashboards.
@@ -22,7 +22,7 @@ Progress donut charts are a specialized variation of donut charts designed to sh
 - **Metric summaries**: Visualizing percentage-based data (e.g., Disk Space used).
 - **KPI dashboards**: Providing a quick visual check for key performance indicators.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml

@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Radial line charts plot data points on a `PolarChart` and connect them with lines, as defined by a `PolarLineSeries`. They are ideal for showing how a single variable fluctuates across cyclical categories.
@@ -18,7 +18,7 @@ Radial line charts plot data points on a `PolarChart` and connect them with line
 - **Directional data**: Visualizing readings from a 360-degree sensor.
 - **Symmetry analysis**: Checking for patterns and balance in multi-variate profiles.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Radial line charts plot data points on a `PolarChart` and connect them with line
 </PolarChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record ActivityPoint(double Angle, double Radius);
 

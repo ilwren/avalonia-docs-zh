@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 The ShapeMap control can handle non-geographic coordinate systems, making it perfect for custom layouts like aircraft seating, floor plans, or theater arrangements.
@@ -18,7 +18,7 @@ The ShapeMap control can handle non-geographic coordinate systems, making it per
 - **Facility management**: Visualizing data on top of a building floor plan.
 - **Interactive UI**: Creating clickable, data-driven custom shape layouts.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,7 +35,7 @@ The ShapeMap control can handle non-geographic coordinate systems, making it per
 </ShapeMap>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 Ensure the GeoJSON file is included in your project and available at the specified relative path at runtime.
 

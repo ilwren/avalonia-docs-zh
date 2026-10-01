@@ -10,7 +10,7 @@ tags:
 import chartsRadialPolararea from '/img/controls/charts/charts-radial-polar.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Polar area charts (or coxcomb charts) are similar to pie charts but represent values using the radius of segments instead of the angle. Each segment has an equal angle.
@@ -22,7 +22,7 @@ Polar area charts (or coxcomb charts) are similar to pie charts but represent va
 - **Ranking categories**: Comparing the magnitude of many categories in a circular layout.
 - **Historical analysis**: The classic chart type for visualizing causes of mortality over time.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Polar area charts (or coxcomb charts) are similar to pie charts but represent va
                                              LabelPath="Label" ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record RadialPoint(string Label, double Value);
 
@@ -54,7 +54,7 @@ public ObservableCollection<RadialPoint> PolarChartData { get; } = new()
 | `ValuePath` | Property determining the radius of the slice. | `null` |
 | `LabelPath` | Property for the slice name. | `null` |
 | `ShowLabels` | Whether to display labels for segments. | `true` |
-| `LabelFontSize` | Font size used for segment labels. | `11.0` |
+| `LabelFontSize` | 各段标签所用的字号。 | `11.0` |
 | `LabelForeground` | Brush used for segment labels. When `null`, the chart uses the effective label foreground. | `null` |
 | `StartAngle` | Start angle in degrees for the first segment. | `-90.0` |
 | `Stroke` | Outline brush for the segments. When `null`, the chart uses a white outline. | `null` (white) |

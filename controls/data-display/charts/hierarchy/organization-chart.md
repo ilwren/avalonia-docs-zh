@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalOrganization from '/img/controls/charts/charts-hierarchical-organization.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Organization charts represent the structure of an organization, clarifying reporting relationships, relative ranks, and positions/job roles.
@@ -22,7 +22,7 @@ Organization charts represent the structure of an organization, clarifying repor
 - **Project hierarchy**: Mapping out product owners, developers, and stakeholders.
 - **Family trees**: Displaying genealogical relationships and lineages.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -30,7 +30,7 @@ Organization charts represent the structure of an organization, clarifying repor
                                                ItemsSource="{Binding OrgChartData}" LabelPath="Name" ChildrenPath="Reports" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class OrgNode
 {

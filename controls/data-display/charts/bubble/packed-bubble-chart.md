@@ -1,25 +1,25 @@
 ---
 id: packed-bubble-chart
-title: Packed bubble chart
-description: Displays sized bubbles packed tightly without axes, useful for proportional category comparisons in a compact area.
+title: 紧凑气泡图
+description: 不设坐标轴，把大小不一的气泡紧密排布在一起，适合在有限空间里按比例比较各类别。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Packed bubble charts show category magnitude through bubble size while packing circles tightly into a single frame.
+紧凑气泡图用气泡大小表示各类别的量级，同时把这些圆紧紧地码进同一个画框里。
 
 ## 适用场景 {#when-to-use}
 
-- **Part-to-whole views**: Compare categories by size without a bar chart.
-- **Compact dashboards**: Fit many categories into a square card.
-- **Label-first comparisons**: Keep category names inside the bubbles when space allows.
+- **部分与整体**：不用条形图也能按大小比较各类别。
+- **紧凑仪表板**：把众多类别塞进一张方形卡片。
+- **以标签为先的比较**：空间允许时，把类别名称直接放进气泡里。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Packed bubble charts show category magnitude through bubble size while packing c
                             ShowLabels="True" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record SegmentBubble(string Name, double Value);
@@ -49,17 +49,17 @@ public ObservableCollection<SegmentBubble> Segments { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of bubble items. | `null` |
-| `ValuePath` | Path to the value used for bubble size. | `null` |
-| `LabelPath` | Path to the bubble label. | `null` |
-| `MinBubbleSize` | Minimum bubble size in pixels. | `20.0` |
-| `MaxBubbleSize` | Maximum bubble size in pixels. | `80.0` |
-| `ShowLabels` | Whether to draw labels inside bubbles when space allows. | `true` |
-| `LabelFontSize` | Base font size for bubble labels. The rendered size is constrained by each bubble radius. | `12.0` |
-| `LabelForeground` | Brush used for bubble labels. When `null`, labels use white. | `null` |
-| `IsHighlightEnabled` | Enables hover highlighting for bubbles. | `false` |
+| `ItemsSource` | 气泡项的集合。 | `null` |
+| `ValuePath` | 指向决定气泡大小那个数值的路径。 | `null` |
+| `LabelPath` | 指向气泡标签的路径。 | `null` |
+| `MinBubbleSize` | 气泡最小尺寸，单位为像素。 | `20.0` |
+| `MaxBubbleSize` | 气泡最大尺寸，单位为像素。 | `80.0` |
+| `ShowLabels` | 空间允许时是否在气泡内部绘制标签。 | `true` |
+| `LabelFontSize` | 气泡标签的基准字号。实际渲染尺寸还会受各气泡半径的限制。 | `12.0` |
+| `LabelForeground` | 气泡标签所用的画刷。为 `null` 时，标签使用白色。 | `null` |
+| `IsHighlightEnabled` | 为气泡启用悬停高亮。 | `false` |
 
 ## 另请参阅 {#see-also}
 
-- [Bubble cloud chart](/controls/data-display/charts/bubble/bubble-cloud-chart)
-- [Bubble chart](/controls/data-display/charts/bubble/bubble-chart)
+- [气泡云图](/controls/data-display/charts/bubble/bubble-cloud-chart)
+- [气泡图](/controls/data-display/charts/bubble/bubble-chart)

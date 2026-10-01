@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesTooltip from '/img/controls/charts/charts-tooltips.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Tooltips provide detailed information about data points when the user hovers over them. They add precision and context without cluttering the main chart area.
@@ -24,7 +24,7 @@ Default Cartesian and financial chart tooltips format category and date values t
 - **Additional context**: Showing metadata (e.g., "Update Date") that isn't mapped to an axis.
 - **Hover interactions**: Showing focused details while the pointer is over a data point.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -46,7 +46,7 @@ Default Cartesian and financial chart tooltips format category and date values t
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<double> Series1Data { get; } = new()
 {

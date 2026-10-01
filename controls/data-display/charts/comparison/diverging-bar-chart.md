@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Diverging bar charts use a centered baseline so values can extend in opposite directions from the same origin.
@@ -19,7 +19,7 @@ Diverging bar charts use a centered baseline so values can extend in opposite di
 - **Variance views**: Compare over- and under-performance against a baseline.
 - **Balanced comparisons**: Highlight directional differences without two separate charts.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -31,7 +31,7 @@ Diverging bar charts use a centered baseline so values can extend in opposite di
                             ValuePath="Score" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record SentimentPoint(string Label, double Score);
@@ -60,5 +60,5 @@ public ObservableCollection<SentimentPoint> SentimentData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
+- [条形图](/controls/data-display/charts/cartesian/bar-chart)
 - [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart)

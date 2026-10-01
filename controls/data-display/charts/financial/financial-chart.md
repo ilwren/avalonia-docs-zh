@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 `FinancialChart` is the host control for financial series such as `CandlestickSeries` and `OhlcSeries`. It provides the shared price grid, axes, and horizontal category layout used by those series. Compatible overlay series, such as `MovingAverageSeries`, can render in the same date and price coordinate space.
@@ -19,7 +19,7 @@ tags:
 - **Trading views**: Reuse the shared financial axes and price grid across different series types.
 - **Series comparison**: Overlay compatible financial series against the same horizontal axis.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -36,7 +36,7 @@ tags:
 </FinancialChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 using System;
@@ -74,7 +74,7 @@ Custom overlay series can render in the financial chart coordinate space by impl
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Series` | Content collection of financial series and compatible overlay series rendered in the chart. | Empty collection |
+| `Series` | Content collection of financial series and compatible overlay series rendered in the chart. | 空集合 |
 | `HorizontalAxis` | Horizontal axis used for date or category positions. | `null` |
 | `VerticalAxis` | Vertical axis used for price values. | `null` |
 | `GridLineBrush` | Default brush used for grid lines when an axis does not set its own gridline brush. | `null` |

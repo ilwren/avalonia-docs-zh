@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Ridgeline charts stack multiple area distributions with vertical overlap so you can compare shape changes across groups, periods, or scenarios.
@@ -19,7 +19,7 @@ Ridgeline charts stack multiple area distributions with vertical overlap so you 
 - **Group comparison**: Stack many related density-like curves in one compact frame.
 - **Shape-first analysis**: Emphasize contour and overlap more than exact totals.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Ridgeline charts stack multiple area distributions with vertical overlap so you 
 </RidgelineChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record CurvePoint(double X, double Y);
@@ -45,12 +45,12 @@ public ObservableCollection<CurvePoint> Series2024 { get; } = new() { new(0, 3),
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Series` | Content collection of `AreaSeries` distributions. | Empty collection |
+| `Series` | Content collection of `AreaSeries` distributions. | 空集合 |
 | `Overlap` | Overlap factor between series. | `0.5` |
 | `SeriesHeight` | Target height for each series band. | `50.0` |
 | `CurveType` | Curve interpolation type. | `Spline` |
 
 ## 另请参阅 {#see-also}
 
-- [Area chart](/controls/data-display/charts/cartesian/area-chart)
+- [面积图](/controls/data-display/charts/cartesian/area-chart)
 - [Density plot chart](/controls/data-display/charts/statistical/density-plot-chart)

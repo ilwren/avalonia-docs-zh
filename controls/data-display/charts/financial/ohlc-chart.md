@@ -10,7 +10,7 @@ tags:
 import chartsFinancialOhlc from '/img/controls/charts/charts-financial-ohlc.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 OHLC charts show the Open, High, Low, and Close prices for a given period. They are similar to candlestick charts but use vertical lines with horizontal ticks to represent the range and opening/closing prices.
@@ -22,7 +22,7 @@ OHLC charts show the Open, High, Low, and Close prices for a given period. They 
 - **Market trends**: Spotting trends and price ranges over specific time intervals.
 - **Commodity/stock tracking**: Standard professional visualization for price data.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -36,7 +36,7 @@ OHLC charts show the Open, High, Low, and Close prices for a given period. They 
 </FinancialChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 

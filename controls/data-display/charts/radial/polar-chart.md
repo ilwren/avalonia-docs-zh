@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 `PolarChart` hosts one or more `PolarLineSeries` and maps each point using an angle and a radius rather than Cartesian axes.
@@ -19,7 +19,7 @@ tags:
 - **Directional measurements**: Plot values around a full angular range.
 - **Radial analysis**: Use free-form angles when fixed radar spokes are too restrictive.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -34,7 +34,7 @@ tags:
 </PolarChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record PolarPoint(double Angle, double Radius);
@@ -48,11 +48,11 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 };
 ```
 
-## Common properties (`PolarChart`)
+## 常用属性（`PolarChart`） {#common-properties-polarchart}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Series` | Content collection of `PolarLineSeries` items. | Empty collection |
+| `Series` | Content collection of `PolarLineSeries` items. | 空集合 |
 | `ShowGridLines` | Whether to draw angular and radial grid lines. | `true` |
 | `GridLineBrush` | Brush used for the grid. | `null` |
 | `GridLineStrokeThickness` | Thickness of the grid lines. | `1.0` |
@@ -61,7 +61,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 | `StartAngle` | Visual start angle in degrees. | `-90.0` |
 | `IsHighlightEnabled` | Enables chart-level hover highlighting for polar points. | `false` |
 
-## Common properties (`PolarLineSeries`)
+## 常用属性（`PolarLineSeries`） {#common-properties-polarlineseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

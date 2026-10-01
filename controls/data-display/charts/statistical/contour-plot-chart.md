@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Contour plots interpolate values across two spatial dimensions and render the result as isolines, filled regions, or both.
@@ -19,7 +19,7 @@ Contour plots interpolate values across two spatial dimensions and render the re
 - **Hotspot analysis**: Reveal peaks, valleys, and gradients in two dimensions.
 - **Engineering maps**: Show pressure, temperature, or concentration surfaces.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -33,7 +33,7 @@ Contour plots interpolate values across two spatial dimensions and render the re
                               ContourLevels="10" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record ContourPoint(double X, double Y, double Temperature);

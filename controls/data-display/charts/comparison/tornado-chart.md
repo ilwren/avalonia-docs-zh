@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Tornado charts place left and right bars around a shared center line, which keeps ranked side-by-side differences scannable.
@@ -19,7 +19,7 @@ Tornado charts place left and right bars around a shared center line, which keep
 - **Scenario comparison**: Compare two opposing values across the same categories.
 - **Priority review**: Focus on the largest absolute differences first.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Tornado charts place left and right bars around a shared center line, which keep
                        RightValuePath="Upside" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record TornadoFactor(string Factor, double Downside, double Upside);

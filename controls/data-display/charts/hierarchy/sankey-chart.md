@@ -10,7 +10,7 @@ tags:
 import chartsFlowSankey from '/img/controls/charts/charts-flow-sankey.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Sankey charts visualize the flow of data, energy, or materials between stages. The width of the connecting links is proportional to the quantity of the flow.
@@ -22,7 +22,7 @@ Sankey charts visualize the flow of data, energy, or materials between stages. T
 - **Web analytics**: Visualizing the path users take through a website (user journey).
 - **Budgeting**: Tracking how funds flow from income sources to various expenses.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Sankey charts visualize the flow of data, energy, or materials between stages. T
                       ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record FlowItem(string Source, string Target, double Value);
 

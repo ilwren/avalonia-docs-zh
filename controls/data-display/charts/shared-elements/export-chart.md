@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Chart controls inherit export APIs from `ChartBase`. Use `ExportAsync` to render the current chart view to an image file, PNG stream, or save dialog.
@@ -19,7 +19,7 @@ Chart controls inherit export APIs from `ChartBase`. Use `ExportAsync` to render
 - **User exports**: Let users save the current chart view from an app.
 - **Snapshots**: Render chart images for a workflow that needs a bitmap output.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### Export to file
 

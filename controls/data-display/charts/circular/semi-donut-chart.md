@@ -1,7 +1,7 @@
 ---
 id: semi-donut-chart
-title: Semi-donut chart
-description: Displays proportional data in a 180-degree arc, popular for dashboard gauges and summary metrics where a full circle is not required.
+title: 半环形图
+description: 在 180 度的弧上呈现占比数据，常用于仪表板中的进度表和摘要指标，不必占满整个圆。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsPieSemidonut from '/img/controls/charts/charts-pie-semidonut.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Semi-donut charts display data in a 180-degree arc. They are particularly popular in dashboard designs for gauging progress or displaying summary metrics in a space-constrained area.
+半环形图在 180 度的弧上呈现数据。在仪表板设计中，它尤其常用于衡量进度，或在局促的空间里展示摘要指标。
 
 <Image light={chartsPieSemidonut} maxWidth={400} position="center" cornerRadius="true" alt="Semi-donut chart displayed as a 180-degree arc with colored segments and a center label showing a summary metric." />
 
 ## 适用场景 {#when-to-use}
-- **KPI gauges**: Visualizing a single metric against a target or total.
+- **KPI 进度表**：呈现单项指标相对目标或总量的完成情况。
 - **Dashboard headers**: Providing a quick summary of a category at the top of a page.
 - **Angular comparison**: Comparing parts of a whole where a full circle isn't needed or desired.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -34,7 +34,7 @@ Semi-donut charts display data in a 180-degree arc. They are particularly popula
                          CenterLabel="Total Revenue" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record SemiDonutPoint(string Label, double Value);
 

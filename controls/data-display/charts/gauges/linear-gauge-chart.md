@@ -10,7 +10,7 @@ tags:
 import chartsGaugesLinear from '/img/controls/charts/charts-gauges-linear-1.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Linear gauge charts visualize a value along a horizontal or vertical bar. They are suited to comparing metrics side by side or showing progress in a linear, space-efficient format.
@@ -22,7 +22,7 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 - **Volume indicators**: Showing storage levels, audio levels, or tank capacity.
 - **Progress tracking**: Visualizing a sequence of targets in a straight line.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -64,9 +64,9 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Value` | The current value to display. | `50.0` |
-| `MinValue` | Minimum value of the scale. | `0.0` |
-| `MaxValue` | Maximum value of the scale. | `100.0` |
+| `Value` | 要显示的当前值。 | `50.0` |
+| `MinValue` | 标尺的最小值。 | `0.0` |
+| `MaxValue` | 标尺的最大值。 | `100.0` |
 | `Orientation` | Orientation of the gauge, `Horizontal` or `Vertical`. | `Horizontal` |
 | `ShowScale` | Whether to display the scale. | `true` |
 | `TrackBrush` | Color of the track. | Uses theme default. |

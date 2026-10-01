@@ -1,7 +1,7 @@
 ---
 id: pictorial-bar-chart
-title: Pictorial bar chart
-description: Uses icons or symbols instead of plain bars, reinforcing the subject matter visually for infographics and thematic reports.
+title: 图形条形图
+description: 用图标或符号代替普通条形，在信息图和专题报告中从视觉上强化主题。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianPictorial from '/img/controls/charts/charts-cartesian-pictorial.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Pictorial bar charts use recognizable icons or symbols instead of plain bars. They are suited to infographics where the subject matter (for example, people, cars, or buildings) can be visually reinforced.
+图形条形图用一眼就能认出的图标或符号代替普通条形。当主题本身（比如人、汽车、建筑）可以从视觉上加以强化时，它特别适合用在信息图中。
 
 <Image light={chartsCartesianPictorial} maxWidth={400} position="center" cornerRadius="true" alt="Pictorial bar chart using repeated icon symbols instead of plain bars to represent category values." />
 
 ## 适用场景 {#when-to-use}
-- **Infographics**: Creating high-engagement, thematic reports.
-- **Demographic reports**: Using gender or professional icons to represent counts.
-- **Public data presentation**: Making dry statistics more accessible through familiar symbols.
+- **信息图**：制作吸引眼球的专题报告。
+- **人口统计报告**：用性别或职业图标来表示数量。
+- **公共数据展示**：借助熟悉的符号，让枯燥的统计数字变得平易近人。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -56,7 +56,7 @@ Pictorial bar charts use recognizable icons or symbols instead of plain bars. Th
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record VehicleItem(string Category, double Value2023, double Value2024, string Icon);
 
@@ -76,12 +76,12 @@ private const string TrainIcon = "M12,2c-4,0-8,0.5-8,4v9.5C4,17.43,5.57,19,7.5,1
 private const string AirplaneIcon = "M21,16v-2l-8-5V3.5C13,2.67,12.33,2,11.5,2S10,2.67,10,3.5V9l-8,5v2l8-2.5V19l-2,1.5V22l3.5-1l3.5,1v-1.5L13,19v-5.5L21,16z";
 ```
 
-## Common properties (PictorialBarSeries)
+## 常用属性（PictorialBarSeries） {#common-properties-pictorialbarseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Geometry` | The SVG/XAML path data for the icon. | `null` |
+| `Geometry` | 图标的 SVG/XAML 路径数据。 | `null` |
 | `RenderMode` | `Stretch`, `Clip`, or `Repeat`. | `Stretch` |
-| `SymbolSize` | The size of the icon in pixels. | `20.0` |
-| `SymbolSpacing` | Padding between repeated icons. | `5.0` |
-| `Fill` | Brush used to paint the icons. | Theme-dependent |
+| `SymbolSize` | 图标的大小，单位为像素。 | `20.0` |
+| `SymbolSpacing` | 重复图标之间的内边距。 | `5.0` |
+| `Fill` | 绘制图标所用的画刷。 | Theme-dependent |

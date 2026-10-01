@@ -10,7 +10,7 @@ tags:
 import chartsFinancialHilo from '/img/controls/charts/charts-financial-hilo.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Hilo charts show the High and Low prices for a given period. By omitting the open and close values, they provide a focused view of the total price volatility and range.
@@ -22,7 +22,7 @@ Hilo charts show the High and Low prices for a given period. By omitting the ope
 - **Support and resistance**: Identifying key price levels where the market struggled to move further.
 - **Simplified trading**: When a cleaner alternative to OHLC or Candlestick charts is preferred.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -42,7 +42,7 @@ Hilo charts show the High and Low prices for a given period. By omitting the ope
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 

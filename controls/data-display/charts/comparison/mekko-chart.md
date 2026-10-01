@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Mekko charts, also called Marimekko charts, use variable column widths and stacked segment heights to compare market size and composition in one view.
@@ -19,7 +19,7 @@ Mekko charts, also called Marimekko charts, use variable column widths and stack
 - **Portfolio composition**: Show total size and breakdown per group.
 - **Multi-dimensional comparison**: Replace separate width and stacked-bar views with one chart.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Mekko charts, also called Marimekko charts, use variable column widths and stack
                              SegmentsPath="Segments" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record MekkoSegment(string Name, double Value);
@@ -59,5 +59,5 @@ public ObservableCollection<MekkoColumn> MekkoData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Stacked bar chart](/controls/data-display/charts/cartesian/stacked-bar-chart)
-- [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
+- [堆叠条形图](/controls/data-display/charts/cartesian/stacked-bar-chart)
+- [条形图](/controls/data-display/charts/cartesian/bar-chart)

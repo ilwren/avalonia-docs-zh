@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Gauge charts render a single value on a dial-style arc, with optional needle and formatted value text.
@@ -19,7 +19,7 @@ Gauge charts render a single value on a dial-style arc, with optional needle and
 - **Threshold monitoring**: Emphasize a single current reading over time history.
 - **Status cards**: Present one metric with strong visual weight.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Gauge charts render a single value on a dial-style arc, with optional needle and
                      ShowNeedle="True" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public double CpuLoad { get; set; } = 67;
@@ -43,8 +43,8 @@ public double CpuLoad { get; set; } = 67;
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | Current value displayed by the gauge. | `50.0` |
-| `MinValue` | Minimum value of the scale. | `0.0` |
-| `MaxValue` | Maximum value of the scale. | `100.0` |
+| `MinValue` | 标尺的最小值。 | `0.0` |
+| `MaxValue` | 标尺的最大值。 | `100.0` |
 | `ValueBrush` | Brush used for the value arc. | `null` |
 | `TrackBrush` | Brush used for the background track. | `null` |
 | `NeedleBrush` | Brush used for the needle. | `null` |

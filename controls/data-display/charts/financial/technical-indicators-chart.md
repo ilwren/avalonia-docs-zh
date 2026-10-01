@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Technical indicators are analytical overlays added to a `CartesianChart` to help identify trends, momentum, and volatility in data. They compute derived values from a target series and render the results directly on the chart. Indicators are added to the `TechnicalIndicators` collection on `CartesianChart`.
@@ -20,7 +20,7 @@ Indicators follow the target series axis context. This includes continuous horiz
 - **Volatility assessment**: Visualizing standard deviation bands around a moving average with Bollinger Bands.
 - **Financial charting**: Adding standard technical analysis overlays to candlestick or OHLC charts.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -47,7 +47,7 @@ Indicators follow the target series axis context. This includes continuous horiz
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record StockPoint(string Date, double Open, double High, double Low, double Close);
 
@@ -60,7 +60,7 @@ public ObservableCollection<StockPoint> StockData { get; } = new()
 };
 ```
 
-## Common properties (`ChartTechnicalIndicator`)
+## 常用属性（`ChartTechnicalIndicator`） {#common-properties-charttechnicalindicator}
 
 These properties are shared by all technical indicator types.
 
@@ -75,7 +75,7 @@ These properties are shared by all technical indicator types.
 | `StrokeLineJoin` | Line join style for the indicator line. | `Round` |
 | `Title` | Name shown in the chart legend and tooltips. | Varies by indicator |
 
-## Common properties (`SMAIndicator`)
+## 常用属性（`SMAIndicator`） {#common-properties-smaindicator}
 
 The simple moving average (SMA) calculates the unweighted mean of the previous *n* data points. It is the basic smoothing technique.
 
@@ -100,7 +100,7 @@ The simple moving average (SMA) calculates the unweighted mean of the previous *
 </CartesianChart>
 ```
 
-## Common properties (`EMAIndicator`)
+## 常用属性（`EMAIndicator`） {#common-properties-emaindicator}
 
 The exponential moving average (EMA) gives more weight to recent data points, making it more responsive to new information than an SMA.
 
@@ -125,7 +125,7 @@ The exponential moving average (EMA) gives more weight to recent data points, ma
 </CartesianChart>
 ```
 
-## Common properties (`WMAIndicator`)
+## 常用属性（`WMAIndicator`） {#common-properties-wmaindicator}
 
 The weighted moving average (WMA) assigns linearly increasing weights to data points, with the most recent point receiving the highest weight.
 
@@ -150,7 +150,7 @@ The weighted moving average (WMA) assigns linearly increasing weights to data po
 </CartesianChart>
 ```
 
-## Common properties (`BollingerBandsIndicator`)
+## 常用属性（`BollingerBandsIndicator`） {#common-properties-bollingerbandsindicator}
 
 Bollinger Bands consist of a simple moving average (middle band) and two standard deviation bands (upper and lower). They are used to measure volatility and identify overbought or oversold conditions.
 
@@ -190,5 +190,5 @@ When shown in a chart legend, `BollingerBandsIndicator` creates a line item for 
 ## 另请参阅 {#see-also}
 
 - [Trendline chart](/controls/data-display/charts/shared-elements/trendline-chart)
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
-- [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)
+- [坐标轴定制](/controls/data-display/charts/shared-elements/axis-customization-chart)

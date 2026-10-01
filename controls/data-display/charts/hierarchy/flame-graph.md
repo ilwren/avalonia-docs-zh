@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Flame graphs display hierarchical cost, duration, or sample data as stacked rectangles, with the root at the bottom and deeper calls above it.
@@ -19,7 +19,7 @@ Flame graphs display hierarchical cost, duration, or sample data as stacked rect
 - **Trace inspection**: Understand where time accumulates in nested operations.
 - **Hierarchical cost review**: Compare depth and width across expensive branches.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Flame graphs display hierarchical cost, duration, or sample data as stacked rect
                              ChildrenPath="SubCalls" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public class FlameNode

@@ -10,7 +10,7 @@ tags:
 import chartsFinancialHeikinashi from '/img/controls/charts/charts-financial-heikin.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Heikin-Ashi charts are a variation of Japanese candlestick charts. They use a modified formula for open, high, low, and close values to filter out market noise and show smoothed trend direction.
@@ -22,7 +22,7 @@ Heikin-Ashi charts are a variation of Japanese candlestick charts. They use a mo
 - **Swing trading**: Identifying pullbacks and reversals in volatile markets.
 - **Long-term analysis**: Smoothing out day-to-day price fluctuations for a broader view.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Heikin-Ashi charts are a variation of Japanese candlestick charts. They use a mo
                                               DatePath="Date" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 

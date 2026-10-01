@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesMarkers from '/img/controls/charts/charts-markers.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Markers are symbols drawn at each data point in a series. They help users locate the exact coordinates of points, especially on line or spline charts where paths might be dense.
@@ -25,7 +25,7 @@ For Cartesian line-family series such as `LineSeries`, `SplineSeries`, and `Step
 - **Low-density charts**: Making points more clickable for tooltips or selection.
 - **Categorical distinction**: Using different shapes (Circle, Square, Diamond) to distinguish series.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -57,7 +57,7 @@ For Cartesian line-family series such as `LineSeries`, `SplineSeries`, and `Step
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<int> CircleMarkerData { get; } = new() { 20, 35, 25, 40, 30 };

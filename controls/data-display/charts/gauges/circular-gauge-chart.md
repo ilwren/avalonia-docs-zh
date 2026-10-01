@@ -10,7 +10,7 @@ tags:
 import chartsGaugesCircular from '/img/controls/charts/charts-gauges-circular.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Circular gauge charts visualize a single value on a radial scale. They are the standard for high-level dashboard metrics where a "speedometer" style visual is intuitive.
@@ -22,7 +22,7 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 - **Goal tracking**: Visualizing progress toward a target (e.g., sales quota).
 - **Physical simulation**: Representing values from physical sensors like speed or pressure.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -37,9 +37,9 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Value` | The current value to display. | `0.0` |
-| `MinValue` | Minimum value of the scale. | `0.0` |
-| `MaxValue` | Maximum value of the scale. | `100.0` |
+| `Value` | 要显示的当前值。 | `0.0` |
+| `MinValue` | 标尺的最小值。 | `0.0` |
+| `MaxValue` | 标尺的最大值。 | `100.0` |
 | `ShowValue` | Whether to display the numeric value. | `true` |
 | `ValueFormat` | Format string for the displayed value. | `"{0:F0}"` |
 | `StartAngle` | The starting angle of the gauge arc, in degrees. | `135.0` |

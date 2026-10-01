@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesAnnotation from '/img/controls/charts/charts-annotations.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Annotations allow you to add context to your charts using lines, bands, shapes, and custom text. They are useful for highlighting thresholds, milestones, or specific regions of interest.
@@ -23,7 +23,7 @@ Annotations allow you to add context to your charts using lines, bands, shapes, 
 - **Milestones**: Marking specific dates of interest on a timeline.
 - **Region highlighting**: Shading a "danger zone" or "comfort zone" across a set of values.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -61,7 +61,7 @@ Annotations allow you to add context to your charts using lines, bands, shapes, 
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record Point(double X, double Y);
@@ -92,7 +92,7 @@ Shape sizes are also measured in axis units. On logarithmic axes or axes with sc
 | `FontSize` | Font size used for annotation labels. | `12.0` |
 | `Label` | Text displayed next to the line. | `null` |
 
-## Common properties (`BandAnnotation`)
+## 常用属性（`BandAnnotation`） {#common-properties-bandannotation}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -119,7 +119,7 @@ A text annotation placed at a specific coordinate on the chart area.
 | `StrokeThickness` | Optional text outline thickness. Applied only when `Stroke` is explicitly set. | `1.0` |
 | `Opacity` | Opacity of the annotation. | `1.0` |
 
-## Common properties (`RectangleAnnotation`)
+## 常用属性（`RectangleAnnotation`） {#common-properties-rectangleannotation}
 
 A rectangle annotation placed at specific coordinates on the chart area.
 
@@ -154,7 +154,7 @@ A rectangle annotation placed at specific coordinates on the chart area.
 </CartesianChart>
 ```
 
-## Common properties (`EllipseAnnotation`)
+## 常用属性（`EllipseAnnotation`） {#common-properties-ellipseannotation}
 
 An ellipse annotation placed at specific coordinates on the chart area.
 
@@ -188,7 +188,7 @@ An ellipse annotation placed at specific coordinates on the chart area.
 </CartesianChart>
 ```
 
-## Common properties (`ArrowLineAnnotation`)
+## 常用属性（`ArrowLineAnnotation`） {#common-properties-arrowlineannotation}
 
 A line annotation with optional arrowheads at either or both ends, useful for indicating direction or drawing attention between two data points.
 

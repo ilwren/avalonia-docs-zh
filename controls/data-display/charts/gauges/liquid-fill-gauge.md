@@ -10,7 +10,7 @@ tags:
 import chartsGaugesLiquid from '/img/controls/charts/charts-gauges-liquid.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Liquid fill gauges are decorative circular gauges that represent a percentage as 'liquid' at a certain level. They are popular for visualizing tank levels, water usage, or thematic progress.
@@ -22,7 +22,7 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 - **Environmental apps**: Showing water levels or liquid container status.
 - **Engaging UI**: Adding a playful, animated metric indicator to a modern application.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -44,7 +44,7 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 | `TrackBrush` | Brush for the empty background region. | `null` |
 | `WaveAmplitude` | Amplitude of the wave effect. | `5.0` |
 | `WaveFrequency` | Frequency of the wave effect. | `2.0` |
-| `ShowPercentage` | Whether to display the percentage text. | `true` |
+| `ShowPercentage` | 是否显示百分比文字。 | `true` |
 | `IsWaveAnimationEnabled` | Whether to animate the wave. | `true` |
 
 ## 另请参阅 {#see-also}

@@ -1,7 +1,7 @@
 ---
 id: area-chart
-title: Area chart
-description: Extends the line chart by filling the area under the line with color or gradients, emphasizing magnitude of change over time.
+title: 面积图
+description: 在折线图的基础上，为折线下方的区域填上颜色或渐变，强调变化随时间的量级。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianArea from '/img/controls/charts/charts-cartesian-area.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Area charts are based on the line chart. The area between the axis and the line is filled with color or gradients, emphasizing the magnitude of change over time.
+面积图以折线图为基础，坐标轴与折线之间的区域会填上颜色或渐变，用以强调变化随时间的量级。
 
 <Image light={chartsCartesianArea} maxWidth={400} position="center" cornerRadius="true" alt="Area chart showing website traffic data with a gradient fill between the line and the horizontal axis." />
 
 ## 适用场景 {#when-to-use}
-- **Cumulative totals**: Visualizing how different components contribute to a whole over time.
-- **Volume**: Emphasizing the total volume or magnitude of data points.
-- **Visual contrast**: Providing a more distinct visual representation than a simple line chart.
+- **累计总量**：呈现各组成部分如何随时间汇聚成整体。
+- **体量**：强调数据点的总量或量级。
+- **视觉反差**：比单纯的折线图更有辨识度。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -39,7 +39,7 @@ Area charts are based on the line chart. The area between the axis and the line 
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> AreaSeriesData { get; } = new()
 {
@@ -51,9 +51,9 @@ public ObservableCollection<int> AreaSeriesData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series. | `null` |
-| `ItemsSource` | The collection of data items. | `null` |
-| `Stroke` | Color of the top line. | Theme-dependent |
-| `Fill` | Brush used to fill the area under the line. | Theme-dependent |
-| `FillOpacity` | Transparency of the fill (0.0 to 1.0). | `0.5` |
-| `StrokeThickness`| Width of the line. | `2` |
+| `Title` | 系列名称。 | `null` |
+| `ItemsSource` | 数据项的集合。 | `null` |
+| `Stroke` | 顶部折线的颜色。 | Theme-dependent |
+| `Fill` | 填充折线下方区域所用的画刷。 | Theme-dependent |
+| `FillOpacity` | 填充的透明度（0.0 到 1.0）。 | `0.5` |
+| `StrokeThickness`| 线条的粗细。 | `2` |

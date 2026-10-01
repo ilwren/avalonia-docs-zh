@@ -10,7 +10,7 @@ tags:
 import chartsTimelineHorizontal from '/img/controls/charts/charts-timeline-event.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Event timeline charts visualize a series of events chronologically. They provide a clear representation of historical or planned occurrences along a fixed time axis.
@@ -23,7 +23,7 @@ Event timeline charts visualize a series of events chronologically. They provide
 - **Audit trails**: Showing system logs or user activities in sequence.
 - **Vertical timelines**: Ideal for mobile-friendly or column-based layouts.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -36,7 +36,7 @@ Event timeline charts visualize a series of events chronologically. They provide
                                                  LabelPath="Event" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 using System;
@@ -64,4 +64,4 @@ public ObservableCollection<TimelineEvent> TimelineEvents { get; } = new()
 | `BrushPath` | Optional path to a brush or color value for each item. | `null` |
 | `MarkerSize` | Size of the event markers. | `12.0` |
 | `StrokeThickness` | Thickness of the main timeline. | `2.0` |
-| `Orientation` | Orientation of the chart, `Horizontal` or `Vertical`. | `Horizontal` |
+| `Orientation` | 图表的方向，`Horizontal` 或 `Vertical`。 | `Horizontal` |

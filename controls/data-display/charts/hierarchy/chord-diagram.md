@@ -10,7 +10,7 @@ tags:
 import chartsFlowChord from '/img/controls/charts/charts-flow-chord.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Chord diagrams visualize the inter-relationships between entities in a circular layout. They are useful for showing complex directional flows between a set of items.
@@ -22,7 +22,7 @@ Chord diagrams visualize the inter-relationships between entities in a circular 
 - **Migration patterns**: Showing movement of people between different geographic areas.
 - **System interactions**: Visualizing call dependencies between modules in a software system.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Chord diagrams visualize the inter-relationships between entities in a circular 
                             ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record TradeLink(string Source, string Target, double Value);
 

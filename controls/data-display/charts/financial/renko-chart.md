@@ -10,7 +10,7 @@ tags:
 import chartsFinancialRenko from '/img/controls/charts/charts-financial-renko.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Renko charts are made of "bricks" that represent a fixed price movement. A new brick is only added if price moves by the specified brick size, filtering out time and minor volatility.
@@ -22,7 +22,7 @@ Renko charts are made of "bricks" that represent a fixed price movement. A new b
 - **Trend confirmation**: Spotting persistent bullish/bearish brick sequences.
 - **Clean visualization**: Simplifying complex, noisy price data into uniform blocks.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Renko charts are made of "bricks" that represent a fixed price movement. A new b
                                          ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record RenkoPoint(double Value);
 

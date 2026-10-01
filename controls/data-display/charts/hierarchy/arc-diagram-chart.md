@@ -10,7 +10,7 @@ tags:
 import chartsFlowArc from '/img/controls/charts/charts-flow-arc.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Arc diagrams are network visualizations where nodes are placed linearly along an axis. Connections are drawn as curved arcs, with the thickness or color representing link strength.
@@ -22,7 +22,7 @@ Arc diagrams are network visualizations where nodes are placed linearly along an
 - **Dependency mapping**: Visualizing call stacks or structural relationships on a single line.
 - **Categorical proximity**: Highlighting clusters of interactions within a linear dataset.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -36,7 +36,7 @@ Arc diagrams are network visualizations where nodes are placed linearly along an
                           LinkValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record ArcNode(string Id, string Label);
 public record ArcLink(string Source, string Target, double Value);

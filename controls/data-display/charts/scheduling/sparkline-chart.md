@@ -10,7 +10,7 @@ tags:
 import chartsAnalyticsSparkline from '/img/controls/charts/charts-analytics-sparkline.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Sparklines are compact charts without axes or coordinates, designed to show trends in a series of values in a small space such as a card, table cell, or dashboard tile.
@@ -23,7 +23,7 @@ Sparklines are compact charts without axes or coordinates, designed to show tren
 - **Dashboard summaries**: Providing high-density visual context for many metrics on one screen.
 - **Compact visualizations**: When the general shape of a trend is more important than specific values.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -40,7 +40,7 @@ Sparklines are compact charts without axes or coordinates, designed to show tren
 </Grid>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<double> SparklineData { get; } = new()
@@ -61,11 +61,11 @@ public ObservableCollection<double> SparklineWinLossData { get; } = new()
 | `ItemsSource` | The collection of trend data. | `null` |
 | `ValuePath` | Property path used when `ItemsSource` contains objects instead of raw numbers. | `null` |
 | `SparklineType` | Style of the sparkline: `Line`, `Area`, `Bar`, or `WinLoss`. | `Line` |
-| `LineBrush` | Brush used for `Line` and `Area` sparklines. | `null` (blue, see Note below) |
+| `LineBrush` | Brush used for `Line` and `Area` sparklines. | `null`（蓝色，见下方说明） |
 | `AreaFill` | Brush used to fill the area for `Area` sparklines. | `null` (transparent blue, see Note below) |
-| `BarBrush` | Brush used for bars for `Bar` sparklines. | `null` (blue, see Note below) |
-| `WinBrush` | Brush used for positive values in `WinLoss` sparklines. | `null` (green, see Note below) |
-| `LossBrush` | Brush used for negative values in `WinLoss` sparklines. | `null` (red, see Note below) |
+| `BarBrush` | Brush used for bars for `Bar` sparklines. | `null`（蓝色，见下方说明） |
+| `WinBrush` | Brush used for positive values in `WinLoss` sparklines. | `null`（绿色，见下方说明） |
+| `LossBrush` | Brush used for negative values in `WinLoss` sparklines. | `null`（红色，见下方说明） |
 | `ShowMarkers` | Toggles rendering of individual data point markers. | `false` |
 | `ShowMinMax` | Highlights the minimum and maximum values. | `true` |
 | `StrokeThickness` | Width of the line stroke for `Line` and `Area` sparklines. | `2.0` |
@@ -83,4 +83,4 @@ The `Brush`-type properties default to these colors when set to `null`:
 ## 另请参阅 {#see-also}
 
 - [KPI cards](/controls/data-display/charts/analytics/kpi-card)
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)

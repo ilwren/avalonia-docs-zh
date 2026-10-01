@@ -1,25 +1,25 @@
 ---
 id: bubble-chart
-title: Bubble chart
-description: Plots X and Y values like a scatter chart, with a third value encoded as bubble size.
+title: 气泡图
+description: 像散点图一样绘制 X、Y 值，再用气泡大小表示第三个数值。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Bubble charts use a `BubbleSeries` inside a `CartesianChart` to plot two numeric dimensions. Each marker is sized using a third measure.
+气泡图在 `CartesianChart` 中使用 `BubbleSeries` 来绘制两个数值维度，每个标记点的大小则由第三个指标决定。
 
 ## 适用场景 {#when-to-use}
 
-- **Three-variable comparison**: Show relationships between X, Y, and magnitude in one view.
-- **Portfolio analysis**: Compare price, margin, and volume at the same time.
-- **Opportunity maps**: Highlight outliers by size as well as position.
+- **三变量对比**：在一张图里同时呈现 X、Y 和量级之间的关系。
+- **投资组合分析**：同时比较价格、利润率和成交量。
+- **机会地图**：既靠位置、也靠大小把异常值凸显出来。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -41,7 +41,7 @@ Bubble charts use a `BubbleSeries` inside a `CartesianChart` to plot two numeric
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record ProductBubble(double Price, double Revenue, double Units);
@@ -54,20 +54,20 @@ public ObservableCollection<ProductBubble> BubbleData { get; } = new()
 };
 ```
 
-## Common properties (`BubbleSeries`)
+## 常用属性（`BubbleSeries`） {#common-properties-bubbleseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of data points. | `null` |
-| `CategoryPath` | Path to the X-axis value. | `null` |
-| `ValuePath` | Path to the Y-axis value. | `null` |
-| `SizePath` | Path to the value used for bubble size. | `null` |
-| `MinBubbleSize` | Minimum bubble diameter in pixels. | `10.0` |
-| `MaxBubbleSize` | Maximum bubble diameter in pixels. | `50.0` |
-| `Fill` | Brush used for the bubbles. | Theme-dependent |
-| `Stroke` | Brush used for the bubble outlines. | Theme-dependent |
+| `ItemsSource` | 数据点集合。 | `null` |
+| `CategoryPath` | 指向 X 轴数值的路径。 | `null` |
+| `ValuePath` | 指向 Y 轴数值的路径。 | `null` |
+| `SizePath` | 指向决定气泡大小那个数值的路径。 | `null` |
+| `MinBubbleSize` | 气泡最小直径，单位为像素。 | `10.0` |
+| `MaxBubbleSize` | 气泡最大直径，单位为像素。 | `50.0` |
+| `Fill` | 气泡所用的画刷。 | Theme-dependent |
+| `Stroke` | 气泡轮廓所用的画刷。 | Theme-dependent |
 
 ## 另请参阅 {#see-also}
 
-- [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart)
-- [Packed bubble chart](/controls/data-display/charts/bubble/packed-bubble-chart)
+- [散点图](/controls/data-display/charts/cartesian/scatter-chart)
+- [紧凑气泡图](/controls/data-display/charts/bubble/packed-bubble-chart)

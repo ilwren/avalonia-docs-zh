@@ -1,7 +1,7 @@
 ---
 id: word-cloud-chart
-title: Word cloud
-description: Represents text data by varying word size based on frequency or importance, providing a visual summary of qualitative content.
+title: 词云
+description: 按词频或重要程度改变字号来呈现文本数据，为定性内容提供一目了然的视觉摘要。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsAnalyticsWordCloud from '/img/controls/charts/charts-analytics-word-cloud.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Word clouds represent text data by varying word size based on frequency or importance. They provide an immediate visual summary of qualitative content or popular topics.
+词云按词频或重要程度改变字号来呈现文本数据，让定性内容或热门话题一目了然。
 
 <Image light={chartsAnalyticsWordCloud} maxWidth={400} position="center" cornerRadius="true" alt="Word cloud displaying words at varying font sizes based on frequency, with more prominent words appearing larger." />
 
 ## 适用场景 {#when-to-use}
-- **Search Trends**: Visualizing the most common keywords in a query log.
-- **Sentiment Analysis**: Highlighting prominent words in customer reviews.
-- **Content Summarization**: Showing the main themes of a long article or document.
+- **搜索趋势**：呈现查询日志中最常见的关键词。
+- **情感分析**：凸显客户评价中的高频词。
+- **内容概括**：展示一篇长文或文档的主要主题。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Word clouds represent text data by varying word size based on frequency or impor
                                              WordPath="Word" WeightPath="Count"/>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record WordItem(string Word, double Count);
 
@@ -57,10 +57,10 @@ public ObservableCollection<WordItem> WordCloudData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of word/weight data. | `null` |
-| `WordPath` | Property name for the actual text word. | `null` |
-| `WeightPath` | Numerical property determining font size. | `null` |
-| `MinFontSize` | Smallest font size in pixels. | `12.0` |
-| `MaxFontSize` | Largest font size in pixels. | `48.0` |
-| `MaxWords` | Maximum number of words rendered. | `50` |
-| `RotateWords` | Whether some words may be rotated vertically. | `true` |
+| `ItemsSource` | 词语与权重数据的集合。 | `null` |
+| `WordPath` | 实际词语文本所对应的属性名。 | `null` |
+| `WeightPath` | 决定字号的数值属性。 | `null` |
+| `MinFontSize` | 最小字号，单位为像素。 | `12.0` |
+| `MaxFontSize` | 最大字号，单位为像素。 | `48.0` |
+| `MaxWords` | 最多渲染多少个词。 | `50` |
+| `RotateWords` | 是否允许部分词语竖排旋转。 | `true` |

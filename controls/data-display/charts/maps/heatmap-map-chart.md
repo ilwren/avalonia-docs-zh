@@ -10,7 +10,7 @@ tags:
 import chartsMapsHeatmap from '/img/controls/charts/charts-maps-gradient.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Heatmap maps visualize data density across geographic coordinates using a `ShapeMap` with a `HeatmapLayer`. They are suited to showing hot spots where activity is concentrated.
@@ -22,7 +22,7 @@ Heatmap maps visualize data density across geographic coordinates using a `Shape
 - **Incident reporting**: Mapping hotspots for crimes, traffic accidents, or outages.
 - **Environmental density**: Showing concentrations of species or pollution.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -56,7 +56,7 @@ Heatmap maps visualize data density across geographic coordinates using a `Shape
                     </ShapeMap>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 Ensure the GeoJSON file is included in your project and available at the specified relative path at runtime.
 
@@ -95,7 +95,7 @@ public EarthquakeItem[] EarthquakeData { get; } = new EarthquakeItem[]
 };
 ```
 
-## Common properties (`HeatmapLayer`)
+## 常用属性（`HeatmapLayer`） {#common-properties-heatmaplayer}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -105,6 +105,6 @@ public EarthquakeItem[] EarthquakeData { get; } = new EarthquakeItem[]
 | `IntensityPath` | Property name for the intensity value. | `Intensity` |
 | `Radius` | Base radius of each heat spot in pixels. | `40.0` |
 | `MaxIntensity` | Maximum intensity used for normalization. | `100.0` |
-| `LowBrush` | Brush used for low intensity values. | `#0000FF00` |
-| `MediumBrush` | Brush used for medium intensity values. | `#FFFF00` |
-| `HighBrush` | Brush used for high intensity values. | `#FF0000` |
+| `LowBrush` | 低强度数值所用的画刷。 | `#0000FF00` |
+| `MediumBrush` | 中等强度数值所用的画刷。 | `#FFFF00` |
+| `HighBrush` | 高强度数值所用的画刷。 | `#FF0000` |

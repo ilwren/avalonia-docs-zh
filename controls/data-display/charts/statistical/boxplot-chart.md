@@ -10,7 +10,7 @@ tags:
 import chartsCartesianBoxplot from '/img/controls/charts/charts-cartesian-boxplot.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 A box plot (or box-and-whisker plot) provides a graphical summary of the distribution, central tendency, and variability of data, including quartiles and outliers.
@@ -22,7 +22,7 @@ A box plot (or box-and-whisker plot) provides a graphical summary of the distrib
 - **Outlier detection**: Identifying extreme data points that fall outside the "whiskers."
 - **Range visualization**: Showing the minimum, maximum, median, and interquartile range at a glance.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -43,7 +43,7 @@ A box plot (or box-and-whisker plot) provides a graphical summary of the distrib
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record BoxPlotPoint(string Category, double Min, double Q1, double Median, double Q3, double Max);
 

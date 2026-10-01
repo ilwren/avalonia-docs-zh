@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Hexbin charts group nearby points into hexagons so dense scatter data remains readable even when thousands of points overlap.
@@ -19,7 +19,7 @@ Hexbin charts group nearby points into hexagons so dense scatter data remains re
 - **Spatial concentration**: Show where observations cluster in two dimensions.
 - **Exploratory analysis**: Reveal hotspots and gradients without smoothing the raw data.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Hexbin charts group nearby points into hexagons so dense scatter data remains re
                               HexRadius="16" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record SamplePoint(double X, double Y);
@@ -59,5 +59,5 @@ public ObservableCollection<SamplePoint> HexbinData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Bubble chart](/controls/data-display/charts/bubble/bubble-chart)
+- [气泡图](/controls/data-display/charts/bubble/bubble-chart)
 - [Contour plot chart](/controls/data-display/charts/statistical/contour-plot-chart)

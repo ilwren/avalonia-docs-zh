@@ -10,7 +10,7 @@ tags:
 import chartsFeaturesLegend from '/img/controls/charts/charts-legend-right.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 The Legend component helps users identify different data series within a chart. It can be positioned around the chart area and styled to match your application's theme.
@@ -22,7 +22,7 @@ The Legend component helps users identify different data series within a chart. 
 - **Interactive toggling**: When users need to show/hide series by clicking legend items.
 - **Complex visuals**: Helping to explain color or pattern coding (e.g., in a Pie or Map chart).
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -49,7 +49,7 @@ The Legend component helps users identify different data series within a chart. 
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> Data1 { get; } = new()
 {

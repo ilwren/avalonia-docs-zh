@@ -1,7 +1,7 @@
 ---
 id: stacked-bar-chart
-title: Stacked bar chart
-description: Stacks multiple data series in a single bar to compare both total values and internal component distribution across categories.
+title: 堆叠条形图
+description: 把多个数据系列叠进同一根条形，既能比较各类别的总量，也能看清内部构成。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianStackedbar from '/img/controls/charts/charts-cartesian-stackedbar.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Stacked bar charts represent multiple series of data stacked on top of each other, allowing for comparison of both the total and the individual components.
+堆叠条形图把多个数据系列叠放在一起，让人既能比较总量，又能看清各组成部分。
 
 <Image light={chartsCartesianStackedbar} maxWidth={400} position="center" cornerRadius="true" alt="Stacked bar chart with colored segments stacked in each bar showing regional sales contributions per quarter." />
 
 ## 适用场景 {#when-to-use}
-- **Part-to-Whole**: Visualizing how many smaller parts make up a larger total category.
-- **Categorical comparison**: Comparing totals across different groups while seeing internal distribution.
-- **Space optimization**: Showing multiple data series without needing separate bars for each.
+- **部分与整体**：呈现一个较大的类别总量由多少个小部分构成。
+- **分类对比**：比较各组的总量，同时看清各自内部的分布。
+- **节省版面**：不必为每个数据系列单独画一根条形。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -41,7 +41,7 @@ Stacked bar charts represent multiple series of data stacked on top of each othe
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> StackedBarProductA { get; } = new()
 {
@@ -59,15 +59,15 @@ public ObservableCollection<int> StackedBarProductC { get; } = new()
 };
 ```
 
-## Common properties (StackedBarSeries)
+## 常用属性（StackedBarSeries） {#common-properties-stackedbarseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name shown in the legend. | `null` |
-| `ItemsSource` | The collection of data for this specific part of the stack. | `null` |
-| `CategoryPath` | Path to the shared category value for each bar. | `null` |
-| `ValuePath` | Path to the numeric value for this series. | `null` |
-| `Fill` | Background color for this series segment. | Auto-generated |
-| `StackGroup` | Identifier used to stack related series together. | `"default"` |
-| `BarWidth` | Width of each bar as a fraction of the available slot. | `0.7` |
-| `BarCornerRadius` | Rounding for the bar segments. | `0` |
+| `Title` | 在图例中显示的名称。 | `null` |
+| `ItemsSource` | 堆叠中这一部分所用的数据集合。 | `null` |
+| `CategoryPath` | 指向各条形共享的类别值的路径。 | `null` |
+| `ValuePath` | 指向本系列数值的路径。 | `null` |
+| `Fill` | 本系列这一段的背景色。 | Auto-generated |
+| `StackGroup` | 用于把相关系列堆叠在一起的标识。 | `"default"` |
+| `BarWidth` | 每根条形的宽度，以可用槽位的比例表示。 | `0.7` |
+| `BarCornerRadius` | 条形各段的圆角程度。 | `0` |

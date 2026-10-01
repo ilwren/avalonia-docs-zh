@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Carpet plots visualize how two independent variables relate to a third value by drawing a distorted grid of intersecting isolines.
@@ -19,7 +19,7 @@ Carpet plots visualize how two independent variables relate to a third value by 
 - **Performance maps**: Visualize operating regions for efficiency, pressure, or temperature.
 - **Multi-variable analysis**: Inspect relationships that do not fit a simple Cartesian line chart.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Carpet plots visualize how two independent variables relate to a third value by 
                              YAxisPath="Efficiency" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record CarpetPoint(double Speed, double Load, double Efficiency);

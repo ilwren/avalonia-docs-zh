@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Mirror bar charts draw two bar series on opposite sides of a center line, so each category can be compared symmetrically.
@@ -19,7 +19,7 @@ Mirror bar charts draw two bar series on opposite sides of a center line, so eac
 - **Demographic layouts**: Show opposing distributions, such as male and female by age band.
 - **Two-sided ranking**: Contrast paired measures without stacking or grouping bars.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -34,7 +34,7 @@ Mirror bar charts draw two bar series on opposite sides of a center line, so eac
                          RightTitle="East" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record MirrorBarItem(string Category, double West, double East);

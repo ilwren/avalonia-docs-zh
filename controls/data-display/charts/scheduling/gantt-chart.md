@@ -10,7 +10,7 @@ tags:
 import chartsTimelineGantt from '/img/controls/charts/charts-timeline-gantt.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Gantt charts are specialized timeline charts used for project management. They illustrate a project schedule by showing task durations, start/end dates, and dependencies.
@@ -22,7 +22,7 @@ Gantt charts are specialized timeline charts used for project management. They i
 - **Resource management**: Tracking when team members are allocated to specific activities.
 - **Release tracking**: Visualizing milestones and deadlines for a software release.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -38,7 +38,7 @@ Gantt charts are specialized timeline charts used for project management. They i
                      ProgressBrush="#2563EB" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 

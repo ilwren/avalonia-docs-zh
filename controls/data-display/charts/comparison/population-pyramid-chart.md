@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Population pyramid charts visualize two opposing distributions, most often male and female populations across age groups.
@@ -19,7 +19,7 @@ Population pyramid charts visualize two opposing distributions, most often male 
 - **Segment comparison**: Show paired distributions across ordered bands.
 - **Planning views**: Surface concentration in younger or older cohorts quickly.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Population pyramid charts visualize two opposing distributions, most often male 
                                  FemaleValuePath="Female" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record PopulationBand(string AgeGroup, double Male, double Female);

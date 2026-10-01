@@ -10,7 +10,7 @@ tags:
 import chartsFlowForceDirected from '/img/controls/charts/charts-flow-force-directed.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Force-directed graphs use physical simulations to lay out network nodes. They help reveal clusters and structural relationships in complex interconnected data.
@@ -22,7 +22,7 @@ Force-directed graphs use physical simulations to lay out network nodes. They he
 - **Knowledge graphs**: Showing relationships between concepts, entities, or research papers.
 - **System architecture**: Mapping microservices and their communication links.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,7 +35,7 @@ Force-directed graphs use physical simulations to lay out network nodes. They he
                              EdgeTargetPath="Target" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record GraphNode(string Id, string Label);
 public record GraphEdge(string Source, string Target);

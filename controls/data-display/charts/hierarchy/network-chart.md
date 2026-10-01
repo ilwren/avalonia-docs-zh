@@ -10,7 +10,7 @@ tags:
 import chartsFlowNetwork from '/img/controls/charts/charts-flow-network.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Network charts provide a high-level view of nodes and edges. They are simpler and more static than force-directed graphs, suitable for fixed structural diagrams.
@@ -22,7 +22,7 @@ Network charts provide a high-level view of nodes and edges. They are simpler an
 - **Routing tables**: Mapping paths between network points.
 - **Dependency trees**: Visualizing module relationships in a system.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Network charts provide a high-level view of nodes and edges. They are simpler an
                        Edges="{Binding NetworkEdges}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<NetworkNode> NetworkNodes { get; } = new()
 {

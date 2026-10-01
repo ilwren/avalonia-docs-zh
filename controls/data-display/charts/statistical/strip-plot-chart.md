@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Strip plots show every observation in a category while applying jitter to reduce overlap and optional mean lines to summarize the center.
@@ -19,7 +19,7 @@ Strip plots show every observation in a category while applying jitter to reduce
 - **Category spread**: Compare how tightly or widely values cluster per group.
 - **Hybrid views**: Combine raw observations with a simple mean reference line.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -33,7 +33,7 @@ Strip plots show every observation in a category while applying jitter to reduce
                                  ShowMeanLine="True" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record StripPoint(string Category, double Value);

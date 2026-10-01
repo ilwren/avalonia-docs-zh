@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalSunburst from '/img/controls/charts/charts-hierarchical-sunburst.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Sunburst charts are used to visualize hierarchical data through a series of concentric rings. Each ring represents a level in the hierarchy, with the inner circle being the root level.
@@ -22,7 +22,7 @@ Sunburst charts are used to visualize hierarchical data through a series of conc
 - **Space-efficiency**: When you need a compact alternative to a tree diagram.
 - **Drill-down**: Effectively showing the breakdown of segments at each level.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,7 +35,7 @@ Sunburst charts are used to visualize hierarchical data through a series of conc
                         ChildrenPath="Children" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class SunburstNode
 {
@@ -92,7 +92,7 @@ public ObservableCollection<SunburstNode> SunburstData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The chart title. | `null` |
+| `Title` | 图表标题。 | `null` |
 | `ItemsSource` | The collection of root-level data items. | `null` |
 | `ValuePath` | Path to the property representing segment size. | `null` |
 | `LabelPath` | Path to the property for segment labels. | `null` |

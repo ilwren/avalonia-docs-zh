@@ -10,7 +10,7 @@ tags:
 import chartsFlowMindmap from '/img/controls/charts/charts-flow-mindmap.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Mindmaps are divergent diagrams used for brainstorming and project planning, radiating outward from a central topic to related ideas and sub-tasks. In `Avalonia.Controls.Charts`, this layout is built on top of `FlowChart`.
@@ -22,7 +22,7 @@ Mindmaps are divergent diagrams used for brainstorming and project planning, rad
 - **Project scope**: Mapping out different modules and their requirements.
 - **Knowledge representation**: Visualizing complex concepts and their interconnectedness.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -34,7 +34,7 @@ Mindmaps are divergent diagrams used for brainstorming and project planning, rad
                   CornerRadius="20" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using Avalonia.Media;
 
@@ -158,7 +158,7 @@ public ObservableCollection<FlowEdge> MindmapEdges { get; } = new()
 };
 ```
 
-## Common properties (`FlowChart`)
+## 常用属性（`FlowChart`） {#common-properties-flowchart}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

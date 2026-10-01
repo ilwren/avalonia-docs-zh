@@ -10,7 +10,7 @@ tags:
 import chartsFlowAlluvial from '/img/controls/charts/charts-flow-alluvial.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Alluvial charts represent changes in structure over time or across categories. They are similar to Sankey diagrams but are typically organized into distinct vertical columns.
@@ -22,7 +22,7 @@ Alluvial charts represent changes in structure over time or across categories. T
 - **Categorical flow**: Visualizing how members of one category belong to others (e.g., voters' changing affiliations).
 - **Structural shifts**: Showing how a population's grouping changes between two points in time.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Alluvial charts represent changes in structure over time or across categories. T
                         Links="{Binding AlluvialLinks}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<AlluvialNode> AlluvialNodes { get; } = new()
 {

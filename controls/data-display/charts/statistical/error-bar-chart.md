@@ -10,7 +10,7 @@ tags:
 import chartsStatisticalErrorbar from '/img/controls/charts/charts-statistical-error.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Error bar charts represent the variability of data and are used on graphs to indicate the error or uncertainty in a reported measurement.
@@ -22,7 +22,7 @@ Error bar charts represent the variability of data and are used on graphs to ind
 - **Quality control**: Showing the range of tolerance in manufacturing.
 - **Survey data**: Indicating the margin of error in statistical polls.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -42,7 +42,7 @@ Error bar charts represent the variability of data and are used on graphs to ind
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record ErrorBarItem(string Sample, double Value, double Error);
 

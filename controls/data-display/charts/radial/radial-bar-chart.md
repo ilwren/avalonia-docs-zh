@@ -10,7 +10,7 @@ tags:
 import chartsRadialBar from '/img/controls/charts/charts-radial-bar.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Radial bar charts use a polar coordinate system. They are essentially bar charts plotted on a circular grid, offering a distinctive and space-efficient way to compare categories.
@@ -22,7 +22,7 @@ Radial bar charts use a polar coordinate system. They are essentially bar charts
 - **Dashboard infographics**: Creating compact visual summaries for ranked categories.
 - **Progress tracking**: Visualizing multiple goal tracks in a consolidated radial form.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Radial bar charts use a polar coordinate system. They are essentially bar charts
                                              CategoryPath="Label" ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record RadialPoint(string Label, double Value);
 

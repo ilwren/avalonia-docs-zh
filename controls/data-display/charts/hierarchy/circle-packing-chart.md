@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalCirclepacking from '/img/controls/charts/charts-hierarchical-circle-packing.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Circle packing is a variation of a treemap where nodes are represented as circles. Larger circles represent parent categories, with child categories nested as smaller circles inside them.
@@ -22,7 +22,7 @@ Circle packing is a variation of a treemap where nodes are represented as circle
 - **Aesthetic overviews**: Dashboards where a "bubble" visual is preferred over rigid grids.
 - **Relationship proximity**: Showing how closely related different items are within a category.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Circle packing is a variation of a treemap where nodes are represented as circle
                              LabelPath="Name" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record TreeMapItem(string Name, double Size);
 

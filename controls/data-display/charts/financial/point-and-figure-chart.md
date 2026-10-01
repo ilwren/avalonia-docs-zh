@@ -10,7 +10,7 @@ tags:
 import chartsFinancialPointandfigure from '/img/controls/charts/charts-financial-point-figure.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Point and Figure (P&F) charts use columns of Xs and Os to represent rising and falling prices. They filter out time and small price changes, focusing solely on pure price movement and trend reversals.
@@ -22,7 +22,7 @@ Point and Figure (P&F) charts use columns of Xs and Os to represent rising and f
 - **Support/resistance**: Identifying clear supply and demand zones.
 - **Price targets**: Using traditional P&F counting methods for price projections.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -40,7 +40,7 @@ Point and Figure (P&F) charts use columns of Xs and Os to represent rising and f
 </FinancialChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 

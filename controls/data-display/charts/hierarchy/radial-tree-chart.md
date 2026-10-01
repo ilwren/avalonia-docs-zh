@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalRadialtree from '/img/controls/charts/charts-hierarchical-radial-tree.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Radial tree charts represent hierarchical data where the root is at the center and child nodes radiate outward in concentric circles. This layout is highly space-efficient for large trees.
@@ -22,7 +22,7 @@ Radial tree charts represent hierarchical data where the root is at the center a
 - **Genomic maps**: Visualizing relationships between many biological entities.
 - **Network topology**: Mapping devices in a network radiating from a central hub.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Radial tree charts represent hierarchical data where the root is at the center a
                           ChildrenPath="Children" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class TreeNode
 {

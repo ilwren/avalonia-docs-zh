@@ -10,7 +10,7 @@ tags:
 import chartsTimelineSpiral from '/img/controls/charts/charts-timeline-spiral.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Spiral timelines visualize data that has both a strong sequential component and a cyclical pattern. By wrapping the timeline into a spiral, long-term trends and short-term repetitions become visible.
@@ -23,7 +23,7 @@ Spiral timelines visualize data that has both a strong sequential component and 
 - **System logs**: Detecting patterns in server activity across weeks or months.
 - **Biological rhythms**: Showing sleep patterns or activity cycles over time.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -36,7 +36,7 @@ Spiral timelines visualize data that has both a strong sequential component and 
                                              LabelPath="Event" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 using System;

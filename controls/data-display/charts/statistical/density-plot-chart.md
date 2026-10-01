@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Density plots smooth a numeric distribution into a continuous curve so peaks and spread are easier to see than in raw point lists.
@@ -19,7 +19,7 @@ Density plots smooth a numeric distribution into a continuous curve so peaks and
 - **Smoother histograms**: Show the same story as a histogram with a continuous curve.
 - **Sampling comparisons**: Present the overall shape of a dataset without plotting every point.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -30,7 +30,7 @@ Density plots smooth a numeric distribution into a continuous curve so peaks and
                                    ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record Measurement(double Value);

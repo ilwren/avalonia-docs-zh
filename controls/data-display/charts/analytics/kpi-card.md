@@ -1,7 +1,7 @@
 ---
 id: kpi-card
-title: KPI cards
-description: Displays critical business metrics in a focused format, combining a large value with a trend indicator and mini sparkline.
+title: KPI 卡片
+description: 以聚焦的形式呈现关键业务指标：一个醒目的数值，配上趋势指示和迷你走势图。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsAnalyticsKpi from '/img/controls/charts/charts-analytics-kpi.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-KPI cards display critical business metrics in a focused format. They typically combine a large value with a trend indicator and a mini sparkline for context.
+KPI 卡片以聚焦的形式呈现关键业务指标，通常是一个醒目的数值，再配上趋势指示和一条迷你走势图作为参照。
 
 <Image light={chartsAnalyticsKpi} maxWidth={400} position="center" cornerRadius="true" alt="KPI card displaying a large metric value with a trend indicator and a mini sparkline chart for context." />
 
 ## 适用场景 {#when-to-use}
-- **Executive dashboards**: Providing at-a-glance status of main business goals.
-- **Performance monitoring**: Tracking real-time metrics like active users or server load.
-- **Financial overviews**: Showing revenue, expenses, and growth at the top of a report.
+- **管理层仪表板**：让人一眼掌握主要业务目标的达成情况。
+- **性能监控**：实时追踪活跃用户数、服务器负载等指标。
+- **财务概览**：在报表顶部展示营收、支出和增长情况。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -43,7 +43,7 @@ KPI cards display critical business metrics in a focused format. They typically 
 </WrapPanel>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using Avalonia.Media;
 
@@ -82,18 +82,18 @@ public KpiItem Kpi3 { get; } = new(
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Value` | The main numerical value to display. | `0` |
-| `Delta` | The change value (positive or negative) from the previous period. | `0` |
-| `DeltaType` | How the delta is displayed: `Percentage` or `Absolute`. | `Percentage` |
-| `SparklineData` | Array of values for the mini-chart. | `null` |
-| `Unit` | Suffix for the value (e.g., "$", "%", "pts"). | `null` |
-| `Subtitle` | Text displayed below the delta. | `null` |
-| `ValueFormat` | Numeric format string used for the main value. | `"N0"` |
-| `PositiveBrush` | Brush used when the delta is positive. | `null` (green, see Note below) |
-| `NegativeBrush` | Brush used when the delta is negative. | `null` (red, see Note below) |
-| `SparklineBrush` | Brush used for the sparkline mini-chart. | `null` (blue, see Note below) |
-| `ShowSparkline` | Whether to display the sparkline mini-chart. | `true` |
+| `Value` | 要显示的主数值。 | `0` |
+| `Delta` | 相对上一期的变化值（正或负）。 | `0` |
+| `DeltaType` | 变化量的显示方式：`Percentage` 或 `Absolute`。 | `Percentage` |
+| `SparklineData` | 迷你图所用的数值数组。 | `null` |
+| `Unit` | 数值的后缀（比如「$」「%」「分」）。 | `null` |
+| `Subtitle` | 显示在变化量下方的文字。 | `null` |
+| `ValueFormat` | 主数值所用的数值格式字符串。 | `"N0"` |
+| `PositiveBrush` | 变化量为正时所用的画刷。 | `null`（绿色，见下方说明） |
+| `NegativeBrush` | 变化量为负时所用的画刷。 | `null`（红色，见下方说明） |
+| `SparklineBrush` | 迷你走势图所用的画刷。 | `null`（蓝色，见下方说明） |
+| `ShowSparkline` | 是否显示迷你走势图。 | `true` |
 
 :::note
-When `PositiveBrush`, `NegativeBrush`, or `SparklineBrush` is `null`, the card falls back to built-in accent colors: green for positive deltas, red for negative deltas, and blue for the sparkline.
+当 `PositiveBrush`、`NegativeBrush` 或 `SparklineBrush` 为 `null` 时，卡片会回落到内置的强调色：正向变化用绿色，负向变化用红色，走势图用蓝色。
 :::

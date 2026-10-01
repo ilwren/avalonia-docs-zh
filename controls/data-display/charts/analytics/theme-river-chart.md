@@ -1,7 +1,7 @@
 ---
 id: theme-river-chart
-title: Theme river chart
-description: Builds a theme-river layout by stacking centered StackedAreaSeries instances in a Cartesian chart.
+title: 主题河流图
+description: 在笛卡尔图表中堆叠若干居中的 StackedAreaSeries，拼出一张主题河流图。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsAnalyticsThemeriver from '/img/controls/charts/charts-flow-themeriver.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Theme river charts visualize changes in categories over time. In `Avalonia.Controls.Charts`, this layout can be built by combining multiple `StackedAreaSeries` instances inside a `CartesianChart`.
+主题河流图呈现各类别随时间的消长。在 `Avalonia.Controls.Charts` 中，这种版面可以通过在 `CartesianChart` 内组合多个 `StackedAreaSeries` 来搭建。
 
 <Image light={chartsAnalyticsThemeriver} maxWidth={400} position="center" cornerRadius="true" alt="Theme river chart with stacked organic stream bands showing how category volumes flow and change over time." />
 
 ## 适用场景 {#when-to-use}
-- **Topic trends**: Visualizing the popularity of themes in news or social media over time.
-- **Resource allocation**: Showing how budget or manpower shifts between projects.
-- **Usage patterns**: Tracking the volume of different types of network traffic.
+- **话题趋势**：呈现新闻或社交媒体中各主题热度随时间的变化。
+- **资源调配**：展示预算或人力在各项目之间的流动。
+- **使用规律**：追踪各类网络流量的体量。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -63,7 +63,7 @@ Theme river charts visualize changes in categories over time. In `Avalonia.Contr
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System.Collections.Generic;
 
@@ -107,14 +107,14 @@ public class ThemeRiverItem
 }
 ```
 
-## Common properties (`StackedAreaSeries`)
+## 常用属性（`StackedAreaSeries`） {#common-properties-stackedareaseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | Series name shown in the legend. | `null` |
-| `ItemsSource` | The collection of data points for a single stream. | `null` |
-| `CategoryPath` | Property used for the horizontal category or time bucket. | `null` |
-| `ValuePath` | Property determining the thickness of the stream. | `null` |
-| `StackGroup` | Stack group shared by the related area series. | `null` |
-| `Fill` | Brush used for the stream area. | Theme-dependent |
-| `Stroke` | Brush used for the stream outline. | Theme-dependent |
+| `Title` | 在图例中显示的系列名称。 | `null` |
+| `ItemsSource` | 单条河流的数据点集合。 | `null` |
+| `CategoryPath` | 用作横向类别或时间分桶的属性。 | `null` |
+| `ValuePath` | 决定河流宽窄的属性。 | `null` |
+| `StackGroup` | 相关面积系列共用的堆叠分组。 | `null` |
+| `Fill` | 河流面积所用的画刷。 | Theme-dependent |
+| `Stroke` | 河流轮廓所用的画刷。 | Theme-dependent |

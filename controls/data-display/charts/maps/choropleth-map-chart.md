@@ -10,7 +10,7 @@ tags:
 import chartsMapsChoropleth from '/img/controls/charts/charts-maps.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Choropleth maps shade geographical areas in proportion to a statistical variable. They are suited to visualizing data density or trends across discrete regions.
@@ -22,7 +22,7 @@ Choropleth maps shade geographical areas in proportion to a statistical variable
 - **Market penetration**: Visualizing sales performance across different territories.
 - **Environmental data**: Showing climate data or resource distribution by region.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -51,7 +51,7 @@ Choropleth maps shade geographical areas in proportion to a statistical variable
                     </ChoroplethMap>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 Ensure the GeoJSON file is included in your project and available at the specified relative path at runtime.
 

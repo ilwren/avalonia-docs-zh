@@ -10,7 +10,7 @@ tags:
 import chartsRadialRose from '/img/controls/charts/charts-radial-rose.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 The Nightingale rose chart is a polar area chart with equal angles and variable radii. It is useful when you want a circular alternative to a bar chart while keeping one value per category.
@@ -22,7 +22,7 @@ The Nightingale rose chart is a polar area chart with equal angles and variable 
 - **Category comparison**: Showing relative magnitude without using Cartesian axes.
 - **Circular dashboards**: Using a radial layout when the categories form a cycle.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,7 +35,7 @@ The Nightingale rose chart is a polar area chart with equal angles and variable 
                                LabelPath="Label" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record RadialPoint(string Label, double Value);
 

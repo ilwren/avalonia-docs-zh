@@ -10,7 +10,7 @@ tags:
 import chartsFinancialCandlestick from '/img/controls/charts/charts-financial-candlestick.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Candlestick charts are used to describe price movements of a security, derivative, or currency over time. Each candle shows the open, high, low, and close prices for a specific period.
@@ -22,7 +22,7 @@ Candlestick charts are used to describe price movements of a security, derivativ
 - **Technical analysis**: Identifying patterns like hammers, dojis, or engulfing candles.
 - **High-low tracking**: Showing the full range of price action within a period.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -36,7 +36,7 @@ Candlestick charts are used to describe price movements of a security, derivativ
 </FinancialChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 

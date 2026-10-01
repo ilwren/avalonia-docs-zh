@@ -1,24 +1,24 @@
 ---
 id: variance-chart
-title: Variance chart
-description: Displays bars showing positive and negative variance from a baseline, with distinct colors for values above and below the reference line.
+title: 差异图
+description: 用条形呈现相对基准线的正负偏差，高于和低于参考线的部分以不同颜色区分。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Variance charts display bars extending above and below a baseline value, using distinct colors for positive and negative deviations. They show where values exceed or fall short of a target or reference point.
+差异图绘制从基准值向上、向下延伸的条形，正负偏差分别用不同颜色表示，直观反映数值超出还是不及目标或参考点。
 
 ## 适用场景 {#when-to-use}
-- **Budget analysis**: Showing actual vs. planned spending where overruns and savings are color-coded.
-- **Performance tracking**: Visualizing KPI deviations from targets across categories.
-- **Profit and loss**: Displaying gains and losses relative to a break-even point.
+- **预算分析**：呈现实际与计划支出的差距，超支和结余各有配色。
+- **绩效追踪**：呈现各类别 KPI 相对目标的偏离情况。
+- **盈亏**：展示相对盈亏平衡点的盈利与亏损。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -42,7 +42,7 @@ Variance charts display bars extending above and below a baseline value, using d
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record ProfitItem(string Month, double Amount);
 
@@ -61,18 +61,18 @@ public ObservableCollection<ProfitItem> ProfitData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series shown in the legend. | `null` |
-| `ItemsSource` | The collection of data items to display. | `null` |
-| `CategoryPath` | Path to the property used for the X-axis. | `null` |
-| `ValuePath` | Path to the property used for the Y-axis. | `null` |
-| `Baseline` | The reference value that separates positive from negative variance. | `0` |
-| `PositiveBrush` | The brush used for bars above the baseline. | `null` |
-| `NegativeBrush` | The brush used for bars below the baseline. | `null` |
-| `BarWidth` | The width of each bar as a fraction of the category band (0.0 to 1.0). | `0.6` |
-| `BarCornerRadius` | The rounding of the bar corners. | `2` |
+| `Title` | 在图例中显示的系列名称。 | `null` |
+| `ItemsSource` | 要显示的数据项集合。 | `null` |
+| `CategoryPath` | 指向 X 轴所用属性的路径。 | `null` |
+| `ValuePath` | 指向 Y 轴所用属性的路径。 | `null` |
+| `Baseline` | 划分正负偏差的参考值。 | `0` |
+| `PositiveBrush` | 基准线上方条形所用的画刷。 | `null` |
+| `NegativeBrush` | 基准线下方条形所用的画刷。 | `null` |
+| `BarWidth` | 每根条形的宽度，以类别带宽的比例表示（0.0 到 1.0）。 | `0.6` |
+| `BarCornerRadius` | 条形的圆角程度。 | `2` |
 
 ## 另请参阅 {#see-also}
 
-- [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
-- [Range bar chart](/controls/data-display/charts/cartesian/range-bar-chart)
-- [Waterfall chart](/controls/data-display/charts/cartesian/waterfall-chart)
+- [条形图](/controls/data-display/charts/cartesian/bar-chart)
+- [区间条形图](/controls/data-display/charts/cartesian/range-bar-chart)
+- [瀑布图](/controls/data-display/charts/cartesian/waterfall-chart)

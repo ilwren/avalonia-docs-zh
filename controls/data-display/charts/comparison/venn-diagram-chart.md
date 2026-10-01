@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Venn diagram charts show how sets overlap, which regions are unique, and how much value belongs to each intersection.
@@ -19,7 +19,7 @@ Venn diagram charts show how sets overlap, which regions are unique, and how muc
 - **Shared membership**: Highlight unique and intersecting segments.
 - **Selection workflows**: Let users inspect or select regions in the diagram.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -30,7 +30,7 @@ Venn diagram charts show how sets overlap, which regions are unique, and how muc
                                    IsSelectionEnabled="True" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<VennItem> VennItems { get; } = new()
@@ -41,7 +41,7 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 };
 ```
 
-## Common properties (`VennDiagramChart`)
+## 常用属性（`VennDiagramChart`） {#common-properties-venndiagramchart}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -53,11 +53,11 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 | `SelectionStrokeThickness` | Stroke thickness used for selected regions. | `2.0` |
 | `SelectedIndex` | Index of the selected region, or `-1` when nothing is selected. | `-1` |
 
-## Common properties (`VennItem`)
+## 常用属性（`VennItem`） {#common-properties-vennitem}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Sets` | Collection of set identifiers, such as `["A"]` or `["A", "B"]`. | Empty collection |
+| `Sets` | Collection of set identifiers, such as `["A"]` or `["A", "B"]`. | 空集合 |
 | `Value` | Numeric value represented by the set or intersection. | `0.0` |
 | `Name` | Optional region label. | `null` |
 | `Fill` | Optional fill brush for the region. | `null` |

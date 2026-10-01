@@ -8,7 +8,7 @@ tags:
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 `FlowChart` renders nodes, edges, and optional groups for workflows, process maps, and decision trees. When nodes have no explicit positions, the control can lay them out automatically.
@@ -19,7 +19,7 @@ tags:
 - **Decision trees**: Show branches, outcomes, and labeled transitions.
 - **System maps**: Group related nodes into bounded areas.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -30,7 +30,7 @@ tags:
                             Edges="{Binding FlowEdges}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<FlowNode> FlowNodes { get; } = new()
@@ -47,7 +47,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 };
 ```
 
-## Common properties (`FlowChart`)
+## 常用属性（`FlowChart`） {#common-properties-flowchart}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -56,7 +56,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 | `Groups` | Optional collection of `FlowGroup` containers. | `null` |
 | `NodeCornerRadius` | Corner radius applied to rounded node shapes. | `10.0` |
 
-## Common properties (`FlowNode`)
+## 常用属性（`FlowNode`） {#common-properties-flownode}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -71,7 +71,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 | `Foreground` | Optional text brush for the node. | `null` |
 | `Icon` | Optional icon shown inside the node. | `null` |
 
-## Common properties (`FlowEdge`)
+## 常用属性（`FlowEdge`） {#common-properties-flowedge}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
@@ -80,7 +80,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 | `Label` | Optional edge label. | `null` |
 | `ShowArrow` | Whether to draw the arrow head. | `true` |
 
-## Common properties (`FlowGroup`)
+## 常用属性（`FlowGroup`） {#common-properties-flowgroup}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

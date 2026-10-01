@@ -1,7 +1,7 @@
 ---
 id: scatter-chart
-title: Scatter chart
-description: Plots data points as dots using two numeric variables to reveal correlations, distributions, and outliers in datasets.
+title: 散点图
+description: 用两个数值变量把数据点绘成散布的圆点，借以揭示数据集中的相关性、分布和异常值。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianScatter from '/img/controls/charts/charts-cartesian-scatter.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Scatter charts use dots to represent values for two different numeric variables. They are essential for displaying and comparing numeric values, such as scientific, statistical, and engineering data.
+散点图用圆点表示两个不同数值变量的取值。要展示和比较科学、统计、工程等领域的数值数据，少不了它。
 
 <Image light={chartsCartesianScatter} maxWidth={400} position="center" cornerRadius="true" alt="Scatter chart plotting individual data points as dots across two numeric axes to reveal correlations." />
 
 ## 适用场景 {#when-to-use}
-- **Correlation**: Identifying relationships between two variables (e.g., height vs weight).
-- **Distribution**: Visualizing the spread and clustering of data points.
-- **Outlier detection**: Easily spotting data points that fall far from the norm.
+- **相关性**：辨识两个变量之间的关系（比如身高与体重）。
+- **分布**：呈现数据点的离散与聚集情况。
+- **异常检测**：一眼看出远离常规的数据点。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -43,7 +43,7 @@ Scatter charts use dots to represent values for two different numeric variables.
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> ScatterSeriesData { get; } =
     new() { 25, 45, 35, 55, 40, 60, 50, 70, 55, 75 };
@@ -53,21 +53,21 @@ public ObservableCollection<int> ScatterSeriesData { get; } =
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series. | `null` |
-| `ItemsSource` | The collection of data points. | `null` |
-| `CategoryPath` | Value of the category path (X-axis). | `null` |
-| `ValuePath` | Value of the value path (Y-axis). | `null` |
-| `ShowMarkers` | Whether to display data point markers. | `true` |
-| `MarkerSize` | Size of the dots in pixels. | `8` |
-| `MarkerShape` | Shape of the dots, such as `Circle` or `Square`. | `Circle` |
-| `MarkerFill` | Brush used to fill the markers. When `null`, `Fill` is used. | `null` |
-| `MarkerStroke` | Brush used for marker outlines. | `null` |
-| `MarkerStrokeThickness` | Thickness of marker outlines. When `NaN`, the series `StrokeThickness` is used. | `NaN` |
-| `Fill` | The color of the scatter dots. | Theme-dependent |
+| `Title` | 系列名称。 | `null` |
+| `ItemsSource` | 数据点的集合。 | `null` |
+| `CategoryPath` | 类别路径（X 轴）所取的值。 | `null` |
+| `ValuePath` | 数值路径（Y 轴）所取的值。 | `null` |
+| `ShowMarkers` | 是否显示数据点标记。 | `true` |
+| `MarkerSize` | 圆点的大小，单位为像素。 | `8` |
+| `MarkerShape` | 圆点的形状，比如 `Circle` 或 `Square`。 | `Circle` |
+| `MarkerFill` | 填充标记所用的画刷。为 `null` 时，使用 `Fill`。 | `null` |
+| `MarkerStroke` | 标记轮廓所用的画刷。 | `null` |
+| `MarkerStrokeThickness` | 标记轮廓的粗细。为 `NaN` 时，使用系列的 `StrokeThickness`。 | `NaN` |
+| `Fill` | 散点圆点的颜色。 | Theme-dependent |
 
-## Scatter line variant
+## 带连线的散点图变体 {#scatter-line-variant}
 
-The `ScatterLineSeries` extends scatter charts by drawing connecting lines between data points, combining scatter dot visibility with line trend visualization.
+`ScatterLineSeries` 在散点图的基础上，在数据点之间画出连线，既保留了散点的清晰可辨，又能看出折线所呈现的趋势。
 
 ### XAML
 ```xml
@@ -84,21 +84,21 @@ The `ScatterLineSeries` extends scatter charts by drawing connecting lines betwe
                     </CartesianChart>
 ```
 
-### ScatterLineSeries properties
+### ScatterLineSeries 属性 {#scatterlineseries-properties}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ShowLines` | Whether to show connecting lines between scatter points. | `true` |
-| `StrokeDashStyle` | Dash style for the connecting lines. When `null`, lines are solid. | `null` |
-| `ShowMarkers` | Whether to display data point markers. | `true` |
-| `MarkerSize` | Size of the markers in pixels. | `8` |
-| `MarkerShape` | Shape of the markers, such as `Circle` or `Square`. | `Circle` |
-| `MarkerFill` | Brush used to fill the markers. When `null`, `Fill` is used. | `null` |
-| `MarkerStroke` | Brush used for marker outlines. | `null` |
-| `MarkerStrokeThickness` | Thickness of marker outlines. When `NaN`, the series `StrokeThickness` is used. | `NaN` |
+| `ShowLines` | 是否在各散点之间显示连线。 | `true` |
+| `StrokeDashStyle` | 连线的虚线样式。为 `null` 时为实线。 | `null` |
+| `ShowMarkers` | 是否显示数据点标记。 | `true` |
+| `MarkerSize` | 标记的大小，单位为像素。 | `8` |
+| `MarkerShape` | 标记的形状，比如 `Circle` 或 `Square`。 | `Circle` |
+| `MarkerFill` | 填充标记所用的画刷。为 `null` 时，使用 `Fill`。 | `null` |
+| `MarkerStroke` | 标记轮廓所用的画刷。 | `null` |
+| `MarkerStrokeThickness` | 标记轮廓的粗细。为 `NaN` 时，使用系列的 `StrokeThickness`。 | `NaN` |
 
 ## 另请参阅 {#see-also}
 
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
-- [Dot plot chart](/controls/data-display/charts/cartesian/dot-plot-chart)
-- [Combo chart](/controls/data-display/charts/cartesian/combo-chart)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)
+- [点图](/controls/data-display/charts/cartesian/dot-plot-chart)
+- [组合图](/controls/data-display/charts/cartesian/combo-chart)

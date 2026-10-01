@@ -10,7 +10,7 @@ tags:
 import chartsFlowProcess from '/img/controls/charts/charts-flow-process.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Process flow charts are used to visualize sequences of steps, decisions, and logical outcomes in a system. In `Avalonia.Controls.Charts`, this is implemented with `FlowChart`, `FlowNode`, and `FlowEdge`.
@@ -22,7 +22,7 @@ Process flow charts are used to visualize sequences of steps, decisions, and log
 - **Decision trees**: Showing the logic path for troubleshooting or user journeys.
 - **System architecture**: Mapping connections between different modules or services.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Process flow charts are used to visualize sequences of steps, decisions, and log
                   Edges="{Binding FlowEdges}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using Avalonia.Media;
 
@@ -111,7 +111,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 };
 ```
 
-## Common properties (`FlowChart`)
+## 常用属性（`FlowChart`） {#common-properties-flowchart}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

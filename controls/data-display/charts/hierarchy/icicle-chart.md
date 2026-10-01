@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalIcicle from '/img/controls/charts/charts-hierarchical-icicle.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 Icicle charts visualize hierarchical data using rectangles placed side by side. Each level in the hierarchy's depth is represented by a row or column, showing parent-child relationships across levels.
@@ -22,7 +22,7 @@ Icicle charts visualize hierarchical data using rectangles placed side by side. 
 - **Performance profiling**: Visualizing call stacks or execution paths.
 - **Relationship discovery**: Finding the root cause of leaf-node values within a large tree.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Icicle charts visualize hierarchical data using rectangles placed side by side. 
                       LabelPath="Name" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record TreeMapItem(string Name, double Size);
 
@@ -52,5 +52,5 @@ public ObservableCollection<TreeMapItem> IcicleData { get; } = new()
 | `ValuePath` | Property name determining rectangle width. | `null` |
 | `LabelPath` | Property name for the text label. | `null` |
 | `ChildrenPath` | Path to the collection of child nodes. | `null` |
-| `Orientation` | Orientation of the chart, `Horizontal` or `Vertical`. | `Vertical` |
+| `Orientation` | 图表的方向，`Horizontal` 或 `Vertical`。 | `Vertical` |
 | `TileGap` | Gap between adjacent rectangles. | `1.0` |

@@ -1,7 +1,7 @@
 ---
 id: donut-chart
-title: Donut chart
-description: A variation of the pie chart with a blank center, often used to display a total value or label in the middle for improved readability.
+title: 环形图
+description: 饼图的变体，中间留白，常在中心显示总计数值或标签以提高可读性。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsPieDonut from '/img/controls/charts/charts-pie-donut.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-A donut chart is a variation of the [pie chart](/controls/data-display/charts/circular/pie-chart) that uses a non-zero `InnerRadiusFactor`. This design lets you reserve the center for a summary value or label.
+环形图是[饼图](/controls/data-display/charts/circular/pie-chart)的一种变体，它的 `InnerRadiusFactor` 不为零。这样的设计让你可以把中心留给总计数值或标签。
 
 <Image light={chartsPieDonut} maxWidth={400} position="center" cornerRadius="true" alt="Donut chart with a blank center hole showing proportional segments of revenue distribution by source." />
 
 ## 适用场景 {#when-to-use}
-- **Proportional comparison**: Similar to a pie chart, but with more room for labels or totals in the center.
-- **Summary views**: Where the central space can be used to display the total sum or a key metric.
-- **Minimalist dashboards**: Highly effective for simple part-to-whole visualizations with few categories.
+- **占比对比**：与饼图类似，但中心有更多地方放标签或总计。
+- **摘要视图**：中心的空白可以用来显示总和或某项关键指标。
+- **极简仪表板**：类别不多的「部分与整体」图示，用它效果极佳。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ A donut chart is a variation of the [pie chart](/controls/data-display/charts/ci
                     </PieChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<double> DonutChartData { get; } = new()
 {
@@ -41,7 +41,7 @@ public ObservableCollection<double> DonutChartData { get; } = new()
 };
 ```
 
-There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFactor` to a value greater than `0.0`.
+框架中并没有专门的 `DonutChart` 控件。请使用 `PieChart`，并把 `InnerRadiusFactor` 设为大于 `0.0` 的值。
 
 ## 常用属性 {#common-properties}
 
@@ -49,22 +49,22 @@ There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFa
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `InnerRadiusFactor` | The size of the center hole, from `0.0` to `1.0`. | `0.0` |
-| `Title` | Chart title displayed above the donut. | `null` |
-| `Palette` | Custom collection of brushes for the slices. | Theme-dependent |
+| `InnerRadiusFactor` | 中心孔洞的大小，取值从 `0.0` 到 `1.0`。 | `0.0` |
+| `Title` | 显示在圆环上方的图表标题。 | `null` |
+| `Palette` | 各扇区所用的自定义画刷集合。 | Theme-dependent |
 
 ### PieSeries
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of data slices. | `null` |
-| `LabelPath` | Path to the text to display on or near slices. | `null` |
-| `ValuePath` | Path to the numerical value for slice sizing. | `null` |
-| `RadiusFactor` | Outer radius factor for the series, from `0.0` to `1.0`. | `0.9` |
-| `InnerRadiusFactor` | Optional inner radius factor for the series. When `null`, the chart-level value is used. | `null` |
-| `StartAngle` | Start angle in degrees for the first slice. | `-90.0` |
-| `ShowLabels` | Whether to display labels on the slices. | `true` |
-| `LabelPosition` | Position of slice labels, `Inside` or `Outside`. | `Inside` |
-| `SliceLabelFormat` | Format used for slice labels. | `Percentage` |
-| `LabelFontSize` | Font size used for slice labels. | `11.0` |
-| `LabelForeground` | Brush used for slice labels. | `null` |
+| `ItemsSource` | 各数据扇区的集合。 | `null` |
+| `LabelPath` | 指向显示在扇区上或扇区旁的文本的路径。 | `null` |
+| `ValuePath` | 指向决定扇区大小那个数值的路径。 | `null` |
+| `RadiusFactor` | 系列的外半径系数，取值从 `0.0` 到 `1.0`。 | `0.9` |
+| `InnerRadiusFactor` | 系列可选的内半径系数。为 `null` 时，采用图表级的取值。 | `null` |
+| `StartAngle` | 首个扇区的起始角度，单位为度。 | `-90.0` |
+| `ShowLabels` | 是否在扇区上显示标签。 | `true` |
+| `LabelPosition` | 扇区标签的位置，`Inside` 或 `Outside`。 | `Inside` |
+| `SliceLabelFormat` | 扇区标签所用的格式。 | `Percentage` |
+| `LabelFontSize` | 扇区标签所用的字号。 | `11.0` |
+| `LabelForeground` | 扇区标签所用的画刷。 | `null` |

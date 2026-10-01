@@ -10,7 +10,7 @@ tags:
 import chartsHierarchicalTreemap from '/img/controls/charts/charts-hierarchical-treemap.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
 TreeMap charts visualize hierarchical or flat data as a set of nested rectangles. Each branch is given a rectangle, sized according to its value, and tiled with smaller sub-rectangles.
@@ -22,7 +22,7 @@ TreeMap charts visualize hierarchical or flat data as a set of nested rectangles
 - **Proportional analysis**: Comparing the weight of items within categories.
 - **Complex hierarchies**: When you need to show many hierarchical items in a single view.
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -30,7 +30,7 @@ TreeMap charts visualize hierarchical or flat data as a set of nested rectangles
                        ItemsSource="{Binding TreeMapData}" ValuePath="Size" LabelPath="Name" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record TreeMapItem(string Name, double Size);
 
@@ -48,8 +48,8 @@ public ObservableCollection<TreeMapItem> TreeMapData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The chart title. | `null` |
-| `ItemsSource` | The collection of data items. | `null` |
+| `Title` | 图表标题。 | `null` |
+| `ItemsSource` | 数据项的集合。 | `null` |
 | `ValuePath` | Path to the property representing area size. | `null` |
 | `LabelPath` | Path to the property for the labels. | `null` |
 | `TileGap` | Gap between rectangles. | `1.0` |
