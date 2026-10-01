@@ -412,7 +412,7 @@ dotnet tool update -g avdt
 | `input` | Sends an input event (click, key press, etc.) to a UI element. |
 | `action` | Performs a higher-level action on a UI element. |
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
 Describe what you want to accomplish in natural language. The AI assistant calls the MCP tools automatically:
 

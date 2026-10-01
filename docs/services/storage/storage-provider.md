@@ -132,7 +132,7 @@ Only supported on the OS, with physical file paths, primarily only desktop.
 
 ## Platform compatibility
 
-| 特性        | Managed |  Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        | Managed |  Windows | macOS | Linux | 浏览器 | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|-------|
 | `OpenFileBookmarkAsync` | ✓* | ✓* | ✓* | ✓* | ✓ | ✓ | ✓ |
 | `OpenFolderBookmarkAsync` | ✓* | ✓* | ✓* | ✓* | ✓ | ✓ | ✓ |

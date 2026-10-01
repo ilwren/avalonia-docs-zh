@@ -12,7 +12,7 @@ A page header or footer here is a `PageBand`. It is a small document that the ow
 This guide covers building bands, page numbers, which band a page gets, the distance from the sheet edge, editing bands in place, and showing the running bands in the continuous view.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Running header and footer

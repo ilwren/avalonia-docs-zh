@@ -99,4 +99,4 @@ The following table summarizes clipboard feature support across platforms:
 
 - [Known differences](/xpf/migration/known-differences)
 - [Customizing initialization](/xpf/configuration/customizing-initialization)
-- [Troubleshooting](/xpf/troubleshooting)
+- [疑难排查](/xpf/troubleshooting)

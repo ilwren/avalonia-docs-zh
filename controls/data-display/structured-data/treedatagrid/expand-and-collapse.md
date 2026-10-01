@@ -9,7 +9,7 @@ tags:
 ---
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 When you use a hierarchical `TreeDataGrid`, your users can expand and collapse rows to navigate parent-child relationships. Avalonia provides methods on `HierarchicalTreeDataGridSource<T>` that let you control this behavior programmatically, whether you need to expand a single node, expand all nodes at once, or conditionally expand rows that match a filter. You can also subscribe to events that fire before and after each expand or collapse operation.

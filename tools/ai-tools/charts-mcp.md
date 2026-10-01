@@ -279,7 +279,7 @@ You can also test chart rendering with:
 Create a dark themed Avalonia bar chart titled Quarterly Revenue with Q1=125, Q2=148, Q3=171, and Q4=193. Use a blue and green palette.
 ```
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
 Describe the chart you want in natural language. The AI assistant calls the MCP tools automatically.
 

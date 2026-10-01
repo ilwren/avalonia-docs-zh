@@ -5,7 +5,7 @@ title: NativeWebView
 
 ## 概述 {#overview}
 
-`NativeWebView` is a control that provides a native web browser implementation for Avalonia and WPF applications. It wraps platform-specific web controls and provides a unified API for web browsing functionality.
+`NativeWebView` 是一个控件，为 Avalonia 和 WPF 应用提供原生网页浏览器实现。它封装了各平台的网页控件，对外提供一套统一的浏览 API。
 
 ## 属性 {#properties}
 
@@ -15,9 +15,9 @@ title: NativeWebView
 public Uri Source { get; set; }
 ```
 
-The URI of the top-level document displayed in the WebView. Setting this property is equivalent to calling `Navigate()`.
+WebView 中所显示顶层文档的 URI。设置该属性等同于调用 `Navigate()`。
 
-Default value: `about:blank`
+默认值：`about:blank`
 
 ### CanGoBack
 
@@ -25,7 +25,7 @@ Default value: `about:blank`
 public bool CanGoBack { get; }
 ```
 
-Indicates whether the WebView can navigate to a previous page in the navigation history.
+指示 WebView 能否在导航历史中回到上一页。
 
 ### CanGoForward
 
@@ -33,7 +33,7 @@ Indicates whether the WebView can navigate to a previous page in the navigation 
 public bool CanGoForward { get; }
 ```
 
-Indicates whether the WebView can navigate to a next page in the navigation history.
+指示 WebView 能否在导航历史中前往下一页。
 
 ## 事件 {#events}
 
@@ -43,7 +43,7 @@ Indicates whether the WebView can navigate to a next page in the navigation hist
 public event EventHandler<WebViewAdapterEventArgs>? AdapterCreated;
 ```
 
-Fires after underlying webview adapter was initialized.
+底层 webview 适配器初始化完成后触发。
 
 ### AdapterDestroyed
 
@@ -51,7 +51,7 @@ Fires after underlying webview adapter was initialized.
 public event EventHandler<WebViewNavigationCompletedEventArgs>? AdapterDestroyed;
 ```
 
-Fires after underlying webview adapter was destroyed.
+底层 webview 适配器销毁之后触发。
 
 ### EnvironmentRequested
 
@@ -59,11 +59,9 @@ Fires after underlying webview adapter was destroyed.
 public event EventHandler<WebViewEnvironmentRequestedEventArgs>? EnvironmentRequested;
 ```
 
-Fired before the underlying webview adapter is created, allowing customization of the webview environment.
-Use this event to modify environment options (such as enabling private mode or dev tools) before the webview is initialized.
-The event argument type depends on the platform.
+在底层 webview 适配器创建之前触发，用于定制 webview 环境。可以在 webview 初始化之前，用这个事件修改环境选项（比如启用隐私模式或开发者工具）。事件参数的类型因平台而异。
 
-See the page on [environment options](/controls/web/webview-environment) for details.
+详见[环境选项](/controls/web/webview-environment)页面。
 
 ### NavigationCompleted
 
@@ -71,7 +69,7 @@ See the page on [environment options](/controls/web/webview-environment) for det
 public event EventHandler<WebViewNavigationCompletedEventArgs>? NavigationCompleted;
 ```
 
-Fires after navigation of the top-level document completes rendering, either successfully or unsuccessfully.
+顶层文档导航渲染完成后触发，无论成功与否。
 
 ### NavigationStarted
 
@@ -79,7 +77,7 @@ Fires after navigation of the top-level document completes rendering, either suc
 public event EventHandler<WebViewNavigationStartingEventArgs>? NavigationStarted;
 ```
 
-Fires before a new navigation starts for the top-level document.
+顶层文档的新导航开始之前触发。
 
 ### NewWindowRequested
 
@@ -87,7 +85,7 @@ Fires before a new navigation starts for the top-level document.
 public event EventHandler<WebViewNewWindowRequestedEventArgs>? NewWindowRequested;
 ```
 
-Fires before a new navigate starts for the top level document.
+顶层文档的新导航开始之前触发。
 
 ### WebMessageReceived
 
@@ -95,7 +93,7 @@ Fires before a new navigate starts for the top level document.
 public event EventHandler<WebMessageReceivedEventArgs>? WebMessageReceived;
 ```
 
-Fires after web content sends a message to the app host via `invokeCSharpAction(body)`.
+网页内容通过 `invokeCSharpAction(body)` 向宿主应用发送消息后触发。
 
 ### WebResourceRequested
 
@@ -103,17 +101,15 @@ Fires after web content sends a message to the app host via `invokeCSharpAction(
 public event EventHandler<WebResourceRequestedEventArgs>? WebResourceRequested;
 ```
 
-Fires when the WebView is performing a URL request to a matching URL.
-Arguments include request information, and headers dictionary.
+WebView 向匹配的 URL 发起请求时触发。参数中包含请求信息和请求头字典。
 
 :::note
-Headers dictionary can be readonly depending on the request or platform.
-Always check result of the `TrySet` and `TryRemove` methods.
+请求头字典是否只读，视请求和平台而定。请务必检查 `TrySet` 和 `TryRemove` 方法的返回结果。
 :::
 
-#### Usage example
+#### 用法示例 {#usage-example}
 
-Bi-directional JS&lt;-&gt;C# communication example:
+JS&lt;-&gt;C# 双向通信示例：
 
 ```csharp
 private async void NativeWebView_OnNavigationCompleted(object? sender, WebViewNavigationCompletedEventArgs e)
@@ -136,7 +132,7 @@ private void NativeWebView_OnWebMessageReceived(object? sender, WebMessageReceiv
 public void Navigate(Uri url)
 ```
 
-Navigates the WebView to the specified URI.
+把 WebView 导航到指定的 URI。
 
 ### NavigateToString
 
@@ -144,7 +140,7 @@ Navigates the WebView to the specified URI.
 public void NavigateToString(string text)
 ```
 
-Renders the provided HTML string as the top-level document.
+把给定的 HTML 字符串渲染为顶层文档。
 
 ### InvokeScript
 
@@ -152,9 +148,9 @@ Renders the provided HTML string as the top-level document.
 public Task<string?> InvokeScript(string scriptName)
 ```
 
-Executes the provided JavaScript in the top-level document.
+在顶层文档中执行给定的 JavaScript。
 
-#### Usage example
+#### 用法示例 {#usage-example-1}
 
 ```xml
 <NativeWebView Source="https://avaloniaui.net/" NavigationCompleted="WebView_NavigationCompleted" />
@@ -174,7 +170,7 @@ private async void WebView_NavigationCompleted(object? sender, WebViewNavigation
 public bool GoBack()
 ```
 
-Navigates to the previous page in navigation history. Returns `false` if navigation is not possible.
+回到导航历史中的上一页。无法导航时返回 `false`。
 
 ### GoForward
 
@@ -182,7 +178,7 @@ Navigates to the previous page in navigation history. Returns `false` if navigat
 public bool GoForward()
 ```
 
-Navigates to the next page in navigation history. Returns `false` if navigation is not possible.
+前往导航历史中的下一页。无法导航时返回 `false`。
 
 ### Refresh
 
@@ -190,7 +186,7 @@ Navigates to the next page in navigation history. Returns `false` if navigation 
 public bool Refresh()
 ```
 
-Reloads the current page.
+重新加载当前页面。
 
 ### Stop
 
@@ -198,7 +194,7 @@ Reloads the current page.
 public bool Stop()
 ```
 
-Stops any ongoing navigation.
+停止正在进行的导航。
 
 ### ShowPrintUI
 
@@ -206,7 +202,7 @@ Stops any ongoing navigation.
 void ShowPrintUI();
 ```
 
-Opens the print dialog to print the current web page.
+打开打印对话框，打印当前网页。
 
 ### PrintToPdfStreamAsync
 
@@ -214,12 +210,11 @@ Opens the print dialog to print the current web page.
 Task<Stream> PrintToPdfStreamAsync();
 ```
 
-Provides the Pdf data of current web page asynchronously.
+异步获取当前网页的 PDF 数据。
 
 :::note
 
-This API doesn't accept extended print options, such as Margin or Orientation.
-For wider platform support we recommend using custom CSS rules - [@media print](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#print) and [@page](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@page).
+该 API 不接受页边距、纸张方向这类扩展打印选项。若要兼顾更多平台，建议改用自定义 CSS 规则——[@media print](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#print) 和 [@page](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@page)。
 
 :::
 
@@ -229,9 +224,9 @@ For wider platform support we recommend using custom CSS rules - [@media print](
 public NativeWebViewCommandManager? TryGetCommandManager()
 ```
 
-Returns an instance of `NativeWebViewCommandManager` for executing common keyboard commands if supported by the platform.
+若平台支持，返回一个 `NativeWebViewCommandManager` 实例，用于执行常见的键盘命令。
 
-#### Usage example
+#### 用法示例 {#usage-example-2}
 
 ```csharp
 var commandManager = webView.TryGetCommandManager();
@@ -248,9 +243,9 @@ if (commandManager != null)
 public NativeWebViewCookieManager? TryGetCookieManager()
 ```
 
-Returns an instance of `NativeWebViewCookieManager` for managing cookies if supported by the platform.
+若平台支持，返回一个 `NativeWebViewCookieManager` 实例，用于管理 Cookie。
 
-`NativeWebViewCookieManager` exposes:
+`NativeWebViewCookieManager` 对外提供：
 
 ```csharp
 public Task<IReadOnlyList<Cookie>> GetCookiesAsync()
@@ -258,9 +253,9 @@ public void AddOrUpdateCookie(Cookie cookie)
 public void DeleteCookie(Cookie cookie)
 ```
 
-`DeleteCookie(string name, string domain, string path)` is obsolete and doesn't work on Linux; pass a `System.Net.Cookie` instead.
+`DeleteCookie(string name, string domain, string path)` 已废弃，且在 Linux 上无效；请改为传入 `System.Net.Cookie`。
 
-#### Usage example
+#### 用法示例 {#usage-example-3}
 
 ```csharp
 var cookieManager = webView.TryGetCookieManager();
@@ -281,8 +276,7 @@ if (cookieManager != null)
 public IPlatformHandle? TryGetPlatformHandle()
 ```
 
-Returns a platform handle of the native control for accessing platform-specific APIs.
-See the page on [embedding web content](/docs/app-development/embedding-web-content) for details.
+返回原生控件的平台句柄，用于访问平台专有 API。详见[嵌入网页内容](/docs/app-development/embedding-web-content)页面。
 
 ### BeginReparenting
 
@@ -290,7 +284,7 @@ See the page on [embedding web content](/docs/app-development/embedding-web-cont
 public IDisposable BeginReparenting(bool yieldOnLayoutBeforeExiting = true)
 ```
 
-Delays destruction of the native control during parent changes.
+在父级变更期间推迟销毁原生控件。
 
 ### BeginReparentingAsync
 
@@ -298,11 +292,11 @@ Delays destruction of the native control during parent changes.
 public IAsyncDisposable BeginReparentingAsync()
 ```
 
-Asynchronously delays destruction of the native control during parent changes.
+在父级变更期间异步推迟销毁原生控件。
 
 ## 平台支持 {#platform-support}
 
-| 特性                | Windows WebView2-Edge | macOS/iOS WKWebView | Linux WPE / WebKitGTK | Android | Browser |
+| 特性                | Windows WebView2-Edge | macOS/iOS WKWebView | Linux WPE / WebKitGTK | Android | 浏览器 |
 |------------------------|-----------------------|---------------------|------------------|---------|---------|
 | `NativeWebView`        | ✓                     | ✓                   | ✓                | ✓       | ✗*      |
 | `TryGetCommandManager` | ✓                     | ✓                   | ✗*               | ✓       | ✗*      |
@@ -310,21 +304,21 @@ Asynchronously delays destruction of the native control during parent changes.
 | `ShowPrintUI`          | ✓                     | ✓                   | ✗*               | ✗*      | ✗*      |
 | `PrintToPdfStreamAsync`| ✓                     | ✓**                 | ✗*               | ✗*      | ✗*      |
 
-\* Not yet implemented while possible. If this is a blocker for your project, please open an issue.
+\* 技术上可行，但尚未实现。如果这挡住了你的项目，欢迎提 issue。
 
-\** macOS does not allow extended PrintToPdfStreamAsync print options. Use custom CSS rules instead - [@media print](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#print) and [@page](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@page).
+\** macOS 不允许使用 PrintToPdfStreamAsync 的扩展打印选项，请改用自定义 CSS 规则——[@media print](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#print) 和 [@page](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@page)。
 
 :::note
 
-On Linux, `NativeWebView` picks its backend automatically. It prefers [WPE WebKit](https://wpewebkit.org), which renders offscreen using SHM, and uses WebKitGTK whenever WPE is not installed. Either way no configuration is needed — see the [Linux prerequisites](/docs/app-development/embedding-web-content#linux) for the packages each backend requires.
+在 Linux 上，`NativeWebView` 会自动挑选后端：它优先使用 [WPE WebKit](https://wpewebkit.org)（通过 SHM 离屏渲染），未安装 WPE 时则改用 WebKitGTK。两种情形都不需要额外配置——各后端所需的软件包见 [Linux 前置条件](/docs/app-development/embedding-web-content#linux)。
 
-To use WebKitGTK on a machine that does have WPE, set [`LinuxWpeWebViewEnvironmentRequestedEventArgs.PreferWebKitGtkInstead`](/controls/web/webview-environment#linux-wpe-webkit) to `true`.
+若机器上装了 WPE 却仍想用 WebKitGTK，请把 [`LinuxWpeWebViewEnvironmentRequestedEventArgs.PreferWebKitGtkInstead`](/controls/web/webview-environment#linux-wpe-webkit) 设为 `true`。
 :::
 
 ## 另请参阅 {#see-also}
 
 - [NativeWebDialog](/controls/web/nativewebdialog)
 - [WebAuthenticationBroker](/controls/web/webauthenticationbroker)
-- [WebView environment options](/controls/web/webview-environment)
-- [Embedding web content](/docs/app-development/embedding-web-content)
+- [WebView 环境选项](/controls/web/webview-environment)
+- [嵌入网页内容](/docs/app-development/embedding-web-content)
 - [FAQ](/tools/faq#webview)

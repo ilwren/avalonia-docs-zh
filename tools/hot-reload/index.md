@@ -44,13 +44,13 @@ Before you begin, make sure you have:
 
 ## 快速上手 {#getting-started}
 
-1. Install the `AvaloniaUI.DiagnosticsSupport.HotReload` NuGet package by running `dotnet add package`.
+1. 运行 `dotnet add package` 安装 `AvaloniaUI.DiagnosticsSupport.HotReload` NuGet 包。
 
 
 2. To keep hot reload out of release builds, go to your `.csproj` file and wrap the `<PackageReference>` for the hot reload package in a `Debug` condition. This ensures it never ships.
 
 
-3. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+3. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 
 ## Running with hot reload

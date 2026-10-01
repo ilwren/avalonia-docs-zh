@@ -1,24 +1,24 @@
 ---
 id: drawingimage
 title: DrawingImage
-description: A control that renders vector graphics as an IImage using Avalonia Drawing objects, enabling resolution-independent icons and shapes defined entirely in XAML.
+description: 一个把矢量图形渲染成 IImage 的控件，它基于 Avalonia 的 Drawing 对象，让你完全用 XAML 定义与分辨率无关的图标和图形。
 doc-type: reference
 ---
 
-[`DrawingImage`](/api/avalonia/media/drawingimage) renders vector graphics as an `IImage`, making it usable anywhere a bitmap image would be. Instead of loading pixels from a file, it draws shapes, paths, and other vector content defined through Avalonia's [`Drawing`](/api/avalonia/media/drawing) classes.
+[`DrawingImage`](/api/avalonia/media/drawingimage) 把矢量图形渲染成 `IImage`，于是凡是能用位图的地方都能用它。它不从文件里读像素，而是绘制由 Avalonia [`Drawing`](/api/avalonia/media/drawing) 系列类定义的形状、路径等矢量内容。
 
-This is useful when you need resolution-independent icons or graphics that can scale without quality loss, or when you want to define images purely in XAML without external asset files.
+当你需要缩放不失真、与分辨率无关的图标或图形，或者想完全用 XAML 定义图像而不依赖外部资产文件时，它正合适。
 
-## Drawing types
+## Drawing 的类型 {#drawing-types}
 
-A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Avalonia provides four concrete drawing types:
+`DrawingImage` 在它的 `Drawing` 属性中包裹一个 `Drawing` 对象。Avalonia 提供了四种具体的 drawing 类型：
 
 | 类型 | 用途 |
 | :--- | :--- |
-| `GeometryDrawing` | Fills and/or strokes a `Geometry` shape |
-| `ImageDrawing` | Renders a bitmap image within a rectangular region |
-| `GlyphRunDrawing` | Renders a glyph run with a foreground brush |
-| [`DrawingGroup`](/api/avalonia/media/drawinggroup) | Combines multiple drawings into one, with optional transform, clip, and opacity |
+| `GeometryDrawing` | 填充和/或描边一个 `Geometry` 形状 |
+| `ImageDrawing` | 在一个矩形区域内渲染位图图像 |
+| `GlyphRunDrawing` | 用前景画刷渲染一段字形 |
+| [`DrawingGroup`](/api/avalonia/media/drawinggroup) | 把多个 drawing 合为一个，并可附带变换、裁剪和不透明度 |
 
 ## 常用属性 {#useful-properties}
 
@@ -26,14 +26,14 @@ A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Aval
 
 | 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| `Drawing` | `Drawing` | The vector drawing content to render |
-| `Viewbox` | `Rect` | A rectangular region of the drawing to display, in device-independent pixels |
+| `Drawing` | `Drawing` | 要渲染的矢量绘制内容 |
+| `Viewbox` | `Rect` | 要显示的那部分绘制区域（矩形），单位为设备无关像素 |
 
 ## 示例 {#examples}
 
-### Simple vector icon
+### 简单的矢量图标 {#simple-vector-icon}
 
-This example creates a green circle with a dark green border using `GeometryDrawing`:
+下面的例子用 `GeometryDrawing` 画了一个带深绿描边的绿色圆：
 
 ```xml title="XAML"
 <Image Width="64" Height="64">
@@ -49,9 +49,9 @@ This example creates a green circle with a dark green border using `GeometryDraw
 </Image>
 ```
 
-### Combining multiple drawings
+### 组合多个 drawing {#combining-multiple-drawings}
 
-Use a `DrawingGroup` to compose multiple shapes into a single image. This example draws a simple house icon:
+用 `DrawingGroup` 可以把多个形状组合成一张图。下面的例子画了一个简单的房子图标：
 
 ```xml title="XAML"
 <Image Width="100" Height="100">
@@ -74,9 +74,9 @@ Use a `DrawingGroup` to compose multiple shapes into a single image. This exampl
 </Image>
 ```
 
-### Using as a resource
+### 作为资源使用 {#using-as-a-resource}
 
-You can define a `DrawingImage` as a resource and reference it across your application. This approach keeps your icon definitions in one place and lets you reuse them in multiple controls:
+你可以把 `DrawingImage` 定义成资源，在整个应用里引用。这样图标定义集中在一处，还能在多个控件中复用：
 
 ```xml title="XAML"
 <UserControl.Resources>
@@ -92,29 +92,29 @@ You can define a `DrawingImage` as a resource and reference it across your appli
 <Image Source="{StaticResource CheckIcon}" Width="24" Height="24" />
 ```
 
-### `DrawingImage` vs. bitmap images
+### `DrawingImage` 与位图图像的取舍 {#drawingimage-vs-bitmap-images}
 
-Use `DrawingImage` when you need:
+以下情况请用 `DrawingImage`：
 
-- Resolution-independent graphics that scale cleanly at any size
-- Icons defined entirely in XAML without external files
-- Dynamic graphics where brushes or geometry can be bound to data
+- 需要与分辨率无关、任意尺寸都干净利落的图形
+- 图标完全用 XAML 定义，不依赖外部文件
+- 需要动态图形，画刷或几何图形要绑定到数据
 
-Use bitmap images (`Image.Source` with an asset path) when you have photographic content or pre-rendered artwork.
+如果内容是照片或预先绘制好的美术素材，请用位图图像（`Image.Source` 搭配资产路径）。
 
 ## 实用提示 {#practical-notes}
 
-- **Viewbox cropping.** If you set the `Viewbox` property, only the specified rectangle of your drawing is rendered. This is handy when you pack several icons into a single `DrawingGroup` and want to display one region at a time.
-- **Performance.** Because `DrawingImage` re-renders its vector content each time it paints, very complex drawings with hundreds of geometries may be slower than an equivalent bitmap. For intricate artwork, consider pre-rendering to a `RenderTargetBitmap`.
-- **Data binding.** You can bind `Brush`, `Geometry`, or `Pen` properties inside your drawings to view-model values, giving you fully dynamic vector graphics that respond to your application state.
-- **Accessibility.** `DrawingImage` does not expose text content to assistive technology on its own. If the graphic conveys meaning, set an accessible name or description on the parent `Image` control.
+- **Viewbox 裁剪。** 设置 `Viewbox` 属性后，只会渲染绘制内容中指定的那块矩形。把若干图标打包进一个 `DrawingGroup`、每次只显示其中一块时，这招很好用。
+- **性能。** 由于 `DrawingImage` 每次绘制都会重新渲染矢量内容，上百个几何图形的复杂绘制可能比同等位图更慢。精细的美术素材不妨预先渲染成 `RenderTargetBitmap`。
+- **数据绑定。** 绘制内容中的 `Brush`、`Geometry`、`Pen` 属性都可以绑定到视图模型的值，由此得到完全动态、随应用状态变化的矢量图形。
+- **无障碍。** `DrawingImage` 本身不会向辅助技术暴露文字内容。如果图形承载了含义，请在父级 `Image` 控件上设置无障碍名称或说明。
 
 ## 另请参阅 {#see-also}
 
 - [Image](/controls/media/image)
 - [PathIcon](/controls/media/pathicon)
 - [Brushes](/docs/graphics-animation/brushes)
-- [DrawingImage API reference](/api/avalonia/media/drawingimage)
-- [GeometryDrawing API reference](/api/avalonia/media/geometrydrawing)
-- [DrawingGroup API reference](/api/avalonia/media/drawinggroup)
+- [DrawingImage API 参考](/api/avalonia/media/drawingimage)
+- [GeometryDrawing API 参考](/api/avalonia/media/geometrydrawing)
+- [DrawingGroup API 参考](/api/avalonia/media/drawinggroup)
 - [GitHub 上的 `DrawingImage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Media/DrawingImage.cs)

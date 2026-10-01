@@ -1,22 +1,21 @@
 ---
 id: mediaplayer-class
-title: MediaPlayer class
+title: MediaPlayer 类
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-The `MediaPlayer` class provides the core functionality for media playback in Avalonia applications. It handles media
-loading, playback control, and platform-specific backend management, serving as the engine behind [`MediaPlayerControl`](/controls/media/mediaplayer/mediaplayer-class).
+`MediaPlayer` 类为 Avalonia 应用提供媒体播放的核心能力：它负责媒体加载、播放控制和各平台后端的管理，是 [`MediaPlayerControl`](/controls/media/mediaplayer/mediaplayer-class) 背后的引擎。
 
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Using MediaPlayer without MediaPlayerControl
+## 不用 MediaPlayerControl，直接使用 MediaPlayer {#using-mediaplayer-without-mediaplayercontrol}
 
-When using `MediaPlayer` without `MediaPlayerControl`, you must call `InitializeAsync()` first and ensure the source is set only after the control is loaded:
+不搭配 `MediaPlayerControl` 而单独使用 `MediaPlayer` 时，必须先调用 `InitializeAsync()`，并确保在控件加载完成之后才设置媒体源：
 
 ```csharp
 private MediaPlayer _player = new MediaPlayer();
@@ -38,74 +37,74 @@ protected override async void OnLoaded(RoutedEventArgs e)
 
 ## 属性 {#properties}
 
-### Media source properties
+### 媒体源属性 {#media-source-properties}
 
 | 属性 | 类型        | 说明                                                                 |
 |----------|-------------|-----------------------------------------------------------------------------|
-| Source   | MediaSource | Gets or sets the media source to be played (`UriSource` or `StreamSource`). |
+| Source   | MediaSource | 获取或设置要播放的媒体源（`UriSource` 或 `StreamSource`）。 |
 
-### Playback properties
+### 播放相关属性 {#playback-properties}
 
 | 属性       | 类型                      | 说明                                                        |
 |----------------|---------------------------|--------------------------------------------------------------------|
-| Position       | TimeSpan                  | Gets or sets the current playback position.                        |
-| Duration       | TimeSpan?                 | Gets the total duration of the media. Null for non-seekable media. |
-| LoadedBehavior | MediaPlayerLoadedBehavior | Gets or sets playback behavior when media is loaded.               |
+| Position       | TimeSpan                  | 获取或设置当前播放位置。                        |
+| Duration       | TimeSpan?                 | 获取媒体的总时长。不可跳转的媒体返回 null。 |
+| LoadedBehavior | MediaPlayerLoadedBehavior | 获取或设置媒体加载完成后的播放行为。               |
 
-### State properties
+### 状态属性 {#state-properties}
 
 | 属性         | 类型    | 说明                                            |
 |------------------|---------|--------------------------------------------------------|
-| IsSeekable       | bool    | Gets whether the current media supports seeking.       |
-| IsBuffering      | bool    | Gets whether the media is currently buffering.         |
-| BufferProgress   | double? | Gets buffer progress (0.0-1.0). Null if not available. |
-| HasVideo         | bool    | Gets whether the current media contains video content. |
-| LastErrorMessage | string  | Gets the most recent error message in error state.     |
+| IsSeekable       | bool    | 获取当前媒体是否支持跳转。       |
+| IsBuffering      | bool    | 获取媒体当前是否正在缓冲。         |
+| BufferProgress   | double? | 获取缓冲进度（0.0-1.0）。无法获取时返回 null。 |
+| HasVideo         | bool    | 获取当前媒体是否包含视频内容。 |
+| LastErrorMessage | string  | 在错误状态下，获取最近一条错误信息。     |
 
-### Audio properties
+### 音频属性 {#audio-properties}
 
 | 属性 | 类型   | 说明                                 |
 |----------|--------|---------------------------------------------|
-| Volume   | double | Gets or sets the playback volume (0.0-1.0). |
-| IsMuted  | bool   | Gets or sets whether audio is muted.        |
+| Volume   | double | 获取或设置播放音量（0.0-1.0）。 |
+| IsMuted  | bool   | 获取或设置是否静音。        |
 
-### Advanced properties
+### 进阶属性 {#advanced-properties}
 
 | 属性        | 类型            | 说明                                        |
 |-----------------|-----------------|----------------------------------------------------|
-| Statistics      | MediaStatistics | Gets playback statistics information if available. |
-| ForceVlcBackend | bool (static)   | Forces the use of VLC backend (debugging only).    |
+| Statistics      | MediaStatistics | 获取播放统计信息（若可用）。 |
+| ForceVlcBackend | bool（静态）   | 强制使用 VLC 后端（仅用于调试）。    |
 
 ## 事件 {#events}
 
 | 事件                  | 说明                                           |
 |------------------------|-------------------------------------------------------|
-| NaturalSizeChanged     | Occurs when the natural size of the video changes.    |
-| MediaPrepared          | Occurs when the media has been prepared and is ready. |
-| MediaStarted           | Occurs when media playback has started.               |
-| MediaPaused            | Occurs when media playback has been paused.           |
-| MediaStopped           | Occurs when media playback has been stopped.          |
-| MediaPlaybackCompleted | Occurs when media playback has completed.             |
-| ErrorOccurred        | Occurs when an error is encountered.                  |
-| PropertyChanged        | Standard INotifyPropertyChanged event.                |
+| NaturalSizeChanged     | 视频的固有尺寸发生变化时引发。    |
+| MediaPrepared          | 媒体准备完毕、可以播放时引发。 |
+| MediaStarted           | 媒体开始播放时引发。               |
+| MediaPaused            | 媒体播放被暂停时引发。           |
+| MediaStopped           | 媒体播放被停止时引发。          |
+| MediaPlaybackCompleted | 媒体播放结束时引发。             |
+| ErrorOccurred        | 发生错误时引发。                  |
+| PropertyChanged        | 标准的 INotifyPropertyChanged 事件。                |
 
 ## 方法 {#methods}
 
 | 方法            | Return Type | 说明                                   |
 |-------------------|-------------|-----------------------------------------------|
-| InitializeAsync() | Task        | Initializes the media player and its backend. |
-| PrepareAsync()    | Task        | Prepares the media for playback.              |
-| PlayAsync()       | Task        | Starts or resumes media playback.             |
-| PauseAsync()      | Task        | Pauses media playback.                        |
-| StopAsync()       | Task        | Stops media playback.                         |
-| ReleaseAsync()    | Task        | Releases resources for the current media.     |
-| UnInitialize()    | Task        | Releases all resources used by the player.    |
+| InitializeAsync() | Task        | 初始化媒体播放器及其后端。 |
+| PrepareAsync()    | Task        | 为播放准备媒体。              |
+| PlayAsync()       | Task        | 开始或继续播放媒体。             |
+| PauseAsync()      | Task        | 暂停媒体播放。                        |
+| StopAsync()       | Task        | 停止媒体播放。                         |
+| ReleaseAsync()    | Task        | 释放当前媒体占用的资源。     |
+| UnInitialize()    | Task        | 释放播放器占用的全部资源。    |
 
-## Backend architecture
+## 后端架构 {#backend-architecture}
 
-The `MediaPlayer` uses a pluggable backend architecture to support different platforms:
+`MediaPlayer` 采用可插拔的后端架构来支持不同平台：
 
-The backend selection is automatic based on the platform:
+后端会根据平台自动选择：
 
 ```mermaid
 graph TD
@@ -122,12 +121,12 @@ graph TD
     VLCB:::impl
 ```
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
-### Basic playback
+### 基本播放 {#basic-playback}
 
 :::caution
-`MediaPlayer` is not ready to accept a media source until the Avalonia UI has fully loaded. Always set the `Source` property after the `Loaded` event has fired. See [Initialization Timing](/controls/media/mediaplayer/media-playback#initialization-timing) for details.
+在 Avalonia 界面完全加载之前，`MediaPlayer` 还没准备好接受媒体源。请务必等 `Loaded` 事件触发之后再设置 `Source` 属性，详见[初始化时机](/controls/media/mediaplayer/media-playback#initialization-timing)。
 :::
 
 ```csharp
@@ -148,9 +147,9 @@ protected override async void OnLoaded(RoutedEventArgs e)
 }
 ```
 
-### Using a custom visual
+### 使用自定义可视元素 {#using-a-custom-visual}
 
-You can attach a custom visual target:
+你可以挂上自定义的可视目标：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -198,9 +197,9 @@ private void UpdatePlayerSize(Size size)
     presenter.InvalidateMeasure();
 }
 ```
-`MediaPlayerPresenter` is provided for convenience, but you can use any custom visual. Ensure that you update the visual with the size provided by the `MediaPlayer` instance.
+`MediaPlayerPresenter` 只是图个方便，你完全可以换成任意自定义可视元素；但要记得按 `MediaPlayer` 实例给出的尺寸去更新它。
 
-### Event handling
+### 事件处理 {#event-handling}
 
 ```csharp
 // Setup event handlers
@@ -214,7 +213,7 @@ player.ErrorOccurred += (s, e) => {
 };
 ```
 
-### Resource cleanup
+### 资源清理 {#resource-cleanup}
 
 ```csharp
 // Clean up when done
@@ -223,14 +222,14 @@ await player.ReleaseAsync();
 await player.UnInitialize();
 ```
 
-## Error handling
+## 错误处理 {#error-handling}
 
-The MediaPlayer uses an event-based approach to error handling:
+MediaPlayer 采用基于事件的方式处理错误：
 
-- When an error occurs, the player transitions to an Error state internally
-- The `ErrorOccurred` event is raised with detailed error information
-- Most methods check for the Error state and will not proceed
-- Call ReleaseAsync() to reset the error state
+- 发生错误时，播放器内部会切换到 Error 状态
+- `ErrorOccurred` 事件被引发，并带上详细的错误信息
+- 多数方法会检查 Error 状态，发现后便不再继续执行
+- 调用 ReleaseAsync() 可复位错误状态
 
 ```csharp
 // Subscribe to error events
@@ -260,29 +259,29 @@ catch (Exception ex) {
 ## 实践建议 {#best-practices}
 
 1. **Initialization Timing**:
-    - Never set `Source` in a constructor. The player is not ready until the UI has loaded.
-    - Set `Source` in an `OnLoaded` override or use `Dispatcher.UIThread.Post` to defer the call.
-    - See [Initialization Timing](/controls/media/mediaplayer/media-playback#initialization-timing) for full guidance.
+    - 切勿在构造函数里设置 `Source`。界面加载完成之前，播放器还没准备好。
+    - 请在重写的 `OnLoaded` 中设置 `Source`，或用 `Dispatcher.UIThread.Post` 把调用推迟。
+    - 完整说明见[初始化时机](/controls/media/mediaplayer/media-playback#initialization-timing)。
 
-2. **Initialization and Cleanup**:
-    - Always call `InitializeAsync()` before using `MediaPlayer`.
-    - Call `ReleaseAsync()` between loading different media sources.
-    - Call `UnInitialize()` when completely done with `MediaPlayer`.
+2. **初始化与清理**：
+    - 使用 `MediaPlayer` 之前务必先调用 `InitializeAsync()`。
+    - 切换不同媒体源之间要调用 `ReleaseAsync()`。
+    - 彻底用完 `MediaPlayer` 之后要调用 `UnInitialize()`。
 
 3. **Error Handling**:
-    - Subscribe to the `ErrorOccurred` event to handle playback errors.
+    - 订阅 `ErrorOccurred` 事件来处理播放错误。
 
 4. **Resource Management**:
-    - Properly clean up to avoid resource leaks.
-    - Consider reusing a single `MediaPlayer` instance for multiple media items that are to be played sequentially.
+    - 妥善清理，避免资源泄漏。
+    - 若要依次播放多个媒体，不妨复用同一个 `MediaPlayer` 实例。
 
 5. **Platform Considerations**:
-    - Test media playback on all target platforms.
+    - 在所有目标平台上都测试一遍媒体播放。
 
 ## 另请参阅 {#see-also}
 
-- [MediaPlayer control](/controls/media/mediaplayer)
-- [MediaSource class](/controls/media/mediaplayer/mediasource)
+- [MediaPlayer 控件](/controls/media/mediaplayer)
+- [MediaSource 类](/controls/media/mediaplayer/mediasource)
 - [Implementing MediaPlayer](/controls/media/mediaplayer/media-playback)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)
-- [Troubleshooting](/troubleshooting/controls/mediaplayer)
+- [疑难排查](/troubleshooting/controls/mediaplayer)

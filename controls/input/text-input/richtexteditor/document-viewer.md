@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 Use `FlowDocumentScrollViewer` to display rich documents without editing. This guide covers setup, document loading, styling, layout, and common viewer patterns.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## When to use FlowDocumentScrollViewer

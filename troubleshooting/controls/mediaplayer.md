@@ -104,6 +104,6 @@ After releasing, you can set a new `Source` and attempt playback again.
 
 ## 另请参阅 {#see-also}
 
-- [MediaPlayer control](/controls/media/mediaplayer)
-- [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)
-- [MediaSource class](/controls/media/mediaplayer/mediasource)
+- [MediaPlayer 控件](/controls/media/mediaplayer)
+- [MediaPlayer 类](/controls/media/mediaplayer/mediaplayer-class)
+- [MediaSource 类](/controls/media/mediaplayer/mediasource)

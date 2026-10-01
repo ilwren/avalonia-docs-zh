@@ -10,7 +10,7 @@ tags:
 ---
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 For reference information on this control, see the [RichTextEditor](/controls/input/text-input/richtexteditor) page.

@@ -15,7 +15,7 @@ Both selection types support either single or multiple selection. The default se
 
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Setting the selection mode in XAML

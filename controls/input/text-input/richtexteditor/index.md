@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 `Avalonia.Controls.RichTextEditor` is a rich text editing solution for Avalonia applications, offering functionalities for interactive text editing, document architecture and file serialization.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## 适用场景 {#when-to-use}
@@ -40,7 +40,7 @@ dotnet add package Avalonia.Controls.Documents.Serialization.Pdf     # PDF expor
 dotnet add package Avalonia.Controls.Markdown                        # Markdown viewer and serializer
 ```
 
-2. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+2. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 ```xml
 <ItemGroup>
@@ -49,7 +49,7 @@ dotnet add package Avalonia.Controls.Markdown                        # Markdown 
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
 3. Reference the `RichTextEditor` default theme via a `StyleInclude` in your `App.axaml` file. This adds the resources needed to render the control.
@@ -61,7 +61,7 @@ For multi-project solutions, you can store your licence key in an [environment v
 </Application.Styles>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
 ## 基本用法 {#basic-usage}
 
@@ -447,4 +447,4 @@ The Avalonia rich text editor separates functions into an eight-layer architectu
 - [Extension Patterns](/controls/input/text-input/richtexteditor/extension-patterns) — custom nodes, highlight layers, serializers, components
 - [Performance Tuning](/controls/input/text-input/richtexteditor/performance-tuning)
 - [Thread Safety](/controls/input/text-input/richtexteditor/thread-safety)
-- [Troubleshooting](/troubleshooting/controls/richtexteditor)
+- [疑难排查](/troubleshooting/controls/richtexteditor)

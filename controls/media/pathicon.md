@@ -1,30 +1,30 @@
 ---
 id: pathicon
 title: PathIcon
-description: A control that renders a vector icon from SVG path (stream geometry) data, commonly used inside buttons, menus, and other interactive controls.
+description: 一个从 SVG 路径（stream geometry）数据渲染矢量图标的控件，常用在按钮、菜单等可交互控件内部。
 doc-type: reference
 ---
 
 import PathIconHouseScreenshot from '/img/controls/pathicon/pathicon-house.png';
 
-The [`PathIcon`](/api/avalonia/controls/pathicon) control renders a vector icon from stream geometry data. You can use it to display scalable, resolution-independent icons in your application. The [Avalonia Fluent icons library](https://avaloniaui.github.io/icons.html) provides a large collection of ready-to-use geometry strings.
+[`PathIcon`](/api/avalonia/controls/pathicon) 控件把 stream geometry 数据渲染成矢量图标，可用于在应用中显示可缩放、与分辨率无关的图标。[Avalonia Fluent 图标库](https://avaloniaui.github.io/icons.html)提供了大量开箱即用的几何数据字符串。
 
-Because `PathIcon` uses vector paths rather than raster images, your icons scale cleanly at any size and you can re-color them by changing the `Foreground` brush.
+由于 `PathIcon` 用的是矢量路径而非位图，图标在任意尺寸下都干净利落，换个 `Foreground` 画刷就能改变配色。
 
-`PathIcon` is most often used as part of a composition inside another control, for example to add an icon to a `Button`, `MenuItem`, or `NavigationViewItem`.
+`PathIcon` 最常见的用法是作为组合的一部分嵌在别的控件里，比如给 `Button`、`MenuItem` 或 `NavigationViewItem` 加上图标。
 
 ## 常用属性 {#common-properties}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Data` | `Geometry` | The stream geometry that defines the icon shape. |
-| `Foreground` | `IBrush` | The brush used to fill the icon. If you do not set this property, the value is inherited from the parent control. |
-| `Width` | `double` | The rendered width of the icon. |
-| `Height` | `double` | The rendered height of the icon. |
+| `Data` | `Geometry` | 定义图标形状的 stream geometry。 |
+| `Foreground` | `IBrush` | 填充图标所用的画刷。若不设置该属性，它的值将从父控件继承。 |
+| `Width` | `double` | 图标渲染出来的宽度。 |
+| `Height` | `double` | 图标渲染出来的高度。 |
 
 ## 基本示例 {#basic-example}
 
-The following example displays a shop icon at 200 x 200 pixels with a blue fill. The geometry data is stored as a `StreamGeometry` resource and referenced with `StaticResource`.
+下面的例子以 200 x 200 像素、蓝色填充显示一个商店图标。几何数据存为 `StreamGeometry` 资源，并用 `StaticResource` 引用。
 
 ```xml
 <PathIcon Height="200" Width="200" Foreground="Blue"
@@ -37,13 +37,13 @@ The following example displays a shop icon at 200 x 200 pixels with a blue fill.
 </Window.Resources>
 ```
 
-The result in the preview pane:
+预览窗格中的效果：
 
 <Image light={PathIconHouseScreenshot} alt="PathIcon showing a shop building icon" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Using in buttons and menus
+## 在按钮和菜单中使用 {#using-in-buttons-and-menus}
 
-`PathIcon` is commonly used to add icons to interactive controls. The following examples show typical usage inside a `Button` and a `MenuItem`.
+`PathIcon` 常用来给可交互控件加图标。下面的例子展示了它在 `Button` 和 `MenuItem` 中的典型用法。
 
 ```xml
 <Button>
@@ -60,9 +60,9 @@ The result in the preview pane:
 </MenuItem>
 ```
 
-## Defining icon resources
+## 定义图标资源 {#defining-icon-resources}
 
-To reuse the same icon in multiple places, store your `StreamGeometry` values in a resource dictionary at the application or window level.
+若要在多处复用同一个图标，请把 `StreamGeometry` 的值存进应用级或窗口级的资源字典。
 
 ```xml
 <Application.Resources>
@@ -71,13 +71,13 @@ To reuse the same icon in multiple places, store your `StreamGeometry` values in
 </Application.Resources>
 ```
 
-You can then reference any icon with `{StaticResource key_name}` throughout your application.
+之后在应用的任何地方，都能用 `{StaticResource key_name}` 引用这些图标。
 
-Browse the [Avalonia Fluent icons](https://avaloniaui.github.io/icons.html) for a searchable gallery of ready-to-use geometry data.
+[Avalonia Fluent 图标库](https://avaloniaui.github.io/icons.html)提供了可搜索的图集，里面都是开箱即用的几何数据。
 
-## Changing icon color dynamically
+## 动态改变图标颜色 {#changing-icon-color-dynamically}
 
-Because `PathIcon` inherits `Foreground` from its parent, you can change the icon color through styles or bindings without setting the property on every instance.
+由于 `PathIcon` 会从父级继承 `Foreground`，你可以通过样式或绑定统一改变图标颜色，而不必逐个实例地设置该属性。
 
 ```xml
 <Button Foreground="Green">
@@ -86,7 +86,7 @@ Because `PathIcon` inherits `Foreground` from its parent, you can change the ico
 </Button>
 ```
 
-To override the inherited color on a specific icon, set `Foreground` directly.
+若要覆盖某个图标继承来的颜色，直接在它上面设置 `Foreground` 即可。
 
 ```xml
 <PathIcon Data="{StaticResource warning_regular}" Foreground="Red"
@@ -95,6 +95,6 @@ To override the inherited color on a specific icon, set `Foreground` directly.
 
 ## 另请参阅 {#see-also}
 
-- [PathIcon API reference](https://reference.avaloniaui.net/api/Avalonia.Controls/PathIcon/)
+- [PathIcon API 参考](https://reference.avaloniaui.net/api/Avalonia.Controls/PathIcon/)
 - [Image](/controls/media/image)
-- [Fluent icons gallery](https://avaloniaui.github.io/icons.html)
+- [Fluent 图标图集](https://avaloniaui.github.io/icons.html)

@@ -106,4 +106,4 @@ Anything a user needs to act on is also surfaced on the bindable `ErrorMessage` 
 - [PdfViewer control](index.md)
 - [Loading and saving](loading-and-saving.md)
 - [Printing and sharing](printing-and-sharing.md)
-- [Troubleshooting](/troubleshooting/controls/pdfviewer)
+- [疑难排查](/troubleshooting/controls/pdfviewer)

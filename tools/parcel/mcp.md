@@ -292,7 +292,7 @@ Once the MCP server is configured, your AI assistant can help with:
 - **Generate packages** in NSIS, MSIX, DMG, PKG, DEB, RPM, and ZIP formats
 - **Cross-platform packaging** with runtime-specific outputs
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
 Describe what you want to accomplish in natural language. The AI assistant calls the MCP tools automatically:
 

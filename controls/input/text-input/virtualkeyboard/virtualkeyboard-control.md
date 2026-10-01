@@ -11,7 +11,7 @@ import VirtualKeyboardStyles from '/img/avalonia-pro/virtual-keyboard/styles.png
 The `VirtualKeyboard` is a standalone control that provides an on-screen keyboard. This control can be manually placed in your application's layout. Unlike `VirtualKeyboardScope`, which automatically manages keyboard visibility based on focus, `VirtualKeyboard` is explicitly directed at a specific target input element.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## 概述 {#overview}
@@ -25,7 +25,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 | `Target` | `IInputElement` | Gets or sets the input element to receive keystrokes from the keyboard. |
 | `InputMethods` | `IEnumerable<VirtualKeyboardInputMethod>` | Gets or sets the collection of input methods available to users. |
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
 ### Minimal implementation
 

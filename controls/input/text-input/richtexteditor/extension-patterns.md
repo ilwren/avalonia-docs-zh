@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 The RichTextEditor is designed for extensibility at multiple levels. This guide covers patterns for extending functionality without modifying core code.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Extension points

@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 By default, `RichTextEditor` includes a primary toolbar, a selection mini-bar, and a right-click context menu. Each of these toolbars is built from the same basic system and can be customized independently. You can swap layouts, add your own tools, fine-tune the overflow menu, re-theme buttons, and more. This guide takes you through your customization options, from most common to most advanced.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Toolbar architecture

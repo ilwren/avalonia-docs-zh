@@ -12,7 +12,7 @@ The `Markdown` control is built on the shared FlowDocument model, where every re
 2. **Named resources** — override theme values such as font sizes, margins, and brush colors.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## DocumentNode style selectors

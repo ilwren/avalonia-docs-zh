@@ -11,7 +11,7 @@ tags:
 The `Markdown` control resolves image URLs through a `MarkdownImageLoader`. Set `Markdown.ImageLoader` on the control and every image in its document uses it.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## 默认表现 {#default-behavior}

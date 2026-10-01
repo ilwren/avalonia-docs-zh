@@ -121,13 +121,13 @@ if (result.CallbackUri != null)
 
 Replace `YOUR_CLIENT_ID` with the client ID for your application.
 
-## Platform prerequisites
+## 平台前置条件 {#platform-prerequisites}
 
 The WebView component relies on native web rendering implementations that must be available on the user's machine.
 
 #### Summary
 
-| Component | Windows | macOS | Linux | iOS | Android | Browser |
+| Component | Windows | macOS | Linux | iOS | Android | 浏览器 |
 |-----------|---------|-------|-------|-----|---------|---------|
 | NativeWebView | ✓ | ✓ | ✓* | ✓ | ✓ | ✗ |
 | NativeWebDialog | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ |
@@ -174,7 +174,7 @@ Debian/Ubuntu:
 sudo apt install libgtk-3-0 libwebkit2gtk-4.1-0 libsoup-3.0-0
 ```
 
-Fedora:
+Fedora：
 
 ```bash
 sudo dnf install gtk3 webkit2gtk4.1 libsoup3
@@ -198,7 +198,7 @@ Debian 13 (trixie) or newer:
 sudo apt install libwpewebkit-2.0-1
 ```
 
-Fedora:
+Fedora：
 
 ```bash
 sudo dnf install dnf-plugins-core
@@ -401,5 +401,5 @@ To streamline code migration, you can also use the `NativeWebView` control with 
 - [NativeWebView](/controls/web/nativewebview)
 - [NativeWebDialog](/controls/web/nativewebdialog)
 - [WebAuthenticationBroker](/controls/web/webauthenticationbroker)
-- [WebView environment options](/controls/web/webview-environment)
+- [WebView 环境选项](/controls/web/webview-environment)
 - [FAQ](/tools/faq#webview)

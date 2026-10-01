@@ -12,7 +12,7 @@ tags:
 It is write-only: `CanWrite` is true, `CanRead` is false, and `Deserialize` throws `NotSupportedException`. When exporting to PDF, pagination follows the same rules the paged view does, so the sheets on screen and the pages in the file break in the same places.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Exporting a document

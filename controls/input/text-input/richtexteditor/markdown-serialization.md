@@ -12,7 +12,7 @@ tags:
 It is the serializer behind opening and saving `.md` files in the editor. It is also used by the [Markdown control](/controls/data-display/text-display/markdown).
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Reading and writing

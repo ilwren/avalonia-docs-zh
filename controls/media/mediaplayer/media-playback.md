@@ -1,28 +1,28 @@
 ---
 id: media-playback
-title: Implementing media playback
-sidebar_label: Implementing media playback
+title: 实现媒体播放
+sidebar_label: 实现媒体播放
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-This is a practical guide to implementing media playback in Avalonia applications using the Avalonia Pro [`MediaPlayer`](/controls/media/mediaplayer).
+这是一份实用指南，介绍如何用 Avalonia Pro 的 [`MediaPlayer`](/controls/media/mediaplayer) 在 Avalonia 应用中实现媒体播放。
 
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Initialization timing
+## 初始化时机 {#initialization-timing}
 
 :::caution
-`MediaPlayer` is not ready to accept a media source until the Avalonia UI has fully loaded. Setting the `Source` property too early (for example, in a Window or UserControl constructor) will fail silently because the underlying platform backend has not yet been initialized.
+在 Avalonia 界面完全加载之前，`MediaPlayer` 还没准备好接受媒体源。过早设置 `Source` 属性（比如在 Window 或 UserControl 的构造函数里）会悄无声息地失败，因为此时底层平台后端尚未初始化。
 :::
 
-Always set the `Source` property after the control's `Loaded` event has fired. You can do this in one of two ways:
+请务必等控件的 `Loaded` 事件触发之后再设置 `Source` 属性。有两种做法：
 
-### Option 1: Use the OnLoaded override
+### 做法一：重写 OnLoaded {#option-1-use-the-onloaded-override}
 
 ```csharp
 public partial class MainView : UserControl
@@ -46,7 +46,7 @@ public partial class MainView : UserControl
 
 ### Option 2: Use Dispatcher.UIThread.Post
 
-If you need to set the source from a context where you cannot override `OnLoaded`, use `Dispatcher.UIThread.Post` to defer the call until the UI thread is ready:
+如果所处的上下文没法重写 `OnLoaded`，可以用 `Dispatcher.UIThread.Post` 把调用推迟到 UI 线程就绪之后：
 
 ```csharp
 protected override void OnLoaded(RoutedEventArgs e)
@@ -60,12 +60,12 @@ protected override void OnLoaded(RoutedEventArgs e)
 ```
 
 :::tip
-When using `MediaPlayerControl` with XAML bindings (for example, `Source="{Binding MediaSource}"`), the binding system handles the timing automatically because bindings are evaluated after the control is attached to the visual tree. You only need to manage timing explicitly when setting `Source` in code-behind.
+当 `MediaPlayerControl` 搭配 XAML 绑定使用时（比如 `Source="{Binding MediaSource}"`），时机由绑定系统自动处理，因为绑定是在控件挂入视觉树之后求值的。只有在代码隐藏中设置 `Source` 时，才需要你自己照看时机。
 :::
 
-## Loading media sources
+## 加载媒体源 {#loading-media-sources}
 
-### From files or URLs using UriSource
+### 用 UriSource 从文件或 URL 加载 {#from-files-or-urls-using-urisource}
 
 ```csharp
 // Local file
@@ -77,10 +77,9 @@ mediaPlayer.Source = new UriSource(new Uri("file:///C:/videos/sample.mp4"));
 mediaPlayer.Source = new UriSource("https://example.com/video.mp4");
 ```
 
-**Note**: If it's possible, always add the `file://` schema to your local file URI's. This makes sure that
-the player recognizes the file's path as local.
+**注意**：只要条件允许，请给本地文件 URI 加上 `file://` 协议头，这样播放器才能确认该路径指向本地文件。
 
-### From streams with StreamSource
+### 用 StreamSource 从流加载 {#from-streams-with-streamsource}
 
 ```csharp
 // From file stream
@@ -92,10 +91,9 @@ var memoryStream = new MemoryStream(byteArray);
 mediaPlayer.Source = new StreamSource(memoryStream);
 ```
 
-**Note**: Make sure to not control the disposal of the stream you passed to the `StreamSource` as the player will take
-care of its lifetime.
+**注意**：传给 `StreamSource` 的流不要自行释放，播放器会照看它的生存期。
 
-### Using file picker with StorageFileSource
+### 用 StorageFileSource 配合文件选择器 {#using-file-picker-with-storagefilesource}
 
 ```csharp
 public async void OpenFile_Click(object sender, RoutedEventArgs e)
@@ -115,9 +113,9 @@ public async void OpenFile_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Common operations
+## 常见操作 {#common-operations}
 
-### Playback control
+### 播放控制 {#playback-control}
 
 ```csharp
 // Play/pause
@@ -137,7 +135,7 @@ mediaPlayer.Volume = 0.75;
 mediaPlayer.IsMuted = true;
 ```
 
-### Media information
+### 媒体信息 {#media-information}
 
 ```csharp
 // Get duration
@@ -153,7 +151,7 @@ bool isSeekable = mediaPlayer.IsSeekable;
 TimeSpan position = mediaPlayer.Position;
 ```
 
-### Error handling
+### 错误处理 {#error-handling}
 
 ```csharp
 mediaPlayer.ErrorOccurred += (sender, args) =>
@@ -163,7 +161,7 @@ mediaPlayer.ErrorOccurred += (sender, args) =>
 };
 ```
 
-**Note**: This callback gives you the opportunity to reset the state of the `MediaPlayer` gracefully.
+**注意**：这个回调给了你机会，让 `MediaPlayer` 的状态得以体面地复位。
 
 ### 基本示例 {#basic-example}
 
@@ -205,39 +203,37 @@ public partial class MainWindow : Window
 }
 ```
 
-## Platform prerequisites
+## 平台前置条件 {#platform-prerequisites}
 
-The `MediaPlayer` component relies on native media playback frameworks on each supported platforms:
+`MediaPlayer` 组件在各个受支持平台上都依赖该平台的原生媒体播放框架：
 
 ### Windows
 
-`MediaPlayer` uses Windows's Media Foundation to render multimedia content, 
-while utilizing Vulkan Graphics API whenever possible or available on the end-user's installation.
+`MediaPlayer` 使用 Windows 的 Media Foundation 渲染多媒体内容；只要终端用户的环境支持，就尽量启用 Vulkan 图形 API。
 
-For Windows 10/11:
+Windows 10/11：
 
-- No additional setup required.
+- 无需额外配置。
 
-For Windows 10N/11N or 10KN/11KN:
+Windows 10N/11N 或 10KN/11KN：
 
-- Please see the [Troubleshooting](/troubleshooting/controls/mediaplayer).
+- 请参阅[疑难排查](/troubleshooting/controls/mediaplayer)。
 
 ### macOS/iOS
 
-`MediaPlayer` uses Apple's AVFoundation to render multimedia content on macOS and iOS. 
+在 macOS 和 iOS 上，`MediaPlayer` 使用 Apple 的 AVFoundation 渲染多媒体内容。 
 
-For macOS 10.15 or iOS 12.0 or higher. 
+需要 macOS 10.15 或 iOS 12.0 及以上版本。 
 
-- No additional setup required.
+- 无需额外配置。
 
 ### Android
 
-`MediaPlayer` uses Android's ExoPlayer component to render multimedia content together with Vulkan Graphics API if
-the end-user device supports it.
+`MediaPlayer` 使用 Android 的 ExoPlayer 组件渲染多媒体内容；若终端设备支持，还会一并启用 Vulkan 图形 API。
 
-For Android API 21 (Android 5.0) or higher.
+需要 Android API 21（Android 5.0）及以上版本。
 
-- Call `UseAndroidPlayer` in your app builder;
+- 在你的 app builder 中调用 `UseAndroidPlayer`；
 ```csharp
 protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
 {
@@ -248,7 +244,7 @@ protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
         .LogToTrace();
 }
   ```
-- For Vulkan support;
+- 以获得 Vulkan 支持；
 ```csharp
 protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
 {
@@ -268,9 +264,9 @@ protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
 
 ### Linux
 
-`MediaPlayer` uses the system-installed LibVLC library to render multimedia content for Linux distros.
+在 Linux 发行版上，`MediaPlayer` 使用系统安装的 LibVLC 库渲染多媒体内容。
 
-Requires LibVLC 3.0.21 or higher.
+需要 LibVLC 3.0.21 或更高版本。
 
 Debian/Ubuntu:
 
@@ -278,32 +274,31 @@ Debian/Ubuntu:
 apt install libvlc
 ```
 
-Fedora:
+Fedora：
 
 ```bash
 dnf install libvlc
 ```
 
-### Embedded Linux (direct rendering manager)
+### 嵌入式 Linux（direct rendering manager） {#embedded-linux-direct-rendering-manager}
 
-Similar to the requirements on regular Linux, `MediaPlayer` uses the system-installed LibVLC library to render multimedia content for embedded Linux devices.
+与普通 Linux 的要求类似，在嵌入式 Linux 设备上 `MediaPlayer` 同样使用系统安装的 LibVLC 库渲染多媒体内容。
 
-Follow the [guide to setting up Avalonia on Linux DRM Framebuffer](https://avaloniaui.net/blog/unleashing-net-on-embedded-linux).
+请按[在 Linux DRM Framebuffer 上搭建 Avalonia 的指南](https://avaloniaui.net/blog/unleashing-net-on-embedded-linux)操作。
 
-Afterwards, install the VLC dependencies as described above.
+之后再按上文所述安装 VLC 依赖。
 
-No special requirements are needed for the Linux DRM setup and you can continue on using the `MediaPlayer` control like on regular Linux.
+Linux DRM 环境没有额外的特殊要求，你可以像在普通 Linux 上一样继续使用 `MediaPlayer` 控件。
 
-## Codecs support
+## 编解码器支持 {#codecs-support}
 
-The media codecs that `MediaPlayer` supports will depend on the target platform's built-in codecs & additional plugins.
+`MediaPlayer` 支持哪些媒体编解码器，取决于目标平台内置的编解码器和额外安装的插件。
 
-The safest assumption is that most platforms can support for video is `MPEG-4 Part 10 - Advanced Video Coding` or
-more commonly known as `H.264`, with `MPEG-4 Part 14` or `MP4` as video container. 
+最稳妥的假设是：视频方面，多数平台都支持 `MPEG-4 Part 10 - Advanced Video Coding`（更常见的叫法是 `H.264`），容器格式为 `MPEG-4 Part 14` 或 `MP4`。 
 
-As for audio, the safe to assume supported codecs are `MP3`, `AAC` and `WAV`.
+音频方面，可以稳妥假定受支持的编解码器有 `MP3`、`AAC` 和 `WAV`。
 
-As for platform-specific resources on which codecs are supported, please check the following:
+各平台支持哪些编解码器，可查阅以下资料：
 
 ### Windows
 
@@ -317,14 +312,14 @@ As for platform-specific resources on which codecs are supported, please check t
 
 - https://www.videolan.org/vlc/features.html
 
-### macOS and iOS
+### macOS 与 iOS {#macos-and-ios}
 
-- A definitive primary source on default codecs supported in macOS/iOS has not yet been identified.
+- 目前还没有找到权威的一手资料说明 macOS/iOS 默认支持哪些编解码器。
 
 ## 另请参阅 {#see-also}
 
-- [MediaPlayer control](/controls/media/mediaplayer)
-- [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)
-- [MediaSource class](/controls/media/mediaplayer/mediasource)
+- [MediaPlayer 控件](/controls/media/mediaplayer)
+- [MediaPlayer 类](/controls/media/mediaplayer/mediaplayer-class)
+- [MediaSource 类](/controls/media/mediaplayer/mediasource)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)
-- [Troubleshooting](/troubleshooting/controls/mediaplayer)
+- [疑难排查](/troubleshooting/controls/mediaplayer)

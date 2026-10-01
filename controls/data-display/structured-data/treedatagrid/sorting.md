@@ -9,7 +9,7 @@ tags:
 ---
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 The `TreeDataGrid` control supports sorting rows by clicking column headers. You can enable or disable sorting per column, provide custom comparison logic, and trigger sorting programmatically. This page covers each of these scenarios.

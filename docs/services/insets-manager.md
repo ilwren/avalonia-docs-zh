@@ -84,7 +84,7 @@ The system bar has a dark background and a light foreground.
 
 ## Platform compatibility
 
-| 特性        | Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        | Windows | macOS | Linux | 浏览器 | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|
 | `IsSystemBarVisible` | ✗ | ✗ | ✗ | ✓* | ✓ | ✓ |
 | `DisplayEdgeToEdge` | ✗ | ✗ | ✗ | ✗  | ✓ | ✓ |

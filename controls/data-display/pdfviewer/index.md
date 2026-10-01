@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 `PdfViewer` displays PDF documents in your Avalonia application. It is a complete reader out of the box: set a source and you have a toolbar and sidebar, page thumbnails and a document outline, page navigation, zoom and view modes, text selection and search, a full annotation toolset with undo and redo, form filling, bookmarks, and native printing and sharing. Each of these can be hidden or disabled, and everything is available from code as well as through the built-in UI. The same control and package run on Windows, macOS, Linux, iOS, Android and WebAssembly.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## 适用场景 {#when-to-use}
@@ -63,7 +63,7 @@ dotnet add package Avalonia.Controls.PdfViewer
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
 3. Reference one of the two themes via a `StyleInclude` in your `App.axaml` file. Without a theme the control renders nothing. `Default.axaml` has its own palette and works under any host theme. `Fluent.axaml` follows the host's `FluentTheme` accent and theme variant.
@@ -75,7 +75,7 @@ For multi-project solutions, you can store your licence key in an [environment v
 </Application.Styles>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
 ## 基本用法 {#basic-usage}
 
@@ -290,4 +290,4 @@ Every public member of `PdfViewer` must be called on the UI thread. The `*Async`
 - [Theming and localization](theming-and-localization.md)
 - [Platforms and performance](platforms-and-performance.md)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)
-- [Troubleshooting](/troubleshooting/controls/pdfviewer)
+- [疑难排查](/troubleshooting/controls/pdfviewer)

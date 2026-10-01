@@ -256,7 +256,7 @@ If the assistant returns documentation results with source links, setup is compl
 
 The Build MCP server indexes the published Avalonia documentation. If you notice outdated content, the documentation site may not have been updated yet. Check [docs.avaloniaui.net](https://docs.avaloniaui.net) directly to confirm.
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
 Describe what you want to accomplish in natural language. The AI assistant calls the MCP tools automatically:
 

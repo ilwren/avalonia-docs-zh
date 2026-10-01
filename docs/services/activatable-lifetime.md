@@ -159,7 +159,7 @@ Some platforms have specific steps to update the manifest and enable file type a
 
 ## Platform compatibility
 
-| 特性        |  Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        |  Windows | macOS | Linux | 浏览器 | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|
 | `ActivationKind.Background` | ✖ | ✔ | ✖ | ✔ | ✔ | ✔ |
 | `ActivationKind.File` | ✖ | ✔ | ✖ | ✖ | ✔ | ✔ |

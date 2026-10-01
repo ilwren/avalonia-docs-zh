@@ -11,7 +11,7 @@ tags:
 The `Markdown` control supports syntax highlighting for fenced code blocks. Set `Markdown.CodeHighlighter` on the control and every code block in its document uses it. Two implementations ship as separate NuGet packages: `ColorCodeHighlighter` (lightweight, limited language support) and `TextMateHighlighter` (full TextMate grammar support with themes).
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Installation

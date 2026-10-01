@@ -11,18 +11,18 @@ tags:
 The `Markdown` control renders Markdown-formatted text in Avalonia applications. It is built on the same FlowDocument model used by the [RichTextEditor](/controls/input/text-input/richtexteditor), giving it full support for DocumentNode-based styling, text selection, and high-performance streaming updates.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.Markdown` NuGet package by running `dotnet add package`.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.Markdown` NuGet 包。
 
 ```bash
 dotnet add package Avalonia.Controls.Markdown
 ```
 
-2. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+2. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 ```xml
 <ItemGroup>
@@ -31,7 +31,7 @@ dotnet add package Avalonia.Controls.Markdown
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
 3. Reference the default theme via a `StyleInclude` in your `App.axaml` file. This adds the resources needed by the Markdown control.
@@ -43,7 +43,7 @@ For multi-project solutions, you can store your licence key in an [environment v
 </Application.Styles>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
 ## Architecture
 
@@ -56,7 +56,7 @@ The `Markdown` control converts Markdown text into a live `FlowDocument` using t
 
 Because the control shares the document model with `RichTextEditor`, all document elements (`Paragraph`, `Section`, `Table`, `RichSpan`, `RichHyperlink`, etc.) are full `StyledElement` instances. This means you can target them with Avalonia style selectors and CSS-like classes, not just named resources.
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
 ### XAML 用法 {#xaml-usage}
 

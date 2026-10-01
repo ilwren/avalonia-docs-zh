@@ -1,13 +1,13 @@
 ---
 id: webview-environment
-title: WebView environment
+title: WebView 运行环境
 ---
 
 ## 概述 {#overview}
 
-The WebView environment options allow you to customize the underlying browser engine before it's initialized. This is essential for configuring browser-specific settings like developer tools, private browsing, user data directories, and other platform-specific features that must be set during creation.
+WebView 环境选项让你在底层浏览器引擎初始化之前对它做定制。开发者工具、隐私浏览、用户数据目录以及其他必须在创建时设定的平台专有特性，都得靠它来配置。
 
-The `EnvironmentRequested` event is fired before the WebView adapter is created, giving you the opportunity to modify these settings based on your application's requirements.
+`EnvironmentRequested` 事件在 WebView 适配器创建之前触发，让你有机会按应用需要修改这些设置。
 
 ## 基本用法 {#basic-usage}
 
@@ -34,27 +34,27 @@ webView.EnvironmentRequested += (sender, args) =>
 };
 ```
 
-## Base class properties
+## 基类属性 {#base-class-properties}
 
 ### WebViewEnvironmentRequestedEventArgs
 
-**Properties:**
+**属性：**
 
-- `EnableDevTools` (bool): Controls whether users can open DevTools via context menu or keyboard shortcuts. Available on all platforms.
+- `EnableDevTools`（bool）：控制用户能否通过右键菜单或快捷键打开 DevTools。所有平台均可用。
 
-## Platform-specific options
+## 平台专有选项 {#platform-specific-options}
 
 ### Windows WebView2
 
 **Key Properties:**
 
-- `ExplicitEnvironment`: Use an existing ICoreWebView2Environment COM handle
-- `ProfileName`: Set a custom browser profile name
-- `BrowserExecutableFolder`: Specify Edge browser executable location
-- `UserDataFolder`: Define where user data is stored
-- `AdditionalBrowserArguments`: Pass custom Chromium command-line flags
-- `Language`: Set browser UI language (BCP 47 format)
-- `IsInPrivateModeEnabled`: Enable private browsing mode
+- `ExplicitEnvironment`：使用已有的 ICoreWebView2Environment COM 句柄
+- `ProfileName`：设置自定义的浏览器配置文件名称
+- `BrowserExecutableFolder`：指定 Edge 浏览器可执行文件的位置
+- `UserDataFolder`：指定用户数据的存放位置
+- `AdditionalBrowserArguments`：传入自定义的 Chromium 命令行开关
+- `Language`：设置浏览器界面语言（BCP 47 格式）
+- `IsInPrivateModeEnabled`：启用隐私浏览模式
 
 **Example:**
 
@@ -73,11 +73,11 @@ webView.EnvironmentRequested += (sender, args) =>
 
 **Key Properties:**
 
-- `NonPersistentDataStore`: Use memory-only data storage
-- `DataStoreIdentifier`: Set unique identifier for persistent data
-- `ApplicationNameForUserAgent`: Customize user agent application name
-- `UpgradeKnownHostsToHTTPS`: Automatically upgrade HTTP to HTTPS
-- `LimitsNavigationsToAppBoundDomains`: Restrict navigation to app domains
+- `NonPersistentDataStore`：只在内存中存放数据
+- `DataStoreIdentifier`：为持久化数据设置唯一标识
+- `ApplicationNameForUserAgent`：定制 user agent 中的应用名称
+- `UpgradeKnownHostsToHTTPS`：自动把 HTTP 升级为 HTTPS
+- `LimitsNavigationsToAppBoundDomains`：限制只能导航到应用自己的域名
 
 **Example:**
 
@@ -94,14 +94,14 @@ webView.EnvironmentRequested += (sender, args) =>
 
 ### Linux (WPE WebKit)
 
-[WPE WebKit](https://wpewebkit.org) renders offscreen and composites into the Avalonia visual tree. `NativeWebView` prefers it when its libraries are installed, and uses [WebKitGTK](#linux-gtk-webkit) otherwise. This event is only raised on the WPE path, so it never fires on a machine without WPE. See [Linux prerequisites](/docs/app-development/embedding-web-content#linux) for the packages, and note that Ubuntu does not package WPE at all.
+[WPE WebKit](https://wpewebkit.org) 采用离屏渲染，再合成进 Avalonia 的视觉树。只要装了它的库，`NativeWebView` 就优先用它，否则改用 [WebKitGTK](#linux-gtk-webkit)。这个事件只在走 WPE 时才会引发，因此没装 WPE 的机器上它永远不触发。所需软件包见 [Linux 前置条件](/docs/app-development/embedding-web-content#linux)；另请注意 Ubuntu 根本没有打包 WPE。
 
 **Key Properties:**
 
-- `DataDirectory`: Directory used for persistent website data. When `null`, the default WPE data directory is used.
-- `CacheDirectory`: Directory used for the website cache. When `null`, the default WPE cache directory is used.
-- `RenderingMode`: Selects the WPE rendering backend (`WpeRenderingMode`). The default `Auto` currently maps to `Shm` (software rendering, no GPU required). `Egl` and `DmaBuf` are reserved for future use and will throw `NotImplementedException` if selected. The choice is process-global and affects all `NativeWebView` instances.
-- `PreferWebKitGtkInstead`: When `true`, uses the WebKitGTK adapter even though WPE is available. This is an opt-out for machines that do have WPE; it is not needed to reach WebKitGTK on machines that do not.
+- `DataDirectory`：用于存放持久化网站数据的目录。为 `null` 时使用 WPE 的默认数据目录。
+- `CacheDirectory`：用于存放网站缓存的目录。为 `null` 时使用 WPE 的默认缓存目录。
+- `RenderingMode`：选择 WPE 渲染后端（`WpeRenderingMode`）。默认的 `Auto` 目前映射到 `Shm`（软件渲染，不需要 GPU）。`Egl` 和 `DmaBuf` 为将来预留，选中会抛出 `NotImplementedException`。该选择是进程全局的，会影响所有 `NativeWebView` 实例。
+- `PreferWebKitGtkInstead`：为 `true` 时，即便 WPE 可用也仍旧使用 WebKitGTK 适配器。这是给装有 WPE 的机器准备的「退出选项」；没装 WPE 的机器本来就会走 WebKitGTK，不需要设置它。
 
 **Example:**
 
@@ -118,18 +118,18 @@ webView.EnvironmentRequested += (sender, args) =>
 
 ### Linux (GTK WebKit)
 
-WebKitGTK is the baseline Linux backend. `NativeWebDialog` always uses it, and `NativeWebView` uses it whenever [WPE WebKit](#linux-wpe-webkit) is not installed. No configuration is needed to reach it.
+WebKitGTK 是 Linux 上的基准后端。`NativeWebDialog` 一律使用它；而 `NativeWebView` 只在未安装 [WPE WebKit](#linux-wpe-webkit) 时使用它。用它不需要任何配置。
 
 **Key Properties:**
 
-- `ApplicationNameForUserAgent`: Customize user agent application name
-- `ExperimentalOffscreen`: Render into an offscreen GTK window composited by Avalonia, instead of reparenting a native X11 child window. This lets the web view be hosted in the same Avalonia window without overlapping other controls.
-- `ForceX11GdkBackend`: Override `GDK_BACKEND` to `x11` while GTK is initialized, restoring the previous value afterwards. Enabled by default, so [Wayland](/docs/platform-specific-guides/linux#wayland) sessions work without any setup; set it to `false` to opt out of the environment override.
-- `EphemeralDataManager`: Use non-persistent data storage
-- `BaseDataDirectory`: Set base directory for website data
-- `BaseCacheDirectory`: Set base directory for cache
-- `SharedProcessModel`: Use shared process for all WebView instances
-- `DisableCache`: Completely disable caching for memory optimization
+- `ApplicationNameForUserAgent`：定制 user agent 中的应用名称
+- `ExperimentalOffscreen`：渲染到由 Avalonia 合成的离屏 GTK 窗口，而不是把原生 X11 子窗口重新挂到父窗口上。这样 web 视图就能和其他控件共处同一个 Avalonia 窗口而不互相遮挡。
+- `ForceX11GdkBackend`：在 GTK 初始化期间把 `GDK_BACKEND` 改写为 `x11`，之后恢复原值。该选项默认开启，于是 [Wayland](/docs/platform-specific-guides/linux#wayland) 会话无需任何配置即可工作；设为 `false` 可放弃这项环境变量改写。
+- `EphemeralDataManager`：不持久化数据存储
+- `BaseDataDirectory`：设置网站数据的基准目录
+- `BaseCacheDirectory`：设置缓存的基准目录
+- `SharedProcessModel`：所有 WebView 实例共用一个进程
+- `DisableCache`：彻底关闭缓存以优化内存占用
 
 **Example:**
 
@@ -149,5 +149,5 @@ webView.EnvironmentRequested += (sender, args) =>
 - [NativeWebView](/controls/web/nativewebview)
 - [NativeWebDialog](/controls/web/nativewebdialog)
 - [WebAuthenticationBroker](/controls/web/webauthenticationbroker)
-- [Embedding web content](/docs/app-development/embedding-web-content)
+- [嵌入网页内容](/docs/app-development/embedding-web-content)
 - [FAQ](/tools/faq#webview)

@@ -10,7 +10,7 @@ tags:
 The `RichTextEditor` architecture uses immutable snapshots for background-safe serialization while requiring UI thread access for live document operations. This guide explains the threading model and safe patterns.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 :::caution

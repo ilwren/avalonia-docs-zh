@@ -20,13 +20,13 @@ The virtual keyboard component includes the following classes:
 
 ## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.VirtualKeyboard` NuGet package by running `dotnet add package`.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.VirtualKeyboard` NuGet 包。
 
 ```bash
 dotnet add package Avalonia.Controls.VirtualKeyboard
 ```
 
-2. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+2. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 ```xml
 <ItemGroup>
@@ -35,7 +35,7 @@ dotnet add package Avalonia.Controls.VirtualKeyboard
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
 3. Reference the `VirtualKeyboard` fluent theme via a `StyleInclude` in your `App.axaml` file. This adds the resources needed to properly style the virtual keyboard.
@@ -47,7 +47,7 @@ For multi-project solutions, you can store your licence key in an [environment v
 </Application.Styles>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
 ## 基本用法 {#basic-usage}
 

@@ -12,7 +12,7 @@ A footnote is two things that always travel together: a `RichFootnoteReference` 
 This guide covers inserting notes, editing them, numbering, the anchor-owns-its-note lifecycle, citing a note more than once, how notes render in the continuous and page views, and what survives a file round trip.
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## Inserting a footnote

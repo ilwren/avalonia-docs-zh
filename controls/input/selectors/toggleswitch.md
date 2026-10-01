@@ -138,7 +138,7 @@ A common layout pairs a description on the left with a label-free `ToggleSwitch`
 
 Setting `OnContent` and `OffContent` to empty strings removes the redundant labels because the `TextBlock` elements already describe each setting.
 
-## Choosing between `ToggleSwitch` and `CheckBox`
+## `ToggleSwitch` 与 `CheckBox` 的取舍 {#choosing-between-toggleswitch-and-checkbox}
 
 | Consideration | `ToggleSwitch` | `CheckBox` |
 | ------------- | -------------- | ---------- |
