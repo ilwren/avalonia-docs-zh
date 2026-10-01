@@ -1,6 +1,6 @@
 ---
 id: panel
-title: Panel
+title: 面板
 description: A basic layout control that overlays multiple child controls on top of each other, positioning them with alignment properties.
 doc-type: reference
 ---

@@ -1,6 +1,6 @@
 ---
 id: layout
-title: Layout
+title: 布局
 description: Layout system differences between WPF and Avalonia panels, sizing, and positioning.
 doc-type: migration
 ---

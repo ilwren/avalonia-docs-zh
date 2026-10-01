@@ -123,7 +123,7 @@ PageBand? header = PageBandPolicy.Resolve(
 
 The distance from the sheet edge to a band belongs to the document, because it decides where pages break.
 
-| Member | Meaning |
+| 成员 | Meaning |
 |---|---|
 | `TextDocument.PageBandDistance` | `double?`. The model's value, null when unset. |
 | `TextDocument.ResolvePageBandDistance()` | The value actually used, falling back to the default. |
@@ -144,7 +144,7 @@ Where a band plus its distance outgrows the margin it sits in, the band does not
 
 In `DocumentViewMode.PageLayout`, the editor shows every sheet's resolved header and footer as live content. A click into one switches the editor's selection to that band's document. There is one editor, one caret, one toolbar and one undo stack for the document and its bands.
 
-| Member | Meaning |
+| 成员 | Meaning |
 |---|---|
 | `RichTextEditor.ActiveDocument` | The band the caret is in; null in the body |
 | `ActiveDocumentChanged` | Raised as the caret enters or leaves a band |

@@ -165,7 +165,7 @@ Interactive form fields can be filled with the pointer and keyboard. <kbd>Tab</k
 
 Annotation edits, form field edits and redactions are recorded. Bookmarks are not.
 
-| Member | 说明 |
+| 成员 | 说明 |
 |---|---|
 | `Undo()` / `Redo()` | Applies the previous or next history entry. `UndoAsync()` and `RedoAsync()` await it. |
 | `CanUndo` / `CanRedo` | Whether there is an entry to apply. Bindable. |

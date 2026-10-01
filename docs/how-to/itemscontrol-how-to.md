@@ -322,7 +322,7 @@ myItemsControl.PreparingContainer += (sender, e) =>
 
 The companion `ContainerClearing` event fires each time a container is cleared, either for reuse or removal. Use this event to clean up customizations, if required.
 
-## Performance tips
+## 性能建议 {#performance-tips}
 
 - Avoid using `WrapPanel` as the `ItemsPanel` for large collections, as it does not virtualize.
 - Keep item templates lightweight. Complex templates slow down scrolling.

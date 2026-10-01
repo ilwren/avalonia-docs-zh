@@ -28,7 +28,7 @@ Use the `OnFormFactor` markup extension to change your layout structure based on
 
 `OnFormFactor` resolves at startup, so the value does not change if you resize the window at runtime. If you need your layout to respond to live size changes, use container queries or a breakpoint-based approach instead.
 
-## Container queries
+## 容器查询 {#container-queries}
 
 Container queries adapt layout based on a control's own rendered size rather than the window size. This makes them ideal for reusable components that may appear in panels of varying width.
 

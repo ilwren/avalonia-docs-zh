@@ -30,7 +30,7 @@ public interface ICommand
 }
 ```
 
-| Member | 用途 |
+| 成员 | 用途 |
 |---|---|
 | `CanExecute` | Returns whether the command can currently run. Controls call this to determine their enabled state. |
 | `Execute` | Performs the command action. Controls call this when the user activates them. |

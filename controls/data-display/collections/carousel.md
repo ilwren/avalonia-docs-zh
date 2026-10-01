@@ -178,7 +178,7 @@ For a full guide on page transitions (including how to create custom transitions
 
 You can change the displayed item in several ways:
 
-| Technique | 说明 |
+| 技术 | 说明 |
 |---|---|
 | `Next()` | Advance to the next item in the collection. |
 | `Previous()` | Move back to the previous item. |

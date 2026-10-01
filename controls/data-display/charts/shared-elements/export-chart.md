@@ -49,7 +49,7 @@ var result = await chart.ExportAsync(stream, width: 1200, height: 800);
 
 ## Result and events
 
-| Member | 说明 |
+| 成员 | 说明 |
 | :--- | :--- |
 | `ChartExportResult.Succeeded` | `true` when export completed successfully. |
 | `ChartExportResult.Canceled` | `true` when export was canceled. |

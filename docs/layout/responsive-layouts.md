@@ -1,28 +1,28 @@
 ---
 id: responsive-layouts
-title: Responsive layouts
-description: Create layouts that adapt to different sizes using container queries, form-factor extensions, and reflowing panels.
+title: 响应式布局
+description: 借助容器查询、外形规格扩展和自动重排的面板，做出能适应不同尺寸的布局。
 doc-type: explanation
 ---
 
-Avalonia provides techniques for building layouts that adapt when the available space changes. You can respond to the size of a container, the type of device, or the dimensions of a reflowing panel. This page explains each approach and when to choose it.
+Avalonia 提供了多种技术，让布局能随可用空间的变化而调整：你可以响应容器的尺寸、设备的类型，或是某个重排面板的尺寸。本文逐一讲解这些做法，以及各自的适用场合。
 
-## Approaches at a glance
+## 各种做法一览 {#approaches-at-a-glance}
 
-| Technique | Responds to | Resolves | 适用场景 |
+| 技术 | 响应对象 | 生效时机 | 适用场景 |
 |-----------|-------------|----------|----------|
-| [Container queries](#container-queries) | Size of an ancestor control | Live, as the control resizes | Reusable components that appear in panels of varying width |
-| [`OnFormFactor`](#onformfactor) | Device type (desktop, mobile) | Once, at startup | Platform-specific layout differences |
-| [Reflowing panels](#reflowing-panels) | Available width | Live, as the panel resizes | Card grids and flowing content |
-| [Breakpoint view models](#breakpoint-view-models) | Window width (or any measured value) | Live, via property change | Complex multi-property transitions driven by code |
+| [容器查询](#container-queries) | 某个祖先控件的尺寸 | 实时，随控件尺寸变化 | 会被放进不同宽度面板中的可复用组件 |
+| [`OnFormFactor`](#onformfactor) | 设备类型（桌面、移动） | 一次性，在启动时 | 各平台之间的布局差异 |
+| [重排面板](#reflowing-panels) | 可用宽度 | 实时，随面板尺寸变化 | 卡片网格与流式内容 |
+| [断点视图模型](#breakpoint-view-models) | 窗口宽度（或任何可测量的值） | 实时，通过属性变更 | 由代码驱动、牵涉多个属性的复杂切换 |
 
-## Container queries
+## 容器查询 {#container-queries}
 
-Container queries let you activate styles when an ancestor control reaches a specific size. Because the query targets a control rather than the window, the same component adapts correctly whether it appears in a full-width page, a narrow sidebar, or a dialog.
+容器查询让你在某个祖先控件达到特定尺寸时激活相应样式。由于查询针对的是控件而非窗口，同一个组件无论出现在整宽页面、窄侧边栏还是对话框中，都能正确自适应。
 
-### Declaring a container
+### 声明一个容器 {#declaring-a-container}
 
-Mark any ancestor as a container by setting the `Container.Name` and `Container.Sizing` attached properties:
+设置 `Container.Name` 和 `Container.Sizing` 这两个附加属性，就能把任意祖先标记为容器：
 
 ```xml
 <Border Container.Name="main"
@@ -31,18 +31,18 @@ Mark any ancestor as a container by setting the `Container.Name` and `Container.
 </Border>
 ```
 
-`Container.Sizing` determines which dimensions are tracked:
+`Container.Sizing` 决定跟踪哪些维度：
 
-| 值 | Tracked dimensions |
+| 值 | 跟踪的维度 |
 |-------|--------------------|
-| `Normal` | None (default) |
-| `Width` | Width only |
-| `Height` | Height only |
-| `WidthAndHeight` | Both width and height |
+| `Normal` | 无（默认） |
+| `Width` | 仅宽度 |
+| `Height` | 仅高度 |
+| `WidthAndHeight` | 宽度与高度 |
 
-### Writing a container query
+### 编写容器查询 {#writing-a-container-query}
 
-A `ContainerQuery` element lives inside the `Styles` collection of a control that is an ancestor of the container. It activates its child styles when the query condition is met:
+`ContainerQuery` 元素位于容器某个祖先控件的 `Styles` 集合中。查询条件满足时，它就激活自己内部的样式：
 
 ```xml
 <Window>
@@ -64,11 +64,11 @@ A `ContainerQuery` element lives inside the `Styles` collection of a control tha
 </Window>
 ```
 
-In this example, the sidebar hides when the container named `main` is 600 pixels wide or narrower.
+本例中，当名为 `main` 的容器宽度不超过 600 像素时，侧边栏就隐藏起来。
 
-### Adjusting layout structure with breakpoints
+### 用断点调整布局结构 {#adjusting-layout-structure-with-breakpoints}
 
-You can use multiple container queries on the same container to define breakpoint tiers. The following example changes the number of columns in a `UniformGrid` as the container grows:
+可以在同一个容器上写多个容器查询，划分出若干断点档位。下例随着容器变宽，逐级增加 `UniformGrid` 的列数：
 
 ```xml
 <Panel Container.Name="content" Container.Sizing="Width">
@@ -96,9 +96,9 @@ You can use multiple container queries on the same container to define breakpoin
 </Panel>
 ```
 
-### Customising non-layout properties
+### 调整布局以外的属性 {#customising-non-layout-properties}
 
-Container queries are not limited to layout properties. You can adjust any property that a `Style` can set, including font sizes, spacing, visibility, and colours:
+容器查询并不局限于布局属性。凡是 `Style` 能设置的属性，它都能调整，包括字号、间距、可见性和颜色：
 
 ```xml
 <Panel Container.Name="content" Container.Sizing="Width">
@@ -129,9 +129,9 @@ Container queries are not limited to layout properties. You can adjust any prope
 </Panel>
 ```
 
-### Combining queries
+### 组合多个条件 {#combining-queries}
 
-Combine multiple conditions in a single query using `and` (all conditions must match) or `,` (any condition can match):
+用 `and`（所有条件都要满足）或 `,`（任一条件满足即可）把多个条件组合进同一个查询：
 
 ```xml
 <!-- Both conditions must be true -->
@@ -145,26 +145,26 @@ Combine multiple conditions in a single query using `and` (all conditions must m
 </ContainerQuery>
 ```
 
-For the full query syntax, available query types, and restrictions, see [Container queries](/docs/styling/container-queries).
+完整的查询语法、可用的查询类型以及各项限制，请见[容器查询](/docs/styling/container-queries)。
 
 :::tip
-When the `TopLevel` (your window or main view) is set as a container, container queries behave like CSS media queries, responding to the window size itself.
+若把 `TopLevel`（你的窗口或主视图）设为容器，容器查询的表现就和 CSS 媒体查询一样 —— 直接响应窗口尺寸。
 :::
 
 ## OnFormFactor
 
-The `OnFormFactor` markup extension selects a value based on the device type. It resolves once at startup, so it does not respond to window resizing at runtime.
+`OnFormFactor` 标记扩展按设备类型选取取值。它在启动时解析一次，因此不会响应运行时的窗口缩放。
 
-### Form factor values
+### 外形规格取值 {#form-factor-values}
 
-| 参数 | Matches | Typical platforms |
+| 参数 | 匹配 | 典型平台 |
 |-----------|---------|-------------------|
-| `Desktop` | Desktop systems | Windows, macOS, Linux |
-| `Mobile` | Mobile systems | iOS, Android |
-| `TV` | Television systems | tvOS, Android TV |
-| `Default` | Fallback when the current form factor is not specified | Any |
+| `Desktop` | 桌面系统 | Windows, macOS, Linux |
+| `Mobile` | 移动系统 | iOS, Android |
+| `TV` | 电视系统 | tvOS, Android TV |
+| `Default` | 当前外形规格未被列出时的回退值 | Any |
 
-If the current form factor does not match any of the specified parameters, the `Default` value is used. If `Default` is not set, the property receives its type's default value.
+若当前外形规格与所给的参数都不匹配，就采用 `Default` 的值。如果没有设置 `Default`，该属性则取其类型的默认值。
 
 ```xml
 <Grid ColumnDefinitions="{OnFormFactor Desktop='250,*', Mobile='*'}">
@@ -177,21 +177,21 @@ If the current form factor does not match any of the specified parameters, the `
 </Grid>
 ```
 
-Use `OnFormFactor` when your desktop and mobile layouts are structurally different and you do not need to respond to live resizing. For layouts that must adapt as the user resizes the window, use container queries instead.
+当桌面与移动端的布局在结构上就不一样、且无需响应实时缩放时，用 `OnFormFactor` 正合适。若布局必须随用户缩放窗口而调整，请改用容器查询。
 
 ### OnPlatform
 
-The related `OnPlatform` markup extension selects a value based on the operating system rather than the device type. It also resolves once at startup.
+与之相关的 `OnPlatform` 标记扩展，是按操作系统而非设备类型来选取取值，同样在启动时解析一次。
 
-| 参数 | Matches |
+| 参数 | 匹配 |
 |-----------|---------|
 | `Windows` | Windows |
 | `macOS` | macOS |
 | `Linux` | Linux |
 | `iOS` | iOS |
 | `Android` | Android |
-| `Browser` | WebAssembly (WASM) in a browser |
-| `Default` | Fallback when the current platform is not specified |
+| `Browser` | 浏览器中的 WebAssembly（WASM） |
+| `Default` | 当前平台未被列出时的回退值 |
 
 ```xml
 <TextBlock FontFamily="{OnPlatform macOS='San Francisco',
@@ -199,13 +199,13 @@ The related `OnPlatform` markup extension selects a value based on the operating
                                    Default='Inter'}" />
 ```
 
-`OnFormFactor` and `OnPlatform` serve different purposes. Use `OnFormFactor` for structural layout differences between device categories (desktop vs. mobile). Use `OnPlatform` for platform-specific adjustments like native font families or OS-specific styling.
+`OnFormFactor` 和 `OnPlatform` 用途不同。设备类别（桌面与移动）之间的结构性布局差异，用 `OnFormFactor`；而原生字体族、特定系统的样式之类平台专有的调整，则用 `OnPlatform`。
 
-## Reflowing panels
+## 重排面板 {#reflowing-panels}
 
-Some panels automatically reflow their children based on available space, helping you create flowing content without explicit breakpoints.
+有些面板会根据可用空间自动重排子元素，让你不必显式设断点也能做出流式内容。
 
-For example, `WrapPanel` arranges children in a row and wraps to the next line when the edge of the panel is reached:
+例如 `WrapPanel` 把子元素排成一行，碰到面板边缘就自动换到下一行：
 
 <XamlPreview>
 
@@ -224,9 +224,9 @@ For example, `WrapPanel` arranges children in a row and wraps to the next line w
 
 </XamlPreview>
 
-## Breakpoint view models
+## 断点视图模型 {#breakpoint-view-models}
 
-When your responsive logic involves multiple coordinated property changes or conditions beyond size (such as combining orientation and platform checks), you can observe the window width in your view model and expose boolean properties for each tier:
+当你的响应式逻辑牵涉多个属性的协同变化、或者超出尺寸之外的条件（比如要同时判断屏幕方向和平台）时，可以在视图模型中观察窗口宽度，并为每个档位暴露一个布尔属性：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -245,7 +245,7 @@ public partial class MainViewModel : ObservableObject
 }
 ```
 
-Call `UpdateLayout` from the window's size-changed handler:
+在窗口的尺寸变化处理程序中调用 `UpdateLayout`：
 
 ```csharp
 protected override void OnSizeChanged(SizeChangedEventArgs e)
@@ -256,7 +256,7 @@ protected override void OnSizeChanged(SizeChangedEventArgs e)
 }
 ```
 
-Then bind layout properties to the breakpoint flags:
+然后把布局属性绑定到这些断点标志上：
 
 ```xml
 <StackPanel IsVisible="{Binding IsCompact}" Spacing="8">
@@ -270,24 +270,24 @@ Then bind layout properties to the breakpoint flags:
 </Grid>
 ```
 
-This approach provides full programmatic control but requires code-behind or view model wiring. Prefer container queries when your transitions are purely size-based and can be expressed in XAML.
+这种做法可以完全由代码掌控，但需要写代码隐藏或视图模型接线。若切换逻辑纯粹由尺寸决定、且能在 XAML 中表达，还是优先用容器查询。
 
 ## 该选哪种办法 {#choosing-an-approach}
 
-Use the following decision process to select the right technique:
+按下面的思路来挑选合适的技术：
 
-1. **Does your component need to adapt based on its own size (not the window)?** Use container queries. This keeps the component self-contained and reusable.
-2. **Are desktop and mobile layouts structurally different, with no need for live resizing?** Use `OnFormFactor`.
-3. **Do you have a collection of items that should reflow into rows?** Use `WrapPanel` or `UniformGridLayout`.
-4. **Does your transition logic involve multiple conditions, platform checks, or non-size triggers?** Use breakpoint view models.
+1. **组件需要根据自身（而非窗口）的尺寸自适应？** 用容器查询。这样组件自成一体，也便于复用。
+2. **桌面与移动端布局在结构上就不同，且不需要响应实时缩放？** 用 `OnFormFactor`。
+3. **有一组条目需要自动排成多行？** 用 `WrapPanel` 或 `UniformGridLayout`。
+4. **切换逻辑牵涉多个条件、平台判断，或尺寸以外的触发因素？** 用断点视图模型。
 
-You can combine these techniques. For example, use `OnFormFactor` for a top-level structural difference (sidebar vs. bottom tabs), then use container queries within individual panels so they adapt to their actual rendered size.
+这些技术可以混用。例如先用 `OnFormFactor` 处理顶层的结构差异（侧边栏还是底部标签页），再在各个面板内部用容器查询，让它们随实际渲染尺寸自适应。
 
 ## 另请参阅 {#see-also}
 
-- [Container queries](/docs/styling/container-queries): Full query syntax, container sizing modes, and restrictions.
-- [How to: Build responsive layouts](/docs/how-to/responsive-layout-how-to): Step-by-step recipes for common responsive patterns.
-- [Layout](/docs/layout): How the Avalonia measure and arrange system works.
-- [Choosing a layout panel](/docs/layout/choosing-a-layout-panel): Picking the right panel for your scenario.
-- [`OnFormFactorExtension` API reference](/api/avalonia/markup/xaml/markupextensions/onformfactorextension)
-- [`OnPlatformExtension` API reference](/api/avalonia/markup/xaml/markupextensions/onplatformextension)
+- [容器查询](/docs/styling/container-queries)：完整的查询语法、容器尺寸模式与各项限制。
+- [如何构建响应式布局](/docs/how-to/responsive-layout-how-to)：常见响应式套路的分步实践。
+- [布局](/docs/layout)：Avalonia 测量与排列机制的工作方式。
+- [如何挑选布局面板](/docs/layout/choosing-a-layout-panel)：为你的场景选对面板。
+- [`OnFormFactorExtension` API 参考](/api/avalonia/markup/xaml/markupextensions/onformfactorextension)
+- [`OnPlatformExtension` API 参考](/api/avalonia/markup/xaml/markupextensions/onplatformextension)

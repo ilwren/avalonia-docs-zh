@@ -1,6 +1,6 @@
 ---
 id: container-queries
-title: Container queries
+title: 容器查询
 ---
 
 Container queries allow styles to be activated for a control based on the size of an ancestor, which acts as a container.
@@ -166,6 +166,6 @@ This way, you can make queries for size ranges.
 ## 另请参阅 {#see-also}
 
 - [Responsive layouts](/docs/layout/responsive-layouts): Using container queries to build adaptive layouts.
-- [How to: Build responsive layouts](/docs/how-to/responsive-layout-how-to): Step-by-step recipes for common responsive patterns.
+- [如何构建响应式布局](/docs/how-to/responsive-layout-how-to)：常见响应式套路的分步实践。
 - [Styles](/docs/styling/styles)
 - [Control themes](/docs/styling/control-themes)

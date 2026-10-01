@@ -1,39 +1,39 @@
 ---
 id: choosing-a-layout-panel
-title: Choosing a layout panel
-description: Compare Avalonia panel controls and choose the right one for your layout strategy.
+title: 如何挑选布局面板
+description: 对比 Avalonia 的各个面板控件，为你的布局策略挑出最合适的那一个。
 doc-type: how-to
 ---
 
-Avalonia offers a variety of layout panels that fulfil different UI roles. This guide helps you pick the best panel control for your desired layout strategy.
+Avalonia 提供了多种布局面板，各自承担不同的界面职责。本文帮你为心中的布局策略选出最合适的面板控件。
 
-## Decision flowchart
+## 决策流程 {#decision-flowchart}
 
-1. Do you need rows and columns with different sizes? **Use [Grid](#grid)**.
-2. Do you need a header, footer, or sidebar around the content area? **Use [DockPanel](#dockpanel)**.
-3. Do you need items stacked in a single direction? **Use [StackPanel](#stackpanel)**.
-4. Do you need items to wrap to the next line when space runs out? **Use [WrapPanel](#wrappanel)**.
-5. Do you need items in a uniform grid of equal-sized cells? **Use [UniformGrid](#uniformgrid)**.
-6. Do you need to position items relative to each other? **Use [RelativePanel](#relativepanel)**.
-7. Do you need pixel-precise absolute positioning? **Use [Canvas](#canvas)**.
-8. Do you need to layer children on top of each other? **Use [Panel](#panel)**.
+1. 需要尺寸各异的行与列？**请用 [Grid](#grid)**。
+2. 需要在内容区周围放页眉、页脚或侧边栏？**请用 [DockPanel](#dockpanel)**。
+3. 需要把元素沿单一方向依次排开？**请用 [StackPanel](#stackpanel)**。
+4. 需要在空间不够时自动换行？**请用 [WrapPanel](#wrappanel)**。
+5. 需要大小一致的均匀网格？**请用 [UniformGrid](#uniformgrid)**。
+6. 需要让元素相对彼此定位？**请用 [RelativePanel](#relativepanel)**。
+7. 需要精确到像素的绝对定位？**请用 [Canvas](#canvas)**。
+8. 需要把子元素层层叠放？**请用 [Panel](#panel)**。
 
-## Quick comparison
+## 速查对比 {#quick-comparison}
 
-| Panel | Arrangement | Adapts to window size | 适用场景 |
+| 面板 | 排布方式 | 是否随窗口尺寸自适应 | 适用场景 |
 |---|---|---|---|
-| [Grid](/controls/layout/panels/grid) | Rows and columns | Yes | Most general-purpose layouts, forms, dashboards |
-| [DockPanel](/controls/layout/panels/dockpanel) | Edges (top, bottom, left, right) and fill | Yes | App shells with header, sidebar, and content area |
-| [StackPanel](/controls/layout/panels/stackpanel) | Single line (vertical or horizontal) | Partial (stretches perpendicular, scrolls along) | Toolbars, menus, simple series of controls |
-| [WrapPanel](/controls/layout/panels/wrappanel) | Sequential with line wrapping | Yes | Tag clouds, icon grids, responsive item collections |
-| [UniformGrid](/controls/layout/panels/uniformgrid) | Equal-sized cells | Yes | Calculator keypads, image galleries, dashboards with equal tiles |
-| [RelativePanel](/controls/layout/panels/relativepanel) | Relative to siblings or panel edges | Yes | Adaptive layouts that rearrange based on available space |
-| [Canvas](/controls/layout/panels/canvas) | Absolute coordinates | No | Drawing surfaces, diagrams, custom overlays |
-| [Panel](/controls/layout/panels/panel) | Layered on top of each other | Yes | Overlays, stacking visuals at the same position |
+| [Grid](/controls/layout/panels/grid) | 行与列 | Yes | 绝大多数通用布局、表单、仪表板 |
+| [DockPanel](/controls/layout/panels/dockpanel) | 贴边（上、下、左、右）加填充 | Yes | 带页眉、侧边栏和内容区的应用外壳 |
+| [StackPanel](/controls/layout/panels/stackpanel) | 单行或单列（纵向或横向） | 部分支持（垂直方向拉伸，沿排布方向可滚动） | 工具栏、菜单、一串简单控件 |
+| [WrapPanel](/controls/layout/panels/wrappanel) | 顺序排列并自动换行 | Yes | 标签云、图标网格、随空间自适应的条目集合 |
+| [UniformGrid](/controls/layout/panels/uniformgrid) | 大小相等的单元格 | Yes | 计算器键盘、图片画廊、等大磁贴的仪表板 |
+| [RelativePanel](/controls/layout/panels/relativepanel) | 相对于兄弟元素或面板边缘 | Yes | 随可用空间重新编排的自适应布局 |
+| [Canvas](/controls/layout/panels/canvas) | 绝对坐标 | No | 绘图画布、示意图、自定义覆盖层 |
+| [Panel](/controls/layout/panels/panel) | 彼此叠放 | Yes | 覆盖层，在同一位置堆叠视觉元素 |
 
 ## Grid
 
-A versatile panel suitable for many common layouts. Define rows and columns with fixed, proportional (`*`), or automatic (`Auto`) sizing. Place children in specified target cells.
+一个用途广泛的面板，适合许多常见布局。可以定义固定尺寸、按比例（`*`）或自动（`Auto`）的行与列，再把子元素放进指定的单元格。
 
 <XamlPreview>
 
@@ -52,15 +52,15 @@ A versatile panel suitable for many common layouts. Define rows and columns with
 
 </XamlPreview>
 
-**Use when:** You need a structured layout with rows and columns of varying sizes, such as a form, dashboard, or any layout that mixes fixed and flexible regions.
+**适用于：** 需要行列尺寸各异的结构化布局，比如表单、仪表板，或任何固定区域与弹性区域混排的布局。
 
-**Avoid when:** You need all children to be stacked in one direction (use [`StackPanel`](#stackpanel) instead). You need all cells to be the same size (use [`UniformGrid`](#uniformgrid) instead). Also, `Grid` is heavier than simpler panels, so use a lighter panel type if the complexity of `Grid` isn't needed.
+**不适用于：** 所有子元素只需沿一个方向排开（请改用 [`StackPanel`](#stackpanel)）；所有单元格大小一致（请改用 [`UniformGrid`](#uniformgrid)）。另外 `Grid` 比简单面板更重，用不上 `Grid` 那套复杂能力时，请选更轻量的面板。
 
-For more information, see the [Grid](/controls/layout/panels/grid) page.
+更多内容请见 [Grid](/controls/layout/panels/grid) 页面。
 
 ## DockPanel
 
-Docks children to the edges of the panel. The last child fills the remaining space.
+把子元素停靠到面板的各条边上，最后一个子元素填满剩余空间。
 
 <XamlPreview>
 
@@ -86,15 +86,15 @@ Docks children to the edges of the panel. The last child fills the remaining spa
 
 </XamlPreview>
 
-**Use when:** You are building an app shell with a fixed header, footer, and/or sidebar around a central content area.
+**适用于：** 构建应用外壳 —— 中间是内容区，周围有固定的页眉、页脚和/或侧边栏。
 
-**Avoid when:** You need children to share space proportionally (use [`Grid`](#grid) instead). `DockPanel` gives priority to children declared earlier.
+**不适用于：** 需要子元素按比例分享空间时（请改用 [`Grid`](#grid)）。`DockPanel` 优先满足先声明的子元素。
 
-For more information, see the [DockPanel](/controls/layout/panels/dockpanel) page.
+更多内容请见 [DockPanel](/controls/layout/panels/dockpanel) 页面。
 
 ## StackPanel
 
-Arranges children in a single line, either vertical (default) or horizontal. Children stretch to fill the perpendicular direction.
+把子元素排成一行（横向）或一列（纵向，默认）。子元素在垂直于排布的方向上拉伸填满。
 
 <XamlPreview>
 
@@ -111,15 +111,15 @@ Arranges children in a single line, either vertical (default) or horizontal. Chi
 
 </XamlPreview>
 
-**Use when:** You want a short, linear series of controls, such as a toolbar, settings form, or menu.
+**适用于：** 一串简短的线性控件，比如工具栏、设置表单或菜单。
 
-**Avoid when:** You want a long series of items that exceeds the available space. `StackPanel` gives children unlimited space, and does not trigger scrolling. Consider wrapping in a `ScrollViewer`, or using an `ItemsControl` with virtualization instead.
+**不适用于：** 条目很多、超出可用空间的场合。`StackPanel` 给子元素的空间是无限的，并不会触发滚动。可以考虑把它套进 `ScrollViewer`，或者改用带虚拟化的 `ItemsControl`。
 
-For more information, see the [StackPanel](/controls/layout/panels/stackpanel) page.
+更多内容请见 [StackPanel](/controls/layout/panels/stackpanel) 页面。
 
 ## WrapPanel
 
-Lays out children left to right (or top to bottom), wrapping to a new line on reaching the edge.
+把子元素从左到右（或从上到下）排布，碰到边缘就换到下一行。
 
 <XamlPreview>
 
@@ -136,15 +136,15 @@ Lays out children left to right (or top to bottom), wrapping to a new line on re
 
 </XamlPreview>
 
-**Use when:** You want items to flow based on available space, like tags, thumbnails, or a responsive button bar.
+**适用于：** 希望条目随可用空间自动流动的场合，比如标签、缩略图或可自适应的按钮栏。
 
-**Avoid when:** You need items to align in a strict pattern. `WrapPanel` items on different lines are spaced independently and will not form neat columns.
+**不适用于：** 需要条目严格对齐的场合。`WrapPanel` 中不同行的条目各自独立排布，不会对齐成整齐的列。
 
-For more information, see the [WrapPanel](/controls/layout/panels/wrappanel) page.
+更多内容请见 [WrapPanel](/controls/layout/panels/wrappanel) 页面。
 
 ## UniformGrid
 
-Divides the available space into equal cells. Children fill cells sequentially.
+把可用空间等分成若干单元格，子元素依次填入。
 
 <XamlPreview>
 
@@ -165,15 +165,15 @@ Divides the available space into equal cells. Children fill cells sequentially.
 
 </XamlPreview>
 
-**Use when:** Every item should be the same size, such as a calculator keypad, color palette, or dashboard with equal tiles.
+**适用于：** 所有条目大小一致的场合，比如计算器键盘、调色板，或等大磁贴的仪表板。
 
-**Avoid when:** You need items of different sizes (use [`Grid`](#grid) instead).
+**不适用于：** 条目尺寸各异的场合（请改用 [`Grid`](#grid)）。
 
-For more information, see the [UniformGrid](/controls/layout/panels/uniformgrid) page.
+更多内容请见 [UniformGrid](/controls/layout/panels/uniformgrid) 页面。
 
 ## RelativePanel
 
-Positions children relative to sibling controls or panel edges using attached properties.
+用附加属性，把子元素相对于兄弟控件或面板边缘定位。
 
 <XamlPreview>
 
@@ -196,15 +196,15 @@ Positions children relative to sibling controls or panel edges using attached pr
 
 </XamlPreview>
 
-**Use when:** You need to describe layout relationships between controls, e.g., "place this button below that text box and align it to the right edge". This is especially useful for adaptive layouts where you can change relationships based on available space.
+**适用于：** 需要描述控件之间的布局关系时，比如「把这个按钮放在那个文本框下面，并靠右对齐」。对于需要随可用空间调整关系的自适应布局，它尤其好用。
 
-**Avoid when:** A simpler panel can create your layout. `RelativePanel` is flexible but verbose. If your layout fits a [`Grid`](#grid) or [`StackPanel`](#stackpanel), use those instead.
+**不适用于：** 更简单的面板就能搞定你的布局时。`RelativePanel` 虽灵活但啰嗦 —— 若 [`Grid`](#grid) 或 [`StackPanel`](#stackpanel) 就能胜任，请优先用它们。
 
-For more information, see the [RelativePanel](/controls/layout/panels/relativepanel) page.
+更多内容请见 [RelativePanel](/controls/layout/panels/relativepanel) 页面。
 
 ## Canvas
 
-Places children at exact pixel coordinates using `Canvas.Left`, `Canvas.Top`, `Canvas.Right`, and `Canvas.Bottom`.
+用 `Canvas.Left`、`Canvas.Top`、`Canvas.Right` 和 `Canvas.Bottom` 把子元素放在精确的像素坐标上。
 
 <XamlPreview>
 
@@ -219,15 +219,15 @@ Places children at exact pixel coordinates using `Canvas.Left`, `Canvas.Top`, `C
 
 </XamlPreview>
 
-**Use when:** You need absolute positioning for a drawing surface or a diagram. You want a drag-and-drop interface that places objects at specific coordinates.
+**适用于：** 绘图画布或示意图这类需要绝对定位的场合；或者需要把对象拖放到指定坐标的交互界面。
 
-**Avoid when:** You are building a standard application UI. `Canvas` does not adapt to window resizing, so content can be clipped or leave empty space if the window size changes.
+**不适用于：** 构建常规的应用界面。`Canvas` 不会随窗口缩放自适应，窗口尺寸一变，内容就可能被裁掉或者留下空白。
 
-For more information, see the [Canvas](/controls/layout/panels/canvas) page.
+更多内容请见 [Canvas](/controls/layout/panels/canvas) 页面。
 
 ## Panel
 
-A minimal container that layers children on top of each other, in declaration order. Use `ZIndex` to control which child appears on top.
+一个极简容器，按声明顺序把子元素层层叠放。用 `ZIndex` 控制哪个子元素显示在最上层。
 
 <XamlPreview>
 
@@ -242,15 +242,15 @@ A minimal container that layers children on top of each other, in declaration or
 
 </XamlPreview>
 
-**Use when:** You want to overlay one control on top of another, such as a watermark over an image or a loading indicator over content.
+**适用于：** 想把一个控件叠在另一个之上，比如图片上的水印、内容之上的加载指示器。
 
-**Avoid when:** You want children side-by-side or in a sequence.
+**不适用于：** 希望子元素并排或依次排列的场合。
 
-For more information, see the [Panel](/controls/layout/panels/panel) page.
+更多内容请见 [Panel](/controls/layout/panels/panel) 页面。
 
-## Nesting panels
+## 面板的嵌套 {#nesting-panels}
 
-For complex layouts, you can combine multiple panels. Nest panels within one another, and use the simplest panel at each level.
+复杂布局可以多种面板混用：把面板一层层嵌套起来，每一层都挑最简单的那个。
 
 <XamlPreview>
 
@@ -284,18 +284,18 @@ For complex layouts, you can combine multiple panels. Nest panels within one ano
 
 </XamlPreview>
 
-### Performance tips
+### 性能建议 {#performance-tips}
 
-- Prefer simpler panels when possible. [`StackPanel`](#stackpanel) and [`Panel`](#panel) are lighter than [`Grid`](#grid).
-- Avoid deeply nested panels. If you find yourself nesting more than three levels deep, consider whether a single [`Grid`](#grid) with the right row and column definitions could replace the entire tree.
-- For lists with many items, use `ListBox` instead of placing many controls in a `StackPanel`.
+- 能用简单面板就别用复杂的。[`StackPanel`](#stackpanel) 和 [`Panel`](#panel) 都比 [`Grid`](#grid) 轻。
+- 避免面板层层深套。一旦发现自己嵌套超过三层，就该想想：换成单个 [`Grid`](#grid)，配上合适的行列定义，是不是就能替掉整棵树？
+- 条目很多的列表请用 `ListBox`，别往 `StackPanel` 里塞一大堆控件。
 
 ## 另请参阅 {#see-also}
 
-- [Layout](/docs/layout) for how the measure-and-arrange system works.
-- [Positioning controls](/docs/layout/positioning-controls) for alignment, margin, and padding.
-- [Responsive layout how-to](/docs/how-to/responsive-layout-how-to) for adaptive layout techniques.
-- Individual panel references:
+- [布局](/docs/layout) —— 测量与排列机制的工作方式。
+- [控件定位](/docs/layout/positioning-controls) —— 对齐、外边距与内边距。
+- [响应式布局指南](/docs/how-to/responsive-layout-how-to) —— 自适应布局的各种技巧。
+- 各面板的参考页：
   - [Grid](/controls/layout/panels/grid)
   - [DockPanel](/controls/layout/panels/dockpanel)
   - [StackPanel](/controls/layout/panels/stackpanel)

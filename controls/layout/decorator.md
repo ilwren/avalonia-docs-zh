@@ -91,5 +91,5 @@ This behaves like a `Border` with no border or background, adding only padding a
 - [Border](/controls/layout/containers/border)
 - [Viewbox](/controls/layout/containers/viewbox)
 - [LayoutTransformControl](/controls/layout/layouttransformcontrol)
-- [`Decorator` API reference](/api/avalonia/controls/decorator)
+- [`Decorator` API 参考](/api/avalonia/controls/decorator)
 - [GitHub 上的 `Decorator.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Decorator.cs)

@@ -137,4 +137,4 @@ window.Closing += (s, e) =>
 - [`ContentControl`](/controls/data-display/contentcontrol)
 - [`UserControl`](/controls/primitives/usercontrol)
 - [`Window` source code (GitHub)](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Window.cs)
-- [`Window` API reference](/api/avalonia/controls/window)
+- [`Window` API 参考](/api/avalonia/controls/window)

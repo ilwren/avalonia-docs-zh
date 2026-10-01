@@ -16,7 +16,7 @@ Avalonia provides three primary mechanisms for styling controls:
 
 - [Control themes](/docs/styling/control-themes) are similar to WPF/UWP styles and are usually used to apply a theme to controls.
 
-## Container queries
+## 容器查询 {#container-queries}
 - [Container queries](/docs/styling/container-queries) are a collection of styles that are applied based on the size of a container.
 
 ## 运作原理 {#how-it-works}

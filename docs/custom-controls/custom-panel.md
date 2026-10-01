@@ -160,5 +160,5 @@ public static void SetSlot(Control element, int value) => element.SetValue(SlotP
 ## 另请参阅 {#see-also}
 
 - [Attached properties](/docs/custom-controls/defining-properties#attached-properties): Let child controls carry per-child layout values for your panel.
-- [Layout](/docs/layout): How the measure and arrange system works.
+- [布局](/docs/layout)：测量与排列机制的工作方式。
 - [Choosing a layout panel](/docs/layout/choosing-a-layout-panel): Picking the right built-in panel before writing your own.

@@ -181,7 +181,7 @@ Selection APIs are available on selectable chart controls and selectable series.
 
 ### Events and methods
 
-| Member | 说明 |
+| 成员 | 说明 |
 | :--- | :--- |
 | `DataPointClicked` | Raised when a data point is clicked. Event data exposes the `Series`, `DataPointIndex`, `Category`, `Value`, and original `DataItem` when available. |
 | `DataPointHovered` | Raised after the hover debounce when the pointer moves over a data point or leaves all data points. This event does not require `IsHighlightEnabled`; that property only controls highlight visuals. Event data exposes `Source` and `DataPointIndex`. |

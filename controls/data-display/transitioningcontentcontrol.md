@@ -119,5 +119,5 @@ For a complete walkthrough, see [How to set up basic navigation](../../docs/how-
 - [Setting page transitions](../../docs/graphics-animation/page-transitions)
 - [How to set up basic navigation](../../docs/how-to/navigation-how-to)
 - [Carousel](/controls/data-display/collections/carousel)
-- [`TransitioningContentControl` API reference](https://reference.avaloniaui.net/api/Avalonia.ReactiveUI/TransitioningContentControl/)
+- [`TransitioningContentControl` API 参考](https://reference.avaloniaui.net/api/Avalonia.ReactiveUI/TransitioningContentControl/)
 - [`TransitioningContentControl` source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TransitioningContentControl.cs)
