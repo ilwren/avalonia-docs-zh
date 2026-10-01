@@ -81,7 +81,7 @@ The following `.csproj` settings are important for macOS deployment:
 Do **not** set `IncludeNativeLibrariesForSelfExtract` to `true`. This is incompatible with macOS and will cause your application to fail at runtime with "Failed to create CoreCLR".
 :::
 
-## Code signing
+## 代码签名 {#code-signing}
 
 All macOS applications must be code signed for distribution. When signing XPF applications:
 

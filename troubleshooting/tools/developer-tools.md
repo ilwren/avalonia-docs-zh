@@ -1,8 +1,8 @@
 ---
 id: developer-tools
-title: Developer tools issues
+title: 开发者工具问题
 sidebar_label: 开发者工具
-description: Troubleshoot common Developer Tools problems including connection failures, missing logs, and diagnostic configuration.
+description: 排查开发者工具的常见毛病，包括连接失败、日志缺失和诊断配置。
 doc-type: troubleshooting
 tags:
   - avalonia plus
@@ -10,31 +10,31 @@ tags:
   - avalonia enterprise
 ---
 
-## Reporting issues
+## 反馈问题 {#reporting-issues}
 
-Developer Tools uses a GitHub repository to track bugs and feature requests: [AvaloniaUI/AvaloniaUI.DeveloperTools](https://github.com/AvaloniaUI/AvaloniaUI.DeveloperTools/issues).
+开发者工具用一个 GitHub 仓库跟踪缺陷和功能请求：[AvaloniaUI/AvaloniaUI.DeveloperTools](https://github.com/AvaloniaUI/AvaloniaUI.DeveloperTools/issues)。
 
-Before you open an issue, collect the following information at a minimum:
+提交问题之前，请至少把下列信息收集齐：
 
-1. Steps to reproduce the problem.
-2. Your operating system and version.
-3. The Avalonia version your application targets.
-4. Any non-default `DeveloperToolsOptions` values you have configured.
-5. Developer Tools and Diagnostics Support logs (see below).
+1. 问题的复现步骤。
+2. 你的操作系统及版本。
+3. 你的应用所面向的 Avalonia 版本。
+4. 你配置过的任何非默认 `DeveloperToolsOptions` 取值。
+5. 开发者工具和诊断支持的日志（见下文）。
 
-## Developer Tools does not launch or attach
+## 开发者工具起不来或挂接不上 {#developer-tools-does-not-launch-or-attach}
 
-If Developer Tools fails to open or does not attach to your application, check the following:
+若开发者工具打不开，或挂接不上你的应用，请逐项排查：
 
-- **Confirm the NuGet package is installed.** Your project must reference the `Avalonia.Diagnostics` package (or, for the standalone tool, ensure you have installed Developer Tools separately). Verify the package version matches your Avalonia version.
-- **Check that `AttachDeveloperTools` is called.** In your `App.axaml.cs` or startup code, make sure you call `application.AttachDeveloperTools()`. Without this call, the diagnostics support library is never initialized.
-- **Verify the process is not blocked by a firewall or antivirus.** The standalone Developer Tools process communicates with your application over a local connection. Security software can occasionally block this traffic.
-- **Look for port conflicts.** If another process is using the same port, the connection may fail silently. Check the Diagnostics Support logs (described below) for connection errors.
-- **Restart both processes.** If you updated Avalonia or the Developer Tools package, close your application and the Developer Tools process, then relaunch both.
+- **确认 NuGet 包已安装。**你的项目必须引用 `Avalonia.Diagnostics` 包（若用的是独立版工具，则要确认已单独装好开发者工具）。另请核对包版本与 Avalonia 版本是否相符。
+- **确认调用了 `AttachDeveloperTools`。**在 `App.axaml.cs` 或启动代码中，确保你调用了 `application.AttachDeveloperTools()`。少了这一步，诊断支持库根本不会初始化。
+- **确认进程没有被防火墙或杀毒软件拦下。**独立的开发者工具进程通过本地连接与你的应用通信，安全软件偶尔会拦住这类流量。
+- **留意端口冲突。**若另一个进程占着同一个端口，连接可能悄无声息地失败。请查看诊断支持日志（见下文）中的连接错误。
+- **把两个进程都重启一遍。**若你更新过 Avalonia 或开发者工具包，请关掉应用和开发者工具进程，再把两者重新启动。
 
-## Obtaining Developer Tools logs
+## 获取开发者工具日志 {#obtaining-developer-tools-logs}
 
-The Developer Tools process collects logs, batches them, and saves them to disk. The log directory is platform-specific.
+开发者工具进程会收集日志、分批写盘。日志目录因平台而异。
 
 **Windows:**
 
@@ -54,19 +54,19 @@ The Developer Tools process collects logs, batches them, and saves them to disk.
 ~/Library/Application Support/AvaloniaUI/com.AvaloniaUI.Net.DeveloperTools/Logs/
 ```
 
-If the log directory does not exist, Developer Tools may not have run successfully. Try launching it manually and check for errors in your terminal or console output.
+若日志目录压根不存在，说明开发者工具可能就没成功跑起来。试着手动启动它，看看终端或控制台输出里有什么报错。
 
-### Log files are empty or missing
+### 日志文件是空的，或者根本没有 {#log-files-are-empty-or-missing}
 
-- Logs are written in batches, so a very short session may not produce output. Keep Developer Tools open for at least a few seconds before closing.
-- On Linux, confirm that the `~/.local/share` directory is writable by your user account.
-- On macOS, confirm that the `~/Library/Application Support` directory has not been restricted by system privacy settings.
+- 日志是分批写入的，会话太短可能什么都写不出来。关闭之前，至少让开发者工具开上几秒钟。
+- 在 Linux 上，请确认 `~/.local/share` 目录对你的用户账户可写。
+- 在 macOS 上，请确认 `~/Library/Application Support` 目录没有被系统隐私设置限制。
 
-## Obtaining Diagnostics Support logs
+## 获取诊断支持日志 {#obtaining-diagnostics-support-logs}
 
-Diagnostics Support is the integration library that runs inside your application process and establishes a connection with the Developer Tools process.
+诊断支持是跑在你应用进程里的集成库，负责与开发者工具进程建立连接。
 
-By default, it does not write any logs. To enable logging, configure `DeveloperToolsOptions` when you attach:
+它默认不写任何日志。要启用日志，请在挂接时配置 `DeveloperToolsOptions`：
 
 ```csharp
 application.AttachDeveloperTools(o =>
@@ -76,17 +76,17 @@ application.AttachDeveloperTools(o =>
 });
 ```
 
-Once enabled, diagnostic messages appear in your application's standard output. If you are running from an IDE, check the **Output** or **Debug Console** window.
+启用之后，诊断消息会出现在应用的标准输出中。若你从 IDE 里运行，请查看**输出**或**调试控制台**窗口。
 
-### Custom logger implementations
+### 自定义日志实现 {#custom-logger-implementations}
 
-If console output is not practical (for example, in a production diagnostic scenario), you can create a `DiagnosticLogger` that writes to a file using the `CreateTextWriter` factory method:
+若往控制台输出不方便（比如在生产环境做诊断），你可以用 `CreateTextWriter` 工厂方法造一个把日志写进文件的 `DiagnosticLogger`：
 
 ```csharp
 var writer = new StreamWriter("diagnostics.log", append: true);
 ```
 
-Then pass it in the options:
+然后把它传进选项里：
 
 ```csharp
 application.AttachDeveloperTools(o =>
@@ -97,16 +97,16 @@ application.AttachDeveloperTools(o =>
 
 ## 常见问题 {#common-issues}
 
-| 现象 | 可能的原因 | Resolution |
+| 现象 | 可能的原因 | 解决办法 |
 |---|---|---|
-| Developer Tools window opens but shows no visual tree | The application has not finished initializing | Wait for the main window to appear, or call `AttachDeveloperTools` after `OnFrameworkInitializationCompleted` |
-| "Connection refused" in diagnostic logs | Port conflict or firewall blocking local traffic | Check for port conflicts and firewall rules |
-| Logs directory exists but contains no recent files | Developer Tools crashed before flushing the log batch | Reproduce the issue and keep Developer Tools open longer before closing |
-| Breakpoints or property edits do not take effect | Version mismatch between `Avalonia.Diagnostics` and your Avalonia runtime | Ensure all Avalonia packages use the same version |
+| 开发者工具窗口开了，却看不到视觉树 | 应用尚未初始化完毕 | 等主窗口出现，或者在 `OnFrameworkInitializationCompleted` 之后再调用 `AttachDeveloperTools` |
+| 诊断日志中出现 “Connection refused” | 端口冲突，或防火墙拦下了本地流量 | 检查端口占用情况和防火墙规则 |
+| 日志目录在，里面却没有近期的文件 | 开发者工具在把这批日志刷盘之前就崩了 | 复现一次问题，并在关闭前让开发者工具多开一会儿 |
+| 断点或属性修改不起作用 | `Avalonia.Diagnostics` 与你的 Avalonia 运行时版本不匹配 | 确保所有 Avalonia 包版本一致 |
 
 ## 另请参阅 {#see-also}
 
-- [Developer Tools installation](/tools/developer-tools/installation)
+- [安装开发者工具](/tools/developer-tools/installation)
 - [挂接应用](/tools/developer-tools/attaching-applications)
 - [开发者工具选项](/tools/developer-tools/options)
 - [元素工具](/tools/developer-tools/elements-tool)

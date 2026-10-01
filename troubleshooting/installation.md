@@ -1,17 +1,17 @@
 ---
 id: installation
-title: Installation troubleshooting
-description: Solutions for common issues when installing the .NET SDK, Avalonia templates, and NuGet package sources.
+title: 安装问题排查
+description: 安装 .NET SDK、Avalonia 模板和配置 NuGet 包源时常见问题的解决办法。
 doc-type: troubleshooting
 ---
 
-This page covers the most common problems you may encounter when installing the .NET SDK or the Avalonia project templates, along with step-by-step solutions.
+本页汇总了安装 .NET SDK 或 Avalonia 项目模板时最常撞上的问题，并给出分步解决办法。
 
-## .NET is not a recognized program
+## 无法识别 .NET 程序 {#net-is-not-a-recognized-program}
 
-If your terminal reports that `dotnet` is not recognized, the .NET SDK is either not installed or not on your system `PATH`.
+若终端提示无法识别 `dotnet`，说明 .NET SDK 要么没装，要么不在系统 `PATH` 里。
 
-### Step 1: Check whether the SDK is installed
+### 第 1 步：确认 SDK 是否已安装 {#step-1-check-whether-the-sdk-is-installed}
 
 运行下面的命令：
 
@@ -19,57 +19,57 @@ If your terminal reports that `dotnet` is not recognized, the .NET SDK is either
 dotnet --list-sdks
 ```
 
-If a .NET SDK is correctly installed, this returns output similar to the following:
+若 .NET SDK 安装无误，会输出类似这样的内容：
 
 ```text
 8.0.202 [C:\Program Files\dotnet\sdk]
 ```
 
-If you see an error instead, download and install the .NET SDK from the [official .NET website](https://dotnet.microsoft.com/en-us/download/dotnet).
+若看到的是报错，请到 [.NET 官网](https://dotnet.microsoft.com/en-us/download/dotnet)下载并安装 .NET SDK。
 
-### Step 2: Restart your terminal
+### 第 2 步：重启终端 {#step-2-restart-your-terminal}
 
-After installing the SDK, close and reopen your terminal (or start a new shell session). Installers update the system `PATH`, but existing terminal sessions do not pick up the change automatically.
+装好 SDK 后，关掉终端再打开（或开一个新的 shell 会话）。安装程序会更新系统 `PATH`，但已经开着的终端会话不会自动跟上这一变化。
 
-### Step 3: Verify the PATH (if the issue persists)
+### 第 3 步：核对 PATH（若问题依旧） {#step-3-verify-the-path-if-the-issue-persists}
 
-If `dotnet` is still not recognized after restarting your terminal, confirm that the SDK install directory is included in your `PATH` environment variable.
+若重启终端后仍识别不了 `dotnet`，请确认 SDK 的安装目录确实在你的 `PATH` 环境变量里。
 
-Typical install locations:
+常见的安装位置：
 
-| OS      | Default path                          |
+| OS      | 默认路径                          |
 |---------|---------------------------------------|
 | Windows | `C:\Program Files\dotnet`             |
 | macOS   | `/usr/local/share/dotnet`             |
 | Linux   | `/usr/share/dotnet` or `$HOME/.dotnet`|
 
-On **Windows**, open **System Properties > Environment Variables** and check that the path above appears in the `Path` variable. On **macOS** and **Linux**, check your shell profile file (for example, `~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`) for a line that exports the dotnet directory.
+在 **Windows** 上，打开**系统属性 > 环境变量**，确认上述路径出现在 `Path` 变量中。在 **macOS** 和 **Linux** 上，检查你的 shell 配置文件（比如 `~/.bashrc`、`~/.zshrc` 或 `~/.bash_profile`）里是否有导出 dotnet 目录的那一行。
 
 :::tip
-On macOS, if you installed .NET through the official installer and the command is still not found, try running:
+在 macOS 上，若你是用官方安装程序装的 .NET，命令却仍然找不到，可以试试运行：
 
 ```bash
 export PATH="$PATH:/usr/local/share/dotnet"
 ```
 
-Add that line to your shell profile to make it permanent.
+把这一行加进 shell 配置文件，便可一劳永逸。
 :::
 
-### Step 4: Check for multiple SDK installations
+### 第 4 步：检查是否装了多份 SDK {#step-4-check-for-multiple-sdk-installations}
 
-If you have multiple .NET SDK versions or installation methods (for example, Homebrew and the official installer on macOS), they can conflict. Run:
+若你装了多个 .NET SDK 版本，或用了多种安装方式（比如 macOS 上既用 Homebrew 又用官方安装程序），它们可能彼此冲突。运行：
 
 ```bash
 which dotnet
 ```
 
-Make sure the returned path points to the installation you expect. If it does not, adjust your `PATH` so the correct installation takes priority.
+确认返回的路径指向你心里那份安装。若不是，请调整 `PATH`，让正确的那份排在前面。
 
-## `Avalonia.Templates` package cannot be found
+## 找不到 `Avalonia.Templates` 包 {#avaloniatemplates-package-cannot-be-found}
 
-If `dotnet new install Avalonia.Templates` fails with a "not found" error, your NuGet package source configuration may be missing the public NuGet feed.
+若 `dotnet new install Avalonia.Templates` 报 “not found” 失败，多半是你的 NuGet 包源配置里少了公共的 NuGet 源。
 
-### Step 1: List your NuGet sources
+### 第 1 步：列出你的 NuGet 源 {#step-1-list-your-nuget-sources}
 
 执行以下命令：
 
@@ -77,71 +77,71 @@ If `dotnet new install Avalonia.Templates` fails with a "not found" error, your 
 dotnet nuget list source
 ```
 
-Check that the output includes the following entry:
+确认输出中包含下面这一项：
 
 ```text
 nuget.org [Enabled]
 https://api.nuget.org/v3/index.json
 ```
 
-### Step 2: Add the NuGet source if it is missing
+### 第 2 步：若缺失就把 NuGet 源加上 {#step-2-add-the-nuget-source-if-it-is-missing}
 
-If `nuget.org` does not appear in the list, add it:
+若列表里没有 `nuget.org`，把它加进去：
 
 ```bash
 dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 ```
 
-Then retry the template installation:
+然后重试安装模板：
 
 ```bash
 dotnet new install Avalonia.Templates
 ```
 
-### Step 3: Re-enable a disabled source
+### 第 3 步：重新启用被禁用的源 {#step-3-re-enable-a-disabled-source}
 
-If `nuget.org` appears in the list but shows `[Disabled]`, enable it:
+若 `nuget.org` 在列表里却显示为 `[Disabled]`，把它启用：
 
 ```bash
 dotnet nuget enable source nuget.org
 ```
 
-### Step 4: Check network and firewall settings
+### 第 4 步：检查网络和防火墙设置 {#step-4-check-network-and-firewall-settings}
 
-If the source is listed and enabled but the install still fails, check the following:
+若源既在列表里又已启用，安装却仍然失败，请逐项排查：
 
-- **Corporate proxy or VPN**: Your network may block access to `api.nuget.org`. Contact your network administrator or try connecting from a different network.
-- **Firewall rules**: Ensure outbound HTTPS traffic to `api.nuget.org` (port 443) is allowed.
-- **DNS resolution**: Run `ping api.nuget.org` to verify that the domain resolves correctly.
+- **企业代理或 VPN**：你的网络可能封了 `api.nuget.org`。请联系网络管理员，或换一个网络试试。
+- **防火墙规则**：确认到 `api.nuget.org` 的出站 HTTPS 流量（443 端口）是放行的。
+- **DNS 解析**：运行 `ping api.nuget.org` 确认该域名能正常解析。
 
-### Step 5: Clear the NuGet cache
+### 第 5 步：清理 NuGet 缓存 {#step-5-clear-the-nuget-cache}
 
-Corrupted or stale cache data can occasionally cause install failures. Clear the cache and try again:
+缓存数据损坏或过期偶尔也会让安装失败。清一下缓存再试：
 
 ```bash
 dotnet nuget locals all --clear
 dotnet new install Avalonia.Templates
 ```
 
-## Template install succeeds but templates do not appear
+## 模板装成功了，却看不到模板 {#template-install-succeeds-but-templates-do-not-appear}
 
-If `dotnet new install Avalonia.Templates` reports success but `dotnet new list` does not show any Avalonia templates, you may have a template engine cache issue.
+若 `dotnet new install Avalonia.Templates` 报告成功，`dotnet new list` 却列不出任何 Avalonia 模板，多半是模板引擎的缓存出了岔子。
 
-Try reinstalling:
+试试重新安装：
 
 ```bash
 dotnet new uninstall Avalonia.Templates
 dotnet new install Avalonia.Templates
 ```
 
-If you use Visual Studio with the Avalonia extension, note that the extension bundles its own copy of the templates. The `dotnet new install` step is only required for command-line or non-Visual Studio IDE workflows.
+若你用的是带 Avalonia 扩展的 Visual Studio，请注意该扩展自带一份模板。`dotnet new install` 这一步只有命令行或非 Visual Studio 的 IDE 工作流才需要。
 
-## Permission errors during installation
+## 安装过程中的权限错误 {#permission-errors-during-installation}
 
-On macOS and Linux, you may see permission errors when installing templates or the .NET SDK.
+在 macOS 和 Linux 上，安装模板或 .NET SDK 时可能遇到权限错误。
 
-- Avoid using `sudo` with `dotnet new install`. The .NET template engine stores templates in your user profile directory and does not require elevated permissions.
-- If you previously ran the install with `sudo`, the template cache may be owned by root. Reset ownership with:
+- 不要用 `sudo` 搭配 `dotnet new install`。.NET 模板引擎把模板存在你的用户配置目录下，并不需要提权。
+- 若你之前用 `sudo` 装过，模板缓存的属主可能成了 root。用下面的命令把属主改回来：
 
 ```bash
 sudo chown -R $(whoami) ~/.templateengine
@@ -151,4 +151,4 @@ sudo chown -R $(whoami) ~/.templateengine
 
 - [Install Avalonia](/docs/get-started/install-avalonia)
 - [配置你的 IDE](/docs/get-started/set-up-your-ide)
-- [App performance issues](/troubleshooting/app-performance-issues)
+- [应用性能问题](/troubleshooting/app-performance-issues)

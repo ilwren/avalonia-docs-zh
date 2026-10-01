@@ -8,7 +8,7 @@ import DocsCard from '@site/src/components/global/DocsCard';
 import DocsCards from '@site/src/components/global/DocsCards';
 
 <head>
-  <title>Avalonia documentation: Troubleshooting</title>
+  <title>Avalonia 文档：排查问题</title>
   <meta
     name="description"
     content="Find guidance on diagnosing and resolving common issues in Avalonia apps, including installation, performance, platform-specific behaviour, and UI development."
@@ -20,16 +20,16 @@ import DocsCards from '@site/src/components/global/DocsCards';
   `}</style>
 </head>
 
-Find help diagnosing and resolving common issues when building Avalonia apps. Whether you've run into installation problems, performance bottlenecks, or challenges with styles and theming, you'll find targeted guidance on these pages to get your app back on track.
+这里汇集了开发 Avalonia 应用时常见问题的诊断与解决办法。无论你是卡在安装环节、遇上性能瓶颈，还是被样式与主题折腾得够呛，都能在这些页面里找到对症的指引，让应用重回正轨。
 
 ## General
 
 <DocsCards>
   <DocsCard header="Installation" href="/troubleshooting/installation">
-    <p>Common issues encountered when setting up .NET and Avalonia.</p>
+    <p>配置 .NET 和 Avalonia 时常见的问题。</p>
   </DocsCard>
   <DocsCard header="App performance issues" href="/troubleshooting/app-performance-issues">
-    <p>Steps to improve the runtime performance of your Avalonia app.</p>
+    <p>提升 Avalonia 应用运行时性能的若干办法。</p>
   </DocsCard>
 </DocsCards>
 
@@ -37,30 +37,30 @@ Find help diagnosing and resolving common issues when building Avalonia apps. Wh
 
 <DocsCards>
   <DocsCard header="MediaPlayer" href="/troubleshooting/controls/mediaplayer">
-    <p>Common issues with the Avalonia Pro MediaPlayer control.</p>
+    <p>Avalonia Pro MediaPlayer 控件的常见问题。</p>
   </DocsCard>
   <DocsCard header="MessageBox" href="/troubleshooting/controls/messagebox">
-    <p>Options for displaying message dialogs, including third-party alternatives.</p>
+    <p>显示消息对话框的几种选择，含第三方替代方案。</p>
   </DocsCard>
   <DocsCard header="NumericUpDown" href="/troubleshooting/controls/numericupdown">
-    <p>How to resolve issues with the NumericUpDown control.</p>
+    <p>如何解决 NumericUpDown 控件的问题。</p>
   </DocsCard>
   <DocsCard header="RichTextEditor" href="/troubleshooting/controls/richtexteditor">
-    <p>Common issues and debugging for the Avalonia Pro RichTextEditor control.</p>
+    <p>Avalonia Pro RichTextEditor 控件的常见问题与调试方法。</p>
   </DocsCard>
 </DocsCards>
 
-## Platform-specific issues
+## 平台专属问题 {#platform-specific-issues}
 
 <DocsCards>
   <DocsCard header="macOS" href="/troubleshooting/platform-specific-issues/macos">
-    <p>Issues specific to macOS, including app menus and system integration.</p>
+    <p>macOS 专属问题，包括应用菜单与系统集成。</p>
   </DocsCard>
   <DocsCard header="WebAssembly" href="/troubleshooting/platform-specific-issues/webassembly">
-    <p>Common issues when running Avalonia apps in the browser, including missing native libraries.</p>
+    <p>在浏览器中运行 Avalonia 应用时的常见问题，包括原生库缺失。</p>
   </DocsCard>
   <DocsCard header="Windows" href="/troubleshooting/platform-specific-issues/windows">
-    <p>Issues specific to Windows, including packaging, signing, and SmartScreen warnings.</p>
+    <p>Windows 专属问题，包括打包、签名和 SmartScreen 警告。</p>
   </DocsCard>
 </DocsCards>
 
@@ -68,17 +68,17 @@ Find help diagnosing and resolving common issues when building Avalonia apps. Wh
 
 <DocsCards>
   <DocsCard header="Developer tools" href="/troubleshooting/tools/developer-tools">
-    <p>Common issues when using Avalonia DevTools to inspect and debug your app.</p>
+    <p>用 Avalonia DevTools 检视和调试应用时的常见问题。</p>
   </DocsCard>
 </DocsCards>
 
-## UI development
+## 界面开发 {#ui-development}
 
 <DocsCards>
   <DocsCard header="Styles" href="/troubleshooting/ui-development/styles">
-    <p>Common issues with style selectors, including silent failures and unmatched targets.</p>
+    <p>样式选择器的常见问题，包括悄无声息的失效和匹配不到目标。</p>
   </DocsCard>
   <DocsCard header="Themes" href="/troubleshooting/ui-development/themes">
-    <p>Common issues with control themes, including theme lookup and unintended side effects.</p>
+    <p>控件主题的常见问题，包括主题查找和意料之外的连带影响。</p>
   </DocsCard>
 </DocsCards>

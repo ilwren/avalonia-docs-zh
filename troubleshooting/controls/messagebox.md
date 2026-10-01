@@ -125,10 +125,10 @@ if (result)
 }
 ```
 
-This approach only works in desktop applications that use `ClassicDesktopStyleApplicationLifetime`. For single-view apps, you need an overlay-based solution instead.
+这种做法只适用于使用 `ClassicDesktopStyleApplicationLifetime` 的桌面应用。单视图应用得改用基于叠加层的方案。
 
 ## 另请参阅 {#see-also}
 
 - [Window 控件](/controls/primitives/window)
-- [How to work with dialogs](/docs/how-to/dialogs-how-to)
-- [MessageBox feature request (GitHub)](https://github.com/AvaloniaUI/Avalonia/issues/670)
+- [如何使用对话框](/docs/how-to/dialogs-how-to)
+- [MessageBox 功能请求（GitHub）](https://github.com/AvaloniaUI/Avalonia/issues/670)

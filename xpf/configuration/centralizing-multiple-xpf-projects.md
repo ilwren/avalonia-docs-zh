@@ -1,17 +1,17 @@
 ---
 id: centralizing-multiple-xpf-projects
-title: Centralizing multiple XPF projects
-description: Learn how to centralize XPF SDK version management and license key configuration across multiple projects in a single repository.
+title: 集中管理多个 XPF 项目
+description: 了解如何在单个仓库中集中管理多个项目的 XPF SDK 版本与许可证密钥配置。
 doc-type: how-to
 ---
 
-When you manage multiple XPF projects in a single repository, keeping SDK versions and license keys synchronized across every `.csproj` file can become tedious and error-prone. By centralizing these settings, you ensure consistency and simplify future upgrades.
+当你在一个仓库里管着多个 XPF 项目时，要让每个 `.csproj` 文件里的 SDK 版本和许可证密钥都保持同步，既烦琐又容易出错。把这些设置集中起来，既保证了一致性，日后升级也省心。
 
-## Centralize the XPF SDK version
+## 集中管理 XPF SDK 版本 {#centralize-the-xpf-sdk-version}
 
-You can use a `global.json` file at the root of your repository to pin the XPF SDK version for every project at once. When a `global.json` entry exists for `Xpf.Sdk`, MSBuild resolves that version automatically, so you only need to update the version number in one place.
+你可以在仓库根目录放一个 `global.json` 文件，一次性钉死所有项目的 XPF SDK 版本。只要存在针对 `Xpf.Sdk` 的 `global.json` 条目，MSBuild 就会自动解析出该版本，于是你只需在一个地方改版本号。
 
-Create (or update) a `global.json` file in your repository root:
+在仓库根目录创建（或更新）一个 `global.json` 文件：
 
 ```json title="global.json"
 {
@@ -21,15 +21,15 @@ Create (or update) a `global.json` file in your repository root:
 }
 ```
 
-Then, in each `.csproj` file, reference `Xpf.Sdk` **without** a version number:
+然后在各个 `.csproj` 文件中引用 `Xpf.Sdk`，**不要**写版本号：
 
 ```xml title="MyApp.csproj"
 <Project Sdk="Xpf.Sdk">
 ```
 
-When you need to upgrade, change the version in `global.json` and every project in the repository picks up the new version on the next build.
+需要升级时，只改 `global.json` 里的版本，仓库中所有项目下次构建时便会用上新版本。
 
-## License keys
+## 许可证密钥 {#license-keys}
 
 Storing license keys directly in source-controlled files is a security risk. Instead, you can reference an environment variable in both your `NuGet.config` and `.csproj` files so the actual key value never appears in your repository.
 
