@@ -1,15 +1,15 @@
 ---
 id: textbox-how-to
-title: "How to: Work with TextBox"
-description: Validation, formatting, input masking, selection, and TextBox customization in Avalonia.
+title: "操作指南：使用 TextBox"
+description: Avalonia 中 TextBox 的校验、格式化、输入掩码、选择与自定义。
 doc-type: how-to
 ---
 
-This guide covers common TextBox scenarios: validation, formatting, input masking, selection, and customization.
+本指南介绍 TextBox 的常见场景：校验、格式化、输入掩码、选择与自定义。
 
 ## Basic Text Binding
 
-Bind the `Text` property with `TwoWay` mode (the default for TextBox.Text):
+以 `TwoWay` 模式绑定 `Text` 属性（这也是 TextBox.Text 的默认模式）：
 
 ```xml
 <TextBox Text="{Binding Username}" PlaceholderText="Enter username" />
@@ -22,22 +22,22 @@ private string _username = "";
 
 ## Placeholder Text
 
-Show hint text when the TextBox is empty:
+TextBox 为空时显示提示文字：
 
 ```xml
 <TextBox PlaceholderText="Search..." />
 <TextBox PlaceholderText="Enter email address" />
 ```
 
-The placeholder disappears when the user starts typing and reappears when the text is cleared.
+用户一开始输入，占位文字就消失；文本被清空后它又会回来。
 
-To customize the placeholder color, set `PlaceholderForeground`:
+要自定义占位文字的颜色，请设置 `PlaceholderForeground`：
 
 ```xml
 <TextBox PlaceholderText="Search..." PlaceholderForeground="Gray" />
 ```
 
-By default, placeholder text is rendered at 50% opacity. Override the `TextControlPlaceholderOpacity` theme resource to change this globally, for example to improve contrast for accessibility:
+占位文字默认以 50% 的不透明度渲染。覆盖 `TextControlPlaceholderOpacity` 主题资源即可全局调整，比如为了无障碍而提高对比度：
 
 ```xml
 <Application.Resources>
@@ -47,14 +47,14 @@ By default, placeholder text is rendered at 50% opacity. Override the `TextContr
 
 ## Password Input
 
-Hide typed characters using `PasswordChar`:
+用 `PasswordChar` 把输入的字符遮起来：
 
 ```xml
 <TextBox PasswordChar="*" PlaceholderText="Password" />
 <TextBox PasswordChar="●" PlaceholderText="Password" />
 ```
 
-For a reveal toggle, bind `RevealPassword`:
+若要做一个「显示密码」的切换按钮，请绑定 `RevealPassword`：
 
 ```xml
 <Grid ColumnDefinitions="*,Auto">
@@ -64,9 +64,9 @@ For a reveal toggle, bind `RevealPassword`:
 </Grid>
 ```
 
-## Multi-Line Input
+## 多行输入 {#multi-line-input}
 
-Enable multi-line text entry:
+启用多行文本输入：
 
 ```xml
 <TextBox AcceptsReturn="True"
@@ -77,11 +77,11 @@ Enable multi-line text entry:
 
 | 属性 | 效果 |
 |---|---|
-| `AcceptsReturn="True"` | Allows pressing Enter to create new lines |
-| `TextWrapping="Wrap"` | Wraps long lines instead of scrolling horizontally |
-| `AcceptsTab="True"` | Allows pressing Tab to insert tab characters |
+| `AcceptsReturn="True"` | 允许按 Enter 换行 |
+| `TextWrapping="Wrap"` | 长行自动换行，而不是横向滚动 |
+| `AcceptsTab="True"` | 允许按 Tab 插入制表符 |
 
-## Read-Only and Disabled
+## 只读与禁用 {#read-only-and-disabled}
 
 ```xml
 <!-- Read-only: can select and copy, but not edit -->
@@ -93,9 +93,9 @@ Enable multi-line text entry:
 
 ## Text Selection
 
-### Select all on focus
+### 获得焦点时全选 {#select-all-on-focus}
 
-Select all text when the TextBox receives focus:
+TextBox 获得焦点时选中全部文本：
 
 ```csharp
 private void OnTextBoxGotFocus(object? sender, GotFocusEventArgs e)
@@ -111,7 +111,7 @@ private void OnTextBoxGotFocus(object? sender, GotFocusEventArgs e)
 <TextBox GotFocus="OnTextBoxGotFocus" Text="{Binding Value}" />
 ```
 
-### Programmatic selection
+### 用代码控制选区 {#programmatic-selection}
 
 ```csharp
 // Select a range
@@ -127,9 +127,9 @@ string selected = myTextBox.SelectedText;
 
 ## Input Validation
 
-### With data annotations
+### 配合数据注解 {#with-data-annotations}
 
-Use `INotifyDataErrorInfo` to show validation errors directly on the TextBox:
+用 `INotifyDataErrorInfo` 把校验错误直接显示在 TextBox 上：
 
 ```csharp
 public partial class FormViewModel : ObservableValidator
@@ -146,11 +146,11 @@ public partial class FormViewModel : ObservableValidator
 <TextBox Text="{Binding Email}" PlaceholderText="Email" />
 ```
 
-When validation fails, the TextBox displays a red border and error message. See [Validation in Data Binding](/docs/data-binding/binding-validation) for details.
+校验未通过时，TextBox 会显示红色边框和错误信息。详见[数据绑定中的校验](/docs/data-binding/binding-validation)。
 
-### Restricting input characters
+### 限制可输入的字符 {#restricting-input-characters}
 
-Handle the `TextChanging` event to filter input:
+处理 `TextChanging` 事件来过滤输入：
 
 ```csharp
 private void OnTextChanging(object? sender, TextChangingEventArgs e)
@@ -169,7 +169,7 @@ private void OnTextChanging(object? sender, TextChangingEventArgs e)
 
 ## Max Length
 
-Limit the number of characters:
+限制字符数量：
 
 ```xml
 <TextBox MaxLength="50" PlaceholderText="Max 50 characters" />
@@ -177,7 +177,7 @@ Limit the number of characters:
 
 ## Text Changed Event
 
-React to text changes for search-as-you-type or live preview:
+响应文本变化，做输入即搜索或实时预览：
 
 ```xml
 <TextBox Text="{Binding SearchText}" />
@@ -193,11 +193,11 @@ partial void OnSearchTextChanged(string value)
 }
 ```
 
-For debounced search (avoiding filtering on every keystroke), see [Performance](/docs/app-development/performance#debouncing-rapid-input).
+关于带防抖的搜索（避免每敲一个键就筛一次），请参阅[性能](/docs/app-development/performance#debouncing-rapid-input)。
 
 ## Inner Content (Left/Right)
 
-Add icons or buttons inside the TextBox using `InnerLeftContent` and `InnerRightContent`:
+用 `InnerLeftContent` 和 `InnerRightContent` 在 TextBox 内部放上图标或按钮：
 
 ```xml
 <TextBox PlaceholderText="Search..." InnerLeftContent="🔍">
@@ -209,11 +209,11 @@ Add icons or buttons inside the TextBox using `InnerLeftContent` and `InnerRight
 </TextBox>
 ```
 
-## Undo and Redo
+## 撤销与重做 {#undo-and-redo}
 
-TextBox supports undo/redo with standard keyboard shortcuts (Ctrl+Z / Ctrl+Shift+Z). These work automatically with no additional code.
+TextBox 支持标准快捷键（Ctrl+Z / Ctrl+Shift+Z）的撤销和重做，无需额外代码即可生效。
 
-To clear the undo history:
+要清空撤销历史：
 
 ```csharp
 myTextBox.Clear(); // Clears text and undo history
@@ -221,7 +221,7 @@ myTextBox.Clear(); // Clears text and undo history
 
 ## Styling
 
-### Custom appearance
+### 自定义外观 {#custom-appearance}
 
 ```xml
 <Style Selector="TextBox.custom">
@@ -242,7 +242,7 @@ myTextBox.Clear(); // Clears text and undo history
 </Style>
 ```
 
-### Removing the focus border
+### 去掉聚焦时的边框 {#removing-the-focus-border}
 
 ```xml
 <Style Selector="TextBox.borderless">
@@ -257,7 +257,7 @@ myTextBox.Clear(); // Clears text and undo history
 
 ## Context Menu
 
-TextBox has a built-in context menu with Cut, Copy, and Paste. To customize it:
+TextBox 自带含剪切、复制、粘贴的上下文菜单。要自定义它：
 
 ```xml
 <TextBox Text="{Binding Value}">
@@ -275,6 +275,6 @@ TextBox has a built-in context menu with Cut, Copy, and Paste. To customize it:
 
 ## See Also
 
-- [TextBox Control Reference](/controls/input/text-input/textbox): Property summary.
-- [Validation in Data Binding](/docs/data-binding/binding-validation): Data annotation and INotifyDataErrorInfo validation.
+- [TextBox 控件参考](/controls/input/text-input/textbox)：属性一览。
+- [数据绑定中的校验](/docs/data-binding/binding-validation)：数据注解与 INotifyDataErrorInfo 校验。
 - [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定模式与各项参数。

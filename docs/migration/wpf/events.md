@@ -7,7 +7,7 @@ doc-type: migration
 
 Avalonia's event system is conceptually similar to WPF's routed event model. Events can bubble up or tunnel down the visual tree, and you can register class handlers or instance handlers. However, there are important differences in the API surface, event naming, and how tunnelling is handled. This guide covers the key differences you need to know when migrating from WPF to Avalonia.
 
-## Routed events
+## 路由事件 {#routed-events}
 
 Both WPF and Avalonia support routed events, but the registration API differs. In WPF, you use `EventManager.RegisterRoutedEvent`, while in Avalonia you use `RoutedEvent.Register`.
 

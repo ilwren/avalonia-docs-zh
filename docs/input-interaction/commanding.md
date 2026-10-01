@@ -1,25 +1,25 @@
 ---
 id: commanding
-title: Commanding
-description: Write commands with ICommand to connect user actions to view model logic.
+title: 命令
+description: 用 ICommand 编写命令，把用户动作接到视图模型的逻辑上。
 doc-type: explanation
 ---
 
-Commanding connects user actions (button clicks, menu selections, keyboard shortcuts) to logic in your view model. Avalonia uses the standard .NET `ICommand` interface, which enables clean separation between UI and business logic.
+命令机制把用户动作（按钮点击、菜单选择、键盘快捷键）接到视图模型中的逻辑上。Avalonia 采用标准的 .NET `ICommand` 接口，从而把界面与业务逻辑干净地分开。
 
-## How commanding works
+## 命令机制的运作原理 {#how-commanding-works}
 
-Controls that support commanding (such as `Button` and `MenuItem`) have a `Command` property. When the user activates the control, it calls `ICommand.Execute`. The control also monitors `ICommand.CanExecute` and automatically disables itself when the command cannot execute.
+支持命令的控件（比如 `Button` 和 `MenuItem`）都有一个 `Command` 属性。用户激活控件时，它会调用 `ICommand.Execute`。控件还会盯着 `ICommand.CanExecute`，在命令无法执行时自动把自己禁用。
 
 ```xml
 <Button Content="Save" Command="{Binding SaveCommand}" />
 ```
 
-When `SaveCommand.CanExecute()` returns `false`, the button appears disabled and cannot be clicked.
+当 `SaveCommand.CanExecute()` 返回 `false` 时，按钮会显示为禁用状态，点也点不动。
 
-## ICommand interface
+## ICommand 接口 {#icommand-interface}
 
-The `System.Windows.Input.ICommand` interface defines:
+`System.Windows.Input.ICommand` 接口定义了：
 
 ```csharp
 public interface ICommand
@@ -32,13 +32,13 @@ public interface ICommand
 
 | 成员 | 用途 |
 |---|---|
-| `CanExecute` | Returns whether the command can currently run. Controls call this to determine their enabled state. |
-| `Execute` | Performs the command action. Controls call this when the user activates them. |
-| `CanExecuteChanged` | Raised when the return value of `CanExecute` may have changed. Controls listen to this event to re-query `CanExecute`. |
+| `CanExecute` | 返回命令当前能否执行。控件靠它来决定自己是启用还是禁用。 |
+| `Execute` | 执行命令的动作。用户激活控件时由控件调用。 |
+| `CanExecuteChanged` | 当 `CanExecute` 的返回值可能已变化时引发。控件监听这个事件，以便重新查询 `CanExecute`。 |
 
 ## Using RelayCommand (CommunityToolkit.Mvvm)
 
-The most common way to create commands is with the `[RelayCommand]` attribute from the CommunityToolkit.Mvvm package:
+创建命令最常见的办法，是使用 CommunityToolkit.Mvvm 包中的 `[RelayCommand]` 特性：
 
 ```csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -65,7 +65,7 @@ public partial class MainViewModel : ObservableObject
 }
 ```
 
-The source generator creates `SaveCommand` and `DeleteCommand` properties automatically. The `DeleteCommand` re-evaluates `CanDelete()` whenever `CanExecuteChanged` is raised.
+源生成器会自动造出 `SaveCommand` 和 `DeleteCommand` 属性。每当 `CanExecuteChanged` 被引发时，`DeleteCommand` 都会重新判定 `CanDelete()`。
 
 ```xml
 <StackPanel Spacing="8">
@@ -75,9 +75,9 @@ The source generator creates `SaveCommand` and `DeleteCommand` properties automa
 </StackPanel>
 ```
 
-### Async commands
+### 异步命令 {#async-commands}
 
-The `[RelayCommand]` attribute also supports async methods. The generated command handles `Task` return types and provides automatic busy state tracking:
+`[RelayCommand]` 特性同样支持异步方法。生成的命令会处理 `Task` 返回类型，并自动跟踪忙碌状态：
 
 ```csharp
 [RelayCommand]
@@ -96,11 +96,11 @@ private async Task LoadDataAsync()
 }
 ```
 
-While `LoadDataAsync` is running, `LoadDataCommand.IsRunning` is `true`. You can bind to this for progress indicators.
+`LoadDataAsync` 运行期间，`LoadDataCommand.IsRunning` 为 `true`。你可以把进度指示器绑定到它上面。
 
 ### Notifying CanExecute
 
-When properties change that affect `CanExecute`, use `[NotifyCanExecuteChangedFor]`:
+当影响 `CanExecute` 的属性发生变化时，请使用 `[NotifyCanExecuteChangedFor]`：
 
 ```csharp
 [ObservableProperty]
@@ -108,11 +108,11 @@ When properties change that affect `CanExecute`, use `[NotifyCanExecuteChangedFo
 private string _name = "";
 ```
 
-This tells the source generator to raise `DeleteCommand.NotifyCanExecuteChanged()` whenever `Name` changes, which causes bound controls to re-evaluate whether the command can execute.
+这会让源生成器在 `Name` 变化时引发 `DeleteCommand.NotifyCanExecuteChanged()`，于是绑定了该命令的控件会重新判定它能否执行。
 
 ## CommandParameter
 
-The `CommandParameter` property passes data to the command's `Execute` and `CanExecute` methods:
+`CommandParameter` 属性把数据传给命令的 `Execute` 和 `CanExecute` 方法：
 
 ```xml
 <Button Content="Open"
@@ -131,7 +131,7 @@ private void Open(object? parameter)
 }
 ```
 
-With typed parameters using CommunityToolkit.Mvvm:
+用 CommunityToolkit.Mvvm 搭配带类型的参数：
 
 ```csharp
 [RelayCommand]
@@ -147,9 +147,9 @@ private void Open(Item item)
         CommandParameter="{Binding SelectedItem}" />
 ```
 
-## Manual ICommand implementation
+## 手写 ICommand 实现 {#manual-icommand-implementation}
 
-For scenarios where source generators are not used, create commands manually:
+若场景中用不了源生成器，可以手动创建命令：
 
 ```csharp
 public class RelayCommand : ICommand
@@ -188,9 +188,9 @@ public class MainViewModel
 }
 ```
 
-## Keyboard shortcuts and commands
+## 键盘快捷键与命令 {#keyboard-shortcuts-and-commands}
 
-Bind a command to a keyboard shortcut using `KeyBinding`:
+用 `KeyBinding` 把命令绑定到键盘快捷键：
 
 ```xml
 <Window.KeyBindings>
@@ -200,11 +200,11 @@ Bind a command to a keyboard shortcut using `KeyBinding`:
 </Window.KeyBindings>
 ```
 
-`KeyBinding` evaluates `CanExecute` and only triggers the command when the gesture is pressed and the command is enabled.
+`KeyBinding` 会判定 `CanExecute`，只有在手势被按下且命令可用时才触发命令。
 
-## HotKey attached property
+## HotKey 附加属性 {#hotkey-attached-property}
 
-For controls, the `HotKey` attached property provides a simpler syntax:
+对控件来说，`HotKey` 附加属性的写法更简单：
 
 ```xml
 <Button Content="_Save"
@@ -212,12 +212,12 @@ For controls, the `HotKey` attached property provides a simpler syntax:
         HotKey="Ctrl+S" />
 ```
 
-The `HotKey` triggers the button's command even when the button does not have focus.
+即便按钮没有焦点，`HotKey` 也能触发它的命令。
 
 ## 另请参阅 {#see-also}
 
-- [Binding to commands](/docs/data-binding/binding-to-commands): Binding syntax, binding a `Command` straight to a method, and `CommandParameter`.
+- [绑定到命令](/docs/data-binding/binding-to-commands)：绑定语法、把 `Command` 直接绑到方法，以及 `CommandParameter`。
 - [如何绑定 CanExecute](/docs/data-binding/how-to-bind-can-execute)：用 `CanExecute` 控制按钮可用状态的完整示例。
 - [添加交互](/docs/input-interaction/adding-interactivity)：事件和命令之间该怎么选。
-- [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Key bindings and keyboard input.
-- [The MVVM Pattern](/docs/fundamentals/the-mvvm-pattern): Architecture for separating UI and logic.
+- [键盘与快捷键](/docs/input-interaction/keyboard-and-hotkeys)：按键绑定与键盘输入。
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)：把界面与逻辑分开的架构。

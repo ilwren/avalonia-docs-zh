@@ -1,23 +1,23 @@
 ---
 id: text-input
-title: Text Input and IME
+title: 文本输入与输入法
 ---
 
-Avalonia supports text input from keyboards, on-screen keyboards, and Input Method Editors (IMEs) for languages that require character composition, such as Chinese, Japanese, and Korean.
+Avalonia 支持来自键盘、屏幕键盘以及输入法编辑器（IME）的文本输入，后者服务于中文、日文、韩文这类需要组字的语言。
 
-## How text input works
+## 文本输入的运作方式 {#how-text-input-works}
 
-Text input in Avalonia flows through several stages:
+Avalonia 中的文本输入要经过这么几个阶段：
 
-1. **KeyDown/KeyUp events** fire for raw key presses.
-2. The platform's input method processes key combinations into characters.
-3. **TextInput events** fire with the final composed text.
+1. **KeyDown/KeyUp 事件**在原始按键按下时触发。
+2. 平台的输入法把按键组合处理成字符。
+3. **TextInput 事件**带着最终组好的文本触发。
 
-For most applications, you do not need to handle text input directly. Controls like [`TextBox`](/api/avalonia/controls/textbox) and `AutoCompleteBox` handle all text input automatically. This page covers scenarios where you need custom text input behavior.
+多数应用都不必自己处理文本输入，[`TextBox`](/api/avalonia/controls/textbox) 和 `AutoCompleteBox` 这类控件会自动把一切都安排好。本页讲的是你需要自定义文本输入行为的那些场景。
 
-## TextInput event
+## TextInput 事件 {#textinput-event}
 
-The `TextInput` event delivers composed text after IME processing. Unlike `KeyDown`, which provides the physical key pressed, `TextInput` provides the actual character(s) the user intended to type:
+`TextInput` 事件送来的是经输入法处理后组好的文本。`KeyDown` 给出的是按下的物理按键，而 `TextInput` 给出的则是用户真正想输入的那个（或那些）字符：
 
 ```csharp
 myControl.AddHandler(InputElement.TextInputEvent, OnTextInput);
@@ -32,35 +32,35 @@ private void OnTextInput(object? sender, TextInputEventArgs e)
 }
 ```
 
-### When to use TextInput vs KeyDown
+### 何时用 TextInput、何时用 KeyDown {#when-to-use-textinput-vs-keydown}
 
 | 场景 | 用法 |
 |---|---|
-| Processing typed characters (text editing) | `TextInput` |
-| Detecting modifier keys (Ctrl+S, Alt+F4) | `KeyDown` |
-| Handling arrow keys, Enter, Escape | `KeyDown` |
-| IME-aware text processing | `TextInput` |
+| 处理输入的字符（文本编辑） | `TextInput` |
+| 检测修饰键（Ctrl+S、Alt+F4） | `KeyDown` |
+| 处理方向键、Enter、Esc | `KeyDown` |
+| 顾及输入法的文本处理 | `TextInput` |
 
 :::tip
-If you handle `KeyDown` to process typed text, you will miss IME-composed characters and may incorrectly handle dead keys (accent composition). Always use `TextInput` for character input.
+若你靠处理 `KeyDown` 来获取输入的文本，就会漏掉输入法组出的字符，还可能把死键（重音组合）处理错。字符输入请一律用 `TextInput`。
 :::
 
-## Input method editors (IME)
+## 输入法编辑器（IME） {#input-method-editors-ime}
 
-IMEs allow users to type complex scripts by composing characters from multiple key presses. For example, typing "ni hao" on a Chinese IME produces "你好".
+输入法让用户能通过多次按键组字，从而输入复杂的文字体系。比如在中文输入法里敲「ni hao」就能打出「你好」。
 
-### IME composition in TextBox
+### TextBox 中的输入法组字 {#ime-composition-in-textbox}
 
-`TextBox` supports IME composition out of the box. During composition:
-- The in-progress text appears with an underline decoration
-- The user can select from candidate characters
-- Pressing Enter or selecting a candidate commits the text
+`TextBox` 开箱即支持输入法组字。组字过程中：
+- 正在输入中的文本会带下划线显示
+- 用户可以从候选字中挑选
+- 按 Enter 或选中候选项即可上屏
 
-No additional configuration is needed.
+无需任何额外配置。
 
-### Enabling IME on custom controls
+### 在自定义控件上启用输入法 {#enabling-ime-on-custom-controls}
 
-If you build a custom text input control, you need to implement `ITextInputMethodClient` and register it with the text input method system:
+若你要写一个自定义的文本输入控件，就得实现 `ITextInputMethodClient` 并把它注册到文本输入法系统中：
 
 ```csharp
 public class MyTextControl : Control, ITextInputMethodClient
@@ -92,9 +92,9 @@ public class MyTextControl : Control, ITextInputMethodClient
 }
 ```
 
-### Requesting the on-screen keyboard from a custom control
+### 从自定义控件呼出屏幕键盘 {#requesting-the-on-screen-keyboard-from-a-custom-control}
 
-Custom text input controls that extend `TextInputMethodClient` can request the on-screen keyboard by raising the `InputPaneActivationRequested` event. The platform handles showing the input pane in response:
+继承自 `TextInputMethodClient` 的自定义文本输入控件，可以通过引发 `InputPaneActivationRequested` 事件来请求屏幕键盘，平台会据此把输入面板显示出来：
 
 ```csharp
 public class MyTextInputClient : TextInputMethodClient
@@ -107,13 +107,13 @@ public class MyTextInputClient : TextInputMethodClient
 }
 ```
 
-## On-screen keyboards
+## 屏幕键盘 {#on-screen-keyboards}
 
-On touch devices and mobile platforms, Avalonia can show the platform's on-screen keyboard when a text input control receives focus.
+在触摸设备和移动平台上，当文本输入控件获得焦点时，Avalonia 可以把平台自带的屏幕键盘显示出来。
 
-### Controlling keyboard visibility
+### 控制键盘的显隐 {#controlling-keyboard-visibility}
 
-Use the `InputPane` service to monitor or control the on-screen keyboard:
+用 `InputPane` 服务来监视或控制屏幕键盘：
 
 ```csharp
 var inputPane = TopLevel.GetTopLevel(this)?.InputPane;
@@ -129,9 +129,9 @@ if (inputPane is not null)
 }
 ```
 
-### Keyboard types on mobile
+### 移动端的键盘类型 {#keyboard-types-on-mobile}
 
-On Android and iOS, the `InputScope` property on `TextBox` can hint which keyboard layout to show:
+在 Android 和 iOS 上，`TextBox` 的 `InputScope` 属性可以提示系统该显示哪种键盘布局：
 
 ```xml
 <!-- Numeric keyboard -->
@@ -151,12 +151,12 @@ On Android and iOS, the `InputScope` property on `TextBox` can hint which keyboa
 
 | 特性 | Windows | macOS | Linux | Android/iOS | WebAssembly |
 |---|---|---|---|---|---|
-| IME support | Full | Full | Full (via IBus/Fcitx) | Full (platform IME) | Partial |
-| On-screen keyboard | Touch devices | Touch Bar | Virtual keyboard | Full | Browser-managed |
-| Dead keys | Supported | Supported | Supported | 不适用 | Browser-managed |
+| 输入法支持 | Full | Full | 完整支持（通过 IBus/Fcitx） | 完整支持（平台原生输入法） | Partial |
+| 屏幕键盘 | 触摸设备 | Touch Bar | 虚拟键盘 | Full | Browser-managed |
+| 死键 | Supported | Supported | Supported | 不适用 | Browser-managed |
 
 ## 另请参阅 {#see-also}
 
-- [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Key bindings and keyboard shortcuts.
-- [Input Pane](/docs/services/input-pane): On-screen keyboard service.
-- [TextBox Control](/controls/input/text-input/textbox): Built-in text input control.
+- [键盘与快捷键](/docs/input-interaction/keyboard-and-hotkeys)：按键绑定与键盘快捷键。
+- [输入面板](/docs/services/input-pane)：屏幕键盘服务。
+- [TextBox 控件](/controls/input/text-input/textbox)：内置的文本输入控件。

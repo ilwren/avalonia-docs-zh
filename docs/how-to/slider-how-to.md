@@ -152,7 +152,7 @@ public partial class SettingsViewModel : ObservableObject
 
 ## 禁用状态与只读状态 {#disabled-and-read-only-states}
 
-You can prevent user interaction with a slider in two ways:
+有两种办法可以阻止用户与滑块交互：
 
 ```xml
 <!-- Fully disabled: grayed-out appearance -->
@@ -162,13 +162,13 @@ You can prevent user interaction with a slider in two ways:
 <Slider IsHitTestVisible="False" Value="{Binding Progress}" />
 ```
 
-Use `IsEnabled="False"` when you want to communicate visually that the control is unavailable. Use `IsHitTestVisible="False"` when you want the slider to look normal but act as a read-only indicator (for example, displaying download progress).
+若想在视觉上表明控件暂不可用，就用 `IsEnabled="False"`；若希望滑块看上去如常、但只作只读指示（比如显示下载进度），则用 `IsHitTestVisible="False"`。
 
-## Styling the slider
+## 为滑块设置样式 {#styling-the-slider}
 
-### Custom track and thumb colors
+### 自定义轨道与滑块颜色 {#custom-track-and-thumb-colors}
 
-You can override the track color by targeting the template parts inside the slider. The `PART_DecreaseButton` fills the area before the thumb:
+写样式指向滑块内部的模板部件，即可改写轨道颜色。`PART_DecreaseButton` 负责填充滑块手柄之前的那一段：
 
 ```xml
 <Slider Value="50">
@@ -180,9 +180,9 @@ You can override the track color by targeting the template parts inside the slid
 </Slider>
 ```
 
-### Wider track
+### 更粗的轨道 {#wider-track}
 
-Increase the track height for a bolder appearance or to make touch targets easier to hit:
+调高轨道高度，既显得更醒目，也更容易点中：
 
 ```xml
 <Slider.Styles>
@@ -193,27 +193,27 @@ Increase the track height for a bolder appearance or to make touch targets easie
 ```
 
 :::note
-Template part names such as `PART_DecreaseButton` and `PART_IncreaseButton` are defined by the default Fluent theme. If you use a custom control template, your part names may differ.
+`PART_DecreaseButton`、`PART_IncreaseButton` 这些模板部件名由默认的 Fluent 主题定义。若你用的是自定义控件模板，部件名可能不同。
 :::
 
 ## 关键属性速查 {#key-properties-reference}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Minimum` | `double` | Lower bound. Default: 0. |
-| `Maximum` | `double` | Upper bound. Default: 100. |
-| `Value` | `double` | Current value. |
-| `SmallChange` | `double` | Arrow key increment. Default: 1. |
-| `LargeChange` | `double` | Track click or Page key increment. Default: 10. |
-| `TickFrequency` | `double` | Spacing between tick marks. |
-| `IsSnapToTickEnabled` | `bool` | Snap value to nearest tick. |
-| `TickPlacement` | `TickPlacement` | Where to draw tick marks. |
+| `Minimum` | `double` | 下界，默认值：0。 |
+| `Maximum` | `double` | 上界，默认值：100。 |
+| `Value` | `double` | 当前值。 |
+| `SmallChange` | `double` | 方向键的增量，默认值：1。 |
+| `LargeChange` | `double` | 点击轨道或按 Page 键时的增量，默认值：10。 |
+| `TickFrequency` | `double` | 刻度线之间的间隔。 |
+| `IsSnapToTickEnabled` | `bool` | 把取值吸附到最近的刻度。 |
+| `TickPlacement` | `TickPlacement` | 刻度线画在哪一侧。 |
 | `Orientation` | `Orientation` | `Horizontal`（默认）或 `Vertical`。 |
-| `IsDirectionReversed` | `bool` | Reverse the direction of increasing value. |
+| `IsDirectionReversed` | `bool` | 反转数值增大的方向。 |
 
 ## 另请参阅 {#see-also}
 
-- [Slider](/controls/input/selectors/slider): Full property and event reference for the `Slider` control.
-- [Binding to controls](/docs/data-binding/binding-to-controls): Bind one control's property to another using `#name` syntax.
-- [Data validation](/docs/app-development/data-validation): Add validation rules to slider-bound properties.
-- [Accessibility](/docs/app-development/accessibility): Keyboard and screen-reader considerations for interactive controls.
+- [Slider](/controls/input/selectors/slider)：`Slider` 控件的完整属性与事件参考。
+- [绑定到控件](/docs/data-binding/binding-to-controls)：用 `#name` 语法把一个控件的属性绑定到另一个控件。
+- [数据校验](/docs/app-development/data-validation)：为滑块绑定的属性加上校验规则。
+- [无障碍](/docs/app-development/accessibility)：可交互控件在键盘和屏幕阅读器方面的注意事项。

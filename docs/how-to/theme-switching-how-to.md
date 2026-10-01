@@ -1,15 +1,15 @@
 ---
 id: theme-switching-how-to
-title: "How to: Switch between light and dark themes"
-description: Implement a light/dark theme toggle, persist the choice, and create theme-aware resources.
+title: "操作指南：在浅色与深色主题间切换"
+description: 实现浅色/深色主题切换、保存用户的选择，并编写随主题而变的资源。
 doc-type: how-to
 ---
 
-This guide shows you how to implement a light/dark theme toggle, persist your user's preference, and create theme-aware resources that respond automatically when the theme changes.
+本指南演示如何实现浅色/深色主题切换、保存用户的偏好，以及编写能在主题变化时自动响应的资源。
 
-## Setting the theme globally
+## 全局设置主题 {#setting-the-theme-globally}
 
-You can override the system default at the application level by setting `RequestedThemeVariant` in your `App.axaml` file:
+在 `App.axaml` 文件中设置 `RequestedThemeVariant`，即可在应用层面覆盖系统默认值：
 
 ```xml title="App.axaml"
 <Application RequestedThemeVariant="Dark">
@@ -19,15 +19,15 @@ You can override the system default at the application level by setting `Request
 </Application>
 ```
 
-The `RequestedThemeVariant` property accepts three values:
+`RequestedThemeVariant` 属性接受三种取值：
 
-- `Default` follows the operating system theme.
-- `Light` forces the light theme.
-- `Dark` forces the dark theme.
+- `Default` 跟随操作系统主题。
+- `Light` 强制使用浅色主题。
+- `Dark` 强制使用深色主题。
 
-## Switching themes at runtime
+## 在运行时切换主题 {#switching-themes-at-runtime}
 
-To change the theme from code, set `RequestedThemeVariant` on the current `Application` instance:
+要在代码中换主题，请设置当前 `Application` 实例上的 `RequestedThemeVariant`：
 
 ```csharp
 if (Application.Current is { } app)
@@ -36,9 +36,9 @@ if (Application.Current is { } app)
 }
 ```
 
-### Toggle command in a view model
+### 视图模型中的切换命令 {#toggle-command-in-a-view-model}
 
-You can bind a `ToggleSwitch` to a view model property so your users can switch between light and dark mode. The following example uses the MVVM Community Toolkit source generators:
+你可以把 `ToggleSwitch` 绑定到视图模型的属性，让用户在浅色和深色模式之间切换。下面的例子用了 MVVM Community Toolkit 的源生成器：
 
 ```csharp title="SettingsViewModel.cs"
 public partial class SettingsViewModel : ObservableObject
@@ -61,9 +61,9 @@ public partial class SettingsViewModel : ObservableObject
               OnContent="Dark" OffContent="Light" />
 ```
 
-### Three-way selection: light, dark, system
+### 三选一：浅色、深色、跟随系统 {#three-way-selection-light-dark-system}
 
-If you want to give your users a third option that follows the operating system preference, use a `ComboBox` with three items and map the selection to `ThemeVariant.Default`:
+若你想再给用户一个跟随操作系统偏好的选项，可以用一个带三个条目的 `ComboBox`，把选择结果映射到 `ThemeVariant.Default`：
 
 ```csharp title="SettingsViewModel.cs"
 public partial class SettingsViewModel : ObservableObject
@@ -93,9 +93,9 @@ public partial class SettingsViewModel : ObservableObject
 </ComboBox>
 ```
 
-## Persisting the theme choice
+## 保存主题选择 {#persisting-the-theme-choice}
 
-To make your user's theme preference survive application restarts, save it during shutdown and restore it during startup. The following example loads a saved preference in your `App.axaml.cs` override:
+要让用户的主题偏好在应用重启后依然有效，请在退出时保存、启动时恢复。下面的例子在 `App.axaml.cs` 重写中载入已保存的偏好：
 
 ```csharp title="App.axaml.cs"
 public override void OnFrameworkInitializationCompleted()
@@ -113,11 +113,11 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-See [Data persistence how-to](/docs/how-to/data-persistence-how-to) for a complete `SettingsService` implementation you can use to read and write user preferences.
+一份完整的、可用来读写用户偏好的 `SettingsService` 实现，请参阅[数据持久化操作指南](/docs/how-to/data-persistence-how-to)。
 
-## Theme-aware colors with ThemeDictionaries
+## 用 ThemeDictionaries 定义随主题而变的颜色 {#theme-aware-colors-with-themedictionaries}
 
-You can define resources that change automatically based on the active theme. Place a `ResourceDictionary.ThemeDictionaries` block inside your `Application.Resources` with separate dictionaries keyed to `Light` and `Dark`:
+你可以定义随当前主题自动变化的资源：在 `Application.Resources` 里放一个 `ResourceDictionary.ThemeDictionaries` 块，其中分别以 `Light` 和 `Dark` 为键放两本字典：
 
 ```xml title="App.axaml"
 <Application.Resources>
@@ -138,7 +138,7 @@ You can define resources that change automatically based on the active theme. Pl
 </Application.Resources>
 ```
 
-Reference these resources with `DynamicResource` so they update when the theme changes:
+用 `DynamicResource` 引用这些资源，主题一变它们就会更新：
 
 ```xml
 <Border Background="{DynamicResource CardBackground}"
@@ -149,12 +149,12 @@ Reference these resources with `DynamicResource` so they update when the theme c
 ```
 
 :::tip
-Always use `DynamicResource` (not `StaticResource`) for theme-variant resources. `StaticResource` resolves once at load time and will not update when your user switches themes.
+主题变体相关的资源请一律用 `DynamicResource`，而不是 `StaticResource`。`StaticResource` 在加载时解析一次就定下了，用户切换主题后不会更新。
 :::
 
-## ThemeVariantScope for mixed themes
+## 用 ThemeVariantScope 混用主题 {#themevariantscope-for-mixed-themes}
 
-You can force a specific theme on a portion of your UI using `ThemeVariantScope`. This is useful when you want part of a window to remain in a fixed theme regardless of the global setting:
+你可以用 `ThemeVariantScope` 为界面的某一部分强制指定主题。当你希望窗口的某块区域不受全局设置影响、始终保持固定主题时，这很有用：
 
 ```xml
 <StackPanel Spacing="16">
@@ -174,9 +174,9 @@ You can force a specific theme on a portion of your UI using `ThemeVariantScope`
 </StackPanel>
 ```
 
-## Detecting the current theme
+## 判断当前主题 {#detecting-the-current-theme}
 
-You can check the active theme variant at runtime using the `ActualThemeVariant` property. This is useful when you need to apply logic that cannot be expressed in XAML, such as selecting platform-specific assets:
+你可以通过 `ActualThemeVariant` 属性在运行时查看当前的主题变体。当某些逻辑无法用 XAML 表达时（比如挑选平台专属的资产），这就派上用场了：
 
 ```csharp
 if (Application.Current is { } app)
@@ -190,9 +190,9 @@ if (Application.Current is { } app)
 }
 ```
 
-## Responding to theme changes
+## 响应主题变化 {#responding-to-theme-changes}
 
-Subscribe to the `ActualThemeVariantChanged` event to react when the theme changes. This is useful for updating non-XAML resources such as chart colors, map tiles, or third-party control configurations:
+订阅 `ActualThemeVariantChanged` 事件，即可在主题变化时作出响应。这适合用来更新非 XAML 的资源，比如图表配色、地图瓦片，或者第三方控件的配置：
 
 ```csharp
 if (Application.Current is { } app)
@@ -205,9 +205,9 @@ if (Application.Current is { } app)
 }
 ```
 
-## Custom theme variants
+## 自定义主题变体 {#custom-theme-variants}
 
-You can define your own named theme variants beyond `Light` and `Dark`. Create a new `ThemeVariant` and specify a fallback variant that Avalonia uses for any resources you have not explicitly defined:
+除了 `Light` 和 `Dark`，你还可以定义自己的具名主题变体。创建一个新的 `ThemeVariant`，并指定一个回退变体，供 Avalonia 在你没有显式定义某些资源时使用：
 
 ```csharp
 public static class MyThemeVariants
@@ -216,7 +216,7 @@ public static class MyThemeVariants
 }
 ```
 
-Then add a matching `ThemeDictionary` entry keyed to your custom variant using the x:Static directive:
+然后用 x:Static 指令，添加一条以你的自定义变体为键的 `ThemeDictionary` 条目：
 
 ```xml
 <ResourceDictionary.ThemeDictionaries>
@@ -227,7 +227,7 @@ Then add a matching `ThemeDictionary` entry keyed to your custom variant using t
 </ResourceDictionary.ThemeDictionaries>
 ```
 
-To activate your custom variant, assign it to `RequestedThemeVariant` just as you would with the built-in variants:
+要启用自定义变体，像用内置变体那样把它赋给 `RequestedThemeVariant` 即可：
 
 ```csharp
 app.RequestedThemeVariant = HighContrast;
@@ -235,7 +235,7 @@ app.RequestedThemeVariant = HighContrast;
 
 ## 另请参阅 {#see-also}
 
-- [Theme variants](/docs/styling/theme-variants): Full reference for the theme variant system.
-- [Resource dictionary](/docs/app-development/resource-dictionary): How resource lookup and merging work.
-- [Themes](/docs/styling/themes): `FluentTheme` and `SimpleTheme` configuration.
-- [Data persistence how-to](/docs/how-to/data-persistence-how-to): Saving settings across sessions.
+- [主题变体](/docs/styling/theme-variants)：主题变体机制的完整参考。
+- [资源字典](/docs/app-development/resource-dictionary)：资源查找与合并的运作方式。
+- [主题](/docs/styling/themes)：`FluentTheme` 与 `SimpleTheme` 的配置。
+- [数据持久化操作指南](/docs/how-to/data-persistence-how-to)：跨会话保存设置。

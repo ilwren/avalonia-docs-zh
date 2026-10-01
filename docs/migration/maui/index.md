@@ -1,61 +1,61 @@
 ---
 title: .NET MAUI
-description: Migrate from .NET MAUI to Avalonia or extend MAUI apps with the Avalonia MAUI Backend.
+description: 从 .NET MAUI 迁移到 Avalonia，或用 Avalonia MAUI 后端扩展现有的 MAUI 应用。
 doc-type: migration
 ---
 
-If you are a .NET MAUI developer, you have two paths to Avalonia. You can keep your existing MAUI codebase and use the Avalonia MAUI Backend to extend it to new platforms, or you can migrate your application to Avalonia directly for full control over the UI framework. This page covers both options.
+如果你是 .NET MAUI 开发者，通往 Avalonia 有两条路：一是保留现有的 MAUI 代码库，用 Avalonia MAUI 后端把它扩展到更多平台；二是直接把应用迁移到 Avalonia，从而完全掌控 UI 框架。本页把两条路都讲一讲。
 
-:::tip[Need help?]
-The Avalonia team has hands-on experience working with MAUI codebases. Whether you want to adopt the Avalonia MAUI Backend or migrate fully to Avalonia, this is a service we provide. See [Avalonia Services](https://avaloniaui.net/services) for more information.
+:::tip[需要帮助？]
+Avalonia 团队有大量与 MAUI 代码库打交道的实战经验。无论你是想采用 Avalonia MAUI 后端，还是打算完整迁移到 Avalonia，我们都提供相应服务。详见 [Avalonia 服务](https://avaloniaui.net/services)。
 :::
 
-## Option 1: Avalonia MAUI backend
+## 方案一：Avalonia MAUI 后端 {#option-1-avalonia-maui-backend}
 
-The Avalonia MAUI Backend lets you keep your .NET MAUI codebase and replace the rendering layer with Avalonia. Your existing MAUI code, controls, handlers, and layouts continue to work, but they render through Avalonia's cross-platform engine instead of native platform controls.
+Avalonia MAUI 后端让你保留现有的 .NET MAUI 代码库，只把渲染层换成 Avalonia。你现有的 MAUI 代码、控件、handler 和布局照常工作，只是改由 Avalonia 的跨平台引擎渲染，而不再走平台原生控件。
 
-This gives your MAUI application access to platforms that MAUI does not support on its own:
+这让你的 MAUI 应用得以涉足 MAUI 本身并不支持的平台：
 
-- **Desktop Linux:** First-class desktop support on Ubuntu, Debian, Fedora, and other distributions, using the same Avalonia renderer that powers demanding desktop applications in production today.
-- **Embedded Linux:** Avalonia already runs on embedded Linux devices, from Raspberry Pi panels to industrial HMIs. The MAUI Backend brings those same capabilities to your MAUI applications.
-- **WebAssembly:** Deploy your MAUI application to the browser with no native dependencies on the client.
-- **Improved desktop performance:** On Windows and macOS, the Avalonia backend plugs into Avalonia's mature desktop story. Early testing on macOS shows significantly improved performance compared to the Mac Catalyst approach.
+- **桌面 Linux：**在 Ubuntu、Debian、Fedora 等发行版上获得一流的桌面支持，所用的正是如今支撑着严苛生产级桌面应用的那个 Avalonia 渲染器。
+- **嵌入式 Linux：**从树莓派面板到工业 HMI，Avalonia 早已跑在各类嵌入式 Linux 设备上。MAUI 后端把这些能力一并带给你的 MAUI 应用。
+- **WebAssembly：**把你的 MAUI 应用部署到浏览器，客户端不带任何原生依赖。
+- **更好的桌面性能：**在 Windows 和 macOS 上，Avalonia 后端接入了 Avalonia 成熟的桌面方案。macOS 上的早期测试表明，其性能比走 Mac Catalyst 的路子有显著提升。
 
-Because Avalonia draws every control itself, your MAUI application looks and behaves consistently whether it runs on Windows, macOS, Linux, mobile, or in a browser tab.
+由于每个控件都由 Avalonia 亲自绘制，你的 MAUI 应用无论跑在 Windows、macOS、Linux、移动端还是浏览器标签页里，观感和行为都始终如一。
 
 ### 运作原理 {#how-it-works}
 
-At its core, the Avalonia MAUI Backend builds a single set of handlers that map MAUI controls to Avalonia controls. When you create a [`Button`](/api/avalonia/controls/button) in MAUI, it renders as an Avalonia `Button` on every platform, rather than a platform-specific native control.
+Avalonia MAUI 后端的核心，是构建一套把 MAUI 控件映射到 Avalonia 控件的 handler。当你在 MAUI 中创建 [`Button`](/api/avalonia/controls/button) 时，它在所有平台上都渲染为 Avalonia 的 `Button`，而不是各平台的原生控件。
 
-MAUI's layout system works similarly. MAUI handles the positioning and constraint calculations itself, and the Avalonia backend positions controls exactly as MAUI specifies. In practice, this means many standard MAUI layout controls work without modification.
+MAUI 的布局系统也是同理：定位和约束计算仍由 MAUI 自己完成，Avalonia 后端严格按 MAUI 给出的结果摆放控件。实际效果是，许多标准的 MAUI 布局控件无需改动即可工作。
 
-Libraries that use `SkiaSharp` and `Microsoft.Maui.Graphics` also work, since Avalonia includes a SkiaSharp-based renderer. This enables a direct mapping of drawn controls with minimal changes.
+用到 `SkiaSharp` 和 `Microsoft.Maui.Graphics` 的库同样能用，因为 Avalonia 自带基于 SkiaSharp 的渲染器。这让自绘控件得以直接映射过来，改动极少。
 
-### What this means for your code
+### 这对你的代码意味着什么 {#what-this-means-for-your-code}
 
-You do not need to rewrite your application. You add the Avalonia MAUI Backend libraries to your existing project and target the new platforms. Your MAUI XAML, view models, services, and business logic stay the same.
+你不必重写应用。只需把 Avalonia MAUI 后端的库加进现有项目，并把新平台设为目标即可。你的 MAUI XAML、视图模型、服务和业务逻辑统统照旧。
 
-Build-time tools like Resizetizer continue to work. During the build, Resizetizer converts your images, SVGs, and fonts into resources, and the Avalonia backend maps them to Avalonia resources automatically.
+Resizetizer 之类的构建期工具照常可用。构建过程中，Resizetizer 会把你的图片、SVG 和字体转成资源，Avalonia 后端再自动把它们映射为 Avalonia 资源。
 
-### Current status
+### 当前进展 {#current-status}
 
-The Avalonia team is developing the MAUI Backend in collaboration with engineers from the MAUI ecosystem. The goal is a stable release alongside .NET 11. Preview releases will follow the .NET MAUI release cadence, with nightly builds available from CI.
+Avalonia 团队正在与 MAUI 生态的工程师合作开发这个 MAUI 后端，目标是与 .NET 11 同步发布稳定版。预览版将跟随 .NET MAUI 的发布节奏，CI 上也会提供每夜构建。
 
-The initial focus is on Linux and WebAssembly, since MAUI does not target those platforms today. The backend also runs on Windows and macOS, and support for all Avalonia targets is planned.
+由于 MAUI 目前并不支持 Linux 和 WebAssembly，前期工作会先聚焦这两个平台。该后端在 Windows 和 macOS 上同样可以运行，并计划支持 Avalonia 的全部目标平台。
 
-The project will not fork .NET MAUI. Any changes needed to support the integration are contributed upstream to the official .NET MAUI repository, so the work benefits the entire ecosystem.
+这个项目不会 fork .NET MAUI。为支撑这项集成所需的改动，都会回馈到 .NET MAUI 官方仓库的上游，让整个生态都受益。
 
 :::note
-The Avalonia MAUI Backend is in active development. Register your interest at [avaloniaui.net](https://avaloniaui.net) to get updates and early access.
+Avalonia MAUI 后端正在积极开发中。欢迎在 [avaloniaui.net](https://avaloniaui.net) 登记意向，以获取最新进展和抢先体验资格。
 :::
 
-## Option 2: migrate to Avalonia
+## 方案二：迁移到 Avalonia {#option-2-migrate-to-avalonia}
 
-If you want full control over the UI framework, or if your application needs capabilities beyond what MAUI offers (CSS-like styling, custom rendering, advanced desktop features), you can migrate your MAUI application to Avalonia directly.
+若你想完全掌控 UI 框架，或者你的应用需要 MAUI 给不了的能力（类 CSS 样式、自定义渲染、进阶桌面特性），那就直接把 MAUI 应用迁移到 Avalonia 吧。
 
 ### 前置条件 {#prerequisites}
 
-Before you begin, make sure you have the following in place:
+动手之前，请先确认以下几点已经就位：
 
 - **.NET 8 or later** installed. Avalonia 11+ targets .NET 8 as the minimum.
 - **Avalonia templates** installed. Run `dotnet new install Avalonia.Templates` from the command line.

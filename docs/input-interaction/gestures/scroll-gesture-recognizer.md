@@ -1,11 +1,11 @@
 ---
 id: scroll-gesture-recognizer
-title: Scroll
+title: 滚动
 ---
 
-A gesture recognizer that tracks a scrolling gesture for panning content. `ScrollGestureRecognizer` detects when a pointer drags inside a control's bounds and translates the movement into scroll deltas, with support for inertia (the content continues scrolling after the pointer is released and gradually decelerates). It supports horizontal scrolling, vertical scrolling, or both simultaneously.
+一个跟踪滚动手势、用于平移内容的手势识别器。`ScrollGestureRecognizer` 会检测控件边界内的指针拖动，并把这段移动换算成滚动增量，同时支持惯性（指针松开后内容继续滚动并逐渐减速）。它支持横向滚动、纵向滚动，或者两者兼顾。
 
-Use `ScrollGestureRecognizer` when a control needs to pan its content freely in one or more directions. For a deliberate, single-direction edge-to-edge drag (such as pull-to-refresh), use [`PullGestureRecognizer`](/docs/input-interaction/gestures/pull-gesture-recognizer) instead.
+当控件需要在一个或多个方向上自由平移内容时，请用 `ScrollGestureRecognizer`。若要的是刻意为之、从边缘出发的单向拖动（比如下拉刷新），请改用 [`PullGestureRecognizer`](/docs/input-interaction/gestures/pull-gesture-recognizer)。
 
 <div style={{textAlign: 'center', margin: '24px 0'}}>
 <svg width="240" height="190" viewBox="0 0 240 190" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,8 +66,8 @@ Use `ScrollGestureRecognizer` when a control needs to pan its content freely in 
 </svg>
 </div>
 
-## Using a ScrollGestureRecognizer
-A ScrollGestureRecognizer can be attached to a control using the control's `GestureRecognizers` property.
+## 使用 ScrollGestureRecognizer {#using-a-scrollgesturerecognizer}
+通过控件的 `GestureRecognizers` 属性，可以把 ScrollGestureRecognizer 挂到控件上。
 ```xml
 <Image Stretch="UniformToFill"
         Margin="5"
@@ -88,10 +88,10 @@ image.GestureRecognizers.Add(new ScrollGestureRecognizer()
 });
 ```
 
-The ScrollGestureRecognizer raises a `InputElement.ScrollGestureEvent` when it detects the start of a scroll gesture. When the scroll ends, from the pointer being released or another gesture start, it raises a `InputElement.ScrollGestureEndedEvent`.
+ScrollGestureRecognizer 检测到滚动手势开始时会引发 `InputElement.ScrollGestureEvent`；当滚动结束——指针松开或另一个手势开始——时会引发 `InputElement.ScrollGestureEndedEvent`。
 
-## Binding events
-After the ScrollGestureRecognizer has been added to your control, you need to bind them in your code behind either through an inline handler or to an event function:
+## 绑定事件 {#binding-events}
+把 ScrollGestureRecognizer 添加到控件之后，你需要在代码隐藏中绑定这些事件，既可以写内联处理程序，也可以绑到一个事件函数上：
 ```csharp title='C#'
 image.AddHandler(InputElement.ScrollGestureEvent, (s, e) => { });
 image.AddHandler(InputElement.ScrollGestureEndedEvent, (s, e) => { });
@@ -103,7 +103,7 @@ image.AddHandler(InputElement.ScrollGestureEndedEvent, Image_ScrollGestureEnded)
 private void Image_ScrollGesture(object? sender, ScrollGestureEventArgs e) { }
 private void Image_ScrollGestureEnded(object? sender, ScrollGestureEndedEventArgs e) { }
 ```
-If your event handles the gesture completely, you can mark the event as handled by setting:
+若你的事件处理程序已经把这个手势处理完毕，可以这样把事件标记为已处理：
 ```csharp title='C#'
 e.Handled = true;
 ```
@@ -121,11 +121,11 @@ e.Handled = true;
     <tbody>
       <tr>
         <td>CanVerticallyScroll</td>
-        <td>Defines whether the content can be scrolled vertically. </td>
+        <td>决定内容能否纵向滚动。 </td>
       </tr>
       <tr>
         <td>CanHorizontallyScroll</td>
-        <td>Defines whether the content can be scrolled horizontally. </td>
+        <td>决定内容能否横向滚动。 </td>
       </tr>
     </tbody>
   </table>
@@ -134,7 +134,7 @@ e.Handled = true;
 ## 更多信息 {#more-information}
 
 :::info
-For the complete API documentation about this gesture recognizer, see the [ScrollGestureRecognizer API reference](/api/avalonia/input/gesturerecognizers/scrollgesturerecognizer).
+这个手势识别器的完整 API 文档，请参阅 [ScrollGestureRecognizer API 参考](/api/avalonia/input/gesturerecognizers/scrollgesturerecognizer)。
 :::
 
 :::info
@@ -143,6 +143,6 @@ For the complete API documentation about this gesture recognizer, see the [Scrol
 
 ## 另请参阅 {#see-also}
 
-- [Gestures](/docs/input-interaction/gestures): Overview of gesture recognizers and built-in gesture events.
-- [Pull Gesture Recognizer](/docs/input-interaction/gestures/pull-gesture-recognizer): Pull gesture for pull-to-refresh interactions.
-- [Pinch Gesture Recognizer](/docs/input-interaction/gestures/pinch-gesture-recognizer): Pinch gesture for zoom interactions.
+- [手势](/docs/input-interaction/gestures)：手势识别器与内置手势事件概览。
+- [下拉手势识别器](/docs/input-interaction/gestures/pull-gesture-recognizer)：用于下拉刷新交互的拉拽手势。
+- [捏合手势识别器](/docs/input-interaction/gestures/pinch-gesture-recognizer)：用于缩放交互的捏合手势。

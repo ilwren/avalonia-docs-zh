@@ -1,15 +1,15 @@
 ---
 id: treeview-how-to
-title: "How to: Work with TreeView"
-description: Hierarchical data binding, lazy loading, selection handling, and customization with TreeView.
+title: "操作指南：使用 TreeView"
+description: TreeView 的层级数据绑定、惰性加载、选择处理与自定义。
 doc-type: how-to
 ---
 
-This guide covers common TreeView scenarios: hierarchical data binding, lazy loading, selection handling, and customization.
+本指南介绍 TreeView 的常见场景：层级数据绑定、惰性加载、选择处理与自定义。
 
 ## Basic Hierarchical Binding
 
-Bind a [`TreeView`](/api/avalonia/controls/treeview) to a tree of view model objects using `HierarchicalDataTemplate`:
+用 `HierarchicalDataTemplate` 把 [`TreeView`](/api/avalonia/controls/treeview) 绑定到一棵视图模型对象树：
 
 ```csharp
 public class FolderItem
@@ -29,11 +29,11 @@ public class FolderItem
 </TreeView>
 ```
 
-[`TreeDataTemplate`](/api/avalonia/markup/xaml/templates/treedatatemplate) is the key: its `ItemsSource` property tells the `TreeView` where to find child items for each node. The same template is applied recursively at every level.
+关键在于 [`TreeDataTemplate`](/api/avalonia/markup/xaml/templates/treedatatemplate)：它的 `ItemsSource` 属性告诉 `TreeView` 去哪里找每个节点的子项。同一个模板会在每一层递归套用。
 
-### Multiple node types
+### 多种节点类型 {#multiple-node-types}
 
-Use `DataTemplateSelector` patterns with `DataType` to display different node types:
+用 `DataTemplateSelector` 的写法配合 `DataType` 来显示不同类型的节点：
 
 ```csharp
 public class FolderNode
@@ -70,13 +70,13 @@ public class FileNode
 </TreeView>
 ```
 
-`FileNode` uses a regular `DataTemplate` (no `ItemsSource`) because files have no children. `FolderNode` uses `TreeDataTemplate` to allow expansion.
+`FileNode` 用的是普通的 `DataTemplate`（没有 `ItemsSource`），因为文件没有子项；`FolderNode` 则用 `TreeDataTemplate` 以支持展开。
 
 ## Selection
 
 ### 单选 {#single-selection}
 
-Bind `SelectedItem` to track the selected node:
+绑定 `SelectedItem` 来跟踪选中的节点：
 
 ```xml
 <TreeView ItemsSource="{Binding Items}"
@@ -96,14 +96,14 @@ partial void OnSelectedNodeChanged(object? value)
 
 ### 多选 {#multiple-selection}
 
-Enable multiple selection with `SelectionMode`:
+用 `SelectionMode` 启用多选：
 
 ```xml
 <TreeView ItemsSource="{Binding Items}"
           SelectionMode="Multiple">
 ```
 
-Access selected items through the `SelectedItems` property in code-behind, or use the `SelectionChanged` event:
+在代码隐藏中通过 `SelectedItems` 属性访问选中项，或者使用 `SelectionChanged` 事件：
 
 ```csharp
 private void OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
@@ -114,9 +114,9 @@ private void OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
 }
 ```
 
-## Lazy Loading (Load on Expand)
+## 惰性加载（展开时才加载） {#lazy-loading-load-on-expand}
 
-For large trees where loading all children up front is expensive, load children on demand when the user expands a node:
+若树很大、一上来就加载全部子节点代价太高，可以等用户展开节点时再按需加载：
 
 ```csharp
 public partial class LazyFolderNode : ObservableObject
@@ -160,7 +160,7 @@ public partial class LazyFolderNode : ObservableObject
 }
 ```
 
-Bind `IsExpanded` in the `TreeDataTemplate`:
+在 `TreeDataTemplate` 中绑定 `IsExpanded`：
 
 ```xml
 <TreeView ItemsSource="{Binding RootFolders}">
@@ -177,11 +177,11 @@ Bind `IsExpanded` in the `TreeDataTemplate`:
 </TreeView>
 ```
 
-The `TreeViewItem` style binds `IsExpanded` on the container to the view model property. When the user expands a node, the setter triggers `OnIsExpandedChanged`, which loads the children.
+`TreeViewItem` 样式把容器上的 `IsExpanded` 绑定到视图模型属性。用户展开节点时，setter 会触发 `OnIsExpandedChanged`，由它把子节点加载进来。
 
 ## Async Lazy Loading
 
-For loading children from a database or API:
+若要从数据库或 API 加载子节点：
 
 ```csharp
 partial void OnIsExpandedChanged(bool value)
@@ -203,11 +203,11 @@ private async Task LoadChildrenAsync()
 }
 ```
 
-Since `LoadChildrenAsync` is `async`, it returns to the UI thread after `await`, so updating `Children` is safe without explicit dispatcher calls.
+由于 `LoadChildrenAsync` 是 `async`，`await` 之后代码会回到 UI 线程，所以更新 `Children` 无需显式调用 dispatcher。
 
-## Expanding and Collapsing Programmatically
+## 用代码展开与折叠 {#expanding-and-collapsing-programmatically}
 
-To expand or collapse all nodes, walk the tree:
+要展开或折叠所有节点，遍历整棵树即可：
 
 ```csharp
 private void ExpandAll(IEnumerable<LazyFolderNode> nodes)
@@ -229,9 +229,9 @@ private void CollapseAll(IEnumerable<LazyFolderNode> nodes)
 }
 ```
 
-## Search and Filter
+## 搜索与筛选 {#search-and-filter}
 
-Filter the tree by hiding nodes that do not match a search term. Since `TreeView` does not have built-in filtering, rebuild the visible tree from the source data:
+筛选树的办法是把不匹配搜索词的节点藏起来。由于 `TreeView` 没有内置筛选，得从源数据重新构建出可见的那棵树：
 
 ```csharp
 [ObservableProperty]
@@ -272,9 +272,9 @@ private FolderNode? FilterNode(FolderNode node, string search)
 }
 ```
 
-## Drag and Drop in TreeView
+## TreeView 中的拖放 {#drag-and-drop-in-treeview}
 
-Enable drag-and-drop to rearrange tree nodes:
+启用拖放来重新排列树节点：
 
 ```xml
 <TreeView ItemsSource="{Binding Items}"
@@ -287,11 +287,11 @@ Enable drag-and-drop to rearrange tree nodes:
 </TreeView>
 ```
 
-Handle the drag events in code-behind or use behaviors. See [Drag and Drop](/docs/input-interaction/drag-and-drop) for the full API.
+在代码隐藏中处理拖拽事件，或者改用行为（behavior）。完整 API 请参阅[拖放](/docs/input-interaction/drag-and-drop)。
 
 ## Styling TreeViewItem
 
-Customize the appearance of tree nodes:
+自定义树节点的外观：
 
 ```xml
 <TreeView.Styles>
@@ -315,7 +315,7 @@ Customize the appearance of tree nodes:
 
 ## See Also
 
-- [TreeView Control Reference](/controls/data-display/structured-data/treeview): Property tables and basic examples.
-- [Data Templates](/docs/data-templates/introduction-to-data-templates): How data templates work.
-- [Drag and Drop](/docs/input-interaction/drag-and-drop): Drag-and-drop support.
-- [Collection Views](/docs/data-binding/collection-views): Filtering and sorting collections.
+- [TreeView 控件参考](/controls/data-display/structured-data/treeview)：属性表与基础示例。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：数据模板的运作原理。
+- [拖放](/docs/input-interaction/drag-and-drop)：拖放支持。
+- [集合视图](/docs/data-binding/collection-views)：集合的筛选与排序。

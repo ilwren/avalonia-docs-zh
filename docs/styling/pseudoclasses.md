@@ -19,9 +19,9 @@ These pseudoclasses are defined by `InputElement` and are available on every `Co
 |:-----------------|----------------------------------------------------------------|
 | `:disabled`      | The control is disabled and cannot be interacted with.         |
 | `:pointerover`   | The pointer is over the control as determined by hit testing.  |
-| `:focus`         | The control has focus.                                         |
-| `:focus-within`  | The control has focus or contains a descendant that has focus. |
-| `:focus-visible` | The control has focus and should show a visual indicator.      |
+| `:focus`         | 控件持有焦点。                                         |
+| `:focus-within`  | 控件持有焦点，或者它的某个后代持有焦点。 |
+| `:focus-visible` | 控件持有焦点，并且应当显示视觉标记。      |
 
 Individual controls define additional pseudoclasses specific to their state. For example, `CheckBox` exposes `:checked`, and `Button` exposes `:pressed`.
 

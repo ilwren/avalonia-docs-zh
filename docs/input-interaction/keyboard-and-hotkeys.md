@@ -1,11 +1,11 @@
 ---
 id: keyboard-and-hotkeys
-title: Keyboard and hotkeys
-description: Learn how to define hotkeys and key bindings in Avalonia using HotKey properties, KeyBindings, KeyGesture, and HotKeyManager for keyboard-driven commands.
+title: 键盘与快捷键
+description: 学会在 Avalonia 中用 HotKey 属性、KeyBindings、KeyGesture 和 HotKeyManager 定义快捷键与按键绑定，做出键盘驱动的命令。
 doc-type: reference
 ---
 
-Controls that implement `ICommandSource` have a `HotKey` property that you can set or bind to. When the user presses the hotkey, Avalonia executes the command [bound](/docs/input-interaction/adding-interactivity) to that control.
+实现了 `ICommandSource` 的控件都有一个 `HotKey` 属性，你可以给它赋值或绑定。用户按下快捷键时，Avalonia 就会执行[绑定](/docs/input-interaction/adding-interactivity)到该控件的命令。
 
 ```xml title="XAML"
 <Menu>
@@ -18,33 +18,33 @@ Controls that implement `ICommandSource` have a `HotKey` property that you can s
 </Menu>
 ```
 
-You can also use the static methods of the `HotKeyManager` class to set and get hotkeys from code:
+你也可以用 `HotKeyManager` 类的静态方法在代码中设置和读取快捷键：
 
 ```csharp title="C#"
 InitializeComponent();
 HotKeyManager.SetHotKey(saveMenuItem, new KeyGesture(Key.S, KeyModifiers.Control));
 ```
 
-## Keys and modifiers
+## 按键与修饰键 {#keys-and-modifiers}
 
-A hotkey must have one [`Key`](/api/avalonia/input/key) and zero or more [`KeyModifiers`](/api/avalonia/input/keymodifiers). When you set a hotkey in XAML using the `HotKey` property, the string is parsed as a [`KeyGesture`](/api/avalonia/input/keygesture). Avalonia uses `Enum.Parse` to parse the key and modifiers, but you can also use common synonyms such as `Ctrl` instead of `Control`, or `Win` instead of `Meta`.
+一个快捷键必须有一个 [`Key`](/api/avalonia/input/key)，外加零个或多个 [`KeyModifiers`](/api/avalonia/input/keymodifiers)。当你在 XAML 中用 `HotKey` 属性设置快捷键时，这个字符串会被解析成 [`KeyGesture`](/api/avalonia/input/keygesture)。Avalonia 用 `Enum.Parse` 来解析按键和修饰键，但你也可以用常见的同义写法，比如用 `Ctrl` 代替 `Control`，或者用 `Win` 代替 `Meta`。
 
-### Gesture string format
+### 手势字符串的格式 {#gesture-string-format}
 
-A gesture string consists of zero or more modifiers followed by a key name, separated by `+`. For example:
+手势字符串由零个或多个修饰键加上一个按键名组成，彼此用 `+` 分隔。例如：
 
-| Gesture string | 含义 |
+| 手势字符串 | 含义 |
 |---|---|
-| `Ctrl+S` | Control (or Cmd on macOS) + S |
+| `Ctrl+S` | Control（macOS 上是 Cmd）+ S |
 | `Ctrl+Shift+N` | Control + Shift + N |
-| `F5` | F5 with no modifiers |
-| `Alt+Enter` | Alt (or Option on macOS) + Enter |
+| `F5` | 不带修饰键的 F5 |
+| `Alt+Enter` | Alt（macOS 上是 Option）+ Enter |
 
-## Assigning number keys to hotkeys
+## 把数字键设为快捷键 {#assigning-number-keys-to-hotkeys}
 
-When you need to bind number keys, use `D0` through `D9` for the main keyboard row, or `NumPad0` through `NumPad9` for the numeric keypad. See the full [`Key`](/api/avalonia/input/key) enumeration for all available values.
+要绑定数字键时，主键盘那一排用 `D0` 到 `D9`，小键盘则用 `NumPad0` 到 `NumPad9`。全部可用取值请参阅完整的 [`Key`](/api/avalonia/input/key) 枚举。
 
-You can differentiate between the numpad and the main keyboard by binding the same command to two controls and hiding one:
+把同一个命令绑到两个控件上、再把其中一个藏起来，就能区分小键盘和主键盘：
 
 ```xml title="XAML"
 <!-- Ctrl+1 on the main keyboard -->
@@ -61,12 +61,12 @@ You can differentiate between the numpad and the main keyboard by binding the sa
 ```
 
 :::note
-Access-key syntax such as `Content="_1"` does not register a hotkey. Use the `HotKey` property or a [`KeyBinding`](/api/avalonia/input/keybinding) instead.
+`Content="_1"` 这类访问键语法并不会注册快捷键。请改用 `HotKey` 属性或 [`KeyBinding`](/api/avalonia/input/keybinding)。
 :::
 
 ## KeyBindings
 
-`KeyBinding` allows you to define keyboard shortcuts that trigger commands at the control or window level, independent of any specific UI element. This is useful when you want global shortcuts that are not tied to a particular button or menu item.
+`KeyBinding` 让你能在控件或窗口层面定义触发命令的键盘快捷键，而不必依附于某个具体的界面元素。当你想要不绑定在特定按钮或菜单项上的全局快捷键时，这很有用。
 
 ```xml title="XAML"
 <Window.KeyBindings>
@@ -78,7 +78,7 @@ Access-key syntax such as `Content="_1"` does not register a hotkey. Use the `Ho
 </Window.KeyBindings>
 ```
 
-You can also define `KeyBindings` on any control, scoping the shortcut to that control and its children:
+你也可以在任意控件上定义 `KeyBindings`，把快捷键的作用范围限定在该控件及其子元素内：
 
 ```xml title="XAML"
 <ListBox KeyboardNavigation.TabNavigation="Continue">
@@ -89,9 +89,9 @@ You can also define `KeyBindings` on any control, scoping the shortcut to that c
 </ListBox>
 ```
 
-### Passing parameters
+### 传递参数 {#passing-parameters}
 
-Use the `CommandParameter` property on a `KeyBinding` to pass data to your command handler:
+用 `KeyBinding` 上的 `CommandParameter` 属性把数据传给命令处理程序：
 
 ```xml title="XAML"
 <Window.KeyBindings>
@@ -100,22 +100,22 @@ Use the `CommandParameter` property on a `KeyBinding` to pass data to your comma
 </Window.KeyBindings>
 ```
 
-## Common modifier keys
+## 常用修饰键 {#common-modifier-keys}
 
-| Modifier | Windows / Linux | macOS |
+| 修饰键 | Windows / Linux | macOS |
 |---|---|---|
 | `Ctrl` | Ctrl | Cmd |
 | `Alt` | Alt | Option |
 | `Shift` | Shift | Shift |
-| `Meta` | Windows key | Cmd |
+| `Meta` | Windows 键 | Cmd |
 
 :::tip
-On macOS, `Ctrl` in a `KeyGesture` is automatically mapped to the Cmd key. This means `Ctrl+S` works as Cmd+S on macOS without any additional configuration.
+在 macOS 上，`KeyGesture` 中的 `Ctrl` 会自动映射到 Cmd 键。也就是说 `Ctrl+S` 在 macOS 上就是 Cmd+S，无需额外配置。
 :::
 
-## Common hotkey patterns
+## 常见的快捷键套路 {#common-hotkey-patterns}
 
-The following example shows typical undo, redo, and find shortcuts:
+下面的例子给出了典型的撤销、重做和查找快捷键：
 
 ```xml title="XAML"
 <Window.KeyBindings>
@@ -128,21 +128,21 @@ The following example shows typical undo, redo, and find shortcuts:
 </Window.KeyBindings>
 ```
 
-## Reference
+## 参考 {#reference}
 
 * [`HotKeyManager`](/api/avalonia/controls/hotkeymanager)
 * [`KeyGesture`](/api/avalonia/input/keygesture)
 * [`KeyModifiers`](/api/avalonia/input/keymodifiers)
 * [`Key`](/api/avalonia/input/key)
 
-## Source code
+## 源码 {#source-code}
 
 * [HotkeyManager.cs](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/HotkeyManager.cs)
 * [KeyGesture.cs](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/KeyGesture.cs)
 
 ## 另请参阅 {#see-also}
 
-- [Focus](/docs/input-interaction/focus): Focus management and keyboard navigation.
-- [Commanding](/docs/input-interaction/commanding): `ICommand` interface and command binding.
-- [Adding interactivity](/docs/input-interaction/adding-interactivity): Events and commands overview.
-- [Mouse and keyboard shortcuts](/docs/input-interaction/mouse-and-keyboard-shortcuts): Additional keyboard and mouse gesture handling.
+- [焦点](/docs/input-interaction/focus)：焦点管理与键盘导航。
+- [命令](/docs/input-interaction/commanding)：`ICommand` 接口与命令绑定。
+- [加入交互](/docs/input-interaction/adding-interactivity)：事件与命令概览。
+- [鼠标与键盘快捷键](/docs/input-interaction/mouse-and-keyboard-shortcuts)：更多键盘和鼠标手势的处理方式。

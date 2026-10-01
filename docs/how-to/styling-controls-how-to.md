@@ -1,17 +1,17 @@
 ---
 id: styling-controls-how-to
-title: "How to: Style and theme controls"
-description: Customize control appearance with colors, variants, themes, and reusable styles in Avalonia.
+title: "操作指南：为控件设置样式与主题"
+description: 在 Avalonia 中用颜色、变体、主题和可复用样式自定义控件外观。
 doc-type: how-to
 ---
 
-This guide covers practical recipes for customizing control appearance in your Avalonia application, including changing colors, creating variants, theming for light and dark modes, and building reusable styles.
+本指南汇总了在 Avalonia 应用中自定义控件外观的实用做法，包括改颜色、做变体、适配浅色与深色模式，以及编写可复用的样式。
 
-## Change a control's colors
+## 改变控件的颜色 {#change-a-controls-colors}
 
-### Using style classes
+### 使用样式类 {#using-style-classes}
 
-You can define a style class that targets a control by type and class name, then apply that class in your AXAML markup. The following example creates a `primary` class for [`Button`](/api/avalonia/controls/button) controls that sets the `Background` and `Foreground` properties, along with hover and pressed states:
+你可以定义一条按类型和类名匹配控件的样式类，再在 AXAML 标记里给控件加上这个类。下面的例子为 [`Button`](/api/avalonia/controls/button) 控件创建了一个 `primary` 类，设置了 `Background` 和 `Foreground` 属性，同时照顾到悬停和按下状态：
 
 ```xml
 <Window.Styles>
@@ -30,9 +30,9 @@ You can define a style class that targets a control by type and class name, then
 <Button Classes="primary" Content="Submit" />
 ```
 
-### Multiple classes
+### 多个样式类 {#multiple-classes}
 
-You can combine multiple classes on a single control to layer independent style concerns. Each class contributes its own set of property setters, so you can mix and match them freely:
+同一个控件上可以叠加多个样式类，把彼此独立的样式关注点分层处理。每个类各自贡献一组属性设置器，因此你可以随意搭配：
 
 ```xml
 <Style Selector="Button.rounded">
@@ -46,11 +46,11 @@ You can combine multiple classes on a single control to layer independent style 
 <Button Classes="primary rounded large" Content="Submit" />
 ```
 
-In this example, the `Button` receives styles from the `primary`, `rounded`, and `large` classes simultaneously.
+在这个例子里，`Button` 同时受到 `primary`、`rounded` 和 `large` 三个类的影响。
 
-## Create button variants
+## 制作按钮变体 {#create-button-variants}
 
-You can build a consistent set of button variants for your application by defining a base style that applies to all `Button` controls and then adding class-based overrides for each variant. This approach keeps your visual language consistent while giving you flexibility per context:
+你可以先写一条作用于全部 `Button` 控件的基础样式，再为各个变体加上基于样式类的覆盖，从而为应用攒出一套统一的按钮变体。这样既保住了视觉语言的一致性，又能因地制宜：
 
 ```xml
 <Application.Styles>
@@ -100,7 +100,7 @@ You can build a consistent set of button variants for your application by defini
 </Application.Styles>
 ```
 
-You can then use your variants anywhere in the application:
+之后在应用的任何地方都能用上这些变体：
 
 ```xml
 <StackPanel Orientation="Horizontal" Spacing="8">
@@ -110,9 +110,9 @@ You can then use your variants anywhere in the application:
 </StackPanel>
 ```
 
-## Theme-aware colors
+## 随主题而变的颜色 {#theme-aware-colors}
 
-To make your custom colors adapt automatically when the user switches between light and dark modes, define them inside `ThemeDictionaries`. Each dictionary is keyed to `Light` or `Dark`, and Avalonia selects the correct one at runtime:
+要让你的自定义颜色在用户切换浅色/深色模式时自动适配，请把它们定义在 `ThemeDictionaries` 里。每本字典都以 `Light` 或 `Dark` 为键，Avalonia 会在运行时挑出正确的那一本：
 
 ```xml
 <Application.Resources>
@@ -135,7 +135,7 @@ To make your custom colors adapt automatically when the user switches between li
 </Application.Resources>
 ```
 
-Reference these resources in your styles with `DynamicResource` so the values update when the active theme changes:
+在样式中用 `DynamicResource` 引用这些资源，主题一变，取值也跟着更新：
 
 ```xml
 <Style Selector="Border.card">
@@ -148,12 +148,12 @@ Reference these resources in your styles with `DynamicResource` so the values up
 ```
 
 :::tip
-Use `DynamicResource` rather than `StaticResource` for theme-dictionary values. `StaticResource` resolves once at load time and will not update when the theme changes.
+主题字典里的值请用 `DynamicResource`，不要用 `StaticResource`。`StaticResource` 在加载时解析一次就定下了，主题切换后不会更新。
 :::
 
-## Custom `TextBox` appearance
+## 自定义 `TextBox` 的外观 {#custom-textbox-appearance}
 
-You can restyle `TextBox` to use an underline instead of a full border. The following example sets `BorderThickness` to show only the bottom edge, and changes the color on `:focus` and `:error` pseudo-classes:
+你可以把 `TextBox` 改造成只带下划线、不要完整边框。下面的例子把 `BorderThickness` 设成只显示底边，并在 `:focus` 和 `:error` 伪类下改变颜色：
 
 ```xml
 <Style Selector="TextBox.underline">
@@ -171,9 +171,9 @@ You can restyle `TextBox` to use an underline instead of a full border. The foll
 </Style>
 ```
 
-## Card component
+## 卡片组件 {#card-component}
 
-You can create reusable card styles by applying classes to a `Border` control. The `card` class provides a flat card with a visible border, while `card-elevated` uses `BoxShadow` for a raised appearance:
+给 `Border` 控件套上样式类，就能做出可复用的卡片样式。`card` 类给出的是带可见边框的扁平卡片，而 `card-elevated` 则用 `BoxShadow` 营造出浮起的效果：
 
 ```xml
 <Style Selector="Border.card">
@@ -192,7 +192,7 @@ You can create reusable card styles by applying classes to a `Border` control. T
 </Style>
 ```
 
-Use your card styles like this:
+像这样使用你的卡片样式：
 
 ```xml
 <Border Classes="card">
@@ -203,9 +203,9 @@ Use your card styles like this:
 </Border>
 ```
 
-## Extract styles to a shared file
+## 把样式抽到共享文件里 {#extract-styles-to-a-shared-file}
 
-When your styles grow beyond a few declarations, you can move them into a separate `.axaml` file. This keeps your `App.axaml` clean and makes the styles reusable across projects:
+样式一多，就该把它们挪进单独的 `.axaml` 文件了。这样 `App.axaml` 能保持清爽，样式也能跨项目复用：
 
 ```xml title="Styles/ButtonStyles.axaml"
 <Styles xmlns="https://github.com/avaloniaui"
@@ -218,7 +218,7 @@ When your styles grow beyond a few declarations, you can move them into a separa
 </Styles>
 ```
 
-Then reference the file in your `App.axaml` using `StyleInclude`. The `avares://` URI scheme points to an embedded resource in your assembly:
+然后在 `App.axaml` 中用 `StyleInclude` 引用这个文件。`avares://` URI 方案指向的是程序集中的嵌入资源：
 
 ```xml
 <Application.Styles>
@@ -227,9 +227,9 @@ Then reference the file in your `App.axaml` using `StyleInclude`. The `avares://
 </Application.Styles>
 ```
 
-## Override theme styles
+## 覆盖主题自带的样式 {#override-theme-styles}
 
-Your application styles are applied after the built-in theme, so you can override any default appearance. Place your overrides after `<FluentTheme />` in `Application.Styles` to ensure they take precedence:
+应用的样式在内置主题之后生效，所以任何默认外观你都能改写。把覆盖样式放在 `Application.Styles` 里 `<FluentTheme />` 的后面，确保它们优先级更高：
 
 ```xml
 <Application.Styles>
@@ -247,11 +247,11 @@ Your application styles are applied after the built-in theme, so you can overrid
 </Application.Styles>
 ```
 
-The `/template/` selector lets you reach into a control's template to target internal parts. In this case, it targets the `Popup` named `PART_Popup` inside the `ComboBox` template.
+`/template/` 选择器让你能探入控件模板、指向其中的内部部件。这里指向的是 `ComboBox` 模板内名为 `PART_Popup` 的那个 `Popup`。
 
-## Conditional styling with pseudo-classes
+## 用伪类做条件样式 {#conditional-styling-with-pseudo-classes}
 
-Pseudo-classes let you apply styles based on a control's current state without writing any code-behind. Avalonia evaluates pseudo-class selectors automatically as the control state changes:
+伪类让你能依据控件的当前状态施加样式，一行代码隐藏都不用写。控件状态一变，Avalonia 就会自动重新判定伪类选择器：
 
 ```xml
 <!-- Disabled state -->
@@ -272,7 +272,7 @@ Pseudo-classes let you apply styles based on a control's current state without w
 </Style>
 ```
 
-Common pseudo-classes include `:pointerover`, `:pressed`, `:disabled`, `:focus`, `:focus-visible`, `:checked`, and `:error`. For a complete list, see [Pseudo-classes](/docs/styling/pseudoclasses).
+常见的伪类有 `:pointerover`、`:pressed`、`:disabled`、`:focus`、`:focus-visible`、`:checked` 和 `:error`。完整清单请参阅[伪类](/docs/styling/pseudoclasses)。
 
 ## 另请参阅 {#see-also}
 
