@@ -1,7 +1,7 @@
 ---
 id: polar-area-chart
-title: Polar area chart
-description: Similar to a pie chart but uses segment radius rather than angle to encode values, giving equal angular space to each category on a circular axis.
+title: 极坐标面积图
+description: 与饼图相似，但用扇段半径而非角度表示数值，每个类别在环形轴上占据相同的角度。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsRadialPolararea from '/img/controls/charts/charts-radial-polar.png'
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Polar area charts (or coxcomb charts) are similar to pie charts but represent values using the radius of segments instead of the angle. Each segment has an equal angle.
+极坐标面积图（又称鸡冠花图）与饼图相似，只是改用扇段的半径而非角度来表示数值，各扇段的角度都相同。
 
 <Image light={chartsRadialPolararea} maxWidth={400} position="center" cornerRadius="true" alt="Polar area chart with equal-angle segments of varying radius representing seasonal magnitude values in a circular layout." />
 
 ## 适用场景 {#when-to-use}
-- **Cyclical trends**: Visualizing seasonal data or wind patterns.
-- **Ranking categories**: Comparing the magnitude of many categories in a circular layout.
-- **Historical analysis**: The classic chart type for visualizing causes of mortality over time.
+- **周期性走势**：呈现季节性数据或风向规律。
+- **类别排序**：在环形版面中比较众多类别的量级。
+- **历史分析**：呈现死亡原因随时间变化的那张经典图表，用的就是它。
 
 ## 代码示例 {#code-example}
 
@@ -50,13 +50,13 @@ public ObservableCollection<RadialPoint> PolarChartData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of segments. | `null` |
-| `ValuePath` | Property determining the radius of the slice. | `null` |
-| `LabelPath` | Property for the slice name. | `null` |
-| `ShowLabels` | Whether to display labels for segments. | `true` |
+| `ItemsSource` | 各扇段的集合。 | `null` |
+| `ValuePath` | 决定扇区半径的属性。 | `null` |
+| `LabelPath` | 表示扇区名称的属性。 | `null` |
+| `ShowLabels` | 是否为各扇段显示标签。 | `true` |
 | `LabelFontSize` | 各段标签所用的字号。 | `11.0` |
-| `LabelForeground` | Brush used for segment labels. When `null`, the chart uses the effective label foreground. | `null` |
-| `StartAngle` | Start angle in degrees for the first segment. | `-90.0` |
-| `Stroke` | Outline brush for the segments. When `null`, the chart uses a white outline. | `null` (white) |
-| `StrokeThickness` | Thickness of the segment outlines. | `1.0` |
-| `IsHighlightEnabled` | Enables hover highlighting for polar area segments. | `false` |
+| `LabelForeground` | 扇段标签所用的画刷。为 `null` 时，图表采用当前生效的标签前景色。 | `null` |
+| `StartAngle` | 首个扇段的起始角度，单位为度。 | `-90.0` |
+| `Stroke` | 各扇段的轮廓画刷。为 `null` 时，图表使用白色轮廓。 | `null` (white) |
+| `StrokeThickness` | 扇段轮廓的粗细。 | `1.0` |
+| `IsHighlightEnabled` | 为极坐标面积扇段启用悬停高亮。 | `false` |

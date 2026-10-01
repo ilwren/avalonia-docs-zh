@@ -1,7 +1,7 @@
 ---
 id: sparkline-chart
-title: Sparkline charts
-description: Small, minimalist charts without axes designed to show data trends in a compact space, suitable for embedding in tables, dashboards, or inline text.
+title: 迷你走势图
+description: 不带坐标轴的小巧图表，用来在极小的空间里呈现数据走势，适合嵌进表格、仪表板或正文中。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,15 +13,15 @@ import chartsAnalyticsSparkline from '/img/controls/charts/charts-analytics-spar
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Sparklines are compact charts without axes or coordinates, designed to show trends in a series of values in a small space such as a card, table cell, or dashboard tile.
+迷你走势图（Sparkline）是一种不带坐标轴和刻度的紧凑图表，用于在卡片、表格单元格、仪表板磁贴这类狭小空间里呈现一组数值的走势。
 
 <Image light={chartsAnalyticsSparkline} maxWidth={400} position="center" cornerRadius="true" alt="Sparkline chart examples showing line, area, bar, and win/loss trends." />
 
 ## 适用场景 {#when-to-use}
 
-- **In-line trends**: Showing data trends inside data grids or text paragraphs.
-- **Dashboard summaries**: Providing high-density visual context for many metrics on one screen.
-- **Compact visualizations**: When the general shape of a trend is more important than specific values.
+- **行内走势**：在数据网格或正文段落中呈现数据走势。
+- **仪表板摘要**：在一屏之内为众多指标提供高密度的视觉参照。
+- **紧凑呈现**：趋势的大致形态比具体数值更重要时。
 
 ## 代码示例 {#code-example}
 
@@ -58,13 +58,13 @@ public ObservableCollection<double> SparklineWinLossData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of trend data. | `null` |
-| `ValuePath` | Property path used when `ItemsSource` contains objects instead of raw numbers. | `null` |
-| `SparklineType` | Style of the sparkline: `Line`, `Area`, `Bar`, or `WinLoss`. | `Line` |
-| `LineBrush` | Brush used for `Line` and `Area` sparklines. | `null`（蓝色，见下方说明） |
-| `AreaFill` | Brush used to fill the area for `Area` sparklines. | `null` (transparent blue, see Note below) |
-| `BarBrush` | Brush used for bars for `Bar` sparklines. | `null`（蓝色，见下方说明） |
-| `WinBrush` | Brush used for positive values in `WinLoss` sparklines. | `null`（绿色，见下方说明） |
+| `ItemsSource` | 走势数据的集合。 | `null` |
+| `ValuePath` | 当 `ItemsSource` 中装的是对象而非原始数字时所使用的属性路径。 | `null` |
+| `SparklineType` | 迷你走势图的样式：`Line`、`Area`、`Bar` 或 `WinLoss`。 | `Line` |
+| `LineBrush` | `Line` 和 `Area` 两种迷你走势图所用的画刷。 | `null`（蓝色，见下方说明） |
+| `AreaFill` | 填充 `Area` 迷你走势图区域所用的画刷。 | `null`（半透明蓝色，见下方说明） |
+| `BarBrush` | `Bar` 迷你走势图中条形所用的画刷。 | `null`（蓝色，见下方说明） |
+| `WinBrush` | `WinLoss` 迷你走势图中正值所用的画刷。 | `null`（绿色，见下方说明） |
 | `LossBrush` | Brush used for negative values in `WinLoss` sparklines. | `null`（红色，见下方说明） |
 | `ShowMarkers` | Toggles rendering of individual data point markers. | `false` |
 | `ShowMinMax` | Highlights the minimum and maximum values. | `true` |

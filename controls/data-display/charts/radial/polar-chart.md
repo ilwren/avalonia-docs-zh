@@ -1,7 +1,7 @@
 ---
 id: polar-chart
-title: Polar chart
-description: Plots arbitrary angle and radius values in a polar coordinate system, useful for spirals, rose curves, and directional data.
+title: 极坐标图
+description: 在极坐标系中绘制任意角度和半径的数值，适合呈现螺线、玫瑰线和方向性数据。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-`PolarChart` hosts one or more `PolarLineSeries` and maps each point using an angle and a radius rather than Cartesian axes.
+`PolarChart` 可承载一个或多个 `PolarLineSeries`，并用角度加半径（而非笛卡尔坐标轴）来定位每个数据点。
 
 ## 适用场景 {#when-to-use}
 
-- **Mathematical curves**: Draw spirals, rose curves, cardioids, and similar functions.
-- **Directional measurements**: Plot values around a full angular range.
-- **Radial analysis**: Use free-form angles when fixed radar spokes are too restrictive.
+- **数学曲线**：绘制螺线、玫瑰线、心形线等函数图形。
+- **方向性测量**：在整个角度范围内绘制数值。
+- **径向分析**：当雷达图那种固定的辐条过于死板时，改用自由角度。
 
 ## 代码示例 {#code-example}
 
@@ -52,25 +52,25 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Series` | Content collection of `PolarLineSeries` items. | 空集合 |
-| `ShowGridLines` | Whether to draw angular and radial grid lines. | `true` |
-| `GridLineBrush` | Brush used for the grid. | `null` |
-| `GridLineStrokeThickness` | Thickness of the grid lines. | `1.0` |
-| `RadiusAxisMin` | Minimum value of the radius axis. | `0.0` |
-| `RadiusAxisMax` | Maximum value of the radius axis. When `NaN`, the chart computes it from the data. | `NaN` |
-| `StartAngle` | Visual start angle in degrees. | `-90.0` |
-| `IsHighlightEnabled` | Enables chart-level hover highlighting for polar points. | `false` |
+| `Series` | `PolarLineSeries` 项的内容集合。 | 空集合 |
+| `ShowGridLines` | 是否绘制角向和径向网格线。 | `true` |
+| `GridLineBrush` | 网格所用的画刷。 | `null` |
+| `GridLineStrokeThickness` | 网格线的粗细。 | `1.0` |
+| `RadiusAxisMin` | 半径轴的最小值。 | `0.0` |
+| `RadiusAxisMax` | 半径轴的最大值。为 `NaN` 时，由图表根据数据自行推算。 | `NaN` |
+| `StartAngle` | 视觉上的起始角度，单位为度。 | `-90.0` |
+| `IsHighlightEnabled` | 为极坐标数据点启用图表级的悬停高亮。 | `false` |
 
 ## 常用属性（`PolarLineSeries`） {#common-properties-polarlineseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of polar data points. | `null` |
-| `AnglePath` | Path to the angle value in degrees. | `null` |
-| `RadiusPath` | Path to the radius value. | `null` |
-| `ShowMarkers` | Whether to draw markers at each point. | `false` |
+| `ItemsSource` | 极坐标数据点的集合。 | `null` |
+| `AnglePath` | 指向角度值（单位为度）的路径。 | `null` |
+| `RadiusPath` | 指向半径值的路径。 | `null` |
+| `ShowMarkers` | 是否在每个点处绘制标记。 | `false` |
 | `MarkerSize` | 标记点大小，单位为像素。 | `8.0` |
-| `IsClosed` | Whether to connect the last point back to the first point. | `false` |
+| `IsClosed` | 是否把末个点连回首个点。 | `false` |
 
 ## 另请参阅 {#see-also}
 
