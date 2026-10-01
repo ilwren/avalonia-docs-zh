@@ -1,7 +1,7 @@
 ---
 id: heatmap-map-chart
-title: Heatmap map
-description: Visualizes data density across geographic coordinates using a color gradient, ideal for showing activity hot spots and concentration areas on a map.
+title: 热力地图
+description: 用颜色渐变呈现各地理坐标上的数据密度，最适合在地图上标出活跃热点和聚集区域。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsMapsHeatmap from '/img/controls/charts/charts-maps-gradient.png';
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Heatmap maps visualize data density across geographic coordinates using a `ShapeMap` with a `HeatmapLayer`. They are suited to showing hot spots where activity is concentrated.
+热力地图用带 `HeatmapLayer` 的 `ShapeMap` 来呈现各地理坐标上的数据密度。要标出活动聚集的热点，用它很合适。
 
 <Image light={chartsMapsHeatmap} maxWidth={400} position="center" cornerRadius="true" alt="Geographic heatmap using a color gradient to show data density hot spots and concentration areas across regions." />
 
 ## 适用场景 {#when-to-use}
-- **User activity**: Visualizing where mobile app users are most active geographically.
-- **Incident reporting**: Mapping hotspots for crimes, traffic accidents, or outages.
-- **Environmental density**: Showing concentrations of species or pollution.
+- **用户活跃度**：呈现手机应用用户在地理上最活跃的区域。
+- **事件上报**：标出犯罪、交通事故或断网故障的热点区域。
+- **环境密度**：呈现物种或污染物的聚集情况。
 
 ## 代码示例 {#code-example}
 
@@ -58,7 +58,7 @@ Heatmap maps visualize data density across geographic coordinates using a `Shape
 
 ### 数据模型（C#） {#data-model-c}
 
-Ensure the GeoJSON file is included in your project and available at the specified relative path at runtime.
+请确保 GeoJSON 文件已包含在项目中，并且运行时可以在指定的相对路径下找到它。
 
 ```csharp
 using System.IO;
@@ -99,12 +99,12 @@ public EarthquakeItem[] EarthquakeData { get; } = new EarthquakeItem[]
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of geographic points to render. | `null` |
-| `LatitudePath` | Property name for latitude values. | `Latitude` |
-| `LongitudePath` | Property name for longitude values. | `Longitude` |
-| `IntensityPath` | Property name for the intensity value. | `Intensity` |
-| `Radius` | Base radius of each heat spot in pixels. | `40.0` |
-| `MaxIntensity` | Maximum intensity used for normalization. | `100.0` |
+| `ItemsSource` | 要渲染的地理点集合。 | `null` |
+| `LatitudePath` | 纬度数值所对应的属性名。 | `Latitude` |
+| `LongitudePath` | 经度数值所对应的属性名。 | `Longitude` |
+| `IntensityPath` | 强度数值所对应的属性名。 | `Intensity` |
+| `Radius` | 每个热点的基准半径，单位为像素。 | `40.0` |
+| `MaxIntensity` | 用于归一化的最大强度。 | `100.0` |
 | `LowBrush` | 低强度数值所用的画刷。 | `#0000FF00` |
 | `MediumBrush` | 中等强度数值所用的画刷。 | `#FFFF00` |
 | `HighBrush` | 高强度数值所用的画刷。 | `#FF0000` |

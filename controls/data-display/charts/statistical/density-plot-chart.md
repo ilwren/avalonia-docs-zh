@@ -59,5 +59,5 @@ public ObservableCollection<Measurement> DensityData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Histogram chart](/controls/data-display/charts/cartesian/histogram-chart)
+- [直方图](/controls/data-display/charts/cartesian/histogram-chart)
 - [Violin plot](/controls/data-display/charts/statistical/violin-plot-chart)

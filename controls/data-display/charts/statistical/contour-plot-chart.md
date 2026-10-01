@@ -61,5 +61,5 @@ public ObservableCollection<ContourPoint> ContourData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Hexbin chart](/controls/data-display/charts/engineering/hexbin-chart)
-- [Density plot chart](/controls/data-display/charts/statistical/density-plot-chart)
+- [六边形分箱图](/controls/data-display/charts/engineering/hexbin-chart)
+- [密度图](/controls/data-display/charts/statistical/density-plot-chart)

@@ -61,5 +61,5 @@ public ObservableCollection<BeeswarmPoint> BeeswarmData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Strip plot chart](/controls/data-display/charts/statistical/strip-plot-chart)
+- [带状散点图](/controls/data-display/charts/statistical/strip-plot-chart)
 - [Violin plot](/controls/data-display/charts/statistical/violin-plot-chart)

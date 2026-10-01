@@ -87,5 +87,5 @@ public ObservableCollection<SwimlaneTask> SwimlaneTasks { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Gantt chart](/controls/data-display/charts/scheduling/gantt-chart)
+- [甘特图](/controls/data-display/charts/scheduling/gantt-chart)
 - [时间线图](/controls/data-display/charts/scheduling/timeline-chart)

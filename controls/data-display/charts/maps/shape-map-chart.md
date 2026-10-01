@@ -1,7 +1,7 @@
 ---
 id: shape-map-chart
-title: Shape map
-description: Renders arbitrary geographic or custom shapes from GeoJSON, serving as the base for specialized maps and interactive custom region visualizations.
+title: 形状地图
+description: 从 GeoJSON 渲染任意地理形状或自定义形状，是各类专用地图和交互式自定义区域图示的基础。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,12 +11,12 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-The Shape Map control allows for arbitrary geographic or custom shape visualization. It serves as the base for specialized maps, allowing developers to define custom regions and interactions.
+Shape Map 控件可以呈现任意地理形状或自定义形状。它是各类专用地图的基础，开发者可以在其上自定义区域和交互。
 
 ## 适用场景 {#when-to-use}
-- **Custom regions**: Visualizing regions not covered by standard map sets (e.g., specific postal zones).
-- **Physical layouts**: Mapping data onto a schematic (e.g., a hardware board or factory floor).
-- **Interactive diagrams**: Creating high-performance interactive shape systems.
+- **自定义区域**：呈现标准地图集未涵盖的区域（比如特定的邮编辖区）。
+- **实物布局**：把数据映射到示意图上（比如一块硬件电路板或厂房平面）。
+- **交互式图示**：打造高性能的交互式形状系统。
 
 ## 代码示例 {#code-example}
 
@@ -34,7 +34,7 @@ The Shape Map control allows for arbitrary geographic or custom shape visualizat
 
 ### 数据模型（C#） {#data-model-c}
 
-Ensure the GeoJSON files are included in your project and available at the specified relative paths at runtime.
+请确保 GeoJSON 文件已包含在项目中，并且运行时可以在指定的相对路径下找到它们。
 
 ```csharp
 using System.IO;
@@ -90,20 +90,20 @@ public ObservableCollection<RegionalPoint> RegionalData { get; } = new()
 };
 ```
 
-## Common properties (ShapeMap)
+## 公共属性（ShapeMap） {#common-properties-shapemap}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Layers` | Collection of `MapLayer` instances rendered in order. | 空集合 |
+| `Layers` | 按顺序渲染的 `MapLayer` 实例集合。 | 空集合 |
 
-## Common properties (ShapeLayer)
+## 公共属性（ShapeLayer） {#common-properties-shapelayer}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `GeoJson` | The geometry data for the shapes. | `null` |
-| `Source` | URI source used to load GeoJSON data. | `null` |
-| `GeoJsonIdPath` | Property name in the GeoJSON used as the region identifier. | `null` |
-| `ItemsSource` | The data items representing the shapes. | `null` |
+| `GeoJson` | 各形状的几何数据。 | `null` |
+| `Source` | 用于加载 GeoJSON 数据的 URI 源。 | `null` |
+| `GeoJsonIdPath` | GeoJSON 中用作区域标识的属性名。 | `null` |
+| `ItemsSource` | 代表各形状的数据项。 | `null` |
 | `RegionPath` | Key property to match data to Shape IDs. | `null` |
 | `ValuePath` | Property name for the numeric value bound to each shape. | `null` |
 | `MinValue` | Minimum value used for normalization. | `0.0` |
@@ -297,6 +297,6 @@ Draws pie charts at specific geographic coordinates. Each pie chart visualizes a
 
 ## 另请参阅 {#see-also}
 
-- [Choropleth map](/controls/data-display/charts/maps/choropleth-map-chart)
-- [Bubble map](/controls/data-display/charts/maps/bubble-map-chart)
+- [分级统计地图](/controls/data-display/charts/maps/choropleth-map-chart)
+- [气泡地图](/controls/data-display/charts/maps/bubble-map-chart)
 - [Heatmap](/controls/data-display/charts/maps/heatmap-map-chart)

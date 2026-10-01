@@ -53,4 +53,4 @@ public ObservableCollection<CurvePoint> Series2024 { get; } = new() { new(0, 3),
 ## 另请参阅 {#see-also}
 
 - [面积图](/controls/data-display/charts/cartesian/area-chart)
-- [Density plot chart](/controls/data-display/charts/statistical/density-plot-chart)
+- [密度图](/controls/data-display/charts/statistical/density-plot-chart)

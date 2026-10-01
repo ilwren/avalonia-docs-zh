@@ -66,5 +66,5 @@ public ObservableCollection<StripPoint> StripData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Beeswarm plot chart](/controls/data-display/charts/statistical/beeswarm-plot-chart)
-- [Box plot chart](/controls/data-display/charts/statistical/boxplot-chart)
+- [蜂群图](/controls/data-display/charts/statistical/beeswarm-plot-chart)
+- [箱线图](/controls/data-display/charts/statistical/boxplot-chart)

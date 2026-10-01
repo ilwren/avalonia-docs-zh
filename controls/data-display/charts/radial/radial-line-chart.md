@@ -47,7 +47,7 @@ public ObservableCollection<ActivityPoint> RadialPoints { get; } = new()
 };
 ```
 
-## Common properties: `PolarLineSeries`
+## 公共属性：`PolarLineSeries` {#common-properties-polarlineseries}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |

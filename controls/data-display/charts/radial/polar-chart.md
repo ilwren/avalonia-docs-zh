@@ -74,5 +74,5 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Radar chart](/controls/data-display/charts/radial/radar-chart)
-- [Radial line chart](/controls/data-display/charts/radial/radial-line-chart)
+- [雷达图](/controls/data-display/charts/radial/radar-chart)
+- [径向折线图](/controls/data-display/charts/radial/radial-line-chart)

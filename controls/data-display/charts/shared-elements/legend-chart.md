@@ -108,5 +108,5 @@ Legend entries are represented by `ChartLegendItem`. Built-in series create lege
 
 ## 另请参阅 {#see-also}
 
-- [Chart export](/controls/data-display/charts/shared-elements/export-chart)
+- [图表导出](/controls/data-display/charts/shared-elements/export-chart)
 - [Markers](/controls/data-display/charts/shared-elements/markers-chart)
