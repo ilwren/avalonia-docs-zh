@@ -1,7 +1,7 @@
 ---
 id: crosshairs-chart
-title: Crosshairs
-description: Interactive guide lines that follow the cursor across a chart, enabling precise alignment of data points with axis labels for high-precision reading.
+title: 十字准线
+description: 随光标在图表上移动的交互式参考线，让数据点与坐标轴标签精确对齐，便于读取精确数值。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,16 +13,16 @@ import chartsFeaturesCrosshairs from '/img/controls/charts/charts-custom-crossha
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Crosshairs are interactive guide lines that follow the user's cursor. They help users align data points with axis labels in high-precision charts.
+十字准线是随用户光标移动的交互式参考线。在高精度图表中，它能帮用户把数据点与坐标轴标签对齐。
 
-Crosshair labels use the configured axis formatting. Continuous horizontal axes, logarithmic axes, scale breaks, and secondary vertical axes are reflected in the displayed coordinate labels.
+十字准线标签沿用坐标轴已配置的格式。连续横轴、对数轴、刻度断裂和次纵轴都会如实反映在所显示的坐标标签中。
 
 <Image light={chartsFeaturesCrosshairs} maxWidth={400} position="center" cornerRadius="true" alt="Line chart with interactive crosshair guide lines following the cursor to align data points with axis coordinates." />
 
 ## 适用场景 {#when-to-use}
-- **Financial charts**: Pinpointing exact price and time on a candlestick chart.
-- **Engineering data**: Measuring values on high-density line charts.
-- **Scientific graphs**: Aligning specific peaks or valleys with coordinates.
+- **金融图表**：在 K 线图上精确定位某个价格和时点。
+- **工程数据**：在数据密集的折线图上读取数值。
+- **科研图表**：把某个波峰或波谷与坐标对齐。
 
 ## 代码示例 {#code-example}
 
@@ -67,10 +67,10 @@ public ObservableCollection<double> CrosshairData { get; } = new()
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `CrosshairMode` | `None`, `Vertical`, `Horizontal`, or `Both`. | `None` |
-| `ShowCrosshairLabels` | Toggles value labels on the axes. | `true` |
-| `CrosshairStroke` | Brush used for the guide lines. When `null`, a dim gray brush is used. | `null` |
-| `CrosshairStrokeThickness` | Width of the guide lines. | `1.0` |
-| `CrosshairDashStyle` | Dash style for the guide lines. When `null`, the chart uses a `4,4` dash pattern. | `null` |
-| `CrosshairLabelBackground` | Brush used behind crosshair labels. When `null`, a translucent dark brush is used. | `null` |
-| `CrosshairLabelForeground` | Brush used for crosshair label text. When `null`, white is used. | `null` |
-| `CrosshairLabelFontSize` | Font size for crosshair labels. | `10.0` |
+| `ShowCrosshairLabels` | 开关坐标轴上的数值标签。 | `true` |
+| `CrosshairStroke` | 参考线所用的画刷。为 `null` 时，使用暗灰色画刷。 | `null` |
+| `CrosshairStrokeThickness` | 参考线的粗细。 | `1.0` |
+| `CrosshairDashStyle` | 参考线的虚线样式。为 `null` 时，图表采用 `4,4` 虚线样式。 | `null` |
+| `CrosshairLabelBackground` | 十字准线标签背后所用的画刷。为 `null` 时，使用半透明的深色画刷。 | `null` |
+| `CrosshairLabelForeground` | 十字准线标签文字所用的画刷。为 `null` 时，使用白色。 | `null` |
+| `CrosshairLabelFontSize` | 十字准线标签的字号。 | `10.0` |

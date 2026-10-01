@@ -1,7 +1,7 @@
 ---
 id: timeline-chart
-title: Event timeline chart
-description: Visualizes a series of events chronologically along a time axis, providing a clear representation of historical or planned occurrences.
+title: 事件时间线图
+description: 沿时间轴按先后顺序呈现一连串事件，把已发生或已排定的事项交代得一清二楚。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,15 +13,15 @@ import chartsTimelineHorizontal from '/img/controls/charts/charts-timeline-event
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Event timeline charts visualize a series of events chronologically. They provide a clear representation of historical or planned occurrences along a fixed time axis.
+事件时间线图按时间先后呈现一连串事件，在一条固定的时间轴上把已发生或已排定的事项交代得一清二楚。
 
 <Image light={chartsTimelineHorizontal} maxWidth={400} position="center" cornerRadius="true" alt="Event timeline chart displaying chronological milestones as labeled markers along a horizontal time axis." />
 
 ## 适用场景 {#when-to-use}
 
-- **Historical records**: Visualizing milestones, product launches, or life events.
-- **Audit trails**: Showing system logs or user activities in sequence.
-- **Vertical timelines**: Ideal for mobile-friendly or column-based layouts.
+- **历史记录**：呈现里程碑、产品发布或人生大事。
+- **审计轨迹**：按顺序呈现系统日志或用户操作。
+- **纵向时间线**：移动端或按列排布的版面用它最合适。
 
 ## 代码示例 {#code-example}
 
@@ -57,11 +57,11 @@ public ObservableCollection<TimelineEvent> TimelineEvents { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of events. | `null` |
-| `DatePath` | Path to the `DateTime` property. | `null` |
-| `LabelPath` | Path to the event description. | `null` |
-| `DescriptionPath` | Optional path to longer supporting text. | `null` |
-| `BrushPath` | Optional path to a brush or color value for each item. | `null` |
-| `MarkerSize` | Size of the event markers. | `12.0` |
-| `StrokeThickness` | Thickness of the main timeline. | `2.0` |
+| `ItemsSource` | 事件的集合。 | `null` |
+| `DatePath` | 指向 `DateTime` 属性的路径。 | `null` |
+| `LabelPath` | 指向事件说明的路径。 | `null` |
+| `DescriptionPath` | 指向较长补充文字的可选路径。 | `null` |
+| `BrushPath` | 为每一项提供画刷或颜色值的可选路径。 | `null` |
+| `MarkerSize` | 事件标记的大小。 | `12.0` |
+| `StrokeThickness` | 主时间轴的粗细。 | `2.0` |
 | `Orientation` | 图表的方向，`Horizontal` 或 `Vertical`。 | `Horizontal` |

@@ -65,22 +65,22 @@ public ObservableCollection<double> SparklineWinLossData { get; } = new()
 | `AreaFill` | 填充 `Area` 迷你走势图区域所用的画刷。 | `null`（半透明蓝色，见下方说明） |
 | `BarBrush` | `Bar` 迷你走势图中条形所用的画刷。 | `null`（蓝色，见下方说明） |
 | `WinBrush` | `WinLoss` 迷你走势图中正值所用的画刷。 | `null`（绿色，见下方说明） |
-| `LossBrush` | Brush used for negative values in `WinLoss` sparklines. | `null`（红色，见下方说明） |
-| `ShowMarkers` | Toggles rendering of individual data point markers. | `false` |
-| `ShowMinMax` | Highlights the minimum and maximum values. | `true` |
-| `StrokeThickness` | Width of the line stroke for `Line` and `Area` sparklines. | `2.0` |
+| `LossBrush` | `WinLoss` 迷你走势图中负值所用的画刷。 | `null`（红色，见下方说明） |
+| `ShowMarkers` | 开关各个数据点标记的绘制。 | `false` |
+| `ShowMinMax` | 高亮最小值和最大值。 | `true` |
+| `StrokeThickness` | `Line` 和 `Area` 两种迷你走势图的线条粗细。 | `2.0` |
 
 :::note
-The `Brush`-type properties default to these colors when set to `null`:
+`Brush` 类型的属性设为 `null` 时，分别取下列默认颜色：
 
 - `LineBrush`: Blue
-- `AreaFill`: Blue, at reduced opacity
-- `BarBrush`: Same as `LineBrush`, i.e. blue if both are `null`
+- `AreaFill`：蓝色，不透明度较低
+- `BarBrush`：与 `LineBrush` 相同；若两者都为 `null`，则为蓝色
 - `WinBrush`: Green
 - `LossBrush`: Red
 :::
 
 ## 另请参阅 {#see-also}
 
-- [KPI cards](/controls/data-display/charts/analytics/kpi-card)
+- [KPI 卡片](/controls/data-display/charts/analytics/kpi-card)
 - [折线图](/controls/data-display/charts/cartesian/line-chart)

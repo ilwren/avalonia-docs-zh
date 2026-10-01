@@ -1,7 +1,7 @@
 ---
 id: swimlane-chart
-title: Swimlane chart
-description: Organizes tasks or processes into distinct horizontal lanes, showing ownership and sequence across departments, roles, or team members over time.
+title: 泳道图
+description: 把任务或流程编入一条条横向泳道，呈现责任归属，以及跨部门、跨角色、跨成员的时序安排。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,15 +13,15 @@ import chartsTimelineSwimlane from '/img/controls/charts/charts-timeline-swimlan
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Swimlane charts organize tasks or processes into distinct horizontal or vertical "lanes." They help visualize workflows across different departments or roles.
+泳道图把任务或流程编入一条条清晰的横向或纵向「泳道」，便于呈现跨部门、跨角色的工作流。
 
 <Image light={chartsTimelineSwimlane} maxWidth={400} position="center" cornerRadius="true" alt="Swimlane chart organizing tasks into horizontal lanes by department or role showing ownership and time overlap." />
 
 ## 适用场景 {#when-to-use}
 
-- **Process mapping**: Showing how a request moves between Sales, Engineering, and Support.
-- **Project scheduling**: Visualizing task ownership across team members.
-- **Cross-functional flows**: Clarifying responsibilities in a complex business process.
+- **流程梳理**：呈现一项请求如何在销售、研发和客服之间流转。
+- **项目排期**：呈现各项任务由哪位成员负责。
+- **跨职能协作**：厘清复杂业务流程中的权责划分。
 
 ## 代码示例 {#code-example}
 
@@ -65,25 +65,25 @@ public ObservableCollection<SwimlaneTask> SwimlaneTasks { get; } = new()
 };
 ```
 
-`StartPath` and `EndPath` expect numeric values. Use your own scale, for example days, hours, sprint points, or sequence positions. Overlapping tasks in the same lane are stacked into rows using `TaskSpacing`.
+`StartPath` 和 `EndPath` 需要数值。用你自己的刻度即可，比如天数、小时、迭代点数或序号位置。同一泳道中相互重叠的任务会由 `TaskSpacing` 分行堆叠。
 
 ## 常用属性 {#common-properties}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of tasks/items. | `null` |
-| `LanePath` | Determines which lane the task belongs to. | `null` |
-| `TaskNamePath` | Label for the individual task block. | `null` |
-| `StartPath` | Property name for the numeric start value of the task span. | `null` |
-| `EndPath` | Property name for the numeric end value of the task span. | `null` |
-| `BrushPath` | Property name used to bind an `IBrush` or color string for each task. | `null` |
-| `LaneHeight` | Height of each lane. | `80.0` |
-| `TaskHeight` | Height of each task bar. | `30.0` |
-| `TaskSpacing` | Spacing between tasks when stacked in the same lane. | `5.0` |
-| `LaneSeparatorBrush` | Brush used for lane separator lines. | `null` |
-| `LaneBackgroundBrush` | Brush used for alternating lane backgrounds. | `null` |
-| `ShowTaskLabels` | Whether to display labels inside task bars. | `true` |
-| `TaskCornerRadius` | Corner radius applied to task bars. | `4.0` |
+| `ItemsSource` | 任务/条目的集合。 | `null` |
+| `LanePath` | 决定该任务归属哪条泳道。 | `null` |
+| `TaskNamePath` | 单个任务块的标签。 | `null` |
+| `StartPath` | 任务起始数值所对应的属性名。 | `null` |
+| `EndPath` | 任务结束数值所对应的属性名。 | `null` |
+| `BrushPath` | 用于为每个任务绑定 `IBrush` 或颜色字符串的属性名。 | `null` |
+| `LaneHeight` | 每条泳道的高度。 | `80.0` |
+| `TaskHeight` | 每根任务条的高度。 | `30.0` |
+| `TaskSpacing` | 同一泳道内任务堆叠时的间距。 | `5.0` |
+| `LaneSeparatorBrush` | 泳道分隔线所用的画刷。 | `null` |
+| `LaneBackgroundBrush` | 泳道交替背景所用的画刷。 | `null` |
+| `ShowTaskLabels` | 是否在任务条内部显示标签。 | `true` |
+| `TaskCornerRadius` | 任务条的圆角半径。 | `4.0` |
 
 ## 另请参阅 {#see-also}
 

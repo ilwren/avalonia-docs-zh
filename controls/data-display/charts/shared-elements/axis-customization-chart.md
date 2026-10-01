@@ -1,7 +1,7 @@
 ---
 id: axis-customization-chart
-title: Axis customization
-description: Customizes chart axes with label rotation, axis and tick styling, gridlines, multiple axes, and numerical, category, date, and logarithmic types.
+title: 坐标轴定制
+description: 定制图表坐标轴：标签旋转、轴线与刻度样式、网格线、多坐标轴，以及数值、类别、日期和对数等轴类型。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,15 +13,15 @@ import chartsFeaturesGridlines from '/img/controls/charts/charts-gridlines-custo
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Avalonia Charts lets you customize axis appearance, including label fitting, axis line styling, tick marks, gridline configuration, and multi-axis support.
+Avalonia Charts 允许你定制坐标轴的外观，包括标签排布、轴线样式、刻度线、网格线配置，以及多坐标轴支持。
 
 <Image light={chartsFeaturesGridlines} maxWidth={400} position="center" cornerRadius="true" alt="Cartesian chart with customized axes showing gridlines." />
 
 ## 适用场景 {#when-to-use}
 
-- **Multiple scales**: When displaying two different metrics (e.g., Temperature and Humidity) on the same chart.
-- **Categorical data**: When axes represent discrete groups rather than continuous numbers.
-- **Time-Series analysis**: Customizing date formats and intervals for historical data.
+- **多套刻度**：需要在同一张图上展示两项不同指标时（比如温度和湿度）。
+- **分类数据**：坐标轴表示的是一个个离散分组，而非连续数值时。
+- **时间序列分析**：为历史数据定制日期格式和刻度间隔。
 
 ## 代码示例 {#code-example}
 
@@ -55,114 +55,114 @@ Avalonia Charts lets you customize axis appearance, including label fitting, axi
 public ObservableCollection<int> SalesData { get; } = new() { 35, 28, 34, 32, 40, 32, 35 };
 ```
 
-## Common axis properties (`NumericalAxis` / `CategoryAxis`)
+## 坐标轴公共属性（`NumericalAxis` / `CategoryAxis`） {#common-axis-properties-numericalaxis-categoryaxis}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The text label for the axis. | `null` |
-| `IsVisible` | Toggle the visibility of the entire axis. | `true` |
-| `TitleFontSize` | Font size used for the axis title. | `14.0` |
-| `TitleForeground` | Brush used for the axis title. | `null` |
-| `ShowLabels` | Whether to draw axis labels. | `true` |
-| `LabelFontSize` | Font size used for axis labels. | `12.0` |
-| `LabelForeground` | Brush used for axis labels. | `null` |
-| `ShowAxisLine` | Whether to draw the axis baseline. | `true` |
-| `AxisLineStroke` | Brush used for the axis baseline. When `null`, the chart axis brush is used. | `null` |
-| `AxisLineStrokeThickness` | Thickness of the axis baseline. | `1.0` |
-| `AxisLineDashStyle` | Dash style for the axis baseline. | `null` |
-| `ShowTickLines` | Whether to draw tick marks at label positions. | `false` |
-| `TickLineLength` | Length of tick marks in pixels. | `5.0` |
-| `TickLineStroke` | Brush used for tick marks. When `null`, the chart axis brush is used. | `null` |
-| `TickLineStrokeThickness` | Thickness of tick marks. | `1.0` |
-| `ShowGridLines` | Show/hide major grid lines. | `true` |
-| `ShowMinorGridLines` | Show/hide minor grid lines. | `false` |
-| `GridLineBrush` | Brush used for major grid lines. | `null` |
-| `GridLineStrokeThickness` | Thickness of major grid lines. | `1.0` |
-| `GridLineDashStyle` | Dash style for major grid lines. | `null` |
-| `GridLineCap` | Line cap style for major grid lines. | `Flat` |
-| `GridLineJoin` | Line join style for major grid lines. | `Miter` |
-| `MinorGridLineBrush` | Brush used for minor grid lines. | `null` |
-| `MinorGridLineStrokeThickness` | Thickness of minor grid lines. | `0.5` |
-| `MinorGridLineDashStyle` | Dash style for minor grid lines. | `null` |
-| `MinorGridLineCap` | Line cap style for minor grid lines. | `Flat` |
-| `MinorGridLineJoin` | Line join style for minor grid lines. | `Miter` |
-| `LabelFormat` | Format string for labels (e.g., "C0", "N2", "yyyy"). | `null` |
-| `LabelRotation` | Custom rotation angle used when `LabelFitMode` is `CustomRotation`. | `0.0` |
-| `MinorTickCount` | Number of minor intervals between major ticks. | `4` |
-| `LabelFitMode` | Strategy used when labels do not fit. Values include `None`, `Hide`, `Wrap`, `MultipleRows`, `Rotate45`, `Rotate90`, `CustomRotation`, and `Auto`. | `None` |
+| `Title` | 坐标轴的文字标题。 | `null` |
+| `IsVisible` | 开关整条坐标轴的可见性。 | `true` |
+| `TitleFontSize` | 坐标轴标题所用的字号。 | `14.0` |
+| `TitleForeground` | 坐标轴标题所用的画刷。 | `null` |
+| `ShowLabels` | 是否绘制坐标轴标签。 | `true` |
+| `LabelFontSize` | 坐标轴标签所用的字号。 | `12.0` |
+| `LabelForeground` | 坐标轴标签所用的画刷。 | `null` |
+| `ShowAxisLine` | 是否绘制轴线。 | `true` |
+| `AxisLineStroke` | 轴线所用的画刷。为 `null` 时，采用图表的坐标轴画刷。 | `null` |
+| `AxisLineStrokeThickness` | 轴线的粗细。 | `1.0` |
+| `AxisLineDashStyle` | 轴线的虚线样式。 | `null` |
+| `ShowTickLines` | 是否在标签位置绘制刻度线。 | `false` |
+| `TickLineLength` | 刻度线的长度，单位为像素。 | `5.0` |
+| `TickLineStroke` | 刻度线所用的画刷。为 `null` 时，采用图表的坐标轴画刷。 | `null` |
+| `TickLineStrokeThickness` | 刻度线的粗细。 | `1.0` |
+| `ShowGridLines` | 显示/隐藏主网格线。 | `true` |
+| `ShowMinorGridLines` | 显示/隐藏次网格线。 | `false` |
+| `GridLineBrush` | 主网格线所用的画刷。 | `null` |
+| `GridLineStrokeThickness` | 主网格线的粗细。 | `1.0` |
+| `GridLineDashStyle` | 主网格线的虚线样式。 | `null` |
+| `GridLineCap` | 主网格线的线端样式。 | `Flat` |
+| `GridLineJoin` | 主网格线的拐角连接样式。 | `Miter` |
+| `MinorGridLineBrush` | 次网格线所用的画刷。 | `null` |
+| `MinorGridLineStrokeThickness` | 次网格线的粗细。 | `0.5` |
+| `MinorGridLineDashStyle` | 次网格线的虚线样式。 | `null` |
+| `MinorGridLineCap` | 次网格线的线端样式。 | `Flat` |
+| `MinorGridLineJoin` | 次网格线的拐角连接样式。 | `Miter` |
+| `LabelFormat` | 标签所用的格式字符串（比如「C0」「N2」「yyyy」）。 | `null` |
+| `LabelRotation` | `LabelFitMode` 为 `CustomRotation` 时所采用的自定义旋转角度。 | `0.0` |
+| `MinorTickCount` | 两个主刻度之间次刻度的区间数。 | `4` |
+| `LabelFitMode` | 标签摆不下时所采取的策略。可选值有 `None`、`Hide`、`Wrap`、`MultipleRows`、`Rotate45`、`Rotate90`、`CustomRotation` 和 `Auto`。 | `None` |
 
-## Axis types
+## 坐标轴类型 {#axis-types}
 
-| Axis | 说明 | Supports |
+| 坐标轴 | 说明 | 适用于 |
 | --- | --- | --- |
-| `NumericalAxis` | For continuous numeric data. | `Minimum`, `Maximum`, `MajorStep`, `MinorStep`, `ScaleBreaks` |
-| `CategoryAxis` | For discrete categories. | `GapLength`, `PlotMode` |
-| `DateTimeAxis` | For date and time data. | `Minimum`, `Maximum`, `MajorStep`, `MajorStepUnit`, `DateFormat` |
-| `LogarithmicAxis` | For data with a large range. | `Minimum`, `Maximum`, `LogBase`, `MajorStep` |
+| `NumericalAxis` | 连续的数值数据。 | `Minimum`, `Maximum`, `MajorStep`, `MinorStep`, `ScaleBreaks` |
+| `CategoryAxis` | 离散的类别。 | `GapLength`, `PlotMode` |
+| `DateTimeAxis` | 日期和时间数据。 | `Minimum`, `Maximum`, `MajorStep`, `MajorStepUnit`, `DateFormat` |
+| `LogarithmicAxis` | 跨度很大的数据。 | `Minimum`, `Maximum`, `LogBase`, `MajorStep` |
 
-## Scale breaks
+## 刻度断裂 {#scale-breaks}
 
-Use `NumericalAxis.ScaleBreaks` for inline XAML scale breaks or `ScaleBreaksSource` to bind a collection from a view model. Scale breaks skip ranges that would otherwise compress the visible data. Each `ScaleBreak` defines a removed value range and optional break-line styling. Invalid ranges where `End <= Start` are ignored, and overlapping or adjacent breaks are merged before the axis range is normalized.
+在 XAML 中内联定义刻度断裂可用 `NumericalAxis.ScaleBreaks`，从视图模型绑定集合则用 `ScaleBreaksSource`。刻度断裂会跳过那些原本会把可见数据挤扁的区间。每个 `ScaleBreak` 定义一段被略去的取值范围，并可设置断裂标记的样式。`End <= Start` 这类无效区间会被忽略，相互重叠或首尾相接的断裂则会先合并，再对坐标轴范围作归一化。
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Start` | First value in the skipped axis range. | `0.0` |
-| `End` | Last value in the skipped axis range. | `0.0` |
-| `Stroke` | Brush used to draw the scale break marks. | `null` |
-| `StrokeThickness` | Thickness of the scale break marks. | `1.0` |
+| `Start` | 被跳过的轴区间的起始值。 | `0.0` |
+| `End` | 被跳过的轴区间的结束值。 | `0.0` |
+| `Stroke` | 绘制刻度断裂标记所用的画刷。 | `null` |
+| `StrokeThickness` | 刻度断裂标记的粗细。 | `1.0` |
 
-## Axis-specific properties
+## 各类坐标轴的专有属性 {#axis-specific-properties}
 
-| Axis | 属性 | 说明 | 默认值 |
+| 坐标轴 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- | :--- |
-| `NumericalAxis` | `Minimum` | Explicit minimum value. When `null`, the chart calculates it from data. | `null` |
-| `NumericalAxis` | `Maximum` | Explicit maximum value. When `null`, the chart calculates it from data. | `null` |
-| `NumericalAxis` | `MajorStep` | Major tick interval. Invalid or non-positive values fall back to an automatic step. | `null` |
-| `NumericalAxis` | `MinorStep` | Minor tick interval. | `null` |
-| `NumericalAxis` | `ScaleBreaks` | Inline collection of scale breaks. | 空集合 |
-| `NumericalAxis` | `ScaleBreaksSource` | Bound collection used instead of `ScaleBreaks` when set. | `null` |
-| `DateTimeAxis` | `Minimum` | Explicit minimum date. When `null`, the chart calculates it from data. | `null` |
-| `DateTimeAxis` | `Maximum` | Explicit maximum date. When `null`, the chart calculates it from data. | `null` |
-| `DateTimeAxis` | `MajorStep` | Major tick interval combined with `MajorStepUnit`. Month and year steps are rounded to whole units. | `1.0` |
-| `DateTimeAxis` | `MajorStepUnit` | Unit used by `MajorStep`: `Second`, `Minute`, `Hour`, `Day`, `Week`, `Month`, or `Year`. | `Day` |
-| `DateTimeAxis` | `DateFormat` | Optional date label format string. | `null` |
-| `LogarithmicAxis` | `Minimum` | Explicit positive minimum value. When `null`, the chart calculates it from data. | `null` |
-| `LogarithmicAxis` | `Maximum` | Explicit positive maximum value. When `null`, the chart calculates it from data. | `null` |
-| `LogarithmicAxis` | `LogBase` | Logarithm base used for the axis scale. | `10.0` |
-| `LogarithmicAxis` | `MajorStep` | Major tick multiplier. When `null`, the axis calculates it from `LogBase`. | `null` |
+| `NumericalAxis` | `Minimum` | 明确指定的最小值。为 `null` 时，由图表根据数据自行计算。 | `null` |
+| `NumericalAxis` | `Maximum` | 明确指定的最大值。为 `null` 时，由图表根据数据自行计算。 | `null` |
+| `NumericalAxis` | `MajorStep` | 主刻度间隔。无效或非正的取值会退回自动步长。 | `null` |
+| `NumericalAxis` | `MinorStep` | 次刻度间隔。 | `null` |
+| `NumericalAxis` | `ScaleBreaks` | 内联的刻度断裂集合。 | 空集合 |
+| `NumericalAxis` | `ScaleBreaksSource` | 设置后将取代 `ScaleBreaks` 的绑定集合。 | `null` |
+| `DateTimeAxis` | `Minimum` | 明确指定的起始日期。为 `null` 时，由图表根据数据自行计算。 | `null` |
+| `DateTimeAxis` | `Maximum` | 明确指定的结束日期。为 `null` 时，由图表根据数据自行计算。 | `null` |
+| `DateTimeAxis` | `MajorStep` | 与 `MajorStepUnit` 搭配使用的主刻度间隔。按月和按年的步长会取整到整数单位。 | `1.0` |
+| `DateTimeAxis` | `MajorStepUnit` | `MajorStep` 所用的单位：`Second`、`Minute`、`Hour`、`Day`、`Week`、`Month` 或 `Year`。 | `Day` |
+| `DateTimeAxis` | `DateFormat` | 可选的日期标签格式字符串。 | `null` |
+| `LogarithmicAxis` | `Minimum` | 明确指定的最小正值。为 `null` 时，由图表根据数据自行计算。 | `null` |
+| `LogarithmicAxis` | `Maximum` | 明确指定的最大正值。为 `null` 时，由图表根据数据自行计算。 | `null` |
+| `LogarithmicAxis` | `LogBase` | 坐标轴刻度所用的对数底。 | `10.0` |
+| `LogarithmicAxis` | `MajorStep` | 主刻度的倍率。为 `null` 时，由坐标轴根据 `LogBase` 自行计算。 | `null` |
 
-## Continuous horizontal axes
+## 连续横轴 {#continuous-horizontal-axes}
 
-`CartesianChart` can render supported series against a continuous horizontal `NumericalAxis`, `LogarithmicAxis`, or `DateTimeAxis`. The chart uses continuous horizontal layout only when every visible non-empty series supports it and each horizontal category value can be converted to the selected axis type.
+`CartesianChart` 可以把支持的系列绘制在连续的横向 `NumericalAxis`、`LogarithmicAxis` 或 `DateTimeAxis` 上。只有当每一个可见且非空的系列都支持连续布局、且各横向类别值都能转换成所选的轴类型时，图表才会采用连续横向布局。
 
-Supported Cartesian series include `LineSeries`, `SplineSeries`, `StepLineSeries`, `AreaSeries`, `SplineAreaSeries`, `AreaRangeSeries`, `ScatterSeries`, `ScatterLineSeries`, `BubbleSeries`, and `ErrorBarSeries`. `ChartTrendlineSeries` and `MovingAverageSeries` follow the compatibility of their `SourceSeries` when one is set.
+支持的笛卡尔系列包括 `LineSeries`、`SplineSeries`、`StepLineSeries`、`AreaSeries`、`SplineAreaSeries`、`AreaRangeSeries`、`ScatterSeries`、`ScatterLineSeries`、`BubbleSeries` 和 `ErrorBarSeries`。`ChartTrendlineSeries` 和 `MovingAverageSeries` 在设置了 `SourceSeries` 时，兼容性随其所属对象而定。
 
-For `DateTimeAxis`, `CategoryPath` values must resolve to `DateTime` or `DateTimeOffset`. For `NumericalAxis` and `LogarithmicAxis`, values must resolve to finite numeric values. `LogarithmicAxis` requires values greater than `0`.
+对 `DateTimeAxis` 而言，`CategoryPath` 的取值必须能解析为 `DateTime` 或 `DateTimeOffset`；对 `NumericalAxis` 和 `LogarithmicAxis` 而言，取值必须能解析为有限数值；`LogarithmicAxis` 则要求取值大于 `0`。
 
-If any visible non-empty series is incompatible, the chart uses category layout for the horizontal axis.
+只要有一个可见且非空的系列不兼容，图表就会改用类别布局来排布横轴。
 
-## Plot bands
+## 绘图带 {#plot-bands}
 
-Use `ChartAxis.PlotBands` to shade ranges on a horizontal or vertical axis. On a category axis, horizontal-axis plot band `Start` and `End` values use category indexes. On a continuous horizontal axis, they use the axis value domain.
+用 `ChartAxis.PlotBands` 可以为横轴或纵轴上的某段区间铺底色。在类别轴上，横轴绘图带的 `Start` 和 `End` 取类别索引；在连续横轴上，则取该轴的值域。
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Start` | Start value of the shaded range. When `NaN`, the band starts at the beginning of the axis. | `NaN` |
-| `End` | End value of the shaded range. When `NaN`, the band ends at the end of the axis. | `NaN` |
-| `Fill` | Brush used to fill the band. | `null` |
-| `Stroke` | Brush used for the band border. | `null` |
-| `StrokeThickness` | Thickness of the band border. | `0.0` |
-| `Opacity` | Opacity applied to the band fill. | `0.3` |
-| `Text` | Optional text drawn inside the band. | `null` |
-| `Foreground` | Brush used for plot band text. | `null` |
-| `TextFontSize` | Font size used for plot band text. | `12.0` |
-| `HorizontalTextAlignment` | Horizontal text alignment within the band: `Start`, `Center`, or `End`. | `Center` |
-| `VerticalTextAlignment` | Vertical text alignment within the band: `Start`, `Center`, or `End`. | `Center` |
-| `IsVisible` | Whether the plot band is rendered. | `true` |
-| `IsRepeating` | Whether the band repeats at regular axis intervals. | `false` |
-| `RepeatEvery` | Axis interval between repeated bands. When repeating is enabled with an invalid value, it is set to `1.0`. | `NaN` |
-| `RepeatUntil` | Axis value where repeated bands stop. | `NaN` |
-| `RenderAboveSeries` | Whether to render the band above the chart series instead of behind them. | `false` |
+| `Start` | 阴影区间的起始值。为 `NaN` 时，色带从坐标轴起点开始。 | `NaN` |
+| `End` | 阴影区间的结束值。为 `NaN` 时，色带延伸到坐标轴终点。 | `NaN` |
+| `Fill` | 填充色带所用的画刷。 | `null` |
+| `Stroke` | 色带边框所用的画刷。 | `null` |
+| `StrokeThickness` | 色带边框的粗细。 | `0.0` |
+| `Opacity` | 色带填充所用的不透明度。 | `0.3` |
+| `Text` | 绘制在色带内部的可选文字。 | `null` |
+| `Foreground` | 绘图带文字所用的画刷。 | `null` |
+| `TextFontSize` | 绘图带文字所用的字号。 | `12.0` |
+| `HorizontalTextAlignment` | 文字在色带内的水平对齐方式：`Start`、`Center` 或 `End`。 | `Center` |
+| `VerticalTextAlignment` | 文字在色带内的垂直对齐方式：`Start`、`Center` 或 `End`。 | `Center` |
+| `IsVisible` | 是否渲染该绘图带。 | `true` |
+| `IsRepeating` | 色带是否按固定的坐标轴间隔重复出现。 | `false` |
+| `RepeatEvery` | 重复色带之间的坐标轴间隔。启用重复却给了无效取值时，会被置为 `1.0`。 | `NaN` |
+| `RepeatUntil` | 重复色带到此坐标轴取值为止。 | `NaN` |
+| `RenderAboveSeries` | 是把色带绘制在图表系列之上，而非之后。 | `false` |
 
 ## 另请参阅 {#see-also}
 

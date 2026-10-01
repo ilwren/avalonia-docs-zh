@@ -1,7 +1,7 @@
 ---
 id: tooltip-chart
-title: Tooltips
-description: Displays detailed information about data points on hover, with DataTemplate support for custom tooltip content.
+title: 工具提示
+description: 在悬停时显示数据点的详细信息，并支持用 DataTemplate 自定义提示内容。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,16 +13,16 @@ import chartsFeaturesTooltip from '/img/controls/charts/charts-tooltips.png';
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Tooltips provide detailed information about data points when the user hovers over them. They add precision and context without cluttering the main chart area.
+用户悬停在数据点上时，工具提示会给出该点的详细信息。它既补足了精度和背景信息，又不会把图表主体弄乱。
 
-Default Cartesian and financial chart tooltips format category and date values through the chart's horizontal axis formatting.
+笛卡尔图表和金融图表的默认工具提示，会按图表横轴的格式设置来格式化类别和日期值。
 
 <Image light={chartsFeaturesTooltip} maxWidth={400} position="center" cornerRadius="true" alt="Chart with an interactive tooltip popup appearing on hover showing the exact value and category of a data point." />
 
 ## 适用场景 {#when-to-use}
-- **High-density data**: Pinpointing values in a crowded line or scatter chart.
-- **Additional context**: Showing metadata (e.g., "Update Date") that isn't mapped to an axis.
-- **Hover interactions**: Showing focused details while the pointer is over a data point.
+- **高密度数据**：在拥挤的折线图或散点图中精确定位数值。
+- **补充信息**：显示那些没有映射到坐标轴上的元数据（比如「更新日期」）。
+- **悬停交互**：指针停在某个数据点上时，集中展示该点的细节。
 
 ## 代码示例 {#code-example}
 

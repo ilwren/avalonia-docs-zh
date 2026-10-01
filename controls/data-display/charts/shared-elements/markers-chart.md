@@ -1,7 +1,7 @@
 ---
 id: markers-chart
-title: Markers
-description: Symbols drawn at each data point in a series to help locate exact coordinates, with support for multiple shapes and customizable size and color.
+title: 标记
+description: 在系列的每个数据点处绘制的符号，便于定位精确坐标，支持多种形状以及自定义大小和颜色。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,17 +13,17 @@ import chartsFeaturesMarkers from '/img/controls/charts/charts-markers.png';
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Markers are symbols drawn at each data point in a series. They help users locate the exact coordinates of points, especially on line or spline charts where paths might be dense.
+标记是绘制在系列各数据点处的符号。它能帮用户定位到数据点的精确坐标，在折线图、样条图这类线条可能很密集的图表上尤其有用。
 
-For Cartesian line-family series such as `LineSeries`, `SplineSeries`, and `StepLineSeries`, markers are opt-in. Set `ShowMarkers="True"` before marker styling properties such as `MarkerSize`, `MarkerFill`, or `MarkerStroke` have a visible effect.
+对 `LineSeries`、`SplineSeries`、`StepLineSeries` 这些笛卡尔折线家族的系列来说，标记需要显式开启。只有先设置 `ShowMarkers="True"`，`MarkerSize`、`MarkerFill`、`MarkerStroke` 等标记样式属性才看得出效果。
 
 <Image light={chartsFeaturesMarkers} maxWidth={400} position="center" cornerRadius="true" alt="Line chart with markers of different shapes drawn at each data point to highlight exact coordinate positions." />
 
 ## 适用场景 {#when-to-use}
 
-- **Discrete data**: Emphasizing that lines represent individual measured points.
-- **Low-density charts**: Making points more clickable for tooltips or selection.
-- **Categorical distinction**: Using different shapes (Circle, Square, Diamond) to distinguish series.
+- **离散数据**：强调折线代表的是一个个实测点。
+- **稀疏图表**：让数据点更容易点中，便于弹出工具提示或进行选择。
+- **区分类别**：用不同形状（圆形、方形、菱形）区分各个系列。
 
 ## 代码示例 {#code-example}
 
@@ -67,13 +67,13 @@ public ObservableCollection<int> TriangleMarkerData { get; } = new() { 15, 30, 2
 public ObservableCollection<int> PentagonMarkerData { get; } = new() { 35, 50, 40, 55, 45 };
 ```
 
-## Common properties (applied to Series)
+## 公共属性（作用于 Series） {#common-properties-applied-to-series}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ShowMarkers` | Global toggle for data point symbols. Line-family series default to `false`; some point-focused series override it to `true`. | Series-dependent |
-| `MarkerSize` | Diameter of the marker in pixels. | Series-dependent |
+| `ShowMarkers` | 数据点符号的总开关。折线家族系列默认为 `false`，部分以数据点为主的系列则把它改成 `true`。 | Series-dependent |
+| `MarkerSize` | 标记的直径，单位为像素。 | Series-dependent |
 | `MarkerShape` | `Circle`, `Square`, `Rectangle`, `Diamond`, `Triangle`, `InvertedTriangle`, `Cross`, `Pentagon`, `VerticalLine`, or `HorizontalLine`. | `Circle` |
-| `MarkerFill` | Brush used to fill the marker interior. | Series color |
-| `MarkerStroke` | Brush used for the marker outline. | `null` |
-| `MarkerStrokeThickness` | Thickness of the marker outline. When `NaN`, the series `StrokeThickness` is used. | `NaN` |
+| `MarkerFill` | 填充标记内部所用的画刷。 | 系列颜色 |
+| `MarkerStroke` | 标记轮廓所用的画刷。 | `null` |
+| `MarkerStrokeThickness` | 标记轮廓的粗细。为 `NaN` 时，使用系列的 `StrokeThickness`。 | `NaN` |
