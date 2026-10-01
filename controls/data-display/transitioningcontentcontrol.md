@@ -18,7 +18,7 @@ A common use case is building an image slideshow, but `TransitioningContentContr
 
 | 属性 | 说明 |
 |---|---|
-| `Content` | The content to display in the control. |
+| `Content` | 要在控件中显示的内容。 |
 | `ContentTemplate` | A `DataTemplate` used to display the content. |
 | `PageTransition` | The page transition used to animate content changes. The applied theme provides a default transition. Set this property to `{x:Null}` to disable the transition entirely. |
 | `IsTransitionReversed` | When set to `true`, the transition plays in reverse (for example, sliding out instead of sliding in). |
@@ -27,11 +27,11 @@ A common use case is building an image slideshow, but `TransitioningContentContr
 
 Avalonia ships with several page transitions you can apply to `TransitioningContentControl`:
 
-| Transition | 说明 |
+| 过渡动画 | 说明 |
 |---|---|
 | `CrossFade` | Fades out the old content while fading in the new content simultaneously. |
 | `PageSlide` | Slides content in from a given direction. Supports `Horizontal` and `Vertical` orientation. |
-| `CompositePageTransition` | Combines multiple transitions so they run together. |
+| `CompositePageTransition` | 把多个过渡动画组合起来同时播放。 |
 
 You can also create your own custom transition by implementing `IPageTransition`. See [Setting page transitions](../../docs/graphics-animation/page-transitions) for full details.
 
@@ -116,7 +116,7 @@ For a complete walkthrough, see [How to set up basic navigation](../../docs/how-
 ## 另请参阅 {#see-also}
 
 - [ContentControl](/controls/data-display/contentcontrol)
-- [Setting page transitions](../../docs/graphics-animation/page-transitions)
+- [设置页面过渡动画](../../docs/graphics-animation/page-transitions)
 - [How to set up basic navigation](../../docs/how-to/navigation-how-to)
 - [Carousel](/controls/data-display/collections/carousel)
 - [`TransitioningContentControl` API 参考](https://reference.avaloniaui.net/api/Avalonia.ReactiveUI/TransitioningContentControl/)

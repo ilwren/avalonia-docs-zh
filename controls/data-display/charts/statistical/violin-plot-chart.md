@@ -1,7 +1,7 @@
 ---
 id: violin-plot-chart
-title: Violin plot
-description: Combines a box plot with a kernel density estimate to show both the statistical summary and the probability distribution shape of data across categories.
+title: 小提琴图
+description: 把箱线图与核密度估计结合起来，既给出统计摘要，又呈现各类别数据的概率分布形态。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Violin plots combine a box plot with a kernel density plot, showing both the statistical summary and the probability density of the data at different values.
+小提琴图把箱线图与核密度图结合在一起，既给出统计摘要，也呈现数据在各个取值上的概率密度。
 
 ## 适用场景 {#when-to-use}
 
-- **Deep distribution**: When you need to see where data points are most frequent (density).
-- **Comparison**: Comparing both the ranges (box plot) and the shapes (density) of multiple groups.
-- **Multi-modal data**: Identifying data with multiple peaks (modes) which a box plot might hide.
+- **深入看分布**：需要知道数据点在哪一段最为密集（密度）时。
+- **对比**：既比较多个组别的取值范围（箱线图），也比较各自的形态（密度）。
+- **多峰数据**：找出箱线图可能掩盖掉的多峰（多众数）数据。
 
 ## 代码示例 {#code-example}
 
@@ -48,16 +48,16 @@ public ObservableCollection<ViolinGroup> ViolinSeries { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of data groups. | `null` |
-| `ValuesPath` | Path to the value collection for each category. Supported types are `IEnumerable<double>`, `IEnumerable<int>`, and `double[]`. | `null` |
-| `CategoryPath` | Path to the category name. | `null` |
-| `ShowMedian` | Whether to display the median line inside the embedded box plot. This only applies when `ShowBoxPlot` is enabled and at least five values are available. | `true` |
-| `ViolinWidth` | Width factor of each violin body. | `0.8` |
-| `Fill` | Brush used for the violin bodies. | `null` |
-| `Stroke` | Brush used for the violin outlines. | `null` |
-| `StrokeThickness` | Thickness of the violin outlines. | `1.5` |
-| `ShowBoxPlot` | Whether to display the internal box plot. Quartile overlays are drawn only when the category has at least five values. | `true` |
+| `ItemsSource` | 数据分组的集合。 | `null` |
+| `ValuesPath` | 指向各类别数值集合的路径。支持的类型有 `IEnumerable<double>`、`IEnumerable<int>` 和 `double[]`。 | `null` |
+| `CategoryPath` | 指向类别名称的路径。 | `null` |
+| `ShowMedian` | 是否在内嵌的箱线图中显示中位数线。只有启用了 `ShowBoxPlot` 且该类别至少有五个数值时才生效。 | `true` |
+| `ViolinWidth` | 每个小提琴主体的宽度系数。 | `0.8` |
+| `Fill` | 小提琴主体所用的画刷。 | `null` |
+| `Stroke` | 小提琴轮廓所用的画刷。 | `null` |
+| `StrokeThickness` | 小提琴轮廓的粗细。 | `1.5` |
+| `ShowBoxPlot` | 是否显示内部的箱线图。只有某个类别至少有五个数值时，才会绘制四分位叠加层。 | `true` |
 
 :::note
-When `Fill` or `Stroke` is `null`, the chart falls back to the palette brush for that category. The `Fill` fallback is drawn with reduced opacity.
+当 `Fill` 或 `Stroke` 为 `null` 时，图表会回落到该类别在调色板中的画刷。作为回落值的 `Fill` 会以较低的不透明度绘制。
 :::

@@ -1,13 +1,13 @@
 ---
 id: carousel
 title: Carousel
-description: A reference for the Carousel control in Avalonia, which displays items one at a time with animated page transitions, navigation methods, and data-binding support.
+description: Avalonia 中 Carousel 控件的参考文档：它每次呈现一个条目，支持翻页动画、导航方法和数据绑定。
 doc-type: reference
 ---
 
 import CarouselScreenshot from '/img/reference/controls/carousel/carousel.gif';
 
-The `Carousel` has an items collection and displays each item as a page, in sequence, so that it fills the control. You can use it to build slide shows, onboarding flows, or any UI where your users step through content one page at a time.
+`Carousel` 有一个条目集合，它按顺序把每个条目当作一页来显示，并填满整个控件。你可以用它做幻灯片、新手引导流程，或任何需要让用户逐页浏览内容的界面。
 
 ## 常用属性 {#useful-properties}
 
@@ -15,21 +15,21 @@ The `Carousel` has an items collection and displays each item as a page, in sequ
 
 | 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `PageTransition` | `IPageTransition?` | `null` | Transition animation played when the selected item changes. Built-in options include `PageSlide`, `CrossFade`, `Rotate3DTransition`, and `CompositePageTransition`. |
-| `IsSwipeEnabled` | `bool` | `false` | Enables swipe and pointer-drag gestures to navigate between pages. |
-| `ViewportFraction` | `double` | `1.0` | Fraction of the viewport occupied by each page. Values below `1.0` reveal adjacent pages (e.g., `0.8` peeks at neighbors, `0.33` shows three items). |
-| `IsSwiping` | `bool` | `false` | Read-only. `true` while a swipe gesture is in progress. |
-| `WrapSelection` | `bool` | `false` | When `true`, `Next()` wraps from the last item to the first, and `Previous()` wraps from the first to the last. |
-| `SelectedIndex` | `int` | `-1` | Zero-based index of the currently displayed item. |
-| `SelectedItem` | `object?` | `null` | The currently displayed item from the bound collection. |
-| `ItemsSource` | `IEnumerable?` | `null` | The bound collection used as the data source. |
-| `ItemTemplate` | `IDataTemplate?` | `null` | A `DataTemplate` applied to each item, allowing you to control how items look. |
-| `ItemsPanel` | `ITemplate<Panel?>` | `VirtualizingCarouselPanel` | The container panel used to arrange items. See [ItemsControl](/controls/data-display/collections/itemscontrol) for details on customizing the items panel. |
-| `AutoScrollToSelectedItem` | `bool` | `true` | Automatically scrolls to bring the selected item into view. |
+| `PageTransition` | `IPageTransition?` | `null` | 选中项变化时播放的过渡动画。内置选项有 `PageSlide`、`CrossFade`、`Rotate3DTransition` 和 `CompositePageTransition`。 |
+| `IsSwipeEnabled` | `bool` | `false` | 启用滑动和指针拖动手势来翻页。 |
+| `ViewportFraction` | `double` | `1.0` | 每一页所占视口的比例。小于 `1.0` 的取值会让相邻页露出一角（比如 `0.8` 会露出两侧邻页，`0.33` 则同时显示三项）。 |
+| `IsSwiping` | `bool` | `false` | 只读。滑动手势进行期间为 `true`。 |
+| `WrapSelection` | `bool` | `false` | 为 `true` 时，`Next()` 会从最后一项绕回第一项，`Previous()` 则从第一项绕回最后一项。 |
+| `SelectedIndex` | `int` | `-1` | 当前所显示条目的索引，从零开始。 |
+| `SelectedItem` | `object?` | `null` | 所绑定集合中当前显示的那一项。 |
+| `ItemsSource` | `IEnumerable?` | `null` | 用作数据源的绑定集合。 |
+| `ItemTemplate` | `IDataTemplate?` | `null` | 作用于每个条目的 `DataTemplate`，用来控制条目的外观。 |
+| `ItemsPanel` | `ITemplate<Panel?>` | `VirtualizingCarouselPanel` | 用于排布各条目的容器面板。定制条目面板的细节请参阅 [ItemsControl](/controls/data-display/collections/itemscontrol)。 |
+| `AutoScrollToSelectedItem` | `bool` | `true` | 自动滚动，把选中项带入可见区域。 |
 
 ## 示例 {#examples}
 
-This example has three images in the items collection, with buttons to move the display forwards and back. The buttons have click event handlers in the C# code-behind.
+下面这个例子的条目集合中有三张图片，并配了两个按钮用于前后切换。按钮的点击事件处理程序写在 C# 代码隐藏文件里。
 
 ```xml title='XAML'
 <Panel>
@@ -81,9 +81,9 @@ namespace AvaloniaControls.Views
 
 <Image light={CarouselScreenshot} alt="Carousel control cycling through slides" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Binding to a collection
+## 绑定到集合 {#binding-to-a-collection}
 
-Use `ItemsSource` to bind the `Carousel` to a data collection and provide a custom `DataTemplate`:
+用 `ItemsSource` 把 `Carousel` 绑定到数据集合，并提供自定义的 `DataTemplate`：
 
 ```xml title='XAML'
 <Carousel ItemsSource="{Binding Slides}" SelectedIndex="{Binding CurrentSlide}">
@@ -101,7 +101,7 @@ Use `ItemsSource` to bind the `Carousel` to a data collection and provide a cust
 </Carousel>
 ```
 
-The view model exposes the collection and the current index:
+视图模型对外提供该集合和当前索引：
 
 ```csharp title='C#'
 public class SlidesViewModel : ViewModelBase
@@ -122,18 +122,18 @@ public class SlidesViewModel : ViewModelBase
 }
 ```
 
-Because `SelectedIndex` is bound two-way by default, you can advance the carousel from your view model by changing `CurrentSlide`, or let the control update the property when the user navigates with buttons.
+由于 `SelectedIndex` 默认双向绑定，你既可以在视图模型中改动 `CurrentSlide` 来翻页，也可以让用户用按钮导航、由控件回写该属性。
 
 ## 页面过渡 {#page-transitions}
 
-You set the animation that plays between items by assigning a transition to the `PageTransition` property. Avalonia ships with several built-in transitions:
+给 `PageTransition` 属性赋一个过渡动画，即可设定条目切换时播放的动画。Avalonia 内置了若干过渡动画：
 
-| Transition | 说明 |
+| 过渡动画 | 说明 |
 |---|---|
-| `PageSlide` | Slides content in from a specified direction. You can set `Orientation` to `Horizontal` (default) or `Vertical`. |
-| `CrossFade` | Fades out the current item and fades in the new item by animating opacity. |
-| `Rotate3DTransition` | Rotates the current and incoming items in 3D space. Supports horizontal and vertical axes. |
-| `CompositePageTransition` | Combines multiple transitions so they run together. |
+| `PageSlide` | 让内容从指定方向滑入。`Orientation` 可设为 `Horizontal`（默认）或 `Vertical`。 |
+| `CrossFade` | 通过不透明度动画，把当前项淡出、把新项淡入。 |
+| `Rotate3DTransition` | 让当前项与新进入的项在三维空间中翻转，支持横轴和纵轴。 |
+| `CompositePageTransition` | 把多个过渡动画组合起来同时播放。 |
 
 ### `PageSlide` example
 
@@ -151,9 +151,9 @@ You set the animation that plays between items by assigning a transition to the 
 </Carousel.PageTransition>
 ```
 
-### Composite transition example
+### 组合过渡动画示例 {#composite-transition-example}
 
-You can layer transitions together using `CompositePageTransition`:
+你可以用 `CompositePageTransition` 把多个过渡动画叠加起来：
 
 ```xml title='XAML'
 <Carousel.PageTransition>
@@ -164,34 +164,34 @@ You can layer transitions together using `CompositePageTransition`:
 </Carousel.PageTransition>
 ```
 
-### Disabling transitions
+### 关闭过渡动画 {#disabling-transitions}
 
-To switch items without any animation, set `PageTransition` to `{x:Null}`:
+若要切换条目时不播放任何动画，把 `PageTransition` 设为 `{x:Null}`：
 
 ```xml title='XAML'
 <Carousel PageTransition="{x:Null}" />
 ```
 
-For a full guide on page transitions (including how to create custom transitions), see [Setting page transitions](/docs/graphics-animation/page-transitions).
+页面过渡动画的完整指南（包括如何自定义过渡动画）请参阅[设置页面过渡动画](/docs/graphics-animation/page-transitions)。
 
 ## Navigation
 
-You can change the displayed item in several ways:
+改变当前显示项的方式有好几种：
 
 | 技术 | 说明 |
 |---|---|
-| `Next()` | Advance to the next item in the collection. |
-| `Previous()` | Move back to the previous item. |
-| `SelectedIndex` | Set or bind the zero-based index of the item to display. |
-| `SelectedItem` | Set or bind the item object directly. |
+| `Next()` | 切到集合中的下一项。 |
+| `Previous()` | 退回上一项。 |
+| `SelectedIndex` | 设置或绑定要显示那一项的索引（从零开始）。 |
+| `SelectedItem` | 直接设置或绑定条目对象本身。 |
 
-### Navigating with buttons (code-behind)
+### 用按钮导航（代码隐藏） {#navigating-with-buttons-code-behind}
 
-The simplest approach is to call `Next()` and `Previous()` from button click handlers, as shown in the [example](#examples) above.
+最简单的做法是在按钮点击处理程序里调用 `Next()` 和 `Previous()`，就像上面的[示例](#examples)那样。
 
-### Navigating with data binding
+### 用数据绑定导航 {#navigating-with-data-binding}
 
-Bind `SelectedIndex` to a property on your view model so you can control navigation from application logic:
+把 `SelectedIndex` 绑定到视图模型的某个属性，这样就能从应用逻辑中控制翻页：
 
 ```xml title='XAML'
 <Carousel ItemsSource="{Binding Pages}" SelectedIndex="{Binding PageIndex}" />
@@ -217,9 +217,9 @@ public void GoToPrevious()
 }
 ```
 
-## Swipe gestures
+## 滑动手势 {#swipe-gestures}
 
-Enable swipe and pointer-drag navigation by setting `IsSwipeEnabled`:
+设置 `IsSwipeEnabled` 即可启用滑动和指针拖动导航：
 
 ```xml title='XAML'
 <Carousel IsSwipeEnabled="True">
@@ -227,11 +227,11 @@ Enable swipe and pointer-drag navigation by setting `IsSwipeEnabled`:
 </Carousel>
 ```
 
-When enabled, users can drag between pages with visual feedback. Flick gestures are supported, requiring a threshold swipe velocity to determine whether the transition completes. The `IsSwiping` property is `true` while a gesture is in progress.
+启用之后，用户可以拖动翻页，并获得相应的视觉反馈。控件还支持快速轻扫（flick）手势：滑动速度要超过一定阈值，这次切换才会完成。手势进行期间，`IsSwiping` 属性为 `true`。
 
-## Wrap selection (looping)
+## 循环选择（首尾相接） {#wrap-selection-looping}
 
-Enable looping so `Next()` on the last item wraps to the first and `Previous()` on the first wraps to the last:
+开启循环之后，在最后一项上调用 `Next()` 会绕回第一项，在第一项上调用 `Previous()` 则绕回最后一项：
 
 ```xml title='XAML'
 <Carousel WrapSelection="True">
@@ -239,9 +239,9 @@ Enable looping so `Next()` on the last item wraps to the first and `Previous()` 
 </Carousel>
 ```
 
-## Viewport fraction
+## 视口占比 {#viewport-fraction}
 
-Set `ViewportFraction` below `1.0` to reveal adjacent pages alongside the selected page:
+把 `ViewportFraction` 设为小于 `1.0` 的值，即可在选中页旁边露出相邻页：
 
 ```xml title='XAML'
 <Carousel ViewportFraction="0.8">
@@ -249,26 +249,26 @@ Set `ViewportFraction` below `1.0` to reveal adjacent pages alongside the select
 </Carousel>
 ```
 
-A value of `1.0` (default) shows a single full page. Values like `0.8` create a "peeking" effect where edges of adjacent pages are visible. A value of `0.33` fits roughly three items in view.
+取 `1.0`（默认）时只显示完整的一页。取 `0.8` 这类数值会产生「露边」效果，相邻页的边缘会露出来。取 `0.33` 时视野内大致能容下三项。
 
 ## 键盘导航 {#keyboard-navigation}
 
-The `Carousel` supports keyboard navigation when focused:
+`Carousel` 获得焦点后支持键盘导航：
 
 | 按键 | 动作 |
 |---|---|
-| Left / Up arrow | Moves to the previous item. |
-| Right / Down arrow | Moves to the next item. |
-| Home | Jumps to the first item. |
-| End | Jumps to the last item. |
+| 左方向键 / 上方向键 | 切到上一项。 |
+| 右方向键 / 下方向键 | 切到下一项。 |
+| Home | 跳到第一项。 |
+| End | 跳到最后一项。 |
 
 ## 另请参阅 {#see-also}
 
-- [PipsPager](/controls/layout/containers/pipspager) for dot-based page indicators
-- [CarouselPage](/controls/navigation/carouselpage) for page-based carousel navigation
-- [Setting page transitions](/docs/graphics-animation/page-transitions)
+- [PipsPager](/controls/layout/containers/pipspager)——圆点式的分页指示器
+- [CarouselPage](/controls/navigation/carouselpage)——按页导航的轮播
+- [设置页面过渡动画](/docs/graphics-animation/page-transitions)
 - [TransitioningContentControl](/controls/data-display/transitioningcontentcontrol)
 - [ItemsControl](/controls/data-display/collections/itemscontrol)
 - [ListBox](/controls/data-display/collections/listbox)
-- [Carousel API reference](/api/avalonia/controls/carousel)
+- [Carousel API 参考](/api/avalonia/controls/carousel)
 - [GitHub 上的 `Carousel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Carousel.cs)

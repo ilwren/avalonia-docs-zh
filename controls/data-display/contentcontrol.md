@@ -1,13 +1,13 @@
 ---
 id: contentcontrol
 title: ContentControl
-description: A base control that displays a single piece of content, which can be a string, a control, or a data-bound object rendered through a data template.
+description: 一个基础控件，用于显示单块内容：可以是字符串、控件，也可以是经数据模板渲染的绑定对象。
 doc-type: reference
 ---
 
 import ControlContentStudentScreenshot from '/img/controls/contentcontrol/contentcontrol-student.png';
 
-[`ContentControl`](/api/avalonia/controls/contentcontrol) is a control that displays a single piece of content. The content can be a string, a control, or a data-bound object rendered through a `DataTemplate`. Many common Avalonia controls, including `Button`, `Window`, and `UserControl`, inherit from `ContentControl`, so understanding how it works is fundamental to building Avalonia applications.
+[`ContentControl`](/api/avalonia/controls/contentcontrol) 是一个显示单块内容的控件。内容可以是字符串、控件，也可以是经 `DataTemplate` 渲染的绑定对象。Avalonia 中许多常用控件都继承自 `ContentControl`，包括 `Button`、`Window` 和 `UserControl`，所以弄懂它的运作方式是构建 Avalonia 应用的基本功。
 
 ## 常用属性 {#common-properties}
 
@@ -15,14 +15,14 @@ import ControlContentStudentScreenshot from '/img/controls/contentcontrol/conten
 
 | 属性 | 说明 |
 |---|---|
-| `Content` | The content to display in the control. |
-| `ContentTemplate` | A `DataTemplate` used to render the `Content` object. |
-| `HorizontalContentAlignment` | Controls how the content is aligned horizontally within the control. |
-| `VerticalContentAlignment` | Controls how the content is aligned vertically within the control. |
+| `Content` | 要在控件中显示的内容。 |
+| `ContentTemplate` | 用于渲染 `Content` 对象的 `DataTemplate`。 |
+| `HorizontalContentAlignment` | 控制内容在控件内的水平对齐方式。 |
+| `VerticalContentAlignment` | 控制内容在控件内的垂直对齐方式。 |
 
-## Displaying content
+## 显示内容 {#displaying-content}
 
-At its simplest, a `ContentControl` displays the data you assign to its [`Content`](/api/avalonia/controls/contentcontrol#content-property) property.
+最简单的情形下，`ContentControl` 直接显示你赋给它 [`Content`](/api/avalonia/controls/contentcontrol#content-property) 属性的数据。
 
 例如：
 
@@ -30,13 +30,13 @@ At its simplest, a `ContentControl` displays the data you assign to its [`Conten
 <ContentControl Content="Hello World!"/>
 ```
 
-This displays the string "Hello World!". Because `Content` is the control's default (content) property, you can also write:
+这会显示字符串「Hello World!」。由于 `Content` 是该控件的默认（内容）属性，你也可以写成：
 
 ```xml
 <ContentControl>Hello World!</ContentControl>
 ```
 
-### Hosting a child control
+### 承载子控件 {#hosting-a-child-control}
 
 If you assign a control to a `ContentControl`, it renders that control directly:
 

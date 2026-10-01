@@ -1,13 +1,13 @@
 ---
 id: itemscontrol
 title: ItemsControl
-description: A reference for the ItemsControl in Avalonia, a base control for displaying repeating data with full control over layout and item appearance.
+description: Avalonia 中 ItemsControl 的参考文档：它是呈现重复数据的基础控件，布局和条目外观完全由你掌控。
 doc-type: reference
 ---
 
-`ItemsControl` is the base class for controls that display repeating data, like [`ListBox`](/controls/data-display/collections/listbox) or [`ComboBox`](/controls/input/selectors/combobox). It has no built-in formatting, selection, or scroll behavior.
+`ItemsControl` 是各类呈现重复数据的控件的基类，比如 [`ListBox`](/controls/data-display/collections/listbox) 和 [`ComboBox`](/controls/input/selectors/combobox)。它本身不带任何格式化、选择或滚动行为。
 
-You can use it with data binding, styling and data templates to create a completely custom repeating data control.
+配合数据绑定、样式和数据模板，你可以用它做出完全自定义的重复数据控件。
 
 ## 常用属性 {#useful-properties}
 
@@ -15,23 +15,23 @@ You can use it with data binding, styling and data templates to create a complet
 
 | 属性 | 说明 |
 |---|---|
-| `ItemsSource` | The bound collection that is used as the data source for the control. |
-| `ItemTemplate` | A `DataTemplate` that controls how each individual item looks. |
-| `ItemsPanel` | The panel that hosts generated items. Defaults to `StackPanel`. See [Custom panel](/docs/how-to/itemscontrol-how-to#custom-panel) for how to change to another panel. |
-| `Styles` | Styles applied to child elements of the `ItemsControl`. |
-| `DisplayMemberBinding` | A binding that selects the property to display when you do not supply an `ItemTemplate`. |
+| `ItemsSource` | 用作该控件数据源的绑定集合。 |
+| `ItemTemplate` | 控制每个条目外观的 `DataTemplate`。 |
+| `ItemsPanel` | 承载所生成条目的面板，默认为 `StackPanel`。换成别的面板的做法请参阅[自定义面板](/docs/how-to/itemscontrol-how-to#custom-panel)。 |
+| `Styles` | 作用于 `ItemsControl` 子元素的样式。 |
+| `DisplayMemberBinding` | 未提供 `ItemTemplate` 时，用于指定显示哪个属性的绑定。 |
 
 ## 实用提示 {#practical-notes}
 
-- **Use `ObservableCollection<T>`** for your `ItemsSource` if you need the UI to update automatically when you add or remove items at runtime. A plain `List<T>` will not update the control when changed.
-- `ItemsControl` **does not virtualize** by default. If you are working with a large number of items, use a [`ListBox`](/controls/data-display/collections/listbox), which virtualizes by default, or [customize the `ItemsPanel` into a virtualizing control](/docs/how-to/itemscontrol-how-to#virtualized-scrollable-items).
-- `ItemsControl` **does not have a scrollbar**. Content that overflows the available height is clipped. Wrap your `ItemsControl` in a [`ScrollViewer`](/controls/layout/containers/scrollviewer) if you need scrolling.
-- To **arrange items horizontally** instead of vertically, [replace the default `ItemsPanel`](/docs/how-to/itemscontrol-how-to#horizontal-layout).
-- **`ItemsRepeater` is no longer supported** as of Avalonia v12. If you use that control in your app, upgrading to `ItemsControl` or one of its derivatives is recommended.
+- 如果你希望运行时增删条目后界面能自动更新，`ItemsSource` 请**使用 `ObservableCollection<T>`**。普通的 `List<T>` 改动后不会通知控件刷新。
+- `ItemsControl` 默认**不做虚拟化**。条目数量很大时，请改用默认就会虚拟化的 [`ListBox`](/controls/data-display/collections/listbox)，或者[把 `ItemsPanel` 改造成虚拟化控件](/docs/how-to/itemscontrol-how-to#virtualized-scrollable-items)。
+- `ItemsControl` **没有滚动条**。超出可用高度的内容会被裁掉。需要滚动时，请把 `ItemsControl` 放进 [`ScrollViewer`](/controls/layout/containers/scrollviewer) 里。
+- 若要**横向排布条目**而非纵向，请[替换默认的 `ItemsPanel`](/docs/how-to/itemscontrol-how-to#horizontal-layout)。
+- 自 Avalonia v12 起，**`ItemsRepeater` 不再受支持**。如果你的应用还在用它，建议升级到 `ItemsControl` 或它的派生控件。
 
 ## Example
 
-This example binds an observable collection of crockery items to an `ItemsControl`. Layout and formatting of each item is specified by the `DataTemplate` nested under `ItemsControl.ItemTemplate`.
+下面这个例子把一个可观察的餐具集合绑定到 `ItemsControl`，每个条目的布局和样式由嵌在 `ItemsControl.ItemTemplate` 下的 `DataTemplate` 指定。
 
 <XamlPreview>
 
@@ -99,11 +99,11 @@ public class MainViewModel
 
 ## 另请参阅 {#see-also}
 
-- [How to: Work with ItemsControl](/docs/how-to/itemscontrol-how-to)
+- [如何使用 ItemsControl](/docs/how-to/itemscontrol-how-to)
 - [ListBox](/controls/data-display/collections/listbox)
 - [Carousel](/controls/data-display/collections/carousel)
 - [DataGrid](/controls/data-display/structured-data/datagrid)
 - [数据模板](/docs/data-templates/introduction-to-data-templates)
-- [ItemsControl API reference](/api/avalonia/controls/itemscontrol)
+- [ItemsControl API 参考](/api/avalonia/controls/itemscontrol)
 - [GitHub 上的 `ItemsControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ItemsControl.cs)
 

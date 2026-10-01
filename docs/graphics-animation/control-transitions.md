@@ -78,7 +78,7 @@ For a full list of easing functions, see the [Easing functions page](/docs/graph
 
 The correct transition type must be used for the type of the property being animated:
 
-| Transition | Property type |
+| 过渡动画 | Property type |
 |---|---|
 | `BoolTransition` | `bool` |
 | `BoxShadowsTransition` | `BoxShadows` |
@@ -156,7 +156,7 @@ new Border
 
 The available transitions are:
 
-| Transition   | Sample                                    | Acceptable units             |
+| 过渡动画   | Sample                                    | Acceptable units             |
 | ------------ | ----------------------------------------- | ---------------------------- |
 | `translate`  | `translate(10px)`, `translate(0px, 10px)` | `px`                         |
 | `translateX` | `translateX(10px)`                        | `px`                         |

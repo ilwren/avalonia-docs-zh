@@ -76,7 +76,7 @@ Keep the `Duration` values consistent across child transitions so they start and
 
 ## Choosing the right transition
 
-| Transition | 适用场景 | 注释支持情况 |
+| 过渡动画 | 适用场景 | 注释支持情况 |
 |---|---|---|
 | `CrossFade` | Tabs, settings panels, content that changes in place | Subtle, non-directional |
 | `PageSlide` (horizontal) | Wizard steps, forward/back navigation | Conveys sequential flow |

@@ -1,7 +1,7 @@
 ---
 id: ridgeline-chart
-title: Ridgeline chart
-description: Stacks multiple distributions with controlled overlap, useful for comparing shape changes across groups or time.
+title: 山脊图
+description: 把多条分布曲线按设定的重叠量叠放在一起，适合比较各组或各时期分布形态的变化。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Ridgeline charts stack multiple area distributions with vertical overlap so you can compare shape changes across groups, periods, or scenarios.
+山脊图把多条面积分布曲线纵向重叠地叠放在一起，便于比较不同组别、时期或情景下分布形态的变化。
 
 ## 适用场景 {#when-to-use}
 
-- **Distribution over time**: Compare how a distribution shifts from one period to another.
-- **Group comparison**: Stack many related density-like curves in one compact frame.
-- **Shape-first analysis**: Emphasize contour and overlap more than exact totals.
+- **分布随时间演变**：比较某个分布从一个时期到另一个时期的位移。
+- **分组对比**：把许多条相关的密度型曲线收进同一个紧凑的画框。
+- **以形态为先的分析**：更看重轮廓和重叠，而非精确的总量。
 
 ## 代码示例 {#code-example}
 
@@ -45,10 +45,10 @@ public ObservableCollection<CurvePoint> Series2024 { get; } = new() { new(0, 3),
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Series` | Content collection of `AreaSeries` distributions. | 空集合 |
-| `Overlap` | Overlap factor between series. | `0.5` |
-| `SeriesHeight` | Target height for each series band. | `50.0` |
-| `CurveType` | Curve interpolation type. | `Spline` |
+| `Series` | `AreaSeries` 分布的内容集合。 | 空集合 |
+| `Overlap` | 各系列之间的重叠系数。 | `0.5` |
+| `SeriesHeight` | 每条系列色带的目标高度。 | `50.0` |
+| `CurveType` | 曲线插值类型。 | `Spline` |
 
 ## 另请参阅 {#see-also}
 

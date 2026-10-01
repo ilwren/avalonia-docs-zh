@@ -332,6 +332,6 @@ For more general tips on optimizing performance, see [Performance](/docs/app-dev
 ## 另请参阅 {#see-also}
 
 - [ItemsControl](/controls/data-display/collections/itemscontrol)
-- [ItemsControl API reference](/api/avalonia/controls/itemscontrol)
+- [ItemsControl API 参考](/api/avalonia/controls/itemscontrol)
 - [Data Templates](/docs/data-templates/introduction-to-data-templates): How templates work.
 - [ListBox How-To](/docs/how-to/listbox-how-to): When selection behavior is needed.

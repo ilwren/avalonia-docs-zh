@@ -1,7 +1,7 @@
 ---
 id: parallel-coordinates-chart
-title: Parallel coordinate chart
-description: Visualizes multivariate records as lines across parallel axes, useful for comparing patterns across many dimensions.
+title: 平行坐标图
+description: 把多变量记录画成跨越一组平行轴的折线，适合在众多维度上比较各自的形态。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Parallel coordinate charts map each record across a sequence of vertical axes so multi-dimensional patterns and outliers can be compared in one view.
+平行坐标图把每条记录映射到一列纵轴上，于是多维度的规律和异常值能在同一视图中两相比较。
 
 ## 适用场景 {#when-to-use}
 
-- **Multivariate comparison**: Compare several numeric dimensions for each item.
-- **Pattern detection**: Spot outliers, clusters, and dominant shapes across metrics.
-- **Model diagnostics**: Inspect how records vary across many inputs at once.
+- **多变量对比**：比较每个条目在多个数值维度上的表现。
+- **规律发现**：在众多指标上发现异常值、簇群和主导形态。
+- **模型诊断**：一次性考察各条记录在众多输入上的差异。
 
 ## 代码示例 {#code-example}
 
@@ -52,21 +52,21 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Axes` | Content collection of `ParallelAxis` definitions. | 空集合 |
-| `ItemsSource` | Collection of multivariate records. | `null` |
-| `BrushPath` | Optional path to an `IBrush` or color string used for each line. | `null` |
-| `LegendLabelPath` | Optional path used for legend labels. | `null` |
-| `StrokeThickness` | Thickness of the data lines. | `2.0` |
-| `CurveTension` | Tension value for curved lines. | `0.0` |
+| `Axes` | `ParallelAxis` 定义的内容集合。 | 空集合 |
+| `ItemsSource` | 多变量记录的集合。 | `null` |
+| `BrushPath` | 可选路径，为每条折线提供 `IBrush` 或颜色字符串。 | `null` |
+| `LegendLabelPath` | 用于图例标签的可选路径。 | `null` |
+| `StrokeThickness` | 数据折线的粗细。 | `2.0` |
+| `CurveTension` | 曲线的张力取值。 | `0.0` |
 
 ## 常用属性（`ParallelAxis`） {#common-properties-parallelaxis}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Header` | Axis title. | `null` |
-| `ValuePath` | Path to the value bound to this axis. | `null` |
-| `Minimum` | Minimum value of the axis scale. | `0.0` |
-| `Maximum` | Maximum value of the axis scale. | `100.0` |
+| `Header` | 坐标轴标题。 | `null` |
+| `ValuePath` | 指向绑定到该轴数值的路径。 | `null` |
+| `Minimum` | 坐标轴刻度的最小值。 | `0.0` |
+| `Maximum` | 坐标轴刻度的最大值。 | `100.0` |
 
 ## 另请参阅 {#see-also}
 

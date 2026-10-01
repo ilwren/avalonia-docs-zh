@@ -63,11 +63,11 @@ public ObservableCollection<double> Series2Data { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `IsTooltipEnabled` | Global toggle for tooltip visibility. | `true` |
-| `TooltipTemplate` | Custom DataTemplate for the tooltip UI (on series). | System default |
+| `IsTooltipEnabled` | 工具提示可见性的总开关。 | `true` |
+| `TooltipTemplate` | 工具提示界面所用的自定义 DataTemplate（设置在系列上）。 | 系统默认值 |
 
-## Data item conventions
+## 数据项约定 {#data-item-conventions}
 
-If the hit data item has a non-empty string property named `TooltipText`, the default tooltip displays that text instead of generated series, category, and value content.
+若命中的数据项带有一个名为 `TooltipText` 的非空字符串属性，默认工具提示会显示该文本，而不再自动拼装系列、类别和数值信息。
 
-Use `TooltipTemplate` on a series when the tooltip needs custom layout, controls, or multiple bound fields.
+当工具提示需要自定义布局、放入控件或绑定多个字段时，请在系列上使用 `TooltipTemplate`。

@@ -1,7 +1,7 @@
 ---
 id: trendline-chart
-title: Trendline chart
-description: Overlays calculated trend lines on Cartesian chart series to show patterns with linear, exponential, polynomial, logarithmic, and moving average types.
+title: 趋势线图
+description: 在笛卡尔图表系列上叠加计算得出的趋势线，支持线性、指数、多项式、对数和移动平均等类型。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,15 +13,15 @@ import chartsFeaturesTrendlines from '/img/controls/charts/charts-trendline-1.pn
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Trendlines are used in Cartesian charts to show the general direction or pattern of data. They filter out noise to highlight underlying trends. They can fit linear, polynomial, power, exponential, logarithmic, or moving average data.
+趋势线用在笛卡尔图表中，用来呈现数据的总体走向或规律。它滤掉噪声，把背后的趋势凸显出来，可按线性、多项式、幂函数、指数、对数或移动平均方式拟合。
 
 <Image light={chartsFeaturesTrendlines} maxWidth={400} position="center" cornerRadius="true" alt="Line chart with an overlaid trendline showing a line of best fit." />
 
 ## 适用场景 {#when-to-use}
 
-- **Sales forecasting**: Projecting future sales based on historical trends.
-- **Data smoothing**: Identifying patterns in volatile stock or sensor data.
-- **Performance evaluation**: Visualizing if throughput is generally increasing or decreasing.
+- **销售预测**：依据历史走势推算未来销量。
+- **数据平滑**：在波动剧烈的股价或传感器数据中找出规律。
+- **绩效评估**：看清吞吐量总体上是在上升还是下降。
 
 ## 代码示例 {#code-example}
 
@@ -72,21 +72,21 @@ public ObservableCollection<ChartDataPoint> LinearData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Type` | Data type the trendline should fit: `Linear`, `Exponential`, `Logarithmic`, `Power`, `Polynomial`, or `MovingAverage`. | `Linear` |
-| `Stroke` | Brush used to draw the trendline. | `Gray` |
-| `StrokeThickness` | Thickness of the trendline stroke. | `2.0` |
-| `StrokeDashStyle` | Dash style used for the trendline stroke. | `null` |
-| `StrokeLineCap` | Line cap used at the trendline ends. | `Round` |
-| `StrokeLineJoin` | Line join used where trendline segments meet. | `Round` |
-| `IsVisible` | Whether the trendline is rendered. | `true` |
-| `ForwardForecast` | Number of units to project forward. | `0` |
-| `BackwardForecast` | Number of units to project backward. | `0` |
-| `Period` | For `MovingAverage`, the number of points to average. | `2` |
-| `PolynomialOrder` | Polynomial degree when `Type` is `Polynomial`. | `2` |
+| `Type` | 趋势线所要拟合的数据类型：`Linear`、`Exponential`、`Logarithmic`、`Power`、`Polynomial` 或 `MovingAverage`。 | `Linear` |
+| `Stroke` | 绘制趋势线所用的画刷。 | `Gray` |
+| `StrokeThickness` | 趋势线的线条粗细。 | `2.0` |
+| `StrokeDashStyle` | 趋势线所用的虚线样式。 | `null` |
+| `StrokeLineCap` | 趋势线两端的线端样式。 | `Round` |
+| `StrokeLineJoin` | 趋势线各段衔接处的拐角连接样式。 | `Round` |
+| `IsVisible` | 是否渲染该趋势线。 | `true` |
+| `ForwardForecast` | 向前外推多少个单位。 | `0` |
+| `BackwardForecast` | 向后外推多少个单位。 | `0` |
+| `Period` | 对 `MovingAverage` 而言，参与求平均的数据点个数。 | `2` |
+| `PolynomialOrder` | `Type` 为 `Polynomial` 时所用的多项式次数。 | `2` |
 
 ## ChartTrendlineSeries
 
-`ChartTrendlineSeries` is a standalone series that renders a trendline overlay using regression calculations. Unlike the `Trendline` attached property, it is added directly to the chart's `Series` collection and can reference another series via `SourceSeries` or use its own `ItemsSource`.
+`ChartTrendlineSeries` 是一个独立的系列，通过回归计算绘制趋势线叠加层。它与 `Trendline` 附加属性不同：要直接加进图表的 `Series` 集合，并可通过 `SourceSeries` 引用另一个系列，或使用自己的 `ItemsSource`。
 
 ### XAML
 
@@ -140,15 +140,15 @@ public ObservableCollection<ChartDataPoint> StandaloneTrendlineData { get; } = n
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `TrendlineType` | The regression type: `Linear`, `Polynomial`, `Exponential`, `Logarithmic`, `Power`, or `MovingAverage`. | `Linear` |
-| `PolynomialOrder` | The polynomial degree when `TrendlineType` is `Polynomial`. | `2` |
-| `Period` | Number of points used when `TrendlineType` is `MovingAverage`. | `2` |
-| `SourceSeries` | The series to calculate the trendline from. If `null`, uses `ItemsSource` directly. | `null` |
-| `Extend` | How far to extend the trendline beyond the data range, as a fraction (e.g., `0.1` = 10%). | `0` |
+| `TrendlineType` | 回归类型：`Linear`、`Polynomial`、`Exponential`、`Logarithmic`、`Power` 或 `MovingAverage`。 | `Linear` |
+| `PolynomialOrder` | `TrendlineType` 为 `Polynomial` 时所用的多项式次数。 | `2` |
+| `Period` | `TrendlineType` 为 `MovingAverage` 时所取的数据点个数。 | `2` |
+| `SourceSeries` | 据以计算趋势线的系列。为 `null` 时，直接使用 `ItemsSource`。 | `null` |
+| `Extend` | 趋势线在数据范围之外延伸多远，以比例表示（比如 `0.1` 表示 10%）。 | `0` |
 
 ## MovingAverageSeries
 
-`MovingAverageSeries` displays a moving average overlay for financial or time-series data. It supports Simple (SMA), Exponential (EMA), Weighted (WMA), and Triangular (TMA) moving average calculations. It can be used in `CartesianChart`, or in `FinancialChart` as an overlay that follows the financial chart's date and price coordinates.
+`MovingAverageSeries` 为金融或时间序列数据显示移动平均叠加层，支持简单（SMA）、指数（EMA）、加权（WMA）和三角（TMA）四种移动平均算法。它既可用在 `CartesianChart` 中，也可作为叠加层用在 `FinancialChart` 中，跟随金融图表的日期与价格坐标。
 
 ### XAML
 
@@ -190,9 +190,9 @@ public ObservableCollection<PricePoint> PriceData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `MovingAverageType` | The calculation type: `Simple`, `Exponential`, `Weighted`, or `Triangular`. | `Simple` |
-| `Period` | The number of data points used in the moving average window. | `14` |
-| `SourceSeries` | The series to calculate the moving average from. If `null`, uses `ItemsSource` directly. | `null` |
+| `MovingAverageType` | 计算类型：`Simple`、`Exponential`、`Weighted` 或 `Triangular`。 | `Simple` |
+| `Period` | 移动平均窗口所取的数据点个数。 | `14` |
+| `SourceSeries` | 据以计算移动平均的系列。为 `null` 时，直接使用 `ItemsSource`。 | `null` |
 
 ## 另请参阅 {#see-also}
 

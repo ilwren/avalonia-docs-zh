@@ -1,7 +1,7 @@
 ---
 id: contour-plot-chart
-title: Contour plot chart
-description: Displays 2D scalar fields as contour lines and optional filled bands, useful for surfaces, intensity maps, and interpolation.
+title: 等值线图
+description: 用等值线和可选的填充带呈现二维标量场，适合曲面、强度分布和插值结果。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Contour plots interpolate values across two spatial dimensions and render the result as isolines, filled regions, or both.
+等值线图在两个空间维度上对数值作插值，并把结果绘制成等值线、填充区域，或二者兼有。
 
 ## 适用场景 {#when-to-use}
 
-- **Surface estimation**: Visualize a scalar field from scattered measurements.
-- **Hotspot analysis**: Reveal peaks, valleys, and gradients in two dimensions.
-- **Engineering maps**: Show pressure, temperature, or concentration surfaces.
+- **曲面估计**：根据零散的测量点还原出一个标量场。
+- **热点分析**：显露二维平面上的峰值、谷值和梯度。
+- **工程图谱**：呈现压力、温度或浓度的分布曲面。
 
 ## 代码示例 {#code-example}
 
@@ -51,13 +51,13 @@ public ObservableCollection<ContourPoint> ContourData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of sampled points. | `null` |
-| `XPath` | Path to the X coordinate. | `null` |
-| `YPath` | Path to the Y coordinate. | `null` |
-| `ValuePath` | Path to the scalar value. | `null` |
-| `ContourLevels` | Number of contour levels to compute. | `8` |
-| `ShowFill` | Whether to fill the contour regions. | `true` |
-| `ShowLines` | Whether to draw contour lines. | `true` |
+| `ItemsSource` | 采样点的集合。 | `null` |
+| `XPath` | 指向 X 坐标的路径。 | `null` |
+| `YPath` | 指向 Y 坐标的路径。 | `null` |
+| `ValuePath` | 指向标量值的路径。 | `null` |
+| `ContourLevels` | 要计算的等值线层数。 | `8` |
+| `ShowFill` | 是否填充等值线之间的区域。 | `true` |
+| `ShowLines` | 是否绘制等值线。 | `true` |
 
 ## 另请参阅 {#see-also}
 

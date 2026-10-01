@@ -1,7 +1,7 @@
 ---
 id: mosaic-chart
-title: Mosaic chart
-description: Visualizes relationships between two categorical variables by scaling both the width and height of segments to represent their proportions of the total.
+title: 马赛克图
+description: 同时用分段的宽度和高度表示各自占总量的比例，呈现两个分类变量之间的关系。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsAnalyticsMosaic from '/img/controls/charts/charts-analytics-mosaic.
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Mosaic charts (Marimekko) visualize relationships between categories using area. Both the width and height of segments are scaled to represent percentages of the total.
+马赛克图（Marimekko）用面积来呈现各类别之间的关系。每个分段的宽度和高度都按其占总量的百分比缩放。
 
 <Image light={chartsAnalyticsMosaic} maxWidth={400} position="center" cornerRadius="true" alt="Mosaic chart with rectangular tiles scaled by both width and height to show proportions across two categorical variables." />
 
 ## 适用场景 {#when-to-use}
-- **Market segmentation**: Showing sales by region (width) and by product category (height).
-- **Resource expenditure**: Visualizing budget allocation across departments and cost types.
-- **Multi-factor analysis**: Understanding how two different qualitative variables interact.
+- **市场细分**：按地区（宽）和产品品类（高）呈现销售额。
+- **资源支出**：呈现预算在各部门、各费用类型之间的分配。
+- **多因素分析**：弄清两个定性变量如何相互作用。
 
 ## 代码示例 {#code-example}
 
@@ -57,7 +57,7 @@ public ObservableCollection<MosaicItem> MosaicData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of data segments. | `null` |
-| `GroupPath` | Primary category (determines width). | `null` |
-| `SubGroupPath` | Secondary category (determines height). | `null` |
-| `ValuePath` | Numerical value for scaling. | `null` |
+| `ItemsSource` | 数据分段的集合。 | `null` |
+| `GroupPath` | 主类别（决定宽度）。 | `null` |
+| `SubGroupPath` | 次类别（决定高度）。 | `null` |
+| `ValuePath` | 用于缩放的数值。 | `null` |

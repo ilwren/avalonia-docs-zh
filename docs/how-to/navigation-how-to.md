@@ -88,7 +88,7 @@ You can add a page transition for animated view changes by replacing `ContentCon
 
 The following built-in transitions are available:
 
-| Transition | 效果 |
+| 过渡动画 | 效果 |
 |---|---|
 | `CrossFade` | Fades between old and new content |
 | `PageSlide` | Slides content horizontally or vertically |

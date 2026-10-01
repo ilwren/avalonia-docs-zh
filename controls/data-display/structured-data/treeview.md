@@ -24,7 +24,7 @@ There are two data sources: the main items source for the control, this gives th
   <tbody>
     <tr>
       <td><code>ItemsSource</code></td>
-      <td>The bound collection that is used as the data source for the control.</td>
+      <td>用作该控件数据源的绑定集合。</td>
     </tr>
     <tr>
       <td><code>ItemsControl.ItemTemplate</code></td>
