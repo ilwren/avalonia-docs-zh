@@ -30,7 +30,7 @@ title: NativeMenu
     <tr><td><code>Header</code></td><td>菜单文字。</td></tr>
     <tr><td><code>Command</code></td><td>用户点击该菜单项时所执行的命令。</td></tr>
     <tr><td><code>Gesture</code></td><td>与该菜单项关联的键盘快捷键。</td></tr>
-    <tr><td><code>ToggleType</code></td><td>切换行为： <code>None</code> (default), <code>CheckBox</code>, or <code>Radio</code>. Uses the <code>MenuItemToggleType</code> enum.</td></tr>
+    <tr><td><code>ToggleType</code></td><td>切换行为： <code>None</code> (default), <code>CheckBox</code>, or <code>Radio</code>。取值来自 <code>MenuItemToggleType</code> enum.</td></tr>
     <tr><td><code>IsChecked</code></td><td>菜单项是否处于选中状态。仅当 <code>ToggleType</code> is <code>CheckBox</code> or <code>Radio</code>.</td></tr>
   </tbody>
 </table>

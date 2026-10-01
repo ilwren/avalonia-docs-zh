@@ -1362,6 +1362,7 @@
  "*Pseudoclasses* in Avalonia, similar to those in CSS, are keywords exposed by a ⟦0⟧ that indicate a distinct control state. These states are used in [style selectors⟦3⟧ to conditionally style controls. For example, a [⟦1⟧⟦4⟧ could have a different appearance while it is being pressed, or a ⟦2⟧ while it is disabled.": "Avalonia 的*伪类*与 CSS 中的类似，是由 ⟦0⟧ 暴露的一些关键字，用来表示控件所处的某种状态。它们用在[样式选择器⟦3⟧中，按条件为控件套样式。比如 [⟦1⟧⟦4⟧ 被按下时可以有另一副模样，⟦2⟧ 被禁用时也可以。",
  ", reaches your own handlers.": "）会直接交给你自己的处理程序。",
  ". To make the palette uniform and rectangular the following alterations were made 1. The A100-A700 shades of each color are excluded. These shades do not exist for all colors (Brown/Gray). 2. Black/White are stand-alone colors and are also excluded.": "。为了让调色板整齐成矩形，这里做了两处改动：1. 排除每种颜色的 A100-A700 色阶——并非所有颜色都有这些色阶（如棕色/灰色）。2. 黑色和白色是独立颜色，也一并排除。",
+ ". Uses the": "。取值来自",
  ".LogToTrace in a custom Avalonia initialization": "在自定义 Avalonia 初始化中用 .LogToTrace",
  ".NET 10 SDK or later": ".NET 10 SDK 或更高版本",
  ".NET 10 or later.": ".NET 10 或更高版本。",
