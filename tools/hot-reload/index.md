@@ -1,7 +1,7 @@
 ---
 id: index
-title: Hot reload
-description: Add the AvaloniaUI.DiagnosticsSupport.HotReload package to apply live XAML and C# edits to a running Avalonia app.
+title: 热重载
+description: 添加 AvaloniaUI.DiagnosticsSupport.HotReload 包，即可把 XAML 和 C# 的改动实时应用到运行中的 Avalonia 应用上。
 doc-type: how-to
 tags:
   - avalonia plus
@@ -13,96 +13,96 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Hot reload applies edits to `.axaml` and `.cs` files in a running Avalonia application without restarting it. The `AvaloniaUI.DiagnosticsSupport.HotReload` package plugs into the .NET Hot Reload pipeline: when you save a file, matching controls, styles, resources and data templates are rebuilt in place.
+热重载能把对 `.axaml` 和 `.cs` 文件的改动应用到运行中的 Avalonia 应用上，无需重启。`AvaloniaUI.DiagnosticsSupport.HotReload` 包接入了 .NET 热重载管线：你一保存文件，相应的控件、样式、资源和数据模板就会就地重建。
 
-## What hot reload updates
+## 热重载会更新什么 {#what-hot-reload-updates}
 
-With the hot reload package, these edits are applied live to your running application:
+装上热重载包后，下列改动会实时应用到你运行中的应用上：
 
 | 变更 | 行为 |
 | --- | --- |
-| Controls (files with `x:Class`) | Existing instances in the visual tree are rebuilt in place, keeping their positions where possible. |
-| Styles | Application-level and control-level styles are reapplied. Selector and setter changes take effect at once. |
-| Resource dictionaries | Merged dictionaries are reloaded and dependents are refreshed. |
-| 数据模板 | Templates are regenerated and controls bound to them are refreshed. |
-| `{StaticResource}` references | Rewritten to `{DynamicResource}` during hot reload, so resource edits propagate without a restart. |
-Some common uses of hot reload are:
+| 控件（带 `x:Class` 的文件） | 视觉树中已有的实例会就地重建，并尽可能保留原来的位置。 |
+| Styles | 应用级和控件级的样式都会重新应用，选择器和 setter 的改动立刻见效。 |
+| 资源字典 | 合并字典会被重新加载，依赖它们的内容随之刷新。 |
+| 数据模板 | 模板会重新生成，绑定到它们的控件随之刷新。 |
+| `{StaticResource}` references | 热重载期间会被改写为 `{DynamicResource}`，因此资源改动无需重启即可传播开来。 |
+热重载常见的用武之地有：
 
-- **Resource brushes and values.** Change a color, brush, or font size in a resource dictionary and every control that references it updates. Both `{DynamicResource}` and `{StaticResource}` references pick up the change, because static references are rewritten during hot reload.
-- **Data templates.** Change the icon, colors, spacing, or layout of a [data template](/docs/data-templates/introduction-to-data-templates), and every control that uses it, including list items and content presenters, rebuilds with the new template.
-- **Control markup.** Adjust the layout, add or remove elements, or edit text in a view (a file with `x:Class`). The live instance is rebuilt in place.
-- **Styles.** Edit a selector or setter in an application-level or control-level style, and the new styling is re-applied at once.
-- **Code-behind.** Change an event handler or method body in an `.axaml.cs` file. C# edits apply under the standard .NET Hot Reload rules.
+- **资源画刷与取值。**在资源字典里改个颜色、画刷或字号，所有引用它的控件都会更新。`{DynamicResource}` 和 `{StaticResource}` 两种引用都能跟上改动，因为静态引用在热重载期间会被改写。
+- **数据模板。**改了[数据模板](/docs/data-templates/introduction-to-data-templates)的图标、配色、间距或布局后，所有用到它的控件（包括列表项和内容呈现器）都会按新模板重建。
+- **控件标记。**在视图（带 `x:Class` 的文件）中调整布局、增删元素或改文字，运行中的实例会就地重建。
+- **样式。**改动应用级或控件级样式中的选择器或 setter，新样式立刻重新应用。
+- **代码隐藏。**改 `.axaml.cs` 文件中的事件处理程序或方法体。C# 改动遵循标准的 .NET 热重载规则。
 
 ## 前置条件 {#prerequisites}
 
-Before you begin, make sure you have:
+动手之前，请确认你具备：
 
-1. **Avalonia 12.0 or newer.**
-2. **A valid Avalonia license key** that includes access to `AvaloniaUI.DiagnosticsSupport.HotReload`. You can get a key from the [Avalonia customer portal](https://portal.avaloniaui.net/). The same key may cover other licensed Avalonia packages, such as `Charts` or `TreeDataGrid`.
-3. **A hot reload driver.** Either the `dotnet watch` command or an IDE that supports .NET Hot Reload (such as Visual Studio). See [Running with hot reload](#running-with-hot-reload).
+1. **Avalonia 12.0 或更高版本。**
+2. **含 `AvaloniaUI.DiagnosticsSupport.HotReload` 使用权的有效 Avalonia 许可证密钥。**密钥可在 [Avalonia 客户门户](https://portal.avaloniaui.net/)获取。同一个密钥往往还涵盖 `Charts`、`TreeDataGrid` 等其他需授权的 Avalonia 包。
+3. **一个热重载驱动方。**要么是 `dotnet watch` 命令，要么是支持 .NET 热重载的 IDE（比如 Visual Studio）。请见[带热重载运行](#running-with-hot-reload)。
 
 ## 快速上手 {#getting-started}
 
 1. 运行 `dotnet add package` 安装 `AvaloniaUI.DiagnosticsSupport.HotReload` NuGet 包。
 
 
-2. To keep hot reload out of release builds, go to your `.csproj` file and wrap the `<PackageReference>` for the hot reload package in a `Debug` condition. This ensures it never ships.
+2. 若不想让热重载混进发布版本，请到 `.csproj` 文件中把热重载包的 `<PackageReference>` 包在 `Debug` 条件里，这样它就绝不会被发布出去。
 
 
 3. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 
-## Running with hot reload
+## 带热重载运行 {#running-with-hot-reload}
 
-Start your application through a tool that supports .NET Hot Reload.
+用支持 .NET 热重载的工具启动你的应用。
 
 <Tabs>
 <TabItem value="watch" label="dotnet watch" default>
 
-Run `dotnet watch` on the platform head project. It rebuilds and applies changes when you save.
+在平台 head 项目上运行 `dotnet watch`。你一保存，它就会重新构建并应用改动。
 
 ```bash
 dotnet watch --project YourApp.Desktop
 ```
 
-This is the most reliable driver and works the same across every editor and platform.
+这是最靠得住的驱动方式，在各编辑器和各平台上表现一致。
 
 :::note
-On mobile platforms, `dotnet watch` requires .NET 11 or newer.
+在移动平台上，`dotnet watch` 需要 .NET 11 或更高版本。
 :::
 
 </TabItem>
 <TabItem value="vs" label="Visual Studio">
 
-Start the app with the debugger (<kbd>F5</kbd>). After each edit, use **Apply Code Changes** (the hot reload button) on the toolbar, or turn on **Hot Reload on File Save** from the button's dropdown menu.
+用调试器启动应用（<kbd>F5</kbd>）。每次改完，点工具栏上的 **Apply Code Changes**（热重载按钮），或者在该按钮的下拉菜单中打开 **Hot Reload on File Save**。
 
 </TabItem>
 <TabItem value="vscode" label="VS Code">
 
-Install the [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) extension, which brings .NET Hot Reload to VS Code.
+安装 [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) 扩展，它把 .NET 热重载带进了 VS Code。
 
-Then, you can either:
+接下来二选一：
 
-- Run the app with `dotnet watch` from the integrated terminal, or
-- Start a debug session (<kbd>F5</kbd>) with hot reload applying when you save a file.
+- 在集成终端里用 `dotnet watch` 运行应用，或者
+- 启动一次调试会话（<kbd>F5</kbd>），保存文件时热重载便会生效。
 
 </TabItem>
 <TabItem value="rider" label="Rider">
 
-Although JetBrains Rider has a hot reload feature, it does not drive .NET metadata updates. Instead, you can either:
+JetBrains Rider 虽有热重载功能，却不会驱动 .NET 元数据更新。你可以：
 
-- Run the app with `dotnet watch` from Rider's terminal, or
-- Enable the [file-system watcher](#enabling-the-file-system-watcher) and start the app normally.
+- 在 Rider 的终端里用 `dotnet watch` 运行应用，或者
+- 启用[文件系统监视器](#enabling-the-file-system-watcher)，照常启动应用。
 
 </TabItem>
 </Tabs>
 
-### Enabling the file-system watcher
+### 启用文件系统监视器 {#enabling-the-file-system-watcher}
 
-Avalonia hot reload can still pick up `.axaml` edits with a built-in file-system watcher, even if .NET Hot Reload is not attached. This can occur if you run the app outside `dotnet watch`, or if you are using Rider.
+即便没挂上 .NET 热重载，Avalonia 热重载仍能靠内置的文件系统监视器捕捉 `.axaml` 的改动。你在 `dotnet watch` 之外运行应用、或者用的是 Rider 时，就属于这种情形。
 
-To enable the file-system watcher, add an MSBuild property in your `.csproj`:
+要启用文件系统监视器，请在 `.csproj` 中添加一个 MSBuild 属性：
 
 ```xml
 <PropertyGroup>
@@ -111,27 +111,27 @@ To enable the file-system watcher, add an MSBuild property in your `.csproj`:
 ```
 
 :::tip
-The file-system watcher can hot-reload `.axaml` files without .NET Hot Reload, but not `.cs` files. If you need hot reload for your C# code-behind, pair the watcher with `dotnet watch`.
+文件系统监视器不借助 .NET 热重载也能重载 `.axaml` 文件，但对 `.cs` 文件无能为力。若你的 C# 代码隐藏也要热重载，请把监视器与 `dotnet watch` 搭配使用。
 :::
 
-## Verifying hot reload
+## 验证热重载是否生效 {#verifying-hot-reload}
 
-With the app running:
+在应用运行的状态下：
 
-1. Open an `.axaml` file. Change a property, for example, a `Background` color or some text. Save the file.
-2. Watch the running window. It should update without losing its current view.
-3. Open the matching `.axaml.cs` file. Adjust an event handler. Save the file.
-4. Trigger the event.
-5. In the running window, confirm that the adjusted event reflects your edit. Diagnostic output is written to the trace log under the `HotReload` category.
+1. 打开一个 `.axaml` 文件，改个属性，比如某个 `Background` 颜色或一段文字，然后保存。
+2. 盯着运行中的窗口，它应当更新，且当前视图不会丢失。
+3. 打开对应的 `.axaml.cs` 文件，改一下事件处理程序，然后保存。
+4. 触发该事件。
+5. 在运行中的窗口里确认该事件的行为已反映出你的改动。诊断输出写在跟踪日志中 `HotReload` 这一类别下。
 
 :::info
-C# changes follow the standard .NET Hot Reload rules.
+C# 改动遵循标准的 .NET 热重载规则。
 :::
 
 
-## Initializing manually
+## 手动初始化 {#initializing-manually}
 
-The auto-setup method described above covers most usages of hot reload. If you need a custom lifecycle, multiple `Application` instances, or deferred startup, you can instead call the initializer manually:
+上文的自动配置方式足以应付绝大多数热重载场景。若你需要自定义生命周期、多个 `Application` 实例或延后启动，也可以手动调用初始化器：
 
 ```csharp
 using AvaloniaUI.DiagnosticsSupport.HotReload;
@@ -142,16 +142,16 @@ HotReloadExtensions.InitializeHotReload(
     rewriteStaticResources: true);
 ```
 
-The engine initializes once per process, so later calls have no effect. To surface hot reload activity in your logging, subscribe to `HotReloadDiagnostics.EntryLogged`.
+引擎每个进程只初始化一次，之后再调用也不起作用。想在日志中看到热重载的动静，请订阅 `HotReloadDiagnostics.EntryLogged`。
 
 ## 限制 {#limitations}
 
-- WebAssembly is not supported. Hot reload works on desktop and mobile platforms only.
-- C# edits follow the normal [.NET Hot Reload rules](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload). Adding fields or changing method signatures counts as a rude edit and needs a restart.
-- Controls are rebuilt rather than mutated, so non-XAML states are reset when a control reloads.
+- WebAssembly 暂不支持。热重载只在桌面和移动平台上可用。
+- C# 改动遵循常规的 [.NET 热重载规则](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload)。添加字段或改动方法签名属于 rude edit，必须重启。
+- 控件是重建而非就地修改的，因此控件重载时，非 XAML 的状态会被重置。
 
 ## 另请参阅 {#see-also}
 
-- [Installing the Avalonia Plus developer tools](/tools/developer-tools/installation)
+- [安装 Avalonia Plus 开发者工具](/tools/developer-tools/installation)
 - [数据模板](/docs/data-templates/introduction-to-data-templates)
-- [Write and debug running code with Hot Reload in Visual Studio (C#, Visual Basic, C++)](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload)
+- [在 Visual Studio 中借助热重载编写和调试运行中的代码（C#、Visual Basic、C++）](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload)

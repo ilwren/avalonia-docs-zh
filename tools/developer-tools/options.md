@@ -89,9 +89,9 @@ this.AttachDeveloperTools(o =>
 这一行为可通过选项改变：
 
 1. `DeveloperToolsOptions.AddAvaloniaLoggerObservable()`——默认启用。
-2. `DeveloperToolsOptions.AddMicrosoftLoggerObservable(ILoggerFactory, LogLevel)` - allows to connect devtools as a logger provider to Microsoft `ILoggerFactory`.
-3. `DeveloperToolsOptions.AddLoggerObservable(ILoggerObservable)` - custom `ILoggerObservable` interface implementation. Use this option, if you want DevTools to display your third party logs provider like Serilog.
-4. `DeveloperToolsOptions.ClearLoggerObservables()` - clear all observables.
+2. `DeveloperToolsOptions.AddMicrosoftLoggerObservable(ILoggerFactory, LogLevel)`——可把 devtools 作为日志提供程序接到 Microsoft 的 `ILoggerFactory` 上。
+3. `DeveloperToolsOptions.AddLoggerObservable(ILoggerObservable)`——`ILoggerObservable` 接口的自定义实现。若你想让 DevTools 显示 Serilog 之类第三方日志提供程序的输出，就用这一项。
+4. `DeveloperToolsOptions.ClearLoggerObservables()`——清空所有可观察源。
 
 ## 另请参阅 {#see-also}
 

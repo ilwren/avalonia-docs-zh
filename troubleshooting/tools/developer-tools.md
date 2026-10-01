@@ -1,7 +1,7 @@
 ---
 id: developer-tools
 title: Developer tools issues
-sidebar_label: Developer tools
+sidebar_label: 开发者工具
 description: Troubleshoot common Developer Tools problems including connection failures, missing logs, and diagnostic configuration.
 doc-type: troubleshooting
 tags:

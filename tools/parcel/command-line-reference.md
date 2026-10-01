@@ -1,21 +1,21 @@
 ---
 id: command-line-reference
-title: Parcel command line reference
-sidebar_label: Command line reference
+title: Parcel 命令行参考
+sidebar_label: 命令行参考
 doc-type: reference
 ---
 
-Use the Parcel command-line tool to package Avalonia applications for Windows, macOS, and Linux. Parcel can also sign applications and packages.
+用 Parcel 命令行工具把 Avalonia 应用打包成 Windows、macOS 和 Linux 的安装包。Parcel 还能为应用和安装包签名。
 
 ## 前置条件 {#prerequisites}
 
-Before you use Parcel, make sure that you have these items:
+动手使用 Parcel 之前，请确认你备齐了这些：
 
-1. **Parcel .NET tool** - Follow the [setup guide](/tools/parcel/setup) to install it.
-2. **Valid license key** - Set the `AVALONIA_TOOLS_LICENSE_KEY` environment variable or use the `--license-key` option. Get a license key from the [Avalonia Portal](https://portal.avaloniaui.net/).
+1. **Parcel .NET 工具**——按[配置指南](/tools/parcel/setup)安装。
+2. **有效的许可证密钥**——设置 `AVALONIA_TOOLS_LICENSE_KEY` 环境变量或使用 `--license-key` 选项。许可证密钥可在 [Avalonia 门户](https://portal.avaloniaui.net/)获取。
 
 :::note
-Parcel CLI is only available with an [Avalonia Plus](https://avaloniaui.net/pricing) license.
+Parcel CLI 仅对 [Avalonia Plus](https://avaloniaui.net/pricing) 许可证开放。
 :::
 
 ## 概述 {#overview}
@@ -28,16 +28,16 @@ parcel [command] [options]
 
 | 选项 | 说明 |
 |--------|-------------|
-| `-?, -h, --help` | Show help and usage information |
-| `--version` | Show version information |
-| `--license-key` | Set the Parcel license key. If you omit this option, Parcel uses `AVALONIA_TOOLS_LICENSE_KEY` and then an existing application session |
-| `--verbosity` | Set the verbosity level (quiet, minimal, normal, detailed, diagnostic) |
+| `-?, -h, --help` | 显示帮助与用法信息 |
+| `--version` | 显示版本信息 |
+| `--license-key` | 设置 Parcel 许可证密钥。若省略该选项，Parcel 会先取 `AVALONIA_TOOLS_LICENSE_KEY`，再退回到已有的应用会话 |
+| `--verbosity` | 设置详尽级别（quiet、minimal、normal、detailed、diagnostic） |
 
 ## Commands
 
 ### pack
 
-Builds and packages a project with the specified settings and parameters.
+按指定的设置和参数构建并打包项目。
 
 ```bash
 parcel pack <project> [options]
@@ -45,14 +45,14 @@ parcel pack <project> [options]
 
 **Arguments:**
 
-- `<project>` - Parcel project file that contains the configuration
+- `<project>`——含配置内容的 Parcel 项目文件
 
-**Options:**
+**选项：**
 
 | 选项 | 说明 | 默认值 |
 |--------|-------------|---------|
-| `-o, --output` | Output directory | `<project-dir>\bin\packages` |
-| `-r, --runtimes` | Runtime identifiers to package. You can specify this option more than once. | Current platform runtime |
+| `-o, --output` | 输出目录 | `<project-dir>\bin\packages` |
+| `-r, --runtimes` | 要打包的运行时标识符，该选项可以多次指定。 | Current platform runtime |
 | `-p, --packages` | Output formats: `deb`, `dmg`, `msix`, `nsis`, `pkg`, `rpm`, or `zip`. You can specify this option more than once. | Current platform package |
 | `--no-build` | Do not rebuild the input project. | `false` |
 
@@ -173,7 +173,7 @@ parcel step create-zip ./publish ./archive.zip -p project.parcel
 
 **Common Options:**
 
-- `-p, --project` - Parcel project file that contains the configuration
+- `-p, --project`——含配置内容的 Parcel 项目文件
 - `-w, --overwrite` - Overwrite existing output files
 - `-r, --runtime` - Runtime identifier (for publish command)
 
@@ -185,7 +185,7 @@ Downloads or updates tool dependencies required for the packaging configuration.
 parcel install-tools [options]
 ```
 
-**Options:**
+**选项：**
 
 | 选项 | 说明 |
 |--------|-------------|

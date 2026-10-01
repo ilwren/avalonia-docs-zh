@@ -6,96 +6,96 @@ doc-type: troubleshooting
 
 ## General
 
-#### Do I need a license to use Avalonia?
+#### 用 Avalonia 需要许可证吗？ {#do-i-need-a-license-to-use-avalonia}
 
-No. **Avalonia itself remains entirely open-source under the MIT license.** You can build and ship commercial applications with Avalonia completely free, forever. The Community License only applies to the professional tooling (Visual Studio extension, Dev Tools, Parcel), not the framework itself.
+不需要。**Avalonia 本身始终以 MIT 许可证完全开源。**你可以永久免费地用 Avalonia 开发并发布商业应用。Community 许可证只针对专业工具链（Visual Studio 扩展、Dev Tools、Parcel），与框架本身无关。
 
-#### What if I don't want any of this?
+#### 要是这些我都不想要呢？ {#what-if-i-dont-want-any-of-this}
 
-That's completely fine. All the legacy tooling remains open-source and available on GitHub:
-- The existing Visual Studio extension
+完全没问题。所有旧版工具依旧开源，都能在 GitHub 上找到：
+- 现有的 Visual Studio 扩展
 - Dev Tools
 - TreeDataGrid
 
-You can continue using them as they are today, or fork and maintain them independently if you prefer.
+你可以继续照原样使用它们，也可以 fork 出来自行维护。
 
-#### Can I continue using the legacy tools?
+#### 我还能继续用旧版工具吗？ {#can-i-continue-using-the-legacy-tools}
 
-Yes. The legacy FOSS Visual Studio extension remains available to clone and build at [github.com/AvaloniaUI/AvaloniaVS](https://github.com/AvaloniaUI/AvaloniaVS). The legacy Dev Tools source remains available. The original TreeDataGrid remains available. All are MIT licensed and can be used, forked, or maintained by anyone.
+可以。旧版的 FOSS Visual Studio 扩展仍可在 [github.com/AvaloniaUI/AvaloniaVS](https://github.com/AvaloniaUI/AvaloniaVS) 克隆并构建，旧版 Dev Tools 的源码依然在，最初的 TreeDataGrid 也还在。它们都是 MIT 许可证，任何人都可以使用、fork 或接手维护。
 
-#### When does my Community License expire?
+#### 我的 Community 许可证什么时候到期？ {#when-does-my-community-license-expire}
 
-Community Licenses do not expire as long as you remain eligible. However, if your circumstances change (e.g., your organization grows beyond the eligibility thresholds), you must upgrade to a paid license.
+只要你仍符合资格，Community 许可证就不会到期。但若情况有变（比如你的组织规模超出了资格门槛），就必须升级到付费许可证。
 
-#### What happens after the Visual Studio grace period?
+#### Visual Studio 的宽限期过后会怎样？ {#what-happens-after-the-visual-studio-grace-period}
 
-After April 13th 2026, if you haven't registered for a Community License or purchased a paid license, you can:
-- Continue using the legacy FOSS Visual Studio extension
-- Switch to Visual Studio Code or JetBrains Rider (extensions remain freely available)
-- Register for a Community License if eligible
-- Purchase a paid license
+2026 年 4 月 13 日之后，若你既没注册 Community 许可证也没购买付费许可证，你可以：
+- 继续使用旧版的 FOSS Visual Studio 扩展
+- 改用 Visual Studio Code 或 JetBrains Rider（相应扩展依旧免费）
+- 若符合资格，注册一个 Community 许可证
+- 购买付费许可证
 
-#### I have another question. Where can I ask?
+#### 我还有别的问题，上哪儿问？ {#i-have-another-question-where-can-i-ask}
 
-Feel free to leave your questions or feedback on [Community Hub](https://github.com/AvaloniaCommunity) and [Avalonia Support](https://support.avaloniaui.net/).
+欢迎到[社区中心](https://github.com/AvaloniaCommunity)和 [Avalonia 支持](https://support.avaloniaui.net/)留下你的问题或反馈。
 
-## Developer tools
+## 开发者工具 {#developer-tools}
 
-#### Is it possible to connect multiple instances to the Developer Tools?
+#### 可以把多个实例连到开发者工具上吗？ {#is-it-possible-to-connect-multiple-instances-to-the-developer-tools}
 
-Yes, while a single instance of Developer Tools is running and activated, you can connect one or many apps to it.
-Each new connection will open a new Developer Tools window, working independently from each other.
+可以。只要有一个开发者工具实例在运行并已激活，你就能把一个乃至多个应用连上去。
+每来一个新连接都会开一个新的开发者工具窗口，彼此独立工作。
 
-#### Does it work with Browser/Android/iOS?
+#### 它支持 Browser/Android/iOS 吗？ {#does-it-work-with-browserandroidios}
 
-It does work with mobile and browser applications.
-See [Attaching Browser or Mobile application](/tools/developer-tools/attaching-applications) for more details.
+移动端和浏览器应用都支持。
+更多细节请见[挂接浏览器或移动端应用](/tools/developer-tools/attaching-applications)。
 
-#### Can I use Developer Tools and DiagnosticsPackage with NativeAOT app?
+#### NativeAOT 应用能用开发者工具和 DiagnosticsPackage 吗？ {#can-i-use-developer-tools-and-diagnosticspackage-with-nativeaot-app}
 
-Yes. DiagnosticsPackage is fully trimming friendly. Even though it does use reflection, the tool was tested with AOT.
+可以。DiagnosticsPackage 对裁剪十分友好。虽说它确实用到了反射，但该工具在 AOT 下经过了测试。
 
-#### Does `AvaloniaUI.DiagnosticsSupport` replace `Avalonia.Diagnostics` package? Or do I need both?
+#### `AvaloniaUI.DiagnosticsSupport` 取代 `Avalonia.Diagnostics` 包了吗？还是两个都得装？ {#does-avaloniauidiagnosticssupport-replace-avaloniadiagnostics-package-or-do-i-need-both}
 
-You only need `AvaloniaUI.DiagnosticsSupport`.
-`Avalonia.Diagnostics` is an old package used for legacy developer tools. It can be safely removed from the project.
-If for some reason necessary, both packages can be referenced, but you might want to setup different gestures for each tool.
+你只需要 `AvaloniaUI.DiagnosticsSupport`。
+`Avalonia.Diagnostics` 是旧版开发者工具用的老包，可以放心从项目里移除。
+若出于某种原因确有必要，两个包也能同时引用，不过最好给各自的工具配不同的手势。
 
-#### Can everybody build project referencing `AvaloniaUI.DiagnosticsSupport`, even without a license?
+#### 没有许可证的人也能构建引用了 `AvaloniaUI.DiagnosticsSupport` 的项目吗？ {#can-everybody-build-project-referencing-avaloniauidiagnosticssupport-even-without-a-license}
 
-Yes, `AvaloniaUI.DiagnosticsSupport` is an integration package, a bridge between `Developer Tools` and user app. On its own, it doesn't require any license, and can be referenced in public projects.
+可以。`AvaloniaUI.DiagnosticsSupport` 是个集成包，充当 `Developer Tools` 与用户应用之间的桥梁。它本身不需要任何许可证，公开项目里也可以引用。
 
-But to actually open `Developer Tools`, you would need the license and Avalonia portal account.
+但真要打开 `Developer Tools`，就得有许可证和 Avalonia 门户账号了。
 
-#### Is it necessary to exclude `AvaloniaUI.DiagnosticsSupport` package from Release/Production build?
+#### 有必要在 Release/生产构建中排除 `AvaloniaUI.DiagnosticsSupport` 包吗？ {#is-it-necessary-to-exclude-avaloniauidiagnosticssupport-package-from-releaseproduction-build}
 
-Tool can be useful for internal testing of Release builds. And it's not necessary to only include it with Debug builds.
+该工具对 Release 版本的内部测试也挺有用，并非只能随 Debug 构建一起引入。
 
-Unlike the legacy Avalonia DevTools, this package is not shipped with heavy dependencies that might break Release compilation.
+与旧版 Avalonia DevTools 不同，这个包不带那些可能把 Release 编译搞砸的笨重依赖。
 
-But it is still advised to exclude this package on production builds for security and bundle size reasons.
+不过出于安全和包体积的考虑，仍建议在生产构建中排除它。
 
-To do that, `Condition="'$(Configuration)' == 'Debug'"'` can be used:
+做法是使用 `Condition="'$(Configuration)' == 'Debug'"'`：
 ```xml
 <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="" Condition="'$(Configuration)' == 'Debug'" />
 ```
 
-Combined with `#if DEBUG` for the `this.AttachDeveloperTools()` or `.WithDeveloperTools()`.
+再配合 `this.AttachDeveloperTools()` 或 `.WithDeveloperTools()` 的 `#if DEBUG` 一起用。
 
-#### Are arm64 and x86 builds of the tool available or planned?
+#### 有没有 arm64 和 x86 版本的工具，或者有这个计划吗？ {#are-arm64-and-x86-builds-of-the-tool-available-or-planned}
 
-Only **x64** builds for Windows and Linux are available at the moment.
-macOS build is an universal bundle with both **x64** and **arm64** architectures.
+目前 Windows 和 Linux 只提供 **x64** 版本。
+macOS 版是同时含 **x64** 和 **arm64** 两种架构的通用包。
 
 ## TreeDataGrid
 
 ### Data Updates
 
-#### TreeDataGrid doesn't update when I change model properties
+#### 我改了模型属性，TreeDataGrid 却不更新 {#treedatagrid-doesnt-update-when-i-change-model-properties}
 
-**Problem**: You're modifying properties on your data objects, but the grid doesn't reflect the changes.
+**问题**：你改了数据对象上的属性，表格却没有反映出来。
 
-**Solution**: Your data model must implement `INotifyPropertyChanged`. The TreeDataGrid relies on property change notifications to update the UI.
+**解决办法**：你的数据模型必须实现 `INotifyPropertyChanged`。TreeDataGrid 要靠属性变更通知来刷新界面。
 
 ```csharp
 // ❌ Wrong - No property change notifications
@@ -146,11 +146,11 @@ public class Person : INotifyPropertyChanged
 }
 ```
 
-#### New items don't appear when I add them to the collection
+#### 往集合里添加项，新项却不出现 {#new-items-dont-appear-when-i-add-them-to-the-collection}
 
-**Problem**: You're adding items to a `List<T>` or array, but the grid doesn't show new items.
+**问题**：你往 `List<T>` 或数组中添加了项，表格却不显示新项。
 
-**Solution**: Use `ObservableCollection<T>` instead, which automatically notifies the grid of collection changes.
+**解决办法**：改用 `ObservableCollection<T>`，它会自动把集合变化通知给表格。
 
 ```csharp
 // ❌ Wrong - List doesn't notify of changes
@@ -162,11 +162,11 @@ private ObservableCollection<Person> _people = new ObservableCollection<Person>(
 
 ### Cell Editing
 
-#### Cell editing doesn't work when I click on cells
+#### 点击单元格却进不了编辑状态 {#cell-editing-doesnt-work-when-i-click-on-cells}
 
-**Problem**: Clicking cells doesn't begin editing.
+**问题**：点击单元格没有进入编辑。
 
-**Solution**: Make sure you've provided both a getter and setter in the column definition:
+**解决办法**：确认你在列定义中同时提供了 getter 和 setter：
 
 ```csharp
 // ❌ Wrong - No setter, column is read-only
@@ -179,7 +179,7 @@ new TextColumn<Person, string>(
     (row, value) => row.Name = value)
 ```
 
-You may also need to specify the edit gesture:
+可能还需要指定编辑手势：
 
 ```csharp
 new TextColumn<Person, string>(
@@ -194,39 +194,39 @@ new TextColumn<Person, string>(
 
 ## WebView
 
-#### Is offscreen rendering supported? To avoid airspace issue?
+#### 支持离屏渲染吗？能借此避开 airspace 问题吗？ {#is-offscreen-rendering-supported-to-avoid-airspace-issue}
 
-Partly. On Linux, the WPE backend always renders offscreen and composites into the Avalonia visual tree, so there is no airspace issue there. On Windows and on the Linux WebKitGTK backend, offscreen rendering is available but experimental, via `ExperimentalOffscreen` on the [environment options](/controls/web/webview-environment). macOS is not yet supported.
+部分支持。在 Linux 上，WPE 后端始终离屏渲染并合成进 Avalonia 的视觉树，因此那里不存在 airspace 问题。在 Windows 以及 Linux 的 WebKitGTK 后端上，可通过[环境选项](/controls/web/webview-environment)中的 `ExperimentalOffscreen` 启用离屏渲染，但尚属实验性。macOS 暂不支持。
 
-#### Is NativeWebView supported on Linux?
+#### Linux 上支持 NativeWebView 吗？ {#is-nativewebview-supported-on-linux}
 
-Yes. `NativeWebView` picks its backend automatically:
+支持。`NativeWebView` 会自动挑选后端：
 
-- **WebKitGTK** is the baseline, and is used whenever WPE is not installed. This is the case on Ubuntu, which does not package WPE WebKit.
-- **[WPE WebKit](https://wpewebkit.org)** is preferred when its libraries are present. It renders offscreen using SHM (software rendering), so it does not depend on native window embedding and works on both X11 and Wayland sessions.
+- **WebKitGTK** 是保底选项，只要没装 WPE 就用它。Ubuntu 就属此列，它并未打包 WPE WebKit。
+- **[WPE WebKit](https://wpewebkit.org)** 在其库存在时优先采用。它用 SHM（软件渲染）离屏绘制，因而不依赖原生窗口嵌入，X11 和 Wayland 会话下都能用。
 
-Either way, no configuration is required. See the [Linux prerequisites](/docs/app-development/embedding-web-content#linux) for the runtime libraries each backend needs, and use [`LinuxWpeWebViewEnvironmentRequestedEventArgs.PreferWebKitGtkInstead`](/controls/web/webview-environment#linux-wpe-webkit) only if you want WebKitGTK on a machine that does have WPE.
+无论走哪条路都不需要额外配置。各后端所需的运行时库请见 [Linux 前置条件](/docs/app-development/embedding-web-content#linux)；只有当你想在已装 WPE 的机器上改用 WebKitGTK 时，才需要 [`LinuxWpeWebViewEnvironmentRequestedEventArgs.PreferWebKitGtkInstead`](/controls/web/webview-environment#linux-wpe-webkit)。
 
-#### Can I use WebAuthenticationBroker for Google Auth or Microsoft.Identity Auth?
+#### WebAuthenticationBroker 能用于 Google Auth 或 Microsoft.Identity Auth 吗？ {#can-i-use-webauthenticationbroker-for-google-auth-or-microsoftidentity-auth}
 
-Yes, both authentication providers are supported. You can either:
-- Build request and redirect `Uri`s manually
-- Integrate with `Google.Apis.Auth` and `Microsoft.Identity.Client` NuGet packages
+两家认证提供方都支持。你可以：
+- 手动构造请求和重定向用的 `Uri`
+- 与 `Google.Apis.Auth` 和 `Microsoft.Identity.Client` NuGet 包集成
 
-Integration samples are available in our [sample repository](https://github.com/AvaloniaUI/Accelerate.Samples/tree/main/WebAuthenticationBrokerSample).
+集成示例可在我们的[示例仓库](https://github.com/AvaloniaUI/Accelerate.Samples/tree/main/WebAuthenticationBrokerSample)中找到。
 
-#### Why use WebAuthenticationBroker over other options?
+#### 为什么要选 WebAuthenticationBroker 而不是别的方案？ {#why-use-webauthenticationbroker-over-other-options}
 
-While `Microsoft.Identity.Client` and `Google.Apis.Auth` include their own Web-UI dialogs, these are limited to specific platforms and providers. WebAuthenticationBroker offers:
-- Provider-independent implementation
-- Desktop platform support without special framework requirements
-- Full macOS support without mac-catalyst limitations
+`Microsoft.Identity.Client` 和 `Google.Apis.Auth` 虽然自带 Web-UI 对话框，但只限于特定平台和提供方。WebAuthenticationBroker 的长处在于：
+- 实现与提供方无关
+- 桌面平台开箱即用，对框架没有特别要求
+- 完整支持 macOS，不受 mac-catalyst 的种种限制
 
-#### Does NativeWebView support camera/microphone/screenshare access via getUserMedia() API?
+#### NativeWebView 支持通过 getUserMedia() API 访问摄像头/麦克风/屏幕共享吗？ {#does-nativewebview-support-cameramicrophonescreenshare-access-via-getusermedia-api}
 
-Yes, `getUserMedia()` API is supported across platforms. Users will receive permission prompts for camera, microphone, or screen sharing access, similar to desktop browsers. macOS support was added in version `11.2.4`.
+支持，`getUserMedia()` API 在各平台均可用。与桌面浏览器类似，用户会收到摄像头、麦克风或屏幕共享的权限提示。macOS 支持是在 `11.2.4` 版本中加入的。
 
-Some platforms also require developer to configure permissions on the application bundle. If any particular permission is necessary for a main application, it's likely to be necessary for a web view. For example, [NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information-property-list/nscamerausagedescription?language=objc) is necessary for macOS/iOS on bundled apps.
+有些平台还要求开发者在应用包上配置权限。若主应用需要某项权限，Web 视图多半也需要。例如在 macOS/iOS 的打包应用中就必须有 [NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information-property-list/nscamerausagedescription?language=objc)。
 
 ## 另请参阅 {#see-also}
 

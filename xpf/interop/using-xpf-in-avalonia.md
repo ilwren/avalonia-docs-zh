@@ -9,7 +9,7 @@ This guide walks you through embedding XPF (WPF-compatible) controls in an exist
 
 ## 前置条件 {#prerequisites}
 
-Before you begin, make sure you have:
+动手之前，请确认你具备：
 
 - An existing Avalonia application project.
 - A valid XPF license and access to the XPF SDK NuGet feed. See [Getting started](/xpf/getting-started) for setup details.

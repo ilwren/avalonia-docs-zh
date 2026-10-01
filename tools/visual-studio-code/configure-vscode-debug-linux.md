@@ -12,7 +12,7 @@ This guide walks you through configuring Visual Studio Code on Linux so you can 
 
 ## 前置条件 {#prerequisites}
 
-Before you begin, make sure you have:
+动手之前，请确认你具备：
 
 - Visual Studio Code installed on Linux.
 - The .NET SDK (6.0 or later) installed and available on your `PATH`.

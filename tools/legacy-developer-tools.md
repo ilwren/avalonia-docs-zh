@@ -1,6 +1,6 @@
 ---
 id: legacy-developer-tools
-title: Using the legacy developer tools
+title: 使用旧版开发者工具
 doc-type: reference
 ---
 
@@ -16,13 +16,13 @@ import DevToolsChangeLayoutScreenshot from '/img/guides/development-optimization
 
 :::note
 
-This documentation covers the Legacy Developer Tools. A new [AvaloniaUI Developer Tools](/tools/developer-tools/installation) is now available, offering enhanced features and improved debugging capabilities. The Legacy Developer Tools remain supported with stability updates.
+本文档讲的是旧版开发者工具。现已有全新的 [AvaloniaUI 开发者工具](/tools/developer-tools/installation)，功能更强、调试能力更佳。旧版开发者工具仍受支持，会收到稳定性更新。
 
 :::
 
-## Attaching the DevTools
+## 挂接 DevTools {#attaching-the-devtools}
 
-Avalonia has a built-in DevTools window which is enabled by calling the attached `AttachDevTools()` method in a `Window` constructor. The default templates have this enabled when the program is compiled in `DEBUG` mode:
+Avalonia 内置了一个 DevTools 窗口，在 `Window` 构造函数中调用附加的 `AttachDevTools()` 方法即可启用。默认模板在以 `DEBUG` 模式编译时就已启用它：
 
 ```csharp
 public partial class MainWindow : Window
@@ -51,106 +51,106 @@ partial class MainWindow
 }
 ```
 
-To open the DevTools, press <kbd>F12</kbd>, or pass a different `Gesture` to the `this.AttachDevTools()` method.
+按 <kbd>F12</kbd> 打开 DevTools，或者给 `this.AttachDevTools()` 方法传入别的 `Gesture`。
 
 :::info
-To use DevTools, you must add `Avalonia.Diagnostics` nuget package.
+要使用 DevTools，必须添加 `Avalonia.Diagnostics` nuget 包。
 
 ```bash
 dotnet add package Avalonia.Diagnostics
 ```
 
-But by default, it is already installed.
+不过默认情况下它已经装好了。
 :::
 
 <Image light={DevToolsOverviewScreenshot} alt="DevTools overview window" position="center" maxWidth={400} cornerRadius="true" />
 
-There is a known issue when running under .NET core 2.1 that pressing <kbd>F12</kbd> will cause the program to quit. In this case, either switch to .NET core 2.0 or 3.0+ or change the open gesture to something different, such as <kbd>Ctrl</kbd>+<kbd>F12</kbd>.
+已知在 .NET core 2.1 下运行时，按 <kbd>F12</kbd> 会导致程序退出。遇到这种情况，要么换用 .NET core 2.0 或 3.0+，要么把打开手势改成别的组合，比如 <kbd>Ctrl</kbd>+<kbd>F12</kbd>。
 
-## Logical and Visual Trees
+## 逻辑树与视觉树 {#logical-and-visual-trees}
 
-The `Logical Tree` and `Visual Tree` tabs display the controls in the window's logical and visual trees. Selecting a control will show the properties of that control in the right-hand pane where they can be edited.
+`Logical Tree` 和 `Visual Tree` 选项卡分别显示窗口逻辑树和视觉树中的控件。选中某个控件，右侧窗格便会显示它的属性，并可就地编辑。
 
 ### 属性 {#properties}
 
-Allows for quickly checking and editing properties of the control. One can also search for properties (by name or by using a regex).
+可用来快速查看和编辑控件属性，也可以搜索属性（按名称或用正则）。
 
-| Column   | 说明                   |
+| 列   | 说明                   |
 | -------- | ----------------------------- |
-| Property | Name of the property          |
-| 值    | Current value of the property |
-| 类型     | Type of the current value     |
-| Priority | Priority of the value         |
+| Property | 属性名称          |
+| 值    | 属性的当前值 |
+| 类型     | 当前值的类型     |
+| Priority | 该值的优先级         |
 
 <Image light={DevToolsPropertiesScreenshot} alt="DevTools properties panel" position="center" maxWidth={400} cornerRadius="true" />
 
 ### Layout
 
-Allows for inspecting and editing of common layout properties (`Margin`, `Border` , `Padding`).\
-Control size and size constraints are also shown.
+可查看并编辑常用的布局属性（`Margin`、`Border`、`Padding`）。\
+控件尺寸和尺寸约束也会一并显示。
 
 :::info
-If `Width` or `Height` are underlined that means there is an active constraint. Hover over the value to see a tooltip containing relevant information.
+若 `Width` 或 `Height` 带下划线，说明存在生效的约束。把鼠标悬停到值上，提示框里会给出相关信息。
 :::
 
 <Image light={DevToolsLayoutScreenshot} alt="DevTools layout panel" position="center" maxWidth={400} cornerRadius="true" />
 
 ### Styles
 
-While [properties](#properties) panel shows currently active values of properties, styles panel shows all values and origin of the value.
+[属性](#properties)面板显示的是属性当前生效的值，样式面板则把所有取值连同它们的来源一并列出。
 
-Additionally one can see all styles that could potentially match this control (by toggling `Show inactive` option).
+此外，还可以（通过切换 `Show inactive` 选项）查看所有可能匹配该控件的样式。
 
-Current styles can be snap-shotted by either pressing the **Snapshot** button or pressing <kbd>Alt</kbd>+<kbd>S</kbd> while hovering over the target window. Snap-shotting means that styles panel won't update to reflect new state of the control. This is especially useful when troubleshooting problems with `:pointerover` or `:pressed` selectors.
+点 **Snapshot** 按钮，或在鼠标悬停于目标窗口时按 <kbd>Alt</kbd>+<kbd>S</kbd>，即可为当前样式拍一张快照。拍下快照后，样式面板就不再随控件状态变化而更新。排查 `:pointerover` 或 `:pressed` 选择器的问题时，这招尤其好使。
 
 :::info
-If setter value is bound to a resource it will be indicated by a circle followed by the resource key.
+若 setter 的值绑定到了某个资源，会以一个圆点加资源键的形式标出。
 :::
 
 
 <Image light={DevToolsStylesScreenshot} alt="DevTools styles panel" position="center" maxWidth={400} cornerRadius="true" />
 
 :::info
-If given value has a strikethrough it means that it is being overridden by a value in style with higher priority.
+某个值若带删除线，说明它被优先级更高的样式中的值盖过了。
 :::
 
 <Image light={DevToolsOverriddenStylesScreenshot} alt="DevTools styles panel showing overridden values with strikethrough" position="center" maxWidth={400} cornerRadius="true" />
 
-Setters have a context menu that allows for quickly copying names and values to the clipboard.
+setter 带有右键菜单，可快速把名称和值复制到剪贴板。
 
 
 <Image light={DevToolsSetterContextMenuScreenshot} alt="DevTools setter context menu" position="center" maxWidth={400} cornerRadius="true" />
 
 ## 事件 {#events}
 
-The events tab can be used to track the propagation of [events](/docs/input-interaction/routed-events). Select the events to track in the left pane, and all events of that type will be shown in the center upper pane. Select one of these events to see the event route.
+事件选项卡可用来追踪[事件](/docs/input-interaction/routed-events)的传播。在左侧窗格选择要追踪的事件，该类型的所有事件都会显示在中上部窗格里；再选中其中一条，便能看到它的事件路由。
 
 :::info
-Dotted underline under event name or control type indicates that quick navigation is possible.
+事件名或控件类型下方的点状下划线表示此处可以快速跳转。
 
-* Double clicking an event type will select and scroll to the given event type
-* Double clicking a control type (and/or name) will navigate to the visual tree tab and select said control.
+* 双击某个事件类型，会选中并滚动到该事件类型
+* 双击某个控件类型（和/或名称），会跳到视觉树选项卡并选中该控件。
 :::
 
 <Image light={DevToolsEventsScreenshot} alt="DevTools events tab" position="center" maxWidth={400} cornerRadius="true" />
 
 ## Hotkeys
 
-| Keys Combination | Function                      |
+| Keys Combination | 功能                      |
 | ---------------- | ------------------------------|
 | <kbd>Alt</kbd>+<kbd>S</kbd> | Enable Snapshot Styles |
 | <kbd>Alt</kbd>+<kbd>D</kbd> | Disable Snapshot Styles |
-| <kbd>Ctrl</kbd>+<kbd>Shift</kbd> | Inspect Control over Pointer |
-| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> | Toggle Popup freeze |
-| <kbd>F8</kbd> | Make screenshot of selected item in Logical or Visual Tree |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd> | 检视指针下方的控件 |
+| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> | 冻结/解冻弹出层 |
+| <kbd>F8</kbd> | 为逻辑树或视觉树中选中的项截图 |
 
 ## 示例 {#examples}
 
-### Changing a property value
+### 修改属性值 {#changing-a-property-value}
 
 <Image light={DevToolsChangePropertyScreenshot} alt="Animation showing a property value being changed in DevTools" position="center" maxWidth={400} cornerRadius="true" />
 
-### Changing layout properties
+### 修改布局属性 {#changing-layout-properties}
 
 <Image light={DevToolsChangeLayoutScreenshot} alt="Animation showing layout properties being changed in DevTools" position="center" maxWidth={400} cornerRadius="true" />
 

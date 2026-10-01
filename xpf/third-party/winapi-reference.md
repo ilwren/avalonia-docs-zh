@@ -15,7 +15,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Window creation and lifecycle
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `CreateWindowEx` (W) | Creates a window with extended styles. Returns a virtual HWND managed by XPF. |
 | `RegisterClass` | Registers a window class. |
@@ -24,7 +24,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Window properties and state
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetWindowRect` | Gets the window bounding rectangle in screen coordinates. |
 | `GetClientRect` | Gets the client area rectangle. |
@@ -38,7 +38,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Window position and layout
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `SetWindowPos` | Sets the size, position, and Z-order of a window. |
 | `AdjustWindowRectEx` | Calculates the required window size for a given client area size. |
@@ -46,7 +46,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Window hierarchy
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetActiveWindow` | Returns the active window on the calling thread. |
 | `GetTopWindow` | Returns the topmost child window. |
@@ -59,7 +59,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Window display
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `SetWindowRgn` | Sets a window's visible region. |
 | `RedrawWindow` | Redraws a window or region. |
@@ -68,13 +68,13 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### System menu
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetSystemMenu` | Returns a handle to the window's system menu (the menu shown when clicking the window icon). |
 
 ### Focus and input
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetFocus` | Returns the window with keyboard focus. |
 | `SetForegroundWindow` | Brings a window to the foreground and gives it focus. |
@@ -85,7 +85,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Messages
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `SendMessage` | Sends a message to a window and waits for processing. Limited message support. |
 | `PostMessage` | Posts a message to a window's message queue. Limited message support. |
@@ -94,14 +94,14 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Hooks
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `SetWindowsHookEx` | Installs a hook procedure. Limited hook types supported. |
 | `UnhookWindowsHookEx` | Removes a hook procedure. |
 
 ### Caret
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `CreateCaret` | Creates a caret (text cursor) for a window. |
 | `ShowCaret` / `HideCaret` | Shows or hides the caret. |
@@ -110,14 +110,14 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Menus
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `TrackPopupMenuEx` | Displays a shortcut menu at a specified location. |
 | `EnableMenuItem` | Enables, disables, or grays a menu item. |
 
 ### System information
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetSysColor` | Returns the current color of a display element (button face, window background, etc.). |
 | `SystemParametersInfo` (W) | Gets or sets system-wide parameters (scroll bar size, animation settings, etc.). |
@@ -127,7 +127,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Clipboard
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `AddClipboardFormatListener` | Registers a window to receive clipboard change notifications. |
 
@@ -135,7 +135,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Device contexts
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetDC` / `ReleaseDC` | Gets or releases a device context for a window. |
 | `CreateCompatibleDC` / `DeleteDC` | Creates or deletes a memory device context. |
@@ -143,7 +143,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Drawing objects
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `CreateRectRgn` | Creates a rectangular region. |
 | `CreateRoundRectRgn` | Creates a rectangular region with rounded corners. |
@@ -153,7 +153,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Coordinate mapping
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetMapMode` / `SetMapMode` | Gets or sets the mapping mode for a device context. |
 | `SetWindowExtEx` / `SetViewportExtEx` | Sets the window or viewport extents for coordinate mapping. |
@@ -161,7 +161,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ## dwmapi.dll
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `DwmIsCompositionEnabled` | Returns whether desktop composition is enabled. Always returns true on non-Windows. |
 | `DwmExtendFrameIntoClientArea` | Extends the window frame into the client area. |
@@ -170,7 +170,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ## shcore.dll / Monitor APIs
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `MonitorFromPoint` | Returns the monitor containing a point. |
 | `MonitorFromRect` | Returns the monitor with the largest intersection with a rectangle. |
@@ -183,7 +183,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ## imm32.dll (Input Method Editor)
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `ImmCreateContext` / `ImmDestroyContext` | Creates or destroys an IME input context. |
 | `ImmGetContext` / `ImmReleaseContext` | Gets or releases the IME context for a window. |
@@ -200,7 +200,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ## kernel32.dll
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `GetCurrentThreadId` | Returns the calling thread's ID. |
 | `GetModuleFileName` | Returns the full path of a loaded module. |
@@ -212,7 +212,7 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### File and memory mapping
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `CreateFileMapping` | Creates or opens a file mapping object. |
 | `MapViewOfFile` / `UnmapViewOfFile` | Maps or unmaps a view of a file mapping into the process address space. |
@@ -220,26 +220,26 @@ For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-sh
 
 ### Memory
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `RtlMoveMemory` | Copies a block of memory. |
 
 ## shell32.dll
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `SHGetFileInfo` (W) | Returns information about a file (icon, display name, type). |
 | `ExtractIconEx` (W) | Extracts icons from an executable or DLL. |
 
 ## uxtheme.dll
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `IsThemeActive` | Returns whether visual styles are active. |
 | `SetWindowThemeAttribute` | Sets theme attributes on a window. |
 
 ## msctf.dll
 
-| Function | 说明 |
+| 功能 | 说明 |
 |---|---|
 | `TF_CreateThreadMgr` | Creates a Text Services Framework thread manager. |
