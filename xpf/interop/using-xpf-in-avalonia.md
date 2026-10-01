@@ -129,7 +129,7 @@ You can place `XpfContainer` anywhere in your Avalonia visual tree: inside panel
 
 ## 排查问题 {#troubleshooting}
 
-| Symptom | Likely cause | Fix |
+| 现象 | 可能的原因 | Fix |
 |---|---|---|
 | `XpfContainer` renders blank | `XpfApp` was not instantiated before the control loaded | Move `new XpfApp()` to the top of `OnFrameworkInitializationCompleted` |
 | Build error referencing missing WPF types | Project SDK was not changed to `Xpf.Sdk` | Verify the `<Project Sdk="Xpf.Sdk/1.6.0">` line in your `.csproj` |

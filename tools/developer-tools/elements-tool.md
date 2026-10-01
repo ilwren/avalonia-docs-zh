@@ -18,7 +18,7 @@ The Elements Tool offers ways to identify and select specific UI elements direct
 
 These inspection modes help you locate elements without manually searching through the element hierarchy.
 
-## Context menu
+## 上下文菜单 {#context-menu}
 
 The context menu provides essential actions for navigating and manipulating the element tree:
 

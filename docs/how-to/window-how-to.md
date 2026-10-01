@@ -31,7 +31,7 @@ This guide covers common Window scenarios: sizing, positioning, dialogs, multi-w
 | `CenterScreen` | Centered on the primary screen. |
 | `CenterOwner` | Centered on the owner window (for dialogs). |
 
-## Showing a Dialog Window
+## 显示一个对话框窗口 {#showing-a-dialog-window}
 
 Use `ShowDialog<T>` to open a modal dialog and get a result:
 
@@ -59,7 +59,7 @@ private void OnCancelClick(object sender, RoutedEventArgs e)
 }
 ```
 
-## Getting the Parent Window
+## 获取父窗口 {#getting-the-parent-window}
 
 From any control, use `TopLevel.GetTopLevel`:
 

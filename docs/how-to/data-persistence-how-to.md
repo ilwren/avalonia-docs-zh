@@ -1,15 +1,15 @@
 ---
 id: data-persistence-how-to
-title: "How to: Save and Load Application Settings"
-description: Persist user preferences and application state across sessions using JSON files or databases.
+title: "操作指南：保存与加载应用设置"
+description: 用 JSON 文件或数据库，跨会话保存用户偏好与应用状态。
 doc-type: how-to
 ---
 
-This guide covers patterns for persisting user preferences and application state across sessions in your Avalonia application.
+本指南介绍在 Avalonia 应用中跨会话保存用户偏好和应用状态的几种套路。
 
-## JSON file settings
+## JSON 文件设置 {#json-file-settings}
 
-The simplest approach stores settings as a JSON file in the user's app data directory:
+最简单的办法是把设置以 JSON 文件的形式存到用户的应用数据目录里：
 
 ```csharp
 using System.Text.Json;
@@ -54,10 +54,10 @@ public class SettingsService
 ```
 
 :::tip
-Consider wrapping your `Load` method in a `try`/`catch` block. If the JSON file becomes corrupt or its schema changes between application versions, `JsonSerializer.Deserialize` will throw an exception. Returning a default `AppSettings` instance in the `catch` block prevents your application from crashing on startup.
+不妨把 `Load` 方法包进 `try`/`catch` 块中。万一 JSON 文件损坏，或者版本更迭导致结构变了，`JsonSerializer.Deserialize` 就会抛异常。在 `catch` 块里返回一个默认的 `AppSettings` 实例，可以避免应用一启动就崩溃。
 :::
 
-### Using with a view model
+### 配合视图模型使用 {#using-with-a-view-model}
 
 ```csharp
 public partial class SettingsViewModel : ObservableObject
@@ -94,12 +94,12 @@ public partial class SettingsViewModel : ObservableObject
 ```
 
 :::note
-Saving on every property change is convenient but can cause excessive disk I/O if you have many rapidly changing settings. For high-frequency updates, consider debouncing saves or batching changes with a timer that flushes after a short delay.
+每次属性变化就保存固然省事，但设置项一多、变化又频繁，磁盘 I/O 就会过载。面对高频更新，不妨给保存操作加上防抖，或者用定时器把若干改动攒起来、延迟片刻再一并写出。
 :::
 
-## Saving window position and size
+## 保存窗口的位置与尺寸 {#saving-window-position-and-size}
 
-You can persist window geometry so it restores on the next launch:
+你可以把窗口的几何信息存下来，下次启动时恢复：
 
 ```csharp
 public partial class MainWindow : Window
@@ -135,10 +135,10 @@ public partial class MainWindow : Window
 ```
 
 :::warning
-When restoring window position, validate that the saved coordinates are still within the bounds of the current screen configuration. A user may have disconnected an external monitor since the last session, causing the window to appear off-screen. You can use `Screens.All` on `TopLevel` to check available screen bounds before applying saved position values.
+恢复窗口位置时，记得校验存下来的坐标在当前的屏幕配置下是否依然有效。用户也许在上次会话之后拔掉了外接显示器，窗口就会跑到屏幕之外。你可以在应用保存的位置值之前，先用 `TopLevel` 上的 `Screens.All` 查一查可用的屏幕范围。
 :::
 
-If you also want to persist the window's position (not just its size), add `WindowX` and `WindowY` properties to your `AppSettings` class and set them in `OnClosing`:
+若你不只想保存尺寸、还想保存窗口位置，请给 `AppSettings` 类加上 `WindowX` 和 `WindowY` 属性，并在 `OnClosing` 中赋值：
 
 ```csharp
 // In AppSettings
@@ -156,9 +156,9 @@ s.WindowX = Position.X;
 s.WindowY = Position.Y;
 ```
 
-## Recent files list
+## 最近文件列表 {#recent-files-list}
 
-You can track recently opened files to display in a menu or on a welcome screen:
+你可以记录最近打开过的文件，在菜单或欢迎界面中列出来：
 
 ```csharp
 public class RecentFilesService
@@ -218,15 +218,15 @@ public class RecentFilesService
 ```
 
 :::tip
-When displaying a recent files list, check that each file still exists before showing it to your users. Files may have been moved, renamed, or deleted since they were last opened. Providing a "Remove from list" option (as shown with the `RemoveFile` method above) improves the user experience when stale entries appear.
+展示最近文件列表时，请先确认每个文件是否还在，再显示给用户。文件在上次打开之后可能已被移动、改名或删除。像上面的 `RemoveFile` 方法那样提供一个「从列表中移除」的选项，能让用户在遇到失效条目时体验好不少。
 :::
 
-## Platform-specific storage paths
+## 各平台的存储路径 {#platform-specific-storage-paths}
 
-Each operating system has its own convention, where application config should be stored.
-It's typically a dedicated mutable folder, specific to the current user (not global).
+每个操作系统都有自己存放应用配置的惯例。
+那通常是一个专用的可写文件夹，隶属于当前用户（而非全局共享）。
 
-Modern .NET abstracts these differences, allowing to resolve a config path with a single `Environment.GetFolderPath` call:
+现代 .NET 把这些差异抽象掉了，一次 `Environment.GetFolderPath` 调用就能解析出配置路径：
 
 ```csharp
 public static string GetAppDataPath()
@@ -248,24 +248,24 @@ public static string GetAppDataPath()
 }
 ```
 
-The following table shows locations to which `SpecialFolder.LocalApplicationData` is resolved in .NET 8:
+下表列出 .NET 8 中 `SpecialFolder.LocalApplicationData` 解析到的位置：
 
-| 平台 | Typical path |
+| 平台 | 典型路径 |
 |---|---|
 | Windows | `%LOCALAPPDATA%\MyApp\` |
 | macOS | `~/Library/Application Support/MyApp/` |
 | Linux* | `~/.local/share/MyApp/` |
 
-\* Linux paths can vary depending if `XDG_DATA_HOME` is set.
+\* Linux 下的路径会因是否设置了 `XDG_DATA_HOME` 而不同。
 
 :::note
-Application installation directories should be treated as read-only at runtime. Use them for bundled defaults and static assets, not mutable user data.
-In addition, system-wide shared directories may require elevated privileges for writes.
+运行时应把应用的安装目录视为只读，只用来放随包分发的默认值和静态资产，不要存放可变的用户数据。
+此外，向系统级共享目录写入往往还需要提权。
 :::
 
-## Bookmarked storage (mobile and sandbox)
+## 书签式存储（移动端与沙盒） {#bookmarked-storage-mobile-and-sandbox}
 
-On sandboxed platforms (iOS, Android, WebAssembly), the standard file system APIs may not have access to user-selected files across sessions. Use Avalonia's `IStorageProvider` bookmarks to persist file access:
+在沙盒化的平台上（iOS、Android、WebAssembly），标准文件系统 API 可能无法跨会话访问用户选定的文件。这时请用 Avalonia 的 `IStorageProvider` 书签来保留文件访问权：
 
 ```csharp
 var storage = TopLevel.GetTopLevel(this)?.StorageProvider;
@@ -293,15 +293,15 @@ if (!string.IsNullOrEmpty(settings.LastFileBookmark))
 ```
 
 :::warning
-Bookmarks can become invalid if the user moves or deletes the file, or if the operating system revokes the permission grant. Always check that the restored `IStorageFile` is not `null` and handle failures gracefully. On some platforms, bookmarks may also expire after a system restart.
+若用户移动或删除了文件，或者操作系统收回了授权，书签就会失效。请务必检查恢复出来的 `IStorageFile` 是否为 `null`，并妥善处理失败的情形。在某些平台上，书签还可能在系统重启后过期。
 :::
 
-See [Bookmarks](/docs/services/storage/bookmarks) for full details on the bookmark API.
+书签 API 的完整说明请参阅[书签](/docs/services/storage/bookmarks)。
 
 ## 另请参阅 {#see-also}
 
-- [Storage Provider](/docs/services/storage/storage-provider): File and folder access across platforms.
-- [Bookmarks](/docs/services/storage/bookmarks): Persisting file access across sessions on sandboxed platforms.
-- [Storage Item](/docs/services/storage/storage-item): Working with `IStorageFile` and `IStorageFolder` instances.
-- [Window Management](/docs/app-development/window-management): Window lifecycle, positioning, and state.
-- [Dependency Injection](/docs/app-development/dependency-injection): Registering services like `SettingsService` in your application.
+- [存储提供程序](/docs/services/storage/storage-provider)：跨平台访问文件与文件夹。
+- [书签](/docs/services/storage/bookmarks)：在沙盒平台上跨会话保留文件访问权。
+- [存储项](/docs/services/storage/storage-item)：使用 `IStorageFile` 与 `IStorageFolder` 实例。
+- [窗口管理](/docs/app-development/window-management)：窗口的生命周期、定位与状态。
+- [依赖注入](/docs/app-development/dependency-injection)：在应用中注册 `SettingsService` 之类的服务。

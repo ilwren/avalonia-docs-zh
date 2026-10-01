@@ -1,15 +1,15 @@
 ---
 id: datagrid-how-to
-title: "How to: Work with DataGrid"
-description: Sorting, filtering, grouping, template columns, selection, validation, and editing with DataGrid.
+title: "操作指南：使用 DataGrid"
+description: DataGrid 的排序、筛选、分组、模板列、选择、校验与编辑。
 doc-type: how-to
 ---
 
-This guide covers common DataGrid scenarios: sorting, filtering, grouping, template columns, selection, validation, and editing.
+本指南涵盖 DataGrid 的常见场景：排序、筛选、分组、模板列、选择、校验与编辑。
 
 ## 配置 {#setup}
 
-Install the NuGet package and add the style reference:
+安装 NuGet 包并添加样式引用：
 
 ```bash
 dotnet add package Avalonia.Controls.DataGrid
@@ -64,9 +64,9 @@ public class Product
 
 ## Sorting
 
-Sorting is enabled by default (`CanUserSortColumns="True"`). Click a column header to sort ascending, click again for descending.
+排序默认开启（`CanUserSortColumns="True"`）。点击列标题按升序排序，再点一次改为降序。
 
-For custom sort behavior with `DataGridTemplateColumn`, set the `SortMemberPath`:
+若要用 `DataGridTemplateColumn` 自定义排序行为，请设置 `SortMemberPath`：
 
 ```xml
 <DataGridTemplateColumn Header="Age" SortMemberPath="AgeInYears">
@@ -89,7 +89,7 @@ myDataGrid.Columns.Add(column);
 
 ## Filtering
 
-Filter data by binding to a filtered collection in your view model:
+在视图模型中绑定一个筛选后的集合，即可筛选数据：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -130,9 +130,9 @@ public partial class MainViewModel : ObservableObject
 
 ## Grouping
 
-Group rows by wrapping your collection in a `DataGridCollectionView` and adding group descriptions. The DataGrid renders a collapsible `DataGridRowGroupHeader` for each group automatically.
+把集合包进 `DataGridCollectionView` 并添加分组描述，即可对行分组。DataGrid 会自动为每个分组渲染一个可折叠的 `DataGridRowGroupHeader`。
 
-### Basic grouping
+### 基本分组 {#basic-grouping}
 
 ```csharp
 using Avalonia.Collections;
@@ -168,18 +168,18 @@ public partial class MainViewModel : ObservableObject
 </DataGrid>
 ```
 
-### Multiple group levels
+### 多级分组 {#multiple-group-levels}
 
-Add more than one `DataGridPathGroupDescription` for nested grouping:
+添加多个 `DataGridPathGroupDescription` 即可实现嵌套分组：
 
 ```csharp
 GroupedProducts.GroupDescriptions.Add(new DataGridPathGroupDescription("Category"));
 GroupedProducts.GroupDescriptions.Add(new DataGridPathGroupDescription("SubCategory"));
 ```
 
-### Customizing the group header
+### 自定义分组标题 {#customizing-the-group-header}
 
-Handle the `LoadingRowGroup` event to change the header text or add summary information:
+处理 `LoadingRowGroup` 事件，即可改写标题文字或加上汇总信息：
 
 ```csharp
 private void OnLoadingRowGroup(object? sender, DataGridRowGroupHeaderEventArgs e)
@@ -198,9 +198,9 @@ private void OnLoadingRowGroup(object? sender, DataGridRowGroupHeaderEventArgs e
           LoadingRowGroup="OnLoadingRowGroup" />
 ```
 
-### Expanding and collapsing groups programmatically
+### 以编程方式展开和折叠分组 {#expanding-and-collapsing-groups-programmatically}
 
-Use `ExpandRowGroup` and `CollapseRowGroup` on the DataGrid:
+使用 DataGrid 上的 `ExpandRowGroup` 和 `CollapseRowGroup`：
 
 ```csharp
 if (viewModel.GroupedProducts.Groups is { } groups)
@@ -214,15 +214,15 @@ if (viewModel.GroupedProducts.Groups is { } groups)
 
 ## Column Types
 
-| Column Type | Use For |
+| Column Type | 适用场景 |
 |---|---|
-| `DataGridTextColumn` | Text display and editing. |
-| `DataGridCheckBoxColumn` | Boolean values. Supports three-state for `bool?`. |
-| `DataGridTemplateColumn` | Custom display and editing with any control. |
+| `DataGridTextColumn` | 文本的显示与编辑。 |
+| `DataGridCheckBoxColumn` | 布尔值。配合 `bool?` 可支持三态。 |
+| `DataGridTemplateColumn` | 用任意控件自定义显示与编辑。 |
 
 ## Template Columns
 
-Use `DataGridTemplateColumn` for custom cell rendering:
+要自定义单元格渲染，请使用 `DataGridTemplateColumn`：
 
 ```xml
 <DataGridTemplateColumn Header="Status">
@@ -238,9 +238,9 @@ Use `DataGridTemplateColumn` for custom cell rendering:
 </DataGridTemplateColumn>
 ```
 
-### Editable template column
+### 可编辑的模板列 {#editable-template-column}
 
-Provide both `CellTemplate` (display) and `CellEditingTemplate` (editing):
+同时提供 `CellTemplate`（显示）和 `CellEditingTemplate`（编辑）：
 
 ```xml
 <DataGridTemplateColumn Header="Rating">
@@ -260,7 +260,7 @@ Provide both `CellTemplate` (display) and `CellEditingTemplate` (editing):
 
 ## Selection
 
-### Single selection
+### 单选 {#single-selection}
 
 ```xml
 <DataGrid ItemsSource="{Binding Products}"
@@ -278,14 +278,14 @@ partial void OnSelectedProductChanged(Product? value)
 }
 ```
 
-### Multiple selection
+### 多选 {#multiple-selection}
 
 ```xml
 <DataGrid ItemsSource="{Binding Products}"
           SelectionMode="Extended" />
 ```
 
-Access selected items in code-behind:
+在代码隐藏中访问选中项：
 
 ```csharp
 var selectedItems = myDataGrid.SelectedItems;
@@ -293,14 +293,14 @@ var selectedItems = myDataGrid.SelectedItems;
 
 ## Editing
 
-By default, the DataGrid allows editing when `IsReadOnly` is `false`. Double-click a cell or press F2 to enter edit mode. Press Enter to commit, Escape to cancel.
+默认情况下，只要 `IsReadOnly` 为 `false`，DataGrid 就允许编辑。双击单元格或按 F2 进入编辑模式，按 Enter 提交，按 Esc 取消。
 
 ```xml
 <DataGrid ItemsSource="{Binding Products}" IsReadOnly="False"
           CellEditEnding="OnCellEditEnding" />
 ```
 
-### Handling edit events
+### 处理编辑事件 {#handling-edit-events}
 
 ```csharp
 private void OnCellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
@@ -314,14 +314,14 @@ private void OnCellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
 
 ## Column Width Modes
 
-| Width | 行为 |
+| 宽度 | 行为 |
 |---|---|
-| `Auto` | Sized to fit content. |
-| `*` | Takes an equal share of remaining space. |
-| `2*` | Takes twice the share of `*` columns. |
-| `200` | Fixed width in pixels. |
-| `SizeToCells` | Sized to fit cell content. |
-| `SizeToHeader` | Sized to fit header content. |
+| `Auto` | 按内容自适应大小。 |
+| `*` | 平分剩余空间。 |
+| `2*` | 占 `*` 列两倍的份额。 |
+| `200` | 固定宽度，单位为像素。 |
+| `SizeToCells` | 按单元格内容自适应大小。 |
+| `SizeToHeader` | 按标题内容自适应大小。 |
 
 ```xml
 <DataGrid.Columns>
@@ -333,7 +333,7 @@ private void OnCellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
 
 ## Row Details
 
-Display additional content when a row is selected:
+在某一行被选中时显示额外内容：
 
 ```xml
 <DataGrid ItemsSource="{Binding Products}" IsReadOnly="True"
@@ -355,7 +355,7 @@ Display additional content when a row is selected:
 </DataGrid>
 ```
 
-## Grid Lines and Alternating Rows
+## 网格线与交替行 {#grid-lines-and-alternating-rows}
 
 ```xml
 <DataGrid ItemsSource="{Binding Products}"
@@ -365,14 +365,14 @@ Display additional content when a row is selected:
 
 | GridLinesVisibility | 说明 |
 |---|---|
-| `None` | No grid lines (default). |
-| `Horizontal` | Horizontal lines only. |
-| `Vertical` | Vertical lines only. |
-| `All` | Both horizontal and vertical lines. |
+| `None` | 不显示网格线（默认）。 |
+| `Horizontal` | 只显示横线。 |
+| `Vertical` | 只显示竖线。 |
+| `All` | 横线竖线都显示。 |
 
 ## Frozen Columns
 
-Keep columns visible while scrolling horizontally:
+横向滚动时让某些列始终可见：
 
 ```xml
 <DataGrid ItemsSource="{Binding Products}" FrozenColumnCount="1">
@@ -388,7 +388,7 @@ Keep columns visible while scrolling horizontally:
 
 ## Styling Rows Conditionally
 
-Use a `DataGridRowTheme` or handle `LoadingRow` in code-behind:
+使用 `DataGridRowTheme`，或在代码隐藏中处理 `LoadingRow`：
 
 ```csharp
 private void OnLoadingRow(object? sender, DataGridRowEventArgs e)
@@ -410,7 +410,7 @@ private void OnLoadingRow(object? sender, DataGridRowEventArgs e)
 
 ## 另请参阅 {#see-also}
 
-- [DataGrid Control Reference](/controls/data-display/structured-data/datagrid): Setup and property tables.
-- [TreeDataGrid](/controls/data-display/structured-data/treedatagrid): For hierarchical data display.
-- [Binding to Collections](/docs/data-binding/how-to-bind-to-a-collection): ObservableCollection patterns.
-- [Performance optimization for collections](/docs/app-development/performance#collections): Batch updates and virtualization for large collections.
+- [DataGrid 控件参考](/controls/data-display/structured-data/datagrid)：安装配置与属性表。
+- [TreeDataGrid](/controls/data-display/structured-data/treedatagrid)：用于展示层级数据。
+- [绑定到集合](/docs/data-binding/how-to-bind-to-a-collection)：ObservableCollection 的用法。
+- [集合的性能优化](/docs/app-development/performance#collections)：大集合的批量更新与虚拟化。

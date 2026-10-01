@@ -1,7 +1,7 @@
 ---
 id: combobox-how-to
-title: "How to: Work with ComboBox"
-description: Bind collections, create custom templates, use editable combo boxes, and bind enums with the Avalonia ComboBox control.
+title: "操作指南：使用 ComboBox"
+description: 用 Avalonia 的 ComboBox 控件绑定集合、自定义模板、启用可编辑下拉框，以及绑定枚举。
 doc-type: how-to
 ---
 
@@ -9,11 +9,11 @@ import ComboBoxBasicBinding from '/img/controls/combobox/combobox-basic-binding.
 import ComboBoxComplexObject from '/img/controls/combobox/combobox-complex-object.png';
 import AutoCompleteBoxScreenshot from '/img/controls/autocompletebox/autocompletebox.gif';
 
-This guide covers common usage scenarios with [`ComboBox`](/api/avalonia/controls/combobox), including binding to collections, creating custom item templates, and working with enums.
+本指南介绍 [`ComboBox`](/api/avalonia/controls/combobox) 的常见用法，包括绑定到集合、自定义项模板，以及处理枚举。
 
-## Basic binding
+## 基本绑定 {#basic-binding}
 
-To bind a `ComboBox` to a collection and track the selected item, set `ItemsSource` to your collection in the view model and bind `SelectedItem`. Use `PlaceholderText` to display a hint when nothing is selected:
+要把 `ComboBox` 绑定到集合并跟踪当前选中项，请在视图模型中把 `ItemsSource` 设为你的集合，并绑定 `SelectedItem`。再用 `PlaceholderText` 在未选中任何项时给出提示：
 
 <Tabs>
 
@@ -58,12 +58,12 @@ public partial class MainWindowViewModel : ViewModelBase
 </Tabs>
 
 :::tip
-Using `ObservableCollection<T>` instead of `List<T>` means the `ComboBox` can update automatically if items are added or removed at runtime.
+用 `ObservableCollection<T>` 而不是 `List<T>`，意味着运行时增删项目后 `ComboBox` 能自动更新。
 :::
 
-## Custom item template
+## 自定义项模板 {#custom-item-template}
 
-When your items are complex objects with multiple components (e.g., a user profile consisting of name, job, email, etc.), use `ComboBox.ItemTemplate` to control how each item appears in the dropdown. This lets you display multiple properties, icons, or custom layout:
+当项目是由多个部分组成的复杂对象时（比如含姓名、职位、邮箱的用户资料），用 `ComboBox.ItemTemplate` 来控制每一项在下拉列表中的呈现方式。这样你就能同时展示多个属性、图标或自定义布局：
 
 <Tabs>
 
@@ -148,11 +148,11 @@ public class User
 
 </Tabs>
 
-When you use a custom item template with complex objects, the `ComboBox` displays the selected item in the box using the same template as the items on the list. If you want different layouts for the selected item and the dropdown items, you can use a `DataTemplateSelector` or apply styles that target items inside the popup.
+对复杂对象使用自定义项模板时，`ComboBox` 会用与列表项相同的模板，把选中项显示在框内。若你希望选中项和下拉项用不同的布局，可以改用 `DataTemplateSelector`，或者写样式专门指向弹出层内的那些项。
 
 ## 绑定到枚举 {#binding-to-an-enum}
 
-You can populate a `ComboBox` with all values of an enum by calling `Enum.GetValues<T>()` and exposing the result as an array.
+调用 `Enum.GetValues<T>()` 并把结果作为数组公开，就能把某个枚举的全部值填进 `ComboBox`。
 
 <Tabs>
 
@@ -183,9 +183,9 @@ public partial class TaskViewModel : ObservableObject
 
 </Tabs>
 
-### With display names
+### 带显示名称 {#with-display-names}
 
-The method shown above displays the raw enum member names in the `ComboBox`. For example, `"High"` rather than `"High Priority"` in the previous example. If you want human-readable labels, wrap each value in a record and provide an `ItemTemplate`.
+上面这种办法在 `ComboBox` 中显示的是枚举成员的原始名称，比如前例中显示的是 `"High"` 而非 `"High Priority"`。若你想要便于阅读的标签，可以把每个值包进一条 record 并提供 `ItemTemplate`。
 
 <Tabs>
 
@@ -225,9 +225,9 @@ private PriorityOption _selectedPriority;
 
 </Tabs>
 
-## Binding to `SelectedValue`
+## 绑定到 `SelectedValue` {#binding-to-selectedvalue}
 
-If you need just a single property of a complex item, rather than the whole object, use `SelectedValueBinding` to specify which property to extract and `SelectedValue` to bind the result. This binding is commonly used when you only need to store the ID or code of a composite data object.
+若你要的只是复杂项中的某一个属性、而非整个对象，可以用 `SelectedValueBinding` 指定提取哪个属性，再用 `SelectedValue` 绑定结果。当你只需要保存复合数据对象的 ID 或编码时，常会用到这种绑定。
 
 ```xml
 <ComboBox ItemsSource="{Binding Countries}"
@@ -241,9 +241,9 @@ If you need just a single property of a complex item, rather than the whole obje
 </ComboBox>
 ```
 
-## Static items in XAML
+## 在 XAML 中写死选项 {#static-items-in-xaml}
 
-For a small, fixed set of options that do not change at runtime, you can define items directly in XAML using `ComboBoxItem`. This may be an appropriate option for settings menus or input forms, where the dropdown options are already decided early in the design stage.
+如果选项数量不多、运行时也不会变，你可以用 `ComboBoxItem` 直接在 XAML 里定义。设置菜单或输入表单往往适合这么做——那里的下拉选项在设计阶段早就定下来了。
 
 <XamlPreview>
 
@@ -259,9 +259,9 @@ For a small, fixed set of options that do not change at runtime, you can define 
 
 </XamlPreview>
 
-## Type-to-search with `AutoCompleteBox`
+## 用 `AutoCompleteBox` 实现输入即搜索 {#type-to-search-with-autocompletebox}
 
-Avalonia's `ComboBox` can accept text input by setting `IsEditable="True"`. However, this setting does not enable type-to-search functionality. If you require a type-to-search box, use [`AutoCompleteBox`](/controls/input/text-input/autocompletebox) instead.
+设置 `IsEditable="True"` 后，Avalonia 的 `ComboBox` 可以接受文本输入。不过这个设置并不会带来输入即搜索的能力。如果你需要一个边输入边搜索的框，请改用 [`AutoCompleteBox`](/controls/input/text-input/autocompletebox)。
 
 <Image light={AutoCompleteBoxScreenshot} maxWidth={400} cornerRadius="true" position="center" alt="A short animation demonstrating the type-to-search functionality of the auto-complete box using a list of animals." />
 <br />
@@ -275,7 +275,7 @@ Avalonia's `ComboBox` can accept text input by setting `IsEditable="True"`. Howe
                  MinimumPrefixLength="1" />
 ```
 
-`AutoCompleteBox` filters the list as the user types. Choose from several built-in filter modes (`StartsWith`, `Contains`, `ContainsCaseSensitive`, and more), or provide a custom filter:
+`AutoCompleteBox` 会随用户输入实时筛选列表。你可以从几种内置筛选模式（`StartsWith`、`Contains`、`ContainsCaseSensitive` 等）中挑一个，也可以提供自定义筛选器：
 
 ```xml
 <!-- AutoCompleteBox with custom filter and a DataTemplate to search complex objects. -->
@@ -294,9 +294,9 @@ Avalonia's `ComboBox` can accept text input by setting `IsEditable="True"`. Howe
 
 ## Styling
 
-### Custom dropdown width
+### 自定义下拉宽度 {#custom-dropdown-width}
 
-Set a width that applies only to the `Popup` inside the `ComboBox` template to ensure the dropdown is wide enough for its contents. As a demonstration, try adjusting `Width` in the preview below to `MinWidth`:
+给 `ComboBox` 模板内的 `Popup` 单独设一个宽度，保证下拉框够宽、装得下内容。不妨试试把下面预览中的 `Width` 调成 `MinWidth` 看看效果：
 
 <XamlPreview>
 
@@ -320,9 +320,9 @@ Set a width that applies only to the `Popup` inside the `ComboBox` template to e
 
 </XamlPreview>
 
-### Custom placeholder style
+### 自定义占位文本样式 {#custom-placeholder-style}
 
-Change the appearance of the placeholder text by targeting the `PlaceholderTextBlock` element with a style. In this example, [the `:not(:disabled)` pseudoclass](/docs/styling/pseudoclasses) is also specified so that the custom placeholder style always applies while the `ComboBox` is active.
+写一条样式指向 `PlaceholderTextBlock` 元素，即可改变占位文本的外观。本例中还特意带上了 [`:not(:disabled)` 伪类](/docs/styling/pseudoclasses)，好让 `ComboBox` 处于活动状态时自定义的占位样式始终生效。
 
 <XamlPreview>
 
@@ -349,7 +349,7 @@ Change the appearance of the placeholder text by targeting the `PlaceholderTextB
 
 ## 另请参阅 {#see-also}
 
-- [ComboBox reference](/controls/input/selectors/combobox)
-- [How to bind to a collection](/docs/data-binding/how-to-bind-to-a-collection): Collection binding basics.
-- [Introduction to data templates](/docs/data-templates/introduction-to-data-templates): Customizing how items are displayed.
+- [ComboBox 参考](/controls/input/selectors/combobox)
+- [如何绑定到集合](/docs/data-binding/how-to-bind-to-a-collection)：集合绑定基础。
+- [数据模板入门](/docs/data-templates/introduction-to-data-templates)：自定义项目的显示方式。
 - [集合视图](/docs/data-binding/collection-views)：对绑定的集合做排序、筛选和分组。

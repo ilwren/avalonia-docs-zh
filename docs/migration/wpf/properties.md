@@ -131,7 +131,7 @@ public class DockPanel : Panel
 }
 ```
 
-## Property changed callbacks
+## 属性变更回调 {#property-changed-callbacks}
 
 ### WPF approach
 

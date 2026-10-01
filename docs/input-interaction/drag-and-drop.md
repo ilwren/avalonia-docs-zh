@@ -180,7 +180,7 @@ if (e.DataTransfer.Formats.Contains(DataFormat.File))
 }
 ```
 
-## Visual feedback during drag
+## 拖拽过程中的视觉反馈 {#visual-feedback-during-drag}
 
 Use the `DragEnter` and `DragLeave` events to provide visual feedback:
 

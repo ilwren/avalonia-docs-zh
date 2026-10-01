@@ -1,15 +1,15 @@
 ---
 id: expander-how-to
-title: "How to: Work with Expander"
-description: Learn how to use the Avalonia Expander control for collapsible content sections, accordion patterns, animated transitions, state binding, and custom headers.
+title: "操作指南：使用 Expander"
+description: 学会用 Avalonia 的 Expander 控件做可折叠内容区、手风琴式面板、带动画的展开、状态绑定与自定义标题。
 doc-type: how-to
 ---
 
-This guide covers common [`Expander`](/api/avalonia/controls/expander) scenarios including basic usage, accordion patterns, animated expansion, binding state, and custom headers.
+本指南介绍 [`Expander`](/api/avalonia/controls/expander) 的常见场景，包括基本用法、手风琴式面板、带动画的展开、绑定状态以及自定义标题。
 
-## Basic expander
+## 基本的 Expander {#basic-expander}
 
-The simplest `Expander` wraps content you want to show or hide behind a clickable header:
+最简单的 `Expander` 就是把你想展示或隐藏的内容，收在一个可点击的标题后面：
 
 ```xml
 <Expander Header="Advanced Options">
@@ -20,11 +20,11 @@ The simplest `Expander` wraps content you want to show or hide behind a clickabl
 </Expander>
 ```
 
-The `Expander` can host any single child element. If you need multiple controls, wrap them in a layout panel such as `StackPanel` or `Grid`.
+`Expander` 只能承载单个子元素。若要放多个控件，请先用 `StackPanel` 或 `Grid` 之类的布局面板把它们包起来。
 
 ## 初始即展开 {#initially-expanded}
 
-Set `IsExpanded` to `True` so the content is visible when the control first loads:
+把 `IsExpanded` 设为 `True`，控件首次加载时内容就是展开可见的：
 
 ```xml
 <Expander Header="Details" IsExpanded="True">
@@ -33,12 +33,12 @@ Set `IsExpanded` to `True` so the content is visible when the control first load
 ```
 
 :::tip
-Use an initially expanded `Expander` for content that most users need to see right away, while still allowing them to collapse it to save space.
+对于大多数用户一上来就得看到的内容，可以让 `Expander` 默认展开，同时仍允许他们折叠起来腾出空间。
 :::
 
 ## Binding `IsExpanded`
 
-You can track expansion state in your view model so other parts of your UI can react to it:
+你可以在视图模型中跟踪展开状态，好让界面其他部分随之响应：
 
 ```csharp
 [ObservableProperty]
@@ -53,11 +53,11 @@ private bool _showAdvanced;
 </Expander>
 ```
 
-This two-way binding keeps the view model property in sync whenever the user opens or closes the `Expander`.
+有了这个双向绑定，无论用户何时展开或折叠 `Expander`，视图模型的属性都会保持同步。
 
 ## 展开方向 {#expand-direction}
 
-The [`ExpandDirection`](/api/avalonia/controls/expanddirection) property controls which direction the content expands relative to the header:
+[`ExpandDirection`](/api/avalonia/controls/expanddirection) 属性决定内容相对标题朝哪个方向展开：
 
 ```xml
 <!-- Expands upward -->
@@ -73,18 +73,18 @@ The [`ExpandDirection`](/api/avalonia/controls/expanddirection) property control
 
 | 值 | 说明 |
 |---|---|
-| `Down` | Content appears below the header (default). |
-| `Up` | Content appears above the header. |
-| `Left` | Content appears to the left of the header. |
-| `Right` | Content appears to the right of the header. |
+| `Down` | 内容出现在标题下方（默认）。 |
+| `Up` | 内容出现在标题上方。 |
+| `Left` | 内容出现在标题左侧。 |
+| `Right` | 内容出现在标题右侧。 |
 
 :::note
-When you use `Up`, place the `Expander` at the bottom of its parent (for example, with `VerticalAlignment="Bottom"`) so the expanded content has room to grow upward. The same principle applies to `Left` and `Right` with horizontal alignment.
+用 `Up` 时，请把 `Expander` 放在父容器的底部（比如配合 `VerticalAlignment="Bottom"`），好让展开的内容有向上生长的空间。`Left` 和 `Right` 同理，只是换成水平方向的对齐。
 :::
 
-## Custom header with icon
+## 带图标的自定义标题 {#custom-header-with-icon}
 
-Use `Expander.Header` to place rich content in the header area:
+用 `Expander.Header` 可以在标题区放入丰富的内容：
 
 ```xml
 <Expander>
@@ -100,11 +100,11 @@ Use `Expander.Header` to place rich content in the header area:
 </Expander>
 ```
 
-Because `Header` is of type `object`, you can assign any control tree. Common patterns include icons paired with text, badges, or status indicators.
+由于 `Header` 的类型是 `object`，你可以塞进任意控件树。常见做法有图标配文字、角标，或者状态指示器。
 
-## Accordion pattern (single open)
+## 手风琴效果（同时只开一个） {#accordion-pattern-single-open}
 
-To allow only one `Expander` to be open at a time, bind each `IsExpanded` property to a shared backing field in your view model:
+要让同时只有一个 `Expander` 处于展开状态，请把各个 `IsExpanded` 属性绑定到视图模型中共用的后备字段：
 
 ```csharp
 public partial class AccordionViewModel : ObservableObject
@@ -153,11 +153,11 @@ public partial class AccordionViewModel : ObservableObject
 </StackPanel>
 ```
 
-Setting `OpenSection` to `-1` means all sections are collapsed. When the user opens one section, the previously open section closes automatically.
+把 `OpenSection` 设为 `-1` 表示所有区块都折叠。用户展开某个区块时，之前展开的那个会自动合上。
 
-## Animated content transition
+## 带动画的内容过渡 {#animated-content-transition}
 
-Add a `ContentTransition` for a smooth expand and collapse animation:
+加上 `ContentTransition`，展开和折叠就有了平滑的动画：
 
 ```xml
 <Expander Header="Animated Section">
@@ -170,11 +170,11 @@ Add a `ContentTransition` for a smooth expand and collapse animation:
 </Expander>
 ```
 
-You can substitute `CrossFade` with other transition types such as `PageSlide` or `CompositePageTransition`. See [Page transitions](/docs/graphics-animation/page-transitions) for a full list of built-in options.
+你可以把 `CrossFade` 换成 `PageSlide`、`CompositePageTransition` 等别的过渡类型。内置选项的完整清单请参阅[页面过渡](/docs/graphics-animation/page-transitions)。
 
 ## 响应展开与折叠事件 {#responding-to-expand-and-collapse-events}
 
-Handle expansion state changes in code-behind by subscribing to the `IsExpandedChanged` event:
+在代码隐藏中订阅 `IsExpandedChanged` 事件，即可处理展开状态的变化：
 
 ```csharp
 private void Expander_IsExpandedChanged(object sender, RoutedEventArgs e)
@@ -191,7 +191,7 @@ private void Expander_IsExpandedChanged(object sender, RoutedEventArgs e)
           PropertyChanged="Expander_IsExpandedChanged" />
 ```
 
-Alternatively, use a property-changed callback in your view model for the same effect without code-behind:
+或者在视图模型里用属性变更回调，不写代码隐藏也能达到同样效果：
 
 ```csharp
 [ObservableProperty]
@@ -205,14 +205,14 @@ partial void OnIsDetailsOpenChanged(bool value)
 ```
 
 :::tip
-Lazy loading is a useful pattern for expanders that contain expensive-to-render content. Defer the work until the user actually opens the section.
+对于内容渲染开销很大的 expander，惰性加载是个好办法——等用户真的展开了再干活。
 :::
 
-## Styling the expander
+## 为 expander 设置样式 {#styling-the-expander}
 
-### Remove the border
+### 去掉边框 {#remove-the-border}
 
-You can strip the default border and background to create a more minimal look:
+你可以把默认的边框和背景抹掉，换一种更素净的观感：
 
 ```xml
 <Expander.Styles>
@@ -223,9 +223,9 @@ You can strip the default border and background to create a more minimal look:
 </Expander.Styles>
 ```
 
-### Custom expand icon
+### 自定义展开图标 {#custom-expand-icon}
 
-Override the template toggle button to change the expand/collapse indicator:
+重写模板里的切换按钮，即可更换展开/折叠指示符：
 
 ```xml
 <Expander.Styles>
@@ -235,9 +235,9 @@ Override the template toggle button to change the expand/collapse indicator:
 </Expander.Styles>
 ```
 
-### Disabled state
+### 禁用状态 {#disabled-state}
 
-When you set `IsEnabled="False"` on an `Expander`, the header is no longer interactive and the user cannot toggle the content. The expand/collapse state at the time of disabling is preserved.
+当你给 `Expander` 设上 `IsEnabled="False"` 后，标题就不再可交互，用户也无法切换内容。禁用那一刻的展开/折叠状态会被保留下来。
 
 ```xml
 <Expander Header="Read-only section" IsEnabled="False" IsExpanded="True">
@@ -245,18 +245,18 @@ When you set `IsEnabled="False"` on an `Expander`, the header is no longer inter
 </Expander>
 ```
 
-## Key properties reference
+## 关键属性速查 {#key-properties-reference}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Header` | `object` | Content shown in the always-visible header area. |
-| `IsExpanded` | `bool` | Whether the content section is visible. Default is `False`. |
-| `ExpandDirection` | `ExpandDirection` | Direction content expands: `Down`, `Up`, `Left`, `Right`. Default is `Down`. |
-| `ContentTransition` | `IPageTransition` | Animation used for expand and collapse. |
-| `IsEnabled` | `bool` | Whether the user can interact with the header to toggle expansion. |
+| `Header` | `object` | 显示在始终可见的标题区中的内容。 |
+| `IsExpanded` | `bool` | 内容区是否可见，默认为 `False`。 |
+| `ExpandDirection` | `ExpandDirection` | 内容展开的方向：`Down`、`Up`、`Left`、`Right`，默认为 `Down`。 |
+| `ContentTransition` | `IPageTransition` | 展开与折叠所用的动画。 |
+| `IsEnabled` | `bool` | 用户能否通过标题来切换展开状态。 |
 
 ## 另请参阅 {#see-also}
 
-- [Expander control reference](/controls/layout/containers/expander): Full property and event tables.
-- [Page transitions](/docs/graphics-animation/page-transitions): Transition types you can use for content animation.
-- [Introduction to data binding](/docs/data-binding/introduction-to-data-binding): Fundamentals of binding properties like `IsExpanded` to your view model.
+- [Expander 控件参考](/controls/layout/containers/expander)：完整的属性与事件表。
+- [页面过渡](/docs/graphics-animation/page-transitions)：可用于内容动画的各种过渡类型。
+- [数据绑定入门](/docs/data-binding/introduction-to-data-binding)：把 `IsExpanded` 这类属性绑定到视图模型的基础知识。

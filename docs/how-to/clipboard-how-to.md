@@ -1,21 +1,21 @@
 ---
 id: clipboard-how-to
-title: "How to: Use the clipboard"
-description: Copy and paste text, images, and custom data using the Avalonia clipboard API.
+title: "操作指南：使用剪贴板"
+description: 用 Avalonia 剪贴板 API 复制和粘贴文本、图片与自定义数据。
 doc-type: how-to
 ---
 
-This guide shows you how to copy and paste text, images, and custom data using the Avalonia clipboard API. You will learn how to obtain a clipboard reference, transfer common data types, register custom formats, and wire up keyboard shortcuts.
+本指南演示如何用 Avalonia 剪贴板 API 复制和粘贴文本、图片与自定义数据。你将学到如何拿到剪贴板引用、传输常见数据类型、注册自定义格式，以及挂上键盘快捷键。
 
-## Getting the clipboard
+## 获取剪贴板 {#getting-the-clipboard}
 
-You access the clipboard through `TopLevel`. In a code-behind file you can call `GetTopLevel` on any visual that is part of the tree:
+你通过 `TopLevel` 访问剪贴板。在代码隐藏文件中，可以对树中任意视觉元素调用 `GetTopLevel`：
 
 ```csharp
 var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
 ```
 
-If you need clipboard access from a view model, inject `IClipboard` through the constructor so the view model stays testable:
+若需要在视图模型里访问剪贴板，请通过构造函数注入 `IClipboard`，这样视图模型依然可测试：
 
 ```csharp
 public class MainViewModel
@@ -30,12 +30,12 @@ public class MainViewModel
 ```
 
 :::tip
-All clipboard methods are asynchronous because the underlying platform APIs may require user permission or cross-process communication. Always `await` the calls and handle possible `null` return values.
+所有剪贴板方法都是异步的，因为底层平台 API 可能需要用户授权或跨进程通信。记得 `await` 这些调用，并处理可能返回的 `null`。
 :::
 
-## Copy text to the clipboard
+## 把文本复制到剪贴板 {#copy-text-to-the-clipboard}
 
-Use `SetTextAsync` to place a plain-text string on the clipboard:
+用 `SetTextAsync` 把一个纯文本字符串放到剪贴板上：
 
 ```csharp
 [RelayCommand]
@@ -49,9 +49,9 @@ private async Task CopyText()
 }
 ```
 
-## Paste text from the clipboard
+## 从剪贴板粘贴文本 {#paste-text-from-the-clipboard}
 
-Use `TryGetTextAsync` to read plain text. The method returns `null` when no text is available:
+用 `TryGetTextAsync` 读取纯文本。没有可用文本时，该方法返回 `null`：
 
 ```csharp
 [RelayCommand]
@@ -69,9 +69,9 @@ private async Task PasteText()
 }
 ```
 
-## Check clipboard content
+## 检查剪贴板的内容 {#check-clipboard-content}
 
-Before you paste, you can query which formats the clipboard currently holds. This is useful when your application supports multiple data types and you want to pick the best available format:
+粘贴之前，你可以先查询剪贴板当前持有哪些格式。当你的应用支持多种数据类型、希望挑出最合适的那一种时，这招很有用：
 
 ```csharp
 var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
@@ -90,12 +90,12 @@ if (clipboard is not null)
 ```
 
 :::note
-The `DataTransfer` object returned by `TryGetDataAsync` is disposable. Wrap it in a `using` statement so platform resources are released promptly.
+`TryGetDataAsync` 返回的 `DataTransfer` 对象是可释放的。把它放进 `using` 语句里，好让平台资源及时归还。
 :::
 
-## Copy an image to the clipboard
+## 把图片复制到剪贴板 {#copy-an-image-to-the-clipboard}
 
-Load a `Bitmap` and pass it to `SetBitmapAsync`:
+加载一个 `Bitmap` 并把它传给 `SetBitmapAsync`：
 
 ```csharp
 var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
@@ -106,9 +106,9 @@ if (clipboard is not null)
 }
 ```
 
-## Paste an image from the clipboard
+## 从剪贴板粘贴图片 {#paste-an-image-from-the-clipboard}
 
-Use `TryGetBitmapAsync` to retrieve an image. The method returns `null` when no image data is available:
+用 `TryGetBitmapAsync` 取回图片。没有可用图片数据时，该方法返回 `null`：
 
 ```csharp
 var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
@@ -122,9 +122,9 @@ if (clipboard is not null)
 }
 ```
 
-## Copy custom data
+## 复制自定义数据 {#copy-custom-data}
 
-Use `DataTransfer` and `DataTransferItem` to place structured data on the clipboard. You first create an application-scoped format with a unique identifier, then populate a `DataTransferItem` with one or more representations. Including a `DataFormat.Text` entry gives other applications a plain-text fallback:
+用 `DataTransfer` 和 `DataTransferItem` 把结构化数据放到剪贴板上。先用一个唯一标识创建应用作用域的格式，再往 `DataTransferItem` 里填入一种或多种表示形式。顺带加上 `DataFormat.Text` 条目，就能给其他应用留一个纯文本的退路：
 
 ```csharp
 var myFormat = DataFormat.CreateBytesApplicationFormat("mycompany-myapp-mydata");
@@ -139,9 +139,9 @@ data.Add(item);
 await clipboard.SetDataAsync(data);
 ```
 
-## Paste custom data
+## 粘贴自定义数据 {#paste-custom-data}
 
-To read your custom format back, create the same `DataFormat` and call `TryGetValueAsync`:
+要把自定义格式读回来，创建同样的 `DataFormat` 并调用 `TryGetValueAsync`：
 
 ```csharp
 var myFormat = DataFormat.CreateBytesApplicationFormat("mycompany-myapp-mydata");
@@ -158,12 +158,12 @@ if (data is not null)
 ```
 
 :::tip
-Use the same format identifier string (`"mycompany-myapp-mydata"`) on both the copy and paste sides. The identifier is how the clipboard matches the data to your application format.
+复制端和粘贴端必须使用同一个格式标识字符串（`"mycompany-myapp-mydata"`）。剪贴板正是靠这个标识把数据与你的应用格式对上号的。
 :::
 
 ## 键盘快捷键 {#keyboard-shortcuts}
 
-The standard clipboard shortcuts (`Ctrl+C`, `Ctrl+V`, `Ctrl+X`) work automatically in built-in text controls such as `TextBox` and `TextPresenter`. For custom controls, bind key gestures to your commands explicitly:
+在 `TextBox`、`TextPresenter` 这类内置文本控件中，标准剪贴板快捷键（`Ctrl+C`、`Ctrl+V`、`Ctrl+X`）自动生效。对于自定义控件，则需要你显式地把按键手势绑定到自己的命令上：
 
 ```xml
 <UserControl.KeyBindings>
@@ -173,27 +173,27 @@ The standard clipboard shortcuts (`Ctrl+C`, `Ctrl+V`, `Ctrl+X`) work automatical
 </UserControl.KeyBindings>
 ```
 
-On macOS, Avalonia automatically maps `Cmd+C`, `Cmd+V`, and `Cmd+X` when you specify the `Ctrl` modifier in XAML, so you do not need platform-specific bindings.
+在 macOS 上，只要你在 XAML 中写了 `Ctrl` 修饰键，Avalonia 就会自动把 `Cmd+C`、`Cmd+V`、`Cmd+X` 映射过去，无需再写平台相关的绑定。
 
-## Platform notes
+## 平台须知 {#platform-notes}
 
-The clipboard API is available on all Avalonia targets, but not every platform supports every data type. The table below summarizes current support:
+剪贴板 API 在所有 Avalonia 目标平台上都可用，但并非每个平台都支持全部数据类型。下表汇总了当前的支持情况：
 
-| 平台 | Text | Images | Files | Custom formats |
+| 平台 | 文本 | 图片 | 文件 | 自定义格式 |
 |---|---|---|---|---|
 | Windows | Yes | Yes | Yes | Yes |
 | macOS | Yes | Yes | Yes | Yes |
-| Linux | Yes | Yes | Varies by desktop environment | Yes |
-| Browser (WASM) | Yes (requires permission) | Yes | No | Limited |
+| Linux | Yes | Yes | 因桌面环境而异 | Yes |
+| Browser (WASM) | 支持（需要授权） | Yes | No | Limited |
 | iOS | Yes | Yes | No | Limited |
 | Android | Yes | 只读 | No | Limited |
 
-On **Browser/WASM**, the browser may prompt the user for clipboard permission the first time your application calls a clipboard method. Your code should handle the case where permission is denied and the call returns `null`.
+在 **Browser/WASM** 上，你的应用首次调用剪贴板方法时，浏览器可能会向用户索要剪贴板权限。你的代码应当妥善处理权限被拒、调用返回 `null` 的情形。
 
-On **Linux**, file clipboard support depends on the desktop environment and its clipboard manager. Text and image operations work reliably across GNOME, KDE, and other major environments.
+在 **Linux** 上，文件剪贴板的支持取决于桌面环境及其剪贴板管理器。文本和图片操作在 GNOME、KDE 等主流环境下都能稳定工作。
 
 ## 另请参阅 {#see-also}
 
-- [Clipboard service](/docs/services/clipboard)
-- [Drag and drop how-to](/docs/how-to/drag-and-drop-how-to)
+- [剪贴板服务](/docs/services/clipboard)
+- [拖放操作指南](/docs/how-to/drag-and-drop-how-to)
 - [Hotkeys](/docs/input-interaction/keyboard-and-hotkeys)

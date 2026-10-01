@@ -74,7 +74,7 @@ public class FileNode
 
 ## Selection
 
-### Single selection
+### 单选 {#single-selection}
 
 Bind `SelectedItem` to track the selected node:
 
@@ -94,7 +94,7 @@ partial void OnSelectedNodeChanged(object? value)
 }
 ```
 
-### Multiple selection
+### 多选 {#multiple-selection}
 
 Enable multiple selection with `SelectionMode`:
 

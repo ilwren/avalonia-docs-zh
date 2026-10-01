@@ -1,28 +1,28 @@
 ---
 id: text-options
-title: Text options
-description: TextOptions attached properties for controlling text hinting, alignment, and rendering mode.
+title: 文本选项
+description: 用 TextOptions 附加属性控制文本的 hinting、像素对齐与渲染模式。
 doc-type: reference
 ---
 
-Avalonia provides fine-grained control over how text is rendered through the `TextOptions` attached properties. These settings affect hinting, pixel alignment, and rendering mode for text within a control and its descendants.
+Avalonia 通过 `TextOptions` 附加属性提供了对文本渲染方式的细致掌控。这些设置会影响控件及其后代中文本的 hinting、像素对齐与渲染模式。
 
 ## 属性 {#properties}
 
 | 附加属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `TextOptions.TextRenderingMode` | `TextRenderingMode` | `Auto` | Controls whether text uses anti-aliasing, ClearType/subpixel rendering, or aliased rendering. |
-| `TextOptions.TextHintingMode` | `TextHintingMode` | `Full` | Controls how font hinting is applied. Hinting adjusts glyph outlines to align with the pixel grid for sharper text at small sizes. |
-| `TextOptions.BaselinePixelAlignment` | `BaselinePixelAlignment` | `Unspecified` | Controls whether text baselines snap to whole pixel boundaries. |
+| `TextOptions.TextRenderingMode` | `TextRenderingMode` | `Auto` | 控制文本使用抗锯齿、ClearType/次像素渲染，还是不作抗锯齿的渲染。 |
+| `TextOptions.TextHintingMode` | `TextHintingMode` | `Full` | 控制如何应用字体 hinting。hinting 会微调字形轮廓使之对齐像素网格，让小字号的文本更锐利。 |
+| `TextOptions.BaselinePixelAlignment` | `BaselinePixelAlignment` | `Unspecified` | 控制文本基线是否吸附到整像素边界。 |
 
 ## TextRenderingMode
 
 | 值 | 说明 |
 |---|---|
-| `Auto` | The platform chooses the best rendering mode. |
-| `Alias` | Text is rendered without anti-aliasing. Produces sharp but jagged edges, useful for pixel-art fonts or very small text. |
-| `Antialias` | Text is rendered with grayscale anti-aliasing. |
-| `SubpixelAntialias` | Text is rendered with subpixel anti-aliasing (e.g., ClearType on Windows). Produces the sharpest text on LCD displays. |
+| `Auto` | 由平台挑选最合适的渲染模式。 |
+| `Alias` | 渲染文本时不作抗锯齿。字形锐利但边缘有锯齿，适合像素风字体或极小的文字。 |
+| `Antialias` | 以灰度抗锯齿渲染文本。 |
+| `SubpixelAntialias` | 以次像素抗锯齿渲染文本（例如 Windows 上的 ClearType）。在 LCD 显示器上能得到最锐利的文字。 |
 
 ```xml
 <TextBlock Text="Aliased text"
@@ -34,14 +34,14 @@ Avalonia provides fine-grained control over how text is rendered through the `Te
 
 ## TextHintingMode
 
-Font hinting adjusts glyph outlines so they align with the pixel grid. This improves readability at small sizes but can distort glyph shapes. Reducing or disabling hinting preserves the original typeface design, which is preferable for large text or animated text.
+字体 hinting 会微调字形轮廓，使其对齐像素网格。这提升了小字号下的可读性，但也可能扭曲字形。调低或关闭 hinting 能保留字体本来的设计，更适合大号文字或带动画的文字。
 
 | 值 | 说明 |
 |---|---|
-| `None` | No hinting. Glyphs use their original outlines. Best for large or animated text. |
-| `Slight` | Minimal hinting. Adjusts vertical metrics only, preserving horizontal glyph shapes. |
-| `Normal` | Moderate hinting. |
-| `Full` | Full hinting (default). Maximum pixel-grid alignment for sharpest small text. |
+| `None` | 不作 hinting，字形保持原本的轮廓。最适合大号文字或带动画的文字。 |
+| `Slight` | 轻度 hinting，只调整垂直方向的度量，保留字形的水平形态。 |
+| `Normal` | 中等强度的 hinting。 |
+| `Full` | 完整 hinting（默认）。最大程度对齐像素网格，小字号最锐利。 |
 
 ```xml
 <!-- Large heading with no hinting for smooth outlines -->
@@ -57,13 +57,13 @@ Font hinting adjusts glyph outlines so they align with the pixel grid. This impr
 
 ## BaselinePixelAlignment
 
-Controls whether text baselines snap to whole pixel boundaries. Pixel-aligned baselines produce sharper text in static layouts. Unaligned baselines allow sub-pixel positioning, which prevents text from "jumping" during animations or smooth scrolling.
+控制文本基线是否吸附到整像素边界。对齐像素的基线在静态布局中文字更锐利；不对齐则允许次像素定位，可避免文字在动画或平滑滚动时「跳动」。
 
 | 值 | 说明 |
 |---|---|
-| `Unspecified` | The platform decides (typically aligned for static text). |
-| `Aligned` | Baselines snap to the nearest pixel. Best for static UI text. |
-| `Unaligned` | Baselines use sub-pixel positioning. Best for animated or smoothly scrolled text. |
+| `Unspecified` | 由平台决定（静态文本通常是对齐的）。 |
+| `Aligned` | 基线吸附到最近的像素，最适合静态界面文字。 |
+| `Unaligned` | 基线采用次像素定位，最适合带动画或平滑滚动的文字。 |
 
 ```xml
 <!-- Prevent text snapping during a RenderTransform animation -->
@@ -75,9 +75,9 @@ Controls whether text baselines snap to whole pixel boundaries. Pixel-aligned ba
 </TextBlock>
 ```
 
-## Applying to a container
+## 作用于容器 {#applying-to-a-container}
 
-Like `RenderOptions`, `TextOptions` is inherited by child controls. Set it on a container to affect all text within:
+与 `RenderOptions` 一样，`TextOptions` 也会被子控件继承。把它设在容器上即可作用于其中的全部文本：
 
 ```xml
 <StackPanel TextOptions.TextHintingMode="None"
@@ -87,7 +87,7 @@ Like `RenderOptions`, `TextOptions` is inherited by child controls. Set it on a 
 </StackPanel>
 ```
 
-## Setting from code
+## 在代码中设置 {#setting-from-code}
 
 ```csharp
 TextOptions.SetTextHintingMode(myControl, TextHintingMode.None);
@@ -96,5 +96,5 @@ TextOptions.SetBaselinePixelAlignment(myControl, BaselinePixelAlignment.Unaligne
 
 ## 另请参阅 {#see-also}
 
-- [Image Interpolation](/docs/graphics-animation/image-interpolation): Bitmap rendering quality options via `RenderOptions`.
-- [Custom Rendering](/docs/graphics-animation/custom-rendering): Drawing with the Avalonia rendering API.
+- [图像插值](/docs/graphics-animation/image-interpolation)：通过 `RenderOptions` 调节位图渲染质量。
+- [自定义渲染](/docs/graphics-animation/custom-rendering)：使用 Avalonia 渲染 API 作画。

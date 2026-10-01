@@ -1,17 +1,17 @@
 ---
 id: notifications-how-to
-title: "How to: Show notifications and toasts"
-description: Learn how to show overlay notifications, toast messages, status bars, and system tray notifications in your Avalonia application across desktop and mobile platforms.
+title: "操作指南：显示通知与 toast"
+description: 学会在桌面和移动平台上，于 Avalonia 应用中显示覆盖式通知、toast 消息、状态栏以及系统托盘通知。
 doc-type: how-to
 ---
 
-This guide covers patterns for showing notifications, toast messages, and status bars in your Avalonia application. Because Avalonia does not include a built-in notification control, you build your own using standard layout controls such as [`ItemsControl`](/api/avalonia/controls/itemscontrol), `Panel`, and `Border`.
+本指南介绍在 Avalonia 应用中显示通知、toast 消息和状态栏的几种套路。Avalonia 并没有内置的通知控件，你得用 [`ItemsControl`](/api/avalonia/controls/itemscontrol)、`Panel`、`Border` 这些标准布局控件自己搭一个。
 
-## Overlay notification panel
+## 覆盖式通知面板 {#overlay-notification-panel}
 
-A common pattern is a notification panel that slides in from a corner of the window. You can build one with an `ItemsControl` and transitions.
+一个常见做法是让通知面板从窗口一角滑进来。你可以用 `ItemsControl` 配合过渡做出这种效果。
 
-### Notification model
+### 通知模型 {#notification-model}
 
 ```csharp
 public partial class NotificationViewModel : ObservableObject
@@ -27,9 +27,9 @@ public partial class NotificationViewModel : ObservableObject
 }
 ```
 
-### Notification service
+### 通知服务 {#notification-service}
 
-The service below manages a collection of active notifications and handles auto-dismissal. Note that `Dispatcher.UIThread.Post` is required because `Task.Delay(...).ContinueWith(...)` resumes on a thread-pool thread, and you must marshal collection changes back to the UI thread.
+下面这个服务管理着一组活动通知，并负责自动关闭。注意这里必须用 `Dispatcher.UIThread.Post`，因为 `Task.Delay(...).ContinueWith(...)` 之后的代码会在线程池线程上继续执行，而对集合的改动必须调回 UI 线程。
 
 ```csharp
 public partial class NotificationService : ObservableObject
@@ -58,12 +58,12 @@ public partial class NotificationService : ObservableObject
 ```
 
 :::tip
-If you set `durationMs` to `0`, the notification stays visible until the user explicitly dismisses it. This is useful for error messages that require acknowledgement.
+若把 `durationMs` 设为 `0`，通知就会一直留在界面上，直到用户主动关闭。这适合那些必须让人确认的错误提示。
 :::
 
-### XAML overlay
+### XAML 覆盖层 {#xaml-overlay}
 
-Place this at the root of your main window as the last child in a `Panel` so it overlays all other content:
+把它放在主窗口根部、作为 `Panel` 的最后一个子元素，这样它就会盖在其他内容之上：
 
 ```xml
 <Panel>
@@ -95,10 +95,10 @@ Place this at the root of your main window as the last child in a `Panel` so it 
 ```
 
 :::note
-On mobile platforms (Android and iOS), consider placing notifications at the top of the screen where they do not overlap soft navigation buttons. Adjust `VerticalAlignment` and `Margin` to account for safe area insets on devices with notches or rounded corners.
+在移动平台（Android 和 iOS）上，不妨把通知放在屏幕顶部，避开虚拟导航按钮。对于有刘海或圆角的设备，请调整 `VerticalAlignment` 和 `Margin` 以照顾安全区域内边距。
 :::
 
-### Usage in a view model
+### 在视图模型中使用 {#usage-in-a-view-model}
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -114,9 +114,9 @@ public partial class MainViewModel : ObservableObject
 }
 ```
 
-## Simple status bar
+## 简单的状态栏 {#simple-status-bar}
 
-For less intrusive feedback, use a status bar at the bottom of your window:
+若想要不那么扰人的反馈，可以在窗口底部放一条状态栏：
 
 ```xml
 <DockPanel>
@@ -147,12 +147,12 @@ private async Task LoadDataAsync()
 ```
 
 :::warning
-If the user triggers `LoadDataAsync` multiple times in quick succession, the `Task.Delay` from an earlier call can reset the status message while a newer operation is still running. To avoid this, use a `CancellationTokenSource` that you cancel each time the method is re-entered.
+若用户快速连按多次 `LoadDataAsync`，先前那次调用里的 `Task.Delay` 可能会在新操作还跑着的时候就把状态消息清掉。要避免这一点，请改用 `CancellationTokenSource`，并在每次重入该方法时取消掉上一个。
 :::
 
-## Confirmation banner
+## 确认横幅 {#confirmation-banner}
 
-Show a banner at the top of the page for important messages:
+重要消息可以用页面顶部的横幅来显示：
 
 ```xml
 <StackPanel>
@@ -173,9 +173,9 @@ Show a banner at the top of the page for important messages:
 </StackPanel>
 ```
 
-## Tray icon notifications (desktop only)
+## 托盘图标通知（仅限桌面） {#tray-icon-notifications-desktop-only}
 
-On desktop platforms (Windows, macOS, Linux), you can use the `TrayIcon` control for system tray integration:
+在桌面平台（Windows、macOS、Linux）上，你可以用 `TrayIcon` 控件接入系统托盘：
 
 ```xml
 <TrayIcon.Icons>
@@ -198,14 +198,14 @@ On desktop platforms (Windows, macOS, Linux), you can use the `TrayIcon` control
 
 | 平台 | 注释支持情况 |
 |----------|-------|
-| **Windows** | Full tray icon and balloon notification support. Use `.ico` format for the icon. |
-| **macOS** | Appears in the menu bar. macOS guidelines recommend template images (monochrome PNGs) for menu bar icons. |
-| **Linux** | Support depends on the desktop environment. GNOME, KDE, and XFCE generally support tray icons through `libappindicator` or the `StatusNotifierItem` protocol. |
-| **Android / iOS / Browser** | `TrayIcon` is not supported on these platforms. Use in-app overlay notifications instead. |
+| **Windows** | 完整支持托盘图标和气泡通知。图标请用 `.ico` 格式。 |
+| **macOS** | 显示在菜单栏中。macOS 的设计规范建议菜单栏图标使用模板图像（单色 PNG）。 |
+| **Linux** | 支持程度取决于桌面环境。GNOME、KDE 和 XFCE 一般通过 `libappindicator` 或 `StatusNotifierItem` 协议支持托盘图标。 |
+| **Android / iOS / Browser** | 这些平台不支持 `TrayIcon`，请改用应用内的覆盖式通知。 |
 
-## Color-coded notification types
+## 按类型着色的通知 {#color-coded-notification-types}
 
-You can style notifications based on their type using class-based selectors:
+你可以用基于样式类的选择器，按通知类型分别设置样式：
 
 ```xml
 <ItemsControl.ItemTemplate>
@@ -233,14 +233,14 @@ You can style notifications based on their type using class-based selectors:
 ```
 
 :::tip
-Consider adding a `warning` style (for example, `#F59E0B`) alongside `info`, `success`, and `error` to cover all four common notification levels.
+不妨在 `info`、`success`、`error` 之外再加一个 `warning` 样式（比如 `#F59E0B`），凑齐四种常见的通知级别。
 :::
 
 ## 另请参阅 {#see-also}
 
-- [Threading](/docs/app-development/threading): Understand UI thread marshalling with `Dispatcher.UIThread`.
-- [TrayIcon](/controls/navigation/trayicon): System tray integration for desktop platforms.
-- [Flyout](/controls/layout/containers/flyout): Popup content attached to controls.
-- [ToolTip](/controls/feedback/tooltip): Hover tooltips for controls.
-- [ItemsControl](/docs/how-to/itemscontrol-how-to): Working with `ItemsControl` for dynamic lists.
-- [Data templates](/docs/data-templates/introduction-to-data-templates): Customize how notification items render.
+- [线程](/docs/app-development/threading)：理解如何用 `Dispatcher.UIThread` 把工作调回 UI 线程。
+- [TrayIcon](/controls/navigation/trayicon)：桌面平台的系统托盘集成。
+- [Flyout](/controls/layout/containers/flyout)：附着在控件上的弹出内容。
+- [ToolTip](/controls/feedback/tooltip)：控件的悬停提示。
+- [ItemsControl](/docs/how-to/itemscontrol-how-to)：用 `ItemsControl` 处理动态列表。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：自定义通知项的渲染方式。

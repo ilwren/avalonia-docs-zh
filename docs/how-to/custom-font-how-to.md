@@ -1,36 +1,36 @@
 ---
 id: custom-font-how-to
-title: How to add a custom font
-description: Add a custom font to an Avalonia application as a static resource or embedded font collection.
+title: 如何添加自定义字体
+description: 以静态资源或嵌入式字体集合的方式，为 Avalonia 应用添加自定义字体。
 doc-type: how-to
 ---
 
-This guide walks you through adding a custom font to an Avalonia application using two approaches: as a static resource and as an embedded font collection.
+本指南带你用两种办法为 Avalonia 应用添加自定义字体：作为静态资源，以及作为嵌入式字体集合。
 
 ## 前置条件 {#prerequisites}
 
-- An Avalonia project. The [Google Fonts sample project](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/GoogleFonts) is used throughout this guide, but you can adapt the steps to your own project.
-- A font file (`.ttf` or `.otf`). This guide uses [Nunito](https://fonts.google.com/specimen/Nunito).
+- 一个 Avalonia 项目。本指南通篇以 [Google Fonts 示例项目](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/GoogleFonts) 为例，但这些步骤同样适用于你自己的项目。
+- 一个字体文件（`.ttf` 或 `.otf`）。本指南用的是 [Nunito](https://fonts.google.com/specimen/Nunito)。
 
-## Add the font files to your project
+## 把字体文件加入项目 {#add-the-font-files-to-your-project}
 
-1. Copy your font files into an **Assets/Fonts** directory in your project.
-2. Open your `.csproj` file and ensure the directory is included as an `AvaloniaResource`:
+1. 把你的字体文件复制到项目中的 **Assets/Fonts** 目录。
+2. 打开 `.csproj` 文件，确认该目录已被包含为 `AvaloniaResource`：
 
 ```xml title="MyApp.csproj"
 <AvaloniaResource Include="Assets\**" />
 ```
 
-This embeds the font files into the build output so Avalonia can find them at runtime. If you already have an `AvaloniaResource` entry covering your **Assets** folder, you do not need to add another one.
+这样字体文件就会嵌入构建输出，Avalonia 在运行时才找得到它们。若你已有一条覆盖 **Assets** 文件夹的 `AvaloniaResource` 条目，就不必再加一条了。
 
-## Option A: Use the font as a static resource
+## 方案 A：把字体当作静态资源 {#option-a-use-the-font-as-a-static-resource}
 
-This approach declares the font as a named XAML resource.
+这种办法把字体声明为一个具名的 XAML 资源。
 
-### Declare the font resource
+### 声明字体资源 {#declare-the-font-resource}
 
 1. Open **App.axaml**.
-2. Add a [`FontFamily`](/api/avalonia/media/fontfamily) resource inside `<Application.Resources>`, using the [font URI format](/docs/styling/custom-fonts#font-uri-format):
+2. 按[字体 URI 格式](/docs/styling/custom-fonts#font-uri-format)，在 `<Application.Resources>` 中加入一个 [`FontFamily`](/api/avalonia/media/fontfamily) 资源：
 
 ```xml title="App.axaml"
 <Application xmlns="https://github.com/avaloniaui"
@@ -47,12 +47,12 @@ This approach declares the font as a named XAML resource.
 </Application>
 ```
 
-Replace `MyApp` with your assembly name and `Nunito` with the internal family name of your font.
+把 `MyApp` 换成你的程序集名称，把 `Nunito` 换成字体内部的字族名。
 
-### Apply the font
+### 套用字体 {#apply-the-font}
 
-3. Open a XAML view (for example, **MainWindow.axaml**).
-4. Set the `FontFamily` attribute using the `StaticResource` markup extension:
+3. 打开一个 XAML 视图（比如 **MainWindow.axaml**）。
+4. 用 `StaticResource` 标记扩展设置 `FontFamily` 特性：
 
 ```xml title="MainWindow.axaml"
 <TextBlock Text="Hello in Nunito"
@@ -60,18 +60,18 @@ Replace `MyApp` with your assembly name and `Nunito` with the internal family na
            FontFamily="{StaticResource NunitoFont}" />
 ```
 
-5. Build and run the app. The text should display in your custom font.
+5. 构建并运行应用，文字应当以你的自定义字体显示。
 
-The `FontFamily` attribute can be set on any control that has a `FontFamily` property, so you can use your custom font on `TextBlock`, `Button`, `TextBox`, and similar controls.
+凡是带 `FontFamily` 属性的控件都能设置 `FontFamily` 特性，所以 `TextBlock`、`Button`、`TextBox` 等控件都能用上你的自定义字体。
 
-## Option B: Use an embedded font collection
+## 方案 B：使用嵌入式字体集合 {#option-b-use-an-embedded-font-collection}
 
-This approach registers a directory of fonts under a custom URI scheme, letting you reference fonts by name without resource keys.
+这种办法把一整个字体目录注册到自定义的 URI 方案下，让你无需资源键、直接按名字引用字体。
 
-### Create the font collection class
+### 创建字体集合类 {#create-the-font-collection-class}
 
-1. Add a new C# file (for example, **MyFontCollection.cs**) to your project.
-2. Define a class that extends `EmbeddedFontCollection`:
+1. 往项目里新增一个 C# 文件（比如 **MyFontCollection.cs**）。
+2. 定义一个继承 `EmbeddedFontCollection` 的类：
 
 ```csharp title="MyFontCollection.cs"
 using System;
@@ -87,12 +87,12 @@ public sealed class MyFontCollection : EmbeddedFontCollection
 }
 ```
 
-The first URI (`fonts:MyFonts`) is the scheme and key you will use in XAML. The second URI points to the asset directory containing your font files. Replace `MyApp` with your assembly name.
+第一个 URI（`fonts:MyFonts`）是你将在 XAML 中使用的方案和键，第二个 URI 指向存放字体文件的资产目录。请把 `MyApp` 换成你的程序集名称。
 
-### Register the collection
+### 注册集合 {#register-the-collection}
 
 3. Open **Program.cs**.
-4. Use `AppBuilder.ConfigureFonts` to register the collection:
+4. 用 `AppBuilder.ConfigureFonts` 注册这个集合：
 
 ```csharp title="Program.cs"
 using Avalonia;
@@ -115,10 +115,10 @@ class Program
 }
 ```
 
-### Apply the font
+### 套用字体 {#apply-the-font-1}
 
-5. Open a XAML view (for example, **MainWindow.axaml**).
-6. Set the `FontFamily` attribute using the `{scheme}:{collection-key}#{font-family-name}` format:
+5. 打开一个 XAML 视图（比如 **MainWindow.axaml**）。
+6. 按 `{scheme}:{collection-key}#{font-family-name}` 的格式设置 `FontFamily` 特性：
 
 ```xml title="MainWindow.axaml"
 <TextBlock Text="Hello in Nunito"
@@ -126,11 +126,11 @@ class Program
            FontFamily="fonts:MyFonts#Nunito" />
 ```
 
-7. Build and run the app. The text should display in your custom font.
+7. 构建并运行应用，文字应当以你的自定义字体显示。
 
-To use a different font from the same collection, change the name after `#`. For example, `fonts:MyFonts#Roboto` would load the Roboto font from the same **Assets/Fonts** directory.
+想用同一集合中的另一款字体，改一下 `#` 后面的名字即可。例如写成 `fonts:MyFonts#Roboto`，就会从同一个 **Assets/Fonts** 目录加载 Roboto 字体。
 
 ## 另请参阅 {#see-also}
 
-- [Custom fonts](/docs/styling/custom-fonts)
+- [自定义字体](/docs/styling/custom-fonts)
 - [Assets](/docs/fundamentals/including-assets)

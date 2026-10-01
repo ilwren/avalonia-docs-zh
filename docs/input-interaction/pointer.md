@@ -159,7 +159,7 @@ Use the `Cursor` property to change the cursor when the pointer is over a contro
 
 ### Common cursor types
 
-| Cursor | 说明 |
+| 光标 | 说明 |
 |---|---|
 | `Arrow` | Default arrow pointer. |
 | `Hand` | Pointing hand (indicates a clickable element). |

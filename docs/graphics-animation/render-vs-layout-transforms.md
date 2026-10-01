@@ -125,23 +125,23 @@ Avalonia 提供两种变换控件的方式：渲染变换和布局变换。二�
 | 默认原点 | Center (50%, 50%) | Center |
 | 重叠风险 | Yes | No |
 
-## When to use which
+## 该选哪一种 {#when-to-use-which}
 
-**Use render transforms when:**
-- The transform is temporary or animated (hover effects, transitions)
-- Performance matters (animations should not trigger layout)
-- Overlap with other elements is acceptable or desired
-- You are creating visual effects (parallax, bounce, shake)
+**这些情况用渲染变换：**
+- 变换是临时的或带动画的（悬停效果、过渡）
+- 性能要紧（动画不该触发布局）
+- 与其他元素重叠可以接受，甚至正是你想要的
+- 你在做视觉效果（视差、弹跳、抖动）
 
-**Use layout transforms when:**
-- Adjacent controls must respect the transformed bounds
-- You need rotated text labels that correctly reserve space
-- The transform is part of the permanent layout (not animated)
-- Overlap would be a visual bug
+**这些情况用布局变换：**
+- 相邻控件必须尊重变换后的边界
+- 你需要旋转的文字标签，并让它正确占住空间
+- 变换是固定布局的一部分（不带动画）
+- 一旦重叠就算是视觉缺陷
 
-## Animating transforms
+## 为变换加动画 {#animating-transforms}
 
-Render transforms are ideal for animation because they do not trigger layout:
+渲染变换不会触发布局，因此很适合做动画：
 
 ```xml
 <Border Background="Blue" Width="80" Height="80">
@@ -160,10 +160,10 @@ Render transforms are ideal for animation because they do not trigger layout:
 </Border>
 ```
 
-Avoid animating layout transforms in performance-sensitive scenarios, as each frame triggers a full layout pass.
+在对性能敏感的场景里别给布局变换加动画——每一帧都会引发一次完整的布局过程。
 
 ## 另请参阅 {#see-also}
 
-- [Transforms](/docs/graphics-animation/transforms): Full transform reference.
-- [Animations](/docs/graphics-animation/animations): Keyframe and transition animations.
-- [Performance](/docs/app-development/performance): Layout performance tips.
+- [变换](/docs/graphics-animation/transforms)：完整的变换参考。
+- [动画](/docs/graphics-animation/animations)：关键帧动画与过渡动画。
+- [性能](/docs/app-development/performance)：布局性能建议。

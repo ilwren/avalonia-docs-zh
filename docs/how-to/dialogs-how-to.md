@@ -1,15 +1,15 @@
 ---
 id: dialogs-how-to
-title: "How to: Work with Dialogs"
-description: Create and show modal dialogs, return results, and build custom dialog windows in Avalonia.
+title: "操作指南：使用对话框"
+description: 在 Avalonia 中创建并显示模态对话框、返回结果，以及搭建自定义对话框窗口。
 doc-type: how-to
 ---
 
-This guide covers creating and showing modal dialogs, returning results, and building custom dialog windows.
+本指南介绍如何创建并显示模态对话框、返回结果，以及搭建自定义对话框窗口。
 
-## Showing a Dialog Window
+## 显示一个对话框窗口 {#showing-a-dialog-window}
 
-Create a dialog window and show it modally with `ShowDialog<T>`:
+创建一个对话框窗口，并用 `ShowDialog<T>` 以模态方式显示：
 
 ```csharp
 var dialog = new ConfirmDialog();
@@ -24,11 +24,11 @@ if (result == true)
 }
 ```
 
-The `parentWindow` parameter sets the owner. On desktop platforms, the dialog appears centered over the owner window and prevents interaction with it until closed.
+`parentWindow` 参数用来指定所有者。在桌面平台上，对话框会居中显示在所有者窗口之上，并在关闭前阻止与该窗口交互。
 
-## Creating a Dialog Window
+## 创建对话框窗口 {#creating-a-dialog-window}
 
-A dialog is a regular `Window` with some typical settings:
+对话框就是一个普通的 `Window`，只是有几项惯用设置：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -54,7 +54,7 @@ A dialog is a regular `Window` with some typical settings:
 
 ### 关闭并返回结果 {#closing-with-a-result}
 
-Close the dialog and return a value using `Window.Close(result)`:
+用 `Window.Close(result)` 关闭对话框并返回一个值：
 
 ```csharp
 public partial class ConfirmDialog : Window
@@ -87,7 +87,7 @@ public partial class ConfirmDialogViewModel : ObservableObject
 }
 ```
 
-Set up the dialog and its view model:
+准备好对话框及其视图模型：
 
 ```csharp
 var dialog = new ConfirmDialog();
@@ -97,9 +97,9 @@ dialog.DataContext = vm;
 bool? result = await dialog.ShowDialog<bool?>(this);
 ```
 
-### Alternative: Close from code-behind
+### 另一种做法：在代码隐藏中关闭 {#alternative-close-from-code-behind}
 
-If you prefer to keep the close logic in the view:
+如果你更愿意把关闭逻辑留在视图里：
 
 ```csharp
 public partial class ConfirmDialog : Window
@@ -123,7 +123,7 @@ public partial class ConfirmDialog : Window
 
 ## Returning Complex Results
 
-Return any object from a dialog:
+对话框可以返回任意对象：
 
 ```csharp
 // Dialog that returns a selected color
@@ -136,7 +136,7 @@ if (selectedColor is not null)
 }
 ```
 
-In the dialog:
+在对话框中：
 
 ```csharp
 [RelayCommand]
@@ -152,9 +152,9 @@ private void Cancel()
 }
 ```
 
-## Getting the Parent Window
+## 获取父窗口 {#getting-the-parent-window}
 
-To show a dialog from a view model or UserControl where you do not have a direct reference to the parent window:
+当你在视图模型或 UserControl 中、手头没有父窗口引用时，可以这样弹出对话框：
 
 ```csharp
 // From a UserControl's code-behind
@@ -165,7 +165,7 @@ if (window is not null)
 }
 ```
 
-From a view model, pass the window through a service or parameter:
+在视图模型中，可以通过服务或参数把窗口传进来：
 
 ```csharp
 public interface IDialogService
@@ -193,9 +193,9 @@ public class DialogService : IDialogService
 }
 ```
 
-## File and Folder Dialogs
+## 文件与文件夹对话框 {#file-and-folder-dialogs}
 
-Use the `IStorageProvider` service for file and folder picker dialogs:
+文件和文件夹选择对话框请使用 `IStorageProvider` 服务：
 
 ```csharp
 var topLevel = TopLevel.GetTopLevel(this);
@@ -242,11 +242,11 @@ if (file is not null)
 }
 ```
 
-See [Storage Provider](/docs/services/storage/storage-provider) for the full API.
+完整 API 请参阅[存储提供程序](/docs/services/storage/storage-provider)。
 
 ## Preventing Dialog Close
 
-Handle the `Closing` event to prevent the dialog from closing (e.g., when there are unsaved changes):
+处理 `Closing` 事件可以阻止对话框关闭（比如还有未保存的改动时）：
 
 ```csharp
 dialog.Closing += (sender, e) =>
@@ -259,9 +259,9 @@ dialog.Closing += (sender, e) =>
 };
 ```
 
-## Overlay Dialogs (In-Window)
+## 覆盖式对话框（窗口内） {#overlay-dialogs-in-window}
 
-For dialogs that appear within the window (not as a separate OS window), use an overlay panel:
+若希望对话框出现在窗口内部、而不是另开一个操作系统窗口，可以用一层覆盖面板：
 
 ```xml
 <Grid>
@@ -290,10 +290,10 @@ For dialogs that appear within the window (not as a separate OS window), use an 
 </Grid>
 ```
 
-This approach works on all platforms including WebAssembly where separate windows are not supported.
+这种做法在所有平台上都能用，包括不支持独立窗口的 WebAssembly。
 
 ## See Also
 
-- [Window Management](/docs/app-development/window-management): Show, ShowDialog, and window lifecycle.
-- [Storage Provider](/docs/services/storage/storage-provider): File and folder picker dialogs.
-- [Commanding](/docs/input-interaction/commanding): Binding buttons to commands.
+- [窗口管理](/docs/app-development/window-management)：Show、ShowDialog 与窗口生命周期。
+- [存储提供程序](/docs/services/storage/storage-provider)：文件与文件夹选择对话框。
+- [命令](/docs/input-interaction/commanding)：把按钮绑定到命令。

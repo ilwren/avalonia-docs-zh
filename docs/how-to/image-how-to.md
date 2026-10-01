@@ -1,21 +1,21 @@
 ---
 id: image-how-to
-title: "How to: Display and Manipulate Images"
-description: Load images from various sources, handle aspect ratios, and manipulate bitmaps in Avalonia.
+title: "操作指南：显示与处理图片"
+description: 在 Avalonia 中从各种来源加载图片、处理纵横比，以及操作位图。
 doc-type: how-to
 ---
 
-This guide covers Image control patterns: loading images from various sources, aspect ratio handling, dynamic images, and bitmap manipulation.
+本指南介绍 Image 控件的各种用法：从不同来源加载图片、处理纵横比、动态图片，以及位图操作。
 
-## Loading Images from Assets
+## 从资产加载图片 {#loading-images-from-assets}
 
-Include images in your project as embedded resources and reference them with the `avares://` URI scheme:
+把图片作为嵌入资源放进项目，再用 `avares://` URI 方案引用它们：
 
 ```xml
 <Image Source="avares://MyApp/Assets/logo.png" Width="200" />
 ```
 
-Ensure the file is set to `AvaloniaResource` in your `.csproj`:
+确认 `.csproj` 中把该文件设成了 `AvaloniaResource`：
 
 ```xml
 <ItemGroup>
@@ -23,9 +23,9 @@ Ensure the file is set to `AvaloniaResource` in your `.csproj`:
 </ItemGroup>
 ```
 
-## Loading Images from a File Path
+## 从文件路径加载图片 {#loading-images-from-a-file-path}
 
-Bind to a `Bitmap` loaded from disk:
+绑定到一个从磁盘读入的 `Bitmap`：
 
 ```csharp
 [ObservableProperty]
@@ -57,9 +57,9 @@ private async Task LoadPhoto()
 <Image Source="{Binding Photo}" MaxWidth="400" />
 ```
 
-## Loading Images from a URL
+## 从 URL 加载图片 {#loading-images-from-a-url}
 
-Use an `AsyncImageLoader` or load the bitmap in the view model:
+使用 `AsyncImageLoader`，或者在视图模型中加载位图：
 
 ```csharp
 [RelayCommand]
@@ -74,7 +74,7 @@ private async Task LoadFromUrl(string url)
 
 ## Stretch Modes
 
-The [`Stretch`](/api/avalonia/media/stretch) property controls how the image fills its bounds:
+[`Stretch`](/api/avalonia/media/stretch) 属性控制图片如何填满自己的边界：
 
 ```xml
 <!-- Preserves aspect ratio, fits within bounds -->
@@ -90,16 +90,16 @@ The [`Stretch`](/api/avalonia/media/stretch) property controls how the image fil
 <Image Source="{Binding Photo}" Stretch="None" />
 ```
 
-| Stretch | 说明 |
+| 拉伸方式 | 说明 |
 |---|---|
-| `Uniform` | Scale to fit, preserving aspect ratio (default). |
-| `UniformToFill` | Scale to fill, preserving aspect ratio, clipping if needed. |
-| `Fill` | Stretch to fill exactly, ignoring aspect ratio. |
-| `None` | Display at original pixel size. |
+| `Uniform` | 等比缩放至完整装入（默认）。 |
+| `UniformToFill` | 等比缩放至填满，必要时裁掉溢出部分。 |
+| `Fill` | 拉伸至恰好填满，不管纵横比。 |
+| `None` | 按原始像素尺寸显示。 |
 
 ## Circular Image (Avatar)
 
-Clip an image to a circle using `Clip`:
+用 `Clip` 把图片裁成圆形：
 
 ```xml
 <Border CornerRadius="50" ClipToBounds="True"
@@ -108,9 +108,9 @@ Clip an image to a circle using `Clip`:
 </Border>
 ```
 
-## Image with Fallback
+## 带回退的图片 {#image-with-fallback}
 
-Show a placeholder when no image is available:
+没有图片可用时显示一个占位内容：
 
 ```xml
 <Panel Width="200" Height="200">
@@ -125,7 +125,7 @@ Show a placeholder when no image is available:
 
 ## Image Interpolation
 
-Control the rendering quality when images are scaled:
+控制图片被缩放时的渲染质量：
 
 ```xml
 <!-- Sharp pixels for pixel art -->
@@ -139,15 +139,15 @@ Control the rendering quality when images are scaled:
 
 | 模式 | 说明 |
 |---|---|
-| `None` | Nearest-neighbor, sharp pixels. |
-| `LowQuality` | Bilinear filtering. |
-| `MediumQuality` | Bilinear with some improvements. |
-| `HighQuality` | Bicubic or high-quality resampling. |
-| `Default` | Platform default. |
+| `None` | 最近邻，像素锐利。 |
+| `LowQuality` | 双线性过滤。 |
+| `MediumQuality` | 双线性，并略作改进。 |
+| `HighQuality` | 双三次或高质量重采样。 |
+| `Default` | 平台默认值。 |
 
 ## DrawingImage (Vector Graphics)
 
-Use `DrawingImage` for resolution-independent vector images:
+分辨率无关的矢量图请用 `DrawingImage`：
 
 ```xml
 <Image Width="48" Height="48">
@@ -165,18 +165,18 @@ Use `DrawingImage` for resolution-independent vector images:
 
 ## PathIcon
 
-For simple monochrome icons, use `PathIcon` instead of `Image`:
+简单的单色图标请用 `PathIcon`，而不是 `Image`：
 
 ```xml
 <PathIcon Data="{StaticResource home_regular}" Width="24" Height="24"
           Foreground="{DynamicResource SystemAccentColor}" />
 ```
 
-PathIcon inherits `Foreground` from parent styles, making it easy to theme.
+PathIcon 会从父级样式继承 `Foreground`，因此很容易纳入主题。
 
 ## RenderTargetBitmap (Screenshots)
 
-Capture a control to a bitmap:
+把一个控件截取成位图：
 
 ```csharp
 var renderTarget = new RenderTargetBitmap(new PixelSize(800, 600));
@@ -184,21 +184,21 @@ renderTarget.Render(myControl);
 renderTarget.Save("screenshot.png");
 ```
 
-The target control must be attached to a visible window. To render without displaying a window, use the [headless platform](/docs/testing/setting-up-the-headless-platform#visual-regression-testing) with the Skia renderer enabled.
+目标控件必须已附加到可见窗口上。若想不显示窗口就完成渲染，请使用启用了 Skia 渲染器的[无头平台](/docs/testing/setting-up-the-headless-platform#visual-regression-testing)。
 
 ## Key Properties
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Source` | `IImage` | The image to display (`Bitmap`, `DrawingImage`, and similar). |
-| `Stretch` | `Stretch` | How the image fills its bounds. |
+| `Source` | `IImage` | 要显示的图像（`Bitmap`、`DrawingImage` 之类）。 |
+| `Stretch` | `Stretch` | 图片如何填满自己的边界。 |
 | `StretchDirection` | `StretchDirection` | `Both`, `UpOnly`, `DownOnly`. |
 
 ## See Also
 
-- [Image Control Reference](/controls/media/image): Property tables.
-- [PathIcon Control Reference](/controls/media/pathicon): Vector icon control.
-- [DrawingImage Control Reference](/controls/media/drawingimage): Vector image source.
-- [How to Bind Image Files](/docs/data-binding/how-to-bind-image-files): Binding images in data templates.
-- [Image Interpolation](/docs/graphics-animation/image-interpolation): Bitmap rendering quality.
-- [Assets](/docs/fundamentals/including-assets): Asset loading and URI schemes.
+- [Image 控件参考](/controls/media/image)：属性表。
+- [PathIcon 控件参考](/controls/media/pathicon)：矢量图标控件。
+- [DrawingImage 控件参考](/controls/media/drawingimage)：矢量图像源。
+- [如何绑定图片文件](/docs/data-binding/how-to-bind-image-files)：在数据模板中绑定图片。
+- [图像插值](/docs/graphics-animation/image-interpolation)：位图的渲染质量。
+- [资产](/docs/fundamentals/including-assets)：资产加载与 URI 方案。

@@ -153,7 +153,7 @@ private static void HandleIntent(object? sender, ActivatedEventArgs e)
 
 ## 排查问题 {#troubleshooting}
 
-| Symptom | Possible cause |
+| 现象 | Possible cause |
 |---|---|
 | Your app does not appear in the Android share/open sheet. | The MIME type in your `[IntentFilter]` does not match what the sending app provides. Check with `adb shell am start -a android.intent.action.VIEW -t "text/plain" -d "content://..."`. |
 | `FileActivatedEventArgs.Files` is empty. | The sender used a URI scheme your filter does not include. Ensure both `"file"` and `"content"` are listed in `DataSchemes`. |

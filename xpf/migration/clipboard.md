@@ -47,7 +47,7 @@ BitmapSource image = Clipboard.GetImage();
 
 On macOS, screenshots captured with system shortcuts (Cmd+Shift+Ctrl+3) may use pixel formats that differ from WPF conventions. XPF 1.6.0 and later automatically transcodes these to compatible formats.
 
-## Custom data formats
+## 自定义数据格式 {#custom-data-formats}
 
 Custom clipboard data formats work within the same process. For cross-process clipboard operations with custom data, XPF serializes your data as strings. Make sure your custom data types are serializable:
 

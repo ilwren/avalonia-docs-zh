@@ -10,8 +10,8 @@ XPF provides several options for embedding web content in your application. The 
 | 特性 | CefSharp | NativeWebView | NativeWebDialog | DotNetBrowser |
 |---|---|---|---|---|
 | Windows | Supported | Supported | Supported | Supported |
-| macOS | Not supported | Supported | Supported | Supported |
-| Linux | Not supported | Not supported | Supported | Supported |
+| macOS | 不支持 | Supported | Supported | Supported |
+| Linux | 不支持 | 不支持 | Supported | Supported |
 | Embedding | In-window control | In-window control | Separate dialog | In-window control |
 | Keyboard input | Full | Full | Limited | Full |
 | Styling/CSS control | Full | Full | Limited | Full |

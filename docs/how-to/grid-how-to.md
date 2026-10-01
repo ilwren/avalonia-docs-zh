@@ -1,15 +1,15 @@
 ---
 id: grid-how-to
-title: "How to: Work with Grid layouts"
-description: Row and column definitions, sizing modes, spanning, shared sizing, and responsive Grid patterns.
+title: "操作指南：使用 Grid 布局"
+description: 行列定义、尺寸模式、跨行跨列、共享尺寸，以及响应式的 Grid 用法。
 doc-type: how-to
 ---
 
-This guide covers common [`Grid`](/api/avalonia/controls/grid) layout scenarios including row and column definitions, sizing modes, spanning, shared sizing, and responsive patterns.
+本指南介绍 [`Grid`](/api/avalonia/controls/grid) 布局的常见场景，包括行列定义、尺寸模式、跨行跨列、共享尺寸和响应式写法。
 
-## Row and column definitions
+## 行列定义 {#row-and-column-definitions}
 
-You can define rows and columns using the shorthand syntax:
+你可以用简写语法定义行和列：
 
 ```xml
 <Grid ColumnDefinitions="200,*,Auto" RowDefinitions="Auto,*,Auto">
@@ -22,7 +22,7 @@ You can define rows and columns using the shorthand syntax:
 </Grid>
 ```
 
-Or use the verbose syntax when you need more control over individual definitions (for example, setting `MinWidth` or `MaxWidth`):
+若需要对单条定义作更多控制（比如设置 `MinWidth` 或 `MaxWidth`），则改用完整语法：
 
 ```xml
 <Grid>
@@ -39,14 +39,14 @@ Or use the verbose syntax when you need more control over individual definitions
 ```
 
 :::tip
-The shorthand syntax is more concise, but the verbose syntax lets you set additional properties such as `MinWidth`, `MaxWidth`, `MinHeight`, `MaxHeight`, and `SharedSizeGroup` on each definition.
+简写语法更紧凑，而完整语法让你能给每条定义设上 `MinWidth`、`MaxWidth`、`MinHeight`、`MaxHeight`、`SharedSizeGroup` 等额外属性。
 :::
 
-## Sizing modes
+## 尺寸模式 {#sizing-modes}
 
-### Pixel sizing
+### 按像素定尺寸 {#pixel-sizing}
 
-Fixed size in device-independent pixels:
+以设备无关像素给出固定尺寸：
 
 ```xml
 <Grid ColumnDefinitions="200,300">
@@ -54,11 +54,11 @@ Fixed size in device-independent pixels:
 </Grid>
 ```
 
-Use pixel sizing when you need a column or row to remain a constant size regardless of its content. This is common for sidebars, toolbars, and icon columns.
+当你希望某行某列不论内容多少都保持固定大小时，就用像素尺寸。侧边栏、工具栏和图标列常常这么写。
 
-### Auto sizing
+### 自动尺寸 {#auto-sizing}
 
-Sizes the row or column to fit its content:
+让行或列的尺寸随内容而定：
 
 ```xml
 <Grid ColumnDefinitions="Auto,*">
@@ -70,12 +70,12 @@ Sizes the row or column to fit its content:
 ```
 
 :::note
-An `Auto` column or row measures all of its children and expands to fit the largest one. If the content grows dynamically (for example, long text loaded at runtime), the column grows too, which can push other columns off-screen. If you need to cap the size, combine `Auto` with `MaxWidth` or `MaxHeight` using the verbose syntax.
+`Auto` 的行或列会测量全部子元素，并撑到足以容纳最大的那个。若内容会动态变长（比如运行时加载的长文本），这一列也会跟着变宽，有可能把其他列挤出屏幕。想给尺寸设上限，可以用完整语法把 `Auto` 与 `MaxWidth` 或 `MaxHeight` 搭配起来。
 :::
 
-### Star sizing
+### 星号尺寸 {#star-sizing}
 
-Distributes remaining space proportionally after `Auto` and pixel columns have been measured:
+在 `Auto` 列和像素列都量好之后，按比例分配剩下的空间：
 
 ```xml
 <Grid ColumnDefinitions="*,2*,*">
@@ -85,7 +85,7 @@ Distributes remaining space proportionally after `Auto` and pixel columns have b
 </Grid>
 ```
 
-You can mix star values with other sizing modes. The star proportions apply only to the space left over after fixed and `Auto` columns are allocated:
+星号值可以和其他尺寸模式混用。星号的比例只作用于固定列和 `Auto` 列分配完之后剩下的那部分空间：
 
 ```xml
 <Grid ColumnDefinitions="100,*,2*">
@@ -94,9 +94,9 @@ You can mix star values with other sizing modes. The star proportions apply only
 </Grid>
 ```
 
-### MinWidth and MaxWidth constraints
+### MinWidth 与 MaxWidth 约束 {#minwidth-and-maxwidth-constraints}
 
-You can constrain column and row sizes using the verbose syntax:
+用完整语法可以给行列尺寸加上约束：
 
 ```xml
 <Grid>
@@ -107,11 +107,11 @@ You can constrain column and row sizes using the verbose syntax:
 </Grid>
 ```
 
-This is particularly useful for star-sized columns where you want flexible sizing but need to prevent the column from becoming too narrow or too wide. The same approach works for rows using `MinHeight` and `MaxHeight`.
+这对星号列尤其有用——你既想要弹性尺寸，又不希望它窄得没法看或宽得离谱。行也一样，换成 `MinHeight` 和 `MaxHeight` 即可。
 
-## Row and column spacing
+## 行间距与列间距 {#row-and-column-spacing}
 
-Add uniform spacing between rows and columns with `RowSpacing` and `ColumnSpacing`:
+用 `RowSpacing` 和 `ColumnSpacing` 为行列之间加上均匀的间距：
 
 ```xml
 <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto"
@@ -121,12 +121,12 @@ Add uniform spacing between rows and columns with `RowSpacing` and `ColumnSpacin
 ```
 
 :::note
-`RowSpacing` and `ColumnSpacing` add space between cells only, not around the outer edges of the grid. If you need outer padding, set `Margin` or `Padding` on the `Grid` itself.
+`RowSpacing` 和 `ColumnSpacing` 只在单元格之间加空隙，不会在网格的外缘留白。若需要外侧留白，请在 `Grid` 本身上设置 `Margin` 或 `Padding`。
 :::
 
-## Spanning rows and columns
+## 跨行与跨列 {#spanning-rows-and-columns}
 
-Use `Grid.RowSpan` and `Grid.ColumnSpan` to make a control span multiple rows or columns:
+用 `Grid.RowSpan` 和 `Grid.ColumnSpan` 让控件横跨多行或多列：
 
 ```xml
 <Grid ColumnDefinitions="200,*" RowDefinitions="Auto,*,Auto">
@@ -146,12 +146,12 @@ Use `Grid.RowSpan` and `Grid.ColumnSpan` to make a control span multiple rows or
 ```
 
 :::tip
-The default value for both `Grid.RowSpan` and `Grid.ColumnSpan` is `1`. If you set a span value larger than the number of remaining rows or columns, the control spans to the edge of the grid without causing an error.
+`Grid.RowSpan` 和 `Grid.ColumnSpan` 的默认值都是 `1`。若你给出的跨度大于剩余的行数或列数，控件会一直铺到网格边缘，并不会报错。
 :::
 
-## Default row and column values
+## 行列的默认值 {#default-row-and-column-values}
 
-When you omit `Grid.Row` or `Grid.Column` on a child control, both default to `0`. This means you can place a single child in a `Grid` without specifying any attached properties:
+子控件上若省略 `Grid.Row` 或 `Grid.Column`，两者都默认为 `0`。也就是说，往 `Grid` 里放单个子元素时，一个附加属性都不用写：
 
 ```xml
 <Grid>
@@ -160,11 +160,11 @@ When you omit `Grid.Row` or `Grid.Column` on a child control, both default to `0
 </Grid>
 ```
 
-If you define no `RowDefinitions` or `ColumnDefinitions` at all, the grid creates a single star-sized row and column that fills all available space.
+如果你压根没定义 `RowDefinitions` 或 `ColumnDefinitions`，网格就会创建一行一列、均为星号尺寸，填满全部可用空间。
 
-## Form layout
+## 表单布局 {#form-layout}
 
-A common pattern for label-value pairs uses an `Auto` column for labels and a star column for inputs:
+标签配输入框是个常见套路：标签用 `Auto` 列，输入框用星号列：
 
 ```xml
 <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto"
@@ -190,11 +190,11 @@ A common pattern for label-value pairs uses an `Auto` column for labels and a st
 </Grid>
 ```
 
-Setting `VerticalAlignment="Center"` on the labels keeps them vertically aligned with their corresponding input controls, even when the inputs are taller than the labels.
+给标签设上 `VerticalAlignment="Center"`，即便输入控件比标签高，二者在垂直方向上也能对齐。
 
 ## SharedSizeGroup
 
-Use `SharedSizeGroup` to align column widths (or row heights) across multiple `Grid` controls. Set the property on individual `ColumnDefinition` or `RowDefinition` elements:
+用 `SharedSizeGroup` 可以让多个 `Grid` 控件的列宽（或行高）对齐。把这个属性设在各个 `ColumnDefinition` 或 `RowDefinition` 元素上：
 
 ```xml
 <StackPanel Grid.IsSharedSizeScope="True" Spacing="4">
@@ -217,15 +217,15 @@ Use `SharedSizeGroup` to align column widths (or row heights) across multiple `G
 </StackPanel>
 ```
 
-Both "Labels" columns share the same width (the width of the wider label), even though they belong to separate `Grid` controls. The parent `StackPanel` sets `Grid.IsSharedSizeScope="True"` to define the sharing boundary.
+两个「Labels」列虽然分属不同的 `Grid` 控件，却共享同一宽度（即较宽那个标签的宽度）。父级 `StackPanel` 通过设置 `Grid.IsSharedSizeScope="True"` 划定了共享的范围。
 
 :::note
-`SharedSizeGroup` is a property on `ColumnDefinition` and `RowDefinition`, not on the child controls themselves. The group name is a string, and all definitions with the same group name within the same shared-size scope use the same measured size.
+`SharedSizeGroup` 是 `ColumnDefinition` 和 `RowDefinition` 上的属性，而不是子控件上的。组名是个字符串，同一共享尺寸范围内、组名相同的所有定义都会采用同一个测量结果。
 :::
 
-## Nested grids
+## 嵌套网格 {#nested-grids}
 
-For complex layouts, you can nest grids inside one another. Each inner `Grid` manages its own rows and columns independently:
+布局复杂时，你可以把网格一层层嵌起来。每个内层 `Grid` 都独立管理自己的行和列：
 
 ```xml
 <Grid ColumnDefinitions="250,*">
@@ -245,12 +245,12 @@ For complex layouts, you can nest grids inside one another. Each inner `Grid` ma
 ```
 
 :::tip
-Nesting grids is straightforward but adds layout complexity. If your inner grid only needs a simple vertical or horizontal stack, consider using a `StackPanel` or `DockPanel` instead for better readability and performance.
+嵌套网格写起来不难，但会抬高布局的复杂度。若内层网格要的只是简单的纵向或横向排列，不妨改用 `StackPanel` 或 `DockPanel`，可读性和性能都更好。
 :::
 
-## Responsive layout with Grid
+## 用 Grid 做响应式布局 {#responsive-layout-with-grid}
 
-You can combine `Grid` with `OnFormFactor` for responsive designs that adapt column definitions based on the device:
+你可以把 `Grid` 与 `OnFormFactor` 结合起来，按设备调整列定义，做出响应式设计：
 
 ```xml
 <Grid ColumnDefinitions="{OnFormFactor Desktop='250,*', Mobile='*'}">
@@ -259,9 +259,9 @@ You can combine `Grid` with `OnFormFactor` for responsive designs that adapt col
 </Grid>
 ```
 
-## Overlapping content
+## 内容叠放 {#overlapping-content}
 
-When you place multiple children in the same cell, they overlap visually. The last child in the markup appears on top:
+当你把多个子元素放进同一个单元格时，它们在视觉上会互相重叠，标记中写在最后的那个显示在最上面：
 
 ```xml
 <Grid>
@@ -287,7 +287,7 @@ When you place multiple children in the same cell, they overlap visually. The la
 </Grid>
 ```
 
-When you omit `Grid.Row` and `Grid.Column`, children default to row 0, column 0. You can use `ZIndex` to control stacking order independently of markup order:
+省略 `Grid.Row` 和 `Grid.Column` 时，子元素默认落在第 0 行第 0 列。你可以用 `ZIndex` 来控制堆叠顺序，不必受书写顺序摆布：
 
 ```xml
 <Grid>
@@ -297,9 +297,9 @@ When you omit `Grid.Row` and `Grid.Column`, children default to row 0, column 0.
 </Grid>
 ```
 
-### Partial overlap with negative margins
+### 用负外边距实现部分重叠 {#partial-overlap-with-negative-margins}
 
-To overlap two elements by a specific amount without placing them in the same cell, use a negative margin on the second element:
+若想让两个元素按指定的量重叠、又不把它们塞进同一个单元格，可以给第二个元素设一个负外边距：
 
 ```xml
 <StackPanel Orientation="Horizontal">
@@ -312,11 +312,11 @@ To overlap two elements by a specific amount without placing them in the same ce
 </StackPanel>
 ```
 
-The negative left margin pulls the second element 10 pixels to the left, overlapping the first. The second element appears on top because it comes later in the markup. This technique works in any panel, not just `Grid`.
+负的左外边距把第二个元素往左拉了 10 像素，于是压在第一个元素上。它显示在上层，是因为它在标记中写得更靠后。这一招在任何面板里都管用，不限于 `Grid`。
 
-## Debugging grid layouts
+## 调试网格布局 {#debugging-grid-layouts}
 
-Set `ShowGridLines="True"` on your `Grid` to visualize row and column boundaries during development:
+开发阶段给 `Grid` 设上 `ShowGridLines="True"`，就能看清行列的边界：
 
 ```xml
 <Grid ColumnDefinitions="Auto,*,200" RowDefinitions="Auto,*"
@@ -325,10 +325,10 @@ Set `ShowGridLines="True"` on your `Grid` to visualize row and column boundaries
 </Grid>
 ```
 
-Remember to remove `ShowGridLines` before shipping your application, as it is intended only as a development aid.
+记得在发布应用前去掉 `ShowGridLines`——它只是个开发期的辅助手段。
 
 ## 另请参阅 {#see-also}
 
-- [Grid control reference](/controls/layout/panels/grid)
-- [Layout overview](/docs/layout)
-- [Positioning controls](/docs/layout/positioning-controls)
+- [Grid 控件参考](/controls/layout/panels/grid)
+- [布局概述](/docs/layout)
+- [摆放控件](/docs/layout/positioning-controls)

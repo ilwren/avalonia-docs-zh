@@ -1,15 +1,15 @@
 ---
 id: shapes-and-geometries
-title: Shapes and geometries
-description: Shape controls and geometry types for drawing 2D vector graphics in Avalonia.
+title: 形状与几何
+description: 在 Avalonia 中绘制二维矢量图形所用的形状控件与几何类型。
 doc-type: reference
 ---
 
-Avalonia provides shape controls for drawing common 2D vector graphics and a geometry system for defining complex outlines used in paths, clipping, and hit testing.
+Avalonia 既提供了绘制常见二维矢量图形的形状控件，也提供了一套几何系统，用来描述路径、裁剪和命中测试所需的复杂轮廓。
 
-## Shape controls
+## 形状控件 {#shape-controls}
 
-Shape controls are visual elements you place directly in your XAML layout. They participate in layout and can receive pointer events.
+形状控件是直接摆进 XAML 布局里的视觉元素。它们参与布局，也能接收指针事件。
 
 ### Rectangle
 
@@ -20,7 +20,7 @@ Shape controls are visual elements you place directly in your XAML layout. They 
 
 | 属性 | 说明 |
 |---|---|
-| `RadiusX`, `RadiusY` | Corner rounding radius for rounded rectangles. |
+| `RadiusX`, `RadiusY` | 圆角矩形的圆角半径。 |
 
 ```xml
 <Rectangle Width="100" Height="60" Fill="Coral"
@@ -34,7 +34,7 @@ Shape controls are visual elements you place directly in your XAML layout. They 
          Fill="MediumPurple" Stroke="Indigo" StrokeThickness="2" />
 ```
 
-A circle is an `Ellipse` with equal `Width` and `Height`.
+把 `Width` 和 `Height` 设成相等的 `Ellipse` 就是一个圆。
 
 ### Line
 
@@ -45,7 +45,7 @@ A circle is an `Ellipse` with equal `Width` and `Height`.
 
 ### Polyline
 
-Draws connected line segments without closing the shape:
+绘制首尾相接的若干线段，但不闭合图形：
 
 ```xml
 <Polyline Points="0,0 50,50 100,0 150,50 200,0"
@@ -54,17 +54,17 @@ Draws connected line segments without closing the shape:
 
 ### Polygon
 
-Like `Polyline` but the shape is automatically closed:
+与 `Polyline` 类似，只是图形会自动闭合：
 
 ```xml
 <Polygon Points="50,0 100,100 0,100"
          Fill="Gold" Stroke="DarkGoldenRod" StrokeThickness="1" />
 ```
 
-Both `Polyline` and `Polygon` support a `FillRule` property that controls how self-intersecting shapes are filled:
+`Polyline` 和 `Polygon` 都支持 `FillRule` 属性，用来控制自相交的图形该如何填充：
 
-- `EvenOdd` (default): Alternates fill for overlapping regions, creating holes.
-- `NonZero`: Fills all enclosed regions regardless of overlap.
+- `EvenOdd`（默认）：重叠区域交替填充，从而形成镂空。
+- `NonZero`：无论是否重叠，所有封闭区域一律填充。
 
 ```xml
 <Polygon Points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"
@@ -73,7 +73,7 @@ Both `Polyline` and `Polygon` support a `FillRule` property that controls how se
 
 ### Path
 
-The most versatile shape control. Uses a `Geometry` to define its outline:
+最百搭的形状控件，用 `Geometry` 来定义自己的轮廓：
 
 ```xml
 <!-- Using mini-language -->
@@ -93,23 +93,23 @@ The most versatile shape control. Uses a `Geometry` to define its outline:
 </Path>
 ```
 
-## Common shape properties
+## 形状的通用属性 {#common-shape-properties}
 
-All shapes inherit from `Shape` and share these properties:
+所有形状都继承自 `Shape`，共有以下属性：
 
 | 属性 | 说明 |
 |---|---|
-| `Fill` | The brush that paints the interior. |
-| `Stroke` | The brush that paints the outline. |
-| `StrokeThickness` | The thickness of the outline in device-independent pixels. |
-| `StrokeDashArray` | A collection of `double` values defining a dashed line pattern. |
-| `StrokeDashOffset` | The offset into the dash pattern to start drawing. |
-| `StrokeLineCap` | The cap style for line endpoints: `Flat`, `Round`, or `Square`. |
-| `StrokeJoin` | The join style at corners: `Miter`, `Bevel`, or `Round`. |
-| `StrokeMiterLimit` | The ratio limit at which a miter join is beveled. When the miter length divided by stroke thickness exceeds this value, the join switches from a sharp miter to a bevel. Default is `10`. Only applies when `StrokeJoin` is `Miter`. |
-| `Stretch` | How the shape fills its allocated space: `None`, `Fill`, `Uniform`, `UniformToFill`. |
+| `Fill` | 绘制内部填充的画刷。 |
+| `Stroke` | 绘制轮廓的画刷。 |
+| `StrokeThickness` | 轮廓的粗细，单位为设备无关像素。 |
+| `StrokeDashArray` | 一组 `double` 值，定义虚线的样式。 |
+| `StrokeDashOffset` | 起笔时在虚线样式中的偏移量。 |
+| `StrokeLineCap` | 线端的端点样式：`Flat`、`Round` 或 `Square`。 |
+| `StrokeJoin` | 拐角处的连接样式：`Miter`、`Bevel` 或 `Round`。 |
+| `StrokeMiterLimit` | 尖角连接改为斜切的比例上限。当尖角长度除以描边粗细超过这个值时，连接方式就从锐利的尖角切换为斜切。默认为 `10`，仅在 `StrokeJoin` 为 `Miter` 时生效。 |
+| `Stretch` | 形状如何填满分配给它的空间：`None`、`Fill`、`Uniform`、`UniformToFill`。 |
 
-### Dashed lines
+### 虚线 {#dashed-lines}
 
 ```xml
 <Line StartPoint="0,0" EndPoint="200,0"
@@ -121,9 +121,9 @@ All shapes inherit from `Shape` and share these properties:
            StrokeDashArray="4,2,1,2" />
 ```
 
-## Geometry types
+## 几何类型 {#geometry-types}
 
-Geometries define mathematical descriptions of 2D shapes. They are lighter than shape controls and are used by `Path.Data`, `Clip`, and `OpacityMask`.
+几何是对二维形状的数学描述。它们比形状控件轻量，供 `Path.Data`、`Clip` 和 `OpacityMask` 使用。
 
 ### RectangleGeometry
 
@@ -157,7 +157,7 @@ Geometries define mathematical descriptions of 2D shapes. They are lighter than 
 
 ### PathGeometry
 
-The most flexible geometry, composed of figures and segments:
+最灵活的几何类型，由图形（figure）和线段（segment）组成：
 
 ```xml
 <PathGeometry>
@@ -170,20 +170,20 @@ The most flexible geometry, composed of figures and segments:
 </PathGeometry>
 ```
 
-### Segment types
+### 线段类型 {#segment-types}
 
-| Segment | 说明 |
+| 线段 | 说明 |
 |---|---|
-| `LineSegment` | Draws a straight line to a point. |
-| `ArcSegment` | Draws an elliptical arc. |
-| `BezierSegment` | Draws a cubic Bezier curve (two control points). |
-| `QuadraticBezierSegment` | Draws a quadratic Bezier curve (one control point). |
-| `PolyLineSegment` | Draws a series of connected lines. |
-| `PolyBezierSegment` | Draws a series of connected cubic Bezier curves. Each set of three points defines a control point, a second control point, and an endpoint. |
+| `LineSegment` | 画一条直线到某点。 |
+| `ArcSegment` | 画一段椭圆弧。 |
+| `BezierSegment` | 画一条三次贝塞尔曲线（两个控制点）。 |
+| `QuadraticBezierSegment` | 画一条二次贝塞尔曲线（一个控制点）。 |
+| `PolyLineSegment` | 画一串首尾相接的直线。 |
+| `PolyBezierSegment` | 画一串首尾相接的三次贝塞尔曲线。每三个点依次表示第一个控制点、第二个控制点和终点。 |
 
 ### CombinedGeometry
 
-Combines two geometries using a set operation:
+用集合运算把两个几何合到一起：
 
 ```xml
 <Path Fill="CornflowerBlue">
@@ -202,14 +202,14 @@ Combines two geometries using a set operation:
 
 | CombineMode | 结果 |
 |---|---|
-| `Union` | Area covered by either geometry. |
-| `Intersect` | Area covered by both geometries. |
-| `Exclude` | Area in the first geometry but not in the second. |
-| `Xor` | Area covered by one geometry but not both. |
+| `Union` | 两个几何中任意一个覆盖到的区域。 |
+| `Intersect` | 两个几何共同覆盖的区域。 |
+| `Exclude` | 在第一个几何内、但不在第二个几何内的区域。 |
+| `Xor` | 只被其中一个几何覆盖、而非两者都覆盖的区域。 |
 
 ### GeometryGroup
 
-Combines multiple geometries into a single geometry:
+把多个几何合并成单个几何：
 
 ```xml
 <Path Fill="Salmon" Stroke="DarkRed" StrokeThickness="1">
@@ -222,30 +222,30 @@ Combines multiple geometries into a single geometry:
 </Path>
 ```
 
-The `FillRule` determines how overlapping areas are filled:
-- `EvenOdd`: Alternates fill for overlapping regions (creates holes).
-- `NonZero`: Fills all enclosed regions.
+`FillRule` 决定重叠区域如何填充：
+- `EvenOdd`：重叠区域交替填充（形成镂空）。
+- `NonZero`：所有封闭区域一律填充。
 
-## Path mini-language
+## 路径迷你语言 {#path-mini-language}
 
-The `Data` property of `Path` accepts SVG-style path data as a string. This compact syntax is efficient for complex shapes.
+`Path` 的 `Data` 属性接受 SVG 风格的路径数据字符串。这套紧凑语法很适合描述复杂形状。
 
 ### Commands
 
 | 命令 | 参数 | 说明 |
 |---|---|---|
-| `M` / `m` | `x,y` | Move to point (absolute / relative) |
-| `L` / `l` | `x,y` | Line to point |
-| `H` / `h` | `x` | Horizontal line |
-| `V` / `v` | `y` | Vertical line |
-| `C` / `c` | `x1,y1 x2,y2 x,y` | Cubic Bezier curve |
-| `S` / `s` | `x2,y2 x,y` | Smooth cubic Bezier |
-| `Q` / `q` | `x1,y1 x,y` | Quadratic Bezier curve |
-| `T` / `t` | `x,y` | Smooth quadratic Bezier |
-| `A` / `a` | `rx,ry rotation large-arc sweep x,y` | Elliptical arc |
-| `Z` / `z` | | Close path |
+| `M` / `m` | `x,y` | 移动到某点（绝对 / 相对） |
+| `L` / `l` | `x,y` | 画线到某点 |
+| `H` / `h` | `x` | 水平线 |
+| `V` / `v` | `y` | 垂直线 |
+| `C` / `c` | `x1,y1 x2,y2 x,y` | 三次贝塞尔曲线 |
+| `S` / `s` | `x2,y2 x,y` | 平滑三次贝塞尔曲线 |
+| `Q` / `q` | `x1,y1 x,y` | 二次贝塞尔曲线 |
+| `T` / `t` | `x,y` | 平滑二次贝塞尔曲线 |
+| `A` / `a` | `rx,ry rotation large-arc sweep x,y` | 椭圆弧 |
+| `Z` / `z` | | 闭合路径 |
 
-Uppercase commands use absolute coordinates, lowercase use relative coordinates.
+大写命令用绝对坐标，小写命令用相对坐标。
 
 ### 示例 {#examples}
 
@@ -266,9 +266,9 @@ Uppercase commands use absolute coordinates, lowercase use relative coordinates.
       Fill="Orange" />
 ```
 
-## Building geometry from code
+## 用代码构建几何 {#building-geometry-from-code}
 
-Use `StreamGeometryContext` to build geometry programmatically. Call `StreamGeometry.Open()` to get a context, then use its drawing methods to define figures:
+用 `StreamGeometryContext` 以编程方式构建几何：先调用 `StreamGeometry.Open()` 拿到一个上下文，再用它的各个绘制方法来描述图形：
 
 ```csharp
 var geometry = new StreamGeometry();
@@ -288,18 +288,18 @@ using (var ctx = geometry.Open())
 }
 ```
 
-### StreamGeometryContext methods
+### StreamGeometryContext 的方法 {#streamgeometrycontext-methods}
 
 | 方法 | 说明 |
 |---|---|
-| `BeginFigure(Point, bool isFilled = true)` | Starts a new figure at the specified point. Set `isFilled` to `false` for an open, unfilled path. |
-| `LineTo(Point, bool isStroked = true)` | Draws a straight line to a point. |
-| `ArcTo(Point, Size, double, bool, SweepDirection, bool isStroked = true)` | Draws an elliptical arc to a point. |
-| `CubicBezierTo(Point, Point, Point, bool isStroked = true)` | Draws a cubic Bezier curve using two control points and an endpoint. |
-| `QuadraticBezierTo(Point, Point, bool isStroked = true)` | Draws a quadratic Bezier curve using one control point and an endpoint. |
-| `EndFigure(bool isClosed)` | Ends the current figure. Set `isClosed` to `true` to close the shape. |
+| `BeginFigure(Point, bool isFilled = true)` | 在指定点开始一个新图形。把 `isFilled` 设为 `false` 可得到不填充的开放路径。 |
+| `LineTo(Point, bool isStroked = true)` | 画一条直线到某点。 |
+| `ArcTo(Point, Size, double, bool, SweepDirection, bool isStroked = true)` | 画一段椭圆弧到某点。 |
+| `CubicBezierTo(Point, Point, Point, bool isStroked = true)` | 用两个控制点和一个终点画一条三次贝塞尔曲线。 |
+| `QuadraticBezierTo(Point, Point, bool isStroked = true)` | 用一个控制点和一个终点画一条二次贝塞尔曲线。 |
+| `EndFigure(bool isClosed)` | 结束当前图形。把 `isClosed` 设为 `true` 即可闭合形状。 |
 
-Set `isStroked` to `false` on any segment to skip drawing the outline for that segment while still including it in the geometry shape. This is useful for creating partially stroked paths.
+在任意线段上把 `isStroked` 设为 `false`，该段就不画轮廓，但依然计入几何形状。这适合做部分描边的路径。
 
 ```csharp
 using (var ctx = geometry.Open())
@@ -312,16 +312,16 @@ using (var ctx = geometry.Open())
 }
 ```
 
-## Geometry methods
+## 几何的方法 {#geometry-methods}
 
-All `Geometry` objects expose methods for hit testing and transformation:
+所有 `Geometry` 对象都提供用于命中测试和变换的方法：
 
 | 方法 | 说明 |
 |---|---|
-| `FillContains(Point)` | Returns `true` if the point is inside the filled area of the geometry. |
-| `StrokeContains(Pen, Point)` | Returns `true` if the point lies on the stroke of the geometry using the specified pen. |
-| `GetWidenedGeometry(Pen)` | Returns a new geometry representing the area that would be covered by stroking this geometry with the specified pen. Useful for creating outlined shapes. |
-| `GetFlattenedPathGeometry()` | Returns a simplified `PathGeometry` with curves approximated by line segments. |
+| `FillContains(Point)` | 若该点位于几何的填充区域内，返回 `true`。 |
+| `StrokeContains(Pen, Point)` | 若该点落在用指定画笔描出的几何轮廓上，返回 `true`。 |
+| `GetWidenedGeometry(Pen)` | 返回一个新几何，表示用指定画笔为当前几何描边所覆盖的区域。这适合用来做轮廓化的形状。 |
+| `GetFlattenedPathGeometry()` | 返回一个简化后的 `PathGeometry`，其中的曲线用直线段近似表示。 |
 
 ```csharp
 var ellipse = new EllipseGeometry { Center = new Point(50, 50), RadiusX = 40, RadiusY = 40 };
@@ -331,9 +331,9 @@ var pen = new Pen(Brushes.Black, 10);
 var outlined = ellipse.GetWidenedGeometry(pen);
 ```
 
-## Using geometries as resources
+## 把几何当作资源来用 {#using-geometries-as-resources}
 
-Define geometries as resources for reuse across your application:
+把几何定义为资源，便于在整个应用中复用：
 
 ```xml
 <Application.Resources>
@@ -344,11 +344,11 @@ Define geometries as resources for reuse across your application:
 <Path Data="{StaticResource CheckmarkIcon}" Stroke="Green" StrokeThickness="2" />
 ```
 
-`StreamGeometry` is a lightweight, immutable geometry optimized for performance. Use it for icon paths and other static shapes.
+`StreamGeometry` 是一种轻量、不可变的几何，针对性能作了优化，适合用于图标路径和其他静态形状。
 
 ## 另请参阅 {#see-also}
 
 - [绘制图形](/docs/graphics-animation/drawing-graphics)：Avalonia 图形系统概览。
-- [Brushes](/docs/graphics-animation/brushes): Fill and stroke brushes.
+- [画刷](/docs/graphics-animation/brushes)：填充画刷与描边画刷。
 - [效果](/docs/graphics-animation/effects)：盒阴影、裁剪与不透明度遮罩。
-- [Adding Icons](/docs/graphics-animation/adding-icons): Using icon fonts and vector icons.
+- [添加图标](/docs/graphics-animation/adding-icons)：使用图标字体和矢量图标。
