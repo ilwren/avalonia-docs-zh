@@ -92,7 +92,7 @@ Native views sit on top of the Avalonia rendering surface. Keep the following co
 - **No transparency**: Native views cannot have transparent backgrounds that reveal Avalonia content behind them.
 - **No transforms**: Avalonia render transforms (rotation, scale) do not affect native views.
 - **Z-order constraints**: Native views always render on top of Avalonia content. You cannot overlay Avalonia controls on a native view.
-- **Clipping**: The native view is clipped to its host bounds, but complex clip geometries are not supported.
+- **裁剪**：原生视图会被裁剪到宿主边界之内，但不支持复杂的裁剪几何。
 
 ## 另请参阅 {#see-also}
 

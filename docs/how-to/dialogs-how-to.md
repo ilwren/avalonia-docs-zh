@@ -52,7 +52,7 @@ A dialog is a regular `Window` with some typical settings:
 </Window>
 ```
 
-### Closing with a result
+### 关闭并返回结果 {#closing-with-a-result}
 
 Close the dialog and return a value using `Window.Close(result)`:
 

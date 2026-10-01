@@ -194,7 +194,7 @@ On desktop platforms (Windows, macOS, Linux), you can use the `TrayIcon` control
 </TrayIcon.Icons>
 ```
 
-### Platform considerations
+### 平台注意事项 {#platform-considerations}
 
 | 平台 | 注释支持情况 |
 |----------|-------|

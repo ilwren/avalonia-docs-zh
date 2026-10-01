@@ -61,7 +61,7 @@ FlowDocument is available with limitations:
 
 See [Missing Features](/xpf/version-info/missing-features) for the full list.
 
-## Window management
+## 窗口管理 {#window-management}
 
 ### Transparent windows
 

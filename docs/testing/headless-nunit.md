@@ -76,7 +76,7 @@ By default, the Application and Dispatcher are recreated for each test (`PerTest
 [assembly: AvaloniaTestIsolation(AvaloniaTestIsolationLevel.PerAssembly)]
 ```
 
-| Level | 行为 |
+| 层级 | 行为 |
 |---|---|
 | `PerTest` | Recreates Application and Dispatcher for each test (default). Tests are fully isolated. |
 | `PerAssembly` | Reuses a single Application and Dispatcher for all tests in the assembly. Faster, but tests share state. |

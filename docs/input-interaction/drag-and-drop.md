@@ -53,7 +53,7 @@ public partial class MainWindow : Window
 
 ## Drag-and-drop events
 
-| 事件 | When it fires |
+| 事件 | 触发时机 |
 |---|---|
 | `DragEnter` | The pointer enters the target element while dragging. |
 | `DragLeave` | The pointer leaves the target element while dragging. |

@@ -233,7 +233,7 @@ protected override void OnKeyDown(KeyEventArgs e)
 
 This is useful when building custom controls that need to respond to platform-standard shortcuts without hardcoding modifier keys.
 
-## Embedding native views
+## 嵌入原生视图 {#embedding-native-views}
 
 You can host native macOS views (NSView subclasses) inside an Avalonia control using `NativeControlHost`. This is useful for integrating platform-specific UI components that have no Avalonia equivalent, such as a map view, camera preview, or platform media player.
 

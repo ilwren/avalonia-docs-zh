@@ -1,17 +1,17 @@
 ---
 id: control-trees
-title: Control trees and custom controls
-description: Understand how to use lifecycle events of the logical and visual trees when building a custom control.
+title: 控件树与自定义控件
+description: 了解在编写自定义控件时，如何利用逻辑树和视觉树的生命周期事件。
 doc-type: explanation
 ---
 
-Avalonia organizes controls into two related tree structures: the **logical tree** and the **visual tree**. The logical tree represents the hierarchy of the application's controls, whereas the visual tree represents all visual elements that are being rendered.
+Avalonia 把控件组织成两棵相关联的树：**逻辑树**和**视觉树**。逻辑树体现应用中控件的层级关系，视觉树则囊括了所有正在渲染的视觉元素。
 
-This page provides guidance on working with the control trees when creating a custom control.
+本文讲的是编写自定义控件时如何与这两棵控件树打交道。
 
-For more information on control trees, see [Visual and logical trees](/docs/fundamentals/visual-and-logical-trees).
+关于控件树的更多内容，请参阅[视觉树与逻辑树](/docs/fundamentals/visual-and-logical-trees)。
 
-## Attachment/detachment events for custom controls
+## 自定义控件的附加/分离事件 {#attachmentdetachment-events-for-custom-controls}
 
 When building custom controls, you often need to respond to a control being added to or removed from a tree. Override these methods to hook into tree lifecycle events.
 

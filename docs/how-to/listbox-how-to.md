@@ -110,7 +110,7 @@ private void OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
 
 ListBox virtualizes by default: it creates controls only for visible items. This works when the ListBox has a constrained height.
 
-### Ensuring virtualization is active
+### 确认虚拟化真的生效了 {#ensuring-virtualization-is-active}
 
 ```xml
 <!-- BAD: StackPanel gives infinite height, disabling virtualization -->

@@ -274,9 +274,9 @@ Icon = new WindowIcon(AssetLoader.Open(new Uri("avares://MyApp/Assets/app-icon.i
 | `WindowState` | `WindowState` | `Normal`, `Minimized`, `Maximized`, `FullScreen`. |
 | `WindowStartupLocation` | `WindowStartupLocation` | `Manual`, `CenterScreen`, `CenterOwner`. |
 | `WindowDecorations` | `WindowDecorations` | `Full`, `BorderOnly`, `None`. |
-| `CanResize` | `bool` | Whether the user can resize the window. |
-| `CanMinimize` | `bool` | Whether the minimize button is enabled. Defaults to `true`. |
-| `CanMaximize` | `bool` | Whether the maximize button is enabled. Defaults to `true`. Automatically `false` when `CanResize` is `false`. |
+| `CanResize` | `bool` | 用户能否调整窗口大小。 |
+| `CanMinimize` | `bool` | 最小化按钮是否可用，默认为 `true`。 |
+| `CanMaximize` | `bool` | 最大化按钮是否可用，默认为 `true`。当 `CanResize` 为 `false` 时会自动变成 `false`。 |
 | `Topmost` | `bool` | Keep the window above all others. |
 | `ShowInTaskbar` | `bool` | Show in the OS taskbar. |
 | `Icon` | `WindowIcon` | Window icon for title bar and taskbar. |

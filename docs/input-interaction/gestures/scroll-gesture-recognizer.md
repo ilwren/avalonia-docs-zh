@@ -138,7 +138,7 @@ For the complete API documentation about this gesture recognizer, see the [Scrol
 :::
 
 :::info
-View the source code on _GitHub_ [`ScrollGestureRecognizer.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/ScrollGestureRecognizer.cs)
+在 _GitHub_ 上查看源码：[`ScrollGestureRecognizer.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/ScrollGestureRecognizer.cs)
 :::
 
 ## 另请参阅 {#see-also}

@@ -230,7 +230,7 @@ myBorder.Background = brush;
 
 The same pattern applies to `RadialGradientBrush` and `ConicGradientBrush`.
 
-## Full example
+## 完整示例 {#full-example}
 
 <XamlPreview>
 

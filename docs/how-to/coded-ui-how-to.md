@@ -389,7 +389,7 @@ secondWindow.Show();
 
 With `ShutdownMode.OnLastWindowClose`, the application exits only after every open window has been closed.
 
-## Summary
+## 小结 {#summary}
 
 This guide demonstrated that you can build a complete, well-structured Avalonia application without a single line of XAML. The key patterns are:
 

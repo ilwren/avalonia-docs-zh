@@ -154,7 +154,7 @@ Or with a binding converter:
 |---|---|---|
 | [`RoutedEvent`](/api/avalonia/interactivity/routedevent) (Bubble) | `RoutedEvent` (Bubble) | Same |
 | `RoutedEvent` (Tunnel) | `RoutedEvent` (Tunnel) | Same |
-| `Preview*` events | Tunnel routing strategy | Use `AddHandler` with `RoutingStrategies.Tunnel` |
+| `Preview*` 事件 | Tunnel routing strategy | Use `AddHandler` with `RoutingStrategies.Tunnel` |
 | `EventManager.RegisterRoutedEvent` | `RoutedEvent.Register<T, TArgs>` | Generic registration |
 | `e.Handled = true` | `e.Handled = true` | Same |
 | `AddHandler(event, handler, handledEventsToo)` | Same signature | Same |

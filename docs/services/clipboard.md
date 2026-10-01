@@ -33,7 +33,7 @@ For example, the HTML format is named `HTML format` on Windows, `text/html` on L
 
 A platform format can be defined using `DataFormat.CreateBytesPlatformFormat` or `DataFormat.CreateStringPlatformFormat`, respectively using `byte[]` and `string` types. Avalonia does not perform automatic serialization.
 
-Example:
+示例：
 ```csharp
 if (OperatingSystem.IsMacOS())
 {
@@ -122,7 +122,7 @@ This method is supported on Windows, macOS, and X11.
 
 To place data on the clipboard, call the `IClipboard.SetDataAsync(IAsyncDataTransfer)` method. It accepts an implementation of `IAsyncDataTransfer` that is responsible for providing data items of various formats on demand (see the [`IAsyncDataTransfer`](#iasyncdatatransfer--iasyncdatatransferitem) section below).
 
-Example:
+示例：
 ```csharp
 var data = new DataTransfer();
 data.Add(DataTransferItem.CreateText("Copied from Avalonia!"));
@@ -209,7 +209,7 @@ Avalonia provides implementations of those interfaces with the `DataTransfer` an
 - The `DataTransfer` class is a list of items. It provides an `Add(DataTransferItem)` method used to add new items.
 - The `DataTransferItem` class can be considered a dictionary of format and value pairs. It provides a `Set<T>(DataFormat, T)` method used to set the value for a given format.
 
-Example:
+示例：
 
 ```csharp
 // Creates an item with both text and HTML formats.

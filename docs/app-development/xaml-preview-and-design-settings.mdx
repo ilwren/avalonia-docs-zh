@@ -1,9 +1,9 @@
 ---
 id: xaml-preview-and-design-settings
-title: XAML live previewer and design-time settings
-sidebar_label: XAML live previewer
+title: XAML 实时预览器与设计时设置
+sidebar_label: XAML 实时预览器
 doc-type: how-to
-description: How to use a live XAML previewer when developing with Avalonia. How to set design-time properties and data to simplify UI development.
+description: 开发 Avalonia 应用时如何使用 XAML 实时预览器，以及如何设置设计时属性和数据来简化界面开发。
 tags:
   - avalonia plus
   - avalonia pro
@@ -19,29 +19,29 @@ import DesignTimeMockPreview from '/img/guides/ui-development/xaml-preview-and-d
 
 <p><small>{frontMatter.description}</small></p>
 
-## Using the XAML previewer
+## 使用 XAML 预览器 {#using-the-xaml-previewer}
 
-Live XAML previewers are available in:
+下列环境提供 XAML 实时预览器：
 
-- Visual Studio, with the Avalonia for Visual Studio extension
-- Visual Studio Code, with the Avalonia for VSCode extension
-- JetBrains Rider, with the third-party AvaloniaRider plugin
+- Visual Studio，需装 Avalonia for Visual Studio 扩展
+- Visual Studio Code，需装 Avalonia for VSCode 扩展
+- JetBrains Rider，需装第三方的 AvaloniaRider 插件
 
-With a XAML previewer, you can view changes to your XAML code as you work. Using a previewer lets you see layout changes immediately, without rebuilding the project.
+有了 XAML 预览器，你改 XAML 的同时就能看到效果，布局的变化立刻可见，不必重新构建项目。
 
 :::note
-The XAML previewer requires a standalone Avalonia executable targeting desktop platforms. XAML files in a cross-platform class library or non-desktop project may not render correctly in the previewer. Any such files should be linked to the desktop project if you wish to preview them.
+XAML 预览器需要一个面向桌面平台的独立 Avalonia 可执行程序。跨平台类库或非桌面项目中的 XAML 文件在预览器里可能渲染不正确。若想预览这类文件，请把它们链接到桌面项目中。
 :::
 
-### Enabling the XAML previewer
+### 启用 XAML 预览器 {#enabling-the-xaml-previewer}
 
-To enable the XAML previewer:
+启用 XAML 预览器的方法：
 
 <Tabs groupId="ide">  
   <TabItem value="rider" label="Rider">
-	1. In Rider, select a **.axaml** file from the top ribbon.
-    2. On the right side of the top ribbon, click **Editor and Preview**.
-    3. Build your project.
+	1. 在 Rider 中，从顶部功能区选中一个 **.axaml** 文件。
+    2. 在顶部功能区右侧点击 **Editor and Preview**。
+    3. 构建你的项目。
 
     <Image light={RiderXamlPreviewer} alt="A screenshot highlighting which button enables XAML preview in Rider." position="center" maxWidth={400} cornerRadius="true"/>
   </TabItem>
@@ -49,58 +49,58 @@ To enable the XAML previewer:
     <Pill variant="primary" href="https://avaloniaui.net/pricing">Avalonia Plus</Pill>
     <br/><br/>
 
-    With the **Visual Studio for Avalonia** extension, the XAML previewer is usually open by default. If it isn’t, follow these steps to enable it.
+    装了 **Visual Studio for Avalonia** 扩展后，XAML 预览器通常默认就是打开的。如果没有，按下面的步骤启用。
 
-    1. In Visual Studio, open a **.axaml** file.
-    2. Click **Split View** at the top of the editor window.
-    3. Build your project.
+    1. 在 Visual Studio 中打开一个 **.axaml** 文件。
+    2. 点击编辑器窗口顶部的 **拆分视图**。
+    3. 构建你的项目。
 
     <Image light={VsXamlPreviewer} alt="A screenshot highlighting which button enables XAML preview in Visual Studio." position="center" maxWidth={400} cornerRadius="true"/>
   </TabItem>
   <TabItem value="vscode" label="Visual Studio Code">
-    With the **Avalonia for VSCode** extension installed, you can open the XAML previewer alongside the editor.
+    装好 **Avalonia for VSCode** 扩展后，你可以在编辑器旁边打开 XAML 预览器。
 
-    1. In Visual Studio Code, open a **.axaml** file.
-    2. Build your project.
-    3. Open the previewer by running the **Avalonia: Show preview** command from the Command Palette (Ctrl+Shift+P), or by clicking the preview icon in the editor's top-right corner.
+    1. 在 Visual Studio Code 中打开一个 **.axaml** 文件。
+    2. 构建你的项目。
+    3. 从命令面板（Ctrl+Shift+P）运行 **Avalonia: Show preview** 命令，或点击编辑器右上角的预览图标，即可打开预览器。
 
     <Image light={VsCodeXamlPreviewer} alt="A screenshot highlighting which button enables XAML preview in Visual Studio Code." position="center" maxWidth={400} cornerRadius="true"/>
   </TabItem>
 </Tabs>
 
-### Checking it works
+### 验证是否生效 {#checking-it-works}
 
-1. Open any **.axaml** file. This example uses **MainWindow.axaml** from the default Avalonia template.
-2. Locate the `<TextBlock>...</TextBlock>` XAML tag near the bottom.
-3. Remove `{Binding Greeting}`. Change it to any text, e.g., "Nice preview!"
-4. You should see your text appear in the preview pane as you type.
+1. 打开任意 **.axaml** 文件。本例用的是 Avalonia 默认模板里的 **MainWindow.axaml**。
+2. 找到靠近文件底部的 `<TextBlock>...</TextBlock>` XAML 标签。
+3. 删掉 `{Binding Greeting}`，换成任意文字，比如 "Nice preview!"。
+4. 你边打字，预览窗格里就应该边出现这段文字。
 
 <Image light={TestXamlPreviewer} alt="A screenshot demonstrating a test of the Avalonia XAML previewer." maxWidth={400} cornerRadius="true"/>
 
 <br/><br/>
 
 :::tip
-If the previewer is unresponsive to your changes, try rebuilding the project.
+如果预览器对你的改动毫无反应，试试重新构建项目。
 :::
 
-## Setting design-time properties
+## 设置设计时属性 {#setting-design-time-properties}
 
-Design-time properties are applied to your UI controls in the XAML previewer only. They do not affect the actual runtime properties of the app. Setting design-time properties helps you style and position your UI without needing to build the app repeatedly.
+设计时属性只在 XAML 预览器中作用于你的 UI 控件，并不影响应用运行时的真实属性。用好它们，你调样式、调位置时就不用一遍遍构建应用了。
 
-To use design-time properties, you must add a namespace to your XAML file:
+要使用设计时属性，必须先在 XAML 文件中加上一个命名空间：
 
 ```xml
 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 ```
 
-With the namespace added, the following design-time properties become available:
+加好命名空间后，下列设计时属性就可以用了：
 - `d:DesignWidth`
 - `d:DesignHeight`
 - `d:DataContext`
 
-### DesignWidth and DesignHeight
+### DesignWidth 与 DesignHeight {#designwidth-and-designheight}
 
-The `d:DesignWidth` and `d:DesignHeight` properties apply the specified width and height to the preview.
+`d:DesignWidth` 和 `d:DesignHeight` 属性把指定的宽高套用到预览上。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -114,7 +114,7 @@ The `d:DesignWidth` and `d:DesignHeight` properties apply the specified width an
 
 ### DataContext
 
-The `d:DataContext` property applies a `DataContext` to the preview. It is recommended that you use this property in conjunction with the `{x:Static}` directive to reference a static property in one of your assemblies:
+`d:DataContext` 属性为预览指定一个 `DataContext`。建议把它和 `{x:Static}` 指令配合使用，去引用程序集中的某个静态属性：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -142,7 +142,7 @@ namespace My.Namespace
 
 ### Design.DataContext
 
-As an alternative to `d:DataContext`, you can use the `Design.DataContext` attached property.
+除了 `d:DataContext`，你也可以使用 `Design.DataContext` 附加属性。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -158,9 +158,9 @@ As an alternative to `d:DataContext`, you can use the `Design.DataContext` attac
 </Window>
 ```
 
-### Setting the design-time DataContext in code
+### 在代码中设置设计时 DataContext {#setting-the-design-time-datacontext-in-code}
 
-The methods described above for setting the design-time `DataContext` assume the view model has a parameterless constructor. However, you may be required to have a view model constructor with parameters, such as with a typical [dependency injection pattern](/docs/app-development/dependency-injection). In such cases, you can use the `Design.SetDataContext` method to reference a view model constructor with parameters.
+上面介绍的几种设置设计时 `DataContext` 的办法，都假定视图模型有无参构造函数。但你的视图模型可能必须带参数构造，比如典型的[依赖注入模式](/docs/app-development/dependency-injection)。这种情况下可以用 `Design.SetDataContext` 方法去引用带参数的视图模型构造函数。
 
 ```csharp
 public MainWindow()
@@ -175,11 +175,11 @@ public MainWindow()
 }
 ```
 
-## Applying design-time data
+## 套用设计时数据 {#applying-design-time-data}
 
-Design-time data applies mock data to your UI in the XAML previewer. Like design-time properties, this helps you refine your UI without repeatedly building the app or calling the data service layer.
+设计时数据会在 XAML 预览器中给界面填上模拟数据。和设计时属性一样，它让你不必反复构建应用、也不用调用数据服务层，就能打磨界面。
 
-This example shows you how to use design-time data with the MVVM pattern to create the UI of an appointment card. Here is the base functionality of the appointment system.
+下面这个例子演示如何结合 MVVM 模式，用设计时数据做出一张预约卡片的界面。先看预约系统的基础功能。
 
 ```csharp
     // Data Properties
@@ -206,9 +206,9 @@ This example shows you how to use design-time data with the MVVM pattern to crea
 
 ```
 
-### Creating the design view model
+### 创建设计用视图模型 {#creating-the-design-view-model}
 
-The next step is to create a design version of the view model. This design version contains mock data, which can be referenced by a design [`DataContext`](#datacontext).
+下一步是做一个设计版的视图模型。它装的是模拟数据，可供设计用的 [`DataContext`](#datacontext) 引用。
 
 ```csharp
 public class DesignAppointmentViewModel: AppointmentViewModel
@@ -224,16 +224,16 @@ public class DesignAppointmentViewModel: AppointmentViewModel
 }
 ```
 
-### Referencing the design view model
+### 引用设计用视图模型 {#referencing-the-design-view-model}
 
-The next step is to refer to the design view model we made in the previous section, so that it can populate the UI with mock data.
+接下来要引用上一节做好的设计用视图模型，好让它把模拟数据填进界面。
 
-To do so using compiled bindings (default as of Avalonia version 11):
+用编译型绑定（自 Avalonia 11 起为默认方式）的做法如下：
 
-1. In the opening XAML tag of your control, add `xmlns:vm="using:AvaloniaApplication1.ViewModels"` to import the `ViewModels` namespace. (Replace the example name `AvaloniaApplication1` with your project name, if using a different one.)
-2. Still in the opening XAML tag, add `x:DataType="vm:DesignAppointmentViewModel"` to declare the `ViewModel` class. This is so the design-time environment can perform a type check on class properties.
+1. 在控件的 XAML 起始标签中加上 `xmlns:vm="using:AvaloniaApplication1.ViewModels"`，导入 `ViewModels` 命名空间。（示例里的 `AvaloniaApplication1` 请换成你自己的项目名。）
+2. 还是在这个起始标签中，加上 `x:DataType="vm:DesignAppointmentViewModel"` 来声明 `ViewModel` 类，好让设计时环境能对类的属性做类型检查。
 
-Your XAML file should look something like this.
+你的 XAML 文件大致应该长这样。
    
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -253,9 +253,9 @@ Your XAML file should look something like this.
 </UserControl>
 ```
 
-### Designing the UI
+### 设计界面 {#designing-the-ui}
 
-You can now proceed with designing the UI for the appointment card. Here is an example UI.
+现在可以着手设计这张预约卡片的界面了。下面是一个示例界面。
 
 ```xml
 <Border CornerRadius="10" Background="LightBlue"  Width="350" Margin="20">
@@ -297,12 +297,12 @@ You can now proceed with designing the UI for the appointment card. Here is an e
 </Border>
 ```
 
-With the design view model set up, the in-progress UI is displayed with mock data in the XAML previewer, like so:
+设计用视图模型就位后，正在编写的界面就会在 XAML 预览器中带着模拟数据显示出来，如下图：
 
 <Image light={DesignTimeMockPreview} alt="A screenshot of a mock haircut appointment card on a design canvas." maxWidth={400} cornerRadius="true"/>
 
 ## 另请参阅 {#see-also}
 
-- [Data context](/docs/data-binding/data-context) — how `DataContext` works at runtime and how controls inherit it
-- [Compiled bindings](/docs/data-binding/compiled-bindings) — using `x:DataType` for type-checked bindings
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern) — the design pattern used in the design-time data example
+- [数据上下文](/docs/data-binding/data-context) —— `DataContext` 在运行时如何工作，控件又是怎么继承它的
+- [编译型绑定](/docs/data-binding/compiled-bindings) —— 用 `x:DataType` 实现带类型检查的绑定
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern) —— 设计时数据示例所采用的设计模式

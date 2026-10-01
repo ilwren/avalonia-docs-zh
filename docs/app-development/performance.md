@@ -1,23 +1,23 @@
 ---
 id: performance
-title: Performance optimization
-description: Optimize Avalonia app performance with virtualization, layout efficiency, compiled bindings, and profiling.
+title: 性能优化
+description: 用虚拟化、高效布局、编译型绑定和性能剖析来优化 Avalonia 应用的性能。
 doc-type: how-to
 ---
 
-This guide covers common performance considerations for Avalonia applications and techniques to keep your UI responsive.
+本指南介绍 Avalonia 应用常见的性能考量，以及保持界面流畅的若干技巧。
 
-## UI virtualization
+## UI 虚拟化 {#ui-virtualization}
 
-When displaying large collections, virtualization ensures only visible items are created and rendered. Some controls support virtualization by default, such as [`ListBox`](/controls/data-display/collections/listbox).
+显示大型集合时，虚拟化能保证只为可见项创建和渲染控件。有些控件默认就支持虚拟化，比如 [`ListBox`](/controls/data-display/collections/listbox)。
 
-### How virtualization works
+### 虚拟化的运作原理 {#how-virtualization-works}
 
-Instead of creating a control for every item in the collection, the virtualizing panel creates controls only for visible items. As the user scrolls, controls that move off-screen are recycled and reused for new items coming into view.
+虚拟化面板不会为集合中的每一项都创建控件，而是只为可见项创建。用户滚动时，移出屏幕的控件会被回收复用给新进入视野的项。
 
-### Ensuring virtualization is active
+### 确认虚拟化真的生效了 {#ensuring-virtualization-is-active}
 
-Virtualization requires a constrained height. If the item is inside a control that gives it infinite height, virtualization is disabled.
+虚拟化要求高度是受限的。如果某项处在一个会给它无限高度的控件里，虚拟化就会失效。
 
 ```xml
 <!-- DON'T: StackPanel gives infinite height, disabling virtualization -->
@@ -37,9 +37,9 @@ Virtualization requires a constrained height. If the item is inside a control th
 </DockPanel>
 ```
 
-### Buffer factor for smooth scrolling
+### 用缓冲系数让滚动更顺滑 {#buffer-factor-for-smooth-scrolling}
 
-`VirtualizingStackPanel` supports a `BufferFactor` property that keeps additional items beyond the visible viewport in a realized state. This reduces recycling frequency during scrolling, which can eliminate stutter, particularly on mobile devices.
+`VirtualizingStackPanel` 提供了 `BufferFactor` 属性，可在可见视口之外额外保留一部分已实例化的项。这能减少滚动过程中的回收频率，从而消除卡顿——在移动设备上效果尤为明显。
 
 ```xml
 <ListBox ItemsSource="{Binding LargeCollection}">
@@ -51,21 +51,21 @@ Virtualization requires a constrained height. If the item is inside a control th
 </ListBox>
 ```
 
-A `BufferFactor` of `1` realizes items across one extra viewport height above and below the visible area. The default is `0` (no buffer). Higher values use more memory but produce smoother scrolling.
+`BufferFactor` 设为 `1` 时，会在可见区域的上下各多实例化一个视口高度的项。默认值是 `0`（不留缓冲）。值越大越费内存，但滚动越顺滑。
 
-### Variable-height items
+### 高度不一的项 {#variable-height-items}
 
-`VirtualizingStackPanel` is optimized for collections where all items have the same height. The panel estimates scroll extent based on number of items, meaning collections containing items with variable heights can cause scroll bar jumps and layout recalculations. If your items vary significantly in height, consider these strategies:
+`VirtualizingStackPanel` 是针对「所有项等高」的集合优化的。面板按项数来估算滚动范围，因此项高参差不齐的集合会导致滚动条跳动和布局重算。如果你的项高度差异很大，可以考虑这几种办法：
 
-- **Use a uniform height.** Give all items a fixed `Height` or `MinHeight` so the virtualizing panel can calculate scroll extent accurately. Allow content to clip or scroll internally if it exceeds the estimated size.
-- **Flatten hierarchical data.** Instead of nesting expanders inside a virtualizing list, flatten the tree into a single list with indent levels. This lets the virtualizing panel manage rows directly. `TreeView` uses this approach internally.
-- **Limit realized items.** If virtualization is not feasible (for example, a complex property grid with expanders), limit how many controls exist at once. Load only the visible section and create additional items on demand as the user expands or scrolls.
+- **统一高度。**给所有项设定固定的 `Height` 或 `MinHeight`，让虚拟化面板能准确算出滚动范围。内容超出估算尺寸时，让它裁剪或在内部滚动。
+- **把层级数据拍平。**与其在虚拟化列表里嵌套展开器，不如把树拍平成带缩进层级的单层列表，这样虚拟化面板就能直接管理行。`TreeView` 内部用的正是这种办法。
+- **限制已实例化的项数。**如果虚拟化实在做不到（比如带展开器的复杂属性网格），那就限制同时存在的控件数量：只加载可见部分，等用户展开或滚动时再按需创建更多项。
 
-### Reducing control template complexity
+### 降低控件模板的复杂度 {#reducing-control-template-complexity}
 
-Complex controls like [`TextBox`](/controls/input/text-input/textbox) contain a deep visual tree with borders, scroll viewers and watermark layers. When you create many of them, template instantiation and measurement dominate startup time.
+[`TextBox`](/controls/input/text-input/textbox) 这类复杂控件的视觉树很深，包含边框、滚动视图和水印层。一旦你创建了很多个，模板实例化和测量就会主宰启动耗时。
 
-**Use lightweight controls for display and swap on interaction.** For example, you can show values with `TextBlock` (which has a minimal visual tree) and replace it with a `TextBox` only when the user clicks to edit:
+**平时用轻量控件显示，交互时再换。**比如用 `TextBlock`（视觉树极简）来展示数值，只在用户点击编辑时才换成 `TextBox`：
 
 ```csharp
 // In your DataTemplate code-behind or custom control
@@ -84,7 +84,7 @@ display.PointerPressed += (s, e) =>
 };
 ```
 
-**Re-template heavy controls.** If you must use `TextBox` everywhere, create a simplified control theme that removes unnecessary visual elements (e.g., watermark, clear button, scroll viewer) to reduce the visual tree depth:
+**给重型控件重做模板。**如果非得到处使用 `TextBox`，那就写一个精简版控件主题，去掉不必要的视觉元素（比如水印、清除按钮、滚动视图），以降低视觉树深度：
 
 ```xml
 <ControlTheme x:Key="LightTextBox" TargetType="TextBox">
@@ -102,17 +102,17 @@ display.PointerPressed += (s, e) =>
 </ControlTheme>
 ```
 
-Apply it to controls that do not need the full feature set:
+再把它套用到那些用不上全部功能的控件上：
 
 ```xml
 <TextBox Theme="{StaticResource LightTextBox}" Text="{Binding Value}" />
 ```
 
-## Layout optimization
+## 布局优化 {#layout-optimization}
 
-### Avoiding deep nesting
+### 避免层层嵌套 {#avoiding-deep-nesting}
 
-Each level of nesting adds measure and arrange passes. Flatten your layout where possible:
+每多一层嵌套，就多一轮测量和排列。能拍平的布局就尽量拍平：
 
 ```xml
 <!-- Avoid: deeply nested layout -->
@@ -132,9 +132,9 @@ Each level of nesting adds measure and arrange passes. Flatten your layout where
 </StackPanel>
 ```
 
-### Replacing nested stack panels with grids
+### 用 Grid 取代嵌套的 StackPanel {#replacing-nested-stack-panels-with-grids}
 
-A single `Grid` with rows and columns is more efficient than multiple nested `StackPanel` controls:
+一个带行列定义的 `Grid` 比若干层嵌套的 `StackPanel` 更高效：
 
 ```xml
 <!-- Instead of nested StackPanels -->
@@ -146,9 +146,9 @@ A single `Grid` with rows and columns is more efficient than multiple nested `St
 </Grid>
 ```
 
-### Minimizing `InvalidateArrange` and `InvalidateMeasure`
+### 尽量少触发 `InvalidateArrange` 和 `InvalidateMeasure` {#minimizing-invalidatearrange-and-invalidatemeasure}
 
-Property changes that affect layout (e.g., `Width`, `Height`, `Margin`, `Padding`) trigger layout recalculations. Batch property changes when possible:
+影响布局的属性变化（比如 `Width`、`Height`、`Margin`、`Padding`）会触发布局重算。能批量改就批量改：
 
 ```csharp
 // Set multiple properties together; Avalonia batches layout
@@ -159,11 +159,11 @@ myControl2.Height = 200;
 
 ## 渲染性能 {#rendering-performance}
 
-### Hiding unused controls with `IsVisible`
+### 用 `IsVisible` 隐藏用不到的控件 {#hiding-unused-controls-with-isvisible}
 
-Setting `IsVisible="False"` can reduce work for conditionally shown content by removing a control from both layout and rendering. The layout system skips the measure and arrange passes for that control and its entire subtree, and the renderer does not draw it.
+对那些按条件显示的内容，设置 `IsVisible="False"` 能省下不少开销：控件会同时退出布局和渲染。布局系统会跳过该控件及其整棵子树的测量与排列，渲染器也不会绘制它。
 
-In addition, hiding a control also pauses any [keyframe animations](/docs/graphics-animation/keyframe-animations#playback-behavior) running on it or its subtree by default, which stops them from waking the CPU on an idle UI.
+此外，隐藏控件默认还会暂停它及其子树上正在播放的[关键帧动画](/docs/graphics-animation/keyframe-animations#playback-behavior)，免得界面空闲时动画还在不停唤醒 CPU。
 
 ```xml
 <Panel>
@@ -173,19 +173,19 @@ In addition, hiding a control also pauses any [keyframe animations](/docs/graphi
 </Panel>
 ```
 
-If you need to hide a control visually while keeping its layout space reserved, use `Opacity="0"` instead. An element with `Opacity="0"` still participates in layout, can receive input, and its keyframe animations continue playing.
+如果你只想在视觉上隐藏控件、同时保留它占的布局空间，请改用 `Opacity="0"`。`Opacity="0"` 的元素仍然参与布局、仍可接收输入，其关键帧动画也会继续播放。
 
-### Using `ClipToBounds` judiciously
+### 审慎使用 `ClipToBounds` {#using-cliptobounds-judiciously}
 
-`ClipToBounds="True"` creates a clip layer. Only use it when child content actually exceeds the control bounds.
+`ClipToBounds="True"` 会创建一个裁剪层。只有当子内容确实会超出控件边界时才用它。
 
-### Reducing hit-testing cost
+### 降低命中测试的开销 {#reducing-hit-testing-cost}
 
-When a pointer event occurs, Avalonia walks the visual tree and tests each element. This linear walk can cause a noticeable delay between clicking and receiving the event if a control contains many children.
+指针事件发生时，Avalonia 会遍历视觉树并逐个测试元素。若某个控件的子元素极多，这种线性遍历会让「点击」到「收到事件」之间出现肉眼可察的延迟。
 
-Set `IsHitTestVisible="False"` on elements that do not need pointer interaction. Consider an overlay-based hit-test strategy or custom rendering for scenes with many objects. See [Hit Testing: Performance with many elements](/docs/graphics-animation/hit-testing#performance-with-many-elements) for patterns and code examples.
+给不需要指针交互的元素设置 `IsHitTestVisible="False"`。对象众多的场景，可以考虑基于覆盖层的命中测试策略或自定义渲染。相关模式与代码示例参见[命中测试：元素众多时的性能](/docs/graphics-animation/hit-testing#performance-with-many-elements)。
 
-Transparent elements also participate in hit testing. If a transparent control does not need pointer interaction, set `IsHitTestVisible="False"` to exclude it from hit-testing.
+透明元素同样参与命中测试。若某个透明控件不需要指针交互，设置 `IsHitTestVisible="False"` 把它排除在命中测试之外。
 
 ```xml
 <Border Background="Transparent" IsHitTestVisible="False">
@@ -193,15 +193,15 @@ Transparent elements also participate in hit testing. If a transparent control d
 </Border>
 ```
 
-### Reducing visual complexity
+### 降低视觉复杂度 {#reducing-visual-complexity}
 
-- Minimize the number of `BoxShadow` effects, which add an individual render pass each.
-- Avoid overlapping semi-transparent elements.
-- Use `Opacity` on a parent element rather than on each child.
+- 尽量少用 `BoxShadow` 效果，每一个都会额外增加一轮渲染。
+- 避免让半透明元素相互重叠。
+- 把 `Opacity` 设在父元素上，而不是逐个设在子元素上。
 
-### Bitmap cache
+### 位图缓存 {#bitmap-cache}
 
-For visuals that are expensive to render but change infrequently, use `BitmapCache` to rasterize them to a bitmap surface. The control and its children are rendered once into an intermediate bitmap, and that bitmap is reused for subsequent frames until the content changes.
+对于渲染代价高但很少变化的视觉内容，可以用 `BitmapCache` 把它们栅格化到一张位图表面上。控件及其子元素只渲染一次到中间位图，之后的帧都复用这张位图，直到内容发生变化。
 
 ```xml
 <Border BoxShadow="0 4 8 0 #40000000" CornerRadius="8">
@@ -216,11 +216,11 @@ For visuals that are expensive to render but change infrequently, use `BitmapCac
 
 | 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `RenderAtScale` | `double` | `1` | Resolution multiplier for the cached bitmap. Values above 1 increase quality. Values below 1 reduce memory at the cost of quality. A value of 0 disables caching. |
-| `SnapsToDevicePixels` | `bool` | `false` | Aligns the cached bitmap to device pixel boundaries for sharper text and line rendering. |
-| `EnableClearType` | `bool` | `false` | Enables `ClearType` subpixel text rendering within the cached surface. Without this, text in the cache uses grayscale antialiasing. |
+| `RenderAtScale` | `double` | `1` | 缓存位图的分辨率倍数。大于 1 可提升质量；小于 1 则以画质换内存；设为 0 表示关闭缓存。 |
+| `SnapsToDevicePixels` | `bool` | `false` | 把缓存位图对齐到设备像素边界，让文字和线条渲染得更锐利。 |
+| `EnableClearType` | `bool` | `false` | 在缓存表面内启用 `ClearType` 次像素文本渲染。不启用的话，缓存中的文字会使用灰度抗锯齿。 |
 
-For text-heavy content, it is recommended to cache with `SnapsToDevicePixels` and `EnableClearType` enabled.
+文字密集的内容，建议开启 `SnapsToDevicePixels` 和 `EnableClearType` 之后再缓存。
 
 ```xml
 <Border>
@@ -231,20 +231,20 @@ For text-heavy content, it is recommended to cache with `SnapsToDevicePixels` an
 </Border>
 ```
 
-### Bitmap interpolation mode
+### 位图插值模式 {#bitmap-interpolation-mode}
 
-For images that do not need high-quality scaling, use a lower interpolation mode:
+对不需要高质量缩放的图片，用较低的插值模式即可：
 
 ```xml
 <Image Source="avares://MyApp/Assets/thumbnail.png"
        RenderOptions.BitmapInterpolationMode="LowQuality" />
 ```
 
-### GPU resource cache size
+### GPU 资源缓存大小 {#gpu-resource-cache-size}
 
-Avalonia uses Skia with GPU acceleration by default. Skia maintains a GPU resource cache for textures and other GPU-backed surfaces. The default cache limit is approximately 28 MB. If your app works with large images, tilesets, or many cached visuals, images that exceed the cache limit are re-uploaded to the GPU each frame, which can cause stuttering.
+Avalonia 默认使用带 GPU 加速的 Skia。Skia 会为纹理等 GPU 表面维护一份资源缓存，默认上限约 28 MB。如果你的应用要处理大图、瓦片集或大量缓存视觉内容，超出缓存上限的图片每帧都得重新上传到 GPU，画面就会发卡。
 
-Increase the cache limit by configuring `SkiaOptions` at startup:
+在启动时配置 `SkiaOptions` 即可调高缓存上限：
 
 ```csharp
 AppBuilder.Configure<App>()
@@ -255,15 +255,15 @@ AppBuilder.Configure<App>()
     });
 ```
 
-Choose a value appropriate for your target hardware. Most integrated GPUs have at least 2 GB of shared memory, so values of 256 MB or 512 MB are safe for desktop apps. Mobile devices may require lower values.
+请按目标硬件选择合适的数值。多数集成显卡至少有 2 GB 共享内存，所以桌面应用取 256 MB 或 512 MB 都很稳妥；移动设备可能要调低一些。
 
-### Region dirty rect clipping
+### 按区域裁剪脏矩形 {#region-dirty-rect-clipping}
 
-When content changes, Avalonia repaints the affected (or "dirty") regions of the screen rather than the whole frame. [`CompositionOptions.UseRegionDirtyRectClipping`](/api/avalonia/rendering/composition/compositionoptions) enables more accurate dirty-rect tracking by utilizing regions, but adds extra CPU time to process the render pass.
+内容变化时，Avalonia 只重绘屏幕上受影响的（即「脏」的）区域，而不是整帧。[`CompositionOptions.UseRegionDirtyRectClipping`](/api/avalonia/rendering/composition/compositionoptions) 借助区域（region）实现更精确的脏矩形跟踪，代价是渲染过程要多花一些 CPU 时间。
 
-This option is **disabled by default** starting with Avalonia 12.1 to minimize loss of frame rate.
+从 Avalonia 12.1 起，这个选项**默认关闭**，以免拖累帧率。
 
-To enable region clipping, you must explicitly set `UseRegionDirtyRectClipping = true` in `CompositionOptions` at startup. Enabling this option can be useful on some target platforms without GPU acceleration, such as [embedded Linux](/docs/platform-specific-guides/embedded-linux) or other software-rendered devices, where reducing the painted area matters more than the clipping cost.
+要启用区域裁剪，必须在启动时于 `CompositionOptions` 中显式设置 `UseRegionDirtyRectClipping = true`。在某些没有 GPU 加速的目标平台上（比如[嵌入式 Linux](/docs/platform-specific-guides/embedded-linux)或其他软件渲染的设备），少画一点比裁剪本身的开销更划算，这时启用它就很有意义。
 
 ```csharp
 AppBuilder.Configure<App>()
@@ -274,17 +274,17 @@ AppBuilder.Configure<App>()
     });
 ```
 
-When region clipping is enabled, `MaxDirtyRects` caps how many dirty rects are tracked per frame. The default is `8`. Setting it to zero or a negative value bypasses Avalonia's tracking and uses the underlying drawing context's region support directly.
+启用区域裁剪后，`MaxDirtyRects` 限定每帧最多跟踪多少个脏矩形，默认是 `8`。把它设为 0 或负数，则跳过 Avalonia 自己的跟踪，直接使用底层绘图上下文的区域支持。
 
-## Data binding performance
+## 数据绑定性能 {#data-binding-performance}
 
 ### 编译绑定 {#compiled-bindings}
 
-Compiled bindings resolve property paths at compile time, avoiding runtime reflection. They are [enabled by default from Avalonia version 12](/docs/avalonia12-breaking-changes#compiled-bindings-are-enabled-by-default).
+编译型绑定在编译期就解析好属性路径，免去了运行时反射。[从 Avalonia 12 起它默认启用](/docs/avalonia12-breaking-changes#compiled-bindings-are-enabled-by-default)。
 
-### Avoiding unnecessary bindings
+### 避免没必要的绑定 {#avoiding-unnecessary-bindings}
 
-Use static values instead of bindings for properties that never change:
+那些永远不变的属性，直接写静态值，别用绑定：
 
 ```xml
 <!-- Unnecessary binding for a constant -->
@@ -295,9 +295,9 @@ Use static values instead of bindings for properties that never change:
 <TextBlock Text="My Application" />
 ```
 
-### Using one-time bindings for static data
+### 静态数据用一次性绑定 {#using-one-time-bindings-for-static-data}
 
-If a value is set once and never changes, use `OneTime` mode to avoid ongoing change tracking:
+如果某个值只设一次、此后不再变化，用 `OneTime` 模式即可省去持续的变更跟踪：
 
 ```xml
 <TextBlock Text="{Binding Version, Mode=OneTime}" />
@@ -305,13 +305,13 @@ If a value is set once and never changes, use `OneTime` mode to avoid ongoing ch
 
 ## Collections
 
-### Using `ObservableCollection` for small-to-medium lists
+### 中小型列表用 `ObservableCollection` {#using-observablecollection-for-small-to-medium-lists}
 
-`ObservableCollection<T>` notifies the UI of individual item additions and removals efficiently.
+`ObservableCollection<T>` 能高效地把单个项的增删通知给界面。
 
-### Batching large updates
+### 批量更新 {#batching-large-updates}
 
-When adding many items at once, consider replacing the collection rather than adding items one by one:
+一次要添加很多项时，与其逐项添加，不如直接替换整个集合：
 
 ```csharp
 // Slow: triggers UI update for each add
@@ -323,9 +323,9 @@ Items = new ObservableCollection<Item>(newItems);
 OnPropertyChanged(nameof(Items));
 ```
 
-### Incremental loading
+### 增量加载 {#incremental-loading}
 
-If you must create many controls without virtualization (for example, a property grid or inspector panel), adding them all at once blocks the UI thread during measurement. Instead, add items in batches and yield to the dispatcher between each batch so the UI remains responsive:
+如果你不得不在没有虚拟化的情况下创建大量控件（比如属性网格或检查器面板），一次性全加上去会在测量阶段阻塞 UI 线程。正确做法是分批添加，每批之间把控制权让回调度器，界面才不会卡住：
 
 ```csharp
 private async Task LoadItemsIncrementally(IList<ItemViewModel> items, Panel container)
@@ -346,26 +346,26 @@ private async Task LoadItemsIncrementally(IList<ItemViewModel> items, Panel cont
 }
 ```
 
-Choose a batch size large enough to fill the visible area on the first pass. This lets the user see content immediately, while the remaining items load progressively.
+批大小要足够让第一轮就填满可见区域，这样用户能立刻看到内容，剩下的项再逐步加载。
 
-### Using `DynamicData` for large reactive collections
+### 大型响应式集合用 `DynamicData` {#using-dynamicdata-for-large-reactive-collections}
 
-For collections with frequent sorting, filtering, or complex transformations, [DynamicData](https://github.com/reactivemarbles/DynamicData) provides optimized reactive pipelines that minimize UI updates.
+对于需要频繁排序、筛选或做复杂变换的集合，[DynamicData](https://github.com/reactivemarbles/DynamicData) 提供了经过优化的响应式管线，能把界面更新降到最少。
 
-## Async and threading
+## 异步与线程 {#async-and-threading}
 
-### Keeping the UI thread free
+### 别占着 UI 线程 {#keeping-the-ui-thread-free}
 
-Move heavy computation to background threads:
+把繁重的计算挪到后台线程：
 
 ```csharp
 var data = await Task.Run(() => LoadLargeDataSet());
 Items = new ObservableCollection<Item>(data);
 ```
 
-### Debouncing rapid input
+### 为快速输入做防抖 {#debouncing-rapid-input}
 
-For search-as-you-type scenarios, debounce the input to avoid running expensive operations on every keystroke:
+在「边打边搜」这类场景里，给输入加上防抖，免得每敲一个键就跑一次昂贵的操作：
 
 ```csharp
 this.WhenAnyValue(x => x.SearchText)
@@ -373,9 +373,9 @@ this.WhenAnyValue(x => x.SearchText)
     .Subscribe(text => ApplyFilter(text));
 ```
 
-### Using `DispatcherPriority.Background` for deferred work
+### 用 `DispatcherPriority.Background` 推迟处理 {#using-dispatcherprioritybackground-for-deferred-work}
 
-Schedule low-priority updates to run when the UI thread is idle:
+把低优先级的更新安排到 UI 线程空闲时再执行：
 
 ```csharp
 Dispatcher.UIThread.Post(() =>
@@ -389,15 +389,15 @@ Dispatcher.UIThread.Post(() =>
 
 ### Avalonia DevTools
 
-Press **F12** in debug builds to open DevTools. The **Performance** tab shows frame timing information.
+在调试版本中按 **F12** 可打开 DevTools，其中的 **Performance** 标签页会显示帧耗时信息。
 
-### dotTrace and dotMemory
+### dotTrace 与 dotMemory {#dottrace-and-dotmemory}
 
-JetBrains profiling tools work with Avalonia applications. Use them to identify hot paths and memory leaks.
+JetBrains 的性能剖析工具同样适用于 Avalonia 应用，可以用它们找出热点路径和内存泄漏。
 
-### Diagnostic overlays
+### 诊断浮层 {#diagnostic-overlays}
 
-Enable the FPS overlay in `App.axaml.cs`:
+在 `App.axaml.cs` 中启用 FPS 浮层：
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -411,7 +411,7 @@ public override void OnFrameworkInitializationCompleted()
 
 ## 另请参阅 {#see-also}
 
-- [Threading Model](/docs/app-development/threading): UI thread and Dispatcher usage.
-- [Compiled Bindings](/docs/data-binding/compiled-bindings): Compile-time binding validation and performance.
-- [Collection Views](/docs/data-binding/collection-views): Efficient collection filtering and sorting.
-- [Hit Testing](/docs/graphics-animation/hit-testing): Hit-test mechanics and performance with many elements.
+- [线程模型](/docs/app-development/threading)：UI 线程与 Dispatcher 的用法。
+- [编译型绑定](/docs/data-binding/compiled-bindings)：编译期绑定校验与性能。
+- [集合视图](/docs/data-binding/collection-views)：高效地筛选和排序集合。
+- [命中测试](/docs/graphics-animation/hit-testing)：命中测试的机制，以及元素众多时的性能。

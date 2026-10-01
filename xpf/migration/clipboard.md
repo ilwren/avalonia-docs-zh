@@ -81,7 +81,7 @@ static void Main(string[] args)
 
 Alternatively, you can use [custom initialization](/xpf/configuration/customizing-initialization), which handles STA threading automatically.
 
-## Platform differences
+## 平台差异 {#platform-differences}
 
 The following table summarizes clipboard feature support across platforms:
 

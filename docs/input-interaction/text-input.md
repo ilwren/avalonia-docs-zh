@@ -34,7 +34,7 @@ private void OnTextInput(object? sender, TextInputEventArgs e)
 
 ### When to use TextInput vs KeyDown
 
-| Scenario | Use |
+| Scenario | 用法 |
 |---|---|
 | Processing typed characters (text editing) | `TextInput` |
 | Detecting modifier keys (Ctrl+S, Alt+F4) | `KeyDown` |
@@ -147,7 +147,7 @@ On Android and iOS, the `InputScope` property on `TextBox` can hint which keyboa
 <TextBox InputScope="TelephoneNumber" />
 ```
 
-## Platform considerations
+## 平台注意事项 {#platform-considerations}
 
 | 特性 | Windows | macOS | Linux | Android/iOS | WebAssembly |
 |---|---|---|---|---|---|
