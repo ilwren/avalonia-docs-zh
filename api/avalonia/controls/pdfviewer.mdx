@@ -151,7 +151,7 @@ public PdfViewer()
 | [SaveAsync](#uid-e03fdf7204) | Saves the document in place to its original [Avalonia.Controls.PdfViewer.Source](xref:Avalonia.Controls.PdfViewer.Source) path, including any annotation edits. No-op when [Avalonia.Controls.PdfViewer.AllowDocumentSaving](xref:Avalonia.Controls.PdfViewer.AllowDocumentSaving) is `false` or when no document is loaded. A document loaded from a stream or byte array has no path to save to: use [Avalonia.Controls.PdfViewer.SaveDocumentAsync(System.IO.Stream)](xref:Avalonia.Controls.PdfViewer.SaveDocumentAsync%28System.IO.Stream%29) or [Avalonia.Controls.PdfViewer.SaveAsAsync(System.Threading.CancellationToken)](xref:Avalonia.Controls.PdfViewer.SaveAsAsync%28System.Threading.CancellationToken%29) for those. |
 | [SaveDocumentAsync (2 overloads)](#uid-5804b6f4e2) | Saves the document (with all annotations) to a stream. |
 | [SearchAsync (2 overloads)](#uid-eb24a33012) | Searches for text in the document and publishes the results ([Avalonia.Controls.PdfViewer.SearchResults](xref:Avalonia.Controls.PdfViewer.SearchResults), find next/previous, [Avalonia.Controls.PdfViewer.SearchCompleted](xref:Avalonia.Controls.PdfViewer.SearchCompleted)). A failure is reported through [Avalonia.Controls.PdfViewer.ErrorMessage](xref:Avalonia.Controls.PdfViewer.ErrorMessage) and returns an empty list. |
-| [SelectAll](#uid-f7c64ca2c1) | Selects all text on the current page. |
+| [SelectAll](#uid-f7c64ca2c1) | 选中当前页的全部文本。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../visual.mdx)。 |
 | [SetIsHoldingEnabled](../input/inputelement.mdx#uid-90a47948ad) | 继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -1307,7 +1307,7 @@ System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyList&lt;[Aval
 
 ### SelectAll 方法 {#selectall-method}
 
-Selects all text on the current page.
+选中当前页的全部文本。
 
 ```csharp
 public void SelectAll()
@@ -3810,7 +3810,7 @@ public double ZoomStep { get; set; }
 | [GettingFocusEvent](../input/inputelement.mdx#uid-23a6940484) | 定义 [Avalonia.Input.InputElement.GettingFocus](xref:Avalonia.Input.InputElement.GettingFocus) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [GotFocusEvent](../input/inputelement.mdx#uid-750ce32b53) | 定义 [Avalonia.Input.InputElement.GotFocus](xref:Avalonia.Input.InputElement.GotFocus) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [HasBookmarksProperty](#uid-8da2ba29ff) | 定义 [Avalonia.Controls.PdfViewer.HasBookmarks](xref:Avalonia.Controls.PdfViewer.HasBookmarks) 属性。 |
-| [HasDocumentClass](#uid-f514413234) | A document is open. |
+| [HasDocumentClass](#uid-f514413234) | 已打开文档。 |
 | [HasDocumentProperty](#uid-a3e6014e16) | 定义 [Avalonia.Controls.PdfViewer.HasDocument](xref:Avalonia.Controls.PdfViewer.HasDocument) 属性。 |
 | [HasMirrorTransformProperty](../visual.mdx#uid-1f37ec4745) | 定义 [Avalonia.Visual.HasMirrorTransform](xref:Avalonia.Visual.HasMirrorTransform) 属性。继承自 [Visual](../visual.mdx)。 |
 | [HasOutlineProperty](#uid-87da1d70b4) | 定义 [Avalonia.Controls.PdfViewer.HasOutline](xref:Avalonia.Controls.PdfViewer.HasOutline) 属性。 |
@@ -4324,7 +4324,7 @@ public Avalonia.DirectProperty<Avalonia.Controls.PdfViewer, bool> HasBookmarksPr
 
 ### HasDocumentClass 字段 {#hasdocumentclass-field}
 
-A document is open.
+已打开文档。
 
 ```csharp
 public string HasDocumentClass
