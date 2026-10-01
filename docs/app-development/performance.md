@@ -157,7 +157,7 @@ myControl1.Width = 100;
 myControl2.Height = 200;
 ```
 
-## Rendering performance
+## 渲染性能 {#rendering-performance}
 
 ### Hiding unused controls with `IsVisible`
 

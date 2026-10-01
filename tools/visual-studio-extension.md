@@ -50,7 +50,7 @@ These can be accessed by selecting **Options** from the **Tools** menu inside Vi
 <Image light={VSOptions} alt="A screenshot showing the options dialog." maxWidth={400} cornerRadius="true"/>
 <br />
 
-|  Setting              | 说明 | Options       |
+|  Setting              | 说明 | 选项       |
 |-----------------------|-------------|---------------|
 | Color Scheme          | Controls how the AXAML file contents are colored. Requires a paid account to change. | <ul><li>**Roslyn (Default):** Colors are based on equivalent C# classifications.</li><li>**XML:** Colors are assigned as if a regular XML document.</li></ul> |
 | Default Document View | What is displayed when a document is opened. | <ul><li>**Split (Default):** Both the code and the previewer.</li><li>**Design:** Just the previewer</li><li>**Source:** Just the source code.</li></ul> |

@@ -53,7 +53,7 @@ source.WithTextColumn("First Name", x => x.FirstName, o =>
 })
 ```
 
-### Options
+### 选项 {#options}
 
 Options can be set as attributes in XAML or configured via the `TextColumnCreateOptions` lambda in code-behind:
 
@@ -116,7 +116,7 @@ source.WithCheckBoxColumn(x => x.IsActive, o =>
 })
 ```
 
-### Options
+### 选项 {#options-1}
 
 | 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
@@ -245,7 +245,7 @@ source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell")
 source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell", "CheckBoxCellEdit")
 ```
 
-### Options
+### 选项 {#options-2}
 
 | 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|

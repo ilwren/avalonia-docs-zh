@@ -1,6 +1,6 @@
 ---
 id: toolbar
-title: Toolbar and Selection Flyouts
+title: 工具栏与选区浮层
 doc-type: reference
 tags:
  - avalonia pro
@@ -21,22 +21,22 @@ import CustomThemeToolbar from '/img/controls/richtexteditor/custom-theme-toolba
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-By default, `RichTextEditor` includes a primary toolbar, a selection mini-bar, and a right-click context menu. Each of these toolbars is built from the same basic system and can be customized independently. You can swap layouts, add your own tools, fine-tune the overflow menu, re-theme buttons, and more. This guide takes you through your customization options, from most common to most advanced.
+默认情况下，`RichTextEditor` 自带一条主工具栏、一条选区迷你工具条和一个右键上下文菜单。这几条工具栏都建立在同一套基础机制之上，可以各自独立地定制：换布局、加自己的工具、调教溢出菜单、给按钮换主题，等等。本指南按从常见到进阶的顺序，带你过一遍可用的定制手段。
 
 :::info
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Toolbar architecture
+## 工具栏架构 {#toolbar-architecture}
 
-The toolbar system separates UI presentation from behavioral logic. `EditorToolbar` is a `TemplatedControl` with a strongly-typed `Tools` collection (`AvaloniaList<EditorTool>`) marked as the `[Content]` property — XAML children are added to `Tools` automatically and can only be `EditorTool` instances. Action-bearing tools derive from `ActionTool` (which adds `Action`/`Icon`/`ToolTipText`); separators and groups derive from `EditorTool` directly.
+工具栏系统把界面呈现与行为逻辑分了开来。`EditorToolbar` 是一个 `TemplatedControl`，带有一个强类型的 `Tools` 集合（`AvaloniaList<EditorTool>`）并被标记为 `[Content]` 属性——XAML 子元素会自动加入 `Tools`，且只能是 `EditorTool` 的实例。带动作的工具派生自 `ActionTool`（它补充了 `Action`/`Icon`/`ToolTipText`）；分隔线和分组则直接派生自 `EditorTool`。
 
-- **`EditorTool`**: the abstract base for any item hosted inside an `EditorToolbar` or `ToolbarGroup`. It carries target-area visibility, overflow metadata, and editor-host discovery.
-- **`ActionTool`**: the abstract base for tools that bind to an `IEditorAction`. Adds `Action`, `Icon`, and `ToolTipText`, and synchronizes `IsEnabled` with `Action.CanExecute(host)`. Most concrete tools (button, toggle, combobox, flyout) derive from this.
-- **`ToolbarGroup`**: itself an `EditorTool`. Hosts its own strongly-typed `Tools` collection of child tools. Groups share visibility status, i.e., they collapse together into the overflow menu if there is insufficient space. Groups can nest, and a nested group contributes its children to the enclosing top-level group's overflow section rather than collapsing as a unit, because a group carries no overflow menu item to stand in for its children.
-- **`EditorToolbar`**: a `TemplatedControl` that exposes a strongly-typed `Tools` collection (`AvaloniaList<EditorTool>`) marked as the `[Content]` property. Wires items to the editor, pushes the active target areas onto every tool, and runs the overflow-collapse layout pass. Items are inserted into a `Panel` named `PART_ItemsHost` in the control template, published as the constant `EditorToolbar.PartItemsHost`.
+- **`EditorTool`**：凡是寄宿在 `EditorToolbar` 或 `ToolbarGroup` 中的项，都以它为抽象基类。它负责按目标区域控制可见性、承载溢出相关的元数据，并负责发现编辑器宿主。
+- **`ActionTool`**：绑定到 `IEditorAction` 的那类工具的抽象基类。它补充了 `Action`、`Icon` 和 `ToolTipText`，并让 `IsEnabled` 与 `Action.CanExecute(host)` 保持同步。大多数具体工具（按钮、切换、下拉框、浮层）都派生自它。
+- **`ToolbarGroup`**：它本身就是一个 `EditorTool`，内部寄宿着自己那套强类型的子工具 `Tools` 集合。同一分组共享可见性状态，也就是说空间不够时它们会一起收进溢出菜单。分组可以嵌套，而嵌套分组会把自己的子项并入外层顶级分组的溢出区，而不是作为一个整体折叠——因为分组本身没有一个溢出菜单项来代表它的子项。
+- **`EditorToolbar`**：一个 `TemplatedControl`，对外暴露强类型的 `Tools` 集合（`AvaloniaList<EditorTool>`）并标记为 `[Content]` 属性。它负责把各项接到编辑器上、把当前活动的目标区域推送给每个工具，并执行溢出折叠的布局遍历。各项会被插入到控件模板中名为 `PART_ItemsHost` 的 `Panel` 里，该名称以常量 `EditorToolbar.PartItemsHost` 的形式公开。
 
-Both `EditorToolbar` and `ToolbarGroup` use a `Panel` template part named `PART_ItemsHost`. The default theme uses a `WrapPanel`; the toolbar embedded inside `RichTextEditor` uses a horizontal `StackPanel`. Re-template either control with any panel type to change the layout. Every templated toolbar control declares its parts with `[TemplatePart]` and publishes the names as `public const string Part*` members.
+`EditorToolbar` 和 `ToolbarGroup` 都使用一个名为 `PART_ItemsHost` 的 `Panel` 模板部件。默认主题用的是 `WrapPanel`；嵌在 `RichTextEditor` 里的那条工具栏则用横向的 `StackPanel`。给任一控件重做模板、换成任意面板类型，即可改变布局。每个模板化的工具栏控件都用 `[TemplatePart]` 声明自己的部件，并把名称以 `public const string Part*` 成员的形式公开。
 
 ```
 RichTextEditor
@@ -59,9 +59,9 @@ using Avalonia.Controls.Documents.Primitives; // EditorSelectionFlyout, EditorCo
 using Avalonia.Controls.Documents.Primitives.Adorners; // ToolbarTargetAreas
 ```
 
-All of these types are available in XAML under the default Avalonia namespace (`https://github.com/avaloniaui`).
+以上这些类型在 XAML 中都位于 Avalonia 的默认命名空间（`https://github.com/avaloniaui`）下。
 
-## Migration from earlier `EditorToolbar` API
+## 从早期 `EditorToolbar` API 迁移 {#migration-from-earlier-editortoolbar-api}
 
 If you have existing code that uses the legacy `ItemsControl`-based surface, update it as follows:
 

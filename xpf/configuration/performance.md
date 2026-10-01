@@ -27,7 +27,7 @@ This can reduce application startup time substantially, particularly on Linux em
 On Linux, ReadyToRun may change how native `.so` libraries are resolved. See [Linux: Native Library Resolution](/xpf/platforms/linux#native-library-resolution-with-readytorun) for details.
 :::
 
-## Rendering performance
+## 渲染性能 {#rendering-performance}
 
 ### Configuring Skia and composition options
 

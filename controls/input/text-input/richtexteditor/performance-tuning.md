@@ -7,48 +7,48 @@ tags:
  - avalonia enterprise
 ---
 
-Performance tuning guide for `RichTextEditor`. Covers batch edits, event optimization, memory management, serialization, and profiling strategies.
+`RichTextEditor` 的性能调优指南，涵盖批量编辑、事件优化、内存管理、序列化和性能剖析策略。
 
 :::info
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Core performance characteristics
+## 核心性能特征 {#core-performance-characteristics}
 
-### Time complexity
+### 时间复杂度 {#time-complexity}
 
-| Operation | Complexity | 注释支持情况 |
+| 操作 | 复杂度 | 注释支持情况 |
 |-----------|-----------|-------|
-| Insert text | O(log n) | Rope data structure |
-| Delete text | O(log n) | Balanced tree update |
-| Find position | O(log n) | Tree traversal |
-| Undo/Redo | O(1) - O(log n) | Structural undo |
-| Serialize | O(n) | Streaming tokenizer |
-| Render | O(visible nodes) | Viewport culling |
+| 插入文本 | O(log n) | rope 数据结构 |
+| 删除文本 | O(log n) | 平衡树更新 |
+| 查找位置 | O(log n) | 树遍历 |
+| Undo/Redo | O(1) - O(log n) | 结构性撤销 |
+| Serialize | O(n) | 流式分词器 |
+| Render | O(可见节点数) | 视口剔除 |
 
-### Memory usage
+### 内存占用 {#memory-usage}
 
-- **Document**: O(n) text + O(m) nodes
-- **Rope overhead**: ~2x base text
-- **Undo stack**: ~10% with structural undo (vs 100x traditional)
-- **Snapshots**: Shared structure, minimal overhead
+- **文档**：O(n) 文本 + O(m) 节点
+- **rope 额外开销**：约为基础文本的 2 倍
+- **撤销栈**：采用结构性撤销约为 10%（传统做法则是 100 倍）
+- **快照**：共享结构，开销极小
 
-## Performance checklist
+## 性能自查清单 {#performance-checklist}
 
-- Batch all multi-edit operations
-- Use `TextDocument.Changed` (once per commit) instead of `TextDocument.TextChanged` (once per edit) for expensive operations
-- Debounce user-triggered updates
-- Set appropriate `UndoLimit` on the editor
-- Disable undo during bulk loads
-- Use background threads for serialization
-- Minimize pointer allocations
-- Profile before optimizing
+- 凡是多步编辑，一律批量进行
+- 开销大的操作请用 `TextDocument.Changed`（每次提交触发一次），而不是 `TextDocument.TextChanged`（每次编辑都触发）
+- 对用户触发的更新做防抖
+- 给编辑器设置合适的 `UndoLimit`
+- 批量加载期间关闭撤销
+- 序列化放到后台线程
+- 尽量少分配指针对象
+- 先剖析，再优化
 
-## Batch edit optimization
+## 批量编辑优化 {#batch-edit-optimization}
 
-### Always batch multiple operations
+### 多步操作务必批量执行 {#always-batch-multiple-operations}
 
-Single change notification instead of one per edit:
+只发出一次变更通知，而不是每次编辑都发一次：
 
 ```csharp
 // Bad: 100 Changed events, 100 layout passes
@@ -67,13 +67,13 @@ using (document.BeginChange())
 }
 ```
 
-**Impact**: 10-100x speedup for bulk operations.
+**效果**：批量操作提速 10 到 100 倍。
 
-## Event handler optimization
+## 事件处理程序优化 {#event-handler-optimization}
 
-### Defer expensive operations
+### 把重活儿往后挪 {#defer-expensive-operations}
 
-Handle `TextDocument.Changed`, which is raised once per committed change scope, instead of reacting to every edit:
+请处理 `TextDocument.Changed`——它在每个变更作用域提交时触发一次，不必对每一次编辑都作出反应：
 
 ```csharp
 // Bad — called for every keystroke
@@ -91,9 +91,9 @@ textDoc.Changed += (s, e) =>
 };
 ```
 
-`TextDocument` raises two change events. (1) `TextChanged` fires per text edit with a `TextChangeEventArgs`; (2) `Changed` fires once when a change scope commits, with a `DocumentChangedEventArgs` carrying `HasChanges`. Expensive work is ideally handled by `Changed`.
+`TextDocument` 会引发两种变更事件：(1) `TextChanged` 每次文本编辑触发一次，带一个 `TextChangeEventArgs`；(2) `Changed` 在变更作用域提交时触发一次，带一个携有 `HasChanges` 的 `DocumentChangedEventArgs`。开销大的工作最好交给 `Changed` 来处理。
 
-### Debounce user-triggered updates
+### 对用户触发的更新做防抖 {#debounce-user-triggered-updates}
 
 ```csharp
 private DispatcherTimer _updateTimer;
@@ -121,11 +121,11 @@ void OnDelayedUpdate(object? sender, EventArgs e)
 }
 ```
 
-**Impact**: Reduces CPU usage during continuous typing.
+**效果**：降低连续输入期间的 CPU 占用。
 
-## Pointer and range optimization
+## 指针与区间优化 {#pointer-and-range-optimization}
 
-### Minimize pointer allocations
+### 尽量少分配指针对象 {#minimize-pointer-allocations}
 
 ```csharp
 // Bad — creating a pointer per character index
@@ -143,9 +143,9 @@ for (int i = 0; i < slice.Length; i++)
 }
 ```
 
-`DocumentSnapshot.GetText`, `GetTextMemory` and `WriteTextTo` all pull a substring without allocating per-character pointers.
+`DocumentSnapshot.GetText`、`GetTextMemory` 和 `WriteTextTo` 都能取出子串，而不必为每个字符分配指针。
 
-### Reuse pointers when possible
+### 能复用指针时就复用 {#reuse-pointers-when-possible}
 
 ```csharp
 var pointer = document.ContentStart.CreatePointer(0);
@@ -156,9 +156,9 @@ for (int i = 0; i < 100; i++)
 }
 ```
 
-## Memory management
+## 内存管理 {#memory-management}
 
-### Undo stack limits
+### 限制撤销栈大小 {#undo-stack-limits}
 
 ```csharp
 // Default: 100 operations (set via RichTextEditor.UndoLimit)
@@ -166,11 +166,11 @@ editor.UndoLimit = 50;  // Reduce for memory-constrained environments
 editor.UndoLimit = 200; // Increase for power users
 ```
 
-**Trade-off**: Memory vs undo history depth.
+**取舍**：内存占用与撤销历史深度之间的权衡。
 
-### Disable undo for bulk loads
+### 批量加载时关闭撤销 {#disable-undo-for-bulk-loads}
 
-`RichTextEditor.UndoManager` and `TextDocument.UndoManager` are both typed `UndoManager?`. To record nothing, either turn the instance off with `IsEnabled`, or set the document's manager to `null`. There is no null-object manager to substitute.
+`RichTextEditor.UndoManager` 和 `TextDocument.UndoManager` 的类型都是 `UndoManager?`。若要完全不记录，可以用 `IsEnabled` 把实例关掉，或把文档的管理器设为 `null`——框架没有可供替换的空对象管理器。
 
 ```csharp
 void LoadLargeDocument(string rtfPath)
@@ -192,20 +192,20 @@ void LoadLargeDocument(string rtfPath)
 }
 ```
 
-**Impact**: 50% faster load, no undo memory overhead.
+**效果**：加载快 50%，且没有撤销带来的内存开销。
 
-### Clear undo history when needed
+### 必要时清空撤销历史 {#clear-undo-history-when-needed}
 
 ```csharp
 // After saving document
 editor.ClearUndoHistory();
 ```
 
-## Serialization performance
+## 序列化性能 {#serialization-performance}
 
-### Use background threads
+### 用后台线程 {#use-background-threads}
 
-`IDocumentSerializer` is synchronous: `Serialize` and `Deserialize` run wherever you call them. `SaveAsync` and `LoadAsync` are the shipped wrappers that move the work to the thread pool, which allows you to decide which thread to use for the serialization work.
+`IDocumentSerializer` 是同步的：你在哪个线程调用 `Serialize` 和 `Deserialize`，它们就在哪个线程上跑。`SaveAsync` 和 `LoadAsync` 是随附的封装，会把工作挪到线程池上，让你自行决定序列化在哪个线程进行。
 
 ```csharp
 async Task SaveDocumentAsync(string path)
@@ -217,18 +217,18 @@ async Task SaveDocumentAsync(string path)
 }
 ```
 
-**Impact**: No UI blocking during save.
+**效果**：保存时不再卡住界面。
 
-When you drive a serializer yourself, wrap the call:
+自己驱动序列化器时，请把调用包起来：
 
 ```csharp
 var snapshot = editor.Document.CreateSnapshot();   // UI thread, cheap
 await Task.Run(() => serializer.Serialize(snapshot, stream, cancellationToken), cancellationToken);
 ```
 
-One snapshot can feed several serializers, which avoids a redundant tree walk per format.
+一份快照可以喂给多个序列化器，省去每种格式各遍历一次树的重复开销。
 
-### Stream large files
+### 大文件用流式处理 {#stream-large-files}
 
 ```csharp
 // Streaming tokenizer handles large files efficiently
@@ -237,13 +237,13 @@ await editor.LoadAsync(stream, new RtfSerializer());
 // Memory usage: O(output size), not O(file size)
 ```
 
-## Rendering performance
+## 渲染性能 {#rendering-performance}
 
-### Viewport culling
+### 视口剔除 {#viewport-culling}
 
-Built-in: only visible elements are rendered. No action needed.
+内置能力：只渲染可见元素，无需你做任何事。
 
-### Reduce layout passes
+### 减少布局遍数 {#reduce-layout-passes}
 
 ```csharp
 // Batch formatting changes
@@ -256,57 +256,57 @@ using (document.BeginChange())
 // Single layout pass
 ```
 
-### Simplify complex documents
+### 简化复杂文档 {#simplify-complex-documents}
 
-- Limit nesting depth (< 10 levels)
-- Merge adjacent runs with same formatting
-- Use metadata normalization
+- 控制嵌套深度（小于 10 层）
+- 合并格式相同的相邻文本段
+- 使用元数据规范化
 
-### Vertical caret navigation
+### 插入符的上下移动 {#vertical-caret-navigation}
 
-<kbd>↑</kbd> and <kbd>↓</kbd> walk the document tree structurally rather than scanning visual lines for a Y-coordinate change. Because of this:
+<kbd>↑</kbd> and <kbd>↓</kbd> 是按结构遍历文档树来实现的，而不是靠扫描视觉行去找 Y 坐标的变化。因此：
 
-- Cost is bounded by tree depth, not by the number of visible lines. One keystroke in a 50-row by 50-column table costs on the order of rows plus descent depth.
-- The intended column is captured once on the first vertical keystroke and reused until the selection changes by something other than vertical movement. That reuse is what keeps the caret in the same visual column across short lines, empty paragraphs and table cells.
+- 开销取决于树的深度，而非可见行数。在一个 50 行 50 列的表格里按一次键，开销大致是行数加上下降深度的量级。
+- 目标列在第一次按上下键时记录一次，之后一直沿用，直到选区因上下移动之外的原因发生变化为止。正是这种沿用，才让插入符在短行、空段落和表格单元格之间上下移动时始终停在同一视觉列上。
 
-The column intent is discarded by any non-vertical selection change, such as a click, programmatic `Select`, horizontal arrows, <kbd>Home</kbd>, <kbd>End</kbd>, or word-jump. Avoid clearing or reassigning `Selection.CaretPosition` between consecutive <kbd>↑</kbd> / <kbd>↓</kbd> presses if you want the column preserved.
+任何非上下方向的选区变化都会丢弃这个列意图，比如点击、以代码设置 `Select`、左右方向键、<kbd>Home</kbd>、<kbd>End</kbd> 或按词跳转。若希望保住列位置，请避免在连续按 <kbd>↑</kbd> / <kbd>↓</kbd> 的间隙清除或重新赋值 `Selection.CaretPosition`。
 
 ### 页面布局 {#page-layout}
 
-Page layout keeps its sheets on screen while an edit repaginates, rather than tearing down the break table and rebuilding it in an idle slice. Screen, print and PDF export share the same page-break policy, so they break identically. However, the pagination cost is paid once per model.
+编辑引发重新分页时，分页布局会让纸面一直留在屏幕上，而不是拆掉断页表、等空闲时再重建。屏幕、打印和 PDF 导出共用同一套分页策略，断页位置完全一致；而分页的开销每个模型只付一次。
 
-## Large document strategies
+## 大文档应对策略 {#large-document-strategies}
 
-### Tested limits
+### 已验证的规模 {#tested-limits}
 
 - 10,000+ paragraphs
-- 1MB+ RTF files
-- 100+ undo operations
+- 1MB 以上的 RTF 文件
+- 100 步以上的撤销操作
 
-### For very large documents (100MB+)
+### 超大文档（100MB 以上） {#for-very-large-documents-100mb}
 
-Consider:
-1. **Pagination** — load sections on demand
-2. **Virtual scrolling** — render visible pages only
-3. **Read-only mode** — disable undo for memory savings via `FlowDocumentScrollViewer`
-4. **Streaming** — process in chunks
+可以考虑：
+1. **分段** —— 按需加载各小节
+2. **虚拟滚动** —— 只渲染可见的页面
+3. **只读模式** —— 通过 `FlowDocumentScrollViewer` 关闭撤销以节省内存
+4. **流式处理** —— 分块处理
 
 ## Benchmarking
 
-### Built-in benchmarks
+### 内置基准测试 {#built-in-benchmarks}
 
 ```bash
 cd benchmarks/Avalonia.Controls.Documents.Benchmarks
 dotnet run -c Release
 ```
 
-Benchmarks cover:
-- Text insertion/deletion
-- Batch edits
+基准测试涵盖：
+- 文本插入/删除
+- 批量编辑
 - Serialization
-- Metadata normalization
+- 元数据规范化
 
-### Custom benchmarks
+### 自定义基准测试 {#custom-benchmarks}
 
 ```csharp
 using BenchmarkDotNet.Attributes;
@@ -340,7 +340,7 @@ public class CustomBenchmark
 }
 ```
 
-Run it with:
+运行方式：
 
 ```csharp
 BenchmarkRunner.Run<CustomBenchmark>();
@@ -348,7 +348,7 @@ BenchmarkRunner.Run<CustomBenchmark>();
 
 ## Anti-patterns
 
-### Don't poll document state
+### 别轮询文档状态 {#dont-poll-document-state}
 
 ```csharp
 // Bad: Polling
@@ -360,7 +360,7 @@ var textDoc = editor.Document.TextDocument;
 textDoc.Changed += (s, e) => UpdateState();
 ```
 
-### Don't rebuild UI on every keystroke
+### 别每敲一个键就重建界面 {#dont-rebuild-ui-on-every-keystroke}
 
 ```csharp
 // Bad
@@ -375,7 +375,7 @@ textDoc.Changed += (s, e) =>
 };
 ```
 
-### Don't store full text copies for undo
+### 别为了撤销而保存整份文本副本 {#dont-store-full-text-copies-for-undo}
 
 ```csharp
 // Bad: Undo via full text
@@ -385,29 +385,29 @@ undoStack.Push(editor.Document.ContentRange?.GetText() ?? "");
 editor.UndoLimit = 100;
 ```
 
-## Profiling tips
+## 性能剖析小贴士 {#profiling-tips}
 
-### Use diagnostic tools
+### 善用诊断工具 {#use-diagnostic-tools}
 
 **Windows**: Visual Studio Performance Profiler  
-**macOS/Linux**: dotnet-trace, PerfView
+**macOS/Linux**：dotnet-trace、PerfView
 
-### Hot paths to monitor
+### 需要盯住的热点路径 {#hot-paths-to-monitor}
 
 1. `TextRange.DeleteText` / `ReplaceText` and `TextPointer.InsertText`
-2. Rope operations, which are internal and show up as time spent inside the above
-3. Layout in `TextViewBase` / `InteractiveTextView`, and in `PagedTextView` for page layout
-4. Event handlers on `TextDocument.TextChanged` and `TextDocument.Changed`
+2. rope 相关操作——它们是 internal 的，体现为上述各项所耗的时间
+3. `TextViewBase` / `InteractiveTextView` 中的布局，以及分页布局中 `PagedTextView` 的布局
+4. `TextDocument.TextChanged` 和 `TextDocument.Changed` 上的事件处理程序
 
-### Red flags
+### 危险信号 {#red-flags}
 
-- O(n^2) algorithms in custom event handlers
-- Excessive allocations (>1MB for simple edits)
-- Layout thrashing (multiple passes per edit)
-- Unbounded undo growth
+- 自定义事件处理程序中出现 O(n^2) 算法
+- 分配过多（简单编辑就超过 1MB）
+- 布局反复重算（一次编辑跑了好几遍布局）
+- 撤销栈无限膨胀
 
 ## 另请参阅 {#see-also}
 
 - [RichTextEditor 参考](/controls/input/text-input/richtexteditor)
 - [线程安全](/controls/input/text-input/richtexteditor/thread-safety)
-- [Extension patterns](/controls/input/text-input/richtexteditor/extension-patterns)
+- [扩展范式](/controls/input/text-input/richtexteditor/extension-patterns)

@@ -53,7 +53,7 @@ The pivot point for render transforms. In Avalonia, the default is `50%,50%` (ce
 | `ScaleTransform` | Scales the control. | `<ScaleTransform ScaleX="1.5" ScaleY="1.5" />` |
 | `TranslateTransform` | Moves the control visually. | `<TranslateTransform X="10" Y="-5" />` |
 | `SkewTransform` | Skews the control. | `<SkewTransform AngleX="15" />` |
-| `TransformGroup` | Combines multiple transforms. | See below. |
+| `TransformGroup` | Combines multiple transforms. | 见下文。 |
 
 ### 组合多个变换 {#combining-transforms}
 

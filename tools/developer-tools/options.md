@@ -1,7 +1,7 @@
 ---
 id: options
 title: Developer tools options
-sidebar_label: Options
+sidebar_label: 选项
 doc-type: reference
 ---
 

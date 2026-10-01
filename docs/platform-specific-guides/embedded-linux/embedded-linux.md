@@ -166,7 +166,7 @@ Touch input coordinates are automatically adjusted to match the configured orien
 Rotation uses an offscreen framebuffer and an OpenGL shader to transform the image. There is no performance cost when `Rotation0` is used.
 :::
 
-## Rendering performance
+## 渲染性能 {#rendering-performance}
 
 Embedded devices often render in software through the framebuffer, or use GPUs that are weaker than a desktop's. On this kind of hardware, the cost of painting pixels dominates each frame, so reducing the screen area Avalonia repaints has a larger impact than on a desktop GPU.
 
