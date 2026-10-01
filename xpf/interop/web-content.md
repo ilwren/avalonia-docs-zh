@@ -13,7 +13,7 @@ XPF provides several options for embedding web content in your application. The 
 | macOS | 不支持 | Supported | Supported | Supported |
 | Linux | 不支持 | 不支持 | Supported | Supported |
 | Embedding | In-window control | In-window control | Separate dialog | In-window control |
-| Keyboard input | Full | Full | Limited | Full |
+| 键盘输入 | Full | Full | Limited | Full |
 | Styling/CSS control | Full | Full | Limited | Full |
 | Engine | Chromium | WebView2 / WebKit | WebKit / WebView2 | Chromium |
 

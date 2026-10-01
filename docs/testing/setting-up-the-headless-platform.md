@@ -11,36 +11,36 @@ title: Headless Testing Platform
 
 ## 模拟用户输入 {#simulating-user-input}
 
-The headless platform has no real input devices, so you simulate input using extension methods on `Window`. These methods raise the same events that real input would trigger.
+无头平台没有真实的输入设备，所以输入要靠 `Window` 上的扩展方法来模拟。这些方法会触发与真实输入完全相同的事件。
 
-### Keyboard input
-
-| 方法 | 说明 |
-|---|---|
-| `Window.KeyPress(Key, RawInputModifiers, PhysicalKey, string?)` | Simulates a key press. |
-| `Window.KeyRelease(Key, RawInputModifiers, PhysicalKey, string?)` | Simulates a key release. |
-| `Window.KeyPressQwerty(PhysicalKey, RawInputModifiers)` | Simulates a key press using QWERTY layout mapping. |
-| `Window.KeyReleaseQwerty(PhysicalKey, RawInputModifiers)` | Simulates a key release using QWERTY layout mapping. |
-| `Window.KeyTextInput(string)` | Simulates text input (independent of key press/release). Use this for typing into `TextBox` and similar controls. |
-
-### Mouse input
+### 键盘输入 {#keyboard-input}
 
 | 方法 | 说明 |
 |---|---|
-| `Window.MouseDown(Point, MouseButton, RawInputModifiers)` | Simulates a mouse button press at the given position. |
-| `Window.MouseUp(Point, MouseButton, RawInputModifiers)` | Simulates a mouse button release. |
-| `Window.MouseMove(Point, MouseButton, RawInputModifiers)` | Simulates mouse movement. |
-| `Window.MouseWheel(Point, Vector, RawInputModifiers)` | Simulates a mouse wheel scroll. |
+| `Window.KeyPress(Key, RawInputModifiers, PhysicalKey, string?)` | 模拟按下某个键。 |
+| `Window.KeyRelease(Key, RawInputModifiers, PhysicalKey, string?)` | 模拟松开某个键。 |
+| `Window.KeyPressQwerty(PhysicalKey, RawInputModifiers)` | 按 QWERTY 布局映射模拟按下某个键。 |
+| `Window.KeyReleaseQwerty(PhysicalKey, RawInputModifiers)` | 按 QWERTY 布局映射模拟松开某个键。 |
+| `Window.KeyTextInput(string)` | 模拟文本输入（与按下/松开按键无关）。往 `TextBox` 这类控件里打字时用它。 |
+
+### 鼠标输入 {#mouse-input}
+
+| 方法 | 说明 |
+|---|---|
+| `Window.MouseDown(Point, MouseButton, RawInputModifiers)` | 在指定位置模拟按下鼠标按键。 |
+| `Window.MouseUp(Point, MouseButton, RawInputModifiers)` | 模拟松开鼠标按键。 |
+| `Window.MouseMove(Point, MouseButton, RawInputModifiers)` | 模拟鼠标移动。 |
+| `Window.MouseWheel(Point, Vector, RawInputModifiers)` | 模拟鼠标滚轮滚动。 |
 
 ### 拖放 {#drag-and-drop}
 
 | 方法 | 说明 |
 |---|---|
-| `Window.DragDrop(Point, RawDragEventType, DataObject, DragDropEffects, RawInputModifiers)` | Simulates an external drag-and-drop operation (for example, a user dragging files from the OS into your app). |
+| `Window.DragDrop(Point, RawDragEventType, DataObject, DragDropEffects, RawInputModifiers)` | 模拟来自外部的拖放操作（例如用户把文件从操作系统拖进你的应用）。 |
 
-## Common test patterns
+## 常见的测试套路 {#common-test-patterns}
 
-### Testing a button click
+### 测试按钮点击 {#testing-a-button-click}
 
 ```csharp
 [AvaloniaTest]
@@ -64,10 +64,10 @@ public void Button_Click_Updates_ViewModel()
 ```
 
 :::tip
-You can also raise events directly with `button.RaiseEvent(new RoutedEventArgs(Button.ClickEvent))`. This is convenient but does not execute bound commands. To test a command via keyboard, use `button.Focus()` followed by `window.KeyReleaseQwerty(PhysicalKey.Space, RawInputModifiers.None)`.
+你也可以用 `button.RaiseEvent(new RoutedEventArgs(Button.ClickEvent))` 直接触发事件。这样很省事，但不会执行绑定的命令。若想通过键盘测试命令，请先 `button.Focus()` 再 `window.KeyReleaseQwerty(PhysicalKey.Space, RawInputModifiers.None)`。
 :::
 
-### Testing text input
+### 测试文本输入 {#testing-text-input}
 
 ```csharp
 [AvaloniaTest]
@@ -84,7 +84,7 @@ public void TextBox_Accepts_Text_Input()
 }
 ```
 
-### Testing data binding
+### 测试数据绑定 {#testing-data-binding}
 
 ```csharp
 [AvaloniaTest]
@@ -112,7 +112,7 @@ public void TextBox_Binds_To_ViewModel()
 }
 ```
 
-### Testing keyboard shortcuts
+### 测试键盘快捷键 {#testing-keyboard-shortcuts}
 
 ```csharp
 [AvaloniaTest]
@@ -134,9 +134,9 @@ public void Ctrl_S_Triggers_Save()
 }
 ```
 
-### Testing a view with loaded XAML
+### 测试加载了 XAML 的视图 {#testing-a-view-with-loaded-xaml}
 
-You can instantiate your actual views in headless tests:
+在无头测试中，你可以直接实例化自己真实的视图：
 
 ```csharp
 [AvaloniaTest]
@@ -152,11 +152,11 @@ public void MainView_Shows_Welcome_Message()
 }
 ```
 
-## Flushing async operations
+## 冲刷异步操作 {#flushing-async-operations}
 
-Some operations in Avalonia are asynchronous (window resize, layout passes, deferred dispatcher jobs). If you set a property and immediately assert, the change may not have taken effect yet.
+Avalonia 中有些操作是异步的（窗口尺寸变化、布局过程、延迟派发的 dispatcher 任务）。如果你刚设完属性就断言，改动可能还没生效。
 
-Use `Dispatcher.UIThread.RunJobs()` to flush the dispatcher queue:
+可以用 `Dispatcher.UIThread.RunJobs()` 把 dispatcher 队列冲刷干净：
 
 ```csharp
 var window = new Window();
@@ -170,21 +170,21 @@ Dispatcher.UIThread.RunJobs();
 Assert.Equal(new Size(100, 100), window.ClientSize);
 ```
 
-You can also force the render timer to tick, which is useful when testing animations or render-dependent behavior:
+你还可以强制渲染计时器走一拍，这在测试动画或依赖渲染的行为时很有用：
 
 ```csharp
 AvaloniaHeadlessPlatform.ForceRenderTimerTick();
 ```
 
 :::tip
-The input helper methods and `CaptureRenderedFrame` call these internally, so you do not need to flush manually when using them.
+输入辅助方法和 `CaptureRenderedFrame` 内部已经调用了这些，所以用它们时不必手动冲刷。
 :::
 
-## Visual regression testing
+## 视觉回归测试 {#visual-regression-testing}
 
-By default, the headless platform uses a fake drawing backend that does not produce pixels. You can enable the Skia renderer to capture rendered frames and compare them against baseline images.
+无头平台默认使用一个不产生像素的假绘图后端。你可以启用 Skia 渲染器，捕获渲染出的帧并与基准图比对。
 
-### Enabling the Skia renderer
+### 启用 Skia 渲染器 {#enabling-the-skia-renderer}
 
 ```csharp title="App.axaml.cs"
 public static AppBuilder BuildAvaloniaApp() => AppBuilder.Configure<TestApplication>()
@@ -195,7 +195,7 @@ public static AppBuilder BuildAvaloniaApp() => AppBuilder.Configure<TestApplicat
     });
 ```
 
-### Capturing a frame
+### 捕获一帧 {#capturing-a-frame}
 
 ```csharp
 var window = new Window
@@ -208,11 +208,11 @@ var frame = window.CaptureRenderedFrame();
 frame.Save("output.png");
 ```
 
-`CaptureRenderedFrame` returns a `WriteableBitmap`. You can lock it and read pixel data for in-memory comparison.
+`CaptureRenderedFrame` 返回一个 `WriteableBitmap`。你可以把它锁定并读取像素数据，在内存中直接比对。
 
-### Comparing against a baseline
+### 与基准图比对 {#comparing-against-a-baseline}
 
-A common pattern for visual regression tests is to render a control, save the output, and compare it pixel-by-pixel against a known-good reference image:
+视觉回归测试的常见套路是：渲染控件、保存输出，再与一张已知正确的参考图逐像素比对：
 
 ```csharp
 [AvaloniaTest]
@@ -245,12 +245,12 @@ private static void AssertImagesMatch(Bitmap expected, WriteableBitmap actual,
 ```
 
 :::tip
-Avalonia uses this approach internally in its [render test suite](https://github.com/AvaloniaUI/Avalonia/tree/master/tests/Avalonia.RenderTests). Each test renders a control, saves the output as PNG, and compares it to a baseline image with a configurable error tolerance.
+Avalonia 自己的[渲染测试套件](https://github.com/AvaloniaUI/Avalonia/tree/master/tests/Avalonia.RenderTests)就是这么做的。每个测试渲染一个控件、把输出存为 PNG，再按可配置的误差容限与基准图比对。
 :::
 
-## Testing view models without UI
+## 脱离 UI 测试视图模型 {#testing-view-models-without-ui}
 
-View models that implement `INotifyPropertyChanged` or use `ReactiveUI` can be tested with plain unit tests without the headless platform. You only need the headless platform when your test involves Avalonia controls, layout, or input.
+实现了 `INotifyPropertyChanged` 或用了 `ReactiveUI` 的视图模型，用普通单元测试就能测，不需要无头平台。只有当测试牵涉 Avalonia 控件、布局或输入时，才用得上无头平台。
 
 ```csharp
 // No [AvaloniaTest] needed, just a regular [Fact]
@@ -265,20 +265,20 @@ public void ViewModel_Increments_Count()
 }
 ```
 
-## Manual setup
+## 手动配置 {#manual-setup}
 
 :::caution
-This is an advanced usage scenario. For most cases, use the [XUnit](/docs/testing/headless-xunit) or [NUnit](/docs/testing/headless-nunit) integration, which handles setup automatically.
+这属于进阶用法。多数情况下请直接用 [XUnit](/docs/testing/headless-xunit) 或 [NUnit](/docs/testing/headless-nunit) 集成，配置的活儿它们都替你办了。
 :::
 
 ### 安装包 {#install-packages}
 
-You need two packages:
-- [Avalonia.Headless](https://www.nuget.org/packages/Avalonia.Headless) (includes Avalonia)
-- [Avalonia.Themes.Fluent](https://www.nuget.org/packages/Avalonia.Themes.Fluent) (headless controls need a theme)
+你需要两个包：
+- [Avalonia.Headless](https://www.nuget.org/packages/Avalonia.Headless)（已包含 Avalonia）
+- [Avalonia.Themes.Fluent](https://www.nuget.org/packages/Avalonia.Themes.Fluent)（无头控件也需要一套主题）
 
 :::tip
-The headless platform does not require a specific theme. You can swap `FluentTheme` for any other theme.
+无头平台并不挑主题，你可以把 `FluentTheme` 换成任何其他主题。
 :::
 
 ### 搭建应用 {#setup-application}
@@ -306,7 +306,7 @@ public class App : Application
 }
 ```
 
-### Run a headless session
+### 跑一次无头会话 {#run-a-headless-session}
 
 ```csharp title="Program.cs"
 using Avalonia.Controls;
@@ -330,7 +330,7 @@ await session.Dispatch(() =>
 
 ## 另请参阅 {#see-also}
 
-- [Headless Testing with XUnit](/docs/testing/headless-xunit): XUnit integration with `[AvaloniaFact]`.
-- [Headless Testing with NUnit](/docs/testing/headless-nunit): NUnit integration with `[AvaloniaTest]`.
-- [UI Testing with Appium](/docs/testing/ui-testing-with-appium): End-to-end testing with a real application window.
-- [Avalonia's test suite](https://github.com/AvaloniaUI/Avalonia/tree/master/tests): How Avalonia tests itself.
+- [用 XUnit 做无头测试](/docs/testing/headless-xunit)：基于 `[AvaloniaFact]` 的 XUnit 集成。
+- [用 NUnit 做无头测试](/docs/testing/headless-nunit)：基于 `[AvaloniaTest]` 的 NUnit 集成。
+- [用 Appium 做 UI 测试](/docs/testing/ui-testing-with-appium)：借助真实的应用窗口做端到端测试。
+- [Avalonia 的测试套件](https://github.com/AvaloniaUI/Avalonia/tree/master/tests)：Avalonia 是怎么测自己的。

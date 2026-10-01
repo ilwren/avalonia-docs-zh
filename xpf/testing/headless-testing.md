@@ -64,7 +64,7 @@ public class TestAppBuilder
 }
 ```
 
-## Writing tests
+## 编写测试 {#writing-tests}
 
 Your tests are running in the same process as the XPF application, making it easier to send any events and access any output of the app.
 As with normal WPF app, everything has to start with a Window, which can be create in the same test method, or reused from set-up methods (`[SetUp]` method in NUnit or constructor in XUnit).
