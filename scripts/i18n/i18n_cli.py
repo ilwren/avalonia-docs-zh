@@ -101,25 +101,21 @@ def tm_path(name: str) -> Path:
     return TM_DIR / name
 
 
-def load_tm(scope: str) -> dict[str, str]:
-    merged: dict[str, str] = {}
-    names = {TM_FILES[s] for s in (SCOPES.keys() if scope == "all" else [scope])
-             if s in TM_FILES}
-    if scope == "all":
-        names = set(TM_FILES.values())
-    for name in sorted(names):
-        p = tm_path(name)
-        if p.exists():
-            merged.update(json.loads(p.read_text(encoding="utf8")))
-    return merged
-
-
 def load_all_tm() -> dict[str, str]:
+    """合并各个片段记忆库。
+
+    只收录 TM_FILES 里登记的文件：tm/ 下还放着 ui.json（侧边栏标签，结构是嵌套
+    字典，由 apply_ui.py 单独处理）和 *.todo.json（待译清单），都不能混进来。
+    """
     merged: dict[str, str] = {}
-    for p in sorted(TM_DIR.glob("*.json")):
-        if p.name.endswith(".todo.json"):
+    for name in sorted(set(TM_FILES.values())):
+        p = tm_path(name)
+        if not p.exists():
             continue
-        merged.update(json.loads(p.read_text(encoding="utf8")))
+        data = json.loads(p.read_text(encoding="utf8"))
+        if not all(isinstance(v, str) for v in data.values()):
+            raise SystemExit(f"{p.name} 不是扁平的「源文 -> 译文」映射")
+        merged.update(data)
     return merged
 
 
