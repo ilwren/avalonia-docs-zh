@@ -1,28 +1,28 @@
 ---
 id: versioning
-title: XPF versioning
-description: Learn how to select and configure XPF package versions, including stable releases and nightly builds.
+title: XPF 版本管理
+description: 了解如何选择和配置 XPF 的包版本，包括稳定版和夜间构建。
 doc-type: how-to
 ---
 
-## Choosing a version
+## 选择版本 {#choosing-a-version}
 
-For production releases, you should use the latest stable version. You can find details about each stable release in the [release notes](/xpf/version-info/release-notes). For day-to-day development, you may prefer to update to the latest nightly build to access new features and bug fixes sooner.
+正式发布请用最新的稳定版，各稳定版的详情可在[发行说明](/xpf/version-info/release-notes)中查到。日常开发中，你或许更愿意跟进最新的夜间构建，好早点用上新功能和缺陷修复。
 
-You can browse all available versions on the [XPF NuGet server](https://xpf-nuget-feed.avaloniaui.net/packages/xpf.sdk).
+所有可用版本都可在 [XPF NuGet 服务器](https://xpf-nuget-feed.avaloniaui.net/packages/xpf.sdk)上浏览。
 
-## Accessing the NuGet feed
+## 访问 NuGet 源 {#accessing-the-nuget-feed}
 
-The XPF NuGet feed requires authentication. To log into the web portal or configure your NuGet client, use the following credentials:
+XPF 的 NuGet 源需要认证。登录网页门户或配置 NuGet 客户端时，请使用以下凭据：
 
 - **Username:** `license`
-- **Password:** your XPF license key
+- **密码：**你的 XPF 许可证密钥
 
-When you add the feed to your `NuGet.config` file, supply these same credentials so that `dotnet restore` and Visual Studio can pull packages automatically.
+把该源加进 `NuGet.config` 文件时也要填上这组凭据，这样 `dotnet restore` 和 Visual Studio 才能自动拉取包。
 
-## Configuring feeds for nightly builds
+## 为夜间构建配置源 {#configuring-feeds-for-nightly-builds}
 
-Nightly builds of XPF may depend on pre-release versions of Avalonia. To make sure all dependencies resolve correctly, add the following package sources to your `NuGet.config` file (see [getting started, step 2](/xpf/getting-started#step-2-add-a-nugetconfig) for the full setup):
+XPF 的夜间构建可能依赖 Avalonia 的预发布版本。为确保所有依赖都能正确解析，请把下列包源加进你的 `NuGet.config` 文件（完整配置见[快速上手第 2 步](/xpf/getting-started#step-2-add-a-nugetconfig)）：
 
 ```xml
 <add key="api.nuget.org" value="https://api.nuget.org/v3/index.json" />
@@ -30,11 +30,11 @@ Nightly builds of XPF may depend on pre-release versions of Avalonia. To make su
 <add key="avalonia-nightly" value="https://nuget-feed-all.avaloniaui.net/v3/index.json" />
 ```
 
-The `avalonia-nightly` feed is only required when you are consuming nightly XPF builds. If you are using a stable XPF release, you can omit it.
+只有在使用 XPF 夜间构建时才需要 `avalonia-nightly` 这个源。若你用的是 XPF 稳定版，可以不加它。
 
-## Pinning a specific version
+## 钉死某个特定版本 {#pinning-a-specific-version}
 
-To lock your project to a particular XPF version, set the `XpfVersion` property in your project file or a `Directory.Build.props`:
+要把项目锁定到某个 XPF 版本，请在项目文件或 `Directory.Build.props` 中设置 `XpfVersion` 属性：
 
 ```xml
 <PropertyGroup>
@@ -42,10 +42,10 @@ To lock your project to a particular XPF version, set the `XpfVersion` property 
 </PropertyGroup>
 ```
 
-Pinning a version prevents unexpected upgrades and ensures that every developer on your team builds against the same packages.
+钉死版本可以避免意外升级，也能确保团队里每个人构建时用的都是同一批包。
 
 ## 另请参阅 {#see-also}
 
 - [发行说明](/xpf/version-info/release-notes)
-- [Missing features](/xpf/version-info/missing-features)
-- [Getting started](/xpf/getting-started)
+- [尚未支持的特性](/xpf/version-info/missing-features)
+- [快速上手](/xpf/getting-started)
