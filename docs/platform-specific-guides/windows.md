@@ -190,7 +190,7 @@ A typical setup requires at least two projects:
 
 Since Windows Forms only runs on Windows, embedding Avalonia controls into a WinForms app does not make it cross-platform. For cross-platform support, you must migrate fully to an Avalonia desktop project.
 
-### Setup
+### 配置 {#setup}
 
 :::note
 These instructions assume you use Visual Studio with the Avalonia for Visual Studio extension. If you use VS Code or Rider, you can skip the optional `YourApp.Desktop` project.

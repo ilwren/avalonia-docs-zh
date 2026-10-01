@@ -383,7 +383,7 @@ Use the latest version if available. You can check for newer versions in the IDE
 On Windows, when WebView2 is not available, legacy Internet Explorer is embedded. This is useful when targeting older Windows versions.
 :::
 
-### Usage
+### 用法 {#usage}
 
 Add the XPF namespace to your XAML file and use `NativeWebView`:
 

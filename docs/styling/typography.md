@@ -204,7 +204,7 @@ Because `LetterSpacing` is an inherited attached property defined on `TextElemen
 
 Use `LineHeight` when you need precise control over line dimensions. Use `LineSpacing` when you want to add breathing room between lines without overriding the font's natural metrics.
 
-## Text alignment
+## 文本对齐 {#text-alignment}
 
 `TextAlignment` controls the horizontal positioning of text within its container.
 

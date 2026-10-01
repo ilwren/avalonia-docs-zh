@@ -6,9 +6,9 @@ title: TreeView
 import TreeViewAnimalHierarchyScreenshot from '/img/controls/treeview/treeview-animal-hierarchy.gif';
 import TreeViewEnhancedAnimalHierarchyScreenshot from '/img/controls/treeview/treeview-enhanced-animal-hierarchy.gif';
 
-The `TreeView` control can present hierarchical data and allows item selection. The items are templated so you can customise how they are displayed.
+`TreeView` 控件可以呈现层级数据，并支持选中条目。条目都套用模板，因此外观可由你定制。
 
-There are two data sources: the main items source for the control, this gives the root of the hierarchical data. Then there is the items source in the item template which allows the control to list the next level in the hierarchical data.
+这里有两处数据源：一处是控件的主条目源，给出层级数据的根；另一处是条目模板中的条目源，它让控件能列出层级数据的下一层。
 
 ## 常用属性 {#useful-properties}
 
@@ -28,7 +28,7 @@ There are two data sources: the main items source for the control, this gives th
     </tr>
     <tr>
       <td><code>ItemsControl.ItemTemplate</code></td>
-      <td>The item template, contains a DataTemplate which will be applied to individual items and can be used to change how items look.</td>
+      <td>条目模板中包含一个 DataTemplate，它会套用到每个条目上，用来改变条目的外观。</td>
     </tr>
     <tr>
       <td><code>ItemsControl.ItemsPanel</code></td>
@@ -43,7 +43,7 @@ There are two data sources: the main items source for the control, this gives th
 
 ## Example
 
-This example uses a MVVM pattern view model to hold some hierarchical data based on a C# node class. In this example, there is a single root node in the `Nodes` collection of the view model:
+下面这个例子采用 MVVM 写法，在视图模型中用一个 C# 节点类保存层级数据。例子里，视图模型的 `Nodes` 集合中只有一个根节点：
 
 ```xml
 <TreeView ItemsSource="{Binding Nodes}">
@@ -106,11 +106,11 @@ namespace AvaloniaControls.Models
 }
 ```
 
-By default the root node (or nodes) is shown. The user can expand or contract each node by clicking on the adjacent arrow. Clicking on the node title selects the item. On touch and pen devices, selection occurs on pointer release rather than press, allowing scroll gestures to start on a node without changing the selection.
+默认会显示根节点（可以有多个）。用户点击节点旁的箭头即可展开或收起，点击节点标题则选中该项。在触摸和手写笔设备上，选择发生在指针抬起时而非按下时，这样用户就能从某个节点上开始滚动，而不会误改选择。
 
 <Image light={TreeViewAnimalHierarchyScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-This is a development of the previous example with multiple root nodes, a revised item template, and an initial selection made in the view model code:
+下面这个例子在前一个的基础上作了发挥：改用多个根节点、调整了条目模板，并在视图模型代码中预先选中了一项：
 
 ```xml
 <TreeView Margin="10"
@@ -196,13 +196,13 @@ namespace AvaloniaControls.Models
 }
 ```
 
-The tree view adds a scroll bar when it is needed. The selection can be extended by holding down the Ctrl key.
+树视图会在需要时加上滚动条。按住 Ctrl 键可以扩展选择范围。
 
 <Image light={TreeViewEnhancedAnimalHierarchyScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Expansion events
+## 展开相关事件 {#expansion-events}
 
-`TreeViewItem` raises `Expanded` and `Collapsed` routed events when items are expanded or collapsed. These events bubble up, so you can handle them at the `TreeView` level:
+条目展开或折叠时，`TreeViewItem` 会触发 `Expanded` 和 `Collapsed` 两个路由事件。它们会向上冒泡，因此你可以在 `TreeView` 这一层统一处理：
 
 ```csharp
 treeView.AddHandler(TreeViewItem.ExpandedEvent, (sender, args) =>
@@ -220,5 +220,5 @@ treeView.AddHandler(TreeViewItem.CollapsedEvent, (sender, args) =>
 
 ## 另请参阅 {#see-also}
 
-- [TreeView API reference](/api/avalonia/controls/treeview)
+- [TreeView API 参考](/api/avalonia/controls/treeview)
 - [GitHub 上的 `TreeView.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TreeView.cs)

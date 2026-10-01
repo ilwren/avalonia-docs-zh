@@ -1,39 +1,39 @@
 ---
 id: textblock
 title: TextBlock
-description: A read-only control for displaying formatted text, supporting multiple lines, inline formatting, and full font control.
+description: 一个只读控件，用于显示带格式的文本，支持多行、行内格式和完整的字体控制。
 doc-type: reference
 ---
 
 import TextBlockRunScreenshot from '/img/controls/textblock/textblock-run.png';
 import TextBlockUIContainerScreenshot from '/img/controls/textblock/textblock-uicontainer.png';
 
-The [`TextBlock`](/api/avalonia/controls/textblock) is a read-only label for displaying text. It can display multiple lines and gives you full control over the font used. For text that your users need to select and copy, use `SelectableTextBlock` instead.
+[`TextBlock`](/api/avalonia/controls/textblock) 是一个只读标签，用于显示文字。它可以显示多行，字体也完全可控。若用户需要选中并复制这些文字，请改用 `SelectableTextBlock`。
 
 ## 常用属性 {#common-properties}
 
 | 属性          | 类型                       | 说明                                                                                                                                                                                                           |
 | ----------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Text`            | `string`                   | The text to display.                                                                                                                                                                                                  |
-| `FontSize`        | `double`                   | The size of the font in device-independent pixels.                                                                                                                                                                    |
-| `FontWeight`      | `FontWeight`               | The weight of the font. Default is `Normal`, options include `Bold`.                                                                                                                                                  |
-| `FontStyle`       | `FontStyle`                | A style to apply to the lettering. Default is `Normal`, options include `Italic`.                                                                                                                                     |
-| `FontFamily`      | `FontFamily`               | The font family used to render text. You can specify fallback fonts as a comma-separated list.                                                                                                                        |
-| `Foreground`      | `IBrush`                   | The brush used to paint the text.                                                                                                                                                                                     |
-| `Background`      | `IBrush`                   | The brush used to paint the area behind the text.                                                                                                                                                                     |
-| `TextAlignment`   | [`TextAlignment`](/api/avalonia/media/textalignment) | Controls horizontal alignment of text within the control. Options are `Left`, `Center`, `Right`, `Justify`, and `DetectFromContent`.                                                                                  |
-| `TextWrapping`    | [`TextWrapping`](/api/avalonia/media/textwrapping) | Controls whether text wraps when it reaches the edge of the control. Options are `NoWrap` (default), `Wrap`, and `WrapWithOverflow`.                                                                                  |
-| `TextTrimming`    | [`TextTrimming`](/api/avalonia/media/texttrimming) | Controls how text is trimmed when it overflows. Options include `None` (default), `CharacterEllipsis`, `WordEllipsis`, and others. See [TextTrimming](/controls/data-display/text-display/texttrimming) for full details.                                  |
-| `MaxLines`        | `int`                      | Limits the number of visible lines. When combined with `TextWrapping` and `TextTrimming`, overflow is trimmed after this many lines.                                                                                   |
-| `LineHeight`      | `double`                   | The height of each line of text. Set to `NaN` (the default) to let the font metrics determine line height.                                                                                                            |
-| `TextDecorations` | `TextDecorationCollection` | A line decoration to apply to the lettering. Default is none, options include `Underline`, `Strikethrough`, `Baseline`, and `Overline`. To apply more than one at the same time, list the options with spaces between. |
-| `LetterSpacing`   | `double`                   | Extra spacing between characters in device-independent pixels. Default is `0`. This is an inherited attached property from `TextElement`, so you can also set it on parent controls.                                   |
-| `Padding`         | `Thickness`                | Space between the control boundary and the text content.                                                                                                                                                              |
-| `xml:space`       | XML attribute              | Set `xml:space="preserve"` to direct the XML parser to preserve line breaks and whitespace. Without this attribute, whitespace is stripped by default.                                                                 |
+| `Text`            | `string`                   | 要显示的文本。                                                                                                                                                                                                  |
+| `FontSize`        | `double`                   | 字号，单位为设备无关像素。                                                                                                                                                                    |
+| `FontWeight`      | `FontWeight`               | 字重。默认为 `Normal`，可选值包括 `Bold`。                                                                                                                                                  |
+| `FontStyle`       | `FontStyle`                | 作用于字形的样式。默认为 `Normal`，可选值包括 `Italic`。                                                                                                                                     |
+| `FontFamily`      | `FontFamily`               | 渲染文本所用的字体族。可以用逗号分隔列出若干后备字体。                                                                                                                        |
+| `Foreground`      | `IBrush`                   | 绘制文字所用的画刷。                                                                                                                                                                                     |
+| `Background`      | `IBrush`                   | 绘制文字背后区域所用的画刷。                                                                                                                                                                     |
+| `TextAlignment`   | [`TextAlignment`](/api/avalonia/media/textalignment) | 控制文本在控件内的水平对齐方式。可选值有 `Left`、`Center`、`Right`、`Justify` 和 `DetectFromContent`。                                                                                  |
+| `TextWrapping`    | [`TextWrapping`](/api/avalonia/media/textwrapping) | 控制文本到达控件边缘时是否换行。可选值有 `NoWrap`（默认）、`Wrap` 和 `WrapWithOverflow`。                                                                                  |
+| `TextTrimming`    | [`TextTrimming`](/api/avalonia/media/texttrimming) | 控制文本溢出时如何截断。可选值包括 `None`（默认）、`CharacterEllipsis`、`WordEllipsis` 等。完整说明请参阅 [TextTrimming](/controls/data-display/text-display/texttrimming)。                                  |
+| `MaxLines`        | `int`                      | 限制可见行数。与 `TextWrapping` 和 `TextTrimming` 搭配使用时，超过这么多行之后的内容会被截断。                                                                                   |
+| `LineHeight`      | `double`                   | 每行文字的行高。设为 `NaN`（默认）则由字体度量决定行高。                                                                                                            |
+| `TextDecorations` | `TextDecorationCollection` | 作用于字形的线条装饰。默认为 none，可选值包括 `Underline`、`Strikethrough`、`Baseline` 和 `Overline`。要同时套用多项，用空格分隔列出即可。 |
+| `LetterSpacing`   | `double`                   | 字符之间的额外间距，单位为设备无关像素，默认为 `0`。它是继承自 `TextElement` 的可继承附加属性，因此也可以设在父控件上。                                   |
+| `Padding`         | `Thickness`                | 控件边界与文字内容之间的间距。                                                                                                                                                              |
+| `xml:space`       | XML 特性              | 设置 `xml:space="preserve"` 可让 XML 解析器保留换行和空白。不加这个特性，空白默认会被剥除。                                                                 |
 
 ## 基本示例 {#basic-example}
 
-This example demonstrates using multiple `TextBlock` controls to show a heading, a single line containing extra space, and multi-line displays.
+下面这个例子用多个 `TextBlock` 控件分别呈现标题、含额外空格的单行文字，以及多行文字。
 
 <XamlPreview>
 
@@ -52,15 +52,15 @@ This example demonstrates using multiple `TextBlock` controls to show a heading,
 
 </XamlPreview>
 
-## Text wrapping
+## 文本换行 {#text-wrapping}
 
-By default, `TextBlock` does not wrap text. When the text is wider than the available space, it is clipped. Set `TextWrapping` to control this behavior:
+`TextBlock` 默认不换行，文字比可用空间宽时会被裁掉。设置 `TextWrapping` 可以改变这一行为：
 
 | 值             | 行为                                                                                      |
 | ----------------- | --------------------------------------------------------------------------------------------- |
-| `NoWrap`          | Text is not wrapped and may be clipped (default).                                             |
-| `Wrap`            | Text wraps at the nearest character that fits within the available width.                     |
-| `WrapWithOverflow`| Text wraps where possible, but allows a single word to overflow if it is wider than the control. |
+| `NoWrap`          | 不换行，文字可能被裁掉（默认）。                                             |
+| `Wrap`            | 在可用宽度内最靠近边缘、放得下的那个字符处换行。                     |
+| `WrapWithOverflow`| 尽量换行，但若某个单词比控件还宽，则允许它溢出。 |
 
 ```xml
 <TextBlock Width="200"
@@ -68,9 +68,9 @@ By default, `TextBlock` does not wrap text. When the text is wider than the avai
            Text="This is a long sentence that will wrap when it reaches the edge of the control." />
 ```
 
-## Text trimming
+## 文本截断 {#text-trimming}
 
-When text overflows the available space, you can display an ellipsis instead of clipping abruptly. Set the `TextTrimming` property to control where the ellipsis appears. Common options include `CharacterEllipsis` and `WordEllipsis`.
+文字超出可用空间时，与其生硬地裁掉，不如显示一个省略号。设置 `TextTrimming` 属性即可控制省略号出现在哪里，常用取值有 `CharacterEllipsis` 和 `WordEllipsis`。
 
 ```xml
 <TextBlock Width="150"
@@ -78,7 +78,7 @@ When text overflows the available space, you can display an ellipsis instead of 
            Text="This text will be trimmed with an ellipsis." />
 ```
 
-You can combine `TextWrapping`, `TextTrimming`, and `MaxLines` to wrap text for a fixed number of lines and trim the overflow on the last line:
+你可以把 `TextWrapping`、`TextTrimming` 和 `MaxLines` 组合起来，让文字换行到固定的行数，并在最后一行截断溢出部分：
 
 ```xml
 <TextBlock Width="200"
@@ -88,11 +88,11 @@ You can combine `TextWrapping`, `TextTrimming`, and `MaxLines` to wrap text for 
            Text="This is a long paragraph that wraps for up to three lines, then trims any remaining overflow with an ellipsis." />
 ```
 
-For a full list of trimming modes and visual examples, see [TextTrimming](/controls/data-display/text-display/texttrimming).
+完整的截断模式清单和效果示例，请参阅 [TextTrimming](/controls/data-display/text-display/texttrimming)。
 
-## Text alignment
+## 文本对齐 {#text-alignment}
 
-Use the `TextAlignment` property to control how text is positioned horizontally within the control:
+用 `TextAlignment` 属性控制文字在控件内的水平摆放方式：
 
 ```xml
 <StackPanel Width="300" Spacing="8">
@@ -106,11 +106,11 @@ Use the `TextAlignment` property to control how text is positioned horizontally 
 
 ## Inlines
 
-Text inlines allow diverse formatting of text and controls inside a single `TextBlock`. While `TextBlock.Text` is routinely used to display a single uniformly formatted text, the child content allows for a collection of inlines.
+文本行内元素让你能在一个 `TextBlock` 内部混排各式各样的格式和控件。`TextBlock.Text` 通常只用来显示一段格式统一的文字，而它的子内容则可以容纳一组行内元素。
 
 ### Run
 
-The `Run` inline represents a contiguous run of uniformly formatted text. You can bind `Run.Text` to a view model property and style each run independently.
+`Run` 行内元素表示一段格式统一的连续文字。你可以把 `Run.Text` 绑定到视图模型的属性，并为每一段单独设置样式。
 
 ```xml
 <TextBlock xmlns="https://github.com/avaloniaui">
@@ -133,7 +133,7 @@ The `Run` inline represents a contiguous run of uniformly formatted text. You ca
 
 ### LineBreak
 
-The `LineBreak` inline forces a line break within the text flow.
+`LineBreak` 行内元素在文本流中强制换行。
 
 <XamlPreview>
 
@@ -147,7 +147,7 @@ The `LineBreak` inline forces a line break within the text flow.
 
 ### Span
 
-The [`Span`](/api/avalonia/controls/documents/span) inline groups other inlines together and can apply its own formatting. Avalonia also provides predefined formatting inlines derived from `Span`: `Bold`, `Italic`, and `Underline`. You can derive from `Span` to create your own formatting instead of using styles.
+[`Span`](/api/avalonia/controls/documents/span) 行内元素把其他行内元素归为一组，并可套用自己的格式。Avalonia 还提供了几个派生自 `Span` 的预设格式行内元素：`Bold`、`Italic` 和 `Underline`。除了写样式，你也可以派生 `Span` 来定义自己的格式。
 
 <XamlPreview>
 
@@ -167,7 +167,7 @@ The [`Span`](/api/avalonia/controls/documents/span) inline groups other inlines 
 
 ### InlineUIContainer
 
-The `InlineUIContainer` allows you to embed any `Control` as an inline element within the text flow.
+`InlineUIContainer` 让你能把任意 `Control` 当作行内元素嵌进文本流中。
 
 ```xml
 <TextBlock xmlns="https://github.com/avaloniaui"
@@ -195,5 +195,5 @@ The `InlineUIContainer` allows you to embed any `Control` as an inline element w
 - [SelectableTextBlock](/controls/data-display/text-display/selectabletextblock)
 - [Label](/controls/data-display/text-display/label)
 - [TextTrimming](/controls/data-display/text-display/texttrimming)
-- [TextBlock API reference](/api/avalonia/controls/textblock)
+- [TextBlock API 参考](/api/avalonia/controls/textblock)
 - [GitHub 上的 `TextBlock.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBlock.cs)

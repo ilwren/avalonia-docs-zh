@@ -1,38 +1,38 @@
 ---
 id: selectabletextblock
 title: SelectableTextBlock
-description: A read-only text label that allows users to select and copy displayed text.
+description: 一个只读文本标签，允许用户选中并复制其中显示的文字。
 doc-type: reference
 ---
 
-The `SelectableTextBlock` is a read-only label for displaying text that your users can select and copy. It behaves like `TextBlock` but adds built-in support for text selection with mouse or keyboard. It can display multiple lines and provides full control over the font used.
+`SelectableTextBlock` 是一个只读标签，用于显示文字，并允许用户选中和复制。它的表现与 `TextBlock` 类似，但内置了用鼠标或键盘选择文本的能力。它可以显示多行文字，字体也完全可控。
 
 ## 常用属性 {#common-properties}
 
 | 属性                   | 类型        | 说明                                                                                                                                                                                                           |
 | -------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Text`                     | `string`    | The text to display.                                                                                                                                                                                                  |
-| `SelectionStart`           | `int`       | The character index for the start of the current selection.                                                                                                                                                           |
-| `SelectionEnd`             | `int`       | The character index for the end of the current selection.                                                                                                                                                             |
-| `SelectedText`             | `string`    | Gets the currently selected text (read-only).                                                                                                                                                                         |
-| `SelectionBrush`           | `IBrush`    | The brush used to highlight selected text.                                                                                                                                                                            |
-| `SelectionForegroundBrush` | `IBrush`    | The brush used for the foreground of selected text.                                                                                                                                                                   |
-| `FontSize`                 | `double`    | The size of the font.                                                                                                                                                                                                 |
-| `FontWeight`               | `FontWeight`| The weight of the font. Default is normal, options include `Bold`.                                                                                                                                                    |
-| `FontStyle`                | `FontStyle` | A style to apply to the lettering. Default is normal, options include `Italic`.                                                                                                                                       |
-| `TextDecorations`          | `TextDecorationCollection` | A line decoration to apply to the lettering. Default is none, options include `Underline`, `Strikethrough`, `Baseline` and `Overline`. To apply more than one at the same time, list the options with spaces between. |
-| `TextWrapping`             | `TextWrapping` | Controls whether text wraps when it reaches the edge of the control. Options include `NoWrap`, `Wrap`, and `WrapWithOverflow`.                                                                                    |
-| `xml:space`                | XML attribute | Set `xml:space="preserve"` to direct the XML parser to preserve line breaks and whitespace. Without this attribute, whitespace is stripped by default.                                                              |
+| `Text`                     | `string`    | 要显示的文本。                                                                                                                                                                                                  |
+| `SelectionStart`           | `int`       | 当前选区起点的字符索引。                                                                                                                                                           |
+| `SelectionEnd`             | `int`       | 当前选区终点的字符索引。                                                                                                                                                             |
+| `SelectedText`             | `string`    | 获取当前选中的文本（只读）。                                                                                                                                                                         |
+| `SelectionBrush`           | `IBrush`    | 高亮选中文本所用的画刷。                                                                                                                                                                            |
+| `SelectionForegroundBrush` | `IBrush`    | 选中文本前景色所用的画刷。                                                                                                                                                                   |
+| `FontSize`                 | `double`    | 字号。                                                                                                                                                                                                 |
+| `FontWeight`               | `FontWeight`| 字重。默认为 normal，可选值包括 `Bold`。                                                                                                                                                    |
+| `FontStyle`                | `FontStyle` | 作用于字形的样式。默认为 normal，可选值包括 `Italic`。                                                                                                                                       |
+| `TextDecorations`          | `TextDecorationCollection` | 作用于字形的线条装饰。默认为 none，可选值包括 `Underline`、`Strikethrough`、`Baseline` 和 `Overline`。要同时套用多项，用空格分隔列出即可。 |
+| `TextWrapping`             | `TextWrapping` | 控制文本到达控件边缘时是否换行。可选值包括 `NoWrap`、`Wrap` 和 `WrapWithOverflow`。                                                                                    |
+| `xml:space`                | XML 特性 | 设置 `xml:space="preserve"` 可让 XML 解析器保留换行和空白。不加这个特性，空白默认会被剥除。                                                              |
 
 ## 事件 {#events}
 
 | 事件                | 说明                                                        |
 | -------------------- | ------------------------------------------------------------------ |
-| `CopyingToClipboard` | Raised when the selected text is being copied to the clipboard. Can be used to modify or cancel the copy operation. |
+| `CopyingToClipboard` | 选中的文本被复制到剪贴板时触发。可用它修改或取消这次复制操作。 |
 
 ## 基本示例 {#basic-example}
 
-This example shows selectable text used as a heading, a single line with a custom selection brush, and a multi-line display with a pre-set selection range.
+下面这个例子展示了三种用法：把可选中文本用作标题、配上自定义选区画刷的单行文本，以及预先设好选区范围的多行文本。
 
 <XamlPreview>
 
@@ -57,9 +57,9 @@ This example shows selectable text used as a heading, a single line with a custo
 
 </XamlPreview>
 
-## Selecting text programmatically
+## 用代码选中文本 {#selecting-text-programmatically}
 
-You can control which portion of text is selected by setting the `SelectionStart` and `SelectionEnd` properties in your code-behind or view model.
+你可以在代码隐藏或视图模型中设置 `SelectionStart` 和 `SelectionEnd` 属性，来控制选中哪一段文字。
 
 ```xml
 <SelectableTextBlock x:Name="MyTextBlock"
@@ -75,16 +75,16 @@ private void OnSelectClicked(object? sender, RoutedEventArgs e)
 }
 ```
 
-You can also select all text by setting `SelectionStart` to `0` and `SelectionEnd` to the length of the text.
+把 `SelectionStart` 设为 `0`、`SelectionEnd` 设为文本长度，即可全选。
 
 ```csharp
 MyTextBlock.SelectionStart = 0;
 MyTextBlock.SelectionEnd = MyTextBlock.Text?.Length ?? 0;
 ```
 
-## Customizing selection appearance
+## 定制选区外观 {#customizing-selection-appearance}
 
-You can customize how selected text looks by setting `SelectionBrush` and `SelectionForegroundBrush`.
+设置 `SelectionBrush` 和 `SelectionForegroundBrush` 即可定制选中文本的外观。
 
 ```xml
 <SelectableTextBlock Text="Custom selection colors"
@@ -96,5 +96,5 @@ You can customize how selected text looks by setting `SelectionBrush` and `Selec
 
 - [TextBlock](/controls/data-display/text-display/textblock)
 - [Label](/controls/data-display/text-display/label)
-- [SelectableTextBlock API reference](/api/avalonia/controls/selectabletextblock)
+- [SelectableTextBlock API 参考](/api/avalonia/controls/selectabletextblock)
 - [GitHub 上的 `SelectableTextBlock.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SelectableTextBlock.cs)

@@ -59,7 +59,7 @@ For information on publishing and deploying your WebAssembly app, see [Deploying
 
 Avalonia Browser apps can call JavaScript from C# and expose C# methods to JavaScript using the standard `[JSImport]`/`[JSExport]` interop API from .NET. This API is part of the `System.Runtime.InteropServices.JavaScript` namespace and works in any .NET WebAssembly application.
 
-### Setup
+### 配置 {#setup}
 
 Add `AllowUnsafeBlocks` to your Browser project file. The .NET source generator that produces the interop bindings requires this:
 

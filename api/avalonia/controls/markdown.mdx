@@ -90,11 +90,11 @@ public Markdown()
 | [BeginStreaming](#uid-070b1602a7) | Begins a streaming session. The control enters append mode where [Avalonia.Controls.MarkdownStreamingSession.Append(string)](xref:Avalonia.Controls.MarkdownStreamingSession.Append%28System.String%29) can be called to incrementally add markdown content. |
 | [Bind（8 个重载）](../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [ClearSelection](#uid-a573ec0ae9) | Clears the current selection. |
+| [ClearSelection](#uid-a573ec0ae9) | 清除当前选区。 |
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Copy](#uid-bc93dcb05b) | Copies the current selection to the clipboard without waiting for the clipboard write. |
-| [CopyAsync](#uid-c24ff6c985) | Copies the current selection to the clipboard. |
+| [CopyAsync](#uid-c24ff6c985) | 把当前选区复制到剪贴板。 |
 | [EndInit](../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Focus](../input/inputelement.mdx#uid-6b657af583) | 让控件获得焦点。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -186,7 +186,7 @@ A session handle. Dispose to end streaming.
 
 ### ClearSelection 方法 {#clearselection-method}
 
-Clears the current selection.
+清除当前选区。
 
 ```csharp
 public void ClearSelection()
@@ -220,7 +220,7 @@ caller here can neither see that nor sequence anything after it.
 
 ### CopyAsync 方法 {#copyasync-method}
 
-Copies the current selection to the clipboard.
+把当前选区复制到剪贴板。
 
 ```csharp
 public System.Threading.Tasks.Task<bool> CopyAsync()
@@ -964,7 +964,7 @@ public Avalonia.StyledProperty<string> TextProperty
 | [ScrollGesture](../input/inputelement.mdx#uid-b571ab3acc) | 当用户在控件范围内沿同一方向持续移动指针时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ScrollGestureEnded](../input/inputelement.mdx#uid-eb3914c3a8) | 当滚动手势完全停止时发生，其中已计入用户松开指针后继续滚动的惯性过程。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStarting](../input/inputelement.mdx#uid-c8cd2731a5) | 在滚动手势过程中，当用户松开指针、滚动转入惯性滑动阶段时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [SelectionChanged](#uid-67c01d761d) | Raised when the text selection changes. |
+| [SelectionChanged](#uid-67c01d761d) | 文本选区变化时触发。 |
 | [SizeChanged](control.mdx#uid-6cfea6b6c5) | 当控件的边界（实际尺寸）发生变化时发生。继承自 [Control](control.mdx)。 |
 | [SwipeGesture](../input/inputelement.mdx#uid-0f4fc613ec) | 当用户在控件上沿单一方向快速拖动指针时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [SwipeGestureEnded](../input/inputelement.mdx#uid-137ae2fd9d) | 当控件上的滑动手势结束时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -994,7 +994,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> CopyingToClipb
 
 ### SelectionChanged 事件 {#selectionchanged-event}
 
-Raised when the text selection changes.
+文本选区变化时触发。
 
 ```csharp
 public event EventHandler SelectionChanged

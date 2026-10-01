@@ -7,7 +7,7 @@ doc-type: how-to
 
 Running an Avalonia application inside a Docker container requires installing the native Linux libraries that Avalonia depends on and providing a display server (or virtual framebuffer) for the rendering backend.
 
-## Required packages
+## 所需的包 {#required-packages}
 
 Avalonia on Linux targets X11 directly, so the container image must include several native libraries that are not present in the default .NET runtime images.
 

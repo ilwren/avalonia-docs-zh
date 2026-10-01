@@ -7,7 +7,7 @@ doc-type: how-to
 
 This guide covers common DataGrid scenarios: sorting, filtering, grouping, template columns, selection, validation, and editing.
 
-## Setup
+## 配置 {#setup}
 
 Install the NuGet package and add the style reference:
 
@@ -78,7 +78,7 @@ For custom sort behavior with `DataGridTemplateColumn`, set the `SortMemberPath`
 </DataGridTemplateColumn>
 ```
 
-### Programmatic sorting
+### 用代码排序 {#programmatic-sorting}
 
 ```csharp
 var column = myDataGrid.Columns[0];
