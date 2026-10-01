@@ -13,7 +13,7 @@ If your terminal reports that `dotnet` is not recognized, the .NET SDK is either
 
 ### Step 1: Check whether the SDK is installed
 
-Run the following command:
+运行下面的命令：
 
 ```bash
 dotnet --list-sdks

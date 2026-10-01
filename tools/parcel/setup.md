@@ -1,7 +1,7 @@
 ---
 id: setup
-title: Setting up Avalonia Parcel
-description: Install, configure, and activate Avalonia Parcel, the packaging tool for building, signing, and packaging Avalonia applications on Windows, macOS, and Linux.
+title: 配置 Avalonia Parcel
+description: 安装、配置并激活 Avalonia Parcel——用于在 Windows、macOS 和 Linux 上构建、签名并打包 Avalonia 应用的打包工具。
 sidebar_label: 配置
 sidebar_position: 1
 doc-type: tutorial
@@ -11,7 +11,7 @@ tags:
   - avalonia enterprise
 ---
 
-Avalonia Parcel is a packaging tool for Avalonia applications. It provides a graphical user interface (GUI) and a command-line interface (CLI). You can use Parcel to build, sign, and package applications for Windows, macOS, and Linux.
+Avalonia Parcel 是面向 Avalonia 应用的打包工具，既有图形界面（GUI）也有命令行界面（CLI）。你可以用它为 Windows、macOS 和 Linux 构建、签名并打包应用。
 
 ## 前置条件 {#prerequisites}
 
@@ -24,9 +24,9 @@ Avalonia Parcel is a packaging tool for Avalonia applications. It provides a gra
 
 ## Step 1: Install Avalonia Parcel
 
-Avalonia Parcel is a [.NET tool](https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools). Use the .NET SDK to install and update it.
+Avalonia Parcel 是一个 [.NET 工具](https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools)，用 .NET SDK 安装和更新即可。
 
-This guide shows how to install Parcel globally. You can install it locally, but a local installation works only in the project where you install it.
+本指南演示的是全局安装。你也可以本地安装，但那样只在安装它的那个项目里管用。
 
 <Tabs>
 <TabItem value="net10" label=".NET 10+" default>
@@ -35,9 +35,9 @@ This guide shows how to install Parcel globally. You can install it locally, but
 dotnet tool install --global AvaloniaUI.Parcel
 ```
 
-If you installed Parcel for .NET 8 or .NET 9, first run `dotnet tool uninstall --global AvaloniaUI.Parcel.Windows` or `parcel uninstall`.
+若你装过 .NET 8 或 .NET 9 版的 Parcel，请先运行 `dotnet tool uninstall --global AvaloniaUI.Parcel.Windows` 或 `parcel uninstall`。
 
-Use the following command to update Parcel:
+用下面的命令更新 Parcel：
 
 ```bash
 dotnet tool update --global AvaloniaUI.Parcel
@@ -46,7 +46,7 @@ dotnet tool update --global AvaloniaUI.Parcel
 </TabItem>
 <TabItem value="net8" label=".NET 8/9">
 
-If you use a .NET SDK version earlier than 10, install the package for your platform.
+若你用的 .NET SDK 版本低于 10，请安装对应你所在平台的包。
 
 <details>
 <summary>安装命令</summary>
@@ -71,7 +71,7 @@ dotnet tool install --global AvaloniaUI.Parcel.Linux
 
 </details>
 
-Use the command for your platform to update Parcel.
+用对应你所在平台的命令更新 Parcel。
 
 <details>
 <summary>更新命令</summary>
@@ -100,46 +100,46 @@ dotnet tool update --global AvaloniaUI.Parcel.Linux
 </Tabs>
 
 :::warning
-On macOS or Linux, the installer might not add the installation directory to the `PATH` environment variable. In this case, the shell reports a "command not found" error when you run `parcel`.
+在 macOS 或 Linux 上，安装程序未必会把安装目录加进 `PATH` 环境变量，这时运行 `parcel` 时 shell 会报 “command not found”。
 
-Add the tool directory to `PATH`. The default directory is usually `$HOME/.dotnet/tools`.
+把工具目录加进 `PATH`，默认目录通常是 `$HOME/.dotnet/tools`。
 
 更多信息请见[排查 .NET 工具使用问题](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found)。
 :::
 
-## Step 2: Run the tool
+## 第 2 步：运行工具 {#step-2-run-the-tool}
 
-After installation, run Parcel from a terminal:
+装好之后，在终端里运行 Parcel：
 
 ```bash
 parcel
 ```
 
-This command opens the Parcel GUI. In the GUI, you can open or create Parcel projects.
+这条命令会打开 Parcel 的图形界面，你可以在其中打开或新建 Parcel 项目。
 
-You can also run CLI commands on an existing Parcel project:
+你也可以对已有的 Parcel 项目执行 CLI 命令：
 
 ```bash
 parcel pack ./SampleApp.parcel -r osx-x64 -p dmg -o ./artifacts
 ```
 
-This command uses the Parcel project to bundle and sign the application. It then creates a DMG file.
+这条命令会按 Parcel 项目把应用打包并签名，然后生成一个 DMG 文件。
 
 :::note
-CLI is not available in the free community license.
+免费的社区许可证不含 CLI。
 :::
 
-## Step 3: Activate the tool
+## 第 3 步：激活工具 {#step-3-activate-the-tool}
 
-When Parcel opens, sign in with the Avalonia Portal account that has the tool license.
+Parcel 打开后，用持有该工具许可证的 Avalonia 门户账号登录。
 
-For the CLI, use the `--license-key` option. Alternatively, set the `AVALONIA_TOOLS_LICENSE_KEY` environment variable, or sign in through the Parcel GUI and reuse that session.
+对 CLI，可使用 `--license-key` 选项；也可以设置 `AVALONIA_TOOLS_LICENSE_KEY` 环境变量，或者先在 Parcel 图形界面中登录、让 CLI 复用那个会话。
 
 ## Further Reading
 
 - [Parcel 命令行参考](/tools/parcel/command-line-reference)
 - [Parcel 配置参考](/tools/parcel/configuration-reference)
 - [模型上下文协议（MCP）](/tools/parcel/mcp)
-- [Windows packaging](/tools/parcel/packaging-for-windows)
-- [macOS packaging](/tools/parcel/packaging-for-macos)
-- [Linux packaging](/tools/parcel/packaging-for-linux)
+- [Windows 打包](/tools/parcel/packaging-for-windows)
+- [macOS 打包](/tools/parcel/packaging-for-macos)
+- [Linux 打包](/tools/parcel/packaging-for-linux)

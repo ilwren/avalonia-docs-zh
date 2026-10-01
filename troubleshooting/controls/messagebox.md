@@ -1,33 +1,33 @@
 ---
 id: messagebox
 title: MessageBox
-description: Learn why Avalonia does not include a built-in MessageBox and how to add message box functionality using third-party libraries.
+description: 了解 Avalonia 为什么不内置 MessageBox，以及如何借助第三方库补上消息框功能。
 doc-type: troubleshooting
 ---
 
-Avalonia does not include a built-in `MessageBox` control. This is a deliberate design choice, as Avalonia targets multiple platforms (desktop, mobile, browser) where a traditional modal message box does not always make sense. The feature is under consideration for future development.
+Avalonia 没有内置 `MessageBox` 控件。这是有意为之：Avalonia 面向多个平台（桌面、移动、浏览器），而传统的模态消息框并非在哪儿都讲得通。这项功能仍在考虑之中。
 
-For updates and discussion, see the [MessageBox feature request](https://github.com/AvaloniaUI/Avalonia/issues/670) on GitHub.
+进展和讨论请见 GitHub 上的 [MessageBox 功能请求](https://github.com/AvaloniaUI/Avalonia/issues/670)。
 
-## Adding message box functionality to your app
+## 给你的应用加上消息框功能 {#adding-message-box-functionality-to-your-app}
 
-Because there is no native `MessageBox` API, you need to use a third-party library or build your own dialog. Follow these steps to get started with a community package:
+既然没有原生的 `MessageBox` API，你就得用第三方库或自己写个对话框。下面几步带你用上社区的包：
 
-### Step 1: Choose a library
+### 第 1 步：挑一个库 {#step-1-choose-a-library}
 
-Review the options listed below and pick one that fits your project. Some are free and open-source, while others are commercial (marked with `$`).
+看看下面列出的选项，挑一个合你项目胃口的。有的免费开源，有的是商业产品（标有 `$`）。
 
-### Step 2: Install the NuGet package
+### 第 2 步：安装 NuGet 包 {#step-2-install-the-nuget-package}
 
-Install the package using the .NET CLI or your IDE's NuGet package manager. For example, to install `MessageBox.Avalonia`:
+用 .NET CLI 或 IDE 的 NuGet 包管理器安装。比如要装 `MessageBox.Avalonia`：
 
 ```bash
 dotnet add package MessageBox.Avalonia
 ```
 
-### Step 3: Show a message box
+### 第 3 步：弹出消息框 {#step-3-show-a-message-box}
 
-Each library has its own API. The following example uses `MessageBox.Avalonia` to display a simple informational dialog:
+各个库的 API 不尽相同。下面的例子用 `MessageBox.Avalonia` 弹出一个简单的信息对话框：
 
 ```csharp
 using MsBox.Avalonia;
@@ -39,7 +39,7 @@ var box = MessageBoxManager
 await box.ShowAsync();
 ```
 
-If you need to capture the user's response (for example, OK vs. Cancel), store the return value:
+若你需要知道用户选了什么（比如确定还是取消），把返回值接住：
 
 ```csharp
 var result = await box.ShowAsync();
@@ -50,32 +50,32 @@ if (result == ButtonResult.Ok)
 }
 ```
 
-### Step 4: Handle platform differences
+### 第 4 步：处理平台差异 {#step-4-handle-platform-differences}
 
-Keep the following edge cases in mind:
+有几种边界情况要留心：
 
-- **Browser and mobile targets**: Modal dialogs may not behave the same way as on desktop. Some libraries render the dialog inline rather than as a separate window. Test your chosen library on every platform you plan to support.
-- **Single-view applications**: If your app uses `SingleViewApplicationLifetime` (common on mobile and browser), you cannot create a new `Window` to host a dialog. Use a library that supports overlay or in-app dialog rendering, such as `DialogHost.Avalonia`.
-- **Threading**: Always show dialogs on the UI thread. If you are calling from a background thread, dispatch the call using `Dispatcher.UIThread.InvokeAsync`.
+- **浏览器和移动端**：模态对话框的表现未必与桌面端一致。有些库会把对话框内联渲染，而不是另开一个窗口。请在你打算支持的每个平台上都试一遍所选的库。
+- **单视图应用**：若你的应用用的是 `SingleViewApplicationLifetime`（移动端和浏览器上很常见），就没法新建 `Window` 来承载对话框。请选用支持叠加层或应用内对话框渲染的库，比如 `DialogHost.Avalonia`。
+- **线程**：务必在 UI 线程上弹出对话框。若是从后台线程调用，请用 `Dispatcher.UIThread.InvokeAsync` 派发。
 
-## Third-party `MessageBox` implementations
+## 第三方 `MessageBox` 实现 {#third-party-messagebox-implementations}
 
-| Library | 类型 |
+| 库 | 类型 |
 |---|---|
-| [MessageBox.Avalonia](https://github.com/AvaloniaCommunity/MessageBox.Avalonia) | Free / Open-source |
-| [DialogHost.Avalonia](https://github.com/AvaloniaUtils/DialogHost.Avalonia) | Free / Open-source |
-| [Ursa.Avalonia](https://github.com/irihitech/Ursa.Avalonia) | Free / Open-source |
-| [AtomUI.Avalonia](https://github.com/chinware/AtomUI) | Free / Open-source |
+| [MessageBox.Avalonia](https://github.com/AvaloniaCommunity/MessageBox.Avalonia) | 免费 / 开源 |
+| [DialogHost.Avalonia](https://github.com/AvaloniaUtils/DialogHost.Avalonia) | 免费 / 开源 |
+| [Ursa.Avalonia](https://github.com/irihitech/Ursa.Avalonia) | 免费 / 开源 |
+| [AtomUI.Avalonia](https://github.com/chinware/AtomUI) | 免费 / 开源 |
 | [Actipro Avalonia UI Controls](https://www.actiprosoftware.com/products/controls/avalonia) | Commercial |
 | [Eremex Avalonia UI Controls](https://eremexcontrols.net/controls/windows-and-dialogs/messagebox/) | Commercial |
 
-## Building your own message box
+## 自己动手写消息框 {#building-your-own-message-box}
 
-If you prefer not to take a dependency on a third-party package, you can create a simple dialog window yourself:
+若你不想为此引入第三方依赖，自己写个简单的对话框窗口也不难：
 
-1. Create a new `Window` with the message content and buttons laid out in AXAML.
-2. Open it using `window.ShowDialog(ownerWindow)`, which returns a `Task` you can `await`.
-3. Set the dialog result before closing by assigning a value to `Window.Close(result)`.
+1. 新建一个 `Window`，在 AXAML 中摆好消息内容和按钮。
+2. 用 `window.ShowDialog(ownerWindow)` 打开它，它返回一个可以 `await` 的 `Task`。
+3. 关闭前给 `Window.Close(result)` 赋值，以此设定对话框结果。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -113,7 +113,7 @@ public partial class ConfirmDialog : Window
 }
 ```
 
-To show the dialog and read the result:
+弹出对话框并读取结果：
 
 ```csharp
 var dialog = new ConfirmDialog();

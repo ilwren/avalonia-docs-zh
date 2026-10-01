@@ -1,27 +1,27 @@
 ---
 id: configure-vscode-debug-linux
-title: Configure Android debugging on Linux
-sidebar_label: Android debugging (Linux)
-description: Set up Visual Studio Code on Linux to build, deploy, and debug Avalonia Android projects using the Mono debugger.
+title: 在 Linux 上配置 Android 调试
+sidebar_label: Android 调试（Linux）
+description: 在 Linux 上配置 Visual Studio Code，用 Mono 调试器构建、部署并调试 Avalonia Android 项目。
 doc-type: how-to
 ---
 
-# Configure Android debugging on Linux
+# 在 Linux 上配置 Android 调试 {#configure-android-debugging-on-linux}
 
-This guide walks you through configuring Visual Studio Code on Linux so you can build, deploy, and debug Avalonia-based Android projects. The workflow uses the Mono Debug extension to attach to a running Android app over a local port.
+本指南带你在 Linux 上配置 Visual Studio Code，以便构建、部署和调试基于 Avalonia 的 Android 项目。整套流程借助 Mono Debug 扩展，通过本地端口挂接到运行中的 Android 应用。
 
 ## 前置条件 {#prerequisites}
 
 动手之前，请确认你具备：
 
-- Visual Studio Code installed on Linux.
-- The .NET SDK (6.0 or later) installed and available on your `PATH`.
-- An Android emulator running, or a physical Android device connected via USB with developer mode enabled.
-- The **Mono Debug** extension installed from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug).
+- Linux 上已安装 Visual Studio Code。
+- 已安装 .NET SDK（6.0 或更高），且在你的 `PATH` 中可用。
+- 有一个正在运行的 Android 模拟器，或一台已开启开发者模式、通过 USB 连接的真机。
+- 已从 [Visual Studio 市场](https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug)安装 **Mono Debug** 扩展。
 
-## Configure the launch profile
+## 配置启动配置文件 {#configure-the-launch-profile}
 
-Open (or create) the `.vscode/launch.json` file in your workspace and add two configurations: one that builds and deploys before attaching, and one that attaches to an already-running app.
+打开（或新建）工作区中的 `.vscode/launch.json` 文件，添加两项配置：一项先构建部署再挂接，另一项直接挂接到已在运行的应用。
 
 ```json
 {
@@ -46,14 +46,14 @@ Open (or create) the `.vscode/launch.json` file in your workspace and add two co
 }
 ```
 
-The `port` value can be any port that is not already in use by another application or the operating system. The example above uses `10000`.
+`port` 的值可以是任何没被其他应用或系统占用的端口。上面的例子用的是 `10000`。
 
-- **Debug - Android** runs a pre-launch task that builds and deploys your app, then attaches the debugger.
-- **Attach - Android** skips the build step and connects to an app that is already running on the device or emulator.
+- **Debug - Android** 会先跑一个预启动任务来构建并部署你的应用，然后挂接调试器。
+- **Attach - Android** 跳过构建步骤，直接连上设备或模拟器中已在运行的应用。
 
-## Configure the build task
+## 配置构建任务 {#configure-the-build-task}
 
-Open (or create) the `.vscode/tasks.json` file and add a task that builds and deploys your Android project with the Mono debug server enabled.
+打开（或新建）`.vscode/tasks.json` 文件，添加一个在开启 Mono 调试服务器的前提下构建并部署 Android 项目的任务。
 
 ```json
 {
@@ -80,24 +80,24 @@ Open (or create) the `.vscode/tasks.json` file and add a task that builds and de
 }
 ```
 
-Replace `<ProjectName>` with the name of your Android-specific Avalonia project.
+把 `<ProjectName>` 换成你那个 Android 专属 Avalonia 项目的名称。
 
 :::info
-The `port` value in `launch.json` must match the `AndroidSdbHostPort` and `AndroidSdbTargetPort` values in `tasks.json`. If these values differ, the debugger will not be able to connect.
+`launch.json` 中的 `port` 值必须与 `tasks.json` 中的 `AndroidSdbHostPort` 和 `AndroidSdbTargetPort` 保持一致。若对不上，调试器就连不上。
 :::
 
-## Start debugging
+## 开始调试 {#start-debugging}
 
-1. Open the **Run and Debug** panel in Visual Studio Code (Ctrl+Shift+D).
-2. Select **Debug - Android** from the configuration dropdown.
-3. Press **F5** or click the green play button.
+1. 在 Visual Studio Code 中打开**运行和调试**面板（Ctrl+Shift+D）。
+2. 在配置下拉框中选 **Debug - Android**。
+3. 按 **F5** 或点击绿色的播放按钮。
 
-The .NET runtime builds and deploys your app to the connected device or emulator. Once the app launches, the Mono debugger attaches to the configured port and you can set breakpoints, inspect variables, and step through your code as usual.
+.NET 运行时会构建你的应用并部署到已连接的设备或模拟器上。应用启动后，Mono 调试器便挂接到配置好的端口，你就能照常下断点、查看变量、单步执行了。
 
-If your app is already running on the device, select **Attach - Android** instead to skip the build step and connect directly.
+若应用已在设备上运行，改选 **Attach - Android** 即可跳过构建、直接连上。
 
 ## 另请参阅 {#see-also}
 
-- [IDE support](/tools/ide/)
-- [Avalonia tools overview](/tools/)
-- [Visual Studio extension](/tools/visual-studio-extension)
+- [IDE 支持](/tools/ide/)
+- [Avalonia 工具概述](/tools/)
+- [Visual Studio 扩展](/tools/visual-studio-extension)
