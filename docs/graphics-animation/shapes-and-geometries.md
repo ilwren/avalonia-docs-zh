@@ -232,7 +232,7 @@ The `Data` property of `Path` accepts SVG-style path data as a string. This comp
 
 ### Commands
 
-| Command | 参数 | 说明 |
+| 命令 | 参数 | 说明 |
 |---|---|---|
 | `M` / `m` | `x,y` | Move to point (absolute / relative) |
 | `L` / `l` | `x,y` | Line to point |

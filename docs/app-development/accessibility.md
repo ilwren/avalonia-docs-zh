@@ -179,7 +179,7 @@ Ensure all interactive controls are reachable by Tab. Set `IsTabStop="True"` on 
 
 See [Focus](/docs/input-interaction/focus) for the full keyboard navigation model, including `KeyboardNavigation.TabNavigation` modes and `XYFocus` directional navigation.
 
-### Keyboard shortcuts
+### 键盘快捷键 {#keyboard-shortcuts}
 
 Provide keyboard equivalents for pointer-only interactions using `HotKey` or `KeyBinding`:
 

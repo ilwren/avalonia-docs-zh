@@ -76,7 +76,7 @@ parcel step [command] <input> <output> [options]
 
 **Available Step Commands:**
 
-| Command | 说明 | Input | 输出 |
+| 命令 | 说明 | Input | 输出 |
 |---------|-------------|-------|--------|
 | `publish` | Publishes the .NET project for a target platform and runtime | No explicit input. Parcel reads the project from the `.parcel` file. | Published application directory |
 | `merge-mac` | Merges architecture builds into a universal macOS application bundle | Directory with architecture-specific subdirectories (`osx-x64`, `osx-arm64`) | Universal application directory |

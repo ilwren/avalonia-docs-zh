@@ -45,7 +45,7 @@ A gesture recognizer that tracks a pinch gesture. A pinch gesture occurs when tw
       values="0.5;0.5;0;0;0.5"
       keyTimes="0;0.46;0.5;0.96;1"
       dur="5s" repeatCount="indefinite"/>
-    Zoom in
+    放大
   </text>
   {/* Label: Zoom out */}
   <text x="120" y="176" textAnchor="middle"
@@ -54,7 +54,7 @@ A gesture recognizer that tracks a pinch gesture. A pinch gesture occurs when tw
       values="0;0;0.5;0.5;0"
       keyTimes="0;0.46;0.5;0.96;1"
       dur="5s" repeatCount="indefinite"/>
-    Zoom out
+    缩小
   </text>
 </svg>
 </div>

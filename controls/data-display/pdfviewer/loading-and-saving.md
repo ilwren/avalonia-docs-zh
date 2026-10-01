@@ -1,16 +1,16 @@
 ---
 id: loading-and-saving
-title: Loading and saving documents
-description: Load PDF documents into the Avalonia PdfViewer from a path, stream or byte array, handle passwords and permissions, and save edits in place or to a copy.
+title: 加载与保存文档
+description: 把 PDF 文档从路径、流或字节数组加载进 Avalonia PdfViewer，处理密码与权限，并把改动就地保存或另存为副本。
 doc-type: how-to
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-## Load a document
+## 加载文档 {#load-a-document}
 
-Set `Source` to a file path and the viewer loads it. `DocumentSource` is the bindable alternative when the source may be a file path `string`, a `Stream` or a `byte[]`. A string given to `DocumentSource` is routed through `Source`, so in-place saving still works. From code, call `LoadDocumentAsync`.
+把 `Source` 设成文件路径，查看器就会加载它。当来源可能是文件路径 `string`、`Stream` 或 `byte[]` 时，可改用支持绑定的 `DocumentSource`。传给 `DocumentSource` 的字符串会被转交给 `Source` 处理，因此就地保存依然可用。在代码中则调用 `LoadDocumentAsync`。
 
 ```csharp
 // From a file path
@@ -27,13 +27,13 @@ await Viewer.LoadDocumentAsync(bytes);
 
 | 方法 | 说明 |
 |---|---|
-| `LoadDocumentAsync(string path, string? password = null)` | Loads a PDF from a file path. |
-| `LoadDocumentAsync(Stream stream, string? password = null)` | Loads a PDF from a stream. The stream is read from its current position, or from the start if it is seekable and at its end. |
-| `LoadDocumentAsync(ReadOnlyMemory<byte> data, string? password = null)` | Loads a PDF from bytes in memory. A whole array is used in place; a slice is copied. |
-| `CloseDocument()` | Closes the current document and releases its native state. |
-| `ClearError()` | Clears `ErrorMessage`. An open document stays open. |
+| `LoadDocumentAsync(string path, string? password = null)` | 从文件路径加载 PDF。 |
+| `LoadDocumentAsync(Stream stream, string? password = null)` | 从流加载 PDF。读取从流的当前位置开始；若流可定位且已到末尾，则从头开始读。 |
+| `LoadDocumentAsync(ReadOnlyMemory<byte> data, string? password = null)` | 从内存中的字节加载 PDF。整个数组会被直接使用，若传入的是切片则会复制一份。 |
+| `CloseDocument()` | 关闭当前文档并释放其原生状态。 |
+| `ClearError()` | 清除 `ErrorMessage`。已打开的文档保持打开。 |
 
-`DocumentLoaded` is raised when a document finishes loading, with `PageCount` and `Metadata` in its args. `LoadError` is raised when loading fails. The message is also shown on the canvas and on the bindable `ErrorMessage` property.
+文档加载完成时触发 `DocumentLoaded`，参数中带有 `PageCount` 和 `Metadata`。加载失败时触发 `LoadError`，错误信息同时显示在画布上，也会体现在可绑定的 `ErrorMessage` 属性中。
 
 ```csharp
 Viewer.DocumentLoaded += (_, e) =>
@@ -43,42 +43,42 @@ Viewer.LoadError += (_, e) =>
     Console.WriteLine($"Load failed: {e.Message}");
 ```
 
-## Password-protected documents
+## 带密码保护的文档 {#password-protected-documents}
 
-Pass the password to `LoadDocumentAsync`, or set `Password` before setting `Source`. If an encrypted document is loaded without a password, the viewer prompts for one and lets the user retry.
+把密码传给 `LoadDocumentAsync`，或者在设置 `Source` 之前先设好 `Password`。若加载加密文档时没有提供密码，查看器会弹出提示框，让用户重新输入。
 
 ```csharp
 await Viewer.LoadDocumentAsync("/path/to/encrypted.pdf", password: "secret");
 ```
 
-## Document permissions
+## 文档权限 {#document-permissions}
 
-A PDF can forbid annotation, form filling, copying or printing. With `RespectDocumentPermissions` set to `true` (the default), the viewer withholds each of those features when the document forbids it. A document opened with its owner password is unrestricted. Set `RespectDocumentPermissions` to `false` to ignore the flags.
+PDF 可以禁止批注、表单填写、复制或打印。当 `RespectDocumentPermissions` 为 `true`（默认）时，文档禁止哪一项，查看器就相应地关闭哪一项。用所有者密码打开的文档不受任何限制。把 `RespectDocumentPermissions` 设为 `false` 即可忽略这些标志。
 
-The document's flags are exposed on the `Permissions` property as `PdfPermissions`, with `CanPrint`, `CanPrintHighQuality`, `CanModify`, `CanCopyContent`, `CanAnnotate`, `CanFillForms`, `CanExtractForAccessibility` and `CanAssemble`. It is `null` while no document is open.
+文档的各项标志以 `PdfPermissions` 的形式呈现在 `Permissions` 属性上，包含 `CanPrint`、`CanPrintHighQuality`、`CanModify`、`CanCopyContent`、`CanAnnotate`、`CanFillForms`、`CanExtractForAccessibility` 和 `CanAssemble`。未打开任何文档时它为 `null`。
 
-Your own gates are separate:
+你自己设的闸门则是另一回事：
 
 | 属性 | 效果 |
 |---|---|
-| `IsReadOnly` | Disables annotation and form editing in one switch. Tools are disarmed, and selected annotations cannot be moved or deleted. |
+| `IsReadOnly` | 一个开关即可禁止批注和表单编辑。此时各工具都会解除激活，选中的批注也不能移动或删除。 |
 | `AllowTextSelection` | 启用文本选择与复制。 |
 | `AllowAnnotationEditing` | 启用批注的创建与编辑。 |
 | `AllowFormEditing` | 启用交互式表单字段的编辑。 |
 | `AllowDocumentSaving` | 启用保存。它同时把关 `SaveCommand` 和 `SaveAsync`。 |
 
-`CanEditAnnotations` reports the combined result: not `IsReadOnly`, `AllowAnnotationEditing` is `true`, and the document allows it when `RespectDocumentPermissions` is on.
+`CanEditAnnotations` 给出的是综合结果：`IsReadOnly` 未被禁用、`AllowAnnotationEditing` 为 `true`，且在 `RespectDocumentPermissions` 开启时文档本身也允许。
 
-## Save a document
+## 保存文档 {#save-a-document}
 
-Every save writes the document with its annotation edits, form values, redactions and bookmarks.
+每次保存都会把批注改动、表单取值、涂黑删除和书签一并写入文档。
 
 | 方法 | 说明 |
 |---|---|
-| `SaveAsync()` / `Save()` | Saves in place over `Source`. Honours `AllowDocumentSaving`. A document loaded from a stream or byte array has no path: `SaveAsync` throws `InvalidOperationException` and `Save()` reports it through `ErrorMessage`. |
-| `SaveDocumentAsync(string filePath)` | Saves to a path. |
-| `SaveDocumentAsync(Stream stream)` | Saves to a stream. |
-| `SaveAsAsync()` / `SaveAs()` | Shows the platform save picker and writes the document to the chosen file, or raises `SaveAsRequested`. |
+| `SaveAsync()` / `Save()` | 就地覆盖保存到 `Source`，受 `AllowDocumentSaving` 约束。从流或字节数组加载的文档没有路径：此时 `SaveAsync` 会抛出 `InvalidOperationException`，`Save()` 则通过 `ErrorMessage` 报告这一情况。 |
+| `SaveDocumentAsync(string filePath)` | 保存到指定路径。 |
+| `SaveDocumentAsync(Stream stream)` | 保存到流。 |
+| `SaveAsAsync()` / `SaveAs()` | 弹出平台保存选择器，把文档写入用户选定的文件；否则触发 `SaveAsRequested`。 |
 
 ```csharp
 // Save a copy
@@ -89,27 +89,27 @@ await using var output = new MemoryStream();
 await Viewer.SaveDocumentAsync(output);
 ```
 
-`IsDirty` is `true` while the document has unsaved edits. It is cleared by a successful save and by loading another document.
+文档存在未保存的改动时 `IsDirty` 为 `true`。保存成功或加载另一份文档后，该标志会被清除。
 
-Set `AutoSave` to `true` to write back to `Source` after each annotation, form or redaction edit. This requires `AllowDocumentSaving` and a document loaded from a path.
+把 `AutoSave` 设为 `true`，每次批注、表单或涂黑删除改动后都会写回 `Source`。这需要 `AllowDocumentSaving`，且文档必须是从路径加载的。
 
-### Signed documents
+### 带数字签名的文档 {#signed-documents}
 
-A document with digital signatures is saved as an incremental update, so the signed revision stays intact and readers can still verify it. Other documents are rewritten in full.
+带数字签名的文档会以增量更新的方式保存，这样已签名的版本保持完好，阅读器仍能验证签名。其他文档则整份重写。
 
-## Open, Save and Save As menu entries
+## 「打开」「保存」「另存为」菜单项 {#open-save-and-save-as-menu-entries}
 
-The **More Options** menu can also show **Open**, **Save** and **Save As** entries. They are off by default. Opt in per entry with `IsOpenVisible`, `IsSaveVisible` and `IsSaveAsVisible`.
+**更多选项**菜单还能显示**打开**、**保存**和**另存为**三项，它们默认关闭。可分别用 `IsOpenVisible`、`IsSaveVisible` 和 `IsSaveAsVisible` 逐项开启。
 
-- **Open** shows the platform file picker and loads the chosen file. A file with a local path is opened by path, so in-place saving works. Where the picker gives no path (the browser, some mobile pickers), the file is read through a stream.
-- **Save** saves in place. The entry is hidden while `AllowDocumentSaving` is `false`, and disabled for a document loaded from a stream.
-- **Save As** shows the platform save picker and writes the document with its edits. If the user picks another local file, the viewer switches to that file and keeps the current page.
+- **打开**会弹出平台文件选择器并加载选中的文件。若文件带有本地路径，就按路径打开，这样就地保存依然可用；若选择器给不出路径（浏览器、部分移动端选择器），则通过流读取该文件。
+- **保存**执行就地保存。当 `AllowDocumentSaving` 为 `false` 时该项隐藏；对于从流加载的文档，该项为禁用状态。
+- **另存为**会弹出平台保存选择器，把带改动的文档写出去。如果用户选了另一个本地文件，查看器会切换到那个文件，并停留在当前页。
 
-All three are also available as `Open()`, `OpenAsync()`, `SaveAs()`, `SaveAsAsync()`, `OpenCommand` and `SaveAsCommand`, whether or not the menu shows them.
+无论菜单是否显示这三项，它们都一并提供 `Open()`、`OpenAsync()`、`SaveAs()`、`SaveAsAsync()`、`OpenCommand` 和 `SaveAsCommand` 供调用。
 
-### Use your own dialogs
+### 改用你自己的对话框 {#use-your-own-dialogs}
 
-Handle `OpenRequested` or `SaveAsRequested` and set `Handled` to `true` to replace the built-in pickers. `PdfSaveAsRequestedEventArgs.GetDocumentBytesAsync()` returns the PDF to write.
+处理 `OpenRequested` 或 `SaveAsRequested`，并把 `Handled` 设为 `true`，即可取代内置的选择器。`PdfSaveAsRequestedEventArgs.GetDocumentBytesAsync()` 会返回待写出的 PDF。
 
 ```csharp
 Viewer.SaveAsRequested += async (_, e) =>
@@ -122,13 +122,13 @@ Viewer.SaveAsRequested += async (_, e) =>
 
 ## Lifecycle
 
-- Detaching the viewer from the visual tree, for example when switching tabs, keeps the document, its unsaved edits, the undo history, the current page and the zoom. They come back when it is re-attached.
-- `Source` can be set before the viewer is attached. The document is drawn once it is.
-- Closing the window releases the native document. So does `CloseDocument()`.
-- A `Stream` passed to the viewer is read once and never disposed, so dispose it yourself after the load call returns. A `byte[]` is used in place for the document's lifetime and must not be modified while the document is open.
+- 把查看器从视觉树上摘下来（比如切换选项卡时），文档、未保存的改动、撤销历史、当前页和缩放级别都会保留。重新挂回去时，它们会原样回来。
+- `Source` 可以在查看器挂到视觉树之前就设好，文档会在挂上之后绘制出来。
+- 关闭窗口会释放原生文档，`CloseDocument()` 同样如此。
+- 传给查看器的 `Stream` 只会被读取一次，且不会被释放，所以请在加载调用返回之后自行释放它。而 `byte[]` 会在文档的整个生命周期内被直接使用，文档打开期间不得修改它。
 
 ## 另请参阅 {#see-also}
 
 - [PdfViewer 控件](index.md)
-- [Printing and sharing](printing-and-sharing.md)
-- [Platforms and performance](platforms-and-performance.md)
+- [打印与分享](printing-and-sharing.md)
+- [平台与性能](platforms-and-performance.md)

@@ -77,7 +77,7 @@ Setting `TickFrequency` without `IsSnapToTickEnabled="True"` draws tick marks bu
 
 | 属性 | Trigger | 默认值 |
 |---|---|---|
-| `SmallChange` | Arrow keys | 1 |
+| `SmallChange` | 方向键 | 1 |
 | `LargeChange` | Clicking the track or pressing Page Up / Page Down | 10 |
 
 For a slider with a small range (for example, 0 to 1), you should lower both values so that keyboard users can reach all meaningful positions.

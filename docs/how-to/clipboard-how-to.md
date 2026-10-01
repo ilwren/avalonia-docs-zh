@@ -161,7 +161,7 @@ if (data is not null)
 Use the same format identifier string (`"mycompany-myapp-mydata"`) on both the copy and paste sides. The identifier is how the clipboard matches the data to your application format.
 :::
 
-## Keyboard shortcuts
+## 键盘快捷键 {#keyboard-shortcuts}
 
 The standard clipboard shortcuts (`Ctrl+C`, `Ctrl+V`, `Ctrl+X`) work automatically in built-in text controls such as `TextBox` and `TextPresenter`. For custom controls, bind key gestures to your commands explicitly:
 

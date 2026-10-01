@@ -177,7 +177,7 @@ if (dockMenu is not null)
 `NativeDock.Menu` only has an effect on macOS. On other platforms, the property is ignored.
 :::
 
-### Keyboard shortcuts
+### 键盘快捷键 {#keyboard-shortcuts}
 
 The `Gesture` property assigns a keyboard shortcut to a menu item. Avalonia uses platform-neutral modifier names in gesture strings. On macOS, these map to the standard modifier keys:
 
@@ -205,7 +205,7 @@ macOS users expect certain standard keyboard shortcuts and behaviours. Avalonia 
 
 The following shortcuts are conventions that macOS users expect. Configure them using `NativeMenu` gestures or `KeyBinding`:
 
-| 动作 | Shortcut | 注释支持情况 |
+| 动作 | 快捷键 | 注释支持情况 |
 |---|---|---|
 | Preferences | <kbd>⌘</kbd> <kbd>,</kbd> | Should open your settings/preferences view |
 | Quit | <kbd>⌘</kbd> <kbd>Q</kbd> | Handled automatically by the native menu |

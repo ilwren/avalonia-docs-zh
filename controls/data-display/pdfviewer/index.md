@@ -186,7 +186,7 @@ await Viewer.SaveDocumentAsync("/path/to/output.pdf");
 | `PrintService` | `IPrintService?` | platform | 打印的具体实现。不设置则使用内置的平台服务，设为 `null` 则禁用打印。 |
 | `ShareService` | `IShareService?` | platform | 分享的具体实现，语义与 `PrintService` 相同。 |
 | `ToolbarLayoutMode` | `PdfToolbarLayoutMode` | `Auto` | `Auto` 会依据平台和宽度自行挑选布局，`Mobile` 和 `Desktop` 则强制指定其一。 |
-| `IsMobileLayout` | `bool` | | Whether the compact mobile layout is active. Set by the control: `true` on iOS and Android, and on any platform when the control is narrower than 500 DIPs. Use `ToolbarLayoutMode` to force a layout. |
+| `IsMobileLayout` | `bool` | | 是否正处于紧凑的移动端布局。该值由控件设定：在 iOS、Android 上，以及任何平台上控件宽度不足 500 个设备无关像素时，均为 `true`。要强制指定布局，请使用 `ToolbarLayoutMode`。 |
 
 每件批注工具的显示与否，都由各自的属性控制。参见[批注](annotations.md#tool-visibility)。
 
@@ -227,28 +227,28 @@ await Viewer.SaveDocumentAsync("/path/to/output.pdf");
 | `SearchResultCount` | `int` | 搜索命中的数量。 |
 | `CurrentSearchResultIndex` | `int` | 当前高亮命中项的索引。 |
 | `ErrorMessage` | `string?` | 最近一条错误信息。文档已打开时，它以可关闭的横幅显示在文档之上；加载失败时，则作为画布的状态显示。用 `ClearError()` 清除它。 |
-| `Metadata` | `PdfMetadata?` | Document metadata such as title and author. |
-| `Permissions` | `PdfPermissions?` | Document permission flags. |
-| `CanEditAnnotations` | `bool` | Annotations can be created and edited right now. |
-| `CanPrint` | `bool` | A document is open and a print service or handler exists. |
-| `CanShare` | `bool` | A document is open and a share service or handler exists. |
-| `CanUndo` | `bool` | The undo history has an entry to apply. |
-| `CanRedo` | `bool` | The redo history has an entry to apply. |
+| `Metadata` | `PdfMetadata?` | 文档元数据，比如标题和作者。 |
+| `Permissions` | `PdfPermissions?` | 文档的权限标志。 |
+| `CanEditAnnotations` | `bool` | 当前是否可以创建和编辑批注。 |
+| `CanPrint` | `bool` | 已打开文档，且存在可用的打印服务或处理程序。 |
+| `CanShare` | `bool` | 已打开文档，且存在可用的分享服务或处理程序。 |
+| `CanUndo` | `bool` | 撤销历史中还有可套用的记录。 |
+| `CanRedo` | `bool` | 重做历史中还有可套用的记录。 |
 
 ## Commands
 
-All commands are `ICommand` and update `CanExecute` as document and selection state changes. Bind them from your own buttons if you hide the built-in toolbar.
+所有命令都是 `ICommand`，并会随文档和选区状态的变化更新 `CanExecute`。如果你隐藏了内置工具栏，可以把它们绑定到自己的按钮上。
 
-| Command | 说明 |
+| 命令 | 说明 |
 |---|---|
-| `ZoomInCommand`, `ZoomOutCommand`, `ResetZoomCommand` | Adjust the zoom. |
-| `FitWidthCommand`, `FitPageCommand` | Apply a fit mode. |
-| `NextPageCommand`, `PreviousPageCommand`, `GoToPageCommand` | Navigate between pages. |
-| `SelectAllCommand`, `CopyCommand` | Select all text on the current page, copy the selection. |
-| `OpenCommand`, `SaveCommand`, `SaveAsCommand` | File operations. See [Loading and saving](loading-and-saving.md). |
-| `PrintCommand`, `ShareCommand` | See [Printing and sharing](printing-and-sharing.md). |
-| `SetToolCommand` | Arms an annotation tool. The parameter is a `PdfViewerTool` value or its name. |
-| `ToggleBookmarkCommand`, `AddBookmarkCommand`, `RemoveBookmarkCommand` | Change the bookmark on a page. The parameter is a 1-based page number, else the current page. |
+| `ZoomInCommand`, `ZoomOutCommand`, `ResetZoomCommand` | 调整缩放。 |
+| `FitWidthCommand`, `FitPageCommand` | 套用某种适配模式。 |
+| `NextPageCommand`, `PreviousPageCommand`, `GoToPageCommand` | 在页面之间导航。 |
+| `SelectAllCommand`, `CopyCommand` | 选中当前页的全部文本；复制选区。 |
+| `OpenCommand`, `SaveCommand`, `SaveAsCommand` | 文件操作。参见[加载与保存](loading-and-saving.md)。 |
+| `PrintCommand`, `ShareCommand` | 参见[打印与分享](printing-and-sharing.md)。 |
+| `SetToolCommand` | 激活某件批注工具。参数为 `PdfViewerTool` 的值或其名称。 |
+| `ToggleBookmarkCommand`, `AddBookmarkCommand`, `RemoveBookmarkCommand` | 改变某一页的书签状态。参数为从 1 开始的页码，不传则作用于当前页。 |
 | `DismissErrorCommand` | Clears `ErrorMessage`. |
 
 ```xml
@@ -258,36 +258,36 @@ All commands are `ICommand` and update `CanExecute` as document and selection st
 
 ## 事件 {#events}
 
-| 事件 | Args | 说明 |
+| 事件 | 事件参数 | 说明 |
 |---|---|---|
-| `DocumentLoaded` | `PdfDocumentLoadedEventArgs` | A document finished loading. Args include `PageCount` and `Metadata`. |
-| `DocumentClosed` | `EventArgs` | The document was closed. |
-| `LoadError` | `PdfLoadErrorEventArgs` | Document loading failed. |
-| `AnnotationError` | `PdfAnnotationErrorEventArgs` | An annotation operation failed. Args include `Operation` and the underlying `Exception`. |
-| `AnnotationAdded` | `PdfAnnotationEventArgs` | An annotation was added. |
-| `PageChanged` | `PdfPageChangedEventArgs` | The current page changed. Args include `OldPage` and `NewPage`, 1-based. |
-| `ZoomChanged` | `PdfZoomChangedEventArgs` | The zoom level changed. |
-| `PageRendered` | `PdfPageRenderedEventArgs` | A page finished rendering. |
-| `SearchCompleted` | `PdfSearchCompletedEventArgs` | A search finished. |
-| `LinkClicked` | `PdfLinkClickedEventArgs` | A link was clicked. See [Links](navigation-and-search.md#links). |
-| `BookmarksChanged` | `EventArgs` | A user bookmark was added or removed. |
-| `UndoRedoStateChanged` | `EventArgs` | `CanUndo` or `CanRedo` changed. |
-| `PrintRequested` | `PdfPrintRequestedEventArgs` | Raised before printing. Set `Handled` to print in the app instead of the platform service. |
-| `ShareRequested` | `PdfShareRequestedEventArgs` | Raised before sharing. Set `Handled` to share in the app instead of the platform service. |
-| `OpenRequested` | `PdfOpenRequestedEventArgs` | Raised before the built-in file picker. Set `Handled` to open in the app. |
-| `SaveAsRequested` | `PdfSaveAsRequestedEventArgs` | Raised before the built-in save picker. Set `Handled` to write the PDF in the app. |
+| `DocumentLoaded` | `PdfDocumentLoadedEventArgs` | 文档加载完成。参数包含 `PageCount` 和 `Metadata`。 |
+| `DocumentClosed` | `EventArgs` | 文档已关闭。 |
+| `LoadError` | `PdfLoadErrorEventArgs` | 文档加载失败。 |
+| `AnnotationError` | `PdfAnnotationErrorEventArgs` | 某次批注操作失败。参数包含 `Operation` 以及底层的 `Exception`。 |
+| `AnnotationAdded` | `PdfAnnotationEventArgs` | 新增了一条批注。 |
+| `PageChanged` | `PdfPageChangedEventArgs` | 当前页发生变化。参数包含 `OldPage` 和 `NewPage`，均从 1 开始计数。 |
+| `ZoomChanged` | `PdfZoomChangedEventArgs` | 缩放级别发生变化。 |
+| `PageRendered` | `PdfPageRenderedEventArgs` | 某一页渲染完成。 |
+| `SearchCompleted` | `PdfSearchCompletedEventArgs` | 一次搜索完成。 |
+| `LinkClicked` | `PdfLinkClickedEventArgs` | 某个链接被点击。参见[链接](navigation-and-search.md#links)。 |
+| `BookmarksChanged` | `EventArgs` | 新增或移除了一个用户书签。 |
+| `UndoRedoStateChanged` | `EventArgs` | `CanUndo` 或 `CanRedo` 发生变化。 |
+| `PrintRequested` | `PdfPrintRequestedEventArgs` | 打印之前触发。设置 `Handled` 即可在应用内自行打印，而不走平台服务。 |
+| `ShareRequested` | `PdfShareRequestedEventArgs` | 分享之前触发。设置 `Handled` 即可在应用内自行分享，而不走平台服务。 |
+| `OpenRequested` | `PdfOpenRequestedEventArgs` | 弹出内置文件选择器之前触发。设置 `Handled` 即可在应用内自行打开文件。 |
+| `SaveAsRequested` | `PdfSaveAsRequestedEventArgs` | 弹出内置保存选择器之前触发。设置 `Handled` 即可在应用内自行写出 PDF。 |
 
 ## Threading
 
-Every public member of `PdfViewer` must be called on the UI thread. The `*Async` members throw if called from another thread. They do not block the UI while a page is decoding. PDFium itself is single-threaded, so several viewers in one process share one decode pipeline.
+`PdfViewer` 的所有公共成员都必须在 UI 线程上调用。`*Async` 系列成员若从其他线程调用会抛出异常。页面解码期间它们不会阻塞界面。PDFium 本身是单线程的，因此同一进程中的多个查看器共用一条解码流水线。
 
 ## 另请参阅 {#see-also}
 
 - [加载与保存](loading-and-saving.md)
-- [Navigation and search](navigation-and-search.md)
+- [导航与搜索](navigation-and-search.md)
 - [Annotations](annotations.md)
-- [Printing and sharing](printing-and-sharing.md)
-- [Theming and localization](theming-and-localization.md)
-- [Platforms and performance](platforms-and-performance.md)
+- [打印与分享](printing-and-sharing.md)
+- [主题与本地化](theming-and-localization.md)
+- [平台与性能](platforms-and-performance.md)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)
 - [疑难排查](/troubleshooting/controls/pdfviewer)
