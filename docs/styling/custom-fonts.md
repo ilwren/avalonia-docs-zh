@@ -279,6 +279,6 @@ public sealed class MyFontCollection : EmbeddedFontCollection
 ## 另请参阅 {#see-also}
 
 - [排版](/docs/styling/typography)：字号、字重、字形、字间距、行高与文本装饰。
-- [How to add a custom font](/docs/how-to/custom-font-how-to)
+- [如何添加自定义字体](/docs/how-to/custom-font-how-to)
 - [Assets](/docs/fundamentals/including-assets)
 - [Styles](/docs/styling/styles)

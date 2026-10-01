@@ -1,6 +1,6 @@
 ---
 id: styles
-title: Styles
+title: 样式
 description: Troubleshooting common issues with Avalonia styles.
 doc-type: troubleshooting
 ---
@@ -146,12 +146,12 @@ If you are unable to restore an earlier property value, it is likely you are usi
 ## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
-- [Style selectors](/docs/styling/style-selectors)
-- [Style selector syntax](/docs/styling/style-selector-syntax)
+- [样式选择器](/docs/styling/style-selectors)
+- [样式选择器语法](/docs/styling/style-selector-syntax)
 - [Pseudoclasses](/docs/styling/pseudoclasses)
-- [Property setters](/docs/styling/property-setters)
-- [Property value precedence](/docs/properties/value-precedence)
-- [Sharing styles](/docs/styling/sharing-styles)
+- [属性 setter](/docs/styling/property-setters)
+- [属性值优先级](/docs/properties/value-precedence)
+- [共享样式](/docs/styling/sharing-styles)
 - [控件模板实战](/docs/styling/control-template-walkthrough)
 - [Defining properties](/docs/custom-controls/defining-properties)
 - [Troubleshooting themes](/troubleshooting/ui-development/themes)

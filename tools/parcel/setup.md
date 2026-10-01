@@ -15,7 +15,7 @@ Avalonia Parcel is a packaging tool for Avalonia applications. It provides a gra
 
 ## 前置条件 {#prerequisites}
 
-| Requirement | Version/Details |
+| 要求 | Version/Details |
 |------------|-----------------|
 | .NET Runtime | 6.0 or newer |
 | Windows | 10 or newer |

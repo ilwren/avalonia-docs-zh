@@ -1,15 +1,15 @@
 ---
 id: property-setters
-title: Property setters
-description: Define property values in styles using setters, bindings, templates, and understand setter precedence rules.
+title: 属性 setter
+description: 用 setter、绑定和模板在样式中设定属性值，并弄懂 setter 的优先级规则。
 doc-type: reference
 ---
 
-Property setters define what property values a style applies to a control after Avalonia has matched it using a selector.
+属性 setter 规定：当 Avalonia 用选择器匹配到某个控件后，该样式要给它套上哪些属性值。
 
 ## 基本用法 {#basic-usage}
 
-Setters are property and value attribute pairs written in XAML in the format:
+setter 在 XAML 中写成「属性—值」特性对，格式如下：
 
 ```xml
 <Setter Property="propertyName" Value="newValueString"/>
@@ -22,7 +22,7 @@ Setters are property and value attribute pairs written in XAML in the format:
 <Setter Property="Padding" Value="4 2 0 4"/>
 ```
 
-You can also use a long-form syntax to set a control property to an object with several properties, like this:
+你也可以用长格式语法，把控件属性设成一个带多个属性的对象，像这样：
 
 ```xml
 <Setter Property="MyProperty">
@@ -30,29 +30,29 @@ You can also use a long-form syntax to set a control property to an object with 
 </Setter>
 ```
 
-A style can also set properties using bindings. After the usual selection process, this causes Avalonia to use a value from the data context of the target control. For example:
+样式还能用绑定来设定属性。走完常规的选择流程后，Avalonia 会从目标控件的数据上下文中取值。例如：
 
 ```xml
 <Setter Property="FontSize" Value="{Binding SelectedFontSize}"/>
 ```
 
 :::caution
-Bindings in setters resolve against the **target control's** `DataContext`. Styles declared inside `<Application.Styles>` still bind against the matched control's `DataContext`, not a `DataContext` set on `Application` itself. `Application` is not part of the visual or logical tree, so setting `DataContext` on it has no effect on setter bindings.
+setter 中的绑定是针对**目标控件**的 `DataContext` 解析的。即便样式声明在 `<Application.Styles>` 里，绑定依然指向被匹配控件的 `DataContext`，而不是 `Application` 自身设的 `DataContext`。`Application` 不在视觉树或逻辑树中，因此给它设 `DataContext` 对 setter 绑定毫无影响。
 
-If you need to apply configurable values (such as user-chosen colors) at the application level, use `DynamicResource` references together with runtime resource updates instead of data bindings. See [Resources overview](/docs/app-development/resources) and [How to switch themes](/docs/how-to/theme-switching-how-to) for details.
+若你需要在应用层面套用可配置的值（比如用户选定的颜色），请改用 `DynamicResource` 引用配合运行时资源更新，而不是数据绑定。细节请见[资源概述](/docs/app-development/resources)和[如何切换主题](/docs/how-to/theme-switching-how-to)。
 :::
 
-## Style priority
+## 样式优先级 {#style-priority}
 
-There are two rules that govern which property setter has precedence when a selector matches multiple styles:
+当一个选择器匹配到多个样式时，由两条规则决定哪个属性 setter 说了算：
 
-* Position of the enclosing styles collection in the application - 'closest' has priority.
-* Position of the style in the located styles collection - 'latest' has priority.
+* 所在样式集合在应用中的位置——「离得近的」优先。
+* 样式在该集合中的位置——「写在后面的」优先。
 
-Firstly, this means that styles defined closer to the control will be applied, e.g., styles at window level will override those defined at application level. Secondly, this means that where the selected style collections are at the same level, then the later definition (as written in the file) has priority.
+首先，这意味着离控件更近的样式会生效，比如窗口级样式会盖过应用级样式。其次，当所选中的样式集合处于同一层级时，文件中写在后面的定义优先。
 
 :::caution
-**Unlike CSS**, the list sequence of class names in the `Classes` attribute has no effect on setter priority in Avalonia. If both these style classes set the color, then either way of listing the classes has the same result:
+**与 CSS 不同**，`Classes` 特性中类名的书写顺序在 Avalonia 里不影响 setter 的优先级。若这两个样式类都设了颜色，那么无论怎么排列类名，结果都一样：
 
 ```xml
 <Button Classes="h1 blue"/>
@@ -60,17 +60,17 @@ Firstly, this means that styles defined closer to the control will be applied, e
 ```
 :::
 
-## Value reversion
+## 值的回退 {#value-reversion}
 
-Whenever a style is matched with a control, all of the setters will be applied to the control. If a style selector causes the style to no longer match a control, the property value will revert to its next highest priority value.
+只要样式与控件匹配上，它的所有 setter 都会套到控件上。若因选择器的缘故该样式不再匹配某控件，属性值就会回退到优先级次高的那个值。
 
-See [Property value precedence](/docs/properties/value-precedence) for the full property priority rules.
+完整的属性优先级规则请见[属性值优先级](/docs/properties/value-precedence)。
 
-## Mutable values
+## 可变的值 {#mutable-values}
 
-[`Setter`](/api/avalonia/styling/setter) creates a single instance of `Value`, which will be applied to all controls that the style matches. If the object is mutable, changes will be reflected on all controls.
+[`Setter`](/api/avalonia/styling/setter) 只会创建一个 `Value` 实例，并套用到所有被该样式匹配的控件上。若这个对象是可变的，对它的改动会同时反映到所有控件上。
 
-Bindings on an object defined in a setter value will not have access to the target control's data context because there may be multiple target controls. This scenario may arise with a style defined like this:
+定义在 setter 值里的对象，其绑定访问不到目标控件的数据上下文，因为目标控件可能不止一个。像下面这样定义样式时就会碰上这种情形：
 
 ```xml
 <Style Selector="MyControl" x:DataType="MyViewModelClass">
@@ -80,11 +80,11 @@ Bindings on an object defined in a setter value will not have access to the targ
 </Style>
 ```
 
-In the example above, the binding source for the setter will be `MyObject.DataContext`, and not `MyControl.DataContext`. If `MyObject` has no data context, the binding will be unable to produce a value.
+上面的例子中，setter 的绑定源会是 `MyObject.DataContext` 而非 `MyControl.DataContext`。若 `MyObject` 没有数据上下文，这个绑定就产不出值来。
 
-## Setter data templates
+## setter 中的数据模板 {#setter-data-templates}
 
-As described in the section above, if you use a setter without a **data template**, a single instance of the setter value is created and shared across all matching controls. To change the value depending on a data template, place the target control inside a template element, like this:
+如上一节所述，若 setter 不配**数据模板**，setter 的值只会创建一个实例，由所有匹配的控件共用。若要让值随数据模板而变，请把目标控件放进一个模板元素里，像这样：
 
 ```xml
 <Style Selector="Border.empty">
@@ -96,17 +96,15 @@ As described in the section above, if you use a setter without a **data template
 </Style>
 ```
 
-## Setter precedence
+## setter 的优先级 {#setter-precedence}
 
-Avalonia `Setters` are applied in order of [`BindingPriority`](/api/avalonia/data/bindingpriority), then visual tree locality, and finally the `Styles` collection order. Precedence applies individually to each `StyledProperty` so that styling can benefit from composition. `DirectProperty` and CLR properties cannot be styled and therefore do not participate in precedence.
+Avalonia 的 `Setters` 按 [`BindingPriority`](/api/avalonia/data/bindingpriority)、视觉树上的远近，以及 `Styles` 集合顺序这三级依次裁定。优先级是逐个 `StyledProperty` 单独判定的，这样样式才能受益于组合。`DirectProperty` 和 CLR 属性无法被样式化，因此也不参与优先级裁定。
 
-`BindingPriority` cannot be explicitly set in XAML. For the full priority list, see [Property value precedence](/docs/properties/value-precedence).
+`BindingPriority` 无法在 XAML 中显式设置。完整的优先级清单请见[属性值优先级](/docs/properties/value-precedence)。
 
-## Visual tree locality
+## 视觉树上的远近 {#visual-tree-locality}
 
-Setters with equal `BindingPriority` are then selected by their location in the visual tree relative to the `Control`. The 
-setter with the fewest nodes required to traverse upwards to locate will take precedence. Inline style setters have 
-the highest precedence for this step.
+`BindingPriority` 相同的 setter，接着按它们相对于 `Control` 在视觉树上的位置来挑选：向上找到它所需经过的节点最少的那个 setter 胜出。这一步中，内联样式 setter 的优先级最高。
 
 ```xml
 <Window>
@@ -128,10 +126,9 @@ the highest precedence for this step.
 </Window>
 ```
 
-## Styles collection order
+## 样式集合顺序 {#styles-collection-order}
 
-When `BindingPriority` and visual tree locality are both equal, the final decider is the order within the `Styles` 
-collection. The last applicable `Setter` will take precedence.
+当 `BindingPriority` 与视觉树远近都打平时，最后的裁决依据是在 `Styles` 集合中的顺序：最后一个适用的 `Setter` 胜出。
 
 ```xml
 <StackPanel>
@@ -150,11 +147,11 @@ collection. The last applicable `Setter` will take precedence.
 ```
 
 :::info
-These buttons specify their `Classes` in different orders. This has no effect on setter precedence in Avalonia.
+下面这些按钮以不同顺序写出各自的 `Classes`。在 Avalonia 中，这对 setter 优先级没有任何影响。
 :::
 
 ## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
-- [Property value precedence](/docs/properties/value-precedence)
+- [属性值优先级](/docs/properties/value-precedence)
 - [控件主题](/docs/styling/control-themes)

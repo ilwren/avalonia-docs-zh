@@ -1,28 +1,28 @@
 ---
 id: headless-nunit
-title: Headless Testing with NUnit
-description: Set up and run headless UI tests for Avalonia applications using the NUnit test framework.
+title: 用 NUnit 做无头测试
+description: 用 NUnit 测试框架为 Avalonia 应用搭建并运行无头 UI 测试。
 doc-type: how-to
 ---
 
 ## Preparation 
 
-This page assumes that NUnit project was already created.
-If not, please follow NUnit "Getting Started" and "Installation" here https://docs.nunit.org/articles/nunit/getting-started/installation.html.
+本页假设你已经创建好 NUnit 项目。
+若还没有，请先按 NUnit 的 “Getting Started” 和 “Installation” 操作：https://docs.nunit.org/articles/nunit/getting-started/installation.html.
 
-## Install packages
+## 安装包 {#install-packages}
 
-Aside from NUnit packages, you need to install two more packages:
-- [Avalonia.Headless.NUnit](https://www.nuget.org/packages/Avalonia.Headless.NUnit) which also includes Avalonia.
-- [Avalonia.Themes.Fluent](https://www.nuget.org/packages/Avalonia.Themes.Fluent) as even headless controls need a theme
+除 NUnit 相关包外，你还需要再装两个包：
+- [Avalonia.Headless.NUnit](https://www.nuget.org/packages/Avalonia.Headless.NUnit)，它同时也带上了 Avalonia。
+- [Avalonia.Themes.Fluent](https://www.nuget.org/packages/Avalonia.Themes.Fluent)，因为哪怕是无头控件也需要一套主题。
 
 :::tip
-Headless platform doesn't require any specific theme, and it is possible to swap FluentTheme with any other.
+无头平台并不挑主题，你完全可以把 FluentTheme 换成别的。
 :::
 
-## Setup application
+## 搭建应用 {#setup-application}
 
-As in any other Avalonia app, an `Application` instance needs to be created, and themes need to be applied. When using the Headless platform, the setup is not much different from a regular Avalonia app and can mostly be reused.
+和任何 Avalonia 应用一样，这里也要创建 `Application` 实例并应用主题。用无头平台时，这套配置与普通 Avalonia 应用相差无几，大多可以照搬。
 
 ```xml title=App.axaml
 <Application xmlns="https://github.com/avaloniaui"
@@ -34,7 +34,7 @@ As in any other Avalonia app, an `Application` instance needs to be created, and
 </Application>
 ```
 
-And the code:
+代码如下：
 
 ```csharp title=App.axaml.cs
 using Avalonia;
@@ -50,12 +50,12 @@ public class App : Application
 ```
 
 :::note
-Usually, the `BuildAvaloniaApp` method is defined in the Program.cs file, but NUnit/XUnit tests don't have it, so it is defined in the `App` file instead.
+`BuildAvaloniaApp` 方法通常定义在 Program.cs 文件里，但 NUnit/XUnit 测试没有这个文件，所以改为定义在 `App` 中。
 :::
 
-## Initialize NUnit tests
+## 初始化 NUnit 测试 {#initialize-nunit-tests}
 
-The `[AvaloniaTestApplication]` attribute wires the tests in the current project with the specific application. It needs to be defined once per project in any file.
+`[AvaloniaTestApplication]` 特性把当前项目中的测试与指定的应用关联起来。每个项目只需在任意一个文件中声明一次。
 
 ```csharp
 [assembly: AvaloniaTestApplication(typeof(TestAppBuilder))]
@@ -67,9 +67,9 @@ public class TestAppBuilder
 }
 ```
 
-## Test isolation level
+## 测试隔离级别 {#test-isolation-level}
 
-By default, the Application and Dispatcher are recreated for each test (`PerTest` isolation). For large test suites this can be slow. To reuse a single Application instance across all tests in the assembly, add the `[AvaloniaTestIsolation]` attribute:
+默认情况下，每个测试都会重建 Application 和 Dispatcher（即 `PerTest` 隔离）。测试套件一大，这就显得慢了。若想让整个程序集里的所有测试共用一个 Application 实例，请加上 `[AvaloniaTestIsolation]` 特性：
 
 ```csharp
 [assembly: AvaloniaTestApplication(typeof(TestAppBuilder))]
@@ -78,14 +78,14 @@ By default, the Application and Dispatcher are recreated for each test (`PerTest
 
 | 层级 | 行为 |
 |---|---|
-| `PerTest` | Recreates Application and Dispatcher for each test (default). Tests are fully isolated. |
-| `PerAssembly` | Reuses a single Application and Dispatcher for all tests in the assembly. Faster, but tests share state. |
+| `PerTest` | 每个测试都重建 Application 和 Dispatcher（默认）。测试之间完全隔离。 |
+| `PerAssembly` | 整个程序集内的所有测试共用一个 Application 和 Dispatcher。更快，但测试之间会共享状态。 |
 
 :::caution
-With `PerAssembly` isolation, tests share Application state. Clean up any global state (styles, resources, static properties) between tests to avoid interference. Concurrent test execution is not supported.
+采用 `PerAssembly` 隔离时，测试之间会共享 Application 状态。请在测试之间清理好全局状态（样式、资源、静态属性），免得互相干扰。并发执行测试是不支持的。
 :::
 
-## Test example
+## 测试示例 {#test-example}
 
 ```csharp
 [AvaloniaTest]
@@ -109,11 +109,11 @@ public void Should_Type_Text_Into_TextBox()
 }
 ```
 
-Instead of the typical `[Test]` attribute, use `[AvaloniaTest]` as it sets up the UI thread.
+请用 `[AvaloniaTest]` 取代常用的 `[Test]` 特性，因为它会准备好 UI 线程。
 
 ## 另请参阅 {#see-also}
 
-- [Testable sample app for NUnit](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Testing/TestableApp.Headless.NUnit)
+- [可用于 NUnit 的示例应用](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Testing/TestableApp.Headless.NUnit)
 - [Headless Testing Platform](/docs/testing/setting-up-the-headless-platform)
-- [Headless Testing with XUnit](/docs/testing/headless-xunit)
-- [UI Testing with Appium](/docs/testing/ui-testing-with-appium)
+- [用 XUnit 做无头测试](/docs/testing/headless-xunit)
+- [用 Appium 做 UI 测试](/docs/testing/ui-testing-with-appium)

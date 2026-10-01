@@ -11,7 +11,7 @@ The following Linux distributions are comprehensively tested and supported:
 * **Ubuntu**: Version 16.04 and newer
 * **Fedora**: Version 30 and newer
 
-### Other distributions
+### 其他发行版 {#other-distributions}
 
 Avalonia XPF can run on many other Linux distributions beyond those listed above. If you are using a distribution that is not officially supported:
 
@@ -60,7 +60,7 @@ sudo dnf install dotnet-sdk-8.0
 
 Fedora includes Microsoft's .NET packages in its default repositories, and these are compatible with XPF.
 
-### Other distributions
+### 其他发行版 {#other-distributions-1}
 
 For other distributions, add the [Microsoft package feed](https://packages.microsoft.com/) to your package manager and install the .NET SDK from there.
 
@@ -119,7 +119,7 @@ sudo dnf install epel-release
 sudo dnf install libgdiplus
 ```
 
-### Other distributions
+### 其他发行版 {#other-distributions-2}
 
 Use your distribution's package manager to install the equivalent packages. The library names may vary between distributions (for example, `libice6` on Debian corresponds to `libICE` on Fedora/RHEL).
 

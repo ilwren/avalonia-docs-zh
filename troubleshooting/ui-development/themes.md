@@ -1,6 +1,6 @@
 ---
 id: themes
-title: Themes
+title: 主题
 description: Troubleshooting common issues with Avalonia UI themes, including missing control themes, unintended style overrides, and transparent application windows.
 doc-type: troubleshooting
 ---

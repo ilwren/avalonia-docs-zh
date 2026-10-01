@@ -3,13 +3,13 @@ id: setting-up-the-headless-platform
 title: Headless Testing Platform
 ---
 
-The headless platform runs Avalonia without a visible window, making it ideal for automated testing in CI/CD environments and on machines without a display. It provides the full Avalonia control tree, layout, styling, and data binding, but replaces the real windowing and rendering backends with in-memory implementations.
+无头平台让 Avalonia 不开可见窗口也能运行，很适合在 CI/CD 环境或没有显示器的机器上做自动化测试。它提供完整的 Avalonia 控件树、布局、样式和数据绑定，只是把真实的窗口系统和渲染后端换成了内存中的实现。
 
-:::tip[Not just for testing]
-The headless platform is also useful outside of testing. If you need to render controls without a visible window (for example, server-side image generation, PDF export, or batch processing), enable the Skia renderer with `UseHeadlessDrawing = false` as shown in [Visual regression testing](#visual-regression-testing). This gives you a full rendering pipeline in memory. See also [Running headless in Docker](/docs/deployment/docker#using-the-headless-platform-instead).
+:::tip[不只是用来测试]
+无头平台在测试之外也大有用处。如果你需要在没有可见窗口的情况下渲染控件（比如服务端生成图片、导出 PDF 或批量处理），可按[视觉回归测试](#visual-regression-testing)中的做法用 `UseHeadlessDrawing = false` 启用 Skia 渲染器，这样就能在内存中跑通一整条渲染管线。另见[在 Docker 中以无头方式运行](/docs/deployment/docker#using-the-headless-platform-instead)。
 :::
 
-## Simulating user input
+## 模拟用户输入 {#simulating-user-input}
 
 The headless platform has no real input devices, so you simulate input using extension methods on `Window`. These methods raise the same events that real input would trigger.
 
@@ -271,7 +271,7 @@ public void ViewModel_Increments_Count()
 This is an advanced usage scenario. For most cases, use the [XUnit](/docs/testing/headless-xunit) or [NUnit](/docs/testing/headless-nunit) integration, which handles setup automatically.
 :::
 
-### Install packages
+### 安装包 {#install-packages}
 
 You need two packages:
 - [Avalonia.Headless](https://www.nuget.org/packages/Avalonia.Headless) (includes Avalonia)
@@ -281,7 +281,7 @@ You need two packages:
 The headless platform does not require a specific theme. You can swap `FluentTheme` for any other theme.
 :::
 
-### Setup application
+### 搭建应用 {#setup-application}
 
 ```xml title="App.axaml"
 <Application xmlns="https://github.com/avaloniaui"

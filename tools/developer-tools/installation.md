@@ -16,7 +16,7 @@ In this tutorial, you install the Avalonia Plus Developer Tools, add the diagnos
 
 ### Developer Tools requirements
 
-| Requirement | Version/Details |
+| 要求 | Version/Details |
 |------------|-----------------|
 | .NET Runtime | 6.0 or newer |
 | Windows | 10 or newer |
