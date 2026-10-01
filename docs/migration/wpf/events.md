@@ -141,7 +141,7 @@ Note that in Avalonia you must specify the `RoutingStrategies` parameter before 
 
 Many input events have different names in Avalonia compared to WPF. The following table lists the most common mappings:
 
-| WPF Event | Avalonia Equivalent | Notes |
+| WPF Event | Avalonia Equivalent | 注释支持情况 |
 |---|---|---|
 | `MouseLeftButtonDown` | `PointerPressed` | Check [`PointerUpdateKind`](/api/avalonia/input/pointerupdatekind) for button type |
 | `MouseLeftButtonUp` | `PointerReleased` | Check `PointerUpdateKind` for button type |

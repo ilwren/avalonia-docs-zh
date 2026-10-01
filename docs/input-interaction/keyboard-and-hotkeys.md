@@ -33,7 +33,7 @@ A hotkey must have one [`Key`](/api/avalonia/input/key) and zero or more [`KeyMo
 
 A gesture string consists of zero or more modifiers followed by a key name, separated by `+`. For example:
 
-| Gesture string | Meaning |
+| Gesture string | 含义 |
 |---|---|
 | `Ctrl+S` | Control (or Cmd on macOS) + S |
 | `Ctrl+Shift+N` | Control + Shift + N |

@@ -321,7 +321,7 @@ Charts for distributional and comparative statistical analysis.
 
 Most chart types share the following configurable elements:
 
-| Element | 说明 |
+| 元素 | 说明 |
 | --- | --- |
 | [Legend](/controls/data-display/charts/shared-elements/legend-chart) | Identifies each data series by name and color. |
 | [Tooltip](/controls/data-display/charts/shared-elements/tooltip-chart) | Shows data values on hover or tap. |

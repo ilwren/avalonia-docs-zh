@@ -17,7 +17,7 @@ Performance tuning guide for `RichTextEditor`. Covers batch edits, event optimiz
 
 ### Time complexity
 
-| Operation | Complexity | Notes |
+| Operation | Complexity | 注释支持情况 |
 |-----------|-----------|-------|
 | Insert text | O(log n) | Rope data structure |
 | Delete text | O(log n) | Balanced tree update |
@@ -271,7 +271,7 @@ using (document.BeginChange())
 
 The column intent is discarded by any non-vertical selection change, such as a click, programmatic `Select`, horizontal arrows, <kbd>Home</kbd>, <kbd>End</kbd>, or word-jump. Avoid clearing or reassigning `Selection.CaretPosition` between consecutive <kbd>↑</kbd> / <kbd>↓</kbd> presses if you want the column preserved.
 
-### Page layout
+### 页面布局 {#page-layout}
 
 Page layout keeps its sheets on screen while an edit repaginates, rather than tearing down the break table and rebuilding it in an idle slice. Screen, print and PDF export share the same page-break policy, so they break identically. However, the pagination cost is paid once per model.
 
@@ -408,6 +408,6 @@ editor.UndoLimit = 100;
 
 ## 另请参阅 {#see-also}
 
-- [RichTextEditor reference](/controls/input/text-input/richtexteditor)
-- [Thread safety](/controls/input/text-input/richtexteditor/thread-safety)
+- [RichTextEditor 参考](/controls/input/text-input/richtexteditor)
+- [线程安全](/controls/input/text-input/richtexteditor/thread-safety)
 - [Extension patterns](/controls/input/text-input/richtexteditor/extension-patterns)

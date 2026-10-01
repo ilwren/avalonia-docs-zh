@@ -81,7 +81,7 @@ public class ToggleLabel : TemplatedControl
 
 Each declaration carries three values:
 
-| 值 | Meaning |
+| 值 | 含义 |
 | --- | --- |
 | `Name` | `x:Name` that the element uses. Must begin with the `PART_` prefix. |
 | `Type` | Control type of the element, e.g., `Button`, `Panel`. |

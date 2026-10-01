@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 Parcel creates macOS application bundles (`.app`) and packages. Packaging via Parcel can be run on Windows, macOS, or Linux.
 
-| Format | CLI code | 最适合 |
+| 格式 | CLI code | 最适合 |
 |---|---|---|
 | DMG image (`.dmg`) | `dmg` | Direct distribution with a branded drag-and-drop experience |
 | PKG installer (`.pkg`) | `pkg` | Managed installation, direct distribution, and Mac App Store submission |

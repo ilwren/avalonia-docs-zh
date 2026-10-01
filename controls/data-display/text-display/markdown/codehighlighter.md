@@ -117,7 +117,7 @@ Console.WriteLine("Hello, world!");
 
 If you omit the language identifier, the highlighter will render the block as plain text without coloring. The language identifier is stored on the `MarkdownCodeBlock.LanguageId` property.
 
-## Notes
+## 注释支持情况 {#notes}
 
 - Code blocks re-render on their own when you change a property of the highlighter they are using, such as `Theme`. A custom highlighter signals this by calling `OnInvalidated`.
 - `Markdown.CodeHighlighter` is an inheriting attached property, so a single instance covers every code block in the control's document without a style. `MarkdownCodeBlock.Highlighter` set on one block overrides it.

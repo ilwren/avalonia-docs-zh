@@ -80,7 +80,7 @@ WPF uses `TargetType` to match a style to a control type. Avalonia replaces this
 
 Common selector patterns:
 
-| Selector | Meaning |
+| Selector | 含义 |
 |---|---|
 | `Button` | All Button controls |
 | `Button.primary` | Buttons with the `primary` style class |

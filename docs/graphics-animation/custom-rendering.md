@@ -380,7 +380,7 @@ The message arrives in the `OnMessage` callback, where you can store it for use 
 | `CompositionCustomVisualHandler` | Render thread | Real-time visualizations, game loops, video rendering |
 | `Render()` override | UI thread | Standard custom control drawing |
 
-## Performance considerations
+## 性能考量 {#performance-considerations}
 
 - `Render` is called on the UI thread. Keep drawing operations fast and avoid allocations where possible.
 - Reuse `Pen`, `Brush`, and `FormattedText` objects when the parameters do not change. Store them as fields and recreate only when their inputs change.

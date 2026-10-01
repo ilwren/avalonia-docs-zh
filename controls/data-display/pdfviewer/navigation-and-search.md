@@ -161,7 +161,7 @@ using var thumbnail = await Viewer.RenderPageToImageAsync(0, scale: 0.25);
 
 These require `EnableKeyboardShortcuts`. Set it to `false` to keep these keystrokes for your own commands. Form input and <kbd>Esc</kbd> are unaffected.
 
-| Shortcut | 动作 | Notes |
+| Shortcut | 动作 | 注释支持情况 |
 |---|---|---|
 | <kbd>Cmd</kbd>+<kbd>C</kbd> | Copy the selected annotation, else the selected text | Only handled when something is selected |
 | <kbd>Cmd</kbd>+<kbd>V</kbd> | Paste the copied annotation onto the current page | Needs a copied annotation and `CanEditAnnotations` |

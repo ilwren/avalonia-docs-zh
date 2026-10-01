@@ -26,7 +26,7 @@ parcel [command] [options]
 
 ## Global Options
 
-| Option | 说明 |
+| 选项 | 说明 |
 |--------|-------------|
 | `-?, -h, --help` | Show help and usage information |
 | `--version` | Show version information |
@@ -49,7 +49,7 @@ parcel pack <project> [options]
 
 **Options:**
 
-| Option | 说明 | 默认值 |
+| 选项 | 说明 | 默认值 |
 |--------|-------------|---------|
 | `-o, --output` | Output directory | `<project-dir>\bin\packages` |
 | `-r, --runtimes` | Runtime identifiers to package. You can specify this option more than once. | Current platform runtime |
@@ -187,7 +187,7 @@ parcel install-tools [options]
 
 **Options:**
 
-| Option | 说明 |
+| 选项 | 说明 |
 |--------|-------------|
 | `-r, --runtimes` | Runtime identifiers (can specify multiple) |
 | `-p, --packages` | Package formats: `deb`, `dmg`, `msix`, `nsis`, `pkg`, `rpm`, `zip` (can specify multiple) |
@@ -242,7 +242,7 @@ For setup and usage information, see [Parcel MCP](/tools/parcel/mcp).
 
 You can override supported scalar settings with automatic `PARCEL_<SECTION>_<SETTING>` environment variables. See the [Parcel configuration reference](/tools/parcel/configuration-reference) for the exact name of each setting.
 
-## Notes
+## 注释支持情况 {#notes}
 
 - Define all packaging options, signing credentials, and visual settings in the Parcel project file (`.parcel`).
 - When you use `--no-build`, make sure that the publish settings match your Parcel configuration. These settings include trimming, AOT, and single-file publishing.

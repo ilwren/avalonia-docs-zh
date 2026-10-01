@@ -115,7 +115,7 @@ For the full query syntax, see [Container queries](/docs/styling/container-queri
 
 The core binding syntax is the same. WinUI's `x:Bind` (compiled bindings) has an equivalent in Avalonia:
 
-| WinUI / UWP | Avalonia | Notes |
+| WinUI / UWP | Avalonia | 注释支持情况 |
 |---|---|---|
 | `{Binding Path}` | `{Binding Path}` | Same |
 | `{x:Bind ViewModel.Name}` | `{Binding Name}` with `x:DataType` | Avalonia uses `x:CompileBindings` and `x:DataType` for compiled bindings |
@@ -127,7 +127,7 @@ The core binding syntax is the same. WinUI's `x:Bind` (compiled bindings) has an
 
 Most WinUI controls have direct equivalents in Avalonia. The main differences are in naming and a few controls that require separate packages.
 
-| WinUI / UWP | Avalonia | Notes |
+| WinUI / UWP | Avalonia | 注释支持情况 |
 |---|---|---|
 | `NavigationView` | No direct equivalent | Use [`SplitView`](/api/avalonia/controls/splitview) with a [`ListBox`](/api/avalonia/controls/listbox) or a third-party control |
 | `InfoBar` | No direct equivalent | Use a styled `Border` with content |
@@ -185,7 +185,7 @@ For full details on `NavigationPage`, see [NavigationPage](/controls/navigation/
 
 ### Resources and theming
 
-| WinUI / UWP | Avalonia | Notes |
+| WinUI / UWP | Avalonia | 注释支持情况 |
 |---|---|---|
 | `ThemeResource` | `DynamicResource` | Avalonia uses `DynamicResource` for theme-aware values |
 | `StaticResource` | `StaticResource` | Same |

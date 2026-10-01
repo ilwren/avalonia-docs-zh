@@ -29,7 +29,7 @@ macOS shows your application's name in several places: the menu bar, the "About"
 
 ### Where the name comes from
 
-| 位置 | Source | Notes |
+| 位置 | Source | 注释支持情况 |
 |---|---|---|
 | Menu bar (bold app name) | `CFBundleName` in `Info.plist` (bundled), or `Application.Name` (unbundled) | `CFBundleName` is limited to 15 characters. |
 | Dock tooltip | `CFBundleDisplayName` in `Info.plist`, falling back to `CFBundleName` | Use `CFBundleDisplayName` for names longer than 15 characters. |
@@ -205,7 +205,7 @@ macOS users expect certain standard keyboard shortcuts and behaviours. Avalonia 
 
 The following shortcuts are conventions that macOS users expect. Configure them using `NativeMenu` gestures or `KeyBinding`:
 
-| 动作 | Shortcut | Notes |
+| 动作 | Shortcut | 注释支持情况 |
 |---|---|---|
 | Preferences | <kbd>⌘</kbd> <kbd>,</kbd> | Should open your settings/preferences view |
 | Quit | <kbd>⌘</kbd> <kbd>Q</kbd> | Handled automatically by the native menu |

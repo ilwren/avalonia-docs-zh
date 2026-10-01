@@ -391,7 +391,7 @@ if (firstBlock != null)
 4. **Don't assume snapshots auto-update** — they're immutable
 5. **Don't hold long-lived references to elements** — resolve them from a pointer when you need them
 
-## Performance considerations
+## 性能考量 {#performance-considerations}
 
 ### Snapshot creation cost
 
@@ -438,6 +438,6 @@ await Dispatcher.UIThread.InvokeAsync(() =>
 
 ## 另请参阅 {#see-also}
 
-- [RichTextEditor reference](/controls/input/text-input/richtexteditor)
-- [Performance tuning](/controls/input/text-input/richtexteditor/performance-tuning)
+- [RichTextEditor 参考](/controls/input/text-input/richtexteditor)
+- [性能调优](/controls/input/text-input/richtexteditor/performance-tuning)
 - [Extension patterns](/controls/input/text-input/richtexteditor/extension-patterns)

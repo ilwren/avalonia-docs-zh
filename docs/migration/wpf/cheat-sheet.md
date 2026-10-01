@@ -17,7 +17,7 @@ A quick reference for WPF developers transitioning to Avalonia. Each entry shows
 
 ## Property system
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `DependencyProperty` | `StyledProperty` | Supports styling, animation, inheritance |
 | `DependencyProperty` (perf-critical) | `DirectProperty` | Faster but no styling/animation |
@@ -29,7 +29,7 @@ A quick reference for WPF developers transitioning to Avalonia. Each entry shows
 
 ## Styling
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `<Style TargetType="Button">` | `<Style Selector="Button">` | CSS-like selectors |
 | `Style.Triggers` | Pseudo-classes (`:pointerover`, `:pressed`) | No triggers in Avalonia |
@@ -69,7 +69,7 @@ Or with a binding converter:
 
 ## 数据绑定 {#data-binding}
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `{Binding Path}` | `{Binding Path}` | Same syntax |
 | `{Binding Path, Mode=TwoWay}` | `{Binding Path, Mode=TwoWay}` | Same |
@@ -88,7 +88,7 @@ Or with a binding converter:
 
 ## Controls
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `Window` | `Window` | Same |
 | `UserControl` | `UserControl` | Same |
@@ -128,7 +128,7 @@ Or with a binding converter:
 
 ## Layout
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `Grid.RowDefinitions="Auto,*"` | Same shorthand | Both support inline syntax |
 | `DockPanel.LastChildFill` | `DockPanel.LastChildFill` | Same |
@@ -140,7 +140,7 @@ Or with a binding converter:
 
 ## Resources
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `StaticResource` | `StaticResource` | Same (resolved once) |
 | `DynamicResource` | `DynamicResource` | Same (tracks changes) |
@@ -150,7 +150,7 @@ Or with a binding converter:
 
 ## 事件 {#events}
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | [`RoutedEvent`](/api/avalonia/interactivity/routedevent) (Bubble) | `RoutedEvent` (Bubble) | Same |
 | `RoutedEvent` (Tunnel) | `RoutedEvent` (Tunnel) | Same |
@@ -162,7 +162,7 @@ Or with a binding converter:
 
 ## Commands
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `ICommand` | `ICommand` | Same interface |
 | `RoutedCommand` | No built-in equivalent | Use `ICommand` implementations |
@@ -172,7 +172,7 @@ Or with a binding converter:
 
 ## Templates
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | [`DataTemplate`](/api/avalonia/markup/xaml/templates/datatemplate) | `DataTemplate` | Same |
 | `HierarchicalDataTemplate` | `TreeDataTemplate` | Different name |
@@ -184,7 +184,7 @@ Or with a binding converter:
 
 ## Threading
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `Dispatcher.Invoke()` | `Dispatcher.UIThread.InvokeAsync()` | Async by default |
 | `Dispatcher.BeginInvoke()` | `Dispatcher.UIThread.Post()` | Fire-and-forget |
@@ -197,7 +197,7 @@ Or with a binding converter:
 
 ## Animations
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `Storyboard` | `Animation` | Different API |
 | `DoubleAnimation` | Keyframe animations | Use `KeyFrame` with `Cue` |
@@ -208,7 +208,7 @@ Or with a binding converter:
 
 ## Window
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `AllowsTransparency="True"` | `TransparencyLevelHint="Transparent"` | Avalonia does not support WPF-like transparent click-through behavior. |
 | `WindowStyle="None"` | `WindowDecorations="None"` | Removes title bar and border |
@@ -216,7 +216,7 @@ Or with a binding converter:
 
 ## Graphics
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `SolidColorBrush` | `SolidColorBrush` | Same |
 | `LinearGradientBrush` | `LinearGradientBrush` | Same |
@@ -234,7 +234,7 @@ Or with a binding converter:
 
 ## Platform services
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | `SystemParameters.PrimaryScreenWidth` | `TopLevel.GetTopLevel(this).Screens.Primary.Bounds.Width` | Access via [`Screens`](/api/avalonia/controls/screens) on any `TopLevel` |
 | `System.Windows.Forms.Screen.AllScreens` | `TopLevel.GetTopLevel(this).Screens.All` | Returns all connected monitors |

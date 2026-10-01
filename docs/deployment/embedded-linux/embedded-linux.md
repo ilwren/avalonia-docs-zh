@@ -31,7 +31,7 @@ Replace `linux-arm64` with the appropriate RID for your device.
 
 ### Publish options explained
 
-| Option | 用途 |
+| 选项 | 用途 |
 |---|---|
 | `--self-contained true` | Bundles the .NET runtime so it does not need to be installed on the target. |
 | `-p:PublishSingleFile=true` | Produces a single executable file instead of a directory of assemblies. |

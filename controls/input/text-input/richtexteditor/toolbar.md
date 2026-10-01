@@ -245,7 +245,7 @@ In practice, you'll rarely need to use either base class directly. The built-in 
 
 ### Built-in subclasses
 
-| Class | Base | Widget | Typical use |
+| Class | 基类 | Widget | Typical use |
 |---|---|---|---|
 | `ButtonTool` | `ActionTool` | Button | One-shot commands, e.g., Undo, Cut, Paste. |
 | `ToggleTool` | `ActionTool` | Toggle button | Formatting, e.g., Bold, Italic. |
@@ -1062,7 +1062,7 @@ For precise control, write a style selector that targets a specific element with
 
 ## 另请参阅 {#see-also}
 
-- [RichTextEditor reference](/controls/input/text-input/richtexteditor)
+- [RichTextEditor 参考](/controls/input/text-input/richtexteditor)
 - [Extension Patterns](/controls/input/text-input/richtexteditor/extension-patterns)
 - [Performance Tuning](/controls/input/text-input/richtexteditor/performance-tuning)
 - [Troubleshooting RichTextEditor](/troubleshooting/controls/richtexteditor)

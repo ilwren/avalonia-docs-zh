@@ -1,6 +1,6 @@
 ---
 id: index
-title: RichTextEditor control
+title: RichTextEditor 控件
 doc-type: reference
 tags:
  - avalonia pro
@@ -10,7 +10,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-`Avalonia.Controls.RichTextEditor` is a rich text editing solution for Avalonia applications, offering functionalities for interactive text editing, document architecture and file serialization.
+`Avalonia.Controls.RichTextEditor` 是面向 Avalonia 应用的富文本编辑方案，提供交互式文本编辑、文档架构和文件序列化等能力。
 
 :::info
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
@@ -18,11 +18,11 @@ import TabItem from '@theme/TabItem';
 
 ## 适用场景 {#when-to-use}
 
-Use `RichTextEditor` to create an area where users can edit text content and perform common text operations, such as formatting, aligning, highlighting, or undo/redo.
+用 `RichTextEditor` 开辟一块区域，让用户编辑文本内容并执行常见的文本操作，比如设置格式、对齐、高亮或撤销/重做。
 
 ## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.RichTextEditor` and `Avalonia.Controls.Documents` NuGet packages by running `dotnet add package`. Optionally, install serializers for specific file formats you need.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.RichTextEditor` 和 `Avalonia.Controls.Documents` 两个 NuGet 包。你还可以按需安装特定文件格式的序列化器。
 
 ```bash
 # Editor control
@@ -52,7 +52,7 @@ dotnet add package Avalonia.Controls.Markdown                        # Markdown 
 对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
-3. Reference the `RichTextEditor` default theme via a `StyleInclude` in your `App.axaml` file. This adds the resources needed to render the control.
+3. 在 `App.axaml` 文件中用 `StyleInclude` 引用 `RichTextEditor` 的默认主题，这会带入渲染该控件所需的资源。
 
 ```xml
 <Application.Styles>
@@ -65,7 +65,7 @@ dotnet add package Avalonia.Controls.Markdown                        # Markdown 
 
 ## 基本用法 {#basic-usage}
 
-Use this setup to get started with a basic implementation of the rich text editor.
+照此准备好之后，就可以着手实现一个最基本的富文本编辑器了。
 
 <Tabs>
 <TabItem value="xaml" label="XAML">
@@ -121,9 +121,9 @@ Use this setup to get started with a basic implementation of the rich text edito
 </TabItem>
 </Tabs>
 
-## Programmatic document construction
+## 用代码构建文档 {#programmatic-document-construction}
 
-If preferred, you can create and edit documents from the code-behind instead of XAML. Do this by directly calling the relevant [components](#components), [block elements](#block-elements), or [inline elements](#inline-elements) from `Avalonia.Controls.Documents`.
+如果你更习惯这种方式，也可以在代码隐藏中（而非 XAML 里）创建和编辑文档：直接调用 `Avalonia.Controls.Documents` 中相应的[组件](#components)、[块级元素](#block-elements)或[行内元素](#inline-elements)即可。
 
 <Tabs>
 <TabItem value="create" label="Create document">
@@ -170,9 +170,9 @@ If preferred, you can create and edit documents from the code-behind instead of 
 </TabItem>
 </Tabs>
 
-## Loading and saving files
+## 加载与保存文件 {#loading-and-saving-files}
 
-Load and Save accept an `IDocumentSerializer` instance. Each format lives in its own package.
+Load 和 Save 接受一个 `IDocumentSerializer` 实例，每种格式都在各自的包里。
 
 ```csharp
 using Avalonia.Controls.Documents.Serialization.Rtf;
@@ -190,7 +190,7 @@ await using (var stream = File.Create("output.rtf"))
 }
 ```
 
-Synchronous overloads are also available, and run the whole cost on the calling thread:
+也有同步重载，但全部开销都压在调用线程上：
 
 ```csharp
 editor.Load(stream, new RtfSerializer());
@@ -198,10 +198,10 @@ editor.Save(stream, new RtfSerializer());
 ```
 
 :::info
-`IDocumentSerializer` is synchronous only. No format performs asynchronous I/O, even with `LoadAsync` and `SaveAsync`, which are designed to offload work from the thread by wrapping the call in `Task.Run`. `LoadAsync` parses on the thread pool and then builds the element tree on the UI thread, because a `FlowDocument` and its elements belong to the dispatcher of the thread that constructed them.
+`IDocumentSerializer` 只有同步版本。没有哪种格式会做异步 I/O——`LoadAsync` 和 `SaveAsync` 也不例外，它们只是把调用包进 `Task.Run` 以便把活儿挪出当前线程。`LoadAsync` 在线程池上解析，随后在 UI 线程上构建元素树，因为 `FlowDocument` 及其元素归属于构造它们的那个线程的调度器。
 :::
 
-Available serializers:
+可用的序列化器：
 
 | 序列化器 | NuGet 包 | 扩展名 | 方向 |
 |---|---|---|---|
@@ -209,29 +209,29 @@ Available serializers:
 | `DocxSerializer` | `Avalonia.Controls.Documents.Serialization.Docx` | `.docx` | 可读可写 |
 | `XamlSerializer` | `Avalonia.Controls.Documents.Serialization.Xaml` | `.xaml` | 可读可写 |
 | `MarkdownSerializer` | `Avalonia.Controls.Markdown` | `.md` | 可读可写 |
-| `HtmlSerializer` | `Avalonia.Controls.Documents.Serialization.Html` | `.html` | Read only (`CanWrite` is `false`) |
-| `PdfSerializer` | `Avalonia.Controls.Documents.Serialization.Pdf` | `.pdf` | Write only (`CanRead` is `false`) |
+| `HtmlSerializer` | `Avalonia.Controls.Documents.Serialization.Html` | `.html` | 只读（`CanWrite` 为 `false`） |
+| `PdfSerializer` | `Avalonia.Controls.Documents.Serialization.Pdf` | `.pdf` | 只写（`CanRead` 为 `false`） |
 | `PlainTextSerializer` | 已包含在 `Avalonia.Controls.Documents`（核心包）中 | `.txt` | 可读可写 |
 <br />
 
-Each serializer reports its direction through `CanRead` and `CanWrite`, so a format picker can filter the list.
+每个序列化器都通过 `CanRead` 和 `CanWrite` 表明自己的读写方向，格式选择器可据此过滤列表。
 
-`PdfSerializer` is the supported route to paper.
+`PdfSerializer` 是通往纸面的官方途径。
 
-### Loading a document without an editor
+### 不借助编辑器加载文档 {#loading-a-document-without-an-editor}
 
-`FlowDocument.Load` and `FlowDocument.LoadAsync` create a document directly from a stream, useful for preview or conversion scenarios. Both take an optional `CancellationToken`:
+`FlowDocument.Load` 和 `FlowDocument.LoadAsync` 直接从流创建文档，适合预览或格式转换的场景。两者都接受一个可选的 `CancellationToken`：
 
 ```csharp
 await using var stream = File.OpenRead("document.rtf");
 var document = await FlowDocument.LoadAsync(stream, new RtfSerializer(), cancellationToken);
 ```
 
-To load with no UI thread involved at all, you can read a `DocumentSnapshot` with the serializer and materialize it with `TextDocument.FromSnapshot`, which carries the whole document.
+若希望全程不牵涉 UI 线程，可以用序列化器读出一个 `DocumentSnapshot`，再用 `TextDocument.FromSnapshot` 把它实体化——它承载着整篇文档。
 
-## Adding a word counter
+## 加个字数统计 {#adding-a-word-counter}
 
-You can create an event that returns a word count. In this example, we add a continuous word counter that updates when the text changes.
+你可以写一个返回字数的事件。下面的例子加了一个实时字数统计，文本变化时自动更新。
 
 ```csharp
 editor.ContentChanged += (sender, args) =>
@@ -252,9 +252,9 @@ void UpdateWordCount()
 }
 ```
 
-## Customizing selection highlight color
+## 自定义选区高亮颜色 {#customizing-selection-highlight-color}
 
-The highlight color of text selections can be customized by specifying an ARGB value for `SelectionBrush`.
+给 `SelectionBrush` 指定一个 ARGB 值，即可自定义文本选区的高亮颜色。
 
 ```xml
 <RichTextEditor SelectionBrush="#ffff529e">
@@ -262,189 +262,189 @@ The highlight color of text selections can be customized by specifying an ARGB v
 
 ## Components
 
-The Avalonia rich text editor consists of four components:
+Avalonia 富文本编辑器由四个部分组成：
 
-1. `RichTextEditor`: Interactive editing control that renders a document and allows users to type, select, format, undo/redo, etc.
-2. `FlowDocumentScrollViewer`: Read-only viewer that displays a document as one continuous column, without editing capabilities.
-3. `FlowDocumentPageViewer`: Read-only viewer that displays a document as discrete page sheets, the way a word processor's print layout does. It derives from `FlowDocumentScrollViewer`.
-4. `FlowDocument`: Document model that organizes rich text content into [blocks](#block-elements).
+1. `RichTextEditor`：交互式编辑控件，负责渲染文档，让用户输入、选择、设置格式、撤销/重做等等。
+2. `FlowDocumentScrollViewer`：只读阅读器，把文档显示为一整条连续的栏，不提供编辑能力。
+3. `FlowDocumentPageViewer`：只读阅读器，把文档显示为一页页独立的纸面，就像文字处理软件的打印版式。它派生自 `FlowDocumentScrollViewer`。
+4. `FlowDocument`：文档模型，把富文本内容组织成一个个[块](#block-elements)。
 
-A document also owns two kinds of nested document, each a `FlowDocument` in its own right: page bands (running [headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers), in `FlowDocument.PageBands`) and [footnotes](/controls/input/text-input/richtexteditor/footnotes) (in `FlowDocument.Footnotes`). One editor retargets to whichever of them the caret is in; there is no nested `RichTextEditor`.
+文档还拥有两类嵌套文档，它们本身也都是 `FlowDocument`：页眉页脚带（通栏[页眉与页脚](/controls/input/text-input/richtexteditor/headers-and-footers)，存放在 `FlowDocument.PageBands` 中）和[脚注](/controls/input/text-input/richtexteditor/footnotes)（存放在 `FlowDocument.Footnotes` 中）。插入符落在哪一个里面，编辑器就改为面向哪一个；并不存在嵌套的 `RichTextEditor`。
 
-### RichTextEditor properties
+### RichTextEditor 属性 {#richtexteditor-properties}
 
-These properties are used by the `RichTextEditor` component.
-
-| 属性 | 类型 | 说明 | 默认值 |
-| --- | --- | --- | --- |
-| `AcceptsReturn` | `bool`| Determines whether the editor accepts return key input. | `true` |
-| `AcceptsTab` | `bool` | Determines whether the editor accepts tab key input. | `true` |
-| `CaretBrush` | `IBrush?` | Color of the caret (text cursor).| None |
-| `Document` | `FlowDocument` | Selects the document to display and edit. | A new empty `FlowDocument` |
-| `IsReadOnly` | `bool` | Determines whether the editor is read-only. | `false` |
-| `PageBandDistance` | `double` | Distance from the sheet edge to a running header or footer. Writes through to the document, which owns the value. | 12.5 mm |
-| `PageGap` | `double` | Gap between page sheets in page layout. | 24 |
-| `PageMargins` | `Thickness?` | Page margins used in page layout. Falls back to the document's `PagePadding`. | `null` |
-| `PageSize` | `Size?` | Page size used in page layout. Falls back to the document's page dimensions, then A4. | `null` |
-| `SelectionBrush` | `IBrush?` | Color of text selections. | None |
-| `SelectionFlyout` | `EditorSelectionFlyout?` | Mini toolbar shown above a selection. Set to `null` to remove it. | `null` (the default theme supplies one) |
-| `ShowBlockAdorners` | `bool` | Determines whether block adorner decorations are displayed. | `true` |
-| `ShowPageBandsInContinuousLayout` | `bool` | In continuous layout, shows the running header above the first block and the running footer below the last. No effect in page layout. | `false` |
-| `ShowPageBounds` | `bool` | Determines whether page boundary indicators are displayed. | `false` |
-| `ShowSelectionFlyout` | `bool` | Show or hide the selection flyout without replacing it. | `true` |
-| `ShowToolbar` | `bool` | Determines whether the toolbar is visible. | `true` |
-| `Toolbar` | `EditorToolbar?` | Customizes toolbar design and layout. | `null` (the default theme supplies one) |
-| `UndoLimit` | `int` | Maximum number of operations to retain for undo actions. | 100 |
-| `ViewMode` | `DocumentViewMode` | `Continuous` for one flowing column, `PageLayout` for discrete page sheets. | `Continuous` |
-
-### FlowDocument properties
-
-These properties are used by the `FlowDocument` component.
+下列属性供 `RichTextEditor` 组件使用。
 
 | 属性 | 类型 | 说明 | 默认值 |
 | --- | --- | --- | --- |
-| `Background` | `IBrush` | Color of the document's background, as an ARGB value. | `Null` |
-| `FontFamily` | `FontFamily ` | Font family for text in the document. | `Null` |
-| `FontSize` | `double` | Font size for text in the document. | 12 |
-| `FontStretch` | `FontStretch` | Font stretch for text in the document, e.g., `Normal`, `Condensed`, `Expanded`. | `Normal` |
-| `FontStyle` | `FontStyle` | Font style for text in the document, e.g., `Normal`, `Italic`, `Oblique`. | `Null` |
-| `FontWeight` | `FontWeight` | Font weight for text in the document, e.g., `Normal`, `Bold`. | `Normal` |
-| `FootnoteNumberFormat` | `FootnoteNumberFormat` | Numbering used for footnote anchors, e.g., `Decimal`, `LowerRoman`, `Symbols`. | `Decimal` |
-| `Foreground` | `IBrush` | Color of the document's foreground, as an ARGB value. | `Null` |
-| `PageBandDistance` | `double` | Distance from the sheet edge to a running header or footer. `NaN` means the document declares none and the default applies. | `double.NaN` |
-| `PageHeight` | `double` | Height of the page. | `double.NaN` |
-| `PagePadding` | `Thickness` | Inner spacing between the block's borders and its content. | `Null` |
-| `PageWidth` | `double` | Width of the page. | `double.NaN` |
-| `TextAlignment` | `TextAlignment` | Alignment of text in the document, i.e., `Left`, `Center`, `Right`, `Justify`. | `Null` |
+| `AcceptsReturn` | `bool`| 决定编辑器是否接受回车键输入。 | `true` |
+| `AcceptsTab` | `bool` | 决定编辑器是否接受 Tab 键输入。 | `true` |
+| `CaretBrush` | `IBrush?` | 插入符（文本光标）的颜色。| None |
+| `Document` | `FlowDocument` | 选定要显示和编辑的文档。 | 一个新的空 `FlowDocument` |
+| `IsReadOnly` | `bool` | 决定编辑器是否只读。 | `false` |
+| `PageBandDistance` | `double` | 从纸面边缘到通栏页眉或页脚的距离。该值归文档所有，这里的设置会回写过去。 | 12.5 mm |
+| `PageGap` | `double` | 分页布局中纸面之间的间隙。 | 24 |
+| `PageMargins` | `Thickness?` | 分页布局所用的页边距。未设置时回落到文档的 `PagePadding`。 | `null` |
+| `PageSize` | `Size?` | 分页布局所用的页面尺寸。未设置时先回落到文档的页面尺寸，再回落到 A4。 | `null` |
+| `SelectionBrush` | `IBrush?` | 文本选区的颜色。 | None |
+| `SelectionFlyout` | `EditorSelectionFlyout?` | 选区上方浮现的迷你工具栏。设为 `null` 即可去掉它。 | `null`（默认主题会提供一个） |
+| `ShowBlockAdorners` | `bool` | 决定是否显示块装饰物。 | `true` |
+| `ShowPageBandsInContinuousLayout` | `bool` | 在连续布局中，于首个块之上显示通栏页眉、末个块之下显示通栏页脚。对分页布局无效。 | `false` |
+| `ShowPageBounds` | `bool` | 决定是否显示页面边界标记。 | `false` |
+| `ShowSelectionFlyout` | `bool` | 显示或隐藏选区浮层，但不替换它。 | `true` |
+| `ShowToolbar` | `bool` | 决定工具栏是否可见。 | `true` |
+| `Toolbar` | `EditorToolbar?` | 自定义工具栏的外观与布局。 | `null`（默认主题会提供一个） |
+| `UndoLimit` | `int` | 可供撤销的操作最多保留多少步。 | 100 |
+| `ViewMode` | `DocumentViewMode` | `Continuous` 表示一整条连续的栏，`PageLayout` 表示一页页独立的纸面。 | `Continuous` |
+
+### FlowDocument 属性 {#flowdocument-properties}
+
+下列属性供 `FlowDocument` 组件使用。
+
+| 属性 | 类型 | 说明 | 默认值 |
+| --- | --- | --- | --- |
+| `Background` | `IBrush` | 文档背景色，为 ARGB 值。 | `Null` |
+| `FontFamily` | `FontFamily ` | 文档中文本的字体。 | `Null` |
+| `FontSize` | `double` | 文档中文本的字号。 | 12 |
+| `FontStretch` | `FontStretch` | 文档中文本的字体拉伸，比如 `Normal`、`Condensed`、`Expanded`。 | `Normal` |
+| `FontStyle` | `FontStyle` | 文档中文本的字形，比如 `Normal`、`Italic`、`Oblique`。 | `Null` |
+| `FontWeight` | `FontWeight` | 文档中文本的字重，比如 `Normal`、`Bold`。 | `Normal` |
+| `FootnoteNumberFormat` | `FootnoteNumberFormat` | 脚注锚点所用的编号格式，比如 `Decimal`、`LowerRoman`、`Symbols`。 | `Decimal` |
+| `Foreground` | `IBrush` | 文档前景色，为 ARGB 值。 | `Null` |
+| `PageBandDistance` | `double` | 从纸面边缘到通栏页眉或页脚的距离。`NaN` 表示文档未作声明，采用默认值。 | `double.NaN` |
+| `PageHeight` | `double` | 页面高度。 | `double.NaN` |
+| `PagePadding` | `Thickness` | 块的边框与其内容之间的内侧间距。 | `Null` |
+| `PageWidth` | `double` | 页面宽度。 | `double.NaN` |
+| `TextAlignment` | `TextAlignment` | 文档中文本的对齐方式，即 `Left`、`Center`、`Right`、`Justify`。 | `Null` |
 <br />
 
-`FlowDocument` also owns two collections of nested documents: [`PageBands`](/controls/input/text-input/richtexteditor/headers-and-footers) (running headers and footers) and [footnotes](/controls/input/text-input/richtexteditor/footnotes). Both survive a snapshot round trip and join their undo to the owning document's, so they are present whether or not any element is realized.
+`FlowDocument` 还拥有两组嵌套文档：[`PageBands`](/controls/input/text-input/richtexteditor/headers-and-footers)（通栏页眉与页脚）和[脚注](/controls/input/text-input/richtexteditor/footnotes)。两者都能完整经受快照往返，并把撤销并入所属文档的栈，因此不论是否有元素被实体化，它们都在那儿。
 
-## Block elements
+## 块级元素 {#block-elements}
 
-Block elements are used by `FlowDocument` to build the document model and organize content.
+`FlowDocument` 用块级元素来搭建文档模型、组织内容。
 
-| Element | 说明 |
+| 元素 | 说明 |
 | --- | --- |
-| `Block` | Abstract base class for block elements. |
-| `BlockUIContainer` | Wrapper to embed UI elements as blocks. |
-| `List` | Displays a bulleted or numbered list. |
-| `ListItem` | Individual item in a `List`. |
-| `Paragraph` | Basic block element that contains rich text content. |
-| `Section` | Block element that groups other block elements. Carries its own `PageWidth`, `PageHeight` and `PagePadding`, so page setup can vary per section. |
-| `Table` | Displays a table. |
-| `TableCell` | Individual cell in a `Table`. |
-| `TableColumn` | A column of cells in a `Table`. |
-| `TableRow` | A row of cells in a `Table`. |
-| `TableRowGroup` | A group of rows in a `Table`. |
+| `Block` | 块级元素的抽象基类。 |
+| `BlockUIContainer` | 用于把 UI 元素作为块嵌入的包装器。 |
+| `List` | 显示项目符号列表或编号列表。 |
+| `ListItem` | `List` 中的单个条目。 |
+| `Paragraph` | 最基本的块级元素，内含富文本内容。 |
+| `Section` | 把其他块级元素归为一组的块级元素。它自带 `PageWidth`、`PageHeight` 和 `PagePadding`，因此各小节的页面设置可以各不相同。 |
+| `Table` | 显示表格。 |
+| `TableCell` | `Table` 中的单个单元格。 |
+| `TableColumn` | `Table` 中的一列单元格。 |
+| `TableRow` | `Table` 中的一行单元格。 |
+| `TableRowGroup` | `Table` 中的一组行。 |
 
 ### 属性 {#properties}
 
 | 属性 | 类型 | 说明 | 默认值 |
 | --- | --- | --- | --- |
-| `Background` | `IBrush` | Color of the block's background, as an ARGB value. | `Null` |
-| `BorderBrush`| `IBrush` | Color of the block's borders, as an ARGB value. | `Null` |
-| `BorderThickness` | `Thickness` | Thickness of the block's borders. | `Null` |
-| `BreakPageBefore` | `bool` | Starts the block on a new page in paged layout, print and PDF export. Ctrl+Enter sets it. | `false` |
-| `Child` | `Control` | Used by `BlockUIContainer`. Defines the control to be placed in the block. | `Null` |
-| `ColumnSpan` | `int` | Used by `TableCell`. The number of columns the cell spans. | 1 |
-| `CornerRadius ` | `CornerRadius` | The radius applied to the block's corners. | `Null` |
-| `FlowDirection` | `FlowDirection` | Direction of text flow, i.e., `LeftToRight` or `RightToLeft`. | `Null` |
-| `FontFamily` | `FontFamily ` | Font family for text in the block. | `Null` |
-| `FontFeatures` | `FontFeatureCollection` | A collection of font features applied to text in the block. |
-| `FontSize` | `double` | Font size for text in the block. | 12 |
-| `FontStretch` | `FontStretch` | Font stretch for text in the block, e.g., `Normal`, `Condensed`, `Expanded`. | `Normal` |
-| `FontStyle` | `FontStyle` | Font style for text in the block, e.g., `Normal`, `Italic`, `Oblique`. | `Null` |
-| `FontWeight` | `FontWeight` | Font weight for text in the block, e.g., `Normal`, `Bold`. | `Normal` |
-| `Foreground` | `IBrush` | Color of the block's foreground, as an ARGB value. | `Null` |
-| `Height` | `double` | Used by `TableRow`. Minimum row height. Zero sizes the row to its content. | 0 |
-| `InsideBorderBrush` | `IBrush?` | Used by `Table`. Color of the interior gridlines between cells. | `Null` |
-| `InsideBorderThickness` | `double` | Used by `Table`. Thickness of the interior gridlines between cells. | 0 |
-| `KeepTogether` | `bool` | Keeps the whole block on one page rather than splitting it across a page break. | `false` |
-| `KeepWithNext` | `bool` | Keeps the block on the same page as the block that follows it. | `false` |
-| `LetterSpacing` | `double` | Additional horizontal spacing between characters. The default of 0 indicates normal spacing. | 0 |
-| `LineHeight` | `double` | Height of each line of text in the block. | `double.NaN` |
-| `Margin` | `Thickness` | Outer spacing around the block element. | `Null` |
-| `MarkerAlignment` | `TextAlignment` | Used by `List`. Aligns the marker within its column, `Left` or `Right`. | `Left` |
-| `MarkerOffset` | `double` | Used by `List`. Determines the spacing after a list marker. | `double.NaN` |
-| `MarkerStyle` | `TextMarkerStyle` | Used by `List`. Selects the style of the list marker, e.g., `Disc`, `Decimal`, `LowerLatin`. | `Null` |
-| `Padding` | `Thickness` | Inner spacing between the block's borders and its content. | `Null` |
-| `RowSpan` | `int` | Used by `TableCell`. The number of rows the cell spans. | 1 |
-| `StartIndex` | `int` | Used by `List`. Specifies the starting index for numbered lists. | 1 |
-| `TabStopPositions` | `IReadOnlyList<double>?` | Positions of tab stops for text in the block. | `Null` |
-| `TextAlignment` | `TextAlignment` | Alignment of text in the block, i.e., `Left`, `Center`, `Right`, `Justify`. | `Null` |
-| `TextDecorations` | `TextDecorations` | Decorative elements applied to text in the block, e.g., `Underline`, `Overline`, `Strikethrough`. |
-| `TextIndent` | `double` | Width of indentation before the first line of text. Negative value can be set to create a handing indent. | `double.NaN` |
-| `VerticalAlignment` | `VerticalAlignment` | Used by `TableCell`. Aligns the cell's content within the row height, `Top`, `Center` or `Bottom`. | `Top` |
-| `WidowControl` | `bool` | Used by `Paragraph`. Keeps at least two lines of the paragraph on each side of a page break. | `true` |
+| `Background` | `IBrush` | 块的背景色，为 ARGB 值。 | `Null` |
+| `BorderBrush`| `IBrush` | 块的边框颜色，为 ARGB 值。 | `Null` |
+| `BorderThickness` | `Thickness` | 块的边框粗细。 | `Null` |
+| `BreakPageBefore` | `bool` | 在分页布局、打印和 PDF 导出中让该块另起一页。按 Ctrl+Enter 可设置它。 | `false` |
+| `Child` | `Control` | 供 `BlockUIContainer` 使用。指定要放进该块的控件。 | `Null` |
+| `ColumnSpan` | `int` | 供 `TableCell` 使用。单元格横跨的列数。 | 1 |
+| `CornerRadius ` | `CornerRadius` | 块的圆角半径。 | `Null` |
+| `FlowDirection` | `FlowDirection` | 文本的排列方向，即 `LeftToRight` 或 `RightToLeft`。 | `Null` |
+| `FontFamily` | `FontFamily ` | 块中文本的字体。 | `Null` |
+| `FontFeatures` | `FontFeatureCollection` | 作用于块中文本的一组字体特性。 |
+| `FontSize` | `double` | 块中文本的字号。 | 12 |
+| `FontStretch` | `FontStretch` | 块中文本的字体拉伸，比如 `Normal`、`Condensed`、`Expanded`。 | `Normal` |
+| `FontStyle` | `FontStyle` | 块中文本的字形，比如 `Normal`、`Italic`、`Oblique`。 | `Null` |
+| `FontWeight` | `FontWeight` | 块中文本的字重，比如 `Normal`、`Bold`。 | `Normal` |
+| `Foreground` | `IBrush` | 块的前景色，为 ARGB 值。 | `Null` |
+| `Height` | `double` | 供 `TableRow` 使用。行的最小高度。为零时按内容撑开。 | 0 |
+| `InsideBorderBrush` | `IBrush?` | 供 `Table` 使用。单元格之间内部网格线的颜色。 | `Null` |
+| `InsideBorderThickness` | `double` | 供 `Table` 使用。单元格之间内部网格线的粗细。 | 0 |
+| `KeepTogether` | `bool` | 让整个块保持在同一页上，而不被分页符拆开。 | `false` |
+| `KeepWithNext` | `bool` | 让该块与紧随其后的块留在同一页上。 | `false` |
+| `LetterSpacing` | `double` | 字符之间额外的水平间距。默认值 0 表示常规间距。 | 0 |
+| `LineHeight` | `double` | 块中每一行文本的行高。 | `double.NaN` |
+| `Margin` | `Thickness` | 块级元素周围的外侧间距。 | `Null` |
+| `MarkerAlignment` | `TextAlignment` | 供 `List` 使用。标记在其列内的对齐方式，`Left` 或 `Right`。 | `Left` |
+| `MarkerOffset` | `double` | 供 `List` 使用。决定列表标记之后留多少间距。 | `double.NaN` |
+| `MarkerStyle` | `TextMarkerStyle` | 供 `List` 使用。选择列表标记的样式，比如 `Disc`、`Decimal`、`LowerLatin`。 | `Null` |
+| `Padding` | `Thickness` | 块的边框与其内容之间的内侧间距。 | `Null` |
+| `RowSpan` | `int` | 供 `TableCell` 使用。单元格纵跨的行数。 | 1 |
+| `StartIndex` | `int` | 供 `List` 使用。指定编号列表的起始序号。 | 1 |
+| `TabStopPositions` | `IReadOnlyList<double>?` | 块中文本的制表位位置。 | `Null` |
+| `TextAlignment` | `TextAlignment` | 块中文本的对齐方式，即 `Left`、`Center`、`Right`、`Justify`。 | `Null` |
+| `TextDecorations` | `TextDecorations` | 作用于块中文本的装饰线，比如 `Underline`、`Overline`、`Strikethrough`。 |
+| `TextIndent` | `double` | 首行文本之前的缩进宽度。设为负值可以做出悬挂缩进。 | `double.NaN` |
+| `VerticalAlignment` | `VerticalAlignment` | 供 `TableCell` 使用。单元格内容在行高范围内的对齐方式，`Top`、`Center` 或 `Bottom`。 | `Top` |
+| `WidowControl` | `bool` | 供 `Paragraph` 使用。确保分页符两侧各至少留有两行该段落的文字。 | `true` |
 
-## Inline elements
+## 行内元素 {#inline-elements}
 
-Inline elements are used to specify content styles within a block.
+行内元素用于指定块内部的内容样式。
 
-| Element | 说明 |
+| 元素 | 说明 |
 | --- | --- |
-| `RichBold` | Indicates bolded text. Overrides global `FontWeight` property. |
-| `RichFootnoteCitation` | A further citation of a note whose anchor is elsewhere. Paired with a `Footnote` by `NoteId`. |
-| `RichFootnoteReference` | Atomic anchor for a footnote, paired with a `Footnote` in `FlowDocument.Footnotes` by `NoteId`. |
-| `RichHyperlink` | Marks an inline hyperlink. |
-| `RichImage` | Inline image. Content comes from a `RichImageSource`. Occupies a single object replacement character. |
-| `RichInline` | Abstract base class for inline elements. |
-| `RichInlineUIContainer` | Wrapper to embed UI elements within text flow. |
-| `RichItalic` | Indicates italicized text. Overrides global `FontStyle` property. |
-| `RichLineBreak` | Forces a line break. |
-| `RichPageNumberField` | Page number field, `CurrentPage` or `PageCount`. Stores no number: the value comes from pagination, so one header band renders a different one per page. |
-| `RichRun`| Basic text run. Allows character-level formatting. Text content is defined by the [`Text` property](#properties-1). |
-| `RichSpan` | Inline element that groups other inline elements. |
-| `RichSubscript` | Indicates subscript text. Sets `BaselineAlignment` property to `Subscript`.  |
-| `RichSuperscript` | Indicates superscript text. Sets `BaselineAlignment` property to `Superscript`. |
-| `RichUnderline` | Indicates underlined text. Overrides global `TextDecorations` property. |
+| `RichBold` | 表示加粗文本。会覆盖全局的 `FontWeight` 属性。 |
+| `RichFootnoteCitation` | 对某条注释的再次引用，其锚点在别处。通过 `NoteId` 与 `Footnote` 配对。 |
+| `RichFootnoteReference` | 脚注的原子锚点，通过 `NoteId` 与 `FlowDocument.Footnotes` 中的 `Footnote` 配对。 |
+| `RichHyperlink` | 标记一个行内超链接。 |
+| `RichImage` | 行内图片。内容来自 `RichImageSource`，只占一个对象替换字符。 |
+| `RichInline` | 行内元素的抽象基类。 |
+| `RichInlineUIContainer` | 用于把 UI 元素嵌入文本流的包装器。 |
+| `RichItalic` | 表示斜体文本。会覆盖全局的 `FontStyle` 属性。 |
+| `RichLineBreak` | 强制换行。 |
+| `RichPageNumberField` | 页码字段，`CurrentPage` 或 `PageCount`。它不存储任何数字：值来自分页结果，因此同一条页眉带在每页渲染出的号码各不相同。 |
+| `RichRun`| 最基本的文本段，支持字符级格式设置。文本内容由 [`Text` 属性](#properties-1)指定。 |
+| `RichSpan` | 把其他行内元素归为一组的行内元素。 |
+| `RichSubscript` | 表示下标文本。会把 `BaselineAlignment` 属性设为 `Subscript`。  |
+| `RichSuperscript` | 表示上标文本。会把 `BaselineAlignment` 属性设为 `Superscript`。 |
+| `RichUnderline` | 表示带下划线的文本。会覆盖全局的 `TextDecorations` 属性。 |
 
 ### 属性 {#properties-1}
 
-| 属性 | 类型 | Used by | 说明 |
+| 属性 | 类型 | 使用者 | 说明 |
 | --- | --- | --- | --- |
-| `AltText` | `string?` | `RichImage` | Alternative text for the image. |
-| `Child` | `Control` | `RichInlineUIContainer` | Defines the control to be placed in the inline container. |
-| `Height` | `double` | `RichImage` | Display height in device-independent pixels. Unset uses the image's intrinsic height. |
-| `IsVisited` | `bool` | `RichHyperlink` | Whether the hyperlink has been visited. |
+| `AltText` | `string?` | `RichImage` | 图片的替代文字。 |
+| `Child` | `Control` | `RichInlineUIContainer` | 指定要放进行内容器的控件。 |
+| `Height` | `double` | `RichImage` | 显示高度，单位为设备无关像素。未设置时采用图片的固有高度。 |
+| `IsVisited` | `bool` | `RichHyperlink` | 该超链接是否已被访问过。 |
 | `Kind` | `PageNumberFieldKind` | `RichPageNumberField` | `CurrentPage` or `PageCount`. |
-| `NavigateUri` | `Uri?` | `RichHyperlink` | The URI to navigate to when hyperlink is clicked. |
-| `NoteId` | `int` | `RichFootnoteReference`, `RichFootnoteCitation` | Pairs the anchor with its `Footnote`. |
-| `Source` | `RichImageSource?` | `RichImage` | The image content. `EmbeddedImageSource`, `DeferredImageSource` or `PixelImageSource`. |
-| `Text` | `string` | `RichRun` | Gets or sets the text content. Reads/writes to the attached `TextDocument`. If unattached, uses local storage. |
-| `ToolTip` | `object?` | `RichHyperlink` | Tooltip associated with the hyperlink. |
-| `UnderlineStyle` | `UnderlineStyle?` | All inlines | The underline variant, e.g., `Single`, `Double`, `Dotted`, `Wave`. Inherited. |
-| `Width` | `double` | `RichImage` | Display width in device-independent pixels. Unset uses the image's intrinsic width. |
+| `NavigateUri` | `Uri?` | `RichHyperlink` | 点击超链接时导航到的 URI。 |
+| `NoteId` | `int` | `RichFootnoteReference`, `RichFootnoteCitation` | 把锚点与它的 `Footnote` 配成一对。 |
+| `Source` | `RichImageSource?` | `RichImage` | 图片内容，可以是 `EmbeddedImageSource`、`DeferredImageSource` 或 `PixelImageSource`。 |
+| `Text` | `string` | `RichRun` | 获取或设置文本内容。读写的是所附着的 `TextDocument`；若未附着，则使用本地存储。 |
+| `ToolTip` | `object?` | `RichHyperlink` | 与超链接关联的工具提示。 |
+| `UnderlineStyle` | `UnderlineStyle?` | 所有行内元素 | 下划线的样式，比如 `Single`、`Double`、`Dotted`、`Wave`。可继承。 |
+| `Width` | `double` | `RichImage` | 显示宽度，单位为设备无关像素。未设置时采用图片的固有宽度。 |
 
-### RichHyperlink pseudoclasses
+### RichHyperlink 伪类 {#richhyperlink-pseudoclasses}
 
-`RichHyperlink` sets the following pseudoclasses when the hyperlink text undergoes a state change.
+超链接文本的状态发生变化时，`RichHyperlink` 会置上下列伪类。
 
-- `:pointerover`: When the pointer is detected stopping over the hyperlink.
-- `:pressed`: When the hyperlink is clicked.
-- `:visited`: After the hyperlink has been clicked at least once.
+- `:pointerover`：指针停在超链接上时。
+- `:pressed`：超链接被点击时。
+- `:visited`：超链接至少被点击过一次之后。
 
 ## Architecture
 
-The Avalonia rich text editor separates functions into an eight-layer architecture.
+Avalonia 富文本编辑器把各项职能拆分成八层架构。
 
-| 层 | 名称 | 说明 | Key components |
+| 层 | 名称 | 说明 | 核心组成 |
 | --- | --- | --- | --- |
-| 1 | Document model | Core data storage of text context and document hierarchy. Uses a rope data structure for efficient storage and operations. | `TextDocument`, `FlowDocument` |
-| 2 | Text pointer API | Position tracking and navigation within documents. `TextRange` owns positional mutation. | `TextPointer`, `TextRange`, `LogicalDirection` |
-| 3 | Rendering | Visual representation, coordinate mapping, hit testing, line queries. Views can be extended with a component or a highlight layer, but not by subclassing. | `ITextView`, `TextViewBase`, `InteractiveTextView`, `PagedTextView`, `ITextLine`, `DocumentNode` |
-| 4 | Editing | Handles user input from keyboard, mouse, or other devices. | `TextSelection`, `TextViewKeyboard`, `TextViewMouse`, `TextEditorKeyboard`, `CaretElement` |
-| 5 | Highlighting | Visual effects for highlighting, used in selections, annotations, find/replace, etc. | `IHighlightLayer`, `HighlightLayerBase`, `HighlightLayerCollection`, `SelectionHighlightLayer` |
-| 6 | Undo/Redo | Stores operation history to allow reversals. `UndoManager` is the single sealed implementation; there is no undo interface to substitute. | `UndoManager`, `IUndoUnit`, `IUndoScope`, `SelectionSnapshot` |
-| 7 | Serialization | Import and export documents in multiple formats (RTF, DOCX, XAML, HTML, Markdown, PDF, plain text). Serializers are synchronous and UI-free. | `IDocumentSerializer`, `DocumentSnapshot`, `DocumentSnapshotBuilder` |
-| 8 | User-facing control | Integration of all layers into a templated Avalonia control. | `RichTextEditor`, `FlowDocumentScrollViewer`, `FlowDocumentPageViewer`, `FlowDocument`, block and inline elements |
+| 1 | 文档模型 | 文本内容与文档层级的核心数据存储。采用 rope 数据结构，以求存储和操作的高效。 | `TextDocument`, `FlowDocument` |
+| 2 | 文本指针 API | 在文档内进行位置跟踪与导航。位置的变更由 `TextRange` 统一负责。 | `TextPointer`, `TextRange`, `LogicalDirection` |
+| 3 | Rendering | 视觉呈现、坐标映射、命中测试、行查询。视图可以通过组件或高亮层来扩展，但不能通过派生子类扩展。 | `ITextView`, `TextViewBase`, `InteractiveTextView`, `PagedTextView`, `ITextLine`, `DocumentNode` |
+| 4 | Editing | 处理来自键盘、鼠标或其他设备的用户输入。 | `TextSelection`, `TextViewKeyboard`, `TextViewMouse`, `TextEditorKeyboard`, `CaretElement` |
+| 5 | Highlighting | 用于高亮的视觉效果，服务于选区、批注、查找/替换等场景。 | `IHighlightLayer`, `HighlightLayerBase`, `HighlightLayerCollection`, `SelectionHighlightLayer` |
+| 6 | Undo/Redo | 保存操作历史以支持回退。`UndoManager` 是唯一的 sealed 实现，没有可供替换的撤销接口。 | `UndoManager`, `IUndoUnit`, `IUndoScope`, `SelectionSnapshot` |
+| 7 | Serialization | 以多种格式（RTF、DOCX、XAML、HTML、Markdown、PDF、纯文本）导入导出文档。序列化器是同步的，且不依赖 UI。 | `IDocumentSerializer`, `DocumentSnapshot`, `DocumentSnapshotBuilder` |
+| 8 | 面向用户的控件 | 把以上各层整合进一个模板化的 Avalonia 控件。 | `RichTextEditor`、`FlowDocumentScrollViewer`、`FlowDocumentPageViewer`、`FlowDocument`，以及块级和行内元素 |
 
 ## 另请参阅 {#see-also}
 
-- [Document Viewer](/controls/input/text-input/richtexteditor/document-viewer) — read-only `FlowDocumentScrollViewer` setup
-- [Toolbar and Selection Flyouts](/controls/input/text-input/richtexteditor/toolbar) — customizing the toolbar, mini-bar, and context menu
-- [Extension Patterns](/controls/input/text-input/richtexteditor/extension-patterns) — custom nodes, highlight layers, serializers, components
+- [文档阅读器](/controls/input/text-input/richtexteditor/document-viewer) —— 只读的 `FlowDocumentScrollViewer` 怎么搭
+- [工具栏与选区浮层](/controls/input/text-input/richtexteditor/toolbar) —— 定制工具栏、迷你工具条和上下文菜单
+- [扩展范式](/controls/input/text-input/richtexteditor/extension-patterns) —— 自定义节点、高亮层、序列化器和组件
 - [Performance Tuning](/controls/input/text-input/richtexteditor/performance-tuning)
 - [Thread Safety](/controls/input/text-input/richtexteditor/thread-safety)
 - [疑难排查](/troubleshooting/controls/richtexteditor)

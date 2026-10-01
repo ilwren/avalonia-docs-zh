@@ -20,7 +20,7 @@ Avalonia gives you a path to .NET, which has a vastly larger developer pool, an 
 
 ### Concept mapping
 
-| Delphi (VCL / FMX) | Avalonia | Notes |
+| Delphi (VCL / FMX) | Avalonia | 注释支持情况 |
 |---|---|---|
 | `TForm` | `Window` | |
 | `TFrame` | `UserControl` | Reusable UI component |
@@ -59,7 +59,7 @@ Qt is a proven cross-platform framework, but its C++ foundation, licensing compl
 
 ### Concept mapping
 
-| Qt | Avalonia | Notes |
+| Qt | Avalonia | 注释支持情况 |
 |---|---|---|
 | `QMainWindow` | `Window` | |
 | `QWidget` | `Control` | |

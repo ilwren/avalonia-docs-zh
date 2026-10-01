@@ -676,7 +676,7 @@ See [Focus improvements](#focus-improvements) for context.
 
 ### Other specific removals
 
-| Removed member | Replacement | Notes | PR |
+| Removed member | Replacement | 注释支持情况 | PR |
 |---|---|---|---|
 | `ResourcesChangedEventArgs.Empty` | `ResourcesChangedEventArgs.Create` | See [`ResourcesChangedEventArgs` is a struct](#resourceschangedeventargs-is-a-struct) | [#20576](https://github.com/AvaloniaUI/Avalonia/pull/20576) |
 | `TextInputMethodClient.ShowInputPanel` | `InputPaneActivationRequested` event | Showing input panel directly was not correct on all platforms | [#20544](https://github.com/AvaloniaUI/Avalonia/pull/20544) |
@@ -733,7 +733,7 @@ The following members were marked obsolete in Avalonia 11 and have now been remo
 
 ## Renamed members
 
-| Old name | New name | Notes | PR |
+| Old name | New name | 注释支持情况 | PR |
 |---|---|---|---|
 | `PseudolassesExtensions` | `PseudoClassesExtensions` | Typo fix. Most codebases are unaffected since this type is used implicitly from XAML or as C# extension methods. | [#18717](https://github.com/AvaloniaUI/Avalonia/pull/18717) |
 | `X11PlatformOptions.ExterinalGLibMainLoopExceptionLogger` | `ExternalGLibMainLoopExceptionLogger` | Typo fix. | [#19128](https://github.com/AvaloniaUI/Avalonia/pull/19128) |

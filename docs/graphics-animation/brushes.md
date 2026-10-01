@@ -24,7 +24,7 @@ Fills an area with a single color. This is the most common brush type and is use
 
 Colors can be specified as:
 
-| Format | 示例 | 说明 |
+| 格式 | 示例 | 说明 |
 |---|---|---|
 | Named color | `Red`, `SteelBlue` | Any standard CSS/WPF color name. |
 | `#RRGGBB` | `#4682B4` | Hex RGB. |

@@ -51,7 +51,7 @@ Control how each part of the date displays:
 
 Common format strings:
 
-| Format | Output example |
+| 格式 | Output example |
 |---|---|
 | `d` | 5 |
 | `dd` | 05 |

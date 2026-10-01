@@ -9,7 +9,7 @@ The layout system in Avalonia is very similar to WPF. If you are familiar with W
 
 ## Panel types
 
-| WPF | Avalonia | Notes |
+| WPF | Avalonia | 注释支持情况 |
 |---|---|---|
 | [`StackPanel`](/api/avalonia/controls/stackpanel) | `StackPanel` | Same. Avalonia adds a `Spacing` property. |
 | [`Grid`](/api/avalonia/controls/grid) | `Grid` | Same. Supports shorthand `ColumnDefinitions="Auto,*"`. |

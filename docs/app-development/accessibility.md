@@ -156,7 +156,7 @@ Controls whether a control appears in the automation tree:
        AutomationProperties.AccessibilityView="Raw" />
 ```
 
-| 值 | Meaning |
+| 值 | 含义 |
 |---|---|
 | `Default` | Determined by the control's automation peer |
 | `Raw` | Included only in the raw (unfiltered) tree |

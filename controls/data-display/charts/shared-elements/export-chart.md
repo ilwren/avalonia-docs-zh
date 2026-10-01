@@ -58,7 +58,7 @@ var result = await chart.ExportAsync(stream, width: 1200, height: 800);
 | `ExportCompleted` | Raised after a successful export. Event data exposes `Result` and `Target`. |
 | `ExportFailed` | Raised after a failed export. Event data exposes `Target` and `Exception`. |
 
-## Notes
+## 注释支持情况 {#notes}
 
 - `width` and `height` default to the chart bounds. They must resolve to positive values.
 - Cancellation returns a canceled `ChartExportResult` and does not raise `ExportFailed`.

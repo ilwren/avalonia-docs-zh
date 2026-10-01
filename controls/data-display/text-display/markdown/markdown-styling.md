@@ -130,29 +130,29 @@ Scoped nesting selectors also work. For example, remove paragraph margins inside
 In addition to style selectors, you can override named resources in your theme or resource dictionary. These are used by the default styles and provide an easy way to adjust values without rewriting selectors.
 
 ### Blocks
-| 按键 | 类型 | 默认值 | Notes |
+| 按键 | 类型 | 默认值 | 注释支持情况 |
 |---|---|---|---|
 | `MarkdownBlockMargin` | Thickness | `0,8` | Block outer margin |
 
 ### Hyperlinks
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownHyperlinkForeground` | Brush | `#0969da` | `#58a6ff` | Link color |
 | `MarkdownHyperlinkForegroundVisited` | Brush | `#551A8B` | `#bc8cff` | Visited link color |
 | `MarkdownHyperlinkForegroundPointerOver` | Brush | `#0056b3` | `#79c0ff` | Hover link color |
 
 ### Selection
-| 按键 | 类型 | 默认值 | Notes |
+| 按键 | 类型 | 默认值 | 注释支持情况 |
 |---|---|---|---|
 | `MarkdownSelectionBrush` | Brush | `#FF086F9E` | Selection highlight |
 
 ### Code
-| 按键 | 类型 | 默认值 | Notes |
+| 按键 | 类型 | 默认值 | 注释支持情况 |
 |---|---|---|---|
 | `MarkdownCodeFontFamily` | FontFamily | `Courier New` | Inline/code font |
 
 ### Code blocks
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownCodeBlockParagraphPadding` | Thickness | `16` | `16` | Inner padding |
 | `MarkdownCodeBlockParagraphBorderThickness` | Thickness | `1` | `1` | Border thickness |
@@ -161,19 +161,19 @@ In addition to style selectors, you can override named resources in your theme o
 | `MarkdownCodeBlockParagraphBorderBrush` | Brush | `#e3ebf6` | `#30363d` | Border brush |
 
 ### Inline code
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownCodeRunBackground` | Brush | `#1f818b98` | `#20484f58` | Inline code background |
 
 ### Thematic break
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownThematicBreakRectangleFill` | Brush | `#d1d9e0` | `#30363d` | Thematic break color |
 
 ### Headers (per level)
 Each header exposes `FontSize`, `BorderThickness`, `Padding`, `Margin`.
 
-| 按键 | 类型 | 默认值 | Notes |
+| 按键 | 类型 | 默认值 | 注释支持情况 |
 |---|---|---|---|
 | `MarkdownHeader1ParagraphFontSize` | Double | `31.5` | H1 font size |
 | `MarkdownHeader1ParagraphBorderThickness` | Thickness | `0,0,0,1` | H1 bottom border |
@@ -201,7 +201,7 @@ Each header exposes `FontSize`, `BorderThickness`, `Padding`, `Margin`.
 | `MarkdownHeader6ParagraphMargin` | Thickness | `0,14,0,14` | H6 outer margin |
 
 ### Quote blocks
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownQuoteBlockSectionBorderThickness` | Thickness | `4,0,0,0` | `4,0,0,0` | Quote block left border thickness |
 | `MarkdownQuoteBlockSectionBorderBrush` | Brush | `#DDDDDD` | `#3b434b` | Quote block border brush |
@@ -211,7 +211,7 @@ Each header exposes `FontSize`, `BorderThickness`, `Padding`, `Margin`.
 | `MarkdownQuoteBlockLastChildSectionMargin` | Thickness | `0` | `0` | Margin for last child in quote |
 
 ### Tables
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownTableCellBorderBrush` | Brush | `Black` | `#30363d` | Table cell border brush |
 | `MarkdownTableBorderBrush` | Brush | `Black` | `#30363d` | Table border brush |
@@ -220,12 +220,12 @@ Each header exposes `FontSize`, `BorderThickness`, `Padding`, `Margin`.
 | `MarkdownTableCellParagraphPadding` | Thickness | `12,5` | `12,5` | Cell paragraph padding |
 
 ### Inline styles
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownMarkedSpanBackground` | Brush | `Yellow` | `#bb8009` | Highlight background for marked spans |
 
 ### Alert blocks (per type)
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownAlertBlockNoteBorderBrush` | Brush | `#0969da` | `#58a6ff` | Note alert border brush |
 | `MarkdownAlertBlockTipBorderBrush` | Brush | `#1a7f37` | `#3fb950` | Tip alert border brush |
@@ -234,7 +234,7 @@ Each header exposes `FontSize`, `BorderThickness`, `Padding`, `Margin`.
 | `MarkdownAlertBlockCautionBorderBrush` | Brush | `#d1242f` | `#f85149` | Caution alert border brush |
 
 ### Copy button
-| 按键 | 类型 | Default (Light) | Default (Dark) | Notes |
+| 按键 | 类型 | Default (Light) | Default (Dark) | 注释支持情况 |
 |---|---|---|---|---|
 | `MarkdownCopyButtonFill` | Brush | `#59636e` | `#8b949e` | Copy button fill color |
 | `MarkdownCopyButtonContentTemplate` | DataTemplate | — | — | Content template for copy button |

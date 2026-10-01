@@ -78,7 +78,7 @@ This distinction affects everything: styling, layout precision, debugging, and h
 
 Both frameworks use XAML, but the dialects differ. MAUI's XAML is rooted in Xamarin.Forms conventions. Avalonia's XAML is closer to WPF.
 
-| .NET MAUI | Avalonia | Notes |
+| .NET MAUI | Avalonia | 注释支持情况 |
 |---|---|---|
 | `xmlns="http://schemas.microsoft.com/dotnet/2021/maui"` | `xmlns="https://github.com/avaloniaui"` | |
 | `x:DataType` for compiled bindings | `x:DataType` + `x:CompileBindings` | Same concept, slightly different setup |
@@ -90,7 +90,7 @@ Both frameworks use XAML, but the dialects differ. MAUI's XAML is rooted in Xama
 
 MAUI and Avalonia both use panels for layout, but the names and behaviour differ.
 
-| .NET MAUI | Avalonia | Notes |
+| .NET MAUI | Avalonia | 注释支持情况 |
 |---|---|---|
 | `StackLayout` / `VerticalStackLayout` | `StackPanel` | Avalonia uses `Orientation` property |
 | `HorizontalStackLayout` | `StackPanel Orientation="Horizontal"` | |
@@ -105,7 +105,7 @@ MAUI and Avalonia both use panels for layout, but the names and behaviour differ
 
 #### Controls
 
-| .NET MAUI | Avalonia | Notes |
+| .NET MAUI | Avalonia | 注释支持情况 |
 |---|---|---|
 | `Entry` | [`TextBox`](/api/avalonia/controls/textbox) | |
 | `Editor` | `TextBox` with `AcceptsReturn="True"` | |

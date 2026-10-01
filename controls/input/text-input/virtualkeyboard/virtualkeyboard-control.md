@@ -163,7 +163,7 @@ To customize, define these resources in your application theme or resource dicti
 
 ## Input methods
 
-| Identifier | 说明 | Notes |
+| Identifier | 说明 | 注释支持情况 |
 | --- | --- | --- |
 |`af:kbd:standard` | Afrikaans | |
 |`ar:kbd:standard` | Arabic | |

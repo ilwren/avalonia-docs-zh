@@ -16,7 +16,7 @@ The Avalonia team has extensive experience porting Windows Forms applications to
 
 Windows Forms and Avalonia are fundamentally different UI models. Unlike migrating between XAML frameworks (for example, WPF to Avalonia), there is no one-to-one mapping for most concepts. Expect to learn new patterns rather than translate old ones.
 
-| Windows Forms | Avalonia | Notes |
+| Windows Forms | Avalonia | 注释支持情况 |
 |---|---|---|
 | Designer-generated layout | XAML declarative layout | Layout is defined in `.axaml` files, not generated code |
 | `Control` base class | `Control` / `TemplatedControl` | Avalonia separates non-templated and templated controls |

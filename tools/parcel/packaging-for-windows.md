@@ -13,7 +13,7 @@ tags:
 
 Parcel creates Windows installers and archives. Packaging via Parcel can be run on Windows, macOS, or Linux.
 
-| Format | CLI code | 最适合 |
+| 格式 | CLI code | 最适合 |
 |---|---|---|
 | NSIS installer (`.exe`) | `nsis` | Traditional direct distribution with a customizable installation flow and optional uninstaller |
 | MSIX package (`.msix`) | `msix` | Modern Windows deployment, enterprise management, and Microsoft Store distribution |

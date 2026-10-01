@@ -50,7 +50,7 @@ Despite the above, PDF export does need an initialized Avalonia platform for the
 
 ## Options
 
-| 属性 | 默认值 | Meaning |
+| 属性 | 默认值 | 含义 |
 |---|---|---|
 | `PageSize` | `null` | Page size in device-independent pixels. `Null` uses the document's fixed `PageWidth` and `PageHeight`, falling back to A4. |
 | `Margins` | `null` | Page margins. `Null` uses the document's `PagePadding`, falling back to 2 cm. |
@@ -143,7 +143,7 @@ foreach (var loss in losses)
     log.Warning("{Kind}: {Message}", loss.Kind, loss.Message);
 ```
 
-| `PdfDiagnosticKind` | Meaning |
+| `PdfDiagnosticKind` | 含义 |
 |---|---|
 | `FontNotEmbedded` | Font program is missing, so viewers must substitute. Text stays selectable and metrics are preserved. |
 | `FontFidelity` | Font is embedded but cannot render identically, e.g., color glyph data ignored, or a variable font renders as its default instance. |

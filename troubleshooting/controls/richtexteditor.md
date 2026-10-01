@@ -103,4 +103,4 @@ Dispatcher.UIThread.VerifyAccess();
 ## 另请参阅 {#see-also}
 
 - [RichTextEditor control](/controls/input/text-input/richtexteditor)
-- [Thread safety](/controls/input/text-input/richtexteditor/thread-safety)
+- [线程安全](/controls/input/text-input/richtexteditor/thread-safety)

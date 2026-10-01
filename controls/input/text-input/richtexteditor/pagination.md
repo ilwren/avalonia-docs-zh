@@ -1,27 +1,27 @@
 ---
 id: pagination
-title: Pagination
+title: 分页
 doc-type: guide
 tags:
  - avalonia pro
  - avalonia enterprise
 ---
 
-Paginated output, the paged view of `FlowDocumentPageViewer`, the editor in `DocumentViewMode.PageLayout` and the [PDF export](/controls/input/text-input/richtexteditor/pdf-export) display content by filling pages line by line and consulting the document for where a page may end. This guide covers how to control page layout: explicit page breaks, the three keep rules, and per-section page setup.
+分页输出——`FlowDocumentPageViewer` 的分页视图、处于 `DocumentViewMode.PageLayout` 的编辑器，以及 [PDF 导出](/controls/input/text-input/richtexteditor/pdf-export)——都是逐行填充页面，并随时向文档确认一页可以在哪里结束。本指南讲如何控制页面布局：显式分页符、三条保持规则，以及各小节自己的页面设置。
 
-The continuous view ignores every one of them except drawing the page-break marker.
+连续视图对这些一概无视，只会把分页符标记画出来。
 
 :::info
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Identical output
+## 输出完全一致 {#identical-output}
 
-There are two pagination engines: the paged view's fill walk and the PDF paginator. Although they have their own processing mechanics, both follow the same rules to decide where a page ends. As a result, the same document breaks on the same lines on screen and in a PDF export.
+分页引擎有两个：分页视图的填充遍历，以及 PDF 分页器。两者内部机制各不相同，但判断一页在哪里结束时遵循的是同一套规则。于是同一份文档在屏幕上和在 PDF 导出中，都在同样的位置断页。
 
-## Explicit page breaks
+## 显式分页符 {#explicit-page-breaks}
 
-There is no page-break element. A break is a request on a block: `Block.BreakPageBefore`.
+框架里没有「分页符」这种元素。一个分页符就是加在某个块上的一项请求：`Block.BreakPageBefore`。
 
 ```csharp title="C#"
 heading.BreakPageBefore = true;
@@ -33,26 +33,26 @@ heading.BreakPageBefore = true;
 </Paragraph>
 ```
 
-In the editor, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (or <kbd>Cmd</kbd>+<kbd>Return</kbd> on macOS) applies `BreakPageBefore` at the caret, replacing any selection. The action is one undo step. The effect of the break on content depends on the caret's position:
+在编辑器中，<kbd>Ctrl</kbd>+<kbd>Enter</kbd>（macOS 上是 <kbd>Cmd</kbd>+<kbd>Return</kbd>）会在插入符处应用 `BreakPageBefore`，并替换掉当前选区。该操作算作一步撤销。分页符对内容的影响取决于插入符的位置：
 
-- At a block boundary, it sets `BreakPageBefore` on the following block.
-- Mid-content, it splits the block like <kbd>Enter</kbd>.
+- 位于块边界时，它给后一个块置上 `BreakPageBefore`。
+- 位于内容中间时，它像按 <kbd>Enter</kbd> 那样把块一分为二。
 
-Deleting a break results in a paragraph merge, causing the flagged paragraph to merge with its preceding neighbor and the flag to travel away. If merging is impossible, the deletion only clears the flag.
+删除一个分页符会导致段落合并：被标记的段落与它前面的邻居合为一体，标记也随之消失。若无法合并，则这次删除只是把标记清掉。
 
-An explicit break always wins over a keep rule. Forced cuts are never keep-adjusted.
+显式分页符永远压过保持规则。强制断页从不为保持规则作让步。
 
-The flag round-trips through every format from the one place it lives:
+这个标记只存在一处，并能在所有格式之间往返：
 
-- In DOCX, it becomes `w:pageBreakBefore`, including style-defined breaks, or `w:br` on read.
-- In RTF, it becomes `\pagebb`, or `\page` on read.
-- In XAML and plain text, it writes a form feed as the flagged block's separator, and maps form feeds back to the flag on read.
+- 在 DOCX 中它写作 `w:pageBreakBefore`（包含由样式定义的分页符），读取时则对应 `w:br`。
+- 在 RTF 中它写作 `\pagebb`，读取时对应 `\page`。
+- 在 XAML 和纯文本中，它以换页符作为被标记块的分隔符写出，读取时再把换页符映射回该标记。
 
 ### Seeing breaks in the continuous view
 
 Continuous views mark a flagged block with a dashed rule across its top edge, similar to draft view in MS Word. It is paint-only and never affects layout.
 
-| Member (on `TextViewBase`) | 默认值 | Meaning |
+| Member (on `TextViewBase`) | 默认值 | 含义 |
 |---|---|---|
 | `ShowPageBreakMarkers` | `true` | Whether the rule is drawn |
 | `PageBreakMarkerBrush` | `DocumentPageBreakMarkerBrush` | The rule's color |

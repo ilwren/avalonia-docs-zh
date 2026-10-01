@@ -146,7 +146,7 @@ private async void OnPointerPressed(object? sender, PointerPressedEventArgs e)
 
 The `DataTransfer` class is a mutable container for drag-and-drop data. Use `DataFormat` static properties for standard formats:
 
-| Format | 类型 | 说明 |
+| 格式 | 类型 | 说明 |
 |---|---|---|
 | `DataFormat.Text` | `string` | Plain text. |
 | `DataFormat.Bitmap` | `Bitmap` | Bitmap image data. |

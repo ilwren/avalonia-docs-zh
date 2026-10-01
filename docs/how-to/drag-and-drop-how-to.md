@@ -59,7 +59,7 @@ private void OnDrop(object? sender, DragEventArgs e)
 
 The value you set in `e.DragEffects` also controls the cursor, which tells your users what the drop will do:
 
-| DragDropEffects | Cursor | Meaning |
+| DragDropEffects | Cursor | 含义 |
 |---|---|---|
 | `None` | No-drop cursor | Drop is not allowed. |
 | `Copy` | Copy cursor (+) | The item will be copied. |
@@ -226,7 +226,7 @@ Identifiers passed to `CreateStringApplicationFormat` and `CreateBytesApplicatio
 
 ## Platform notes
 
-| 平台 | Support level | Notes |
+| 平台 | Support level | 注释支持情况 |
 |---|---|---|
 | Windows | Full | File drops from Explorer, inter-app text and bitmap drops, and custom formats within your application all work. |
 | macOS | Full | File drops from Finder are supported. The system drag cursor respects `DragDropEffects`. |

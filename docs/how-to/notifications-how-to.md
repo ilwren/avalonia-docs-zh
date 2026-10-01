@@ -196,7 +196,7 @@ On desktop platforms (Windows, macOS, Linux), you can use the `TrayIcon` control
 
 ### Platform considerations
 
-| 平台 | Notes |
+| 平台 | 注释支持情况 |
 |----------|-------|
 | **Windows** | Full tray icon and balloon notification support. Use `.ico` format for the icon. |
 | **macOS** | Appears in the menu bar. macOS guidelines recommend template images (monochrome PNGs) for menu bar icons. |

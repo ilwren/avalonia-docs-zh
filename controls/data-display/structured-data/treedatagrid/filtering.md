@@ -157,7 +157,7 @@ CollectMatches(_rootNodes);
 Source.Filter(x => matchingIds.Contains(x.Id));
 ```
 
-## Performance considerations
+## 性能考量 {#performance-considerations}
 
 Filter operations run on the UI thread and re-evaluate every item in the source. For large datasets, keep these guidelines in mind:
 

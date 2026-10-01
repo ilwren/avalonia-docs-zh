@@ -94,7 +94,7 @@ To force aliased (sharp, pixelated) edges on a specific control, set `EdgeMode` 
 </Border>
 ```
 
-## Performance considerations
+## 性能考量 {#performance-considerations}
 
 The interpolation mode is set per-control by design for performance reasons. Higher quality interpolation requires more computational resources, so consider these guidelines:
 

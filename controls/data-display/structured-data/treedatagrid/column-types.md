@@ -57,7 +57,7 @@ source.WithTextColumn("First Name", x => x.FirstName, o =>
 
 Options can be set as attributes in XAML or configured via the `TextColumnCreateOptions` lambda in code-behind:
 
-| Option | XAML attribute | 默认值 | 说明 |
+| 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
@@ -118,7 +118,7 @@ source.WithCheckBoxColumn(x => x.IsActive, o =>
 
 ### Options
 
-| Option | XAML attribute | 默认值 | 说明 |
+| 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
@@ -247,7 +247,7 @@ source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell", "CheckBoxC
 
 ### Options
 
-| Option | XAML attribute | 默认值 | 说明 |
+| 选项 | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `TextSearchBinding` | 不适用 | 不适用 | Binding to extract searchable text from the model |

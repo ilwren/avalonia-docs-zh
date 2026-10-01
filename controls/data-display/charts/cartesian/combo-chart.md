@@ -75,7 +75,7 @@ public ObservableCollection<MonthlyMetric> MonthlyMetrics { get; } = new()
 | `ShowSecondaryAxis` | Whether to show a secondary Y-axis on the right side. | `false` |
 | `SecondaryVerticalAxis` | Optional secondary vertical axis for series assigned to `YAxisPosition.Secondary`. | `null` |
 
-## Notes
+## 注释支持情况 {#notes}
 
 - Series are rendered in declaration order.
 - To plot a series against the secondary Y-axis, set that series to `YAxisPosition="Secondary"`.
