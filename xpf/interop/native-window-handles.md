@@ -1,25 +1,25 @@
 ---
 id: native-window-handles
-title: Getting native window handles
-description: How to retrieve native platform window handles in XPF applications, including the difference between virtual and native handles.
+title: 获取原生窗口句柄
+description: 如何在 XPF 应用中取得各平台的原生窗口句柄，以及虚拟句柄与原生句柄的区别。
 ---
 
 ## 概述 {#overview}
 
-XPF uses a system where the handles returned from various WPF API calls are _virtual handles_. In this way, XPF can intercept API calls using these handles and automatically translate them into the appropriate cross-platform API. This has the effect that many WPF APIs such as `WindowInteropHelper.Handle` return these virtualized window handles, as well as [emulated Win32 APIs](/xpf/third-party/win32-api-shims).
+XPF 有一套机制，各类 WPF API 调用返回的句柄其实都是_虚拟句柄_。如此一来，XPF 便能拦下用到这些句柄的 API 调用，并自动翻译成相应的跨平台 API。于是 `WindowInteropHelper.Handle` 这类 WPF API 乃至[模拟的 Win32 API](/xpf/third-party/win32-api-shims)返回的，都是这些虚拟化的窗口句柄。
 
-## When you need native handles
+## 什么时候需要原生句柄 {#when-you-need-native-handles}
 
-You may need to access the real native window handle when:
+下列情形下你可能需要拿到真正的原生窗口句柄：
 
-- Interacting with native platform APIs that require a window handle
-- Embedding native controls or rendering surfaces (OpenGL, DirectX, Metal)
-- Using platform-specific features not available through WPF or Avalonia APIs
-- Integrating with native accessibility or automation frameworks
+- 与需要窗口句柄的原生平台 API 打交道
+- 嵌入原生控件或渲染表面（OpenGL、DirectX、Metal）
+- 使用 WPF 或 Avalonia API 给不了的平台专属功能
+- 与原生的无障碍或自动化框架集成
 
-## Getting a native handle
+## 取得原生句柄 {#getting-a-native-handle}
 
-The native handle for a window can be retrieved from the [underlying Avalonia `Window`](/xpf/interop/embedding-avalonia-in-xpf#getting-the-avalonia-window):
+窗口的原生句柄可以从[底层的 Avalonia `Window`](/xpf/interop/embedding-avalonia-in-xpf#getting-the-avalonia-window) 取得：
 
 ```csharp
 using Atlantis;
@@ -35,23 +35,23 @@ if (platformHandle != null)
 }
 ```
 
-## Handle types by platform
+## 各平台的句柄类型 {#handle-types-by-platform}
 
-The type of handle returned depends on the operating system:
+返回什么类型的句柄取决于操作系统：
 
 | 平台 | Handle Type | HandleDescriptor | 注释支持情况 |
 |---|---|---|---|
-| Windows | HWND | `"HWND"` | Standard Win32 window handle |
-| macOS | NSWindow* | `"NSWindow"` | Pointer to an NSWindow object |
-| Linux (X11) | X11 Window | `"XID"` | X11 window identifier |
+| Windows | HWND | `"HWND"` | 标准的 Win32 窗口句柄 |
+| macOS | NSWindow* | `"NSWindow"` | 指向 NSWindow 对象的指针 |
+| Linux (X11) | X11 Window | `"XID"` | X11 窗口标识符 |
 
 :::caution
-Native handles cannot be passed to the Win32 API emulation layer. The emulation layer works with XPF's virtual handles, not native platform handles. If you need to call shimmed Win32 APIs, use the virtual handle from `WindowInteropHelper.Handle` instead.
+原生句柄不能传给 Win32 API 模拟层。模拟层认的是 XPF 的虚拟句柄，而非平台原生句柄。若要调用经过 shim 的 Win32 API，请改用 `WindowInteropHelper.Handle` 给出的虚拟句柄。
 :::
 
-## Getting the Avalonia `TopLevel`
+## 取得 Avalonia 的 `TopLevel` {#getting-the-avalonia-toplevel}
 
-For operations that don't require a window handle but need access to Avalonia-level properties (such as render scaling or input handling), use `GetAvaloniaTopLevelForWindow`:
+有些操作不需要窗口句柄，但要用到 Avalonia 层面的属性（比如渲染缩放或输入处理），这时请用 `GetAvaloniaTopLevelForWindow`：
 
 ```csharp
 using Atlantis;
@@ -62,7 +62,7 @@ var topLevel = XpfWpfAbstraction.GetAvaloniaTopLevelForWindow(myWpfWindow);
 double scaling = topLevel.RenderScaling;
 ```
 
-## Example: DPI-aware native rendering
+## 示例：DPI 感知的原生渲染 {#example-dpi-aware-native-rendering}
 
 ```csharp
 using Atlantis;
@@ -98,5 +98,5 @@ private void SetupNativeRendering(System.Windows.Window wpfWindow)
 
 ## 另请参阅 {#see-also}
 
-- [Embedding Avalonia in XPF](/xpf/interop/embedding-avalonia-in-xpf) for accessing Avalonia features from XPF
-- [Performance: Embedding High-Performance Content](/xpf/configuration/performance#embedding-high-performance-content) for OpenGL integration
+- [在 XPF 中嵌入 Avalonia](/xpf/interop/embedding-avalonia-in-xpf)——如何从 XPF 中用上 Avalonia 的能力
+- [性能：嵌入高性能内容](/xpf/configuration/performance#embedding-high-performance-content)——OpenGL 集成

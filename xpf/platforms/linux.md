@@ -259,7 +259,7 @@ sudo dnf install webkit2gtk4.1-devel
 If `webkit2gtk4.1-devel` is not available on your RHEL version, check whether EPEL or a newer AppStream module provides it.
 
 :::note
-Version 4.1 of webkit2gtk is required. Older versions (4.0) do not support all features needed by `NativeWebDialog`.
+必须是 webkit2gtk 4.1 版。更老的版本（4.0）支持不了 `NativeWebDialog` 所需的全部功能。
 :::
 
 For a comparison of all browser embedding options, see [Web Content Embedding](/xpf/interop/web-content).

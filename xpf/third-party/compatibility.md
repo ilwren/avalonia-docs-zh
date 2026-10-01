@@ -42,7 +42,7 @@ DevExpress maintains a demo application showing which of their controls have bee
 
 `CefSharp.Wpf.NetCore` is designed for Windows and includes Windows-native Chromium binaries. It does not work on Linux or macOS.
 
-If CefSharp throws a `NotImplementedException` for `CursorInteropHelper.Create()`, upgrade to XPF 1.6.0 or later, which provides a fallback. As a workaround for older versions, derive from `ChromiumWebBrowser` and override `OnCursorChange` to map CefSharp cursor types to WPF `Cursors`.
+若 CefSharp 针对 `CursorInteropHelper.Create()` 抛出 `NotImplementedException`，请升级到 XPF 1.6.0 或更高版本，那里提供了回退方案。老版本上的变通办法是：从 `ChromiumWebBrowser` 派生并重写 `OnCursorChange`，把 CefSharp 的光标类型映射到 WPF 的 `Cursors`。
 
 For cross-platform browser alternatives, see [Web Content Embedding](/xpf/interop/web-content).
 

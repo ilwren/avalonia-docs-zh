@@ -17,25 +17,25 @@ title: 快速上手
 
 请确认你的项目至少已升级/移植到 `net6.0-windows`，并采用 SDK 风格的 `.csproj` 格式。SDK 风格的项目以 `<Project Sdk="Microsoft.NET.Sdk">` 开头，而不是带一堆 `<Import>` 元素的老式冗长格式。
 
-If your project still uses the legacy `.csproj` format, use the .NET Upgrade Assistant or manually convert it. The key changes are:
-- Replace the verbose XML with an SDK-style `<Project Sdk="Microsoft.NET.Sdk">` root element
+若你的项目还在用老式的 `.csproj` 格式，可以借助 .NET 升级助手，也可以手动转换。关键改动有：
+- 把冗长的 XML 换成 SDK 风格的 `<Project Sdk="Microsoft.NET.Sdk">` 根元素
 - Set `<TargetFramework>net8.0-windows</TargetFramework>`
 - Add `<UseWpf>true</UseWpf>`
-- Remove explicit file includes (SDK-style projects include files automatically)
+- 删掉显式的文件包含项（SDK 风格项目会自动包含文件）
 
-Confirm that your project builds and runs correctly on .NET 8 (or later) with WPF before proceeding.
+继续往下之前，先确认项目能在 .NET 8（或更高）上用 WPF 正常构建和运行。
 
 :::danger
-This step is **vital**. XPF will not work with the old/legacy `.csproj` format or versions of .NET less than 6.0. You must first convert your project, and ensure that WPF works with modern .NET version before attempting to use XPF.
+这一步**至关重要**。XPF 不支持老式的 `.csproj` 格式，也不支持低于 6.0 的 .NET 版本。你必须先转换项目，并确认 WPF 在现代 .NET 版本上跑得通，然后才谈得上用 XPF。
 :::
 
 :::danger
-If you are running on Linux, see the [linux](/xpf/platforms/linux) guide **before** you install .NET.
+若你在 Linux 上开发，请**先**看 [linux](/xpf/platforms/linux) 指南，再安装 .NET。
 :::
 
-## Step 2: Add a `NuGet.config`
+## 第 2 步：添加 `NuGet.config` {#step-2-add-a-nugetconfig}
 
-Create a `NuGet.config` file at the root of your solution, or modify an existing one to contain the following:
+在解决方案根目录创建一个 `NuGet.config` 文件，或修改已有的那个，使其包含以下内容：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -55,31 +55,31 @@ Create a `NuGet.config` file at the root of your solution, or modify an existing
 </configuration>
 ```
 
-## Step 3: Use the XPF SDK
+## 第 3 步：改用 XPF SDK {#step-3-use-the-xpf-sdk}
 
-In the executable WPF project, change the SDK to use the XPF SDK in the `.csproj`. The first line:
+在可执行的 WPF 项目中，把 `.csproj` 里的 SDK 换成 XPF SDK。第一行：
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 ``` 
 
-should be changed to:
+应改为：
 
 ```xml
 <Project Sdk="Xpf.Sdk/1.6.0">
 ```
 
 :::note
-XPF is in active development and the CI build version changes frequently. The version given here was the latest version at the time of writing, but it is likely that newer versions are available. You can find the latest CI build version at https://xpf-nuget-feed.avaloniaui.net/packages/xpf.sdk. See [nightly builds](/xpf/version-info/versioning) for more information.
+XPF 仍在活跃开发中，CI 构建版本号变动频繁。这里给出的是撰稿时的最新版本，眼下多半已有更新的版本了。最新的 CI 构建版本号可在 https://xpf-nuget-feed.avaloniaui.net/packages/xpf.sdk. 查到。更多信息请见[夜间构建](/xpf/version-info/versioning)。
 :::
 
 :::tip
-If you have multiple projects which will need to use the same XPF SDK vesion, you can [specify this version in `global.json`](/xpf/configuration/centralizing-multiple-xpf-projects)
+若你有多个项目需要用同一个 XPF SDK 版本，可以[在 `global.json` 中统一指定](/xpf/configuration/centralizing-multiple-xpf-projects)
 :::
 
-## Step 4: Add your Licence Key
+## 第 4 步：填入许可证密钥 {#step-4-add-your-licence-key}
 
-In your executable's `.csproj`, add:
+在可执行项目的 `.csproj` 中加上：
 
 ```xml
   <ItemGroup>
@@ -87,27 +87,27 @@ In your executable's `.csproj`, add:
   </ItemGroup>  
 ```
 
-Note, that if you have a production license, the AssemblyName of the project has to match your license key
+注意，若你用的是正式许可证，项目的 AssemblyName 必须与许可证密钥登记的名称一致
 
-## Step 5: Clean your solution
+## 第 5 步：清理解决方案 {#step-5-clean-your-solution}
 
-Changing the project SDK requires a clean of existing build artifacts:
+换过项目 SDK 之后，必须把已有的构建产物清理干净：
 
-- Run `dotnet clean` from the command line; or
-- Use `Build -> Clean Solution` from your IDE; or
-- Delete your `obj`/`bin` directories manually
+- 在命令行运行 `dotnet clean`；或者
+- 在 IDE 中执行 `Build -> Clean Solution`；又或者
+- 手动删掉 `obj`/`bin` 目录
 
-## Step 6: Run the project
+## 第 6 步：运行项目 {#step-6-run-the-project}
 
-You should be able to run your project from your preferred IDE with Avalonia XPF or use `dotnet run`.
+现在你应该能在惯用的 IDE 中带着 Avalonia XPF 运行项目了，也可以用 `dotnet run`。
 
 :::tip
-If running on Linux see the [Linux](/xpf/platforms/linux) page for information on how to install .NET and required dependencies.
+若在 Linux 上运行，请见 [Linux](/xpf/platforms/linux) 页，了解如何安装 .NET 和所需依赖。
 :::
 
-## Additional projects
+## 其他项目 {#additional-projects}
 
-If you have non-executable projects that are using WPF APIs and need to build those on Linux or macOS, you can either change the SDK as described above, or if you're targeting `net7.0-windows` add:
+若你还有一些用到 WPF API 的非可执行项目，且需要在 Linux 或 macOS 上构建它们，可以照上面的办法换 SDK；若你面向的是 `net7.0-windows`，也可以在相应的项目文件中加上：
 
 ```xml
 <PropertyGroup>
@@ -115,9 +115,9 @@ If you have non-executable projects that are using WPF APIs and need to build th
 </PropertyGroup>
 ```
 
-to the corresponding project file.
+加到对应的项目文件中。
 
-Alternatively create a `Directory.Build.props` file at the root of your solution with the following contents:
+或者在解决方案根目录建一个 `Directory.Build.props` 文件，内容如下：
 
 ```xml
 <Project>
@@ -127,17 +127,17 @@ Alternatively create a `Directory.Build.props` file at the root of your solution
 </Project>  
 ```
 
-## Target framework
+## 目标框架 {#target-framework}
 
-Ideally all projects which reference XPF should be using the `net6.0-windows` or `net7.0-windows` TFM. You can use the `net6.0` or `net7.0` TFM but in this case you cannot use `<EnableWindowsTargeting>` and instead must use the XPF SDK.
+理想情况下，所有引用 XPF 的项目都该用 `net6.0-windows` 或 `net7.0-windows` TFM。你也可以用 `net6.0` 或 `net7.0` TFM，但那样就不能用 `<EnableWindowsTargeting>`，必须改用 XPF SDK。
 
 :::tip
-The `-windows` target framework (e.g., `net8.0-windows`) works on all platforms when using the XPF SDK. You do not need to change the target framework to build or run on Linux or macOS. Some third-party libraries require the Windows-specific TFM, so keeping `net8.0-windows` is often the simplest approach.
+搭配 XPF SDK 时，`-windows` 目标框架（例如 `net8.0-windows`）在所有平台上都能用。为 Linux 或 macOS 构建、运行时，不必改动目标框架。有些第三方库非要 Windows 专属的 TFM 不可，所以保留 `net8.0-windows` 往往最省事。
 :::
 
-## WinForms hosting (Windows only)
+## 承载 WinForms（仅 Windows） {#winforms-hosting-windows-only}
 
-If your application needs to host WinForms controls inside XPF, add the following to a Windows-conditional `PropertyGroup` in your `.csproj`:
+若你的应用需要在 XPF 中承载 WinForms 控件，请在 `.csproj` 里加一个按 Windows 条件生效的 `PropertyGroup`，并在其中写上：
 
 ```xml
 <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
@@ -145,51 +145,51 @@ If your application needs to host WinForms controls inside XPF, add the followin
 </PropertyGroup>
 ```
 
-This disables the WinForms shim layer and enables native WinForms integration. Note that WinForms hosting is only available on Windows and will cause build failures on other platforms if not conditioned appropriately.
+这会关掉 WinForms 的 shim 层，改用原生的 WinForms 集成。注意承载 WinForms 只在 Windows 上可用，若不加条件判断，在其他平台上会导致构建失败。
 
-## Porting tips
+## 移植小贴士 {#porting-tips}
 
-### Project files
+### 项目文件 {#project-files}
 
-1. Convert all projects to .NET 8.0 and above. The old project file format (non-SDK-style `.csproj`) will not work outside of Windows.
-2. It is highly recommended to do (1) on Windows first to avoid having to wrangle with hard-to-debug Windows-specific dependency issues on other platforms. Replace or remove deprecated features from .NET 7.0 such as AppDomain, CodeDOM, WCF, `System.Web`, XmlSerializer, and hard Windows-only APIs like `System.Management.Instrumentation` and `System.Drawing.Common` on your app with cross-platform friendly alternatives.
-3. While doing (1), watch out for any custom MSBuild Tasks that your app may have. Make sure any said Tasks still work on .NET 7.0 by running `dotnet build`. Don’t test inside Visual Studio so that you can confirm it works outside.
-4. Convert all PCL (Portable Class Libraries) into `netstandard` libraries.
-5. Remove any `ApplicationDefinition` entries from the `.csproj`.
-6. Remove verbose `PropertyGroup` elements that define `Configuration`, `Platform`, `ProjectGuid`, `OutputType`, `RootNamespace`, and similar properties individually. SDK-style projects provide sensible defaults for all of these.
+1. 把所有项目都转到 .NET 8.0 及以上。老式的项目文件格式（非 SDK 风格的 `.csproj`）在 Windows 之外行不通。
+2. 强烈建议先在 Windows 上完成第 (1) 步，免得到了别的平台上还要跟难缠的 Windows 专属依赖问题周旋。把 .NET 7.0 中已废弃的特性换掉或删掉，比如 AppDomain、CodeDOM、WCF、`System.Web`、XmlSerializer，以及 `System.Management.Instrumentation`、`System.Drawing.Common` 这类硬绑 Windows 的 API，改用跨平台友好的替代方案。
+3. 做第 (1) 步时，留意应用里可能有的自定义 MSBuild 任务。跑一下 `dotnet build`，确认这些任务在 .NET 7.0 上仍然管用。别在 Visual Studio 里测，这样才能确认它在 IDE 之外也没问题。
+4. 把所有 PCL（可移植类库）转成 `netstandard` 库。
+5. 删掉 `.csproj` 中所有的 `ApplicationDefinition` 条目。
+6. 删掉那些逐条定义 `Configuration`、`Platform`、`ProjectGuid`、`OutputType`、`RootNamespace` 等属性的冗长 `PropertyGroup` 元素。这些东西 SDK 风格的项目都给了合理的默认值。
 
 ### Dependencies
 
-7. If you had a .NET Framework-based nuget package, please try to find a newer version (`netstandard2.0`, `netcoreapp2.0`+, `net5.0`+) of said package. Most of the time even those .NET Framework packages work cross platform too but it’s not a guarantee. 
-8. If there are `Reference` items that are linked to a standalone `dll` on your app's project file, try to find an alternative for it on NuGet as described on (4). If it’s a managed assembly then often times it will work but again, no guarantee.
-9. If you have any native binaries, try to find a managed equivalent or recompile them for your target platforms. Use `System.Runtime.InteropServices.NativeLibrary` and `DllImport` for native interop on .NET 8+.
-10. Update your dependencies to the latest version, especially third-party components such as Actipro, DevExpress, Syncfusion, and Telerik.
+7. 若你用的某个 nuget 包是基于 .NET Framework 的，请尽量找它更新的版本（`netstandard2.0`、`netcoreapp2.0`+、`net5.0`+）。多数时候那些 .NET Framework 包跨平台也能用，但这并无保证。 
+8. 若项目文件中有 `Reference` 项链接到独立的 `dll`，请照第 (4) 条的思路到 NuGet 上找替代品。若它是托管程序集，往往还能用，但同样没有保证。
+9. 若你有原生二进制文件，尽量找托管的等价物，或者为目标平台重新编译它们。在 .NET 8+ 上，原生互操作请用 `System.Runtime.InteropServices.NativeLibrary` 和 `DllImport`。
+10. 把依赖都升到最新版，尤其是 Actipro、DevExpress、Syncfusion、Telerik 这些第三方组件。
 
 ### Windows
 
-11. Avoid custom chrome window controls (e.g. WPF’s WindowChrome, MahApps’s MetroWindow, DevExpress’s DXWindow) and anything that customizes window borders or behaviors because it is not guaranteed to fit into the target platform’s UI design (e.g., a custom MetroWindow on macOS). The best design for XPF target platforms is a single-view app (e.g., like a website or a mobile application).
+11. 尽量别用自定义窗口外壳控件（比如 WPF 的 WindowChrome、MahApps 的 MetroWindow、DevExpress 的 DXWindow），以及任何自定义窗口边框或行为的东西——它们未必契合目标平台的界面风格（想想 macOS 上的 MetroWindow 是个什么光景）。对 XPF 的目标平台来说，单视图应用（类似网站或移动应用那样）才是最合适的设计。
 
-### Resources and settings
+### 资源与设置 {#resources-and-settings}
 
-12. Resource Files (`.resx`) don't get regenerated outside of Visual Studio. Consider alternatives to localization like JSON files or other solutions that work independently of Visual Studio.
-13. Visual Studio Text Templates (T4, *.template files) are also deprecated on .NET 7.0. Please use source generators as an alternative.
-14. Images or Bitmaps in Resource Files (`.resx`) are not compatible with the .NET 7.0: consider using WPF's resources scheme instead.
-15. Avoid using `App.Config` / `System.Configuration.ConfigurationManager` due to it not persisting correctly on platforms that don’t allow writes on the same location as the executing assembly (macOS, mobile, WASM, and similar) and use a 3rd party/in-house solution to write persistent configuration data for your apps.
+12. 资源文件（`.resx`）在 Visual Studio 之外不会被重新生成。本地化不妨换个思路，用 JSON 文件或其他不依赖 Visual Studio 的方案。
+13. Visual Studio 文本模板（T4、*.template 文件）在 .NET 7.0 上同样已废弃，请改用源生成器。
+14. 资源文件（`.resx`）中的图片或位图与 .NET 7.0 不兼容，建议改用 WPF 的资源机制。
+15. 尽量别用 `App.Config` / `System.Configuration.ConfigurationManager`：在那些不允许往可执行程序集所在位置写入的平台上（macOS、移动端、WASM 等），它存不住数据。应用的持久化配置请用第三方或自研的方案来写。
 
-### Filesystem access
+### 文件系统访问 {#filesystem-access}
 
-16. Make sure that your file access code can handle case-sensitive filesystems and uses `Path.DirectorySeparatorChar` instead of hardcoding the directory separators. 
+16. 确保你的文件访问代码能应付区分大小写的文件系统，并且用 `Path.DirectorySeparatorChar` 而不是把目录分隔符写死。 
 
 ### Fonts
 
-17. Custom fonts must be included as `<Resource>` items in your `.csproj`. If fonts are not embedded as resources, the application may crash or fall back to a default font on non-Windows platforms:
+17. 自定义字体必须作为 `<Resource>` 项包含进你的 `.csproj`。若字体没有作为资源嵌入，应用在非 Windows 平台上可能崩溃或退回到默认字体：
     ```xml
     <ItemGroup>
         <Resource Include="Fonts\*.ttf" />
     </ItemGroup>
     ```
-18. Font matching works differently between WPF and XPF. Fonts with non-standard style names (e.g., "Condense" instead of "Condensed") may not match correctly. If a font is not rendering as expected, verify that the font family name in your XAML matches the internal name in the font file.
-19. To customize font fallback behavior (for example, to specify which fonts are used for missing characters), configure `FontManagerOptions` in your [custom initialization](/xpf/configuration/customizing-initialization):
+18. WPF 和 XPF 的字体匹配方式不同。样式名不太规范的字体（比如写成 “Condense” 而非 “Condensed”）可能匹配不上。若某款字体渲染得不对劲，请核对 XAML 中的字体族名与字体文件里的内部名称是否一致。
+19. 若要定制字体回退行为（比如指定缺字时改用哪些字体），请在[自定义初始化](/xpf/configuration/customizing-initialization)中配置 `FontManagerOptions`：
     ```csharp
     .With(new FontManagerOptions
     {
@@ -200,7 +200,7 @@ This disables the WinForms shim layer and enables native WinForms integration. N
     })
     ```
 
-### Unsupported controls
+### 不受支持的控件 {#unsupported-controls}
 
-20. Avoid using WPF's Spell checking and XPS features since those are not supported by XPF.
-21. If you have any advanced and specialized WPF features that you want to work on your app like Shaders, 3D, and Media, contact the Avalonia team for guidance on the best way forward.
+20. 别用 WPF 的拼写检查和 XPS 功能，XPF 不支持它们。
+21. 若你想让着色器、3D、媒体这类高级且专门的 WPF 特性在应用中跑起来，请联系 Avalonia 团队，他们会给你指条明路。
