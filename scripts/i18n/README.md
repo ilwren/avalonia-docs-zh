@@ -47,6 +47,10 @@ node scripts/i18n/check_mdx.mjs docs controls tools troubleshooting xpf api
 python3 scripts/i18n/i18n_cli.py stats
 ```
 
+> **不归流水线管的文件：** 仓库根目录的 `README.md`。它已经改写成中文说明（AI 翻译免责声明、
+> 源码拉取方式、流水线用法），不再是上游英文 README 的逐句翻译，因此 `SCOPES["meta"]` 留空。
+> 若把它放回作用域，`apply` 会用基线英文原文覆盖掉手写内容。
+
 ## 为什么要有占位符
 
 分段器会把**不该翻译的东西**全部替换成 `⟦0⟧`、`⟦1⟧` 这样的占位符再交给译者：

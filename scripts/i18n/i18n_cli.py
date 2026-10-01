@@ -37,7 +37,11 @@ CONFIG_PATH = Path(__file__).resolve().parent / "config.json"
 SCOPES: dict[str, list[str]] = {
     "docs": ["docs", "controls", "tools", "troubleshooting", "xpf"],
     "api": ["api"],
-    "meta": ["README.md"],
+    # README.md 已改为「手工维护」：它不再是上游英文 README 的逐句翻译，而是
+    # 重写过的中文说明（AI 翻译免责声明、源码拉取方式、翻译流水线用法）。
+    # 流水线每次 apply 都会从基线提交重新渲染文件，若仍把 README 纳入作用域，
+    # 手写内容会被覆盖回英文原文，因此这里留空。
+    "meta": [],
 }
 SCOPES["all"] = SCOPES["docs"] + SCOPES["api"] + SCOPES["meta"]
 
