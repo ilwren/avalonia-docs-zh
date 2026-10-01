@@ -28,11 +28,11 @@ import TabItem from '@theme/TabItem';
 
 The DevTools MCP server lets AI assistants connect to a running Avalonia application and interact with it directly. Your assistant can inspect the visual tree, search for elements by type or name, read and modify properties, capture screenshots, and send input events. It can also attach to the XAML previewer, making it a useful companion for iterating on layouts without leaving your editor.
 
-For a general introduction to MCP, see [AI Tools](/tools/ai-tools/).
+关于 MCP 的总体介绍，请见 [AI 工具](/tools/ai-tools/)。
 
 ## 前置条件 {#prerequisites}
 
-Before setting up the MCP server, ensure you have:
+配置 MCP 服务器前，请先确认你具备：
 
 1. **DevTools .NET tool** installed. Follow the [Getting Started](/tools/developer-tools/installation) guide.
 2. **Valid Avalonia Plus license key.** You can get one from the [Avalonia portal](https://portal.avaloniaui.net/).
@@ -150,7 +150,7 @@ public override void Initialize()
 
 For the full installation walkthrough, including platform-specific requirements and activation, see [Installing the Avalonia Plus developer tools](/tools/developer-tools/installation).
 
-## Setting up the MCP server
+## 配置 MCP 服务器 {#setting-up-the-mcp-server}
 
 DevTools provides an MCP server that runs as a local process. The underlying command is `avdt mcp`, but you do not need to run it manually. Your editor starts it automatically once configured.
 
@@ -169,16 +169,16 @@ Choose your editor below:
 
 **Option B: Command palette**
 
-1. Open the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+1. 打开命令面板（`Ctrl+Shift+P` / `Cmd+Shift+P`）。
 2. Run **MCP: Add Server**.
-3. Select **stdio** as the server type.
-4. Enter `avdt mcp` as the command.
-5. Set the server name to `avalonia_devtools`.
-6. Choose whether to install the server for this workspace or globally.
+3. 服务器类型选 **stdio**。
+4. 命令填 `avdt mcp`。
+5. 服务器名称设为 `avalonia_devtools`。
+6. 选择把该服务器装到当前工作区还是全局。
 
 **Option C: Manual configuration**
 
-Add the following to `.vscode/mcp.json` in your workspace root:
+把下列内容加进工作区根目录的 `.vscode/mcp.json`：
 
 ```json title=".vscode/mcp.json"
 {
@@ -195,9 +195,9 @@ Add the following to `.vscode/mcp.json` in your workspace root:
 </TabItem>
 <TabItem value="visual-studio" label="Visual Studio">
 
-Visual Studio 2022 (17.x and later) supports MCP servers through `mcp.json` configuration files.
+Visual Studio 2022（17.x 及更高版本）通过 `mcp.json` 配置文件支持 MCP 服务器。
 
-Add the following to `.vscode/mcp.json` in your solution directory:
+把下列内容加进解决方案目录下的 `.vscode/mcp.json`：
 
 ```json title=".vscode/mcp.json"
 {
@@ -212,24 +212,24 @@ Add the following to `.vscode/mcp.json` in your solution directory:
 ```
 
 :::tip
-Visual Studio reads from the same `.vscode/mcp.json` path as VS Code. If you already configured it for VS Code, it works in Visual Studio automatically.
+Visual Studio 读取的 `.vscode/mcp.json` 路径与 VS Code 相同。若你已为 VS Code 配置过，它在 Visual Studio 中自动就能用。
 :::
 
 </TabItem>
 <TabItem value="rider" label="Rider">
 
-JetBrains Rider supports MCP servers through the AI Assistant plugin and the GitHub Copilot plugin.
+JetBrains Rider 可通过 AI Assistant 插件和 GitHub Copilot 插件支持 MCP 服务器。
 
-**Option A: Settings UI**
+**方式 A：设置界面**
 
 1. Open **Settings** > **Tools** > **AI Assistant** > **MCP Servers**.
 2. Click **Add** and select **stdio** as the transport type.
 3. Set the command to `avdt` with argument `mcp`.
-4. Set the server name to `avalonia_devtools`.
+4. 服务器名称设为 `avalonia_devtools`。
 
-**Option B: Manual configuration**
+**方式 B：手动配置**
 
-Create or edit `.idea/mcp.json` in your project directory:
+在项目目录中新建或编辑 `.idea/mcp.json`：
 
 ```json title=".idea/mcp.json"
 {
@@ -250,9 +250,9 @@ Create or edit `.idea/mcp.json` in your project directory:
 
 [Install DevTools MCP for Cursor](https://cursor.com/en/install-mcp?name=avalonia_devtools&config=eyJ0eXBlIjoic3RkaW8iLCJjb21tYW5kIjoiYXZkdCIsImFyZ3MiOlsibWNwIl19)
 
-**Option B: Manual configuration**
+**方式 B：手动配置**
 
-Add the following to `.cursor/mcp.json` in your project directory, or to `~/.cursor/mcp.json` for global configuration:
+把下列内容加进项目目录下的 `.cursor/mcp.json`，若要全局配置则加进 `~/.cursor/mcp.json`：
 
 ```json title=".cursor/mcp.json"
 {
@@ -268,13 +268,13 @@ Add the following to `.cursor/mcp.json` in your project directory, or to `~/.cur
 </TabItem>
 <TabItem value="claude-code" label="Claude Code">
 
-Run this command in your terminal:
+在终端里运行这条命令：
 
 ```bash
 claude mcp add --scope user avalonia_devtools -- avdt mcp
 ```
 
-To verify it was added:
+验证是否添加成功：
 
 ```bash
 claude mcp list
@@ -309,13 +309,13 @@ Claude Desktop does not inherit environment variables from your shell profile, s
 </TabItem>
 </Tabs>
 
-## Verify the connection
+## 验证连接 {#verify-the-connection}
 
-After configuring the MCP server, verify it is working:
+配置好 MCP 服务器后，按下面的步骤确认它确实在工作：
 
 1. **Check the server is running.** Open your editor's MCP panel or status indicator and confirm `avalonia_devtools` appears as a connected server. In VS Code, run **MCP: List Servers** from the command palette.
 2. **Start your Avalonia application** (or open a XAML file if using the previewer).
-3. **Test with a prompt.** Ask your AI assistant:
+3. **用一句提示词试一下。**问问你的 AI 助手：
 
 ```text
 "Connect to my running Avalonia app and show me the visual tree."
@@ -338,11 +338,11 @@ If the MCP server starts but reports a missing or invalid license key:
 - **Confirm the variable is set** by running `echo $AVALONIA_TOOLS_LICENSE_KEY` (macOS/Linux) or `echo %AVALONIA_TOOLS_LICENSE_KEY%` (Windows) in the same terminal where you launch your editor.
 - **If your editor is launched from a GUI shortcut**, it may not inherit shell environment variables. Add an `env` block to your MCP configuration as shown in the [license key setup](#setting-your-license-key) section above.
 
-### MCP server does not appear in the editor
+### 编辑器里看不到 MCP 服务器 {#mcp-server-does-not-appear-in-the-editor}
 
-- **Restart your editor** after adding or modifying the MCP configuration file. Most editors require a restart to detect new MCP servers.
-- **Check the config file location.** Each editor expects the configuration in a specific path. See the setup instructions for your editor above.
-- **Validate your JSON.** A syntax error in the configuration file (missing comma, trailing comma, unmatched brace) will silently prevent the server from loading.
+- 添加或修改 MCP 配置文件后，**请重启编辑器**。多数编辑器都要重启才能发现新的 MCP 服务器。
+- **核对配置文件的位置。**每种编辑器都有各自约定的配置路径，请参照上文中你所用编辑器的配置说明。
+- **检查 JSON 是否合法。**配置文件里的语法错误（漏逗号、多余的尾逗号、括号不配对）会悄无声息地让服务器加载不起来。
 
 ### Server connects but cannot find the application
 
@@ -369,7 +369,7 @@ If tools behave unexpectedly, ensure you are running the latest version:
 dotnet tool update -g avdt
 ```
 
-## Available tools
+## 可用的工具 {#available-tools}
 
 ### Connection
 
@@ -414,7 +414,7 @@ dotnet tool update -g avdt
 
 ## 用法示例 {#usage-examples}
 
-Describe what you want to accomplish in natural language. The AI assistant calls the MCP tools automatically:
+用自然语言说清你想做什么，AI 助手会自动调用相应的 MCP 工具：
 
 **Inspecting UI:**
 
@@ -468,6 +468,6 @@ This prompt works well because it:
 
 ## 另请参阅 {#see-also}
 
-- [AI Tools overview](/tools/ai-tools/)
+- [AI 工具概述](/tools/ai-tools/)
 - [DevTools installation](/tools/developer-tools/installation)
 - [Parcel MCP](/tools/parcel/mcp)

@@ -96,4 +96,4 @@ This behavior can be redefined with options:
 ## 另请参阅 {#see-also}
 
 - [Developer tools settings](/tools/developer-tools/settings)
-- [Developer tools installation](/tools/developer-tools/installation)
+- [安装开发者工具](/tools/developer-tools/installation)

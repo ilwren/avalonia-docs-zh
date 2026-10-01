@@ -26,4 +26,4 @@ Rider provides excellent .NET support for Avalonia development, including projec
 
 - [Avalonia for Visual Studio](/tools/visual-studio-extension)
 - [AI Tools](/tools/ai-tools/)
-- [Avalonia Tools overview](/tools/)
+- [Avalonia 工具概述](/tools/)

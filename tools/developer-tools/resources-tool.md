@@ -83,6 +83,6 @@ The Resources tool offers several options to help you find specific resources:
 
 ## 另请参阅 {#see-also}
 
-- [Elements tool](/tools/developer-tools/elements-tool)
+- [元素工具](/tools/developer-tools/elements-tool)
 - [Assets tool](/tools/developer-tools/assets-tool)
 - [How to use resources](https://docs.avaloniaui.net/docs/guides/styles-and-resources/resources)

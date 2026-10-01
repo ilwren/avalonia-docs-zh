@@ -58,4 +58,4 @@ Once code has pushed at least one measurement, this `SimpleToDoList` will be vis
 ## 另请参阅 {#see-also}
 
 - [Profiler tool](/tools/developer-tools/profiler-tool)
-- [Developer tools installation](/tools/developer-tools/installation)
+- [安装开发者工具](/tools/developer-tools/installation)

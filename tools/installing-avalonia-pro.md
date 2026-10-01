@@ -77,5 +77,5 @@ If the license key is missing or invalid, you will see a build warning. Check th
 
 ## 另请参阅 {#see-also}
 
-- [Avalonia Tools overview](/tools/)
+- [Avalonia 工具概述](/tools/)
 - [FAQ](/tools/faq)

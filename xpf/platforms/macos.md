@@ -103,7 +103,7 @@ AppBuilder.Configure<MyAvaloniaApp>()
 
 The `ShowInDock` option interacts with macOS `Info.plist` settings:
 
-| Configuration | 行为 |
+| 配置 | 行为 |
 |---|---|
 | `ShowInDock = false` | App does not appear in the Dock. Equivalent to `LSUIElement = true`. |
 | `LSUIElement = true` in Info.plist | App does not appear in the Dock or the Cmd+Tab switcher. The app has no menu bar. |

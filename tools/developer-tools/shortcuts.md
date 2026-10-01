@@ -67,10 +67,10 @@ These shortcuts open specific Developer Tools panels directly.
 ## 另请参阅 {#see-also}
 
 - [Developer Tools settings](/tools/developer-tools/settings)
-- [Elements tool](/tools/developer-tools/elements-tool)
+- [元素工具](/tools/developer-tools/elements-tool)
 - [Events tool](/tools/developer-tools/events-tool)
 - [Breakpoints tool](/tools/developer-tools/breakpoints-tool)
 - [Logs tool](/tools/developer-tools/logs-tool)
 - [Metrics tool](/tools/developer-tools/metrics-tool)
 - [Assets tool](/tools/developer-tools/assets-tool)
-- [Resources tool](/tools/developer-tools/resources-tool)
+- [资源工具](/tools/developer-tools/resources-tool)

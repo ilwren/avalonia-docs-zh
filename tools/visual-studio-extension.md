@@ -65,4 +65,4 @@ These can be accessed by selecting **Options** from the **Tools** menu inside Vi
 ## 另请参阅 {#see-also}
 
 - [IDE Support](/tools/ide/)
-- [Avalonia Tools overview](/tools/)
+- [Avalonia 工具概述](/tools/)

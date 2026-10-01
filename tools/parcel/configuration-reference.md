@@ -67,7 +67,7 @@ These settings control the `dotnet publish` operation Parcel runs before packagi
 
 | 设置项 | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
-| Configuration | `PublishSettings.Configuration` | String | .NET project default | `PARCEL_NET_CONFIGURATION` | Build configuration. It must begin with a letter and contain only letters, digits, `_`, or `-`. |
+| 配置 | `PublishSettings.Configuration` | String | .NET project default | `PARCEL_NET_CONFIGURATION` | Build configuration. It must begin with a letter and contain only letters, digits, `_`, or `-`. |
 | Publish Single File | `PublishSettings.PublishSingleFile` | Boolean | Enabled for new Parcel projects | `PARCEL_NET_PUBLISH_SINGLE_FILE` | Publishes managed assemblies in a single executable. |
 | Publish Trimmed | `PublishSettings.PublishTrimmed` | Boolean | .NET project default | `PARCEL_NET_PUBLISH_TRIMMED` | Enables trimming to reduce the package size. Testing the trimmed application is recommended. |
 | Publish AOT | `PublishSettings.PublishAot` | Boolean | .NET project default | `PARCEL_NET_PUBLISH_AOT` | Enables Native AOT compilation. |

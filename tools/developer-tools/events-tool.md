@@ -49,5 +49,5 @@ Note: If nothing happens when clicking on an element, it was likely already remo
 
 ## 另请参阅 {#see-also}
 
-- [Elements tool](/tools/developer-tools/elements-tool)
+- [元素工具](/tools/developer-tools/elements-tool)
 - [Breakpoints tool](/tools/developer-tools/breakpoints-tool)

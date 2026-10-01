@@ -57,4 +57,4 @@ A key with many total lookups but few successful ones likely indicates a missing
 ## 另请参阅 {#see-also}
 
 - [Metrics tool](/tools/developer-tools/metrics-tool)
-- [Resources tool](/tools/developer-tools/resources-tool)
+- [资源工具](/tools/developer-tools/resources-tool)

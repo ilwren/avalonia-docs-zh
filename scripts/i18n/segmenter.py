@@ -136,11 +136,23 @@ class Protector:
 
     @staticmethod
     def unmask(text: str, tokens: list[str]) -> str:
+        """还原占位符。
+
+        某些内联规则（例如裸 URL）可能把先前生成的占位符一并吞进自己的
+        token 里，于是还原一次之后文中仍会残留 ⟦n⟧。这里循环还原，直到
+        不再有变化为止（设上限以防自引用造成死循环）。
+        """
+
         def put(match: re.Match) -> str:
             idx = int(match.group(1))
             return tokens[idx] if idx < len(tokens) else match.group(0)
 
-        return PLACEHOLDER_RE.sub(put, text)
+        for _ in range(8):
+            new_text = PLACEHOLDER_RE.sub(put, text)
+            if new_text == text:
+                break
+            text = new_text
+        return text
 
 
 @dataclass

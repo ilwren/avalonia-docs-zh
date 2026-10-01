@@ -107,6 +107,6 @@ application.AttachDeveloperTools(o =>
 ## 另请参阅 {#see-also}
 
 - [Developer Tools installation](/tools/developer-tools/installation)
-- [Attaching applications](/tools/developer-tools/attaching-applications)
-- [Developer Tools options](/tools/developer-tools/options)
-- [Elements tool](/tools/developer-tools/elements-tool)
+- [挂接应用](/tools/developer-tools/attaching-applications)
+- [开发者工具选项](/tools/developer-tools/options)
+- [元素工具](/tools/developer-tools/elements-tool)

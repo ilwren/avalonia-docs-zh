@@ -1,8 +1,8 @@
 ---
 id: attaching-to-the-previewer
-title: Attaching DevTools to the previewer
-sidebar_label: Attaching to the previewer
-description: Learn how to attach Avalonia Developer Tools to a XAML previewer process for visual tree inspection and diagnostics.
+title: 把 DevTools 挂接到预览器
+sidebar_label: 挂接到预览器
+description: 了解如何把 Avalonia 开发者工具挂接到 XAML 预览器进程上，以便检视视觉树、做诊断。
 doc-type: how-to
 tags:
   - avalonia plus
@@ -11,18 +11,18 @@ tags:
 ---
 
 :::caution
-This feature is experimental and may change in future releases.
+此功能尚属实验性，日后版本中可能变动。
 :::
 
-The [AvaloniaVS](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS) and [AvaloniaRider](https://plugins.jetbrains.com/plugin/14839-avaloniarider) extensions run the previewer window in a full application process, but without a real windowing subsystem. This limits the diagnostic features available to you, making it harder to analyze visual trees and inspect actual control placements.
+[AvaloniaVS](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS) 和 [AvaloniaRider](https://plugins.jetbrains.com/plugin/14839-avaloniarider) 扩展把预览窗口跑在一个完整的应用进程里，但没有真正的窗口子系统。这限制了你能用的诊断功能，分析视觉树、查看控件的实际摆放也就更费劲。
 
-Because Developer Tools can run out-of-process, you can attach it to a previewer process and get full diagnostic capabilities, including visual tree inspection, property editing, and layout analysis.
+由于开发者工具可以在进程外运行，你可以把它挂接到预览器进程上，从而获得完整的诊断能力：检视视觉树、编辑属性、分析布局。
 
-![Example of DevTools app attached to the previewer process](/img/tools/dev-tools/attaching-to-previewer.png)
+![DevTools 应用挂接到预览器进程的示例](/img/tools/dev-tools/attaching-to-previewer.png)
 
-## Configuration
+## 配置 {#configuration}
 
-Preview extensions do not support keyboard input, so `AutoConnectFromDesignMode` is your only connection option at the moment. Add the following to your application startup code:
+预览扩展不支持键盘输入，因此眼下 `AutoConnectFromDesignMode` 是你唯一的连接方式。请把下列内容加进应用的启动代码：
 
 ```csharp title="App.axaml.cs"
 this.AttachDeveloperTools(o =>
@@ -31,23 +31,23 @@ this.AttachDeveloperTools(o =>
 });
 ```
 
-By default, `DeveloperToolsOptions.Runner` is disabled when `IsDesignMode` is `true`. This prevents unnecessary processes from opening each time you open a XAML file in your IDE.
+当 `IsDesignMode` 为 `true` 时，`DeveloperToolsOptions.Runner` 默认是禁用的。这样你每次在 IDE 里打开 XAML 文件时就不会凭空多出一堆进程。
 
-Because the runner is disabled, you need to open the Developer Tools application independently (the same approach used for browser and mobile targets).
+既然 runner 被禁用了，你就需要单独打开开发者工具应用（和浏览器、移动端目标的做法一样）。
 
 ## 排查问题 {#troubleshooting}
 
-### Shortcuts are ignored
+### 快捷键没反应 {#shortcuts-are-ignored}
 
-As noted above, previewer extensions do not listen for keyboard input. You cannot use keyboard shortcuts to trigger Developer Tools from within the previewer. Instead, use the action buttons or keyboard shortcuts directly in the Developer Tools application window.
+如上所述，预览器扩展不监听键盘输入，你没法在预览器里用快捷键唤起开发者工具。请改用开发者工具应用窗口里的操作按钮或快捷键。
 
-### Developer Tools opens too many windows
+### 开发者工具开出了太多窗口 {#developer-tools-opens-too-many-windows}
 
-Developer Tools opens one tool window per connected process. If you have multiple XAML previewer tabs open in your IDE, a separate tool window opens for each one. To reduce clutter, close any previewer tabs you are not actively inspecting.
+开发者工具会为每个连接的进程开一个工具窗口。若你在 IDE 里开着多个 XAML 预览器标签页，每个都会对应一个独立的工具窗口。想少些杂乱，就把当下不看的预览器标签页关掉。
 
 ## 另请参阅 {#see-also}
 
-- [Attaching applications](/tools/developer-tools/attaching-applications)
-- [Attaching to the remote tool](/tools/developer-tools/attaching-to-the-remote-tool)
-- [Developer Tools options](/tools/developer-tools/options)
-- [Developer Tools shortcuts](/tools/developer-tools/shortcuts)
+- [挂接应用](/tools/developer-tools/attaching-applications)
+- [挂接到远程工具](/tools/developer-tools/attaching-to-the-remote-tool)
+- [开发者工具选项](/tools/developer-tools/options)
+- [开发者工具快捷键](/tools/developer-tools/shortcuts)

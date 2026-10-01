@@ -1,7 +1,7 @@
 ---
 id: attaching-to-the-remote-tool
-title: Attaching DevTools to the remote tool
-sidebar_label: Attaching to the remote tool
+title: 把 DevTools 挂接到远程工具
+sidebar_label: 挂接到远程工具
 doc-type: how-to
 tags:
   - avalonia plus
@@ -9,19 +9,19 @@ tags:
   - avalonia enterprise
 ---
 
-`Developer Tools` can be connected to applications running on different machines. This guide covers two scenarios:
-1. Local network access (e.g., Virtual Machines or devices on same Wi-Fi)
-2. Internet access using VPN (recommended for security)
+`Developer Tools` 可以连到跑在其他机器上的应用。本指南涵盖两种场景：
+1. 局域网访问（例如虚拟机或同一 Wi-Fi 下的设备）
+2. 通过 VPN 的互联网访问（出于安全考虑推荐这种）
 
-`Developer Tools` runs an HTTP server on port `29414`. The key is ensuring this server is accessible from the connecting machine.
+`Developer Tools` 会在 `29414` 端口上跑一个 HTTP 服务器。关键在于确保发起连接的那台机器能访问到这个服务器。
 
-## Local network access
+## 局域网访问 {#local-network-access}
 
-1. Retrieve local-network IP address of the machine running `Developer Tools`:
-- Windows: Open Command Prompt and run `ipconfig`
-- macOS/Linux: Open Terminal and run `ip addr` or `ifconfig`
-  Look for IPv4 address that starts with:
-- `192.168.` (most home networks)
+1. 取得运行 `Developer Tools` 那台机器的局域网 IP 地址：
+- Windows：打开命令提示符并运行 `ipconfig`
+- macOS/Linux：打开终端并运行 `ip addr` 或 `ifconfig`
+  找出以下列前缀开头的 IPv4 地址：
+- `192.168.`（多数家庭网络）
 
 2. Configure your application to use this IP:
 
@@ -93,5 +93,5 @@ On `AttachDeveloperTools` side, specify new port in the `DeveloperToolsProtocol.
 
 ## 另请参阅 {#see-also}
 
-- [Attaching applications](/tools/developer-tools/attaching-applications)
+- [挂接应用](/tools/developer-tools/attaching-applications)
 - [Developer tools settings](/tools/developer-tools/settings)

@@ -230,5 +230,5 @@ Some platforms also require developer to configure permissions on the applicatio
 
 ## 另请参阅 {#see-also}
 
-- [Developer tools installation](/tools/developer-tools/installation)
-- [Avalonia Tools overview](/tools/)
+- [安装开发者工具](/tools/developer-tools/installation)
+- [Avalonia 工具概述](/tools/)

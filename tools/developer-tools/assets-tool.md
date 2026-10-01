@@ -1,56 +1,56 @@
 ---
 id: assets-tool
-title: Assets tool
-description: Use the Developer Tools Assets panel to browse, search, preview, and copy URIs for all embedded Avalonia resources in your running application.
+title: 资产工具
+description: 用开发者工具的资产面板浏览、搜索、预览运行中应用里的所有嵌入式 Avalonia 资源，并复制它们的 URI。
 doc-type: reference
 ---
 
-The Assets tool displays a list of all Avalonia resources embedded in the running process.
+资产工具会列出运行中进程里嵌入的所有 Avalonia 资源。
 
-This includes embedded assets from dependencies such as third-party themes or icon libraries, which are also available as Avalonia resources.
+这也包括来自依赖项的嵌入资产，比如第三方主题或图标库——它们同样以 Avalonia 资源的形式存在。
 
-![Assets Page](/img/tools/dev-tools/assets-page.png)
+![资产页面](/img/tools/dev-tools/assets-page.png)
 
-## Navigating the asset list
+## 浏览资产列表 {#navigating-the-asset-list}
 
-The Assets tool presents all embedded resources in a grid view. Each row shows the asset name and its assembly source. You can use the search field at the top to filter assets by name or path.
+资产工具以网格视图呈现所有嵌入资源，每行显示资产名称及其所属程序集。你可以用顶部的搜索框按名称或路径筛选。
 
-Asset URIs follow the `avares://` scheme. For example, `avares://MyApp/Assets/logo.png` refers to a file named `logo.png` in the `Assets` folder of the `MyApp` assembly.
+资产 URI 采用 `avares://` 方案。例如 `avares://MyApp/Assets/logo.png` 指的是 `MyApp` 程序集中 `Assets` 文件夹下名为 `logo.png` 的文件。
 
-## Asset context menu
+## 资产右键菜单 {#asset-context-menu}
 
-Right-click any asset to open the context menu. From here you can copy the absolute asset URI or export the asset to the file system.
+右键点击任意资产即可打开上下文菜单，从中可以复制资产的绝对 URI，或把资产导出到文件系统。
 
-The copied URI can be used directly in your XAML. For example, after copying an image asset URI:
+复制出的 URI 可以直接用在你的 XAML 里。比如复制了一个图片资产的 URI 之后：
 
 ```xml
 <Image Source="avares://MyApp/Assets/logo.png" />
 ```
 
-![Asset context menu](/img/tools/dev-tools/assets-context-menu.png)
+![资产右键菜单](/img/tools/dev-tools/assets-context-menu.png)
 
-## Asset preview
+## 资产预览 {#asset-preview}
 
-The grid listing shows limited information about each resource to avoid reading them into memory unnecessarily.
+网格列表只显示每个资源的有限信息，以免无谓地把它们读进内存。
 
-To preview an asset, double-click it or select **Preview** from the context menu. The tool downloads the asset from the application process and displays it. Supported preview formats include:
+要预览某个资产，双击它或在右键菜单中选择 **Preview**。工具会从应用进程中取回该资产并显示出来。支持预览的格式包括：
 
-- **Raster images** (PNG, JPEG, BMP, and other bitmap formats)
-- **Fonts** (TrueType and OpenType)
-- **Text files** (XAML, XML, JSON, and plain text)
+- **位图图像**（PNG、JPEG、BMP 及其他位图格式）
+- **字体**（TrueType 和 OpenType）
+- **文本文件**（XAML、XML、JSON 和纯文本）
 
-For image assets, the preview also shows the bitmap format and decoded pixel size.
+对于图片资产，预览还会显示位图格式和解码后的像素尺寸。
 
 :::note
-Any asset larger than 100mb cannot be previewed, and currently it's not configurable.
+超过 100mb 的资产无法预览，目前这一上限还不可配置。
 :::
 
-![Image Asset preview example](/img/tools/dev-tools/assets-image.png)
+![图片资产预览示例](/img/tools/dev-tools/assets-image.png)
 
-![Font Asset preview example](/img/tools/dev-tools/assets-font.png)
+![字体资产预览示例](/img/tools/dev-tools/assets-font.png)
 
 ## 另请参阅 {#see-also}
 
-- [Assets fundamentals](/docs/fundamentals/including-assets)
-- [Resources tool](/tools/developer-tools/resources-tool)
-- [Elements tool](/tools/developer-tools/elements-tool)
+- [资产基础](/docs/fundamentals/including-assets)
+- [资源工具](/tools/developer-tools/resources-tool)
+- [元素工具](/tools/developer-tools/elements-tool)
