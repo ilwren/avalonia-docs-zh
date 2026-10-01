@@ -80,9 +80,9 @@ public FilePickerSaveOptions()
 
 | 名称 | 说明 |
 | --- | --- |
-| [DefaultExtension](#uid-2da5de5240) | Gets or sets the default extension to be used to save the file. |
-| [FileTypeChoices](#uid-34ebeed348) | Gets or sets the collection of valid file types that the user can choose to assign to a file. |
-| [ShowOverwritePrompt](#uid-a80f1bf533) | Gets or sets a value indicating whether file open picker displays a warning if the user specifies the name of a file that already exists. |
+| [DefaultExtension](#uid-2da5de5240) | 获取或设置保存文件时使用的默认扩展名。 |
+| [FileTypeChoices](#uid-34ebeed348) | 获取或设置用户可为文件选用的有效文件类型集合。 |
+| [ShowOverwritePrompt](#uid-a80f1bf533) | 获取或设置一个值，指示当用户填写的文件名已存在时，文件打开选取器是否给出警告。 |
 | [SuggestedFileName](pickeroptions.mdx#uid-87696bd66c) | Gets or sets the file name that the file picker suggests to the user. Inherited from [PickerOptions](pickeroptions.mdx). |
 | [SuggestedFileType](#uid-00b8dc37d9) | Gets or sets the file type that should be preselected when the dialog is opened. |
 | [SuggestedStartLocation](pickeroptions.mdx#uid-792044079c) | Gets or sets the initial location where the file open picker looks for files to present to the user. Can be obtained from previously picked folder or using [Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync(Uri)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync%28System.Uri%29) or [Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync%28Avalonia.Platform.Storage.WellKnownFolder%29). Inherited from [PickerOptions](pickeroptions.mdx). |
@@ -94,7 +94,7 @@ public FilePickerSaveOptions()
 
 ### DefaultExtension 属性 {#defaultextension-property}
 
-Gets or sets the default extension to be used to save the file.
+获取或设置保存文件时使用的默认扩展名。
 
 ```csharp
 public string DefaultExtension { get; set; }
@@ -108,7 +108,7 @@ public string DefaultExtension { get; set; }
 
 ### FileTypeChoices 属性 {#filetypechoices-property}
 
-Gets or sets the collection of valid file types that the user can choose to assign to a file.
+获取或设置用户可为文件选用的有效文件类型集合。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.FilePickerFileType> FileTypeChoices { get; set; }
@@ -122,7 +122,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.FilePi
 
 ### ShowOverwritePrompt 属性 {#showoverwriteprompt-property}
 
-Gets or sets a value indicating whether file open picker displays a warning if the user specifies the name of a file that already exists.
+获取或设置一个值，指示当用户填写的文件名已存在时，文件打开选取器是否给出警告。
 
 ```csharp
 public Nullable<bool> ShowOverwritePrompt { get; set; }

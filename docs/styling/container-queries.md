@@ -3,20 +3,20 @@ id: container-queries
 title: 容器查询
 ---
 
-Container queries allow styles to be activated for a control based on the size of an ancestor, which acts as a container.
+容器查询让样式能依据某个充当容器的祖先元素的尺寸，对控件生效。
 
 :::tip
-Avalonia's container queries are similar to CSS container queries, with more limited functionality to suit the platforms and form factors Avalonia supports. They can also behave like media queries if the `TopLevel` is set as a container.
+Avalonia 的容器查询与 CSS 的容器查询相仿，只是功能有所收敛，以贴合 Avalonia 支持的平台和设备形态。若把 `TopLevel` 设为容器，它们也能起到媒体查询的作用。
 :::
 
 ## 运作原理 {#how-it-works}
 
-Container queries rely on an ancestor control being set as a container. Changes to the size of the container activate styles based on queries. Those queries can check either the width or height of the container, or both. Any control can be a container, but a control set as a container can not be affected by styles hosted by a container query linked to it. When a query is activated, all styles hosted in the query will also be activated based on their selectors.
+容器查询要求某个祖先控件被设为容器。容器尺寸一变，就按查询条件激活相应样式。查询可以判断容器的宽度、高度，或两者兼顾。任何控件都能当容器，但被设为容器的控件不会受到挂在它身上的容器查询中那些样式的影响。查询一旦激活，其中所有样式也会按各自的选择器相应生效。
 
-## How to use queries
+## 查询怎么用 {#how-to-use-queries}
 
-### Declaring container queries
-Container queries can be defined in XAML as the direct child of a control's `Styles` property like this:
+### 声明容器查询 {#declaring-container-queries}
+在 XAML 中，容器查询可以写成控件 `Styles` 属性的直接子元素，像这样：
 
 ```xml
 <StackPanel Orientation="Horizontal">
@@ -32,7 +32,7 @@ Container queries can be defined in XAML as the direct child of a control's `Sty
 </StackPanel>
 ```
 
-They can also be part of a `ControlTheme`'s styles:
+它们也可以是 `ControlTheme` 中样式的一部分：
 
 ```xml
 <ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
@@ -60,13 +60,13 @@ They can also be part of a `ControlTheme`'s styles:
   </ContainerQuery>
 </ControlTheme>
 ```
-The `Name` property defines the name of the container it will attach to. This isn't a unique identifier, and multiple container queries can use the same name.
-The `Query` defines the rules to activate the containing size. See [Queries](#queries) below.
+`Name` 属性指明它要挂到哪个名字的容器上。这并非唯一标识符，多个容器查询可以用同一个名字。
+`Query` 则定义了激活所需的尺寸条件，见下文的[查询条件](#queries)。
 
-This makes them suitable for themes targeting different screen sizes, or themes that have different forms depending on the space available in a parent. This comes with a few restrictions.
+这使得它们很适合用来做面向不同屏幕尺寸的主题，或者依父级可用空间而变换形态的主题。不过也有几条限制。
 
-1. Container Queries can't be hosted in a `Style` element.
-   The following is invalid.
+1. 容器查询不能放在 `Style` 元素里。
+   下面的写法是非法的。
 
 ```xml
 <StackPanel Orientation="Horizontal">
@@ -84,10 +84,10 @@ This makes them suitable for themes targeting different screen sizes, or themes 
 </StackPanel>
 ```
 
-2. Styles declared in a `ContainerQuery` cannot affect the container or its ancestors. This is different from normal `Styles` being able to affect their parent control. Because container queries rely on the actual size of the container, having the container be affected by styles activated by its queries can cause cyclic behaviors where the container's size is being updated continuously by two or more queries.
+2. 声明在 `ContainerQuery` 中的样式无法影响容器本身及其祖先。这一点与普通 `Styles` 可以影响父控件不同。因为容器查询依赖容器的实际尺寸，若容器反过来被自家查询激活的样式所影响，就可能出现两个及以上查询不停改写容器尺寸的循环。
 
-### Declaring containers
-Container queries only work if a control that's a descendant of the `ContainerQuery`'s host is declared as container. Setting the `Container.Name` and `Container.Sizing` attached properties of any control will declare that control as a container, like this:
+### 声明容器 {#declaring-containers}
+只有当 `ContainerQuery` 宿主的某个后代控件被声明为容器时，容器查询才会起作用。给任意控件设置 `Container.Name` 和 `Container.Sizing` 附加属性，即可把它声明为容器，像这样：
 
 ```xml
 <Button
@@ -96,28 +96,28 @@ Container queries only work if a control that's a descendant of the `ContainerQu
 />
 ```
 
-`Container.Name` defines the name of the container. It isn't unique to that container, and multiple controls in the same scope can have the same container name, and they will all be affected by the same container queries.
+`Container.Name` 指定容器的名字。它并非该容器独有，同一作用域内的多个控件可以用同一个容器名，它们会一并受同一批容器查询的影响。
 
-`Container.Sizing` defines the sizing strategy of the container for queries. The container's final size depends on the value. It's an enum with the following values:
+`Container.Sizing` 指定该容器在查询时采用的尺寸策略。容器的最终尺寸取决于它的取值。这是一个枚举，取值如下：
 
-* `Normal`: The container's size isn't queried. This is the default value. The control follows normal measurement and arrangement.
-* `Width`: The container's width is queried. The container will use the maximum width allowed by its parent, and that value is used in all related container queries. In most cases, the final width is the max width allowed.
-* `Height`: Same as `Width`, but only the container's height is queried.
-* `WidthAndHeight`: Both width and height of the container is queried.
+* `Normal`：不查询容器尺寸。这是默认值，控件照常进行测量和排列。
+* `Width`：查询容器的宽度。容器会取父级允许的最大宽度，相关容器查询都用这个值。多数情况下，最终宽度就是允许的最大宽度。
+* `Height`：与 `Width` 相同，只不过查询的是容器的高度。
+* `WidthAndHeight`：容器的宽度和高度都参与查询。
 
-Depending on the sizing strategy, the container will use the maximum available size as its desired size.
+视尺寸策略而定，容器会把可用的最大尺寸当作自己的期望尺寸。
 
 ### Queries
-The following queries are available.
+可用的查询条件如下。
 
-* `min-width`: equivalent to `x >= width`
-* `min-height`: equivalent to `x >= height`
-* `max-width`: equivalent to `x <= width`
-* `max-height`: equivalent to `x <= height`
-* `height`: equivalent to `x == height`
-* `width`: equivalent to `x == width`
+* `min-width`：等同于 `x >= width`
+* `min-height`：等同于 `x >= height`
+* `max-width`：等同于 `x <= width`
+* `max-height`：等同于 `x <= height`
+* `height`：等同于 `x == height`
+* `width`：等同于 `x == width`
 
-The following is an example of using multiple container queries with different queries:
+下面这个例子演示了多个容器查询各用不同条件的写法：
 
 ```xml
 <ContainerQuery Name="uniformGrid"
@@ -142,7 +142,7 @@ The following is an example of using multiple container queries with different q
   </Style>
 </ContainerQuery>
 ```
-Multiple queries can be combined with `,` for OR combination, or `and` for AND combination.
+多个条件可以用 `,` 做「或」组合，或用 `and` 做「与」组合。
 
 ```xml
 <ContainerQuery Name="uniformGrid"
@@ -161,11 +161,11 @@ Multiple queries can be combined with `,` for OR combination, or `and` for AND c
 </ContainerQuery>
 ```
 
-This way, you can make queries for size ranges.
+这样你就能针对某个尺寸区间来写查询了。
 
 ## 另请参阅 {#see-also}
 
-- [Responsive layouts](/docs/layout/responsive-layouts): Using container queries to build adaptive layouts.
+- [响应式布局](/docs/layout/responsive-layouts)：用容器查询搭建自适应布局。
 - [如何构建响应式布局](/docs/how-to/responsive-layout-how-to)：常见响应式套路的分步实践。
 - [Styles](/docs/styling/styles)
 - [控件主题](/docs/styling/control-themes)

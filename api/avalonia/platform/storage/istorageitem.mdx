@@ -68,7 +68,7 @@ This interface inherits [IDisposable](xref:System.IDisposable) . It's recommende
 | --- | --- |
 | [DeleteAsync](#uid-8e9a7cfd51) | Deletes the current storage item and it's contents |
 | [GetBasicPropertiesAsync](#uid-d598a65224) | Gets the basic properties of the current item. |
-| [GetParentAsync](#uid-b325b01e5f) | Gets the parent folder of the current storage item. |
+| [GetParentAsync](#uid-b325b01e5f) | 获取当前存储项的父文件夹。 |
 | [MoveAsync](#uid-d7f8f4e352) | Moves the current storage item and it's contents to a [Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder) |
 | [SaveBookmarkAsync](#uid-adc0859ffa) | Saves items to a bookmark. |
 
@@ -116,7 +116,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.StorageItemProperties]
 
 ### GetParentAsync 方法 {#getparentasync-method}
 
-Gets the parent folder of the current storage item.
+获取当前存储项的父文件夹。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> GetParentAsync()
@@ -180,9 +180,9 @@ Returns identifier of a bookmark. Can be null if OS denied request.
 
 | 名称 | 说明 |
 | --- | --- |
-| [CanBookmark](#uid-5ad9b0509e) | Returns true is item can be bookmarked and reused later. |
+| [CanBookmark](#uid-5ad9b0509e) | 若该项能加书签以便日后复用，则返回 true。 |
 | [Name](#uid-aaac65aef5) | Gets the name of the item including the file name extension if there is one. |
-| [Path](#uid-74ea660276) | Gets the file-system path of the item. |
+| [Path](#uid-74ea660276) | 获取该项在文件系统中的路径。 |
 
 <section className="apiref-page__member-entry">
 
@@ -190,7 +190,7 @@ Returns identifier of a bookmark. Can be null if OS denied request.
 
 ### CanBookmark 属性 {#canbookmark-property}
 
-Returns true is item can be bookmarked and reused later.
+若该项能加书签以便日后复用，则返回 true。
 
 ```csharp
 public bool CanBookmark { get; set; }
@@ -218,7 +218,7 @@ public string Name { get; set; }
 
 ### Path 属性 {#path-property}
 
-Gets the file-system path of the item.
+获取该项在文件系统中的路径。
 
 ```csharp
 public Uri Path { get; set; }
@@ -226,8 +226,8 @@ public Uri Path { get; set; }
 
 #### 备注 {#remarks-1}
 
-Android backend might return file path with "content:" scheme.
-Browser and iOS backends might return relative uris.
+Android 后端返回的文件路径可能带 "content:" 方案。
+浏览器和 iOS 后端返回的可能是相对 URI。
 
 </section>
 

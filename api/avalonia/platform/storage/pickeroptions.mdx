@@ -85,7 +85,7 @@ public PickerOptions()
 | --- | --- |
 | [SuggestedFileName](#uid-87696bd66c) | Gets or sets the file name that the file picker suggests to the user. |
 | [SuggestedStartLocation](#uid-792044079c) | Gets or sets the initial location where the file open picker looks for files to present to the user. Can be obtained from previously picked folder or using [Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync(Uri)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync%28System.Uri%29) or [Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync%28Avalonia.Platform.Storage.WellKnownFolder%29). |
-| [Title](#uid-825079a1b0) | Gets or sets the text that appears in the title bar of a picker. |
+| [Title](#uid-825079a1b0) | 获取或设置选取器标题栏上显示的文字。 |
 
 <section className="apiref-page__member-entry">
 
@@ -123,7 +123,7 @@ public Avalonia.Platform.Storage.IStorageFolder SuggestedStartLocation { get; se
 
 ### Title 属性 {#title-property}
 
-Gets or sets the text that appears in the title bar of a picker.
+获取或设置选取器标题栏上显示的文字。
 
 ```csharp
 public string Title { get; set; }

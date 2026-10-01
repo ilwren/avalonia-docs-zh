@@ -32,7 +32,7 @@ The headless platform has no real input devices, so you simulate input using ext
 | `Window.MouseMove(Point, MouseButton, RawInputModifiers)` | Simulates mouse movement. |
 | `Window.MouseWheel(Point, Vector, RawInputModifiers)` | Simulates a mouse wheel scroll. |
 
-### Drag and drop
+### 拖放 {#drag-and-drop}
 
 | 方法 | 说明 |
 |---|---|

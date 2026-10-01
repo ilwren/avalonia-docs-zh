@@ -252,5 +252,5 @@ You can override supported scalar settings with automatic `PARCEL_<SECTION>_<SET
 - [Parcel setup](/tools/parcel/setup)
 - [Parcel configuration reference](/tools/parcel/configuration-reference)
 - [Packaging for macOS](/tools/parcel/packaging-for-macos)
-- [Packaging for Windows](/tools/parcel/packaging-for-windows)
+- [为 Windows 打包](/tools/parcel/packaging-for-windows)
 - [Packaging for Linux](/tools/parcel/packaging-for-linux)

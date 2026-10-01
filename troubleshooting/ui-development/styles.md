@@ -152,6 +152,6 @@ If you are unable to restore an earlier property value, it is likely you are usi
 - [Property setters](/docs/styling/property-setters)
 - [Property value precedence](/docs/properties/value-precedence)
 - [Sharing styles](/docs/styling/sharing-styles)
-- [Control template walkthrough](/docs/styling/control-template-walkthrough)
+- [控件模板实战](/docs/styling/control-template-walkthrough)
 - [Defining properties](/docs/custom-controls/defining-properties)
 - [Troubleshooting themes](/troubleshooting/ui-development/themes)

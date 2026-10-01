@@ -3,39 +3,39 @@ id: file-picker-options
 title: File Picker Options
 ---
 
-## Common picker options
+## 选取器的通用选项 {#common-picker-options}
 
 ### Title
 
-Gets or sets the text that appears in the title bar of a picker.
+获取或设置选取器标题栏上显示的文字。
 
 ### SuggestedStartLocation
 
-Gets or sets the initial location where the file open picker looks for files to present to the user.
-Can be obtained from previously picked folder or using `StorageProvider.TryGetFolderFromPathAsync` or `StorageProvider.TryGetWellKnownFolderAsync`.
+获取或设置文件打开选取器的初始位置，即一开始向用户展示哪个目录下的文件。
+该值可以取自此前选过的文件夹，也可以用 `StorageProvider.TryGetFolderFromPathAsync` 或 `StorageProvider.TryGetWellKnownFolderAsync` 取得。
 
 :::note
-This is a suggestion for the system, that can ignore this parameter, if application doesn't have access to the folder or it doesn't exist.
+这只是给系统的一个建议：若应用无权访问该文件夹，或该文件夹不存在，系统可以不予理会。
 :::
 :::note
-On Linux some DBus file picker don't support start location. For using GTK Free Desktop disable `UseDBusFilePicker` in `X11PlatformOptions`
+在 Linux 上，某些 DBus 文件选取器不支持起始位置。要改用 GTK Free Desktop，请在 `X11PlatformOptions` 中关掉 `UseDBusFilePicker`
 :::
 
 ## FilePickerOpenOptions
 
 ### AllowMultiple
 
-Gets or sets an option indicating whether open picker allows users to select multiple files.
+获取或设置一个选项，指示打开选取器是否允许用户选中多个文件。
 
 ### FileTypeFilter
 
-Gets or sets the collection of file types that the file open picker displays.
+获取或设置文件打开选取器所显示的文件类型集合。
 
 ### SuggestedFileType
 
-Gets or sets the `FilePickerFileType` that the dialog should initially select in its file type filter dropdown. The value must be one of the items in `FileTypeFilter`.
+获取或设置对话框在文件类型下拉框中默认选中的 `FilePickerFileType`。该值必须是 `FileTypeFilter` 中的某一项。
 
-To create a list of file types for the file picker:
+为文件选取器建立一份文件类型清单：
 
 ```csharp
 //This can also be applied for SaveFilePicker.
@@ -51,33 +51,33 @@ var files = await _target.StorageProvider.OpenFilePickerAsync(new FilePickerOpen
 
 ### SuggestedFileName
 
-Gets or sets the file name that the file save picker suggests to the user.
+获取或设置文件保存选取器向用户建议的文件名。
 
 ### DefaultExtension
 
-Gets or sets the default extension to be used to save the file.
+获取或设置保存文件时使用的默认扩展名。
 
 ### FileTypeChoices
 
-Gets or sets the collection of valid file types that the user can choose to assign to a file.
+获取或设置用户可为文件选用的有效文件类型集合。
 
 ### SuggestedFileType
 
-Gets or sets the `FilePickerFileType` that the dialog should initially select in its file type filter dropdown. The value must be one of the items in `FileTypeChoices`.
+获取或设置对话框在文件类型下拉框中默认选中的 `FilePickerFileType`。该值必须是 `FileTypeChoices` 中的某一项。
 
 ### ShowOverwritePrompt
 
-Gets or sets a value indicating whether file open picker displays a warning if the user specifies the name of a file that already exists.
+获取或设置一个值，指示当用户填写的文件名已存在时，文件打开选取器是否给出警告。
 
 ## FolderPickerOpenOptions
 
 ### AllowMultiple
 
-Gets or sets an option indicating whether open picker allows users to select multiple folders.
+获取或设置一个选项，指示打开选取器是否允许用户选中多个文件夹。
 
-## Platform compatibility
+## 平台兼容性 {#platform-compatibility}
 
-| 特性        | Managed |  Windows | macOS | Linux | 浏览器 | Android |  iOS |
+| 特性        | 托管 |  Windows | macOS | Linux | 浏览器 | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|-------|
 | `Title` | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ |
 | `SuggestedStartLocation` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
@@ -89,21 +89,21 @@ Gets or sets an option indicating whether open picker allows users to select mul
 | `FileTypeChoices` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
 | `ShowOverwritePrompt` | ✓ | ✓ | ✗ | ✓ | ✗ | ✗ | ✗ |
 
-## Defining custom file types
+## 定义自定义文件类型 {#defining-custom-file-types}
 
-Avalonia has set of built-in file types:
+Avalonia 内置了一组文件类型：
 
-- FilePickerFileTypes.All - all files
-- FilePickerFileTypes.TextPlain - txt files
-- FilePickerFileTypes.ImageAll - all images
-- FilePickerFileTypes.ImageJpg - jpg images
-- FilePickerFileTypes.ImagePng - png images
-- FilePickerFileTypes.ImageWebP - webp images
-- FilePickerFileTypes.Pdf - pdf documents
+- FilePickerFileTypes.All——所有文件
+- FilePickerFileTypes.TextPlain——txt 文件
+- FilePickerFileTypes.ImageAll——所有图片
+- FilePickerFileTypes.ImageJpg——jpg 图片
+- FilePickerFileTypes.ImagePng——png 图片
+- FilePickerFileTypes.ImageWebP——webp 图片
+- FilePickerFileTypes.Pdf——pdf 文档
 
-However it is possible to define custom file types that can be used by the picker.
+不过你也可以自定义文件类型供选取器使用。
 
-For instance, the built-in ImageAll type is defined as:
+比如内置的 ImageAll 类型就是这样定义的：
 
 ```csharp
 public static FilePickerFileType ImageAll { get; } = new("All Images")
@@ -114,21 +114,21 @@ public static FilePickerFileType ImageAll { get; } = new("All Images")
 };
 ```
 
-Where each file type has the following hints that are used by the different platforms:
+其中每个文件类型都带有下列提示信息，供不同平台取用：
 
-- `Patterns` are used by most Windows, Linux and Browser platforms, and is a basic GLOB patten that can be matched on types.
-- `AppleUniformTypeIdentifiers` is a standard identifier defined by Apple and is used on macOS and iOS platforms. You can find the correct value for a given file in the macOS terminal with `mdls -name kMDItemContentType yourfile.ext`.
-- `MimeTypes` is a web identifier for the files used on most platforms, but not Windows and iOS.
+- `Patterns` 为大多数 Windows、Linux 和浏览器平台所用，是一种可用于匹配类型的基本 GLOB 模式。
+- `AppleUniformTypeIdentifiers` 是 Apple 定义的标准标识符，用于 macOS 和 iOS 平台。在 macOS 终端里用 `mdls -name kMDItemContentType yourfile.ext` 即可查出某个文件对应的正确值。
+- `MimeTypes` 是文件的 Web 标识符，除 Windows 和 iOS 外的多数平台都会用到。
 
-Defining all hints is recommended if the information is known.
+若这些信息都已知，建议把所有提示都填上。
 
 :::note
-If specific hint is not known, don't set random values or "*.*" wildcard, instead keep this collection null. It will tell the platform to ignore this collection and instead try to use another one.
+若某项提示你并不确定，请不要随便填值或写 "*.*" 通配符，把该集合留空（null）即可。这会告诉平台忽略这一项，转而使用别的提示。
 :::
 
-## WebP inclusion in options
+## 选项中对 WebP 的支持 {#webp-inclusion-in-options}
 
-Keep in mind that `FilePickerFileTypes.ImageWebP` and the addition of "*.webp" to the "All Images" patterns were introduced in version 11.1. You can still create custom file picker types in older versions to incorporate WebP images. For example, to allow only a WebP image to be picked, you can use this:
+请注意，`FilePickerFileTypes.ImageWebP` 以及把 "*.webp" 并入 "All Images" 模式，都是 11.1 版才引入的。在更早的版本里，你照样可以自定义文件选取器类型来涵盖 WebP 图片。例如，若只想让用户选 WebP 图片，可以这么写：
 
 ```csharp
 var customWebPFileType = new FilePickerFileType("Only WebP Images")
@@ -139,10 +139,10 @@ var customWebPFileType = new FilePickerFileType("Only WebP Images")
 };
 ```
 
-And if you want to include WebP as one of the file types you consider to be an image, you can use the "ImageAll" example shown above.
+若你想把 WebP 也算作图片类型之一，照搬上面那个 "ImageAll" 的例子即可。
 
 ## 另请参阅 {#see-also}
 
-- [Storage Provider](/docs/services/storage/storage-provider): Full storage provider API reference.
-- [File Dialogs](/docs/services/file-dialogs): Using file open, save, and folder picker dialogs.
-- [Bookmarks](/docs/services/storage/bookmarks): Persisting access to picked files and folders.
+- [存储提供程序](/docs/services/storage/storage-provider)：完整的存储提供程序 API 参考。
+- [文件对话框](/docs/services/file-dialogs)：使用打开、保存和文件夹选取对话框。
+- [书签](/docs/services/storage/bookmarks)：持久保存对所选文件和文件夹的访问权限。

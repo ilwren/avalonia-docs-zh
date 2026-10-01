@@ -1,11 +1,11 @@
 ---
 id: activatable-lifetime
-title: Activatable lifetime
-description: API reference for IActivatableLifetime, the service that exposes application activation and deactivation events and background state methods.
+title: 可激活生命周期
+description: IActivatableLifetime 的 API 参考——该服务暴露应用的激活与停用事件，以及进出后台状态的方法。
 doc-type: reference
 ---
 
-The [`IActivatableLifetime`](/api/avalonia/controls/applicationlifetimes/iactivatablelifetime) service defines a set of methods and events related to the activation and deactivation lifecycle of an app. `IActivatableLifetime` is a global app-level service that is accessed from the application instance using the `TryGetFeature` method:
+[`IActivatableLifetime`](/api/avalonia/controls/applicationlifetimes/iactivatablelifetime) 服务定义了一组与应用激活、停用生命周期相关的方法和事件。`IActivatableLifetime` 是应用级的全局服务，可从应用实例上用 `TryGetFeature` 方法取得：
 
 ```csharp
 Application.Current.TryGetFeature<IActivatableLifetime>();
@@ -15,33 +15,33 @@ Application.Current.TryGetFeature<IActivatableLifetime>();
 
 ### Activated
 
-An event that is raised when the application is `Activated` for various reasons as described by the `ActivationKind` enumeration.
+当应用因 `ActivationKind` 枚举所描述的各种缘由被 `Activated` 时引发的事件。
 
 ### Deactivated
 
-An event that is raised when the application is `Deactivated` for various reasons as described by the `ActivationKind` enumeration.
+当应用因 `ActivationKind` 枚举所描述的各种缘由被 `Deactivated` 时引发的事件。
 
 ## 方法 {#methods}
 
 ### TryLeaveBackground
 
-Tells the application to attempt to leave background state.
+要求应用尝试离开后台状态。
 
-Returns `true` if it was possible on the given platform. Otherwise, returns `false`.
+若在当前平台上可行则返回 `true`，否则返回 `false`。
 
-**Example:** `[NSApp unhide]` on macOS.
+**示例：**macOS 上的 `[NSApp unhide]`。
 
 ### TryEnterBackground
 
-Tells the application to attempt to enter background state.
+要求应用尝试进入后台状态。
 
-Returns `true` if it was possible on the given platform. Otherwise, returns `false`.
+若在当前平台上可行则返回 `true`，否则返回 `false`。
 
-**Example:** `[NSApp hide]` on macOS.
+**示例：**macOS 上的 `[NSApp hide]`。
 
-## Subscribing early for startup events
+## 尽早订阅以捕获启动期事件 {#subscribing-early-for-startup-events}
 
-To receive activation events that occur at app startup (for example, when the user double-clicks an associated file to launch the app), subscribe to `Activated` inside `OnFrameworkInitializationCompleted` before any `await` calls. If the handler is attached too late, the startup activation event may have already fired and will be missed.
+若要接收应用启动时发生的激活事件（比如用户双击一个关联文件来启动应用），请在 `OnFrameworkInitializationCompleted` 内、任何 `await` 调用之前订阅 `Activated`。处理程序挂得太晚的话，启动激活事件可能早已触发并被错过。
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -71,14 +71,14 @@ public override void OnFrameworkInitializationCompleted()
 ```
 
 :::caution
-Use the correct event args type for each activation kind. `ProtocolActivatedEventArgs` handles URI/deep link activation (`ActivationKind.OpenUri`). `FileActivatedEventArgs` handles file association activation (`ActivationKind.File`). Checking for `ProtocolActivatedEventArgs` when a file is opened will not match, and the event will appear to not fire.
+请为每种激活类型选用正确的事件参数类型：`ProtocolActivatedEventArgs` 对应 URI/深度链接激活（`ActivationKind.OpenUri`），`FileActivatedEventArgs` 对应文件关联激活（`ActivationKind.File`）。打开文件时若去判断 `ProtocolActivatedEventArgs` 是匹配不上的，看起来就像事件根本没触发。
 :::
 
 ## 示例 {#examples}
 
-### Entering and exiting background state
+### 进入与退出后台状态 {#entering-and-exiting-background-state}
 
-You may want an app to pause or stop some code processing when it is in the background, e.g., pausing multimedia playback, or disabling recurrent HTTP requests.
+你或许希望应用在后台时暂停或停掉某些处理，比如暂停多媒体播放，或者关掉周期性的 HTTP 请求。
 
 ```csharp
 if (Application.Current?.TryGetFeature<IActivatableLifetime>() is { } activatableLifetime)
@@ -100,11 +100,11 @@ if (Application.Current?.TryGetFeature<IActivatableLifetime>() is { } activatabl
 }
 ```
 
-### Handling URI activation
+### 处理 URI 激活 {#handling-uri-activation}
 
-Your app may need to support protocol activation, more commonly called deep linking. Link schemas must be registered in the system and associated with the app. Once registered, the OS can redirect the links to the app.
+你的应用可能需要支持协议激活，也就是人们常说的深度链接。链接方案必须在系统中注册并与应用关联；注册之后，操作系统便能把这些链接转交给应用。
 
-Typical use cases are navigating to a specific page, or creating a [redirect URL in OAuth operations](https://www.oauth.com/oauth2-servers/oauth-native-apps/redirect-urls-for-native-apps/).
+典型用例是跳转到某个特定页面，或者构造 [OAuth 操作中的重定向 URL](https://www.oauth.com/oauth2-servers/oauth-native-apps/redirect-urls-for-native-apps/)。
 
 ```csharp
 if (Application.Current?.TryGetFeature<IActivatableLifetime>() is { } activatableLifetime)
@@ -120,18 +120,18 @@ if (Application.Current?.TryGetFeature<IActivatableLifetime>() is { } activatabl
 ```
 
 :::note
-Some platforms have specific steps to update the manifest and enable protocol handling.
+有些平台需要额外改动清单文件才能启用协议处理。
 
-**macOS and iOS:** Add `CFBundleURLTypes` with `CFBundleURLSchemes` segment to your `Info.plist`. See [Creating an app custom URL scheme](https://rderik.com/blog/creating-app-custom-url-scheme/) (skip the Swift part, which is handled by `IActivatableLifetime`).
+**macOS 与 iOS：**在 `Info.plist` 中添加带 `CFBundleURLSchemes` 段的 `CFBundleURLTypes`。请见[创建应用自定义 URL 方案](https://rderik.com/blog/creating-app-custom-url-scheme/)（Swift 那部分可略过，`IActivatableLifetime` 已替你处理）。
 
-**Android:** Add `intent-filter` with specific `android:scheme` to your `AndroidManifest.xml`. See [Deep linking on Android](https://developer.android.com/training/app-links/deep-linking) for details (skip Kotlin/Java parts, which are handled by `IActivatableLifetime`).
+**Android：**在 `AndroidManifest.xml` 中添加带特定 `android:scheme` 的 `intent-filter`。细节请见 [Android 上的深度链接](https://developer.android.com/training/app-links/deep-linking)（Kotlin/Java 那部分可略过，`IActivatableLifetime` 已替你处理）。
 :::
 
-### Handling file activation
+### 处理文件激活 {#handling-file-activation}
 
-Your app may need to handle file activation, which occurs when the OS launches or foregrounds your app (usually because the user opens a file associated with it). Like link schemas, file type associations must be registered in the system and linked to your app. Once registered, opening an associated file also opens your app via this event.
+你的应用可能需要处理文件激活：当操作系统启动你的应用或把它切到前台时（通常是因为用户打开了与之关联的文件）就会发生。与链接方案一样，文件类型关联也必须在系统中注册并与应用挂钩；注册之后，打开关联文件便会通过该事件顺带打开你的应用。
 
-Typical use cases are opening a document, importing a file, or processing files passed from the OS shell.
+典型用例是打开文档、导入文件，或处理由系统 shell 传来的文件。
 
 ```csharp
 if (Application.Current?.TryGetFeature<IActivatableLifetime>() is { } activatableLifetime)
@@ -150,14 +150,14 @@ if (Application.Current?.TryGetFeature<IActivatableLifetime>() is { } activatabl
 ```
 
 :::note
-Some platforms have specific steps to update the manifest and enable file type associations.
+有些平台需要额外改动清单文件才能启用文件类型关联。
 
-**macOS and iOS:** Add `CFBundleDocumentTypes` to your `Info.plist` to declare the file types your app handles. See the [Apple documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundledocumenttypes) for details.
+**macOS 与 iOS：**在 `Info.plist` 中添加 `CFBundleDocumentTypes`，声明应用能处理哪些文件类型。细节请见 [Apple 文档](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundledocumenttypes)。
 
-**Android:** Add an `intent-filter` with `action.VIEW` and the appropriate `data` MIME type or file extension to your `AndroidManifest.xml`. See the [Android documentation](https://developer.android.com/training/data-storage/shared/documents-files) for details (skip Kotlin/Java parts, as it's handled by `IActivatableLifetime`).
+**Android：**在 `AndroidManifest.xml` 中添加一个带 `action.VIEW` 以及相应 `data` MIME 类型或文件扩展名的 `intent-filter`。细节请见 [Android 文档](https://developer.android.com/training/data-storage/shared/documents-files)（Kotlin/Java 那部分可略过，`IActivatableLifetime` 已替你处理）。
 :::
 
-## Platform compatibility
+## 平台兼容性 {#platform-compatibility}
 
 | 特性        |  Windows | macOS | Linux | 浏览器 | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|
@@ -170,4 +170,4 @@ Some platforms have specific steps to update the manifest and enable file type a
 
 ## 另请参阅 {#see-also}
 
-- [IActivatableLifetime issue and discussion (#15316)](https://github.com/AvaloniaUI/Avalonia/issues/15316)
+- [IActivatableLifetime 的 issue 与讨论（#15316）](https://github.com/AvaloniaUI/Avalonia/issues/15316)

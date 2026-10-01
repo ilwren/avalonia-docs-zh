@@ -1,47 +1,47 @@
 ---
 id: raspberry-pi
-title: Running Avalonia on a Raspberry Pi
+title: 在树莓派上运行 Avalonia
 ---
 
 import RaspbianLiteDrmKmsCubeScreenshot from '/img/guides/platform-specific-guides/raspberry-pi/raspbian-lite-drm-kmscube.gif';
 import RaspbianLiteDrmDesktopScreenshot from '/img/guides/platform-specific-guides/raspberry-pi/raspbian-lite-drm-desktop.jpg';
 import RaspbianLiteRaspberryScreenshot from '/img/guides/platform-specific-guides/raspberry-pi/raspbian-lite-drm-run-on-raspberry.jpg';
 
-## Required hardware
+## 所需硬件 {#required-hardware}
 
-Flash 8GB SD Card with Raspbian Stretch (2018-11-13). `balenaEtcher` is a nice tool for that.
+把 Raspbian Stretch（2018-11-13）刷进一张 8GB SD 卡，`balenaEtcher` 是个趁手的工具。
 
-Plug in the card and start the `Raspberry Pi`.
+插上卡，启动 `Raspberry Pi`。
 
-You can follow the [Raspbian and .NET Core setup guide](https://blogs.msdn.microsoft.com/david/2017/07/20/setting_up_raspian_and_dotnet_core_2_0_on_a_raspberry_pi/). The next steps are summarized below.
+你可以照着 [Raspbian 与 .NET Core 配置指南](https://blogs.msdn.microsoft.com/david/2017/07/20/setting_up_raspian_and_dotnet_core_2_0_on_a_raspberry_pi/)来做，下面是步骤摘要。
 
-## Installing required packages
+## 安装所需的软件包 {#installing-required-packages}
 
-* Install `curl`, `libunwind8`, `gettext` and `apt-transport-https`. The `curl` and `apt-transport-https` often are up-to-date.
+* 安装 `curl`、`libunwind8`、`gettext` 和 `apt-transport-https`。`curl` 和 `apt-transport-https` 通常已是最新的。
 
 ```bash
 sudo apt-get install curl libunwind8 gettext apt-transport-https
 ```
 
-* Download tar-ball.
+* 下载 tar 包。
 
 ```bash
 curl -sSL -o dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/Runtime/release/2.0.0/dotnet-runtime-latest-linux-arm.tar.gz
 ```
 
-* Unpack tarball to `/opt/dotnet`.
+* 把 tar 包解压到 `/opt/dotnet`。
 
 ```bash
 sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
 ```
 
-* Link `dotnet` binary.
+* 链接 `dotnet` 二进制文件。
 
 ```bash
 sudo ln -s /opt/dotnet/dotnet /usr/local/bin
 ```
 
-Alternative: You can login as superuser (run "sudo su")
+另一种办法：以超级用户身份登录（运行 "sudo su"）
 
 ```bash
 apt-get -y install curl libunwind8 gettext apt-transport-https
@@ -51,71 +51,71 @@ ln -s /opt/dotnet/dotnet /usr/local/bin
 ```
 
 :::note
-Take care of line endings of the script. It should use `LF` instead of `CR LF`. Save the script as `.sh` file and run it on the `Raspberry Pi` with bash `filename.sh`.
+注意脚本的换行符，应当用 `LF` 而非 `CR LF`。把脚本存为 `.sh` 文件，在 `Raspberry Pi` 上用 bash `filename.sh` 运行。
 :::
 
-## Publishing the app
+## 发布应用 {#publishing-the-app}
 
-* To run an `Avalonia` application on `Raspberry Pi` you need to use this nuGet package:
+* 要在 `Raspberry Pi` 上运行 `Avalonia` 应用，你需要用到这个 NuGet 包：
 
 [SkiaSharp.NativeAssets.Linux](https://www.nuget.org/packages/SkiaSharp.NativeAssets.Linux/)
 
-It includes the `libSkiaSharp.so`.
+它内含 `libSkiaSharp.so`。
 
-* Now publish the app with the following command:
+* 现在用下面的命令发布应用：
 
 ```bash
 dotnet publish -r linux-arm -f netcoreapp2.0
 ```
 
-* Copy publish directory to the `Raspberry Pi` and run it with `dotnet publish/ApplicationName.dll`
+* 把 publish 目录拷到 `Raspberry Pi` 上，用 `dotnet publish/ApplicationName.dll` 运行
 
-## Running with Raspbian Lite
+## 在 Raspbian Lite 上运行 {#running-with-raspbian-lite}
 
-This tutorial shows you how to run your Avalonia app on a Raspberry Pi with Raspbian Lite via [DRM](https://en.wikipedia.org/wiki/Direct\_Rendering\_Manager).
+本教程教你如何通过 [DRM](https://en.wikipedia.org/wiki/Direct\_Rendering\_Manager)，让 Avalonia 应用跑在装有 Raspbian Lite 的树莓派上。
 
-### Step 1 - Setup the Raspberry Pi
+### 第 1 步 —— 配置树莓派 {#step-1-setup-the-raspberry-pi}
 
-First step is to setup your Raspberry Pi.
+第一步是把树莓派配置好。
 
-#### Download the Raspbian lite operation system image.
+#### 下载 Raspbian Lite 操作系统镜像。 {#download-the-raspbian-lite-operation-system-image}
 
-You can download the Raspbian lite operating system image from the official Raspberry Pi website.\
-[Link to Raspberry Pi Operating system images](https://www.raspberrypi.com/software/operating-systems/)
+你可以从树莓派官网下载 Raspbian Lite 操作系统镜像。\
+[树莓派操作系统镜像链接](https://www.raspberrypi.com/software/operating-systems/)
 
-#### Prepare Raspberry for flashing
+#### 准备刷机 {#prepare-raspberry-for-flashing}
 
-The installation of Raspberry Lite is a bit different depending on the model.
+Raspberry Lite 的安装步骤因机型而略有不同。
 
 [**Raspberry Pi 4 b**](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)\
-For the Pi 4 b you need a SD Card on which the operating system will be installed.\
-Insert the SD card into your computer.\
-You can now go directly to step 1.2.
+Pi 4 b 需要一张 SD 卡来装操作系统。\
+把 SD 卡插进电脑。\
+接下来直接进入第 1.2 步即可。
 
 [**Raspberry CM4**](https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000)\
-Since the CM4 is designed for embedded applications you still need an IO board. For this there is the official [Compute Module 4 IO board](https://www.raspberrypi.com/products/compute-module-4-io-board/) or alternatively many other boards like the [SourceKit PiTray mini](https://sourcekit.cc/#/?id=sourcekit%C2%AE-pitray-mini).
+由于 CM4 是为嵌入式应用设计的，你还需要一块 IO 板。官方有 [Compute Module 4 IO 板](https://www.raspberrypi.com/products/compute-module-4-io-board/)，另外也有不少别的选择，比如 [SourceKit PiTray mini](https://sourcekit.cc/#/?id=sourcekit%C2%AE-pitray-mini)。
 
-To prepare the EMMC memory for mounting follow these [steps](https://www.raspberrypi.com/documentation/computers/compute-module.html#flashing-the-compute-module-emmc).
+按这些[步骤](https://www.raspberrypi.com/documentation/computers/compute-module.html#flashing-the-compute-module-emmc)准备好 EMMC 存储以便挂载。
 
-#### Flashing the operating system
+#### 刷写操作系统 {#flashing-the-operating-system}
 
-* [Download](https://etcher.io/) the Etcher image writing utility and install it.
-* Open Etcher and select from your hard drive the .zip file you downloaded in step 1.1.
-* Select the mass storage (SD card or CM4 EMMC) you wish to write your image to.
-* Review your selections and click 'Flash!' to begin writing data. Once flashing is complete, create a new empty file named **ssh** (with no extension, e.q with `touch ssh`) in the boot drive of the Raspberry. This will ensure that the SSH daemon is enabled once the Raspberry Pi has started and you can logon over the network.
-* _**Only for Cm4** add the following to `/boot/config.txt` to enable the Usb 2.0 ports_
+* [下载](https://etcher.io/)镜像写入工具 Etcher 并安装。
+* 打开 Etcher，从硬盘里选中你在第 1.1 步下载的 .zip 文件。
+* 选择要写入镜像的大容量存储设备（SD 卡或 CM4 的 EMMC）。
+* 确认选项无误后点击 "Flash!" 开始写入数据。刷写完成后，在树莓派的 boot 盘里新建一个名为 **ssh** 的空文件（不带扩展名，例如用 `touch ssh` 创建）。这样树莓派启动后 SSH 守护进程就会开启，你便能通过网络登录了。
+* _**仅限 CM4**：在 `/boot/config.txt` 中加入下面这行以启用 USB 2.0 端口_
 
 ```conf
 dtoverlay=dwc2,dr_mode=host
 ```
 
-* Start up your Raspberry and login.\
-  **Raspberry Pi 4 b**: Put the SD card into the Raspberry and plug in power supply\
-  **CM 4**: On CM4 IO Board unplug the power supply, remove J2 jumper, plug in power supply again
+* 启动树莓派并登录。\
+  **Raspberry Pi 4 b**：把 SD 卡插进树莓派，接上电源\
+  **CM 4**：在 CM4 IO 板上拔掉电源，取下 J2 跳线帽，再重新接上电源
 
-#### Install missing libraries
+#### 安装缺失的库 {#install-missing-libraries}
 
-Some libraries required to run an Avalonia app via DRM on raspbian lite:
+在 Raspbian Lite 上经由 DRM 运行 Avalonia 应用，还需要这些库：
 
 ```bash
 sudo apt update
@@ -124,33 +124,33 @@ sudo reboot
 sudo apt-get install libgbm1 libgl1-mesa-dri libegl1-mesa libinput10
 ```
 
-#### Verify DRM (optional)
+#### 验证 DRM（可选） {#verify-drm-optional}
 
-You can test your installation with a simple but useful tool called [kmscube](https://gitlab.freedesktop.org/mesa/kmscube).
+你可以用一个简单却好使的小工具 [kmscube](https://gitlab.freedesktop.org/mesa/kmscube) 来测试安装结果。
 
 ```bash
 sudo apt-get install kmscube
 sudo kmscube
 ```
 
-You should see the spinning cube on your Raspberry pi screen now:\
+现在你应该能在树莓派的屏幕上看到那个旋转的立方体了：\
 <Image light={RaspbianLiteDrmKmsCubeScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-### Step 2 - Prepare Avalonia app
+### 第 2 步 —— 准备 Avalonia 应用 {#step-2-prepare-avalonia-app}
 
-#### Create new Avalonia App (Core or MVVM App)
-We called it _AvaloniaRaspbianLiteDrm_ in this tutorial.
+#### 新建一个 Avalonia 应用（Core 或 MVVM 模板） {#create-new-avalonia-app-core-or-mvvm-app}
+本教程中我们把它叫作 _AvaloniaRaspbianLiteDrm_。
 
-#### Add package [Avalonia.LinuxFrameBuffer](https://www.nuget.org/packages/Avalonia.LinuxFramebuffer)
+#### 添加包 [Avalonia.LinuxFrameBuffer](https://www.nuget.org/packages/Avalonia.LinuxFramebuffer) {#add-package-avalonialinuxframebuffer}
 
 ```bash
 dotnet add package Avalonia.LinuxFramebuffer
 ```
 
 #### 2.3 Create MainView
-When running via FrameBuffer there are no windows, so you need a separate view (UserControl) which will be our toplevel control. This view is the counterpart to the normal window.
+经由 FrameBuffer 运行时没有窗口，所以你需要另建一个视图（UserControl）充当顶层控件。这个视图扮演的就是平常窗口的角色。
 
-`MainView` will be our app base in which we develop our UI:
+`MainView` 将作为我们开发界面的基座：
 
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -173,7 +173,7 @@ When running via FrameBuffer there are no windows, so you need a separate view (
 </UserControl>
 ```
 
-Now create a new UserControl with name `MainSingleView` and host the `MainView`:
+现在新建一个名为 `MainSingleView` 的 UserControl，用它承载 `MainView`：
 
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -189,7 +189,7 @@ Now create a new UserControl with name `MainSingleView` and host the `MainView`:
 </UserControl>
 ```
 
-Also change the `MainWindow.axaml` to host the `MainView` inside:
+同时修改 `MainWindow.axaml`，让它内部也承载 `MainView`：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -206,11 +206,11 @@ Also change the `MainWindow.axaml` to host the `MainView` inside:
 </Window>
 ```
 
-The `MainView` is hosted in both `MainSingleView` and `MainWindow`. This makes it easier during development to run the app on desktop and on the Raspberry Pi.
+`MainView` 同时被 `MainSingleView` 和 `MainWindow` 承载。这样开发时既能在桌面上跑应用，也能在树莓派上跑，方便不少。
 
 #### Prepare Program.cs
-Next, prepare the `Program.cs` to enable the DRM usage.\
-Change the Main void to the following:
+接着，改造 `Program.cs` 以启用 DRM。\
+把 Main 方法改成下面这样：
 
 ```csharp
 public static int Main(string[] args)
@@ -242,12 +242,12 @@ private static void SilenceConsole()
 }
 ```
 
-`SilenceConsole()` captures the console input and hides it. Otherwise the console cursor blinks on the screen.
+`SilenceConsole()` 会接管并隐藏控制台输入，否则控制台光标会在屏幕上一闪一闪。
 
 **2.4 Prepare App.axaml.cs**\
-Next, set the `MainView` for the `ISingleViewApplicationLifetime` for DRM usage.
+接下来，为使用 DRM 设置 `ISingleViewApplicationLifetime` 的 `MainView`。
 
-Change the `OnFrameworkInitializationCompleted()` in `App.axaml.cs`:
+修改 `App.axaml.cs` 中的 `OnFrameworkInitializationCompleted()`：
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -261,43 +261,43 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-#### Run and test on desktop
-Now you can run/debug your app on desktop as usual.\
-When you start your app you should see this:\
+#### 在桌面上运行并测试 {#run-and-test-on-desktop}
+现在你可以像平常一样在桌面上运行/调试应用了。\
+启动应用后，你应该看到这样的画面：\
 <Image light={RaspbianLiteDrmDesktopScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-### Step 3 - Deploy and run on Raspberry
+### 第 3 步 —— 部署到树莓派并运行 {#step-3-deploy-and-run-on-raspberry}
 
-#### Publish app
+#### 发布应用 {#publish-app}
 
 ```bash
 dotnet publish -c Release -o publish -r linux-arm -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true -p:IncludeNativeLibrariesForSelfExtract=true
 ```
 
-#### Copy app to Raspberry
-Copy the files from `/publish` directory of your project to your Raspberry.\
-You can do this via `scp <source> <destination>` or use a app like [CyberDuck](https://cyberduck.io) or via Usb stick.
+#### 把应用拷到树莓派 {#copy-app-to-raspberry}
+把项目 `/publish` 目录下的文件拷到树莓派上。\
+你可以用 `scp <source> <destination>`，也可以用 [CyberDuck](https://cyberduck.io) 之类的工具，或者干脆用 U 盘。
 
-#### Run app on Raspberry
-First we need to change the permission to executable.
+#### 在树莓派上运行应用 {#run-app-on-raspberry}
+先把权限改成可执行。
 
 ```bash
 sudo chmod +x /path/to/app/AvaloniaRaspbianLiteDrm
 ```
 
-Now you can run the app with the following:
+然后就能这样运行应用了：
 
 ```bash
 sudo ./path/to/app/AvaloniaRaspbianLiteDrm --drm
 ```
 
-You should see the app running on your Raspberry Pi now:
+现在你应该看到应用在树莓派上跑起来了：
 
 <Image light={RaspbianLiteRaspberryScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-If you have a touch display installed, try to slide the slider control.
+若你装了触摸屏，不妨试着滑一滑那个滑块控件。
 
 ## 另请参阅 {#see-also}
 
-- [Embedded Linux overview](/docs/platform-specific-guides/embedded-linux)
-- [Virtual keyboard](/controls/input/text-input/virtualkeyboard)
+- [嵌入式 Linux 概述](/docs/platform-specific-guides/embedded-linux)
+- [虚拟键盘](/controls/input/text-input/virtualkeyboard)

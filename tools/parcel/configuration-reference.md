@@ -233,6 +233,6 @@ You can use the main [freedesktop categories](https://specifications.freedesktop
 
 - [Parcel setup](/tools/parcel/setup)
 - [Parcel command line reference](/tools/parcel/command-line-reference)
-- [Packaging for Windows](/tools/parcel/packaging-for-windows)
+- [为 Windows 打包](/tools/parcel/packaging-for-windows)
 - [Packaging for macOS](/tools/parcel/packaging-for-macos)
 - [Packaging for Linux](/tools/parcel/packaging-for-linux)

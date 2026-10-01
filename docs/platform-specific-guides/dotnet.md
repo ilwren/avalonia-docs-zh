@@ -157,4 +157,4 @@ public class iOSDeviceOrientation : IDeviceOrientation
 
 - [平台相关的 XAML](/docs/platform-specific-guides/xaml)
 - [在 Android 上部署](/docs/deployment/android)
-- [Deploying on iOS](/docs/deployment/ios)
+- [在 iOS 上部署](/docs/deployment/ios)

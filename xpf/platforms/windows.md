@@ -83,6 +83,6 @@ var handle = avaloniaWindow.TryGetPlatformHandle();
 
 See [Native Window Handles](/xpf/interop/native-window-handles) for more details.
 
-## Deployment
+## 部署 {#deployment}
 
 See [Windows Deployment](/xpf/deployment/windows) for publishing, packaging, and installer guidance.

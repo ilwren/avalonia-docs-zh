@@ -3,42 +3,42 @@ id: webassembly
 title: WebAssembly
 ---
 
-Avalonia applications can run in the browser using WebAssembly (WASM). This page explains how to set up a project for browser deployment and how to use JavaScript interop.
+Avalonia 应用可以借助 WebAssembly（WASM）跑在浏览器里。本页讲解如何为浏览器部署配置项目，以及如何使用 JavaScript 互操作。
 
-## Setting up an Avalonia project for WebAssembly
+## 为 WebAssembly 配置 Avalonia 项目 {#setting-up-an-avalonia-project-for-webassembly}
 
-1. Install the `wasm-tools` workload, which provides the build toolchain for compiling .NET to WebAssembly.
+1. 安装 `wasm-tools` 工作负载，它提供了把 .NET 编译成 WebAssembly 的构建工具链。
 
 ```bash
 dotnet workload install wasm-tools
 ```
 
 :::note
-If you are running `net8.0-browser` application on .NET 9 SDK, you should install `wasm-tools-net8` workload instead.
-If you have an older .NET SDK, it might ask you to install other workloads like `wasm-experimental` as well.
+若你在 .NET 9 SDK 上运行 `net8.0-browser` 应用，应改装 `wasm-tools-net8` 工作负载。
+若你的 .NET SDK 较旧，它可能还会要求你装上 `wasm-experimental` 之类的其他工作负载。
 :::
 
-2. Install or update the dotnet templates to the latest version.
+2. 安装或把 dotnet 模板更新到最新版。
 
 ```bash
 dotnet new install avalonia.templates
 ```
 
-3. Create a new directory for the project.
+3. 为项目新建一个目录。
 
 ```bash
 mkdir BrowserTest
 cd BrowserTest
 ```
 
-4. Generate a new project that supports running in the browser. You can run `dotnet new list` to see all available Avalonia templates.
+4. 生成一个支持在浏览器中运行的新项目。运行 `dotnet new list` 可查看所有可用的 Avalonia 模板。
 
 ```bash
 dotnet new avalonia.xplat
 ```
 
-5. In the console output you will see HTTP and HTTPS links to open the app.
-To run the app:
+5. 控制台输出里会给出打开应用的 HTTP 和 HTTPS 链接。
+运行应用：
 
 ```bash
 cd BrowserTest.Browser
@@ -51,17 +51,17 @@ dotnet run
 # Debug at url: https://127.0.0.1:53577/_framework/debug
 ```
 
-## Deployment
+## 部署 {#deployment}
 
-For information on publishing and deploying your WebAssembly app, see [Deploying WebAssembly](/docs/deployment/webassembly).
+关于如何发布和部署 WebAssembly 应用，请见[部署 WebAssembly](/docs/deployment/webassembly)。
 
-## JavaScript interop
+## JavaScript 互操作 {#javascript-interop}
 
-Avalonia Browser apps can call JavaScript from C# and expose C# methods to JavaScript using the standard `[JSImport]`/`[JSExport]` interop API from .NET. This API is part of the `System.Runtime.InteropServices.JavaScript` namespace and works in any .NET WebAssembly application.
+Avalonia Browser 应用可以借助 .NET 标准的 `[JSImport]`/`[JSExport]` 互操作 API，从 C# 调用 JavaScript，也能把 C# 方法暴露给 JavaScript。该 API 属于 `System.Runtime.InteropServices.JavaScript` 命名空间，在任何 .NET WebAssembly 应用中都能用。
 
 ### 配置 {#setup}
 
-Add `AllowUnsafeBlocks` to your Browser project file. The .NET source generator that produces the interop bindings requires this:
+在 Browser 项目文件中加上 `AllowUnsafeBlocks`。生成互操作绑定的 .NET 源生成器需要它：
 
 ```xml
 <PropertyGroup>
@@ -69,11 +69,11 @@ Add `AllowUnsafeBlocks` to your Browser project file. The .NET source generator 
 </PropertyGroup>
 ```
 
-### Calling JavaScript from C#
+### 从 C# 调用 JavaScript {#calling-javascript-from-c}
 
-Use the `[JSImport]` attribute on a `partial` method to import a JavaScript function. The first argument is the JS function name, and the second is the module name used when loading it.
+在 `partial` 方法上使用 `[JSImport]` 特性即可导入一个 JavaScript 函数。第一个参数是 JS 函数名，第二个是加载它时所用的模块名。
 
-Create a JavaScript module (e.g., `wwwroot/js/interop.js`):
+创建一个 JavaScript 模块（比如 `wwwroot/js/interop.js`）：
 
 ```javascript
 export function showAlert(message) {
@@ -85,7 +85,7 @@ export function getCurrentUrl() {
 }
 ```
 
-Define C# methods that map to the JS functions:
+定义与这些 JS 函数对应的 C# 方法：
 
 ```csharp
 using System.Runtime.InteropServices.JavaScript;
@@ -102,7 +102,7 @@ public partial class JsInterop
 }
 ```
 
-Load the module at startup (typically in `Program.cs`) using `JSHost.ImportAsync`, then call the methods from anywhere in your app:
+启动时（通常在 `Program.cs` 中）用 `JSHost.ImportAsync` 加载该模块，之后便可在应用的任何地方调用这些方法：
 
 ```csharp
 using System.Runtime.InteropServices.JavaScript;
@@ -114,11 +114,11 @@ JsInterop.ShowAlert("Hello from Avalonia!");
 string url = JsInterop.GetCurrentUrl();
 ```
 
-The module name passed to `JSHost.ImportAsync` must match the second argument in the `[JSImport]` attribute.
+传给 `JSHost.ImportAsync` 的模块名必须与 `[JSImport]` 特性中的第二个参数一致。
 
-### Calling C# from JavaScript
+### 从 JavaScript 调用 C# {#calling-c-from-javascript}
 
-Use the `[JSExport]` attribute to expose a C# method to JavaScript:
+用 `[JSExport]` 特性把 C# 方法暴露给 JavaScript：
 
 ```csharp
 [SupportedOSPlatform("browser")]
@@ -129,7 +129,7 @@ public partial class JsInterop
 }
 ```
 
-From JavaScript, access the exported method through the .NET runtime:
+在 JavaScript 一侧，通过 .NET 运行时访问导出的方法：
 
 ```javascript
 export async function callDotNet() {
@@ -140,18 +140,18 @@ export async function callDotNet() {
 }
 ```
 
-### Accessing global functions
+### 访问全局函数 {#accessing-global-functions}
 
-To import a function from the global scope (rather than a module), prefix the function name with `globalThis` and omit the module name:
+若要从全局作用域（而非某个模块）导入函数，请在函数名前加上 `globalThis` 前缀并省略模块名：
 
 ```csharp
 [JSImport("globalThis.console.log")]
 public static partial void ConsoleLog(string message);
 ```
 
-### Type marshalling
+### 类型封送 {#type-marshalling}
 
-.NET types are automatically marshalled to their JavaScript equivalents. For explicit control over marshalling, use the `[JSMarshalAs]` attribute:
+.NET 类型会自动封送为对应的 JavaScript 类型。若想精确掌控封送方式，请使用 `[JSMarshalAs]` 特性：
 
 ```csharp
 [JSImport("processData", "MyInterop")]
@@ -159,9 +159,9 @@ public static partial void ProcessData(
     [JSMarshalAs<JSType.Number>] long value);
 ```
 
-You can pass `Action`/`Func` callbacks as parameters (marshalled as callable JS functions), and both JS and managed object references can be passed across the boundary as proxy objects.
+你可以把 `Action`/`Func` 回调作为参数传过去（会被封送成可调用的 JS 函数），JS 对象引用和托管对象引用也都能以代理对象的形式跨越边界传递。
 
 ## 另请参阅 {#see-also}
 
 - [Deploying WebAssembly](/docs/deployment/webassembly)
-- [WebAssembly troubleshooting](/troubleshooting/platform-specific-issues/webassembly)
+- [WebAssembly 排查问题](/troubleshooting/platform-specific-issues/webassembly)

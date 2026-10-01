@@ -301,7 +301,7 @@ For control over color, thickness, offset, and dash pattern, define a `TextDecor
 </TextBlock>
 ```
 
-## OpenType font features
+## OpenType 字体特性 {#opentype-font-features}
 
 The `FontFeatures` property enables or disables OpenType features such as ligatures, tabular numbers, and small capitals. Features are specified as comma-separated tags using HarfBuzz syntax.
 

@@ -1,29 +1,29 @@
 ---
 id: control-themes
-title: Control themes
+title: 控件主题
 ---
 
 import StylingEllipseButtonScreenshot from '/img/concepts/ui-concepts/styling/ellipse-button.png';
 
-Control themes build upon [styles](/docs/styling/styles) to create switchable themes for controls. Unlike regular styles, which accumulate and cannot be removed once applied, a control theme can be replaced entirely. This makes control themes the right choice when you need to swap out a control's complete look for a specific instance or section of your UI.
+控件主题建立在[样式](/docs/styling/styles)之上，为控件提供可切换的整套外观。普通样式会层层累加、一旦应用便撤不掉；控件主题则可以整个替换。因此，当你要为某个控件实例或界面中的某一块彻底换一副面孔时，控件主题才是正解。
 
-Control themes are themselves styles, but with some important differences:
+控件主题本身也是样式，但有几处要紧的不同：
 
-- Control themes don't have a selector: instead they have a `TargetType` property which describes the control that they target
-- Control themes are stored in a `ResourceDictionary` instead of a `Styles` collection
-- Control themes are assigned to a control by setting the `Theme` property, usually using the `{StaticResource}` markup extension
+- 控件主题没有选择器，取而代之的是 `TargetType` 属性，用来说明它针对哪种控件
+- 控件主题存放在 `ResourceDictionary` 中，而非 `Styles` 集合里
+- 控件主题通过设置 `Theme` 属性赋给控件，通常借助 `{StaticResource}` 标记扩展
 
 :::tip
-Because control themes are based on styles, it is important to understand the Avalonia [styling system](/docs/styling/styles) first.
+由于控件主题以样式为基础，请先弄懂 Avalonia 的[样式系统](/docs/styling/styles)。
 :::
 
 :::info
-Control themes are typically applied to [templated (lookless)](/docs/custom-controls) controls, but they can actually be applied to any control. However, for non-templated controls, it is often more convenient to use standard styles instead.
+控件主题一般用在[模板化（无外观）](/docs/custom-controls)控件上，但其实任何控件都能用。不过对非模板化控件来说，用普通样式往往更省事。
 :::
 
-## Example: round button
+## 示例：圆形按钮 {#example-round-button}
 
-The following example shows a simple `Button` theme which displays a button with an ellipse background with a 90's Geocities aesthetic:
+下面这个简单的 `Button` 主题，会把按钮画成一个椭圆背景，颇有几分 90 年代 Geocities 的味道：
 
 ```xml title="App.axaml"
 <Application xmlns="https://github.com/avaloniaui"
@@ -73,13 +73,13 @@ The following example shows a simple `Button` theme which displays a button with
 
 <Image light={StylingEllipseButtonScreenshot} alt="Ellipse button" position="center" maxWidth={400} cornerRadius="true" />
 
-## Interaction in control themes
+## 控件主题中的交互 {#interaction-in-control-themes}
 
-Like standard styles, control themes support [nested styles](/docs/styling/styles) which can be used to add interactions such as pointer-over and pressed states.
+和普通样式一样，控件主题也支持[嵌套样式](/docs/styling/styles)，可用来添加指针悬停、按下之类的交互状态。
 
-## Example: round button hover state
+## 示例：圆形按钮的悬停状态 {#example-round-button-hover-state}
 
-Using nested styles we can make our button change color when the pointer is hovered over it:
+借助嵌套样式，我们可以让按钮在指针悬停时变色：
 
 ```xml title="App.axaml"
 <Application xmlns="https://github.com/avaloniaui"
@@ -118,30 +118,30 @@ Using nested styles we can make our button change color when the pointer is hove
 </Application>
 ```
 
-## Control theme lookup
+## 控件主题的查找 {#control-theme-lookup}
 
-There are two ways in which a control theme can be found:
+控件主题有两种被找到的途径：
 
-- If the control's `Theme` property is set, then that control theme will be used; otherwise
-- Avalonia will search upwards through the logical tree for a `ControlTheme` resource with an `x:Key` which matches the control's [style key](/docs/styling/styles)
+- 若控件的 `Theme` 属性已设置，就用那个控件主题；否则
+- Avalonia 会沿逻辑树向上搜寻，找一个 `x:Key` 与控件[样式键](/docs/styling/styles)匹配的 `ControlTheme` 资源
 
 :::tip
-If you're having trouble getting Avalonia to find your theme, make sure it's returning a [style key](/docs/styling/styles) which matches the `x:Key` and `TargetType` of your control theme.
+若 Avalonia 老是找不到你的主题，请确认控件返回的[样式键](/docs/styling/styles)与你控件主题的 `x:Key` 和 `TargetType` 对得上。
 :::
 
-In effect this means that you have two choices for how to define your control theme:
+实际上这意味着，定义控件主题时你有两种选择：
 
-- **If you want the control theme to apply to all instances of the control** then use an `{x:Type}` as the resource key. For example
+- **若想让控件主题对该控件的所有实例生效**，就用 `{x:Type}` 作资源键。例如
   `<ControlTheme x:Key="{x:Type Button}" TargetType="Button">`
-- **If you want the control theme to be applied to selected instances of the control** then use anything else as the resource key and look up this resource using `{StaticResource}`. Commonly this key will be a `string`
+- **若只想让控件主题作用于部分实例**，就用别的东西作资源键，再用 `{StaticResource}` 取用该资源。这个键通常是个 `string`
 
 :::info
-Notice that this means that only a single control theme can be applied to a control at any one time.
+注意，这也意味着同一时刻一个控件上只能应用一个控件主题。
 :::
 
-## Example: make all the buttons round
+## 示例：让所有按钮都变圆 {#example-make-all-the-buttons-round}
 
-To apply the control theme to all buttons in the application, change the `x:Key` of the control theme to match the `Button` type.
+要把该控件主题应用到应用中的所有按钮上，请把控件主题的 `x:Key` 改成与 `Button` 类型匹配。
 
 ```xml title="App.axaml"
 <Application xmlns="https://github.com/avaloniaui"
@@ -181,13 +181,13 @@ To apply the control theme to all buttons in the application, change the `x:Key`
 
 ## TargetType
 
-The `ControlTheme.TargetType` property specifies the type to which setter properties apply. If you don't specify a `TargetType`, you must qualify the properties in your `Setter` objects with a class name by using the syntax `Property="ClassName.Property"`. For example, instead of setting `Property` to `FontSize`, you must set `Property` to `TextBlock.FontSize` or `Control.FontSize`.
+`ControlTheme.TargetType` 属性指明 setter 中的属性归属于哪个类型。若不指定 `TargetType`，你就必须在 `Setter` 对象里用 `Property="ClassName.Property"` 这种写法为属性加上类名限定。比如不能只写把 `Property` 设为 `FontSize`，而要写成把 `Property` 设为 `TextBlock.FontSize` 或 `Control.FontSize`。
 
 ## 另请参阅 {#see-also}
 
-- [ButtonCustomize](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/ButtonCustomize) sample with a `WinClassicButtonTheme`
-- Control themes for built-in Avalonia controls:
+- 带 `WinClassicButtonTheme` 的 [ButtonCustomize](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/ButtonCustomize) 示例
+- Avalonia 内置控件的控件主题：
   - [Simple Theme](https://github.com/AvaloniaUI/Avalonia/tree/master/src/Avalonia.Themes.Simple/Controls)
   - [Fluent Theme](https://github.com/AvaloniaUI/Avalonia/tree/master/src/Avalonia.Themes.Fluent/Controls)
 - [Styles](/docs/styling/styles)
-- [Control template walkthrough](/docs/styling/control-template-walkthrough)
+- [控件模板实战](/docs/styling/control-template-walkthrough)

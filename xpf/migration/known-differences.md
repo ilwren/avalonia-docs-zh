@@ -121,7 +121,7 @@ double scaling = topLevel.RenderScaling;
 
 `System.Drawing.Common` (GDI+) is deprecated on non-Windows platforms. Third-party controls that depend on GDI+ for rendering (such as certain DevExpress controls) will throw exceptions on macOS and Linux. See [macOS: GDI+ and System.Drawing.Common](/xpf/platforms/macos#gdi-and-systemdrawingcommon) for workarounds.
 
-## File dialogs
+## 文件对话框 {#file-dialogs}
 
 ### FilterIndex
 

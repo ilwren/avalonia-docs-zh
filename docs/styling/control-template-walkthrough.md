@@ -1,22 +1,22 @@
 ---
 id: control-template-walkthrough
-title: Control template walkthrough
+title: 控件模板实战
 ---
 
-This walkthrough builds a complete control template from scratch, explaining each component. By the end, you will understand how to re-template any Avalonia control.
+本文从零搭出一个完整的控件模板，并逐块讲解。读完之后，你就能给任何 Avalonia 控件重做模板了。
 
 ## 前置条件 {#prerequisites}
 
-- An Avalonia project with a `Window` where you can add styles and controls.
-- Familiarity with [styles](/docs/styling/styles) and [XAML](/docs/fundamentals/avalonia-xaml) basics.
+- 一个 Avalonia 项目，其中有一个可供你添加样式和控件的 `Window`。
+- 对[样式](/docs/styling/styles)和 [XAML](/docs/fundamentals/avalonia-xaml) 基础有所了解。
 
-## What is a control template?
+## 什么是控件模板？ {#what-is-a-control-template}
 
-A control template defines the visual structure of a control. Every Avalonia control has a default template provided by the theme. You can replace this template entirely to change how a control looks while preserving its behavior.
+控件模板定义控件的视觉结构。每个 Avalonia 控件都有一份由主题提供的默认模板。你可以整个儿换掉这份模板，从而在保留控件行为的前提下改变它的样子。
 
-## Step 1: Create a basic button template
+## 第 1 步：做一个基本的按钮模板 {#step-1-create-a-basic-button-template}
 
-Start with a minimal button template that just renders the content:
+先从一个只把内容渲染出来的极简按钮模板开始：
 
 ```xml
 <Window.Styles>
@@ -47,15 +47,15 @@ Start with a minimal button template that just renders the content:
 <Button Classes="custom" Content="Click Me" />
 ```
 
-### Key concepts
+### 关键概念 {#key-concepts}
 
-- **`ControlTemplate`** defines the visual tree that replaces the control's default appearance.
-- **`TemplateBinding`** binds to properties of the templated parent. This is more efficient than `{Binding RelativeSource={RelativeSource TemplatedParent}}`. It binds `OneWay` by default; use `Mode=TwoWay` if you need the value written back.
-- **`ContentPresenter`** is responsible for displaying the button's `Content` property. Without it, the button's content would not appear.
+- **`ControlTemplate`** 定义取代控件默认外观的视觉树。
+- **`TemplateBinding`** 绑定到被模板化父级的属性，比 `{Binding RelativeSource={RelativeSource TemplatedParent}}` 更高效。它默认是 `OneWay` 绑定；若你需要把值写回去，请用 `Mode=TwoWay`。
+- **`ContentPresenter`** 负责显示按钮的 `Content` 属性。没有它，按钮的内容就显示不出来。
 
-## Step 2: Add visual states with pseudo-classes
+## 第 2 步：用伪类加上视觉状态 {#step-2-add-visual-states-with-pseudo-classes}
 
-Avalonia uses pseudo-classes (similar to CSS) instead of WPF's VisualStateManager. Add interactive states:
+Avalonia 用的是伪类（与 CSS 类似），而不是 WPF 的 VisualStateManager。下面加上几个交互状态：
 
 ```xml
 <Style Selector="Button.custom">
@@ -107,22 +107,22 @@ Avalonia uses pseudo-classes (similar to CSS) instead of WPF's VisualStateManage
 </Style>
 ```
 
-### Common pseudo-classes
+### 常用伪类 {#common-pseudo-classes}
 
-| 伪类 | When active |
+| 伪类 | 何时生效 |
 |---|---|
-| `:pointerover` | Pointer is over the control |
-| `:pressed` | Control is being pressed |
-| `:disabled` | Control is disabled (`IsEnabled="False"`) |
-| `:focus` | Control has keyboard focus |
-| `:focus-visible` | Control has keyboard focus from keyboard navigation (not pointer click) |
-| `:checked` | ToggleButton/CheckBox/RadioButton is checked |
-| `:unchecked` | ToggleButton/CheckBox/RadioButton is unchecked |
-| `:selected` | Item is selected (e.g., ListBoxItem) |
+| `:pointerover` | 指针悬停在控件上 |
+| `:pressed` | 控件正被按下 |
+| `:disabled` | 控件被禁用（`IsEnabled="False"`） |
+| `:focus` | 控件持有键盘焦点 |
+| `:focus-visible` | 控件的键盘焦点来自键盘导航（而非指针点击） |
+| `:checked` | ToggleButton/CheckBox/RadioButton 处于选中状态 |
+| `:unchecked` | ToggleButton/CheckBox/RadioButton 处于未选中状态 |
+| `:selected` | 项被选中（比如 ListBoxItem） |
 
-## Step 3: Add animations
+## 第 3 步：加上动画 {#step-3-add-animations}
 
-Smooth transitions between states using the `Transitions` property:
+用 `Transitions` 属性让状态之间的切换变得平滑：
 
 ```xml
 <Style Selector="Button.custom">
@@ -137,11 +137,11 @@ Smooth transitions between states using the `Transitions` property:
 </Style>
 ```
 
-Now the background color fades smoothly between hover, pressed, and normal states.
+现在，背景色会在悬停、按下和常态之间柔和地渐变了。
 
-## Step 4: Use template parts
+## 第 4 步：使用模板部件 {#step-4-use-template-parts}
 
-For more complex templates, name internal elements with the `PART_` convention. The control's code-behind can locate and interact with these parts:
+模板更复杂时，请按 `PART_` 约定给内部元素命名。控件的代码隐藏即可定位这些部件并与之交互：
 
 ```xml
 <ControlTemplate>
@@ -163,7 +163,7 @@ For more complex templates, name internal elements with the `PART_` convention. 
 </ControlTemplate>
 ```
 
-You can then target these parts in pseudo-class styles:
+之后你就能在伪类样式中圈定这些部件：
 
 ```xml
 <Style Selector="Button.custom:pointerover /template/ Border#PART_Highlight">
@@ -175,11 +175,11 @@ You can then target these parts in pseudo-class styles:
 </Style>
 ```
 
-The `/template/` selector navigates into the control's template visual tree. `#PART_Highlight` selects by name.
+`/template/` 选择器可以钻进控件的模板视觉树，`#PART_Highlight` 则按名称选取。
 
-## Step 5: Putting it all together
+## 第 5 步：把它们拼到一起 {#step-5-putting-it-all-together}
 
-Here is the complete template for a polished custom button:
+下面是一份打磨完整的自定义按钮模板：
 
 ```xml
 <Window.Styles>
@@ -234,21 +234,21 @@ Here is the complete template for a polished custom button:
 </StackPanel>
 ```
 
-## Verify the result
+## 验证效果 {#verify-the-result}
 
-Run your application. You should see a pill-shaped button with a purple background. Hover over the button to confirm the background color lightens, press it to see it darken and scale down slightly, and verify the disabled button appears greyed out. If the transitions are working, color changes animate smoothly rather than switching instantly.
+运行应用。你应该看到一个紫色背景的胶囊形按钮：把指针移上去，确认背景变浅；按下去看它变深并略微缩小；再确认禁用状态的按钮呈灰色。若过渡生效了，颜色变化会柔和地动起来，而不是生硬地一跳。
 
-## Tips for custom templates
+## 自定义模板的小贴士 {#tips-for-custom-templates}
 
-- Always bind `Padding`, `Background`, `BorderBrush`, `BorderThickness`, and `CornerRadius` with `TemplateBinding` so the template respects property values set from outside.
-- Use `ContentPresenter` for content controls and `ItemsPresenter` for items controls.
-- Prefer pseudo-class selectors over triggers for state management.
-- Name template parts with the `PART_` prefix for clarity and code-behind access.
-- Use `Transitions` for smooth state changes instead of discrete setters.
-- Test with both light and dark themes to ensure your template works across theme variants.
+- 务必用 `TemplateBinding` 绑定 `Padding`、`Background`、`BorderBrush`、`BorderThickness` 和 `CornerRadius`，这样模板才会尊重外部设定的属性值。
+- 内容控件用 `ContentPresenter`，列表类控件用 `ItemsPresenter`。
+- 管理状态时，优先用伪类选择器而不是触发器。
+- 给模板部件加上 `PART_` 前缀命名，既清晰也便于代码隐藏取用。
+- 用 `Transitions` 让状态变化平滑过渡，而不是生硬的 setter 切换。
+- 浅色和深色主题都要试一遍，确保模板在各个主题变体下都站得住。
 
 ## 另请参阅 {#see-also}
 
-- [Control themes](/docs/styling/control-themes): How themes use templates for all controls.
-- [Style selectors](/docs/styling/style-selectors): Selector syntax for targeting controls and states.
-- [Pseudo-classes](/docs/styling/pseudoclasses): All available pseudo-classes.
+- [控件主题](/docs/styling/control-themes)：主题如何为所有控件套用模板。
+- [样式选择器](/docs/styling/style-selectors)：圈定控件与状态的选择器语法。
+- [伪类](/docs/styling/pseudoclasses)：全部可用的伪类。
