@@ -3,7 +3,7 @@ id: macos
 title: macOS
 ---
 
-## Application name
+## 应用名称 {#application-name}
 
 By default, the macOS menu bar and system dialogs display "Avalonia Application" as the app name. To set your own application name, you need to configure the Avalonia `Application` object.
 
@@ -84,7 +84,7 @@ On platforms that do not support a global menu bar (Windows and most Linux deskt
 
 See [Embedding Avalonia in XPF](/xpf/interop/embedding-avalonia-in-xpf) for details on hosting Avalonia controls.
 
-## Dock visibility
+## Dock 中的可见性 {#dock-visibility}
 
 To control whether your application appears in the macOS Dock, use `MacOSPlatformOptions` in a [custom initialization](/xpf/configuration/customizing-initialization):
 

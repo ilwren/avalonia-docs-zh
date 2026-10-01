@@ -131,7 +131,7 @@ Always publish XPF applications from the command line rather than from Visual St
 dotnet publish -r linux-x64 -c Release
 ```
 
-For self-contained deployments:
+自包含部署：
 
 ```bash
 dotnet publish -r linux-x64 -c Release --self-contained

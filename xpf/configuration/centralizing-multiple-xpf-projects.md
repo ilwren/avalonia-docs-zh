@@ -31,25 +31,25 @@ doc-type: how-to
 
 ## 许可证密钥 {#license-keys}
 
-Storing license keys directly in source-controlled files is a security risk. Instead, you can reference an environment variable in both your `NuGet.config` and `.csproj` files so the actual key value never appears in your repository.
+把许可证密钥直接写进受版本控制的文件里有安全隐患。更稳妥的做法是在 `NuGet.config` 和 `.csproj` 文件中引用一个环境变量，让真正的密钥值永远不出现在仓库中。
 
 :::tip
-You can name the environment variable anything you like. The examples below use `XpfLicenseKey`.
+环境变量叫什么都行，下面的示例用的是 `XpfLicenseKey`。
 :::
 
-### Set the environment variable
+### 设置环境变量 {#set-the-environment-variable}
 
-Add an environment variable called `XpfLicenseKey` whose value is your license key:
+添加一个名为 `XpfLicenseKey` 的环境变量，值就是你的许可证密钥：
 
-- **Windows**: search the Start menu for "Environment Variables" and add the variable through the system GUI.
-- **macOS**: run `launchctl setenv XpfLicenseKey [LICENSE_KEY]`. You will need to re-run this command after each reboot.
-- **Linux**: environment variables are commonly set in `.bash_profile`, `.bashrc`, or `/etc/environment`.
+- **Windows**：在开始菜单里搜 “环境变量”，通过系统界面添加。
+- **macOS**：运行 `launchctl setenv XpfLicenseKey [LICENSE_KEY]`。每次重启后都得重新跑一遍。
+- **Linux**：环境变量通常设在 `.bash_profile`、`.bashrc` 或 `/etc/environment` 里。
 
-After you create or change the variable, restart any open terminal sessions and IDEs so they pick up the new value.
+创建或修改变量之后，请重启所有已打开的终端会话和 IDE，好让它们读到新值。
 
 ### Update `nuget.config`
 
-Edit the credentials section of your `nuget.config` file to reference the environment variable:
+编辑 `nuget.config` 文件的凭据小节，改为引用该环境变量：
 
 ```xml title="nuget.config"
 <packageSourceCredentials>
@@ -60,9 +60,9 @@ Edit the credentials section of your `nuget.config` file to reference the enviro
 </packageSourceCredentials>
 ```
 
-### Update `.csproj` files
+### 更新 `.csproj` 文件 {#update-csproj-files}
 
-Edit the `RuntimeHostConfigurationOption` entry in each `.csproj` file to read the key from the environment variable:
+编辑每个 `.csproj` 文件中的 `RuntimeHostConfigurationOption` 条目，让它从环境变量读取密钥：
 
 ```xml title="MyApp.csproj"
 <ItemGroup>
@@ -73,7 +73,7 @@ Edit the `RuntimeHostConfigurationOption` entry in each `.csproj` file to read t
 
 ## 另请参阅 {#see-also}
 
-- [Getting started with XPF](/xpf/getting-started)
-- [Customizing initialization](/xpf/configuration/customizing-initialization)
-- [Performance configuration](/xpf/configuration/performance)
+- [XPF 快速上手](/xpf/getting-started)
+- [定制初始化](/xpf/configuration/customizing-initialization)
+- [性能配置](/xpf/configuration/performance)
 - [Versioning](/xpf/version-info/versioning)

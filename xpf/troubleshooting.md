@@ -182,7 +182,7 @@ If your application uses a custom .NET host or plugin architecture with separate
   ```
 - Use a contract assembly pattern for communication between ALCs
 
-## .NET version compatibility
+## .NET 版本兼容性 {#net-version-compatibility}
 
 XPF works with .NET 6, 7, 8, 9, and 10. The `net8.0-windows` (or similar) target framework works on all platforms when using the XPF SDK.
 
@@ -209,7 +209,7 @@ When mixing projects that use `Sdk="Xpf.Sdk"` with standard `Microsoft.NET.Sdk` 
 XPF validates your application against the license using two identifiers:
 
 1. **Assembly Name**: Retrieved via `Assembly.GetEntryAssembly().GetName().Name`
-2. **Process Executable Name**: The name of the running process
+2. **进程可执行文件名**：运行中进程的名称
 
 Both must match the values configured in your license. If license validation fails, verify that your project's `AssemblyName` matches the name registered with your license.
 

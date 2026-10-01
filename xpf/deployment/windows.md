@@ -1,33 +1,33 @@
 ---
 id: windows
 title: Windows Deployment
-description: Learn how to publish, package, and deploy your Avalonia XPF application on Windows, including self-contained builds, single-file publishing, and installer options.
+description: 了解如何在 Windows 上发布、打包并部署你的 Avalonia XPF 应用，包括自包含构建、单文件发布和安装程序的各种选择。
 doc-type: how-to
 ---
 
 ## 发布 {#publishing}
 
-You can publish your XPF application for Windows using the standard .NET CLI. To create a framework-dependent deployment (requires the .NET runtime on the target machine), run:
+你可以用标准的 .NET CLI 把 XPF 应用发布为 Windows 版本。要做依赖框架的部署（要求目标机器装有 .NET 运行时），运行：
 
 ```bash
 dotnet publish -r win-x64 -c Release
 ```
 
-For a self-contained deployment that bundles the .NET runtime so your users do not need to install it separately, add the `--self-contained` flag:
+若要把 .NET 运行时一并打进去、让用户不必另行安装，加上 `--self-contained` 标志即可：
 
 ```bash
 dotnet publish -r win-x64 -c Release --self-contained
 ```
 
-If you are targeting ARM64 Windows devices, use the `win-arm64` runtime identifier instead:
+若面向 ARM64 Windows 设备，请改用 `win-arm64` 运行时标识符：
 
 ```bash
 dotnet publish -r win-arm64 -c Release --self-contained
 ```
 
-## Single-file publishing
+## 单文件发布 {#single-file-publishing}
 
-XPF supports single-file publishing on Windows. This bundles your application and its dependencies into a single executable. Add the following properties to your project file:
+XPF 在 Windows 上支持单文件发布，可把应用及其依赖打成一个可执行文件。请在项目文件中加上下列属性：
 
 ```xml
 <PropertyGroup>
@@ -38,12 +38,12 @@ XPF supports single-file publishing on Windows. This bundles your application an
 ```
 
 :::caution
-When you use single-file publishing, `Assembly.GetEntryAssembly().Location` returns an empty string. Use `AppDomain.CurrentDomain.BaseDirectory` to get the application directory instead.
+采用单文件发布时，`Assembly.GetEntryAssembly().Location` 返回空字符串，请改用 `AppDomain.CurrentDomain.BaseDirectory` 来获取应用目录。
 :::
 
-## ReadyToRun compilation
+## ReadyToRun 编译 {#readytorun-compilation}
 
-You can enable ReadyToRun (R2R) ahead-of-time compilation to reduce your application's startup time. Add the following property to your project file:
+你可以启用 ReadyToRun（R2R）预先编译来缩短应用启动时间。在项目文件中加上这条属性：
 
 ```xml
 <PropertyGroup>
@@ -51,13 +51,13 @@ You can enable ReadyToRun (R2R) ahead-of-time compilation to reduce your applica
 </PropertyGroup>
 ```
 
-ReadyToRun pre-compiles your managed assemblies to native code, which means the JIT compiler does less work at startup. The trade-off is a larger published output size.
+ReadyToRun 会把托管程序集预先编译成本机代码，启动时 JIT 的活儿就少了；代价是发布输出体积更大。
 
-See [Performance Optimization](/xpf/configuration/performance#reducing-startup-time-with-readytorun) for more details.
+更多细节请见[性能优化](/xpf/configuration/performance#reducing-startup-time-with-readytorun)。
 
-## WinForms hosting
+## 承载 WinForms {#winforms-hosting}
 
-If your application hosts WinForms controls, add the following property to a Windows-conditional property group in your project file:
+若你的应用中承载了 WinForms 控件，请在项目文件里加一个按 Windows 条件生效的属性组，并在其中加上下列属性：
 
 ```xml
 <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
@@ -65,11 +65,11 @@ If your application hosts WinForms controls, add the following property to a Win
 </PropertyGroup>
 ```
 
-Setting `XpfUseMicrosoftWindowsForms` to `true` disables the WinForms shim layer and enables native WinForms integration. This option is only available on Windows, which is why the condition guard is necessary.
+把 `XpfUseMicrosoftWindowsForms` 设为 `true` 会关掉 WinForms 的 shim 层，改用原生的 WinForms 集成。该选项只在 Windows 上可用，所以条件判断必不可少。
 
-## STA threading
+## STA 线程 {#sta-threading}
 
-Some Windows APIs (notably clipboard operations and COM interop) require the main thread to use a Single-Threaded Apartment (STA) model. If you encounter a `COMException` with the message "CoInitialize was not called," ensure your entry point uses the `[STAThread]` attribute:
+有些 Windows API（尤其是剪贴板操作和 COM 互操作）要求主线程采用单线程单元（STA）模型。若你遇到消息为 “CoInitialize was not called” 的 `COMException`，请确认你的入口点带有 `[STAThread]` 特性：
 
 ```csharp
 [STAThread]
@@ -79,16 +79,16 @@ public static void Main(string[] args)
 }
 ```
 
-When you use [custom initialization](/xpf/configuration/customizing-initialization), the XPF SDK handles STA threading automatically.
+若采用[自定义初始化](/xpf/configuration/customizing-initialization)，STA 线程由 XPF SDK 自动处理。
 
-## Windows installers
+## Windows 安装程序 {#windows-installers}
 
-Your published XPF application is a standard .NET application, so you can package it using any Windows installer technology. Common options include:
+发布出来的 XPF 应用就是一个标准 .NET 应用，因此你可以用任何 Windows 安装技术来打包。常见的选择有：
 
-- **MSIX**: The modern Windows packaging format with support for auto-updates and clean install/uninstall.
-- **WiX Toolset**: An open-source installer authoring framework for creating MSI and MSIX packages.
-- **Inno Setup**: A free and widely used installer builder for Windows applications.
-- **NSIS**: A scriptable installation system with a large plugin ecosystem.
+- **MSIX**：现代的 Windows 打包格式，支持自动更新、干净地安装与卸载。
+- **WiX Toolset**：开源的安装包编写框架，可生成 MSI 和 MSIX 包。
+- **Inno Setup**：面向 Windows 应用、免费且用者众多的安装包制作工具。
+- **NSIS**：可脚本化的安装系统，插件生态相当丰富。
 
 ## 另请参阅 {#see-also}
 

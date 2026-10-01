@@ -1,32 +1,32 @@
 ---
 id: linux
 title: Linux Deployment
-description: How to publish and deploy XPF applications on Linux, including required native libraries and runtime dependencies.
+description: 如何在 Linux 上发布和部署 XPF 应用，包括所需的原生库和运行时依赖。
 ---
 
 ## 发布 {#publishing}
 
-Always publish XPF applications from the command line. Visual Studio publishing can produce incomplete output that is missing native libraries such as `libSkiaSharp.so`.
+发布 XPF 应用请一律走命令行。用 Visual Studio 发布可能产出不完整的输出，缺掉 `libSkiaSharp.so` 这类原生库。
 
 ```bash
 dotnet publish -r linux-x64 -c Release
 ```
 
-For self-contained deployments:
+自包含部署：
 
 ```bash
 dotnet publish -r linux-x64 -c Release --self-contained
 ```
 
-For ARM64 devices:
+ARM64 设备：
 
 ```bash
 dotnet publish -r linux-arm64 -c Release --self-contained
 ```
 
-## Runtime dependencies
+## 运行时依赖 {#runtime-dependencies}
 
-Ensure the following packages are installed on the target system.
+请确认目标系统上装了下列软件包。
 
 ### Debian / Ubuntu
 
@@ -47,13 +47,13 @@ sudo dnf install epel-release
 sudo dnf install libICE libSM fontconfig libgdiplus
 ```
 
-For WebView support, also install `libwebkit2gtk-4.1-dev` (Debian/Ubuntu) or `webkit2gtk4.1-devel` (Fedora/RHEL).
+若要支持 WebView，还需装 `libwebkit2gtk-4.1-dev`（Debian/Ubuntu）或 `webkit2gtk4.1-devel`（Fedora/RHEL）。
 
-See [Linux: Other Dependencies](/xpf/platforms/linux#other-dependencies) for details.
+细节请见 [Linux：其他依赖](/xpf/platforms/linux#other-dependencies)。
 
 ## ReadyToRun
 
-ReadyToRun (R2R) compilation pre-compiles assemblies to native code, significantly reducing startup time. This is particularly beneficial on embedded Linux devices.
+ReadyToRun（R2R）编译把程序集预先编译成本机代码，启动时间因此大幅缩短。在嵌入式 Linux 设备上尤其划算。
 
 ```xml
 <PropertyGroup>
@@ -66,14 +66,14 @@ dotnet publish -r linux-x64 -c Release --self-contained
 ```
 
 :::note
-ReadyToRun may change how native `.so` libraries are resolved. See [Linux: Native Library Resolution](/xpf/platforms/linux#native-library-resolution-with-readytorun) for details.
+ReadyToRun 可能改变原生 `.so` 库的解析方式。细节请见 [Linux：原生库解析](/xpf/platforms/linux#native-library-resolution-with-readytorun)。
 :::
 
-## Framework-dependent vs self-contained
+## 依赖框架 vs 自包含 {#framework-dependent-vs-self-contained}
 
-**Framework-dependent** (default): Requires .NET to be installed on the target machine. Produces a smaller deployment package.
+**依赖框架**（默认）：要求目标机器上装有 .NET，部署包更小。
 
-**Self-contained**: Includes the .NET runtime. Larger package but no external dependencies beyond system libraries. Recommended for distribution to end users.
+**自包含**：把 .NET 运行时一并带上，包更大，但除系统库外别无外部依赖。面向最终用户分发时推荐这种。
 
 ```bash
 # Framework-dependent
@@ -83,43 +83,43 @@ dotnet publish -r linux-x64 -c Release
 dotnet publish -r linux-x64 -c Release --self-contained
 ```
 
-## Packaging formats
+## 打包格式 {#packaging-formats}
 
 ### AppImage
 
-AppImage bundles your application into a single executable file. Use tools like [appimage-builder](https://appimage-builder.readthedocs.io/) or package the published output into an AppImage manually.
+AppImage 把你的应用打成单个可执行文件。可以用 [appimage-builder](https://appimage-builder.readthedocs.io/) 之类的工具，也可以手动把发布输出打进 AppImage。
 
 ### Debian 包（.deb） {#debian-package-deb}
 
-For Debian-based distributions, create a `.deb` package. Use `dpkg-deb` or a tool like [dotnet-packaging](https://github.com/quamotion/dotnet-packaging):
+面向基于 Debian 的发行版，可制作 `.deb` 包。用 `dpkg-deb` 或 [dotnet-packaging](https://github.com/quamotion/dotnet-packaging) 这类工具均可：
 
 ```bash
 dotnet tool install --global dotnet-deb
 dotnet deb -r linux-x64 -c Release
 ```
 
-### RPM package
+### RPM 包 {#rpm-package}
 
-For Fedora and RHEL-based distributions:
+面向 Fedora 和基于 RHEL 的发行版：
 
 ```bash
 dotnet tool install --global dotnet-rpm
 dotnet rpm -r linux-x64 -c Release
 ```
 
-### Flatpak and snap
+### Flatpak 与 snap {#flatpak-and-snap}
 
-XPF applications can be distributed as Flatpak or Snap packages. Refer to each packaging system's documentation for bundling .NET applications.
+XPF 应用也可以打成 Flatpak 或 Snap 包分发。具体怎么把 .NET 应用装进去，请参阅各打包体系自己的文档。
 
 ## CI/CD
 
-When building XPF applications in CI/CD pipelines:
+在 CI/CD 流水线中构建 XPF 应用时：
 
-1. Add a `NuGet.config` with your license key (use CI secrets for the key value)
-2. Install required dependencies in the build environment
-3. Publish from the command line
+1. 添加一个带许可证密钥的 `NuGet.config`（密钥值请用 CI secret 保存）
+2. 在构建环境中装齐所需依赖
+3. 从命令行发布
 
-Example GitHub Actions step:
+GitHub Actions 步骤示例：
 
 ```yaml
 - name: Publish for Linux
@@ -128,8 +128,8 @@ Example GitHub Actions step:
     XpfLicenseKey: ${{ secrets.XPF_LICENSE_KEY }}
 ```
 
-See [Centralizing Multiple XPF Projects](/xpf/configuration/centralizing-multiple-xpf-projects#license-keys) for using environment variables with license keys.
+如何配合环境变量使用许可证密钥，请见[集中管理多个 XPF 项目](/xpf/configuration/centralizing-multiple-xpf-projects#license-keys)。
 
-## Debugging remote Linux targets
+## 调试远程 Linux 目标 {#debugging-remote-linux-targets}
 
-For debugging XPF applications running on Linux from a Windows development machine, see [Linux: Debugging](/xpf/platforms/linux#debugging-on-linux).
+若要从 Windows 开发机调试跑在 Linux 上的 XPF 应用，请见 [Linux：调试](/xpf/platforms/linux#debugging-on-linux)。

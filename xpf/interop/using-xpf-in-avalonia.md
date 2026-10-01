@@ -138,7 +138,7 @@ You can place `XpfContainer` anywhere in your Avalonia visual tree: inside panel
 
 ## 另请参阅 {#see-also}
 
-- [Getting started with XPF](/xpf/getting-started)
-- [Customizing initialization](/xpf/configuration/customizing-initialization)
+- [XPF 快速上手](/xpf/getting-started)
+- [定制初始化](/xpf/configuration/customizing-initialization)
 - [Embedding Avalonia in XPF](/xpf/interop/embedding-avalonia-in-xpf)
 - [Centralizing multiple XPF projects](/xpf/configuration/centralizing-multiple-xpf-projects)

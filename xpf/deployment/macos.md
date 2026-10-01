@@ -1,30 +1,30 @@
 ---
 id: macos
 title: macOS Deployment
-description: How to publish and deploy XPF applications on macOS, including app bundle structure and code signing.
+description: 如何在 macOS 上发布和部署 XPF 应用，包括应用包结构与代码签名。
 ---
 
 ## 发布 {#publishing}
 
-Publish your XPF application for macOS from the command line:
+从命令行把 XPF 应用发布为 macOS 版本：
 
 ```bash
 dotnet publish -r osx-arm64 -c Release --self-contained
 ```
 
-For Intel Macs:
+面向 Intel Mac：
 
 ```bash
 dotnet publish -r osx-x64 -c Release --self-contained
 ```
 
 :::caution
-Always publish from the command line. Visual Studio publishing can produce incomplete output that is missing native libraries.
+务必从命令行发布。用 Visual Studio 发布可能产出不完整的输出，缺掉原生库。
 :::
 
-## App bundle structure
+## 应用包结构 {#app-bundle-structure}
 
-macOS applications must be packaged as `.app` bundles for distribution. An `.app` bundle is a directory with the following structure:
+macOS 应用必须打成 `.app` 包才能分发。`.app` 包其实就是一个具有如下结构的目录：
 
 ```text
 MyApp.app/
@@ -38,7 +38,7 @@ MyApp.app/
 
 ### Info.plist
 
-Create an `Info.plist` with your application metadata:
+创建一个写有应用元数据的 `Info.plist`：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -66,9 +66,9 @@ Create an `Info.plist` with your application metadata:
 </plist>
 ```
 
-## Project settings
+## 项目设置 {#project-settings}
 
-The following `.csproj` settings are important for macOS deployment:
+下列 `.csproj` 设置对 macOS 部署颇为要紧：
 
 ```xml
 <PropertyGroup>
@@ -78,15 +78,15 @@ The following `.csproj` settings are important for macOS deployment:
 ```
 
 :::danger
-Do **not** set `IncludeNativeLibrariesForSelfExtract` to `true`. This is incompatible with macOS and will cause your application to fail at runtime with "Failed to create CoreCLR".
+**不要**把 `IncludeNativeLibrariesForSelfExtract` 设为 `true`。它与 macOS 不兼容，会让你的应用在运行时报 “Failed to create CoreCLR” 而崩掉。
 :::
 
 ## 代码签名 {#code-signing}
 
-All macOS applications must be code signed for distribution. When signing XPF applications:
+所有 macOS 应用都必须经过代码签名才能分发。为 XPF 应用签名时：
 
-- **Sign individual files**, not the bundle as a whole. Do not use the `--deep` flag with `codesign`, as it may miss files or apply incorrect entitlements.
-- Sign all `.dylib` files and the main executable before signing the `.app` bundle.
+- **逐个文件签名**，而不是整包一签。不要给 `codesign` 加 `--deep` 标志，那样可能漏掉文件或套上错误的权利。
+- 先把所有 `.dylib` 文件和主可执行文件签完，再签 `.app` 包。
 
 ```bash
 # Sign individual binaries first
@@ -99,7 +99,7 @@ codesign --force --sign "Developer ID Application: Your Name" MyApp.app
 
 ## Notarization
 
-For distribution outside the Mac App Store, Apple requires applications to be notarized. Use `notarytool`:
+若在 Mac App Store 之外分发，Apple 要求应用经过公证。请使用 `notarytool`：
 
 ```bash
 # Create a ZIP for notarization
@@ -113,9 +113,9 @@ xcrun notarytool submit MyApp.zip --apple-id "you@example.com" \
 xcrun stapler staple MyApp.app
 ```
 
-## DMG creation
+## 生成 DMG {#dmg-creation}
 
-To distribute as a `.dmg` disk image:
+若要以 `.dmg` 磁盘映像的形式分发：
 
 ```bash
 hdiutil create -volname "MyApp" -srcfolder MyApp.app -ov MyApp.dmg
@@ -123,19 +123,19 @@ hdiutil create -volname "MyApp" -srcfolder MyApp.app -ov MyApp.dmg
 
 ## Parcel (Preview)
 
-The Avalonia **Parcel** tool can automate the entire macOS packaging workflow, including `.app` bundle creation, code signing, notarization, and `.dmg` generation for XPF applications. Contact the Avalonia team for access to the preview.
+Avalonia 的 **Parcel** 工具可以把整套 macOS 打包流程自动化，包括为 XPF 应用生成 `.app` 包、代码签名、公证以及生成 `.dmg`。想试用预览版请联系 Avalonia 团队。
 
-## Dock visibility
+## Dock 中的可见性 {#dock-visibility}
 
-To control whether your application appears in the macOS Dock, see [macOS: Dock Visibility](/xpf/platforms/macos#dock-visibility).
+若要控制应用是否出现在 macOS 的 Dock 中，请见 [macOS：Dock 可见性](/xpf/platforms/macos#dock-visibility)。
 
-## Application name
+## 应用名称 {#application-name}
 
-To set the name shown in the macOS menu bar (instead of "Avalonia Application"), see [macOS: Application Name](/xpf/platforms/macos#application-name).
+若要设定 macOS 菜单栏中显示的名称（而非 “Avalonia Application”），请见 [macOS：应用名称](/xpf/platforms/macos#application-name)。
 
 ## ReadyToRun
 
-Enable ReadyToRun for faster startup:
+启用 ReadyToRun 让启动更快：
 
 ```xml
 <PropertyGroup>
@@ -143,4 +143,4 @@ Enable ReadyToRun for faster startup:
 </PropertyGroup>
 ```
 
-See [Performance Optimization](/xpf/configuration/performance#reducing-startup-time-with-readytorun) for details.
+细节请见[性能优化](/xpf/configuration/performance#reducing-startup-time-with-readytorun)。

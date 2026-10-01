@@ -13,7 +13,7 @@ XPF maintains API and binary compatibility with WPF, but there are behavioral di
 
 Skia renders dashed strokes with line caps differently from WPF's milcore engine. If your application uses `StrokeDashArray` with custom line caps (triangular, round), the visual output may differ slightly between WPF and XPF. This is a fundamental difference in the Skia rendering backend.
 
-### Blur effects
+### 模糊效果 {#blur-effects}
 
 Blur effects (`BlurEffect`, `DropShadowEffect`) are computationally more expensive in Skia than in WPF's hardware-accelerated pipeline. Applications with heavy blur usage may see reduced framerates. See [Performance: Blur Effects](/xpf/configuration/performance#blur-effects) for mitigation strategies.
 

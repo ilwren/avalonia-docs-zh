@@ -23,7 +23,7 @@ AvaloniaUI.Xpf.WinApiShim.WinApiShimSetup.AutoEnable(asm =>
 });
 ```
 
-## WinForms hosting
+## 承载 WinForms {#winforms-hosting}
 
 XPF can host WinForms controls on Windows. Enable this by adding the following to a Windows-conditional property group:
 
@@ -35,7 +35,7 @@ XPF can host WinForms controls on Windows. Enable this by adding the following t
 
 This disables XPF's WinForms shim layer and enables native WinForms integration. WinForms hosting is only available on Windows; condition the property group to avoid build failures on other platforms.
 
-## STA threading
+## STA 线程 {#sta-threading}
 
 Some Windows operations require the main thread to be marked as STA (Single-Threaded Apartment):
 

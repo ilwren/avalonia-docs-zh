@@ -3,19 +3,19 @@ id: getting-started
 title: 快速上手
 ---
 
-:::tip[Use AI to help with migration]
-If you use an AI coding assistant that supports MCP (VS Code, Cursor, Rider, Claude Code, and others), the [Build MCP](/tools/ai-tools/build-mcp) server can walk you through this process step by step. Ask your assistant to migrate your WPF project and it will analyze your dependencies, configure the NuGet feed, switch the SDK, and troubleshoot issues interactively. See [Build MCP setup](/tools/ai-tools/build-mcp#setting-up-the-mcp-server) for configuration instructions.
+:::tip[让 AI 帮你迁移]
+若你用的 AI 编码助手支持 MCP（VS Code、Cursor、Rider、Claude Code 等），[Build MCP](/tools/ai-tools/build-mcp) 服务器可以一步步带你走完整个流程。只要让助手迁移你的 WPF 项目，它就会分析依赖、配置 NuGet 源、切换 SDK，并与你一来一回地排查问题。配置说明请见 [Build MCP 配置](/tools/ai-tools/build-mcp#setting-up-the-mcp-server)。
 :::
 
-## Step 1: Prepare your WPF project
+## 第 1 步：准备你的 WPF 项目 {#step-1-prepare-your-wpf-project}
 
 :::note
-This document uses .NET 7.0 as an example, but .NET 6.0 and above are supported by XPF. 
+本文以 .NET 7.0 为例，但 XPF 支持 .NET 6.0 及以上。 
 
-.NET 8 (current LTS) or .NET 9 is recommended.
+推荐使用 .NET 8（当前的 LTS）或 .NET 9。
 :::
 
-Make sure that your project has been updated/ported to at least `net6.0-windows` and uses the SDK-style `.csproj` format. SDK-style projects start with `<Project Sdk="Microsoft.NET.Sdk">` rather than the older verbose format with `<Import>` elements.
+请确认你的项目至少已升级/移植到 `net6.0-windows`，并采用 SDK 风格的 `.csproj` 格式。SDK 风格的项目以 `<Project Sdk="Microsoft.NET.Sdk">` 开头，而不是带一堆 `<Import>` 元素的老式冗长格式。
 
 If your project still uses the legacy `.csproj` format, use the .NET Upgrade Assistant or manually convert it. The key changes are:
 - Replace the verbose XML with an SDK-style `<Project Sdk="Microsoft.NET.Sdk">` root element
