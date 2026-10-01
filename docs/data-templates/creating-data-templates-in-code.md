@@ -75,7 +75,7 @@ You can now use the class `MyDataTemplate` in your view, like this:
 
 [Advanced implementations of the `IDataTemplate` interface](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates): Overview of data templates in Avalonia.
 - [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.

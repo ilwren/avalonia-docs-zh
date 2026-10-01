@@ -54,7 +54,7 @@ Use `TickFrequency` with `IsSnapToTickEnabled` to restrict values to discrete st
 
 [`TickPlacement`](/api/avalonia/controls/tickplacement) options:
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `None` | No tick marks (default). |
 | `TopLeft` | Ticks above (horizontal) or left (vertical). |
@@ -198,7 +198,7 @@ Template part names such as `PART_DecreaseButton` and `PART_IncreaseButton` are 
 
 ## Key properties reference
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Minimum` | `double` | Lower bound. Default: 0. |
 | `Maximum` | `double` | Upper bound. Default: 100. |
@@ -211,7 +211,7 @@ Template part names such as `PART_DecreaseButton` and `PART_IncreaseButton` are 
 | `Orientation` | `Orientation` | `Horizontal` (default) or `Vertical`. |
 | `IsDirectionReversed` | `bool` | Reverse the direction of increasing value. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Slider](/controls/input/selectors/slider): Full property and event reference for the `Slider` control.
 - [Binding to controls](/docs/data-binding/binding-to-controls): Bind one control's property to another using `#name` syntax.

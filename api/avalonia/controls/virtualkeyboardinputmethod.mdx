@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">VirtualKeyboardInputMethod Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.VirtualKeyboard</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.VirtualKeyboard</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.VirtualKeyboard</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.VirtualKeyboard</code>
 </div>
 </div>
 
@@ -51,24 +51,24 @@ public class VirtualKeyboardInputMethod
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> VirtualKeyboardInputMethod
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> VirtualKeyboardInputMethod
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetInputMethodById](#uid-616599002e) | Gets an input method by its stable identifier |
 | [GetInputMethodsForLanguage](#uid-0f720c0085) | Gets the list of input methods available for a given language tag |
 | [GetSupportedLanguages](#uid-a2a1670c77) | Gets the list of supported languages (IETF BCP 47 language tags) |
-| [ToString](#uid-84e41b0124) | No summary available. |
+| [ToString](#uid-84e41b0124) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-616599002e"></span>
 
-### GetInputMethodById Method
+### GetInputMethodById 方法 {#getinputmethodbyid-method}
 
 Gets an input method by its stable identifier
 
@@ -76,12 +76,12 @@ Gets an input method by its stable identifier
 public Avalonia.Controls.VirtualKeyboardInputMethod GetInputMethodById(string id)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `id` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.VirtualKeyboardInputMethod](xref:Avalonia.Controls.VirtualKeyboardInputMethod)
 
@@ -92,7 +92,7 @@ public Avalonia.Controls.VirtualKeyboardInputMethod GetInputMethodById(string id
 
 <span id="uid-0f720c0085"></span>
 
-### GetInputMethodsForLanguage Method
+### GetInputMethodsForLanguage 方法 {#getinputmethodsforlanguage-method}
 
 Gets the list of input methods available for a given language tag
 
@@ -100,12 +100,12 @@ Gets the list of input methods available for a given language tag
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.VirtualKeyboardInputMethod> GetInputMethodsForLanguage(string languageTag)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `languageTag` string
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.VirtualKeyboardInputMethod](xref:Avalonia.Controls.VirtualKeyboardInputMethod)&gt;
 
@@ -116,7 +116,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.VirtualKeyboardIn
 
 <span id="uid-a2a1670c77"></span>
 
-### GetSupportedLanguages Method
+### GetSupportedLanguages 方法 {#getsupportedlanguages-method}
 
 Gets the list of supported languages (IETF BCP 47 language tags)
 
@@ -124,7 +124,7 @@ Gets the list of supported languages (IETF BCP 47 language tags)
 public System.Collections.Generic.IReadOnlyList<string> GetSupportedLanguages()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IReadOnlyList&lt;string&gt;
 
@@ -135,22 +135,22 @@ System.Collections.Generic.IReadOnlyList&lt;string&gt;
 
 <span id="uid-84e41b0124"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DisplayName](#uid-81b99f2e13) | An English name for the input method, typically in "Language (Region)" format, like "English (United States)" or "Spanish (Latin America)" |
 | [Id](#uid-b85e27a837) | Stable identifier for the input method that can be used for persistent application configuration |
@@ -160,7 +160,7 @@ string
 
 <span id="uid-81b99f2e13"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 An English name for the input method, typically in "Language (Region)" format, like "English (United States)" or "Spanish (Latin America)"
 
@@ -174,7 +174,7 @@ public string DisplayName { get; set; }
 
 <span id="uid-b85e27a837"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 Stable identifier for the input method that can be used for persistent application configuration
 
@@ -188,7 +188,7 @@ public string Id { get; set; }
 
 <span id="uid-3d011275c1"></span>
 
-### LanguageTag Property
+### LanguageTag 属性 {#languagetag-property}
 
 IETF BCP 47 language tag, like "en", "en-US", "es-419"
 

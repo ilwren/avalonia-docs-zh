@@ -69,7 +69,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of price data. | `null` |
 | `DatePath` | Path to the date or time value used along the horizontal axis. Values can be `DateTime`, `DateTimeOffset`, or parseable date strings. | `null` |

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IScrollAnchorProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/IScrollAnchorProvider.cs">IScrollAnchorProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/IScrollAnchorProvider.cs">IScrollAnchorProvider.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface IScrollAnchorProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RegisterAnchorCandidate](#uid-3fe9754229) | Registers a control as a potential scroll anchor candidate. |
 | [UnregisterAnchorCandidate](#uid-8e791baa7f) | Unregisters a control as a potential scroll anchor candidate. |
@@ -63,7 +63,7 @@ public interface IScrollAnchorProvider
 
 <span id="uid-3fe9754229"></span>
 
-### RegisterAnchorCandidate Method
+### RegisterAnchorCandidate 方法 {#registeranchorcandidate-method}
 
 Registers a control as a potential scroll anchor candidate.
 
@@ -71,7 +71,7 @@ Registers a control as a potential scroll anchor candidate.
 public void RegisterAnchorCandidate(Avalonia.Controls.Control element)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `element` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -84,7 +84,7 @@ A control within the subtree of the [Avalonia.Controls.IScrollAnchorProvider](xr
 
 <span id="uid-8e791baa7f"></span>
 
-### UnregisterAnchorCandidate Method
+### UnregisterAnchorCandidate 方法 {#unregisteranchorcandidate-method}
 
 Unregisters a control as a potential scroll anchor candidate.
 
@@ -92,7 +92,7 @@ Unregisters a control as a potential scroll anchor candidate.
 public void UnregisterAnchorCandidate(Avalonia.Controls.Control element)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `element` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -101,9 +101,9 @@ A control within the subtree of the [Avalonia.Controls.IScrollAnchorProvider](xr
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CurrentAnchor](#uid-025ab7cd63) | The currently chosen anchor element to use for scroll anchoring. |
 
@@ -111,7 +111,7 @@ A control within the subtree of the [Avalonia.Controls.IScrollAnchorProvider](xr
 
 <span id="uid-025ab7cd63"></span>
 
-### CurrentAnchor Property
+### CurrentAnchor 属性 {#currentanchor-property}
 
 The currently chosen anchor element to use for scroll anchoring.
 

@@ -22,7 +22,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 TreeDataGrid v12 introduces significant API changes including renamed column types, a new XAML-first workflow, and a fluent code-behind API. See the [breaking changes document](/controls/data-display/structured-data/treedatagrid/breaking-changes-v12) for full migration guidance.
 :::
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `Avalonia.Controls.TreeDataGrid` NuGet package by running `dotnet add package`.
 
@@ -57,7 +57,7 @@ For more information on installing Avalonia Pro controls, see [Installing Avalon
 
 You will probably use these properties most often:
 
-| Property               | Description                                                                                   |
+| Property               | 说明                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------- |
 | `ItemsSource`          | Binds to a collection for XAML-defined columns.                                               |
 | `Source`               | The data source that drives the control's rows and columns (code-behind approach).            |
@@ -289,6 +289,6 @@ public class MainWindowViewModel
 - [Sorting](/controls/data-display/structured-data/treedatagrid/sorting)
 - [Filtering](/controls/data-display/structured-data/treedatagrid/filtering)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [DataGrid](/controls/data-display/structured-data/datagrid/)

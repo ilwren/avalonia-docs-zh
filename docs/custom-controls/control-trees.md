@@ -40,7 +40,7 @@ When a custom container needs to add or remove logical children programmatically
 
 See [Mutating the logical tree](/docs/fundamentals/visual-and-logical-trees#mutating-the-logical-tree) for more information on safe and unsafe contexts.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Visual and logical trees](/docs/fundamentals/visual-and-logical-trees): Fundamental concepts.
 - [Custom templated controls](/docs/custom-controls/templated-controls): How templates expand into the visual tree.

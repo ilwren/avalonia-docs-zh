@@ -7,7 +7,7 @@ doc-type: how-to
 
 This guide walks you through embedding XPF (WPF-compatible) controls in an existing Avalonia application. By the end, you will have an XPF `UserControl` rendering inside an Avalonia window via the `XpfContainer` wrapper.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before you begin, make sure you have:
 
@@ -136,7 +136,7 @@ You can place `XpfContainer` anywhere in your Avalonia visual tree: inside panel
 | XPF initializes before Avalonia is ready | `DisableAutomaticXpfInit` is not set | Add `<DisableAutomaticXpfInit>true</DisableAutomaticXpfInit>` to your project file |
 | XAML namespace errors in the XPF control | Mixed Avalonia and WPF namespaces | Ensure XPF controls use WPF XAML namespaces exclusively |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Getting started with XPF](/xpf/getting-started)
 - [Customizing initialization](/xpf/configuration/customizing-initialization)

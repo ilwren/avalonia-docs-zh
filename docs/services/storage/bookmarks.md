@@ -229,7 +229,7 @@ The exact behavior and capabilities can depend on the specific operating system 
 It's not recommended to store bookmark IDs in a remote database, as bookmarks might not be persistent and might contain sensitive file path information.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Storage Provider](/docs/services/storage/storage-provider): Full storage provider API reference.
 - [Storage Items](/docs/services/storage/storage-item): Working with files and folders.

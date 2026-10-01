@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">INameScope Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/INameScope.cs">INameScope.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/INameScope.cs">INameScope.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface INameScope
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Complete](#uid-dbae865813) | Marks the name scope as completed, no further registrations will be allowed |
 | [Find](#uid-6d3e11c791) | Finds a named element in the name scope, returns immediately, doesn't traverse the name scope stack |
@@ -65,7 +65,7 @@ public interface INameScope
 
 <span id="uid-dbae865813"></span>
 
-### Complete Method
+### Complete 方法 {#complete-method}
 
 Marks the name scope as completed, no further registrations will be allowed
 
@@ -79,7 +79,7 @@ public void Complete()
 
 <span id="uid-6d3e11c791"></span>
 
-### Find Method
+### Find 方法 {#find-method}
 
 Finds a named element in the name scope, returns immediately, doesn't traverse the name scope stack
 
@@ -87,14 +87,14 @@ Finds a named element in the name scope, returns immediately, doesn't traverse t
 public object Find(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `name` string
 
 The name.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
@@ -107,7 +107,7 @@ The element, or null if the name was not found.
 
 <span id="uid-0b5bb4d230"></span>
 
-### FindAsync Method
+### FindAsync 方法 {#findasync-method}
 
 Finds a named element in the name scope, waits for the scope to be completely populated before returning null
 Returned task is configured to run any continuations synchronously.
@@ -116,14 +116,14 @@ Returned task is configured to run any continuations synchronously.
 public Avalonia.Utilities.SynchronousCompletionAsyncResult<T><object> FindAsync(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `name` string
 
 The name.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 Avalonia.Utilities.SynchronousCompletionAsyncResult&lt;T&gt;&lt;object&gt;
 
@@ -136,7 +136,7 @@ The element, or null if the name was not found.
 
 <span id="uid-0a39fc228f"></span>
 
-### Register Method
+### Register 方法 {#register-method}
 
 Registers an element in the name scope.
 
@@ -144,7 +144,7 @@ Registers an element in the name scope.
 public void Register(string name, object element)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `name` string
 
@@ -158,9 +158,9 @@ The element.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsCompleted](#uid-daaf8e4df0) | Returns whether further registrations are allowed on the scope |
 
@@ -168,7 +168,7 @@ The element.
 
 <span id="uid-daaf8e4df0"></span>
 
-### IsCompleted Property
+### IsCompleted 属性 {#iscompleted-property}
 
 Returns whether further registrations are allowed on the scope
 

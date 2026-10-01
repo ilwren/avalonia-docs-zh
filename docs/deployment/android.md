@@ -104,7 +104,7 @@ The `env:` prefix isn't supported when `AndroidPackageFormat` is set to `aab`.
 
 The following properties can be passed on the command line with `-p:` or set in a `<PropertyGroup>` in your project file:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `AndroidKeyStore` | Set to `true` to sign the app. Default: `false`. |
 | `AndroidPackageFormats` | Semicolon-delimited. Set to `aab`, `apk`, or `aab;apk`. Default for release: `aab;apk`. |
@@ -142,6 +142,6 @@ dotnet publish -f net9.0-android -c Release
 - **Google Play**: Submit your AAB file via the [Google Play Console](https://play.google.com/console). See [Upload your app to the Play Console](https://developer.android.com/studio/publish/upload-bundle) for details.
 - **Direct download**: Host the APK on a website or file share. Users must enable installation from unknown sources on their devices. See [User opt-in for unknown apps](https://developer.android.com/studio/publish#publishing-unknown) for details.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Android platform setup](/docs/platform-specific-guides/android)

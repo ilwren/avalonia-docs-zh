@@ -57,7 +57,7 @@ source.WithTextColumn("First Name", x => x.FirstName, o =>
 
 Options can be set as attributes in XAML or configured via the `TextColumnCreateOptions` lambda in code-behind:
 
-| Option | XAML attribute | Default | Description |
+| Option | XAML attribute | Default | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
@@ -118,7 +118,7 @@ source.WithCheckBoxColumn(x => x.IsActive, o =>
 
 ### Options
 
-| Option | XAML attribute | Default | Description |
+| Option | XAML attribute | Default | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
@@ -148,7 +148,7 @@ Define the expander column in XAML with bindings for children, and nest the inne
 </TreeDataGridHierarchicalExpanderColumn>
 ```
 
-| Attribute | Description |
+| Attribute | 说明 |
 |---|---|
 | `ChildrenBinding` | Binding to the children collection for each row (required) |
 | `HasChildrenBinding` | Binding to check if a row has children without loading them (useful for lazy loading) |
@@ -247,7 +247,7 @@ source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell", "CheckBoxC
 
 ### Options
 
-| Option | XAML attribute | Default | Description |
+| Option | XAML attribute | Default | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `TextSearchBinding` | N/A | N/A | Binding to extract searchable text from the model |
@@ -286,6 +286,6 @@ source.WithTemplateColumnFromResourceKeys("Name", "FileNameCell", "FileNameEditC
 source.WithRowHeaderColumn()
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)

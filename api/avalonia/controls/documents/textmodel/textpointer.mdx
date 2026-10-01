@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextPointer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,14 +51,14 @@ public class TextPointer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextPointer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextPointer
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IComparable&lt;TextPointer&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IComparable&lt;TextPointer&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Performance optimization: Caches only the leaf node instead of the full path,
 reducing allocations from 320-656 B to ~40-80 B per pointer.
@@ -79,9 +79,9 @@ callers that need an independent tracked position must call
 [Avalonia.Controls.Documents.TextModel.TextPointer.Clone](xref:Avalonia.Controls.Documents.TextModel.TextPointer.Clone) first. [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) performs this
 clone automatically for its endpoints.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Clone](#uid-6677f8f269) | Creates a detached copy of this pointer that will not be mutated by subsequent `UpdateInPlace` or [Avalonia.Controls.Documents.TextModel.TextPointer.Refresh](xref:Avalonia.Controls.Documents.TextModel.TextPointer.Refresh) calls on the original. The clone preserves node identity so that callers storing the pointer (e.g. undo snapshots) can use the cached leaf as a disambiguation key across document edits. |
 | [CompareTo](#uid-1a3aba8bd5) | Compares the document position of this pointer to `other`. |
@@ -91,15 +91,15 @@ clone automatically for its endpoints.
 | [GetContainingElement](#uid-eb8dd2dd84) | Gets the containing element, materializing the leaf and its ancestors on demand until a [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) is available. Returns `null` only when the document is empty. |
 | [GetOffsetToPosition](#uid-ab2defe7b1) | Gets the distance from this pointer to another. |
 | [GetPositionAtOffset](#uid-8767ee45aa) | Gets a pointer at the specified offset from this position. |
-| [InsertText (2 overloads)](#uid-36e65faa9b) | No summary available. |
+| [InsertText (2 overloads)](#uid-36e65faa9b) | 暂无摘要。 |
 | [Refresh](#uid-6b26d6d778) | Refreshes this pointer if stale. |
-| [ToString](#uid-008f713e0f) | No summary available. |
+| [ToString](#uid-008f713e0f) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6677f8f269"></span>
 
-### Clone Method
+### Clone 方法 {#clone-method}
 
 Creates a detached copy of this pointer that will not be mutated
 by subsequent `UpdateInPlace` or [Avalonia.Controls.Documents.TextModel.TextPointer.Refresh](xref:Avalonia.Controls.Documents.TextModel.TextPointer.Refresh)
@@ -111,14 +111,14 @@ cached leaf as a disambiguation key across document edits.
 public Avalonia.Controls.Documents.TextModel.TextPointer Clone()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 A pointer at the same position, independent of this one.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Required when assigning a cached pointer
 ([Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart](xref:Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart), [Avalonia.Controls.Documents.TextModel.TextDocument.ContentEnd](xref:Avalonia.Controls.Documents.TextModel.TextDocument.ContentEnd),
@@ -129,7 +129,7 @@ into any container that may later mutate the pointer via
 through the alias and shift the source cache. [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange)'s
 constructors and `SetPositions` already perform this clone.
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [The pointer is detached from its document.](xref:System.InvalidOperationException)
 
@@ -139,7 +139,7 @@ constructors and `SetPositions` already perform this clone.
 
 <span id="uid-1a3aba8bd5"></span>
 
-### CompareTo Method
+### CompareTo 方法 {#compareto-method}
 
 Compares the document position of this pointer to `other`.
 
@@ -147,12 +147,12 @@ Compares the document position of this pointer to `other`.
 public int CompareTo(Avalonia.Controls.Documents.TextModel.TextPointer other)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `other` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 int
 
@@ -163,7 +163,7 @@ int
 
 <span id="uid-a7612c77e2"></span>
 
-### CreatePointer Method
+### CreatePointer 方法 {#createpointer-method}
 
 Creates a fresh, independent [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) at the
 document-absolute offset `absoluteOffset`.
@@ -172,7 +172,7 @@ document-absolute offset `absoluteOffset`.
 public Avalonia.Controls.Documents.TextModel.TextPointer CreatePointer(int absoluteOffset, Avalonia.Controls.Documents.TextModel.LogicalDirection direction)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `absoluteOffset` int
 
@@ -180,12 +180,12 @@ public Avalonia.Controls.Documents.TextModel.TextPointer CreatePointer(int absol
 `direction` [Avalonia.Controls.Documents.TextModel.LogicalDirection](xref:Avalonia.Controls.Documents.TextModel.LogicalDirection)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The result is identical to what an offset-based factory rooted at
 the document would produce — the receiver pointer is a performance
@@ -203,7 +203,7 @@ hint-biased for navigation (a relative offset of 0 with a
 boundary-anchored pointer stays in the source block; the same
 absolute offset through this method does not).
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [Thrown when this pointer is detached from a document
 (\[Avalonia.Controls.Documents.TextModel.TextPointer.TextDocument\](xref:Avalonia.Controls.Documents.TextModel.TextPointer.TextDocument) is \`null\`).](xref:System.InvalidOperationException)
@@ -214,7 +214,7 @@ absolute offset through this method does not).
 
 <span id="uid-f63e3186f0"></span>
 
-### EnsureElement Method
+### EnsureElement 方法 {#ensureelement-method}
 
 Materializes and returns the element at this pointer's leaf node.
 
@@ -222,7 +222,7 @@ Materializes and returns the element at this pointer's leaf node.
 public Avalonia.Controls.Documents.RichTextElement EnsureElement()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
@@ -233,7 +233,7 @@ public Avalonia.Controls.Documents.RichTextElement EnsureElement()
 
 <span id="uid-ec0652fabf"></span>
 
-### EnsureParentElement Method
+### EnsureParentElement 方法 {#ensureparentelement-method}
 
 Materializes and returns the element at the immediate parent node.
 
@@ -241,7 +241,7 @@ Materializes and returns the element at the immediate parent node.
 public Avalonia.Controls.Documents.RichTextElement EnsureParentElement()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
@@ -252,7 +252,7 @@ public Avalonia.Controls.Documents.RichTextElement EnsureParentElement()
 
 <span id="uid-eb8dd2dd84"></span>
 
-### GetContainingElement Method
+### GetContainingElement 方法 {#getcontainingelement-method}
 
 Gets the containing element, materializing the leaf and its
 ancestors on demand until a [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) is
@@ -262,7 +262,7 @@ available. Returns `null` only when the document is empty.
 public Avalonia.Controls.Documents.RichTextElement GetContainingElement()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
@@ -273,7 +273,7 @@ public Avalonia.Controls.Documents.RichTextElement GetContainingElement()
 
 <span id="uid-ab2defe7b1"></span>
 
-### GetOffsetToPosition Method
+### GetOffsetToPosition 方法 {#getoffsettoposition-method}
 
 Gets the distance from this pointer to another.
 
@@ -281,12 +281,12 @@ Gets the distance from this pointer to another.
 public int GetOffsetToPosition(Avalonia.Controls.Documents.TextModel.TextPointer other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 int
 
@@ -297,7 +297,7 @@ int
 
 <span id="uid-8767ee45aa"></span>
 
-### GetPositionAtOffset Method
+### GetPositionAtOffset 方法 {#getpositionatoffset-method}
 
 Gets a pointer at the specified offset from this position.
 
@@ -305,7 +305,7 @@ Gets a pointer at the specified offset from this position.
 public Avalonia.Controls.Documents.TextModel.TextPointer GetPositionAtOffset(int relativeOffset, Avalonia.Controls.Documents.TextModel.LogicalDirection direction)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `relativeOffset` int
 
@@ -313,12 +313,12 @@ public Avalonia.Controls.Documents.TextModel.TextPointer GetPositionAtOffset(int
 `direction` [Avalonia.Controls.Documents.TextModel.LogicalDirection](xref:Avalonia.Controls.Documents.TextModel.LogicalDirection)
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 The result is clamped to `[0, doc.Length]`: passing an
 offset that would land before `0` returns a pointer at
@@ -338,7 +338,7 @@ operations), the tree walk is bounded to the subtree instead of
 traversing from the root. This eliminates per-call O(depth)
 overhead for hit-testing and line queries inside a single paragraph.
 
-#### Exceptions
+#### 异常 {#exceptions-2}
 
 - [Thrown when this pointer is detached from a document
 (\[Avalonia.Controls.Documents.TextModel.TextPointer.TextDocument\](xref:Avalonia.Controls.Documents.TextModel.TextPointer.TextDocument) is \`null\`).](xref:System.InvalidOperationException)
@@ -353,18 +353,18 @@ overhead for hit-testing and line queries inside a single paragraph.
 
 <span id="uid-fe82bcf04b"></span>
 
-#### InsertText Method
+#### InsertText 方法 {#inserttext-method}
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer InsertText(ReadOnlyMemory<char> text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
 
-##### Returns
+##### 返回值 {#returns-8}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -375,7 +375,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer InsertText(ReadOnlyMemo
 
 <span id="uid-e3a304f04e"></span>
 
-#### InsertText Method
+#### InsertText 方法 {#inserttext-method-1}
 
 Inserts text at this position.
 
@@ -383,12 +383,12 @@ Inserts text at this position.
 public Avalonia.Controls.Documents.TextModel.TextPointer InsertText(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `text` string
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -399,7 +399,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer InsertText(string text)
 
 <span id="uid-6b26d6d778"></span>
 
-### Refresh Method
+### Refresh 方法 {#refresh-method}
 
 Refreshes this pointer if stale.
 
@@ -413,22 +413,22 @@ public void Refresh()
 
 <span id="uid-008f713e0f"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-10}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Element](#uid-0d2fbdcfb2) | The element at this position, if already realized. May be `null` when the underlying node still holds only a deferred snapshot. Use [Avalonia.Controls.Documents.TextModel.TextPointer.EnsureElement](xref:Avalonia.Controls.Documents.TextModel.TextPointer.EnsureElement) to force materialization. |
 | [IsStale](#uid-2e83c90d1c) | Whether this pointer is stale (document has changed since creation). |
@@ -440,7 +440,7 @@ string
 
 <span id="uid-0d2fbdcfb2"></span>
 
-### Element Property
+### Element 属性 {#element-property}
 
 The element at this position, if already realized. May be `null`
 when the underlying node still holds only a deferred snapshot.
@@ -456,7 +456,7 @@ public Avalonia.Controls.Documents.RichTextElement Element { get; set; }
 
 <span id="uid-2e83c90d1c"></span>
 
-### IsStale Property
+### IsStale 属性 {#isstale-property}
 
 Whether this pointer is stale (document has changed since creation).
 
@@ -470,7 +470,7 @@ public bool IsStale { get; set; }
 
 <span id="uid-77634a9f01"></span>
 
-### LogicalDirection Property
+### LogicalDirection 属性 {#logicaldirection-property}
 
 The logical direction (gravity) of this pointer.
 
@@ -484,7 +484,7 @@ public Avalonia.Controls.Documents.TextModel.LogicalDirection LogicalDirection {
 
 <span id="uid-47a87cde60"></span>
 
-### Offset Property
+### Offset 属性 {#offset-property}
 
 The character offset in the document.
 
@@ -498,7 +498,7 @@ public int Offset { get; set; }
 
 <span id="uid-2809ef22da"></span>
 
-### TextDocument Property
+### TextDocument 属性 {#textdocument-property}
 
 The document this pointer belongs to.
 

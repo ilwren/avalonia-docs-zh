@@ -50,7 +50,7 @@ public ObservableCollection<ParetoItem> ParetoData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of categories. | `null` |
 | `ValuePath` | Property determining bar height. | `null` |

@@ -17,9 +17,9 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 `MediaSource` is an abstract base class that defines the common interface for all media sources.
 
-### Methods
+### 方法 {#methods}
 
-| Method    | Return Type | Description                                  |
+| Method    | Return Type | 说明                                  |
 |-----------|-------------|----------------------------------------------|
 | Dispose() | void        | Releases resources used by the media source. |
 
@@ -27,22 +27,22 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 The `UriSource` class represents media content referenced by a URI, which can point to local files or network resources.
 
-### Properties
+### 属性 {#properties}
 
-| Property | Type | Description                                    |
+| Property | Type | 说明                                    |
 |----------|------|------------------------------------------------|
 | Source   | Uri  | Gets the URI that points to the media content. |
 
-### Constructors
+### 构造函数 {#constructors}
 
-| Constructor              | Description                                |
+| Constructor              | 说明                                |
 |--------------------------|--------------------------------------------|
 | UriSource(Uri source)    | Initializes with the specified URI.        |
 | UriSource(string source) | Initializes with the specified URI string. |
 
-### Methods
+### 方法 {#methods-1}
 
-| Method                  | Return Type | Description                                 |
+| Method                  | Return Type | 说明                                 |
 |-------------------------|-------------|---------------------------------------------|
 | Equals(UriSource other) | bool        | Determines equality with another UriSource. |
 | Equals(object obj)      | bool        | Determines equality with an object.         |
@@ -68,22 +68,22 @@ var streamSource = new UriSource(uri);
 The `StreamSource` class represents media content provided as a stream, allowing for dynamic or in-memory content to be
 played.
 
-### Properties
+### 属性 {#properties-1}
 
-| Property     | Type   | Description                                          |
+| Property     | Type   | 说明                                          |
 |--------------|--------|------------------------------------------------------|
 | TargetStream | Stream | Gets the underlying stream containing media data.    |
 | IsSeekable   | bool   | Gets whether the underlying stream supports seeking. |
 
-### Constructors
+### 构造函数 {#constructors-1}
 
-| Constructor                       | Description                            |
+| Constructor                       | 说明                            |
 |-----------------------------------|----------------------------------------|
 | StreamSource(Stream targetStream) | Initializes with the specified stream. |
 
-### Methods
+### 方法 {#methods-2}
 
-| Method                     | Return Type | Description                                          |
+| Method                     | Return Type | 说明                                          |
 |----------------------------|-------------|------------------------------------------------------|
 | Equals(StreamSource other) | bool        | Determines equality with another StreamSource.       |
 | Dispose()                  | void        | Releases resources, including the underlying stream. |
@@ -164,7 +164,7 @@ The `MediaPlayer` manages the lifecycle automatically:
     - Check `StreamSource.IsSeekable` to determine if seeking is supported.
     - If seeking is required, ensure the stream supports it (`CanSeek` = true).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [MediaPlayer control](/controls/media/mediaplayer)
 - [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)

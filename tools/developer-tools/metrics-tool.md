@@ -55,7 +55,7 @@ private void OnTaskResolved() => s_tasksResolved.Add(1);
 
 Once code has pushed at least one measurement, this `SimpleToDoList` will be visible in the **+** button flyout to be displayed in the tool.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Profiler tool](/tools/developer-tools/profiler-tool)
 - [Developer tools installation](/tools/developer-tools/installation)

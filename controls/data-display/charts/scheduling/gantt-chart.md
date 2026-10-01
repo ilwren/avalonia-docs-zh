@@ -56,7 +56,7 @@ public ObservableCollection<GanttTask> GanttTasks { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of project tasks. | `null` |
 | `StartPath` | Property name for the task start time. | `null` |

@@ -13,7 +13,7 @@ Whether a control that can initiate an action is in its enabled state is a key p
 
 This guide shows you how to bind a [`Button`](/api/avalonia/controls/button) to a command whose `CanExecute` logic automatically enables or disables the control. The approach uses the MVVM pattern so that the view and the view model remain clearly separated.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 - A basic Avalonia application with an MVVM structure (a view and a corresponding view model).
 - Familiarity with [data binding](/docs/data-binding/introduction-to-data-binding) and `ICommand`.
@@ -156,7 +156,7 @@ namespace AvaloniaGuides.ViewModels
 - **`CommandParameter` bindings.** When you pass a `CommandParameter` via the binding, the parameter value is forwarded to `CanExecute(object? parameter)`. Make sure your implementation handles `null` parameters during initial layout, before the binding system has resolved the parameter value.
 - **Menu items.** The same pattern works with `MenuItem`. Bind `MenuItem.Command` to your command and the menu item dims automatically when `CanExecute` returns `false`.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Binding to commands](/docs/data-binding/binding-to-commands)
 - [Commanding](/docs/input-interaction/commanding)

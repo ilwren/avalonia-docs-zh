@@ -47,7 +47,7 @@ public ObservableCollection<PopulationBand> PopulationData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of population bands. | `null` |
 | `AgeLabelPath` | Path to the band label. | `null` |
@@ -60,7 +60,7 @@ public ObservableCollection<PopulationBand> PopulationData { get; } = new()
 | `LabelFontSize` | Font size used for the band labels. | `10.0` |
 | `IsHighlightEnabled` | Enables hover highlighting for population bands. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart)
 - [Tornado chart](/controls/data-display/charts/comparison/tornado-chart)

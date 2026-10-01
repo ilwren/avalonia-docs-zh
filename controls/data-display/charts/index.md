@@ -14,7 +14,7 @@ Charts provide a library of data visualization controls and documented compositi
 Charts are available with [Avalonia Pro](https://avaloniaui.net/pricing).
 :::
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `Avalonia.Controls.Charts` NuGet package by running `dotnet add package`.
 
@@ -73,7 +73,7 @@ Cartesian series use `EmptyPointMode` to control how null or non-finite points a
 
 Most chart controls share these properties through `ChartBase`.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | Text displayed above the chart. | `null` |
 | `Palette` | Optional chart palette used to generate series or item colors. | `null` |
@@ -82,7 +82,7 @@ Most chart controls share these properties through `ChartBase`.
 
 Some chart types also expose additional chart-level styling surfaces when the visual surface exists on that chart.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `AxisBrush` | Brush used for axis lines, ticks, radial axes, or equivalent scale guides. | `null` |
 | `GridLineBrush` | Brush used for chart-level grid lines. | `null` |
@@ -92,7 +92,7 @@ Some chart types also expose additional chart-level styling surfaces when the vi
 
 Most series share these properties through `ChartSeries`. Individual chart pages list additional properties for their specific series type.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | Series name shown in legends and generated tooltip content. | `null` |
 | `ItemsSource` | Data collection used by the series. | `null` |
@@ -106,7 +106,7 @@ Most series share these properties through `ChartSeries`. Individual chart pages
 
 Charts and series share an animation pipeline.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsAnimationEnabled` | Enables chart entry animations. | `true` |
 | `AnimationDuration` | Duration of the chart entry animation. | `00:00:01` |
@@ -126,7 +126,7 @@ Financial overlays can render in `FinancialChart` by implementing `IFinancialCha
 
 Charts for summarizing metrics, identifying patterns, and presenting findings.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [KPI card](/controls/data-display/charts/analytics/kpi-card) | Displays a key metric alongside a trend indicator and a sparkline. |
 | [Heatmap chart](/controls/data-display/charts/analytics/heatmap-chart) | Shows a matrix of values as a color-coded grid. |
@@ -147,7 +147,7 @@ Charts for summarizing metrics, identifying patterns, and presenting findings.
 
 Charts that encode magnitude with marker size and often omit traditional axes or grids.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Bubble chart](/controls/data-display/charts/bubble/bubble-chart) | Plots X and Y values and uses bubble size for a third measure. |
 | [Bubble cloud chart](/controls/data-display/charts/bubble/bubble-cloud-chart) | Arranges sized bubbles in an organic, clustered layout without axes. |
@@ -157,7 +157,7 @@ Charts that encode magnitude with marker size and often omit traditional axes or
 
 Charts that plot data on horizontal and vertical axes. Use these for trends, comparisons, distributions, and correlations.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Bar chart](/controls/data-display/charts/cartesian/bar-chart) | Compares discrete quantities across categories using rectangular bars. |
 | [Line chart](/controls/data-display/charts/cartesian/line-chart) | Connects data points with straight segments to show trends over time. |
@@ -177,7 +177,7 @@ Charts that plot data on horizontal and vertical axes. Use these for trends, com
 
 Charts that represent data as segments of a circle.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Pie chart](/controls/data-display/charts/circular/pie-chart) | Divides a circle into proportional slices to show part-to-whole relationships. |
 | [Donut chart](/controls/data-display/charts/circular/donut-chart) | A pie chart with a hollow center, often used to display a total in the middle. |
@@ -187,7 +187,7 @@ Charts that represent data as segments of a circle.
 
 Charts for before-and-after analysis, back-to-back comparison, and proportional allocation.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Diverging bar chart](/controls/data-display/charts/comparison/diverging-bar-chart) | Extends bars left and right from a centered baseline. |
 | [Dumbbell chart](/controls/data-display/charts/comparison/dumbbell-chart) | Connects two values per category with a line and markers. |
@@ -202,7 +202,7 @@ Charts for before-and-after analysis, back-to-back comparison, and proportional 
 
 Charts for technical surfaces, multivariate scientific views, and specialized coordinate systems.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Carpet plot chart](/controls/data-display/charts/engineering/carpet-plot-chart) | Maps two independent variables and one dependent variable onto a skewed grid. |
 | [Hexbin chart](/controls/data-display/charts/engineering/hexbin-chart) | Aggregates dense 2D point clouds into hexagonal density bins. |
@@ -214,7 +214,7 @@ Charts for technical surfaces, multivariate scientific views, and specialized co
 
 Specialized charts for price and market data analysis.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Financial chart](/controls/data-display/charts/financial/financial-chart) | Hosts financial series such as candlestick and OHLC on shared price axes. |
 | [Candlestick chart](/controls/data-display/charts/financial/candlestick-chart) | Shows open, high, low, and close prices per period as candle shapes. |
@@ -229,7 +229,7 @@ Specialized charts for price and market data analysis.
 
 Visual displays of a single value relative to a range. Common in monitoring dashboards and real-time status panels.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Circular gauge](/controls/data-display/charts/gauges/circular-gauge-chart) | A dial-style gauge with a needle or arc indicator. |
 | [Gauge chart](/controls/data-display/charts/gauges/gauge-chart) | Displays a single value on a semi-circular dial with optional needle. |
@@ -242,7 +242,7 @@ Visual displays of a single value relative to a range. Common in monitoring dash
 
 Charts for visualizing relationships, flows, and tree structures.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Flow chart](/controls/data-display/charts/hierarchy/flow-chart) | Visualizes workflows, decision trees, and system maps using nodes and directed edges. |
 | [Sankey chart](/controls/data-display/charts/hierarchy/sankey-chart) | Shows flow quantities between nodes using proportional bands. |
@@ -267,7 +267,7 @@ Charts for visualizing relationships, flows, and tree structures.
 
 Charts that overlay data onto geographic or custom spatial layouts.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Choropleth map](/controls/data-display/charts/maps/choropleth-map-chart) | Colors map regions by a numeric value to show geographic distribution. |
 | [Bubble map](/controls/data-display/charts/maps/bubble-map-chart) | Places sized circles on a map to represent values at specific locations. |
@@ -279,7 +279,7 @@ Charts that overlay data onto geographic or custom spatial layouts.
 
 Charts that use a circular coordinate system rather than Cartesian axes.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Polar chart](/controls/data-display/charts/radial/polar-chart) | Plots arbitrary angle and radius values in a polar coordinate system. |
 | [Radar chart](/controls/data-display/charts/radial/radar-chart) | Plots multivariate data as a polygon on a circular grid of axes. |
@@ -292,7 +292,7 @@ Charts that use a circular coordinate system rather than Cartesian axes.
 
 Charts for time-based planning, project management, and sequential data.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Gantt chart](/controls/data-display/charts/scheduling/gantt-chart) | Shows tasks and their durations across a horizontal time axis. |
 | [Timeline chart](/controls/data-display/charts/scheduling/timeline-chart) | Displays events in chronological order along a linear axis. |
@@ -304,7 +304,7 @@ Charts for time-based planning, project management, and sequential data.
 
 Charts for distributional and comparative statistical analysis.
 
-| Chart | Description |
+| Chart | 说明 |
 | --- | --- |
 | [Beeswarm plot chart](/controls/data-display/charts/statistical/beeswarm-plot-chart) | Displays individual observations as non-overlapping dots within each category. |
 | [Box plot chart](/controls/data-display/charts/statistical/boxplot-chart) | Summarizes a distribution using medians, quartiles, and outliers. |
@@ -321,7 +321,7 @@ Charts for distributional and comparative statistical analysis.
 
 Most chart types share the following configurable elements:
 
-| Element | Description |
+| Element | 说明 |
 | --- | --- |
 | [Legend](/controls/data-display/charts/shared-elements/legend-chart) | Identifies each data series by name and color. |
 | [Tooltip](/controls/data-display/charts/shared-elements/tooltip-chart) | Shows data values on hover or tap. |
@@ -334,6 +334,6 @@ Most chart types share the following configurable elements:
 | [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart) | Controls tick marks, labels, gridlines, and scale. |
 | [Interactions](/controls/data-display/charts/shared-elements/interactions-chart) | Configures zoom, pan, selection, hover highlighting, and trackball behavior. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia Pro pricing and access](https://avaloniaui.net/pricing)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StyledPropertyMetadata&lt;TValue&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/StyledPropertyMetadata%601.cs">StyledPropertyMetadata`1.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/StyledPropertyMetadata%601.cs">StyledPropertyMetadata`1.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public class StyledPropertyMetadata<TValue>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniapropertymetadata">AvaloniaPropertyMetadata</a> <span className="apiref-page__relation-separator">-&gt;</span> StyledPropertyMetadata&lt;TValue&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniapropertymetadata">AvaloniaPropertyMetadata</a> <span className="apiref-page__relation-separator">-&gt;</span> StyledPropertyMetadata&lt;TValue&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="istyledpropertymetadata">IStyledPropertyMetadata</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="istyledpropertymetadata">IStyledPropertyMetadata</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [StyledPropertyMetadata&lt;TValue&gt;](#uid-e775a56c4c) | No summary available. |
+| [StyledPropertyMetadata&lt;TValue&gt;](#uid-e775a56c4c) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e775a56c4c"></span>
 
-### StyledPropertyMetadata&lt;TValue&gt; Constructor
+### StyledPropertyMetadata&lt;TValue&gt; 构造函数 {#styledpropertymetadatalttvaluegt-constructor}
 
 ```csharp
 public StyledPropertyMetadata<TValue>(Avalonia.Data.Optional<T><TValue> defaultValue, Avalonia.Data.BindingMode defaultBindingMode, Func<Avalonia.AvaloniaObject, TValue, TValue> coerce, bool enableDataValidation)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `defaultValue` Avalonia.Data.Optional&lt;T&gt;&lt;TValue&gt;
 
@@ -93,9 +93,9 @@ public StyledPropertyMetadata<TValue>(Avalonia.Data.Optional<T><TValue> defaultV
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Freeze](avaloniapropertymetadata.mdx#uid-db1cdb0cff) | Makes this instance read-only. No further modifications are allowed after this call. Inherited from [AvaloniaPropertyMetadata](avaloniapropertymetadata.mdx). |
 | [GenerateTypeSafeMetadata](#uid-eebbc90d76) | Gets a copy of this object configured for use with any owner type. |
@@ -105,7 +105,7 @@ public StyledPropertyMetadata<TValue>(Avalonia.Data.Optional<T><TValue> defaultV
 
 <span id="uid-eebbc90d76"></span>
 
-### GenerateTypeSafeMetadata Method
+### GenerateTypeSafeMetadata 方法 {#generatetypesafemetadata-method}
 
 Gets a copy of this object configured for use with any owner type.
 
@@ -113,12 +113,12 @@ Gets a copy of this object configured for use with any owner type.
 public Avalonia.AvaloniaPropertyMetadata GenerateTypeSafeMetadata()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 For example, delegates which receive the owner object should be removed.
 
@@ -128,7 +128,7 @@ For example, delegates which receive the owner object should be removed.
 
 <span id="uid-c3f1feadb7"></span>
 
-### Merge Method
+### Merge 方法 {#merge-method}
 
 Merges the metadata with the base metadata.
 
@@ -136,7 +136,7 @@ Merges the metadata with the base metadata.
 public void Merge(Avalonia.AvaloniaPropertyMetadata baseMetadata, Avalonia.AvaloniaProperty property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `baseMetadata` [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)
 
@@ -150,9 +150,9 @@ The property to which the metadata is being applied.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CoerceValue](#uid-a439fc7f25) | Gets the value coercion callback, if any. |
 | [DefaultBindingMode](avaloniapropertymetadata.mdx#uid-b6d03b8752) | Gets the default binding mode for the property. Inherited from [AvaloniaPropertyMetadata](avaloniapropertymetadata.mdx). |
@@ -164,7 +164,7 @@ The property to which the metadata is being applied.
 
 <span id="uid-a439fc7f25"></span>
 
-### CoerceValue Property
+### CoerceValue 属性 {#coercevalue-property}
 
 Gets the value coercion callback, if any.
 
@@ -178,7 +178,7 @@ public Func<Avalonia.AvaloniaObject, TValue, TValue> CoerceValue { get; set; }
 
 <span id="uid-2232ffa60f"></span>
 
-### DefaultValue Property
+### DefaultValue 属性 {#defaultvalue-property}
 
 Gets the default value for the property.
 

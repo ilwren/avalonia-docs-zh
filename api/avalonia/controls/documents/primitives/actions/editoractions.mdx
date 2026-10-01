@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EditorActions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public class EditorActions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EditorActions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EditorActions
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Actions are organized by category:
 
@@ -66,9 +66,9 @@ Use these instances in XAML with `{x:Static editor:EditorActions.Bold}` or
 access them from code via `EditorActions.Bold`. [Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds)
 carries the matching [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Id](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Id) for [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.GetById(string)](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.GetById%28System.String%29).
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetById](#uid-8b8e9e64d3) | Gets an action by its unique identifier. |
 
@@ -76,7 +76,7 @@ carries the matching [Avalonia.Controls.Documents.Primitives.Actions.IEditorActi
 
 <span id="uid-8b8e9e64d3"></span>
 
-### GetById Method
+### GetById 方法 {#getbyid-method}
 
 Gets an action by its unique identifier.
 
@@ -84,14 +84,14 @@ Gets an action by its unique identifier.
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction GetById(string id)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `id` string
 
 The action ID, as an [Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds) constant.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction)
 
@@ -100,9 +100,9 @@ The action if found; otherwise, null.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AlignCenter](#uid-427132d58e) | Gets the Align Center action. |
 | [AlignJustify](#uid-4689428863) | Gets the Justify action. |
@@ -169,7 +169,7 @@ The action if found; otherwise, null.
 
 <span id="uid-427132d58e"></span>
 
-### AlignCenter Property
+### AlignCenter 属性 {#aligncenter-property}
 
 Gets the Align Center action.
 
@@ -183,7 +183,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction AlignCenter 
 
 <span id="uid-4689428863"></span>
 
-### AlignJustify Property
+### AlignJustify 属性 {#alignjustify-property}
 
 Gets the Justify action.
 
@@ -197,7 +197,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction AlignJustify
 
 <span id="uid-f01b6ddfe1"></span>
 
-### AlignLeft Property
+### AlignLeft 属性 {#alignleft-property}
 
 Gets the Align Left action.
 
@@ -211,7 +211,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction AlignLeft { 
 
 <span id="uid-44b56a0eb6"></span>
 
-### AlignRight Property
+### AlignRight 属性 {#alignright-property}
 
 Gets the Align Right action.
 
@@ -225,7 +225,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction AlignRight {
 
 <span id="uid-6832244a53"></span>
 
-### All Property
+### All 属性 {#all-property}
 
 Gets all built-in actions, grouped by category in declaration order.
 
@@ -239,7 +239,7 @@ public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primit
 
 <span id="uid-395759f903"></span>
 
-### BackgroundColor Property
+### BackgroundColor 属性 {#backgroundcolor-property}
 
 Gets the Background Color action.
 
@@ -253,7 +253,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction BackgroundCo
 
 <span id="uid-6b0d74bba6"></span>
 
-### BlockBackground Property
+### BlockBackground 属性 {#blockbackground-property}
 
 Gets the Block Background action for block elements.
 
@@ -261,7 +261,7 @@ Gets the Block Background action for block elements.
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction BlockBackground { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Sets the background color for entire paragraphs or sections.
 Works with [Avalonia.Controls.Documents.Primitives.Toolbar.ColorPickerTool](xref:Avalonia.Controls.Documents.Primitives.Toolbar.ColorPickerTool) for color selection.
@@ -277,7 +277,7 @@ Combine with Padding and BorderBrush to create callout boxes.
 
 <span id="uid-cf5ff3925c"></span>
 
-### BlockBorder Property
+### BlockBorder 属性 {#blockborder-property}
 
 Gets the Block Border toggle action.
 
@@ -291,7 +291,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction BlockBorder 
 
 <span id="uid-d7d610c563"></span>
 
-### Bold Property
+### Bold 属性 {#bold-property}
 
 Gets the Bold action.
 
@@ -305,7 +305,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Bold { get; 
 
 <span id="uid-ad5b07b2d2"></span>
 
-### BorderBrush Property
+### BorderBrush 属性 {#borderbrush-property}
 
 Gets the Border Brush (color) action for block elements.
 
@@ -313,7 +313,7 @@ Gets the Border Brush (color) action for block elements.
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction BorderBrush { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Sets the border color for paragraphs or sections.
 Works with [Avalonia.Controls.Documents.Primitives.Toolbar.ColorPickerTool](xref:Avalonia.Controls.Documents.Primitives.Toolbar.ColorPickerTool) for color selection.
@@ -327,7 +327,7 @@ Combine with BlockBackground and Padding to create outlined callout boxes.
 
 <span id="uid-d7f046696d"></span>
 
-### BorderThickness Property
+### BorderThickness 属性 {#borderthickness-property}
 
 Gets the Border Thickness action for block elements.
 
@@ -335,7 +335,7 @@ Gets the Border Thickness action for block elements.
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction BorderThickness { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Sets uniform border thickness (width) on all four sides.
 Common values: 0, 1, 2, 3 pixels.
@@ -349,7 +349,7 @@ For non-uniform borders, use a dedicated border editor panel.
 
 <span id="uid-561191110b"></span>
 
-### BulletMarkerStyle Property
+### BulletMarkerStyle 属性 {#bulletmarkerstyle-property}
 
 Gets the Bullet Marker Style action (changes marker symbol on bullet lists).
 
@@ -363,7 +363,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction BulletMarker
 
 <span id="uid-8a0d47316a"></span>
 
-### Copy Property
+### Copy 属性 {#copy-property}
 
 Gets the Copy action.
 
@@ -377,7 +377,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Copy { get; 
 
 <span id="uid-40739e40a8"></span>
 
-### Cut Property
+### Cut 属性 {#cut-property}
 
 Gets the Cut action.
 
@@ -391,7 +391,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Cut { get; s
 
 <span id="uid-4497ba0f06"></span>
 
-### DeleteColumn Property
+### DeleteColumn 属性 {#deletecolumn-property}
 
 Gets the Delete Column action.
 
@@ -405,7 +405,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction DeleteColumn
 
 <span id="uid-d32431ae06"></span>
 
-### DeleteImage Property
+### DeleteImage 属性 {#deleteimage-property}
 
 Gets the Delete Image action (removes the selected inline image).
 
@@ -419,7 +419,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction DeleteImage 
 
 <span id="uid-2ab61950c1"></span>
 
-### DeleteRow Property
+### DeleteRow 属性 {#deleterow-property}
 
 Gets the Delete Row action.
 
@@ -433,7 +433,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction DeleteRow { 
 
 <span id="uid-6fb1381f58"></span>
 
-### DeleteTable Property
+### DeleteTable 属性 {#deletetable-property}
 
 Gets the Delete Table action.
 
@@ -447,7 +447,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction DeleteTable 
 
 <span id="uid-b5dfe66d6f"></span>
 
-### DifferentFirstPage Property
+### DifferentFirstPage 属性 {#differentfirstpage-property}
 
 Gets the toggle that gives the document a first-page header and footer of its own.
 
@@ -461,7 +461,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction DifferentFir
 
 <span id="uid-86c0c3f21f"></span>
 
-### DifferentOddAndEvenPages Property
+### DifferentOddAndEvenPages 属性 {#differentoddandevenpages-property}
 
 Gets the toggle that gives the even pages a header and footer of their own.
 
@@ -475,7 +475,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction DifferentOdd
 
 <span id="uid-baf078d9aa"></span>
 
-### FontFamily Property
+### FontFamily 属性 {#fontfamily-property}
 
 Gets the Font Family action.
 
@@ -489,7 +489,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction FontFamily {
 
 <span id="uid-4cac10bb24"></span>
 
-### FontSize Property
+### FontSize 属性 {#fontsize-property}
 
 Gets the Font Size action.
 
@@ -503,7 +503,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction FontSize { g
 
 <span id="uid-fc0f72ef19"></span>
 
-### ForegroundColor Property
+### ForegroundColor 属性 {#foregroundcolor-property}
 
 Gets the Foreground Color action.
 
@@ -517,7 +517,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction ForegroundCo
 
 <span id="uid-15f1e46182"></span>
 
-### GoToFooter Property
+### GoToFooter 属性 {#gotofooter-property}
 
 Gets the action that enters the footer of the caret's page, creating the
 document's running footer when the page shows none.
@@ -532,7 +532,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction GoToFooter {
 
 <span id="uid-8fd3123368"></span>
 
-### GoToFootnote Property
+### GoToFootnote 属性 {#gotofootnote-property}
 
 Gets the action that enters the note cited by the footnote anchor at the caret.
 
@@ -546,7 +546,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction GoToFootnote
 
 <span id="uid-3ce5758988"></span>
 
-### GoToFootnoteReference Property
+### GoToFootnoteReference 属性 {#gotofootnotereference-property}
 
 Gets the action that leaves the note the caret is in for its anchor in the body.
 
@@ -560,7 +560,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction GoToFootnote
 
 <span id="uid-b676ae9cc2"></span>
 
-### GoToHeader Property
+### GoToHeader 属性 {#gotoheader-property}
 
 Gets the action that enters the header of the caret's page, creating the
 document's running header when the page shows none.
@@ -575,7 +575,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction GoToHeader {
 
 <span id="uid-e5cf58155b"></span>
 
-### InsertColumnAfter Property
+### InsertColumnAfter 属性 {#insertcolumnafter-property}
 
 Gets the Insert Column After action.
 
@@ -589,7 +589,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertColumn
 
 <span id="uid-142bff1267"></span>
 
-### InsertColumnBefore Property
+### InsertColumnBefore 属性 {#insertcolumnbefore-property}
 
 Gets the Insert Column Before action.
 
@@ -603,7 +603,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertColumn
 
 <span id="uid-961daeb904"></span>
 
-### InsertFootnote Property
+### InsertFootnote 属性 {#insertfootnote-property}
 
 Gets the action that inserts a footnote at the caret and enters the new note.
 
@@ -617,7 +617,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertFootno
 
 <span id="uid-7a21b81b80"></span>
 
-### InsertImage Property
+### InsertImage 属性 {#insertimage-property}
 
 Gets the Insert Image action.
 
@@ -631,7 +631,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertImage 
 
 <span id="uid-fa9b48889f"></span>
 
-### InsertPageCount Property
+### InsertPageCount 属性 {#insertpagecount-property}
 
 Gets the action that inserts a page-count field in the band the caret is in.
 
@@ -645,7 +645,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertPageCo
 
 <span id="uid-5c8ac19f5e"></span>
 
-### InsertPageNumber Property
+### InsertPageNumber 属性 {#insertpagenumber-property}
 
 Gets the action that inserts a page-number field in the band the caret is in.
 
@@ -659,7 +659,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertPageNu
 
 <span id="uid-ed70ce3981"></span>
 
-### InsertRowAfter Property
+### InsertRowAfter 属性 {#insertrowafter-property}
 
 Gets the Insert Row After action.
 
@@ -673,7 +673,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertRowAft
 
 <span id="uid-ebca66f571"></span>
 
-### InsertRowBefore Property
+### InsertRowBefore 属性 {#insertrowbefore-property}
 
 Gets the Insert Row Before action.
 
@@ -687,7 +687,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertRowBef
 
 <span id="uid-bd60053f9c"></span>
 
-### InsertTable Property
+### InsertTable 属性 {#inserttable-property}
 
 Gets the Insert Table action.
 
@@ -701,7 +701,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertTable 
 
 <span id="uid-1823a2e3de"></span>
 
-### Italic Property
+### Italic 属性 {#italic-property}
 
 Gets the Italic action.
 
@@ -715,7 +715,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Italic { get
 
 <span id="uid-ceb077675b"></span>
 
-### LineHeight Property
+### LineHeight 属性 {#lineheight-property}
 
 Gets the Line Height action.
 
@@ -723,7 +723,7 @@ Gets the Line Height action.
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction LineHeight { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 Line height is a block-level property that controls vertical spacing between lines.
 Important: Uses absolute pixel/point values, not relative multipliers.
@@ -736,7 +736,7 @@ Common values: 14, 16, 18, 20, 24, 28, 32 pixels.
 
 <span id="uid-280c93def6"></span>
 
-### LinkToPrevious Property
+### LinkToPrevious 属性 {#linktoprevious-property}
 
 Gets the toggle that links the caret's section to the previous one's bands, or gives it bands of its own.
 
@@ -750,7 +750,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction LinkToPrevio
 
 <span id="uid-bf92848c73"></span>
 
-### Margin Property
+### Margin 属性 {#margin-property}
 
 Gets the Margin action for block elements.
 
@@ -758,7 +758,7 @@ Gets the Margin action for block elements.
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Margin { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Sets uniform margin (spacing outside the block) on all four sides.
 Common values: 0, 5, 10, 15, 20 pixels.
@@ -771,7 +771,7 @@ For non-uniform margins, use a dedicated margin editor panel.
 
 <span id="uid-0b088e4411"></span>
 
-### MergeCells Property
+### MergeCells 属性 {#mergecells-property}
 
 Gets the Merge Cells action.
 
@@ -785,7 +785,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction MergeCells {
 
 <span id="uid-9097915fde"></span>
 
-### NumberedMarkerStyle Property
+### NumberedMarkerStyle 属性 {#numberedmarkerstyle-property}
 
 Gets the Numbered Marker Style action (changes marker symbol on numbered lists).
 
@@ -799,7 +799,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction NumberedMark
 
 <span id="uid-e37bbedff8"></span>
 
-### Padding Property
+### Padding 属性 {#padding-property}
 
 Gets the Padding action for block elements.
 
@@ -807,7 +807,7 @@ Gets the Padding action for block elements.
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Padding { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 Sets uniform padding (spacing inside the block, between border and content) on all four sides.
 Common values: 0, 5, 10, 15, 20 pixels.
@@ -821,7 +821,7 @@ For non-uniform padding, use a dedicated padding editor panel.
 
 <span id="uid-0f8c944ecb"></span>
 
-### Paste Property
+### Paste 属性 {#paste-property}
 
 Gets the Paste action.
 
@@ -835,7 +835,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Paste { get;
 
 <span id="uid-4bb8796292"></span>
 
-### PasteUnformatted Property
+### PasteUnformatted 属性 {#pasteunformatted-property}
 
 Gets the Paste Without Formatting action (Ctrl+Shift+V).
 
@@ -849,7 +849,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction PasteUnforma
 
 <span id="uid-12c0f20d85"></span>
 
-### Redo Property
+### Redo 属性 {#redo-property}
 
 Gets the Redo action.
 
@@ -863,7 +863,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Redo { get; 
 
 <span id="uid-d62d3e2177"></span>
 
-### RemoveFooter Property
+### RemoveFooter 属性 {#removefooter-property}
 
 Gets the action that removes the footer the caret is in or the caret's page shows.
 
@@ -877,7 +877,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction RemoveFooter
 
 <span id="uid-87875dadfb"></span>
 
-### RemoveHeader Property
+### RemoveHeader 属性 {#removeheader-property}
 
 Gets the action that removes the header the caret is in or the caret's page shows.
 
@@ -891,7 +891,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction RemoveHeader
 
 <span id="uid-aaaa5bc086"></span>
 
-### ReplaceImage Property
+### ReplaceImage 属性 {#replaceimage-property}
 
 Gets the Replace Image action (swaps the selected image, keeping size/alt text).
 
@@ -905,7 +905,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction ReplaceImage
 
 <span id="uid-3eab04c2b1"></span>
 
-### ReturnToBody Property
+### ReturnToBody 属性 {#returntobody-property}
 
 Gets the action that leaves the band or note the caret is in for the body.
 
@@ -919,7 +919,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction ReturnToBody
 
 <span id="uid-62b023c06f"></span>
 
-### SelectAll Property
+### SelectAll 属性 {#selectall-property}
 
 Gets the Select All action.
 
@@ -933,7 +933,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction SelectAll { 
 
 <span id="uid-87feee1a55"></span>
 
-### SplitCell Property
+### SplitCell 属性 {#splitcell-property}
 
 Gets the Split Cell action.
 
@@ -947,7 +947,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction SplitCell { 
 
 <span id="uid-6b3ec8b4b9"></span>
 
-### Strikethrough Property
+### Strikethrough 属性 {#strikethrough-property}
 
 Gets the Strikethrough action.
 
@@ -961,7 +961,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Strikethroug
 
 <span id="uid-bfc2ccd279"></span>
 
-### Subscript Property
+### Subscript 属性 {#subscript-property}
 
 Gets the Subscript action.
 
@@ -975,7 +975,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Subscript { 
 
 <span id="uid-bbdbe05fb9"></span>
 
-### Superscript Property
+### Superscript 属性 {#superscript-property}
 
 Gets the Superscript action.
 
@@ -989,7 +989,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Superscript 
 
 <span id="uid-365261dfa4"></span>
 
-### TextAlignmentAction Property
+### TextAlignmentAction 属性 {#textalignmentaction-property}
 
 Gets the Text Alignment action (Left, Center, Right, Justify).
 
@@ -997,7 +997,7 @@ Gets the Text Alignment action (Left, Center, Right, Justify).
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction TextAlignmentAction { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 Text alignment is a block-level property that applies to paragraphs and sections.
 When applied to a selection spanning multiple paragraphs, all affected paragraphs
@@ -1009,7 +1009,7 @@ will have their alignment set to the specified value.
 
 <span id="uid-8d7cc63320"></span>
 
-### ToggleBulletList Property
+### ToggleBulletList 属性 {#togglebulletlist-property}
 
 Gets the Toggle Bullet List action (wraps/unwraps paragraphs as an unordered list).
 
@@ -1023,7 +1023,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction ToggleBullet
 
 <span id="uid-d26d38e5f4"></span>
 
-### ToggleNumberedList Property
+### ToggleNumberedList 属性 {#togglenumberedlist-property}
 
 Gets the Toggle Numbered List action (wraps/unwraps paragraphs as an ordered list).
 
@@ -1037,7 +1037,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction ToggleNumber
 
 <span id="uid-585f5ff19d"></span>
 
-### Underline Property
+### Underline 属性 {#underline-property}
 
 Gets the Underline action.
 
@@ -1051,7 +1051,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Underline { 
 
 <span id="uid-4bf93df831"></span>
 
-### Undo Property
+### Undo 属性 {#undo-property}
 
 Gets the Undo action.
 

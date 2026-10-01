@@ -45,7 +45,7 @@ As noted above, previewer extensions do not listen for keyboard input. You canno
 
 Developer Tools opens one tool window per connected process. If you have multiple XAML previewer tabs open in your IDE, a separate tool window opens for each one. To reduce clutter, close any previewer tabs you are not actively inspecting.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Attaching applications](/tools/developer-tools/attaching-applications)
 - [Attaching to the remote tool](/tools/developer-tools/attaching-to-the-remote-tool)

@@ -140,7 +140,7 @@ The following example shows typical undo, redo, and find shortcuts:
 * [HotkeyManager.cs](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/HotkeyManager.cs)
 * [KeyGesture.cs](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/KeyGesture.cs)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Focus](/docs/input-interaction/focus): Focus management and keyboard navigation.
 - [Commanding](/docs/input-interaction/commanding): `ICommand` interface and command binding.

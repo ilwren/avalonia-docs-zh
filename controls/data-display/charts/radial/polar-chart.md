@@ -50,7 +50,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 ## Common properties (`PolarChart`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of `PolarLineSeries` items. | Empty collection |
 | `ShowGridLines` | Whether to draw angular and radial grid lines. | `true` |
@@ -63,7 +63,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 ## Common properties (`PolarLineSeries`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of polar data points. | `null` |
 | `AnglePath` | Path to the angle value in degrees. | `null` |
@@ -72,7 +72,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 | `MarkerSize` | Marker size in pixels. | `8.0` |
 | `IsClosed` | Whether to connect the last point back to the first point. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Radar chart](/controls/data-display/charts/radial/radar-chart)
 - [Radial line chart](/controls/data-display/charts/radial/radial-line-chart)

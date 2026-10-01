@@ -31,7 +31,7 @@ The navigation bar is divided into three zones:
 
 ## Useful properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The initial root page displayed in the navigation stack. Assigns a [`Page`](/api/avalonia/controls/page) instance. |
 | `PageTransition` | [`IPageTransition?`](/api/avalonia/animation/ipagetransition) | Theme default | The transition animation used when navigating between pages. |
@@ -52,7 +52,7 @@ The navigation bar is divided into three zones:
 
 These properties can be set on individual `Page` instances to customize their appearance within the `NavigationPage`:
 
-| Attached Property | Type | Default | Description |
+| Attached Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `NavigationPage.HasNavigationBar` | `bool` | `true` | Whether the navigation bar is visible for this page. |
 | `NavigationPage.HasBackButton` | `bool` | `true` | Whether the back button is shown for this page. |
@@ -65,7 +65,7 @@ These properties can be set on individual `Page` instances to customize their ap
 
 ### BarLayoutBehavior values
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
 | `Inset` | The navigation bar pushes page content down. This is the default behavior. |
 | `Overlay` | The navigation bar floats over the page content without affecting its layout. |
@@ -74,7 +74,7 @@ These properties can be set on individual `Page` instances to customize their ap
 
 Navigation methods that change the visible page are asynchronous and return `Task`. Those methods have an overload that accepts an `IPageTransition` parameter to override the default transition. `InsertPage` and `RemovePage` modify the stack without animation and return `void`.
 
-| Method | Description |
+| Method | 说明 |
 | --- | --- |
 | `PushAsync(Page)` | Pushes a new page onto the navigation stack. |
 | `PopAsync()` | Removes the current page from the stack and returns it. |
@@ -86,7 +86,7 @@ Navigation methods that change the visible page are asynchronous and return `Tas
 
 ### Modal navigation
 
-| Method | Description |
+| Method | 说明 |
 | --- | --- |
 | `PushModalAsync(Page)` | Presents a page as a modal overlay. |
 | `PopModalAsync()` | Dismisses the current modal and returns it. |
@@ -94,16 +94,16 @@ Navigation methods that change the visible page are asynchronous and return `Tas
 
 ### Stack properties
 
-| Property | Description |
+| Property | 说明 |
 | --- | --- |
 | `NavigationStack` | Read-only list of pages currently on the navigation stack. |
 | `ModalStack` | Read-only list of pages currently presented as modals. |
 | `StackDepth` | The number of pages on the navigation stack. |
 | `CanGoBack` | Returns `true` when there is more than one page on the stack. |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 | --- | --- |
 | `Pushed` | Raised after a page is pushed onto the stack. |
 | `Popped` | Raised after a page is popped from the stack. |
@@ -423,7 +423,7 @@ Disable the swipe-to-go-back gesture globally or check whether it is enabled:
 </NavigationPage>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentPage](/controls/navigation/contentpage)
 - [TabbedPage](/controls/navigation/tabbedpage)

@@ -100,7 +100,7 @@ To access a property of a parent's `DataContext` it will be necessary to cast it
 _Avalonia UI_ also supports WPF/UWP's `RelativeSource` syntax which does something similar, but is _not_ the same. `RelativeSource` works on the _visual_ tree whereas the syntax given here works on the _logical_ tree.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.
 - [Compiled Bindings](/docs/data-binding/compiled-bindings): Type-safe bindings with compile-time validation.

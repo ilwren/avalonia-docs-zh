@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Optional&lt;T&gt; Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Optional.cs">Optional.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Optional.cs">Optional.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public struct Optional<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Optional&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Optional&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;Optional&lt;&gt;&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;Optional&lt;&gt;&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This struct is similar to [Nullable&lt;T&gt;](xref:System.Nullable%601) except it also accepts reference types:
 note that null is a valid value for reference types. It is also similar to
@@ -73,9 +73,9 @@ To create a new optional value you can:
 conversion from `T`
 - For an missing value, use [Avalonia.Data.Optional&lt;T&gt;.Empty](xref:Avalonia.Data.Optional%601.Empty) or simply `default`
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Optional&lt;T&gt;](#uid-e4ea874621) | Initializes a new instance of the [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601) struct with value. |
 
@@ -83,7 +83,7 @@ conversion from `T`
 
 <span id="uid-e4ea874621"></span>
 
-### Optional&lt;T&gt; Constructor
+### Optional&lt;T&gt; 构造函数 {#optionallttgt-constructor}
 
 Initializes a new instance of the [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601) struct with value.
 
@@ -91,45 +91,45 @@ Initializes a new instance of the [Avalonia.Data.Optional&lt;T&gt;](xref:Avaloni
 public Optional<T>(T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` T
 
-The value.
+该值。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-daec08aaea) | No summary available. |
-| [GetHashCode](#uid-d44c766616) | No summary available. |
+| [Equals（2 个重载）](#uid-daec08aaea) | 暂无摘要。 |
+| [GetHashCode](#uid-d44c766616) | 暂无摘要。 |
 | [GetValueOrDefault (3 overloads)](#uid-318fde8c7e) | Gets the value if present, otherwise the default value. |
 | [ToObject](#uid-425d9af8f7) | Casts the value (if any) to an [object](xref:System.Object). |
-| [ToString](#uid-b1080f8c8b) | No summary available. |
+| [ToString](#uid-b1080f8c8b) | 暂无摘要。 |
 
 <span id="uid-daec08aaea"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ee2ccbf1e8"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Data.Optional<T><T> other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -140,18 +140,18 @@ bool
 
 <span id="uid-5de262a61b"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -162,13 +162,13 @@ bool
 
 <span id="uid-d44c766616"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -183,7 +183,7 @@ int
 
 <span id="uid-07601d6570"></span>
 
-#### GetValueOrDefault Method
+#### GetValueOrDefault 方法 {#getvalueordefault-method}
 
 Gets the value if present, otherwise the default value.
 
@@ -191,11 +191,11 @@ Gets the value if present, otherwise the default value.
 public TResult GetValueOrDefault<TResult>()
 ```
 
-##### Returns
+##### 返回值 {#returns-3}
 
 T
 
-The value.
+该值。
 
 
 </section>
@@ -204,7 +204,7 @@ The value.
 
 <span id="uid-5710a5acf3"></span>
 
-#### GetValueOrDefault Method
+#### GetValueOrDefault 方法 {#getvalueordefault-method-1}
 
 Gets the value if present, otherwise a default value.
 
@@ -212,18 +212,18 @@ Gets the value if present, otherwise a default value.
 public T GetValueOrDefault(T defaultValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `defaultValue` T
 
 The default value.
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 T
 
-The value.
+该值。
 
 
 </section>
@@ -232,13 +232,13 @@ The value.
 
 <span id="uid-860fb12a64"></span>
 
-#### GetValueOrDefault Method
+#### GetValueOrDefault 方法 {#getvalueordefault-method-2}
 
 ```csharp
 public TResult GetValueOrDefault<TResult>(TResult defaultValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `defaultValue` TResult
 
@@ -248,7 +248,7 @@ public TResult GetValueOrDefault<TResult>(TResult defaultValue)
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 TResult
 
@@ -259,7 +259,7 @@ TResult
 
 <span id="uid-425d9af8f7"></span>
 
-### ToObject Method
+### ToObject 方法 {#toobject-method}
 
 Casts the value (if any) to an [object](xref:System.Object).
 
@@ -267,7 +267,7 @@ Casts the value (if any) to an [object](xref:System.Object).
 public Avalonia.Data.Optional<T><object> ToObject()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 Avalonia.Data.Optional&lt;T&gt;&lt;object&gt;
 
@@ -280,22 +280,22 @@ The cast optional value.
 
 <span id="uid-b1080f8c8b"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-7}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Empty](#uid-0b3429dc46) | Returns an [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601) without a value. |
 | [HasValue](#uid-1727d4bf92) | Gets a value indicating whether a value is present. |
@@ -305,7 +305,7 @@ string
 
 <span id="uid-0b3429dc46"></span>
 
-### Empty Property
+### Empty 属性 {#empty-property}
 
 Returns an [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601) without a value.
 
@@ -319,7 +319,7 @@ public Avalonia.Data.Optional<T><T> Empty { get; set; }
 
 <span id="uid-1727d4bf92"></span>
 
-### HasValue Property
+### HasValue 属性 {#hasvalue-property}
 
 Gets a value indicating whether a value is present.
 
@@ -333,7 +333,7 @@ public bool HasValue { get; set; }
 
 <span id="uid-a37ba8c329"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
 Gets the value.
 
@@ -341,7 +341,7 @@ Gets the value.
 public T Value { get; set; }
 ```
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [\[Avalonia.Data.Optional&amp;lt;T&amp;gt;.HasValue\](xref:Avalonia.Data.Optional%601.HasValue) is false.](xref:System.InvalidOperationException)
 

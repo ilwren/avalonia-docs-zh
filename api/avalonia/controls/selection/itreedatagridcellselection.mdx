@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITreeDataGridCellSelection Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -48,7 +48,7 @@ public interface ITreeDataGridCellSelection
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;](xref:Avalonia.Controls.Selection.TreeDataGridCellSelectionModel%601) is generic, but the
 [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) and its automation peers need non-generic access to the cell
@@ -58,9 +58,9 @@ expose their selection to UI Automation clients such as screen readers.
 This interface is experimental: it is exposed to allow custom selection models to be
 implemented, but it may be changed or removed in a future release.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsSelected](#uid-38c155fe67) | Determines whether the specified cell is selected. |
 
@@ -68,7 +68,7 @@ implemented, but it may be changed or removed in a future release.
 
 <span id="uid-38c155fe67"></span>
 
-### IsSelected Method
+### IsSelected 方法 {#isselected-method}
 
 Determines whether the specified cell is selected.
 
@@ -76,14 +76,14 @@ Determines whether the specified cell is selected.
 public bool IsSelected(Avalonia.Controls.CellIndex index)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `index` [Avalonia.Controls.CellIndex](xref:Avalonia.Controls.CellIndex)
 
 The index of the cell.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -92,9 +92,9 @@ true if the cell is selected; otherwise false.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SelectedIndex](#uid-c3960ed8e5) | Gets or sets the index of the selected cell. Setting this value clears the existing selection and selects the single specified cell. |
 | [SelectedIndexes](#uid-ca594e8363) | Gets the indexes of the selected cells. |
@@ -103,7 +103,7 @@ true if the cell is selected; otherwise false.
 
 <span id="uid-c3960ed8e5"></span>
 
-### SelectedIndex Property
+### SelectedIndex 属性 {#selectedindex-property}
 
 Gets or sets the index of the selected cell. Setting this value clears the existing
 selection and selects the single specified cell.
@@ -118,7 +118,7 @@ public Avalonia.Controls.CellIndex SelectedIndex { get; set; }
 
 <span id="uid-ca594e8363"></span>
 
-### SelectedIndexes Property
+### SelectedIndexes 属性 {#selectedindexes-property}
 
 Gets the indexes of the selected cells.
 

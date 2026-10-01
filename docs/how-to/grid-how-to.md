@@ -327,7 +327,7 @@ Set `ShowGridLines="True"` on your `Grid` to visualize row and column boundaries
 
 Remember to remove `ShowGridLines` before shipping your application, as it is intended only as a development aid.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Grid control reference](/controls/layout/panels/grid)
 - [Layout overview](/docs/layout)

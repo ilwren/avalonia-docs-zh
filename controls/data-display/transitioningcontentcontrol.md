@@ -16,7 +16,7 @@ A common use case is building an image slideshow, but `TransitioningContentContr
 
 You will probably use these properties most often:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Content` | The content to display in the control. |
 | `ContentTemplate` | A `DataTemplate` used to display the content. |
@@ -27,7 +27,7 @@ You will probably use these properties most often:
 
 Avalonia ships with several page transitions you can apply to `TransitioningContentControl`:
 
-| Transition | Description |
+| Transition | 说明 |
 |---|---|
 | `CrossFade` | Fades out the old content while fading in the new content simultaneously. |
 | `PageSlide` | Slides content in from a given direction. Supports `Horizontal` and `Vertical` orientation. |
@@ -113,7 +113,7 @@ Set `PageTransition` to null if you want content to switch instantly with no ani
 
 For a complete walkthrough, see [How to set up basic navigation](../../docs/how-to/navigation-how-to).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentControl](/controls/data-display/contentcontrol)
 - [Setting page transitions](../../docs/graphics-animation/page-transitions)

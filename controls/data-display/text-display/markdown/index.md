@@ -14,7 +14,7 @@ The `Markdown` control renders Markdown-formatted text in Avalonia applications.
 This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
 :::
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `Avalonia.Controls.Markdown` NuGet package by running `dotnet add package`.
 
@@ -171,9 +171,9 @@ The streaming engine runs Markdown parsing on a background thread, diffs the AST
 
 ## API overview
 
-### Properties
+### 属性 {#properties}
 
-| Property           | Type                        | Description                                              |
+| Property           | Type                        | 说明                                              |
 |--------------------|-----------------------------|----------------------------------------------------------|
 | Text               | string?                     | Markdown text to render.                                 |
 | SelectionBrush     | IBrush?                     | Brush for selection highlight.                           |
@@ -182,9 +182,9 @@ The streaming engine runs Markdown parsing on a background thread, diffs the AST
 | CanCopy            | bool                        | Read-only. Whether the Copy command can be executed.     |
 | AutoScrollToEnd    | bool                        | Keeps the viewport scrolled to the bottom during streaming. |
 
-### Methods
+### 方法 {#methods}
 
-| Method                            | Description                                                        |
+| Method                            | 说明                                                        |
 |-----------------------------------|--------------------------------------------------------------------|
 | Copy()                            | Copies the current selection to the clipboard.                     |
 | SelectAll()                       | Selects all content.                                               |
@@ -193,9 +193,9 @@ The streaming engine runs Markdown parsing on a background thread, diffs the AST
 | BeginStreaming()                   | Starts a `MarkdownStreamingSession` for incremental appending.     |
 | AppendText(string, TimeSpan?)     | Convenience method that creates or reuses a streaming session.     |
 
-### Events
+### 事件 {#events}
 
-| Event                | Description                                          |
+| Event                | 说明                                          |
 |----------------------|------------------------------------------------------|
 | CopyingToClipboard   | Raised before selection is copied to the clipboard. Can be handled to prevent the copy. |
 | SelectionChanged     | Raised when the text selection changes.              |
@@ -324,7 +324,7 @@ Add the resources by referencing the shipped `Default.axaml` theme via a `StyleI
 </Application.Styles>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Markdown styling](/controls/data-display/text-display/markdown/markdown-styling)
 - [Image loader](/controls/data-display/text-display/markdown/imageloader)

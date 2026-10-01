@@ -89,7 +89,7 @@ In WPF, you would typically apply margins to each child element to achieve the s
 
 Avalonia uses `UseLayoutRounding` (same as WPF) to snap layout measurements to pixel boundaries. This helps prevent blurry rendering caused by sub-pixel positioning.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Layout](/docs/layout): Avalonia layout system overview.
 - [Positioning Controls](/docs/layout/positioning-controls): Margins, alignment, and positioning.

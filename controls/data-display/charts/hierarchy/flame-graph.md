@@ -68,14 +68,14 @@ public ObservableCollection<FlameNode> StackTraceData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Root collection for the flame graph. | `null` |
 | `ValuePath` | Path to the value that controls rectangle width. | `null` |
 | `LabelPath` | Path to the item label. | `null` |
 | `ChildrenPath` | Path to the child collection. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Treemap chart](/controls/data-display/charts/hierarchy/treemap-chart)
 - [Flow chart](/controls/data-display/charts/hierarchy/flow-chart)

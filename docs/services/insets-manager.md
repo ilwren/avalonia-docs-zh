@@ -21,7 +21,7 @@ This service is implemented on mobile and browser backends. For desktop window d
 Starting with Avalonia 11.1, any Avalonia app will automatically adjust its root view accordingly to the inset values. This behavior can be disabled by setting `TopLevel.AutoSafeAreaPadding="False"` attached property value on the root view.
 :::
 
-## Properties
+## 属性 {#properties}
 
 ### IsSystemBarVisible
 Gets or sets a value indicating whether the system bars are visible. Returns null if the platform doesn't support showing or hiding system bars.
@@ -51,7 +51,7 @@ Gets or sets the color of the platform's system bars. Returns null if the platfo
 Color? SystemBarColor { get; set; }
 ```
 
-## Events
+## 事件 {#events}
 
 ### SafeAreaChanged
 Occurs when the safe area for the current window changes. This can happen when system bars are shown or hidden, or when the window's size or orientation changes.
@@ -94,7 +94,7 @@ The system bar has a dark background and a light foreground.
 
 \* - only mobile Chromium browsers support IInsetsManager API.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Input Pane](/docs/services/input-pane): Software keyboard state and boundaries.
 - [TopLevel](/docs/fundamentals/top-level): Accessing platform services from controls.

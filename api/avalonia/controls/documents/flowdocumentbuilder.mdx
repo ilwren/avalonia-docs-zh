@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FlowDocumentBuilder Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,13 +51,13 @@ public class FlowDocumentBuilder
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FlowDocumentBuilder
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FlowDocumentBuilder
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AddBold](#uid-cfc17574c3) | Adds bold text to the current paragraph. |
 | [AddHyperlink](#uid-4cf5e990b3) | Adds a hyperlink to the current paragraph. |
@@ -65,7 +65,7 @@ public class FlowDocumentBuilder
 | [AddItalic](#uid-aceba1bdc3) | Adds italic text to the current paragraph. |
 | [AddListItem (2 overloads)](#uid-a5742234e0) | Adds a new empty list item to the current list. |
 | [AddParagraph (3 overloads)](#uid-fe4723b0ad) | Adds a new empty paragraph. |
-| [AddSection](#uid-e919d305dc) | No summary available. |
+| [AddSection](#uid-e919d305dc) | 暂无摘要。 |
 | [AddTableCell](#uid-bd686955f5) | Adds a table cell with the specified text. |
 | [AddText](#uid-5214197cca) | Adds text to the current paragraph. |
 | [AddUnderline](#uid-efa8fcf96b) | Adds underlined text to the current paragraph. |
@@ -77,7 +77,7 @@ public class FlowDocumentBuilder
 | [EndTableRow](#uid-8f2585dc88) | Ends the current table row. |
 | [GetDocument](#uid-dbb89b8626) | Gets the document without initializing its [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument). |
 | [SetTableCellBackground](#uid-a6644a3ed0) | Sets the background color of the current table cell. |
-| [SetTableColumns](#uid-8c0b8946a9) | No summary available. |
+| [SetTableColumns](#uid-8c0b8946a9) | 暂无摘要。 |
 | [StartList](#uid-5ba9a38442) | Starts a new list with the specified marker style. |
 | [StartNestedList](#uid-5214604bef) | Starts a nested list inside the current list item. |
 | [StartTable](#uid-0577a50a1f) | Starts a new table. |
@@ -88,7 +88,7 @@ public class FlowDocumentBuilder
 
 <span id="uid-cfc17574c3"></span>
 
-### AddBold Method
+### AddBold 方法 {#addbold-method}
 
 Adds bold text to the current paragraph.
 
@@ -96,12 +96,12 @@ Adds bold text to the current paragraph.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddBold(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -112,7 +112,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddBold(string text)
 
 <span id="uid-4cf5e990b3"></span>
 
-### AddHyperlink Method
+### AddHyperlink 方法 {#addhyperlink-method}
 
 Adds a hyperlink to the current paragraph.
 
@@ -120,7 +120,7 @@ Adds a hyperlink to the current paragraph.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddHyperlink(string text, Uri navigateUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `text` string
 
@@ -128,7 +128,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddHyperlink(string text,
 `navigateUri` Uri
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -139,7 +139,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddHyperlink(string text,
 
 <span id="uid-d5f9c27ab1"></span>
 
-### AddInline Method
+### AddInline 方法 {#addinline-method}
 
 Adds an inline element to the current paragraph.
 
@@ -147,12 +147,12 @@ Adds an inline element to the current paragraph.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddInline(Avalonia.Controls.Documents.RichInline inline)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `inline` [Avalonia.Controls.Documents.RichInline](xref:Avalonia.Controls.Documents.RichInline)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -163,7 +163,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddInline(Avalonia.Contro
 
 <span id="uid-aceba1bdc3"></span>
 
-### AddItalic Method
+### AddItalic 方法 {#additalic-method}
 
 Adds italic text to the current paragraph.
 
@@ -171,12 +171,12 @@ Adds italic text to the current paragraph.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddItalic(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -191,7 +191,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddItalic(string text)
 
 <span id="uid-f02d5fbad5"></span>
 
-#### AddListItem Method
+#### AddListItem 方法 {#addlistitem-method}
 
 Adds a new empty list item to the current list.
 
@@ -199,7 +199,7 @@ Adds a new empty list item to the current list.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddListItem()
 ```
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -210,7 +210,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddListItem()
 
 <span id="uid-db4493ae33"></span>
 
-#### AddListItem Method
+#### AddListItem 方法 {#addlistitem-method-1}
 
 Adds a new list item to the current list.
 
@@ -218,12 +218,12 @@ Adds a new list item to the current list.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddListItem(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `text` string
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -238,7 +238,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddListItem(string text)
 
 <span id="uid-91874afc10"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method}
 
 Adds a new empty paragraph.
 
@@ -246,7 +246,7 @@ Adds a new empty paragraph.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddParagraph()
 ```
 
-##### Returns
+##### 返回值 {#returns-6}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -257,7 +257,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddParagraph()
 
 <span id="uid-774807fcf5"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method-1}
 
 Adds a paragraph with the specified inline elements.
 
@@ -265,12 +265,12 @@ Adds a paragraph with the specified inline elements.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddParagraph(Avalonia.Controls.Documents.RichInline[] inlines)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `inlines` [Avalonia.Controls.Documents.RichInline](xref:Avalonia.Controls.Documents.RichInline)[]
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -281,7 +281,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddParagraph(Avalonia.Con
 
 <span id="uid-1f284c8604"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method-2}
 
 Adds a new paragraph with the specified text.
 
@@ -289,12 +289,12 @@ Adds a new paragraph with the specified text.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddParagraph(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `text` string
 
 
-##### Returns
+##### 返回值 {#returns-8}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -305,18 +305,18 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddParagraph(string text)
 
 <span id="uid-e919d305dc"></span>
 
-### AddSection Method
+### AddSection 方法 {#addsection-method}
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddSection(Action<Avalonia.Controls.Documents.SectionBuilder> configure)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `configure` Action&lt;[Avalonia.Controls.Documents.SectionBuilder](xref:Avalonia.Controls.Documents.SectionBuilder)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -327,7 +327,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddSection(Action<Avaloni
 
 <span id="uid-bd686955f5"></span>
 
-### AddTableCell Method
+### AddTableCell 方法 {#addtablecell-method}
 
 Adds a table cell with the specified text.
 
@@ -335,12 +335,12 @@ Adds a table cell with the specified text.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddTableCell(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -351,7 +351,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddTableCell(string text)
 
 <span id="uid-5214197cca"></span>
 
-### AddText Method
+### AddText 方法 {#addtext-method}
 
 Adds text to the current paragraph.
 
@@ -359,12 +359,12 @@ Adds text to the current paragraph.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddText(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -375,7 +375,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddText(string text)
 
 <span id="uid-efa8fcf96b"></span>
 
-### AddUnderline Method
+### AddUnderline 方法 {#addunderline-method}
 
 Adds underlined text to the current paragraph.
 
@@ -383,12 +383,12 @@ Adds underlined text to the current paragraph.
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddUnderline(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns-12}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -399,7 +399,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddUnderline(string text)
 
 <span id="uid-185ce01b88"></span>
 
-### Build Method
+### Build 方法 {#build-method}
 
 Builds the document and creates its backing store, so the content the builder
 staged is live when the caller receives it.
@@ -408,7 +408,7 @@ staged is live when the caller receives it.
 public Avalonia.Controls.Documents.FlowDocument Build()
 ```
 
-#### Returns
+#### 返回值 {#returns-13}
 
 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument)
 
@@ -421,7 +421,7 @@ The built document.
 
 <span id="uid-8d8952c156"></span>
 
-### Create Method
+### Create 方法 {#create-method}
 
 Creates a new [FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder).
 
@@ -429,7 +429,7 @@ Creates a new [FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumen
 public Avalonia.Controls.Documents.FlowDocumentBuilder Create()
 ```
 
-#### Returns
+#### 返回值 {#returns-14}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -440,7 +440,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder Create()
 
 <span id="uid-bd2c9b4570"></span>
 
-### EndList Method
+### EndList 方法 {#endlist-method}
 
 Ends the current list and restores the parent list if nested.
 
@@ -448,7 +448,7 @@ Ends the current list and restores the parent list if nested.
 public Avalonia.Controls.Documents.FlowDocumentBuilder EndList()
 ```
 
-#### Returns
+#### 返回值 {#returns-15}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -459,7 +459,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder EndList()
 
 <span id="uid-09d350cd63"></span>
 
-### EndTable Method
+### EndTable 方法 {#endtable-method}
 
 Ends the current table.
 
@@ -467,7 +467,7 @@ Ends the current table.
 public Avalonia.Controls.Documents.FlowDocumentBuilder EndTable()
 ```
 
-#### Returns
+#### 返回值 {#returns-16}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -478,7 +478,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder EndTable()
 
 <span id="uid-d371a092cd"></span>
 
-### EndTableCell Method
+### EndTableCell 方法 {#endtablecell-method}
 
 Ends the current table cell.
 
@@ -486,7 +486,7 @@ Ends the current table cell.
 public Avalonia.Controls.Documents.FlowDocumentBuilder EndTableCell()
 ```
 
-#### Returns
+#### 返回值 {#returns-17}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -497,7 +497,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder EndTableCell()
 
 <span id="uid-8f2585dc88"></span>
 
-### EndTableRow Method
+### EndTableRow 方法 {#endtablerow-method}
 
 Ends the current table row.
 
@@ -505,7 +505,7 @@ Ends the current table row.
 public Avalonia.Controls.Documents.FlowDocumentBuilder EndTableRow()
 ```
 
-#### Returns
+#### 返回值 {#returns-18}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -516,7 +516,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder EndTableRow()
 
 <span id="uid-dbb89b8626"></span>
 
-### GetDocument Method
+### GetDocument 方法 {#getdocument-method}
 
 Gets the document without initializing its [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument).
 
@@ -524,14 +524,14 @@ Gets the document without initializing its [Avalonia.Controls.Documents.TextMode
 public Avalonia.Controls.Documents.FlowDocument GetDocument()
 ```
 
-#### Returns
+#### 返回值 {#returns-19}
 
 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument)
 
 The document under construction.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Call [Avalonia.Controls.Documents.FlowDocumentBuilder.Build](xref:Avalonia.Controls.Documents.FlowDocumentBuilder.Build). A document handed out here carries no text model, so
 reading or serializing it sees an empty document until something initializes one.
@@ -542,7 +542,7 @@ reading or serializing it sees an empty document until something initializes one
 
 <span id="uid-a6644a3ed0"></span>
 
-### SetTableCellBackground Method
+### SetTableCellBackground 方法 {#settablecellbackground-method}
 
 Sets the background color of the current table cell.
 
@@ -550,12 +550,12 @@ Sets the background color of the current table cell.
 public Avalonia.Controls.Documents.FlowDocumentBuilder SetTableCellBackground(Avalonia.Media.Color color)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `color` [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
 
-#### Returns
+#### 返回值 {#returns-20}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -566,18 +566,18 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder SetTableCellBackground(Av
 
 <span id="uid-8c0b8946a9"></span>
 
-### SetTableColumns Method
+### SetTableColumns 方法 {#settablecolumns-method}
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder SetTableColumns(System.Collections.Generic.IReadOnlyList<double> widths)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `widths` System.Collections.Generic.IReadOnlyList&lt;double&gt;
 
 
-#### Returns
+#### 返回值 {#returns-21}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -588,7 +588,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder SetTableColumns(System.Co
 
 <span id="uid-5ba9a38442"></span>
 
-### StartList Method
+### StartList 方法 {#startlist-method}
 
 Starts a new list with the specified marker style.
 
@@ -596,7 +596,7 @@ Starts a new list with the specified marker style.
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartList(Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle markerStyle, int startIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `markerStyle` [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle)
 
@@ -604,7 +604,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartList(Avalonia.Contro
 `startIndex` int
 
 
-#### Returns
+#### 返回值 {#returns-22}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -615,7 +615,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartList(Avalonia.Contro
 
 <span id="uid-5214604bef"></span>
 
-### StartNestedList Method
+### StartNestedList 方法 {#startnestedlist-method}
 
 Starts a nested list inside the current list item.
 
@@ -623,7 +623,7 @@ Starts a nested list inside the current list item.
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartNestedList(Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle markerStyle, int startIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `markerStyle` [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle)
 
@@ -631,7 +631,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartNestedList(Avalonia.
 `startIndex` int
 
 
-#### Returns
+#### 返回值 {#returns-23}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -642,7 +642,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartNestedList(Avalonia.
 
 <span id="uid-0577a50a1f"></span>
 
-### StartTable Method
+### StartTable 方法 {#starttable-method}
 
 Starts a new table.
 
@@ -650,7 +650,7 @@ Starts a new table.
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartTable()
 ```
 
-#### Returns
+#### 返回值 {#returns-24}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -661,7 +661,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartTable()
 
 <span id="uid-7e80fac71c"></span>
 
-### StartTableCell Method
+### StartTableCell 方法 {#starttablecell-method}
 
 Starts a new table cell.
 
@@ -669,7 +669,7 @@ Starts a new table cell.
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartTableCell()
 ```
 
-#### Returns
+#### 返回值 {#returns-25}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 
@@ -680,7 +680,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartTableCell()
 
 <span id="uid-11c2c85531"></span>
 
-### StartTableRow Method
+### StartTableRow 方法 {#starttablerow-method}
 
 Starts a new table row.
 
@@ -688,7 +688,7 @@ Starts a new table row.
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartTableRow()
 ```
 
-#### Returns
+#### 返回值 {#returns-26}
 
 [Avalonia.Controls.Documents.FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder)
 

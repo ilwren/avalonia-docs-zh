@@ -46,7 +46,7 @@ If your application relies on a missing or limited feature, consider these strat
 - **Feature detection at runtime**: Check whether a feature is available before using it and provide a graceful fallback.
 - **Contact the XPF team**: If a missing feature is critical to your application, reach out to the Avalonia team. Feature priority is often influenced by customer demand.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Known differences from WPF](/xpf/migration/known-differences)
 - [Release notes](/xpf/version-info/release-notes)

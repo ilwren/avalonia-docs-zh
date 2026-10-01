@@ -33,7 +33,7 @@ You will probably use these properties most often:
     <tr>
       <th width="147.33333333333331">Element</th>
       <th width="190">Property</th>
-      <th>Description</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
@@ -184,7 +184,7 @@ A menu icon can be displayed by placing an image or a path icon in the `<MenuIte
 For more detailed guidance on how to add icons to your menus, see [Adding icons](/docs/graphics-animation/adding-icons).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Menu API reference](/api/avalonia/controls/menu)
 - [`Menu.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Menu.cs)

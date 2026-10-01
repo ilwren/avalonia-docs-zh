@@ -64,7 +64,7 @@ private static ObservableCollection<HeatmapItem> CreateHeatmapData()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The chart title. | `null` |
 | `ItemsSource` | The collection representing the matrix data. | `null` |

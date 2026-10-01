@@ -107,7 +107,7 @@ Set attached properties using the `OwnerType.PropertyName` syntax:
 - [Markup Extensions](/docs/xaml/markup-extensions): Reference for `{Binding}`, `{StaticResource}`, `{DynamicResource}`, `{TemplateBinding}`, and others.
 - [Type Converters](/docs/xaml/type-converters): How string values in XAML are converted to .NET types.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml): XAML basics and file structure.
 - [Data Binding](/docs/data-binding/introduction-to-data-binding): Data binding reference.

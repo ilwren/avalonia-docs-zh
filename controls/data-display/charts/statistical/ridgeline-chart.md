@@ -43,14 +43,14 @@ public ObservableCollection<CurvePoint> Series2024 { get; } = new() { new(0, 3),
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of `AreaSeries` distributions. | Empty collection |
 | `Overlap` | Overlap factor between series. | `0.5` |
 | `SeriesHeight` | Target height for each series band. | `50.0` |
 | `CurveType` | Curve interpolation type. | `Spline` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Area chart](/controls/data-display/charts/cartesian/area-chart)
 - [Density plot chart](/controls/data-display/charts/statistical/density-plot-chart)

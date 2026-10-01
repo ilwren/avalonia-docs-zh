@@ -146,7 +146,7 @@ cd my-app
 ./my-awesome-app
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Parcel setup](/tools/parcel/setup)
 - [Parcel configuration reference](/tools/parcel/configuration-reference)

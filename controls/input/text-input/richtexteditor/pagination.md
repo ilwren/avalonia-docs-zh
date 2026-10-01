@@ -154,7 +154,7 @@ Footnotes take part in the fill. A line carrying anchors reserves its notes' hei
 
 Headers or footers that outgrow their margins shorten the page's body. See [Headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PDF export](/controls/input/text-input/richtexteditor/pdf-export) - the same policy, written to a file
 - [Headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers) - page bands and the distance that shortens a page

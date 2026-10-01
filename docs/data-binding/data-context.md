@@ -104,7 +104,7 @@ For a more detailed guide about using the design-time data context, see [XAML pr
 Further discussion of data binding requires a background in the MVVM pattern. For an introduction to the concepts of the MVVM pattern, see [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Introduction to data binding](/docs/data-binding/introduction-to-data-binding): Data binding overview.
 - [Data binding syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.

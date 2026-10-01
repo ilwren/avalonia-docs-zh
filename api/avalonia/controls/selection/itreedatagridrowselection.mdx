@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITreeDataGridRowSelection Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -48,7 +48,7 @@ public interface ITreeDataGridRowSelection
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601) is generic, but the
 [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) and its automation peers need non-generic access to the row
@@ -59,9 +59,9 @@ row drag/drop.
 This interface is experimental: it is exposed to allow custom selection models to be
 implemented, but it may be changed or removed in a future release.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Deselect](#uid-3f37378362) | Removes the item at the specified index from the selection. |
 | [IsSelected](#uid-72144d7551) | Determines whether the item at the specified index is selected. |
@@ -71,7 +71,7 @@ implemented, but it may be changed or removed in a future release.
 
 <span id="uid-3f37378362"></span>
 
-### Deselect Method
+### Deselect 方法 {#deselect-method}
 
 Removes the item at the specified index from the selection.
 
@@ -79,7 +79,7 @@ Removes the item at the specified index from the selection.
 public void Deselect(Avalonia.Controls.IndexPath index)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `index` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
@@ -92,7 +92,7 @@ The index of the item to deselect.
 
 <span id="uid-72144d7551"></span>
 
-### IsSelected Method
+### IsSelected 方法 {#isselected-method}
 
 Determines whether the item at the specified index is selected.
 
@@ -100,14 +100,14 @@ Determines whether the item at the specified index is selected.
 public bool IsSelected(Avalonia.Controls.IndexPath index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `index` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 The index of the item in the source data.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -120,7 +120,7 @@ true if the item is selected; otherwise false.
 
 <span id="uid-72e32f61c2"></span>
 
-### Select Method
+### Select 方法 {#select-method}
 
 Adds the item at the specified index to the selection.
 
@@ -128,7 +128,7 @@ Adds the item at the specified index to the selection.
 public void Select(Avalonia.Controls.IndexPath index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `index` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
@@ -137,9 +137,9 @@ The index of the item to select.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](#uid-2087042a8b) | Gets the number of selected items. |
 | [SelectedIndex](#uid-ccce568fd0) | Gets or sets the selected index. Setting this value clears the existing selection and selects the single specified item. |
@@ -150,7 +150,7 @@ The index of the item to select.
 
 <span id="uid-2087042a8b"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 Gets the number of selected items.
 
@@ -164,7 +164,7 @@ public int Count { get; set; }
 
 <span id="uid-ccce568fd0"></span>
 
-### SelectedIndex Property
+### SelectedIndex 属性 {#selectedindex-property}
 
 Gets or sets the selected index. Setting this value clears the existing selection and
 selects the single specified item.
@@ -179,7 +179,7 @@ public Avalonia.Controls.IndexPath SelectedIndex { get; set; }
 
 <span id="uid-56ddc7f705"></span>
 
-### SelectedIndexes Property
+### SelectedIndexes 属性 {#selectedindexes-property}
 
 Gets the indexes of the selected items.
 
@@ -193,7 +193,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> Sel
 
 <span id="uid-c3c0a78704"></span>
 
-### SelectedItems Property
+### SelectedItems 属性 {#selecteditems-property}
 
 Gets the selected items as an untyped list.
 

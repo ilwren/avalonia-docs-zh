@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IBlockPropertyAction Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,18 +50,18 @@ public interface IBlockPropertyAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ieditoraction">IEditorAction</a>, <a href="ipropertyaction">IPropertyAction</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ieditoraction">IEditorAction</a>, <a href="ipropertyaction">IPropertyAction</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface provides object-based access to block property values,
 allowing UI controls to work with block actions without knowing the specific type.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HasConsistentValue](#uid-3fdc44a1ef) | Gets whether all affected blocks have the same value for this property. |
 
@@ -69,7 +69,7 @@ allowing UI controls to work with block actions without knowing the specific typ
 
 <span id="uid-3fdc44a1ef"></span>
 
-### HasConsistentValue Method
+### HasConsistentValue 方法 {#hasconsistentvalue-method}
 
 Gets whether all affected blocks have the same value for this property.
 
@@ -77,14 +77,14 @@ Gets whether all affected blocks have the same value for this property.
 public bool HasConsistentValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -92,7 +92,7 @@ True if all affected blocks have the same property value.
 False if blocks have different values (mixed state).
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 UI controls should show a mixed/indeterminate state when this returns false.
 For example, a [ComboBox](xref:Avalonia.Controls.ComboBox) might show "Mixed" placeholder text.

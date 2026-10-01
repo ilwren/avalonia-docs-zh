@@ -39,9 +39,9 @@ await using var stream = System.IO.File.Create("sales-chart.png");
 var result = await chart.ExportAsync(stream, width: 1200, height: 800);
 ```
 
-## Methods
+## 方法 {#methods}
 
-| Method | Description | Result |
+| Method | 说明 | Result |
 | :--- | :--- | :--- |
 | `ExportAsync(string path, int? width = null, int? height = null, double dpi = 96, CancellationToken cancellationToken = default)` | Exports to a file path. If the path has no extension, `.png` is appended. PNG and JPEG are supported for file export. | `ChartExportResult` |
 | `ExportAsync(Stream stream, int? width = null, int? height = null, double dpi = 96, CancellationToken cancellationToken = default)` | Exports a PNG image to a stream. | `ChartExportResult` |
@@ -49,7 +49,7 @@ var result = await chart.ExportAsync(stream, width: 1200, height: 800);
 
 ## Result and events
 
-| Member | Description |
+| Member | 说明 |
 | :--- | :--- |
 | `ChartExportResult.Succeeded` | `true` when export completed successfully. |
 | `ChartExportResult.Canceled` | `true` when export was canceled. |
@@ -64,7 +64,7 @@ var result = await chart.ExportAsync(stream, width: 1200, height: 800);
 - Cancellation returns a canceled `ChartExportResult` and does not raise `ExportFailed`.
 - Invalid paths, invalid dimensions, and stream errors return a failed `ChartExportResult` and raise `ExportFailed`.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Interactions](/controls/data-display/charts/shared-elements/interactions-chart)
 - [Legend](/controls/data-display/charts/shared-elements/legend-chart)

@@ -13,7 +13,7 @@ This is useful when you need resolution-independent icons or graphics that can s
 
 A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Avalonia provides four concrete drawing types:
 
-| Type | Purpose |
+| Type | 用途 |
 | :--- | :--- |
 | `GeometryDrawing` | Fills and/or strokes a `Geometry` shape |
 | `ImageDrawing` | Renders a bitmap image within a rectangular region |
@@ -24,7 +24,7 @@ A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Aval
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 | :--- | :--- | :--- |
 | `Drawing` | `Drawing` | The vector drawing content to render |
 | `Viewbox` | `Rect` | A rectangular region of the drawing to display, in device-independent pixels |
@@ -109,7 +109,7 @@ Use bitmap images (`Image.Source` with an asset path) when you have photographic
 - **Data binding.** You can bind `Brush`, `Geometry`, or `Pen` properties inside your drawings to view-model values, giving you fully dynamic vector graphics that respond to your application state.
 - **Accessibility.** `DrawingImage` does not expose text content to assistive technology on its own. If the graphic conveys meaning, set an accessible name or description on the parent `Image` control.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Image](/controls/media/image)
 - [PathIcon](/controls/media/pathicon)

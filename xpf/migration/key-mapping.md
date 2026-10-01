@@ -71,6 +71,6 @@ The problem with this technique is that often it's not known what the modifier s
 
 The currently focused control will be passed to handlers in the `XpfMapKeyEventArgs.Source` property. This property can be used to conditionally map keys based on the currently focused control.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia on MacOS](/docs/deployment/macos)

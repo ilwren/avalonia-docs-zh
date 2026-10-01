@@ -42,7 +42,7 @@ public double[] RevenueBands { get; } = [30, 60, 90, 100];
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | Primary value displayed by the bar. | `75.0` |
 | `Target` | Target marker value. | `85.0` |
@@ -53,7 +53,7 @@ public double[] RevenueBands { get; } = [30, 60, 90, 100];
 | `ValueBrush` | Brush for the main value bar. | `null` |
 | `TargetBrush` | Brush for the target marker. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [KPI card](/controls/data-display/charts/analytics/kpi-card)
 - [Linear gauge chart](/controls/data-display/charts/gauges/linear-gauge-chart)

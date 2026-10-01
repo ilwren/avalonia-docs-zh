@@ -100,7 +100,7 @@ To assign subscription seats to members of your organization, go to the [Avaloni
 
 See [Assigning seats](/tools/assigning-seats) for details.
 
-## Common issues
+## 常见问题 {#common-issues}
 
 **My application works on Windows but crashes on macOS/Linux. Where do I start?**
 

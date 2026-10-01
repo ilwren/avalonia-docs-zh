@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DataFormatKind Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataFormatKind.cs">DataFormatKind.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataFormatKind.cs">DataFormatKind.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public enum DataFormatKind
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> DataFormatKind
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> DataFormatKind
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Application](#uid-b535b0454c) | The data format is specific to the application. The exact format name used internally by Avalonia will vary depending on the platform. |
 | [InProcess](#uid-7471085f37) | The data format is only usable within the current process. It never crosses process or serialization boundaries. |
@@ -71,7 +71,7 @@ public enum DataFormatKind
 
 <span id="uid-b535b0454c"></span>
 
-### Application Field
+### Application 字段 {#application-field}
 
 The data format is specific to the application.
 The exact format name used internally by Avalonia will vary depending on the platform.
@@ -83,7 +83,7 @@ or [Avalonia.Input.DataFormat.CreateStringApplicationFormat(string)](xref:Avalon
 public Avalonia.Input.DataFormatKind Application
 ```
 
-#### See also
+#### 另请参阅 {#see-also}
 
 - [Avalonia.Input.DataFormat.CreateBytesApplicationFormat(string)](xref:Avalonia.Input.DataFormat.CreateBytesApplicationFormat%28System.String%29)
 - [Avalonia.Input.DataFormat.CreateStringApplicationFormat(string)](xref:Avalonia.Input.DataFormat.CreateStringApplicationFormat%28System.String%29)
@@ -94,7 +94,7 @@ public Avalonia.Input.DataFormatKind Application
 
 <span id="uid-7471085f37"></span>
 
-### InProcess Field
+### InProcess 字段 {#inprocess-field}
 
 The data format is only usable within the current process.
 It never crosses process or serialization boundaries.
@@ -105,7 +105,7 @@ Such a format is created using [Avalonia.Input.DataFormat.CreateInProcessFormat&
 public Avalonia.Input.DataFormatKind InProcess
 ```
 
-#### See also
+#### 另请参阅 {#see-also-1}
 
 - [Avalonia.Input.DataFormat.CreateInProcessFormat&lt;T&gt;(string)](xref:Avalonia.Input.DataFormat.CreateInProcessFormat%60%601%28System.String%29)
 
@@ -115,7 +115,7 @@ public Avalonia.Input.DataFormatKind InProcess
 
 <span id="uid-1eb8dd10d3"></span>
 
-### Platform Field
+### Platform 字段 {#platform-field}
 
 The data format is specific to the current platform.
 Any other application using the same identifier will be able to access it.
@@ -127,7 +127,7 @@ or [Avalonia.Input.DataFormat.CreateStringPlatformFormat(string)](xref:Avalonia.
 public Avalonia.Input.DataFormatKind Platform
 ```
 
-#### See also
+#### 另请参阅 {#see-also-2}
 
 - [Avalonia.Input.DataFormat.CreateBytesPlatformFormat(string)](xref:Avalonia.Input.DataFormat.CreateBytesPlatformFormat%28System.String%29)
 - [Avalonia.Input.DataFormat.CreateStringPlatformFormat(string)](xref:Avalonia.Input.DataFormat.CreateStringPlatformFormat%28System.String%29)
@@ -138,7 +138,7 @@ public Avalonia.Input.DataFormatKind Platform
 
 <span id="uid-da214f0421"></span>
 
-### Universal Field
+### Universal 字段 {#universal-field}
 
 The data format is cross-platform and supported directly by Avalonia.
 Such formats include [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) and [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File).

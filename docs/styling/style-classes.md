@@ -178,7 +178,7 @@ if (control.Classes.Contains("blue"))
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Pseudoclasses](/docs/styling/pseudoclasses)

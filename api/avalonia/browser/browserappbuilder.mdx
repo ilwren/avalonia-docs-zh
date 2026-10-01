@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BrowserAppBuilder Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Browser</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Browser</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Browser</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Browser</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Browser</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Browser</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Browser/Avalonia.Browser/BrowserAppBuilder.cs">BrowserAppBuilder.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Browser/Avalonia.Browser/BrowserAppBuilder.cs">BrowserAppBuilder.cs</a>
 </div>
 
 </div>
@@ -48,23 +48,23 @@ public class BrowserAppBuilder
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> BrowserAppBuilder
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> BrowserAppBuilder
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SetupBrowserAppAsync](#uid-c08431a003) | Loads avalonia javascript modules and configures browser backend. |
 | [StartBrowserAppAsync](#uid-74a424b928) | Configures browser backend, loads avalonia javascript modules and creates a single view lifetime from the passed parameter. |
-| [UseBrowser](#uid-9393c37a35) | No summary available. |
+| [UseBrowser](#uid-9393c37a35) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c08431a003"></span>
 
-### SetupBrowserAppAsync Method
+### SetupBrowserAppAsync 方法 {#setupbrowserappasync-method}
 
 Loads avalonia javascript modules and configures browser backend.
 
@@ -72,7 +72,7 @@ Loads avalonia javascript modules and configures browser backend.
 public System.Threading.Tasks.Task SetupBrowserAppAsync(Avalonia.AppBuilder builder, Avalonia.Browser.BrowserPlatformOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -84,12 +84,12 @@ Application builder.
 Browser backend specific options.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This method doesn't creates any avalonia views to be rendered. To do so create an [Avalonia.Browser.AvaloniaView](xref:Avalonia.Browser.AvaloniaView) object.
 Alternatively, you can call [Avalonia.Browser.BrowserAppBuilder.StartBrowserAppAsync(Avalonia.AppBuilder,string,Avalonia.Browser.BrowserPlatformOptions)](xref:Avalonia.Browser.BrowserAppBuilder.StartBrowserAppAsync%28Avalonia.AppBuilder%2CSystem.String%2CAvalonia.Browser.BrowserPlatformOptions%29) method instead of [Avalonia.Browser.BrowserAppBuilder.SetupBrowserAppAsync(Avalonia.AppBuilder,Avalonia.Browser.BrowserPlatformOptions)](xref:Avalonia.Browser.BrowserAppBuilder.SetupBrowserAppAsync%28Avalonia.AppBuilder%2CAvalonia.Browser.BrowserPlatformOptions%29).
@@ -100,7 +100,7 @@ Alternatively, you can call [Avalonia.Browser.BrowserAppBuilder.StartBrowserAppA
 
 <span id="uid-74a424b928"></span>
 
-### StartBrowserAppAsync Method
+### StartBrowserAppAsync 方法 {#startbrowserappasync-method}
 
 Configures browser backend, loads avalonia javascript modules and creates a single view lifetime from the passed parameter.
 
@@ -108,7 +108,7 @@ Configures browser backend, loads avalonia javascript modules and creates a sing
 public System.Threading.Tasks.Task StartBrowserAppAsync(Avalonia.AppBuilder builder, string mainDivId, Avalonia.Browser.BrowserPlatformOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -125,7 +125,7 @@ ID of the html element where avalonia content should be rendered.
 Browser backend specific options.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
@@ -136,18 +136,18 @@ System.Threading.Tasks.Task
 
 <span id="uid-9393c37a35"></span>
 
-### UseBrowser Method
+### UseBrowser 方法 {#usebrowser-method}
 
 ```csharp
 public Avalonia.AppBuilder UseBrowser(Avalonia.AppBuilder builder)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 

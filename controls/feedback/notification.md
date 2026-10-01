@@ -9,7 +9,7 @@ The [`WindowNotificationManager`](/api/avalonia/controls/notifications/windownot
 
 ## Useful properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Position` | `NotificationPosition` | Where notifications appear. Options: `TopLeft`, `TopCenter`, `TopRight`, `BottomLeft`, `BottomCenter`, `BottomRight`. Default: `TopRight`. |
 | `MaxItems` | `int` | Maximum number of notifications visible at one time. Default: `5`. |
@@ -18,7 +18,7 @@ The [`WindowNotificationManager`](/api/avalonia/controls/notifications/windownot
 
 The built-in `Notification` class exposes these properties:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Title` | `string` | The notification title text. |
 | `Message` | `string` | The notification body text. |
@@ -197,7 +197,7 @@ _notificationManager.Position = NotificationPosition.BottomCenter;
 
 The six available positions are:
 
-| Position | Description |
+| Position | 说明 |
 |---|---|
 | `TopLeft` | Top-left corner of the window. |
 | `TopCenter` | Top edge, centered horizontally. |
@@ -262,7 +262,7 @@ public class MyViewModel
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to show notifications and toasts](/docs/how-to/notifications-how-to)
 - [Popup](/controls/feedback/popup)

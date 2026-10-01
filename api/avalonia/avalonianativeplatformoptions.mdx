@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaNativePlatformOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Native</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Native</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Native</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Native</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Native/AvaloniaNativePlatformExtensions.cs">AvaloniaNativePlatformExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Native/AvaloniaNativePlatformExtensions.cs">AvaloniaNativePlatformExtensions.cs</a>
 </div>
 
 </div>
@@ -54,21 +54,21 @@ public class AvaloniaNativePlatformOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaNativePlatformOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaNativePlatformOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AvaloniaNativePlatformOptions](#uid-97a0d3f6fd) | No summary available. |
+| [AvaloniaNativePlatformOptions](#uid-97a0d3f6fd) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-97a0d3f6fd"></span>
 
-### AvaloniaNativePlatformOptions Constructor
+### AvaloniaNativePlatformOptions 构造函数 {#avalonianativeplatformoptions-constructor}
 
 ```csharp
 public AvaloniaNativePlatformOptions()
@@ -76,9 +76,9 @@ public AvaloniaNativePlatformOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AppSandboxEnabled](#uid-6d7dbd8e7b) | If you distribute your app in App Store - it should be with sandbox enabled. This parameter enables [Avalonia.Platform.Storage.IStorageItem.SaveBookmarkAsync](xref:Avalonia.Platform.Storage.IStorageItem.SaveBookmarkAsync) and related APIs, as well as wrapping all storage related calls in secure context. The default value is true. |
 | [AvaloniaNativeLibraryPath](#uid-b803078be8) | This property should be used in case you want to build Avalonia OSX native part by yourself and make your Avalonia app run with it. The default value is null. |
@@ -89,7 +89,7 @@ public AvaloniaNativePlatformOptions()
 
 <span id="uid-6d7dbd8e7b"></span>
 
-### AppSandboxEnabled Property
+### AppSandboxEnabled 属性 {#appsandboxenabled-property}
 
 If you distribute your app in App Store - it should be with sandbox enabled.
 This parameter enables [Avalonia.Platform.Storage.IStorageItem.SaveBookmarkAsync](xref:Avalonia.Platform.Storage.IStorageItem.SaveBookmarkAsync) and related APIs,
@@ -105,7 +105,7 @@ public bool AppSandboxEnabled { get; set; }
 
 <span id="uid-b803078be8"></span>
 
-### AvaloniaNativeLibraryPath Property
+### AvaloniaNativeLibraryPath 属性 {#avalonianativelibrarypath-property}
 
 This property should be used in case you want to build Avalonia OSX native part by yourself
 and make your Avalonia app run with it. The default value is null.
@@ -120,7 +120,7 @@ public string AvaloniaNativeLibraryPath { get; set; }
 
 <span id="uid-8d93333eba"></span>
 
-### OverlayPopups Property
+### OverlayPopups 属性 {#overlaypopups-property}
 
 Embeds popups to the window when set to true. The default value is false.
 
@@ -134,7 +134,7 @@ public bool OverlayPopups { get; set; }
 
 <span id="uid-f081327cee"></span>
 
-### RenderingMode Property
+### RenderingMode 属性 {#renderingmode-property}
 
 Gets or sets Avalonia rendering modes with fallbacks.
 The first element in the array has the highest priority.
@@ -144,12 +144,12 @@ The default value is: [Avalonia.AvaloniaNativeRenderingMode.OpenGl](xref:Avaloni
 public System.Collections.Generic.IReadOnlyList<Avalonia.AvaloniaNativeRenderingMode> RenderingMode { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 If application should work on as wide range of devices as possible,
 at least add [Avalonia.AvaloniaNativeRenderingMode.Software](xref:Avalonia.AvaloniaNativeRenderingMode.Software) as a fallback value.
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Thrown if no values were matched.](xref:System.InvalidOperationException)
 

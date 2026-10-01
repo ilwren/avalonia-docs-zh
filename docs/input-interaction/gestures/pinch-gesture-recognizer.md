@@ -111,7 +111,7 @@ View the source code on _GitHub_
 [`PinchEventArgs.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/PinchEventArgs.cs)
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gestures](/docs/input-interaction/gestures): Overview of gesture recognizers and built-in gesture events.
 - [Scroll Gesture Recognizer](/docs/input-interaction/gestures/scroll-gesture-recognizer): Scroll gesture for panning content.

@@ -160,7 +160,7 @@ Resources are often used with styles to help maintain consistent presentation. Y
 For guidance on how to use resources in your application, see [resource dictionaries](/docs/app-development/resource-dictionary).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Sharing styles](/docs/styling/sharing-styles)
 - [Style classes](/docs/styling/style-classes)

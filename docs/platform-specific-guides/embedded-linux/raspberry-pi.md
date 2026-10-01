@@ -297,7 +297,7 @@ You should see the app running on your Raspberry Pi now:
 
 If you have a touch display installed, try to slide the slider control.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Embedded Linux overview](/docs/platform-specific-guides/embedded-linux)
 - [Virtual keyboard](/controls/input/text-input/virtualkeyboard)

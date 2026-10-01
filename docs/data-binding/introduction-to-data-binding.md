@@ -49,7 +49,7 @@ For background information on the origins and development of the MVVM pattern at
 
 Bindings can operate in different modes that control how data flows:
 
-| Mode | Description |
+| Mode | 说明 |
 |---|---|
 | `OneWay` | Source changes update the target. Target changes are not sent back. |
 | `TwoWay` | Changes in either source or target update the other. |
@@ -64,7 +64,7 @@ Bindings can operate in different modes that control how data flows:
 
 ## FallbackValue and TargetNullValue
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `FallbackValue` | Value displayed when the binding cannot resolve (e.g., property not found). |
 | `TargetNullValue` | Value displayed when the source property is `null`. |
@@ -74,7 +74,7 @@ Bindings can operate in different modes that control how data flows:
 <Image Source="{Binding AvatarUrl, FallbackValue={StaticResource DefaultAvatar}}" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Context](/docs/data-binding/data-context): Where the data binder gets the data object from.
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.

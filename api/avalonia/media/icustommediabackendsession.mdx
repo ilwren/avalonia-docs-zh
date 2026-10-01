@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ICustomMediaBackendSession Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.MediaPlayer.Abstractions</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.MediaPlayer.Abstractions</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.MediaPlayer.Abstractions</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.MediaPlayer.Abstractions</code>
 </div>
 </div>
 
@@ -44,37 +44,37 @@ public interface ICustomMediaBackendSession
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IAsyncDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IAsyncDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PauseAsync](#uid-348e01f995) | No summary available. |
-| [SeekAsync](#uid-9f2a6b219b) | No summary available. |
-| [SetMutedAsync](#uid-bdb36d4bdf) | No summary available. |
-| [SetVolumeAsync](#uid-26df5842ce) | No summary available. |
-| [StartAsync](#uid-637cb52315) | No summary available. |
-| [StopAsync](#uid-29b6b3cb43) | No summary available. |
+| [PauseAsync](#uid-348e01f995) | 暂无摘要。 |
+| [SeekAsync](#uid-9f2a6b219b) | 暂无摘要。 |
+| [SetMutedAsync](#uid-bdb36d4bdf) | 暂无摘要。 |
+| [SetVolumeAsync](#uid-26df5842ce) | 暂无摘要。 |
+| [StartAsync](#uid-637cb52315) | 暂无摘要。 |
+| [StopAsync](#uid-29b6b3cb43) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-348e01f995"></span>
 
-### PauseAsync Method
+### PauseAsync 方法 {#pauseasync-method}
 
 ```csharp
 public System.Threading.Tasks.ValueTask PauseAsync(System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.ValueTask
 
@@ -85,13 +85,13 @@ System.Threading.Tasks.ValueTask
 
 <span id="uid-9f2a6b219b"></span>
 
-### SeekAsync Method
+### SeekAsync 方法 {#seekasync-method}
 
 ```csharp
 public System.Threading.Tasks.ValueTask SeekAsync(TimeSpan position, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `position` TimeSpan
 
@@ -99,7 +99,7 @@ public System.Threading.Tasks.ValueTask SeekAsync(TimeSpan position, System.Thre
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.ValueTask
 
@@ -110,13 +110,13 @@ System.Threading.Tasks.ValueTask
 
 <span id="uid-bdb36d4bdf"></span>
 
-### SetMutedAsync Method
+### SetMutedAsync 方法 {#setmutedasync-method}
 
 ```csharp
 public System.Threading.Tasks.ValueTask SetMutedAsync(bool isMuted, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `isMuted` bool
 
@@ -124,7 +124,7 @@ public System.Threading.Tasks.ValueTask SetMutedAsync(bool isMuted, System.Threa
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.ValueTask
 
@@ -135,13 +135,13 @@ System.Threading.Tasks.ValueTask
 
 <span id="uid-26df5842ce"></span>
 
-### SetVolumeAsync Method
+### SetVolumeAsync 方法 {#setvolumeasync-method}
 
 ```csharp
 public System.Threading.Tasks.ValueTask SetVolumeAsync(double volume, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `volume` double
 
@@ -149,7 +149,7 @@ public System.Threading.Tasks.ValueTask SetVolumeAsync(double volume, System.Thr
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.ValueTask
 
@@ -160,13 +160,13 @@ System.Threading.Tasks.ValueTask
 
 <span id="uid-637cb52315"></span>
 
-### StartAsync Method
+### StartAsync 方法 {#startasync-method}
 
 ```csharp
 public System.Threading.Tasks.ValueTask StartAsync(Avalonia.Media.CustomMediaBackendFrameSinkFactory sinkFactory, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `sinkFactory` [Avalonia.Media.CustomMediaBackendFrameSinkFactory](xref:Avalonia.Media.CustomMediaBackendFrameSinkFactory)
 
@@ -174,7 +174,7 @@ public System.Threading.Tasks.ValueTask StartAsync(Avalonia.Media.CustomMediaBac
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Threading.Tasks.ValueTask
 
@@ -185,35 +185,35 @@ System.Threading.Tasks.ValueTask
 
 <span id="uid-29b6b3cb43"></span>
 
-### StopAsync Method
+### StopAsync 方法 {#stopasync-method}
 
 ```csharp
 public System.Threading.Tasks.ValueTask StopAsync(System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 System.Threading.Tasks.ValueTask
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [State](#uid-a55cdc55ee) | No summary available. |
+| [State](#uid-a55cdc55ee) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a55cdc55ee"></span>
 
-### State Property
+### State 属性 {#state-property}
 
 ```csharp
 public Avalonia.Media.CustomMediaBackendState State { get; set; }
@@ -221,17 +221,17 @@ public Avalonia.Media.CustomMediaBackendState State { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [StateChanged](#uid-c6dcd21045) | No summary available. |
+| [StateChanged](#uid-c6dcd21045) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c6dcd21045"></span>
 
-### StateChanged Event
+### StateChanged 事件 {#statechanged-event}
 
 ```csharp
 public event Action<Avalonia.Media.CustomMediaBackendState> StateChanged

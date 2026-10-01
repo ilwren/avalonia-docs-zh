@@ -127,7 +127,7 @@ When the command is on a parent view model, but the binding occurs inside a temp
 
 See [`DataContext` type inference](/docs/data-binding/compiled-bindings#datacontext-type-inference) for more information.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Commanding](/docs/input-interaction/commanding): Writing commands—`ICommand`, `CanExecute`, async commands, and manual implementations.
 - [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Hotkey and keybinding setup.

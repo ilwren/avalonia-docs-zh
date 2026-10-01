@@ -56,7 +56,7 @@ public ObservableCollection<TreeNode> DendrogramData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical cluster data. | `null` |
 | `LabelPath` | Property for the leaf or node names. | `null` |

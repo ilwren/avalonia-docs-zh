@@ -69,7 +69,7 @@ public ObservableCollection<SwimlaneTask> SwimlaneTasks { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of tasks/items. | `null` |
 | `LanePath` | Determines which lane the task belongs to. | `null` |
@@ -85,7 +85,7 @@ public ObservableCollection<SwimlaneTask> SwimlaneTasks { get; } = new()
 | `ShowTaskLabels` | Whether to display labels inside task bars. | `true` |
 | `TaskCornerRadius` | Corner radius applied to task bars. | `4.0` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gantt chart](/controls/data-display/charts/scheduling/gantt-chart)
 - [Timeline chart](/controls/data-display/charts/scheduling/timeline-chart)

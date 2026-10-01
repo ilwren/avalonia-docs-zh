@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextDocument Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public class TextDocument
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextDocument
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextDocument
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Mirrors the approach used by
 `MarkdownStreamingSession.ApplyDelta`: the snapshot's rope tree is
@@ -78,21 +78,21 @@ offset. The pointer carries the tree node it was bound to, so block
 resolution does not depend on offset arithmetic — it walks up from
 `pointer.Node` until it reaches a child of [Avalonia.Controls.Documents.TextModel.TextDocument.RootNode](xref:Avalonia.Controls.Documents.TextModel.TextDocument.RootNode).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TextDocument (3 overloads)](#uid-9b943aed6a) | Initializes an empty document with a root node. |
 
 <span id="uid-9b943aed6a"></span>
 
-### TextDocument overloads
+### TextDocument 的重载 {#textdocument-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4dc92c7a49"></span>
 
-#### TextDocument Constructor
+#### TextDocument 构造函数 {#textdocument-constructor}
 
 Initializes an empty document with a root node.
 
@@ -106,7 +106,7 @@ public TextDocument()
 
 <span id="uid-95d32bae49"></span>
 
-#### TextDocument Constructor
+#### TextDocument 构造函数 {#textdocument-constructor-1}
 
 Initializes an empty document whose root has `rootKind`:
 [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document), or [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand)
@@ -116,7 +116,7 @@ for a page band's content.
 public TextDocument(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind rootKind)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `rootKind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
@@ -127,7 +127,7 @@ public TextDocument(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind r
 
 <span id="uid-1a105c071b"></span>
 
-#### TextDocument Constructor
+#### TextDocument 构造函数 {#textdocument-constructor-2}
 
 Initializes a document with the specified initial text content.
 
@@ -135,7 +135,7 @@ Initializes a document with the specified initial text content.
 public TextDocument(string initialText)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `initialText` string
 
@@ -144,23 +144,23 @@ The initial text content.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BeginChange](#uid-776021f423) | Opens a change block that batches document edits into a single undo unit and deferred layout update. Dispose the returned scope to close the block. |
 | [BeginSelectionContext](#uid-4bafc70a38) | Opens a selection-tracking scope that attaches caret/selection metadata to any undo unit produced by a [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange) block opened while the scope is active. The pre-edit snapshot is captured when the outermost [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange) opens, and the post-edit snapshot is captured when it closes — both from the same live `selection` reference. |
 | [Clone](#uid-2b32563945) | Creates a deep, independent copy of this document. The source is left untouched. |
 | [CreateRangeSnapshot](#uid-0f4d5a02d9) | Creates a snapshot of the document range between two pointers, preserving block structure by walking the document tree rather than by offset arithmetic. |
 | [CreateSnapshot](#uid-59fd39e54b) | Creates a thread-safe snapshot for background serialization. Must be called from the UI thread. |
-| [FromSnapshot](#uid-ce656fef71) | No summary available. |
+| [FromSnapshot](#uid-ce656fef71) | 暂无摘要。 |
 | [ResolvePageBandDistance](#uid-74b2ef0af5) | The distance the pagination engines apply: the document's, clamped to non-negative, and [Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance](xref:Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance) where the document declares nothing usable. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-776021f423"></span>
 
-### BeginChange Method
+### BeginChange 方法 {#beginchange-method}
 
 Opens a change block that batches document edits into a single undo unit and deferred layout update.
 Dispose the returned scope to close the block.
@@ -169,7 +169,7 @@ Dispose the returned scope to close the block.
 public IDisposable BeginChange()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 IDisposable
 
@@ -180,7 +180,7 @@ IDisposable
 
 <span id="uid-4bafc70a38"></span>
 
-### BeginSelectionContext Method
+### BeginSelectionContext 方法 {#beginselectioncontext-method}
 
 Opens a selection-tracking scope that attaches caret/selection
 metadata to any undo unit produced by a [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange)
@@ -193,17 +193,17 @@ same live `selection` reference.
 public IDisposable BeginSelectionContext(Avalonia.Controls.TextSelection selection)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `selection` [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 IDisposable
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This is an orthogonal, opt-in facility. It does not alter the
 [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange) API surface. Typical usage wraps the
@@ -228,7 +228,7 @@ participate in the undo unit's pre-edit snapshot.
 
 <span id="uid-2b32563945"></span>
 
-### Clone Method
+### Clone 方法 {#clone-method}
 
 Creates a deep, independent copy of this document. The source is
 left untouched.
@@ -237,7 +237,7 @@ left untouched.
 public Avalonia.Controls.Documents.TextModel.TextDocument Clone()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
@@ -248,7 +248,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument Clone()
 
 <span id="uid-0f4d5a02d9"></span>
 
-### CreateRangeSnapshot Method
+### CreateRangeSnapshot 方法 {#createrangesnapshot-method}
 
 Creates a snapshot of the document range between two pointers,
 preserving block structure by walking the document tree rather than
@@ -258,7 +258,7 @@ by offset arithmetic.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot CreateRangeSnapshot(Avalonia.Controls.Documents.TextModel.TextPointer start, Avalonia.Controls.Documents.TextModel.TextPointer end)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `start` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -270,14 +270,14 @@ Start of the range.
 End of the range.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 A snapshot containing only the range content.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Block membership is decided structurally: the snapshot contains every
 top-level block from `start`'s block through
@@ -295,7 +295,7 @@ text and trimming partially-selected boundary blocks.
 
 <span id="uid-59fd39e54b"></span>
 
-### CreateSnapshot Method
+### CreateSnapshot 方法 {#createsnapshot-method}
 
 Creates a thread-safe snapshot for background serialization.
 Must be called from the UI thread.
@@ -304,14 +304,14 @@ Must be called from the UI thread.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot CreateSnapshot()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 An immutable snapshot that can be safely read from any thread.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 The snapshot captures the document's current state including:
 - Text content (O(1) - references immutable rope nodes)
@@ -331,13 +331,13 @@ await Task.Run(() => serializer.Serialize(snapshot, stream));
 
 <span id="uid-ce656fef71"></span>
 
-### FromSnapshot Method
+### FromSnapshot 方法 {#fromsnapshot-method}
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument FromSnapshot(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, Action<Avalonia.Controls.Documents.RichTextElement, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode> formatCallback)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -345,7 +345,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument FromSnapshot(Avalonia.
 `formatCallback` Action&lt;[Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement), [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
@@ -356,7 +356,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument FromSnapshot(Avalonia.
 
 <span id="uid-74b2ef0af5"></span>
 
-### ResolvePageBandDistance Method
+### ResolvePageBandDistance 方法 {#resolvepagebanddistance-method}
 
 The distance the pagination engines apply: the document's, clamped to
 non-negative, and [Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance](xref:Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance) where the
@@ -366,16 +366,16 @@ document declares nothing usable.
 public double ResolvePageBandDistance()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 double
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ContentEnd](#uid-ba9b5651fd) | Gets a pointer to the end of the document — the last caret position in the document's final block, including a trailing empty paragraph. |
 | [ContentRange](#uid-fbe003b91b) | A [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) spanning the entire document content. |
@@ -399,7 +399,7 @@ double
 
 <span id="uid-ba9b5651fd"></span>
 
-### ContentEnd Property
+### ContentEnd 属性 {#contentend-property}
 
 Gets a pointer to the end of the document — the last caret position
 in the document's final block, including a trailing empty paragraph.
@@ -408,7 +408,7 @@ in the document's final block, including a trailing empty paragraph.
 public Avalonia.Controls.Documents.TextModel.TextPointer ContentEnd { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 Returns the document's cached instance, not a fresh
 allocation. See [Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart](xref:Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart) for the cloning
@@ -431,7 +431,7 @@ structure.
 
 <span id="uid-fbe003b91b"></span>
 
-### ContentRange Property
+### ContentRange 属性 {#contentrange-property}
 
 A [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) spanning the entire document content.
 
@@ -439,7 +439,7 @@ A [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Docum
 public Avalonia.Controls.Documents.TextModel.TextRange ContentRange { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Each read allocates a new range, so the mutation verbs
 [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) exists for — `DeleteText`,
@@ -453,7 +453,7 @@ ranges that compare equal but are not the same object.
 
 <span id="uid-c633019561"></span>
 
-### ContentStart Property
+### ContentStart 属性 {#contentstart-property}
 
 Gets a pointer to the start of the document.
 
@@ -461,7 +461,7 @@ Gets a pointer to the start of the document.
 public Avalonia.Controls.Documents.TextModel.TextPointer ContentStart { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 Returns the document's cached instance, not a fresh
 allocation. Callers that store the result in a mutable container
@@ -477,7 +477,7 @@ future [Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart](xref:Av
 
 <span id="uid-58b7627e85"></span>
 
-### DefaultTextFormatting Property
+### DefaultTextFormatting 属性 {#defaulttextformatting-property}
 
 The document's default text formatting: the font, size, foreground and
 background every block and inline inherits unless it declares its own. It
@@ -495,7 +495,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting De
 
 <span id="uid-f5418f53c5"></span>
 
-### FootnoteNumberFormat Property
+### FootnoteNumberFormat 属性 {#footnotenumberformat-property}
 
 Gets or sets how the document numbers its footnotes: the format of the ordinal
 each anchor renders and its note shows in its number strip. Nothing is stored
@@ -514,7 +514,7 @@ public Avalonia.Controls.Documents.FootnoteNumberFormat FootnoteNumberFormat { g
 
 <span id="uid-aaa11d159d"></span>
 
-### Footnotes Property
+### Footnotes 属性 {#footnotes-property}
 
 The footnotes this document owns, in anchor order: nested documents paired by
 id with the [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.FootnoteReference](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.FootnoteReference) anchors in the
@@ -531,7 +531,7 @@ public Avalonia.Controls.Documents.TextModel.TextFootnoteCollection Footnotes { 
 
 <span id="uid-649a89dd0a"></span>
 
-### IsPageHeightFixed Property
+### IsPageHeightFixed 属性 {#ispageheightfixed-property}
 
 Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight) is fixed rather than advisory.
 
@@ -539,7 +539,7 @@ Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight](xref:Ava
 public bool IsPageHeightFixed { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 A facade over [Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup), which is the property that records an undo
 unit and marks the change scope. Setting one of these five reads the whole setup,
@@ -552,7 +552,7 @@ units; assign a [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormat
 
 <span id="uid-80baf281d3"></span>
 
-### IsPageWidthFixed Property
+### IsPageWidthFixed 属性 {#ispagewidthfixed-property}
 
 Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth) is fixed rather than advisory.
 
@@ -560,7 +560,7 @@ Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth](xref:Aval
 public bool IsPageWidthFixed { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-8}
 
 A facade over [Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup), which is the property that records an undo
 unit and marks the change scope. Setting one of these five reads the whole setup,
@@ -573,7 +573,7 @@ units; assign a [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormat
 
 <span id="uid-7897df3c9b"></span>
 
-### IsUpdating Property
+### IsUpdating 属性 {#isupdating-property}
 
 Returns true if a change block is in progress.
 
@@ -587,7 +587,7 @@ public bool IsUpdating { get; set; }
 
 <span id="uid-b0d5ceded3"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
 Gets the total character length of the document text.
 
@@ -601,7 +601,7 @@ public int Length { get; set; }
 
 <span id="uid-23be7e570a"></span>
 
-### PageBandDistance Property
+### PageBandDistance 属性 {#pagebanddistance-property}
 
 Gets or sets the distance from the sheet edge to a page band in DIPs: the
 header's top sits this far below the sheet top, the footer's bottom this far
@@ -612,7 +612,7 @@ above the sheet bottom. Null (the default) means
 public Nullable<double> PageBandDistance { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-9}
 
 A band taller than the space this leaves pushes the body down, so the value
 decides where pages break, and screen, print and PDF all resolve it from here
@@ -624,7 +624,7 @@ through [Avalonia.Controls.Documents.TextModel.TextDocument.ResolvePageBandDista
 
 <span id="uid-390689d71b"></span>
 
-### PageBands Property
+### PageBands 属性 {#pagebands-property}
 
 The page bands this document owns: nested documents placed by their role and
 rule or by a section's references. The text model is complete without an
@@ -641,7 +641,7 @@ public Avalonia.Controls.Documents.TextModel.TextPageBandCollection PageBands { 
 
 <span id="uid-045f5c3f7a"></span>
 
-### PageHeight Property
+### PageHeight 属性 {#pageheight-property}
 
 The page height, or to grow with content.
 
@@ -649,7 +649,7 @@ The page height, or to grow with content.
 public Nullable<double> PageHeight { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-10}
 
 A facade over [Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup), which is the property that records an undo
 unit and marks the change scope. Setting one of these five reads the whole setup,
@@ -662,7 +662,7 @@ units; assign a [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormat
 
 <span id="uid-38114b978f"></span>
 
-### PagePadding Property
+### PagePadding 属性 {#pagepadding-property}
 
 The padding inside the page, or for the default.
 
@@ -670,7 +670,7 @@ The padding inside the page, or for the default.
 public Nullable<Avalonia.Thickness> PagePadding { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-11}
 
 A facade over [Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup), which is the property that records an undo
 unit and marks the change scope. Setting one of these five reads the whole setup,
@@ -683,7 +683,7 @@ units; assign a [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormat
 
 <span id="uid-730bf9a401"></span>
 
-### PageSetup Property
+### PageSetup 属性 {#pagesetup-property}
 
 Gets or sets the document-wide page setup: padding, page size and whether
 either dimension is fixed, the page-band distance and the footnote numbering.
@@ -692,7 +692,7 @@ either dimension is fixed, the page-band distance and the footnote numbering.
 public Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting PageSetup { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-12}
 
 This is the same record a [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 carries, so what reaches a file and what an attached view reads are the same
@@ -703,7 +703,7 @@ events so the parts of a view that listen for those alone still see the edit.
 [Avalonia.Controls.Documents.TextModel.TextDocument.PageBandDistance](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageBandDistance) and [Avalonia.Controls.Documents.TextModel.TextDocument.FootnoteNumberFormat](xref:Avalonia.Controls.Documents.TextModel.TextDocument.FootnoteNumberFormat) write
 into the same state and are the shorter form when only one value moves.
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [A nested document (a page band, a footnote) is given a non-default footnote
 numbering; it has none of its own.](xref:System.InvalidOperationException)
@@ -714,7 +714,7 @@ numbering; it has none of its own.](xref:System.InvalidOperationException)
 
 <span id="uid-6716adf2f7"></span>
 
-### PageWidth Property
+### PageWidth 属性 {#pagewidth-property}
 
 The page width, or to size to the viewport.
 
@@ -722,7 +722,7 @@ The page width, or to size to the viewport.
 public Nullable<double> PageWidth { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-13}
 
 A facade over [Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageSetup), which is the property that records an undo
 unit and marks the change scope. Setting one of these five reads the whole setup,
@@ -735,7 +735,7 @@ units; assign a [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormat
 
 <span id="uid-745ea5f56e"></span>
 
-### UndoManager Property
+### UndoManager 属性 {#undomanager-property}
 
 Gets or sets the undo manager associated with this document. The owning
 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) passes it on to its page bands, so one document
@@ -748,9 +748,9 @@ public Avalonia.Controls.Documents.Undo.IUndoManager UndoManager { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Changed](#uid-87048c2abe) | Raised when an outermost [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange) scope completes after producing at least one observable change. Empty / no-op scopes are suppressed entirely. |
 | [FootnotesChanged](#uid-38f1b42c12) | Raised when the set of notes changes or a note's id or label changes. |
@@ -761,7 +761,7 @@ public Avalonia.Controls.Documents.Undo.IUndoManager UndoManager { get; set; }
 
 <span id="uid-87048c2abe"></span>
 
-### Changed Event
+### Changed 事件 {#changed-event}
 
 Raised when an outermost [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange) scope completes
 after producing at least one observable change. Empty / no-op
@@ -771,7 +771,7 @@ scopes are suppressed entirely.
 public event EventHandler<Avalonia.Controls.Documents.TextModel.DocumentChangedEventArgs> Changed
 ```
 
-#### Remarks
+#### 备注 {#remarks-14}
 
 The event payload aggregates every [Avalonia.Controls.Documents.TextModel.TextChangeEventArgs](xref:Avalonia.Controls.Documents.TextModel.TextChangeEventArgs)
 that fired in the scope, plus the [Avalonia.Controls.Documents.TextModel.ChangeOrigin](xref:Avalonia.Controls.Documents.TextModel.ChangeOrigin) and
@@ -783,7 +783,7 @@ the originating [Avalonia.Controls.Documents.Undo.IUndoUnit](xref:Avalonia.Contr
 
 <span id="uid-38f1b42c12"></span>
 
-### FootnotesChanged Event
+### FootnotesChanged 事件 {#footnoteschanged-event}
 
 Raised when the set of notes changes or a note's id or label changes.
 
@@ -797,7 +797,7 @@ public event EventHandler FootnotesChanged
 
 <span id="uid-a4462ef3e7"></span>
 
-### PageBandsChanged Event
+### PageBandsChanged 事件 {#pagebandschanged-event}
 
 Raised when the set of bands changes or a band's role or rule changes: the
 pages a band claims by rule follow from these, so views re-resolve.
@@ -812,7 +812,7 @@ public event EventHandler PageBandsChanged
 
 <span id="uid-b5bc3f2a17"></span>
 
-### TextChanged Event
+### TextChanged 事件 {#textchanged-event}
 
 Raised after each individual edit operation (insert, delete, replace).
 Carries [Avalonia.Controls.Documents.TextModel.TextChangeEventArgs.Offset](xref:Avalonia.Controls.Documents.TextModel.TextChangeEventArgs.Offset),
@@ -825,7 +825,7 @@ Carries [Avalonia.Controls.Documents.TextModel.TextChangeEventArgs.Offset](xref:
 public event EventHandler<Avalonia.Controls.Documents.TextModel.TextChangeEventArgs> TextChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-15}
 
 Multiple [Avalonia.Controls.Documents.TextModel.TextDocument.TextChanged](xref:Avalonia.Controls.Documents.TextModel.TextDocument.TextChanged) events may fire within a single
 [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange) scope. Use [Avalonia.Controls.Documents.TextModel.TextDocument.Changed](xref:Avalonia.Controls.Documents.TextModel.TextDocument.Changed) for the

@@ -172,7 +172,7 @@ Then include the theme in the `Application` class:
 If you need to specify a dark or light theme variant, see [Theme variants](/docs/styling/theme-variants).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Control themes](/docs/styling/control-themes)
 - [Theme variants](/docs/styling/theme-variants)

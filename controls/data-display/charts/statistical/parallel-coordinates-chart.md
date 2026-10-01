@@ -50,7 +50,7 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 
 ## Common properties (`ParallelCoordinatesChart`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Axes` | Content collection of `ParallelAxis` definitions. | Empty collection |
 | `ItemsSource` | Collection of multivariate records. | `null` |
@@ -61,14 +61,14 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 
 ## Common properties (`ParallelAxis`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Header` | Axis title. | `null` |
 | `ValuePath` | Path to the value bound to this axis. | `null` |
 | `Minimum` | Minimum value of the axis scale. | `0.0` |
 | `Maximum` | Maximum value of the axis scale. | `100.0` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Radar chart](/controls/data-display/charts/radial/radar-chart)
 - [Ternary chart](/controls/data-display/charts/engineering/ternary-chart)

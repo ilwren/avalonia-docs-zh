@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InputPaneStateEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/IInputPane.cs">IInputPane.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/IInputPane.cs">IInputPane.cs</a>
 </div>
 
 </div>
@@ -54,31 +54,31 @@ public class InputPaneStateEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> InputPaneStateEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> InputPaneStateEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [InputPaneStateEventArgs (2 overloads)](#uid-61523ba0b4) | No summary available. |
+| [InputPaneStateEventArgs (2 overloads)](#uid-61523ba0b4) | 暂无摘要。 |
 
 <span id="uid-61523ba0b4"></span>
 
-### InputPaneStateEventArgs overloads
+### InputPaneStateEventArgs 的重载 {#inputpanestateeventargs-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f72d969d93"></span>
 
-#### InputPaneStateEventArgs Constructor
+#### InputPaneStateEventArgs 构造函数 {#inputpanestateeventargs-constructor}
 
 ```csharp
 public InputPaneStateEventArgs(Avalonia.Controls.Platform.InputPaneState newState, Nullable<Avalonia.Rect> startRect, Avalonia.Rect endRect)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `newState` [Avalonia.Controls.Platform.InputPaneState](xref:Avalonia.Controls.Platform.InputPaneState)
 
@@ -95,13 +95,13 @@ public InputPaneStateEventArgs(Avalonia.Controls.Platform.InputPaneState newStat
 
 <span id="uid-c8fe1a71e9"></span>
 
-#### InputPaneStateEventArgs Constructor
+#### InputPaneStateEventArgs 构造函数 {#inputpanestateeventargs-constructor-1}
 
 ```csharp
 public InputPaneStateEventArgs(Avalonia.Controls.Platform.InputPaneState newState, Nullable<Avalonia.Rect> startRect, Avalonia.Rect endRect, TimeSpan animationDuration, Avalonia.Animation.Easings.IEasing easing)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `newState` [Avalonia.Controls.Platform.InputPaneState](xref:Avalonia.Controls.Platform.InputPaneState)
 
@@ -120,9 +120,9 @@ public InputPaneStateEventArgs(Avalonia.Controls.Platform.InputPaneState newStat
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AnimationDuration](#uid-2cea7820fe) | The duration of the input pane's state change animation. |
 | [Easing](#uid-7ebcd05084) | The easing of the input pane's state changed animation. |
@@ -134,7 +134,7 @@ public InputPaneStateEventArgs(Avalonia.Controls.Platform.InputPaneState newStat
 
 <span id="uid-2cea7820fe"></span>
 
-### AnimationDuration Property
+### AnimationDuration 属性 {#animationduration-property}
 
 The duration of the input pane's state change animation.
 
@@ -148,7 +148,7 @@ public TimeSpan AnimationDuration { get; set; }
 
 <span id="uid-7ebcd05084"></span>
 
-### Easing Property
+### Easing 属性 {#easing-property}
 
 The easing of the input pane's state changed animation.
 
@@ -162,7 +162,7 @@ public Avalonia.Animation.Easings.IEasing Easing { get; set; }
 
 <span id="uid-5fdfbdad1c"></span>
 
-### EndRect Property
+### EndRect 属性 {#endrect-property}
 
 The final bounds of the input pane.
 
@@ -176,7 +176,7 @@ public Avalonia.Rect EndRect { get; set; }
 
 <span id="uid-dcc5d2cd70"></span>
 
-### NewState Property
+### NewState 属性 {#newstate-property}
 
 The new state of the input pane
 
@@ -190,7 +190,7 @@ public Avalonia.Controls.Platform.InputPaneState NewState { get; set; }
 
 <span id="uid-27dd88d308"></span>
 
-### StartRect Property
+### StartRect 属性 {#startrect-property}
 
 The initial bounds of the input pane.
 

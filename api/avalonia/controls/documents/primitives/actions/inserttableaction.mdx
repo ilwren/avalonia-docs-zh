@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InsertTableAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public class InsertTableAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> InsertTableAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> InsertTableAction
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This action is typically invoked through a grid-picker flyout that determines
 the row and column counts. Call [Avalonia.Controls.Documents.Primitives.Actions.InsertTableAction.ExecuteWithSize(Avalonia.Controls.Documents.Primitives.ITextEditorHost,int,int)](xref:Avalonia.Controls.Documents.Primitives.Actions.InsertTableAction.ExecuteWithSize%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%2CSystem.Int32%2CSystem.Int32%29) to insert a table
@@ -62,17 +62,17 @@ with specific dimensions.
 
 The default [Avalonia.Controls.Documents.Primitives.Actions.InsertTableAction.Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.InsertTableAction.Execute%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) creates a 3x3 table as a fallback.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [InsertTableAction](#uid-f3b26e9a74) | No summary available. |
+| [InsertTableAction](#uid-f3b26e9a74) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f3b26e9a74"></span>
 
-### InsertTableAction Constructor
+### InsertTableAction 构造函数 {#inserttableaction-constructor}
 
 ```csharp
 public InsertTableAction()
@@ -80,12 +80,12 @@ public InsertTableAction()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-783498e938) | No summary available. |
-| [Execute](#uid-f04f98033b) | No summary available. |
+| [CanExecute](#uid-783498e938) | 暂无摘要。 |
+| [Execute](#uid-f04f98033b) | 暂无摘要。 |
 | [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | Executes the action asynchronously. Inherited from [EditorAction](editoraction.mdx). |
 | [ExecuteWithSize](#uid-bdb771db2e) | Inserts a table with the specified dimensions after the current block, or at the document root when the document is empty. |
 | [GetState](editoraction.mdx#uid-e9737aed90) | Gets the current state of the action. Inherited from [EditorAction](editoraction.mdx). |
@@ -94,18 +94,18 @@ public InsertTableAction()
 
 <span id="uid-783498e938"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -116,13 +116,13 @@ bool
 
 <span id="uid-f04f98033b"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -133,7 +133,7 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 <span id="uid-bdb771db2e"></span>
 
-### ExecuteWithSize Method
+### ExecuteWithSize 方法 {#executewithsize-method}
 
 Inserts a table with the specified dimensions after the current block,
 or at the document root when the document is empty.
@@ -142,7 +142,7 @@ or at the document root when the document is empty.
 public void ExecuteWithSize(Avalonia.Controls.Documents.Primitives.ITextEditorHost host, int rowCount, int colCount)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -161,19 +161,19 @@ Number of columns (&gt;= 1).
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DisplayName](#uid-3a615e8670) | No summary available. |
+| [DisplayName](#uid-3a615e8670) | 暂无摘要。 |
 | [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
-| [Id](#uid-e1a5239271) | No summary available. |
+| [Id](#uid-e1a5239271) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3a615e8670"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 ```csharp
 public string DisplayName { get; set; }
@@ -185,7 +185,7 @@ public string DisplayName { get; set; }
 
 <span id="uid-e1a5239271"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 ```csharp
 public string Id { get; set; }

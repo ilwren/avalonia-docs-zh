@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PixelVector Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/PixelVector.cs">PixelVector.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/PixelVector.cs">PixelVector.cs</a>
 </div>
 
 </div>
@@ -54,29 +54,29 @@ public struct PixelVector
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PixelVector
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PixelVector
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PixelVector](#uid-7d806d3845) | Initializes a new instance of the [Avalonia.PixelVector](xref:Avalonia.PixelVector) structure. |
+| [PixelVector](#uid-7d806d3845) | 初始化 [Avalonia.PixelVector](xref:Avalonia.PixelVector) 结构的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7d806d3845"></span>
 
-### PixelVector Constructor
+### PixelVector 构造函数 {#pixelvector-constructor}
 
-Initializes a new instance of the [Avalonia.PixelVector](xref:Avalonia.PixelVector) structure.
+初始化 [Avalonia.PixelVector](xref:Avalonia.PixelVector) 结构的新实例。
 
 ```csharp
 public PixelVector(int x, int y)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `x` int
 
@@ -90,12 +90,12 @@ The Y vector.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-49d4c3886f) | Check if two vectors are equal (bitwise). |
-| [GetHashCode](#uid-68ca1c05f6) | No summary available. |
+| [Equals（2 个重载）](#uid-49d4c3886f) | Check if two vectors are equal (bitwise). |
+| [GetHashCode](#uid-68ca1c05f6) | 暂无摘要。 |
 | [NearlyEquals](#uid-e34f35193c) | Check if two vectors are nearly equal (numerically). |
 | [ToString](#uid-69224b05ba) | Returns the string representation of the point. |
 | [WithX](#uid-90f8cc3018) | Returns a new vector with the specified X coordinate. |
@@ -103,13 +103,13 @@ The Y vector.
 
 <span id="uid-49d4c3886f"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-51010e0a1e"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Check if two vectors are equal (bitwise).
 
@@ -117,12 +117,12 @@ Check if two vectors are equal (bitwise).
 public bool Equals(Avalonia.PixelVector other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.PixelVector](xref:Avalonia.PixelVector)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -133,18 +133,18 @@ bool
 
 <span id="uid-7f441e8438"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -155,13 +155,13 @@ bool
 
 <span id="uid-68ca1c05f6"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -172,7 +172,7 @@ int
 
 <span id="uid-e34f35193c"></span>
 
-### NearlyEquals Method
+### NearlyEquals 方法 {#nearlyequals-method}
 
 Check if two vectors are nearly equal (numerically).
 
@@ -180,14 +180,14 @@ Check if two vectors are nearly equal (numerically).
 public bool NearlyEquals(Avalonia.PixelVector other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `other` [Avalonia.PixelVector](xref:Avalonia.PixelVector)
 
 The other vector.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -200,7 +200,7 @@ True if vectors are nearly equal.
 
 <span id="uid-69224b05ba"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 Returns the string representation of the point.
 
@@ -208,7 +208,7 @@ Returns the string representation of the point.
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 string
 
@@ -221,7 +221,7 @@ The string representation of the point.
 
 <span id="uid-90f8cc3018"></span>
 
-### WithX Method
+### WithX 方法 {#withx-method}
 
 Returns a new vector with the specified X coordinate.
 
@@ -229,14 +229,14 @@ Returns a new vector with the specified X coordinate.
 public Avalonia.PixelVector WithX(int x)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `x` int
 
 The X coordinate.
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.PixelVector](xref:Avalonia.PixelVector)
 
@@ -249,7 +249,7 @@ The new vector.
 
 <span id="uid-6e89ab708f"></span>
 
-### WithY Method
+### WithY 方法 {#withy-method}
 
 Returns a new vector with the specified Y coordinate.
 
@@ -257,14 +257,14 @@ Returns a new vector with the specified Y coordinate.
 public Avalonia.PixelVector WithY(int y)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `y` int
 
 The Y coordinate.
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.PixelVector](xref:Avalonia.PixelVector)
 
@@ -273,9 +273,9 @@ The new vector.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Length](#uid-5fcf70c3eb) | Length of the vector |
 | [X](#uid-38a48f6dda) | Gets the X vector. |
@@ -285,7 +285,7 @@ The new vector.
 
 <span id="uid-5fcf70c3eb"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
 Length of the vector
 
@@ -299,7 +299,7 @@ public double Length { get; set; }
 
 <span id="uid-38a48f6dda"></span>
 
-### X Property
+### X 属性 {#x-property}
 
 Gets the X vector.
 
@@ -313,7 +313,7 @@ public int X { get; set; }
 
 <span id="uid-fd0c6a2a0a"></span>
 
-### Y Property
+### Y 属性 {#y-property}
 
 Gets the Y vector.
 

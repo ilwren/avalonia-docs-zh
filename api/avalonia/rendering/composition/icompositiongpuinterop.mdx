@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ICompositionGpuInterop Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering.Composition</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering.Composition</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionExternalMemory.cs">CompositionExternalMemory.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionExternalMemory.cs">CompositionExternalMemory.cs</a>
 </div>
 
 </div>
@@ -46,9 +46,9 @@ public interface ICompositionGpuInterop
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetSynchronizationCapabilities](#uid-241da52c21) | Returns the supported ways to synchronize access to the imported GPU image |
 | [ImportImage (2 overloads)](#uid-b77d6038f0) | Asynchronously imports a texture. The returned object is immediately usable. |
@@ -58,7 +58,7 @@ public interface ICompositionGpuInterop
 
 <span id="uid-241da52c21"></span>
 
-### GetSynchronizationCapabilities Method
+### GetSynchronizationCapabilities 方法 {#getsynchronizationcapabilities-method}
 
 Returns the supported ways to synchronize access to the imported GPU image
 
@@ -66,12 +66,12 @@ Returns the supported ways to synchronize access to the imported GPU image
 public Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronizationCapabilities GetSynchronizationCapabilities(string imageHandleType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `imageHandleType` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronizationCapabilities](xref:Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronizationCapabilities)
 
@@ -86,7 +86,7 @@ public Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronization
 
 <span id="uid-ddef37683f"></span>
 
-#### ImportImage Method
+#### ImportImage 方法 {#importimage-method}
 
 Asynchronously imports a texture. The returned object is immediately usable.
 
@@ -94,7 +94,7 @@ Asynchronously imports a texture. The returned object is immediately usable.
 public Avalonia.Rendering.Composition.ICompositionImportedGpuImage ImportImage(Avalonia.Platform.IPlatformHandle handle, Avalonia.Platform.PlatformGraphicsExternalImageProperties properties)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `handle` [Avalonia.Platform.IPlatformHandle](xref:Avalonia.Platform.IPlatformHandle)
 
@@ -102,7 +102,7 @@ public Avalonia.Rendering.Composition.ICompositionImportedGpuImage ImportImage(A
 `properties` [Avalonia.Platform.PlatformGraphicsExternalImageProperties](xref:Avalonia.Platform.PlatformGraphicsExternalImageProperties)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Rendering.Composition.ICompositionImportedGpuImage](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuImage)
 
@@ -113,7 +113,7 @@ public Avalonia.Rendering.Composition.ICompositionImportedGpuImage ImportImage(A
 
 <span id="uid-a294ce5585"></span>
 
-#### ImportImage Method
+#### ImportImage 方法 {#importimage-method-1}
 
 Asynchronously imports a texture. The returned object is immediately usable.
 If import operation fails, the caller is responsible for destroying the handle
@@ -122,14 +122,14 @@ If import operation fails, the caller is responsible for destroying the handle
 public Avalonia.Rendering.Composition.ICompositionImportedGpuImage ImportImage(Avalonia.Rendering.Composition.ICompositionImportableSharedGpuContextImage image)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `image` [Avalonia.Rendering.Composition.ICompositionImportableSharedGpuContextImage](xref:Avalonia.Rendering.Composition.ICompositionImportableSharedGpuContextImage)
 
 An image that belongs to the same GPU context or the same GPU context sharing group as one used by compositor
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Rendering.Composition.ICompositionImportedGpuImage](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuImage)
 
@@ -144,7 +144,7 @@ An image that belongs to the same GPU context or the same GPU context sharing gr
 
 <span id="uid-2cfb7465ad"></span>
 
-#### ImportSemaphore Method
+#### ImportSemaphore 方法 {#importsemaphore-method}
 
 Asynchronously imports a semaphore object. The returned object is immediately usable.
 If import operation fails, the caller is responsible for destroying the handle
@@ -153,12 +153,12 @@ If import operation fails, the caller is responsible for destroying the handle
 public Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore ImportSemaphore(Avalonia.Platform.IPlatformHandle handle)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `handle` [Avalonia.Platform.IPlatformHandle](xref:Avalonia.Platform.IPlatformHandle)
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 [Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore)
 
@@ -169,7 +169,7 @@ public Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore ImportSem
 
 <span id="uid-058ff9e009"></span>
 
-#### ImportSemaphore Method
+#### ImportSemaphore 方法 {#importsemaphore-method-1}
 
 Asynchronously imports a semaphore object. The returned object is immediately usable.
 
@@ -177,23 +177,23 @@ Asynchronously imports a semaphore object. The returned object is immediately us
 public Avalonia.Rendering.Composition.ICompositionImportedGpuImage ImportSemaphore(Avalonia.Rendering.Composition.ICompositionImportableSharedGpuContextSemaphore image)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `image` [Avalonia.Rendering.Composition.ICompositionImportableSharedGpuContextSemaphore](xref:Avalonia.Rendering.Composition.ICompositionImportableSharedGpuContextSemaphore)
 
 A semaphore that belongs to the same GPU context or the same GPU context sharing group as one used by compositor
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Rendering.Composition.ICompositionImportedGpuImage](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuImage)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DeviceLuid](#uid-f066fdfc57) | The LUID of the graphics adapter used by the compositor |
 | [DeviceUuid](#uid-204c32b69b) | The UUID of the graphics adapter used by the compositor |
@@ -205,7 +205,7 @@ A semaphore that belongs to the same GPU context or the same GPU context sharing
 
 <span id="uid-f066fdfc57"></span>
 
-### DeviceLuid Property
+### DeviceLuid 属性 {#deviceluid-property}
 
 The LUID of the graphics adapter used by the compositor
 
@@ -219,7 +219,7 @@ public byte[] DeviceLuid { get; set; }
 
 <span id="uid-204c32b69b"></span>
 
-### DeviceUuid Property
+### DeviceUuid 属性 {#deviceuuid-property}
 
 The UUID of the graphics adapter used by the compositor
 
@@ -233,7 +233,7 @@ public byte[] DeviceUuid { get; set; }
 
 <span id="uid-f2b8219cb6"></span>
 
-### IsLost Property
+### IsLost 属性 {#islost-property}
 
 Indicates if the device context this instance is associated with is no longer available
 
@@ -247,7 +247,7 @@ public bool IsLost { get; set; }
 
 <span id="uid-7233179774"></span>
 
-### SupportedImageHandleTypes Property
+### SupportedImageHandleTypes 属性 {#supportedimagehandletypes-property}
 
 Returns the list of image handle types supported by the current GPU backend, see [Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes)
 
@@ -261,7 +261,7 @@ public System.Collections.Generic.IReadOnlyList<string> SupportedImageHandleType
 
 <span id="uid-44a8fa91dd"></span>
 
-### SupportedSemaphoreTypes Property
+### SupportedSemaphoreTypes 属性 {#supportedsemaphoretypes-property}
 
 Returns the list of semaphore types supported by the current GPU backend, see [Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes)
 

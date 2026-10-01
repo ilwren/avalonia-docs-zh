@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IStorageItem Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageItem.cs">IStorageItem.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageItem.cs">IStorageItem.cs</a>
 </div>
 
 </div>
@@ -54,17 +54,17 @@ public interface IStorageItem
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface inherits [IDisposable](xref:System.IDisposable) . It's recommended to dispose [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem) when it's not used anymore.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DeleteAsync](#uid-8e9a7cfd51) | Deletes the current storage item and it's contents |
 | [GetBasicPropertiesAsync](#uid-d598a65224) | Gets the basic properties of the current item. |
@@ -76,7 +76,7 @@ This interface inherits [IDisposable](xref:System.IDisposable) . It's recommende
 
 <span id="uid-8e9a7cfd51"></span>
 
-### DeleteAsync Method
+### DeleteAsync 方法 {#deleteasync-method}
 
 Deletes the current storage item and it's contents
 
@@ -84,7 +84,7 @@ Deletes the current storage item and it's contents
 public System.Threading.Tasks.Task DeleteAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -95,7 +95,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-d598a65224"></span>
 
-### GetBasicPropertiesAsync Method
+### GetBasicPropertiesAsync 方法 {#getbasicpropertiesasync-method}
 
 Gets the basic properties of the current item.
 
@@ -103,7 +103,7 @@ Gets the basic properties of the current item.
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.StorageItemProperties> GetBasicPropertiesAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.StorageItemProperties](xref:Avalonia.Platform.Storage.StorageItemProperties)&gt;
 
@@ -114,7 +114,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.StorageItemProperties]
 
 <span id="uid-b325b01e5f"></span>
 
-### GetParentAsync Method
+### GetParentAsync 方法 {#getparentasync-method}
 
 Gets the parent folder of the current storage item.
 
@@ -122,7 +122,7 @@ Gets the parent folder of the current storage item.
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> GetParentAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)&gt;
 
@@ -133,7 +133,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFolder](xref:A
 
 <span id="uid-d7f8f4e352"></span>
 
-### MoveAsync Method
+### MoveAsync 方法 {#moveasync-method}
 
 Moves the current storage item and it's contents to a [Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)
 
@@ -141,14 +141,14 @@ Moves the current storage item and it's contents to a [Avalonia.Platform.Storage
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageItem> MoveAsync(Avalonia.Platform.Storage.IStorageFolder destination)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `destination` [Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)
 
 The [Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder) to move the item into
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)&gt;
 
@@ -159,7 +159,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageItem](xref:Ava
 
 <span id="uid-adc0859ffa"></span>
 
-### SaveBookmarkAsync Method
+### SaveBookmarkAsync 方法 {#savebookmarkasync-method}
 
 Saves items to a bookmark.
 
@@ -167,7 +167,7 @@ Saves items to a bookmark.
 public System.Threading.Tasks.Task<string> SaveBookmarkAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Threading.Tasks.Task&lt;string&gt;
 
@@ -176,9 +176,9 @@ Returns identifier of a bookmark. Can be null if OS denied request.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanBookmark](#uid-5ad9b0509e) | Returns true is item can be bookmarked and reused later. |
 | [Name](#uid-aaac65aef5) | Gets the name of the item including the file name extension if there is one. |
@@ -188,7 +188,7 @@ Returns identifier of a bookmark. Can be null if OS denied request.
 
 <span id="uid-5ad9b0509e"></span>
 
-### CanBookmark Property
+### CanBookmark 属性 {#canbookmark-property}
 
 Returns true is item can be bookmarked and reused later.
 
@@ -202,7 +202,7 @@ public bool CanBookmark { get; set; }
 
 <span id="uid-aaac65aef5"></span>
 
-### Name Property
+### Name 属性 {#name-property}
 
 Gets the name of the item including the file name extension if there is one.
 
@@ -216,7 +216,7 @@ public string Name { get; set; }
 
 <span id="uid-74ea660276"></span>
 
-### Path Property
+### Path 属性 {#path-property}
 
 Gets the file-system path of the item.
 
@@ -224,7 +224,7 @@ Gets the file-system path of the item.
 public Uri Path { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Android backend might return file path with "content:" scheme.
 Browser and iOS backends might return relative uris.

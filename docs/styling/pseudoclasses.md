@@ -15,7 +15,7 @@ Pseudoclass state is tracked by the `Control`'s `PseudoClasses` property. By con
 
 These pseudoclasses are defined by `InputElement` and are available on every `Control`:
 
-| Pseudoclass      | Description                                                    |
+| Pseudoclass      | 说明                                                    |
 |:-----------------|----------------------------------------------------------------|
 | `:disabled`      | The control is disabled and cannot be interacted with.         |
 | `:pointerover`   | The pointer is over the control as determined by hit testing.  |
@@ -125,7 +125,7 @@ With the control theme in place, you can style the custom pseudoclasses using ne
 
 Custom controls automatically inherit pseudoclasses from their base classes, so `AreaButton` also responds to `InputElement`'s `:pointerover`, `:focus`, and other built-in pseudoclasses.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Style selectors](/docs/styling/style-selectors)
 - [Style selector syntax](/docs/styling/style-selector-syntax)

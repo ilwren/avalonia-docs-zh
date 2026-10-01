@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AutomationPeer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Peers</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Peers</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Peers/AutomationPeer.cs">AutomationPeer.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Peers/AutomationPeer.cs">AutomationPeer.cs</a>
 </div>
 
 </div>
@@ -54,16 +54,16 @@ public class AutomationPeer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AutomationPeer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AutomationPeer
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="controlautomationpeer">ControlAutomationPeer</a>, <a href="unrealizedelementautomationpeer">UnrealizedElementAutomationPeer</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="controlautomationpeer">ControlAutomationPeer</a>, <a href="unrealizedelementautomationpeer">UnrealizedElementAutomationPeer</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BringIntoView](#uid-0ce0c26ad7) | Attempts to bring the element associated with the automation peer into view. |
 | [GetAcceleratorKey](#uid-b27b870e23) | Gets the accelerator key combinations for the element that is associated with the UI Automation peer. |
@@ -84,7 +84,7 @@ public class AutomationPeer
 | [GetName](#uid-ac6dd5a547) | Gets text that describes the element that is associated with this automation peer. |
 | [GetParent](#uid-947969c77f) | Gets the [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) that is the parent of this [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer). |
 | [GetPlaceholderText](#uid-1ced74e763) | Gets text that provides a placeholder for the element that is associated with this automation peer. |
-| [GetProvider](#uid-ee05fc8d1e) | No summary available. |
+| [GetProvider](#uid-ee05fc8d1e) | 暂无摘要。 |
 | [HasKeyboardFocus](#uid-5f0d3a3d10) | Gets a value that indicates whether the element that is associated with this automation peer currently has keyboard focus. |
 | [IsContentElement](#uid-5202d69eb1) | Gets a value that indicates whether the element that is associated with this automation peer contains data that is presented to the user. |
 | [IsControlElement](#uid-665cdd1957) | Gets a value that indicates whether the element is understood by the user as interactive or as contributing to the logical structure of the control in the GUI. |
@@ -100,7 +100,7 @@ public class AutomationPeer
 
 <span id="uid-0ce0c26ad7"></span>
 
-### BringIntoView Method
+### BringIntoView 方法 {#bringintoview-method}
 
 Attempts to bring the element associated with the automation peer into view.
 
@@ -114,7 +114,7 @@ public void BringIntoView()
 
 <span id="uid-b27b870e23"></span>
 
-### GetAcceleratorKey Method
+### GetAcceleratorKey 方法 {#getacceleratorkey-method}
 
 Gets the accelerator key combinations for the element that is associated with the UI
 Automation peer.
@@ -123,12 +123,12 @@ Automation peer.
 public string GetAcceleratorKey()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 An accelerator key (sometimes called a shortcut key) exposes a key combination for
 which can be used to invoke an action, for example, an "Open..." menu item on Windows
@@ -143,7 +143,7 @@ often has an accelerator key of "Ctrl+O".
 
 <span id="uid-0c0606dfaf"></span>
 
-### GetAccessKey Method
+### GetAccessKey 方法 {#getaccesskey-method}
 
 Gets the access key for the element that is associated with the automation peer.
 
@@ -151,12 +151,12 @@ Gets the access key for the element that is associated with the automation peer.
 public string GetAccessKey()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 An access key (sometimes called a mnemonic) is a character in the text of a menu, menu
 item, or label of a control such as a button, that activates the associated function.
@@ -172,7 +172,7 @@ would press ALT+F.
 
 <span id="uid-f7daf3a583"></span>
 
-### GetAutomationControlType Method
+### GetAutomationControlType 方法 {#getautomationcontroltype-method}
 
 Gets the control type for the element that is associated with the UI Automation peer.
 
@@ -180,12 +180,12 @@ Gets the control type for the element that is associated with the UI Automation 
 public Avalonia.Automation.Peers.AutomationControlType GetAutomationControlType()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Automation.Peers.AutomationControlType](xref:Avalonia.Automation.Peers.AutomationControlType)
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Gets the type of the element.
 
@@ -198,7 +198,7 @@ Gets the type of the element.
 
 <span id="uid-ec722c2168"></span>
 
-### GetAutomationId Method
+### GetAutomationId 方法 {#getautomationid-method}
 
 Gets the automation ID of the element that is associated with the UI Automation peer.
 
@@ -206,12 +206,12 @@ Gets the automation ID of the element that is associated with the UI Automation 
 public string GetAutomationId()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 - Windows`UIA_AutomationIdPropertyId`
 - macOS`NSAccessibilityProtocol.accessibilityIdentifier`
@@ -222,7 +222,7 @@ string
 
 <span id="uid-f04c4b54df"></span>
 
-### GetBoundingRectangle Method
+### GetBoundingRectangle 方法 {#getboundingrectangle-method}
 
 Gets the bounding rectangle of the element that is associated with the automation peer
 in top-level coordinates.
@@ -231,12 +231,12 @@ in top-level coordinates.
 public Avalonia.Rect GetBoundingRectangle()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Rect](xref:Avalonia.Rect)
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 - Windows`IRawElementProviderFragment.get_BoundingRectangle`
 - macOS`NSAccessibilityProtocol.accessibilityFrame`
@@ -247,7 +247,7 @@ public Avalonia.Rect GetBoundingRectangle()
 
 <span id="uid-1974fa1efa"></span>
 
-### GetChildren Method
+### GetChildren 方法 {#getchildren-method}
 
 Gets the child automation peers.
 
@@ -255,12 +255,12 @@ Gets the child automation peers.
 public System.Collections.Generic.IReadOnlyList<Avalonia.Automation.Peers.AutomationPeer> GetChildren()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)&gt;
 
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 - Windows`IRawElementProviderFragment.Navigate`
 - macOS`NSAccessibilityProtocol.accessibilityChildren`
@@ -271,7 +271,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Automation.Peers.Automatio
 
 <span id="uid-ee7505094d"></span>
 
-### GetClassName Method
+### GetClassName 方法 {#getclassname-method}
 
 Gets a string that describes the class of the element.
 
@@ -279,18 +279,18 @@ Gets a string that describes the class of the element.
 public string GetClassName()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 A string containing the class name for the automation element as assigned by the
 control developer. This is often the C# class name of the control.
 
 - Windows`UIA_ClassNamePropertyId`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -298,7 +298,7 @@ control developer. This is often the C# class name of the control.
 
 <span id="uid-52680c5dea"></span>
 
-### GetHeadingLevel Method
+### GetHeadingLevel 方法 {#getheadinglevel-method}
 
 Gets the heading level that is associated with this automation peer.
 
@@ -306,12 +306,12 @@ Gets the heading level that is associated with this automation peer.
 public int GetHeadingLevel()
 ```
 
-#### Returns
+#### 返回值 {#returns-7}
 
 int
 
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 - Windows`UIA_HeadingLevelPropertyId`
 - macOS`NSAccessibilityProtocol.accessibilityValue`
@@ -322,7 +322,7 @@ int
 
 <span id="uid-3613ae2a30"></span>
 
-### GetHelpText Method
+### GetHelpText 方法 {#gethelptext-method}
 
 Gets text that provides help for the element that is associated with this automation peer.
 
@@ -330,12 +330,12 @@ Gets text that provides help for the element that is associated with this automa
 public string GetHelpText()
 ```
 
-#### Returns
+#### 返回值 {#returns-8}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-8}
 
 - Windows`UIA_HelpTextPropertyId`
 - macOS`NSAccessibilityProtocol.accessibilityHelp`
@@ -346,7 +346,7 @@ string
 
 <span id="uid-798f219773"></span>
 
-### GetItemStatus Method
+### GetItemStatus 方法 {#getitemstatus-method}
 
 Gets the item status that is associated with this automation peer.
 
@@ -354,15 +354,15 @@ Gets the item status that is associated with this automation peer.
 public string GetItemStatus()
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-9}
 
 - Windows`UIA_ItemStatusPropertyId`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -370,7 +370,7 @@ string
 
 <span id="uid-d858421abf"></span>
 
-### GetItemType Method
+### GetItemType 方法 {#getitemtype-method}
 
 Gets the item type that is associated with this automation peer.
 
@@ -378,15 +378,15 @@ Gets the item type that is associated with this automation peer.
 public string GetItemType()
 ```
 
-#### Returns
+#### 返回值 {#returns-10}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-10}
 
 - Windows`UIA_ItemTypePropertyId`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -394,7 +394,7 @@ string
 
 <span id="uid-98bd49471d"></span>
 
-### GetLabeledBy Method
+### GetLabeledBy 方法 {#getlabeledby-method}
 
 Gets the automation peer for the label that is targeted to the element.
 
@@ -402,12 +402,12 @@ Gets the automation peer for the label that is targeted to the element.
 public Avalonia.Automation.Peers.AutomationPeer GetLabeledBy()
 ```
 
-#### Returns
+#### 返回值 {#returns-11}
 
 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)
 
 
-#### Remarks
+#### 备注 {#remarks-11}
 
 Identifies an automation peer representing an element which that contains the text
 label for this element.
@@ -421,7 +421,7 @@ label for this element.
 
 <span id="uid-57bba04eba"></span>
 
-### GetLandmarkType Method
+### GetLandmarkType 方法 {#getlandmarktype-method}
 
 Gets the control type for the element that is associated with the UI Automation peer.
 
@@ -429,12 +429,12 @@ Gets the control type for the element that is associated with the UI Automation 
 public Nullable<Avalonia.Automation.Peers.AutomationLandmarkType> GetLandmarkType()
 ```
 
-#### Returns
+#### 返回值 {#returns-12}
 
 Nullable&lt;[Avalonia.Automation.Peers.AutomationLandmarkType](xref:Avalonia.Automation.Peers.AutomationLandmarkType)&gt;
 
 
-#### Remarks
+#### 备注 {#remarks-12}
 
 Gets the type of the element.
 
@@ -447,7 +447,7 @@ Gets the type of the element.
 
 <span id="uid-75007f578a"></span>
 
-### GetLiveSetting Method
+### GetLiveSetting 方法 {#getlivesetting-method}
 
 Gets the current live setting that is associated with this this automation peer.
 
@@ -455,7 +455,7 @@ Gets the current live setting that is associated with this this automation peer.
 public Avalonia.Automation.AutomationLiveSetting GetLiveSetting()
 ```
 
-#### Returns
+#### 返回值 {#returns-13}
 
 [Avalonia.Automation.AutomationLiveSetting](xref:Avalonia.Automation.AutomationLiveSetting)
 
@@ -468,7 +468,7 @@ The live setting to use for automation.
 
 <span id="uid-262763e857"></span>
 
-### GetLocalizedControlType Method
+### GetLocalizedControlType 方法 {#getlocalizedcontroltype-method}
 
 Gets a human-readable localized string that represents the type of the control that is
 associated with this automation peer.
@@ -477,15 +477,15 @@ associated with this automation peer.
 public string GetLocalizedControlType()
 ```
 
-#### Returns
+#### 返回值 {#returns-14}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-13}
 
 - Windows`UIA_LocalizedControlTypePropertyId` (not yet implemented)
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -493,7 +493,7 @@ string
 
 <span id="uid-ac6dd5a547"></span>
 
-### GetName Method
+### GetName 方法 {#getname-method}
 
 Gets text that describes the element that is associated with this automation peer.
 
@@ -501,12 +501,12 @@ Gets text that describes the element that is associated with this automation pee
 public string GetName()
 ```
 
-#### Returns
+#### 返回值 {#returns-15}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-14}
 
 - Windows`UIA_NamePropertyId` (not yet implemented)
 - macOS When the control type is [Avalonia.Automation.Peers.AutomationControlType.Text](xref:Avalonia.Automation.Peers.AutomationControlType.Text), this value is exposed by both `NSAccessibilityProtocol.accessibilityTitle` and `NSAccessibilityProtocol.accessibilityValue` .
@@ -517,7 +517,7 @@ string
 
 <span id="uid-947969c77f"></span>
 
-### GetParent Method
+### GetParent 方法 {#getparent-method}
 
 Gets the [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) that is the parent of this [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer).
 
@@ -525,12 +525,12 @@ Gets the [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Pee
 public Avalonia.Automation.Peers.AutomationPeer GetParent()
 ```
 
-#### Returns
+#### 返回值 {#returns-16}
 
 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)
 
 
-#### Remarks
+#### 备注 {#remarks-15}
 
 - Windows`IRawElementProviderFragment.Navigate`
 - macOS`NSAccessibilityProtocol.accessibilityParent`
@@ -541,7 +541,7 @@ public Avalonia.Automation.Peers.AutomationPeer GetParent()
 
 <span id="uid-1ced74e763"></span>
 
-### GetPlaceholderText Method
+### GetPlaceholderText 方法 {#getplaceholdertext-method}
 
 Gets text that provides a placeholder for the element that is associated with this automation peer.
 
@@ -549,12 +549,12 @@ Gets text that provides a placeholder for the element that is associated with th
 public string GetPlaceholderText()
 ```
 
-#### Returns
+#### 返回值 {#returns-17}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-16}
 
 - WindowsNo mapping.
 - macOS`NSAccessibilityProtocol.accessibilityPlaceholderValue`
@@ -565,7 +565,7 @@ string
 
 <span id="uid-ee05fc8d1e"></span>
 
-### GetProvider Method
+### GetProvider 方法 {#getprovider-method}
 
 ```csharp
 public T GetProvider<T>()
@@ -576,7 +576,7 @@ public T GetProvider<T>()
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-18}
 
 T
 
@@ -587,7 +587,7 @@ T
 
 <span id="uid-5f0d3a3d10"></span>
 
-### HasKeyboardFocus Method
+### HasKeyboardFocus 方法 {#haskeyboardfocus-method}
 
 Gets a value that indicates whether the element that is associated with this automation
 peer currently has keyboard focus.
@@ -596,12 +596,12 @@ peer currently has keyboard focus.
 public bool HasKeyboardFocus()
 ```
 
-#### Returns
+#### 返回值 {#returns-19}
 
 bool
 
 
-#### Remarks
+#### 备注 {#remarks-17}
 
 - Windows`UIA_HasKeyboardFocusPropertyId`
 - macOS`NSAccessibilityProtocol.isAccessibilityFocused`
@@ -612,7 +612,7 @@ bool
 
 <span id="uid-5202d69eb1"></span>
 
-### IsContentElement Method
+### IsContentElement 方法 {#iscontentelement-method}
 
 Gets a value that indicates whether the element that is associated with this automation
 peer contains data that is presented to the user.
@@ -621,15 +621,15 @@ peer contains data that is presented to the user.
 public bool IsContentElement()
 ```
 
-#### Returns
+#### 返回值 {#returns-20}
 
 bool
 
 
-#### Remarks
+#### 备注 {#remarks-18}
 
 - Windows`UIA_IsContentElementPropertyId`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -637,7 +637,7 @@ bool
 
 <span id="uid-665cdd1957"></span>
 
-### IsControlElement Method
+### IsControlElement 方法 {#iscontrolelement-method}
 
 Gets a value that indicates whether the element is understood by the user as
 interactive or as contributing to the logical structure of the control in the GUI.
@@ -646,12 +646,12 @@ interactive or as contributing to the logical structure of the control in the GU
 public bool IsControlElement()
 ```
 
-#### Returns
+#### 返回值 {#returns-21}
 
 bool
 
 
-#### Remarks
+#### 备注 {#remarks-19}
 
 - Windows`UIA_IsControlElementPropertyId`
 - macOS`NSAccessibilityProtocol.isAccessibilityElement`
@@ -662,7 +662,7 @@ bool
 
 <span id="uid-cc55d0a61a"></span>
 
-### IsEnabled Method
+### IsEnabled 方法 {#isenabled-method}
 
 Gets a value indicating whether the control is enabled for user interaction.
 
@@ -670,12 +670,12 @@ Gets a value indicating whether the control is enabled for user interaction.
 public bool IsEnabled()
 ```
 
-#### Returns
+#### 返回值 {#returns-22}
 
 bool
 
 
-#### Remarks
+#### 备注 {#remarks-20}
 
 - Windows`UIA_IsEnabledPropertyId`
 - macOS`NSAccessibilityProtocol.isAccessibilityEnabled`
@@ -686,7 +686,7 @@ bool
 
 <span id="uid-c9dfcdf842"></span>
 
-### IsKeyboardFocusable Method
+### IsKeyboardFocusable 方法 {#iskeyboardfocusable-method}
 
 Gets a value that indicates whether the element can accept keyboard focus.
 
@@ -694,15 +694,15 @@ Gets a value that indicates whether the element can accept keyboard focus.
 public bool IsKeyboardFocusable()
 ```
 
-#### Returns
+#### 返回值 {#returns-23}
 
 bool
 
 
-#### Remarks
+#### 备注 {#remarks-21}
 
 - Windows`UIA_IsKeyboardFocusablePropertyId`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -710,7 +710,7 @@ bool
 
 <span id="uid-72084dcbfb"></span>
 
-### IsOffscreen Method
+### IsOffscreen 方法 {#isoffscreen-method}
 
 Gets a value that indicates whether an element is off the screen.
 
@@ -718,12 +718,12 @@ Gets a value that indicates whether an element is off the screen.
 public bool IsOffscreen()
 ```
 
-#### Returns
+#### 返回值 {#returns-24}
 
 bool
 
 
-#### Remarks
+#### 备注 {#remarks-22}
 
 This property does not indicate whether the element is visible. In some circumstances,
 an element is on the screen but is still not visible. For example, if the element is
@@ -731,7 +731,7 @@ on the screen but obscured by other elements, it might not be visible. In this c
 the method returns false.
 
 - Windows`UIA_IsOffscreenPropertyId`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -739,7 +739,7 @@ the method returns false.
 
 <span id="uid-ffcc0e3d63"></span>
 
-### RaisePropertyChangedEvent Method
+### RaisePropertyChangedEvent 方法 {#raisepropertychangedevent-method}
 
 Raises an event to notify the automation client of a changed property value.
 
@@ -747,7 +747,7 @@ Raises an event to notify the automation client of a changed property value.
 public void RaisePropertyChangedEvent(Avalonia.Automation.AutomationProperty property, object oldValue, object newValue)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `property` [Avalonia.Automation.AutomationProperty](xref:Avalonia.Automation.AutomationProperty)
 
@@ -770,7 +770,7 @@ The new value of the property.
 
 <span id="uid-6a8d233e48"></span>
 
-### SetFocus Method
+### SetFocus 方法 {#setfocus-method}
 
 Sets the keyboard focus on the element that is associated with this automation peer.
 
@@ -784,7 +784,7 @@ public void SetFocus()
 
 <span id="uid-8bfe04d25b"></span>
 
-### ShowContextMenu Method
+### ShowContextMenu 方法 {#showcontextmenu-method}
 
 Shows the context menu for the element that is associated with this automation peer.
 
@@ -792,7 +792,7 @@ Shows the context menu for the element that is associated with this automation p
 public bool ShowContextMenu()
 ```
 
-#### Returns
+#### 返回值 {#returns-25}
 
 bool
 
@@ -805,7 +805,7 @@ true if a context menu is present for the element; otherwise false.
 
 <span id="uid-51bb13f806"></span>
 
-### ToScreen Method
+### ToScreen 方法 {#toscreen-method}
 
 Converts a rectangle in the peer's coordinate space, as returned by
 [Avalonia.Automation.Peers.AutomationPeer.GetBoundingRectangle](xref:Avalonia.Automation.Peers.AutomationPeer.GetBoundingRectangle), to screen coordinates; returns null if the peer is
@@ -815,7 +815,7 @@ not currently hosted in a rendered visual tree.
 public Nullable<Avalonia.Rect> ToScreen(Avalonia.Rect rect)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
@@ -823,16 +823,16 @@ A rectangle in the peer's own coordinate space, as returned by
 [Avalonia.Automation.Peers.AutomationPeer.GetBoundingRectangle](xref:Avalonia.Automation.Peers.AutomationPeer.GetBoundingRectangle).
 
 
-#### Returns
+#### 返回值 {#returns-26}
 
 Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ChildrenChanged](#uid-d7771086b7) | Occurs when the children of the automation peer have changed. |
 | [PropertyChanged](#uid-7b87077a9e) | Occurs when a property value of the automation peer has changed. |
@@ -841,7 +841,7 @@ Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 <span id="uid-d7771086b7"></span>
 
-### ChildrenChanged Event
+### ChildrenChanged 事件 {#childrenchanged-event}
 
 Occurs when the children of the automation peer have changed.
 
@@ -855,7 +855,7 @@ public event EventHandler ChildrenChanged
 
 <span id="uid-7b87077a9e"></span>
 
-### PropertyChanged Event
+### PropertyChanged 事件 {#propertychanged-event}
 
 Occurs when a property value of the automation peer has changed.
 

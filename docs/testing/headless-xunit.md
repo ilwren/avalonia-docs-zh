@@ -111,7 +111,7 @@ public void Should_Type_Text_Into_TextBox()
 
 Instead of the typical `[Fact]` attribute, use `[AvaloniaFact]` as it sets up the UI thread. Similarly, instead of `[Theory]`, there is an `[AvaloniaTheory]` attribute.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Testable sample app for XUnit](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Testing/TestableApp.Headless.XUnit)
 - [Headless Testing Platform](/docs/testing/setting-up-the-headless-platform)

@@ -248,7 +248,7 @@ public class PersonListViewModel : ViewModelBase
 </StackPanel>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid overview](/controls/data-display/structured-data/treedatagrid/)
 - [Column types](/controls/data-display/structured-data/treedatagrid/column-types)

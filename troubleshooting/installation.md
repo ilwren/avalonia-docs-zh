@@ -71,7 +71,7 @@ If `dotnet new install Avalonia.Templates` fails with a "not found" error, your 
 
 ### Step 1: List your NuGet sources
 
-Run this command:
+执行以下命令：
 
 ```bash
 dotnet nuget list source
@@ -147,8 +147,8 @@ On macOS and Linux, you may see permission errors when installing templates or t
 sudo chown -R $(whoami) ~/.templateengine
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Install Avalonia](/docs/get-started/install-avalonia)
-- [Set up your IDE](/docs/get-started/set-up-your-ide)
+- [配置你的 IDE](/docs/get-started/set-up-your-ide)
 - [App performance issues](/troubleshooting/app-performance-issues)

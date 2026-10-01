@@ -22,7 +22,7 @@ apt-get update && apt-get install -y \
     xvfb
 ```
 
-| Package | Purpose |
+| Package | 用途 |
 |---|---|
 | `libx11-6` | X11 client library. Avalonia connects to the X display server through this. |
 | `libice6` | Inter-Client Exchange protocol. Required by the X session. |
@@ -175,7 +175,7 @@ RUN apt-get install -y fonts-noto && fc-cache -fv
 
 Xvfb is not running or the `DISPLAY` variable does not match the Xvfb display number. Verify that Xvfb starts before your application and that `DISPLAY` is set to the same value (for example, `:99`).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Deploying to Desktop Linux](/docs/deployment/linux) for `.deb` packaging
 - [Deploying to Embedded Linux](/docs/deployment/embedded-linux) for DRM/KMS scenarios

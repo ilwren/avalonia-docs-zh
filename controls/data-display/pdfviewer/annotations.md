@@ -62,7 +62,7 @@ To disable editing altogether rather than hide tools, use `IsReadOnly` or `Allow
 
 Selecting text shows a context menu with the markup tools. The same operations are available from code and apply to the current selection. Each returns the new annotation's index on the page, or `-1` on failure. Colours are `PdfAnnotationColor` values with `R`, `G`, `B` and `A` byte components.
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `HighlightSelectionAsync(PdfAnnotationColor? color = null)` | Highlights the selection. |
 | `UnderlineSelectionAsync(PdfAnnotationColor? color = null)` | Underlines the selection. |
@@ -79,7 +79,7 @@ await Viewer.UnderlineSelectionAsync(new PdfAnnotationColor(0, 0, 255, 255));
 
 ## Sticky notes
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `AddStickyNoteAsync(int pageIndex, double pdfX, double pdfY, string text, PdfAnnotationColor? color = null)` | Adds a sticky note at a PDF-space position. Returns the annotation index, or `-1`. |
 | `UpdateStickyNoteAsync(int pageIndex, int annotIndex, string? text, PdfAnnotationColor? color)` | Changes a note's text or colour. |
@@ -94,7 +94,7 @@ await Viewer.UpdateStickyNoteAsync(0, index, "Checked", null);
 
 The **Stamp** dropdown offers a list of labels such as **Approved**, **Draft** and **Received**, a style selector and an **Include date** toggle. Stamps are saved as standard `/Stamp` annotations, so other readers render and move them.
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `StampLabels` | `IReadOnlyList<string>` | `DefaultStampLabels` | Labels offered by the dropdown. Drawn in capitals. |
 | `StampColor` | `PdfAnnotationColor?` | `null` | Colour for every stamp. `null` picks one by label: green for the built-in approval labels (Approved, Completed, Paid, Received, Reviewed, Final, For Public Release), blue for the built-in status labels (Draft, For Comment, As Is, Experimental, Departmental, Copy), and red for everything else, including your own labels. |
@@ -113,7 +113,7 @@ await Viewer.AddStampAsync(0, "Approved", 300, 700, includeDate: true);
 
 Shapes are saved with their standard PDF subtypes (`/Square`, `/Circle`, `/Line`, `/Polygon`), so they stay editable in other readers. Text boxes are `/FreeText`. Curved lines are saved as `/Stamp`. `ShapeSubtypeMode` chooses how shapes that carry text are written.
 
-| `PdfShapeSubtypeMode` | Description |
+| `PdfShapeSubtypeMode` | 说明 |
 |---|---|
 | `Auto` | Standard subtypes for shapes without text, `/Stamp` for shapes with text. This matches what macOS Preview does. |
 | `Standard` | Standard subtypes for everything, text included. The text is lost if another reader edits the shape. |
@@ -123,7 +123,7 @@ Non-Latin text in text boxes, shapes and stamps (Cyrillic, Greek, CJK and so on)
 
 ### Default colours and typography
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `HighlightColor` | `PdfAnnotationColor` | Yellow, 50% alpha | Highlight colour. |
 | `UnderlineColor` | `PdfAnnotationColor` | Green | Underline colour. |
@@ -165,7 +165,7 @@ Interactive form fields can be filled with the pointer and keyboard. <kbd>Tab</k
 
 Annotation edits, form field edits and redactions are recorded. Bookmarks are not.
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `Undo()` / `Redo()` | Applies the previous or next history entry. `UndoAsync()` and `RedoAsync()` await it. |
 | `CanUndo` / `CanRedo` | Whether there is an entry to apply. Bindable. |
@@ -189,7 +189,7 @@ Every annotation is saved with an appearance stream, so edits render in Acrobat,
 
 Editing an annotation created by another application rebuilds its appearance. Any reply chain (`/Popup`, `/IRT`) attached to it is dropped, and the annotation moves to the end of the page's annotation order.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PdfViewer control](index.md)
 - [Loading and saving](loading-and-saving.md)

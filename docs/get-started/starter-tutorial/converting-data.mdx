@@ -1,84 +1,84 @@
 ---
 id: converting-data
-title: Converting data
-description: How to use code-behind to execute a response when the button is clicked. Part 6 of 7 the Avalonia starter tutorial.
+title: 转换数据
+description: 如何用代码隐藏文件响应按钮点击。Avalonia 入门教程第 6 篇，共 7 篇。
 doc-type: tutorial
 video:
   src: https://youtu.be/ZWfHOWs1HkE
-  title: Convert User Input in Avalonia — TryParse, Validation & Live UI Updates
+  title: 在 Avalonia 中转换用户输入 —— TryParse、校验与界面实时更新
 ---
 
-To complete our temperature converter app, we need to give it the ability to take a numerical input and convert it into a different number using a specified formula.
+要让温度换算器真正完工，还得让它能接收一个数值输入，并按指定公式换算成另一个数值。
 
-## Naming your controls
+## 给控件命名 {#naming-your-controls}
 
-To differentiate controls in your app, you can assign names to them. We’re going to do that for the `TextBox` controls.
+想在应用中区分不同控件，可以给它们起名字。下面就给那两个 `TextBox` 控件各起一个。
 
-1. Stop the app if it is running.
-2. In the file **MainWindow.axaml**, locate the Celsius text box: `<TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0"/>`
-3. Add the `Name` attribute to the `<TextBox>` tag, like so:
+1. 如果应用还在运行，先把它停掉。
+2. 在 **MainWindow.axaml** 文件中找到摄氏度文本框：`<TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0"/>`
+3. 像下面这样给 `<TextBox>` 标签加上 `Name` 特性：
 
 ```xml
 <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0" Name="Celsius"/>
 ```
 
-4. Locate the Fahrenheit text box: `<TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0"/>`
-5. Add the `Name` attribute to the `<TextBox>` tag, like so:
+4. 找到华氏度文本框：`<TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0"/>`
+5. 像下面这样给 `<TextBox>` 标签加上 `Name` 特性：
 
 ```xml
 <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0" Name="Fahrenheit"/>
 ```
 
-## Getting input values
+## 读取输入值 {#getting-input-values}
 
-Next, we need the app to be able to access values entered into the `Celsius` text box.
+接下来要让应用能够读到 `Celsius` 文本框里输入的内容。
 
-1. In the code-behind file **MainWindow.axaml.cs**, locate the `Button_OnClick` event handler that you [created earlier](/docs/get-started/starter-tutorial/establishing-events-and-responses).
-2. Change the `Debug` statement to display the text entered into the `Celsius` text box, like so:
+1. 在代码隐藏文件 **MainWindow.axaml.cs** 中，找到你[之前创建的](/docs/get-started/starter-tutorial/establishing-events-and-responses) `Button_OnClick` 事件处理程序。
+2. 像下面这样修改 `Debug` 语句，让它输出 `Celsius` 文本框中录入的文字：
 
 ```csharp
 Debug.WriteLine($"Click! Celsius={Celsius.Text}");
 ```
 
-3. Run the app again, in [debug mode if required by your IDE](/docs/get-started/starter-tutorial/establishing-events-and-responses).
-4. Click the **Calculate** button a few times.
-5. Change the number in the `Celsius` text box and click **Calculate** a few more times.
-6. Check the debug output. Confirm that the input values of the `Celsius` text box are being printed.
+3. 再次运行应用（如果你的 IDE 需要，请用[调试模式](/docs/get-started/starter-tutorial/establishing-events-and-responses)）。
+4. 连点几次 **Calculate** 按钮。
+5. 改一下 `Celsius` 文本框里的数字，再点几次 **Calculate**。
+6. 查看调试输出，确认 `Celsius` 文本框的输入值确实被打印了出来。
 
-## Implementing the conversion formula
+## 实现换算公式 {#implementing-the-conversion-formula}
 
-The final step is to program the app to apply the mathematical formula that converts a Celsius value to Fahrenheit, then print the calculated output in the Fahrenheit text box.
+最后一步，是让应用套用把摄氏度换算成华氏度的数学公式，并把算出的结果显示在华氏度文本框里。
 
-In case you aren’t familiar with the Celsius-Fahrenheit conversion formula, it is:
+如果你对摄氏－华氏换算公式不太熟悉，它是这样的：
 
-> Fahrenheit = Celsius * (9/5) + 32
+> 华氏度 = 摄氏度 * (9/5) + 32
 
-Here is how to implement this logic in the C# code-behind.
+下面看看怎么用 C# 代码隐藏文件实现这段逻辑。
 
-1. In the code-behind file **MainWindow.axaml.cs**, locate the `Button_OnClick` event handler you [created earlier](/docs/get-started/starter-tutorial/establishing-events-and-responses).
-2. Delete the `Debug` statement.
-3. (Optional) You can also delete the statement `using System.Diagnostics;` from the top of the file. It is no longer needed.
-4. Within the `Button_OnClick` event handler, add this code to validate the Celsius input is a number:
+1. 在代码隐藏文件 **MainWindow.axaml.cs** 中，找到你[之前创建的](/docs/get-started/starter-tutorial/establishing-events-and-responses) `Button_OnClick` 事件处理程序。
+2. 删掉那条 `Debug` 语句。
+3. （可选）文件顶部的 `using System.Diagnostics;` 语句也可以一并删掉，它已经用不上了。
+4. 在 `Button_OnClick` 事件处理程序中添加这段代码，用于校验摄氏度输入是不是数字：
 
 ```csharp
 if (double.TryParse(Celsius.Text, out double C))
 ```
 
-5. Within the `if` conditional clause, add this code to apply the conversion formula:
+5. 在 `if` 条件分支中添加这段代码，套用换算公式：
 
 ```csharp
 {
     var F = C * (9d / 5d) + 32;
 ```
 
-6. Add this code to print the output as text to the Fahrenheit text box, then close the conditional clause:
+6. 再添加这段代码，把结果以文本形式输出到华氏度文本框，然后闭合条件分支：
 
 ```csharp
     Fahrenheit.Text = F.ToString("0.0");
 }
 ```
 
-7. Add an `else` conditional clause to reset the text boxes to 0 in case of invalid input:
+7. 补上一个 `else` 分支，在输入非法时把两个文本框都重置为 0：
 
 ```csharp
 else
@@ -88,7 +88,7 @@ else
 }
 ```
 
-8. Your completed event handler should look like this:
+8. 写完之后，你的事件处理程序应该是这样：
 
 ```csharp
 private void Button_OnClick(object? sender, RoutedEventArgs e)
@@ -106,12 +106,12 @@ private void Button_OnClick(object? sender, RoutedEventArgs e)
 }
 ```
 
-## Checking your work
+## 检查成果 {#checking-your-work}
 
-1. Run your **GetStartedApp**.
-2. Input the following numbers into the Celsius box, then click **Calculate**. Confirm the app returns the correct Fahrenheit values:
+1. 运行 **GetStartedApp**。
+2. 在摄氏度输入框中依次输入下列数字，每次都点一下 **Calculate**，确认应用返回的华氏度数值正确：
 
-| **Celsius** | **Fahrenheit** |
+| **摄氏度** | **华氏度** |
 | --- | --- |
 | -10 | 14.0 |
 | 0 | 32.0 |
@@ -119,15 +119,15 @@ private void Button_OnClick(object? sender, RoutedEventArgs e)
 | 21 | 69.8 |
 | 32.0 | 89.6 |
 
-3. Input something into the Fahrenheit box without altering the Celsius box. Confirm the app reverts the text in the Fahrenheit box to the formula output of the given Celsius value.
-4. Input “abc” into the Celsius box. Confirm the app resets both text boxes to 0.
+3. 在不改动摄氏度输入框的前提下，往华氏度输入框里随便输点东西。确认应用会把华氏度框里的内容改回由当前摄氏度算出的结果。
+4. 在摄氏度输入框中输入 “abc”，确认应用会把两个文本框都重置为 0。
 
 :::note
-Does it seem odd you that the app has the option to input numbers into the Fahrenheit box, but won’t convert them to Celsius? Not to worry, we’re going to make that box read-only in the exercises, coming up next.
+你可能觉得有点奇怪：应用允许在华氏度框里输入数字，却不会把它换算成摄氏度。别急，紧接着的练习环节就会把那个框改成只读。
 :::
 
-Congratulations! You have created a temperature converter app using Avalonia. More importantly, you now have a solid foundation in the basics of the Avalonia framework.
+恭喜！你已经用 Avalonia 做出了一个温度换算器。更重要的是，你对 Avalonia 框架的基础已经有了扎实的理解。
 
-You can get to work developing your own apps now, if you wish.
+如果愿意，现在就可以着手开发你自己的应用了。
 
-Or, to test your knowledge on three short exercises, proceed to the last page of this tutorial.
+或者，也可以翻到本教程的最后一页，用三道小练习检验一下学习成果。

@@ -11,7 +11,7 @@ The `TimePicker` presents two to four spinner controls that let users select a t
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `SelectedTime` | `TimeSpan?` | The selected time value. `null` when no time is selected. |
 | `ClockIdentifier` | `string` | Sets the clock format. Use `12HourClock` or `24HourClock`. The 12-hour format adds an AM/PM spinner. |
@@ -97,7 +97,7 @@ private TimeSpan? _appointmentTime = new TimeSpan(14, 30, 0);
 
 You can react to changes by subscribing to the `SelectedTimeChanged` event or by observing property changes in your view model.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [DatePicker](/controls/input/date-and-time/datepicker)
 - [CalendarDatePicker](/controls/input/date-and-time/calendardatepicker)

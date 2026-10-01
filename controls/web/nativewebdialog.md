@@ -7,7 +7,7 @@ title: NativeWebDialog
 
 ## Useful properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Title` | `string?` | The dialog window title. |
 | `CanUserResize` | `bool` | Whether the user can resize the dialog. |
@@ -71,7 +71,7 @@ dialog.Focus();
 
 ## Navigation
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `Navigate(Uri)` | Navigates to the specified URI. |
 | `NavigateToString(string)` | Renders an HTML string as the page content. |
@@ -100,7 +100,7 @@ dialog.WebMessageReceived += (sender, e) =>
 
 ## Printing
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `ShowPrintUI()` | Opens the platform print dialog. |
 | `PrintToPdfStreamAsync()` | Returns the current page as a PDF stream. |
@@ -139,23 +139,23 @@ See [WebView environment options](/controls/web/webview-environment) for details
 
 ## Window sizing and position
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `Resize(int, int)` | Resizes the dialog to the specified width and height. |
 | `Move(int, int)` | Moves the dialog to the specified screen coordinates. |
 
 ## Advanced
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `TryGetCommandManager()` | Returns a `NativeWebViewCommandManager` for keyboard commands (copy, paste, etc.) if supported. |
 | `TryGetCookieManager()` | Returns a `NativeWebViewCookieManager` for managing cookies if supported. |
 | `TryGetWebViewPlatformHandle()` | Returns the platform handle of the hosted WebView. See [embedding web content](/docs/app-development/embedding-web-content). |
 | `TryGetPlatformHandle()` | Returns the platform handle of the dialog window itself. |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 |---|---|
 | `Closing` | Fires before the dialog closes. |
 | `AdapterCreated` | Fires after the WebView adapter has been initialized. |
@@ -181,7 +181,7 @@ See [WebView environment options](/controls/web/webview-environment) for details
 
 \** macOS does not support extended `PrintToPdfStreamAsync` print options. Use CSS `@media print` and `@page` rules instead.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NativeWebView](/controls/web/nativewebview): Embeddable WebView control for use inside your layout.
 - [WebAuthenticationBroker](/controls/web/webauthenticationbroker): OAuth and web-based authentication flows.

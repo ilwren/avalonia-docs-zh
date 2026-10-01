@@ -170,7 +170,7 @@ Now you can use the type in XAML:
 <local:Thermostat CurrentTemperature="72F" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [XAML Reference](/docs/xaml): Overview of XAML syntax.
 - [Data Binding Converters](/docs/data-binding/how-to-create-a-custom-data-binding-converter): Value converters for data binding (different from type converters).

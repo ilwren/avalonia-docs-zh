@@ -60,7 +60,7 @@ e.Handled = true;
 
 `SwipeGestureEventArgs` is raised during the gesture:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Id` | `int` | Unique identifier for this gesture sequence. |
 | `Delta` | `Vector` | Pixel delta since the last event. |
@@ -69,16 +69,16 @@ e.Handled = true;
 
 `SwipeGestureEndedEventArgs` is raised when the pointer is released:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Id` | `int` | Unique identifier for this gesture sequence. |
 | `Velocity` | `Vector` | Swipe velocity at the moment the pointer was released. |
 
-## Properties
+## 属性 {#properties}
 
 You will probably use these properties most often:
 
-| Property | Type | Description | Default |
+| Property | Type | 说明 | Default |
 |---|---|---|---|
 | `CanHorizontallySwipe` | `bool` | Enables tracking of horizontal (left/right) swipes. | `false` |
 | `CanVerticallySwipe` | `bool` | Enables tracking of vertical (up/down) swipes. | `false` |
@@ -127,7 +127,7 @@ By default, only touch and pen input trigger swipe gestures. Enable mouse suppor
 </Border.GestureRecognizers>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [API reference](/api/avalonia/input/gesturerecognizers/swipegesturerecognizer)
 - [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/SwipeGestureRecognizer.cs)

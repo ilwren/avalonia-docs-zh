@@ -48,7 +48,7 @@ public ObservableCollection<SemiDonutPoint> SemiDonutChartData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The data source for the segments. | `null` |
 | `ValuePath` | Property path for values. | `null` |

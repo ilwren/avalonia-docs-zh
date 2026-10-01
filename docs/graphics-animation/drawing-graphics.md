@@ -134,7 +134,7 @@ Hover over each shape to identify it:
 
 Avalonia UI has animation support lets you make controls grow, shake, spin, and fade, to create interesting page transitions, and more. Avalonia uses a CSS-like animation system which supports [transitions](/docs/graphics-animation/control-transitions) and [keyframe animations](/docs/graphics-animation/keyframe-animations).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Shapes and Geometries](/docs/graphics-animation/shapes-and-geometries): Shape controls and geometry types.
 - [Brushes](/docs/graphics-animation/brushes): Brush types for fills and strokes.

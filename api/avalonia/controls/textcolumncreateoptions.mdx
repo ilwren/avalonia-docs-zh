@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextColumnCreateOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,24 +50,24 @@ public class TextColumnCreateOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="columncreateoptions">ColumnCreateOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> TextColumnCreateOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="columncreateoptions">ColumnCreateOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> TextColumnCreateOptions
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="hierarchicalexpandertextcolumncreateoptions-1">HierarchicalExpanderTextColumnCreateOptions&lt;TModel&gt;</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="hierarchicalexpandertextcolumncreateoptions-1">HierarchicalExpanderTextColumnCreateOptions&lt;TModel&gt;</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextColumnCreateOptions](#uid-6800c57b13) | No summary available. |
+| [TextColumnCreateOptions](#uid-6800c57b13) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6800c57b13"></span>
 
-### TextColumnCreateOptions Constructor
+### TextColumnCreateOptions 构造函数 {#textcolumncreateoptions-constructor}
 
 ```csharp
 public TextColumnCreateOptions()
@@ -75,9 +75,9 @@ public TextColumnCreateOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AllowTriStateSorting](columncreateoptions.mdx#uid-2d3c781356) | Gets or sets whether the user can cycle through ascending, descending, and unsorted states when clicking the column header. Inherited from [ColumnCreateOptions](columncreateoptions.mdx). |
 | [BeginEditGestures](columncreateoptions.mdx#uid-a7d933d9bd) | Gets or sets the gesture(s) that will cause a cell to enter edit mode. Inherited from [ColumnCreateOptions](columncreateoptions.mdx). |
@@ -103,7 +103,7 @@ public TextColumnCreateOptions()
 
 <span id="uid-8d964fc4cf"></span>
 
-### Culture Property
+### Culture 属性 {#culture-property}
 
 Culture info used in conjunction with [Avalonia.Controls.TextColumnCreateOptions.StringFormat](xref:Avalonia.Controls.TextColumnCreateOptions.StringFormat)
 
@@ -117,7 +117,7 @@ public System.Globalization.CultureInfo Culture { get; set; }
 
 <span id="uid-e110d12073"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
 Gets or sets whether the column is read-only.
 
@@ -125,7 +125,7 @@ Gets or sets whether the column is read-only.
 public bool IsReadOnly { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 A column whose expression resolves to a non-writable property (for example a get-only
 or init-only property) is always read-only, regardless of the value of this property.
@@ -136,7 +136,7 @@ or init-only property) is always read-only, regardless of the value of this prop
 
 <span id="uid-f10fb2914e"></span>
 
-### IsTextSearchEnabled Property
+### IsTextSearchEnabled 属性 {#istextsearchenabled-property}
 
 Gets or sets a value indicating whether the column takes part in text searches.
 
@@ -150,7 +150,7 @@ public bool IsTextSearchEnabled { get; set; }
 
 <span id="uid-3b661f0634"></span>
 
-### StringFormat Property
+### StringFormat 属性 {#stringformat-property}
 
 Gets or sets the format string for the cells in the column.
 
@@ -164,7 +164,7 @@ public string StringFormat { get; set; }
 
 <span id="uid-a923371860"></span>
 
-### TextAlignment Property
+### TextAlignment 属性 {#textalignment-property}
 
 Gets or sets the text alignment mode for the cells in the column.
 
@@ -178,7 +178,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 <span id="uid-032c3ee539"></span>
 
-### TextTrimming Property
+### TextTrimming 属性 {#texttrimming-property}
 
 Gets or sets the text trimming mode for the cells in the column.
 
@@ -192,7 +192,7 @@ public Avalonia.Media.TextTrimming TextTrimming { get; set; }
 
 <span id="uid-44607fef93"></span>
 
-### TextWrapping Property
+### TextWrapping 属性 {#textwrapping-property}
 
 Gets or sets the text wrapping mode for the cells in the column.
 
@@ -206,7 +206,7 @@ public Avalonia.Media.TextWrapping TextWrapping { get; set; }
 
 <span id="uid-8f20149cfe"></span>
 
-### UseDrawnCells Property
+### UseDrawnCells 属性 {#usedrawncells-property}
 
 Gets or sets a value indicating whether the column uses drawn cells instead of
 control-based cells for improved performance.

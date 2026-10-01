@@ -62,7 +62,7 @@ public ObservableCollection<ArcLink> ArcLinks { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of items on the axis. | `null` |
 | `Links` | The relationships between nodes. | `null` |

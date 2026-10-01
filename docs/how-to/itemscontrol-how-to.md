@@ -329,7 +329,7 @@ The companion `ContainerClearing` event fires each time a container is cleared, 
 
 For more general tips on optimizing performance, see [Performance](/docs/app-development/performance).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ItemsControl](/controls/data-display/collections/itemscontrol)
 - [ItemsControl API reference](/api/avalonia/controls/itemscontrol)

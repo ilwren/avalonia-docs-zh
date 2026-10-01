@@ -30,7 +30,7 @@ The DevTools MCP server lets AI assistants connect to a running Avalonia applica
 
 For a general introduction to MCP, see [AI Tools](/tools/ai-tools/).
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before setting up the MCP server, ensure you have:
 
@@ -373,7 +373,7 @@ dotnet tool update -g avdt
 
 ### Connection
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `attach-to-app` | Connects to a running Avalonia app. If multiple apps are running, lists them for selection. |
 | `attach-to-file` | Connects to the XAML previewer for a specified file. Recommended over `attach-to-app` for previewing XAML layouts. |
@@ -381,7 +381,7 @@ dotnet tool update -g avdt
 
 ### Inspection
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `tree` | Returns child elements of a node. Pass a null `nodeId` to get the root elements. |
 | `ancestors` | Returns the parent chain from a node up to the root. |
@@ -390,7 +390,7 @@ dotnet tool update -g avdt
 
 ### Properties and styles
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `props` | Returns all property values for a node. |
 | `set-prop` | Sets a property value on a node. Use `null` or `unset` to clear a value. |
@@ -399,7 +399,7 @@ dotnet tool update -g avdt
 
 ### Resources and assets
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `resources` | Returns resources defined in the application. Optionally scoped to a specific node. |
 | `assets` | Lists embedded assets (images, fonts). Returns URLs for use with `open-asset`. |
@@ -407,7 +407,7 @@ dotnet tool update -g avdt
 
 ### Interaction
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `input` | Sends an input event (click, key press, etc.) to a UI element. |
 | `action` | Performs a higher-level action on a UI element. |
@@ -466,7 +466,7 @@ This prompt works well because it:
 - Includes the app instrumentation instructions (`DiagnosticsSupport` + `.WithDeveloperTools()`) directly in the prompt, so the assistant sets up the project correctly from the start.
 - Creates a feedback loop where the assistant keeps iterating until the design matches.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [AI Tools overview](/tools/ai-tools/)
 - [DevTools installation](/tools/developer-tools/installation)

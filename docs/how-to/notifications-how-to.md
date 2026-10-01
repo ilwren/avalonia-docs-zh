@@ -236,7 +236,7 @@ You can style notifications based on their type using class-based selectors:
 Consider adding a `warning` style (for example, `#F59E0B`) alongside `info`, `success`, and `error` to cover all four common notification levels.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Threading](/docs/app-development/threading): Understand UI thread marshalling with `Dispatcher.UIThread`.
 - [TrayIcon](/controls/navigation/trayicon): System tray integration for desktop platforms.

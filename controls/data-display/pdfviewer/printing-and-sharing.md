@@ -54,7 +54,7 @@ Viewer.PrintService = new MyPrintService();
 Viewer.ShareService = null; // no Share entry
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PdfViewer control](index.md)
 - [Loading and saving](loading-and-saving.md)

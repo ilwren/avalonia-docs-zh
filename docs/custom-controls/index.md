@@ -80,7 +80,7 @@ In addition to the three options described above, you can also create custom con
 
 These controls all derive from `Control`, meaning properties like `Width`, `Height`, `Margin`, and `DataContext` are available by default.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [User controls](/controls/primitives/usercontrol): Compose existing controls into a reusable view with XAML and code-behind.
 - [Custom templated controls](/docs/custom-controls/templated-controls): Build a lookless control whose appearance is defined by a control theme.

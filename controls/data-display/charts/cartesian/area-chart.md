@@ -49,7 +49,7 @@ public ObservableCollection<int> AreaSeriesData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data items. | `null` |

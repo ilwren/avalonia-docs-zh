@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TemplateExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Templates</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Templates</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/TemplateExtensions.cs">TemplateExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/TemplateExtensions.cs">TemplateExtensions.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class TemplateExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TemplateExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TemplateExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetTemplateChildren](#uid-3536dbe017) | Gets the list of all control descendants that are part of the template of a [Avalonia.Controls.Primitives.TemplatedControl](xref:Avalonia.Controls.Primitives.TemplatedControl), i.e. their [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) is `control`. |
 | [GetTemplateDescendants](#uid-c22a68a8a8) | Gets the list of all visual descendants that are part of the template of a [Avalonia.Controls.Primitives.TemplatedControl](xref:Avalonia.Controls.Primitives.TemplatedControl), i.e. their [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) is `control`. |
@@ -69,7 +69,7 @@ public class TemplateExtensions
 
 <span id="uid-3536dbe017"></span>
 
-### GetTemplateChildren Method
+### GetTemplateChildren 方法 {#gettemplatechildren-method}
 
 Gets the list of all control descendants that are part of the template of a [Avalonia.Controls.Primitives.TemplatedControl](xref:Avalonia.Controls.Primitives.TemplatedControl),
 i.e. their [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) is `control`.
@@ -78,14 +78,14 @@ i.e. their [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Control> GetTemplateChildren(Avalonia.Controls.Primitives.TemplatedControl control)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `control` [Avalonia.Controls.Primitives.TemplatedControl](xref:Avalonia.Controls.Primitives.TemplatedControl)
 
 The control whose descendants will be returned.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Control](xref:Avalonia.Controls.Control)&gt;
 
@@ -98,7 +98,7 @@ An enumeration of [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) ob
 
 <span id="uid-c22a68a8a8"></span>
 
-### GetTemplateDescendants Method
+### GetTemplateDescendants 方法 {#gettemplatedescendants-method}
 
 Gets the list of all visual descendants that are part of the template of a [Avalonia.Controls.Primitives.TemplatedControl](xref:Avalonia.Controls.Primitives.TemplatedControl),
 i.e. their [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) is `control`.
@@ -107,14 +107,14 @@ i.e. their [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetTemplateDescendants(Avalonia.Controls.Primitives.TemplatedControl control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `control` [Avalonia.Controls.Primitives.TemplatedControl](xref:Avalonia.Controls.Primitives.TemplatedControl)
 
 The control whose descendants will be returned.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 

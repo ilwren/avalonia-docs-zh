@@ -56,7 +56,7 @@ public ObservableCollection<double> SparklineWinLossData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of trend data. | `null` |
 | `ValuePath` | Property path used when `ItemsSource` contains objects instead of raw numbers. | `null` |
@@ -80,7 +80,7 @@ The `Brush`-type properties default to these colors when set to `null`:
 - `LossBrush`: Red
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [KPI cards](/controls/data-display/charts/analytics/kpi-card)
 - [Line chart](/controls/data-display/charts/cartesian/line-chart)

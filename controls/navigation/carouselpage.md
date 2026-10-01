@@ -27,7 +27,7 @@ import CarouselPageDataTemplateScreenshot from '/img/controls/carouselpage/carou
 
 You will probably use these properties most often:
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | -------- | ---- | ------- | ----------- |
 | `Pages` | `IEnumerable<Page>?` | `null` | The collection of child pages. This is the XAML content property. Supports any `IEnumerable<Page>`, including observable collections. |
 | `ItemsSource` | `IEnumerable?` | `null` | View-model collection. When set, takes precedence over `Pages` as the item source. Use together with `PageTemplate` to convert each item into a `Page`. |
@@ -39,9 +39,9 @@ You will probably use these properties most often:
 | `SelectedIndex` | `int` | `-1` | Zero-based index of the currently selected page. |
 | `SelectedPage` | `Page?` | `null` | Read-only. The currently selected page. |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 | ----- | ----------- |
 | `SelectionChanged` | Raised when the selected page changes. Provides `PreviousPage` and `CurrentPage`. |
 | `CurrentPageChanged` | Raised when `CurrentPage` changes. |
@@ -322,7 +322,7 @@ if (pages.Count > 1)
     pages.RemoveAt(pages.Count - 1);
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [API reference](/api/avalonia/controls/carouselpage)
 - [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/CarouselPage.cs)

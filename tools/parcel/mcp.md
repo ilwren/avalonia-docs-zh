@@ -14,7 +14,7 @@ The Parcel MCP server lets AI assistants use Parcel packaging tools. Your assist
 
 For a general introduction to MCP, see [AI Tools](/tools/ai-tools/).
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before you configure the MCP server, make sure that you have these items:
 
@@ -316,7 +316,7 @@ Describe what you want to accomplish in natural language. The AI assistant calls
 
 <Video src="/video/parcel/parcel_mcp.mp4" title="Parcel MCP server in action" aspectRatio="1492 / 958" maxWidth="100%" />
 
-## See also
+## 另请参阅 {#see-also}
 
 - [AI Tools overview](/tools/ai-tools/)
 - [Parcel setup](/tools/parcel/setup)

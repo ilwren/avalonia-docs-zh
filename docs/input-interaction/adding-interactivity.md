@@ -99,14 +99,14 @@ public partial class MainViewModel : ObservableObject
 
 ## Events vs commands
 
-| &nbsp; | Events | Commands |
+| &nbsp; | 事件 | Commands |
 |---|---|---|
 | Defined in | Code-behind | Data context |
 | Testable | Difficult (requires UI) | Easy (plain C# method) |
 | Best for | Control-specific actions (drag, resize) | Application logic (save, navigate, delete) |
 | MVVM pattern | Not preferred | Preferred |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Commanding](/docs/input-interaction/commanding): Writing commands—`ICommand`, `CanExecute`, and async commands.
 - [Binding to commands](/docs/data-binding/binding-to-commands): Binding syntax, method binding, and `CommandParameter`.

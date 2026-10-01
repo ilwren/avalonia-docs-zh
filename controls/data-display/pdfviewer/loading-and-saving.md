@@ -25,7 +25,7 @@ byte[] bytes = await File.ReadAllBytesAsync("/path/to/document.pdf");
 await Viewer.LoadDocumentAsync(bytes);
 ```
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `LoadDocumentAsync(string path, string? password = null)` | Loads a PDF from a file path. |
 | `LoadDocumentAsync(Stream stream, string? password = null)` | Loads a PDF from a stream. The stream is read from its current position, or from the start if it is seekable and at its end. |
@@ -73,7 +73,7 @@ Your own gates are separate:
 
 Every save writes the document with its annotation edits, form values, redactions and bookmarks.
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `SaveAsync()` / `Save()` | Saves in place over `Source`. Honours `AllowDocumentSaving`. A document loaded from a stream or byte array has no path: `SaveAsync` throws `InvalidOperationException` and `Save()` reports it through `ErrorMessage`. |
 | `SaveDocumentAsync(string filePath)` | Saves to a path. |
@@ -127,7 +127,7 @@ Viewer.SaveAsRequested += async (_, e) =>
 - Closing the window releases the native document. So does `CloseDocument()`.
 - A `Stream` passed to the viewer is read once and never disposed, so dispose it yourself after the load call returns. A `byte[]` is used in place for the document's lifetime and must not be modified while the document is open.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PdfViewer control](index.md)
 - [Printing and sharing](printing-and-sharing.md)

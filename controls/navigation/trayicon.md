@@ -15,7 +15,7 @@ You define tray icons in your `App.axaml` file using the `TrayIcon.Icons` attach
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Icon` | `WindowIcon` | The icon to display in the system tray. Typically loaded from your application assets. |
 | `ToolTipText` | `string` | Tooltip text displayed when the user hovers over the tray icon. |
@@ -118,7 +118,7 @@ You can toggle tray icon visibility at runtime by binding the `IsVisible` proper
 | macOS | Full support |
 | Linux | Works on distributions with `StatusNotifierItem` or `AppIndicator` support (confirmed on Ubuntu) |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NativeMenu](/controls/menus/nativemenu)
 - [Window](/controls/primitives/window)

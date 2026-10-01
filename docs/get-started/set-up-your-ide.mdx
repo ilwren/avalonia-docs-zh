@@ -1,11 +1,11 @@
 ---
 id: set-up-your-ide
-title: Set up your IDE
-description: Configure your preferred IDE for Avalonia development. Install extensions for Visual Studio, Visual Studio Code, or JetBrains Rider.
+title: 配置你的 IDE
+description: 为 Avalonia 开发配置好惯用的 IDE：安装 Visual Studio、Visual Studio Code 或 JetBrains Rider 的相应扩展。
 doc-type: how-to
 video:
   src: https://youtu.be/a7xsF5GoA9A
-  title: Install Your Avalonia IDE — Rider Setup with Live Preview
+  title: 装好你的 Avalonia 开发环境 —— Rider 配置与实时预览
 ---
 
 import DownloadAvaloniaRider from '/img/get-started/download-rider-avaloniarider.png';
@@ -15,70 +15,70 @@ import DownloadAvaloniaExtensionForVsCode from '/img/get-started/download-vscode
 <p><small>{frontMatter.description}</small></p>
 <br/>
 
-Avalonia works with several IDEs. Choose the one that fits your workflow best.
+Avalonia 支持多款 IDE，挑一个最顺手的即可。
 
 <Tabs groupId="ide">
   <TabItem value="vs" label="Visual Studio" default>
 
-If you're working on Windows, [Visual Studio](https://visualstudio.microsoft.com/) with the Avalonia for Visual Studio extension provides a rich XAML editing and preview experience. The extension supports Visual Studio 2022 version 17.12 and above.
+如果你在 Windows 上开发，[Visual Studio](https://visualstudio.microsoft.com/) 搭配 Avalonia for Visual Studio 扩展能带来相当完善的 XAML 编辑与预览体验。该扩展支持 Visual Studio 2022 17.12 及以上版本。
 
-The Avalonia for Visual Studio extension is part of [Avalonia Plus](https://avaloniaui.net/pricing), a suite of professional development tools.
+Avalonia for Visual Studio 扩展属于专业开发工具套件 [Avalonia Plus](https://avaloniaui.net/pricing) 的一部分。
 
-To install Avalonia for Visual Studio:
+安装 Avalonia for Visual Studio 的步骤：
 
-1. In Visual Studio, go to **Extensions → Manage Extensions**.
-2. In the search bar, input "Avalonia".
+1. 在 Visual Studio 中依次打开 **扩展 → 管理扩展**。
+2. 在搜索栏中输入 “Avalonia”。
 3. Click **Install**.
-4. Follow any additional installation instructions. You may need to close and reopen Visual Studio to complete the installation.
+4. 按提示完成后续安装步骤。可能需要关闭并重新打开 Visual Studio 才能装好。
 
 <Image light={DownloadAvaloniaExtensionForVS} alt="A screenshot displaying how to download the Avalonia extension in Visual Studio." position="center" maxWidth={400} cornerRadius="true" />
 
-Alternatively, you can [download the extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS).
+你也可以[从 Visual Studio Marketplace 下载该扩展](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS)。
 
-See the [Avalonia for Visual Studio](/tools/visual-studio-extension) page for details of features and settings.
+功能与设置的详细说明请见 [Avalonia for Visual Studio](/tools/visual-studio-extension) 页面。
 
 :::note
-If you are using an older version of Visual Studio, you may need to download an older version of the extension from the Marketplace, e.g., the [2019 version](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio).
+如果你用的是较旧版本的 Visual Studio，可能需要从 Marketplace 下载对应的旧版扩展，例如 [2019 版](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio)。
 :::
 
-For more information on using the XAML previewer, see the page on [XAML live preview](/docs/app-development/xaml-preview-and-design-settings).
+关于 XAML 预览器的更多说明，请参阅 [XAML 实时预览](/docs/app-development/xaml-preview-and-design-settings)。
   </TabItem>
   <TabItem value="vsc" label="Visual Studio Code">
 
-The [Avalonia for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia) extension is built on the same XAML parser that powers the Visual Studio extension. Both IDEs share the same underlying engine, so every code editing enhancement lands in VS Code simultaneously.
+[Avalonia for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia) 扩展与 Visual Studio 扩展基于同一套 XAML 解析器。两个 IDE 共用同一个底层引擎，因此每一项代码编辑方面的改进都会同时落地到 VS Code。
 
-The extension provides rich IntelliSense with contextual completions, full `x:DataType` Quick Info, Go To Definition for XAML, automatic namespace imports, event handler generation, actionable diagnostics, and a reliable built-in XAML previewer with proper DPI handling.
+该扩展提供了相当完善的 IntelliSense：上下文感知的补全、完整的 `x:DataType` 快速信息、XAML 的「转到定义」、命名空间自动导入、事件处理程序生成、可直接采纳修复建议的诊断信息，以及一个 DPI 处理得当、运行稳定的内置 XAML 预览器。
 
-To install Avalonia for Visual Studio Code:
+安装 Avalonia for Visual Studio Code 的步骤：
 
-1. In Visual Studio Code, open the **Extensions** view (Ctrl+Shift+X).
-2. In the search bar, input "Avalonia".
-3. Click **Install** on the **Avalonia for VSCode** entry published by "Avalonia Team".
-4. Reload Visual Studio Code if prompted.
+1. 在 Visual Studio Code 中打开 **扩展** 视图（Ctrl+Shift+X）。
+2. 在搜索栏中输入 “Avalonia”。
+3. 找到由 “Avalonia Team” 发布的 **Avalonia for VSCode**，点击 **Install**。
+4. 如有提示，重新加载 Visual Studio Code。
 
 <Image light={DownloadAvaloniaExtensionForVsCode} alt="A screenshot displaying how to download the Avalonia extension in Visual Studio Code." position="center" maxWidth={400} cornerRadius="true" />
 
-Alternatively, you can [download the extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia).
+你也可以[从 Visual Studio Marketplace 下载该扩展](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia)。
 
-For more information on using the XAML previewer, see the page on [XAML live preview](/docs/app-development/xaml-preview-and-design-settings).
+关于 XAML 预览器的更多说明，请参阅 [XAML 实时预览](/docs/app-development/xaml-preview-and-design-settings)。
   </TabItem>
   <TabItem value="rider" label="Rider">
 
-[JetBrains Rider](https://www.jetbrains.com/rider/) is recommended if you use macOS or Linux. Rider offers a complete, polished development experience on these operating systems, including built-in support for XAML.
+如果你使用 macOS 或 Linux，推荐 [JetBrains Rider](https://www.jetbrains.com/rider/)。Rider 在这两个系统上提供了完整而成熟的开发体验，并且内置 XAML 支持。
 
-Consider installing the third-party plugin [AvaloniaRider](https://plugins.jetbrains.com/plugin/14839-avaloniarider), which enables live preview of your XAML as you work.
+建议再装一个第三方插件 [AvaloniaRider](https://plugins.jetbrains.com/plugin/14839-avaloniarider)，它能让你一边写 XAML 一边实时预览效果。
 
-To install AvaloniaRider:
+安装 AvaloniaRider 的步骤：
 
-1. In JetBrains Rider, go to **Settings → Plugins**.
-2. Go to the **Marketplace** tab.
-3. In the search bar, input "AvaloniaRider".
+1. 在 JetBrains Rider 中依次打开 **Settings → Plugins**。
+2. 切换到 **Marketplace** 选项卡。
+3. 在搜索栏中输入 “AvaloniaRider”。
 4. Click **Install**.
-5. Follow any additional installation instructions. You may need to close and reopen JetBrains Rider to complete the installation.
+5. 按提示完成后续安装步骤。可能需要关闭并重新打开 JetBrains Rider 才能装好。
 
 <Image light={DownloadAvaloniaRider} alt="A screenshot displaying how to download the AvaloniaRider extension in Rider." position="center" maxWidth={400} cornerRadius="true" />
 
-For more information on using the XAML previewer, see the page on [XAML live preview](/docs/app-development/xaml-preview-and-design-settings).
+关于 XAML 预览器的更多说明，请参阅 [XAML 实时预览](/docs/app-development/xaml-preview-and-design-settings)。
   </TabItem>
 </Tabs>
 

@@ -247,7 +247,7 @@ Tries to get the platform handle for the TopLevel-derived control.
 IPlatformHandle? TryGetPlatformHandle()
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Main window](/docs/fundamentals/main-window)
 - [Application lifetimes](/docs/fundamentals/application-lifetimes)

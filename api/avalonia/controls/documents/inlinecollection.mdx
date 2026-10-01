@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InlineCollection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Documents/InlineCollection.cs">InlineCollection.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Documents/InlineCollection.cs">InlineCollection.cs</a>
 </div>
 
 </div>
@@ -54,23 +54,23 @@ public class InlineCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> AvaloniaList&lt;Inline&gt; <span className="apiref-page__relation-separator">-&gt;</span> InlineCollection
+<span className="apiref-page__meta-label">继承关系：</span> AvaloniaList&lt;Inline&gt; <span className="apiref-page__relation-separator">-&gt;</span> InlineCollection
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [InlineCollection](#uid-28f7263117) | Initializes a new instance of the [Avalonia.Controls.Documents.InlineCollection](xref:Avalonia.Controls.Documents.InlineCollection) class. |
+| [InlineCollection](#uid-28f7263117) | 初始化 [Avalonia.Controls.Documents.InlineCollection](xref:Avalonia.Controls.Documents.InlineCollection) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-28f7263117"></span>
 
-### InlineCollection Constructor
+### InlineCollection 构造函数 {#inlinecollection-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.Documents.InlineCollection](xref:Avalonia.Controls.Documents.InlineCollection) class.
+初始化 [Avalonia.Controls.Documents.InlineCollection](xref:Avalonia.Controls.Documents.InlineCollection) 类的新实例。
 
 ```csharp
 public InlineCollection()
@@ -78,9 +78,9 @@ public InlineCollection()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Add (3 overloads)](#uid-5555047b5c) | Adds a control wrapped inside a [Avalonia.Controls.Documents.InlineUIContainer](xref:Avalonia.Controls.Documents.InlineUIContainer) to the collection. |
 
@@ -92,7 +92,7 @@ public InlineCollection()
 
 <span id="uid-2d7f1c193e"></span>
 
-#### Add Method
+#### Add 方法 {#add-method}
 
 Adds a control wrapped inside a [Avalonia.Controls.Documents.InlineUIContainer](xref:Avalonia.Controls.Documents.InlineUIContainer) to the collection.
 
@@ -100,7 +100,7 @@ Adds a control wrapped inside a [Avalonia.Controls.Documents.InlineUIContainer](
 public void Add(Avalonia.Controls.Control control)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -113,13 +113,13 @@ The to be added control.
 
 <span id="uid-9ddd1e6c26"></span>
 
-#### Add Method
+#### Add 方法 {#add-method-1}
 
 ```csharp
 public void Add(Avalonia.Controls.Documents.Inline inline)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `inline` [Avalonia.Controls.Documents.Inline](xref:Avalonia.Controls.Documents.Inline)
 
@@ -130,7 +130,7 @@ public void Add(Avalonia.Controls.Documents.Inline inline)
 
 <span id="uid-a0ede4b50a"></span>
 
-#### Add Method
+#### Add 方法 {#add-method-2}
 
 Adds a text segment to the collection.
 
@@ -141,7 +141,7 @@ For complex content this adds a [Avalonia.Controls.Documents.Run](xref:Avalonia.
 public void Add(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `text` string
 
@@ -150,9 +150,9 @@ The to be added text.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Text](#uid-eda1793e30) | Gets or adds the text held by the inlines collection. |
 
@@ -160,7 +160,7 @@ The to be added text.
 
 <span id="uid-eda1793e30"></span>
 
-### Text Property
+### Text 属性 {#text-property}
 
 Gets or adds the text held by the inlines collection.
 
@@ -172,9 +172,9 @@ public string Text { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Invalidated](#uid-36e29e452c) | Raised when an inline in the collection changes. |
 
@@ -182,7 +182,7 @@ public string Text { get; set; }
 
 <span id="uid-36e29e452c"></span>
 
-### Invalidated Event
+### Invalidated 事件 {#invalidated-event}
 
 Raised when an inline in the collection changes.
 

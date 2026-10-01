@@ -55,7 +55,7 @@ public ObservableCollection<SpiralEvent> SpiralEvents { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of points on the spiral. | `null` |
 | `DatePath` | Path to the chronological property. | `null` |

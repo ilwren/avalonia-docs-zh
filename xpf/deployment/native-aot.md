@@ -48,7 +48,7 @@ If you are experiencing runtime errors due to missing types, check if you are us
 
 For information, please see [Trimming](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file) on the .NET documentation site.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Native AOT (Avalonia)](/docs/deployment/native-aot): AOT setup for standard Avalonia applications
 - [Windows Deployment](/xpf/deployment/windows)

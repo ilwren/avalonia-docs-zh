@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ClassicDesktopStyleApplicationLifetime Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/ClassicDesktopStyleApplicationLifetime.cs">ClassicDesktopStyleApplicationLifetime.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/ClassicDesktopStyleApplicationLifetime.cs">ClassicDesktopStyleApplicationLifetime.cs</a>
 </div>
 
 </div>
@@ -48,24 +48,24 @@ public class ClassicDesktopStyleApplicationLifetime
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ClassicDesktopStyleApplicationLifetime
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ClassicDesktopStyleApplicationLifetime
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iapplicationlifetime">IApplicationLifetime</a>, <a href="iclassicdesktopstyleapplicationlifetime">IClassicDesktopStyleApplicationLifetime</a>, <a href="icontrolledapplicationlifetime">IControlledApplicationLifetime</a>, ISetupApplicationLifetime, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iapplicationlifetime">IApplicationLifetime</a>, <a href="iclassicdesktopstyleapplicationlifetime">IClassicDesktopStyleApplicationLifetime</a>, <a href="icontrolledapplicationlifetime">IControlledApplicationLifetime</a>, ISetupApplicationLifetime, IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ClassicDesktopStyleApplicationLifetime](#uid-2cbb7e6f91) | No summary available. |
+| [ClassicDesktopStyleApplicationLifetime](#uid-2cbb7e6f91) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2cbb7e6f91"></span>
 
-### ClassicDesktopStyleApplicationLifetime Constructor
+### ClassicDesktopStyleApplicationLifetime 构造函数 {#classicdesktopstyleapplicationlifetime-constructor}
 
 ```csharp
 public ClassicDesktopStyleApplicationLifetime()
@@ -73,20 +73,20 @@ public ClassicDesktopStyleApplicationLifetime()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-b64e65dfa0) | No summary available. |
-| [Shutdown](#uid-c9c69c42d0) | No summary available. |
+| [Dispose](#uid-b64e65dfa0) | 暂无摘要。 |
+| [Shutdown](#uid-c9c69c42d0) | 暂无摘要。 |
 | [Start (2 overloads)](#uid-81bc091a88) | Since the lifetime must be set up/prepared with 'args' before executing Start(), an overload with no parameters seems more suitable for integrating with some lifetime manager providers, such as MS HostApplicationBuilder. |
-| [TryShutdown](#uid-8637c9a187) | No summary available. |
+| [TryShutdown](#uid-8637c9a187) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b64e65dfa0"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -98,13 +98,13 @@ public void Dispose()
 
 <span id="uid-c9c69c42d0"></span>
 
-### Shutdown Method
+### Shutdown 方法 {#shutdown-method}
 
 ```csharp
 public void Shutdown(int exitCode)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `exitCode` int
 
@@ -119,7 +119,7 @@ public void Shutdown(int exitCode)
 
 <span id="uid-97193af66d"></span>
 
-#### Start Method
+#### Start 方法 {#start-method}
 
 Since the lifetime must be set up/prepared with 'args' before executing Start(), an overload with no parameters seems more suitable for integrating with some lifetime manager providers, such as MS HostApplicationBuilder.
 
@@ -127,7 +127,7 @@ Since the lifetime must be set up/prepared with 'args' before executing Start(),
 public int Start()
 ```
 
-##### Returns
+##### 返回值 {#returns}
 
 int
 
@@ -140,18 +140,18 @@ exit code
 
 <span id="uid-2b79825799"></span>
 
-#### Start Method
+#### Start 方法 {#start-method-1}
 
 ```csharp
 public int Start(string[] args)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `args` string[]
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 int
 
@@ -162,27 +162,27 @@ int
 
 <span id="uid-8637c9a187"></span>
 
-### TryShutdown Method
+### TryShutdown 方法 {#tryshutdown-method}
 
 ```csharp
 public bool TryShutdown(int exitCode)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `exitCode` int
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Args](#uid-e3f5f959b2) | Gets the arguments passed to the [AppBuilder](xref:Avalonia.AppBuilder) Start method. |
 | [MainWindow](#uid-8cea79d178) | Gets or sets the main window of the application. |
@@ -193,7 +193,7 @@ bool
 
 <span id="uid-e3f5f959b2"></span>
 
-### Args Property
+### Args 属性 {#args-property}
 
 Gets the arguments passed to the [AppBuilder](xref:Avalonia.AppBuilder) Start method.
 
@@ -207,7 +207,7 @@ public string[] Args { get; set; }
 
 <span id="uid-8cea79d178"></span>
 
-### MainWindow Property
+### MainWindow 属性 {#mainwindow-property}
 
 Gets or sets the main window of the application.
 
@@ -215,7 +215,7 @@ Gets or sets the main window of the application.
 public Avalonia.Controls.Window MainWindow { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The main window.
 
@@ -226,7 +226,7 @@ The main window.
 
 <span id="uid-586c25896d"></span>
 
-### ShutdownMode Property
+### ShutdownMode 属性 {#shutdownmode-property}
 
 Gets or sets the [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode). This property indicates whether the application is shutdown explicitly or implicitly.
 If [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode) is set to OnExplicitShutdown the application is only closes if Shutdown is called.
@@ -236,7 +236,7 @@ The default is OnLastWindowClose
 public Avalonia.Controls.ShutdownMode ShutdownMode { get; set; }
 ```
 
-#### Value
+#### 值 {#value-1}
 
 The shutdown mode.
 
@@ -247,7 +247,7 @@ The shutdown mode.
 
 <span id="uid-2f784e087d"></span>
 
-### Windows Property
+### Windows 属性 {#windows-property}
 
 Gets the list of all open windows in the application.
 
@@ -257,9 +257,9 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Window> Window
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Exit](#uid-5eb5262df0) | Sent when the application is exiting. |
 | [ShutdownRequested](#uid-f33cbb7442) | Raised by the platform when an application shutdown is requested. |
@@ -269,7 +269,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Window> Window
 
 <span id="uid-5eb5262df0"></span>
 
-### Exit Event
+### Exit 事件 {#exit-event}
 
 Sent when the application is exiting.
 
@@ -283,7 +283,7 @@ public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ControlledAppli
 
 <span id="uid-f33cbb7442"></span>
 
-### ShutdownRequested Event
+### ShutdownRequested 事件 {#shutdownrequested-event}
 
 Raised by the platform when an application shutdown is requested.
 
@@ -291,7 +291,7 @@ Raised by the platform when an application shutdown is requested.
 public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ShutdownRequestedEventArgs> ShutdownRequested
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Application Shutdown can be requested for various reasons like OS shutdown.
 
@@ -311,7 +311,7 @@ each window to cancel the shutdown of the application. Windows cannot however pr
 
 <span id="uid-7bbb774223"></span>
 
-### Startup Event
+### Startup 事件 {#startup-event}
 
 Sent when the application is starting up.
 

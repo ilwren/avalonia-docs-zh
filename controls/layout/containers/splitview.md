@@ -13,7 +13,7 @@ A `SplitView` presents a container with two parts: the main content zone and a s
 
 You will probably use these properties most often:
 
-| Property            | Description                                                                      |
+| Property            | 说明                                                                      |
 | ------------------- | -------------------------------------------------------------------------------- |
 | `PanePlacement`     | Sets the position of the pane: `Left`, `Right`, `Top`, or `Bottom`.              |
 | `IsPaneOpen`        | Boolean, default is true. Is the pane in its open state?                         |
@@ -137,7 +137,7 @@ Position the pane on any side of the content area:
 </SplitView>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [SplitView API reference](/api/avalonia/controls/splitview)
 - [`SplitView.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitView/SplitView.cs)

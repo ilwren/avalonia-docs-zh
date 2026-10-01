@@ -176,7 +176,7 @@ When running XPF headless tests in CI environments on Linux:
 - No display server is required when using headless mode
 - If `XOpenDisplay failed` errors occur, verify that `DisableAutomaticXpfInit` is set to `true` and the headless AppBuilder is configured correctly
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Headless testing with XUnit](/docs/testing/headless-xunit)
 - [Headless testing with NUnit](/docs/testing/headless-nunit)

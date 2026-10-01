@@ -28,7 +28,7 @@ Keep in mind that using static globals and accessing `MainWindow` from any place
 Mobile and browser platforms don't have a concept of `Window` in Avalonia. On iOS and browser, set the `MainView` control via `ISingleViewApplicationLifetime`. On Android, set a `MainViewFactory` via `IActivityApplicationLifetime` instead, because Android can recreate the main activity multiple times. See [Application lifetimes](/docs/fundamentals/application-lifetimes) for details.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Top level](/docs/fundamentals/top-level)
 - [Application lifetimes](/docs/fundamentals/application-lifetimes)

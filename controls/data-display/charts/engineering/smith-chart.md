@@ -46,14 +46,14 @@ public ObservableCollection<ImpedancePoint> ImpedanceData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of impedance points. | `null` |
 | `ResistancePath` | Path to the normalized resistance value. | `null` |
 | `ReactancePath` | Path to the normalized reactance value. | `null` |
 | `StrokeThickness` | Thickness of the plotted trace. | `2.0` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Polar chart](/controls/data-display/charts/radial/polar-chart)
 - [Wind rose chart](/controls/data-display/charts/engineering/wind-rose-chart)

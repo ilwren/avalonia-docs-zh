@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfSaveAsRequestedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -52,13 +52,13 @@ public class PdfSaveAsRequestedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfSaveAsRequestedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfSaveAsRequestedEventArgs
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetDocumentBytesAsync](#uid-57adb1b092) | Exports the document, including annotation edits, as PDF bytes. |
 
@@ -66,7 +66,7 @@ public class PdfSaveAsRequestedEventArgs
 
 <span id="uid-57adb1b092"></span>
 
-### GetDocumentBytesAsync Method
+### GetDocumentBytesAsync 方法 {#getdocumentbytesasync-method}
 
 Exports the document, including annotation edits, as PDF bytes.
 
@@ -74,21 +74,21 @@ Exports the document, including annotation edits, as PDF bytes.
 public System.Threading.Tasks.Task<byte[]> GetDocumentBytesAsync(System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;byte[]&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Document](#uid-bb6cb13087) | The open document. |
 | [Handled](#uid-a23ffc2ca7) | Set to `true` to skip the built-in save picker. |
@@ -98,7 +98,7 @@ System.Threading.Tasks.Task&lt;byte[]&gt;
 
 <span id="uid-bb6cb13087"></span>
 
-### Document Property
+### Document 属性 {#document-property}
 
 The open document.
 
@@ -112,7 +112,7 @@ public Avalonia.Controls.Pdf.Core.IPdfDocument Document { get; set; }
 
 <span id="uid-a23ffc2ca7"></span>
 
-### Handled Property
+### Handled 属性 {#handled-property}
 
 Set to `true` to skip the built-in save picker.
 
@@ -126,7 +126,7 @@ public bool Handled { get; set; }
 
 <span id="uid-3f59a54a63"></span>
 
-### SuggestedFileName Property
+### SuggestedFileName 属性 {#suggestedfilename-property}
 
 A file name derived from the document title or source, with a .pdf extension.
 

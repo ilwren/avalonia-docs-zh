@@ -53,7 +53,7 @@ The Avalonia MAUI Backend is in active development. Register your interest at [a
 
 If you want full control over the UI framework, or if your application needs capabilities beyond what MAUI offers (CSS-like styling, custom rendering, advanced desktop features), you can migrate your MAUI application to Avalonia directly.
 
-### Prerequisites
+### 前置条件 {#prerequisites}
 
 Before you begin, make sure you have the following in place:
 
@@ -288,7 +288,7 @@ Moving from MAUI to Avalonia changes how you work day to day:
 - **No native control wrappers:** You are not debugging through layers of platform abstraction. What you see in XAML is what renders.
 - **WebAssembly:** Avalonia supports browser deployment through WebAssembly, a target MAUI does not offer.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Get started with Avalonia](/docs/get-started/create-your-first-project): Create your first Avalonia application.
 - [Styles](/docs/styling/styles): How Avalonia's CSS-like styling works.

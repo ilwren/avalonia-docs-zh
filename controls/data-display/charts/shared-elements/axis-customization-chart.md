@@ -57,7 +57,7 @@ public ObservableCollection<int> SalesData { get; } = new() { 35, 28, 34, 32, 40
 
 ## Common axis properties (`NumericalAxis` / `CategoryAxis`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The text label for the axis. | `null` |
 | `IsVisible` | Toggle the visibility of the entire axis. | `true` |
@@ -93,7 +93,7 @@ public ObservableCollection<int> SalesData { get; } = new() { 35, 28, 34, 32, 40
 
 ## Axis types
 
-| Axis | Description | Supports |
+| Axis | 说明 | Supports |
 | --- | --- | --- |
 | `NumericalAxis` | For continuous numeric data. | `Minimum`, `Maximum`, `MajorStep`, `MinorStep`, `ScaleBreaks` |
 | `CategoryAxis` | For discrete categories. | `GapLength`, `PlotMode` |
@@ -104,7 +104,7 @@ public ObservableCollection<int> SalesData { get; } = new() { 35, 28, 34, 32, 40
 
 Use `NumericalAxis.ScaleBreaks` for inline XAML scale breaks or `ScaleBreaksSource` to bind a collection from a view model. Scale breaks skip ranges that would otherwise compress the visible data. Each `ScaleBreak` defines a removed value range and optional break-line styling. Invalid ranges where `End <= Start` are ignored, and overlapping or adjacent breaks are merged before the axis range is normalized.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Start` | First value in the skipped axis range. | `0.0` |
 | `End` | Last value in the skipped axis range. | `0.0` |
@@ -113,7 +113,7 @@ Use `NumericalAxis.ScaleBreaks` for inline XAML scale breaks or `ScaleBreaksSour
 
 ## Axis-specific properties
 
-| Axis | Property | Description | Default |
+| Axis | Property | 说明 | Default |
 | :--- | :--- | :--- | :--- |
 | `NumericalAxis` | `Minimum` | Explicit minimum value. When `null`, the chart calculates it from data. | `null` |
 | `NumericalAxis` | `Maximum` | Explicit maximum value. When `null`, the chart calculates it from data. | `null` |
@@ -145,7 +145,7 @@ If any visible non-empty series is incompatible, the chart uses category layout 
 
 Use `ChartAxis.PlotBands` to shade ranges on a horizontal or vertical axis. On a category axis, horizontal-axis plot band `Start` and `End` values use category indexes. On a continuous horizontal axis, they use the axis value domain.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Start` | Start value of the shaded range. When `NaN`, the band starts at the beginning of the axis. | `NaN` |
 | `End` | End value of the shaded range. When `NaN`, the band ends at the end of the axis. | `NaN` |
@@ -164,7 +164,7 @@ Use `ChartAxis.PlotBands` to shade ranges on a horizontal or vertical axis. On a
 | `RepeatUntil` | Axis value where repeated bands stop. | `NaN` |
 | `RenderAboveSeries` | Whether to render the band above the chart series instead of behind them. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Combo chart](/controls/data-display/charts/cartesian/combo-chart)
 - [Line chart](/controls/data-display/charts/cartesian/line-chart)

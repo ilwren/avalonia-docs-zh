@@ -75,7 +75,7 @@ The DataGrid-styles need to match the overall theme you use, otherwise you will 
 
 You will probably use these properties most often:
 
-| Property                | Description                                                                                                                     |
+| Property                | 说明                                                                                                                     |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `AutoGenerateColumns`   | Whether the columns will automatically generate from the bound items data source property names. (Default is false.)            |
 | `ItemsSource`           | The bound collection that is used as the data source for the control.                                                           |
@@ -223,7 +223,7 @@ You can use this column type to customise the display and editing for a data gri
 
 There are two data templates which you define as attached properties:
 
-<table><thead><tr><th width="269">Data Template</th><th>Description</th></tr></thead><tbody><tr><td><code>CellTemplate</code> </td><td>The display (not being edited) presentation of the column value. </td></tr><tr><td><code>CellEditingTemplate</code> </td><td>The editing template for the column value.</td></tr></tbody></table>
+<table><thead><tr><th width="269">Data Template</th><th>说明</th></tr></thead><tbody><tr><td><code>CellTemplate</code> </td><td>The display (not being edited) presentation of the column value. </td></tr><tr><td><code>CellEditingTemplate</code> </td><td>The editing template for the column value.</td></tr></tbody></table>
 
 :::info
 If you do not set a editing template, the column will stay read-only.
@@ -318,7 +318,7 @@ public class Person
 
 A `DataGrid` can contain multiple data grid columns and _Avalonia_ has two built-in column types which can be used to display a different data types, and a template type that can customise the column appearance.
 
-| Column Type              | Description                                                                                                                                                               |
+| Column Type              | 说明                                                                                                                                                               |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `DataGridTextColumn`     | Presents a text box for display and editing of the column data. You can control font properties like family and size in this column type.                                 |
 | `DataGridCheckBoxColumn` | Presents a check box for display and editing of the column data, when it is Boolean. This column type also supports the three-state check box when the value is nullable. |
@@ -338,7 +338,7 @@ Bind to `DataGridRow.Index` to show row numbers in a column:
 
 Most of these properties are common to all three column types:
 
-| Property         | Description                                                                                                                                     |
+| Property         | 说明                                                                                                                                     |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Header`         | The header content of the column.                                                                                                               |
 | `HeaderTemplate` | Uses a data template for the column.                                                                                                            |
@@ -434,6 +434,6 @@ It works in the preview pane because the `<Design.DataContext>` element creates 
 
 <Image light={DataGridColumnPreviewScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [DataGrid API reference](https://api-docs.avaloniaui.net/docs/T_Avalonia_Controls_DataGrid)

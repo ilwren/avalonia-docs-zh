@@ -97,7 +97,7 @@ These are the images used in the examples:
 
 Below are all the values currently supported by Avalonia
 
-| Preview | Enum | Description |
+| Preview | Enum | 说明 |
 |---|---|---|
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Nothing.png" alt="Preview of Unspecified blend mode" width="180"/> | `Unspecified` | or `SourceOver` - Default Behavior. |
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Plus.png" alt="Preview of Plus blend mode" width="180"/> | `Plus` | Display the sum of the source image and destination image. |
@@ -129,7 +129,7 @@ These are the images used in the examples:
 
 Below are all the values currently supported by Avalonia. Please note that this demo is sensitive to the alpha channel and therefore the website background bleed through the images.
 
-| Preview | Enum | Description |
+| Preview | Enum | 说明 |
 |---|---|---|
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Source.png" alt="Preview of Source composition mode" width="180"/> | `Source` | Only the source will be present. |
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceOver.png" alt="Preview of SourceOver composition mode" width="180"/> | `SourceOver` | or `Unspecified` - Default behavior, Source is placed over the destination. |
@@ -143,7 +143,7 @@ Below are all the values currently supported by Avalonia. Please note that this 
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationOut.png" alt="Preview of DestinationOut composition mode" width="180"/> | `DestinationOut` | Destination is placed, where it falls outside of the source. |
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationAtop.png" alt="Preview of DestinationAtop composition mode" width="180"/> | `DestinationAtop` | Destination which overlaps the source replaces the source. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Brushes](/docs/graphics-animation/brushes): Brush types for fills and strokes.
 - [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes, geometries, and the graphics system.

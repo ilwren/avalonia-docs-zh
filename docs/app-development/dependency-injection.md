@@ -9,7 +9,7 @@ doc-type: how-to
 
 This guide shows you how to use DI with Avalonia and the [Model-View-ViewModel (MVVM) pattern](/docs/fundamentals/the-mvvm-pattern).
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 - An Avalonia project
 - .NET 8.0 SDK or later (.NET 10 is recommended)
@@ -153,7 +153,7 @@ public class App : Application
 
 Run your application. If the DI container is configured correctly, the `MainWindow` (or `MainView`) appears with its `DataContext` set to a fully resolved `MainViewModel` instance, including all injected dependencies.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding](/docs/data-binding/introduction-to-data-binding): Binding view models to views.
 - [MVVM Architecture](/docs/fundamentals/the-mvvm-pattern): Using the MVVM pattern with Avalonia.

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextSelection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,33 +51,33 @@ public class TextSelection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="documents/textmodel/textrange">TextRange</a> <span className="apiref-page__relation-separator">-&gt;</span> TextSelection
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="documents/textmodel/textrange">TextRange</a> <span className="apiref-page__relation-separator">-&gt;</span> TextSelection
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Inherits from [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) to share formatting and content operations.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextSelection](#uid-48922076a0) | Initializes a new instance of the [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection) class. |
+| [TextSelection](#uid-48922076a0) | 初始化 [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-48922076a0"></span>
 
-### TextSelection Constructor
+### TextSelection 构造函数 {#textselection-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection) class.
+初始化 [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection) 类的新实例。
 
 ```csharp
 public TextSelection(Avalonia.Controls.Documents.TextModel.TextDocument document)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `document` [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
@@ -86,11 +86,11 @@ The text document containing the selection.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ApplyPropertyValue](#uid-17ce04d15c) | No summary available. |
+| [ApplyPropertyValue](#uid-17ce04d15c) | 暂无摘要。 |
 | [ClearAllProperties](documents/textmodel/textrange.mdx#uid-1d087e30fc) | Clears all inline formatting properties from the range. Content is preserved; only formatting is removed. Produces a single [Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit](xref:Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit) for atomic undo/redo. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [ClearPropertyValue](documents/textmodel/textrange.mdx#uid-ecf1a6ea8a) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [ClearSelection](#uid-761fa71ea2) | Clears the selection, placing the caret at the current caret position. |
@@ -103,7 +103,7 @@ The text document containing the selection.
 | [DeleteText](documents/textmodel/textrange.mdx#uid-4266eab3ed) | Deletes the content of this range. Removes whatever the range covers — characters, inline runs, paragraphs, list items, tables, sections — depending on which nodes the range fully encloses. When the deletion crosses block boundaries and both surviving boundary blocks are paragraphs, `mergeBlocks` controls whether the surviving fragments fuse into one paragraph. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [DeleteTextAt](documents/textmodel/textrange.mdx#uid-9beff62495) | Deletes text at the specified range relative to this range. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [ExtendTo](#uid-189ba2e59b) | Extends the selection to a new position while keeping the anchor fixed. |
-| [GetContainingBlock](#uid-e1f67b2c4d) | No summary available. |
+| [GetContainingBlock](#uid-e1f67b2c4d) | 暂无摘要。 |
 | [GetPropertyValue](documents/textmodel/textrange.mdx#uid-71aaf13562) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [GetSpringloadProperties](#uid-b3c7991220) | Gets all springloaded properties. |
 | [GetText](documents/textmodel/textrange.mdx#uid-c626a57a24) | Returns the text content covered by this range. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
@@ -122,23 +122,23 @@ The text document containing the selection.
 | [SelectAll](#uid-c1f7513a3b) | Selects all content in the document, from [Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart](xref:Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart) to [Avalonia.Controls.Documents.TextModel.TextDocument.ContentEnd](xref:Avalonia.Controls.Documents.TextModel.TextDocument.ContentEnd). `ContentEnd` anchors to the document's final block, so a trailing empty paragraph is part of the selection (and survives copy). |
 | [SetImageAltText](documents/textmodel/textrange.mdx#uid-2113b9397b) | Sets the alternative text of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable change. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [SetImageSize](documents/textmodel/textrange.mdx#uid-15eda4245a) | Sets the display size of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable change. Pass [double.NaN](xref:System.Double.NaN) for a dimension to use the image's intrinsic pixel size. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
-| [SetSpringloadProperty](#uid-a6bfd06000) | No summary available. |
-| [TogglePropertyValue](#uid-98b69ad8cc) | No summary available. |
+| [SetSpringloadProperty](#uid-a6bfd06000) | 暂无摘要。 |
+| [TogglePropertyValue](#uid-98b69ad8cc) | 暂无摘要。 |
 | [ToString](documents/textmodel/textrange.mdx#uid-2b81309a1f) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [TryGetPropertyValue](documents/textmodel/textrange.mdx#uid-8a1f50a579) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
-| [TryGetSpringloadProperty](#uid-892eea8f22) | No summary available. |
+| [TryGetSpringloadProperty](#uid-892eea8f22) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-17ce04d15c"></span>
 
-### ApplyPropertyValue Method
+### ApplyPropertyValue 方法 {#applypropertyvalue-method}
 
 ```csharp
 public void ApplyPropertyValue<T>(Avalonia.StyledProperty<T> property, T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -157,7 +157,7 @@ public void ApplyPropertyValue<T>(Avalonia.StyledProperty<T> property, T value)
 
 <span id="uid-761fa71ea2"></span>
 
-### ClearSelection Method
+### ClearSelection 方法 {#clearselection-method}
 
 Clears the selection, placing the caret at the current caret position.
 
@@ -171,7 +171,7 @@ public void ClearSelection()
 
 <span id="uid-f769cc1d42"></span>
 
-### ClearSpringloadProperties Method
+### ClearSpringloadProperties 方法 {#clearspringloadproperties-method}
 
 Clears all springloaded properties.
 
@@ -185,7 +185,7 @@ public void ClearSpringloadProperties()
 
 <span id="uid-c84ee1d189"></span>
 
-### ClearSpringloadProperty Method
+### ClearSpringloadProperty 方法 {#clearspringloadproperty-method}
 
 Clears a springloaded property.
 
@@ -193,7 +193,7 @@ Clears a springloaded property.
 public void ClearSpringloadProperty(Avalonia.AvaloniaProperty property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `property` [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
@@ -206,7 +206,7 @@ The property to clear.
 
 <span id="uid-f17bc53d58"></span>
 
-### Delete Method
+### Delete 方法 {#delete-method}
 
 Deletes the selected content, then collapses the selection to the
 deletion point and resets direction.
@@ -215,14 +215,14 @@ deletion point and resets direction.
 public Avalonia.Controls.Documents.TextModel.TextPointer Delete()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 The deletion-point pointer returned by the base operation.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 The base [Avalonia.Controls.Documents.TextModel.TextRange.Delete](xref:Avalonia.Controls.Documents.TextModel.TextRange.Delete) returns the deletion point but
 does not reset `_isForwardSelection` or re-anchor the selection, so
@@ -235,7 +235,7 @@ returned pointer fixes every delete/cut entry point.
 
 <span id="uid-189ba2e59b"></span>
 
-### ExtendTo Method
+### ExtendTo 方法 {#extendto-method}
 
 Extends the selection to a new position while keeping the anchor fixed.
 
@@ -243,7 +243,7 @@ Extends the selection to a new position while keeping the anchor fixed.
 public void ExtendTo(Avalonia.Controls.Documents.TextModel.TextPointer position)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -256,13 +256,13 @@ The new moving position.
 
 <span id="uid-e1f67b2c4d"></span>
 
-### GetContainingBlock Method
+### GetContainingBlock 方法 {#getcontainingblock-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Block GetContainingBlock()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Block](xref:Avalonia.Controls.Documents.Block)
 
@@ -273,7 +273,7 @@ public Avalonia.Controls.Documents.Block GetContainingBlock()
 
 <span id="uid-b3c7991220"></span>
 
-### GetSpringloadProperties Method
+### GetSpringloadProperties 方法 {#getspringloadproperties-method}
 
 Gets all springloaded properties.
 
@@ -281,7 +281,7 @@ Gets all springloaded properties.
 public System.Collections.Generic.IReadOnlyDictionary<Avalonia.AvaloniaProperty, object> GetSpringloadProperties()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IReadOnlyDictionary&lt;[Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty), object&gt;
 
@@ -294,7 +294,7 @@ A read-only view of springloaded properties.
 
 <span id="uid-92247c4d26"></span>
 
-### InsertSnapshot Method
+### InsertSnapshot 方法 {#insertsnapshot-method}
 
 Inserts a document snapshot over the selection, then collapses the
 selection to the end of the inserted content and resets direction.
@@ -303,14 +303,14 @@ selection to the end of the inserted content and resets direction.
 public void InsertSnapshot(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 The snapshot whose tree is grafted into the selection.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The base [Avalonia.Controls.Documents.TextModel.TextRange.InsertSnapshot(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)](xref:Avalonia.Controls.Documents.TextModel.TextRange.InsertSnapshot%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%29) leaves the range spanning
 the grafted content and never touches selection direction, so paste used
@@ -325,7 +325,7 @@ actions and keyboard).
 
 <span id="uid-0c8ed74160"></span>
 
-### MoveTo Method
+### MoveTo 方法 {#moveto-method}
 
 Moves the caret to the specified position.
 
@@ -333,7 +333,7 @@ Moves the caret to the specified position.
 public void MoveTo(Avalonia.Controls.Documents.TextModel.TextPointer position, bool extendSelection)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -352,7 +352,7 @@ If false, clears selection and moves both anchor and caret.
 
 <span id="uid-6e90cbfdbc"></span>
 
-### Select Method
+### Select 方法 {#select-method}
 
 Selects a range of text between two positions.
 
@@ -360,7 +360,7 @@ Selects a range of text between two positions.
 public void Select(Avalonia.Controls.Documents.TextModel.TextPointer anchor, Avalonia.Controls.Documents.TextModel.TextPointer moving)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `anchor` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -378,7 +378,7 @@ The moving end position that follows user input.
 
 <span id="uid-c1f7513a3b"></span>
 
-### SelectAll Method
+### SelectAll 方法 {#selectall-method}
 
 Selects all content in the document, from [Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart](xref:Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart)
 to [Avalonia.Controls.Documents.TextModel.TextDocument.ContentEnd](xref:Avalonia.Controls.Documents.TextModel.TextDocument.ContentEnd). `ContentEnd` anchors to the
@@ -395,13 +395,13 @@ public void SelectAll()
 
 <span id="uid-a6bfd06000"></span>
 
-### SetSpringloadProperty Method
+### SetSpringloadProperty 方法 {#setspringloadproperty-method}
 
 ```csharp
 public void SetSpringloadProperty<T>(Avalonia.StyledProperty<T> property, T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -420,13 +420,13 @@ public void SetSpringloadProperty<T>(Avalonia.StyledProperty<T> property, T valu
 
 <span id="uid-98b69ad8cc"></span>
 
-### TogglePropertyValue Method
+### TogglePropertyValue 方法 {#togglepropertyvalue-method}
 
 ```csharp
 public void TogglePropertyValue<T>(Avalonia.StyledProperty<T> property, T onValue, T offValue)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -448,13 +448,13 @@ public void TogglePropertyValue<T>(Avalonia.StyledProperty<T> property, T onValu
 
 <span id="uid-892eea8f22"></span>
 
-### TryGetSpringloadProperty Method
+### TryGetSpringloadProperty 方法 {#trygetspringloadproperty-method}
 
 ```csharp
 public bool TryGetSpringloadProperty<T>(Avalonia.StyledProperty<T> property, T& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -467,16 +467,16 @@ public bool TryGetSpringloadProperty<T>(Avalonia.StyledProperty<T> property, T& 
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AnchorPosition](#uid-59d0320884) | Gets the anchor position where the selection started. |
 | [CaretPosition](#uid-48076b5e88) | Gets the caret position (the moving end that follows user input during selection). |
@@ -490,7 +490,7 @@ bool
 
 <span id="uid-59d0320884"></span>
 
-### AnchorPosition Property
+### AnchorPosition 属性 {#anchorposition-property}
 
 Gets the anchor position where the selection started.
 
@@ -504,7 +504,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer AnchorPosition { get; s
 
 <span id="uid-48076b5e88"></span>
 
-### CaretPosition Property
+### CaretPosition 属性 {#caretposition-property}
 
 Gets the caret position (the moving end that follows user input during selection).
 
@@ -514,9 +514,9 @@ public Avalonia.Controls.Documents.TextModel.TextPointer CaretPosition { get; se
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Changed](documents/textmodel/textrange.mdx#uid-ea82965a4b) | Occurs when the range changes. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 

@@ -47,7 +47,7 @@ The pivot point for render transforms. In Avalonia, the default is `50%,50%` (ce
 
 ### Common render transform types
 
-| Transform | Description | Example |
+| Transform | 说明 | Example |
 |---|---|---|
 | `RotateTransform` | Rotates the control. | `<RotateTransform Angle="45" />` |
 | `ScaleTransform` | Scales the control. | `<ScaleTransform ScaleX="1.5" ScaleY="1.5" />` |
@@ -162,7 +162,7 @@ Render transforms are ideal for animation because they do not trigger layout:
 
 Avoid animating layout transforms in performance-sensitive scenarios, as each frame triggers a full layout pass.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Transforms](/docs/graphics-animation/transforms): Full transform reference.
 - [Animations](/docs/graphics-animation/animations): Keyframe and transition animations.

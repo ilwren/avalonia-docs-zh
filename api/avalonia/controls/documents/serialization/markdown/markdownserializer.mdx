@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">MarkdownSerializer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Markdown</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Markdown</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Markdown</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Markdown</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Markdown</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Markdown</code>
 </div>
 </div>
 
@@ -52,14 +52,14 @@ public class MarkdownSerializer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> MarkdownSerializer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> MarkdownSerializer
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../idocumentserializer">IDocumentSerializer</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../idocumentserializer">IDocumentSerializer</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Round-trip contract: documents whose content came from markdown (or was
 authored with the markdown-specific elements) re-parse to an equivalent
@@ -79,21 +79,21 @@ Cancellation is observed per block while a document is rendered or written.
 The Markdig parse that precedes rendering runs to completion once entered,
 so a token cancelled during it takes effect at the next block.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [MarkdownSerializer (2 overloads)](#uid-84b2474dd9) | Initializes a new instance with the default options and no highlighter. |
 
 <span id="uid-84b2474dd9"></span>
 
-### MarkdownSerializer overloads
+### MarkdownSerializer 的重载 {#markdownserializer-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c98c6cea21"></span>
 
-#### MarkdownSerializer Constructor
+#### MarkdownSerializer 构造函数 {#markdownserializer-constructor}
 
 Initializes a new instance with the default options and no highlighter.
 
@@ -107,15 +107,15 @@ public MarkdownSerializer()
 
 <span id="uid-8e89b6aaa6"></span>
 
-#### MarkdownSerializer Constructor
+#### MarkdownSerializer 构造函数 {#markdownserializer-constructor-1}
 
-Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer](xref:Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer).
+初始化 [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer](xref:Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer) 的新实例。
 
 ```csharp
 public MarkdownSerializer(Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializerOptions options, Avalonia.Controls.CodeHighlighter codeHighlighter)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `options` [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializerOptions](xref:Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializerOptions)
 
@@ -129,9 +129,9 @@ Optional code highlighter applied to fenced blocks on read.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanDeserialize](#uid-a2663dfaa6) | Checks if a stream appears to contain this format. |
 | [Deserialize (2 overloads)](#uid-c09fe7b090) | Deserializes a document from a stream on the calling thread. |
@@ -143,7 +143,7 @@ Optional code highlighter applied to fenced blocks on read.
 
 <span id="uid-a2663dfaa6"></span>
 
-### CanDeserialize Method
+### CanDeserialize 方法 {#candeserialize-method}
 
 Checks if a stream appears to contain this format.
 
@@ -151,21 +151,21 @@ Checks if a stream appears to contain this format.
 public bool CanDeserialize(System.IO.Stream stream)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `stream` System.IO.Stream
 
 The stream to check. Must be readable and seekable.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 True if the stream likely contains this format; otherwise, false.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This method does not consume the stream; it restores the original position after checking.
 
@@ -179,7 +179,7 @@ This method does not consume the stream; it restores the original position after
 
 <span id="uid-ec77ff9a44"></span>
 
-#### Deserialize Method
+#### Deserialize 方法 {#deserialize-method}
 
 Deserializes a document from a stream on the calling thread.
 
@@ -187,7 +187,7 @@ Deserializes a document from a stream on the calling thread.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deserialize(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `stream` System.IO.Stream
 
@@ -196,24 +196,24 @@ The stream to read from. Must be readable.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 The deserialized [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot).
 
 
-##### Remarks
+##### 备注 {#remarks-2}
 
 Defaults to blocking on [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.DeserializeAsync(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.DeserializeAsync%28System.IO.Stream%2CSystem.Threading.CancellationToken%29), so a serializer written against
 the released interface keeps working. Implement this member instead: no format here
 performs asynchronous I/O, so the asynchronous pair only moves processor-bound work onto
 a pool thread.
 
-##### Exceptions
+##### 异常 {#exceptions}
 
 - [\`stream\` is null.](xref:System.ArgumentNullException)
 - [\`stream\` is not readable.](xref:System.ArgumentException)
@@ -226,7 +226,7 @@ a pool thread.
 
 <span id="uid-24ebbf9fc4"></span>
 
-#### Deserialize Method
+#### Deserialize 方法 {#deserialize-method-1}
 
 Deserializes a snapshot from a markdown string. Convenience overload for
 callers that do not need a stream.
@@ -235,14 +235,14 @@ callers that do not need a stream.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deserialize(string markdown)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `markdown` string
 
 The markdown source text.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -255,7 +255,7 @@ The parsed [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot]
 
 <span id="uid-b7edeb04ca"></span>
 
-### DeserializeAsync Method
+### DeserializeAsync 方法 {#deserializeasync-method}
 
 Runs [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread.
 
@@ -263,7 +263,7 @@ Runs [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Dese
 public System.Threading.Tasks.Task<Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot> DeserializeAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `stream` System.IO.Stream
 
@@ -272,17 +272,17 @@ The stream to read from.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)&gt;
 
 The deserialized snapshot.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 A thread-offload convenience, not asynchronous I/O: no format here reads asynchronously.
 Where you are already off the UI thread, call [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) and keep the
@@ -298,7 +298,7 @@ thread you are on.
 
 <span id="uid-4b92959d1f"></span>
 
-#### Serialize Method
+#### Serialize 方法 {#serialize-method}
 
 Serializes a snapshot to a markdown string. Convenience overload for
 callers that do not need a stream.
@@ -307,14 +307,14 @@ callers that do not need a stream.
 public string Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 The snapshot to write.
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 string
 
@@ -327,7 +327,7 @@ The markdown source text.
 
 <span id="uid-0ea04fa588"></span>
 
-#### Serialize Method
+#### Serialize 方法 {#serialize-method-1}
 
 Serializes a document snapshot to a stream on the calling thread.
 
@@ -335,7 +335,7 @@ Serializes a document snapshot to a stream on the calling thread.
 public void Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -349,15 +349,15 @@ The stream to write to. Must be writable.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-##### Remarks
+##### 备注 {#remarks-4}
 
 Defaults to blocking on [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29), so a serializer written against the
 released interface keeps working. Implement this member instead.
 
-##### Exceptions
+##### 异常 {#exceptions-1}
 
 - [\`snapshot\` or \`stream\` is null.](xref:System.ArgumentNullException)
 - [\`stream\` is not writable.](xref:System.ArgumentException)
@@ -369,7 +369,7 @@ released interface keeps working. Implement this member instead.
 
 <span id="uid-a7094070d6"></span>
 
-### SerializeAsync Method
+### SerializeAsync 方法 {#serializeasync-method}
 
 Runs [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread.
 
@@ -377,7 +377,7 @@ Runs [Avalonia.Controls.Documents.Serialization.Markdown.MarkdownSerializer.Seri
 public System.Threading.Tasks.Task SerializeAsync(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -391,24 +391,24 @@ The stream to write to.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 System.Threading.Tasks.Task
 
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 A thread-offload convenience, not asynchronous I/O. The snapshot is already detached from
 the document, so the work needs no UI thread either way.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanRead](#uid-177e363974) | Whether this serializer supports reading. Read-only UIs can filter serializer lists on this instead of catching [NotSupportedException](xref:System.NotSupportedException) from [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29). |
 | [CanWrite](#uid-e28b404cc7) | Whether this serializer supports writing documents. |
@@ -422,7 +422,7 @@ the document, so the work needs no UI thread either way.
 
 <span id="uid-177e363974"></span>
 
-### CanRead Property
+### CanRead 属性 {#canread-property}
 
 Whether this serializer supports reading. Read-only UIs can filter serializer lists on
 this instead of catching [NotSupportedException](xref:System.NotSupportedException) from
@@ -432,7 +432,7 @@ this instead of catching [NotSupportedException](xref:System.NotSupportedExcepti
 public bool CanRead { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 Defaults to so a serializer written before this member existed
 still compiles. A serializer that cannot read says so.
@@ -443,7 +443,7 @@ still compiles. A serializer that cannot read says so.
 
 <span id="uid-e28b404cc7"></span>
 
-### CanWrite Property
+### CanWrite 属性 {#canwrite-property}
 
 Whether this serializer supports writing documents.
 
@@ -451,7 +451,7 @@ Whether this serializer supports writing documents.
 public bool CanWrite { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 Defaults to so a serializer written before this member existed
 still compiles. A serializer that cannot write says so.
@@ -462,7 +462,7 @@ still compiles. A serializer that cannot write says so.
 
 <span id="uid-4a5ab7847d"></span>
 
-### CodeHighlighter Property
+### CodeHighlighter 属性 {#codehighlighter-property}
 
 Gets or sets the optional code highlighter used during deserialization.
 
@@ -470,7 +470,7 @@ Gets or sets the optional code highlighter used during deserialization.
 public Avalonia.Controls.CodeHighlighter CodeHighlighter { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-8}
 
 Pass the highlighter to the constructor. A serializer handed to a background read
 and reconfigured through this setter changes the highlighter mid-read.
@@ -481,7 +481,7 @@ and reconfigured through this setter changes the highlighter mid-read.
 
 <span id="uid-99e7be3ae3"></span>
 
-### FileExtension Property
+### FileExtension 属性 {#fileextension-property}
 
 Gets the file extension including the dot (e.g., ".rtf").
 
@@ -495,7 +495,7 @@ public string FileExtension { get; set; }
 
 <span id="uid-3f0374df4b"></span>
 
-### FormatName Property
+### FormatName 属性 {#formatname-property}
 
 Gets the format name this serializer handles (e.g., "Rtf", "Docx", "PlainText").
 
@@ -509,7 +509,7 @@ public string FormatName { get; set; }
 
 <span id="uid-e14e6818ef"></span>
 
-### MimeType Property
+### MimeType 属性 {#mimetype-property}
 
 Gets the MIME type for the format (e.g., "application/rtf").
 
@@ -523,7 +523,7 @@ public string MimeType { get; set; }
 
 <span id="uid-754c1c7892"></span>
 
-### Options Property
+### Options 属性 {#options-property}
 
 Gets the formatting choices for markdown output.
 

@@ -17,7 +17,7 @@ If you only need the function of the tab headers part of this control, consider 
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `TabStripPlacement` | `Dock` | Position of the tab strip: `Top`, `Bottom`, `Left`, `Right`. Default is `Top`. |
 | `SelectedIndex` | `int` | The zero-based index of the currently selected tab. |
@@ -153,7 +153,7 @@ public class SettingsViewModel : ViewModelBase
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TabStrip](/controls/navigation/tabstrip)
 - [Carousel](/controls/data-display/collections/carousel)

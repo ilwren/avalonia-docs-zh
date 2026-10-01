@@ -136,7 +136,7 @@ Resources defined in `ThemeDictionaries` are only available when using the `Dyna
 
 For more details about using resources, see the [resources](/docs/app-development/resource-dictionary) page.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Resource dictionaries](/docs/app-development/resource-dictionary)
 - [Styles](/docs/styling/styles)

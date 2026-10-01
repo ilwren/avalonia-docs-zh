@@ -43,7 +43,7 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 
 ## Common properties (`VennDiagramChart`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of `VennItem` regions. | `null` |
 | `IsSelectionEnabled` | Whether regions can be selected. | `false` |
@@ -55,14 +55,14 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 
 ## Common properties (`VennItem`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Sets` | Collection of set identifiers, such as `["A"]` or `["A", "B"]`. | Empty collection |
 | `Value` | Numeric value represented by the set or intersection. | `0.0` |
 | `Name` | Optional region label. | `null` |
 | `Fill` | Optional fill brush for the region. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Circle packing chart](/controls/data-display/charts/hierarchy/circle-packing-chart)
 - [Parliament chart](/controls/data-display/charts/comparison/parliament-chart)

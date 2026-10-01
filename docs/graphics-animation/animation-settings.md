@@ -66,7 +66,7 @@ Additionally, you can provide your own easing by deriving from `Easing` or by pr
 
 The `FillMode` attribute of an `Animation` defines how the animated property persists after an animation completes and during delays in between runs.
 
-| Value      | Description                                                                                               |
+| 值      | 说明                                                                                               |
 |------------|-----------------------------------------------------------------------------------------------------------|
 | `None`     | Last value does not persist after animation. First value is not applied if the animation is delayed. |
 | `Forward`  | The last interpolated value is persisted after the animation ends.                                     |
@@ -77,7 +77,7 @@ The `FillMode` attribute of an `Animation` defines how the animated property per
 
 `PlaybackDirection` defines how the `Animation` is played. By default, an animation plays forward, following the profile of the easing function from left to right.
 
-| Value              | Description                                             |
+| 值              | 说明                                             |
 |--------------------|---------------------------------------------------------|
 | `Normal`           | (Default) Played forward.                       |
 | `Reverse`          | Played backward.           |
@@ -90,7 +90,7 @@ By default, a keyframe animation pauses when its target control is not effective
 
 This behavior is intended to avoid waking the CPU to run animations the user cannot see. A control becomes effectively invisible when `IsVisible` is `false` on the control itself, or when an ancestor is hidden.
 
-| Value           | Description             |
+| 值           | 说明             |
 | ----------------| ----------------------- |
 | `Auto`          | (Default) Animation pauses when the control is not effectively visible. Animations started with `RunAsync`, or containing keyframes where `IsVisible="True"`, always play regardless of visibility. |
 | `Always`        | Animation always plays, regardless of visibility. |
@@ -100,12 +100,12 @@ This behavior is intended to avoid waking the CPU to run animations the user can
 
 The `IterationCount` on an `Animation` element sets how many times it is to be replayed. There are two formats for this setting:
 
-| Value      | Description                                      |
+| 值      | 说明                                      |
 |------------|--------------------------------------------------|
 | `N`        | Where N is an integer. Play N times. N can be zero. |
 | `infinite` | Repeats forever.                                  |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Defining keyframe animations in XAML.
 - [Control Transitions](/docs/graphics-animation/control-transitions): Animating property changes with transitions.

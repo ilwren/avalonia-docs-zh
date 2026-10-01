@@ -22,7 +22,7 @@ The extension provides rich IntelliSense with contextual completions, full `x:Da
 
 Rider provides excellent .NET support for Avalonia development, including project management, debugging, and code navigation. Rider does not ship with a built-in Avalonia XAML previewer, but the community-maintained [AvalonRider](https://plugins.jetbrains.com/plugin/14839-avalonrider) plugin adds previewer support directly within the IDE.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia for Visual Studio](/tools/visual-studio-extension)
 - [AI Tools](/tools/ai-tools/)

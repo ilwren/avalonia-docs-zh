@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">MaterialColorPalette Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/ColorPalettes/MaterialColorPalette.cs">MaterialColorPalette.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/ColorPalettes/MaterialColorPalette.cs">MaterialColorPalette.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public class MaterialColorPalette
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> MaterialColorPalette
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> MaterialColorPalette
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="icolorpalette">IColorPalette</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="icolorpalette">IColorPalette</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This palette is based on the one outlined here:
 
@@ -74,17 +74,17 @@ alterations were made:
 These shades do not exist for all colors (brown/gray).
 2. Black/White are stand-alone and are also excluded.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [MaterialColorPalette](#uid-715a2ccdd0) | No summary available. |
+| [MaterialColorPalette](#uid-715a2ccdd0) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-715a2ccdd0"></span>
 
-### MaterialColorPalette Constructor
+### MaterialColorPalette 构造函数 {#materialcolorpalette-constructor}
 
 ```csharp
 public MaterialColorPalette()
@@ -92,9 +92,9 @@ public MaterialColorPalette()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetColor](#uid-7f5a18e8aa) | Gets a color in the palette by index. |
 
@@ -102,7 +102,7 @@ public MaterialColorPalette()
 
 <span id="uid-7f5a18e8aa"></span>
 
-### GetColor Method
+### GetColor 方法 {#getcolor-method}
 
 Gets a color in the palette by index.
 
@@ -110,7 +110,7 @@ Gets a color in the palette by index.
 public Avalonia.Media.Color GetColor(int colorIndex, int shadeIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `colorIndex` int
 
@@ -124,7 +124,7 @@ The index of the color shade in the palette.
 The index must be between zero and [Avalonia.Controls.IColorPalette.ShadeCount](xref:Avalonia.Controls.IColorPalette.ShadeCount).
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
@@ -133,9 +133,9 @@ The color at the specified index or an exception.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ColorCount](#uid-7205a15fea) | Gets the total number of colors in this palette. A color is not necessarily a single value and may be composed of several shades. |
 | [ShadeCount](#uid-1ae3d945a3) | Gets the total number of shades for each color in this palette. Shades are usually a variation of the color lightening or darkening it. |
@@ -144,7 +144,7 @@ The color at the specified index or an exception.
 
 <span id="uid-7205a15fea"></span>
 
-### ColorCount Property
+### ColorCount 属性 {#colorcount-property}
 
 Gets the total number of colors in this palette.
 A color is not necessarily a single value and may be composed of several shades.
@@ -153,7 +153,7 @@ A color is not necessarily a single value and may be composed of several shades.
 public int ColorCount { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Represents total columns in a table.
 
@@ -163,7 +163,7 @@ Represents total columns in a table.
 
 <span id="uid-1ae3d945a3"></span>
 
-### ShadeCount Property
+### ShadeCount 属性 {#shadecount-property}
 
 Gets the total number of shades for each color in this palette.
 Shades are usually a variation of the color lightening or darkening it.
@@ -172,7 +172,7 @@ Shades are usually a variation of the color lightening or darkening it.
 public int ShadeCount { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Represents total rows in a table.
 

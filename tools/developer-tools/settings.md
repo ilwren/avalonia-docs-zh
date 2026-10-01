@@ -8,7 +8,7 @@ doc-type: reference
 Settings page can be accessed from the **Tray Icon** menu (on Windows and Linux) or the **macOS global menu**.
 Alternatively, when an app is already connected, the settings page is available on the **left navigation bar**.
 
-| Category | Setting | Description | Default Value |
+| Category | Setting | 说明 | Default Value |
 |----------|---------|-------------|---------------|
 | **Appearance** |
 | | Theme Variant | Controls the application's color theme | Dark |
@@ -35,7 +35,7 @@ Alternatively, when an app is already connected, the settings page is available 
 | **Protocol** |
 | | HTTP port | Defines HTTP port used to listen for app connections. Requires restart on change. Needs to be in-sync with `DeveloperToolsOptions.Protocol` set-up in the target app. | 29414 |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Developer tools options](/tools/developer-tools/options)
 - [Developer tools shortcuts](/tools/developer-tools/shortcuts)

@@ -13,7 +13,7 @@ You can use it with data binding, styling and data templates to create a complet
 
 You will probably use these properties most often:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `ItemsSource` | The bound collection that is used as the data source for the control. |
 | `ItemTemplate` | A `DataTemplate` that controls how each individual item looks. |
@@ -97,7 +97,7 @@ public class MainViewModel
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to: Work with ItemsControl](/docs/how-to/itemscontrol-how-to)
 - [ListBox](/controls/data-display/collections/listbox)

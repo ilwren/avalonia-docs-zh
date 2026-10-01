@@ -68,7 +68,7 @@ public static AppBuilder BuildAvaloniaApp()
         });
 ```
 
-| Option | Default | Description |
+| Option | Default | 说明 |
 |---|---|---|
 | `WlDisplayName` | `null` | The Wayland display to connect to (for example, `wayland-0`). When `null`, the `WAYLAND_DISPLAY` environment variable is used. |
 | `EnableReconnects` | `true` | Reconnects to the compositor automatically when the connection is lost. |
@@ -80,7 +80,7 @@ public static AppBuilder BuildAvaloniaApp()
 
 The following options support specialized scenarios such as compositor integration and backend testing. Typical applications do not need to set them.
 
-| Option | Default | Description |
+| Option | Default | 说明 |
 |---|---|---|
 | `DisplayFd` | `null` | An already-opened file descriptor for the Wayland display socket, used instead of connecting to a named display. When set, `WlDisplayName` is ignored and automatic reconnects are disabled, because libwayland consumes the file descriptor. |
 | `ForceDrawnDecorations` | `false` | Makes windows behave as if the compositor never advertised server-side decoration support, so client-side decorations are always used. Intended primarily for testing on compositors that otherwise enforce server-side decorations, such as KWin. Marked `[Experimental]`: using it requires suppressing the `AVALONIA_WAYLAND_FORCE_CSD` compiler diagnostic. |
@@ -133,7 +133,7 @@ Navigate the tree in Accerciser while interacting with your running application 
 
 For general guidance on making your application accessible, see [Accessibility](/docs/app-development/accessibility).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Supported platforms](/docs/supported-platforms) for Linux distribution tier support
 - [Deploying to Desktop Linux](/docs/deployment/linux)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ItemsSourceView&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ItemsSourceView.cs">ItemsSourceView.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ItemsSourceView.cs">ItemsSourceView.cs</a>
 </div>
 
 </div>
@@ -48,20 +48,20 @@ public class ItemsSourceView<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="itemssourceview">ItemsSourceView</a> <span className="apiref-page__relation-separator">-&gt;</span> ItemsSourceView&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="itemssourceview">ItemsSourceView</a> <span className="apiref-page__relation-separator">-&gt;</span> ItemsSourceView&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEnumerable&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, IEnumerable
+<span className="apiref-page__meta-label">实现接口：</span> IEnumerable&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, IEnumerable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Contains](itemssourceview.mdx#uid-384f51208a) | Inherited from [ItemsSourceView](itemssourceview.mdx). |
 | [GetAt](#uid-193f0c424c) | Retrieves the item at the specified index. |
-| [GetEnumerator](#uid-4e513377fb) | No summary available. |
+| [GetEnumerator](#uid-4e513377fb) | 暂无摘要。 |
 | [GetOrCreate (2 overloads)](itemssourceview.mdx#uid-690d93f5ab) | Inherited from [ItemsSourceView](itemssourceview.mdx). |
 | [IndexOf](itemssourceview.mdx#uid-42b8595b39) | Inherited from [ItemsSourceView](itemssourceview.mdx). |
 
@@ -69,7 +69,7 @@ public class ItemsSourceView<T>
 
 <span id="uid-193f0c424c"></span>
 
-### GetAt Method
+### GetAt 方法 {#getat-method}
 
 Retrieves the item at the specified index.
 
@@ -77,14 +77,14 @@ Retrieves the item at the specified index.
 public T GetAt(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `index` int
 
 The index.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 T
 
@@ -97,33 +97,33 @@ The item.
 
 <span id="uid-4e513377fb"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerator<T> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerator&lt;T&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](itemssourceview.mdx#uid-c7dd90d709) | Gets the number of items in the collection. Inherited from [ItemsSourceView](itemssourceview.mdx). |
 | [Empty](#uid-3a721b94df) | Gets an empty [Avalonia.Controls.ItemsSourceView](xref:Avalonia.Controls.ItemsSourceView) |
-| [Item](#uid-bc2872e19a) | No summary available. |
+| [Item](#uid-bc2872e19a) | 暂无摘要。 |
 | [Source](itemssourceview.mdx#uid-d81337be41) | Gets the source collection. Inherited from [ItemsSourceView](itemssourceview.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3a721b94df"></span>
 
-### Empty Property
+### Empty 属性 {#empty-property}
 
 Gets an empty [Avalonia.Controls.ItemsSourceView](xref:Avalonia.Controls.ItemsSourceView)
 
@@ -137,7 +137,7 @@ public Avalonia.Controls.ItemsSourceView<T><T> Empty { get; set; }
 
 <span id="uid-bc2872e19a"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public T Item { get; set; }
@@ -145,9 +145,9 @@ public T Item { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CollectionChanged](itemssourceview.mdx#uid-13328a2fb4) | Occurs when the collection has changed to indicate the reason for the change and which items changed. Inherited from [ItemsSourceView](itemssourceview.mdx). |
 

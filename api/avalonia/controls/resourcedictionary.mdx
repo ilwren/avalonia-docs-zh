@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ResourceDictionary Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/ResourceDictionary.cs">ResourceDictionary.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/ResourceDictionary.cs">ResourceDictionary.cs</a>
 </div>
 
 </div>
@@ -54,33 +54,33 @@ public class ResourceDictionary
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="resourceprovider">ResourceProvider</a> <span className="apiref-page__relation-separator">-&gt;</span> ResourceDictionary
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="resourceprovider">ResourceProvider</a> <span className="apiref-page__relation-separator">-&gt;</span> ResourceDictionary
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="../dialogs/internal/resourceselectorconverter">ResourceSelectorConverter</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="../dialogs/internal/resourceselectorconverter">ResourceSelectorConverter</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iresourcedictionary">IResourceDictionary</a>, <a href="iresourcenode">IResourceNode</a>, <a href="iresourceprovider">IResourceProvider</a>, <a href="ithemevariantprovider">IThemeVariantProvider</a>, ICollection&lt;KeyValuePair&lt;object,object&gt;&gt;, IDictionary&lt;object,object&gt;, IEnumerable&lt;KeyValuePair&lt;object,object&gt;&gt;, IEnumerable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iresourcedictionary">IResourceDictionary</a>, <a href="iresourcenode">IResourceNode</a>, <a href="iresourceprovider">IResourceProvider</a>, <a href="ithemevariantprovider">IThemeVariantProvider</a>, ICollection&lt;KeyValuePair&lt;object,object&gt;&gt;, IDictionary&lt;object,object&gt;, IEnumerable&lt;KeyValuePair&lt;object,object&gt;&gt;, IEnumerable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ResourceDictionary (2 overloads)](#uid-972a5bbe67) | Initializes a new instance of the [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) class. |
+| [ResourceDictionary (2 overloads)](#uid-972a5bbe67) | 初始化 [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) 类的新实例。 |
 
 <span id="uid-972a5bbe67"></span>
 
-### ResourceDictionary overloads
+### ResourceDictionary 的重载 {#resourcedictionary-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-607bade452"></span>
 
-#### ResourceDictionary Constructor
+#### ResourceDictionary 构造函数 {#resourcedictionary-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) class.
+初始化 [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) 类的新实例。
 
 ```csharp
 public ResourceDictionary()
@@ -92,61 +92,61 @@ public ResourceDictionary()
 
 <span id="uid-1a02eabba2"></span>
 
-#### ResourceDictionary Constructor
+#### ResourceDictionary 构造函数 {#resourcedictionary-constructor-1}
 
-Initializes a new instance of the [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) class.
+初始化 [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) 类的新实例。
 
 ```csharp
 public ResourceDictionary(Avalonia.Controls.IResourceHost owner)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `owner` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Add](#uid-9eaadf6661) | No summary available. |
-| [AddDeferred (2 overloads)](#uid-a6747a18a4) | No summary available. |
-| [AddNotSharedDeferred](#uid-84bd5cae1e) | No summary available. |
-| [Bind (8 overloads)](../avaloniaobject.mdx#uid-1c60c7bda3) | Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase). Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | Returns a value indicating whether the current thread is the UI thread. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [Clear](#uid-db09b69ee4) | No summary available. |
-| [ClearValue (4 overloads)](../avaloniaobject.mdx#uid-41de208fbe) | Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [ContainsKey](#uid-38072f4aed) | No summary available. |
+| [Add](#uid-9eaadf6661) | 暂无摘要。 |
+| [AddDeferred (2 overloads)](#uid-a6747a18a4) | 暂无摘要。 |
+| [AddNotSharedDeferred](#uid-84bd5cae1e) | 暂无摘要。 |
+| [Bind（8 个重载）](../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [Clear](#uid-db09b69ee4) | 暂无摘要。 |
+| [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [ContainsKey](#uid-38072f4aed) | 暂无摘要。 |
 | [EnsureCapacity](#uid-faf10681ad) | Ensures that the resource dictionary can hold up to `capacity` entries without any further expansion of its backing storage. |
-| [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | Compares two objects using reference equality. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetBaseValue](../avaloniaobject.mdx#uid-9c615efbba) | Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetEnumerator](#uid-fafef28202) | No summary available. |
-| [GetHashCode](../avaloniaobject.mdx#uid-7f7db1e7a2) | Gets the hash code for the object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetValue (3 overloads)](../avaloniaobject.mdx#uid-5142cd4792) | Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is animating. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [Remove](#uid-c815dc8c76) | No summary available. |
-| [SetCurrentValue (2 overloads)](../avaloniaobject.mdx#uid-38759fd088) | Sets the value of a dependency property without changing its value source. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [SetItems](#uid-c90ab4d76f) | No summary available. |
-| [SetValue (3 overloads)](../avaloniaobject.mdx#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [TryGetResource](#uid-86a108c945) | No summary available. |
-| [TryGetValue](#uid-5e7bc153e9) | No summary available. |
-| [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | Checks that the current thread is the UI thread and throws if not. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
+| [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetBaseValue](../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetEnumerator](#uid-fafef28202) | 暂无摘要。 |
+| [GetHashCode](../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [Remove](#uid-c815dc8c76) | 暂无摘要。 |
+| [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [SetItems](#uid-c90ab4d76f) | 暂无摘要。 |
+| [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [TryGetResource](#uid-86a108c945) | 暂无摘要。 |
+| [TryGetValue](#uid-5e7bc153e9) | 暂无摘要。 |
+| [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9eaadf6661"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
 ```csharp
 public void Add(object key, object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `key` object
 
@@ -164,13 +164,13 @@ public void Add(object key, object value)
 
 <span id="uid-cf7b7fd145"></span>
 
-#### AddDeferred Method
+#### AddDeferred 方法 {#adddeferred-method}
 
 ```csharp
 public void AddDeferred(object key, Avalonia.Controls.IDeferredContent deferredContent)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `key` object
 
@@ -184,13 +184,13 @@ public void AddDeferred(object key, Avalonia.Controls.IDeferredContent deferredC
 
 <span id="uid-9a6b9d5c4f"></span>
 
-#### AddDeferred Method
+#### AddDeferred 方法 {#adddeferred-method-1}
 
 ```csharp
 public void AddDeferred(object key, Func<IServiceProvider, object> factory)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `key` object
 
@@ -204,13 +204,13 @@ public void AddDeferred(object key, Func<IServiceProvider, object> factory)
 
 <span id="uid-84bd5cae1e"></span>
 
-### AddNotSharedDeferred Method
+### AddNotSharedDeferred 方法 {#addnotshareddeferred-method}
 
 ```csharp
 public void AddNotSharedDeferred(object key, Avalonia.Controls.IDeferredContent deferredContent)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `key` object
 
@@ -224,7 +224,7 @@ public void AddNotSharedDeferred(object key, Avalonia.Controls.IDeferredContent 
 
 <span id="uid-db09b69ee4"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 ```csharp
 public void Clear()
@@ -236,18 +236,18 @@ public void Clear()
 
 <span id="uid-38072f4aed"></span>
 
-### ContainsKey Method
+### ContainsKey 方法 {#containskey-method}
 
 ```csharp
 public bool ContainsKey(object key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `key` object
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -258,7 +258,7 @@ bool
 
 <span id="uid-faf10681ad"></span>
 
-### EnsureCapacity Method
+### EnsureCapacity 方法 {#ensurecapacity-method}
 
 Ensures that the resource dictionary can hold up to `capacity` entries without
 any further expansion of its backing storage.
@@ -267,12 +267,12 @@ any further expansion of its backing storage.
 public void EnsureCapacity(int capacity)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `capacity` int
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This method may have no effect when targeting .NET Standard 2.0.
 
@@ -282,13 +282,13 @@ This method may have no effect when targeting .NET Standard 2.0.
 
 <span id="uid-fafef28202"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,object>> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;object,object&gt;&gt;
 
@@ -299,18 +299,18 @@ System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePai
 
 <span id="uid-c815dc8c76"></span>
 
-### Remove Method
+### Remove 方法 {#remove-method}
 
 ```csharp
 public bool Remove(object key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `key` object
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
@@ -321,13 +321,13 @@ bool
 
 <span id="uid-c90ab4d76f"></span>
 
-### SetItems Method
+### SetItems 方法 {#setitems-method}
 
 ```csharp
 public void SetItems(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,object>> values)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `values` System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;object,object&gt;&gt;
 
@@ -338,13 +338,13 @@ public void SetItems(System.Collections.Generic.IEnumerable<System.Collections.G
 
 <span id="uid-86a108c945"></span>
 
-### TryGetResource Method
+### TryGetResource 方法 {#trygetresource-method}
 
 ```csharp
 public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, object& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `key` object
 
@@ -355,7 +355,7 @@ public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, obje
 `value` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -366,13 +366,13 @@ bool
 
 <span id="uid-5e7bc153e9"></span>
 
-### TryGetValue Method
+### TryGetValue 方法 {#trygetvalue-method}
 
 ```csharp
 public bool TryGetValue(object key, object& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `key` object
 
@@ -380,32 +380,32 @@ public bool TryGetValue(object key, object& value)
 `value` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Count](#uid-b85700e6bf) | No summary available. |
-| [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | Returns the [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher) that this [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) is associated with. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [HasResources](#uid-869f0539cf) | No summary available. |
-| [Item](#uid-9b56d6db8a) | No summary available. |
-| [Keys](#uid-a171f87ee5) | No summary available. |
-| [MergedDictionaries](#uid-c6bbe5bebd) | No summary available. |
+| [Count](#uid-b85700e6bf) | 暂无摘要。 |
+| [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [HasResources](#uid-869f0539cf) | 暂无摘要。 |
+| [Item](#uid-9b56d6db8a) | 暂无摘要。 |
+| [Keys](#uid-a171f87ee5) | 暂无摘要。 |
+| [MergedDictionaries](#uid-c6bbe5bebd) | 暂无摘要。 |
 | [Owner](resourceprovider.mdx#uid-ce90abd25b) | Gets the owner of the resource provider. Inherited from [ResourceProvider](resourceprovider.mdx). |
-| [ThemeDictionaries](#uid-c40ccfafaa) | No summary available. |
-| [Values](#uid-a1e3598d3a) | No summary available. |
+| [ThemeDictionaries](#uid-c40ccfafaa) | 暂无摘要。 |
+| [Values](#uid-a1e3598d3a) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b85700e6bf"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 ```csharp
 public int Count { get; set; }
@@ -417,7 +417,7 @@ public int Count { get; set; }
 
 <span id="uid-869f0539cf"></span>
 
-### HasResources Property
+### HasResources 属性 {#hasresources-property}
 
 ```csharp
 public bool HasResources { get; set; }
@@ -429,7 +429,7 @@ public bool HasResources { get; set; }
 
 <span id="uid-9b56d6db8a"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public object Item { get; set; }
@@ -441,7 +441,7 @@ public object Item { get; set; }
 
 <span id="uid-a171f87ee5"></span>
 
-### Keys Property
+### Keys 属性 {#keys-property}
 
 ```csharp
 public System.Collections.Generic.ICollection<object> Keys { get; set; }
@@ -453,7 +453,7 @@ public System.Collections.Generic.ICollection<object> Keys { get; set; }
 
 <span id="uid-c6bbe5bebd"></span>
 
-### MergedDictionaries Property
+### MergedDictionaries 属性 {#mergeddictionaries-property}
 
 ```csharp
 public System.Collections.Generic.IList<Avalonia.Controls.IResourceProvider> MergedDictionaries { get; set; }
@@ -465,7 +465,7 @@ public System.Collections.Generic.IList<Avalonia.Controls.IResourceProvider> Mer
 
 <span id="uid-c40ccfafaa"></span>
 
-### ThemeDictionaries Property
+### ThemeDictionaries 属性 {#themedictionaries-property}
 
 ```csharp
 public System.Collections.Generic.IDictionary<Avalonia.Styling.ThemeVariant, Avalonia.Controls.IThemeVariantProvider> ThemeDictionaries { get; set; }
@@ -477,7 +477,7 @@ public System.Collections.Generic.IDictionary<Avalonia.Styling.ThemeVariant, Ava
 
 <span id="uid-a1e3598d3a"></span>
 
-### Values Property
+### Values 属性 {#values-property}
 
 ```csharp
 public System.Collections.Generic.ICollection<object> Values { get; set; }
@@ -485,12 +485,12 @@ public System.Collections.Generic.ICollection<object> Values { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [OwnerChanged](resourceprovider.mdx#uid-efe79b23bb) | Raised when the [Avalonia.Controls.IResourceProvider.Owner](xref:Avalonia.Controls.IResourceProvider.Owner) of the resource provider changes. Inherited from [ResourceProvider](resourceprovider.mdx). |
-| [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | Raised when a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value changes on this object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
+| [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 </ApiRefPage>
 

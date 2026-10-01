@@ -12,7 +12,7 @@ The [`TextBlock`](/api/avalonia/controls/textblock) is a read-only label for dis
 
 ## Common properties
 
-| Property          | Type                       | Description                                                                                                                                                                                                           |
+| Property          | Type                       | 说明                                                                                                                                                                                                           |
 | ----------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Text`            | `string`                   | The text to display.                                                                                                                                                                                                  |
 | `FontSize`        | `double`                   | The size of the font in device-independent pixels.                                                                                                                                                                    |
@@ -56,7 +56,7 @@ This example demonstrates using multiple `TextBlock` controls to show a heading,
 
 By default, `TextBlock` does not wrap text. When the text is wider than the available space, it is clipped. Set `TextWrapping` to control this behavior:
 
-| Value             | Behavior                                                                                      |
+| 值             | Behavior                                                                                      |
 | ----------------- | --------------------------------------------------------------------------------------------- |
 | `NoWrap`          | Text is not wrapped and may be clipped (default).                                             |
 | `Wrap`            | Text wraps at the nearest character that fits within the available width.                     |
@@ -190,7 +190,7 @@ The `InlineUIContainer` allows you to embed any `Control` as an inline element w
 
 <Image light={TextBlockUIContainerScreenshot} alt="A TextBlock with inline UI containers including an image and a button" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [SelectableTextBlock](/controls/data-display/text-display/selectabletextblock)
 - [Label](/controls/data-display/text-display/label)

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StaticTextPointer Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -53,14 +53,14 @@ public struct StaticTextPointer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> StaticTextPointer
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> StaticTextPointer
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IComparable&lt;StaticTextPointer&gt;, IEquatable&lt;StaticTextPointer&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IComparable&lt;StaticTextPointer&gt;, IEquatable&lt;StaticTextPointer&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 `StaticTextPointer` is 8 bytes (int + enum), stack-allocated, and
 requires zero heap allocations. It is the value-type counterpart
@@ -74,9 +74,9 @@ node-aware [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Con
 from offset alone, which cannot disambiguate between consecutive
 zero-length blocks that share the same offset.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [StaticTextPointer](#uid-af36e0a006) | A lightweight value type representing a document position as an offset with logical direction (gravity). Use this instead of [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) on hot paths where only offset and direction are needed (rendering, hit-testing, line queries). |
 
@@ -84,7 +84,7 @@ zero-length blocks that share the same offset.
 
 <span id="uid-af36e0a006"></span>
 
-### StaticTextPointer Constructor
+### StaticTextPointer 构造函数 {#statictextpointer-constructor}
 
 A lightweight value type representing a document position as an offset
 with logical direction (gravity). Use this instead of [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
@@ -95,7 +95,7 @@ hit-testing, line queries).
 public StaticTextPointer(int Offset, Avalonia.Controls.Documents.TextModel.LogicalDirection Direction)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `Offset` int
 
@@ -103,7 +103,7 @@ public StaticTextPointer(int Offset, Avalonia.Controls.Documents.TextModel.Logic
 `Direction` [Avalonia.Controls.Documents.TextModel.LogicalDirection](xref:Avalonia.Controls.Documents.TextModel.LogicalDirection)
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 `StaticTextPointer` is 8 bytes (int + enum), stack-allocated, and
 requires zero heap allocations. It is the value-type counterpart
@@ -119,21 +119,21 @@ zero-length blocks that share the same offset.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CompareTo](#uid-c0f90ef7b3) | Compares two positions by offset. |
-| [Deconstruct](#uid-51b6634355) | No summary available. |
-| [Equals (2 overloads)](#uid-c53a2dad2e) | No summary available. |
-| [GetHashCode](#uid-8c49031b4f) | No summary available. |
-| [ToString](#uid-16ffa14b75) | No summary available. |
+| [Deconstruct](#uid-51b6634355) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-c53a2dad2e) | 暂无摘要。 |
+| [GetHashCode](#uid-8c49031b4f) | 暂无摘要。 |
+| [ToString](#uid-16ffa14b75) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c0f90ef7b3"></span>
 
-### CompareTo Method
+### CompareTo 方法 {#compareto-method}
 
 Compares two positions by offset.
 
@@ -141,12 +141,12 @@ Compares two positions by offset.
 public int CompareTo(Avalonia.Controls.Documents.TextModel.StaticTextPointer other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `other` [Avalonia.Controls.Documents.TextModel.StaticTextPointer](xref:Avalonia.Controls.Documents.TextModel.StaticTextPointer)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 int
 
@@ -157,13 +157,13 @@ int
 
 <span id="uid-51b6634355"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(int& Offset, Avalonia.Controls.Documents.TextModel.LogicalDirection& Direction)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `Offset` int&amp;
 
@@ -175,24 +175,24 @@ public void Deconstruct(int& Offset, Avalonia.Controls.Documents.TextModel.Logic
 
 <span id="uid-c53a2dad2e"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2e61bd3053"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.StaticTextPointer other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `other` [Avalonia.Controls.Documents.TextModel.StaticTextPointer](xref:Avalonia.Controls.Documents.TextModel.StaticTextPointer)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -203,18 +203,18 @@ bool
 
 <span id="uid-d1e05c9a2f"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -225,13 +225,13 @@ bool
 
 <span id="uid-8c49031b4f"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 int
 
@@ -242,31 +242,31 @@ int
 
 <span id="uid-16ffa14b75"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Direction](#uid-82a9e56dc0) | No summary available. |
-| [Offset](#uid-fc7ea39409) | No summary available. |
+| [Direction](#uid-82a9e56dc0) | 暂无摘要。 |
+| [Offset](#uid-fc7ea39409) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-82a9e56dc0"></span>
 
-### Direction Property
+### Direction 属性 {#direction-property}
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.LogicalDirection Direction { get; set; }
@@ -278,7 +278,7 @@ public Avalonia.Controls.Documents.TextModel.LogicalDirection Direction { get; s
 
 <span id="uid-fc7ea39409"></span>
 
-### Offset Property
+### Offset 属性 {#offset-property}
 
 ```csharp
 public int Offset { get; set; }

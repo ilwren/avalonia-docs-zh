@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ImageSnapshotNode Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,22 +51,22 @@ public class ImageSnapshotNode
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="snapshotnode">SnapshotNode</a> <span className="apiref-page__relation-separator">-&gt;</span> ImageSnapshotNode
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="snapshotnode">SnapshotNode</a> <span className="apiref-page__relation-separator">-&gt;</span> ImageSnapshotNode
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ChildrenOfKind](snapshotnode.mdx#uid-b98ce7edb2) | Enumerates child nodes matching a specific kind. Inherited from [SnapshotNode](snapshotnode.mdx). |
 | [EnumerateDescendants](snapshotnode.mdx#uid-614ca453c7) | Enumerates this node and all descendants in pre-order (depth-first). Inherited from [SnapshotNode](snapshotnode.mdx). |
 | [GetFormatMetadata](snapshotnode.mdx#uid-1ff906f363) | Inherited from [SnapshotNode](snapshotnode.mdx). |
 | [SetFormatMetadata](snapshotnode.mdx#uid-aa8fc8c6ff) | Inherited from [SnapshotNode](snapshotnode.mdx). |
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AltText](#uid-197e9a5fee) | Alternative text describing the image, or when none was provided. |
 | [Children](snapshotnode.mdx#uid-b1710f532c) | Child nodes. Empty array for leaf nodes. Inherited from [SnapshotNode](snapshotnode.mdx). |
@@ -92,7 +92,7 @@ public class ImageSnapshotNode
 
 <span id="uid-197e9a5fee"></span>
 
-### AltText Property
+### AltText 属性 {#alttext-property}
 
 Alternative text describing the image, or when none was provided.
 
@@ -106,7 +106,7 @@ public string AltText { get; set; }
 
 <span id="uid-bd6c8dc820"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
 Display height of the image in device-independent pixels.
 
@@ -120,7 +120,7 @@ public double Height { get; set; }
 
 <span id="uid-25e823f8b8"></span>
 
-### ImageData Property
+### ImageData 属性 {#imagedata-property}
 
 Image data bytes.
 
@@ -134,7 +134,7 @@ public ReadOnlyMemory<byte> ImageData { get; set; }
 
 <span id="uid-933fb5d9a1"></span>
 
-### ImageMimeType Property
+### ImageMimeType 属性 {#imagemimetype-property}
 
 MIME type of the image (e.g., "image/png", "image/jpeg").
 
@@ -148,7 +148,7 @@ public string ImageMimeType { get; set; }
 
 <span id="uid-5d5c16ff8b"></span>
 
-### Pixels Property
+### Pixels 属性 {#pixels-property}
 
 The decoded pixels for a pixels-only image (one with no encoded bytes and no
 URI), or an empty holder otherwise. Serializers re-encode this to a supported
@@ -164,7 +164,7 @@ public Avalonia.Controls.Documents.Imaging.PixelHolder Pixels { get; set; }
 
 <span id="uid-c666bf4737"></span>
 
-### SourceUri Property
+### SourceUri 属性 {#sourceuri-property}
 
 The reference URI for a deferred/linked image (e.g. a Markdown image URL),
 or for an embedded-byte image. When set,
@@ -181,7 +181,7 @@ public string SourceUri { get; set; }
 
 <span id="uid-b449386575"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
 Display width of the image in device-independent pixels.
 

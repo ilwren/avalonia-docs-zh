@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TableColumnWidth Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,21 +50,21 @@ public struct TableColumnWidth
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TableColumnWidth
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TableColumnWidth
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;TableColumnWidth&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;TableColumnWidth&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 12 bytes per column (8 double + 4 enum). Stored in a flat array
 inside [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting) to avoid per-column object overhead.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TableColumnWidth](#uid-0b8a90fc15) | Describes a single table column's width and unit type. |
 
@@ -72,7 +72,7 @@ inside [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:A
 
 <span id="uid-0b8a90fc15"></span>
 
-### TableColumnWidth Constructor
+### TableColumnWidth 构造函数 {#tablecolumnwidth-constructor}
 
 Describes a single table column's width and unit type.
 
@@ -80,7 +80,7 @@ Describes a single table column's width and unit type.
 public TableColumnWidth(double Value, Avalonia.Controls.GridUnitType UnitType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `Value` double
 
@@ -88,35 +88,35 @@ public TableColumnWidth(double Value, Avalonia.Controls.GridUnitType UnitType)
 `UnitType` [Avalonia.Controls.GridUnitType](xref:Avalonia.Controls.GridUnitType)
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 12 bytes per column (8 double + 4 enum). Stored in a flat array
 inside [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting) to avoid per-column object overhead.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-ede8f16d76) | No summary available. |
-| [Equals (2 overloads)](#uid-e7d3ebd84d) | No summary available. |
+| [Deconstruct](#uid-ede8f16d76) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-e7d3ebd84d) | 暂无摘要。 |
 | [FromGridLength](#uid-2e56b40359) | Creates a [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth) from an existing [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength). |
-| [GetHashCode](#uid-73e68ce8d5) | No summary available. |
+| [GetHashCode](#uid-73e68ce8d5) | 暂无摘要。 |
 | [ToGridLength](#uid-d7f9fb50d7) | Creates a [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength) from this definition. |
-| [ToString](#uid-b8e4ece255) | No summary available. |
+| [ToString](#uid-b8e4ece255) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ede8f16d76"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(double& Value, Avalonia.Controls.GridUnitType& UnitType)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `Value` double&amp;
 
@@ -128,24 +128,24 @@ public void Deconstruct(double& Value, Avalonia.Controls.GridUnitType& UnitType)
 
 <span id="uid-e7d3ebd84d"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0461a60c43"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -156,18 +156,18 @@ bool
 
 <span id="uid-e3e36f58c1"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -178,7 +178,7 @@ bool
 
 <span id="uid-2e56b40359"></span>
 
-### FromGridLength Method
+### FromGridLength 方法 {#fromgridlength-method}
 
 Creates a [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth) from an existing [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength).
 
@@ -186,12 +186,12 @@ Creates a [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xr
 public Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth FromGridLength(Avalonia.Controls.GridLength gl)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `gl` [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth)
 
@@ -202,13 +202,13 @@ public Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth FromGri
 
 <span id="uid-73e68ce8d5"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 int
 
@@ -219,7 +219,7 @@ int
 
 <span id="uid-d7f9fb50d7"></span>
 
-### ToGridLength Method
+### ToGridLength 方法 {#togridlength-method}
 
 Creates a [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength) from this definition.
 
@@ -227,7 +227,7 @@ Creates a [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength) from
 public Avalonia.Controls.GridLength ToGridLength()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength)
 
@@ -238,31 +238,31 @@ public Avalonia.Controls.GridLength ToGridLength()
 
 <span id="uid-b8e4ece255"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [UnitType](#uid-c9c828102a) | No summary available. |
-| [Value](#uid-0302def6e6) | No summary available. |
+| [UnitType](#uid-c9c828102a) | 暂无摘要。 |
+| [Value](#uid-0302def6e6) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c9c828102a"></span>
 
-### UnitType Property
+### UnitType 属性 {#unittype-property}
 
 ```csharp
 public Avalonia.Controls.GridUnitType UnitType { get; set; }
@@ -274,7 +274,7 @@ public Avalonia.Controls.GridUnitType UnitType { get; set; }
 
 <span id="uid-0302def6e6"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
 ```csharp
 public double Value { get; set; }

@@ -153,14 +153,14 @@ Non-virtualizing panels like `StackPanel` inside an `ItemsControl` create all it
 
 ## Useful debugging tools
 
-| Tool | Purpose |
+| Tool | 用途 |
 |---|---|
 | **DevTools (F12)** | Inspect visual tree, properties, styles, and events at runtime. |
 | **Compiled Bindings** | Catch binding errors at compile time instead of runtime. |
 | **LogToTrace** | See binding errors and other warnings in the debug output. |
 | **Conditional breakpoints** | Break on property changes in view model setters. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Binding Debugging](/docs/data-binding/binding-debugging): Detailed binding diagnostics.
 - [Compiled Bindings](/docs/data-binding/compiled-bindings): Catch binding errors at build time.

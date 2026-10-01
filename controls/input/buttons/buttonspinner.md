@@ -17,7 +17,7 @@ For standard numeric input with built-in validation and formatting, consider usi
 
 You will probably use these properties most often:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `ButtonSpinnerLocation` | Location of the spinner buttons: `Left` or `Right` (default). |
 | `ValidSpinDirection` | Limits spin direction: `Increase`, `Decrease`, or `None`. |
@@ -89,7 +89,7 @@ public partial class MyViewModel : ObservableObject
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ButtonSpinner API reference](/api/avalonia/controls/buttonspinner)
 - [`ButtonSpinner.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ButtonSpinner.cs)

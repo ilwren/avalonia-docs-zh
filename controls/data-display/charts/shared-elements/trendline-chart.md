@@ -70,7 +70,7 @@ public ObservableCollection<ChartDataPoint> LinearData { get; } = new()
 
 ## Common properties (`Trendline`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Type` | Data type the trendline should fit: `Linear`, `Exponential`, `Logarithmic`, `Power`, `Polynomial`, or `MovingAverage`. | `Linear` |
 | `Stroke` | Brush used to draw the trendline. | `Gray` |
@@ -138,7 +138,7 @@ public ObservableCollection<ChartDataPoint> StandaloneTrendlineData { get; } = n
 
 ### `ChartTrendlineSeries` properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `TrendlineType` | The regression type: `Linear`, `Polynomial`, `Exponential`, `Logarithmic`, `Power`, or `MovingAverage`. | `Linear` |
 | `PolynomialOrder` | The polynomial degree when `TrendlineType` is `Polynomial`. | `2` |
@@ -188,13 +188,13 @@ public ObservableCollection<PricePoint> PriceData { get; } = new()
 
 ### `MovingAverageSeries` properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `MovingAverageType` | The calculation type: `Simple`, `Exponential`, `Weighted`, or `Triangular`. | `Simple` |
 | `Period` | The number of data points used in the moving average window. | `14` |
 | `SourceSeries` | The series to calculate the moving average from. If `null`, uses `ItemsSource` directly. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Line chart](/controls/data-display/charts/cartesian/line-chart)
 - [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart)

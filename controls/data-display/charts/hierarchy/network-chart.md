@@ -57,7 +57,7 @@ public ObservableCollection<NetworkEdge> NetworkEdges { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of graph nodes. | `null` |
 | `Edges` | The collection of graph edges. | `null` |

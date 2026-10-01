@@ -94,7 +94,7 @@ Native views sit on top of the Avalonia rendering surface. Keep the following co
 - **Z-order constraints**: Native views always render on top of Avalonia content. You cannot overlay Avalonia controls on a native view.
 - **Clipping**: The native view is clipped to its host bounds, but complex clip geometries are not supported.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Native platform interop](/docs/app-development/native-interop)
 - [Developing with Avalonia for Android](/docs/platform-specific-guides/android)

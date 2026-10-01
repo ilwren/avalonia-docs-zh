@@ -8,7 +8,7 @@ const sidebars: SidebarsConfig = {
     'app-performance-issues',
     {
       type: 'category',
-      label: 'Controls',
+      label: '控件',
       collapsed: true,
       items: [
         'controls/mediaplayer',
@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Platform-specific issues',
+      label: '平台相关问题',
       collapsed: true,
       items: [
         'platform-specific-issues/macos',
@@ -30,7 +30,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Tools',
+      label: '工具',
       collapsed: true,
       items: [
         'tools/developer-tools'
@@ -38,7 +38,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'UI development',
+      label: '界面开发',
       collapsed: true,
       items: [
         'ui-development/styles',

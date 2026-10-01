@@ -13,7 +13,7 @@ The mask pattern can also contain literal characters that appear in the input an
 
 You will probably use these properties most often:
 
-| Property    | Description                                                                  |
+| Property    | 说明                                                                  |
 |-------------|------------------------------------------------------------------------------|
 | `Mask`      | The mask pattern to use. See the special mask characters in the table below. |
 | `AsciiOnly` | Restricts input to the ASCII letters a-z and A-Z.                            |
@@ -23,7 +23,7 @@ You will probably use these properties most often:
 
 The mask property accepts a string that can contain a combination of fixed characters and the following special characters:
 
-| Mask Character | Description                                                                                                                                                                             |
+| Mask Character | 说明                                                                                                                                                                             |
 |:--------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      `0`       | Digit, required. This element will accept any single digit between 0 and 9.                                                                                                             |
 |      `9`       | Digit or space, optional.                                                                                                                                                               |
@@ -66,6 +66,6 @@ This is a basic example:
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [`MaskedTextBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/MaskedTextBox.cs)

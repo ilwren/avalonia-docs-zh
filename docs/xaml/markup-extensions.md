@@ -15,7 +15,7 @@ Creates a data binding between a control property and a source property:
 
 ### Common binding parameters
 
-| Parameter | Description |
+| Parameter | 说明 |
 |---|---|
 | `Path` | The property path on the source object. This is the default parameter. |
 | `Mode` | The binding direction: `OneWay`, `TwoWay`, `OneTime`, `OneWayToSource`, `Default`. |
@@ -191,7 +191,7 @@ To set a property to a literal string that starts with `{`, use an empty set of 
 <TextBlock Text="{}{This is literal text, not a markup extension}" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [XAML Reference](/docs/xaml): Overview of XAML syntax.
 - [x: Directives](/docs/xaml/directives): XAML language directives.

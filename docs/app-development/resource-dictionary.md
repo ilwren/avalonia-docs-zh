@@ -315,7 +315,7 @@ public MainWindow()
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Resources Overview](/docs/app-development/resources): Understanding resource types and lookup behavior.
 - [Theme Variants](/docs/styling/theme-variants): Using theme-aware resources.

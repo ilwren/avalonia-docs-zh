@@ -111,7 +111,7 @@ public void Should_Type_Text_Into_TextBox()
 
 Instead of the typical `[Test]` attribute, use `[AvaloniaTest]` as it sets up the UI thread.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Testable sample app for NUnit](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Testing/TestableApp.Headless.NUnit)
 - [Headless Testing Platform](/docs/testing/setting-up-the-headless-platform)

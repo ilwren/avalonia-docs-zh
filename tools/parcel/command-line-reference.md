@@ -7,7 +7,7 @@ doc-type: reference
 
 Use the Parcel command-line tool to package Avalonia applications for Windows, macOS, and Linux. Parcel can also sign applications and packages.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before you use Parcel, make sure that you have these items:
 
@@ -26,7 +26,7 @@ parcel [command] [options]
 
 ## Global Options
 
-| Option | Description |
+| Option | 说明 |
 |--------|-------------|
 | `-?, -h, --help` | Show help and usage information |
 | `--version` | Show version information |
@@ -49,7 +49,7 @@ parcel pack <project> [options]
 
 **Options:**
 
-| Option | Description | Default |
+| Option | 说明 | Default |
 |--------|-------------|---------|
 | `-o, --output` | Output directory | `<project-dir>\bin\packages` |
 | `-r, --runtimes` | Runtime identifiers to package. You can specify this option more than once. | Current platform runtime |
@@ -76,7 +76,7 @@ parcel step [command] <input> <output> [options]
 
 **Available Step Commands:**
 
-| Command | Description | Input | Output |
+| Command | 说明 | Input | Output |
 |---------|-------------|-------|--------|
 | `publish` | Publishes the .NET project for a target platform and runtime | No explicit input. Parcel reads the project from the `.parcel` file. | Published application directory |
 | `merge-mac` | Merges architecture builds into a universal macOS application bundle | Directory with architecture-specific subdirectories (`osx-x64`, `osx-arm64`) | Universal application directory |
@@ -187,7 +187,7 @@ parcel install-tools [options]
 
 **Options:**
 
-| Option | Description |
+| Option | 说明 |
 |--------|-------------|
 | `-r, --runtimes` | Runtime identifiers (can specify multiple) |
 | `-p, --packages` | Package formats: `deb`, `dmg`, `msix`, `nsis`, `pkg`, `rpm`, `zip` (can specify multiple) |
@@ -215,14 +215,14 @@ For setup and usage information, see [Parcel MCP](/tools/parcel/mcp).
 
 ### Parcel and console behavior
 
-| Variable | Description |
+| Variable | 说明 |
 |---|---|
 | `AVALONIA_TOOLS_LICENSE_KEY` | License key used when `--license-key` is not provided. |
 | `AVALONIA_TOOLS_LOG_LEVEL` | Sets the Parcel application and MCP log level, such as `Debug` or `Information`. |
 
 ### Tool discovery
 
-| Variable | Description |
+| Variable | 说明 |
 |---|---|
 | `PARCEL_JAVA_EXE` | Sets the path to the Java executable for cross-platform Windows signing. Parcel also reads `JAVA_HOME`. |
 | `PARCEL_SIGNTOOL_EXE` | Sets the path to SignTool on Windows. |
@@ -231,7 +231,7 @@ For setup and usage information, see [Parcel MCP](/tools/parcel/mcp).
 
 ### Cloud signing
 
-| Variable | Description |
+| Variable | 说明 |
 |---|---|
 | `AZURE_TENANT_ID` | Microsoft Entra tenant used by Azure Artifact Signing or Key Vault. |
 | `AZURE_CLIENT_ID` | Azure service principal client ID. |
@@ -247,7 +247,7 @@ You can override supported scalar settings with automatic `PARCEL_<SECTION>_<SET
 - Define all packaging options, signing credentials, and visual settings in the Parcel project file (`.parcel`).
 - When you use `--no-build`, make sure that the publish settings match your Parcel configuration. These settings include trimming, AOT, and single-file publishing.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Parcel setup](/tools/parcel/setup)
 - [Parcel configuration reference](/tools/parcel/configuration-reference)

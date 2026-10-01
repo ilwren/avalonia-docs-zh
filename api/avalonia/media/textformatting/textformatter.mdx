@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextFormatter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextFormatter.cs">TextFormatter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextFormatter.cs">TextFormatter.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class TextFormatter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextFormatter
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextFormatter
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CreateSymbol](#uid-c6e58dc336) | Creates a shaped symbol. |
 | [FormatLine (2 overloads)](#uid-d9ee5ebf28) | Formats a text line. |
@@ -69,7 +69,7 @@ public class TextFormatter
 
 <span id="uid-c6e58dc336"></span>
 
-### CreateSymbol Method
+### CreateSymbol 方法 {#createsymbol-method}
 
 Creates a shaped symbol.
 
@@ -77,7 +77,7 @@ Creates a shaped symbol.
 public Avalonia.Media.TextFormatting.ShapedTextRun CreateSymbol(Avalonia.Media.TextFormatting.TextRun textRun, Avalonia.Media.FlowDirection flowDirection)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `textRun` [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextFormatting.TextRun)
 
@@ -89,7 +89,7 @@ The symbol run to shape.
 The flow direction.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.TextFormatting.ShapedTextRun](xref:Avalonia.Media.TextFormatting.ShapedTextRun)
 
@@ -106,7 +106,7 @@ The shaped symbol.
 
 <span id="uid-9314f0a9a8"></span>
 
-#### FormatLine Method
+#### FormatLine 方法 {#formatline-method}
 
 Formats a text line.
 
@@ -114,7 +114,7 @@ Formats a text line.
 public Avalonia.Media.TextFormatting.TextLine FormatLine(Avalonia.Media.TextFormatting.ITextSource textSource, int firstTextSourceIndex, double paragraphWidth, Avalonia.Media.TextFormatting.TextParagraphProperties paragraphProperties, Avalonia.Media.TextFormatting.TextLineBreak previousLineBreak)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `textSource` [Avalonia.Media.TextFormatting.ITextSource](xref:Avalonia.Media.TextFormatting.ITextSource)
 
@@ -143,7 +143,7 @@ A [Avalonia.Media.TextFormatting.TextLineBreak](xref:Avalonia.Media.TextFormatti
 in terms of where the previous line in the paragraph was broken by the text formatting process.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)
 
@@ -156,7 +156,7 @@ The formatted line.
 
 <span id="uid-bfc5812206"></span>
 
-#### FormatLine Method
+#### FormatLine 方法 {#formatline-method-1}
 
 Formats a text line with an optional [Avalonia.Media.TextFormatting.TextRunCache](xref:Avalonia.Media.TextFormatting.TextRunCache) to avoid redundant shaping
 when only the paragraph width changes.
@@ -165,7 +165,7 @@ when only the paragraph width changes.
 public Avalonia.Media.TextFormatting.TextLine FormatLine(Avalonia.Media.TextFormatting.ITextSource textSource, int firstTextSourceIndex, double paragraphWidth, Avalonia.Media.TextFormatting.TextParagraphProperties paragraphProperties, Avalonia.Media.TextFormatting.TextLineBreak previousLineBreak, Avalonia.Media.TextFormatting.TextRunCache textRunCache)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `textSource` [Avalonia.Media.TextFormatting.ITextSource](xref:Avalonia.Media.TextFormatting.ITextSource)
 
@@ -199,7 +199,7 @@ in terms of where the previous line in the paragraph was broken by the text form
 A [Avalonia.Media.TextFormatting.TextRunCache](xref:Avalonia.Media.TextFormatting.TextRunCache) that caches shaped text runs.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)
 
@@ -208,9 +208,9 @@ The formatted line.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Current](#uid-229dccc18c) | Gets the current [Avalonia.Media.TextFormatting.TextFormatter](xref:Avalonia.Media.TextFormatting.TextFormatter) that is used for non complex text formatting. |
 
@@ -218,7 +218,7 @@ The formatted line.
 
 <span id="uid-229dccc18c"></span>
 
-### Current Property
+### Current 属性 {#current-property}
 
 Gets the current [Avalonia.Media.TextFormatting.TextFormatter](xref:Avalonia.Media.TextFormatting.TextFormatter) that is used for non complex text formatting.
 

@@ -123,7 +123,7 @@ If you omit the language identifier, the highlighter will render the block as pl
 - `Markdown.CodeHighlighter` is an inheriting attached property, so a single instance covers every code block in the control's document without a style. `MarkdownCodeBlock.Highlighter` set on one block overrides it.
 - `MarkdownCodeBlock` extends `Paragraph` and is a full `StyledElement`, so a style selector still reaches it for visual customization, such as background, padding and font family.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Markdown control](/controls/data-display/text-display/markdown)
 - [Markdown styling](/controls/data-display/text-display/markdown/markdown-styling)

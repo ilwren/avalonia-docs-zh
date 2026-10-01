@@ -182,7 +182,7 @@ If you do not need selection behavior, use `ItemsControl` instead of `ListBox`. 
 | UI does not update when a property on an item changes | Item class does not implement `INotifyPropertyChanged` | Have your item class extend `ObservableObject` or implement `INotifyPropertyChanged` |
 | Replacing the entire collection does not update the UI | The collection property lacks change notification | Use `SetProperty` (or the `[ObservableProperty]` attribute) for the property that holds the collection |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Collection views](/docs/data-binding/collection-views): Sort, filter, and group bound collections.
 - [Master-detail binding](/docs/data-binding/master-detail): Display details for the selected item in a list.

@@ -1,7 +1,7 @@
 ---
 id: index
-title: Starter tutorial
-description: Learn the basics of Avalonia by building a temperature converter app. Part 1 of 7 the Avalonia starter tutorial.
+title: 入门教程
+description: 通过动手做一个温度换算器，掌握 Avalonia 的基础知识。Avalonia 入门教程第 1 篇，共 7 篇。
 doc-type: tutorial
 ---
 
@@ -10,30 +10,30 @@ import DocsCards from '@site/src/components/global/DocsCards';
 import TemperatureConverterComplete from '/img/get-started/temperature-converter-complete.png';
 import MainWindowFileLocation from '/img/get-started/mainwindow-file-location.png';
 
-## Build a temperature converter app
+## 动手做一个温度换算器 {#build-a-temperature-converter-app}
 
-Now that you have [installed Avalonia](/docs/get-started/install-avalonia), [set up your IDE](/docs/get-started/set-up-your-ide), and [created your first project](/docs/get-started/create-your-first-project), you can explore some basic concepts and functionalities in Avalonia. You will do that by turning the default Avalonia template into a temperature converter app.
+现在你已经[装好了 Avalonia](/docs/get-started/install-avalonia)、[配置好了 IDE](/docs/get-started/set-up-your-ide)，也[创建了第一个项目](/docs/get-started/create-your-first-project)，接下来就可以了解 Avalonia 的一些基本概念和用法了。方式是把默认的 Avalonia 模板改造成一个温度换算器。
 
-Follow through this tutorial to create the app. As you do so, you will learn about:
+跟着本教程一步步把这个应用做出来，过程中你会学到：
 
 <DocsCards>
   <DocsCard header="Adding a control" href="/docs/get-started/starter-tutorial/adding-a-control">
-    <p>Add a button to the app and position it in the window.</p>
+    <p>往应用里添加一个按钮，并把它摆到窗口中的合适位置。</p>
   </DocsCard>
   <DocsCard header="Adding some layout" href="/docs/get-started/starter-tutorial/adding-some-layout">
-    <p>Use layout controls to arrange multiple controls on screen.</p>
+    <p>用布局控件在屏幕上排布多个控件。</p>
   </DocsCard>
   <DocsCard header="Customizing the Avalonia window" href="/docs/get-started/starter-tutorial/customizing-the-avalonia-window">
-    <p>Adjust the window size, title, and other attributes.</p>
+    <p>调整窗口尺寸、标题等特性。</p>
   </DocsCard>
   <DocsCard header="Establishing events and responses" href="/docs/get-started/starter-tutorial/establishing-events-and-responses">
-    <p>Create an event handler to respond to button clicks.</p>
+    <p>创建事件处理程序来响应按钮点击。</p>
   </DocsCard>
   <DocsCard header="Converting data" href="/docs/get-started/starter-tutorial/converting-data">
-    <p>Use code-behind to convert a temperature value when the button is clicked.</p>
+    <p>用代码隐藏文件在按钮被点击时完成温度换算。</p>
   </DocsCard>
   <DocsCard header="Exercises" href="/docs/get-started/starter-tutorial/exercises">
-    <p>Test your understanding of Avalonia with three coding exercises.</p>
+    <p>用三道编程练习检验你对 Avalonia 的掌握程度。</p>
   </DocsCard>
 </DocsCards>
 
@@ -41,20 +41,20 @@ Follow through this tutorial to create the app. As you do so, you will learn abo
 
 ## .axaml
 
-Notice the files in your project directory ending `.axaml`? That’s short for Avalonia XAML, a file extension unique to Avalonia that differentiates Avalonia files from standard XAML files.
+注意到项目目录里那些以 `.axaml` 结尾的文件了吗？它是 Avalonia XAML 的缩写，这个扩展名为 Avalonia 独有，用于与标准 XAML 文件作区分。
 
-## Check your live XAML previewer works
+## 确认 XAML 实时预览器可用 {#check-your-live-xaml-previewer-works}
 
-If you have newly installed Avalonia in Visual Studio or JetBrains Rider, and you are new to IDE development in general, this may be a good time to check you can use the live XAML previewer.
+如果你刚在 Visual Studio 或 JetBrains Rider 中装好 Avalonia，而且对 IDE 开发还不太熟悉，不妨趁现在确认一下实时 XAML 预览器能不能正常工作。
 
-See the page on [XAML live preview](/docs/app-development/xaml-preview-and-design-settings) for how to enable the previewer.
+启用预览器的方法请参阅 [XAML 实时预览](/docs/app-development/xaml-preview-and-design-settings)。
 
-## Open the main window file
+## 打开主窗口文件 {#open-the-main-window-file}
 
-In the **Views** folder of your project directory, open the file **MainWindow.axaml**. You will mainly be working on this file throughout this tutorial.
+在项目目录的 **Views** 文件夹中打开 **MainWindow.axaml** 文件。整个教程基本都围绕这个文件展开。
 
 <Image light={MainWindowFileLocation} alt="A screenshot showing the location of the main window file in a file tree." position="center" maxWidth={400} cornerRadius="true" margin="20,0,50,0"/>
 
-Nearly everything in **MainWindow.axaml** goes between the `<Window>...</Window>` XAML tag. This tag represents the Avalonia window, where your app will run on the target platform. You will look at Avalonia windows in more detail later, when we get to [customizing the Avalonia window](/docs/get-started/starter-tutorial/customizing-the-avalonia-window).
+**MainWindow.axaml** 里几乎所有内容都写在 `<Window>...</Window>` 这个 XAML 标签之内。该标签代表 Avalonia 窗口，也就是你的应用在目标平台上的运行载体。后面讲到[定制 Avalonia 窗口](/docs/get-started/starter-tutorial/customizing-the-avalonia-window)时，我们会更深入地研究它。
 
-Proceed to the next page of this tutorial to learn how to add a button to the app.
+翻到本教程下一篇，学习如何给应用添加按钮。

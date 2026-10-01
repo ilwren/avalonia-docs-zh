@@ -65,7 +65,7 @@ Explicitly set `Height` and `Width` properties on an element take precedence ove
 
 The `HorizontalAlignment` property declares the horizontal alignment characteristics to apply to child elements. The following table shows each of the possible values of the `HorizontalAlignment` property.
 
-| Member | Description |
+| Member | 说明 |
 | :--- | :--- |
 | `Left` | Child elements are aligned to the left of the parent element's allocated layout space. |
 | `Center` | Child elements are aligned to the center of the parent element's allocated layout space. |
@@ -89,7 +89,7 @@ The preceding code yields a layout similar to the following image. The positioni
 
 The `VerticalAlignment` property describes the vertical alignment characteristics to apply to child elements. The following table shows each of the possible values for the `VerticalAlignment` property.
 
-| Member | Description |
+| Member | 说明 |
 | :--- | :--- |
 | `Top` | Child elements are aligned to the top of the parent element's allocated layout space. |
 | `Center` | Child elements are aligned to the center of the parent element's allocated layout space. |
@@ -233,7 +233,7 @@ When compiled, the preceding application yields a UI that looks like the followi
 
 <Image light={LayoutMarginsPaddingAlignmentComplexAnnotatedScreenshot} alt="Several positioning properties in one application" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Layout](/docs/layout): How the measure and arrange system works.
 - [Choosing a Layout Panel](/docs/layout/choosing-a-layout-panel): Picking the right panel for your scenario.

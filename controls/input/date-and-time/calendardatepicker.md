@@ -19,7 +19,7 @@ For details on the calendar portion of this control, see the [Calendar](/control
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `SelectedDate` | `DateTime?` | The currently selected date, or `null` if no date is selected. |
 | `DisplayDate` | `DateTime` | The month to display when the calendar opens. |
@@ -82,7 +82,7 @@ This example shows a basic single-date-selection calendar when you click the but
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Calendar](/controls/input/date-and-time/calendar)
 - [DatePicker](/controls/input/date-and-time/datepicker)

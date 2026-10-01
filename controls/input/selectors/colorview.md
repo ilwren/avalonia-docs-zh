@@ -7,7 +7,7 @@ Presents a color for user editing using a spectrum, palette and component slider
 
 ## Common properties
 
-| Property | Description |
+| Property | 说明 |
 |----------|-------------|
 | `Color` | Gets or sets the currently selected color in the RGB color model. For control authors, use `HsvColor` instead to avoid loss of precision and color drifting. |
 | `ColorModel` | Gets or sets the active color model used by the sliders. This property is only applicable to the components tab. The spectrum tab must always be in HSV and the palette tab contains only pre-defined colors. |
@@ -48,12 +48,12 @@ None
 
 ## Template parts
 
-| Name | Type | Description |
+| 名称 | Type | 说明 |
 |------|----- |-------------|
 | `PART_HexTextBox` | TextBox | Provides an input or output for hexadecimal color notation that can be parsed by the control. |
 | `PART_TabControl` | TabControl | The main control used to navigate through the spectrum, palette and components tab/panel/page (subviews). This template part is optional and is only required for some validation scenarios of the `SelectedIndex`. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ColorView API reference](/api/avalonia/controls/colorview)
 - [`ColorView.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls.ColorPicker/ColorView/ColorView.cs)

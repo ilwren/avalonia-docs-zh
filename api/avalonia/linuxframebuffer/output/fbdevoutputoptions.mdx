@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FbDevOutputOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.LinuxFramebuffer.Output</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.LinuxFramebuffer.Output</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.LinuxFramebuffer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.LinuxFramebuffer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.LinuxFramebuffer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.LinuxFramebuffer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Linux/Avalonia.LinuxFramebuffer/Output/FbDevOutputOptions.cs">FbDevOutputOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Linux/Avalonia.LinuxFramebuffer/Output/FbDevOutputOptions.cs">FbDevOutputOptions.cs</a>
 </div>
 
 </div>
@@ -48,21 +48,21 @@ public class FbDevOutputOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FbDevOutputOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FbDevOutputOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FbDevOutputOptions](#uid-c4b4b2f383) | No summary available. |
+| [FbDevOutputOptions](#uid-c4b4b2f383) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c4b4b2f383"></span>
 
-### FbDevOutputOptions Constructor
+### FbDevOutputOptions 构造函数 {#fbdevoutputoptions-constructor}
 
 ```csharp
 public FbDevOutputOptions()
@@ -70,9 +70,9 @@ public FbDevOutputOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FileName](#uid-ab4343b5d5) | The frame buffer device name. Defaults to the value in environment variable FRAMEBUFFER or /dev/fb0 when FRAMEBUFFER is not set |
 | [PixelFormat](#uid-72686a3c01) | The required pixel format for the frame buffer. A null value will leave the frame buffer in the current pixel format. Otherwise sets the frame buffer to the required format |
@@ -84,7 +84,7 @@ public FbDevOutputOptions()
 
 <span id="uid-ab4343b5d5"></span>
 
-### FileName Property
+### FileName 属性 {#filename-property}
 
 The frame buffer device name.
 Defaults to the value in environment variable FRAMEBUFFER or /dev/fb0 when FRAMEBUFFER is not set
@@ -99,7 +99,7 @@ public string FileName { get; set; }
 
 <span id="uid-72686a3c01"></span>
 
-### PixelFormat Property
+### PixelFormat 属性 {#pixelformat-property}
 
 The required pixel format for the frame buffer.
 A null value will leave the frame buffer in the current pixel format.
@@ -115,7 +115,7 @@ public Nullable<Avalonia.Platform.PixelFormat> PixelFormat { get; set; }
 
 <span id="uid-57bbe53816"></span>
 
-### RenderDirectlyToMappedMemory Property
+### RenderDirectlyToMappedMemory 属性 {#renderdirectlytomappedmemory-property}
 
 If set to true, double-buffering will be disabled and scene will be composed directly into mmap-ed memory region
 While this mode saves a blit, you need to check if it won't cause rendering artifacts your particular device.
@@ -130,7 +130,7 @@ public bool RenderDirectlyToMappedMemory { get; set; }
 
 <span id="uid-164d54cd8c"></span>
 
-### Scaling Property
+### Scaling 属性 {#scaling-property}
 
 The initial scale factor to use
 
@@ -144,7 +144,7 @@ public double Scaling { get; set; }
 
 <span id="uid-ed5d0e22ed"></span>
 
-### UseAsyncFrontBufferBlit Property
+### UseAsyncFrontBufferBlit 属性 {#useasyncfrontbufferblit-property}
 
 If set to true, FBIO_WAITFORVSYNC ioctl and following memcpy call will run on a dedicated thread
 saving current one from doing nothing in a blocking call

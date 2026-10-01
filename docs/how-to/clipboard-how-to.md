@@ -192,7 +192,7 @@ On **Browser/WASM**, the browser may prompt the user for clipboard permission th
 
 On **Linux**, file clipboard support depends on the desktop environment and its clipboard manager. Text and image operations work reliably across GNOME, KDE, and other major environments.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Clipboard service](/docs/services/clipboard)
 - [Drag and drop how-to](/docs/how-to/drag-and-drop-how-to)

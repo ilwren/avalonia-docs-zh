@@ -161,7 +161,7 @@ public static partial void ProcessData(
 
 You can pass `Action`/`Func` callbacks as parameters (marshalled as callable JS functions), and both JS and managed object references can be passed across the boundary as proxy objects.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Deploying WebAssembly](/docs/deployment/webassembly)
 - [WebAssembly troubleshooting](/troubleshooting/platform-specific-issues/webassembly)

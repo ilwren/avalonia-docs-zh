@@ -406,7 +406,7 @@ editor.UndoLimit = 100;
 - Layout thrashing (multiple passes per edit)
 - Unbounded undo growth
 
-## See also
+## 另请参阅 {#see-also}
 
 - [RichTextEditor reference](/controls/input/text-input/richtexteditor)
 - [Thread safety](/controls/input/text-input/richtexteditor/thread-safety)

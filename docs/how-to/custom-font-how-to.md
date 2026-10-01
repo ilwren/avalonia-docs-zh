@@ -7,7 +7,7 @@ doc-type: how-to
 
 This guide walks you through adding a custom font to an Avalonia application using two approaches: as a static resource and as an embedded font collection.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 - An Avalonia project. The [Google Fonts sample project](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/GoogleFonts) is used throughout this guide, but you can adapt the steps to your own project.
 - A font file (`.ttf` or `.otf`). This guide uses [Nunito](https://fonts.google.com/specimen/Nunito).
@@ -130,7 +130,7 @@ class Program
 
 To use a different font from the same collection, change the name after `#`. For example, `fonts:MyFonts#Roboto` would load the Roboto font from the same **Assets/Fonts** directory.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Custom fonts](/docs/styling/custom-fonts)
 - [Assets](/docs/fundamentals/including-assets)

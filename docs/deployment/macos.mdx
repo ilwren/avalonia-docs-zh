@@ -69,7 +69,7 @@ There are a few options available for creating the `.app` file/folder structure.
 
 The `.app` structure relies on the `Info.plist` file being properly formatted and containing the right information. Use Xcode to edit `Info.plist` as it has auto-completion for all properties. The following keys are required:
 
-| Key | Description | Example |
+| Key | 说明 | Example |
 |---|---|---|
 | `CFBundleExecutable` | Must match the binary name from `dotnet publish` (your assembly name without `.dll`). | `MyApp` |
 | `CFBundleName` | Display name for your application (max 15 characters). | `My App` |
@@ -608,7 +608,7 @@ To verify that code signing worked, you will need to download it first to trigge
 
 Once you've downloaded the app bundle and want to start it, you should see the popup from macOS saying that the app was scanned and no malware was found.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Packaging for macOS with Parcel](/tools/parcel/packaging-for-macos) to automate bundling, signing, and notarization
 - [macOS platform integration](/docs/platform-specific-guides/macos) for URL schemes, file associations, and native APIs

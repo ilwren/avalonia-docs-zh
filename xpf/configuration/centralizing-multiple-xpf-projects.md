@@ -71,7 +71,7 @@ Edit the `RuntimeHostConfigurationOption` entry in each `.csproj` file to read t
 </ItemGroup>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Getting started with XPF](/xpf/getting-started)
 - [Customizing initialization](/xpf/configuration/customizing-initialization)

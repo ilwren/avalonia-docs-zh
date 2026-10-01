@@ -11,16 +11,16 @@ The [`Expander`](/api/avalonia/controls/expander) control has a header area that
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Header` | `object` | Content displayed in the always-visible header area. Accepts strings, controls, or data templates. |
 | `IsExpanded` | `bool` | Whether the content section is currently visible. Default is `false`. |
 | [`ExpandDirection`](/api/avalonia/controls/expanddirection) | `ExpandDirection` | Direction the content expands: `Down` (default), `Up`, `Left`, or `Right`. |
 | `ContentTransition` | `IPageTransition` | Transition animation played when the content expands or collapses. |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 |---|---|
 | `Expanding` | Raised when the content section begins to expand. |
 | `Collapsed` | Raised when the content section finishes collapsing. |
@@ -156,7 +156,7 @@ The `Expander` provides built-in accessibility support through its `ExpanderAuto
 
 To improve accessibility in your application, set the `Header` to a meaningful label so that screen readers can describe the purpose of each collapsible section.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Expander API reference](/api/avalonia/controls/expander)
 - [`Expander.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Expander.cs)

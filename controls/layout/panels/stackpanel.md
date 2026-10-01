@@ -22,7 +22,7 @@ In the direction of the stack, the `StackPanel` always expands to fit all of its
 
 You will probably use these properties most often:
 
-| Property      | Description                                                                     |
+| Property      | 说明                                                                     |
 | ------------- | ------------------------------------------------------------------------------- |
 | [`Orientation`](/api/avalonia/layout/orientation) | Sets the direction of the stack. Choose from `Horizontal` or `Vertical` (default). |
 | `Spacing`     | Creates an even gap between consecutive child controls.                         |
@@ -127,7 +127,7 @@ You can create a horizontal button bar by setting `Orientation` to `Horizontal` 
 - **Scrolling**: Because `StackPanel` grows to fit all children, it will never clip its content on its own. Wrap it in a `ScrollViewer` when overflow is possible.
 - **Reverse order**: `StackPanel` does not support reverse stacking. To reverse the visual order, reverse the order of your child elements or use a custom panel.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [StackPanel API reference](/api/avalonia/controls/stackpanel)
 - [`StackPanel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/StackPanel.cs)

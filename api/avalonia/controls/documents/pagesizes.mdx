@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PageSizes Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -55,20 +55,20 @@ public class PageSizes
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageSizes
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageSizes
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Named sizes are portrait; [Avalonia.Controls.Documents.PageSizes.Landscape(Avalonia.Size)](xref:Avalonia.Controls.Documents.PageSizes.Landscape%28Avalonia.Size%29) turns one on its side. Note the
 unit trap these names exist to avoid: PDF and print software often quote paper in
 points (1/72 inch) — US Letter is 612 × 792 points but 816 × 1056
 device-independent pixels.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FromInches](#uid-b376d9d974) | A page size given in inches, as device-independent pixels. |
 | [FromMillimeters](#uid-d459d9c44a) | A page size given in millimeters, as device-independent pixels. |
@@ -81,7 +81,7 @@ device-independent pixels.
 
 <span id="uid-b376d9d974"></span>
 
-### FromInches Method
+### FromInches 方法 {#frominches-method}
 
 A page size given in inches, as device-independent pixels.
 
@@ -89,7 +89,7 @@ A page size given in inches, as device-independent pixels.
 public Avalonia.Size FromInches(double width, double height)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `width` double
 
@@ -97,7 +97,7 @@ public Avalonia.Size FromInches(double width, double height)
 `height` double
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -108,7 +108,7 @@ public Avalonia.Size FromInches(double width, double height)
 
 <span id="uid-d459d9c44a"></span>
 
-### FromMillimeters Method
+### FromMillimeters 方法 {#frommillimeters-method}
 
 A page size given in millimeters, as device-independent pixels.
 
@@ -116,7 +116,7 @@ A page size given in millimeters, as device-independent pixels.
 public Avalonia.Size FromMillimeters(double width, double height)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `width` double
 
@@ -124,7 +124,7 @@ public Avalonia.Size FromMillimeters(double width, double height)
 `height` double
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -135,7 +135,7 @@ public Avalonia.Size FromMillimeters(double width, double height)
 
 <span id="uid-bb8aaf0d9f"></span>
 
-### Inches Method
+### Inches 方法 {#inches-method}
 
 Converts a length in inches to device-independent pixels.
 
@@ -143,12 +143,12 @@ Converts a length in inches to device-independent pixels.
 public double Inches(double inches)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `inches` double
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 double
 
@@ -159,7 +159,7 @@ double
 
 <span id="uid-7643b75d82"></span>
 
-### Landscape Method
+### Landscape 方法 {#landscape-method}
 
 The size in landscape orientation: the longer edge becomes the width. A size
 that is already landscape is returned unchanged.
@@ -168,12 +168,12 @@ that is already landscape is returned unchanged.
 public Avalonia.Size Landscape(Avalonia.Size size)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -184,7 +184,7 @@ public Avalonia.Size Landscape(Avalonia.Size size)
 
 <span id="uid-cb730ad354"></span>
 
-### Millimeters Method
+### Millimeters 方法 {#millimeters-method}
 
 Converts a length in millimeters to device-independent pixels.
 
@@ -192,12 +192,12 @@ Converts a length in millimeters to device-independent pixels.
 public double Millimeters(double millimeters)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `millimeters` double
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 double
 
@@ -208,7 +208,7 @@ double
 
 <span id="uid-6611ef7d4e"></span>
 
-### Portrait Method
+### Portrait 方法 {#portrait-method}
 
 The size in portrait orientation: the longer edge becomes the height. A size
 that is already portrait is returned unchanged.
@@ -217,21 +217,21 @@ that is already portrait is returned unchanged.
 public Avalonia.Size Portrait(Avalonia.Size size)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [A3](#uid-348b26f34f) | ISO A3: 297 × 420 mm. |
 | [A4](#uid-8adf6ab10c) | ISO A4: 210 × 297 mm. |
@@ -244,7 +244,7 @@ public Avalonia.Size Portrait(Avalonia.Size size)
 
 <span id="uid-348b26f34f"></span>
 
-### A3 Property
+### A3 属性 {#a3-property}
 
 ISO A3: 297 × 420 mm.
 
@@ -258,7 +258,7 @@ public Avalonia.Size A3 { get; set; }
 
 <span id="uid-8adf6ab10c"></span>
 
-### A4 Property
+### A4 属性 {#a4-property}
 
 ISO A4: 210 × 297 mm.
 
@@ -272,7 +272,7 @@ public Avalonia.Size A4 { get; set; }
 
 <span id="uid-7a43082119"></span>
 
-### A5 Property
+### A5 属性 {#a5-property}
 
 ISO A5: 148 × 210 mm.
 
@@ -286,7 +286,7 @@ public Avalonia.Size A5 { get; set; }
 
 <span id="uid-18c97bb560"></span>
 
-### Legal Property
+### Legal 属性 {#legal-property}
 
 US Legal: 8.5 × 14 inches.
 
@@ -300,7 +300,7 @@ public Avalonia.Size Legal { get; set; }
 
 <span id="uid-0b5c244c5f"></span>
 
-### Letter Property
+### Letter 属性 {#letter-property}
 
 US Letter: 8.5 × 11 inches.
 
@@ -314,7 +314,7 @@ public Avalonia.Size Letter { get; set; }
 
 <span id="uid-284e27e72d"></span>
 
-### Tabloid Property
+### Tabloid 属性 {#tabloid-property}
 
 US Tabloid (Ledger upright): 11 × 17 inches.
 

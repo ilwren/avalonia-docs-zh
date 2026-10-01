@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EglImage Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.OpenGL.Egl</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.OpenGL.Egl</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.OpenGL</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.OpenGL</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglImage.cs">EglImage.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglImage.cs">EglImage.cs</a>
 </div>
 </div>
 
@@ -53,16 +53,16 @@ public class EglImage
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglImage
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglImage
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [EglImage](#uid-4c36141254) | Initializes a new [Avalonia.OpenGL.Egl.EglImage](xref:Avalonia.OpenGL.Egl.EglImage) wrapping an existing `EGLImageKHR` handle. |
 
@@ -70,7 +70,7 @@ public class EglImage
 
 <span id="uid-4c36141254"></span>
 
-### EglImage Constructor
+### EglImage 构造函数 {#eglimage-constructor}
 
 Initializes a new [Avalonia.OpenGL.Egl.EglImage](xref:Avalonia.OpenGL.Egl.EglImage) wrapping an existing `EGLImageKHR` handle.
 
@@ -78,7 +78,7 @@ Initializes a new [Avalonia.OpenGL.Egl.EglImage](xref:Avalonia.OpenGL.Egl.EglIma
 public EglImage(Avalonia.OpenGL.Egl.EglDisplay display, IntPtr handle)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `display` [Avalonia.OpenGL.Egl.EglDisplay](xref:Avalonia.OpenGL.Egl.EglDisplay)
 
@@ -90,16 +90,16 @@ The EGL display that owns the image.
 A valid (non-zero) `EGLImageKHR` handle.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [\`display\` is \`null\`.](xref:System.ArgumentNullException)
 - [\`handle\` is \[IntPtr.Zero\](xref:System.IntPtr.Zero).](xref:System.ArgumentException)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Dispose](#uid-883bde4c46) | Destroys the underlying `EGLImageKHR`. Safe to call more than once. |
 
@@ -107,7 +107,7 @@ A valid (non-zero) `EGLImageKHR` handle.
 
 <span id="uid-883bde4c46"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 Destroys the underlying `EGLImageKHR`. Safe to call more than once.
 
@@ -117,9 +117,9 @@ public void Dispose()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Handle](#uid-ce24c64b25) | Gets the native `EGLImageKHR` handle, or [IntPtr.Zero](xref:System.IntPtr.Zero) once disposed. |
 
@@ -127,7 +127,7 @@ public void Dispose()
 
 <span id="uid-ce24c64b25"></span>
 
-### Handle Property
+### Handle 属性 {#handle-property}
 
 Gets the native `EGLImageKHR` handle, or [IntPtr.Zero](xref:System.IntPtr.Zero) once disposed.
 

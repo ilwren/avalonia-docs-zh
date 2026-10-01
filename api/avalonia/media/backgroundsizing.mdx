@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BackgroundSizing Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/BackgroundSizing.cs">BackgroundSizing.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/BackgroundSizing.cs">BackgroundSizing.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public enum BackgroundSizing
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> BackgroundSizing
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> BackgroundSizing
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CenterBorder](#uid-2173aefd42) | The background is drawn to the midpoint (center) of the border. |
 | [InnerBorderEdge](#uid-98526dae35) | The background is drawn up to the inside edge of the border. |
@@ -70,7 +70,7 @@ public enum BackgroundSizing
 
 <span id="uid-2173aefd42"></span>
 
-### CenterBorder Field
+### CenterBorder 字段 {#centerborder-field}
 
 The background is drawn to the midpoint (center) of the border.
 
@@ -78,7 +78,7 @@ The background is drawn to the midpoint (center) of the border.
 public Avalonia.Media.BackgroundSizing CenterBorder
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 The background will be visible underneath half of the border if the border has transparency.
 For this reason it is not recommended to use [Avalonia.Media.BackgroundSizing.CenterBorder](xref:Avalonia.Media.BackgroundSizing.CenterBorder) if transparency is involved.
@@ -93,7 +93,7 @@ value (Skia's default).
 
 <span id="uid-98526dae35"></span>
 
-### InnerBorderEdge Field
+### InnerBorderEdge 字段 {#innerborderedge-field}
 
 The background is drawn up to the inside edge of the border.
 
@@ -101,7 +101,7 @@ The background is drawn up to the inside edge of the border.
 public Avalonia.Media.BackgroundSizing InnerBorderEdge
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 The background will never be drawn under the border itself and will not be visible
 underneath the border regardless of border transparency.
@@ -112,7 +112,7 @@ underneath the border regardless of border transparency.
 
 <span id="uid-347ec72b30"></span>
 
-### OuterBorderEdge Field
+### OuterBorderEdge 字段 {#outerborderedge-field}
 
 The background is drawn completely to the outside edge of the border.
 
@@ -120,7 +120,7 @@ The background is drawn completely to the outside edge of the border.
 public Avalonia.Media.BackgroundSizing OuterBorderEdge
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The background will be visible underneath the border if the border has transparency.
 

@@ -1,36 +1,36 @@
 ---
 id: establishing-events-and-responses
-title: Establishing events and responses
-description: How to create an event handler to detect when the button is being clicked. Part 5 of 7 the Avalonia starter tutorial.
+title: 建立事件与响应
+description: 如何创建事件处理程序来检测按钮点击。Avalonia 入门教程第 5 篇，共 7 篇。
 doc-type: tutorial
 video:
   src: https://youtu.be/BMqXR4eZVvc
-  title: Avalonia Button Events — Wire Up a Click Handler Without MVVM
+  title: Avalonia 按钮事件 —— 不用 MVVM 也能接上点击处理程序
 ---
 
 import MainWindowCodeBehindLocation from '/img/get-started/mainwindow-codebehind-location.png';
 import RiderRunDebugMode from '/img/get-started/rider-run-debug-mode.png';
 import VsDebugOutputClick from '/img/get-started/vs-debug-output-click.png';
 
-Our temperature converter app now looks reasonably functional, but doesn’t do anything yet. The next thing we need is for the **Calculate** button to be able to respond to a user action, such as a click.
+现在温度换算器看起来已经像模像样，可惜还什么都不会做。下一步要做的，是让 **Calculate** 按钮能够响应用户操作，比如点击。
 
-## Creating an event handler with code-behind
+## 用代码隐藏文件创建事件处理程序 {#creating-an-event-handler-with-code-behind}
 
-XAML files can be associated with a C# source file. This file is where you write event handling code for the button. This is called "code-behind".
+XAML 文件可以关联一个 C# 源文件，按钮的事件处理代码就写在这里。这种写法叫做 “代码隐藏”（code-behind）。
 
-1. In your IDE, browse your project directory for **Views → MainWindow.axaml → MainWindow.axaml.cs**. This is the C# source file behind the main window XAML.
+1. 在 IDE 中浏览项目目录，找到 **Views → MainWindow.axaml → MainWindow.axaml.cs**。这就是主窗口 XAML 背后的 C# 源文件。
 
 <Image light={MainWindowCodeBehindLocation} alt="A screenshot showing the location of the main window's code-behind file in a file tree." position="center" maxWidth={400} cornerRadius="true"/>
 
 2. Open **MainWindow.axaml.cs**.
-3. Locate the `using` directives at the top of the file. At this point, there should only be the single line `using Avalonia.Controls;`. Add these two `using` directives:
+3. 找到文件顶部的 `using` 指令。此刻应该只有 `using Avalonia.Controls;` 这一行。再补上这两条 `using` 指令：
 
 ```csharp
 using Avalonia.Interactivity;
 using System.Diagnostics;
 ```
 
-4. Locate the line `public partial class MainWindow : Window` further down the file. This class currently contains only the constructor for the main window, `public MainWindow()`. Below the constructor, add the following code:
+4. 在文件稍靠下的位置找到 `public partial class MainWindow : Window` 这一行。这个类目前只包含主窗口的构造函数 `public MainWindow()`。在构造函数下方添加如下代码：
 
 ```csharp
 private void Button_OnClick(object? sender, RoutedEventArgs e)
@@ -39,7 +39,7 @@ private void Button_OnClick(object? sender, RoutedEventArgs e)
 }
 ```
 
-5. Your C# file should now look like this:
+5. 现在你的 C# 文件应该是这样：
 
 ```csharp
 using Avalonia.Controls;
@@ -62,42 +62,42 @@ public partial class MainWindow : Window
 }
 ```
 
-6. Switch to your XAML file, **MainWindow.axaml**.
-7. Locate `<Button>` near the bottom of the file.
-8. Add `Click` as an attribute to the `<Button>` tag and associate it with `Button_OnClick`, like so:
+6. 切回 XAML 文件 **MainWindow.axaml**。
+7. 在文件接近末尾处找到 `<Button>`。
+8. 像下面这样，给 `<Button>` 标签加上 `Click` 特性，并把它关联到 `Button_OnClick`：
 
 ```xml
 <Button HorizontalAlignment="Center" Click="Button_OnClick">Calculate</Button>
 ```
 
-## Checking the event handler works
+## 验证事件处理程序是否生效 {#checking-the-event-handler-works}
 
-To verify we’ve created the event handler correctly, we can check the debug output to confirm "Click!" is being printed when we click the **Calculate** button.
+要确认事件处理程序接对了，可以看调试输出：点击 **Calculate** 按钮时，应当打印出 “Click!”。
 
 <Tabs groupId="ide">
   <TabItem value="vs" label="Visual Studio" default>
-    1. Go to the **Output** window, located by default under the split view. From the "Show output from:" dropdown menu, select **Debug**.
-    2. Run the app.
-    3. In the running app window, click the **Calculate** button a few times.
-    4. You should see "Click!" printed in the output window.
+    1. 打开 **输出** 窗口（默认位于分屏视图下方）。在 “显示输出来源:” 下拉菜单中选择 **调试**。
+    2. 运行应用。
+    3. 在应用窗口中连点几次 **Calculate** 按钮。
+    4. 输出窗口里应该会打印出 “Click!”。
 
     <Image light={VsDebugOutputClick} alt="A screenshot showing the output screen in Visual Studio, with the word 'Click!' printed inside." position="center" maxWidth={400} cornerRadius="true"/>
 
   </TabItem>
   <TabItem value="rider" label="Rider">
-	1. Run GetStartedApp in debug mode.
+	1. 以调试模式运行 GetStartedApp。
 
     <Image light={RiderRunDebugMode} alt="A screenshot showing the location of the button to run a project in debug mode in Rider." position="center" maxWidth={400} cornerRadius="true"/>
 
-	2. Open the **Debug Output** tab in the bottom panel.
-    3. In the running app window, click the **Calculate** button a few times.
-    4. You should see "Click!" being printed in the debug output in Rider.
+	2. 打开底部面板中的 **Debug Output** 选项卡。
+    3. 在应用窗口中连点几次 **Calculate** 按钮。
+    4. 你应该能在 Rider 的调试输出中看到不断打印的 “Click!”。
   </TabItem>
 </Tabs>
 
-On the next page, you will learn how to implement the formula that converts temperatures from Celsius to Fahrenheit.
+下一篇会讲如何实现把摄氏度换算为华氏度的公式。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Adding some layout](/docs/get-started/starter-tutorial/adding-some-layout): The previous step in this tutorial.
-- [Implementing the conversion](/docs/get-started/starter-tutorial/converting-data): The next step in this tutorial.
+- [加入布局](/docs/get-started/starter-tutorial/adding-some-layout)：本教程的上一步。
+- [实现换算](/docs/get-started/starter-tutorial/converting-data)：本教程的下一步。

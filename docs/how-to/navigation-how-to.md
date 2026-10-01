@@ -316,7 +316,7 @@ Now any `ContentControl` bound to a view model will automatically resolve its vi
 This convention requires that your view and view model classes live in parallel namespaces (for example, `MyApp.ViewModels.HomeViewModel` and `MyApp.Views.HomeView`). If your project uses a different folder structure, adjust the string replacement logic in the `Build` method accordingly.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Page transitions](/docs/graphics-animation/page-transitions): Transition animations between views.
 - [Data templates](/docs/data-templates/introduction-to-data-templates): How data templates resolve views.

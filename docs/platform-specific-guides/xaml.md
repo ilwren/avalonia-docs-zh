@@ -125,6 +125,6 @@ The `OnFormFactor` markup extension functions similarly to the `OnPlatform` and 
 
 `OnFormFactor` doesn't have any compile-time trimming optimizations, as form factor cannot be known in compile time. None of these markup extensions are dynamic; once a value is set, it will not be changed.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Platform-specific .NET](/docs/platform-specific-guides/dotnet)

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IGridLineBrushChart Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -48,15 +48,15 @@ public interface IGridLineBrushChart
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Implement this contract only when a chart has a real grid-line rendering surface.
 This keeps [Avalonia.Controls.Charts.IGridLineBrushChart.GridLineBrush](xref:Avalonia.Controls.Charts.IGridLineBrushChart.GridLineBrush) off chart types where a grid brush would be
 misleading or visually meaningless.
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GridLineBrush](#uid-a9be4f3f60) | Gets or sets the default brush used for grid lines. |
 
@@ -64,7 +64,7 @@ misleading or visually meaningless.
 
 <span id="uid-a9be4f3f60"></span>
 
-### GridLineBrush Property
+### GridLineBrush 属性 {#gridlinebrush-property}
 
 Gets or sets the default brush used for grid lines.
 
@@ -72,7 +72,7 @@ Gets or sets the default brush used for grid lines.
 public Avalonia.Media.IBrush GridLineBrush { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 A null value lets the chart choose its theme-aware default grid-line brush.
 

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CornerRadiusToDoubleConverter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Converters</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Converters</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Converters/CornerRadiusToDoubleConverter.cs">CornerRadiusToDoubleConverter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Converters/CornerRadiusToDoubleConverter.cs">CornerRadiusToDoubleConverter.cs</a>
 </div>
 
 </div>
@@ -54,24 +54,24 @@ public class CornerRadiusToDoubleConverter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> CornerRadiusToDoubleConverter
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> CornerRadiusToDoubleConverter
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../data/converters/ivalueconverter">IValueConverter</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../data/converters/ivalueconverter">IValueConverter</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CornerRadiusToDoubleConverter](#uid-918ad9c0e0) | No summary available. |
+| [CornerRadiusToDoubleConverter](#uid-918ad9c0e0) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-918ad9c0e0"></span>
 
-### CornerRadiusToDoubleConverter Constructor
+### CornerRadiusToDoubleConverter 构造函数 {#cornerradiustodoubleconverter-constructor}
 
 ```csharp
 public CornerRadiusToDoubleConverter()
@@ -79,59 +79,57 @@ public CornerRadiusToDoubleConverter()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Convert](#uid-5b17a893df) | Converts a value. |
-| [ConvertBack](#uid-9119bf48bc) | Converts a value. |
+| [Convert](#uid-5b17a893df) | 转换一个值。 |
+| [ConvertBack](#uid-9119bf48bc) | 转换一个值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5b17a893df"></span>
 
-### Convert Method
+### Convert 方法 {#convert-method}
 
-Converts a value.
+转换一个值。
 
 ```csharp
 public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the target.
+目标的类型。
 
 
 `parameter` object
 
-A user-defined parameter.
+用户自定义参数。
 
 
 `culture` System.Globalization.CultureInfo
 
-The culture to use.
+要使用的区域性信息。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
-The converted value.
+转换后的值。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-This method should not throw exceptions. If the value is not convertible, return
-a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) in an error state. Any exceptions thrown will be
-treated as an application exception.
+此方法不应抛出异常。若值无法转换，请返回一个处于错误状态的 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification)。任何被抛出的异常都会被当作应用程序异常处理。
 
 </section>
 
@@ -139,54 +137,52 @@ treated as an application exception.
 
 <span id="uid-9119bf48bc"></span>
 
-### ConvertBack Method
+### ConvertBack 方法 {#convertback-method}
 
-Converts a value.
+转换一个值。
 
 ```csharp
 public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the target.
+目标的类型。
 
 
 `parameter` object
 
-A user-defined parameter.
+用户自定义参数。
 
 
 `culture` System.Globalization.CultureInfo
 
-The culture to use.
+要使用的区域性信息。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 
-The converted value.
+转换后的值。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-This method should not throw exceptions. If the value is not convertible, return
-a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) in an error state. Any exceptions thrown will be
-treated as an application exception.
+此方法不应抛出异常。若值无法转换，请返回一个处于错误状态的 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification)。任何被抛出的异常都会被当作应用程序异常处理。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Corner](#uid-04632e1127) | Gets or sets the specific corner of the [Avalonia.CornerRadius](xref:Avalonia.CornerRadius) to convert to double. |
 
@@ -194,7 +190,7 @@ treated as an application exception.
 
 <span id="uid-04632e1127"></span>
 
-### Corner Property
+### Corner 属性 {#corner-property}
 
 Gets or sets the specific corner of the [Avalonia.CornerRadius](xref:Avalonia.CornerRadius) to convert to double.
 

@@ -279,7 +279,7 @@ Once optimized and trimmed for specific platform architecture, it is reduced to 
 border.Background = Brushes.Red; // assuming app was compiled with dotnet publish -r win-arm64;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding MarkupExtension reference.
 - [Compiled Bindings](/docs/data-binding/compiled-bindings): CompiledBinding and ReflectionBinding markup.

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITreeDataGridSelectionInteraction Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -49,7 +49,7 @@ public interface ITreeDataGridSelectionInteraction
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface is implemented by selection models to handle user interactions with the
 [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid), such as keyboard navigation, pointer events, and selection state changes. It
@@ -58,9 +58,9 @@ provides the connection between user input and the actual selection behavior.
 This interface is experimental: it is exposed to allow custom selection models to be
 implemented, but it may be changed or removed in a future release.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsCellSelected](#uid-1e49ef6c2d) | Determines whether a specific cell is selected. |
 | [IsRowSelected (2 overloads)](#uid-779db5ec7f) | Determines whether a specific row model is selected. |
@@ -76,7 +76,7 @@ implemented, but it may be changed or removed in a future release.
 
 <span id="uid-1e49ef6c2d"></span>
 
-### IsCellSelected Method
+### IsCellSelected 方法 {#iscellselected-method}
 
 Determines whether a specific cell is selected.
 
@@ -84,7 +84,7 @@ Determines whether a specific cell is selected.
 public bool IsCellSelected(int columnIndex, int rowIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `columnIndex` int
 
@@ -96,14 +96,14 @@ The index of the column.
 The index of the row.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 true if the cell is selected; otherwise, false.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This method is used by the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) to determine whether to display a cell with
 the selected visual state.
@@ -118,7 +118,7 @@ the selected visual state.
 
 <span id="uid-54ff32c993"></span>
 
-#### IsRowSelected Method
+#### IsRowSelected 方法 {#isrowselected-method}
 
 Determines whether a specific row model is selected.
 
@@ -126,21 +126,21 @@ Determines whether a specific row model is selected.
 public bool IsRowSelected(Avalonia.Controls.Models.ITreeDataGridRowModel rowModel)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `rowModel` [Avalonia.Controls.Models.ITreeDataGridRowModel](xref:Avalonia.Controls.Models.ITreeDataGridRowModel)
 
 The row model to check.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
 true if the row is selected; otherwise, false.
 
 
-##### Remarks
+##### 备注 {#remarks-2}
 
 This method is used by the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) to determine whether to display a row with
 the selected visual state.
@@ -151,7 +151,7 @@ the selected visual state.
 
 <span id="uid-4ebd88e25c"></span>
 
-#### IsRowSelected Method
+#### IsRowSelected 方法 {#isrowselected-method-1}
 
 Determines whether a specific row is selected.
 
@@ -159,21 +159,21 @@ Determines whether a specific row is selected.
 public bool IsRowSelected(int rowIndex)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `rowIndex` int
 
 The index of the row to check.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
 true if the row is selected; otherwise, false.
 
 
-##### Remarks
+##### 备注 {#remarks-3}
 
 This method is used by the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) to determine whether to display a row with
 the selected visual state.
@@ -184,7 +184,7 @@ the selected visual state.
 
 <span id="uid-dfad1bf6a2"></span>
 
-### OnKeyDown Method
+### OnKeyDown 方法 {#onkeydown-method}
 
 Handles the KeyDown event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -192,7 +192,7 @@ Handles the KeyDown event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDat
 public void OnKeyDown(Avalonia.Controls.TreeDataGrid sender, Avalonia.Input.KeyEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `sender` Avalonia.Controls.[TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)
 
@@ -204,7 +204,7 @@ The [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) that raised the event.
 The event arguments.
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 This method handles key navigation and selection, such as using arrow keys to move the
 selection or using Space/Enter to select items.
@@ -215,7 +215,7 @@ selection or using Space/Enter to select items.
 
 <span id="uid-94c4c0e12a"></span>
 
-### OnKeyUp Method
+### OnKeyUp 方法 {#onkeyup-method}
 
 Handles the KeyUp event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -223,7 +223,7 @@ Handles the KeyUp event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataG
 public void OnKeyUp(Avalonia.Controls.TreeDataGrid sender, Avalonia.Input.KeyEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `sender` Avalonia.Controls.[TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)
 
@@ -235,7 +235,7 @@ The [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) that raised the event.
 The event arguments.
 
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 This method allows the selection model to respond to key releases.
 
@@ -245,7 +245,7 @@ This method allows the selection model to respond to key releases.
 
 <span id="uid-e3c2d5a4aa"></span>
 
-### OnPointerMoved Method
+### OnPointerMoved 方法 {#onpointermoved-method}
 
 Handles the PointerMoved event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -253,7 +253,7 @@ Handles the PointerMoved event from the [TreeDataGrid](xref:Avalonia.Controls.Tr
 public void OnPointerMoved(Avalonia.Controls.TreeDataGrid sender, Avalonia.Input.PointerEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `sender` Avalonia.Controls.[TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)
 
@@ -265,7 +265,7 @@ The [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) that raised the event.
 The event arguments.
 
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 This method can be used to handle behaviors like drag selection.
 
@@ -275,7 +275,7 @@ This method can be used to handle behaviors like drag selection.
 
 <span id="uid-96ec2d8df2"></span>
 
-### OnPointerPressed Method
+### OnPointerPressed 方法 {#onpointerpressed-method}
 
 Handles the PointerPressed event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -283,7 +283,7 @@ Handles the PointerPressed event from the [TreeDataGrid](xref:Avalonia.Controls.
 public void OnPointerPressed(Avalonia.Controls.TreeDataGrid sender, Avalonia.Input.PointerPressedEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `sender` Avalonia.Controls.[TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)
 
@@ -295,7 +295,7 @@ The [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) that raised the event.
 The event arguments.
 
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 This method handles selection when the user presses a pointer (mouse, touch, etc.)
 on a row or cell. It typically manages behaviors like click-to-select and tracks
@@ -307,7 +307,7 @@ the starting point for range selections with Shift key.
 
 <span id="uid-943e0aa234"></span>
 
-### OnPointerReleased Method
+### OnPointerReleased 方法 {#onpointerreleased-method}
 
 Handles the PointerReleased event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -315,7 +315,7 @@ Handles the PointerReleased event from the [TreeDataGrid](xref:Avalonia.Controls
 public void OnPointerReleased(Avalonia.Controls.TreeDataGrid sender, Avalonia.Input.PointerReleasedEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `sender` Avalonia.Controls.[TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)
 
@@ -327,7 +327,7 @@ The [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) that raised the event.
 The event arguments.
 
 
-#### Remarks
+#### 备注 {#remarks-8}
 
 This method handles completing a selection when the user releases a pointer (mouse
 button, touch, etc.). It's particularly important for selection gestures that start
@@ -339,7 +339,7 @@ with PointerPressed and complete with PointerReleased.
 
 <span id="uid-1a23c0afa8"></span>
 
-### OnPreviewKeyDown Method
+### OnPreviewKeyDown 方法 {#onpreviewkeydown-method}
 
 Handles the PreviewKeyDown event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -347,7 +347,7 @@ Handles the PreviewKeyDown event from the [TreeDataGrid](xref:Avalonia.Controls.
 public void OnPreviewKeyDown(Avalonia.Controls.TreeDataGrid sender, Avalonia.Input.KeyEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `sender` Avalonia.Controls.[TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)
 
@@ -359,7 +359,7 @@ The [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) that raised the event.
 The event arguments.
 
 
-#### Remarks
+#### 备注 {#remarks-9}
 
 This method is called in the tunneling phase of the event, allowing the selection
 model to handle key presses before they reach other controls.
@@ -370,7 +370,7 @@ model to handle key presses before they reach other controls.
 
 <span id="uid-8079c7cf53"></span>
 
-### OnTextInput Method
+### OnTextInput 方法 {#ontextinput-method}
 
 Handles the TextInput event from the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -378,7 +378,7 @@ Handles the TextInput event from the [TreeDataGrid](xref:Avalonia.Controls.TreeD
 public void OnTextInput(Avalonia.Controls.TreeDataGrid sender, Avalonia.Input.TextInputEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `sender` Avalonia.Controls.[TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)
 
@@ -390,16 +390,16 @@ The [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) that raised the event.
 The event arguments.
 
 
-#### Remarks
+#### 备注 {#remarks-10}
 
 This method allows the selection model to respond to text input, which can be used for
 features like type-to-select.
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SelectionChanged](#uid-e4903239f8) | Occurs when the selection in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) changes. |
 
@@ -407,7 +407,7 @@ features like type-to-select.
 
 <span id="uid-e4903239f8"></span>
 
-### SelectionChanged Event
+### SelectionChanged 事件 {#selectionchanged-event}
 
 Occurs when the selection in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) changes.
 
@@ -415,7 +415,7 @@ Occurs when the selection in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataG
 public event EventHandler SelectionChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-11}
 
 This event is raised by the selection model when the selection changes, allowing the
 [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) to update its visual representation accordingly.

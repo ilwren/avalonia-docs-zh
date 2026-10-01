@@ -13,7 +13,7 @@ Applications often have complex input requirements. Avalonia provides a [command
 
 Controls that implement `ICommandSource` have a `HotKey` property. Additionally, controls have events that allow you to subscribe to pointer movements, clicks and wheel movements:
 
-| Event | Description |
+| Event | 说明 |
 |---|---|
 | `PointerEntered` | Raised when the pointer moves into a control's bounds. |
 | `PointerExited` | Raised when the pointer leaves a control's bounds. |
@@ -59,7 +59,7 @@ private void PointerPressedHandler (object sender, PointerPressedEventArgs args)
 
 Avalonia distinguishes between different input device types through the `PointerPoint.Pointer.Type` property:
 
-| Type | Description |
+| Type | 说明 |
 |---|---|
 | `Mouse` | Standard mouse or trackpad input. |
 | `Touch` | Touch screen input. |
@@ -69,7 +69,7 @@ Avalonia distinguishes between different input device types through the `Pointer
 
 When the pointer type is `Pen`, additional properties are available on `PointerPointProperties`:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Pressure` | `float` | Pressure level from 0 (no pressure) to 1 (maximum pressure). |
 | `XTilt` | `float` | Tilt of the pen along the X axis. |
@@ -159,7 +159,7 @@ Use the `Cursor` property to change the cursor when the pointer is over a contro
 
 ### Common cursor types
 
-| Cursor | Description |
+| Cursor | 说明 |
 |---|---|
 | `Arrow` | Default arrow pointer. |
 | `Hand` | Pointing hand (indicates a clickable element). |
@@ -201,7 +201,7 @@ private void OnPointerReleased(object? sender, PointerReleasedEventArgs e)
 
 For the complete API documentation about pointer and tap events, see the [PointerEventArgs API reference](/api/avalonia/input/pointereventargs).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gestures](/docs/input-interaction/gestures): Higher-level gesture events built on pointer events.
 - [Drag and Drop](/docs/input-interaction/drag-and-drop): Drag-and-drop operations using pointer events.

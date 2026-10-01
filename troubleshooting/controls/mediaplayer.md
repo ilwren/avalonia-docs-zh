@@ -102,7 +102,7 @@ await mediaPlayer.Player.ReleaseAsync();
 
 After releasing, you can set a new `Source` and attempt playback again.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [MediaPlayer control](/controls/media/mediaplayer)
 - [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)

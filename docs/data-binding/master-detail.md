@@ -278,7 +278,7 @@ Show a message or graphic when no item is selected so that the detail area does 
 
 You can replace the placeholder `TextBlock` with an image, an icon, or any custom layout that fits your application's design.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Bind to a collection](/docs/data-binding/how-to-bind-to-a-collection): Binding `ItemsSource` and `DataTemplate` usage.
 - [Data templates](/docs/data-templates/introduction-to-data-templates): Controlling how items are displayed.

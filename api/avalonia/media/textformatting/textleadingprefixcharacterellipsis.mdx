@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextLeadingPrefixCharacterEllipsis Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLeadingPrefixCharacterEllipsis.cs">TextLeadingPrefixCharacterEllipsis.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLeadingPrefixCharacterEllipsis.cs">TextLeadingPrefixCharacterEllipsis.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class TextLeadingPrefixCharacterEllipsis
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textcollapsingproperties">TextCollapsingProperties</a> <span className="apiref-page__relation-separator">-&gt;</span> TextLeadingPrefixCharacterEllipsis
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textcollapsingproperties">TextCollapsingProperties</a> <span className="apiref-page__relation-separator">-&gt;</span> TextLeadingPrefixCharacterEllipsis
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TextLeadingPrefixCharacterEllipsis](#uid-d764bc57d5) | Construct a text trailing word ellipsis collapsing properties. |
 
@@ -68,7 +68,7 @@ public class TextLeadingPrefixCharacterEllipsis
 
 <span id="uid-d764bc57d5"></span>
 
-### TextLeadingPrefixCharacterEllipsis Constructor
+### TextLeadingPrefixCharacterEllipsis 构造函数 {#textleadingprefixcharacterellipsis-constructor}
 
 Construct a text trailing word ellipsis collapsing properties.
 
@@ -76,7 +76,7 @@ Construct a text trailing word ellipsis collapsing properties.
 public TextLeadingPrefixCharacterEllipsis(string ellipsis, int prefixLength, double width, Avalonia.Media.TextFormatting.TextRunProperties textRunProperties, Avalonia.Media.FlowDirection flowDirection)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `ellipsis` string
 
@@ -105,9 +105,9 @@ the flow direction of the collapes line.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Collapse](#uid-99b824a2aa) | Collapses the given text line and returns the resulting runs, or if no collapse is needed (the consumer then keeps the original line unchanged). |
 | [CreateCollapsedRuns](textcollapsingproperties.mdx#uid-3f1ae847f7) | Creates a list of runs for given collapsed length which includes specified symbol at the end. Inherited from [TextCollapsingProperties](textcollapsingproperties.mdx). |
@@ -116,7 +116,7 @@ the flow direction of the collapes line.
 
 <span id="uid-99b824a2aa"></span>
 
-### Collapse Method
+### Collapse 方法 {#collapse-method}
 
 Collapses the given text line and returns the resulting runs, or
 if no collapse is needed (the consumer
@@ -126,19 +126,19 @@ then keeps the original line unchanged).
 public Avalonia.Media.TextFormatting.TextRun[] Collapse(Avalonia.Media.TextFormatting.TextLine textLine)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `textLine` [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)
 
 Text line to collapse.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextFormatting.TextRun)[]
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Implementations MUST return runs in logical order. The
 consumer (`TextLineImpl.Collapse`) wraps the returned array
@@ -155,11 +155,11 @@ needs the standard "logical prefix + symbol" shape.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FlowDirection](#uid-bcd3188d1d) | No summary available. |
+| [FlowDirection](#uid-bcd3188d1d) | 暂无摘要。 |
 | [Symbol](#uid-4269fc21cc) | Gets the text run that is used as collapsing symbol. |
 | [Width](#uid-52070d53d4) | Gets the width in which the collapsible range is constrained to. |
 
@@ -167,7 +167,7 @@ needs the standard "logical prefix + symbol" shape.
 
 <span id="uid-bcd3188d1d"></span>
 
-### FlowDirection Property
+### FlowDirection 属性 {#flowdirection-property}
 
 ```csharp
 public Avalonia.Media.FlowDirection FlowDirection { get; set; }
@@ -179,7 +179,7 @@ public Avalonia.Media.FlowDirection FlowDirection { get; set; }
 
 <span id="uid-4269fc21cc"></span>
 
-### Symbol Property
+### Symbol 属性 {#symbol-property}
 
 Gets the text run that is used as collapsing symbol.
 
@@ -193,7 +193,7 @@ public Avalonia.Media.TextFormatting.TextRun Symbol { get; set; }
 
 <span id="uid-52070d53d4"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
 Gets the width in which the collapsible range is constrained to.
 

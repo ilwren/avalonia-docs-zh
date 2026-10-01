@@ -67,7 +67,7 @@ When enabled, breakpoint will write a log message into [Logs](/tools/developer-t
 
 As the name suggests, breakpoint is removed once it is hit. Can be combined with other options.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Events tool](/tools/developer-tools/events-tool)
 - [Logs tool](/tools/developer-tools/logs-tool)

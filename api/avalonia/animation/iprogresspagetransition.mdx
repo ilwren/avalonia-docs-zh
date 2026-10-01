@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IProgressPageTransition Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Animation</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Animation</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/IProgressPageTransition.cs">IProgressPageTransition.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/IProgressPageTransition.cs">IProgressPageTransition.cs</a>
 </div>
 
 </div>
@@ -54,28 +54,28 @@ public interface IProgressPageTransition
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ipagetransition">IPageTransition</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ipagetransition">IPageTransition</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Transitions implementing this interface can be driven by a normalized progress value
 (0.0 to 1.0) during swipe gestures or programmatic animations, rather than running
 as a timed animation via [Avalonia.Animation.IPageTransition.Start(Avalonia.Visual,Avalonia.Visual,bool,System.Threading.CancellationToken)](xref:Avalonia.Animation.IPageTransition.Start%28Avalonia.Visual%2CAvalonia.Visual%2CSystem.Boolean%2CSystem.Threading.CancellationToken%29).
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Reset](#uid-5b5ec7c7e5) | Resets any visual state applied to the given visual by this transition. |
-| [Update](#uid-b5cb97fcbe) | No summary available. |
+| [Update](#uid-b5cb97fcbe) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5b5ec7c7e5"></span>
 
-### Reset Method
+### Reset 方法 {#reset-method}
 
 Resets any visual state applied to the given visual by this transition.
 
@@ -83,7 +83,7 @@ Resets any visual state applied to the given visual by this transition.
 public void Reset(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -96,13 +96,13 @@ The visual to reset.
 
 <span id="uid-b5cb97fcbe"></span>
 
-### Update Method
+### Update 方法 {#update-method}
 
 ```csharp
 public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bool forward, double pageLength, System.Collections.Generic.IReadOnlyList<Avalonia.Animation.PageTransitionItem> visibleItems)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `progress` double
 

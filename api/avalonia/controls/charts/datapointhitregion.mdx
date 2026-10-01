@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DataPointHitRegion Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -51,13 +51,13 @@ public struct DataPointHitRegion
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> DataPointHitRegion
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> DataPointHitRegion
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DataPointHitRegion](#uid-566e22397e) | Creates a new instance of [DataPointHitRegion](xref:Avalonia.Controls.Charts.DataPointHitRegion). |
 
@@ -65,7 +65,7 @@ public struct DataPointHitRegion
 
 <span id="uid-566e22397e"></span>
 
-### DataPointHitRegion Constructor
+### DataPointHitRegion 构造函数 {#datapointhitregion-constructor}
 
 Creates a new instance of [DataPointHitRegion](xref:Avalonia.Controls.Charts.DataPointHitRegion).
 
@@ -73,7 +73,7 @@ Creates a new instance of [DataPointHitRegion](xref:Avalonia.Controls.Charts.Dat
 public DataPointHitRegion(Avalonia.Rect bounds, object source, int index, object category, double value, object dataItem, Avalonia.Media.Geometry hitGeometry)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `bounds` [Avalonia.Rect](xref:Avalonia.Rect)
 
@@ -98,9 +98,9 @@ public DataPointHitRegion(Avalonia.Rect bounds, object source, int index, object
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Contains](#uid-c65e1f20b8) | Determines whether the provided point is inside the hit region. |
 
@@ -108,7 +108,7 @@ public DataPointHitRegion(Avalonia.Rect bounds, object source, int index, object
 
 <span id="uid-c65e1f20b8"></span>
 
-### Contains Method
+### Contains 方法 {#contains-method}
 
 Determines whether the provided point is inside the hit region.
 
@@ -116,21 +116,21 @@ Determines whether the provided point is inside the hit region.
 public bool Contains(Avalonia.Point point)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Bounds](#uid-c46753dd36) | Gets the bounding rectangle for hit testing. |
 | [Category](#uid-095f0f4df9) | Gets the category of the data point (if applicable). |
@@ -145,7 +145,7 @@ bool
 
 <span id="uid-c46753dd36"></span>
 
-### Bounds Property
+### Bounds 属性 {#bounds-property}
 
 Gets the bounding rectangle for hit testing.
 
@@ -159,7 +159,7 @@ public Avalonia.Rect Bounds { get; set; }
 
 <span id="uid-095f0f4df9"></span>
 
-### Category Property
+### Category 属性 {#category-property}
 
 Gets the category of the data point (if applicable).
 
@@ -173,7 +173,7 @@ public object Category { get; set; }
 
 <span id="uid-125d301ad4"></span>
 
-### DataItem Property
+### DataItem 属性 {#dataitem-property}
 
 Gets the original data item from the source.
 
@@ -187,7 +187,7 @@ public object DataItem { get; set; }
 
 <span id="uid-892b569581"></span>
 
-### DataPointIndex Property
+### DataPointIndex 属性 {#datapointindex-property}
 
 Gets the index of the data point.
 
@@ -201,7 +201,7 @@ public int DataPointIndex { get; set; }
 
 <span id="uid-d809664185"></span>
 
-### HitGeometry Property
+### HitGeometry 属性 {#hitgeometry-property}
 
 Gets the optional geometry for precise hit testing.
 
@@ -215,7 +215,7 @@ public Avalonia.Media.Geometry HitGeometry { get; set; }
 
 <span id="uid-c4928e949f"></span>
 
-### Selectable Property
+### Selectable 属性 {#selectable-property}
 
 Gets the series or selectable component that owns the data point.
 
@@ -229,7 +229,7 @@ public Avalonia.Controls.Charts.IIndexSelectableChart Selectable { get; set; }
 
 <span id="uid-2921905d1f"></span>
 
-### Source Property
+### Source 属性 {#source-property}
 
 Gets the source object (Series or Indicator) that owns this region.
 
@@ -243,7 +243,7 @@ public object Source { get; set; }
 
 <span id="uid-c978de6e71"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
 Gets the value of the data point.
 

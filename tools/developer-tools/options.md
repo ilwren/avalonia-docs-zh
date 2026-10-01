@@ -93,7 +93,7 @@ This behavior can be redefined with options:
 3. `DeveloperToolsOptions.AddLoggerObservable(ILoggerObservable)` - custom `ILoggerObservable` interface implementation. Use this option, if you want DevTools to display your third party logs provider like Serilog.
 4. `DeveloperToolsOptions.ClearLoggerObservables()` - clear all observables.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Developer tools settings](/tools/developer-tools/settings)
 - [Developer tools installation](/tools/developer-tools/installation)

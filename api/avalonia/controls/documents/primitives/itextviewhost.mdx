@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITextViewHost Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -48,15 +48,15 @@ public interface ITextViewHost
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface separates viewport management (which belongs to the host container like [RichTextEditor](xref:Avalonia.Controls.RichTextEditor))
 from text rendering (which belongs to [ITextView](xref:Avalonia.Controls.Documents.Primitives.ITextView) / [TextViewBase](xref:Avalonia.Controls.Documents.Primitives.TextViewBase)).
 Typically implemented by controls that contain a [ScrollViewer](xref:Avalonia.Controls.ScrollViewer) and a text view.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BringRectIntoView](#uid-81e32569c1) | Scrolls to bring the specified rectangle into view. |
 
@@ -64,7 +64,7 @@ Typically implemented by controls that contain a [ScrollViewer](xref:Avalonia.Co
 
 <span id="uid-81e32569c1"></span>
 
-### BringRectIntoView Method
+### BringRectIntoView 方法 {#bringrectintoview-method}
 
 Scrolls to bring the specified rectangle into view.
 
@@ -72,14 +72,14 @@ Scrolls to bring the specified rectangle into view.
 public bool BringRectIntoView(Avalonia.Rect rect)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
 The rectangle to bring into view (in text view coordinates).
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -88,9 +88,9 @@ True if scrolling occurred, false otherwise.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Extent](#uid-4373d6c051) | Gets the extent (total content size). |
 | [Offset](#uid-15349d5595) | Gets or sets the current scroll offset. |
@@ -101,7 +101,7 @@ True if scrolling occurred, false otherwise.
 
 <span id="uid-4373d6c051"></span>
 
-### Extent Property
+### Extent 属性 {#extent-property}
 
 Gets the extent (total content size).
 
@@ -115,7 +115,7 @@ public Avalonia.Size Extent { get; set; }
 
 <span id="uid-15349d5595"></span>
 
-### Offset Property
+### Offset 属性 {#offset-property}
 
 Gets or sets the current scroll offset.
 
@@ -123,7 +123,7 @@ Gets or sets the current scroll offset.
 public Avalonia.Vector Offset { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 When setting, the offset will be clamped to valid scroll bounds.
 
@@ -133,7 +133,7 @@ When setting, the offset will be clamped to valid scroll bounds.
 
 <span id="uid-4c4d3a846d"></span>
 
-### TextView Property
+### TextView 属性 {#textview-property}
 
 Gets the text view being hosted.
 
@@ -147,7 +147,7 @@ public Avalonia.Controls.Documents.Primitives.ITextView TextView { get; set; }
 
 <span id="uid-629fde32e6"></span>
 
-### Viewport Property
+### Viewport 属性 {#viewport-property}
 
 Gets the viewport (visible area size).
 

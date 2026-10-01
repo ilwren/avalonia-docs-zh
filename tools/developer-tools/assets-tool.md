@@ -49,7 +49,7 @@ Any asset larger than 100mb cannot be previewed, and currently it's not configur
 
 ![Font Asset preview example](/img/tools/dev-tools/assets-font.png)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Assets fundamentals](/docs/fundamentals/including-assets)
 - [Resources tool](/tools/developer-tools/resources-tool)

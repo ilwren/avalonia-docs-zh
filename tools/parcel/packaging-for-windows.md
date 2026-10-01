@@ -119,7 +119,7 @@ Parcel signs Windows executables and installers using Authenticode certificates.
 This document explains how to integrate various signing methods with Parcel. It does not include detailed setup steps for obtaining certificates or configuring cloud signing services. Please refer to the linked documentation for each method for complete setup instructions.
 :::
 
-### Prerequisites
+### 前置条件 {#prerequisites}
 
 Before you sign a Windows application, make sure that you have these items:
 
@@ -302,7 +302,7 @@ Cloud-based signing service from SSL.com with hardware security module (HSM) bac
 Powered by [JSign](https://github.com/ebourg/jsign), and requires Java Runtime.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Parcel setup](/tools/parcel/setup)
 - [Parcel configuration reference](/tools/parcel/configuration-reference)

@@ -218,7 +218,7 @@ Your `FindItemAt` method can use any lookup strategy that fits your data. For a 
 
 **Reduce the number of hit-testable elements.** If only some elements need to be interactive, set `IsHitTestVisible="False"` on the rest. For example, in a diagram editor, background grid lines and labels can be excluded from hit testing while only the draggable nodes remain interactive.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Pointer Input](/docs/input-interaction/pointer): Pointer events and position.
 - [Custom Rendering](/docs/graphics-animation/custom-rendering): Drawing with DrawingContext.

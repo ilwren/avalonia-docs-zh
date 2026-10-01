@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IStorageFolder Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageFolder.cs">IStorageFolder.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageFolder.cs">IStorageFolder.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public interface IStorageFolder
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="istorageitem">IStorageItem</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="istorageitem">IStorageItem</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CreateFileAsync](#uid-62e9f74535) | Creates, or truncates and overwrites, a file with specified name as a child of the current storage folder. |
 | [CreateFolderAsync](#uid-78abc588e4) | Creates a folder with specified name as a child of the current storage folder unless they already exist. |
@@ -72,7 +72,7 @@ public interface IStorageFolder
 
 <span id="uid-62e9f74535"></span>
 
-### CreateFileAsync Method
+### CreateFileAsync 方法 {#createfileasync-method}
 
 Creates, or truncates and overwrites, a file with specified name as a child of the current storage folder.
 
@@ -80,14 +80,14 @@ Creates, or truncates and overwrites, a file with specified name as a child of t
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFile> CreateFileAsync(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `name` string
 
 The display name
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platform.Storage.IStorageFile)&gt;
 
@@ -100,7 +100,7 @@ A [Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platform.Storage.IStora
 
 <span id="uid-78abc588e4"></span>
 
-### CreateFolderAsync Method
+### CreateFolderAsync 方法 {#createfolderasync-method}
 
 Creates a folder with specified name as a child of the current storage folder unless they already exist.
 
@@ -108,14 +108,14 @@ Creates a folder with specified name as a child of the current storage folder un
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> CreateFolderAsync(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `name` string
 
 The display name
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)&gt;
 
@@ -128,7 +128,7 @@ A [Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.ISto
 
 <span id="uid-8327cd9e13"></span>
 
-### GetFileAsync Method
+### GetFileAsync 方法 {#getfileasync-method}
 
 Gets the file with the specified name from the current folder.
 
@@ -136,14 +136,14 @@ Gets the file with the specified name from the current folder.
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFile> GetFileAsync(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `name` string
 
 The name of the file to get
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platform.Storage.IStorageFile)&gt;
 
@@ -156,7 +156,7 @@ When this method completes successfully, it returns the file with the specified 
 
 <span id="uid-99a0212bbc"></span>
 
-### GetFolderAsync Method
+### GetFolderAsync 方法 {#getfolderasync-method}
 
 Gets the folder with the specified name from the current folder.
 
@@ -164,14 +164,14 @@ Gets the folder with the specified name from the current folder.
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> GetFolderAsync(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `name` string
 
 The name of the folder to get
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)&gt;
 
@@ -184,7 +184,7 @@ When this method completes successfully, it returns the folder with the specifie
 
 <span id="uid-edd3ed2278"></span>
 
-### GetItemsAsync Method
+### GetItemsAsync 方法 {#getitemsasync-method}
 
 Gets the files and subfolders in the current folder.
 
@@ -192,7 +192,7 @@ Gets the files and subfolders in the current folder.
 public System.Collections.Generic.IAsyncEnumerable<Avalonia.Platform.Storage.IStorageItem> GetItemsAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Collections.Generic.IAsyncEnumerable&lt;[Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)&gt;
 

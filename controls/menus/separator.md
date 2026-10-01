@@ -90,7 +90,7 @@ You can target `Separator` in your styles to customize its appearance. For examp
 </Style>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Separator API reference](/api/avalonia/controls/separator)
 - [`Separator.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Separator.cs)

@@ -269,7 +269,7 @@ Add the SkiaSharp NuGet package:
 <PackageReference Include="SkiaSharp" Version="2.88.*" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Cross-Platform Architecture](/docs/fundamentals/cross-platform-architecture): Solution structure and platform branching patterns.
 - [Platform-Specific .NET](/docs/platform-specific-guides/dotnet): Runtime detection and conditional compilation.

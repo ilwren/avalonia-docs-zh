@@ -52,7 +52,7 @@ public ObservableCollection<SlopeItem> SlopeData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of items to compare. | `null` |
 | `LabelPath` | Path to the entity name. | `null` |

@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfPageChangedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.PdfViewer.PageChanged](xref:Avalonia.Controls.PdfViewer.PageChanged) event.
+为 [Avalonia.Controls.PdfViewer.PageChanged](xref:Avalonia.Controls.PdfViewer.PageChanged) 事件提供数据。
 
 </div>
 
@@ -50,29 +50,29 @@ public class PdfPageChangedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfPageChangedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfPageChangedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PdfPageChangedEventArgs](#uid-0ccc79a972) | Initializes a new instance of the [Avalonia.Controls.PdfPageChangedEventArgs](xref:Avalonia.Controls.PdfPageChangedEventArgs) class. |
+| [PdfPageChangedEventArgs](#uid-0ccc79a972) | 初始化 [Avalonia.Controls.PdfPageChangedEventArgs](xref:Avalonia.Controls.PdfPageChangedEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0ccc79a972"></span>
 
-### PdfPageChangedEventArgs Constructor
+### PdfPageChangedEventArgs 构造函数 {#pdfpagechangedeventargs-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.PdfPageChangedEventArgs](xref:Avalonia.Controls.PdfPageChangedEventArgs) class.
+初始化 [Avalonia.Controls.PdfPageChangedEventArgs](xref:Avalonia.Controls.PdfPageChangedEventArgs) 类的新实例。
 
 ```csharp
 public PdfPageChangedEventArgs(int oldPage, int newPage)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `oldPage` int
 
@@ -82,9 +82,9 @@ public PdfPageChangedEventArgs(int oldPage, int newPage)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [NewPage](#uid-f64d1bdcfe) | Gets the 1-based page number that is now current. |
 | [OldPage](#uid-5556588388) | Gets the 1-based page number that was previously current (0 if none). |
@@ -93,7 +93,7 @@ public PdfPageChangedEventArgs(int oldPage, int newPage)
 
 <span id="uid-f64d1bdcfe"></span>
 
-### NewPage Property
+### NewPage 属性 {#newpage-property}
 
 Gets the 1-based page number that is now current.
 
@@ -107,7 +107,7 @@ public int NewPage { get; set; }
 
 <span id="uid-5556588388"></span>
 
-### OldPage Property
+### OldPage 属性 {#oldpage-property}
 
 Gets the 1-based page number that was previously current (0 if none).
 

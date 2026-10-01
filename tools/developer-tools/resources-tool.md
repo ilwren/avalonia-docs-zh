@@ -81,7 +81,7 @@ The Resources tool offers several options to help you find specific resources:
 
 ![Filter view](/img/tools/dev-tools/resources-filter.png)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Elements tool](/tools/developer-tools/elements-tool)
 - [Assets tool](/tools/developer-tools/assets-tool)

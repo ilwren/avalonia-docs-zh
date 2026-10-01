@@ -95,7 +95,7 @@ Shapes that carry text are saved as `/Stamp` annotations by default, so other re
 
 **Fix:** Set `ShapeSubtypeMode` to `Standard` to write every shape with its standard subtype, or `Strict` to prevent text on shapes. See [Shapes and text](/controls/data-display/pdfviewer/annotations#shapes-and-text).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PdfViewer control](/controls/data-display/pdfviewer)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)

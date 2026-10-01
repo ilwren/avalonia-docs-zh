@@ -188,7 +188,7 @@ using (context.PushGeometryClip(ellipse))
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Shapes and Geometries](/docs/graphics-animation/shapes-and-geometries): Geometry types for clip regions.
 - [Brushes](/docs/graphics-animation/brushes): Brush types for opacity masks.

@@ -49,7 +49,7 @@ public ObservableCollection<DailyCount> DailyActivity { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of daily activity items. | `null` |
 | `DatePath` | Path to the date value for each item. | `null` |
@@ -69,7 +69,7 @@ public ObservableCollection<DailyCount> DailyActivity { get; } = new()
 | `IsHighlightEnabled` | Enables hover highlighting for calendar cells. | `false` |
 | `ReferenceDate` | Optional end date used as the calendar anchor. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Heatmap chart](/controls/data-display/charts/analytics/heatmap-chart)
 - [Timeline chart](/controls/data-display/charts/scheduling/timeline-chart)

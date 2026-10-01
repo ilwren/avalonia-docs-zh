@@ -11,7 +11,7 @@ The [`IActivatableLifetime`](/api/avalonia/controls/applicationlifetimes/iactiva
 Application.Current.TryGetFeature<IActivatableLifetime>();
 ```
 
-## Events
+## 事件 {#events}
 
 ### Activated
 
@@ -21,7 +21,7 @@ An event that is raised when the application is `Activated` for various reasons 
 
 An event that is raised when the application is `Deactivated` for various reasons as described by the `ActivationKind` enumeration.
 
-## Methods
+## 方法 {#methods}
 
 ### TryLeaveBackground
 
@@ -168,6 +168,6 @@ Some platforms have specific steps to update the manifest and enable file type a
 | `TryLeaveBackground`  | ✖ | ✔ | ✖ | ✖ | ✖ | ✖ |
 | `TryEnterBackground` | ✖ | ✔ | ✖ | ✖ | ✔ | ✖ |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [IActivatableLifetime issue and discussion (#15316)](https://github.com/AvaloniaUI/Avalonia/issues/15316)

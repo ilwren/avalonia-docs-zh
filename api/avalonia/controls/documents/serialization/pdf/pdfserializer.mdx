@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfSerializer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Pdf</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Pdf</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class PdfSerializer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfSerializer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfSerializer
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../idocumentserializer">IDocumentSerializer</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../idocumentserializer">IDocumentSerializer</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 PDF is an export-only format for this library: [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) always throws
 [NotSupportedException](xref:System.NotSupportedException) and [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.CanDeserialize(System.IO.Stream)](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.CanDeserialize%28System.IO.Stream%29) always returns
@@ -70,41 +70,41 @@ is involved; a bare console process without Avalonia cannot export.
 
 This serializer is thread-safe for concurrent operations.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PdfSerializer](#uid-84103d464b) | Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer). |
+| [PdfSerializer](#uid-84103d464b) | 初始化 [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer) 的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-84103d464b"></span>
 
-### PdfSerializer Constructor
+### PdfSerializer 构造函数 {#pdfserializer-constructor}
 
-Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer).
+初始化 [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer) 的新实例。
 
 ```csharp
 public PdfSerializer(Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializerOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `options` [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializerOptions](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializerOptions)
 
 PDF serialization options; defaults are used when .
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Shared serializer options travel on [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializerOptions.Document](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializerOptions.Document):
 `new PdfSerializer(new PdfSerializerOptions { Document = shared })`.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanDeserialize](#uid-07c4f1d1c7) | Checks if a stream appears to contain this format. |
 | [Deserialize](#uid-76ebf6932e) | Deserializes a document from a stream on the calling thread. |
@@ -116,7 +116,7 @@ Shared serializer options travel on [Avalonia.Controls.Documents.Serialization.P
 
 <span id="uid-07c4f1d1c7"></span>
 
-### CanDeserialize Method
+### CanDeserialize 方法 {#candeserialize-method}
 
 Checks if a stream appears to contain this format.
 
@@ -124,21 +124,21 @@ Checks if a stream appears to contain this format.
 public bool CanDeserialize(System.IO.Stream stream)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `stream` System.IO.Stream
 
 The stream to check. Must be readable and seekable.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 Always ; PDF reading is not supported.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 This method does not consume the stream; it restores the original position after checking.
 
@@ -148,7 +148,7 @@ This method does not consume the stream; it restores the original position after
 
 <span id="uid-76ebf6932e"></span>
 
-### Deserialize Method
+### Deserialize 方法 {#deserialize-method}
 
 Deserializes a document from a stream on the calling thread.
 
@@ -156,7 +156,7 @@ Deserializes a document from a stream on the calling thread.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deserialize(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `stream` System.IO.Stream
 
@@ -165,24 +165,24 @@ The stream to read from. Must be readable.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 The deserialized [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot).
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Defaults to blocking on [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.DeserializeAsync(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.DeserializeAsync%28System.IO.Stream%2CSystem.Threading.CancellationToken%29), so a serializer written against
 the released interface keeps working. Implement this member instead: no format here
 performs asynchronous I/O, so the asynchronous pair only moves processor-bound work onto
 a pool thread.
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Always thrown; PDF reading is not supported.](xref:System.NotSupportedException)
 
@@ -192,7 +192,7 @@ a pool thread.
 
 <span id="uid-3779b4d715"></span>
 
-### DeserializeAsync Method
+### DeserializeAsync 方法 {#deserializeasync-method}
 
 Runs [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread.
 
@@ -200,7 +200,7 @@ Runs [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Deserialize(Sy
 public System.Threading.Tasks.Task<Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot> DeserializeAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `stream` System.IO.Stream
 
@@ -209,17 +209,17 @@ The stream to read from.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)&gt;
 
 The deserialized snapshot.
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 A thread-offload convenience, not asynchronous I/O: no format here reads asynchronously.
 Where you are already off the UI thread, call [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) and keep the
@@ -231,7 +231,7 @@ thread you are on.
 
 <span id="uid-04a51a2dcb"></span>
 
-### Serialize Method
+### Serialize 方法 {#serialize-method}
 
 Serializes a document snapshot to a stream on the calling thread.
 
@@ -239,7 +239,7 @@ Serializes a document snapshot to a stream on the calling thread.
 public void Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -253,15 +253,15 @@ The stream to write to. Must be writable.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Defaults to blocking on [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29), so a serializer written against the
 released interface keeps working. Implement this member instead.
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [\`snapshot\` or \`stream\` is null.](xref:System.ArgumentNullException)
 - [\`stream\` is not writable.](xref:System.ArgumentException)
@@ -273,7 +273,7 @@ released interface keeps working. Implement this member instead.
 
 <span id="uid-078d05ce99"></span>
 
-### SerializeAsync Method
+### SerializeAsync 方法 {#serializeasync-method}
 
 Runs [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread.
 
@@ -281,7 +281,7 @@ Runs [Avalonia.Controls.Documents.Serialization.Pdf.PdfSerializer.Serialize(Aval
 public System.Threading.Tasks.Task SerializeAsync(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -295,24 +295,24 @@ The stream to write to.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task
 
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 A thread-offload convenience, not asynchronous I/O. The snapshot is already detached from
 the document, so the work needs no UI thread either way.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanRead](#uid-5f7c8cec93) | Whether this serializer supports reading. Read-only UIs can filter serializer lists on this instead of catching [NotSupportedException](xref:System.NotSupportedException) from [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29). |
 | [CanWrite](#uid-0b2f26fa66) | Whether this serializer supports writing documents. |
@@ -324,7 +324,7 @@ the document, so the work needs no UI thread either way.
 
 <span id="uid-5f7c8cec93"></span>
 
-### CanRead Property
+### CanRead 属性 {#canread-property}
 
 Whether this serializer supports reading. Read-only UIs can filter serializer lists on
 this instead of catching [NotSupportedException](xref:System.NotSupportedException) from
@@ -334,7 +334,7 @@ this instead of catching [NotSupportedException](xref:System.NotSupportedExcepti
 public bool CanRead { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 Defaults to so a serializer written before this member existed
 still compiles. A serializer that cannot read says so.
@@ -345,7 +345,7 @@ still compiles. A serializer that cannot read says so.
 
 <span id="uid-0b2f26fa66"></span>
 
-### CanWrite Property
+### CanWrite 属性 {#canwrite-property}
 
 Whether this serializer supports writing documents.
 
@@ -353,7 +353,7 @@ Whether this serializer supports writing documents.
 public bool CanWrite { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-8}
 
 Defaults to so a serializer written before this member existed
 still compiles. A serializer that cannot write says so.
@@ -364,7 +364,7 @@ still compiles. A serializer that cannot write says so.
 
 <span id="uid-afac0b4c5d"></span>
 
-### FileExtension Property
+### FileExtension 属性 {#fileextension-property}
 
 Gets the file extension including the dot (e.g., ".rtf").
 
@@ -378,7 +378,7 @@ public string FileExtension { get; set; }
 
 <span id="uid-b754e14f26"></span>
 
-### FormatName Property
+### FormatName 属性 {#formatname-property}
 
 Gets the format name this serializer handles (e.g., "Rtf", "Docx", "PlainText").
 
@@ -392,7 +392,7 @@ public string FormatName { get; set; }
 
 <span id="uid-0e0bbcc433"></span>
 
-### MimeType Property
+### MimeType 属性 {#mimetype-property}
 
 Gets the MIME type for the format (e.g., "application/rtf").
 

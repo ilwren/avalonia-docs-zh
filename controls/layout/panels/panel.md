@@ -13,7 +13,7 @@ Because `Panel` does not arrange children into rows, columns, or any other struc
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Background` | `IBrush` | The background brush for the panel. You must set this (even to `Transparent`) for the panel to receive pointer events. |
 | `Children` | `Controls` | The collection of child controls contained in the panel. |
@@ -104,7 +104,7 @@ If you need more control over how child elements are positioned, consider one of
 - [Relative panel](/controls/layout/panels/relativepanel): positions children relative to each other or to the panel itself.
 - [Uniform grid](/controls/layout/panels/uniformgrid): arranges children in a grid with equally sized cells.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Panel API reference](/api/avalonia/controls/panel)
 - [`Panel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Panel.cs)

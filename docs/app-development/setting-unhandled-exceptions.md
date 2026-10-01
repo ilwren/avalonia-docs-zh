@@ -161,7 +161,7 @@ public override void OnFrameworkInitializationCompleted()
 
 Use a structured logging library such as [Serilog](https://serilog.net) or [NLog](https://nlog-project.org) to record exceptions to files, consoles, or external services. At minimum, log the exception type, message, and stack trace so you can diagnose issues from production reports.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Application Lifetimes](/docs/fundamentals/application-lifetimes): Desktop and mobile lifetime models.
 - [TaskScheduler.UnobservedTaskException](https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskscheduler.unobservedtaskexception): .NET documentation.

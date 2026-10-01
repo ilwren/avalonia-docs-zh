@@ -47,7 +47,7 @@ public ObservableCollection<FunnelItem> FunnelData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name shown at the top. | `null` |
 | `ItemsSource` | The collection of process stages. | `null` |

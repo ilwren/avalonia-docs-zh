@@ -9,7 +9,7 @@ The [`HyperlinkButton`](/api/avalonia/controls/hyperlinkbutton) is a button that
 
 ## Useful properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `NavigateUri` | `Uri` | The URI to open when the button is clicked. |
 | `Content` | `object` | The content displayed in the button (typically text). |
@@ -49,12 +49,12 @@ When you click a `HyperlinkButton`, URI launching is delegated to the operating 
 
 ## Pseudoclasses
 
-| Pseudoclass | Description |
+| Pseudoclass | 说明 |
 |---|---|
 | `:visited` | Applied when `IsVisited` is `true`. |
 | `:pressed` | Applied while the button is being pressed. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Button](/controls/input/buttons/button): Standard push button.
 - [RepeatButton](/controls/input/buttons/repeatbutton)

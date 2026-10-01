@@ -169,7 +169,7 @@ You will probably use these properties most often:
     <thead>
       <tr>
         <th width="266">Property</th>
-        <th>Description</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
@@ -191,7 +191,7 @@ View the source code on _GitHub_
 [`PullGestureEventArgs.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/PullGestureEventArgs.cs)
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gestures](/docs/input-interaction/gestures): Overview of gesture recognizers and built-in gesture events.
 - [Scroll Gesture Recognizer](/docs/input-interaction/gestures/scroll-gesture-recognizer): Scroll gesture for panning content.

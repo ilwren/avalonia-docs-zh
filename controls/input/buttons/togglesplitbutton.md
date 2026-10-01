@@ -23,7 +23,7 @@ Pressing a configuration in the `Flyout` should either (1) turn on the feature w
 
 ## Common properties
 
-| Property    | Description                                                    |
+| Property    | 说明                                                    |
 | ----------- | -------------------------------------------------------------- |
 | `Content`   | The content to display in the primary part                     |
 | `Flyout`    | The `Flyout` which shows up when the secondary part is clicked |
@@ -32,7 +32,7 @@ Pressing a configuration in the `Flyout` should either (1) turn on the feature w
 
 ## Pseudoclasses
 
-| Pseudoclass    | Description                                                                                                                                                               |
+| Pseudoclass    | 说明                                                                                                                                                               |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `:pressed`     | Set when the entire `ToggleSplitButton` is pressed using a keyboard input such as Space or Enter. In this state no distinction is made between primary or secondary parts |
 | `:flyout-open` | Set when the `Flyout` is open                                                                                                                                             |
@@ -107,7 +107,7 @@ Continuing the text editor example from `SplitButton`, a common use case of the 
 </ToggleSplitButton>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ToggleSplitButton API reference](/api/avalonia/controls/togglesplitbutton)
 - [`ToggleSplitButton.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitButton/ToggleSplitButton.cs)

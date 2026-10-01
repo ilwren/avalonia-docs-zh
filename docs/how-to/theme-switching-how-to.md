@@ -233,7 +233,7 @@ To activate your custom variant, assign it to `RequestedThemeVariant` just as yo
 app.RequestedThemeVariant = HighContrast;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Theme variants](/docs/styling/theme-variants): Full reference for the theme variant system.
 - [Resource dictionary](/docs/app-development/resource-dictionary): How resource lookup and merging work.

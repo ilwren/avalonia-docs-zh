@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextInputMethodClient Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input.TextInput</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input.TextInput</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/TextInput/TextInputMethodClient.cs">TextInputMethodClient.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/TextInput/TextInputMethodClient.cs">TextInputMethodClient.cs</a>
 </div>
 
 </div>
@@ -48,13 +48,13 @@ public class TextInputMethodClient
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextInputMethodClient
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextInputMethodClient
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ExecuteContextMenuAction](#uid-09a71bff40) | Execute specific context menu actions |
 | [SetPreeditText (2 overloads)](#uid-07ee636bcb) | Sets the non-committed input string |
@@ -63,7 +63,7 @@ public class TextInputMethodClient
 
 <span id="uid-09a71bff40"></span>
 
-### ExecuteContextMenuAction Method
+### ExecuteContextMenuAction 方法 {#executecontextmenuaction-method}
 
 Execute specific context menu actions
 
@@ -71,7 +71,7 @@ Execute specific context menu actions
 public void ExecuteContextMenuAction(Avalonia.Input.TextInput.ContextMenuAction action)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `action` [Avalonia.Input.TextInput.ContextMenuAction](xref:Avalonia.Input.TextInput.ContextMenuAction)
 
@@ -88,7 +88,7 @@ The [Avalonia.Input.TextInput.ContextMenuAction](xref:Avalonia.Input.TextInput.C
 
 <span id="uid-7191b38837"></span>
 
-#### SetPreeditText Method
+#### SetPreeditText 方法 {#setpreedittext-method}
 
 Sets the non-committed input string
 
@@ -96,7 +96,7 @@ Sets the non-committed input string
 public void SetPreeditText(string preeditText)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `preeditText` string
 
@@ -107,13 +107,13 @@ public void SetPreeditText(string preeditText)
 
 <span id="uid-e77dcd6575"></span>
 
-#### SetPreeditText Method
+#### SetPreeditText 方法 {#setpreedittext-method-1}
 
 ```csharp
 public void SetPreeditText(string preeditText, Nullable<int> cursorPos)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `preeditText` string
 
@@ -123,9 +123,9 @@ public void SetPreeditText(string preeditText, Nullable<int> cursorPos)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CursorRectangle](#uid-1df1a50378) | Gets the cursor rectangle relative to the TextViewVisual |
 | [Selection](#uid-18676137da) | Gets or sets the curent selection range within current surrounding text. |
@@ -138,7 +138,7 @@ public void SetPreeditText(string preeditText, Nullable<int> cursorPos)
 
 <span id="uid-1df1a50378"></span>
 
-### CursorRectangle Property
+### CursorRectangle 属性 {#cursorrectangle-property}
 
 Gets the cursor rectangle relative to the TextViewVisual
 
@@ -152,7 +152,7 @@ public Avalonia.Rect CursorRectangle { get; set; }
 
 <span id="uid-18676137da"></span>
 
-### Selection Property
+### Selection 属性 {#selection-property}
 
 Gets or sets the curent selection range within current surrounding text.
 
@@ -166,7 +166,7 @@ public Avalonia.Input.TextInput.TextSelection Selection { get; set; }
 
 <span id="uid-98d5f46c95"></span>
 
-### SupportsPreedit Property
+### SupportsPreedit 属性 {#supportspreedit-property}
 
 Indicates if TextViewVisual is capable of displaying non-committed input on the cursor position
 
@@ -180,7 +180,7 @@ public bool SupportsPreedit { get; set; }
 
 <span id="uid-b000dfcc62"></span>
 
-### SupportsSurroundingText Property
+### SupportsSurroundingText 属性 {#supportssurroundingtext-property}
 
 Indicates if text input client is capable of providing the text around the cursor
 
@@ -194,7 +194,7 @@ public bool SupportsSurroundingText { get; set; }
 
 <span id="uid-31223fd910"></span>
 
-### SurroundingText Property
+### SurroundingText 属性 {#surroundingtext-property}
 
 Returns the text around the cursor, usually the current paragraph
 
@@ -208,7 +208,7 @@ public string SurroundingText { get; set; }
 
 <span id="uid-0cd0343efd"></span>
 
-### TextViewVisual Property
+### TextViewVisual 属性 {#textviewvisual-property}
 
 The visual that's showing the text
 
@@ -218,9 +218,9 @@ public Avalonia.Visual TextViewVisual { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CursorRectangleChanged](#uid-82e53c08fd) | Fires when the cursor rectangle has changed |
 | [InputPaneActivationRequested](#uid-8ea89f8553) | Fires when client requests the input panel be opened. |
@@ -233,7 +233,7 @@ public Avalonia.Visual TextViewVisual { get; set; }
 
 <span id="uid-82e53c08fd"></span>
 
-### CursorRectangleChanged Event
+### CursorRectangleChanged 事件 {#cursorrectanglechanged-event}
 
 Fires when the cursor rectangle has changed
 
@@ -247,7 +247,7 @@ public event EventHandler CursorRectangleChanged
 
 <span id="uid-8ea89f8553"></span>
 
-### InputPaneActivationRequested Event
+### InputPaneActivationRequested 事件 {#inputpaneactivationrequested-event}
 
 Fires when client requests the input panel be opened.
 
@@ -261,7 +261,7 @@ public event EventHandler InputPaneActivationRequested
 
 <span id="uid-57ea1c6a90"></span>
 
-### ResetRequested Event
+### ResetRequested 事件 {#resetrequested-event}
 
 Fires when client wants to reset IME state
 
@@ -275,7 +275,7 @@ public event EventHandler ResetRequested
 
 <span id="uid-25cfcfdf97"></span>
 
-### SelectionChanged Event
+### SelectionChanged 事件 {#selectionchanged-event}
 
 Fires when the selection has changed
 
@@ -289,7 +289,7 @@ public event EventHandler SelectionChanged
 
 <span id="uid-898a8095ac"></span>
 
-### SurroundingTextChanged Event
+### SurroundingTextChanged 事件 {#surroundingtextchanged-event}
 
 Fires when the surrounding text has changed
 
@@ -303,7 +303,7 @@ public event EventHandler SurroundingTextChanged
 
 <span id="uid-a856fcd295"></span>
 
-### TextViewVisualChanged Event
+### TextViewVisualChanged 事件 {#textviewvisualchanged-event}
 
 Fires when the text view visual has changed
 

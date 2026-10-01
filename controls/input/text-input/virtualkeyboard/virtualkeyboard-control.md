@@ -18,9 +18,9 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 `VirtualKeyboard` gives you direct control over keyboard placement and behavior. It sends input directly to its designated target, regardless of which control has input focus. This makes it useful for specialized input scenarios where automatic focus-based keyboard display is inappropriate.
 
-## Properties
+## 属性 {#properties}
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |----------|------|-------------|
 | `Target` | `IInputElement` | Gets or sets the input element to receive keystrokes from the keyboard. |
 | `InputMethods` | `IEnumerable<VirtualKeyboardInputMethod>` | Gets or sets the collection of input methods available to users. |
@@ -130,18 +130,18 @@ Below is a list of resources you can override in your theme or resource dictiona
 
 | Key | Type | Default |
 |---|---|---|
-| `KeyboardActionButtonBackground` | Brush | `Goldenrod` | 
-| `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` | 
-| `KeyboardButtonBackground` | Brush | `GhostWhite` | 
-| `KeyboardButtonBackgroundPressed` | Brush | `FloralWhite` | 
-| `KeyboardButtonBorderBrush` | Brush | `Black` | 
+| `KeyboardActionButtonBackground` | Brush | `Goldenrod` |
+| `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` |
+| `KeyboardButtonBackground` | Brush | `GhostWhite` |
+| `KeyboardButtonBackgroundPressed` | Brush | `FloralWhite` |
+| `KeyboardButtonBorderBrush` | Brush | `Black` |
 | `KeyboardButtonFontSize` | Double | `24` |
-| `KeyboardButtonForeground` | Brush | `Black` | 
-| `KeyboardFunctionalButtonBackground` | Brush | `LightSteelBlue` | 
-| `KeyboardFunctionalButtonBackgroundPressed` | Brush | `LightBlue` | 
-| `KeyboardPaneBackground` | Brush | `DarkGray` | 
+| `KeyboardButtonForeground` | Brush | `Black` |
+| `KeyboardFunctionalButtonBackground` | Brush | `LightSteelBlue` |
+| `KeyboardFunctionalButtonBackgroundPressed` | Brush | `LightBlue` |
+| `KeyboardPaneBackground` | Brush | `DarkGray` |
 | `KeyboardPanePadding` | Thickness |  `4` |
-| `KeyboardPopupKeySelectedBackground` | Brush | `PaleTurquoise` | 
+| `KeyboardPopupKeySelectedBackground` | Brush | `PaleTurquoise` |
 
 ### How to override
 
@@ -163,7 +163,7 @@ To customize, define these resources in your application theme or resource dicti
 
 ## Input methods
 
-| Identifier | Description | Notes |
+| Identifier | 说明 | Notes |
 | --- | --- | --- |
 |`af:kbd:standard` | Afrikaans | |
 |`ar:kbd:standard` | Arabic | |
@@ -290,6 +290,6 @@ public static AppBuilder BuildAvaloniaApp()
 </VirtualKeyboardScope>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [VirtualKeyboardScope](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope): A container control that automatically manages keyboard visibility,

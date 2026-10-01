@@ -49,7 +49,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowChart`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | Collection of `FlowNode` items rendered by the chart. | `null` |
 | `Edges` | Collection of `FlowEdge` connections. | `null` |
@@ -58,7 +58,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowNode`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Id` | Unique node identifier used by edges and groups. | `null` |
 | `Text` | Text displayed inside the node. | `null` |
@@ -73,7 +73,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowEdge`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `SourceId` | Source node identifier. | `null` |
 | `TargetId` | Target node identifier. | `null` |
@@ -82,7 +82,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowGroup`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Id` | Unique group identifier. | `null` |
 | `Label` | Optional label displayed for the group. | `null` |
@@ -92,7 +92,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 | `BorderThickness` | Thickness of the group border. | `1.0` |
 | `NodeIds` | Collection of node IDs that belong to the group. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Process flow chart](/controls/data-display/charts/hierarchy/process-flow-chart)
 - [Mind map chart](/controls/data-display/charts/hierarchy/mindmap-chart)

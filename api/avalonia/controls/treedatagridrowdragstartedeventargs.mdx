@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridRowDragStartedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.TreeDataGrid.RowDragStarted](xref:Avalonia.Controls.TreeDataGrid.RowDragStarted) event.
+为 [Avalonia.Controls.TreeDataGrid.RowDragStarted](xref:Avalonia.Controls.TreeDataGrid.RowDragStarted) 事件提供数据。
 
 </div>
 
@@ -50,55 +50,55 @@ public class TreeDataGridRowDragStartedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowDragStartedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowDragStartedEventArgs
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This event is raised when a drag operation in a [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) control begins.
 It contains information about the models being dragged and allows for configuring the
 permitted drag effects.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridRowDragStartedEventArgs](#uid-8189b9cf83) | No summary available. |
+| [TreeDataGridRowDragStartedEventArgs](#uid-8189b9cf83) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8189b9cf83"></span>
 
-### TreeDataGridRowDragStartedEventArgs Constructor
+### TreeDataGridRowDragStartedEventArgs 构造函数 {#treedatagridrowdragstartedeventargs-constructor}
 
 ```csharp
 public TreeDataGridRowDragStartedEventArgs(System.Collections.Generic.IEnumerable<object> models)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `models` System.Collections.Generic.IEnumerable&lt;object&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AllowedEffects](#uid-5db59ae402) | Gets or sets the allowed effects for the drag operation. |
-| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | Gets or sets a value indicating whether the routed event has already been handled. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
+| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | 获取或设置一个值，指示该路由事件是否已被处理。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 | [Models](#uid-bb1373a9dc) | Gets the collection of model objects that represent the rows being dragged. |
-| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | Gets or sets the routing strategy (direct, bubbling, or tunneling) of the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | Gets or sets the routed event associated with these event args. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | Gets or sets the source object that raised the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
+| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | 获取或设置路由事件的路由策略（直接、冒泡或隧道）。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | 获取或设置与这组事件参数关联的路由事件。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | 获取或设置引发该路由事件的源对象。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5db59ae402"></span>
 
-### AllowedEffects Property
+### AllowedEffects 属性 {#allowedeffects-property}
 
 Gets or sets the allowed effects for the drag operation.
 
@@ -106,7 +106,7 @@ Gets or sets the allowed effects for the drag operation.
 public Avalonia.Input.DragDropEffects AllowedEffects { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This property can be used to control what operations (move, copy, etc.) are permitted
 during the drag operation. By default, when [Avalonia.Controls.TreeDataGrid.AutoDragDropRows](xref:Avalonia.Controls.TreeDataGrid.AutoDragDropRows)
@@ -119,7 +119,7 @@ is enabled, this is set to [Avalonia.Input.DragDropEffects.Move](xref:Avalonia.I
 
 <span id="uid-bb1373a9dc"></span>
 
-### Models Property
+### Models 属性 {#models-property}
 
 Gets the collection of model objects that represent the rows being dragged.
 
@@ -127,7 +127,7 @@ Gets the collection of model objects that represent the rows being dragged.
 public System.Collections.Generic.IEnumerable<object> Models { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 These are the underlying data models for the selected rows, not the visual row
 elements.

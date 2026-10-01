@@ -58,7 +58,7 @@ public ObservableCollection<ErrorBarItem> ErrorBarData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of measured data. | `null` |
 | `ValuePath` | The central value (Mean/Median). | `null` |

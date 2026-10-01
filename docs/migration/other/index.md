@@ -126,7 +126,7 @@ If you have a web application built with ASP.NET MVC or Blazor and want to offer
 - **No HTTP request/response cycle:** Desktop apps are stateful. You bind UI controls to view model properties that update in real time, rather than rendering pages on each request.
 - **Navigation is application-managed:** There is no URL routing. Navigation is handled by swapping views based on application state, or by using [NavigationPage](/controls/navigation/navigationpage) for stack-based page navigation.
 
-## Getting started
+## 快速上手 {#getting-started}
 
 Regardless of which framework you are coming from, the best place to start is the same:
 
@@ -135,7 +135,7 @@ Regardless of which framework you are coming from, the best place to start is th
 3. **[Learn data binding](/docs/data-binding/introduction-to-data-binding):** The foundation of how Avalonia connects UI to data.
 4. **[Explore the controls](/controls):** See what is available out of the box.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles): How Avalonia's CSS-like styling works.
 - [The MVVM Pattern](/docs/fundamentals/the-mvvm-pattern): Separating UI from logic.

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CompiledBinding Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/CompiledBinding.cs">CompiledBinding.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/CompiledBinding.cs">CompiledBinding.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public class CompiledBinding
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bindingbase">BindingBase</a> <span className="apiref-page__relation-separator">-&gt;</span> CompiledBinding
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bindingbase">BindingBase</a> <span className="apiref-page__relation-separator">-&gt;</span> CompiledBinding
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="../markup/xaml/markupextensions/compiledbindingextension">CompiledBindingExtension</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="../markup/xaml/markupextensions/compiledbindingextension">CompiledBindingExtension</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CompiledBinding (2 overloads)](#uid-30f20551af) | Initializes a new instance of the [Avalonia.Data.CompiledBinding](xref:Avalonia.Data.CompiledBinding) class. |
+| [CompiledBinding (2 overloads)](#uid-30f20551af) | 初始化 [Avalonia.Data.CompiledBinding](xref:Avalonia.Data.CompiledBinding) 类的新实例。 |
 
 <span id="uid-30f20551af"></span>
 
-### CompiledBinding overloads
+### CompiledBinding 的重载 {#compiledbinding-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9ebd370cdf"></span>
 
-#### CompiledBinding Constructor
+#### CompiledBinding 构造函数 {#compiledbinding-constructor}
 
-Initializes a new instance of the [Avalonia.Data.CompiledBinding](xref:Avalonia.Data.CompiledBinding) class.
+初始化 [Avalonia.Data.CompiledBinding](xref:Avalonia.Data.CompiledBinding) 类的新实例。
 
 ```csharp
 public CompiledBinding()
@@ -89,15 +89,15 @@ public CompiledBinding()
 
 <span id="uid-7037711a78"></span>
 
-#### CompiledBinding Constructor
+#### CompiledBinding 构造函数 {#compiledbinding-constructor-1}
 
-Initializes a new instance of the [Avalonia.Data.CompiledBinding](xref:Avalonia.Data.CompiledBinding) class.
+初始化 [Avalonia.Data.CompiledBinding](xref:Avalonia.Data.CompiledBinding) 类的新实例。
 
 ```csharp
 public CompiledBinding(Avalonia.Data.CompiledBindingPath path)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `path` [Avalonia.Data.CompiledBindingPath](xref:Avalonia.Data.CompiledBindingPath)
 
@@ -106,23 +106,23 @@ The binding path.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Create](#uid-57ecf18708) | No summary available. |
+| [Create](#uid-57ecf18708) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-57ecf18708"></span>
 
-### Create Method
+### Create 方法 {#create-method}
 
 ```csharp
 public Avalonia.Data.CompiledBinding Create<TIn, TOut>(System.Linq.Expressions.Expression<Func<TIn,TOut>> expression, object source, Avalonia.Data.Converters.IValueConverter converter, Avalonia.Data.BindingMode mode, Avalonia.Data.BindingPriority priority, System.Globalization.CultureInfo converterCulture, object converterParameter, object fallbackValue, string stringFormat, object targetNullValue, Avalonia.Data.UpdateSourceTrigger updateSourceTrigger, int delay)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `expression` System.Linq.Expressions.Expression&lt;Func&lt;TIn,TOut&gt;&gt;
 
@@ -168,16 +168,16 @@ public Avalonia.Data.CompiledBinding Create<TIn, TOut>(System.Linq.Expressions.E
 `TOut`
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Data.CompiledBinding](xref:Avalonia.Data.CompiledBinding)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Converter](#uid-28db53eecb) | Gets or sets the [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter) to use. |
 | [ConverterCulture](#uid-8557e5d29e) | Gets or sets the culture in which to evaluate the converter. |
@@ -196,7 +196,7 @@ public Avalonia.Data.CompiledBinding Create<TIn, TOut>(System.Linq.Expressions.E
 
 <span id="uid-28db53eecb"></span>
 
-### Converter Property
+### Converter 属性 {#converter-property}
 
 Gets or sets the [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter) to use.
 
@@ -210,7 +210,7 @@ public Avalonia.Data.Converters.IValueConverter Converter { get; set; }
 
 <span id="uid-8557e5d29e"></span>
 
-### ConverterCulture Property
+### ConverterCulture 属性 {#converterculture-property}
 
 Gets or sets the culture in which to evaluate the converter.
 
@@ -218,12 +218,12 @@ Gets or sets the culture in which to evaluate the converter.
 public System.Globalization.CultureInfo ConverterCulture { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The default value is null.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 If this property is not set then [System.Globalization.CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture) will be used.
 
@@ -233,7 +233,7 @@ If this property is not set then [System.Globalization.CultureInfo.CurrentCultur
 
 <span id="uid-6d9782b4c9"></span>
 
-### ConverterParameter Property
+### ConverterParameter 属性 {#converterparameter-property}
 
 Gets or sets a parameter to pass to [Avalonia.Data.CompiledBinding.Converter](xref:Avalonia.Data.CompiledBinding.Converter).
 
@@ -247,7 +247,7 @@ public object ConverterParameter { get; set; }
 
 <span id="uid-0bf0d20318"></span>
 
-### Delay Property
+### Delay 属性 {#delay-property}
 
 Gets or sets the amount of time, in milliseconds, to wait before updating the binding
 source after the value on the target changes.
@@ -256,7 +256,7 @@ source after the value on the target changes.
 public int Delay { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 There is no delay when the source is updated via [Avalonia.Data.UpdateSourceTrigger.LostFocus](xref:Avalonia.Data.UpdateSourceTrigger.LostFocus)
 or [Avalonia.Data.BindingExpressionBase.UpdateSource](xref:Avalonia.Data.BindingExpressionBase.UpdateSource). Nor is there a delay when
@@ -268,7 +268,7 @@ or [Avalonia.Data.BindingExpressionBase.UpdateSource](xref:Avalonia.Data.Binding
 
 <span id="uid-95e9c1e2f6"></span>
 
-### FallbackValue Property
+### FallbackValue 属性 {#fallbackvalue-property}
 
 Gets or sets the value to use when the binding is unable to produce a value.
 
@@ -282,7 +282,7 @@ public object FallbackValue { get; set; }
 
 <span id="uid-06c843929f"></span>
 
-### Mode Property
+### Mode 属性 {#mode-property}
 
 Gets or sets the binding mode.
 
@@ -296,7 +296,7 @@ public Avalonia.Data.BindingMode Mode { get; set; }
 
 <span id="uid-3c9fd8a221"></span>
 
-### Path Property
+### Path 属性 {#path-property}
 
 Gets or sets the binding path.
 
@@ -310,7 +310,7 @@ public Avalonia.Data.CompiledBindingPath Path { get; set; }
 
 <span id="uid-6c4332c942"></span>
 
-### Priority Property
+### Priority 属性 {#priority-property}
 
 Gets or sets the binding priority.
 
@@ -324,7 +324,7 @@ public Avalonia.Data.BindingPriority Priority { get; set; }
 
 <span id="uid-78b9327aba"></span>
 
-### Source Property
+### Source 属性 {#source-property}
 
 Gets or sets the source for the binding.
 
@@ -338,7 +338,7 @@ public object Source { get; set; }
 
 <span id="uid-33c4f73df3"></span>
 
-### StringFormat Property
+### StringFormat 属性 {#stringformat-property}
 
 Gets or sets the string format.
 
@@ -352,7 +352,7 @@ public string StringFormat { get; set; }
 
 <span id="uid-6ebfe776f4"></span>
 
-### TargetNullValue Property
+### TargetNullValue 属性 {#targetnullvalue-property}
 
 Gets or sets the value to use when the binding result is null.
 
@@ -366,7 +366,7 @@ public object TargetNullValue { get; set; }
 
 <span id="uid-56a3da996f"></span>
 
-### UpdateSourceTrigger Property
+### UpdateSourceTrigger 属性 {#updatesourcetrigger-property}
 
 Gets or sets a value that determines the timing of binding source updates for
 [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) and [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource) bindings.

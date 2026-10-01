@@ -115,7 +115,7 @@ You will probably use these properties most often:
     <thead>
       <tr>
         <th width="266">Property</th>
-        <th>Description</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
@@ -141,7 +141,7 @@ For the complete API documentation about this gesture recognizer, see the [Scrol
 View the source code on _GitHub_ [`ScrollGestureRecognizer.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/ScrollGestureRecognizer.cs)
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gestures](/docs/input-interaction/gestures): Overview of gesture recognizers and built-in gesture events.
 - [Pull Gesture Recognizer](/docs/input-interaction/gestures/pull-gesture-recognizer): Pull gesture for pull-to-refresh interactions.

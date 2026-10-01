@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPageTransition Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Animation</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Animation</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/IPageTransition.cs">IPageTransition.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/IPageTransition.cs">IPageTransition.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface IPageTransition
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Start](#uid-eeae41f0d0) | Starts the animation. |
 
@@ -62,7 +62,7 @@ public interface IPageTransition
 
 <span id="uid-eeae41f0d0"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
 Starts the animation.
 
@@ -70,7 +70,7 @@ Starts the animation.
 public System.Threading.Tasks.Task Start(Avalonia.Visual from, Avalonia.Visual to, bool forward, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `from` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -92,7 +92,7 @@ If the animation is bidirectional, controls the direction of the animation.
 Animation cancellation.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 

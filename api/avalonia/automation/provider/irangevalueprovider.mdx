@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IRangeValueProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Provider</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Provider</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IRangeValueProvider.cs">IRangeValueProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IRangeValueProvider.cs">IRangeValueProvider.cs</a>
 </div>
 
 </div>
@@ -53,9 +53,9 @@ public interface IRangeValueProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SetValue](#uid-b4713f591e) | Sets the value of the control. |
 
@@ -63,7 +63,7 @@ public interface IRangeValueProvider
 
 <span id="uid-b4713f591e"></span>
 
-### SetValue Method
+### SetValue 方法 {#setvalue-method}
 
 Sets the value of the control.
 
@@ -71,23 +71,23 @@ Sets the value of the control.
 public void SetValue(double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` double
 
 The value to set.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 - Windows`IRangeValueProvider.SetValue`
 - macOS`NSAccessibilityProtocol.setAccessibilityValue`
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsReadOnly](#uid-eab25c5c53) | Gets a value that indicates whether the value of a control is read-only. |
 | [LargeChange](#uid-229e6fb800) | Gets the value that is added to or subtracted from the Value property when a large change is made, such as with the PAGE DOWN key. |
@@ -100,7 +100,7 @@ The value to set.
 
 <span id="uid-eab25c5c53"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
 Gets a value that indicates whether the value of a control is read-only.
 
@@ -108,10 +108,10 @@ Gets a value that indicates whether the value of a control is read-only.
 public bool IsReadOnly { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 - Windows`IRangeValueProvider.get_IsReadOnly`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -119,7 +119,7 @@ public bool IsReadOnly { get; set; }
 
 <span id="uid-229e6fb800"></span>
 
-### LargeChange Property
+### LargeChange 属性 {#largechange-property}
 
 Gets the value that is added to or subtracted from the Value property when a large
 change is made, such as with the PAGE DOWN key.
@@ -128,10 +128,10 @@ change is made, such as with the PAGE DOWN key.
 public double LargeChange { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 - Windows`IRangeValueProvider.get_LargeChange`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -139,7 +139,7 @@ public double LargeChange { get; set; }
 
 <span id="uid-e5320159d9"></span>
 
-### Maximum Property
+### Maximum 属性 {#maximum-property}
 
 Gets the maximum range value that is supported by the control.
 
@@ -147,7 +147,7 @@ Gets the maximum range value that is supported by the control.
 public double Maximum { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 - Windows`IRangeValueProvider.get_Maximum`
 - macOS`NSAccessibilityProtocol.accessibilityMaxValue`
@@ -158,7 +158,7 @@ public double Maximum { get; set; }
 
 <span id="uid-8be4d47bef"></span>
 
-### Minimum Property
+### Minimum 属性 {#minimum-property}
 
 Gets the minimum range value that is supported by the control.
 
@@ -166,7 +166,7 @@ Gets the minimum range value that is supported by the control.
 public double Minimum { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 - Windows`IRangeValueProvider.get_Minimum`
 - macOS`NSAccessibilityProtocol.accessibilityMinValue`
@@ -177,7 +177,7 @@ public double Minimum { get; set; }
 
 <span id="uid-e4301bd111"></span>
 
-### SmallChange Property
+### SmallChange 属性 {#smallchange-property}
 
 Gets the value that is added to or subtracted from the Value property when a small
 change is made, such as with an arrow key.
@@ -186,7 +186,7 @@ change is made, such as with an arrow key.
 public double SmallChange { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 - Windows`IRangeValueProvider.get_SmallChange`
 - macOS Used by `NSAccessibilityProtocol.accessibilityPerformIncrement` and `NSAccessibilityProtocol.accessibilityPerformDecrement` to determine the changed value.
@@ -197,7 +197,7 @@ public double SmallChange { get; set; }
 
 <span id="uid-c41a4f43a9"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
 Gets the value of the control.
 
@@ -205,7 +205,7 @@ Gets the value of the control.
 public double Value { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 - Windows`IRangeValueProvider.get_Value`
 - macOS`NSAccessibilityProtocol.accessibilityValue`

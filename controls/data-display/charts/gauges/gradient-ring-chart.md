@@ -47,7 +47,7 @@ public ObservableCollection<RingMetric> RingMetrics { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of ring items. | `null` |
 | `LabelPath` | Path to the item label. | `null` |
@@ -58,7 +58,7 @@ public ObservableCollection<RingMetric> RingMetrics { get; } = new()
 | `ShowLabels` | Whether to show the legend labels. | `true` |
 | `ShowValues` | Whether to show numeric values. | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Progress donut chart](/controls/data-display/charts/gauges/progress-donut-chart)
 - [Gauge chart](/controls/data-display/charts/gauges/gauge-chart)

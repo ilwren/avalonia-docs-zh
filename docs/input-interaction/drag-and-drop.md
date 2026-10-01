@@ -62,7 +62,7 @@ public partial class MainWindow : Window
 
 All events provide a `DragEventArgs` with these properties:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `DataTransfer` | The `IDataTransfer` object containing the dragged data. |
 | `DragEffects` | The allowed and requested drag effects. Set this to indicate what your target accepts. |
@@ -106,7 +106,7 @@ private void OnDrop(object? sender, DragEventArgs e)
 
 The `DragDropEffects` flags enum indicates what operations are permitted:
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `None` | The drop target does not accept the data. |
 | `Copy` | The data is copied to the target. |
@@ -146,7 +146,7 @@ private async void OnPointerPressed(object? sender, PointerPressedEventArgs e)
 
 The `DataTransfer` class is a mutable container for drag-and-drop data. Use `DataFormat` static properties for standard formats:
 
-| Format | Type | Description |
+| Format | Type | 说明 |
 |---|---|---|
 | `DataFormat.Text` | `string` | Plain text. |
 | `DataFormat.Bitmap` | `Bitmap` | Bitmap image data. |
@@ -307,7 +307,7 @@ DragDrop.RemoveDropHandler(myBorder, OnDrop);
 
 The `DragDrop` class provides `Add*Handler` and `Remove*Handler` static methods for each event: `DragEnter`, `DragLeave`, `DragOver`, and `Drop`.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Pointer Events](/docs/input-interaction/pointer): Detecting pointer movement for initiating drags.
 - [Clipboard](/docs/services/clipboard): Sharing data via the clipboard.

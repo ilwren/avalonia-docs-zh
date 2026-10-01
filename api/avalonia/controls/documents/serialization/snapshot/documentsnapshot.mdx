@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DocumentSnapshot Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,11 +51,11 @@ public class DocumentSnapshot
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DocumentSnapshot
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DocumentSnapshot
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot) captures a point-in-time view of the document including:
 - Text content (via immutable RopeNode reference)
@@ -77,9 +77,9 @@ var snapshot = document.CreateSnapshot();
 await Task.Run(() => serializer.Serialize(snapshot, stream));
 ```
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CaptureBlockFormatting](#uid-ecb61ee172) | Captures the block-level formatting properties (alignment, margins, padding, etc.) from a [Avalonia.Controls.Documents.Block](xref:Avalonia.Controls.Documents.Block) into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting) value. |
 | [CaptureInlineFormatting](#uid-686dc3932d) | Captures the inline-level formatting properties (text decorations, baseline alignment) from a [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting) value. |
@@ -101,7 +101,7 @@ await Task.Run(() => serializer.Serialize(snapshot, stream));
 
 <span id="uid-ecb61ee172"></span>
 
-### CaptureBlockFormatting Method
+### CaptureBlockFormatting 方法 {#captureblockformatting-method}
 
 Captures the block-level formatting properties (alignment, margins, padding, etc.)
 from a [Avalonia.Controls.Documents.Block](xref:Avalonia.Controls.Documents.Block) into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting) value.
@@ -110,12 +110,12 @@ from a [Avalonia.Controls.Documents.Block](xref:Avalonia.Controls.Documents.Bloc
 public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureBlockFormatting(Avalonia.Controls.Documents.Block block)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `block` [Avalonia.Controls.Documents.Block](xref:Avalonia.Controls.Documents.Block)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
@@ -126,7 +126,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureB
 
 <span id="uid-686dc3932d"></span>
 
-### CaptureInlineFormatting Method
+### CaptureInlineFormatting 方法 {#captureinlineformatting-method}
 
 Captures the inline-level formatting properties (text decorations, baseline alignment)
 from a [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting) value.
@@ -135,12 +135,12 @@ from a [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Docu
 public Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting CaptureInlineFormatting(Avalonia.Controls.Documents.RichTextElement element)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `element` [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting)
 
@@ -151,7 +151,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting Capture
 
 <span id="uid-52778980c0"></span>
 
-### CaptureListItemFormatting Method
+### CaptureListItemFormatting 方法 {#capturelistitemformatting-method}
 
 Captures the block-level formatting properties from a [Avalonia.Controls.Documents.ListItem](xref:Avalonia.Controls.Documents.ListItem)
 into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting) value. [Avalonia.Controls.Documents.ListItem](xref:Avalonia.Controls.Documents.ListItem) is
@@ -162,12 +162,12 @@ the same properties.
 public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureListItemFormatting(Avalonia.Controls.Documents.ListItem item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `item` [Avalonia.Controls.Documents.ListItem](xref:Avalonia.Controls.Documents.ListItem)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
@@ -178,7 +178,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureL
 
 <span id="uid-9619450661"></span>
 
-### CaptureTableCellFormatting Method
+### CaptureTableCellFormatting 方法 {#capturetablecellformatting-method}
 
 Captures the block-level formatting properties from a [Avalonia.Controls.Documents.TableCell](xref:Avalonia.Controls.Documents.TableCell)
 into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting) value.
@@ -187,12 +187,12 @@ into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatt
 public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureTableCellFormatting(Avalonia.Controls.Documents.TableCell cell)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `cell` [Avalonia.Controls.Documents.TableCell](xref:Avalonia.Controls.Documents.TableCell)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
@@ -203,7 +203,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureT
 
 <span id="uid-338ced5cb6"></span>
 
-### CaptureTableRowFormatting Method
+### CaptureTableRowFormatting 方法 {#capturetablerowformatting-method}
 
 Captures the block-level formatting of a table row (its minimum height).
 
@@ -211,12 +211,12 @@ Captures the block-level formatting of a table row (its minimum height).
 public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureTableRowFormatting(Avalonia.Controls.Documents.TableRow row)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `row` [Avalonia.Controls.Documents.TableRow](xref:Avalonia.Controls.Documents.TableRow)
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
@@ -227,7 +227,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting CaptureT
 
 <span id="uid-640e63d0a2"></span>
 
-### CaptureTextElementFormatting Method
+### CaptureTextElementFormatting 方法 {#capturetextelementformatting-method}
 
 Captures the text-level formatting properties (font, foreground, background, etc.)
 from a [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) into an immutable [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting) value.
@@ -236,12 +236,12 @@ from a [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Docu
 public Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting CaptureTextElementFormatting(Avalonia.Controls.Documents.RichTextElement element)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `element` [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
@@ -256,7 +256,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting Ca
 
 <span id="uid-98fb158792"></span>
 
-#### EnumerateNodes Method
+#### EnumerateNodes 方法 {#enumeratenodes-method}
 
 Enumerates all nodes in document order (pre-order traversal).
 
@@ -264,7 +264,7 @@ Enumerates all nodes in document order (pre-order traversal).
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode> EnumerateNodes()
 ```
 
-##### Returns
+##### 返回值 {#returns-6}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)&gt;
 
@@ -275,18 +275,18 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serializa
 
 <span id="uid-78fc23c0c4"></span>
 
-#### EnumerateNodes Method
+#### EnumerateNodes 方法 {#enumeratenodes-method-1}
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode> EnumerateNodes(Func<Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode, bool> predicate)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `predicate` Func&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode), bool&gt;
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)&gt;
 
@@ -297,7 +297,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serializa
 
 <span id="uid-35adb86ae1"></span>
 
-### EnumerateParagraphs Method
+### EnumerateParagraphs 方法 {#enumerateparagraphs-method}
 
 Enumerates all paragraphs in document order.
 
@@ -305,7 +305,7 @@ Enumerates all paragraphs in document order.
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode> EnumerateParagraphs()
 ```
 
-#### Returns
+#### 返回值 {#returns-8}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)&gt;
 
@@ -316,7 +316,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serializa
 
 <span id="uid-519912edce"></span>
 
-### EnumerateTextRuns Method
+### EnumerateTextRuns 方法 {#enumeratetextruns-method}
 
 Enumerates all text runs in document order.
 
@@ -324,7 +324,7 @@ Enumerates all text runs in document order.
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode> EnumerateTextRuns()
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)&gt;
 
@@ -335,7 +335,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serializa
 
 <span id="uid-971ad87405"></span>
 
-### FindFootnote Method
+### FindFootnote 方法 {#findfootnote-method}
 
 The note paired with `noteId`, or null.
 
@@ -343,12 +343,12 @@ The note paired with `noteId`, or null.
 public Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteSnapshot FindFootnote(int noteId)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `noteId` int
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteSnapshot)
 
@@ -359,7 +359,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteSnapshot FindF
 
 <span id="uid-826733c0cd"></span>
 
-### GetFootnoteOrdinal Method
+### GetFootnoteOrdinal 方法 {#getfootnoteordinal-method}
 
 The number the anchor of `noteId` shows: the 1-based
 position of its note among [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.Footnotes](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.Footnotes), which are in anchor
@@ -369,12 +369,12 @@ order; 0 when no note carries the id.
 public int GetFootnoteOrdinal(int noteId)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `noteId` int
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 int
 
@@ -389,7 +389,7 @@ int
 
 <span id="uid-27c83ca8f2"></span>
 
-#### GetText Method
+#### GetText 方法 {#gettext-method}
 
 Gets text for a node's range as a string.
 Prefer [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory%28Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode%29) or
@@ -399,12 +399,12 @@ Prefer [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetT
 public string GetText(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode node)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `node` [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)
 
 
-##### Returns
+##### 返回值 {#returns-12}
 
 string
 
@@ -415,7 +415,7 @@ string
 
 <span id="uid-2178f7f9ca"></span>
 
-#### GetText Method
+#### GetText 方法 {#gettext-method-1}
 
 Gets text for a range as a string.
 Prefer [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory(int,int)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory%28System.Int32%2CSystem.Int32%29) or
@@ -425,7 +425,7 @@ Prefer [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetT
 public string GetText(int offset, int length)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `offset` int
 
@@ -433,7 +433,7 @@ public string GetText(int offset, int length)
 `length` int
 
 
-##### Returns
+##### 返回值 {#returns-13}
 
 string
 
@@ -448,7 +448,7 @@ string
 
 <span id="uid-bf0c5519c2"></span>
 
-#### GetTextMemory Method
+#### GetTextMemory 方法 {#gettextmemory-method}
 
 Gets a zero-copy memory chunk for a snapshot node's text range.
 The returned memory may be shorter than the node's full length
@@ -459,14 +459,14 @@ or iterate with [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnap
 public ReadOnlyMemory<char> GetTextMemory(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode node)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `node` [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)
 
 The snapshot node.
 
 
-##### Returns
+##### 返回值 {#returns-14}
 
 ReadOnlyMemory&lt;char&gt;
 
@@ -479,7 +479,7 @@ A slice of the underlying rope leaf. No allocation.
 
 <span id="uid-95dd36d920"></span>
 
-#### GetTextMemory Method
+#### GetTextMemory 方法 {#gettextmemory-method-1}
 
 Gets a zero-copy memory chunk starting at `offset`.
 Returns up to `maxLength` characters from a single rope leaf.
@@ -491,7 +491,7 @@ to read subsequent chunks.
 public ReadOnlyMemory<char> GetTextMemory(int offset, int maxLength)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `offset` int
 
@@ -503,7 +503,7 @@ Start offset in the document.
 Maximum number of characters to return.
 
 
-##### Returns
+##### 返回值 {#returns-15}
 
 ReadOnlyMemory&lt;char&gt;
 
@@ -516,7 +516,7 @@ A slice of the underlying rope leaf memory. No allocation.
 
 <span id="uid-b01e0215db"></span>
 
-### IndexOfPageBand Method
+### IndexOfPageBand 方法 {#indexofpageband-method}
 
 The position of the band with `id` in [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.PageBands](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.PageBands), or -1.
 
@@ -524,12 +524,12 @@ The position of the band with `id` in [Avalonia.Controls.Documents.Serialization
 public int IndexOfPageBand(Guid id)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `id` Guid
 
 
-#### Returns
+#### 返回值 {#returns-16}
 
 int
 
@@ -544,7 +544,7 @@ int
 
 <span id="uid-cbc9654992"></span>
 
-#### WriteTextTo Method
+#### WriteTextTo 方法 {#writetextto-method}
 
 Streams the text of a snapshot node to a [System.IO.TextWriter](xref:System.IO.TextWriter) in rope-leaf-sized
 chunks. No intermediate string or char[] allocation.
@@ -553,7 +553,7 @@ chunks. No intermediate string or char[] allocation.
 public void WriteTextTo(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode node, System.IO.TextWriter writer)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `node` [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)
 
@@ -567,7 +567,7 @@ public void WriteTextTo(Avalonia.Controls.Documents.Serialization.Snapshot.Snaps
 
 <span id="uid-6bc3c19b15"></span>
 
-#### WriteTextTo Method
+#### WriteTextTo 方法 {#writetextto-method-1}
 
 Appends the text of a snapshot node to a [System.Text.StringBuilder](xref:System.Text.StringBuilder) in rope-leaf-sized
 chunks. No intermediate string allocation.
@@ -576,7 +576,7 @@ chunks. No intermediate string allocation.
 public void WriteTextTo(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode node, System.Text.StringBuilder sb)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `node` [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)
 
@@ -590,7 +590,7 @@ public void WriteTextTo(Avalonia.Controls.Documents.Serialization.Snapshot.Snaps
 
 <span id="uid-8fdf187369"></span>
 
-#### WriteTextTo Method
+#### WriteTextTo 方法 {#writetextto-method-2}
 
 Streams the text of a range to a [System.IO.TextWriter](xref:System.IO.TextWriter) in rope-leaf-sized
 chunks. No intermediate string or char[] allocation.
@@ -599,7 +599,7 @@ chunks. No intermediate string or char[] allocation.
 public void WriteTextTo(int offset, int length, System.IO.TextWriter writer)
 ```
 
-##### Parameters
+##### 参数 {#parameters-16}
 
 `offset` int
 
@@ -616,7 +616,7 @@ public void WriteTextTo(int offset, int length, System.IO.TextWriter writer)
 
 <span id="uid-210387ce7c"></span>
 
-#### WriteTextTo Method
+#### WriteTextTo 方法 {#writetextto-method-3}
 
 Appends the text of a range to a [System.Text.StringBuilder](xref:System.Text.StringBuilder) in rope-leaf-sized
 chunks. No intermediate string allocation.
@@ -625,7 +625,7 @@ chunks. No intermediate string allocation.
 public void WriteTextTo(int offset, int length, System.Text.StringBuilder sb)
 ```
 
-##### Parameters
+##### 参数 {#parameters-17}
 
 `offset` int
 
@@ -638,9 +638,9 @@ public void WriteTextTo(int offset, int length, System.Text.StringBuilder sb)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DocumentFormatting](#uid-89020330fb) | Document-level formatting (page margins, etc.). |
 | [Footnotes](#uid-48a5dec0e7) | The footnotes the document owns (nested document snapshots) in anchor order, paired by id with the [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode) anchors in the body. A range snapshot carries the notes of the anchors inside the range. |
@@ -653,7 +653,7 @@ public void WriteTextTo(int offset, int length, System.Text.StringBuilder sb)
 
 <span id="uid-89020330fb"></span>
 
-### DocumentFormatting Property
+### DocumentFormatting 属性 {#documentformatting-property}
 
 Document-level formatting (page margins, etc.).
 
@@ -667,7 +667,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting Docum
 
 <span id="uid-48a5dec0e7"></span>
 
-### Footnotes Property
+### Footnotes 属性 {#footnotes-property}
 
 The footnotes the document owns (nested document snapshots) in anchor order,
 paired by id with the [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode) anchors in the
@@ -683,7 +683,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Seri
 
 <span id="uid-311eda4811"></span>
 
-### Generation Property
+### Generation 属性 {#generation-property}
 
 Document generation at snapshot time. Can be used to detect changes.
 
@@ -697,7 +697,7 @@ public long Generation { get; set; }
 
 <span id="uid-d0e3d0b379"></span>
 
-### PageBands Property
+### PageBands 属性 {#pagebands-property}
 
 The page bands the document owns (nested document snapshots), placed by their
 role and rule, or referenced by index from the sections'
@@ -714,7 +714,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Seri
 
 <span id="uid-874e5d74e4"></span>
 
-### Root Property
+### Root 属性 {#root-property}
 
 The root of the snapshot tree.
 
@@ -728,7 +728,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode Root { ge
 
 <span id="uid-f55d45e331"></span>
 
-### TextLength Property
+### TextLength 属性 {#textlength-property}
 
 Total text length of the document at snapshot time.
 

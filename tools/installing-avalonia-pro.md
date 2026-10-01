@@ -10,7 +10,7 @@ tags:
 
 This guide explains how to configure your project to use Avalonia Pro packages. These packages are available as part of [Avalonia Pro or Enterprise](https://avaloniaui.net/pricing).
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before you begin, make sure you have:
 
@@ -35,7 +35,7 @@ dotnet add package Avalonia.Controls.MediaPlayer
 
 Replace the package name with the one you need. The following Avalonia Pro packages are available:
 
-| Package | Description |
+| Package | 说明 |
 |---------|-------------|
 | [`Avalonia.Controls.Charts`](/controls/data-display/charts/#getting-started) | Library of graphs, dashboards, analytics |
 | [`Avalonia.Controls.Markdown`](/controls/data-display/text-display/markdown/#getting-started) | Markdown text rendering |
@@ -65,7 +65,7 @@ To share a license key between multiple projects, you can use an [environment va
 See the [Avalonia Pro samples repository](https://github.com/AvaloniaUI/AvaloniaPro.Samples/blob/main/Directory.Build.props) for an example of how to do this with a shared `Directory.Build.props` file.
 :::
 
-## Verify the installation
+## 验证安装 {#verify-the-installation}
 
 Build your project to confirm that the package restores and your license key is accepted:
 
@@ -75,7 +75,7 @@ dotnet build
 
 If the license key is missing or invalid, you will see a build warning. Check that the `<AvaloniaUILicenseKey>` element is in the correct project file and that the key value matches what is shown in your portal account.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia Tools overview](/tools/)
 - [FAQ](/tools/faq)

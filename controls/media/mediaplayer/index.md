@@ -13,7 +13,7 @@ The `MediaPlayerControl` is a fully-featured UI control for media playback that 
 This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
 :::
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `Avalonia.Controls.MediaPlayer` NuGet package by running `dotnet add package`.
 
@@ -101,11 +101,11 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 **Note**: This callback gives you the opportunity to reset the state of the `MediaPlayerControl` gracefully.
 
-## Properties
+## 属性 {#properties}
 
 ### Basic properties
 
-| Property       | Type             | Description                                                                                 |
+| Property       | Type             | 说明                                                                                 |
 |----------------|------------------|---------------------------------------------------------------------------------------------|
 | Player         | MediaPlayer      | Gets the underlying MediaPlayer instance that handles the actual media playback operations. |
 | Source         | MediaSource      | Gets or sets the media source to be played (`UriSource` or `StreamSource`).                 |
@@ -113,7 +113,7 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ### Playback properties
 
-| Property                     | Type      | Description                                                                  |
+| Property                     | Type      | 说明                                                                  |
 |------------------------------|-----------|------------------------------------------------------------------------------|
 | Position                     | TimeSpan  | Gets or sets the current playback position.                                  |
 | Duration                     | TimeSpan? | Gets the total duration of the current media. Null for non-seekable media.   |
@@ -121,7 +121,7 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ### State properties
 
-| Property                | Type    | Description                                                        |
+| Property                | Type    | 说明                                                        |
 |-------------------------|---------|--------------------------------------------------------------------|
 | IsBuffering             | bool    | Gets whether the media is currently buffering.                     |
 | BufferProgress          | double? | Gets the buffer progress (0.0-1.0). Null if not available.         |
@@ -133,14 +133,14 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ### Audio properties
 
-| Property | Type   | Description                                                              |
+| Property | Type   | 说明                                                              |
 |----------|--------|--------------------------------------------------------------------------|
 | Volume   | double | Gets or sets the playback volume with normalized values (e.g., 0.0-1.0). |
 | IsMuted  | bool   | Gets whether audio is currently muted.                                   |
 
 ### Command properties
 
-| Property            | Type     | Description                                                           |
+| Property            | Type     | 说明                                                           |
 |---------------------|----------|-----------------------------------------------------------------------|
 | PlayPauseCommand    | ICommand | Gets the command that toggles between play and pause states.          |
 | StopCommand         | ICommand | Gets the command that stops playback.                                 |
@@ -148,9 +148,9 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 | SkipForwardCommand  | ICommand | Gets the command that skips forward by [SkipTime](#playback-properties) amount.  |
 | SkipBackwardCommand | ICommand | Gets the command that skips backward by [SkipTime](#playback-properties) amount. |
 
-## Events
+## 事件 {#events}
 
-| Event           | Description                                                  |
+| Event           | 说明                                                  |
 |-----------------|--------------------------------------------------------------|
 | ErrorOccurred | Occurs when an error is encountered during media operations. |
 
@@ -306,7 +306,7 @@ flowchart LR
     - Use the built-in commands for integrating with custom buttons/controls.
     - The `IsMediaActive` property is useful for enabling/disabling UI elements.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)
 - [MediaSource class](/controls/media/mediaplayer/mediasource)

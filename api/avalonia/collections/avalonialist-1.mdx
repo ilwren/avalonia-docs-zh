@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaList&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Collections</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Collections</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Collections/AvaloniaList.cs">AvaloniaList.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Collections/AvaloniaList.cs">AvaloniaList.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public class AvaloniaList<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaList&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaList&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IAvaloniaList&lt;&gt;, IAvaloniaReadOnlyList&lt;&gt;, INotifyCollectionChangedDebug, ICollection&lt;&gt;, IEnumerable&lt;&gt;, IList&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, ICollection, IEnumerable, IList, INotifyCollectionChanged, INotifyPropertyChanged
+<span className="apiref-page__meta-label">实现接口：</span> IAvaloniaList&lt;&gt;, IAvaloniaReadOnlyList&lt;&gt;, INotifyCollectionChangedDebug, ICollection&lt;&gt;, IEnumerable&lt;&gt;, IList&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, ICollection, IEnumerable, IList, INotifyCollectionChanged, INotifyPropertyChanged
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 AvaloniaList is similar to [System.Collections.ObjectModel.ObservableCollection&lt;T&gt;](xref:System.Collections.ObjectModel.ObservableCollection%601)
 with a few added features:
@@ -69,9 +69,9 @@ with a few added features:
 - It can be configured to notify the [Avalonia.Collections.AvaloniaList&lt;T&gt;.CollectionChanged](xref:Avalonia.Collections.AvaloniaList%601.CollectionChanged) event with a [System.Collections.Specialized.NotifyCollectionChangedAction.Remove](xref:System.Collections.Specialized.NotifyCollectionChangedAction.Remove) action instead of a [System.Collections.Specialized.NotifyCollectionChangedAction.Reset](xref:System.Collections.Specialized.NotifyCollectionChangedAction.Reset) when the list is cleared by setting [Avalonia.Collections.AvaloniaList&lt;T&gt;.ResetBehavior](xref:Avalonia.Collections.AvaloniaList%601.ResetBehavior) to [Avalonia.Collections.ResetBehavior.Remove](xref:Avalonia.Collections.ResetBehavior.Remove).
 - A [Avalonia.Collections.AvaloniaList&lt;T&gt;.Validate](xref:Avalonia.Collections.AvaloniaList%601.Validate) function can be used to validate each item before insertion.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AvaloniaList&lt;T&gt; (4 overloads)](#uid-ce95a71d9c) | Initializes a new instance of the [Avalonia.Collections.AvaloniaList&lt;T&gt;](xref:Avalonia.Collections.AvaloniaList%601) class. |
 
@@ -83,7 +83,7 @@ with a few added features:
 
 <span id="uid-96dbb8edbe"></span>
 
-#### AvaloniaList&lt;T&gt; Constructor
+#### AvaloniaList&lt;T&gt; 构造函数 {#avalonialistlttgt-constructor}
 
 Initializes a new instance of the [Avalonia.Collections.AvaloniaList&lt;T&gt;](xref:Avalonia.Collections.AvaloniaList%601) class.
 
@@ -97,13 +97,13 @@ public AvaloniaList<T>()
 
 <span id="uid-211673bd3b"></span>
 
-#### AvaloniaList&lt;T&gt; Constructor
+#### AvaloniaList&lt;T&gt; 构造函数 {#avalonialistlttgt-constructor-1}
 
 ```csharp
 public AvaloniaList<T>(System.Collections.Generic.IEnumerable<T> items)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `items` System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -114,7 +114,7 @@ public AvaloniaList<T>(System.Collections.Generic.IEnumerable<T> items)
 
 <span id="uid-f6e489484d"></span>
 
-#### AvaloniaList&lt;T&gt; Constructor
+#### AvaloniaList&lt;T&gt; 构造函数 {#avalonialistlttgt-constructor-2}
 
 Initializes a new instance of the [Avalonia.Collections.AvaloniaList&lt;T&gt;](xref:Avalonia.Collections.AvaloniaList%601).
 
@@ -122,7 +122,7 @@ Initializes a new instance of the [Avalonia.Collections.AvaloniaList&lt;T&gt;](x
 public AvaloniaList<T>(int capacity)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `capacity` int
 
@@ -135,7 +135,7 @@ Initial list capacity.
 
 <span id="uid-cf220b5187"></span>
 
-#### AvaloniaList&lt;T&gt; Constructor
+#### AvaloniaList&lt;T&gt; 构造函数 {#avalonialistlttgt-constructor-3}
 
 Initializes a new instance of the [Avalonia.Collections.AvaloniaList&lt;T&gt;](xref:Avalonia.Collections.AvaloniaList%601) class.
 
@@ -143,7 +143,7 @@ Initializes a new instance of the [Avalonia.Collections.AvaloniaList&lt;T&gt;](x
 public AvaloniaList<T>(T[] items)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `items` T[]
 
@@ -152,25 +152,25 @@ The initial items for the collection.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Add](#uid-8760c50d74) | Adds an item to the collection. |
-| [AddRange](#uid-dd087d7c3c) | No summary available. |
+| [AddRange](#uid-dd087d7c3c) | 暂无摘要。 |
 | [Clear](#uid-374fe42b60) | Removes all items from the collection. |
 | [Contains](#uid-b753fee143) | Tests if the collection contains the specified item. |
 | [CopyTo](#uid-aa3649f581) | Copies the collection's contents to an array. |
 | [EnsureCapacity](#uid-a30c145818) | Ensures that the capacity of the list is at least [Avalonia.Collections.AvaloniaList&lt;T&gt;.Capacity](xref:Avalonia.Collections.AvaloniaList%601.Capacity). |
-| [GetEnumerator](#uid-7d58e25258) | No summary available. |
+| [GetEnumerator](#uid-7d58e25258) | 暂无摘要。 |
 | [GetRange](#uid-d65775833c) | Gets a range of items from the collection. |
 | [IndexOf](#uid-ff46abbfbb) | Gets the index of the specified item in the collection. |
 | [Insert](#uid-8cd746cd54) | Inserts an item at the specified index. |
-| [InsertRange](#uid-c0a5e1213f) | No summary available. |
+| [InsertRange](#uid-c0a5e1213f) | 暂无摘要。 |
 | [Move](#uid-e45f94fdd0) | Moves an item to a new index. |
 | [MoveRange](#uid-d5c954bee9) | Moves multiple items to a new index. |
 | [Remove](#uid-867c926626) | Removes an item from the collection. |
-| [RemoveAll](#uid-4fefc41f09) | No summary available. |
+| [RemoveAll](#uid-4fefc41f09) | 暂无摘要。 |
 | [RemoveAt](#uid-a51b185a94) | Removes the item at the specified index. |
 | [RemoveRange](#uid-96411ebd0d) | Removes a range of elements from the collection. |
 
@@ -178,7 +178,7 @@ The initial items for the collection.
 
 <span id="uid-8760c50d74"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
 Adds an item to the collection.
 
@@ -186,7 +186,7 @@ Adds an item to the collection.
 public void Add(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `item` T
 
@@ -199,13 +199,13 @@ The item.
 
 <span id="uid-dd087d7c3c"></span>
 
-### AddRange Method
+### AddRange 方法 {#addrange-method}
 
 ```csharp
 public void AddRange(System.Collections.Generic.IEnumerable<T> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `items` System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -216,7 +216,7 @@ public void AddRange(System.Collections.Generic.IEnumerable<T> items)
 
 <span id="uid-374fe42b60"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 Removes all items from the collection.
 
@@ -230,7 +230,7 @@ public void Clear()
 
 <span id="uid-b753fee143"></span>
 
-### Contains Method
+### Contains 方法 {#contains-method}
 
 Tests if the collection contains the specified item.
 
@@ -238,14 +238,14 @@ Tests if the collection contains the specified item.
 public bool Contains(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `item` T
 
 The item.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -258,7 +258,7 @@ True if the collection contains the item; otherwise false.
 
 <span id="uid-aa3649f581"></span>
 
-### CopyTo Method
+### CopyTo 方法 {#copyto-method}
 
 Copies the collection's contents to an array.
 
@@ -266,7 +266,7 @@ Copies the collection's contents to an array.
 public void CopyTo(T[] array, int arrayIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `array` T[]
 
@@ -284,7 +284,7 @@ The first index of the array to copy to.
 
 <span id="uid-a30c145818"></span>
 
-### EnsureCapacity Method
+### EnsureCapacity 方法 {#ensurecapacity-method}
 
 Ensures that the capacity of the list is at least [Avalonia.Collections.AvaloniaList&lt;T&gt;.Capacity](xref:Avalonia.Collections.AvaloniaList%601.Capacity).
 
@@ -292,7 +292,7 @@ Ensures that the capacity of the list is at least [Avalonia.Collections.Avalonia
 public void EnsureCapacity(int capacity)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `capacity` int
 
@@ -305,13 +305,13 @@ The capacity.
 
 <span id="uid-7d58e25258"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 ```csharp
 public Avalonia.Collections.AvaloniaList<T>.Enumerator<T><T> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 Avalonia.Collections.AvaloniaList&lt;T&gt;.Enumerator&lt;T&gt;&lt;T&gt;
 
@@ -322,7 +322,7 @@ Avalonia.Collections.AvaloniaList&lt;T&gt;.Enumerator&lt;T&gt;&lt;T&gt;
 
 <span id="uid-d65775833c"></span>
 
-### GetRange Method
+### GetRange 方法 {#getrange-method}
 
 Gets a range of items from the collection.
 
@@ -330,7 +330,7 @@ Gets a range of items from the collection.
 public System.Collections.Generic.IEnumerable<T> GetRange(int index, int count)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `index` int
 
@@ -342,7 +342,7 @@ The zero-based [Avalonia.Collections.AvaloniaList&lt;T&gt;](xref:Avalonia.Collec
 The number of elements in the range.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -353,7 +353,7 @@ System.Collections.Generic.IEnumerable&lt;T&gt;
 
 <span id="uid-ff46abbfbb"></span>
 
-### IndexOf Method
+### IndexOf 方法 {#indexof-method}
 
 Gets the index of the specified item in the collection.
 
@@ -361,14 +361,14 @@ Gets the index of the specified item in the collection.
 public int IndexOf(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `item` T
 
 The item.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 int
 
@@ -381,7 +381,7 @@ The index of the item or -1 if the item is not contained in the collection.
 
 <span id="uid-8cd746cd54"></span>
 
-### Insert Method
+### Insert 方法 {#insert-method}
 
 Inserts an item at the specified index.
 
@@ -389,7 +389,7 @@ Inserts an item at the specified index.
 public void Insert(int index, T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `index` int
 
@@ -407,13 +407,13 @@ The item.
 
 <span id="uid-c0a5e1213f"></span>
 
-### InsertRange Method
+### InsertRange 方法 {#insertrange-method}
 
 ```csharp
 public void InsertRange(int index, System.Collections.Generic.IEnumerable<T> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `index` int
 
@@ -427,7 +427,7 @@ public void InsertRange(int index, System.Collections.Generic.IEnumerable<T> ite
 
 <span id="uid-e45f94fdd0"></span>
 
-### Move Method
+### Move 方法 {#move-method}
 
 Moves an item to a new index.
 
@@ -435,7 +435,7 @@ Moves an item to a new index.
 public void Move(int oldIndex, int newIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `oldIndex` int
 
@@ -453,7 +453,7 @@ The index to move the item to.
 
 <span id="uid-d5c954bee9"></span>
 
-### MoveRange Method
+### MoveRange 方法 {#moverange-method}
 
 Moves multiple items to a new index.
 
@@ -461,7 +461,7 @@ Moves multiple items to a new index.
 public void MoveRange(int oldIndex, int count, int newIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `oldIndex` int
 
@@ -484,7 +484,7 @@ The index to move the items to.
 
 <span id="uid-867c926626"></span>
 
-### Remove Method
+### Remove 方法 {#remove-method}
 
 Removes an item from the collection.
 
@@ -492,14 +492,14 @@ Removes an item from the collection.
 public bool Remove(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `item` T
 
 The item.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 bool
 
@@ -512,13 +512,13 @@ True if the item was found and removed, otherwise false.
 
 <span id="uid-4fefc41f09"></span>
 
-### RemoveAll Method
+### RemoveAll 方法 {#removeall-method}
 
 ```csharp
 public void RemoveAll(System.Collections.Generic.IEnumerable<T> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters-15}
 
 `items` System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -529,7 +529,7 @@ public void RemoveAll(System.Collections.Generic.IEnumerable<T> items)
 
 <span id="uid-a51b185a94"></span>
 
-### RemoveAt Method
+### RemoveAt 方法 {#removeat-method}
 
 Removes the item at the specified index.
 
@@ -537,7 +537,7 @@ Removes the item at the specified index.
 public void RemoveAt(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-16}
 
 `index` int
 
@@ -550,7 +550,7 @@ The index.
 
 <span id="uid-96411ebd0d"></span>
 
-### RemoveRange Method
+### RemoveRange 方法 {#removerange-method}
 
 Removes a range of elements from the collection.
 
@@ -558,7 +558,7 @@ Removes a range of elements from the collection.
 public void RemoveRange(int index, int count)
 ```
 
-#### Parameters
+#### 参数 {#parameters-17}
 
 `index` int
 
@@ -572,13 +572,13 @@ The number of items to remove.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Capacity](#uid-4a853a2f80) | Gets or sets the total number of elements the internal data structure can hold without resizing. |
 | [Count](#uid-b41fd65fb1) | Gets the number of items in the collection. |
-| [Item](#uid-1d41620245) | No summary available. |
+| [Item](#uid-1d41620245) | 暂无摘要。 |
 | [ResetBehavior](#uid-518fc92cf0) | Gets or sets the reset behavior of the list. |
 | [Validate](#uid-71ccb4ef1d) | Gets or sets a validation routine that can be used to validate items before they are added. |
 
@@ -586,7 +586,7 @@ The number of items to remove.
 
 <span id="uid-4a853a2f80"></span>
 
-### Capacity Property
+### Capacity 属性 {#capacity-property}
 
 Gets or sets the total number of elements the internal data structure can hold without resizing.
 
@@ -600,7 +600,7 @@ public int Capacity { get; set; }
 
 <span id="uid-b41fd65fb1"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 Gets the number of items in the collection.
 
@@ -614,7 +614,7 @@ public int Count { get; set; }
 
 <span id="uid-1d41620245"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public T Item { get; set; }
@@ -626,7 +626,7 @@ public T Item { get; set; }
 
 <span id="uid-518fc92cf0"></span>
 
-### ResetBehavior Property
+### ResetBehavior 属性 {#resetbehavior-property}
 
 Gets or sets the reset behavior of the list.
 
@@ -640,7 +640,7 @@ public Avalonia.Collections.ResetBehavior ResetBehavior { get; set; }
 
 <span id="uid-71ccb4ef1d"></span>
 
-### Validate Property
+### Validate 属性 {#validate-property}
 
 Gets or sets a validation routine that can be used to validate items before they are
 added.
@@ -651,9 +651,9 @@ public Action<T> Validate { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CollectionChanged](#uid-46cafc7a04) | Raised when a change is made to the collection's items. |
 | [PropertyChanged](#uid-b2858b35f9) | Raised when a property on the collection changes. |
@@ -662,7 +662,7 @@ public Action<T> Validate { get; set; }
 
 <span id="uid-46cafc7a04"></span>
 
-### CollectionChanged Event
+### CollectionChanged 事件 {#collectionchanged-event}
 
 Raised when a change is made to the collection's items.
 
@@ -676,7 +676,7 @@ public event System.Collections.Specialized.NotifyCollectionChangedEventHandler 
 
 <span id="uid-b2858b35f9"></span>
 
-### PropertyChanged Event
+### PropertyChanged 事件 {#propertychanged-event}
 
 Raised when a property on the collection changes.
 

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ColorToHexConverter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Converters</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Converters</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/Converters/ColorToHexConverter.cs">ColorToHexConverter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/Converters/ColorToHexConverter.cs">ColorToHexConverter.cs</a>
 </div>
 
 </div>
@@ -54,24 +54,24 @@ public class ColorToHexConverter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ColorToHexConverter
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ColorToHexConverter
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../data/converters/ivalueconverter">IValueConverter</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../data/converters/ivalueconverter">IValueConverter</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ColorToHexConverter](#uid-d34c223a45) | No summary available. |
+| [ColorToHexConverter](#uid-d34c223a45) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d34c223a45"></span>
 
-### ColorToHexConverter Constructor
+### ColorToHexConverter 构造函数 {#colortohexconverter-constructor}
 
 ```csharp
 public ColorToHexConverter()
@@ -79,12 +79,12 @@ public ColorToHexConverter()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Convert](#uid-d2b3f16945) | Converts a value. |
-| [ConvertBack](#uid-fa184892e4) | Converts a value. |
+| [Convert](#uid-d2b3f16945) | 转换一个值。 |
+| [ConvertBack](#uid-fa184892e4) | 转换一个值。 |
 | [ParseHexString](#uid-2858de8c4f) | Parses a hex color value string into a new [Avalonia.Media.Color](xref:Avalonia.Media.Color). |
 | [ToHexString](#uid-09980d8423) | Converts the given color to its hex color value string representation. |
 
@@ -92,48 +92,46 @@ public ColorToHexConverter()
 
 <span id="uid-d2b3f16945"></span>
 
-### Convert Method
+### Convert 方法 {#convert-method}
 
-Converts a value.
+转换一个值。
 
 ```csharp
 public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the target.
+目标的类型。
 
 
 `parameter` object
 
-A user-defined parameter.
+用户自定义参数。
 
 
 `culture` System.Globalization.CultureInfo
 
-The culture to use.
+要使用的区域性信息。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
-The converted value.
+转换后的值。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-This method should not throw exceptions. If the value is not convertible, return
-a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) in an error state. Any exceptions thrown will be
-treated as an application exception.
+此方法不应抛出异常。若值无法转换，请返回一个处于错误状态的 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification)。任何被抛出的异常都会被当作应用程序异常处理。
 
 </section>
 
@@ -141,48 +139,46 @@ treated as an application exception.
 
 <span id="uid-fa184892e4"></span>
 
-### ConvertBack Method
+### ConvertBack 方法 {#convertback-method}
 
-Converts a value.
+转换一个值。
 
 ```csharp
 public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the target.
+目标的类型。
 
 
 `parameter` object
 
-A user-defined parameter.
+用户自定义参数。
 
 
 `culture` System.Globalization.CultureInfo
 
-The culture to use.
+要使用的区域性信息。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 
-The converted value.
+转换后的值。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-This method should not throw exceptions. If the value is not convertible, return
-a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) in an error state. Any exceptions thrown will be
-treated as an application exception.
+此方法不应抛出异常。若值无法转换，请返回一个处于错误状态的 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification)。任何被抛出的异常都会被当作应用程序异常处理。
 
 </section>
 
@@ -190,7 +186,7 @@ treated as an application exception.
 
 <span id="uid-2858de8c4f"></span>
 
-### ParseHexString Method
+### ParseHexString 方法 {#parsehexstring-method}
 
 Parses a hex color value string into a new [Avalonia.Media.Color](xref:Avalonia.Media.Color).
 
@@ -198,7 +194,7 @@ Parses a hex color value string into a new [Avalonia.Media.Color](xref:Avalonia.
 public Nullable<Avalonia.Media.Color> ParseHexString(string hexColor, Avalonia.Controls.AlphaComponentPosition alphaPosition)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `hexColor` string
 
@@ -210,7 +206,7 @@ The hex color string to parse.
 The input position of the alpha component.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 Nullable&lt;[Avalonia.Media.Color](xref:Avalonia.Media.Color)&gt;
 
@@ -223,7 +219,7 @@ The parsed [Avalonia.Media.Color](xref:Avalonia.Media.Color); otherwise, null.
 
 <span id="uid-09980d8423"></span>
 
-### ToHexString Method
+### ToHexString 方法 {#tohexstring-method}
 
 Converts the given color to its hex color value string representation.
 
@@ -231,7 +227,7 @@ Converts the given color to its hex color value string representation.
 public string ToHexString(Avalonia.Media.Color color, Avalonia.Controls.AlphaComponentPosition alphaPosition, bool includeAlpha, bool includeSymbol)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `color` [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
@@ -253,7 +249,7 @@ Whether the alpha component will be included in the hex string.
 Whether the hex symbol '#' will be added.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
@@ -262,9 +258,9 @@ The input color converted to its hex value string.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AlphaPosition](#uid-7e36f29bf3) | Gets or sets the position of a color's alpha component relative to all other components. |
 | [IsAlphaVisible](#uid-3ab36802e9) | Gets or sets a value indicating whether the alpha component is visible in the Hex formatted text. |
@@ -273,7 +269,7 @@ The input color converted to its hex value string.
 
 <span id="uid-7e36f29bf3"></span>
 
-### AlphaPosition Property
+### AlphaPosition 属性 {#alphaposition-property}
 
 Gets or sets the position of a color's alpha component relative to all other components.
 
@@ -287,7 +283,7 @@ public Avalonia.Controls.AlphaComponentPosition AlphaPosition { get; set; }
 
 <span id="uid-3ab36802e9"></span>
 
-### IsAlphaVisible Property
+### IsAlphaVisible 属性 {#isalphavisible-property}
 
 Gets or sets a value indicating whether the alpha component is visible in the Hex formatted text.
 
@@ -295,7 +291,7 @@ Gets or sets a value indicating whether the alpha component is visible in the He
 public bool IsAlphaVisible { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 When hidden the existing alpha component value is maintained. Also when hidden the user is still
 able to input an 8-digit number with alpha. Alpha will be processed but then removed when displayed.

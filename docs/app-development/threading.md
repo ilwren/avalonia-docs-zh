@@ -109,7 +109,7 @@ Dispatcher.UIThread.Post(
 
 Common priorities, from highest to lowest:
 
-| Priority | Description |
+| Priority | 说明 |
 |---|---|
 | `Send` | Processed before other asynchronous operations. |
 | `Normal` | Processed with normal priority. |
@@ -340,7 +340,7 @@ private void OnButtonClick(object? sender, RoutedEventArgs e)
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [`Dispatcher` API reference](/api/avalonia/threading/dispatcher)
 - [Application Lifetimes](/docs/fundamentals/application-lifetimes): How the application lifecycle interacts with threading.

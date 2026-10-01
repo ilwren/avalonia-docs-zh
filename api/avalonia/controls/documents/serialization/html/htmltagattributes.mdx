@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HtmlTagAttributes Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 </div>
 
@@ -50,29 +50,29 @@ public struct HtmlTagAttributes
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> HtmlTagAttributes
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> HtmlTagAttributes
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Names and values are spans into the tag text the tokenizer is currently holding, so reading
 them allocates nothing. The spans are only valid for the duration of the handler callback;
 call [ReadOnlySpan&lt;T&gt;.ToString](xref:System.ReadOnlySpan%601.ToString) on anything that has to outlive it.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetName](#uid-dfda5922f6) | Gets the name of the attribute at `index`, in the casing the document used. |
 | [GetValue](#uid-eb7654de0c) | Gets the value of the attribute at `index` with the surrounding quotes stripped. Empty for a boolean attribute such as `disabled`. |
-| [TryGetValue](#uid-94d0fd9323) | No summary available. |
+| [TryGetValue](#uid-94d0fd9323) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-dfda5922f6"></span>
 
-### GetName Method
+### GetName 方法 {#getname-method}
 
 Gets the name of the attribute at `index`, in the casing the document used.
 
@@ -80,19 +80,19 @@ Gets the name of the attribute at `index`, in the casing the document used.
 public ReadOnlySpan<char> GetName(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `index` int
 
 The zero-based attribute index.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 ReadOnlySpan&lt;char&gt;
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [\`index\` is outside \[Avalonia.Controls.Documents.Serialization.Html.HtmlTagAttributes.Count\](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlTagAttributes.Count).](xref:System.ArgumentOutOfRangeException)
 
@@ -102,7 +102,7 @@ ReadOnlySpan&lt;char&gt;
 
 <span id="uid-eb7654de0c"></span>
 
-### GetValue Method
+### GetValue 方法 {#getvalue-method}
 
 Gets the value of the attribute at `index` with the surrounding quotes
 stripped. Empty for a boolean attribute such as `disabled`.
@@ -111,19 +111,19 @@ stripped. Empty for a boolean attribute such as `disabled`.
 public ReadOnlySpan<char> GetValue(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `index` int
 
 The zero-based attribute index.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 ReadOnlySpan&lt;char&gt;
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [\`index\` is outside \[Avalonia.Controls.Documents.Serialization.Html.HtmlTagAttributes.Count\](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlTagAttributes.Count).](xref:System.ArgumentOutOfRangeException)
 
@@ -133,13 +133,13 @@ ReadOnlySpan&lt;char&gt;
 
 <span id="uid-94d0fd9323"></span>
 
-### TryGetValue Method
+### TryGetValue 方法 {#trygetvalue-method}
 
 ```csharp
 public bool TryGetValue(ReadOnlySpan<char> name, ReadOnlySpan<char>& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `name` ReadOnlySpan&lt;char&gt;
 
@@ -147,16 +147,16 @@ public bool TryGetValue(ReadOnlySpan<char> name, ReadOnlySpan<char>& value)
 `value` ReadOnlySpan&lt;char&gt;&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](#uid-489218bd6c) | Gets the number of attributes on the tag. |
 
@@ -164,7 +164,7 @@ bool
 
 <span id="uid-489218bd6c"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 Gets the number of attributes on the tag.
 

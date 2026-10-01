@@ -63,7 +63,7 @@ public ObservableCollection<GraphEdge> ForceEdges { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `NodesSource` | Collection of nodes. | `null` |
 | `EdgesSource` | Collection of links. | `null` |

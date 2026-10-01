@@ -51,9 +51,9 @@ public class WindowDrawnDecorationsContent : StyledElement
 }
 ```
 
-## Properties
+## 属性 {#properties}
 
-| Property | Type | Visibility | Description |
+| Property | Type | Visibility | 说明 |
 | --- | --- | --- | --- |
 | `Template` | `WindowDrawnDecorationsTemplate` | Styled | Decorations template. |
 | `DefaultTitleBarHeight` | `double` | Styled | Default titlebar height. Decided by theme if unset. |
@@ -93,7 +93,7 @@ Pseudoclasses are applied whenever window state changes, e.g., when `Window` goe
 
 This functionality replaces the `CaptionButtons` class in earlier versions of Avalonia.
 
-| Part | Type | Description |
+| Part | Type | 说明 |
 | --- | --- | --- |
 | `PART_CloseButton` | `Button?` | Close button. |
 | `PART_MinimizeButton` | `Button?` | Minimize button. |
@@ -106,7 +106,7 @@ This functionality replaces the `CaptionButtons` class in earlier versions of Av
 
 The following element roles are available:
 
-| Role | Description |
+| Role | 说明 |
 | --- | --- |
 | `None` | No role. Element is invisible to hit testing. |
 | `DecorationsElement` | Interactive element set on decoration template elements. Input is passed through to the element. |

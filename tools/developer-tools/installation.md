@@ -12,7 +12,7 @@ tags:
 
 In this tutorial, you install the Avalonia Plus Developer Tools, add the diagnostics support package to your project, and verify the connection between your app and the tool.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 ### Developer Tools requirements
 
@@ -170,7 +170,7 @@ Once the Developer Tools has opened, you will be asked to input `AvaloniaUI Port
 
 After activation, the connection with the app will be resumed, and a window with tools will be opened. 
 
-## See also
+## 另请参阅 {#see-also}
 
 - Documentation on [Elements tool](/tools/developer-tools/elements-tool)
 - Custom [DeveloperToolsOptions configuration](/tools/developer-tools/options) reference

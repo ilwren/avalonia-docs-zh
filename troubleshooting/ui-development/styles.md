@@ -143,7 +143,7 @@ Avalonia has multiple types of properties, which you can learn more about in [De
 
 If you are unable to restore an earlier property value, it is likely you are using a direct property. Consider changing to a different property, or [customizing a property](/docs/custom-controls/defining-properties).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Style selectors](/docs/styling/style-selectors)

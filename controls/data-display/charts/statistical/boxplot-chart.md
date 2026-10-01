@@ -58,7 +58,7 @@ public ObservableCollection<BoxPlotPoint> BoxPlotData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of statistical data points. | `null` |
 | `MinPath` | Path to the minimum value. | `null` |

@@ -135,14 +135,14 @@ A control cannot have both a `ContextFlyout` and a `ContextMenu` attached at the
 
 ## Useful properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `ItemsSource` | `IEnumerable` | Binds menu items to a collection so you can generate them dynamically. |
 | `Opening` | `event` | Raised before the context menu opens. Set `Cancel` to `true` to prevent it. |
 | `Closing` | `event` | Raised when the context menu closes. |
 | `Placement` | `PlacementMode` | Controls where the context menu appears relative to the pointer. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Menu](/controls/menus/menu)
 - [MenuFlyout](/controls/menus/menuflyout)

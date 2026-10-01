@@ -64,7 +64,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ShowLegend` | Toggles the visibility of the legend. | `false` |
 | `LegendPosition` | `None`, `Top`, `Bottom`, `Left`, `Right`, or `Floating`. | `None` |
@@ -76,7 +76,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 `ChartLegend` is the reusable legend control used by charts.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Items` | Legend item collection to display. | `null` |
 | `Orientation` | Layout direction for legend entries, `Horizontal` or `Vertical`. | `Vertical` |
@@ -87,7 +87,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 Legend entries are represented by `ChartLegendItem`. Built-in series create legend items automatically and choose marker shapes that match the rendered series style, such as line, band, candlestick, radar, OHLC, or point-and-figure markers. Custom series can override `CreateLegendItem` to change the marker, source, or toggle behavior.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Text` | Display text for the legend item. | `null` |
 | `Fill` | Fill brush for the marker. | `null` |
@@ -100,13 +100,13 @@ Legend entries are represented by `ChartLegendItem`. Built-in series create lege
 | `Source` | Series, technical indicator, or chart item represented by the legend item. | `null` |
 | `ToggleAction` | Optional action invoked when the legend item is toggled. | `null` |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 | :--- | :--- |
 | `LegendItemClicked` | Raised after a legend item toggles the visibility of its associated source. Event data exposes the clicked `Item` and `IsNowVisible`. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Chart export](/controls/data-display/charts/shared-elements/export-chart)
 - [Markers](/controls/data-display/charts/shared-elements/markers-chart)

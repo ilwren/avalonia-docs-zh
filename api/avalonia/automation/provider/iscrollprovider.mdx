@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IScrollProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Provider</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Provider</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IScrollProvider.cs">IScrollProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IScrollProvider.cs">IScrollProvider.cs</a>
 </div>
 
 </div>
@@ -53,9 +53,9 @@ public interface IScrollProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Scroll](#uid-2c98c2b745) | Scrolls the visible region of the content area horizontally and vertically. |
 | [SetScrollPercent](#uid-3735cebfd9) | Sets the horizontal and vertical scroll position as a percentage of the total content area within the control. |
@@ -64,7 +64,7 @@ public interface IScrollProvider
 
 <span id="uid-2c98c2b745"></span>
 
-### Scroll Method
+### Scroll 方法 {#scroll-method}
 
 Scrolls the visible region of the content area horizontally and vertically.
 
@@ -72,7 +72,7 @@ Scrolls the visible region of the content area horizontally and vertically.
 public void Scroll(Avalonia.Automation.Provider.ScrollAmount horizontalAmount, Avalonia.Automation.Provider.ScrollAmount verticalAmount)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `horizontalAmount` [Avalonia.Automation.Provider.ScrollAmount](xref:Avalonia.Automation.Provider.ScrollAmount)
 
@@ -84,10 +84,10 @@ The horizontal increment specific to the control.
 The vertical increment specific to the control.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 - Windows`IScrollProvider.Scroll`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -95,7 +95,7 @@ The vertical increment specific to the control.
 
 <span id="uid-3735cebfd9"></span>
 
-### SetScrollPercent Method
+### SetScrollPercent 方法 {#setscrollpercent-method}
 
 Sets the horizontal and vertical scroll position as a percentage of the total content
 area within the control.
@@ -104,7 +104,7 @@ area within the control.
 public void SetScrollPercent(double horizontalPercent, double verticalPercent)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `horizontalPercent` double
 
@@ -120,16 +120,16 @@ The vertical position as a percentage of the content area's total range.
 cannot be scrolled in this direction.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 - Windows`IScrollProvider.SetScrollPercent`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HorizontallyScrollable](#uid-b71163329b) | Gets a value that indicates whether the control can scroll horizontally. |
 | [HorizontalScrollPercent](#uid-b1248aa738) | Gets the current horizontal scroll position. |
@@ -142,7 +142,7 @@ cannot be scrolled in this direction.
 
 <span id="uid-b71163329b"></span>
 
-### HorizontallyScrollable Property
+### HorizontallyScrollable 属性 {#horizontallyscrollable-property}
 
 Gets a value that indicates whether the control can scroll horizontally.
 
@@ -150,10 +150,10 @@ Gets a value that indicates whether the control can scroll horizontally.
 public bool HorizontallyScrollable { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 - Windows`IScrollProvider.HorizontallyScrollable`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -161,7 +161,7 @@ public bool HorizontallyScrollable { get; set; }
 
 <span id="uid-b1248aa738"></span>
 
-### HorizontalScrollPercent Property
+### HorizontalScrollPercent 属性 {#horizontalscrollpercent-property}
 
 Gets the current horizontal scroll position.
 
@@ -169,10 +169,10 @@ Gets the current horizontal scroll position.
 public double HorizontalScrollPercent { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 - Windows`IScrollProvider.HorizontalScrollPercent`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -180,7 +180,7 @@ public double HorizontalScrollPercent { get; set; }
 
 <span id="uid-e0b06e8d92"></span>
 
-### HorizontalViewSize Property
+### HorizontalViewSize 属性 {#horizontalviewsize-property}
 
 Gets the current horizontal view size.
 
@@ -188,10 +188,10 @@ Gets the current horizontal view size.
 public double HorizontalViewSize { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 - Windows`IScrollProvider.HorizontalViewSize`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -199,7 +199,7 @@ public double HorizontalViewSize { get; set; }
 
 <span id="uid-f6a3279088"></span>
 
-### VerticallyScrollable Property
+### VerticallyScrollable 属性 {#verticallyscrollable-property}
 
 Gets a value that indicates whether the control can scroll vertically.
 
@@ -207,10 +207,10 @@ Gets a value that indicates whether the control can scroll vertically.
 public bool VerticallyScrollable { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 - Windows`IScrollProvider.VerticallyScrollable`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -218,7 +218,7 @@ public bool VerticallyScrollable { get; set; }
 
 <span id="uid-29deba5aa9"></span>
 
-### VerticalScrollPercent Property
+### VerticalScrollPercent 属性 {#verticalscrollpercent-property}
 
 Gets the current vertical scroll position.
 
@@ -226,10 +226,10 @@ Gets the current vertical scroll position.
 public double VerticalScrollPercent { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 - Windows`IScrollProvider.VerticalScrollPercent`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -237,7 +237,7 @@ public double VerticalScrollPercent { get; set; }
 
 <span id="uid-d04ac6b142"></span>
 
-### VerticalViewSize Property
+### VerticalViewSize 属性 {#verticalviewsize-property}
 
 Gets the vertical view size.
 
@@ -245,10 +245,10 @@ Gets the vertical view size.
 public double VerticalViewSize { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 - Windows`IScrollProvider.VerticalViewSize`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 

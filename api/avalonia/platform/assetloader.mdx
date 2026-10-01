@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AssetLoader Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/AssetLoader.cs">AssetLoader.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/AssetLoader.cs">AssetLoader.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class AssetLoader
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AssetLoader
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AssetLoader
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Exists](#uid-a2d936751b) | Checks if an asset with the specified URI exists. |
 | [GetAssembly](#uid-b6ea2136e2) | Extracts assembly information from URI |
@@ -74,7 +74,7 @@ public class AssetLoader
 
 <span id="uid-a2d936751b"></span>
 
-### Exists Method
+### Exists 方法 {#exists-method}
 
 Checks if an asset with the specified URI exists.
 
@@ -82,7 +82,7 @@ Checks if an asset with the specified URI exists.
 public bool Exists(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `uri` Uri
 
@@ -94,7 +94,7 @@ The URI.
 A base URI to use if `uri` is relative.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -107,7 +107,7 @@ True if the asset could be found; otherwise false.
 
 <span id="uid-b6ea2136e2"></span>
 
-### GetAssembly Method
+### GetAssembly 方法 {#getassembly-method}
 
 Extracts assembly information from URI
 
@@ -115,7 +115,7 @@ Extracts assembly information from URI
 public System.Reflection.Assembly GetAssembly(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `uri` Uri
 
@@ -127,7 +127,7 @@ The URI.
 A base URI to use if `uri` is relative.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Reflection.Assembly
 
@@ -140,7 +140,7 @@ Assembly associated with the Uri
 
 <span id="uid-6ff7ed26c8"></span>
 
-### GetAssets Method
+### GetAssets 方法 {#getassets-method}
 
 Gets all assets of a folder and subfolders that match specified uri.
 
@@ -148,7 +148,7 @@ Gets all assets of a folder and subfolders that match specified uri.
 public System.Collections.Generic.IEnumerable<Uri> GetAssets(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `uri` Uri
 
@@ -160,7 +160,7 @@ The URI.
 The base URI.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IEnumerable&lt;Uri&gt;
 
@@ -177,7 +177,7 @@ All matching assets as a tuple of the absolute path to the asset and the assembl
 
 <span id="uid-1d9a9acaca"></span>
 
-#### InvalidateAssemblyCache Method
+#### InvalidateAssemblyCache 方法 {#invalidateassemblycache-method}
 
 Removes the assembly from the cache.
 
@@ -185,7 +185,7 @@ Removes the assembly from the cache.
 public void InvalidateAssemblyCache()
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `name`
 
@@ -198,7 +198,7 @@ The Assemblies.First().GetName().Name
 
 <span id="uid-69bab483c0"></span>
 
-#### InvalidateAssemblyCache Method
+#### InvalidateAssemblyCache 方法 {#invalidateassemblycache-method-1}
 
 Removes all assemblies from the cache.
 
@@ -206,7 +206,7 @@ Removes all assemblies from the cache.
 public void InvalidateAssemblyCache(string name)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `name` string
 
@@ -217,7 +217,7 @@ public void InvalidateAssemblyCache(string name)
 
 <span id="uid-7f4ecce179"></span>
 
-### Open Method
+### Open 方法 {#open-method}
 
 Opens the asset with the requested URI.
 
@@ -225,7 +225,7 @@ Opens the asset with the requested URI.
 public System.IO.Stream Open(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `uri` Uri
 
@@ -237,14 +237,14 @@ The URI.
 A base URI to use if `uri` is relative.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.IO.Stream
 
 A stream containing the asset contents.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [The asset could not be found.](xref:System.IO.FileNotFoundException)
 
@@ -254,7 +254,7 @@ A stream containing the asset contents.
 
 <span id="uid-6979d66c9f"></span>
 
-### OpenAndGetAssembly Method
+### OpenAndGetAssembly 方法 {#openandgetassembly-method}
 
 Opens the asset with the requested URI and returns the asset stream and the
 assembly containing the asset.
@@ -263,7 +263,7 @@ assembly containing the asset.
 public ValueTuple<System.IO.Stream, System.Reflection.Assembly> OpenAndGetAssembly(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `uri` Uri
 
@@ -275,14 +275,14 @@ The URI.
 A base URI to use if `uri` is relative.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 ValueTuple&lt;System.IO.Stream, System.Reflection.Assembly&gt;
 
 The stream containing the asset contents together with the assembly.
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [The asset could not be found.](xref:System.IO.FileNotFoundException)
 
@@ -292,7 +292,7 @@ The stream containing the asset contents together with the assembly.
 
 <span id="uid-646a20e9ab"></span>
 
-### SetDefaultAssembly Method
+### SetDefaultAssembly 方法 {#setdefaultassembly-method}
 
 We need a way to override the default assembly selected by the host platform
 because right now it is selecting the wrong one for PCL based Apps. The
@@ -303,7 +303,7 @@ can all be loaded on Windows.
 public void SetDefaultAssembly(System.Reflection.Assembly assembly)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `assembly` System.Reflection.Assembly
 

@@ -274,7 +274,7 @@ public int Quantity
 
 While this works, `INotifyDataErrorInfo` is the preferred approach because it supports multiple errors per property and async validation.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding modes and parameters.
 - [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged): Change notification for view models.

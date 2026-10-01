@@ -146,7 +146,7 @@ public class ConfirmFlyout : PopupFlyoutBase
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Flyout](/controls/layout/containers/flyout): Reference for the built-in flyout control.
 - [Defining properties](/docs/custom-controls/defining-properties): Add styled, direct, and attached properties to your flyout class.

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HtmlReaderContext Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 </div>
 
@@ -51,13 +51,13 @@ public class HtmlReaderContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlReaderContext
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlReaderContext
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AddLineBreak](#uid-fbdb71263c) | Adds a line break inline. |
 | [CloseParagraph](#uid-3eb9acfac2) | Closes the current paragraph (if open). |
@@ -70,7 +70,7 @@ public class HtmlReaderContext
 
 <span id="uid-fbdb71263c"></span>
 
-### AddLineBreak Method
+### AddLineBreak 方法 {#addlinebreak-method}
 
 Adds a line break inline.
 
@@ -84,7 +84,7 @@ public void AddLineBreak()
 
 <span id="uid-3eb9acfac2"></span>
 
-### CloseParagraph Method
+### CloseParagraph 方法 {#closeparagraph-method}
 
 Closes the current paragraph (if open).
 
@@ -98,7 +98,7 @@ public void CloseParagraph()
 
 <span id="uid-25f2f4c538"></span>
 
-### EnsureParagraph Method
+### EnsureParagraph 方法 {#ensureparagraph-method}
 
 Ensures a paragraph is open, creating one if needed.
 
@@ -112,7 +112,7 @@ public void EnsureParagraph()
 
 <span id="uid-9b1a3d3ca1"></span>
 
-### PopInline Method
+### PopInline 方法 {#popinline-method}
 
 Pops the current formatting inline.
 
@@ -126,7 +126,7 @@ public void PopInline()
 
 <span id="uid-7cd2b5e196"></span>
 
-### PushInline Method
+### PushInline 方法 {#pushinline-method}
 
 Pushes a formatting inline onto the stack.
 
@@ -134,7 +134,7 @@ Pushes a formatting inline onto the stack.
 public void PushInline(Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft inline)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `inline` [Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft)
 
@@ -145,7 +145,7 @@ public void PushInline(Avalonia.Controls.Documents.Serialization.Authoring.Inlin
 
 <span id="uid-b1a90a6eb9"></span>
 
-### WriteText Method
+### WriteText 方法 {#writetext-method}
 
 Writes text with the current inline formatting.
 
@@ -153,16 +153,16 @@ Writes text with the current inline formatting.
 public void WriteText(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `text` string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CurrentTagContent](#uid-19e137c658) | The tag content span from the current token, for attribute parsing. |
 | [IsInsideParagraph](#uid-f874a365c7) | Whether there is currently an open paragraph. |
@@ -171,7 +171,7 @@ public void WriteText(string text)
 
 <span id="uid-19e137c658"></span>
 
-### CurrentTagContent Property
+### CurrentTagContent 属性 {#currenttagcontent-property}
 
 The tag content span from the current token, for attribute parsing.
 
@@ -185,7 +185,7 @@ public ReadOnlyMemory<char> CurrentTagContent { get; set; }
 
 <span id="uid-f874a365c7"></span>
 
-### IsInsideParagraph Property
+### IsInsideParagraph 属性 {#isinsideparagraph-property}
 
 Whether there is currently an open paragraph.
 

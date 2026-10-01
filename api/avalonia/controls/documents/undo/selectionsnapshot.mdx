@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SelectionSnapshot Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -53,14 +53,14 @@ public struct SelectionSnapshot
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SelectionSnapshot
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SelectionSnapshot
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;SelectionSnapshot&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;SelectionSnapshot&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Restoration uses a three-tier strategy:
 
@@ -74,19 +74,19 @@ earlier content changes. At restore time the global offset is
 re-derived from the (possibly replaced) leaf's current
 `GlobalStartOffset` plus this captured `leafOffset`.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Capture](#uid-9a32ebb5aa) | Captures `selection`'s two endpoints. Pass the result to [Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit(string,Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit%28System.String%2CSystem.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29) as the pre-edit state, or to [Avalonia.Controls.Documents.Undo.IUndoScope.SetSelectionAfter(Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.IUndoScope.SetSelectionAfter%28System.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29) as the post-edit state, to have the caret restored with the unit. |
-| [Equals (2 overloads)](#uid-a63d5241b6) | Returns if this snapshot equals `other` by reference equality on all components. |
-| [GetHashCode](#uid-a6ac9ee55f) | No summary available. |
+| [Equals（2 个重载）](#uid-a63d5241b6) | Returns if this snapshot equals `other` by reference equality on all components. |
+| [GetHashCode](#uid-a6ac9ee55f) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9a32ebb5aa"></span>
 
-### Capture Method
+### Capture 方法 {#capture-method}
 
 Captures `selection`'s two endpoints. Pass the
 result to [Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit(string,Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit%28System.String%2CSystem.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29) as the pre-edit
@@ -97,21 +97,21 @@ post-edit state, to have the caret restored with the unit.
 public Avalonia.Controls.Documents.Undo.SelectionSnapshot Capture(Avalonia.Controls.TextSelection selection)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `selection` [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection)
 
 The live selection to freeze.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.Undo.SelectionSnapshot](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot)
 
 A snapshot of the selection's anchor and caret.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [\`selection\` is .](xref:System.ArgumentNullException)
 
@@ -119,13 +119,13 @@ A snapshot of the selection's anchor and caret.
 
 <span id="uid-a63d5241b6"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-272978afdb"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Returns if this snapshot equals `other` by reference equality on all components.
 
@@ -133,12 +133,12 @@ Returns if this snapshot equals `other` by reference equality on all components.
 public bool Equals(Avalonia.Controls.Documents.Undo.SelectionSnapshot other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.Controls.Documents.Undo.SelectionSnapshot](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -149,18 +149,18 @@ bool
 
 <span id="uid-9d16551d5a"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -171,22 +171,22 @@ bool
 
 <span id="uid-a6ac9ee55f"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 int
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Anchor](#uid-f780461280) | Frozen anchor pointer. Shares its cached leaf with the source selection. |
 | [AnchorLeafOffset](#uid-a30e19d6b9) | Offset inside [Avalonia.Controls.Documents.Undo.SelectionSnapshot.Anchor](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot.Anchor)'s leaf at capture time. |
@@ -198,7 +198,7 @@ int
 
 <span id="uid-f780461280"></span>
 
-### Anchor Property
+### Anchor 属性 {#anchor-property}
 
 Frozen anchor pointer. Shares its cached leaf with the source selection.
 
@@ -212,7 +212,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer Anchor { get; set; }
 
 <span id="uid-a30e19d6b9"></span>
 
-### AnchorLeafOffset Property
+### AnchorLeafOffset 属性 {#anchorleafoffset-property}
 
 Offset inside [Avalonia.Controls.Documents.Undo.SelectionSnapshot.Anchor](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot.Anchor)'s leaf at capture time.
 
@@ -226,7 +226,7 @@ public int AnchorLeafOffset { get; set; }
 
 <span id="uid-0882690688"></span>
 
-### IsEmpty Property
+### IsEmpty 属性 {#isempty-property}
 
 True when the anchor and moving pointers coincide.
 
@@ -240,7 +240,7 @@ public bool IsEmpty { get; set; }
 
 <span id="uid-dec8c38557"></span>
 
-### Moving Property
+### Moving 属性 {#moving-property}
 
 Frozen caret / moving pointer.
 
@@ -254,7 +254,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer Moving { get; set; }
 
 <span id="uid-aae6a7125c"></span>
 
-### MovingLeafOffset Property
+### MovingLeafOffset 属性 {#movingleafoffset-property}
 
 Offset inside [Avalonia.Controls.Documents.Undo.SelectionSnapshot.Moving](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot.Moving)'s leaf at capture time.
 

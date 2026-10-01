@@ -46,6 +46,6 @@ Platform-specific projects must reference the core project. The platform-specifi
 
 While desktop platforms can share a single project, it may be beneficial to create a separate project for macOS using the [Xamarin.Mac Target Framework](https://learn.microsoft.com/en-us/xamarin/mac/platform/target-framework). This will enable easier distribution and packaging of your application.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Cross-Platform Architecture](/docs/fundamentals/cross-platform-architecture): Solution structure and platform branching patterns.

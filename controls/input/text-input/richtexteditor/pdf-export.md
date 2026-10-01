@@ -159,7 +159,7 @@ foreach (var loss in losses)
 - **Footnotes:** Notes appear at the bottom of the page where its anchor is located, below the separator rule. Hyperlinks inside note bodies keep their annotations.
 - **Pagination:** Decided by explicit `BreakPageBefore` breaks, the keep rules, widow control, and atomic table rows. Per-section page setups receive a `MediaBox` per page.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Pagination](/controls/input/text-input/richtexteditor/pagination) - the break rules the export shares with the paged view
 - [Headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers) - the bands each page resolves

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Point Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Point.cs">Point.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Point.cs">Point.cs</a>
 </div>
 
 </div>
@@ -54,32 +54,32 @@ public struct Point
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Point
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Point
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;Point&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;Point&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Point](#uid-bcb8fb5a5c) | Initializes a new instance of the [Avalonia.Point](xref:Avalonia.Point) structure. |
+| [Point](#uid-bcb8fb5a5c) | 初始化 [Avalonia.Point](xref:Avalonia.Point) 结构的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bcb8fb5a5c"></span>
 
-### Point Constructor
+### Point 构造函数 {#point-constructor}
 
-Initializes a new instance of the [Avalonia.Point](xref:Avalonia.Point) structure.
+初始化 [Avalonia.Point](xref:Avalonia.Point) 结构的新实例。
 
 ```csharp
 public Point(double x, double y)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `x` double
 
@@ -93,16 +93,16 @@ The Y position.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-899de7602b) | No summary available. |
+| [Deconstruct](#uid-899de7602b) | 暂无摘要。 |
 | [Distance](#uid-47d4ccdee2) | Computes the Euclidean distance between the two given points. |
-| [Equals (2 overloads)](#uid-70e0d96d54) | Returns a boolean indicating whether the point is equal to the other given point (bitwise). |
+| [Equals（2 个重载）](#uid-70e0d96d54) | Returns a boolean indicating whether the point is equal to the other given point (bitwise). |
 | [GetHashCode](#uid-7302b75982) | Returns a hash code for a [Avalonia.Point](xref:Avalonia.Point). |
 | [NearlyEquals](#uid-3565881de4) | Returns a boolean indicating whether the point is equal to the other given point (numerically). |
-| [Parse](#uid-4405139e80) | Parses a [Avalonia.Point](xref:Avalonia.Point) string. |
+| [Parse](#uid-4405139e80) | 解析 [Avalonia.Point](xref:Avalonia.Point) 字符串。 |
 | [ToString](#uid-51f21be4ab) | Returns the string representation of the point. |
 | [Transform](#uid-bd1f666664) | Transforms the point by a matrix. |
 | [WithX](#uid-266e13a995) | Returns a new point with the specified X coordinate. |
@@ -112,13 +112,13 @@ The Y position.
 
 <span id="uid-899de7602b"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(double& x, double& y)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `x` double&amp;
 
@@ -132,7 +132,7 @@ public void Deconstruct(double& x, double& y)
 
 <span id="uid-47d4ccdee2"></span>
 
-### Distance Method
+### Distance 方法 {#distance-method}
 
 Computes the Euclidean distance between the two given points.
 
@@ -140,7 +140,7 @@ Computes the Euclidean distance between the two given points.
 public double Distance(Avalonia.Point value1, Avalonia.Point value2)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value1` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -152,7 +152,7 @@ The first point.
 The second point.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 double
 
@@ -163,13 +163,13 @@ The Euclidean distance.
 
 <span id="uid-70e0d96d54"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-085b52e5b8"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Returns a boolean indicating whether the point is equal to the other given point (bitwise).
 
@@ -177,14 +177,14 @@ Returns a boolean indicating whether the point is equal to the other given point
 public bool Equals(Avalonia.Point other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `other` [Avalonia.Point](xref:Avalonia.Point)
 
 The other point to test equality against.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -197,7 +197,7 @@ True if this point is equal to other; False otherwise.
 
 <span id="uid-b52bc8253a"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 Checks for equality between a point and an object.
 
@@ -205,14 +205,14 @@ Checks for equality between a point and an object.
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `obj` object
 
 The object.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -225,7 +225,7 @@ True if `obj` is a point that equals the current point.
 
 <span id="uid-7302b75982"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 Returns a hash code for a [Avalonia.Point](xref:Avalonia.Point).
 
@@ -233,7 +233,7 @@ Returns a hash code for a [Avalonia.Point](xref:Avalonia.Point).
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 int
 
@@ -246,7 +246,7 @@ The hash code.
 
 <span id="uid-3565881de4"></span>
 
-### NearlyEquals Method
+### NearlyEquals 方法 {#nearlyequals-method}
 
 Returns a boolean indicating whether the point is equal to the other given point
 (numerically).
@@ -255,14 +255,14 @@ Returns a boolean indicating whether the point is equal to the other given point
 public bool NearlyEquals(Avalonia.Point other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `other` [Avalonia.Point](xref:Avalonia.Point)
 
 The other point to test equality against.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 bool
 
@@ -275,22 +275,22 @@ True if this point is equal to other; False otherwise.
 
 <span id="uid-4405139e80"></span>
 
-### Parse Method
+### Parse 方法 {#parse-method}
 
-Parses a [Avalonia.Point](xref:Avalonia.Point) string.
+解析 [Avalonia.Point](xref:Avalonia.Point) 字符串。
 
 ```csharp
 public Avalonia.Point Parse(string s)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `s` string
 
 The string.
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -303,7 +303,7 @@ The [Avalonia.Point](xref:Avalonia.Point).
 
 <span id="uid-51f21be4ab"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 Returns the string representation of the point.
 
@@ -311,7 +311,7 @@ Returns the string representation of the point.
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 string
 
@@ -324,7 +324,7 @@ The string representation of the point.
 
 <span id="uid-bd1f666664"></span>
 
-### Transform Method
+### Transform 方法 {#transform-method}
 
 Transforms the point by a matrix.
 
@@ -332,14 +332,14 @@ Transforms the point by a matrix.
 public Avalonia.Point Transform(Avalonia.Matrix transform)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `transform` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
 The transform.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -352,7 +352,7 @@ The transformed point.
 
 <span id="uid-266e13a995"></span>
 
-### WithX Method
+### WithX 方法 {#withx-method}
 
 Returns a new point with the specified X coordinate.
 
@@ -360,14 +360,14 @@ Returns a new point with the specified X coordinate.
 public Avalonia.Point WithX(double x)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `x` double
 
 The X coordinate.
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -380,7 +380,7 @@ The new point.
 
 <span id="uid-9d555f725a"></span>
 
-### WithY Method
+### WithY 方法 {#withy-method}
 
 Returns a new point with the specified Y coordinate.
 
@@ -388,14 +388,14 @@ Returns a new point with the specified Y coordinate.
 public Avalonia.Point WithY(double y)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `y` double
 
 The Y coordinate.
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -404,9 +404,9 @@ The new point.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [X](#uid-757991c7da) | Gets the X position. |
 | [Y](#uid-f7ccabda4f) | Gets the Y position. |
@@ -415,7 +415,7 @@ The new point.
 
 <span id="uid-757991c7da"></span>
 
-### X Property
+### X 属性 {#x-property}
 
 Gets the X position.
 
@@ -429,7 +429,7 @@ public double X { get; set; }
 
 <span id="uid-f7ccabda4f"></span>
 
-### Y Property
+### Y 属性 {#y-property}
 
 Gets the Y position.
 

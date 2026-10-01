@@ -228,7 +228,7 @@ Yes, `getUserMedia()` API is supported across platforms. Users will receive perm
 
 Some platforms also require developer to configure permissions on the application bundle. If any particular permission is necessary for a main application, it's likely to be necessary for a web view. For example, [NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information-property-list/nscamerausagedescription?language=objc) is necessary for macOS/iOS on bundled apps.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Developer tools installation](/tools/developer-tools/installation)
 - [Avalonia Tools overview](/tools/)

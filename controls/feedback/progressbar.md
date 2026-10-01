@@ -11,7 +11,7 @@ The `ProgressBar` presents a value as a proportionately filled bar with the opti
 
 You will probably use these properties most often:
 
-| Property             | Description                                                                                     |
+| Property             | 说明                                                                                     |
 |----------------------|-------------------------------------------------------------------------------------------------|
 | `Minimum`            | The minimum value of the range. Defaults to `0`.                                                |
 | `Maximum`            | The maximum value of the range. Defaults to `100`.                                              |
@@ -67,14 +67,14 @@ By default, `ShowProgressText` displays the percentage completion calculated fro
 [`Minimum`](/api/avalonia/controls/primitives/rangebase#minimum-property), and
 [`Maximum`](/api/avalonia/controls/primitives/rangebase#maximum-property). You can customize the displayed text by setting `ProgressTextFormat` to a format string. The string is passed to [`string.Format`](https://docs.microsoft.com/en-us/dotnet/api/system.string.format#system-string-format(system-string-system-object())) with the following format items:
 
-| Index | Description                                                                                                    |
+| Index | 说明                                                                                                    |
 |-------|----------------------------------------------------------------------------------------------------------------|
 | `0`   | The current `Value`.                                                                                           |
 | `1`   | The value expressed as a percentage from 0 to 100 (for example, `Minimum = 0`, `Maximum = 50`, `Value = 25` yields `50`). |
 | `2`   | The `Minimum` value.                                                                                           |
 | `3`   | The `Maximum` value.                                                                                           |
 
-| Min | Max | Value | `ProgressTextFormat`                | Output                       |
+| Min | Max | 值 | `ProgressTextFormat`                | Output                       |
 |-----|-----|-------|-------------------------------------|------------------------------|
 | 0   | 20  | 17    | `{}{0}/{3} Tasks Complete ({1:0}%)` | `17/20 Tasks Complete (85%)` |
 
@@ -119,7 +119,7 @@ public async Task DownloadFileAsync()
 
 You can restyle the `ProgressBar` through theme resources or by targeting its template parts. The control exposes the following key template parts:
 
-| Part name              | Description                                           |
+| Part name              | 说明                                           |
 |------------------------|-------------------------------------------------------|
 | `PART_Indicator`       | The `Border` element that represents the filled area. |
 | `PART_ProgressBarText` | The `TextBlock` that displays the progress caption.   |
@@ -144,7 +144,7 @@ For more advanced customization, you can provide a complete `ControlTheme`:
 </ProgressBar>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Slider](/controls/input/selectors/slider)
 - [ProgressBar API reference](/api/avalonia/controls/progressbar)

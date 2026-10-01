@@ -44,7 +44,7 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `TotalSeats` | Total number of seats to draw. | `100` |
 | `Rows` | Number of concentric seat rows. | `4` |
@@ -56,13 +56,13 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 
 ## Common properties (`ParliamentParty`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Name` | Party or bloc name. | `string.Empty` |
 | `Seats` | Number of seats assigned to the party. | `0` |
 | `Color` | Color used to draw the party's seats. | `Gray` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Pie chart](/controls/data-display/charts/circular/pie-chart)
 - [Mekko chart](/controls/data-display/charts/comparison/mekko-chart)

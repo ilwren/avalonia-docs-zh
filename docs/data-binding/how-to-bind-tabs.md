@@ -82,7 +82,7 @@ Keep the following points in mind when you work with data-bound tabs:
 - **Selected tab.** Bind `SelectedItem` or `SelectedIndex` on the `TabControl` to track or control which tab is active. When you remove the currently selected item from the collection, the selection resets automatically.
 - **DataType on ContentTemplate.** Always set `DataType` on the `DataTemplate` used inside `ContentTemplate`. Without it, the binding context may not resolve correctly.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TabControl](/controls/navigation/tabcontrol): Full reference for the `TabControl` control.
 - [How to: Work with TabControl](/docs/how-to/tabcontrol-how-to): Static tabs, closeable tabs, and tab styling.

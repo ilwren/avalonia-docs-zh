@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ILogSink Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Logging</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Logging</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Logging/ILogSink.cs">ILogSink.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Logging/ILogSink.cs">ILogSink.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface ILogSink
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsEnabled](#uid-fa8540479d) | Checks if given log level and area is enabled. |
 | [Log (2 overloads)](#uid-ae3dda8e0f) | Logs an event. |
@@ -63,7 +63,7 @@ public interface ILogSink
 
 <span id="uid-fa8540479d"></span>
 
-### IsEnabled Method
+### IsEnabled 方法 {#isenabled-method}
 
 Checks if given log level and area is enabled.
 
@@ -71,7 +71,7 @@ Checks if given log level and area is enabled.
 public bool IsEnabled(Avalonia.Logging.LogEventLevel level, string area)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `level` [Avalonia.Logging.LogEventLevel](xref:Avalonia.Logging.LogEventLevel)
 
@@ -83,7 +83,7 @@ The log event level.
 The log area.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -100,7 +100,7 @@ if given log level is enabled.
 
 <span id="uid-5f1779b2ed"></span>
 
-#### Log Method
+#### Log 方法 {#log-method}
 
 Logs an event.
 
@@ -108,7 +108,7 @@ Logs an event.
 public void Log(Avalonia.Logging.LogEventLevel level, string area, object source, string messageTemplate)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `level` [Avalonia.Logging.LogEventLevel](xref:Avalonia.Logging.LogEventLevel)
 
@@ -136,7 +136,7 @@ The message template.
 
 <span id="uid-7cb89d08eb"></span>
 
-#### Log Method
+#### Log 方法 {#log-method-1}
 
 Logs a new event.
 
@@ -144,7 +144,7 @@ Logs a new event.
 public void Log(Avalonia.Logging.LogEventLevel level, string area, object source, string messageTemplate, object[] propertyValues)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `level` [Avalonia.Logging.LogEventLevel](xref:Avalonia.Logging.LogEventLevel)
 

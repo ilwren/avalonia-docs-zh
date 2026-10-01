@@ -83,7 +83,7 @@ But you will see only the fully-qualified class name for the student object:
 
 This is not very helpful! It happens because _Avalonia UI_ has no definition of how to display an object of class `Student` - and it is not a control - so it falls back on the `.ToString()` method, and all you see is the fully-qualified class name.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Content Templates](/docs/data-templates/content-templates): Using `ContentTemplate` to define how data is displayed.
 - [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.

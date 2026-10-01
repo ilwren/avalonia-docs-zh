@@ -7,7 +7,7 @@ doc-type: how-to
 
 This guide walks through building a fully functional Avalonia application using only C#, with no XAML files at all. You will create a simple counter app with styled controls, layout, event handling, and data binding, all from code.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 - .NET 10 SDK or later
 - A text editor or IDE (Visual Studio, Rider, or VS Code)
@@ -399,7 +399,7 @@ This guide demonstrated that you can build a complete, well-structured Avalonia 
 | Theme | `app.Styles.Add(new FluentTheme())` |
 | Controls | Instantiate with object initializers |
 | Layout | Add children to panels (`StackPanel`, `Grid`, `DockPanel`) |
-| Events | Wire handlers with `+=` or lambdas |
+| 事件 | Wire handlers with `+=` or lambdas |
 | Styles | Create `Style` objects and add to `Styles` collection |
 | Binding | `control.Bind(property, new ReflectionBinding(...))` or `CompiledBinding.Create(expression)` |
 | Drawing | `Canvas` with `Line`, `Ellipse`, `Rectangle`, and other shapes |
@@ -409,7 +409,7 @@ This guide demonstrated that you can build a complete, well-structured Avalonia 
 For a deeper look at the concepts behind each of these patterns, see [Code-Only UI](/docs/fundamentals/coded-ui).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Code-Only UI](/docs/fundamentals/coded-ui)
 - [Application lifetimes](/docs/fundamentals/application-lifetimes)

@@ -396,7 +396,7 @@ The `Source` property is bindable. All other APIs (`NativeWebDialog`, `WebAuthen
 
 To streamline code migration, you can also use the `NativeWebView` control with native WPF on Windows without XPF. In this scenario, all API members and underlying browsers are the same, and the same package can be used.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NativeWebView](/controls/web/nativewebview)
 - [NativeWebDialog](/controls/web/nativewebdialog)

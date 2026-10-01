@@ -157,7 +157,7 @@ public static void SetSlot(Control element, int value) => element.SetValue(SlotP
 - Use [`AffectsMeasure` or `AffectsArrange`](/docs/custom-controls/custom-drawn-controls#affectsrender-affectsmeasure-and-affectsarrange) when registering styled properties that influence layout. This ensures the panel adjusts its layout when those properties change.
 - Return the size your panel actually needs from `MeasureOverride`. Returning a size larger than necessary wastes space, while returning a size that is too small may clip children.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Attached properties](/docs/custom-controls/defining-properties#attached-properties): Let child controls carry per-child layout values for your panel.
 - [Layout](/docs/layout): How the measure and arrange system works.

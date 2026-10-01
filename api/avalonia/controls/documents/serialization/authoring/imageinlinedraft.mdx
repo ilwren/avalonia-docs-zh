@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ImageInlineDraft Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Authoring</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Authoring</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -52,31 +52,31 @@ public class ImageInlineDraft
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="inlinedraft">InlineDraft</a> <span className="apiref-page__relation-separator">-&gt;</span> ImageInlineDraft
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="inlinedraft">InlineDraft</a> <span className="apiref-page__relation-separator">-&gt;</span> ImageInlineDraft
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ImageInlineDraft (2 overloads)](#uid-73ac6ca004) | No summary available. |
+| [ImageInlineDraft (2 overloads)](#uid-73ac6ca004) | 暂无摘要。 |
 
 <span id="uid-73ac6ca004"></span>
 
-### ImageInlineDraft overloads
+### ImageInlineDraft 的重载 {#imageinlinedraft-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b996ed1854"></span>
 
-#### ImageInlineDraft Constructor
+#### ImageInlineDraft 构造函数 {#imageinlinedraft-constructor}
 
 ```csharp
 public ImageInlineDraft(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind, ReadOnlyMemory<byte> imageData, string imageMimeType, double width, double height, string altText)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `kind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
@@ -102,13 +102,13 @@ public ImageInlineDraft(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKi
 
 <span id="uid-0e40fc34e5"></span>
 
-#### ImageInlineDraft Constructor
+#### ImageInlineDraft 构造函数 {#imageinlinedraft-constructor-1}
 
 ```csharp
 public ImageInlineDraft(ReadOnlyMemory<byte> imageData, string imageMimeType, double width, double height, string altText)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `imageData` ReadOnlyMemory&lt;byte&gt;
 
@@ -127,16 +127,16 @@ public ImageInlineDraft(ReadOnlyMemory<byte> imageData, string imageMimeType, do
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetFormatMetadata](inlinedraft.mdx#uid-4509e823fd) | Inherited from [InlineDraft](inlinedraft.mdx). |
-| [SetFormatMetadata](inlinedraft.mdx#uid-61215c6735) | Inherited from [InlineDraft](inlinedraft.mdx). |
+| [GetFormatMetadata](inlinedraft.mdx#uid-4509e823fd) | 继承自 [InlineDraft](inlinedraft.mdx)。 |
+| [SetFormatMetadata](inlinedraft.mdx#uid-61215c6735) | 继承自 [InlineDraft](inlinedraft.mdx)。 |
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AltText](#uid-354182e0de) | Gets or sets the alternative text describing the image. |
 | [CustomData](inlinedraft.mdx#uid-df8d35d8af) | Extension-specific custom data. Transferred to the resulting [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) during document building. Inherited from [InlineDraft](inlinedraft.mdx). |
@@ -155,7 +155,7 @@ public ImageInlineDraft(ReadOnlyMemory<byte> imageData, string imageMimeType, do
 
 <span id="uid-354182e0de"></span>
 
-### AltText Property
+### AltText 属性 {#alttext-property}
 
 Gets or sets the alternative text describing the image.
 
@@ -169,7 +169,7 @@ public string AltText { get; set; }
 
 <span id="uid-a3a34d3b4e"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
 Gets or sets the display height in device-independent pixels.
 [double.NaN](xref:System.Double.NaN) uses the intrinsic pixel size.
@@ -184,7 +184,7 @@ public double Height { get; set; }
 
 <span id="uid-7ade528876"></span>
 
-### ImageData Property
+### ImageData 属性 {#imagedata-property}
 
 Gets or sets the encoded image bytes.
 
@@ -198,7 +198,7 @@ public ReadOnlyMemory<byte> ImageData { get; set; }
 
 <span id="uid-b0c1561d88"></span>
 
-### ImageMimeType Property
+### ImageMimeType 属性 {#imagemimetype-property}
 
 Gets or sets the MIME type of [Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData](xref:Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData).
 
@@ -212,7 +212,7 @@ public string ImageMimeType { get; set; }
 
 <span id="uid-31b02025f7"></span>
 
-### SourceUri Property
+### SourceUri 属性 {#sourceuri-property}
 
 The reference URI for a deferred/linked image (e.g. an image URL), or
 for an embedded-byte image. When set,
@@ -228,7 +228,7 @@ public string SourceUri { get; set; }
 
 <span id="uid-3b553ad985"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
 Gets or sets the display width in device-independent pixels.
 [double.NaN](xref:System.Double.NaN) uses the intrinsic pixel size.

@@ -80,7 +80,7 @@ public KpiItem Kpi3 { get; } = new(
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The main numerical value to display. | `0` |
 | `Delta` | The change value (positive or negative) from the previous period. | `0` |

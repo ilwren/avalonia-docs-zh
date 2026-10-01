@@ -49,7 +49,7 @@ public ObservableCollection<ActivityPoint> RadialPoints { get; } = new()
 
 ## Common properties: `PolarLineSeries`
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of points to connect. | `null` |
 | `AnglePath` | Path of the angle (X). | `null` |

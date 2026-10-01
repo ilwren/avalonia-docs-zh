@@ -17,7 +17,7 @@ In most cases, you will not need to use `ScrollBar` directly. The `ScrollViewer`
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | [`Orientation`](/api/avalonia/layout/orientation) | `Orientation` | Sets the orientation of the scroll bar. Use `Horizontal` or `Vertical`. The default is `Vertical`. |
 | `Minimum` | `double` | The smallest value the scroll bar can represent. The default is `0`. |
@@ -98,7 +98,7 @@ With this code-behind, the text block displays the current value of the scroll b
 
 <Image light={ScrollBarScreenshot} alt="ScrollBar example showing value tracking" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ScrollViewer](/controls/layout/containers/scrollviewer)
 - [ScrollBar API reference](/api/avalonia/controls/primitives/scrollbar)

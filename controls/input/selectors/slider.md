@@ -15,7 +15,7 @@ You can change the value by dragging the thumb, clicking on the track, using the
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Minimum` | `double` | Sets the lower bound of the range. Default is `0`. |
 | `Maximum` | `double` | Sets the upper bound of the range. Default is `100`. |
@@ -61,7 +61,7 @@ Use `TickFrequency` and `IsSnapToTickEnabled` to restrict the slider to discrete
 
 The [`TickPlacement`](/api/avalonia/controls/tickplacement) property controls where tick marks appear relative to the track:
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `None` | No tick marks are shown (default). |
 | `TopLeft` | Tick marks appear above a horizontal slider or to the left of a vertical slider. |
@@ -106,7 +106,7 @@ private double _maxDamage = 9999;
 
 ## All properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Minimum` | `double` | Lower bound of the range. Default is `0`. |
 | `Maximum` | `double` | Upper bound of the range. Default is `100`. |
@@ -119,7 +119,7 @@ private double _maxDamage = 9999;
 | `Orientation` | `Orientation` | `Horizontal` (default) or `Vertical`. |
 | `IsDirectionReversed` | `bool` | When `true`, reverses the increasing-value direction. Default is `false`. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NumericUpDown](/controls/input/selectors/numericupdown)
 - [ToggleSwitch](/controls/input/selectors/toggleswitch)

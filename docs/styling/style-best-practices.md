@@ -200,7 +200,7 @@ Or use theme-variant resources defined in your `App.axaml`:
 </Application.Resources>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Style classes](/docs/styling/style-classes)

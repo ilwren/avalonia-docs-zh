@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FilePickerOpenOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FilePickerOpenOptions.cs">FilePickerOpenOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FilePickerOpenOptions.cs">FilePickerOpenOptions.cs</a>
 </div>
 
 </div>
@@ -54,21 +54,21 @@ public class FilePickerOpenOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="pickeroptions">PickerOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> FilePickerOpenOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="pickeroptions">PickerOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> FilePickerOpenOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FilePickerOpenOptions](#uid-c6a16b0720) | No summary available. |
+| [FilePickerOpenOptions](#uid-c6a16b0720) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c6a16b0720"></span>
 
-### FilePickerOpenOptions Constructor
+### FilePickerOpenOptions 构造函数 {#filepickeropenoptions-constructor}
 
 ```csharp
 public FilePickerOpenOptions()
@@ -76,9 +76,9 @@ public FilePickerOpenOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AllowMultiple](#uid-2a28bff5e1) | Gets or sets an option indicating whether open picker allows users to select multiple files. |
 | [FileTypeFilter](#uid-c21c750c4e) | Gets or sets the collection of file types that the file open picker displays. |
@@ -91,7 +91,7 @@ public FilePickerOpenOptions()
 
 <span id="uid-2a28bff5e1"></span>
 
-### AllowMultiple Property
+### AllowMultiple 属性 {#allowmultiple-property}
 
 Gets or sets an option indicating whether open picker allows users to select multiple files.
 
@@ -105,7 +105,7 @@ public bool AllowMultiple { get; set; }
 
 <span id="uid-c21c750c4e"></span>
 
-### FileTypeFilter Property
+### FileTypeFilter 属性 {#filetypefilter-property}
 
 Gets or sets the collection of file types that the file open picker displays.
 
@@ -119,7 +119,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.FilePi
 
 <span id="uid-c00a06479e"></span>
 
-### SuggestedFileType Property
+### SuggestedFileType 属性 {#suggestedfiletype-property}
 
 Gets or sets the file type that should be preselected when the dialog is opened.
 
@@ -127,7 +127,7 @@ Gets or sets the file type that should be preselected when the dialog is opened.
 public Avalonia.Platform.Storage.FilePickerFileType SuggestedFileType { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 This value should reference one of the items in [Avalonia.Platform.Storage.FilePickerOpenOptions.FileTypeFilter](xref:Avalonia.Platform.Storage.FilePickerOpenOptions.FileTypeFilter).
 If not set, the first file type in [Avalonia.Platform.Storage.FilePickerOpenOptions.FileTypeFilter](xref:Avalonia.Platform.Storage.FilePickerOpenOptions.FileTypeFilter) may be selected by default.

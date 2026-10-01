@@ -7,7 +7,7 @@ doc-type: reference
 
 _Avalonia UI_ includes a number of built-in data binding converters for common scenarios:
 
-| Converter                           | Description                                                                                                                         |
+| Converter                           | 说明                                                                                                                         |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Negation Operator                   | The ! operator can be placed in front of the data binding path to return the inversion of a Boolean value. See also the note below. |
 | `StringConverters.IsNullOrEmpty`    | Returns `true` if the input string is null or empty                                                                                 |
@@ -87,7 +87,7 @@ And this example demonstrates binding to multiple bound parameters. It will show
 You can follow the [Avalonia UI value converter sample](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/MVVM/ValueConversionSample).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to Create a Custom Data Binding Converter](/docs/data-binding/how-to-create-a-custom-data-binding-converter): Writing custom value converters.
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding parameters and converter usage.

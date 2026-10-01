@@ -210,7 +210,7 @@ These are useful for defining resources:
 </Application.Resources>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [XAML Reference](/docs/xaml): Overview of XAML syntax.
 - [Namespaces](/docs/xaml/namespaces): How XAML namespaces work.

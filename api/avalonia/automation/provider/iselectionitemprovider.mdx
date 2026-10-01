@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ISelectionItemProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Provider</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Provider</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/ISelectionItemProvider%20.cs">ISelectionItemProvider .cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/ISelectionItemProvider%20.cs">ISelectionItemProvider .cs</a>
 </div>
 
 </div>
@@ -53,9 +53,9 @@ public interface ISelectionItemProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AddToSelection](#uid-f5d16c51fc) | Adds the current element to the collection of selected items. |
 | [RemoveFromSelection](#uid-9a753f219d) | Removes the current element from the collection of selected items. |
@@ -65,7 +65,7 @@ public interface ISelectionItemProvider
 
 <span id="uid-f5d16c51fc"></span>
 
-### AddToSelection Method
+### AddToSelection 方法 {#addtoselection-method}
 
 Adds the current element to the collection of selected items.
 
@@ -73,7 +73,7 @@ Adds the current element to the collection of selected items.
 public void AddToSelection()
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 - Windows`ISelectionItemProvider.AddToSelection`
 - macOS`NSAccessibilityProtocol.accessibilityPerformPick` (not implemented). `NSAccessibilityProtocol.setAccessibilitySelected` (not implemented).
@@ -84,7 +84,7 @@ public void AddToSelection()
 
 <span id="uid-9a753f219d"></span>
 
-### RemoveFromSelection Method
+### RemoveFromSelection 方法 {#removefromselection-method}
 
 Removes the current element from the collection of selected items.
 
@@ -92,7 +92,7 @@ Removes the current element from the collection of selected items.
 public void RemoveFromSelection()
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 - Windows`ISelectionItemProvider.RemoveFromSelection`
 - macOS`NSAccessibilityProtocol.setAccessibilitySelected` (not implemented).
@@ -103,7 +103,7 @@ public void RemoveFromSelection()
 
 <span id="uid-db41fba969"></span>
 
-### Select Method
+### Select 方法 {#select-method}
 
 Clears any existing selection and then selects the current element.
 
@@ -111,16 +111,16 @@ Clears any existing selection and then selects the current element.
 public void Select()
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 - Windows`ISelectionItemProvider.Select`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsSelected](#uid-5e4e696443) | Gets a value that indicates whether an item is selected. |
 | [SelectionContainer](#uid-67657a949b) | Gets the UI Automation provider that implements [Avalonia.Automation.Provider.ISelectionProvider](xref:Avalonia.Automation.Provider.ISelectionProvider) and acts as the container for the calling object. |
@@ -129,7 +129,7 @@ public void Select()
 
 <span id="uid-5e4e696443"></span>
 
-### IsSelected Property
+### IsSelected 属性 {#isselected-property}
 
 Gets a value that indicates whether an item is selected.
 
@@ -137,7 +137,7 @@ Gets a value that indicates whether an item is selected.
 public bool IsSelected { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 - Windows`ISelectionItemProvider.IsSelected`
 - macOS`NSAccessibilityProtocol.isAccessibilitySelected`
@@ -148,7 +148,7 @@ public bool IsSelected { get; set; }
 
 <span id="uid-67657a949b"></span>
 
-### SelectionContainer Property
+### SelectionContainer 属性 {#selectioncontainer-property}
 
 Gets the UI Automation provider that implements [Avalonia.Automation.Provider.ISelectionProvider](xref:Avalonia.Automation.Provider.ISelectionProvider) and
 acts as the container for the calling object.
@@ -157,10 +157,10 @@ acts as the container for the calling object.
 public Avalonia.Automation.Provider.ISelectionProvider SelectionContainer { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 - Windows`ISelectionItemProvider.SelectionContainer`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 

@@ -155,7 +155,7 @@ On Android and iOS, the `InputScope` property on `TextBox` can hint which keyboa
 | On-screen keyboard | Touch devices | Touch Bar | Virtual keyboard | Full | Browser-managed |
 | Dead keys | Supported | Supported | Supported | N/A | Browser-managed |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Key bindings and keyboard shortcuts.
 - [Input Pane](/docs/services/input-pane): On-screen keyboard service.

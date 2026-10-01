@@ -24,4 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .npmrc
-.vs
+.vsscripts/i18n/batch.json
+scripts/i18n/tm/*.todo.json

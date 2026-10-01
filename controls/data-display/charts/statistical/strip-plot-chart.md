@@ -49,7 +49,7 @@ public ObservableCollection<StripPoint> StripData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of observations. | `null` |
 | `CategoryPath` | Path to the grouping category. | `null` |
@@ -64,7 +64,7 @@ public ObservableCollection<StripPoint> StripData { get; } = new()
 | `ShowAxes` | Whether to draw the value axis. | `true` |
 | `ShowMeanLine` | Whether to draw a mean line for each category. | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Beeswarm plot chart](/controls/data-display/charts/statistical/beeswarm-plot-chart)
 - [Box plot chart](/controls/data-display/charts/statistical/boxplot-chart)

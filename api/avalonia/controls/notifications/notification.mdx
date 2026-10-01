@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Notification Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Notifications</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Notifications</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/Notification.cs">Notification.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/Notification.cs">Notification.cs</a>
 </div>
 
 </div>
@@ -54,35 +54,35 @@ public class Notification
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Notification
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Notification
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="inotification">INotification</a>, INotifyPropertyChanged
+<span className="apiref-page__meta-label">实现接口：</span> <a href="inotification">INotification</a>, INotifyPropertyChanged
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This class represents a notification that can be displayed either in a window using
 [Avalonia.Controls.Notifications.WindowNotificationManager](xref:Avalonia.Controls.Notifications.WindowNotificationManager) or by the host operating system (to be implemented).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Notification (2 overloads)](#uid-5c150e5a29) | Initializes a new instance of the [Avalonia.Controls.Notifications.Notification](xref:Avalonia.Controls.Notifications.Notification) class. |
+| [Notification (2 overloads)](#uid-5c150e5a29) | 初始化 [Avalonia.Controls.Notifications.Notification](xref:Avalonia.Controls.Notifications.Notification) 类的新实例。 |
 
 <span id="uid-5c150e5a29"></span>
 
-### Notification overloads
+### Notification 的重载 {#notification-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-47e4759941"></span>
 
-#### Notification Constructor
+#### Notification 构造函数 {#notification-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.Notifications.Notification](xref:Avalonia.Controls.Notifications.Notification) class.
+初始化 [Avalonia.Controls.Notifications.Notification](xref:Avalonia.Controls.Notifications.Notification) 类的新实例。
 
 ```csharp
 public Notification()
@@ -94,13 +94,13 @@ public Notification()
 
 <span id="uid-6cdb5ec8f9"></span>
 
-#### Notification Constructor
+#### Notification 构造函数 {#notification-constructor-1}
 
 ```csharp
 public Notification(string title, string message, Avalonia.Controls.Notifications.NotificationType type, Nullable<TimeSpan> expiration, Action onClick, Action onClose)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `title` string
 
@@ -122,9 +122,9 @@ public Notification(string title, string message, Avalonia.Controls.Notification
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Expiration](#uid-6fa56101ad) | Gets the expiration time of the notification after which it will automatically close. If the value is [TimeSpan.Zero](xref:System.TimeSpan.Zero) then the notification will remain open until the user closes it. |
 | [Message](#uid-e0a025cb3b) | Gets the notification message. |
@@ -137,7 +137,7 @@ public Notification(string title, string message, Avalonia.Controls.Notification
 
 <span id="uid-6fa56101ad"></span>
 
-### Expiration Property
+### Expiration 属性 {#expiration-property}
 
 Gets the expiration time of the notification after which it will automatically close.
 If the value is [TimeSpan.Zero](xref:System.TimeSpan.Zero) then the notification will remain open until the user closes it.
@@ -152,7 +152,7 @@ public TimeSpan Expiration { get; set; }
 
 <span id="uid-e0a025cb3b"></span>
 
-### Message Property
+### Message 属性 {#message-property}
 
 Gets the notification message.
 
@@ -166,7 +166,7 @@ public string Message { get; set; }
 
 <span id="uid-e4001bd734"></span>
 
-### OnClick Property
+### OnClick 属性 {#onclick-property}
 
 Gets an Action to be run when the notification is clicked.
 
@@ -180,7 +180,7 @@ public Action OnClick { get; set; }
 
 <span id="uid-2e72068dd2"></span>
 
-### OnClose Property
+### OnClose 属性 {#onclose-property}
 
 Gets an Action to be run when the notification is closed.
 
@@ -194,7 +194,7 @@ public Action OnClose { get; set; }
 
 <span id="uid-de74ea6caf"></span>
 
-### Title Property
+### Title 属性 {#title-property}
 
 Gets the Title of the notification.
 
@@ -208,7 +208,7 @@ public string Title { get; set; }
 
 <span id="uid-406e41cb27"></span>
 
-### Type Property
+### Type 属性 {#type-property}
 
 Gets the [Avalonia.Controls.Notifications.NotificationType](xref:Avalonia.Controls.Notifications.NotificationType) of the notification.
 
@@ -218,17 +218,17 @@ public Avalonia.Controls.Notifications.NotificationType Type { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PropertyChanged](#uid-9005ff89fb) | No summary available. |
+| [PropertyChanged](#uid-9005ff89fb) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9005ff89fb"></span>
 
-### PropertyChanged Event
+### PropertyChanged 事件 {#propertychanged-event}
 
 ```csharp
 public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged

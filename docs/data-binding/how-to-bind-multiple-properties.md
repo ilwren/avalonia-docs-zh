@@ -15,7 +15,7 @@ When a single target property depends on values from several sources, you can us
 `MultiBinding` only supports `BindingMode.OneTime` and `BindingMode.OneWay`. Two-way multi-bindings are not supported because there is no general way to reverse a multi-value conversion back to individual source values.
 :::
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before you start, make sure you are familiar with:
 
@@ -35,7 +35,7 @@ public interface IMultiValueConverter
 
 Your converter receives:
 
-| Parameter | Purpose |
+| Parameter | 用途 |
 |---|---|
 | `values` | The current values from each child `Binding`, in declaration order. |
 | `targetType` | The type of the target property (for example, `IBrush` or `string`). |
@@ -160,7 +160,7 @@ This approach removes the need for a resource declaration and keeps simple conve
 - **Return `BindingOperations.DoNothing`** instead of `null` when your converter cannot produce a valid result yet. This tells the binding engine to leave the target property unchanged.
 - **Consider a `MarkupExtension`** to simplify the XAML syntax when you reuse the same `MultiBinding` pattern in many places.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [MultiBinding](/docs/data-binding/multi-binding): Full `MultiBinding` reference, including `StringFormat`, `FallbackValue`, and the properties table.
 - [How to create a custom data binding converter](/docs/data-binding/how-to-create-a-custom-data-binding-converter): Single-value `IValueConverter` implementations.

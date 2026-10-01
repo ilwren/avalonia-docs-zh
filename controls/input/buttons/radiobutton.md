@@ -19,7 +19,7 @@ If you do not set `GroupName`, Avalonia groups radio buttons by their parent con
 
 You will probably use these properties most often:
 
-| Property | Description |
+| Property | 说明 |
 | ----------- | ----------- |
 | `GroupName` | Defines the name common to a group of options that interact as radio buttons. |
 | `IsChecked` | Whether a radio button option is selected (`true`) or unselected (`false`). |
@@ -148,7 +148,7 @@ You can arrange radio buttons horizontally by placing them inside a horizontal `
 </StackPanel>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [CheckBox](/controls/input/selectors/checkbox)
 - [ToggleButton](/controls/input/buttons/togglebutton)

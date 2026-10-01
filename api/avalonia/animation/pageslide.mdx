@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PageSlide Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Animation</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Animation</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/PageSlide.cs">PageSlide.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/PageSlide.cs">PageSlide.cs</a>
 </div>
 
 </div>
@@ -54,33 +54,33 @@ public class PageSlide
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageSlide
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageSlide
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="rotate3dtransition">Rotate3DTransition</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="rotate3dtransition">Rotate3DTransition</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ipagetransition">IPageTransition</a>, <a href="iprogresspagetransition">IProgressPageTransition</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ipagetransition">IPageTransition</a>, <a href="iprogresspagetransition">IProgressPageTransition</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PageSlide (2 overloads)](#uid-efbf20bd9a) | Initializes a new instance of the [Avalonia.Animation.PageSlide](xref:Avalonia.Animation.PageSlide) class. |
+| [PageSlide (2 overloads)](#uid-efbf20bd9a) | 初始化 [Avalonia.Animation.PageSlide](xref:Avalonia.Animation.PageSlide) 类的新实例。 |
 
 <span id="uid-efbf20bd9a"></span>
 
-### PageSlide overloads
+### PageSlide 的重载 {#pageslide-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-10712d4ba1"></span>
 
-#### PageSlide Constructor
+#### PageSlide 构造函数 {#pageslide-constructor}
 
-Initializes a new instance of the [Avalonia.Animation.PageSlide](xref:Avalonia.Animation.PageSlide) class.
+初始化 [Avalonia.Animation.PageSlide](xref:Avalonia.Animation.PageSlide) 类的新实例。
 
 ```csharp
 public PageSlide()
@@ -92,15 +92,15 @@ public PageSlide()
 
 <span id="uid-db5191ea9e"></span>
 
-#### PageSlide Constructor
+#### PageSlide 构造函数 {#pageslide-constructor-1}
 
-Initializes a new instance of the [Avalonia.Animation.PageSlide](xref:Avalonia.Animation.PageSlide) class.
+初始化 [Avalonia.Animation.PageSlide](xref:Avalonia.Animation.PageSlide) 类的新实例。
 
 ```csharp
 public PageSlide(TimeSpan duration, Avalonia.Animation.PageSlide.SlideAxis orientation)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `duration` TimeSpan
 
@@ -114,19 +114,19 @@ The axis on which the animation should occur
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Reset](#uid-63e5cdf868) | Resets any visual state applied to the given visual by this transition. |
 | [Start](#uid-dcf9e8a843) | Starts the animation. |
-| [Update](#uid-d035ade872) | No summary available. |
+| [Update](#uid-d035ade872) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-63e5cdf868"></span>
 
-### Reset Method
+### Reset 方法 {#reset-method}
 
 Resets any visual state applied to the given visual by this transition.
 
@@ -134,7 +134,7 @@ Resets any visual state applied to the given visual by this transition.
 public void Reset(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -147,7 +147,7 @@ The visual to reset.
 
 <span id="uid-dcf9e8a843"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
 Starts the animation.
 
@@ -155,7 +155,7 @@ Starts the animation.
 public System.Threading.Tasks.Task Start(Avalonia.Visual from, Avalonia.Visual to, bool forward, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `from` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -177,7 +177,7 @@ If the animation is bidirectional, controls the direction of the animation.
 Animation cancellation.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -190,13 +190,13 @@ A [System.Threading.Tasks.Task](xref:System.Threading.Tasks.Task) that tracks th
 
 <span id="uid-d035ade872"></span>
 
-### Update Method
+### Update 方法 {#update-method}
 
 ```csharp
 public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bool forward, double pageLength, System.Collections.Generic.IReadOnlyList<Avalonia.Animation.PageTransitionItem> visibleItems)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `progress` double
 
@@ -218,9 +218,9 @@ public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bo
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Duration](#uid-cb46c3b57d) | Gets the duration of the animation. |
 | [FillMode](#uid-e066627e36) | Gets or sets the fill mode applied to both slide animations. Defaults to [Avalonia.Animation.FillMode.Forward](xref:Avalonia.Animation.FillMode.Forward), which keeps the final transform value after the animation completes and prevents a one-frame flash where the outgoing element snaps back to its original position before `IsVisible = false` takes effect. |
@@ -232,7 +232,7 @@ public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bo
 
 <span id="uid-cb46c3b57d"></span>
 
-### Duration Property
+### Duration 属性 {#duration-property}
 
 Gets the duration of the animation.
 
@@ -246,7 +246,7 @@ public TimeSpan Duration { get; set; }
 
 <span id="uid-e066627e36"></span>
 
-### FillMode Property
+### FillMode 属性 {#fillmode-property}
 
 Gets or sets the fill mode applied to both slide animations.
 Defaults to [Avalonia.Animation.FillMode.Forward](xref:Avalonia.Animation.FillMode.Forward), which keeps the final transform value after
@@ -263,7 +263,7 @@ public Avalonia.Animation.FillMode FillMode { get; set; }
 
 <span id="uid-3f35e71b0b"></span>
 
-### Orientation Property
+### Orientation 属性 {#orientation-property}
 
 Gets the orientation of the animation.
 
@@ -277,7 +277,7 @@ public Avalonia.Animation.PageSlide.SlideAxis Orientation { get; set; }
 
 <span id="uid-c709af8e90"></span>
 
-### SlideInEasing Property
+### SlideInEasing 属性 {#slideineasing-property}
 
 Gets or sets element entrance easing.
 
@@ -291,7 +291,7 @@ public Avalonia.Animation.Easings.Easing SlideInEasing { get; set; }
 
 <span id="uid-5d64b2750e"></span>
 
-### SlideOutEasing Property
+### SlideOutEasing 属性 {#slideouteasing-property}
 
 Gets or sets element exit easing.
 

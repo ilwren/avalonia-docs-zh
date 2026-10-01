@@ -30,7 +30,7 @@ public interface ICommand
 }
 ```
 
-| Member | Purpose |
+| Member | 用途 |
 |---|---|
 | `CanExecute` | Returns whether the command can currently run. Controls call this to determine their enabled state. |
 | `Execute` | Performs the command action. Controls call this when the user activates them. |
@@ -214,7 +214,7 @@ For controls, the `HotKey` attached property provides a simpler syntax:
 
 The `HotKey` triggers the button's command even when the button does not have focus.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Binding to commands](/docs/data-binding/binding-to-commands): Binding syntax, binding a `Command` straight to a method, and `CommandParameter`.
 - [How to bind CanExecute](/docs/data-binding/how-to-bind-can-execute): Worked example of a button enabled by `CanExecute`.

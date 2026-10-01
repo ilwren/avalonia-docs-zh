@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Compositor Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering.Composition</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering.Composition</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/Compositor.cs">Compositor.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/Compositor.cs">Compositor.cs</a>
 </div>
 
 </div>
@@ -55,33 +55,33 @@ public class Compositor
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Compositor
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Compositor
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CreateAnimationGroup](#uid-b1c21ed088) | No summary available. |
-| [CreateBooleanKeyFrameAnimation](#uid-e22ef80cc8) | No summary available. |
-| [CreateColorKeyFrameAnimation](#uid-d6d63e3e92) | No summary available. |
-| [CreateCompositionVisualSnapshot](#uid-928469a2b5) | No summary available. |
-| [CreateContainerVisual](#uid-b184a8da59) | No summary available. |
-| [CreateCustomVisual](#uid-71904a36c2) | No summary available. |
-| [CreateDoubleKeyFrameAnimation](#uid-536d7926d6) | No summary available. |
-| [CreateDrawingSurface](#uid-1b1323db16) | No summary available. |
-| [CreateExpressionAnimation (2 overloads)](#uid-dd602c8ad0) | No summary available. |
-| [CreateImplicitAnimationCollection](#uid-8583a670e4) | No summary available. |
-| [CreateQuaternionKeyFrameAnimation](#uid-b1df178619) | No summary available. |
-| [CreateScalarKeyFrameAnimation](#uid-835956d6ab) | No summary available. |
-| [CreateSolidColorVisual](#uid-ceff242099) | No summary available. |
-| [CreateSurfaceVisual](#uid-142c919484) | No summary available. |
-| [CreateVector2KeyFrameAnimation](#uid-f882fc73a5) | No summary available. |
-| [CreateVector3DKeyFrameAnimation](#uid-e9ce02ecba) | No summary available. |
-| [CreateVector3KeyFrameAnimation](#uid-d4bdffe43c) | No summary available. |
-| [CreateVector4KeyFrameAnimation](#uid-65eb4c836b) | No summary available. |
-| [CreateVectorKeyFrameAnimation](#uid-9d7562aa67) | No summary available. |
+| [CreateAnimationGroup](#uid-b1c21ed088) | 暂无摘要。 |
+| [CreateBooleanKeyFrameAnimation](#uid-e22ef80cc8) | 暂无摘要。 |
+| [CreateColorKeyFrameAnimation](#uid-d6d63e3e92) | 暂无摘要。 |
+| [CreateCompositionVisualSnapshot](#uid-928469a2b5) | 暂无摘要。 |
+| [CreateContainerVisual](#uid-b184a8da59) | 暂无摘要。 |
+| [CreateCustomVisual](#uid-71904a36c2) | 暂无摘要。 |
+| [CreateDoubleKeyFrameAnimation](#uid-536d7926d6) | 暂无摘要。 |
+| [CreateDrawingSurface](#uid-1b1323db16) | 暂无摘要。 |
+| [CreateExpressionAnimation (2 overloads)](#uid-dd602c8ad0) | 暂无摘要。 |
+| [CreateImplicitAnimationCollection](#uid-8583a670e4) | 暂无摘要。 |
+| [CreateQuaternionKeyFrameAnimation](#uid-b1df178619) | 暂无摘要。 |
+| [CreateScalarKeyFrameAnimation](#uid-835956d6ab) | 暂无摘要。 |
+| [CreateSolidColorVisual](#uid-ceff242099) | 暂无摘要。 |
+| [CreateSurfaceVisual](#uid-142c919484) | 暂无摘要。 |
+| [CreateVector2KeyFrameAnimation](#uid-f882fc73a5) | 暂无摘要。 |
+| [CreateVector3DKeyFrameAnimation](#uid-e9ce02ecba) | 暂无摘要。 |
+| [CreateVector3KeyFrameAnimation](#uid-d4bdffe43c) | 暂无摘要。 |
+| [CreateVector4KeyFrameAnimation](#uid-65eb4c836b) | 暂无摘要。 |
+| [CreateVectorKeyFrameAnimation](#uid-9d7562aa67) | 暂无摘要。 |
 | [RequestCommitAsync](#uid-1b4bd4c0f6) | Requests pending changes in the composition objects to be serialized and sent to the render thread |
 | [RequestCompositionBatchCommitAsync](#uid-597adef303) | Requests pending changes in the composition objects to be serialized and sent to the render thread |
 | [RequestCompositionUpdate](#uid-9f81b9e7ae) | Enqueues a callback to be called before the next scheduled commit. If there is no scheduled commit it automatically schedules one This is useful for updating your composition tree objects after binding and layout passes have completed |
@@ -93,13 +93,13 @@ public class Compositor
 
 <span id="uid-b1c21ed088"></span>
 
-### CreateAnimationGroup Method
+### CreateAnimationGroup 方法 {#createanimationgroup-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup CreateAnimationGroup()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup](xref:Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup)
 
@@ -110,13 +110,13 @@ public Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup Creat
 
 <span id="uid-e22ef80cc8"></span>
 
-### CreateBooleanKeyFrameAnimation Method
+### CreateBooleanKeyFrameAnimation 方法 {#createbooleankeyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.BooleanKeyFrameAnimation CreateBooleanKeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Rendering.Composition.BooleanKeyFrameAnimation](xref:Avalonia.Rendering.Composition.BooleanKeyFrameAnimation)
 
@@ -127,13 +127,13 @@ public Avalonia.Rendering.Composition.BooleanKeyFrameAnimation CreateBooleanKeyF
 
 <span id="uid-d6d63e3e92"></span>
 
-### CreateColorKeyFrameAnimation Method
+### CreateColorKeyFrameAnimation 方法 {#createcolorkeyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.ColorKeyFrameAnimation CreateColorKeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Rendering.Composition.ColorKeyFrameAnimation](xref:Avalonia.Rendering.Composition.ColorKeyFrameAnimation)
 
@@ -144,13 +144,13 @@ public Avalonia.Rendering.Composition.ColorKeyFrameAnimation CreateColorKeyFrame
 
 <span id="uid-928469a2b5"></span>
 
-### CreateCompositionVisualSnapshot Method
+### CreateCompositionVisualSnapshot 方法 {#createcompositionvisualsnapshot-method}
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> CreateCompositionVisualSnapshot(Avalonia.Rendering.Composition.CompositionVisual visual, double scaling)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `visual` [Avalonia.Rendering.Composition.CompositionVisual](xref:Avalonia.Rendering.Composition.CompositionVisual)
 
@@ -158,7 +158,7 @@ public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> CreateComposit
 `scaling` double
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)&gt;
 
@@ -169,13 +169,13 @@ System.Threading.Tasks.Task&lt;[Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Med
 
 <span id="uid-b184a8da59"></span>
 
-### CreateContainerVisual Method
+### CreateContainerVisual 方法 {#createcontainervisual-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.CompositionContainerVisual CreateContainerVisual()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Rendering.Composition.CompositionContainerVisual](xref:Avalonia.Rendering.Composition.CompositionContainerVisual)
 
@@ -186,18 +186,18 @@ public Avalonia.Rendering.Composition.CompositionContainerVisual CreateContainer
 
 <span id="uid-71904a36c2"></span>
 
-### CreateCustomVisual Method
+### CreateCustomVisual 方法 {#createcustomvisual-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.CompositionCustomVisual CreateCustomVisual(Avalonia.Rendering.Composition.CompositionCustomVisualHandler handler)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `handler` [Avalonia.Rendering.Composition.CompositionCustomVisualHandler](xref:Avalonia.Rendering.Composition.CompositionCustomVisualHandler)
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Rendering.Composition.CompositionCustomVisual](xref:Avalonia.Rendering.Composition.CompositionCustomVisual)
 
@@ -208,13 +208,13 @@ public Avalonia.Rendering.Composition.CompositionCustomVisual CreateCustomVisual
 
 <span id="uid-536d7926d6"></span>
 
-### CreateDoubleKeyFrameAnimation Method
+### CreateDoubleKeyFrameAnimation 方法 {#createdoublekeyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.DoubleKeyFrameAnimation CreateDoubleKeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Rendering.Composition.DoubleKeyFrameAnimation](xref:Avalonia.Rendering.Composition.DoubleKeyFrameAnimation)
 
@@ -225,13 +225,13 @@ public Avalonia.Rendering.Composition.DoubleKeyFrameAnimation CreateDoubleKeyFra
 
 <span id="uid-1b1323db16"></span>
 
-### CreateDrawingSurface Method
+### CreateDrawingSurface 方法 {#createdrawingsurface-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.CompositionDrawingSurface CreateDrawingSurface()
 ```
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Rendering.Composition.CompositionDrawingSurface](xref:Avalonia.Rendering.Composition.CompositionDrawingSurface)
 
@@ -246,13 +246,13 @@ public Avalonia.Rendering.Composition.CompositionDrawingSurface CreateDrawingSur
 
 <span id="uid-f96c478711"></span>
 
-#### CreateExpressionAnimation Method
+#### CreateExpressionAnimation 方法 {#createexpressionanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Animations.ExpressionAnimation CreateExpressionAnimation()
 ```
 
-##### Returns
+##### 返回值 {#returns-8}
 
 [Avalonia.Rendering.Composition.Animations.ExpressionAnimation](xref:Avalonia.Rendering.Composition.Animations.ExpressionAnimation)
 
@@ -263,18 +263,18 @@ public Avalonia.Rendering.Composition.Animations.ExpressionAnimation CreateExpre
 
 <span id="uid-df5315f48b"></span>
 
-#### CreateExpressionAnimation Method
+#### CreateExpressionAnimation 方法 {#createexpressionanimation-method-1}
 
 ```csharp
 public Avalonia.Rendering.Composition.Animations.ExpressionAnimation CreateExpressionAnimation(string expression)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `expression` string
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 [Avalonia.Rendering.Composition.Animations.ExpressionAnimation](xref:Avalonia.Rendering.Composition.Animations.ExpressionAnimation)
 
@@ -285,13 +285,13 @@ public Avalonia.Rendering.Composition.Animations.ExpressionAnimation CreateExpre
 
 <span id="uid-8583a670e4"></span>
 
-### CreateImplicitAnimationCollection Method
+### CreateImplicitAnimationCollection 方法 {#createimplicitanimationcollection-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Animations.ImplicitAnimationCollection CreateImplicitAnimationCollection()
 ```
 
-#### Returns
+#### 返回值 {#returns-10}
 
 [Avalonia.Rendering.Composition.Animations.ImplicitAnimationCollection](xref:Avalonia.Rendering.Composition.Animations.ImplicitAnimationCollection)
 
@@ -302,13 +302,13 @@ public Avalonia.Rendering.Composition.Animations.ImplicitAnimationCollection Cre
 
 <span id="uid-b1df178619"></span>
 
-### CreateQuaternionKeyFrameAnimation Method
+### CreateQuaternionKeyFrameAnimation 方法 {#createquaternionkeyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.QuaternionKeyFrameAnimation CreateQuaternionKeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-11}
 
 [Avalonia.Rendering.Composition.QuaternionKeyFrameAnimation](xref:Avalonia.Rendering.Composition.QuaternionKeyFrameAnimation)
 
@@ -319,13 +319,13 @@ public Avalonia.Rendering.Composition.QuaternionKeyFrameAnimation CreateQuaterni
 
 <span id="uid-835956d6ab"></span>
 
-### CreateScalarKeyFrameAnimation Method
+### CreateScalarKeyFrameAnimation 方法 {#createscalarkeyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.ScalarKeyFrameAnimation CreateScalarKeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-12}
 
 [Avalonia.Rendering.Composition.ScalarKeyFrameAnimation](xref:Avalonia.Rendering.Composition.ScalarKeyFrameAnimation)
 
@@ -336,13 +336,13 @@ public Avalonia.Rendering.Composition.ScalarKeyFrameAnimation CreateScalarKeyFra
 
 <span id="uid-ceff242099"></span>
 
-### CreateSolidColorVisual Method
+### CreateSolidColorVisual 方法 {#createsolidcolorvisual-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.CompositionSolidColorVisual CreateSolidColorVisual()
 ```
 
-#### Returns
+#### 返回值 {#returns-13}
 
 [Avalonia.Rendering.Composition.CompositionSolidColorVisual](xref:Avalonia.Rendering.Composition.CompositionSolidColorVisual)
 
@@ -353,13 +353,13 @@ public Avalonia.Rendering.Composition.CompositionSolidColorVisual CreateSolidCol
 
 <span id="uid-142c919484"></span>
 
-### CreateSurfaceVisual Method
+### CreateSurfaceVisual 方法 {#createsurfacevisual-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.CompositionSurfaceVisual CreateSurfaceVisual()
 ```
 
-#### Returns
+#### 返回值 {#returns-14}
 
 [Avalonia.Rendering.Composition.CompositionSurfaceVisual](xref:Avalonia.Rendering.Composition.CompositionSurfaceVisual)
 
@@ -370,13 +370,13 @@ public Avalonia.Rendering.Composition.CompositionSurfaceVisual CreateSurfaceVisu
 
 <span id="uid-f882fc73a5"></span>
 
-### CreateVector2KeyFrameAnimation Method
+### CreateVector2KeyFrameAnimation 方法 {#createvector2keyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Vector2KeyFrameAnimation CreateVector2KeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-15}
 
 [Avalonia.Rendering.Composition.Vector2KeyFrameAnimation](xref:Avalonia.Rendering.Composition.Vector2KeyFrameAnimation)
 
@@ -387,13 +387,13 @@ public Avalonia.Rendering.Composition.Vector2KeyFrameAnimation CreateVector2KeyF
 
 <span id="uid-e9ce02ecba"></span>
 
-### CreateVector3DKeyFrameAnimation Method
+### CreateVector3DKeyFrameAnimation 方法 {#createvector3dkeyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Vector3DKeyFrameAnimation CreateVector3DKeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-16}
 
 [Avalonia.Rendering.Composition.Vector3DKeyFrameAnimation](xref:Avalonia.Rendering.Composition.Vector3DKeyFrameAnimation)
 
@@ -404,13 +404,13 @@ public Avalonia.Rendering.Composition.Vector3DKeyFrameAnimation CreateVector3DKe
 
 <span id="uid-d4bdffe43c"></span>
 
-### CreateVector3KeyFrameAnimation Method
+### CreateVector3KeyFrameAnimation 方法 {#createvector3keyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Vector3KeyFrameAnimation CreateVector3KeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-17}
 
 [Avalonia.Rendering.Composition.Vector3KeyFrameAnimation](xref:Avalonia.Rendering.Composition.Vector3KeyFrameAnimation)
 
@@ -421,13 +421,13 @@ public Avalonia.Rendering.Composition.Vector3KeyFrameAnimation CreateVector3KeyF
 
 <span id="uid-65eb4c836b"></span>
 
-### CreateVector4KeyFrameAnimation Method
+### CreateVector4KeyFrameAnimation 方法 {#createvector4keyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Vector4KeyFrameAnimation CreateVector4KeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-18}
 
 [Avalonia.Rendering.Composition.Vector4KeyFrameAnimation](xref:Avalonia.Rendering.Composition.Vector4KeyFrameAnimation)
 
@@ -438,13 +438,13 @@ public Avalonia.Rendering.Composition.Vector4KeyFrameAnimation CreateVector4KeyF
 
 <span id="uid-9d7562aa67"></span>
 
-### CreateVectorKeyFrameAnimation Method
+### CreateVectorKeyFrameAnimation 方法 {#createvectorkeyframeanimation-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.VectorKeyFrameAnimation CreateVectorKeyFrameAnimation()
 ```
 
-#### Returns
+#### 返回值 {#returns-19}
 
 [Avalonia.Rendering.Composition.VectorKeyFrameAnimation](xref:Avalonia.Rendering.Composition.VectorKeyFrameAnimation)
 
@@ -455,7 +455,7 @@ public Avalonia.Rendering.Composition.VectorKeyFrameAnimation CreateVectorKeyFra
 
 <span id="uid-1b4bd4c0f6"></span>
 
-### RequestCommitAsync Method
+### RequestCommitAsync 方法 {#requestcommitasync-method}
 
 Requests pending changes in the composition objects to be serialized and sent to the render thread
 
@@ -463,7 +463,7 @@ Requests pending changes in the composition objects to be serialized and sent to
 public System.Threading.Tasks.Task RequestCommitAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-20}
 
 System.Threading.Tasks.Task
 
@@ -476,7 +476,7 @@ A task that completes when sent changes are applied on the render thread
 
 <span id="uid-597adef303"></span>
 
-### RequestCompositionBatchCommitAsync Method
+### RequestCompositionBatchCommitAsync 方法 {#requestcompositionbatchcommitasync-method}
 
 Requests pending changes in the composition objects to be serialized and sent to the render thread
 
@@ -484,7 +484,7 @@ Requests pending changes in the composition objects to be serialized and sent to
 public Avalonia.Rendering.Composition.Transport.CompositionBatch RequestCompositionBatchCommitAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-21}
 
 [Avalonia.Rendering.Composition.Transport.CompositionBatch](xref:Avalonia.Rendering.Composition.Transport.CompositionBatch)
 
@@ -497,7 +497,7 @@ A [CompositionBatch](xref:Avalonia.Rendering.Composition.Transport.CompositionBa
 
 <span id="uid-9f81b9e7ae"></span>
 
-### RequestCompositionUpdate Method
+### RequestCompositionUpdate 方法 {#requestcompositionupdate-method}
 
 Enqueues a callback to be called before the next scheduled commit.
 If there is no scheduled commit it automatically schedules one
@@ -508,7 +508,7 @@ and layout passes have completed
 public void RequestCompositionUpdate(Action action)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `action` Action
 
@@ -519,7 +519,7 @@ public void RequestCompositionUpdate(Action action)
 
 <span id="uid-2ef6811b7e"></span>
 
-### TryGetCompositionGpuInterop Method
+### TryGetCompositionGpuInterop 方法 {#trygetcompositiongpuinterop-method}
 
 Attempts to query for GPU interop feature from the platform render interface
 
@@ -527,7 +527,7 @@ Attempts to query for GPU interop feature from the platform render interface
 public System.Threading.Tasks.ValueTask<Avalonia.Rendering.Composition.ICompositionGpuInterop> TryGetCompositionGpuInterop()
 ```
 
-#### Returns
+#### 返回值 {#returns-22}
 
 System.Threading.Tasks.ValueTask&lt;[Avalonia.Rendering.Composition.ICompositionGpuInterop](xref:Avalonia.Rendering.Composition.ICompositionGpuInterop)&gt;
 
@@ -538,7 +538,7 @@ System.Threading.Tasks.ValueTask&lt;[Avalonia.Rendering.Composition.IComposition
 
 <span id="uid-f25f58f1a3"></span>
 
-### TryGetDefaultCompositor Method
+### TryGetDefaultCompositor 方法 {#trygetdefaultcompositor-method}
 
 Attempts to get the Compositor instance that will be used by default for new TopLevels
 created by the current platform backend.
@@ -555,7 +555,7 @@ always check if default Compositor matches one used by our control once it gets 
 public Avalonia.Rendering.Composition.Compositor TryGetDefaultCompositor()
 ```
 
-#### Returns
+#### 返回值 {#returns-23}
 
 [Avalonia.Rendering.Composition.Compositor](xref:Avalonia.Rendering.Composition.Compositor)
 
@@ -566,7 +566,7 @@ public Avalonia.Rendering.Composition.Compositor TryGetDefaultCompositor()
 
 <span id="uid-e874a58cdc"></span>
 
-### TryGetRenderInterfaceFeature Method
+### TryGetRenderInterfaceFeature 方法 {#trygetrenderinterfacefeature-method}
 
 Attempts to query for a feature from the platform render interface
 
@@ -574,12 +574,12 @@ Attempts to query for a feature from the platform render interface
 public System.Threading.Tasks.ValueTask<object> TryGetRenderInterfaceFeature(Type featureType)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
-`featureType` Type
+`featureType` 类型
 
 
-#### Returns
+#### 返回值 {#returns-24}
 
 System.Threading.Tasks.ValueTask&lt;object&gt;
 

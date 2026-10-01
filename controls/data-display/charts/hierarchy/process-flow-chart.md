@@ -113,7 +113,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowChart`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | Collection of `FlowNode` items representing process steps. | `null` |
 | `Edges` | Collection of `FlowEdge` items representing connections. | `null` |

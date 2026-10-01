@@ -13,7 +13,7 @@ The `DatePicker` control presents three spinner columns that let your users pick
 
 You will probably use these properties most often:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `SelectedDate` | The selected date as a `DateTimeOffset?` (null when there is no selection). |
 | `DayVisible` | Sets whether the day column is visible. |
@@ -117,7 +117,7 @@ public partial class MyViewModel : ObservableObject
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Calendar](/controls/input/date-and-time/calendar)
 - [CalendarDatePicker](/controls/input/date-and-time/calendardatepicker)

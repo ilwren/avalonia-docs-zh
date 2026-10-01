@@ -41,7 +41,7 @@ The `Render` method is called whenever the control needs to be redrawn. Call `In
 
 The `DrawingContext` provides these drawing operations:
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `DrawRectangle(brush, pen, rect, radiusX, radiusY)` | Draw a rectangle, optionally rounded |
 | `DrawEllipse(brush, pen, center, radiusX, radiusY)` | Draw an ellipse |
@@ -388,7 +388,7 @@ The message arrives in the `OnMessage` callback, where you can store it for use 
 - For complex scenes, consider breaking your control into smaller controls so that only the changed portion needs to redraw.
 - `ICustomDrawOperation` bypasses Avalonia's scene graph caching. Use it only when you need SkiaSharp-level control.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TopLevel.RequestAnimationFrame](/docs/fundamentals/top-level#requestanimationframe): Per-frame callbacks on the UI thread.
 - [Composition Animations](/docs/graphics-animation/composition-animations): Render-thread property animations using the composition API.

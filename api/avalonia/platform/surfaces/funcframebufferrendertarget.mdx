@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FuncFramebufferRenderTarget Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Surfaces</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Surfaces</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Surfaces/IFramebufferPlatformSurface.cs">IFramebufferPlatformSurface.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Surfaces/IFramebufferPlatformSurface.cs">IFramebufferPlatformSurface.cs</a>
 </div>
 
 </div>
@@ -54,34 +54,34 @@ public class FuncFramebufferRenderTarget
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FuncFramebufferRenderTarget
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FuncFramebufferRenderTarget
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iframebufferrendertarget">IFramebufferRenderTarget</a>, <a href="iplatformrendersurfacerendertarget">IPlatformRenderSurfaceRenderTarget</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iframebufferrendertarget">IFramebufferRenderTarget</a>, <a href="iplatformrendersurfacerendertarget">IPlatformRenderSurfaceRenderTarget</a>, IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FuncFramebufferRenderTarget (2 overloads)](#uid-abcc7e6ce7) | No summary available. |
+| [FuncFramebufferRenderTarget (2 overloads)](#uid-abcc7e6ce7) | 暂无摘要。 |
 
 <span id="uid-abcc7e6ce7"></span>
 
-### FuncFramebufferRenderTarget overloads
+### FuncFramebufferRenderTarget 的重载 {#funcframebufferrendertarget-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-050fd6dc6d"></span>
 
-#### FuncFramebufferRenderTarget Constructor
+#### FuncFramebufferRenderTarget 构造函数 {#funcframebufferrendertarget-constructor}
 
 ```csharp
 public FuncFramebufferRenderTarget(Avalonia.Platform.Surfaces.FuncFramebufferRenderTarget.LockFramebufferDelegate lockFramebuffer, bool retainsFrameContents)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `lockFramebuffer` [Avalonia.Platform.Surfaces.FuncFramebufferRenderTarget.LockFramebufferDelegate](xref:Avalonia.Platform.Surfaces.FuncFramebufferRenderTarget.LockFramebufferDelegate)
 
@@ -95,31 +95,31 @@ public FuncFramebufferRenderTarget(Avalonia.Platform.Surfaces.FuncFramebufferRen
 
 <span id="uid-f44f251528"></span>
 
-#### FuncFramebufferRenderTarget Constructor
+#### FuncFramebufferRenderTarget 构造函数 {#funcframebufferrendertarget-constructor-1}
 
 ```csharp
 public FuncFramebufferRenderTarget(Func<Avalonia.Platform.ILockedFramebuffer> lockFramebuffer)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `lockFramebuffer` Func&lt;[Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer)&gt;
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-89572d25f5) | No summary available. |
-| [Lock](#uid-3003e62d0b) | No summary available. |
+| [Dispose](#uid-89572d25f5) | 暂无摘要。 |
+| [Lock](#uid-3003e62d0b) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-89572d25f5"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -131,13 +131,13 @@ public void Dispose()
 
 <span id="uid-3003e62d0b"></span>
 
-### Lock Method
+### Lock 方法 {#lock-method}
 
 ```csharp
 public Avalonia.Platform.ILockedFramebuffer Lock(Avalonia.Platform.IRenderTarget.RenderTargetSceneInfo sceneInfo, Avalonia.Platform.Surfaces.FramebufferLockProperties& properties)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `sceneInfo` Avalonia.Platform.IRenderTarget.RenderTargetSceneInfo
 
@@ -145,24 +145,24 @@ public Avalonia.Platform.ILockedFramebuffer Lock(Avalonia.Platform.IRenderTarget
 `properties` [Avalonia.Platform.Surfaces.FramebufferLockProperties](xref:Avalonia.Platform.Surfaces.FramebufferLockProperties)&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RetainsFrameContents](#uid-56c99da755) | No summary available. |
+| [RetainsFrameContents](#uid-56c99da755) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-56c99da755"></span>
 
-### RetainsFrameContents Property
+### RetainsFrameContents 属性 {#retainsframecontents-property}
 
 ```csharp
 public bool RetainsFrameContents { get; set; }

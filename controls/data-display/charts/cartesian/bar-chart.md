@@ -49,7 +49,7 @@ public ObservableCollection<int> BarSeriesData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

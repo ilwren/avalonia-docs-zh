@@ -204,7 +204,7 @@ Notes travel as nested snapshots on `DocumentSnapshot.Footnotes`, so `FlowDocume
 note.Label = "constant-currency";
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Pagination](/controls/input/text-input/richtexteditor/pagination) - how notes take part in filling a page
 - [Headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers) - the other nested document a page carries

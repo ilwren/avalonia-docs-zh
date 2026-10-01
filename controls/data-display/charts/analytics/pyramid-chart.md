@@ -47,7 +47,7 @@ public ObservableCollection<PyramidItem> PyramidData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data layers. | `null` |
 | `ValuePath` | Magnitude of each layer. | `null` |

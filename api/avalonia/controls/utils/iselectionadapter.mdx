@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ISelectionAdapter Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Utils</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Utils</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Utils/ISelectionAdapter.cs">ISelectionAdapter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Utils/ISelectionAdapter.cs">ISelectionAdapter.cs</a>
 </div>
 
 </div>
@@ -54,9 +54,9 @@ public interface ISelectionAdapter
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HandleKeyDown](#uid-81125de25a) | Provides handling for the [Avalonia.Input.InputElement.KeyDown](xref:Avalonia.Input.InputElement.KeyDown) event that occurs when a key is pressed while the drop-down portion of the [Avalonia.Controls.AutoCompleteBox](xref:Avalonia.Controls.AutoCompleteBox) has focus. |
 
@@ -64,7 +64,7 @@ public interface ISelectionAdapter
 
 <span id="uid-81125de25a"></span>
 
-### HandleKeyDown Method
+### HandleKeyDown 方法 {#handlekeydown-method}
 
 Provides handling for the
 [Avalonia.Input.InputElement.KeyDown](xref:Avalonia.Input.InputElement.KeyDown) event that occurs
@@ -75,7 +75,7 @@ when a key is pressed while the drop-down portion of the
 public void HandleKeyDown(Avalonia.Input.KeyEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `e` [Avalonia.Input.KeyEventArgs](xref:Avalonia.Input.KeyEventArgs)
 
@@ -86,9 +86,9 @@ that contains data about the
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ItemsSource](#uid-cce7a36590) | Gets or sets a collection that is used to generate content for the selection adapter. |
 | [SelectedItem](#uid-5f56642806) | Gets or sets the selected item. |
@@ -97,7 +97,7 @@ that contains data about the
 
 <span id="uid-cce7a36590"></span>
 
-### ItemsSource Property
+### ItemsSource 属性 {#itemssource-property}
 
 Gets or sets a collection that is used to generate content for the
 selection adapter.
@@ -106,7 +106,7 @@ selection adapter.
 public System.Collections.IEnumerable ItemsSource { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The collection that is used to generate content for the
 selection adapter.
@@ -118,7 +118,7 @@ selection adapter.
 
 <span id="uid-5f56642806"></span>
 
-### SelectedItem Property
+### SelectedItem 属性 {#selecteditem-property}
 
 Gets or sets the selected item.
 
@@ -126,16 +126,16 @@ Gets or sets the selected item.
 public object SelectedItem { get; set; }
 ```
 
-#### Value
+#### 值 {#value-1}
 
 The currently selected item.
 
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Cancel](#uid-750cbcbf64) | Occurs when a selection has been canceled. |
 | [Commit](#uid-53f54e48fb) | Occurs when a selected item is not cancelled and is committed as the selected item. |
@@ -145,7 +145,7 @@ The currently selected item.
 
 <span id="uid-750cbcbf64"></span>
 
-### Cancel Event
+### Cancel 事件 {#cancel-event}
 
 Occurs when a selection has been canceled.
 
@@ -159,7 +159,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Cancel
 
 <span id="uid-53f54e48fb"></span>
 
-### Commit Event
+### Commit 事件 {#commit-event}
 
 Occurs when a selected item is not cancelled and is committed as the
 selected item.
@@ -174,7 +174,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Commit
 
 <span id="uid-24ca457fc8"></span>
 
-### SelectionChanged Event
+### SelectionChanged 事件 {#selectionchanged-event}
 
 Occurs when the
 [Avalonia.Controls.Utils.ISelectionAdapter.SelectedItem](xref:Avalonia.Controls.Utils.ISelectionAdapter.SelectedItem)

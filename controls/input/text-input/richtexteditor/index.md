@@ -20,7 +20,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 Use `RichTextEditor` to create an area where users can edit text content and perform common text operations, such as formatting, aligning, highlighting, or undo/redo.
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `Avalonia.Controls.RichTextEditor` and `Avalonia.Controls.Documents` NuGet packages by running `dotnet add package`. Optionally, install serializers for specific file formats you need.
 
@@ -275,7 +275,7 @@ A document also owns two kinds of nested document, each a `FlowDocument` in its 
 
 These properties are used by the `RichTextEditor` component.
 
-| Property | Type | Description | Default |
+| Property | Type | 说明 | Default |
 | --- | --- | --- | --- |
 | `AcceptsReturn` | `bool`| Determines whether the editor accepts return key input. | `true` |
 | `AcceptsTab` | `bool` | Determines whether the editor accepts tab key input. | `true` |
@@ -301,7 +301,7 @@ These properties are used by the `RichTextEditor` component.
 
 These properties are used by the `FlowDocument` component.
 
-| Property | Type | Description | Default |
+| Property | Type | 说明 | Default |
 | --- | --- | --- | --- |
 | `Background` | `IBrush` | Color of the document's background, as an ARGB value. | `Null` |
 | `FontFamily` | `FontFamily ` | Font family for text in the document. | `Null` |
@@ -324,7 +324,7 @@ These properties are used by the `FlowDocument` component.
 
 Block elements are used by `FlowDocument` to build the document model and organize content.
 
-| Element | Description |
+| Element | 说明 |
 | --- | --- |
 | `Block` | Abstract base class for block elements. |
 | `BlockUIContainer` | Wrapper to embed UI elements as blocks. |
@@ -338,9 +338,9 @@ Block elements are used by `FlowDocument` to build the document model and organi
 | `TableRow` | A row of cells in a `Table`. |
 | `TableRowGroup` | A group of rows in a `Table`. |
 
-### Properties
+### 属性 {#properties}
 
-| Property | Type | Description | Default |
+| Property | Type | 说明 | Default |
 | --- | --- | --- | --- |
 | `Background` | `IBrush` | Color of the block's background, as an ARGB value. | `Null` |
 | `BorderBrush`| `IBrush` | Color of the block's borders, as an ARGB value. | `Null` |
@@ -382,7 +382,7 @@ Block elements are used by `FlowDocument` to build the document model and organi
 
 Inline elements are used to specify content styles within a block.
 
-| Element | Description |
+| Element | 说明 |
 | --- | --- |
 | `RichBold` | Indicates bolded text. Overrides global `FontWeight` property. |
 | `RichFootnoteCitation` | A further citation of a note whose anchor is elsewhere. Paired with a `Footnote` by `NoteId`. |
@@ -400,9 +400,9 @@ Inline elements are used to specify content styles within a block.
 | `RichSuperscript` | Indicates superscript text. Sets `BaselineAlignment` property to `Superscript`. |
 | `RichUnderline` | Indicates underlined text. Overrides global `TextDecorations` property. |
 
-### Properties
+### 属性 {#properties-1}
 
-| Property | Type | Used by | Description |
+| Property | Type | Used by | 说明 |
 | --- | --- | --- | --- |
 | `AltText` | `string?` | `RichImage` | Alternative text for the image. |
 | `Child` | `Control` | `RichInlineUIContainer` | Defines the control to be placed in the inline container. |
@@ -429,7 +429,7 @@ Inline elements are used to specify content styles within a block.
 
 The Avalonia rich text editor separates functions into an eight-layer architecture.
 
-| Layer | Name | Description | Key components |
+| Layer | 名称 | 说明 | Key components |
 | --- | --- | --- | --- |
 | 1 | Document model | Core data storage of text context and document hierarchy. Uses a rope data structure for efficient storage and operations. | `TextDocument`, `FlowDocument` |
 | 2 | Text pointer API | Position tracking and navigation within documents. `TextRange` owns positional mutation. | `TextPointer`, `TextRange`, `LogicalDirection` |
@@ -440,7 +440,7 @@ The Avalonia rich text editor separates functions into an eight-layer architectu
 | 7 | Serialization | Import and export documents in multiple formats (RTF, DOCX, XAML, HTML, Markdown, PDF, plain text). Serializers are synchronous and UI-free. | `IDocumentSerializer`, `DocumentSnapshot`, `DocumentSnapshotBuilder` |
 | 8 | User-facing control | Integration of all layers into a templated Avalonia control. | `RichTextEditor`, `FlowDocumentScrollViewer`, `FlowDocumentPageViewer`, `FlowDocument`, block and inline elements |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Document Viewer](/controls/input/text-input/richtexteditor/document-viewer) — read-only `FlowDocumentScrollViewer` setup
 - [Toolbar and Selection Flyouts](/controls/input/text-input/richtexteditor/toolbar) — customizing the toolbar, mini-bar, and context menu

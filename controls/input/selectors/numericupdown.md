@@ -11,7 +11,7 @@ The `NumericUpDown` is an editable numeric input with up and down spinner button
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Value` | `decimal?` | Gets or sets the current numeric value. |
 | `Increment` | `decimal` | The step amount used by the spinner buttons, keyboard arrows, and mouse wheel. Default is `1`. |
@@ -111,7 +111,7 @@ Clearing all input from the control's text box may cause a binding exception. Se
 - Setting `Value` to `null` clears the input. This can be useful when you want to represent an "unset" state.
 - The `FormatString` property accepts standard .NET numeric format strings. For example, `"C2"` displays the value as currency with two decimal places, and `"P0"` displays it as a percentage with no decimal places.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Slider](/controls/input/selectors/slider)
 - [TextBox](/controls/input/text-input/textbox)

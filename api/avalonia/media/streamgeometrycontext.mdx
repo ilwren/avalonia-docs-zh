@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StreamGeometryContext Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/StreamGeometryContext.cs">StreamGeometryContext.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/StreamGeometryContext.cs">StreamGeometryContext.cs</a>
 </div>
 
 </div>
@@ -54,38 +54,38 @@ public class StreamGeometryContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> StreamGeometryContext
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> StreamGeometryContext
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../platform/igeometrycontext">IGeometryContext</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../platform/igeometrycontext">IGeometryContext</a>, IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This class is used to define the geometry of a [Avalonia.Media.StreamGeometry](xref:Avalonia.Media.StreamGeometry). An instance
 of [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) is obtained by calling
 [Avalonia.Media.StreamGeometry.Open](xref:Avalonia.Media.StreamGeometry.Open).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [StreamGeometryContext](#uid-3dc3f4d06a) | Initializes a new instance of the [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) class. |
+| [StreamGeometryContext](#uid-3dc3f4d06a) | 初始化 [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3dc3f4d06a"></span>
 
-### StreamGeometryContext Constructor
+### StreamGeometryContext 构造函数 {#streamgeometrycontext-constructor}
 
-Initializes a new instance of the [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) class.
+初始化 [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) 类的新实例。
 
 ```csharp
 public StreamGeometryContext(Avalonia.Platform.IStreamGeometryContextImpl impl)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `impl` [Avalonia.Platform.IStreamGeometryContextImpl](xref:Avalonia.Platform.IStreamGeometryContextImpl)
 
@@ -94,9 +94,9 @@ The platform-specific implementation.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ArcTo](#uid-be50654767) | Draws an arc to the specified point. |
 | [BeginFigure](#uid-11ae2a0392) | Begins a new figure. |
@@ -112,7 +112,7 @@ The platform-specific implementation.
 
 <span id="uid-be50654767"></span>
 
-### ArcTo Method
+### ArcTo 方法 {#arcto-method}
 
 Draws an arc to the specified point.
 
@@ -120,7 +120,7 @@ Draws an arc to the specified point.
 public void ArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle, bool isLargeArc, Avalonia.Media.SweepDirection sweepDirection, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -160,7 +160,7 @@ Whether the segment is stroked.
 
 <span id="uid-11ae2a0392"></span>
 
-### BeginFigure Method
+### BeginFigure 方法 {#beginfigure-method}
 
 Begins a new figure.
 
@@ -168,7 +168,7 @@ Begins a new figure.
 public void BeginFigure(Avalonia.Point startPoint, bool isFilled)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `startPoint` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -186,7 +186,7 @@ Whether the figure is filled.
 
 <span id="uid-4f50e8a6a8"></span>
 
-### CubicBezierTo Method
+### CubicBezierTo 方法 {#cubicbezierto-method}
 
 Draws a Bezier curve to the specified point.
 
@@ -194,7 +194,7 @@ Draws a Bezier curve to the specified point.
 public void CubicBezierTo(Avalonia.Point controlPoint1, Avalonia.Point controlPoint2, Avalonia.Point endPoint, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `controlPoint1` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -222,7 +222,7 @@ Whether the segment is stroked.
 
 <span id="uid-944781a4ee"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 Finishes the drawing session.
 
@@ -236,7 +236,7 @@ public void Dispose()
 
 <span id="uid-f3cfbc992f"></span>
 
-### EndFigure Method
+### EndFigure 方法 {#endfigure-method}
 
 Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29).
 
@@ -244,7 +244,7 @@ Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalo
 public void EndFigure(bool isClosed)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `isClosed` bool
 
@@ -257,7 +257,7 @@ Whether the figure is closed.
 
 <span id="uid-10f817d4ee"></span>
 
-### LineTo Method
+### LineTo 方法 {#lineto-method}
 
 Draws a line to the specified point.
 
@@ -265,7 +265,7 @@ Draws a line to the specified point.
 public void LineTo(Avalonia.Point point, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -283,7 +283,7 @@ Whether the segment is stroked.
 
 <span id="uid-06926b62a0"></span>
 
-### PreciseArcTo Method
+### PreciseArcTo 方法 {#precisearcto-method}
 
 Draws an arc to the specified point using polylines, quadratic or cubic Bezier curves
 Significantly more precise when drawing elliptic arcs with extreme width:height ratios.
@@ -292,7 +292,7 @@ Significantly more precise when drawing elliptic arcs with extreme width:height 
 public void PreciseArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle, bool isLargeArc, Avalonia.Media.SweepDirection sweepDirection)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -325,7 +325,7 @@ A value that indicates whether the arc is drawn in the Clockwise or Counterclock
 
 <span id="uid-d6614fafeb"></span>
 
-### QuadraticBezierTo Method
+### QuadraticBezierTo 方法 {#quadraticbezierto-method}
 
 Draws a quadratic Bezier curve to the specified point.
 
@@ -333,7 +333,7 @@ Draws a quadratic Bezier curve to the specified point.
 public void QuadraticBezierTo(Avalonia.Point controlPoint, Avalonia.Point endPoint, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `controlPoint` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -356,7 +356,7 @@ Whether the segment is stroked.
 
 <span id="uid-57a8199e4d"></span>
 
-### SetFillRule Method
+### SetFillRule 方法 {#setfillrule-method}
 
 Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure. If you wonder why, ask Direct2D guys about their design decisions.
 
@@ -364,7 +364,7 @@ Sets path's winding rule (default is EvenOdd). You should call this method befor
 public void SetFillRule(Avalonia.Media.FillRule fillRule)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `fillRule` [Avalonia.Media.FillRule](xref:Avalonia.Media.FillRule)
 

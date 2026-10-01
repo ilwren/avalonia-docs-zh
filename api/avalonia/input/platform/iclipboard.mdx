@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IClipboard Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/Platform/IClipboard.cs">IClipboard.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/Platform/IClipboard.cs">IClipboard.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface IClipboard
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ClearAsync](#uid-47f6c46264) | Clears any data from the system clipboard. |
 | [FlushAsync](#uid-1a1264d68c) | Permanently adds the data that is on the Clipboard so that it is available after the data's original application closes. |
@@ -66,7 +66,7 @@ public interface IClipboard
 
 <span id="uid-47f6c46264"></span>
 
-### ClearAsync Method
+### ClearAsync 方法 {#clearasync-method}
 
 Clears any data from the system clipboard.
 
@@ -74,7 +74,7 @@ Clears any data from the system clipboard.
 public System.Threading.Tasks.Task ClearAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -85,7 +85,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-1a1264d68c"></span>
 
-### FlushAsync Method
+### FlushAsync 方法 {#flushasync-method}
 
 Permanently adds the data that is on the Clipboard so that it is available after the data's original application closes.
 
@@ -93,12 +93,12 @@ Permanently adds the data that is on the Clipboard so that it is available after
 public System.Threading.Tasks.Task FlushAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This method is only supported on the Windows platform. This method will do nothing on other platforms.
 
@@ -108,7 +108,7 @@ This method is only supported on the Windows platform. This method will do nothi
 
 <span id="uid-b5e371f49c"></span>
 
-### SetDataAsync Method
+### SetDataAsync 方法 {#setdataasync-method}
 
 Places a data object on the clipboard.
 The data object is responsible for providing supported formats and data upon request.
@@ -117,19 +117,19 @@ The data object is responsible for providing supported formats and data upon req
 public System.Threading.Tasks.Task SetDataAsync(Avalonia.Input.IAsyncDataTransfer dataTransfer)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `dataTransfer` [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)
 
 The data object to set on the clipboard.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 If `dataTransfer` is null, nothing will get placed on the clipboard and this method
 will be equivalent to [Avalonia.Input.Platform.IClipboard.ClearAsync](xref:Avalonia.Input.Platform.IClipboard.ClearAsync).
@@ -143,7 +143,7 @@ The clipboard will dispose of it automatically when it becomes unused.
 
 <span id="uid-ee8535d426"></span>
 
-### TryGetDataAsync Method
+### TryGetDataAsync 方法 {#trygetdataasync-method}
 
 Retrieves data from the clipboard.
 
@@ -151,12 +151,12 @@ Retrieves data from the clipboard.
 public System.Threading.Tasks.Task<Avalonia.Input.IAsyncDataTransfer> TryGetDataAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)&gt;
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The returned [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) MUST be disposed by the caller.
 
@@ -169,7 +169,7 @@ use it, then dispose it as soon as possible.
 
 <span id="uid-fcfaed595d"></span>
 
-### TryGetInProcessDataAsync Method
+### TryGetInProcessDataAsync 方法 {#trygetinprocessdataasync-method}
 
 Retrieves the exact instance of a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) previously placed on the clipboard
 by [Avalonia.Input.Platform.IClipboard.SetDataAsync(Avalonia.Input.IAsyncDataTransfer)](xref:Avalonia.Input.Platform.IClipboard.SetDataAsync%28Avalonia.Input.IAsyncDataTransfer%29), if any.
@@ -178,14 +178,14 @@ by [Avalonia.Input.Platform.IClipboard.SetDataAsync(Avalonia.Input.IAsyncDataTra
 public System.Threading.Tasks.Task<Avalonia.Input.IAsyncDataTransfer> TryGetInProcessDataAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)&gt;
 
 The data transfer object if present, null otherwise.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 This method cannot be used to retrieve a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) set by another process.
 

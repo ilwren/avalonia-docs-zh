@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HighlightLayerBase Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Highlighting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Highlighting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,19 +51,19 @@ public class HighlightLayerBase
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> HighlightLayerBase
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> HighlightLayerBase
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="selectionhighlightlayer">SelectionHighlightLayer</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="selectionhighlightlayer">SelectionHighlightLayer</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ihighlightlayer">IHighlightLayer</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ihighlightlayer">IHighlightLayer</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetRegions](#uid-144ab4b076) | Gets all highlight regions in this layer. |
 | [GetRegionsInRange](#uid-d2e912ad5d) | Gets highlight regions that intersect with the specified range. |
@@ -73,7 +73,7 @@ public class HighlightLayerBase
 
 <span id="uid-144ab4b076"></span>
 
-### GetRegions Method
+### GetRegions 方法 {#getregions-method}
 
 Gets all highlight regions in this layer.
 
@@ -81,7 +81,7 @@ Gets all highlight regions in this layer.
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion> GetRegions()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion](xref:Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion)&gt;
 
@@ -94,7 +94,7 @@ A read-only list of highlight regions.
 
 <span id="uid-d2e912ad5d"></span>
 
-### GetRegionsInRange Method
+### GetRegionsInRange 方法 {#getregionsinrange-method}
 
 Gets highlight regions that intersect with the specified range.
 
@@ -102,7 +102,7 @@ Gets highlight regions that intersect with the specified range.
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion> GetRegionsInRange(Avalonia.Controls.Documents.TextModel.TextPointer start, Avalonia.Controls.Documents.TextModel.TextPointer end)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `start` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -114,7 +114,7 @@ The start position of the range.
 The end position of the range.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion](xref:Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion)&gt;
 
@@ -127,7 +127,7 @@ An enumerable of regions that intersect with the range.
 
 <span id="uid-da49a17564"></span>
 
-### Render Method
+### Render 方法 {#render-method}
 
 Renders this layer.
 
@@ -135,11 +135,11 @@ Renders this layer.
 public void Render(Avalonia.Media.DrawingContext context, Avalonia.Controls.Documents.Primitives.ITextView textView)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `context` [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 `textView` [Avalonia.Controls.Documents.Primitives.ITextView](xref:Avalonia.Controls.Documents.Primitives.ITextView)
@@ -149,9 +149,9 @@ The text view for coordinate mapping.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsVisible](#uid-cd67c451b3) | Gets or sets a value indicating whether this layer is currently visible. |
 | [Name](#uid-48a5e007e0) | Gets the name that identifies this layer within a [Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection](xref:Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection), which rejects a second layer carrying the same one and looks layers up by it. |
@@ -161,7 +161,7 @@ The text view for coordinate mapping.
 
 <span id="uid-cd67c451b3"></span>
 
-### IsVisible Property
+### IsVisible 属性 {#isvisible-property}
 
 Gets or sets a value indicating whether this layer is currently visible.
 
@@ -175,7 +175,7 @@ public bool IsVisible { get; set; }
 
 <span id="uid-48a5e007e0"></span>
 
-### Name Property
+### Name 属性 {#name-property}
 
 Gets the name that identifies this layer within a
 [Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection](xref:Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection), which rejects a second layer
@@ -191,7 +191,7 @@ public string Name { get; set; }
 
 <span id="uid-82f2b21bb7"></span>
 
-### ZIndex Property
+### ZIndex 属性 {#zindex-property}
 
 Gets the Z-index for rendering order (higher = on top).
 
@@ -201,9 +201,9 @@ public int ZIndex { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RegionsChanged](#uid-29ba96f891) | Event raised when regions change. |
 
@@ -211,7 +211,7 @@ public int ZIndex { get; set; }
 
 <span id="uid-29ba96f891"></span>
 
-### RegionsChanged Event
+### RegionsChanged 事件 {#regionschanged-event}
 
 Event raised when regions change.
 

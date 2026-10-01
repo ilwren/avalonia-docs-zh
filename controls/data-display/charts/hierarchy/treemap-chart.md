@@ -46,7 +46,7 @@ public ObservableCollection<TreeMapItem> TreeMapData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The chart title. | `null` |
 | `ItemsSource` | The collection of data items. | `null` |

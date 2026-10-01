@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IStorageFile Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageFile.cs">IStorageFile.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageFile.cs">IStorageFile.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public interface IStorageFile
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="istorageitem">IStorageItem</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="istorageitem">IStorageItem</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [OpenReadAsync](#uid-0e13611f60) | Opens a stream for read access. |
 | [OpenWriteAsync](#uid-2e28d07de8) | Opens stream for writing to the file. |
@@ -69,7 +69,7 @@ public interface IStorageFile
 
 <span id="uid-0e13611f60"></span>
 
-### OpenReadAsync Method
+### OpenReadAsync 方法 {#openreadasync-method}
 
 Opens a stream for read access.
 
@@ -77,12 +77,12 @@ Opens a stream for read access.
 public System.Threading.Tasks.Task<System.IO.Stream> OpenReadAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;System.IO.Stream&gt;
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [UnauthorizedAccessException](xref:System.UnauthorizedAccessException)
 
@@ -92,7 +92,7 @@ System.Threading.Tasks.Task&lt;System.IO.Stream&gt;
 
 <span id="uid-2e28d07de8"></span>
 
-### OpenWriteAsync Method
+### OpenWriteAsync 方法 {#openwriteasync-method}
 
 Opens stream for writing to the file.
 
@@ -100,12 +100,12 @@ Opens stream for writing to the file.
 public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;System.IO.Stream&gt;
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [UnauthorizedAccessException](xref:System.UnauthorizedAccessException)
 

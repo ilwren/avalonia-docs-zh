@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">WindowDecorationProperties Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Chrome</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Chrome</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Chrome/WindowDecorationProperties.cs">WindowDecorationProperties.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Chrome/WindowDecorationProperties.cs">WindowDecorationProperties.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class WindowDecorationProperties
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> WindowDecorationProperties
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> WindowDecorationProperties
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetElementRole](#uid-9d67656f23) | Gets the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole) for the specified element. |
 | [SetElementRole](#uid-7f4861a389) | Sets the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole) for the specified element. |
@@ -69,7 +69,7 @@ public class WindowDecorationProperties
 
 <span id="uid-9d67656f23"></span>
 
-### GetElementRole Method
+### GetElementRole 方法 {#getelementrole-method}
 
 Gets the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole) for the specified element.
 
@@ -77,12 +77,12 @@ Gets the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.Windo
 public Avalonia.Input.WindowDecorationsElementRole GetElementRole(Avalonia.Visual element)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `element` [Avalonia.Visual](xref:Avalonia.Visual)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole)
 
@@ -93,7 +93,7 @@ public Avalonia.Input.WindowDecorationsElementRole GetElementRole(Avalonia.Visua
 
 <span id="uid-7f4861a389"></span>
 
-### SetElementRole Method
+### SetElementRole 方法 {#setelementrole-method}
 
 Sets the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole) for the specified element.
 
@@ -101,7 +101,7 @@ Sets the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.Windo
 public void SetElementRole(Avalonia.Visual element, Avalonia.Input.WindowDecorationsElementRole value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `element` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -109,15 +109,15 @@ public void SetElementRole(Avalonia.Visual element, Avalonia.Input.WindowDecorat
 `value` [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Setting an element role only has an effect if [Avalonia.Controls.Window.ExtendClientAreaToDecorationsHint](xref:Avalonia.Controls.Window.ExtendClientAreaToDecorationsHint) is true.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ElementRoleProperty](#uid-05e1fd3e4c) | Defines the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole) attached property. Marks a visual element with a specific role for non-client hit-testing. Can be applied to any element in the visual tree, not limited to decoration children. |
 
@@ -125,7 +125,7 @@ Setting an element role only has an effect if [Avalonia.Controls.Window.ExtendCl
 
 <span id="uid-05e1fd3e4c"></span>
 
-### ElementRoleProperty Field
+### ElementRoleProperty 字段 {#elementroleproperty-field}
 
 Defines the [Avalonia.Input.WindowDecorationsElementRole](xref:Avalonia.Input.WindowDecorationsElementRole) attached property.
 Marks a visual element with a specific role for non-client hit-testing.
@@ -135,7 +135,7 @@ Can be applied to any element in the visual tree, not limited to decoration chil
 public Avalonia.AttachedProperty<Avalonia.Input.WindowDecorationsElementRole> ElementRoleProperty
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Setting an element role only has an effect if [Avalonia.Controls.Window.ExtendClientAreaToDecorationsHint](xref:Avalonia.Controls.Window.ExtendClientAreaToDecorationsHint) is true.
 

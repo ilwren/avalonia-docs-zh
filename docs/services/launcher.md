@@ -13,7 +13,7 @@ You can access the `Launcher` through an instance of `TopLevel` or `Window`. For
 var launcher = TopLevel.GetTopLevel(control).Launcher;
 ```
 
-## Methods
+## 方法 {#methods}
 
 ### `LaunchUriAsync`
 
@@ -102,7 +102,7 @@ Each of these methods returns a `bool` indicating whether the operating system w
 | `LaunchFileInfoAsync` | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ |
 | `LaunchDirectoryInfoAsync` | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Storage Provider](/docs/services/storage/storage-provider): File and folder management API.
 - [Clipboard](/docs/services/clipboard): Reading and writing clipboard data.

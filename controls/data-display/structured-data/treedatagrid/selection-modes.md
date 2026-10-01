@@ -257,6 +257,6 @@ Source.CellSelection!.SelectionChanged += (s, e) =>
 };
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)

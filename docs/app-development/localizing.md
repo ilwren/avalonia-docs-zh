@@ -240,7 +240,7 @@ In the above example, setting culture to `de-DE` displays a price of `1234.56` a
 
 Avalonia's localization features work consistently across all supported platforms. For system locale detection, use `CultureInfo.CurrentCulture` on any supported platform.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Resources](/docs/app-development/resources): Application resources.
 - [Custom Fonts](/docs/styling/custom-fonts): Loading fonts for different scripts.

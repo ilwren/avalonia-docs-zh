@@ -186,7 +186,7 @@ Provides measurement references:
 
 ![Ruler](/img/tools/dev-tools/overlay-ruler.png)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Events tool](/tools/developer-tools/events-tool)
 - [Developer tools shortcuts](/tools/developer-tools/shortcuts)

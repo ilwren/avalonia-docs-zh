@@ -112,7 +112,7 @@ public class MyView : UserControl
 
 The returned `SaveFilePickerResult` struct contains:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `StorageFile` | `IStorageFile?` | The saved file, or `null` if the user cancelled. |
 | `SelectedFileType` | `FilePickerFileType?` | The file type filter the user selected in the dialog. |
@@ -123,7 +123,7 @@ For more information on StorageProvider service including on how to keep access 
 The provided examples directly access the [`StorageProvider`](/docs/services/storage/storage-provider) API inside the ViewModel for learning purposes. In a real-world application, it's recommended to adhere to MVVM principles by creating service classes and locating them with Dependency Injection / Inversion of Control (DI/IoC). Please refer to the [IoCFileOps](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/IoCFileOps) and DepInject projects for samples of how to achieve this.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [`StorageProvider`](/docs/services/storage/storage-provider): Full storage provider API reference.
 - [File Picker Options](/docs/services/storage/file-picker-options): Configuring file type filters and dialog options.

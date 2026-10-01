@@ -33,7 +33,7 @@ You must always define a last child control (with no dock property), or the dock
 
 You will probably use these properties most often:
 
-<table><thead><tr><th width="266">Property</th><th>Description</th></tr></thead><tbody><tr><td>DockPanel.Dock<code>.Left</code></td><td>Attached to a child control - dock this to the left side.</td></tr><tr><td>DockPanel.Dock<code>.Top</code></td><td>Attached to a child control - dock this to the top edge.</td></tr><tr><td>DockPanel.Dock<code>.Right</code></td><td>Attached to a child control - dock this to the right side.</td></tr><tr><td>DockPanel.Dock<code>.Bottom</code></td><td>Attached to a child control - dock this to the bottom edge.</td></tr><tr><td><code>HorizontalSpacing</code></td><td>Sets horizontal spacing (double, default 0) between docked child controls.</td></tr><tr><td><code>VerticalSpacing</code></td><td>Sets vertical spacing (double, default 0) between docked child controls.</td></tr></tbody></table>
+<table><thead><tr><th width="266">Property</th><th>说明</th></tr></thead><tbody><tr><td>DockPanel.Dock<code>.Left</code></td><td>Attached to a child control - dock this to the left side.</td></tr><tr><td>DockPanel.Dock<code>.Top</code></td><td>Attached to a child control - dock this to the top edge.</td></tr><tr><td>DockPanel.Dock<code>.Right</code></td><td>Attached to a child control - dock this to the right side.</td></tr><tr><td>DockPanel.Dock<code>.Bottom</code></td><td>Attached to a child control - dock this to the bottom edge.</td></tr><tr><td><code>HorizontalSpacing</code></td><td>Sets horizontal spacing (double, default 0) between docked child controls.</td></tr><tr><td><code>VerticalSpacing</code></td><td>Sets vertical spacing (double, default 0) between docked child controls.</td></tr></tbody></table>
 
 ## Sizing to content
 
@@ -166,7 +166,7 @@ myDockPanel.Children.Add(myBorder5);
 
 </Tabs>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [DockPanel API reference](/api/avalonia/controls/dockpanel)
 - [`DockPanel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DockPanel.cs)

@@ -183,7 +183,7 @@ To apply the control theme to all buttons in the application, change the `x:Key`
 
 The `ControlTheme.TargetType` property specifies the type to which setter properties apply. If you don't specify a `TargetType`, you must qualify the properties in your `Setter` objects with a class name by using the syntax `Property="ClassName.Property"`. For example, instead of setting `Property` to `FontSize`, you must set `Property` to `TextBlock.FontSize` or `Control.FontSize`.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ButtonCustomize](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/ButtonCustomize) sample with a `WinClassicButtonTheme`
 - Control themes for built-in Avalonia controls:

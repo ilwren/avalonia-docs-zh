@@ -97,7 +97,7 @@ You have two options to resolve this:
 - **Use `DynamicResource` instead of `StaticResource`.** `DynamicResource` resolves at runtime after all styles have been attached, so it can find resources defined in sibling includes. This is the recommended approach for most cases, and the performance impact is negligible since theme resources rarely change.
 - **Define resources in the same file as the styles that reference them.** If a style file needs font or brush resources, include those resource definitions within that same file rather than relying on a separate resource file.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Property value precedence](/docs/properties/value-precedence)

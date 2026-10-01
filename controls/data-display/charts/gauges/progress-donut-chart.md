@@ -35,7 +35,7 @@ Progress donut charts are a specialized variation of donut charts designed to sh
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value (0 to MaxValue). | `0` |
 | `MaxValue` | The maximum value. | `100.0` |

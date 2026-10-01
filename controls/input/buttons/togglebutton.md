@@ -15,7 +15,7 @@ The [`ToggleButton`](/api/avalonia/controls/primitives/togglebutton) control pre
 
 You will probably use these properties most often:
 
-| Property        | Description                                                                 |
+| Property        | 说明                                                                 |
 | --------------- | --------------------------------------------------------------------------- |
 | `IsChecked`     | Gets or sets whether the `ToggleButton` is checked. The value is a nullable `bool`. |
 | `IsThreeState`  | Gets or sets a value indicating whether the control supports three states.  |
@@ -144,7 +144,7 @@ public class MyViewModel : ViewModelBase
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Button](/controls/input/buttons/button)
 - [CheckBox](/controls/input/selectors/checkbox)

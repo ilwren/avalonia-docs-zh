@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextLine Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLine.cs">TextLine.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLine.cs">TextLine.cs</a>
 </div>
 
 </div>
@@ -54,19 +54,19 @@ public class TextLine
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextLine
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextLine
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Collapse](#uid-0cb83eac03) | Create a collapsed line based on collapsed text properties. |
-| [Dispose](#uid-1dc4bf4e00) | No summary available. |
+| [Dispose](#uid-1dc4bf4e00) | 暂无摘要。 |
 | [Draw](#uid-8e27abbe79) | Draws the [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) at the given origin. |
 | [GetBackspaceCaretCharacterHit](#uid-cf081ec739) | Gets the previous character hit after backspacing. |
 | [GetCharacterHitFromDistance](#uid-583907e3e8) | Gets the character hit corresponding to the specified distance from the beginning of the line. |
@@ -80,7 +80,7 @@ public class TextLine
 
 <span id="uid-0cb83eac03"></span>
 
-### Collapse Method
+### Collapse 方法 {#collapse-method}
 
 Create a collapsed line based on collapsed text properties.
 
@@ -88,7 +88,7 @@ Create a collapsed line based on collapsed text properties.
 public Avalonia.Media.TextFormatting.TextLine Collapse(Avalonia.Media.TextFormatting.TextCollapsingProperties[] collapsingPropertiesList)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `collapsingPropertiesList` [Avalonia.Media.TextFormatting.TextCollapsingProperties](xref:Avalonia.Media.TextFormatting.TextCollapsingProperties)[]
 
@@ -96,7 +96,7 @@ A list of [Avalonia.Media.TextFormatting.TextCollapsingProperties](xref:Avalonia
 objects that represent the collapsed text properties.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)
 
@@ -109,7 +109,7 @@ A [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.Te
 
 <span id="uid-1dc4bf4e00"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -121,7 +121,7 @@ public void Dispose()
 
 <span id="uid-8e27abbe79"></span>
 
-### Draw Method
+### Draw 方法 {#draw-method}
 
 Draws the [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) at the given origin.
 
@@ -129,11 +129,11 @@ Draws the [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextForma
 public void Draw(Avalonia.Media.DrawingContext drawingContext, Avalonia.Point lineOrigin)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `drawingContext` [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 `lineOrigin` [Avalonia.Point](xref:Avalonia.Point)
@@ -145,7 +145,7 @@ The drawing context.
 
 <span id="uid-cf081ec739"></span>
 
-### GetBackspaceCaretCharacterHit Method
+### GetBackspaceCaretCharacterHit 方法 {#getbackspacecaretcharacterhit-method}
 
 Gets the previous character hit after backspacing.
 
@@ -153,14 +153,14 @@ Gets the previous character hit after backspacing.
 public Avalonia.Media.CharacterHit GetBackspaceCaretCharacterHit(Avalonia.Media.CharacterHit characterHit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `characterHit` [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
 The current [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit).
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -173,7 +173,7 @@ The [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit) after backsp
 
 <span id="uid-583907e3e8"></span>
 
-### GetCharacterHitFromDistance Method
+### GetCharacterHitFromDistance 方法 {#getcharacterhitfromdistance-method}
 
 Gets the character hit corresponding to the specified distance from the beginning of the line.
 
@@ -181,14 +181,14 @@ Gets the character hit corresponding to the specified distance from the beginnin
 public Avalonia.Media.CharacterHit GetCharacterHitFromDistance(double distance)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `distance` double
 
 A [double](xref:System.Double) value that represents the distance from the beginning of the line.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -201,7 +201,7 @@ The [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit) object at th
 
 <span id="uid-4f78360a0a"></span>
 
-### GetDistanceFromCharacterHit Method
+### GetDistanceFromCharacterHit 方法 {#getdistancefromcharacterhit-method}
 
 Gets the distance from the beginning of the line to the specified character hit.
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit).
@@ -210,14 +210,14 @@ Gets the distance from the beginning of the line to the specified character hit.
 public double GetDistanceFromCharacterHit(Avalonia.Media.CharacterHit characterHit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `characterHit` [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
 The [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit) object whose distance you want to query.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 double
 
@@ -230,7 +230,7 @@ A [double](xref:System.Double) that represents the distance from the beginning o
 
 <span id="uid-d4197efb87"></span>
 
-### GetNextCaretCharacterHit Method
+### GetNextCaretCharacterHit 方法 {#getnextcaretcharacterhit-method}
 
 Gets the next character hit for caret navigation.
 
@@ -238,14 +238,14 @@ Gets the next character hit for caret navigation.
 public Avalonia.Media.CharacterHit GetNextCaretCharacterHit(Avalonia.Media.CharacterHit characterHit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `characterHit` [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
 The current [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit).
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -258,7 +258,7 @@ The next [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit).
 
 <span id="uid-f76bc01352"></span>
 
-### GetPreviousCaretCharacterHit Method
+### GetPreviousCaretCharacterHit 方法 {#getpreviouscaretcharacterhit-method}
 
 Gets the previous character hit for caret navigation.
 
@@ -266,14 +266,14 @@ Gets the previous character hit for caret navigation.
 public Avalonia.Media.CharacterHit GetPreviousCaretCharacterHit(Avalonia.Media.CharacterHit characterHit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `characterHit` [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
 The current [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit).
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -286,7 +286,7 @@ The previous [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit).
 
 <span id="uid-565d358094"></span>
 
-### GetTextBounds Method
+### GetTextBounds 方法 {#gettextbounds-method}
 
 Get an array of bounding rectangles of a range of characters within a text line.
 
@@ -294,7 +294,7 @@ Get an array of bounding rectangles of a range of characters within a text line.
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.TextFormatting.TextBounds> GetTextBounds(int firstTextSourceCharacterIndex, int textLength)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `firstTextSourceCharacterIndex` int
 
@@ -306,7 +306,7 @@ index of first character of specified range
 number of characters of the specified range
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Media.TextFormatting.TextBounds](xref:Avalonia.Media.TextFormatting.TextBounds)&gt;
 
@@ -319,7 +319,7 @@ an array of bounding rectangles.
 
 <span id="uid-37ed0b452e"></span>
 
-### Justify Method
+### Justify 方法 {#justify-method}
 
 Create a justified line based on justification text properties.
 
@@ -327,23 +327,23 @@ Create a justified line based on justification text properties.
 public void Justify(Avalonia.Media.TextFormatting.JustificationProperties justificationProperties)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `justificationProperties` [Avalonia.Media.TextFormatting.JustificationProperties](xref:Avalonia.Media.TextFormatting.JustificationProperties)
 
 An object that represent the justification text properties.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 A [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) value that represents a justified line that can be displayed.
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Baseline](#uid-3e2e7add61) | Gets the distance from the top to the baseline of the current [TextLine](xref:Avalonia.Media.TextFormatting.TextLine) object. |
 | [Extent](#uid-2e81cac616) | Gets the distance from the top-most to bottom-most black pixel in a line. |
@@ -367,7 +367,7 @@ A [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.Te
 
 <span id="uid-3e2e7add61"></span>
 
-### Baseline Property
+### Baseline 属性 {#baseline-property}
 
 Gets the distance from the top to the baseline of the current [TextLine](xref:Avalonia.Media.TextFormatting.TextLine) object.
 
@@ -375,7 +375,7 @@ Gets the distance from the top to the baseline of the current [TextLine](xref:Av
 public double Baseline { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-8}
 
 A [double](xref:System.Double) that represents the baseline distance.
 
@@ -386,7 +386,7 @@ A [double](xref:System.Double) that represents the baseline distance.
 
 <span id="uid-2e81cac616"></span>
 
-### Extent Property
+### Extent 属性 {#extent-property}
 
 Gets the distance from the top-most to bottom-most black pixel in a line.
 
@@ -394,7 +394,7 @@ Gets the distance from the top-most to bottom-most black pixel in a line.
 public double Extent { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 A value that represents the extent distance.
 
@@ -405,7 +405,7 @@ A value that represents the extent distance.
 
 <span id="uid-cc4f06cc4e"></span>
 
-### FirstTextSourceIndex Property
+### FirstTextSourceIndex 属性 {#firsttextsourceindex-property}
 
 Gets the first TextSource position of the current line.
 
@@ -419,7 +419,7 @@ public int FirstTextSourceIndex { get; set; }
 
 <span id="uid-946498f189"></span>
 
-### HasCollapsed Property
+### HasCollapsed 属性 {#hascollapsed-property}
 
 Gets a value that indicates whether the line is collapsed.
 
@@ -427,7 +427,7 @@ Gets a value that indicates whether the line is collapsed.
 public bool HasCollapsed { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-10}
 
 `true`, if the line is collapsed; otherwise, `false`.
 
@@ -438,7 +438,7 @@ public bool HasCollapsed { get; set; }
 
 <span id="uid-e491880656"></span>
 
-### HasOverflowed Property
+### HasOverflowed 属性 {#hasoverflowed-property}
 
 Gets a value that indicates whether content of the line overflows the specified paragraph width.
 
@@ -446,7 +446,7 @@ Gets a value that indicates whether content of the line overflows the specified 
 public bool HasOverflowed { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-11}
 
 `true`, the line overflows the specified paragraph width; otherwise, `false`.
 
@@ -457,7 +457,7 @@ public bool HasOverflowed { get; set; }
 
 <span id="uid-681e96dc6b"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
 Gets the height of a line of text.
 
@@ -465,7 +465,7 @@ Gets the height of a line of text.
 public double Height { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-12}
 
 The text line height.
 
@@ -476,7 +476,7 @@ The text line height.
 
 <span id="uid-24a2f5d871"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
 Gets the total number of TextSource positions of the current line.
 
@@ -490,7 +490,7 @@ public int Length { get; set; }
 
 <span id="uid-1153d44e15"></span>
 
-### NewLineLength Property
+### NewLineLength 属性 {#newlinelength-property}
 
 Gets the number of newline characters at the end of a line.
 
@@ -498,7 +498,7 @@ Gets the number of newline characters at the end of a line.
 public int NewLineLength { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-13}
 
 The number of newline characters.
 
@@ -509,7 +509,7 @@ The number of newline characters.
 
 <span id="uid-acfa66abd7"></span>
 
-### OverhangAfter Property
+### OverhangAfter 属性 {#overhangafter-property}
 
 Gets the distance that black pixels extend beyond the bottom alignment edge of a line.
 
@@ -517,12 +517,12 @@ Gets the distance that black pixels extend beyond the bottom alignment edge of a
 public double OverhangAfter { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-14}
 
 The overhang after distance.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 The value is positive if the bottommost drawn pixel goes below the line bottom, and is negative if it is within (on or above) the line.
 
@@ -532,7 +532,7 @@ The value is positive if the bottommost drawn pixel goes below the line bottom, 
 
 <span id="uid-1547e77441"></span>
 
-### OverhangLeading Property
+### OverhangLeading 属性 {#overhangleading-property}
 
 Gets the distance that black pixels extend prior to the left leading alignment edge of the line.
 
@@ -540,12 +540,12 @@ Gets the distance that black pixels extend prior to the left leading alignment e
 public double OverhangLeading { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-15}
 
 The overhang leading distance.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 When the leading drawn pixel comes before the alignment point, the value is negative.
 
@@ -555,7 +555,7 @@ When the leading drawn pixel comes before the alignment point, the value is nega
 
 <span id="uid-d8979e0c8b"></span>
 
-### OverhangTrailing Property
+### OverhangTrailing 属性 {#overhangtrailing-property}
 
 Gets the distance that black pixels extend following the right trailing alignment edge of the line.
 
@@ -563,12 +563,12 @@ Gets the distance that black pixels extend following the right trailing alignmen
 public double OverhangTrailing { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-16}
 
 The overhang trailing distance.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The [Avalonia.Media.TextFormatting.TextLine.OverhangTrailing](xref:Avalonia.Media.TextFormatting.TextLine.OverhangTrailing) value will be positive when the trailing drawn pixel comes before the trailing alignment point.
 
@@ -578,7 +578,7 @@ The [Avalonia.Media.TextFormatting.TextLine.OverhangTrailing](xref:Avalonia.Medi
 
 <span id="uid-75744b1a92"></span>
 
-### Start Property
+### Start 属性 {#start-property}
 
 Gets the distance from the start of a paragraph to the starting point of a line.
 
@@ -586,7 +586,7 @@ Gets the distance from the start of a paragraph to the starting point of a line.
 public double Start { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-17}
 
 The distance from the start of a paragraph to the starting point of a line.
 
@@ -597,7 +597,7 @@ The distance from the start of a paragraph to the starting point of a line.
 
 <span id="uid-bb9d1dbfd1"></span>
 
-### TextLineBreak Property
+### TextLineBreak 属性 {#textlinebreak-property}
 
 Gets the state of the line when broken by line breaking process.
 
@@ -605,7 +605,7 @@ Gets the state of the line when broken by line breaking process.
 public Avalonia.Media.TextFormatting.TextLineBreak TextLineBreak { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-18}
 
 A [Avalonia.Media.TextFormatting.TextLine.TextLineBreak](xref:Avalonia.Media.TextFormatting.TextLine.TextLineBreak) value that represents the line break.
 
@@ -616,7 +616,7 @@ A [Avalonia.Media.TextFormatting.TextLine.TextLineBreak](xref:Avalonia.Media.Tex
 
 <span id="uid-6aa3d176f8"></span>
 
-### TextRuns Property
+### TextRuns 属性 {#textruns-property}
 
 Gets the text runs that are contained within a line.
 
@@ -624,7 +624,7 @@ Gets the text runs that are contained within a line.
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.TextFormatting.TextRun> TextRuns { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The contained text runs.
 
@@ -635,7 +635,7 @@ The contained text runs.
 
 <span id="uid-9d60de0372"></span>
 
-### TrailingWhitespaceLength Property
+### TrailingWhitespaceLength 属性 {#trailingwhitespacelength-property}
 
 Gets the number of whitespace code points beyond the last non-blank character in a line.
 
@@ -643,7 +643,7 @@ Gets the number of whitespace code points beyond the last non-blank character in
 public int TrailingWhitespaceLength { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-19}
 
 The number of whitespace code points beyond the last non-blank character in a line.
 
@@ -654,7 +654,7 @@ The number of whitespace code points beyond the last non-blank character in a li
 
 <span id="uid-def8e65d69"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
 Gets the width of a line of text, excluding trailing whitespace characters.
 
@@ -662,7 +662,7 @@ Gets the width of a line of text, excluding trailing whitespace characters.
 public double Width { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-20}
 
 The text line width, excluding trailing whitespace characters.
 
@@ -673,7 +673,7 @@ The text line width, excluding trailing whitespace characters.
 
 <span id="uid-e241207a08"></span>
 
-### WidthIncludingTrailingWhitespace Property
+### WidthIncludingTrailingWhitespace 属性 {#widthincludingtrailingwhitespace-property}
 
 Gets the width of a line of text, including trailing whitespace characters.
 
@@ -681,7 +681,7 @@ Gets the width of a line of text, including trailing whitespace characters.
 public double WidthIncludingTrailingWhitespace { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-21}
 
 The text line width, including trailing whitespace characters.
 

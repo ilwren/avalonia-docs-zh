@@ -14,7 +14,7 @@ import IOSCertScreenshot from '/img/guides/platform-specific-guides/ios/ios-cert
 
 ## Setting up your developer environment
 
-### Prerequisites
+### 前置条件 {#prerequisites}
 
 On a Mac you will need to have the latest version of macOS and Xcode installed.
 
@@ -188,7 +188,7 @@ if (Application.Current.TryGetFeature<IActivatableLifetime>() is { } activatable
 
 This works with the scene-based lifecycle used in Avalonia 12. See [Activatable Lifetime](/docs/services/activatable-lifetime) for the full API reference.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Deploying on iOS](/docs/deployment/ios) (simulator, device, and publishing)
 - [macOS platform guide](/docs/platform-specific-guides/macos) (native AppKit backend)

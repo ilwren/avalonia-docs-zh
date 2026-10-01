@@ -204,7 +204,7 @@ Bands travel as nested snapshots on `DocumentSnapshot.PageBands`, with their rol
 - PDF export emits the band each page resolves, composing a band with page-number fields once per page.
 - Plain text never sees bands. A section pasted from another document arrives without references.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Pagination](/controls/input/text-input/richtexteditor/pagination) - page breaks, keep rules and per-section page setup
 - [PDF export](/controls/input/text-input/richtexteditor/pdf-export) - the bands each exported page resolves

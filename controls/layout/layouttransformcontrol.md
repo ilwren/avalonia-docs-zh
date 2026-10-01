@@ -11,7 +11,7 @@ This means a rotated control will correctly push adjacent controls aside, and a 
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 | :--- | :--- | :--- |
 | `LayoutTransform` | `ITransform` | The transform to apply during layout. Supports `RotateTransform`, `ScaleTransform`, `SkewTransform`, `TransformGroup`, and `MatrixTransform` |
 | `UseRenderTransform` | `bool` | When `true`, applies the transform via `RenderTransform` instead of a separate layout pass. Defaults to `false` |
@@ -104,7 +104,7 @@ You can bind the rotation angle to a slider for interactive control:
 - **`UseRenderTransform`**: Setting this property to `true` applies the transform through `RenderTransform` rather than a separate layout pass. This can be useful when you want the convenience of declaring the transform in `LayoutTransform` syntax but do not need surrounding controls to reflow.
 - **Clipping**: Parent containers that clip their children (for example, a `Border` with `ClipToBounds="True"`) may clip the transformed bounds. Make sure the parent has enough space to display the full transformed area.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Decorator](/controls/layout/decorator)
 - [Border](/controls/layout/containers/border)

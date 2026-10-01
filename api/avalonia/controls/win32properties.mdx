@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Win32Properties Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/Win32Properties.cs">Win32Properties.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/Win32Properties.cs">Win32Properties.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class Win32Properties
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Win32Properties
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Win32Properties
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AddWindowStylesCallback](#uid-b51911f72e) | Adds a callback to set the window's style. |
 | [AddWndProcHookCallback](#uid-ffbfdca626) | Adds a custom callback for the window's WndProc |
@@ -75,7 +75,7 @@ public class Win32Properties
 
 <span id="uid-b51911f72e"></span>
 
-### AddWindowStylesCallback Method
+### AddWindowStylesCallback 方法 {#addwindowstylescallback-method}
 
 Adds a callback to set the window's style.
 
@@ -83,7 +83,7 @@ Adds a callback to set the window's style.
 public void AddWindowStylesCallback(Avalonia.Controls.TopLevel topLevel, Avalonia.Controls.Win32Properties.CustomWindowStylesCallback callback)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `topLevel` [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel)
 
@@ -101,7 +101,7 @@ The callback
 
 <span id="uid-ffbfdca626"></span>
 
-### AddWndProcHookCallback Method
+### AddWndProcHookCallback 方法 {#addwndprochookcallback-method}
 
 Adds a custom callback for the window's WndProc
 
@@ -109,7 +109,7 @@ Adds a custom callback for the window's WndProc
 public void AddWndProcHookCallback(Avalonia.Controls.TopLevel topLevel, Avalonia.Controls.Win32Properties.CustomWndProcHookCallback callback)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `topLevel` [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel)
 
@@ -127,7 +127,7 @@ The callback
 
 <span id="uid-fb40e72aa0"></span>
 
-### GetNonClientHitTestResult Method
+### GetNonClientHitTestResult 方法 {#getnonclienthittestresult-method}
 
 Gets the value of the `NonClientHitTestResult` attached property on the specified visual.
 
@@ -135,14 +135,14 @@ Gets the value of the `NonClientHitTestResult` attached property on the specifie
 public Avalonia.Controls.Win32Properties.Win32HitTestValue GetNonClientHitTestResult(Avalonia.Visual obj)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `obj` [Avalonia.Visual](xref:Avalonia.Visual)
 
 The visual.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Win32Properties.Win32HitTestValue](xref:Avalonia.Controls.Win32Properties.Win32HitTestValue)
 
@@ -155,7 +155,7 @@ The hit test value for `obj`.
 
 <span id="uid-40a77da673"></span>
 
-### GetWindowCornerPreference Method
+### GetWindowCornerPreference 方法 {#getwindowcornerpreference-method}
 
 Gets the value of the `WindowCornerPreference` attached property on the specified window.
 
@@ -163,14 +163,14 @@ Gets the value of the `WindowCornerPreference` attached property on the specifie
 public Avalonia.Controls.Win32Properties.WindowCornerPreference GetWindowCornerPreference(Avalonia.Controls.Window window)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `window` [Avalonia.Controls.Window](xref:Avalonia.Controls.Window)
 
 The window.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Win32Properties.WindowCornerPreference](xref:Avalonia.Controls.Win32Properties.WindowCornerPreference)
 
@@ -183,7 +183,7 @@ The window corner preference for `window`.
 
 <span id="uid-1fa69055d6"></span>
 
-### RemoveWindowStylesCallback Method
+### RemoveWindowStylesCallback 方法 {#removewindowstylescallback-method}
 
 Removes a callback to set the window's style.
 
@@ -191,7 +191,7 @@ Removes a callback to set the window's style.
 public void RemoveWindowStylesCallback(Avalonia.Controls.TopLevel topLevel, Avalonia.Controls.Win32Properties.CustomWindowStylesCallback callback)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `topLevel` [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel)
 
@@ -209,7 +209,7 @@ The callback
 
 <span id="uid-e28e9d382c"></span>
 
-### RemoveWndProcHookCallback Method
+### RemoveWndProcHookCallback 方法 {#removewndprochookcallback-method}
 
 Removes a custom callback for the window's WndProc
 
@@ -217,7 +217,7 @@ Removes a custom callback for the window's WndProc
 public void RemoveWndProcHookCallback(Avalonia.Controls.TopLevel topLevel, Avalonia.Controls.Win32Properties.CustomWndProcHookCallback callback)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `topLevel` [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel)
 
@@ -235,7 +235,7 @@ The callback
 
 <span id="uid-880349e197"></span>
 
-### SetNonClientHitTestResult Method
+### SetNonClientHitTestResult 方法 {#setnonclienthittestresult-method}
 
 Sets the value of the `NonClientHitTestResult` attached property on the specified visual.
 
@@ -243,7 +243,7 @@ Sets the value of the `NonClientHitTestResult` attached property on the specifie
 public void SetNonClientHitTestResult(Avalonia.Visual obj, Avalonia.Controls.Win32Properties.Win32HitTestValue value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `obj` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -261,7 +261,7 @@ The value to set.
 
 <span id="uid-fafd01f2b1"></span>
 
-### SetWindowCornerPreference Method
+### SetWindowCornerPreference 方法 {#setwindowcornerpreference-method}
 
 Sets the value of the `WindowCornerPreference` attached property on the specified window.
 
@@ -269,7 +269,7 @@ Sets the value of the `WindowCornerPreference` attached property on the specifie
 public void SetWindowCornerPreference(Avalonia.Controls.Window window, Avalonia.Controls.Win32Properties.WindowCornerPreference value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `window` [Avalonia.Controls.Window](xref:Avalonia.Controls.Window)
 
@@ -281,27 +281,27 @@ The window.
 The value to set.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This value is supported starting with Windows 11 Build 22000.
 It is ignored on earlier Windows versions.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [NonClientHitTestResultProperty](#uid-5912f2bb07) | Defines the `NonClientHitTestResult` attached property. |
-| [WindowCornerPreferenceProperty](#uid-a9aa8feb84) | Defines the `WindowCornerPreferenceProperty` attached property. |
+| [NonClientHitTestResultProperty](#uid-5912f2bb07) | 定义 `NonClientHitTestResult` 附加属性。 |
+| [WindowCornerPreferenceProperty](#uid-a9aa8feb84) | 定义 `WindowCornerPreferenceProperty` 附加属性。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5912f2bb07"></span>
 
-### NonClientHitTestResultProperty Field
+### NonClientHitTestResultProperty 字段 {#nonclienthittestresultproperty-field}
 
-Defines the `NonClientHitTestResult` attached property.
+定义 `NonClientHitTestResult` 附加属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Controls.Win32Properties.Win32HitTestValue> NonClientHitTestResultProperty
@@ -313,9 +313,9 @@ public Avalonia.AttachedProperty<Avalonia.Controls.Win32Properties.Win32HitTestV
 
 <span id="uid-a9aa8feb84"></span>
 
-### WindowCornerPreferenceProperty Field
+### WindowCornerPreferenceProperty 字段 {#windowcornerpreferenceproperty-field}
 
-Defines the `WindowCornerPreferenceProperty` attached property.
+定义 `WindowCornerPreferenceProperty` 附加属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Controls.Win32Properties.WindowCornerPreference> WindowCornerPreferenceProperty

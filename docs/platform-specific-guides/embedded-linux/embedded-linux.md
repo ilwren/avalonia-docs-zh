@@ -153,7 +153,7 @@ return builder.StartLinuxDrm(args, card: null, options: new DrmOutputOptions
 
 The available values are:
 
-| Value | Rotation |
+| 值 | Rotation |
 |---|---|
 | `SurfaceOrientation.Rotation0` | No rotation (default) |
 | `SurfaceOrientation.Rotation90` | 90 degrees clockwise |
@@ -206,7 +206,7 @@ Embedded devices frequently use touchscreens as the primary input method. Avalon
 
 For applications that need an on-screen keyboard (kiosks, point-of-sale systems, or any device without a physical keyboard), see the [Virtual Keyboard](/controls/input/text-input/virtualkeyboard) guide.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Running on Raspberry Pi](/docs/platform-specific-guides/embedded-linux/raspberry-pi) for a step-by-step hardware tutorial
 - [Virtual keyboard](/controls/input/text-input/virtualkeyboard) for on-screen keyboard support

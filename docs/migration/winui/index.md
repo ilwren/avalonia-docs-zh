@@ -220,7 +220,7 @@ Moving from WinUI to Avalonia is not only about cross-platform. There are a few 
 - **No MSIX/packaging requirement:** Avalonia applications are standard .NET executables. No app manifest, no packaging pipeline, no store requirement.
 - **Linux and macOS as first-class targets:** Not an afterthought or a compatibility layer.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Get Started with Avalonia](/docs/get-started/create-your-first-project): Create your first Avalonia application.
 - [Styles](/docs/styling/styles): How Avalonia's CSS-like styling works.

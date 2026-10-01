@@ -60,7 +60,7 @@ public ObservableCollection<SeatInfo> SelectedSeats { get; } = new();
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `GeoJson` | Custom GeoJSON representing the layout. | `null` |
 | `RegionPath` | Property used to match data to shapes. | `null` |

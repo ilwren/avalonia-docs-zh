@@ -72,7 +72,7 @@ Custom overlay series can render in the financial chart coordinate space by impl
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of financial series and compatible overlay series rendered in the chart. | Empty collection |
 | `HorizontalAxis` | Horizontal axis used for date or category positions. | `null` |
@@ -82,7 +82,7 @@ Custom overlay series can render in the financial chart coordinate space by impl
 | `PlotAreaBackground` | Optional background brush for the plot area. | `null` |
 | `IsHighlightEnabled` | Enables hover highlighting for financial data points when the series does not enable it directly. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Candlestick chart](/controls/data-display/charts/financial/candlestick-chart)
 - [OHLC chart](/controls/data-display/charts/financial/ohlc-chart)

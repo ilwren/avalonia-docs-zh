@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ISelectableChart Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -48,9 +48,9 @@ public interface ISelectableChart
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ClearSelection](#uid-5b5523b66d) | Clears the current selection. |
 
@@ -58,7 +58,7 @@ public interface ISelectableChart
 
 <span id="uid-5b5523b66d"></span>
 
-### ClearSelection Method
+### ClearSelection 方法 {#clearselection-method}
 
 Clears the current selection.
 
@@ -68,9 +68,9 @@ public void ClearSelection()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsSelectionEnabled](#uid-257e7192fa) | Gets whether selection is enabled. |
 | [SelectionBrush](#uid-a76ce47fd3) | Gets the brush used to highlight selected items. |
@@ -82,7 +82,7 @@ public void ClearSelection()
 
 <span id="uid-257e7192fa"></span>
 
-### IsSelectionEnabled Property
+### IsSelectionEnabled 属性 {#isselectionenabled-property}
 
 Gets whether selection is enabled.
 
@@ -96,7 +96,7 @@ public bool IsSelectionEnabled { get; set; }
 
 <span id="uid-a76ce47fd3"></span>
 
-### SelectionBrush Property
+### SelectionBrush 属性 {#selectionbrush-property}
 
 Gets the brush used to highlight selected items.
 
@@ -110,7 +110,7 @@ public Avalonia.Media.IBrush SelectionBrush { get; set; }
 
 <span id="uid-8ff0fb6590"></span>
 
-### SelectionMode Property
+### SelectionMode 属性 {#selectionmode-property}
 
 Gets the selection behavior (Single, Multiple, etc.).
 
@@ -124,7 +124,7 @@ public Avalonia.Controls.Charts.ChartSelectionMode SelectionMode { get; set; }
 
 <span id="uid-ceb022c03c"></span>
 
-### SelectionStroke Property
+### SelectionStroke 属性 {#selectionstroke-property}
 
 Gets the stroke brush used to outline selected items.
 
@@ -138,7 +138,7 @@ public Avalonia.Media.IBrush SelectionStroke { get; set; }
 
 <span id="uid-4b36aee7f4"></span>
 
-### SelectionStrokeThickness Property
+### SelectionStrokeThickness 属性 {#selectionstrokethickness-property}
 
 Gets the stroke thickness for the selection outline.
 
@@ -148,9 +148,9 @@ public double SelectionStrokeThickness { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SelectionChanged](#uid-90a82264bf) | Raised after the selection changes, with snapshots of the applied and previous selections. |
 | [SelectionChanging](#uid-f4b32886ad) | Raised before the selection changes. Handlers may cancel the change or edit the requested selection in the event args before it is applied. |
@@ -159,7 +159,7 @@ public double SelectionStrokeThickness { get; set; }
 
 <span id="uid-90a82264bf"></span>
 
-### SelectionChanged Event
+### SelectionChanged 事件 {#selectionchanged-event}
 
 Raised after the selection changes, with snapshots of the applied and
 previous selections.
@@ -174,7 +174,7 @@ public event EventHandler<Avalonia.Controls.Charts.ChartSelectionChangedEventArg
 
 <span id="uid-f4b32886ad"></span>
 
-### SelectionChanging Event
+### SelectionChanging 事件 {#selectionchanging-event}
 
 Raised before the selection changes. Handlers may cancel the change or
 edit the requested selection in the event args before it is applied.

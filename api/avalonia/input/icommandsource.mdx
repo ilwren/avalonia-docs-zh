@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ICommandSource Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/ICommandSource.cs">ICommandSource.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/ICommandSource.cs">ICommandSource.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface ICommandSource
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanExecuteChanged](#uid-0744a0d0dc) | Called for the CanExecuteChanged event when changes are detected. |
 
@@ -62,7 +62,7 @@ public interface ICommandSource
 
 <span id="uid-0744a0d0dc"></span>
 
-### CanExecuteChanged Method
+### CanExecuteChanged 方法 {#canexecutechanged-method}
 
 Called for the CanExecuteChanged event when changes are detected.
 
@@ -70,7 +70,7 @@ Called for the CanExecuteChanged event when changes are detected.
 public void CanExecuteChanged(object sender, EventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `sender` object
 
@@ -84,9 +84,9 @@ The event args.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Command](#uid-8148535dad) | The command that will be executed when the class is "invoked." Classes that implement this interface should enable or disable based on the command's CanExecute return value. The property may be implemented as read-write if desired. |
 | [CommandParameter](#uid-6f613dbc61) | The parameter that will be passed to the command when executing the command. The property may be implemented as read-write if desired. |
@@ -96,7 +96,7 @@ The event args.
 
 <span id="uid-8148535dad"></span>
 
-### Command Property
+### Command 属性 {#command-property}
 
 The command that will be executed when the class is "invoked."
 Classes that implement this interface should enable or disable based on the command's CanExecute return value.
@@ -112,7 +112,7 @@ public System.Windows.Input.ICommand Command { get; set; }
 
 <span id="uid-6f613dbc61"></span>
 
-### CommandParameter Property
+### CommandParameter 属性 {#commandparameter-property}
 
 The parameter that will be passed to the command when executing the command.
 The property may be implemented as read-write if desired.
@@ -127,7 +127,7 @@ public object CommandParameter { get; set; }
 
 <span id="uid-09a2634b4d"></span>
 
-### IsEffectivelyEnabled Property
+### IsEffectivelyEnabled 属性 {#iseffectivelyenabled-property}
 
 Gets a value indicating whether this control and all its parents are enabled.
 

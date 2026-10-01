@@ -54,7 +54,7 @@ public ObservableCollection<OrgNode> OrgChartData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical data source (root nodes). | `null` |
 | `LabelPath` | Property name for the node labels. | `null` |

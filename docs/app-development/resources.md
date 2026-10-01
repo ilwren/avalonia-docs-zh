@@ -180,7 +180,7 @@ Application.Current!.Resources["PrimaryBrush"] =
 
 Only `DynamicResource` references respond to runtime resource changes. `StaticResource` references retain their initial values.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Resource Dictionary](/docs/app-development/resource-dictionary): Step-by-step guide to creating and organizing resource dictionaries.
 - [Theme Variants](/docs/styling/theme-variants): How theme-aware resources work.

@@ -55,7 +55,7 @@ public ObservableCollection<string> BumpPeriods { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of ranked entities. | `null` |
 | `NamePath` | Property representing the entity name. | `null` |

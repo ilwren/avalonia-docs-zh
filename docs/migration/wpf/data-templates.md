@@ -184,7 +184,7 @@ When `x:DataType` is set, the compiler checks that `Name` and `Description` actu
 
 You can enable compiled bindings project-wide by adding `<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>` to your `.csproj` file, which makes `x:DataType` the default expectation for all bindings.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates)
 - [Data Template Collection](/docs/data-templates/data-template-collection)

@@ -9,7 +9,7 @@ Every Avalonia property has associated metadata that controls its default value,
 
 The `StyledPropertyMetadata<T>` class controls the behavior of styled properties:
 
-| Parameter | Type | Description |
+| Parameter | Type | 说明 |
 |---|---|---|
 | `defaultValue` | `T` | The default value for the property. Used when no other value source provides a value. |
 | `defaultBindingMode` | `BindingMode` | The binding mode used when a binding does not specify one explicitly. |
@@ -176,7 +176,7 @@ private void OnIsExpandedChanged(AvaloniaPropertyChangedEventArgs args)
 
 Direct properties use `DirectPropertyMetadata<T>`:
 
-| Parameter | Type | Description |
+| Parameter | Type | 说明 |
 |---|---|---|
 | `unsetValue` | `T` | The value used when the property is cleared. This serves as the effective default for direct properties. |
 | `defaultBindingMode` | `BindingMode` | The default binding mode. |
@@ -199,7 +199,7 @@ public int RetryCount
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Property system overview](/docs/properties): Overview of property types and registration.
 - [Value precedence](/docs/properties/value-precedence): How the property system resolves values from multiple sources.

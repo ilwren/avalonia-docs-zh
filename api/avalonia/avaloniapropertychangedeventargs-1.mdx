@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaPropertyChangedEventArgs&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaPropertyChangedEventArgs%601.cs">AvaloniaPropertyChangedEventArgs`1.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaPropertyChangedEventArgs%601.cs">AvaloniaPropertyChangedEventArgs`1.cs</a>
 </div>
 
 </div>
@@ -54,27 +54,27 @@ public class AvaloniaPropertyChangedEventArgs<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniapropertychangedeventargs">AvaloniaPropertyChangedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaPropertyChangedEventArgs&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniapropertychangedeventargs">AvaloniaPropertyChangedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaPropertyChangedEventArgs&lt;T&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AvaloniaPropertyChangedEventArgs&lt;T&gt;](#uid-37afe2b6bc) | No summary available. |
+| [AvaloniaPropertyChangedEventArgs&lt;T&gt;](#uid-37afe2b6bc) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-37afe2b6bc"></span>
 
-### AvaloniaPropertyChangedEventArgs&lt;T&gt; Constructor
+### AvaloniaPropertyChangedEventArgs&lt;T&gt; 构造函数 {#avaloniapropertychangedeventargslttgt-constructor}
 
 ```csharp
 public AvaloniaPropertyChangedEventArgs<T>(Avalonia.AvaloniaObject sender, Avalonia.AvaloniaProperty<TValue><T> property, Avalonia.Data.Optional<T><T> oldValue, Avalonia.Data.BindingValue<T><T> newValue, Avalonia.Data.BindingPriority priority)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `sender` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -93,9 +93,9 @@ public AvaloniaPropertyChangedEventArgs<T>(Avalonia.AvaloniaObject sender, Avalo
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [NewValue](#uid-1391504d1b) | Gets the new value of the property. |
 | [OldValue](#uid-209d24f117) | Gets the old value of the property. |
@@ -107,7 +107,7 @@ public AvaloniaPropertyChangedEventArgs<T>(Avalonia.AvaloniaObject sender, Avalo
 
 <span id="uid-1391504d1b"></span>
 
-### NewValue Property
+### NewValue 属性 {#newvalue-property}
 
 Gets the new value of the property.
 
@@ -121,7 +121,7 @@ public Avalonia.Data.BindingValue<T><T> NewValue { get; set; }
 
 <span id="uid-209d24f117"></span>
 
-### OldValue Property
+### OldValue 属性 {#oldvalue-property}
 
 Gets the old value of the property.
 
@@ -135,7 +135,7 @@ public Avalonia.Data.Optional<T><T> OldValue { get; set; }
 
 <span id="uid-da8e3e8213"></span>
 
-### Property Property
+### Property 属性 {#property-property}
 
 Gets the property that changed.
 
@@ -143,7 +143,7 @@ Gets the property that changed.
 public Avalonia.AvaloniaProperty<TValue><T> Property { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The property that changed.
 

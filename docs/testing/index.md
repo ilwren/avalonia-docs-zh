@@ -66,7 +66,7 @@ Avalonia uses Appium internally to test the framework across Windows and macOS.
 - **Add visual regression tests** if your application has custom controls or themes where pixel-level correctness matters.
 - **Add Appium tests** for critical user flows, platform-specific features, and accessibility validation.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Headless Testing Platform](/docs/testing/setting-up-the-headless-platform): Input simulation, frame capture, and async handling.
 - [Headless Testing with XUnit](/docs/testing/headless-xunit): XUnit integration setup.

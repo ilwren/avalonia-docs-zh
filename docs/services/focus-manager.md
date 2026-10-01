@@ -13,7 +13,7 @@ You can access `FocusManager` through an instance of [`TopLevel`](/api/avalonia/
 var focusManager = window.FocusManager;
 ```
 
-## Methods
+## 方法 {#methods}
 
 ### `GetFocusedElement()`
 
@@ -97,7 +97,7 @@ protected override void OnLoaded(RoutedEventArgs e)
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Focus](/docs/input-interaction/focus): Focus system overview and focus events.
 - [TopLevel](/docs/fundamentals/top-level): Accessing platform services from `TopLevel`.

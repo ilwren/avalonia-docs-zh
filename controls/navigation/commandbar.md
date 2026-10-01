@@ -26,7 +26,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBar properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `PrimaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of primary commands displayed directly in the bar. |
 | `SecondaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of secondary commands displayed in the overflow menu. |
@@ -46,7 +46,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBar events
 
-| Event | Description |
+| Event | 说明 |
 | --- | --- |
 | `Opened` | Raised when the overflow menu is opened. |
 | `Closed` | Raised when the overflow menu is closed. |
@@ -55,7 +55,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## DefaultLabelPosition values
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
 | `Bottom` | Labels appear below the icon. This is the default. |
 | `Right` | Labels appear to the right of the icon. |
@@ -63,7 +63,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## OverflowButtonVisibility values
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
 | `Auto` | The overflow button is shown automatically when there are secondary commands or overflowed primary commands. |
 | `Visible` | The overflow button is always shown. |
@@ -71,7 +71,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBarButton properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Icon` | `object?` | `null` | The icon displayed on the button. Typically a `PathIcon`, `SymbolIcon`, or `BitmapIcon`. |
 | `Label` | `string?` | `null` | The text label for the button. |
@@ -84,7 +84,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBarToggleButton properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Icon` | `object?` | `null` | The icon displayed on the toggle button. |
 | `Label` | `string?` | `null` | The text label for the toggle button. |
@@ -532,7 +532,7 @@ private bool _isItalic;
 private bool _isUnderline;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentPage](/controls/navigation/contentpage)
 - [NavigationPage](/controls/navigation/navigationpage)

@@ -22,7 +22,7 @@ The [`BoxShadow`](/api/avalonia/media/boxshadow) property on [`Border`](/api/ava
 
 The shadow parameters are, in order: `offsetX offsetY blur spread color`.
 
-| Parameter | Description |
+| Parameter | 说明 |
 |---|---|
 | `offsetX` | Horizontal offset. Positive values move the shadow right. |
 | `offsetY` | Vertical offset. Positive values move the shadow down. |
@@ -101,7 +101,7 @@ The [`Effect`](/api/avalonia/media/effect) property on any `Visual` accepts effe
 </Border>
 ```
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Radius` | The blur radius in pixels. Larger values produce a stronger blur. Default is 5. |
 
@@ -118,7 +118,7 @@ The [`Effect`](/api/avalonia/media/effect) property on any `Visual` accepts effe
 </TextBlock>
 ```
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `OffsetX` | Horizontal shadow offset in pixels. Default is approximately 3.5. |
 | `OffsetY` | Vertical shadow offset in pixels. Default is approximately 3.5. |
@@ -140,7 +140,7 @@ An alternative that uses direction and depth instead of explicit offsets:
 </Border>
 ```
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `ShadowDepth` | Distance of the shadow from the element. Default is 5. |
 | `Direction` | Angle in degrees (0-360) indicating shadow direction. Default is 315 (lower-right). |
@@ -265,7 +265,7 @@ Box shadows and opacity can be animated with transitions:
 </Border>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Brushes](/docs/graphics-animation/brushes): All brush types including gradient and image brushes.
 - [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes, geometries, and path data.

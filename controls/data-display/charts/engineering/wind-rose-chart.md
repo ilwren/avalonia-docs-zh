@@ -47,7 +47,7 @@ public ObservableCollection<WindSample> WindData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of directional observations. | `null` |
 | `DirectionPath` | Path to the direction group. | `null` |
@@ -55,7 +55,7 @@ public ObservableCollection<WindSample> WindData { get; } = new()
 | `ValuePath` | Path to the numeric value or frequency. | `null` |
 | `StartAngle` | Start angle in degrees for the first sector. | `-90.0` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Polar chart](/controls/data-display/charts/radial/polar-chart)
 - [Smith chart](/controls/data-display/charts/engineering/smith-chart)

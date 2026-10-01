@@ -47,7 +47,7 @@ public ObservableCollection<Measurement> DensityData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of numeric samples. | `null` |
 | `ValuePath` | Path to the numeric sample value. | `null` |
@@ -57,7 +57,7 @@ public ObservableCollection<Measurement> DensityData { get; } = new()
 | `ShowGridLines` | Whether to draw background grid lines. | `true` |
 | `Stroke` | Brush used for the density curve. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Histogram chart](/controls/data-display/charts/cartesian/histogram-chart)
 - [Violin plot](/controls/data-display/charts/statistical/violin-plot-chart)

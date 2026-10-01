@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPlatformTypeface Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IPlatformTypeface.cs">IPlatformTypeface.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IPlatformTypeface.cs">IPlatformTypeface.cs</a>
 </div>
 
 </div>
@@ -48,41 +48,41 @@ public interface IPlatformTypeface
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ifontmemory">IFontMemory</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ifontmemory">IFontMemory</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TryGetStream](#uid-d261e153d1) | No summary available. |
+| [TryGetStream](#uid-d261e153d1) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d261e153d1"></span>
 
-### TryGetStream Method
+### TryGetStream 方法 {#trygetstream-method}
 
 ```csharp
 public bool TryGetStream(System.IO.Stream& stream)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `stream` System.IO.Stream&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FamilyName](#uid-d1d81cd6de) | Gets the font family name. |
 | [FontSimulations](#uid-c66249e0ed) | Gets the algorithmic style simulations applied to [Avalonia.Media.IPlatformTypeface](xref:Avalonia.Media.IPlatformTypeface) object. |
@@ -94,7 +94,7 @@ bool
 
 <span id="uid-d1d81cd6de"></span>
 
-### FamilyName Property
+### FamilyName 属性 {#familyname-property}
 
 Gets the font family name.
 
@@ -102,7 +102,7 @@ Gets the font family name.
 public string FamilyName { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 The family name should be the same as the one used to create the typeface via the platform font manager.
 It can be different from the actaual family name because an alias or a fallback name could have been used.
@@ -113,7 +113,7 @@ It can be different from the actaual family name because an alias or a fallback 
 
 <span id="uid-c66249e0ed"></span>
 
-### FontSimulations Property
+### FontSimulations 属性 {#fontsimulations-property}
 
 Gets the algorithmic style simulations applied to [Avalonia.Media.IPlatformTypeface](xref:Avalonia.Media.IPlatformTypeface) object.
 
@@ -127,7 +127,7 @@ public Avalonia.Media.FontSimulations FontSimulations { get; set; }
 
 <span id="uid-d20261634a"></span>
 
-### Stretch Property
+### Stretch 属性 {#stretch-property}
 
 Gets the [Avalonia.Media.FontStretch](xref:Avalonia.Media.FontStretch) value for the [Avalonia.Media.IPlatformTypeface](xref:Avalonia.Media.IPlatformTypeface) object.
 
@@ -141,7 +141,7 @@ public Avalonia.Media.FontStretch Stretch { get; set; }
 
 <span id="uid-34b893cce8"></span>
 
-### Style Property
+### Style 属性 {#style-property}
 
 Gets the style for the [Avalonia.Media.IPlatformTypeface](xref:Avalonia.Media.IPlatformTypeface) object.
 
@@ -155,7 +155,7 @@ public Avalonia.Media.FontStyle Style { get; set; }
 
 <span id="uid-4e3e3c898b"></span>
 
-### Weight Property
+### Weight 属性 {#weight-property}
 
 Gets the designed weight of the font represented by the [Avalonia.Media.IPlatformTypeface](xref:Avalonia.Media.IPlatformTypeface) object.
 

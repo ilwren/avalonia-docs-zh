@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">UndoManager Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -53,16 +53,16 @@ public class UndoManager
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> UndoManager
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> UndoManager
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iundohistory">IUndoHistory</a>, <a href="iundomanager">IUndoManager</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iundohistory">IUndoHistory</a>, <a href="iundomanager">IUndoManager</a>, IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [UndoManager](#uid-690693dd14) | Initializes a new instance of [Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) with the specified undo stack limit. |
 
@@ -70,7 +70,7 @@ public class UndoManager
 
 <span id="uid-690693dd14"></span>
 
-### UndoManager Constructor
+### UndoManager 构造函数 {#undomanager-constructor}
 
 Initializes a new instance of [Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) with the specified undo stack limit.
 
@@ -78,7 +78,7 @@ Initializes a new instance of [Avalonia.Controls.Documents.Undo.UndoManager](xre
 public UndoManager(int undoLimit)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `undoLimit` int
 
@@ -87,11 +87,11 @@ Maximum number of undo units to retain.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BeginUndoUnit](#uid-8245b559a4) | No summary available. |
+| [BeginUndoUnit](#uid-8245b559a4) | 暂无摘要。 |
 | [Clear](#uid-c06a67309d) | Clears all undo and redo history. |
 | [Dispose](#uid-dc19b36361) | Releases resources by clearing the undo and redo history. |
 | [Record](#uid-d0e973f808) | Records an externally created unit directly onto the undo stack. |
@@ -102,13 +102,13 @@ Maximum number of undo units to retain.
 
 <span id="uid-8245b559a4"></span>
 
-### BeginUndoUnit Method
+### BeginUndoUnit 方法 {#beginundounit-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Undo.IUndoScope BeginUndoUnit(string description, Nullable<Avalonia.Controls.Documents.Undo.SelectionSnapshot> selectionBefore)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `description` string
 
@@ -116,7 +116,7 @@ public Avalonia.Controls.Documents.Undo.IUndoScope BeginUndoUnit(string descript
 `selectionBefore` Nullable&lt;[Avalonia.Controls.Documents.Undo.SelectionSnapshot](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot)&gt;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.Undo.IUndoScope](xref:Avalonia.Controls.Documents.Undo.IUndoScope)
 
@@ -127,7 +127,7 @@ public Avalonia.Controls.Documents.Undo.IUndoScope BeginUndoUnit(string descript
 
 <span id="uid-c06a67309d"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 Clears all undo and redo history.
 
@@ -141,7 +141,7 @@ public void Clear()
 
 <span id="uid-dc19b36361"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 Releases resources by clearing the undo and redo history.
 
@@ -155,7 +155,7 @@ public void Dispose()
 
 <span id="uid-d0e973f808"></span>
 
-### Record Method
+### Record 方法 {#record-method}
 
 Records an externally created unit directly onto the undo stack.
 
@@ -163,7 +163,7 @@ Records an externally created unit directly onto the undo stack.
 public void Record(Avalonia.Controls.Documents.Undo.IUndoUnit unit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `unit` [Avalonia.Controls.Documents.Undo.IUndoUnit](xref:Avalonia.Controls.Documents.Undo.IUndoUnit)
 
@@ -171,7 +171,7 @@ The unit to record. It has to satisfy an internal contract, so a unit built outs
 this assembly is rejected. Group edits with [Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit(string,Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit%28System.String%2CSystem.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29) instead.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [\`unit\` does not satisfy the internal contract.](xref:System.ArgumentException)
 
@@ -181,7 +181,7 @@ this assembly is rejected. Group edits with [Avalonia.Controls.Documents.Undo.Un
 
 <span id="uid-bc14fd9fb2"></span>
 
-### Redo Method
+### Redo 方法 {#redo-method}
 
 Redoes the most recently undone unit and returns it, or if nothing to redo.
 
@@ -189,7 +189,7 @@ Redoes the most recently undone unit and returns it, or if nothing to redo.
 public Avalonia.Controls.Documents.Undo.IUndoUnit Redo()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Undo.IUndoUnit](xref:Avalonia.Controls.Documents.Undo.IUndoUnit)
 
@@ -200,7 +200,7 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Redo()
 
 <span id="uid-1f8a434364"></span>
 
-### Undo Method
+### Undo 方法 {#undo-method}
 
 Undoes the most recent undo unit and returns it, or if nothing to undo.
 
@@ -208,16 +208,16 @@ Undoes the most recent undo unit and returns it, or if nothing to undo.
 public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.Undo.IUndoUnit](xref:Avalonia.Controls.Documents.Undo.IUndoUnit)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanRedo](#uid-0ba51b996e) | Gets a value indicating whether there are actions available to redo. |
 | [CanUndo](#uid-1e5c182bde) | Gets a value indicating whether there are actions available to undo. |
@@ -230,7 +230,7 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
 
 <span id="uid-0ba51b996e"></span>
 
-### CanRedo Property
+### CanRedo 属性 {#canredo-property}
 
 Gets a value indicating whether there are actions available to redo.
 
@@ -244,7 +244,7 @@ public bool CanRedo { get; set; }
 
 <span id="uid-1e5c182bde"></span>
 
-### CanUndo Property
+### CanUndo 属性 {#canundo-property}
 
 Gets a value indicating whether there are actions available to undo.
 
@@ -258,7 +258,7 @@ public bool CanUndo { get; set; }
 
 <span id="uid-992f5ec07a"></span>
 
-### IsEnabled Property
+### IsEnabled 属性 {#isenabled-property}
 
 Gets or sets whether undo/redo tracking is active.
 
@@ -272,7 +272,7 @@ public bool IsEnabled { get; set; }
 
 <span id="uid-471a7b3710"></span>
 
-### RedoUnits Property
+### RedoUnits 属性 {#redounits-property}
 
 A live, newest-first view of the redo stack. Backed by the internal
 buffer, so its contents change as units are recorded and replayed;
@@ -288,7 +288,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo
 
 <span id="uid-38f8e7ec3d"></span>
 
-### UndoLimit Property
+### UndoLimit 属性 {#undolimit-property}
 
 Gets or sets the maximum number of undo units to retain on the undo stack.
 
@@ -302,7 +302,7 @@ public int UndoLimit { get; set; }
 
 <span id="uid-d64413c773"></span>
 
-### UndoUnits Property
+### UndoUnits 属性 {#undounits-property}
 
 A live, newest-first view of the undo stack. Backed by the internal
 buffer, so its contents change as units are recorded and replayed;
@@ -314,9 +314,9 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [StateChanged](#uid-6c68b09277) | Raised when the undo/redo state changes (e.g., after an action is recorded, undone, or redone). |
 
@@ -324,7 +324,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo
 
 <span id="uid-6c68b09277"></span>
 
-### StateChanged Event
+### StateChanged 事件 {#statechanged-event}
 
 Raised when the undo/redo state changes (e.g., after an action is recorded, undone, or redone).
 

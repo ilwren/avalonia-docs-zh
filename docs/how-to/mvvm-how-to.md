@@ -343,7 +343,7 @@ The `[NotifyDataErrorInfo]` attribute tells the source generator to trigger vali
 
 For more information about displaying validation errors in your views, see [Validation in data binding](/docs/data-binding/binding-validation).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
 - [Binding to commands](/docs/data-binding/binding-to-commands)

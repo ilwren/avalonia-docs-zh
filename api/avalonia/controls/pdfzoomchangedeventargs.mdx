@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfZoomChangedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.PdfViewer.ZoomChanged](xref:Avalonia.Controls.PdfViewer.ZoomChanged) event.
+为 [Avalonia.Controls.PdfViewer.ZoomChanged](xref:Avalonia.Controls.PdfViewer.ZoomChanged) 事件提供数据。
 
 </div>
 
@@ -50,29 +50,29 @@ public class PdfZoomChangedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfZoomChangedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfZoomChangedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PdfZoomChangedEventArgs](#uid-328d2802bf) | Initializes a new instance of the [Avalonia.Controls.PdfZoomChangedEventArgs](xref:Avalonia.Controls.PdfZoomChangedEventArgs) class. |
+| [PdfZoomChangedEventArgs](#uid-328d2802bf) | 初始化 [Avalonia.Controls.PdfZoomChangedEventArgs](xref:Avalonia.Controls.PdfZoomChangedEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-328d2802bf"></span>
 
-### PdfZoomChangedEventArgs Constructor
+### PdfZoomChangedEventArgs 构造函数 {#pdfzoomchangedeventargs-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.PdfZoomChangedEventArgs](xref:Avalonia.Controls.PdfZoomChangedEventArgs) class.
+初始化 [Avalonia.Controls.PdfZoomChangedEventArgs](xref:Avalonia.Controls.PdfZoomChangedEventArgs) 类的新实例。
 
 ```csharp
 public PdfZoomChangedEventArgs(double oldZoom, double newZoom, Avalonia.Controls.PdfZoomMode mode)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `oldZoom` double
 
@@ -85,9 +85,9 @@ public PdfZoomChangedEventArgs(double oldZoom, double newZoom, Avalonia.Controls
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Mode](#uid-6d1106f735) | Gets the effective zoom mode after the change. |
 | [NewZoom](#uid-966a0a972b) | Gets the new zoom level (1.0 == 100%). |
@@ -97,7 +97,7 @@ public PdfZoomChangedEventArgs(double oldZoom, double newZoom, Avalonia.Controls
 
 <span id="uid-6d1106f735"></span>
 
-### Mode Property
+### Mode 属性 {#mode-property}
 
 Gets the effective zoom mode after the change.
 
@@ -111,7 +111,7 @@ public Avalonia.Controls.PdfZoomMode Mode { get; set; }
 
 <span id="uid-966a0a972b"></span>
 
-### NewZoom Property
+### NewZoom 属性 {#newzoom-property}
 
 Gets the new zoom level (1.0 == 100%).
 
@@ -125,7 +125,7 @@ public double NewZoom { get; set; }
 
 <span id="uid-1af164041f"></span>
 
-### OldZoom Property
+### OldZoom 属性 {#oldzoom-property}
 
 Gets the previous zoom level (1.0 == 100%).
 

@@ -24,7 +24,7 @@ You will probably use these properties most often:
 
 <table>
   <thead>
-    <tr><th width="204">Property</th><th>Description</th></tr>
+    <tr><th width="204">Property</th><th>说明</th></tr>
   </thead>
   <tbody>
     <tr><td><code>Header</code></td><td>The menu caption.</td></tr>
@@ -177,7 +177,7 @@ This example defines a dock menu that appears when right-clicking the applicatio
 `NativeDock.Menu` only works on macOS. On other platforms, the property is ignored.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NativeMenu API reference](/api/avalonia/controls/nativemenu)
 - [`NativeMenu.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/NativeMenu.cs)

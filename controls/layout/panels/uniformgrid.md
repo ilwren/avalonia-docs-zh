@@ -12,7 +12,7 @@ The [`UniformGrid`](/api/avalonia/controls/primitives/uniformgrid) divides avail
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Rows` | `int` | Sets the number of equal rows. When set to `0` (the default), the row count is calculated automatically based on the number of children and the `Columns` value. |
 | `Columns` | `int` | Sets the number of equal columns. When set to `0` (the default), the column count is calculated automatically based on the number of children and the `Rows` value. |
@@ -125,7 +125,7 @@ In this example, the first cell in the first row is empty. Button "A" appears in
 - When you add more children than there are cells, extra children are still laid out but may appear outside the visible area.
 - `UniformGrid` respects `Margin` on child controls, so you can add per-item spacing in addition to `RowSpacing` and `ColumnSpacing`.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Grid](/controls/layout/panels/grid)
 - [WrapPanel](/controls/layout/panels/wrappanel)

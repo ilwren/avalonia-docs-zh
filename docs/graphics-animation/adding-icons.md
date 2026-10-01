@@ -61,7 +61,7 @@ The `MenuItem.Icon` property is used to set an icon for a menu item. You can use
 
 In this example, the `MenuItem.Icon` property is set to an `Image` control that displays an image from the application resources. The `Source` property of the `Image` control is set to a resource URI that represents the image source. The `Width` and `Height` properties are set to control the size of the image.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Shapes and Geometries](/docs/graphics-animation/shapes-and-geometries): Geometry types for path icons.
 - [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Overview of the Avalonia graphics system.

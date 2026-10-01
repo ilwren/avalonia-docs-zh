@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ItemContainerGenerator Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Generators</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Generators</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Generators/ItemContainerGenerator.cs">ItemContainerGenerator.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Generators/ItemContainerGenerator.cs">ItemContainerGenerator.cs</a>
 </div>
 
 </div>
@@ -54,11 +54,11 @@ public class ItemContainerGenerator
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ItemContainerGenerator
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ItemContainerGenerator
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 When creating a container for an item from a [Avalonia.Controls.VirtualizingPanel](xref:Avalonia.Controls.VirtualizingPanel), the following
 process should be followed:
@@ -111,22 +111,22 @@ concerns itself with generating and clearing item containers; it does not mainta
 record of the currently realized containers, that responsibility is delegated to the
 items panel.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ClearItemContainer](#uid-fd03ee4b7c) | Undoes the effects of the [Avalonia.Controls.Generators.ItemContainerGenerator.PrepareItemContainer(Avalonia.Controls.Control,object,int)](xref:Avalonia.Controls.Generators.ItemContainerGenerator.PrepareItemContainer%28Avalonia.Controls.Control%2CSystem.Object%2CSystem.Int32%29) method. |
 | [CreateContainer](#uid-56394de8a4) | Creates a new container control. |
 | [ItemContainerIndexChanged](#uid-09d4964da8) | Called when the index for a container changes due to an insertion or removal in the items collection. |
 | [ItemContainerPrepared](#uid-a309293372) | Notifies the [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl) that a container has been fully prepared to display an item. |
-| [NeedsContainer](#uid-9a44bff9a7) | No summary available. |
+| [NeedsContainer](#uid-9a44bff9a7) | 暂无摘要。 |
 | [PrepareItemContainer](#uid-40cbcc3a1b) | Prepares the specified element as the container for the corresponding item. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-fd03ee4b7c"></span>
 
-### ClearItemContainer Method
+### ClearItemContainer 方法 {#clearitemcontainer-method}
 
 Undoes the effects of the [Avalonia.Controls.Generators.ItemContainerGenerator.PrepareItemContainer(Avalonia.Controls.Control,object,int)](xref:Avalonia.Controls.Generators.ItemContainerGenerator.PrepareItemContainer%28Avalonia.Controls.Control%2CSystem.Object%2CSystem.Int32%29) method.
 
@@ -134,14 +134,14 @@ Undoes the effects of the [Avalonia.Controls.Generators.ItemContainerGenerator.P
 public void ClearItemContainer(Avalonia.Controls.Control container)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `container` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
 The container control.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This method must be called when a container is unrealized. The container must have
 already have been removed from the virtualizing panel's list of realized containers before
@@ -154,7 +154,7 @@ this method is called. This method must not be called if
 
 <span id="uid-56394de8a4"></span>
 
-### CreateContainer Method
+### CreateContainer 方法 {#createcontainer-method}
 
 Creates a new container control.
 
@@ -162,7 +162,7 @@ Creates a new container control.
 public Avalonia.Controls.Control CreateContainer(object item, int index, object recycleKey)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `item` object
 
@@ -179,14 +179,14 @@ The index of the item.
 The recycle key returned from [Avalonia.Controls.Generators.ItemContainerGenerator.NeedsContainer(object,int,object@)](xref:Avalonia.Controls.Generators.ItemContainerGenerator.NeedsContainer%28System.Object%2CSystem.Int32%2CSystem.Object%40%29)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
 The newly created container control.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Before calling this method, [Avalonia.Controls.Generators.ItemContainerGenerator.NeedsContainer(object,int,object@)](xref:Avalonia.Controls.Generators.ItemContainerGenerator.NeedsContainer%28System.Object%2CSystem.Int32%2CSystem.Object%40%29)
 should be called to determine whether the item itself should be used as a container.
@@ -204,7 +204,7 @@ the container cannot be recycled.
 
 <span id="uid-09d4964da8"></span>
 
-### ItemContainerIndexChanged Method
+### ItemContainerIndexChanged 方法 {#itemcontainerindexchanged-method}
 
 Called when the index for a container changes due to an insertion or removal in the
 items collection.
@@ -213,7 +213,7 @@ items collection.
 public void ItemContainerIndexChanged(Avalonia.Controls.Control container, int oldIndex, int newIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `container` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -236,7 +236,7 @@ The new index.
 
 <span id="uid-a309293372"></span>
 
-### ItemContainerPrepared Method
+### ItemContainerPrepared 方法 {#itemcontainerprepared-method}
 
 Notifies the [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl) that a container has been fully prepared to
 display an item.
@@ -245,7 +245,7 @@ display an item.
 public void ItemContainerPrepared(Avalonia.Controls.Control container, object item, int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `container` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -262,7 +262,7 @@ The item being displayed.
 The index of the item being displayed.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 This method must be called when a container has been fully prepared and added
 to the logical and visual trees, but may be called before a layout pass has completed.
@@ -276,13 +276,13 @@ false then must be called only a single time.
 
 <span id="uid-9a44bff9a7"></span>
 
-### NeedsContainer Method
+### NeedsContainer 方法 {#needscontainer-method}
 
 ```csharp
 public bool NeedsContainer(object item, int index, object& recycleKey)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `item` object
 
@@ -293,7 +293,7 @@ public bool NeedsContainer(object item, int index, object& recycleKey)
 `recycleKey` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -304,7 +304,7 @@ bool
 
 <span id="uid-40cbcc3a1b"></span>
 
-### PrepareItemContainer Method
+### PrepareItemContainer 方法 {#prepareitemcontainer-method}
 
 Prepares the specified element as the container for the corresponding item.
 
@@ -312,7 +312,7 @@ Prepares the specified element as the container for the corresponding item.
 public void PrepareItemContainer(Avalonia.Controls.Control container, object item, int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `container` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -329,7 +329,7 @@ The item to display.
 The index of the item to display.
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 If [Avalonia.Controls.Generators.ItemContainerGenerator.NeedsContainer(object,int,object@)](xref:Avalonia.Controls.Generators.ItemContainerGenerator.NeedsContainer%28System.Object%2CSystem.Int32%2CSystem.Object%40%29) is false for an
 item, then this method must only be called a single time; otherwise this method must

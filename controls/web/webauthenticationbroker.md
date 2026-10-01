@@ -22,12 +22,12 @@ public static Task<WebAuthenticationResult> AuthenticateAsync(
 
 Starts an authentication flow by navigating to the specified start URI and monitoring for navigation to the end URI.
 
-#### Parameters
+#### 参数 {#parameters}
 
 - `topLevel`: Owner top-level, a window on desktop platforms.
 - `options`: Authentication options that control the broker's behavior
 
-#### Returns
+#### 返回值 {#returns}
 
 A `Task<WebAuthenticationResult>` containing the authentication result.
 
@@ -35,7 +35,7 @@ A `Task<WebAuthenticationResult>` containing the authentication result.
 
 Selects which implementation runs the flow.
 
-| Mode | Description | Platforms |
+| Mode | 说明 | Platforms |
 |------|-------------|-----------|
 | `Auto` | Default. Resolves to the first supported mode, in the order `System`, `NativeWebDialog`, `Browser`. | All |
 | `System` | Uses the platform's native web authentication APIs. | macOS, iOS, Android, Browser |
@@ -44,7 +44,7 @@ Selects which implementation runs the flow.
 
 ## WebAuthenticatorOptions
 
-### Properties
+### 属性 {#properties}
 
 ```csharp
 public Uri RequestUri { get; init; }
@@ -157,7 +157,7 @@ var code = result.Code;
 
 ## WebAuthenticationResult
 
-### Properties
+### 属性 {#properties-1}
 
 #### CallbackUri
 ```csharp
@@ -240,7 +240,7 @@ var token = await session.ExchangeCodeAsync(result);
 \** Android uses CustomTabsIntent implementation, but support is experimental and might be changed.  
 \*** Browser solution requires CORS to be configured to allow access to the redirected page. .NET 10 is also necessary to run this library in browser.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NativeWebView](/controls/web/nativewebview)
 - [NativeWebDialog](/controls/web/nativewebdialog)

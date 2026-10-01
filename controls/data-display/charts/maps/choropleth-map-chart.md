@@ -86,13 +86,13 @@ public CountryDensityData[] ShapeLayerData { get; } = new CountryDensityData[]
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `DataLayer` | Canonical `ShapeLayer` used to render choropleth regions. A default layer is created automatically. | Auto-created `ShapeLayer` |
 
 ## Common properties (`DataLayer` / `ShapeLayer`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of region data items. | `null` |
 | `GeoJson` | The GeoJSON geometry source. | `null` |
@@ -106,7 +106,7 @@ public CountryDensityData[] ShapeLayerData { get; } = new CountryDensityData[]
 | `Stroke` | Brush used for region borders. | `null` |
 | `TooltipTemplate` | Data template used for map tooltips. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Shape map](/controls/data-display/charts/maps/shape-map-chart)
 - [Bubble map](/controls/data-display/charts/maps/bubble-map-chart)

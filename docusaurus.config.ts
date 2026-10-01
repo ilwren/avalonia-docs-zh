@@ -13,8 +13,8 @@ const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
 const skipApi = process.env.DOCS_SKIP_API === '1';
 
 const config: Config = {
-  title: 'Avalonia Docs',
-  tagline: 'Developer Documentation Portal',
+  title: 'Avalonia 中文文档',
+  tagline: '开发者文档门户',
   url: 'https://docs.avaloniaui.net',
   baseUrl: '/',
   markdown: {
@@ -350,59 +350,59 @@ gtag('consent', 'default', {
       },
       items: [
         {
-          label: 'Guides',
+          label: '开发指南',
           to: '/docs/welcome',
           activeBasePath: '/docs'
         },
         {
-          label: 'Controls',
+          label: '控件',
           to: '/controls',
           activeBasePath: '/controls'
         },
         {
-          label: 'Tools',
+          label: '工具',
           to: '/tools',
           activeBasePath: '/tools'
         },
         {
-          label: 'APIs',
+          label: 'API 参考',
           to: '/api',
           activeBasePath: '/api'
         },
         {
-          label: 'More',
+          label: '更多',
           items: [
             {
-              label: 'Troubleshooting',
+              label: '疑难排查',
               to: '/troubleshooting',
               activeBasePath: '/troubleshooting'
             },
             {
-              label: 'Community Translations',
+              label: '社区翻译',
               to: '/docs/community-translations',
               activeBasePath: '/docs/community-translations',
             },
             {
-              label: 'Enhanced Support',
+              label: '增强支持服务',
               href: 'https://avaloniaui.net/support?av_source=docs&av_medium=nav_link&av_content=support',
               target: '_blank',
               rel: null
             },
             {
-              label: 'Professional Services',
+              label: '专业服务',
               href: 'https://avaloniaui.net/services',
               target: '_blank',
               rel: null
             },
             {
               href: 'https://github.com/AvaloniaUI/Avalonia/discussions',
-              label: 'GitHub Discussions',
+              label: 'GitHub 讨论区',
               target: '_blank',
               rel: null,
             },
             {
               href: 'https://avaloniaui.net/blog',
-              label: 'Blog',
+              label: '博客',
               target: '_blank',
               rel: null,
             },

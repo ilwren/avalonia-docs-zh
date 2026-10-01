@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IndexPath Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -51,14 +51,14 @@ public struct IndexPath
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> IndexPath
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> IndexPath
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEnumerable&lt;int&gt;, IReadOnlyCollection&lt;int&gt;, IReadOnlyList&lt;int&gt;, IEnumerable, IComparable&lt;IndexPath&gt;, IEquatable&lt;IndexPath&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEnumerable&lt;int&gt;, IReadOnlyCollection&lt;int&gt;, IReadOnlyList&lt;int&gt;, IEnumerable, IComparable&lt;IndexPath&gt;, IEquatable&lt;IndexPath&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [IndexPath](xref:Avalonia.Controls.IndexPath) is used to specify the location of an item in a hierarchical data structure.
 Each index in the path represents a level of depth in the hierarchy.
@@ -80,27 +80,27 @@ Item C IndexPath: (2)
 Each [IndexPath](xref:Avalonia.Controls.IndexPath) represents the sequence of child indexes needed to navigate from the
 root to reach that specific item in the hierarchy.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IndexPath (3 overloads)](#uid-66c59e1bca) | No summary available. |
+| [IndexPath (3 overloads)](#uid-66c59e1bca) | 暂无摘要。 |
 
 <span id="uid-66c59e1bca"></span>
 
-### IndexPath overloads
+### IndexPath 的重载 {#indexpath-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f7bca984d6"></span>
 
-#### IndexPath Constructor
+#### IndexPath 构造函数 {#indexpath-constructor}
 
 ```csharp
 public IndexPath(System.Collections.Generic.IEnumerable<int> indexes)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `indexes` System.Collections.Generic.IEnumerable&lt;int&gt;
 
@@ -111,7 +111,7 @@ public IndexPath(System.Collections.Generic.IEnumerable<int> indexes)
 
 <span id="uid-ee02698fa9"></span>
 
-#### IndexPath Constructor
+#### IndexPath 构造函数 {#indexpath-constructor-1}
 
 Initializes a new instance of the [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath) struct with a single
 index.
@@ -120,7 +120,7 @@ index.
 public IndexPath(int index)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `index` int
 
@@ -133,7 +133,7 @@ The index value.
 
 <span id="uid-dfb608319e"></span>
 
-#### IndexPath Constructor
+#### IndexPath 构造函数 {#indexpath-constructor-2}
 
 Initializes a new instance of the [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath) struct with multiple
 indexes.
@@ -142,7 +142,7 @@ indexes.
 public IndexPath(int[] indexes)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `indexes` int[]
 
@@ -151,17 +151,17 @@ The array of indexes representing the path.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Append](#uid-2ebd5e55e0) | Creates a new [IndexPath](xref:Avalonia.Controls.IndexPath) by appending a child index to this path. |
 | [CompareTo](#uid-d1190c8a53) | Compares this [IndexPath](xref:Avalonia.Controls.IndexPath) with another [IndexPath](xref:Avalonia.Controls.IndexPath). |
-| [Equals (2 overloads)](#uid-5479a14e85) | Determines whether the specified [IndexPath](xref:Avalonia.Controls.IndexPath) is equal to this [IndexPath](xref:Avalonia.Controls.IndexPath). |
+| [Equals（2 个重载）](#uid-5479a14e85) | Determines whether the specified [IndexPath](xref:Avalonia.Controls.IndexPath) is equal to this [IndexPath](xref:Avalonia.Controls.IndexPath). |
 | [GetEnumerator](#uid-6f66926059) | Returns an enumerator that iterates through the indexes in this path. |
 | [GetHashCode](#uid-cdc4d05a71) | Returns the hash code for this [IndexPath](xref:Avalonia.Controls.IndexPath). |
-| [IsAncestorOf](#uid-43c31e7c47) | No summary available. |
-| [IsParentOf](#uid-ed2cdaa4c4) | No summary available. |
+| [IsAncestorOf](#uid-43c31e7c47) | 暂无摘要。 |
+| [IsParentOf](#uid-ed2cdaa4c4) | 暂无摘要。 |
 | [Slice](#uid-89b122ebcb) | Creates a new [IndexPath](xref:Avalonia.Controls.IndexPath) containing a portion of this path. |
 | [ToArray](#uid-d299da6208) | Converts this [IndexPath](xref:Avalonia.Controls.IndexPath) to an array of integers. |
 | [ToString](#uid-96d87be4f0) | Returns a string representation of the [IndexPath](xref:Avalonia.Controls.IndexPath). |
@@ -170,7 +170,7 @@ The array of indexes representing the path.
 
 <span id="uid-2ebd5e55e0"></span>
 
-### Append Method
+### Append 方法 {#append-method}
 
 Creates a new [IndexPath](xref:Avalonia.Controls.IndexPath) by appending a child index to this path.
 
@@ -178,21 +178,21 @@ Creates a new [IndexPath](xref:Avalonia.Controls.IndexPath) by appending a child
 public Avalonia.Controls.IndexPath Append(int childIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `childIndex` int
 
 The child index to append.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 A new [IndexPath](xref:Avalonia.Controls.IndexPath) with the child index appended.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Thrown when childIndex is negative.](xref:System.ArgumentException)
 
@@ -202,7 +202,7 @@ A new [IndexPath](xref:Avalonia.Controls.IndexPath) with the child index appende
 
 <span id="uid-d1190c8a53"></span>
 
-### CompareTo Method
+### CompareTo 方法 {#compareto-method}
 
 Compares this [IndexPath](xref:Avalonia.Controls.IndexPath) with another [IndexPath](xref:Avalonia.Controls.IndexPath).
 
@@ -210,14 +210,14 @@ Compares this [IndexPath](xref:Avalonia.Controls.IndexPath) with another [IndexP
 public int CompareTo(Avalonia.Controls.IndexPath other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `other` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 The [IndexPath](xref:Avalonia.Controls.IndexPath) to compare with.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 int
 
@@ -229,13 +229,13 @@ if greater.
 
 <span id="uid-5479a14e85"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cba3911557"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Determines whether the specified [IndexPath](xref:Avalonia.Controls.IndexPath) is equal to this [IndexPath](xref:Avalonia.Controls.IndexPath).
 
@@ -243,14 +243,14 @@ Determines whether the specified [IndexPath](xref:Avalonia.Controls.IndexPath) i
 public bool Equals(Avalonia.Controls.IndexPath other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `other` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 The [IndexPath](xref:Avalonia.Controls.IndexPath) to compare with this [IndexPath](xref:Avalonia.Controls.IndexPath).
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -263,7 +263,7 @@ true if the specified [IndexPath](xref:Avalonia.Controls.IndexPath) is equal to 
 
 <span id="uid-4e29660f95"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 Determines whether the specified object is equal to this [IndexPath](xref:Avalonia.Controls.IndexPath).
 
@@ -271,14 +271,14 @@ Determines whether the specified object is equal to this [IndexPath](xref:Avalon
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `obj` object
 
 The object to compare with this [IndexPath](xref:Avalonia.Controls.IndexPath).
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 bool
 
@@ -291,7 +291,7 @@ true if the specified object is equal to this [IndexPath](xref:Avalonia.Controls
 
 <span id="uid-6f66926059"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 Returns an enumerator that iterates through the indexes in this path.
 
@@ -299,7 +299,7 @@ Returns an enumerator that iterates through the indexes in this path.
 public System.Collections.Generic.IEnumerator<int> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Collections.Generic.IEnumerator&lt;int&gt;
 
@@ -312,7 +312,7 @@ An enumerator for the indexes in this path.
 
 <span id="uid-cdc4d05a71"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 Returns the hash code for this [IndexPath](xref:Avalonia.Controls.IndexPath).
 
@@ -320,7 +320,7 @@ Returns the hash code for this [IndexPath](xref:Avalonia.Controls.IndexPath).
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 int
 
@@ -333,18 +333,18 @@ A hash code for this [IndexPath](xref:Avalonia.Controls.IndexPath).
 
 <span id="uid-43c31e7c47"></span>
 
-### IsAncestorOf Method
+### IsAncestorOf 方法 {#isancestorof-method}
 
 ```csharp
 public bool IsAncestorOf(Avalonia.Controls.IndexPath& other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `other` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 bool
 
@@ -355,18 +355,18 @@ bool
 
 <span id="uid-ed2cdaa4c4"></span>
 
-### IsParentOf Method
+### IsParentOf 方法 {#isparentof-method}
 
 ```csharp
 public bool IsParentOf(Avalonia.Controls.IndexPath& other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `other` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 bool
 
@@ -377,7 +377,7 @@ bool
 
 <span id="uid-89b122ebcb"></span>
 
-### Slice Method
+### Slice 方法 {#slice-method}
 
 Creates a new [IndexPath](xref:Avalonia.Controls.IndexPath) containing a portion of this path.
 
@@ -385,7 +385,7 @@ Creates a new [IndexPath](xref:Avalonia.Controls.IndexPath) containing a portion
 public Avalonia.Controls.IndexPath Slice(int start, int length)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `start` int
 
@@ -397,14 +397,14 @@ The starting position of the slice.
 The number of indexes to include in the slice.
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 A new [IndexPath](xref:Avalonia.Controls.IndexPath) containing the specified portion of this path.
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [Thrown when start or length are invalid.](xref:System.IndexOutOfRangeException)
 
@@ -414,7 +414,7 @@ A new [IndexPath](xref:Avalonia.Controls.IndexPath) containing the specified por
 
 <span id="uid-d299da6208"></span>
 
-### ToArray Method
+### ToArray 方法 {#toarray-method}
 
 Converts this [IndexPath](xref:Avalonia.Controls.IndexPath) to an array of integers.
 
@@ -422,7 +422,7 @@ Converts this [IndexPath](xref:Avalonia.Controls.IndexPath) to an array of integ
 public int[] ToArray()
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 int[]
 
@@ -435,7 +435,7 @@ An array containing all indexes in this path.
 
 <span id="uid-96d87be4f0"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 Returns a string representation of the [IndexPath](xref:Avalonia.Controls.IndexPath).
 
@@ -443,7 +443,7 @@ Returns a string representation of the [IndexPath](xref:Avalonia.Controls.IndexP
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-10}
 
 string
 
@@ -452,18 +452,18 @@ A string in the format "(index1.index2.index3)" or "()" for empty paths.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](#uid-e464ba6301) | Gets the number of indexes in this path. |
-| [Item](#uid-22862e9778) | No summary available. |
+| [Item](#uid-22862e9778) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e464ba6301"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 Gets the number of indexes in this path.
 
@@ -477,7 +477,7 @@ public int Count { get; set; }
 
 <span id="uid-22862e9778"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public int Item { get; set; }
@@ -485,9 +485,9 @@ public int Item { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Unselected](#uid-7ce16a592d) | Gets an empty [IndexPath](xref:Avalonia.Controls.IndexPath) representing no selection. |
 
@@ -495,7 +495,7 @@ public int Item { get; set; }
 
 <span id="uid-7ce16a592d"></span>
 
-### Unselected Field
+### Unselected 字段 {#unselected-field}
 
 Gets an empty [IndexPath](xref:Avalonia.Controls.IndexPath) representing no selection.
 

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">WinFormsAvaloniaMessageFilter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Win32.Interoperability</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Win32.Interoperability</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Win32.Interoperability</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Win32.Interoperability</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Win32.Interoperability</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Win32.Interoperability</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Windows/Avalonia.Win32.Interoperability/WinForms/WinFormsAvaloniaMessageFilter.cs">WinFormsAvaloniaMessageFilter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Windows/Avalonia.Win32.Interoperability/WinForms/WinFormsAvaloniaMessageFilter.cs">WinFormsAvaloniaMessageFilter.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public class WinFormsAvaloniaMessageFilter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> WinFormsAvaloniaMessageFilter
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> WinFormsAvaloniaMessageFilter
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IMessageFilter
+<span className="apiref-page__meta-label">实现接口：</span> IMessageFilter
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This filter ensures that key messages, which are typically handled specially by WinForms,
 are intercepted and routed to Avalonia's windows. This is necessary to preserve proper input handling
 in mixed WinForms and Avalonia application scenarios.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [WinFormsAvaloniaMessageFilter](#uid-8256c89d18) | No summary available. |
+| [WinFormsAvaloniaMessageFilter](#uid-8256c89d18) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8256c89d18"></span>
 
-### WinFormsAvaloniaMessageFilter Constructor
+### WinFormsAvaloniaMessageFilter 构造函数 {#winformsavaloniamessagefilter-constructor}
 
 ```csharp
 public WinFormsAvaloniaMessageFilter()
@@ -85,28 +85,28 @@ public WinFormsAvaloniaMessageFilter()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PreFilterMessage](#uid-a636a2a73d) | No summary available. |
+| [PreFilterMessage](#uid-a636a2a73d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a636a2a73d"></span>
 
-### PreFilterMessage Method
+### PreFilterMessage 方法 {#prefiltermessage-method}
 
 ```csharp
 public bool PreFilterMessage(System.Windows.Forms.Message& m)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `m` System.Windows.Forms.Message&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 

@@ -103,7 +103,7 @@ Keep the following points in mind:
 - **Cold observables** (such as `Observable.Interval`) create a new subscription each time. Because Avalonia disposes the subscription when the control detaches, no manual cleanup is required.
 - If your view model implements `IDisposable` and you create subscriptions outside of XAML bindings (for example, inside the constructor for derived properties), dispose of those subscriptions in your `Dispose` method to avoid memory leaks.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to bind to a task result](/docs/data-binding/how-to-bind-to-a-task-result)
 - [Data binding syntax](/docs/data-binding/data-binding-syntax)

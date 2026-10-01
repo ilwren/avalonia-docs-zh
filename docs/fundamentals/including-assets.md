@@ -82,7 +82,7 @@ Avalonia does not provide support for `file://`, `http://`, or `https://` scheme
 Avalonia has a community implementation for an image loader at [AsyncImageLoader.Avalonia](https://github.com/AvaloniaUtils/AsyncImageLoader.Avalonia).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml)
 - [UI composition](/docs/fundamentals/ui-composition)

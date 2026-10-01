@@ -60,7 +60,7 @@ Subscriptions fund continued development of the open-source framework.
   <Button label="Purchase Avalonia Enterprise" link="https://avaloniaui.net/pricing" variant="secondary" outline />
 </div>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [AI Tools](/tools/ai-tools/)
 - [IDE Support](/tools/ide/)

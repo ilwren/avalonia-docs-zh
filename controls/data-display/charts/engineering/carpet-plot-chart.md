@@ -48,7 +48,7 @@ public ObservableCollection<CarpetPoint> CarpetData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of measurement points. | `null` |
 | `AAxisPath` | Path to the first independent variable. | `null` |
@@ -57,7 +57,7 @@ public ObservableCollection<CarpetPoint> CarpetData { get; } = new()
 | `CarpetOffset` | Visual offset factor used to create the carpet effect. | `0.5` |
 | `PlotAreaBackground` | Optional background brush for the plot area. | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Ternary chart](/controls/data-display/charts/engineering/ternary-chart)
 - [Contour plot chart](/controls/data-display/charts/statistical/contour-plot-chart)

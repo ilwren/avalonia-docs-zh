@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ShapedBuffer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/ShapedBuffer.cs">ShapedBuffer.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/ShapedBuffer.cs">ShapedBuffer.cs</a>
 </div>
 
 </div>
@@ -48,30 +48,30 @@ public class ShapedBuffer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ShapedBuffer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ShapedBuffer
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEnumerable&lt;GlyphInfo&gt;, IReadOnlyCollection&lt;GlyphInfo&gt;, IReadOnlyList&lt;GlyphInfo&gt;, IEnumerable, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IEnumerable&lt;GlyphInfo&gt;, IReadOnlyCollection&lt;GlyphInfo&gt;, IReadOnlyList&lt;GlyphInfo&gt;, IEnumerable, IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ShapedBuffer](#uid-1d47581713) | No summary available. |
+| [ShapedBuffer](#uid-1d47581713) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1d47581713"></span>
 
-### ShapedBuffer Constructor
+### ShapedBuffer 构造函数 {#shapedbuffer-constructor}
 
 ```csharp
 public ShapedBuffer(ReadOnlyMemory<char> text, int bufferLength, Avalonia.Media.GlyphTypeface glyphTypeface, double fontRenderingEmSize, sbyte bidiLevel)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
@@ -90,19 +90,19 @@ public ShapedBuffer(ReadOnlyMemory<char> text, int bufferLength, Avalonia.Media.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-0bf95ef9df) | No summary available. |
-| [GetEnumerator](#uid-21e93d6c02) | No summary available. |
+| [Dispose](#uid-0bf95ef9df) | 暂无摘要。 |
+| [GetEnumerator](#uid-21e93d6c02) | 暂无摘要。 |
 | [Split](#uid-6413e6994f) | Splits the [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextFormatting.TextRun) at specified length. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0bf95ef9df"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -114,13 +114,13 @@ public void Dispose()
 
 <span id="uid-21e93d6c02"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerator<Avalonia.Media.TextFormatting.GlyphInfo> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IEnumerator&lt;[Avalonia.Media.TextFormatting.GlyphInfo](xref:Avalonia.Media.TextFormatting.GlyphInfo)&gt;
 
@@ -131,7 +131,7 @@ System.Collections.Generic.IEnumerator&lt;[Avalonia.Media.TextFormatting.GlyphIn
 
 <span id="uid-6413e6994f"></span>
 
-### Split Method
+### Split 方法 {#split-method}
 
 Splits the [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextFormatting.TextRun) at specified length.
 
@@ -139,14 +139,14 @@ Splits the [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextForma
 public Avalonia.Media.TextFormatting.SplitResult<T><Avalonia.Media.TextFormatting.ShapedBuffer> Split(int textLength)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `textLength` int
 
 The text length.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 Avalonia.Media.TextFormatting.SplitResult&lt;T&gt;&lt;[Avalonia.Media.TextFormatting.ShapedBuffer](xref:Avalonia.Media.TextFormatting.ShapedBuffer)&gt;
 
@@ -155,15 +155,15 @@ The split result.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BidiLevel](#uid-5ded254761) | The buffer's bidi level. |
 | [FontRenderingEmSize](#uid-5c7c9ef6ae) | The buffers font rendering em size. |
 | [GlyphTypeface](#uid-9c4431840f) | The buffer's glyph typeface. |
 | [IsLeftToRight](#uid-980dd70041) | The buffer's reading direction. |
-| [Item](#uid-f74462311e) | No summary available. |
+| [Item](#uid-f74462311e) | 暂无摘要。 |
 | [Length](#uid-3427eb612b) | The buffer's length. |
 | [Text](#uid-197f3ad165) | The text that is represended by this buffer. |
 
@@ -171,7 +171,7 @@ The split result.
 
 <span id="uid-5ded254761"></span>
 
-### BidiLevel Property
+### BidiLevel 属性 {#bidilevel-property}
 
 The buffer's bidi level.
 
@@ -185,7 +185,7 @@ public sbyte BidiLevel { get; set; }
 
 <span id="uid-5c7c9ef6ae"></span>
 
-### FontRenderingEmSize Property
+### FontRenderingEmSize 属性 {#fontrenderingemsize-property}
 
 The buffers font rendering em size.
 
@@ -199,7 +199,7 @@ public double FontRenderingEmSize { get; set; }
 
 <span id="uid-9c4431840f"></span>
 
-### GlyphTypeface Property
+### GlyphTypeface 属性 {#glyphtypeface-property}
 
 The buffer's glyph typeface.
 
@@ -213,7 +213,7 @@ public Avalonia.Media.GlyphTypeface GlyphTypeface { get; set; }
 
 <span id="uid-980dd70041"></span>
 
-### IsLeftToRight Property
+### IsLeftToRight 属性 {#islefttoright-property}
 
 The buffer's reading direction.
 
@@ -227,7 +227,7 @@ public bool IsLeftToRight { get; set; }
 
 <span id="uid-f74462311e"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public Avalonia.Media.TextFormatting.GlyphInfo Item { get; set; }
@@ -239,7 +239,7 @@ public Avalonia.Media.TextFormatting.GlyphInfo Item { get; set; }
 
 <span id="uid-3427eb612b"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
 The buffer's length.
 
@@ -253,7 +253,7 @@ public int Length { get; set; }
 
 <span id="uid-197f3ad165"></span>
 
-### Text Property
+### Text 属性 {#text-property}
 
 The text that is represended by this buffer.
 

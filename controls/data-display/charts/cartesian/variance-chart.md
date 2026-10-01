@@ -59,7 +59,7 @@ public ObservableCollection<ProfitItem> ProfitData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |
@@ -71,7 +71,7 @@ public ObservableCollection<ProfitItem> ProfitData { get; } = new()
 | `BarWidth` | The width of each bar as a fraction of the category band (0.0 to 1.0). | `0.6` |
 | `BarCornerRadius` | The rounding of the bar corners. | `2` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
 - [Range bar chart](/controls/data-display/charts/cartesian/range-bar-chart)

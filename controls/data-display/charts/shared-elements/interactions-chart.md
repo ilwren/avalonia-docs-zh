@@ -113,7 +113,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 
 ### Zoom and pan
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsZoomEnabled` | Enables the ability to zoom into the chart. | `false` |
 | `IsPanEnabled` | Enables the ability to pan (scroll) the chart view. | `false` |
@@ -127,7 +127,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 
 `CartesianChart` creates embedded `ChartRangeSelector` controls when `IsZoomEnabled`, `ShowRangeSelector`, and the current `ZoomMode` require them. Use `ChartRangeSelector` directly when a separate range selection surface is needed.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Orientation` | Selector orientation, `Horizontal` or `Vertical`. | `Horizontal` |
 | `Minimum` | Minimum data value represented by the selector. | `0.0` |
@@ -141,14 +141,14 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 | `ValueToRatio` | Optional converter from data values to normalized selector positions. Used for non-linear axes and scale breaks. | `null` |
 | `RatioToValue` | Optional converter from normalized selector positions back to data values. | `null` |
 
-| Event | Description |
+| Event | 说明 |
 | :--- | :--- |
 | `RangeDragStarted` | Raised when the user starts dragging the selector thumb or a grip. |
 | `RangeDragCompleted` | Raised when the active range drag completes. |
 
 ### Hover highlighting
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsHighlightEnabled` | Enables hover highlighting. On series, hovering a data point dims other items in that series. On supported standalone charts, hovering a segment or cell dims the other items in that chart. | `false` |
 
@@ -158,7 +158,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 
 `CartesianChart` can display a trackball guide line and value tooltips while the pointer moves over the plot area.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `TrackballMode` | Trackball line mode: `None`, `Vertical`, or `Horizontal`. | `None` |
 | `TrackballDisplayMode` | Tooltip display mode: `FloatAllPoints` or `GroupAllPoints`. | `FloatAllPoints` |
@@ -167,7 +167,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 
 ### Selection
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `IsSelectionEnabled` | Enables pointer selection for supported series or chart items. | `false` |
 | `SelectionMode` | Selection behavior, such as `None`, `Single`, `SingleDeselect`, or `Multiple`. | `SingleDeselect` |
@@ -181,7 +181,7 @@ Selection APIs are available on selectable chart controls and selectable series.
 
 ### Events and methods
 
-| Member | Description |
+| Member | 说明 |
 | :--- | :--- |
 | `DataPointClicked` | Raised when a data point is clicked. Event data exposes the `Series`, `DataPointIndex`, `Category`, `Value`, and original `DataItem` when available. |
 | `DataPointHovered` | Raised after the hover debounce when the pointer moves over a data point or leaves all data points. This event does not require `IsHighlightEnabled`; that property only controls highlight visuals. Event data exposes `Source` and `DataPointIndex`. |
@@ -208,7 +208,7 @@ Selection APIs are available on selectable chart controls and selectable series.
 
 Charts also support pinch-to-zoom, mouse wheel zoom, and selection zoom.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Tooltip](/controls/data-display/charts/shared-elements/tooltip-chart)
 - [Crosshairs](/controls/data-display/charts/shared-elements/crosshairs-chart)

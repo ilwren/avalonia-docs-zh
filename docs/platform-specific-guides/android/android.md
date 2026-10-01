@@ -73,7 +73,7 @@ maui-check
 
 With the above _Android_ development environment setup, you will be able to build _Android_ applications, and run them in a simulator on your platform.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Deploying on Android](/docs/deployment/android) (emulator, device, and publishing)
 - [Configure Android debugging in Visual Studio Code on Linux](/tools/visual-studio-code/configure-vscode-debug-linux)

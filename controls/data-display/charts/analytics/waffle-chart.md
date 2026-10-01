@@ -34,7 +34,7 @@ Waffle charts (square pie charts) visualize percentages or proportions using a g
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `0` |
 | `MaxValue` | The maximum value for percentage calculation. | `100` |

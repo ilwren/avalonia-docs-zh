@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CompositePageTransition Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Animation</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Animation</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/CompositePageTransition.cs">CompositePageTransition.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/CompositePageTransition.cs">CompositePageTransition.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public class CompositePageTransition
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositePageTransition
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositePageTransition
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ipagetransition">IPageTransition</a>, <a href="iprogresspagetransition">IProgressPageTransition</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ipagetransition">IPageTransition</a>, <a href="iprogresspagetransition">IProgressPageTransition</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Instantiate the [Avalonia.Animation.CompositePageTransition](xref:Avalonia.Animation.CompositePageTransition) in XAML and initialize the
 [Avalonia.Animation.Transitions](xref:Avalonia.Animation.Transitions) property in order to have many animations triggered at once.
@@ -78,17 +78,17 @@ For example, you can combine [Avalonia.Animation.CrossFade](xref:Avalonia.Animat
 </reactiveUi:RoutedViewHost>
 ```
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CompositePageTransition](#uid-391c4aef35) | No summary available. |
+| [CompositePageTransition](#uid-391c4aef35) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-391c4aef35"></span>
 
-### CompositePageTransition Constructor
+### CompositePageTransition 构造函数 {#compositepagetransition-constructor}
 
 ```csharp
 public CompositePageTransition()
@@ -96,19 +96,19 @@ public CompositePageTransition()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Reset](#uid-157693c586) | Resets any visual state applied to the given visual by this transition. |
 | [Start](#uid-00a1b4bc97) | Starts the animation. |
-| [Update](#uid-0f4c64f7a8) | No summary available. |
+| [Update](#uid-0f4c64f7a8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-157693c586"></span>
 
-### Reset Method
+### Reset 方法 {#reset-method}
 
 Resets any visual state applied to the given visual by this transition.
 
@@ -116,7 +116,7 @@ Resets any visual state applied to the given visual by this transition.
 public void Reset(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -129,7 +129,7 @@ The visual to reset.
 
 <span id="uid-00a1b4bc97"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
 Starts the animation.
 
@@ -137,7 +137,7 @@ Starts the animation.
 public System.Threading.Tasks.Task Start(Avalonia.Visual from, Avalonia.Visual to, bool forward, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `from` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -159,7 +159,7 @@ If the animation is bidirectional, controls the direction of the animation.
 Animation cancellation.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -172,13 +172,13 @@ A [System.Threading.Tasks.Task](xref:System.Threading.Tasks.Task) that tracks th
 
 <span id="uid-0f4c64f7a8"></span>
 
-### Update Method
+### Update 方法 {#update-method}
 
 ```csharp
 public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bool forward, double pageLength, System.Collections.Generic.IReadOnlyList<Avalonia.Animation.PageTransitionItem> visibleItems)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `progress` double
 
@@ -200,9 +200,9 @@ public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bo
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PageTransitions](#uid-a1aa58a748) | Gets or sets the transitions to be executed. Can be defined from XAML. |
 
@@ -210,7 +210,7 @@ public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bo
 
 <span id="uid-a1aa58a748"></span>
 
-### PageTransitions Property
+### PageTransitions 属性 {#pagetransitions-property}
 
 Gets or sets the transitions to be executed. Can be defined from XAML.
 

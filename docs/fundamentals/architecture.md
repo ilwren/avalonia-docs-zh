@@ -84,7 +84,7 @@ Avalonia supports two composition modes:
 
 Avalonia isolates all platform-specific code behind interfaces. The key abstractions are:
 
-| Interface | Purpose |
+| Interface | 用途 |
 |---|---|
 | `IWindowImpl` | Window creation, sizing, positioning, native chrome |
 | `ITopLevelImpl` | Rendering surface, input delivery, scaling |
@@ -150,7 +150,7 @@ Items = new ObservableCollection<Item>(data);
 
 See [Threading](/docs/app-development/threading) for the full threading model.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Cross-platform architecture](/docs/fundamentals/cross-platform-architecture): Solution structure and platform-specific code patterns.
 - [Visual and logical trees](/docs/fundamentals/visual-and-logical-trees): How the two trees work and when to use each.

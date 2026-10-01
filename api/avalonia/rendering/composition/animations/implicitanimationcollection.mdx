@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ImplicitAnimationCollection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering.Composition.Animations</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering.Composition.Animations</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/Animations/ImplicitAnimationCollection.cs">ImplicitAnimationCollection.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/Animations/ImplicitAnimationCollection.cs">ImplicitAnimationCollection.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public class ImplicitAnimationCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../compositionobject">CompositionObject</a> <span className="apiref-page__relation-separator">-&gt;</span> ImplicitAnimationCollection
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../compositionobject">CompositionObject</a> <span className="apiref-page__relation-separator">-&gt;</span> ImplicitAnimationCollection
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> ICollection&lt;KeyValuePair&lt;string,ICompositionAnimationBase&gt;&gt;, IDictionary&lt;string,ICompositionAnimationBase&gt;, IEnumerable&lt;KeyValuePair&lt;string,ICompositionAnimationBase&gt;&gt;, IEnumerable
+<span className="apiref-page__meta-label">实现接口：</span> ICollection&lt;KeyValuePair&lt;string,ICompositionAnimationBase&gt;&gt;, IDictionary&lt;string,ICompositionAnimationBase&gt;, IEnumerable&lt;KeyValuePair&lt;string,ICompositionAnimationBase&gt;&gt;, IEnumerable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Implicit animations let you drive animations by specifying trigger conditions rather than requiring the manual definition of animation behavior.
 They help decouple animation start logic from core app logic. You define animations and the events that should trigger these animations.
@@ -70,36 +70,36 @@ Currently the only available trigger is animated property change.
 When expression is used in [ImplicitAnimationCollection](xref:Avalonia.Rendering.Composition.Animations.ImplicitAnimationCollection) a special keyword `this.FinalValue` will represent
 the final value of the animated property that was changed
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Add](#uid-bb73cb4873) | No summary available. |
-| [Clear](#uid-6c1e62ef81) | No summary available. |
-| [ContainsKey](#uid-8c37a90a5a) | No summary available. |
-| [GetEnumerator](#uid-fa934bfab0) | No summary available. |
-| [GetView](#uid-90cbaafd17) | No summary available. |
-| [HasKey](#uid-9ea1f1e80f) | No summary available. |
-| [Insert](#uid-e0d483e8e3) | No summary available. |
-| [Lookup](#uid-358bf51542) | No summary available. |
-| [Remove](#uid-3edc5a6caf) | No summary available. |
+| [Add](#uid-bb73cb4873) | 暂无摘要。 |
+| [Clear](#uid-6c1e62ef81) | 暂无摘要。 |
+| [ContainsKey](#uid-8c37a90a5a) | 暂无摘要。 |
+| [GetEnumerator](#uid-fa934bfab0) | 暂无摘要。 |
+| [GetView](#uid-90cbaafd17) | 暂无摘要。 |
+| [HasKey](#uid-9ea1f1e80f) | 暂无摘要。 |
+| [Insert](#uid-e0d483e8e3) | 暂无摘要。 |
+| [Lookup](#uid-358bf51542) | 暂无摘要。 |
+| [Remove](#uid-3edc5a6caf) | 暂无摘要。 |
 | [StartAnimation](../compositionobject.mdx#uid-4d2f25fec7) | Connects an animation with the specified property of the object and starts the animation. Inherited from [CompositionObject](../compositionobject.mdx). |
 | [StartAnimationGroup](../compositionobject.mdx#uid-4846f860a0) | Starts an animation group. The StartAnimationGroup method on [CompositionObject](xref:Avalonia.Rendering.Composition.CompositionObject) lets you start [CompositionAnimationGroup](xref:Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup). All the animations in the group will be started at the same time on the object. Inherited from [CompositionObject](../compositionobject.mdx). |
 | [StopAnimation](../compositionobject.mdx#uid-01077c2b21) | Disconnects an animation from the specified property and stops the animation. Inherited from [CompositionObject](../compositionobject.mdx). |
 | [StopAnimationGroup](../compositionobject.mdx#uid-81dbd02845) | Stops an animation group. Inherited from [CompositionObject](../compositionobject.mdx). |
-| [TryGetValue](#uid-361118d602) | No summary available. |
+| [TryGetValue](#uid-361118d602) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bb73cb4873"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
 ```csharp
 public void Add(string key, Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `key` string
 
@@ -113,7 +113,7 @@ public void Add(string key, Avalonia.Rendering.Composition.Animations.ICompositi
 
 <span id="uid-6c1e62ef81"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 ```csharp
 public void Clear()
@@ -125,18 +125,18 @@ public void Clear()
 
 <span id="uid-8c37a90a5a"></span>
 
-### ContainsKey Method
+### ContainsKey 方法 {#containskey-method}
 
 ```csharp
 public bool ContainsKey(string key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `key` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -147,13 +147,13 @@ bool
 
 <span id="uid-fa934bfab0"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<string,Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase>> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;string,[Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase](xref:Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase)&gt;&gt;
 
@@ -164,13 +164,13 @@ System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePai
 
 <span id="uid-90cbaafd17"></span>
 
-### GetView Method
+### GetView 方法 {#getview-method}
 
 ```csharp
 public System.Collections.Generic.IReadOnlyDictionary<string, Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase> GetView()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IReadOnlyDictionary&lt;string, [Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase](xref:Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase)&gt;
 
@@ -181,18 +181,18 @@ System.Collections.Generic.IReadOnlyDictionary&lt;string, [Avalonia.Rendering.Co
 
 <span id="uid-9ea1f1e80f"></span>
 
-### HasKey Method
+### HasKey 方法 {#haskey-method}
 
 ```csharp
 public bool HasKey(string key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `key` string
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -203,13 +203,13 @@ bool
 
 <span id="uid-e0d483e8e3"></span>
 
-### Insert Method
+### Insert 方法 {#insert-method}
 
 ```csharp
 public void Insert(string key, Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase animation)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `key` string
 
@@ -223,18 +223,18 @@ public void Insert(string key, Avalonia.Rendering.Composition.Animations.ICompos
 
 <span id="uid-358bf51542"></span>
 
-### Lookup Method
+### Lookup 方法 {#lookup-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase Lookup(string key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `key` string
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase](xref:Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase)
 
@@ -245,18 +245,18 @@ public Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase Looku
 
 <span id="uid-3edc5a6caf"></span>
 
-### Remove Method
+### Remove 方法 {#remove-method}
 
 ```csharp
 public bool Remove(string key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `key` string
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 bool
 
@@ -267,13 +267,13 @@ bool
 
 <span id="uid-361118d602"></span>
 
-### TryGetValue Method
+### TryGetValue 方法 {#trygetvalue-method}
 
 ```csharp
 public bool TryGetValue(string key, Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `key` string
 
@@ -281,29 +281,29 @@ public bool TryGetValue(string key, Avalonia.Rendering.Composition.Animations.IC
 `value` [Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase](xref:Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Compositor](../compositionobject.mdx#uid-bd6bbc1391) | The associated Compositor Inherited from [CompositionObject](../compositionobject.mdx). |
-| [Count](#uid-972ab9b4c2) | No summary available. |
+| [Count](#uid-972ab9b4c2) | 暂无摘要。 |
 | [ImplicitAnimations](../compositionobject.mdx#uid-3929e9ea34) | The collection of implicit animations attached to this object. Inherited from [CompositionObject](../compositionobject.mdx). |
 | [IsDisposed](../compositionobject.mdx#uid-e01437c946) | Inherited from [CompositionObject](../compositionobject.mdx). |
-| [Item](#uid-c66ce36dae) | No summary available. |
-| [Size](#uid-c606188463) | No summary available. |
+| [Item](#uid-c66ce36dae) | 暂无摘要。 |
+| [Size](#uid-c606188463) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-972ab9b4c2"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 ```csharp
 public int Count { get; set; }
@@ -315,7 +315,7 @@ public int Count { get; set; }
 
 <span id="uid-c66ce36dae"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase Item { get; set; }
@@ -327,7 +327,7 @@ public Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase Item 
 
 <span id="uid-c606188463"></span>
 
-### Size Property
+### Size 属性 {#size-property}
 
 ```csharp
 public uint Size { get; set; }

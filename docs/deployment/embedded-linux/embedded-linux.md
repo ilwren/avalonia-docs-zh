@@ -31,7 +31,7 @@ Replace `linux-arm64` with the appropriate RID for your device.
 
 ### Publish options explained
 
-| Option | Purpose |
+| Option | 用途 |
 |---|---|
 | `--self-contained true` | Bundles the .NET runtime so it does not need to be installed on the target. |
 | `-p:PublishSingleFile=true` | Produces a single executable file instead of a directory of assemblies. |
@@ -146,7 +146,7 @@ Other distributions will have equivalent packages under slightly different names
 | `libegl1-mesa` | Mesa's implementation of EGL (originally "Embedded-System Graphics Library", now a standalone name maintained by Khronos). EGL is a platform-independent API that sits between a rendering API (such as OpenGL ES) and the native display system. It handles creating rendering contexts, binding them to drawing surfaces, and managing resources like buffers and sync objects. On desktop Linux with X11, EGL talks to the X server. In an embedded DRM setup, EGL talks directly to GBM surfaces instead. | Avalonia uses EGL to create an OpenGL ES rendering context and bind it to a GBM surface backed by a DRM framebuffer. This is what connects Avalonia's drawing commands to actual pixels on the display. |
 | `libinput10` | The libinput library. Provides a unified API for reading input events from keyboards, mice, touchpads, and touchscreens via the kernel's evdev interface. | Avalonia reads all user input through libinput when running outside a desktop environment. Without it, touch, mouse, and keyboard input will not work. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Embedded Linux platform integration](/docs/platform-specific-guides/embedded-linux) for framebuffer and DRM concepts
 - [Running on Raspberry Pi](/docs/platform-specific-guides/embedded-linux/raspberry-pi) for a hardware-specific walkthrough

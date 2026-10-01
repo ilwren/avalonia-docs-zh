@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RichImageSource Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -53,31 +53,31 @@ public class RichImageSource
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> RichImageSource
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> RichImageSource
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="deferredimagesource">DeferredImageSource</a>, <a href="embeddedimagesource">EmbeddedImageSource</a>, <a href="pixelimagesource">PixelImageSource</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="deferredimagesource">DeferredImageSource</a>, <a href="embeddedimagesource">EmbeddedImageSource</a>, <a href="pixelimagesource">PixelImageSource</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 A [Avalonia.Controls.Documents.RichImageSourceConverter](xref:Avalonia.Controls.Documents.RichImageSourceConverter) lets a source be authored in XAML from
 an absolute URI string, e.g. `Source="avares://MyApp/Assets/picture.png"`.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ResolveAsync](#uid-20218c8f89) | Resolves the decoded image. Embedded sources complete synchronously; deferred sources fetch/decode in the background. Returns when the image cannot be produced. Callers must not dispose the returned image — its lifetime is owned by the source (or its loader); a source that owns a decoded bitmap implements [IDisposable](xref:System.IDisposable). |
-| [TryGetIntrinsicPixelSize](#uid-43234fb232) | No summary available. |
-| [TryGetPixels](#uid-a7a2ec7a6f) | No summary available. |
+| [TryGetIntrinsicPixelSize](#uid-43234fb232) | 暂无摘要。 |
+| [TryGetPixels](#uid-a7a2ec7a6f) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-20218c8f89"></span>
 
-### ResolveAsync Method
+### ResolveAsync 方法 {#resolveasync-method}
 
 Resolves the decoded image. Embedded sources complete synchronously;
 deferred sources fetch/decode in the background. Returns
@@ -89,7 +89,7 @@ loader); a source that owns a decoded bitmap implements [IDisposable](xref:Syste
 public System.Threading.Tasks.Task<Avalonia.Media.IImage> ResolveAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Media.IImage](xref:Avalonia.Media.IImage)&gt;
 
@@ -100,13 +100,13 @@ System.Threading.Tasks.Task&lt;[Avalonia.Media.IImage](xref:Avalonia.Media.IImag
 
 <span id="uid-43234fb232"></span>
 
-### TryGetIntrinsicPixelSize Method
+### TryGetIntrinsicPixelSize 方法 {#trygetintrinsicpixelsize-method}
 
 ```csharp
 public bool TryGetIntrinsicPixelSize(int& width, int& height)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `width` int&amp;
 
@@ -114,7 +114,7 @@ public bool TryGetIntrinsicPixelSize(int& width, int& height)
 `height` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -125,27 +125,27 @@ bool
 
 <span id="uid-a7a2ec7a6f"></span>
 
-### TryGetPixels Method
+### TryGetPixels 方法 {#trygetpixels-method}
 
 ```csharp
 public bool TryGetPixels(Avalonia.Controls.Documents.Imaging.PixelHolder& pixels)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `pixels` [Avalonia.Controls.Documents.Imaging.PixelHolder](xref:Avalonia.Controls.Documents.Imaging.PixelHolder)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [EncodedBytes](#uid-8ee090e2e9) | The encoded image bytes when the payload is embedded in the document, or an empty buffer for reference (URI) sources. Serializers that embed pixel data read this. |
 | [MimeType](#uid-1066542416) | The MIME type of [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes), when known. |
@@ -155,7 +155,7 @@ bool
 
 <span id="uid-8ee090e2e9"></span>
 
-### EncodedBytes Property
+### EncodedBytes 属性 {#encodedbytes-property}
 
 The encoded image bytes when the payload is embedded in the document,
 or an empty buffer for reference (URI) sources. Serializers that embed
@@ -171,7 +171,7 @@ public ReadOnlyMemory<byte> EncodedBytes { get; set; }
 
 <span id="uid-1066542416"></span>
 
-### MimeType Property
+### MimeType 属性 {#mimetype-property}
 
 The MIME type of [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes), when known.
 
@@ -185,7 +185,7 @@ public string MimeType { get; set; }
 
 <span id="uid-be73e8d59d"></span>
 
-### SourceUri Property
+### SourceUri 属性 {#sourceuri-property}
 
 The reference URI for a deferred/linked source (e.g. an image URL), or
 for an embedded source.

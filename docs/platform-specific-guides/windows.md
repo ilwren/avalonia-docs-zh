@@ -331,7 +331,7 @@ On Windows, Avalonia's platform services use Win32 APIs. Here is a summary of th
 | Drag and drop | Supports file drops from Explorer and data transfer between applications via OLE drag-and-drop. |
 | Launcher | `Launcher.LaunchUriAsync` opens URLs in the default browser. `Launcher.LaunchFileAsync` opens files using the associated application. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Packaging for Windows](/tools/parcel/packaging-for-windows)
 - [WPF migration guide](/docs/migration/wpf)

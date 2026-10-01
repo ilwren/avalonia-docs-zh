@@ -20,7 +20,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 Three controls can host a `FlowDocument`:
 
-| Control | Purpose | Selection / Copy | Caret | Undo | Overhead |
+| Control | 用途 | Selection / Copy | Caret | Undo | Overhead |
 |---|---|---|---|---|---|
 | `FlowDocumentScrollViewer` | Read-only display in one continuous column | Yes | No | No | Low |
 | `FlowDocumentPageViewer` | Read-only display as discrete page sheets | Yes | No | No | Low |
@@ -277,7 +277,7 @@ FlowDocument
 
 All blocks inherit from `Block` and share these properties:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Margin` | `Thickness` | Outer spacing |
 | `Padding` | `Thickness` | Inner spacing |
@@ -400,7 +400,7 @@ Enable `ShowPageBounds` to render visual indicators at the page boundary. This i
 
 ### Viewer properties
 
-| Property | Type | Description | Default |
+| Property | Type | 说明 | Default |
 |---|---|---|---|
 | `IsSelectionEnabled` | `bool` | Set to `False` to make the viewer a pure display control. The inner view stops being focusable, which matters for a viewer inside an items control. | `true` |
 | `IsCaretVisible` | `bool` | Shows an insertion caret without enabling editing. | `false` |

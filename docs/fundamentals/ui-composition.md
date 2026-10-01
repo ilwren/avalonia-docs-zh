@@ -100,7 +100,7 @@ A templated control uses the Avalonia **styling** system to create a reusable co
 For more information about the concepts behind the Avalonia **styling** system, see [Styles](/docs/styling/styles).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml)
 - [Code-behind](/docs/fundamentals/code-behind)

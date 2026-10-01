@@ -54,7 +54,7 @@ public ObservableCollection<AlluvialLink> AlluvialLinks { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of categorical nodes (columns). | `null` |
 | `Links` | The collection of connections between nodes. | `null` |

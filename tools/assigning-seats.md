@@ -78,6 +78,6 @@ Once assigned, a seat cannot be unassigned or reassigned.
 If you believe you have assigned a seat to the wrong user by mistake, please open a ticket in the [portal](https://portal.avaloniaui.net/).
 :::
 
-## See also
+## 另请参阅 {#see-also}
 - [Troubleshooting login issues](/troubleshooting/login-issues)
 - [Avalonia XPF](/xpf)

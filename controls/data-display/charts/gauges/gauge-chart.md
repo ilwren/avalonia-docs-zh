@@ -40,7 +40,7 @@ public double CpuLoad { get; set; } = 67;
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | Current value displayed by the gauge. | `50.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |
@@ -55,7 +55,7 @@ public double CpuLoad { get; set; } = 67;
 | `ShowValue` | Whether to display the formatted value text. | `true` |
 | `ValueFormat` | Format string used for the value text. | `"{0:F0}"` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Circular gauge](/controls/data-display/charts/gauges/circular-gauge-chart)
 - [Progress donut chart](/controls/data-display/charts/gauges/progress-donut-chart)

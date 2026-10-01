@@ -50,7 +50,7 @@ These can be accessed by selecting **Options** from the **Tools** menu inside Vi
 <Image light={VSOptions} alt="A screenshot showing the options dialog." maxWidth={400} cornerRadius="true"/>
 <br />
 
-|  Setting              | Description | Options       |
+|  Setting              | 说明 | Options       |
 |-----------------------|-------------|---------------|
 | Color Scheme          | Controls how the AXAML file contents are colored. Requires a paid account to change. | <ul><li>**Roslyn (Default):** Colors are based on equivalent C# classifications.</li><li>**XML:** Colors are assigned as if a regular XML document.</li></ul> |
 | Default Document View | What is displayed when a document is opened. | <ul><li>**Split (Default):** Both the code and the previewer.</li><li>**Design:** Just the previewer</li><li>**Source:** Just the source code.</li></ul> |
@@ -62,7 +62,7 @@ These can be accessed by selecting **Options** from the **Tools** menu inside Vi
 | Experimental Previewer | Use the new version of the previewer. Recommended for most users. | <ul><li>**Checked (Default):** New previewer version</li><li>**Unchecked:** Older previewer version</li></ul> |
 | Signed in status      | If signed in, shows the name of the account. | Link to sign in or out. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [IDE Support](/tools/ide/)
 - [Avalonia Tools overview](/tools/)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Win32Properties.CustomWndProcHookCallback Delegate</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/Win32Properties.cs">Win32Properties.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/Win32Properties.cs">Win32Properties.cs</a>
 </div>
 
 </div>
@@ -48,27 +48,27 @@ public delegate Win32Properties.CustomWndProcHookCallback
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> MulticastDelegate <span className="apiref-page__relation-separator">-&gt;</span> Win32Properties.CustomWndProcHookCallback
+<span className="apiref-page__meta-label">继承关系：</span> MulticastDelegate <span className="apiref-page__relation-separator">-&gt;</span> Win32Properties.CustomWndProcHookCallback
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Win32Properties.CustomWndProcHookCallback](#uid-680aa5d7a5) | No summary available. |
+| [Win32Properties.CustomWndProcHookCallback](#uid-680aa5d7a5) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-680aa5d7a5"></span>
 
-### Win32Properties.CustomWndProcHookCallback Constructor
+### Win32Properties.CustomWndProcHookCallback 构造函数 {#win32propertiescustomwndprochookcallback-constructor}
 
 ```csharp
 public Win32Properties.CustomWndProcHookCallback(object object, IntPtr method)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `object` object
 
@@ -78,25 +78,25 @@ public Win32Properties.CustomWndProcHookCallback(object object, IntPtr method)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BeginInvoke](#uid-bbbc14cfb5) | No summary available. |
-| [EndInvoke](#uid-15ef5e85f7) | No summary available. |
-| [Invoke](#uid-aa55c79cf3) | No summary available. |
+| [BeginInvoke](#uid-bbbc14cfb5) | 暂无摘要。 |
+| [EndInvoke](#uid-15ef5e85f7) | 暂无摘要。 |
+| [Invoke](#uid-aa55c79cf3) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bbbc14cfb5"></span>
 
-### BeginInvoke Method
+### BeginInvoke 方法 {#begininvoke-method}
 
 ```csharp
 public IAsyncResult BeginInvoke(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam, bool& handled, AsyncCallback callback, object object)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `hWnd` IntPtr
 
@@ -119,7 +119,7 @@ public IAsyncResult BeginInvoke(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lPa
 `object` object
 
 
-#### Returns
+#### 返回值 {#returns}
 
 IAsyncResult
 
@@ -130,13 +130,13 @@ IAsyncResult
 
 <span id="uid-15ef5e85f7"></span>
 
-### EndInvoke Method
+### EndInvoke 方法 {#endinvoke-method}
 
 ```csharp
 public IntPtr EndInvoke(bool& handled, IAsyncResult result)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `handled` bool&amp;
 
@@ -144,7 +144,7 @@ public IntPtr EndInvoke(bool& handled, IAsyncResult result)
 `result` IAsyncResult
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 IntPtr
 
@@ -155,13 +155,13 @@ IntPtr
 
 <span id="uid-aa55c79cf3"></span>
 
-### Invoke Method
+### Invoke 方法 {#invoke-method}
 
 ```csharp
 public IntPtr Invoke(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam, bool& handled)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `hWnd` IntPtr
 
@@ -178,7 +178,7 @@ public IntPtr Invoke(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam, bool& 
 `handled` bool&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 IntPtr
 

@@ -49,7 +49,7 @@ public ObservableCollection<ContourPoint> ContourData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of sampled points. | `null` |
 | `XPath` | Path to the X coordinate. | `null` |
@@ -59,7 +59,7 @@ public ObservableCollection<ContourPoint> ContourData { get; } = new()
 | `ShowFill` | Whether to fill the contour regions. | `true` |
 | `ShowLines` | Whether to draw contour lines. | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Hexbin chart](/controls/data-display/charts/engineering/hexbin-chart)
 - [Density plot chart](/controls/data-display/charts/statistical/density-plot-chart)

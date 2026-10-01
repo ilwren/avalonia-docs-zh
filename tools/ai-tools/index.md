@@ -55,7 +55,7 @@ With the Parcel MCP server, you describe what you want in plain English and the 
 
 [Set up Parcel MCP](/tools/parcel/mcp)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Build MCP](/tools/ai-tools/build-mcp)
 - [Charts MCP](/tools/ai-tools/charts-mcp)

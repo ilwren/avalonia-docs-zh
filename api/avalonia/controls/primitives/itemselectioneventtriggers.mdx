@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ItemSelectionEventTriggers Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Primitives/ItemSelectionEventTriggers.cs">ItemSelectionEventTriggers.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Primitives/ItemSelectionEventTriggers.cs">ItemSelectionEventTriggers.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class ItemSelectionEventTriggers
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ItemSelectionEventTriggers
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ItemSelectionEventTriggers
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HasRangeSelectionModifier](#uid-f31980b869) | Analyses an input event received by a selectable element, and determines whether the action should trigger range selection. |
 | [HasToggleSelectionModifier](#uid-c8fad760c9) | Analyses an input event received by a selectable element, and determines whether the action should trigger toggle selection. |
@@ -70,7 +70,7 @@ public class ItemSelectionEventTriggers
 
 <span id="uid-f31980b869"></span>
 
-### HasRangeSelectionModifier Method
+### HasRangeSelectionModifier 方法 {#hasrangeselectionmodifier-method}
 
 Analyses an input event received by a selectable element, and determines whether the action should trigger range selection.
 
@@ -78,7 +78,7 @@ Analyses an input event received by a selectable element, and determines whether
 public bool HasRangeSelectionModifier(Avalonia.Visual selectable, Avalonia.Interactivity.RoutedEventArgs eventArgs)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `selectable` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -90,12 +90,12 @@ The selectable element which is processing the event.
 The event to analyse.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
-#### See also
+#### 另请参阅 {#see-also}
 
 - [Avalonia.Input.Platform.PlatformHotkeyConfiguration.SelectionModifiers](xref:Avalonia.Input.Platform.PlatformHotkeyConfiguration.SelectionModifiers)
 
@@ -105,7 +105,7 @@ bool
 
 <span id="uid-c8fad760c9"></span>
 
-### HasToggleSelectionModifier Method
+### HasToggleSelectionModifier 方法 {#hastoggleselectionmodifier-method}
 
 Analyses an input event received by a selectable element, and determines whether the action should trigger toggle selection.
 
@@ -113,7 +113,7 @@ Analyses an input event received by a selectable element, and determines whether
 public bool HasToggleSelectionModifier(Avalonia.Visual selectable, Avalonia.Interactivity.RoutedEventArgs eventArgs)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `selectable` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -125,12 +125,12 @@ The selectable element which is processing the event.
 The event to analyse.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
 
-#### See also
+#### 另请参阅 {#see-also-1}
 
 - [Avalonia.Input.Platform.PlatformHotkeyConfiguration.CommandModifiers](xref:Avalonia.Input.Platform.PlatformHotkeyConfiguration.CommandModifiers)
 
@@ -144,7 +144,7 @@ bool
 
 <span id="uid-a4beef0df5"></span>
 
-#### ShouldTriggerSelection Method
+#### ShouldTriggerSelection 方法 {#shouldtriggerselection-method}
 
 Analyses an input event received by a selectable element, and determines whether the action should trigger selection on press, on release, or not at all.
 
@@ -152,7 +152,7 @@ Analyses an input event received by a selectable element, and determines whether
 public bool ShouldTriggerSelection(Avalonia.Visual selectable, Avalonia.Input.KeyEventArgs eventArgs)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `selectable` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -164,7 +164,7 @@ The selectable element which is processing the event.
 The event to analyse.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -175,7 +175,7 @@ bool
 
 <span id="uid-408a4f85ff"></span>
 
-#### ShouldTriggerSelection Method
+#### ShouldTriggerSelection 方法 {#shouldtriggerselection-method-1}
 
 Analyses an input event received by a selectable element, and determines whether the action should trigger selection on press, on release, or not at all.
 
@@ -183,7 +183,7 @@ Analyses an input event received by a selectable element, and determines whether
 public bool ShouldTriggerSelection(Avalonia.Visual selectable, Avalonia.Input.PointerEventArgs eventArgs)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `selectable` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -195,7 +195,7 @@ The selectable element which is processing the event.
 The event to analyse.
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 bool
 

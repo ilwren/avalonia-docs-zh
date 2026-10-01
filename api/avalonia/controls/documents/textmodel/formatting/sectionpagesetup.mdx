@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SectionPageSetup Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,48 +51,48 @@ public struct SectionPageSetup
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SectionPageSetup
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SectionPageSetup
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;SectionPageSetup&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;SectionPageSetup&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Null members mean "not declared" and inherit the document-level page setup.
 A section that declares any member starts on a new page in paginated output and
 spans pages with this geometry; a section that declares none is a plain grouping
 container with no page semantics.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-c9e6730436) | No summary available. |
-| [GetHashCode](#uid-78b3b10e11) | No summary available. |
-| [ToString](#uid-7f0c691c75) | No summary available. |
+| [Equals（2 个重载）](#uid-c9e6730436) | 暂无摘要。 |
+| [GetHashCode](#uid-78b3b10e11) | 暂无摘要。 |
+| [ToString](#uid-7f0c691c75) | 暂无摘要。 |
 
 <span id="uid-c9e6730436"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-882079f060"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup](xref:Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -103,18 +103,18 @@ bool
 
 <span id="uid-e7cec90b5b"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -125,13 +125,13 @@ bool
 
 <span id="uid-78b3b10e11"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -142,22 +142,22 @@ int
 
 <span id="uid-7f0c691c75"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Default](#uid-68b4a90a10) | Setup with no declared values. |
 | [IsEmpty](#uid-577f9f33f7) | Gets whether no geometry member is declared - the section carries no page semantics. |
@@ -169,7 +169,7 @@ string
 
 <span id="uid-68b4a90a10"></span>
 
-### Default Property
+### Default 属性 {#default-property}
 
 Setup with no declared values.
 
@@ -183,7 +183,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup Default
 
 <span id="uid-577f9f33f7"></span>
 
-### IsEmpty Property
+### IsEmpty 属性 {#isempty-property}
 
 Gets whether no geometry member is declared - the section carries no page
 semantics.
@@ -198,7 +198,7 @@ public bool IsEmpty { get; set; }
 
 <span id="uid-32b639650d"></span>
 
-### PageHeight Property
+### PageHeight 属性 {#pageheight-property}
 
 The page height in device-independent pixels for pages this section spans.
 Null inherits the document's page height.
@@ -213,7 +213,7 @@ public Nullable<double> PageHeight { get; set; }
 
 <span id="uid-8a457e8bb1"></span>
 
-### PagePadding Property
+### PagePadding 属性 {#pagepadding-property}
 
 The page margins (distance from the paper edge to the content area) for pages
 this section spans. Null inherits the document's page padding.
@@ -228,7 +228,7 @@ public Nullable<Avalonia.Thickness> PagePadding { get; set; }
 
 <span id="uid-16148b2dfa"></span>
 
-### PageWidth Property
+### PageWidth 属性 {#pagewidth-property}
 
 The page width in device-independent pixels for pages this section spans.
 Null inherits the document's page width.

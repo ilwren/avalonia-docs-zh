@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IInputElement Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IInputElement.cs">IInputElement.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IInputElement.cs">IInputElement.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface IInputElement
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AddHandler](#uid-4ed662f866) | Adds a handler for the specified routed event. |
 | [Focus](#uid-2aed735c56) | Focuses the control. |
@@ -65,7 +65,7 @@ public interface IInputElement
 
 <span id="uid-4ed662f866"></span>
 
-### AddHandler Method
+### AddHandler 方法 {#addhandler-method}
 
 Adds a handler for the specified routed event.
 
@@ -73,7 +73,7 @@ Adds a handler for the specified routed event.
 public void AddHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delegate handler, Avalonia.Interactivity.RoutingStrategies routes, bool handledEventsToo)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
@@ -95,7 +95,7 @@ The routing strategies to listen to.
 Whether handled events should also be listened for.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 A disposable that terminates the event subscription.
 
@@ -106,7 +106,7 @@ A disposable that terminates the event subscription.
 
 <span id="uid-2aed735c56"></span>
 
-### Focus Method
+### Focus 方法 {#focus-method}
 
 Focuses the control.
 
@@ -114,7 +114,7 @@ Focuses the control.
 public bool Focus(Avalonia.Input.NavigationMethod method, Avalonia.Input.KeyModifiers keyModifiers)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `method` [Avalonia.Input.NavigationMethod](xref:Avalonia.Input.NavigationMethod)
 
@@ -126,7 +126,7 @@ The method by which focus was changed.
 Any key modifiers active at the time of focus.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -137,7 +137,7 @@ bool
 
 <span id="uid-55167c193d"></span>
 
-### RaiseEvent Method
+### RaiseEvent 方法 {#raiseevent-method}
 
 Raises a routed event.
 
@@ -145,7 +145,7 @@ Raises a routed event.
 public void RaiseEvent(Avalonia.Interactivity.RoutedEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `e` [Avalonia.Interactivity.RoutedEventArgs](xref:Avalonia.Interactivity.RoutedEventArgs)
 
@@ -158,7 +158,7 @@ The event args.
 
 <span id="uid-580f070f3a"></span>
 
-### RemoveHandler Method
+### RemoveHandler 方法 {#removehandler-method}
 
 Removes a handler for the specified routed event.
 
@@ -166,7 +166,7 @@ Removes a handler for the specified routed event.
 public void RemoveHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delegate handler)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
@@ -180,9 +180,9 @@ The handler.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Cursor](#uid-412b7ee968) | Gets or sets the associated mouse cursor. |
 | [Focusable](#uid-4bf6390935) | Gets or sets a value indicating whether the control can receive keyboard focus. |
@@ -199,7 +199,7 @@ The handler.
 
 <span id="uid-412b7ee968"></span>
 
-### Cursor Property
+### Cursor 属性 {#cursor-property}
 
 Gets or sets the associated mouse cursor.
 
@@ -213,7 +213,7 @@ public Avalonia.Input.Cursor Cursor { get; set; }
 
 <span id="uid-4bf6390935"></span>
 
-### Focusable Property
+### Focusable 属性 {#focusable-property}
 
 Gets or sets a value indicating whether the control can receive keyboard focus.
 
@@ -227,7 +227,7 @@ public bool Focusable { get; set; }
 
 <span id="uid-9f6953e853"></span>
 
-### IsEffectivelyEnabled Property
+### IsEffectivelyEnabled 属性 {#iseffectivelyenabled-property}
 
 Gets a value indicating whether this control and all its parents are enabled.
 
@@ -235,7 +235,7 @@ Gets a value indicating whether this control and all its parents are enabled.
 public bool IsEffectivelyEnabled { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 The [Avalonia.Input.IInputElement.IsEnabled](xref:Avalonia.Input.IInputElement.IsEnabled) property is used to toggle the enabled state for individual
 controls. The [Avalonia.Input.IInputElement.IsEffectivelyEnabled](xref:Avalonia.Input.IInputElement.IsEffectivelyEnabled) property takes into account the
@@ -247,7 +247,7 @@ controls. The [Avalonia.Input.IInputElement.IsEffectivelyEnabled](xref:Avalonia.
 
 <span id="uid-035cf31db2"></span>
 
-### IsEffectivelyVisible Property
+### IsEffectivelyVisible 属性 {#iseffectivelyvisible-property}
 
 Gets a value indicating whether this control and all its parents are visible.
 
@@ -261,7 +261,7 @@ public bool IsEffectivelyVisible { get; set; }
 
 <span id="uid-7937346c85"></span>
 
-### IsEnabled Property
+### IsEnabled 属性 {#isenabled-property}
 
 Gets or sets a value indicating whether the control is enabled for user interaction.
 
@@ -275,7 +275,7 @@ public bool IsEnabled { get; set; }
 
 <span id="uid-29f406974f"></span>
 
-### IsFocused Property
+### IsFocused 属性 {#isfocused-property}
 
 Gets a value indicating whether the control is focused.
 
@@ -289,7 +289,7 @@ public bool IsFocused { get; set; }
 
 <span id="uid-15e527fdd2"></span>
 
-### IsHitTestVisible Property
+### IsHitTestVisible 属性 {#ishittestvisible-property}
 
 Gets a value indicating whether the control is considered for hit testing.
 
@@ -303,7 +303,7 @@ public bool IsHitTestVisible { get; set; }
 
 <span id="uid-2e257ffd75"></span>
 
-### IsKeyboardFocusWithin Property
+### IsKeyboardFocusWithin 属性 {#iskeyboardfocuswithin-property}
 
 Gets a value indicating whether keyboard focus is anywhere within the element or its visual tree child elements.
 
@@ -317,7 +317,7 @@ public bool IsKeyboardFocusWithin { get; set; }
 
 <span id="uid-95cf373dfb"></span>
 
-### IsPointerOver Property
+### IsPointerOver 属性 {#ispointerover-property}
 
 Gets a value indicating whether the pointer is currently over the control.
 
@@ -331,7 +331,7 @@ public bool IsPointerOver { get; set; }
 
 <span id="uid-01dfeeba85"></span>
 
-### KeyBindings Property
+### KeyBindings 属性 {#keybindings-property}
 
 Gets the key bindings for the element.
 
@@ -341,9 +341,9 @@ public System.Collections.Generic.List<Avalonia.Input.KeyBinding> KeyBindings { 
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GotFocus](#uid-6a2ac4b0e8) | Occurs when the control receives focus. |
 | [KeyDown](#uid-307fe4873f) | Occurs when a key is pressed while the control has focus. |
@@ -361,7 +361,7 @@ public System.Collections.Generic.List<Avalonia.Input.KeyBinding> KeyBindings { 
 
 <span id="uid-6a2ac4b0e8"></span>
 
-### GotFocus Event
+### GotFocus 事件 {#gotfocus-event}
 
 Occurs when the control receives focus.
 
@@ -375,7 +375,7 @@ public event EventHandler<Avalonia.Input.FocusChangedEventArgs> GotFocus
 
 <span id="uid-307fe4873f"></span>
 
-### KeyDown Event
+### KeyDown 事件 {#keydown-event}
 
 Occurs when a key is pressed while the control has focus.
 
@@ -389,7 +389,7 @@ public event EventHandler<Avalonia.Input.KeyEventArgs> KeyDown
 
 <span id="uid-c9264d8d2f"></span>
 
-### KeyUp Event
+### KeyUp 事件 {#keyup-event}
 
 Occurs when a key is released while the control has focus.
 
@@ -403,7 +403,7 @@ public event EventHandler<Avalonia.Input.KeyEventArgs> KeyUp
 
 <span id="uid-96c57250cf"></span>
 
-### LostFocus Event
+### LostFocus 事件 {#lostfocus-event}
 
 Occurs when the control loses focus.
 
@@ -417,7 +417,7 @@ public event EventHandler<Avalonia.Input.FocusChangedEventArgs> LostFocus
 
 <span id="uid-4b5da6d7d2"></span>
 
-### PointerEntered Event
+### PointerEntered 事件 {#pointerentered-event}
 
 Occurs when the pointer enters the control.
 
@@ -431,7 +431,7 @@ public event EventHandler<Avalonia.Input.PointerEventArgs> PointerEntered
 
 <span id="uid-e2f2721256"></span>
 
-### PointerExited Event
+### PointerExited 事件 {#pointerexited-event}
 
 Occurs when the pointer leaves the control.
 
@@ -445,7 +445,7 @@ public event EventHandler<Avalonia.Input.PointerEventArgs> PointerExited
 
 <span id="uid-449a25b8d3"></span>
 
-### PointerMoved Event
+### PointerMoved 事件 {#pointermoved-event}
 
 Occurs when the pointer moves over the control.
 
@@ -459,7 +459,7 @@ public event EventHandler<Avalonia.Input.PointerEventArgs> PointerMoved
 
 <span id="uid-bcc921191c"></span>
 
-### PointerPressed Event
+### PointerPressed 事件 {#pointerpressed-event}
 
 Occurs when the pointer is pressed over the control.
 
@@ -473,7 +473,7 @@ public event EventHandler<Avalonia.Input.PointerPressedEventArgs> PointerPressed
 
 <span id="uid-d968fd4cc3"></span>
 
-### PointerReleased Event
+### PointerReleased 事件 {#pointerreleased-event}
 
 Occurs when the pointer is released over the control.
 
@@ -487,7 +487,7 @@ public event EventHandler<Avalonia.Input.PointerReleasedEventArgs> PointerReleas
 
 <span id="uid-4e4b9681df"></span>
 
-### PointerWheelChanged Event
+### PointerWheelChanged 事件 {#pointerwheelchanged-event}
 
 Occurs when the mouse wheel is scrolled over the control.
 
@@ -501,7 +501,7 @@ public event EventHandler<Avalonia.Input.PointerWheelEventArgs> PointerWheelChan
 
 <span id="uid-096256fc6d"></span>
 
-### TextInput Event
+### TextInput 事件 {#textinput-event}
 
 Occurs when a user typed some text while the control has focus.
 

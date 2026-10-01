@@ -210,7 +210,7 @@ If you do not have the `IDisposable` (for example, when the binding was set thro
 textBlock.ClearValue(TextBlock.TextProperty);
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): XAML binding syntax reference.
 - [Compiled Bindings](/docs/data-binding/compiled-bindings): Compile-time validated bindings.

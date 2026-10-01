@@ -46,7 +46,7 @@ public ObservableCollection<TreeMapItem> CirclePackingData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical items source. | `null` |
 | `ValuePath` | Size/Diameter of the circles. | `null` |

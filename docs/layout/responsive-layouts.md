@@ -33,7 +33,7 @@ Mark any ancestor as a container by setting the `Container.Name` and `Container.
 
 `Container.Sizing` determines which dimensions are tracked:
 
-| Value | Tracked dimensions |
+| 值 | Tracked dimensions |
 |-------|--------------------|
 | `Normal` | None (default) |
 | `Width` | Width only |
@@ -283,7 +283,7 @@ Use the following decision process to select the right technique:
 
 You can combine these techniques. For example, use `OnFormFactor` for a top-level structural difference (sidebar vs. bottom tabs), then use container queries within individual panels so they adapt to their actual rendered size.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Container queries](/docs/styling/container-queries): Full query syntax, container sizing modes, and restrictions.
 - [How to: Build responsive layouts](/docs/how-to/responsive-layout-how-to): Step-by-step recipes for common responsive patterns.

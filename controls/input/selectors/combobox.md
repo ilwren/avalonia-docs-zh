@@ -15,7 +15,7 @@ import ComboBoxEditable from '/img/controls/combobox/combobox-editable.gif';
 
 You will probably use these properties most often:
 
-| Property                   | Type       | Description                                                                                                              |
+| Property                   | Type       | 说明                                                                                                              |
 | -------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `ItemsSource`                    | `IEnumerable?` | The bound collection that is used as the data source for the control. Inherited from [`ItemsControl`](/controls/data-display/collections/itemscontrol).                                                                                           |
 | `SelectedIndex`            | `int`      | The index (zero-based) of the selected item.                                                                             |
@@ -298,7 +298,7 @@ When items are complex objects with multiple components (e.g., a user profile co
 </ComboBox>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to: Work with ComboBox](/docs/how-to/combobox-how-to)
 - [ListBox](/controls/data-display/collections/listbox)

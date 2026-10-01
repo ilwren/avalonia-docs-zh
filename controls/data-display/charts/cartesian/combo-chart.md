@@ -67,7 +67,7 @@ public ObservableCollection<MonthlyMetric> MonthlyMetrics { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Series` | Content collection of cartesian series rendered in the chart. | Empty collection |
 | `HorizontalAxis` | Primary horizontal axis used by the mixed series. | `null` |
@@ -81,7 +81,7 @@ public ObservableCollection<MonthlyMetric> MonthlyMetrics { get; } = new()
 - To plot a series against the secondary Y-axis, set that series to `YAxisPosition="Secondary"`.
 - Use the series-specific pages for properties such as `BarWidth`, `MarkerShape`, or `FillOpacity`.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
 - [Line chart](/controls/data-display/charts/cartesian/line-chart)

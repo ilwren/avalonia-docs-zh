@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ChangeOrigin Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,20 +51,20 @@ public enum ChangeOrigin
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> ChangeOrigin
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> ChangeOrigin
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Surfaced on the document `Changed` event payload so
 consumers can distinguish edits that should be replicated, persisted,
 or auto-saved from those that are pure replays of an already-recorded
 operation.
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Edit](#uid-6636bdc787) | A normal edit. The commit may or may not have an associated undo unit depending on whether [Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) is enabled. |
 | [Redo](#uid-26a0a9ca92) | The commit is the result of replaying a previously-undone unit via [Avalonia.Controls.Documents.Undo.UndoManager.Redo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Redo). |
@@ -74,7 +74,7 @@ operation.
 
 <span id="uid-6636bdc787"></span>
 
-### Edit Field
+### Edit 字段 {#edit-field}
 
 A normal edit. The commit may or may not have an associated undo
 unit depending on whether [Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) is enabled.
@@ -89,7 +89,7 @@ public Avalonia.Controls.Documents.TextModel.ChangeOrigin Edit
 
 <span id="uid-26a0a9ca92"></span>
 
-### Redo Field
+### Redo 字段 {#redo-field}
 
 The commit is the result of replaying a previously-undone unit
 via [Avalonia.Controls.Documents.Undo.UndoManager.Redo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Redo).
@@ -104,7 +104,7 @@ public Avalonia.Controls.Documents.TextModel.ChangeOrigin Redo
 
 <span id="uid-0b3ed95ed5"></span>
 
-### Undo Field
+### Undo 字段 {#undo-field}
 
 The commit is the result of replaying a previously-recorded undo unit
 via [Avalonia.Controls.Documents.Undo.UndoManager.Undo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Undo).

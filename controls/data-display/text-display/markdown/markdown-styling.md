@@ -25,7 +25,7 @@ The following table lists the style selectors used by the default theme. You can
 
 #### Block selectors
 
-| Selector | Description |
+| Selector | 说明 |
 |---|---|
 | `:is(Block)` | All block-level elements (paragraphs, sections, etc.). Sets base margin. |
 | `:is(Block).codeBlock` | Fenced code blocks. Background, border, padding, and monospace font. |
@@ -54,7 +54,7 @@ The following table lists the style selectors used by the default theme. You can
 
 #### Inline selectors
 
-| Selector | Description |
+| Selector | 说明 |
 |---|---|
 | `RichRun.code` | Inline code spans. Background and monospace font. |
 | `RichSpan.header` | Inline spans inside headings. Bold font weight. |
@@ -68,7 +68,7 @@ The following table lists the style selectors used by the default theme. You can
 
 #### Document element selectors
 
-| Selector | Description |
+| Selector | 说明 |
 |---|---|
 | `MarkdownCodeBlock` | Code block element. Set `Highlighter` property here. |
 | `MarkdownImage` | Image inline element. Set `ImageLoader` property here. |
@@ -286,6 +286,6 @@ Combined with style selectors for a dark code theme:
 </Style>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Markdown control](/controls/data-display/text-display/markdown)

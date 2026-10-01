@@ -319,7 +319,7 @@ You can register your app as the handler for specific file types so that double-
 </array>
 ```
 
-| Key | Description |
+| Key | 说明 |
 |---|---|
 | `CFBundleTypeName` | A human-readable name for the file type. |
 | `CFBundleTypeExtensions` | Array of file extensions to associate (without the leading dot). |
@@ -358,7 +358,7 @@ Then place a valid `Info.plist` in the `Contents` directory. See the [macOS depl
 
 Avalonia also supports running iOS apps on macOS through Apple's Mac Catalyst framework. This is a different approach from the Avalonia Native backend described on this page. Mac Catalyst requires a Mac to build and depends on the `maccatalyst` .NET workload, so you lose the ability to cross-compile from Windows or Linux. It is primarily useful when your app depends heavily on UIKit APIs or when embedding Avalonia inside a MAUI hybrid application. For most Avalonia apps, the default macOS backend described above is the recommended choice. See [Mac Catalyst](/docs/platform-specific-guides/ios#mac-catalyst) in the iOS platform guide for details.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Deploying on macOS](/docs/deployment/macos)
 - [iOS platform guide](/docs/platform-specific-guides/ios) (includes Mac Catalyst)

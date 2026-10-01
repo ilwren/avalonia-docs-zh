@@ -31,7 +31,7 @@ If you want a quick side-by-side lookup, start with the **[Cheat Sheet](/docs/mi
 
 For deeper explanations of each topic, use the guides linked above.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [WPF to Avalonia Cheat Sheet](/docs/migration/wpf/cheat-sheet): Quick side-by-side reference.
 - [Styling](/docs/styling/styles): CSS-like styling system migration guide.

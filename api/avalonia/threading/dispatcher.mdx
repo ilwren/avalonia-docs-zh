@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Dispatcher Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Threading</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Threading</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/Dispatcher.cs">Dispatcher.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/Dispatcher.cs">Dispatcher.cs</a>
 </div>
 
 </div>
@@ -54,24 +54,24 @@ public class Dispatcher
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Dispatcher
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Dispatcher
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="idispatcher">IDispatcher</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="idispatcher">IDispatcher</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AwaitWithPriority (2 overloads)](#uid-2892588fd8) | Returns a task awaitable that would invoke continuation on specified dispatcher priority |
 | [BeginInvokeShutdown](#uid-b4dd26d733) | Begins the process of shutting down the dispatcher. |
 | [CheckAccess](#uid-fa78847cc4) | Checks that the current thread is the UI thread. |
 | [DisableProcessing](#uid-ad12393bf3) | Disable the event processing of the dispatcher. |
 | [ExitAllFrames](#uid-10cc431c4c) | Requests that all nested frames exit. |
-| [FromThread](#uid-74ab1e87f3) | No summary available. |
-| [HasJobsWithPriority](#uid-7a6fc1a6a4) | No summary available. |
+| [FromThread](#uid-74ab1e87f3) | 暂无摘要。 |
+| [HasJobsWithPriority](#uid-7a6fc1a6a4) | 暂无摘要。 |
 | [Invoke (8 overloads)](#uid-33a1b2993f) | Executes the specified Action synchronously on the thread that the Dispatcher was created on. |
 | [InvokeAsync (10 overloads)](#uid-9073eca221) | Executes the specified Action asynchronously on the thread that the Dispatcher was created on. |
 | [InvokeShutdown](#uid-c0fd05eaaa) | Initiates the shutdown process of the Dispatcher synchronously. |
@@ -79,7 +79,7 @@ public class Dispatcher
 | [Post (2 overloads)](#uid-83e5d7c4e0) | Posts an action that will be invoked on the dispatcher thread. |
 | [PushFrame](#uid-2d9c72f33e) | Push an execution frame. |
 | [Resume (2 overloads)](#uid-d8b7553b3d) | Creates an awaitable object that asynchronously resumes execution on the dispatcher. |
-| [RunJobs](#uid-ede9418d73) | No summary available. |
+| [RunJobs](#uid-ede9418d73) | 暂无摘要。 |
 | [ToTaskScheduler (2 overloads)](#uid-9ea307a8a9) | Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskScheduler) which executes tasks on this [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher). A [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority) is captured from the current [Avalonia.Threading.AvaloniaSynchronizationContext](xref:Avalonia.Threading.AvaloniaSynchronizationContext) if one is available. Otherwise, [Avalonia.Threading.DispatcherPriority.Default](xref:Avalonia.Threading.DispatcherPriority.Default) is used. |
 | [VerifyAccess](#uid-57fef0e640) | Checks that the current thread is the UI thread and throws if not. |
 | [Yield (2 overloads)](#uid-b45ed6d37d) | Creates an awaitable object that asynchronously yields control back to the current dispatcher and provides an opportunity for the dispatcher to process other events. |
@@ -92,7 +92,7 @@ public class Dispatcher
 
 <span id="uid-3f31266072"></span>
 
-#### AwaitWithPriority Method
+#### AwaitWithPriority 方法 {#awaitwithpriority-method}
 
 Returns a task awaitable that would invoke continuation on specified dispatcher priority
 
@@ -100,7 +100,7 @@ Returns a task awaitable that would invoke continuation on specified dispatcher 
 public Avalonia.Threading.DispatcherPriorityAwaitable AwaitWithPriority(System.Threading.Tasks.Task task, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `task` System.Threading.Tasks.Task
 
@@ -108,7 +108,7 @@ public Avalonia.Threading.DispatcherPriorityAwaitable AwaitWithPriority(System.T
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.Threading.DispatcherPriorityAwaitable](xref:Avalonia.Threading.DispatcherPriorityAwaitable)
 
@@ -119,13 +119,13 @@ public Avalonia.Threading.DispatcherPriorityAwaitable AwaitWithPriority(System.T
 
 <span id="uid-7c690086b9"></span>
 
-#### AwaitWithPriority Method
+#### AwaitWithPriority 方法 {#awaitwithpriority-method-1}
 
 ```csharp
 public Avalonia.Threading.DispatcherPriorityAwaitable<T><T> AwaitWithPriority<T>(System.Threading.Tasks.Task<T> task, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `task` System.Threading.Tasks.Task&lt;T&gt;
 
@@ -138,7 +138,7 @@ public Avalonia.Threading.DispatcherPriorityAwaitable<T><T> AwaitWithPriority<T>
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Threading.DispatcherPriorityAwaitable](xref:Avalonia.Threading.DispatcherPriorityAwaitable)&lt;T&gt;&lt;T&gt;
 
@@ -149,7 +149,7 @@ public Avalonia.Threading.DispatcherPriorityAwaitable<T><T> AwaitWithPriority<T>
 
 <span id="uid-b4dd26d733"></span>
 
-### BeginInvokeShutdown Method
+### BeginInvokeShutdown 方法 {#begininvokeshutdown-method}
 
 Begins the process of shutting down the dispatcher.
 
@@ -157,7 +157,7 @@ Begins the process of shutting down the dispatcher.
 public void BeginInvokeShutdown(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
@@ -168,7 +168,7 @@ public void BeginInvokeShutdown(Avalonia.Threading.DispatcherPriority priority)
 
 <span id="uid-fa78847cc4"></span>
 
-### CheckAccess Method
+### CheckAccess 方法 {#checkaccess-method}
 
 Checks that the current thread is the UI thread.
 
@@ -176,7 +176,7 @@ Checks that the current thread is the UI thread.
 public bool CheckAccess()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
@@ -187,7 +187,7 @@ bool
 
 <span id="uid-ad12393bf3"></span>
 
-### DisableProcessing Method
+### DisableProcessing 方法 {#disableprocessing-method}
 
 Disable the event processing of the dispatcher.
 
@@ -195,12 +195,12 @@ Disable the event processing of the dispatcher.
 public Avalonia.Threading.Dispatcher.DispatcherProcessingDisabled DisableProcessing()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Threading.Dispatcher.DispatcherProcessingDisabled](xref:Avalonia.Threading.Dispatcher.DispatcherProcessingDisabled)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This is an advanced method intended to eliminate the chance of
 unrelated reentrancy. The effect of disabling processing is:
@@ -214,7 +214,7 @@ unrelated reentrancy. The effect of disabling processing is:
 
 <span id="uid-10cc431c4c"></span>
 
-### ExitAllFrames Method
+### ExitAllFrames 方法 {#exitallframes-method}
 
 Requests that all nested frames exit.
 
@@ -228,18 +228,18 @@ public void ExitAllFrames()
 
 <span id="uid-74ab1e87f3"></span>
 
-### FromThread Method
+### FromThread 方法 {#fromthread-method}
 
 ```csharp
 public Avalonia.Threading.Dispatcher FromThread(System.Threading.Thread thread)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `thread` System.Threading.Thread
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher)
 
@@ -250,18 +250,18 @@ public Avalonia.Threading.Dispatcher FromThread(System.Threading.Thread thread)
 
 <span id="uid-7a6fc1a6a4"></span>
 
-### HasJobsWithPriority Method
+### HasJobsWithPriority 方法 {#hasjobswithpriority-method}
 
 ```csharp
 public bool HasJobsWithPriority(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 bool
 
@@ -276,7 +276,7 @@ bool
 
 <span id="uid-32860688e6"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method}
 
 Executes the specified Action synchronously on the thread that
 the Dispatcher was created on.
@@ -285,14 +285,14 @@ the Dispatcher was created on.
 public void Invoke(Action callback)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `callback` Action
 
 An Action delegate to invoke through the dispatcher.
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
 Note that the default priority is DispatcherPriority.Send.
 
@@ -302,7 +302,7 @@ Note that the default priority is DispatcherPriority.Send.
 
 <span id="uid-cab2d69ea1"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method-1}
 
 Executes the specified Action synchronously on the thread that
 the Dispatcher was created on.
@@ -311,7 +311,7 @@ the Dispatcher was created on.
 public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `callback` Action
 
@@ -331,7 +331,7 @@ in the Dispatcher.
 
 <span id="uid-01fe817cf3"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method-2}
 
 Executes the specified Action synchronously on the thread that
 the Dispatcher was created on.
@@ -340,7 +340,7 @@ the Dispatcher was created on.
 public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `callback` Action
 
@@ -368,7 +368,7 @@ the operation can cooperate with the cancellation request.
 
 <span id="uid-fee0ee7788"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method-3}
 
 Executes the specified Action synchronously on the thread that
 the Dispatcher was created on.
@@ -377,7 +377,7 @@ the Dispatcher was created on.
 public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken, TimeSpan timeout)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `callback` Action
 
@@ -412,13 +412,13 @@ returns.
 
 <span id="uid-ca0460de5c"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method-4}
 
 ```csharp
 public TResult Invoke<TResult>(Func<TResult> callback)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `callback` Func&lt;TResult&gt;
 
@@ -428,7 +428,7 @@ public TResult Invoke<TResult>(Func<TResult> callback)
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 TResult
 
@@ -439,13 +439,13 @@ TResult
 
 <span id="uid-0ce958bb93"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method-5}
 
 ```csharp
 public TResult Invoke<TResult>(Func<TResult> callback, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `callback` Func&lt;TResult&gt;
 
@@ -458,7 +458,7 @@ public TResult Invoke<TResult>(Func<TResult> callback, Avalonia.Threading.Dispat
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 TResult
 
@@ -469,13 +469,13 @@ TResult
 
 <span id="uid-f6a0ea3ba8"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method-6}
 
 ```csharp
 public TResult Invoke<TResult>(Func<TResult> callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `callback` Func&lt;TResult&gt;
 
@@ -491,7 +491,7 @@ public TResult Invoke<TResult>(Func<TResult> callback, Avalonia.Threading.Dispat
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-8}
 
 TResult
 
@@ -502,13 +502,13 @@ TResult
 
 <span id="uid-63a6cdb7c6"></span>
 
-#### Invoke Method
+#### Invoke 方法 {#invoke-method-7}
 
 ```csharp
 public TResult Invoke<TResult>(Func<TResult> callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken, TimeSpan timeout)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `callback` Func&lt;TResult&gt;
 
@@ -527,7 +527,7 @@ public TResult Invoke<TResult>(Func<TResult> callback, Avalonia.Threading.Dispat
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 TResult
 
@@ -542,7 +542,7 @@ TResult
 
 <span id="uid-4a3b67eb89"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method}
 
 Executes the specified Action asynchronously on the thread
 that the Dispatcher was created on.
@@ -551,21 +551,21 @@ that the Dispatcher was created on.
 public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `callback` Action
 
 An Action delegate to invoke through the dispatcher.
 
 
-##### Returns
+##### 返回值 {#returns-10}
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)
 
 An operation representing the queued delegate to be invoked.
 
 
-##### Remarks
+##### 备注 {#remarks-2}
 
 Note that the default priority is DispatcherPriority.Default.
 
@@ -575,7 +575,7 @@ Note that the default priority is DispatcherPriority.Default.
 
 <span id="uid-65e8700301"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-1}
 
 Executes the specified Action asynchronously on the thread
 that the Dispatcher was created on.
@@ -584,7 +584,7 @@ that the Dispatcher was created on.
 public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `callback` Action
 
@@ -598,7 +598,7 @@ callback is invoked relative to the other pending operations
 in the Dispatcher.
 
 
-##### Returns
+##### 返回值 {#returns-11}
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)
 
@@ -611,7 +611,7 @@ An operation representing the queued delegate to be invoked.
 
 <span id="uid-a30b494957"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-2}
 
 Executes the specified Action asynchronously on the thread
 that the Dispatcher was created on.
@@ -620,7 +620,7 @@ that the Dispatcher was created on.
 public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `callback` Action
 
@@ -642,7 +642,7 @@ cancellation token is canceled. If the operation has started,
 the operation can cooperate with the cancellation request.
 
 
-##### Returns
+##### 返回值 {#returns-12}
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)
 
@@ -655,18 +655,18 @@ An operation representing the queued delegate to be invoked.
 
 <span id="uid-de1deeaec2"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-3}
 
 ```csharp
 public System.Threading.Tasks.Task InvokeAsync(Func<System.Threading.Tasks.Task> callback)
 ```
 
-##### Parameters
+##### 参数 {#parameters-16}
 
 `callback` Func&lt;System.Threading.Tasks.Task&gt;
 
 
-##### Returns
+##### 返回值 {#returns-13}
 
 System.Threading.Tasks.Task
 
@@ -677,13 +677,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-7df215cdc4"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-4}
 
 ```csharp
 public System.Threading.Tasks.Task InvokeAsync(Func<System.Threading.Tasks.Task> callback, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-17}
 
 `callback` Func&lt;System.Threading.Tasks.Task&gt;
 
@@ -691,7 +691,7 @@ public System.Threading.Tasks.Task InvokeAsync(Func<System.Threading.Tasks.Task>
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
-##### Returns
+##### 返回值 {#returns-14}
 
 System.Threading.Tasks.Task
 
@@ -702,13 +702,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-46fd4829de"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-5}
 
 ```csharp
 public System.Threading.Tasks.Task<TResult> InvokeAsync<TResult>(Func<System.Threading.Tasks.Task<TResult>> action)
 ```
 
-##### Parameters
+##### 参数 {#parameters-18}
 
 `action` Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;
 
@@ -718,7 +718,7 @@ public System.Threading.Tasks.Task<TResult> InvokeAsync<TResult>(Func<System.Thr
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-15}
 
 System.Threading.Tasks.Task&lt;TResult&gt;
 
@@ -729,13 +729,13 @@ System.Threading.Tasks.Task&lt;TResult&gt;
 
 <span id="uid-a4587a2123"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-6}
 
 ```csharp
 public System.Threading.Tasks.Task<TResult> InvokeAsync<TResult>(Func<System.Threading.Tasks.Task<TResult>> action, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-19}
 
 `action` Func&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;
 
@@ -748,7 +748,7 @@ public System.Threading.Tasks.Task<TResult> InvokeAsync<TResult>(Func<System.Thr
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-16}
 
 System.Threading.Tasks.Task&lt;TResult&gt;
 
@@ -759,13 +759,13 @@ System.Threading.Tasks.Task&lt;TResult&gt;
 
 <span id="uid-8bce2991d9"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-7}
 
 ```csharp
 public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(Func<TResult> callback)
 ```
 
-##### Parameters
+##### 参数 {#parameters-20}
 
 `callback` Func&lt;TResult&gt;
 
@@ -775,7 +775,7 @@ public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(F
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-17}
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)&lt;T&gt;&lt;TResult&gt;
 
@@ -786,13 +786,13 @@ public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(F
 
 <span id="uid-898e7ba0ef"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-8}
 
 ```csharp
 public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(Func<TResult> callback, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-21}
 
 `callback` Func&lt;TResult&gt;
 
@@ -805,7 +805,7 @@ public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(F
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-18}
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)&lt;T&gt;&lt;TResult&gt;
 
@@ -816,13 +816,13 @@ public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(F
 
 <span id="uid-684ef4acd0"></span>
 
-#### InvokeAsync Method
+#### InvokeAsync 方法 {#invokeasync-method-9}
 
 ```csharp
 public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(Func<TResult> callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-22}
 
 `callback` Func&lt;TResult&gt;
 
@@ -838,7 +838,7 @@ public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(F
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-19}
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)&lt;T&gt;&lt;TResult&gt;
 
@@ -849,7 +849,7 @@ public Avalonia.Threading.DispatcherOperation<T><TResult> InvokeAsync<TResult>(F
 
 <span id="uid-c0fd05eaaa"></span>
 
-### InvokeShutdown Method
+### InvokeShutdown 方法 {#invokeshutdown-method}
 
 Initiates the shutdown process of the Dispatcher synchronously.
 
@@ -863,7 +863,7 @@ public void InvokeShutdown()
 
 <span id="uid-d9a8bdca2b"></span>
 
-### MainLoop Method
+### MainLoop 方法 {#mainloop-method}
 
 Runs the dispatcher's main loop.
 
@@ -871,7 +871,7 @@ Runs the dispatcher's main loop.
 public void MainLoop(System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-23}
 
 `cancellationToken` System.Threading.CancellationToken
 
@@ -888,7 +888,7 @@ A cancellation token used to exit the main loop.
 
 <span id="uid-2fd10aebab"></span>
 
-#### Post Method
+#### Post 方法 {#post-method}
 
 Posts an action that will be invoked on the dispatcher thread.
 
@@ -896,7 +896,7 @@ Posts an action that will be invoked on the dispatcher thread.
 public void Post(Action action, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-24}
 
 `action` Action
 
@@ -914,7 +914,7 @@ The priority with which to invoke the method.
 
 <span id="uid-774c357823"></span>
 
-#### Post Method
+#### Post 方法 {#post-method-1}
 
 Posts an action that will be invoked on the dispatcher thread.
 
@@ -922,7 +922,7 @@ Posts an action that will be invoked on the dispatcher thread.
 public void Post(System.Threading.SendOrPostCallback action, object arg, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-25}
 
 `action` System.Threading.SendOrPostCallback
 
@@ -945,7 +945,7 @@ The priority with which to invoke the method.
 
 <span id="uid-2d9c72f33e"></span>
 
-### PushFrame Method
+### PushFrame 方法 {#pushframe-method}
 
 Push an execution frame.
 
@@ -953,7 +953,7 @@ Push an execution frame.
 public void PushFrame(Avalonia.Threading.DispatcherFrame frame)
 ```
 
-#### Parameters
+#### 参数 {#parameters-26}
 
 `frame` [Avalonia.Threading.DispatcherFrame](xref:Avalonia.Threading.DispatcherFrame)
 
@@ -970,7 +970,7 @@ The frame for the dispatcher to process.
 
 <span id="uid-68fe8e9b7e"></span>
 
-#### Resume Method
+#### Resume 方法 {#resume-method}
 
 Creates an awaitable object that asynchronously resumes execution on the dispatcher.
 
@@ -978,14 +978,14 @@ Creates an awaitable object that asynchronously resumes execution on the dispatc
 public Avalonia.Threading.DispatcherPriorityAwaitable Resume()
 ```
 
-##### Returns
+##### 返回值 {#returns-20}
 
 [Avalonia.Threading.DispatcherPriorityAwaitable](xref:Avalonia.Threading.DispatcherPriorityAwaitable)
 
 An awaitable object that asynchronously resumes execution on the dispatcher.
 
 
-##### Remarks
+##### 备注 {#remarks-3}
 
 This method is equivalent to calling the [Avalonia.Threading.Dispatcher.Resume(Avalonia.Threading.DispatcherPriority)](xref:Avalonia.Threading.Dispatcher.Resume%28Avalonia.Threading.DispatcherPriority%29) method
 and passing in [Avalonia.Threading.DispatcherPriority.Background](xref:Avalonia.Threading.DispatcherPriority.Background).
@@ -996,7 +996,7 @@ and passing in [Avalonia.Threading.DispatcherPriority.Background](xref:Avalonia.
 
 <span id="uid-61bd4e9020"></span>
 
-#### Resume Method
+#### Resume 方法 {#resume-method-1}
 
 ``
 Creates an awaitable object that asynchronously resumes execution on the dispatcher. The work that occurs
@@ -1006,14 +1006,14 @@ when control returns to the code awaiting the result of this method is scheduled
 public Avalonia.Threading.DispatcherPriorityAwaitable Resume(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-27}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 The priority at which to schedule the continuation.
 
 
-##### Returns
+##### 返回值 {#returns-21}
 
 [Avalonia.Threading.DispatcherPriorityAwaitable](xref:Avalonia.Threading.DispatcherPriorityAwaitable)
 
@@ -1026,13 +1026,13 @@ An awaitable object that asynchronously resumes execution on the dispatcher.
 
 <span id="uid-ede9418d73"></span>
 
-### RunJobs Method
+### RunJobs 方法 {#runjobs-method}
 
 ```csharp
 public void RunJobs(Nullable<Avalonia.Threading.DispatcherPriority> priority)
 ```
 
-#### Parameters
+#### 参数 {#parameters-28}
 
 `priority` Nullable&lt;[Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)&gt;
 
@@ -1047,7 +1047,7 @@ public void RunJobs(Nullable<Avalonia.Threading.DispatcherPriority> priority)
 
 <span id="uid-b951cd3058"></span>
 
-#### ToTaskScheduler Method
+#### ToTaskScheduler 方法 {#totaskscheduler-method}
 
 Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskScheduler) which executes tasks on this [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher). A [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority) is captured from
 the current [Avalonia.Threading.AvaloniaSynchronizationContext](xref:Avalonia.Threading.AvaloniaSynchronizationContext) if one is available. Otherwise, [Avalonia.Threading.DispatcherPriority.Default](xref:Avalonia.Threading.DispatcherPriority.Default) is used.
@@ -1056,7 +1056,7 @@ the current [Avalonia.Threading.AvaloniaSynchronizationContext](xref:Avalonia.Th
 public System.Threading.Tasks.TaskScheduler ToTaskScheduler()
 ```
 
-##### Returns
+##### 返回值 {#returns-22}
 
 System.Threading.Tasks.TaskScheduler
 
@@ -1067,7 +1067,7 @@ System.Threading.Tasks.TaskScheduler
 
 <span id="uid-6089ecadd9"></span>
 
-#### ToTaskScheduler Method
+#### ToTaskScheduler 方法 {#totaskscheduler-method-1}
 
 Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskScheduler) which executes tasks on this [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher) with the specified [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority).
 
@@ -1075,12 +1075,12 @@ Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskSc
 public System.Threading.Tasks.TaskScheduler ToTaskScheduler(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-29}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
-##### Returns
+##### 返回值 {#returns-23}
 
 System.Threading.Tasks.TaskScheduler
 
@@ -1091,7 +1091,7 @@ System.Threading.Tasks.TaskScheduler
 
 <span id="uid-57fef0e640"></span>
 
-### VerifyAccess Method
+### VerifyAccess 方法 {#verifyaccess-method}
 
 Checks that the current thread is the UI thread and throws if not.
 
@@ -1099,7 +1099,7 @@ Checks that the current thread is the UI thread and throws if not.
 public void VerifyAccess()
 ```
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [The current thread is not the UI thread.](xref:System.InvalidOperationException)
 
@@ -1113,7 +1113,7 @@ public void VerifyAccess()
 
 <span id="uid-9f5ee8a8dd"></span>
 
-#### Yield Method
+#### Yield 方法 {#yield-method}
 
 Creates an awaitable object that asynchronously yields control back to the current dispatcher
 and provides an opportunity for the dispatcher to process other events.
@@ -1122,7 +1122,7 @@ and provides an opportunity for the dispatcher to process other events.
 public Avalonia.Threading.DispatcherPriorityAwaitable Yield()
 ```
 
-##### Returns
+##### 返回值 {#returns-24}
 
 [Avalonia.Threading.DispatcherPriorityAwaitable](xref:Avalonia.Threading.DispatcherPriorityAwaitable)
 
@@ -1130,12 +1130,12 @@ An awaitable object that asynchronously yields control back to the current dispa
 and provides an opportunity for the dispatcher to process other events.
 
 
-##### Remarks
+##### 备注 {#remarks-4}
 
 This method is equivalent to calling the [Avalonia.Threading.Dispatcher.Yield(Avalonia.Threading.DispatcherPriority)](xref:Avalonia.Threading.Dispatcher.Yield%28Avalonia.Threading.DispatcherPriority%29) method
 and passing in [Avalonia.Threading.DispatcherPriority.Background](xref:Avalonia.Threading.DispatcherPriority.Background).
 
-##### Exceptions
+##### 异常 {#exceptions-1}
 
 - [The current thread is not the UI thread.](xref:System.InvalidOperationException)
 
@@ -1145,7 +1145,7 @@ and passing in [Avalonia.Threading.DispatcherPriority.Background](xref:Avalonia.
 
 <span id="uid-ffd0f9b64a"></span>
 
-#### Yield Method
+#### Yield 方法 {#yield-method-1}
 
 Creates an cawaitable object that asynchronously yields control back to the current dispatcher
 and provides an opportunity for the dispatcher to process other events. The work that occurs when
@@ -1155,14 +1155,14 @@ control returns to the code awaiting the result of this method is scheduled with
 public Avalonia.Threading.DispatcherPriorityAwaitable Yield(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-30}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 The priority at which to schedule the continuation.
 
 
-##### Returns
+##### 返回值 {#returns-25}
 
 [Avalonia.Threading.DispatcherPriorityAwaitable](xref:Avalonia.Threading.DispatcherPriorityAwaitable)
 
@@ -1170,26 +1170,26 @@ An awaitable object that asynchronously yields control back to the current dispa
 and provides an opportunity for the dispatcher to process other events.
 
 
-##### Exceptions
+##### 异常 {#exceptions-2}
 
 - [The current thread is not the UI thread.](xref:System.InvalidOperationException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CurrentDispatcher](#uid-9de3513714) | No summary available. |
-| [SupportsRunLoops](#uid-cb1324aa4f) | No summary available. |
-| [Thread](#uid-1692f279b0) | No summary available. |
+| [CurrentDispatcher](#uid-9de3513714) | 暂无摘要。 |
+| [SupportsRunLoops](#uid-cb1324aa4f) | 暂无摘要。 |
+| [Thread](#uid-1692f279b0) | 暂无摘要。 |
 | [UIThread](#uid-7402828ab2) | Gets the dispatcher for the UI thread. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9de3513714"></span>
 
-### CurrentDispatcher Property
+### CurrentDispatcher 属性 {#currentdispatcher-property}
 
 ```csharp
 public Avalonia.Threading.Dispatcher CurrentDispatcher { get; set; }
@@ -1201,7 +1201,7 @@ public Avalonia.Threading.Dispatcher CurrentDispatcher { get; set; }
 
 <span id="uid-cb1324aa4f"></span>
 
-### SupportsRunLoops Property
+### SupportsRunLoops 属性 {#supportsrunloops-property}
 
 ```csharp
 public bool SupportsRunLoops { get; set; }
@@ -1213,7 +1213,7 @@ public bool SupportsRunLoops { get; set; }
 
 <span id="uid-1692f279b0"></span>
 
-### Thread Property
+### Thread 属性 {#thread-property}
 
 ```csharp
 public System.Threading.Thread Thread { get; set; }
@@ -1225,7 +1225,7 @@ public System.Threading.Thread Thread { get; set; }
 
 <span id="uid-7402828ab2"></span>
 
-### UIThread Property
+### UIThread 属性 {#uithread-property}
 
 Gets the dispatcher for the UI thread.
 
@@ -1233,16 +1233,16 @@ Gets the dispatcher for the UI thread.
 public Avalonia.Threading.Dispatcher UIThread { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Control and libraries author are encouraged to use [Avalonia.Threading.Dispatcher.CurrentDispatcher](xref:Avalonia.Threading.Dispatcher.CurrentDispatcher) and
 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher) instead.
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ShutdownFinished](#uid-4b5c93e398) | Raised when the dispatcher is shut down. |
 | [ShutdownStarted](#uid-8100dd9a72) | Raised when the dispatcher is shutting down. |
@@ -1253,7 +1253,7 @@ Control and libraries author are encouraged to use [Avalonia.Threading.Dispatche
 
 <span id="uid-4b5c93e398"></span>
 
-### ShutdownFinished Event
+### ShutdownFinished 事件 {#shutdownfinished-event}
 
 Raised when the dispatcher is shut down.
 
@@ -1267,7 +1267,7 @@ public event EventHandler ShutdownFinished
 
 <span id="uid-8100dd9a72"></span>
 
-### ShutdownStarted Event
+### ShutdownStarted 事件 {#shutdownstarted-event}
 
 Raised when the dispatcher is shutting down.
 
@@ -1281,7 +1281,7 @@ public event EventHandler ShutdownStarted
 
 <span id="uid-d01305e223"></span>
 
-### UnhandledException Event
+### UnhandledException 事件 {#unhandledexception-event}
 
 Occurs when a thread exception is thrown and uncaught during execution of a delegate by way of [Avalonia.Threading.Dispatcher.Invoke(Action)](xref:Avalonia.Threading.Dispatcher.Invoke%28System.Action%29) or [Avalonia.Threading.Dispatcher.InvokeAsync(Action)](xref:Avalonia.Threading.Dispatcher.InvokeAsync%28System.Action%29).
 
@@ -1289,7 +1289,7 @@ Occurs when a thread exception is thrown and uncaught during execution of a dele
 public event Avalonia.Threading.DispatcherUnhandledExceptionEventHandler UnhandledException
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 This event is raised when an exception that was thrown during execution of a delegate by way of [Avalonia.Threading.Dispatcher.Invoke(Action)](xref:Avalonia.Threading.Dispatcher.Invoke%28System.Action%29) or [Avalonia.Threading.Dispatcher.InvokeAsync(Action)](xref:Avalonia.Threading.Dispatcher.InvokeAsync%28System.Action%29) is uncaught.
 A handler can mark the exception as handled, which will prevent the internal exception handler from being called.
@@ -1301,7 +1301,7 @@ Event handlers for this event must be written with care to avoid creating second
 
 <span id="uid-8559ef4cc2"></span>
 
-### UnhandledExceptionFilter Event
+### UnhandledExceptionFilter 事件 {#unhandledexceptionfilter-event}
 
 Occurs when a thread exception is thrown and uncaught during execution of a delegate by way of [Avalonia.Threading.Dispatcher.Invoke(Action)](xref:Avalonia.Threading.Dispatcher.Invoke%28System.Action%29) or [Avalonia.Threading.Dispatcher.InvokeAsync(Action)](xref:Avalonia.Threading.Dispatcher.InvokeAsync%28System.Action%29) when in the filter stage.
 
@@ -1309,7 +1309,7 @@ Occurs when a thread exception is thrown and uncaught during execution of a dele
 public event Avalonia.Threading.DispatcherUnhandledExceptionFilterEventHandler UnhandledExceptionFilter
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 This event is raised during the filter stage for an exception that is raised during execution of a delegate by way of [Avalonia.Threading.Dispatcher.Invoke(Action)](xref:Avalonia.Threading.Dispatcher.Invoke%28System.Action%29) or [Avalonia.Threading.Dispatcher.InvokeAsync(Action)](xref:Avalonia.Threading.Dispatcher.InvokeAsync%28System.Action%29) and is uncaught.
 The call stack is not unwound at this point (first-chance exception).

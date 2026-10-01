@@ -7,7 +7,7 @@ doc-type: reference
 
 Gradient brushes create smooth transitions between two or more colors. You can use them anywhere a brush is accepted, including `Background`, `Foreground`, `BorderBrush`, `Fill`, and `Stroke`. Avalonia provides three gradient brush types:
 
-| Brush | Description |
+| Brush | 说明 |
 |---|---|
 | [`LinearGradientBrush`](/api/avalonia/media/lineargradientbrush) | Transitions colors along a straight line. |
 | [`RadialGradientBrush`](/api/avalonia/media/radialgradientbrush) | Transitions colors outward from a center point in an ellipse. |
@@ -115,7 +115,7 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 
 ### Key properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Center` | The center of the outermost ellipse, as a percentage of the bounding box. Defaults to `50%,50%`. |
 | `GradientOrigin` | The point where the gradient starts (the innermost color). Defaults to match `Center`. |
@@ -159,7 +159,7 @@ You can create non-circular gradients by giving `RadiusX` and `RadiusY` differen
 
 ### Key properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Center` | The center of the sweep. Defaults to `50%,50%`. |
 | `Angle` | The starting angle in degrees, measured clockwise from the top. Defaults to `0`. |
@@ -172,7 +172,7 @@ To create a seamless sweep, set the last `GradientStop` color to match the first
 
 Every gradient brush contains one or more `GradientStop` elements. Each stop defines a `Color` and an `Offset`:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Color` | Any valid color value (hex, named color, `rgb()`, `hsl()`, and so on). |
 | `Offset` | A value from `0.0` to `1.0` indicating the position along the gradient. |
@@ -183,7 +183,7 @@ If you omit `Offset`, Avalonia distributes the stops evenly. When two stops shar
 
 `SpreadMethod` controls what happens when the gradient does not fill the entire area (for example, when a `LinearGradientBrush` has its start and end points inside the bounding box).
 
-| Value | Behavior |
+| 值 | Behavior |
 |---|---|
 | `Pad` (default) | The end colors extend to fill the remaining space. |
 | `Reflect` | The gradient reverses direction and repeats. |
@@ -300,7 +300,7 @@ The same pattern applies to `RadialGradientBrush` and `ConicGradientBrush`.
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Brushes](/docs/graphics-animation/brushes): Overview of all brush types, including `SolidColorBrush` and tile brushes.
 - [Effects](/docs/graphics-animation/effects): Box shadows, clipping, and opacity masks.

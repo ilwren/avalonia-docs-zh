@@ -36,7 +36,7 @@ Charts MCP does not attach to a running Avalonia application or inspect the visu
 
 For a general introduction to MCP, see [AI Tools](/tools/ai-tools/).
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before setting up the MCP server, ensure you have:
 
@@ -319,13 +319,13 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Catalog
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_list_charts` | Lists all available charts with descriptions and example data formats. |
 
 ### Cartesian
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_line_chart` | Trends and time-series data. |
 | `avalonia_area_chart` | Quantitative data with filled areas. |
@@ -335,7 +335,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Circular
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_pie_chart` | Proportions of a whole. |
 | `avalonia_donut_chart` | Proportions with a center hole. |
@@ -347,7 +347,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Gauge
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_gauge_chart` | Standard dial gauge. |
 | `avalonia_bullet_chart` | Performance compared with target and ranges. |
@@ -358,7 +358,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Polar
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_radar_chart` | Multivariate comparisons. |
 | `avalonia_polar_chart` | Angular and radial line data. |
@@ -368,7 +368,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Statistical
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_violin_plot` | Distribution density and range. |
 | `avalonia_boxplot_chart` | Quartiles, median, and outliers. |
@@ -380,7 +380,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Comparison and ranking
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_tornado_chart` | Paired comparison by category. |
 | `avalonia_bump_chart` | Changes in rank over time. |
@@ -395,7 +395,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Flow and network
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_sankey_chart` | Flow between multiple categories. |
 | `avalonia_arc_diagram` | Links between ordered nodes. |
@@ -408,7 +408,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Proportional and hierarchical
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_treemap_chart` | Nested rectangles for hierarchies. |
 | `avalonia_icicle_chart` | Adjacency diagram hierarchy. |
@@ -424,7 +424,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Grid and matrix
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_heatmap_chart` | Value intensity by color grid. |
 | `avalonia_matrix_chart` | Correlation or relationship matrix. |
@@ -437,7 +437,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Time and scheduling
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_gantt_chart` | Project management and task schedules. |
 | `avalonia_swimlane_chart` | Workflow tasks grouped by lane. |
@@ -446,7 +446,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Financial
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_candlestick_chart` | Financial price movement. |
 | `avalonia_ohlc_chart` | Open-high-low-close (OHLC) bars. |
@@ -457,14 +457,14 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Map
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_choropleth_map` | Geographic regions colored by values. |
 | `avalonia_shape_map` | Custom multilayer geometric shapes. |
 
 ### Dashboard, data, text, and bubble
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `avalonia_sparkline_chart` | Compact trend lines. |
 | `avalonia_kpi_card` | Metric display with status or change. |
@@ -478,7 +478,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 The server also exposes MCP resources that your assistant can read before calling chart tools. They can help the assistant choose a chart type, check an input shape, or pick a color palette.
 
-| Resource URI | Description |
+| Resource URI | 说明 |
 |--------------|-------------|
 | `charts://catalog` | Complete chart catalog grouped by category. |
 | `charts://palettes` | Default and suggested palette values. |
@@ -546,7 +546,7 @@ dotnet tool list -g
 - Check palette and color values. Hex colors such as `#2196F3` are safest.
 - Avoid empty palette entries in comma-separated palette strings.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [AI Tools overview](/tools/ai-tools/)
 - [Avalonia Charts](/controls/data-display/charts/)

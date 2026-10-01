@@ -93,7 +93,7 @@ Set a `Style` in your .axaml file to customize the appearance of the error messa
 </Style>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding](/docs/data-binding/introduction-to-data-binding): Binding data to controls.
 - [Community Toolkit MVVM](https://learn.microsoft.com/en-us/windows/communitytoolkit/mvvm/observablevalidator): Using `ObservableValidator` for validation.

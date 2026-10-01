@@ -13,7 +13,7 @@ You access `PlatformSettings` through the `GetPlatformSettings` extension method
 var platformSettings = myControl.GetPlatformSettings();
 ```
 
-## Methods
+## 方法 {#methods}
 
 ### `GetTapSize(PointerType type)`
 
@@ -51,7 +51,7 @@ PlatformColorValues GetColorValues();
 While the built-in `FluentTheme` supports automatic switching between accent colors, you can use this method to apply custom logic based on OS color settings.
 :::
 
-## Properties
+## 属性 {#properties}
 
 ### `HoldWaitDuration`
 
@@ -86,7 +86,7 @@ protected override void OnKeyDown(KeyEventArgs e)
 }
 ```
 
-## Events
+## 事件 {#events}
 
 ### `ColorValuesChanged`
 
@@ -109,7 +109,7 @@ if (platformSettings is not null)
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TopLevel](/docs/fundamentals/top-level): Accessing platform services from controls.
 - [Pointer events](/docs/input-interaction/pointer): Working with pointer input and gestures.

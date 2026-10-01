@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">GlyphTypeface Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/GlyphTypeface.cs">GlyphTypeface.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/GlyphTypeface.cs">GlyphTypeface.cs</a>
 </div>
 
 </div>
@@ -55,20 +55,20 @@ public class GlyphTypeface
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> GlyphTypeface
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> GlyphTypeface
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 The [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface) class is used to encapsulate font data, including metrics,
 character-to-glyph mappings, and supported OpenType features. It supports platform-specific typefaces and
 applies optional font simulations such as bold or oblique. This class is typically used in text rendering and
 shaping scenarios.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GlyphTypeface](#uid-0ace250ea7) | Initializes a new instance of the [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface) class with the specified platform typeface and font simulations. |
 
@@ -76,7 +76,7 @@ shaping scenarios.
 
 <span id="uid-0ace250ea7"></span>
 
-### GlyphTypeface Constructor
+### GlyphTypeface 构造函数 {#glyphtypeface-constructor}
 
 Initializes a new instance of the [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface) class with the specified platform typeface and
 font simulations.
@@ -85,7 +85,7 @@ font simulations.
 public GlyphTypeface(Avalonia.Media.IPlatformTypeface typeface, Avalonia.Media.FontSimulations fontSimulations)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `typeface` [Avalonia.Media.IPlatformTypeface](xref:Avalonia.Media.IPlatformTypeface)
 
@@ -98,36 +98,36 @@ cannot be `null`.
 The font simulations to apply, such as bold or oblique. The default is [Avalonia.Media.FontSimulations.None](xref:Avalonia.Media.FontSimulations.None).
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This constructor initializes the glyph typeface by loading various font tables,
 including OS/2, CMAP, and metrics tables, to calculate font metrics and other properties. It also determines
 font characteristics such as weight, style, stretch, and family names based on the provided typeface and
 font simulations.
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Thrown if required font tables (e.g., 'maxp') cannot be loaded.](xref:System.InvalidOperationException)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanShapeScript](#uid-4a392458ef) | Determines whether this font can shape the specified script, not merely map its codepoints. Scripts that need OpenType complex shaping (e.g. Arabic joining, Indic conjuncts) require the font to declare the script in its GSUB/GPOS tables; scripts that render acceptably from cmap alone always return `true`. Used by the fallback itemizer to avoid selecting a font that has the glyphs but cannot form them correctly. |
 | [DeclaresLanguageCoverage](#uid-e6ee88bf43) | Determines whether this font self-declares coverage for the supplied culture via its OpenType `meta` table `dlng` or `slng` tag list. |
-| [Dispose](#uid-611d5d5c3c) | No summary available. |
+| [Dispose](#uid-611d5d5c3c) | 暂无摘要。 |
 | [SupportsScript](#uid-bfbc66e215) | Determines whether the font advertises support for the supplied Unicode script. |
-| [TryGetGlyphMetrics (2 overloads)](#uid-224187e3e5) | No summary available. |
-| [TryGetHorizontalGlyphAdvance](#uid-327caa7a57) | No summary available. |
-| [TryGetHorizontalGlyphAdvances](#uid-fff209abba) | No summary available. |
+| [TryGetGlyphMetrics (2 overloads)](#uid-224187e3e5) | 暂无摘要。 |
+| [TryGetHorizontalGlyphAdvance](#uid-327caa7a57) | 暂无摘要。 |
+| [TryGetHorizontalGlyphAdvances](#uid-fff209abba) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4a392458ef"></span>
 
-### CanShapeScript Method
+### CanShapeScript 方法 {#canshapescript-method}
 
 Determines whether this font can shape the specified script, not merely map its
 codepoints. Scripts that need OpenType complex shaping (e.g. Arabic joining, Indic
@@ -139,12 +139,12 @@ to avoid selecting a font that has the glyphs but cannot form them correctly.
 public bool CanShapeScript(Avalonia.Media.TextFormatting.Unicode.Script script)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `script` [Avalonia.Media.TextFormatting.Unicode.Script](xref:Avalonia.Media.TextFormatting.Unicode.Script)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -155,7 +155,7 @@ bool
 
 <span id="uid-e6ee88bf43"></span>
 
-### DeclaresLanguageCoverage Method
+### DeclaresLanguageCoverage 方法 {#declareslanguagecoverage-method}
 
 Determines whether this font self-declares coverage for the supplied culture via its
 OpenType `meta` table `dlng` or `slng` tag list.
@@ -164,14 +164,14 @@ OpenType `meta` table `dlng` or `slng` tag list.
 public bool DeclaresLanguageCoverage(System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `culture` System.Globalization.CultureInfo
 
 The culture to check. If `null` the method returns `false`.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -179,7 +179,7 @@ bool
 [System.Globalization.CultureInfo.Name](xref:System.Globalization.CultureInfo.Name) (or vice versa, when the font specifies a narrower tag).
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The match is case-insensitive and BCP-47-aware: the comparison succeeds when one tag is
 a prefix of the other up to a subtag boundary (e.g. `"ja"` matches `"ja-JP"`,
@@ -192,7 +192,7 @@ declares no design or supported languages.
 
 <span id="uid-611d5d5c3c"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -204,7 +204,7 @@ public void Dispose()
 
 <span id="uid-bfbc66e215"></span>
 
-### SupportsScript Method
+### SupportsScript 方法 {#supportsscript-method}
 
 Determines whether the font advertises support for the supplied Unicode script.
 
@@ -212,17 +212,17 @@ Determines whether the font advertises support for the supplied Unicode script.
 public bool SupportsScript(Avalonia.Media.TextFormatting.Unicode.Script script)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `script` [Avalonia.Media.TextFormatting.Unicode.Script](xref:Avalonia.Media.TextFormatting.Unicode.Script)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 When the font ships an OS/2 table the answer is taken from the OS/2 ulUnicodeRange bitfield
 (the font's own self-declaration of script coverage). When OS/2 is absent or the bit is unset,
@@ -240,13 +240,13 @@ this falls back to probing the cmap with a representative codepoint for the scri
 
 <span id="uid-2a0770d4e8"></span>
 
-#### TryGetGlyphMetrics Method
+#### TryGetGlyphMetrics 方法 {#trygetglyphmetrics-method}
 
 ```csharp
 public bool TryGetGlyphMetrics(ReadOnlySpan<ushort> glyphIds, Span<Avalonia.Media.GlyphMetrics> metrics)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `glyphIds` ReadOnlySpan&lt;ushort&gt;
 
@@ -254,7 +254,7 @@ public bool TryGetGlyphMetrics(ReadOnlySpan<ushort> glyphIds, Span<Avalonia.Medi
 `metrics` Span&lt;[Avalonia.Media.GlyphMetrics](xref:Avalonia.Media.GlyphMetrics)&gt;
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 bool
 
@@ -265,13 +265,13 @@ bool
 
 <span id="uid-18152dfbd1"></span>
 
-#### TryGetGlyphMetrics Method
+#### TryGetGlyphMetrics 方法 {#trygetglyphmetrics-method-1}
 
 ```csharp
 public bool TryGetGlyphMetrics(ushort glyph, Avalonia.Media.GlyphMetrics& metrics)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `glyph` ushort
 
@@ -279,7 +279,7 @@ public bool TryGetGlyphMetrics(ushort glyph, Avalonia.Media.GlyphMetrics& metric
 `metrics` [Avalonia.Media.GlyphMetrics](xref:Avalonia.Media.GlyphMetrics)&amp;
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 bool
 
@@ -290,13 +290,13 @@ bool
 
 <span id="uid-327caa7a57"></span>
 
-### TryGetHorizontalGlyphAdvance Method
+### TryGetHorizontalGlyphAdvance 方法 {#trygethorizontalglyphadvance-method}
 
 ```csharp
 public bool TryGetHorizontalGlyphAdvance(ushort glyphId, ushort& advance)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `glyphId` ushort
 
@@ -304,7 +304,7 @@ public bool TryGetHorizontalGlyphAdvance(ushort glyphId, ushort& advance)
 `advance` ushort&amp;
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 bool
 
@@ -315,13 +315,13 @@ bool
 
 <span id="uid-fff209abba"></span>
 
-### TryGetHorizontalGlyphAdvances Method
+### TryGetHorizontalGlyphAdvances 方法 {#trygethorizontalglyphadvances-method}
 
 ```csharp
 public bool TryGetHorizontalGlyphAdvances(ReadOnlySpan<ushort> glyphIds, Span<ushort> advances)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `glyphIds` ReadOnlySpan&lt;ushort&gt;
 
@@ -329,16 +329,16 @@ public bool TryGetHorizontalGlyphAdvances(ReadOnlySpan<ushort> glyphIds, Span<us
 `advances` Span&lt;ushort&gt;
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CharacterToGlyphMap](#uid-820bb58c1b) | Gets a read-only mapping of Unicode character codes to glyph indices for the font. |
 | [CodePageCoverage](#uid-13288467e7) | Gets the codepage coverage advertised by the font via the OpenType `OS/2.ulCodePageRange1/2` bitfields. |
@@ -363,7 +363,7 @@ bool
 
 <span id="uid-820bb58c1b"></span>
 
-### CharacterToGlyphMap Property
+### CharacterToGlyphMap 属性 {#charactertoglyphmap-property}
 
 Gets a read-only mapping of Unicode character codes to glyph indices for the font.
 
@@ -371,7 +371,7 @@ Gets a read-only mapping of Unicode character codes to glyph indices for the fon
 public Avalonia.Media.Fonts.Tables.Cmap.CharacterToGlyphMap CharacterToGlyphMap { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 This dictionary provides the correspondence between Unicode code points and the
 glyphs defined in the font. The mapping can be used to look up the glyph index for a given character when
@@ -384,7 +384,7 @@ set.
 
 <span id="uid-13288467e7"></span>
 
-### CodePageCoverage Property
+### CodePageCoverage 属性 {#codepagecoverage-property}
 
 Gets the codepage coverage advertised by the font via the OpenType
 `OS/2.ulCodePageRange1/2` bitfields.
@@ -393,7 +393,7 @@ Gets the codepage coverage advertised by the font via the OpenType
 public Avalonia.Media.Fonts.FontCodePageCoverage CodePageCoverage { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Returns [Avalonia.Media.Fonts.FontCodePageCoverage.None](xref:Avalonia.Media.Fonts.FontCodePageCoverage.None) when the font does not ship an OS/2 table
 or only supplies an OS/2 version &lt; 1 (where the codepage range fields are not present).
@@ -404,7 +404,7 @@ or only supplies an OS/2 version &lt; 1 (where the codepage range fields are not
 
 <span id="uid-891390f33f"></span>
 
-### DesignLanguages Property
+### DesignLanguages 属性 {#designlanguages-property}
 
 Gets the BCP-47 language tags the font's designer declared as the design target for the
 font (the `dlng` data tag in the OpenType `meta` table).
@@ -413,7 +413,7 @@ font (the `dlng` data tag in the OpenType `meta` table).
 public ReadOnlySpan<string> DesignLanguages { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 Returns an empty span when the font does not ship a `meta` table or omits the
 `dlng` data tag.
@@ -424,7 +424,7 @@ Returns an empty span when the font does not ship a `meta` table or omits the
 
 <span id="uid-d5bea81105"></span>
 
-### FaceNames Property
+### FaceNames 属性 {#facenames-property}
 
 Gets a read-only mapping of culture-specific face names.
 
@@ -432,7 +432,7 @@ Gets a read-only mapping of culture-specific face names.
 public System.Collections.Generic.IReadOnlyDictionary<System.Globalization.CultureInfo, string> FaceNames { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 Each entry in the dictionary maps a [System.Globalization.CultureInfo](xref:System.Globalization.CultureInfo) to
 the corresponding localized face name. The dictionary is empty if no face names are defined.
@@ -443,7 +443,7 @@ the corresponding localized face name. The dictionary is empty if no face names 
 
 <span id="uid-7117edd23d"></span>
 
-### FamilyName Property
+### FamilyName 属性 {#familyname-property}
 
 Gets the family name of the font.
 
@@ -457,7 +457,7 @@ public string FamilyName { get; set; }
 
 <span id="uid-c2fc7a9ce5"></span>
 
-### FamilyNames Property
+### FamilyNames 属性 {#familynames-property}
 
 Gets a read-only mapping of localized culture-specific family names.
 
@@ -465,7 +465,7 @@ Gets a read-only mapping of localized culture-specific family names.
 public System.Collections.Generic.IReadOnlyDictionary<System.Globalization.CultureInfo, string> FamilyNames { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-8}
 
 The dictionary contains entries for each supported culture, where the key is a [System.Globalization.CultureInfo](xref:System.Globalization.CultureInfo) representing the culture, and the value is the corresponding localized family name. The
 dictionary may be empty if no family names are available.
@@ -476,7 +476,7 @@ dictionary may be empty if no family names are available.
 
 <span id="uid-d4b3d5b8f6"></span>
 
-### FontSimulations Property
+### FontSimulations 属性 {#fontsimulations-property}
 
 Gets the font simulation settings applied to the [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface).
 
@@ -490,7 +490,7 @@ public Avalonia.Media.FontSimulations FontSimulations { get; set; }
 
 <span id="uid-f8b29671db"></span>
 
-### GlyphCount Property
+### GlyphCount 属性 {#glyphcount-property}
 
 Gets the number of glyphs held by this font.
 
@@ -504,7 +504,7 @@ public int GlyphCount { get; set; }
 
 <span id="uid-49ad964e00"></span>
 
-### Metrics Property
+### Metrics 属性 {#metrics-property}
 
 Gets the font metrics associated with this font.
 
@@ -518,7 +518,7 @@ public Avalonia.Media.FontMetrics Metrics { get; set; }
 
 <span id="uid-239ceb6ee3"></span>
 
-### PlatformTypeface Property
+### PlatformTypeface 属性 {#platformtypeface-property}
 
 Gets the platform-specific typeface associated with this font.
 
@@ -532,7 +532,7 @@ public Avalonia.Media.IPlatformTypeface PlatformTypeface { get; set; }
 
 <span id="uid-bef0dfc38f"></span>
 
-### Stretch Property
+### Stretch 属性 {#stretch-property}
 
 Gets the font stretch.
 
@@ -546,7 +546,7 @@ public Avalonia.Media.FontStretch Stretch { get; set; }
 
 <span id="uid-d762ed5152"></span>
 
-### Style Property
+### Style 属性 {#style-property}
 
 Gets the font style.
 
@@ -560,7 +560,7 @@ public Avalonia.Media.FontStyle Style { get; set; }
 
 <span id="uid-61839489bf"></span>
 
-### SupportedFeatures Property
+### SupportedFeatures 属性 {#supportedfeatures-property}
 
 Gets the list of OpenType feature tags supported by the font.
 
@@ -568,7 +568,7 @@ Gets the list of OpenType feature tags supported by the font.
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.Fonts.OpenTypeTag> SupportedFeatures { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-9}
 
 The returned list reflects the features available in the underlying font and is
 read-only. The order of features in the list is not guaranteed. This property does not return null; if the
@@ -580,7 +580,7 @@ font does not support any features, the list will be empty.
 
 <span id="uid-039c8f5835"></span>
 
-### SupportedLanguages Property
+### SupportedLanguages 属性 {#supportedlanguages-property}
 
 Gets the BCP-47 language tags the font advertises as supported (the `slng` data tag
 in the OpenType `meta` table).
@@ -589,7 +589,7 @@ in the OpenType `meta` table).
 public ReadOnlySpan<string> SupportedLanguages { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-10}
 
 Returns an empty span when the font does not ship a `meta` table or omits the
 `slng` data tag.
@@ -600,7 +600,7 @@ Returns an empty span when the font does not ship a `meta` table or omits the
 
 <span id="uid-c0034604d7"></span>
 
-### SupportedUnicodeRange Property
+### SupportedUnicodeRange 属性 {#supportedunicoderange-property}
 
 Gets the union of Unicode codepoint ranges covered by the font's character map.
 
@@ -608,7 +608,7 @@ Gets the union of Unicode codepoint ranges covered by the font's character map.
 public Avalonia.Media.UnicodeRange SupportedUnicodeRange { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-11}
 
 The returned [Avalonia.Media.UnicodeRange](xref:Avalonia.Media.UnicodeRange) is derived from the cmap table and represents every
 codepoint for which the font defines a glyph. It is computed lazily on first access and cached
@@ -621,7 +621,7 @@ for the lifetime of the [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.Glyph
 
 <span id="uid-df45934655"></span>
 
-### TextShaperTypeface Property
+### TextShaperTypeface 属性 {#textshapertypeface-property}
 
 Gets the typeface information used by the text shaper for this font.
 
@@ -629,7 +629,7 @@ Gets the typeface information used by the text shaper for this font.
 public Avalonia.Media.ITextShaperTypeface TextShaperTypeface { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-12}
 
 The returned typeface is created on demand and cached for subsequent accesses. This
 property is typically used by text rendering components that require low-level font shaping
@@ -641,7 +641,7 @@ details.
 
 <span id="uid-5249100e36"></span>
 
-### TypographicFamilyName Property
+### TypographicFamilyName 属性 {#typographicfamilyname-property}
 
 Gets the typographic family name of the font.
 
@@ -655,7 +655,7 @@ public string TypographicFamilyName { get; set; }
 
 <span id="uid-076de7204b"></span>
 
-### Weight Property
+### Weight 属性 {#weight-property}
 
 Gets the font weight.
 

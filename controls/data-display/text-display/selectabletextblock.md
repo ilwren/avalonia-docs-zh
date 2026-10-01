@@ -9,7 +9,7 @@ The `SelectableTextBlock` is a read-only label for displaying text that your use
 
 ## Common properties
 
-| Property                   | Type        | Description                                                                                                                                                                                                           |
+| Property                   | Type        | 说明                                                                                                                                                                                                           |
 | -------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Text`                     | `string`    | The text to display.                                                                                                                                                                                                  |
 | `SelectionStart`           | `int`       | The character index for the start of the current selection.                                                                                                                                                           |
@@ -24,9 +24,9 @@ The `SelectableTextBlock` is a read-only label for displaying text that your use
 | `TextWrapping`             | `TextWrapping` | Controls whether text wraps when it reaches the edge of the control. Options include `NoWrap`, `Wrap`, and `WrapWithOverflow`.                                                                                    |
 | `xml:space`                | XML attribute | Set `xml:space="preserve"` to direct the XML parser to preserve line breaks and whitespace. Without this attribute, whitespace is stripped by default.                                                              |
 
-## Events
+## 事件 {#events}
 
-| Event                | Description                                                        |
+| Event                | 说明                                                        |
 | -------------------- | ------------------------------------------------------------------ |
 | `CopyingToClipboard` | Raised when the selected text is being copied to the clipboard. Can be used to modify or cancel the copy operation. |
 
@@ -92,7 +92,7 @@ You can customize how selected text looks by setting `SelectionBrush` and `Selec
                      SelectionForegroundBrush="White" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TextBlock](/controls/data-display/text-display/textblock)
 - [Label](/controls/data-display/text-display/label)

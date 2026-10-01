@@ -166,7 +166,7 @@ If the namespace is in another referenced assembly (for example in a library), y
  ... >
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Code-Only UI](/docs/fundamentals/coded-ui)
 - [Code-behind](/docs/fundamentals/code-behind)

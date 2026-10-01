@@ -55,7 +55,7 @@ public ObservableCollection<TimelineEvent> TimelineEvents { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of events. | `null` |
 | `DatePath` | Path to the `DateTime` property. | `null` |

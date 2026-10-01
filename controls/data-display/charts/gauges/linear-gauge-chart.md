@@ -62,7 +62,7 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `50.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |
@@ -85,7 +85,7 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 
 `TickPosition` places tick marks around the track. Major ticks are 10 px long. Minor ticks are 5 px long.
 
-| Value | Description |
+| 值 | 说明 |
 | :--- | :--- |
 | `Above` | Above a horizontal track or to the left of a vertical track. Default. |
 | `Below` | Below a horizontal track or to the right of a vertical track. |

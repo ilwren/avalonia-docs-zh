@@ -251,7 +251,7 @@ The exception to this general statement about `Handled` state is that input even
 
 Certain classes choose to class-handle certain input events, usually with the intent of redefining what a particular user-driven input event means within that control and raising a new event.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Adding Interactivity](/docs/input-interaction/adding-interactivity): Events and commands overview.
 - [Pointer Events](/docs/input-interaction/pointer): Pointer device events and capture.

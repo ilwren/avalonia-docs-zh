@@ -107,7 +107,7 @@ Avalonia does not have a `StatusBar` control. Use a styled `DockPanel` or `Stack
 
 Avalonia does not include a built-in `RichTextBox`. For rich text editing, use a third-party control such as AvalonEdit.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [WPF to Avalonia Cheat Sheet](/docs/migration/wpf/cheat-sheet): Quick reference for all control mappings.
 - [Controls Reference](/controls): Full Avalonia controls documentation.

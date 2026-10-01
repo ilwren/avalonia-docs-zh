@@ -26,7 +26,7 @@ To prevent these exceptions appearing, try the following:
 </NumericUpDown>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NumericUpDown control](/controls/input/selectors/numericupdown)
 - [Data binding syntax](/docs/data-binding/data-binding-syntax)

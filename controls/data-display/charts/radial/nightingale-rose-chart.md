@@ -50,7 +50,7 @@ public ObservableCollection<RadialPoint> NightingaleData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of segments. | `null` |
 | `ValuePath` | Radius magnitude of each segment. | `null` |

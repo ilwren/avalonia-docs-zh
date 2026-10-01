@@ -55,7 +55,7 @@ public ObservableCollection<MosaicItem> MosaicData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data segments. | `null` |
 | `GroupPath` | Primary category (determines width). | `null` |

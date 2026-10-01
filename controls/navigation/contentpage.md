@@ -31,7 +31,7 @@ The `Header` property serves different purposes depending on which container hos
 
 ### ContentPage properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The main content to display on the page. This value cannot be another `Page`; use a `NavigationPage`, `TabbedPage`, `DrawerPage`, or another `MultiPage` control to host child pages. |
 | `ContentTemplate` | `IDataTemplate?` | `null` | A data template used to render the content. |
@@ -51,7 +51,7 @@ The `Header` property serves different purposes depending on which container hos
 
 These properties are inherited from `Page` and are available on all page types:
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Navigation` | `INavigation?` | `null` | Provides access to the hosting `NavigationPage` for push/pop operations. |
 | `CurrentPage` | `Page?` | `null` | The active child page for page-container controls. This is usually `null` for a `ContentPage`. |
@@ -61,7 +61,7 @@ These properties are inherited from `Page` and are available on all page types:
 
 Every `Page` (including `ContentPage`) supports lifecycle events that fire during navigation. The events fire in a specific order when a navigation occurs:
 
-| Event | Description | Order |
+| Event | 说明 | Order |
 | --- | --- | --- |
 | `Navigating` | Raised on the **current** page before navigating away from it. Uses `NavigatingFromEventArgs` and supports cancellation via `e.Cancel = true`. | 1 |
 | `NavigatedFrom` | Raised on the **old** page after the navigation has completed. | 2 |
@@ -347,7 +347,7 @@ When used inside a `TabbedPage`, the `Header` and `Icon` properties control the 
 
 <Image light={ContentPageAsTabScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="ContentPage used as a tab in TabbedPage"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NavigationPage](/controls/navigation/navigationpage)
 - [TabbedPage](/controls/navigation/tabbedpage)

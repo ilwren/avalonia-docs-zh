@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RichTextElementCollection&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,16 +51,16 @@ public class RichTextElementCollection<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> RichTextElementCollection&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> RichTextElementCollection&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> ICollection&lt;&gt;, IEnumerable&lt;&gt;, IList&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, IEnumerable, o
+<span className="apiref-page__meta-label">实现接口：</span> ICollection&lt;&gt;, IEnumerable&lt;&gt;, IList&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, IEnumerable, o
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RichTextElementCollection&lt;T&gt;](#uid-caa87506e6) | Creates a new collection for the specified owner. |
 
@@ -68,7 +68,7 @@ public class RichTextElementCollection<T>
 
 <span id="uid-caa87506e6"></span>
 
-### RichTextElementCollection&lt;T&gt; Constructor
+### RichTextElementCollection&lt;T&gt; 构造函数 {#richtextelementcollectionlttgt-constructor}
 
 Creates a new collection for the specified owner.
 
@@ -76,12 +76,12 @@ Creates a new collection for the specified owner.
 public RichTextElementCollection<T>(Avalonia.AvaloniaObject owner)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `owner` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Reach the collection through its owner rather than building one: an owner caches
 exactly one instance, and a second over the same owner splits pending content
@@ -89,12 +89,12 @@ between them.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Add](#uid-89f81da8f9) | Adds an element to the collection. |
-| [AddRange](#uid-4099a73050) | No summary available. |
+| [AddRange](#uid-4099a73050) | 暂无摘要。 |
 | [Clear](#uid-a5323ac9ee) | Clears all elements. |
 | [Contains](#uid-7359627bd7) | Returns whether the specified element is present in the collection. |
 | [CopyTo](#uid-0b8894faac) | Copies all elements to the specified array starting at `arrayIndex`. |
@@ -112,7 +112,7 @@ between them.
 
 <span id="uid-89f81da8f9"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
 Adds an element to the collection.
 
@@ -120,7 +120,7 @@ Adds an element to the collection.
 public void Add(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `item` T
 
@@ -131,13 +131,13 @@ public void Add(T item)
 
 <span id="uid-4099a73050"></span>
 
-### AddRange Method
+### AddRange 方法 {#addrange-method}
 
 ```csharp
 public void AddRange(System.Collections.Generic.IEnumerable<T> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `items` System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -148,7 +148,7 @@ public void AddRange(System.Collections.Generic.IEnumerable<T> items)
 
 <span id="uid-a5323ac9ee"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 Clears all elements.
 
@@ -162,7 +162,7 @@ public void Clear()
 
 <span id="uid-7359627bd7"></span>
 
-### Contains Method
+### Contains 方法 {#contains-method}
 
 Returns whether the specified element is present in the collection.
 
@@ -170,12 +170,12 @@ Returns whether the specified element is present in the collection.
 public bool Contains(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `item` T
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -186,7 +186,7 @@ bool
 
 <span id="uid-0b8894faac"></span>
 
-### CopyTo Method
+### CopyTo 方法 {#copyto-method}
 
 Copies all elements to the specified array starting at `arrayIndex`.
 
@@ -194,7 +194,7 @@ Copies all elements to the specified array starting at `arrayIndex`.
 public void CopyTo(T[] array, int arrayIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `array` T[]
 
@@ -208,7 +208,7 @@ public void CopyTo(T[] array, int arrayIndex)
 
 <span id="uid-f874a6f42a"></span>
 
-### FirstOrDefault Method
+### FirstOrDefault 方法 {#firstordefault-method}
 
 The first element, or the type's default when the collection is empty.
 
@@ -216,7 +216,7 @@ The first element, or the type's default when the collection is empty.
 public T FirstOrDefault()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 T
 
@@ -229,7 +229,7 @@ The first element, or .
 
 <span id="uid-9e7e262151"></span>
 
-### FirstOrNull Method
+### FirstOrNull 方法 {#firstornull-method}
 
 Gets the first element, or `null` when the collection is empty.
 
@@ -237,12 +237,12 @@ Gets the first element, or `null` when the collection is empty.
 public T FirstOrNull()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 T
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Named apart from the LINQ extension the collection also carries, so a reader
 can tell at the call site which one runs.
@@ -253,7 +253,7 @@ can tell at the call site which one runs.
 
 <span id="uid-3f16e1dfed"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 Returns an enumerator that iterates over the elements in this collection.
 
@@ -261,7 +261,7 @@ Returns an enumerator that iterates over the elements in this collection.
 public System.Collections.Generic.IEnumerator<T> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Collections.Generic.IEnumerator&lt;T&gt;
 
@@ -272,7 +272,7 @@ System.Collections.Generic.IEnumerator&lt;T&gt;
 
 <span id="uid-c39598a447"></span>
 
-### IndexOf Method
+### IndexOf 方法 {#indexof-method}
 
 Returns the zero-based index of the specified element, or -1 if not found.
 
@@ -280,12 +280,12 @@ Returns the zero-based index of the specified element, or -1 if not found.
 public int IndexOf(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `item` T
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 int
 
@@ -296,7 +296,7 @@ int
 
 <span id="uid-6952495c47"></span>
 
-### Insert Method
+### Insert 方法 {#insert-method}
 
 Inserts an element at the specified index.
 
@@ -304,7 +304,7 @@ Inserts an element at the specified index.
 public void Insert(int index, T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `index` int
 
@@ -318,7 +318,7 @@ public void Insert(int index, T item)
 
 <span id="uid-b20f4e8763"></span>
 
-### LastOrDefault Method
+### LastOrDefault 方法 {#lastordefault-method}
 
 The last element, or the type's default when the collection is empty.
 
@@ -326,7 +326,7 @@ The last element, or the type's default when the collection is empty.
 public T LastOrDefault()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 T
 
@@ -339,7 +339,7 @@ The last element, or .
 
 <span id="uid-4286fa6244"></span>
 
-### LastOrNull Method
+### LastOrNull 方法 {#lastornull-method}
 
 Gets the last element, or `null` when the collection is empty.
 
@@ -347,12 +347,12 @@ Gets the last element, or `null` when the collection is empty.
 public T LastOrNull()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 T
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Named apart from the LINQ extension the collection also carries; see
 [Avalonia.Controls.Documents.RichTextElementCollection&lt;T&gt;.FirstOrNull](xref:Avalonia.Controls.Documents.RichTextElementCollection%601.FirstOrNull).
@@ -363,7 +363,7 @@ Named apart from the LINQ extension the collection also carries; see
 
 <span id="uid-4f93d6bc5a"></span>
 
-### Remove Method
+### Remove 方法 {#remove-method}
 
 Removes an element from the collection.
 
@@ -371,12 +371,12 @@ Removes an element from the collection.
 public bool Remove(T item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `item` T
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 bool
 
@@ -387,7 +387,7 @@ bool
 
 <span id="uid-71a732f194"></span>
 
-### RemoveAt Method
+### RemoveAt 方法 {#removeat-method}
 
 Removes the element at the specified index.
 
@@ -395,26 +395,26 @@ Removes the element at the specified index.
 public void RemoveAt(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `index` int
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](#uid-5a020972bd) | Gets the number of elements in the collection. |
 | [IsReadOnly](#uid-b4b74cd466) | Gets a value indicating whether this collection is read-only. |
-| [Item](#uid-122d8e8f32) | No summary available. |
+| [Item](#uid-122d8e8f32) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5a020972bd"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 Gets the number of elements in the collection.
 
@@ -428,7 +428,7 @@ public int Count { get; set; }
 
 <span id="uid-b4b74cd466"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
 Gets a value indicating whether this collection is read-only.
 
@@ -442,7 +442,7 @@ public bool IsReadOnly { get; set; }
 
 <span id="uid-122d8e8f32"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public T Item { get; set; }

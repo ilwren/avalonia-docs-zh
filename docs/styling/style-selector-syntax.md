@@ -329,7 +329,7 @@ new Style(x => x.OfType<TextBlock>())
 };
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Style selectors](/docs/styling/style-selectors)
 - [Pseudoclasses](/docs/styling/pseudoclasses)

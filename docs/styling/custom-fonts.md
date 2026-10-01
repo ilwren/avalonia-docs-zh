@@ -276,7 +276,7 @@ To fix this, use the full font collection URI syntax rather than relying on syst
 
 This ensures Avalonia resolves the font from the embedded collection rather than attempting a system font lookup.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Typography](/docs/styling/typography): Font size, weight, style, letter spacing, line height, and text decorations.
 - [How to add a custom font](/docs/how-to/custom-font-how-to)

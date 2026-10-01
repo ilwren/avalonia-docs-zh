@@ -152,7 +152,7 @@ class Program
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Main window](/docs/fundamentals/main-window)
 - [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IExpandCollapseProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Provider</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Provider</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IExpandCollapseProvider.cs">IExpandCollapseProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IExpandCollapseProvider.cs">IExpandCollapseProvider.cs</a>
 </div>
 
 </div>
@@ -53,9 +53,9 @@ public interface IExpandCollapseProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Collapse](#uid-d18a9aedda) | Hides all nodes, controls, or content that are descendants of the control. |
 | [Expand](#uid-b9a46f2085) | Displays all child nodes, controls, or content of the control. |
@@ -64,7 +64,7 @@ public interface IExpandCollapseProvider
 
 <span id="uid-d18a9aedda"></span>
 
-### Collapse Method
+### Collapse 方法 {#collapse-method}
 
 Hides all nodes, controls, or content that are descendants of the control.
 
@@ -72,7 +72,7 @@ Hides all nodes, controls, or content that are descendants of the control.
 public void Collapse()
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 - Windows`IExpandCollapseProvider.Collapse`
 - macOS Called by setting `NSAccessibilityProtocol.setAccessibilityExpanded` to false.
@@ -83,7 +83,7 @@ public void Collapse()
 
 <span id="uid-b9a46f2085"></span>
 
-### Expand Method
+### Expand 方法 {#expand-method}
 
 Displays all child nodes, controls, or content of the control.
 
@@ -91,16 +91,16 @@ Displays all child nodes, controls, or content of the control.
 public void Expand()
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 - Windows`IExpandCollapseProvider.Expand`
 - macOS Called by setting `NSAccessibilityProtocol.setAccessibilityExpanded` to true, by calling `NSAccessibilityProtocol.accessibilityPerformPress`, or by calling `NSAccessibilityProtocol.accessibilityPerformShowMenu` when [Avalonia.Automation.Provider.IExpandCollapseProvider.ShowsMenu](xref:Avalonia.Automation.Provider.IExpandCollapseProvider.ShowsMenu) is true.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ExpandCollapseState](#uid-6a627a6024) | Gets the state, expanded or collapsed, of the control. |
 | [ShowsMenu](#uid-536dc46dde) | Gets a value indicating whether expanding the element shows a menu of items to the user, such as drop-down list. |
@@ -109,7 +109,7 @@ public void Expand()
 
 <span id="uid-6a627a6024"></span>
 
-### ExpandCollapseState Property
+### ExpandCollapseState 属性 {#expandcollapsestate-property}
 
 Gets the state, expanded or collapsed, of the control.
 
@@ -117,7 +117,7 @@ Gets the state, expanded or collapsed, of the control.
 public Avalonia.Automation.ExpandCollapseState ExpandCollapseState { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 - Windows`IExpandCollapseProvider.ExpandCollapseState`
 - macOS`NSAccessibilityProtocol.isAccessibilityExpanded`
@@ -128,7 +128,7 @@ public Avalonia.Automation.ExpandCollapseState ExpandCollapseState { get; set; }
 
 <span id="uid-536dc46dde"></span>
 
-### ShowsMenu Property
+### ShowsMenu 属性 {#showsmenu-property}
 
 Gets a value indicating whether expanding the element shows a menu of items to the user,
 such as drop-down list.
@@ -137,7 +137,7 @@ such as drop-down list.
 public bool ShowsMenu { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Used in OSX to allow `accessibilityPerformShowMenu` to open expandable controls such as a
 [Avalonia.Controls.ComboBox](xref:Avalonia.Controls.ComboBox); in macOS, a combo box drop-down is considered a menu.

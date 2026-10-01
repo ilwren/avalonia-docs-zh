@@ -321,7 +321,7 @@ As for platform-specific resources on which codecs are supported, please check t
 
 - A definitive primary source on default codecs supported in macOS/iOS has not yet been identified.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [MediaPlayer control](/controls/media/mediaplayer)
 - [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DataTransferItem Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataTransferItem.cs">DataTransferItem.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataTransferItem.cs">DataTransferItem.cs</a>
 </div>
 
 </div>
@@ -55,29 +55,29 @@ public class DataTransferItem
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataTransferItem
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataTransferItem
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iasyncdatatransferitem">IAsyncDataTransferItem</a>, <a href="idatatransferitem">IDataTransferItem</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iasyncdatatransferitem">IAsyncDataTransferItem</a>, <a href="idatatransferitem">IDataTransferItem</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 While it also implements [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem), this class always returns data synchronously.
 For advanced usages, consider implementing [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) directly.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DataTransferItem](#uid-09994fd251) | No summary available. |
+| [DataTransferItem](#uid-09994fd251) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-09994fd251"></span>
 
-### DataTransferItem Constructor
+### DataTransferItem 构造函数 {#datatransferitem-constructor}
 
 ```csharp
 public DataTransferItem()
@@ -85,14 +85,14 @@ public DataTransferItem()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Create (2 overloads)](#uid-2ae0ae2ff5) | No summary available. |
+| [Create (2 overloads)](#uid-2ae0ae2ff5) | 暂无摘要。 |
 | [CreateFile](#uid-a6832f3a22) | Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) as a single format. |
 | [CreateText](#uid-169cc3837f) | Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) as a single format. |
-| [Set (2 overloads)](#uid-4740848ae2) | No summary available. |
+| [Set (2 overloads)](#uid-4740848ae2) | 暂无摘要。 |
 | [SetBitmap](#uid-91535d5cb2) | Sets the value for the [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap) format. |
 | [SetFile](#uid-47c5aa5eca) | Sets the value for the [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) format. |
 | [SetText](#uid-d84a6ddf2d) | Sets the value for the [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) format. |
@@ -106,13 +106,13 @@ public DataTransferItem()
 
 <span id="uid-2f994638a8"></span>
 
-#### Create Method
+#### Create 方法 {#create-method}
 
 ```csharp
 public Avalonia.Input.DataTransferItem Create<T>(Avalonia.Input.DataFormat<T><T> format, Func<T> getValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;T&gt;
 
@@ -125,7 +125,7 @@ public Avalonia.Input.DataTransferItem Create<T>(Avalonia.Input.DataFormat<T><T>
 `T`
 
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)
 
@@ -136,13 +136,13 @@ public Avalonia.Input.DataTransferItem Create<T>(Avalonia.Input.DataFormat<T><T>
 
 <span id="uid-62a49660b7"></span>
 
-#### Create Method
+#### Create 方法 {#create-method-1}
 
 ```csharp
 public Avalonia.Input.DataTransferItem Create<T>(Avalonia.Input.DataFormat<T><T> format, T value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;T&gt;
 
@@ -155,7 +155,7 @@ public Avalonia.Input.DataTransferItem Create<T>(Avalonia.Input.DataFormat<T><T>
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)
 
@@ -166,7 +166,7 @@ public Avalonia.Input.DataTransferItem Create<T>(Avalonia.Input.DataFormat<T><T>
 
 <span id="uid-a6832f3a22"></span>
 
-### CreateFile Method
+### CreateFile 方法 {#createfile-method}
 
 Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) as a single format.
 
@@ -174,7 +174,7 @@ Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransfer
 public Avalonia.Input.DataTransferItem CreateFile(Avalonia.Platform.Storage.IStorageItem value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value` [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)
 
@@ -182,7 +182,7 @@ The value corresponding to the [Avalonia.Input.DataFormat.File](xref:Avalonia.In
 If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem).
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)
 
@@ -195,7 +195,7 @@ A [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) instan
 
 <span id="uid-169cc3837f"></span>
 
-### CreateText Method
+### CreateText 方法 {#createtext-method}
 
 Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) as a single format.
 
@@ -203,7 +203,7 @@ Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransfer
 public Avalonia.Input.DataTransferItem CreateText(string value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `value` string
 
@@ -211,7 +211,7 @@ The value corresponding to the [Avalonia.Input.DataFormat.Text](xref:Avalonia.In
 If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem).
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)
 
@@ -228,13 +228,13 @@ A [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) instan
 
 <span id="uid-099f43f2a5"></span>
 
-#### Set Method
+#### Set 方法 {#set-method}
 
 ```csharp
 public void Set<T>(Avalonia.Input.DataFormat<T><T> format, Func<T> getValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;T&gt;
 
@@ -253,13 +253,13 @@ public void Set<T>(Avalonia.Input.DataFormat<T><T> format, Func<T> getValue)
 
 <span id="uid-8e25077ea1"></span>
 
-#### Set Method
+#### Set 方法 {#set-method-1}
 
 ```csharp
 public void Set<T>(Avalonia.Input.DataFormat<T><T> format, T value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;T&gt;
 
@@ -278,7 +278,7 @@ public void Set<T>(Avalonia.Input.DataFormat<T><T> format, T value)
 
 <span id="uid-91535d5cb2"></span>
 
-### SetBitmap Method
+### SetBitmap 方法 {#setbitmap-method}
 
 Sets the value for the [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap) format.
 
@@ -286,7 +286,7 @@ Sets the value for the [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.Da
 public void SetBitmap(Avalonia.Media.Imaging.Bitmap value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `value` [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)
 
@@ -300,7 +300,7 @@ If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:
 
 <span id="uid-47c5aa5eca"></span>
 
-### SetFile Method
+### SetFile 方法 {#setfile-method}
 
 Sets the value for the [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) format.
 
@@ -308,7 +308,7 @@ Sets the value for the [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.Data
 public void SetFile(Avalonia.Platform.Storage.IStorageItem value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `value` [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)
 
@@ -322,7 +322,7 @@ If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:
 
 <span id="uid-d84a6ddf2d"></span>
 
-### SetText Method
+### SetText 方法 {#settext-method}
 
 Sets the value for the [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) format.
 
@@ -330,7 +330,7 @@ Sets the value for the [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.Data
 public void SetText(string value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `value` string
 
@@ -344,7 +344,7 @@ If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:
 
 <span id="uid-271583d348"></span>
 
-### TryGetRaw Method
+### TryGetRaw 方法 {#trygetraw-method}
 
 Tries to get a value for a given format.
 
@@ -352,37 +352,37 @@ Tries to get a value for a given format.
 public object TryGetRaw(Avalonia.Input.DataFormat format)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)
 
 The format to retrieve.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 object
 
 A value for `format`, or null if the format is not supported.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Implementations of this method are expected to return a value matching the exact type
 of the generic argument of the underlying [Avalonia.Input.DataFormat&lt;T&gt;](xref:Avalonia.Input.DataFormat%601).
 
 To retrieve a typed value, use [Avalonia.Input.DataTransferItemExtensions.TryGetValue&lt;T&gt;(Avalonia.Input.IDataTransferItem,Avalonia.Input.DataFormat&#123;&lt;&gt;&#125;)](xref:Avalonia.Input.DataTransferItemExtensions.TryGetValue%60%601%28Avalonia.Input.IDataTransferItem%2CAvalonia.Input.DataFormat%7B%60%600%7D%29).
 
-#### See also
+#### 另请参阅 {#see-also}
 
 - [Avalonia.Input.DataTransferItemExtensions.TryGetValue&lt;T&gt;(Avalonia.Input.IDataTransferItem,Avalonia.Input.DataFormat&#123;&lt;&gt;&#125;)](xref:Avalonia.Input.DataTransferItemExtensions.TryGetValue%60%601%28Avalonia.Input.IDataTransferItem%2CAvalonia.Input.DataFormat%7B%60%600%7D%29)
 - [Avalonia.Input.DataTransferExtensions.TryGetValue&lt;T&gt;(Avalonia.Input.IDataTransfer,Avalonia.Input.DataFormat&#123;&lt;&gt;&#125;)](xref:Avalonia.Input.DataTransferExtensions.TryGetValue%60%601%28Avalonia.Input.IDataTransfer%2CAvalonia.Input.DataFormat%7B%60%600%7D%29)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Formats](#uid-0b4edcd38b) | Gets the formats supported by this item. |
 
@@ -390,7 +390,7 @@ To retrieve a typed value, use [Avalonia.Input.DataTransferItemExtensions.TryGet
 
 <span id="uid-0b4edcd38b"></span>
 
-### Formats Property
+### Formats 属性 {#formats-property}
 
 Gets the formats supported by this item.
 

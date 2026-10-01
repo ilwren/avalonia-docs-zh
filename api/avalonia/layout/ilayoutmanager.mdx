@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ILayoutManager Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Layout</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Layout</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Layout/ILayoutManager.cs">ILayoutManager.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Layout/ILayoutManager.cs">ILayoutManager.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public interface ILayoutManager
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ExecuteInitialLayoutPass](#uid-f980d703b2) | Executes the initial layout pass on a layout root. |
 | [ExecuteLayoutPass](#uid-3abd2b22b3) | Executes a layout pass. |
@@ -73,7 +73,7 @@ public interface ILayoutManager
 
 <span id="uid-f980d703b2"></span>
 
-### ExecuteInitialLayoutPass Method
+### ExecuteInitialLayoutPass 方法 {#executeinitiallayoutpass-method}
 
 Executes the initial layout pass on a layout root.
 
@@ -81,7 +81,7 @@ Executes the initial layout pass on a layout root.
 public void ExecuteInitialLayoutPass()
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 You should not usually need to call this method explictly, the layout root will call
 it to carry out the initial layout of the control.
@@ -92,7 +92,7 @@ it to carry out the initial layout of the control.
 
 <span id="uid-3abd2b22b3"></span>
 
-### ExecuteLayoutPass Method
+### ExecuteLayoutPass 方法 {#executelayoutpass-method}
 
 Executes a layout pass.
 
@@ -100,7 +100,7 @@ Executes a layout pass.
 public void ExecuteLayoutPass()
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 You should not usually need to call this method explictly, the layout manager will
 schedule layout passes itself.
@@ -111,7 +111,7 @@ schedule layout passes itself.
 
 <span id="uid-b1c288b84d"></span>
 
-### InvalidateArrange Method
+### InvalidateArrange 方法 {#invalidatearrange-method}
 
 Notifies the layout manager that a control requires an arrange.
 
@@ -119,11 +119,11 @@ Notifies the layout manager that a control requires an arrange.
 public void InvalidateArrange(Avalonia.Layout.Layoutable control)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
-The control.
+该控件。
 
 
 </section>
@@ -132,7 +132,7 @@ The control.
 
 <span id="uid-b22d2da0fa"></span>
 
-### InvalidateMeasure Method
+### InvalidateMeasure 方法 {#invalidatemeasure-method}
 
 Notifies the layout manager that a control requires a measure.
 
@@ -140,11 +140,11 @@ Notifies the layout manager that a control requires a measure.
 public void InvalidateMeasure(Avalonia.Layout.Layoutable control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
-The control.
+该控件。
 
 
 </section>
@@ -153,7 +153,7 @@ The control.
 
 <span id="uid-175297968a"></span>
 
-### RegisterEffectiveViewportListener Method
+### RegisterEffectiveViewportListener 方法 {#registereffectiveviewportlistener-method}
 
 Registers a control as wanting to receive effective viewport notifications.
 
@@ -161,11 +161,11 @@ Registers a control as wanting to receive effective viewport notifications.
 public void RegisterEffectiveViewportListener(Avalonia.Layout.Layoutable control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
-The control.
+该控件。
 
 
 </section>
@@ -174,7 +174,7 @@ The control.
 
 <span id="uid-0020d34f5d"></span>
 
-### UnregisterEffectiveViewportListener Method
+### UnregisterEffectiveViewportListener 方法 {#unregistereffectiveviewportlistener-method}
 
 Registers a control as no longer wanting to receive effective viewport notifications.
 
@@ -182,18 +182,18 @@ Registers a control as no longer wanting to receive effective viewport notificat
 public void UnregisterEffectiveViewportListener(Avalonia.Layout.Layoutable control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
-The control.
+该控件。
 
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [LayoutUpdated](#uid-2457a3dca4) | Raised when the layout manager completes a layout pass. |
 
@@ -201,7 +201,7 @@ The control.
 
 <span id="uid-2457a3dca4"></span>
 
-### LayoutUpdated Event
+### LayoutUpdated 事件 {#layoutupdated-event}
 
 Raised when the layout manager completes a layout pass.
 

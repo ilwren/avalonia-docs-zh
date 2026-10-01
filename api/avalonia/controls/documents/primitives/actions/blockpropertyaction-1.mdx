@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BlockPropertyAction&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class BlockPropertyAction<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> BlockPropertyAction&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> BlockPropertyAction&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iblockpropertyaction">IBlockPropertyAction</a>, IBlockPropertyAction&lt;&gt;, <a href="ieditoraction">IEditorAction</a>, <a href="ipropertyaction">IPropertyAction</a>, IPropertyAction&lt;&gt;
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iblockpropertyaction">IBlockPropertyAction</a>, IBlockPropertyAction&lt;&gt;, <a href="ieditoraction">IEditorAction</a>, <a href="ipropertyaction">IPropertyAction</a>, IPropertyAction&lt;&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This base class provides common functionality for actions that modify
 properties on Block elements (Paragraph, Section, etc.).
@@ -73,25 +73,25 @@ Derived classes only need to:
 - Provide metadata (Id, DisplayName, Gesture)
 - Return available values if applicable
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanExecute](#uid-333fea44db) | Gets whether the action can currently execute. |
 | [ClearValue](#uid-8eb88fed9c) | Clears the property value for the selection, reverting affected elements to their inherited or default value. |
 | [Execute](#uid-eabe4cfab7) | Executes the action synchronously. |
 | [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | Executes the action asynchronously. Inherited from [EditorAction](editoraction.mdx). |
-| [GetAvailableValues](#uid-b8641a532d) | No summary available. |
+| [GetAvailableValues](#uid-b8641a532d) | 暂无摘要。 |
 | [GetState](#uid-4dd39cbeb9) | Gets the current state of the action. |
-| [GetValue](#uid-205f04bd6d) | No summary available. |
+| [GetValue](#uid-205f04bd6d) | 暂无摘要。 |
 | [HasConsistentValue](#uid-2690022924) | Gets whether all affected blocks have the same value for this property. |
-| [SetValue](#uid-29d3de382e) | No summary available. |
+| [SetValue](#uid-29d3de382e) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-333fea44db"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 Gets whether the action can currently execute.
 
@@ -99,21 +99,21 @@ Gets whether the action can currently execute.
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to check against.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 True if the action can execute; otherwise, false.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This is called frequently to update UI state (button enabled/disabled).
 Implementations should be fast and avoid heavy computation.
@@ -124,7 +124,7 @@ Implementations should be fast and avoid heavy computation.
 
 <span id="uid-8eb88fed9c"></span>
 
-### ClearValue Method
+### ClearValue 方法 {#clearvalue-method}
 
 Clears the property value for the selection, reverting affected elements
 to their inherited or default value.
@@ -133,7 +133,7 @@ to their inherited or default value.
 public void ClearValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -146,7 +146,7 @@ The editor host to modify.
 
 <span id="uid-eabe4cfab7"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 Executes the action synchronously.
 
@@ -154,14 +154,14 @@ Executes the action synchronously.
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to execute on.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 A property action carries no value of its own, so plain invocation does
 nothing: the value arrives through [Avalonia.Controls.Documents.Primitives.Actions.BlockPropertyAction&lt;T&gt;.SetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost,\`0)](xref:Avalonia.Controls.Documents.Primitives.Actions.BlockPropertyAction%601.SetValue%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%2C%600%29) from the picker
@@ -177,13 +177,13 @@ faulting the click handler's task.
 
 <span id="uid-b8641a532d"></span>
 
-### GetAvailableValues Method
+### GetAvailableValues 方法 {#getavailablevalues-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerable<T> GetAvailableValues()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -194,7 +194,7 @@ System.Collections.Generic.IEnumerable&lt;T&gt;
 
 <span id="uid-4dd39cbeb9"></span>
 
-### GetState Method
+### GetState 方法 {#getstate-method}
 
 Gets the current state of the action.
 
@@ -202,14 +202,14 @@ Gets the current state of the action.
 public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to query.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 object
 
@@ -217,7 +217,7 @@ The current state, or null if the action has no state. A toggle action returns
 a boolean, a property action the current value.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Read [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) or
 [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead. Both say which family
@@ -229,18 +229,18 @@ the value came from, which an untyped object cannot.
 
 <span id="uid-205f04bd6d"></span>
 
-### GetValue Method
+### GetValue 方法 {#getvalue-method}
 
 ```csharp
 public T GetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 T
 
@@ -251,7 +251,7 @@ T
 
 <span id="uid-2690022924"></span>
 
-### HasConsistentValue Method
+### HasConsistentValue 方法 {#hasconsistentvalue-method}
 
 Gets whether all affected blocks have the same value for this property.
 
@@ -259,14 +259,14 @@ Gets whether all affected blocks have the same value for this property.
 public bool HasConsistentValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 bool
 
@@ -274,7 +274,7 @@ True if all affected blocks have the same property value.
 False if blocks have different values (mixed state).
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 UI controls should show a mixed/indeterminate state when this returns false.
 For example, a [ComboBox](xref:Avalonia.Controls.ComboBox) might show "Mixed" placeholder text.
@@ -287,13 +287,13 @@ For collapsed selections, this always returns true (single block).
 
 <span id="uid-29d3de382e"></span>
 
-### SetValue Method
+### SetValue 方法 {#setvalue-method}
 
 ```csharp
 public void SetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host, T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -303,9 +303,9 @@ public void SetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DisplayName](editoraction.mdx#uid-f07298f749) | Gets the display name for UI purposes. Inherited from [EditorAction](editoraction.mdx). |
 | [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |

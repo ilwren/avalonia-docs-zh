@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BlockBorderToggleAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class BlockBorderToggleAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> BlockBorderToggleAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> BlockBorderToggleAction
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ieditoraction">IEditorAction</a>, <a href="itoggleaction">IToggleAction</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ieditoraction">IEditorAction</a>, <a href="itoggleaction">IToggleAction</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Targets every block-level element covered by the selection. When a
 paragraph sits inside a [Avalonia.Controls.Documents.TableCell](xref:Avalonia.Controls.Documents.TableCell), the cell is
@@ -67,17 +67,17 @@ document is empty, an implicit Paragraph is materialized so the
 user can apply a border before typing — same convention as text
 input and the other block-level actions.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BlockBorderToggleAction](#uid-f934fe27f8) | No summary available. |
+| [BlockBorderToggleAction](#uid-f934fe27f8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f934fe27f8"></span>
 
-### BlockBorderToggleAction Constructor
+### BlockBorderToggleAction 构造函数 {#blockbordertoggleaction-constructor}
 
 ```csharp
 public BlockBorderToggleAction()
@@ -85,9 +85,9 @@ public BlockBorderToggleAction()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanExecute](#uid-ad8492fc40) | Gets whether the action can currently execute. |
 | [Execute](#uid-8196a7c783) | Executes the action synchronously. |
@@ -99,7 +99,7 @@ public BlockBorderToggleAction()
 
 <span id="uid-ad8492fc40"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 Gets whether the action can currently execute.
 
@@ -107,21 +107,21 @@ Gets whether the action can currently execute.
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to check against.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 True if the action can execute; otherwise, false.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This is called frequently to update UI state (button enabled/disabled).
 Implementations should be fast and avoid heavy computation.
@@ -132,7 +132,7 @@ Implementations should be fast and avoid heavy computation.
 
 <span id="uid-8196a7c783"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 Executes the action synchronously.
 
@@ -140,14 +140,14 @@ Executes the action synchronously.
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to execute on.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 For actions that require async operations (like file dialogs),
 use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead.
@@ -158,7 +158,7 @@ use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(A
 
 <span id="uid-b0a3eaa789"></span>
 
-### GetState Method
+### GetState 方法 {#getstate-method}
 
 Gets the current state of the action.
 
@@ -166,14 +166,14 @@ Gets the current state of the action.
 public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to query.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 
@@ -181,7 +181,7 @@ The current state, or null if the action has no state. A toggle action returns
 a boolean, a property action the current value.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Read [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) or
 [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead. Both say which family
@@ -193,7 +193,7 @@ the value came from, which an untyped object cannot.
 
 <span id="uid-90e1fea39f"></span>
 
-### IsChecked Method
+### IsChecked 方法 {#ischecked-method}
 
 Gets whether the action is currently "on" for the selection.
 
@@ -201,30 +201,30 @@ Gets whether the action is currently "on" for the selection.
 public bool IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to query.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
 True if the toggle state is on; otherwise, false.
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 For formatting actions, this returns true if all text in the selection
 has the formatting applied.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DisplayName](#uid-1b4b43ccce) | Gets the display name for UI purposes. |
 | [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
@@ -234,7 +234,7 @@ has the formatting applied.
 
 <span id="uid-1b4b43ccce"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 Gets the display name for UI purposes.
 
@@ -242,7 +242,7 @@ Gets the display name for UI purposes.
 public string DisplayName { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 This is used for tooltips, menu items, and accessibility.
 
@@ -252,7 +252,7 @@ This is used for tooltips, menu items, and accessibility.
 
 <span id="uid-09564c204d"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 Gets the unique identifier for this action.
 
@@ -260,7 +260,7 @@ Gets the unique identifier for this action.
 public string Id { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 IDs follow a hierarchical naming convention:
 

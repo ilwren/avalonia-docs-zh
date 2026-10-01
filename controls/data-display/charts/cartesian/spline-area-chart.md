@@ -48,7 +48,7 @@ public ObservableCollection<int> SplineAreaSeriesData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |
@@ -59,7 +59,7 @@ public ObservableCollection<int> SplineAreaSeriesData { get; } = new()
 | `FillOpacity` | The opacity of the fill area (0.0 to 1.0). | `0.5` |
 | `SplineTension` | The tension of the spline curve (0.0 to 1.0). Lower values create sharper curves, higher values create smoother curves. | `0.25` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Area chart](/controls/data-display/charts/cartesian/area-chart)
 - [Spline chart](/controls/data-display/charts/cartesian/spline-chart)

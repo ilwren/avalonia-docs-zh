@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DataTransferItemExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataTransferItemExtensions.cs">DataTransferItemExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataTransferItemExtensions.cs">DataTransferItemExtensions.cs</a>
 </div>
 
 </div>
@@ -54,25 +54,25 @@ public class DataTransferItemExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataTransferItemExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataTransferItemExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Contains](#uid-399f39e0d2) | Gets whether a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) supports a specific format. |
 | [TryGetBitmap](#uid-b5e6059f11) | Returns a bitmap, if available, from a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance. |
 | [TryGetFile](#uid-5f2f7fd180) | Returns a file, if available, from a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance. |
 | [TryGetText](#uid-22a7d9628a) | Returns a text, if available, from a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance. |
-| [TryGetValue](#uid-85f680f90a) | No summary available. |
+| [TryGetValue](#uid-85f680f90a) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-399f39e0d2"></span>
 
-### Contains Method
+### Contains 方法 {#contains-method}
 
 Gets whether a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) supports a specific format.
 
@@ -80,7 +80,7 @@ Gets whether a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTrans
 public bool Contains(Avalonia.Input.IDataTransferItem dataTransferItem, Avalonia.Input.DataFormat format)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `dataTransferItem` [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem)
 
@@ -92,7 +92,7 @@ The [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) in
 The format to check.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -105,7 +105,7 @@ true if `format` is supported, false otherwise.
 
 <span id="uid-b5e6059f11"></span>
 
-### TryGetBitmap Method
+### TryGetBitmap 方法 {#trygetbitmap-method}
 
 Returns a bitmap, if available, from a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance.
 
@@ -113,21 +113,21 @@ Returns a bitmap, if available, from a [Avalonia.Input.IDataTransferItem](xref:A
 public Avalonia.Media.Imaging.Bitmap TryGetBitmap(Avalonia.Input.IDataTransferItem dataTransferItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `dataTransferItem` [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem)
 
 The [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)
 
 A [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap), or null if the format isn't available.
 
 
-#### See also
+#### 另请参阅 {#see-also}
 
 - [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap)
 
@@ -137,7 +137,7 @@ A [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap), or null i
 
 <span id="uid-5f2f7fd180"></span>
 
-### TryGetFile Method
+### TryGetFile 方法 {#trygetfile-method}
 
 Returns a file, if available, from a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance.
 
@@ -145,21 +145,21 @@ Returns a file, if available, from a [Avalonia.Input.IDataTransferItem](xref:Ava
 public Avalonia.Platform.Storage.IStorageItem TryGetFile(Avalonia.Input.IDataTransferItem dataTransferItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `dataTransferItem` [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem)
 
 The [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)
 
 An [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem) (file or folder), or null if the format isn't available.
 
 
-#### See also
+#### 另请参阅 {#see-also-1}
 
 - [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File)
 
@@ -169,7 +169,7 @@ An [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStor
 
 <span id="uid-22a7d9628a"></span>
 
-### TryGetText Method
+### TryGetText 方法 {#trygettext-method}
 
 Returns a text, if available, from a [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance.
 
@@ -177,21 +177,21 @@ Returns a text, if available, from a [Avalonia.Input.IDataTransferItem](xref:Ava
 public string TryGetText(Avalonia.Input.IDataTransferItem dataTransferItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `dataTransferItem` [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem)
 
 The [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) instance.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 A string, or null if the format isn't available.
 
 
-#### See also
+#### 另请参阅 {#see-also-2}
 
 - [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text)
 
@@ -201,13 +201,13 @@ A string, or null if the format isn't available.
 
 <span id="uid-85f680f90a"></span>
 
-### TryGetValue Method
+### TryGetValue 方法 {#trygetvalue-method}
 
 ```csharp
 public T TryGetValue<T>(Avalonia.Input.IDataTransferItem dataTransferItem, Avalonia.Input.DataFormat<T><T> format)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `dataTransferItem` [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem)
 
@@ -220,7 +220,7 @@ public T TryGetValue<T>(Avalonia.Input.IDataTransferItem dataTransferItem, Avalo
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 T
 

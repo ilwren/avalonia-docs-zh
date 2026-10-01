@@ -142,7 +142,7 @@ Combine `TextTrimming` and `TextWrapping` to apply trimming to the last visible 
 
 <Image light={TextWrappingWithTextTrimming} alt="A screenshot of an IDE, displaying a long line of text in a box that wraps within the box for three lines, before being cut off with an ellipsis added." position="center" maxWidth={400} cornerRadius="true" />
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TextBlock control](https://docs.avaloniaui.net/docs/reference/controls/textblock)
 - [SelectableTextBlock control](https://docs.avaloniaui.net/docs/reference/controls/selectable-textblock)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">XYFocusNavigationStrategy Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/Navigation/XYFocusNavigationStrategy.cs">XYFocusNavigationStrategy.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/Navigation/XYFocusNavigationStrategy.cs">XYFocusNavigationStrategy.cs</a>
 </div>
 
 </div>
@@ -56,13 +56,13 @@ public enum XYFocusNavigationStrategy
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> XYFocusNavigationStrategy
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> XYFocusNavigationStrategy
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Auto](#uid-87e3455876) | Indicates that navigation strategy is inherited from the element's ancestors. If all ancestors have a value of Auto, the fallback strategy is Projection. |
 | [NavigationDirectionDistance](#uid-2a78a8f6d4) | Indicates that focus moves to the element closest to the axis of the navigation direction. |
@@ -73,7 +73,7 @@ public enum XYFocusNavigationStrategy
 
 <span id="uid-87e3455876"></span>
 
-### Auto Field
+### Auto 字段 {#auto-field}
 
 Indicates that navigation strategy is inherited from the element's ancestors. If all ancestors have a value of Auto, the fallback strategy is Projection.
 
@@ -87,7 +87,7 @@ public Avalonia.Input.XYFocusNavigationStrategy Auto
 
 <span id="uid-2a78a8f6d4"></span>
 
-### NavigationDirectionDistance Field
+### NavigationDirectionDistance 字段 {#navigationdirectiondistance-field}
 
 Indicates that focus moves to the element closest to the axis of the navigation direction.
 
@@ -95,7 +95,7 @@ Indicates that focus moves to the element closest to the axis of the navigation 
 public Avalonia.Input.XYFocusNavigationStrategy NavigationDirectionDistance
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 The edge of the bounding rect corresponding to the navigation direction is extended and projected to identify candidate targets. The first element encountered is identified as the target. In the case of multiple candidates, the closest element is identified as the target. If there are still multiple candidates, the topmost/leftmost element is identified as the candidate.
 
@@ -105,7 +105,7 @@ The edge of the bounding rect corresponding to the navigation direction is exten
 
 <span id="uid-27b62bc91b"></span>
 
-### Projection Field
+### Projection 字段 {#projection-field}
 
 Indicates that focus moves to the first element encountered when projecting the edge of the currently focused element in the direction of navigation.
 
@@ -119,7 +119,7 @@ public Avalonia.Input.XYFocusNavigationStrategy Projection
 
 <span id="uid-efb2d7c182"></span>
 
-### RectilinearDistance Field
+### RectilinearDistance 字段 {#rectilineardistance-field}
 
 Indicates that focus moves to the closest element based on the shortest 2D distance (Manhattan metric).
 
@@ -127,7 +127,7 @@ Indicates that focus moves to the closest element based on the shortest 2D dista
 public Avalonia.Input.XYFocusNavigationStrategy RectilinearDistance
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This distance is calculated by adding the primary distance and the secondary distance of each potential candidate. In the case of a tie:
 - The first element to the left is selected if the navigation direction is up or down

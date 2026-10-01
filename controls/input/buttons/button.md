@@ -13,7 +13,7 @@ You can handle a click by subscribing to the `Click` event in code-behind, or by
 
 ## Common properties
 
-| Property           | Description                                                         |
+| Property           | 说明                                                         |
 | ------------------ | ------------------------------------------------------------------- |
 | `ClickMode`        | Describes how the button should react to clicks.                    |
 | `Command`          | An instance of `ICommand` to be invoked when the button is clicked. |
@@ -110,7 +110,7 @@ private bool CanSave() => !string.IsNullOrWhiteSpace(Name);
 
 The `ClickMode` property controls when the `Click` event fires:
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `Release` | Click fires on pointer release (default). |
 | `Press` | Click fires on pointer press. |
@@ -177,7 +177,7 @@ For a full list of button events, see the [Button events API reference](/api/ava
 </Style>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Button API reference](/api/avalonia/controls/button)
 - [`Button.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Button.cs)

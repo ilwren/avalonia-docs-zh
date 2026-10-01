@@ -14,7 +14,7 @@ Navigation members use 1-based page numbers, matching `CurrentPage` and the page
 
 ## Page navigation
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `CurrentPage` | The current page number, 1-based. Bindable in both directions. |
 | `GoToPage(int pageNumber)` | Navigates to a page. |
@@ -31,7 +31,7 @@ Viewer.PageChanged += (_, e) =>
 
 `ViewMode` selects how pages are laid out.
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `SinglePage` | One page at a time. Arrow keys and swipes move between pages. |
 | `Continuous` | Pages in a vertical scrolling column. Only pages near the viewport are decoded. |
@@ -40,7 +40,7 @@ Viewer.PageChanged += (_, e) =>
 
 ## Zoom
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `ZoomLevel` | The zoom factor. `1.0` is 100%. Bindable in both directions. |
 | `ZoomMode` | `Manual`, `FitWidth`, `FitPage`, `FitHeight` or `ActualSize`. |
@@ -56,7 +56,7 @@ Pinch to zoom, swipe between pages in the single and two-page modes, and long-pr
 
 `GetOutline()` returns the document's table of contents as a tree of `PdfBookmark` items, each with a `Title`, an optional `PageIndex`, `Children` and an optional `Destination`. The sidebar shows it in the **Table of Contents** tab when `IsTableOfContentsEnabled` is `true`. `HasOutline` reports whether the document has one.
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `GetOutline()` | The document's table of contents. |
 | `GoToBookmark(PdfBookmark)` | Navigates to an outline entry: its destination (page plus position) when it has one, else its page. |
@@ -86,7 +86,7 @@ Viewer.LinkClicked += (_, e) =>
 
 User bookmarks are separate from the document outline. They are stored in the PDF itself, in the format macOS Preview uses, so both applications see the same bookmarks. The sidebar lists them in the **Bookmarks** tab when `IsBookmarksEnabled` is `true`, and `ShowBookmarkIndicators` draws a ribbon on bookmarked pages and thumbnails.
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `IsPageBookmarked(int pageNumber)` | Whether the page is bookmarked. |
 | `AddBookmark(int pageNumber)` / `RemoveBookmark(int pageNumber)` / `ToggleBookmark(int pageNumber)` | Changes the bookmark on a page. Returns whether anything changed. |
@@ -98,7 +98,7 @@ Bookmark changes are written by the next save and are not part of the undo histo
 
 ## Search
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `SearchAsync(string query, SearchOptions? options = null)` | Searches the document. Returns the matches and highlights them on the pages. |
 | `SearchAsync(string query, SearchOptions? options, CancellationToken)` | The same with cancellation. Matches appear page by page as the search runs. |
@@ -128,7 +128,7 @@ Viewer.FindNext();
 
 A selection cannot span pages. `AllowTextSelection` turns selection off entirely.
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `SelectAll()` | Selects all text on the current page. |
 | `ClearSelection()` | Clears the selection. |
@@ -142,7 +142,7 @@ Selecting text shows a context menu with **Copy** and the text markup tools. See
 
 These members take 0-based page indexes.
 
-| Member | Description |
+| Member | 说明 |
 |---|---|
 | `GetPageTextAsync(int pageIndex, CancellationToken)` | Extracts one page's plain text. Returns an empty string when no document is loaded or the index is out of range. |
 | `GetTextAsync(CancellationToken)` | Extracts the whole document's text, one string per page. |
@@ -205,7 +205,7 @@ These are not affected by `EnableKeyboardShortcuts`.
 
 `FocusViewer()` moves keyboard focus to the viewer so the shortcuts apply.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PdfViewer control](index.md)
 - [Annotations](annotations.md)

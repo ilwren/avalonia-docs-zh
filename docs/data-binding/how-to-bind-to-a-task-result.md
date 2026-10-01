@@ -127,7 +127,7 @@ Keep the following points in mind when you use task bindings:
 Avoid defining the task property as a method call on a getter that creates a new `Task` every time it is accessed (for example, `public Task<string> Data => LoadAsync();`). Each time the binding system reads the property, it creates a new task. This can cause repeated network calls or other unintended side effects. Instead, store the task in a backing field or assign it once in the constructor.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to bind to an observable](/docs/data-binding/how-to-bind-to-an-observable)
 - [Data binding syntax](/docs/data-binding/data-binding-syntax)

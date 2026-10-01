@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HsvColor Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/HsvColor.cs">HsvColor.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/HsvColor.cs">HsvColor.cs</a>
 </div>
 
 </div>
@@ -55,36 +55,36 @@ public struct HsvColor
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> HsvColor
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> HsvColor
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;HsvColor&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;HsvColor&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [HsvColor (2 overloads)](#uid-916bdfe4cb) | Initializes a new instance of the [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) struct. |
+| [HsvColor (2 overloads)](#uid-916bdfe4cb) | 初始化 [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) 结构的新实例。 |
 
 <span id="uid-916bdfe4cb"></span>
 
-### HsvColor overloads
+### HsvColor 的重载 {#hsvcolor-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e75a07b447"></span>
 
-#### HsvColor Constructor
+#### HsvColor 构造函数 {#hsvcolor-constructor}
 
-Initializes a new instance of the [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) struct.
+初始化 [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) 结构的新实例。
 
 ```csharp
 public HsvColor(Avalonia.Media.Color color)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `color` [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
@@ -97,15 +97,15 @@ The RGB color to convert to HSV.
 
 <span id="uid-9678ab668c"></span>
 
-#### HsvColor Constructor
+#### HsvColor 构造函数 {#hsvcolor-constructor-1}
 
-Initializes a new instance of the [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) struct.
+初始化 [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) 结构的新实例。
 
 ```csharp
 public HsvColor(double alpha, double hue, double saturation, double value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `alpha` double
 
@@ -130,40 +130,40 @@ The Value component in the range from 0..1.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-73b622f28e) | No summary available. |
+| [Equals（2 个重载）](#uid-73b622f28e) | 暂无摘要。 |
 | [FromAhsv](#uid-3bc7a51d56) | Creates a new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) from individual color component values. |
 | [FromHsv](#uid-0e373308db) | Creates a new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) from individual color component values. |
 | [GetHashCode](#uid-bb2d974543) | Gets a hashcode for this object. Hashcode is not guaranteed to be unique. |
 | [Parse](#uid-ef0cfcfed6) | Parses an HSV color string. |
 | [ToHsl (2 overloads)](#uid-923bd57d5e) | Returns the HSL color model equivalent of this HSV color. |
 | [ToRgb (2 overloads)](#uid-f8bb09e288) | Returns the RGB color model equivalent of this HSV color. |
-| [ToString](#uid-6ade8a0d65) | No summary available. |
-| [TryParse](#uid-6c68960069) | No summary available. |
+| [ToString](#uid-6ade8a0d65) | 暂无摘要。 |
+| [TryParse](#uid-6c68960069) | 暂无摘要。 |
 
 <span id="uid-73b622f28e"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-aab7a598a8"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Media.HsvColor other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -174,18 +174,18 @@ bool
 
 <span id="uid-f8614e56de"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -196,7 +196,7 @@ bool
 
 <span id="uid-3bc7a51d56"></span>
 
-### FromAhsv Method
+### FromAhsv 方法 {#fromahsv-method}
 
 Creates a new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) from individual color component values.
 
@@ -204,7 +204,7 @@ Creates a new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) from indiv
 public Avalonia.Media.HsvColor FromAhsv(double a, double h, double s, double v)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `a` double
 
@@ -226,14 +226,14 @@ The Saturation component in the range from 0..1.
 The Value component in the range from 0..1.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor)
 
 A new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) built from the individual color component values.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This exists for symmetry with the [Avalonia.Media.Color](xref:Avalonia.Media.Color) struct; however, the
 appropriate constructor should commonly be used instead.
@@ -244,7 +244,7 @@ appropriate constructor should commonly be used instead.
 
 <span id="uid-0e373308db"></span>
 
-### FromHsv Method
+### FromHsv 方法 {#fromhsv-method}
 
 Creates a new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) from individual color component values.
 
@@ -252,7 +252,7 @@ Creates a new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) from indiv
 public Avalonia.Media.HsvColor FromHsv(double h, double s, double v)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `h` double
 
@@ -269,14 +269,14 @@ The Saturation component in the range from 0..1.
 The Value component in the range from 0..1.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor)
 
 A new [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor) built from the individual color component values.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This exists for symmetry with the [Avalonia.Media.Color](xref:Avalonia.Media.Color) struct; however, the
 appropriate constructor should commonly be used instead.
@@ -287,7 +287,7 @@ appropriate constructor should commonly be used instead.
 
 <span id="uid-bb2d974543"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 Gets a hashcode for this object.
 Hashcode is not guaranteed to be unique.
@@ -296,7 +296,7 @@ Hashcode is not guaranteed to be unique.
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 int
 
@@ -309,7 +309,7 @@ The hashcode for this object.
 
 <span id="uid-ef0cfcfed6"></span>
 
-### Parse Method
+### Parse 方法 {#parse-method}
 
 Parses an HSV color string.
 
@@ -317,14 +317,14 @@ Parses an HSV color string.
 public Avalonia.Media.HsvColor Parse(string s)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `s` string
 
 The HSV color string to parse.
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor)
 
@@ -341,7 +341,7 @@ The parsed [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor).
 
 <span id="uid-04ab3f7326"></span>
 
-#### ToHsl Method
+#### ToHsl 方法 {#tohsl-method}
 
 Returns the HSL color model equivalent of this HSV color.
 
@@ -349,7 +349,7 @@ Returns the HSL color model equivalent of this HSV color.
 public Avalonia.Media.HslColor ToHsl()
 ```
 
-##### Returns
+##### 返回值 {#returns-6}
 
 [Avalonia.Media.HslColor](xref:Avalonia.Media.HslColor)
 
@@ -362,7 +362,7 @@ The HSL equivalent color.
 
 <span id="uid-ed6c2c16bb"></span>
 
-#### ToHsl Method
+#### ToHsl 方法 {#tohsl-method-1}
 
 Converts the given HSVA color component values to their HSL color equivalent.
 
@@ -370,7 +370,7 @@ Converts the given HSVA color component values to their HSL color equivalent.
 public Avalonia.Media.HslColor ToHsl(double hue, double saturation, double value, double alpha)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `hue` double
 
@@ -392,7 +392,7 @@ The Value component in the HSV color model in the range from 0..1.
 The Alpha component in the range from 0..1.
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 [Avalonia.Media.HslColor](xref:Avalonia.Media.HslColor)
 
@@ -409,7 +409,7 @@ A new [Avalonia.Media.HslColor](xref:Avalonia.Media.HslColor) equivalent to the 
 
 <span id="uid-563fd88188"></span>
 
-#### ToRgb Method
+#### ToRgb 方法 {#torgb-method}
 
 Returns the RGB color model equivalent of this HSV color.
 
@@ -417,7 +417,7 @@ Returns the RGB color model equivalent of this HSV color.
 public Avalonia.Media.Color ToRgb()
 ```
 
-##### Returns
+##### 返回值 {#returns-8}
 
 [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
@@ -430,7 +430,7 @@ The RGB equivalent color.
 
 <span id="uid-e8e1d877c5"></span>
 
-#### ToRgb Method
+#### ToRgb 方法 {#torgb-method-1}
 
 Converts the given HSVA color component values to their RGB color equivalent.
 
@@ -438,7 +438,7 @@ Converts the given HSVA color component values to their RGB color equivalent.
 public Avalonia.Media.Color ToRgb(double hue, double saturation, double value, double alpha)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `hue` double
 
@@ -460,7 +460,7 @@ The Value component in the HSV color model in the range from 0..1.
 The Alpha component in the range from 0..1.
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
@@ -473,13 +473,13 @@ A new RGB [Avalonia.Media.Color](xref:Avalonia.Media.Color) equivalent to the gi
 
 <span id="uid-6ade8a0d65"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-10}
 
 string
 
@@ -490,13 +490,13 @@ string
 
 <span id="uid-6c68960069"></span>
 
-### TryParse Method
+### TryParse 方法 {#tryparse-method}
 
 ```csharp
 public bool TryParse(string s, Avalonia.Media.HsvColor& hsvColor)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `s` string
 
@@ -504,16 +504,16 @@ public bool TryParse(string s, Avalonia.Media.HsvColor& hsvColor)
 `hsvColor` [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [A](#uid-d168525193) | Gets the Alpha (transparency) component in the range from 0..1 (percentage). |
 | [H](#uid-7c9100c021) | Gets the Hue component in the range from 0..360 (degrees). This is the color's location, in degrees, on a color wheel/circle from 0 to 360. Note that 360 is equivalent to 0 and will be adjusted automatically. |
@@ -524,7 +524,7 @@ bool
 
 <span id="uid-d168525193"></span>
 
-### A Property
+### A 属性 {#a-property}
 
 Gets the Alpha (transparency) component in the range from 0..1 (percentage).
 
@@ -532,7 +532,7 @@ Gets the Alpha (transparency) component in the range from 0..1 (percentage).
 public double A { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 - 0 is fully transparent.
 - 1 is fully opaque.
@@ -543,7 +543,7 @@ public double A { get; set; }
 
 <span id="uid-7c9100c021"></span>
 
-### H Property
+### H 属性 {#h-property}
 
 Gets the Hue component in the range from 0..360 (degrees).
 This is the color's location, in degrees, on a color wheel/circle from 0 to 360.
@@ -553,7 +553,7 @@ Note that 360 is equivalent to 0 and will be adjusted automatically.
 public double H { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 - 0/360 degrees is Red.
 - 60 degrees is Yellow.
@@ -568,7 +568,7 @@ public double H { get; set; }
 
 <span id="uid-574c9b14bf"></span>
 
-### S Property
+### S 属性 {#s-property}
 
 Gets the Saturation component in the range from 0..1 (percentage).
 
@@ -576,7 +576,7 @@ Gets the Saturation component in the range from 0..1 (percentage).
 public double S { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 - 0 is fully white (or a shade of gray) and shows no color.
 - 1 is the full color.
@@ -587,7 +587,7 @@ public double S { get; set; }
 
 <span id="uid-af43ec1d69"></span>
 
-### V Property
+### V 属性 {#v-property}
 
 Gets the Value (or Brightness/Intensity) component in the range from 0..1 (percentage).
 
@@ -595,7 +595,7 @@ Gets the Value (or Brightness/Intensity) component in the range from 0..1 (perce
 public double V { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 - 0 is fully black and shows no color.
 - 1 is the brightest and shows full color.

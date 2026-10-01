@@ -127,7 +127,7 @@ if (result)
 
 This approach only works in desktop applications that use `ClassicDesktopStyleApplicationLifetime`. For single-view apps, you need an overlay-based solution instead.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Window control](/controls/primitives/window)
 - [How to work with dialogs](/docs/how-to/dialogs-how-to)

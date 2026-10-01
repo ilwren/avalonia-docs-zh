@@ -48,7 +48,7 @@ public ObservableCollection<SamplePoint> HexbinData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of X and Y points. | `null` |
 | `XPath` | Path to the X value. | `null` |
@@ -57,7 +57,7 @@ public ObservableCollection<SamplePoint> HexbinData { get; } = new()
 | `ColorScale` | Color scale used to encode density. | `Blues` |
 | `ShowAxes` | Whether to draw the chart axes. | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Bubble chart](/controls/data-display/charts/bubble/bubble-chart)
 - [Contour plot chart](/controls/data-display/charts/statistical/contour-plot-chart)

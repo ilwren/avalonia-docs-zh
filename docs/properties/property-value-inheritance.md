@@ -115,7 +115,7 @@ public partial class MainWindow : Window
 </Window>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Property system overview](/docs/properties): Overview of property types and registration.
 - [Value precedence](/docs/properties/value-precedence): How inherited values fit into the priority order.

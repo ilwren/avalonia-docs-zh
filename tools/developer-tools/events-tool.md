@@ -47,7 +47,7 @@ Note: If nothing happens when clicking on an element, it was likely already remo
 
 ![Inspect Handler](/img/tools/dev-tools/events-inspect-handler.gif)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Elements tool](/tools/developer-tools/elements-tool)
 - [Breakpoints tool](/tools/developer-tools/breakpoints-tool)

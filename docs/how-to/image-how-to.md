@@ -90,7 +90,7 @@ The [`Stretch`](/api/avalonia/media/stretch) property controls how the image fil
 <Image Source="{Binding Photo}" Stretch="None" />
 ```
 
-| Stretch | Description |
+| Stretch | 说明 |
 |---|---|
 | `Uniform` | Scale to fit, preserving aspect ratio (default). |
 | `UniformToFill` | Scale to fill, preserving aspect ratio, clipping if needed. |
@@ -137,7 +137,7 @@ Control the rendering quality when images are scaled:
        RenderOptions.BitmapInterpolationMode="HighQuality" />
 ```
 
-| Mode | Description |
+| Mode | 说明 |
 |---|---|
 | `None` | Nearest-neighbor, sharp pixels. |
 | `LowQuality` | Bilinear filtering. |
@@ -188,7 +188,7 @@ The target control must be attached to a visible window. To render without displ
 
 ## Key Properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Source` | `IImage` | The image to display (`Bitmap`, `DrawingImage`, and similar). |
 | `Stretch` | `Stretch` | How the image fills its bounds. |

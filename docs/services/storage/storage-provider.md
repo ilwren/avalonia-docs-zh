@@ -11,7 +11,7 @@ The `StorageProvider` can be access through an instance of `TopLevel` or `Window
 var storage = window.StorageProvider;
 ```
 
-## Properties
+## 属性 {#properties}
 
 ### CanOpen
 Indicates whether it's possible to open a `open file picker` on the current platform.
@@ -34,7 +34,7 @@ Indicates whether it's possible to open a `folder picker` on the current platfor
 bool CanPickFolder { get; }
 ```
 
-## Methods
+## 方法 {#methods}
 
 ### OpenFilePickerAsync
 Opens a file picker dialog.
@@ -150,7 +150,7 @@ Only supported on the OS, with physical file paths, primarily only desktop.
 
 *** Only Chromium based browsers have a proper support for file pickers.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [File Dialogs](/docs/services/file-dialogs): Common file dialog usage examples.
 - [File Picker Options](/docs/services/storage/file-picker-options): Configuring file type filters and dialog options.

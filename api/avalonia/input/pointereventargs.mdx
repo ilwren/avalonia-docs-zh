@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PointerEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/PointerEventArgs.cs">PointerEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/PointerEventArgs.cs">PointerEventArgs.cs</a>
 </div>
 
 </div>
@@ -48,33 +48,33 @@ public class PointerEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> PointerEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> PointerEventArgs
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="pointerdeltaeventargs">PointerDeltaEventArgs</a>, <a href="pointerpressedeventargs">PointerPressedEventArgs</a>, <a href="pointerreleasedeventargs">PointerReleasedEventArgs</a>, <a href="pointerwheeleventargs">PointerWheelEventArgs</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="pointerdeltaeventargs">PointerDeltaEventArgs</a>, <a href="pointerpressedeventargs">PointerPressedEventArgs</a>, <a href="pointerreleasedeventargs">PointerReleasedEventArgs</a>, <a href="pointerwheeleventargs">PointerWheelEventArgs</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ikeymodifierseventargs">IKeyModifiersEventArgs</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ikeymodifierseventargs">IKeyModifiersEventArgs</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PointerEventArgs](#uid-f5d243e1e8) | No summary available. |
+| [PointerEventArgs](#uid-f5d243e1e8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f5d243e1e8"></span>
 
-### PointerEventArgs Constructor
+### PointerEventArgs 构造函数 {#pointereventargs-constructor}
 
 ```csharp
 public PointerEventArgs(Avalonia.Interactivity.RoutedEvent routedEvent, object source, Avalonia.Input.IPointer pointer, Avalonia.Visual rootVisual, Avalonia.Point rootVisualPosition, ulong timestamp, Avalonia.Input.PointerPointProperties properties, Avalonia.Input.KeyModifiers modifiers)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
@@ -102,9 +102,9 @@ public PointerEventArgs(Avalonia.Interactivity.RoutedEvent routedEvent, object s
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetCurrentPoint](#uid-6da723a66f) | Returns the [PointerPoint](xref:Avalonia.Input.PointerPoint) associated with the current event |
 | [GetIntermediatePoints](#uid-ecd58fcd23) | Returns the [PointerPoint](xref:Avalonia.Input.PointerPoint) associated with the current event |
@@ -115,7 +115,7 @@ public PointerEventArgs(Avalonia.Interactivity.RoutedEvent routedEvent, object s
 
 <span id="uid-6da723a66f"></span>
 
-### GetCurrentPoint Method
+### GetCurrentPoint 方法 {#getcurrentpoint-method}
 
 Returns the [PointerPoint](xref:Avalonia.Input.PointerPoint) associated with the current event
 
@@ -123,14 +123,14 @@ Returns the [PointerPoint](xref:Avalonia.Input.PointerPoint) associated with the
 public Avalonia.Input.PointerPoint GetCurrentPoint(Avalonia.Visual relativeTo)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `relativeTo` [Avalonia.Visual](xref:Avalonia.Visual)
 
 The visual whose coordinate system to use. Pass null for toplevel coordinate system
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Input.PointerPoint](xref:Avalonia.Input.PointerPoint)
 
@@ -141,7 +141,7 @@ The visual whose coordinate system to use. Pass null for toplevel coordinate sys
 
 <span id="uid-ecd58fcd23"></span>
 
-### GetIntermediatePoints Method
+### GetIntermediatePoints 方法 {#getintermediatepoints-method}
 
 Returns the [PointerPoint](xref:Avalonia.Input.PointerPoint) associated with the current event
 
@@ -149,14 +149,14 @@ Returns the [PointerPoint](xref:Avalonia.Input.PointerPoint) associated with the
 public System.Collections.Generic.IReadOnlyList<Avalonia.Input.PointerPoint> GetIntermediatePoints(Avalonia.Visual relativeTo)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `relativeTo` [Avalonia.Visual](xref:Avalonia.Visual)
 
 The visual which coordinate system to use. Pass null for toplevel coordinate system
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Input.PointerPoint](xref:Avalonia.Input.PointerPoint)&gt;
 
@@ -167,7 +167,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Input.PointerPoint](xref:A
 
 <span id="uid-e036ba4f05"></span>
 
-### GetPosition Method
+### GetPosition 方法 {#getposition-method}
 
 Gets the pointer position relative to a control.
 
@@ -175,14 +175,14 @@ Gets the pointer position relative to a control.
 public Avalonia.Point GetPosition(Avalonia.Visual relativeTo)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `relativeTo` [Avalonia.Visual](xref:Avalonia.Visual)
 
 The visual whose coordinate system to use. Pass null for toplevel coordinate system
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -195,7 +195,7 @@ The pointer position in the control's coordinates.
 
 <span id="uid-cc60fc687d"></span>
 
-### PreventGestureRecognition Method
+### PreventGestureRecognition 方法 {#preventgesturerecognition-method}
 
 Prevents this event from being handled by other gesture recognizers in the route
 
@@ -205,24 +205,24 @@ public void PreventGestureRecognition()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | Gets or sets a value indicating whether the routed event has already been handled. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
+| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | 获取或设置一个值，指示该路由事件是否已被处理。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 | [KeyModifiers](#uid-7cba486a1a) | Gets a value that indicates which key modifiers were active at the time that the pointer event was initiated. |
 | [Pointer](#uid-af077cbc78) | Gets specific pointer generated by input device. |
 | [Properties](#uid-4d2cd5033e) | Gets the state the pointer device had when this event occurred. |
-| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | Gets or sets the routing strategy (direct, bubbling, or tunneling) of the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | Gets or sets the routed event associated with these event args. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | Gets or sets the source object that raised the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
+| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | 获取或设置路由事件的路由策略（直接、冒泡或隧道）。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | 获取或设置与这组事件参数关联的路由事件。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | 获取或设置引发该路由事件的源对象。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 | [Timestamp](#uid-c70cd86390) | Gets the time when the input occurred. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7cba486a1a"></span>
 
-### KeyModifiers Property
+### KeyModifiers 属性 {#keymodifiers-property}
 
 Gets a value that indicates which key modifiers were active at the time that the pointer event was initiated.
 
@@ -236,7 +236,7 @@ public Avalonia.Input.KeyModifiers KeyModifiers { get; set; }
 
 <span id="uid-af077cbc78"></span>
 
-### Pointer Property
+### Pointer 属性 {#pointer-property}
 
 Gets specific pointer generated by input device.
 
@@ -250,7 +250,7 @@ public Avalonia.Input.IPointer Pointer { get; set; }
 
 <span id="uid-4d2cd5033e"></span>
 
-### Properties Property
+### Properties 属性 {#properties-property}
 
 Gets the state the pointer device had when this event occurred.
 
@@ -264,7 +264,7 @@ public Avalonia.Input.PointerPointProperties Properties { get; set; }
 
 <span id="uid-c70cd86390"></span>
 
-### Timestamp Property
+### Timestamp 属性 {#timestamp-property}
 
 Gets the time when the input occurred.
 

@@ -16,7 +16,7 @@ You will probably use these properties most often:
     <thead>
         <tr>
             <th width="298">Property</th>
-            <th>Description</th>
+            <th>说明</th>
         </tr>
     </thead>
     <tbody>
@@ -58,9 +58,9 @@ You will probably use these properties most often:
     </tbody>
 </table>
 
-## Events
+## 事件 {#events}
 
-| Event | Type | Description |
+| Event | Type | 说明 |
 |---|---|---|
 | `ToolTip.ToolTipOpening` | `CancelRoutedEventArgs` | Raised when a tooltip is about to open. Set `Cancel = true` to prevent the tooltip from showing. |
 | `ToolTip.ToolTipClosing` | `RoutedEventArgs` | Raised when a tooltip is about to close. |
@@ -123,7 +123,7 @@ To provide a richer presentation for a tooltip, use a `<ToolTip.Tip>` element. H
 
 <Image light={ToolTipContentScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ToolTip API reference](/api/avalonia/controls/tooltip)
 - [`ToolTip.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ToolTip.cs)

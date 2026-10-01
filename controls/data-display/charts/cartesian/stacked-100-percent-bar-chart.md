@@ -71,7 +71,7 @@ public ObservableCollection<BrowserShare> SafariData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |
@@ -83,7 +83,7 @@ public ObservableCollection<BrowserShare> SafariData { get; } = new()
 | `BarWidth` | The width of each bar as a fraction of the category band (0.0 to 1.0). | `0.7` |
 | `BarCornerRadius` | The rounding of the bar corners. | `0` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
 - [Stacked bar chart](/controls/data-display/charts/cartesian/stacked-bar-chart)

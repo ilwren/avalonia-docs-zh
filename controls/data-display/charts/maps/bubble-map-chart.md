@@ -86,7 +86,7 @@ public CityData[] CityBubbles { get; } = new CityData[]
 
 ## Common properties: `ShapeLayer`
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `GeoJson` | GeoJSON data. | `null` |
 | `Source` | URI for the source of the GeoJSON data. | `null` |
@@ -112,7 +112,7 @@ public CityData[] CityBubbles { get; } = new CityData[]
 
 ## Common properties: `BubbleLayer`
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Data source for bubbles. | `null` |
 | `LatitudePath` | Property path for latitude coordinates. | `null` |

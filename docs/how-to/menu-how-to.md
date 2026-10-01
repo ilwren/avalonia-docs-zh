@@ -677,7 +677,7 @@ On macOS, use [`NativeMenu`](/controls/menus/nativemenu) to integrate a native l
 `NativeMenu` is ignored on platforms other than macOS. You can safely include it without conditional compilation. On Windows and Linux, use the standard [`Menu`](/controls/menus/menu) instead.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Registering keyboard shortcuts and key bindings.
 - [Commanding](/docs/input-interaction/commanding): Using commands with controls.

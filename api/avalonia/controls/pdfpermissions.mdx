@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfPermissions Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -51,13 +51,13 @@ public struct PdfPermissions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PdfPermissions
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PdfPermissions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PdfPermissions](#uid-51d06f2ba3) | Initializes a new instance from the raw permission bitfield. |
 
@@ -65,7 +65,7 @@ public struct PdfPermissions
 
 <span id="uid-51d06f2ba3"></span>
 
-### PdfPermissions Constructor
+### PdfPermissions 构造函数 {#pdfpermissions-constructor}
 
 Initializes a new instance from the raw permission bitfield.
 
@@ -73,16 +73,16 @@ Initializes a new instance from the raw permission bitfield.
 public PdfPermissions(uint rawValue)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `rawValue` uint
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanAnnotate](#uid-28ae066f9f) | Whether annotations may be added or modified. |
 | [CanAssemble](#uid-bf132d50f1) | Whether pages may be inserted, deleted, or reordered. |
@@ -98,7 +98,7 @@ public PdfPermissions(uint rawValue)
 
 <span id="uid-28ae066f9f"></span>
 
-### CanAnnotate Property
+### CanAnnotate 属性 {#canannotate-property}
 
 Whether annotations may be added or modified.
 
@@ -112,7 +112,7 @@ public bool CanAnnotate { get; set; }
 
 <span id="uid-bf132d50f1"></span>
 
-### CanAssemble Property
+### CanAssemble 属性 {#canassemble-property}
 
 Whether pages may be inserted, deleted, or reordered.
 
@@ -126,7 +126,7 @@ public bool CanAssemble { get; set; }
 
 <span id="uid-27e702a461"></span>
 
-### CanCopyContent Property
+### CanCopyContent 属性 {#cancopycontent-property}
 
 Whether text and graphics may be copied/extracted.
 
@@ -140,7 +140,7 @@ public bool CanCopyContent { get; set; }
 
 <span id="uid-078b5ecb9e"></span>
 
-### CanExtractForAccessibility Property
+### CanExtractForAccessibility 属性 {#canextractforaccessibility-property}
 
 Whether content may be extracted for accessibility.
 
@@ -154,7 +154,7 @@ public bool CanExtractForAccessibility { get; set; }
 
 <span id="uid-b415556a88"></span>
 
-### CanFillForms Property
+### CanFillForms 属性 {#canfillforms-property}
 
 Whether interactive form fields may be filled.
 
@@ -168,7 +168,7 @@ public bool CanFillForms { get; set; }
 
 <span id="uid-f38e9bb385"></span>
 
-### CanModify Property
+### CanModify 属性 {#canmodify-property}
 
 Whether the document content may be modified.
 
@@ -182,7 +182,7 @@ public bool CanModify { get; set; }
 
 <span id="uid-c46a77bedb"></span>
 
-### CanPrint Property
+### CanPrint 属性 {#canprint-property}
 
 Whether the document may be printed.
 
@@ -196,7 +196,7 @@ public bool CanPrint { get; set; }
 
 <span id="uid-2f75022bd6"></span>
 
-### CanPrintHighQuality Property
+### CanPrintHighQuality 属性 {#canprinthighquality-property}
 
 Whether the document may be printed at high quality.
 
@@ -210,7 +210,7 @@ public bool CanPrintHighQuality { get; set; }
 
 <span id="uid-a6ce5136fc"></span>
 
-### RawValue Property
+### RawValue 属性 {#rawvalue-property}
 
 Gets the raw permission bitfield (`0xFFFFFFFF` when unrestricted).
 

@@ -1,35 +1,35 @@
 ---
 id: customizing-the-avalonia-window
-title: Customizing the Avalonia window
-description: How to adjust the attributes of the Avalonia window. Part 4 of 7 the Avalonia starter tutorial.
+title: 定制 Avalonia 窗口
+description: 如何调整 Avalonia 窗口的各项特性。Avalonia 入门教程第 4 篇，共 7 篇。
 doc-type: tutorial
 video:
   src: https://youtu.be/VlZITaBIfs4
-  title: Set Up Your Avalonia Window — Size, Title and Icon Properties
+  title: 配置你的 Avalonia 窗口 —— 尺寸、标题与图标属性
 ---
 
 import TemperatureConverterPortraitOrientation from '/img/get-started/temperature-converter-portrait-orientation.png';
 import BoxModelDiagram from '@site/src/components/global/BoxModelDiagram';
 
-As [mentioned earlier](/docs/get-started/starter-tutorial), the Avalonia window is where your app will run on the target platform. In a .axaml file, the `<Window>...</Window>` tag defines what goes in the window.
+正如[前文所说](/docs/get-started/starter-tutorial)，Avalonia 窗口就是你的应用在目标平台上的运行载体。在 .axaml 文件中，`<Window>...</Window>` 标签定义了窗口里装什么。
 
-## Layout zones
+## 布局区域 {#layout-zones}
 
-Avalonia windows have four layout zones: (1) Margin, (2) Border, (3) Padding, and (4) Content.
+Avalonia 窗口有四个布局区域：（1）Margin（外边距）、（2）Border（边框）、（3）Padding（内边距）和（4）Content（内容）。
 
-Some layout controls, like `StackPanel` which you used earlier, create smaller sub-windows with the same four layout zones.
+某些布局控件（比如你刚用过的 `StackPanel`）会创建出更小的子窗格，它们同样具备这四个布局区域。
 
 :::note
-Each Avalonia window only accepts one control in its content zone.
+每个 Avalonia 窗口的内容区只接受一个控件。
 :::
 
 <BoxModelDiagram />
 
-## Default window attributes
+## 窗口的默认特性 {#default-window-attributes}
 
-Like controls, windows in Avalonia have XML attributes that define their presentation and behavior.
+和控件一样，Avalonia 的窗口也有一组用于定义外观和行为的 XML 特性。
 
-Scroll to the top of the file **MainWindow.axaml** and examine the `<Window>` opening tag. You can see that it contains some default settings.
+滚动到 **MainWindow.axaml** 文件顶部，看看 `<Window>` 开始标签，里面已经写好了一些默认设置。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -45,41 +45,41 @@ Scroll to the top of the file **MainWindow.axaml** and examine the `<Window>` op
 ```
 
 :::note
-The first few lines of the `<Window>` tag declare the XML namespaces used by Avalonia. The namespace aliases used are `x`, `vm`, `d`, and `mc`.
+`<Window>` 标签开头几行声明的是 Avalonia 用到的 XML 命名空间，其别名分别为 `x`、`vm`、`d` 和 `mc`。
 :::
 
-## Setting the window's attributes
+## 设置窗口的特性 {#setting-the-windows-attributes}
 
-Let’s try adjusting the window’s dimensions so that it appears to be in portrait orientation, instead of landscape. This is something you may do when developing an app, to check how it looks on a mobile device.
+我们来试着把窗口尺寸调成竖屏比例（而不是默认的横屏）。开发应用时，想看看界面在移动设备上是什么样，往往就会这么做。
 
-### Setting the previewer size
+### 设置预览器尺寸 {#setting-the-previewer-size}
 
-Adjusting the values in `d:DesignWidth` and `d:DesignHeight` allows you to change the dimensions of the app in the live previewer, without affecting the actual dimensions of the window at runtime.
+调整 `d:DesignWidth` 和 `d:DesignHeight` 的值，可以改变应用在实时预览器中的显示尺寸，而不会影响窗口在运行时的实际大小。
 
-1. In the file **MainWindow.axaml**, locate this line within the `<Window>...</Window>` tag:
+1. 在 **MainWindow.axaml** 文件中，于 `<Window>...</Window>` 标签内找到这一行：
 
 ```xml
 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 ```
 
-2. Set `d:DesignWidth` to 400.
-3. Observe the previewer. You should see that the preview now resembles a mobile display.
+2. 把 `d:DesignWidth` 设为 400。
+3. 看一眼预览器，现在的预览效果应该已经接近手机屏幕了。
 
-For more information, see the page on [previewing your UI design](/docs/app-development/xaml-preview-and-design-settings).
+更多说明请参阅[预览界面设计](/docs/app-development/xaml-preview-and-design-settings)。
 
 <Image light={TemperatureConverterPortraitOrientation} alt="A screenshot of an app running in a window in portrait orientation." position="center" maxWidth={400} cornerRadius="true"/>
 
-### Setting the runtime window size
+### 设置运行时窗口尺寸 {#setting-the-runtime-window-size}
 
-To adjust to dimensions of the runtime app window, you need to add `Width` and `Height` attributes to the `<Window>` opening tag.
+想调整应用运行时的窗口尺寸，需要在 `<Window>` 开始标签上添加 `Width` 和 `Height` 特性。
 
-1. In the file **MainWindow.axaml**, go to the bottom line of the `<Window>` opening tag: 
+1. 在 **MainWindow.axaml** 文件中，定位到 `<Window>` 开始标签的最后一行： 
 
 ```xml
 Title="GetStartedApp">
 ```
 
-2. Add the attributes `Width="400"` and `Height="450"` under that line. Remember to move the angle bracket to the end.
+2. 在这一行下面补上 `Width="400"` 和 `Height="450"` 特性，记得把尖括号移到最后。
 
 ```xml
 Title="GetStartedApp"
@@ -87,10 +87,10 @@ Width="400"
 Height="450">
 ```
 
-3. Run the app. You should see that the app window now resembles a mobile display.
+3. 运行应用，窗口现在应该已经是手机屏幕的比例了。
 
 :::note
-Most mobile platforms actually ignore window sizes and automatically resize windows to fit the screen. When developing, you won’t literally need to set a separate size for each target platform.
+实际上大多数移动平台会忽略窗口尺寸，自动把窗口拉伸到铺满屏幕。开发时并不需要真的为每个目标平台分别设定尺寸。
 :::
 
-On the next page of this tutorial, you will learn how to create event handling so that the button responds to clicks.
+本教程下一篇会讲如何处理事件，让按钮能够响应点击。

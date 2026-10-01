@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ILauncher Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/ILauncher.cs">ILauncher.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/ILauncher.cs">ILauncher.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface ILauncher
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [LaunchFileAsync](#uid-903e2ae190) | Starts the default app associated with the specified storage file or folder. |
 | [LaunchUriAsync](#uid-76134789ef) | Starts the default app associated with the URI scheme name for the specified URI. |
@@ -63,7 +63,7 @@ public interface ILauncher
 
 <span id="uid-903e2ae190"></span>
 
-### LaunchFileAsync Method
+### LaunchFileAsync 方法 {#launchfileasync-method}
 
 Starts the default app associated with the specified storage file or folder.
 
@@ -71,14 +71,14 @@ Starts the default app associated with the specified storage file or folder.
 public System.Threading.Tasks.Task<bool> LaunchFileAsync(Avalonia.Platform.Storage.IStorageItem storageItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `storageItem` [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)
 
 The file or folder.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;bool&gt;
 
@@ -91,7 +91,7 @@ True, if launch operation was successful. False, if unsupported or failed.
 
 <span id="uid-76134789ef"></span>
 
-### LaunchUriAsync Method
+### LaunchUriAsync 方法 {#launchuriasync-method}
 
 Starts the default app associated with the URI scheme name for the specified URI.
 
@@ -99,14 +99,14 @@ Starts the default app associated with the URI scheme name for the specified URI
 public System.Threading.Tasks.Task<bool> LaunchUriAsync(Uri uri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `uri` Uri
 
 The URI.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;bool&gt;
 

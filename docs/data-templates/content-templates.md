@@ -54,7 +54,7 @@ The code works correctly because the object in the window's content zone happens
 
 On the next page, you will see how to define multiple data templates, and choose the correct template from the class of the object in the window's content zone.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Control Content](/docs/data-templates/control-content): How controls display non-control content.
 - [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.

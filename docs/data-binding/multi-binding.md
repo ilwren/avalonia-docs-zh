@@ -128,7 +128,7 @@ Child bindings within a `MultiBinding` support the same source options as regula
 
 ## MultiBinding properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Bindings` | The collection of child `Binding` objects. |
 | `Converter` | An `IMultiValueConverter` that processes the bound values. |
@@ -232,7 +232,7 @@ public class RectangleAreaConverter : IMultiValueConverter
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding parameters including StringFormat.
 - [How to Create a Custom Converter](/docs/data-binding/how-to-create-a-custom-data-binding-converter): Single-value converters.

@@ -49,7 +49,7 @@ public ObservableCollection<TradeLink> ChordData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of relationships. | `null` |
 | `SourcePath` | Path to the source entity. | `null` |

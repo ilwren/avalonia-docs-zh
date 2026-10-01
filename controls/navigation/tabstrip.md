@@ -99,7 +99,7 @@ Use `TabStrip` when you need custom content switching logic, such as view cachin
 
 Use `TabControl` when you want built-in content display. `TabControl` handles both the tab headers and the content area, so you do not need to write any content switching logic yourself.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TabControl](/controls/navigation/tabcontrol)
 - [TabStrip API reference](/api/avalonia/controls/primitives/tabstrip)

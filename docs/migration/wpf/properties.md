@@ -1,6 +1,6 @@
 ---
 id: properties
-title: Properties
+title: 属性
 description: Migrate WPF DependencyProperty usage to Avalonia StyledProperty and DirectProperty types.
 doc-type: migration
 ---
@@ -292,7 +292,7 @@ public static readonly StyledProperty<IBrush> BackgroundProperty =
         new StyledPropertyMetadata<IBrush>(Brushes.Gray));
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia property system](/docs/properties)
 - [Value precedence](/docs/properties/value-precedence)

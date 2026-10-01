@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AppBuilder Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/AppBuilder.cs">AppBuilder.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/AppBuilder.cs">AppBuilder.cs</a>
 </div>
 
 </div>
@@ -54,45 +54,45 @@ public class AppBuilder
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AppBuilder
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AppBuilder
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AfterPlatformServicesSetup](#uid-e8900c2d32) | No summary available. |
-| [AfterSetup](#uid-948b082425) | No summary available. |
-| [Configure (2 overloads)](#uid-ba4b51c1d4) | No summary available. |
-| [ConfigureFonts](#uid-06e9575c0d) | No summary available. |
+| [AfterPlatformServicesSetup](#uid-e8900c2d32) | 暂无摘要。 |
+| [AfterSetup](#uid-948b082425) | 暂无摘要。 |
+| [Configure (2 overloads)](#uid-ba4b51c1d4) | 暂无摘要。 |
+| [ConfigureFonts](#uid-06e9575c0d) | 暂无摘要。 |
 | [SetupWithLifetime](#uid-ee63b9b324) | Sets up the platform-specific services for the application and initialized it with a particular lifetime, but does not run it. |
 | [SetupWithoutStarting](#uid-7a43d023ba) | Sets up the platform-specific services for the application, but does not run it. |
-| [Start](#uid-2cf633e0ab) | No summary available. |
+| [Start](#uid-2cf633e0ab) | 暂无摘要。 |
 | [UseRenderingSubsystem](#uid-49ad9d2a31) | Specifies a rendering subsystem to use. |
 | [UseRuntimePlatformSubsystem](#uid-7a05af4f10) | Specifies a runtime platform subsystem to use. |
 | [UseStandardRuntimePlatformSubsystem](#uid-dbd65a6582) | Specifies a standard runtime platform subsystem to use. |
 | [UseTextShapingSubsystem](#uid-23c741705f) | Specifies a text shaping subsystem to use. |
 | [UseWindowingSubsystem](#uid-4172c3e4f3) | Specifies a windowing subsystem to use. |
-| [With (2 overloads)](#uid-dabbace251) | No summary available. |
+| [With (2 overloads)](#uid-dabbace251) | 暂无摘要。 |
 | [WithDataAnnotationsValidation](#uid-eadbb2e8ae) | Adds support for validation using `System.ComponentModel.DataAnnotations`. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e8900c2d32"></span>
 
-### AfterPlatformServicesSetup Method
+### AfterPlatformServicesSetup 方法 {#afterplatformservicessetup-method}
 
 ```csharp
 public Avalonia.AppBuilder AfterPlatformServicesSetup(Action<Avalonia.AppBuilder> callback)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `callback` Action&lt;[Avalonia.AppBuilder](xref:Avalonia.AppBuilder)&gt;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -103,18 +103,18 @@ public Avalonia.AppBuilder AfterPlatformServicesSetup(Action<Avalonia.AppBuilder
 
 <span id="uid-948b082425"></span>
 
-### AfterSetup Method
+### AfterSetup 方法 {#aftersetup-method}
 
 ```csharp
 public Avalonia.AppBuilder AfterSetup(Action<Avalonia.AppBuilder> callback)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `callback` Action&lt;[Avalonia.AppBuilder](xref:Avalonia.AppBuilder)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -129,7 +129,7 @@ public Avalonia.AppBuilder AfterSetup(Action<Avalonia.AppBuilder> callback)
 
 <span id="uid-23837318b4"></span>
 
-#### Configure Method
+#### Configure 方法 {#configure-method}
 
 ```csharp
 public Avalonia.AppBuilder Configure<TApp>()
@@ -140,7 +140,7 @@ public Avalonia.AppBuilder Configure<TApp>()
 `TApp`
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -151,13 +151,13 @@ public Avalonia.AppBuilder Configure<TApp>()
 
 <span id="uid-0cdac3da0e"></span>
 
-#### Configure Method
+#### Configure 方法 {#configure-method-1}
 
 ```csharp
 public Avalonia.AppBuilder Configure<TApp>(Func<TApp> appFactory)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `appFactory` Func&lt;TApp&gt;
 
@@ -167,7 +167,7 @@ public Avalonia.AppBuilder Configure<TApp>(Func<TApp> appFactory)
 `TApp`
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -178,18 +178,18 @@ public Avalonia.AppBuilder Configure<TApp>(Func<TApp> appFactory)
 
 <span id="uid-06e9575c0d"></span>
 
-### ConfigureFonts Method
+### ConfigureFonts 方法 {#configurefonts-method}
 
 ```csharp
 public Avalonia.AppBuilder ConfigureFonts(Action<Avalonia.Media.FontManager> action)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `action` Action&lt;[Avalonia.Media.FontManager](xref:Avalonia.Media.FontManager)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -200,7 +200,7 @@ public Avalonia.AppBuilder ConfigureFonts(Action<Avalonia.Media.FontManager> act
 
 <span id="uid-ee63b9b324"></span>
 
-### SetupWithLifetime Method
+### SetupWithLifetime 方法 {#setupwithlifetime-method}
 
 Sets up the platform-specific services for the application and initialized it with a particular lifetime, but does not run it.
 
@@ -208,12 +208,12 @@ Sets up the platform-specific services for the application and initialized it wi
 public Avalonia.AppBuilder SetupWithLifetime(Avalonia.Controls.ApplicationLifetimes.IApplicationLifetime lifetime)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `lifetime` [Avalonia.Controls.ApplicationLifetimes.IApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.IApplicationLifetime)
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -224,7 +224,7 @@ public Avalonia.AppBuilder SetupWithLifetime(Avalonia.Controls.ApplicationLifeti
 
 <span id="uid-7a43d023ba"></span>
 
-### SetupWithoutStarting Method
+### SetupWithoutStarting 方法 {#setupwithoutstarting-method}
 
 Sets up the platform-specific services for the application, but does not run it.
 
@@ -232,7 +232,7 @@ Sets up the platform-specific services for the application, but does not run it.
 public Avalonia.AppBuilder SetupWithoutStarting()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -243,13 +243,13 @@ public Avalonia.AppBuilder SetupWithoutStarting()
 
 <span id="uid-2cf633e0ab"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
 ```csharp
 public void Start(Avalonia.AppBuilder.AppMainDelegate main, string[] args)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `main` [Avalonia.AppBuilder.AppMainDelegate](xref:Avalonia.AppBuilder.AppMainDelegate)
 
@@ -263,7 +263,7 @@ public void Start(Avalonia.AppBuilder.AppMainDelegate main, string[] args)
 
 <span id="uid-49ad9d2a31"></span>
 
-### UseRenderingSubsystem Method
+### UseRenderingSubsystem 方法 {#userenderingsubsystem-method}
 
 Specifies a rendering subsystem to use.
 
@@ -271,7 +271,7 @@ Specifies a rendering subsystem to use.
 public Avalonia.AppBuilder UseRenderingSubsystem(Action initializer, string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `initializer` Action
 
@@ -283,7 +283,7 @@ The method to call to initialize the rendering subsystem.
 The name of the rendering subsystem.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -296,7 +296,7 @@ An [Avalonia.AppBuilder](xref:Avalonia.AppBuilder) instance.
 
 <span id="uid-7a05af4f10"></span>
 
-### UseRuntimePlatformSubsystem Method
+### UseRuntimePlatformSubsystem 方法 {#useruntimeplatformsubsystem-method}
 
 Specifies a runtime platform subsystem to use.
 
@@ -304,7 +304,7 @@ Specifies a runtime platform subsystem to use.
 public Avalonia.AppBuilder UseRuntimePlatformSubsystem(Action initializer, string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `initializer` Action
 
@@ -316,7 +316,7 @@ The method to call to initialize the runtime platform subsystem.
 The name of the runtime platform subsystem.
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -329,7 +329,7 @@ An [Avalonia.AppBuilder](xref:Avalonia.AppBuilder) instance.
 
 <span id="uid-dbd65a6582"></span>
 
-### UseStandardRuntimePlatformSubsystem Method
+### UseStandardRuntimePlatformSubsystem 方法 {#usestandardruntimeplatformsubsystem-method}
 
 Specifies a standard runtime platform subsystem to use.
 
@@ -337,7 +337,7 @@ Specifies a standard runtime platform subsystem to use.
 public Avalonia.AppBuilder UseStandardRuntimePlatformSubsystem()
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -350,7 +350,7 @@ An [Avalonia.AppBuilder](xref:Avalonia.AppBuilder) instance.
 
 <span id="uid-23c741705f"></span>
 
-### UseTextShapingSubsystem Method
+### UseTextShapingSubsystem 方法 {#usetextshapingsubsystem-method}
 
 Specifies a text shaping subsystem to use.
 
@@ -358,7 +358,7 @@ Specifies a text shaping subsystem to use.
 public Avalonia.AppBuilder UseTextShapingSubsystem(Action initializer, string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `initializer` Action
 
@@ -370,7 +370,7 @@ The method to call to initialize the text shaping subsystem.
 The name of the text shaping subsystem.
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -383,7 +383,7 @@ An [Avalonia.AppBuilder](xref:Avalonia.AppBuilder) instance.
 
 <span id="uid-4172c3e4f3"></span>
 
-### UseWindowingSubsystem Method
+### UseWindowingSubsystem 方法 {#usewindowingsubsystem-method}
 
 Specifies a windowing subsystem to use.
 
@@ -391,7 +391,7 @@ Specifies a windowing subsystem to use.
 public Avalonia.AppBuilder UseWindowingSubsystem(Action initializer, string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `initializer` Action
 
@@ -403,7 +403,7 @@ The method to call to initialize the windowing subsystem.
 The name of the windowing subsystem.
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -420,13 +420,13 @@ An [Avalonia.AppBuilder](xref:Avalonia.AppBuilder) instance.
 
 <span id="uid-e46dc48141"></span>
 
-#### With Method
+#### With 方法 {#with-method}
 
 ```csharp
 public Avalonia.AppBuilder With<T>(Func<T> options)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `options` Func&lt;T&gt;
 
@@ -436,7 +436,7 @@ public Avalonia.AppBuilder With<T>(Func<T> options)
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-12}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -447,13 +447,13 @@ public Avalonia.AppBuilder With<T>(Func<T> options)
 
 <span id="uid-76292f668e"></span>
 
-#### With Method
+#### With 方法 {#with-method-1}
 
 ```csharp
 public Avalonia.AppBuilder With<T>(T options)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `options` T
 
@@ -463,7 +463,7 @@ public Avalonia.AppBuilder With<T>(T options)
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-13}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -474,7 +474,7 @@ public Avalonia.AppBuilder With<T>(T options)
 
 <span id="uid-eadbb2e8ae"></span>
 
-### WithDataAnnotationsValidation Method
+### WithDataAnnotationsValidation 方法 {#withdataannotationsvalidation-method}
 
 Adds support for validation using `System.ComponentModel.DataAnnotations`.
 
@@ -482,18 +482,18 @@ Adds support for validation using `System.ComponentModel.DataAnnotations`.
 public Avalonia.AppBuilder WithDataAnnotationsValidation()
 ```
 
-#### Returns
+#### 返回值 {#returns-14}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AfterPlatformServicesSetupCallback](#uid-d104da838b) | No summary available. |
+| [AfterPlatformServicesSetupCallback](#uid-d104da838b) | 暂无摘要。 |
 | [AfterSetupCallback](#uid-62825021bb) | Gets a method to call after the [Avalonia.Application](xref:Avalonia.Application) is setup. |
 | [ApplicationType](#uid-16dc62a0ac) | Gets the type of the Instance (even if it's not created yet) |
 | [Instance](#uid-ea3a6ab475) | Gets the [Avalonia.Application](xref:Avalonia.Application) instance being initialized. |
@@ -510,7 +510,7 @@ public Avalonia.AppBuilder WithDataAnnotationsValidation()
 
 <span id="uid-d104da838b"></span>
 
-### AfterPlatformServicesSetupCallback Property
+### AfterPlatformServicesSetupCallback 属性 {#afterplatformservicessetupcallback-property}
 
 ```csharp
 public Action<Avalonia.AppBuilder> AfterPlatformServicesSetupCallback { get; set; }
@@ -522,7 +522,7 @@ public Action<Avalonia.AppBuilder> AfterPlatformServicesSetupCallback { get; set
 
 <span id="uid-62825021bb"></span>
 
-### AfterSetupCallback Property
+### AfterSetupCallback 属性 {#aftersetupcallback-property}
 
 Gets a method to call after the [Avalonia.Application](xref:Avalonia.Application) is setup.
 
@@ -536,7 +536,7 @@ public Action<Avalonia.AppBuilder> AfterSetupCallback { get; set; }
 
 <span id="uid-16dc62a0ac"></span>
 
-### ApplicationType Property
+### ApplicationType 属性 {#applicationtype-property}
 
 Gets the type of the Instance (even if it's not created yet)
 
@@ -550,7 +550,7 @@ public Type ApplicationType { get; set; }
 
 <span id="uid-ea3a6ab475"></span>
 
-### Instance Property
+### Instance 属性 {#instance-property}
 
 Gets the [Avalonia.Application](xref:Avalonia.Application) instance being initialized.
 
@@ -564,7 +564,7 @@ public Avalonia.Application Instance { get; set; }
 
 <span id="uid-ad8cee057a"></span>
 
-### RenderingSubsystemInitializer Property
+### RenderingSubsystemInitializer 属性 {#renderingsubsysteminitializer-property}
 
 Gets or sets a method to call the initialize the windowing subsystem.
 
@@ -578,7 +578,7 @@ public Action RenderingSubsystemInitializer { get; set; }
 
 <span id="uid-eb1c42e656"></span>
 
-### RenderingSubsystemName Property
+### RenderingSubsystemName 属性 {#renderingsubsystemname-property}
 
 Gets the name of the currently selected rendering subsystem.
 
@@ -592,7 +592,7 @@ public string RenderingSubsystemName { get; set; }
 
 <span id="uid-ea87d2ecfb"></span>
 
-### RuntimePlatformServicesInitializer Property
+### RuntimePlatformServicesInitializer 属性 {#runtimeplatformservicesinitializer-property}
 
 Gets or sets a method to call the initialize the runtime platform services (e. g. [AssetLoader](xref:Avalonia.Platform.AssetLoader))
 
@@ -606,7 +606,7 @@ public Action RuntimePlatformServicesInitializer { get; set; }
 
 <span id="uid-41be63bf0d"></span>
 
-### RuntimePlatformServicesName Property
+### RuntimePlatformServicesName 属性 {#runtimeplatformservicesname-property}
 
 Gets the name of the currently selected windowing subsystem.
 
@@ -620,7 +620,7 @@ public string RuntimePlatformServicesName { get; set; }
 
 <span id="uid-c1b81b7390"></span>
 
-### TextShapingSubsystemInitializer Property
+### TextShapingSubsystemInitializer 属性 {#textshapingsubsysteminitializer-property}
 
 Gets or sets a method to call the initialize the text shaping subsystem.
 
@@ -634,7 +634,7 @@ public Action TextShapingSubsystemInitializer { get; set; }
 
 <span id="uid-a3cc06ef06"></span>
 
-### TextShapingSubsystemName Property
+### TextShapingSubsystemName 属性 {#textshapingsubsystemname-property}
 
 Gets the name of the currently selected text shaping subsystem.
 
@@ -648,7 +648,7 @@ public string TextShapingSubsystemName { get; set; }
 
 <span id="uid-78f8ad74a9"></span>
 
-### WindowingSubsystemInitializer Property
+### WindowingSubsystemInitializer 属性 {#windowingsubsysteminitializer-property}
 
 Gets or sets a method to call the initialize the windowing subsystem.
 
@@ -662,7 +662,7 @@ public Action WindowingSubsystemInitializer { get; set; }
 
 <span id="uid-7d0f73060a"></span>
 
-### WindowingSubsystemName Property
+### WindowingSubsystemName 属性 {#windowingsubsystemname-property}
 
 Gets the name of the currently selected windowing subsystem.
 

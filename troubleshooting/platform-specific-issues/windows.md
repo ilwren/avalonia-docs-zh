@@ -127,7 +127,7 @@ If you save and restore window bounds across sessions, be aware that monitor con
 
 If your window uses `WindowDecorations="None"` or a custom titlebar and does not appear in the taskbar, ensure that you have not set `ShowInTaskbar="False"` unintentionally. Some extended window styles applied by Win32 can also suppress the taskbar entry. Setting `ShowInTaskbar="True"` explicitly resolves this in most cases.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Windows platform guide](/docs/platform-specific-guides/windows) for transparency, Mica, and Win32 integration details
 - [macOS issues](/troubleshooting/platform-specific-issues/macos) and [WebAssembly issues](/troubleshooting/platform-specific-issues/webassembly) for other platform-specific troubleshooting

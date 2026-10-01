@@ -17,7 +17,7 @@ The user-selection action should be invoked immediately when pressing either the
 
 ## Common properties
 
-| Property  | Description                                                    |
+| Property  | 说明                                                    |
 | --------- | -------------------------------------------------------------- |
 | `Content` | The content to display in the primary part                     |
 | [`Flyout`](/api/avalonia/controls/flyout)  | The `Flyout` which shows up when the secondary part is clicked |
@@ -26,7 +26,7 @@ The user-selection action should be invoked immediately when pressing either the
 
 ## Pseudoclasses
 
-| Pseudoclass    | Description                                                                                                                                                         |
+| Pseudoclass    | 说明                                                                                                                                                         |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `:pressed`     | Set when the entire `SplitButton` is pressed using a keyboard input such as Space or Enter. In this state no distinction is made between primary or secondary parts |
 | `:flyout-open` | Set when the `Flyout` is open                                                                                                                                       |
@@ -124,7 +124,7 @@ Another common example of the `SplitButton` could be an export button. When the 
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [SplitButton API reference](/api/avalonia/controls/splitbutton)
 - [`SplitButton.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitButton/SplitButton.cs)

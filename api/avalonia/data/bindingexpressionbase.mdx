@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BindingExpressionBase Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingExpressionBase.cs">BindingExpressionBase.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingExpressionBase.cs">BindingExpressionBase.cs</a>
 </div>
 
 </div>
@@ -48,21 +48,21 @@ public class BindingExpressionBase
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> BindingExpressionBase
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> BindingExpressionBase
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="core/untypedbindingexpressionbase">UntypedBindingExpressionBase</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="core/untypedbindingexpressionbase">UntypedBindingExpressionBase</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../styling/isetterinstance">ISetterInstance</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../styling/isetterinstance">ISetterInstance</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-2ebfa59e03) | No summary available. |
+| [Dispose](#uid-2ebfa59e03) | 暂无摘要。 |
 | [UpdateSource](#uid-fd0c9ff1d3) | Sends the current binding target value to the binding source property in [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) or [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource) bindings. |
 | [UpdateTarget](#uid-2633f25166) | Forces a data transfer from the binding source to the binding target. |
 
@@ -70,7 +70,7 @@ public class BindingExpressionBase
 
 <span id="uid-2ebfa59e03"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -82,7 +82,7 @@ public void Dispose()
 
 <span id="uid-fd0c9ff1d3"></span>
 
-### UpdateSource Method
+### UpdateSource 方法 {#updatesource-method}
 
 Sends the current binding target value to the binding source property in
 [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) or [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource) bindings.
@@ -91,7 +91,7 @@ Sends the current binding target value to the binding source property in
 public void UpdateSource()
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 This method does nothing when the Mode of the binding is not
 [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) or [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource).
@@ -107,7 +107,7 @@ source.
 
 <span id="uid-2633f25166"></span>
 
-### UpdateTarget Method
+### UpdateTarget 方法 {#updatetarget-method}
 
 Forces a data transfer from the binding source to the binding target.
 

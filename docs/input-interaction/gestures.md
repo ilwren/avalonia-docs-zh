@@ -13,7 +13,7 @@ Avalonia provides two kinds of gestures:
 
 **Built-in gesture events** cover the most common interactions:
 
-| Event | Description |
+| Event | 说明 |
 |---|---|
 | `Tapped` | A pointer was pressed and released on a control. |
 | `DoubleTapped` | Two taps occurred in the same location within the platform's double-tap time and distance threshold. |
@@ -21,7 +21,7 @@ Avalonia provides two kinds of gestures:
 
 **Gesture recognizers** detect more complex multi-pointer or directional patterns. You attach them to a control's `GestureRecognizers` collection, and they monitor the control's pointer events to detect specific patterns:
 
-| Recognizer | Description |
+| Recognizer | 说明 |
 |---|---|
 | [`PinchGestureRecognizer`](/docs/input-interaction/gestures/pinch-gesture-recognizer) | Two pointers moving towards or away from each other. Used for pinch-to-zoom. |
 | [`PullGestureRecognizer`](/docs/input-interaction/gestures/pull-gesture-recognizer) | A pointer dragged from the edge of a control in a specific direction. Used for pull-to-refresh. |
@@ -161,7 +161,7 @@ Custom recognizers are attached the same way as built-in ones:
 
 For reference implementations, see the [built-in gesture recognizer source code](https://github.com/AvaloniaUI/Avalonia/tree/master/src/Avalonia.Base/Input/GestureRecognizers) on GitHub.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Pointer Events](/docs/input-interaction/pointer): Lower-level pointer events that gestures are built on.
 - [Routed Events](/docs/input-interaction/routed-events): How events propagate through the element tree.

@@ -11,7 +11,7 @@ For most scenarios, prefer `Flyout`, `ToolTip`, or `ContextMenu` instead of `Pop
 
 ## Useful properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `IsOpen` | `bool` | Controls whether the popup is currently visible. |
 | `Child` | `Control` | The content displayed inside the popup. |
@@ -27,9 +27,9 @@ For most scenarios, prefer `Flyout`, `ToolTip`, or `ContextMenu` instead of `Pop
 | `OverlayDismissEventPassThrough` | `bool` | When `true`, pointer events that dismiss the popup also pass through to the underlying control. Default: `false`. |
 | `CustomPopupPlacementCallback` | `CustomPopupPlacementCallback` | A callback for fully custom popup positioning. When set, overrides the `Placement` property. |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 |---|---|
 | `Opened` | Raised after the popup opens. |
 | `Closed` | Raised after the popup closes. |
@@ -129,7 +129,7 @@ ToolTip.SetCustomPopupPlacementCallback(myControl, placement =>
 | Keyboard support | Manual | Automatic | N/A |
 | Best for | Custom overlay behavior | Menus, confirmations, pickers | Hover hints |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Flyout](/controls/layout/containers/flyout): A higher-level popup attached to a control.
 - [ToolTip](/controls/feedback/tooltip): Hover-activated popups for supplementary text.

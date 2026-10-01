@@ -101,7 +101,7 @@ For platform support, refer to [Platform/architecture restrictions](https://lear
 
 If you are using [Avalonia XPF](/xpf), Native AOT is also supported. See [XPF: Native AOT](/xpf/deployment/native-aot) for XPF-specific setup and usage.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet9plus#platformarchitecture-restrictions): Microsoft documentation on Native AOT.
 - [Avalonia sample applications with Native AOT](https://github.com/AvaloniaUI/Avalonia.Samples): Example projects.

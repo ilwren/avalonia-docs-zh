@@ -82,7 +82,7 @@ Several pre-defined color palettes implementing the `IColorPalette` interface ar
 <table>
   <tr>
     <th>Palette</th>
-    <th>Description</th>
+    <th>说明</th>
   </tr>
   <tr>
     <td>
@@ -122,7 +122,7 @@ Several pre-defined color palettes implementing the `IColorPalette` interface ar
   </tr>
 </table>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ColorPicker API reference](/api/avalonia/controls/colorpicker)
 - [`ColorPicker.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls.ColorPicker/ColorPicker/ColorPicker.cs)

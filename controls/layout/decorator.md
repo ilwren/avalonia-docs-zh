@@ -18,15 +18,15 @@ You do not typically use `Decorator` directly in your XAML. Instead, you use one
 
 These controls inherit from `Decorator`:
 
-| Control | Purpose |
+| Control | 用途 |
 | :--- | :--- |
 | [Border](/controls/layout/containers/border) | Draws a border, background, corner radius, and box shadow around its child |
 | [Viewbox](/controls/layout/containers/viewbox) | Scales its child to fit available space |
 | [LayoutTransformControl](/controls/layout/layouttransformcontrol) | Applies a render transform that participates in layout |
 
-## Properties
+## 属性 {#properties}
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 | :--- | :--- | :--- |
 | `Child` | `Control` | The single child control to decorate. Marked as `[Content]`, so you can set it directly in XAML without an explicit property element. |
 | `Padding` | `Thickness` | Space between the decorator's edge and its child. |
@@ -86,7 +86,7 @@ While uncommon, you can use `Decorator` directly as a simple padding wrapper:
 
 This behaves like a `Border` with no border or background, adding only padding around its child.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Border](/controls/layout/containers/border)
 - [Viewbox](/controls/layout/containers/viewbox)

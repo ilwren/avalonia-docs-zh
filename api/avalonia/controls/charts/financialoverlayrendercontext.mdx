@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FinancialOverlayRenderContext Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -50,27 +50,27 @@ public struct FinancialOverlayRenderContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> FinancialOverlayRenderContext
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> FinancialOverlayRenderContext
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FinancialOverlayRenderContext](#uid-db627121d9) | No summary available. |
+| [FinancialOverlayRenderContext](#uid-db627121d9) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-db627121d9"></span>
 
-### FinancialOverlayRenderContext Constructor
+### FinancialOverlayRenderContext 构造函数 {#financialoverlayrendercontext-constructor}
 
 ```csharp
 public FinancialOverlayRenderContext(Avalonia.Controls.Charts.FinancialChart chart, Avalonia.Media.DrawingContext drawingContext, Avalonia.Rect plotArea, System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Charts.FinancialPoint> data, System.Collections.Generic.IReadOnlyDictionary<DateTime, int> dateIndexMap, double minPrice, double maxPrice, Avalonia.Media.IBrush fillBrush, Avalonia.Media.IBrush strokeBrush, int seriesIndex, Func<double, double> valueToY)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `chart` [Avalonia.Controls.Charts.FinancialChart](xref:Avalonia.Controls.Charts.FinancialChart)
 
@@ -107,25 +107,25 @@ public FinancialOverlayRenderContext(Avalonia.Controls.Charts.FinancialChart cha
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TryDateToX](#uid-5b14a85ece) | No summary available. |
-| [TryValueToPoint](#uid-64f2aae12b) | No summary available. |
+| [TryDateToX](#uid-5b14a85ece) | 暂无摘要。 |
+| [TryValueToPoint](#uid-64f2aae12b) | 暂无摘要。 |
 | [ValueToY](#uid-2e45286c8b) | Converts a price value to a Y coordinate. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5b14a85ece"></span>
 
-### TryDateToX Method
+### TryDateToX 方法 {#trydatetox-method}
 
 ```csharp
 public bool TryDateToX(DateTime date, double& x)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `date` DateTime
 
@@ -133,7 +133,7 @@ public bool TryDateToX(DateTime date, double& x)
 `x` double&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -144,13 +144,13 @@ bool
 
 <span id="uid-64f2aae12b"></span>
 
-### TryValueToPoint Method
+### TryValueToPoint 方法 {#tryvaluetopoint-method}
 
 ```csharp
 public bool TryValueToPoint(DateTime date, double value, Avalonia.Point& point)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `date` DateTime
 
@@ -161,7 +161,7 @@ public bool TryValueToPoint(DateTime date, double value, Avalonia.Point& point)
 `point` [Avalonia.Point](xref:Avalonia.Point)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -172,7 +172,7 @@ bool
 
 <span id="uid-2e45286c8b"></span>
 
-### ValueToY Method
+### ValueToY 方法 {#valuetoy-method}
 
 Converts a price value to a Y coordinate.
 
@@ -180,21 +180,21 @@ Converts a price value to a Y coordinate.
 public double ValueToY(double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `value` double
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 double
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Chart](#uid-2e7d618197) | Gets the chart that owns the overlay. |
 | [Data](#uid-980e09f2a6) | Gets the ordered financial data used by the chart. |
@@ -212,7 +212,7 @@ double
 
 <span id="uid-2e7d618197"></span>
 
-### Chart Property
+### Chart 属性 {#chart-property}
 
 Gets the chart that owns the overlay.
 
@@ -226,7 +226,7 @@ public Avalonia.Controls.Charts.FinancialChart Chart { get; set; }
 
 <span id="uid-980e09f2a6"></span>
 
-### Data Property
+### Data 属性 {#data-property}
 
 Gets the ordered financial data used by the chart.
 
@@ -240,7 +240,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Charts.Financi
 
 <span id="uid-9bc49f553a"></span>
 
-### DateIndexMap Property
+### DateIndexMap 属性 {#dateindexmap-property}
 
 Gets the date-to-index map used by the financial chart.
 
@@ -254,7 +254,7 @@ public System.Collections.Generic.IReadOnlyDictionary<DateTime, int> DateIndexMa
 
 <span id="uid-a42f913162"></span>
 
-### DrawingContext Property
+### DrawingContext 属性 {#drawingcontext-property}
 
 Gets the drawing context for the current render pass.
 
@@ -268,7 +268,7 @@ public Avalonia.Media.DrawingContext DrawingContext { get; set; }
 
 <span id="uid-1404092026"></span>
 
-### FillBrush Property
+### FillBrush 属性 {#fillbrush-property}
 
 Gets the resolved fill brush for the overlay series.
 
@@ -282,7 +282,7 @@ public Avalonia.Media.IBrush FillBrush { get; set; }
 
 <span id="uid-6010441abd"></span>
 
-### MaxPrice Property
+### MaxPrice 属性 {#maxprice-property}
 
 Gets the maximum price currently visible in the chart.
 
@@ -296,7 +296,7 @@ public double MaxPrice { get; set; }
 
 <span id="uid-b2a299b53a"></span>
 
-### MinPrice Property
+### MinPrice 属性 {#minprice-property}
 
 Gets the minimum price currently visible in the chart.
 
@@ -310,7 +310,7 @@ public double MinPrice { get; set; }
 
 <span id="uid-3db91b1b84"></span>
 
-### PlotArea Property
+### PlotArea 属性 {#plotarea-property}
 
 Gets the chart plot area.
 
@@ -324,7 +324,7 @@ public Avalonia.Rect PlotArea { get; set; }
 
 <span id="uid-3fec567c3a"></span>
 
-### SeriesIndex Property
+### SeriesIndex 属性 {#seriesindex-property}
 
 Gets the series index in the financial chart series collection.
 
@@ -338,7 +338,7 @@ public int SeriesIndex { get; set; }
 
 <span id="uid-e476a63a35"></span>
 
-### SlotWidth Property
+### SlotWidth 属性 {#slotwidth-property}
 
 Gets the width of one financial data slot.
 
@@ -352,7 +352,7 @@ public double SlotWidth { get; set; }
 
 <span id="uid-0afee01c5d"></span>
 
-### StrokeBrush Property
+### StrokeBrush 属性 {#strokebrush-property}
 
 Gets the resolved stroke brush for the overlay series.
 

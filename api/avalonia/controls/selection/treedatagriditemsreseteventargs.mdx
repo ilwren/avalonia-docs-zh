@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridItemsResetEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset) event.
+为 [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset) 事件提供数据。
 
 </div>
 
@@ -50,11 +50,11 @@ public class TreeDataGridItemsResetEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridItemsResetEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridItemsResetEventArgs
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This event is raised when a collection in the hierarchical data structure is reset,
 such as when the collection is cleared or replaced with a new collection.
@@ -63,30 +63,30 @@ The event provides information about which part of the hierarchical structure wa
 reset through the [Avalonia.Controls.Selection.TreeDataGridItemsResetEventArgs.ParentIndex](xref:Avalonia.Controls.Selection.TreeDataGridItemsResetEventArgs.ParentIndex) property, allowing handlers to determine
 whether the entire source was reset or just a subtree within the hierarchy.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridItemsResetEventArgs](#uid-e677c849c6) | Provides data for the [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset) event. |
+| [TreeDataGridItemsResetEventArgs](#uid-e677c849c6) | 为 [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset) 事件提供数据。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e677c849c6"></span>
 
-### TreeDataGridItemsResetEventArgs Constructor
+### TreeDataGridItemsResetEventArgs 构造函数 {#treedatagriditemsreseteventargs-constructor}
 
-Provides data for the [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset) event.
+为 [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SourceReset) 事件提供数据。
 
 ```csharp
 public TreeDataGridItemsResetEventArgs(Avalonia.Controls.IndexPath parentIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `parentIndex` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This event is raised when a collection in the hierarchical data structure is reset,
 such as when the collection is cleared or replaced with a new collection.
@@ -97,9 +97,9 @@ whether the entire source was reset or just a subtree within the hierarchy.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ParentIndex](#uid-8a47dc55f4) | Gets the index path to the parent item whose children collection was reset. |
 
@@ -107,7 +107,7 @@ whether the entire source was reset or just a subtree within the hierarchy.
 
 <span id="uid-8a47dc55f4"></span>
 
-### ParentIndex Property
+### ParentIndex 属性 {#parentindex-property}
 
 Gets the index path to the parent item whose children collection was reset.
 
@@ -115,12 +115,12 @@ Gets the index path to the parent item whose children collection was reset.
 public Avalonia.Controls.IndexPath ParentIndex { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 An [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath) identifying the parent item in the hierarchy.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 When the root collection is reset, this property will be an empty path.
 

@@ -9,7 +9,7 @@ Avalonia uses style selectors to match controls using a custom XAML syntax that 
 
 ## Selector quick reference
 
-| Selector | Description |
+| Selector | 说明 |
 |---|---|
 | [`Button`](/api/avalonia/controls/button) | Selects all `Button` controls. |
 | `Button.red` | Selects all `Button` controls with the `red` style class. |
@@ -56,7 +56,7 @@ If two selectors have equal specificity, the one declared later wins.
 
 For a complete description of all selector formats, operators, and combinators, see the [style selector syntax](/docs/styling/style-selector-syntax) reference.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Style selector syntax](/docs/styling/style-selector-syntax)
 - [Styles](/docs/styling/styles)

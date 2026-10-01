@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">LoggingExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/LoggingExtensions.cs">LoggingExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/LoggingExtensions.cs">LoggingExtensions.cs</a>
 </div>
 
 </div>
@@ -48,15 +48,15 @@ public class LoggingExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> LoggingExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> LoggingExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [LogToDelegate](#uid-52dbc3a8d1) | No summary available. |
+| [LogToDelegate](#uid-52dbc3a8d1) | 暂无摘要。 |
 | [LogToTextWriter](#uid-71d387a690) | Logs Avalonia events to a TextWriter |
 | [LogToTrace](#uid-72a79dec94) | Logs Avalonia events to the [System.Diagnostics.Trace](xref:System.Diagnostics.Trace) sink. |
 
@@ -64,13 +64,13 @@ public class LoggingExtensions
 
 <span id="uid-52dbc3a8d1"></span>
 
-### LogToDelegate Method
+### LogToDelegate 方法 {#logtodelegate-method}
 
 ```csharp
 public Avalonia.AppBuilder LogToDelegate(Avalonia.AppBuilder builder, Action<string> logCallback, Avalonia.Logging.LogEventLevel level, string[] areas)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -84,7 +84,7 @@ public Avalonia.AppBuilder LogToDelegate(Avalonia.AppBuilder builder, Action<str
 `areas` string[]
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -95,7 +95,7 @@ public Avalonia.AppBuilder LogToDelegate(Avalonia.AppBuilder builder, Action<str
 
 <span id="uid-71d387a690"></span>
 
-### LogToTextWriter Method
+### LogToTextWriter 方法 {#logtotextwriter-method}
 
 Logs Avalonia events to a TextWriter
 
@@ -103,7 +103,7 @@ Logs Avalonia events to a TextWriter
 public Avalonia.AppBuilder LogToTextWriter(Avalonia.AppBuilder builder, System.IO.TextWriter writer, Avalonia.Logging.LogEventLevel level, string[] areas)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -125,7 +125,7 @@ The minimum level to log.
 The areas to log. Valid values are listed in [Avalonia.Logging.LogArea](xref:Avalonia.Logging.LogArea).
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -138,7 +138,7 @@ The app builder instance.
 
 <span id="uid-72a79dec94"></span>
 
-### LogToTrace Method
+### LogToTrace 方法 {#logtotrace-method}
 
 Logs Avalonia events to the [System.Diagnostics.Trace](xref:System.Diagnostics.Trace) sink.
 
@@ -146,7 +146,7 @@ Logs Avalonia events to the [System.Diagnostics.Trace](xref:System.Diagnostics.T
 public Avalonia.AppBuilder LogToTrace(Avalonia.AppBuilder builder, Avalonia.Logging.LogEventLevel level, string[] areas)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -163,7 +163,7 @@ The minimum level to log.
 The areas to log. Valid values are listed in [Avalonia.Logging.LogArea](xref:Avalonia.Logging.LogArea).
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 

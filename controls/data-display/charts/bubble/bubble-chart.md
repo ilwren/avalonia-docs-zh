@@ -56,7 +56,7 @@ public ObservableCollection<ProductBubble> BubbleData { get; } = new()
 
 ## Common properties (`BubbleSeries`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of data points. | `null` |
 | `CategoryPath` | Path to the X-axis value. | `null` |
@@ -67,7 +67,7 @@ public ObservableCollection<ProductBubble> BubbleData { get; } = new()
 | `Fill` | Brush used for the bubbles. | Theme-dependent |
 | `Stroke` | Brush used for the bubble outlines. | Theme-dependent |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart)
 - [Packed bubble chart](/controls/data-display/charts/bubble/packed-bubble-chart)

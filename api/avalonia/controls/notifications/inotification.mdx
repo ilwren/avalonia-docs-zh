@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">INotification Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Notifications</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Notifications</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/INotification.cs">INotification.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/INotification.cs">INotification.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface INotification
 
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Expiration](#uid-0d99d5ab69) | Gets the expiration time of the notification after which it will automatically close. If the value is [TimeSpan.Zero](xref:System.TimeSpan.Zero) then the notification will remain open until the user closes it. |
 | [Message](#uid-4cc56a4040) | Gets the notification message. |
@@ -67,7 +67,7 @@ public interface INotification
 
 <span id="uid-0d99d5ab69"></span>
 
-### Expiration Property
+### Expiration 属性 {#expiration-property}
 
 Gets the expiration time of the notification after which it will automatically close.
 If the value is [TimeSpan.Zero](xref:System.TimeSpan.Zero) then the notification will remain open until the user closes it.
@@ -82,7 +82,7 @@ public TimeSpan Expiration { get; set; }
 
 <span id="uid-4cc56a4040"></span>
 
-### Message Property
+### Message 属性 {#message-property}
 
 Gets the notification message.
 
@@ -96,7 +96,7 @@ public string Message { get; set; }
 
 <span id="uid-79c34b575c"></span>
 
-### OnClick Property
+### OnClick 属性 {#onclick-property}
 
 Gets an Action to be run when the notification is clicked.
 
@@ -110,7 +110,7 @@ public Action OnClick { get; set; }
 
 <span id="uid-a9aca8b2a7"></span>
 
-### OnClose Property
+### OnClose 属性 {#onclose-property}
 
 Gets an Action to be run when the notification is closed.
 
@@ -124,7 +124,7 @@ public Action OnClose { get; set; }
 
 <span id="uid-ffb70a14d4"></span>
 
-### Title Property
+### Title 属性 {#title-property}
 
 Gets the Title of the notification.
 
@@ -138,7 +138,7 @@ public string Title { get; set; }
 
 <span id="uid-608336dff2"></span>
 
-### Type Property
+### Type 属性 {#type-property}
 
 Gets the [Avalonia.Controls.Notifications.NotificationType](xref:Avalonia.Controls.Notifications.NotificationType) of the notification.
 

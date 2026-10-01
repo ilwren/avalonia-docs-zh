@@ -48,6 +48,6 @@ In this state, the visualizer is fully visible, and the refresh animation begins
 ### Peeking
 This occurs when the user starts a pull gesture while the content is in a position where refresh is not allowed. This typical happens when the child ScrollViewer isn't at Offset 0, with respect to the pull direction and scroll direction, when the pull is started. The visualizer is hidden and the visualizer's state can only progress to `Idle` when the pull is released.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [`RefreshContainer.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PullToRefresh/RefreshContainer.cs)

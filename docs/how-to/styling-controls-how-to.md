@@ -274,7 +274,7 @@ Pseudo-classes let you apply styles based on a control's current state without w
 
 Common pseudo-classes include `:pointerover`, `:pressed`, `:disabled`, `:focus`, `:focus-visible`, `:checked`, and `:error`. For a complete list, see [Pseudo-classes](/docs/styling/pseudoclasses).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Style Classes](/docs/styling/style-classes)

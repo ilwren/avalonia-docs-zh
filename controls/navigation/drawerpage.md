@@ -36,7 +36,7 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 ## Useful properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The main content area of the page. |
 | `ContentTemplate` | `IDataTemplate?` | Default page template | A data template for the main content. |
@@ -68,7 +68,7 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 ### DrawerBehavior values
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
 | `Auto` | The drawer opens and closes normally. `DrawerLayoutBehavior` and `DrawerBreakpointLength` determine whether it overlays or takes layout space. |
 | `Flyout` | The drawer behaves as a flyout overlay, closing automatically when the user taps outside. |
@@ -77,7 +77,7 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 ### DrawerLayoutBehavior values
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
 | `Overlay` | The drawer slides over the content. The content area is not resized. |
 | `Split` | The drawer pushes the content to the side. Both the drawer and content are visible simultaneously. |
@@ -86,16 +86,16 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 ### DrawerPlacement values
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
 | `Left` | The drawer appears on the leading side: left in left-to-right layouts, right in right-to-left layouts. |
 | `Right` | The drawer appears on the trailing side: right in left-to-right layouts, left in right-to-left layouts. |
 | `Top` | The drawer appears at the top. |
 | `Bottom` | The drawer appears at the bottom. |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 | --- | --- |
 | `Opened` | Raised when the drawer finishes opening. |
 | `Closing` | Raised when the drawer is about to close. Set `Cancel = true` on the event args to prevent closing. |
@@ -515,7 +515,7 @@ When the main content is a `NavigationPage`, the hamburger menu icon automatical
 </DrawerPage>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentPage](/controls/navigation/contentpage)
 - [NavigationPage](/controls/navigation/navigationpage)

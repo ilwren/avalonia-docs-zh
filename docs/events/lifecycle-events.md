@@ -13,7 +13,7 @@ Avalonia controls raise several events during their creation, attachment to the 
 
 When a control is created and added to the visual tree, events fire in the following order:
 
-| Order | Event / Method | Defined On | Description |
+| Order | Event / Method | Defined On | 说明 |
 |---|---|---|---|
 | 1 | `Initialized` | `StyledElement` | All property values from XAML have been set. The control is not yet part of the visual tree. |
 | 2 | `AttachedToVisualTree` | `Visual` | The control has been added to a rooted visual tree. Layout has not yet occurred. |
@@ -23,7 +23,7 @@ When a control is created and added to the visual tree, events fire in the follo
 
 When a control is removed:
 
-| Order | Event / Method | Defined On | Description |
+| Order | Event / Method | Defined On | 说明 |
 |---|---|---|---|
 | 1 | `Unloaded` | `Control` | The control is about to be removed from the visual tree. |
 | 2 | `DetachedFromVisualTree` | `Visual` | The control has been removed from the visual tree. |
@@ -34,7 +34,7 @@ In addition to the events described above, layout controls can also participate 
 
 During the initial run (i.e., when the control is first attached to the visual tree), these events occur in the stated sequence between the `AttachedToVisualTree` and `Loaded` events [detailed above](#control-creation). However, `MeasureOverride` and `ArrangeOverride` can run multiple times during a control's lifetime, as they are triggered whenever the layout is updated, e.g., when the window size is adjusted.
 
-| Order | Event / Method | Defined On | Description |
+| Order | Event / Method | Defined On | 说明 |
 |---|---|---|---|
 | 1 | `ApplyTemplate` | `Control` | Applies the [control template](/docs/styling/control-template-walkthrough) and creates the required templated visual parts. |
 | 2 | `MeasureOverride` | `Control` | Called during the [measure pass](/docs/layout/#measuring-and-arranging-children) of layout. Determines the desired size of a control. |
@@ -91,7 +91,7 @@ public class MyControl : Control
 
 The `VisualTreeAttachmentEventArgs` provides:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `RootVisual` | `Visual` | The root visual of the tree the control was attached to. |
 | `AttachmentPoint` | `Visual` | The visual that the control was directly attached to or detached from. |
@@ -252,7 +252,7 @@ public class StatusMonitor : Control
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Events Overview](/docs/events): How the routed event system works.
 - [Application Lifetimes](/docs/fundamentals/application-lifetimes): Application-level lifecycle events.

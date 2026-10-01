@@ -56,7 +56,7 @@ public ObservableCollection<RatingItem> RatingData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |
@@ -68,7 +68,7 @@ public ObservableCollection<RatingItem> RatingData { get; } = new()
 | `ShowConnectorLines` | Whether to show lines connecting the dots. | `false` |
 | `ConnectorThickness` | The thickness of the connector lines. | `1` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart)
 - [Lollipop chart](/controls/data-display/charts/cartesian/lollipop-chart)

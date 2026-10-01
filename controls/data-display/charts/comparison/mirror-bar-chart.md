@@ -49,7 +49,7 @@ public ObservableCollection<MirrorBarItem> MirrorData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of mirrored comparison items. | `null` |
 | `LeftValuePath` | Path to the value rendered on the left side. | `null` |
@@ -63,7 +63,7 @@ public ObservableCollection<MirrorBarItem> MirrorData { get; } = new()
 | `RightTitle` | Optional title for the right side. | `null` |
 | `IsHighlightEnabled` | Enables hover highlighting for mirrored bars. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Population pyramid chart](/controls/data-display/charts/comparison/population-pyramid-chart)
 - [Tornado chart](/controls/data-display/charts/comparison/tornado-chart)

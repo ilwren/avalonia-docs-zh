@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting started
+title: 快速上手
 ---
 
 :::tip[Use AI to help with migration]

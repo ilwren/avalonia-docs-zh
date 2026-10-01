@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EglInterface Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.OpenGL.Egl</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.OpenGL.Egl</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.OpenGL</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.OpenGL</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglInterface.cs">EglInterface.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglInterface.cs">EglInterface.cs</a>
 </div>
 
 </div>
@@ -48,25 +48,25 @@ public class EglInterface
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglInterface
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglInterface
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [EglInterface (3 overloads)](#uid-0ae5a0b9b9) | No summary available. |
+| [EglInterface (3 overloads)](#uid-0ae5a0b9b9) | 暂无摘要。 |
 
 <span id="uid-0ae5a0b9b9"></span>
 
-### EglInterface overloads
+### EglInterface 的重载 {#eglinterface-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-52453e51cf"></span>
 
-#### EglInterface Constructor
+#### EglInterface 构造函数 {#eglinterface-constructor}
 
 ```csharp
 public EglInterface()
@@ -78,13 +78,13 @@ public EglInterface()
 
 <span id="uid-60ac5be1fe"></span>
 
-#### EglInterface Constructor
+#### EglInterface 构造函数 {#eglinterface-constructor-1}
 
 ```csharp
 public EglInterface(Func<string, IntPtr> getProcAddress)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `getProcAddress` Func&lt;string, IntPtr&gt;
 
@@ -95,76 +95,76 @@ public EglInterface(Func<string, IntPtr> getProcAddress)
 
 <span id="uid-f7ef09c096"></span>
 
-#### EglInterface Constructor
+#### EglInterface 构造函数 {#eglinterface-constructor-2}
 
 ```csharp
 public EglInterface(string library)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `library` string
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BindApi](#uid-805d0cb9e5) | No summary available. |
-| [BindTexImage](#uid-789bee844a) | No summary available. |
-| [ChooseConfig](#uid-54e6877cc1) | No summary available. |
-| [ChooseConfigs](#uid-e42705f255) | No summary available. |
-| [CreateContext](#uid-19f85aec8e) | No summary available. |
-| [CreateImageKHR](#uid-c0cfa29c59) | No summary available. |
-| [CreatePbufferFromClientBuffer](#uid-63f941ac31) | No summary available. |
-| [CreatePbufferFromClientBufferPtr](#uid-12de878bed) | No summary available. |
-| [CreatePBufferSurface](#uid-adb9f241be) | No summary available. |
-| [CreateWindowSurface](#uid-3a05611877) | No summary available. |
-| [DestroyContext](#uid-898aaba5f2) | No summary available. |
-| [DestroyImageKHR](#uid-1604f91eff) | No summary available. |
-| [DestroySurface](#uid-2741d3836d) | No summary available. |
-| [GetConfigAttrib](#uid-77b209828a) | No summary available. |
-| [GetCurrentContext](#uid-b3b4666407) | No summary available. |
-| [GetCurrentDisplay](#uid-fadf00b154) | No summary available. |
-| [GetCurrentSurface](#uid-e640bcd072) | No summary available. |
-| [GetDisplay](#uid-329adf345c) | No summary available. |
-| [GetError](#uid-c0e76ca207) | No summary available. |
-| [GetPlatformDisplayExt](#uid-a988a3980e) | No summary available. |
-| [GetProcAddress](#uid-3fa890b826) | No summary available. |
-| [Initialize](#uid-4345d1d2e4) | No summary available. |
-| [MakeCurrent](#uid-d252dc33e3) | No summary available. |
-| [QueryApi](#uid-601c5153b6) | No summary available. |
-| [QueryDeviceAttribExt](#uid-9911ebf310) | No summary available. |
-| [QueryDisplayAttribExt](#uid-a90a4cd3e7) | No summary available. |
-| [QueryDmaBufFormatsEXT](#uid-51f4106204) | No summary available. |
-| [QueryDmaBufModifiersEXT](#uid-b0f0ddcdd1) | No summary available. |
-| [QueryString](#uid-a12928cbb0) | No summary available. |
-| [QueryStringNative](#uid-534df08fa9) | No summary available. |
-| [SwapBuffers](#uid-d6d3bd7210) | No summary available. |
-| [SwapInterval](#uid-c2b98245e2) | No summary available. |
-| [Terminate](#uid-ca4e4435c3) | No summary available. |
-| [WaitClient](#uid-f34c449522) | No summary available. |
-| [WaitGL](#uid-071917b6ea) | No summary available. |
-| [WaitNative](#uid-9189e829e5) | No summary available. |
+| [BindApi](#uid-805d0cb9e5) | 暂无摘要。 |
+| [BindTexImage](#uid-789bee844a) | 暂无摘要。 |
+| [ChooseConfig](#uid-54e6877cc1) | 暂无摘要。 |
+| [ChooseConfigs](#uid-e42705f255) | 暂无摘要。 |
+| [CreateContext](#uid-19f85aec8e) | 暂无摘要。 |
+| [CreateImageKHR](#uid-c0cfa29c59) | 暂无摘要。 |
+| [CreatePbufferFromClientBuffer](#uid-63f941ac31) | 暂无摘要。 |
+| [CreatePbufferFromClientBufferPtr](#uid-12de878bed) | 暂无摘要。 |
+| [CreatePBufferSurface](#uid-adb9f241be) | 暂无摘要。 |
+| [CreateWindowSurface](#uid-3a05611877) | 暂无摘要。 |
+| [DestroyContext](#uid-898aaba5f2) | 暂无摘要。 |
+| [DestroyImageKHR](#uid-1604f91eff) | 暂无摘要。 |
+| [DestroySurface](#uid-2741d3836d) | 暂无摘要。 |
+| [GetConfigAttrib](#uid-77b209828a) | 暂无摘要。 |
+| [GetCurrentContext](#uid-b3b4666407) | 暂无摘要。 |
+| [GetCurrentDisplay](#uid-fadf00b154) | 暂无摘要。 |
+| [GetCurrentSurface](#uid-e640bcd072) | 暂无摘要。 |
+| [GetDisplay](#uid-329adf345c) | 暂无摘要。 |
+| [GetError](#uid-c0e76ca207) | 暂无摘要。 |
+| [GetPlatformDisplayExt](#uid-a988a3980e) | 暂无摘要。 |
+| [GetProcAddress](#uid-3fa890b826) | 暂无摘要。 |
+| [Initialize](#uid-4345d1d2e4) | 暂无摘要。 |
+| [MakeCurrent](#uid-d252dc33e3) | 暂无摘要。 |
+| [QueryApi](#uid-601c5153b6) | 暂无摘要。 |
+| [QueryDeviceAttribExt](#uid-9911ebf310) | 暂无摘要。 |
+| [QueryDisplayAttribExt](#uid-a90a4cd3e7) | 暂无摘要。 |
+| [QueryDmaBufFormatsEXT](#uid-51f4106204) | 暂无摘要。 |
+| [QueryDmaBufModifiersEXT](#uid-b0f0ddcdd1) | 暂无摘要。 |
+| [QueryString](#uid-a12928cbb0) | 暂无摘要。 |
+| [QueryStringNative](#uid-534df08fa9) | 暂无摘要。 |
+| [SwapBuffers](#uid-d6d3bd7210) | 暂无摘要。 |
+| [SwapInterval](#uid-c2b98245e2) | 暂无摘要。 |
+| [Terminate](#uid-ca4e4435c3) | 暂无摘要。 |
+| [WaitClient](#uid-f34c449522) | 暂无摘要。 |
+| [WaitGL](#uid-071917b6ea) | 暂无摘要。 |
+| [WaitNative](#uid-9189e829e5) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-805d0cb9e5"></span>
 
-### BindApi Method
+### BindApi 方法 {#bindapi-method}
 
 ```csharp
 public bool BindApi(int api)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `api` int
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -175,13 +175,13 @@ bool
 
 <span id="uid-789bee844a"></span>
 
-### BindTexImage Method
+### BindTexImage 方法 {#bindteximage-method}
 
 ```csharp
 public int BindTexImage(IntPtr display, IntPtr surface, int buffer)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `display` IntPtr
 
@@ -192,7 +192,7 @@ public int BindTexImage(IntPtr display, IntPtr surface, int buffer)
 `buffer` int
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 int
 
@@ -203,13 +203,13 @@ int
 
 <span id="uid-54e6877cc1"></span>
 
-### ChooseConfig Method
+### ChooseConfig 方法 {#chooseconfig-method}
 
 ```csharp
 public bool ChooseConfig(IntPtr display, int[] attribs, IntPtr& surfaceConfig, int numConfigs, int& choosenConfig)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `display` IntPtr
 
@@ -226,7 +226,7 @@ public bool ChooseConfig(IntPtr display, int[] attribs, IntPtr& surfaceConfig, i
 `choosenConfig` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
@@ -237,13 +237,13 @@ bool
 
 <span id="uid-e42705f255"></span>
 
-### ChooseConfigs Method
+### ChooseConfigs 方法 {#chooseconfigs-method}
 
 ```csharp
 public bool ChooseConfigs(IntPtr display, int[] attribs, IntPtr[] configs, int configSize, int& numConfigs)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `display` IntPtr
 
@@ -260,7 +260,7 @@ public bool ChooseConfigs(IntPtr display, int[] attribs, IntPtr[] configs, int c
 `numConfigs` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -271,13 +271,13 @@ bool
 
 <span id="uid-19f85aec8e"></span>
 
-### CreateContext Method
+### CreateContext 方法 {#createcontext-method}
 
 ```csharp
 public IntPtr CreateContext(IntPtr display, IntPtr config, IntPtr share, int[] attrs)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `display` IntPtr
 
@@ -291,7 +291,7 @@ public IntPtr CreateContext(IntPtr display, IntPtr config, IntPtr share, int[] a
 `attrs` int[]
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 IntPtr
 
@@ -302,13 +302,13 @@ IntPtr
 
 <span id="uid-c0cfa29c59"></span>
 
-### CreateImageKHR Method
+### CreateImageKHR 方法 {#createimagekhr-method}
 
 ```csharp
 public IntPtr CreateImageKHR(IntPtr display, IntPtr context, int target, IntPtr clientBuffer, int[] attribs)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `display` IntPtr
 
@@ -325,7 +325,7 @@ public IntPtr CreateImageKHR(IntPtr display, IntPtr context, int target, IntPtr 
 `attribs` int[]
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 IntPtr
 
@@ -336,13 +336,13 @@ IntPtr
 
 <span id="uid-63f941ac31"></span>
 
-### CreatePbufferFromClientBuffer Method
+### CreatePbufferFromClientBuffer 方法 {#createpbufferfromclientbuffer-method}
 
 ```csharp
 public IntPtr CreatePbufferFromClientBuffer(IntPtr display, int buftype, IntPtr buffer, IntPtr config, int[] attrib_list)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `display` IntPtr
 
@@ -359,7 +359,7 @@ public IntPtr CreatePbufferFromClientBuffer(IntPtr display, int buftype, IntPtr 
 `attrib_list` int[]
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 IntPtr
 
@@ -370,13 +370,13 @@ IntPtr
 
 <span id="uid-12de878bed"></span>
 
-### CreatePbufferFromClientBufferPtr Method
+### CreatePbufferFromClientBufferPtr 方法 {#createpbufferfromclientbufferptr-method}
 
 ```csharp
 public IntPtr CreatePbufferFromClientBufferPtr(IntPtr display, int buftype, IntPtr buffer, IntPtr config, int* attrib_list)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `display` IntPtr
 
@@ -393,7 +393,7 @@ public IntPtr CreatePbufferFromClientBufferPtr(IntPtr display, int buftype, IntP
 `attrib_list` int*
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 IntPtr
 
@@ -404,13 +404,13 @@ IntPtr
 
 <span id="uid-adb9f241be"></span>
 
-### CreatePBufferSurface Method
+### CreatePBufferSurface 方法 {#createpbuffersurface-method}
 
 ```csharp
 public IntPtr CreatePBufferSurface(IntPtr display, IntPtr config, int[] attrs)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `display` IntPtr
 
@@ -421,7 +421,7 @@ public IntPtr CreatePBufferSurface(IntPtr display, IntPtr config, int[] attrs)
 `attrs` int[]
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 IntPtr
 
@@ -432,13 +432,13 @@ IntPtr
 
 <span id="uid-3a05611877"></span>
 
-### CreateWindowSurface Method
+### CreateWindowSurface 方法 {#createwindowsurface-method}
 
 ```csharp
 public IntPtr CreateWindowSurface(IntPtr display, IntPtr config, IntPtr window, int[] attrs)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `display` IntPtr
 
@@ -452,7 +452,7 @@ public IntPtr CreateWindowSurface(IntPtr display, IntPtr config, IntPtr window, 
 `attrs` int[]
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 IntPtr
 
@@ -463,13 +463,13 @@ IntPtr
 
 <span id="uid-898aaba5f2"></span>
 
-### DestroyContext Method
+### DestroyContext 方法 {#destroycontext-method}
 
 ```csharp
 public bool DestroyContext(IntPtr display, IntPtr context)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `display` IntPtr
 
@@ -477,7 +477,7 @@ public bool DestroyContext(IntPtr display, IntPtr context)
 `context` IntPtr
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 bool
 
@@ -488,13 +488,13 @@ bool
 
 <span id="uid-1604f91eff"></span>
 
-### DestroyImageKHR Method
+### DestroyImageKHR 方法 {#destroyimagekhr-method}
 
 ```csharp
 public bool DestroyImageKHR(IntPtr display, IntPtr image)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `display` IntPtr
 
@@ -502,7 +502,7 @@ public bool DestroyImageKHR(IntPtr display, IntPtr image)
 `image` IntPtr
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 bool
 
@@ -513,13 +513,13 @@ bool
 
 <span id="uid-2741d3836d"></span>
 
-### DestroySurface Method
+### DestroySurface 方法 {#destroysurface-method}
 
 ```csharp
 public void DestroySurface(IntPtr display, IntPtr surface)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `display` IntPtr
 
@@ -533,13 +533,13 @@ public void DestroySurface(IntPtr display, IntPtr surface)
 
 <span id="uid-77b209828a"></span>
 
-### GetConfigAttrib Method
+### GetConfigAttrib 方法 {#getconfigattrib-method}
 
 ```csharp
 public bool GetConfigAttrib(IntPtr display, IntPtr config, int attr, int& rv)
 ```
 
-#### Parameters
+#### 参数 {#parameters-15}
 
 `display` IntPtr
 
@@ -553,7 +553,7 @@ public bool GetConfigAttrib(IntPtr display, IntPtr config, int attr, int& rv)
 `rv` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-12}
 
 bool
 
@@ -564,13 +564,13 @@ bool
 
 <span id="uid-b3b4666407"></span>
 
-### GetCurrentContext Method
+### GetCurrentContext 方法 {#getcurrentcontext-method}
 
 ```csharp
 public IntPtr GetCurrentContext()
 ```
 
-#### Returns
+#### 返回值 {#returns-13}
 
 IntPtr
 
@@ -581,13 +581,13 @@ IntPtr
 
 <span id="uid-fadf00b154"></span>
 
-### GetCurrentDisplay Method
+### GetCurrentDisplay 方法 {#getcurrentdisplay-method}
 
 ```csharp
 public IntPtr GetCurrentDisplay()
 ```
 
-#### Returns
+#### 返回值 {#returns-14}
 
 IntPtr
 
@@ -598,18 +598,18 @@ IntPtr
 
 <span id="uid-e640bcd072"></span>
 
-### GetCurrentSurface Method
+### GetCurrentSurface 方法 {#getcurrentsurface-method}
 
 ```csharp
 public IntPtr GetCurrentSurface(int readDraw)
 ```
 
-#### Parameters
+#### 参数 {#parameters-16}
 
 `readDraw` int
 
 
-#### Returns
+#### 返回值 {#returns-15}
 
 IntPtr
 
@@ -620,18 +620,18 @@ IntPtr
 
 <span id="uid-329adf345c"></span>
 
-### GetDisplay Method
+### GetDisplay 方法 {#getdisplay-method}
 
 ```csharp
 public IntPtr GetDisplay(IntPtr nativeDisplay)
 ```
 
-#### Parameters
+#### 参数 {#parameters-17}
 
 `nativeDisplay` IntPtr
 
 
-#### Returns
+#### 返回值 {#returns-16}
 
 IntPtr
 
@@ -642,13 +642,13 @@ IntPtr
 
 <span id="uid-c0e76ca207"></span>
 
-### GetError Method
+### GetError 方法 {#geterror-method}
 
 ```csharp
 public int GetError()
 ```
 
-#### Returns
+#### 返回值 {#returns-17}
 
 int
 
@@ -659,13 +659,13 @@ int
 
 <span id="uid-a988a3980e"></span>
 
-### GetPlatformDisplayExt Method
+### GetPlatformDisplayExt 方法 {#getplatformdisplayext-method}
 
 ```csharp
 public IntPtr GetPlatformDisplayExt(int platform, IntPtr nativeDisplay, int[] attrs)
 ```
 
-#### Parameters
+#### 参数 {#parameters-18}
 
 `platform` int
 
@@ -676,7 +676,7 @@ public IntPtr GetPlatformDisplayExt(int platform, IntPtr nativeDisplay, int[] at
 `attrs` int[]
 
 
-#### Returns
+#### 返回值 {#returns-18}
 
 IntPtr
 
@@ -687,18 +687,18 @@ IntPtr
 
 <span id="uid-3fa890b826"></span>
 
-### GetProcAddress Method
+### GetProcAddress 方法 {#getprocaddress-method}
 
 ```csharp
 public IntPtr GetProcAddress(IntPtr proc)
 ```
 
-#### Parameters
+#### 参数 {#parameters-19}
 
 `proc` IntPtr
 
 
-#### Returns
+#### 返回值 {#returns-19}
 
 IntPtr
 
@@ -709,13 +709,13 @@ IntPtr
 
 <span id="uid-4345d1d2e4"></span>
 
-### Initialize Method
+### Initialize 方法 {#initialize-method}
 
 ```csharp
 public bool Initialize(IntPtr display, int& major, int& minor)
 ```
 
-#### Parameters
+#### 参数 {#parameters-20}
 
 `display` IntPtr
 
@@ -726,7 +726,7 @@ public bool Initialize(IntPtr display, int& major, int& minor)
 `minor` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-20}
 
 bool
 
@@ -737,13 +737,13 @@ bool
 
 <span id="uid-d252dc33e3"></span>
 
-### MakeCurrent Method
+### MakeCurrent 方法 {#makecurrent-method}
 
 ```csharp
 public bool MakeCurrent(IntPtr display, IntPtr draw, IntPtr read, IntPtr context)
 ```
 
-#### Parameters
+#### 参数 {#parameters-21}
 
 `display` IntPtr
 
@@ -757,7 +757,7 @@ public bool MakeCurrent(IntPtr display, IntPtr draw, IntPtr read, IntPtr context
 `context` IntPtr
 
 
-#### Returns
+#### 返回值 {#returns-21}
 
 bool
 
@@ -768,13 +768,13 @@ bool
 
 <span id="uid-601c5153b6"></span>
 
-### QueryApi Method
+### QueryApi 方法 {#queryapi-method}
 
 ```csharp
 public int QueryApi()
 ```
 
-#### Returns
+#### 返回值 {#returns-22}
 
 int
 
@@ -785,13 +785,13 @@ int
 
 <span id="uid-9911ebf310"></span>
 
-### QueryDeviceAttribExt Method
+### QueryDeviceAttribExt 方法 {#querydeviceattribext-method}
 
 ```csharp
 public bool QueryDeviceAttribExt(IntPtr display, int attr, IntPtr& res)
 ```
 
-#### Parameters
+#### 参数 {#parameters-22}
 
 `display` IntPtr
 
@@ -802,7 +802,7 @@ public bool QueryDeviceAttribExt(IntPtr display, int attr, IntPtr& res)
 `res` IntPtr&amp;
 
 
-#### Returns
+#### 返回值 {#returns-23}
 
 bool
 
@@ -813,13 +813,13 @@ bool
 
 <span id="uid-a90a4cd3e7"></span>
 
-### QueryDisplayAttribExt Method
+### QueryDisplayAttribExt 方法 {#querydisplayattribext-method}
 
 ```csharp
 public bool QueryDisplayAttribExt(IntPtr display, int attr, IntPtr& res)
 ```
 
-#### Parameters
+#### 参数 {#parameters-23}
 
 `display` IntPtr
 
@@ -830,7 +830,7 @@ public bool QueryDisplayAttribExt(IntPtr display, int attr, IntPtr& res)
 `res` IntPtr&amp;
 
 
-#### Returns
+#### 返回值 {#returns-24}
 
 bool
 
@@ -841,13 +841,13 @@ bool
 
 <span id="uid-51f4106204"></span>
 
-### QueryDmaBufFormatsEXT Method
+### QueryDmaBufFormatsEXT 方法 {#querydmabufformatsext-method}
 
 ```csharp
 public bool QueryDmaBufFormatsEXT(IntPtr display, int maxFormats, int* formats, int& numFormats)
 ```
 
-#### Parameters
+#### 参数 {#parameters-24}
 
 `display` IntPtr
 
@@ -861,7 +861,7 @@ public bool QueryDmaBufFormatsEXT(IntPtr display, int maxFormats, int* formats, 
 `numFormats` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-25}
 
 bool
 
@@ -872,13 +872,13 @@ bool
 
 <span id="uid-b0f0ddcdd1"></span>
 
-### QueryDmaBufModifiersEXT Method
+### QueryDmaBufModifiersEXT 方法 {#querydmabufmodifiersext-method}
 
 ```csharp
 public bool QueryDmaBufModifiersEXT(IntPtr display, int format, int maxModifiers, ulong* modifiers, bool* externalOnly, int& numModifiers)
 ```
 
-#### Parameters
+#### 参数 {#parameters-25}
 
 `display` IntPtr
 
@@ -898,7 +898,7 @@ public bool QueryDmaBufModifiersEXT(IntPtr display, int format, int maxModifiers
 `numModifiers` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-26}
 
 bool
 
@@ -909,13 +909,13 @@ bool
 
 <span id="uid-a12928cbb0"></span>
 
-### QueryString Method
+### QueryString 方法 {#querystring-method}
 
 ```csharp
 public string QueryString(IntPtr display, int i)
 ```
 
-#### Parameters
+#### 参数 {#parameters-26}
 
 `display` IntPtr
 
@@ -923,7 +923,7 @@ public string QueryString(IntPtr display, int i)
 `i` int
 
 
-#### Returns
+#### 返回值 {#returns-27}
 
 string
 
@@ -934,13 +934,13 @@ string
 
 <span id="uid-534df08fa9"></span>
 
-### QueryStringNative Method
+### QueryStringNative 方法 {#querystringnative-method}
 
 ```csharp
 public IntPtr QueryStringNative(IntPtr display, int i)
 ```
 
-#### Parameters
+#### 参数 {#parameters-27}
 
 `display` IntPtr
 
@@ -948,7 +948,7 @@ public IntPtr QueryStringNative(IntPtr display, int i)
 `i` int
 
 
-#### Returns
+#### 返回值 {#returns-28}
 
 IntPtr
 
@@ -959,13 +959,13 @@ IntPtr
 
 <span id="uid-d6d3bd7210"></span>
 
-### SwapBuffers Method
+### SwapBuffers 方法 {#swapbuffers-method}
 
 ```csharp
 public void SwapBuffers(IntPtr display, IntPtr surface)
 ```
 
-#### Parameters
+#### 参数 {#parameters-28}
 
 `display` IntPtr
 
@@ -979,13 +979,13 @@ public void SwapBuffers(IntPtr display, IntPtr surface)
 
 <span id="uid-c2b98245e2"></span>
 
-### SwapInterval Method
+### SwapInterval 方法 {#swapinterval-method}
 
 ```csharp
 public bool SwapInterval(IntPtr display, int interval)
 ```
 
-#### Parameters
+#### 参数 {#parameters-29}
 
 `display` IntPtr
 
@@ -993,7 +993,7 @@ public bool SwapInterval(IntPtr display, int interval)
 `interval` int
 
 
-#### Returns
+#### 返回值 {#returns-29}
 
 bool
 
@@ -1004,13 +1004,13 @@ bool
 
 <span id="uid-ca4e4435c3"></span>
 
-### Terminate Method
+### Terminate 方法 {#terminate-method}
 
 ```csharp
 public void Terminate(IntPtr display)
 ```
 
-#### Parameters
+#### 参数 {#parameters-30}
 
 `display` IntPtr
 
@@ -1021,13 +1021,13 @@ public void Terminate(IntPtr display)
 
 <span id="uid-f34c449522"></span>
 
-### WaitClient Method
+### WaitClient 方法 {#waitclient-method}
 
 ```csharp
 public bool WaitClient()
 ```
 
-#### Returns
+#### 返回值 {#returns-30}
 
 bool
 
@@ -1038,13 +1038,13 @@ bool
 
 <span id="uid-071917b6ea"></span>
 
-### WaitGL Method
+### WaitGL 方法 {#waitgl-method}
 
 ```csharp
 public bool WaitGL()
 ```
 
-#### Returns
+#### 返回值 {#returns-31}
 
 bool
 
@@ -1055,41 +1055,41 @@ bool
 
 <span id="uid-9189e829e5"></span>
 
-### WaitNative Method
+### WaitNative 方法 {#waitnative-method}
 
 ```csharp
 public bool WaitNative(int engine)
 ```
 
-#### Parameters
+#### 参数 {#parameters-31}
 
 `engine` int
 
 
-#### Returns
+#### 返回值 {#returns-32}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsCreateImageKHRAvailable](#uid-bd55bb9250) | No summary available. |
-| [IsDestroyImageKHRAvailable](#uid-c6962ba067) | No summary available. |
-| [IsGetPlatformDisplayExtAvailable](#uid-fb9d19de69) | No summary available. |
-| [IsQueryDeviceAttribExtAvailable](#uid-5f95b932cb) | No summary available. |
-| [IsQueryDisplayAttribExtAvailable](#uid-bfabc405c6) | No summary available. |
-| [IsQueryDmaBufFormatsEXTAvailable](#uid-3c1dd009e0) | No summary available. |
-| [IsQueryDmaBufModifiersEXTAvailable](#uid-838d2a2d00) | No summary available. |
+| [IsCreateImageKHRAvailable](#uid-bd55bb9250) | 暂无摘要。 |
+| [IsDestroyImageKHRAvailable](#uid-c6962ba067) | 暂无摘要。 |
+| [IsGetPlatformDisplayExtAvailable](#uid-fb9d19de69) | 暂无摘要。 |
+| [IsQueryDeviceAttribExtAvailable](#uid-5f95b932cb) | 暂无摘要。 |
+| [IsQueryDisplayAttribExtAvailable](#uid-bfabc405c6) | 暂无摘要。 |
+| [IsQueryDmaBufFormatsEXTAvailable](#uid-3c1dd009e0) | 暂无摘要。 |
+| [IsQueryDmaBufModifiersEXTAvailable](#uid-838d2a2d00) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bd55bb9250"></span>
 
-### IsCreateImageKHRAvailable Property
+### IsCreateImageKHRAvailable 属性 {#iscreateimagekhravailable-property}
 
 ```csharp
 public bool IsCreateImageKHRAvailable { get; set; }
@@ -1101,7 +1101,7 @@ public bool IsCreateImageKHRAvailable { get; set; }
 
 <span id="uid-c6962ba067"></span>
 
-### IsDestroyImageKHRAvailable Property
+### IsDestroyImageKHRAvailable 属性 {#isdestroyimagekhravailable-property}
 
 ```csharp
 public bool IsDestroyImageKHRAvailable { get; set; }
@@ -1113,7 +1113,7 @@ public bool IsDestroyImageKHRAvailable { get; set; }
 
 <span id="uid-fb9d19de69"></span>
 
-### IsGetPlatformDisplayExtAvailable Property
+### IsGetPlatformDisplayExtAvailable 属性 {#isgetplatformdisplayextavailable-property}
 
 ```csharp
 public bool IsGetPlatformDisplayExtAvailable { get; set; }
@@ -1125,7 +1125,7 @@ public bool IsGetPlatformDisplayExtAvailable { get; set; }
 
 <span id="uid-5f95b932cb"></span>
 
-### IsQueryDeviceAttribExtAvailable Property
+### IsQueryDeviceAttribExtAvailable 属性 {#isquerydeviceattribextavailable-property}
 
 ```csharp
 public bool IsQueryDeviceAttribExtAvailable { get; set; }
@@ -1137,7 +1137,7 @@ public bool IsQueryDeviceAttribExtAvailable { get; set; }
 
 <span id="uid-bfabc405c6"></span>
 
-### IsQueryDisplayAttribExtAvailable Property
+### IsQueryDisplayAttribExtAvailable 属性 {#isquerydisplayattribextavailable-property}
 
 ```csharp
 public bool IsQueryDisplayAttribExtAvailable { get; set; }
@@ -1149,7 +1149,7 @@ public bool IsQueryDisplayAttribExtAvailable { get; set; }
 
 <span id="uid-3c1dd009e0"></span>
 
-### IsQueryDmaBufFormatsEXTAvailable Property
+### IsQueryDmaBufFormatsEXTAvailable 属性 {#isquerydmabufformatsextavailable-property}
 
 ```csharp
 public bool IsQueryDmaBufFormatsEXTAvailable { get; set; }
@@ -1161,7 +1161,7 @@ public bool IsQueryDmaBufFormatsEXTAvailable { get; set; }
 
 <span id="uid-838d2a2d00"></span>
 
-### IsQueryDmaBufModifiersEXTAvailable Property
+### IsQueryDmaBufModifiersEXTAvailable 属性 {#isquerydmabufmodifiersextavailable-property}
 
 ```csharp
 public bool IsQueryDmaBufModifiersEXTAvailable { get; set; }

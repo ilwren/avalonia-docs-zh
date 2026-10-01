@@ -101,7 +101,7 @@ public class ItemClass
 
 <Image light={BindStyleClassSampleScreenshot} alt="Sample app showing style classes toggled by data binding" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Data binding syntax](/docs/data-binding/data-binding-syntax)

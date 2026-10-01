@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InsertImageAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public class InsertImageAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> InsertImageAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> InsertImageAction
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Call [Avalonia.Controls.Documents.Primitives.Actions.InsertImageAction.ExecuteWith(Avalonia.Controls.Documents.Primitives.ITextEditorHost,ReadOnlyMemory&#123;byte&#125;,string,double,double,string)](xref:Avalonia.Controls.Documents.Primitives.Actions.InsertImageAction.ExecuteWith%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%2CSystem.ReadOnlyMemory%7BSystem.Byte%7D%2CSystem.String%2CSystem.Double%2CSystem.Double%2CSystem.String%29) when the image bytes are already available
 (drag-drop, application logic, custom pickers).
@@ -62,17 +62,17 @@ Call [Avalonia.Controls.Documents.Primitives.Actions.InsertImageAction.ExecuteWi
 The default [Avalonia.Controls.Documents.Primitives.Actions.InsertImageAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.InsertImageAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) opens a file picker via the host's
 [Avalonia.Controls.TopLevel.StorageProvider](xref:Avalonia.Controls.TopLevel.StorageProvider) and inserts the chosen image file.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [InsertImageAction](#uid-4cadb14485) | No summary available. |
+| [InsertImageAction](#uid-4cadb14485) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4cadb14485"></span>
 
-### InsertImageAction Constructor
+### InsertImageAction 构造函数 {#insertimageaction-constructor}
 
 ```csharp
 public InsertImageAction()
@@ -80,32 +80,32 @@ public InsertImageAction()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-4daa4960b0) | No summary available. |
-| [Execute](#uid-07766e7700) | No summary available. |
-| [ExecuteAsync](#uid-35a1eee556) | No summary available. |
-| [ExecuteWith](#uid-b2fd6b481e) | No summary available. |
+| [CanExecute](#uid-4daa4960b0) | 暂无摘要。 |
+| [Execute](#uid-07766e7700) | 暂无摘要。 |
+| [ExecuteAsync](#uid-35a1eee556) | 暂无摘要。 |
+| [ExecuteWith](#uid-b2fd6b481e) | 暂无摘要。 |
 | [GetState](editoraction.mdx#uid-e9737aed90) | Gets the current state of the action. Inherited from [EditorAction](editoraction.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4daa4960b0"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -116,13 +116,13 @@ bool
 
 <span id="uid-07766e7700"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -133,18 +133,18 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 <span id="uid-35a1eee556"></span>
 
-### ExecuteAsync Method
+### ExecuteAsync 方法 {#executeasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
@@ -155,13 +155,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-b2fd6b481e"></span>
 
-### ExecuteWith Method
+### ExecuteWith 方法 {#executewith-method}
 
 ```csharp
 public void ExecuteWith(Avalonia.Controls.Documents.Primitives.ITextEditorHost host, ReadOnlyMemory<byte> data, string mimeType, double width, double height, string altText)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -183,19 +183,19 @@ public void ExecuteWith(Avalonia.Controls.Documents.Primitives.ITextEditorHost h
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DisplayName](#uid-5b74884fe2) | No summary available. |
+| [DisplayName](#uid-5b74884fe2) | 暂无摘要。 |
 | [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
-| [Id](#uid-78fd6c3def) | No summary available. |
+| [Id](#uid-78fd6c3def) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5b74884fe2"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 ```csharp
 public string DisplayName { get; set; }
@@ -207,7 +207,7 @@ public string DisplayName { get; set; }
 
 <span id="uid-78fd6c3def"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 ```csharp
 public string Id { get; set; }

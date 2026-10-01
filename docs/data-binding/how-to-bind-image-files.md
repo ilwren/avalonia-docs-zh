@@ -81,7 +81,7 @@ The `Source` property of the `Image` control can accept various types of image s
 
 Ensure that local image file paths are accurate, the image file is accessible, and if it's part of your application resources, it's been correctly included in your project. If you're binding to a web image, ensure that the URL is reachable.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to Bind to a Task Result](/docs/data-binding/how-to-bind-to-a-task-result): Async data loading with the `^` operator.
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding paths, modes, and converters.

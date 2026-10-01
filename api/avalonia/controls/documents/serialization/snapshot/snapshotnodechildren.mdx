@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SnapshotNodeChildren Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,16 +51,16 @@ public struct SnapshotNodeChildren
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SnapshotNodeChildren
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SnapshotNodeChildren
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEnumerable&lt;SnapshotNode&gt;, IReadOnlyCollection&lt;SnapshotNode&gt;, IReadOnlyList&lt;SnapshotNode&gt;, IEnumerable, IEquatable&lt;SnapshotNodeChildren&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEnumerable&lt;SnapshotNode&gt;, IReadOnlyCollection&lt;SnapshotNode&gt;, IReadOnlyList&lt;SnapshotNode&gt;, IEnumerable, IEquatable&lt;SnapshotNodeChildren&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SnapshotNodeChildren](#uid-9b6fec5577) | Initializes a view over `items`, of which the first `count` entries are children. |
 
@@ -68,7 +68,7 @@ public struct SnapshotNodeChildren
 
 <span id="uid-9b6fec5577"></span>
 
-### SnapshotNodeChildren Constructor
+### SnapshotNodeChildren 构造函数 {#snapshotnodechildren-constructor}
 
 Initializes a view over `items`, of which the first
 `count` entries are children.
@@ -77,7 +77,7 @@ Initializes a view over `items`, of which the first
 public SnapshotNodeChildren(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode[] items, int count)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `items` [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)[]
 
@@ -89,7 +89,7 @@ The backing array. Stored by reference, not copied.
 How many leading entries are in use.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 The array is stored by reference, so a later write to it changes an object
 the rest of the surface presents as immutable. Building a snapshot tree goes
@@ -99,34 +99,34 @@ to name.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-1d300ecffb) | No summary available. |
+| [Equals（2 个重载）](#uid-1d300ecffb) | 暂无摘要。 |
 | [GetEnumerator](#uid-b15a852735) | Returns a [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.Enumerator](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.Enumerator) over this collection. |
-| [GetHashCode](#uid-70ab55d883) | No summary available. |
+| [GetHashCode](#uid-70ab55d883) | 暂无摘要。 |
 
 <span id="uid-1d300ecffb"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9e75d52ad7"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -137,18 +137,18 @@ bool
 
 <span id="uid-8617efdaf6"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -159,7 +159,7 @@ bool
 
 <span id="uid-b15a852735"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 Returns a [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.Enumerator](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.Enumerator) over this collection.
 
@@ -167,7 +167,7 @@ Returns a [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildr
 public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.Enumerator GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.Enumerator](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.Enumerator)
 
@@ -178,32 +178,32 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren.E
 
 <span id="uid-70ab55d883"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 int
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Count](#uid-36bd3aebef) | No summary available. |
+| [Count](#uid-36bd3aebef) | 暂无摘要。 |
 | [Empty](#uid-96dff02d00) | Gets an empty [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren) instance. |
-| [Item](#uid-aef3d0ee76) | No summary available. |
+| [Item](#uid-aef3d0ee76) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-36bd3aebef"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 ```csharp
 public int Count { get; set; }
@@ -215,7 +215,7 @@ public int Count { get; set; }
 
 <span id="uid-96dff02d00"></span>
 
-### Empty Property
+### Empty 属性 {#empty-property}
 
 Gets an empty [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren) instance.
 
@@ -229,7 +229,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren E
 
 <span id="uid-aef3d0ee76"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode Item { get; set; }

@@ -25,7 +25,7 @@ You will probably use these properties most often:
 <table>
   <thead>
     <tr><th width="289">Property</th>
-    <th>Description</th></tr>
+    <th>说明</th></tr>
   </thead>
   <tbody>
     <tr>
@@ -81,7 +81,7 @@ On touch and pen devices, selection occurs on pointer release rather than press.
 
 The following selection modes are available for the list box:
 
-<table><thead><tr><th width="237">Selection Mode</th><th>Description</th></tr></thead><tbody><tr><td><code>Single</code></td><td>Only a single item can be selected (default).</td></tr><tr><td><code>Multiple</code></td><td>Multiple items can be selected.</td></tr><tr><td><code>Toggle</code></td><td>Item selection can be toggled by tapping/spacebar. When not enabled, shift or ctrl must be used to select multiple items.</td></tr><tr><td><code>AlwaysSelected</code></td><td>An item will always be selected as long as there are items to select.</td></tr></tbody></table>
+<table><thead><tr><th width="237">Selection Mode</th><th>说明</th></tr></thead><tbody><tr><td><code>Single</code></td><td>Only a single item can be selected (default).</td></tr><tr><td><code>Multiple</code></td><td>Multiple items can be selected.</td></tr><tr><td><code>Toggle</code></td><td>Item selection can be toggled by tapping/spacebar. When not enabled, shift or ctrl must be used to select multiple items.</td></tr><tr><td><code>AlwaysSelected</code></td><td>An item will always be selected as long as there are items to select.</td></tr></tbody></table>
 
 These values can be combined, for example:
 
@@ -215,7 +215,7 @@ namespace AvaloniaControls.Views
 
 <Image light={ListBoxItemStyleScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ListBox API reference](/api/avalonia/controls/listbox)
 - [`ListBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ListBox.cs)

@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ContainerIndexChangedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ContainerIndexChangedEventArgs.cs">ContainerIndexChangedEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ContainerIndexChangedEventArgs.cs">ContainerIndexChangedEventArgs.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.ItemsControl.ContainerIndexChanged](xref:Avalonia.Controls.ItemsControl.ContainerIndexChanged) event.
+为 [Avalonia.Controls.ItemsControl.ContainerIndexChanged](xref:Avalonia.Controls.ItemsControl.ContainerIndexChanged) 事件提供数据。
 
 </div>
 
@@ -54,27 +54,27 @@ public class ContainerIndexChangedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> ContainerIndexChangedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> ContainerIndexChangedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ContainerIndexChangedEventArgs](#uid-00904a18a2) | No summary available. |
+| [ContainerIndexChangedEventArgs](#uid-00904a18a2) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-00904a18a2"></span>
 
-### ContainerIndexChangedEventArgs Constructor
+### ContainerIndexChangedEventArgs 构造函数 {#containerindexchangedeventargs-constructor}
 
 ```csharp
 public ContainerIndexChangedEventArgs(Avalonia.Controls.Control container, int oldIndex, int newIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `container` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -87,9 +87,9 @@ public ContainerIndexChangedEventArgs(Avalonia.Controls.Control container, int o
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Container](#uid-2bc6967e3e) | Get the container for which the index changed. |
 | [NewIndex](#uid-0b35de4aa3) | Gets the index of the container after the change. |
@@ -99,7 +99,7 @@ public ContainerIndexChangedEventArgs(Avalonia.Controls.Control container, int o
 
 <span id="uid-2bc6967e3e"></span>
 
-### Container Property
+### Container 属性 {#container-property}
 
 Get the container for which the index changed.
 
@@ -113,7 +113,7 @@ public Avalonia.Controls.Control Container { get; set; }
 
 <span id="uid-0b35de4aa3"></span>
 
-### NewIndex Property
+### NewIndex 属性 {#newindex-property}
 
 Gets the index of the container after the change.
 
@@ -127,7 +127,7 @@ public int NewIndex { get; set; }
 
 <span id="uid-c4079d671e"></span>
 
-### OldIndex Property
+### OldIndex 属性 {#oldindex-property}
 
 Gets the index of the container before the change.
 

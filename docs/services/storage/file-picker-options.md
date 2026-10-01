@@ -141,7 +141,7 @@ var customWebPFileType = new FilePickerFileType("Only WebP Images")
 
 And if you want to include WebP as one of the file types you consider to be an image, you can use the "ImageAll" example shown above.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Storage Provider](/docs/services/storage/storage-provider): Full storage provider API reference.
 - [File Dialogs](/docs/services/file-dialogs): Using file open, save, and folder picker dialogs.

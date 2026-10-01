@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FbdevOutput Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.LinuxFramebuffer</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.LinuxFramebuffer</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.LinuxFramebuffer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.LinuxFramebuffer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.LinuxFramebuffer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.LinuxFramebuffer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Linux/Avalonia.LinuxFramebuffer/Output/FbdevOutput.cs">FbdevOutput.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Linux/Avalonia.LinuxFramebuffer/Output/FbdevOutput.cs">FbdevOutput.cs</a>
 </div>
 
 </div>
@@ -48,28 +48,28 @@ public class FbdevOutput
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FbdevOutput
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FbdevOutput
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="output/ioutputbackend">IOutputBackend</a>, <a href="../platform/surfaces/iframebufferplatformsurface">IFramebufferPlatformSurface</a>, <a href="../platform/surfaces/iplatformrendersurface">IPlatformRenderSurface</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="output/ioutputbackend">IOutputBackend</a>, <a href="../platform/surfaces/iframebufferplatformsurface">IFramebufferPlatformSurface</a>, <a href="../platform/surfaces/iplatformrendersurface">IPlatformRenderSurface</a>, IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FbdevOutput (3 overloads)](#uid-455ac9cc2d) | Create a Linux frame buffer device output |
 
 <span id="uid-455ac9cc2d"></span>
 
-### FbdevOutput overloads
+### FbdevOutput 的重载 {#fbdevoutput-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-45dd3957aa"></span>
 
-#### FbdevOutput Constructor
+#### FbdevOutput 构造函数 {#fbdevoutput-constructor}
 
 Create a Linux frame buffer device output
 
@@ -77,7 +77,7 @@ Create a Linux frame buffer device output
 public FbdevOutput(Avalonia.LinuxFramebuffer.Output.FbDevOutputOptions options)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `options` [Avalonia.LinuxFramebuffer.Output.FbDevOutputOptions](xref:Avalonia.LinuxFramebuffer.Output.FbDevOutputOptions)
 
@@ -90,7 +90,7 @@ Options
 
 <span id="uid-b28f6697ae"></span>
 
-#### FbdevOutput Constructor
+#### FbdevOutput 构造函数 {#fbdevoutput-constructor-1}
 
 Create a Linux frame buffer device output
 
@@ -98,7 +98,7 @@ Create a Linux frame buffer device output
 public FbdevOutput(string fileName)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `fileName` string
 
@@ -112,13 +112,13 @@ Defaults to the value in environment variable FRAMEBUFFER or /dev/fb0 when FRAME
 
 <span id="uid-a3f462a019"></span>
 
-#### FbdevOutput Constructor
+#### FbdevOutput 构造函数 {#fbdevoutput-constructor-2}
 
 ```csharp
 public FbdevOutput(string fileName, Nullable<Avalonia.Platform.PixelFormat> format)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `fileName` string
 
@@ -128,25 +128,25 @@ public FbdevOutput(string fileName, Nullable<Avalonia.Platform.PixelFormat> form
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CreateFramebufferRenderTarget](#uid-1d19b27d76) | No summary available. |
-| [Dispose](#uid-ae3043c7e0) | No summary available. |
-| [Lock](#uid-e8ddbb44af) | No summary available. |
+| [CreateFramebufferRenderTarget](#uid-1d19b27d76) | 暂无摘要。 |
+| [Dispose](#uid-ae3043c7e0) | 暂无摘要。 |
+| [Lock](#uid-e8ddbb44af) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1d19b27d76"></span>
 
-### CreateFramebufferRenderTarget Method
+### CreateFramebufferRenderTarget 方法 {#createframebufferrendertarget-method}
 
 ```csharp
 public Avalonia.Platform.Surfaces.IFramebufferRenderTarget CreateFramebufferRenderTarget()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Platform.Surfaces.IFramebufferRenderTarget](xref:Avalonia.Platform.Surfaces.IFramebufferRenderTarget)
 
@@ -157,7 +157,7 @@ public Avalonia.Platform.Surfaces.IFramebufferRenderTarget CreateFramebufferRend
 
 <span id="uid-ae3043c7e0"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -169,13 +169,13 @@ public void Dispose()
 
 <span id="uid-e8ddbb44af"></span>
 
-### Lock Method
+### Lock 方法 {#lock-method}
 
 ```csharp
 public Avalonia.Platform.ILockedFramebuffer Lock(RenderTargetSceneInfo _, Avalonia.Platform.Surfaces.FramebufferLockProperties& properties)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `_` RenderTargetSceneInfo
 
@@ -183,26 +183,26 @@ public Avalonia.Platform.ILockedFramebuffer Lock(RenderTargetSceneInfo _, Avalon
 `properties` [Avalonia.Platform.Surfaces.FramebufferLockProperties](xref:Avalonia.Platform.Surfaces.FramebufferLockProperties)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Id](#uid-6326ebf4db) | No summary available. |
-| [PixelSize](#uid-15e00ce680) | No summary available. |
-| [Scaling](#uid-bf3310dec9) | No summary available. |
+| [Id](#uid-6326ebf4db) | 暂无摘要。 |
+| [PixelSize](#uid-15e00ce680) | 暂无摘要。 |
+| [Scaling](#uid-bf3310dec9) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6326ebf4db"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 ```csharp
 public string Id { get; set; }
@@ -214,7 +214,7 @@ public string Id { get; set; }
 
 <span id="uid-15e00ce680"></span>
 
-### PixelSize Property
+### PixelSize 属性 {#pixelsize-property}
 
 ```csharp
 public Avalonia.PixelSize PixelSize { get; set; }
@@ -226,7 +226,7 @@ public Avalonia.PixelSize PixelSize { get; set; }
 
 <span id="uid-bf3310dec9"></span>
 
-### Scaling Property
+### Scaling 属性 {#scaling-property}
 
 ```csharp
 public double Scaling { get; set; }

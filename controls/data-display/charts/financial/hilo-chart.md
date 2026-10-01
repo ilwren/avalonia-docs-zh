@@ -71,7 +71,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of price data. | `null` |
 | `HighPath` | Path to the maximum price property. | `null` |

@@ -7,7 +7,7 @@ doc-type: how-to
 
 Android allows an app to register as a handler for specific file types or URI schemes through intent filters. When a user opens a matching file or link, Android launches your app and passes the data through an activation event. This guide walks you through registering your Avalonia app to handle plain-text files and reading their contents with the Avalonia storage API.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 - An Avalonia project targeting Android
 - A `MainActivity` that extends `AvaloniaMainActivity`
@@ -38,7 +38,7 @@ public class MainActivity : AvaloniaMainActivity
 
 ### Choosing `DataMimeType` and `DataPathPattern`
 
-| Property | Purpose | Example |
+| Property | 用途 | Example |
 |---|---|---|
 | `DataMimeType` | Matches the MIME type reported by the sending app. | `"text/plain"`, `"application/pdf"` |
 | `DataPathPattern` | Matches the file path (only effective for the `file` scheme). | `".*\\.txt"`, `".*\\.csv"` |
@@ -159,7 +159,7 @@ private static void HandleIntent(object? sender, ActivatedEventArgs e)
 | `FileActivatedEventArgs.Files` is empty. | The sender used a URI scheme your filter does not include. Ensure both `"file"` and `"content"` are listed in `DataSchemes`. |
 | The handler fires twice on launch. | You may have registered the event in both the constructor and an `OnCreate` override. Register it in only one place. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Android platform guide](/docs/platform-specific-guides/android)
 - [Deploying on Android](/docs/deployment/android)

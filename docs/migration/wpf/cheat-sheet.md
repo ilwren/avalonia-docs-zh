@@ -148,7 +148,7 @@ Or with a binding converter:
 | `ResourceDictionary` | `ResourceDictionary` | Same |
 | `ThemeDictionaries` | `ResourceDictionary.ThemeDictionaries` | Light/Dark variants |
 
-## Events
+## 事件 {#events}
 
 | WPF | Avalonia | Notes |
 |---|---|---|
@@ -275,7 +275,7 @@ See [Working with screens](/docs/app-development/window-management#working-with-
 
 10. **Default binding modes**: Some controls have different default binding modes than WPF. Check the control documentation if a binding does not update as expected.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Migrating from WPF](/docs/migration/wpf): Detailed migration guides.
 - [Avalonia Architecture](/docs/fundamentals/architecture): How Avalonia works internally.

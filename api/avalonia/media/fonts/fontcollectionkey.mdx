@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FontCollectionKey Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.Fonts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.Fonts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Fonts/FontCollectionKey.cs">FontCollectionKey.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Fonts/FontCollectionKey.cs">FontCollectionKey.cs</a>
 </div>
 
 </div>
@@ -54,22 +54,22 @@ public struct FontCollectionKey
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> FontCollectionKey
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> FontCollectionKey
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IComparable, IComparable&lt;FontCollectionKey&gt;, IEquatable&lt;FontCollectionKey&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IComparable, IComparable&lt;FontCollectionKey&gt;, IEquatable&lt;FontCollectionKey&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Use this key to efficiently look up or group fonts in a collection by their style, weight,
 and stretch characteristics. Keys are ordered lexicographically by [Avalonia.Media.Fonts.FontCollectionKey.Style](xref:Avalonia.Media.Fonts.FontCollectionKey.Style), then
 [Avalonia.Media.Fonts.FontCollectionKey.Weight](xref:Avalonia.Media.Fonts.FontCollectionKey.Weight), then [Avalonia.Media.Fonts.FontCollectionKey.Stretch](xref:Avalonia.Media.Fonts.FontCollectionKey.Stretch).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FontCollectionKey](#uid-8aa3c2fc18) | Represents a unique key for identifying a font inside a font collection based on style, weight, and stretch attributes. |
 
@@ -77,7 +77,7 @@ and stretch characteristics. Keys are ordered lexicographically by [Avalonia.Med
 
 <span id="uid-8aa3c2fc18"></span>
 
-### FontCollectionKey Constructor
+### FontCollectionKey 构造函数 {#fontcollectionkey-constructor}
 
 Represents a unique key for identifying a font inside a font collection based on style, weight, and stretch attributes.
 
@@ -85,7 +85,7 @@ Represents a unique key for identifying a font inside a font collection based on
 public FontCollectionKey(Avalonia.Media.FontStyle Style, Avalonia.Media.FontWeight Weight, Avalonia.Media.FontStretch Stretch)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `Style` [Avalonia.Media.FontStyle](xref:Avalonia.Media.FontStyle)
 
@@ -102,7 +102,7 @@ The font weight to use when constructing the key.
 The font stretch to use when constructing the key.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Use this key to efficiently look up or group fonts in a collection by their style, weight,
 and stretch characteristics. Keys are ordered lexicographically by [Avalonia.Media.Fonts.FontCollectionKey.Style](xref:Avalonia.Media.Fonts.FontCollectionKey.Style), then
@@ -110,15 +110,15 @@ and stretch characteristics. Keys are ordered lexicographically by [Avalonia.Med
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CompareTo (2 overloads)](#uid-ac4a0057c2) | No summary available. |
-| [Deconstruct](#uid-6da6603b7d) | No summary available. |
-| [Equals (2 overloads)](#uid-5eef35641f) | No summary available. |
-| [GetHashCode](#uid-ef090fef6b) | No summary available. |
-| [ToString](#uid-bf73fe1e5b) | No summary available. |
+| [CompareTo (2 overloads)](#uid-ac4a0057c2) | 暂无摘要。 |
+| [Deconstruct](#uid-6da6603b7d) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-5eef35641f) | 暂无摘要。 |
+| [GetHashCode](#uid-ef090fef6b) | 暂无摘要。 |
+| [ToString](#uid-bf73fe1e5b) | 暂无摘要。 |
 
 <span id="uid-ac4a0057c2"></span>
 
@@ -128,18 +128,18 @@ and stretch characteristics. Keys are ordered lexicographically by [Avalonia.Med
 
 <span id="uid-ddd0e709cd"></span>
 
-#### CompareTo Method
+#### CompareTo 方法 {#compareto-method}
 
 ```csharp
 public int CompareTo(Avalonia.Media.Fonts.FontCollectionKey other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.Media.Fonts.FontCollectionKey](xref:Avalonia.Media.Fonts.FontCollectionKey)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 int
 
@@ -150,18 +150,18 @@ int
 
 <span id="uid-5d54758fdd"></span>
 
-#### CompareTo Method
+#### CompareTo 方法 {#compareto-method-1}
 
 ```csharp
 public int CompareTo(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 int
 
@@ -172,13 +172,13 @@ int
 
 <span id="uid-6da6603b7d"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(Avalonia.Media.FontStyle& Style, Avalonia.Media.FontWeight& Weight, Avalonia.Media.FontStretch& Stretch)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `Style` [Avalonia.Media.FontStyle](xref:Avalonia.Media.FontStyle)&amp;
 
@@ -193,24 +193,24 @@ public void Deconstruct(Avalonia.Media.FontStyle& Style, Avalonia.Media.FontWeig
 
 <span id="uid-5eef35641f"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-da18931fce"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Media.Fonts.FontCollectionKey other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `other` [Avalonia.Media.Fonts.FontCollectionKey](xref:Avalonia.Media.Fonts.FontCollectionKey)
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -221,18 +221,18 @@ bool
 
 <span id="uid-027fc3c698"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 bool
 
@@ -243,13 +243,13 @@ bool
 
 <span id="uid-ef090fef6b"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 int
 
@@ -260,22 +260,22 @@ int
 
 <span id="uid-bf73fe1e5b"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Stretch](#uid-95bc1ff64e) | The font stretch to use when constructing the key. |
 | [Style](#uid-1a4b15a03d) | The font style to use when constructing the key. |
@@ -285,7 +285,7 @@ string
 
 <span id="uid-95bc1ff64e"></span>
 
-### Stretch Property
+### Stretch 属性 {#stretch-property}
 
 The font stretch to use when constructing the key.
 
@@ -299,7 +299,7 @@ public Avalonia.Media.FontStretch Stretch { get; set; }
 
 <span id="uid-1a4b15a03d"></span>
 
-### Style Property
+### Style 属性 {#style-property}
 
 The font style to use when constructing the key.
 
@@ -313,7 +313,7 @@ public Avalonia.Media.FontStyle Style { get; set; }
 
 <span id="uid-ba0993b4b9"></span>
 
-### Weight Property
+### Weight 属性 {#weight-property}
 
 The font weight to use when constructing the key.
 

@@ -168,7 +168,7 @@ Override `ShouldTriggerSelection` on `SelectingItemsControl` or `TreeView` to co
 
 The static `ItemSelectionEventTriggers` class provides helper methods for checking modifiers:
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `ShouldTriggerSelection(InputElement, PointerEventArgs)` | Determines whether a pointer event should trigger selection. |
 | `ShouldTriggerSelection(InputElement, KeyEventArgs)` | Determines whether a key event should trigger selection. |
@@ -743,6 +743,6 @@ The following members were marked obsolete in Avalonia 11 and have now been remo
 | `RenderOptions.TextRenderingMode` | `TextOptions.TextRenderingMode` | `TextOptions` also includes `TextHintingMode` and `BaselinePixelAlignment`. See [Text options](/docs/graphics-animation/text-options). | [#20107](https://github.com/AvaloniaUI/Avalonia/pull/20107) |
 | `TextBlock.LetterSpacing` | `TextElement.LetterSpacing` | Now an inherited attached property available on all templated controls. XAML on `TextBlock` is source-compatible; update code referencing `TextBlock.LetterSpacingProperty` to `TextElement.LetterSpacingProperty`. | [#20141](https://github.com/AvaloniaUI/Avalonia/pull/20141) |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia 12 release notes](https://github.com/AvaloniaUI/Avalonia/releases)

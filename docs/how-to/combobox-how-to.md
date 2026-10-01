@@ -347,7 +347,7 @@ Change the appearance of the placeholder text by targeting the `PlaceholderTextB
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ComboBox reference](/controls/input/selectors/combobox)
 - [How to bind to a collection](/docs/data-binding/how-to-bind-to-a-collection): Collection binding basics.

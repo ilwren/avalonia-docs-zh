@@ -61,7 +61,7 @@ Avalonia includes a comprehensive set of easing functions. Each function comes i
 
 ### Linear
 
-| Name | Behavior |
+| 名称 | Behavior |
 |---|---|
 | `LinearEasing` | Constant speed. No acceleration or deceleration. |
 
@@ -69,7 +69,7 @@ Avalonia includes a comprehensive set of easing functions. Each function comes i
 
 Easing based on a sine curve. Produces gentle, smooth motion.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `SineEaseIn` | Slow start, accelerates |
 | `SineEaseOut` | Fast start, decelerates |
@@ -79,7 +79,7 @@ Easing based on a sine curve. Produces gentle, smooth motion.
 
 Easing based on a squared curve (t^2). Slightly more pronounced than sine.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `QuadraticEaseIn` | Slow start |
 | `QuadraticEaseOut` | Fast start |
@@ -89,7 +89,7 @@ Easing based on a squared curve (t^2). Slightly more pronounced than sine.
 
 Easing based on a cubed curve (t^3). More dramatic than quadratic.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `CubicEaseIn` | Slow start |
 | [`CubicEaseOut`](/api/avalonia/animation/easings/cubiceaseout) | Fast start |
@@ -99,7 +99,7 @@ Easing based on a cubed curve (t^3). More dramatic than quadratic.
 
 Easing based on t^4. Even stronger acceleration than cubic.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `QuarticEaseIn` | Slow start |
 | `QuarticEaseOut` | Fast start |
@@ -109,7 +109,7 @@ Easing based on t^4. Even stronger acceleration than cubic.
 
 Easing based on t^5. The most aggressive polynomial easing.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `QuinticEaseIn` | Slow start |
 | `QuinticEaseOut` | Fast start |
@@ -119,7 +119,7 @@ Easing based on t^5. The most aggressive polynomial easing.
 
 Easing based on an exponential curve. Produces a very sharp acceleration.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `ExponentialEaseIn` | Very slow start, sharp acceleration |
 | `ExponentialEaseOut` | Sharp deceleration, very slow end |
@@ -129,7 +129,7 @@ Easing based on an exponential curve. Produces a very sharp acceleration.
 
 Easing based on a circular curve. Produces a natural-feeling motion.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `CircularEaseIn` | Slow start |
 | `CircularEaseOut` | Fast start |
@@ -139,7 +139,7 @@ Easing based on a circular curve. Produces a natural-feeling motion.
 
 Overshoots the target before settling. Creates a "pull back" effect.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `BackEaseIn` | Pulls back before accelerating forward |
 | [`BackEaseOut`](/api/avalonia/animation/easings/backeaseout) | Overshoots target, then settles back |
@@ -149,7 +149,7 @@ Overshoots the target before settling. Creates a "pull back" effect.
 
 Simulates a bouncing effect at the boundary.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `BounceEaseIn` | Bounces at the start |
 | `BounceEaseOut` | Bounces at the end |
@@ -159,7 +159,7 @@ Simulates a bouncing effect at the boundary.
 
 Simulates a spring or rubber band effect with oscillation.
 
-| Name | Variant |
+| 名称 | Variant |
 |---|---|
 | `ElasticEaseIn` | Oscillation at the start |
 | [`ElasticEaseOut`](/api/avalonia/animation/easings/elasticeaseout) | Oscillation at the end |
@@ -236,7 +236,7 @@ The four values (`X1`, `Y1`, `X2`, `Y2`) define two control points of a cubic be
 
 ### Spring parameters
 
-| Parameter | Description | Effect of increasing |
+| Parameter | 说明 | Effect of increasing |
 |---|---|---|
 | `Mass` | Weight of the object on the spring | Slower, heavier motion |
 | `Stiffness` | How stiff the spring is | Faster oscillation, snappier |
@@ -276,7 +276,7 @@ Use the custom easing in XAML by referencing the namespace:
 
 The `Ease` method receives a `progress` value from 0.0 to 1.0 representing the linear time progress, and returns a modified value (also typically 0.0 to 1.0, though overshooting is allowed for effects like `BackEaseOut` and `ElasticEaseOut`).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Using keyframes and easing in animations.
 - [Control Transitions](/docs/graphics-animation/control-transitions): Automatic transitions on property changes.

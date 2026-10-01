@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RuntimeXamlLoaderConfiguration Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Markup.Xaml</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Markup.Xaml</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Markup.Xaml</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Markup.Xaml</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/RuntimeXamlLoaderConfiguration.cs">RuntimeXamlLoaderConfiguration.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/RuntimeXamlLoaderConfiguration.cs">RuntimeXamlLoaderConfiguration.cs</a>
 </div>
 
 </div>
@@ -48,21 +48,21 @@ public class RuntimeXamlLoaderConfiguration
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> RuntimeXamlLoaderConfiguration
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> RuntimeXamlLoaderConfiguration
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RuntimeXamlLoaderConfiguration](#uid-1cd435eae8) | No summary available. |
+| [RuntimeXamlLoaderConfiguration](#uid-1cd435eae8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1cd435eae8"></span>
 
-### RuntimeXamlLoaderConfiguration Constructor
+### RuntimeXamlLoaderConfiguration 构造函数 {#runtimexamlloaderconfiguration-constructor}
 
 ```csharp
 public RuntimeXamlLoaderConfiguration()
@@ -70,9 +70,9 @@ public RuntimeXamlLoaderConfiguration()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CreateSourceInfo](#uid-d4d9a1c382) | When enabled, the XAML compiler embeds SourceInfo metadata (file path, line, and column) into generated code. Default is 'false'. |
 | [DesignMode](#uid-e3929fafda) | Indicates whether the XAML is being loaded in design mode. Default is 'false'. |
@@ -84,7 +84,7 @@ public RuntimeXamlLoaderConfiguration()
 
 <span id="uid-d4d9a1c382"></span>
 
-### CreateSourceInfo Property
+### CreateSourceInfo 属性 {#createsourceinfo-property}
 
 When enabled, the XAML compiler embeds SourceInfo metadata (file path, line, and column) into generated code.
 Default is 'false'.
@@ -99,7 +99,7 @@ public bool CreateSourceInfo { get; set; }
 
 <span id="uid-e3929fafda"></span>
 
-### DesignMode Property
+### DesignMode 属性 {#designmode-property}
 
 Indicates whether the XAML is being loaded in design mode.
 Default is 'false'.
@@ -114,7 +114,7 @@ public bool DesignMode { get; set; }
 
 <span id="uid-5bfabbf87e"></span>
 
-### DiagnosticHandler Property
+### DiagnosticHandler 属性 {#diagnostichandler-property}
 
 XAML diagnostics handler.
 
@@ -122,7 +122,7 @@ XAML diagnostics handler.
 public Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration.XamlDiagnosticFunc DiagnosticHandler { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 Defines if any diagnostic severity should be overriden.
 Note, severity cannot be set lower than minimal for specific diagnostic.
@@ -134,7 +134,7 @@ Note, severity cannot be set lower than minimal for specific diagnostic.
 
 <span id="uid-aa3a33f9ca"></span>
 
-### LocalAssembly Property
+### LocalAssembly 属性 {#localassembly-property}
 
 Default assembly for clr-namespace:.
 
@@ -148,7 +148,7 @@ public System.Reflection.Assembly LocalAssembly { get; set; }
 
 <span id="uid-0f0a7eda8b"></span>
 
-### UseCompiledBindingsByDefault Property
+### UseCompiledBindingsByDefault 属性 {#usecompiledbindingsbydefault-property}
 
 Defines is [CompiledBinding](xref:Avalonia.Data.CompiledBinding) should be used by default.
 Default is 'false'.

@@ -298,7 +298,7 @@ Bookmarks can become invalid if the user moves or deletes the file, or if the op
 
 See [Bookmarks](/docs/services/storage/bookmarks) for full details on the bookmark API.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Storage Provider](/docs/services/storage/storage-provider): File and folder access across platforms.
 - [Bookmarks](/docs/services/storage/bookmarks): Persisting file access across sessions on sandboxed platforms.

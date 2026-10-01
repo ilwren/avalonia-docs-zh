@@ -40,7 +40,7 @@ protected override void OnPointerPressed(PointerPressedEventArgs e)
 
 ### Key properties on `PointerEventArgs`
 
-| Property / Method | Description |
+| Property / Method | 说明 |
 |---|---|
 | `GetPosition(Visual)` | Returns the pointer position relative to the specified visual. |
 | `GetCurrentPoint(Visual)` | Returns a `PointerPoint` with position and button state. |
@@ -100,7 +100,7 @@ protected override void OnKeyDown(KeyEventArgs e)
 
 ### Key properties on `KeyEventArgs`
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Key` | The physical key pressed (from the `Key` enum). |
 | `KeyModifiers` | Modifier keys held (Control, Shift, Alt, Meta). |
@@ -222,7 +222,7 @@ public partial class MainWindow : Window
 For declarative keyboard shortcuts, consider using [KeyBindings and HotKeys](/docs/input-interaction/keyboard-and-hotkeys) instead of handling `KeyDown` manually.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Events Overview](/docs/events): How routed events work in Avalonia.
 - [Pointer Input](/docs/input-interaction/pointer): Detailed pointer input reference.

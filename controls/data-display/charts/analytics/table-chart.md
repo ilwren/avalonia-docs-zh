@@ -90,7 +90,7 @@ public ObservableCollection<TableChartColumn> TableColumns { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The row data source. | `null` |
 | `RowLabelPath` | Path to the text displayed in the left row header column. | `null` |

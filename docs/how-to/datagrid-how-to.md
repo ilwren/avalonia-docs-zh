@@ -363,7 +363,7 @@ Display additional content when a row is selected:
           AlternatingRowBackground="#F8F8F8" />
 ```
 
-| GridLinesVisibility | Description |
+| GridLinesVisibility | 说明 |
 |---|---|
 | `None` | No grid lines (default). |
 | `Horizontal` | Horizontal lines only. |
@@ -408,7 +408,7 @@ private void OnLoadingRow(object? sender, DataGridRowEventArgs e)
 <DataGrid ItemsSource="{Binding Products}" LoadingRow="OnLoadingRow" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [DataGrid Control Reference](/controls/data-display/structured-data/datagrid): Setup and property tables.
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid): For hierarchical data display.

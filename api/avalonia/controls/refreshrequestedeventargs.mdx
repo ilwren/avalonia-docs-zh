@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RefreshRequestedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/PullToRefresh/RefreshRequestedEventArgs.cs">RefreshRequestedEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/PullToRefresh/RefreshRequestedEventArgs.cs">RefreshRequestedEventArgs.cs</a>
 </div>
 
 </div>
@@ -54,31 +54,31 @@ public class RefreshRequestedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> RefreshRequestedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> RefreshRequestedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RefreshRequestedEventArgs (2 overloads)](#uid-6306d6aa6f) | No summary available. |
+| [RefreshRequestedEventArgs (2 overloads)](#uid-6306d6aa6f) | 暂无摘要。 |
 
 <span id="uid-6306d6aa6f"></span>
 
-### RefreshRequestedEventArgs overloads
+### RefreshRequestedEventArgs 的重载 {#refreshrequestedeventargs-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e16d07ab7d"></span>
 
-#### RefreshRequestedEventArgs Constructor
+#### RefreshRequestedEventArgs 构造函数 {#refreshrequestedeventargs-constructor}
 
 ```csharp
 public RefreshRequestedEventArgs(Avalonia.Controls.RefreshCompletionDeferral completionDeferral, Avalonia.Interactivity.RoutedEvent routedEvent)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `completionDeferral` [Avalonia.Controls.RefreshCompletionDeferral](xref:Avalonia.Controls.RefreshCompletionDeferral)
 
@@ -92,13 +92,13 @@ public RefreshRequestedEventArgs(Avalonia.Controls.RefreshCompletionDeferral com
 
 <span id="uid-403e1e4153"></span>
 
-#### RefreshRequestedEventArgs Constructor
+#### RefreshRequestedEventArgs 构造函数 {#refreshrequestedeventargs-constructor-1}
 
 ```csharp
 public RefreshRequestedEventArgs(Action deferredAction, Avalonia.Interactivity.RoutedEvent routedEvent)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `deferredAction` Action
 
@@ -108,9 +108,9 @@ public RefreshRequestedEventArgs(Action deferredAction, Avalonia.Interactivity.R
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetDeferral](#uid-c6db7990b0) | Gets a deferral object for managing the work done in the RefreshRequested event handler. |
 
@@ -118,7 +118,7 @@ public RefreshRequestedEventArgs(Action deferredAction, Avalonia.Interactivity.R
 
 <span id="uid-c6db7990b0"></span>
 
-### GetDeferral Method
+### GetDeferral 方法 {#getdeferral-method}
 
 Gets a deferral object for managing the work done in the RefreshRequested event handler.
 
@@ -126,7 +126,7 @@ Gets a deferral object for managing the work done in the RefreshRequested event 
 public Avalonia.Controls.RefreshCompletionDeferral GetDeferral()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.RefreshCompletionDeferral](xref:Avalonia.Controls.RefreshCompletionDeferral)
 
@@ -135,14 +135,14 @@ A [Avalonia.Controls.RefreshCompletionDeferral](xref:Avalonia.Controls.RefreshCo
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | Gets or sets a value indicating whether the routed event has already been handled. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | Gets or sets the routing strategy (direct, bubbling, or tunneling) of the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | Gets or sets the routed event associated with these event args. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | Gets or sets the source object that raised the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
+| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | 获取或设置一个值，指示该路由事件是否已被处理。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | 获取或设置路由事件的路由策略（直接、冒泡或隧道）。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | 获取或设置与这组事件参数关联的路由事件。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | 获取或设置引发该路由事件的源对象。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 
 </ApiRefPage>
 

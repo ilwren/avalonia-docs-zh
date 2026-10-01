@@ -12,7 +12,7 @@ The [`TextBox`](/api/avalonia/controls/textbox) presents an area for typed (keyb
 
 You will probably use these properties most often:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Text` | `string` | The current text in the input. |
 | `PlaceholderText` | `string` | Appears as a faded hint whenever the input is empty. Sometimes called a watermark. |
@@ -131,7 +131,7 @@ You can add icons or buttons inside the `TextBox` using `InnerLeftContent` and `
 </TextBox>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TextBox API reference](/api/avalonia/controls/textbox)
 - [`TextBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBox.cs)

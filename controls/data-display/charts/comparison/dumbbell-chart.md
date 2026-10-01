@@ -47,7 +47,7 @@ public ObservableCollection<RangeComparison> PlannedVsActual { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of comparison items. | `null` |
 | `LowValuePath` | Path to the lower or first value. | `null` |
@@ -61,7 +61,7 @@ public ObservableCollection<RangeComparison> PlannedVsActual { get; } = new()
 | `Orientation` | Layout orientation, `Horizontal` or `Vertical`. | `Horizontal` |
 | `IsHighlightEnabled` | Enables hover highlighting for dumbbell items. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Slope chart](/controls/data-display/charts/analytics/slope-chart)
 - [Diverging bar chart](/controls/data-display/charts/comparison/diverging-bar-chart)

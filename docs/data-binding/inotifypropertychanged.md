@@ -67,7 +67,7 @@ In this code, the `ObservableObject` class implements `INotifyPropertyChanged`, 
 
 The MVVM Toolkit provides a range of tools to help simplify the implementation of the MVVM pattern in your .NET applications, including simplifying the use of `INotifyPropertyChanged`. The use of Source Generators makes your code more efficient and readable, while still maintaining the same functionality.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [The MVVM Pattern](/docs/fundamentals/the-mvvm-pattern): Introduction to the MVVM architectural pattern.
 - [Data Validation](/docs/data-binding/binding-validation): Validation in data binding with INotifyDataErrorInfo.

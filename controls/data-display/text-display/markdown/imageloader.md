@@ -182,7 +182,7 @@ Image loading is deferred until both the URL (set automatically from the Markdow
 
 You should implement a custom `MarkdownImageLoader` whenever the default image resolution does not meet your needs. For example, you might need to render SVG images, load images from a remote server that requires authentication, or apply a caching strategy to avoid repeated downloads. A custom loader gives you full control over how image URIs are resolved and what image types your `Markdown` control can display.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Markdown control](/controls/data-display/text-display/markdown)
 - [CodeHighlighter](/controls/data-display/text-display/markdown/codehighlighter)

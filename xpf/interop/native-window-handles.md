@@ -96,7 +96,7 @@ private void SetupNativeRendering(System.Windows.Window wpfWindow)
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Embedding Avalonia in XPF](/xpf/interop/embedding-avalonia-in-xpf) for accessing Avalonia features from XPF
 - [Performance: Embedding High-Performance Content](/xpf/configuration/performance#embedding-high-performance-content) for OpenGL integration

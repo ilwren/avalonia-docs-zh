@@ -5,7 +5,7 @@ title: Control template walkthrough
 
 This walkthrough builds a complete control template from scratch, explaining each component. By the end, you will understand how to re-template any Avalonia control.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 - An Avalonia project with a `Window` where you can add styles and controls.
 - Familiarity with [styles](/docs/styling/styles) and [XAML](/docs/fundamentals/avalonia-xaml) basics.
@@ -247,7 +247,7 @@ Run your application. You should see a pill-shaped button with a purple backgrou
 - Use `Transitions` for smooth state changes instead of discrete setters.
 - Test with both light and dark themes to ensure your template works across theme variants.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Control themes](/docs/styling/control-themes): How themes use templates for all controls.
 - [Style selectors](/docs/styling/style-selectors): Selector syntax for targeting controls and states.

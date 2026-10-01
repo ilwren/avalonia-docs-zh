@@ -5,7 +5,7 @@ title: Storage Items
 
 ## Common members for StorageFile and StorageFolder
 
-### Name
+### 名称 {#name}
 
 Gets a short name of the item including the file name extension if there is one.
 
@@ -109,7 +109,7 @@ Android platform usually uses "content:" virtual file paths and Browser platform
 If you want to save file path to reuse it later (in combination with TryGetFileFromPathAsync), please consider using [Bookmarks](/docs/services/storage/bookmarks) instead as they are designed to work in sandboxed environment, where user app might not have direct access to the physical file system.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Storage Provider](/docs/services/storage/storage-provider): Full storage provider API reference.
 - [Bookmarks](/docs/services/storage/bookmarks): Persisting access to picked files and folders.

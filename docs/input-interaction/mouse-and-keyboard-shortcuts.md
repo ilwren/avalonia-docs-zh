@@ -170,7 +170,7 @@ public class MainViewModel : ViewModelBase
 | **Mobile (Android / iOS)** | `KeyBinding` has no effect when there is no physical keyboard attached. Use gesture recognizers and `ContextMenu` (activated by long-press) for touch-first interactions. |
 | **Browser (WASM)** | Most key gestures work, but certain browser-reserved shortcuts (such as `Ctrl+T` or `Ctrl+W`) cannot be intercepted by your application. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Keyboard and hotkeys](/docs/input-interaction/keyboard-and-hotkeys): key bindings and hotkey configuration.
 - [Commanding](/docs/input-interaction/commanding): the `ICommand` interface and command binding.

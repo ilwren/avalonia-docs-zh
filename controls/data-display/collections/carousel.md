@@ -13,7 +13,7 @@ The `Carousel` has an items collection and displays each item as a page, in sequ
 
 You will probably use these properties most often:
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `PageTransition` | `IPageTransition?` | `null` | Transition animation played when the selected item changes. Built-in options include `PageSlide`, `CrossFade`, `Rotate3DTransition`, and `CompositePageTransition`. |
 | `IsSwipeEnabled` | `bool` | `false` | Enables swipe and pointer-drag gestures to navigate between pages. |
@@ -128,7 +128,7 @@ Because `SelectedIndex` is bound two-way by default, you can advance the carouse
 
 You set the animation that plays between items by assigning a transition to the `PageTransition` property. Avalonia ships with several built-in transitions:
 
-| Transition | Description |
+| Transition | 说明 |
 |---|---|
 | `PageSlide` | Slides content in from a specified direction. You can set `Orientation` to `Horizontal` (default) or `Vertical`. |
 | `CrossFade` | Fades out the current item and fades in the new item by animating opacity. |
@@ -178,7 +178,7 @@ For a full guide on page transitions (including how to create custom transitions
 
 You can change the displayed item in several ways:
 
-| Technique | Description |
+| Technique | 说明 |
 |---|---|
 | `Next()` | Advance to the next item in the collection. |
 | `Previous()` | Move back to the previous item. |
@@ -262,7 +262,7 @@ The `Carousel` supports keyboard navigation when focused:
 | Home | Jumps to the first item. |
 | End | Jumps to the last item. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PipsPager](/controls/layout/containers/pipspager) for dot-based page indicators
 - [CarouselPage](/controls/navigation/carouselpage) for page-based carousel navigation

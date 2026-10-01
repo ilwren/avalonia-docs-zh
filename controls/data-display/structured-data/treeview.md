@@ -18,7 +18,7 @@ You will probably use these properties most often:
   <thead>
     <tr>
       <th width="316">Property</th>
-      <th>Description</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
@@ -218,7 +218,7 @@ treeView.AddHandler(TreeViewItem.CollapsedEvent, (sender, args) =>
 });
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeView API reference](/api/avalonia/controls/treeview)
 - [`TreeView.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TreeView.cs)

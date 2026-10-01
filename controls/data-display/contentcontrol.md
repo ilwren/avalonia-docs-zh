@@ -13,7 +13,7 @@ import ControlContentStudentScreenshot from '/img/controls/contentcontrol/conten
 
 You will probably use these properties most often:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Content` | The content to display in the control. |
 | `ContentTemplate` | A `DataTemplate` used to render the `Content` object. |
@@ -135,7 +135,7 @@ When your view model changes `CurrentPage` from a `HomeViewModel` to a `Settings
 
 If you want an animated transition when the content changes, consider using [`TransitioningContentControl`](/controls/data-display/transitioningcontentcontrol) instead.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentControl API reference](/api/avalonia/controls/contentcontrol)
 - [`ContentControl.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContentControl.cs)

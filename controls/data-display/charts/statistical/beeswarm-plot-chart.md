@@ -47,7 +47,7 @@ public ObservableCollection<BeeswarmPoint> BeeswarmData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of observations. | `null` |
 | `CategoryPath` | Path to the grouping category. | `null` |
@@ -59,7 +59,7 @@ public ObservableCollection<BeeswarmPoint> BeeswarmData { get; } = new()
 | `ShowCategoryLabels` | Whether to draw category labels. | `true` |
 | `ShowAxes` | Whether to draw the value axis. | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Strip plot chart](/controls/data-display/charts/statistical/strip-plot-chart)
 - [Violin plot](/controls/data-display/charts/statistical/violin-plot-chart)

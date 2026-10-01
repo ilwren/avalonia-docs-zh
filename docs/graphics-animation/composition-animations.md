@@ -48,7 +48,7 @@ All animation objects must be created through the `Compositor` associated with t
 
 The following properties on `CompositionVisual` can be animated:
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Offset` | `Vector3D` | The X, Y, Z position offset of the visual. |
 | `Opacity` | `float` | The opacity of the visual (0.0 to 1.0). |
@@ -184,7 +184,7 @@ Every `ListBoxItem` now smoothly animates to its new position whenever the list 
 
 ## API reference
 
-| Type / Member | Description |
+| Type / Member | 说明 |
 |---|---|
 | `ElementComposition.GetElementVisual(Visual)` | Returns the `CompositionVisual` for a control. |
 | `CompositionVisual` | Represents a control's visual on the render thread. |
@@ -197,7 +197,7 @@ Every `ListBoxItem` now smoothly animates to its new position whenever the list 
 | `ImplicitAnimationCollection` | Maps property names to animations that run automatically on change. |
 | `CompositionVisual.ImplicitAnimations` | Gets or sets the implicit animation collection for a visual. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Keyframe Animations](/docs/graphics-animation/keyframe-animations)
 - [Control Transitions](/docs/graphics-animation/control-transitions)

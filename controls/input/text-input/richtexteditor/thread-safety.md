@@ -436,7 +436,7 @@ await Dispatcher.UIThread.InvokeAsync(() =>
 });
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [RichTextEditor reference](/controls/input/text-input/richtexteditor)
 - [Performance tuning](/controls/input/text-input/richtexteditor/performance-tuning)

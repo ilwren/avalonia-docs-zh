@@ -375,7 +375,7 @@ with:
 <TextBox Text="{Binding SearchText, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Control Themes](/docs/styling/control-themes)

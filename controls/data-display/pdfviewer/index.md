@@ -43,7 +43,7 @@ The package renders with [PDFium](https://pdfium.googlesource.com/pdfium/), whic
 
 PDFium is licensed under the [BSD 3-Clause License](https://pdfium.googlesource.com/pdfium/+/refs/heads/main/LICENSE). Include its notice in your application's third-party attributions.
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `Avalonia.Controls.PdfViewer` NuGet package by running `dotnet add package`. Add it to the project that contains your views and to each application head (desktop, iOS, Android, browser), so each head restores the required PDFium binaries for its own platform.
 
@@ -143,11 +143,11 @@ Setting `Source` loads the document. It can be set before the viewer is attached
 | `Avalonia.Controls.Pdf.Core` | Data types: `PdfAnnotationColor`, `PdfBookmark`, `PdfSearchResult`, `PdfMetadata`, `PdfPermissions`, `SearchOptions`, `PdfLinkDestination`. |
 | `Avalonia.Controls.Pdf.Services` | Print and share types: `PrintOptions`, `IPrintService`, `ShareOptions`, `IShareService`. |
 
-## Properties
+## 属性 {#properties}
 
 ### Document, view and zoom
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `Source` | `string?` | `null` | Path to the PDF file. Setting it loads the document. |
 | `DocumentSource` | `object?` | `null` | Flexible source: a file path `string`, a `Stream`, or a `byte[]`. |
@@ -166,7 +166,7 @@ Setting `Source` loads the document. It can be set before the viewer is attached
 
 ### Sidebar and toolbar
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `SidebarMode` | `SidebarMode` | `Thumbnails` | `None`, `Thumbnails`, `TableOfContents` or `Bookmarks`. |
 | `IsSidebarVisible` | `bool` | `true` | Shows or hides the sidebar. |
@@ -192,7 +192,7 @@ The visibility of each annotation tool is controlled by its own property. See [A
 
 ### Capabilities and permissions
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `IsReadOnly` | `bool` | `false` | Disables annotation and form editing in one switch. Saving is gated separately by `AllowDocumentSaving`. |
 | `AllowTextSelection` | `bool` | `true` | Enables text selection and copy. |
@@ -212,7 +212,7 @@ The visibility of each annotation tool is controlled by its own property. See [A
 
 These properties are read-only and bindable.
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `PageCount` | `int` | Number of pages in the loaded document. |
 | `HasDocument` | `bool` | Whether a document is open. |
@@ -239,7 +239,7 @@ These properties are read-only and bindable.
 
 All commands are `ICommand` and update `CanExecute` as document and selection state changes. Bind them from your own buttons if you hide the built-in toolbar.
 
-| Command | Description |
+| Command | 说明 |
 |---|---|
 | `ZoomInCommand`, `ZoomOutCommand`, `ResetZoomCommand` | Adjust the zoom. |
 | `FitWidthCommand`, `FitPageCommand` | Apply a fit mode. |
@@ -256,9 +256,9 @@ All commands are `ICommand` and update `CanExecute` as document and selection st
 <Button Content="Highlight" Command="{Binding #Viewer.SetToolCommand}" CommandParameter="Highlight" />
 ```
 
-## Events
+## 事件 {#events}
 
-| Event | Args | Description |
+| Event | Args | 说明 |
 |---|---|---|
 | `DocumentLoaded` | `PdfDocumentLoadedEventArgs` | A document finished loading. Args include `PageCount` and `Metadata`. |
 | `DocumentClosed` | `EventArgs` | The document was closed. |
@@ -281,7 +281,7 @@ All commands are `ICommand` and update `CanExecute` as document and selection st
 
 Every public member of `PdfViewer` must be called on the UI thread. The `*Async` members throw if called from another thread. They do not block the UI while a page is decoding. PDFium itself is single-threaded, so several viewers in one process share one decode pipeline.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Loading and saving](loading-and-saving.md)
 - [Navigation and search](navigation-and-search.md)

@@ -32,7 +32,7 @@ For device APIs that Avalonia does not abstract, [Microsoft.Maui.Essentials](htt
 
 The standard Avalonia cross-platform template creates a set of projects designed for maximum code sharing:
 
-| Project | Purpose |
+| Project | 用途 |
 |---|---|
 | Core | Views, view models, business logic (shared by all platforms) |
 | Desktop | Entry point for Windows, macOS, and Linux |
@@ -116,7 +116,7 @@ Register each implementation with your dependency injection container so that sh
 
 Start with the simplest approach that meets your needs and move to a more flexible one only when necessary.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
 - [Setting up a cross-platform solution](/docs/app-development/cross-platform-solution-setup)

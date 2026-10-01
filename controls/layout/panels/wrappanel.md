@@ -13,7 +13,7 @@ When you set the `Orientation` property to `Vertical`, the arrangement flows fro
 
 ## Useful properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Orientation` | Direction of the arrangement flow: `Horizontal` (default) or `Vertical`. |
 | `ItemSpacing` | Horizontal gap between items. |
@@ -89,7 +89,7 @@ When you use `ItemWidth` or `ItemHeight`, child controls may be smaller than the
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [StackPanel](/controls/layout/panels/stackpanel)
 - [DockPanel](/controls/layout/panels/dockpanel)

@@ -152,7 +152,7 @@ For more information on event routing, see [Routed events](/docs/input-interacti
 
 Code-behind works well for small applications, prototypes, or view-specific logic such as animations and focus management. For larger applications, consider the MVVM pattern, which separates your UI logic into view models that are easier to test and maintain. You can also combine both approaches, using MVVM for your data and business logic while keeping view-specific code in code-behind.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml)
 - [Code-only UI](/docs/fundamentals/coded-ui)

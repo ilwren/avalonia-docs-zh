@@ -81,7 +81,7 @@ public class ToggleLabel : TemplatedControl
 
 Each declaration carries three values:
 
-| Value | Meaning |
+| 值 | Meaning |
 | --- | --- |
 | `Name` | `x:Name` that the element uses. Must begin with the `PART_` prefix. |
 | `Type` | Control type of the element, e.g., `Button`, `Panel`. |
@@ -204,7 +204,7 @@ Then, target the pseudoclass in your control theme. Nest the `Style` inside the 
 </ControlTheme>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Defining properties](/docs/custom-controls/defining-properties): Add styled, direct, and attached properties to a custom control.
 - [Defining events](/docs/custom-controls/defining-events): Add routed events to a custom control.

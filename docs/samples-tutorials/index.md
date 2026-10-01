@@ -222,7 +222,7 @@ Explore tutorials, sample apps, and quick guides to accelerate your Avalonia lea
 
 </DocsCards>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Get Started](/docs/get-started/create-your-first-project): Create your first Avalonia application.
 - [Controls Reference](/controls): Full Avalonia controls documentation.

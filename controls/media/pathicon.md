@@ -15,7 +15,7 @@ Because `PathIcon` uses vector paths rather than raster images, your icons scale
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Data` | `Geometry` | The stream geometry that defines the icon shape. |
 | `Foreground` | `IBrush` | The brush used to fill the icon. If you do not set this property, the value is inherited from the parent control. |
@@ -93,7 +93,7 @@ To override the inherited color on a specific icon, set `Foreground` directly.
           Width="16" Height="16" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PathIcon API reference](https://reference.avaloniaui.net/api/Avalonia.Controls/PathIcon/)
 - [Image](/controls/media/image)

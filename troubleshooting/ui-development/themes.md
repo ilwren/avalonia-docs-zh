@@ -78,7 +78,7 @@ If you are using a third-party theme, verify that:
 
 If the issue persists with a third-party theme, contact the theme's maintainers for support.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Themes overview](/docs/styling/themes)
 - [Styles](/docs/styling/styles)

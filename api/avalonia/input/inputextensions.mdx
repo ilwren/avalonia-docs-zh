@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InputExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/InputExtensions.cs">InputExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/InputExtensions.cs">InputExtensions.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class InputExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> InputExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> InputExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetInputElementsAt (2 overloads)](#uid-65f6aa8f40) | Returns the active input elements at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement). |
 | [InputHitTest (4 overloads)](#uid-f46f08bee9) | Returns the topmost active input element at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement). |
@@ -73,7 +73,7 @@ public class InputExtensions
 
 <span id="uid-3a6166c808"></span>
 
-#### GetInputElementsAt Method
+#### GetInputElementsAt 方法 {#getinputelementsat-method}
 
 Returns the active input elements at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
 
@@ -81,7 +81,7 @@ Returns the active input elements at a point on an [Avalonia.Input.IInputElement
 public System.Collections.Generic.IEnumerable<Avalonia.Input.IInputElement> GetInputElementsAt(Avalonia.Input.IInputElement element, Avalonia.Point p)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `element` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -98,7 +98,7 @@ The point on `element`.
 Whether to only return elements for which [Avalonia.Input.IInputElement.IsEffectivelyEnabled](xref:Avalonia.Input.IInputElement.IsEffectivelyEnabled) is true.
 
 
-##### Returns
+##### 返回值 {#returns}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)&gt;
 
@@ -111,7 +111,7 @@ The active input elements found at the point, ordered topmost first.
 
 <span id="uid-ad5b8bf67e"></span>
 
-#### GetInputElementsAt Method
+#### GetInputElementsAt 方法 {#getinputelementsat-method-1}
 
 Returns the active input elements at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
 
@@ -119,7 +119,7 @@ Returns the active input elements at a point on an [Avalonia.Input.IInputElement
 public System.Collections.Generic.IEnumerable<Avalonia.Input.IInputElement> GetInputElementsAt(Avalonia.Input.IInputElement element, Avalonia.Point p, bool enabledElementsOnly)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `element` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -136,7 +136,7 @@ The point on `element`.
 Whether to only return elements for which [Avalonia.Input.IInputElement.IsEffectivelyEnabled](xref:Avalonia.Input.IInputElement.IsEffectivelyEnabled) is true.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)&gt;
 
@@ -153,7 +153,7 @@ The active input elements found at the point, ordered topmost first.
 
 <span id="uid-6e1c0b77f9"></span>
 
-#### InputHitTest Method
+#### InputHitTest 方法 {#inputhittest-method}
 
 Returns the topmost active input element at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
 
@@ -161,7 +161,7 @@ Returns the topmost active input element at a point on an [Avalonia.Input.IInput
 public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement element, Avalonia.Point p)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `element` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -178,7 +178,7 @@ The point on `element`.
 Whether to only return elements for which [Avalonia.Input.IInputElement.IsEffectivelyEnabled](xref:Avalonia.Input.IInputElement.IsEffectivelyEnabled) is true.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -191,7 +191,7 @@ The topmost [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) at
 
 <span id="uid-9f69ba1412"></span>
 
-#### InputHitTest Method
+#### InputHitTest 方法 {#inputhittest-method-1}
 
 Returns the topmost active input element at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
 
@@ -199,7 +199,7 @@ Returns the topmost active input element at a point on an [Avalonia.Input.IInput
 public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement element, Avalonia.Point p, bool enabledElementsOnly)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `element` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -216,7 +216,7 @@ The point on `element`.
 Whether to only return elements for which [Avalonia.Input.IInputElement.IsEffectivelyEnabled](xref:Avalonia.Input.IInputElement.IsEffectivelyEnabled) is true.
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -229,13 +229,13 @@ The topmost [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) at
 
 <span id="uid-6338bff73c"></span>
 
-#### InputHitTest Method
+#### InputHitTest 方法 {#inputhittest-method-2}
 
 ```csharp
 public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement element, Avalonia.Point p, Func<Avalonia.Visual, bool> filter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `element` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -246,7 +246,7 @@ public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement el
 `filter` Func&lt;[Avalonia.Visual](xref:Avalonia.Visual), bool&gt;
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -257,13 +257,13 @@ public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement el
 
 <span id="uid-0e44ec4be3"></span>
 
-#### InputHitTest Method
+#### InputHitTest 方法 {#inputhittest-method-3}
 
 ```csharp
 public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement element, Avalonia.Point p, Func<Avalonia.Visual, bool> filter, bool enabledElementsOnly)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `element` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -277,7 +277,7 @@ public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement el
 `enabledElementsOnly` bool
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 

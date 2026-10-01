@@ -85,7 +85,7 @@ Then reference it:
                 ContentTemplate="{StaticResource CustomerTemplate}" />
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Control Content](/docs/data-templates/control-content): How controls display non-control content.
 - [Content Templates](/docs/data-templates/content-templates): Using `ContentTemplate` directly.

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPlatformSettings Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/IPlatformSettings.cs">IPlatformSettings.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/IPlatformSettings.cs">IPlatformSettings.cs</a>
 </div>
 
 </div>
@@ -53,9 +53,9 @@ public interface IPlatformSettings
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetColorValues](#uid-3c69d4c9c5) | Gets current system color values including dark mode and accent colors. |
 | [GetDoubleTapSize](#uid-c978d38b41) | The size of the rectangle around the location of a pointer down that a pointer up must occur within in order to register a double-tap gesture, in device-independent pixels. |
@@ -66,7 +66,7 @@ public interface IPlatformSettings
 
 <span id="uid-3c69d4c9c5"></span>
 
-### GetColorValues Method
+### GetColorValues 方法 {#getcolorvalues-method}
 
 Gets current system color values including dark mode and accent colors.
 
@@ -74,7 +74,7 @@ Gets current system color values including dark mode and accent colors.
 public Avalonia.Platform.PlatformColorValues GetColorValues()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Platform.PlatformColorValues](xref:Avalonia.Platform.PlatformColorValues)
 
@@ -85,7 +85,7 @@ public Avalonia.Platform.PlatformColorValues GetColorValues()
 
 <span id="uid-c978d38b41"></span>
 
-### GetDoubleTapSize Method
+### GetDoubleTapSize 方法 {#getdoubletapsize-method}
 
 The size of the rectangle around the location of a pointer down that a pointer up
 must occur within in order to register a double-tap gesture, in device-independent
@@ -95,14 +95,14 @@ pixels.
 public Avalonia.Size GetDoubleTapSize(Avalonia.Input.PointerType type)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `type` [Avalonia.Input.PointerType](xref:Avalonia.Input.PointerType)
 
 The pointer type.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -113,7 +113,7 @@ The pointer type.
 
 <span id="uid-c0e02e9437"></span>
 
-### GetDoubleTapTime Method
+### GetDoubleTapTime 方法 {#getdoubletaptime-method}
 
 Gets the maximum time that may occur between the first and second click of a double-
 tap gesture.
@@ -122,12 +122,12 @@ tap gesture.
 public TimeSpan GetDoubleTapTime(Avalonia.Input.PointerType type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `type` [Avalonia.Input.PointerType](xref:Avalonia.Input.PointerType)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 TimeSpan
 
@@ -138,7 +138,7 @@ TimeSpan
 
 <span id="uid-34908b33f3"></span>
 
-### GetTapSize Method
+### GetTapSize 方法 {#gettapsize-method}
 
 The size of the rectangle around the location of a pointer down that a pointer up
 must occur within in order to register a tap gesture, in device-independent pixels.
@@ -147,23 +147,23 @@ must occur within in order to register a tap gesture, in device-independent pixe
 public Avalonia.Size GetTapSize(Avalonia.Input.PointerType type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `type` [Avalonia.Input.PointerType](xref:Avalonia.Input.PointerType)
 
 The pointer type.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HoldWaitDuration](#uid-18e487bd24) | Holding duration between pointer press and when event is fired. |
 | [HotkeyConfiguration](#uid-167fcac31c) | Get a configuration for platform-specific hotkeys in an Avalonia application. |
@@ -172,7 +172,7 @@ The pointer type.
 
 <span id="uid-18e487bd24"></span>
 
-### HoldWaitDuration Property
+### HoldWaitDuration 属性 {#holdwaitduration-property}
 
 Holding duration between pointer press and when event is fired.
 
@@ -186,7 +186,7 @@ public TimeSpan HoldWaitDuration { get; set; }
 
 <span id="uid-167fcac31c"></span>
 
-### HotkeyConfiguration Property
+### HotkeyConfiguration 属性 {#hotkeyconfiguration-property}
 
 Get a configuration for platform-specific hotkeys in an Avalonia application.
 
@@ -196,9 +196,9 @@ public Avalonia.Input.Platform.PlatformHotkeyConfiguration HotkeyConfiguration {
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ColorValuesChanged](#uid-9a11a40b95) | Raises when current system color values are changed. Including changing of a dark mode and accent colors. |
 
@@ -206,7 +206,7 @@ public Avalonia.Input.Platform.PlatformHotkeyConfiguration HotkeyConfiguration {
 
 <span id="uid-9a11a40b95"></span>
 
-### ColorValuesChanged Event
+### ColorValuesChanged 事件 {#colorvalueschanged-event}
 
 Raises when current system color values are changed. Including changing of a dark mode and accent colors.
 

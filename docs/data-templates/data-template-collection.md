@@ -84,7 +84,7 @@ When Avalonia needs a data template for an object, it searches in this order:
 
 The first matching template is used. This lets you override application-wide templates at any level of the tree.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates): Overview of data templates in Avalonia.
 - [Content Templates](/docs/data-templates/content-templates): Using `ContentTemplate` directly.

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BindingValue&lt;T&gt; Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingValue.cs">BindingValue.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingValue.cs">BindingValue.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public struct BindingValue<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> BindingValue&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> BindingValue&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;BindingValue&lt;&gt;&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;BindingValue&lt;&gt;&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 The avalonia binding system is typed, and as such additional state is stored in this
 structure. A binding value can be in a number of states, described by the
@@ -85,9 +85,9 @@ conversion from `T`
 - For an unset value, use [Avalonia.Data.BindingValue&lt;T&gt;.Unset](xref:Avalonia.Data.BindingValue%601.Unset) or simply `default`
 - For other types, call one of the static factory methods
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BindingValue&lt;T&gt;](#uid-506559e5ca) | Initializes a new instance of the [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601) struct with a type of [Avalonia.Data.BindingValueType.Value](xref:Avalonia.Data.BindingValueType.Value) |
 
@@ -95,7 +95,7 @@ conversion from `T`
 
 <span id="uid-506559e5ca"></span>
 
-### BindingValue&lt;T&gt; Constructor
+### BindingValue&lt;T&gt; 构造函数 {#bindingvaluelttgt-constructor}
 
 Initializes a new instance of the [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601) struct with a type of
 [Avalonia.Data.BindingValueType.Value](xref:Avalonia.Data.BindingValueType.Value)
@@ -104,27 +104,27 @@ Initializes a new instance of the [Avalonia.Data.BindingValue&lt;T&gt;](xref:Ava
 public BindingValue<T>(T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` T
 
-The value.
+该值。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BindingError (3 overloads)](#uid-b9db6c25b8) | Returns a binding value with a type of [Avalonia.Data.BindingValueType.BindingError](xref:Avalonia.Data.BindingValueType.BindingError). |
 | [DataValidationError (3 overloads)](#uid-7ce0664521) | Returns a binding value with a type of [Avalonia.Data.BindingValueType.DataValidationError](xref:Avalonia.Data.BindingValueType.DataValidationError). |
-| [Equals (2 overloads)](#uid-4a184e5d1e) | No summary available. |
+| [Equals（2 个重载）](#uid-4a184e5d1e) | 暂无摘要。 |
 | [FromUntyped (2 overloads)](#uid-e471c0663b) | Creates a [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601) from an object, handling the special values [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue), [Avalonia.Data.BindingOperations.DoNothing](xref:Avalonia.Data.BindingOperations.DoNothing) and [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification). |
-| [GetHashCode](#uid-6659ee4d4a) | No summary available. |
+| [GetHashCode](#uid-6659ee4d4a) | 暂无摘要。 |
 | [GetValueOrDefault (3 overloads)](#uid-419c82c88c) | Gets the value of the binding value if present, otherwise the default value. |
 | [ToOptional](#uid-1a36aed827) | Converts the binding value to an [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601). |
-| [ToString](#uid-e15e641fb3) | No summary available. |
+| [ToString](#uid-e15e641fb3) | 暂无摘要。 |
 | [ToUntyped](#uid-9eb66563d8) | Converts the value to untyped representation, using [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue), [Avalonia.Data.BindingOperations.DoNothing](xref:Avalonia.Data.BindingOperations.DoNothing) and [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) where appropriate. |
 | [WithValue](#uid-f120636b88) | Returns a new binding value with the specified value. |
 
@@ -136,7 +136,7 @@ The value.
 
 <span id="uid-78c7c0f6a7"></span>
 
-#### BindingError Method
+#### BindingError 方法 {#bindingerror-method}
 
 Returns a binding value with a type of [Avalonia.Data.BindingValueType.BindingError](xref:Avalonia.Data.BindingValueType.BindingError).
 
@@ -144,14 +144,14 @@ Returns a binding value with a type of [Avalonia.Data.BindingValueType.BindingEr
 public Avalonia.Data.BindingValue<T><T> BindingError(Exception e)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `e` Exception
 
 The binding error.
 
 
-##### Returns
+##### 返回值 {#returns}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -162,13 +162,13 @@ Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 <span id="uid-a1b6543c0b"></span>
 
-#### BindingError Method
+#### BindingError 方法 {#bindingerror-method-1}
 
 ```csharp
 public Avalonia.Data.BindingValue<T><T> BindingError(Exception e, Avalonia.Data.Optional<T><T> fallbackValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `e` Exception
 
@@ -176,7 +176,7 @@ public Avalonia.Data.BindingValue<T><T> BindingError(Exception e, Avalonia.Data.
 `fallbackValue` Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -187,7 +187,7 @@ Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 <span id="uid-31debe3e1a"></span>
 
-#### BindingError Method
+#### BindingError 方法 {#bindingerror-method-2}
 
 Returns a binding value with a type of [Avalonia.Data.BindingValueType.BindingErrorWithFallback](xref:Avalonia.Data.BindingValueType.BindingErrorWithFallback).
 
@@ -195,7 +195,7 @@ Returns a binding value with a type of [Avalonia.Data.BindingValueType.BindingEr
 public Avalonia.Data.BindingValue<T><T> BindingError(Exception e, T fallbackValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `e` Exception
 
@@ -207,7 +207,7 @@ The binding error.
 The fallback value.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -222,7 +222,7 @@ Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 <span id="uid-173f29073e"></span>
 
-#### DataValidationError Method
+#### DataValidationError 方法 {#datavalidationerror-method}
 
 Returns a binding value with a type of [Avalonia.Data.BindingValueType.DataValidationError](xref:Avalonia.Data.BindingValueType.DataValidationError).
 
@@ -230,14 +230,14 @@ Returns a binding value with a type of [Avalonia.Data.BindingValueType.DataValid
 public Avalonia.Data.BindingValue<T><T> DataValidationError(Exception e)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `e` Exception
 
 The data validation error.
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -248,13 +248,13 @@ Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 <span id="uid-db8f6a96a5"></span>
 
-#### DataValidationError Method
+#### DataValidationError 方法 {#datavalidationerror-method-1}
 
 ```csharp
 public Avalonia.Data.BindingValue<T><T> DataValidationError(Exception e, Avalonia.Data.Optional<T><T> fallbackValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `e` Exception
 
@@ -262,7 +262,7 @@ public Avalonia.Data.BindingValue<T><T> DataValidationError(Exception e, Avaloni
 `fallbackValue` Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -273,7 +273,7 @@ Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 <span id="uid-e0037c1656"></span>
 
-#### DataValidationError Method
+#### DataValidationError 方法 {#datavalidationerror-method-2}
 
 Returns a binding value with a type of [Avalonia.Data.BindingValueType.DataValidationErrorWithFallback](xref:Avalonia.Data.BindingValueType.DataValidationErrorWithFallback).
 
@@ -281,7 +281,7 @@ Returns a binding value with a type of [Avalonia.Data.BindingValueType.DataValid
 public Avalonia.Data.BindingValue<T><T> DataValidationError(Exception e, T fallbackValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `e` Exception
 
@@ -293,7 +293,7 @@ The data validation error.
 The fallback value.
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -302,24 +302,24 @@ Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 <span id="uid-4a184e5d1e"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8a5f92fa66"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Data.BindingValue<T><T> other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `other` Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 bool
 
@@ -330,18 +330,18 @@ bool
 
 <span id="uid-87764a851c"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 bool
 
@@ -356,7 +356,7 @@ bool
 
 <span id="uid-93edf7f40c"></span>
 
-#### FromUntyped Method
+#### FromUntyped 方法 {#fromuntyped-method}
 
 Creates a [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601) from an object, handling the special values
 [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue), [Avalonia.Data.BindingOperations.DoNothing](xref:Avalonia.Data.BindingOperations.DoNothing) and
@@ -366,14 +366,14 @@ Creates a [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%
 public Avalonia.Data.BindingValue<T><T> FromUntyped(object value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `value` object
 
 The untyped value.
 
 
-##### Returns
+##### 返回值 {#returns-8}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -386,7 +386,7 @@ The typed binding value.
 
 <span id="uid-a9e1a629e8"></span>
 
-#### FromUntyped Method
+#### FromUntyped 方法 {#fromuntyped-method-1}
 
 Creates a [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601) from an object, handling the special values
 [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue), [Avalonia.Data.BindingOperations.DoNothing](xref:Avalonia.Data.BindingOperations.DoNothing) and
@@ -396,19 +396,19 @@ Creates a [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%
 public Avalonia.Data.BindingValue<T><T> FromUntyped(object value, Type targetType)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `value` object
 
 The untyped value.
 
 
-`targetType` Type
+`targetType` 类型
 
 The runtime target type.
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
@@ -421,13 +421,13 @@ The typed binding value.
 
 <span id="uid-6659ee4d4a"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-10}
 
 int
 
@@ -442,7 +442,7 @@ int
 
 <span id="uid-fe604b9af7"></span>
 
-#### GetValueOrDefault Method
+#### GetValueOrDefault 方法 {#getvalueordefault-method}
 
 Gets the value of the binding value if present, otherwise the default value.
 
@@ -450,11 +450,11 @@ Gets the value of the binding value if present, otherwise the default value.
 public TResult GetValueOrDefault<TResult>()
 ```
 
-##### Returns
+##### 返回值 {#returns-11}
 
 T
 
-The value.
+该值。
 
 
 </section>
@@ -463,7 +463,7 @@ The value.
 
 <span id="uid-0909d1f5df"></span>
 
-#### GetValueOrDefault Method
+#### GetValueOrDefault 方法 {#getvalueordefault-method-1}
 
 Gets the value of the binding value if present, otherwise a default value.
 
@@ -471,18 +471,18 @@ Gets the value of the binding value if present, otherwise a default value.
 public T GetValueOrDefault(T defaultValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `defaultValue` T
 
 The default value.
 
 
-##### Returns
+##### 返回值 {#returns-12}
 
 T
 
-The value.
+该值。
 
 
 </section>
@@ -491,13 +491,13 @@ The value.
 
 <span id="uid-a1a4d4def2"></span>
 
-#### GetValueOrDefault Method
+#### GetValueOrDefault 方法 {#getvalueordefault-method-2}
 
 ```csharp
 public TResult GetValueOrDefault<TResult>(TResult defaultValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `defaultValue` TResult
 
@@ -507,7 +507,7 @@ public TResult GetValueOrDefault<TResult>(TResult defaultValue)
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-13}
 
 TResult
 
@@ -518,7 +518,7 @@ TResult
 
 <span id="uid-1a36aed827"></span>
 
-### ToOptional Method
+### ToOptional 方法 {#tooptional-method}
 
 Converts the binding value to an [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601).
 
@@ -526,7 +526,7 @@ Converts the binding value to an [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia
 public Avalonia.Data.Optional<T><T> ToOptional()
 ```
 
-#### Returns
+#### 返回值 {#returns-14}
 
 Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
@@ -537,13 +537,13 @@ Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
 <span id="uid-e15e641fb3"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-15}
 
 string
 
@@ -554,7 +554,7 @@ string
 
 <span id="uid-9eb66563d8"></span>
 
-### ToUntyped Method
+### ToUntyped 方法 {#tountyped-method}
 
 Converts the value to untyped representation, using [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue),
 [Avalonia.Data.BindingOperations.DoNothing](xref:Avalonia.Data.BindingOperations.DoNothing) and [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) where
@@ -564,7 +564,7 @@ appropriate.
 public object ToUntyped()
 ```
 
-#### Returns
+#### 返回值 {#returns-16}
 
 object
 
@@ -577,7 +577,7 @@ The untyped representation of the binding value.
 
 <span id="uid-f120636b88"></span>
 
-### WithValue Method
+### WithValue 方法 {#withvalue-method}
 
 Returns a new binding value with the specified value.
 
@@ -585,30 +585,30 @@ Returns a new binding value with the specified value.
 public Avalonia.Data.BindingValue<T><T> WithValue(T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `value` T
 
 The new value.
 
 
-#### Returns
+#### 返回值 {#returns-17}
 
 Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;
 
 The new binding value.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [The binding type is \[Avalonia.Data.BindingValueType.UnsetValue\](xref:Avalonia.Data.BindingValueType.UnsetValue) or
 \[Avalonia.Data.BindingValueType.DoNothing\](xref:Avalonia.Data.BindingValueType.DoNothing).](xref:System.InvalidOperationException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DoNothing](#uid-3fb270d22d) | Returns a binding value with a type of [Avalonia.Data.BindingValueType.DoNothing](xref:Avalonia.Data.BindingValueType.DoNothing). |
 | [Error](#uid-1640174bff) | Gets the binding or data validation error. |
@@ -622,7 +622,7 @@ The new binding value.
 
 <span id="uid-3fb270d22d"></span>
 
-### DoNothing Property
+### DoNothing 属性 {#donothing-property}
 
 Returns a binding value with a type of [Avalonia.Data.BindingValueType.DoNothing](xref:Avalonia.Data.BindingValueType.DoNothing).
 
@@ -636,7 +636,7 @@ public Avalonia.Data.BindingValue<T><T> DoNothing { get; set; }
 
 <span id="uid-1640174bff"></span>
 
-### Error Property
+### Error 属性 {#error-property}
 
 Gets the binding or data validation error.
 
@@ -650,7 +650,7 @@ public Exception Error { get; set; }
 
 <span id="uid-0c59876f79"></span>
 
-### HasError Property
+### HasError 属性 {#haserror-property}
 
 Gets a value indicating whether the binding value represents either a binding or data
 validation error.
@@ -665,7 +665,7 @@ public bool HasError { get; set; }
 
 <span id="uid-f5132d92ed"></span>
 
-### HasValue Property
+### HasValue 属性 {#hasvalue-property}
 
 Gets a value indicating whether the binding value has a value.
 
@@ -679,7 +679,7 @@ public bool HasValue { get; set; }
 
 <span id="uid-2aebe2533d"></span>
 
-### Type Property
+### Type 属性 {#type-property}
 
 Gets the type of the binding value.
 
@@ -693,7 +693,7 @@ public Avalonia.Data.BindingValueType Type { get; set; }
 
 <span id="uid-6c5003d0fb"></span>
 
-### Unset Property
+### Unset 属性 {#unset-property}
 
 Returns a binding value with a type of [Avalonia.Data.BindingValueType.UnsetValue](xref:Avalonia.Data.BindingValueType.UnsetValue).
 
@@ -707,7 +707,7 @@ public Avalonia.Data.BindingValue<T><T> Unset { get; set; }
 
 <span id="uid-e59c76570a"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
 Gets the binding value or fallback value.
 
@@ -715,7 +715,7 @@ Gets the binding value or fallback value.
 public T Value { get; set; }
 ```
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [\[Avalonia.Data.BindingValue&amp;lt;T&amp;gt;.HasValue\](xref:Avalonia.Data.BindingValue%601.HasValue) is false.](xref:System.InvalidOperationException)
 

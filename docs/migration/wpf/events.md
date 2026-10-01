@@ -1,6 +1,6 @@
 ---
 id: events
-title: Events
+title: 事件
 description: Differences between WPF and Avalonia routed events, tunnelling, and event naming.
 doc-type: migration
 ---
@@ -209,7 +209,7 @@ The main differences are:
 - The CLR event wrapper in Avalonia uses `EventHandler<RoutedEventArgs>` rather than `RoutedEventHandler`.
 - Registration uses generic type parameters instead of `typeof()` arguments.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Routed Events Overview](/docs/events)
 - [Input Events](/docs/events/input-events)

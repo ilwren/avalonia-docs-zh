@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BlockNodeKindHandler Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Handlers</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Handlers</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -53,16 +53,16 @@ public class BlockNodeKindHandler
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> BlockNodeKindHandler
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> BlockNodeKindHandler
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../inodekindhandler">INodeKindHandler</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../inodekindhandler">INodeKindHandler</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ApplyFormatting](#uid-d20214c32d) | Applies formatting from a [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) back to the element. |
 | [CaptureSnapshot](#uid-9ced0bd6b4) | Captures an immutable [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) for the given element state. |
@@ -73,7 +73,7 @@ public class BlockNodeKindHandler
 
 <span id="uid-d20214c32d"></span>
 
-### ApplyFormatting Method
+### ApplyFormatting 方法 {#applyformatting-method}
 
 Applies formatting from a [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) back to the element.
 
@@ -81,7 +81,7 @@ Applies formatting from a [Avalonia.Controls.Documents.Serialization.Snapshot.Sn
 public void ApplyFormatting(Avalonia.Controls.Documents.RichTextElement element, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode snapshotNode)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `element` [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
@@ -95,7 +95,7 @@ public void ApplyFormatting(Avalonia.Controls.Documents.RichTextElement element,
 
 <span id="uid-9ced0bd6b4"></span>
 
-### CaptureSnapshot Method
+### CaptureSnapshot 方法 {#capturesnapshot-method}
 
 Captures an immutable [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) for the given element state.
 
@@ -103,7 +103,7 @@ Captures an immutable [Avalonia.Controls.Documents.Serialization.Snapshot.Snapsh
 public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode CaptureSnapshot(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind, int startOffset, int length, Avalonia.Controls.Documents.RichTextElement element, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode deferredSnapshot, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren children)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `kind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
@@ -123,7 +123,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode CaptureSn
 `children` [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)
 
@@ -134,7 +134,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode CaptureSn
 
 <span id="uid-15ce740162"></span>
 
-### CreateDocumentNode Method
+### CreateDocumentNode 方法 {#createdocumentnode-method}
 
 Creates the [Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode) for the given element, or to use the default.
 
@@ -142,12 +142,12 @@ Creates the [Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode](
 public Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode CreateDocumentNode(Avalonia.Controls.Documents.RichTextElement element)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `element` [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode)
 
@@ -158,7 +158,7 @@ public Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode CreateD
 
 <span id="uid-2f5277e3d0"></span>
 
-### CreateElement Method
+### CreateElement 方法 {#createelement-method}
 
 Creates the [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) for the given node kind.
 
@@ -166,12 +166,12 @@ Creates the [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls
 public Avalonia.Controls.Documents.RichTextElement CreateElement(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `kind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 

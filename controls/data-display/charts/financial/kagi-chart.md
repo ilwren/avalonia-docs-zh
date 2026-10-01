@@ -55,7 +55,7 @@ private static IEnumerable<KagiPoint> CreateKagiData()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of raw price points. | `null` |
 | `ValuePath` | Property representing the price. | `null` |

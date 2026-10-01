@@ -81,7 +81,7 @@ Shape sizes are also measured in axis units. On logarithmic axes or axes with sc
 
 ## Common properties (LineAnnotation)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | Axis-space value where the line is placed. Horizontal lines use vertical-axis values; vertical lines use horizontal-axis values. | `0` |
 | `Orientation` | `Horizontal` or `Vertical`. | `Horizontal` |
@@ -94,7 +94,7 @@ Shape sizes are also measured in axis units. On logarithmic axes or axes with sc
 
 ## Common properties (`BandAnnotation`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `FromValue` | Starting axis-space value of the band. Horizontal bands use vertical-axis values; vertical bands use horizontal-axis values. | `0` |
 | `ToValue` | Ending axis-space value of the band. | `0` |
@@ -108,7 +108,7 @@ Shape sizes are also measured in axis units. On logarithmic axes or axes with sc
 
 A text annotation placed at a specific coordinate on the chart area.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `X` | Horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
 | `Y` | Vertical-axis value. | `0` |
@@ -123,7 +123,7 @@ A text annotation placed at a specific coordinate on the chart area.
 
 A rectangle annotation placed at specific coordinates on the chart area.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `X` | Left horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
 | `Y` | Lower vertical-axis value. | `0` |
@@ -158,7 +158,7 @@ A rectangle annotation placed at specific coordinates on the chart area.
 
 An ellipse annotation placed at specific coordinates on the chart area.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `X` | Center horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
 | `Y` | Center vertical-axis value. | `0` |
@@ -192,7 +192,7 @@ An ellipse annotation placed at specific coordinates on the chart area.
 
 A line annotation with optional arrowheads at either or both ends, useful for indicating direction or drawing attention between two data points.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `X1` | Start horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
 | `Y1` | Start vertical-axis value. | `0` |

@@ -180,7 +180,7 @@ The pipeline is Markdig with `UseSupportedExtensions()`. Supported constructs ar
 - task lists
 - the Markdig library's own symbol extension
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Markdown control](/controls/data-display/text-display/markdown) - rendering Markdown without an editor
 - [Code highlighter](/controls/data-display/text-display/markdown/codehighlighter) - the `CodeHighlighter` the serializer takes

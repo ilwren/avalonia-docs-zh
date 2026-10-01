@@ -61,7 +61,7 @@ If you are coming from WinForms with no XAML experience, these are the areas tha
 - **[Styling](/docs/styling/styles):** Avalonia uses a CSS-like styling system with selectors and style classes, rather than setting properties on individual controls.
 - **[Layout panels](/docs/layout):** Instead of absolute positioning or dock/anchor, Avalonia uses panels like `Grid`, `StackPanel`, and `DockPanel` to arrange controls.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Get Started with Avalonia](/docs/get-started/create-your-first-project): Create your first Avalonia application.
 - [Using Avalonia in Windows Forms](/docs/platform-specific-guides/windows#using-avalonia-in-windows-forms): Use Avalonia controls inside an existing WinForms app.

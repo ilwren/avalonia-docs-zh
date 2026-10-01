@@ -18,7 +18,7 @@ Shape controls are visual elements you place directly in your XAML layout. They 
            Fill="SteelBlue" Stroke="DarkBlue" StrokeThickness="2" />
 ```
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `RadiusX`, `RadiusY` | Corner rounding radius for rounded rectangles. |
 
@@ -97,7 +97,7 @@ The most versatile shape control. Uses a `Geometry` to define its outline:
 
 All shapes inherit from `Shape` and share these properties:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Fill` | The brush that paints the interior. |
 | `Stroke` | The brush that paints the outline. |
@@ -172,7 +172,7 @@ The most flexible geometry, composed of figures and segments:
 
 ### Segment types
 
-| Segment | Description |
+| Segment | 说明 |
 |---|---|
 | `LineSegment` | Draws a straight line to a point. |
 | `ArcSegment` | Draws an elliptical arc. |
@@ -232,7 +232,7 @@ The `Data` property of `Path` accepts SVG-style path data as a string. This comp
 
 ### Commands
 
-| Command | Parameters | Description |
+| Command | 参数 | 说明 |
 |---|---|---|
 | `M` / `m` | `x,y` | Move to point (absolute / relative) |
 | `L` / `l` | `x,y` | Line to point |
@@ -290,7 +290,7 @@ using (var ctx = geometry.Open())
 
 ### StreamGeometryContext methods
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `BeginFigure(Point, bool isFilled = true)` | Starts a new figure at the specified point. Set `isFilled` to `false` for an open, unfilled path. |
 | `LineTo(Point, bool isStroked = true)` | Draws a straight line to a point. |
@@ -316,7 +316,7 @@ using (var ctx = geometry.Open())
 
 All `Geometry` objects expose methods for hit testing and transformation:
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `FillContains(Point)` | Returns `true` if the point is inside the filled area of the geometry. |
 | `StrokeContains(Pen, Point)` | Returns `true` if the point lies on the stroke of the geometry using the specified pen. |
@@ -346,7 +346,7 @@ Define geometries as resources for reuse across your application:
 
 `StreamGeometry` is a lightweight, immutable geometry optimized for performance. Use it for icon paths and other static shapes.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Overview of the Avalonia graphics system.
 - [Brushes](/docs/graphics-animation/brushes): Fill and stroke brushes.

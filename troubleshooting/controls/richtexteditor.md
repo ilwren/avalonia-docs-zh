@@ -100,7 +100,7 @@ Dispatcher.UIThread.VerifyAccess();
 - **Cause**: serializing a live document while it is being edited.
 - **Fix**: Capture a `DocumentSnapshot` on the UI thread first, then serialize the snapshot from wherever you like.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [RichTextEditor control](/controls/input/text-input/richtexteditor)
 - [Thread safety](/controls/input/text-input/richtexteditor/thread-safety)

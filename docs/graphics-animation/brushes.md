@@ -24,7 +24,7 @@ Fills an area with a single color. This is the most common brush type and is use
 
 Colors can be specified as:
 
-| Format | Example | Description |
+| Format | Example | 说明 |
 |---|---|---|
 | Named color | `Red`, `SteelBlue` | Any standard CSS/WPF color name. |
 | `#RRGGBB` | `#4682B4` | Hex RGB. |
@@ -76,7 +76,7 @@ Fills an area with a gradient that transitions between colors along a line. For 
 
 ### Key properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `StartPoint` | The starting point of the gradient line. Uses relative (`50%,0%`) or absolute coordinates. |
 | `EndPoint` | The ending point of the gradient line. |
@@ -115,7 +115,7 @@ Fills an area with a gradient that radiates from a center point outward.
 
 ### Key properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Center` | The center of the outermost circle. Default is `50%,50%`. |
 | `GradientOrigin` | The origin of the gradient (focal point). Offset from center creates a spotlight effect. |
@@ -143,7 +143,7 @@ Fills an area with a gradient that sweeps around a center point, transitioning c
 
 ### Key properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Center` | The center point of the conic gradient. Default is `50%,50%`. |
 | `Angle` | The starting angle in degrees. Default is `0`. |
@@ -166,7 +166,7 @@ Paints an area with an image.
 
 ### Key properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Source` | The image source. Supports `avares://` URIs and file paths. |
 | `Stretch` | How the image fills the area: `None`, `Fill`, `Uniform` (default), `UniformToFill`. |
@@ -210,7 +210,7 @@ Paints an area using the rendered output of another visual element.
 
 ### Key properties
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Visual` | The visual element to render as the brush content. |
 | `Stretch` | How the visual fills the area. |
@@ -226,7 +226,7 @@ Paints an area using the rendered output of another visual element.
 
 All brush types share these properties:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `Opacity` | A value between 0.0 (transparent) and 1.0 (opaque). |
 | `Transform` | A transform applied to the brush coordinates. |
@@ -299,7 +299,7 @@ var radial = new RadialGradientBrush
 myBorder.Background = linear;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gradients](/docs/graphics-animation/gradients): Focused guide on linear gradient usage.
 - [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes and geometries.

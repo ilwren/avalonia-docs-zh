@@ -47,7 +47,7 @@ public ObservableCollection<SegmentBubble> Segments { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of bubble items. | `null` |
 | `ValuePath` | Path to the value used for bubble size. | `null` |
@@ -59,7 +59,7 @@ public ObservableCollection<SegmentBubble> Segments { get; } = new()
 | `LabelForeground` | Brush used for bubble labels. When `null`, labels use white. | `null` |
 | `IsHighlightEnabled` | Enables hover highlighting for bubbles. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Bubble cloud chart](/controls/data-display/charts/bubble/bubble-cloud-chart)
 - [Bubble chart](/controls/data-display/charts/bubble/bubble-chart)

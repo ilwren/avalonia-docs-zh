@@ -71,14 +71,14 @@ There is a known issue when running under .NET core 2.1 that pressing <kbd>F12</
 
 The `Logical Tree` and `Visual Tree` tabs display the controls in the window's logical and visual trees. Selecting a control will show the properties of that control in the right-hand pane where they can be edited.
 
-### Properties
+### 属性 {#properties}
 
 Allows for quickly checking and editing properties of the control. One can also search for properties (by name or by using a regex).
 
-| Column   | Description                   |
+| Column   | 说明                   |
 | -------- | ----------------------------- |
 | Property | Name of the property          |
-| Value    | Current value of the property |
+| 值    | Current value of the property |
 | Type     | Type of the current value     |
 | Priority | Priority of the value         |
 
@@ -121,7 +121,7 @@ Setters have a context menu that allows for quickly copying names and values to 
 
 <Image light={DevToolsSetterContextMenuScreenshot} alt="DevTools setter context menu" position="center" maxWidth={400} cornerRadius="true" />
 
-## Events
+## 事件 {#events}
 
 The events tab can be used to track the propagation of [events](/docs/input-interaction/routed-events). Select the events to track in the left pane, and all events of that type will be shown in the center upper pane. Select one of these events to see the event route.
 
@@ -154,7 +154,7 @@ Dotted underline under event name or control type indicates that quick navigatio
 
 <Image light={DevToolsChangeLayoutScreenshot} alt="Animation showing layout properties being changed in DevTools" position="center" maxWidth={400} cornerRadius="true" />
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Developer tools installation](/tools/developer-tools/installation)
 - [Avalonia Tools overview](/tools/)

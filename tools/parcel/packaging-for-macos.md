@@ -142,7 +142,7 @@ See the [macOS troubleshooting page](/troubleshooting/platform-specific-issues/m
 
 Parcel signs macOS bundles using Apple Developer certificates. Cross-platform signing is supported on Windows, Linux, and macOS platforms.
 
-### Prerequisites
+### 前置条件 {#prerequisites}
 
 Before you sign a macOS application, make sure that you have these items:
 
@@ -278,7 +278,7 @@ The process uploads an application to Apple's servers for scanning and associate
 
 Apple validates Mac App Store packages during submission. Do not notarize them separately. For direct distribution, Parcel can submit and staple DMG and PKG files that use Developer ID certificates. See Apple's [notarization documentation](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution).
 
-### Prerequisites
+### 前置条件 {#prerequisites-1}
 
 Before you notarize an application, make sure that you have these items:
 
@@ -359,7 +359,7 @@ See the [macOS troubleshooting page](/troubleshooting/platform-specific-issues/m
 
 See the [macOS troubleshooting page](/troubleshooting/platform-specific-issues/macos#code-signing).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Parcel setup](/tools/parcel/setup)
 - [Parcel configuration reference](/tools/parcel/configuration-reference)

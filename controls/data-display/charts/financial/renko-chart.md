@@ -45,7 +45,7 @@ public ObservableCollection<RenkoPoint> RenkoData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of price data. | `null` |
 | `BrickSize` | The price movement required for a new brick. | `10.0` |

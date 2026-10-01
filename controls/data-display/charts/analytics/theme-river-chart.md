@@ -109,7 +109,7 @@ public class ThemeRiverItem
 
 ## Common properties (`StackedAreaSeries`)
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | Series name shown in the legend. | `null` |
 | `ItemsSource` | The collection of data points for a single stream. | `null` |

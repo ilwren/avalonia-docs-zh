@@ -125,7 +125,7 @@ public static AppBuilder BuildAvaloniaApp()
 View the source code on _GitHub_ [`StringLogSink.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Logging/StringLogSink.cs)
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Setting Unhandled Exceptions](/docs/app-development/setting-unhandled-exceptions): Handling unhandled exceptions in your application.
 - [LogEventLevel API reference](/api/avalonia/logging/logeventlevel): Available log severity levels.

@@ -90,7 +90,7 @@ Your published XPF application is a standard .NET application, so you can packag
 - **Inno Setup**: A free and widely used installer builder for Windows applications.
 - **NSIS**: A scriptable installation system with a large plugin ecosystem.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [macOS Deployment](/xpf/deployment/macos)
 - [Linux Deployment](/xpf/deployment/linux)

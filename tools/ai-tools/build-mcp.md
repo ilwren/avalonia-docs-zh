@@ -41,7 +41,7 @@ The Build MCP server exposes eight tools to your AI assistant:
 
 ### Documentation and rules
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `search_avalonia_docs` | Searches the full Avalonia documentation, including API references, tutorials, guides, and migration docs. Common topics like "styling", "binding", and "mvvm" are automatically routed to optimized queries for better results. |
 | `lookup_avalonia_api` | Looks up a specific Avalonia class, property, method, or event in the API reference. Use this for targeted queries such as `TextBlock`, `Window.Show`, or `StyledProperty`. |
@@ -49,7 +49,7 @@ The Build MCP server exposes eight tools to your AI assistant:
 
 ### Migration
 
-| Tool | Description |
+| Tool | 说明 |
 |------|-------------|
 | `migrate_diagnostics` | Provides step-by-step guidance for setting up or migrating to the current Avalonia Developer Tools package. Covers removing the deprecated `Avalonia.Diagnostics` package, installing `AvaloniaUI.DiagnosticsSupport`, updating `Program.cs` and `App.axaml.cs`, and replacing old API calls. |
 | `analyze_wpf_project` | Entry point for migrating a WPF application to Avalonia. Scans the project for target framework, WPF references, third-party control suites (Telerik, DevExpress, Syncfusion, Infragistics, Actipro, SciChart, Xceed, ComponentOne), MVVM frameworks, and P/Invoke usage, then recommends either Avalonia XPF or a native Avalonia migration. Hands off to `migrate_to_xpf` or `migrate_to_avalonia` based on the recommendation. |
@@ -65,7 +65,7 @@ In addition to tools, the Build MCP server provides prompts that configure your 
 Prompt support varies by client. Claude Desktop, Claude Code, and Cursor support MCP prompts. Other editors may not surface them in the UI. If your editor does not support prompts, you can achieve the same effect by asking your assistant to call the `get_avalonia_expert_rules` tool directly.
 :::
 
-| Prompt | Description |
+| Prompt | 说明 |
 |--------|-------------|
 | `init` | Initializes an Avalonia expert session for an existing project. Loads development rules, sets up concise response behavior, and configures the assistant to use the documentation tools for every technical question. |
 | `new` | Guides you through creating a new Avalonia application. Covers template selection (`avalonia.mvvm` for desktop, `avalonia.xplat` for cross-platform), project creation with CommunityToolkit.Mvvm, compiled bindings setup, and developer tools installation. Accepts an optional `app_name` parameter. |
@@ -311,7 +311,7 @@ The assistant calls `analyze_wpf_project` to scan your project for target framew
 
 The assistant calls the `migrate_diagnostics` tool to guide you through installing `AvaloniaUI.DiagnosticsSupport` and removing the deprecated `Avalonia.Diagnostics` package if present.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [AI Tools overview](/tools/ai-tools/)
 - [DevTools MCP](/tools/developer-tools/mcp)

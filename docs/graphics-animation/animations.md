@@ -9,7 +9,7 @@ import KeyframeDiagram from '/img/concepts/ui-concepts/animations/animation-keyf
 
 Avalonia provides three types of animations:
 
-| Type | Description | Use case |
+| Type | 说明 | Use case |
 |---|---|---|
 | [Keyframe Animations](/docs/graphics-animation/keyframe-animations) | Change one or more properties over a timeline with multiple keyframes. | Complex, multi-step animations triggered by style selectors. |
 | [Control Transitions](/docs/graphics-animation/control-transitions) | Animate a single property when its value changes. | Smooth visual feedback for property changes (opacity, color, size). |
@@ -124,7 +124,7 @@ By default, a style-applied keyframe animation pauses when its control is effect
 
 Keyframe animations support these configuration options:
 
-| Setting | Description | Example |
+| Setting | 说明 | Example |
 |---|---|---|
 | `Duration` | How long one cycle takes. | `0:0:1` (1 second) |
 | `Delay` | Time to wait before starting. | `0:0:0.5` |
@@ -136,7 +136,7 @@ Keyframe animations support these configuration options:
 
 See [Animation Settings](/docs/graphics-animation/animation-settings) for details on each option and [Easing Functions](/docs/graphics-animation/easing-functions) for all available easing types.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Full keyframe animation syntax and examples.
 - [Control Transitions](/docs/graphics-animation/control-transitions): Animating property changes.

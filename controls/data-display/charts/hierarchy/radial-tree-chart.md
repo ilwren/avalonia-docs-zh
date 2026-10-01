@@ -59,7 +59,7 @@ public ObservableCollection<TreeNode> RadialTreeData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The central root nodes. | `null` |
 | `ValuePath` | Path to the value associated with each node. | `null` |

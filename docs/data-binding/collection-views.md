@@ -273,7 +273,7 @@ _source.Connect()
 - Use `ReadOnlyObservableCollection<T>` for the public property to prevent external modification.
 - Consider debouncing filter input (e.g., with `Throttle`) for search boxes that filter on every keystroke.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [How to Bind to a Collection](/docs/data-binding/how-to-bind-to-a-collection): Basic collection binding patterns.
 - [Data Templates](/docs/data-templates/introduction-to-data-templates): Controlling how items are rendered.

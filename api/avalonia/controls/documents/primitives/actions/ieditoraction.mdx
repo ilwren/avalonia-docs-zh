@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IEditorAction Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -48,7 +48,7 @@ public interface IEditorAction
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Editor actions provide a unified abstraction for operations like formatting,
 clipboard operations, and undo/redo. They can be used across multiple UI surfaces:
@@ -56,9 +56,9 @@ toolbar buttons, context menus, and keyboard shortcuts.
 
 Actions are typically singletons accessed via the [Avalonia.Controls.Documents.Primitives.Actions.EditorActions](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions) class.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanExecute](#uid-7c2846e8e1) | Gets whether the action can currently execute. |
 | [Execute](#uid-069802ca26) | Executes the action synchronously. |
@@ -69,7 +69,7 @@ Actions are typically singletons accessed via the [Avalonia.Controls.Documents.P
 
 <span id="uid-7c2846e8e1"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 Gets whether the action can currently execute.
 
@@ -77,21 +77,21 @@ Gets whether the action can currently execute.
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to check against.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 True if the action can execute; otherwise, false.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This is called frequently to update UI state (button enabled/disabled).
 Implementations should be fast and avoid heavy computation.
@@ -102,7 +102,7 @@ Implementations should be fast and avoid heavy computation.
 
 <span id="uid-069802ca26"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 Executes the action synchronously.
 
@@ -110,14 +110,14 @@ Executes the action synchronously.
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to execute on.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 For actions that require async operations (like file dialogs),
 use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead.
@@ -128,7 +128,7 @@ use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(A
 
 <span id="uid-3eb6289632"></span>
 
-### ExecuteAsync Method
+### ExecuteAsync 方法 {#executeasync-method}
 
 Executes the action asynchronously.
 
@@ -136,21 +136,21 @@ Executes the action asynchronously.
 public System.Threading.Tasks.Task ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to execute on.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 A task representing the asynchronous operation.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 The default implementation calls [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Execute%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) synchronously.
 Override this for actions that need async operations like file dialogs.
@@ -161,7 +161,7 @@ Override this for actions that need async operations like file dialogs.
 
 <span id="uid-096b254a52"></span>
 
-### GetState Method
+### GetState 方法 {#getstate-method}
 
 Gets the current state of the action.
 
@@ -169,14 +169,14 @@ Gets the current state of the action.
 public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to query.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 object
 
@@ -184,7 +184,7 @@ The current state, or null if the action has no state. A toggle action returns
 a boolean, a property action the current value.
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 Read [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) or
 [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead. Both say which family
@@ -192,9 +192,9 @@ the value came from, which an untyped object cannot.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DisplayName](#uid-4a5c76cfd3) | Gets the display name for UI purposes. |
 | [Gesture](#uid-e449a9221a) | Gets the optional keyboard gesture for this action. |
@@ -204,7 +204,7 @@ the value came from, which an untyped object cannot.
 
 <span id="uid-4a5c76cfd3"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 Gets the display name for UI purposes.
 
@@ -212,7 +212,7 @@ Gets the display name for UI purposes.
 public string DisplayName { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 This is used for tooltips, menu items, and accessibility.
 
@@ -222,7 +222,7 @@ This is used for tooltips, menu items, and accessibility.
 
 <span id="uid-e449a9221a"></span>
 
-### Gesture Property
+### Gesture 属性 {#gesture-property}
 
 Gets the optional keyboard gesture for this action.
 
@@ -230,7 +230,7 @@ Gets the optional keyboard gesture for this action.
 public Avalonia.Input.KeyGesture Gesture { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 The gesture is what tooltips and menu items display. It registers nothing:
 the shortcut that actually fires is handled by the editor's keyboard component,
@@ -243,7 +243,7 @@ shortcut that does nothing.
 
 <span id="uid-e77188f3c3"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 Gets the unique identifier for this action.
 
@@ -251,7 +251,7 @@ Gets the unique identifier for this action.
 public string Id { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 IDs follow a hierarchical naming convention:
 

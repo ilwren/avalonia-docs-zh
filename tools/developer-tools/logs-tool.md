@@ -190,7 +190,7 @@ public class DevToolsSerilogSink(string logArea = "Serilog", IFormatProvider? fo
 
 </details>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Developer tools options](/tools/developer-tools/options)
 - [Developer tools installation](/tools/developer-tools/installation)

@@ -7,7 +7,7 @@ const sidebars: SidebarsConfig = {
     'supported-platforms',
     {
       type: 'category',
-      label: 'Getting Started',
+      label: '快速上手',
       link: {
         type: 'doc',
         id: 'get-started/index',
@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
         'get-started/create-your-first-project',
         {
           type: 'category',
-          label: 'Starter Tutorial',
+          label: '入门教程',
           link: {
             type: 'doc',
             id: 'get-started/starter-tutorial/index',
@@ -36,7 +36,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Fundamentals',
+      label: '核心概念',
       collapsed: true,
       items: [
         'fundamentals/avalonia-xaml',
@@ -55,7 +55,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'XAML Reference',
+      label: 'XAML 参考',
       collapsed: true,
       link: {
         type: 'doc',
@@ -72,7 +72,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Layout',
+      label: '布局',
       collapsed: true,
       link: {
         type: 'doc',
@@ -86,7 +86,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Styling',
+      label: '样式',
       collapsed: true,
       items: [
         'styling/styles',
@@ -105,7 +105,7 @@ const sidebars: SidebarsConfig = {
         'styling/control-template-walkthrough',
         {
           type: 'link',
-          label: 'Property value precedence',
+          label: '属性值优先级',
           href: '/docs/properties/value-precedence',
         },
         'styling/style-best-practices',
@@ -113,7 +113,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Data Binding',
+      label: '数据绑定',
       collapsed: true,
       items: [
         'data-binding/introduction-to-data-binding',
@@ -144,7 +144,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Data Templates',
+      label: '数据模板',
       collapsed: true,
       items: [
         'data-templates/introduction-to-data-templates',
@@ -158,7 +158,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Property System',
+      label: '属性系统',
       collapsed: true,
       link: {
         type: 'doc',
@@ -172,7 +172,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Events',
+      label: '事件',
       collapsed: true,
       link: {
         type: 'doc',
@@ -185,14 +185,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Input & Interaction',
+      label: '输入与交互',
       collapsed: true,
       items: [
         'input-interaction/pointer',
         'input-interaction/focus',
         {
           type: 'category',
-          label: 'Gestures',
+          label: '手势',
           collapsed: true,
           link: {
             type: 'doc',
@@ -216,7 +216,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Graphics and Animation',
+      label: '图形与动画',
       collapsed: true,
       items: [
         'graphics-animation/brushes',
@@ -244,13 +244,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Custom controls',
+      label: '自定义控件',
       collapsed: true,
       items: [
         'custom-controls/index',
         {
           type: 'link',
-          label: 'User controls',
+          label: '用户控件',
           href: 'https://docs.avaloniaui.net/controls/primitives/usercontrol',
         },
         'custom-controls/templated-controls',
@@ -265,7 +265,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Services',
+      label: '系统服务',
       collapsed: true,
       items: [
         'services/clipboard',
@@ -278,7 +278,7 @@ const sidebars: SidebarsConfig = {
         'services/activatable-lifetime',
         {
           type: 'category',
-          label: 'Storage',
+          label: '存储',
           collapsed: true,
           items: [
             'services/storage/storage-provider',
@@ -291,7 +291,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'App Development',
+      label: '应用开发',
       collapsed: true,
       items: [
         'app-development/cross-platform-solution-setup',
@@ -302,7 +302,7 @@ const sidebars: SidebarsConfig = {
         'app-development/setting-unhandled-exceptions',
         {
           type: 'category',
-          label: 'Resources',
+          label: '资源',
           link: {
             type: 'doc',
             id: 'app-development/resources',
@@ -322,7 +322,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Platform Integration',
+      label: '平台集成',
       collapsed: true,
       items: [
         'platform-specific-guides/windows',
@@ -330,7 +330,7 @@ const sidebars: SidebarsConfig = {
         'platform-specific-guides/linux',
         {
           type: 'category',
-          label: 'Embedded Linux',
+          label: '嵌入式 Linux',
           collapsed: true,
           items: [
             'platform-specific-guides/embedded-linux/embedded-linux',
@@ -351,13 +351,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Testing',
+      label: '测试',
       collapsed: true,
       link: { type: 'doc', id: 'testing/index' },
       items: [
         {
           type: 'category',
-          label: 'Headless Testing',
+          label: '无头测试',
           collapsed: true,
           link: { type: 'doc', id: 'testing/setting-up-the-headless-platform' },
           items: [
@@ -370,7 +370,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Deployment',
+      label: '部署发布',
       collapsed: true,
       items: [
         'deployment/macos',
@@ -385,7 +385,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Migration',
+      label: '迁移',
       collapsed: true,
       items: [
         {
@@ -411,7 +411,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'How-To Guides',
+      label: '操作指南',
       collapsed: true,
       items: [
         'how-to/treeview-how-to',
@@ -446,7 +446,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Samples & Tutorials',
+      label: '示例与教程',
       collapsed: true,
       link: {
         type: 'doc',
@@ -455,17 +455,17 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'link',
-          label: 'Starter Tutorial',
+          label: '入门教程',
           href: '/docs/get-started/starter-tutorial',
         },
         {
           type: 'link',
-          label: 'ToDo List App',
+          label: '待办事项示例',
           href: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CompleteApps/SimpleToDoList',
         },
         {
           type: 'link',
-          label: 'Music Store App',
+          label: '音乐商店示例',
           href: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CompleteApps/Avalonia.MusicStore',
         },
       ],

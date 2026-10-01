@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaPropertyMetadata Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaPropertyMetadata.cs">AvaloniaPropertyMetadata.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaPropertyMetadata.cs">AvaloniaPropertyMetadata.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public class AvaloniaPropertyMetadata
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaPropertyMetadata
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaPropertyMetadata
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="directpropertymetadata-1">DirectPropertyMetadata&lt;TValue&gt;</a>, <a href="styledpropertymetadata-1">StyledPropertyMetadata&lt;TValue&gt;</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="directpropertymetadata-1">DirectPropertyMetadata&lt;TValue&gt;</a>, <a href="styledpropertymetadata-1">StyledPropertyMetadata&lt;TValue&gt;</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AvaloniaPropertyMetadata](#uid-a98bf6b1d8) | No summary available. |
+| [AvaloniaPropertyMetadata](#uid-a98bf6b1d8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a98bf6b1d8"></span>
 
-### AvaloniaPropertyMetadata Constructor
+### AvaloniaPropertyMetadata 构造函数 {#avaloniapropertymetadata-constructor}
 
 ```csharp
 public AvaloniaPropertyMetadata(Avalonia.Data.BindingMode defaultBindingMode, Nullable<bool> enableDataValidation)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `defaultBindingMode` [Avalonia.Data.BindingMode](xref:Avalonia.Data.BindingMode)
 
@@ -87,9 +87,9 @@ public AvaloniaPropertyMetadata(Avalonia.Data.BindingMode defaultBindingMode, Nu
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Freeze](#uid-db1cdb0cff) | Makes this instance read-only. No further modifications are allowed after this call. |
 | [GenerateTypeSafeMetadata](#uid-2221ececec) | Gets a copy of this object configured for use with any owner type. |
@@ -99,7 +99,7 @@ public AvaloniaPropertyMetadata(Avalonia.Data.BindingMode defaultBindingMode, Nu
 
 <span id="uid-db1cdb0cff"></span>
 
-### Freeze Method
+### Freeze 方法 {#freeze-method}
 
 Makes this instance read-only.
 No further modifications are allowed after this call.
@@ -114,7 +114,7 @@ public void Freeze()
 
 <span id="uid-2221ececec"></span>
 
-### GenerateTypeSafeMetadata Method
+### GenerateTypeSafeMetadata 方法 {#generatetypesafemetadata-method}
 
 Gets a copy of this object configured for use with any owner type.
 
@@ -122,12 +122,12 @@ Gets a copy of this object configured for use with any owner type.
 public Avalonia.AvaloniaPropertyMetadata GenerateTypeSafeMetadata()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 For example, delegates which receive the owner object should be removed.
 
@@ -137,7 +137,7 @@ For example, delegates which receive the owner object should be removed.
 
 <span id="uid-92919180d4"></span>
 
-### Merge Method
+### Merge 方法 {#merge-method}
 
 Merges the metadata with the base metadata.
 
@@ -145,7 +145,7 @@ Merges the metadata with the base metadata.
 public void Merge(Avalonia.AvaloniaPropertyMetadata baseMetadata, Avalonia.AvaloniaProperty property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `baseMetadata` [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)
 
@@ -159,9 +159,9 @@ The property to which the metadata is being applied.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DefaultBindingMode](#uid-b6d03b8752) | Gets the default binding mode for the property. |
 | [EnableDataValidation](#uid-aa782b0da1) | Gets a value indicating whether the property is interested in data validation. |
@@ -171,7 +171,7 @@ The property to which the metadata is being applied.
 
 <span id="uid-b6d03b8752"></span>
 
-### DefaultBindingMode Property
+### DefaultBindingMode 属性 {#defaultbindingmode-property}
 
 Gets the default binding mode for the property.
 
@@ -185,7 +185,7 @@ public Avalonia.Data.BindingMode DefaultBindingMode { get; set; }
 
 <span id="uid-aa782b0da1"></span>
 
-### EnableDataValidation Property
+### EnableDataValidation 属性 {#enabledatavalidation-property}
 
 Gets a value indicating whether the property is interested in data validation.
 
@@ -193,7 +193,7 @@ Gets a value indicating whether the property is interested in data validation.
 public Nullable<bool> EnableDataValidation { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Data validation is validation performed at the target of a binding, for example in a
 view model using the INotifyDataErrorInfo interface. Only certain properties on a
@@ -206,7 +206,7 @@ validation messages so this feature must be explicitly enabled by setting this f
 
 <span id="uid-8222a9d293"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
 Gets whether this instance is read-only and can't be modified.
 

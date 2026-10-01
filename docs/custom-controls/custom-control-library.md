@@ -294,7 +294,7 @@ In contrast, the `using:` or `clr-namespace:` formats work strictly on a one-to-
 
 For more information on referencing custom classes in XAML, see [Referencing your own types](/docs/xaml/namespaces#referencing-your-own-types).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Creating custom controls](/docs/custom-controls): Overview of the custom control types you can package in a library.
 - [UserControl](/controls/primitives/usercontrol): Compose existing controls into a reusable view with XAML and code-behind.

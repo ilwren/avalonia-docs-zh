@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FontManager Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/FontManager.cs">FontManager.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/FontManager.cs">FontManager.cs</a>
 </div>
 
 </div>
@@ -55,50 +55,50 @@ public class FontManager
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FontManager
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FontManager
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FontManager](#uid-e2e3e84207) | No summary available. |
+| [FontManager](#uid-e2e3e84207) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e2e3e84207"></span>
 
-### FontManager Constructor
+### FontManager 构造函数 {#fontmanager-constructor}
 
 ```csharp
 public FontManager(Avalonia.Platform.IFontManagerImpl platformImpl)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `platformImpl` [Avalonia.Platform.IFontManagerImpl](xref:Avalonia.Platform.IFontManagerImpl)
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AddFontCollection](#uid-4616d08cf2) | Add a font collection to the manager. |
 | [RemoveFontCollection](#uid-306932b411) | Removes the font collection that corresponds to specified key. |
-| [TryGetGlyphTypeface](#uid-a951668ae8) | No summary available. |
-| [TryMatchCharacter](#uid-f9bc67a2d1) | No summary available. |
+| [TryGetGlyphTypeface](#uid-a951668ae8) | 暂无摘要。 |
+| [TryMatchCharacter](#uid-f9bc67a2d1) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4616d08cf2"></span>
 
-### AddFontCollection Method
+### AddFontCollection 方法 {#addfontcollection-method}
 
 Add a font collection to the manager.
 
@@ -106,18 +106,18 @@ Add a font collection to the manager.
 public void AddFontCollection(Avalonia.Media.Fonts.IFontCollection fontCollection)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `fontCollection` [Avalonia.Media.Fonts.IFontCollection](xref:Avalonia.Media.Fonts.IFontCollection)
 
 The font collection.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 If a font collection's key is already present the collection is replaced.
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [ArgumentException](xref:System.ArgumentException)
 
@@ -127,7 +127,7 @@ If a font collection's key is already present the collection is replaced.
 
 <span id="uid-306932b411"></span>
 
-### RemoveFontCollection Method
+### RemoveFontCollection 方法 {#removefontcollection-method}
 
 Removes the font collection that corresponds to specified key.
 
@@ -135,7 +135,7 @@ Removes the font collection that corresponds to specified key.
 public void RemoveFontCollection(Uri key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `key` Uri
 
@@ -148,13 +148,13 @@ The font collection's key.
 
 <span id="uid-a951668ae8"></span>
 
-### TryGetGlyphTypeface Method
+### TryGetGlyphTypeface 方法 {#trygetglyphtypeface-method}
 
 ```csharp
 public bool TryGetGlyphTypeface(Avalonia.Media.Typeface typeface, Avalonia.Media.GlyphTypeface& glyphTypeface)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `typeface` [Avalonia.Media.Typeface](xref:Avalonia.Media.Typeface)
 
@@ -162,7 +162,7 @@ public bool TryGetGlyphTypeface(Avalonia.Media.Typeface typeface, Avalonia.Media
 `glyphTypeface` [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface)&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -173,13 +173,13 @@ bool
 
 <span id="uid-f9bc67a2d1"></span>
 
-### TryMatchCharacter Method
+### TryMatchCharacter 方法 {#trymatchcharacter-method}
 
 ```csharp
 public bool TryMatchCharacter(int codepoint, Avalonia.Media.FontStyle fontStyle, Avalonia.Media.FontWeight fontWeight, Avalonia.Media.FontStretch fontStretch, Avalonia.Media.FontFamily fontFamily, System.Globalization.CultureInfo culture, Avalonia.Media.Typeface& typeface)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `codepoint` int
 
@@ -202,16 +202,16 @@ public bool TryMatchCharacter(int codepoint, Avalonia.Media.FontStyle fontStyle,
 `typeface` [Avalonia.Media.Typeface](xref:Avalonia.Media.Typeface)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Current](#uid-cdda802632) | Get the current font manager instance. |
 | [DefaultFontFamily](#uid-dcbdf53864) | Gets the system's default font family. |
@@ -221,7 +221,7 @@ bool
 
 <span id="uid-cdda802632"></span>
 
-### Current Property
+### Current 属性 {#current-property}
 
 Get the current font manager instance.
 
@@ -235,7 +235,7 @@ public Avalonia.Media.FontManager Current { get; set; }
 
 <span id="uid-dcbdf53864"></span>
 
-### DefaultFontFamily Property
+### DefaultFontFamily 属性 {#defaultfontfamily-property}
 
 Gets the system's default font family.
 
@@ -249,7 +249,7 @@ public Avalonia.Media.FontFamily DefaultFontFamily { get; set; }
 
 <span id="uid-e48c6d2eea"></span>
 
-### SystemFonts Property
+### SystemFonts 属性 {#systemfonts-property}
 
 Get all system fonts.
 
@@ -259,19 +259,19 @@ public Avalonia.Media.Fonts.IFontCollection SystemFonts { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CompositeFontScheme](#uid-65bd8dd64a) | No summary available. |
-| [FontCollectionScheme](#uid-59fec01f97) | No summary available. |
-| [SystemFontScheme](#uid-290667f4a6) | No summary available. |
+| [CompositeFontScheme](#uid-65bd8dd64a) | 暂无摘要。 |
+| [FontCollectionScheme](#uid-59fec01f97) | 暂无摘要。 |
+| [SystemFontScheme](#uid-290667f4a6) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-65bd8dd64a"></span>
 
-### CompositeFontScheme Field
+### CompositeFontScheme 字段 {#compositefontscheme-field}
 
 ```csharp
 public string CompositeFontScheme
@@ -283,7 +283,7 @@ public string CompositeFontScheme
 
 <span id="uid-59fec01f97"></span>
 
-### FontCollectionScheme Field
+### FontCollectionScheme 字段 {#fontcollectionscheme-field}
 
 ```csharp
 public string FontCollectionScheme
@@ -295,7 +295,7 @@ public string FontCollectionScheme
 
 <span id="uid-290667f4a6"></span>
 
-### SystemFontScheme Field
+### SystemFontScheme 字段 {#systemfontscheme-field}
 
 ```csharp
 public string SystemFontScheme

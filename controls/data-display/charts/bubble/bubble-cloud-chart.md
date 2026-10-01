@@ -46,7 +46,7 @@ public ObservableCollection<TopicBubble> Topics { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of bubble items. | `null` |
 | `LabelPath` | Path to the bubble label. | `null` |
@@ -55,7 +55,7 @@ public ObservableCollection<TopicBubble> Topics { get; } = new()
 | `MaxBubbleSize` | Maximum bubble radius in pixels. | `80.0` |
 | `IsHighlightEnabled` | Enables hover highlighting for bubbles. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Packed bubble chart](/controls/data-display/charts/bubble/packed-bubble-chart)
 - [Word cloud chart](/controls/data-display/charts/analytics/word-cloud-chart)

@@ -11,7 +11,7 @@ When multiple sources provide a value for the same property, Avalonia must decid
 
 Higher priority values are resolved over lower priority values, where 1 is the highest priority.
 
-| Priority | `BindingPriority` value | Description |
+| Priority | `BindingPriority` value | 说明 |
 |---|---|---|
 | 1 | `Animation` | Values applied by active animations. |
 | 2 | `LocalValue` | Values set directly on the object via `SetValue`, XAML attribute, or code. |
@@ -174,7 +174,7 @@ Because `LocalValue` bindings outrank style values (both `Style` and `StyleTrigg
 
 If you want styles to be able to override a property, avoid setting a value for that property in XAML. Instead, use a style at the appropriate level.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Property system overview](/docs/properties): Overview of Avalonia property types.
 - [Styles](/docs/styling/styles): How to define and apply styles.

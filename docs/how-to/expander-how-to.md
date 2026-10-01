@@ -71,7 +71,7 @@ The [`ExpandDirection`](/api/avalonia/controls/expanddirection) property control
 </Expander>
 ```
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `Down` | Content appears below the header (default). |
 | `Up` | Content appears above the header. |
@@ -247,7 +247,7 @@ When you set `IsEnabled="False"` on an `Expander`, the header is no longer inter
 
 ## Key properties reference
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Header` | `object` | Content shown in the always-visible header area. |
 | `IsExpanded` | `bool` | Whether the content section is visible. Default is `False`. |
@@ -255,7 +255,7 @@ When you set `IsEnabled="False"` on an `Expander`, the header is no longer inter
 | `ContentTransition` | `IPageTransition` | Animation used for expand and collapse. |
 | `IsEnabled` | `bool` | Whether the user can interact with the header to toggle expansion. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Expander control reference](/controls/layout/containers/expander): Full property and event tables.
 - [Page transitions](/docs/graphics-animation/page-transitions): Transition types you can use for content animation.

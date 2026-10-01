@@ -35,7 +35,7 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `0.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |
@@ -56,7 +56,7 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 
 `TickPosition` places tick marks on the track.
 
-| Value | Description |
+| 值 | 说明 |
 | :--- | :--- |
 | `Cross` | Spans the track, from 10 px inside the inner edge to the outer edge. Default. |
 | `Inside` | Extends inward from the inner edge of the track. |
@@ -64,7 +64,7 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 
 Compact gauges shrink the value readout inside the dial. If the text cannot fit, it is moved to the open part of the sweep.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gauge chart](/controls/data-display/charts/gauges/gauge-chart)
 - [Progress donut chart](/controls/data-display/charts/gauges/progress-donut-chart)

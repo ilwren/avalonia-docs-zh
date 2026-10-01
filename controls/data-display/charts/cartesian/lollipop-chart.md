@@ -56,7 +56,7 @@ public ObservableCollection<SalesItem> MonthlySales { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |
@@ -68,7 +68,7 @@ public ObservableCollection<SalesItem> MonthlySales { get; } = new()
 | `StemBrush` | The brush for the stem line. | `null` (Defaults to same color as `Fill` when unset.) |
 | `Orientation` | The direction of the stems, `Vertical` or `Horizontal`. | `Vertical` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Dot plot chart](/controls/data-display/charts/cartesian/dot-plot-chart)
 - [Bar chart](/controls/data-display/charts/cartesian/bar-chart)

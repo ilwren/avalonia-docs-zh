@@ -65,7 +65,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of financial data points. | `null` |
 | `OpenPath` | Path to the 'Open' price property. | `null` |
@@ -79,7 +79,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 | `DownStroke` | Outline brush for candles where `Close < Open`. | `#F44336` |
 | `CandleWidth` | Width of each candle as a fraction of the available slot. | `0.8` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Financial chart](/controls/data-display/charts/financial/financial-chart)
 - [OHLC chart](/controls/data-display/charts/financial/ohlc-chart)

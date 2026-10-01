@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">UnderlineStyle Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -52,11 +52,11 @@ public enum UnderlineStyle
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> UnderlineStyle
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> UnderlineStyle
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 A null [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting.UnderlineStyle](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting.UnderlineStyle) means unset and draws as
 [Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single](xref:Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single). Null stays distinct from an explicit [Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single](xref:Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single) so that
@@ -66,9 +66,9 @@ takes the ancestor's style, while a child that says [Avalonia.Controls.Documents
 The values cover the underline variants RTF and DOCX can express, so a document that carries
 one survives an edit instead of degrading to a plain underline.
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DashDot](#uid-875d5da0e7) | An alternating dash-dot line. |
 | [DashDotDot](#uid-73628a4118) | An alternating dash-dot-dot line. |
@@ -85,7 +85,7 @@ one survives an edit instead of degrading to a plain underline.
 
 <span id="uid-875d5da0e7"></span>
 
-### DashDot Field
+### DashDot 字段 {#dashdot-field}
 
 An alternating dash-dot line.
 
@@ -99,7 +99,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle DashDot
 
 <span id="uid-73628a4118"></span>
 
-### DashDotDot Field
+### DashDotDot 字段 {#dashdotdot-field}
 
 An alternating dash-dot-dot line.
 
@@ -113,7 +113,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle DashDotDo
 
 <span id="uid-c6ae1b958a"></span>
 
-### Dashed Field
+### Dashed 字段 {#dashed-field}
 
 A dashed line.
 
@@ -127,7 +127,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Dashed
 
 <span id="uid-9e0e949b90"></span>
 
-### Dotted Field
+### Dotted 字段 {#dotted-field}
 
 A dotted line.
 
@@ -141,7 +141,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Dotted
 
 <span id="uid-29bb0e82ec"></span>
 
-### Double Field
+### Double 字段 {#double-field}
 
 Two parallel solid lines.
 
@@ -155,7 +155,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Double
 
 <span id="uid-f76fa1965d"></span>
 
-### None Field
+### None 字段 {#none-field}
 
 No underline style. Distinct from an unset (null) style: it records that the source
 explicitly said "no style", which is what RTF `\ulnone` and DOCX `w:val="none"`
@@ -171,7 +171,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle None
 
 <span id="uid-05f4b6d824"></span>
 
-### Single Field
+### Single 字段 {#single-field}
 
 A single solid line.
 
@@ -185,7 +185,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Single
 
 <span id="uid-876d4452b1"></span>
 
-### Thick Field
+### Thick 字段 {#thick-field}
 
 A single line of increased thickness.
 
@@ -199,7 +199,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Thick
 
 <span id="uid-a27dc9939b"></span>
 
-### Wave Field
+### Wave 字段 {#wave-field}
 
 A wavy line. Approximated when drawn, because a text decoration is a straight stroke.
 
@@ -213,7 +213,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Wave
 
 <span id="uid-453eeddde3"></span>
 
-### Word Field
+### Word 字段 {#word-field}
 
 Words are underlined but the spaces between them are not. A scope rather than a line style,
 so it draws as [Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single](xref:Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single).

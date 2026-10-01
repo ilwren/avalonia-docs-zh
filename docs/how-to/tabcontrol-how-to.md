@@ -283,7 +283,7 @@ To give your tabs a flat, borderless look:
 You can combine multiple style selectors to target hover and pressed states as well. For example, `TabItem:pointerover` applies when the pointer hovers over a tab.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TabControl reference](/controls/navigation/tabcontrol): Full property tables and additional examples.
 - [How to bind tabs](/docs/data-binding/how-to-bind-tabs): Detailed walkthrough for binding tab content to collections.

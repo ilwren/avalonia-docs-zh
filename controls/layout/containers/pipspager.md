@@ -22,7 +22,7 @@ import PipsPagerPillTemplateScreenshot from '/img/controls/pipspager/pipspager-p
 
 You will probably use these properties most often:
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | -------- | ---- | ------- | ----------- |
 | `NumberOfPages` | `int` | `0` | Total number of pages represented by the pips. |
 | `SelectedPageIndex` | `int` | `0` | Zero-based index of the currently selected page. Supports two-way binding. Clamped to `[0, NumberOfPages - 1]`. |
@@ -42,9 +42,9 @@ You will probably use these properties most often:
 | `:horizontal` | `Orientation` is `Horizontal`. |
 | `:vertical` | `Orientation` is `Vertical`. |
 
-## Events
+## 事件 {#events}
 
-| Event | Args type | Description |
+| Event | Args type | 说明 |
 | ----- | --------- | ----------- |
 | `SelectedIndexChanged` | `PipsPagerSelectedIndexChangedEventArgs` | Raised when the selected page changes. Provides `OldIndex` and `NewIndex`. |
 
@@ -59,7 +59,7 @@ You will probably use these properties most often:
 
 Override these resource keys on the `PipsPager` or an ancestor to customize pip indicator colors:
 
-| Resource key | Description |
+| Resource key | 说明 |
 | ------------ | ----------- |
 | `PipsPagerSelectionIndicatorForeground` | Default pip color. |
 | `PipsPagerSelectionIndicatorForegroundSelected` | Selected pip color. |
@@ -330,7 +330,7 @@ pager.IsPreviousButtonVisible = false;
 pager.IsNextButtonVisible = false;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [API reference](/api/avalonia/controls/pipspager)
 - [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PipsPager/PipsPager.cs)

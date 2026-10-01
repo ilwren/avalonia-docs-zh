@@ -65,7 +65,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of financial data points. | `null` |
 | `OpenPath` | Path to the 'Open' price property. | `null` |
@@ -78,7 +78,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 | `StrokeThickness` | Thickness of the lines. | `2.0` |
 | `TickWidth` | Width of the open and close tick marks in pixels. | `6.0` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Financial chart](/controls/data-display/charts/financial/financial-chart)
 - [Candlestick chart](/controls/data-display/charts/financial/candlestick-chart)

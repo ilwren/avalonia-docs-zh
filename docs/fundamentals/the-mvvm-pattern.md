@@ -62,7 +62,7 @@ Because the view model has no reference to the view or to Avalonia types, it can
 
 The model represents everything outside the UI: data storage, network services, business rules. MVVM does not prescribe how you structure your model layer, but the important principle is separation. Use dependency injection to provide model services to your view models rather than creating tight couplings.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Code-behind](/docs/fundamentals/code-behind)
 - [UI composition](/docs/fundamentals/ui-composition)

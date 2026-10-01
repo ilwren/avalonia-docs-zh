@@ -54,7 +54,7 @@ Columns:
 - **Theme Variant**: the theme variant (Light/Dark) active during the lookup
 
 A key with many total lookups but few successful ones likely indicates a missing or misspelled resource definition. You can use the [Resources Tool](/tools/developer-tools/resources-tool) to inspect available resources at each scope.
-## See also
+## 另请参阅 {#see-also}
 
 - [Metrics tool](/tools/developer-tools/metrics-tool)
 - [Resources tool](/tools/developer-tools/resources-tool)

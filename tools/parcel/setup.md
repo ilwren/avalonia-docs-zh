@@ -13,7 +13,7 @@ tags:
 
 Avalonia Parcel is a packaging tool for Avalonia applications. It provides a graphical user interface (GUI) and a command-line interface (CLI). You can use Parcel to build, sign, and package applications for Windows, macOS, and Linux.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 | Requirement | Version/Details |
 |------------|-----------------|

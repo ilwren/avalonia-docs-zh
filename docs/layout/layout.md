@@ -15,7 +15,7 @@ Avalonia includes a group of elements that derive from `Panel`. These `Panel` el
 
 The following table summarizes the available `Panel` controls:
 
-| Name            | Description                                                                                                                                                                                                                                                               |
+| 名称            | 说明                                                                                                                                                                                                                                                               |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Panel`         | Lays out all children to fill the bounds of the `Panel`                                                                                                                                                                                                                   |
 | `Canvas`        | Defines an area within which you can explicitly position child elements by coordinates relative to the Canvas area.                                                                                                                                                       |
@@ -64,7 +64,7 @@ The arrange pass begins with a call to the `Arrange` method. During the arrange 
 
 The `ArrangeCore` method evaluates the `DesiredSize` of the child and evaluates any additional margins that may affect the rendered size of the element. `ArrangeCore` generates an arrange size, which is passed to the `ArrangeOverride` method of the `Panel` as a parameter. `ArrangeOverride` generates the finalSize of the child. Finally, the `ArrangeCore` method does a final evaluation of offset properties, such as margin and alignment, and puts the child within its layout slot. The child does not have to (and frequently does not) fill the entire allocated space. Control is then returned to the parent `Panel` and the layout process is complete.
 
-## Layout zones
+## 布局区域 {#layout-zones}
 
 <Image light={LayoutZonesDiagram} maxWidth="400" alignment="center" alt="A diagram with four overlapping rectangles, representing the layout zones of a UI window." />
 
@@ -76,7 +76,7 @@ Use `OverlayLayer.GetOverlayLayer(visual)` to access the overlay surface for a g
 
 For details and code examples, see [Overlay Layers](/docs/fundamentals/visual-and-logical-trees#overlay-layers).
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Positioning Controls](/docs/layout/positioning-controls): Alignment, margins, and positioning.
 - [Responsive Layouts](/docs/layout/responsive-layouts): Adapting layout to different sizes using container queries and reflowing panels.

@@ -12,7 +12,7 @@ This page lists every keyboard shortcut available in Avalonia Developer Tools. W
 
 Use these shortcuts while debugging layout issues, tracking focus order, or measuring spacing between elements.
 
-| Display name | Description | When to use | Windows / Linux | macOS |
+| Display name | 说明 | When to use | Windows / Linux | macOS |
 |---|---|---|---|---|
 | Focus Tracking | Highlights the currently focused element in your application. Works in both Developer Tools and the target application. | Use this when you are debugging tab-order or focus-related bugs so you can see exactly which control has focus. | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> | <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>K</kbd> |
 | Inspect Element | Selects and inspects UI elements by clicking on them in your application. Works in both Developer Tools and the target application. | Use this to quickly jump to a specific control in the element tree instead of expanding nodes manually. | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> | <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>C</kbd> |
@@ -26,7 +26,7 @@ Use these shortcuts while debugging layout issues, tracking focus order, or meas
 
 These shortcuts help you find elements, properties, or resources within Developer Tools.
 
-| Display name | Description | When to use | Windows / Linux | macOS |
+| Display name | 说明 | When to use | Windows / Linux | macOS |
 |---|---|---|---|---|
 | Search Current List | Activates search functionality in the current tool. | Use this to filter a long element tree or property list down to the item you are looking for. | <kbd>Ctrl</kbd>+<kbd>F</kbd> | <kbd>⌘</kbd> <kbd>F</kbd> |
 | Next Search Result | Moves to the next search result in the current view. | Use this to cycle forward through matches after entering a search term. | <kbd>F3</kbd> | <kbd>⌘</kbd> <kbd>G</kbd> |
@@ -38,7 +38,7 @@ These shortcuts help you find elements, properties, or resources within Develope
 
 These shortcuts control the Developer Tools window layout and panel visibility.
 
-| Display name | Description | When to use | Windows / Linux | macOS |
+| Display name | 说明 | When to use | Windows / Linux | macOS |
 |---|---|---|---|---|
 | Refresh Current View | Refreshes the current view. | Use this after making code changes to reload the element tree or resource list. | <kbd>F5</kbd> | <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>R</kbd> |
 | Remove Item | Removes the selected item from the current list or view. | Use this to remove a single breakpoint or log entry you no longer need. | <kbd>Delete</kbd> | <kbd>Delete</kbd> |
@@ -51,7 +51,7 @@ These shortcuts control the Developer Tools window layout and panel visibility.
 
 These shortcuts open specific Developer Tools panels directly.
 
-| Display name | Description | When to use | Windows / Linux | macOS |
+| Display name | 说明 | When to use | Windows / Linux | macOS |
 |---|---|---|---|---|
 | Open Elements | Opens the Elements inspection tool. | Use this to view and navigate the visual tree of your application. | Unassigned | Unassigned |
 | Open Assets | Opens the Assets browser. | Use this to browse embedded assets such as images and fonts bundled with your application. | Unassigned | Unassigned |
@@ -64,7 +64,7 @@ These shortcuts open specific Developer Tools panels directly.
 | Open Protocol | Opens the Developer Tools protocol monitoring tool. | Use this to inspect the low-level messages exchanged between Developer Tools and your application. | Unassigned | Unassigned |
 | Open Documentation | Opens the Developer Tools documentation. | Use this for quick access to the online docs without leaving Developer Tools. | <kbd>Ctrl</kbd>+<kbd>F1</kbd> | <kbd>⌘</kbd> <kbd>?</kbd> |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Developer Tools settings](/tools/developer-tools/settings)
 - [Elements tool](/tools/developer-tools/elements-tool)

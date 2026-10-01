@@ -234,7 +234,7 @@ Identifiers passed to `CreateStringApplicationFormat` and `CreateBytesApplicatio
 | Browser (WebAssembly) | Limited | File drops from the OS file manager are supported in most browsers. Dragging between elements within your app requires a custom implementation because the browser handles pointer capture. |
 | iOS / Android | Not supported | Drag-and-drop is not available. Consider using long-press gestures or list reorder patterns for similar functionality. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Drag and Drop](/docs/input-interaction/drag-and-drop): Conceptual overview of the drag-and-drop system.
 - [Gestures](/docs/input-interaction/gestures): Touch and pointer gesture recognizers.

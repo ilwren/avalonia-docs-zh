@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AndroidPlatformOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Android</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Android</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Android</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Android</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Android/Avalonia.Android/AndroidPlatform.cs">AndroidPlatform.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Android/Avalonia.Android/AndroidPlatform.cs">AndroidPlatform.cs</a>
 </div>
 
 </div>
@@ -48,21 +48,21 @@ public class AndroidPlatformOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AndroidPlatformOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AndroidPlatformOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AndroidPlatformOptions](#uid-d9b70973e2) | No summary available. |
+| [AndroidPlatformOptions](#uid-d9b70973e2) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d9b70973e2"></span>
 
-### AndroidPlatformOptions Constructor
+### AndroidPlatformOptions 构造函数 {#androidplatformoptions-constructor}
 
 ```csharp
 public AndroidPlatformOptions()
@@ -70,9 +70,9 @@ public AndroidPlatformOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RenderingMode](#uid-5dc669b30e) | Gets or sets Avalonia rendering modes with fallbacks. The first element in the array has the highest priority. The default value is: [Avalonia.AndroidRenderingMode.Egl](xref:Avalonia.AndroidRenderingMode.Egl), [Avalonia.AndroidRenderingMode.Software](xref:Avalonia.AndroidRenderingMode.Software). |
 
@@ -80,7 +80,7 @@ public AndroidPlatformOptions()
 
 <span id="uid-5dc669b30e"></span>
 
-### RenderingMode Property
+### RenderingMode 属性 {#renderingmode-property}
 
 Gets or sets Avalonia rendering modes with fallbacks.
 The first element in the array has the highest priority.
@@ -90,11 +90,11 @@ The default value is: [Avalonia.AndroidRenderingMode.Egl](xref:Avalonia.AndroidR
 public System.Collections.Generic.IReadOnlyList<Avalonia.AndroidRenderingMode> RenderingMode { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 If application should work on as wide range of devices as possible, at least add [Avalonia.AndroidRenderingMode.Software](xref:Avalonia.AndroidRenderingMode.Software) as a fallback value.
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Thrown if no values were matched.](xref:System.InvalidOperationException)
 

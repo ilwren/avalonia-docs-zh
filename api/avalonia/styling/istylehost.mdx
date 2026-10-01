@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IStyleHost Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Styling</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Styling</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Styling/IStyleHost.cs">IStyleHost.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Styling/IStyleHost.cs">IStyleHost.cs</a>
 </div>
 
 </div>
@@ -52,24 +52,24 @@ public interface IStyleHost
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [StylesAdded](#uid-d78dbc039e) | No summary available. |
-| [StylesRemoved](#uid-72592bfd0c) | No summary available. |
+| [StylesAdded](#uid-d78dbc039e) | 暂无摘要。 |
+| [StylesRemoved](#uid-72592bfd0c) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d78dbc039e"></span>
 
-### StylesAdded Method
+### StylesAdded 方法 {#stylesadded-method}
 
 ```csharp
 public void StylesAdded(System.Collections.Generic.IReadOnlyList<Avalonia.Styling.IStyle> styles)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `styles` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)&gt;
 
@@ -80,22 +80,22 @@ public void StylesAdded(System.Collections.Generic.IReadOnlyList<Avalonia.Stylin
 
 <span id="uid-72592bfd0c"></span>
 
-### StylesRemoved Method
+### StylesRemoved 方法 {#stylesremoved-method}
 
 ```csharp
 public void StylesRemoved(System.Collections.Generic.IReadOnlyList<Avalonia.Styling.IStyle> styles)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `styles` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsStylesInitialized](#uid-8b5ef026f8) | Gets a value indicating whether [Avalonia.Styling.IStyleHost.Styles](xref:Avalonia.Styling.IStyleHost.Styles) is initialized. |
 | [Styles](#uid-348b6c38df) | Gets the styles for the element. |
@@ -105,7 +105,7 @@ public void StylesRemoved(System.Collections.Generic.IReadOnlyList<Avalonia.Styl
 
 <span id="uid-8b5ef026f8"></span>
 
-### IsStylesInitialized Property
+### IsStylesInitialized 属性 {#isstylesinitialized-property}
 
 Gets a value indicating whether [Avalonia.Styling.IStyleHost.Styles](xref:Avalonia.Styling.IStyleHost.Styles) is initialized.
 
@@ -113,7 +113,7 @@ Gets a value indicating whether [Avalonia.Styling.IStyleHost.Styles](xref:Avalon
 public bool IsStylesInitialized { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 The [Avalonia.Styling.IStyleHost.Styles](xref:Avalonia.Styling.IStyleHost.Styles) property may be lazily initialized, if so this property
 indicates whether it has been initialized.
@@ -124,7 +124,7 @@ indicates whether it has been initialized.
 
 <span id="uid-348b6c38df"></span>
 
-### Styles Property
+### Styles 属性 {#styles-property}
 
 Gets the styles for the element.
 
@@ -138,7 +138,7 @@ public Avalonia.Styling.Styles Styles { get; set; }
 
 <span id="uid-aafc027218"></span>
 
-### StylingParent Property
+### StylingParent 属性 {#stylingparent-property}
 
 Gets the parent style host element.
 

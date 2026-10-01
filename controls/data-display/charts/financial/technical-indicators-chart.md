@@ -64,7 +64,7 @@ public ObservableCollection<StockPoint> StockData { get; } = new()
 
 These properties are shared by all technical indicator types.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `TargetSeries` | The `CartesianSeries` this indicator is computed from. | `null` |
 | `IsVisible` | Whether the indicator is visible. | `true` |
@@ -79,7 +79,7 @@ These properties are shared by all technical indicator types.
 
 The simple moving average (SMA) calculates the unweighted mean of the previous *n* data points. It is the basic smoothing technique.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Period` | Number of data points used in the moving average window. | `14` |
 | `Title` | Legend and tooltip title. | `"SMA"` |
@@ -104,7 +104,7 @@ The simple moving average (SMA) calculates the unweighted mean of the previous *
 
 The exponential moving average (EMA) gives more weight to recent data points, making it more responsive to new information than an SMA.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Period` | Number of data points used in the EMA calculation. | `14` |
 | `Title` | Legend and tooltip title. | `"EMA"` |
@@ -129,7 +129,7 @@ The exponential moving average (EMA) gives more weight to recent data points, ma
 
 The weighted moving average (WMA) assigns linearly increasing weights to data points, with the most recent point receiving the highest weight.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Period` | Number of data points used in the WMA calculation. | `14` |
 | `Title` | Legend and tooltip title. | `"WMA"` |
@@ -156,7 +156,7 @@ Bollinger Bands consist of a simple moving average (middle band) and two standar
 
 When shown in a chart legend, `BollingerBandsIndicator` creates a line item for the middle SMA and a band item for the upper and lower bands.
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Period` | Number of data points for the moving average calculation. | `20` |
 | `StandardDeviations` | Number of standard deviations for the upper and lower bands. | `2.0` |
@@ -187,7 +187,7 @@ When shown in a chart legend, `BollingerBandsIndicator` creates a line item for 
 </CartesianChart>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Trendline chart](/controls/data-display/charts/shared-elements/trendline-chart)
 - [Line chart](/controls/data-display/charts/cartesian/line-chart)

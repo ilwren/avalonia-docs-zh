@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ResourceInclude Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Markup.Xaml.Styling</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Markup.Xaml.Styling</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Markup.Xaml</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Markup.Xaml</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/Styling/ResourceInclude.cs">ResourceInclude.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/Styling/ResourceInclude.cs">ResourceInclude.cs</a>
 </div>
 
 </div>
@@ -54,44 +54,44 @@ public class ResourceInclude
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ResourceInclude
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ResourceInclude
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="mergeresourceinclude">MergeResourceInclude</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="mergeresourceinclude">MergeResourceInclude</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../../controls/iresourcenode">IResourceNode</a>, <a href="../../../controls/iresourceprovider">IResourceProvider</a>, <a href="../../../controls/ithemevariantprovider">IThemeVariantProvider</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../../controls/iresourcenode">IResourceNode</a>, <a href="../../../controls/iresourceprovider">IResourceProvider</a>, <a href="../../../controls/ithemevariantprovider">IThemeVariantProvider</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 If used from the XAML code, it is replaced with direct resource dictionary reference.
 When used in runtime, this type might be unsafe with trimming and AOT.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ResourceInclude (2 overloads)](#uid-417f6b06cc) | Initializes a new instance of the [Avalonia.Markup.Xaml.Styling.ResourceInclude](xref:Avalonia.Markup.Xaml.Styling.ResourceInclude) class. |
+| [ResourceInclude (2 overloads)](#uid-417f6b06cc) | 初始化 [Avalonia.Markup.Xaml.Styling.ResourceInclude](xref:Avalonia.Markup.Xaml.Styling.ResourceInclude) 类的新实例。 |
 
 <span id="uid-417f6b06cc"></span>
 
-### ResourceInclude overloads
+### ResourceInclude 的重载 {#resourceinclude-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3dd66f5307"></span>
 
-#### ResourceInclude Constructor
+#### ResourceInclude 构造函数 {#resourceinclude-constructor}
 
-Initializes a new instance of the [Avalonia.Markup.Xaml.Styling.ResourceInclude](xref:Avalonia.Markup.Xaml.Styling.ResourceInclude) class.
+初始化 [Avalonia.Markup.Xaml.Styling.ResourceInclude](xref:Avalonia.Markup.Xaml.Styling.ResourceInclude) 类的新实例。
 
 ```csharp
 public ResourceInclude(IServiceProvider serviceProvider)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `serviceProvider` IServiceProvider
 
@@ -104,15 +104,15 @@ The XAML service provider.
 
 <span id="uid-57e0723059"></span>
 
-#### ResourceInclude Constructor
+#### ResourceInclude 构造函数 {#resourceinclude-constructor-1}
 
-Initializes a new instance of the [Avalonia.Markup.Xaml.Styling.ResourceInclude](xref:Avalonia.Markup.Xaml.Styling.ResourceInclude) class.
+初始化 [Avalonia.Markup.Xaml.Styling.ResourceInclude](xref:Avalonia.Markup.Xaml.Styling.ResourceInclude) 类的新实例。
 
 ```csharp
 public ResourceInclude(Uri baseUri)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `baseUri` Uri
 
@@ -121,23 +121,23 @@ The base URL for the XAML context.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TryGetResource](#uid-f4b44da17a) | No summary available. |
+| [TryGetResource](#uid-f4b44da17a) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f4b44da17a"></span>
 
-### TryGetResource Method
+### TryGetResource 方法 {#trygetresource-method}
 
 ```csharp
 public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, object& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `key` object
 
@@ -148,26 +148,26 @@ public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, obje
 `value` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Loaded](#uid-71a0e79d4a) | Gets the loaded resource dictionary. |
-| [Owner](#uid-b55252134b) | No summary available. |
+| [Owner](#uid-b55252134b) | 暂无摘要。 |
 | [Source](#uid-a4fa9114c1) | Gets or sets the source URL. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-71a0e79d4a"></span>
 
-### Loaded Property
+### Loaded 属性 {#loaded-property}
 
 Gets the loaded resource dictionary.
 
@@ -181,7 +181,7 @@ public Avalonia.Controls.IResourceDictionary Loaded { get; set; }
 
 <span id="uid-b55252134b"></span>
 
-### Owner Property
+### Owner 属性 {#owner-property}
 
 ```csharp
 public Avalonia.Controls.IResourceHost Owner { get; set; }
@@ -193,7 +193,7 @@ public Avalonia.Controls.IResourceHost Owner { get; set; }
 
 <span id="uid-a4fa9114c1"></span>
 
-### Source Property
+### Source 属性 {#source-property}
 
 Gets or sets the source URL.
 
@@ -203,17 +203,17 @@ public Uri Source { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [OwnerChanged](#uid-61ff0cac80) | No summary available. |
+| [OwnerChanged](#uid-61ff0cac80) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-61ff0cac80"></span>
 
-### OwnerChanged Event
+### OwnerChanged 事件 {#ownerchanged-event}
 
 ```csharp
 public event EventHandler OwnerChanged

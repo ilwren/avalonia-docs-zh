@@ -18,7 +18,7 @@ The virtual keyboard component includes the following classes:
 - [`VirtualKeyboard`](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control): The actual keyboard control that can be placed manually.
 - `VirtualKeyboardInputMethod`: Represents a particular input method or keyboard layout.
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `Avalonia.Controls.VirtualKeyboard` NuGet package by running `dotnet add package`.
 
@@ -168,7 +168,7 @@ Available `ReturnKeyType` values:
 - `Search`
 - `Send`
 
-## See also
+## 另请参阅 {#see-also}
 
 - [VirtualKeyboard control](/controls/input/text-input/virtualkeyboard)
 - [VirtualKeyboardScope control](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope)

@@ -34,7 +34,7 @@ Some common uses of hot reload are:
 - **Styles.** Edit a selector or setter in an application-level or control-level style, and the new styling is re-applied at once.
 - **Code-behind.** Change an event handler or method body in an `.axaml.cs` file. C# edits apply under the standard .NET Hot Reload rules.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before you begin, make sure you have:
 
@@ -42,7 +42,7 @@ Before you begin, make sure you have:
 2. **A valid Avalonia license key** that includes access to `AvaloniaUI.DiagnosticsSupport.HotReload`. You can get a key from the [Avalonia customer portal](https://portal.avaloniaui.net/). The same key may cover other licensed Avalonia packages, such as `Charts` or `TreeDataGrid`.
 3. **A hot reload driver.** Either the `dotnet watch` command or an IDE that supports .NET Hot Reload (such as Visual Studio). See [Running with hot reload](#running-with-hot-reload).
 
-## Getting started
+## 快速上手 {#getting-started}
 
 1. Install the `AvaloniaUI.DiagnosticsSupport.HotReload` NuGet package by running `dotnet add package`.
 
@@ -150,7 +150,7 @@ The engine initializes once per process, so later calls have no effect. To surfa
 - C# edits follow the normal [.NET Hot Reload rules](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload). Adding fields or changing method signatures counts as a rude edit and needs a restart.
 - Controls are rebuilt rather than mutated, so non-XAML states are reset when a control reloads.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Installing the Avalonia Plus developer tools](/tools/developer-tools/installation)
 - [Data templates](/docs/data-templates/introduction-to-data-templates)

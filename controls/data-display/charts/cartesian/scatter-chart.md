@@ -51,7 +51,7 @@ public ObservableCollection<int> ScatterSeriesData { get; } =
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data points. | `null` |
@@ -86,7 +86,7 @@ The `ScatterLineSeries` extends scatter charts by drawing connecting lines betwe
 
 ### ScatterLineSeries properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ShowLines` | Whether to show connecting lines between scatter points. | `true` |
 | `StrokeDashStyle` | Dash style for the connecting lines. When `null`, lines are solid. | `null` |
@@ -97,7 +97,7 @@ The `ScatterLineSeries` extends scatter charts by drawing connecting lines betwe
 | `MarkerStroke` | Brush used for marker outlines. | `null` |
 | `MarkerStrokeThickness` | Thickness of marker outlines. When `NaN`, the series `StrokeThickness` is used. | `NaN` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Line chart](/controls/data-display/charts/cartesian/line-chart)
 - [Dot plot chart](/controls/data-display/charts/cartesian/dot-plot-chart)

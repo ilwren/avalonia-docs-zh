@@ -36,17 +36,17 @@ protected override async void OnLoaded(RoutedEventArgs e)
 }
 ```
 
-## Properties
+## 属性 {#properties}
 
 ### Media source properties
 
-| Property | Type        | Description                                                                 |
+| Property | Type        | 说明                                                                 |
 |----------|-------------|-----------------------------------------------------------------------------|
 | Source   | MediaSource | Gets or sets the media source to be played (`UriSource` or `StreamSource`). |
 
 ### Playback properties
 
-| Property       | Type                      | Description                                                        |
+| Property       | Type                      | 说明                                                        |
 |----------------|---------------------------|--------------------------------------------------------------------|
 | Position       | TimeSpan                  | Gets or sets the current playback position.                        |
 | Duration       | TimeSpan?                 | Gets the total duration of the media. Null for non-seekable media. |
@@ -54,7 +54,7 @@ protected override async void OnLoaded(RoutedEventArgs e)
 
 ### State properties
 
-| Property         | Type    | Description                                            |
+| Property         | Type    | 说明                                            |
 |------------------|---------|--------------------------------------------------------|
 | IsSeekable       | bool    | Gets whether the current media supports seeking.       |
 | IsBuffering      | bool    | Gets whether the media is currently buffering.         |
@@ -64,21 +64,21 @@ protected override async void OnLoaded(RoutedEventArgs e)
 
 ### Audio properties
 
-| Property | Type   | Description                                 |
+| Property | Type   | 说明                                 |
 |----------|--------|---------------------------------------------|
 | Volume   | double | Gets or sets the playback volume (0.0-1.0). |
 | IsMuted  | bool   | Gets or sets whether audio is muted.        |
 
 ### Advanced properties
 
-| Property        | Type            | Description                                        |
+| Property        | Type            | 说明                                        |
 |-----------------|-----------------|----------------------------------------------------|
 | Statistics      | MediaStatistics | Gets playback statistics information if available. |
 | ForceVlcBackend | bool (static)   | Forces the use of VLC backend (debugging only).    |
 
-## Events
+## 事件 {#events}
 
-| Event                  | Description                                           |
+| Event                  | 说明                                           |
 |------------------------|-------------------------------------------------------|
 | NaturalSizeChanged     | Occurs when the natural size of the video changes.    |
 | MediaPrepared          | Occurs when the media has been prepared and is ready. |
@@ -89,9 +89,9 @@ protected override async void OnLoaded(RoutedEventArgs e)
 | ErrorOccurred        | Occurs when an error is encountered.                  |
 | PropertyChanged        | Standard INotifyPropertyChanged event.                |
 
-## Methods
+## 方法 {#methods}
 
-| Method            | Return Type | Description                                   |
+| Method            | Return Type | 说明                                   |
 |-------------------|-------------|-----------------------------------------------|
 | InitializeAsync() | Task        | Initializes the media player and its backend. |
 | PrepareAsync()    | Task        | Prepares the media for playback.              |
@@ -279,7 +279,7 @@ catch (Exception ex) {
 5. **Platform Considerations**:
     - Test media playback on all target platforms.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [MediaPlayer control](/controls/media/mediaplayer)
 - [MediaSource class](/controls/media/mediaplayer/mediasource)

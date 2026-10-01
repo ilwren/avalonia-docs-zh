@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ReflectionBinding Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/ReflectionBinding.cs">ReflectionBinding.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/ReflectionBinding.cs">ReflectionBinding.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public class ReflectionBinding
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bindingbase">BindingBase</a> <span className="apiref-page__relation-separator">-&gt;</span> ReflectionBinding
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bindingbase">BindingBase</a> <span className="apiref-page__relation-separator">-&gt;</span> ReflectionBinding
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="binding">Binding</a>, <a href="../markup/xaml/markupextensions/reflectionbindingextension">ReflectionBindingExtension</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="binding">Binding</a>, <a href="../markup/xaml/markupextensions/reflectionbindingextension">ReflectionBindingExtension</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ReflectionBinding (2 overloads)](#uid-f65cb88fcb) | Initializes a new instance of the [Avalonia.Data.ReflectionBinding](xref:Avalonia.Data.ReflectionBinding) class. |
+| [ReflectionBinding (2 overloads)](#uid-f65cb88fcb) | 初始化 [Avalonia.Data.ReflectionBinding](xref:Avalonia.Data.ReflectionBinding) 类的新实例。 |
 
 <span id="uid-f65cb88fcb"></span>
 
-### ReflectionBinding overloads
+### ReflectionBinding 的重载 {#reflectionbinding-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-116c6719b1"></span>
 
-#### ReflectionBinding Constructor
+#### ReflectionBinding 构造函数 {#reflectionbinding-constructor}
 
-Initializes a new instance of the [Avalonia.Data.ReflectionBinding](xref:Avalonia.Data.ReflectionBinding) class.
+初始化 [Avalonia.Data.ReflectionBinding](xref:Avalonia.Data.ReflectionBinding) 类的新实例。
 
 ```csharp
 public ReflectionBinding()
@@ -89,15 +89,15 @@ public ReflectionBinding()
 
 <span id="uid-fe23a8d31d"></span>
 
-#### ReflectionBinding Constructor
+#### ReflectionBinding 构造函数 {#reflectionbinding-constructor-1}
 
-Initializes a new instance of the [Avalonia.Data.ReflectionBinding](xref:Avalonia.Data.ReflectionBinding) class.
+初始化 [Avalonia.Data.ReflectionBinding](xref:Avalonia.Data.ReflectionBinding) 类的新实例。
 
 ```csharp
 public ReflectionBinding(string path)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `path` string
 
@@ -106,9 +106,9 @@ The binding path.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Converter](#uid-1ee9768a6d) | Gets or sets the [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter) to use. |
 | [ConverterCulture](#uid-af235b01d2) | Gets or sets the culture in which to evaluate the converter. |
@@ -130,7 +130,7 @@ The binding path.
 
 <span id="uid-1ee9768a6d"></span>
 
-### Converter Property
+### Converter 属性 {#converter-property}
 
 Gets or sets the [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter) to use.
 
@@ -144,7 +144,7 @@ public Avalonia.Data.Converters.IValueConverter Converter { get; set; }
 
 <span id="uid-af235b01d2"></span>
 
-### ConverterCulture Property
+### ConverterCulture 属性 {#converterculture-property}
 
 Gets or sets the culture in which to evaluate the converter.
 
@@ -152,12 +152,12 @@ Gets or sets the culture in which to evaluate the converter.
 public System.Globalization.CultureInfo ConverterCulture { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The default value is null.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 If this property is not set then [System.Globalization.CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture) will be used.
 
@@ -167,7 +167,7 @@ If this property is not set then [System.Globalization.CultureInfo.CurrentCultur
 
 <span id="uid-a66fd908cb"></span>
 
-### ConverterParameter Property
+### ConverterParameter 属性 {#converterparameter-property}
 
 Gets or sets a parameter to pass to [Avalonia.Data.ReflectionBinding.Converter](xref:Avalonia.Data.ReflectionBinding.Converter).
 
@@ -181,7 +181,7 @@ public object ConverterParameter { get; set; }
 
 <span id="uid-5f725d75b9"></span>
 
-### Delay Property
+### Delay 属性 {#delay-property}
 
 Gets or sets the amount of time, in milliseconds, to wait before updating the binding
 source after the value on the target changes.
@@ -190,7 +190,7 @@ source after the value on the target changes.
 public int Delay { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 There is no delay when the source is updated via [Avalonia.Data.UpdateSourceTrigger.LostFocus](xref:Avalonia.Data.UpdateSourceTrigger.LostFocus)
 or [Avalonia.Data.BindingExpressionBase.UpdateSource](xref:Avalonia.Data.BindingExpressionBase.UpdateSource). Nor is there a delay when
@@ -202,7 +202,7 @@ or [Avalonia.Data.BindingExpressionBase.UpdateSource](xref:Avalonia.Data.Binding
 
 <span id="uid-c5576e6ba1"></span>
 
-### ElementName Property
+### ElementName 属性 {#elementname-property}
 
 Gets or sets the name of the element to use as the binding source.
 
@@ -216,7 +216,7 @@ public string ElementName { get; set; }
 
 <span id="uid-4167f89070"></span>
 
-### FallbackValue Property
+### FallbackValue 属性 {#fallbackvalue-property}
 
 Gets or sets the value to use when the binding is unable to produce a value.
 
@@ -230,7 +230,7 @@ public object FallbackValue { get; set; }
 
 <span id="uid-094aff5586"></span>
 
-### Mode Property
+### Mode 属性 {#mode-property}
 
 Gets or sets the binding mode.
 
@@ -244,7 +244,7 @@ public Avalonia.Data.BindingMode Mode { get; set; }
 
 <span id="uid-9f99936cab"></span>
 
-### Path Property
+### Path 属性 {#path-property}
 
 Gets or sets the binding path.
 
@@ -258,7 +258,7 @@ public string Path { get; set; }
 
 <span id="uid-d52ca0f81c"></span>
 
-### Priority Property
+### Priority 属性 {#priority-property}
 
 Gets or sets the binding priority.
 
@@ -272,7 +272,7 @@ public Avalonia.Data.BindingPriority Priority { get; set; }
 
 <span id="uid-349a17205a"></span>
 
-### RelativeSource Property
+### RelativeSource 属性 {#relativesource-property}
 
 Gets or sets the relative source for the binding.
 
@@ -286,7 +286,7 @@ public Avalonia.Data.RelativeSource RelativeSource { get; set; }
 
 <span id="uid-0c3d8d9565"></span>
 
-### Source Property
+### Source 属性 {#source-property}
 
 Gets or sets the source for the binding.
 
@@ -300,7 +300,7 @@ public object Source { get; set; }
 
 <span id="uid-4dae1cc603"></span>
 
-### StringFormat Property
+### StringFormat 属性 {#stringformat-property}
 
 Gets or sets the string format.
 
@@ -314,7 +314,7 @@ public string StringFormat { get; set; }
 
 <span id="uid-ba726385ba"></span>
 
-### TargetNullValue Property
+### TargetNullValue 属性 {#targetnullvalue-property}
 
 Gets or sets the value to use when the binding result is null.
 
@@ -328,7 +328,7 @@ public object TargetNullValue { get; set; }
 
 <span id="uid-878d6742bf"></span>
 
-### TypeResolver Property
+### TypeResolver 属性 {#typeresolver-property}
 
 Gets or sets a function used to resolve types from names in the binding path.
 
@@ -342,7 +342,7 @@ public Func<string, string, Type> TypeResolver { get; set; }
 
 <span id="uid-4b2dab820f"></span>
 
-### UpdateSourceTrigger Property
+### UpdateSourceTrigger 属性 {#updatesourcetrigger-property}
 
 Gets or sets a value that determines the timing of binding source updates for
 [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) and [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource) bindings.

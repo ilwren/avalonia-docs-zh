@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Logger Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Logging</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Logging</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Logging/Logger.cs">Logger.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Logging/Logger.cs">Logger.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class Logger
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Logger
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Logger
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsEnabled](#uid-7849073e70) | Checks if given log level is enabled. |
 | [TryGet (2 overloads)](#uid-a80b9554dc) | Returns parametrized logging sink if given log level is enabled. |
@@ -69,7 +69,7 @@ public class Logger
 
 <span id="uid-7849073e70"></span>
 
-### IsEnabled Method
+### IsEnabled 方法 {#isenabled-method}
 
 Checks if given log level is enabled.
 
@@ -77,7 +77,7 @@ Checks if given log level is enabled.
 public bool IsEnabled(Avalonia.Logging.LogEventLevel level, string area)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `level` [Avalonia.Logging.LogEventLevel](xref:Avalonia.Logging.LogEventLevel)
 
@@ -89,7 +89,7 @@ The log event level.
 The log area.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -106,7 +106,7 @@ if given log level is enabled.
 
 <span id="uid-921fb0a909"></span>
 
-#### TryGet Method
+#### TryGet 方法 {#tryget-method}
 
 Returns parametrized logging sink if given log level is enabled.
 
@@ -114,7 +114,7 @@ Returns parametrized logging sink if given log level is enabled.
 public Nullable<Avalonia.Logging.ParametrizedLogger> TryGet(Avalonia.Logging.LogEventLevel level, string area)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `level` [Avalonia.Logging.LogEventLevel](xref:Avalonia.Logging.LogEventLevel)
 
@@ -126,7 +126,7 @@ The log event level.
 The area that the event originates from.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 Nullable&lt;[Avalonia.Logging.ParametrizedLogger](xref:Avalonia.Logging.ParametrizedLogger)&gt;
 
@@ -139,13 +139,13 @@ Log sink or if log level is not enabled.
 
 <span id="uid-74962784f1"></span>
 
-#### TryGet Method
+#### TryGet 方法 {#tryget-method-1}
 
 ```csharp
 public bool TryGet(Avalonia.Logging.LogEventLevel level, string area, Avalonia.Logging.ParametrizedLogger& outLogger)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `level` [Avalonia.Logging.LogEventLevel](xref:Avalonia.Logging.LogEventLevel)
 
@@ -156,16 +156,16 @@ public bool TryGet(Avalonia.Logging.LogEventLevel level, string area, Avalonia.L
 `outLogger` [Avalonia.Logging.ParametrizedLogger](xref:Avalonia.Logging.ParametrizedLogger)&amp;
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Sink](#uid-4978b18e21) | Gets or sets the application-defined sink that receives the messages. |
 
@@ -173,7 +173,7 @@ bool
 
 <span id="uid-4978b18e21"></span>
 
-### Sink Property
+### Sink 属性 {#sink-property}
 
 Gets or sets the application-defined sink that receives the messages.
 

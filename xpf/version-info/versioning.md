@@ -44,7 +44,7 @@ To lock your project to a particular XPF version, set the `XpfVersion` property 
 
 Pinning a version prevents unexpected upgrades and ensures that every developer on your team builds against the same packages.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Release notes](/xpf/version-info/release-notes)
 - [Missing features](/xpf/version-info/missing-features)

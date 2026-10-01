@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IVulkanContextExternalObjectsFeature Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Vulkan</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Vulkan</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Vulkan</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Vulkan</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Vulkan/IVulkanContextExternalObjectsFeature.cs">IVulkanContextExternalObjectsFeature.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Vulkan/IVulkanContextExternalObjectsFeature.cs">IVulkanContextExternalObjectsFeature.cs</a>
 </div>
 
 </div>
@@ -46,30 +46,30 @@ public interface IVulkanContextExternalObjectsFeature
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetSynchronizationCapabilities](#uid-be5c110680) | No summary available. |
-| [ImportImage](#uid-4d4912f975) | No summary available. |
-| [ImportSemaphore](#uid-cb3209e8d4) | No summary available. |
+| [GetSynchronizationCapabilities](#uid-be5c110680) | 暂无摘要。 |
+| [ImportImage](#uid-4d4912f975) | 暂无摘要。 |
+| [ImportSemaphore](#uid-cb3209e8d4) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-be5c110680"></span>
 
-### GetSynchronizationCapabilities Method
+### GetSynchronizationCapabilities 方法 {#getsynchronizationcapabilities-method}
 
 ```csharp
 public Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronizationCapabilities GetSynchronizationCapabilities(string imageHandleType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `imageHandleType` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronizationCapabilities](xref:Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronizationCapabilities)
 
@@ -80,13 +80,13 @@ public Avalonia.Rendering.Composition.CompositionGpuImportedImageSynchronization
 
 <span id="uid-4d4912f975"></span>
 
-### ImportImage Method
+### ImportImage 方法 {#importimage-method}
 
 ```csharp
 public Avalonia.Vulkan.IVulkanExternalImage ImportImage(Avalonia.Platform.IPlatformHandle handle, Avalonia.Platform.PlatformGraphicsExternalImageProperties properties)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `handle` [Avalonia.Platform.IPlatformHandle](xref:Avalonia.Platform.IPlatformHandle)
 
@@ -94,7 +94,7 @@ public Avalonia.Vulkan.IVulkanExternalImage ImportImage(Avalonia.Platform.IPlatf
 `properties` [Avalonia.Platform.PlatformGraphicsExternalImageProperties](xref:Avalonia.Platform.PlatformGraphicsExternalImageProperties)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Vulkan.IVulkanExternalImage](xref:Avalonia.Vulkan.IVulkanExternalImage)
 
@@ -105,38 +105,38 @@ public Avalonia.Vulkan.IVulkanExternalImage ImportImage(Avalonia.Platform.IPlatf
 
 <span id="uid-cb3209e8d4"></span>
 
-### ImportSemaphore Method
+### ImportSemaphore 方法 {#importsemaphore-method}
 
 ```csharp
 public Avalonia.Vulkan.IVulkanExternalSemaphore ImportSemaphore(Avalonia.Platform.IPlatformHandle handle)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `handle` [Avalonia.Platform.IPlatformHandle](xref:Avalonia.Platform.IPlatformHandle)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Vulkan.IVulkanExternalSemaphore](xref:Avalonia.Vulkan.IVulkanExternalSemaphore)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DeviceLuid](#uid-94e9e5a7cd) | No summary available. |
-| [DeviceUuid](#uid-5c8742de9d) | No summary available. |
-| [SupportedImageHandleTypes](#uid-f0a41bce61) | No summary available. |
-| [SupportedSemaphoreTypes](#uid-3fb979e3f5) | No summary available. |
+| [DeviceLuid](#uid-94e9e5a7cd) | 暂无摘要。 |
+| [DeviceUuid](#uid-5c8742de9d) | 暂无摘要。 |
+| [SupportedImageHandleTypes](#uid-f0a41bce61) | 暂无摘要。 |
+| [SupportedSemaphoreTypes](#uid-3fb979e3f5) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-94e9e5a7cd"></span>
 
-### DeviceLuid Property
+### DeviceLuid 属性 {#deviceluid-property}
 
 ```csharp
 public byte[] DeviceLuid { get; set; }
@@ -148,7 +148,7 @@ public byte[] DeviceLuid { get; set; }
 
 <span id="uid-5c8742de9d"></span>
 
-### DeviceUuid Property
+### DeviceUuid 属性 {#deviceuuid-property}
 
 ```csharp
 public byte[] DeviceUuid { get; set; }
@@ -160,7 +160,7 @@ public byte[] DeviceUuid { get; set; }
 
 <span id="uid-f0a41bce61"></span>
 
-### SupportedImageHandleTypes Property
+### SupportedImageHandleTypes 属性 {#supportedimagehandletypes-property}
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<string> SupportedImageHandleTypes { get; set; }
@@ -172,7 +172,7 @@ public System.Collections.Generic.IReadOnlyList<string> SupportedImageHandleType
 
 <span id="uid-3fb979e3f5"></span>
 
-### SupportedSemaphoreTypes Property
+### SupportedSemaphoreTypes 属性 {#supportedsemaphoretypes-property}
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<string> SupportedSemaphoreTypes { get; set; }

@@ -15,7 +15,7 @@ You do not usually create instances of `Window` directly. Instead, you subclass 
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 | :--- | :--- | :--- |
 | `Title` | `string` | The text displayed in the title bar. |
 | `Icon` | `WindowIcon` | The icon displayed in the title bar and taskbar. |
@@ -129,7 +129,7 @@ window.Closing += (s, e) =>
 - **Positioning.** Use the `Position` property (of type `PixelPoint`) to set the window's screen coordinates, or set `WindowStartupLocation` to `CenterScreen` or `CenterOwner`.
 - **Closing behavior.** When the last window closes, your application exits by default. You can change this by setting `ShutdownMode` on the application lifetime.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Main window](/docs/fundamentals/main-window)
 - [Window management](/docs/app-development/window-management)

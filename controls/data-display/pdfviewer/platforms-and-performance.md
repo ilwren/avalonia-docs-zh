@@ -65,7 +65,7 @@ In the continuous view modes only the pages near the viewport are decoded, and p
 
 Two properties tune the trade-off between scrolling smoothness and memory.
 
-| Property | Default | Description |
+| Property | Default | 说明 |
 |---|---|---|
 | `PageRenderBuffer` | `2` | Pages decoded ahead on each side of the viewport. Increase it to reduce blank placeholders while scrolling fast, decrease it to save memory. Clamped to 0 to 10. |
 | `PageRetentionBuffer` | `4` | Pages kept decoded on each side before they are released. Keeping it above `PageRenderBuffer` avoids re-rendering on short back-and-forth scrolling. Clamped to 0 to 20. |
@@ -101,7 +101,7 @@ Anything a user needs to act on is also surfaced on the bindable `ErrorMessage` 
 - A text selection cannot span pages.
 - Redaction removes text, images and fully covered vector content, but not content drawn by a partially covered form XObject.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PdfViewer control](index.md)
 - [Loading and saving](loading-and-saving.md)

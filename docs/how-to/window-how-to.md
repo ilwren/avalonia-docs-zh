@@ -25,7 +25,7 @@ This guide covers common Window scenarios: sizing, positioning, dialogs, multi-w
 
 ### Startup location
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `Manual` | Position set by `Position` property. |
 | `CenterScreen` | Centered on the primary screen. |
@@ -169,7 +169,7 @@ Mark an element as a title bar drag region using the `WindowDecorationProperties
 
 The `ElementRole` property supports these values:
 
-| Value | Behavior |
+| 值 | Behavior |
 |---|---|
 | `None` | No special window chrome behavior (default). |
 | `TitleBar` | Acts as a draggable title bar region. |
@@ -268,7 +268,7 @@ Icon = new WindowIcon(AssetLoader.Open(new Uri("avares://MyApp/Assets/app-icon.i
 
 ## Key Properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Title` | `string` | Window title bar text. |
 | `WindowState` | `WindowState` | `Normal`, `Minimized`, `Maximized`, `FullScreen`. |

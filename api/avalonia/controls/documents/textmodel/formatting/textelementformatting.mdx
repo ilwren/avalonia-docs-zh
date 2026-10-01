@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextElementFormatting Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,14 +51,14 @@ public struct TextElementFormatting
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TextElementFormatting
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TextElementFormatting
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;TextElementFormatting&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;TextElementFormatting&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Captures the inheritable visual properties that every [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 can carry: font family/size/weight/style/stretch, foreground, background,
@@ -69,34 +69,34 @@ Stored on [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref
 table-row, image, etc.) can carry base-level formatting without type-specific
 snapshot subclasses.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-1a28ac6af5) | No summary available. |
-| [GetHashCode](#uid-c47990a365) | No summary available. |
-| [ToString](#uid-94a0132d0f) | No summary available. |
+| [Equals（2 个重载）](#uid-1a28ac6af5) | 暂无摘要。 |
+| [GetHashCode](#uid-c47990a365) | 暂无摘要。 |
+| [ToString](#uid-94a0132d0f) | 暂无摘要。 |
 
 <span id="uid-1a28ac6af5"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e63a26dc3a"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -107,18 +107,18 @@ bool
 
 <span id="uid-ba4c2327e1"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -129,13 +129,13 @@ bool
 
 <span id="uid-c47990a365"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -146,22 +146,22 @@ int
 
 <span id="uid-94a0132d0f"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BackgroundArgb](#uid-5304126a6c) | Packed ARGB value for background color. Null means not explicitly set. |
 | [BackgroundColor](#uid-6bf33bb506) | Gets the background color if set, otherwise null. |
@@ -182,7 +182,7 @@ string
 
 <span id="uid-5304126a6c"></span>
 
-### BackgroundArgb Property
+### BackgroundArgb 属性 {#backgroundargb-property}
 
 Packed ARGB value for background color.
 Null means not explicitly set.
@@ -197,7 +197,7 @@ public Nullable<uint> BackgroundArgb { get; set; }
 
 <span id="uid-6bf33bb506"></span>
 
-### BackgroundColor Property
+### BackgroundColor 属性 {#backgroundcolor-property}
 
 Gets the background color if set, otherwise null.
 
@@ -211,7 +211,7 @@ public Nullable<Avalonia.Media.Color> BackgroundColor { get; set; }
 
 <span id="uid-f66fad7c61"></span>
 
-### Default Property
+### Default 属性 {#default-property}
 
 Default formatting with no explicit values set.
 
@@ -225,7 +225,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting De
 
 <span id="uid-70e8da0df5"></span>
 
-### FontFamily Property
+### FontFamily 属性 {#fontfamily-property}
 
 The font family name. Null if using inherited/default font.
 
@@ -239,7 +239,7 @@ public string FontFamily { get; set; }
 
 <span id="uid-988a59193c"></span>
 
-### FontFeatures Property
+### FontFeatures 属性 {#fontfeatures-property}
 
 OpenType font features (e.g. ligatures, stylistic sets).
 Default means not explicitly set.
@@ -248,7 +248,7 @@ Default means not explicitly set.
 public Avalonia.Media.FontFeature[] FontFeatures { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Do not write through this array. A snapshot is read by a serializer running on
 another thread while the document carries on being edited, and the array is handed
@@ -261,7 +261,7 @@ Build a new array and assign it instead.
 
 <span id="uid-2e4856db79"></span>
 
-### FontSize Property
+### FontSize 属性 {#fontsize-property}
 
 The font size in device-independent pixels.
 Null means not explicitly set.
@@ -276,7 +276,7 @@ public Nullable<double> FontSize { get; set; }
 
 <span id="uid-aa001c7c19"></span>
 
-### FontStretch Property
+### FontStretch 属性 {#fontstretch-property}
 
 The font stretch (e.g., Normal, Condensed, Expanded).
 Null means not explicitly set.
@@ -291,7 +291,7 @@ public Nullable<Avalonia.Media.FontStretch> FontStretch { get; set; }
 
 <span id="uid-67503323b8"></span>
 
-### FontStyle Property
+### FontStyle 属性 {#fontstyle-property}
 
 The font style (e.g., Normal, Italic, Oblique).
 Null means not explicitly set.
@@ -306,7 +306,7 @@ public Nullable<Avalonia.Media.FontStyle> FontStyle { get; set; }
 
 <span id="uid-d56e719699"></span>
 
-### FontWeight Property
+### FontWeight 属性 {#fontweight-property}
 
 The font weight (e.g., Normal, Bold).
 Null means not explicitly set.
@@ -321,7 +321,7 @@ public Nullable<Avalonia.Media.FontWeight> FontWeight { get; set; }
 
 <span id="uid-04b78b7ac2"></span>
 
-### ForegroundArgb Property
+### ForegroundArgb 属性 {#foregroundargb-property}
 
 Packed ARGB value for foreground color.
 Null means not explicitly set.
@@ -336,7 +336,7 @@ public Nullable<uint> ForegroundArgb { get; set; }
 
 <span id="uid-2cae13fe4d"></span>
 
-### ForegroundColor Property
+### ForegroundColor 属性 {#foregroundcolor-property}
 
 Gets the foreground color if set, otherwise null.
 
@@ -350,7 +350,7 @@ public Nullable<Avalonia.Media.Color> ForegroundColor { get; set; }
 
 <span id="uid-aa2532524d"></span>
 
-### HasBackground Property
+### HasBackground 属性 {#hasbackground-property}
 
 Gets whether a background color is explicitly set.
 
@@ -364,7 +364,7 @@ public bool HasBackground { get; set; }
 
 <span id="uid-6898b67147"></span>
 
-### HasForeground Property
+### HasForeground 属性 {#hasforeground-property}
 
 Gets whether a foreground color is explicitly set.
 
@@ -378,7 +378,7 @@ public bool HasForeground { get; set; }
 
 <span id="uid-6ce121bd38"></span>
 
-### LetterSpacing Property
+### LetterSpacing 属性 {#letterspacing-property}
 
 The letter spacing in pixels.
 Null means not explicitly set. Default is 0 (normal spacing).

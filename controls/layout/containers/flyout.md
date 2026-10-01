@@ -64,7 +64,7 @@ public void Border_PointerPressed(object sender, PointerPressedEventArgs args)
 
 You will probably use these properties most often:
 
-| Property          | Description                                                                          |
+| Property          | 说明                                                                          |
 | ----------------- | ------------------------------------------------------------------------------------ |
 | `Content`         | The content displayed inside the flyout.                                             |
 | `ContentTemplate` | A `DataTemplate` applied to the `Content`. Useful when `Content` is bound to a view model object. |
@@ -75,11 +75,11 @@ You will probably use these properties most often:
 
 This setting describes how the flyout shows and hides:
 
-<table><thead><tr><th width="259">Mode</th><th>Description</th></tr></thead><tbody><tr><td><code>Standard</code></td><td>The flyout shows when the control to which it is attached gets the focus. The flyout hides when the control to which it is attached loses the focus (the user either tabs away or clicks elsewhere). </td></tr><tr><td><code>Transient</code></td><td></td></tr><tr><td><code>TransientWithDismiss OnPointerMoveAway</code></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="259">Mode</th><th>说明</th></tr></thead><tbody><tr><td><code>Standard</code></td><td>The flyout shows when the control to which it is attached gets the focus. The flyout hides when the control to which it is attached loses the focus (the user either tabs away or clicks elsewhere). </td></tr><tr><td><code>Transient</code></td><td></td></tr><tr><td><code>TransientWithDismiss OnPointerMoveAway</code></td><td></td></tr></tbody></table>
 
 ## Common methods for all flyouts
 
-| Property                | Description                                                                             |
+| Property                | 说明                                                                             |
 | ----------------------- | --------------------------------------------------------------------------------------- |
 | `ShowAt(Control)`       | Shows the Flyout at the specified target                                                |
 | `ShowAt(Control, bool)` | Shows the Flyout at the specified target, but places it at the current pointer position |
@@ -115,7 +115,7 @@ Although flyouts are not themselves controls, their general appearance can be cu
 </Flyout>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Flyout API reference](/api/avalonia/controls/flyout)
 - [`Flyout.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/Flyout.cs)

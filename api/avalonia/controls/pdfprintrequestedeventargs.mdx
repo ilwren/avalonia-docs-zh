@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfPrintRequestedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -51,13 +51,13 @@ public class PdfPrintRequestedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfPrintRequestedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfPrintRequestedEventArgs
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetDocumentBytesAsync](#uid-22144607f4) | Exports the document, including unsaved annotation edits, as PDF bytes. |
 
@@ -65,7 +65,7 @@ public class PdfPrintRequestedEventArgs
 
 <span id="uid-22144607f4"></span>
 
-### GetDocumentBytesAsync Method
+### GetDocumentBytesAsync 方法 {#getdocumentbytesasync-method}
 
 Exports the document, including unsaved annotation edits, as PDF bytes.
 
@@ -73,21 +73,21 @@ Exports the document, including unsaved annotation edits, as PDF bytes.
 public System.Threading.Tasks.Task<byte[]> GetDocumentBytesAsync(System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;byte[]&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Document](#uid-1a8d25c812) | The loaded document. |
 | [Handled](#uid-3d4e5638b8) | Set to `true` when the application has handled the request itself. |
@@ -97,7 +97,7 @@ System.Threading.Tasks.Task&lt;byte[]&gt;
 
 <span id="uid-1a8d25c812"></span>
 
-### Document Property
+### Document 属性 {#document-property}
 
 The loaded document.
 
@@ -111,7 +111,7 @@ public Avalonia.Controls.Pdf.Core.IPdfDocument Document { get; set; }
 
 <span id="uid-3d4e5638b8"></span>
 
-### Handled Property
+### Handled 属性 {#handled-property}
 
 Set to `true` when the application has handled the request itself.
 
@@ -125,7 +125,7 @@ public bool Handled { get; set; }
 
 <span id="uid-a2a17a57c9"></span>
 
-### Options Property
+### Options 属性 {#options-property}
 
 Print options; the viewer pre-fills [Avalonia.Controls.Pdf.Services.PrintOptions.Title](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Title) and [Avalonia.Controls.Pdf.Services.PrintOptions.Owner](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Owner).
 

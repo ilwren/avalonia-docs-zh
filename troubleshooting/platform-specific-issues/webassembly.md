@@ -113,7 +113,7 @@ WebAssembly is a sandboxed environment with some inherent limitations:
 - Clipboard access is limited to user-initiated events in most browsers.
 - Native file dialogs are not available. Use the browser's file input element or a JavaScript interop approach to handle file selection.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia WebAssembly overview](/docs/platform-specific-guides/webassembly)
 - [App performance issues](/docs/app-development/performance)

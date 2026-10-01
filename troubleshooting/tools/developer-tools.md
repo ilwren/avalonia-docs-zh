@@ -95,7 +95,7 @@ application.AttachDeveloperTools(o =>
 });
 ```
 
-## Common issues
+## 常见问题 {#common-issues}
 
 | Symptom | Possible cause | Resolution |
 |---|---|---|
@@ -104,7 +104,7 @@ application.AttachDeveloperTools(o =>
 | Logs directory exists but contains no recent files | Developer Tools crashed before flushing the log batch | Reproduce the issue and keep Developer Tools open longer before closing |
 | Breakpoints or property edits do not take effect | Version mismatch between `Avalonia.Diagnostics` and your Avalonia runtime | Ensure all Avalonia packages use the same version |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Developer Tools installation](/tools/developer-tools/installation)
 - [Attaching applications](/tools/developer-tools/attaching-applications)

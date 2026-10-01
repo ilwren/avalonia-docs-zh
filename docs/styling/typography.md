@@ -11,7 +11,7 @@ Avalonia provides a set of properties for controlling how text appears in your a
 
 The following properties are defined on `TextElement` and inherited by descendant controls. Set them directly on text controls like `TextBlock`, or on container controls to apply to all text within.
 
-| Attached property | Type | Default | Description |
+| Attached property | Type | Default | 说明 |
 |---|---|---|---|
 | `TextElement.FontFamily` | [`FontFamily`](/api/avalonia/media/fontfamily) | Platform default | The typeface used to render text. |
 | `TextElement.FontSize` | `double` | `12` | The size of text in device-independent pixels. |
@@ -104,7 +104,7 @@ The available weights depend on the font. If a requested weight is not available
 
 `FontStyle` controls whether text is rendered upright, italic, or oblique.
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `Normal` | Upright text (default). |
 | `Italic` | Uses the italic variant of the font, designed with modified letterforms. |
@@ -126,7 +126,7 @@ The available weights depend on the font. If a requested weight is not available
 
 `FontStretch` controls the width of characters relative to their normal aspect ratio. This property requires a font that includes condensed or expanded variants.
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `UltraCondensed` | Narrowest character width. |
 | `ExtraCondensed` | Narrower than `Condensed`. |
@@ -178,7 +178,7 @@ Because `LetterSpacing` is an inherited attached property defined on `TextElemen
 
 `LineHeight` and `LineSpacing` control the vertical distance between lines of text in a `TextBlock`.
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `LineHeight` | `double` | `NaN` | The total height of each line. When set to `NaN`, the font metrics determine line height automatically. |
 | `LineSpacing` | `double` | `0` | Extra distance added between lines, in device-independent pixels. Added on top of the font's natural line height. |
@@ -208,7 +208,7 @@ Use `LineHeight` when you need precise control over line dimensions. Use `LineSp
 
 `TextAlignment` controls the horizontal positioning of text within its container.
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `Left` | Text aligns to the left edge. |
 | `Center` | Text is centered horizontally. |
@@ -242,7 +242,7 @@ Text decorations draw lines on or around text. Avalonia provides four presets th
 
 ### Preset decorations
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
 | `Underline` | A line below the text baseline. |
 | `Strikethrough` | A line through the middle of the text. |
@@ -277,7 +277,7 @@ You can apply decorations to individual `Run` elements within a `TextBlock`:
 
 For control over color, thickness, offset, and dash pattern, define a `TextDecoration` directly.
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Location` | [`TextDecorationLocation`](/api/avalonia/media/textdecorationlocation) | Where the line is drawn: `Underline`, `Strikethrough`, `Overline`, or `Baseline`. |
 | `Stroke` | `IBrush` | The brush used to paint the decoration line. |
@@ -395,7 +395,7 @@ myTextBlock.LineHeight = 32;
 myTextBlock.TextDecorations = TextDecorations.Underline;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Custom fonts](/docs/styling/custom-fonts): Embedding and loading custom font files.
 - [Text options](/docs/graphics-animation/text-options): Controlling text rendering, hinting, and baseline alignment.

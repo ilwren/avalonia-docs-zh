@@ -64,7 +64,7 @@ public ObservableCollection<CategoryRangePoint> RangeAreaData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of range data points. | `null` |

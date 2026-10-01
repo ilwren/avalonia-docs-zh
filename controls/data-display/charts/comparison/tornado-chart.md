@@ -47,7 +47,7 @@ public ObservableCollection<TornadoFactor> TornadoData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of factors or categories. | `null` |
 | `LeftValuePath` | Path to the left-side value. | `null` |
@@ -59,7 +59,7 @@ public ObservableCollection<TornadoFactor> TornadoData { get; } = new()
 | `CenterGap` | Gap between the two sides. | `4.0` |
 | `IsHighlightEnabled` | Enables hover highlighting for tornado bars. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart)
 - [Population pyramid chart](/controls/data-display/charts/comparison/population-pyramid-chart)

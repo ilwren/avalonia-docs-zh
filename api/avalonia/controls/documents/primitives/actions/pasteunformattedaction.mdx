@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PasteUnformattedAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -51,11 +51,11 @@ public class PasteUnformattedAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> PasteUnformattedAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> PasteUnformattedAction
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Probes the clipboard via
 [Avalonia.Controls.Documents.Primitives.Components.ClipboardOperations.TryGetPlainTextSnapshotAsync(Avalonia.Input.Platform.IClipboard,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Primitives.Components.ClipboardOperations.TryGetPlainTextSnapshotAsync%28Avalonia.Input.Platform.IClipboard%2CSystem.Threading.CancellationToken%29): when an
@@ -67,17 +67,17 @@ snapshot. The resulting snapshot is grafted via
 `TextRange.InsertSnapshot` the same way [Avalonia.Controls.Documents.Primitives.Actions.PasteAction](xref:Avalonia.Controls.Documents.Primitives.Actions.PasteAction)
 inserts rich content.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PasteUnformattedAction](#uid-d612c9a93f) | No summary available. |
+| [PasteUnformattedAction](#uid-d612c9a93f) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d612c9a93f"></span>
 
-### PasteUnformattedAction Constructor
+### PasteUnformattedAction 构造函数 {#pasteunformattedaction-constructor}
 
 ```csharp
 public PasteUnformattedAction()
@@ -85,31 +85,31 @@ public PasteUnformattedAction()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-c76ddde9b1) | No summary available. |
-| [Execute](#uid-49d2ca8132) | No summary available. |
-| [ExecuteAsync](#uid-ce384813e7) | No summary available. |
+| [CanExecute](#uid-c76ddde9b1) | 暂无摘要。 |
+| [Execute](#uid-49d2ca8132) | 暂无摘要。 |
+| [ExecuteAsync](#uid-ce384813e7) | 暂无摘要。 |
 | [GetState](editoraction.mdx#uid-e9737aed90) | Gets the current state of the action. Inherited from [EditorAction](editoraction.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c76ddde9b1"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -120,13 +120,13 @@ bool
 
 <span id="uid-49d2ca8132"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -137,37 +137,37 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 <span id="uid-ce384813e7"></span>
 
-### ExecuteAsync Method
+### ExecuteAsync 方法 {#executeasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DisplayName](#uid-3df8d1cc0e) | No summary available. |
-| [Gesture](#uid-1214e8f0b2) | No summary available. |
-| [Id](#uid-eb845f2e7a) | No summary available. |
+| [DisplayName](#uid-3df8d1cc0e) | 暂无摘要。 |
+| [Gesture](#uid-1214e8f0b2) | 暂无摘要。 |
+| [Id](#uid-eb845f2e7a) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3df8d1cc0e"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 ```csharp
 public string DisplayName { get; set; }
@@ -179,7 +179,7 @@ public string DisplayName { get; set; }
 
 <span id="uid-1214e8f0b2"></span>
 
-### Gesture Property
+### Gesture 属性 {#gesture-property}
 
 ```csharp
 public Avalonia.Input.KeyGesture Gesture { get; set; }
@@ -191,7 +191,7 @@ public Avalonia.Input.KeyGesture Gesture { get; set; }
 
 <span id="uid-eb845f2e7a"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 ```csharp
 public string Id { get; set; }

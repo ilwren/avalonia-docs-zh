@@ -57,7 +57,7 @@ myTextBox.GotFocus += (sender, e) =>
 
 These pseudoclasses are helpful when you style controls that are `Focusable`.
 
-| Pseudoclass      | Description                                                   |
+| Pseudoclass      | 说明                                                   |
 |:-----------------|:--------------------------------------------------------------|
 | `:focus`         | The control has focus.                                        |
 | `:focus-within`  | The control has focus or contains a descendant that has focus. |
@@ -170,7 +170,7 @@ The `Slider` provides an example of mixing navigation with control interaction. 
 
 <Image light={DirectionalNavigationScreenshot} alt="Directional Navigation Example" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Keyboard and hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Key bindings and keyboard shortcuts.
 - [FocusManager](/docs/services/focus-manager): Global focus management service.

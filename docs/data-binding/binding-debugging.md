@@ -164,7 +164,7 @@ When a binding does not work:
 7. Add a `FallbackValue` to confirm whether the path resolution is the problem.
 8. For compiled bindings, verify `x:DataType` matches the actual runtime type.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding parameters including FallbackValue and TargetNullValue.
 - [Compiled Bindings](/docs/data-binding/compiled-bindings): Compile-time binding validation.

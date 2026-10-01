@@ -278,7 +278,7 @@ Use [container queries](/docs/styling/container-queries) to scale text based on 
 
 This technique keeps your typography responsive without relying on window-level breakpoints, so the text adapts correctly even when your control is hosted inside a split pane or dialog.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Container queries](/docs/styling/container-queries): Responsive styling based on container size.
 - [Layout](/docs/layout): Avalonia layout system overview.

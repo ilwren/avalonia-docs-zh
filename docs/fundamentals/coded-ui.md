@@ -395,7 +395,7 @@ C# is not fundamentally limited for coded UI, but its object-oriented heritage m
 
 If you prefer C#, a builder-style API with careful design can reduce ceremony significantly. The code-only patterns shown throughout this page work well for most applications.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml)
 - [Code-behind](/docs/fundamentals/code-behind)

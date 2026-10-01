@@ -107,7 +107,7 @@ public class PersonCollection : ObservableCollection<Person> { }
 
 This pattern is common in .NET XAML frameworks and avoids any `x:TypeArguments` limitations.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [XAML Namespaces](/docs/xaml/namespaces): How to reference CLR namespaces in XAML.
 - [x: Directives](/docs/xaml/directives): Full reference for `x:TypeArguments` and other directives.

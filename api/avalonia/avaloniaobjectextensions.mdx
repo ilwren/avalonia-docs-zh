@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaObjectExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaObjectExtensions.cs">AvaloniaObjectExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaObjectExtensions.cs">AvaloniaObjectExtensions.cs</a>
 </div>
 
 </div>
@@ -54,22 +54,22 @@ public class AvaloniaObjectExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaObjectExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaObjectExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddClassHandler (2 overloads)](#uid-12da34fda2) | No summary available. |
-| [Bind (2 overloads)](#uid-d8548d79f1) | No summary available. |
+| [AddClassHandler (2 overloads)](#uid-12da34fda2) | 暂无摘要。 |
+| [Bind (2 overloads)](#uid-d8548d79f1) | 暂无摘要。 |
 | [GetBaseValue (2 overloads)](#uid-a44baab4f1) | Gets an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) base value. |
 | [GetBindingObservable (4 overloads)](#uid-5976ecb078) | Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). |
 | [GetObservable (4 overloads)](#uid-0707411a55) | Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). |
 | [GetPropertyChangedObservable](#uid-ef3b80a9cc) | Gets an observable that listens for property changed events for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). |
-| [GetValue](#uid-7a26ab89ee) | No summary available. |
-| [ToBinding](#uid-c28a43eaea) | No summary available. |
+| [GetValue](#uid-7a26ab89ee) | 暂无摘要。 |
+| [ToBinding](#uid-c28a43eaea) | 暂无摘要。 |
 
 <span id="uid-12da34fda2"></span>
 
@@ -79,13 +79,13 @@ public class AvaloniaObjectExtensions
 
 <span id="uid-8ddecd9a9f"></span>
 
-#### AddClassHandler Method
+#### AddClassHandler 方法 {#addclasshandler-method}
 
 ```csharp
 public IDisposable AddClassHandler<TTarget>(IObservable<Avalonia.AvaloniaPropertyChangedEventArgs> observable, Action<TTarget, Avalonia.AvaloniaPropertyChangedEventArgs> action)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `observable` IObservable&lt;[Avalonia.AvaloniaPropertyChangedEventArgs](xref:Avalonia.AvaloniaPropertyChangedEventArgs)&gt;
 
@@ -98,7 +98,7 @@ public IDisposable AddClassHandler<TTarget>(IObservable<Avalonia.AvaloniaPropert
 `TTarget`
 
 
-##### Returns
+##### 返回值 {#returns}
 
 IDisposable
 
@@ -109,13 +109,13 @@ IDisposable
 
 <span id="uid-2787e01711"></span>
 
-#### AddClassHandler Method
+#### AddClassHandler 方法 {#addclasshandler-method-1}
 
 ```csharp
 public IDisposable AddClassHandler<TTarget, TValue>(IObservable<Avalonia.AvaloniaPropertyChangedEventArgs<T><TValue>> observable, Action<TTarget, Avalonia.AvaloniaPropertyChangedEventArgs<T><TValue>> action)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `observable` IObservable&lt;[Avalonia.AvaloniaPropertyChangedEventArgs](xref:Avalonia.AvaloniaPropertyChangedEventArgs)&lt;T&gt;&lt;TValue&gt;&gt;
 
@@ -131,7 +131,7 @@ public IDisposable AddClassHandler<TTarget, TValue>(IObservable<Avalonia.Avaloni
 `TValue`
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 IDisposable
 
@@ -146,13 +146,13 @@ IDisposable
 
 <span id="uid-1635771dd0"></span>
 
-#### Bind Method
+#### Bind 方法 {#bind-method}
 
 ```csharp
 public IDisposable Bind<T>(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProperty<TValue><T> property, IObservable<Avalonia.Data.BindingValue<T><T>> source, Avalonia.Data.BindingPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -171,7 +171,7 @@ public IDisposable Bind<T>(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProp
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 IDisposable
 
@@ -182,13 +182,13 @@ IDisposable
 
 <span id="uid-7c6693d3d9"></span>
 
-#### Bind Method
+#### Bind 方法 {#bind-method-1}
 
 ```csharp
 public IDisposable Bind<T>(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProperty<TValue><T> property, IObservable<T> source, Avalonia.Data.BindingPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -207,7 +207,7 @@ public IDisposable Bind<T>(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProp
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 IDisposable
 
@@ -222,7 +222,7 @@ IDisposable
 
 <span id="uid-edf0442b44"></span>
 
-#### GetBaseValue Method
+#### GetBaseValue 方法 {#getbasevalue-method}
 
 Gets an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) base value.
 
@@ -230,7 +230,7 @@ Gets an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) base value.
 public object GetBaseValue(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProperty property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -242,12 +242,12 @@ The object.
 The property.
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 object
 
 
-##### Remarks
+##### 备注 {#remarks}
 
 For styled properties, gets the value of the property excluding animated values, otherwise
 [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue). Note that this method does not return
@@ -261,13 +261,13 @@ For direct properties returns the current value of the property.
 
 <span id="uid-67aa6a4785"></span>
 
-#### GetBaseValue Method
+#### GetBaseValue 方法 {#getbasevalue-method-1}
 
 ```csharp
 public Avalonia.Data.Optional<T><T> GetBaseValue<T>(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProperty<TValue><T> property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -280,7 +280,7 @@ public Avalonia.Data.Optional<T><T> GetBaseValue<T>(Avalonia.AvaloniaObject targ
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
@@ -295,7 +295,7 @@ Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
 <span id="uid-c1363b78b3"></span>
 
-#### GetBindingObservable Method
+#### GetBindingObservable 方法 {#getbindingobservable-method}
 
 Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty).
 
@@ -303,7 +303,7 @@ Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProp
 public IObservable<Avalonia.Data.BindingValue<T><object>> GetBindingObservable(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -315,7 +315,7 @@ The object.
 The property.
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;object&gt;&gt;
 
@@ -323,7 +323,7 @@ An observable which fires immediately with the current value of the property on 
 object and subsequently each time the property value changes.
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
 The subscription to `o` is created using a weak reference.
 
@@ -333,13 +333,13 @@ The subscription to `o` is created using a weak reference.
 
 <span id="uid-4b75a6b2ce"></span>
 
-#### GetBindingObservable Method
+#### GetBindingObservable 方法 {#getbindingobservable-method-1}
 
 ```csharp
 public IObservable<Avalonia.Data.BindingValue<T><TResult>> GetBindingObservable<TResult>(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty property, Func<object, TResult> converter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -355,7 +355,7 @@ public IObservable<Avalonia.Data.BindingValue<T><TResult>> GetBindingObservable<
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;TResult&gt;&gt;
 
@@ -366,13 +366,13 @@ IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;TResult&gt;&gt;
 
 <span id="uid-ef38bab6bc"></span>
 
-#### GetBindingObservable Method
+#### GetBindingObservable 方法 {#getbindingobservable-method-2}
 
 ```csharp
 public IObservable<Avalonia.Data.BindingValue<T><T>> GetBindingObservable<T>(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty<TValue><T> property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -385,7 +385,7 @@ public IObservable<Avalonia.Data.BindingValue<T><T>> GetBindingObservable<T>(Ava
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-8}
 
 IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;&gt;
 
@@ -396,13 +396,13 @@ IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;T&gt;&gt;
 
 <span id="uid-1e158c64cf"></span>
 
-#### GetBindingObservable Method
+#### GetBindingObservable 方法 {#getbindingobservable-method-3}
 
 ```csharp
 public IObservable<Avalonia.Data.BindingValue<T><TResult>> GetBindingObservable<TSource, TResult>(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty<TValue><TSource> property, Func<TSource, TResult> converter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -421,7 +421,7 @@ public IObservable<Avalonia.Data.BindingValue<T><TResult>> GetBindingObservable<
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;TResult&gt;&gt;
 
@@ -436,7 +436,7 @@ IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;TResult&gt;&gt;
 
 <span id="uid-351ba03a1c"></span>
 
-#### GetObservable Method
+#### GetObservable 方法 {#getobservable-method}
 
 Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty).
 
@@ -444,7 +444,7 @@ Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProp
 public IObservable<object> GetObservable(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -456,7 +456,7 @@ The object.
 The property.
 
 
-##### Returns
+##### 返回值 {#returns-10}
 
 IObservable&lt;object&gt;
 
@@ -464,7 +464,7 @@ An observable which fires immediately with the current value of the property on 
 object and subsequently each time the property value changes.
 
 
-##### Remarks
+##### 备注 {#remarks-2}
 
 The subscription to `o` is created using a weak reference.
 
@@ -474,13 +474,13 @@ The subscription to `o` is created using a weak reference.
 
 <span id="uid-43c8f81402"></span>
 
-#### GetObservable Method
+#### GetObservable 方法 {#getobservable-method-1}
 
 ```csharp
 public IObservable<TResult> GetObservable<TResult>(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty property, Func<object, TResult> converter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -496,7 +496,7 @@ public IObservable<TResult> GetObservable<TResult>(Avalonia.AvaloniaObject o, Av
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-11}
 
 IObservable&lt;TResult&gt;
 
@@ -507,13 +507,13 @@ IObservable&lt;TResult&gt;
 
 <span id="uid-a2f315dbd4"></span>
 
-#### GetObservable Method
+#### GetObservable 方法 {#getobservable-method-2}
 
 ```csharp
 public IObservable<T> GetObservable<T>(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty<TValue><T> property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -526,7 +526,7 @@ public IObservable<T> GetObservable<T>(Avalonia.AvaloniaObject o, Avalonia.Avalo
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-12}
 
 IObservable&lt;T&gt;
 
@@ -537,13 +537,13 @@ IObservable&lt;T&gt;
 
 <span id="uid-163790c8aa"></span>
 
-#### GetObservable Method
+#### GetObservable 方法 {#getobservable-method-3}
 
 ```csharp
 public IObservable<TResult> GetObservable<TSource, TResult>(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty<TValue><TSource> property, Func<TSource, TResult> converter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -562,7 +562,7 @@ public IObservable<TResult> GetObservable<TSource, TResult>(Avalonia.AvaloniaObj
 `TResult`
 
 
-##### Returns
+##### 返回值 {#returns-13}
 
 IObservable&lt;TResult&gt;
 
@@ -573,7 +573,7 @@ IObservable&lt;TResult&gt;
 
 <span id="uid-ef3b80a9cc"></span>
 
-### GetPropertyChangedObservable Method
+### GetPropertyChangedObservable 方法 {#getpropertychangedobservable-method}
 
 Gets an observable that listens for property changed events for an
 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty).
@@ -582,7 +582,7 @@ Gets an observable that listens for property changed events for an
 public IObservable<Avalonia.AvaloniaPropertyChangedEventArgs> GetPropertyChangedObservable(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -594,7 +594,7 @@ The object.
 The property.
 
 
-#### Returns
+#### 返回值 {#returns-14}
 
 IObservable&lt;[Avalonia.AvaloniaPropertyChangedEventArgs](xref:Avalonia.AvaloniaPropertyChangedEventArgs)&gt;
 
@@ -609,13 +609,13 @@ for the specified property.
 
 <span id="uid-7a26ab89ee"></span>
 
-### GetValue Method
+### GetValue 方法 {#getvalue-method}
 
 ```csharp
 public T GetValue<T>(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProperty<TValue><T> property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-15}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -628,7 +628,7 @@ public T GetValue<T>(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProperty<T
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-15}
 
 T
 
@@ -639,13 +639,13 @@ T
 
 <span id="uid-c28a43eaea"></span>
 
-### ToBinding Method
+### ToBinding 方法 {#tobinding-method}
 
 ```csharp
 public Avalonia.Data.BindingBase ToBinding<T>(IObservable<T> source)
 ```
 
-#### Parameters
+#### 参数 {#parameters-16}
 
 `source` IObservable&lt;T&gt;
 
@@ -655,7 +655,7 @@ public Avalonia.Data.BindingBase ToBinding<T>(IObservable<T> source)
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-16}
 
 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)
 

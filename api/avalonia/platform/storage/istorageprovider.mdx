@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IStorageProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageProvider.cs">IStorageProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/IStorageProvider.cs">IStorageProvider.cs</a>
 </div>
 
 </div>
@@ -46,9 +46,9 @@ public interface IStorageProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [OpenFileBookmarkAsync](#uid-0c31116322) | Open [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile) from the bookmark ID. |
 | [OpenFilePickerAsync](#uid-22907f4437) | Opens the file picker dialog. |
@@ -65,7 +65,7 @@ public interface IStorageProvider
 
 <span id="uid-0c31116322"></span>
 
-### OpenFileBookmarkAsync Method
+### OpenFileBookmarkAsync 方法 {#openfilebookmarkasync-method}
 
 Open [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile) from the bookmark ID.
 
@@ -73,14 +73,14 @@ Open [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Sto
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageBookmarkFile> OpenFileBookmarkAsync(string bookmark)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `bookmark` string
 
 Bookmark ID.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile)&gt;
 
@@ -93,7 +93,7 @@ Bookmarked file or null if OS denied request.
 
 <span id="uid-22907f4437"></span>
 
-### OpenFilePickerAsync Method
+### OpenFilePickerAsync 方法 {#openfilepickerasync-method}
 
 Opens the file picker dialog.
 
@@ -101,12 +101,12 @@ Opens the file picker dialog.
 public System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.IStorageFile>> OpenFilePickerAsync(Avalonia.Platform.Storage.FilePickerOpenOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `options` [Avalonia.Platform.Storage.FilePickerOpenOptions](xref:Avalonia.Platform.Storage.FilePickerOpenOptions)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platform.Storage.IStorageFile)&gt;&gt;
 
@@ -119,7 +119,7 @@ Array of selected [Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platfor
 
 <span id="uid-726f9331ff"></span>
 
-### OpenFilePickerWithResultAsync Method
+### OpenFilePickerWithResultAsync 方法 {#openfilepickerwithresultasync-method}
 
 Opens the file picker dialog and returns additional information about the result.
 
@@ -127,12 +127,12 @@ Opens the file picker dialog and returns additional information about the result
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.OpenFilePickerResult> OpenFilePickerWithResultAsync(Avalonia.Platform.Storage.FilePickerOpenOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `options` [Avalonia.Platform.Storage.FilePickerOpenOptions](xref:Avalonia.Platform.Storage.FilePickerOpenOptions)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.OpenFilePickerResult](xref:Avalonia.Platform.Storage.OpenFilePickerResult)&gt;
 
@@ -145,7 +145,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.OpenFilePickerResult](
 
 <span id="uid-2edc4c9105"></span>
 
-### OpenFolderBookmarkAsync Method
+### OpenFolderBookmarkAsync 方法 {#openfolderbookmarkasync-method}
 
 Open [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder) from the bookmark ID.
 
@@ -153,14 +153,14 @@ Open [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.S
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageBookmarkFolder> OpenFolderBookmarkAsync(string bookmark)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `bookmark` string
 
 Bookmark ID.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder)&gt;
 
@@ -173,7 +173,7 @@ Bookmarked folder or null if OS denied request.
 
 <span id="uid-6bb27fee7f"></span>
 
-### OpenFolderPickerAsync Method
+### OpenFolderPickerAsync 方法 {#openfolderpickerasync-method}
 
 Opens the folder picker dialog.
 
@@ -181,12 +181,12 @@ Opens the folder picker dialog.
 public System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.IStorageFolder>> OpenFolderPickerAsync(Avalonia.Platform.Storage.FolderPickerOpenOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `options` [Avalonia.Platform.Storage.FolderPickerOpenOptions](xref:Avalonia.Platform.Storage.FolderPickerOpenOptions)
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)&gt;&gt;
 
@@ -199,7 +199,7 @@ Array of selected [Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platf
 
 <span id="uid-4e68fc0b1f"></span>
 
-### SaveFilePickerAsync Method
+### SaveFilePickerAsync 方法 {#savefilepickerasync-method}
 
 Opens the save file picker dialog.
 
@@ -207,12 +207,12 @@ Opens the save file picker dialog.
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFile> SaveFilePickerAsync(Avalonia.Platform.Storage.FilePickerSaveOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `options` [Avalonia.Platform.Storage.FilePickerSaveOptions](xref:Avalonia.Platform.Storage.FilePickerSaveOptions)
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platform.Storage.IStorageFile)&gt;
 
@@ -225,7 +225,7 @@ Saved [Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platform.Storage.IS
 
 <span id="uid-1a9bca9667"></span>
 
-### SaveFilePickerWithResultAsync Method
+### SaveFilePickerWithResultAsync 方法 {#savefilepickerwithresultasync-method}
 
 Opens the save file picker dialog and returns additional information about the result.
 
@@ -233,12 +233,12 @@ Opens the save file picker dialog and returns additional information about the r
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.SaveFilePickerResult> SaveFilePickerWithResultAsync(Avalonia.Platform.Storage.FilePickerSaveOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `options` [Avalonia.Platform.Storage.FilePickerSaveOptions](xref:Avalonia.Platform.Storage.FilePickerSaveOptions)
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.SaveFilePickerResult](xref:Avalonia.Platform.Storage.SaveFilePickerResult)&gt;
 
@@ -251,7 +251,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.SaveFilePickerResult](
 
 <span id="uid-9c134ae673"></span>
 
-### TryGetFileFromPathAsync Method
+### TryGetFileFromPathAsync 方法 {#trygetfilefrompathasync-method}
 
 Attempts to read file from the file-system by its path.
 
@@ -259,21 +259,21 @@ Attempts to read file from the file-system by its path.
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFile> TryGetFileFromPathAsync(Uri filePath)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `filePath` Uri
 
 The path of the item to retrieve in Uri format.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFile](xref:Avalonia.Platform.Storage.IStorageFile)&gt;
 
 File or null if it doesn't exist.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Uri path is usually expected to be an absolute path with "file" scheme.
 But it can be an uri with "content" scheme on the Android.
@@ -285,7 +285,7 @@ It also might ask user for the permission, and throw an exception if it was deni
 
 <span id="uid-8e5af1db8a"></span>
 
-### TryGetFolderFromPathAsync Method
+### TryGetFolderFromPathAsync 方法 {#trygetfolderfrompathasync-method}
 
 Attempts to read folder from the file-system by its path.
 
@@ -293,21 +293,21 @@ Attempts to read folder from the file-system by its path.
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> TryGetFolderFromPathAsync(Uri folderPath)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `folderPath` Uri
 
 The path of the folder to retrieve in Uri format.
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)&gt;
 
 Folder or null if it doesn't exist.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Uri path is usually expected to be an absolute path with "file" scheme.
 But it can be an uri with "content" scheme on the Android.
@@ -319,7 +319,7 @@ It also might ask user for the permission, and throw an exception if it was deni
 
 <span id="uid-fc02bb97a0"></span>
 
-### TryGetWellKnownFolderAsync Method
+### TryGetWellKnownFolderAsync 方法 {#trygetwellknownfolderasync-method}
 
 Attempts to read folder from the file-system by its path
 
@@ -327,14 +327,14 @@ Attempts to read folder from the file-system by its path
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder wellKnownFolder)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `wellKnownFolder` [Avalonia.Platform.Storage.WellKnownFolder](xref:Avalonia.Platform.Storage.WellKnownFolder)
 
 Well known folder identifier.
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platform.Storage.IStorageFolder)&gt;
 
@@ -343,9 +343,9 @@ Folder or null if it doesn't exist.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanOpen](#uid-821d88f63c) | Returns true if it's possible to open the file picker on the current platform. |
 | [CanPickFolder](#uid-c5a5582867) | Returns true if it's possible to open the folder picker on the current platform. |
@@ -355,7 +355,7 @@ Folder or null if it doesn't exist.
 
 <span id="uid-821d88f63c"></span>
 
-### CanOpen Property
+### CanOpen 属性 {#canopen-property}
 
 Returns true if it's possible to open the file picker on the current platform.
 
@@ -369,7 +369,7 @@ public bool CanOpen { get; set; }
 
 <span id="uid-c5a5582867"></span>
 
-### CanPickFolder Property
+### CanPickFolder 属性 {#canpickfolder-property}
 
 Returns true if it's possible to open the folder picker on the current platform.
 
@@ -383,7 +383,7 @@ public bool CanPickFolder { get; set; }
 
 <span id="uid-15d3347cf3"></span>
 
-### CanSave Property
+### CanSave 属性 {#cansave-property}
 
 Returns true if it's possible to open the save file picker on the current platform.
 

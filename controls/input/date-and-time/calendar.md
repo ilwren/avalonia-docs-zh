@@ -16,7 +16,7 @@ The calendar is a control for users to select dates or date ranges.
 
 You will probably use these properties most often:
 
-<table><thead><tr><th width="251">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>SelectionMode</code></td><td>Indicates what kind of selections are allowed. Choose from: single date, single range, multiple ranges and none.</td></tr><tr><td><code>DisplayMode</code></td><td>Defines where the calendar starts in its drill-down levels. Choose from: decade, year and month (default). </td></tr><tr><td><code>SelectedDate</code></td><td>The currently selected date.</td></tr><tr><td><code>SelectedDates</code></td><td>A collection of selected dates, includes the dates in single and multiple ranges.</td></tr><tr><td><code>DisplayDate</code></td><td>The date to display when the control first shows.</td></tr><tr><td><code>DisplayDateStart</code></td><td>The first date to be displayed.</td></tr><tr><td><code>DisplayDateEnd</code></td><td>The last date to be displayed.</td></tr><tr><td><code>BlackoutDates</code></td><td>A collection of dates that are displayed as unavailable, and cannot be selected.</td></tr><tr><td><code>AllowTapRangeSelection</code></td><td>When <code>true</code> (the default), allows selecting a date range by tapping a start date and then tapping an end date. Works in <code>SingleRange</code> and <code>MultipleRange</code> selection modes.</td></tr></tbody></table>
+<table><thead><tr><th width="251">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>SelectionMode</code></td><td>Indicates what kind of selections are allowed. Choose from: single date, single range, multiple ranges and none.</td></tr><tr><td><code>DisplayMode</code></td><td>Defines where the calendar starts in its drill-down levels. Choose from: decade, year and month (default). </td></tr><tr><td><code>SelectedDate</code></td><td>The currently selected date.</td></tr><tr><td><code>SelectedDates</code></td><td>A collection of selected dates, includes the dates in single and multiple ranges.</td></tr><tr><td><code>DisplayDate</code></td><td>The date to display when the control first shows.</td></tr><tr><td><code>DisplayDateStart</code></td><td>The first date to be displayed.</td></tr><tr><td><code>DisplayDateEnd</code></td><td>The last date to be displayed.</td></tr><tr><td><code>BlackoutDates</code></td><td>A collection of dates that are displayed as unavailable, and cannot be selected.</td></tr><tr><td><code>AllowTapRangeSelection</code></td><td>When <code>true</code> (the default), allows selecting a date range by tapping a start date and then tapping an end date. Works in <code>SingleRange</code> and <code>MultipleRange</code> selection modes.</td></tr></tbody></table>
 
 ## Examples
 
@@ -73,7 +73,7 @@ public partial class MainWindow : Window
 
 <Image light={CalendarCustomRangeScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Calendar API reference](/api/avalonia/controls/calendar)
 - [`Calendar.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Calendar/Calendar.cs)

@@ -214,7 +214,7 @@ For visuals that are expensive to render but change infrequently, use `BitmapCac
 
  #### `BitmapCache` properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 |---|---|---|---|
 | `RenderAtScale` | `double` | `1` | Resolution multiplier for the cached bitmap. Values above 1 increase quality. Values below 1 reduce memory at the cost of quality. A value of 0 disables caching. |
 | `SnapsToDevicePixels` | `bool` | `false` | Aligns the cached bitmap to device pixel boundaries for sharper text and line rendering. |
@@ -409,7 +409,7 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Threading Model](/docs/app-development/threading): UI thread and Dispatcher usage.
 - [Compiled Bindings](/docs/data-binding/compiled-bindings): Compile-time binding validation and performance.

@@ -13,16 +13,16 @@ Use `ToggleSwitch` when you need an immediate on/off setting, such as enabling d
 
 You will probably use these properties most often:
 
-| Property      | Type      | Description                                                        |
+| Property      | Type      | 说明                                                        |
 | ------------- | --------- | ------------------------------------------------------------------ |
 | `IsChecked`   | `bool?`   | Gets or sets the current toggle state. `true` is on, `false` is off. |
 | `OnContent`   | `object`  | Content displayed when the toggle is on. Defaults to "On".         |
 | `OffContent`  | `object`  | Content displayed when the toggle is off. Defaults to "Off".       |
 | `KnobTransitions` | `Transitions` | The transitions applied to the knob during state changes.    |
 
-## Events
+## 事件 {#events}
 
-| Event              | Description                              |
+| Event              | 说明                              |
 | ------------------ | ---------------------------------------- |
 | `IsCheckedChanged` | Raised when the `IsChecked` value changes. |
 
@@ -149,7 +149,7 @@ Setting `OnContent` and `OffContent` to empty strings removes the redundant labe
 
 Choose `ToggleSwitch` when the change takes effect immediately. Choose `CheckBox` when the user must confirm or submit a form before the change is applied.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [CheckBox](/controls/input/selectors/checkbox)
 - [ToggleButton](/controls/input/buttons/togglebutton)

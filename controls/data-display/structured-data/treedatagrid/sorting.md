@@ -79,7 +79,7 @@ Two separate comparer functions must be provided: one for ascending and one for 
 `TreeDataGrid` supports single-column sorting only. When a user clicks a column header (or you call `SortBy` programmatically), any existing sort on another column is cleared. If you need to sort by multiple fields at once, use a custom comparer on one column that compares by the primary field first, then by secondary fields as tiebreakers.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)
 - [Expand and collapse](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)

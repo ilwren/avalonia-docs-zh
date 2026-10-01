@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IHtmlTagHandler Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 </div>
 
@@ -49,32 +49,32 @@ public interface IHtmlTagHandler
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Register handlers by passing them to the [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions) constructor;
 they surface on [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions.TagHandlers](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions.TagHandlers).
 Built-in tags are processed first; custom handlers are only consulted
 for tags that do not have a built-in mapping.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [HandleCloseTag](#uid-6e1f50eb2a) | No summary available. |
-| [HandleOpenTag](#uid-b806760697) | No summary available. |
-| [HandleSelfClosingTag](#uid-0c43fc9555) | No summary available. |
+| [HandleCloseTag](#uid-6e1f50eb2a) | 暂无摘要。 |
+| [HandleOpenTag](#uid-b806760697) | 暂无摘要。 |
+| [HandleSelfClosingTag](#uid-0c43fc9555) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6e1f50eb2a"></span>
 
-### HandleCloseTag Method
+### HandleCloseTag 方法 {#handleclosetag-method}
 
 ```csharp
 public void HandleCloseTag(Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext context, ReadOnlySpan<char> tagName)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `context` [Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext)
 
@@ -88,13 +88,13 @@ public void HandleCloseTag(Avalonia.Controls.Documents.Serialization.Html.HtmlRe
 
 <span id="uid-b806760697"></span>
 
-### HandleOpenTag Method
+### HandleOpenTag 方法 {#handleopentag-method}
 
 ```csharp
 public void HandleOpenTag(Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext context, ReadOnlySpan<char> tagName, Avalonia.Controls.Documents.Serialization.Html.HtmlTagAttributes attributes)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `context` [Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext)
 
@@ -111,13 +111,13 @@ public void HandleOpenTag(Avalonia.Controls.Documents.Serialization.Html.HtmlRea
 
 <span id="uid-0c43fc9555"></span>
 
-### HandleSelfClosingTag Method
+### HandleSelfClosingTag 方法 {#handleselfclosingtag-method}
 
 ```csharp
 public void HandleSelfClosingTag(Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext context, ReadOnlySpan<char> tagName, Avalonia.Controls.Documents.Serialization.Html.HtmlTagAttributes attributes)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `context` [Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlReaderContext)
 
@@ -130,9 +130,9 @@ public void HandleSelfClosingTag(Avalonia.Controls.Documents.Serialization.Html.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsBlockLevel](#uid-f5c9fe739e) | Whether this tag acts as a block-level element (creates paragraphs/structures) rather than an inline element (applies formatting within a paragraph). |
 
@@ -140,7 +140,7 @@ public void HandleSelfClosingTag(Avalonia.Controls.Documents.Serialization.Html.
 
 <span id="uid-f5c9fe739e"></span>
 
-### IsBlockLevel Property
+### IsBlockLevel 属性 {#isblocklevel-property}
 
 Whether this tag acts as a block-level element (creates paragraphs/structures)
 rather than an inline element (applies formatting within a paragraph).

@@ -99,7 +99,7 @@ But for convenience of keeping single installation it is recommended to attach L
 4. Run your Linux app and attach to `Developer Tools` via <kbd>F12</kbd>.
 
 ![Attaching to WSL2](/img/tools/dev-tools/attaching-wsl.png)
-## See also
+## 另请参阅 {#see-also}
 
 - [Attaching to the remote tool](/tools/developer-tools/attaching-to-the-remote-tool)
 - [Developer tools installation](/tools/developer-tools/installation)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaWaylandPlatformExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Wayland</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Wayland</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Wayland</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Wayland</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Wayland/AvaloniaWaylandPlatformExtensions.cs">AvaloniaWaylandPlatformExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Wayland/AvaloniaWaylandPlatformExtensions.cs">AvaloniaWaylandPlatformExtensions.cs</a>
 </div>
 </div>
 
@@ -53,13 +53,13 @@ public class AvaloniaWaylandPlatformExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaWaylandPlatformExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaWaylandPlatformExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [UseWayland](#uid-3ed91c02e3) | Configures the application to use the Wayland windowing backend. Options can be supplied by registering a [Avalonia.WaylandPlatformOptions](xref:Avalonia.WaylandPlatformOptions) instance with [Avalonia.AvaloniaLocator](xref:Avalonia.AvaloniaLocator). |
 | [UseWaylandWithFallback](#uid-962af7f5f5) | Configures the application to use the Wayland windowing backend when a usable Wayland compositor is available, falling back to the previously configured windowing backend otherwise. Call it after `UseX11` or `UsePlatformDetect`, e. g. `.UsePlatformDetect().UseWaylandWithFallback()`. Does nothing on non-Linux platforms. |
@@ -68,7 +68,7 @@ public class AvaloniaWaylandPlatformExtensions
 
 <span id="uid-3ed91c02e3"></span>
 
-### UseWayland Method
+### UseWayland 方法 {#usewayland-method}
 
 Configures the application to use the Wayland windowing backend. Options can be supplied by
 registering a [Avalonia.WaylandPlatformOptions](xref:Avalonia.WaylandPlatformOptions) instance with [Avalonia.AvaloniaLocator](xref:Avalonia.AvaloniaLocator).
@@ -77,14 +77,14 @@ registering a [Avalonia.WaylandPlatformOptions](xref:Avalonia.WaylandPlatformOpt
 public Avalonia.AppBuilder UseWayland(Avalonia.AppBuilder builder)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
 The application builder.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -97,7 +97,7 @@ The same `builder` for chaining.
 
 <span id="uid-962af7f5f5"></span>
 
-### UseWaylandWithFallback Method
+### UseWaylandWithFallback 方法 {#usewaylandwithfallback-method}
 
 Configures the application to use the Wayland windowing backend when a usable Wayland
 compositor is available, falling back to the previously configured windowing backend
@@ -108,21 +108,21 @@ otherwise. Call it after `UseX11` or `UsePlatformDetect`, e. g.
 public Avalonia.AppBuilder UseWaylandWithFallback(Avalonia.AppBuilder builder)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
 The application builder.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
 The same `builder` for chaining.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [No windowing backend was configured prior to this call (on Linux).](xref:System.InvalidOperationException)
 

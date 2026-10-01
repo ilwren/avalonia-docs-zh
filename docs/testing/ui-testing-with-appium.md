@@ -19,7 +19,7 @@ This makes Appium tests well suited for end-to-end validation, accessibility ver
 
 Use headless tests for fast feedback on control logic and data binding. Use Appium tests to verify that your application works correctly as a whole, including native platform integration.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 ### Windows
 
@@ -286,7 +286,7 @@ dotnet test
 - **macOS**: Appium and the mac2 driver must be installed. Grant accessibility permissions to the CI agent.
 - **Linux**: Appium does not have a stable Linux desktop driver. For Linux CI, use [headless tests](/docs/testing/setting-up-the-headless-platform) instead.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Headless Testing with XUnit](/docs/testing/headless-xunit): Fast, in-process unit testing.
 - [Headless Testing with NUnit](/docs/testing/headless-nunit): NUnit integration for headless tests.

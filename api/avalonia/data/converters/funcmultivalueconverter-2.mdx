@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FuncMultiValueConverter&lt;TIn, TOut&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data.Converters</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data.Converters</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Converters/FuncMultiValueConverter.cs">FuncMultiValueConverter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Converters/FuncMultiValueConverter.cs">FuncMultiValueConverter.cs</a>
 </div>
 
 </div>
@@ -55,18 +55,18 @@ public class FuncMultiValueConverter<TIn, TOut>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FuncMultiValueConverter&lt;TIn, TOut&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FuncMultiValueConverter&lt;TIn, TOut&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="imultivalueconverter">IMultiValueConverter</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="imultivalueconverter">IMultiValueConverter</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FuncMultiValueConverter&lt;TIn, TOut&gt; (2 overloads)](#uid-63c3f66937) | No summary available. |
+| [FuncMultiValueConverter&lt;TIn, TOut&gt; (2 overloads)](#uid-63c3f66937) | 暂无摘要。 |
 
 <span id="uid-63c3f66937"></span>
 
@@ -82,7 +82,7 @@ public class FuncMultiValueConverter<TIn, TOut>
 public FuncMultiValueConverter<TIn, TOut>(Func<System.Collections.Generic.IEnumerable<TIn>, TOut> convert)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `convert` Func&lt;System.Collections.Generic.IEnumerable&lt;TIn&gt;, TOut&gt;
 
@@ -99,35 +99,35 @@ public FuncMultiValueConverter<TIn, TOut>(Func<System.Collections.Generic.IEnume
 public FuncMultiValueConverter<TIn, TOut>(Func<System.Collections.Generic.IReadOnlyList<TIn>, TOut> convert)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `convert` Func&lt;System.Collections.Generic.IReadOnlyList&lt;TIn&gt;, TOut&gt;
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Convert](#uid-3ae60970e3) | No summary available. |
+| [Convert](#uid-3ae60970e3) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3ae60970e3"></span>
 
-### Convert Method
+### Convert 方法 {#convert-method}
 
 ```csharp
 public object Convert(System.Collections.Generic.IList<object> values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `values` System.Collections.Generic.IList&lt;object&gt;
 
 
-`targetType` Type
+`targetType` 类型
 
 
 `parameter` object
@@ -136,7 +136,7 @@ public object Convert(System.Collections.Generic.IList<object> values, Type targ
 `culture` System.Globalization.CultureInfo
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IControlledApplicationLifetime Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/IControlledApplicationLifetime.cs">IControlledApplicationLifetime.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/IControlledApplicationLifetime.cs">IControlledApplicationLifetime.cs</a>
 </div>
 
 </div>
@@ -48,13 +48,13 @@ public interface IControlledApplicationLifetime
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iapplicationlifetime">IApplicationLifetime</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iapplicationlifetime">IApplicationLifetime</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Shutdown](#uid-4097cb3b0a) | Shuts down the application and sets the exit code that is returned to the operating system when the application exits. |
 
@@ -62,7 +62,7 @@ public interface IControlledApplicationLifetime
 
 <span id="uid-4097cb3b0a"></span>
 
-### Shutdown Method
+### Shutdown 方法 {#shutdown-method}
 
 Shuts down the application and sets the exit code that is returned to the operating system when the application exits.
 
@@ -70,7 +70,7 @@ Shuts down the application and sets the exit code that is returned to the operat
 public void Shutdown(int exitCode)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `exitCode` int
 
@@ -79,9 +79,9 @@ An integer exit code for an application. The default exit code is 0.
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Exit](#uid-24be6dcaff) | Sent when the application is exiting. |
 | [Startup](#uid-2481c92d33) | Sent when the application is starting up. |
@@ -90,7 +90,7 @@ An integer exit code for an application. The default exit code is 0.
 
 <span id="uid-24be6dcaff"></span>
 
-### Exit Event
+### Exit 事件 {#exit-event}
 
 Sent when the application is exiting.
 
@@ -104,7 +104,7 @@ public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ControlledAppli
 
 <span id="uid-2481c92d33"></span>
 
-### Startup Event
+### Startup 事件 {#startup-event}
 
 Sent when the application is starting up.
 

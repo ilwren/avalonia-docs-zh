@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RenderOptions Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/RenderOptions.cs">RenderOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/RenderOptions.cs">RenderOptions.cs</a>
 </div>
 
 </div>
@@ -55,59 +55,59 @@ public struct RenderOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> RenderOptions
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> RenderOptions
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;RenderOptions&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;RenderOptions&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Use this structure to specify rendering preferences for visual elements. Each property
 corresponds to a specific aspect of rendering, allowing fine-grained control over how content is displayed.
 These options can be applied to visuals to influence quality, performance, and visual effects. When merging two
 instances, unspecified values are inherited from the other instance, enabling layered configuration.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-fb77245f08) | No summary available. |
+| [Equals（2 个重载）](#uid-fb77245f08) | 暂无摘要。 |
 | [GetBitmapBlendingMode](#uid-7ebd8f3d79) | Gets the value of the [BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBlendingMode) attached property for a visual. |
 | [GetBitmapInterpolationMode](#uid-fb6155eee7) | Gets the value of the [BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode) attached property for a visual. |
 | [GetEdgeMode](#uid-38a4d20eb2) | Gets the value of the [EdgeMode](xref:Avalonia.Media.EdgeMode) attached property for a visual. |
-| [GetHashCode](#uid-7e1b03f438) | No summary available. |
+| [GetHashCode](#uid-7e1b03f438) | 暂无摘要。 |
 | [GetRequiresFullOpacityHandling](#uid-648470435c) | Gets the value of the RequiresFullOpacityHandling attached property for a visual. |
 | [GetTextRenderingMode](#uid-d979d48b37) | Gets the value of the [TextRenderingMode](xref:Avalonia.Media.TextRenderingMode) attached property for a visual. |
-| [MergeWith](#uid-255e029bd6) | No summary available. |
+| [MergeWith](#uid-255e029bd6) | 暂无摘要。 |
 | [SetBitmapBlendingMode](#uid-a415a9710f) | Sets the value of the [BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBlendingMode) attached property for a visual. |
 | [SetBitmapInterpolationMode](#uid-dfa77b48da) | Sets the value of the [BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode) attached property for a visual. |
 | [SetEdgeMode](#uid-6f36b59b82) | Sets the value of the [EdgeMode](xref:Avalonia.Media.EdgeMode) attached property for a visual. |
-| [SetRequiresFullOpacityHandling](#uid-8ffc4c1b1a) | No summary available. |
+| [SetRequiresFullOpacityHandling](#uid-8ffc4c1b1a) | 暂无摘要。 |
 | [SetTextRenderingMode](#uid-f17747d70e) | Sets the value of the [TextRenderingMode](xref:Avalonia.Media.TextRenderingMode) attached property for a visual. |
-| [ToString](#uid-541d8fb26c) | No summary available. |
+| [ToString](#uid-541d8fb26c) | 暂无摘要。 |
 
 <span id="uid-fb77245f08"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-53ebe70d6d"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Media.RenderOptions other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Media.RenderOptions](xref:Avalonia.Media.RenderOptions)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -118,18 +118,18 @@ bool
 
 <span id="uid-b4a1a86724"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -140,7 +140,7 @@ bool
 
 <span id="uid-7ebd8f3d79"></span>
 
-### GetBitmapBlendingMode Method
+### GetBitmapBlendingMode 方法 {#getbitmapblendingmode-method}
 
 Gets the value of the [BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBlendingMode) attached property for a visual.
 
@@ -148,18 +148,18 @@ Gets the value of the [BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBle
 public Avalonia.Media.Imaging.BitmapBlendingMode GetBitmapBlendingMode(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Media.Imaging.BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBlendingMode)
 
-The value.
+该值。
 
 
 </section>
@@ -168,7 +168,7 @@ The value.
 
 <span id="uid-fb6155eee7"></span>
 
-### GetBitmapInterpolationMode Method
+### GetBitmapInterpolationMode 方法 {#getbitmapinterpolationmode-method}
 
 Gets the value of the [BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode) attached property for a visual.
 
@@ -176,18 +176,18 @@ Gets the value of the [BitmapInterpolationMode](xref:Avalonia.Media.Imaging.Bitm
 public Avalonia.Media.Imaging.BitmapInterpolationMode GetBitmapInterpolationMode(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode)
 
-The value.
+该值。
 
 
 </section>
@@ -196,7 +196,7 @@ The value.
 
 <span id="uid-38a4d20eb2"></span>
 
-### GetEdgeMode Method
+### GetEdgeMode 方法 {#getedgemode-method}
 
 Gets the value of the [EdgeMode](xref:Avalonia.Media.EdgeMode) attached property for a visual.
 
@@ -204,18 +204,18 @@ Gets the value of the [EdgeMode](xref:Avalonia.Media.EdgeMode) attached property
 public Avalonia.Media.EdgeMode GetEdgeMode(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Media.EdgeMode](xref:Avalonia.Media.EdgeMode)
 
-The value.
+该值。
 
 
 </section>
@@ -224,13 +224,13 @@ The value.
 
 <span id="uid-7e1b03f438"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 int
 
@@ -241,7 +241,7 @@ int
 
 <span id="uid-648470435c"></span>
 
-### GetRequiresFullOpacityHandling Method
+### GetRequiresFullOpacityHandling 方法 {#getrequiresfullopacityhandling-method}
 
 Gets the value of the RequiresFullOpacityHandling attached property for a visual.
 
@@ -249,18 +249,18 @@ Gets the value of the RequiresFullOpacityHandling attached property for a visual
 public Nullable<bool> GetRequiresFullOpacityHandling(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 Nullable&lt;bool&gt;
 
-The value.
+该值。
 
 
 </section>
@@ -269,7 +269,7 @@ The value.
 
 <span id="uid-d979d48b37"></span>
 
-### GetTextRenderingMode Method
+### GetTextRenderingMode 方法 {#gettextrenderingmode-method}
 
 Gets the value of the [TextRenderingMode](xref:Avalonia.Media.TextRenderingMode) attached property for a visual.
 
@@ -277,18 +277,18 @@ Gets the value of the [TextRenderingMode](xref:Avalonia.Media.TextRenderingMode)
 public Avalonia.Media.TextRenderingMode GetTextRenderingMode(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Media.TextRenderingMode](xref:Avalonia.Media.TextRenderingMode)
 
-The value.
+该值。
 
 
 </section>
@@ -297,18 +297,18 @@ The value.
 
 <span id="uid-255e029bd6"></span>
 
-### MergeWith Method
+### MergeWith 方法 {#mergewith-method}
 
 ```csharp
 public Avalonia.Media.RenderOptions MergeWith(Avalonia.Media.RenderOptions other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `other` [Avalonia.Media.RenderOptions](xref:Avalonia.Media.RenderOptions)
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Media.RenderOptions](xref:Avalonia.Media.RenderOptions)
 
@@ -319,7 +319,7 @@ public Avalonia.Media.RenderOptions MergeWith(Avalonia.Media.RenderOptions other
 
 <span id="uid-a415a9710f"></span>
 
-### SetBitmapBlendingMode Method
+### SetBitmapBlendingMode 方法 {#setbitmapblendingmode-method}
 
 Sets the value of the [BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBlendingMode) attached property for a visual.
 
@@ -327,11 +327,11 @@ Sets the value of the [BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBle
 public void SetBitmapBlendingMode(Avalonia.Visual visual, Avalonia.Media.Imaging.BitmapBlendingMode value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
 `value` [Avalonia.Media.Imaging.BitmapBlendingMode](xref:Avalonia.Media.Imaging.BitmapBlendingMode)
@@ -345,7 +345,7 @@ The left value.
 
 <span id="uid-dfa77b48da"></span>
 
-### SetBitmapInterpolationMode Method
+### SetBitmapInterpolationMode 方法 {#setbitmapinterpolationmode-method}
 
 Sets the value of the [BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode) attached property for a visual.
 
@@ -353,16 +353,16 @@ Sets the value of the [BitmapInterpolationMode](xref:Avalonia.Media.Imaging.Bitm
 public void SetBitmapInterpolationMode(Avalonia.Visual visual, Avalonia.Media.Imaging.BitmapInterpolationMode value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
 `value` [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode)
 
-The value.
+该值。
 
 
 </section>
@@ -371,7 +371,7 @@ The value.
 
 <span id="uid-6f36b59b82"></span>
 
-### SetEdgeMode Method
+### SetEdgeMode 方法 {#setedgemode-method}
 
 Sets the value of the [EdgeMode](xref:Avalonia.Media.EdgeMode) attached property for a visual.
 
@@ -379,16 +379,16 @@ Sets the value of the [EdgeMode](xref:Avalonia.Media.EdgeMode) attached property
 public void SetEdgeMode(Avalonia.Visual visual, Avalonia.Media.EdgeMode value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
 `value` [Avalonia.Media.EdgeMode](xref:Avalonia.Media.EdgeMode)
 
-The value.
+该值。
 
 
 </section>
@@ -397,13 +397,13 @@ The value.
 
 <span id="uid-8ffc4c1b1a"></span>
 
-### SetRequiresFullOpacityHandling Method
+### SetRequiresFullOpacityHandling 方法 {#setrequiresfullopacityhandling-method}
 
 ```csharp
 public void SetRequiresFullOpacityHandling(Avalonia.Visual visual, Nullable<bool> value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -417,7 +417,7 @@ public void SetRequiresFullOpacityHandling(Avalonia.Visual visual, Nullable<bool
 
 <span id="uid-f17747d70e"></span>
 
-### SetTextRenderingMode Method
+### SetTextRenderingMode 方法 {#settextrenderingmode-method}
 
 Sets the value of the [TextRenderingMode](xref:Avalonia.Media.TextRenderingMode) attached property for a visual.
 
@@ -425,16 +425,16 @@ Sets the value of the [TextRenderingMode](xref:Avalonia.Media.TextRenderingMode)
 public void SetTextRenderingMode(Avalonia.Visual visual, Avalonia.Media.TextRenderingMode value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
 `value` [Avalonia.Media.TextRenderingMode](xref:Avalonia.Media.TextRenderingMode)
 
-The value.
+该值。
 
 
 </section>
@@ -443,22 +443,22 @@ The value.
 
 <span id="uid-541d8fb26c"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BitmapBlendingMode](#uid-6a71f985bb) | Gets the blending mode used when rendering bitmap images. |
 | [BitmapInterpolationMode](#uid-d39e384f63) | Gets the interpolation mode used when rendering bitmap images. |
@@ -470,7 +470,7 @@ string
 
 <span id="uid-6a71f985bb"></span>
 
-### BitmapBlendingMode Property
+### BitmapBlendingMode 属性 {#bitmapblendingmode-property}
 
 Gets the blending mode used when rendering bitmap images.
 
@@ -478,7 +478,7 @@ Gets the blending mode used when rendering bitmap images.
 public Avalonia.Media.Imaging.BitmapBlendingMode BitmapBlendingMode { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 The blending mode determines how bitmap pixels are composited with the background or
 other images. Select an appropriate mode based on the desired visual effect, such as transparency or
@@ -490,7 +490,7 @@ additive blending.
 
 <span id="uid-d39e384f63"></span>
 
-### BitmapInterpolationMode Property
+### BitmapInterpolationMode 属性 {#bitmapinterpolationmode-property}
 
 Gets the interpolation mode used when rendering bitmap images.
 
@@ -498,7 +498,7 @@ Gets the interpolation mode used when rendering bitmap images.
 public Avalonia.Media.Imaging.BitmapInterpolationMode BitmapInterpolationMode { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The interpolation mode determines how bitmap images are scaled or transformed during
 rendering. Selecting an appropriate mode can affect image quality and performance.
@@ -509,7 +509,7 @@ rendering. Selecting an appropriate mode can affect image quality and performanc
 
 <span id="uid-a3c8cd6a95"></span>
 
-### EdgeMode Property
+### EdgeMode 属性 {#edgemode-property}
 
 Gets the edge rendering mode used for drawing operations.
 
@@ -523,7 +523,7 @@ public Avalonia.Media.EdgeMode EdgeMode { get; set; }
 
 <span id="uid-739d9ae81a"></span>
 
-### RequiresFullOpacityHandling Property
+### RequiresFullOpacityHandling 属性 {#requiresfullopacityhandling-property}
 
 Gets a value indicating whether full opacity handling is required for the associated content.
 
@@ -537,7 +537,7 @@ public Nullable<bool> RequiresFullOpacityHandling { get; set; }
 
 <span id="uid-841e467403"></span>
 
-### TextRenderingMode Property
+### TextRenderingMode 属性 {#textrenderingmode-property}
 
 Gets the text rendering mode used to control how text glyphs are rendered.
 

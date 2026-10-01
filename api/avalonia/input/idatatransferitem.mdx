@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IDataTransferItem Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IDataTransferItem.cs">IDataTransferItem.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IDataTransferItem.cs">IDataTransferItem.cs</a>
 </div>
 
 </div>
@@ -53,13 +53,13 @@ public interface IDataTransferItem
 
 </div>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TryGetRaw](#uid-1cb05aa6a7) | Tries to get a value for a given format. |
 
@@ -67,7 +67,7 @@ public interface IDataTransferItem
 
 <span id="uid-1cb05aa6a7"></span>
 
-### TryGetRaw Method
+### TryGetRaw 方法 {#trygetraw-method}
 
 Tries to get a value for a given format.
 
@@ -75,37 +75,37 @@ Tries to get a value for a given format.
 public object TryGetRaw(Avalonia.Input.DataFormat format)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)
 
 The format to retrieve.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
 A value for `format`, or null if the format is not supported.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Implementations of this method are expected to return a value matching the exact type
 of the generic argument of the underlying [Avalonia.Input.DataFormat&lt;T&gt;](xref:Avalonia.Input.DataFormat%601).
 
 To retrieve a typed value, use [Avalonia.Input.DataTransferItemExtensions.TryGetValue&lt;T&gt;(Avalonia.Input.IDataTransferItem,Avalonia.Input.DataFormat&#123;&lt;&gt;&#125;)](xref:Avalonia.Input.DataTransferItemExtensions.TryGetValue%60%601%28Avalonia.Input.IDataTransferItem%2CAvalonia.Input.DataFormat%7B%60%600%7D%29).
 
-#### See also
+#### 另请参阅 {#see-also-1}
 
 - [Avalonia.Input.DataTransferItemExtensions.TryGetValue&lt;T&gt;(Avalonia.Input.IDataTransferItem,Avalonia.Input.DataFormat&#123;&lt;&gt;&#125;)](xref:Avalonia.Input.DataTransferItemExtensions.TryGetValue%60%601%28Avalonia.Input.IDataTransferItem%2CAvalonia.Input.DataFormat%7B%60%600%7D%29)
 - [Avalonia.Input.DataTransferExtensions.TryGetValue&lt;T&gt;(Avalonia.Input.IDataTransfer,Avalonia.Input.DataFormat&#123;&lt;&gt;&#125;)](xref:Avalonia.Input.DataTransferExtensions.TryGetValue%60%601%28Avalonia.Input.IDataTransfer%2CAvalonia.Input.DataFormat%7B%60%600%7D%29)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Formats](#uid-34684d2ddf) | Gets the formats supported by this item. |
 
@@ -113,7 +113,7 @@ To retrieve a typed value, use [Avalonia.Input.DataTransferItemExtensions.TryGet
 
 <span id="uid-34684d2ddf"></span>
 
-### Formats Property
+### Formats 属性 {#formats-property}
 
 Gets the formats supported by this item.
 

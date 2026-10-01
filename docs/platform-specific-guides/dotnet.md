@@ -14,7 +14,7 @@ None of these solutions are specific to Avalonia, and they can be used with any 
 .NET 6 and newer provide a set of APIs to get operating system in runtime - [OperatingSystem](https://learn.microsoft.com/en-us/dotnet/api/system.operatingsystem).
 
 Commonly used static methods of this class are:
-| Method | Description |
+| Method | 说明 |
 | --- | --- |
 | IsWindows()	 | Indicates whether the current application is running on Windows. |
 | IsLinux() |	Indicates whether the current application is running on Linux. |
@@ -153,7 +153,7 @@ public class iOSDeviceOrientation : IDeviceOrientation
 
 Each implementation then can be registered using dependency injection library of choice, or using a static registry property.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Platform-specific XAML](/docs/platform-specific-guides/xaml)
 - [Deploying on Android](/docs/deployment/android)

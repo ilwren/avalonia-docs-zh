@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IManagedNotificationManager Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Notifications</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Notifications</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/IManagedNotificationManager.cs">IManagedNotificationManager.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/IManagedNotificationManager.cs">IManagedNotificationManager.cs</a>
 </div>
 
 </div>
@@ -55,19 +55,19 @@ public interface IManagedNotificationManager
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="inotificationmanager">INotificationManager</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="inotificationmanager">INotificationManager</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Because notification managers of this type are implemented purely in managed code, they
 can display arbitrary content, as opposed to notification managers which display notifications
 using the host operating system's notification mechanism.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Close](#uid-74a9176a6c) | Closes a notification. |
 | [Show](#uid-5233c4c7bf) | Shows a notification. |
@@ -76,7 +76,7 @@ using the host operating system's notification mechanism.
 
 <span id="uid-74a9176a6c"></span>
 
-### Close Method
+### Close 方法 {#close-method}
 
 Closes a notification.
 
@@ -84,7 +84,7 @@ Closes a notification.
 public void Close(object content)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `content` object
 
@@ -97,7 +97,7 @@ The content to be closed.
 
 <span id="uid-5233c4c7bf"></span>
 
-### Show Method
+### Show 方法 {#show-method}
 
 Shows a notification.
 
@@ -105,7 +105,7 @@ Shows a notification.
 public void Show(object content)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `content` object
 

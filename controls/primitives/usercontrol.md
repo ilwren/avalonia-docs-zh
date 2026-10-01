@@ -219,7 +219,7 @@ Here is how you might reuse the same `ConfirmationView` from the examples above:
 
 </Tabs>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentControl](/controls/data-display/contentcontrol)
 - [Creating custom controls](/docs/custom-controls/)

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPdfAdapter Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -50,13 +50,13 @@ public interface IPdfAdapter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [LoadDocumentAsync (3 overloads)](#uid-2105ba9bcd) | Loads a PDF document from a stream. The stream is read once from its current position and is never disposed by the adapter; the document keeps its own copy of the bytes. |
 
@@ -68,7 +68,7 @@ public interface IPdfAdapter
 
 <span id="uid-116014fe1c"></span>
 
-#### LoadDocumentAsync Method
+#### LoadDocumentAsync 方法 {#loaddocumentasync-method}
 
 Loads a PDF document from a stream. The stream is read once from its current position and
 is never disposed by the adapter; the document keeps its own copy of the bytes.
@@ -77,7 +77,7 @@ is never disposed by the adapter; the document keeps its own copy of the bytes.
 public System.Threading.Tasks.Task<Avalonia.Controls.Pdf.Core.IPdfDocument> LoadDocumentAsync(System.IO.Stream stream, string password, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `stream` System.IO.Stream
 
@@ -88,7 +88,7 @@ public System.Threading.Tasks.Task<Avalonia.Controls.Pdf.Core.IPdfDocument> Load
 `cancellationToken` System.Threading.CancellationToken
 
 
-##### Returns
+##### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Avalonia.Controls.Pdf.Core.IPdfDocument)&gt;
 
@@ -99,13 +99,13 @@ System.Threading.Tasks.Task&lt;[Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Av
 
 <span id="uid-a6e86f2ead"></span>
 
-#### LoadDocumentAsync Method
+#### LoadDocumentAsync 方法 {#loaddocumentasync-method-1}
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Controls.Pdf.Core.IPdfDocument> LoadDocumentAsync(ReadOnlyMemory<byte> data, string password, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `data` ReadOnlyMemory&lt;byte&gt;
 
@@ -116,7 +116,7 @@ public System.Threading.Tasks.Task<Avalonia.Controls.Pdf.Core.IPdfDocument> Load
 `cancellationToken` System.Threading.CancellationToken
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Avalonia.Controls.Pdf.Core.IPdfDocument)&gt;
 
@@ -127,7 +127,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Av
 
 <span id="uid-63002783f8"></span>
 
-#### LoadDocumentAsync Method
+#### LoadDocumentAsync 方法 {#loaddocumentasync-method-2}
 
 Loads a PDF document from a file path.
 
@@ -135,7 +135,7 @@ Loads a PDF document from a file path.
 public System.Threading.Tasks.Task<Avalonia.Controls.Pdf.Core.IPdfDocument> LoadDocumentAsync(string path, string password, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `path` string
 
@@ -146,16 +146,16 @@ public System.Threading.Tasks.Task<Avalonia.Controls.Pdf.Core.IPdfDocument> Load
 `cancellationToken` System.Threading.CancellationToken
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Avalonia.Controls.Pdf.Core.IPdfDocument)&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsInitialized](#uid-a5c18edcee) | Gets whether the adapter has been initialized. |
 
@@ -163,7 +163,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Av
 
 <span id="uid-a5c18edcee"></span>
 
-### IsInitialized Property
+### IsInitialized 属性 {#isinitialized-property}
 
 Gets whether the adapter has been initialized.
 
@@ -173,9 +173,9 @@ public bool IsInitialized { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Error](#uid-7c24688073) | Event raised when the adapter encounters an error. |
 
@@ -183,7 +183,7 @@ public bool IsInitialized { get; set; }
 
 <span id="uid-7c24688073"></span>
 
-### Error Event
+### Error 事件 {#error-event}
 
 Event raised when the adapter encounters an error.
 

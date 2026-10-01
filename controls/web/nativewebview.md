@@ -7,7 +7,7 @@ title: NativeWebView
 
 `NativeWebView` is a control that provides a native web browser implementation for Avalonia and WPF applications. It wraps platform-specific web controls and provides a unified API for web browsing functionality.
 
-## Properties
+## 属性 {#properties}
 
 ### Source
 
@@ -35,7 +35,7 @@ public bool CanGoForward { get; }
 
 Indicates whether the WebView can navigate to a next page in the navigation history.
 
-## Events
+## 事件 {#events}
 
 ### AdapterCreated
 
@@ -128,7 +128,7 @@ private void NativeWebView_OnWebMessageReceived(object? sender, WebMessageReceiv
 }
 ```
 
-## Methods
+## 方法 {#methods}
 
 ### Navigate
 
@@ -321,7 +321,7 @@ On Linux, `NativeWebView` picks its backend automatically. It prefers [WPE WebKi
 To use WebKitGTK on a machine that does have WPE, set [`LinuxWpeWebViewEnvironmentRequestedEventArgs.PreferWebKitGtkInstead`](/controls/web/webview-environment#linux-wpe-webkit) to `true`.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NativeWebDialog](/controls/web/nativewebdialog)
 - [WebAuthenticationBroker](/controls/web/webauthenticationbroker)

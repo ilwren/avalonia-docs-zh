@@ -156,7 +156,7 @@ Both binding types resolve the same binding paths, but there are two behavioral 
 
 You can also create compiled bindings in C# code using the `CompiledBinding.Create` factory method. This gives you the same compile-time safety and performance benefits as XAML compiled bindings, using LINQ expressions instead of string property paths. See [Compiled bindings from code](/docs/data-binding/binding-from-code#creating-compiled-bindings-from-code) for examples.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Compiled bindings from code](/docs/data-binding/binding-from-code#creating-compiled-bindings-from-code)
 - [Data binding syntax](/docs/data-binding/data-binding-syntax)

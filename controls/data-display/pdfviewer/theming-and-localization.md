@@ -12,7 +12,7 @@ tags:
 
 The package ships two themes, each with light and dark palettes. Include one of them in `App.axaml`.
 
-| Theme | Description |
+| Theme | 说明 |
 |---|---|
 | `Default.axaml` | A neutral, rounded, borderless look with its own palette. It does not depend on the host's Avalonia theme. |
 | `Fluent.axaml` | Maps the same keys onto `FluentTheme` resources such as `SystemAccentColor` and `ControlCornerRadius`, so the viewer follows the host's accent, theme variant and any Fluent resource the application overrides. |
@@ -120,7 +120,7 @@ Set `Strings` before loading a document. The toolbar updates immediately on a ch
 
 Page content is rendered as a bitmap, so the PDF's text is not exposed to assistive technology as elements. If you need it, read it with `GetPageTextAsync` and present it in your own accessible surface.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [PdfViewer control](index.md)
 - [Navigation, zoom and search](navigation-and-search.md)

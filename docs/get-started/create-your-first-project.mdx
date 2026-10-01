@@ -1,11 +1,11 @@
 ---
 id: create-your-first-project
-title: Create your first project
-description: Create and run your first Avalonia application using the MVVM template in your preferred IDE or from the command line.
+title: 创建你的第一个项目
+description: 在你惯用的 IDE 或命令行中，用 MVVM 模板创建并运行第一个 Avalonia 应用。
 doc-type: tutorial
 video:
   src: https://youtu.be/3qJCYesX1dQ
-  title: Understanding Your First Avalonia App — Entry Point to MainWindow
+  title: 读懂你的第一个 Avalonia 应用 —— 从入口点到 MainWindow
 ---
 
 import WelcomeToAvalonia from '/img/get-started/welcome-to-avalonia.png';
@@ -13,97 +13,97 @@ import WelcomeToAvalonia from '/img/get-started/welcome-to-avalonia.png';
 <p><small>{frontMatter.description}</small></p>
 <br/>
 
-This guide walks you through creating a new Avalonia app from a template and running it. By the end, you will have a working Avalonia window on screen.
+本文带你从模板创建一个全新的 Avalonia 应用并把它跑起来。读完之后，你的屏幕上就会出现一个真正能用的 Avalonia 窗口。
 
-## Create the project
+## 创建项目 {#create-the-project}
 
-For your first project, use the Model-View-ViewModel (MVVM) template. This template sets up a project with the MVVM pattern, which is the recommended way to structure Avalonia applications.
+第一个项目建议使用 Model-View-ViewModel（MVVM）模板。该模板会按 MVVM 模式搭好项目骨架，这也是组织 Avalonia 应用推荐的方式。
 
 <Tabs groupId="ide">
   <TabItem value="vs" label="Visual Studio" default>
-1. In Visual Studio, click **File → New → Project/Solution**.
-2. In the search box, input "Avalonia".
-3. Select **Avalonia .NET MVVM App** from the search results. If Visual Studio offers multiple options, select the one for **C#**. Then, click **Next**.
-4. Name your project "GetStartedApp".
-5. Change the target directory if desired. Then, click **Next**.
-6. Select your preferred version of **.NET** as the framework.
-7. If given the option to choose target platforms, select **Desktop**.
+1. 在 Visual Studio 中依次点击 **文件 → 新建 → 项目/解决方案**。
+2. 在搜索框中输入 “Avalonia”。
+3. 从搜索结果中选择 **Avalonia .NET MVVM App**。如果 Visual Studio 列出了多个选项，请选 **C#** 那一个，然后点击 **下一步**。
+4. 把项目命名为 “GetStartedApp”。
+5. 如有需要可以改一下目标目录，然后点击 **下一步**。
+6. 选择你想使用的 **.NET** 版本作为目标框架。
+7. 如果出现选择目标平台的步骤，请勾选 **Desktop**。
 8. Click **Create**.
   </TabItem>
   <TabItem value="vsc" label="Visual Studio Code">
-1. In Visual Studio Code, bring up the command palette. This is <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> on Windows, or <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> on macOS.
-2. Input ".NET" into the search.
-3. From the search results, select **.NET: New Project...**
-4. From the list of project templates, select **Avalonia MVVM App**.
-5. Specify a directory on your device for the project.
-6. Name your project "GetStartedApp".
-7. Click **Create project**.
+1. 在 Visual Studio Code 中打开命令面板：Windows 上是 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>，macOS 上是 <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>。
+2. 在搜索框中输入 “.NET”。
+3. 从搜索结果中选择 **.NET: New Project...**
+4. 在项目模板列表中选择 **Avalonia MVVM App**。
+5. 指定一个本机目录用于存放该项目。
+6. 把项目命名为 “GetStartedApp”。
+7. 点击 **Create project**。
   </TabItem>
   <TabItem value="rider" label="Rider">
-1. On the Rider startup screen, select **New Solution**.
-2. In the sidebar, scroll down to "Custom Templates". Select **Avalonia .NET MVVM App**.
-3. Name your solution "GetStartedApp".
+1. 在 Rider 的启动界面中选择 **New Solution**。
+2. 在侧边栏中向下滚动到 “Custom Templates”，选择 **Avalonia .NET MVVM App**。
+3. 把解决方案命名为 “GetStartedApp”。
 4. Click **Create**.
   </TabItem>
   <TabItem value="cli" label="Command line">
-Run this command:
+执行以下命令：
 
 ```bash
 dotnet new avalonia.mvvm -o GetStartedApp
 ```
 
-Check your device for a new folder named **GetStartedApp**, containing the new project files.
+到本机目录下看一眼，应该多出一个名为 **GetStartedApp** 的文件夹，里面就是新建的项目文件。
   </TabItem>
 </Tabs>
 
-## Run the project
+## 运行项目 {#run-the-project}
 
 <Tabs groupId="ide">
   <TabItem value="vs" label="Visual Studio" default>
-In the top toolbar, select "GetStartedApp" next to the **Run** button. Then, click **Run**.
+在顶部工具栏中，于 **运行** 按钮旁边选择 “GetStartedApp”，然后点击 **运行**。
 
-The solution builds and runs your app in a new window. By default, this displays the string, "Welcome to Avalonia!"
+解决方案会完成构建，并在一个新窗口中运行你的应用。默认情况下，窗口里显示的是 “Welcome to Avalonia!”。
   </TabItem>
   <TabItem value="vsc" label="Visual Studio Code">
-1. Select **Run and Debug** in the side navigation bar.
-2. If prompted to select a debugger, choose **C#**.
-3. Click **Run and Debug.**
+1. 在侧边导航栏中选择 **Run and Debug**。
+2. 如果提示选择调试器，请选 **C#**。
+3. 点击 **Run and Debug**。
 
-The solution builds and runs your app in a new window. By default, this displays the string, "Welcome to Avalonia!"
+解决方案会完成构建，并在一个新窗口中运行你的应用。默认情况下，窗口里显示的是 “Welcome to Avalonia!”。
   </TabItem>
   <TabItem value="rider" label="Rider">
-Click **Run** in the top toolbar.
+点击顶部工具栏中的 **Run**。
 
-The solution builds and runs your app in a new window. By default, this displays the string, "Welcome to Avalonia!"
+解决方案会完成构建，并在一个新窗口中运行你的应用。默认情况下，窗口里显示的是 “Welcome to Avalonia!”。
   </TabItem>
   <TabItem value="cli" label="Command line">
-Navigate to the directory containing your **GetStartedApp** project and run:
+进入 **GetStartedApp** 项目所在目录，执行：
 
 ```bash
 dotnet run
 ```
 
-The solution builds and runs your app in a new window. By default, this displays the string, "Welcome to Avalonia!"
+解决方案会完成构建，并在一个新窗口中运行你的应用。默认情况下，窗口里显示的是 “Welcome to Avalonia!”。
   </TabItem>
 </Tabs>
 
 <Image light={WelcomeToAvalonia} alt="A screenshot of the default Avalonia app running in a window." position="center" maxWidth={400} cornerRadius="true" margin={10}/>
 
-## What's in the project?
+## 项目里都有些什么？ {#whats-in-the-project}
 
-The MVVM template creates a project with the following structure:
+MVVM 模板生成的项目结构如下：
 
-| File/Folder | Purpose |
+| File/Folder | 用途 |
 |---|---|
-| **App.axaml** | Application-level resources and styles. The `.axaml` extension is short for Avalonia XAML. |
-| **ViewModels/** | Contains `MainViewModel`, which holds data and logic for the main window. |
-| **Views/MainWindow.axaml** | The XAML markup that defines the main window's appearance. |
-| **Views/MainWindow.axaml.cs** | The code-behind file for the main window. |
-| **Program.cs** | The application entry point that configures and launches Avalonia. |
+| **App.axaml** | 应用级别的资源和样式。`.axaml` 这个扩展名是 Avalonia XAML 的缩写。 |
+| **ViewModels/** | 存放 `MainViewModel`，其中承载主窗口的数据与逻辑。 |
+| **Views/MainWindow.axaml** | 定义主窗口外观的 XAML 标记。 |
+| **Views/MainWindow.axaml.cs** | 主窗口对应的代码隐藏文件。 |
+| **Program.cs** | 应用程序入口点，负责配置并启动 Avalonia。 |
 
-## Next steps
+## 下一步 {#next-steps}
 
-You have a working Avalonia app. Continue with the starter tutorial to build a temperature converter and learn core Avalonia concepts:
+现在你已经有了一个能跑起来的 Avalonia 应用。接着做入门教程，动手写一个温度换算器，顺便掌握 Avalonia 的核心概念：
 
 <br />
 <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>

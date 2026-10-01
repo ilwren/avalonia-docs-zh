@@ -10,7 +10,7 @@ doc-type: how-to
 
 This guide walks you through configuring Visual Studio Code on Linux so you can build, deploy, and debug Avalonia-based Android projects. The workflow uses the Mono Debug extension to attach to a running Android app over a local port.
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 Before you begin, make sure you have:
 
@@ -96,7 +96,7 @@ The .NET runtime builds and deploys your app to the connected device or emulator
 
 If your app is already running on the device, select **Attach - Android** instead to skip the build step and connect directly.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [IDE support](/tools/ide/)
 - [Avalonia tools overview](/tools/)

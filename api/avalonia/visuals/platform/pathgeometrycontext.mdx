@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PathGeometryContext Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Visuals.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Visuals.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/PathGeometryContext.cs">PathGeometryContext.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/PathGeometryContext.cs">PathGeometryContext.cs</a>
 </div>
 
 </div>
@@ -48,44 +48,44 @@ public class PathGeometryContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PathGeometryContext
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PathGeometryContext
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../platform/igeometrycontext">IGeometryContext</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../platform/igeometrycontext">IGeometryContext</a>, IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PathGeometryContext](#uid-0644d6749b) | No summary available. |
+| [PathGeometryContext](#uid-0644d6749b) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0644d6749b"></span>
 
-### PathGeometryContext Constructor
+### PathGeometryContext 构造函数 {#pathgeometrycontext-constructor}
 
 ```csharp
 public PathGeometryContext(Avalonia.Media.PathGeometry pathGeometry)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `pathGeometry` [Avalonia.Media.PathGeometry](xref:Avalonia.Media.PathGeometry)
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ArcTo](#uid-d13debcede) | Draws an arc to the specified point. |
 | [BeginFigure](#uid-9672d35ec0) | Begins a new figure. |
 | [CubicBezierTo](#uid-3085da665b) | Draws a Bezier curve to the specified point. |
-| [Dispose](#uid-55995dd1bb) | No summary available. |
+| [Dispose](#uid-55995dd1bb) | 暂无摘要。 |
 | [EndFigure](#uid-3985090f0f) | Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29). |
 | [LineTo](#uid-fa3e8f3e23) | Draws a line to the specified point. |
 | [QuadraticBezierTo](#uid-28beab71d3) | Draws a quadratic Bezier curve to the specified point. |
@@ -95,7 +95,7 @@ public PathGeometryContext(Avalonia.Media.PathGeometry pathGeometry)
 
 <span id="uid-d13debcede"></span>
 
-### ArcTo Method
+### ArcTo 方法 {#arcto-method}
 
 Draws an arc to the specified point.
 
@@ -103,7 +103,7 @@ Draws an arc to the specified point.
 public void ArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle, bool isLargeArc, Avalonia.Media.SweepDirection sweepDirection, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -143,7 +143,7 @@ Whether the segment is stroked.
 
 <span id="uid-9672d35ec0"></span>
 
-### BeginFigure Method
+### BeginFigure 方法 {#beginfigure-method}
 
 Begins a new figure.
 
@@ -151,7 +151,7 @@ Begins a new figure.
 public void BeginFigure(Avalonia.Point startPoint, bool isFilled)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `startPoint` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -169,7 +169,7 @@ Whether the figure is filled.
 
 <span id="uid-3085da665b"></span>
 
-### CubicBezierTo Method
+### CubicBezierTo 方法 {#cubicbezierto-method}
 
 Draws a Bezier curve to the specified point.
 
@@ -177,7 +177,7 @@ Draws a Bezier curve to the specified point.
 public void CubicBezierTo(Avalonia.Point controlPoint1, Avalonia.Point controlPoint2, Avalonia.Point endPoint, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `controlPoint1` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -205,7 +205,7 @@ Whether the segment is stroked.
 
 <span id="uid-55995dd1bb"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -217,7 +217,7 @@ public void Dispose()
 
 <span id="uid-3985090f0f"></span>
 
-### EndFigure Method
+### EndFigure 方法 {#endfigure-method}
 
 Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29).
 
@@ -225,7 +225,7 @@ Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalo
 public void EndFigure(bool isClosed)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `isClosed` bool
 
@@ -238,7 +238,7 @@ Whether the figure is closed.
 
 <span id="uid-fa3e8f3e23"></span>
 
-### LineTo Method
+### LineTo 方法 {#lineto-method}
 
 Draws a line to the specified point.
 
@@ -246,7 +246,7 @@ Draws a line to the specified point.
 public void LineTo(Avalonia.Point point, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -264,7 +264,7 @@ Whether the segment is stroked.
 
 <span id="uid-28beab71d3"></span>
 
-### QuadraticBezierTo Method
+### QuadraticBezierTo 方法 {#quadraticbezierto-method}
 
 Draws a quadratic Bezier curve to the specified point.
 
@@ -272,7 +272,7 @@ Draws a quadratic Bezier curve to the specified point.
 public void QuadraticBezierTo(Avalonia.Point controlPoint, Avalonia.Point endPoint, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `controlPoint` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -295,7 +295,7 @@ Whether the segment is stroked.
 
 <span id="uid-b6b80d3a91"></span>
 
-### SetFillRule Method
+### SetFillRule 方法 {#setfillrule-method}
 
 Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure.
 
@@ -303,7 +303,7 @@ Sets path's winding rule (default is EvenOdd). You should call this method befor
 public void SetFillRule(Avalonia.Media.FillRule fillRule)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `fillRule` [Avalonia.Media.FillRule](xref:Avalonia.Media.FillRule)
 

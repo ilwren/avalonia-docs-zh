@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextRange Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,32 +50,32 @@ public class TextRange
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextRange
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextRange
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="../../textselection">TextSelection</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="../../textselection">TextSelection</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextRange](#uid-be4cb64959) | Initializes a new instance of the [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) class. |
+| [TextRange](#uid-be4cb64959) | 初始化 [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-be4cb64959"></span>
 
-### TextRange Constructor
+### TextRange 构造函数 {#textrange-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) class.
+初始化 [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange) 类的新实例。
 
 ```csharp
 public TextRange(Avalonia.Controls.Documents.TextModel.TextPointer start, Avalonia.Controls.Documents.TextModel.TextPointer end)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `start` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -89,47 +89,47 @@ The end position.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ApplyPropertyValue](#uid-303888c951) | No summary available. |
+| [ApplyPropertyValue](#uid-303888c951) | 暂无摘要。 |
 | [ClearAllProperties](#uid-1d087e30fc) | Clears all inline formatting properties from the range. Content is preserved; only formatting is removed. Produces a single [Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit](xref:Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit) for atomic undo/redo. |
-| [ClearPropertyValue](#uid-ecf1a6ea8a) | No summary available. |
+| [ClearPropertyValue](#uid-ecf1a6ea8a) | 暂无摘要。 |
 | [Contains (2 overloads)](#uid-f71713cd49) | Checks if the range contains the specified pointer. |
 | [CreateSnapshot](#uid-462c656203) | Creates an immutable, thread-safe snapshot of this range's document structure. The caller chooses a serializer to convert the snapshot to a specific format. |
 | [Delete](#uid-4cc238f628) | Deletes the content of the range. |
 | [DeleteCurrentBlock (2 overloads)](#uid-a2fe640aaf) | Deletes the block this range starts in, and collapses the range onto the deletion point. |
 | [DeleteText](#uid-4266eab3ed) | Deletes the content of this range. Removes whatever the range covers — characters, inline runs, paragraphs, list items, tables, sections — depending on which nodes the range fully encloses. When the deletion crosses block boundaries and both surviving boundary blocks are paragraphs, `mergeBlocks` controls whether the surviving fragments fuse into one paragraph. Manages transaction automatically. |
 | [DeleteTextAt](#uid-9beff62495) | Deletes text at the specified range relative to this range. Manages transaction automatically. |
-| [GetPropertyValue](#uid-71aaf13562) | No summary available. |
+| [GetPropertyValue](#uid-71aaf13562) | 暂无摘要。 |
 | [GetText](#uid-c626a57a24) | Returns the text content covered by this range. |
 | [InsertFootnote](#uid-17dcc48a9d) | Replaces the range content with a footnote: the anchor (its number as ordinary text) lands at the range position, splitting a run when it sits mid-run, and the note body is created in the document's trailing footnote container with a fresh id - selection delete, anchor, body, and the anchor renumbering are one undo unit. Manages transaction automatically. |
-| [InsertImage](#uid-582fca47b6) | No summary available. |
+| [InsertImage](#uid-582fca47b6) | 暂无摘要。 |
 | [InsertPageNumberField](#uid-e42dca56bf) | Replaces the range content with a page-number field of `kind`: the field lands at the range position, splitting a run when it sits mid-run, and shows its cached result until a page layout resolves it (a band on a sheet renders the sheet's number) - selection delete and insertion are one undo unit. Manages transaction automatically. |
 | [InsertSnapshot](#uid-4e69cf269e) | Replaces the range content with the document tree captured by `snapshot`. Block, inline, and formatting structure from the snapshot is preserved — the snapshot's rope tree is spliced directly into the live document with no plain-text lowering. |
 | [InsertTextAt](#uid-6571a17b59) | Inserts text at the specified offset relative to the range start. Manages transaction automatically. |
 | [Load](#uid-1caf2c195a) | Replaces this range with the content of a stream. |
 | [Overlaps](#uid-97e89eec06) | Checks if this range overlaps with another range. |
-| [ReplaceText (2 overloads)](#uid-860443a3a7) | No summary available. |
+| [ReplaceText (2 overloads)](#uid-860443a3a7) | 暂无摘要。 |
 | [ReplaceTextAt](#uid-a1020d16a5) | Replaces text at the specified range relative to this range. Manages transaction automatically. |
 | [Save](#uid-0ebfb1caa1) | Writes this range to a stream. |
 | [SetImageAltText](#uid-2113b9397b) | Sets the alternative text of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable change. |
 | [SetImageSize](#uid-15eda4245a) | Sets the display size of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable change. Pass [double.NaN](xref:System.Double.NaN) for a dimension to use the image's intrinsic pixel size. |
-| [ToString](#uid-2b81309a1f) | No summary available. |
-| [TryGetPropertyValue](#uid-8a1f50a579) | No summary available. |
+| [ToString](#uid-2b81309a1f) | 暂无摘要。 |
+| [TryGetPropertyValue](#uid-8a1f50a579) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-303888c951"></span>
 
-### ApplyPropertyValue Method
+### ApplyPropertyValue 方法 {#applypropertyvalue-method}
 
 ```csharp
 public void ApplyPropertyValue<T>(Avalonia.StyledProperty<T> property, T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -148,7 +148,7 @@ public void ApplyPropertyValue<T>(Avalonia.StyledProperty<T> property, T value)
 
 <span id="uid-1d087e30fc"></span>
 
-### ClearAllProperties Method
+### ClearAllProperties 方法 {#clearallproperties-method}
 
 Clears all inline formatting properties from the range.
 Content is preserved; only formatting is removed.
@@ -164,13 +164,13 @@ public void ClearAllProperties()
 
 <span id="uid-ecf1a6ea8a"></span>
 
-### ClearPropertyValue Method
+### ClearPropertyValue 方法 {#clearpropertyvalue-method}
 
 ```csharp
 public void ClearPropertyValue<T>(Avalonia.StyledProperty<T> property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -190,7 +190,7 @@ public void ClearPropertyValue<T>(Avalonia.StyledProperty<T> property)
 
 <span id="uid-1b4a86e009"></span>
 
-#### Contains Method
+#### Contains 方法 {#contains-method}
 
 Checks if the range contains the specified pointer.
 
@@ -198,14 +198,14 @@ Checks if the range contains the specified pointer.
 public bool Contains(Avalonia.Controls.Documents.TextModel.TextPointer pointer)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `pointer` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 The pointer to check.
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -218,7 +218,7 @@ True if the pointer is within the range.
 
 <span id="uid-e2f9dcd0c5"></span>
 
-#### Contains Method
+#### Contains 方法 {#contains-method-1}
 
 Checks if the range contains the specified offset.
 
@@ -226,14 +226,14 @@ Checks if the range contains the specified offset.
 public bool Contains(int offset)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `offset` int
 
 The offset to check.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -246,7 +246,7 @@ True if the offset is within the range.
 
 <span id="uid-462c656203"></span>
 
-### CreateSnapshot Method
+### CreateSnapshot 方法 {#createsnapshot-method}
 
 Creates an immutable, thread-safe snapshot of this range's document structure.
 The caller chooses a serializer to convert the snapshot to a specific format.
@@ -255,7 +255,7 @@ The caller chooses a serializer to convert the snapshot to a specific format.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot CreateSnapshot()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -268,7 +268,7 @@ A [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Ava
 
 <span id="uid-4cc238f628"></span>
 
-### Delete Method
+### Delete 方法 {#delete-method}
 
 Deletes the content of the range.
 
@@ -276,7 +276,7 @@ Deletes the content of the range.
 public Avalonia.Controls.Documents.TextModel.TextPointer Delete()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -293,7 +293,7 @@ A pointer to the position after deletion.
 
 <span id="uid-ec31a90ae4"></span>
 
-#### DeleteCurrentBlock Method
+#### DeleteCurrentBlock 方法 {#deletecurrentblock-method}
 
 Deletes the block this range starts in, and collapses the range onto the
 deletion point.
@@ -302,21 +302,21 @@ deletion point.
 public bool DeleteCurrentBlock()
 ```
 
-##### Returns
+##### 返回值 {#returns-4}
 
 bool
 
 True if a block was deleted; false otherwise.
 
 
-##### Remarks
+##### 备注 {#remarks}
 
 To delete the block at some other position, build the range there:
 `new TextRange(position, position).DeleteCurrentBlock()`. That range gives
 up its own endpoints for the deletion, which is what makes the operation
 positional rather than a verb on an unrelated range.
 
-##### Exceptions
+##### 异常 {#exceptions}
 
 - [Range is not attached to a document.](xref:System.InvalidOperationException)
 
@@ -326,7 +326,7 @@ positional rather than a verb on an unrelated range.
 
 <span id="uid-6411353402"></span>
 
-#### DeleteCurrentBlock Method
+#### DeleteCurrentBlock 方法 {#deletecurrentblock-method-1}
 
 Deletes the block at `position`.
 
@@ -334,21 +334,21 @@ Deletes the block at `position`.
 public bool DeleteCurrentBlock(Avalonia.Controls.Documents.TextModel.TextPointer position)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 Where to look. When null, the range's own start is used.
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 bool
 
 Whether a block was deleted.
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
 Build a range at the position instead: `new TextRange(position, position)` reads as
 what it does and cannot quietly take a pointer into another document.
@@ -359,7 +359,7 @@ what it does and cannot quietly take a pointer into another document.
 
 <span id="uid-4266eab3ed"></span>
 
-### DeleteText Method
+### DeleteText 方法 {#deletetext-method}
 
 Deletes the content of this range. Removes whatever the range covers —
 characters, inline runs, paragraphs, list items, tables, sections —
@@ -373,7 +373,7 @@ Manages transaction automatically.
 public Avalonia.Controls.Documents.TextModel.TextPointer DeleteText(bool mergeBlocks)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `mergeBlocks` bool
 
@@ -388,7 +388,7 @@ Section, List, etc.). Structural detach of fully-enclosed blocks is
 not gated by this flag.
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -401,7 +401,7 @@ A [TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) at the d
 
 <span id="uid-9beff62495"></span>
 
-### DeleteTextAt Method
+### DeleteTextAt 方法 {#deletetextat-method}
 
 Deletes text at the specified range relative to this range.
 Manages transaction automatically.
@@ -410,7 +410,7 @@ Manages transaction automatically.
 public Avalonia.Controls.Documents.TextModel.TextPointer DeleteTextAt(int relativeOffset, int length)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `relativeOffset` int
 
@@ -422,7 +422,7 @@ The starting offset relative to range start.
 The number of characters to delete.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -435,13 +435,13 @@ A [TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) at the d
 
 <span id="uid-71aaf13562"></span>
 
-### GetPropertyValue Method
+### GetPropertyValue 方法 {#getpropertyvalue-method}
 
 ```csharp
 public T GetPropertyValue<T>(Avalonia.StyledProperty<T> property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -451,7 +451,7 @@ public T GetPropertyValue<T>(Avalonia.StyledProperty<T> property)
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 T
 
@@ -462,7 +462,7 @@ T
 
 <span id="uid-c626a57a24"></span>
 
-### GetText Method
+### GetText 方法 {#gettext-method}
 
 Returns the text content covered by this range.
 
@@ -470,12 +470,12 @@ Returns the text content covered by this range.
 public string GetText()
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 string
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Each call performs a rope slice and allocates a fresh string. Cache
 the result in a local for hot paths. To replace the text content,
@@ -487,7 +487,7 @@ call [Avalonia.Controls.Documents.TextModel.TextRange.ReplaceText(string)](xref:
 
 <span id="uid-17dcc48a9d"></span>
 
-### InsertFootnote Method
+### InsertFootnote 方法 {#insertfootnote-method}
 
 Replaces the range content with a footnote: the anchor (its number as
 ordinary text) lands at the range position, splitting a run when it sits
@@ -500,7 +500,7 @@ Manages transaction automatically.
 public Avalonia.Controls.Documents.Footnote InsertFootnote(Avalonia.Controls.Documents.RichFootnoteReference anchor)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `anchor` [Avalonia.Controls.Documents.RichFootnoteReference](xref:Avalonia.Controls.Documents.RichFootnoteReference)
 
@@ -512,7 +512,7 @@ that carries a note from an earlier removal is re-paired with it. The
 [Avalonia.Controls.Documents.RichFootnoteReference.NoteId](xref:Avalonia.Controls.Documents.RichFootnoteReference.NoteId) is assigned by the pairing.
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 [Avalonia.Controls.Documents.Footnote](xref:Avalonia.Controls.Documents.Footnote)
 
@@ -522,7 +522,7 @@ inside a page band or another note (Word forbids both), or in a document
 without a [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) root.
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [anchor already belongs to a document.](xref:System.ArgumentException)
 - [Range is not attached to a document.](xref:System.InvalidOperationException)
@@ -533,13 +533,13 @@ without a [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Docu
 
 <span id="uid-582fca47b6"></span>
 
-### InsertImage Method
+### InsertImage 方法 {#insertimage-method}
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer InsertImage(ReadOnlyMemory<byte> data, string mimeType, double width, double height, string altText)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `data` ReadOnlyMemory&lt;byte&gt;
 
@@ -556,7 +556,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer InsertImage(ReadOnlyMem
 `altText` string
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -567,7 +567,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer InsertImage(ReadOnlyMem
 
 <span id="uid-e42dca56bf"></span>
 
-### InsertPageNumberField Method
+### InsertPageNumberField 方法 {#insertpagenumberfield-method}
 
 Replaces the range content with a page-number field of `kind`:
 the field lands at the range position, splitting a run when it sits mid-run,
@@ -579,14 +579,14 @@ Manages transaction automatically.
 public Avalonia.Controls.Documents.RichPageNumberField InsertPageNumberField(Avalonia.Controls.Documents.PageNumberFieldKind kind)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `kind` [Avalonia.Controls.Documents.PageNumberFieldKind](xref:Avalonia.Controls.Documents.PageNumberFieldKind)
 
 The page number or the page count.
 
 
-#### Returns
+#### 返回值 {#returns-12}
 
 [Avalonia.Controls.Documents.RichPageNumberField](xref:Avalonia.Controls.Documents.RichPageNumberField)
 
@@ -594,7 +594,7 @@ The inserted field, or when the range start cannot host
 one: inside a footnote body, which has no page of its own.
 
 
-#### Exceptions
+#### 异常 {#exceptions-2}
 
 - [Range is not attached to a document.](xref:System.InvalidOperationException)
 
@@ -604,7 +604,7 @@ one: inside a footnote body, which has no page of its own.
 
 <span id="uid-4e69cf269e"></span>
 
-### InsertSnapshot Method
+### InsertSnapshot 方法 {#insertsnapshot-method}
 
 Replaces the range content with the document tree captured by
 `snapshot`. Block, inline, and formatting structure
@@ -615,14 +615,14 @@ directly into the live document with no plain-text lowering.
 public void InsertSnapshot(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 The snapshot whose tree is grafted into this range.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Used by paste pipelines that already hold a [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 (e.g. RTF clipboard payload) — avoids the stream + deserializer round-trip
@@ -636,7 +636,7 @@ existing range content, everything nests in the outer
 [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange) scope and collapses into one
 undo entry.
 
-#### Exceptions
+#### 异常 {#exceptions-3}
 
 - [snapshot is null.](xref:System.ArgumentNullException)
 - [Range is not attached to a document.](xref:System.InvalidOperationException)
@@ -647,7 +647,7 @@ undo entry.
 
 <span id="uid-6571a17b59"></span>
 
-### InsertTextAt Method
+### InsertTextAt 方法 {#inserttextat-method}
 
 Inserts text at the specified offset relative to the range start.
 Manages transaction automatically.
@@ -656,7 +656,7 @@ Manages transaction automatically.
 public Avalonia.Controls.Documents.TextModel.TextPointer InsertTextAt(int relativeOffset, string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `relativeOffset` int
 
@@ -668,7 +668,7 @@ The offset relative to range start (0 = at start, Length = at end).
 The text to insert.
 
 
-#### Returns
+#### 返回值 {#returns-13}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -681,7 +681,7 @@ A [TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) at the i
 
 <span id="uid-1caf2c195a"></span>
 
-### Load Method
+### Load 方法 {#load-method}
 
 Replaces this range with the content of a stream.
 
@@ -689,7 +689,7 @@ Replaces this range with the content of a stream.
 public void Load(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `stream` System.IO.Stream
 
@@ -701,7 +701,7 @@ The stream to read from.
 The serializer for the format.
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 The decomposition is public and takes a cancellation token, which this does not:
 `range.InsertSnapshot(serializer.Deserialize(stream, cancellationToken))`.
@@ -712,7 +712,7 @@ The decomposition is public and takes a cancellation token, which this does not:
 
 <span id="uid-97e89eec06"></span>
 
-### Overlaps Method
+### Overlaps 方法 {#overlaps-method}
 
 Checks if this range overlaps with another range.
 
@@ -720,14 +720,14 @@ Checks if this range overlaps with another range.
 public bool Overlaps(Avalonia.Controls.Documents.TextModel.TextRange other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-15}
 
 `other` [Avalonia.Controls.Documents.TextModel.TextRange](xref:Avalonia.Controls.Documents.TextModel.TextRange)
 
 The other range.
 
 
-#### Returns
+#### 返回值 {#returns-14}
 
 bool
 
@@ -744,18 +744,18 @@ True if the ranges overlap.
 
 <span id="uid-c0218b2cce"></span>
 
-#### ReplaceText Method
+#### ReplaceText 方法 {#replacetext-method}
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer ReplaceText(ReadOnlyMemory<char> newText)
 ```
 
-##### Parameters
+##### 参数 {#parameters-16}
 
 `newText` ReadOnlyMemory&lt;char&gt;
 
 
-##### Returns
+##### 返回值 {#returns-15}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -766,7 +766,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer ReplaceText(ReadOnlyMem
 
 <span id="uid-3e0842b68d"></span>
 
-#### ReplaceText Method
+#### ReplaceText 方法 {#replacetext-method-1}
 
 Replaces the content of this range with new text.
 Manages transaction automatically.
@@ -775,14 +775,14 @@ Manages transaction automatically.
 public Avalonia.Controls.Documents.TextModel.TextPointer ReplaceText(string newText)
 ```
 
-##### Parameters
+##### 参数 {#parameters-17}
 
 `newText` string
 
 The replacement text.
 
 
-##### Returns
+##### 返回值 {#returns-16}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -795,7 +795,7 @@ A [TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) after th
 
 <span id="uid-a1020d16a5"></span>
 
-### ReplaceTextAt Method
+### ReplaceTextAt 方法 {#replacetextat-method}
 
 Replaces text at the specified range relative to this range.
 Manages transaction automatically.
@@ -804,7 +804,7 @@ Manages transaction automatically.
 public Avalonia.Controls.Documents.TextModel.TextPointer ReplaceTextAt(int relativeOffset, int length, string newText)
 ```
 
-#### Parameters
+#### 参数 {#parameters-18}
 
 `relativeOffset` int
 
@@ -821,7 +821,7 @@ The number of characters to replace.
 The replacement text.
 
 
-#### Returns
+#### 返回值 {#returns-17}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -834,7 +834,7 @@ A [TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) after th
 
 <span id="uid-0ebfb1caa1"></span>
 
-### Save Method
+### Save 方法 {#save-method}
 
 Writes this range to a stream.
 
@@ -842,7 +842,7 @@ Writes this range to a stream.
 public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer)
 ```
 
-#### Parameters
+#### 参数 {#parameters-19}
 
 `stream` System.IO.Stream
 
@@ -854,7 +854,7 @@ The stream to write to.
 The serializer for the format.
 
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 The decomposition is public and takes a cancellation token, which this does not:
 `serializer.Serialize(range.CreateSnapshot()!, stream, cancellationToken)`. Going
@@ -866,7 +866,7 @@ through the snapshot also lets one capture serve several formats.
 
 <span id="uid-2113b9397b"></span>
 
-### SetImageAltText Method
+### SetImageAltText 方法 {#setimagealttext-method}
 
 Sets the alternative text of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single
 undoable change.
@@ -875,7 +875,7 @@ undoable change.
 public void SetImageAltText(Avalonia.Controls.Documents.RichImage image, string altText)
 ```
 
-#### Parameters
+#### 参数 {#parameters-20}
 
 `image` [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage)
 
@@ -897,12 +897,12 @@ Display height in device-independent pixels, or [double.NaN](xref:System.Double.
 Display width in device-independent pixels, or [double.NaN](xref:System.Double.NaN) for intrinsic.
 
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 Write the image's own properties inside [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange), which
 is what this does and takes any set of properties rather than these two.
 
-#### Exceptions
+#### 异常 {#exceptions-4}
 
 - [\`image\` is null.](xref:System.ArgumentNullException)
 - [Range is not attached to a document.](xref:System.InvalidOperationException)
@@ -913,7 +913,7 @@ is what this does and takes any set of properties rather than these two.
 
 <span id="uid-15eda4245a"></span>
 
-### SetImageSize Method
+### SetImageSize 方法 {#setimagesize-method}
 
 Sets the display size of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable
 change. Pass [double.NaN](xref:System.Double.NaN) for a dimension to use the image's intrinsic
@@ -923,7 +923,7 @@ pixel size.
 public void SetImageSize(Avalonia.Controls.Documents.RichImage image, double width, double height)
 ```
 
-#### Parameters
+#### 参数 {#parameters-21}
 
 `image` [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage)
 
@@ -940,12 +940,12 @@ Display width in device-independent pixels, or [double.NaN](xref:System.Double.N
 Display height in device-independent pixels, or [double.NaN](xref:System.Double.NaN) for intrinsic.
 
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 Write the image's own properties inside [Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange](xref:Avalonia.Controls.Documents.TextModel.TextDocument.BeginChange), which
 is what this does and takes any set of properties rather than these two.
 
-#### Exceptions
+#### 异常 {#exceptions-5}
 
 - [\`image\` is null.](xref:System.ArgumentNullException)
 - [Range is not attached to a document.](xref:System.InvalidOperationException)
@@ -956,13 +956,13 @@ is what this does and takes any set of properties rather than these two.
 
 <span id="uid-2b81309a1f"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-18}
 
 string
 
@@ -973,13 +973,13 @@ string
 
 <span id="uid-8a1f50a579"></span>
 
-### TryGetPropertyValue Method
+### TryGetPropertyValue 方法 {#trygetpropertyvalue-method}
 
 ```csharp
 public bool TryGetPropertyValue<T>(Avalonia.StyledProperty<T> property, T& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-22}
 
 `property` Avalonia.StyledProperty&lt;T&gt;
 
@@ -992,16 +992,16 @@ public bool TryGetPropertyValue<T>(Avalonia.StyledProperty<T> property, T& value
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-19}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [End](#uid-37c972b3f9) | Gets the end position of the range. |
 | [IsEmpty](#uid-313c05b9fc) | Gets a value indicating whether the range is empty. A range is empty only when [Avalonia.Controls.Documents.TextModel.TextRange.Start](xref:Avalonia.Controls.Documents.TextModel.TextRange.Start) and [Avalonia.Controls.Documents.TextModel.TextRange.End](xref:Avalonia.Controls.Documents.TextModel.TextRange.End) refer to the exact same document position (node-aware). Two distinct positions that happen to share the same integer offset — for example pointers into consecutive empty paragraphs — are not considered empty. |
@@ -1013,7 +1013,7 @@ bool
 
 <span id="uid-37c972b3f9"></span>
 
-### End Property
+### End 属性 {#end-property}
 
 Gets the end position of the range.
 
@@ -1027,7 +1027,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer End { get; set; }
 
 <span id="uid-313c05b9fc"></span>
 
-### IsEmpty Property
+### IsEmpty 属性 {#isempty-property}
 
 Gets a value indicating whether the range is empty. A range is empty
 only when [Avalonia.Controls.Documents.TextModel.TextRange.Start](xref:Avalonia.Controls.Documents.TextModel.TextRange.Start) and [Avalonia.Controls.Documents.TextModel.TextRange.End](xref:Avalonia.Controls.Documents.TextModel.TextRange.End) refer to the exact
@@ -1045,7 +1045,7 @@ public bool IsEmpty { get; set; }
 
 <span id="uid-27d48f7738"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
 Gets the length of the range in characters.
 
@@ -1059,7 +1059,7 @@ public int Length { get; set; }
 
 <span id="uid-fe0f8d7b6a"></span>
 
-### Start Property
+### Start 属性 {#start-property}
 
 Gets the start position of the range.
 
@@ -1073,7 +1073,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer Start { get; set; }
 
 <span id="uid-fce62d199c"></span>
 
-### TextDocument Property
+### TextDocument 属性 {#textdocument-property}
 
 Gets the document containing this range.
 
@@ -1083,9 +1083,9 @@ public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; se
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Changed](#uid-ea82965a4b) | Occurs when the range changes. |
 
@@ -1093,7 +1093,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; se
 
 <span id="uid-ea82965a4b"></span>
 
-### Changed Event
+### Changed 事件 {#changed-event}
 
 Occurs when the range changes.
 

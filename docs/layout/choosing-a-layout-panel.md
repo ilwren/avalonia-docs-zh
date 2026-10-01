@@ -290,7 +290,7 @@ For complex layouts, you can combine multiple panels. Nest panels within one ano
 - Avoid deeply nested panels. If you find yourself nesting more than three levels deep, consider whether a single [`Grid`](#grid) with the right row and column definitions could replace the entire tree.
 - For lists with many items, use `ListBox` instead of placing many controls in a `StackPanel`.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Layout](/docs/layout) for how the measure-and-arrange system works.
 - [Positioning controls](/docs/layout/positioning-controls) for alignment, margin, and padding.

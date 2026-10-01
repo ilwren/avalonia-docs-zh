@@ -15,7 +15,7 @@ The [`ThemeVariantScope`](/api/avalonia/controls/themevariantscope) control over
 
 ## Useful properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `RequestedThemeVariant` | `ThemeVariant` | The theme variant to apply within this scope. Values: `Light`, `Dark`, `Default`. Setting `Default` resets to the inherited variant. |
 | `ActualThemeVariant` | `ThemeVariant` | Read-only. The theme variant currently in effect within this scope. |
@@ -167,7 +167,7 @@ public class MainViewModel : ViewModelBase
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Theme variants](/docs/styling/theme-variants): Full guide to light/dark theme support and theme dictionaries.
 - [How to switch themes](/docs/how-to/theme-switching-how-to): Implementing a theme toggle in your application.

@@ -46,7 +46,7 @@ public ObservableCollection<SentimentPoint> SentimentData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of items to compare. | `null` |
 | `ValuePath` | Path to the value plotted relative to the baseline. | `null` |
@@ -58,7 +58,7 @@ public ObservableCollection<SentimentPoint> SentimentData { get; } = new()
 | `ShowValues` | Whether to draw value labels inside the bars. | `true` |
 | `IsHighlightEnabled` | Enables hover highlighting for bars. | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
 - [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart)

@@ -21,7 +21,7 @@ Use a `GroupBox` when you need to:
 
 You will probably use these properties most often:
 
-<table><thead><tr><th width="261">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>Header</code></td><td>The text or content displayed at the top of the border.</td></tr><tr><td><code>Content</code></td><td>The child control or layout hosted inside the group box.</td></tr><tr><td><code>BorderBrush</code></td><td>The color of the surrounding border.</td></tr><tr><td><code>BorderThickness</code></td><td>The thickness of the surrounding border.</td></tr><tr><td><code>CornerRadius</code></td><td>The radius of the border's corners.</td></tr><tr><td><code>Padding</code></td><td>The spacing between the border and the content.</td></tr></tbody></table>
+<table><thead><tr><th width="261">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>Header</code></td><td>The text or content displayed at the top of the border.</td></tr><tr><td><code>Content</code></td><td>The child control or layout hosted inside the group box.</td></tr><tr><td><code>BorderBrush</code></td><td>The color of the surrounding border.</td></tr><tr><td><code>BorderThickness</code></td><td>The thickness of the surrounding border.</td></tr><tr><td><code>CornerRadius</code></td><td>The radius of the border's corners.</td></tr><tr><td><code>Padding</code></td><td>The spacing between the border and the content.</td></tr></tbody></table>
 
 ## Example
 
@@ -119,7 +119,7 @@ You can nest `GroupBox` controls inside each other to create sub-sections. Keep 
 
 You can customize the `GroupBox` appearance through theme resources:
 
-| Resource | Default | Description |
+| Resource | Default | 说明 |
 |---|---|---|
 | `GroupBoxPadding` | `4` | Internal padding around the content. |
 | `GroupBoxHeaderFontSize` | `16` | Font size of the header text. |
@@ -129,7 +129,7 @@ You can customize the `GroupBox` appearance through theme resources:
 | `GroupBoxBorderBrush` | `SystemControlForegroundBaseMediumBrush` | Color of the border. |
 | `GroupBoxHeaderForeground` | `SystemBaseHighColor` | Color of the header text. |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Border](/controls/layout/containers/border)
 - [Expander](/controls/layout/containers/expander)

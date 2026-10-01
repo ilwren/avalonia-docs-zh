@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IIndexSelectableChart Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -50,13 +50,13 @@ public interface IIndexSelectableChart
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iselectablechart">ISelectableChart</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iselectablechart">ISelectableChart</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsDataPointSelected](#uid-5f135b52de) | Checks if the data point at the given index is currently selected. |
 | [TrySelectDataPoint](#uid-ee635c36c3) | Attempts to select a data point at the given index. |
@@ -65,7 +65,7 @@ public interface IIndexSelectableChart
 
 <span id="uid-5f135b52de"></span>
 
-### IsDataPointSelected Method
+### IsDataPointSelected 方法 {#isdatapointselected-method}
 
 Checks if the data point at the given index is currently selected.
 
@@ -73,14 +73,14 @@ Checks if the data point at the given index is currently selected.
 public bool IsDataPointSelected(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `index` int
 
 The index to check.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -93,7 +93,7 @@ True if selected.
 
 <span id="uid-ee635c36c3"></span>
 
-### TrySelectDataPoint Method
+### TrySelectDataPoint 方法 {#tryselectdatapoint-method}
 
 Attempts to select a data point at the given index.
 
@@ -101,14 +101,14 @@ Attempts to select a data point at the given index.
 public bool TrySelectDataPoint(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `index` int
 
 The index of the data point.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -117,9 +117,9 @@ True if the selection state changed.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SelectedIndex](#uid-ad41a17b14) | Gets the index of the currently selected data point (-1 if none). |
 | [SelectedIndexes](#uid-ec2993b5d5) | Gets the collection of all currently selected indexes. |
@@ -128,7 +128,7 @@ True if the selection state changed.
 
 <span id="uid-ad41a17b14"></span>
 
-### SelectedIndex Property
+### SelectedIndex 属性 {#selectedindex-property}
 
 Gets the index of the currently selected data point (-1 if none).
 
@@ -142,7 +142,7 @@ public int SelectedIndex { get; set; }
 
 <span id="uid-ec2993b5d5"></span>
 
-### SelectedIndexes Property
+### SelectedIndexes 属性 {#selectedindexes-property}
 
 Gets the collection of all currently selected indexes.
 

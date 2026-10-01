@@ -90,7 +90,7 @@ public ObservableCollection<SunburstNode> SunburstData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Title` | The chart title. | `null` |
 | `ItemsSource` | The collection of root-level data items. | `null` |

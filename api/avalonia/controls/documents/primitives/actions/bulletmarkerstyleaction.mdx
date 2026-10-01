@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BulletMarkerStyleAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,30 +50,30 @@ public class BulletMarkerStyleAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> BulletMarkerStyleAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> BulletMarkerStyleAction
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iblockpropertyaction">IBlockPropertyAction</a>, IBlockPropertyAction&lt;TextMarkerStyle&gt;, <a href="ieditoraction">IEditorAction</a>, <a href="ipropertyaction">IPropertyAction</a>, IPropertyAction&lt;TextMarkerStyle&gt;
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iblockpropertyaction">IBlockPropertyAction</a>, IBlockPropertyAction&lt;TextMarkerStyle&gt;, <a href="ieditoraction">IEditorAction</a>, <a href="ipropertyaction">IPropertyAction</a>, IPropertyAction&lt;TextMarkerStyle&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [Avalonia.Controls.Documents.Primitives.Actions.BulletMarkerStyleAction.CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.BulletMarkerStyleAction.CanExecute%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) returns true only when the caret is inside a bullet
 [Avalonia.Controls.Documents.List](xref:Avalonia.Controls.Documents.List) (Disc, Circle, Square, Box, or None).
 [Avalonia.Controls.Documents.Primitives.Actions.BulletMarkerStyleAction.GetAvailableValues](xref:Avalonia.Controls.Documents.Primitives.Actions.BulletMarkerStyleAction.GetAvailableValues) returns only the bullet marker styles.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BulletMarkerStyleAction](#uid-cd8ac2fe6e) | No summary available. |
+| [BulletMarkerStyleAction](#uid-cd8ac2fe6e) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cd8ac2fe6e"></span>
 
-### BulletMarkerStyleAction Constructor
+### BulletMarkerStyleAction 构造函数 {#bulletmarkerstyleaction-constructor}
 
 ```csharp
 public BulletMarkerStyleAction()
@@ -81,9 +81,9 @@ public BulletMarkerStyleAction()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CanExecute](#uid-25e18877b9) | Gets whether the action can currently execute. |
 | [ClearValue](#uid-8bb90adc1e) | Clears the marker style. A list always has one, so this does nothing. |
@@ -99,7 +99,7 @@ public BulletMarkerStyleAction()
 
 <span id="uid-25e18877b9"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 Gets whether the action can currently execute.
 
@@ -107,21 +107,21 @@ Gets whether the action can currently execute.
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to check against.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 True if the action can execute; otherwise, false.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This is called frequently to update UI state (button enabled/disabled).
 Implementations should be fast and avoid heavy computation.
@@ -132,7 +132,7 @@ Implementations should be fast and avoid heavy computation.
 
 <span id="uid-8bb90adc1e"></span>
 
-### ClearValue Method
+### ClearValue 方法 {#clearvalue-method}
 
 Clears the marker style. A list always has one, so this does nothing.
 
@@ -140,7 +140,7 @@ Clears the marker style. A list always has one, so this does nothing.
 public void ClearValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -153,7 +153,7 @@ The editor to act on.
 
 <span id="uid-f6c058eaaf"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 Executes the action synchronously.
 
@@ -161,14 +161,14 @@ Executes the action synchronously.
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to execute on.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 For actions that require async operations (like file dialogs),
 use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead.
@@ -179,7 +179,7 @@ use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(A
 
 <span id="uid-4b619dbff9"></span>
 
-### GetAvailableValues Method
+### GetAvailableValues 方法 {#getavailablevalues-method}
 
 Returns bullet [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle) values.
 
@@ -187,7 +187,7 @@ Returns bullet [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerS
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle> GetAvailableValues()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle)&gt;
 
@@ -198,7 +198,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Primitive
 
 <span id="uid-fda447b072"></span>
 
-### GetState Method
+### GetState 方法 {#getstate-method}
 
 Gets the current state of the action.
 
@@ -206,14 +206,14 @@ Gets the current state of the action.
 public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host to query.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 object
 
@@ -221,7 +221,7 @@ The current state, or null if the action has no state. A toggle action returns
 a boolean, a property action the current value.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Read [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) or
 [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead. Both say which family
@@ -233,7 +233,7 @@ the value came from, which an untyped object cannot.
 
 <span id="uid-4e5bc56f9b"></span>
 
-### GetValue Method
+### GetValue 方法 {#getvalue-method}
 
 Gets the current marker style of the first bullet list containing the caret/selection.
 
@@ -241,12 +241,12 @@ Gets the current marker style of the first bullet list containing the caret/sele
 public Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle GetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle)
 
@@ -257,7 +257,7 @@ public Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle GetV
 
 <span id="uid-7abac97d0d"></span>
 
-### HasConsistentValue Method
+### HasConsistentValue 方法 {#hasconsistentvalue-method}
 
 Gets whether all affected blocks have the same value for this property.
 
@@ -265,14 +265,14 @@ Gets whether all affected blocks have the same value for this property.
 public bool HasConsistentValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 The editor host.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 bool
 
@@ -280,7 +280,7 @@ True if all affected blocks have the same property value.
 False if blocks have different values (mixed state).
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 UI controls should show a mixed/indeterminate state when this returns false.
 For example, a [ComboBox](xref:Avalonia.Controls.ComboBox) might show "Mixed" placeholder text.
@@ -293,7 +293,7 @@ For collapsed selections, this always returns true (single block).
 
 <span id="uid-bb30eac2d0"></span>
 
-### SetValue Method
+### SetValue 方法 {#setvalue-method}
 
 Sets the marker style on all bullet lists covering the selection.
 
@@ -301,7 +301,7 @@ Sets the marker style on all bullet lists covering the selection.
 public void SetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host, Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -311,9 +311,9 @@ public void SetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DisplayName](#uid-7d66aad706) | Gets the display name for UI purposes. |
 | [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
@@ -323,7 +323,7 @@ public void SetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host
 
 <span id="uid-7d66aad706"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 Gets the display name for UI purposes.
 
@@ -331,7 +331,7 @@ Gets the display name for UI purposes.
 public string DisplayName { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 This is used for tooltips, menu items, and accessibility.
 
@@ -341,7 +341,7 @@ This is used for tooltips, menu items, and accessibility.
 
 <span id="uid-c623b25271"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 Gets the unique identifier for this action.
 
@@ -349,7 +349,7 @@ Gets the unique identifier for this action.
 public string Id { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 IDs follow a hierarchical naming convention:
 

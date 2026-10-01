@@ -153,7 +153,7 @@ collection. The last applicable `Setter` will take precedence.
 These buttons specify their `Classes` in different orders. This has no effect on setter precedence in Avalonia.
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Property value precedence](/docs/properties/value-precedence)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IFocusManager Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IFocusManager.cs">IFocusManager.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IFocusManager.cs">IFocusManager.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface IFocusManager
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FindFirstFocusableElement](#uid-2421936cd0) | Retrieves the first element that can receive focus. |
 | [FindLastFocusableElement](#uid-be6613a4e6) | Retrieves the last element that can receive focus. |
@@ -67,7 +67,7 @@ public interface IFocusManager
 
 <span id="uid-2421936cd0"></span>
 
-### FindFirstFocusableElement Method
+### FindFirstFocusableElement 方法 {#findfirstfocusableelement-method}
 
 Retrieves the first element that can receive focus.
 
@@ -75,7 +75,7 @@ Retrieves the first element that can receive focus.
 public Avalonia.Input.IInputElement FindFirstFocusableElement()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -88,7 +88,7 @@ The first focusable element.
 
 <span id="uid-be6613a4e6"></span>
 
-### FindLastFocusableElement Method
+### FindLastFocusableElement 方法 {#findlastfocusableelement-method}
 
 Retrieves the last element that can receive focus.
 
@@ -96,7 +96,7 @@ Retrieves the last element that can receive focus.
 public Avalonia.Input.IInputElement FindLastFocusableElement()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -109,7 +109,7 @@ The last focusable element.
 
 <span id="uid-a0ee3bab13"></span>
 
-### FindNextElement Method
+### FindNextElement 方法 {#findnextelement-method}
 
 Retrieves the element that should receive focus based on the specified navigation direction.
 
@@ -117,7 +117,7 @@ Retrieves the element that should receive focus based on the specified navigatio
 public Avalonia.Input.IInputElement FindNextElement(Avalonia.Input.NavigationDirection direction, Avalonia.Input.FindNextElementOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `direction` [Avalonia.Input.NavigationDirection](xref:Avalonia.Input.NavigationDirection)
 
@@ -132,7 +132,7 @@ Must be one of [Avalonia.Input.NavigationDirection.Next](xref:Avalonia.Input.Nav
 The options to help identify the next element to receive focus.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -145,7 +145,7 @@ The next element to receive focus, if any.
 
 <span id="uid-b26213438c"></span>
 
-### Focus Method
+### Focus 方法 {#focus-method}
 
 Focuses a control.
 
@@ -153,7 +153,7 @@ Focuses a control.
 public bool Focus(Avalonia.Input.IInputElement element, Avalonia.Input.NavigationMethod method, Avalonia.Input.KeyModifiers keyModifiers)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `element` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -170,14 +170,14 @@ The method by which focus was changed.
 Any key modifiers active at the time of focus.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
 `true` if the focus moved to a control; otherwise, `false`.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 If `element` is null, this method tries to clear the focus. However, it is not advised.
 For a better user experience, focus should be moved to another element when possible.
@@ -191,7 +191,7 @@ When this method returns `false`, the focus may have been canceled or redirected
 
 <span id="uid-545fef5b56"></span>
 
-### GetFocusedElement Method
+### GetFocusedElement 方法 {#getfocusedelement-method}
 
 Gets the currently focused [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
 
@@ -199,7 +199,7 @@ Gets the currently focused [Avalonia.Input.IInputElement](xref:Avalonia.Input.II
 public Avalonia.Input.IInputElement GetFocusedElement()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
@@ -210,7 +210,7 @@ public Avalonia.Input.IInputElement GetFocusedElement()
 
 <span id="uid-13ddb00a08"></span>
 
-### TryMoveFocus Method
+### TryMoveFocus 方法 {#trymovefocus-method}
 
 Attempts to change focus from the element with focus to the next focusable element in the specified direction.
 
@@ -218,7 +218,7 @@ Attempts to change focus from the element with focus to the next focusable eleme
 public bool TryMoveFocus(Avalonia.Input.NavigationDirection direction, Avalonia.Input.FindNextElementOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `direction` [Avalonia.Input.NavigationDirection](xref:Avalonia.Input.NavigationDirection)
 
@@ -233,7 +233,7 @@ Must be one of [Avalonia.Input.NavigationDirection.Next](xref:Avalonia.Input.Nav
 The options to help identify the next element to receive focus.
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 bool
 

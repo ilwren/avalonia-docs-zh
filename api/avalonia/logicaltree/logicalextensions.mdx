@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">LogicalExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.LogicalTree</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.LogicalTree</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/LogicalExtensions.cs">LogicalExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/LogicalExtensions.cs">LogicalExtensions.cs</a>
 </div>
 
 </div>
@@ -54,16 +54,16 @@ public class LogicalExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> LogicalExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> LogicalExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FindLogicalAncestorOfType](#uid-1ccbb5bd60) | No summary available. |
-| [FindLogicalDescendantOfType](#uid-9c5c81f9ca) | No summary available. |
+| [FindLogicalAncestorOfType](#uid-1ccbb5bd60) | 暂无摘要。 |
+| [FindLogicalDescendantOfType](#uid-9c5c81f9ca) | 暂无摘要。 |
 | [GetLogicalAncestors](#uid-7afee9d407) | Enumerates the ancestors of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) in the logical tree. |
 | [GetLogicalChildren](#uid-c140632816) | Enumerates the children of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) in the logical tree. |
 | [GetLogicalDescendants](#uid-14b3fc514d) | Enumerates the descendants of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) in the logical tree. |
@@ -77,13 +77,13 @@ public class LogicalExtensions
 
 <span id="uid-1ccbb5bd60"></span>
 
-### FindLogicalAncestorOfType Method
+### FindLogicalAncestorOfType 方法 {#findlogicalancestoroftype-method}
 
 ```csharp
 public T FindLogicalAncestorOfType<T>(Avalonia.LogicalTree.ILogical logical, bool includeSelf)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
@@ -96,7 +96,7 @@ public T FindLogicalAncestorOfType<T>(Avalonia.LogicalTree.ILogical logical, boo
 `T`
 
 
-#### Returns
+#### 返回值 {#returns}
 
 T
 
@@ -107,13 +107,13 @@ T
 
 <span id="uid-9c5c81f9ca"></span>
 
-### FindLogicalDescendantOfType Method
+### FindLogicalDescendantOfType 方法 {#findlogicaldescendantoftype-method}
 
 ```csharp
 public T FindLogicalDescendantOfType<T>(Avalonia.LogicalTree.ILogical logical, bool includeSelf)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
@@ -126,7 +126,7 @@ public T FindLogicalDescendantOfType<T>(Avalonia.LogicalTree.ILogical logical, b
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 T
 
@@ -137,7 +137,7 @@ T
 
 <span id="uid-7afee9d407"></span>
 
-### GetLogicalAncestors Method
+### GetLogicalAncestors 方法 {#getlogicalancestors-method}
 
 Enumerates the ancestors of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) in the logical tree.
 
@@ -145,14 +145,14 @@ Enumerates the ancestors of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.Log
 public System.Collections.Generic.IEnumerable<Avalonia.LogicalTree.ILogical> GetLogicalAncestors(Avalonia.LogicalTree.ILogical logical)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)&gt;
 
@@ -165,7 +165,7 @@ The logical's ancestors.
 
 <span id="uid-c140632816"></span>
 
-### GetLogicalChildren Method
+### GetLogicalChildren 方法 {#getlogicalchildren-method}
 
 Enumerates the children of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) in the logical tree.
 
@@ -173,14 +173,14 @@ Enumerates the children of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.Logi
 public System.Collections.Generic.IEnumerable<Avalonia.LogicalTree.ILogical> GetLogicalChildren(Avalonia.LogicalTree.ILogical logical)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)&gt;
 
@@ -193,7 +193,7 @@ The logical children.
 
 <span id="uid-14b3fc514d"></span>
 
-### GetLogicalDescendants Method
+### GetLogicalDescendants 方法 {#getlogicaldescendants-method}
 
 Enumerates the descendants of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) in the logical tree.
 
@@ -201,14 +201,14 @@ Enumerates the descendants of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.L
 public System.Collections.Generic.IEnumerable<Avalonia.LogicalTree.ILogical> GetLogicalDescendants(Avalonia.LogicalTree.ILogical logical)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)&gt;
 
@@ -221,7 +221,7 @@ The logical's ancestors.
 
 <span id="uid-bd4c7d3d95"></span>
 
-### GetLogicalParent Method
+### GetLogicalParent 方法 {#getlogicalparent-method}
 
 Gets the logical parent of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical).
 
@@ -229,14 +229,14 @@ Gets the logical parent of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.Logi
 public T GetLogicalParent<T>(Avalonia.LogicalTree.ILogical logical)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical.
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
@@ -249,7 +249,7 @@ The parent, or null if the logical is unparented.
 
 <span id="uid-5c6d083d49"></span>
 
-### GetLogicalSiblings Method
+### GetLogicalSiblings 方法 {#getlogicalsiblings-method}
 
 Enumerates the siblings of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) in the logical tree.
 
@@ -257,14 +257,14 @@ Enumerates the siblings of an [Avalonia.LogicalTree.ILogical](xref:Avalonia.Logi
 public System.Collections.Generic.IEnumerable<Avalonia.LogicalTree.ILogical> GetLogicalSiblings(Avalonia.LogicalTree.ILogical logical)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical.
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)&gt;
 
@@ -277,7 +277,7 @@ The logical siblings.
 
 <span id="uid-a6c6bc1fc6"></span>
 
-### GetSelfAndLogicalAncestors Method
+### GetSelfAndLogicalAncestors 方法 {#getselfandlogicalancestors-method}
 
 Enumerates an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) and its ancestors in the logical tree.
 
@@ -285,14 +285,14 @@ Enumerates an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical
 public System.Collections.Generic.IEnumerable<Avalonia.LogicalTree.ILogical> GetSelfAndLogicalAncestors(Avalonia.LogicalTree.ILogical logical)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)&gt;
 
@@ -305,7 +305,7 @@ The logical and its ancestors.
 
 <span id="uid-1994719439"></span>
 
-### GetSelfAndLogicalDescendants Method
+### GetSelfAndLogicalDescendants 方法 {#getselfandlogicaldescendants-method}
 
 Enumerates an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) and its descendants in the logical tree.
 
@@ -313,14 +313,14 @@ Enumerates an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical
 public System.Collections.Generic.IEnumerable<Avalonia.LogicalTree.ILogical> GetSelfAndLogicalDescendants(Avalonia.LogicalTree.ILogical logical)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical.
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)&gt;
 
@@ -333,7 +333,7 @@ The logical and its ancestors.
 
 <span id="uid-66f0cae862"></span>
 
-### IsLogicalAncestorOf Method
+### IsLogicalAncestorOf 方法 {#islogicalancestorof-method}
 
 Tests whether an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical) is an ancestor of another logical.
 
@@ -341,7 +341,7 @@ Tests whether an [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogi
 public bool IsLogicalAncestorOf(Avalonia.LogicalTree.ILogical logical, Avalonia.LogicalTree.ILogical target)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `logical` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
@@ -353,7 +353,7 @@ The logical.
 The potential descendant.
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 bool
 

@@ -27,7 +27,7 @@ To review the concept of layout zones, see [Layout](/docs/layout/).
 
 You will probably use these properties most often:
 
-<table><thead><tr><th width="205">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>Canvas.Left</code></td><td>Attached to a child control - gives the distance between the inner left edge of the canvas content zone to the outer left edge of the child (margin zone).</td></tr><tr><td><code>Canvas.Top</code></td><td>Attached to a child control - gives the distance between the inner top edge of the canvas content zone to the outer top edge of the child (margin zone).</td></tr><tr><td><code>Canvas.Right</code></td><td>Attached to a child control - gives the distance between the inner right edge of the canvas content zone to the outer right edge of the child (margin zone).</td></tr><tr><td><code>Canvas.Bottom</code></td><td>Attached to a child control - gives the distance between the inner bottom edge of the canvas content zone to the outer bottom edge of the child (margin zone).</td></tr><tr><td><code>ZIndex</code></td><td>A property inherited from <code>Visual</code> that can override the default drawing sequence (see below).</td></tr></tbody></table>
+<table><thead><tr><th width="205">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>Canvas.Left</code></td><td>Attached to a child control - gives the distance between the inner left edge of the canvas content zone to the outer left edge of the child (margin zone).</td></tr><tr><td><code>Canvas.Top</code></td><td>Attached to a child control - gives the distance between the inner top edge of the canvas content zone to the outer top edge of the child (margin zone).</td></tr><tr><td><code>Canvas.Right</code></td><td>Attached to a child control - gives the distance between the inner right edge of the canvas content zone to the outer right edge of the child (margin zone).</td></tr><tr><td><code>Canvas.Bottom</code></td><td>Attached to a child control - gives the distance between the inner bottom edge of the canvas content zone to the outer bottom edge of the child (margin zone).</td></tr><tr><td><code>ZIndex</code></td><td>A property inherited from <code>Visual</code> that can override the default drawing sequence (see below).</td></tr></tbody></table>
 
 Child controls in a canvas are drawn in the sequence that they are defined. This can cause them to overlap.
 
@@ -129,7 +129,7 @@ myParentCanvas.Children.Add(myCanvas3);
 
 </Tabs>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Canvas API reference](/api/avalonia/controls/canvas)
 - [`Canvas.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Canvas.cs)

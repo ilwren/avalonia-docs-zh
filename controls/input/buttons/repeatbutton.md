@@ -11,7 +11,7 @@ The `RepeatButton` is a control that has the added feature of regularly generati
 
 You will probably use these properties most often:
 
-| Property | Description                                                                              |
+| Property | 说明                                                                              |
 | -------- | ---------------------------------------------------------------------------------------- |
 | `Delay`    | The time (milliseconds) to wait before repeated click generation begins. Default is 300. |
 | `Interval` | The time (milliseconds) between clicks being generated. Default is 100.                  |
@@ -62,7 +62,7 @@ You can configure the `Delay` and `Interval` properties directly in XAML to cont
 
 The `RepeatButton` is useful in any scenario where you need continuous action while the user holds down a button. Common examples include volume controls, scroll buttons, numeric steppers, and zoom controls. In each of these cases, the repeat behavior lets your users make incremental adjustments without clicking repeatedly.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Button](/controls/input/buttons/button)
 - [ButtonSpinner](/controls/input/buttons/buttonspinner)

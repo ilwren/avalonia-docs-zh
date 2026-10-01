@@ -20,7 +20,7 @@ source and other options, as shown in the following example:
 <SomeControl SomeProperty="{Binding Path, Mode=ModeValue, StringFormat=Pattern}" />
 ```
 
-| Parameter             | Description                                                                       |
+| Parameter             | 说明                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------|
 | `Path`                | The name of the source property to bind to.                                       |
 | `Mode`                | The synchronization direction of the binding.                                     |
@@ -99,7 +99,7 @@ For example:
 
 The available binding modes are:
 
-| Mode             | Description                                                                                                               |
+| Mode             | 说明                                                                                                               |
 |------------------|---------------------------------------------------------------------------------------------------------------------------|
 | `OneWay`         | Changes in the data source propagate to the binding target.                                                               |
 | `TwoWay`         | Changes in the data source propagate to the binding target and vice-versa.                                                |
@@ -284,7 +284,7 @@ specify when synchronization should happen.
 
 </XamlPreview>
 
-| UpdateSourceTrigger | Description                                                                                      |
+| UpdateSourceTrigger | 说明                                                                                      |
 |---------------------|--------------------------------------------------------------------------------------------------|
 | `Default`           | This currently defaults to `PropertyChanged`.                                                    |
 | `PropertyChanged`   | Updates the binding source immediately whenever the binding target property changes.             |
@@ -365,7 +365,7 @@ public class SearchViewModel : ObservableObject
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Data context](/docs/data-binding/data-context): Where the data binder gets the data object from.
 - [Compiled bindings](/docs/data-binding/compiled-bindings): Compile-time binding validation.

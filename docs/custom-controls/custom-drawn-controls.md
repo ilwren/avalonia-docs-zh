@@ -117,7 +117,7 @@ Use manual invalidation sparingly. Declaring property dependencies with `Affects
 
 [`DrawingContext`](/api/avalonia/media/drawingcontext) provides the following methods for rendering custom-drawn controls:
 
-| Method | Description |
+| Method | 说明 |
 |---|---|
 | `DrawRectangle` | Draws a rectangle. |
 | `DrawEllipse` | Draws an ellipse. |
@@ -188,7 +188,7 @@ public override void Render(DrawingContext context)
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Defining properties](/docs/custom-controls/defining-properties): Add styled, direct, and attached properties to a custom control.
 - [Custom templated controls](/docs/custom-controls/templated-controls): The alternative approach, where a control theme defines the appearance.

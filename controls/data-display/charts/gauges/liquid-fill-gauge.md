@@ -35,7 +35,7 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `Value` | The current value. | `50.0` |
 | `MinValue` | The minimum value. | `0.0` |
@@ -47,7 +47,7 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 | `ShowPercentage` | Whether to display the percentage text. | `true` |
 | `IsWaveAnimationEnabled` | Whether to animate the wave. | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Gauge chart](/controls/data-display/charts/gauges/gauge-chart)
 - [Progress donut chart](/controls/data-display/charts/gauges/progress-donut-chart)

@@ -95,7 +95,7 @@ The following table summarizes clipboard feature support across platforms:
 
 `Clipboard.Flush()` persists clipboard data so it remains available after your application closes. On platforms where flushing is not supported, the method does nothing.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Known differences](/xpf/migration/known-differences)
 - [Customizing initialization](/xpf/configuration/customizing-initialization)

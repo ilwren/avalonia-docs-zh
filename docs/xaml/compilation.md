@@ -149,7 +149,7 @@ For the XAML previewer and IntelliSense, ensure `x:DataType` is set. This also e
 </UserControl>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Compiled Bindings](/docs/data-binding/compiled-bindings): Detailed compiled binding reference.
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml): XAML fundamentals.

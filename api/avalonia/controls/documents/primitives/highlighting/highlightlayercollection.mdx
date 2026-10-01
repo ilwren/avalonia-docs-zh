@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HighlightLayerCollection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Highlighting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Highlighting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -52,24 +52,24 @@ public class HighlightLayerCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> HighlightLayerCollection
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> HighlightLayerCollection
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEnumerable&lt;IHighlightLayer&gt;, IReadOnlyCollection&lt;IHighlightLayer&gt;, IReadOnlyList&lt;IHighlightLayer&gt;, IEnumerable
+<span className="apiref-page__meta-label">实现接口：</span> IEnumerable&lt;IHighlightLayer&gt;, IReadOnlyCollection&lt;IHighlightLayer&gt;, IReadOnlyList&lt;IHighlightLayer&gt;, IEnumerable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [HighlightLayerCollection](#uid-29d41f9bd5) | No summary available. |
+| [HighlightLayerCollection](#uid-29d41f9bd5) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-29d41f9bd5"></span>
 
-### HighlightLayerCollection Constructor
+### HighlightLayerCollection 构造函数 {#highlightlayercollection-constructor}
 
 ```csharp
 public HighlightLayerCollection()
@@ -77,9 +77,9 @@ public HighlightLayerCollection()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Add](#uid-6106bf7a74) | Adds a highlight layer to the collection. |
 | [Clear](#uid-d2edcf0297) | Clears all layers from the collection. |
@@ -93,7 +93,7 @@ public HighlightLayerCollection()
 
 <span id="uid-6106bf7a74"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
 Adds a highlight layer to the collection.
 
@@ -101,14 +101,14 @@ Adds a highlight layer to the collection.
 public void Add(Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer layer)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `layer` [Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer)
 
 The layer to add.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [A layer with the same \[Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer.Name\](xref:Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer.Name) is already in the
 collection, which would make \[Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection.GetLayer(string)\](xref:Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection.GetLayer%28System.String%29) ambiguous.](xref:System.ArgumentException)
@@ -119,7 +119,7 @@ collection, which would make \[Avalonia.Controls.Documents.Primitives.Highlighti
 
 <span id="uid-d2edcf0297"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 Clears all layers from the collection.
 
@@ -133,7 +133,7 @@ public void Clear()
 
 <span id="uid-9ff12f020b"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 Returns an enumerator that walks the layers in render order.
 
@@ -141,7 +141,7 @@ Returns an enumerator that walks the layers in render order.
 public System.Collections.Generic.IEnumerator<Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IEnumerator&lt;[Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer)&gt;
 
@@ -152,7 +152,7 @@ System.Collections.Generic.IEnumerator&lt;[Avalonia.Controls.Documents.Primitive
 
 <span id="uid-6f11117844"></span>
 
-### GetLayer Method
+### GetLayer 方法 {#getlayer-method}
 
 Gets a layer by name.
 
@@ -160,14 +160,14 @@ Gets a layer by name.
 public Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer GetLayer(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `name` string
 
 The name of the layer.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer)
 
@@ -180,7 +180,7 @@ The layer with the specified name, or null if not found.
 
 <span id="uid-8b38baa2ab"></span>
 
-### GetLayers Method
+### GetLayers 方法 {#getlayers-method}
 
 Gets all layers ordered by Z-index.
 
@@ -188,14 +188,14 @@ Gets all layers ordered by Z-index.
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer> GetLayers()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer)&gt;
 
 An enumerable of layers ordered by Z-index.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Enumerate the collection itself, which walks the same order.
 
@@ -205,7 +205,7 @@ Enumerate the collection itself, which walks the same order.
 
 <span id="uid-39f4055166"></span>
 
-### Remove Method
+### Remove 方法 {#remove-method}
 
 Removes a highlight layer from the collection.
 
@@ -213,14 +213,14 @@ Removes a highlight layer from the collection.
 public bool Remove(Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer layer)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `layer` [Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer)
 
 The layer to remove.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -233,7 +233,7 @@ True if the layer was removed; otherwise, false.
 
 <span id="uid-f0864c0cbe"></span>
 
-### Render Method
+### Render 方法 {#render-method}
 
 Renders all visible layers.
 
@@ -241,11 +241,11 @@ Renders all visible layers.
 public void Render(Avalonia.Media.DrawingContext context, Avalonia.Controls.Documents.Primitives.ITextView textView)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `context` [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 `textView` [Avalonia.Controls.Documents.Primitives.ITextView](xref:Avalonia.Controls.Documents.Primitives.ITextView)
@@ -255,18 +255,18 @@ The text view for coordinate mapping.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](#uid-732b1fcd12) | Gets the number of layers in the collection. |
-| [Item](#uid-138f8c3378) | No summary available. |
+| [Item](#uid-138f8c3378) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-732b1fcd12"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 Gets the number of layers in the collection.
 
@@ -280,7 +280,7 @@ public int Count { get; set; }
 
 <span id="uid-138f8c3378"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer Item { get; set; }
@@ -288,9 +288,9 @@ public Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer Item 
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RegionsChanged](#uid-80acc2cdc2) | Event raised when any layer's regions change. |
 
@@ -298,7 +298,7 @@ public Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer Item 
 
 <span id="uid-80acc2cdc2"></span>
 
-### RegionsChanged Event
+### RegionsChanged 事件 {#regionschanged-event}
 
 Event raised when any layer's regions change.
 

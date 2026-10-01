@@ -15,7 +15,7 @@ As of Avalonia 11, the default interpolation mode is set to `LowQuality`. This s
 
 Avalonia supports the following bitmap interpolation modes:
 
-| Mode | Description |
+| Mode | 说明 |
 | :--- | :--- |
 | `None` | No interpolation. Pixels are rendered without smoothing |
 | `LowQuality` | Basic interpolation (default). Prioritizes performance |
@@ -81,7 +81,7 @@ To force aliased (sharp, pixelated) edges on a specific control, set `EdgeMode` 
        RenderTransform="rotate(15)" />
 ```
 
-| Mode | Description |
+| Mode | 说明 |
 |---|---|
 | `Unspecified` | The renderer uses its default behavior (antialiased). |
 | `Aliased` | Disables antialiasing. Useful for pixel art or when you need crisp, non-smoothed edges. |
@@ -154,6 +154,6 @@ Then in your XAML:
    - Verify performance impact when using high-quality interpolation on many images
    - Check memory usage with different interpolation settings
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Text Options](/docs/graphics-animation/text-options): Text rendering quality options via `TextOptions`.

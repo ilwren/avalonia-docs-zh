@@ -17,7 +17,7 @@ Most built-in controls create their automation peers automatically. A `Button` r
 
 The `AutomationProperties` class provides attached properties that supply accessibility metadata to controls. These properties do not affect the visual appearance of your UI. They are consumed only by assistive technologies.
 
-### Name
+### 名称 {#name}
 
 The most important accessibility property. It provides the text that a screen reader announces when the control receives focus:
 
@@ -156,7 +156,7 @@ Controls whether a control appears in the automation tree:
        AutomationProperties.AccessibilityView="Raw" />
 ```
 
-| Value | Meaning |
+| 值 | Meaning |
 |---|---|
 | `Default` | Determined by the control's automation peer |
 | `Raw` | Included only in the raw (unfiltered) tree |
@@ -236,7 +236,7 @@ public class RatingControlAutomationPeer : ControlAutomationPeer
 
 ### Key methods to override
 
-| Method | Purpose |
+| Method | 用途 |
 |---|---|
 | `GetAutomationControlTypeCore()` | The type of control (Button, TextBox, Slider, and similar) |
 | `GetNameCore()` | The accessible name announced by screen readers |
@@ -280,7 +280,7 @@ Avalonia's accessibility support varies by platform:
 
 On Linux, Avalonia automatically exposes the accessibility tree over D-Bus when AT-SPI2 is available. Screen readers such as Orca can discover and interact with all standard Avalonia controls. See the [Linux platform guide](/docs/platform-specific-guides/linux#accessibility) for setup and testing instructions.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Focus](/docs/input-interaction/focus): Keyboard focus navigation and tab ordering.
 - [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Keyboard shortcuts and access keys.

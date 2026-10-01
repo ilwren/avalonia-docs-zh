@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PixelImageSource Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -54,16 +54,16 @@ public class PixelImageSource
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="richimagesource">RichImageSource</a> <span className="apiref-page__relation-separator">-&gt;</span> PixelImageSource
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="richimagesource">RichImageSource</a> <span className="apiref-page__relation-separator">-&gt;</span> PixelImageSource
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PixelImageSource](#uid-47a603282d) | Initializes a new [Avalonia.Controls.Documents.PixelImageSource](xref:Avalonia.Controls.Documents.PixelImageSource) from a pixel buffer. |
 
@@ -71,7 +71,7 @@ public class PixelImageSource
 
 <span id="uid-47a603282d"></span>
 
-### PixelImageSource Constructor
+### PixelImageSource 构造函数 {#pixelimagesource-constructor}
 
 Initializes a new [Avalonia.Controls.Documents.PixelImageSource](xref:Avalonia.Controls.Documents.PixelImageSource) from a pixel buffer.
 
@@ -79,7 +79,7 @@ Initializes a new [Avalonia.Controls.Documents.PixelImageSource](xref:Avalonia.C
 public PixelImageSource(Avalonia.Controls.Documents.Imaging.PixelHolder pixels)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `pixels` [Avalonia.Controls.Documents.Imaging.PixelHolder](xref:Avalonia.Controls.Documents.Imaging.PixelHolder)
 
@@ -88,20 +88,20 @@ The decoded pixels. Owned for rendering, carried into snapshots for serializatio
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Dispose](#uid-8bf95cd2c4) | Releases the cached render bitmap. |
 | [ResolveAsync](#uid-fc549bc3d6) | Resolves the decoded image. Embedded sources complete synchronously; deferred sources fetch/decode in the background. Returns when the image cannot be produced. Callers must not dispose the returned image — its lifetime is owned by the source (or its loader); a source that owns a decoded bitmap implements [IDisposable](xref:System.IDisposable). |
-| [TryGetIntrinsicPixelSize](#uid-e319b15f47) | No summary available. |
-| [TryGetPixels](#uid-b6664cf481) | No summary available. |
+| [TryGetIntrinsicPixelSize](#uid-e319b15f47) | 暂无摘要。 |
+| [TryGetPixels](#uid-b6664cf481) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8bf95cd2c4"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 Releases the cached render bitmap.
 
@@ -115,7 +115,7 @@ public void Dispose()
 
 <span id="uid-fc549bc3d6"></span>
 
-### ResolveAsync Method
+### ResolveAsync 方法 {#resolveasync-method}
 
 Resolves the decoded image. Embedded sources complete synchronously;
 deferred sources fetch/decode in the background. Returns
@@ -127,7 +127,7 @@ loader); a source that owns a decoded bitmap implements [IDisposable](xref:Syste
 public System.Threading.Tasks.Task<Avalonia.Media.IImage> ResolveAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Media.IImage](xref:Avalonia.Media.IImage)&gt;
 
@@ -138,13 +138,13 @@ System.Threading.Tasks.Task&lt;[Avalonia.Media.IImage](xref:Avalonia.Media.IImag
 
 <span id="uid-e319b15f47"></span>
 
-### TryGetIntrinsicPixelSize Method
+### TryGetIntrinsicPixelSize 方法 {#trygetintrinsicpixelsize-method}
 
 ```csharp
 public bool TryGetIntrinsicPixelSize(int& width, int& height)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `width` int&amp;
 
@@ -152,7 +152,7 @@ public bool TryGetIntrinsicPixelSize(int& width, int& height)
 `height` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -163,27 +163,27 @@ bool
 
 <span id="uid-b6664cf481"></span>
 
-### TryGetPixels Method
+### TryGetPixels 方法 {#trygetpixels-method}
 
 ```csharp
 public bool TryGetPixels(Avalonia.Controls.Documents.Imaging.PixelHolder& pixels)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `pixels` [Avalonia.Controls.Documents.Imaging.PixelHolder](xref:Avalonia.Controls.Documents.Imaging.PixelHolder)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [EncodedBytes](richimagesource.mdx#uid-8ee090e2e9) | The encoded image bytes when the payload is embedded in the document, or an empty buffer for reference (URI) sources. Serializers that embed pixel data read this. Inherited from [RichImageSource](richimagesource.mdx). |
 | [MimeType](richimagesource.mdx#uid-1066542416) | The MIME type of [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes), when known. Inherited from [RichImageSource](richimagesource.mdx). |

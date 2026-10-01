@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ShapedTextRun Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/ShapedTextRun.cs">ShapedTextRun.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/ShapedTextRun.cs">ShapedTextRun.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public class ShapedTextRun
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textrun">TextRun</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="drawabletextrun">DrawableTextRun</a> <span className="apiref-page__relation-separator">-&gt;</span> ShapedTextRun
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textrun">TextRun</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="drawabletextrun">DrawableTextRun</a> <span className="apiref-page__relation-separator">-&gt;</span> ShapedTextRun
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Glyph data in the underlying [Avalonia.Media.TextFormatting.ShapedTextRun.ShapedBuffer](xref:Avalonia.Media.TextFormatting.ShapedTextRun.ShapedBuffer) is immutable after shaping:
 LTR buffers are in ascending-cluster (logical) order, RTL buffers are in
@@ -74,23 +74,23 @@ Ref-counted: the initial constructor call establishes one reference. Call
 and [Avalonia.Media.TextFormatting.ShapedTextRun.Dispose](xref:Avalonia.Media.TextFormatting.ShapedTextRun.Dispose) to release. The underlying shaped buffer is disposed only
 when the last reference is released.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ShapedTextRun](#uid-110d91d903) | No summary available. |
+| [ShapedTextRun](#uid-110d91d903) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-110d91d903"></span>
 
-### ShapedTextRun Constructor
+### ShapedTextRun 构造函数 {#shapedtextrun-constructor}
 
 ```csharp
 public ShapedTextRun(Avalonia.Media.TextFormatting.ShapedBuffer shapedBuffer, Avalonia.Media.TextFormatting.TextRunProperties properties)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `shapedBuffer` [Avalonia.Media.TextFormatting.ShapedBuffer](xref:Avalonia.Media.TextFormatting.ShapedBuffer)
 
@@ -100,19 +100,19 @@ public ShapedTextRun(Avalonia.Media.TextFormatting.ShapedBuffer shapedBuffer, Av
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-6d172079bc) | No summary available. |
+| [Dispose](#uid-6d172079bc) | 暂无摘要。 |
 | [Draw](#uid-69b2f1feed) | Draws the [Avalonia.Media.TextFormatting.DrawableTextRun](xref:Avalonia.Media.TextFormatting.DrawableTextRun) at the given origin. |
-| [TryMeasureCharacters](#uid-67a85cd94a) | No summary available. |
+| [TryMeasureCharacters](#uid-67a85cd94a) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6d172079bc"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -124,7 +124,7 @@ public void Dispose()
 
 <span id="uid-69b2f1feed"></span>
 
-### Draw Method
+### Draw 方法 {#draw-method}
 
 Draws the [Avalonia.Media.TextFormatting.DrawableTextRun](xref:Avalonia.Media.TextFormatting.DrawableTextRun) at the given origin.
 
@@ -132,11 +132,11 @@ Draws the [Avalonia.Media.TextFormatting.DrawableTextRun](xref:Avalonia.Media.Te
 public void Draw(Avalonia.Media.DrawingContext drawingContext, Avalonia.Point origin)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `drawingContext` [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 `origin` [Avalonia.Point](xref:Avalonia.Point)
@@ -150,13 +150,13 @@ The origin.
 
 <span id="uid-67a85cd94a"></span>
 
-### TryMeasureCharacters Method
+### TryMeasureCharacters 方法 {#trymeasurecharacters-method}
 
 ```csharp
 public bool TryMeasureCharacters(double availableWidth, int& length)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `availableWidth` double
 
@@ -164,32 +164,32 @@ public bool TryMeasureCharacters(double availableWidth, int& length)
 `length` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-c1eb93ccaa) | No summary available. |
-| [BidiLevel](#uid-a55212ac10) | No summary available. |
-| [GlyphRun](#uid-b7d69aea23) | No summary available. |
+| [Baseline](#uid-c1eb93ccaa) | 暂无摘要。 |
+| [BidiLevel](#uid-a55212ac10) | 暂无摘要。 |
+| [GlyphRun](#uid-b7d69aea23) | 暂无摘要。 |
 | [Length](#uid-f94822b621) | Gets the text source length. |
 | [Properties](#uid-7b21cc5c6b) | A set of properties shared by every characters in the run |
-| [ShapedBuffer](#uid-44e60a11fa) | No summary available. |
-| [Size](#uid-e1c7604a00) | No summary available. |
+| [ShapedBuffer](#uid-44e60a11fa) | 暂无摘要。 |
+| [Size](#uid-e1c7604a00) | 暂无摘要。 |
 | [Text](#uid-5998c75a8a) | Gets the text run's text. |
-| [TextMetrics](#uid-30138f42fd) | No summary available. |
+| [TextMetrics](#uid-30138f42fd) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c1eb93ccaa"></span>
 
-### Baseline Property
+### Baseline 属性 {#baseline-property}
 
 ```csharp
 public double Baseline { get; set; }
@@ -201,7 +201,7 @@ public double Baseline { get; set; }
 
 <span id="uid-a55212ac10"></span>
 
-### BidiLevel Property
+### BidiLevel 属性 {#bidilevel-property}
 
 ```csharp
 public sbyte BidiLevel { get; set; }
@@ -213,7 +213,7 @@ public sbyte BidiLevel { get; set; }
 
 <span id="uid-b7d69aea23"></span>
 
-### GlyphRun Property
+### GlyphRun 属性 {#glyphrun-property}
 
 ```csharp
 public Avalonia.Media.GlyphRun GlyphRun { get; set; }
@@ -225,7 +225,7 @@ public Avalonia.Media.GlyphRun GlyphRun { get; set; }
 
 <span id="uid-f94822b621"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
 Gets the text source length.
 
@@ -239,7 +239,7 @@ public int Length { get; set; }
 
 <span id="uid-7b21cc5c6b"></span>
 
-### Properties Property
+### Properties 属性 {#properties-property}
 
 A set of properties shared by every characters in the run
 
@@ -253,7 +253,7 @@ public Avalonia.Media.TextFormatting.TextRunProperties Properties { get; set; }
 
 <span id="uid-44e60a11fa"></span>
 
-### ShapedBuffer Property
+### ShapedBuffer 属性 {#shapedbuffer-property}
 
 ```csharp
 public Avalonia.Media.TextFormatting.ShapedBuffer ShapedBuffer { get; set; }
@@ -265,7 +265,7 @@ public Avalonia.Media.TextFormatting.ShapedBuffer ShapedBuffer { get; set; }
 
 <span id="uid-e1c7604a00"></span>
 
-### Size Property
+### Size 属性 {#size-property}
 
 ```csharp
 public Avalonia.Size Size { get; set; }
@@ -277,7 +277,7 @@ public Avalonia.Size Size { get; set; }
 
 <span id="uid-5998c75a8a"></span>
 
-### Text Property
+### Text 属性 {#text-property}
 
 Gets the text run's text.
 
@@ -291,7 +291,7 @@ public ReadOnlyMemory<char> Text { get; set; }
 
 <span id="uid-30138f42fd"></span>
 
-### TextMetrics Property
+### TextMetrics 属性 {#textmetrics-property}
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextMetrics TextMetrics { get; set; }
@@ -299,9 +299,9 @@ public Avalonia.Media.TextFormatting.TextMetrics TextMetrics { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DefaultTextSourceLength](textrun.mdx#uid-f86dc003de) | Inherited from [TextRun](textrun.mdx). |
 

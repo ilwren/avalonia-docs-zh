@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InlineFormatting Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,48 +51,48 @@ public struct InlineFormatting
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> InlineFormatting
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> InlineFormatting
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;InlineFormatting&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;InlineFormatting&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Base-level properties (font, foreground, background, letter spacing) are stored
 in [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting) on the [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode).
 This struct holds the remaining inline-only properties: text decorations
 and baseline alignment.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-669a2d6115) | No summary available. |
-| [GetHashCode](#uid-571347bc4e) | No summary available. |
-| [ToString](#uid-c9792e6caf) | No summary available. |
+| [Equals（2 个重载）](#uid-669a2d6115) | 暂无摘要。 |
+| [GetHashCode](#uid-571347bc4e) | 暂无摘要。 |
+| [ToString](#uid-c9792e6caf) | 暂无摘要。 |
 
 <span id="uid-669a2d6115"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e425736948"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -103,18 +103,18 @@ bool
 
 <span id="uid-dea7a023a9"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -125,13 +125,13 @@ bool
 
 <span id="uid-571347bc4e"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -142,22 +142,22 @@ int
 
 <span id="uid-c9792e6caf"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BaselineAlignment](#uid-5a3b3a01b0) | The baseline alignment (e.g., Baseline, Superscript, Subscript). Null means not explicitly set. |
 | [Default](#uid-62bd490ae3) | Default formatting with no explicit values set. |
@@ -174,7 +174,7 @@ string
 
 <span id="uid-5a3b3a01b0"></span>
 
-### BaselineAlignment Property
+### BaselineAlignment 属性 {#baselinealignment-property}
 
 The baseline alignment (e.g., Baseline, Superscript, Subscript).
 Null means not explicitly set.
@@ -189,7 +189,7 @@ public Nullable<Avalonia.Media.BaselineAlignment> BaselineAlignment { get; set; 
 
 <span id="uid-62bd490ae3"></span>
 
-### Default Property
+### Default 属性 {#default-property}
 
 Default formatting with no explicit values set.
 
@@ -203,7 +203,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting Default
 
 <span id="uid-084f70590d"></span>
 
-### HasOverline Property
+### HasOverline 属性 {#hasoverline-property}
 
 Gets whether overline decoration is applied.
 
@@ -217,7 +217,7 @@ public bool HasOverline { get; set; }
 
 <span id="uid-4b8f9477e5"></span>
 
-### HasStrikethrough Property
+### HasStrikethrough 属性 {#hasstrikethrough-property}
 
 Gets whether strikethrough decoration is applied.
 
@@ -231,7 +231,7 @@ public bool HasStrikethrough { get; set; }
 
 <span id="uid-66596a3f3d"></span>
 
-### HasSuperOrSubscript Property
+### HasSuperOrSubscript 属性 {#hassuperorsubscript-property}
 
 Gets whether any superscript or subscript flag is set.
 
@@ -245,7 +245,7 @@ public bool HasSuperOrSubscript { get; set; }
 
 <span id="uid-89a1b5bd8b"></span>
 
-### HasUnderline Property
+### HasUnderline 属性 {#hasunderline-property}
 
 Gets whether underline decoration is applied.
 
@@ -259,7 +259,7 @@ public bool HasUnderline { get; set; }
 
 <span id="uid-42626755e2"></span>
 
-### IsSubscript Property
+### IsSubscript 属性 {#issubscript-property}
 
 Whether this inline is subscript. The higher layer decides
 how to represent this ([BaselineAlignment](xref:Avalonia.Media.BaselineAlignment), FontFeatures, etc.).
@@ -274,7 +274,7 @@ public bool IsSubscript { get; set; }
 
 <span id="uid-35e56b6e3d"></span>
 
-### IsSuperscript Property
+### IsSuperscript 属性 {#issuperscript-property}
 
 Whether this inline is superscript. The higher layer decides
 how to represent this ([BaselineAlignment](xref:Avalonia.Media.BaselineAlignment), FontFeatures, etc.).
@@ -289,7 +289,7 @@ public bool IsSuperscript { get; set; }
 
 <span id="uid-cc4c08e7ec"></span>
 
-### TextDecorations Property
+### TextDecorations 属性 {#textdecorations-property}
 
 Text decoration flags (underline, strikethrough, overline).
 Null means not explicitly set.
@@ -304,7 +304,7 @@ public Nullable<Avalonia.Controls.Documents.TextModel.Formatting.TextDecorationF
 
 <span id="uid-6572d9f33c"></span>
 
-### UnderlineStyle Property
+### UnderlineStyle 属性 {#underlinestyle-property}
 
 The line style of the underline. Only takes effect when
 [Avalonia.Controls.Documents.TextModel.Formatting.TextDecorationFlags.Underline](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextDecorationFlags.Underline) is set in [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting.TextDecorations](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting.TextDecorations).

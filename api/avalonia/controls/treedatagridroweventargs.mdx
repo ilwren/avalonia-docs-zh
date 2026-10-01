@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridRowEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,19 +50,19 @@ public class TreeDataGridRowEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowEventArgs
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This class is used in events such as [Avalonia.Controls.TreeDataGrid.RowPrepared](xref:Avalonia.Controls.TreeDataGrid.RowPrepared) and
 [Avalonia.Controls.TreeDataGrid.RowClearing](xref:Avalonia.Controls.TreeDataGrid.RowClearing) to provide information about the row that triggered
 the event.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TreeDataGridRowEventArgs](#uid-78381945eb) | Initializes a new instance of the [Avalonia.Controls.TreeDataGridRowEventArgs](xref:Avalonia.Controls.TreeDataGridRowEventArgs) class with the specified row and row index. |
 
@@ -70,7 +70,7 @@ the event.
 
 <span id="uid-78381945eb"></span>
 
-### TreeDataGridRowEventArgs Constructor
+### TreeDataGridRowEventArgs 构造函数 {#treedatagridroweventargs-constructor}
 
 Initializes a new instance of the [Avalonia.Controls.TreeDataGridRowEventArgs](xref:Avalonia.Controls.TreeDataGridRowEventArgs) class with the
 specified row and row index.
@@ -79,7 +79,7 @@ specified row and row index.
 public TreeDataGridRowEventArgs(Avalonia.Controls.Primitives.TreeDataGridRow row, int rowIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `row` [Avalonia.Controls.Primitives.TreeDataGridRow](xref:Avalonia.Controls.Primitives.TreeDataGridRow)
 
@@ -93,9 +93,9 @@ The index of the row in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Row](#uid-73bb169e87) | Gets the row control that triggered the event. |
 | [RowIndex](#uid-2da0e5bc50) | Gets the index of the row that triggered the event. |
@@ -104,7 +104,7 @@ The index of the row in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
 <span id="uid-73bb169e87"></span>
 
-### Row Property
+### Row 属性 {#row-property}
 
 Gets the row control that triggered the event.
 
@@ -112,7 +112,7 @@ Gets the row control that triggered the event.
 public Avalonia.Controls.Primitives.TreeDataGridRow Row { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 A [Avalonia.Controls.Primitives.TreeDataGridRow](xref:Avalonia.Controls.Primitives.TreeDataGridRow) that represents the row in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 
@@ -123,7 +123,7 @@ A [Avalonia.Controls.Primitives.TreeDataGridRow](xref:Avalonia.Controls.Primitiv
 
 <span id="uid-2da0e5bc50"></span>
 
-### RowIndex Property
+### RowIndex 属性 {#rowindex-property}
 
 Gets the index of the row that triggered the event.
 
@@ -131,7 +131,7 @@ Gets the index of the row that triggered the event.
 public int RowIndex { get; set; }
 ```
 
-#### Value
+#### 值 {#value-1}
 
 The zero-based index of the row in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
 

@@ -16,7 +16,7 @@ Data formats are considered equal if they have the same kind and identifier.
 Universal formats are cross-platform formats that Avalonia directly understands.  
 There are currently three universal formats:
 
-| Format              | Identifier | Type           | Description         |
+| Format              | Identifier | Type           | 说明         |
 | --------------------|------------|----------------|---------------------|
 | `DataFormat.Text`   | "Text"     | `string`       | Plain text data     |
 | `DataFormat.File`   | "File"     | [`IStorageItem`](/api/avalonia/platform/storage/istorageitem) | A file or directory |
@@ -249,7 +249,7 @@ When writing the implementation, be certain that:
 `IAsyncDataTransferItem.TryGetRawAsync()` may or may not be called on the UI thread depending on the underlying platform. Do **not** call anything on the UI thread, including via `Dispatcher.Invoke/InvokeAsync`. Doing so will result in deadlocks!
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Drag and Drop](/docs/input-interaction/drag-and-drop): Drag-and-drop data transfer using similar data format APIs.
 - [TopLevel](/docs/fundamentals/top-level): Accessing platform services from controls.

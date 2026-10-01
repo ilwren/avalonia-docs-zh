@@ -19,7 +19,7 @@ Currently, Avalonia does not automatically adjust root view and scrolling positi
 Automatic adjustment is planned for future 11.* releases.
 :::
 
-## Properties
+## 属性 {#properties}
 
 ### State
 The current input pane state.
@@ -43,7 +43,7 @@ Return value is in client coordinates relative to the current top level.
 Empty rectangle will be returned in case of floating/detached input pane, that is positioned on top of the view.
 :::
 
-## Events
+## 事件 {#events}
 
 ### StateChanged
 Occurs when the input pane's state has changed.
@@ -74,7 +74,7 @@ Having `AnimationDuration` and `Easing` allows developer to create a transition 
 
 \* - only mobile Chromium browsers support IInputPane API.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Insets Manager](/docs/services/insets-manager): System bar visibility and safe area management.
 - [TopLevel](/docs/fundamentals/top-level): Accessing platform services from controls.

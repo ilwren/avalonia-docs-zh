@@ -50,7 +50,7 @@ public ObservableCollection<TernaryPoint> TernaryData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of ternary points. | `null` |
 | `APath` | Path to the first component value. | `null` |
@@ -62,7 +62,7 @@ public ObservableCollection<TernaryPoint> TernaryData { get; } = new()
 | `ShowGridLines` | Whether to draw the ternary grid. | `true` |
 | `DotSize` | Radius of the plotted points. | `5.0` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Carpet plot chart](/controls/data-display/charts/engineering/carpet-plot-chart)
 - [Parallel coordinates chart](/controls/data-display/charts/statistical/parallel-coordinates-chart)

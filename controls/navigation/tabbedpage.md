@@ -22,7 +22,7 @@ If you need a simple tab strip without page-based navigation features (lifecycle
 
 ## Useful properties
 
-| Property | Type | Default | Description |
+| Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `Pages` | `IEnumerable<Page>?` | Empty list | The collection of [`Page`](/api/avalonia/controls/page) children displayed as tabs. |
 | `ItemsSource` | `IEnumerable?` | `null` | A view-model collection used to generate pages with `PageTemplate`. When set, it takes precedence over `Pages`. |
@@ -37,7 +37,7 @@ If you need a simple tab strip without page-based navigation features (lifecycle
 
 ### TabPlacement values
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
 | `Auto` | Automatically determines the tab placement based on the target platform. Resolves to `Bottom` on iOS and Android, and `Top` on all other platforms. |
 | `Top` | Tabs are placed along the top edge. |
@@ -47,7 +47,7 @@ If you need a simple tab strip without page-based navigation features (lifecycle
 
 ### Attached properties
 
-| Attached Property | Type | Default | Description |
+| Attached Property | Type | Default | 说明 |
 | --- | --- | --- | --- |
 | `TabbedPage.IsTabEnabled` | `bool` | `true` | Set on a child `Page` to enable or disable its tab. A disabled tab cannot be selected by the user. |
 
@@ -62,9 +62,9 @@ Common icon values include:
 - `Bitmap` or other `IImage` implementations with a matching `IconTemplate`
 - `Geometry` or `StreamGeometry` with a matching `IconTemplate`
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| Event | 说明 |
 | --- | --- |
 | `SelectionChanged` | Raised when the selected tab changes. Provides `PreviousPage` and `CurrentPage`. |
 | `CurrentPageChanged` | Raised when the current page changes. |
@@ -377,7 +377,7 @@ You can nest a `TabbedPage` inside a `DrawerPage` to combine a side drawer with 
 
 <Image light={TabbedPageInDrawerPageScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="TabbedPage inside a DrawerPage"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentPage](/controls/navigation/contentpage)
 - [NavigationPage](/controls/navigation/navigationpage)

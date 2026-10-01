@@ -237,7 +237,7 @@ await animation.RunAsync(Rect);
 
 `RunAsync` returns a task which is completed when the animation ends. If an animation repeats infinitely, the task never ends, unless (1) the `RunAsync` method is cancelled by a `CancellationToken`, or (2) the target control is detached from the visual tree.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Animation Settings](/docs/graphics-animation/animation-settings): Duration, delay, iteration count, and playback direction.
 - [Easing Functions](/docs/graphics-animation/easing-functions): All available easing functions.

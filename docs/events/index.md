@@ -21,7 +21,7 @@ Avalonia uses a routed event system similar to WPF. Routed events travel (or "ro
 
 Every routed event has a routing strategy that determines how the event travels through the element tree:
 
-| Strategy | Direction | Description |
+| Strategy | Direction | 说明 |
 |---|---|---|
 | `Bubble` | Child to parent | The event fires on the source element first, then travels up through each parent until it reaches the root. This is the most common strategy. |
 | `Tunnel` | Parent to child | The event fires on the root element first, then travels down through the tree to the source element. Tunneling events are typically used for preview/interception scenarios. |
@@ -126,7 +126,7 @@ myPanel.AddHandler(Button.ClickEvent, OnButtonClick, RoutingStrategies.Bubble, h
 
 ## `RoutedEventArgs` properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Source` | `object?` | The element that originally raised the event. |
 | `Handled` | `bool` | Whether the event has been handled. Set to `true` to stop routing. |
@@ -183,7 +183,7 @@ Class handlers let you respond to events for all instances of a type, since they
 
 Class handlers are commonly used to define default event responses for custom controls. For more information, see [Defining events for custom controls](/docs/custom-controls/defining-events).
 
-## Next steps
+## 下一步 {#next-steps}
 
 - [Routed Events](/docs/input-interaction/routed-events): Detailed reference on the routed event system.
 - [Lifecycle Events](/docs/events/lifecycle-events): Events that fire during control creation, loading, and teardown.

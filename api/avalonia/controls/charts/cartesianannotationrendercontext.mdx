@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CartesianAnnotationRenderContext Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -51,30 +51,30 @@ public struct CartesianAnnotationRenderContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> CartesianAnnotationRenderContext
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> CartesianAnnotationRenderContext
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;CartesianAnnotationRenderContext&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;CartesianAnnotationRenderContext&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CartesianAnnotationRenderContext](#uid-e25baec046) | No summary available. |
+| [CartesianAnnotationRenderContext](#uid-e25baec046) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e25baec046"></span>
 
-### CartesianAnnotationRenderContext Constructor
+### CartesianAnnotationRenderContext 构造函数 {#cartesianannotationrendercontext-constructor}
 
 ```csharp
 public CartesianAnnotationRenderContext(Avalonia.Rect ChartArea, double MinX, double MaxX, double MinY, double MaxY, bool UsesContinuousHorizontalAxis, Func<double, double> NormalizeContinuousX, Func<double, double> NormalizeY)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `ChartArea` [Avalonia.Rect](xref:Avalonia.Rect)
 
@@ -102,26 +102,26 @@ public CartesianAnnotationRenderContext(Avalonia.Rect ChartArea, double MinX, do
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DataXToPixel](#uid-53982eeb07) | Converts a horizontal-axis value to a pixel X coordinate inside [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea). |
 | [DataYToPixel](#uid-67ce9aa81f) | Converts a vertical-axis value to a pixel Y coordinate inside [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea). |
-| [Deconstruct](#uid-ba1716d713) | No summary available. |
+| [Deconstruct](#uid-ba1716d713) | 暂无摘要。 |
 | [DeltaXToPixels](#uid-65fb17a6e7) | Converts an X-axis data delta to pixels using a midpoint origin. For logarithmic or scale-break axes, use [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaXToPixelsAt(double,double)](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaXToPixelsAt%28System.Double%2CSystem.Double%29) so the conversion is measured at the annotation's actual data origin. |
 | [DeltaXToPixelsAt](#uid-a34c8ecf80) | Converts an X-axis data delta to pixels at the specified data origin. |
 | [DeltaYToPixels](#uid-accbcd9ab6) | Converts a Y-axis data delta to pixels using a midpoint origin. For logarithmic or scale-break axes, use [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaYToPixelsAt(double,double)](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaYToPixelsAt%28System.Double%2CSystem.Double%29) so the conversion is measured at the annotation's actual data origin. |
 | [DeltaYToPixelsAt](#uid-f08e59ec31) | Converts a Y-axis data delta to pixels at the specified data origin. |
-| [Equals (2 overloads)](#uid-256d45595c) | No summary available. |
-| [GetHashCode](#uid-cc54e9d018) | No summary available. |
-| [ToString](#uid-0801a6c09e) | No summary available. |
+| [Equals（2 个重载）](#uid-256d45595c) | 暂无摘要。 |
+| [GetHashCode](#uid-cc54e9d018) | 暂无摘要。 |
+| [ToString](#uid-0801a6c09e) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-53982eeb07"></span>
 
-### DataXToPixel Method
+### DataXToPixel 方法 {#dataxtopixel-method}
 
 Converts a horizontal-axis value to a pixel X coordinate inside [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea).
 
@@ -129,14 +129,14 @@ Converts a horizontal-axis value to a pixel X coordinate inside [Avalonia.Contro
 public double DataXToPixel(double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `value` double
 
 The horizontal-axis value to convert.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 double
 
@@ -149,7 +149,7 @@ The pixel X coordinate for the supplied axis value.
 
 <span id="uid-67ce9aa81f"></span>
 
-### DataYToPixel Method
+### DataYToPixel 方法 {#dataytopixel-method}
 
 Converts a vertical-axis value to a pixel Y coordinate inside [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.ChartArea).
 
@@ -157,14 +157,14 @@ Converts a vertical-axis value to a pixel Y coordinate inside [Avalonia.Controls
 public double DataYToPixel(double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value` double
 
 The vertical-axis value to convert.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 double
 
@@ -177,13 +177,13 @@ The pixel Y coordinate for the supplied axis value.
 
 <span id="uid-ba1716d713"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(Avalonia.Rect& ChartArea, double& MinX, double& MaxX, double& MinY, double& MaxY, bool& UsesContinuousHorizontalAxis, Func<double, double>& NormalizeContinuousX, Func<double, double>& NormalizeY)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `ChartArea` [Avalonia.Rect](xref:Avalonia.Rect)&amp;
 
@@ -215,7 +215,7 @@ public void Deconstruct(Avalonia.Rect& ChartArea, double& MinX, double& MaxX, do
 
 <span id="uid-65fb17a6e7"></span>
 
-### DeltaXToPixels Method
+### DeltaXToPixels 方法 {#deltaxtopixels-method}
 
 Converts an X-axis data delta to pixels using a midpoint origin.
 For logarithmic or scale-break axes, use [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaXToPixelsAt(double,double)](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaXToPixelsAt%28System.Double%2CSystem.Double%29) so the
@@ -225,12 +225,12 @@ conversion is measured at the annotation's actual data origin.
 public double DeltaXToPixels(double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `value` double
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 double
 
@@ -241,7 +241,7 @@ double
 
 <span id="uid-a34c8ecf80"></span>
 
-### DeltaXToPixelsAt Method
+### DeltaXToPixelsAt 方法 {#deltaxtopixelsat-method}
 
 Converts an X-axis data delta to pixels at the specified data origin.
 
@@ -249,7 +249,7 @@ Converts an X-axis data delta to pixels at the specified data origin.
 public double DeltaXToPixelsAt(double origin, double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `origin` double
 
@@ -257,7 +257,7 @@ public double DeltaXToPixelsAt(double origin, double value)
 `value` double
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 double
 
@@ -268,7 +268,7 @@ double
 
 <span id="uid-accbcd9ab6"></span>
 
-### DeltaYToPixels Method
+### DeltaYToPixels 方法 {#deltaytopixels-method}
 
 Converts a Y-axis data delta to pixels using a midpoint origin.
 For logarithmic or scale-break axes, use [Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaYToPixelsAt(double,double)](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext.DeltaYToPixelsAt%28System.Double%2CSystem.Double%29) so the
@@ -278,12 +278,12 @@ conversion is measured at the annotation's actual data origin.
 public double DeltaYToPixels(double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `value` double
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 double
 
@@ -294,7 +294,7 @@ double
 
 <span id="uid-f08e59ec31"></span>
 
-### DeltaYToPixelsAt Method
+### DeltaYToPixelsAt 方法 {#deltaytopixelsat-method}
 
 Converts a Y-axis data delta to pixels at the specified data origin.
 
@@ -302,7 +302,7 @@ Converts a Y-axis data delta to pixels at the specified data origin.
 public double DeltaYToPixelsAt(double origin, double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `origin` double
 
@@ -310,7 +310,7 @@ public double DeltaYToPixelsAt(double origin, double value)
 `value` double
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 double
 
@@ -319,24 +319,24 @@ double
 
 <span id="uid-256d45595c"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d50631d9d9"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Charts.CartesianAnnotationRenderContext other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `other` [Avalonia.Controls.Charts.CartesianAnnotationRenderContext](xref:Avalonia.Controls.Charts.CartesianAnnotationRenderContext)
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 bool
 
@@ -347,18 +347,18 @@ bool
 
 <span id="uid-a29c59072c"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 bool
 
@@ -369,13 +369,13 @@ bool
 
 <span id="uid-cc54e9d018"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-8}
 
 int
 
@@ -386,37 +386,37 @@ int
 
 <span id="uid-0801a6c09e"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-9}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ChartArea](#uid-3ff9041975) | No summary available. |
-| [MaxX](#uid-26b9396ea6) | No summary available. |
-| [MaxY](#uid-a2b3ad783a) | No summary available. |
-| [MinX](#uid-8832f98e76) | No summary available. |
-| [MinY](#uid-b981b1441b) | No summary available. |
-| [NormalizeContinuousX](#uid-27bf84305b) | No summary available. |
-| [NormalizeY](#uid-0a05fec34b) | No summary available. |
-| [UsesContinuousHorizontalAxis](#uid-f8fe065a78) | No summary available. |
+| [ChartArea](#uid-3ff9041975) | 暂无摘要。 |
+| [MaxX](#uid-26b9396ea6) | 暂无摘要。 |
+| [MaxY](#uid-a2b3ad783a) | 暂无摘要。 |
+| [MinX](#uid-8832f98e76) | 暂无摘要。 |
+| [MinY](#uid-b981b1441b) | 暂无摘要。 |
+| [NormalizeContinuousX](#uid-27bf84305b) | 暂无摘要。 |
+| [NormalizeY](#uid-0a05fec34b) | 暂无摘要。 |
+| [UsesContinuousHorizontalAxis](#uid-f8fe065a78) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3ff9041975"></span>
 
-### ChartArea Property
+### ChartArea 属性 {#chartarea-property}
 
 ```csharp
 public Avalonia.Rect ChartArea { get; set; }
@@ -428,7 +428,7 @@ public Avalonia.Rect ChartArea { get; set; }
 
 <span id="uid-26b9396ea6"></span>
 
-### MaxX Property
+### MaxX 属性 {#maxx-property}
 
 ```csharp
 public double MaxX { get; set; }
@@ -440,7 +440,7 @@ public double MaxX { get; set; }
 
 <span id="uid-a2b3ad783a"></span>
 
-### MaxY Property
+### MaxY 属性 {#maxy-property}
 
 ```csharp
 public double MaxY { get; set; }
@@ -452,7 +452,7 @@ public double MaxY { get; set; }
 
 <span id="uid-8832f98e76"></span>
 
-### MinX Property
+### MinX 属性 {#minx-property}
 
 ```csharp
 public double MinX { get; set; }
@@ -464,7 +464,7 @@ public double MinX { get; set; }
 
 <span id="uid-b981b1441b"></span>
 
-### MinY Property
+### MinY 属性 {#miny-property}
 
 ```csharp
 public double MinY { get; set; }
@@ -476,7 +476,7 @@ public double MinY { get; set; }
 
 <span id="uid-27bf84305b"></span>
 
-### NormalizeContinuousX Property
+### NormalizeContinuousX 属性 {#normalizecontinuousx-property}
 
 ```csharp
 public Func<double, double> NormalizeContinuousX { get; set; }
@@ -488,7 +488,7 @@ public Func<double, double> NormalizeContinuousX { get; set; }
 
 <span id="uid-0a05fec34b"></span>
 
-### NormalizeY Property
+### NormalizeY 属性 {#normalizey-property}
 
 ```csharp
 public Func<double, double> NormalizeY { get; set; }
@@ -500,7 +500,7 @@ public Func<double, double> NormalizeY { get; set; }
 
 <span id="uid-f8fe065a78"></span>
 
-### UsesContinuousHorizontalAxis Property
+### UsesContinuousHorizontalAxis 属性 {#usescontinuoushorizontalaxis-property}
 
 ```csharp
 public bool UsesContinuousHorizontalAxis { get; set; }

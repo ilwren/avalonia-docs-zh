@@ -37,7 +37,7 @@ public class MyControl : Control
 
 The `Register` method accepts the following parameters:
 
-| Parameter | Description |
+| Parameter | 说明 |
 |---|---|
 | `name` | The name of the property. Must match the CLR property name. |
 | `defaultValue` | The default value for the property. |
@@ -188,7 +188,7 @@ protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs chang
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Value precedence](/docs/properties/value-precedence): Learn how Avalonia resolves competing property values from styles, animations, and local values.
 - [Metadata and callbacks](/docs/properties/metadata-and-callbacks): Learn about default values, coercion, and validation.

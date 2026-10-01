@@ -47,7 +47,7 @@ There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFa
 
 ### PieChart
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `InnerRadiusFactor` | The size of the center hole, from `0.0` to `1.0`. | `0.0` |
 | `Title` | Chart title displayed above the donut. | `null` |
@@ -55,7 +55,7 @@ There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFa
 
 ### PieSeries
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data slices. | `null` |
 | `LabelPath` | Path to the text to display on or near slices. | `null` |

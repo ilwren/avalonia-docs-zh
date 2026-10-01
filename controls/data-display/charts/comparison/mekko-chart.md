@@ -47,7 +47,7 @@ public ObservableCollection<MekkoColumn> MekkoData { get; } = new()
 
 ## Common properties
 
-| Property | Description | Default |
+| Property | 说明 | Default |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of Mekko columns. | `null` |
 | `CategoryPath` | Path to the column label. | `null` |
@@ -57,7 +57,7 @@ public ObservableCollection<MekkoColumn> MekkoData { get; } = new()
 | `ShowLabels` | Whether to show column labels. | `true` |
 | `ShowPercentages` | Whether to draw percentage labels inside segments. | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Stacked bar chart](/controls/data-display/charts/cartesian/stacked-bar-chart)
 - [Bar chart](/controls/data-display/charts/cartesian/bar-chart)

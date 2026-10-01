@@ -25,7 +25,7 @@ The scaling settings for an image are the same as for the [Viewbox](/controls/la
 
 ## Common properties
 
-| Property | Type | Description |
+| Property | Type | 说明 |
 |---|---|---|
 | `Source` | `IImage` | The image to display. Can be set from an asset URI string, a `Bitmap`, or a `DrawingImage`. |
 | `Stretch` | `Stretch` | How the image is resized to fill its bounds. See table below. |
@@ -34,7 +34,7 @@ The scaling settings for an image are the same as for the [Viewbox](/controls/la
 
 ### Stretch modes
 
-| Value | Behavior |
+| 值 | Behavior |
 |---|---|
 | `None` | The image is displayed at its original size. |
 | `Fill` | The image is resized to fill the bounds. Aspect ratio is not preserved. |
@@ -85,7 +85,7 @@ This example is using two images, where the second image is using the `Multiply`
 
 <Image light={BlendModeMultiply} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Image API reference](/api/avalonia/controls/image)
 - [`Image.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Image.cs)

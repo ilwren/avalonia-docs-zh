@@ -1,11 +1,11 @@
 ---
 id: adding-some-layout
-title: Adding some layout
-description: How to use layout controls to have multiple controls on your temperature converter app. Part 3 of 7 the Avalonia starter tutorial.
+title: 加入布局
+description: 如何用布局控件在温度换算器中摆放多个控件。Avalonia 入门教程第 3 篇，共 7 篇。
 doc-type: tutorial
 video:
   src: https://youtu.be/eFGHa8BIxhY
-  title: How to Build Layouts in Avalonia 12 — Rows, Columns & Spacing
+  title: 在 Avalonia 12 中搭建布局 —— 行、列与间距
 ---
 
 import TemperatureConverterTextOnly from '/img/get-started/temperature-converter-text-only.png';
@@ -13,17 +13,17 @@ import TemperatureConverterBlueBorder from '/img/get-started/temperature-convert
 import TemperatureConverterEmptyGrid from '/img/get-started/temperature-converter-empty-grid.png';
 import TemperatureConverterFilledGrid from '/img/get-started/temperature-converter-filled-grid.png';
 
-At this point, your temperature converter app has a single button in the center of the window. You cannot add any more elements, because each Avalonia window allows only one control in its content zone. (More on layout zones later, on the next page: [Customizing the Avalonia window](/docs/get-started/starter-tutorial/customizing-the-avalonia-window).)
+到目前为止，你的温度换算器窗口正中只有一个按钮，而且再也塞不下别的元素了 —— 因为每个 Avalonia 窗口的内容区只允许放一个控件。（关于布局区域，下一篇[定制 Avalonia 窗口](/docs/get-started/starter-tutorial/customizing-the-avalonia-window)会详细介绍。）
 
-To place multiple UI elements in the window, you must use a **layout control.**
+想在窗口里放多个 UI 元素，就必须借助**布局控件**。
 
-For a full list of Avalonia layout controls, go to the Layout tab of the [Controls reference](/controls).
+Avalonia 布局控件的完整清单，请见[控件参考](/controls)的 Layout 选项卡。
 
-## Inserting a stack panel
+## 插入堆叠面板 {#inserting-a-stack-panel}
 
-You can use the [`StackPanel`](/controls/layout/panels/stackpanel) layout control to place some text above the button.
+可以用 [`StackPanel`](/controls/layout/panels/stackpanel) 布局控件，在按钮上方放一段文字。
 
-1. In the file **MainWindow.axaml**, enclose your `Button` with a `<StackPanel>...</StackPanel>` tag.
+1. 在 **MainWindow.axaml** 文件中，用一对 `<StackPanel>...</StackPanel>` 标签把 `Button` 包起来。
 
 ```xml
 <StackPanel>
@@ -31,7 +31,7 @@ You can use the [`StackPanel`](/controls/layout/panels/stackpanel) layout contro
 </StackPanel>
 ```
 
-2. Add a [`TextBlock`](/api/avalonia/controls/textblock) above the Button. (You may recall the `TextBlock` control from the default **MainWindow.axaml**, which prints text in the window.) Set the attributes of the `TextBlock` as follows:
+2. 在 Button 上方添加一个 [`TextBlock`](/api/avalonia/controls/textblock)。（你应该还记得默认 **MainWindow.axaml** 里那个用来在窗口中显示文字的 `TextBlock` 控件。）把 `TextBlock` 的各项特性设置如下：
 
 - `Margin="5"`
 - `FontSize="24"`
@@ -50,11 +50,11 @@ You can use the [`StackPanel`](/controls/layout/panels/stackpanel) layout contro
 </StackPanel>
 ```
 
-3. Run the app or check the previewer. You should see the text “Temperature Converter” positioned above the **Calculate** button.
+3. 运行应用，或者看一眼预览器。“Temperature Converter” 这段文字应该出现在 **Calculate** 按钮上方。
 
 <Image light={TemperatureConverterTextOnly} alt="A screenshot showing a work-in-progress app, with text above a button." position="center" maxWidth={400} cornerRadius="true" margin="0,0,30,0"/>
 
-4. Enclose the `TextBlock` with a `<Border>...</Border>` tag. Set the attributes of the `Border` as follows:
+4. 用一对 `<Border>...</Border>` 标签把 `TextBlock` 包起来，并把 `Border` 的各项特性设置如下：
 
 - `Margin="5"`
 - `CornerRadius="10"`
@@ -74,20 +74,20 @@ You can use the [`StackPanel`](/controls/layout/panels/stackpanel) layout contro
 </StackPanel>
 ```
 
-5. Run the app or check the previewer. You should see that the text “Temperature Converter” is now inside a rounded blue box.
+5. 运行应用，或者看一眼预览器。“Temperature Converter” 这段文字现在应该被包在一个蓝色圆角方框里。
 
 <Image light={TemperatureConverterBlueBorder} alt="A screenshot showing a work-in-progress app, with text enclosed inside a blue border above a button." position="center" maxWidth={400} cornerRadius="true" margin="0,0,30,0"/>
 
 :::note
-By default, [`StackPanel`](/controls/layout/panels/stackpanel) arranges elements in a vertical stack. You can change this to horizontal by setting the `Orientation` attribute to `Horizontal`.
+[`StackPanel`](/controls/layout/panels/stackpanel) 默认把子元素纵向堆叠。把 `Orientation` 特性设为 `Horizontal` 即可改为横向排列。
 :::
 
-## Inserting a grid
+## 插入网格 {#inserting-a-grid}
 
-Next, add a [`Grid`](/api/avalonia/controls/grid) layout control to the temperature converter app. `Grid` creates cells in rows and columns, into which you can place more controls.
+接下来给温度换算器加一个 [`Grid`](/api/avalonia/controls/grid) 布局控件。`Grid` 会划分出由行和列构成的单元格，你可以往里面继续放控件。
 
-1. Stop the app if it is still running.
-2. In the file **MainWindow.axaml**, insert a `<Grid>...</Grid>` tag between `</Border>` and `<Button>`.
+1. 如果应用还在运行，先把它停掉。
+2. 在 **MainWindow.axaml** 文件中，于 `</Border>` 和 `<Button>` 之间插入一个 `<Grid>...</Grid>` 标签。
 
 ```xml
 <StackPanel>
@@ -106,24 +106,24 @@ Next, add a [`Grid`](/api/avalonia/controls/grid) layout control to the temperat
 </StackPanel>
 ```
 
-We have specified some attributes for the `Grid`:
+我们给这个 `Grid` 指定了几项特性：
 
-- It has two columns and two rows.
-- Gridlines are visible.
-- Cell height automatically scales to match the content. Because the automatic height of an empty cell is zero, the `Grid` currently appears on your previewer as a horizontal straight line.
+- 它有两列两行。
+- 网格线可见。
+- 单元格高度随内容自动伸缩。由于空单元格的自动高度为零，此刻预览器里的 `Grid` 看上去只是一条水平直线。
 
 <Image light={TemperatureConverterEmptyGrid} alt="A screenshot showing a work-in-progress app, with a title, a dotted line, and a button." position="center" maxWidth={400} cornerRadius="true"/>
 
 :::tip
-In this example, `Grid` goes inside `StackPanel` so that the entire grid's contents appear between the "Temperature Converter" text box and the **Calculate** button. There are many options for combining layout controls to get the exact UI design you need. See [Choosing a layout panel](/docs/layout/choosing-a-layout-panel) for more information on when to use different types of layout control.
+本例中 `Grid` 放在 `StackPanel` 内部，于是整个网格的内容都会落在 “Temperature Converter” 文本框和 **Calculate** 按钮之间。布局控件可以有很多种组合方式，总能拼出你想要的界面。关于各类布局控件各自适合什么场景，请参阅[如何选择布局面板](/docs/layout/choosing-a-layout-panel)。
 :::
 
-## Inserting controls in the grid
+## 往网格里放控件 {#inserting-controls-in-the-grid}
 
-1. Insert `TextBlock` controls in the left cells of the grid, using the `Grid.Row` and `Grid.Column` attributes to assign the target cells. Use these text blocks to fill the cells with the text “Celsius” and “Fahrenheit”.
+1. 在网格左侧的单元格中各放一个 `TextBlock` 控件，用 `Grid.Row` 和 `Grid.Column` 特性指定目标单元格，并让这两个文本块分别显示 “Celsius” 和 “Fahrenheit”。
 
 :::note
-The first cell in a row or column of a `Grid` is numbered 0.
+`Grid` 中每行每列的第一个单元格，编号都是 0。
 :::
 
 ```xml
@@ -135,7 +135,7 @@ The first cell in a row or column of a `Grid` is numbered 0.
         </Grid>
 ```
 
-2. Insert `TextBox` controls in the right cells of the grid, again using the `Grid.Row` and `Grid.Column` attributes to assign the target cells. `TextBox` is a control that creates an area for keyboard input.
+2. 在网格右侧的单元格中各放一个 `TextBox` 控件，同样用 `Grid.Row` 和 `Grid.Column` 特性指定目标单元格。`TextBox` 这个控件会生成一块可供键盘输入的区域。
 
 ```xml
         <Grid ShowGridLines="True" Margin="5" 
@@ -148,8 +148,8 @@ The first cell in a row or column of a `Grid` is numbered 0.
         </Grid>
 ```
 
-3. Run the app or check the previewer. You should see your text and input boxes added to the window, within the cells marked by the gridlines.
+3. 运行应用，或者看一眼预览器。文字和输入框应该都已经出现在窗口中，分别落在网格线划出的单元格里。
 
 <Image light={TemperatureConverterFilledGrid} alt="A screenshot showing a work-in-progress app, with a title, input boxes in a grid, and a button." position="center" maxWidth={400} cornerRadius="true" margin="10,0,30,0"/>
 
-On the next page of this tutorial, you will learn how to adjust the size of the app window.
+本教程下一篇会讲如何调整应用窗口的尺寸。

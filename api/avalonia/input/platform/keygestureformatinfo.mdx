@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">KeyGestureFormatInfo Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/Platform/KeyGestureFormatInfo.cs">KeyGestureFormatInfo.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/Platform/KeyGestureFormatInfo.cs">KeyGestureFormatInfo.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public class KeyGestureFormatInfo
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> KeyGestureFormatInfo
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> KeyGestureFormatInfo
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IFormatProvider
+<span className="apiref-page__meta-label">实现接口：</span> IFormatProvider
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [KeyGestureFormatInfo](#uid-daad60c40d) | No summary available. |
+| [KeyGestureFormatInfo](#uid-daad60c40d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-daad60c40d"></span>
 
-### KeyGestureFormatInfo Constructor
+### KeyGestureFormatInfo 构造函数 {#keygestureformatinfo-constructor}
 
 ```csharp
 public KeyGestureFormatInfo(System.Collections.Generic.IReadOnlyDictionary<Avalonia.Input.Key, string> platformKeyOverrides, string meta, string ctrl, string alt, string shift)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `platformKeyOverrides` System.Collections.Generic.IReadOnlyDictionary&lt;[Avalonia.Input.Key](xref:Avalonia.Input.Key), string&gt;
 
@@ -96,19 +96,19 @@ public KeyGestureFormatInfo(System.Collections.Generic.IReadOnlyDictionary<Avalo
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FormatKey](#uid-f5307b89c8) | Checks the platformKeyOverrides and s_commonKeyOverrides Dictionaries, in order, for the appropriate string to represent the given Key on this platform. NOTE: If platformKeyOverrides is null, this is assumed to be the Invariant and the Dictionaries are not checked. The plain Enum string is returned instead. |
-| [GetFormat](#uid-7ea541db92) | No summary available. |
+| [GetFormat](#uid-7ea541db92) | 暂无摘要。 |
 | [GetInstance](#uid-c918e9fb28) | Gets the most appropriate [KeyGestureFormatInfo](xref:Avalonia.Input.Platform.KeyGestureFormatInfo) for the IFormatProvider requested. This will be, in order: 1. The provided IFormatProvider as a [KeyGestureFormatInfo](xref:Avalonia.Input.Platform.KeyGestureFormatInfo) 2. The currently registered platform specific [KeyGestureFormatInfo](xref:Avalonia.Input.Platform.KeyGestureFormatInfo), if present. 3. The Invariant otherwise. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f5307b89c8"></span>
 
-### FormatKey Method
+### FormatKey 方法 {#formatkey-method}
 
 Checks the platformKeyOverrides and s_commonKeyOverrides Dictionaries, in order, for the appropriate
 string to represent the given Key on this platform.
@@ -119,14 +119,14 @@ The plain Enum string is returned instead.
 public string FormatKey(Avalonia.Input.Key key)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `key` [Avalonia.Input.Key](xref:Avalonia.Input.Key)
 
 The Key to format.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 string
 
@@ -139,18 +139,18 @@ The appropriate platform specific or common override if present, key.ToString() 
 
 <span id="uid-7ea541db92"></span>
 
-### GetFormat Method
+### GetFormat 方法 {#getformat-method}
 
 ```csharp
 public object GetFormat(Type formatType)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
-`formatType` Type
+`formatType` 类型
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 
@@ -161,7 +161,7 @@ object
 
 <span id="uid-c918e9fb28"></span>
 
-### GetInstance Method
+### GetInstance 方法 {#getinstance-method}
 
 Gets the most appropriate [KeyGestureFormatInfo](xref:Avalonia.Input.Platform.KeyGestureFormatInfo) for the IFormatProvider requested. This will be, in order:
 1. The provided IFormatProvider as a [KeyGestureFormatInfo](xref:Avalonia.Input.Platform.KeyGestureFormatInfo)
@@ -172,23 +172,23 @@ Gets the most appropriate [KeyGestureFormatInfo](xref:Avalonia.Input.Platform.Ke
 public Avalonia.Input.Platform.KeyGestureFormatInfo GetInstance(IFormatProvider formatProvider)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `formatProvider` IFormatProvider
 
 The IFormatProvider to get a [KeyGestureFormatInfo](xref:Avalonia.Input.Platform.KeyGestureFormatInfo) for.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Input.Platform.KeyGestureFormatInfo](xref:Avalonia.Input.Platform.KeyGestureFormatInfo)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Alt](#uid-ccf04534ec) | The string used to represent Alt on the appropriate platform. Defaults to "Alt". |
 | [Ctrl](#uid-7adb04c43b) | The string used to represent Ctrl on the appropriate platform. Defaults to "Ctrl". |
@@ -200,7 +200,7 @@ The IFormatProvider to get a [KeyGestureFormatInfo](xref:Avalonia.Input.Platform
 
 <span id="uid-ccf04534ec"></span>
 
-### Alt Property
+### Alt 属性 {#alt-property}
 
 The string used to represent Alt on the appropriate platform. Defaults to "Alt".
 
@@ -214,7 +214,7 @@ public string Alt { get; set; }
 
 <span id="uid-7adb04c43b"></span>
 
-### Ctrl Property
+### Ctrl 属性 {#ctrl-property}
 
 The string used to represent Ctrl on the appropriate platform. Defaults to "Ctrl".
 
@@ -228,7 +228,7 @@ public string Ctrl { get; set; }
 
 <span id="uid-9acb50d4dd"></span>
 
-### Invariant Property
+### Invariant 属性 {#invariant-property}
 
 The Invariant format. Only uses strings straight from the appropriate Enums.
 
@@ -242,7 +242,7 @@ public Avalonia.Input.Platform.KeyGestureFormatInfo Invariant { get; set; }
 
 <span id="uid-bdbb98095f"></span>
 
-### Meta Property
+### Meta 属性 {#meta-property}
 
 The string used to represent Meta on the appropriate platform. Defaults to "Cmd".
 
@@ -256,7 +256,7 @@ public string Meta { get; set; }
 
 <span id="uid-1970ae80f7"></span>
 
-### Shift Property
+### Shift 属性 {#shift-property}
 
 The string used to represent Shift on the appropriate platform. Defaults to "Shift".
 

@@ -67,7 +67,7 @@ The CLR property getter/setter must **only** call `GetValue` and `SetValue`. Avo
 
 The `Register` method accepts these optional parameters:
 
-| Parameter | Description |
+| Parameter | 说明 |
 |---|---|
 | `name` | The property name. Must match the CLR property name. |
 | `defaultValue` | The default value of the property. |
@@ -566,7 +566,7 @@ The following example shows the `IsDimmed` attached property from the previous s
 - **Adding a backing field for a styled property.** Styled properties store values inside the Avalonia property system. If you read from a local field, you will get stale data. Always use `GetValue` and `SetValue`.
 - **Forgetting to call `base.OnPropertyChanged`.** If you override `OnPropertyChanged`, always call the base implementation first so the framework can process the change.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia property system](/docs/properties): Full reference for styled, direct, and attached properties.
 - [Property value precedence](/docs/properties/value-precedence): How Avalonia resolves competing property values.

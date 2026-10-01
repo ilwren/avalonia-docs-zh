@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CompositionObject Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering.Composition</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering.Composition</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionObject.cs">CompositionObject.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionObject.cs">CompositionObject.cs</a>
 </div>
 
 </div>
@@ -56,19 +56,19 @@ public class CompositionObject
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositionObject
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositionObject
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="animations/compositionanimation">CompositionAnimation</a>, <a href="animations/compositionanimationgroup">CompositionAnimationGroup</a>, <a href="animations/implicitanimationcollection">ImplicitAnimationCollection</a>, <a href="compositionpropertyset">CompositionPropertySet</a>, <a href="compositionsurface">CompositionSurface</a>, <a href="compositionvisual">CompositionVisual</a>, <a href="compositionvisualcollection">CompositionVisualCollection</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="animations/compositionanimation">CompositionAnimation</a>, <a href="animations/compositionanimationgroup">CompositionAnimationGroup</a>, <a href="animations/implicitanimationcollection">ImplicitAnimationCollection</a>, <a href="compositionpropertyset">CompositionPropertySet</a>, <a href="compositionsurface">CompositionSurface</a>, <a href="compositionvisual">CompositionVisual</a>, <a href="compositionvisualcollection">CompositionVisualCollection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> ICompositorSerializable
+<span className="apiref-page__meta-label">实现接口：</span> ICompositorSerializable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [StartAnimation](#uid-4d2f25fec7) | Connects an animation with the specified property of the object and starts the animation. |
 | [StartAnimationGroup](#uid-4846f860a0) | Starts an animation group. The StartAnimationGroup method on [CompositionObject](xref:Avalonia.Rendering.Composition.CompositionObject) lets you start [CompositionAnimationGroup](xref:Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup). All the animations in the group will be started at the same time on the object. |
@@ -79,7 +79,7 @@ public class CompositionObject
 
 <span id="uid-4d2f25fec7"></span>
 
-### StartAnimation Method
+### StartAnimation 方法 {#startanimation-method}
 
 Connects an animation with the specified property of the object and starts the animation.
 
@@ -87,7 +87,7 @@ Connects an animation with the specified property of the object and starts the a
 public void StartAnimation(string propertyName, Avalonia.Rendering.Composition.Animations.CompositionAnimation animation)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `propertyName` string
 
@@ -101,7 +101,7 @@ public void StartAnimation(string propertyName, Avalonia.Rendering.Composition.A
 
 <span id="uid-4846f860a0"></span>
 
-### StartAnimationGroup Method
+### StartAnimationGroup 方法 {#startanimationgroup-method}
 
 Starts an animation group.
 The StartAnimationGroup method on [CompositionObject](xref:Avalonia.Rendering.Composition.CompositionObject) lets you start [CompositionAnimationGroup](xref:Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup).
@@ -111,7 +111,7 @@ All the animations in the group will be started at the same time on the object.
 public void StartAnimationGroup(Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase grp)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `grp` [Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase](xref:Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase)
 
@@ -122,7 +122,7 @@ public void StartAnimationGroup(Avalonia.Rendering.Composition.Animations.ICompo
 
 <span id="uid-01077c2b21"></span>
 
-### StopAnimation Method
+### StopAnimation 方法 {#stopanimation-method}
 
 Disconnects an animation from the specified property and stops the animation.
 
@@ -130,7 +130,7 @@ Disconnects an animation from the specified property and stops the animation.
 public void StopAnimation(string propertyName)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `propertyName` string
 
@@ -143,7 +143,7 @@ The name of the property to disconnect the animation from.
 
 <span id="uid-81dbd02845"></span>
 
-### StopAnimationGroup Method
+### StopAnimationGroup 方法 {#stopanimationgroup-method}
 
 Stops an animation group.
 
@@ -151,7 +151,7 @@ Stops an animation group.
 public void StopAnimationGroup(Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase grp)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `grp` [Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase](xref:Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase)
 
@@ -160,19 +160,19 @@ The animation group to stop.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Compositor](#uid-bd6bbc1391) | The associated Compositor |
 | [ImplicitAnimations](#uid-3929e9ea34) | The collection of implicit animations attached to this object. |
-| [IsDisposed](#uid-e01437c946) | No summary available. |
+| [IsDisposed](#uid-e01437c946) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bd6bbc1391"></span>
 
-### Compositor Property
+### Compositor 属性 {#compositor-property}
 
 The associated Compositor
 
@@ -186,7 +186,7 @@ public Avalonia.Rendering.Composition.Compositor Compositor { get; set; }
 
 <span id="uid-3929e9ea34"></span>
 
-### ImplicitAnimations Property
+### ImplicitAnimations 属性 {#implicitanimations-property}
 
 The collection of implicit animations attached to this object.
 
@@ -200,7 +200,7 @@ public Avalonia.Rendering.Composition.Animations.ImplicitAnimationCollection Imp
 
 <span id="uid-e01437c946"></span>
 
-### IsDisposed Property
+### IsDisposed 属性 {#isdisposed-property}
 
 ```csharp
 public bool IsDisposed { get; set; }

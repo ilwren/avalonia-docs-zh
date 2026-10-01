@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IFontCollection Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.Fonts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.Fonts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Fonts/IFontCollection.cs">IFontCollection.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Fonts/IFontCollection.cs">IFontCollection.cs</a>
 </div>
 
 </div>
@@ -55,36 +55,36 @@ public interface IFontCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEnumerable&lt;FontFamily&gt;, IReadOnlyCollection&lt;FontFamily&gt;, IReadOnlyList&lt;FontFamily&gt;, IEnumerable, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IEnumerable&lt;FontFamily&gt;, IReadOnlyCollection&lt;FontFamily&gt;, IReadOnlyList&lt;FontFamily&gt;, IEnumerable, IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Implementations of this interface allow applications to retrieve font families, match
 characters to typefaces, and obtain glyph typefaces based on specific font properties.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TryCreateSyntheticGlyphTypeface](#uid-1c3aa817f3) | No summary available. |
-| [TryGetFamilyTypefaces](#uid-535a1f6c5a) | No summary available. |
-| [TryGetGlyphTypeface](#uid-ebfb3e8f85) | No summary available. |
-| [TryGetNearestMatch](#uid-0fec697313) | No summary available. |
-| [TryMatchCharacter](#uid-8c928c04ca) | No summary available. |
+| [TryCreateSyntheticGlyphTypeface](#uid-1c3aa817f3) | 暂无摘要。 |
+| [TryGetFamilyTypefaces](#uid-535a1f6c5a) | 暂无摘要。 |
+| [TryGetGlyphTypeface](#uid-ebfb3e8f85) | 暂无摘要。 |
+| [TryGetNearestMatch](#uid-0fec697313) | 暂无摘要。 |
+| [TryMatchCharacter](#uid-8c928c04ca) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1c3aa817f3"></span>
 
-### TryCreateSyntheticGlyphTypeface Method
+### TryCreateSyntheticGlyphTypeface 方法 {#trycreatesyntheticglyphtypeface-method}
 
 ```csharp
 public bool TryCreateSyntheticGlyphTypeface(Avalonia.Media.GlyphTypeface glyphTypeface, Avalonia.Media.FontStyle style, Avalonia.Media.FontWeight weight, Avalonia.Media.FontStretch stretch, Avalonia.Media.GlyphTypeface& syntheticGlyphTypeface)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `glyphTypeface` [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface)
 
@@ -101,7 +101,7 @@ public bool TryCreateSyntheticGlyphTypeface(Avalonia.Media.GlyphTypeface glyphTy
 `syntheticGlyphTypeface` [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface)&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -112,13 +112,13 @@ bool
 
 <span id="uid-535a1f6c5a"></span>
 
-### TryGetFamilyTypefaces Method
+### TryGetFamilyTypefaces 方法 {#trygetfamilytypefaces-method}
 
 ```csharp
 public bool TryGetFamilyTypefaces(string familyName, System.Collections.Generic.IReadOnlyList<Avalonia.Media.Typeface>& familyTypefaces)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `familyName` string
 
@@ -126,7 +126,7 @@ public bool TryGetFamilyTypefaces(string familyName, System.Collections.Generic.
 `familyTypefaces` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Media.Typeface](xref:Avalonia.Media.Typeface)&gt;&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -137,13 +137,13 @@ bool
 
 <span id="uid-ebfb3e8f85"></span>
 
-### TryGetGlyphTypeface Method
+### TryGetGlyphTypeface 方法 {#trygetglyphtypeface-method}
 
 ```csharp
 public bool TryGetGlyphTypeface(string familyName, Avalonia.Media.FontStyle style, Avalonia.Media.FontWeight weight, Avalonia.Media.FontStretch stretch, Avalonia.Media.GlyphTypeface& glyphTypeface)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `familyName` string
 
@@ -160,7 +160,7 @@ public bool TryGetGlyphTypeface(string familyName, Avalonia.Media.FontStyle styl
 `glyphTypeface` [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
@@ -171,13 +171,13 @@ bool
 
 <span id="uid-0fec697313"></span>
 
-### TryGetNearestMatch Method
+### TryGetNearestMatch 方法 {#trygetnearestmatch-method}
 
 ```csharp
 public bool TryGetNearestMatch(string familyName, Avalonia.Media.FontStyle style, Avalonia.Media.FontWeight weight, Avalonia.Media.FontStretch stretch, Avalonia.Media.GlyphTypeface& glyphTypeface)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `familyName` string
 
@@ -194,7 +194,7 @@ public bool TryGetNearestMatch(string familyName, Avalonia.Media.FontStyle style
 `glyphTypeface` [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -205,13 +205,13 @@ bool
 
 <span id="uid-8c928c04ca"></span>
 
-### TryMatchCharacter Method
+### TryMatchCharacter 方法 {#trymatchcharacter-method}
 
 ```csharp
 public bool TryMatchCharacter(int codepoint, Avalonia.Media.FontStyle fontStyle, Avalonia.Media.FontWeight fontWeight, Avalonia.Media.FontStretch fontStretch, string familyName, System.Globalization.CultureInfo culture, Avalonia.Media.Typeface& typeface)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `codepoint` int
 
@@ -234,16 +234,16 @@ public bool TryMatchCharacter(int codepoint, Avalonia.Media.FontStyle fontStyle,
 `typeface` [Avalonia.Media.Typeface](xref:Avalonia.Media.Typeface)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Key](#uid-dcc4272e5f) | Get the font collection's key. |
 
@@ -251,7 +251,7 @@ bool
 
 <span id="uid-dcc4272e5f"></span>
 
-### Key Property
+### Key 属性 {#key-property}
 
 Get the font collection's key.
 

@@ -43,7 +43,7 @@ Then build and run as normal. The app will be deployed to your connected device.
 
 Publishing an Avalonia app for iOS generates an `.ipa` file, which is an iOS app archive ready for distribution. Distributing an iOS app requires that it is signed using a provisioning profile, which contains code signing information and the intended distribution mechanism.
 
-### Prerequisites
+### 前置条件 {#prerequisites}
 
 - A Mac with Xcode installed (iOS apps must be built on macOS)
 - An [Apple Developer Program](https://developer.apple.com/programs/) membership (required for distribution)
@@ -98,7 +98,7 @@ dotnet publish -f net9.0-ios -c Release \
 
 The following properties can be passed on the command line with `-p:` or set in a `<PropertyGroup>` in your project file:
 
-| Property | Description |
+| Property | 说明 |
 |---|---|
 | `ArchiveOnBuild` | Set to `true` to produce the `.ipa`. |
 | `RuntimeIdentifier` | The target runtime. Use `ios-arm64`. |
@@ -145,6 +145,6 @@ dotnet publish -f net10.0-maccatalyst -c Release
 
 Mac Catalyst apps can be distributed through the Mac App Store or as signed `.app` bundles. The signing and distribution process follows the same pattern as iOS, using Apple Developer certificates and provisioning profiles.
 
-## See also
+## 另请参阅 {#see-also}
 
 - [iOS platform setup](/docs/platform-specific-guides/ios)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ChildIndexChangedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.LogicalTree</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.LogicalTree</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/ChildIndexChangedEventArgs.cs">ChildIndexChangedEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/ChildIndexChangedEventArgs.cs">ChildIndexChangedEventArgs.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class ChildIndexChangedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> ChildIndexChangedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> ChildIndexChangedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ChildIndexChangedEventArgs](#uid-d6acff5998) | Initializes a new instance of the [Avalonia.LogicalTree.ChildIndexChangedEventArgs](xref:Avalonia.LogicalTree.ChildIndexChangedEventArgs) class with an action of [Avalonia.LogicalTree.ChildIndexChangedAction.ChildIndexChanged](xref:Avalonia.LogicalTree.ChildIndexChangedAction.ChildIndexChanged). |
 
@@ -68,7 +68,7 @@ public class ChildIndexChangedEventArgs
 
 <span id="uid-d6acff5998"></span>
 
-### ChildIndexChangedEventArgs Constructor
+### ChildIndexChangedEventArgs 构造函数 {#childindexchangedeventargs-constructor}
 
 Initializes a new instance of the [Avalonia.LogicalTree.ChildIndexChangedEventArgs](xref:Avalonia.LogicalTree.ChildIndexChangedEventArgs) class with
 an action of [Avalonia.LogicalTree.ChildIndexChangedAction.ChildIndexChanged](xref:Avalonia.LogicalTree.ChildIndexChangedAction.ChildIndexChanged).
@@ -77,7 +77,7 @@ an action of [Avalonia.LogicalTree.ChildIndexChangedAction.ChildIndexChanged](xr
 public ChildIndexChangedEventArgs(Avalonia.LogicalTree.ILogical child, int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `child` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
@@ -91,9 +91,9 @@ The new index of the child.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Action](#uid-5994cf29b4) | Gets the type of change action that ocurred on the list control. |
 | [Child](#uid-8b58905c7b) | Gets the logical child whose index was changed or null if all children should be re-evaluated. |
@@ -105,7 +105,7 @@ The new index of the child.
 
 <span id="uid-5994cf29b4"></span>
 
-### Action Property
+### Action 属性 {#action-property}
 
 Gets the type of change action that ocurred on the list control.
 
@@ -119,7 +119,7 @@ public Avalonia.LogicalTree.ChildIndexChangedAction Action { get; set; }
 
 <span id="uid-8b58905c7b"></span>
 
-### Child Property
+### Child 属性 {#child-property}
 
 Gets the logical child whose index was changed or null if all children should be re-evaluated.
 
@@ -133,7 +133,7 @@ public Avalonia.LogicalTree.ILogical Child { get; set; }
 
 <span id="uid-ee7c1cef4b"></span>
 
-### ChildIndexesReset Property
+### ChildIndexesReset 属性 {#childindexesreset-property}
 
 Gets an instance of the [Avalonia.LogicalTree.ChildIndexChangedEventArgs](xref:Avalonia.LogicalTree.ChildIndexChangedEventArgs) with an action of
 [Avalonia.LogicalTree.ChildIndexChangedAction.ChildIndexesReset](xref:Avalonia.LogicalTree.ChildIndexChangedAction.ChildIndexesReset).
@@ -148,7 +148,7 @@ public Avalonia.LogicalTree.ChildIndexChangedEventArgs ChildIndexesReset { get; 
 
 <span id="uid-49f14a73c2"></span>
 
-### Index Property
+### Index 属性 {#index-property}
 
 Gets the new index of [Avalonia.LogicalTree.ChildIndexChangedEventArgs.Child](xref:Avalonia.LogicalTree.ChildIndexChangedEventArgs.Child) or -1 if all children should be re-evaluated.
 
@@ -162,7 +162,7 @@ public int Index { get; set; }
 
 <span id="uid-ddd04506cd"></span>
 
-### TotalCountChanged Property
+### TotalCountChanged 属性 {#totalcountchanged-property}
 
 Gets an instance of the [Avalonia.LogicalTree.ChildIndexChangedEventArgs](xref:Avalonia.LogicalTree.ChildIndexChangedEventArgs) with an action of
 [Avalonia.LogicalTree.ChildIndexChangedAction.TotalCountChanged](xref:Avalonia.LogicalTree.ChildIndexChangedAction.TotalCountChanged).
