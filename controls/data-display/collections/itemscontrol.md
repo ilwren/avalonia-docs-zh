@@ -103,7 +103,7 @@ public class MainViewModel
 - [ListBox](/controls/data-display/collections/listbox)
 - [Carousel](/controls/data-display/collections/carousel)
 - [DataGrid](/controls/data-display/structured-data/datagrid)
-- [Data templates](/docs/data-templates/introduction-to-data-templates)
+- [数据模板](/docs/data-templates/introduction-to-data-templates)
 - [ItemsControl API reference](/api/avalonia/controls/itemscontrol)
 - [GitHub 上的 `ItemsControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ItemsControl.cs)
 

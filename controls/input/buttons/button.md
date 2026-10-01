@@ -1,32 +1,32 @@
 ---
 id: button
 title: Button
-description: A clickable control that reacts to pointer input, raises a Click event, and optionally invokes an ICommand.
+description: 一个可点击的控件：响应指针输入，引发 Click 事件，也可以调用 ICommand。
 doc-type: reference
 ---
 
 import ButtonClickScreenshot from '/img/controls/buttons/button/button-click.gif';
 
-The [`Button`](/api/avalonia/controls/button) control reacts to pointer actions and provides visual feedback in the form of a depressed state when the pointer is down. A pointer-down to pointer-release sequence is interpreted as a click, and you can configure this behavior through the [`ClickMode`](/api/avalonia/controls/clickmode) property.
+[`Button`](/api/avalonia/controls/button) 控件响应指针操作，并在指针按下时以「凹陷」状态给出视觉反馈。从按下到抬起的一整套动作会被解读为一次点击，这一行为可以通过 [`ClickMode`](/api/avalonia/controls/clickmode) 属性配置。
 
-You can handle a click by subscribing to the `Click` event in code-behind, or by binding an `ICommand` instance to the `Command` property. For guidance on binding to a command, see [Adding interactivity](/docs/input-interaction/adding-interactivity).
+处理点击有两种方式：在代码隐藏中订阅 `Click` 事件，或者把一个 `ICommand` 实例绑定到 `Command` 属性。绑定命令的具体做法请参阅[添加交互](/docs/input-interaction/adding-interactivity)。
 
 ## 常用属性 {#common-properties}
 
 | 属性           | 说明                                                         |
 | ------------------ | ------------------------------------------------------------------- |
-| `ClickMode`        | Describes how the button should react to clicks.                    |
-| `Command`          | An instance of `ICommand` to be invoked when the button is clicked. |
-| `CommandParameter` | The parameter passed to the command when it is invoked.             |
-| `Content`          | The content to display inside the button. Can be text or any control. |
-| [`Flyout`](/api/avalonia/controls/flyout)           | A `Flyout` that opens when the button is clicked.                   |
-| `IsPressed`        | Whether the button is currently in a pressed state (read-only).     |
-| `IsDefault`        | When `true`, the button is activated when the user presses Enter.   |
-| `IsCancel`         | When `true`, the button is activated when the user presses Escape.  |
+| `ClickMode`        | 描述按钮应如何响应点击。                    |
+| `Command`          | 按钮被点击时要调用的 `ICommand` 实例。 |
+| `CommandParameter` | 调用命令时传给它的参数。             |
+| `Content`          | 按钮内显示的内容，可以是文字，也可以是任意控件。 |
+| [`Flyout`](/api/avalonia/controls/flyout)           | 点击按钮时打开的 `Flyout`。                   |
+| `IsPressed`        | 按钮当前是否处于按下状态（只读）。     |
+| `IsDefault`        | 为 `true` 时，用户按 Enter 即可触发该按钮。   |
+| `IsCancel`         | 为 `true` 时，用户按 Esc 即可触发该按钮。  |
 
 ## Example
 
-This example shows a simple button and a C# code-behind click event handler.
+这个例子展示一个简单的按钮，以及用 C# 代码隐藏写的点击事件处理程序。
 
 <XamlPreview>
 
@@ -56,9 +56,9 @@ public partial class MainView : UserControl
 
 </XamlPreview>
 
-## Binding to a command
+## 绑定到命令 {#binding-to-a-command}
 
-The preferred approach in MVVM is to bind the `Command` property to an `ICommand` in your view model:
+MVVM 中更推荐的做法，是把 `Command` 属性绑定到视图模型中的 `ICommand`：
 
 ```xml
 <Button Content="Save" Command="{Binding SaveCommand}" />
@@ -72,7 +72,7 @@ private void Save()
 }
 ```
 
-### Command with a parameter
+### 带参数的命令 {#command-with-a-parameter}
 
 ```xml
 <Button Content="Delete"
@@ -80,9 +80,9 @@ private void Save()
         CommandParameter="{Binding SelectedItem}" />
 ```
 
-### Disabling the button with `CanExecute`
+### 用 `CanExecute` 禁用按钮 {#disabling-the-button-with-canexecute}
 
-The button is automatically disabled when the command's `CanExecute` returns `false`:
+当命令的 `CanExecute` 返回 `false` 时，按钮会自动变为不可用：
 
 ```csharp
 [ObservableProperty]
@@ -95,7 +95,7 @@ private void Save() { /* ... */ }
 private bool CanSave() => !string.IsNullOrWhiteSpace(Name);
 ```
 
-## Button with icon
+## 带图标的按钮 {#button-with-icon}
 
 ```xml
 <Button>
@@ -108,17 +108,17 @@ private bool CanSave() => !string.IsNullOrWhiteSpace(Name);
 
 ## `ClickMode`
 
-The `ClickMode` property controls when the `Click` event fires:
+`ClickMode` 属性决定 `Click` 事件何时触发：
 
 | 值 | 说明 |
 |---|---|
-| `Release` | Click fires on pointer release (default). |
-| `Press` | Click fires on pointer press. |
-| `Hover` | Click fires when the pointer enters the button. |
+| `Release` | 指针抬起时触发点击（默认）。 |
+| `Press` | 指针按下时触发点击。 |
+| `Hover` | 指针移入按钮时触发点击。 |
 
 ## `IsDefault` and `IsCancel`
 
-You can designate a button as the default action or the cancel action for a window or dialog. When you set `IsDefault` to `true`, the button activates when the user presses **Enter**. When you set `IsCancel` to `true`, the button activates when the user presses **Escape**.
+你可以把某个按钮指定为窗口或对话框的默认操作或取消操作。把 `IsDefault` 设为 `true` 后，用户按 **Enter** 即可触发该按钮；把 `IsCancel` 设为 `true` 后，用户按 **Esc** 即可触发。
 
 ```xml
 <StackPanel Orientation="Horizontal" Spacing="8">
@@ -127,9 +127,9 @@ You can designate a button as the default action or the cancel action for a wind
 </StackPanel>
 ```
 
-## Button with a flyout
+## 带 flyout 的按钮 {#button-with-a-flyout}
 
-You can attach a `Flyout` to a button so that clicking the button opens a popup:
+可以给按钮挂一个 `Flyout`，这样点击按钮就会弹出一个浮层：
 
 ```xml
 <Button Content="Options">
@@ -145,13 +145,13 @@ You can attach a `Flyout` to a button so that clicking the button opens a popup:
 
 ## `Click` vs. `PointerPressed`
 
-Always use the `Click` event to determine whether a user has pressed a button, not `PointerPressed`. `Click` is the high-level event specific to `Button`, while `PointerPressed` is a low-level input event that `Button` handles internally (setting `IsHandled` to `true`). Because the event is marked as handled, your application will not receive `PointerPressed` from a `Button` the way it might from other controls.
+判断用户是否按下了按钮，请一律用 `Click` 事件，而不是 `PointerPressed`。`Click` 是 `Button` 专有的高层事件，而 `PointerPressed` 是低层输入事件，`Button` 内部已经把它处理掉了（会把 `IsHandled` 置为 `true`）。正因为该事件被标记为已处理，你的应用不会像从其他控件那样收到来自 `Button` 的 `PointerPressed`。
 
-For a full list of button events, see the [Button events API reference](/api/avalonia/controls/button).
+按钮事件的完整列表请参阅 [Button 事件 API 参考](/api/avalonia/controls/button)。
 
-## Keyboard and accessibility
+## 键盘与无障碍 {#keyboard-and-accessibility}
 
-`Button` is focusable by default and participates in tab navigation. When the button has keyboard focus, the user can activate it by pressing **Space** or **Enter**. Screen readers announce the button's `Content` as its accessible name, so make sure you provide meaningful text. If your button contains only an icon, set the `AutomationProperties.Name` attached property so assistive technologies can identify it:
+`Button` 默认可获得焦点，并参与 Tab 导航。按钮获得键盘焦点后，用户按 **空格** 或 **Enter** 即可触发它。屏幕阅读器会把按钮的 `Content` 当作它的无障碍名称来播报，所以请提供有意义的文字。如果按钮里只有一个图标，请设置 `AutomationProperties.Name` 附加属性，好让辅助技术认出它：
 
 ```xml
 <Button Command="{Binding SaveCommand}"
@@ -162,14 +162,14 @@ For a full list of button events, see the [Button events API reference](/api/ava
 
 ## Styling
 
-`Button` exposes several pseudo-classes you can target in styles:
+`Button` 提供了几个可在样式中定位的伪类：
 
-| 伪类   | Applied when                          |
+| 伪类   | 生效时机                          |
 |----------------|---------------------------------------|
-| `:pointerover` | The pointer is hovering over the button. |
-| `:pressed`     | The button is being pressed.          |
-| `:disabled`    | The button's `IsEnabled` is `false`.  |
-| `:focus`       | The button has keyboard focus.        |
+| `:pointerover` | 指针悬停在按钮上。 |
+| `:pressed`     | 按钮正被按下。          |
+| `:disabled`    | 按钮的 `IsEnabled` 为 `false`。  |
+| `:focus`       | 按钮拥有键盘焦点。        |
 
 ```xml
 <Style Selector="Button.accent:pointerover">
@@ -179,10 +179,10 @@ For a full list of button events, see the [Button events API reference](/api/ava
 
 ## 另请参阅 {#see-also}
 
-- [Button API reference](/api/avalonia/controls/button)
+- [Button API 参考](/api/avalonia/controls/button)
 - [GitHub 上的 `Button.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Button.cs)
 - [RepeatButton](/controls/input/buttons/repeatbutton)
 - [ToggleButton](/controls/input/buttons/togglebutton)
 - [SplitButton](/controls/input/buttons/splitbutton)
 - [HyperlinkButton](/controls/input/buttons/hyperlinkbutton)
-- [Adding interactivity](/docs/input-interaction/adding-interactivity)
+- [添加交互](/docs/input-interaction/adding-interactivity)

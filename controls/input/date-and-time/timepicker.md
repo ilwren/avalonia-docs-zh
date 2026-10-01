@@ -1,11 +1,11 @@
 ---
 id: timepicker
 title: TimePicker
-description: A control that lets users select a time value using spinner controls for hours, minutes, and optionally seconds.
+description: 一个控件：用时、分（以及可选的秒）微调器让用户选定时间。
 doc-type: reference
 ---
 
-The `TimePicker` presents two to four spinner controls that let users select a time value. It supports 24-hour and 12-hour clock formats, with optional seconds selection. The spinner controls appear when you click the control.
+`TimePicker` 给出两到四个微调器，供用户选定时间值。它支持 24 小时制和 12 小时制，还可以选配秒的选择。点击控件时，这些微调器就会展开。
 
 ## 常用属性 {#useful-properties}
 
@@ -13,15 +13,15 @@ The `TimePicker` presents two to four spinner controls that let users select a t
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `SelectedTime` | `TimeSpan?` | The selected time value. `null` when no time is selected. |
-| `ClockIdentifier` | `string` | Sets the clock format. Use `12HourClock` or `24HourClock`. The 12-hour format adds an AM/PM spinner. |
-| `UseSeconds` | `bool` | Shows an additional spinner for seconds when `true`. Default is `false`. |
-| `MinuteIncrement` | `int` | Defines selectable increments for the minutes. Default is `1`. |
-| `SecondIncrement` | `int` | Defines selectable increments for the seconds. Default is `1`. |
+| `SelectedTime` | `TimeSpan?` | 所选的时间值。未选择时间时为 `null`。 |
+| `ClockIdentifier` | `string` | 设置时钟格式，可取 `12HourClock` 或 `24HourClock`。12 小时制会多出一个 AM/PM 微调器。 |
+| `UseSeconds` | `bool` | 为 `true` 时额外显示一个「秒」微调器，默认值为 `false`。 |
+| `MinuteIncrement` | `int` | 定义分钟的可选步长，默认值为 `1`。 |
+| `SecondIncrement` | `int` | 定义秒的可选步长，默认值为 `1`。 |
 
-## Clock format
+## 时钟格式 {#clock-format}
 
-By default, `TimePicker` uses the 12-hour clock format with an AM/PM spinner. You can switch to the 24-hour format by setting `ClockIdentifier` to `24HourClock`:
+`TimePicker` 默认采用带 AM/PM 微调器的 12 小时制。把 `ClockIdentifier` 设为 `24HourClock` 即可切换到 24 小时制：
 
 ```xml
 <!-- 12-hour clock (default) with AM/PM spinner -->
@@ -33,7 +33,7 @@ By default, `TimePicker` uses the 12-hour clock format with an AM/PM spinner. Yo
 
 ## Example
 
-This example shows how to create a time picker for the 24-hour clock, with 20-minute time slots:
+下面的例子演示如何做一个 24 小时制、以 20 分钟为一档的时间选择器：
 
 <XamlPreview>
 
@@ -48,15 +48,15 @@ This example shows how to create a time picker for the 24-hour clock, with 20-mi
 ```
 </XamlPreview>
 
-## Initializing the time
+## 初始化时间 {#initializing-the-time}
 
-You can set the time value as an attribute in XAML. Use a string in the form `Hh:Mm` where `Hh` is hours (0 to 23) and `Mm` is minutes (0 to 59):
+时间值可以作为特性直接写在 XAML 里。请使用 `Hh:Mm` 形式的字符串，其中 `Hh` 是小时（0 到 23），`Mm` 是分钟（0 到 59）：
 
 ```xml
 <TimePicker SelectedTime="09:15"/>
 ```
 
-If you need to write code-behind, you can initialize the time like this:
+若要写代码隐藏，可以这样初始化时间：
 
 ```csharp
 TimePicker timePicker = new TimePicker
@@ -65,25 +65,25 @@ TimePicker timePicker = new TimePicker
 };
 ```
 
-You can clear the display by resetting `SelectedTime` to `null`.
+把 `SelectedTime` 重置为 `null` 即可清空显示。
 
-## Constraining the time
+## 限定可选时间 {#constraining-the-time}
 
-You can limit the selectable times by adjusting `MinuteIncrement` and `SecondIncrement`. For example, to allow selection only in 15-minute intervals:
+调整 `MinuteIncrement` 和 `SecondIncrement` 即可限定可选的时间。比如只允许按 15 分钟一档来选：
 
 ```xml
 <TimePicker MinuteIncrement="15" />
 ```
 
-To include seconds with 30-second increments:
+若要显示秒并以 30 秒为一档：
 
 ```xml
 <TimePicker UseSeconds="True" SecondIncrement="30" />
 ```
 
-## View model binding
+## 视图模型绑定 {#view-model-binding}
 
-Bind `SelectedTime` to a `TimeSpan?` property in your view model:
+把 `SelectedTime` 绑定到视图模型中的 `TimeSpan?` 属性：
 
 ```xml
 <TimePicker SelectedTime="{Binding AppointmentTime}"
@@ -95,11 +95,11 @@ Bind `SelectedTime` to a `TimeSpan?` property in your view model:
 private TimeSpan? _appointmentTime = new TimeSpan(14, 30, 0);
 ```
 
-You can react to changes by subscribing to the `SelectedTimeChanged` event or by observing property changes in your view model.
+订阅 `SelectedTimeChanged` 事件，或在视图模型中观察属性变化，即可对变更作出响应。
 
 ## 另请参阅 {#see-also}
 
 - [DatePicker](/controls/input/date-and-time/datepicker)
 - [CalendarDatePicker](/controls/input/date-and-time/calendardatepicker)
-- [TimePicker API reference](/api/avalonia/controls/timepicker)
+- [TimePicker API 参考](/api/avalonia/controls/timepicker)
 - [GitHub 上的 `TimePicker.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/DateTimePickers/TimePicker.cs)

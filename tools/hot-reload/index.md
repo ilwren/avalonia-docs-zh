@@ -153,5 +153,5 @@ The engine initializes once per process, so later calls have no effect. To surfa
 ## 另请参阅 {#see-also}
 
 - [Installing the Avalonia Plus developer tools](/tools/developer-tools/installation)
-- [Data templates](/docs/data-templates/introduction-to-data-templates)
+- [数据模板](/docs/data-templates/introduction-to-data-templates)
 - [Write and debug running code with Hot Reload in Visual Studio (C#, Visual Basic, C++)](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload)

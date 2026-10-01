@@ -9,11 +9,11 @@ This makes Appium tests well suited for end-to-end validation, accessibility ver
 
 ## When to use Appium vs headless
 
-| Consideration | Headless | Appium |
+| 考量点 | Headless | Appium |
 |---|---|---|
 | Speed | Fast (in-process, no GUI) | Slower (launches real app) |
 | Scope | Unit and component tests | End-to-end and integration tests |
-| Platform behavior | Simulated | Real (native windowing, menus, focus) |
+| 平台行为 | Simulated | Real (native windowing, menus, focus) |
 | 无障碍 | Not tested | Tested (drives via accessibility tree) |
 | CI/CD | Runs anywhere | Requires a display (or virtual display on Linux) |
 

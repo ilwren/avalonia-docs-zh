@@ -5,9 +5,9 @@ title: MaskedTextBox
 
 import MaskedTextPhoneBoxScreenshot from '/img/reference/controls/maskedtextbox/maskedtextbox-phone.gif';
 
-The `MaskedTextBox` presents an area for typed (keyboard) input, but where the format and characters permitted can be constrained by a mask pattern formed from special characters.
+`MaskedTextBox` 提供一块供键盘输入的区域，但其格式和可输入的字符会受一套由特殊字符组成的掩码模式约束。
 
-The mask pattern can also contain literal characters that appear in the input and cannot be typed over.
+掩码模式中还可以含有字面字符，它们会出现在输入内容里，且无法被覆盖输入。
 
 ## 常用属性 {#useful-properties}
 
@@ -15,42 +15,42 @@ The mask pattern can also contain literal characters that appear in the input an
 
 | 属性    | 说明                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| `Mask`      | The mask pattern to use. See the special mask characters in the table below. |
-| `AsciiOnly` | Restricts input to the ASCII letters a-z and A-Z.                            |
-| `Text`      | The resulting text input including any literal characters.                   |
+| `Mask`      | 要使用的掩码模式。特殊掩码字符见下表。 |
+| `AsciiOnly` | 把输入限制为 ASCII 字母 a-z 和 A-Z。                            |
+| `Text`      | 最终的输入文本，包含其中的字面字符。                   |
 
-## Mask characters
+## 掩码字符 {#mask-characters}
 
-The mask property accepts a string that can contain a combination of fixed characters and the following special characters:
+Mask 属性接受一个字符串，其中可以混合固定字符与下列特殊字符：
 
 | Mask Character | 说明                                                                                                                                                                             |
 |:--------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      `0`       | Digit, required. This element will accept any single digit between 0 and 9.                                                                                                             |
-|      `9`       | Digit or space, optional.                                                                                                                                                               |
-|      `#`       | Digit or space, optional. If this position is blank in the mask, it will be rendered as a space in the Text property. Plus (+) and minus (-) signs are allowed.                         |
-|      `L`       | Letter, required. Restricts input to the ASCII letters a-z and A-Z                                                                                                                      |
-|      `?`       | Letter, optional. Restricts input to the ASCII letters a-z and A-Z                                                                                                                      |
-|      `&`       | Character, required. If the AsciiOnly property is true, this element behaves like the "L" element.                                                                                      |
-|      `C`       | Character, optional. Any non-control character. If the AsciiOnly property is set to true, this element behaves like the "?" element.                                                    |
-|      `A`       | Alphanumeric, required. If the AsciiOnly property is true, the only characters it will accept are the ASCII letters a-z and A-Z. This mask element behaves like the "a" element.        |
-|      `a`       | Alphanumeric, optional. If the AsciiOnly property is set to true, the only characters it will accept are the ASCII letters a-z and A-Z. This mask element behaves like the "A" element. |
-|      `.`       | Decimal placeholder. The actual display character used will be the decimal symbol appropriate to the format provider, as determined by the control's FormatProvider property.           |
-|      `,`       | Thousands placeholder. The actual display character used will be the thousands placeholder appropriate to the format provider, as determined by the control's FormatProvider property.  |
-|      `:`       | Time separator. The actual display character used will be the time symbol appropriate to the format provider, as determined by the control's FormatProvider property.                   |
-|      `/`       | Date separator. The actual display character used will be the date symbol appropriate to the format provider, as determined by the control's FormatProvider property.                   |
-|      `$`       | Currency symbol. The actual character displayed will be the currency symbol appropriate to the format provider, as determined by the control's FormatProvider property.                 |
-|      `<`       | Shift down. Converts all characters that follow to lowercase.                                                                                                                           |
-|      `>`       | Shift up. Converts all characters that follow to uppercase.                                                                                                                             |
-|      `\|`      | Disable a previous shift up or shift down.                                                                                                                                              |
-|      `\`       | Escape. Escapes a mask character, turning it into a literal.                                                                                                                            |
+|      `0`       | 数字，必填。此处接受 0 到 9 之间的任意一位数字。                                                                                                             |
+|      `9`       | 数字或空格，选填。                                                                                                                                                               |
+|      `#`       | 数字或空格，选填。如果掩码中该位置为空，它在 Text 属性里会呈现为一个空格。允许加号（+）和减号（-）。                         |
+|      `L`       | 字母，必填。输入限制为 ASCII 字母 a-z 和 A-Z                                                                                                                      |
+|      `?`       | 字母，选填。输入限制为 ASCII 字母 a-z 和 A-Z                                                                                                                      |
+|      `&`       | 字符，必填。若 AsciiOnly 属性为 true，它的行为与「L」相同。                                                                                      |
+|      `C`       | 字符，选填。任意非控制字符。若 AsciiOnly 属性设为 true，它的行为与「?」相同。                                                    |
+|      `A`       | 字母或数字，必填。若 AsciiOnly 属性为 true，则只接受 ASCII 字母 a-z 和 A-Z，此时它的行为与「a」相同。        |
+|      `a`       | 字母或数字，选填。若 AsciiOnly 属性设为 true，则只接受 ASCII 字母 a-z 和 A-Z，此时它的行为与「A」相同。 |
+|      `.`       | 小数点占位符。实际显示的字符取决于格式提供程序所对应的小数符号，由控件的 FormatProvider 属性决定。           |
+|      `,`       | 千位分隔占位符。实际显示的字符取决于格式提供程序所对应的千位分隔符，由控件的 FormatProvider 属性决定。  |
+|      `:`       | 时间分隔符。实际显示的字符取决于格式提供程序所对应的时间符号，由控件的 FormatProvider 属性决定。                   |
+|      `/`       | 日期分隔符。实际显示的字符取决于格式提供程序所对应的日期符号，由控件的 FormatProvider 属性决定。                   |
+|      `$`       | 货币符号。实际显示的字符取决于格式提供程序所对应的货币符号，由控件的 FormatProvider 属性决定。                 |
+|      `<`       | 转为小写。把之后的所有字符转换成小写。                                                                                                                           |
+|      `>`       | 转为大写。把之后的所有字符转换成大写。                                                                                                                             |
+|      `\|`      | 取消之前的转大写或转小写。                                                                                                                                              |
+|      `\`       | 转义。对掩码字符转义，把它变成字面字符。                                                                                                                            |
 
-The escape character (backslash) can be used to include a special character as a literal. For example, to include the dollar sign:
+用转义字符（反斜杠）可以把特殊字符当作字面字符插入。比如要插入美元符号：
 
 `Mask="\$999,000.00"`
 
 ## Example
 
-This is a basic example:
+这是一个基础示例：
 
 <XamlPreview>
 

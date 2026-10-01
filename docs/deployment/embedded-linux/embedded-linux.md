@@ -139,7 +139,7 @@ sudo apt-get install libgbm1 libgl1-mesa-dri libegl1-mesa libinput10
 
 Other distributions will have equivalent packages under slightly different names.
 
-| Package | What it provides | Why Avalonia needs it |
+| NuGet 包 | What it provides | Why Avalonia needs it |
 |---|---|---|
 | `libgbm1` | Generic Buffer Management (GBM) allocator. Creates GPU-accessible buffers that DRM can scan out to the display. | Avalonia allocates its rendering surfaces through GBM when running in DRM mode. Without it, no framebuffers can be created. |
 | `libgl1-mesa-dri` | Mesa's DRI (Direct Rendering Infrastructure) drivers. These are the GPU-specific modules (e.g., `vc4` for Raspberry Pi, `panfrost` for Mali GPUs) that translate OpenGL calls into hardware commands. | Provides the actual GPU acceleration. Even on devices without a dedicated GPU, the software rasterizer (`llvmpipe`) lives here. |

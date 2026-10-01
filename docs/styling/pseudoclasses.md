@@ -15,7 +15,7 @@ Pseudoclass state is tracked by the `Control`'s `PseudoClasses` property. By con
 
 These pseudoclasses are defined by `InputElement` and are available on every `Control`:
 
-| Pseudoclass      | 说明                                                    |
+| 伪类      | 说明                                                    |
 |:-----------------|----------------------------------------------------------------|
 | `:disabled`      | The control is disabled and cannot be interacted with.         |
 | `:pointerover`   | The pointer is over the control as determined by hit testing.  |

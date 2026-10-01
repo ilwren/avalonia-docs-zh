@@ -35,7 +35,7 @@ dotnet add package Avalonia.Controls.MediaPlayer
 
 Replace the package name with the one you need. The following Avalonia Pro packages are available:
 
-| Package | 说明 |
+| NuGet 包 | 说明 |
 |---------|-------------|
 | [`Avalonia.Controls.Charts`](/controls/data-display/charts/#getting-started) | Library of graphs, dashboards, analytics |
 | [`Avalonia.Controls.Markdown`](/controls/data-display/text-display/markdown/#getting-started) | Markdown text rendering |

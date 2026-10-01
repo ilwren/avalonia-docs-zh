@@ -16,7 +16,7 @@ The Avalonia for Visual Studio extension provides an enhanced way of working wit
 - An enhanced editor with deep integrations for a rich editing experience.
 - A Previewer so you can see what the UI will look like without having to run the application.
 
-## Installation
+## 安装 {#installation}
 
 See [Set Up Your IDE](/docs/get-started/set-up-your-ide) for installation instructions.
 

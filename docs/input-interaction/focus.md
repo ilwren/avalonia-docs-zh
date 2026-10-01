@@ -57,7 +57,7 @@ myTextBox.GotFocus += (sender, e) =>
 
 These pseudoclasses are helpful when you style controls that are `Focusable`.
 
-| Pseudoclass      | 说明                                                   |
+| 伪类      | 说明                                                   |
 |:-----------------|:--------------------------------------------------------------|
 | `:focus`         | The control has focus.                                        |
 | `:focus-within`  | The control has focus or contains a descendant that has focus. |

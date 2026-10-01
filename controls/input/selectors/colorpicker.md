@@ -10,74 +10,74 @@ import ColorPaletteMaterial from '/img/controls/colorpicker/color-palette-materi
 import ColorPaletteMaterialHalf from '/img/controls/colorpicker/color-palette-material-half.png';
 import ColorPaletteSixteen from '/img/controls/colorpicker/color-palette-sixteen.png';
 
-The [`ColorPicker`](/api/avalonia/controls/colorpicker) provides a highly customizable, general-purpose control that users can use to select colors in RGB or HSV color space. This implementation is just as much about providing primitive controls that developers can use to build their own color pickers as it is about providing a ready-to-use picker. 
+[`ColorPicker`](/api/avalonia/controls/colorpicker) 是一个高度可定制的通用控件，用户可以用它在 RGB 或 HSV 色彩空间中选取颜色。这套实现既提供了开箱即用的拾色器，也同样看重为开发者提供可用来自行搭建拾色器的基础控件。 
 
-The `ColorPicker` includes a family of controls (components):
+`ColorPicker` 包含一系列控件（组件）：
 
- * [`ColorSpectrum`](/api/avalonia/controls/primitives/colorspectrum) (primitive) : A two dimensional spectrum for color selection.
- * [`ColorSlider`](/api/avalonia/controls/primitives/colorslider) (primitive) : A slider with a background that represents a single color component.
- * [`ColorPreviewer`](/api/avalonia/controls/primitives/colorpreviewer) (primitive) : Shows a preview color with optional accent colors.
- * [`ColorView`](/api/avalonia/controls/colorview) : Presents a color for user editing using a spectrum, palette and component sliders.
- * `ColorPicker` : Presents a color for user editing using a spectrum, palette and component sliders within a drop down. Editing is available when the drop down flyout is opened; otherwise, only the preview color is shown.
+ * [`ColorSpectrum`](/api/avalonia/controls/primitives/colorspectrum)（基础控件）：用于选色的二维色谱。
+ * [`ColorSlider`](/api/avalonia/controls/primitives/colorslider)（基础控件）：背景表示某个颜色分量的滑块。
+ * [`ColorPreviewer`](/api/avalonia/controls/primitives/colorpreviewer)（基础控件）：显示预览色，并可附带强调色。
+ * [`ColorView`](/api/avalonia/controls/colorview)：用色谱、调色板和分量滑块呈现一种颜色供用户编辑。
+ * `ColorPicker`：在下拉浮层中用色谱、调色板和分量滑块呈现一种颜色供用户编辑。只有下拉浮层展开时才能编辑，否则只显示预览色。
 
-Each primitive component can be used on its own and mixed/matched with others. This allows significant composability that isn't possible with other color picker implementations. For example, you can quickly bind together the `ColorSpectrum`, `ColorSlider` and `ColorPreviewer` primitives to create your own color picker with a brand-new design.
+每个基础组件都能单独使用，也能彼此混搭。这带来了其他拾色器实现给不了的强大可组合性。举例来说，你可以把 `ColorSpectrum`、`ColorSlider` 和 `ColorPreviewer` 这几个基础控件迅速绑在一起，做出一个全新设计的拾色器。
 
-Note on terminology: "color picker" usually refers to the family of controls while `ColorPicker` refers to the specific control.
+术语说明：「color picker」通常指这一系列控件，而 `ColorPicker` 特指其中那个具体的控件。
 
-## Is this the right control?
+## 这个控件选对了吗？ {#is-this-the-right-control}
 
-This control is intended to be used directly to select colors in a user-friendly, developer customizable way. This can be done using either a canvas-type `ColorView` control or a compact `ColorPicker` drop down.
+这个控件就是拿来直接用的：既对用户友好，又方便开发者定制。既可以用画布式的 `ColorView` 控件，也可以用紧凑的 `ColorPicker` 下拉形式。
 
-For apps with even more special-purpose needs, each control and primitive component can be independently customized to create a new color picker without having to re-implement all the advanced rendering and color logic. This is very useful to match a specific app's design and usability requirements.
+若应用有更特殊的需求，每个控件和基础组件都能单独定制，从而拼出一个新的拾色器，而不必把那些复杂的渲染与颜色逻辑重写一遍。要贴合某个应用特定的设计与可用性要求时，这非常有用。
 
-Developers using this control may:
- 1. Use `ColorView` or `ColorPicker` as-is directly in their apps
- 2. Customize `ColorView` or `ColorPicker` using the included properties. These properties allow significant changes to the control such as disabling components sliders, showing different palettes or hiding all but the spectrum tab.
- 3. Create a new color picker to meet a specific app's design and usability requirements using the existing primitive components.
- 4. Re-template the existing components to create a brand-new fully customized color picker.
+使用这个控件的开发者可以：
+ 1. 在应用中直接照原样使用 `ColorView` 或 `ColorPicker`
+ 2. 用自带的属性定制 `ColorView` 或 `ColorPicker`。这些属性能对控件做出不小的改动，比如停用分量滑块、换一套调色板，或者只留下色谱选项卡。
+ 3. 用现成的基础组件搭一个新的拾色器，以满足某个应用特定的设计与可用性要求。
+ 4. 给现有组件重做模板，打造一个彻底定制的全新拾色器。
 
-## Using in your app
+## 在你的应用中使用 {#using-in-your-app}
 
-Avalonia is used in several resource-constrained environments such as embedded devices. For this and other reasons, certain larger controls such as the `ColorPicker` are not included with the main Avalonia NuGet packages. This means a bit of extra work is required to add the `ColorPicker` to your app:
+Avalonia 也会跑在嵌入式设备这类资源受限的环境里。出于这个（以及其他）原因，`ColorPicker` 这类体量较大的控件并未包含在 Avalonia 的主 NuGet 包中。因此，要把 `ColorPicker` 加进你的应用，还得多做一点事：
 
- 1. Add the `Avalonia.Controls.ColorPicker` nuget to your project. This MUST match your version of Avalonia's other packages.
- 2. Add control themes and styles for all color picker controls in `App.axaml` by adding:
-    * `<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />` for Fluent themes **OR**
-    * `<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Simple/Simple.xaml" />` for Simple themes
+ 1. 把 `Avalonia.Controls.ColorPicker` NuGet 包加进项目。它的版本**必须**与你所用的其他 Avalonia 包一致。
+ 2. 在 `App.axaml` 中加入下列内容，为所有拾色器控件引入控件主题和样式：
+    * Fluent 主题用 `<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />`，**或者**
+    * Simple 主题用 `<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Simple/Simple.xaml" />`
 
 :::note
-This step is not required for some theme packages such as FluentAvalonia which include all controls by default.
+有些主题包（比如 FluentAvalonia）默认就包含全部控件，这一步可以省略。
 :::
 
 ## 背景 {#background}
 
-This control originated as a re-styling of the one in UWP (later WinUI) using the basic designs implemented for the Windows Community Toolkit. The WinUI `ColorPicker` isn't conducive to smaller screen sizes and the overall design/usability of the control left something to be desired for both users and developers.
+这个控件最初是基于 Windows Community Toolkit 的基本设计，对 UWP（后来的 WinUI）中那个控件重新设定样式而来。WinUI 的 `ColorPicker` 在小屏幕上并不好用，整体设计与可用性无论对用户还是开发者来说都有欠缺。
 
-With all its features, the WinUI control still wasn't as good as it should be. It couldn't be re-templated and customized without a lot of effort (partially because individual components were highly inter-dependent on each other). It also used a lot of template parts and code-behind. The Avalonia version of the control (a complete rewrite) attempts to fix all of these issues and become the predominant XAML color picker design.
+即便功能一应俱全，WinUI 的那个控件仍称不上理想：想重做模板、做定制都得费很大劲（部分原因是各个组件之间高度耦合），而且它用了大量模板部件和代码隐藏。Avalonia 版的控件（完全重写）力图把这些问题统统解决，成为 XAML 拾色器设计的标杆。
 
-Main improvements learning from WinUI were:
- * The `ColorPicker` is implemented as a drop-down (matching all other "pickers"). There is also a `ColorView` control for those that want the canvas-type control (similar to WinUI).
- * The Avalonia controls attempt to do everything possible in XAML control themes keeping code-behind to an absolute minimum. This significantly increases composability and enables app developers to customize every part of these controls (and even the primitives in most cases).
- * Primitives such as the `ColorSlider` and `ColorSpectrum` are fully self-contained and can be used separately enabling app developers to create custom color picker implementations.
- * A new `HsvColor` struct was added to base Avalonia itself (alongside `Color` and `HslColor`) and is now used in all color picker controls. This simplified code-behind and also made binding of color properties between primitives and controls possible. Color picker controls internally work in HSV color space.
- * `HsvColor` along with `ColorSlider` together unlock a lot of power compared to WinUI (and enable easy re-templating).
- * Many new properties (more than in WinUI) were added to control all aspects of the `ColorView` visibility. Each tab can be separately hidden along with most individual subsections. This allows a lot of design customization without having to re-template or use complex style selectors.
- * Color palettes were added using the `IColorPalette` interface (same as the Windows Community Toolkit). No color palettes are supported in the WinUI version of this control.
- * New properties such as `SelectedIndex` and `ColorModel` allow customizing the color picker and putting it into a pre-defined state. For example, the WinUI ColorPicker always defaults to RGB and this cannot be changed in code or XAML. This implementation does not have such limitations.
+从 WinUI 身上学到的几点主要改进是：
+ * `ColorPicker` 实现为下拉形式（与其他各类「picker」保持一致）。想要画布式控件（类似 WinUI）的人，还可以用 `ColorView` 控件。
+ * Avalonia 的这些控件尽可能把一切都放进 XAML 控件主题里，把代码隐藏压到最少。这大大提升了可组合性，让应用开发者能定制这些控件的每一个部分（多数情况下连基础控件也不例外）。
+ * `ColorSlider`、`ColorSpectrum` 这类基础控件完全自成一体，可以单独使用，让应用开发者能自行实现拾色器。
+ * Avalonia 本身新增了一个 `HsvColor` 结构（与 `Color`、`HslColor` 并列），现在所有拾色器控件都在用它。这既简化了代码隐藏，也让基础控件与控件之间的颜色属性绑定成为可能。拾色器控件内部一律在 HSV 色彩空间中工作。
+ * `HsvColor` 与 `ColorSlider` 双剑合璧，释放出了 WinUI 远不能及的能力（也让重做模板变得轻松）。
+ * 新增了许多属性（比 WinUI 还多），用于控制 `ColorView` 各个部分的可见性。每个选项卡都能单独隐藏，大多数子区块也是如此。这样一来，不必重做模板、也不必写复杂的样式选择器，就能做出大量设计上的定制。
+ * 通过 `IColorPalette` 接口加入了调色板（与 Windows Community Toolkit 相同）。WinUI 版的这个控件压根不支持调色板。
+ * `SelectedIndex`、`ColorModel` 等新属性让你能定制拾色器，并把它置于某个预设状态。比如 WinUI 的 ColorPicker 总是默认 RGB，代码和 XAML 都改不了；这套实现没有这类限制。
 
-## Controls and primitives
+## 控件与基础控件 {#controls-and-primitives}
 
-| 控件 | Link |
+| 控件 | 链接 |
 |---------|------|
 | `ColorPicker` | |
-| `ColorView` | See the dedicated [`ColorView`](/controls/input/selectors/colorview) page. |
+| `ColorView` | 参见 [`ColorView`](/controls/input/selectors/colorview) 专页。 |
 | `ColorSpectrum` | |
 | `ColorSlider` | |
 | `ColorPreviewer` | |
 
-## Color palettes
+## 调色板 {#color-palettes}
 
-Several pre-defined color palettes implementing the `IColorPalette` interface are provided. Instances of these palettes may be set to the `Palette` property of a `ColorView` or `ColorPicker`.
+这里提供了若干实现 `IColorPalette` 接口的预设调色板。它们的实例可以赋给 `ColorView` 或 `ColorPicker` 的 `Palette` 属性。
 
 <table>
   <tr>
@@ -88,41 +88,41 @@ Several pre-defined color palettes implementing the `IColorPalette` interface ar
     <td>
       <Image light={ColorPaletteFluent} alt="Fluent Color Palette" position="center" maxWidth={400} cornerRadius="true"/>
     </td>
-    <td>Contains the Fluent color palette found in Windows 10 and later. This is the default color palette.</td>
+    <td>包含 Windows 10 及更高版本中的 Fluent 调色板。这是默认的调色板。</td>
   </tr>
   <tr>
     <td>
       <Image light={ColorPaletteFlat} alt="Flat UI Color Palette" position="center" maxWidth={400} cornerRadius="true"/>
     </td>
-    <td>Contains the full <a href="https://github.com/designmodo/Flat-UI">Flat UI color palette</a>.</td>
+    <td>包含完整的 <a href="https://github.com/designmodo/Flat-UI">Flat UI 调色板</a>.</td>
   </tr>
   <tr>
     <td>
       <Image light={ColorPaletteFlatHalf} alt="Flat UI Half Color Palette" position="center" maxWidth={400} cornerRadius="true"/>
     </td>
-    <td>Contains half of <a href="https://github.com/designmodo/Flat-UI">Flat UI color palette</a> for improved usability especially on mobile devices.</td>
+    <td>包含一半的 <a href="https://github.com/designmodo/Flat-UI">Flat UI 调色板</a> ，以提升可用性，在移动设备上尤其如此。</td>
   </tr>
   <tr>
     <td>
       <Image light={ColorPaletteMaterial} alt="Material Color Palette" position="center" maxWidth={400} cornerRadius="true"/>
     </td>
-    <td>Contains most of the <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors">Material design color palette</a>. To make the palette uniform and rectangular the following alterations were made 1. The A100-A700 shades of each color are excluded. These shades do not exist for all colors (Brown/Gray). 2. Black/White are stand-alone colors and are also excluded.</td>
+    <td>包含大部分 <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors">Material Design 调色板</a>。为了让调色板整齐成矩形，这里做了两处改动：1. 排除每种颜色的 A100-A700 色阶——并非所有颜色都有这些色阶（如棕色/灰色）。2. 黑色和白色是独立颜色，也一并排除。</td>
   </tr>
   <tr>
     <td>
       <Image light={ColorPaletteMaterialHalf} alt="Material Half Color Palette" position="center" maxWidth={400} cornerRadius="true"/>
     </td>
-    <td>Contains half of the <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors">Material design color palette</a> shown above for improved usability especially on mobile devices.</td>
+    <td>包含一半的 <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors">Material Design 调色板</a> （见上文），以提升可用性，在移动设备上尤其如此。</td>
   </tr>
   <tr>
     <td>
       <Image light={ColorPaletteSixteen} alt="Sixteen Color Palette" position="center" maxWidth={400} cornerRadius="true"/>
     </td>
-    <td>Contains the standard <a href="https://en.wikipedia.org/wiki/Web_colors#HTML_color_names">sixteen color palette</a> from the HTML 4.01 specification.</td>
+    <td>包含标准的 <a href="https://en.wikipedia.org/wiki/Web_colors#HTML_color_names">十六色调色板</a> ，来自 HTML 4.01 规范。</td>
   </tr>
 </table>
 
 ## 另请参阅 {#see-also}
 
-- [ColorPicker API reference](/api/avalonia/controls/colorpicker)
+- [ColorPicker API 参考](/api/avalonia/controls/colorpicker)
 - [GitHub 上的 `ColorPicker.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls.ColorPicker/ColorPicker/ColorPicker.cs)

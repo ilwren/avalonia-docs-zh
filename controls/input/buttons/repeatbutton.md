@@ -1,11 +1,11 @@
 ---
 id: repeatbutton
 title: RepeatButton
-description: A button that repeatedly raises its click event while the user holds it down.
+description: 一个按钮：用户按住不放时，它会反复引发点击事件。
 doc-type: reference
 ---
 
-The `RepeatButton` is a control that has the added feature of regularly generating click events while the button is being pressed down.
+`RepeatButton` 这个控件多了一项本事：按住它不放时会定期生成点击事件。
 
 ## 常用属性 {#useful-properties}
 
@@ -13,12 +13,12 @@ The `RepeatButton` is a control that has the added feature of regularly generati
 
 | 属性 | 说明                                                                              |
 | -------- | ---------------------------------------------------------------------------------------- |
-| `Delay`    | The time (milliseconds) to wait before repeated click generation begins. Default is 300. |
-| `Interval` | The time (milliseconds) between clicks being generated. Default is 100.                  |
+| `Delay`    | 开始连续生成点击之前的等待时间（毫秒），默认值 300。 |
+| `Interval` | 两次生成点击之间的间隔（毫秒），默认值 100。                  |
 
 ## Example
 
-This example shows a repeat button generating click events with the default interval and delay.
+这个例子展示一个按默认间隔和延迟生成点击事件的 repeat button。
 
 <XamlPreview>
 
@@ -48,9 +48,9 @@ public partial class MainView : UserControl
 
 </XamlPreview>
 
-## Customizing delay and interval
+## 定制延迟与间隔 {#customizing-delay-and-interval}
 
-You can configure the `Delay` and `Interval` properties directly in XAML to control how quickly repeated clicks begin and how frequently they fire. The following example waits 500 milliseconds before the first repeat, then fires every 50 milliseconds:
+在 XAML 中直接配置 `Delay` 和 `Interval` 属性，即可控制连点多久开始、多密集。下面的例子等 500 毫秒才开始重复，之后每 50 毫秒触发一次：
 
 ```xml
 <RepeatButton Delay="500" Interval="50" Click="OnClick">
@@ -60,11 +60,11 @@ You can configure the `Delay` and `Interval` properties directly in XAML to cont
 
 ## 常见用法 {#common-use-cases}
 
-The `RepeatButton` is useful in any scenario where you need continuous action while the user holds down a button. Common examples include volume controls, scroll buttons, numeric steppers, and zoom controls. In each of these cases, the repeat behavior lets your users make incremental adjustments without clicking repeatedly.
+凡是需要「按住不放就持续动作」的场合，`RepeatButton` 都能派上用场。常见的例子有音量控制、滚动按钮、数值步进器和缩放控制。在这些场景里，重复行为让用户不必反复点击就能微调。
 
 ## 另请参阅 {#see-also}
 
 - [Button](/controls/input/buttons/button)
 - [ButtonSpinner](/controls/input/buttons/buttonspinner)
-- [RepeatButton API reference](/api/avalonia/controls/repeatbutton)
+- [RepeatButton API 参考](/api/avalonia/controls/repeatbutton)
 - [GitHub 上的 `RepeatButton.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/RepeatButton.cs)

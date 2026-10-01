@@ -5,38 +5,38 @@ title: ToggleSplitButton
 
 import ToggleSplitButtonTextListScreenshot from '/img/controls/buttons/togglesplitbutton/togglesplitbutton-text-list.png';
 
-The [`ToggleSplitButton`](/api/avalonia/controls/togglesplitbutton) functions as a [`ToggleButton`](/controls/input/buttons/togglebutton) with primary and secondary parts that can each be pressed separately. The primary part behaves like a normal `ToggleButton` and the secondary part opens a [`Flyout`](/controls/menus/menuflyout) with additional actions.
+[`ToggleSplitButton`](/api/avalonia/controls/togglesplitbutton) 的行为像一个 [`ToggleButton`](/controls/input/buttons/togglebutton)，但分成主、次两部分，可以分别按下。主部分表现得和普通 `ToggleButton` 一样，次部分则打开一个装着更多操作的 [`Flyout`](/controls/menus/menuflyout)。
 
 :::info
-The `ToggleSplitButton` has only two states: checked and unchecked. Indeterminate is not supported like it is with a standard `ToggleButton`. This was done intentionally to match WinUI and restricts the control’s usage. The `ToggleSplitButton` should only be used to turn features on/off. Anything other than that is currently considered poor practice from a usability standpoint.
+`ToggleSplitButton` 只有选中和未选中两个状态，不像标准的 `ToggleButton` 那样支持不确定状态。这是有意为之，既与 WinUI 保持一致，也限定了控件的用途：`ToggleSplitButton` 只应该用来开关某个功能，除此之外的用法，从可用性角度看目前都算不上好做法。
 :::
 
-## Is this the right control?
+## 这个控件选对了吗？ {#is-this-the-right-control}
 
-A `ToggleSplitButton` is a fairly specialized control and its usage should be restricted to where it makes clear sense from a user-standpoint. It is intended to turn a feature on/off while allowing some additional configurations to be specified rather than the default.
+`ToggleSplitButton` 是个相当专门的控件，只应该用在从用户角度看确实合适的地方。它的定位是：开关某项功能，同时允许指定一些有别于默认值的额外配置。
 
-Like a [`SplitButton`](/controls/input/buttons/splitbutton), the most common action should be the default and what is shown in the primary part. However, unlike the `SplitButton`, pressing the primary part will turn this feature on or off instead of invoking an action. Additional configurations for the feature should be added to the [`Flyout`](/api/avalonia/controls/flyout) which is shown when the secondary (drop down) part is pressed.
+和 [`SplitButton`](/controls/input/buttons/splitbutton) 一样，最常用的操作应当作为默认项显示在主部分。但与 `SplitButton` 不同的是，按下主部分是开启或关闭这项功能，而不是执行某个动作。该功能的额外配置应放进 [`Flyout`](/api/avalonia/controls/flyout)，按下次要的（下拉）部分时才出现。
 
 :::info
-Pressing a configuration in the `Flyout` should either (1) turn on the feature with the selected configuration, or (2) change the feature to the selected configuration. Pressing a configuration in the `Flyout` should never turn off the feature; that can only be done by toggling the primary part.
+在 `Flyout` 中选择某个配置，应当要么（1）用选中的配置开启该功能，要么（2）把该功能切换到选中的配置。在 `Flyout` 中选择配置绝不应该关闭功能——关闭只能靠切换主部分来完成。
 :::
 
 ## 常用属性 {#common-properties}
 
 | 属性    | 说明                                                    |
 | ----------- | -------------------------------------------------------------- |
-| `Content`   | The content to display in the primary part                     |
-| `Flyout`    | The `Flyout` which shows up when the secondary part is clicked |
-| `Command`   | A command to be invoked when the primary button is clicked     |
-| `IsChecked` | Gets or sets if the `ToggleSplitButton` is checked             |
+| `Content`   | 在主部分中显示的内容                     |
+| `Flyout`    | 按下次要部分时弹出的 `Flyout` |
+| `Command`   | 主按钮被点击时要调用的命令     |
+| `IsChecked` | 获取或设置 `ToggleSplitButton` 是否被选中             |
 
 ## Pseudoclasses
 
-| Pseudoclass    | 说明                                                                                                                                                               |
+| 伪类    | 说明                                                                                                                                                               |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `:pressed`     | Set when the entire `ToggleSplitButton` is pressed using a keyboard input such as Space or Enter. In this state no distinction is made between primary or secondary parts |
-| `:flyout-open` | Set when the `Flyout` is open                                                                                                                                             |
-| `:checked`     | Set when the `ToggleSplitButton` is checked. (`IsChecked="true"`)                                                                                                         |
+| `:pressed`     | 用空格、Enter 等键盘输入按下整个 `ToggleSplitButton` 时设置。此状态下不区分主部分和次要部分 |
+| `:flyout-open` | `Flyout` 处于打开状态时设置                                                                                                                                             |
+| `:checked`     | `ToggleSplitButton` 被选中时设置。（`IsChecked="true"`）                                                                                                         |
 
 ## 示例 {#examples}
 
@@ -67,11 +67,11 @@ Pressing a configuration in the `Flyout` should either (1) turn on the feature w
 
 </XamlPreview>
 
-### Text editor with numbered or bulleted list
+### 带编号列表或项目符号列表的文本编辑器 {#text-editor-with-numbered-or-bulleted-list}
 
 <Image light={ToggleSplitButtonTextListScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-Continuing the text editor example from `SplitButton`, a common use case of the `ToggleSplitButton` is to add bulleted/numbered lists to text. In this example the primary part will toggle the list on/off while the secondary part will open a `Flyout` and allow selecting the bullet or number style.
+接着 `SplitButton` 中那个文本编辑器的例子：`ToggleSplitButton` 的一个常见用例是给文字加项目符号列表或编号列表。本例中，主部分负责开关列表，次要部分则打开 `Flyout`，供用户挑选项目符号或编号的样式。
 
 ```xml
 <!-- We have the following Icons defined in our Resources -->
@@ -109,5 +109,5 @@ Continuing the text editor example from `SplitButton`, a common use case of the 
 
 ## 另请参阅 {#see-also}
 
-- [ToggleSplitButton API reference](/api/avalonia/controls/togglesplitbutton)
+- [ToggleSplitButton API 参考](/api/avalonia/controls/togglesplitbutton)
 - [GitHub 上的 `ToggleSplitButton.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitButton/ToggleSplitButton.cs)

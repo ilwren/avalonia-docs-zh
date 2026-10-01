@@ -40,7 +40,7 @@ public partial class SettingsViewModel : ObservableObject
 If you need to react when the value changes (for example, to save a preference), add a partial method such as `OnBrightnessChanged` in your view model. The MVVM Toolkit source generator creates it automatically.
 :::
 
-## Tick marks and snapping
+## 刻度线与吸附 {#tick-marks-and-snapping}
 
 Use `TickFrequency` with `IsSnapToTickEnabled` to restrict values to discrete steps. This is especially helpful when your domain requires round numbers (volume levels, percentage increments, star ratings):
 
@@ -82,7 +82,7 @@ Setting `TickFrequency` without `IsSnapToTickEnabled="True"` draws tick marks bu
 
 For a slider with a small range (for example, 0 to 1), you should lower both values so that keyboard users can reach all meaningful positions.
 
-## Vertical slider
+## 纵向滑块 {#vertical-slider}
 
 Set the [`Orientation`](/api/avalonia/layout/orientation) property to `Vertical`. You should also set an explicit `Height` so the slider does not collapse:
 
@@ -208,7 +208,7 @@ Template part names such as `PART_DecreaseButton` and `PART_IncreaseButton` are 
 | `TickFrequency` | `double` | Spacing between tick marks. |
 | `IsSnapToTickEnabled` | `bool` | Snap value to nearest tick. |
 | `TickPlacement` | `TickPlacement` | Where to draw tick marks. |
-| `Orientation` | `Orientation` | `Horizontal` (default) or `Vertical`. |
+| `Orientation` | `Orientation` | `Horizontal`（默认）或 `Vertical`。 |
 | `IsDirectionReversed` | `bool` | Reverse the direction of increasing value. |
 
 ## 另请参阅 {#see-also}

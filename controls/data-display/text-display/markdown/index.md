@@ -305,7 +305,7 @@ Named resources are also available for common values such as font sizes, margins
 
 See the [Markdown styling](/controls/data-display/text-display/markdown/markdown-styling) page for the full list of style selectors and resources.
 
-## Installation
+## 安装 {#installation}
 
 See the [Installation Guide](/tools/installing-avalonia-pro) for step-by-step instructions on how to install Avalonia Pro components.
 

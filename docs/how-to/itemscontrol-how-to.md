@@ -120,7 +120,7 @@ public class MainViewModel
 
 </XamlPreview>
 
-### Horizontal layout
+### 横向排列 {#horizontal-layout}
 
 `StackPanel` arranges items in a vertical stack by default. To display items horizontally, customize the `ItemsPanelTemplate` as shown in the previous example and set `Orientation="Horizontal"`.
 

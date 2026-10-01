@@ -5,32 +5,32 @@ title: AutoCompleteBox
 
 import AutoCompleteBoxScreenshot from '/img/controls/autocompletebox/autocompletebox.gif';
 
-The `AutoCompleteBox` presents a text box for user input and a drop-down that contains possible matches from an items source collection, for the text typed in. The drop-down shows when the user starts to type, and the match is updated for each character typed. The user can select from the drop-down.
+`AutoCompleteBox` 提供一个供用户输入的文本框，以及一个下拉列表，里面是数据源集合中与所键入文本相匹配的候选项。用户一开始键入，下拉列表就出现，并且每敲一个字符都会刷新匹配结果，用户可以从中选取。
 
-The way in which the text is matched to possible items in the items source is configurable.
+文本与数据源中候选项的匹配方式可以配置。
 
 ## 常用属性 {#useful-properties}
 
 下面这些属性你多半会经常用到：
 
-<table><thead><tr><th width="233">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>ItemsSource</code></td><td>The list of items to match from. </td></tr><tr><td><code>FilterMode</code></td><td>Option for how the matching is to be done. See table below.</td></tr><tr><td><code>AsyncPopulator</code></td><td>An asynchronous function that can provide the list of matches for a given (string) criteria.</td></tr><tr><td><code>MaxLength</code></td><td>The maximum number of characters the user can type. 0 means no limit.</td></tr><tr><td><code>InnerLeftContent</code></td><td>Content displayed inside the text area on the left (e.g., a search icon).</td></tr><tr><td><code>InnerRightContent</code></td><td>Content displayed inside the text area on the right (e.g., a clear button).</td></tr></tbody></table>
+<table><thead><tr><th width="233">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>ItemsSource</code></td><td>用于匹配的候选项列表。 </td></tr><tr><td><code>FilterMode</code></td><td>匹配方式的选项，见下表。</td></tr><tr><td><code>AsyncPopulator</code></td><td>一个异步函数，针对给定的（字符串）条件给出匹配列表。</td></tr><tr><td><code>MaxLength</code></td><td>用户最多能键入的字符数。0 表示不限。</td></tr><tr><td><code>InnerLeftContent</code></td><td>显示在文本区左侧内部的内容（比如搜索图标）。</td></tr><tr><td><code>InnerRightContent</code></td><td>显示在文本区右侧内部的内容（比如清除按钮）。</td></tr></tbody></table>
 
-These are the options for the filter mode property:
+筛选模式属性的可选值如下：
 
-<table><thead><tr><th width="350">Filter Mode</th><th>说明</th></tr></thead><tbody><tr><td><code>StartsWith</code></td><td>A culture-sensitive, case-insensitive filter where the returned items start with the specified text.</td></tr><tr><td><code>StartsWithCaseSensitive</code></td><td>A culture-sensitive, case-sensitive filter where the returned items start with the specified text.</td></tr><tr><td><code>StartsWithOrdinal</code></td><td>An ordinal, case-insensitive filter where the returned items start with the specified text.</td></tr><tr><td><code>StartsWithOrdinalCaseSensitive</code></td><td>An ordinal, case-sensitive filter where the returned items start with the specified text.</td></tr><tr><td><code>Contains</code></td><td>A culture-sensitive, case-insensitive filter where the returned items contain the specified text.</td></tr><tr><td><code>ContainsCaseSensitive</code></td><td>A culture-sensitive, case-sensitive filter where the returned items contain the specified text.</td></tr><tr><td><code>ContainsOrdinal</code></td><td>An ordinal, case-insensitive filter where the returned items contain the specified text.</td></tr><tr><td><code>ContainsOrdinalCaseSensitive</code></td><td>An ordinal, case-sensitive filter where the returned items contain the specified text.</td></tr><tr><td><code>Equals</code></td><td>A culture-sensitive, case-insensitive filter where the returned items equal the specified text.</td></tr><tr><td><code>EqualsCaseSensitive</code></td><td>A culture-sensitive, case-sensitive filter where the returned items equal the specified text.</td></tr><tr><td><code>EqualsOrdinal</code></td><td>An ordinal, case-insensitive filter where the returned items equal the specified text.</td></tr><tr><td><code>EqualsOrdinalCaseSensitive</code></td><td>An ordinal, case-sensitive filter where the returned items equal the specified text.</td></tr></tbody></table>
+<table><thead><tr><th width="350">Filter Mode</th><th>说明</th></tr></thead><tbody><tr><td><code>StartsWith</code></td><td>区分区域设置、不区分大小写的筛选，返回以指定文本开头的条目。</td></tr><tr><td><code>StartsWithCaseSensitive</code></td><td>区分区域设置、区分大小写的筛选，返回以指定文本开头的条目。</td></tr><tr><td><code>StartsWithOrdinal</code></td><td>按序号比较、不区分大小写的筛选，返回以指定文本开头的条目。</td></tr><tr><td><code>StartsWithOrdinalCaseSensitive</code></td><td>按序号比较、区分大小写的筛选，返回以指定文本开头的条目。</td></tr><tr><td><code>Contains</code></td><td>区分区域设置、不区分大小写的筛选，返回包含指定文本的条目。</td></tr><tr><td><code>ContainsCaseSensitive</code></td><td>区分区域设置、区分大小写的筛选，返回包含指定文本的条目。</td></tr><tr><td><code>ContainsOrdinal</code></td><td>按序号比较、不区分大小写的筛选，返回包含指定文本的条目。</td></tr><tr><td><code>ContainsOrdinalCaseSensitive</code></td><td>按序号比较、区分大小写的筛选，返回包含指定文本的条目。</td></tr><tr><td><code>Equals</code></td><td>区分区域设置、不区分大小写的筛选，返回与指定文本相同的条目。</td></tr><tr><td><code>EqualsCaseSensitive</code></td><td>区分区域设置、区分大小写的筛选，返回与指定文本相同的条目。</td></tr><tr><td><code>EqualsOrdinal</code></td><td>按序号比较、不区分大小写的筛选，返回与指定文本相同的条目。</td></tr><tr><td><code>EqualsOrdinalCaseSensitive</code></td><td>按序号比较、区分大小写的筛选，返回与指定文本相同的条目。</td></tr></tbody></table>
 
 :::info
-In an **ordinal** string comparison, each character is compared using its simple byte value (independent of language).
+在**按序号**比较字符串时，每个字符都按其原始字节值比对（与语言无关）。
 :::
 
 :::info
-**culture-sensitive** refers to considering the needs of users from different cultural backgrounds in design and technology implementations. This includes using different string processing and sorting patterns based on language. For example, English is typically sorted alphabetically from A-Z, Chinese may be sorted based on pinyin or stroke order, and other languages may have different sorting rules.
+**区分区域设置**指的是在设计和技术实现中照顾不同文化背景用户的需要，包括按语言采用不同的字符串处理与排序方式。比如英语通常按 A-Z 字母顺序排，中文可能按拼音或笔画排，其他语言又有各自的排序规则。
 :::
 
 
 ## 示例 {#examples}
 
-This example has a fixed items source (array) that is set in the C# code-behind.
+这个例子用的是在 C# 代码隐藏中设定的固定数据源（数组）。
 
 ```xml
 <StackPanel Margin="20">
@@ -61,11 +61,11 @@ namespace AvaloniaControls.Views
 <Image light={AutoCompleteBoxScreenshot} maxWidth={400} cornerRadius="true" position="center" alt="A short animation demonstrating the type-to-search functionality of the auto-complete box using a list of animals." />
 <br />
 
-### Using AutoCompleteBox with objects
-When working with complex objects instead of simple strings, specify which property should be shown and how the control should filter the underlying data. The sections below cover display binding, custom filtering, and formatting the presented text.
+### 用 AutoCompleteBox 处理对象 {#using-autocompletebox-with-objects}
+当数据不是简单字符串而是复杂对象时，需要指明显示哪个属性、以及控件该如何筛选底层数据。下面几节分别讲显示绑定、自定义筛选，以及所呈现文本的格式化。
 
 #### Filtering Objects Using ValueMemberBinding
-ValueMemberBinding tells the control which property of your object is displayed in the text box and used for built-in filtering.
+ValueMemberBinding 告诉控件：对象的哪个属性要显示在文本框中，并用于内置筛选。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -178,8 +178,8 @@ public class MainViewModel : INotifyPropertyChanged
 
 ```
 
-#### Implementing custom filtering using ItemFilter
-If you need to search across multiple properties such as both Name and Id, provide a custom filter function.
+#### 用 ItemFilter 实现自定义筛选 {#implementing-custom-filtering-using-itemfilter}
+若需要同时在多个属性（比如 Name 和 Id）中搜索，请提供一个自定义筛选函数。
 
 ```xml
 <AutoCompleteBox x:Name="ProductAutoComplete"
@@ -211,10 +211,10 @@ public partial class MainWindow : Window
 
 ```
 
-#### Customizing text using a value converter
-You can control the text displayed in the drop-down by using a value converter. This is helpful when you want to show a combination of fields, for example, a product’s name and price. Keep in mind that this also affects how filtering works: if you display both name and price, the control will allow filtering by either value.
+#### 用值转换器定制文本 {#customizing-text-using-a-value-converter}
+用值转换器可以控制下拉列表中显示的文本。当你想把几个字段拼在一起显示时（比如商品名加价格），这很有用。但要留意它同时也会影响筛选行为：如果名称和价格都显示出来，用户用任一个值都能筛选。
 
-If you only want to change how the item appears visually (without affecting filtering), use the standard ItemTemplate property instead.
+如果你只想改变条目的视觉呈现、不影响筛选，请改用标准的 ItemTemplate 属性。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -267,5 +267,5 @@ namespace YourNamespace.Converters
 ```
 ## 另请参阅 {#see-also}
 
-- [AutoCompleteBox API reference](/api/avalonia/controls/autocompletebox)
+- [AutoCompleteBox API 参考](/api/avalonia/controls/autocompletebox)
 - [GitHub 上的 `AutoCompleteBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/AutoCompleteBox/AutoCompleteBox.cs)

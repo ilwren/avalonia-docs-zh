@@ -150,7 +150,7 @@ public class User
 
 When you use a custom item template with complex objects, the `ComboBox` displays the selected item in the box using the same template as the items on the list. If you want different layouts for the selected item and the dropdown items, you can use a `DataTemplateSelector` or apply styles that target items inside the popup.
 
-## Binding to an enum
+## 绑定到枚举 {#binding-to-an-enum}
 
 You can populate a `ComboBox` with all values of an enum by calling `Enum.GetValues<T>()` and exposing the result as an array.
 

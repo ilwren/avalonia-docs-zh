@@ -186,7 +186,7 @@ The clipboard API is available on all Avalonia targets, but not every platform s
 | Linux | Yes | Yes | Varies by desktop environment | Yes |
 | Browser (WASM) | Yes (requires permission) | Yes | No | Limited |
 | iOS | Yes | Yes | No | Limited |
-| Android | Yes | Read only | No | Limited |
+| Android | Yes | 只读 | No | Limited |
 
 On **Browser/WASM**, the browser may prompt the user for clipboard permission the first time your application calls a clipboard method. Your code should handle the case where permission is denied and the call returns `null`.
 

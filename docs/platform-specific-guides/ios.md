@@ -123,7 +123,7 @@ For most Avalonia apps, the default macOS backend (Avalonia Native) is the bette
 
 Mac Catalyst is a narrower option for specific scenarios: apps that are deeply tied to UIKit APIs, or apps embedded within a MAUI hybrid project (which uses Catalyst for its macOS target). In those cases, Catalyst lets you reuse your iOS project directly rather than maintaining a separate macOS entry point.
 
-| Consideration | Default macOS backend | Mac Catalyst |
+| 考量点 | Default macOS backend | Mac Catalyst |
 |---|---|---|
 | Build from Windows or Linux | Yes | No (requires macOS) |
 | .NET workload required | None (`net10.0` is sufficient) | `maccatalyst` workload |

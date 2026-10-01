@@ -79,9 +79,9 @@ The `Label` control is a key building block for accessible forms. By pairing eac
 
 | 特性 | `Label` | `TextBlock` |
 |---|---|---|
-| Focus transfer | Yes (via `Target`) | No |
+| Focus transfer | 支持（通过 `Target`） | No |
 | Access key support | Yes | No |
-| Rich text formatting | No | Yes (via `Inlines`) |
+| Rich text formatting | No | 支持（通过 `Inlines`） |
 | Typical use | Form field labels | Display text, paragraphs |
 
 Use `Label` when you need accessibility and keyboard navigation in forms. Use `TextBlock` for general-purpose text display where focus transfer is not required.

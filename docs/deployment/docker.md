@@ -22,7 +22,7 @@ apt-get update && apt-get install -y \
     xvfb
 ```
 
-| Package | 用途 |
+| NuGet 包 | 用途 |
 |---|---|
 | `libx11-6` | X11 client library. Avalonia connects to the X display server through this. |
 | `libice6` | Inter-Client Exchange protocol. Required by the X session. |

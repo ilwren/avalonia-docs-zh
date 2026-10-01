@@ -139,6 +139,6 @@ If you want an animated transition when the content changes, consider using [`Tr
 
 - [ContentControl API reference](/api/avalonia/controls/contentcontrol)
 - [GitHub 上的 `ContentControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContentControl.cs)
-- [Data templates](/docs/data-templates/introduction-to-data-templates)
+- [数据模板](/docs/data-templates/introduction-to-data-templates)
 - [`TransitioningContentControl`](/controls/data-display/transitioningcontentcontrol)
 - [Data binding](/docs/data-binding/data-context)

@@ -14,7 +14,7 @@ Parcel creates packages for different Linux package managers and distribution me
 
 ## Supported Package Formats
 
-| Format | CLI code | Best suited for |
+| Format | CLI code | 最适合 |
 |---|---|---|
 | DEB package (`.deb`) | `deb` | Debian, Ubuntu, and other Debian-based distributions |
 | RPM package (`.rpm`) | `rpm` | Fedora, RHEL, and other RPM-based distributions |

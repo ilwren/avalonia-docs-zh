@@ -16,7 +16,7 @@ The [`TextBox`](/api/avalonia/controls/textbox) presents an area for typed (keyb
 |---|---|---|
 | `Text` | `string` | The current text in the input. |
 | `PlaceholderText` | `string` | Appears as a faded hint whenever the input is empty. Sometimes called a watermark. |
-| `PlaceholderForeground` | `IBrush` | The brush used to render the placeholder text. |
+| `PlaceholderForeground` | `IBrush` | 渲染占位文字所用的画刷。 |
 | `PasswordChar` | `char` | Hides any characters typed, replacing them with the given character instead. |
 | `RevealPassword` | `bool` | When `true`, shows the actual password text instead of mask characters. |
 | `AcceptsReturn` | `bool` | Makes the input multi-line by allowing the user to enter line returns. |
@@ -105,7 +105,7 @@ public partial class MyViewModel : ObservableValidator
 
 When validation fails, the `TextBox` displays an error border and tooltip by default. You can customize this appearance through the control's `:error` pseudo-class in your styles.
 
-## View model binding
+## 视图模型绑定 {#view-model-binding}
 
 Bind `Text` with two-way mode (the default for `TextBox.Text`):
 

@@ -10,32 +10,32 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Use `FlowDocumentScrollViewer` to display rich documents without editing. This guide covers setup, document loading, styling, layout, and common viewer patterns.
+用 `FlowDocumentScrollViewer` 展示富文本文档而不提供编辑。本指南涵盖环境准备、文档加载、样式、布局，以及常见的阅读器范式。
 
 :::info
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## When to use FlowDocumentScrollViewer
+## 何时使用 FlowDocumentScrollViewer {#when-to-use-flowdocumentscrollviewer}
 
-Three controls can host a `FlowDocument`:
+有三个控件可以承载 `FlowDocument`：
 
-| 控件 | 用途 | Selection / Copy | Caret | Undo | Overhead |
+| 控件 | 用途 | Selection / Copy | 插入符 | 撤销 | 开销 |
 |---|---|---|---|---|---|
-| `FlowDocumentScrollViewer` | Read-only display in one continuous column | Yes | No | No | Low |
-| `FlowDocumentPageViewer` | Read-only display as discrete page sheets | Yes | No | No | Low |
-| `RichTextEditor` | Interactive editing | Yes | Yes | Yes | Higher |
+| `FlowDocumentScrollViewer` | 以单一连续栏的形式只读展示 | Yes | No | No | Low |
+| `FlowDocumentPageViewer` | 以一页页独立纸面的形式只读展示 | Yes | No | No | Low |
+| `RichTextEditor` | 可交互编辑 | Yes | Yes | Yes | Higher |
 <br />
 
-Use `FlowDocumentScrollViewer` for help panes, report previews, file browsers, and read-only summaries. It supports text selection and clipboard copy out of the box (powered by the same `TextViewMouse` / `TextViewKeyboard` components used by the editor) but exposes no insertion caret, no editing actions, and no undo manager.
+帮助面板、报表预览、文件浏览和只读摘要，都该用 `FlowDocumentScrollViewer`。它开箱即支持文本选择和复制到剪贴板（底层与编辑器用的是同一套 `TextViewMouse` / `TextViewKeyboard` 组件），但不提供插入符、编辑操作和撤销管理器。
 
-Use `FlowDocumentPageViewer` when the reader should see real pages: print preview, page-faithful review, page navigation and zoom. It derives from `FlowDocumentScrollViewer`, and it paginates through the same shared break policy that print and PDF export use, so the three agree by construction.
+当读者需要看到真正的「页」时就用 `FlowDocumentPageViewer`：打印预览、忠于分页的审阅、翻页与缩放。它派生自 `FlowDocumentScrollViewer`，并且与打印、PDF 导出共用同一套分页断行策略，因此三者的结果天生一致。
 
-Use `RichTextEditor` with `IsReadOnly="True"` only when you need an insertion caret on otherwise-read-only content (e.g. for placing a cursor without allowing edits). This pulls in the full editing infrastructure (caret element, undo manager, editing components).
+只有当你需要在本质只读的内容上提供插入符时（比如要放光标但不允许编辑），才用 `RichTextEditor` 搭配 `IsReadOnly="True"`。这会把整套编辑基础设施（插入符元素、撤销管理器、编辑组件）都牵扯进来。
 
-Both viewers select inside page bands and footnotes: a press into a header, footer or note region moves the selection into that nested document.
+两种阅读器都支持在页眉页脚带和脚注内部选择：按进页眉、页脚或注释区域，选区就会进入那个嵌套文档。
 
-## Installation
+## 安装 {#installation}
 
 ```bash
 # Core package (includes FlowDocument, FlowDocumentScrollViewer, PlainTextSerializer)
@@ -49,11 +49,11 @@ dotnet add package Avalonia.Controls.Documents.Serialization.Html    # HTML impo
 dotnet add package Avalonia.Controls.Documents.Serialization.Pdf     # PDF export (write only)
 ```
 
-All document types (`FlowDocument`, `Paragraph`, `RichRun`, etc.) and `FlowDocumentScrollViewer` are mapped to the default Avalonia XML namespace (`https://github.com/avaloniaui`). No extra `xmlns` declarations are needed.
+所有文档类型（`FlowDocument`、`Paragraph`、`RichRun` 等）以及 `FlowDocumentScrollViewer` 都映射到了 Avalonia 的默认 XML 命名空间（`https://github.com/avaloniaui`），不需要额外声明 `xmlns`。
 
-## Minimal XAML example
+## 最简 XAML 示例 {#minimal-xaml-example}
 
-`FlowDocument` is the `[Content]` property of `FlowDocumentScrollViewer`, so it can be written directly as a child element:
+`FlowDocument` 是 `FlowDocumentScrollViewer` 的 `[Content]` 属性，因此可以直接写成子元素：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -74,13 +74,13 @@ All document types (`FlowDocument`, `Paragraph`, `RichRun`, etc.) and `FlowDocum
 </Window>
 ```
 
-The viewer wraps a virtualized `TextViewBase` inside a `ScrollViewer`. Vertical scrolling is enabled by default; horizontal scrolling is disabled.
+阅读器把一个虚拟化的 `TextViewBase` 包在 `ScrollViewer` 里。垂直滚动默认开启，水平滚动则关闭。
 
-## Loading documents from files
+## 从文件加载文档 {#loading-documents-from-files}
 
-### Async loading (preferred)
+### 异步加载（推荐） {#async-loading-preferred}
 
-Use `FlowDocument.LoadAsync` to deserialize a file and assign the result to the viewer:
+用 `FlowDocument.LoadAsync` 反序列化文件，再把结果赋给阅读器：
 
 ```csharp
 await using var stream = File.OpenRead("report.rtf");
@@ -88,41 +88,41 @@ var document = await FlowDocument.LoadAsync(stream, new RtfSerializer());
 viewer.Document = document;
 ```
 
-`LoadAsync` parses on the thread pool, then builds the element tree on the UI thread through an explicit dispatcher call. The returned `FlowDocument` is ready to display immediately.
+`LoadAsync` 在线程池上解析，随后通过一次显式的调度器调用在 UI 线程上构建元素树。返回的 `FlowDocument` 可以立即显示。
 
 :::info
-`IDocumentSerializer` is synchronous. `LoadAsync` and `SaveAsync` are thread-offload conveniences, but the element tree must still be built on the UI thread because a `FlowDocument` and its elements belong to the dispatcher of the thread that constructed them.
+`IDocumentSerializer` 是同步的。`LoadAsync` 和 `SaveAsync` 只是帮你把活儿挪出当前线程的便利封装，元素树仍必须在 UI 线程上构建——因为 `FlowDocument` 及其元素归属于构造它们的那个线程的调度器。
 
-If you need to stay off the UI thread entirely, read a `DocumentSnapshot` with the serializer and materialize it with `TextDocument.FromSnapshot`.
+若你需要全程不碰 UI 线程，请用序列化器读出一个 `DocumentSnapshot`，再用 `TextDocument.FromSnapshot` 把它实体化。
 :::
 
-### Synchronous loading
+### 同步加载 {#synchronous-loading}
 
 ```csharp
 using var stream = File.OpenRead("report.rtf");
 viewer.Document = FlowDocument.Load(stream, new RtfSerializer());
 ```
 
-`Load` parses and builds on the calling thread, so async loading is preferred for large files. Both overloads take an optional `CancellationToken`.
+`Load` 在调用线程上解析并构建，因此大文件更推荐异步加载。两个重载都接受一个可选的 `CancellationToken`。
 
-### Choosing a serializer
+### 选择序列化器 {#choosing-a-serializer}
 
-Pick a serializer based on the file format:
+按文件格式挑选序列化器：
 
-| Extension | Serializer | Package | 方向 |
+| 扩展名 | 序列化器 | NuGet 包 | 方向 |
 |---|---|---|---|
-| `.rtf` | `RtfSerializer` | `Avalonia.Controls.Documents.Serialization.Rtf` | Read and write |
-| `.docx` | `DocxSerializer` | `Avalonia.Controls.Documents.Serialization.Docx` | Read and write |
-| `.xaml` / `.axaml` | `XamlSerializer` | `Avalonia.Controls.Documents.Serialization.Xaml` | Read and write |
-| `.md` | `MarkdownSerializer` | `Avalonia.Controls.Markdown` | Read and write |
-| `.html` | `HtmlSerializer` | `Avalonia.Controls.Documents.Serialization.Html` | Read only |
-| `.pdf` | `PdfSerializer` | `Avalonia.Controls.Documents.Serialization.Pdf` | Write only |
-| `.txt` | `PlainTextSerializer` | Included in `Avalonia.Controls.Documents` (core) | Read and write |
+| `.rtf` | `RtfSerializer` | `Avalonia.Controls.Documents.Serialization.Rtf` | 可读可写 |
+| `.docx` | `DocxSerializer` | `Avalonia.Controls.Documents.Serialization.Docx` | 可读可写 |
+| `.xaml` / `.axaml` | `XamlSerializer` | `Avalonia.Controls.Documents.Serialization.Xaml` | 可读可写 |
+| `.md` | `MarkdownSerializer` | `Avalonia.Controls.Markdown` | 可读可写 |
+| `.html` | `HtmlSerializer` | `Avalonia.Controls.Documents.Serialization.Html` | 只读 |
+| `.pdf` | `PdfSerializer` | `Avalonia.Controls.Documents.Serialization.Pdf` | 只写 |
+| `.txt` | `PlainTextSerializer` | 已包含在 `Avalonia.Controls.Documents`（核心包）中 | 可读可写 |
 <br />
 
-Every serializer reports its direction through `CanRead` and `CanWrite`, allowing a format picker to filter the list. There is no built-in format registry, so discovery depends on the application. `MarkdownSerializer` accepts any readable stream, so it is tried last.
+每个序列化器都通过 `CanRead` 和 `CanWrite` 表明自己的读写方向，格式选择器可据此过滤列表。框架没有内置格式注册表，具体如何发现由应用自行决定。`MarkdownSerializer` 接受任意可读流，所以把它放在最后尝试。
 
-A helper method that maps extensions to serializers:
+一个把扩展名映射到序列化器的辅助方法：
 
 ```csharp
 static IDocumentSerializer GetSerializer(string path)
@@ -137,11 +137,9 @@ static IDocumentSerializer GetSerializer(string path)
 }
 ```
 
-### Loading from embedded resources
+### 从嵌入资源加载 {#loading-from-embedded-resources}
 
-Use Avalonia's `AssetLoader` to open a stream from an assembly resource.
-Use a `.xml` extension for FlowDocument data files — `.axaml` and `.xaml` extensions
-trigger Avalonia's XAML compiler, which cannot compile `FlowDocument` root elements.
+用 Avalonia 的 `AssetLoader` 可以从程序集资源中打开一个流。FlowDocument 数据文件请使用 `.xml` 扩展名——`.axaml` 和 `.xaml` 扩展名会触发 Avalonia 的 XAML 编译器，而它编译不了以 `FlowDocument` 为根元素的文件。
 
 ```csharp
 var uri = new Uri("avares://MyApp/Assets/Help.xml");
@@ -149,16 +147,16 @@ using var stream = AssetLoader.Open(uri);
 viewer.Document = FlowDocument.Load(stream, new XamlSerializer());
 ```
 
-### Loading from a byte array
+### 从字节数组加载 {#loading-from-a-byte-array}
 
 ```csharp
 using var stream = new MemoryStream(rtfBytes);
 viewer.Document = await FlowDocument.LoadAsync(stream, new RtfSerializer());
 ```
 
-## Building documents in code
+## 在代码中构建文档 {#building-documents-in-code}
 
-### Manual construction
+### 手工构建 {#manual-construction}
 
 ```csharp
 var document = new FlowDocument();
@@ -188,9 +186,9 @@ document.Blocks.Add(body);
 viewer.Document = document;
 ```
 
-### FlowDocumentBuilder (fluent API)
+### FlowDocumentBuilder（流式 API） {#flowdocumentbuilder-fluent-api}
 
-`FlowDocumentBuilder` provides a concise fluent interface for building documents:
+`FlowDocumentBuilder` 提供了一套简洁的流式接口来构建文档：
 
 ```csharp
 using Avalonia.Controls.Documents;                             // FlowDocumentBuilder, InlineFactory
@@ -209,7 +207,7 @@ var document = FlowDocumentBuilder.Create()
 viewer.Document = document;
 ```
 
-The builder supports lists and tables as well:
+这个构建器同样支持列表和表格：
 
 ```csharp
 var document = FlowDocumentBuilder.Create()
@@ -234,7 +232,7 @@ var document = FlowDocumentBuilder.Create()
     .Build();
 ```
 
-The `InlineFactory` class provides static factory methods for composing inlines:
+`InlineFactory` 类提供了一组静态工厂方法，用于拼装行内元素：
 
 ```csharp
 var doc = FlowDocumentBuilder.Create()
@@ -245,9 +243,9 @@ var doc = FlowDocumentBuilder.Create()
     .Build();
 ```
 
-The builder is best suited for linear documents. For deeply nested structures (tables within list items, sections with mixed content), manual construction gives more control.
+构建器最适合线性结构的文档。若结构层层嵌套（列表项里套表格、小节内容混杂），还是手工构建更可控。
 
-## Document structure reference
+## 文档结构参考 {#document-structure-reference}
 
 ```
 FlowDocument
@@ -273,9 +271,9 @@ FlowDocument
 └── BlockUIContainer       Embedded control (full-width block)
 ```
 
-### Common block properties
+### 块级元素的公共属性 {#common-block-properties}
 
-All blocks inherit from `Block` and share these properties:
+所有块级元素都继承自 `Block`，共享下列属性：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|

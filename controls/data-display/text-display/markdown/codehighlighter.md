@@ -14,7 +14,7 @@ The `Markdown` control supports syntax highlighting for fenced code blocks. Set 
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Installation
+## 安装 {#installation}
 
 Highlighters are distributed as separate NuGet packages. Install the one that suits your needs:
 

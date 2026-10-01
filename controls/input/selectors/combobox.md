@@ -1,7 +1,7 @@
 ---
 id: combobox
 title: ComboBox
-description: A drop-down selector that lets users pick a single item from a list, with optional editable text input and placeholder support.
+description: 一个下拉选择器：让用户从列表中选出一项，还可选配可编辑的文本输入和占位提示。
 doc-type: reference
 ---
 
@@ -9,7 +9,7 @@ import ComboBoxDataTemplateScreenshot from '/img/controls/combobox/combobox-data
 import ComboBoxBindingToViewModel from '/img/controls/combobox/combobox-binding-to-viewmodel.png';
 import ComboBoxEditable from '/img/controls/combobox/combobox-editable.gif';
 
-`ComboBox` presents a selected item in a box, with a dropdown button that displays a list of options. This page provides general reference for the control. For practical guidance on using `ComboBox`, see [How to: Work with ComboBox](/docs/how-to/combobox-how-to).
+`ComboBox` 在一个框里显示当前选中项，旁边的下拉按钮展开后列出所有选项。本页是该控件的通用参考；`ComboBox` 的实用指引请参阅[操作指南：使用 ComboBox](/docs/how-to/combobox-how-to)。
 
 ## 常用属性 {#useful-properties}
 
@@ -17,38 +17,38 @@ import ComboBoxEditable from '/img/controls/combobox/combobox-editable.gif';
 
 | 属性                   | 类型       | 说明                                                                                                              |
 | -------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `ItemsSource`                    | `IEnumerable?` | The bound collection that is used as the data source for the control. Inherited from [`ItemsControl`](/controls/data-display/collections/itemscontrol).                                                                                           |
-| `SelectedIndex`            | `int`      | The index (zero-based) of the selected item.                                                                             |
-| `SelectedItem`             | `object?`  | The selected item itself.                                                                                                |
-| `SelectedValue`            | `object?`  | The value of the selected item, determined by `SelectedValueBinding`.                                                    |
-| `IsEditable`               | `bool`     | Enables text editing, allowing you to type into the combo box.                           |
-| `Text`                     | `string?`  | Gets or sets the text value when `IsEditable` is `true`.                                                                 |
-| `PlaceholderText`          | `string?`  | Placeholder text shown when no item is selected.                                                                                     |
-| `AutoScrollToSelectedItem` | `bool`     | Indicates whether to automatically scroll to newly selected items.                                                       |
-| `IsDropDownOpen`           | `bool`     | Indicates whether the dropdown is currently open.                                                                        |
-| `MaxDropDownHeight`        | `double`   | The maximum height for the dropdown list. This is the actual height of the list part, not the number of items that show.  |
+| `ItemsSource`                    | `IEnumerable?` | 作为控件数据源的绑定集合。继承自 [`ItemsControl`](/controls/data-display/collections/itemscontrol)。                                                                                           |
+| `SelectedIndex`            | `int`      | 选中项的索引（从 0 开始）。                                                                             |
+| `SelectedItem`             | `object?`  | 选中项本身。                                                                                                |
+| `SelectedValue`            | `object?`  | 选中项的值，由 `SelectedValueBinding` 决定。                                                    |
+| `IsEditable`               | `bool`     | 启用文本编辑，允许直接在组合框里键入内容。                           |
+| `Text`                     | `string?`  | 当 `IsEditable` 为 `true` 时，获取或设置文本值。                                                                 |
+| `PlaceholderText`          | `string?`  | 未选中任何条目时显示的占位文字。                                                                                     |
+| `AutoScrollToSelectedItem` | `bool`     | 指示是否自动滚动到新选中的条目。                                                       |
+| `IsDropDownOpen`           | `bool`     | 指示下拉当前是否展开。                                                                        |
+| `MaxDropDownHeight`        | `double`   | 下拉列表的最大高度。这指的是列表部分的实际高度，而不是显示多少个条目。  |
 | `ItemsPanel`               | `ITemplate<Panel>` | 承载各项的容器面板，默认是 `StackPanel`。自定义 `ItemsPanel` 的方法见[自定义面板](/docs/how-to/itemscontrol-how-to#custom-panel)。 |
 
 <br />
 
 :::note
-By default, the width and height of the combo box scale to fit the selected item. If you need a box with a fixed size, you can also set `Width` and `Height` explicitly.
+默认情况下，组合框的宽高会随选中项自适应。若需要固定尺寸，也可以显式设置 `Width` 和 `Height`。
 :::
 
 ## 小贴士 {#tips}
 
-- Always set `SelectedIndex` or `SelectedItem` to an initial value if you want the control to display a selection on load. If neither is set, and you have not specified `PlaceholderText`, the control appears blank.
-- Use `PlaceholderText` to give your users a hint when nothing is selected yet. (e.g., "Select an option...")
-- When you bind `ItemsSource` to a collection of complex objects, provide an `ItemTemplate` so the control knows how to render each item. Without a template, the control calls `ToString()` on each object.
-- If you need to clear the selection programmatically, set `SelectedIndex` to `-1` or `SelectedItem` to `null`.
-- The `SelectionChanged` event fires whenever the selected item changes. Use this to run side-effect logic outside the view model.
-- You can compose, bind or template the items in the list. To review data templates, see [Introduction to data templates](/docs/data-templates/introduction-to-data-templates).
+- 若希望控件加载时就显示某个选中项，请务必给 `SelectedIndex` 或 `SelectedItem` 设一个初始值。两者都不设、又没指定 `PlaceholderText` 时，控件会是空白的。
+- 用 `PlaceholderText` 在尚未选中任何条目时给用户一点提示（比如「请选择…」）。
+- 把 `ItemsSource` 绑定到一组复杂对象时，请提供 `ItemTemplate`，好让控件知道每一项该怎么渲染。没有模板时，控件会对每个对象调用 `ToString()`。
+- 若要在代码中清除选中项，请把 `SelectedIndex` 设为 `-1`，或把 `SelectedItem` 设为 `null`。
+- 选中项每次变化都会触发 `SelectionChanged` 事件。要在视图模型之外跑一些副作用逻辑时，可以用它。
+- 列表中的条目可以自由编排、绑定或套模板。关于数据模板，请参阅[数据模板简介](/docs/data-templates/introduction-to-data-templates)。
 
 ## 示例 {#examples}
 
 ### 基本示例 {#basic-example}
 
-A basic list of text items. These are defined in XAML, meaning they cannot change at runtime. `SelectedIndex` pre-selects an item from the list as the default selection, using its list position. The dropdown menu is fixed at a limited height and becomes scrollable as a result.
+一个最基础的文本条目列表。它们写死在 XAML 里，因此运行时无法改变。`SelectedIndex` 按列表位置预先选中其中一项作为默认选中项。下拉菜单的高度是固定的，内容超出时便可滚动。
 
 <XamlPreview>
 
@@ -71,9 +71,9 @@ A basic list of text items. These are defined in XAML, meaning they cannot chang
 
 </XamlPreview>
 
-### Composed view
+### 组合出来的视图 {#composed-view}
 
-This combo box has a dropdown list that displays text overlaid on colored discs.
+这个组合框的下拉列表把文字叠在彩色圆片上显示。
 
 <XamlPreview>
 
@@ -108,9 +108,9 @@ This combo box has a dropdown list that displays text overlaid on colored discs.
 
 </XamlPreview>
 
-### Binding to a data template
+### 绑定数据模板 {#binding-to-a-data-template}
 
-This example binds the items in the combo box using a data template. The C# code-behind loads the installed font family names and binds them to the `ItemsSource` property.
+这个例子用数据模板绑定组合框中的条目。C# 代码隐藏加载系统已安装的字体族名称，并把它们绑定到 `ItemsSource` 属性。
 
 <Tabs>
 
@@ -175,7 +175,7 @@ public partial class MainWindow : Window
 
 ### 绑定到视图模型 {#binding-to-a-view-model}
 
-You can also bind the combo box's list items in a view model. In this example, the items are placed in an `ObservableCollection` in the main window view model, which binds both `ItemsSource` and `SelectedItem`.
+组合框的列表项也可以在视图模型中绑定。本例把条目放进主窗口视图模型的一个 `ObservableCollection` 中，`ItemsSource` 和 `SelectedItem` 都绑定到它。
 
 <Tabs>
 
@@ -219,11 +219,11 @@ public partial class MainWindowViewModel : ViewModelBase
 
 </Tabs>
 
-## Editable combo box
+## 可编辑的组合框 {#editable-combo-box}
 
-`ComboBox` has the `IsEditable` property. If set to `true`, the box allows text input.
+`ComboBox` 有一个 `IsEditable` 属性。设为 `true` 后，框内就能键入文本。
  
-Keyboard input in the box, if it matches a list item, sets the `SelectedItem`. Use this to give users the option to select an item without browsing the dropdown list.
+在框中键入的内容若与某个列表项匹配，便会设置 `SelectedItem`。借此可以让用户不必翻下拉列表就选中条目。
 
 <Tabs>
 
@@ -276,14 +276,14 @@ public partial class MainWindowViewModel : ViewModelBase
 </Tabs>
 
 :::caution
-`IsEditable="True"` does not make the `ComboBox` searchable, nor does it filter the dropdown list while the user types.
+`IsEditable="True"` 并不会让 `ComboBox` 变得可搜索，也不会在用户键入时过滤下拉列表。
 
-For type-to-search functionality, use [`AutoCompleteBox`](/controls/input/text-input/autocompletebox) instead. You can try changing `ComboBox` in the example above to `AutoCompleteBox` to see the difference.
+若需要「键入即搜索」的功能，请改用 [`AutoCompleteBox`](/controls/input/text-input/autocompletebox)。你可以把上面例子中的 `ComboBox` 换成 `AutoCompleteBox` 对比一下效果。
 :::
 
-### Complex data objects
+### 复杂数据对象 {#complex-data-objects}
 
-When items are complex objects with multiple components (e.g., a user profile consisting of name, job, email, etc.), use `TextSearch.TextBinding` to specify which property the editable text should match against.
+当条目是含多个成分的复杂对象时（比如由姓名、职位、邮箱等组成的用户资料），请用 `TextSearch.TextBinding` 指明可编辑文本应该与哪个属性比对。
 
 ```xml
 <ComboBox IsEditable="True"
@@ -300,10 +300,10 @@ When items are complex objects with multiple components (e.g., a user profile co
 
 ## 另请参阅 {#see-also}
 
-- [How to: Work with ComboBox](/docs/how-to/combobox-how-to)
+- [操作指南：使用 ComboBox](/docs/how-to/combobox-how-to)
 - [ListBox](/controls/data-display/collections/listbox)
 - [AutoCompleteBox](/controls/input/text-input/autocompletebox)
 - [RadioButton](/controls/input/buttons/radiobutton)
-- [Data templates](/docs/data-templates/introduction-to-data-templates)
-- [ComboBox API reference](/api/avalonia/controls/combobox)
+- [数据模板](/docs/data-templates/introduction-to-data-templates)
+- [ComboBox API 参考](/api/avalonia/controls/combobox)
 - [GitHub 上的 `ComboBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ComboBox.cs)

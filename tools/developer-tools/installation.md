@@ -1,7 +1,7 @@
 ---
 id: installation
 title: Installing the Avalonia Plus developer tools
-sidebar_label: Installation
+sidebar_label: 安装
 sidebar_position: 1
 doc-type: tutorial
 tags:

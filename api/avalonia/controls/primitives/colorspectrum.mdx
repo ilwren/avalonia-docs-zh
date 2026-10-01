@@ -154,7 +154,7 @@ public void RaiseColorChanged()
 | [Clip](../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../visual.mdx)。 |
 | [ClipToBounds](../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../visual.mdx)。 |
 | [Color](#uid-de143482cf) | Gets or sets the currently selected color in the RGB color model. |
-| [Components](#uid-2c1a41b8df) | Gets or sets the two HSV color components displayed by the spectrum. |
+| [Components](#uid-2c1a41b8df) | 获取或设置色谱所显示的那两个 HSV 颜色分量。 |
 | [ContextFlyout](../control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](../control.mdx)。 |
 | [ContextMenu](../control.mdx#uid-95e5e3ccc3) | 获取或设置控件的上下文菜单。继承自 [Control](../control.mdx)。 |
 | [CornerRadius](templatedcontrol.mdx#uid-91a447dd4a) | 获取或设置边框圆角的半径。继承自 [TemplatedControl](templatedcontrol.mdx)。 |
@@ -214,7 +214,7 @@ public void RaiseColorChanged()
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [Shape](#uid-eb7b0add04) | Gets or sets the displayed shape of the spectrum. |
+| [Shape](#uid-eb7b0add04) | 获取或设置色谱显示成什么形状。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [TabIndex](../../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -254,7 +254,7 @@ of precision and color drifting.
 
 ### Components 属性 {#components-property}
 
-Gets or sets the two HSV color components displayed by the spectrum.
+获取或设置色谱所显示的那两个 HSV 颜色分量。
 
 ```csharp
 public Avalonia.Controls.ColorSpectrumComponents Components { get; set; }
@@ -406,7 +406,7 @@ Internally, the [Avalonia.Controls.Primitives.ColorSpectrum](xref:Avalonia.Contr
 
 ### Shape 属性 {#shape-property}
 
-Gets or sets the displayed shape of the spectrum.
+获取或设置色谱显示成什么形状。
 
 ```csharp
 public Avalonia.Controls.ColorSpectrumShape Shape { get; set; }

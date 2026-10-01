@@ -19,7 +19,7 @@ The WebView component includes three main APIs:
 
 The WebView component is available with both Avalonia and [Avalonia XPF](/xpf). For XPF-specific installation and usage, see the [XPF section](#xpf) below.
 
-## Installation
+## 安装 {#installation}
 
 Add the WebView package to your project:
 
@@ -367,7 +367,7 @@ public interface IAndroidWebViewPlatformHandle : IPlatformHandle
 
 The WebView component is also available for [Avalonia XPF](/xpf) applications. All WebView functionality, APIs, and platform prerequisites described above apply to XPF as well, with the differences noted below.
 
-### Installation
+### 安装 {#installation-1}
 
 First, make sure you have installed the XPF NuGet feed as per the [instructions](/xpf/version-info/versioning).
 

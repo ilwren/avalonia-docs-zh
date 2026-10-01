@@ -203,15 +203,15 @@ editor.Save(stream, new RtfSerializer());
 
 Available serializers:
 
-| Serializer | Package | Extension | 方向 |
+| 序列化器 | NuGet 包 | 扩展名 | 方向 |
 |---|---|---|---|
-| `RtfSerializer` | `Avalonia.Controls.Documents.Serialization.Rtf` | `.rtf` | Read and write |
-| `DocxSerializer` | `Avalonia.Controls.Documents.Serialization.Docx` | `.docx` | Read and write |
-| `XamlSerializer` | `Avalonia.Controls.Documents.Serialization.Xaml` | `.xaml` | Read and write |
-| `MarkdownSerializer` | `Avalonia.Controls.Markdown` | `.md` | Read and write |
+| `RtfSerializer` | `Avalonia.Controls.Documents.Serialization.Rtf` | `.rtf` | 可读可写 |
+| `DocxSerializer` | `Avalonia.Controls.Documents.Serialization.Docx` | `.docx` | 可读可写 |
+| `XamlSerializer` | `Avalonia.Controls.Documents.Serialization.Xaml` | `.xaml` | 可读可写 |
+| `MarkdownSerializer` | `Avalonia.Controls.Markdown` | `.md` | 可读可写 |
 | `HtmlSerializer` | `Avalonia.Controls.Documents.Serialization.Html` | `.html` | Read only (`CanWrite` is `false`) |
 | `PdfSerializer` | `Avalonia.Controls.Documents.Serialization.Pdf` | `.pdf` | Write only (`CanRead` is `false`) |
-| `PlainTextSerializer` | Included in `Avalonia.Controls.Documents` (core) | `.txt` | Read and write |
+| `PlainTextSerializer` | 已包含在 `Avalonia.Controls.Documents`（核心包）中 | `.txt` | 可读可写 |
 <br />
 
 Each serializer reports its direction through `CanRead` and `CanWrite`, so a format picker can filter the list.

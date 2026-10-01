@@ -96,7 +96,7 @@ private void Save()
 
 This generates a `SaveCommand` property. The naming convention appends "Command" to your method name.
 
-### Command with a parameter
+### 带参数的命令 {#command-with-a-parameter}
 
 You can pass data from the view to your command by adding a parameter to the method:
 

@@ -1,17 +1,17 @@
 ---
 id: buttonspinner
 title: ButtonSpinner
-description: A content control with increment and decrement spinner buttons for cycling through values.
+description: 一个内容控件，带有「加」「减」两个微调按钮，用于在一组值之间来回切换。
 doc-type: reference
 ---
 
-The [`ButtonSpinner`](/api/avalonia/controls/buttonspinner) presents a control that includes buttons for spin-up and spin-down. The content of this button is flexible, but you will have to code quite a lot of the behavior.
+[`ButtonSpinner`](/api/avalonia/controls/buttonspinner) 提供一个带有上调、下调按钮的控件。按钮的内容可以很灵活，但相应的行为得你自己写不少代码。
 
 ## 何时使用 `ButtonSpinner` {#when-to-use-buttonspinner}
 
-Use `ButtonSpinner` when you need full control over the spin behavior, such as cycling through a list of non-numeric values or applying custom logic on each increment or decrement. Because the control does not include built-in value handling, you are responsible for updating the displayed content in response to spin events.
+当你需要完全掌控微调行为时就用 `ButtonSpinner`，比如在一组非数值的取值之间循环，或者在每次加减时跑一段自定义逻辑。由于该控件不内置取值处理，响应微调事件、更新所显示的内容都得你自己来。
 
-For standard numeric input with built-in validation and formatting, consider using [`NumericUpDown`](/controls/input/selectors/numericupdown) instead.
+若只是标准的数值输入、还想要内置的校验和格式化，请改用 [`NumericUpDown`](/controls/input/selectors/numericupdown)。
 
 ## 常用属性 {#useful-properties}
 
@@ -19,9 +19,9 @@ For standard numeric input with built-in validation and formatting, consider usi
 
 | 属性 | 说明 |
 |---|---|
-| `ButtonSpinnerLocation` | Location of the spinner buttons: `Left` or `Right` (default). |
-| `ValidSpinDirection` | Limits spin direction: `Increase`, `Decrease`, or `None`. |
-| `AllowSpin` | Whether spinning is enabled. Default is `true`. |
+| `ButtonSpinnerLocation` | 微调按钮的位置：`Left` 或 `Right`（默认）。 |
+| `ValidSpinDirection` | 限制微调方向：`Increase`、`Decrease` 或 `None`。 |
+| `AllowSpin` | 是否允许微调，默认值为 `true`。 |
 
 ## Example
 
@@ -58,9 +58,9 @@ public partial class MainView : UserControl
 
 </XamlPreview>
 
-## Using with MVVM
+## 搭配 MVVM 使用 {#using-with-mvvm}
 
-You can bind the `Spin` event to a command in your view model. Place your display content inside the `ButtonSpinner` and bind it to a property on the view model.
+可以把 `Spin` 事件绑定到视图模型中的命令。把要显示的内容放进 `ButtonSpinner`，再绑定到视图模型的某个属性即可。
 
 ```xml
 <ButtonSpinner Spin="{Binding SpinCommand}">
@@ -91,7 +91,7 @@ public partial class MyViewModel : ObservableObject
 
 ## 另请参阅 {#see-also}
 
-- [ButtonSpinner API reference](/api/avalonia/controls/buttonspinner)
+- [ButtonSpinner API 参考](/api/avalonia/controls/buttonspinner)
 - [GitHub 上的 `ButtonSpinner.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ButtonSpinner.cs)
 - [`NumericUpDown`](/controls/input/selectors/numericupdown)
 - [`Button`](/controls/input/buttons/button)
