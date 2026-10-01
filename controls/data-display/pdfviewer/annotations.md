@@ -16,7 +16,7 @@ Annotation methods take 0-based page indexes and PDF page coordinates: the origi
 
 `ActiveTool` is the tool the next pointer gesture applies. The built-in toolbar reads and writes the same property, so your own controls can arm any tool even with the toolbar hidden. `SetToolCommand` sets it from a command parameter, either the `PdfViewerTool` value or its name. `ActiveTool` stays `None` while `CanEditAnnotations` is `false`.
 
-| `PdfViewerTool` | Gesture | 结果 |
+| `PdfViewerTool` | 快捷键 | 结果 |
 |---|---|---|
 | `Highlight`, `Underline`, `Strikeout`, `Squiggly` | Drag across text | A text markup annotation in the tool's colour. |
 | `Redact` | Drag across text | Removes the covered content from the page. See [Redaction](#redaction). |

@@ -19,7 +19,7 @@ Hot reload applies edits to `.axaml` and `.cs` files in a running Avalonia appli
 
 With the hot reload package, these edits are applied live to your running application:
 
-| Change | 行为 |
+| 变更 | 行为 |
 | --- | --- |
 | Controls (files with `x:Class`) | Existing instances in the visual tree are rebuilt in place, keeping their positions where possible. |
 | Styles | Application-level and control-level styles are reapplied. Selector and setter changes take effect at once. |
