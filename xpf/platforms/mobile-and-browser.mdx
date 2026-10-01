@@ -1,58 +1,58 @@
 ---
 id: mobile-and-browser
-title: Mobile and Browser
+title: 移动端与浏览器
 ---
 
 import FileTree from '@site/src/components/global/FileTree';
 
 ## 前置条件 {#prerequisites}
 
-Before adding mobile or browser targets, make sure your project already runs on XPF for Desktop and that the XPF SDK is configured correctly. See [Getting Started](/xpf/getting-started) if you have not done this yet.
+添加移动端或浏览器目标之前，请先确认你的项目已经能以 XPF 跑在桌面上，且 XPF SDK 配置无误。若还没做到，请见[快速上手](/xpf/getting-started)。
 
 :::tip
-The [CalculatorDemo repository](https://github.com/AvaloniaUIOU/CalculatorDemo) contains a working example of XPF on all platforms. Ask the support team for access if needed.
+[CalculatorDemo 仓库](https://github.com/AvaloniaUIOU/CalculatorDemo)中有一个在所有平台上都能跑的 XPF 示例。需要访问权限的话，请找支持团队。
 :::
 
-You also need to prepare your development machine for each target platform. These steps are shared with all .NET mobile and browser projects:
+你还得为每个目标平台把开发机准备好。这些步骤与所有 .NET 移动端和浏览器项目都是共通的：
 
-- [Setting up an Android dev environment](/docs/platform-specific-guides/android)
-- [Setting up an iOS dev environment](/docs/platform-specific-guides/ios)
-- [Setting up a Browser dev environment](/docs/platform-specific-guides/webassembly)
+- [搭建 Android 开发环境](/docs/platform-specific-guides/android)
+- [搭建 iOS 开发环境](/docs/platform-specific-guides/ios)
+- [搭建浏览器开发环境](/docs/platform-specific-guides/webassembly)
 
 ## Multi-targeting
 
-Mobile and browser support in .NET is powered by platform-specific workloads and target frameworks. Desktop applications normally use `net8.0` or `net8.0-windows`, which also works on Linux and macOS through the XPF SDK compatibility layer.
+.NET 中的移动端和浏览器支持靠的是各平台的工作负载与目标框架。桌面应用通常用 `net8.0` 或 `net8.0-windows`，借助 XPF SDK 的兼容层，它们在 Linux 和 macOS 上同样管用。
 
-To support Android, iOS, or Browser, your project needs the corresponding target frameworks: `net8.0-android`, `net8.0-ios`, and `net8.0-browser`.
+要支持 Android、iOS 或浏览器，项目得加上相应的目标框架：`net8.0-android`、`net8.0-ios` 和 `net8.0-browser`。
 
-If you are familiar with Avalonia's cross-platform templates, you may know that Avalonia recommends creating separate projects per target. This is **not recommended** for XPF projects. WPF's embedded resource system assumes the executable project is the main project with all resources, and splitting into separate projects can break this.
+若你熟悉 Avalonia 的跨平台模板，大概知道 Avalonia 建议为每个目标各建一个项目。但对 XPF 项目而言，**不推荐**这么做：WPF 的嵌入式资源机制假定可执行项目就是那个装着全部资源的主项目，拆成多个项目会把它搞坏。
 
-Instead, use a single multi-targeted project by changing your `.csproj`:
+正确做法是用一个多目标项目，改一下你的 `.csproj`：
 
 ```diff
 -        <TargetFramework>net8.0-windows</TargetFramework>
 +        <TargetFrameworks>net8.0;net8.0-ios;net8.0-android;net8.0-browser</TargetFrameworks>
 ```
 
-Where `net8.0` is reused for all desktop platforms.
+其中 `net8.0` 为所有桌面平台所共用。
 
-Additionally, enable multi-targeting support in the XPF SDK:
+此外还要在 XPF SDK 中启用多目标支持：
 
 ```diff
 +        <XpfSingleProject>true</XpfSingleProject>
 ```
 
 :::caution
-Add `net8.0-android`, `net8.0-ios`, and `net8.0-browser` target frameworks **only on the executable project**. Do not add them to shared library projects. In particular, `net8.0-browser` is not supported on non-executable projects and will cause build errors such as "Program does not contain a static 'Main' method suitable for an entry point."
+`net8.0-android`、`net8.0-ios` 和 `net8.0-browser` 这几个目标框架**只能加在可执行项目上**，不要加到共享库项目里。尤其是 `net8.0-browser`，它不支持非可执行项目，会引发 “Program does not contain a static 'Main' method suitable for an entry point.” 之类的构建错误。
 
-Library projects should target `net8.0`. You can use the XPF SDK on library projects if needed. If a library needs access to native mobile APIs, you can add `net8.0-android` or `net8.0-ios`, but not `net8.0-browser`.
+库项目应当面向 `net8.0`。需要的话，库项目上也可以用 XPF SDK。若某个库要访问移动端原生 API，可以加上 `net8.0-android` 或 `net8.0-ios`，但不能加 `net8.0-browser`。
 :::
 
-## Defining an entry point
+## 定义入口点 {#defining-an-entry-point}
 
-Desktop WPF applications start with a `Main` method, but mobile and browser platforms have different entry point mechanisms. Android requires a root `Activity`, iOS requires an `AppDelegate`, and browser applications are launched by the web page itself.
+桌面 WPF 应用从 `Main` 方法起步，移动端和浏览器平台的入口机制则各不相同：Android 需要一个根 `Activity`，iOS 需要一个 `AppDelegate`，浏览器应用则由网页自己来启动。
 
-To handle this, define a shared entry point in your `Application` class that each platform can call:
+为此，请在你的 `Application` 类中定义一个各平台都能调用的共享入口点：
 
 ```diff
     public partial class App : Application
@@ -69,9 +69,9 @@ To handle this, define a shared entry point in your `Application` class that eac
     }
 ```
 
-## Platform-specific folders
+## 各平台专属目录 {#platform-specific-folders}
 
-The final step before building is to define platform-specific folders containing the entry point for each target. After this step, your project structure should look like this:
+构建之前的最后一步，是为每个目标建好存放入口点的平台专属目录。做完这一步，你的项目结构应该是这样：
 
 <FileTree data={[
   {
@@ -130,76 +130,76 @@ The final step before building is to define platform-specific folders containing
   }
 ]} />
 
-You can download pre-created platform folders from the [SingleProjectPlatforms repository](https://github.com/AvaloniaUIOU/SingleProjectPlatforms/archive/refs/heads/main.zip).
+预先建好的平台目录可从 [SingleProjectPlatforms 仓库](https://github.com/AvaloniaUIOU/SingleProjectPlatforms/archive/refs/heads/main.zip)下载。
 
-Each platform entry point calls the `App.Start()` method defined in the previous step.
+每个平台的入口点都会调用上一步定义的那个 `App.Start()` 方法。
 
 ## Building
 
 ### .NET CLI
 
-Build all platforms at once:
+一次性构建所有平台：
 
 ```bash
 dotnet build
 ```
 
-Build for a specific platform:
+只构建某个平台：
 
 ```bash
 dotnet build -f net8.0-android
 ```
 
-Run the browser target:
+运行浏览器目标：
 
 ```bash
 dotnet run -f net8.0-browser
 ```
 
 :::note
-.NET does not officially support running Android or iOS apps from the CLI directly. Use an IDE for these targets.
+.NET 官方并不支持直接从命令行运行 Android 或 iOS 应用，这两个目标请用 IDE。
 :::
 
 ### Visual Studio
 
-By default, Visual Studio targets the desktop framework (`net8.0`). To select a different platform, use the target framework dropdown:
+Visual Studio 默认面向桌面框架（`net8.0`）。要切到别的平台，请用目标框架下拉框：
 
-![VS target selector](/img/running-on-mobile-and-browser/vs-target-selector.png)
+![VS 目标选择器](/img/running-on-mobile-and-browser/vs-target-selector.png)
 
-When Android is selected, Visual Studio shows a selector for emulators or connected devices:
+选中 Android 后，Visual Studio 会列出可选的模拟器或已连接的设备：
 
-![VS Android emulators selector](/img/running-on-mobile-and-browser/vs-android-emulators-selector.png)
+![VS Android 模拟器选择器](/img/running-on-mobile-and-browser/vs-android-emulators-selector.png)
 
-If no emulators appear, verify that:
-- The Android SDK is installed (install it from the Visual Studio Installer under "Individual Components")
-- At least one Android emulator is configured (open **Tools > Android > Android Device Manager** to create one)
-- Both Visual Studio and the XPF SDK are up to date
+若一个模拟器都看不到，请确认：
+- Android SDK 已安装（可在 Visual Studio 安装程序的“单个组件”下安装）
+- 至少配好了一个 Android 模拟器（打开**工具 > Android > Android 设备管理器**创建一个）
+- Visual Studio 和 XPF SDK 都已更新到最新
 
 ### JetBrains Rider
 
-Rider works similarly to Visual Studio. Select your target framework from the run configuration dropdown:
+Rider 的用法与 Visual Studio 类似，在运行配置下拉框中选择目标框架即可：
 
-![Rider target selector](/img/running-on-mobile-and-browser/rider-target-selector.png)
+![Rider 目标选择器](/img/running-on-mobile-and-browser/rider-target-selector.png)
 
-The Browser target is not shown by default. To add it, click **Edit Configurations** in the dropdown and add a new ".NET Project" configuration, selecting the correct target framework. Rider fills in the remaining fields automatically.
+浏览器目标默认不显示。要加上它，请在下拉框中点 **Edit Configurations**，新增一个 “.NET Project” 配置并选好对应的目标框架，其余字段 Rider 会自动填好。
 
-![Rider adding browser target](/img/running-on-mobile-and-browser/rider-adding-browser-target.png)
+![Rider 添加浏览器目标](/img/running-on-mobile-and-browser/rider-adding-browser-target.png)
 
 ### VS Code
 
-VS Code works with the [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) and [.NET MAUI](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-maui) extensions for mobile targets.
+VS Code 需配合 [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) 和 [.NET MAUI](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-maui) 扩展来处理移动端目标。
 
 :::note
-Apple does not allow iOS simulators or connected iOS devices on non-macOS machines. Use macOS for Apple mobile targets, or experiment with [Visual Studio's macOS pairing feature](https://learn.microsoft.com/en-us/dotnet/maui/ios/pair-to-mac?view=net-maui-8.0).
+Apple 不允许在非 macOS 机器上使用 iOS 模拟器或连接 iOS 设备。Apple 的移动端目标请在 macOS 上做，或者试试 [Visual Studio 的 macOS 配对功能](https://learn.microsoft.com/en-us/dotnet/maui/ios/pair-to-mac?view=net-maui-8.0)。
 :::
 
-### Example: WPF Calculator Demo on Android
+### 示例：WPF 计算器演示跑在 Android 上 {#example-wpf-calculator-demo-on-android}
 
-![Calculator Demo on Android emulator](/img/running-on-mobile-and-browser/calc-demo.png)
+![Android 模拟器中的计算器演示](/img/running-on-mobile-and-browser/calc-demo.png)
 
 ## 发布 {#publishing}
 
-Use the .NET CLI for publishing:
+发布请用 .NET CLI：
 
 ```bash
 # Outputs an APK in /bin/Release/net8.0-android/publish/
@@ -213,23 +213,23 @@ dotnet publish -f net8.0-browser
 ```
 
 :::caution
-Publishing in Release configuration has known issues with Mobile and Browser projects due to trimming and AOT compilation. Test your published output thoroughly.
+由于裁剪和 AOT 编译的缘故，以 Release 配置发布移动端和浏览器项目存在已知问题。请把发布产物仔细测一遍。
 :::
 
 ## 已知限制 {#known-limitations}
 
-Browser and mobile platforms have inherent constraints compared to desktop. XPF provides compatibility layers for some of these, but others require changes in your application code.
+与桌面相比，浏览器和移动平台天生就有一些约束。XPF 为其中一部分提供了兼容层，另一些则需要你改应用代码。
 
 ### Windowing
 
-XPF supports the `Window` class on mobile and browser targets through a virtual desktop embedded in the platform's single view (the mobile app view or web page content). No extra code is needed to enable this.
+在移动端和浏览器目标上，XPF 通过嵌在平台单一视图（移动应用视图或网页内容）中的虚拟桌面来支持 `Window` 类，不需要额外写代码来启用。
 
-Current limitations of virtual windows:
-- Resizing and dragging are not yet supported
-- Window decorations are not rendered
-- Owned windows are not yet supported (but `ShowDialog` works)
+虚拟窗口目前的限制：
+- 尚不支持调整大小和拖动
+- 不渲染窗口装饰
+- 尚不支持从属窗口（但 `ShowDialog` 可用）
 
-Maximize your main window so it fills the full screen on mobile and browser:
+在移动端和浏览器上，请把主窗口最大化，让它铺满整个屏幕：
 
 ```csharp
 public MainWindow()
@@ -245,13 +245,13 @@ public MainWindow()
 
 ### DispatcherFrame
 
-`DispatcherFrame` and related `Dispatcher` APIs are not supported on any mobile or browser platform.
+`DispatcherFrame` 及相关的 `Dispatcher` API 在所有移动端和浏览器平台上都不受支持。
 
-### Synchronous dialog APIs
+### 同步对话框 API {#synchronous-dialog-apis}
 
-WPF's synchronous dialog APIs (`Window.ShowDialog()`, `MessageBox.Show()`) work on desktop but cannot be supported on mobile and browser because the main thread cannot be blocked on these platforms.
+WPF 的同步对话框 API（`Window.ShowDialog()`、`MessageBox.Show()`）在桌面上没问题，但移动端和浏览器上支持不了——这些平台不允许阻塞主线程。
 
-Use the async extension methods instead:
+请改用异步扩展方法：
 
 **MessageBox:**
 ```diff
@@ -267,31 +267,31 @@ dialog.Owner = this;
 +var result = await dialog.ShowDialogAsync();
 ```
 
-These extension methods also work on desktop targets, so you can use them everywhere for consistency.
+这些扩展方法在桌面目标上同样可用，所以你大可处处用它们，图个一致。
 
 :::note
-Async extension methods for file dialogs are not yet available but are planned. Contact the support team if you need these or other APIs on mobile or browser.
+文件对话框的异步扩展方法暂时还没有，但已在计划之中。若你在移动端或浏览器上急需这些或其他 API，请联系支持团队。
 :::
 
-### File system access
+### 文件系统访问 {#file-system-access}
 
-Mobile and browser applications are sandboxed. Direct file system access by path is not available.
+移动端和浏览器应用都跑在沙箱里，没法按路径直接访问文件系统。
 
-Limit your file API usage to file pickers and stream-based APIs. To access a writable application data folder on mobile:
+请把文件相关的 API 用法限制在文件选取器和基于流的接口上。若要在移动端访问可写的应用数据目录：
 
 ```csharp
 var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 ```
 
 :::note
-Browser applications have no file system access except through user-initiated file dialogs.
+浏览器应用除了用户主动发起的文件对话框之外，根本没有文件系统访问能力。
 :::
 
-### Threading in the browser
+### 浏览器中的线程 {#threading-in-the-browser}
 
-The browser environment has very limited threading support. Treat it as an environment where async is not optional but required, because the main thread of a web application cannot be blocked.
+浏览器环境的线程支持相当有限。请把它当成一个异步不是可选项、而是必选项的环境——网页应用的主线程阻塞不得。
 
-To enable minimal threading support (such as `Task.Run` or `new Thread()`), add the following to your project file:
+若要启用最基本的线程支持（比如 `Task.Run` 或 `new Thread()`），请在项目文件中加上：
 
 ```xml
 <PropertyGroup>
@@ -301,4 +301,4 @@ To enable minimal threading support (such as `Task.Run` or `new Thread()`), add 
 
 ### 平台专属代码 {#platform-specific-code}
 
-If you need to access platform-specific APIs from your XPF project, the approach is the same as in an Avalonia application. See [Platform-specific .NET](/docs/platform-specific-guides/dotnet) for details.
+若要从 XPF 项目中访问平台专属 API，做法与在 Avalonia 应用中一样。细节请见[平台专属 .NET](/docs/platform-specific-guides/dotnet)。
