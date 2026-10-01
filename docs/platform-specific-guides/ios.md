@@ -12,7 +12,7 @@ import IOSProvisionPhoneScreenshot from '/img/guides/platform-specific-guides/io
 import IOSSelectDeviceScreenshot from '/img/guides/platform-specific-guides/ios/ios-select-device.png';
 import IOSCertScreenshot from '/img/guides/platform-specific-guides/ios/ios-cert.png';
 
-## Setting up your developer environment
+## 搭建开发环境 {#setting-up-your-developer-environment}
 
 ### 前置条件 {#prerequisites}
 

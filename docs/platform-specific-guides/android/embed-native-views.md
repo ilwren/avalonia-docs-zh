@@ -1,40 +1,40 @@
 ---
 id: embed-native-views
-title: Embedding Android native views
-description: Learn how to embed native Android views such as WebView and Button controls inside your Avalonia application using NativeControlHost and AndroidViewControlHandle.
+title: 嵌入 Android 原生视图
+description: 了解如何借助 NativeControlHost 和 AndroidViewControlHandle，把 WebView、Button 等 Android 原生视图嵌入 Avalonia 应用。
 doc-type: how-to
 ---
 
-Avalonia lets you embed native Android views inside the Avalonia visual tree by subclassing [`NativeControlHost`](/api/avalonia/controls/nativecontrolhost). You wrap each Android `View` in an [`AndroidViewControlHandle`](/api/avalonia/android/androidviewcontrolhandle) and return it from `CreateNativeControlCore`. This is useful when you need platform-specific controls (such as `WebView`, `MapView`, or media players) that have no Avalonia equivalent.
+通过继承 [`NativeControlHost`](/api/avalonia/controls/nativecontrolhost)，你可以把 Android 原生视图嵌进 Avalonia 的视觉树：把每个 Android `View` 包进一个 [`AndroidViewControlHandle`](/api/avalonia/android/androidviewcontrolhandle)，再从 `CreateNativeControlCore` 返回即可。当你需要 Avalonia 没有对应物的平台专属控件（比如 `WebView`、`MapView` 或媒体播放器）时，这招就派上用场了。
 
 ## 运作原理 {#how-it-works}
 
-`NativeControlHost` reserves space in the Avalonia layout and hands rendering of that region to the native platform. On Android, you:
+`NativeControlHost` 会在 Avalonia 布局中占出一块地方，并把这块区域的渲染交给原生平台。在 Android 上，你需要：
 
-1. Override `CreateNativeControlCore` in a `NativeControlHost` subclass.
-2. Create the native Android `View` you need, using the parent context from the `parent` handle.
-3. Wrap the `View` in an `AndroidViewControlHandle` and return it.
+1. 在 `NativeControlHost` 的子类中重写 `CreateNativeControlCore`。
+2. 借助 `parent` 句柄中的父级 context，创建你所需的 Android 原生 `View`。
+3. 把该 `View` 包进 `AndroidViewControlHandle` 并返回。
 
-Avalonia positions and clips the native view to match the host control's bounds.
+Avalonia 会摆放并裁剪这个原生视图，使其与宿主控件的边界吻合。
 
-## Getting the parent context
+## 获取父级 context {#getting-the-parent-context}
 
-The `parent` parameter passed to `CreateNativeControlCore` is an `IPlatformHandle`. On Android, you can cast it to `AndroidViewControlHandle` to obtain the `View.Context`. If the cast fails, fall back to the global application context:
+传给 `CreateNativeControlCore` 的 `parent` 参数是一个 `IPlatformHandle`。在 Android 上，你可以把它转成 `AndroidViewControlHandle` 以取得 `View.Context`；若转换失败，就退而使用全局的 application context：
 
 ```csharp
 var parentContext = (parent as AndroidViewControlHandle)?.View.Context
     ?? global::Android.App.Application.Context;
 ```
 
-## Example: embedding a WebView and a Button
+## 示例：嵌入 WebView 和 Button {#example-embedding-a-webview-and-a-button}
 
-The following example demonstrates a class that implements an `INativeDemoControl` interface and creates one of two native Android controls depending on a parameter.
+下面的示例演示了一个实现 `INativeDemoControl` 接口的类，它会根据参数创建两种 Android 原生控件之一。
 
 :::tip
-This example is based on the [ControlCatalog.Android sample](https://github.com/AvaloniaUI/Avalonia/blob/master/samples/ControlCatalog.Android/EmbedSample.Android.cs) in the Avalonia repository.
+本示例取自 Avalonia 仓库中的 [ControlCatalog.Android 示例](https://github.com/AvaloniaUI/Avalonia/blob/master/samples/ControlCatalog.Android/EmbedSample.Android.cs)。
 :::
 
-First, define the interface your shared code uses to request a native control:
+首先，定义共享代码用来请求原生控件的接口：
 
 ```csharp
 public interface INativeDemoControl
@@ -46,7 +46,7 @@ public interface INativeDemoControl
 }
 ```
 
-Then implement it in your Android project:
+然后在 Android 项目里实现它：
 
 ```csharp
 public class EmbedSampleAndroid : INativeDemoControl
@@ -83,20 +83,20 @@ public class EmbedSampleAndroid : INativeDemoControl
 }
 ```
 
-When `isSecond` is `true`, the method creates an Android `WebView`, loads a URL, and returns it wrapped in an `AndroidViewControlHandle`. When `isSecond` is `false`, it creates a native `Button` with a click counter and returns that instead.
+当 `isSecond` 为 `true` 时，该方法会创建一个 Android `WebView`、加载某个 URL，并把它包进 `AndroidViewControlHandle` 返回；当 `isSecond` 为 `false` 时，则创建一个带点击计数的原生 `Button` 并返回。
 
 ## 限制 {#limitations}
 
-Native views sit on top of the Avalonia rendering surface. Keep the following constraints in mind:
+原生视图位于 Avalonia 渲染表面之上。请记住以下限制：
 
-- **No transparency**: Native views cannot have transparent backgrounds that reveal Avalonia content behind them.
-- **No transforms**: Avalonia render transforms (rotation, scale) do not affect native views.
-- **Z-order constraints**: Native views always render on top of Avalonia content. You cannot overlay Avalonia controls on a native view.
+- **不能透明**：原生视图无法使用透明背景来透出其后方的 Avalonia 内容。
+- **不受变换影响**：Avalonia 的渲染变换（旋转、缩放）对原生视图不起作用。
+- **Z 序限制**：原生视图始终渲染在 Avalonia 内容之上，你无法把 Avalonia 控件叠在原生视图上面。
 - **裁剪**：原生视图会被裁剪到宿主边界之内，但不支持复杂的裁剪几何。
 
 ## 另请参阅 {#see-also}
 
-- [Native platform interop](/docs/app-development/native-interop)
-- [Developing with Avalonia for Android](/docs/platform-specific-guides/android)
-- [Deploying on Android](/docs/deployment/android)
+- [原生平台互操作](/docs/app-development/native-interop)
+- [用 Avalonia 开发 Android 应用](/docs/platform-specific-guides/android)
+- [在 Android 上部署](/docs/deployment/android)
 

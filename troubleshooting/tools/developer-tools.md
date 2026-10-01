@@ -97,7 +97,7 @@ application.AttachDeveloperTools(o =>
 
 ## 常见问题 {#common-issues}
 
-| 现象 | Possible cause | Resolution |
+| 现象 | 可能的原因 | Resolution |
 |---|---|---|
 | Developer Tools window opens but shows no visual tree | The application has not finished initializing | Wait for the main window to appear, or call `AttachDeveloperTools` after `OnFrameworkInitializationCompleted` |
 | "Connection refused" in diagnostic logs | Port conflict or firewall blocking local traffic | Check for port conflicts and firewall rules |

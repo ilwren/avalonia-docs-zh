@@ -1,79 +1,79 @@
 ---
 id: android
-title: Developing with Avalonia for Android
-description: Setting up the Android development environment for building Avalonia applications, including SDK and workload installation.
+title: 用 Avalonia 开发 Android 应用
+description: 搭建 Android 开发环境以构建 Avalonia 应用，包括安装 SDK 和工作负载。
 doc-type: how-to
 ---
 
-## Setting up your developer environment
+## 搭建开发环境 {#setting-up-your-developer-environment}
 
-Follow these steps to install the tools you will need, using the CLI:
+按下面几步用命令行安装所需的工具：
 
--  Check that you have installed a compatible version of the .NET SDK. The lowest version that works with Avalonia is 6.0.2.00.
+-  先确认你装的 .NET SDK 版本可用。Avalonia 支持的最低版本是 6.0.2.00。
 
 :::info
-You can see the [available .NET SDK versions](https://dotnet.microsoft.com/en-us/download/dotnet).
+你可以查看[可用的 .NET SDK 版本](https://dotnet.microsoft.com/en-us/download/dotnet)。
 :::
 
--  You may need to uninstall an old version of the _Android Workload._ To do this, type the following command:
+-  你也许得先卸掉旧版的 _Android 工作负载_。执行以下命令即可：
 
 ```bash
 dotnet workload uninstall android
 ```
 
--  Install the _Android Workload._ To do this, type the following command:
+-  安装 _Android 工作负载_。执行以下命令：
 
 ```bash
 dotnet workload install android
 ```
 
 :::info
-You may need to run the above commands with _sudo._
+上述命令可能需要加 _sudo_ 运行。
 :::
 
-:::caution[Linux users: use the official Microsoft .NET SDK]
-The `dotnet workload` command requires the official Microsoft .NET SDK. .NET packages from Linux distribution repositories (such as Arch Linux AUR, Ubuntu `dotnet-sdk` apt packages, or Fedora `dotnet` dnf packages) may not include workload support. If `dotnet workload install android` fails with error `NETSDK1139`, install the SDK from [Microsoft's .NET download page](https://dotnet.microsoft.com/download) or use the [install script](https://learn.microsoft.com/dotnet/core/tools/dotnet-install-script):
+:::caution[Linux 用户：请使用微软官方的 .NET SDK]
+`dotnet workload` 命令需要微软官方的 .NET SDK。Linux 发行版仓库里的 .NET 包（比如 Arch Linux 的 AUR、Ubuntu 的 `dotnet-sdk` apt 包或 Fedora 的 `dotnet` dnf 包）可能不带工作负载支持。若 `dotnet workload install android` 报错 `NETSDK1139`，请从[微软 .NET 下载页](https://dotnet.microsoft.com/download)安装 SDK，或使用[安装脚本](https://learn.microsoft.com/dotnet/core/tools/dotnet-install-script)：
 
 ```bash
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 10.0
 ```
 :::
 
-### Install the Android SDK
+### 安装 Android SDK {#install-the-android-sdk}
 
-There are several ways to install the Android SDK. Choose the one that matches your development environment.
+安装 Android SDK 的办法有好几种，挑一个与你开发环境相符的即可。
 
-If you use Visual Studio, then refer to the [Android SDK installation guide](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-sdk).
+如果你用 Visual Studio，请参阅 [Android SDK 安装指南](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-sdk)。
 
-If you use JetBrains Rider, please refer to the [Rider documentation](https://www.jetbrains.com/help/rider/Introduction.html).
+如果你用 JetBrains Rider，请参阅 [Rider 文档](https://www.jetbrains.com/help/rider/Introduction.html)。
 
-Alternatively you can install the [Android command line tools](https://developer.android.com/studio#command-tools).
+另一种办法是安装 [Android 命令行工具](https://developer.android.com/studio#command-tools)。
 
-This toolset has a command line based SDK manager that can be used to install the SDK. On successfully installing the Android SDK, add the path to the sdk to your PATH environment variable, directly in bash or in your profile's .bashrc file on Linux.
+这套工具自带一个命令行版的 SDK 管理器，可用来安装 SDK。装好 Android SDK 后，请把 sdk 的路径加入 PATH 环境变量——在 Linux 上可以直接在 bash 里设置，或写进 profile 的 .bashrc 文件。
 
 ```bash
 export ANDROID_HOME=/path/to/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 ```
 
-You can also directly specify the Android SDK location in the `dotnet` commands when you build, run or deploy the dotnet Android project, by setting the `AndroidSdkDirectory` variable in the command:
+你也可以在构建、运行或部署 dotnet Android 项目时，于 `dotnet` 命令中设置 `AndroidSdkDirectory` 变量，直接指明 Android SDK 的位置：
 
 ```bash
 dotnet build ... /p:AndroidSdkDirectory=/path/to/sdk
 ```
 
-Ensure you've installed the JDK 11 or above using your platform's package manager. This is already done if set up using Visual Studio or JetBrains Rider as stated above.
+请用你平台上的包管理器装好 JDK 11 或更高版本。若你已按上文用 Visual Studio 或 JetBrains Rider 配置过，这一步就已经做好了。
 
-There is also a tool in development called _MAUI Check_ that can install all the required SDKs and tools for you automatically:
+还有一个正在开发中的工具叫 _MAUI Check_，能自动替你装齐所有必需的 SDK 和工具：
 
 ```bash
 dotnet tool install -g Redth.Net.Maui.Check
 maui-check
 ```
 
-With the above _Android_ development environment setup, you will be able to build _Android_ applications, and run them in a simulator on your platform.
+完成上述 _Android_ 开发环境配置后，你就能构建 _Android_ 应用，并在本机的模拟器中运行它们了。
 
 ## 另请参阅 {#see-also}
 
-- [Deploying on Android](/docs/deployment/android) (emulator, device, and publishing)
-- [Configure Android debugging in Visual Studio Code on Linux](/tools/visual-studio-code/configure-vscode-debug-linux)
+- [在 Android 上部署](/docs/deployment/android)（模拟器、真机与发布）
+- [在 Linux 的 Visual Studio Code 中配置 Android 调试](/tools/visual-studio-code/configure-vscode-debug-linux)
