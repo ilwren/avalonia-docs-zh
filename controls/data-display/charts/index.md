@@ -73,7 +73,7 @@ Cartesian series use `EmptyPointMode` to control how null or non-finite points a
 
 Most chart controls share these properties through `ChartBase`.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | Text displayed above the chart. | `null` |
 | `Palette` | Optional chart palette used to generate series or item colors. | `null` |
@@ -82,7 +82,7 @@ Most chart controls share these properties through `ChartBase`.
 
 Some chart types also expose additional chart-level styling surfaces when the visual surface exists on that chart.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `AxisBrush` | Brush used for axis lines, ticks, radial axes, or equivalent scale guides. | `null` |
 | `GridLineBrush` | Brush used for chart-level grid lines. | `null` |
@@ -92,7 +92,7 @@ Some chart types also expose additional chart-level styling surfaces when the vi
 
 Most series share these properties through `ChartSeries`. Individual chart pages list additional properties for their specific series type.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | Series name shown in legends and generated tooltip content. | `null` |
 | `ItemsSource` | Data collection used by the series. | `null` |
@@ -106,7 +106,7 @@ Most series share these properties through `ChartSeries`. Individual chart pages
 
 Charts and series share an animation pipeline.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `IsAnimationEnabled` | Enables chart entry animations. | `true` |
 | `AnimationDuration` | Duration of the chart entry animation. | `00:00:01` |

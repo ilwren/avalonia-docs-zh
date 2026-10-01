@@ -17,7 +17,7 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 
 <Image light={chartsGaugesCircular} maxWidth={400} position="center" cornerRadius="true" alt="Circular gauge chart in a speedometer style with a needle pointing to the current value on a radial scale." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Real-time monitoring**: Showing CPU, memory, or network usage.
 - **Goal tracking**: Visualizing progress toward a target (e.g., sales quota).
 - **Physical simulation**: Representing values from physical sensors like speed or pressure.
@@ -35,7 +35,7 @@ Circular gauge charts visualize a single value on a radial scale. They are the s
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `0.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |

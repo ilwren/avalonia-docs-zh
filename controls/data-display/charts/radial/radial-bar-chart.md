@@ -17,7 +17,7 @@ Radial bar charts use a polar coordinate system. They are essentially bar charts
 
 <Image light={chartsRadialBar} maxWidth={400} position="center" cornerRadius="true" alt="Radial bar chart with concentric circular bars of varying arc lengths comparing category progress on a polar grid." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Circular comparisons**: Showing data that has a cyclical nature (e.g., hours in a day).
 - **Dashboard infographics**: Creating compact visual summaries for ranked categories.
 - **Progress tracking**: Visualizing multiple goal tracks in a consolidated radial form.
@@ -47,7 +47,7 @@ public ObservableCollection<RadialPoint> RadialBarData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of categorical items. | `null` |
 | `ValuePath` | Numerical property for bar length. | `null` |

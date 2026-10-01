@@ -13,7 +13,7 @@ tags:
 
 Violin plots combine a box plot with a kernel density plot, showing both the statistical summary and the probability density of the data at different values.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Deep distribution**: When you need to see where data points are most frequent (density).
 - **Comparison**: Comparing both the ranges (box plot) and the shapes (density) of multiple groups.
@@ -46,7 +46,7 @@ public ObservableCollection<ViolinGroup> ViolinSeries { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data groups. | `null` |
 | `ValuesPath` | Path to the value collection for each category. Supported types are `IEnumerable<double>`, `IEnumerable<int>`, and `double[]`. | `null` |

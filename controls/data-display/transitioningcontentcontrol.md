@@ -14,7 +14,7 @@ A common use case is building an image slideshow, but `TransitioningContentContr
 
 ## 常用属性 {#common-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 说明 |
 |---|---|
@@ -35,7 +35,7 @@ Avalonia ships with several page transitions you can apply to `TransitioningCont
 
 You can also create your own custom transition by implementing `IPageTransition`. See [Setting page transitions](../../docs/graphics-animation/page-transitions) for full details.
 
-## Examples
+## 示例 {#examples}
 
 ### Default transition (cross-fade)
 

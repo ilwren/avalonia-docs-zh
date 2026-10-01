@@ -18,9 +18,9 @@ When the height is constrained, and the total item height is larger, then the bu
 
 Similarly when the width of any item exceeds the width of the list box, then the built-in scroll viewer in the list box will display a horizontal scrollbar (unless prevented - see below).
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table>
   <thead>
@@ -66,7 +66,7 @@ You will probably use these properties most often:
     </tr>
     <tr>
       <td><code>Styles</code></td>
-      <td>The style that is applied to any child element of the ItemControl.</td>
+      <td>应用到 ItemControl 任意子元素上的样式。</td>
     </tr>
   </tbody>
 </table>

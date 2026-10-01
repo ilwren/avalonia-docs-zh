@@ -17,7 +17,7 @@ Heatmaps use color-coded cells to represent data values in a 2D matrix, highligh
 
 <Image light={chartsAnalyticsHeatmap} maxWidth={400} position="center" cornerRadius="true" alt="Heatmap chart showing a 2D matrix of color-coded cells representing data values across rows and columns." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Correlation matrices**: Visualizing the relationship between variables.
 - **Density mapping**: Showing frequency or intensity across two categories.
 - **Matrix data**: When visualizing numerical values at the intersection of rows and columns.
@@ -64,7 +64,7 @@ private static ObservableCollection<HeatmapItem> CreateHeatmapData()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The chart title. | `null` |
 | `ItemsSource` | The collection representing the matrix data. | `null` |

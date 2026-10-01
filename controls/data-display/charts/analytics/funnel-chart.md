@@ -17,7 +17,7 @@ Funnel charts visualize the progressive reduction of data as it passes from one 
 
 <Image light={chartsAnalyticsFunnel} maxWidth={400} position="center" cornerRadius="true" alt="Funnel chart showing progressive reduction of data through sales pipeline stages from leads to closed sales." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Sales pipelines**: Tracking potential customers from lead to closed sale.
 - **Conversion rates**: Monitoring website visitors through a checkout process.
 - **Recruitment**: Visualizing candidates at each stage of the hiring process.
@@ -47,7 +47,7 @@ public ObservableCollection<FunnelItem> FunnelData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name shown at the top. | `null` |
 | `ItemsSource` | The collection of process stages. | `null` |

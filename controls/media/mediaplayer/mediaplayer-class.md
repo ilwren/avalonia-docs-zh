@@ -91,7 +91,7 @@ protected override async void OnLoaded(RoutedEventArgs e)
 
 ## 方法 {#methods}
 
-| Method            | Return Type | 说明                                   |
+| 方法            | Return Type | 说明                                   |
 |-------------------|-------------|-----------------------------------------------|
 | InitializeAsync() | Task        | Initializes the media player and its backend. |
 | PrepareAsync()    | Task        | Prepares the media for playback.              |

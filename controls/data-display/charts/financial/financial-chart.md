@@ -13,7 +13,7 @@ tags:
 
 `FinancialChart` is the host control for financial series such as `CandlestickSeries` and `OhlcSeries`. It provides the shared price grid, axes, and horizontal category layout used by those series. Compatible overlay series, such as `MovingAverageSeries`, can render in the same date and price coordinate space.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Financial series hosting**: Combine one or more price-based series in a dedicated chart container.
 - **Trading views**: Reuse the shared financial axes and price grid across different series types.
@@ -72,7 +72,7 @@ Custom overlay series can render in the financial chart coordinate space by impl
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Series` | Content collection of financial series and compatible overlay series rendered in the chart. | Empty collection |
 | `HorizontalAxis` | Horizontal axis used for date or category positions. | `null` |

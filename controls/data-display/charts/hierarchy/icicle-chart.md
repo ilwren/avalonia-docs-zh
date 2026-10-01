@@ -17,7 +17,7 @@ Icicle charts visualize hierarchical data using rectangles placed side by side. 
 
 <Image light={chartsHierarchicalIcicle} maxWidth={400} position="center" cornerRadius="true" alt="Icicle chart showing hierarchical levels as adjacent rectangular rows where width represents relative value." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Structural analysis**: Inspecting codebases, directory structures, or large taxonomies.
 - **Performance profiling**: Visualizing call stacks or execution paths.
 - **Relationship discovery**: Finding the root cause of leaf-node values within a large tree.
@@ -46,7 +46,7 @@ public ObservableCollection<TreeMapItem> IcicleData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical data source. | `null` |
 | `ValuePath` | Property name determining rectangle width. | `null` |

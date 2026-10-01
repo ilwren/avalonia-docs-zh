@@ -17,7 +17,7 @@ Word clouds represent text data by varying word size based on frequency or impor
 
 <Image light={chartsAnalyticsWordCloud} maxWidth={400} position="center" cornerRadius="true" alt="Word cloud displaying words at varying font sizes based on frequency, with more prominent words appearing larger." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Search Trends**: Visualizing the most common keywords in a query log.
 - **Sentiment Analysis**: Highlighting prominent words in customer reviews.
 - **Content Summarization**: Showing the main themes of a long article or document.
@@ -55,7 +55,7 @@ public ObservableCollection<WordItem> WordCloudData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of word/weight data. | `null` |
 | `WordPath` | Property name for the actual text word. | `null` |

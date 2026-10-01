@@ -13,7 +13,7 @@ tags:
 
 Tornado charts place left and right bars around a shared center line, which keeps ranked side-by-side differences scannable.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Sensitivity analysis**: Rank which variables push a result most to the left or right.
 - **Scenario comparison**: Compare two opposing values across the same categories.
@@ -47,7 +47,7 @@ public ObservableCollection<TornadoFactor> TornadoData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of factors or categories. | `null` |
 | `LeftValuePath` | Path to the left-side value. | `null` |

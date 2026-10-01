@@ -7,15 +7,15 @@ doc-type: reference
 
 The [`ButtonSpinner`](/api/avalonia/controls/buttonspinner) presents a control that includes buttons for spin-up and spin-down. The content of this button is flexible, but you will have to code quite a lot of the behavior.
 
-## When to use `ButtonSpinner`
+## 何时使用 `ButtonSpinner` {#when-to-use-buttonspinner}
 
 Use `ButtonSpinner` when you need full control over the spin behavior, such as cycling through a list of non-numeric values or applying custom logic on each increment or decrement. Because the control does not include built-in value handling, you are responsible for updating the displayed content in response to spin events.
 
 For standard numeric input with built-in validation and formatting, consider using [`NumericUpDown`](/controls/input/selectors/numericupdown) instead.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 说明 |
 |---|---|

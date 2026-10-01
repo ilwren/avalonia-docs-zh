@@ -17,7 +17,7 @@ Bump charts are a variation of line charts designed to visualize changes in rank
 
 <Image light={chartsAnalyticsBump} maxWidth={400} position="center" cornerRadius="true" alt="Bump chart showing rank changes over time with smooth curved lines connecting each entity's position across periods." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Popularity rankings**: Showing how songs or movies move up and down a top-10 list.
 - **Market share**: Visualizing the competition between brands for the top spot.
 - **Tournament standings**: Tracking the relative performance of teams across stages.
@@ -55,7 +55,7 @@ public ObservableCollection<string> BumpPeriods { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of ranked entities. | `null` |
 | `NamePath` | Property representing the entity name. | `null` |

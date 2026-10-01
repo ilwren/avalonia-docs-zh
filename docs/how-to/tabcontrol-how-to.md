@@ -33,7 +33,7 @@ The simplest approach is to define your tabs directly in XAML using [`TabItem`](
 
 This approach works well when the number of tabs is known at design time. If you need to add or remove tabs at runtime, use the dynamic approach described next.
 
-## Dynamic tabs from a collection
+## 从集合动态生成选项卡 {#dynamic-tabs-from-a-collection}
 
 When you need tabs driven by data, bind the `ItemsSource` property to an `ObservableCollection` in your view model. This lets you add and remove tabs at runtime, and keeps your UI and logic separated.
 
@@ -181,7 +181,7 @@ If your `TabItemViewModel` exposes an `IconData` property of type `StreamGeometr
 </TabControl.ItemTemplate>
 ```
 
-## Tab placement
+## 选项卡位置 {#tab-placement}
 
 By default, tabs appear at the top. You can reposition them using the `TabStripPlacement` property. Valid values are `Top`, `Bottom`, `Left`, and `Right`.
 

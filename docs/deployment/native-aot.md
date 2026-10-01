@@ -93,7 +93,7 @@ When using Native AOT with Avalonia, be aware of these limitations:
 - Platform-specific features need explicit configuration
 - Live preview in design-time tools may be limited
 
-## Platform support
+## 平台支持 {#platform-support}
 
 For platform support, refer to [Platform/architecture restrictions](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/#platformarchitecture-restrictions).
 

@@ -17,7 +17,7 @@ A Pareto chart contains both bars and a line graph, where individual values are 
 
 <Image light={chartsStatisticalPareto} maxWidth={400} position="center" cornerRadius="true" alt="Pareto chart with descending bars and a cumulative percentage line highlighting the most significant factors." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Quality control**: Identifying the "vital few" causes of defects (80/20 rule).
 - **Resource management**: Pinpointing which categories account for most costs.
 - **Customer service**: Analyzing which complaints are most frequent.
@@ -50,7 +50,7 @@ public ObservableCollection<ParetoItem> ParetoData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of categories. | `null` |
 | `ValuePath` | Property determining bar height. | `null` |

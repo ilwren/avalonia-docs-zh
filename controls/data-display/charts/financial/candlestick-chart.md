@@ -17,7 +17,7 @@ Candlestick charts are used to describe price movements of a security, derivativ
 
 <Image light={chartsFinancialCandlestick} maxWidth={400} position="center" cornerRadius="true" alt="Candlestick chart showing OHLC price data with green bullish and red bearish candles over several trading periods." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Market analysis**: Visualizing price volatility and market sentiment.
 - **Technical analysis**: Identifying patterns like hammers, dojis, or engulfing candles.
 - **High-low tracking**: Showing the full range of price action within a period.
@@ -65,7 +65,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of financial data points. | `null` |
 | `OpenPath` | Path to the 'Open' price property. | `null` |

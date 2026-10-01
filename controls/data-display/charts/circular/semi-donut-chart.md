@@ -17,7 +17,7 @@ Semi-donut charts display data in a 180-degree arc. They are particularly popula
 
 <Image light={chartsPieSemidonut} maxWidth={400} position="center" cornerRadius="true" alt="Semi-donut chart displayed as a 180-degree arc with colored segments and a center label showing a summary metric." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **KPI gauges**: Visualizing a single metric against a target or total.
 - **Dashboard headers**: Providing a quick summary of a category at the top of a page.
 - **Angular comparison**: Comparing parts of a whole where a full circle isn't needed or desired.
@@ -48,7 +48,7 @@ public ObservableCollection<SemiDonutPoint> SemiDonutChartData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The data source for the segments. | `null` |
 | `ValuePath` | Property path for values. | `null` |

@@ -17,7 +17,7 @@ A waterfall chart shows a running total as values are added or subtracted. It's 
 
 <Image light={chartsCartesianWaterfall} maxWidth={400} position="center" cornerRadius="true" alt="Waterfall chart with floating bars showing sequential positive and negative changes to a running total." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Financial analysis**: Visualizing P&L (Profit and Loss) statements over time.
 - **Inventory tracking**: Showing how stock levels change with additions and removals.
 - **Process steps**: Modeling the cumulative effect of sequential variables.
@@ -55,7 +55,7 @@ public ObservableCollection<WaterfallFinancialPoint> WaterfallData { get; } = ne
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of changes. | `null` |
 | `CategoryPath` | Path to the label/category. | `null` |

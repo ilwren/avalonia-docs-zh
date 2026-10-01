@@ -1,15 +1,15 @@
 ---
 id: separator
-title: Separator
-description: A visual divider used inside Menu, ContextMenu, and MenuFlyout controls to group related menu items.
+title: 分隔线
+description: 一条视觉分隔线，用在 Menu、ContextMenu 和 MenuFlyout 中，把相关的菜单项归为一组。
 doc-type: reference
 ---
 
-The [`Separator`](/api/avalonia/controls/separator) control draws a horizontal line between menu items, giving you a way to visually group related commands. You can use it inside `Menu`, `ContextMenu`, and `MenuFlyout`.
+[`Separator`](/api/avalonia/controls/separator) 控件在菜单项之间画一条水平线，让相关的命令在视觉上成组。它可以用在 `Menu`、`ContextMenu` 和 `MenuFlyout` 内部。
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
-Place a `<Separator/>` element between `MenuItem` elements to create a dividing line:
+在 `MenuItem` 元素之间放一个 `<Separator/>` 元素即可画出分隔线：
 
 <XamlPreview>
 
@@ -26,11 +26,11 @@ Place a `<Separator/>` element between `MenuItem` elements to create a dividing 
 
 </XamlPreview>
 
-In the example above, the separator visually divides the file operations from the exit command.
+上面的例子中，分隔线把文件相关的操作和退出命令分了开来。
 
-## In a context menu
+## 在上下文菜单中 {#in-a-context-menu}
 
-`Separator` works the same way inside a `ContextMenu`:
+`Separator` 在 `ContextMenu` 中的用法完全相同：
 
 <XamlPreview>
 
@@ -51,9 +51,9 @@ In the example above, the separator visually divides the file operations from th
 
 </XamlPreview>
 
-## Vertical variant
+## 纵向变体 {#vertical-variant}
 
-A `Height` of `NaN` and `Width` of `1` can be used to create a vertical separator:
+把 `Height` 设为 `NaN`、`Width` 设为 `1`，就能做出一条纵向分隔线：
 
 <XamlPreview>
 
@@ -69,19 +69,19 @@ A `Height` of `NaN` and `Width` of `1` can be used to create a vertical separato
 
 </XamlPreview>
 
-## Shorthand syntax
+## 简写写法 {#shorthand-syntax}
 
-You can produce the same separator line by setting a `MenuItem` header to `"-"`:
+把 `MenuItem` 的 header 设为 `"-"`，也能得到同样的分隔线：
 
 ```xml
 <MenuItem Header="-" />
 ```
 
-This shorthand is equivalent to using `<Separator/>` and can be useful when building menus from data bindings.
+这种简写等价于使用 `<Separator/>`，在用数据绑定构建菜单时尤其方便。
 
 ## Styling
 
-You can target `Separator` in your styles to customize its appearance. For example, to change the line color:
+你可以在样式中针对 `Separator` 来定制它的外观。比如改变线条颜色：
 
 ```xml
 <Style Selector="Separator">
@@ -92,7 +92,7 @@ You can target `Separator` in your styles to customize its appearance. For examp
 
 ## 另请参阅 {#see-also}
 
-- [Separator API reference](/api/avalonia/controls/separator)
+- [Separator API 参考](/api/avalonia/controls/separator)
 - [GitHub 上的 `Separator.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Separator.cs)
 - [Menu](/controls/menus/menu)
 - [ContextMenu](/controls/menus/contextmenu)

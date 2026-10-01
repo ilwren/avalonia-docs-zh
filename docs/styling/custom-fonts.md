@@ -165,7 +165,7 @@ Or set them on a container using the attached property:
 
 Common OpenType feature tags:
 
-| Tag | Feature |
+| Tag | 特性 |
 |---|---|
 | `+tnum` / `-tnum` | Enable/disable tabular (fixed-width) numbers. |
 | `+liga` / `-liga` | Enable/disable standard ligatures. |

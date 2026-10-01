@@ -36,9 +36,9 @@ XPF is not an all-or-nothing commitment. With [Hybrid XPF](/xpf/interop/using-xp
 
 It works the other way too. If you are already building with Avalonia, Hybrid XPF gives you access to over 700 existing WPF controls from vendors like Telerik, DevExpress, Infragistics, Actipro, and Syncfusion without waiting for native Avalonia ports.
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Platform | Internal | Business | Enterprise |
+| 平台 | Internal | Business | Enterprise |
 |---|---|---|---|
 | [Windows](/docs/supported-platforms#windows) | <TierBadge tier={1} /> | <TierBadge tier={1} /> | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
 | [macOS](/docs/supported-platforms#macos) | <TierBadge tier={1} /> | <TierBadge tier={1} /> | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |

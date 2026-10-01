@@ -13,7 +13,7 @@ tags:
 
 Beeswarm plots arrange points within each category to avoid overlap while preserving the distribution of individual observations.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Raw observation display**: Show every point instead of only summary statistics.
 - **Category comparison**: Compare spread and clustering across groups.
@@ -47,7 +47,7 @@ public ObservableCollection<BeeswarmPoint> BeeswarmData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of observations. | `null` |
 | `CategoryPath` | Path to the grouping category. | `null` |

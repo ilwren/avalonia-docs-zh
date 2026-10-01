@@ -17,7 +17,7 @@ Alluvial charts represent changes in structure over time or across categories. T
 
 <Image light={chartsFlowAlluvial} maxWidth={400} position="center" cornerRadius="true" alt="Alluvial chart with vertical node columns connected by flowing bands representing categorical transitions between stages." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Workflow analysis**: Tracking how items move through sequential process stages.
 - **Categorical flow**: Visualizing how members of one category belong to others (e.g., voters' changing affiliations).
 - **Structural shifts**: Showing how a population's grouping changes between two points in time.
@@ -54,7 +54,7 @@ public ObservableCollection<AlluvialLink> AlluvialLinks { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of categorical nodes (columns). | `null` |
 | `Links` | The collection of connections between nodes. | `null` |

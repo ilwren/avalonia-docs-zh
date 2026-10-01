@@ -13,7 +13,7 @@ tags:
 
 Lollipop charts display data points as dots with thin stems extending to the baseline. They are a lightweight alternative to bar charts that reduce visual clutter while maintaining clear value communication.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Lightweight comparison**: When bar charts feel too heavy and you want a cleaner look.
 - **Many categories**: Reducing ink-to-data ratio when comparing many categories side-by-side.
 - **Presentations**: Creating visually appealing charts where emphasis is on the data point value.
@@ -56,7 +56,7 @@ public ObservableCollection<SalesItem> MonthlySales { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

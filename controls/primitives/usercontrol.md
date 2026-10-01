@@ -1,25 +1,25 @@
 ---
 id: usercontrol
 title: UserControl
-description: A base class for creating reusable composite controls with a predefined XAML layout.
+description: 一个基类，用于按预先编排好的 XAML 布局创建可复用的组合控件。
 doc-type: reference
 ---
 
 import UserControlStyledProperty from '/static/img/controls/usercontrol/user-control-styled-property.png';
 
-[`UserControl`](/api/avalonia/controls/usercontrol) is a [ContentControl](/controls/data-display/contentcontrol) that composes a reusable collection of controls in a predefined layout. In general, it is the quickest way to create a [custom control](/docs/custom-controls/) for reuse within an app. The most common use case is a view or page that must appear repeatedly in an app, such as a settings panel or a user profile card.
+[`UserControl`](/api/avalonia/controls/usercontrol) 是一个 [ContentControl](/controls/data-display/contentcontrol)，它把一组控件按预先编排好的布局组合起来复用。总体而言，要在应用内部造一个可复用的[自定义控件](/docs/custom-controls/)，这是最快的途径。最常见的场景是应用中反复出现的视图或页面，比如设置面板或用户资料卡片。
 
-## When to use `UserControl`
+## 何时使用 `UserControl` {#when-to-use-usercontrol}
 
-`UserControl` is the standard approach for creating views in MVVM applications. Each view in your application is typically a `UserControl` subclass, paired with a corresponding view model.
+在 MVVM 应用中，`UserControl` 是创建视图的标准做法。应用里的每个视图通常都是一个 `UserControl` 子类，并配一个对应的视图模型。
 
-If you need a general-purpose control that can be re-styled for use across different apps, use a [templated control](/docs/custom-controls/templated-controls) instead. If you need a control with a unique appearance not provided by Avalonia's [built-in controls](/controls/), use a [custom-drawn control](/docs/custom-controls/custom-drawn-controls) instead.
+如果你需要的是一个能换皮、跨应用复用的通用控件，请改用[模板化控件](/docs/custom-controls/templated-controls)。如果你需要的控件外观独特、Avalonia [内置控件](/controls/) 里没有，请改用[自绘控件](/docs/custom-controls/custom-drawn-controls)。
 
-## Basic example
+## 基本示例 {#basic-example}
 
-### Creating a confirmation view
+### 做一个确认视图 {#creating-a-confirmation-view}
 
-The following example creates a simple confirmation view. `UserControl` is used as the container for a composition of [`StackPanel`](/controls/layout/panels/stackpanel), [`TextBlock`](/controls/data-display/text-display/textblock) and [`Button`](/controls/input/buttons/button) controls.
+下面的例子做了一个简单的确认视图。这里用 `UserControl` 作为容器，把 [`StackPanel`](/controls/layout/panels/stackpanel)、[`TextBlock`](/controls/data-display/text-display/textblock) 和 [`Button`](/controls/input/buttons/button) 控件组合在一起。
 
 <XamlPreview>
 
@@ -40,9 +40,9 @@ The following example creates a simple confirmation view. `UserControl` is used 
 
 </XamlPreview>
 
-## Adding code-behind
+## 添加代码隐藏 {#adding-code-behind}
 
-In a real project, the confirmation view demonstrated above would typically live in a standalone XAML file named `ConfirmationView.axaml`. To give it additional functionality, such as event handling or [styled properties](/docs/custom-controls/defining-properties#styled-properties), you would pair the XAML with a matching code-behind file named `ConfirmationView.axaml.cs`. This requires setting an `x:Class` on the `UserControl` to associate the XAML file with a class in code.
+在真实项目里，上面演示的这个确认视图通常会单独放在一个名为 `ConfirmationView.axaml` 的 XAML 文件中。要给它加上事件处理、[样式化属性](/docs/custom-controls/defining-properties#styled-properties) 等功能，就得再配一个同名的代码隐藏文件 `ConfirmationView.axaml.cs`。为此需要在 `UserControl` 上设置 `x:Class`，把 XAML 文件与代码中的类关联起来。
 
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -51,11 +51,11 @@ In a real project, the confirmation view demonstrated above would typically live
 </UserControl>
 ```
 
-For more information on code-behind, see [Code-behind](/docs/fundamentals/code-behind).
+关于代码隐藏的更多内容，请参阅[代码隐藏](/docs/fundamentals/code-behind)。
 
 ### 处理事件 {#handling-events}
 
-This example adds event handling logic to allow the Yes/No buttons in the confirmation view to respond to clicks.
+下面的例子加上了事件处理逻辑，让确认视图里的「是 / 否」按钮能响应点击。
 
 <XamlPreview>
 
@@ -94,15 +94,15 @@ public partial class ConfirmationView : UserControl
 
 </XamlPreview>
 
-### Adding a styled property
+### 添加样式化属性 {#adding-a-styled-property}
 
-This example creates a styled property named `Title`, which displays a variable title at the top of `ConfirmationView` that allows binding.
+下面的例子创建了一个名为 `Title` 的样式化属性，用于在 `ConfirmationView` 顶部显示一个可变、可绑定的标题。
 
 :::warning
-The styled property is declared on the root `UserControl` element. To use it in a binding, you must reference that element. In the sample below, `root` is highlighted in `ConfirmationView.axaml` to demonstrate how this is done.
+该样式化属性声明在根 `UserControl` 元素上。要在绑定中用到它，就必须引用那个元素。下面的示例中，`root` 以 `ConfirmationView.axaml` 高亮标出，演示具体写法。
 :::
 
-For more information on binding to a data context, see [Data context](/docs/data-binding/data-context).
+关于绑定到数据上下文的更多内容，请参阅[数据上下文](/docs/data-binding/data-context)。
 
 <br />
 <Image light={UserControlStyledProperty} maxWidth={400} position="center" cornerRadius="true" alt="An app window displaying the title text 'Quit the application', which is shown next to the same text coded in a XAML file." />
@@ -187,11 +187,11 @@ public partial class ConfirmationView : UserControl
 
 </Tabs>
 
-## Reusing a user control
+## 复用用户控件 {#reusing-a-user-control}
 
-To reuse the same user control in another view, reference its namespace using `xmlns` in a `Window` or any other container. You can then bring up another instance of the user control [using the `x:Class` you set for it](#adding-code-behind).
+要在另一个视图里复用同一个用户控件，先用 `xmlns` 在 `Window` 或任意容器上引用它所在的命名空间，然后[用你为它设定的 `x:Class`](#adding-code-behind) 创建新的实例。
 
-Here is how you might reuse the same `ConfirmationView` from the examples above:
+下面演示如何复用上述示例中的那个 `ConfirmationView`：
 
 <Tabs>
 
@@ -222,8 +222,8 @@ Here is how you might reuse the same `ConfirmationView` from the examples above:
 ## 另请参阅 {#see-also}
 
 - [ContentControl](/controls/data-display/contentcontrol)
-- [Creating custom controls](/docs/custom-controls/)
-- [Templated controls](/docs/custom-controls/templated-controls)
-- [Custom-drawn controls](/docs/custom-controls/custom-drawn-controls)
-- [UserControl API reference](/api/avalonia/controls/usercontrol)
+- [创建自定义控件](/docs/custom-controls/)
+- [模板化控件](/docs/custom-controls/templated-controls)
+- [自绘控件](/docs/custom-controls/custom-drawn-controls)
+- [UserControl API 参考](/api/avalonia/controls/usercontrol)
 - [GitHub 上的 `UserControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/UserControl.cs)

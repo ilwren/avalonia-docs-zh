@@ -144,7 +144,7 @@ Dotted underline under event name or control type indicates that quick navigatio
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> | Toggle Popup freeze |
 | <kbd>F8</kbd> | Make screenshot of selected item in Logical or Visual Tree |
 
-## Examples
+## 示例 {#examples}
 
 ### Changing a property value
 

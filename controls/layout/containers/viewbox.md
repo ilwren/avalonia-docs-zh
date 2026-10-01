@@ -12,11 +12,11 @@ import ViewboxScaleUniformUpOnlyScreenshot from '/img/controls/viewbox/viewbox-u
 
 The `Viewbox` is a container control which can scale its contents. The way in which the contents are stretched can be defined, as well as when the stretch will occur (stretch direction).
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| 属性           | Default | 说明                                                  |
+| 属性           | 默认值 | 说明                                                  |
 | ------------------ | ------- |--------------------------------------------------------------|
 | `Stretch`          | Uniform | Determines how contents are fitted into the available space. |
 | `StretchDirection` | Both    | Determines when the scaling occurs.                          |

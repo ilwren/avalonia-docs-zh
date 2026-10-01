@@ -15,7 +15,7 @@ The headless platform has no real input devices, so you simulate input using ext
 
 ### Keyboard input
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `Window.KeyPress(Key, RawInputModifiers, PhysicalKey, string?)` | Simulates a key press. |
 | `Window.KeyRelease(Key, RawInputModifiers, PhysicalKey, string?)` | Simulates a key release. |
@@ -25,7 +25,7 @@ The headless platform has no real input devices, so you simulate input using ext
 
 ### Mouse input
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `Window.MouseDown(Point, MouseButton, RawInputModifiers)` | Simulates a mouse button press at the given position. |
 | `Window.MouseUp(Point, MouseButton, RawInputModifiers)` | Simulates a mouse button release. |
@@ -34,7 +34,7 @@ The headless platform has no real input devices, so you simulate input using ext
 
 ### Drag and drop
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `Window.DragDrop(Point, RawDragEventType, DataObject, DragDropEffects, RawInputModifiers)` | Simulates an external drag-and-drop operation (for example, a user dragging files from the OS into your app). |
 

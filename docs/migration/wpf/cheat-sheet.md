@@ -73,7 +73,7 @@ Or with a binding converter:
 |---|---|---|
 | `{Binding Path}` | `{Binding Path}` | Same syntax |
 | `{Binding Path, Mode=TwoWay}` | `{Binding Path, Mode=TwoWay}` | Same |
-| `{Binding RelativeSource={RelativeSource Self}}` | `{Binding $self.Property}` | Shorthand syntax |
+| `{Binding RelativeSource={RelativeSource Self}}` | `{Binding $self.Property}` | 简写写法 |
 | `{Binding RelativeSource={RelativeSource AncestorType=Grid}}` | `{Binding $parent[Grid].Property}` | |
 | `{Binding RelativeSource={RelativeSource TemplatedParent}}` | `{TemplateBinding Property}` | |
 | `{Binding ElementName=myControl, Path=Text}` | `{Binding #myControl.Text}` | `#name` syntax |

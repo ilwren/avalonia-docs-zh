@@ -13,7 +13,7 @@ tags:
 
 Hexbin charts group nearby points into hexagons so dense scatter data remains readable even when thousands of points overlap.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Dense scatter data**: Replace unreadable point clouds with density bins.
 - **Spatial concentration**: Show where observations cluster in two dimensions.
@@ -48,7 +48,7 @@ public ObservableCollection<SamplePoint> HexbinData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of X and Y points. | `null` |
 | `XPath` | Path to the X value. | `null` |

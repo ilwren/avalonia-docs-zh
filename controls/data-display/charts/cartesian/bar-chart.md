@@ -17,7 +17,7 @@ Bar charts represent data using rectangular bars with lengths proportional to th
 
 <Image light={chartsCartesianBar} maxWidth={400} position="center" cornerRadius="true" alt="Bar chart with vertical rectangular bars of varying heights comparing quarterly revenue across categories." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Comparisons**: Comparing discrete quantities across different categories.
 - **Ranking**: Showing which categories have the highest or lowest values.
 - **Categorical data**: When data is grouped into distinct, non-continuous groups.
@@ -49,7 +49,7 @@ public ObservableCollection<int> BarSeriesData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

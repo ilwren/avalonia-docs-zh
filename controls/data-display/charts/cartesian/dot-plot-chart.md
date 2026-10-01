@@ -13,7 +13,7 @@ tags:
 
 Dot plot charts display individual data points as simple dots, so values can be compared across categories without the visual weight of bars.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Value comparison**: Comparing individual values across multiple categories without bar clutter.
 - **Frequency distribution**: Showing how often specific values occur within a dataset.
 - **Small datasets**: When precise positioning of each data point matters more than aggregate shape.
@@ -56,7 +56,7 @@ public ObservableCollection<RatingItem> RatingData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

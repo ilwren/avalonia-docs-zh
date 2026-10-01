@@ -18,7 +18,7 @@ Because `Panel` does not arrange children into rows, columns, or any other struc
 | `Background` | `IBrush` | The background brush for the panel. You must set this (even to `Transparent`) for the panel to receive pointer events. |
 | `Children` | `Controls` | The collection of child controls contained in the panel. |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 This example uses some 50% opacities to demonstrate that child controls overlap.
 

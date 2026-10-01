@@ -11,9 +11,9 @@ import ComboBoxEditable from '/img/controls/combobox/combobox-editable.gif';
 
 `ComboBox` presents a selected item in a box, with a dropdown button that displays a list of options. This page provides general reference for the control. For practical guidance on using `ComboBox`, see [How to: Work with ComboBox](/docs/how-to/combobox-how-to).
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性                   | 类型       | 说明                                                                                                              |
 | -------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -27,7 +27,7 @@ You will probably use these properties most often:
 | `AutoScrollToSelectedItem` | `bool`     | Indicates whether to automatically scroll to newly selected items.                                                       |
 | `IsDropDownOpen`           | `bool`     | Indicates whether the dropdown is currently open.                                                                        |
 | `MaxDropDownHeight`        | `double`   | The maximum height for the dropdown list. This is the actual height of the list part, not the number of items that show.  |
-| `ItemsPanel`               | `ITemplate<Panel>` | The container panel to place items in. By default, this is a `StackPanel`. See [Custom panel](/docs/how-to/itemscontrol-how-to#custom-panel) for how to customize the `ItemsPanel`. |
+| `ItemsPanel`               | `ITemplate<Panel>` | 承载各项的容器面板，默认是 `StackPanel`。自定义 `ItemsPanel` 的方法见[自定义面板](/docs/how-to/itemscontrol-how-to#custom-panel)。 |
 
 <br />
 
@@ -44,9 +44,9 @@ By default, the width and height of the combo box scale to fit the selected item
 - The `SelectionChanged` event fires whenever the selected item changes. Use this to run side-effect logic outside the view model.
 - You can compose, bind or template the items in the list. To review data templates, see [Introduction to data templates](/docs/data-templates/introduction-to-data-templates).
 
-## Examples
+## 示例 {#examples}
 
-### Basic example
+### 基本示例 {#basic-example}
 
 A basic list of text items. These are defined in XAML, meaning they cannot change at runtime. `SelectedIndex` pre-selects an item from the list as the default selection, using its list position. The dropdown menu is fixed at a limited height and becomes scrollable as a result.
 
@@ -173,7 +173,7 @@ public partial class MainWindow : Window
 
 </Tabs>
 
-### Binding to a view model
+### 绑定到视图模型 {#binding-to-a-view-model}
 
 You can also bind the combo box's list items in a view model. In this example, the items are placed in an `ObservableCollection` in the main window view model, which binds both `ItemsSource` and `SelectedItem`.
 

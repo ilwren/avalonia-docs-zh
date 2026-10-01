@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
 :::
 
-## When to use
+## 适用场景 {#when-to-use}
 
 Use `PdfViewer` to show PDF documents inside your app. Every tool and menu entry can be hidden or disabled, so it works as a plain read-only viewer or as a full annotation editor.
 
@@ -77,7 +77,7 @@ For multi-project solutions, you can store your licence key in an [environment v
 
 For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 The control lives in the `Avalonia.Controls` namespace. `Avalonia.Controls.PdfViewer` is the package and assembly name, so map the namespace with an `xmlns` prefix in XAML.
 
@@ -137,7 +137,7 @@ Setting `Source` loads the document. It can be set before the viewer is attached
 
 ## Namespaces
 
-| Namespace | Contents |
+| 命名空间 | Contents |
 |---|---|
 | `Avalonia.Controls` | `PdfViewer`, its enums, its event args and `PdfViewerStrings`. |
 | `Avalonia.Controls.Pdf.Core` | Data types: `PdfAnnotationColor`, `PdfBookmark`, `PdfSearchResult`, `PdfMetadata`, `PdfPermissions`, `SearchOptions`, `PdfLinkDestination`. |
@@ -147,7 +147,7 @@ Setting `Source` loads the document. It can be set before the viewer is attached
 
 ### Document, view and zoom
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `Source` | `string?` | `null` | Path to the PDF file. Setting it loads the document. |
 | `DocumentSource` | `object?` | `null` | Flexible source: a file path `string`, a `Stream`, or a `byte[]`. |
@@ -166,7 +166,7 @@ Setting `Source` loads the document. It can be set before the viewer is attached
 
 ### Sidebar and toolbar
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `SidebarMode` | `SidebarMode` | `Thumbnails` | `None`, `Thumbnails`, `TableOfContents` or `Bookmarks`. |
 | `IsSidebarVisible` | `bool` | `true` | Shows or hides the sidebar. |
@@ -192,7 +192,7 @@ The visibility of each annotation tool is controlled by its own property. See [A
 
 ### Capabilities and permissions
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `IsReadOnly` | `bool` | `false` | Disables annotation and form editing in one switch. Saving is gated separately by `AllowDocumentSaving`. |
 | `AllowTextSelection` | `bool` | `true` | Enables text selection and copy. |

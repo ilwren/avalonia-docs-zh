@@ -46,7 +46,7 @@ For more information on installing Avalonia Pro controls, see [Installing Avalon
 
 ## Usage examples
 
-### Basic usage
+### 基本用法 {#basic-usage}
 
 The default `MediaPlayerControl` comes with a full-featured UI. For more advanced usage and deeper customization, you can also [use the `MediaPlayer` class without `MediaPlayerControl`](/controls/media/mediaplayer/mediaplayer-class#using-mediaplayer-without-mediaplayercontrol).
 

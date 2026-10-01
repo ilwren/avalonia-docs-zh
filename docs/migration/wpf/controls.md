@@ -1,6 +1,6 @@
 ---
 id: controls
-title: Controls
+title: 控件
 description: Control hierarchy, naming, and behavioral differences between WPF and Avalonia controls.
 doc-type: migration
 ---

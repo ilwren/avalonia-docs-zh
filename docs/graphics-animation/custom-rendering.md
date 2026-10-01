@@ -41,7 +41,7 @@ The `Render` method is called whenever the control needs to be redrawn. Call `In
 
 The `DrawingContext` provides these drawing operations:
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `DrawRectangle(brush, pen, rect, radiusX, radiusY)` | Draw a rectangle, optionally rounded |
 | `DrawEllipse(brush, pen, center, radiusX, radiusY)` | Draw an ellipse |
@@ -292,7 +292,7 @@ await surface.UpdateWithTimelineSemaphoresAsync(
 
 GPU image and semaphore handle types vary by platform. Use `KnownPlatformGraphicsExternalImageHandleTypes` and `KnownPlatformGraphicsExternalSemaphoreHandleTypes` to discover available types:
 
-| Platform | Image handle types | Semaphore handle types |
+| 平台 | Image handle types | Semaphore handle types |
 |---|---|---|
 | Windows | `D3D11TextureNtHandle`, `VulkanOpaqueNtHandle` | `D3D11Fence`, `VulkanOpaqueNtHandle` |
 | macOS | `IOSurfaceRef` | `MetalSharedEvent` |

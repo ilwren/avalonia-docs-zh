@@ -13,7 +13,7 @@ tags:
 
 Gauge charts render a single value on a dial-style arc, with optional needle and formatted value text.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Operational dashboards**: Show utilization, load, or health in a compact dial.
 - **Threshold monitoring**: Emphasize a single current reading over time history.
@@ -40,7 +40,7 @@ public double CpuLoad { get; set; } = 67;
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | Current value displayed by the gauge. | `50.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |

@@ -17,7 +17,7 @@ Swimlane charts organize tasks or processes into distinct horizontal or vertical
 
 <Image light={chartsTimelineSwimlane} maxWidth={400} position="center" cornerRadius="true" alt="Swimlane chart organizing tasks into horizontal lanes by department or role showing ownership and time overlap." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Process mapping**: Showing how a request moves between Sales, Engineering, and Support.
 - **Project scheduling**: Visualizing task ownership across team members.
@@ -69,7 +69,7 @@ public ObservableCollection<SwimlaneTask> SwimlaneTasks { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of tasks/items. | `null` |
 | `LanePath` | Determines which lane the task belongs to. | `null` |

@@ -8,9 +8,9 @@ import TextBoxEntryScreenshot from '/img/controls/textbox/textbox-entry.gif';
 
 The [`TextBox`](/api/avalonia/controls/textbox) presents an area for typed (keyboard) input. You can use it for single-line fields such as a username, or enable multi-line editing for longer-form content like notes or comments.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|

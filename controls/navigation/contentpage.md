@@ -1,7 +1,7 @@
 ---
 id: contentpage
 title: ContentPage
-description: '`ContentPage` is the foundational screen building block for Avalonia apps. It holds a single root view and integrates with the other page containers.'
+description: '`ContentPage` 是 Avalonia 应用中构建屏幕的基础积木。它承载单个根视图，并与其他页面容器协同工作。'
 doc-type: reference
 ---
 
@@ -12,64 +12,64 @@ import ContentPageBottomCommandBarScreenshot from '/img/controls/contentpage/con
 import ContentPageSafeAreaDisabledScreenshot from '/img/controls/contentpage/contentpage-safe-area-disabled.png';
 import ContentPageAsTabScreenshot from '/img/controls/contentpage/contentpage-as-tab.png';
 
-[`ContentPage`](/api/avalonia/controls/contentpage) is the foundational building block for screen-based UI in Avalonia. It represents a single page of content and provides built-in support for headers, icons, safe area padding, and command bars. Every screen the user sees is typically a `ContentPage` (or a subclass of one).
+[`ContentPage`](/api/avalonia/controls/contentpage) 是 Avalonia 中构建屏幕式界面的基础积木，代表一页内容，并内置了对页头、图标、安全区内边距和命令栏的支持。用户看到的每一屏，通常都是一个 `ContentPage`（或它的子类）。
 
-`ContentPage` is most commonly used as a child of [`NavigationPage`](/controls/navigation/navigationpage), [`TabbedPage`](/controls/navigation/tabbedpage), or [`DrawerPage`](/controls/navigation/drawerpage), but it can also be placed directly inside a [`Window`](/api/avalonia/controls/window) for single-page apps.
+`ContentPage` 最常见的用法是作为 [`NavigationPage`](/controls/navigation/navigationpage)、[`TabbedPage`](/controls/navigation/tabbedpage) 或 [`DrawerPage`](/controls/navigation/drawerpage) 的子元素；单页应用中也可以把它直接放进 [`Window`](/api/avalonia/controls/window)。
 
-## How the header displays
+## 页头如何显示 {#how-the-header-displays}
 
-The `Header` property serves different purposes depending on which container hosts the page:
+`Header` 属性的作用取决于承载该页面的是哪种容器：
 
-| Host control | Where the header appears |
+| 宿主控件 | 页头出现的位置 |
 | --- | --- |
-| [`NavigationPage`](/api/avalonia/controls/navigationpage) | Displayed in the navigation bar at the top of the screen. |
-| [`TabbedPage`](/api/avalonia/controls/tabbedpage) | Used as the tab label. |
-| [`DrawerPage`](/api/avalonia/controls/drawerpage) | Not displayed automatically for child `ContentPage` content. Use `DrawerPage.Header`, `DrawerHeader`, or render your own header content. |
-| Standalone (in a `Window`) | Not displayed automatically. You must render it yourself if needed. |
+| [`NavigationPage`](/api/avalonia/controls/navigationpage) | 显示在屏幕顶部的导航栏中。 |
+| [`TabbedPage`](/api/avalonia/controls/tabbedpage) | 用作选项卡的标签文字。 |
+| [`DrawerPage`](/api/avalonia/controls/drawerpage) | 对子 `ContentPage` 内容不会自动显示。请使用 `DrawerPage.Header`、`DrawerHeader`，或自行渲染页头内容。 |
+| 独立使用（放在 `Window` 中） | 不会自动显示。如有需要，得你自己渲染。 |
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-### ContentPage properties
+### ContentPage 的属性 {#contentpage-properties}
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `Content` | `object?` | `null` | The main content to display on the page. This value cannot be another `Page`; use a `NavigationPage`, `TabbedPage`, `DrawerPage`, or another `MultiPage` control to host child pages. |
-| `ContentTemplate` | `IDataTemplate?` | `null` | A data template used to render the content. |
-| `Header` | `object?` | `null` | The page header, displayed in the navigation bar when hosted inside a `NavigationPage`. |
-| `HeaderTemplate` | `IDataTemplate?` | `null` | A data template used to render the header. |
-| `Icon` | `object?` | `null` | An icon for the page, displayed in tab bars when hosted inside a `TabbedPage`. |
-| `IconTemplate` | `IDataTemplate?` | `null` | A data template used to render the icon. |
-| `Background` | `IBrush?` | `null` | The page background brush. For image backgrounds, use an `ImageBrush` and set its `Stretch` property. |
-| `AutomaticallyApplySafeAreaPadding` | `bool` | `true` | Automatically adjusts padding for device safe areas (notches, status bars). |
-| `TopCommandBar` | `object?` | `null` | Content displayed in a command bar area above the page content. |
-| `BottomCommandBar` | `object?` | `null` | Content displayed in a command bar area below the page content. |
-| `HorizontalContentAlignment` | `HorizontalAlignment` | `Stretch` | Horizontal alignment of the page content. |
-| `VerticalContentAlignment` | `VerticalAlignment` | `Stretch` | Vertical alignment of the page content. |
-| `SafeAreaPadding` | `Thickness` | `0` | The current safe area padding assigned to the page. Page containers update this value when safe-area insets change. |
+| `Content` | `object?` | `null` | 页面上显示的主体内容。它不能又是一个 `Page`；要承载子页面，请用 `NavigationPage`、`TabbedPage`、`DrawerPage` 或其他 `MultiPage` 控件。 |
+| `ContentTemplate` | `IDataTemplate?` | `null` | 用于渲染内容的数据模板。 |
+| `Header` | `object?` | `null` | 页头。当页面由 `NavigationPage` 承载时，它显示在导航栏中。 |
+| `HeaderTemplate` | `IDataTemplate?` | `null` | 用于渲染页头的数据模板。 |
+| `Icon` | `object?` | `null` | 页面图标。当页面由 `TabbedPage` 承载时，它显示在选项卡栏中。 |
+| `IconTemplate` | `IDataTemplate?` | `null` | 用于渲染图标的数据模板。 |
+| `Background` | `IBrush?` | `null` | 页面背景画刷。若要用图片作背景，请使用 `ImageBrush` 并设置它的 `Stretch` 属性。 |
+| `AutomaticallyApplySafeAreaPadding` | `bool` | `true` | 自动为设备安全区（刘海、状态栏）调整内边距。 |
+| `TopCommandBar` | `object?` | `null` | 显示在页面内容上方命令栏区域中的内容。 |
+| `BottomCommandBar` | `object?` | `null` | 显示在页面内容下方命令栏区域中的内容。 |
+| `HorizontalContentAlignment` | `HorizontalAlignment` | `Stretch` | 页面内容的水平对齐方式。 |
+| `VerticalContentAlignment` | `VerticalAlignment` | `Stretch` | 页面内容的垂直对齐方式。 |
+| `SafeAreaPadding` | `Thickness` | `0` | 页面当前被赋予的安全区内边距。安全区边衬变化时，页面容器会更新该值。 |
 
-### Page base properties
+### Page 基类的属性 {#page-base-properties}
 
-These properties are inherited from `Page` and are available on all page types:
+下列属性继承自 `Page`，所有页面类型都有：
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `Navigation` | `INavigation?` | `null` | Provides access to the hosting `NavigationPage` for push/pop operations. |
-| `CurrentPage` | `Page?` | `null` | The active child page for page-container controls. This is usually `null` for a `ContentPage`. |
-| `IsInNavigationPage` | `bool` | `false` | Indicates whether the page is currently hosted by a `NavigationPage`. |
+| `Navigation` | `INavigation?` | `null` | 提供对承载它的 `NavigationPage` 的访问，用于入栈/出栈操作。 |
+| `CurrentPage` | `Page?` | `null` | 页面容器控件当前活动的子页面。对 `ContentPage` 而言，它通常就是 `null`。 |
+| `IsInNavigationPage` | `bool` | `false` | 指示该页面当前是否由 `NavigationPage` 承载。 |
 
-## Navigation events
+## 导航事件 {#navigation-events}
 
-Every `Page` (including `ContentPage`) supports lifecycle events that fire during navigation. The events fire in a specific order when a navigation occurs:
+每个 `Page`（包括 `ContentPage`）都支持在导航期间触发的生命周期事件。一次导航发生时，这些事件按固定顺序触发：
 
 | 事件 | 说明 | 顺序 |
 | --- | --- | --- |
-| `Navigating` | Raised on the **current** page before navigating away from it. Uses `NavigatingFromEventArgs` and supports cancellation via `e.Cancel = true`. | 1 |
-| `NavigatedFrom` | Raised on the **old** page after the navigation has completed. | 2 |
-| `NavigatedTo` | Raised on the **new** page after the navigation has completed. | 3 |
+| `Navigating` | 在离开**当前**页面之前，于该页面上引发。它使用 `NavigatingFromEventArgs`，可通过 `e.Cancel = true` 取消导航。 | 1 |
+| `NavigatedFrom` | 导航完成之后，在**原**页面上引发。 | 2 |
+| `NavigatedTo` | 导航完成之后，在**新**页面上引发。 | 3 |
 
-### Overriding lifecycle methods
+### 重写生命周期方法 {#overriding-lifecycle-methods}
 
-You can also override the corresponding `protected` methods instead of subscribing to events:
+除了订阅事件，你也可以重写对应的 `protected` 方法：
 
 ```csharp
 public class HomePage : ContentPage
@@ -98,14 +98,14 @@ public class HomePage : ContentPage
 ```
 
 :::note
-`NavigatedTo` is not the same as the `Loaded` event. `Loaded` fires once when the control is first added to the visual tree, while `NavigatedTo` fires every time the page becomes the active page (for example, when returning to it via a back navigation).
+`NavigatedTo` 和 `Loaded` 事件不是一回事。`Loaded` 只在控件首次加入视觉树时触发一次，而 `NavigatedTo` 每次页面成为活动页时都会触发（比如用户点返回回到它时）。
 :::
 
-## Examples
+## 示例 {#examples}
 
-### Minimal XAML page
+### 最简 XAML 页面 {#minimal-xaml-page}
 
-The simplest possible `ContentPage` with inline content:
+一个内联内容的最简 `ContentPage`：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -114,7 +114,7 @@ The simplest possible `ContentPage` with inline content:
 </ContentPage>
 ```
 
-### Creating a ContentPage in code
+### 在代码中创建 ContentPage {#creating-a-contentpage-in-code}
 
 ```csharp
 var page = new ContentPage
@@ -128,9 +128,9 @@ var page = new ContentPage
 };
 ```
 
-### ContentPage inside a NavigationPage
+### NavigationPage 中的 ContentPage {#contentpage-inside-a-navigationpage}
 
-When hosted in a `NavigationPage`, the `Header` is displayed in the navigation bar:
+当页面由 `NavigationPage` 承载时，`Header` 会显示在导航栏中：
 
 ```xml
 <NavigationPage xmlns="https://github.com/avaloniaui">
@@ -145,9 +145,9 @@ When hosted in a `NavigationPage`, the `Header` is displayed in the navigation b
 
 <Image light={ContentPageInNavigationScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="ContentPage inside a NavigationPage"/>
 
-### ContentPage as a window root
+### 把 ContentPage 作为窗口根元素 {#contentpage-as-a-window-root}
 
-For single-page applications, you can place a `ContentPage` directly inside a `Window`:
+单页应用可以把 `ContentPage` 直接放进 `Window`：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -163,9 +163,9 @@ For single-page applications, you can place a `ContentPage` directly inside a `W
 
 <Image light={ContentPageStandaloneScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="ContentPage standalone in a Window"/>
 
-### Scrollable layout
+### 可滚动的布局 {#scrollable-layout}
 
-`ContentPage` does not include a built-in scroll viewer. Wrap your content in a `ScrollViewer` if it may overflow:
+`ContentPage` 本身不带滚动视图。如果内容可能超出屏幕，请把它包进 `ScrollViewer`：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -181,9 +181,9 @@ For single-page applications, you can place a `ContentPage` directly inside a `W
 </ContentPage>
 ```
 
-### MVVM binding
+### MVVM 绑定 {#mvvm-binding}
 
-Bind the page content to a view model using `ContentTemplate`:
+用 `ContentTemplate` 把页面内容绑定到视图模型：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -202,7 +202,7 @@ Bind the page content to a view model using `ContentTemplate`:
 
 ### TopCommandBar
 
-Display a toolbar above the page content:
+在页面内容上方显示一个工具栏：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -222,7 +222,7 @@ Display a toolbar above the page content:
 
 ### BottomCommandBar
 
-Display a toolbar below the page content:
+在页面内容下方显示一个工具栏：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -240,9 +240,9 @@ Display a toolbar below the page content:
 
 <Image light={ContentPageBottomCommandBarScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="ContentPage with a bottom command bar"/>
 
-### Cancelling navigation
+### 取消导航 {#cancelling-navigation}
 
-Use the `Navigating` event or override `OnNavigatingFrom` to prevent the user from leaving a page with unsaved changes:
+用 `Navigating` 事件、或重写 `OnNavigatingFrom`，可以在有未保存改动时阻止用户离开页面：
 
 ```csharp
 public class EditPage : ContentPage
@@ -262,9 +262,9 @@ public class EditPage : ContentPage
 }
 ```
 
-### Intercepting the system back button
+### 拦截系统返回键 {#intercepting-the-system-back-button}
 
-On platforms with a hardware or system back button (Android, browser), `Navigating` fires before the back action occurs. Cancelling it also cancels the system back navigation:
+在带有硬件或系统返回键的平台上（Android、浏览器），`Navigating` 会在返回动作发生之前触发。取消它同时也会取消系统的返回导航：
 
 ```csharp
 protected override void OnNavigatingFrom(NavigatingFromEventArgs args)
@@ -278,9 +278,9 @@ protected override void OnNavigatingFrom(NavigatingFromEventArgs args)
 }
 ```
 
-### Refreshing data when the page reappears
+### 页面重新出现时刷新数据 {#refreshing-data-when-the-page-reappears}
 
-`NavigatedTo` fires every time the page becomes active, making it the ideal place to refresh data:
+`NavigatedTo` 在页面每次变为活动状态时触发，正是刷新数据的好时机：
 
 ```csharp
 public class OrdersPage : ContentPage
@@ -293,9 +293,9 @@ public class OrdersPage : ContentPage
 }
 ```
 
-### Full-bleed layout (disabling safe area padding)
+### 全屏贯通布局（关闭安全区内边距） {#full-bleed-layout-disabling-safe-area-padding}
 
-Set `AutomaticallyApplySafeAreaPadding` to `false` to let your content extend behind the notch and status bar:
+把 `AutomaticallyApplySafeAreaPadding` 设为 `false`，内容就能延伸到刘海和状态栏下方：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -307,9 +307,9 @@ Set `AutomaticallyApplySafeAreaPadding` to `false` to let your content extend be
 
 <Image light={ContentPageSafeAreaDisabledScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="ContentPage with safe area padding disabled"/>
 
-### Image background
+### 图片背景 {#image-background}
 
-`ContentPage` does not have `BackgroundImage` or `BackgroundImageStretch` properties. Use the inherited `Background` property with an `ImageBrush` instead:
+`ContentPage` 没有 `BackgroundImage` 和 `BackgroundImageStretch` 属性。请改用继承而来的 `Background` 属性，配上 `ImageBrush`：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -323,9 +323,9 @@ Set `AutomaticallyApplySafeAreaPadding` to `false` to let your content extend be
 </ContentPage>
 ```
 
-### Tab with icon
+### 带图标的选项卡 {#tab-with-icon}
 
-When used inside a `TabbedPage`, the `Header` and `Icon` properties control the tab appearance:
+当页面用在 `TabbedPage` 中时，`Header` 和 `Icon` 属性决定选项卡的外观：
 
 ```xml
 <TabbedPage xmlns="https://github.com/avaloniaui"
@@ -352,5 +352,5 @@ When used inside a `TabbedPage`, the `Header` and `Icon` properties control the 
 - [NavigationPage](/controls/navigation/navigationpage)
 - [TabbedPage](/controls/navigation/tabbedpage)
 - [DrawerPage](/controls/navigation/drawerpage)
-- [ContentPage API reference](/api/avalonia/controls/contentpage)
+- [ContentPage API 参考](/api/avalonia/controls/contentpage)
 - [GitHub 上的 `ContentPage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/ContentPage.cs)

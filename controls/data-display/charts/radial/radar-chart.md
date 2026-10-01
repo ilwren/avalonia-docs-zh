@@ -17,7 +17,7 @@ Radar charts compare multiple qualitative variables across several categories. T
 
 <Image light={chartsRadialRadar} maxWidth={400} position="center" cornerRadius="true" alt="Radar chart with two overlapping polygons comparing multi-dimensional skill scores across radial axes." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Skill assessment**: Comparing the strengths/weaknesses of employees or athletes.
 - **Product benchmarking**: Comparing different products across price, quality, and features.
 - **Performance profiles**: Displaying multifaceted metrics (e.g., SEO, Speed, Security for a website).
@@ -52,7 +52,7 @@ public ObservableCollection<double> RadarSeries2 { get; } = new() { 60, 70, 85, 
 
 ## Common properties (`RadarChart`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `AxisCount` | Number of axes shown around the chart. | `5` |
 | `ShowGridLines` | Whether to draw the concentric radar grid. | `true` |
@@ -62,7 +62,7 @@ public ObservableCollection<double> RadarSeries2 { get; } = new() { 60, 70, 85, 
 
 ## Common properties (`RadarSeries`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The numerical values for the radar axes. | `null` |
 | `Title` | The name of the player/entity (for legend). | `null` |

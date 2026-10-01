@@ -226,7 +226,7 @@ Identifiers passed to `CreateStringApplicationFormat` and `CreateBytesApplicatio
 
 ## Platform notes
 
-| Platform | Support level | Notes |
+| 平台 | Support level | Notes |
 |---|---|---|
 | Windows | Full | File drops from Explorer, inter-app text and bitmap drops, and custom formats within your application all work. |
 | macOS | Full | File drops from Finder are supported. The system drag cursor respects `DragDropEffects`. |

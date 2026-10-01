@@ -13,7 +13,7 @@ tags:
 
 Gradient ring charts render several concentric progress rings with one ring per item, so grouped status indicators can be compared in a compact view.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Multi-metric status**: Show several progress measures in one compact control.
 - **Capability dashboards**: Compare completion or health across a small set of categories.
@@ -47,7 +47,7 @@ public ObservableCollection<RingMetric> RingMetrics { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of ring items. | `null` |
 | `LabelPath` | Path to the item label. | `null` |

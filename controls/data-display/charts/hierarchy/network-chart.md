@@ -17,7 +17,7 @@ Network charts provide a high-level view of nodes and edges. They are simpler an
 
 <Image light={chartsFlowNetwork} maxWidth={400} position="center" cornerRadius="true" alt="Network chart with labeled nodes connected by edges showing static relationships in a structural diagram." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Infrastructure diagrams**: Showing servers and their connections.
 - **Routing tables**: Mapping paths between network points.
 - **Dependency trees**: Visualizing module relationships in a system.
@@ -57,7 +57,7 @@ public ObservableCollection<NetworkEdge> NetworkEdges { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of graph nodes. | `null` |
 | `Edges` | The collection of graph edges. | `null` |

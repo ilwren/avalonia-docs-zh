@@ -13,7 +13,7 @@ tags:
 
 Dumbbell charts connect two markers per category so you can compare the gap between a lower and higher value at a glance.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Before and after comparison**: Compare the same measure across two points in time.
 - **Range review**: Show the spread between two related values for each category.
@@ -47,7 +47,7 @@ public ObservableCollection<RangeComparison> PlannedVsActual { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of comparison items. | `null` |
 | `LowValuePath` | Path to the lower or first value. | `null` |

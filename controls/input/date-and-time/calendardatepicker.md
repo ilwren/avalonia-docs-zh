@@ -17,7 +17,7 @@ For details on the calendar portion of this control, see the [Calendar](/control
 
 ## 常用属性 {#common-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
@@ -32,7 +32,7 @@ You will probably use these properties most often:
 | `CustomDateFormatString` | `string` | Custom date format string when using a custom format. |
 | `IsDropDownOpen` | `bool` | Whether the calendar dropdown is currently open. |
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 ```xml title="XAML"
 <CalendarDatePicker SelectedDate="{Binding BirthDate}"
@@ -58,7 +58,7 @@ You can limit the selectable date range with `DisplayDateStart` and `DisplayDate
                     PlaceholderText="Check-in date" />
 ```
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
 - **Typed input**: When a user types a date that falls outside the `DisplayDateStart`/`DisplayDateEnd` range, the control rejects the value and clears the text box.
 - **Null handling**: Bind `SelectedDate` to a nullable `DateTimeOffset?` property so the control can represent "no selection."

@@ -250,7 +250,7 @@ public static string GetAppDataPath()
 
 The following table shows locations to which `SpecialFolder.LocalApplicationData` is resolved in .NET 8:
 
-| Platform | Typical path |
+| 平台 | Typical path |
 |---|---|
 | Windows | `%LOCALAPPDATA%\MyApp\` |
 | macOS | `~/Library/Application Support/MyApp/` |

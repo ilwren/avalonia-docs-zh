@@ -1,33 +1,33 @@
 ---
 id: notification
 title: WindowNotificationManager
-description: A toast-style notification popup system that displays temporary messages at a configurable position within a window.
+description: 一套 toast 风格的通知弹出系统，在窗口内指定位置显示临时消息。
 doc-type: reference
 ---
 
-The [`WindowNotificationManager`](/api/avalonia/controls/notifications/windownotificationmanager) provides a built-in notification popup system. It displays toast-style messages at a configurable position within a window. You can use it to inform users about completed operations, warnings, errors, or other events without blocking interaction with the rest of the UI.
+[`WindowNotificationManager`](/api/avalonia/controls/notifications/windownotificationmanager) 提供了一套内置的通知弹出系统，会在窗口内指定位置显示 toast 风格的消息。你可以用它告知用户某项操作已完成，或提示警告、错误等事件，同时不阻塞用户与界面其余部分的交互。
 
-## Useful properties
-
-| 属性 | 类型 | 说明 |
-|---|---|---|
-| `Position` | `NotificationPosition` | Where notifications appear. Options: `TopLeft`, `TopCenter`, `TopRight`, `BottomLeft`, `BottomCenter`, `BottomRight`. Default: `TopRight`. |
-| `MaxItems` | `int` | Maximum number of notifications visible at one time. Default: `5`. |
-
-## Notification properties
-
-The built-in `Notification` class exposes these properties:
+## 常用属性 {#useful-properties}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Title` | `string` | The notification title text. |
-| `Message` | `string` | The notification body text. |
-| `Type` | `NotificationType` | The severity level: `Information`, `Success`, `Warning`, or `Error`. |
-| `Expiration` | `TimeSpan` | Time before the notification auto-dismisses. Set to `TimeSpan.Zero` to require manual dismissal. |
+| `Position` | `NotificationPosition` | 通知出现的位置。可选 `TopLeft`、`TopCenter`、`TopRight`、`BottomLeft`、`BottomCenter`、`BottomRight`，默认 `TopRight`。 |
+| `MaxItems` | `int` | 同时可见的通知数量上限，默认 `5`。 |
 
-## Setting up
+## 通知对象的属性 {#notification-properties}
 
-Register a `WindowNotificationManager` in your window, typically in code-behind or through a view model reference:
+内置的 `Notification` 类提供以下属性：
+
+| 属性 | 类型 | 说明 |
+|---|---|---|
+| `Title` | `string` | 通知的标题文字。 |
+| `Message` | `string` | 通知的正文文字。 |
+| `Type` | `NotificationType` | 严重级别：`Information`、`Success`、`Warning` 或 `Error`。 |
+| `Expiration` | `TimeSpan` | 通知自动消失前的停留时长。设为 `TimeSpan.Zero` 则必须由用户手动关闭。 |
+
+## 准备工作 {#setting-up}
+
+在窗口中注册一个 `WindowNotificationManager`，通常写在代码隐藏里，或者通过视图模型持有的引用来访问：
 
 ```csharp
 public partial class MainWindow : Window
@@ -47,7 +47,7 @@ public partial class MainWindow : Window
 }
 ```
 
-You can also declare the `WindowNotificationManager` in XAML if you prefer a markup-based approach:
+若你偏好标记式写法，也可以在 XAML 中声明 `WindowNotificationManager`：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -62,7 +62,7 @@ You can also declare the `WindowNotificationManager` in XAML if you prefer a mar
 </Window>
 ```
 
-You then access the manager from code-behind:
+随后在代码隐藏中取用这个管理器：
 
 ```csharp
 public partial class MainWindow : Window
@@ -75,9 +75,9 @@ public partial class MainWindow : Window
 }
 ```
 
-## Showing a notification
+## 显示通知 {#showing-a-notification}
 
-Call `Show` with a `Notification` object:
+用一个 `Notification` 对象调用 `Show`：
 
 ```csharp
 _notificationManager.Show(new Notification(
@@ -87,7 +87,7 @@ _notificationManager.Show(new Notification(
     TimeSpan.FromSeconds(3)));
 ```
 
-If you omit the `Expiration` parameter, the notification uses the default expiration time. To keep a notification visible until the user dismisses it manually, pass `TimeSpan.Zero`:
+若省略 `Expiration` 参数，通知会采用默认的停留时长。想让通知一直显示到用户手动关闭，就传入 `TimeSpan.Zero`：
 
 ```csharp
 _notificationManager.Show(new Notification(
@@ -97,9 +97,9 @@ _notificationManager.Show(new Notification(
     TimeSpan.Zero));
 ```
 
-## Notification types
+## 通知类型 {#notification-types}
 
-Use the `NotificationType` enum to convey severity. The built-in theme applies distinct colors to each type:
+用 `NotificationType` 枚举表达严重级别，内置主题会为每种类型套用不同的配色：
 
 ```csharp
 // Informational (default blue)
@@ -115,9 +115,9 @@ _notificationManager.Show(new Notification("Warning", "Disk space is low.", Noti
 _notificationManager.Show(new Notification("Error", "Connection failed.", NotificationType.Error));
 ```
 
-## Closing notifications programmatically
+## 用代码关闭通知 {#closing-notifications-programmatically}
 
-You can close a specific notification or clear all notifications from code:
+你可以在代码中关掉某一条通知，也可以清空全部通知：
 
 ```csharp
 var notification = new Notification("Processing", "Working...", NotificationType.Information, TimeSpan.Zero);
@@ -130,7 +130,7 @@ _notificationManager.Close(notification);
 _notificationManager.CloseAll();
 ```
 
-This is useful when a long-running operation completes and you want to replace a progress notification with a result notification:
+当一项耗时操作完成、你想把进度通知换成结果通知时，这招很好使：
 
 ```csharp
 var progressNotification = new Notification(
@@ -150,9 +150,9 @@ _notificationManager.Show(new Notification(
     TimeSpan.FromSeconds(3)));
 ```
 
-## Custom notification content
+## 自定义通知内容 {#custom-notification-content}
 
-Implement `INotification` to provide custom notification data:
+实现 `INotification` 即可提供自定义的通知数据：
 
 ```csharp
 public class CustomNotification : INotification
@@ -169,7 +169,7 @@ public class CustomNotification : INotification
 }
 ```
 
-You can then show your custom notification the same way:
+自定义通知的显示方式和前面完全一样：
 
 ```csharp
 _notificationManager.Show(new CustomNotification
@@ -185,7 +185,7 @@ _notificationManager.Show(new CustomNotification
 
 ## Positioning
 
-Control where notifications appear by setting `Position`:
+设置 `Position` 来控制通知出现的位置：
 
 ```csharp
 // Top-right corner (default)
@@ -195,20 +195,20 @@ _notificationManager.Position = NotificationPosition.TopRight;
 _notificationManager.Position = NotificationPosition.BottomCenter;
 ```
 
-The six available positions are:
+可选的六个位置是：
 
-| Position | 说明 |
+| 位置 | 说明 |
 |---|---|
-| `TopLeft` | Top-left corner of the window. |
-| `TopCenter` | Top edge, centered horizontally. |
-| `TopRight` | Top-right corner of the window (default). |
-| `BottomLeft` | Bottom-left corner of the window. |
-| `BottomCenter` | Bottom edge, centered horizontally. |
-| `BottomRight` | Bottom-right corner of the window. |
+| `TopLeft` | 窗口左上角。 |
+| `TopCenter` | 顶边，水平居中。 |
+| `TopRight` | 窗口右上角（默认）。 |
+| `BottomLeft` | 窗口左下角。 |
+| `BottomCenter` | 底边，水平居中。 |
+| `BottomRight` | 窗口右下角。 |
 
-## MVVM pattern
+## MVVM 写法 {#mvvm-pattern}
 
-Expose a notification manager through a service so your view models can show notifications without referencing UI types directly:
+把通知管理器包装成一个服务对外暴露，视图模型就能在不直接引用界面类型的前提下弹出通知：
 
 ```csharp
 public interface INotificationService
@@ -242,7 +242,7 @@ public class NotificationService : INotificationService
 }
 ```
 
-Register the service in your application startup and inject it into view models that need to display notifications:
+在应用启动时注册该服务，再把它注入到需要显示通知的视图模型中：
 
 ```csharp
 public class MyViewModel
@@ -264,6 +264,6 @@ public class MyViewModel
 
 ## 另请参阅 {#see-also}
 
-- [How to show notifications and toasts](/docs/how-to/notifications-how-to)
+- [如何显示通知与 toast](/docs/how-to/notifications-how-to)
 - [Popup](/controls/feedback/popup)
 - [ToolTip](/controls/feedback/tooltip)

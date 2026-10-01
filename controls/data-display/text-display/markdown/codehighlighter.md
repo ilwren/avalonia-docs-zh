@@ -32,7 +32,7 @@ dotnet add package Avalonia.Controls.Markdown.TextMate
 
 ## Choosing a highlighter
 
-| Feature | `ColorCodeHighlighter` | `TextMateHighlighter` |
+| 特性 | `ColorCodeHighlighter` | `TextMateHighlighter` |
 |---|---|---|
 | Language coverage | Common languages (C#, XML, JSON, JS, and others) | Broad coverage via TextMate grammars |
 | Theming | Inherits your application theme colors | Built-in `ThemeName` values such as `LightPlus` and `DarkPlus` |

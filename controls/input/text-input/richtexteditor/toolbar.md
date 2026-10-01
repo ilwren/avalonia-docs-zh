@@ -545,7 +545,7 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 | `Cut` | Ctrl+X | Cut the current selection to the clipboard. |
 | `Copy` | Ctrl+C | Copy the current selection to the clipboard. |
 | `Paste` | Ctrl+V | Paste clipboard contents at the caret. |
-| `PasteUnformatted` | N/A | Paste clipboard contents as plain text. |
+| `PasteUnformatted` | 不适用 | Paste clipboard contents as plain text. |
 | `SelectAll` | Ctrl+A | Select all content. |
 
 ### Text formatting
@@ -558,8 +558,8 @@ Invoking a block property action with no value does nothing. You must use `SetVa
 | `Strikethrough` | Ctrl+- | Toggle strikethrough. |
 | `Superscript` | Ctrl+Shift++ | Toggle superscript baseline alignment. |
 | `Subscript` | Ctrl++ | Toggle subscript baseline alignment. |
-| `FontFamily` | N/A | Get or set the font family. |
-| `FontSize` | N/A | Get or set the font size. |
+| `FontFamily` | 不适用 | Get or set the font family. |
+| `FontSize` | 不适用 | Get or set the font size. |
 
 ### Colors
 
@@ -793,7 +793,7 @@ The following specialized subclasses of `EditorMenuItem` are available for tools
 | `ColorPickerTool` / `ColorSwatchTool` | `ColorMenuItem` | Submenu with color swatches and optional "No Color". |
 | `AlignmentFlyoutTool` | `TextAlignmentMenuItem` | Submenu of alignment options. |
 
-#### Examples
+#### 示例 {#examples}
 
 ```xml
 <!-- Font selector submenu -->
@@ -994,7 +994,7 @@ Toolbar visuals are controlled through dynamic resources and style classes. You 
 
 ### Sizing and color resources
 
-| Resource | Default | 用途 |
+| Resource | 默认值 | 用途 |
 |---|---|---|
 | `EditorToolbarToolHeight` | 30 | Tool button height. |
 | `EditorToolbarToolMinWidth` | 28 | Minimum tool button width. |

@@ -150,7 +150,7 @@ Combines multiple transforms into a single transformation. Transforms are applie
 The order of transforms within a `TransformGroup` matters. Scaling then rotating produces a different result than rotating then scaling.
 :::
 
-## Shorthand syntax
+## 简写写法 {#shorthand-syntax}
 
 Avalonia supports a CSS-like shorthand for `RenderTransform`:
 

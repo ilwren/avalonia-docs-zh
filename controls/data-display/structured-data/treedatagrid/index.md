@@ -53,9 +53,9 @@ For multi-project solutions, you can store your licence key in an [environment v
 
 For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性               | 说明                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------- |

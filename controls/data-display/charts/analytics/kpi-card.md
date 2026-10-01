@@ -17,7 +17,7 @@ KPI cards display critical business metrics in a focused format. They typically 
 
 <Image light={chartsAnalyticsKpi} maxWidth={400} position="center" cornerRadius="true" alt="KPI card displaying a large metric value with a trend indicator and a mini sparkline chart for context." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Executive dashboards**: Providing at-a-glance status of main business goals.
 - **Performance monitoring**: Tracking real-time metrics like active users or server load.
 - **Financial overviews**: Showing revenue, expenses, and growth at the top of a report.
@@ -80,7 +80,7 @@ public KpiItem Kpi3 { get; } = new(
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | The main numerical value to display. | `0` |
 | `Delta` | The change value (positive or negative) from the previous period. | `0` |

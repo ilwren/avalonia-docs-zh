@@ -30,7 +30,7 @@ The `SelectableTextBlock` is a read-only label for displaying text that your use
 | -------------------- | ------------------------------------------------------------------ |
 | `CopyingToClipboard` | Raised when the selected text is being copied to the clipboard. Can be used to modify or cancel the copy operation. |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 This example shows selectable text used as a heading, a single line with a custom selection brush, and a multi-line display with a pre-set selection range.
 

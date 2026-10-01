@@ -17,7 +17,7 @@ Spiral timelines visualize data that has both a strong sequential component and 
 
 <Image light={chartsTimelineSpiral} maxWidth={400} position="center" cornerRadius="true" alt="Spiral timeline chart wrapping chronological data into an outward spiral to show both long-term trends and cyclical patterns." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Long-term cyclical data**: Visualizing annual climate changes over several decades.
 - **System logs**: Detecting patterns in server activity across weeks or months.
@@ -55,7 +55,7 @@ public ObservableCollection<SpiralEvent> SpiralEvents { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of points on the spiral. | `null` |
 | `DatePath` | Path to the chronological property. | `null` |

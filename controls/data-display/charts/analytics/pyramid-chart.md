@@ -17,7 +17,7 @@ Pyramid charts are a type of stacked area or bar graph that emphasizes both hier
 
 <Image light={chartsAnalyticsPyramid} maxWidth={400} position="center" cornerRadius="true" alt="Pyramid chart with stacked triangular segments representing hierarchical population or pipeline data." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Population pyramids**: Showing age and gender distribution in a region.
 - **Sales pipelines**: Visualizing the funnel from leads to closed deals.
 - **Biological hierarchies**: Showing energy flow or species distribution in an ecosystem.
@@ -47,7 +47,7 @@ public ObservableCollection<PyramidItem> PyramidData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data layers. | `null` |
 | `ValuePath` | Magnitude of each layer. | `null` |

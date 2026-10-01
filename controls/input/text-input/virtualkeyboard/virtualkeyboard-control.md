@@ -128,7 +128,7 @@ myContainer.Children.Add(keyboard);
 
 Below is a list of resources you can override in your theme or resource dictionary:
 
-| Key | 类型 | Default |
+| Key | 类型 | 默认值 |
 |---|---|---|
 | `KeyboardActionButtonBackground` | Brush | `Goldenrod` |
 | `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` |

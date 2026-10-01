@@ -13,7 +13,7 @@ tags:
 
 Population pyramid charts visualize two opposing distributions, most often male and female populations across age groups.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Demographic analysis**: Compare age distribution by sex or region.
 - **Segment comparison**: Show paired distributions across ordered bands.
@@ -47,7 +47,7 @@ public ObservableCollection<PopulationBand> PopulationData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of population bands. | `null` |
 | `AgeLabelPath` | Path to the band label. | `null` |

@@ -7,9 +7,9 @@ doc-type: reference
 
 The [`GridSplitter`](/api/avalonia/controls/gridsplitter) control allows a user to resize the columns or rows in a `Grid` at runtime. The splitter is drawn as a column or row (size can be specified), and has a grip that the user can manipulate at runtime.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
@@ -57,7 +57,7 @@ You can set `MinWidth`/`MaxWidth` on `ColumnDefinition` elements (or `MinHeight`
 </Grid>
 ```
 
-## Keyboard support
+## 键盘支持 {#keyboard-support}
 
 The `GridSplitter` supports keyboard interaction for accessibility. When the splitter has focus, you can use the following keys:
 
@@ -68,7 +68,7 @@ The `GridSplitter` supports keyboard interaction for accessibility. When the spl
 
 Each key press moves the splitter by the amount specified in `DragIncrement` (defaults to 1 pixel).
 
-## Examples
+## 示例 {#examples}
 
 This is a column splitter. Drag the border between the columns to resize them.
 

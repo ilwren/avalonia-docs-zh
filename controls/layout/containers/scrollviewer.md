@@ -11,9 +11,9 @@ The [`ScrollViewer`](/api/avalonia/controls/scrollviewer) control can have conte
 You cannot place a `ScrollViewer` inside a control that has infinite height or width (depending on the scrolling direction), such as a `StackPanel`. To avoid this problem, set a fixed `Height`/`Width` or `MaxHeight`/`MaxWidth` on the `ScrollViewer`, or choose a different container panel.
 :::
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|

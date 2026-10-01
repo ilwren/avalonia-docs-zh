@@ -9,7 +9,7 @@ The WebView environment options allow you to customize the underlying browser en
 
 The `EnvironmentRequested` event is fired before the WebView adapter is created, giving you the opportunity to modify these settings based on your application's requirements.
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 ```csharp
 var webView = new WebView();

@@ -10,9 +10,9 @@ tags:
 
 **Print** and **Share** live in the toolbar's **More Options** menu and are also available as `Print()`, `PrintAsync()`, `Share()`, `ShareAsync()`, `PrintCommand` and `ShareCommand`. Both include the current edits.
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Platform | Print | Share |
+| 平台 | Print | Share |
 |---|---|---|
 | Windows | Standard print dialog, vector output. | Windows share sheet. Falls back to a save-a-copy picker if the share UI is unavailable. |
 | macOS | System print panel with preview. | System share picker, anchored to the toolbar button. |

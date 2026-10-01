@@ -5,7 +5,7 @@ title: NativeWebDialog
 
 `NativeWebDialog` is a dialog window that hosts a native web browser. Use it when you want to show web content in a separate window without embedding it in your layout, or on platforms where an embedded `NativeWebView` control is not available.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
@@ -17,7 +17,7 @@ title: NativeWebDialog
 | `DefaultBackground` | `Color?` | The background color of the dialog and of the web view hosted inside it. When `null`, the owner background is used, falling back to white. |
 | `ShowFocused` | `bool` | Whether the dialog moves keyboard focus to its web content when shown. Default: `true`. |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 Create a dialog, navigate to a URL, and wait for it to close:
 
@@ -71,7 +71,7 @@ dialog.Focus();
 
 ## Navigation
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `Navigate(Uri)` | Navigates to the specified URI. |
 | `NavigateToString(string)` | Renders an HTML string as the page content. |
@@ -100,7 +100,7 @@ dialog.WebMessageReceived += (sender, e) =>
 
 ## Printing
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `ShowPrintUI()` | Opens the platform print dialog. |
 | `PrintToPdfStreamAsync()` | Returns the current page as a PDF stream. |
@@ -139,14 +139,14 @@ See [WebView environment options](/controls/web/webview-environment) for details
 
 ## Window sizing and position
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `Resize(int, int)` | Resizes the dialog to the specified width and height. |
 | `Move(int, int)` | Moves the dialog to the specified screen coordinates. |
 
 ## Advanced
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `TryGetCommandManager()` | Returns a `NativeWebViewCommandManager` for keyboard commands (copy, paste, etc.) if supported. |
 | `TryGetCookieManager()` | Returns a `NativeWebViewCookieManager` for managing cookies if supported. |
@@ -167,9 +167,9 @@ See [WebView environment options](/controls/web/webview-environment) for details
 | `WebMessageReceived` | Fires when web content calls `invokeCSharpAction(body)`. |
 | `WebResourceRequested` | Fires when the WebView makes a URL request. |
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Feature | Windows | macOS | Linux | iOS | Android | Browser |
+| 特性 | Windows | macOS | Linux | iOS | Android | Browser |
 |---|---|---|---|---|---|---|
 | `Show` | Yes | Yes | Yes | No | No | No |
 | `Show(Window)` | Yes | Yes | Yes* | No | No | No |

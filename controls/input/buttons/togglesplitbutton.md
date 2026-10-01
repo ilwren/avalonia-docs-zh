@@ -38,9 +38,9 @@ Pressing a configuration in the `Flyout` should either (1) turn on the feature w
 | `:flyout-open` | Set when the `Flyout` is open                                                                                                                                             |
 | `:checked`     | Set when the `ToggleSplitButton` is checked. (`IsChecked="true"`)                                                                                                         |
 
-## Examples
+## 示例 {#examples}
 
-### Basic example
+### 基本示例 {#basic-example}
 
 <XamlPreview>
 

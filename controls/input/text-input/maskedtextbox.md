@@ -9,9 +9,9 @@ The `MaskedTextBox` presents an area for typed (keyboard) input, but where the f
 
 The mask pattern can also contain literal characters that appear in the input and cannot be typed over.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性    | 说明                                                                  |
 |-------------|------------------------------------------------------------------------------|

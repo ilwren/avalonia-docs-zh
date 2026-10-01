@@ -17,7 +17,7 @@ Matrix charts use a grid to visualize boolean relationships between two categori
 
 <Image light={chartsAnalyticsMatrix} maxWidth={400} position="center" cornerRadius="true" alt="Matrix chart showing a grid of dots sized or colored by value at row and column intersections." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Correlation tables**: Showing the relationship between many different variables.
 - **Schedule overviews**: Mapping availability or events across people and days.
 - **Attribute comparison**: Visualizing which features (columns) apply to which products (rows).
@@ -54,7 +54,7 @@ public ObservableCollection<MatrixItem> MatrixData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of row data. | `null` |
 | `RowLabelPath` | Path to the row label property. | `null` |

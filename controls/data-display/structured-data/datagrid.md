@@ -71,9 +71,9 @@ The DataGrid-styles need to match the overall theme you use, otherwise you will 
 :::
 
 
-### Useful properties
+### 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性                | 说明                                                                                                                     |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -84,7 +84,7 @@ You will probably use these properties most often:
 | `CanUserResizeColumns`  | Indicates whether the user can adjust column widths using the pointer. (Default is false.)                                      |
 | `CanUserSortColumns`    | Indicates whether the user can sort columns by clicking the column header. (Default is true.)                                   |
 
-### Examples
+### 示例 {#examples}
 
 This example will generate a basic `DataGrid`, with column header names auto-generated from the item class. The items data source is bound to the main window view model.
 
@@ -334,7 +334,7 @@ Bind to `DataGridRow.Index` to show row numbers in a column:
     Width="60" IsReadOnly="True" />
 ```
 
-### Useful properties
+### 常用属性 {#useful-properties-1}
 
 Most of these properties are common to all three column types:
 

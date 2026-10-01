@@ -228,9 +228,9 @@ var token = await session.ExchangeCodeAsync(result);
 
 `ExchangeCodeAsync` checks `state` before it reads anything else from the callback, rejects an `error` response, and returns an `OAuth2TokenResponse`. Its `IdToken` is passed through as received and is not validated.
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Feature                     | Windows | macOS (10.15+) | Linux | iOS (iOS 12.0+) | Android  | Browser  |
+| 特性                     | Windows | macOS (10.15+) | Linux | iOS (iOS 12.0+) | Android  | Browser  |
 |-----------------------------|---------|-------|-------|-----|-----------|-----------|
 | Platform Implementation  | ✗       | ✓*     | ✗     | ✓*   | ✓**         | ✓***         |
 | NativeWebDialog         | ✓       | ✓     | ✓     | ✗   | ✗         | ✗         |

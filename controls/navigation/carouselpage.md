@@ -1,6 +1,6 @@
 ---
 title: CarouselPage
-description: '`CarouselPage` displays a collection of pages in a horizontally scrollable carousel.'
+description: '`CarouselPage` 以可横向滚动的轮播形式展示一组页面。'
 doc-type: reference
 ---
 
@@ -9,9 +9,9 @@ import CarouselPageDataTemplateScreenshot from '/img/controls/carouselpage/carou
 
 # CarouselPage
 
-`CarouselPage` displays a collection of pages in a horizontally scrollable carousel. Users swipe or use arrow keys to move between pages. An optional page transition animates the change.
+`CarouselPage` 以可横向滚动的轮播形式展示一组页面。用户可以滑动或用方向键在页面之间切换，还可以配上页面过渡动画。
 
-`CarouselPage` extends `SelectingMultiPage`, which extends `MultiPage`. This inheritance chain provides:
+`CarouselPage` 继承自 `SelectingMultiPage`，后者又继承自 `MultiPage`。这条继承链带来了：
 
 - `Pages` collection
 - `ItemsSource`
@@ -25,48 +25,48 @@ import CarouselPageDataTemplateScreenshot from '/img/controls/carouselpage/carou
 
 ## Useful Properties
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 | -------- | ---- | ------- | ----------- |
-| `Pages` | `IEnumerable<Page>?` | `null` | The collection of child pages. This is the XAML content property. Supports any `IEnumerable<Page>`, including observable collections. |
-| `ItemsSource` | `IEnumerable?` | `null` | View-model collection. When set, takes precedence over `Pages` as the item source. Use together with `PageTemplate` to convert each item into a `Page`. |
-| `PageTemplate` | `IDataTemplate?` | `DefaultPageDataTemplate` | Data template used to generate `Page` instances when the source contains data objects rather than pages directly. |
-| `PageTransition` | `IPageTransition?` | `null` | Animated transition played when the selected page changes. |
-| `IsGestureEnabled` | `bool` | `true` | Enables swipe and scroll-wheel gestures to navigate between pages. |
-| `IsKeyboardNavigationEnabled` | `bool` | `true` | Enables arrow, Home, and End keys to navigate between pages. |
-| `ItemsPanel` | `ITemplate<Panel?>` | `VirtualizingCarouselPanel` | The panel template used to arrange page items inside the underlying `Carousel`. |
-| `SelectedIndex` | `int` | `-1` | Zero-based index of the currently selected page. |
-| `SelectedPage` | `Page?` | `null` | Read-only. The currently selected page. |
+| `Pages` | `IEnumerable<Page>?` | `null` | 子页面的集合。它是 XAML 的内容属性，支持任意 `IEnumerable<Page>`，包括可观察集合。 |
+| `ItemsSource` | `IEnumerable?` | `null` | 视图模型集合。一旦设置，它作为数据源的优先级高于 `Pages`。请与 `PageTemplate` 搭配使用，把每一项转换成 `Page`。 |
+| `PageTemplate` | `IDataTemplate?` | `DefaultPageDataTemplate` | 当数据源里装的是数据对象而非页面本身时，用这个数据模板来生成 `Page` 实例。 |
+| `PageTransition` | `IPageTransition?` | `null` | 选中页切换时播放的过渡动画。 |
+| `IsGestureEnabled` | `bool` | `true` | 启用滑动与滚轮手势来切换页面。 |
+| `IsKeyboardNavigationEnabled` | `bool` | `true` | 启用方向键、Home 和 End 键来切换页面。 |
+| `ItemsPanel` | `ITemplate<Panel?>` | `VirtualizingCarouselPanel` | 用于在底层 `Carousel` 内部排布页面项的面板模板。 |
+| `SelectedIndex` | `int` | `-1` | 当前选中页的索引，从 0 开始。 |
+| `SelectedPage` | `Page?` | `null` | 只读，当前选中的页面。 |
 
 ## 事件 {#events}
 
 | 事件 | 说明 |
 | ----- | ----------- |
-| `SelectionChanged` | Raised when the selected page changes. Provides `PreviousPage` and `CurrentPage`. |
-| `CurrentPageChanged` | Raised when `CurrentPage` changes. |
-| `PagesChanged` | Raised when the `Pages` collection changes. |
+| `SelectionChanged` | 选中页发生变化时引发，提供 `PreviousPage` 和 `CurrentPage`。 |
+| `CurrentPageChanged` | `CurrentPage` 变化时引发。 |
+| `PagesChanged` | `Pages` 集合发生变化时引发。 |
 
-Navigation lifecycle events (`NavigatedTo`, `Navigating`, `NavigatedFrom`) fire on each child `Page` as the active page changes.
+活动页切换时，各个子 `Page` 上会触发导航生命周期事件（`NavigatedTo`、`Navigating`、`NavigatedFrom`）。
 
 ## Keyboard Navigation
 
-When `IsKeyboardNavigationEnabled` is `true`:
+当 `IsKeyboardNavigationEnabled` 为 `true` 时：
 
-- Left and right arrow keys move to the previous and next page. RTL layouts reverse the direction.
-- Up arrow moves to the previous page. Down arrow moves to the next page.
-- `Home` jumps to the first page. `End` jumps to the last page.
+- 左右方向键切换到上一页和下一页。从右到左的布局中方向相反。
+- 上方向键切到上一页，下方向键切到下一页。
+- `Home` 跳到第一页，`End` 跳到最后一页。
 
 ## Gesture Navigation
 
-When `IsGestureEnabled` is `true`:
+当 `IsGestureEnabled` 为 `true` 时：
 
-- Swipe left or right to move between pages.
-- Mouse scroll wheel moves between pages. RTL layouts reverse the direction.
+- 左右滑动可在页面之间切换。
+- 鼠标滚轮可在页面之间切换。从右到左的布局中方向相反。
 
-## Examples
+## 示例 {#examples}
 
-### Basic CarouselPage in XAML
+### XAML 中的基础 CarouselPage {#basic-carouselpage-in-xaml}
 
 ```xml
 <CarouselPage xmlns="https://github.com/avaloniaui"
@@ -115,7 +115,7 @@ When `IsGestureEnabled` is `true`:
 </CarouselPage>
 ```
 
-### CarouselPage in Code
+### 在代码中使用 CarouselPage {#carouselpage-in-code}
 
 ```csharp
 var carousel = new CarouselPage
@@ -135,7 +135,7 @@ window.Page = carousel;
 
 ### Page Transitions
 
-Animate the page change with a built-in transition:
+用内置过渡为页面切换加上动画：
 
 ```csharp
 var carousel = new CarouselPage
@@ -148,7 +148,7 @@ carousel.PageTransition = new CrossFade(TimeSpan.FromMilliseconds(300));
 carousel.PageTransition = new PageSlide(TimeSpan.FromMilliseconds(300), PageSlide.SlideAxis.Vertical);
 ```
 
-In XAML, `PageSlide` supports both horizontal and vertical orientation:
+在 XAML 中，`PageSlide` 横向和纵向都支持：
 
 ```xml
 <CarouselPage>
@@ -181,9 +181,9 @@ private void OnPrevious()
 }
 ```
 
-### Responding to Page Changes
+### 响应页面切换 {#responding-to-page-changes}
 
-The `SelectionChanged` event provides `PreviousPage` and `CurrentPage` through `PageSelectionChangedEventArgs`:
+`SelectionChanged` 事件通过 `PageSelectionChangedEventArgs` 提供 `PreviousPage` 和 `CurrentPage`：
 
 ```csharp
 carousel.SelectionChanged += (sender, e) =>
@@ -195,7 +195,7 @@ carousel.SelectionChanged += (sender, e) =>
 
 ### Tracking Navigation Lifecycle Events
 
-Subscribe to lifecycle events on individual child pages to track when they become active or inactive:
+订阅各个子页面上的生命周期事件，即可跟踪它们何时变为活动或非活动状态：
 
 ```csharp
 var page = new ContentPage { Header = "Home" };
@@ -207,7 +207,7 @@ page.NavigatedFrom += (_, args) =>
     Console.WriteLine($"NavigatedFrom: Home (to {(args.DestinationPage as ContentPage)?.Header})");
 ```
 
-Or override the lifecycle methods in a subclass:
+也可以在子类中重写这些生命周期方法：
 
 ```csharp
 public partial class FeaturePage : ContentPage
@@ -221,9 +221,9 @@ public partial class FeaturePage : ContentPage
 }
 ```
 
-### Configuring Gestures and Keyboard
+### 配置手势与键盘 {#configuring-gestures-and-keyboard}
 
-Toggle gesture and keyboard navigation independently:
+手势导航与键盘导航可以分别开关：
 
 ```xml
 <CarouselPage IsGestureEnabled="True"
@@ -243,9 +243,9 @@ carousel.IsGestureEnabled = false;
 carousel.IsKeyboardNavigationEnabled = false;
 ```
 
-### Data-Driven Pages with ItemsSource
+### 用 ItemsSource 做数据驱动的页面 {#data-driven-pages-with-itemssource}
 
-When `ItemsSource` is set, it takes precedence over `Pages`. Use `PageTemplate` to convert each item into a `Page`:
+一旦设置了 `ItemsSource`，它的优先级就高于 `Pages`。请用 `PageTemplate` 把每一项转换成 `Page`：
 
 ```xml
 <CarouselPage xmlns="https://github.com/avaloniaui"
@@ -266,7 +266,7 @@ When `ItemsSource` is set, it takes precedence over `Pages`. Use `PageTemplate` 
 </CarouselPage>
 ```
 
-In code, use `ObservableCollection` for dynamic updates and `FuncDataTemplate` to create pages:
+在代码中，用 `ObservableCollection` 实现动态更新，用 `FuncDataTemplate` 创建页面：
 
 ```csharp
 var items = new ObservableCollection<PhotoViewModel>(viewModel.Photos);
@@ -292,19 +292,19 @@ items.Add(new PhotoViewModel { Title = "New Photo", ImageSource = newBitmap });
 
 <Image light={CarouselPageDataTemplateScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-### CarouselPage Inside a NavigationPage
+### 把 CarouselPage 放进 NavigationPage {#carouselpage-inside-a-navigationpage}
 
-Embed a `CarouselPage` inside a `NavigationPage` for stack navigation:
+把 `CarouselPage` 嵌进 `NavigationPage` 即可获得堆栈式导航：
 
 ```csharp
 window.Page = new NavigationPage { Content = new OnboardingCarousel() };
 ```
 
-The `CarouselPage.Header` is shown in the navigation bar title, and the back button appears when the stack depth is greater than 1.
+`CarouselPage.Header` 会显示在导航栏标题处；当堆栈深度大于 1 时，返回按钮就会出现。
 
 ### Dynamic Page Management
 
-Add and remove pages at runtime. The carousel updates automatically:
+页面可以在运行时增删，轮播会自动跟着更新：
 
 ```csharp
 var pages = new AvaloniaList<Page>();
@@ -324,5 +324,5 @@ if (pages.Count > 1)
 
 ## 另请参阅 {#see-also}
 
-- [API reference](/api/avalonia/controls/carouselpage)
-- [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/CarouselPage.cs)
+- [API 参考](/api/avalonia/controls/carouselpage)
+- [源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/CarouselPage.cs)

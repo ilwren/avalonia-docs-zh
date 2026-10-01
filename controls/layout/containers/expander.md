@@ -7,9 +7,9 @@ doc-type: reference
 
 The [`Expander`](/api/avalonia/controls/expander) control has a header area that is always visible and a collapsible content section that can contain a single child control. Users click the header to toggle the content visibility. This is useful when you want to let users reveal or hide supplementary information, such as search filters, advanced settings, or optional form fields, without navigating away from the current view.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
@@ -25,7 +25,7 @@ You will probably use these properties most often:
 | `Expanding` | Raised when the content section begins to expand. |
 | `Collapsed` | Raised when the content section finishes collapsing. |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 <XamlPreview>
 

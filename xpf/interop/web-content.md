@@ -7,7 +7,7 @@ XPF provides several options for embedding web content in your application. The 
 
 ## Platform comparison
 
-| Feature | CefSharp | NativeWebView | NativeWebDialog | DotNetBrowser |
+| 特性 | CefSharp | NativeWebView | NativeWebDialog | DotNetBrowser |
 |---|---|---|---|---|
 | Windows | Supported | Supported | Supported | Supported |
 | macOS | Not supported | Supported | Supported | Supported |

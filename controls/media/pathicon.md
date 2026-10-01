@@ -22,7 +22,7 @@ Because `PathIcon` uses vector paths rather than raster images, your icons scale
 | `Width` | `double` | The rendered width of the icon. |
 | `Height` | `double` | The rendered height of the icon. |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 The following example displays a shop icon at 200 x 200 pixels with a blue fill. The geometry data is stored as a `StreamGeometry` resource and referenced with `StaticResource`.
 

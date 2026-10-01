@@ -13,7 +13,7 @@ tags:
 
 Calendar heatmaps render daily values in a week-by-week grid, similar to contribution graphs and activity trackers.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Activity tracking**: Show commits, logins, exercises, or transactions by day.
 - **Seasonality review**: Spot quiet and active periods across a year.
@@ -49,7 +49,7 @@ public ObservableCollection<DailyCount> DailyActivity { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of daily activity items. | `null` |
 | `DatePath` | Path to the date value for each item. | `null` |

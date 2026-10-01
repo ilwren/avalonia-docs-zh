@@ -9,9 +9,9 @@ import DatePickerScreenshot from '/img/controls/datepicker/datepicker.gif';
 
 The `DatePicker` control presents three spinner columns that let your users pick a date value. The spinners display when you click the control.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 说明 |
 |---|---|
@@ -86,7 +86,7 @@ You can set the value in code-behind:
 datePicker.SelectedDate = new DateTimeOffset(new DateTime(1950, 1, 1));
 ```
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 In most applications you will bind `SelectedDate` to a property on your view model. The property should be a nullable `DateTimeOffset` so that it can represent the "no selection" state.
 

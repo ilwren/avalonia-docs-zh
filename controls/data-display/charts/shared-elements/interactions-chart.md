@@ -17,7 +17,7 @@ Chart interactions allow users to explore data dynamically with zooming, panning
 
 <Image light={chartsFeaturesZoom} maxWidth={400} position="center" cornerRadius="true" alt="Chart with interactive zoom and pan controls allowing users to focus on specific regions of a dense dataset." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Big data visualization**: Exploring line charts with thousands of points.
 - **Deep-dive analysis**: Zooming into a specific time window for detailed study.
 - **Interactive reports**: Giving users agency to focus on areas of interest.
@@ -113,7 +113,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 
 ### Zoom and pan
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `IsZoomEnabled` | Enables the ability to zoom into the chart. | `false` |
 | `IsPanEnabled` | Enables the ability to pan (scroll) the chart view. | `false` |
@@ -127,7 +127,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 
 `CartesianChart` creates embedded `ChartRangeSelector` controls when `IsZoomEnabled`, `ShowRangeSelector`, and the current `ZoomMode` require them. Use `ChartRangeSelector` directly when a separate range selection surface is needed.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Orientation` | Selector orientation, `Horizontal` or `Vertical`. | `Horizontal` |
 | `Minimum` | Minimum data value represented by the selector. | `0.0` |
@@ -148,7 +148,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 
 ### Hover highlighting
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `IsHighlightEnabled` | Enables hover highlighting. On series, hovering a data point dims other items in that series. On supported standalone charts, hovering a segment or cell dims the other items in that chart. | `false` |
 
@@ -158,7 +158,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 
 `CartesianChart` can display a trackball guide line and value tooltips while the pointer moves over the plot area.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `TrackballMode` | Trackball line mode: `None`, `Vertical`, or `Horizontal`. | `None` |
 | `TrackballDisplayMode` | Tooltip display mode: `FloatAllPoints` or `GroupAllPoints`. | `FloatAllPoints` |
@@ -167,7 +167,7 @@ Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `Nightin
 
 ### Selection
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `IsSelectionEnabled` | Enables pointer selection for supported series or chart items. | `false` |
 | `SelectionMode` | Selection behavior, such as `None`, `Single`, `SingleDeselect`, or `Multiple`. | `SingleDeselect` |

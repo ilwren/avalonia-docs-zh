@@ -12,9 +12,9 @@ The [`CheckBox`](/api/avalonia/controls/checkbox) control presents a Boolean val
 
 Clicking the control toggles the value in the sequence: checked, unchecked, unknown (if three-state is enabled).
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性       | 类型    | 说明                                                                 |
 | -------------- | ------- | --------------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ When you set `IsThreeState` to `true`, the control adds an indeterminate state. 
 
 When binding a three-state `CheckBox` to a view model, use a nullable `bool?` property so the indeterminate state can round-trip correctly.
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 Bind `IsChecked` to a `bool` property on your view model. The following example uses the MVVM Toolkit's source generators:
 

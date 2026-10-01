@@ -9,9 +9,9 @@ import SplitViewCompactScreenshot from '/img/controls/splitview/splitview-expand
 
 A `SplitView` presents a container with two parts: the main content zone and a side pane. The main content zone is always visible. The pane can be expanded and collapsed. The collapsed pane can be completely hidden, or left slightly open - with enough space to host some icon buttons for example. 
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性            | 说明                                                                      |
 | ------------------- | -------------------------------------------------------------------------------- |

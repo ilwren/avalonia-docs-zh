@@ -17,7 +17,7 @@ A box plot (or box-and-whisker plot) provides a graphical summary of the distrib
 
 <Image light={chartsCartesianBoxplot} maxWidth={400} position="center" cornerRadius="true" alt="Box plot chart with box-and-whisker symbols per category showing median, quartiles, and outlier data points." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Statistical analysis**: Comparing the distribution of several datasets (e.g., test scores across different classes).
 - **Outlier detection**: Identifying extreme data points that fall outside the "whiskers."
 - **Range visualization**: Showing the minimum, maximum, median, and interquartile range at a glance.
@@ -58,7 +58,7 @@ public ObservableCollection<BoxPlotPoint> BoxPlotData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of statistical data points. | `null` |
 | `MinPath` | Path to the minimum value. | `null` |

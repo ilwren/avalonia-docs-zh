@@ -62,7 +62,7 @@ Notes:
 - `TargetType` scopes the theme, so that property setters and template bindings resolve against the correct type.
 - Inside the `ControlTemplate`, use [`TemplateBinding`](/api/avalonia/data/templatebinding) to bind to properties on the templated control.
 
-## Template parts
+## 模板部件 {#template-parts}
 
 Sometimes, a templated control needs to interact with specific elements in its template from code. You can specify these elements by defining them as [`TemplatePart`](/api/avalonia/controls/metadata/templatepartattribute). By convention, template parts are named with the `PART_` prefix.
 

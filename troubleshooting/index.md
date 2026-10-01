@@ -1,7 +1,7 @@
 ---
 id: index
 title: Troubleshooting
-sidebar_label: Home
+sidebar_label: 首页
 ---
 
 import DocsCard from '@site/src/components/global/DocsCard';

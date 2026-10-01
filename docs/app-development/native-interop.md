@@ -30,7 +30,7 @@ if (TopLevel.GetTopLevel(this)?.TryGetPlatformHandle() is { } handle)
 
 The returned handle type depends on the platform:
 
-| Platform | HandleDescriptor | Native Type |
+| 平台 | HandleDescriptor | Native Type |
 |---|---|---|
 | Windows | `HWND` | Win32 window handle |
 | macOS | `NSWindow` | AppKit window pointer |

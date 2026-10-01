@@ -17,7 +17,7 @@ TreeMap charts visualize hierarchical or flat data as a set of nested rectangles
 
 <Image light={chartsHierarchicalTreemap} maxWidth={400} position="center" cornerRadius="true" alt="Treemap chart showing nested rectangles sized proportionally to disk usage values for different folders." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Resource usage**: Visualizing disk space or memory consumption by file/process.
 - **Proportional analysis**: Comparing the weight of items within categories.
 - **Complex hierarchies**: When you need to show many hierarchical items in a single view.
@@ -46,7 +46,7 @@ public ObservableCollection<TreeMapItem> TreeMapData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The chart title. | `null` |
 | `ItemsSource` | The collection of data items. | `null` |

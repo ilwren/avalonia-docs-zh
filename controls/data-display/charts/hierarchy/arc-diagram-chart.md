@@ -17,7 +17,7 @@ Arc diagrams are network visualizations where nodes are placed linearly along an
 
 <Image light={chartsFlowArc} maxWidth={400} position="center" cornerRadius="true" alt="Arc diagram with nodes arranged on a horizontal axis connected by curved arcs representing relationships between items." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Sequence analysis**: Showing relationships between items in a fixed order (e.g., chapters in a book).
 - **Dependency mapping**: Visualizing call stacks or structural relationships on a single line.
 - **Categorical proximity**: Highlighting clusters of interactions within a linear dataset.
@@ -62,7 +62,7 @@ public ObservableCollection<ArcLink> ArcLinks { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Nodes` | The collection of items on the axis. | `null` |
 | `Links` | The relationships between nodes. | `null` |

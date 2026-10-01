@@ -9,11 +9,11 @@ import CarouselScreenshot from '/img/reference/controls/carousel/carousel.gif';
 
 The `Carousel` has an items collection and displays each item as a page, in sequence, so that it fills the control. You can use it to build slide shows, onboarding flows, or any UI where your users step through content one page at a time.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `PageTransition` | `IPageTransition?` | `null` | Transition animation played when the selected item changes. Built-in options include `PageSlide`, `CrossFade`, `Rotate3DTransition`, and `CompositePageTransition`. |
 | `IsSwipeEnabled` | `bool` | `false` | Enables swipe and pointer-drag gestures to navigate between pages. |
@@ -27,7 +27,7 @@ You will probably use these properties most often:
 | `ItemsPanel` | `ITemplate<Panel?>` | `VirtualizingCarouselPanel` | The container panel used to arrange items. See [ItemsControl](/controls/data-display/collections/itemscontrol) for details on customizing the items panel. |
 | `AutoScrollToSelectedItem` | `bool` | `true` | Automatically scrolls to bring the selected item into view. |
 
-## Examples
+## 示例 {#examples}
 
 This example has three images in the items collection, with buttons to move the display forwards and back. The buttons have click event handlers in the C# code-behind.
 
@@ -124,7 +124,7 @@ public class SlidesViewModel : ViewModelBase
 
 Because `SelectedIndex` is bound two-way by default, you can advance the carousel from your view model by changing `CurrentSlide`, or let the control update the property when the user navigates with buttons.
 
-## Page transitions
+## 页面过渡 {#page-transitions}
 
 You set the animation that plays between items by assigning a transition to the `PageTransition` property. Avalonia ships with several built-in transitions:
 
@@ -251,7 +251,7 @@ Set `ViewportFraction` below `1.0` to reveal adjacent pages alongside the select
 
 A value of `1.0` (default) shows a single full page. Values like `0.8` create a "peeking" effect where edges of adjacent pages are visible. A value of `0.33` fits roughly three items in view.
 
-## Keyboard navigation
+## 键盘导航 {#keyboard-navigation}
 
 The `Carousel` supports keyboard navigation when focused:
 

@@ -130,7 +130,7 @@ Scoped nesting selectors also work. For example, remove paragraph margins inside
 In addition to style selectors, you can override named resources in your theme or resource dictionary. These are used by the default styles and provide an easy way to adjust values without rewriting selectors.
 
 ### Blocks
-| Key | 类型 | Default | Notes |
+| Key | 类型 | 默认值 | Notes |
 |---|---|---|---|
 | `MarkdownBlockMargin` | Thickness | `0,8` | Block outer margin |
 
@@ -142,12 +142,12 @@ In addition to style selectors, you can override named resources in your theme o
 | `MarkdownHyperlinkForegroundPointerOver` | Brush | `#0056b3` | `#79c0ff` | Hover link color |
 
 ### Selection
-| Key | 类型 | Default | Notes |
+| Key | 类型 | 默认值 | Notes |
 |---|---|---|---|
 | `MarkdownSelectionBrush` | Brush | `#FF086F9E` | Selection highlight |
 
 ### Code
-| Key | 类型 | Default | Notes |
+| Key | 类型 | 默认值 | Notes |
 |---|---|---|---|
 | `MarkdownCodeFontFamily` | FontFamily | `Courier New` | Inline/code font |
 
@@ -173,7 +173,7 @@ In addition to style selectors, you can override named resources in your theme o
 ### Headers (per level)
 Each header exposes `FontSize`, `BorderThickness`, `Padding`, `Margin`.
 
-| Key | 类型 | Default | Notes |
+| Key | 类型 | 默认值 | Notes |
 |---|---|---|---|
 | `MarkdownHeader1ParagraphFontSize` | Double | `31.5` | H1 font size |
 | `MarkdownHeader1ParagraphBorderThickness` | Thickness | `0,0,0,1` | H1 bottom border |

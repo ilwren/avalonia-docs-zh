@@ -10,9 +10,9 @@ The `TreeView` control can present hierarchical data and allows item selection. 
 
 There are two data sources: the main items source for the control, this gives the root of the hierarchical data. Then there is the items source in the item template which allows the control to list the next level in the hierarchical data.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table>
   <thead>
@@ -32,11 +32,11 @@ You will probably use these properties most often:
     </tr>
     <tr>
       <td><code>ItemsControl.ItemsPanel</code></td>
-      <td>The container panel to place items in. By default, this is a `StackPanel`. See [Custom panel](/docs/how-to/itemscontrol-how-to#custom-panel) for how to customize the `ItemsPanel`.</td>
+      <td>承载各项的容器面板，默认是 `StackPanel`。自定义 `ItemsPanel` 的方法见[自定义面板](/docs/how-to/itemscontrol-how-to#custom-panel)。</td>
     </tr>
     <tr>
       <td><code>ItemsControl.Styles</code></td>
-      <td>The style that is applied to any child element of the ItemControl.</td>
+      <td>应用到 ItemControl 任意子元素上的样式。</td>
     </tr>
   </tbody>
 </table>

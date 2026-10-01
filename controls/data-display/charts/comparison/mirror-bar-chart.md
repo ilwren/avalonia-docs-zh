@@ -13,7 +13,7 @@ tags:
 
 Mirror bar charts draw two bar series on opposite sides of a center line, so each category can be compared symmetrically.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Back-to-back comparison**: Compare two populations, regions, or product groups per category.
 - **Demographic layouts**: Show opposing distributions, such as male and female by age band.
@@ -49,7 +49,7 @@ public ObservableCollection<MirrorBarItem> MirrorData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of mirrored comparison items. | `null` |
 | `LeftValuePath` | Path to the value rendered on the left side. | `null` |

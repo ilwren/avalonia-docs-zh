@@ -17,7 +17,7 @@ Step line charts use horizontal and vertical lines to connect data points, creat
 
 <Image light={chartsCartesianStepline} maxWidth={400} position="center" cornerRadius="true" alt="Step line chart connecting data points with horizontal and vertical segments as values change at numeric intervals." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Price changes**: Visualizing interest rates, price tiers, or inventory levels.
 - **Discrete transitions**: When the value remains constant between data points.
 - **Digital signals**: Representing binary or state-based data.
@@ -47,7 +47,7 @@ public ObservableCollection<int> StepLineSeriesData { get; } =
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data items. | `null` |

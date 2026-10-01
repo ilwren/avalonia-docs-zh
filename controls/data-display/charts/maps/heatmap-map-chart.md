@@ -17,7 +17,7 @@ Heatmap maps visualize data density across geographic coordinates using a `Shape
 
 <Image light={chartsMapsHeatmap} maxWidth={400} position="center" cornerRadius="true" alt="Geographic heatmap using a color gradient to show data density hot spots and concentration areas across regions." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **User activity**: Visualizing where mobile app users are most active geographically.
 - **Incident reporting**: Mapping hotspots for crimes, traffic accidents, or outages.
 - **Environmental density**: Showing concentrations of species or pollution.
@@ -97,7 +97,7 @@ public EarthquakeItem[] EarthquakeData { get; } = new EarthquakeItem[]
 
 ## Common properties (`HeatmapLayer`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of geographic points to render. | `null` |
 | `LatitudePath` | Property name for latitude values. | `Latitude` |

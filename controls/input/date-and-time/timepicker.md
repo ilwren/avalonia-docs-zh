@@ -7,9 +7,9 @@ doc-type: reference
 
 The `TimePicker` presents two to four spinner controls that let users select a time value. It supports 24-hour and 12-hour clock formats, with optional seconds selection. The spinner controls appear when you click the control.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|

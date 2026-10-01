@@ -7,7 +7,7 @@ doc-type: how-to
 
 This guide covers common [`ScrollViewer`](/api/avalonia/controls/scrollviewer) scenarios including controlling scroll behavior, programmatic scrolling, responding to scroll events, and handling nested scroll regions.
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 Wrap any content that may exceed the available space inside a `ScrollViewer`:
 

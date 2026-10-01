@@ -25,7 +25,7 @@ byte[] bytes = await File.ReadAllBytesAsync("/path/to/document.pdf");
 await Viewer.LoadDocumentAsync(bytes);
 ```
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `LoadDocumentAsync(string path, string? password = null)` | Loads a PDF from a file path. |
 | `LoadDocumentAsync(Stream stream, string? password = null)` | Loads a PDF from a stream. The stream is read from its current position, or from the start if it is seekable and at its end. |
@@ -73,7 +73,7 @@ Your own gates are separate:
 
 Every save writes the document with its annotation edits, form values, redactions and bookmarks.
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `SaveAsync()` / `Save()` | Saves in place over `Source`. Honours `AllowDocumentSaving`. A document loaded from a stream or byte array has no path: `SaveAsync` throws `InvalidOperationException` and `Save()` reports it through `ErrorMessage`. |
 | `SaveDocumentAsync(string filePath)` | Saves to a path. |

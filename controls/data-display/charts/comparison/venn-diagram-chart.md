@@ -13,7 +13,7 @@ tags:
 
 Venn diagram charts show how sets overlap, which regions are unique, and how much value belongs to each intersection.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Set comparison**: Show overlap between product audiences, features, or experiments.
 - **Shared membership**: Highlight unique and intersecting segments.
@@ -43,7 +43,7 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 
 ## Common properties (`VennDiagramChart`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of `VennItem` regions. | `null` |
 | `IsSelectionEnabled` | Whether regions can be selected. | `false` |
@@ -55,7 +55,7 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 
 ## Common properties (`VennItem`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Sets` | Collection of set identifiers, such as `["A"]` or `["A", "B"]`. | Empty collection |
 | `Value` | Numeric value represented by the set or intersection. | `0.0` |

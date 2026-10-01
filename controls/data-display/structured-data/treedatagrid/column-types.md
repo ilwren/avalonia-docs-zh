@@ -57,22 +57,22 @@ source.WithTextColumn("First Name", x => x.FirstName, o =>
 
 Options can be set as attributes in XAML or configured via the `TextColumnCreateOptions` lambda in code-behind:
 
-| Option | XAML attribute | Default | 说明 |
+| Option | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
-| `StringFormat` | Use binding `StringFormat` | N/A | Format string for display (e.g. `"{0:C}"` for currency) |
-| `Culture` | N/A | `CurrentCulture` | Culture for formatting |
+| `StringFormat` | Use binding `StringFormat` | 不适用 | Format string for display (e.g. `"{0:C}"` for currency) |
+| `Culture` | 不适用 | `CurrentCulture` | Culture for formatting |
 | `TextAlignment` | `TextAlignment` | `Left` | Horizontal text alignment |
-| `TextTrimming` | `TextTrimming` | N/A | How text is trimmed when too long |
+| `TextTrimming` | `TextTrimming` | 不适用 | How text is trimmed when too long |
 | `TextWrapping` | `TextWrapping` | `NoWrap` | How text wraps within the cell |
 | `IsTextSearchEnabled` | `IsTextSearchEnabled` | `true` | Whether the column participates in text search |
 | `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
 | `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |
 | `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | Allow ascending/descending/unsorted states |
-| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | N/A | Minimum and maximum column widths |
-| `CompareAscending` / `CompareDescending` | N/A | N/A | Custom comparison functions for sorting |
-| `BeginEditGestures` | `BeginEditGestures` | N/A | Gestures that trigger edit mode (`None`, `F2`, `Tap`, `DoubleTap`, `WhenSelected`) |
+| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | 不适用 | Minimum and maximum column widths |
+| `CompareAscending` / `CompareDescending` | 不适用 | 不适用 | Custom comparison functions for sorting |
+| `BeginEditGestures` | `BeginEditGestures` | 不适用 | Gestures that trigger edit mode (`None`, `F2`, `Tap`, `DoubleTap`, `WhenSelected`) |
 
 :::note
 `IsTextSearchEnabled` defaults to `true` for text columns. Set it to `false` explicitly if you don't want a column to participate in text search.
@@ -118,16 +118,16 @@ source.WithCheckBoxColumn(x => x.IsActive, o =>
 
 ### Options
 
-| Option | XAML attribute | Default | 说明 |
+| Option | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
 | `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
 | `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
 | `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |
 | `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | Allow ascending/descending/unsorted states |
-| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | N/A | Minimum and maximum column widths |
-| `CompareAscending` / `CompareDescending` | N/A | N/A | Custom comparison functions for sorting |
-| `BeginEditGestures` | `BeginEditGestures` | N/A | Gestures that trigger edit mode |
+| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | 不适用 | Minimum and maximum column widths |
+| `CompareAscending` / `CompareDescending` | 不适用 | 不适用 | Custom comparison functions for sorting |
+| `BeginEditGestures` | `BeginEditGestures` | 不适用 | Gestures that trigger edit mode |
 
 ## TreeDataGridHierarchicalExpanderColumn
 
@@ -247,16 +247,16 @@ source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell", "CheckBoxC
 
 ### Options
 
-| Option | XAML attribute | Default | 说明 |
+| Option | XAML attribute | 默认值 | 说明 |
 |---|---|---|---|
 | `Width` | `Width` | `Auto` | Column width |
-| `TextSearchBinding` | N/A | N/A | Binding to extract searchable text from the model |
+| `TextSearchBinding` | 不适用 | 不适用 | Binding to extract searchable text from the model |
 | `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
 | `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |
 | `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | Allow ascending/descending/unsorted states |
-| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | N/A | Minimum and maximum column widths |
-| `CompareAscending` / `CompareDescending` | N/A | N/A | Custom comparison functions for sorting |
-| `BeginEditGestures` | `BeginEditGestures` | N/A | Gestures that trigger edit mode |
+| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | 不适用 | Minimum and maximum column widths |
+| `CompareAscending` / `CompareDescending` | 不适用 | 不适用 | Custom comparison functions for sorting |
+| `BeginEditGestures` | `BeginEditGestures` | 不适用 | Gestures that trigger edit mode |
 
 To enable text search on a template column, set `TextSearchBinding` using `CompiledBinding.Create`:
 

@@ -43,7 +43,7 @@ While using icons can enhance the usability of your application, it is important
 * Ensure that the icons are of a suitable size and clearly visible against the background.
 * Use universally recognized icons for common actions to make your application more intuitive.
 
-## Menu icons
+## 菜单图标 {#menu-icons}
 
 The `MenuItem.Icon` property is used to set an icon for a menu item. You can use different kinds of image sources for the icon, including resource URIs, file paths, or web URLs. Here's an example of how to add an icon to a menu item:
 

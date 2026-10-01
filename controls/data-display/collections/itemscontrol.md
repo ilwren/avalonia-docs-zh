@@ -9,9 +9,9 @@ doc-type: reference
 
 You can use it with data binding, styling and data templates to create a completely custom repeating data control.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 说明 |
 |---|---|
@@ -21,7 +21,7 @@ You will probably use these properties most often:
 | `Styles` | Styles applied to child elements of the `ItemsControl`. |
 | `DisplayMemberBinding` | A binding that selects the property to display when you do not supply an `ItemTemplate`. |
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
 - **Use `ObservableCollection<T>`** for your `ItemsSource` if you need the UI to update automatically when you add or remove items at runtime. A plain `List<T>` will not update the control when changed.
 - `ItemsControl` **does not virtualize** by default. If you are working with a large number of items, use a [`ListBox`](/controls/data-display/collections/listbox), which virtualizes by default, or [customize the `ItemsPanel` into a virtualizing control](/docs/how-to/itemscontrol-how-to#virtualized-scrollable-items).

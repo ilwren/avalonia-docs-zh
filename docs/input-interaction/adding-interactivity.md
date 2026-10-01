@@ -104,7 +104,7 @@ public partial class MainViewModel : ObservableObject
 | Defined in | Code-behind | 数据上下文 |
 | Testable | Difficult (requires UI) | Easy (plain C# method) |
 | 适用场景 | Control-specific actions (drag, resize) | Application logic (save, navigate, delete) |
-| MVVM pattern | Not preferred | Preferred |
+| MVVM 写法 | Not preferred | Preferred |
 
 ## 另请参阅 {#see-also}
 

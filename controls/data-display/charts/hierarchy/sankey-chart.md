@@ -17,7 +17,7 @@ Sankey charts visualize the flow of data, energy, or materials between stages. T
 
 <Image light={chartsFlowSankey} maxWidth={400} position="center" cornerRadius="true" alt="Sankey chart showing energy flow between stages with link widths proportional to the quantity transferred." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Energy audit**: Showing how energy is distributed from source to consumption.
 - **Web analytics**: Visualizing the path users take through a website (user journey).
 - **Budgeting**: Tracking how funds flow from income sources to various expenses.
@@ -51,7 +51,7 @@ public ObservableCollection<FlowItem> SankeyData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of flow data. | `null` |
 | `SourcePath` | Property name for the starting node. | `null` |

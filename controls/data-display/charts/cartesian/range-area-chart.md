@@ -17,7 +17,7 @@ Area range charts display a filled area connecting two values, high and low, for
 
 <Image light={chartsCartesianRangearea} maxWidth={400} position="center" cornerRadius="true" alt="Range area chart with a filled band between high and low temperature values across days of the week." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Error margins**: Showing the confidence interval or error range around a mean value.
 - **Price envelopes**: Visualizing daily highs and lows in a single series.
 - **Temperature ranges**: Showing the minimum and maximum temperature over a period.
@@ -64,7 +64,7 @@ public ObservableCollection<CategoryRangePoint> RangeAreaData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of range data points. | `null` |

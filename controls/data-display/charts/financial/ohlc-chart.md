@@ -17,7 +17,7 @@ OHLC charts show the Open, High, Low, and Close prices for a given period. They 
 
 <Image light={chartsFinancialOhlc} maxWidth={400} position="center" cornerRadius="true" alt="OHLC chart showing open, high, low, and close prices as vertical lines with horizontal tick marks per period." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Trading analysis**: Visualizing price action without the "weight" of candlestick bodies.
 - **Market trends**: Spotting trends and price ranges over specific time intervals.
 - **Commodity/stock tracking**: Standard professional visualization for price data.
@@ -65,7 +65,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of financial data points. | `null` |
 | `OpenPath` | Path to the 'Open' price property. | `null` |

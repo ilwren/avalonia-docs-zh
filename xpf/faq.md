@@ -68,7 +68,7 @@ XPF licenses are perpetual. Your application will continue to work indefinitely.
 
 Free 30-day trials are available for Internal and Business licenses through the [Avalonia website](https://avaloniaui.net/xpf). You can start a new trial at any time from the portal. Enterprise licenses are available by contacting sales.
 
-## Platform support
+## 平台支持 {#platform-support}
 
 **Does XPF support Android and iOS?**
 

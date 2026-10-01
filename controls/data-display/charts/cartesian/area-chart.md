@@ -17,7 +17,7 @@ Area charts are based on the line chart. The area between the axis and the line 
 
 <Image light={chartsCartesianArea} maxWidth={400} position="center" cornerRadius="true" alt="Area chart showing website traffic data with a gradient fill between the line and the horizontal axis." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Cumulative totals**: Visualizing how different components contribute to a whole over time.
 - **Volume**: Emphasizing the total volume or magnitude of data points.
 - **Visual contrast**: Providing a more distinct visual representation than a simple line chart.
@@ -49,7 +49,7 @@ public ObservableCollection<int> AreaSeriesData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data items. | `null` |

@@ -13,7 +13,7 @@ tags:
 
 `PolarChart` hosts one or more `PolarLineSeries` and maps each point using an angle and a radius rather than Cartesian axes.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Mathematical curves**: Draw spirals, rose curves, cardioids, and similar functions.
 - **Directional measurements**: Plot values around a full angular range.
@@ -50,7 +50,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 ## Common properties (`PolarChart`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Series` | Content collection of `PolarLineSeries` items. | Empty collection |
 | `ShowGridLines` | Whether to draw angular and radial grid lines. | `true` |
@@ -63,7 +63,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 
 ## Common properties (`PolarLineSeries`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of polar data points. | `null` |
 | `AnglePath` | Path to the angle value in degrees. | `null` |

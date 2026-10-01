@@ -13,7 +13,7 @@ tags:
 
 `ComboChart` is a `CartesianChart` variant for combining multiple series types such as `BarSeries`, `LineSeries`, and `AreaSeries` on the same horizontal axis. Use it when the chart itself needs to expose an optional secondary Y-axis.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Mixed visual encodings**: Combine bars, lines, or areas in the same plot.
 - **Dual-scale comparisons**: Plot a secondary metric on a separate Y-axis.
@@ -67,7 +67,7 @@ public ObservableCollection<MonthlyMetric> MonthlyMetrics { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Series` | Content collection of cartesian series rendered in the chart. | Empty collection |
 | `HorizontalAxis` | Primary horizontal axis used by the mixed series. | `null` |

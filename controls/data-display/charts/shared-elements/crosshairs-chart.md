@@ -19,7 +19,7 @@ Crosshair labels use the configured axis formatting. Continuous horizontal axes,
 
 <Image light={chartsFeaturesCrosshairs} maxWidth={400} position="center" cornerRadius="true" alt="Line chart with interactive crosshair guide lines following the cursor to align data points with axis coordinates." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Financial charts**: Pinpointing exact price and time on a candlestick chart.
 - **Engineering data**: Measuring values on high-density line charts.
 - **Scientific graphs**: Aligning specific peaks or valleys with coordinates.
@@ -64,7 +64,7 @@ public ObservableCollection<double> CrosshairData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `CrosshairMode` | `None`, `Vertical`, `Horizontal`, or `Both`. | `None` |
 | `ShowCrosshairLabels` | Toggles value labels on the axes. | `true` |

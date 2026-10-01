@@ -13,7 +13,7 @@ tags:
 
 Flame graphs display hierarchical cost, duration, or sample data as stacked rectangles, with the root at the bottom and deeper calls above it.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Profiler output**: Show CPU, memory, or duration hot spots in a call tree.
 - **Trace inspection**: Understand where time accumulates in nested operations.
@@ -68,7 +68,7 @@ public ObservableCollection<FlameNode> StackTraceData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Root collection for the flame graph. | `null` |
 | `ValuePath` | Path to the value that controls rectangle width. | `null` |

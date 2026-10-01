@@ -20,16 +20,16 @@ A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Aval
 | `GlyphRunDrawing` | Renders a glyph run with a foreground brush |
 | [`DrawingGroup`](/api/avalonia/media/drawinggroup) | Combines multiple drawings into one, with optional transform, clip, and opacity |
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | `Drawing` | `Drawing` | The vector drawing content to render |
 | `Viewbox` | `Rect` | A rectangular region of the drawing to display, in device-independent pixels |
 
-## Examples
+## 示例 {#examples}
 
 ### Simple vector icon
 
@@ -102,7 +102,7 @@ Use `DrawingImage` when you need:
 
 Use bitmap images (`Image.Source` with an asset path) when you have photographic content or pre-rendered artwork.
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
 - **Viewbox cropping.** If you set the `Viewbox` property, only the specified rectangle of your drawing is rendered. This is handy when you pack several icons into a single `DrawingGroup` and want to display one region at a time.
 - **Performance.** Because `DrawingImage` re-renders its vector content each time it paints, very complex drawings with hundreds of geometries may be slower than an equivalent bitmap. For intricate artwork, consider pre-rendering to a `RenderTargetBitmap`.

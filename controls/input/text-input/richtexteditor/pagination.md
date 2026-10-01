@@ -52,7 +52,7 @@ The flag round-trips through every format from the one place it lives:
 
 Continuous views mark a flagged block with a dashed rule across its top edge, similar to draft view in MS Word. It is paint-only and never affects layout.
 
-| Member (on `TextViewBase`) | Default | Meaning |
+| Member (on `TextViewBase`) | 默认值 | Meaning |
 |---|---|---|
 | `ShowPageBreakMarkers` | `true` | Whether the rule is drawn |
 | `PageBreakMarkerBrush` | `DocumentPageBreakMarkerBrush` | The rule's color |

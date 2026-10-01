@@ -11,7 +11,7 @@ Use `ToggleSwitch` when you need an immediate on/off setting, such as enabling d
 
 ## 常用属性 {#common-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性      | 类型      | 说明                                                        |
 | ------------- | --------- | ------------------------------------------------------------------ |
@@ -26,7 +26,7 @@ You will probably use these properties most often:
 | ------------------ | ---------------------------------------- |
 | `IsCheckedChanged` | Raised when the `IsChecked` value changes. |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 Place a `ToggleSwitch` in your AXAML and bind `IsChecked` to a Boolean property on your view model:
 
@@ -77,7 +77,7 @@ You can use any controls as the on and off content. The following example pairs 
 </ToggleSwitch>
 ```
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 Create Boolean properties in your view model and bind each `ToggleSwitch` to one of them:
 

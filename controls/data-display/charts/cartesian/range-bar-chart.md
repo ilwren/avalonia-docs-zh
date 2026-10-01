@@ -13,7 +13,7 @@ tags:
 
 Range bar charts display floating rectangular bars that span from a low value to a high value for each category. They are useful for showing data ranges, intervals, or bands rather than single values.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Temperature ranges**: Showing daily min/max temperature bands across days or months.
 - **Price bands**: Visualizing price ranges or confidence intervals for financial data.
 - **Task durations**: Representing start-to-end intervals for scheduling or timeline data.
@@ -57,7 +57,7 @@ public ObservableCollection<TemperatureRange> TemperatureData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

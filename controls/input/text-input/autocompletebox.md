@@ -9,9 +9,9 @@ The `AutoCompleteBox` presents a text box for user input and a drop-down that co
 
 The way in which the text is matched to possible items in the items source is configurable.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table><thead><tr><th width="233">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>ItemsSource</code></td><td>The list of items to match from. </td></tr><tr><td><code>FilterMode</code></td><td>Option for how the matching is to be done. See table below.</td></tr><tr><td><code>AsyncPopulator</code></td><td>An asynchronous function that can provide the list of matches for a given (string) criteria.</td></tr><tr><td><code>MaxLength</code></td><td>The maximum number of characters the user can type. 0 means no limit.</td></tr><tr><td><code>InnerLeftContent</code></td><td>Content displayed inside the text area on the left (e.g., a search icon).</td></tr><tr><td><code>InnerRightContent</code></td><td>Content displayed inside the text area on the right (e.g., a clear button).</td></tr></tbody></table>
 
@@ -28,7 +28,7 @@ In an **ordinal** string comparison, each character is compared using its simple
 :::
 
 
-## Examples
+## 示例 {#examples}
 
 This example has a fixed items source (array) that is set in the C# code-behind.
 

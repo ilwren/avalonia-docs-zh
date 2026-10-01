@@ -71,7 +71,7 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 </LinearGradientBrush>
 ```
 
-### Common use cases
+### 常见用法 {#common-use-cases}
 
 #### Button background
 

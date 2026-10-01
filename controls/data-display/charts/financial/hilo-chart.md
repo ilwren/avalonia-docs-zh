@@ -17,7 +17,7 @@ Hilo charts show the High and Low prices for a given period. By omitting the ope
 
 <Image light={chartsFinancialHilo} maxWidth={400} position="center" cornerRadius="true" alt="Hilo chart showing daily price ranges as vertical lines connecting high and low values over a date range." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Volatility analysis**: Emphasizing the spread between the highest and lowest prices.
 - **Support and resistance**: Identifying key price levels where the market struggled to move further.
 - **Simplified trading**: When a cleaner alternative to OHLC or Candlestick charts is preferred.
@@ -71,7 +71,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of price data. | `null` |
 | `HighPath` | Path to the maximum price property. | `null` |

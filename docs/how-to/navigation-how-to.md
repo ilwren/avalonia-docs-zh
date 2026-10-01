@@ -127,7 +127,7 @@ Use `TabControl` when you want your users to switch between a fixed set of panel
 </TabControl>
 ```
 
-### Dynamic tabs from a collection
+### 从集合动态生成选项卡 {#dynamic-tabs-from-a-collection}
 
 When you need tabs driven by data (for example, open documents), bind `ItemsSource` to a collection in your view model.
 

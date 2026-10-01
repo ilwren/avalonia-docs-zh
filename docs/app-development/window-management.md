@@ -280,7 +280,7 @@ screens.Changed += (sender, args) =>
 
 ## Platform differences
 
-| Feature | Windows | macOS | Linux |
+| 特性 | Windows | macOS | Linux |
 |---|---|---|---|
 | `Topmost` | Supported | Supported | Supported |
 | `TransparencyLevelHint` | All levels | `Transparent` only | Depends on compositor |

@@ -17,7 +17,7 @@ Heikin-Ashi charts are a variation of Japanese candlestick charts. They use a mo
 
 <Image light={chartsFinancialHeikinashi} maxWidth={400} position="center" cornerRadius="true" alt="Heikin-Ashi chart with smoothed candlesticks using averaged OHLC values to show market trend direction." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Trend identification**: Finding the beginning and end of a market trend with less volatility.
 - **Swing trading**: Identifying pullbacks and reversals in volatile markets.
 - **Long-term analysis**: Smoothing out day-to-day price fluctuations for a broader view.
@@ -62,7 +62,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The data source of price data. | `null` |
 | `OpenPath` | Paths of the opening price. | `null` |

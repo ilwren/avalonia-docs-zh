@@ -1,7 +1,7 @@
 ---
 id: commandbar
 title: CommandBar
-description: '`CommandBar` is a toolbar that displays a row of command buttons.'
+description: '`CommandBar` 是一个工具栏，用一行命令按钮呈现各项操作。'
 doc-type: reference
 ---
 
@@ -12,99 +12,99 @@ import CommandBarSecondaryCommandsScreenshot from '/img/controls/commandbar/comm
 import CommandBarContentScreenshot from '/img/controls/commandbar/commandbar-content.png';
 import CommandBarToggleButtonScreenshot from '/img/controls/commandbar/commandbar-toggle-button.png';
 
-A [`CommandBar`](/api/avalonia/controls/commandbar) is a toolbar-style control that displays a row of primary commands and an overflow menu for secondary commands. It is commonly used to surface the most relevant actions for the current context, while keeping less frequently used commands accessible through the overflow ("more") button.
+[`CommandBar`](/api/avalonia/controls/commandbar) 是一个工具栏式控件，用一行按钮展示主要命令，再用一个溢出菜单收纳次要命令。它常用来把当前情境下最相关的操作摆到台面上，同时让不常用的命令退到「更多」按钮里，需要时仍然够得着。
 
-Primary commands appear directly in the bar. When space is limited, commands can automatically move into the overflow area. Secondary commands always appear in the overflow menu.
+主要命令直接显示在栏内。空间不够时，命令可以自动挪进溢出区。次要命令则始终待在溢出菜单里。
 
 ## ICommandBarElement
 
-Items placed in a `CommandBar` must implement the `ICommandBarElement` interface. Avalonia provides three built-in implementations:
+放进 `CommandBar` 的条目必须实现 `ICommandBarElement` 接口。Avalonia 提供了三个内置实现：
 
-- **`CommandBarButton`**: A button with an icon, a label, or both. Supports commands via the inherited `Command` property.
-- **`CommandBarToggleButton`**: A toggle button that maintains a checked/unchecked state. Useful for toggling options such as bold or italic formatting.
-- **`CommandBarSeparator`**: A visual divider used to group related commands within the bar or the overflow menu.
+- **`CommandBarButton`**：一个带图标、文字或两者兼备的按钮。通过继承而来的 `Command` 属性支持命令。
+- **`CommandBarToggleButton`**：一个保持选中/未选中状态的切换按钮，适合加粗、倾斜这类可开关的选项。
+- **`CommandBarSeparator`**：一条视觉分隔线，用于在栏内或溢出菜单中把相关命令归为一组。
 
-## CommandBar properties
+## CommandBar 的属性 {#commandbar-properties}
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `PrimaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of primary commands displayed directly in the bar. |
-| `SecondaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of secondary commands displayed in the overflow menu. |
-| `Content` | `object?` | `null` | Custom content displayed before the primary commands. |
-| `DefaultLabelPosition` | `CommandBarDefaultLabelPosition` | `Bottom` | Controls where labels appear relative to icons for all commands in the bar. |
-| `IsDynamicOverflowEnabled` | `bool` | `false` | When `true`, primary commands automatically move to the overflow menu if the bar is too narrow to display them all. |
-| `OverflowButtonVisibility` | `CommandBarOverflowButtonVisibility` | `Auto` | Controls when the overflow ("more") button is visible. |
-| `IsOpen` | `bool` | `false` | Whether the overflow menu is currently open. |
-| `IsSticky` | `bool` | `false` | When `true`, the overflow menu stays open until the user explicitly closes it, rather than closing on light dismiss. |
-| `ItemWidthBottom` | `double` | `70` | The estimated item width used for dynamic overflow when `DefaultLabelPosition` is `Bottom`. |
-| `ItemWidthRight` | `double` | `102` | The estimated item width used for dynamic overflow when `DefaultLabelPosition` is `Right`. |
-| `ItemWidthCollapsed` | `double` | `42` | The estimated item width used for dynamic overflow when `DefaultLabelPosition` is `Collapsed`. |
-| `HasSecondaryCommands` | `bool` | Read-only | Indicates whether the overflow menu currently has items, including secondary commands and any primary commands moved to overflow. |
-| `IsOverflowButtonVisible` | `bool` | Read-only | Indicates whether the overflow button is currently visible, based on `OverflowButtonVisibility` and available commands. |
-| `VisiblePrimaryCommands` | `ReadOnlyObservableCollection<ICommandBarElement>` | Read-only | The subset of primary commands that are currently visible in the bar (not overflowed). |
-| `OverflowItems` | `ReadOnlyObservableCollection<ICommandBarElement>` | Read-only | The combined list of overflowed primary commands and secondary commands shown in the overflow menu. |
+| `PrimaryCommands` | `IList<ICommandBarElement>` | Empty | 直接显示在栏内的主要命令集合。 |
+| `SecondaryCommands` | `IList<ICommandBarElement>` | Empty | 显示在溢出菜单中的次要命令集合。 |
+| `Content` | `object?` | `null` | 显示在主要命令之前的自定义内容。 |
+| `DefaultLabelPosition` | `CommandBarDefaultLabelPosition` | `Bottom` | 控制栏内所有命令的文字相对图标的位置。 |
+| `IsDynamicOverflowEnabled` | `bool` | `false` | 为 `true` 时，若栏宽不足以容纳全部主要命令，它们会自动挪进溢出菜单。 |
+| `OverflowButtonVisibility` | `CommandBarOverflowButtonVisibility` | `Auto` | 控制溢出（「更多」）按钮何时可见。 |
+| `IsOpen` | `bool` | `false` | 溢出菜单当前是否处于打开状态。 |
+| `IsSticky` | `bool` | `false` | 为 `true` 时，溢出菜单会一直开着，直到用户显式关闭，而不会因点击外部而关闭。 |
+| `ItemWidthBottom` | `double` | `70` | 当 `DefaultLabelPosition` 为 `Bottom` 时，动态溢出计算所用的预估条目宽度。 |
+| `ItemWidthRight` | `double` | `102` | 当 `DefaultLabelPosition` 为 `Right` 时，动态溢出计算所用的预估条目宽度。 |
+| `ItemWidthCollapsed` | `double` | `42` | 当 `DefaultLabelPosition` 为 `Collapsed` 时，动态溢出计算所用的预估条目宽度。 |
+| `HasSecondaryCommands` | `bool` | Read-only | 指示溢出菜单当前是否有内容，包括次要命令以及被挪进溢出区的主要命令。 |
+| `IsOverflowButtonVisible` | `bool` | Read-only | 根据 `OverflowButtonVisibility` 和现有命令，指示溢出按钮当前是否可见。 |
+| `VisiblePrimaryCommands` | `ReadOnlyObservableCollection<ICommandBarElement>` | Read-only | 当前仍显示在栏内（未被挪进溢出区）的那部分主要命令。 |
+| `OverflowItems` | `ReadOnlyObservableCollection<ICommandBarElement>` | Read-only | 溢出菜单中显示的全部内容：被挪进溢出区的主要命令，加上次要命令。 |
 
-## CommandBar events
+## CommandBar 的事件 {#commandbar-events}
 
 | 事件 | 说明 |
 | --- | --- |
-| `Opened` | Raised when the overflow menu is opened. |
-| `Closed` | Raised when the overflow menu is closed. |
-| `Opening` | Raised just before the overflow menu opens. |
-| `Closing` | Raised just before the overflow menu closes. |
+| `Opened` | 溢出菜单打开时引发。 |
+| `Closed` | 溢出菜单关闭时引发。 |
+| `Opening` | 溢出菜单即将打开时引发。 |
+| `Closing` | 溢出菜单即将关闭时引发。 |
 
-## DefaultLabelPosition values
-
-| 值 | 说明 |
-| --- | --- |
-| `Bottom` | Labels appear below the icon. This is the default. |
-| `Right` | Labels appear to the right of the icon. |
-| `Collapsed` | Labels are hidden; only icons are shown. |
-
-## OverflowButtonVisibility values
+## DefaultLabelPosition 的取值 {#defaultlabelposition-values}
 
 | 值 | 说明 |
 | --- | --- |
-| `Auto` | The overflow button is shown automatically when there are secondary commands or overflowed primary commands. |
-| `Visible` | The overflow button is always shown. |
-| `Collapsed` | The overflow button is always hidden. |
+| `Bottom` | 文字显示在图标下方，这是默认值。 |
+| `Right` | 文字显示在图标右侧。 |
+| `Collapsed` | 隐藏文字，只显示图标。 |
 
-## CommandBarButton properties
+## OverflowButtonVisibility 的取值 {#overflowbuttonvisibility-values}
 
-| 属性 | 类型 | Default | 说明 |
+| 值 | 说明 |
+| --- | --- |
+| `Auto` | 当存在次要命令、或有主要命令被挪进溢出区时，自动显示溢出按钮。 |
+| `Visible` | 始终显示溢出按钮。 |
+| `Collapsed` | 始终隐藏溢出按钮。 |
+
+## CommandBarButton 的属性 {#commandbarbutton-properties}
+
+| 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `Icon` | `object?` | `null` | The icon displayed on the button. Typically a `PathIcon`, `SymbolIcon`, or `BitmapIcon`. |
-| `Label` | `string?` | `null` | The text label for the button. |
-| `Command` | `ICommand?` | `null` | The command to invoke when the button is clicked. |
-| `CommandParameter` | `object?` | `null` | The parameter passed to the command. |
-| `IsCompact` | `bool` | `false` | Hides the label and shows compact button chrome. |
-| `IsInOverflow` | `bool` | `false` | Indicates whether the button is currently displayed in the overflow menu. Set automatically by `CommandBar`. |
-| `LabelPosition` | `CommandBarDefaultLabelPosition` | `Bottom` | The label position applied by the parent `CommandBar`. |
-| `DynamicOverflowOrder` | `int` | `0` | Controls which primary commands stay visible longest when space is limited. Lower values have higher priority and overflow later. |
+| `Icon` | `object?` | `null` | 按钮上显示的图标，通常是 `PathIcon`、`SymbolIcon` 或 `BitmapIcon`。 |
+| `Label` | `string?` | `null` | 按钮的文字。 |
+| `Command` | `ICommand?` | `null` | 按钮被点击时要调用的命令。 |
+| `CommandParameter` | `object?` | `null` | 传给命令的参数。 |
+| `IsCompact` | `bool` | `false` | 隐藏文字，并采用紧凑的按钮外观。 |
+| `IsInOverflow` | `bool` | `false` | 指示该按钮当前是否显示在溢出菜单中，由 `CommandBar` 自动设置。 |
+| `LabelPosition` | `CommandBarDefaultLabelPosition` | `Bottom` | 由父级 `CommandBar` 施加的文字位置。 |
+| `DynamicOverflowOrder` | `int` | `0` | 控制空间紧张时哪些主要命令能在栏内多留一会儿。数值越小优先级越高，越晚被挪进溢出区。 |
 
-## CommandBarToggleButton properties
+## CommandBarToggleButton 的属性 {#commandbartogglebutton-properties}
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `Icon` | `object?` | `null` | The icon displayed on the toggle button. |
-| `Label` | `string?` | `null` | The text label for the toggle button. |
-| `IsChecked` | `bool?` | `false` | Whether the toggle button is currently in the checked state. |
-| `Command` | `ICommand?` | `null` | The command to invoke when the toggle button is clicked. |
-| `CommandParameter` | `object?` | `null` | The parameter passed to the command. |
-| `IsCompact` | `bool` | `false` | Hides the label and shows compact button chrome. |
-| `IsInOverflow` | `bool` | `false` | Indicates whether the toggle button is currently displayed in the overflow menu. Set automatically by `CommandBar`. |
-| `LabelPosition` | `CommandBarDefaultLabelPosition` | `Bottom` | The label position applied by the parent `CommandBar`. |
-| `DynamicOverflowOrder` | `int` | `0` | Controls which primary commands stay visible longest when space is limited. Lower values have higher priority and overflow later. |
+| `Icon` | `object?` | `null` | 切换按钮上显示的图标。 |
+| `Label` | `string?` | `null` | 切换按钮的文字。 |
+| `IsChecked` | `bool?` | `false` | 切换按钮当前是否处于选中状态。 |
+| `Command` | `ICommand?` | `null` | 切换按钮被点击时要调用的命令。 |
+| `CommandParameter` | `object?` | `null` | 传给命令的参数。 |
+| `IsCompact` | `bool` | `false` | 隐藏文字，并采用紧凑的按钮外观。 |
+| `IsInOverflow` | `bool` | `false` | 指示该切换按钮当前是否显示在溢出菜单中，由 `CommandBar` 自动设置。 |
+| `LabelPosition` | `CommandBarDefaultLabelPosition` | `Bottom` | 由父级 `CommandBar` 施加的文字位置。 |
+| `DynamicOverflowOrder` | `int` | `0` | 控制空间紧张时哪些主要命令能在栏内多留一会儿。数值越小优先级越高，越晚被挪进溢出区。 |
 
 ## CommandBarSeparator
 
-`CommandBarSeparator` renders a vertical line in the primary command area or a horizontal line in the overflow menu to visually group related commands.
+`CommandBarSeparator` 在主要命令区画一条竖线、或在溢出菜单中画一条横线，把相关命令在视觉上归为一组。
 
-## Examples
+## 示例 {#examples}
 
 ### Basic CommandBar
 
-A simple command bar with icon buttons:
+一个由图标按钮组成的简单命令栏：
 
 ```xml
 <CommandBar>
@@ -128,9 +128,9 @@ A simple command bar with icon buttons:
 </CommandBar>
 ```
 
-### Primary and secondary commands with separators
+### 主要命令、次要命令与分隔线 {#primary-and-secondary-commands-with-separators}
 
-Use `CommandBarSeparator` to group commands, and place less common actions in `SecondaryCommands`:
+用 `CommandBarSeparator` 把命令分组，并把不常用的操作放进 `SecondaryCommands`：
 
 ```xml
 <CommandBar>
@@ -173,9 +173,9 @@ Use `CommandBarSeparator` to group commands, and place less common actions in `S
 
 <Image light={CommandBarSecondaryCommandsScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="CommandBar with secondary commands in the overflow menu"/>
 
-### Custom content area
+### 自定义内容区 {#custom-content-area}
 
-The `Content` property lets you place custom content before the primary commands:
+`Content` 属性让你在主要命令之前放置自定义内容：
 
 ```xml
 <CommandBar>
@@ -199,11 +199,11 @@ The `Content` property lets you place custom content before the primary commands
 
 <Image light={CommandBarContentScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="CommandBar with custom content area"/>
 
-### Label positions
+### 文字位置 {#label-positions}
 
-Control where labels appear relative to icons using the `DefaultLabelPosition` property.
+用 `DefaultLabelPosition` 属性控制文字相对图标的位置。
 
-### Bottom (default)
+### 下方（默认） {#bottom-default}
 
 ```xml
 <CommandBar DefaultLabelPosition="Bottom">
@@ -266,9 +266,9 @@ Control where labels appear relative to icons using the `DefaultLabelPosition` p
 
 <Image light={CommandBarLabelCollapsedScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="CommandBar with labels hidden"/>
 
-### Dynamic overflow
+### 动态溢出 {#dynamic-overflow}
 
-When `IsDynamicOverflowEnabled` is `true`, primary commands that do not fit in the available space automatically move into the overflow menu. Use `DynamicOverflowOrder` to control which commands stay visible longest:
+当 `IsDynamicOverflowEnabled` 为 `true` 时，放不下的主要命令会自动挪进溢出菜单。用 `DynamicOverflowOrder` 控制哪些命令能在栏内多留一会儿：
 
 ```xml
 <CommandBar IsDynamicOverflowEnabled="True">
@@ -292,11 +292,11 @@ When `IsDynamicOverflowEnabled` is `true`, primary commands that do not fit in t
 </CommandBar>
 ```
 
-In this example, "High Priority" has the highest visibility priority (order 0), then "Medium Priority" (order 1), and "Low Priority" moves to overflow first (order 2).
+本例中「High Priority」的可见优先级最高（order 0），其次是「Medium Priority」（order 1），而「Low Priority」最先被挪进溢出区（order 2）。
 
-### Overflow button visibility
+### 溢出按钮的可见性 {#overflow-button-visibility}
 
-Control when the overflow button appears:
+控制溢出按钮何时出现：
 
 ```xml
 <!-- Always show the overflow button -->
@@ -322,9 +322,9 @@ Control when the overflow button appears:
 </CommandBar>
 ```
 
-### Sticky overflow
+### 常驻溢出菜单 {#sticky-overflow}
 
-When `IsSticky` is `true`, the overflow menu remains open until the user explicitly dismisses it. This is useful when multiple selections or interactions within the overflow menu are expected:
+当 `IsSticky` 为 `true` 时，溢出菜单会一直开着，直到用户显式关闭。若预期用户要在溢出菜单里多次选择或多次操作，这很有用：
 
 ```xml
 <CommandBar IsSticky="True">
@@ -348,9 +348,9 @@ When `IsSticky` is `true`, the overflow menu remains open until the user explici
 </CommandBar>
 ```
 
-### Controlling overflow programmatically
+### 用代码控制溢出菜单 {#controlling-overflow-programmatically}
 
-You can open or close the overflow menu from code by binding to the `IsOpen` property:
+绑定 `IsOpen` 属性即可在代码中打开或关闭溢出菜单：
 
 ```xml
 <CommandBar IsOpen="{Binding IsOverflowOpen}">
@@ -369,9 +369,9 @@ private bool _isOverflowOpen;
 private void ShowOverflow() => IsOverflowOpen = true;
 ```
 
-### Responding to events
+### 响应事件 {#responding-to-events}
 
-Handle the `Opened` and `Closed` events to react when the overflow menu state changes:
+处理 `Opened` 和 `Closed` 事件，即可在溢出菜单状态变化时作出响应：
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -396,9 +396,9 @@ public partial class MyPage : ContentPage
 </CommandBar>
 ```
 
-### CommandBar in ContentPage
+### ContentPage 中的 CommandBar {#commandbar-in-contentpage}
 
-Use the `TopCommandBar` or `BottomCommandBar` properties of `ContentPage` to attach a `CommandBar` to a page:
+用 `ContentPage` 的 `TopCommandBar` 或 `BottomCommandBar` 属性，把 `CommandBar` 挂到页面上：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -424,9 +424,9 @@ Use the `TopCommandBar` or `BottomCommandBar` properties of `ContentPage` to att
 </ContentPage>
 ```
 
-### CommandBar via NavigationPage attached property
+### 通过 NavigationPage 附加属性使用 CommandBar {#commandbar-via-navigationpage-attached-property}
 
-You can set a `CommandBar` on a page using the `NavigationPage.TopCommandBar` attached property, which places the bar within the navigation chrome:
+用 `NavigationPage.TopCommandBar` 附加属性可以为页面设置 `CommandBar`，这样命令栏会落在导航外壳之内：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -452,9 +452,9 @@ You can set a `CommandBar` on a page using the `NavigationPage.TopCommandBar` at
 </ContentPage>
 ```
 
-### MVVM command binding
+### MVVM 命令绑定 {#mvvm-command-binding}
 
-Bind `CommandBarButton` commands to your view model:
+把 `CommandBarButton` 的各个命令绑定到你的视图模型：
 
 ```xml
 <CommandBar>
@@ -490,9 +490,9 @@ private async Task Delete(object item)
 }
 ```
 
-### Toggle button state handling
+### 处理切换按钮的状态 {#toggle-button-state-handling}
 
-Use `CommandBarToggleButton` to create togglable options. Bind the `IsChecked` property to track state:
+用 `CommandBarToggleButton` 做可开关的选项，绑定 `IsChecked` 属性来跟踪状态：
 
 <Image light={CommandBarToggleButtonScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="CommandBar with toggle buttons"/>
 
@@ -536,5 +536,5 @@ private bool _isUnderline;
 
 - [ContentPage](/controls/navigation/contentpage)
 - [NavigationPage](/controls/navigation/navigationpage)
-- [CommandBar API reference](/api/avalonia/controls/commandbar)
+- [CommandBar API 参考](/api/avalonia/controls/commandbar)
 - [GitHub 上的 `CommandBar.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CommandBar/CommandBar.cs)

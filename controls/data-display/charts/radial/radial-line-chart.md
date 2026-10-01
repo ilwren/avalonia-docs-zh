@@ -13,7 +13,7 @@ tags:
 
 Radial line charts plot data points on a `PolarChart` and connect them with lines, as defined by a `PolarLineSeries`. They are ideal for showing how a single variable fluctuates across cyclical categories.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Daily activity**: Mapping heart rate or energy levels across 24 hours.
 - **Directional data**: Visualizing readings from a 360-degree sensor.
 - **Symmetry analysis**: Checking for patterns and balance in multi-variate profiles.
@@ -49,7 +49,7 @@ public ObservableCollection<ActivityPoint> RadialPoints { get; } = new()
 
 ## Common properties: `PolarLineSeries`
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of points to connect. | `null` |
 | `AnglePath` | Path of the angle (X). | `null` |

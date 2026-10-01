@@ -39,7 +39,7 @@ if (platformHandle != null)
 
 The type of handle returned depends on the operating system:
 
-| Platform | Handle Type | HandleDescriptor | Notes |
+| 平台 | Handle Type | HandleDescriptor | Notes |
 |---|---|---|---|
 | Windows | HWND | `"HWND"` | Standard Win32 window handle |
 | macOS | NSWindow* | `"NSWindow"` | Pointer to an NSWindow object |

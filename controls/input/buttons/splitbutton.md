@@ -31,9 +31,9 @@ The user-selection action should be invoked immediately when pressing either the
 | `:pressed`     | Set when the entire `SplitButton` is pressed using a keyboard input such as Space or Enter. In this state no distinction is made between primary or secondary parts |
 | `:flyout-open` | Set when the `Flyout` is open                                                                                                                                       |
 
-## Examples
+## 示例 {#examples}
 
-### Basic example
+### 基本示例 {#basic-example}
 
 <XamlPreview>
 

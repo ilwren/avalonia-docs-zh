@@ -26,7 +26,7 @@ The defaults in this reference describe the resulting package behavior. Parcel w
 
 These settings apply to every target platform. They appear on the **Basics** page.
 
-| Setting | `.parcel` property | Type or values | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | Type or values | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Project | `GeneralSettings.NetProjectPath` | Path | Required | — | Path to the application `.csproj` file. Parcel manages this field. |
 | Package Name | `GeneralSettings.PackageName` | String | Assembly name | `PARCEL_GENERAL_PACKAGE_NAME` | Package identifier and output file name. Platform-specific normalization may apply. |
@@ -65,7 +65,7 @@ On macOS, associations require `MacOsSettings.CreateBundle`.
 
 These settings control the `dotnet publish` operation Parcel runs before packaging.
 
-| Setting | `.parcel` property | 类型 | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Configuration | `PublishSettings.Configuration` | String | .NET project default | `PARCEL_NET_CONFIGURATION` | Build configuration. It must begin with a letter and contain only letters, digits, `_`, or `-`. |
 | Publish Single File | `PublishSettings.PublishSingleFile` | Boolean | Enabled for new Parcel projects | `PARCEL_NET_PUBLISH_SINGLE_FILE` | Publishes managed assemblies in a single executable. |
@@ -84,7 +84,7 @@ Parcel respects .NET publish properties defined in the *.csproj file. There is n
 
 ### Installer and MSIX
 
-| Setting | `.parcel` property | 类型 | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Installer Icon | `Win32Settings.InstallerIcon` | Path to ICO or SVG | Application Icon | `PARCEL_WINDOWS_INSTALLER_ICON` | Overrides the shared icon for the NSIS installer and generated MSIX assets. |
 | Create Company Folder | `Win32Settings.CompanyFolder` | Boolean | `false` | `PARCEL_WINDOWS_COMPANY_FOLDER` | Adds a company directory to the NSIS installation and Start Menu paths. |
@@ -97,7 +97,7 @@ Parcel respects .NET publish properties defined in the *.csproj file. There is n
 
 `Win32Settings.SigningType` accepts `None`, `LocalCertificate`, `WindowsCertificateStore`, `AzureTrustedSigning`, `AzureKeyVault`, `AwsKeyManagementService`, `DigiCert`, `GoogleKeyManagementService`, or `ESigner`. The GUI names `AzureTrustedSigning` **Azure Artifact Signing**.
 
-| Setting | `.parcel` property | 类型 | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Signing Type | `Win32Settings.SigningType` | Signing type | `None` | `PARCEL_WINDOWS_SIGNING_TYPE` | Selects the Authenticode signing provider. |
 | Sign Installer | `Win32Settings.SignInstaller` | Boolean | `true` | `PARCEL_WINDOWS_SIGN_INSTALLER` | Signs the generated NSIS or MSIX package and the application files. Disable it when a store or later pipeline signs the package. |
@@ -136,7 +136,7 @@ Parcel respects .NET publish properties defined in the *.csproj file. There is n
 
 ### Bundle, DMG, and PKG
 
-| Setting | `.parcel` property | 类型 | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Create Bundle | `MacOsSettings.CreateBundle` | Boolean | `true` for new projects | `PARCEL_MACOS_CREATE_BUNDLE` | Creates a macOS `.app` bundle. DMG, PKG, permissions, and associations require a bundle. |
 | Bundle Identifier | `MacOsSettings.BundleIdentifier` | Reverse-DNS string | Derived from company and package name | `PARCEL_MACOS_BUNDLE_IDENTIFIER` | `CFBundleIdentifier` used for signing and distribution. |
@@ -156,7 +156,7 @@ Parcel respects .NET publish properties defined in the *.csproj file. There is n
 
 The DMG layout object supports these advanced properties:
 
-| `.parcel` property | 类型 | Default | 说明 |
+| `.parcel` property | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `MacOsSettings.DmgLayout.BackgroundColorRed` | Number | `1` | Red component of the window background color. |
 | `MacOsSettings.DmgLayout.BackgroundColorGreen` | Number | `1` | Green component of the window background color. |
@@ -179,7 +179,7 @@ The DMG layout object supports these advanced properties:
 
 `MacOsSettings.SigningCredentialsType` accepts `None`, `AdHoc`, `KeyChainIdentity`, `P12Certificate`, or `PemCertificate`.
 
-| Setting | `.parcel` property | 类型 | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Signing Credentials | `MacOsSettings.SigningCredentialsType` | Credential type | `AdHoc` | `PARCEL_MACOS_SIGNING_CREDENTIALS_TYPE` | Selects how the app bundle, code, and optionally DMG are signed. |
 | Enable App Sandbox | `MacOsSettings.EnableSandbox` | Boolean | `false` | `PARCEL_MACOS_ENABLE_SANDBOX` | Runs the application in the macOS App Sandbox. The application can access only resources covered by its entitlements. Required for Mac App Store distribution. |
@@ -195,7 +195,7 @@ The DMG layout object supports these advanced properties:
 
 A PKG installer requires a separate installer certificate. `MacOsSettings.InstallerSigningCredentialsType` accepts the same credential types as [application signing](#application-signing). Ad hoc signing cannot create a signed PKG.
 
-| Setting | `.parcel` property | 类型 | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Installer Signing Credentials | `MacOsSettings.InstallerSigningCredentialsType` | Credential type | `None` | `PARCEL_MACOS_INSTALLER_SIGNING_CREDENTIALS_TYPE` | Selects the certificate used to sign PKG installers. |
 | Installer Signing Identity | `MacOsSettings.InstallerSigningIdentity` | Keychain identity | Required for Keychain | `PARCEL_MACOS_INSTALLER_SIGNING_IDENTITY` | Installer identity in the macOS Keychain. |
@@ -207,7 +207,7 @@ A PKG installer requires a separate installer certificate. `MacOsSettings.Instal
 
 `MacOsSettings.NotaryCredentialsType` accepts `None`, `KeyChainProfile`, or `AppleAccount`.
 
-| Setting | `.parcel` property | 类型 | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | 类型 | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Notary Credentials | `MacOsSettings.NotaryCredentialsType` | Credential type | `None` | `PARCEL_MACOS_NOTARY_CREDENTIALS_TYPE` | Selects authentication for Apple's notary service. |
 | Notary Keychain Profile | `MacOsSettings.NotaryKeychainProfile` | String | Required for Keychain profile | `PARCEL_MACOS_NOTARY_KEYCHAIN_PROFILE` | `notarytool` profile stored in the macOS Keychain. |
@@ -216,7 +216,7 @@ A PKG installer requires a separate installer certificate. `MacOsSettings.Instal
 
 ## Linux settings
 
-| Setting | `.parcel` property | Type or values | Default | Environment variable | 说明 |
+| Setting | `.parcel` property | Type or values | 默认值 | Environment variable | 说明 |
 |---|---|---|---|---|---|
 | Install Directory Name | `LinuxSettings.InstallDirName` | Lowercase package-directory name | `app-{package-name}` | `PARCEL_LINUX_INSTALL_DIR_NAME` | Directory created under `/usr/share`. It must start and end with a letter or number. Maximum 100 characters. |
 | Application Icon | `LinuxSettings.AppIcon` | Path to PNG or SVG | Application Icon | `PARCEL_LINUX_APP_ICON` | Overrides the shared icon for DEB and RPM packages. |

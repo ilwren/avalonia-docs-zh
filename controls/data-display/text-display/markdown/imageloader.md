@@ -178,7 +178,7 @@ To resolve one image differently from the rest, set `MarkdownImage.ImageLoader` 
 
 Image loading is deferred until both the URL (set automatically from the Markdown source) and a loader are available, and assigning a loader later re-resolves images already in the document. This decouples the document model from image resolution.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 You should implement a custom `MarkdownImageLoader` whenever the default image resolution does not meet your needs. For example, you might need to render SVG images, load images from a remote server that requires authentication, or apply a caching strategy to avoid repeated downloads. A custom loader gives you full control over how image URIs are resolved and what image types your `Markdown` control can display.
 

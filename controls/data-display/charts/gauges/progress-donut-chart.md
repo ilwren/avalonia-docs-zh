@@ -17,7 +17,7 @@ Progress donut charts are a specialized variation of donut charts designed to sh
 
 <Image light={chartsGaugesProgressDonut} maxWidth={400} position="center" cornerRadius="true" alt="Progress donut chart showing a circular arc filling proportionally to represent completion toward a 100% goal." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Goal completion**: Showing how close a user is to a target.
 - **Metric summaries**: Visualizing percentage-based data (e.g., Disk Space used).
 - **KPI dashboards**: Providing a quick visual check for key performance indicators.
@@ -35,7 +35,7 @@ Progress donut charts are a specialized variation of donut charts designed to sh
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | The current value (0 to MaxValue). | `0` |
 | `MaxValue` | The maximum value. | `100.0` |

@@ -7,9 +7,9 @@ doc-type: reference
 
 The `Border` control decorates a single child control with a border and background. It can display rounded corners.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table><thead><tr><th width="261">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>Background</code></td><td>Background color.</td></tr><tr><td><code>BorderBrush</code></td><td>Border color.</td></tr><tr><td><code>BorderThickness</code></td><td>Border line thickness.</td></tr><tr><td><code>CornerRadius</code></td><td>Radius for all four corners as one value, or [specified as list](#corner-radius-property).</td></tr><tr><td><code>BoxShadow</code></td><td>[Defines a shadow](#box-shadows).</td></tr><tr><td><code>BackgroundSizing</code></td><td>Controls how the background is rendered relative to the border.<br />- <code>CenterBorder</code> (Default, centered on border thickness)<br />- <code>InnerBorderEdge</code> (Fills inside border)<br />- <code>OuterBorderEdge</code> (Extends to the outer edge)</td></tr></tbody></table>
 

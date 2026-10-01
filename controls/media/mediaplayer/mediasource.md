@@ -19,7 +19,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 ### 方法 {#methods}
 
-| Method    | Return Type | 说明                                  |
+| 方法    | Return Type | 说明                                  |
 |-----------|-------------|----------------------------------------------|
 | Dispose() | void        | Releases resources used by the media source. |
 
@@ -42,7 +42,7 @@ The `UriSource` class represents media content referenced by a URI, which can po
 
 ### 方法 {#methods-1}
 
-| Method                  | Return Type | 说明                                 |
+| 方法                  | Return Type | 说明                                 |
 |-------------------------|-------------|---------------------------------------------|
 | Equals(UriSource other) | bool        | Determines equality with another UriSource. |
 | Equals(object obj)      | bool        | Determines equality with an object.         |
@@ -83,7 +83,7 @@ played.
 
 ### 方法 {#methods-2}
 
-| Method                     | Return Type | 说明                                          |
+| 方法                     | Return Type | 说明                                          |
 |----------------------------|-------------|------------------------------------------------------|
 | Equals(StreamSource other) | bool        | Determines equality with another StreamSource.       |
 | Dispose()                  | void        | Releases resources, including the underlying stream. |
@@ -108,7 +108,7 @@ var networkStreamSource = new StreamSource(responseStream);
 
 ## Choosing between `UriSource` and `StreamSource`
 
-### When to use `UriSource`
+### 何时使用 `UriSource` {#when-to-use-urisource}
 
 - Local media files.
 - Network streams with direct URLs.
@@ -121,7 +121,7 @@ var networkStreamSource = new StreamSource(responseStream);
 - Native handling by media backends.
 - No memory or lifetime management concerns.
 
-### When to use `StreamSource`
+### 何时使用 `StreamSource` {#when-to-use-streamsource}
 
 - In-memory media content.
 - Dynamic content generated at runtime.

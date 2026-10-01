@@ -13,7 +13,7 @@ tags:
 
 Bullet charts compare a primary value to a target and one or more qualitative ranges in a compact layout.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Target tracking**: Compare an actual value to a goal in a dashboard card.
 - **Compact summaries**: Replace a full bar chart when you only need one measure and a target.
@@ -42,7 +42,7 @@ public double[] RevenueBands { get; } = [30, 60, 90, 100];
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | Primary value displayed by the bar. | `75.0` |
 | `Target` | Target marker value. | `85.0` |

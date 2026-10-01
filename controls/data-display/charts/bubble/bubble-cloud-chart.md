@@ -13,7 +13,7 @@ tags:
 
 Bubble cloud charts place bubbles in a clustered, non-axis layout where size carries the main quantitative meaning.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Category emphasis**: Show which categories dominate without needing precise axes.
 - **Attention maps**: Surface important topics, segments, or products in a compact visual.
@@ -46,7 +46,7 @@ public ObservableCollection<TopicBubble> Topics { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of bubble items. | `null` |
 | `LabelPath` | Path to the bubble label. | `null` |

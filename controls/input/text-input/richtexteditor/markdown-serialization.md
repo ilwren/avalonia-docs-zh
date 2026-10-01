@@ -65,7 +65,7 @@ Use the constructor to configure the serializer. `Options` and `CodeHighlighter`
 
 `MarkdownSerializerOptions` chooses the canonical spellings for syntax the document model does not store. Content is unaffected.
 
-| Option | Default | Valid values |
+| Option | 默认值 | Valid values |
 |---|---|---|
 | `BulletMarker` | `-` | `-`, `+`, `*` |
 | `EmphasisChar` | `*` | `*`, `_` |

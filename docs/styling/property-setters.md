@@ -7,7 +7,7 @@ doc-type: reference
 
 Property setters define what property values a style applies to a control after Avalonia has matched it using a selector.
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 Setters are property and value attribute pairs written in XAML in the format:
 

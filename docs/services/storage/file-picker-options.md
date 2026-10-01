@@ -77,7 +77,7 @@ Gets or sets an option indicating whether open picker allows users to select mul
 
 ## Platform compatibility
 
-| Feature        | Managed |  Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        | Managed |  Windows | macOS | Linux | Browser | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|-------|
 | `Title` | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ |
 | `SuggestedStartLocation` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |

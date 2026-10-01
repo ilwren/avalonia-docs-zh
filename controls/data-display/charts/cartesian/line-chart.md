@@ -17,7 +17,7 @@ Line charts use X and Y axes to visualize data points connected by straight line
 
 <Image light={chartsCartesianLines} maxWidth={400} position="center" cornerRadius="true" alt="Line chart connecting data points with straight segments to show monthly sales trends over time." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Time series**: Visualizing changes in data over continuous time intervals.
 - **Trend analysis**: Identifying upward, downward, or fluctuating patterns.
 - **Multiple series**: Comparing trends across different categories using multiple lines.
@@ -55,7 +55,7 @@ public ObservableCollection<int> LineSeries2024 { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

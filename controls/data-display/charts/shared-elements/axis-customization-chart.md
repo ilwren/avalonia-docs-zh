@@ -17,7 +17,7 @@ Avalonia Charts lets you customize axis appearance, including label fitting, axi
 
 <Image light={chartsFeaturesGridlines} maxWidth={400} position="center" cornerRadius="true" alt="Cartesian chart with customized axes showing gridlines." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Multiple scales**: When displaying two different metrics (e.g., Temperature and Humidity) on the same chart.
 - **Categorical data**: When axes represent discrete groups rather than continuous numbers.
@@ -57,7 +57,7 @@ public ObservableCollection<int> SalesData { get; } = new() { 35, 28, 34, 32, 40
 
 ## Common axis properties (`NumericalAxis` / `CategoryAxis`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The text label for the axis. | `null` |
 | `IsVisible` | Toggle the visibility of the entire axis. | `true` |
@@ -104,7 +104,7 @@ public ObservableCollection<int> SalesData { get; } = new() { 35, 28, 34, 32, 40
 
 Use `NumericalAxis.ScaleBreaks` for inline XAML scale breaks or `ScaleBreaksSource` to bind a collection from a view model. Scale breaks skip ranges that would otherwise compress the visible data. Each `ScaleBreak` defines a removed value range and optional break-line styling. Invalid ranges where `End <= Start` are ignored, and overlapping or adjacent breaks are merged before the axis range is normalized.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Start` | First value in the skipped axis range. | `0.0` |
 | `End` | Last value in the skipped axis range. | `0.0` |
@@ -113,7 +113,7 @@ Use `NumericalAxis.ScaleBreaks` for inline XAML scale breaks or `ScaleBreaksSour
 
 ## Axis-specific properties
 
-| Axis | 属性 | 说明 | Default |
+| Axis | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- | :--- |
 | `NumericalAxis` | `Minimum` | Explicit minimum value. When `null`, the chart calculates it from data. | `null` |
 | `NumericalAxis` | `Maximum` | Explicit maximum value. When `null`, the chart calculates it from data. | `null` |
@@ -145,7 +145,7 @@ If any visible non-empty series is incompatible, the chart uses category layout 
 
 Use `ChartAxis.PlotBands` to shade ranges on a horizontal or vertical axis. On a category axis, horizontal-axis plot band `Start` and `End` values use category indexes. On a continuous horizontal axis, they use the axis value domain.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Start` | Start value of the shaded range. When `NaN`, the band starts at the beginning of the axis. | `NaN` |
 | `End` | End value of the shaded range. When `NaN`, the band ends at the end of the axis. | `NaN` |

@@ -17,7 +17,7 @@ Choropleth maps shade geographical areas in proportion to a statistical variable
 
 <Image light={chartsMapsChoropleth} maxWidth={400} position="center" cornerRadius="true" alt="Choropleth map shading geographic regions in varying color intensities to represent population density." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Demographics**: Showing population density, income levels, or voting patterns.
 - **Market penetration**: Visualizing sales performance across different territories.
 - **Environmental data**: Showing climate data or resource distribution by region.
@@ -86,13 +86,13 @@ public CountryDensityData[] ShapeLayerData { get; } = new CountryDensityData[]
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `DataLayer` | Canonical `ShapeLayer` used to render choropleth regions. A default layer is created automatically. | Auto-created `ShapeLayer` |
 
 ## Common properties (`DataLayer` / `ShapeLayer`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of region data items. | `null` |
 | `GeoJson` | The GeoJSON geometry source. | `null` |

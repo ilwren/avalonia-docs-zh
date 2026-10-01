@@ -17,7 +17,7 @@ Indented tree charts represent hierarchies using a layout similar to a standard 
 
 <Image light={chartsHierarchicalIndentedtree} maxWidth={400} position="center" cornerRadius="true" alt="Indented tree chart showing a file-explorer-style hierarchy with parent and child nodes offset by indentation." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **File system explorer**: Building custom navigators for local or cloud storage.
 - **Bill of materials (BOM)**: Showing a multi-level product structure in manufacturing.
 - **Settings/config**: Grouping complex nested configuration options visually.
@@ -57,7 +57,7 @@ public ObservableCollection<TreeNode> IndentedTreeData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The root level nodes. | `null` |
 | `ValuePath` | Optional numeric value displayed next to each label. | `null` |

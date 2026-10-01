@@ -17,7 +17,7 @@ Stacked area charts display multiple area series stacked on top of each other. T
 
 <Image light={chartsCartesianStackedarea} maxWidth={400} position="center" cornerRadius="true" alt="Stacked area chart with multiple colored layers representing traffic sources stacked to show cumulative total." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Accumulation**: Visualizing the sum of multiple categories over a period.
 - **Temporal composition**: Showing how the makeup of a total value changes chronologically.
 - **Trend comparison**: Comparing the relative growth of different layers.
@@ -64,7 +64,7 @@ public ObservableCollection<int> StackedAreaTablet { get; } =
 
 ## Common properties (StackedAreaSeries)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The series name. | `null` |
 | `ItemsSource` | The data collection for this layer. | `null` |

@@ -41,7 +41,7 @@ This can also be applied to containers:
 </Border>
 ```
 
-### Common use cases
+### 常见用法 {#common-use-cases}
 
 1. **Icon Display**: When displaying icons that are being scaled down, using `HighQuality` interpolation can prevent jagged edges:
 ```xml

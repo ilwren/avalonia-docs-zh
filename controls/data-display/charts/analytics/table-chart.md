@@ -17,7 +17,7 @@ Table charts combine traditional tabular data with embedded visual cues. They ar
 
 <Image light={chartsAnalyticsTable} maxWidth={400} position="center" cornerRadius="true" alt="Table chart displaying rows of data with color-coded indicators for visual comparison." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Product comparisons**: Showing features across many items in a grid.
 - **Financial status**: Displaying accounts with color-coded "health" indicators.
 - **Multi-metric reports**: When users need to compare several metrics in a compact layout.
@@ -90,7 +90,7 @@ public ObservableCollection<TableChartColumn> TableColumns { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The row data source. | `null` |
 | `RowLabelPath` | Path to the text displayed in the left row header column. | `null` |

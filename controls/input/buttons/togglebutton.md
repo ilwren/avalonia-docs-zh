@@ -11,9 +11,9 @@ The [`ToggleButton`](/api/avalonia/controls/primitives/togglebutton) control pre
 
 `ToggleButton` is found in the `Avalonia.Controls.Primitives` namespace and serves as the base class for `CheckBox` and other toggle-style controls.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性        | 说明                                                                 |
 | --------------- | --------------------------------------------------------------------------- |
@@ -33,7 +33,7 @@ In three-state mode, the `IsChecked` property is a nullable `bool?`:
 
 You can style each state independently using pseudo classes in your AXAML styles.
 
-## Examples
+## 示例 {#examples}
 
 ### Styling with pseudo classes
 
@@ -100,7 +100,7 @@ The content zone of the toggle button contains two path icon elements, only one 
 
 The visibility of the path icons is set by the window styles, and these use the `:checked` pseudo class to determine when the toggle button is in its checked state. When the toggle button is checked, the `audio-on` path icon is visible and the `audio-mute` path icon is hidden. Conversely, when the toggle button is not checked, the `audio-mute` path icon is visible and the `audio-on` path icon is hidden.
 
-### Binding to a view model
+### 绑定到视图模型 {#binding-to-a-view-model}
 
 You can bind the `IsChecked` property to a `bool` or `bool?` property on your view model. This is the most common way to use a `ToggleButton` in an MVVM application.
 

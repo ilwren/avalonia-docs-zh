@@ -13,7 +13,7 @@ tags:
 
 Ternary charts visualize three-component mixtures where each point represents the relative contribution of A, B, and C.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Mixture analysis**: Show composition of blends, materials, or resource allocation.
 - **Three-way balance**: Compare proportions that always sum to a whole.
@@ -50,7 +50,7 @@ public ObservableCollection<TernaryPoint> TernaryData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of ternary points. | `null` |
 | `APath` | Path to the first component value. | `null` |

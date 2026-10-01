@@ -17,7 +17,7 @@ Scatter charts use dots to represent values for two different numeric variables.
 
 <Image light={chartsCartesianScatter} maxWidth={400} position="center" cornerRadius="true" alt="Scatter chart plotting individual data points as dots across two numeric axes to reveal correlations." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Correlation**: Identifying relationships between two variables (e.g., height vs weight).
 - **Distribution**: Visualizing the spread and clustering of data points.
 - **Outlier detection**: Easily spotting data points that fall far from the norm.
@@ -51,7 +51,7 @@ public ObservableCollection<int> ScatterSeriesData { get; } =
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data points. | `null` |
@@ -86,7 +86,7 @@ The `ScatterLineSeries` extends scatter charts by drawing connecting lines betwe
 
 ### ScatterLineSeries properties
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ShowLines` | Whether to show connecting lines between scatter points. | `true` |
 | `StrokeDashStyle` | Dash style for the connecting lines. When `null`, lines are solid. | `null` |

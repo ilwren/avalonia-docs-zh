@@ -17,7 +17,7 @@ Circle packing is a variation of a treemap where nodes are represented as circle
 
 <Image light={chartsHierarchicalCirclepacking} maxWidth={400} position="center" cornerRadius="true" alt="Circle packing chart with nested circles where parent categories contain proportionally-sized child circles." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Clustering**: Visualizing groups and sub-groups in a visually appealing, organic way.
 - **Aesthetic overviews**: Dashboards where a "bubble" visual is preferred over rigid grids.
 - **Relationship proximity**: Showing how closely related different items are within a category.
@@ -46,7 +46,7 @@ public ObservableCollection<TreeMapItem> CirclePackingData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical items source. | `null` |
 | `ValuePath` | Size/Diameter of the circles. | `null` |

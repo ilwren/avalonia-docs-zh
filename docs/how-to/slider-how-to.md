@@ -20,7 +20,7 @@ You can show the current value alongside the slider by binding a `TextBlock` to 
 
 The `#slider` syntax references the control by its `x:Name`. This approach is useful for quick prototypes, but for production code you should prefer binding through a view model.
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 For proper separation of concerns, bind `Value` to a property on your view model. The binding is two-way by default for `Slider`, so changes from either the UI or your code stay in sync:
 
@@ -75,7 +75,7 @@ Setting `TickFrequency` without `IsSnapToTickEnabled="True"` draws tick marks bu
         LargeChange="0.1" />
 ```
 
-| 属性 | Trigger | Default |
+| 属性 | Trigger | 默认值 |
 |---|---|---|
 | `SmallChange` | Arrow keys | 1 |
 | `LargeChange` | Clicking the track or pressing Page Up / Page Down | 10 |

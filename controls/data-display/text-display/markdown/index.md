@@ -184,7 +184,7 @@ The streaming engine runs Markdown parsing on a background thread, diffs the AST
 
 ### 方法 {#methods}
 
-| Method                            | 说明                                                        |
+| 方法                            | 说明                                                        |
 |-----------------------------------|--------------------------------------------------------------------|
 | Copy()                            | Copies the current selection to the clipboard.                     |
 | SelectAll()                       | Selects all content.                                               |

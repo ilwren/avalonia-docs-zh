@@ -17,7 +17,7 @@ Data labels place the actual values directly on the chart series. This lets read
 
 <Image light={chartsFeaturesLabels} maxWidth={400} position="center" cornerRadius="true" alt="Bar chart with data labels displayed above each quarterly revenue bar." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Presentation graphics**: Where clear, immediate values are prioritized.
 - **Small multiples**: When axes are omitted to save space.
 - **Key milestones**: Highlighting specific values that require attention.
@@ -56,7 +56,7 @@ public ObservableCollection<SalesPoint> SalesData { get; } = new()
 
 ## Common properties (on Series)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ShowLabels` | Toggles values on the series points. | `false` |
 | `LabelFormat` | String format. `{0}` is the value and `{1}` is the category. | `"{0:N0}"` |

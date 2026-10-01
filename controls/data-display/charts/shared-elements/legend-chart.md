@@ -17,7 +17,7 @@ The Legend component helps users identify different data series within a chart. 
 
 <Image light={chartsFeaturesLegend} maxWidth={400} position="center" cornerRadius="true" alt="Chart with a legend panel showing color-coded series names positioned beside the chart area." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Multi-series charts**: Indispensable when more than one series is displayed.
 - **Interactive toggling**: When users need to show/hide series by clicking legend items.
 - **Complex visuals**: Helping to explain color or pattern coding (e.g., in a Pie or Map chart).
@@ -64,7 +64,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ShowLegend` | Toggles the visibility of the legend. | `false` |
 | `LegendPosition` | `None`, `Top`, `Bottom`, `Left`, `Right`, or `Floating`. | `None` |
@@ -76,7 +76,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 `ChartLegend` is the reusable legend control used by charts.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Items` | Legend item collection to display. | `null` |
 | `Orientation` | Layout direction for legend entries, `Horizontal` or `Vertical`. | `Vertical` |
@@ -87,7 +87,7 @@ public ObservableCollection<int> Data3 { get; } = new()
 
 Legend entries are represented by `ChartLegendItem`. Built-in series create legend items automatically and choose marker shapes that match the rendered series style, such as line, band, candlestick, radar, OHLC, or point-and-figure markers. Custom series can override `CreateLegendItem` to change the marker, source, or toggle behavior.
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Text` | Display text for the legend item. | `null` |
 | `Fill` | Fill brush for the marker. | `null` |

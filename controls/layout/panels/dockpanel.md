@@ -29,9 +29,9 @@ The last child control defined will fill any remaining space.
 You must always define a last child control (with no dock property), or the docking calculation will not perform correctly. This means that a dock panel requires a minimum of two child controls.
 :::
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table><thead><tr><th width="266">Property</th><th>说明</th></tr></thead><tbody><tr><td>DockPanel.Dock<code>.Left</code></td><td>Attached to a child control - dock this to the left side.</td></tr><tr><td>DockPanel.Dock<code>.Top</code></td><td>Attached to a child control - dock this to the top edge.</td></tr><tr><td>DockPanel.Dock<code>.Right</code></td><td>Attached to a child control - dock this to the right side.</td></tr><tr><td>DockPanel.Dock<code>.Bottom</code></td><td>Attached to a child control - dock this to the bottom edge.</td></tr><tr><td><code>HorizontalSpacing</code></td><td>Sets horizontal spacing (double, default 0) between docked child controls.</td></tr><tr><td><code>VerticalSpacing</code></td><td>Sets vertical spacing (double, default 0) between docked child controls.</td></tr></tbody></table>
 

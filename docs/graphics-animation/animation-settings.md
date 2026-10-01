@@ -43,7 +43,7 @@ This section describes how `Animation` playback can be customized.
 
 Easing functions describe how quickly an animated property changes from its starting value into its ending value across the animation time. `Avalonia.Animation.Easings` contains the following easings:
 
-| Default                                                       |
+| 默认值                                                       |
 |---------------------------------------------------------------|
 | `LinearEasing`<br/><Image light={LinearEasingScreenshot} alt="Graph showing linear easing curve" position="center" maxWidth={400} cornerRadius="true"/> |
 

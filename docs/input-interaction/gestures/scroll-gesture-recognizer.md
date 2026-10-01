@@ -107,9 +107,9 @@ If your event handles the gesture completely, you can mark the event as handled 
 ```csharp title='C#'
 e.Handled = true;
 ```
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table>
     <thead>

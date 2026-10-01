@@ -17,7 +17,7 @@ Bubble maps use circles of different sizes to represent data values over geograp
 
 <Image light={chartsMapsBubble} maxWidth={400} position="center" cornerRadius="true" alt="Bubble map overlaying circles of varying sizes on geographic regions to represent city activity levels." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Event distribution**: Mapping the location and scale of occurrences (e.g., earthquakes, sales events).
 - **Urban statistics**: Comparing populations or activity levels across specific cities.
 - **Global indicators**: Visualizing country-level data where the size of the bubble represents the value.
@@ -86,7 +86,7 @@ public CityData[] CityBubbles { get; } = new CityData[]
 
 ## Common properties: `ShapeLayer`
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `GeoJson` | GeoJSON data. | `null` |
 | `Source` | URI for the source of the GeoJSON data. | `null` |
@@ -112,7 +112,7 @@ public CityData[] CityBubbles { get; } = new CityData[]
 
 ## Common properties: `BubbleLayer`
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Data source for bubbles. | `null` |
 | `LatitudePath` | Property path for latitude coordinates. | `null` |

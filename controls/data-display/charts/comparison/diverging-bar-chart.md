@@ -13,7 +13,7 @@ tags:
 
 Diverging bar charts use a centered baseline so values can extend in opposite directions from the same origin.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Sentiment splits**: Show positive and negative responses around zero.
 - **Variance views**: Compare over- and under-performance against a baseline.
@@ -46,7 +46,7 @@ public ObservableCollection<SentimentPoint> SentimentData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of items to compare. | `null` |
 | `ValuePath` | Path to the value plotted relative to the baseline. | `null` |

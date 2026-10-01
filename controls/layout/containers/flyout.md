@@ -11,7 +11,7 @@ A flyout can contain simple or richer, composed, UI content.
 
 Flyouts can be declared as a resource and shared between two or more host controls in an _Avalonia_ app.
 
-## Examples
+## 示例 {#examples}
 
 A flyout is attached to a host control using the host's [`Flyout`](/api/avalonia/controls/flyout) property. For example:
 
@@ -60,9 +60,9 @@ public void Border_PointerPressed(object sender, PointerPressedEventArgs args)
 
 <Image light={FlyoutShowAttachedScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性          | 说明                                                                          |
 | ----------------- | ------------------------------------------------------------------------------------ |

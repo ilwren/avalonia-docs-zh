@@ -95,7 +95,7 @@ Each of these methods returns a `bool` indicating whether the operating system w
 
 ## Platform compatibility
 
-| Feature        | Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        | Windows | macOS | Linux | Browser | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|
 | `LaunchUriAsync` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | `LaunchFileAsync` | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ |

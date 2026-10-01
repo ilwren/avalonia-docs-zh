@@ -300,9 +300,9 @@ public IAsyncDisposable BeginReparentingAsync()
 
 Asynchronously delays destruction of the native control during parent changes.
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Feature                | Windows WebView2-Edge | macOS/iOS WKWebView | Linux WPE / WebKitGTK | Android | Browser |
+| 特性                | Windows WebView2-Edge | macOS/iOS WKWebView | Linux WPE / WebKitGTK | Android | Browser |
 |------------------------|-----------------------|---------------------|------------------|---------|---------|
 | `NativeWebView`        | ✓                     | ✓                   | ✓                | ✓       | ✗*      |
 | `TryGetCommandManager` | ✓                     | ✓                   | ✗*               | ✓       | ✗*      |

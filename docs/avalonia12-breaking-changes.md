@@ -168,7 +168,7 @@ Override `ShouldTriggerSelection` on `SelectingItemsControl` or `TreeView` to co
 
 The static `ItemSelectionEventTriggers` class provides helper methods for checking modifiers:
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `ShouldTriggerSelection(InputElement, PointerEventArgs)` | Determines whether a pointer event should trigger selection. |
 | `ShouldTriggerSelection(InputElement, KeyEventArgs)` | Determines whether a key event should trigger selection. |

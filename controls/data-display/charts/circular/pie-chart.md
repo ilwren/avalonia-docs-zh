@@ -17,7 +17,7 @@ Pie charts are circular charts divided into sectors to illustrate numerical prop
 
 <Image light={chartsPie} maxWidth={400} position="center" cornerRadius="true" alt="Pie chart divided into colored sectors showing proportional market share across a small number of categories." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Proportions**: Visualizing the relative size of categories compared to the total.
 - **Limited categories**: Best used with 2-6 categories to maintain readability.
 - **Composition**: Showing how a total amount is divided among different segments.
@@ -45,14 +45,14 @@ public ObservableCollection<double> PieChartData { get; } = new()
 
 ### PieChart
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `InnerRadiusFactor` | Center-hole size applied when a `PieSeries` does not set its own inner radius. Set a value greater than `0.0` to create a [donut](/controls/data-display/charts/circular/donut-chart). | `0.0` |
 | `Palette` | Custom brush collection for the segments. | Auto-generated |
 
 ### PieSeries
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data items. | `null` |
 | `ValuePath` | Path to the property used for the segment values. | `null` |

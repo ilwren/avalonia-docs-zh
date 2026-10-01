@@ -13,7 +13,7 @@ tags:
 
 Wind rose charts group values by direction and stack subcategories such as speed bands within each directional sector.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Meteorology**: Show wind frequency by direction and speed band.
 - **Directional events**: Compare traffic, movement, or signal occurrences around a compass.
@@ -47,7 +47,7 @@ public ObservableCollection<WindSample> WindData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of directional observations. | `null` |
 | `DirectionPath` | Path to the direction group. | `null` |

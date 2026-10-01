@@ -17,7 +17,7 @@ Force-directed graphs use physical simulations to lay out network nodes. They he
 
 <Image light={chartsFlowForceDirected} maxWidth={400} position="center" cornerRadius="true" alt="Force-directed graph with nodes and connecting edges arranged by physics simulation to reveal clusters." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Social networks**: Visualizing friendships, followers, or community structures.
 - **Knowledge graphs**: Showing relationships between concepts, entities, or research papers.
 - **System architecture**: Mapping microservices and their communication links.
@@ -63,7 +63,7 @@ public ObservableCollection<GraphEdge> ForceEdges { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `NodesSource` | Collection of nodes. | `null` |
 | `EdgesSource` | Collection of links. | `null` |

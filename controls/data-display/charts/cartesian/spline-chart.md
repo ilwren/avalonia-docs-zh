@@ -17,7 +17,7 @@ Spline charts are similar to line charts but use smooth polynomial curves to con
 
 <Image light={chartsCartesianSpline} maxWidth={400} position="center" cornerRadius="true" alt="Spline chart with smooth curved lines connecting temperature data points across time intervals." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Smooth data**: When visualizing data that changes continuously and smoothly (e.g., temperature).
 - **Aesthetics**: When a professional, rounded look is preferred over sharp angles.
 - **Trend smoothing**: Helping to visualize the general trend without the harshness of linear segments.
@@ -49,7 +49,7 @@ public ObservableCollection<int> SplineSeriesData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series. | `null` |
 | `ItemsSource` | The collection of data items. | `null` |

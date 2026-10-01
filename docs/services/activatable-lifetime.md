@@ -74,7 +74,7 @@ public override void OnFrameworkInitializationCompleted()
 Use the correct event args type for each activation kind. `ProtocolActivatedEventArgs` handles URI/deep link activation (`ActivationKind.OpenUri`). `FileActivatedEventArgs` handles file association activation (`ActivationKind.File`). Checking for `ProtocolActivatedEventArgs` when a file is opened will not match, and the event will appear to not fire.
 :::
 
-## Examples
+## 示例 {#examples}
 
 ### Entering and exiting background state
 
@@ -159,7 +159,7 @@ Some platforms have specific steps to update the manifest and enable file type a
 
 ## Platform compatibility
 
-| Feature        |  Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        |  Windows | macOS | Linux | Browser | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|
 | `ActivationKind.Background` | ✖ | ✔ | ✖ | ✔ | ✔ | ✔ |
 | `ActivationKind.File` | ✖ | ✔ | ✖ | ✖ | ✔ | ✔ |

@@ -7,9 +7,9 @@ doc-type: reference
 
 The `NumericUpDown` is an editable numeric input with up and down spinner buttons attached. Non-numeric characters are ignored in the input. You can change the value by clicking the spinner buttons, pressing the keyboard arrow keys, or scrolling the mouse wheel.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
@@ -24,7 +24,7 @@ You will probably use these properties most often:
 | `InnerLeftContent` | `object` | Content displayed inside the input area on the left side (for example, a currency symbol). |
 | `InnerRightContent` | `object` | Content displayed inside the input area on the right side (for example, a unit label). |
 
-## Examples
+## 示例 {#examples}
 
 This is a basic example with no value limits:
 
@@ -84,7 +84,7 @@ Use `InnerLeftContent` and `InnerRightContent` to display labels such as currenc
 </NumericUpDown>
 ```
 
-### Binding to a view model
+### 绑定到视图模型 {#binding-to-a-view-model}
 
 You can bind `Value`, `Minimum`, and `Maximum` to properties on your view model. Because `Value` is a nullable `decimal`, your view model property should match that type.
 
@@ -105,7 +105,7 @@ private decimal? _maxQuantity = 100;
 Clearing all input from the control's text box may cause a binding exception. See the [troubleshooting page](/troubleshooting/controls/numericupdown) for how to avoid them.
 :::
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
 - If the user types a value outside the `Minimum`/`Maximum` range, the control clamps the value to the nearest boundary when it loses focus.
 - Setting `Value` to `null` clears the input. This can be useful when you want to represent an "unset" state.

@@ -163,7 +163,7 @@ public class MainViewModel : ViewModelBase
 
 ## Platform-specific notes
 
-| Platform | 行为 |
+| 平台 | 行为 |
 |---|---|
 | **macOS** | Use `Cmd` instead of `Ctrl` for platform-idiomatic shortcuts (for example, `Cmd+S` for save). You can bind both `Ctrl` and `Cmd` variants to the same command to cover all platforms. |
 | **Linux / X11** | Context menus open on right-click by default. Long-press context menus are not available because X11 does not provide touch hold events. |

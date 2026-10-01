@@ -17,7 +17,7 @@ Gantt charts are specialized timeline charts used for project management. They i
 
 <Image light={chartsTimelineGantt} maxWidth={400} position="center" cornerRadius="true" alt="Gantt chart showing project tasks as horizontal bars on a time axis with start dates, durations, and dependencies." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Project planning**: Identifying the critical path and task overlaps.
 - **Resource management**: Tracking when team members are allocated to specific activities.
 - **Release tracking**: Visualizing milestones and deadlines for a software release.
@@ -56,7 +56,7 @@ public ObservableCollection<GanttTask> GanttTasks { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of project tasks. | `null` |
 | `StartPath` | Property name for the task start time. | `null` |

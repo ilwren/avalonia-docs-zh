@@ -13,7 +13,7 @@ tags:
 
 Stacked 100% bar charts display bars that always extend to the same height, showing the percentage composition of each category. Each segment represents a series' proportional share, so readers can compare relative contributions.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Proportional comparison**: Comparing how different segments contribute to the whole across categories.
 - **Market share**: Showing relative market share or budget allocation across departments.
 - **Survey results**: Displaying percentage breakdowns such as agree/disagree responses per question.
@@ -71,7 +71,7 @@ public ObservableCollection<BrowserShare> SafariData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

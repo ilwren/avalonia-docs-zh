@@ -9,7 +9,7 @@ The [`GroupBox`](/api/avalonia/controls/groupbox) control visually groups relate
 
 `GroupBox` extends `HeaderedContentControl`, so it supports a `Header` (displayed at the top of the border) and a single `Content` child.
 
-## Common use cases
+## 常见用法 {#common-use-cases}
 
 Use a `GroupBox` when you need to:
 
@@ -17,9 +17,9 @@ Use a `GroupBox` when you need to:
 - Visually separate groups of related options such as checkboxes or radio buttons.
 - Add a labeled frame around a section of your UI so that the purpose of the grouped controls is immediately clear.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table><thead><tr><th width="261">Property</th><th>说明</th></tr></thead><tbody><tr><td><code>Header</code></td><td>The text or content displayed at the top of the border.</td></tr><tr><td><code>Content</code></td><td>The child control or layout hosted inside the group box.</td></tr><tr><td><code>BorderBrush</code></td><td>The color of the surrounding border.</td></tr><tr><td><code>BorderThickness</code></td><td>The thickness of the surrounding border.</td></tr><tr><td><code>CornerRadius</code></td><td>The radius of the border's corners.</td></tr><tr><td><code>Padding</code></td><td>The spacing between the border and the content.</td></tr></tbody></table>
 
@@ -119,7 +119,7 @@ You can nest `GroupBox` controls inside each other to create sub-sections. Keep 
 
 You can customize the `GroupBox` appearance through theme resources:
 
-| Resource | Default | 说明 |
+| Resource | 默认值 | 说明 |
 |---|---|---|
 | `GroupBoxPadding` | `4` | Internal padding around the content. |
 | `GroupBoxHeaderFontSize` | `16` | Font size of the header text. |

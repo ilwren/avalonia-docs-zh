@@ -17,7 +17,7 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 
 <Image light={chartsGaugesLiquid} maxWidth={400} position="center" cornerRadius="true" alt="Liquid fill gauge showing a circular container filled with animated liquid to represent a percentage value." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Thematic dashboards**: Visualizing "filling" concepts like fundraising or capacity.
 - **Environmental apps**: Showing water levels or liquid container status.
 - **Engaging UI**: Adding a playful, animated metric indicator to a modern application.
@@ -35,7 +35,7 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | The current value. | `50.0` |
 | `MinValue` | The minimum value. | `0.0` |

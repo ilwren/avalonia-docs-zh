@@ -13,7 +13,7 @@ tags:
 
 Bubble charts use a `BubbleSeries` inside a `CartesianChart` to plot two numeric dimensions. Each marker is sized using a third measure.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Three-variable comparison**: Show relationships between X, Y, and magnitude in one view.
 - **Portfolio analysis**: Compare price, margin, and volume at the same time.
@@ -56,7 +56,7 @@ public ObservableCollection<ProductBubble> BubbleData { get; } = new()
 
 ## Common properties (`BubbleSeries`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of data points. | `null` |
 | `CategoryPath` | Path to the X-axis value. | `null` |

@@ -15,8 +15,8 @@ Avalonia allows you to create your own controls, beyond what is available in the
 Before creating a custom control, first choose the category of control that best suits your use case. There are three main control categories in Avalonia:
 
 1. [User controls](#user-controls)
-2. [Templated controls](#templated-controls)
-3. [Custom-drawn controls](#custom-drawn-controls)
+2. [模板化控件](#templated-controls)
+3. [自绘控件](#custom-drawn-controls)
 
 In addition to these three categories, you can also create custom derivatives of [content controls, headered content controls or items controls](#other-customizable-controls).
 

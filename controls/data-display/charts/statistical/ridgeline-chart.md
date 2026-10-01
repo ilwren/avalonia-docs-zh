@@ -13,7 +13,7 @@ tags:
 
 Ridgeline charts stack multiple area distributions with vertical overlap so you can compare shape changes across groups, periods, or scenarios.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Distribution over time**: Compare how a distribution shifts from one period to another.
 - **Group comparison**: Stack many related density-like curves in one compact frame.
@@ -43,7 +43,7 @@ public ObservableCollection<CurvePoint> Series2024 { get; } = new() { new(0, 3),
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Series` | Content collection of `AreaSeries` distributions. | Empty collection |
 | `Overlap` | Overlap factor between series. | `0.5` |

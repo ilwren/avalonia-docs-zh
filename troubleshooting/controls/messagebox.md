@@ -129,6 +129,6 @@ This approach only works in desktop applications that use `ClassicDesktopStyleAp
 
 ## 另请参阅 {#see-also}
 
-- [Window control](/controls/primitives/window)
+- [Window 控件](/controls/primitives/window)
 - [How to work with dialogs](/docs/how-to/dialogs-how-to)
 - [MessageBox feature request (GitHub)](https://github.com/AvaloniaUI/Avalonia/issues/670)

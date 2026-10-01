@@ -49,7 +49,7 @@ parcel pack <project> [options]
 
 **Options:**
 
-| Option | 说明 | Default |
+| Option | 说明 | 默认值 |
 |--------|-------------|---------|
 | `-o, --output` | Output directory | `<project-dir>\bin\packages` |
 | `-r, --runtimes` | Runtime identifiers to package. You can specify this option more than once. | Current platform runtime |
@@ -76,7 +76,7 @@ parcel step [command] <input> <output> [options]
 
 **Available Step Commands:**
 
-| Command | 说明 | Input | Output |
+| Command | 说明 | Input | 输出 |
 |---------|-------------|-------|--------|
 | `publish` | Publishes the .NET project for a target platform and runtime | No explicit input. Parcel reads the project from the `.parcel` file. | Published application directory |
 | `merge-mac` | Merges architecture builds into a universal macOS application bundle | Directory with architecture-specific subdirectories (`osx-x64`, `osx-arm64`) | Universal application directory |

@@ -17,7 +17,7 @@ Error bar charts represent the variability of data and are used on graphs to ind
 
 <Image light={chartsStatisticalErrorbar} maxWidth={400} position="center" cornerRadius="true" alt="Chart with data points and vertical error indicators showing standard deviation ranges for each sample." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Scientific research**: Visualizing standard deviation or confidence intervals.
 - **Quality control**: Showing the range of tolerance in manufacturing.
 - **Survey data**: Indicating the margin of error in statistical polls.
@@ -58,7 +58,7 @@ public ObservableCollection<ErrorBarItem> ErrorBarData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of measured data. | `null` |
 | `ValuePath` | The central value (Mean/Median). | `null` |

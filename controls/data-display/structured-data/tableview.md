@@ -15,7 +15,7 @@ The `TableView` displays a collection of items in configurable columns. It is a 
 :::
 
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 Bind the `ItemsSource` property to a collection in your view model, then declare one `TableViewColumn` per column inside `TableView.Columns`. Use the column's `Binding` property to pick the value shown in each cell:
 
@@ -77,7 +77,7 @@ These examples use the MVVM pattern with data binding to an `ObservableCollectio
 :::
 
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
 You will probably use these `TableView` properties most often:
 

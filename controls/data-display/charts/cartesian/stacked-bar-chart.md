@@ -17,7 +17,7 @@ Stacked bar charts represent multiple series of data stacked on top of each othe
 
 <Image light={chartsCartesianStackedbar} maxWidth={400} position="center" cornerRadius="true" alt="Stacked bar chart with colored segments stacked in each bar showing regional sales contributions per quarter." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Part-to-Whole**: Visualizing how many smaller parts make up a larger total category.
 - **Categorical comparison**: Comparing totals across different groups while seeing internal distribution.
 - **Space optimization**: Showing multiple data series without needing separate bars for each.
@@ -61,7 +61,7 @@ public ObservableCollection<int> StackedBarProductC { get; } = new()
 
 ## Common properties (StackedBarSeries)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name shown in the legend. | `null` |
 | `ItemsSource` | The collection of data for this specific part of the stack. | `null` |

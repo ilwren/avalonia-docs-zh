@@ -17,7 +17,7 @@ Point and Figure (P&F) charts use columns of Xs and Os to represent rising and f
 
 <Image light={chartsFinancialPointandfigure} maxWidth={400} position="center" cornerRadius="true" alt="Point and figure chart with columns of X marks for rising prices and O marks for falling prices filtering out time." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Long-term trends**: Visualizing macro-economic or multi-year market shifts.
 - **Support/resistance**: Identifying clear supply and demand zones.
 - **Price targets**: Using traditional P&F counting methods for price projections.
@@ -69,7 +69,7 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of price data. | `null` |
 | `DatePath` | Path to the date or time value used along the horizontal axis. Values can be `DateTime`, `DateTimeOffset`, or parseable date strings. | `null` |

@@ -7,7 +7,7 @@ doc-type: reference
 
 The [`HyperlinkButton`](/api/avalonia/controls/hyperlinkbutton) is a button that appears as a text hyperlink and opens a URI when you click it. It uses the platform's default mechanism to launch URIs (opening a browser, email client, and so on).
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
@@ -16,7 +16,7 @@ The [`HyperlinkButton`](/api/avalonia/controls/hyperlinkbutton) is a button that
 | `IsVisited` | `bool` | Whether the link has been visited. Automatically set to `true` after the URI is launched. |
 | `Command` | `ICommand` | An optional command executed when the button is clicked. |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 ```xml
 <HyperlinkButton NavigateUri="https://avaloniaui.net"

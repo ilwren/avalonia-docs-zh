@@ -17,7 +17,7 @@ The Nightingale rose chart is a polar area chart with equal angles and variable 
 
 <Image light={chartsRadialRose} maxWidth={400} position="center" cornerRadius="true" alt="Nightingale rose chart with stacked sub-segments in each circular slice comparing composition across cyclical categories." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Seasonal summaries**: Comparing one measurement across months or quarters.
 - **Category comparison**: Showing relative magnitude without using Cartesian axes.
 - **Circular dashboards**: Using a radial layout when the categories form a cycle.
@@ -50,7 +50,7 @@ public ObservableCollection<RadialPoint> NightingaleData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of segments. | `null` |
 | `ValuePath` | Radius magnitude of each segment. | `null` |

@@ -13,7 +13,7 @@ tags:
 
 Smith charts plot normalized resistance and reactance on a specialized circular grid used in radio frequency (RF), antenna, and impedance-matching work.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **RF analysis**: Visualize impedance trajectories across frequency.
 - **Matching networks**: Inspect how a design moves toward or away from the center match point.
@@ -46,7 +46,7 @@ public ObservableCollection<ImpedancePoint> ImpedanceData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of impedance points. | `null` |
 | `ResistancePath` | Path to the normalized resistance value. | `null` |

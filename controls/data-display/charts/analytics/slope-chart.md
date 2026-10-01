@@ -17,7 +17,7 @@ Slope charts compare two points in time (or two categories) for multiple entitie
 
 <Image light={chartsAnalyticsSlope} maxWidth={400} position="center" cornerRadius="true" alt="Slope chart comparing entity values between two time points with labeled lines showing which increased or decreased." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Before/after analysis**: Showing the impact of a policy or event across different groups.
 - **Rank shifts**: Visualizing how product popularity changed between two quarters.
 - **Comparison of two states**: Highlighting which entities improved and which declined.
@@ -52,7 +52,7 @@ public ObservableCollection<SlopeItem> SlopeData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of items to compare. | `null` |
 | `LabelPath` | Path to the entity name. | `null` |

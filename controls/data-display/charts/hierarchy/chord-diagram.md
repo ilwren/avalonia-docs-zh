@@ -17,7 +17,7 @@ Chord diagrams visualize the inter-relationships between entities in a circular 
 
 <Image light={chartsFlowChord} maxWidth={400} position="center" cornerRadius="true" alt="Chord diagram showing directional flows between entities arranged in a circle with connecting chords of varying widths." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Trade relations**: Visualizing import/export relationships between countries.
 - **Migration patterns**: Showing movement of people between different geographic areas.
 - **System interactions**: Visualizing call dependencies between modules in a software system.
@@ -49,7 +49,7 @@ public ObservableCollection<TradeLink> ChordData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of relationships. | `null` |
 | `SourcePath` | Path to the source entity. | `null` |

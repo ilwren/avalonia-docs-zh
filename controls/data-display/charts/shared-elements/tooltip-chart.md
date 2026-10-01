@@ -19,7 +19,7 @@ Default Cartesian and financial chart tooltips format category and date values t
 
 <Image light={chartsFeaturesTooltip} maxWidth={400} position="center" cornerRadius="true" alt="Chart with an interactive tooltip popup appearing on hover showing the exact value and category of a data point." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **High-density data**: Pinpointing values in a crowded line or scatter chart.
 - **Additional context**: Showing metadata (e.g., "Update Date") that isn't mapped to an axis.
 - **Hover interactions**: Showing focused details while the pointer is over a data point.
@@ -61,7 +61,7 @@ public ObservableCollection<double> Series2Data { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `IsTooltipEnabled` | Global toggle for tooltip visibility. | `true` |
 | `TooltipTemplate` | Custom DataTemplate for the tooltip UI (on series). | System default |

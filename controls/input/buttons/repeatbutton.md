@@ -7,9 +7,9 @@ doc-type: reference
 
 The `RepeatButton` is a control that has the added feature of regularly generating click events while the button is being pressed down.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 说明                                                                              |
 | -------- | ---------------------------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ You can configure the `Delay` and `Interval` properties directly in XAML to cont
 </RepeatButton>
 ```
 
-## Common use cases
+## 常见用法 {#common-use-cases}
 
 The `RepeatButton` is useful in any scenario where you need continuous action while the user holds down a button. Common examples include volume controls, scroll buttons, numeric steppers, and zoom controls. In each of these cases, the repeat behavior lets your users make incremental adjustments without clicking repeatedly.
 

@@ -17,7 +17,7 @@ Event timeline charts visualize a series of events chronologically. They provide
 
 <Image light={chartsTimelineHorizontal} maxWidth={400} position="center" cornerRadius="true" alt="Event timeline chart displaying chronological milestones as labeled markers along a horizontal time axis." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Historical records**: Visualizing milestones, product launches, or life events.
 - **Audit trails**: Showing system logs or user activities in sequence.
@@ -55,7 +55,7 @@ public ObservableCollection<TimelineEvent> TimelineEvents { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of events. | `null` |
 | `DatePath` | Path to the `DateTime` property. | `null` |

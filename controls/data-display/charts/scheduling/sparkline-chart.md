@@ -17,7 +17,7 @@ Sparklines are compact charts without axes or coordinates, designed to show tren
 
 <Image light={chartsAnalyticsSparkline} maxWidth={400} position="center" cornerRadius="true" alt="Sparkline chart examples showing line, area, bar, and win/loss trends." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **In-line trends**: Showing data trends inside data grids or text paragraphs.
 - **Dashboard summaries**: Providing high-density visual context for many metrics on one screen.
@@ -56,7 +56,7 @@ public ObservableCollection<double> SparklineWinLossData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of trend data. | `null` |
 | `ValuePath` | Property path used when `ItemsSource` contains objects instead of raw numbers. | `null` |

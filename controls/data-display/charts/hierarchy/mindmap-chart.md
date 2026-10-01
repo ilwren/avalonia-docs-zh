@@ -17,7 +17,7 @@ Mindmaps are divergent diagrams used for brainstorming and project planning, rad
 
 <Image light={chartsFlowMindmap} maxWidth={400} position="center" cornerRadius="true" alt="Mindmap diagram radiating outward from a central topic node to connected sub-topics and ideas." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Idea generation**: Capturing and organizing thoughts during a meeting.
 - **Project scope**: Mapping out different modules and their requirements.
 - **Knowledge representation**: Visualizing complex concepts and their interconnectedness.
@@ -160,7 +160,7 @@ public ObservableCollection<FlowEdge> MindmapEdges { get; } = new()
 
 ## Common properties (`FlowChart`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Nodes` | Collection of `FlowNode` items representing topics. | `null` |
 | `Edges` | Collection of `FlowEdge` items representing relationships. | `null` |

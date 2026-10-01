@@ -18,9 +18,9 @@ In the direction of the stack, the `StackPanel` always expands to fit all of its
 `StackPanel` does not scroll. If your stacked content may exceed the available space, wrap the `StackPanel` in a `ScrollViewer`.
 :::
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性      | 说明                                                                     |
 | ------------- | ------------------------------------------------------------------------------- |
@@ -120,7 +120,7 @@ You can create a horizontal button bar by setting `Orientation` to `Horizontal` 
 </StackPanel>
 ```
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
 - **Sizing behavior**: A `StackPanel` does not constrain children in the stacking direction, so each child receives as much space as it requests. If you need children to share space proportionally, consider using a `Grid` instead.
 - **Performance**: For lists with many items, use `ListBox` instead of placing many controls in a `StackPanel`.

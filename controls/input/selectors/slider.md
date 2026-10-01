@@ -11,9 +11,9 @@ The `Slider` control presents a numeric value as the relative position of a slid
 
 You can change the value by dragging the thumb, clicking on the track, using the arrow keys, or scrolling the mouse wheel. The slider is useful whenever you want to let users pick a value from a continuous or stepped range, such as volume, brightness, or zoom level.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
@@ -86,7 +86,7 @@ Set `IsDirectionReversed` to `True` if you want the maximum value at the left (o
         IsDirectionReversed="True" />
 ```
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 You can bind `Value`, `Minimum`, and `Maximum` to properties on your view model. The following example uses the MVVM Community Toolkit source generators:
 

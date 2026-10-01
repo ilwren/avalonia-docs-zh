@@ -13,7 +13,7 @@ tags:
 
 Strip plots show every observation in a category while applying jitter to reduce overlap and optional mean lines to summarize the center.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Raw sample display**: Show every point rather than only quartiles or averages.
 - **Category spread**: Compare how tightly or widely values cluster per group.
@@ -49,7 +49,7 @@ public ObservableCollection<StripPoint> StripData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of observations. | `null` |
 | `CategoryPath` | Path to the grouping category. | `null` |

@@ -17,7 +17,7 @@ Polar area charts (or coxcomb charts) are similar to pie charts but represent va
 
 <Image light={chartsRadialPolararea} maxWidth={400} position="center" cornerRadius="true" alt="Polar area chart with equal-angle segments of varying radius representing seasonal magnitude values in a circular layout." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Cyclical trends**: Visualizing seasonal data or wind patterns.
 - **Ranking categories**: Comparing the magnitude of many categories in a circular layout.
 - **Historical analysis**: The classic chart type for visualizing causes of mortality over time.
@@ -48,7 +48,7 @@ public ObservableCollection<RadialPoint> PolarChartData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of segments. | `null` |
 | `ValuePath` | Property determining the radius of the slice. | `null` |

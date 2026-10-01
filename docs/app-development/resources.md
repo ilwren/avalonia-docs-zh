@@ -161,7 +161,7 @@ myBorder.Bind(Border.BackgroundProperty,
     this.GetResourceObservable("PrimaryBrush"));
 ```
 
-| Method | Searches merged dictionaries | Searches parent elements |
+| 方法 | Searches merged dictionaries | Searches parent elements |
 |---|---|---|
 | `Resources["key"]` | No | No |
 | `TryGetResource` | Yes | No |

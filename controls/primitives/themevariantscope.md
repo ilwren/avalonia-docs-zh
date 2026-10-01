@@ -1,28 +1,28 @@
 ---
 id: themevariantscope
 title: ThemeVariantScope
-description: A primitive control that overrides the active theme variant (light or dark) for a section of the visual tree.
+description: 一个基础控件，用于为视觉树的某一部分覆盖当前生效的主题变体（浅色或深色）。
 doc-type: reference
 ---
 
-The [`ThemeVariantScope`](/api/avalonia/controls/themevariantscope) control overrides the active theme variant (light or dark) for a section of your visual tree. All controls placed inside a `ThemeVariantScope` use the specified variant, regardless of the application or window setting. This is useful when you need part of your UI to display in a different theme from the rest of the application.
+[`ThemeVariantScope`](/api/avalonia/controls/themevariantscope) 控件为视觉树的某一部分覆盖当前生效的主题变体（浅色或深色）。放进 `ThemeVariantScope` 里的所有控件都会采用指定的变体，与应用或窗口的设置无关。当你希望界面的一部分采用与整体不同的主题时，它正好派上用场。
 
-## Common use cases
+## 常见用法 {#common-use-cases}
 
-- Forcing a sidebar or panel to always render in dark mode while the rest of your app uses light mode.
-- Displaying a side-by-side preview of both theme variants on a settings page.
-- Creating contrasting regions in your layout for visual emphasis.
+- 让侧边栏或某个面板始终以深色呈现，而应用其余部分用浅色。
+- 在设置页面上并排预览两种主题变体。
+- 在布局中营造明暗对比的区域，突出重点。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `RequestedThemeVariant` | `ThemeVariant` | The theme variant to apply within this scope. Values: `Light`, `Dark`, `Default`. Setting `Default` resets to the inherited variant. |
-| `ActualThemeVariant` | `ThemeVariant` | Read-only. The theme variant currently in effect within this scope. |
+| `RequestedThemeVariant` | `ThemeVariant` | 该作用域内要应用的主题变体，取值为 `Light`、`Dark`、`Default`。设为 `Default` 则恢复为继承而来的变体。 |
+| `ActualThemeVariant` | `ThemeVariant` | 只读。该作用域内当前实际生效的主题变体。 |
 
-## Basic example
+## 基本示例 {#basic-example}
 
-You can force a section of the UI to use the light theme while the rest of the window uses the dark theme:
+你可以让界面的一部分强制使用浅色主题，而窗口其余部分用深色主题：
 
 ```xml
 <Window RequestedThemeVariant="Dark">
@@ -39,9 +39,9 @@ You can force a section of the UI to use the light theme while the rest of the w
 </Window>
 ```
 
-## Side-by-side theme preview
+## 并排预览主题 {#side-by-side-theme-preview}
 
-A common use case is displaying both theme variants at the same time, for example on a theme settings page:
+一种常见用法是同时展示两种主题变体，比如在主题设置页面上：
 
 ```xml
 <Grid ColumnDefinitions="*,*" Margin="16">
@@ -71,9 +71,9 @@ A common use case is displaying both theme variants at the same time, for exampl
 </Grid>
 ```
 
-## Resetting to the inherited variant
+## 恢复为继承的变体 {#resetting-to-the-inherited-variant}
 
-Set `RequestedThemeVariant="Default"` to clear the override and inherit the variant from the parent scope:
+设为 `RequestedThemeVariant="Default"` 即可清除覆盖，转而继承父作用域的变体：
 
 ```xml
 <ThemeVariantScope RequestedThemeVariant="Light">
@@ -89,9 +89,9 @@ Set `RequestedThemeVariant="Default"` to clear the override and inherit the vari
 </ThemeVariantScope>
 ```
 
-## Nesting scopes
+## 嵌套作用域 {#nesting-scopes}
 
-You can nest `ThemeVariantScope` controls to create multiple themed regions. Each scope resolves its variant independently, so a child scope overrides whatever its parent scope set:
+`ThemeVariantScope` 控件可以嵌套，从而划分出多个主题区域。每个作用域各自独立解析变体，因此子作用域会覆盖父作用域的设置：
 
 ```xml
 <ThemeVariantScope RequestedThemeVariant="Dark">
@@ -107,9 +107,9 @@ You can nest `ThemeVariantScope` controls to create multiple themed regions. Eac
 </ThemeVariantScope>
 ```
 
-## Theme-aware resources
+## 随主题变化的资源 {#theme-aware-resources}
 
-Resources defined in `ThemeDictionaries` respond to `ThemeVariantScope`. Each scope resolves its own variant independently, so the same `DynamicResource` key can return different values depending on which scope it appears in:
+定义在 `ThemeDictionaries` 中的资源会响应 `ThemeVariantScope`。每个作用域各自独立解析变体，因此同一个 `DynamicResource` 键出现在不同作用域里时，可能返回不同的值：
 
 ```xml
 <Window.Resources>
@@ -138,15 +138,15 @@ Resources defined in `ThemeDictionaries` respond to `ThemeVariantScope`. Each sc
 </ThemeVariantScope>
 ```
 
-## Setting the variant from code
+## 在代码中设置变体 {#setting-the-variant-from-code}
 
-You can change the variant at runtime by setting `RequestedThemeVariant` in your code-behind:
+在代码隐藏中设置 `RequestedThemeVariant`，即可在运行时切换变体：
 
 ```csharp
 myScope.RequestedThemeVariant = ThemeVariant.Dark;
 ```
 
-You can also bind the property to a view model so that your users can toggle themes dynamically:
+也可以把该属性绑定到视图模型，让用户自己动态切换主题：
 
 ```xml
 <ThemeVariantScope RequestedThemeVariant="{Binding SelectedTheme}">
@@ -169,6 +169,6 @@ public class MainViewModel : ViewModelBase
 
 ## 另请参阅 {#see-also}
 
-- [Theme variants](/docs/styling/theme-variants): Full guide to light/dark theme support and theme dictionaries.
-- [How to switch themes](/docs/how-to/theme-switching-how-to): Implementing a theme toggle in your application.
-- [Resources](/docs/app-development/resources): Overview of the resource system.
+- [主题变体](/docs/styling/theme-variants)：浅色/深色主题支持与主题词典的完整指南。
+- [如何切换主题](/docs/how-to/theme-switching-how-to)：在应用中实现主题切换。
+- [资源](/docs/app-development/resources)：资源系统概览。

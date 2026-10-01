@@ -13,7 +13,7 @@ tags:
 
 Parallel coordinate charts map each record across a sequence of vertical axes so multi-dimensional patterns and outliers can be compared in one view.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Multivariate comparison**: Compare several numeric dimensions for each item.
 - **Pattern detection**: Spot outliers, clusters, and dominant shapes across metrics.
@@ -50,7 +50,7 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 
 ## Common properties (`ParallelCoordinatesChart`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Axes` | Content collection of `ParallelAxis` definitions. | Empty collection |
 | `ItemsSource` | Collection of multivariate records. | `null` |
@@ -61,7 +61,7 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 
 ## Common properties (`ParallelAxis`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Header` | Axis title. | `null` |
 | `ValuePath` | Path to the value bound to this axis. | `null` |

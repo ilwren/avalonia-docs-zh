@@ -94,7 +94,7 @@ When creating custom templates, bind only the properties your template actually 
 
 Place styles at the appropriate level in the visual tree:
 
-| 作用范围 | Where to declare | When to use |
+| 作用范围 | Where to declare | 适用场景 |
 |---|---|---|
 | Application-wide | `App.axaml` or a `Styles` file referenced from `App.axaml` | Brand colors, typography, default control themes |
 | Window/Page-level | `<Window.Styles>` or `<UserControl.Styles>` | Page-specific overrides |

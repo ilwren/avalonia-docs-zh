@@ -149,11 +149,11 @@ On Android and iOS, the `InputScope` property on `TextBox` can hint which keyboa
 
 ## Platform considerations
 
-| Feature | Windows | macOS | Linux | Android/iOS | WebAssembly |
+| 特性 | Windows | macOS | Linux | Android/iOS | WebAssembly |
 |---|---|---|---|---|---|
 | IME support | Full | Full | Full (via IBus/Fcitx) | Full (platform IME) | Partial |
 | On-screen keyboard | Touch devices | Touch Bar | Virtual keyboard | Full | Browser-managed |
-| Dead keys | Supported | Supported | Supported | N/A | Browser-managed |
+| Dead keys | Supported | Supported | Supported | 不适用 | Browser-managed |
 
 ## 另请参阅 {#see-also}
 

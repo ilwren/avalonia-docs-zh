@@ -17,7 +17,7 @@ Process flow charts are used to visualize sequences of steps, decisions, and log
 
 <Image light={chartsFlowProcess} maxWidth={400} position="center" cornerRadius="true" alt="Process flow chart with start, decision, and action nodes connected by directional arrows showing a workflow sequence." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Workflow mapping**: Visualizing business processes or approval chains.
 - **Decision trees**: Showing the logic path for troubleshooting or user journeys.
 - **System architecture**: Mapping connections between different modules or services.
@@ -113,7 +113,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowChart`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Nodes` | Collection of `FlowNode` items representing process steps. | `null` |
 | `Edges` | Collection of `FlowEdge` items representing connections. | `null` |

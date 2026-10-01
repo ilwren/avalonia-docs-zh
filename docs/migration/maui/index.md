@@ -83,7 +83,7 @@ Both frameworks use XAML, but the dialects differ. MAUI's XAML is rooted in Xama
 | `xmlns="http://schemas.microsoft.com/dotnet/2021/maui"` | `xmlns="https://github.com/avaloniaui"` | |
 | `x:DataType` for compiled bindings | `x:DataType` + `x:CompileBindings` | Same concept, slightly different setup |
 | `{Binding Path}` | `{Binding Path}` | Same syntax |
-| `{Binding Source={RelativeSource Self}}` | `{Binding $self.Property}` | Shorthand syntax |
+| `{Binding Source={RelativeSource Self}}` | `{Binding $self.Property}` | 简写写法 |
 | `{Binding Source={x:Reference myControl}, Path=Text}` | `{Binding #myControl.Text}` | `#name` shorthand |
 
 #### Layout

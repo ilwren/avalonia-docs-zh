@@ -17,7 +17,7 @@ Theme river charts visualize changes in categories over time. In `Avalonia.Contr
 
 <Image light={chartsAnalyticsThemeriver} maxWidth={400} position="center" cornerRadius="true" alt="Theme river chart with stacked organic stream bands showing how category volumes flow and change over time." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Topic trends**: Visualizing the popularity of themes in news or social media over time.
 - **Resource allocation**: Showing how budget or manpower shifts between projects.
 - **Usage patterns**: Tracking the volume of different types of network traffic.
@@ -109,7 +109,7 @@ public class ThemeRiverItem
 
 ## Common properties (`StackedAreaSeries`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | Series name shown in the legend. | `null` |
 | `ItemsSource` | The collection of data points for a single stream. | `null` |

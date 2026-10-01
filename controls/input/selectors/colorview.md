@@ -46,7 +46,7 @@ The properties for visibility use the naming pattern "IsThingVisible" rather tha
 
 None
 
-## Template parts
+## 模板部件 {#template-parts}
 
 | 名称 | 类型 | 说明 |
 |------|----- |-------------|

@@ -165,7 +165,7 @@ mediaPlayer.ErrorOccurred += (sender, args) =>
 
 **Note**: This callback gives you the opportunity to reset the state of the `MediaPlayer` gracefully.
 
-### Basic example
+### 基本示例 {#basic-example}
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"

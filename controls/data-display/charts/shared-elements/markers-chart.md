@@ -19,7 +19,7 @@ For Cartesian line-family series such as `LineSeries`, `SplineSeries`, and `Step
 
 <Image light={chartsFeaturesMarkers} maxWidth={400} position="center" cornerRadius="true" alt="Line chart with markers of different shapes drawn at each data point to highlight exact coordinate positions." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Discrete data**: Emphasizing that lines represent individual measured points.
 - **Low-density charts**: Making points more clickable for tooltips or selection.
@@ -69,7 +69,7 @@ public ObservableCollection<int> PentagonMarkerData { get; } = new() { 35, 50, 4
 
 ## Common properties (applied to Series)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ShowMarkers` | Global toggle for data point symbols. Line-family series default to `false`; some point-focused series override it to `true`. | Series-dependent |
 | `MarkerSize` | Diameter of the marker in pixels. | Series-dependent |

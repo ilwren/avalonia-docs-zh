@@ -115,7 +115,7 @@ The "Below" button is positioned below the rotated control's full bounds, with n
 
 ## Comparison
 
-| Feature | Render Transform | Layout Transform |
+| 特性 | Render Transform | Layout Transform |
 |---|---|---|
 | Affects layout | No | Yes |
 | Other controls adjust | No | Yes |

@@ -13,7 +13,7 @@ tags:
 
 `FlowChart` renders nodes, edges, and optional groups for workflows, process maps, and decision trees. When nodes have no explicit positions, the control can lay them out automatically.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Process diagrams**: Render step-by-step business or operational flows.
 - **Decision trees**: Show branches, outcomes, and labeled transitions.
@@ -49,7 +49,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowChart`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Nodes` | Collection of `FlowNode` items rendered by the chart. | `null` |
 | `Edges` | Collection of `FlowEdge` connections. | `null` |
@@ -58,7 +58,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowNode`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Id` | Unique node identifier used by edges and groups. | `null` |
 | `Text` | Text displayed inside the node. | `null` |
@@ -73,7 +73,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowEdge`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `SourceId` | Source node identifier. | `null` |
 | `TargetId` | Target node identifier. | `null` |
@@ -82,7 +82,7 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 
 ## Common properties (`FlowGroup`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Id` | Unique group identifier. | `null` |
 | `Label` | Optional label displayed for the group. | `null` |

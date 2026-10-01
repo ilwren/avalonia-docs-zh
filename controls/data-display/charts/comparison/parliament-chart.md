@@ -13,7 +13,7 @@ tags:
 
 Parliament charts arrange seats in a semicircle so party representation can be read as both totals and spatial balance.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Legislative composition**: Show seat distribution by party or bloc.
 - **Board representation**: Visualize committee or council membership.
@@ -44,7 +44,7 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `TotalSeats` | Total number of seats to draw. | `100` |
 | `Rows` | Number of concentric seat rows. | `4` |
@@ -56,7 +56,7 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 
 ## Common properties (`ParliamentParty`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Name` | Party or bloc name. | `string.Empty` |
 | `Seats` | Number of seats assigned to the party. | `0` |

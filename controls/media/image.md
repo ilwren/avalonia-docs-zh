@@ -41,7 +41,7 @@ The scaling settings for an image are the same as for the [Viewbox](/controls/la
 | `Uniform` | The image is resized to fit within the bounds while preserving aspect ratio (default). |
 | `UniformToFill` | The image is resized to fill the bounds while preserving aspect ratio. Parts may be clipped. |
 
-## Examples
+## 示例 {#examples}
 
 ### Basic
 

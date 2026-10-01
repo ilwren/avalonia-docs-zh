@@ -26,9 +26,9 @@ corner (column=0, row=0).
 
 It is also possible to make a child control span more than one cell in either rows or columns, or both.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性               | 说明                                                         |
 |------------------------|---------------------------------------------------------------------|

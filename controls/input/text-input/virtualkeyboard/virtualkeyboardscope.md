@@ -130,7 +130,7 @@ You can place multiple `VirtualKeyboardScope` controls in your application. Only
 - **Account for reduced screen space.** `VirtualKeyboardScope` automatically scrolls to keep the focused input visible when the keyboard appears. However, you may still need to adjust your layout so that content remains usable while the keyboard is on screen.
 - **Make use of read-only and disabled states.** The keyboard does not appear for read-only or disabled text input controls. Use `IsReadOnly="True"` for text that should be selectable but not editable.
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
 - `VirtualKeyboardScope` is typically used in kiosk and embedded-Linux scenarios where no physical keyboard is available. On desktop platforms with a hardware keyboard, users will not see the on-screen keyboard.
 - If you need full control over where the keyboard appears in your layout, use the standalone [`VirtualKeyboard` control](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control) instead.

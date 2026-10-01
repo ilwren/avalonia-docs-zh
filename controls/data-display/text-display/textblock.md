@@ -31,7 +31,7 @@ The [`TextBlock`](/api/avalonia/controls/textblock) is a read-only label for dis
 | `Padding`         | `Thickness`                | Space between the control boundary and the text content.                                                                                                                                                              |
 | `xml:space`       | XML attribute              | Set `xml:space="preserve"` to direct the XML parser to preserve line breaks and whitespace. Without this attribute, whitespace is stripped by default.                                                                 |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 This example demonstrates using multiple `TextBlock` controls to show a heading, a single line containing extra space, and multi-line displays.
 

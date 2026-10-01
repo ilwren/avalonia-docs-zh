@@ -14,7 +14,7 @@ The [`Label`](/api/avalonia/controls/label) control displays text and transfers 
 | `Content` | `object` | The content to display in the label. You can set this to a string or bind it to a view model property. |
 | `Target` | `IInputElement` | The target control that receives focus when the label is clicked or its access key is pressed. Set this to the `x:Name` of the target control. |
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 To associate a `Label` with an input control, set the `Target` property to the name of the input control. When your user clicks the label text, focus moves to the target:
 
@@ -77,7 +77,7 @@ The `Label` control is a key building block for accessible forms. By pairing eac
 
 ## Label vs TextBlock
 
-| Feature | `Label` | `TextBlock` |
+| 特性 | `Label` | `TextBlock` |
 |---|---|---|
 | Focus transfer | Yes (via `Target`) | No |
 | Access key support | Yes | No |

@@ -1,49 +1,49 @@
 ---
 id: window
 title: Window
-description: A top-level content control that represents an operating-system window with title bar, icon, and close/minimize/maximize chrome.
+description: 一个顶层内容控件，代表操作系统窗口，带标题栏、图标以及关闭/最小化/最大化等窗口外框。
 doc-type: reference
 ---
 
-[`Window`](/api/avalonia/controls/window) is a top-level [`ContentControl`](/controls/data-display/contentcontrol) that represents an operating-system window. It provides the title bar, icon, and system chrome (close, minimize, maximize buttons) that your users expect from a desktop application.
+[`Window`](/api/avalonia/controls/window) 是一个顶层 [`ContentControl`](/controls/data-display/contentcontrol)，代表一个操作系统窗口。它提供标题栏、图标和系统外框（关闭、最小化、最大化按钮）——这些正是用户对桌面应用的期待。
 
-You do not usually create instances of `Window` directly. Instead, you subclass `Window` for each type of window your application needs.
+一般不会直接创建 `Window` 的实例，而是为应用需要的每一种窗口各写一个 `Window` 子类。
 
 :::tip
-`Window` is only available on desktop platforms (Windows, macOS, Linux). If you are targeting mobile or browser, use [`UserControl`](/controls/primitives/usercontrol) with a navigation framework instead.
+`Window` 只在桌面平台（Windows、macOS、Linux）上可用。如果你的目标是移动端或浏览器，请改用 [`UserControl`](/controls/primitives/usercontrol) 搭配导航框架。
 :::
 
 ## 常用属性 {#common-properties}
 
 | 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| `Title` | `string` | The text displayed in the title bar. |
-| `Icon` | `WindowIcon` | The icon displayed in the title bar and taskbar. |
-| `SizeToContent` | `SizeToContent` | Controls whether the window auto-sizes to fit its content horizontally, vertically, or both. |
-| `WindowState` | `WindowState` | Gets or sets whether the window is `Normal`, `Minimized`, `Maximized`, or `FullScreen`. |
-| `CanResize` | `bool` | Gets or sets whether the user can resize the window. |
-| `ShowInTaskbar` | `bool` | Gets or sets whether the window appears in the operating-system taskbar. |
-| `Topmost` | `bool` | Gets or sets whether the window stays above all other windows. |
-| `WindowDecorations` | `WindowDecorations` | Controls the window chrome (title bar and borders). Set to `None` for a borderless window. |
-| `ExtendClientAreaToDecorationsHint` | `bool` | When `true`, your content extends into the title bar area, allowing custom chrome. |
+| `Title` | `string` | 标题栏中显示的文字。 |
+| `Icon` | `WindowIcon` | 标题栏和任务栏中显示的图标。 |
+| `SizeToContent` | `SizeToContent` | 控制窗口是否自动调整大小以适应内容：横向、纵向，或两者皆是。 |
+| `WindowState` | `WindowState` | 获取或设置窗口处于 `Normal`、`Minimized`、`Maximized` 还是 `FullScreen` 状态。 |
+| `CanResize` | `bool` | 获取或设置用户能否调整窗口大小。 |
+| `ShowInTaskbar` | `bool` | 获取或设置窗口是否出现在操作系统任务栏中。 |
+| `Topmost` | `bool` | 获取或设置窗口是否始终置于其他窗口之上。 |
+| `WindowDecorations` | `WindowDecorations` | 控制窗口外框（标题栏与边框）。设为 `None` 可得到无边框窗口。 |
+| `ExtendClientAreaToDecorationsHint` | `bool` | 为 `true` 时，内容会延伸进标题栏区域，从而可以自定义窗口外框。 |
 
-## Show, hide, and close a window
+## 显示、隐藏与关闭窗口 {#show-hide-and-close-a-window}
 
-You can show a window by calling the `Show` method:
+调用 `Show` 方法即可显示窗口：
 
 ```csharp
 var window = new MyWindow();
 window.Show();
 ```
 
-You can close a window by calling `Close`. This has the same effect as when a user clicks the window's close button:
+调用 `Close` 即可关闭窗口，效果与用户点击窗口的关闭按钮相同：
 
 ```csharp
 window.Close();
 ```
 
 :::warning
-Once a window has been closed, it cannot be shown again. Calling `Show` on a closed window will throw an exception. If you need to show the same window again later, call `Hide` instead of `Close`.
+窗口一旦关闭就无法再次显示，对已关闭的窗口调用 `Show` 会抛出异常。如果之后还要再显示同一个窗口，请用 `Hide` 而不是 `Close`。
 :::
 
 ```csharp
@@ -53,11 +53,11 @@ window.Hide();
 window.Show();
 ```
 
-See also [Prevent a window from closing](#prevent-a-window-from-closing).
+另请参阅[阻止窗口关闭](#prevent-a-window-from-closing)。
 
-## Show a window as a dialog
+## 以对话框方式显示窗口 {#show-a-window-as-a-dialog}
 
-You can show a window as a modal dialog by calling `ShowDialog`. This method requires you to pass an owner window so the system knows which window the dialog belongs to:
+调用 `ShowDialog` 可以把窗口显示为模态对话框。该方法要求传入一个所有者窗口，好让系统知道对话框归属于哪个窗口：
 
 ```csharp
 // "this" is the current Window instance.
@@ -68,16 +68,16 @@ var dialog = new MyWindow();
 dialog.ShowDialog(ownerWindow);
 ```
 
-`ShowDialog` returns a `Task`, so you can `await` it to wait until the dialog is closed:
+`ShowDialog` 返回一个 `Task`，因此可以 `await` 它，直到对话框关闭：
 
 ```csharp
 var dialog = new MyWindow();
 await dialog.ShowDialog(ownerWindow);
 ```
 
-### Return a result from a dialog
+### 从对话框返回结果 {#return-a-result-from-a-dialog}
 
-Your dialog can return a result by passing a value to the `Close` method. The caller reads the result through the generic `ShowDialog<T>` overload:
+给 `Close` 方法传入一个值，对话框就能返回结果；调用方则通过泛型的 `ShowDialog<T>` 重载读取它：
 
 ```csharp
 public class MyDialog : Window
@@ -101,9 +101,9 @@ var dialog = new MyDialog();
 var result = await dialog.ShowDialog<string>(ownerWindow);
 ```
 
-## Prevent a window from closing
+## 阻止窗口关闭 {#prevent-a-window-from-closing}
 
-You can prevent a window from closing by handling the `Closing` event and setting `e.Cancel = true`:
+处理 `Closing` 事件并设置 `e.Cancel = true`，即可阻止窗口关闭：
 
 ```csharp
 window.Closing += (s, e) =>
@@ -112,7 +112,7 @@ window.Closing += (s, e) =>
 };
 ```
 
-A common pattern is to hide the window instead of closing it so you can show it again later:
+一种常见做法是把窗口隐藏而不是关闭，这样之后还能再把它显示出来：
 
 ```csharp
 window.Closing += (s, e) =>
@@ -122,19 +122,19 @@ window.Closing += (s, e) =>
 };
 ```
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
-- **Startup window.** Your application's main window is typically set in `App.axaml.cs` by assigning `MainWindow` on the `IClassicDesktopStyleApplicationLifetime`. See [Main window](/docs/fundamentals/main-window) for details.
-- **Multiple windows.** You can open as many windows as you need by creating new instances and calling `Show`. Each window runs independently within the same application.
-- **Positioning.** Use the `Position` property (of type `PixelPoint`) to set the window's screen coordinates, or set `WindowStartupLocation` to `CenterScreen` or `CenterOwner`.
-- **Closing behavior.** When the last window closes, your application exits by default. You can change this by setting `ShutdownMode` on the application lifetime.
+- **启动窗口。** 应用的主窗口通常在 `App.axaml.cs` 中设定：在 `IClassicDesktopStyleApplicationLifetime` 上给 `MainWindow` 赋值。详见[主窗口](/docs/fundamentals/main-window)。
+- **多窗口。** 想开几个窗口就开几个：新建实例并调用 `Show` 即可。各个窗口在同一个应用内独立运行。
+- **定位。** 用 `Position` 属性（类型为 `PixelPoint`）设置窗口的屏幕坐标，或把 `WindowStartupLocation` 设为 `CenterScreen` 或 `CenterOwner`。
+- **关闭行为。** 最后一个窗口关闭时，应用默认随之退出。可以在应用生存期上设置 `ShutdownMode` 来改变这一行为。
 
 ## 另请参阅 {#see-also}
 
 - [主窗口](/docs/fundamentals/main-window)
-- [Window management](/docs/app-development/window-management)
-- [How to: Work with windows](/docs/how-to/window-how-to)
+- [窗口管理](/docs/app-development/window-management)
+- [操作指南：使用窗口](/docs/how-to/window-how-to)
 - [`ContentControl`](/controls/data-display/contentcontrol)
 - [`UserControl`](/controls/primitives/usercontrol)
-- [`Window` source code (GitHub)](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Window.cs)
+- [`Window` 源码（GitHub）](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Window.cs)
 - [`Window` API 参考](/api/avalonia/controls/window)

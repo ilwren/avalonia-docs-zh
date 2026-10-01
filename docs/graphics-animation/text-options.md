@@ -9,7 +9,7 @@ Avalonia provides fine-grained control over how text is rendered through the `Te
 
 ## 属性 {#properties}
 
-| Attached property | 类型 | Default | 说明 |
+| Attached property | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `TextOptions.TextRenderingMode` | `TextRenderingMode` | `Auto` | Controls whether text uses anti-aliasing, ClearType/subpixel rendering, or aliased rendering. |
 | `TextOptions.TextHintingMode` | `TextHintingMode` | `Full` | Controls how font hinting is applied. Hinting adjusts glyph outlines to align with the pixel grid for sharper text at small sizes. |

@@ -17,7 +17,7 @@ A donut chart is a variation of the [pie chart](/controls/data-display/charts/ci
 
 <Image light={chartsPieDonut} maxWidth={400} position="center" cornerRadius="true" alt="Donut chart with a blank center hole showing proportional segments of revenue distribution by source." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Proportional comparison**: Similar to a pie chart, but with more room for labels or totals in the center.
 - **Summary views**: Where the central space can be used to display the total sum or a key metric.
 - **Minimalist dashboards**: Highly effective for simple part-to-whole visualizations with few categories.
@@ -47,7 +47,7 @@ There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFa
 
 ### PieChart
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `InnerRadiusFactor` | The size of the center hole, from `0.0` to `1.0`. | `0.0` |
 | `Title` | Chart title displayed above the donut. | `null` |
@@ -55,7 +55,7 @@ There is no specific `DonutChart` control. Use `PieChart` and set `InnerRadiusFa
 
 ### PieSeries
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data slices. | `null` |
 | `LabelPath` | Path to the text to display on or near slices. | `null` |

@@ -17,7 +17,7 @@ Waffle charts (square pie charts) visualize percentages or proportions using a g
 
 <Image light={chartsAnalyticsWaffle} maxWidth={400} position="center" cornerRadius="true" alt="Waffle chart showing a 10x10 grid of squares where filled squares represent a percentage of the total." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Goal completion**: Visualizing how close a project is to its 100% target.
 - **Demographic proportions**: Showing the distribution of different groups in a population.
 - **Project tracking**: Displaying the percentage of completed tasks in a sprint.
@@ -34,7 +34,7 @@ Waffle charts (square pie charts) visualize percentages or proportions using a g
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `0` |
 | `MaxValue` | The maximum value for percentage calculation. | `100` |

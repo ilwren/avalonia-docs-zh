@@ -63,7 +63,7 @@ Having `AnimationDuration` and `Easing` allows developer to create a transition 
 
 ## Platform compatibility
 
-| Feature        | Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        | Windows | macOS | Linux | Browser | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|
 | `State` | ✓ | ✗ | ✗ | ✓* | ✓ | ✓ |
 | `OccludedRect` | ✓ | ✗ | ✗ | ✓*  | ✓ | ✓ |

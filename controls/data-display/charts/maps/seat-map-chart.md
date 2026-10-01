@@ -13,7 +13,7 @@ tags:
 
 The ShapeMap control can handle non-geographic coordinate systems, making it perfect for custom layouts like aircraft seating, floor plans, or theater arrangements.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Seat reservations**: Interactive seating plans for transportation or venues.
 - **Facility management**: Visualizing data on top of a building floor plan.
 - **Interactive UI**: Creating clickable, data-driven custom shape layouts.
@@ -60,7 +60,7 @@ public ObservableCollection<SeatInfo> SelectedSeats { get; } = new();
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `GeoJson` | Custom GeoJSON representing the layout. | `null` |
 | `RegionPath` | Property used to match data to shapes. | `null` |

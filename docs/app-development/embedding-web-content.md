@@ -27,7 +27,7 @@ Add the WebView package to your project:
 dotnet add package Avalonia.Controls.WebView
 ```
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 ### NativeWebView
 

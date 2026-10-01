@@ -17,7 +17,7 @@ Pictorial bar charts use recognizable icons or symbols instead of plain bars. Th
 
 <Image light={chartsCartesianPictorial} maxWidth={400} position="center" cornerRadius="true" alt="Pictorial bar chart using repeated icon symbols instead of plain bars to represent category values." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Infographics**: Creating high-engagement, thematic reports.
 - **Demographic reports**: Using gender or professional icons to represent counts.
 - **Public data presentation**: Making dry statistics more accessible through familiar symbols.
@@ -78,7 +78,7 @@ private const string AirplaneIcon = "M21,16v-2l-8-5V3.5C13,2.67,12.33,2,11.5,2S1
 
 ## Common properties (PictorialBarSeries)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Geometry` | The SVG/XAML path data for the icon. | `null` |
 | `RenderMode` | `Stretch`, `Clip`, or `Repeat`. | `Stretch` |

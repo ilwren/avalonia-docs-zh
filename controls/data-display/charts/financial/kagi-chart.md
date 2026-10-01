@@ -17,7 +17,7 @@ Kagi charts are time-independent charts that track price movements using vertica
 
 <Image light={chartsFinancialKagi} maxWidth={400} position="center" cornerRadius="true" alt="Kagi chart with thick and thin vertical lines changing direction only when price reverses by a set amount." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Pure price action**: Focusing on price changes regardless of time or volume.
 - **Breakout identification**: Using the "Yang" (thick) and "Yin" (thin) lines to spot reversals.
 - **Following trends**: Filtering out small fluctuations that don't meet the reversal threshold.
@@ -55,7 +55,7 @@ private static IEnumerable<KagiPoint> CreateKagiData()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of raw price points. | `null` |
 | `ValuePath` | Property representing the price. | `null` |

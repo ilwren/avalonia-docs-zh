@@ -9,7 +9,7 @@ doc-type: reference
 
 XPF implements the WPF clipboard API (`System.Windows.Clipboard`) across all platforms. There are some differences from WPF's native Windows implementation that you should be aware of.
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 Standard WPF clipboard operations work in XPF. You can copy and retrieve text using `Clipboard.SetText` and `Clipboard.GetText`, or work with richer data through `DataObject`:
 
@@ -85,7 +85,7 @@ Alternatively, you can use [custom initialization](/xpf/configuration/customizin
 
 The following table summarizes clipboard feature support across platforms:
 
-| Feature | Windows | macOS | Linux |
+| 特性 | Windows | macOS | Linux |
 |---|---|---|---|
 | Text | Supported | Supported | Supported |
 | Bitmap | Supported (1.6.0+) | Supported (1.6.0+) | Supported (1.6.0+) |

@@ -15,9 +15,9 @@ Radio buttons that share the same `GroupName` value form a mutually exclusive gr
 
 If you do not set `GroupName`, Avalonia groups radio buttons by their parent container. All `RadioButton` controls within the same parent panel behave as a single group. When you need independent groups inside the same parent, assign a distinct `GroupName` string to each group.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 | 属性 | 说明 |
 | ----------- | ----------- |
@@ -56,7 +56,7 @@ This example shows two groups of radio buttons working independently:
 
 </XamlPreview>
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 You can bind `IsChecked` to a Boolean property in your view model. This example uses a simple Boolean for each option:
 

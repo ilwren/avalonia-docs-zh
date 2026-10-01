@@ -26,7 +26,7 @@ When you set both `Rows` and `Columns`, the grid creates exactly that many cells
 
 Each cell is the same width and the same height. The cell size is determined by dividing the total available space (minus spacing) equally among the cells in each direction. Children are stretched to fill their cell by default, but you can control this with `HorizontalAlignment` and `VerticalAlignment` on the individual child controls.
 
-## Basic example
+## 基本示例 {#basic-example}
 
 The following example creates a single-row grid with three equally sized colored rectangles.
 

@@ -13,7 +13,7 @@ tags:
 
 Variance charts display bars extending above and below a baseline value, using distinct colors for positive and negative deviations. They show where values exceed or fall short of a target or reference point.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Budget analysis**: Showing actual vs. planned spending where overruns and savings are color-coded.
 - **Performance tracking**: Visualizing KPI deviations from targets across categories.
 - **Profit and loss**: Displaying gains and losses relative to a break-even point.
@@ -59,7 +59,7 @@ public ObservableCollection<ProfitItem> ProfitData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

@@ -14,7 +14,7 @@ None of these solutions are specific to Avalonia, and they can be used with any 
 .NET 6 and newer provide a set of APIs to get operating system in runtime - [OperatingSystem](https://learn.microsoft.com/en-us/dotnet/api/system.operatingsystem).
 
 Commonly used static methods of this class are:
-| Method | 说明 |
+| 方法 | 说明 |
 | --- | --- |
 | IsWindows()	 | Indicates whether the current application is running on Windows. |
 | IsLinux() |	Indicates whether the current application is running on Linux. |

@@ -11,7 +11,7 @@ Transitions in Avalonia are also heavily inspired by CSS Animations. They listen
 Unlike [keyframe animations](/docs/graphics-animation/keyframe-animations), transitions do not pause on hidden controls.
 :::
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui">

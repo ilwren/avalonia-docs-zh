@@ -13,7 +13,7 @@ tags:
 
 Carpet plots visualize how two independent variables relate to a third value by drawing a distorted grid of intersecting isolines.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Engineering trade-offs**: Compare two design inputs against an outcome surface.
 - **Performance maps**: Visualize operating regions for efficiency, pressure, or temperature.
@@ -48,7 +48,7 @@ public ObservableCollection<CarpetPoint> CarpetData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of measurement points. | `null` |
 | `AAxisPath` | Path to the first independent variable. | `null` |

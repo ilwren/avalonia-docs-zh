@@ -62,7 +62,7 @@ To disable editing altogether rather than hide tools, use `IsReadOnly` or `Allow
 
 Selecting text shows a context menu with the markup tools. The same operations are available from code and apply to the current selection. Each returns the new annotation's index on the page, or `-1` on failure. Colours are `PdfAnnotationColor` values with `R`, `G`, `B` and `A` byte components.
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `HighlightSelectionAsync(PdfAnnotationColor? color = null)` | Highlights the selection. |
 | `UnderlineSelectionAsync(PdfAnnotationColor? color = null)` | Underlines the selection. |
@@ -79,7 +79,7 @@ await Viewer.UnderlineSelectionAsync(new PdfAnnotationColor(0, 0, 255, 255));
 
 ## Sticky notes
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `AddStickyNoteAsync(int pageIndex, double pdfX, double pdfY, string text, PdfAnnotationColor? color = null)` | Adds a sticky note at a PDF-space position. Returns the annotation index, or `-1`. |
 | `UpdateStickyNoteAsync(int pageIndex, int annotIndex, string? text, PdfAnnotationColor? color)` | Changes a note's text or colour. |
@@ -94,7 +94,7 @@ await Viewer.UpdateStickyNoteAsync(0, index, "Checked", null);
 
 The **Stamp** dropdown offers a list of labels such as **Approved**, **Draft** and **Received**, a style selector and an **Include date** toggle. Stamps are saved as standard `/Stamp` annotations, so other readers render and move them.
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `StampLabels` | `IReadOnlyList<string>` | `DefaultStampLabels` | Labels offered by the dropdown. Drawn in capitals. |
 | `StampColor` | `PdfAnnotationColor?` | `null` | Colour for every stamp. `null` picks one by label: green for the built-in approval labels (Approved, Completed, Paid, Received, Reviewed, Final, For Public Release), blue for the built-in status labels (Draft, For Comment, As Is, Experimental, Departmental, Copy), and red for everything else, including your own labels. |
@@ -123,7 +123,7 @@ Non-Latin text in text boxes, shapes and stamps (Cyrillic, Greek, CJK and so on)
 
 ### Default colours and typography
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `HighlightColor` | `PdfAnnotationColor` | Yellow, 50% alpha | Highlight colour. |
 | `UnderlineColor` | `PdfAnnotationColor` | Green | Underline colour. |

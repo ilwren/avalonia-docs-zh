@@ -17,7 +17,7 @@ Mosaic charts (Marimekko) visualize relationships between categories using area.
 
 <Image light={chartsAnalyticsMosaic} maxWidth={400} position="center" cornerRadius="true" alt="Mosaic chart with rectangular tiles scaled by both width and height to show proportions across two categorical variables." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Market segmentation**: Showing sales by region (width) and by product category (height).
 - **Resource expenditure**: Visualizing budget allocation across departments and cost types.
 - **Multi-factor analysis**: Understanding how two different qualitative variables interact.
@@ -55,7 +55,7 @@ public ObservableCollection<MosaicItem> MosaicData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of data segments. | `null` |
 | `GroupPath` | Primary category (determines width). | `null` |

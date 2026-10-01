@@ -20,9 +20,9 @@ import PipsPagerPillTemplateScreenshot from '/img/controls/pipspager/pipspager-p
 
 ## Useful Properties
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| 属性 | 类型 | Default | 说明 |
+| 属性 | 类型 | 默认值 | 说明 |
 | -------- | ---- | ------- | ----------- |
 | `NumberOfPages` | `int` | `0` | Total number of pages represented by the pips. |
 | `SelectedPageIndex` | `int` | `0` | Zero-based index of the currently selected page. Supports two-way binding. Clamped to `[0, NumberOfPages - 1]`. |
@@ -46,7 +46,7 @@ You will probably use these properties most often:
 
 | 事件 | Args type | 说明 |
 | ----- | --------- | ----------- |
-| `SelectedIndexChanged` | `PipsPagerSelectedIndexChangedEventArgs` | Raised when the selected page changes. Provides `OldIndex` and `NewIndex`. |
+| `SelectedIndexChanged` | `PipsPagerSelectedIndexChangedEventArgs` | 选中页发生变化时引发，提供 `OldIndex` 和 `NewIndex`。 |
 
 ## Keyboard Navigation
 
@@ -66,7 +66,7 @@ Override these resource keys on the `PipsPager` or an ancestor to customize pip 
 | `PipsPagerSelectionIndicatorForegroundPointerOver` | Pip color on pointer hover. |
 | `PipsPagerSelectionIndicatorForegroundPressed` | Pip color when pressed. |
 
-## Examples
+## 示例 {#examples}
 
 ### Basic PipsPager
 
@@ -332,5 +332,5 @@ pager.IsNextButtonVisible = false;
 
 ## 另请参阅 {#see-also}
 
-- [API reference](/api/avalonia/controls/pipspager)
-- [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PipsPager/PipsPager.cs)
+- [API 参考](/api/avalonia/controls/pipspager)
+- [源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PipsPager/PipsPager.cs)

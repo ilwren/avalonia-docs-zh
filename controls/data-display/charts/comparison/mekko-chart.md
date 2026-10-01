@@ -13,7 +13,7 @@ tags:
 
 Mekko charts, also called Marimekko charts, use variable column widths and stacked segment heights to compare market size and composition in one view.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Market structure**: Compare category share and internal segment mix at the same time.
 - **Portfolio composition**: Show total size and breakdown per group.
@@ -47,7 +47,7 @@ public ObservableCollection<MekkoColumn> MekkoData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of Mekko columns. | `null` |
 | `CategoryPath` | Path to the column label. | `null` |

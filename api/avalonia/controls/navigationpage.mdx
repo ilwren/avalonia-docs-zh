@@ -113,7 +113,7 @@ public NavigationPage()
 | [GetIsTemplateFocusTarget](primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [GetTopCommandBar](#uid-96292aa83f) | Gets the top command bar assigned to the specified page. |
 | [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [InsertPage](#uid-0f88a630db) | Inserts a page into the stack before the specified page. |
+| [InsertPage](#uid-0f88a630db) | 把一个页面插入到指定页面之前。 |
 | [InvalidateArrange](../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [InvalidateVisual](../visual.mdx#uid-1cd22a7496) | 使视觉元素失效并排入重绘队列。继承自 [Visual](../visual.mdx)。 |
@@ -373,7 +373,7 @@ public Avalonia.Controls.Control GetTopCommandBar(Avalonia.Controls.Page page)
 
 ### InsertPage 方法 {#insertpage-method}
 
-Inserts a page into the stack before the specified page.
+把一个页面插入到指定页面之前。
 
 ```csharp
 public void InsertPage(Avalonia.Controls.Page page, Avalonia.Controls.Page before)

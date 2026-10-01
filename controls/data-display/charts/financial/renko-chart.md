@@ -17,7 +17,7 @@ Renko charts are made of "bricks" that represent a fixed price movement. A new b
 
 <Image light={chartsFinancialRenko} maxWidth={400} position="center" cornerRadius="true" alt="Renko chart displaying fixed-size green and red bricks representing price movements above a set threshold." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Support and resistance**: Identifying clear levels where bricks frequently reverse.
 - **Trend confirmation**: Spotting persistent bullish/bearish brick sequences.
 - **Clean visualization**: Simplifying complex, noisy price data into uniform blocks.
@@ -45,7 +45,7 @@ public ObservableCollection<RenkoPoint> RenkoData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of price data. | `null` |
 | `BrickSize` | The price movement required for a new brick. | `10.0` |

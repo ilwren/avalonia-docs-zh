@@ -13,7 +13,7 @@ tags:
 
 Spline area charts display a filled area under a smooth interpolated curve. They combine the aesthetic smoothness of spline curves with the volume emphasis of area fills, making trends visually prominent.
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Smooth trends**: Displaying continuous data where smooth interpolation better represents the underlying trend.
 - **Volume emphasis**: Highlighting the magnitude of values with the filled area beneath the curve.
 - **Time series**: Visualizing data that changes gradually over time, such as revenue or traffic.
@@ -48,7 +48,7 @@ public ObservableCollection<int> SplineAreaSeriesData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Title` | The name of the series shown in the legend. | `null` |
 | `ItemsSource` | The collection of data items to display. | `null` |

@@ -17,7 +17,7 @@ Organization charts represent the structure of an organization, clarifying repor
 
 <Image light={chartsHierarchicalOrganization} maxWidth={400} position="center" cornerRadius="true" alt="Organization chart with a top-level CEO node branching down to department heads showing reporting relationships." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Company directory**: Visualizing the reporting structure of a business.
 - **Project hierarchy**: Mapping out product owners, developers, and stakeholders.
 - **Family trees**: Displaying genealogical relationships and lineages.
@@ -54,7 +54,7 @@ public ObservableCollection<OrgNode> OrgChartData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical data source (root nodes). | `null` |
 | `LabelPath` | Property name for the node labels. | `null` |

@@ -17,7 +17,7 @@ Histograms group continuous data into "bins" and show the frequency of data poin
 
 <Image light={chartsStatisticalHistogram} maxWidth={400} position="center" cornerRadius="true" alt="Histogram chart grouping continuous data into bins showing the frequency distribution of values." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Age distribution**: Visualizing how many users fall into specific age ranges.
 - **Performance logs**: Analyzing the frequency of response times in a system.
 - **Quality assurance**: Evaluating the spread of product dimensions or weights.
@@ -56,7 +56,7 @@ private static ObservableCollection<HistogramItem> CreateScores()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The collection of raw data points. | `null` |
 | `ValuePath` | Path to the numeric property to bin. | `null` |

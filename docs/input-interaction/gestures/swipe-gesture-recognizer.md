@@ -76,9 +76,9 @@ e.Handled = true;
 
 ## 属性 {#properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| 属性 | 类型 | 说明 | Default |
+| 属性 | 类型 | 说明 | 默认值 |
 |---|---|---|---|
 | `CanHorizontallySwipe` | `bool` | Enables tracking of horizontal (left/right) swipes. | `false` |
 | `CanVerticallySwipe` | `bool` | Enables tracking of vertical (up/down) swipes. | `false` |
@@ -86,7 +86,7 @@ You will probably use these properties most often:
 | `IsMouseEnabled` | `bool` | When `true`, mouse pointer events trigger swipe gestures in addition to touch and pen. | `false` |
 | `IsEnabled` | `bool` | Enables or disables the recognizer entirely. | `true`. |
 
-## Examples
+## 示例 {#examples}
 
 ### Detecting horizontal swipes to navigate pages
 
@@ -129,8 +129,8 @@ By default, only touch and pen input trigger swipe gestures. Enable mouse suppor
 
 ## 另请参阅 {#see-also}
 
-- [API reference](/api/avalonia/input/gesturerecognizers/swipegesturerecognizer)
-- [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/SwipeGestureRecognizer.cs)
+- [API 参考](/api/avalonia/input/gesturerecognizers/swipegesturerecognizer)
+- [源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/SwipeGestureRecognizer.cs)
 - [Gestures](/docs/input-interaction/gestures): Overview of gesture recognizers and built-in gesture events.
 - [Scroll](/docs/input-interaction/gestures/scroll-gesture-recognizer): Scroll gesture for continuous panning with inertia.
 - [Pull](/docs/input-interaction/gestures/pull-gesture-recognizer): Pull gesture for pull-to-refresh interactions.

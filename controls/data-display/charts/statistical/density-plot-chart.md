@@ -13,7 +13,7 @@ tags:
 
 Density plots smooth a numeric distribution into a continuous curve so peaks and spread are easier to see than in raw point lists.
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Distribution shape**: Inspect concentration, skew, and multiple peaks.
 - **Smoother histograms**: Show the same story as a histogram with a continuous curve.
@@ -47,7 +47,7 @@ public ObservableCollection<Measurement> DensityData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | Collection of numeric samples. | `null` |
 | `ValuePath` | Path to the numeric sample value. | `null` |

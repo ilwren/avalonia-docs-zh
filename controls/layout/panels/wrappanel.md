@@ -11,7 +11,7 @@ When you set the `Orientation` property to `Vertical`, the arrangement flows fro
 
 `WrapPanel` is useful when you need a flexible, flowing layout where child elements automatically reflow as the available space changes. Common use cases include tag lists, thumbnail galleries, and button toolbars.
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
 | 属性 | 说明 |
 |---|---|
@@ -50,7 +50,7 @@ When you use `ItemWidth` or `ItemHeight`, child controls may be smaller than the
 </WrapPanel>
 ```
 
-## Examples
+## 示例 {#examples}
 
 ### Horizontal arrangement (default)
 

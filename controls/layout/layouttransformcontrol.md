@@ -26,7 +26,7 @@ This means a rotated control will correctly push adjacent controls aside, and a 
 | 性能 | Re-measures and re-arranges on transform changes | Lightweight, GPU-accelerated |
 | Use when | Surrounding content must respect the transformed size | Animating or visually adjusting without layout impact |
 
-## Examples
+## 示例 {#examples}
 
 ### Rotating a control
 
@@ -97,7 +97,7 @@ You can bind the rotation angle to a slider for interactive control:
 </StackPanel>
 ```
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
 - **Performance**: Because `LayoutTransformControl` triggers a full measure and arrange pass whenever the transform changes, avoid animating its `LayoutTransform` at high frequency. If you need smooth, frame-rate animations (such as a spinning icon), use `RenderTransform` instead.
 - **Nesting**: You can nest a `LayoutTransformControl` inside another `LayoutTransformControl`. Each one measures its child independently, so transforms compose outward through the layout tree.

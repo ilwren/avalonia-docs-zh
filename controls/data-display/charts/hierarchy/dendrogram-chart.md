@@ -17,7 +17,7 @@ Dendrograms are tree diagrams frequently used to illustrate the arrangement of t
 
 <Image light={chartsHierarchicalDendrogram} maxWidth={400} position="center" cornerRadius="true" alt="Dendrogram tree diagram showing hierarchical clustering with branches merging from leaf nodes toward the root." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Cluster analysis**: Visualizing the results of statistical clustering algorithms.
 - **Phylogenetic trees**: Showing evolutionary relationships between different species.
 - **Structural merges**: Representing data that stems from many parts but converges into a few groups.
@@ -56,7 +56,7 @@ public ObservableCollection<TreeNode> DendrogramData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The hierarchical cluster data. | `null` |
 | `LabelPath` | Property for the leaf or node names. | `null` |

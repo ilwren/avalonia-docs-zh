@@ -37,7 +37,7 @@ When you set the `Child` property, `Decorator` automatically adds the child to b
 
 Because `Decorator` accepts exactly one child, it is lighter weight than panel-based containers like `StackPanel` or `Grid`. Use it when your control conceptually wraps or augments a single piece of content rather than composing multiple children.
 
-## Examples
+## 示例 {#examples}
 
 ### Creating a custom decorator
 

@@ -49,7 +49,7 @@ For multi-project solutions, you can store your licence key in an [environment v
 
 For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 ### Using VirtualKeyboardScope (Recommended)
 

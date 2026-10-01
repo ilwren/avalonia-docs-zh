@@ -17,7 +17,7 @@ Trendlines are used in Cartesian charts to show the general direction or pattern
 
 <Image light={chartsFeaturesTrendlines} maxWidth={400} position="center" cornerRadius="true" alt="Line chart with an overlaid trendline showing a line of best fit." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
 - **Sales forecasting**: Projecting future sales based on historical trends.
 - **Data smoothing**: Identifying patterns in volatile stock or sensor data.
@@ -70,7 +70,7 @@ public ObservableCollection<ChartDataPoint> LinearData { get; } = new()
 
 ## Common properties (`Trendline`)
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Type` | Data type the trendline should fit: `Linear`, `Exponential`, `Logarithmic`, `Power`, `Polynomial`, or `MovingAverage`. | `Linear` |
 | `Stroke` | Brush used to draw the trendline. | `Gray` |
@@ -138,7 +138,7 @@ public ObservableCollection<ChartDataPoint> StandaloneTrendlineData { get; } = n
 
 ### `ChartTrendlineSeries` 的属性 {#charttrendlineseries-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `TrendlineType` | The regression type: `Linear`, `Polynomial`, `Exponential`, `Logarithmic`, `Power`, or `MovingAverage`. | `Linear` |
 | `PolynomialOrder` | The polynomial degree when `TrendlineType` is `Polynomial`. | `2` |
@@ -188,7 +188,7 @@ public ObservableCollection<PricePoint> PriceData { get; } = new()
 
 ### `MovingAverageSeries` 的属性 {#movingaverageseries-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `MovingAverageType` | The calculation type: `Simple`, `Exponential`, `Weighted`, or `Triangular`. | `Simple` |
 | `Period` | The number of data points used in the moving average window. | `14` |

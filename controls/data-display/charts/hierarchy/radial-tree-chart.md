@@ -17,7 +17,7 @@ Radial tree charts represent hierarchical data where the root is at the center a
 
 <Image light={chartsHierarchicalRadialtree} maxWidth={400} position="center" cornerRadius="true" alt="Radial tree chart with a root node at the center and child nodes radiating outward in concentric rings." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Directory visualizers**: Showing many levels of folders in a compact circular form.
 - **Genomic maps**: Visualizing relationships between many biological entities.
 - **Network topology**: Mapping devices in a network radiating from a central hub.
@@ -59,7 +59,7 @@ public ObservableCollection<TreeNode> RadialTreeData { get; } = new()
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `ItemsSource` | The central root nodes. | `null` |
 | `ValuePath` | Path to the value associated with each node. | `null` |

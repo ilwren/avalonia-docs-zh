@@ -17,7 +17,7 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 
 <Image light={chartsGaugesLinear} maxWidth={400} position="center" cornerRadius="true" alt="Linear gauge chart with a horizontal progress bar and scale ticks showing the current value along a numeric range." />
 
-## When to use
+## 适用场景 {#when-to-use}
 - **Performance bars**: Comparing multiple metrics in a condensed dashboard.
 - **Volume indicators**: Showing storage levels, audio levels, or tank capacity.
 - **Progress tracking**: Visualizing a sequence of targets in a straight line.
@@ -62,7 +62,7 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 
 ## 常用属性 {#common-properties}
 
-| 属性 | 说明 | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `Value` | The current value to display. | `50.0` |
 | `MinValue` | Minimum value of the scale. | `0.0` |

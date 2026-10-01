@@ -247,7 +247,7 @@ The `Data` property of `Path` accepts SVG-style path data as a string. This comp
 
 Uppercase commands use absolute coordinates, lowercase use relative coordinates.
 
-### Examples
+### 示例 {#examples}
 
 ```xml
 <!-- Triangle -->
@@ -290,7 +290,7 @@ using (var ctx = geometry.Open())
 
 ### StreamGeometryContext methods
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `BeginFigure(Point, bool isFilled = true)` | Starts a new figure at the specified point. Set `isFilled` to `false` for an open, unfilled path. |
 | `LineTo(Point, bool isStroked = true)` | Draws a straight line to a point. |
@@ -316,7 +316,7 @@ using (var ctx = geometry.Open())
 
 All `Geometry` objects expose methods for hit testing and transformation:
 
-| Method | 说明 |
+| 方法 | 说明 |
 |---|---|
 | `FillContains(Point)` | Returns `true` if the point is inside the filled area of the geometry. |
 | `StrokeContains(Pen, Point)` | Returns `true` if the point lies on the stroke of the geometry using the specified pen. |

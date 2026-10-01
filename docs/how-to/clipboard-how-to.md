@@ -179,7 +179,7 @@ On macOS, Avalonia automatically maps `Cmd+C`, `Cmd+V`, and `Cmd+X` when you spe
 
 The clipboard API is available on all Avalonia targets, but not every platform supports every data type. The table below summarizes current support:
 
-| Platform | Text | Images | Files | Custom formats |
+| 平台 | Text | Images | Files | Custom formats |
 |---|---|---|---|---|
 | Windows | Yes | Yes | Yes | Yes |
 | macOS | Yes | Yes | Yes | Yes |

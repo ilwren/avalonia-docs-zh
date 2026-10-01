@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
 :::
 
-## When to use
+## 适用场景 {#when-to-use}
 
 Use `RichTextEditor` to create an area where users can edit text content and perform common text operations, such as formatting, aligning, highlighting, or undo/redo.
 
@@ -63,7 +63,7 @@ For multi-project solutions, you can store your licence key in an [environment v
 
 For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 Use this setup to get started with a basic implementation of the rich text editor.
 
@@ -275,7 +275,7 @@ A document also owns two kinds of nested document, each a `FlowDocument` in its 
 
 These properties are used by the `RichTextEditor` component.
 
-| 属性 | 类型 | 说明 | Default |
+| 属性 | 类型 | 说明 | 默认值 |
 | --- | --- | --- | --- |
 | `AcceptsReturn` | `bool`| Determines whether the editor accepts return key input. | `true` |
 | `AcceptsTab` | `bool` | Determines whether the editor accepts tab key input. | `true` |
@@ -301,7 +301,7 @@ These properties are used by the `RichTextEditor` component.
 
 These properties are used by the `FlowDocument` component.
 
-| 属性 | 类型 | 说明 | Default |
+| 属性 | 类型 | 说明 | 默认值 |
 | --- | --- | --- | --- |
 | `Background` | `IBrush` | Color of the document's background, as an ARGB value. | `Null` |
 | `FontFamily` | `FontFamily ` | Font family for text in the document. | `Null` |
@@ -340,7 +340,7 @@ Block elements are used by `FlowDocument` to build the document model and organi
 
 ### 属性 {#properties}
 
-| 属性 | 类型 | 说明 | Default |
+| 属性 | 类型 | 说明 | 默认值 |
 | --- | --- | --- | --- |
 | `Background` | `IBrush` | Color of the block's background, as an ARGB value. | `Null` |
 | `BorderBrush`| `IBrush` | Color of the block's borders, as an ARGB value. | `Null` |

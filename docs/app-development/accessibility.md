@@ -236,7 +236,7 @@ public class RatingControlAutomationPeer : ControlAutomationPeer
 
 ### Key methods to override
 
-| Method | 用途 |
+| 方法 | 用途 |
 |---|---|
 | `GetAutomationControlTypeCore()` | The type of control (Button, TextBox, Slider, and similar) |
 | `GetNameCore()` | The accessible name announced by screen readers |
@@ -265,15 +265,15 @@ Use this checklist when reviewing your application:
 - Custom controls have appropriate automation peers
 - Decorative elements are excluded from the automation tree
 
-## Platform support
+## 平台支持 {#platform-support}
 
 Avalonia's accessibility support varies by platform:
 
-| Platform | Accessibility API | Status |
+| 平台 | Accessibility API | Status |
 |---|---|---|
-| Windows | UI Automation (UIA) | Full support |
-| macOS | NSAccessibility | Full support |
-| Linux | [AT-SPI2](/docs/platform-specific-guides/linux#accessibility) | Full support |
+| Windows | UI Automation (UIA) | 完整支持 |
+| macOS | NSAccessibility | 完整支持 |
+| Linux | [AT-SPI2](/docs/platform-specific-guides/linux#accessibility) | 完整支持 |
 | iOS | UIAccessibility | Supported |
 | Android | AccessibilityNodeInfo | Supported |
 | Browser (WASM) | ARIA attributes | Partial support |

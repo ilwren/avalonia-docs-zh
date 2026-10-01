@@ -400,7 +400,7 @@ Enable `ShowPageBounds` to render visual indicators at the page boundary. This i
 
 ### Viewer properties
 
-| 属性 | 类型 | 说明 | Default |
+| 属性 | 类型 | 说明 | 默认值 |
 |---|---|---|---|
 | `IsSelectionEnabled` | `bool` | Set to `False` to make the viewer a pure display control. The inner view stops being focusable, which matters for a viewer inside an items control. | `true` |
 | `IsCaretVisible` | `bool` | Shows an insertion caret without enabling editing. | `false` |
