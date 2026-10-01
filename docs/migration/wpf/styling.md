@@ -159,7 +159,7 @@ WPF uses `Trigger`, `DataTrigger`, and `EventTrigger` elements inside a style. A
 </Style>
 ```
 
-**Avalonia (pseudo-classes):**
+**Avalonia（伪类）：**
 
 ```xml
 <Style Selector="Button">
@@ -382,4 +382,4 @@ with:
 - [Pseudo-Classes](/docs/styling/pseudoclasses)
 - [Style Selectors](/docs/styling/style-selectors)
 - [Container queries](/docs/styling/container-queries): Size-based styling, replacing WPF DataTrigger patterns on ActualWidth/ActualHeight.
-- [Responsive layouts](/docs/layout/responsive-layouts): Building adaptive layouts with container queries and reflowing panels.
+- [响应式布局](/docs/layout/responsive-layouts)：用容器查询和自动重排面板搭出自适应布局。

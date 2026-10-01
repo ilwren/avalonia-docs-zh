@@ -83,7 +83,7 @@ See [Customizing Initialization](/xpf/configuration/customizing-initialization#c
 
 The Win32 API shim layer exists to enable compatibility with third-party WPF controls that call Win32 APIs internally. It is **not** a general-purpose Win32 emulation layer.
 
-Key points:
+要点：
 - Shims provide enough Win32 API surface to support common third-party WPF controls on non-Windows platforms
 - On Windows, enabling shims redirects calls to the shim implementations instead of native Win32
 - Not all Win32 APIs are available (see the [API reference](/xpf/third-party/winapi-reference))

@@ -225,4 +225,4 @@ Explore tutorials, sample apps, and quick guides to accelerate your Avalonia lea
 ## 另请参阅 {#see-also}
 
 - [Get Started](/docs/get-started/create-your-first-project): Create your first Avalonia application.
-- [Controls Reference](/controls): Full Avalonia controls documentation.
+- [控件参考](/controls)：Avalonia 控件的完整文档。

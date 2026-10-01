@@ -1,15 +1,15 @@
 ---
 id: data-templates
-title: Data templates
-description: Differences between WPF and Avalonia data templates, type matching, and template storage.
+title: 数据模板
+description: WPF 与 Avalonia 在数据模板、类型匹配和模板存放位置上的差异。
 doc-type: migration
 ---
 
-Data templates in Avalonia work similarly to WPF, allowing you to define the visual representation of data objects. The core concepts are the same, but there are key differences in where templates are stored, how type matching works, and what additional features are available.
+Avalonia 的数据模板与 WPF 相仿，都用来定义数据对象的视觉呈现。核心概念一致，但在模板存放在哪、类型如何匹配，以及额外提供了哪些能力上，有几处关键差异。
 
-## Template storage
+## 模板的存放位置 {#template-storage}
 
-In WPF, data templates are typically stored in a `ResourceDictionary`, either on a control, a window, or in `App.xaml`:
+在 WPF 中，数据模板通常放在 `ResourceDictionary` 里——可以挂在控件上、窗口上，或者放进 `App.xaml`：
 
 ```xml
 <!-- WPF -->
@@ -20,7 +20,7 @@ In WPF, data templates are typically stored in a `ResourceDictionary`, either on
 </Window.Resources>
 ```
 
-In Avalonia, data templates are not stored in resources. Instead, they are placed in a [`DataTemplates`](/api/avalonia/controls/templates/datatemplates) collection that exists on every `Control` and on `Application`:
+在 Avalonia 中，数据模板不放在资源里，而是放进 [`DataTemplates`](/api/avalonia/controls/templates/datatemplates) 集合——每个 `Control` 和 `Application` 上都有这么一个集合：
 
 ```xml
 <!-- Avalonia -->
@@ -33,16 +33,16 @@ In Avalonia, data templates are not stored in resources. Instead, they are place
 </Window>
 ```
 
-The template resolution walks up the visual tree, checking each control's `DataTemplates` collection, then falls back to `Application.DataTemplates`. This is analogous to WPF's resource lookup, but uses a dedicated collection rather than the general-purpose resource dictionary.
+模板解析会沿视觉树向上走，逐个查看各控件的 `DataTemplates` 集合，最后回退到 `Application.DataTemplates`。这与 WPF 的资源查找类似，只是用了一个专门的集合，而非通用的资源字典。
 
-## DataType matching
+## DataType 匹配 {#datatype-matching}
 
-Both frameworks support matching templates by `DataType`. However, Avalonia offers additional capabilities that WPF does not:
+两个框架都支持按 `DataType` 匹配模板，不过 Avalonia 还多出几分 WPF 没有的本事：
 
-- **Interface matching:** Avalonia can match a `DataType` against an interface. WPF only supports concrete types.
-- **Derived class matching:** Avalonia will match a template to derived classes of the specified `DataType`. WPF requires an exact type match.
+- **接口匹配：**Avalonia 可以让 `DataType` 匹配某个接口，而 WPF 只支持具体类型。
+- **派生类匹配：**Avalonia 会把模板匹配给指定 `DataType` 的派生类，而 WPF 要求类型完全一致。
 
-Because of these broader matching rules, the order of templates in a collection matters. Templates are evaluated in declaration order, so you should place more-specific templates before less-specific ones:
+正因为匹配规则更宽，集合中模板的先后顺序就变得要紧了。模板按声明顺序依次判定，所以越具体的模板越要往前放：
 
 ```xml
 <Window.DataTemplates>
@@ -59,11 +59,11 @@ Because of these broader matching rules, the order of templates in a collection 
 </Window.DataTemplates>
 ```
 
-Note that in WPF the `DataType` uses the `{x:Type}` markup extension, while in Avalonia you specify the type directly as a string.
+注意在 WPF 中 `DataType` 用的是 `{x:Type}` 标记扩展，而在 Avalonia 中你直接把类型写成字符串即可。
 
-## DataTemplateSelector replacement
+## DataTemplateSelector 的替代方案 {#datatemplateselector-replacement}
 
-In WPF, you can create a `DataTemplateSelector` subclass to choose a template based on custom logic:
+在 WPF 中，你可以写一个 `DataTemplateSelector` 的子类，按自定义逻辑挑选模板：
 
 ```csharp
 // WPF
@@ -79,7 +79,7 @@ public class MyTemplateSelector : DataTemplateSelector
 }
 ```
 
-Avalonia does not have `DataTemplateSelector`. Instead, you implement the `IDataTemplate` interface, which serves the same purpose:
+Avalonia 没有 `DataTemplateSelector`，取而代之的是实现 `IDataTemplate` 接口，用途完全一样：
 
 ```csharp
 // Avalonia
@@ -100,7 +100,7 @@ public class MyDataTemplate : IDataTemplate
 }
 ```
 
-You can then use your custom template directly in XAML:
+之后你就能在 XAML 中直接用上这个自定义模板：
 
 ```xml
 <Window.DataTemplates>
@@ -108,11 +108,11 @@ You can then use your custom template directly in XAML:
 </Window.DataTemplates>
 ```
 
-For a full working example, see the [IDataTemplate sample](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample).
+完整的可运行示例请见 [IDataTemplate 示例](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample)。
 
 ## TreeDataTemplate
 
-WPF's `HierarchicalDataTemplate` is called `TreeDataTemplate` in Avalonia. The two are functionally equivalent, differing only in name.
+WPF 的 `HierarchicalDataTemplate` 在 Avalonia 中叫 `TreeDataTemplate`。二者功能等价，只是名字不同。
 
 **WPF:**
 
@@ -142,11 +142,11 @@ WPF's `HierarchicalDataTemplate` is called `TreeDataTemplate` in Avalonia. The t
 </TreeView>
 ```
 
-Note that Avalonia places the template in `DataTemplates` rather than in `Resources`.
+注意 Avalonia 把模板放在 `DataTemplates` 里，而不是 `Resources` 中。
 
-## ItemTemplate and ContentTemplate
+## ItemTemplate 与 ContentTemplate {#itemtemplate-and-contenttemplate}
 
-The `ItemTemplate` property on `ItemsControl`, `ListBox`, and similar controls works the same way in both frameworks. You assign a `DataTemplate` to control how each item is rendered:
+`ItemsControl`、`ListBox` 等控件上的 `ItemTemplate` 属性，在两个框架中用法一致：赋一个 `DataTemplate` 即可控制每一项的渲染方式：
 
 ```xml
 <ListBox ItemsSource="{Binding Items}">
@@ -161,13 +161,13 @@ The `ItemTemplate` property on `ItemsControl`, `ListBox`, and similar controls w
 </ListBox>
 ```
 
-Similarly, `ContentTemplate` on `ContentControl` and `ContentPresenter` works as expected. If you do not set an explicit `ItemTemplate` or `ContentTemplate`, Avalonia will walk up the tree to find a matching template in a `DataTemplates` collection, as WPF would search through resources.
+同理，`ContentControl` 和 `ContentPresenter` 上的 `ContentTemplate` 也一如预期。若你没有显式设置 `ItemTemplate` 或 `ContentTemplate`，Avalonia 会沿树向上在各个 `DataTemplates` 集合中寻找匹配的模板，正如 WPF 会去资源里找一样。
 
-## x:DataType for compiled bindings
+## 用 x:DataType 启用编译绑定 {#xdatatype-for-compiled-bindings}
 
-Avalonia supports compiled bindings, which provide compile-time validation of binding paths and improved runtime performance. WPF has no equivalent feature.
+Avalonia 支持编译绑定：既能在编译期校验绑定路径，运行时性能也更好。WPF 没有与之对应的特性。
 
-To enable compiled bindings within a data template, set the `x:DataType` attribute to the type the template will receive:
+要在数据模板内启用编译绑定，请把 `x:DataType` 特性设为该模板将要接收的类型：
 
 ```xml
 <DataTemplate DataType="viewmodels:FooViewModel"
@@ -180,12 +180,12 @@ To enable compiled bindings within a data template, set the `x:DataType` attribu
 </DataTemplate>
 ```
 
-When `x:DataType` is set, the compiler checks that `Name` and `Description` actually exist on `FooViewModel`. Typos or incorrect property names will produce build errors instead of silently failing at runtime.
+设了 `x:DataType` 之后，编译器会检查 `Name` 和 `Description` 是否真的存在于 `FooViewModel` 上。拼错或写错属性名会直接报构建错误，而不是到运行时才悄无声息地失效。
 
-You can enable compiled bindings project-wide by adding `<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>` to your `.csproj` file, which makes `x:DataType` the default expectation for all bindings.
+在 `.csproj` 文件里加上 `<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>`，即可为整个项目启用编译绑定，这样所有绑定都默认按 `x:DataType` 来要求。
 
 ## 另请参阅 {#see-also}
 
-- [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates)
+- [数据模板入门](/docs/data-templates/introduction-to-data-templates)
 - [Data Template Collection](/docs/data-templates/data-template-collection)
 - [Compiled Bindings](/docs/data-binding/compiled-bindings)

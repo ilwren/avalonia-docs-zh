@@ -24,7 +24,7 @@ With the hot reload package, these edits are applied live to your running applic
 | Controls (files with `x:Class`) | Existing instances in the visual tree are rebuilt in place, keeping their positions where possible. |
 | Styles | Application-level and control-level styles are reapplied. Selector and setter changes take effect at once. |
 | Resource dictionaries | Merged dictionaries are reloaded and dependents are refreshed. |
-| Data templates | Templates are regenerated and controls bound to them are refreshed. |
+| 数据模板 | Templates are regenerated and controls bound to them are refreshed. |
 | `{StaticResource}` references | Rewritten to `{DynamicResource}` during hot reload, so resource edits propagate without a restart. |
 Some common uses of hot reload are:
 

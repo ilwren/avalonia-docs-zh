@@ -1,27 +1,27 @@
 ---
 id: properties
 title: 属性
-description: Migrate WPF DependencyProperty usage to Avalonia StyledProperty and DirectProperty types.
+description: 把 WPF 的 DependencyProperty 用法迁移到 Avalonia 的 StyledProperty 与 DirectProperty。
 doc-type: migration
 ---
 
-Avalonia's property system is conceptually similar to WPF's `DependencyProperty` system but uses a cleaner, strongly-typed generic API. If you are familiar with WPF dependency properties, you will find most of the same concepts in Avalonia: styling, data binding, animation, value inheritance, and default values all work through the property system. The main differences are in registration syntax and how you respond to property changes.
+Avalonia 的属性系统在概念上与 WPF 的 `DependencyProperty` 体系相仿，但 API 更干净、也更强类型。若你熟悉 WPF 的依赖属性，会发现 Avalonia 里大多数概念都还在：样式、数据绑定、动画、值继承和默认值统统经由属性系统实现。主要差别在于注册语法，以及如何响应属性变化。
 
-## Property types comparison
+## 属性类型对照 {#property-types-comparison}
 
-WPF has a single `DependencyProperty` class used for all scenarios. Avalonia splits this into three distinct types, each optimized for a specific use case. All three share a common base class, `AvaloniaProperty`.
+WPF 只有一个 `DependencyProperty` 类，所有场景都用它。Avalonia 把它拆成三种类型，各自针对一类用途作了优化。三者共有一个基类 `AvaloniaProperty`。
 
-| WPF | Avalonia | When to Use |
+| WPF | Avalonia | 适用场景 |
 |---|---|---|
-| `DependencyProperty` | `StyledProperty` | Properties that participate in styling, animation, and value inheritance |
-| `DependencyProperty` (read-only) | `DirectProperty` | Read-only properties, performance-sensitive properties, or properties that wrap a CLR backing field |
-| `DependencyProperty.RegisterAttached` | `AttachedProperty` | Properties set on child elements (for example, `Grid.Row`, `DockPanel.Dock`) |
+| `DependencyProperty` | `StyledProperty` | 参与样式、动画和值继承的属性 |
+| `DependencyProperty` (read-only) | `DirectProperty` | 只读属性、对性能敏感的属性，或者包装某个 CLR 后备字段的属性 |
+| `DependencyProperty.RegisterAttached` | `AttachedProperty` | 设在子元素上的属性（比如 `Grid.Row`、`DockPanel.Dock`） |
 
 ## Registration
 
 ### StyledProperty
 
-In WPF, you register a `DependencyProperty` with a static field and a call to `DependencyProperty.Register`. In Avalonia, you use `AvaloniaProperty.Register<TOwner, TValue>` instead.
+在 WPF 中，你用一个静态字段加一次 `DependencyProperty.Register` 调用来注册 `DependencyProperty`；在 Avalonia 中，则改用 `AvaloniaProperty.Register<TOwner, TValue>`。
 
 **WPF:**
 
@@ -61,11 +61,11 @@ public class MyControl : Control
 }
 ```
 
-Notice that Avalonia uses generics to avoid casting in the `GetValue` call, and the default value is passed as a named parameter rather than through a metadata object.
+注意 Avalonia 借助泛型省去了 `GetValue` 调用中的强制转换，而且默认值是作为具名参数传入的，不必再包一层元数据对象。
 
 ### DirectProperty
 
-A `DirectProperty` reads and writes directly from a CLR backing field instead of going through the Avalonia property system's value store. This makes it useful for read-only properties or properties where you want maximum performance. There is no direct WPF equivalent; the closest comparison is a read-only `DependencyProperty`.
+`DirectProperty` 直接读写 CLR 后备字段，不经 Avalonia 属性系统的值存储。因此它很适合只读属性，或者对性能要求极高的属性。WPF 中没有直接对应者，最接近的大概是只读的 `DependencyProperty`。
 
 ```csharp
 public class MyControl : Control
@@ -85,13 +85,13 @@ public class MyControl : Control
 }
 ```
 
-Key points:
-- Use `SetAndRaise` instead of `SetValue` to update the backing field and raise change notifications.
-- The getter accessor lambda (`o => o.Status`) is required so the property system can read the current value.
+要点：
+- 用 `SetAndRaise` 而不是 `SetValue` 来更新后备字段并引发变更通知。
+- getter 访问器 lambda（`o => o.Status`）是必需的，属性系统靠它读取当前值。
 
 ### AttachedProperty
 
-Attached properties work the same way conceptually. In WPF you use `DependencyProperty.RegisterAttached`; in Avalonia you use `AvaloniaProperty.RegisterAttached`.
+附加属性在概念上的用法一致。WPF 用 `DependencyProperty.RegisterAttached`，Avalonia 则用 `AvaloniaProperty.RegisterAttached`。
 
 **WPF:**
 
@@ -133,9 +133,9 @@ public class DockPanel : Panel
 
 ## 属性变更回调 {#property-changed-callbacks}
 
-### WPF approach
+### WPF 的做法 {#wpf-approach}
 
-In WPF, you pass a `PropertyChangedCallback` inside `PropertyMetadata` at registration time:
+在 WPF 中，注册时要在 `PropertyMetadata` 里传一个 `PropertyChangedCallback`：
 
 ```csharp
 public static readonly DependencyProperty IsActiveProperty =
@@ -252,7 +252,7 @@ Both WPF and Avalonia use a value precedence system to determine the effective v
 
 For a detailed breakdown of how Avalonia resolves property values, see the [Value Precedence](/docs/properties/value-precedence) page.
 
-## Common gotchas
+## 常见的坑 {#common-gotchas}
 
 ### No PropertyMetadata constructor with a default value
 
