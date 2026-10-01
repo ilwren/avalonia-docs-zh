@@ -74,14 +74,14 @@ Aspose 的库会给某些程序集设置自己的 `DllImportResolver`。由于 .
 
 ## 兼容性数据库 {#compatibility-database}
 
-A [compatibility database](https://avaloniaui.net/xpf/packages) is available for third-party controls. This database provides up-to-date status information for controls from major vendors.
+我们提供了一个面向第三方控件的[兼容性数据库](https://avaloniaui.net/xpf/packages)，其中收录了各大厂商控件的最新状态。
 
 :::info
-If you find that a control marked as `Fix In Progress` or `Untested` is mission-critical for your application, contact the support team. The Avalonia team is committed to working with you to ensure compatibility.
+若某个被标为 `Fix In Progress` 或 `Untested` 的控件对你的应用举足轻重，请联系支持团队。Avalonia 团队乐意与你一道把兼容性问题解决掉。
 :::
 
-### Compatibility notes
+### 兼容性说明 {#compatibility-notes}
 
-* **Pure WPF controls**: Third-party controls that are implemented purely in WPF typically work without any issues, even if not listed in the compatibility database.
-* **Unlisted vendors**: The absence of a control vendor from the database does not indicate incompatibility. Test any controls you need.
-* **Known challenges**: Issues most commonly arise with controls that use GDI or WinForms components.
+* **纯 WPF 控件**：纯用 WPF 实现的第三方控件通常都能正常工作，哪怕它没被收进兼容性数据库。
+* **未收录的厂商**：数据库里没有某家控件厂商，并不代表它不兼容。你需要的控件，自己测一测便知。
+* **常见的难题**：问题多半出在那些用到 GDI 或 WinForms 组件的控件上。

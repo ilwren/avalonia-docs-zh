@@ -1,35 +1,35 @@
 ---
 id: release-notes
-title: Release notes
+title: 发行说明
 ---
 
 ## XPF 1.6.7 (2026-09-15)
 
-* Avalonia version updated from 11.3.20 to 11.3.22
-* Fixed tooltips not disappearing when cursor moves out of the window (Linux)
-* Fixed ShutdownRequested cancellation not respected (macOS)
-* Fixed MessageBox being hidden behind topmost windows
-* Fixed popup not closing when another process activated
-* Fixed transparent windows being black when using Nvidia EGL drivers
-* Implemented heap and global memory API shims, GetShortPathName, QueryPerformanceCounter/Frequency, UnregisterClass
+* Avalonia 版本从 11.3.20 更新到 11.3.22
+* 修复光标移出窗口后工具提示不消失的问题（Linux）
+* 修复 ShutdownRequested 的取消请求未被遵从的问题（macOS）
+* 修复 MessageBox 被置顶窗口挡住的问题
+* 修复另一个进程被激活时弹出层不关闭的问题
+* 修复使用 Nvidia EGL 驱动时透明窗口显示为黑色的问题
+* 实现了堆与全局内存 API 的 shim，以及 GetShortPathName、QueryPerformanceCounter/Frequency、UnregisterClass
 
 ## XPF 1.6.6 (2026-08-11)
 
-* Avalonia version updated from 11.3.18 to 11.3.20
-* Added basic support for MahApps's windows
-* Fixed fail fast when `FontManagerOptions.DefaultFamilyName` does not point to a system font
-* Fixed `OutOfRangeException` on text input, which appeared since macOS 27
-* Fixed `NullReferenceException` when `TextBox.TextView` is null
-* Fixed popups appearing on the wrong monitor for maximized windows without chrome
-* Fixed tooltips not disappearing when cursor moves out of the window
-* Improved the heuristics to activate another window after one is closed (Linux)
-* The following dependencies were updated:
-  * System.Security.Cryptography.Xml 8.0.3 to 8.0.4 (fixes security vulnerability)
+* Avalonia 版本从 11.3.18 更新到 11.3.20
+* 新增对 MahApps 窗口的基本支持
+* 修复 `FontManagerOptions.DefaultFamilyName` 未指向系统字体时直接崩溃退出的问题
+* 修复 macOS 27 起出现的文本输入时 `OutOfRangeException` 问题
+* 修复 `TextBox.TextView` 为 null 时出现 `NullReferenceException` 的问题
+* 修复无外壳的最大化窗口上弹出层出现在错误显示器上的问题
+* 修复光标移出窗口后工具提示不消失的问题
+* 改进了某个窗口关闭后激活另一个窗口的判断逻辑（Linux）
+* 下列依赖已更新：
+  * System.Security.Cryptography.Xml 从 8.0.3 更新到 8.0.4（修复安全漏洞）
 
 ## XPF 1.6.5 (2026-07-02)
 
-* Avalonia version updated from 11.3.16 to 11.3.18
-* Added support for bitmaps with DPI other than 96
+* Avalonia 版本从 11.3.16 更新到 11.3.18
+* 新增对 DPI 非 96 的位图的支持
 * Fixed system font fallback taking over font family referenced using pack URI
 * Fixed `TextWrapping=Wrap` trimming each line when trimming enabled
 * Fixed extra click needed on context menu opened in inactive windows (macOS)
@@ -51,7 +51,7 @@ title: Release notes
 * Added support for sections in flow documents
 * Fixed PNG decoder using wrong pixel format in some cases
 * Fixed swapped red and blue channels when copying bitmaps on macOS
-* The following dependencies were updated:
+* 下列依赖已更新：
   * System.Security.Cryptography.Xml 8.0.0 to 8.0.3 (fixes security vulnerability)
   * SixLabors.ImageSharp from 3.1.9 to 3.1.12 (fixes security vulnerability)
 

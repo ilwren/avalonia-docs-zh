@@ -46,6 +46,6 @@ Pinning a version prevents unexpected upgrades and ensures that every developer 
 
 ## 另请参阅 {#see-also}
 
-- [Release notes](/xpf/version-info/release-notes)
+- [发行说明](/xpf/version-info/release-notes)
 - [Missing features](/xpf/version-info/missing-features)
 - [Getting started](/xpf/getting-started)

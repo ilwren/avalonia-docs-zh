@@ -1,53 +1,53 @@
 ---
 id: missing-features
-title: Missing features
-description: A summary of WPF features that are unavailable, limited, or planned for future support in Avalonia XPF.
+title: 尚未支持的特性
+description: 汇总 Avalonia XPF 中尚不可用、有所限制或计划日后支持的 WPF 特性。
 doc-type: reference
 ---
 
 ## 概述 {#overview}
 
-XPF makes a best effort to implement all WPF APIs, but some features are difficult or impossible to support due to cross-platform constraints or underlying architectural differences. This page lists the features that are currently missing, partially implemented, or unlikely to be added so you can plan your migration accordingly.
+XPF 尽力实现 WPF 的全部 API，但受跨平台约束和底层架构差异所限，有些特性难以支持乃至无从支持。本页列出目前缺失、部分实现或多半不会补上的特性，方便你据此规划迁移。
 
-## Features with limitations
+## 有限制的特性 {#features-with-limitations}
 
-The following features are available but have known restrictions:
+下列特性虽然可用，但有已知的限制：
 
-- **`WebBrowser`**: XPF provides web content embedding through a different mechanism. See the [WebView docs](/docs/app-development/embedding-web-content) for details.
-- **`FlowDocument`**: Basic flow document rendering is supported, but with the following limitations:
-  - Paginated documents are not supported.
+- **`WebBrowser`**：XPF 以另一套机制提供网页内容嵌入，细节请见 [WebView 文档](/docs/app-development/embedding-web-content)。
+- **`FlowDocument`**：支持基本的流式文档渲染，但有以下限制：
+  - 不支持分页文档。
   - 不支持 `PageHeader` 和 `PageFooter`。
-  - `Floater` is not supported.
-  - Some table features, such as row and column spans, are not supported.
+  - 不支持 `Floater`。
+  - 部分表格功能（比如跨行与跨列）不受支持。
 
-## Features planned for future releases
+## 计划在后续版本中支持的特性 {#features-planned-for-future-releases}
 
-The following features require significant engineering effort and will be available in a later release:
+下列特性工程量不小，会在日后的版本中提供：
 
-- `Viewport3D` and related 3D APIs
+- `Viewport3D` 及相关的 3D API
 - `MediaElement` and `MediaPlayer`
 - `InkCanvas`
 
-If your application depends on any of these features, check the [release notes](/xpf/version-info/release-notes) regularly for updates on their progress.
+若你的应用离不开其中某项特性，请常去[发行说明](/xpf/version-info/release-notes)看看进展。
 
-## Features unlikely to be supported
+## 多半不会支持的特性 {#features-unlikely-to-be-supported}
 
-The following features are unlikely to be supported due to platform restrictions:
+受平台所限，下列特性多半不会支持：
 
-- **Multiple UI threads** (multiple `Dispatcher` instances): macOS allows only one UI thread, and Windows and Linux have limited support. See [Known differences from WPF](/xpf/migration/known-differences#multiple-ui-threads) for more detail.
-- **`HwndHost` / `HwndSource`**: These types are tightly coupled to Win32 window handles and have no cross-platform equivalent.
-- **`XPS`**: XPS document support relies on a Windows operating system component that is not available on other platforms.
+- **多个 UI 线程**（多个 `Dispatcher` 实例）：macOS 只允许一个 UI 线程，Windows 和 Linux 上的支持也相当有限。更多细节请见[与 WPF 的已知差异](/xpf/migration/known-differences#multiple-ui-threads)。
+- **`HwndHost` / `HwndSource`**：这两个类型与 Win32 窗口句柄绑得太死，没有跨平台的对应物。
+- **`XPS`**：XPS 文档支持依赖 Windows 的某个系统组件，其他平台上没有。
 
 ## Workarounds
 
-If your application relies on a missing or limited feature, consider these strategies:
+若你的应用依赖某项缺失或受限的特性，不妨考虑这几条路子：
 
-- **Conditional compilation**: Use `#if` directives to provide alternative implementations for XPF builds versus WPF builds.
-- **Feature detection at runtime**: Check whether a feature is available before using it and provide a graceful fallback.
-- **Contact the XPF team**: If a missing feature is critical to your application, reach out to the Avalonia team. Feature priority is often influenced by customer demand.
+- **条件编译**：用 `#if` 指令为 XPF 构建和 WPF 构建分别提供不同的实现。
+- **运行时特性检测**：用之前先查一查该特性是否可用，不可用时给个体面的回退方案。
+- **联系 XPF 团队**：若某个缺失的特性对你的应用至关重要，欢迎联系 Avalonia 团队——客户的呼声往往能左右特性的优先级。
 
 ## 另请参阅 {#see-also}
 
-- [Known differences from WPF](/xpf/migration/known-differences)
-- [Release notes](/xpf/version-info/release-notes)
+- [与 WPF 的已知差异](/xpf/migration/known-differences)
+- [发行说明](/xpf/version-info/release-notes)
 - [Versioning](/xpf/version-info/versioning)
