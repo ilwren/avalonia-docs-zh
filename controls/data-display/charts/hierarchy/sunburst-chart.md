@@ -100,7 +100,7 @@ public ObservableCollection<SunburstNode> SunburstData { get; } = new()
 | `InnerRadiusFactor` | Relative size of the center hole from `0.0` to `1.0`. | `0.2` |
 | `RingThickness` | Thickness of each ring. | `40.0` |
 | `GapAngle` | Gap angle between segments. | `2.0` |
-| `IsHighlightEnabled` | Enables hover highlighting for segments. | `false` |
+| `IsHighlightEnabled` | 为各扇段启用悬停高亮。 | `false` |
 | `IsSelectionEnabled` | Whether data point selection is enabled. | `false` |
 | `SelectionMode` | The selection mode, e.g. `None`, `Single`, `SingleDeselect`, or `Multiple`. | `SingleDeselect` |
 | `SelectionBrush` | Brush used to highlight selected segments. | `FromRgb(49, 74, 110)` |

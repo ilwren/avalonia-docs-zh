@@ -60,5 +60,5 @@ public ObservableCollection<RingMetric> RingMetrics { get; } = new()
 
 ## 另请参阅 {#see-also}
 
-- [Progress donut chart](/controls/data-display/charts/gauges/progress-donut-chart)
-- [Gauge chart](/controls/data-display/charts/gauges/gauge-chart)
+- [进度环形图](/controls/data-display/charts/gauges/progress-donut-chart)
+- [仪表图](/controls/data-display/charts/gauges/gauge-chart)

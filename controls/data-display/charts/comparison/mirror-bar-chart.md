@@ -1,7 +1,7 @@
 ---
 id: mirror-bar-chart
-title: Mirror bar chart
-description: Places two bar series back to back around a center line, useful for demographic and side-by-side comparisons.
+title: 镜像条形图
+description: 把两组条形系列以中线为轴背靠背排布，适合人口结构和并排对比。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Mirror bar charts draw two bar series on opposite sides of a center line, so each category can be compared symmetrically.
+镜像条形图把两组条形系列画在中线两侧，于是每个类别都能对称地两相比较。
 
 ## 适用场景 {#when-to-use}
 
-- **Back-to-back comparison**: Compare two populations, regions, or product groups per category.
-- **Demographic layouts**: Show opposing distributions, such as male and female by age band.
-- **Two-sided ranking**: Contrast paired measures without stacking or grouping bars.
+- **背靠背对比**：按类别比较两类人群、两个地区或两组产品。
+- **人口结构版面**：呈现相对的两组分布，比如各年龄段的男女人数。
+- **双向排名**：不必堆叠或分组，就能对照成对的指标。
 
 ## 代码示例 {#code-example}
 
@@ -51,19 +51,19 @@ public ObservableCollection<MirrorBarItem> MirrorData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of mirrored comparison items. | `null` |
-| `LeftValuePath` | Path to the value rendered on the left side. | `null` |
-| `RightValuePath` | Path to the value rendered on the right side. | `null` |
-| `LabelPath` | Path to the category label. | `null` |
-| `LeftBrush` | Brush used for left bars. | `#E91E63` |
-| `RightBrush` | Brush used for right bars. | `#2196F3` |
-| `BarHeight` | Bar height as a fraction of the row height. | `0.7` |
-| `CenterGap` | Gap between the two mirrored sides. | `40.0` |
-| `LeftTitle` | Optional title for the left side. | `null` |
-| `RightTitle` | Optional title for the right side. | `null` |
-| `IsHighlightEnabled` | Enables hover highlighting for mirrored bars. | `false` |
+| `ItemsSource` | 镜像对比项的集合。 | `null` |
+| `LeftValuePath` | 指向绘制在左侧那个数值的路径。 | `null` |
+| `RightValuePath` | 指向绘制在右侧那个数值的路径。 | `null` |
+| `LabelPath` | 指向类别标签的路径。 | `null` |
+| `LeftBrush` | 左侧条形所用的画刷。 | `#E91E63` |
+| `RightBrush` | 右侧条形所用的画刷。 | `#2196F3` |
+| `BarHeight` | 条形高度，以行高的比例表示。 | `0.7` |
+| `CenterGap` | 镜像两侧之间的间隙。 | `40.0` |
+| `LeftTitle` | 左侧的可选标题。 | `null` |
+| `RightTitle` | 右侧的可选标题。 | `null` |
+| `IsHighlightEnabled` | 为镜像条形启用悬停高亮。 | `false` |
 
 ## 另请参阅 {#see-also}
 
-- [Population pyramid chart](/controls/data-display/charts/comparison/population-pyramid-chart)
-- [Tornado chart](/controls/data-display/charts/comparison/tornado-chart)
+- [人口金字塔图](/controls/data-display/charts/comparison/population-pyramid-chart)
+- [龙卷风图](/controls/data-display/charts/comparison/tornado-chart)

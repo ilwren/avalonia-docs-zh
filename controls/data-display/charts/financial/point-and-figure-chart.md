@@ -1,7 +1,7 @@
 ---
 id: point-and-figure-chart
-title: Point and figure
-description: Uses columns of Xs and Os to represent price movements, filtering out time and focusing on trend reversals.
+title: 点数图
+description: 用一列列 X 和 O 表示价格变动，略去时间维度，专注于趋势反转。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsFinancialPointandfigure from '/img/controls/charts/charts-financial
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Point and Figure (P&F) charts use columns of Xs and Os to represent rising and falling prices. They filter out time and small price changes, focusing solely on pure price movement and trend reversals.
+点数图（Point and Figure，P&F）用一列列 X 和 O 分别表示价格的上涨和下跌。它滤掉了时间和细小的价格变化，只盯纯粹的价格走势与趋势反转。
 
 <Image light={chartsFinancialPointandfigure} maxWidth={400} position="center" cornerRadius="true" alt="Point and figure chart with columns of X marks for rising prices and O marks for falling prices filtering out time." />
 
 ## 适用场景 {#when-to-use}
-- **Long-term trends**: Visualizing macro-economic or multi-year market shifts.
-- **Support/resistance**: Identifying clear supply and demand zones.
-- **Price targets**: Using traditional P&F counting methods for price projections.
+- **长期趋势**：呈现宏观经济或跨年度的市场变迁。
+- **支撑/压力**：辨识清晰的供需区间。
+- **价格目标**：用传统的点数图计数法推算目标价位。
 
 ## 代码示例 {#code-example}
 
@@ -71,14 +71,14 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of price data. | `null` |
-| `DatePath` | Path to the date or time value used along the horizontal axis. Values can be `DateTime`, `DateTimeOffset`, or parseable date strings. | `null` |
-| `HighPath` | Path to the high price used to build rising columns. | `null` |
-| `LowPath` | Path to the low price used to build falling columns. | `null` |
-| `ClosePath` | Path to the close price used for starting levels and the representative value. When unset, `ValuePath` is used. | `null` |
-| `BoxSize` | The price movement represented by one X or O. Must be finite and greater than `0`; extremely small values are increased internally to avoid excessive generated boxes. | `1.0` |
-| `ReversalAmount` | Number of boxes required to start a new column. Values below `1` are treated as `1`. | `3` |
-| `XBrush` | Brush for the X marks. | `Green` |
-| `OBrush` | Brush for the O marks. | `Red` |
+| `ItemsSource` | 价格数据的集合。 | `null` |
+| `DatePath` | 指向横轴所用日期或时间值的路径。取值可以是 `DateTime`、`DateTimeOffset`，或可解析的日期字符串。 | `null` |
+| `HighPath` | 指向用于构建上涨列的最高价的路径。 | `null` |
+| `LowPath` | 指向用于构建下跌列的最低价的路径。 | `null` |
+| `ClosePath` | 指向收盘价的路径，用作起始价位和代表值。未设置时使用 `ValuePath`。 | `null` |
+| `BoxSize` | 一个 X 或 O 所代表的价格变动幅度。必须是有限值且大于 `0`；过小的取值会在内部被调大，以免生成过多方格。 | `1.0` |
+| `ReversalAmount` | 另起一列所需的方格数。小于 `1` 的取值一律按 `1` 处理。 | `3` |
+| `XBrush` | X 标记所用的画刷。 | `Green` |
+| `OBrush` | O 标记所用的画刷。 | `Red` |
 
-Point and figure rendering uses only source points with finite `High`, `Low`, and `Close` values.
+点数图只采用 `High`、`Low`、`Close` 均为有限值的源数据点来绘制。

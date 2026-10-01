@@ -71,4 +71,4 @@ public ObservableCollection<VehicleStats> Vehicles { get; } = new()
 ## 另请参阅 {#see-also}
 
 - [Radar chart](/controls/data-display/charts/radial/radar-chart)
-- [Ternary chart](/controls/data-display/charts/engineering/ternary-chart)
+- [三元图](/controls/data-display/charts/engineering/ternary-chart)

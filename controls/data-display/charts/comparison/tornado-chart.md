@@ -1,7 +1,7 @@
 ---
 id: tornado-chart
-title: Tornado chart
-description: Draws bidirectional horizontal bars around a center line, often used for sensitivity analysis and ranked comparisons.
+title: 龙卷风图
+description: 以中线为轴向左右绘制双向横条，常用于敏感性分析和带排名的对比。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Tornado charts place left and right bars around a shared center line, which keeps ranked side-by-side differences scannable.
+龙卷风图把左右两侧的条形排布在同一条中线两旁，带排名的并排差异因而一目了然。
 
 ## 适用场景 {#when-to-use}
 
-- **Sensitivity analysis**: Rank which variables push a result most to the left or right.
-- **Scenario comparison**: Compare two opposing values across the same categories.
-- **Priority review**: Focus on the largest absolute differences first.
+- **敏感性分析**：排出哪些变量把结果往左或往右推得最多。
+- **情景对比**：在相同类别上比较两个相对的数值。
+- **优先级梳理**：先盯住绝对差异最大的那几项。
 
 ## 代码示例 {#code-example}
 
@@ -49,17 +49,17 @@ public ObservableCollection<TornadoFactor> TornadoData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of factors or categories. | `null` |
-| `LeftValuePath` | Path to the left-side value. | `null` |
-| `RightValuePath` | Path to the right-side value. | `null` |
-| `LabelPath` | Path to the category label. | `null` |
-| `LeftBrush` | Brush used for left bars. | `#E91E63` |
-| `RightBrush` | Brush used for right bars. | `#2196F3` |
-| `BarHeight` | Bar height as a fraction of the row height. | `0.7` |
-| `CenterGap` | Gap between the two sides. | `4.0` |
-| `IsHighlightEnabled` | Enables hover highlighting for tornado bars. | `false` |
+| `ItemsSource` | 各因素或类别的集合。 | `null` |
+| `LeftValuePath` | 指向左侧数值的路径。 | `null` |
+| `RightValuePath` | 指向右侧数值的路径。 | `null` |
+| `LabelPath` | 指向类别标签的路径。 | `null` |
+| `LeftBrush` | 左侧条形所用的画刷。 | `#E91E63` |
+| `RightBrush` | 右侧条形所用的画刷。 | `#2196F3` |
+| `BarHeight` | 条形高度，以行高的比例表示。 | `0.7` |
+| `CenterGap` | 两侧之间的间隙。 | `4.0` |
+| `IsHighlightEnabled` | 为龙卷风条形启用悬停高亮。 | `false` |
 
 ## 另请参阅 {#see-also}
 
-- [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart)
-- [Population pyramid chart](/controls/data-display/charts/comparison/population-pyramid-chart)
+- [镜像条形图](/controls/data-display/charts/comparison/mirror-bar-chart)
+- [人口金字塔图](/controls/data-display/charts/comparison/population-pyramid-chart)

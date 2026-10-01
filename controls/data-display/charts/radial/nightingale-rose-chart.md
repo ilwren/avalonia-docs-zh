@@ -58,4 +58,4 @@ public ObservableCollection<RadialPoint> NightingaleData { get; } = new()
 | `InnerRadiusFactor` | Inner radius ratio, where `0.0` creates a solid rose chart. | `0.0` |
 | `ShowLabels` | Whether to display segment labels. | `true` |
 | `ShowValues` | Whether to display numeric values with the labels. | `false` |
-| `IsHighlightEnabled` | Enables hover highlighting for segments. | `false` |
+| `IsHighlightEnabled` | 为各扇段启用悬停高亮。 | `false` |

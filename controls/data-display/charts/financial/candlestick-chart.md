@@ -1,7 +1,7 @@
 ---
 id: candlestick-chart
-title: Candlestick chart
-description: Displays open, high, low, and close prices per period using candle-shaped symbols, used for financial market price analysis.
+title: K 线图
+description: 用蜡烛形状的符号展示每个周期的开盘价、最高价、最低价和收盘价，用于金融市场的价格分析。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsFinancialCandlestick from '/img/controls/charts/charts-financial-ca
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Candlestick charts are used to describe price movements of a security, derivative, or currency over time. Each candle shows the open, high, low, and close prices for a specific period.
+K 线图用来刻画证券、衍生品或货币的价格随时间的变动。每根蜡烛展示某一周期的开盘价、最高价、最低价和收盘价。
 
 <Image light={chartsFinancialCandlestick} maxWidth={400} position="center" cornerRadius="true" alt="Candlestick chart showing OHLC price data with green bullish and red bearish candles over several trading periods." />
 
 ## 适用场景 {#when-to-use}
-- **Market analysis**: Visualizing price volatility and market sentiment.
-- **Technical analysis**: Identifying patterns like hammers, dojis, or engulfing candles.
-- **High-low tracking**: Showing the full range of price action within a period.
+- **行情分析**：呈现价格波动和市场情绪。
+- **技术分析**：辨识锤子线、十字星、吞没形态等 K 线形态。
+- **高低点追踪**：展示一个周期内价格波动的完整区间。
 
 ## 代码示例 {#code-example}
 
@@ -67,19 +67,19 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of financial data points. | `null` |
-| `OpenPath` | Path to the 'Open' price property. | `null` |
-| `HighPath` | Path to the 'High' price property. | `null` |
-| `LowPath` | Path to the 'Low' price property. | `null` |
-| `ClosePath` | Path to the 'Close' price property. | `null` |
-| `DatePath` | Path to the date or time value used along the horizontal axis. Values can be `DateTime`, `DateTimeOffset`, or parseable date strings. | `null` |
-| `UpFill` | Fill brush for candles where `Close >= Open`. | `#4CAF50` |
-| `DownFill` | Fill brush for candles where `Close < Open`. | `#F44336` |
-| `UpStroke` | Outline brush for candles where `Close >= Open`. | `#4CAF50` |
-| `DownStroke` | Outline brush for candles where `Close < Open`. | `#F44336` |
-| `CandleWidth` | Width of each candle as a fraction of the available slot. | `0.8` |
+| `ItemsSource` | 金融数据点的集合。 | `null` |
+| `OpenPath` | 指向「开盘价」属性的路径。 | `null` |
+| `HighPath` | 指向「最高价」属性的路径。 | `null` |
+| `LowPath` | 指向「最低价」属性的路径。 | `null` |
+| `ClosePath` | 指向「收盘价」属性的路径。 | `null` |
+| `DatePath` | 指向横轴所用日期或时间值的路径。取值可以是 `DateTime`、`DateTimeOffset`，或可解析的日期字符串。 | `null` |
+| `UpFill` | `Close >= Open` 时蜡烛的填充画刷。 | `#4CAF50` |
+| `DownFill` | `Close < Open` 时蜡烛的填充画刷。 | `#F44336` |
+| `UpStroke` | `Close >= Open` 时蜡烛的轮廓画刷。 | `#4CAF50` |
+| `DownStroke` | `Close < Open` 时蜡烛的轮廓画刷。 | `#F44336` |
+| `CandleWidth` | 每根蜡烛的宽度，以可用槽位的比例表示。 | `0.8` |
 
 ## 另请参阅 {#see-also}
 
-- [Financial chart](/controls/data-display/charts/financial/financial-chart)
-- [OHLC chart](/controls/data-display/charts/financial/ohlc-chart)
+- [金融图表](/controls/data-display/charts/financial/financial-chart)
+- [OHLC 图](/controls/data-display/charts/financial/ohlc-chart)

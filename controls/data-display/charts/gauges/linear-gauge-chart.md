@@ -81,7 +81,7 @@ Linear gauge charts visualize a value along a horizontal or vertical bar. They a
 | `TickPosition` | Where tick marks are drawn relative to the track. | `Above` |
 | `LabelPosition` | Where scale labels are drawn relative to the track. | `Below` |
 
-## Tick position
+## 刻度位置 {#tick-position}
 
 `TickPosition` places tick marks around the track. Major ticks are 10 px long. Minor ticks are 5 px long.
 

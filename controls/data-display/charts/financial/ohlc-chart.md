@@ -1,7 +1,7 @@
 ---
 id: ohlc-chart
-title: OHLC chart
-description: Shows open, high, low, and close prices using vertical lines with horizontal ticks, a standard professional visualization for price data.
+title: OHLC 图
+description: 用带左右短横的竖线表示开盘、最高、最低、收盘价，是价格数据的专业标准画法。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsFinancialOhlc from '/img/controls/charts/charts-financial-ohlc.png'
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-OHLC charts show the Open, High, Low, and Close prices for a given period. They are similar to candlestick charts but use vertical lines with horizontal ticks to represent the range and opening/closing prices.
+OHLC 图展示某一周期的开盘价、最高价、最低价和收盘价。它与 K 线图类似，但用带横向短刻度的竖线来表示价格区间和开收盘价。
 
 <Image light={chartsFinancialOhlc} maxWidth={400} position="center" cornerRadius="true" alt="OHLC chart showing open, high, low, and close prices as vertical lines with horizontal tick marks per period." />
 
 ## 适用场景 {#when-to-use}
-- **Trading analysis**: Visualizing price action without the "weight" of candlestick bodies.
-- **Market trends**: Spotting trends and price ranges over specific time intervals.
-- **Commodity/stock tracking**: Standard professional visualization for price data.
+- **交易分析**：呈现价格行为，又没有蜡烛实体那种「厚重感」。
+- **市场趋势**：看出特定时间区间内的走势和价格区间。
+- **大宗商品/股票追踪**：价格数据的专业标准画法。
 
 ## 代码示例 {#code-example}
 
@@ -67,18 +67,18 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of financial data points. | `null` |
-| `OpenPath` | Path to the 'Open' price property. | `null` |
-| `HighPath` | Path to the 'High' price property. | `null` |
-| `LowPath` | Path to the 'Low' price property. | `null` |
-| `ClosePath` | Path to the 'Close' price property. | `null` |
-| `DatePath` | Path to the date or time value used along the horizontal axis. Values can be `DateTime`, `DateTimeOffset`, or parseable date strings. | `null` |
-| `UpStroke` | Outline brush for bars where `Close >= Open`. | `#4CAF50` |
-| `DownStroke` | Outline brush for bars where `Close < Open`. | `#F44336` |
-| `StrokeThickness` | Thickness of the lines. | `2.0` |
-| `TickWidth` | Width of the open and close tick marks in pixels. | `6.0` |
+| `ItemsSource` | 金融数据点的集合。 | `null` |
+| `OpenPath` | 指向「开盘价」属性的路径。 | `null` |
+| `HighPath` | 指向「最高价」属性的路径。 | `null` |
+| `LowPath` | 指向「最低价」属性的路径。 | `null` |
+| `ClosePath` | 指向「收盘价」属性的路径。 | `null` |
+| `DatePath` | 指向横轴所用日期或时间值的路径。取值可以是 `DateTime`、`DateTimeOffset`，或可解析的日期字符串。 | `null` |
+| `UpStroke` | `Close >= Open` 时柱体的轮廓画刷。 | `#4CAF50` |
+| `DownStroke` | `Close < Open` 时柱体的轮廓画刷。 | `#F44336` |
+| `StrokeThickness` | 线条的粗细。 | `2.0` |
+| `TickWidth` | 开盘和收盘短刻度的长度，单位为像素。 | `6.0` |
 
 ## 另请参阅 {#see-also}
 
-- [Financial chart](/controls/data-display/charts/financial/financial-chart)
-- [Candlestick chart](/controls/data-display/charts/financial/candlestick-chart)
+- [金融图表](/controls/data-display/charts/financial/financial-chart)
+- [K 线图](/controls/data-display/charts/financial/candlestick-chart)

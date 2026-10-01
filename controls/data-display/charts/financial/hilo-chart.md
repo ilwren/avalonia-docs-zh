@@ -1,7 +1,7 @@
 ---
 id: hilo-chart
-title: Hilo chart
-description: Displays the high and low prices per period as vertical lines, providing a focused view of price volatility without open or close values.
+title: 高低图
+description: 用竖线表示每个周期的最高价和最低价，不含开收盘价，专注呈现价格波动。
 doc-type: reference
 tags:
   - avalonia pro
@@ -13,14 +13,14 @@ import chartsFinancialHilo from '/img/controls/charts/charts-financial-hilo.png'
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Hilo charts show the High and Low prices for a given period. By omitting the open and close values, they provide a focused view of the total price volatility and range.
+高低图只显示某一周期的最高价和最低价。略去开盘价和收盘价之后，它更专注于呈现整体的价格波动与区间。
 
 <Image light={chartsFinancialHilo} maxWidth={400} position="center" cornerRadius="true" alt="Hilo chart showing daily price ranges as vertical lines connecting high and low values over a date range." />
 
 ## 适用场景 {#when-to-use}
-- **Volatility analysis**: Emphasizing the spread between the highest and lowest prices.
-- **Support and resistance**: Identifying key price levels where the market struggled to move further.
-- **Simplified trading**: When a cleaner alternative to OHLC or Candlestick charts is preferred.
+- **波动分析**：突出最高价与最低价之间的跨度。
+- **支撑与压力**：找出行情难以突破的关键价位。
+- **简化的交易视图**：想要比 OHLC 图或 K 线图更清爽的替代方案时。
 
 ## 代码示例 {#code-example}
 
@@ -73,9 +73,9 @@ private static IEnumerable<FinancialPoint> GenerateFinancialData(int count)
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of price data. | `null` |
-| `HighPath` | Path to the maximum price property. | `null` |
-| `LowPath` | Path to the minimum price property. | `null` |
-| `CategoryPath` | Path to the date/category property. | `null` |
-| `Stroke` | Color of the vertical range lines. | Theme-dependent |
-| `StrokeThickness`| Width of the price lines. | `2` |
+| `ItemsSource` | 价格数据的集合。 | `null` |
+| `HighPath` | 指向最高价属性的路径。 | `null` |
+| `LowPath` | 指向最低价属性的路径。 | `null` |
+| `CategoryPath` | 指向日期/类别属性的路径。 | `null` |
+| `Stroke` | 竖向区间线的颜色。 | Theme-dependent |
+| `StrokeThickness`| 价格线的粗细。 | `2` |

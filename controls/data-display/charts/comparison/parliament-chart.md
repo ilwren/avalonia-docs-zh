@@ -1,7 +1,7 @@
 ---
 id: parliament-chart
-title: Parliament chart
-description: Displays seat distribution in a hemicycle layout, useful for legislative composition and proportional representation.
+title: 议席图
+description: 以半圆形版面呈现议席分布，适合表现议会构成和比例代表制结果。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Parliament charts arrange seats in a semicircle so party representation can be read as both totals and spatial balance.
+议席图把座位排成半圆，于是各党派的席位既能看出总数，也能看出空间上的分量对比。
 
 ## 适用场景 {#when-to-use}
 
-- **Legislative composition**: Show seat distribution by party or bloc.
-- **Board representation**: Visualize committee or council membership.
-- **Proportional allocation**: Present seat-based outcomes with a familiar hemicycle layout.
+- **议会构成**：按党派或阵营展示议席分布。
+- **董事会构成**：呈现委员会或理事会的成员构成。
+- **按比例分配**：用大家熟悉的半圆版面呈现席位分配结果。
 
 ## 代码示例 {#code-example}
 
@@ -46,23 +46,23 @@ public ObservableCollection<ParliamentParty> Parties { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `TotalSeats` | Total number of seats to draw. | `100` |
-| `Rows` | Number of concentric seat rows. | `4` |
-| `InnerRadiusFactor` | Inner radius factor for the hemicycle. | `0.4` |
-| `SeatGap` | Gap between seats. | `2.0` |
-| `StartAngle` | Start angle in degrees for the left edge of the hemicycle. | `180.0` |
-| `EndAngle` | End angle in degrees for the right edge of the hemicycle. | `0.0` |
-| `Parties` | Collection of `ParliamentParty` items that define seat allocation. | `null` |
+| `TotalSeats` | 总共要绘制多少个席位。 | `100` |
+| `Rows` | 同心席位圈的层数。 | `4` |
+| `InnerRadiusFactor` | 半圆的内半径系数。 | `0.4` |
+| `SeatGap` | 席位之间的间隙。 | `2.0` |
+| `StartAngle` | 半圆左端的起始角度，单位为度。 | `180.0` |
+| `EndAngle` | 半圆右端的结束角度，单位为度。 | `0.0` |
+| `Parties` | 定义席位分配的 `ParliamentParty` 项集合。 | `null` |
 
 ## 常用属性（`ParliamentParty`） {#common-properties-parliamentparty}
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Name` | Party or bloc name. | `string.Empty` |
-| `Seats` | Number of seats assigned to the party. | `0` |
-| `Color` | Color used to draw the party's seats. | `Gray` |
+| `Name` | 党派或阵营名称。 | `string.Empty` |
+| `Seats` | 分配给该党派的席位数。 | `0` |
+| `Color` | 绘制该党派席位所用的颜色。 | `Gray` |
 
 ## 另请参阅 {#see-also}
 
-- [Pie chart](/controls/data-display/charts/circular/pie-chart)
-- [Mekko chart](/controls/data-display/charts/comparison/mekko-chart)
+- [饼图](/controls/data-display/charts/circular/pie-chart)
+- [Mekko 图](/controls/data-display/charts/comparison/mekko-chart)

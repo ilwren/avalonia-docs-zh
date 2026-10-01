@@ -1,7 +1,7 @@
 ---
 id: mekko-chart
-title: Mekko chart
-description: Combines variable-width columns with stacked segments to compare total size and internal composition.
+title: Mekko 图
+description: 把宽度不等的柱子与堆叠分段结合起来，同时比较总规模和内部构成。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,13 +11,13 @@ tags:
 [图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Mekko charts, also called Marimekko charts, use variable column widths and stacked segment heights to compare market size and composition in one view.
+Mekko 图又称马赛克图（Marimekko），用柱子的不同宽度和各堆叠段的高度，在一张图里同时比较市场规模与构成。
 
 ## 适用场景 {#when-to-use}
 
-- **Market structure**: Compare category share and internal segment mix at the same time.
-- **Portfolio composition**: Show total size and breakdown per group.
-- **Multi-dimensional comparison**: Replace separate width and stacked-bar views with one chart.
+- **市场格局**：同时比较各类别的份额和内部细分构成。
+- **组合构成**：展示各组的总规模及其细分明细。
+- **多维对比**：用一张图取代「宽度图 + 堆叠条形图」两张图。
 
 ## 代码示例 {#code-example}
 
@@ -49,13 +49,13 @@ public ObservableCollection<MekkoColumn> MekkoData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of Mekko columns. | `null` |
-| `CategoryPath` | Path to the column label. | `null` |
-| `WidthPath` | Path to the value that controls column width. | `null` |
-| `SegmentsPath` | Path to the segment collection for each column. | `null` |
-| `ColumnGap` | Gap between columns. | `2.0` |
-| `ShowLabels` | Whether to show column labels. | `true` |
-| `ShowPercentages` | Whether to draw percentage labels inside segments. | `true` |
+| `ItemsSource` | Mekko 柱的集合。 | `null` |
+| `CategoryPath` | 指向柱标签的路径。 | `null` |
+| `WidthPath` | 指向决定柱宽那个数值的路径。 | `null` |
+| `SegmentsPath` | 指向各柱分段集合的路径。 | `null` |
+| `ColumnGap` | 柱与柱之间的间隙。 | `2.0` |
+| `ShowLabels` | 是否显示柱标签。 | `true` |
+| `ShowPercentages` | 是否在各分段内部绘制百分比标签。 | `true` |
 
 ## 另请参阅 {#see-also}
 

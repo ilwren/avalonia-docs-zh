@@ -19,8 +19,8 @@ import chartsPieSemidonut from '/img/controls/charts/charts-pie-semidonut.png';
 
 ## 适用场景 {#when-to-use}
 - **KPI 进度表**：呈现单项指标相对目标或总量的完成情况。
-- **Dashboard headers**: Providing a quick summary of a category at the top of a page.
-- **Angular comparison**: Comparing parts of a whole where a full circle isn't needed or desired.
+- **仪表板页首**：在页面顶端快速交代某个类别的概况。
+- **角度对比**：比较整体中的各部分，而又不必、也不想画满一整个圆。
 
 ## 代码示例 {#code-example}
 
@@ -50,11 +50,11 @@ public ObservableCollection<SemiDonutPoint> SemiDonutChartData { get; } = new()
 
 | 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The data source for the segments. | `null` |
-| `ValuePath` | Property path for values. | `null` |
-| `LabelPath` | Property path for labels. | `null` |
-| `InnerRadiusFactor`| The ratio of the inner radius (hole size) to the outer radius (0.0 to 1.0). | `0.6` |
-| `CenterLabel` | Label text displayed in the center of the arc. | `null` |
-| `CenterValue` | Value text displayed in the center. | `null` |
-| `GapAngle` | Gap angle between segments in degrees. | `2.0` |
-| `IsHighlightEnabled` | Enables hover highlighting for segments. | `false` |
+| `ItemsSource` | 各扇段的数据源。 | `null` |
+| `ValuePath` | 数值所对应的属性路径。 | `null` |
+| `LabelPath` | 标签所对应的属性路径。 | `null` |
+| `InnerRadiusFactor`| 内半径（孔洞大小）与外半径之比（0.0 到 1.0）。 | `0.6` |
+| `CenterLabel` | 显示在弧心的标签文字。 | `null` |
+| `CenterValue` | 显示在弧心的数值文字。 | `null` |
+| `GapAngle` | 各扇段之间的间隔角度，单位为度。 | `2.0` |
+| `IsHighlightEnabled` | 为各扇段启用悬停高亮。 | `false` |

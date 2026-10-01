@@ -69,7 +69,7 @@ public ObservableCollection<PolarPoint> SpiralData { get; } = new()
 | `AnglePath` | Path to the angle value in degrees. | `null` |
 | `RadiusPath` | Path to the radius value. | `null` |
 | `ShowMarkers` | Whether to draw markers at each point. | `false` |
-| `MarkerSize` | Marker size in pixels. | `8.0` |
+| `MarkerSize` | 标记点大小，单位为像素。 | `8.0` |
 | `IsClosed` | Whether to connect the last point back to the first point. | `false` |
 
 ## 另请参阅 {#see-also}

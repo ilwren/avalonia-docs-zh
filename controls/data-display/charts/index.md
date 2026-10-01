@@ -138,7 +138,7 @@ Charts for summarizing metrics, identifying patterns, and presenting findings.
 | [Matrix chart](/controls/data-display/charts/analytics/matrix-chart) | Displays relationships between two sets of categories in a grid. |
 | [Table chart](/controls/data-display/charts/analytics/table-chart) | Presents data in rows and columns with optional conditional formatting. |
 | [Bump chart](/controls/data-display/charts/analytics/bump-chart) | Tracks rank changes over time using crossed lines. |
-| [Slope chart](/controls/data-display/charts/analytics/slope-chart) | Compares values at two points in time using angled lines. |
+| [斜率图](/controls/data-display/charts/analytics/slope-chart) | Compares values at two points in time using angled lines. |
 | [Pyramid chart](/controls/data-display/charts/analytics/pyramid-chart) | Stacks segments vertically to show hierarchical or sequential proportions. |
 | [Theme river chart](/controls/data-display/charts/analytics/theme-river-chart) | Builds a theme-river-style layout with stacked area series and a centered spacer offset. |
 | [Pictorial bar chart](/controls/data-display/charts/analytics/pictorial-bar-chart) | Replaces standard bars with icons or shapes sized by value. |
@@ -179,7 +179,7 @@ Charts that represent data as segments of a circle.
 
 | Chart | 说明 |
 | --- | --- |
-| [Pie chart](/controls/data-display/charts/circular/pie-chart) | Divides a circle into proportional slices to show part-to-whole relationships. |
+| [饼图](/controls/data-display/charts/circular/pie-chart) | Divides a circle into proportional slices to show part-to-whole relationships. |
 | [Donut chart](/controls/data-display/charts/circular/donut-chart) | A pie chart with a hollow center, often used to display a total in the middle. |
 | [Semi-donut chart](/controls/data-display/charts/circular/semi-donut-chart) | A half-circle donut for compact part-to-whole views. |
 
@@ -189,13 +189,13 @@ Charts for before-and-after analysis, back-to-back comparison, and proportional 
 
 | Chart | 说明 |
 | --- | --- |
-| [Diverging bar chart](/controls/data-display/charts/comparison/diverging-bar-chart) | Extends bars left and right from a centered baseline. |
+| [双向条形图](/controls/data-display/charts/comparison/diverging-bar-chart) | Extends bars left and right from a centered baseline. |
 | [Dumbbell chart](/controls/data-display/charts/comparison/dumbbell-chart) | Connects two values per category with a line and markers. |
-| [Mekko chart](/controls/data-display/charts/comparison/mekko-chart) | Combines variable-width columns with stacked segments to show size and composition. |
-| [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart) | Places two bar series back to back around a center line. |
-| [Parliament chart](/controls/data-display/charts/comparison/parliament-chart) | Displays seat distribution in a hemicycle layout. |
-| [Population pyramid chart](/controls/data-display/charts/comparison/population-pyramid-chart) | Shows two opposing population distributions by ordered bands. |
-| [Tornado chart](/controls/data-display/charts/comparison/tornado-chart) | Draws bidirectional horizontal bars for sensitivity or ranked comparisons. |
+| [Mekko 图](/controls/data-display/charts/comparison/mekko-chart) | Combines variable-width columns with stacked segments to show size and composition. |
+| [镜像条形图](/controls/data-display/charts/comparison/mirror-bar-chart) | Places two bar series back to back around a center line. |
+| [议席图](/controls/data-display/charts/comparison/parliament-chart) | Displays seat distribution in a hemicycle layout. |
+| [人口金字塔图](/controls/data-display/charts/comparison/population-pyramid-chart) | Shows two opposing population distributions by ordered bands. |
+| [龙卷风图](/controls/data-display/charts/comparison/tornado-chart) | Draws bidirectional horizontal bars for sensitivity or ranked comparisons. |
 | [Venn diagram chart](/controls/data-display/charts/comparison/venn-diagram-chart) | Visualizes set overlap and intersection values. |
 
 ### Engineering and scientific charts
@@ -204,11 +204,11 @@ Charts for technical surfaces, multivariate scientific views, and specialized co
 
 | Chart | 说明 |
 | --- | --- |
-| [Carpet plot chart](/controls/data-display/charts/engineering/carpet-plot-chart) | Maps two independent variables and one dependent variable onto a skewed grid. |
+| [地毯图](/controls/data-display/charts/engineering/carpet-plot-chart) | Maps two independent variables and one dependent variable onto a skewed grid. |
 | [Hexbin chart](/controls/data-display/charts/engineering/hexbin-chart) | Aggregates dense 2D point clouds into hexagonal density bins. |
-| [Smith chart](/controls/data-display/charts/engineering/smith-chart) | Visualizes complex impedance or admittance data on a normalized radio frequency grid. |
-| [Ternary chart](/controls/data-display/charts/engineering/ternary-chart) | Plots three-part compositions that sum to a constant. |
-| [Wind rose chart](/controls/data-display/charts/engineering/wind-rose-chart) | Shows directional frequency distributions as stacked polar sectors. |
+| [史密斯圆图](/controls/data-display/charts/engineering/smith-chart) | Visualizes complex impedance or admittance data on a normalized radio frequency grid. |
+| [三元图](/controls/data-display/charts/engineering/ternary-chart) | Plots three-part compositions that sum to a constant. |
+| [风玫瑰图](/controls/data-display/charts/engineering/wind-rose-chart) | Shows directional frequency distributions as stacked polar sectors. |
 
 ### Financial charts
 
@@ -216,9 +216,9 @@ Specialized charts for price and market data analysis.
 
 | Chart | 说明 |
 | --- | --- |
-| [Financial chart](/controls/data-display/charts/financial/financial-chart) | Hosts financial series such as candlestick and OHLC on shared price axes. |
-| [Candlestick chart](/controls/data-display/charts/financial/candlestick-chart) | Shows open, high, low, and close prices per period as candle shapes. |
-| [OHLC chart](/controls/data-display/charts/financial/ohlc-chart) | Displays OHLC price data as vertical bars with tick marks. |
+| [金融图表](/controls/data-display/charts/financial/financial-chart) | Hosts financial series such as candlestick and OHLC on shared price axes. |
+| [K 线图](/controls/data-display/charts/financial/candlestick-chart) | Shows open, high, low, and close prices per period as candle shapes. |
+| [OHLC 图](/controls/data-display/charts/financial/ohlc-chart) | Displays OHLC price data as vertical bars with tick marks. |
 | [Heikin-Ashi chart](/controls/data-display/charts/financial/heikin-ashi-chart) | A smoothed candlestick variant that filters out short-term noise. |
 | [Hilo chart](/controls/data-display/charts/financial/hilo-chart) | Plots only the high and low values per period as a vertical line. |
 | [Kagi chart](/controls/data-display/charts/financial/kagi-chart) | Filters small price moves to show significant direction changes. |
@@ -232,7 +232,7 @@ Visual displays of a single value relative to a range. Common in monitoring dash
 | Chart | 说明 |
 | --- | --- |
 | [Circular gauge](/controls/data-display/charts/gauges/circular-gauge-chart) | A dial-style gauge with a needle or arc indicator. |
-| [Gauge chart](/controls/data-display/charts/gauges/gauge-chart) | Displays a single value on a semi-circular dial with optional needle. |
+| [仪表图](/controls/data-display/charts/gauges/gauge-chart) | Displays a single value on a semi-circular dial with optional needle. |
 | [Linear gauge](/controls/data-display/charts/gauges/linear-gauge-chart) | A horizontal or vertical track with a pointer or fill. |
 | [Gradient ring chart](/controls/data-display/charts/gauges/gradient-ring-chart) | Draws multiple concentric progress rings against a shared maximum. |
 | [Liquid fill gauge](/controls/data-display/charts/gauges/liquid-fill-gauge) | Represents a percentage as a rising liquid level inside a shape. |
@@ -249,7 +249,7 @@ Charts for visualizing relationships, flows, and tree structures.
 | [Alluvial chart](/controls/data-display/charts/hierarchy/alluvial-chart) | Tracks how items transition between categories across stages. |
 | [Treemap chart](/controls/data-display/charts/hierarchy/treemap-chart) | Represents hierarchical data as nested rectangles sized by value. |
 | [Sunburst chart](/controls/data-display/charts/hierarchy/sunburst-chart) | Displays hierarchy as concentric rings radiating from a center. |
-| [Circle packing chart](/controls/data-display/charts/hierarchy/circle-packing-chart) | Nests circles to represent hierarchical proportions. |
+| [圆堆积图](/controls/data-display/charts/hierarchy/circle-packing-chart) | Nests circles to represent hierarchical proportions. |
 | [Flame graph](/controls/data-display/charts/hierarchy/flame-graph) | Shows hierarchical stacks of cost or duration data from bottom to top. |
 | [Icicle chart](/controls/data-display/charts/hierarchy/icicle-chart) | Shows hierarchy as stacked rectangular bands from top to bottom. |
 | [Dendrogram chart](/controls/data-display/charts/hierarchy/dendrogram-chart) | A tree diagram used in clustering and classification contexts. |
@@ -281,7 +281,7 @@ Charts that use a circular coordinate system rather than Cartesian axes.
 
 | Chart | 说明 |
 | --- | --- |
-| [Polar chart](/controls/data-display/charts/radial/polar-chart) | Plots arbitrary angle and radius values in a polar coordinate system. |
+| [极坐标图](/controls/data-display/charts/radial/polar-chart) | Plots arbitrary angle and radius values in a polar coordinate system. |
 | [Radar chart](/controls/data-display/charts/radial/radar-chart) | Plots multivariate data as a polygon on a circular grid of axes. |
 | [Polar area chart](/controls/data-display/charts/radial/polar-area-chart) | Divides a circle into equal-angle segments sized by value. |
 | [Nightingale Rose chart](/controls/data-display/charts/radial/nightingale-rose-chart) | A polar area chart where radius, not area, encodes the value. |
@@ -308,11 +308,11 @@ Charts for distributional and comparative statistical analysis.
 | --- | --- |
 | [Beeswarm plot chart](/controls/data-display/charts/statistical/beeswarm-plot-chart) | Displays individual observations as non-overlapping dots within each category. |
 | [Box plot chart](/controls/data-display/charts/statistical/boxplot-chart) | Summarizes a distribution using medians, quartiles, and outliers. |
-| [Contour plot chart](/controls/data-display/charts/statistical/contour-plot-chart) | Displays 2D scalar fields as contour lines and optional filled bands. |
+| [等值线图](/controls/data-display/charts/statistical/contour-plot-chart) | Displays 2D scalar fields as contour lines and optional filled bands. |
 | [Density plot chart](/controls/data-display/charts/statistical/density-plot-chart) | Uses kernel density estimation to render a smooth distribution curve. |
 | [Error bar chart](/controls/data-display/charts/statistical/error-bar-chart) | Adds error or uncertainty indicators to data points. |
 | [Mosaic chart](/controls/data-display/charts/statistical/mosaic-chart) | Visualizes proportions across two categorical variables as nested rectangles. |
-| [Parallel coordinates chart](/controls/data-display/charts/statistical/parallel-coordinates-chart) | Compares multivariate records as lines across parallel axes. |
+| [平行坐标图](/controls/data-display/charts/statistical/parallel-coordinates-chart) | Compares multivariate records as lines across parallel axes. |
 | [Ridgeline chart](/controls/data-display/charts/statistical/ridgeline-chart) | Stacks multiple overlapping distributions for shape comparison. |
 | [Strip plot chart](/controls/data-display/charts/statistical/strip-plot-chart) | Displays individual observations per category with jitter and optional mean lines. |
 | [Violin plot chart](/controls/data-display/charts/statistical/violin-plot-chart) | Combines a box plot with a kernel density shape to show distribution. |

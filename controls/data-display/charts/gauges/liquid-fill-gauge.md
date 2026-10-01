@@ -49,5 +49,5 @@ Liquid fill gauges are decorative circular gauges that represent a percentage as
 
 ## 另请参阅 {#see-also}
 
-- [Gauge chart](/controls/data-display/charts/gauges/gauge-chart)
-- [Progress donut chart](/controls/data-display/charts/gauges/progress-donut-chart)
+- [仪表图](/controls/data-display/charts/gauges/gauge-chart)
+- [进度环形图](/controls/data-display/charts/gauges/progress-donut-chart)
