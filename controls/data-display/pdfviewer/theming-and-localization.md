@@ -122,6 +122,6 @@ Page content is rendered as a bitmap, so the PDF's text is not exposed to assist
 
 ## 另请参阅 {#see-also}
 
-- [PdfViewer control](index.md)
-- [Navigation, zoom and search](navigation-and-search.md)
+- [PdfViewer 控件](index.md)
+- [导航、缩放与搜索](navigation-and-search.md)
 - [Control themes](/docs/styling/control-themes)

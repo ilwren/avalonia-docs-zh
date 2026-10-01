@@ -1,7 +1,7 @@
 ---
 id: index
-title: PdfViewer control
-description: Display, search, annotate, fill and print PDF documents in Avalonia with the PdfViewer control from the Avalonia.Controls.PdfViewer package.
+title: PdfViewer 控件
+description: 用 Avalonia.Controls.PdfViewer 包中的 PdfViewer 控件，在 Avalonia 中显示、搜索、批注、填写和打印 PDF 文档。
 doc-type: reference
 tags:
   - avalonia pro
@@ -11,7 +11,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-`PdfViewer` displays PDF documents in your Avalonia application. It is a complete reader out of the box: set a source and you have a toolbar and sidebar, page thumbnails and a document outline, page navigation, zoom and view modes, text selection and search, a full annotation toolset with undo and redo, form filling, bookmarks, and native printing and sharing. Each of these can be hidden or disabled, and everything is available from code as well as through the built-in UI. The same control and package run on Windows, macOS, Linux, iOS, Android and WebAssembly.
+`PdfViewer` 用于在 Avalonia 应用中显示 PDF 文档。它开箱即是一个完整的阅读器：只要设好文档来源，你就拥有了工具栏和侧栏、页面缩略图与文档大纲、翻页导航、缩放与视图模式、文本选择与搜索、带撤销重做的完整批注工具集、表单填写、书签，以及原生的打印与分享。这些功能都可以隐藏或禁用，而且除了内置界面之外，统统也能用代码调用。同一个控件、同一个包，可在 Windows、macOS、Linux、iOS、Android 和 WebAssembly 上运行。
 
 :::info
 该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
@@ -19,39 +19,39 @@ import TabItem from '@theme/TabItem';
 
 ## 适用场景 {#when-to-use}
 
-Use `PdfViewer` to show PDF documents inside your app. Every tool and menu entry can be hidden or disabled, so it works as a plain read-only viewer or as a full annotation editor.
+用 `PdfViewer` 在你的应用里展示 PDF 文档。每一件工具、每一项菜单都可以隐藏或禁用，因此它既能当纯只读阅读器，也能当完整的批注编辑器。
 
-To render a page as an image outside the viewer, for example for a thumbnail in a file list, use [`RenderPageToImageAsync`](navigation-and-search.md#text-extraction-and-page-images).
+若要在查看器之外把某一页渲染成图片——比如在文件列表里做缩略图——请使用 [`RenderPageToImageAsync`](navigation-and-search.md#text-extraction-and-page-images)。
 
-## Requirements
+## 环境要求 {#requirements}
 
-- .NET 10 or later.
-- Avalonia 12.0 or later.
-- An Avalonia Pro or Enterprise license that covers the PDF Viewer.
-- Windows, macOS, Linux (x64 and arm64), iOS 15 or later, Android API 23 or later, or WebAssembly.
+- .NET 10 或更高版本。
+- Avalonia 12.0 或更高版本。
+- 一份涵盖 PDF Viewer 的 Avalonia Pro 或 Enterprise 许可证。
+- Windows、macOS、Linux（x64 与 arm64）、iOS 15 及以上、Android API 23 及以上，或 WebAssembly。
 
 ## Dependencies
 
-The package renders with [PDFium](https://pdfium.googlesource.com/pdfium/), which is bundled as a native library through the `bblanchon.PDFium.*` NuGet packages. Each target framework depends only on the packages for its own platforms, so an app head restores nothing it does not need.
+该包使用 [PDFium](https://pdfium.googlesource.com/pdfium/) 渲染，后者通过 `bblanchon.PDFium.*` 系列 NuGet 包以原生库的形式随包分发。每个目标框架只依赖自己平台所需的包，因此应用头项目不会还原任何用不上的东西。
 
-| Target | Packages |
+| 目标平台 | 所需包 |
 |---|---|
 | `net10.0` (Windows, macOS, Linux) | `Avalonia`, `AvaloniaUI.Licensing`, `bblanchon.PDFium.Win32`, `bblanchon.PDFium.macOS`, `bblanchon.PDFium.Linux` |
 | `net10.0-ios` | `Avalonia`, `AvaloniaUI.Licensing`, `bblanchon.PDFium.iOS` |
 | `net10.0-android` | `Avalonia`, `Avalonia.Android`, `AvaloniaUI.Licensing`, `bblanchon.PDFium.Android` |
 | `net10.0-browser` | `Avalonia`, `AvaloniaUI.Licensing`, `bblanchon.PDFium.WebAssembly` |
 
-PDFium is licensed under the [BSD 3-Clause License](https://pdfium.googlesource.com/pdfium/+/refs/heads/main/LICENSE). Include its notice in your application's third-party attributions.
+PDFium 以 [BSD 3-Clause 许可证](https://pdfium.googlesource.com/pdfium/+/refs/heads/main/LICENSE) 分发。请在你应用的第三方声明中附上它的许可声明。
 
 ## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.PdfViewer` NuGet package by running `dotnet add package`. Add it to the project that contains your views and to each application head (desktop, iOS, Android, browser), so each head restores the required PDFium binaries for its own platform.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.PdfViewer` NuGet 包。请把它加到存放视图的项目中，并加到每一个应用头项目（桌面、iOS、Android、浏览器），这样各个头项目才能还原各自平台所需的 PDFium 二进制文件。
 
 ```bash
 dotnet add package Avalonia.Controls.PdfViewer
 ```
 
-2. Reference the `AvaloniaUI.Licensing` package in each application head and include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net). The control throws `AvaloniaLicensingException` on first use if the key is missing or does not cover the PDF Viewer.
+2. 在每个应用头项目中引用 `AvaloniaUI.Licensing` 包，并把你的 Avalonia 许可证密钥写进可执行项目文件（`.csproj`）。许可证密钥可在 [Avalonia 门户](https://portal.avaloniaui.net) 获取。若密钥缺失或不涵盖 PDF Viewer，控件会在首次使用时抛出 `AvaloniaLicensingException`。
 
 ```xml
 <ItemGroup>
@@ -66,7 +66,7 @@ dotnet add package Avalonia.Controls.PdfViewer
 对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
-3. Reference one of the two themes via a `StyleInclude` in your `App.axaml` file. Without a theme the control renders nothing. `Default.axaml` has its own palette and works under any host theme. `Fluent.axaml` follows the host's `FluentTheme` accent and theme variant.
+3. 在 `App.axaml` 文件中通过 `StyleInclude` 引用两套主题中的一套。没有主题，控件什么也画不出来。`Default.axaml` 自带一套配色，在任何宿主主题下都适用；`Fluent.axaml` 则跟随宿主的 `FluentTheme` 强调色和主题变体。
 
 ```xml
 <Application.Styles>
@@ -79,7 +79,7 @@ dotnet add package Avalonia.Controls.PdfViewer
 
 ## 基本用法 {#basic-usage}
 
-The control lives in the `Avalonia.Controls` namespace. `Avalonia.Controls.PdfViewer` is the package and assembly name, so map the namespace with an `xmlns` prefix in XAML.
+该控件位于 `Avalonia.Controls` 命名空间下。`Avalonia.Controls.PdfViewer` 既是包名也是程序集名，因此在 XAML 中请用 `xmlns` 前缀映射该命名空间。
 
 <Tabs>
 <TabItem value="xaml" label="XAML">
@@ -133,100 +133,100 @@ await Viewer.SaveDocumentAsync("/path/to/output.pdf");
 </TabItem>
 </Tabs>
 
-Setting `Source` loads the document. It can be set before the viewer is attached to the visual tree, for example from a view model constructor.
+设置 `Source` 即加载文档。它可以在查看器挂到视觉树之前就设好，比如在视图模型的构造函数里。
 
 ## Namespaces
 
-| 命名空间 | Contents |
+| 命名空间 | 本章内容 |
 |---|---|
-| `Avalonia.Controls` | `PdfViewer`, its enums, its event args and `PdfViewerStrings`. |
-| `Avalonia.Controls.Pdf.Core` | Data types: `PdfAnnotationColor`, `PdfBookmark`, `PdfSearchResult`, `PdfMetadata`, `PdfPermissions`, `SearchOptions`, `PdfLinkDestination`. |
-| `Avalonia.Controls.Pdf.Services` | Print and share types: `PrintOptions`, `IPrintService`, `ShareOptions`, `IShareService`. |
+| `Avalonia.Controls` | `PdfViewer` 及其枚举、事件参数和 `PdfViewerStrings`。 |
+| `Avalonia.Controls.Pdf.Core` | 数据类型：`PdfAnnotationColor`、`PdfBookmark`、`PdfSearchResult`、`PdfMetadata`、`PdfPermissions`、`SearchOptions`、`PdfLinkDestination`。 |
+| `Avalonia.Controls.Pdf.Services` | 打印与分享类型：`PrintOptions`、`IPrintService`、`ShareOptions`、`IShareService`。 |
 
 ## 属性 {#properties}
 
-### Document, view and zoom
+### 文档、视图与缩放 {#document-view-and-zoom}
 
 | 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `Source` | `string?` | `null` | Path to the PDF file. Setting it loads the document. |
-| `DocumentSource` | `object?` | `null` | Flexible source: a file path `string`, a `Stream`, or a `byte[]`. |
-| `Password` | `string?` | `null` | Password for encrypted PDFs. |
-| `CurrentPage` | `int` | `0` | Current page number. 1-based once a document is open, `0` while none is. Coerced to the range 1 to `PageCount`. |
-| `ZoomLevel` | `double` | `1.0` | Zoom level, from `MinZoom` to `MaxZoom`. `1.0` is 100%. |
+| `Source` | `string?` | `null` | PDF 文件的路径。设置它即加载文档。 |
+| `DocumentSource` | `object?` | `null` | 更灵活的来源：文件路径 `string`、`Stream` 或 `byte[]`。 |
+| `Password` | `string?` | `null` | 加密 PDF 的密码。 |
+| `CurrentPage` | `int` | `0` | 当前页码。文档打开后从 1 开始计数，未打开时为 `0`。取值会被收束到 1 至 `PageCount` 之间。 |
+| `ZoomLevel` | `double` | `1.0` | 缩放级别，从 `MinZoom` 到 `MaxZoom`。`1.0` 表示 100%。 |
 | `ZoomMode` | `PdfZoomMode` | `FitPage` | `Manual`, `FitWidth`, `FitPage`, `FitHeight` or `ActualSize`. |
-| `MinZoom` | `double` | `0.05` | Lower zoom bound. |
-| `MaxZoom` | `double` | `5.0` | Upper zoom bound. |
-| `ZoomStep` | `double` | `0.0` | Increment applied by `ZoomIn` and `ZoomOut`. `0` uses the built-in adaptive step. |
+| `MinZoom` | `double` | `0.05` | 缩放下限。 |
+| `MaxZoom` | `double` | `5.0` | 缩放上限。 |
+| `ZoomStep` | `double` | `0.0` | `ZoomIn` 和 `ZoomOut` 每次调整的步长。取 `0` 时采用内置的自适应步长。 |
 | `ViewMode` | `PdfViewMode` | `Continuous` | `SinglePage`, `Continuous`, `TwoPages` or `TwoPagesContinuous`. |
-| `PageRenderBuffer` | `int` | `2` | Pages decoded on each side of the viewport in continuous mode. Clamped to 0 to 10. |
-| `PageRetentionBuffer` | `int` | `4` | Pages kept decoded on each side before eviction. Clamped to 0 to 20. |
-| `MaxRenderScale` | `double` | `2.0` | Upper bound on device pixels per DIP used when decoding a page. Coerced to 1 to 4. |
-| `VerticalScrollOffset` | `double` | | Current vertical scroll offset. |
+| `PageRenderBuffer` | `int` | `2` | 连续模式下，视口两侧各预先解码多少页。收束到 0 至 10。 |
+| `PageRetentionBuffer` | `int` | `4` | 两侧各保留多少页解码结果不被回收。收束到 0 至 20。 |
+| `MaxRenderScale` | `double` | `2.0` | 解码页面时每个设备无关像素最多对应多少设备像素。强制收束到 1 至 4。 |
+| `VerticalScrollOffset` | `double` | | 当前的垂直滚动偏移量。 |
 
-### Sidebar and toolbar
+### 侧栏与工具栏 {#sidebar-and-toolbar}
 
 | 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `SidebarMode` | `SidebarMode` | `Thumbnails` | `None`, `Thumbnails`, `TableOfContents` or `Bookmarks`. |
-| `IsSidebarVisible` | `bool` | `true` | Shows or hides the sidebar. |
-| `SidebarWidth` | `double` | `210` | Sidebar width in DIPs. |
-| `SidebarPlacement` | `SidebarPlacement` | `Auto` | `Auto` (overlay in the mobile layout, offset on desktop), `Overlay` or `Offset`. |
-| `SidebarSelectionBrush` | `IBrush?` | `null` | Brush of the selected thumbnail and outline entry. `null` uses the theme's `PdfThumbnailSelectedBorder` resource. |
-| `IsTableOfContentsEnabled` | `bool` | `true` | Offers the outline tab in the sidebar. |
-| `IsBookmarksEnabled` | `bool` | `true` | Offers the bookmarks tab in the sidebar. |
-| `ShowBookmarkIndicators` | `bool` | `true` | Draws a ribbon on bookmarked pages and thumbnails. |
-| `IsToolbarVisible` | `bool` | `true` | Shows or hides the toolbar. |
-| `IsMoreOptionsVisible` | `bool` | `true` | Shows or hides the toolbar's **More Options** menu (print, share, view modes). |
-| `IsPrintVisible` | `bool` | `true` | Offers **Print** in the **More Options** menu. Hidden anyway when nothing can print. |
-| `IsShareVisible` | `bool` | `true` | Offers **Share** in the **More Options** menu. Hidden anyway when nothing can share. |
-| `IsOpenVisible` | `bool` | `false` | Offers **Open** at the top of the **More Options** menu. |
-| `IsSaveVisible` | `bool` | `false` | Offers **Save** in the **More Options** menu. Hidden while `AllowDocumentSaving` is `false`. |
-| `IsSaveAsVisible` | `bool` | `false` | Offers **Save As** in the **More Options** menu. |
-| `PrintService` | `IPrintService?` | platform | Print implementation. Unset uses the built-in platform service, `null` disables it. |
-| `ShareService` | `IShareService?` | platform | Share implementation, with the same semantics as `PrintService`. |
-| `ToolbarLayoutMode` | `PdfToolbarLayoutMode` | `Auto` | `Auto` picks the layout from the platform and width. `Mobile` and `Desktop` force one. |
+| `IsSidebarVisible` | `bool` | `true` | 显示或隐藏侧栏。 |
+| `SidebarWidth` | `double` | `210` | 侧栏宽度，单位为设备无关像素。 |
+| `SidebarPlacement` | `SidebarPlacement` | `Auto` | `Auto`（移动端布局下为覆盖式，桌面端为挤开式）、`Overlay` 或 `Offset`。 |
+| `SidebarSelectionBrush` | `IBrush?` | `null` | 选中的缩略图和大纲条目所用的画刷。取 `null` 时使用主题的 `PdfThumbnailSelectedBorder` 资源。 |
+| `IsTableOfContentsEnabled` | `bool` | `true` | 在侧栏中提供大纲选项卡。 |
+| `IsBookmarksEnabled` | `bool` | `true` | 在侧栏中提供书签选项卡。 |
+| `ShowBookmarkIndicators` | `bool` | `true` | 在加了书签的页面和缩略图上画一条标带。 |
+| `IsToolbarVisible` | `bool` | `true` | 显示或隐藏工具栏。 |
+| `IsMoreOptionsVisible` | `bool` | `true` | 显示或隐藏工具栏的**更多选项**菜单（打印、分享、视图模式）。 |
+| `IsPrintVisible` | `bool` | `true` | 在**更多选项**菜单中提供**打印**。当前环境无法打印时，它无论如何都不会显示。 |
+| `IsShareVisible` | `bool` | `true` | 在**更多选项**菜单中提供**分享**。当前环境无法分享时，它无论如何都不会显示。 |
+| `IsOpenVisible` | `bool` | `false` | 在**更多选项**菜单顶部提供**打开**。 |
+| `IsSaveVisible` | `bool` | `false` | 在**更多选项**菜单中提供**保存**。当 `AllowDocumentSaving` 为 `false` 时隐藏。 |
+| `IsSaveAsVisible` | `bool` | `false` | 在**更多选项**菜单中提供**另存为**。 |
+| `PrintService` | `IPrintService?` | platform | 打印的具体实现。不设置则使用内置的平台服务，设为 `null` 则禁用打印。 |
+| `ShareService` | `IShareService?` | platform | 分享的具体实现，语义与 `PrintService` 相同。 |
+| `ToolbarLayoutMode` | `PdfToolbarLayoutMode` | `Auto` | `Auto` 会依据平台和宽度自行挑选布局，`Mobile` 和 `Desktop` 则强制指定其一。 |
 | `IsMobileLayout` | `bool` | | Whether the compact mobile layout is active. Set by the control: `true` on iOS and Android, and on any platform when the control is narrower than 500 DIPs. Use `ToolbarLayoutMode` to force a layout. |
 
-The visibility of each annotation tool is controlled by its own property. See [Annotations](annotations.md#tool-visibility).
+每件批注工具的显示与否，都由各自的属性控制。参见[批注](annotations.md#tool-visibility)。
 
-### Capabilities and permissions
+### 功能开关与权限 {#capabilities-and-permissions}
 
 | 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `IsReadOnly` | `bool` | `false` | Disables annotation and form editing in one switch. Saving is gated separately by `AllowDocumentSaving`. |
-| `AllowTextSelection` | `bool` | `true` | Enables text selection and copy. |
-| `AllowAnnotationEditing` | `bool` | `true` | Enables creating and editing annotations. |
-| `AllowFormEditing` | `bool` | `true` | Enables interactive form field editing. |
-| `AllowDocumentSaving` | `bool` | `true` | Enables saving. Gates `SaveCommand` and `SaveAsync`. |
-| `RespectDocumentPermissions` | `bool` | `true` | Honours the document's own permission flags. Annotation editing, form filling, text selection and printing are each withheld when the document forbids them. A document opened with its owner password is unrestricted. |
-| `AutoSave` | `bool` | `false` | Saves back to `Source` after each edit. Requires `AllowDocumentSaving`. |
-| `EnableKeyboardShortcuts` | `bool` | `true` | Handles the viewer's built-in [keyboard shortcuts](navigation-and-search.md#keyboard-shortcuts). Set `false` so those keystrokes reach the host's own commands. |
-| `IsArrowKeyNudgeEnabled` | `bool` | `true` | With an annotation selected, the arrow keys move it instead of navigating. |
-| `SearchQuery` | `string?` | `null` | Text in the toolbar search box. |
-| `SearchMatchCase` | `bool` | `false` | Case-sensitive option of the toolbar search box. |
-| `SearchMatchWholeWord` | `bool` | `false` | Whole-word option of the toolbar search box. |
-| `Strings` | `PdfViewerStrings` | `PdfViewerStrings.Default` | Every user-facing text. See [Localization](theming-and-localization.md#localization). |
+| `IsReadOnly` | `bool` | `false` | 一个开关即可禁止批注和表单编辑。保存则另由 `AllowDocumentSaving` 把关。 |
+| `AllowTextSelection` | `bool` | `true` | 启用文本选择与复制。 |
+| `AllowAnnotationEditing` | `bool` | `true` | 启用批注的创建与编辑。 |
+| `AllowFormEditing` | `bool` | `true` | 启用交互式表单字段的编辑。 |
+| `AllowDocumentSaving` | `bool` | `true` | 启用保存。它同时把关 `SaveCommand` 和 `SaveAsync`。 |
+| `RespectDocumentPermissions` | `bool` | `true` | 遵从文档自身的权限标志。文档禁止时，批注编辑、表单填写、文本选择和打印会相应地被逐项限制。用所有者密码打开的文档不受任何限制。 |
+| `AutoSave` | `bool` | `false` | 每次编辑后都写回 `Source`。需要 `AllowDocumentSaving`。 |
+| `EnableKeyboardShortcuts` | `bool` | `true` | 处理查看器内置的[键盘快捷键](navigation-and-search.md#keyboard-shortcuts)。设为 `false` 可让这些按键落到宿主自己的命令上。 |
+| `IsArrowKeyNudgeEnabled` | `bool` | `true` | 选中某条批注时，方向键改为移动该批注，而不再用于翻页导航。 |
+| `SearchQuery` | `string?` | `null` | 工具栏搜索框中的文字。 |
+| `SearchMatchCase` | `bool` | `false` | 工具栏搜索框的「区分大小写」选项。 |
+| `SearchMatchWholeWord` | `bool` | `false` | 工具栏搜索框的「全词匹配」选项。 |
+| `Strings` | `PdfViewerStrings` | `PdfViewerStrings.Default` | 所有面向用户的文案。参见[本地化](theming-and-localization.md#localization)。 |
 
 ### State
 
-These properties are read-only and bindable.
+下列属性为只读且可绑定。
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `PageCount` | `int` | Number of pages in the loaded document. |
-| `HasDocument` | `bool` | Whether a document is open. |
-| `IsLoading` | `bool` | `true` while a document is loading. |
-| `IsDirty` | `bool` | The document has edits not yet written. Cleared by a successful save and by loading another document. |
-| `IsSidebarOpen` | `bool` | `true` when the sidebar is expanded. |
-| `HasOutline` | `bool` | The document has a table of contents. |
-| `HasBookmarks` | `bool` | The document has user bookmarks. |
-| `HasSelection` | `bool` | Text is currently selected. |
-| `SelectedText` | `string?` | The current text selection. |
-| `SearchResults` | `IReadOnlyList<PdfSearchResult>?` | Results of the last search. |
-| `SearchResultCount` | `int` | Number of search matches. |
-| `CurrentSearchResultIndex` | `int` | Index of the highlighted match. |
-| `ErrorMessage` | `string?` | Last error message. Shown as a dismissible banner over an open document, or as the canvas state after a failed load. Clear it with `ClearError()`. |
+| `PageCount` | `int` | 已加载文档的页数。 |
+| `HasDocument` | `bool` | 当前是否打开着文档。 |
+| `IsLoading` | `bool` | 文档加载过程中为 `true`。 |
+| `IsDirty` | `bool` | 文档有尚未写入的改动。保存成功或加载另一份文档后，该标志会被清除。 |
+| `IsSidebarOpen` | `bool` | 侧栏展开时为 `true`。 |
+| `HasOutline` | `bool` | 文档带有目录。 |
+| `HasBookmarks` | `bool` | 文档带有用户书签。 |
+| `HasSelection` | `bool` | 当前有文本处于选中状态。 |
+| `SelectedText` | `string?` | 当前的文本选区。 |
+| `SearchResults` | `IReadOnlyList<PdfSearchResult>?` | 上一次搜索的结果。 |
+| `SearchResultCount` | `int` | 搜索命中的数量。 |
+| `CurrentSearchResultIndex` | `int` | 当前高亮命中项的索引。 |
+| `ErrorMessage` | `string?` | 最近一条错误信息。文档已打开时，它以可关闭的横幅显示在文档之上；加载失败时，则作为画布的状态显示。用 `ClearError()` 清除它。 |
 | `Metadata` | `PdfMetadata?` | Document metadata such as title and author. |
 | `Permissions` | `PdfPermissions?` | Document permission flags. |
 | `CanEditAnnotations` | `bool` | Annotations can be created and edited right now. |
@@ -283,7 +283,7 @@ Every public member of `PdfViewer` must be called on the UI thread. The `*Async`
 
 ## 另请参阅 {#see-also}
 
-- [Loading and saving](loading-and-saving.md)
+- [加载与保存](loading-and-saving.md)
 - [Navigation and search](navigation-and-search.md)
 - [Annotations](annotations.md)
 - [Printing and sharing](printing-and-sharing.md)

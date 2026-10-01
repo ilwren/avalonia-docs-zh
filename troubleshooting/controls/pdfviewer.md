@@ -97,5 +97,5 @@ Shapes that carry text are saved as `/Stamp` annotations by default, so other re
 
 ## 另请参阅 {#see-also}
 
-- [PdfViewer control](/controls/data-display/pdfviewer)
+- [PdfViewer 控件](/controls/data-display/pdfviewer)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)

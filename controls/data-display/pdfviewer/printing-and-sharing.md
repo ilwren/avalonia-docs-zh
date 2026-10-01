@@ -56,6 +56,6 @@ Viewer.ShareService = null; // no Share entry
 
 ## 另请参阅 {#see-also}
 
-- [PdfViewer control](index.md)
-- [Loading and saving](loading-and-saving.md)
+- [PdfViewer 控件](index.md)
+- [加载与保存](loading-and-saving.md)
 - [Platforms and performance](platforms-and-performance.md)

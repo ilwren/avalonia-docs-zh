@@ -41,7 +41,7 @@ The Build MCP server exposes eight tools to your AI assistant:
 
 ### Documentation and rules
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `search_avalonia_docs` | Searches the full Avalonia documentation, including API references, tutorials, guides, and migration docs. Common topics like "styling", "binding", and "mvvm" are automatically routed to optimized queries for better results. |
 | `lookup_avalonia_api` | Looks up a specific Avalonia class, property, method, or event in the API reference. Use this for targeted queries such as `TextBlock`, `Window.Show`, or `StyledProperty`. |
@@ -49,7 +49,7 @@ The Build MCP server exposes eight tools to your AI assistant:
 
 ### Migration
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `migrate_diagnostics` | Provides step-by-step guidance for setting up or migrating to the current Avalonia Developer Tools package. Covers removing the deprecated `Avalonia.Diagnostics` package, installing `AvaloniaUI.DiagnosticsSupport`, updating `Program.cs` and `App.axaml.cs`, and replacing old API calls. |
 | `analyze_wpf_project` | Entry point for migrating a WPF application to Avalonia. Scans the project for target framework, WPF references, third-party control suites (Telerik, DevExpress, Syncfusion, Infragistics, Actipro, SciChart, Xceed, ComponentOne), MVVM frameworks, and P/Invoke usage, then recommends either Avalonia XPF or a native Avalonia migration. Hands off to `migrate_to_xpf` or `migrate_to_avalonia` based on the recommendation. |

@@ -207,6 +207,6 @@ These are not affected by `EnableKeyboardShortcuts`.
 
 ## 另请参阅 {#see-also}
 
-- [PdfViewer control](index.md)
+- [PdfViewer 控件](index.md)
 - [Annotations](annotations.md)
 - [Platforms and performance](platforms-and-performance.md)

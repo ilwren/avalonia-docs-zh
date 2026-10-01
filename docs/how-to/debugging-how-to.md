@@ -153,7 +153,7 @@ Non-virtualizing panels like `StackPanel` inside an `ItemsControl` create all it
 
 ## Useful debugging tools
 
-| Tool | 用途 |
+| 工具 | 用途 |
 |---|---|
 | **DevTools (F12)** | Inspect visual tree, properties, styles, and events at runtime. |
 | **Compiled Bindings** | Catch binding errors at compile time instead of runtime. |

@@ -62,10 +62,10 @@ Your own gates are separate:
 | 属性 | 效果 |
 |---|---|
 | `IsReadOnly` | Disables annotation and form editing in one switch. Tools are disarmed, and selected annotations cannot be moved or deleted. |
-| `AllowTextSelection` | Enables text selection and copy. |
-| `AllowAnnotationEditing` | Enables creating and editing annotations. |
-| `AllowFormEditing` | Enables interactive form field editing. |
-| `AllowDocumentSaving` | Enables saving. Gates `SaveCommand` and `SaveAsync`. |
+| `AllowTextSelection` | 启用文本选择与复制。 |
+| `AllowAnnotationEditing` | 启用批注的创建与编辑。 |
+| `AllowFormEditing` | 启用交互式表单字段的编辑。 |
+| `AllowDocumentSaving` | 启用保存。它同时把关 `SaveCommand` 和 `SaveAsync`。 |
 
 `CanEditAnnotations` reports the combined result: not `IsReadOnly`, `AllowAnnotationEditing` is `true`, and the document allows it when `RespectDocumentPermissions` is on.
 
@@ -129,6 +129,6 @@ Viewer.SaveAsRequested += async (_, e) =>
 
 ## 另请参阅 {#see-also}
 
-- [PdfViewer control](index.md)
+- [PdfViewer 控件](index.md)
 - [Printing and sharing](printing-and-sharing.md)
 - [Platforms and performance](platforms-and-performance.md)

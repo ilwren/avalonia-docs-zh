@@ -319,13 +319,13 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Catalog
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_list_charts` | Lists all available charts with descriptions and example data formats. |
 
 ### Cartesian
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_line_chart` | Trends and time-series data. |
 | `avalonia_area_chart` | Quantitative data with filled areas. |
@@ -335,7 +335,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Circular
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_pie_chart` | Proportions of a whole. |
 | `avalonia_donut_chart` | Proportions with a center hole. |
@@ -347,7 +347,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Gauge
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_gauge_chart` | Standard dial gauge. |
 | `avalonia_bullet_chart` | Performance compared with target and ranges. |
@@ -358,7 +358,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Polar
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_radar_chart` | Multivariate comparisons. |
 | `avalonia_polar_chart` | Angular and radial line data. |
@@ -368,7 +368,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Statistical
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_violin_plot` | Distribution density and range. |
 | `avalonia_boxplot_chart` | Quartiles, median, and outliers. |
@@ -380,7 +380,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Comparison and ranking
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_tornado_chart` | Paired comparison by category. |
 | `avalonia_bump_chart` | Changes in rank over time. |
@@ -395,7 +395,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Flow and network
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_sankey_chart` | Flow between multiple categories. |
 | `avalonia_arc_diagram` | Links between ordered nodes. |
@@ -408,7 +408,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Proportional and hierarchical
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_treemap_chart` | Nested rectangles for hierarchies. |
 | `avalonia_icicle_chart` | Adjacency diagram hierarchy. |
@@ -424,7 +424,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Grid and matrix
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_heatmap_chart` | Value intensity by color grid. |
 | `avalonia_matrix_chart` | Correlation or relationship matrix. |
@@ -437,7 +437,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Time and scheduling
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_gantt_chart` | Project management and task schedules. |
 | `avalonia_swimlane_chart` | Workflow tasks grouped by lane. |
@@ -446,7 +446,7 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Financial
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_candlestick_chart` | Financial price movement. |
 | `avalonia_ohlc_chart` | Open-high-low-close (OHLC) bars. |
@@ -457,14 +457,14 @@ The Charts MCP server exposes 86 chart generation tools and one catalog tool.
 
 ### Map
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_choropleth_map` | Geographic regions colored by values. |
 | `avalonia_shape_map` | Custom multilayer geometric shapes. |
 
 ### Dashboard, data, text, and bubble
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `avalonia_sparkline_chart` | Compact trend lines. |
 | `avalonia_kpi_card` | Metric display with status or change. |

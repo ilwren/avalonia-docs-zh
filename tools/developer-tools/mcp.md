@@ -373,7 +373,7 @@ dotnet tool update -g avdt
 
 ### Connection
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `attach-to-app` | Connects to a running Avalonia app. If multiple apps are running, lists them for selection. |
 | `attach-to-file` | Connects to the XAML previewer for a specified file. Recommended over `attach-to-app` for previewing XAML layouts. |
@@ -381,7 +381,7 @@ dotnet tool update -g avdt
 
 ### Inspection
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `tree` | Returns child elements of a node. Pass a null `nodeId` to get the root elements. |
 | `ancestors` | Returns the parent chain from a node up to the root. |
@@ -390,7 +390,7 @@ dotnet tool update -g avdt
 
 ### Properties and styles
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `props` | Returns all property values for a node. |
 | `set-prop` | Sets a property value on a node. Use `null` or `unset` to clear a value. |
@@ -399,7 +399,7 @@ dotnet tool update -g avdt
 
 ### Resources and assets
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `resources` | Returns resources defined in the application. Optionally scoped to a specific node. |
 | `assets` | Lists embedded assets (images, fonts). Returns URLs for use with `open-asset`. |
@@ -407,7 +407,7 @@ dotnet tool update -g avdt
 
 ### Interaction
 
-| Tool | 说明 |
+| 工具 | 说明 |
 |------|-------------|
 | `input` | Sends an input event (click, key press, etc.) to a UI element. |
 | `action` | Performs a higher-level action on a UI element. |
