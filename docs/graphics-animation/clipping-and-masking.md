@@ -1,15 +1,15 @@
 ---
 id: clipping-and-masking
-title: Clipping and masking
-description: Clipping and opacity masking techniques for restricting visible content in Avalonia.
+title: 裁剪与遮罩
+description: 在 Avalonia 中用裁剪和遮罩手法限定内容的可见范围。
 doc-type: explanation
 ---
 
-Clipping restricts the visible area of a control or drawing to a defined region. Masking uses an opacity gradient to partially hide content. Both techniques are useful for creating shaped controls, circular avatars, and visual effects.
+裁剪把控件或绘制内容的可见区域限定在指定范围内；遮罩则借助不透明度渐变让内容部分隐去。要做异形控件、圆形头像和各类视觉效果，这两招都很好用。
 
 ## ClipToBounds
 
-The simplest form of clipping constrains child content to the parent's bounds. Set `ClipToBounds="True"` on any control:
+最简单的裁剪，是把子内容限制在父级边界之内。在任意控件上设置 `ClipToBounds="True"` 即可：
 
 ```xml
 <Border Width="100" Height="100" ClipToBounds="True"
@@ -19,15 +19,15 @@ The simplest form of clipping constrains child content to the parent's bounds. S
 </Border>
 ```
 
-By default, `ClipToBounds` is `false`, so content can overflow its parent.
+`ClipToBounds` 默认为 `false`，因此内容可以溢出父级。
 
-## Clip property
+## Clip 属性 {#clip-property}
 
-The `Clip` property accepts any `Geometry` to define a non-rectangular clipping region.
+`Clip` 属性接受任意 `Geometry`，用来定义非矩形的裁剪区域。
 
-### Circular clip
+### 圆形裁剪 {#circular-clip}
 
-Create a circular avatar by clipping an image with an ellipse:
+用椭圆裁剪图片，做出圆形头像：
 
 ```xml
 <Image Source="/assets/avatar.jpg" Width="100" Height="100"
@@ -38,7 +38,7 @@ Create a circular avatar by clipping an image with an ellipse:
 </Image>
 ```
 
-### Rounded rectangle clip
+### 圆角矩形裁剪 {#rounded-rectangle-clip}
 
 ```xml
 <Image Source="/assets/banner.jpg" Width="300" Height="200"
@@ -49,9 +49,9 @@ Create a circular avatar by clipping an image with an ellipse:
 </Image>
 ```
 
-### Custom shape clip
+### 自定义形状裁剪 {#custom-shape-clip}
 
-Use a `PathGeometry` for arbitrary shapes:
+任意形状请用 `PathGeometry`：
 
 ```xml
 <Image Source="/assets/photo.jpg" Width="200" Height="200"
@@ -69,9 +69,9 @@ Use a `PathGeometry` for arbitrary shapes:
 </Image>
 ```
 
-### Using stream geometry syntax
+### 使用流式几何语法 {#using-stream-geometry-syntax}
 
-The compact path mini-language can also define clip regions:
+那套紧凑的路径迷你语言同样可以用来定义裁剪区域：
 
 ```xml
 <Image Source="/assets/photo.jpg" Width="200" Height="200">
@@ -81,9 +81,9 @@ The compact path mini-language can also define clip regions:
 </Image>
 ```
 
-## Clipping with CornerRadius
+## 借 CornerRadius 实现裁剪 {#clipping-with-cornerradius}
 
-`Border` provides built-in clipping through `CornerRadius`. Content inside a border with rounded corners is automatically clipped:
+`Border` 通过 `CornerRadius` 自带裁剪能力：圆角边框内的内容会被自动裁剪：
 
 ```xml
 <Border CornerRadius="50" Width="100" Height="100" ClipToBounds="True">
@@ -91,13 +91,13 @@ The compact path mini-language can also define clip regions:
 </Border>
 ```
 
-This is often simpler than using an `EllipseGeometry` clip for circular images.
+要做圆形图片，这往往比用 `EllipseGeometry` 裁剪更省事。
 
-## Opacity masking
+## 不透明度遮罩 {#opacity-masking}
 
-Use `OpacityMask` to fade or partially hide content using a brush. Areas where the mask brush is transparent become invisible, while opaque areas remain visible:
+用 `OpacityMask` 配合一个画刷，让内容淡出或部分隐去：遮罩画刷透明的地方内容不可见，不透明的地方内容照常显示：
 
-### Gradient fade
+### 渐变淡出 {#gradient-fade}
 
 ```xml
 <Image Source="/assets/landscape.jpg" Width="400" Height="300">
@@ -111,9 +111,9 @@ Use `OpacityMask` to fade or partially hide content using a brush. Areas where t
 </Image>
 ```
 
-This fades the bottom of the image to transparent, creating a common "fade out" effect.
+这会让图片底部渐变至透明，做出常见的「淡出」效果。
 
-### Horizontal fade
+### 横向淡出 {#horizontal-fade}
 
 ```xml
 <TextBlock Text="This text fades to the right" FontSize="24">
@@ -127,7 +127,7 @@ This fades the bottom of the image to transparent, creating a common "fade out" 
 </TextBlock>
 ```
 
-### Radial mask
+### 径向遮罩 {#radial-mask}
 
 ```xml
 <Image Source="/assets/photo.jpg" Width="300" Height="300">
@@ -141,11 +141,11 @@ This fades the bottom of the image to transparent, creating a common "fade out" 
 </Image>
 ```
 
-This creates a vignette effect where the edges fade out.
+这会做出边缘渐隐的暗角效果。
 
-### VisualBrush mask
+### VisualBrush 遮罩 {#visualbrush-mask}
 
-You can use a `VisualBrush` as an opacity mask to clip content to the shape of another control:
+你可以把 `VisualBrush` 用作不透明度遮罩，从而把内容裁成另一个控件的形状：
 
 ```xml
 <Image Source="/assets/photo.jpg" Width="300" Height="300">
@@ -160,11 +160,11 @@ You can use a `VisualBrush` as an opacity mask to clip content to the shape of a
 </Image>
 ```
 
-The image is visible only where the `TextBlock` renders opaque pixels, creating a text-shaped cutout effect.
+只有 `TextBlock` 渲染出不透明像素的地方图片才可见，于是做出了文字形状的镂空效果。
 
-## Clipping in custom controls
+## 在自定义控件中裁剪 {#clipping-in-custom-controls}
 
-When rendering custom controls, you can apply clipping programmatically:
+渲染自定义控件时，你可以用代码施加裁剪：
 
 ```csharp
 public override void Render(DrawingContext context)
@@ -178,7 +178,7 @@ public override void Render(DrawingContext context)
 }
 ```
 
-### Geometry clip in code
+### 在代码中做几何裁剪 {#geometry-clip-in-code}
 
 ```csharp
 var ellipse = new EllipseGeometry(new Rect(0, 0, 100, 100));
@@ -190,6 +190,6 @@ using (context.PushGeometryClip(ellipse))
 
 ## 另请参阅 {#see-also}
 
-- [Shapes and Geometries](/docs/graphics-animation/shapes-and-geometries): Geometry types for clip regions.
-- [Brushes](/docs/graphics-animation/brushes): Brush types for opacity masks.
-- [Custom Rendering](/docs/graphics-animation/custom-rendering): DrawingContext reference.
+- [形状与几何](/docs/graphics-animation/shapes-and-geometries)：可用作裁剪区域的几何类型。
+- [画刷](/docs/graphics-animation/brushes)：可用作不透明度遮罩的各类画刷。
+- [自定义渲染](/docs/graphics-animation/custom-rendering)：DrawingContext 参考。

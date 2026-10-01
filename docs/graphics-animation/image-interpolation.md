@@ -1,39 +1,39 @@
 ---
 id: image-interpolation
-title: Image interpolation
-description: Control image interpolation quality when scaling images in Avalonia.
+title: 图像插值
+description: 在 Avalonia 中缩放图片时，如何控制图像插值的质量。
 doc-type: how-to
 ---
 
-When displaying images in Avalonia, particularly when scaling them to sizes different from their native resolution, the quality of the rendering depends on the interpolation mode being used. This guide explains how to control image interpolation in your Avalonia applications.
+在 Avalonia 中显示图片时——尤其是把图片缩放到与其原始分辨率不同的尺寸时——渲染质量取决于所用的插值模式。本指南介绍如何在你的 Avalonia 应用中控制图像插值。
 
 ## 默认表现 {#default-behavior}
 
-As of Avalonia 11, the default interpolation mode is set to `LowQuality`. This setting prioritizes performance but may result in less smooth image rendering when scaling images, particularly when displaying them at sizes significantly smaller than their original dimensions.
+自 Avalonia 11 起，默认插值模式为 `LowQuality`。这个设置以性能优先，但缩放图片时画面可能不够平滑，把图片显示得远小于原始尺寸时尤为明显。
 
-## Interpolation modes
+## 插值模式 {#interpolation-modes}
 
-Avalonia supports the following bitmap interpolation modes:
+Avalonia 支持下列位图插值模式：
 
 | 模式 | 说明 |
 | :--- | :--- |
-| `None` | No interpolation. Pixels are rendered without smoothing |
-| `LowQuality` | Basic interpolation (default). Prioritizes performance |
-| `MediumQuality` | Balanced interpolation between speed and quality |
-| `HighQuality` | Smooth interpolation. Best for downsizing images |
+| `None` | 不作插值，像素直接渲染，不做平滑 |
+| `LowQuality` | 基础插值（默认），性能优先 |
+| `MediumQuality` | 在速度与质量之间取得平衡的插值 |
+| `HighQuality` | 平滑插值，缩小图片时效果最好 |
 
-## Setting the interpolation mode
+## 设置插值模式 {#setting-the-interpolation-mode}
 
-### Per-control setting
+### 按控件设置 {#per-control-setting}
 
-You can set the interpolation mode on individual controls using the `RenderOptions.BitmapInterpolationMode` attached property:
+你可以用 `RenderOptions.BitmapInterpolationMode` 附加属性为单个控件设置插值模式：
 
 ```xml
 <Image Source="assets/myimage.png" 
        RenderOptions.BitmapInterpolationMode="HighQuality" />
 ```
 
-This can also be applied to containers:
+它也可以设在容器上：
 
 ```xml
 <Border RenderOptions.BitmapInterpolationMode="HighQuality">
@@ -43,7 +43,7 @@ This can also be applied to containers:
 
 ### 常见用法 {#common-use-cases}
 
-1. **Icon Display**: When displaying icons that are being scaled down, using `HighQuality` interpolation can prevent jagged edges:
+1. **图标显示**：显示被缩小的图标时，用 `HighQuality` 插值可以避免锯齿边缘：
 ```xml
 <Button>
     <Image Source="assets/icon.png" 
@@ -53,7 +53,7 @@ This can also be applied to containers:
 </Button>
 ```
 
-2. **Image Galleries**: For image galleries where quality is important:
+2. **图片画廊**：对画质要求较高的图片画廊：
 ```xml
 <ItemsControl RenderOptions.BitmapInterpolationMode="HighQuality">
     <ItemsControl.ItemTemplate>
@@ -64,11 +64,11 @@ This can also be applied to containers:
 </ItemsControl>
 ```
 
-## Edge mode (antialiasing)
+## 边缘模式（抗锯齿） {#edge-mode-antialiasing}
 
-Avalonia applies antialiasing to images by default, producing smooth edges when an image is rotated, scaled, or positioned at sub-pixel offsets. This is controlled by the `RenderOptions.EdgeMode` attached property.
+Avalonia 默认会对图片做抗锯齿，于是图片旋转、缩放或落在次像素偏移上时，边缘依然平滑。这由 `RenderOptions.EdgeMode` 附加属性控制。
 
-To force aliased (sharp, pixelated) edges on a specific control, set `EdgeMode` to `Aliased`:
+若要让某个控件强制呈现锯齿化（锐利、像素感）的边缘，把 `EdgeMode` 设为 `Aliased`：
 
 ```xml
 <!-- Smooth edges (default) -->
@@ -83,10 +83,10 @@ To force aliased (sharp, pixelated) edges on a specific control, set `EdgeMode` 
 
 | 模式 | 说明 |
 |---|---|
-| `Unspecified` | The renderer uses its default behavior (antialiased). |
-| `Aliased` | Disables antialiasing. Useful for pixel art or when you need crisp, non-smoothed edges. |
+| `Unspecified` | 渲染器采用默认行为（抗锯齿）。 |
+| `Aliased` | 关闭抗锯齿。适合像素画，或任何需要锐利、不作平滑的边缘的场合。 |
 
-`EdgeMode` also affects non-image rendering (shapes, borders). It can be set on a parent element to apply to all children:
+`EdgeMode` 对非图片的渲染（形状、边框）同样有效。把它设在父元素上即可作用于全部子元素：
 
 ```xml
 <Border RenderOptions.EdgeMode="Aliased">
@@ -96,21 +96,21 @@ To force aliased (sharp, pixelated) edges on a specific control, set `EdgeMode` 
 
 ## 性能考量 {#performance-considerations}
 
-The interpolation mode is set per-control by design for performance reasons. Higher quality interpolation requires more computational resources, so consider these guidelines:
+出于性能考虑，插值模式被设计成按控件设置。高质量插值更吃算力，所以请参考下面的取舍建议：
 
 - 以下情形请用 `HighQuality`：
-  - Important UI elements like logos
-  - Scaled-down images where quality is crucial
-  - Photo galleries or image-focused interfaces
+  - 徽标之类的重要界面元素
+  - 画质要紧的缩小图片
+  - 照片画廊，或以图片为主的界面
   
-- Use default `LowQuality` for:
-  - Background images
-  - Decorative elements where quality is less critical
-  - Performance-sensitive applications
+- 下列情形用默认的 `LowQuality` 即可：
+  - 背景图片
+  - 画质无关紧要的装饰性元素
+  - 对性能敏感的应用
 
-## Creating a global setting
+## 做一个全局设置 {#creating-a-global-setting}
 
-While Avalonia doesn't provide a built-in way to set a global interpolation mode, you can create a custom attached property or behavior to manage this across your application. Here's an example approach:
+Avalonia 没有内置设置全局插值模式的办法，但你可以自定义一个附加属性或行为，在整个应用范围内统一管理。下面是一种思路：
 
 ```csharp
 public static class GlobalImageOptions
@@ -128,7 +128,7 @@ public static class GlobalImageOptions
 }
 ```
 
-Then in your XAML:
+然后在 XAML 中：
 
 ```xml
 <Style Selector="Image">
@@ -137,23 +137,23 @@ Then in your XAML:
 </Style>
 ```
 
-## Tips for best results
+## 拿到最佳效果的几点建议 {#tips-for-best-results}
 
-1. **Asset preparation**:
-   - Provide images at appropriate resolutions for their intended display size
-   - Consider including multiple resolutions for important assets
-   - Use vector formats (SVG) when possible for resolution-independent graphics
+1. **资产准备**：
+   - 按图片的预期显示尺寸提供合适分辨率的素材
+   - 重要资产不妨准备多个分辨率版本
+   - 尽可能使用矢量格式（SVG），获得分辨率无关的图形
 
-2. **Layout considerations**:
-   - Be mindful of the original image dimensions versus display size
-   - Use appropriate containers and layout panels to manage image scaling
-   - Consider using `UniformToFill` or `Uniform` stretch modes with high-quality interpolation
+2. **布局考量**：
+   - 留意原始图片尺寸与显示尺寸之间的差距
+   - 用合适的容器和布局面板来管理图片缩放
+   - 可以考虑把 `UniformToFill` 或 `Uniform` 拉伸模式与高质量插值搭配使用
 
-3. **Testing**:
-   - Test image rendering on different screen densities
-   - Verify performance impact when using high-quality interpolation on many images
-   - Check memory usage with different interpolation settings
+3. **测试**：
+   - 在不同屏幕密度下测试图片渲染效果
+   - 确认对大量图片启用高质量插值后对性能的影响
+   - 检查不同插值设置下的内存占用
 
 ## 另请参阅 {#see-also}
 
-- [Text Options](/docs/graphics-animation/text-options): Text rendering quality options via `TextOptions`.
+- [文本选项](/docs/graphics-animation/text-options)：通过 `TextOptions` 调节文本渲染质量。

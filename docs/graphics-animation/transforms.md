@@ -229,4 +229,4 @@ rotateTransform.Angle = 90; // Immediate change
 
 - [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Animate transforms over time.
 - [Control Transitions](/docs/graphics-animation/control-transitions): Apply transitions when property values change.
-- [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes and geometries.
+- [绘制图形](/docs/graphics-animation/drawing-graphics)：形状与几何。

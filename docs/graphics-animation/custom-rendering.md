@@ -1,15 +1,15 @@
 ---
 id: custom-rendering
-title: Custom rendering
-description: Draw custom graphics by overriding the Render method with DrawingContext.
+title: 自定义渲染
+description: 重写 Render 方法，用 DrawingContext 绘制自定义图形。
 doc-type: how-to
 ---
 
-Avalonia provides a `DrawingContext` API for rendering custom graphics within controls. This is useful when the built-in shape and geometry controls are not flexible enough for your needs.
+Avalonia 提供了 `DrawingContext` API，用于在控件内渲染自定义图形。当内置的形状和几何控件不够灵活、满足不了需求时，它就派上用场了。
 
-## Overriding render
+## 重写 render {#overriding-render}
 
-To draw custom content, override the `Render` method on any `Control`:
+要绘制自定义内容，在任意 `Control` 上重写 `Render` 方法：
 
 ```csharp
 public class SimpleCircle : Control
@@ -29,31 +29,31 @@ public class SimpleCircle : Control
 }
 ```
 
-Use the control in XAML:
+在 XAML 中使用这个控件：
 
 ```xml
 <local:SimpleCircle Width="100" Height="100" />
 ```
 
-The `Render` method is called whenever the control needs to be redrawn. Call `InvalidateVisual()` to request a redraw when your data changes.
+控件每次需要重绘时都会调用 `Render` 方法。数据变化时，请调用 `InvalidateVisual()` 来请求重绘。
 
-## DrawingContext operations
+## DrawingContext 的各项操作 {#drawingcontext-operations}
 
-The `DrawingContext` provides these drawing operations:
+`DrawingContext` 提供下列绘制操作：
 
 | 方法 | 说明 |
 |---|---|
-| `DrawRectangle(brush, pen, rect, radiusX, radiusY)` | Draw a rectangle, optionally rounded |
-| `DrawEllipse(brush, pen, center, radiusX, radiusY)` | Draw an ellipse |
-| `DrawLine(pen, p1, p2)` | Draw a line between two points |
-| `DrawGeometry(brush, pen, geometry)` | Draw an arbitrary geometry |
-| `DrawText(formattedText, origin)` | Draw formatted text at a point |
-| `DrawImage(bitmap, sourceRect, destRect)` | Draw a bitmap image |
-| `DrawGlyphRun(brush, glyphRun)` | Draw pre-shaped text glyphs |
+| `DrawRectangle(brush, pen, rect, radiusX, radiusY)` | 绘制矩形，可带圆角 |
+| `DrawEllipse(brush, pen, center, radiusX, radiusY)` | 绘制椭圆 |
+| `DrawLine(pen, p1, p2)` | 在两点之间绘制直线 |
+| `DrawGeometry(brush, pen, geometry)` | 绘制任意几何图形 |
+| `DrawText(formattedText, origin)` | 在指定点绘制带格式的文本 |
+| `DrawImage(bitmap, sourceRect, destRect)` | 绘制位图图像 |
+| `DrawGlyphRun(brush, glyphRun)` | 绘制已整形的文本字形 |
 
-### Drawing with state
+### 带状态地绘制 {#drawing-with-state}
 
-Use `PushClip`, `PushOpacity`, `PushTransform`, and related methods to modify the drawing state. These return an `IDisposable` that restores the previous state when disposed:
+用 `PushClip`、`PushOpacity`、`PushTransform` 等方法修改绘制状态。它们都返回一个 `IDisposable`，释放时会还原先前的状态：
 
 ```csharp
 public override void Render(DrawingContext context)
@@ -83,7 +83,7 @@ public override void Render(DrawingContext context)
 
 ### 绘制文本 {#drawing-text}
 
-Use [`FormattedText`](/api/avalonia/media/formattedtext) to measure and render a single run of text:
+用 [`FormattedText`](/api/avalonia/media/formattedtext) 来测量并渲染单段文本：
 
 ```csharp
 public override void Render(DrawingContext context)
@@ -100,7 +100,7 @@ public override void Render(DrawingContext context)
 }
 ```
 
-`FormattedText` is suitable for simple, single-line or short text. For multi-line text, text wrapping, justified alignment, or per-line metrics, use `TextLayout` instead. `TextLayout` supports features that `FormattedText` does not, including `TextAlignment.Justify`:
+`FormattedText` 适合简单的单行或短文本。要处理多行文本、自动换行、两端对齐或逐行度量，请改用 `TextLayout`。`TextLayout` 支持不少 `FormattedText` 没有的特性，`TextAlignment.Justify` 便是其中之一：
 
 ```csharp
 var layout = new TextLayout(
@@ -120,9 +120,9 @@ foreach (var line in layout.TextLines)
 layout.Draw(context, new Point(10, 10));
 ```
 
-### Drawing images
+### 绘制图片 {#drawing-images}
 
-Load and draw bitmap images:
+加载并绘制位图图像：
 
 ```csharp
 private IImage? _image;
@@ -146,9 +146,9 @@ public override void Render(DrawingContext context)
 }
 ```
 
-## Invalidating the visual
+## 让视觉失效 {#invalidating-the-visual}
 
-The framework caches the results of `Render`. When your control's data changes, you must explicitly request a redraw:
+框架会缓存 `Render` 的结果。当控件的数据发生变化时，你必须显式请求重绘：
 
 ```csharp
 public static readonly StyledProperty<double> ProgressProperty =
@@ -167,11 +167,11 @@ static ProgressRing()
 }
 ```
 
-`AffectsRender` registers a callback so that any change to `Progress` triggers `InvalidateVisual()` automatically. You can also call `InvalidateVisual()` manually when needed.
+`AffectsRender` 会注册一个回调，使得 `Progress` 的任何变化都自动触发 `InvalidateVisual()`。需要时你也可以手动调用 `InvalidateVisual()`。
 
 ## RenderTargetBitmap
 
-To capture a control's rendered output as a bitmap (e.g., for saving to a file or image processing):
+要把控件的渲染结果捕获成位图（比如存成文件或作图像处理）：
 
 ```csharp
 var pixelSize = new PixelSize(
@@ -186,16 +186,16 @@ renderTarget.Save("output.png");
 ```
 
 :::note
-`RenderTargetBitmap` uses software rendering. Controls that rely on GPU-specific rendering paths (such as `OpenGlControlBase` or custom GPU interop) may not render correctly when captured this way.
+`RenderTargetBitmap` 走的是软件渲染。那些依赖 GPU 专属渲染路径的控件（比如 `OpenGlControlBase` 或自定义 GPU 互操作）这样捕获出来可能不对。
 :::
 
-:::tip[Offscreen rendering]
-`RenderTargetBitmap.Render` requires the target control to be attached to a visible window. If you need to render controls without displaying a window (for example, server-side image generation or batch export), use the [headless platform](/docs/testing/setting-up-the-headless-platform) with the Skia renderer enabled. The headless platform provides a full layout and rendering pipeline in memory without opening a visible window.
+:::tip[离屏渲染]
+`RenderTargetBitmap.Render` 要求目标控件已附加到一个可见窗口上。若你需要在不显示窗口的前提下渲染控件（比如服务端生成图片或批量导出），请使用启用了 Skia 渲染器的[无头平台](/docs/testing/setting-up-the-headless-platform)。无头平台能在内存中提供完整的布局和渲染管线，无需打开可见窗口。
 :::
 
-## ICustomDrawOperation for SkiaSharp
+## 用 ICustomDrawOperation 对接 SkiaSharp {#icustomdrawoperation-for-skiasharp}
 
-For direct access to the SkiaSharp canvas (e.g., for complex charts, 3D rendering, or game graphics), implement `ICustomDrawOperation`:
+若要直接操作 SkiaSharp 画布（比如绘制复杂图表、做 3D 渲染或游戏画面），请实现 `ICustomDrawOperation`：
 
 ```csharp
 using Avalonia.Rendering.SceneGraph;
@@ -249,20 +249,20 @@ public class ChartControl : Control
 }
 ```
 
-Add the required NuGet packages:
+添加所需的 NuGet 包：
 
 ```xml
 <PackageReference Include="Avalonia.Skia" Version="11.2.*" />
 <PackageReference Include="SkiaSharp" Version="2.88.*" />
 ```
 
-## GPU interop with composition surfaces
+## 借组合表面实现 GPU 互操作 {#gpu-interop-with-composition-surfaces}
 
-For advanced scenarios such as video playback, 3D engine integration, or cross-process GPU texture sharing, Avalonia's composition API supports importing external GPU resources into a `CompositionDrawingSurface`.
+面对视频播放、3D 引擎集成、跨进程 GPU 纹理共享等进阶场景，Avalonia 的组合 API 支持把外部 GPU 资源导入 `CompositionDrawingSurface`。
 
-### Importing GPU images
+### 导入 GPU 图像 {#importing-gpu-images}
 
-Use the compositor to import external GPU textures (for example, a Vulkan image or an IOSurface on macOS) and display them in a composition surface:
+用 compositor 导入外部 GPU 纹理（比如 Vulkan 图像，或 macOS 上的 IOSurface），并把它显示在组合表面中：
 
 ```csharp
 var compositor = ElementComposition.GetElementVisual(this)!.Compositor;
@@ -288,27 +288,27 @@ await surface.UpdateWithTimelineSemaphoresAsync(
     signalSemaphore, signalValue);
 ```
 
-### Supported handle types
+### 受支持的句柄类型 {#supported-handle-types}
 
-GPU image and semaphore handle types vary by platform. Use `KnownPlatformGraphicsExternalImageHandleTypes` and `KnownPlatformGraphicsExternalSemaphoreHandleTypes` to discover available types:
+GPU 图像和信号量的句柄类型因平台而异。用 `KnownPlatformGraphicsExternalImageHandleTypes` 和 `KnownPlatformGraphicsExternalSemaphoreHandleTypes` 可以查出有哪些可用类型：
 
-| 平台 | Image handle types | Semaphore handle types |
+| 平台 | 图像句柄类型 | 信号量句柄类型 |
 |---|---|---|
 | Windows | `D3D11TextureNtHandle`, `VulkanOpaqueNtHandle` | `D3D11Fence`, `VulkanOpaqueNtHandle` |
 | macOS | `IOSurfaceRef` | `MetalSharedEvent` |
 | Linux | `DmaBuf`, `VulkanOpaqueFd` | `VulkanOpaqueFd` |
 
-Check `CompositionGpuImportedImageSynchronizationCapabilities` on an imported image to determine which synchronization methods are available (`KeyedMutex`, `Semaphores`, `TimelineSemaphores`).
+在导入的图像上检查 `CompositionGpuImportedImageSynchronizationCapabilities`，即可知道有哪些同步方式可用（`KeyedMutex`、`Semaphores`、`TimelineSemaphores`）。
 
 ## CompositionCustomVisualHandler
 
-[`CompositionCustomVisualHandler`](/api/avalonia/rendering/composition/compositioncustomvisualhandler) provides per-frame callbacks that run directly on the render thread, without blocking the UI thread. This is useful for smooth, continuous animations or real-time visualizations where UI-thread overhead is a concern.
+[`CompositionCustomVisualHandler`](/api/avalonia/rendering/composition/compositioncustomvisualhandler) 提供逐帧回调，这些回调直接运行在渲染线程上，不会阻塞 UI 线程。要做顺滑连续的动画或实时可视化、又顾虑 UI 线程开销时，它很有用。
 
-For simpler scenarios where UI-thread callbacks are acceptable, use [`TopLevel.RequestAnimationFrame`](/docs/fundamentals/top-level#requestanimationframe) instead.
+若场景比较简单、能接受回调跑在 UI 线程上，请改用 [`TopLevel.RequestAnimationFrame`](/docs/fundamentals/top-level#requestanimationframe)。
 
-### Setting up a custom visual handler
+### 搭建自定义视觉处理器 {#setting-up-a-custom-visual-handler}
 
-Create a `CompositionCustomVisualHandler` and register it with a control's composition visual:
+创建一个 `CompositionCustomVisualHandler`，并把它注册到某个控件的组合视觉元素上：
 
 ```csharp
 public class RenderThreadAnimationControl : Control
@@ -361,38 +361,38 @@ public class RenderThreadAnimationControl : Control
 }
 ```
 
-### Communicating between threads
+### 跨线程通信 {#communicating-between-threads}
 
-Because `OnRender` runs on the render thread, you cannot directly access UI-thread state. Use `SendHandlerMessage` to pass data from the UI thread to the render callback:
+由于 `OnRender` 跑在渲染线程上，你没法直接访问 UI 线程的状态。请用 `SendHandlerMessage` 把数据从 UI 线程传给渲染回调：
 
 ```csharp
 // On the UI thread: send updated data to the render thread
 _handler?.SendHandlerMessage(new AnimationData(progress: 0.5));
 ```
 
-The message arrives in the `OnMessage` callback, where you can store it for use in the next render pass. This pattern keeps the UI thread responsive while the render thread handles drawing.
+消息会送达 `OnMessage` 回调，你可以把它存下来供下一轮渲染使用。这套做法让渲染线程专心作画，UI 线程则始终保持跟手。
 
-### When to use CompositionCustomVisualHandler
+### 何时该用 CompositionCustomVisualHandler {#when-to-use-compositioncustomvisualhandler}
 
-| 办法 | Thread | 适用场景 |
+| 办法 | 线程 | 适用场景 |
 |---|---|---|
-| `TopLevel.RequestAnimationFrame` | UI thread | Simple per-frame updates, property animation loops |
-| `CompositionCustomVisualHandler` | Render thread | Real-time visualizations, game loops, video rendering |
-| `Render()` override | UI thread | Standard custom control drawing |
+| `TopLevel.RequestAnimationFrame` | UI 线程 | 简单的逐帧更新、属性动画循环 |
+| `CompositionCustomVisualHandler` | 渲染线程 | 实时可视化、游戏主循环、视频渲染 |
+| `Render()` override | UI 线程 | 常规的自定义控件绘制 |
 
 ## 性能考量 {#performance-considerations}
 
-- `Render` is called on the UI thread. Keep drawing operations fast and avoid allocations where possible.
-- Reuse `Pen`, `Brush`, and `FormattedText` objects when the parameters do not change. Store them as fields and recreate only when their inputs change.
-- For controls that render frequently (e.g., charts, gauges), use `AffectsRender` to avoid unnecessary redraws.
-- For complex scenes, consider breaking your control into smaller controls so that only the changed portion needs to redraw.
-- `ICustomDrawOperation` bypasses Avalonia's scene graph caching. Use it only when you need SkiaSharp-level control.
+- `Render` 是在 UI 线程上调用的。请让绘制操作尽量快，并尽可能避免内存分配。
+- 参数不变时，请复用 `Pen`、`Brush` 和 `FormattedText` 对象：把它们存成字段，只有输入变了才重建。
+- 对那些频繁渲染的控件（比如图表、仪表），用 `AffectsRender` 来避免无谓的重绘。
+- 场景复杂时，不妨把控件拆成若干小控件，这样只有真正变化的那部分才需要重绘。
+- `ICustomDrawOperation` 会绕过 Avalonia 的场景图缓存。只有当你确实需要 SkiaSharp 级别的掌控力时才用它。
 
 ## 另请参阅 {#see-also}
 
-- [TopLevel.RequestAnimationFrame](/docs/fundamentals/top-level#requestanimationframe): Per-frame callbacks on the UI thread.
-- [Composition Animations](/docs/graphics-animation/composition-animations): Render-thread property animations using the composition API.
-- [Shapes and Geometries](/docs/graphics-animation/shapes-and-geometries): Built-in shape controls and geometry types.
-- [Custom-drawn controls](/docs/custom-controls/custom-drawn-controls): Creating custom controls that draw themselves.
-- [Brushes](/docs/graphics-animation/brushes): Available brush types for filling and stroking.
-- [Effects](/docs/graphics-animation/effects): Shadows, blur, and visual effects.
+- [TopLevel.RequestAnimationFrame](/docs/fundamentals/top-level#requestanimationframe)：UI 线程上的逐帧回调。
+- [组合动画](/docs/graphics-animation/composition-animations)：用组合 API 实现的渲染线程属性动画。
+- [形状与几何](/docs/graphics-animation/shapes-and-geometries)：内置形状控件与几何类型。
+- [自绘控件](/docs/custom-controls/custom-drawn-controls)：编写自己画自己的控件。
+- [画刷](/docs/graphics-animation/brushes)：可用于填充和描边的各类画刷。
+- [效果](/docs/graphics-animation/effects)：阴影、模糊等视觉效果。

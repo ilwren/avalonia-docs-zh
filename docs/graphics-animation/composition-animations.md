@@ -1,66 +1,66 @@
 ---
 id: composition-animations
 title: 组合动画
-description: Code-driven render-thread animations using the composition animation API in Avalonia.
+description: 用 Avalonia 的组合动画 API 编写由代码驱动、跑在渲染线程上的动画。
 doc-type: explanation
 ---
 
-Composition animations are a code-driven animation system that runs directly on the render thread. They provide fine-grained control over visual properties and deliver smooth, high-performance animations without blocking the UI thread.
+组合动画是一套由代码驱动、直接运行在渲染线程上的动画系统。它让你能精细地控制视觉属性，动画既顺滑又高性能，还不占用 UI 线程。
 
-This API is similar to the UWP/WinUI Composition layer. Use it when you need programmatic control over animations, want render-thread performance, or need to animate properties that XAML keyframe animations do not support.
+这套 API 与 UWP/WinUI 的 Composition 层相仿。当你需要编程控制动画、追求渲染线程级的性能，或者要动画化 XAML 关键帧动画搞不定的属性时，就用它。
 
-## When to use composition animations
+## 何时该用组合动画 {#when-to-use-composition-animations}
 
 | | Keyframe Animations | Control Transitions | Composition Animations |
 |---|---|---|---|
-| **Defined in** | XAML | XAML | C# code |
-| **Triggered by** | Style selectors | Property value changes | `StartAnimation()` or implicit property changes |
-| **Runs on** | UI thread | UI thread | Render thread |
-| **Best for** | Multi-step style-driven animations | Smooth feedback on property changes | Performance-sensitive or programmatic animations |
+| **定义位置** | XAML | XAML | C# 代码 |
+| **触发方式** | 样式选择器 | 属性值变化 | `StartAnimation()` 或隐式的属性变化 |
+| **运行线程** | UI 线程 | UI 线程 | 渲染线程 |
+| **最适合** | 由样式驱动的多步动画 | 为属性变化提供顺滑反馈 | 对性能敏感、或需要编程控制的动画 |
 
-Choose composition animations when you need to:
+有下列需求时请选择组合动画：
 
-- Animate visuals from code (e.g., in response to scroll position, gestures, or data changes)
-- Run animations on the render thread for maximum smoothness
-- Use expression-based or physics-based animation logic
+- 从代码中为视觉元素加动画（比如响应滚动位置、手势或数据变化）
+- 让动画跑在渲染线程上，以求最佳顺滑度
+- 使用基于表达式或基于物理的动画逻辑
 
-For style-driven scenarios, [Keyframe Animations](/docs/graphics-animation/keyframe-animations) and [Control Transitions](/docs/graphics-animation/control-transitions) are simpler and more appropriate.
+至于由样式驱动的场景，[关键帧动画](/docs/graphics-animation/keyframe-animations)和[控件过渡](/docs/graphics-animation/control-transitions)更简单也更对路。
 
-## Core concepts
+## 核心概念 {#core-concepts}
 
-### CompositionVisual and Compositor
+### CompositionVisual 与 Compositor {#compositionvisual-and-compositor}
 
-Every Avalonia control has a corresponding [`CompositionVisual`](/api/avalonia/rendering/composition/compositionvisual) on the render thread. You obtain it with `ElementComposition.GetElementVisual()`:
+每个 Avalonia 控件在渲染线程上都有一个对应的 [`CompositionVisual`](/api/avalonia/rendering/composition/compositionvisual)，用 `ElementComposition.GetElementVisual()` 即可取得：
 
 ```csharp
 var visual = ElementComposition.GetElementVisual(myControl);
 ```
 
-The [`Compositor`](/api/avalonia/rendering/composition/compositor) is the factory object that creates animations and animation collections. Access it from any `CompositionVisual`:
+[`Compositor`](/api/avalonia/rendering/composition/compositor) 是用来创建动画和动画集合的工厂对象，从任意 `CompositionVisual` 都能取到它：
 
 ```csharp
 var compositor = visual.Compositor;
 ```
 
-All animation objects must be created through the `Compositor` associated with the target visual.
+所有动画对象都必须由目标视觉元素所关联的那个 `Compositor` 创建。
 
 ### Animatable Properties
 
-The following properties on `CompositionVisual` can be animated:
+`CompositionVisual` 上可以动画化的属性有：
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Offset` | `Vector3D` | The X, Y, Z position offset of the visual. |
-| `Opacity` | `float` | The opacity of the visual (0.0 to 1.0). |
-| `Size` | `Vector` | The width and height of the visual. |
+| `Offset` | `Vector3D` | 该视觉元素在 X、Y、Z 方向上的位置偏移。 |
+| `Opacity` | `float` | 该视觉元素的不透明度（0.0 到 1.0）。 |
+| `Size` | `Vector` | 该视觉元素的宽和高。 |
 
-## Explicit animations
+## 显式动画 {#explicit-animations}
 
-Explicit animations run when you call `StartAnimation()` on a visual. You define keyframes, set a duration, and start the animation manually.
+显式动画在你对某个视觉元素调用 `StartAnimation()` 时才运行。你自己定义关键帧、设定时长，并手动启动动画。
 
-### Slide-in example
+### 滑入示例 {#slide-in-example}
 
-This example slides a control in from the left over 400 milliseconds:
+这个例子让控件在 400 毫秒内从左侧滑入：
 
 ```csharp
 var visual = ElementComposition.GetElementVisual(myControl);
@@ -74,9 +74,9 @@ animation.InsertKeyFrame(1f, new Vector3D(0, 0, 0));
 visual.StartAnimation("Offset", animation);
 ```
 
-Keyframe progress values range from `0f` (start) to `1f` (end). You can insert intermediate keyframes at any value between 0 and 1 for multi-step animations.
+关键帧的进度取值从 `0f`（起点）到 `1f`（终点）。要做多步动画，可以在 0 到 1 之间的任意位置插入中间关键帧。
 
-### Fade-in example
+### 淡入示例 {#fade-in-example}
 
 ```csharp
 var visual = ElementComposition.GetElementVisual(myControl);
@@ -90,13 +90,13 @@ animation.InsertKeyFrame(1f, 1f);
 visual.StartAnimation("Opacity", animation);
 ```
 
-## Implicit animations
+## 隐式动画 {#implicit-animations}
 
-Implicit animations trigger automatically whenever a mapped property changes. Instead of calling `StartAnimation()`, you assign an `ImplicitAnimationCollection` to the visual. Any time one of the mapped properties changes, the corresponding animation runs.
+隐式动画会在映射的属性发生变化时自动触发。你不必调用 `StartAnimation()`，只需给视觉元素赋一个 `ImplicitAnimationCollection`。此后只要其中某个被映射的属性一变，对应的动画就会跑起来。
 
-### Smooth repositioning example
+### 平滑移位示例 {#smooth-repositioning-example}
 
-This example smoothly animates a control's position whenever its `Offset` changes:
+这个例子让控件的 `Offset` 每次变化时，位置都平滑地动过去：
 
 ```csharp
 var visual = ElementComposition.GetElementVisual(myControl);
@@ -113,9 +113,9 @@ implicitAnimations["Offset"] = offsetAnimation;
 visual.ImplicitAnimations = implicitAnimations;
 ```
 
-The expression keyframe `"this.FinalValue"` tells the animation to interpolate from the current value to whatever new value the property was set to. This makes the animation reusable regardless of the specific start and end positions.
+表达式关键帧 `"this.FinalValue"` 告诉动画：从当前值插值到属性刚被设成的那个新值。于是无论起止位置具体是多少，这段动画都能复用。
 
-You can map multiple properties in the same collection:
+同一个集合里可以映射多个属性：
 
 ```csharp
 var opacityAnimation = compositor.CreateScalarKeyFrameAnimation();
@@ -126,11 +126,11 @@ opacityAnimation.InsertExpressionKeyFrame(1f, "this.FinalValue");
 implicitAnimations["Opacity"] = opacityAnimation;
 ```
 
-## Integrating with XAML via attached properties
+## 借附加属性在 XAML 中使用 {#integrating-with-xaml-via-attached-properties}
 
-To use composition animations declaratively, wrap the setup logic in an attached property. This lets you apply composition behavior from XAML styles.
+想以声明方式使用组合动画，就把这套初始化逻辑包进一个附加属性里，这样你就能从 XAML 样式中施加组合行为。
 
-### Attached property
+### 附加属性 {#attached-property}
 
 ```csharp
 public class CompositionAnimationHelper : AvaloniaObject
@@ -180,22 +180,22 @@ public class CompositionAnimationHelper : AvaloniaObject
 </Style>
 ```
 
-Every `ListBoxItem` now smoothly animates to its new position whenever the list reorders or items are added and removed.
+如此一来，每当列表重排或增删项时，每个 `ListBoxItem` 都会平滑地动到新位置。
 
-## API reference
+## API 参考 {#api-reference}
 
 | Type / Member | 说明 |
 |---|---|
-| `ElementComposition.GetElementVisual(Visual)` | Returns the `CompositionVisual` for a control. |
-| `CompositionVisual` | Represents a control's visual on the render thread. |
-| `Compositor` | Factory for creating animation and collection objects. |
-| `CreateScalarKeyFrameAnimation()` | Creates an animation for `float` properties (e.g., `Opacity`). |
-| `CreateVector3KeyFrameAnimation()` | Creates an animation for `Vector3D` properties (e.g., `Offset`). |
-| `InsertKeyFrame(float progress, T value)` | Adds a keyframe at the given progress (0.0 to 1.0). |
-| `InsertExpressionKeyFrame(float progress, string expression)` | Adds an expression-based keyframe (e.g., `"this.FinalValue"`). |
-| `StartAnimation(string property, CompositionAnimation animation)` | Starts an explicit animation on the named property. |
-| `ImplicitAnimationCollection` | Maps property names to animations that run automatically on change. |
-| `CompositionVisual.ImplicitAnimations` | Gets or sets the implicit animation collection for a visual. |
+| `ElementComposition.GetElementVisual(Visual)` | 返回某个控件的 `CompositionVisual`。 |
+| `CompositionVisual` | 表示某个控件在渲染线程上的视觉元素。 |
+| `Compositor` | 创建动画对象和集合对象的工厂。 |
+| `CreateScalarKeyFrameAnimation()` | 为 `float` 类型的属性（比如 `Opacity`）创建动画。 |
+| `CreateVector3KeyFrameAnimation()` | 为 `Vector3D` 类型的属性（比如 `Offset`）创建动画。 |
+| `InsertKeyFrame(float progress, T value)` | 在指定进度（0.0 到 1.0）处添加一个关键帧。 |
+| `InsertExpressionKeyFrame(float progress, string expression)` | 添加一个基于表达式的关键帧（比如 `"this.FinalValue"`）。 |
+| `StartAnimation(string property, CompositionAnimation animation)` | 在指定名称的属性上启动一段显式动画。 |
+| `ImplicitAnimationCollection` | 把属性名映射到动画，属性一变就自动播放。 |
+| `CompositionVisual.ImplicitAnimations` | 获取或设置某个视觉元素的隐式动画集合。 |
 
 ## 另请参阅 {#see-also}
 

@@ -119,13 +119,13 @@ myBorder.Background = brush;
 |---|---|
 | `Center` | 最外层圆的圆心，默认为 `50%,50%`。 |
 | `GradientOrigin` | 渐变的原点（焦点）。把它从圆心偏开，就能做出聚光灯一样的效果。 |
-| `RadiusX`, `RadiusY` | The horizontal and vertical radius of the outermost gradient circle. Default is `50%`. |
-| `GradientStops` | Colors and positions along the radius. |
+| `RadiusX`, `RadiusY` | 最外层渐变圆的水平与垂直半径，默认为 `50%`。 |
+| `GradientStops` | 沿半径分布的各个颜色及其位置。 |
 | `SpreadMethod` | `Pad`, `Reflect`, or `Repeat`. |
 
 ## ConicGradientBrush
 
-Fills an area with a gradient that sweeps around a center point, transitioning colors as it rotates.
+用绕中心点旋转扫掠的渐变填充区域，颜色随角度推移而过渡。
 
 ```xml
 <Ellipse Width="150" Height="150">
@@ -145,13 +145,13 @@ Fills an area with a gradient that sweeps around a center point, transitioning c
 
 | 属性 | 说明 |
 |---|---|
-| `Center` | The center point of the conic gradient. Default is `50%,50%`. |
-| `Angle` | The starting angle in degrees. Default is `0`. |
-| `GradientStops` | Colors and positions around the sweep. |
+| `Center` | 锥形渐变的中心点，默认为 `50%,50%`。 |
+| `Angle` | 起始角度，单位为度，默认为 `0`。 |
+| `GradientStops` | 沿扫掠方向分布的各个颜色及其位置。 |
 
 ## ImageBrush
 
-Paints an area with an image.
+用一张图片来绘制区域。
 
 ```xml
 <Border Width="200" Height="200">
@@ -168,17 +168,17 @@ Paints an area with an image.
 
 | 属性 | 说明 |
 |---|---|
-| `Source` | The image source. Supports `avares://` URIs and file paths. |
-| `Stretch` | How the image fills the area: `None`, `Fill`, `Uniform` (default), `UniformToFill`. |
-| `TileMode` | How the image tiles: `None` (default), `Tile`, `FlipX`, `FlipY`, `FlipXY`. |
-| `AlignmentX` | Horizontal alignment of the image within the tile: `Left`, `Center` (default), `Right`. |
-| `AlignmentY` | Vertical alignment of the image within the tile: `Top`, `Center` (default), `Bottom`. |
-| `SourceRect` | A rectangular region of the source image to use. |
-| `DestinationRect` | The destination rectangle within the target area. |
-| `Opacity` | Overall opacity of the brush. |
-| `BitmapInterpolationMode` | Interpolation quality: `Default`, `LowQuality`, `MediumQuality`, `HighQuality`. |
+| `Source` | 图片来源，支持 `avares://` URI 和文件路径。 |
+| `Stretch` | 图片如何填满区域：`None`、`Fill`、`Uniform`（默认）、`UniformToFill`。 |
+| `TileMode` | 图片如何平铺：`None`（默认）、`Tile`、`FlipX`、`FlipY`、`FlipXY`。 |
+| `AlignmentX` | 图片在单块平铺区内的水平对齐方式：`Left`、`Center`（默认）、`Right`。 |
+| `AlignmentY` | 图片在单块平铺区内的垂直对齐方式：`Top`、`Center`（默认）、`Bottom`。 |
+| `SourceRect` | 要取用的源图矩形区域。 |
+| `DestinationRect` | 目标区域内的目的矩形。 |
+| `Opacity` | 画刷的整体不透明度。 |
+| `BitmapInterpolationMode` | 插值质量：`Default`、`LowQuality`、`MediumQuality`、`HighQuality`。 |
 
-### Tiling example
+### 平铺示例 {#tiling-example}
 
 ```xml
 <Border Width="300" Height="200">
@@ -192,7 +192,7 @@ Paints an area with an image.
 
 ## VisualBrush
 
-Paints an area using the rendered output of another visual element.
+用另一个视觉元素的渲染结果来绘制区域。
 
 ```xml
 <Border Width="200" Height="200" BorderBrush="Gray" BorderThickness="1">
@@ -212,29 +212,29 @@ Paints an area using the rendered output of another visual element.
 
 | 属性 | 说明 |
 |---|---|
-| `Visual` | The visual element to render as the brush content. |
-| `Stretch` | How the visual fills the area. |
-| `TileMode` | Tiling mode for repeating the visual. |
-| `SourceRect` | The portion of the visual to use. |
-| `DestinationRect` | The destination rectangle for each tile. |
+| `Visual` | 作为画刷内容渲染的那个视觉元素。 |
+| `Stretch` | 该视觉元素如何填满区域。 |
+| `TileMode` | 重复该视觉元素时的平铺模式。 |
+| `SourceRect` | 要取用的视觉元素的哪一部分。 |
+| `DestinationRect` | 每块平铺区对应的目的矩形。 |
 
 :::info
-`VisualBrush` captures the visual appearance of any control. This is useful for creating reflection effects, watermarks, and preview thumbnails.
+`VisualBrush` 可以捕获任意控件的视觉外观，用来做倒影效果、水印和预览缩略图都很合适。
 :::
 
-## Common brush properties
+## 画刷的通用属性 {#common-brush-properties}
 
-All brush types share these properties:
+所有画刷类型都具备这些属性：
 
 | 属性 | 说明 |
 |---|---|
-| `Opacity` | A value between 0.0 (transparent) and 1.0 (opaque). |
-| `Transform` | A transform applied to the brush coordinates. |
-| `TransformOrigin` | The origin point for the brush transform. |
+| `Opacity` | 取值介于 0.0（完全透明）和 1.0（完全不透明）之间。 |
+| `Transform` | 施加在画刷坐标上的变换。 |
+| `TransformOrigin` | 画刷变换的原点。 |
 
 ## OpacityMask
 
-Any control's `OpacityMask` property accepts a brush that controls per-pixel transparency. The alpha channel of the mask brush determines the opacity of each pixel in the control.
+任意控件的 `OpacityMask` 属性都接受一个画刷，用来逐像素控制透明度。遮罩画刷的 alpha 通道决定了控件中每个像素的不透明度。
 
 ```xml
 <Image Source="avares://MyApp/Assets/photo.png" Width="200" Height="200">
@@ -247,11 +247,11 @@ Any control's `OpacityMask` property accepts a brush that controls per-pixel tra
 </Image>
 ```
 
-In this example, the image fades from fully visible at the top to transparent at the bottom. The color values in the mask do not matter; only the alpha channel is used.
+这个例子里，图片从顶部的完全可见渐变到底部的完全透明。遮罩中的颜色值无关紧要，只有 alpha 通道起作用。
 
-## Using brushes as resources
+## 把画刷当作资源使用 {#using-brushes-as-resources}
 
-Define brushes as resources for reuse across your application:
+把画刷定义成资源，便可在整个应用中复用：
 
 ```xml
 <Application.Resources>
@@ -268,7 +268,7 @@ Define brushes as resources for reuse across your application:
 <Border Background="{DynamicResource AccentGradient}" />
 ```
 
-## Brushes in code
+## 在代码中使用画刷 {#brushes-in-code}
 
 ```csharp
 // SolidColorBrush
@@ -301,6 +301,6 @@ myBorder.Background = linear;
 
 ## 另请参阅 {#see-also}
 
-- [Gradients](/docs/graphics-animation/gradients): Focused guide on linear gradient usage.
-- [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes and geometries.
-- [Image Interpolation](/docs/graphics-animation/image-interpolation): Bitmap rendering quality settings.
+- [渐变](/docs/graphics-animation/gradients)：线性渐变用法的专题讲解。
+- [绘制图形](/docs/graphics-animation/drawing-graphics)：形状与几何。
+- [图像插值](/docs/graphics-animation/image-interpolation)：位图渲染的质量设置。

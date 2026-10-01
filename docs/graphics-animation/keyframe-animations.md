@@ -1,7 +1,7 @@
 ---
 id: keyframe-animations
-title: Using keyframe animations
-description: Define keyframe animations in XAML to animate control properties over a timeline.
+title: 使用关键帧动画
+description: 在 XAML 中定义关键帧动画，沿时间轴改变控件属性。
 doc-type: how-to
 ---
 
@@ -11,28 +11,28 @@ import KeyframeCompositeAnimationScreenshot from '/img/guides/ui-development/gra
 import LinearEasingScreenshot from '/img/guides/ui-development/graphics/linear-easing.gif';
 import BounceEaseInScreenshot from '/img/guides/ui-development/graphics/bounce-ease-in.gif';
 
-You can use a keyframe animation to change one or more control properties following a timeline. The keyframes are defined in _Avalonia UI_ styles with **cue** points along the **duration** of the animation, and set the intermediate values of the properties at a point in time.
+关键帧动画能让一个或多个控件属性沿时间轴变化。关键帧写在 _Avalonia UI_ 样式里，沿动画的**持续时间**布置若干**节点（cue）**，在各个时间点上给出属性的中间值。
 
 <Image light={AnimationKeyframeDiagram} alt="Diagram showing keyframe animation timeline with cue points" position="center" maxWidth={400} cornerRadius="true"/>
 <br />
 
-The property values between keyframes are set following the profile of an **easing function**. The default easing function is a straight-line interpolation.
+关键帧之间的属性值按**缓动函数**的曲线取值，默认的缓动函数是直线插值。
 
-The animation is triggered to start, and then can run any number of times, in either direction. There are also options to delay the start of the animation, and to repeat it.
+动画被触发后开始播放，可以播任意次，也能正反两个方向播。此外还可以延迟开始，或让它重复。
 
-In Avalonia, keyframe animations are defined using styles. See [Styles](/docs/styling/styles) for more information.
+在 Avalonia 中，关键帧动画是用样式来定义的，更多内容请参阅[样式](/docs/styling/styles)。
 
-## Animating a property
+## 为一个属性加动画 {#animating-a-property}
 
-To define a one-property animation on a control, such as a color fade:
+要给控件定义单属性动画（比如颜色渐变）：
 
-1.  Create a styles collection at your chosen level.
-2.  Add a style to the collection with a selector targeting the control.
-3.  Add a `Setter` to define the property you want the animation to change, e.g., `Fill` in the below example.
-4.  Add a `Style.Animations` tag for the animation itself.
-5.  Add an `Animation` tag and set its `Duration` attribute. This is in the format `"Hours:Minutes:Seconds"`.
-6.  Define the keyframes for the animation. The below example uses cues at 0% and 100%.
-7. Each keyframe needs its own `Setter` to the value of the fill opacity.
+1.  在你选定的层级上建一个样式集合。
+2.  往集合里加一条样式，选择器指向目标控件。
+3.  加一个 `Setter` 来指定你想让动画改变的属性，比如下例中的 `Fill`。
+4.  为动画本身加上 `Style.Animations` 标签。
+5.  加一个 `Animation` 标签并设置它的 `Duration` 特性，格式为 `"Hours:Minutes:Seconds"`。
+6.  定义动画的各个关键帧。下例用的是 0% 和 100% 两个节点。
+7. 每个关键帧都需要有自己的 `Setter` 来指定填充不透明度的取值。
 
 <XamlPreview>
 
@@ -61,9 +61,9 @@ To define a one-property animation on a control, such as a color fade:
 
 </XamlPreview>
 
-## Animate two properties
+## 同时为两个属性加动画 {#animate-two-properties}
 
-This example shows you how to animate two properties on one timeline. This time, the blue rectangle fades and rotates at the same time.
+这个例子演示如何在同一条时间轴上为两个属性加动画：这次蓝色矩形一边淡出一边旋转。
 
 <XamlPreview>
 
@@ -94,11 +94,11 @@ This example shows you how to animate two properties on one timeline. This time,
 
 </XamlPreview>
 
-## Configuring animation
+## 配置动画 {#configuring-animation}
 
 ### Delay
 
-You can add a delay to the start of an animation by setting the `Delay` attribute.
+设置 `Delay` 特性即可让动画延迟一段时间再开始。
 
 ```xml
 <Animation Duration="0:0:1"
@@ -109,7 +109,7 @@ You can add a delay to the start of an animation by setting the `Delay` attribut
 
 ### Repeat
 
-You can make an animation repeat for a set number of times, or infinitely, by setting the `IterationCount` attribute.
+设置 `IterationCount` 特性即可让动画重复指定次数，或无限重复。
 
 ```xml
 <!-- Repeat 5 times -->
@@ -125,7 +125,7 @@ You can make an animation repeat for a set number of times, or infinitely, by se
 
 ### 播放方向 {#playback-direction}
 
-By default, an animation plays forward, following the profile of the easing function from left to right. You can alter this behavior by setting the `PlaybackDirection` attribute.
+动画默认正向播放，沿缓动函数的曲线从左往右走。设置 `PlaybackDirection` 特性可以改变这一行为。
 
 ```xml
 <Animation Duration="0:0:1" PlaybackDirection="Reverse">
@@ -133,11 +133,11 @@ By default, an animation plays forward, following the profile of the easing func
 </Animation>
 ```
 
-For a full list of `PlaybackDirection` options, see the [animation settings reference](/docs/graphics-animation/animation-settings#playback-direction).
+`PlaybackDirection` 的完整取值清单，请参阅[动画设置参考](/docs/graphics-animation/animation-settings#playback-direction)。
 
 ### 填充模式 {#fill-mode}
 
-The fill mode attribute of an animation defines how the properties being set will persist after it runs, or during gaps between runs.
+动画的填充模式特性决定了：动画播完之后、以及两次播放的间隙里，被设置的属性该保持什么值。
 
 ```xml
 <Animation IterationCount="9" FillMode="Backward">
@@ -145,13 +145,13 @@ The fill mode attribute of an animation defines how the properties being set wil
 </Animation>
 ```
 
-For a full list of `FillMode` options, see the [animation settings reference](/docs/graphics-animation/animation-settings#fill-mode).
+`FillMode` 的完整取值清单，请参阅[动画设置参考](/docs/graphics-animation/animation-settings#fill-mode)。
 
 ### 播放行为 {#playback-behavior}
 
 默认情况下，当目标控件实际不可见时，关键帧动画会暂停；控件重新可见后，动画从暂停处接着播。
 
-You can change this behavior by setting the `PlaybackBehavior` attribute.
+设置 `PlaybackBehavior` 特性即可改变这一行为。
 
 ```xml
 <Animation Duration="0:0:1" IterationCount="infinite" PlaybackBehavior="Always">
@@ -159,20 +159,20 @@ You can change this behavior by setting the `PlaybackBehavior` attribute.
 </Animation>
 ```
 
-For a full list of `PlaybackBehavior` options, see the [animation settings reference](/docs/graphics-animation/animation-settings#playback-behavior).
+`PlaybackBehavior` 的完整取值清单，请参阅[动画设置参考](/docs/graphics-animation/animation-settings#playback-behavior)。
 
 :::info
-This playback behavior applies to keyframe animations only. [Control transitions](/docs/graphics-animation/control-transitions) and [composition animations](/docs/graphics-animation/composition-animations) are not affected.
+这套播放行为只适用于关键帧动画，[控件过渡](/docs/graphics-animation/control-transitions)和[组合动画](/docs/graphics-animation/composition-animations)不受影响。
 :::
 
 ### 缓动函数 {#easing-functions}
 
-An easing function defines how a property is varied over time during an animation.
+缓动函数定义了动画过程中属性随时间变化的方式。
 
 <Image light={LinearEasingScreenshot} alt="Graph showing linear easing function" position="center" maxWidth={400} cornerRadius="true"/>
 <br />
 
-The default easing function is linear (above). You can use another pattern by setting the name of the desired function in the `Easing` attribute. For example, to use the 'bounce ease in' function (below):
+默认的缓动函数是线性的（见上）。在 `Easing` 特性中填上目标函数的名字即可换成别的曲线。比如要用 'bounce ease in'（见下）：
 
 ```xml
 <Animation Duration="0:0:1"
@@ -186,7 +186,7 @@ The default easing function is linear (above). You can use another pattern by se
 <Image light={BounceEaseInScreenshot} alt="Graph showing bounce ease-in easing function" position="center" maxWidth={400} cornerRadius="true"/>
 <br />
 
-You can also create a custom easing function class and apply it like so:
+你也可以自己写一个缓动函数类，然后这样套用：
 
 ```xml
 <Animation Duration="0:0:1"
@@ -198,13 +198,13 @@ You can also create a custom easing function class and apply it like so:
 </Animation>
 ```
 
-For a full list of easing functions, see the [Easing functions page](/docs/graphics-animation/easing-functions).
+完整的缓动函数清单请参阅[缓动函数页面](/docs/graphics-animation/easing-functions)。
 
-## Running animations from code-behind
+## 从代码隐藏中运行动画 {#running-animations-from-code-behind}
 
-For deeper control of the animation lifetime, you can define an animation as a `Resource`, so it can be used in the code-behind.
+若想更深入地掌控动画的生命周期，可以把动画定义成 `Resource`，这样在代码隐藏中就能用上它。
 
-When defining an animation as a resource, you must set an `x:Key` to allow the animation to be accessed, as well as an `x:SetterTargetType` to specify the target control.
+把动画定义为资源时，必须给它设置 `x:Key` 以便被引用到，同时还要设置 `x:SetterTargetType` 来指定目标控件。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui">
@@ -227,7 +227,7 @@ When defining an animation as a resource, you must set an `x:Key` to allow the a
 </Window>
 ```
 
-The `ResourceAnimation` defined above can now be accessed in a code-behind handler.
+上面定义的 `ResourceAnimation` 现在可以在代码隐藏的处理程序中取用了。
 
 ```csharp
 var animation = (Animation)this.Resources["ResourceAnimation"];
@@ -235,11 +235,11 @@ var animation = (Animation)this.Resources["ResourceAnimation"];
 await animation.RunAsync(Rect);
 ```
 
-`RunAsync` returns a task which is completed when the animation ends. If an animation repeats infinitely, the task never ends, unless (1) the `RunAsync` method is cancelled by a `CancellationToken`, or (2) the target control is detached from the visual tree.
+`RunAsync` 返回一个任务，动画结束时该任务完成。若动画无限重复，这个任务就永远不会结束，除非（1）`RunAsync` 方法被 `CancellationToken` 取消，或者（2）目标控件从视觉树中分离。
 
 ## 另请参阅 {#see-also}
 
-- [Animation Settings](/docs/graphics-animation/animation-settings): Duration, delay, iteration count, and playback direction.
+- [动画设置](/docs/graphics-animation/animation-settings)：时长、延迟、重复次数与播放方向。
 - [缓动函数](/docs/graphics-animation/easing-functions)：全部可用的缓动函数。
 - [控件过渡](/docs/graphics-animation/control-transitions)：用过渡为属性变化加动画。
-- [PlaybackBehavior](/api/avalonia/animation/playbackbehavior): API reference for visibility-based playback control.
+- [PlaybackBehavior](/api/avalonia/animation/playbackbehavior)：基于可见性控制播放的 API 参考。

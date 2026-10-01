@@ -1,26 +1,26 @@
 ---
 id: hit-testing
 title: 命中测试
-description: How Avalonia determines which visual element is at a given screen coordinate.
+description: Avalonia 如何判定某个屏幕坐标上是哪个视觉元素。
 doc-type: explanation
 ---
 
-Hit testing determines which visual element is located at a given point on the screen. Avalonia uses hit testing internally for pointer events, but you can also perform hit testing programmatically for custom controls and advanced interaction scenarios.
+命中测试用来判定屏幕上某一点位于哪个视觉元素之上。Avalonia 在内部靠它处理指针事件，但你也可以为自定义控件和进阶交互场景主动调用命中测试。
 
-## How hit testing works
+## 命中测试的运作原理 {#how-hit-testing-works}
 
-When a pointer event occurs, Avalonia walks the visual tree from the topmost element downward. For each element, it checks whether the point falls within the element's bounds and its rendered content. The first element that passes the test becomes the event target.
+指针事件发生时，Avalonia 自最顶层元素起向下遍历视觉树，逐个检查该点是否落在元素的边界及其渲染内容之内。第一个通过检查的元素就成为事件目标。
 
-The hit test considers:
+命中测试会考虑这几点：
 
-1. **Visibility**: Elements with `IsVisible="False"` are skipped.
-2. **IsHitTestVisible**: Elements with `IsHitTestVisible="False"` are skipped, but their children may still be tested.
-3. **Bounds**: The point must fall within the element's layout bounds.
-4. **Rendered content**: For shapes and custom-rendered controls, the test checks actual rendered pixels, not just the bounding box.
+1. **可见性**：`IsVisible="False"` 的元素会被跳过。
+2. **IsHitTestVisible**：`IsHitTestVisible="False"` 的元素会被跳过，但它的子元素仍可能参与测试。
+3. **边界**：该点必须落在元素的布局边界之内。
+4. **渲染内容**：对于形状和自绘控件，检查的是实际渲染出的像素，而不只是外接矩形。
 
 ## IsHitTestVisible
 
-Set `IsHitTestVisible="False"` to make a control "transparent" to pointer events. The control still renders normally, but pointer events pass through to the control behind it:
+设置 `IsHitTestVisible="False"` 可让控件对指针事件「透明」：它照常渲染，但指针事件会穿过去落到它后面的控件上：
 
 ```xml
 <!-- This overlay displays text but passes clicks through to controls underneath -->
@@ -32,16 +32,16 @@ Set `IsHitTestVisible="False"` to make a control "transparent" to pointer events
 </Panel>
 ```
 
-Common uses:
-- Decorative overlays that should not intercept clicks
-- Watermark or status text over interactive content
-- Animation layers
+常见用途：
+- 不该拦截点击的装饰性覆盖层
+- 盖在可交互内容之上的水印或状态文字
+- 动画图层
 
-## Background and hit testing
+## 背景与命中测试 {#background-and-hit-testing}
 
-A control without a `Background` (or with `Background` set to `null`) does not participate in hit testing for its empty area. Only the child content receives pointer events.
+没有 `Background` 的控件（或 `Background` 设为 `null` 的控件），其空白区域不参与命中测试，只有子内容才收得到指针事件。
 
-To make the entire area of a panel respond to pointer events, set `Background="Transparent"`:
+若希望面板的整片区域都响应指针事件，请设置 `Background="Transparent"`：
 
 ```xml
 <!-- This panel does NOT receive clicks in empty areas -->
@@ -55,11 +55,11 @@ To make the entire area of a panel respond to pointer events, set `Background="T
 </StackPanel>
 ```
 
-## Programmatic hit testing
+## 以编程方式做命中测试 {#programmatic-hit-testing}
 
 ### InputHitTest
 
-Use `InputHitTest` on any control to find the element at a specific point:
+在任意控件上调用 `InputHitTest`，即可找出指定点上的元素：
 
 ```csharp
 // Point is relative to the control you call InputHitTest on
@@ -71,9 +71,9 @@ if (result is Control hitControl)
 }
 ```
 
-### Finding the element under the pointer
+### 找出指针下方的元素 {#finding-the-element-under-the-pointer}
 
-In a pointer event handler, the `Source` property of the event args tells you the original element:
+在指针事件处理程序中，事件参数的 `Source` 属性会告诉你最初的那个元素：
 
 ```csharp
 private void OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -86,13 +86,13 @@ private void OnPointerPressed(object? sender, PointerPressedEventArgs e)
 }
 ```
 
-## Hit testing in custom controls
+## 自定义控件中的命中测试 {#hit-testing-in-custom-controls}
 
-When building custom controls that render their own content with `DrawingContext`, you may need to override hit testing to match the rendered shapes.
+当你编写用 `DrawingContext` 自绘内容的自定义控件时，可能需要重写命中测试，让它与实际画出的形状吻合。
 
-### Custom hit test geometry
+### 自定义命中测试几何 {#custom-hit-test-geometry}
 
-Override the `HitTestCore` method to define a custom hit region:
+重写 `HitTestCore` 方法来定义自定义的命中区域：
 
 ```csharp
 public class CircleControl : Control
@@ -115,14 +115,14 @@ public class CircleControl : Control
 }
 ```
 
-With this override, pointer events only fire when the user clicks inside the circle, not in the corners of the bounding rectangle.
+有了这个重写，只有用户点在圆内时才会触发指针事件，点在外接矩形的四角上则不会。
 
-## Hit testing order
+## 命中测试的先后顺序 {#hit-testing-order}
 
-When multiple controls overlap at the same point, the hit test returns the topmost control in the visual tree. The order is determined by:
+当同一点上有多个控件重叠时，命中测试返回视觉树中最靠上的那个。顺序由以下两点决定：
 
-1. **ZIndex**: Higher `ZIndex` values are tested first.
-2. **Visual tree order**: Later children in the same panel are rendered (and hit tested) on top of earlier children.
+1. **ZIndex**：`ZIndex` 值更大的先被测试。
+2. **视觉树顺序**：同一面板中，靠后的子元素渲染（以及命中测试）时位于靠前子元素之上。
 
 ```xml
 <Panel>
@@ -132,11 +132,11 @@ When multiple controls overlap at the same point, the hit test returns the topmo
 </Panel>
 ```
 
-## Practical patterns
+## 实用套路 {#practical-patterns}
 
-### Click-through overlay
+### 可点穿的覆盖层 {#click-through-overlay}
 
-Create a visual overlay that does not block interaction:
+做一个不挡交互的视觉覆盖层：
 
 ```xml
 <Grid>
@@ -152,7 +152,7 @@ Create a visual overlay that does not block interaction:
 </Grid>
 ```
 
-### Detecting clicks on a canvas drawing
+### 检测画布绘图上的点击 {#detecting-clicks-on-a-canvas-drawing}
 
 ```csharp
 private void OnCanvasPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -172,18 +172,18 @@ private void OnCanvasPointerPressed(object? sender, PointerPressedEventArgs e)
 }
 ```
 
-## Performance with many elements
+## 元素众多时的性能 {#performance-with-many-elements}
 
-Avalonia's hit-testing walks the visual tree and tests each element individually. There is no built-in spatial partitioning (such as a quadtree). For panels with a small number of children, this is fast. When you have hundreds or thousands of interactive elements on a `Canvas` or `Panel`, the linear walk becomes noticeable, especially for pointer press events where every candidate element must be tested.
+Avalonia 的命中测试会遍历视觉树并逐个测试元素，没有内置的空间划分结构（比如四叉树）。面板里子元素不多时这很快；可一旦 `Canvas` 或 `Panel` 上有成百上千个可交互元素，这种线性遍历就会变得明显——尤其是指针按下事件，每个候选元素都得测一遍。
 
 ### Symptoms
 
-- A delay between clicking and the `PointerPressed` event firing, growing linearly with the number of children.
-- The delay is input-related, not a rendering or layout problem. Frame rates remain normal.
+- 从点击到 `PointerPressed` 事件触发之间出现延迟，且延迟随子元素数量线性增长。
+- 这个延迟出在输入环节，不是渲染或布局的问题，帧率依然正常。
 
 ### Strategies
 
-**Disable hit testing on individual elements and use an overlay.** Place a transparent overlay on top of all the child elements. Handle `PointerPressed` on the overlay and use your own logic to determine which element was clicked. Set `IsHitTestVisible="False"` on the children so Avalonia skips them during the tree walk:
+**关掉各个元素的命中测试，改用覆盖层。**在所有子元素之上放一层透明覆盖层，在它上面处理 `PointerPressed`，再用你自己的逻辑判断点中的是哪个元素。同时给子元素设上 `IsHitTestVisible="False"`，这样 Avalonia 遍历树时就会跳过它们：
 
 ```xml
 <Panel>
@@ -212,15 +212,15 @@ private void OnOverlayPointerPressed(object? sender, PointerPressedEventArgs e)
 }
 ```
 
-Your `FindItemAt` method can use any lookup strategy that fits your data. For a grid-like arrangement, a simple coordinate calculation may suffice. For irregular shapes, consider a spatial index such as a quadtree or R-tree.
+你的 `FindItemAt` 方法可以采用任何契合你数据的查找策略。若元素呈网格状排列，简单算一下坐标也许就够了；若形状不规则，不妨考虑四叉树或 R 树之类的空间索引。
 
-**Switch to custom rendering.** Instead of creating a separate control for each element, render all elements in a single control's `Render` override. This eliminates per-element hit testing entirely, since only the single parent control participates in the hit test. You then handle pointer events on that control and determine which logical element was clicked based on the pointer position. See [Custom Rendering](/docs/graphics-animation/custom-rendering) for details.
+**改用自定义渲染。**与其为每个元素都建一个控件，不如在单个控件的 `Render` 重写中把所有元素一起画出来。这样逐元素的命中测试就彻底没了，因为参与命中测试的只有这一个父控件。之后你在这个控件上处理指针事件，根据指针位置判断点中的是哪个逻辑元素。详见[自定义渲染](/docs/graphics-animation/custom-rendering)。
 
-**Reduce the number of hit-testable elements.** If only some elements need to be interactive, set `IsHitTestVisible="False"` on the rest. For example, in a diagram editor, background grid lines and labels can be excluded from hit testing while only the draggable nodes remain interactive.
+**减少参与命中测试的元素数量。**若只有部分元素需要交互，就给其余元素设上 `IsHitTestVisible="False"`。比如在图表编辑器里，背景网格线和标签都可以排除在命中测试之外，只留下可拖动的节点保持交互。
 
 ## 另请参阅 {#see-also}
 
-- [Pointer Input](/docs/input-interaction/pointer): Pointer events and position.
-- [Custom Rendering](/docs/graphics-animation/custom-rendering): Drawing with DrawingContext.
-- [Shapes and Geometries](/docs/graphics-animation/shapes-and-geometries): Geometry types for hit regions.
-- [Performance Optimization](/docs/app-development/performance): General performance guidance.
+- [指针输入](/docs/input-interaction/pointer)：指针事件与位置。
+- [自定义渲染](/docs/graphics-animation/custom-rendering)：用 DrawingContext 作画。
+- [形状与几何](/docs/graphics-animation/shapes-and-geometries)：可用作命中区域的几何类型。
+- [性能优化](/docs/app-development/performance)：通用的性能建议。

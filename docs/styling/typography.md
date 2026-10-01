@@ -11,7 +11,7 @@ Avalonia provides a set of properties for controlling how text appears in your a
 
 The following properties are defined on `TextElement` and inherited by descendant controls. Set them directly on text controls like `TextBlock`, or on container controls to apply to all text within.
 
-| Attached property | 类型 | 默认值 | 说明 |
+| 附加属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
 | `TextElement.FontFamily` | [`FontFamily`](/api/avalonia/media/fontfamily) | Platform default | The typeface used to render text. |
 | `TextElement.FontSize` | `double` | `12` | The size of text in device-independent pixels. |

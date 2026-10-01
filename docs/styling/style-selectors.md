@@ -1,6 +1,6 @@
 ---
 id: style-selectors
-title: Style selectors
+title: 样式选择器
 description: Learn how Avalonia style selectors match controls by type, class, name, and state using a CSS-like syntax.
 doc-type: explanation
 ---

@@ -34,7 +34,7 @@ private void OnTextInput(object? sender, TextInputEventArgs e)
 
 ### When to use TextInput vs KeyDown
 
-| Scenario | 用法 |
+| 场景 | 用法 |
 |---|---|
 | Processing typed characters (text editing) | `TextInput` |
 | Detecting modifier keys (Ctrl+S, Alt+F4) | `KeyDown` |
