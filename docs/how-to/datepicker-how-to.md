@@ -258,7 +258,7 @@ public DateTime? CombinedDateTime
 
 ### DatePicker
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `SelectedDate` | `DateTimeOffset?` | The selected date. |
 | `DayVisible` | `bool` | Show/hide the day spinner. |
@@ -270,7 +270,7 @@ public DateTime? CombinedDateTime
 
 ### TimePicker
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `SelectedTime` | `TimeSpan?` | The selected time. |
 | `ClockIdentifier` | `string` | `"12HourClock"` or `"24HourClock"`. |

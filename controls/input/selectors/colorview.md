@@ -48,7 +48,7 @@ None
 
 ## Template parts
 
-| 名称 | Type | 说明 |
+| 名称 | 类型 | 说明 |
 |------|----- |-------------|
 | `PART_HexTextBox` | TextBox | Provides an input or output for hexadecimal color notation that can be parsed by the control. |
 | `PART_TabControl` | TabControl | The main control used to navigate through the spectrum, palette and components tab/panel/page (subviews). This template part is optional and is only required for some validation scenarios of the `SelectedIndex`. |

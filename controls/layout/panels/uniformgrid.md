@@ -12,7 +12,7 @@ The [`UniformGrid`](/api/avalonia/controls/primitives/uniformgrid) divides avail
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Rows` | `int` | Sets the number of equal rows. When set to `0` (the default), the row count is calculated automatically based on the number of children and the `Columns` value. |
 | `Columns` | `int` | Sets the number of equal columns. When set to `0` (the default), the column count is calculated automatically based on the number of children and the `Rows` value. |

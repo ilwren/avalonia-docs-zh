@@ -19,7 +19,7 @@ All gradient brushes share the `GradientStops` collection and `SpreadMethod` pro
 
 `LinearGradientBrush` blends colors along a line defined by a start point and an end point.
 
-### Basic syntax
+### 基本语法 {#basic-syntax}
 
 ```xml
 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
@@ -34,7 +34,7 @@ These two properties control the direction of the gradient. You can specify valu
 
 Common direction patterns:
 
-| Direction | `StartPoint` | `EndPoint` |
+| 方向 | `StartPoint` | `EndPoint` |
 |---|---|---|
 | Horizontal (left to right) | `0%,50%` | `100%,50%` |
 | Vertical (top to bottom) | `50%,0%` | `50%,100%` |
@@ -104,7 +104,7 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 
 `RadialGradientBrush` blends colors outward from a center point in an elliptical shape.
 
-### Basic syntax
+### 基本语法 {#basic-syntax-1}
 
 ```xml
 <RadialGradientBrush GradientOrigin="50%,50%" Center="50%,50%" RadiusX="50%" RadiusY="50%">
@@ -145,7 +145,7 @@ You can create non-circular gradients by giving `RadiusX` and `RadiusY` differen
 
 `ConicGradientBrush` sweeps colors around a center point, similar to the face of a color wheel.
 
-### Basic syntax
+### 基本语法 {#basic-syntax-2}
 
 ```xml
 <ConicGradientBrush Center="50%,50%" Angle="0">
@@ -183,7 +183,7 @@ If you omit `Offset`, Avalonia distributes the stops evenly. When two stops shar
 
 `SpreadMethod` controls what happens when the gradient does not fill the entire area (for example, when a `LinearGradientBrush` has its start and end points inside the bounding box).
 
-| 值 | Behavior |
+| 值 | 行为 |
 |---|---|
 | `Pad` (default) | The end colors extend to fill the remaining space. |
 | `Reflect` | The gradient reverses direction and repeats. |

@@ -147,7 +147,7 @@ Setting `Source` loads the document. It can be set before the viewer is attached
 
 ### Document, view and zoom
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `Source` | `string?` | `null` | Path to the PDF file. Setting it loads the document. |
 | `DocumentSource` | `object?` | `null` | Flexible source: a file path `string`, a `Stream`, or a `byte[]`. |
@@ -166,7 +166,7 @@ Setting `Source` loads the document. It can be set before the viewer is attached
 
 ### Sidebar and toolbar
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `SidebarMode` | `SidebarMode` | `Thumbnails` | `None`, `Thumbnails`, `TableOfContents` or `Bookmarks`. |
 | `IsSidebarVisible` | `bool` | `true` | Shows or hides the sidebar. |
@@ -192,7 +192,7 @@ The visibility of each annotation tool is controlled by its own property. See [A
 
 ### Capabilities and permissions
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `IsReadOnly` | `bool` | `false` | Disables annotation and form editing in one switch. Saving is gated separately by `AllowDocumentSaving`. |
 | `AllowTextSelection` | `bool` | `true` | Enables text selection and copy. |
@@ -212,7 +212,7 @@ The visibility of each annotation tool is controlled by its own property. See [A
 
 These properties are read-only and bindable.
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `PageCount` | `int` | Number of pages in the loaded document. |
 | `HasDocument` | `bool` | Whether a document is open. |
@@ -258,7 +258,7 @@ All commands are `ICommand` and update `CanExecute` as document and selection st
 
 ## 事件 {#events}
 
-| Event | Args | 说明 |
+| 事件 | Args | 说明 |
 |---|---|---|
 | `DocumentLoaded` | `PdfDocumentLoadedEventArgs` | A document finished loading. Args include `PageCount` and `Metadata`. |
 | `DocumentClosed` | `EventArgs` | The document was closed. |

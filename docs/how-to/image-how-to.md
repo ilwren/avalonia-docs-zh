@@ -188,7 +188,7 @@ The target control must be attached to a visible window. To render without displ
 
 ## Key Properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Source` | `IImage` | The image to display (`Bitmap`, `DrawingImage`, and similar). |
 | `Stretch` | `Stretch` | How the image fills its bounds. |

@@ -136,7 +136,7 @@ public ObservableCollection<ChartDataPoint> StandaloneTrendlineData { get; } = n
 };
 ```
 
-### `ChartTrendlineSeries` properties
+### `ChartTrendlineSeries` 的属性 {#charttrendlineseries-properties}
 
 | 属性 | 说明 | Default |
 | :--- | :--- | :--- |
@@ -186,7 +186,7 @@ public ObservableCollection<PricePoint> PriceData { get; } = new()
 };
 ```
 
-### `MovingAverageSeries` properties
+### `MovingAverageSeries` 的属性 {#movingaverageseries-properties}
 
 | 属性 | 说明 | Default |
 | :--- | :--- | :--- |

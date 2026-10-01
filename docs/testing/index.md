@@ -7,7 +7,7 @@ Avalonia supports several testing strategies, each suited to different goals. Yo
 
 ## Testing strategies
 
-| Strategy | What it tests | Speed | Requires UI |
+| 策略 | What it tests | Speed | Requires UI |
 |---|---|---|---|
 | **Unit tests** | View model logic, services, converters | Fast | No |
 | **Headless tests** | Controls, layout, data binding, input | Fast | No (in-process) |

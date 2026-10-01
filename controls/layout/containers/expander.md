@@ -11,7 +11,7 @@ The [`Expander`](/api/avalonia/controls/expander) control has a header area that
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Header` | `object` | Content displayed in the always-visible header area. Accepts strings, controls, or data templates. |
 | `IsExpanded` | `bool` | Whether the content section is currently visible. Default is `false`. |
@@ -20,7 +20,7 @@ You will probably use these properties most often:
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 |---|---|
 | `Expanding` | Raised when the content section begins to expand. |
 | `Collapsed` | Raised when the content section finishes collapsing. |

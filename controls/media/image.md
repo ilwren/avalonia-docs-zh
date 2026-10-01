@@ -25,7 +25,7 @@ The scaling settings for an image are the same as for the [Viewbox](/controls/la
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Source` | `IImage` | The image to display. Can be set from an asset URI string, a `Bitmap`, or a `DrawingImage`. |
 | `Stretch` | `Stretch` | How the image is resized to fill its bounds. See table below. |
@@ -34,7 +34,7 @@ The scaling settings for an image are the same as for the [Viewbox](/controls/la
 
 ### Stretch modes
 
-| 值 | Behavior |
+| 值 | 行为 |
 |---|---|
 | `None` | The image is displayed at its original size. |
 | `Fill` | The image is resized to fill the bounds. Aspect ratio is not preserved. |

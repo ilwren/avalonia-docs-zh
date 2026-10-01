@@ -29,7 +29,7 @@ macOS shows your application's name in several places: the menu bar, the "About"
 
 ### Where the name comes from
 
-| Location | Source | Notes |
+| 位置 | Source | Notes |
 |---|---|---|
 | Menu bar (bold app name) | `CFBundleName` in `Info.plist` (bundled), or `Application.Name` (unbundled) | `CFBundleName` is limited to 15 characters. |
 | Dock tooltip | `CFBundleDisplayName` in `Info.plist`, falling back to `CFBundleName` | Use `CFBundleDisplayName` for names longer than 15 characters. |
@@ -190,7 +190,7 @@ The `Gesture` property assigns a keyboard shortcut to a menu item. Avalonia uses
 
 A gesture string joins one or more modifiers with `+`, followed by the key name:
 
-| `Gesture` value | macOS shortcut |
+| `Gesture` 值 | macOS shortcut |
 |---|---|
 | `Meta+S` | <kbd>⌘</kbd> <kbd>S</kbd> |
 | `Meta+Shift+S` | <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>S</kbd> |

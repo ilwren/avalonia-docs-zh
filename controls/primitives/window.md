@@ -15,7 +15,7 @@ You do not usually create instances of `Window` directly. Instead, you subclass 
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | `Title` | `string` | The text displayed in the title bar. |
 | `Icon` | `WindowIcon` | The icon displayed in the title bar and taskbar. |

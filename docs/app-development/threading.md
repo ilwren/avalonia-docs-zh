@@ -109,7 +109,7 @@ Dispatcher.UIThread.Post(
 
 Common priorities, from highest to lowest:
 
-| Priority | 说明 |
+| 优先级 | 说明 |
 |---|---|
 | `Send` | Processed before other asynchronous operations. |
 | `Normal` | Processed with normal priority. |

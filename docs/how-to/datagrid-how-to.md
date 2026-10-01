@@ -314,7 +314,7 @@ private void OnCellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
 
 ## Column Width Modes
 
-| Width | Behavior |
+| Width | 行为 |
 |---|---|
 | `Auto` | Sized to fit content. |
 | `*` | Takes an equal share of remaining space. |

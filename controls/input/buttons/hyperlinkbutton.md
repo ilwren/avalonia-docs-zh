@@ -9,7 +9,7 @@ The [`HyperlinkButton`](/api/avalonia/controls/hyperlinkbutton) is a button that
 
 ## Useful properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `NavigateUri` | `Uri` | The URI to open when the button is clicked. |
 | `Content` | `object` | The content displayed in the button (typically text). |

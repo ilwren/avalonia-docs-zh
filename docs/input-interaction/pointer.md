@@ -13,7 +13,7 @@ Applications often have complex input requirements. Avalonia provides a [command
 
 Controls that implement `ICommandSource` have a `HotKey` property. Additionally, controls have events that allow you to subscribe to pointer movements, clicks and wheel movements:
 
-| Event | 说明 |
+| 事件 | 说明 |
 |---|---|
 | `PointerEntered` | Raised when the pointer moves into a control's bounds. |
 | `PointerExited` | Raised when the pointer leaves a control's bounds. |
@@ -59,7 +59,7 @@ private void PointerPressedHandler (object sender, PointerPressedEventArgs args)
 
 Avalonia distinguishes between different input device types through the `PointerPoint.Pointer.Type` property:
 
-| Type | 说明 |
+| 类型 | 说明 |
 |---|---|
 | `Mouse` | Standard mouse or trackpad input. |
 | `Touch` | Touch screen input. |
@@ -69,7 +69,7 @@ Avalonia distinguishes between different input device types through the `Pointer
 
 When the pointer type is `Pen`, additional properties are available on `PointerPointProperties`:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Pressure` | `float` | Pressure level from 0 (no pressure) to 1 (maximum pressure). |
 | `XTilt` | `float` | Tilt of the pen along the X axis. |
@@ -113,7 +113,7 @@ Note that the maximum distance between a first and second tap, and the time dela
 :::
 
 
-## Pointer capture
+## 指针捕获 {#pointer-capture}
 
 Pointer capture directs all subsequent pointer events to a specific control, even if the pointer moves outside the control's bounds. This is essential for drag operations and slider-like interactions.
 

@@ -141,7 +141,7 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 | `ValueToRatio` | Optional converter from data values to normalized selector positions. Used for non-linear axes and scale breaks. | `null` |
 | `RatioToValue` | Optional converter from normalized selector positions back to data values. | `null` |
 
-| Event | 说明 |
+| 事件 | 说明 |
 | :--- | :--- |
 | `RangeDragStarted` | Raised when the user starts dragging the selector thumb or a grip. |
 | `RangeDragCompleted` | Raised when the active range drag completes. |

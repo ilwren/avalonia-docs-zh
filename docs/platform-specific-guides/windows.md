@@ -17,7 +17,7 @@ Because there is no dependency on a Windows-specific .NET workload, you can cros
 
 Windows supports all `TransparencyLevelHint` values. It is the only platform with full transparency support. macOS supports only `Transparent`, and Linux support depends on the compositor.
 
-| Level | Effect | Minimum version |
+| Level | 效果 | Minimum version |
 |---|---|---|
 | `Transparent` | Fully transparent window background | Windows 7+ |
 | `AcrylicBlur` | Blurred, semi-transparent backdrop | Windows 10 1803+ |

@@ -13,7 +13,7 @@ Because `Panel` does not arrange children into rows, columns, or any other struc
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Background` | `IBrush` | The background brush for the panel. You must set this (even to `Transparent`) for the panel to receive pointer events. |
 | `Children` | `Controls` | The collection of child controls contained in the panel. |

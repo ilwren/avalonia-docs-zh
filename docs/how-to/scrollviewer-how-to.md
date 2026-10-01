@@ -40,7 +40,7 @@ You control when each scrollbar appears by setting `HorizontalScrollBarVisibilit
 </ScrollViewer>
 ```
 
-| 值 | Behavior |
+| 值 | 行为 |
 |---|---|
 | `Auto` | Shows the scrollbar only when content overflows (default for vertical) |
 | `Visible` | Always shows the scrollbar, even when content fits |
@@ -256,7 +256,7 @@ This pattern keeps the header visible at all times. The `ZIndex` on the header `
 
 ## Key properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Offset` | `Vector` | Current scroll position (X, Y) |
 | `Extent` | `Size` | Total size of the scrollable content |

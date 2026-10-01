@@ -12,7 +12,7 @@ The [`TextBlock`](/api/avalonia/controls/textblock) is a read-only label for dis
 
 ## 常用属性 {#common-properties}
 
-| 属性          | Type                       | 说明                                                                                                                                                                                                           |
+| 属性          | 类型                       | 说明                                                                                                                                                                                                           |
 | ----------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Text`            | `string`                   | The text to display.                                                                                                                                                                                                  |
 | `FontSize`        | `double`                   | The size of the font in device-independent pixels.                                                                                                                                                                    |
@@ -56,7 +56,7 @@ This example demonstrates using multiple `TextBlock` controls to show a heading,
 
 By default, `TextBlock` does not wrap text. When the text is wider than the available space, it is clipped. Set `TextWrapping` to control this behavior:
 
-| 值             | Behavior                                                                                      |
+| 值             | 行为                                                                                      |
 | ----------------- | --------------------------------------------------------------------------------------------- |
 | `NoWrap`          | Text is not wrapped and may be clipped (default).                                             |
 | `Wrap`            | Text wraps at the nearest character that fits within the available width.                     |

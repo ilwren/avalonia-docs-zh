@@ -22,7 +22,7 @@ Resources are stored in `ResourceDictionary` collections, which you declare on a
 
 Resources can be defined at any level of the tree:
 
-| Level | Scope |
+| Level | 作用范围 |
 |---|---|
 | `Application.Resources` | Available everywhere in the application |
 | `Window.Resources` | Available within that window |
@@ -41,7 +41,7 @@ Resources can be defined at any level of the tree:
 <StackPanel Spacing="{StaticResource DefaultSpacing}" />
 ```
 
-If the resource is not found, an exception is thrown at runtime.
+若找不到该资源，运行时会抛出异常。
 
 ### DynamicResource
 
@@ -63,7 +63,7 @@ If the resource is not found, an exception is thrown at runtime.
 Use `DynamicResource` for colors, brushes, and sizes that should respond to theme changes. Use `StaticResource` for data templates, converters, and other structural resources that remain constant.
 :::
 
-## Resource lookup order
+## 资源查找顺序 {#resource-lookup-order}
 
 When you reference a resource, Avalonia searches for it by walking up the logical tree from the element where the reference appears:
 
@@ -104,7 +104,7 @@ You can organize resources into separate files and merge them into any `Resource
 
 ### MergeResourceInclude vs ResourceInclude
 
-| Type | Behavior |
+| 类型 | 行为 |
 |---|---|
 | `ResourceInclude` | Creates a separate resource dictionary scope. Standard resource file inclusion. |
 | `MergeResourceInclude` | Merges the resources directly into the parent dictionary, making them accessible as if they were defined inline. |

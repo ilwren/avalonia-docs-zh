@@ -53,7 +53,7 @@ public class WindowDrawnDecorationsContent : StyledElement
 
 ## 属性 {#properties}
 
-| 属性 | Type | Visibility | 说明 |
+| 属性 | 类型 | Visibility | 说明 |
 | --- | --- | --- | --- |
 | `Template` | `WindowDrawnDecorationsTemplate` | Styled | Decorations template. |
 | `DefaultTitleBarHeight` | `double` | Styled | Default titlebar height. Decided by theme if unset. |
@@ -93,7 +93,7 @@ Pseudoclasses are applied whenever window state changes, e.g., when `Window` goe
 
 This functionality replaces the `CaptionButtons` class in earlier versions of Avalonia.
 
-| Part | Type | 说明 |
+| Part | 类型 | 说明 |
 | --- | --- | --- |
 | `PART_CloseButton` | `Button?` | Close button. |
 | `PART_MinimizeButton` | `Button?` | Minimize button. |

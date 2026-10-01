@@ -212,9 +212,9 @@ For visuals that are expensive to render but change infrequently, use `BitmapCac
 </Border>
 ```
 
- #### `BitmapCache` properties
+ #### `BitmapCache` 的属性 {#bitmapcache-properties}
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `RenderAtScale` | `double` | `1` | Resolution multiplier for the cached bitmap. Values above 1 increase quality. Values below 1 reduce memory at the cost of quality. A value of 0 disables caching. |
 | `SnapsToDevicePixels` | `bool` | `false` | Aligns the cached bitmap to device pixel boundaries for sharper text and line rendering. |

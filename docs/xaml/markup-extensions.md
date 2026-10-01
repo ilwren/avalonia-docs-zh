@@ -3,30 +3,30 @@ id: markup-extensions
 title: 标记扩展
 ---
 
-Markup extensions are special expressions enclosed in curly braces `{}` that provide dynamic values in XAML. They extend what you can express beyond simple string literals.
+标记扩展是写在花括号 `{}` 里的特殊表达式，用来在 XAML 中提供动态取值。有了它，你能表达的就不止是简单的字符串字面量了。
 
 ## Binding
 
-Creates a data binding between a control property and a source property:
+在控件属性与源属性之间建立数据绑定：
 
 ```xml
 <TextBlock Text="{Binding UserName}" />
 ```
 
-### Common binding parameters
+### 常用绑定参数 {#common-binding-parameters}
 
 | 参数 | 说明 |
 |---|---|
-| `Path` | The property path on the source object. This is the default parameter. |
-| `Mode` | The binding direction: `OneWay`, `TwoWay`, `OneTime`, `OneWayToSource`, `Default`. |
-| `Converter` | An `IValueConverter` that transforms the value. |
+| `Path` | 源对象上的属性路径。它是默认参数。 |
+| `Mode` | 绑定方向：`OneWay`、`TwoWay`、`OneTime`、`OneWayToSource`、`Default`。 |
+| `Converter` | 用于变换取值的 `IValueConverter`。 |
 | `ConverterParameter` | 传给转换器的参数。 |
-| `StringFormat` | A format string applied to the bound value. |
-| `FallbackValue` | The value used when the binding fails. |
-| `TargetNullValue` | The value used when the source value is `null`. |
-| `Source` | An explicit source object (overrides `DataContext`). |
-| `ElementName` | Binds to a named element in the same XAML scope. |
-| `RelativeSource` | Binds to a relative element (e.g., `TemplatedParent`, `Self`). |
+| `StringFormat` | 应用于绑定值的格式字符串。 |
+| `FallbackValue` | 绑定失败时所使用的值。 |
+| `TargetNullValue` | 源值为 `null` 时所使用的值。 |
+| `Source` | 显式指定的源对象（会覆盖 `DataContext`）。 |
+| `ElementName` | 绑定到同一 XAML 作用域内的具名元素。 |
+| `RelativeSource` | 绑定到相对位置上的元素（例如 `TemplatedParent`、`Self`）。 |
 
 ```xml
 <TextBlock Text="{Binding Price, StringFormat='Price: {0:C}'}" />
@@ -36,22 +36,22 @@ Creates a data binding between a control property and a source property:
 ```
 
 :::info
-For a comprehensive guide to binding syntax, see [Data Binding Syntax](/docs/data-binding/data-binding-syntax).
+绑定语法的完整说明，请见[数据绑定语法](/docs/data-binding/data-binding-syntax)。
 :::
 
 ## CompiledBinding
 
-A compile-time validated binding. Functionally equivalent to `{Binding}` when `x:CompileBindings="True"` is set, but can be used explicitly:
+一种在编译期校验的绑定。设置了 `x:CompileBindings="True"` 时它与 `{Binding}` 功能等价，但也可以显式使用：
 
 ```xml
 <TextBlock Text="{CompiledBinding UserName}" />
 ```
 
-Compiled bindings require an `x:DataType` to be set in scope. They provide compile-time checking of binding paths and better runtime performance.
+编译绑定要求作用域内设置了 `x:DataType`。它能在编译期检查绑定路径，运行时性能也更好。
 
 ## ReflectionBinding
 
-A reflection-based binding that bypasses compile-time validation. Use this when binding to dynamic or late-bound properties:
+基于反射的绑定，跳过编译期校验。绑定到动态或后期绑定的属性时用它：
 
 ```xml
 <TextBlock Text="{ReflectionBinding DynamicProperty}" />
@@ -59,41 +59,41 @@ A reflection-based binding that bypasses compile-time validation. Use this when 
 
 ## StaticResource
 
-Looks up a resource by key from the current element's resource chain, walking up through parent elements to `Application.Resources`. The lookup happens once at load time.
+按键从当前元素的资源链中查找资源：沿父元素一路向上找到 `Application.Resources` 为止。查找只在加载时发生一次。
 
 ```xml
 <TextBlock Foreground="{StaticResource PrimaryBrush}" />
 ```
 
-If the resource is not found, an exception is thrown at runtime.
+若找不到该资源，运行时会抛出异常。
 
-### Resource lookup order
+### 资源查找顺序 {#resource-lookup-order}
 
-1. The current element's `Resources` dictionary.
-2. Parent elements' `Resources` dictionaries, walking up the logical tree.
-3. The `Application.Resources` dictionary.
-4. Theme resources.
+1. 当前元素的 `Resources` 字典。
+2. 沿逻辑树向上，各级父元素的 `Resources` 字典。
+3. `Application.Resources` 字典。
+4. 主题资源。
 
 ## DynamicResource
 
-Similar to `StaticResource`, but the value updates automatically if the resource changes at runtime (e.g., when switching themes):
+与 `StaticResource` 类似，区别在于资源若在运行时发生变化（例如切换主题），取值会自动更新：
 
 ```xml
 <TextBlock Foreground="{DynamicResource SystemAccentColor}" />
 ```
 
-Use `DynamicResource` for:
-- Theme-dependent values (colors, brushes, sizes)
-- Resources that change at runtime (e.g., user preferences)
-- Resources defined in theme dictionaries
+以下情形请用 `DynamicResource`：
+- 随主题而变的取值（颜色、画刷、尺寸）
+- 运行时会变化的资源（例如用户偏好设置）
+- 定义在主题字典中的资源
 
-Use `StaticResource` for:
-- Values that never change at runtime
-- Performance-sensitive scenarios (static lookup is slightly faster)
+以下情形请用 `StaticResource`：
+- 运行时永不改变的值
+- 对性能敏感的场景（静态查找略快一些）
 
 ## TemplateBinding
 
-A lightweight binding used inside `ControlTemplate` definitions that binds to a property of the templated parent control:
+一种轻量绑定，用在 `ControlTemplate` 定义内部，绑定到被模板化的父控件的某个属性：
 
 ```xml
 <ControlTemplate TargetType="Button">
@@ -105,17 +105,17 @@ A lightweight binding used inside `ControlTemplate` definitions that binds to a 
 </ControlTemplate>
 ```
 
-`TemplateBinding` is equivalent to `{Binding RelativeSource={RelativeSource TemplatedParent}}` but more efficient.
+`TemplateBinding` 等价于 `{Binding RelativeSource={RelativeSource TemplatedParent}}`，但效率更高。
 
 :::info
-`TemplateBinding` supports `OneWay` and `TwoWay` modes. It defaults to `OneWay`, so request `TwoWay` explicitly when you need the value written back: `{TemplateBinding Value, Mode=TwoWay}`.
+`TemplateBinding` 支持 `OneWay` 和 `TwoWay` 两种模式，默认是 `OneWay`；需要把值写回时请显式指定 `TwoWay` —— `{TemplateBinding Value, Mode=TwoWay}`。
 
-`OneTime` and `OneWayToSource` are not supported.
+不支持 `OneTime` 和 `OneWayToSource`。
 :::
 
 ## OnPlatform
 
-Returns a different value depending on the current operating system:
+按当前操作系统返回不同的值：
 
 ```xml
 <TextBlock FontSize="{OnPlatform Default=14, macOS=13, Android=16}" />
@@ -123,9 +123,9 @@ Returns a different value depending on the current operating system:
 <Window Width="{OnPlatform 800, macOS=900}" />
 ```
 
-Supported platform values: `Default`, `Windows`, `macOS`, `Linux`, `Android`, `iOS`, `Browser`.
+支持的平台取值：`Default`、`Windows`、`macOS`、`Linux`、`Android`、`iOS`、`Browser`。
 
-For complex values, use nested syntax:
+复杂的值请使用嵌套写法：
 
 ```xml
 <TextBlock>
@@ -141,17 +141,17 @@ For complex values, use nested syntax:
 
 ## OnFormFactor
 
-Returns a different value based on the device form factor:
+按设备的外形规格返回不同的值：
 
 ```xml
 <TextBlock FontSize="{OnFormFactor Default=14, Desktop=14, Mobile=18}" />
 ```
 
-Supported values: `Default`, `Desktop`, `Mobile`.
+支持的取值：`Default`、`Desktop`、`Mobile`。
 
 ## RelativeSource
 
-Specifies a binding source relative to the binding target's position in the visual or logical tree. Used within `{Binding}`:
+按绑定目标在视觉树或逻辑树中的位置，指定一个相对的绑定源。用在 `{Binding}` 中：
 
 ```xml
 <!-- Bind to self -->
@@ -165,9 +165,9 @@ Specifies a binding source relative to the binding target's position in the visu
     RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
 ```
 
-## Markup extension syntax rules
+## 标记扩展的语法规则 {#markup-extension-syntax-rules}
 
-### Basic syntax
+### 基本语法 {#basic-syntax}
 
 ```xml
 Property="{ExtensionName}"
@@ -177,7 +177,7 @@ Property="{ExtensionName Param1=Value1, Param2=Value2}"
 
 ### Nesting
 
-Markup extensions can be nested:
+标记扩展可以嵌套：
 
 ```xml
 <TextBlock Text="{Binding Name, Converter={StaticResource UpperCaseConverter}}" />
@@ -185,7 +185,7 @@ Markup extensions can be nested:
 
 ### Escaping
 
-To set a property to a literal string that starts with `{`, use an empty set of braces:
+若要把属性设为一个以 `{` 开头的字面字符串，请在前面加一对空花括号：
 
 ```xml
 <TextBlock Text="{}{This is literal text, not a markup extension}" />
@@ -193,8 +193,8 @@ To set a property to a literal string that starts with `{`, use an empty set of 
 
 ## 另请参阅 {#see-also}
 
-- [XAML Reference](/docs/xaml): Overview of XAML syntax.
-- [x: Directives](/docs/xaml/directives): XAML language directives.
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Comprehensive binding syntax reference.
+- [XAML 参考](/docs/xaml)：XAML 语法总览。
+- [x: 指令](/docs/xaml/directives)：XAML 语言指令。
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定语法的完整参考。
 - [编译绑定](/docs/data-binding/compiled-bindings)：编译期受校验的绑定。
-- [Markup Extensions (Data Binding)](/docs/data-binding/markup-extensions): Binding-specific markup extension details.
+- [标记扩展（数据绑定）](/docs/data-binding/markup-extensions)：绑定相关标记扩展的细节。

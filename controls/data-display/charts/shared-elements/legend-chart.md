@@ -102,7 +102,7 @@ Legend entries are represented by `ChartLegendItem`. Built-in series create lege
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 | :--- | :--- |
 | `LegendItemClicked` | Raised after a legend item toggles the visibility of its associated source. Event data exposes the clicked `Item` and `IsNowVisible`. |
 

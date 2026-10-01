@@ -213,7 +213,7 @@ WeakReferenceMessenger.Default.Register<ConfirmDeleteRequest>(this, async (r, m)
 });
 ```
 
-## Dependency injection
+## 依赖注入 {#dependency-injection}
 
 Register your view models and services with a DI container to manage their lifetimes and dependencies cleanly:
 

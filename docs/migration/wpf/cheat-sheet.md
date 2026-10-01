@@ -22,7 +22,7 @@ A quick reference for WPF developers transitioning to Avalonia. Each entry shows
 | `DependencyProperty` | `StyledProperty` | Supports styling, animation, inheritance |
 | `DependencyProperty` (perf-critical) | `DirectProperty` | Faster but no styling/animation |
 | `DependencyProperty.Register()` | `AvaloniaProperty.Register<TOwner, TValue>()` | Generic registration |
-| `DependencyProperty.RegisterAttached()` | `AvaloniaProperty.RegisterAttached<TValue>()` | Attached properties |
+| `DependencyProperty.RegisterAttached()` | `AvaloniaProperty.RegisterAttached<TValue>()` | 附加属性 |
 | `PropertyMetadata` | `StyledPropertyMetadata<T>` | Type-safe metadata |
 | `CoerceValueCallback` | `CoerceValueCallback` via metadata | Same concept |
 | `PropertyChanged` callback in metadata | `propertyChanged` callback in `Register` | Passed directly |
@@ -158,7 +158,7 @@ Or with a binding converter:
 | `EventManager.RegisterRoutedEvent` | `RoutedEvent.Register<T, TArgs>` | Generic registration |
 | `e.Handled = true` | `e.Handled = true` | Same |
 | `AddHandler(event, handler, handledEventsToo)` | Same signature | Same |
-| Class handlers | `Event.AddClassHandler<T>()` | Same concept |
+| 类处理程序 | `Event.AddClassHandler<T>()` | Same concept |
 
 ## Commands
 

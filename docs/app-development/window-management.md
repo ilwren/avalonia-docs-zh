@@ -97,7 +97,7 @@ Set `SizeToContent` to let the window size itself based on its content:
 </Window>
 ```
 
-| 值 | Behavior |
+| 值 | 行为 |
 |---|---|
 | `Manual` | Window uses `Width` and `Height` explicitly (default). |
 | `Width` | Width sizes to content, height is explicit. |
@@ -219,7 +219,7 @@ For more details on the `ElementRole` values, see the [custom title bar how-to](
 
 ## Window events
 
-| Event | When it fires |
+| 事件 | When it fires |
 |---|---|
 | `Opened` | The window has been shown for the first time. |
 | `Closing` | The window is about to close. Can be cancelled. |
@@ -257,7 +257,7 @@ var screenAtPoint = screens.ScreenFromPoint(new PixelPoint(500, 300));
 
 Each `Screen` object exposes:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Bounds` | `PixelRect` | Full screen bounds in pixels. |
 | `WorkingArea` | `PixelRect` | Usable area excluding taskbars and docks. |

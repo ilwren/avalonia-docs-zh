@@ -135,7 +135,7 @@ A control cannot have both a `ContextFlyout` and a `ContextMenu` attached at the
 
 ## Useful properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `ItemsSource` | `IEnumerable` | Binds menu items to a collection so you can generate them dynamically. |
 | `Opening` | `event` | Raised before the context menu opens. Set `Cancel` to `true` to prevent it. |

@@ -189,7 +189,7 @@ static MyControl()
 
 Both approaches are equivalent in effect. Overriding `OnPropertyChanged` is often cleaner when you need to handle changes to multiple properties in one place.
 
-## Default values
+## 默认值 {#default-values}
 
 In WPF, default values are supplied through a `PropertyMetadata` object:
 
@@ -214,7 +214,7 @@ static MyDerivedControl()
 }
 ```
 
-## Value coercion
+## 取值强制转换 {#value-coercion}
 
 In WPF, you supply a `CoerceValueCallback` in the `PropertyMetadata`:
 

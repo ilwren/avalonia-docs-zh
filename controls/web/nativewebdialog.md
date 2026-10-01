@@ -7,7 +7,7 @@ title: NativeWebDialog
 
 ## Useful properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Title` | `string?` | The dialog window title. |
 | `CanUserResize` | `bool` | Whether the user can resize the dialog. |
@@ -155,7 +155,7 @@ See [WebView environment options](/controls/web/webview-environment) for details
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 |---|---|
 | `Closing` | Fires before the dialog closes. |
 | `AdapterCreated` | Fires after the WebView adapter has been initialized. |

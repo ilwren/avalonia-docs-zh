@@ -47,7 +47,7 @@ The pivot point for render transforms. In Avalonia, the default is `50%,50%` (ce
 
 ### Common render transform types
 
-| Transform | 说明 | Example |
+| Transform | 说明 | 示例 |
 |---|---|---|
 | `RotateTransform` | Rotates the control. | `<RotateTransform Angle="45" />` |
 | `ScaleTransform` | Scales the control. | `<ScaleTransform ScaleX="1.5" ScaleY="1.5" />` |
@@ -119,7 +119,7 @@ The "Below" button is positioned below the rotated control's full bounds, with n
 |---|---|---|
 | Affects layout | No | Yes |
 | Other controls adjust | No | Yes |
-| Performance | Faster (no re-layout) | Slower (triggers layout pass) |
+| 性能 | Faster (no re-layout) | Slower (triggers layout pass) |
 | Animatable | Yes | Yes, but causes layout recalculation each frame |
 | Applied via | `RenderTransform` property | `LayoutTransformControl` |
 | Default origin | Center (50%, 50%) | Center |

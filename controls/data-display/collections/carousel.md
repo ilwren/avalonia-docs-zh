@@ -13,7 +13,7 @@ The `Carousel` has an items collection and displays each item as a page, in sequ
 
 You will probably use these properties most often:
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `PageTransition` | `IPageTransition?` | `null` | Transition animation played when the selected item changes. Built-in options include `PageSlide`, `CrossFade`, `Rotate3DTransition`, and `CompositePageTransition`. |
 | `IsSwipeEnabled` | `bool` | `false` | Enables swipe and pointer-drag gestures to navigate between pages. |

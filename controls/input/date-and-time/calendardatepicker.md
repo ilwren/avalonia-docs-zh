@@ -19,7 +19,7 @@ For details on the calendar portion of this control, see the [Calendar](/control
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `SelectedDate` | `DateTime?` | The currently selected date, or `null` if no date is selected. |
 | `DisplayDate` | `DateTime` | The month to display when the calendar opens. |

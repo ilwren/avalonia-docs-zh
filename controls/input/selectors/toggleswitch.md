@@ -13,7 +13,7 @@ Use `ToggleSwitch` when you need an immediate on/off setting, such as enabling d
 
 You will probably use these properties most often:
 
-| 属性      | Type      | 说明                                                        |
+| 属性      | 类型      | 说明                                                        |
 | ------------- | --------- | ------------------------------------------------------------------ |
 | `IsChecked`   | `bool?`   | Gets or sets the current toggle state. `true` is on, `false` is off. |
 | `OnContent`   | `object`  | Content displayed when the toggle is on. Defaults to "On".         |
@@ -22,7 +22,7 @@ You will probably use these properties most often:
 
 ## 事件 {#events}
 
-| Event              | 说明                              |
+| 事件              | 说明                              |
 | ------------------ | ---------------------------------------- |
 | `IsCheckedChanged` | Raised when the `IsChecked` value changes. |
 

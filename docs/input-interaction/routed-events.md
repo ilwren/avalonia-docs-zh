@@ -180,7 +180,7 @@ This conceptual design is reinforced by the routing behavior mentioned earlier: 
 
 In applications, it is common to handle a bubbling routed event on the object that raised it, and not be concerned with the event's routing characteristics at all. However, it is still a good practice to mark the routed event as handled in the event data, to prevent unanticipated side effects in case an element that is further up the element tree also has a handler attached for that same routed event.
 
-## Class handlers
+## 类处理程序 {#class-handlers}
 
 If you are defining a class that derives in some way from `AvaloniaObject`, you can also define and attach a class handler for a routed event that is a declared or inherited event member of your class. Class handlers are invoked before any instance listener handlers that are attached to an instance of that class, whenever a routed event reaches an element instance in its route.
 
@@ -222,7 +222,7 @@ Another syntax usage that resembles _typename_._eventname_ attached event syntax
 
 Here, the parent element listener where the handler is added is a `StackPanel`. However, it is adding a handler for a routed event that was declared and will be raised by the `Button` class. `Button` "owns" the event, but the routed event system permits handlers for any routed event to be attached to any control instance listener that could otherwise attach listeners for a common language runtime (CLR) event. The default xmlns namespace for these qualified event attribute names is typically the default Avalonia xmlns namespace, but you can also specify prefixed namespaces for custom routed events.
 
-## Input events
+## 输入事件 {#input-events}
 
 One frequent application of routed events within the Avalonia platform is for input events. Input events often come in pairs, with one being the bubbling event and the other being the tunneling event. Occasionally, input events only have a bubbling version, or perhaps only a direct routed version.
 

@@ -13,7 +13,7 @@ This is useful when you need resolution-independent icons or graphics that can s
 
 A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Avalonia provides four concrete drawing types:
 
-| Type | 用途 |
+| 类型 | 用途 |
 | :--- | :--- |
 | `GeometryDrawing` | Fills and/or strokes a `Geometry` shape |
 | `ImageDrawing` | Renders a bitmap image within a rectangular region |
@@ -24,7 +24,7 @@ A `DrawingImage` wraps a single `Drawing` object in its `Drawing` property. Aval
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | `Drawing` | `Drawing` | The vector drawing content to render |
 | `Viewbox` | `Rect` | A rectangular region of the drawing to display, in device-independent pixels |

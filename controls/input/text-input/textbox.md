@@ -12,7 +12,7 @@ The [`TextBox`](/api/avalonia/controls/textbox) presents an area for typed (keyb
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Text` | `string` | The current text in the input. |
 | `PlaceholderText` | `string` | Appears as a faded hint whenever the input is empty. Sometimes called a watermark. |

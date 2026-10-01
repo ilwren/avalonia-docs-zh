@@ -1,33 +1,33 @@
 ---
 id: generics
-title: Generic types in XAML
-description: Use generic .NET types in Avalonia XAML with the x:TypeArguments directive for collections and custom controls.
+title: XAML 中的泛型类型
+description: '借助 x:TypeArguments 指令，在 Avalonia XAML 中使用泛型 .NET 类型，包括泛型集合和自定义控件。'
 doc-type: explanation
 ---
 
-Avalonia supports using generic .NET types in XAML through the `x:TypeArguments` directive. This allows you to instantiate generic classes and use generic collections directly in markup.
+Avalonia 通过 `x:TypeArguments` 指令支持在 XAML 中使用泛型 .NET 类型。于是你可以直接在标记里实例化泛型类、使用泛型集合。
 
 ## `x:TypeArguments`
 
-The `x:TypeArguments` directive specifies the type arguments for a generic type. It can only be used on the root element of a XAML file or on elements that also have `x:Class` or are inside a resource dictionary.
+`x:TypeArguments` 指令用于指定泛型类型的类型参数。它只能用在 XAML 文件的根元素上，或者同时带有 `x:Class` 的元素上，又或者资源字典内部的元素上。
 
-### Basic syntax
+### 基本语法 {#basic-syntax}
 
 ```xml
 <local:MyGenericControl x:TypeArguments="x:String" />
 ```
 
-### Multiple type arguments
+### 多个类型参数 {#multiple-type-arguments}
 
-Separate multiple type arguments with commas:
+多个类型参数之间用逗号分隔：
 
 ```xml
 <local:Pair x:TypeArguments="x:String, x:Int32" />
 ```
 
-## Using generic collections in resources
+## 在资源中使用泛型集合 {#using-generic-collections-in-resources}
 
-You can define generic collections as resources:
+泛型集合可以定义成资源：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -47,9 +47,9 @@ You can define generic collections as resources:
 </Window>
 ```
 
-## Generic custom controls
+## 泛型自定义控件 {#generic-custom-controls}
 
-When creating a generic custom control, define the type parameter in C#:
+编写泛型自定义控件时，先在 C# 中定义类型参数：
 
 ```csharp
 public class TypedList<T> : ItemsControl
@@ -65,31 +65,31 @@ public class TypedList<T> : ItemsControl
 }
 ```
 
-Use it in XAML with `x:TypeArguments`:
+在 XAML 中配合 `x:TypeArguments` 使用它：
 
 ```xml
 <local:TypedList x:TypeArguments="vm:Person" ItemsSource="{Binding People}" />
 ```
 
-## Common generic types in XAML
+## XAML 中常见的泛型类型 {#common-generic-types-in-xaml}
 
-| Type | XAML Prefix | Example |
+| 类型 | XAML Prefix | 示例 |
 |---|---|---|
 | `System.String` | `x:String` | `x:TypeArguments="x:String"` |
 | `System.Int32` | `x:Int32` | `x:TypeArguments="x:Int32"` |
 | `System.Double` | `x:Double` | `x:TypeArguments="x:Double"` |
 | `System.Boolean` | `x:Boolean` | `x:TypeArguments="x:Boolean"` |
-| Custom types | `local:` or `vm:` | `x:TypeArguments="vm:MyModel"` |
+| 自定义类型 | `local:` or `vm:` | `x:TypeArguments="vm:MyModel"` |
 
-## Limitations
+## 限制 {#limitations}
 
-- `x:TypeArguments` on the root element requires `x:Class` to also be specified.
-- Nested generic types (e.g., `List<List<string>>`) are not supported in XAML. Define them in code and reference via binding or `x:Static`.
-- Not all XAML contexts support `x:TypeArguments`. It works on object elements and resource definitions.
+- 在根元素上使用 `x:TypeArguments` 时，必须同时指定 `x:Class`。
+- XAML 不支持嵌套泛型（例如 `List<List<string>>`）。请在代码中定义它们，再通过绑定或 `x:Static` 引用。
+- 并非所有 XAML 上下文都支持 `x:TypeArguments`，它适用于对象元素和资源定义。
 
-## Workarounds for unsupported scenarios
+## 不支持场景的变通办法 {#workarounds-for-unsupported-scenarios}
 
-When XAML generics are not practical, define a concrete subclass:
+当 XAML 泛型不好使时，可以定义一个具体的子类：
 
 ```csharp
 // Define a non-generic subclass for use in XAML
@@ -105,10 +105,10 @@ public class PersonCollection : ObservableCollection<Person> { }
 </local:StringList>
 ```
 
-This pattern is common in .NET XAML frameworks and avoids any `x:TypeArguments` limitations.
+这种写法在 .NET 的各种 XAML 框架中都很常见，能绕开 `x:TypeArguments` 的所有限制。
 
 ## 另请参阅 {#see-also}
 
-- [XAML Namespaces](/docs/xaml/namespaces): How to reference CLR namespaces in XAML.
-- [x: Directives](/docs/xaml/directives): Full reference for `x:TypeArguments` and other directives.
-- [Type Converters](/docs/xaml/type-converters): Converting string values to .NET types.
+- [XAML 命名空间](/docs/xaml/namespaces)：如何在 XAML 中引用 CLR 命名空间。
+- [x: 指令](/docs/xaml/directives)：`x:TypeArguments` 及其他指令的完整参考。
+- [类型转换器](/docs/xaml/type-converters)：把字符串值转换成 .NET 类型。

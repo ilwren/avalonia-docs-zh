@@ -79,7 +79,7 @@ Allows for quickly checking and editing properties of the control. One can also 
 | -------- | ----------------------------- |
 | Property | Name of the property          |
 | 值    | Current value of the property |
-| Type     | Type of the current value     |
+| 类型     | Type of the current value     |
 | Priority | Priority of the value         |
 
 <Image light={DevToolsPropertiesScreenshot} alt="DevTools properties panel" position="center" maxWidth={400} cornerRadius="true" />

@@ -15,7 +15,7 @@ You can change the value by dragging the thumb, clicking on the track, using the
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Minimum` | `double` | Sets the lower bound of the range. Default is `0`. |
 | `Maximum` | `double` | Sets the upper bound of the range. Default is `100`. |
@@ -106,7 +106,7 @@ private double _maxDamage = 9999;
 
 ## All properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Minimum` | `double` | Lower bound of the range. Default is `0`. |
 | `Maximum` | `double` | Upper bound of the range. Default is `100`. |

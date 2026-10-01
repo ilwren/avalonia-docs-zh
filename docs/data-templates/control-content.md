@@ -1,7 +1,7 @@
 ---
 id: control-content
 title: 控件内容
-description: Understand how controls display non-control content and why data templates are needed.
+description: 理解控件如何显示非控件内容，以及为什么需要数据模板。
 doc-type: explanation
 ---
 
@@ -9,10 +9,10 @@ import ControlContentButtonScreenshot from '/img/concepts/data-concepts/data-tem
 import ControlContentStringScreenshot from '/img/concepts/data-concepts/data-templates/control-content/content-string.png';
 import ControlContentTypeScreenshot from '/img/concepts/data-concepts/data-templates/control-content/content-type.png';
 
-You have probably seen what happens if you put a button control into the content zone of an _Avalonia UI_ window.
+把一个按钮控件放进 _Avalonia UI_ 窗口的内容区，会是什么效果，你多半已经见过了。
 
 :::info
-For more about the zones of an _Avalonia UI_ control, see [Layout](/docs/layout/).
+关于 _Avalonia UI_ 控件各个区域的更多说明，请见[布局](/docs/layout/)。
 :::
 
 例如：
@@ -29,11 +29,11 @@ For more about the zones of an _Avalonia UI_ control, see [Layout](/docs/layout/
 </Window>
 ```
 
-The window displays the button - in this case centred both horizontally (specified) and vertically (by default). It looks like this:
+窗口把按钮显示了出来 —— 这里水平方向居中（显式指定的），垂直方向也居中（默认行为）。看起来是这样：
 
 <Image light={ControlContentButtonScreenshot} alt="Window displaying a centered Hello World button" position="center" maxWidth={400} cornerRadius="true"/>
 
-And if you put a string into the window content zone, for example:
+如果往窗口内容区里放一个字符串，比如：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -47,13 +47,13 @@ And if you put a string into the window content zone, for example:
 </Window>
 ```
 
-The window will display the string:
+窗口就会把这个字符串显示出来：
 
 <Image light={ControlContentStringScreenshot} alt="Window displaying a Hello World string" position="center" maxWidth={400} cornerRadius="true"/>
 
-But what happens if you try to display an object from a class that you have defined in the window?
+可要是你想在窗口里显示一个自定义类的对象，又会怎样？
 
-For example, using the class definition `Student`
+比如说，有这样一个类定义 `Student`
 
 ```csharp
 namespace MySample
@@ -66,7 +66,7 @@ namespace MySample
 }
 ```
 
-And the XML namespace `local` defined as the `MySample` namespace (from above), you can define a student object in the content zone of the window; as follows:
+再把 XML 命名空间 `local` 定义为（前面那个）`MySample` 命名空间，就可以在窗口内容区里定义一个学生对象，像这样：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -77,14 +77,14 @@ And the XML namespace `local` defined as the `MySample` namespace (from above), 
 </Window>
 ```
 
-But you will see only the fully-qualified class name for the student object:
+但你看到的只有学生对象的完全限定类名：
 
 <Image light={ControlContentTypeScreenshot} alt="Window displaying the fully-qualified class name of a Student object" position="center" maxWidth={400} cornerRadius="true"/>
 
-This is not very helpful! It happens because _Avalonia UI_ has no definition of how to display an object of class `Student` - and it is not a control - so it falls back on the `.ToString()` method, and all you see is the fully-qualified class name.
+这可帮不上什么忙！之所以如此，是因为 _Avalonia UI_ 并不知道 `Student` 类的对象该怎么显示 —— 它又不是控件 —— 于是只好退回到 `.ToString()` 方法，你看到的也就只有完全限定类名了。
 
 ## 另请参阅 {#see-also}
 
-- [Content Templates](/docs/data-templates/content-templates): Using `ContentTemplate` to define how data is displayed.
-- [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.
-- [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates): Overview of data templates in Avalonia.
+- [内容模板](/docs/data-templates/content-templates)：用 `ContentTemplate` 定义数据的显示方式。
+- [数据模板集合](/docs/data-templates/data-template-collection)：按类型定义多个模板。
+- [数据模板入门](/docs/data-templates/introduction-to-data-templates)：Avalonia 数据模板总览。

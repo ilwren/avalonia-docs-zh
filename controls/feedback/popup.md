@@ -11,7 +11,7 @@ For most scenarios, prefer `Flyout`, `ToolTip`, or `ContextMenu` instead of `Pop
 
 ## Useful properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `IsOpen` | `bool` | Controls whether the popup is currently visible. |
 | `Child` | `Control` | The content displayed inside the popup. |
@@ -29,7 +29,7 @@ For most scenarios, prefer `Flyout`, `ToolTip`, or `ContextMenu` instead of `Pop
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 |---|---|
 | `Opened` | Raised after the popup opens. |
 | `Closed` | Raised after the popup closes. |
@@ -65,7 +65,7 @@ private void OnTogglePopup(object sender, RoutedEventArgs e)
 
 The `Placement` property controls where the popup appears:
 
-| 模式 | Behavior |
+| 模式 | 行为 |
 |---|---|
 | `Bottom` | Below the target, left-aligned. |
 | `Top` | Above the target, left-aligned. |

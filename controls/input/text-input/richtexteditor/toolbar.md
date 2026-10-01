@@ -270,7 +270,7 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 
 `EditorTool` exposes the following on every toolbar item:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `TargetAreas` | `ToolbarTargetAreas` | Contexts in which this tool should appear. Defaults to `CaretAreas`. See [ToolbarTargetAreas](#toolbar-target-areas). |
 | `ActiveTargetAreas` | `ToolbarTargetAreas` | Read-only. The areas the caret is currently in, pushed here by the host toolbar as the selection moves. |
@@ -280,7 +280,7 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 
 `ActionTool` adds the action-bearing surface (inherited by every interactive tool):
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Action` | `IEditorAction?` | The action this tool executes. |
 | `Icon` | `object?` | Display icon for the tool. |
@@ -288,7 +288,7 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 
 `EditorToolbar` itself carries:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Editor` | `RichTextEditor?` | The host this toolbar drives. Reassign it to retarget the toolbar at runtime. |
 | `EditorHost` | `ITextEditorHost?` | The host this toolbar drives that is not a `RichTextEditor`. |
@@ -786,7 +786,7 @@ Each collapsible tool must have its own `OverflowMenuItem`. In most cases, the m
 
 The following specialized subclasses of `EditorMenuItem` are available for tools that may not work well as plain menu items in an overflow menu.
 
-| Source tool | Overflow item | Behavior |
+| Source tool | Overflow item | 行为 |
 |---|---|---|
 | `ComboBoxTool` (fonts) | `FontFamilyMenuItem` | Submenu of fonts, each rendered in its own typeface. |
 | `ComboBoxTool` (generic) | `PropertyMenuItem` | Submenu of values auto-populated from the action. |
@@ -1029,7 +1029,7 @@ Toolbar visuals are controlled through dynamic resources and style classes. You 
 
 ### Style classes
 
-| Class | Applies to | Effect |
+| Class | Applies to | 效果 |
 |---|---|---|
 | `ToolbarTool` | `Button`, `ToggleButton`, `SplitButton` | Standard toolbar button sizing, transparency, hover/checked/disabled visuals, transitions. Apply when embedding a stock button inside an `EditorToolbar` so it blends with surrounding tools. |
 | `AreaAware` | `ToolbarGroup`, `ToggleTool`, `SeparatorTool`, `TablePickerTool`, `AlignmentFlyoutTool`, and other `EditorTool` subclasses | Binds the active target area from the ancestor `EditorToolbar` and optionally drives `IsVisible`. Required on `ToolbarGroup` for contextual visibility to work. |

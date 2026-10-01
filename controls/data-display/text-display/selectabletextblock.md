@@ -9,7 +9,7 @@ The `SelectableTextBlock` is a read-only label for displaying text that your use
 
 ## 常用属性 {#common-properties}
 
-| 属性                   | Type        | 说明                                                                                                                                                                                                           |
+| 属性                   | 类型        | 说明                                                                                                                                                                                                           |
 | -------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Text`                     | `string`    | The text to display.                                                                                                                                                                                                  |
 | `SelectionStart`           | `int`       | The character index for the start of the current selection.                                                                                                                                                           |
@@ -26,7 +26,7 @@ The `SelectableTextBlock` is a read-only label for displaying text that your use
 
 ## 事件 {#events}
 
-| Event                | 说明                                                        |
+| 事件                | 说明                                                        |
 | -------------------- | ------------------------------------------------------------------ |
 | `CopyingToClipboard` | Raised when the selected text is being copied to the clipboard. Can be used to modify or cancel the copy operation. |
 

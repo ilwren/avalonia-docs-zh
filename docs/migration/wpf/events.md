@@ -31,7 +31,7 @@ Key differences to note:
 - The registration call in Avalonia uses generic type parameters for both the owner type and the event args type, rather than passing `typeof()` arguments.
 - The delegate type is inferred from the generic type parameter in Avalonia, so you do not need to specify it explicitly.
 
-## Class handlers
+## 类处理程序 {#class-handlers}
 
 In WPF, class handlers for events can be added by calling [EventManager.RegisterClassHandler](https://msdn.microsoft.com/en-us/library/ms597875.aspx). In Avalonia, you call `AddClassHandler` directly on the routed event instance.
 

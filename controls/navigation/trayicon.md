@@ -15,7 +15,7 @@ You define tray icons in your `App.axaml` file using the `TrayIcon.Icons` attach
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Icon` | `WindowIcon` | The icon to display in the system tray. Typically loaded from your application assets. |
 | `ToolTipText` | `string` | Tooltip text displayed when the user hovers over the tray icon. |

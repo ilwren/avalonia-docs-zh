@@ -9,7 +9,7 @@ The [`Label`](/api/avalonia/controls/label) control displays text and transfers 
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Content` | `object` | The content to display in the label. You can set this to a string or bind it to a view model property. |
 | `Target` | `IInputElement` | The target control that receives focus when the label is clicked or its access key is pressed. Set this to the `x:Name` of the target control. |

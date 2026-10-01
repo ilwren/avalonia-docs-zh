@@ -15,7 +15,7 @@ The [`ThemeVariantScope`](/api/avalonia/controls/themevariantscope) control over
 
 ## Useful properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `RequestedThemeVariant` | `ThemeVariant` | The theme variant to apply within this scope. Values: `Light`, `Dark`, `Default`. Setting `Default` resets to the inherited variant. |
 | `ActualThemeVariant` | `ThemeVariant` | Read-only. The theme variant currently in effect within this scope. |

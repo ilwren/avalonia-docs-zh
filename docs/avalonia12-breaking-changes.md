@@ -657,7 +657,7 @@ See [Window decoration changes](#window-decoration-changes) for context.
 | `LightDismissOverlayLayer` class | `VisualLayerManager` | [#20732](https://github.com/AvaloniaUI/Avalonia/pull/20732) |
 | `OverlayPopupHost.CreatePopupHost` method | `Popup` | [#20597](https://github.com/AvaloniaUI/Avalonia/pull/20597) |
 
-### Gesture events
+### 手势事件 {#gesture-events}
 
 See [Gesture events moved](#gesture-events-moved) for context.
 

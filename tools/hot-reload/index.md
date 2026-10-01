@@ -19,7 +19,7 @@ Hot reload applies edits to `.axaml` and `.cs` files in a running Avalonia appli
 
 With the hot reload package, these edits are applied live to your running application:
 
-| Change | Behavior |
+| Change | 行为 |
 | --- | --- |
 | Controls (files with `x:Class`) | Existing instances in the visual tree are rebuilt in place, keeping their positions where possible. |
 | Styles | Application-level and control-level styles are reapplied. Selector and setter changes take effect at once. |
@@ -144,7 +144,7 @@ HotReloadExtensions.InitializeHotReload(
 
 The engine initializes once per process, so later calls have no effect. To surface hot reload activity in your logging, subscribe to `HotReloadDiagnostics.EntryLogged`.
 
-## Limitations
+## 限制 {#limitations}
 
 - WebAssembly is not supported. Hot reload works on desktop and mobile platforms only.
 - C# edits follow the normal [.NET Hot Reload rules](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload). Adding fields or changing method signatures counts as a rude edit and needs a restart.

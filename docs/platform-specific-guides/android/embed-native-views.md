@@ -85,7 +85,7 @@ public class EmbedSampleAndroid : INativeDemoControl
 
 When `isSecond` is `true`, the method creates an Android `WebView`, loads a URL, and returns it wrapped in an `AndroidViewControlHandle`. When `isSecond` is `false`, it creates a native `Button` with a click counter and returns that instead.
 
-## Limitations
+## 限制 {#limitations}
 
 Native views sit on top of the Avalonia rendering surface. Keep the following constraints in mind:
 

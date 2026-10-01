@@ -1,48 +1,48 @@
 ---
 id: lifecycle-events
-title: Lifecycle events
-description: Control initialization, visual tree attachment, and teardown events in Avalonia.
+title: 生命周期事件
+description: Avalonia 中控件的初始化、挂载到视觉树以及销毁相关的事件。
 doc-type: reference
 ---
 
-Avalonia controls raise several events during their creation, attachment to the visual tree, and removal. Understanding the order and purpose of these events is important for initializing controls, loading data, and cleaning up resources.
+Avalonia 控件在创建、挂载到视觉树以及被移除的过程中会引发若干事件。弄清这些事件的顺序和用途，对于初始化控件、加载数据和清理资源都很重要。
 
-## Lifecycle event order
+## 生命周期事件的顺序 {#lifecycle-event-order}
 
-### Control creation
+### 控件创建 {#control-creation}
 
-When a control is created and added to the visual tree, events fire in the following order:
+控件被创建并加入视觉树时，事件按以下顺序触发：
 
-| Order | Event / Method | Defined On | 说明 |
+| 顺序 | Event / Method | 定义于 | 说明 |
 |---|---|---|---|
-| 1 | `Initialized` | `StyledElement` | All property values from XAML have been set. The control is not yet part of the visual tree. |
-| 2 | `AttachedToVisualTree` | `Visual` | The control has been added to a rooted visual tree. Layout has not yet occurred. |
-| 3 | `Loaded` | `Control` | The control is fully attached and ready for interaction. This fires after the visual tree attachment is complete. |
+| 1 | `Initialized` | `StyledElement` | XAML 中的所有属性值都已设置完毕。此时控件还不属于视觉树。 |
+| 2 | `AttachedToVisualTree` | `Visual` | 控件已加入一棵有根的视觉树，但布局尚未发生。 |
+| 3 | `Loaded` | `Control` | 控件已完全挂载，可以开始交互。该事件在视觉树挂载全部完成之后触发。 |
 
-### Control removal
+### 控件移除 {#control-removal}
 
-When a control is removed:
+控件被移除时：
 
-| Order | Event / Method | Defined On | 说明 |
+| 顺序 | Event / Method | 定义于 | 说明 |
 |---|---|---|---|
-| 1 | `Unloaded` | `Control` | The control is about to be removed from the visual tree. |
-| 2 | `DetachedFromVisualTree` | `Visual` | The control has been removed from the visual tree. |
+| 1 | `Unloaded` | `Control` | 控件即将从视觉树中移除。 |
+| 2 | `DetachedFromVisualTree` | `Visual` | 控件已从视觉树中移除。 |
 
-### Layout application
+### 布局的应用 {#layout-application}
 
-In addition to the events described above, layout controls can also participate in altering the visual tree through the following methods.
+除了上述事件，布局类控件还可以通过下面这些方法参与改变视觉树。
 
-During the initial run (i.e., when the control is first attached to the visual tree), these events occur in the stated sequence between the `AttachedToVisualTree` and `Loaded` events [detailed above](#control-creation). However, `MeasureOverride` and `ArrangeOverride` can run multiple times during a control's lifetime, as they are triggered whenever the layout is updated, e.g., when the window size is adjusted.
+首次运行时（也就是控件初次挂载到视觉树时），这些事件按上述顺序，发生在[前文所述](#control-creation)的 `AttachedToVisualTree` 与 `Loaded` 两个事件之间。不过 `MeasureOverride` 和 `ArrangeOverride` 在控件的一生中可能跑很多次 —— 只要布局更新（比如调整窗口大小）就会触发。
 
-| Order | Event / Method | Defined On | 说明 |
+| 顺序 | Event / Method | 定义于 | 说明 |
 |---|---|---|---|
-| 1 | `ApplyTemplate` | `Control` | Applies the [control template](/docs/styling/control-template-walkthrough) and creates the required templated visual parts. |
-| 2 | `MeasureOverride` | `Control` | Called during the [measure pass](/docs/layout/#measuring-and-arranging-children) of layout. Determines the desired size of a control. |
-| 3 | `ArrangeOverride` | `Control` | Called during the [arrange pass](/docs/layout/#measuring-and-arranging-children) of layout. Assigns the final size of a control. |
+| 1 | `ApplyTemplate` | `Control` | 套用[控件模板](/docs/styling/control-template-walkthrough)，创建模板所需的各个视觉部件。 |
+| 2 | `MeasureOverride` | `Control` | 在布局的[测量阶段](/docs/layout/#measuring-and-arranging-children)被调用，用于确定控件期望的尺寸。 |
+| 3 | `ArrangeOverride` | `Control` | 在布局的[排列阶段](/docs/layout/#measuring-and-arranging-children)被调用，用于确定控件的最终尺寸。 |
 
 ## Initialized
 
-The `Initialized` event fires when the XAML loader has finished setting all properties defined in markup. At this point, the control's property values are set but the control may not yet be part of a visual tree.
+当 XAML 加载器把标记中定义的所有属性都设置完毕时，就会触发 `Initialized` 事件。此时控件的属性值已就位，但它可能还不属于任何视觉树。
 
 ```csharp
 public class MyControl : Control
@@ -56,7 +56,7 @@ public class MyControl : Control
 }
 ```
 
-Or subscribe externally:
+也可以在外部订阅：
 
 ```csharp
 myControl.Initialized += (sender, e) =>
@@ -65,11 +65,11 @@ myControl.Initialized += (sender, e) =>
 };
 ```
 
-**When to use**: Set up internal state that depends on XAML-defined property values but does not require the visual tree.
+**适用场景**：初始化那些依赖 XAML 属性值、但不需要视觉树的内部状态。
 
 ## AttachedToVisualTree / DetachedFromVisualTree
 
-These events fire when a control is added to or removed from a rooted visual tree (a tree that has a `TopLevel` at its root).
+当控件被加入或移出一棵有根的视觉树（即根部有 `TopLevel` 的树）时，这些事件会触发。
 
 ```csharp
 public class MyControl : Control
@@ -89,19 +89,19 @@ public class MyControl : Control
 }
 ```
 
-The `VisualTreeAttachmentEventArgs` provides:
+`VisualTreeAttachmentEventArgs` 提供了：
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `RootVisual` | `Visual` | The root visual of the tree the control was attached to. |
-| `AttachmentPoint` | `Visual` | The visual that the control was directly attached to or detached from. |
-| `PresentationSource` | `IPresentationSource` | The presentation source hosting the visual tree. |
+| `RootVisual` | `Visual` | 控件所挂载到的那棵树的根视觉元素。 |
+| `AttachmentPoint` | `Visual` | 控件直接挂载到、或从中分离的那个视觉元素。 |
+| `PresentationSource` | `IPresentationSource` | 承载该视觉树的呈现源。 |
 
-**When to use**: Subscribe to or unsubscribe from external services, platform APIs, or events that should only be active while the control is visible.
+**适用场景**：订阅或退订那些只应在控件可见期间保持活跃的外部服务、平台 API 或事件。
 
 ## Loaded / Unloaded
 
-The `Loaded` event fires after a control is attached to the visual tree and all related initialization is complete. The `Unloaded` event fires when the control is removed.
+`Loaded` 事件在控件挂载到视觉树、且相关初始化全部完成之后触发；控件被移除时则触发 `Unloaded` 事件。
 
 ```csharp
 public class MyControl : Control
@@ -121,7 +121,7 @@ public class MyControl : Control
 }
 ```
 
-Or subscribe via XAML/code:
+也可以通过 XAML 或代码订阅：
 
 ```csharp
 myControl.Loaded += (sender, e) =>
@@ -130,20 +130,20 @@ myControl.Loaded += (sender, e) =>
 };
 ```
 
-**When to use**: Perform actions that require the control to be fully set up with an active visual tree, such as starting animations, measuring layout, or fetching data.
+**适用场景**：执行那些要求控件已完全就绪、且视觉树处于活跃状态的操作，比如启动动画、测量布局或拉取数据。
 
-### Loaded vs AttachedToVisualTree
+### Loaded 与 AttachedToVisualTree 的区别 {#loaded-vs-attachedtovisualtree}
 
-Both events indicate the control is part of the visual tree. The key difference:
+这两个事件都表示控件已经进入视觉树，关键差别在于：
 
-- `AttachedToVisualTree` fires immediately when the control enters the tree. It is a plain CLR event on `Visual`.
-- `Loaded` fires after the attachment is fully complete. It is a `RoutedEvent` on `Control`.
+- `AttachedToVisualTree` 在控件一进入树时就立即触发，它是 `Visual` 上的普通 CLR 事件。
+- `Loaded` 则在挂载彻底完成之后才触发，它是 `Control` 上的 `RoutedEvent`。
 
-For most scenarios, `Loaded` is the right choice. Use `AttachedToVisualTree` when you need access to the `Root` reference or when working with non-`Control` visuals.
+大多数场景下选 `Loaded` 就对了。只有当你需要拿到 `Root` 引用、或者要处理非 `Control` 的视觉元素时，才用 `AttachedToVisualTree`。
 
 ## ApplyTemplate
 
-This method applies the control template of a control.
+该方法负责套用控件的控件模板。
 
 ```csharp
 public class MyControl : Control
@@ -157,7 +157,7 @@ public class MyControl : Control
 
 ## MeasureOverride / ArrangeOverride
 
-These override methods are called by the layout system whenever a control needs to undergo the [two-pass layout process](/docs/layout/#measuring-and-arranging-children) to size and position it within the layout.
+每当控件需要走一遍[两阶段布局流程](/docs/layout/#measuring-and-arranging-children)来确定自身在布局中的尺寸和位置时，布局系统就会调用这些可重写的方法。
 
 ```csharp
 public class MyControl : Control
@@ -178,7 +178,7 @@ public class MyControl : Control
 
 ## DataContextChanged
 
-The `DataContextChanged` event fires whenever the `DataContext` property changes on a `StyledElement`:
+每当 `StyledElement` 上的 `DataContext` 属性发生变化，就会触发 `DataContextChanged` 事件：
 
 ```csharp
 myControl.DataContextChanged += (sender, e) =>
@@ -188,22 +188,22 @@ myControl.DataContextChanged += (sender, e) =>
 };
 ```
 
-This event fires when:
-- The `DataContext` is set directly on the control.
-- The inherited `DataContext` changes because a parent's `DataContext` changed.
-- The control moves to a different part of the visual tree with a different inherited `DataContext`.
+该事件在以下情况下触发：
+- 直接在控件上设置了 `DataContext`。
+- 父级的 `DataContext` 变了，导致继承而来的 `DataContext` 随之改变。
+- 控件被移动到视觉树的另一处，而那里继承到的 `DataContext` 不同。
 
 :::warning
-Do not mutate the logical tree from `DataContextChanged` or `OnPropertyChanged`!
+切勿在 `DataContextChanged` 或 `OnPropertyChanged` 中改动逻辑树！
 
-`DataContext` is an inherited property, so changes trigger a walk down the logical tree to propagate new values to descendants. If `LogicalChildren` are modified while the walk is in progress, binding errors can result.
+`DataContext` 是可继承属性，它一变就会引发一次沿逻辑树向下的遍历，把新值传播给后代。若在遍历进行期间改动 `LogicalChildren`，就可能引发绑定错误。
 
-For more information, see [Mutating the logical tree](/docs/fundamentals/visual-and-logical-trees#mutating-the-logical-tree).
+更多说明请见[改动逻辑树](/docs/fundamentals/visual-and-logical-trees#mutating-the-logical-tree)。
 :::
 
-## Typical initialization patterns
+## 常见的初始化套路 {#typical-initialization-patterns}
 
-### Loading data in a view
+### 在视图中加载数据 {#loading-data-in-a-view}
 
 ```csharp
 public partial class CustomerView : UserControl
@@ -225,7 +225,7 @@ public partial class CustomerView : UserControl
 }
 ```
 
-### Managing subscriptions
+### 管理订阅 {#managing-subscriptions}
 
 ```csharp
 public class StatusMonitor : Control
@@ -254,6 +254,6 @@ public class StatusMonitor : Control
 
 ## 另请参阅 {#see-also}
 
-- [Events Overview](/docs/events): How the routed event system works.
-- [Application Lifetimes](/docs/fundamentals/application-lifetimes): Application-level lifecycle events.
-- [UI Composition](/docs/fundamentals/ui-composition): How controls are composed in the visual tree.
+- [事件总览](/docs/events)：路由事件系统的工作方式。
+- [应用程序生命周期](/docs/fundamentals/application-lifetimes)：应用级的生命周期事件。
+- [界面组合](/docs/fundamentals/ui-composition)：控件在视觉树中如何组合。

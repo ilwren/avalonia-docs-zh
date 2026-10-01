@@ -20,7 +20,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 ## 属性 {#properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |----------|------|-------------|
 | `Target` | `IInputElement` | Gets or sets the input element to receive keystrokes from the keyboard. |
 | `InputMethods` | `IEnumerable<VirtualKeyboardInputMethod>` | Gets or sets the collection of input methods available to users. |
@@ -128,7 +128,7 @@ myContainer.Children.Add(keyboard);
 
 Below is a list of resources you can override in your theme or resource dictionary:
 
-| Key | Type | Default |
+| Key | 类型 | Default |
 |---|---|---|
 | `KeyboardActionButtonBackground` | Brush | `Goldenrod` |
 | `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` |

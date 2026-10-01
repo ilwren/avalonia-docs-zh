@@ -26,7 +26,7 @@ These controls inherit from `Decorator`:
 
 ## 属性 {#properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | `Child` | `Control` | The single child control to decorate. Marked as `[Content]`, so you can set it directly in XAML without an explicit property element. |
 | `Padding` | `Thickness` | Space between the decorator's edge and its child. |

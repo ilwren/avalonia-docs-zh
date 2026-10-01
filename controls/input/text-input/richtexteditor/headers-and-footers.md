@@ -164,7 +164,7 @@ While the caret is in a band, the following occur:
 
 The band commands are on `EditorActions`. Each is one undo unit:
 
-| Action | Behavior |
+| Action | 行为 |
 |---|---|
 | `GoToHeader` / `GoToFooter` | Enter the band of the caret's page. Creates the document's running band if the page has none. If in the continuous view, the editor switches to page layout. |
 | `RemoveHeader` / `RemoveFooter` | Remove the band the caret is in, or the one shown by the caret's page. Every section reference to it is also removed. |

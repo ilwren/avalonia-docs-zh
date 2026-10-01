@@ -22,7 +22,7 @@ import PipsPagerPillTemplateScreenshot from '/img/controls/pipspager/pipspager-p
 
 You will probably use these properties most often:
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | -------- | ---- | ------- | ----------- |
 | `NumberOfPages` | `int` | `0` | Total number of pages represented by the pips. |
 | `SelectedPageIndex` | `int` | `0` | Zero-based index of the currently selected page. Supports two-way binding. Clamped to `[0, NumberOfPages - 1]`. |
@@ -44,7 +44,7 @@ You will probably use these properties most often:
 
 ## 事件 {#events}
 
-| Event | Args type | 说明 |
+| 事件 | Args type | 说明 |
 | ----- | --------- | ----------- |
 | `SelectedIndexChanged` | `PipsPagerSelectedIndexChangedEventArgs` | Raised when the selected page changes. Provides `OldIndex` and `NewIndex`. |
 

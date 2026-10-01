@@ -11,7 +11,7 @@ Avalonia provides a set of properties for controlling how text appears in your a
 
 The following properties are defined on `TextElement` and inherited by descendant controls. Set them directly on text controls like `TextBlock`, or on container controls to apply to all text within.
 
-| Attached property | Type | Default | 说明 |
+| Attached property | 类型 | Default | 说明 |
 |---|---|---|---|
 | `TextElement.FontFamily` | [`FontFamily`](/api/avalonia/media/fontfamily) | Platform default | The typeface used to render text. |
 | `TextElement.FontSize` | `double` | `12` | The size of text in device-independent pixels. |
@@ -178,7 +178,7 @@ Because `LetterSpacing` is an inherited attached property defined on `TextElemen
 
 `LineHeight` and `LineSpacing` control the vertical distance between lines of text in a `TextBlock`.
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `LineHeight` | `double` | `NaN` | The total height of each line. When set to `NaN`, the font metrics determine line height automatically. |
 | `LineSpacing` | `double` | `0` | Extra distance added between lines, in device-independent pixels. Added on top of the font's natural line height. |
@@ -277,7 +277,7 @@ You can apply decorations to individual `Run` elements within a `TextBlock`:
 
 For control over color, thickness, offset, and dash pattern, define a `TextDecoration` directly.
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Location` | [`TextDecorationLocation`](/api/avalonia/media/textdecorationlocation) | Where the line is drawn: `Underline`, `Strikethrough`, `Overline`, or `Baseline`. |
 | `Stroke` | `IBrush` | The brush used to paint the decoration line. |

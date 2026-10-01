@@ -173,7 +173,7 @@ The streaming engine runs Markdown parsing on a background thread, diffs the AST
 
 ### 属性 {#properties}
 
-| 属性           | Type                        | 说明                                              |
+| 属性           | 类型                        | 说明                                              |
 |--------------------|-----------------------------|----------------------------------------------------------|
 | Text               | string?                     | Markdown text to render.                                 |
 | SelectionBrush     | IBrush?                     | Brush for selection highlight.                           |
@@ -195,7 +195,7 @@ The streaming engine runs Markdown parsing on a background thread, diffs the AST
 
 ### 事件 {#events}
 
-| Event                | 说明                                          |
+| 事件                | 说明                                          |
 |----------------------|------------------------------------------------------|
 | CopyingToClipboard   | Raised before selection is copied to the clipboard. Can be handled to prevent the copy. |
 | SelectionChanged     | Raised when the text selection changes.              |

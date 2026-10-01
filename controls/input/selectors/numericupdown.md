@@ -11,7 +11,7 @@ The `NumericUpDown` is an editable numeric input with up and down spinner button
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Value` | `decimal?` | Gets or sets the current numeric value. |
 | `Increment` | `decimal` | The step amount used by the spinner buttons, keyboard arrows, and mouse wheel. Default is `1`. |

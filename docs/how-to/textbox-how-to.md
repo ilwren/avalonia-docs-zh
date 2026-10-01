@@ -75,7 +75,7 @@ Enable multi-line text entry:
          PlaceholderText="Enter your message..." />
 ```
 
-| 属性 | Effect |
+| 属性 | 效果 |
 |---|---|
 | `AcceptsReturn="True"` | Allows pressing Enter to create new lines |
 | `TextWrapping="Wrap"` | Wraps long lines instead of scrolling horizontally |

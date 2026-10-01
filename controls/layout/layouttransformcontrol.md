@@ -11,7 +11,7 @@ This means a rotated control will correctly push adjacent controls aside, and a 
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | `LayoutTransform` | `ITransform` | The transform to apply during layout. Supports `RotateTransform`, `ScaleTransform`, `SkewTransform`, `TransformGroup`, and `MatrixTransform` |
 | `UseRenderTransform` | `bool` | When `true`, applies the transform via `RenderTransform` instead of a separate layout pass. Defaults to `false` |
@@ -23,7 +23,7 @@ This means a rotated control will correctly push adjacent controls aside, and a 
 | | `LayoutTransformControl` | `RenderTransform` |
 | :--- | :--- | :--- |
 | Affects layout | Yes, siblings reflow around transformed bounds | No, siblings ignore the transform |
-| Performance | Re-measures and re-arranges on transform changes | Lightweight, GPU-accelerated |
+| 性能 | Re-measures and re-arranges on transform changes | Lightweight, GPU-accelerated |
 | Use when | Surrounding content must respect the transformed size | Animating or visually adjusting without layout impact |
 
 ## Examples

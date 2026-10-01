@@ -60,7 +60,7 @@ You will probably use these properties most often:
 
 ## 事件 {#events}
 
-| Event | Type | 说明 |
+| 事件 | 类型 | 说明 |
 |---|---|---|
 | `ToolTip.ToolTipOpening` | `CancelRoutedEventArgs` | Raised when a tooltip is about to open. Set `Cancel = true` to prevent the tooltip from showing. |
 | `ToolTip.ToolTipClosing` | `RoutedEventArgs` | Raised when a tooltip is about to close. |

@@ -48,7 +48,7 @@ All animation objects must be created through the `Compositor` associated with t
 
 The following properties on `CompositionVisual` can be animated:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Offset` | `Vector3D` | The X, Y, Z position offset of the visual. |
 | `Opacity` | `float` | The opacity of the visual (0.0 to 1.0). |

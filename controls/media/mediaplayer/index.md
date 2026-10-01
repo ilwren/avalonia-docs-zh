@@ -105,7 +105,7 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ### Basic properties
 
-| 属性       | Type             | 说明                                                                                 |
+| 属性       | 类型             | 说明                                                                                 |
 |----------------|------------------|---------------------------------------------------------------------------------------------|
 | Player         | MediaPlayer      | Gets the underlying MediaPlayer instance that handles the actual media playback operations. |
 | Source         | MediaSource      | Gets or sets the media source to be played (`UriSource` or `StreamSource`).                 |
@@ -113,7 +113,7 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ### Playback properties
 
-| 属性                     | Type      | 说明                                                                  |
+| 属性                     | 类型      | 说明                                                                  |
 |------------------------------|-----------|------------------------------------------------------------------------------|
 | Position                     | TimeSpan  | Gets or sets the current playback position.                                  |
 | Duration                     | TimeSpan? | Gets the total duration of the current media. Null for non-seekable media.   |
@@ -121,7 +121,7 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ### State properties
 
-| 属性                | Type    | 说明                                                        |
+| 属性                | 类型    | 说明                                                        |
 |-------------------------|---------|--------------------------------------------------------------------|
 | IsBuffering             | bool    | Gets whether the media is currently buffering.                     |
 | BufferProgress          | double? | Gets the buffer progress (0.0-1.0). Null if not available.         |
@@ -133,14 +133,14 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ### Audio properties
 
-| 属性 | Type   | 说明                                                              |
+| 属性 | 类型   | 说明                                                              |
 |----------|--------|--------------------------------------------------------------------------|
 | Volume   | double | Gets or sets the playback volume with normalized values (e.g., 0.0-1.0). |
 | IsMuted  | bool   | Gets whether audio is currently muted.                                   |
 
 ### Command properties
 
-| 属性            | Type     | 说明                                                           |
+| 属性            | 类型     | 说明                                                           |
 |---------------------|----------|-----------------------------------------------------------------------|
 | PlayPauseCommand    | ICommand | Gets the command that toggles between play and pause states.          |
 | StopCommand         | ICommand | Gets the command that stops playback.                                 |
@@ -150,7 +150,7 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 
 ## 事件 {#events}
 
-| Event           | 说明                                                  |
+| 事件           | 说明                                                  |
 |-----------------|--------------------------------------------------------------|
 | ErrorOccurred | Occurs when an error is encountered during media operations. |
 

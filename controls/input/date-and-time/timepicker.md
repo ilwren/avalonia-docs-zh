@@ -11,7 +11,7 @@ The `TimePicker` presents two to four spinner controls that let users select a t
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `SelectedTime` | `TimeSpan?` | The selected time value. `null` when no time is selected. |
 | `ClockIdentifier` | `string` | Sets the clock format. Use `12HourClock` or `24HourClock`. The 12-hour format adds an AM/PM spinner. |

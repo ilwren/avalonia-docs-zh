@@ -98,7 +98,7 @@ To force aliased (sharp, pixelated) edges on a specific control, set `EdgeMode` 
 
 The interpolation mode is set per-control by design for performance reasons. Higher quality interpolation requires more computational resources, so consider these guidelines:
 
-- Use `HighQuality` for:
+- 以下情形请用 `HighQuality`：
   - Important UI elements like logos
   - Scaled-down images where quality is crucial
   - Photo galleries or image-focused interfaces

@@ -156,7 +156,7 @@ Byte-exact reproduction of arbitrary Markdown is not the goal and is not possibl
 
 **Not covered:**
 
-| Gap | Effect |
+| Gap | 效果 |
 |---|---|
 | Grid tables | Read, but written as pipe tables |
 | Table column and row spans | Not expressible in pipe form |

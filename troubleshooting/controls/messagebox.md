@@ -60,7 +60,7 @@ Keep the following edge cases in mind:
 
 ## Third-party `MessageBox` implementations
 
-| Library | Type |
+| Library | 类型 |
 |---|---|
 | [MessageBox.Avalonia](https://github.com/AvaloniaCommunity/MessageBox.Avalonia) | Free / Open-source |
 | [DialogHost.Avalonia](https://github.com/AvaloniaUtils/DialogHost.Avalonia) | Free / Open-source |

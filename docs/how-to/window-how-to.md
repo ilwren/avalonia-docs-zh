@@ -169,7 +169,7 @@ Mark an element as a title bar drag region using the `WindowDecorationProperties
 
 The `ElementRole` property supports these values:
 
-| 值 | Behavior |
+| 值 | 行为 |
 |---|---|
 | `None` | No special window chrome behavior (default). |
 | `TitleBar` | Acts as a draggable title bar region. |
@@ -268,7 +268,7 @@ Icon = new WindowIcon(AssetLoader.Open(new Uri("avares://MyApp/Assets/app-icon.i
 
 ## Key Properties
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Title` | `string` | Window title bar text. |
 | `WindowState` | `WindowState` | `Normal`, `Minimized`, `Maximized`, `FullScreen`. |

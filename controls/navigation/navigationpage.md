@@ -31,7 +31,7 @@ The navigation bar is divided into three zones:
 
 ## Useful properties
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The initial root page displayed in the navigation stack. Assigns a [`Page`](/api/avalonia/controls/page) instance. |
 | `PageTransition` | [`IPageTransition?`](/api/avalonia/animation/ipagetransition) | Theme default | The transition animation used when navigating between pages. |
@@ -48,11 +48,11 @@ The navigation bar is divided into three zones:
 | `ModalStack` | `IReadOnlyList<Page>` | Empty | Read-only. The current stack of modal pages. |
 | `StackDepth` | `int` | `0` | Read-only. The number of pages in the navigation stack. |
 
-## Attached properties
+## 附加属性 {#attached-properties}
 
 These properties can be set on individual `Page` instances to customize their appearance within the `NavigationPage`:
 
-| Attached Property | Type | Default | 说明 |
+| Attached Property | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `NavigationPage.HasNavigationBar` | `bool` | `true` | Whether the navigation bar is visible for this page. |
 | `NavigationPage.HasBackButton` | `bool` | `true` | Whether the back button is shown for this page. |
@@ -103,7 +103,7 @@ Navigation methods that change the visible page are asynchronous and return `Tas
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 | --- | --- |
 | `Pushed` | Raised after a page is pushed onto the stack. |
 | `Popped` | Raised after a page is popped from the stack. |

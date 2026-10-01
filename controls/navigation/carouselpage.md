@@ -27,7 +27,7 @@ import CarouselPageDataTemplateScreenshot from '/img/controls/carouselpage/carou
 
 You will probably use these properties most often:
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | -------- | ---- | ------- | ----------- |
 | `Pages` | `IEnumerable<Page>?` | `null` | The collection of child pages. This is the XAML content property. Supports any `IEnumerable<Page>`, including observable collections. |
 | `ItemsSource` | `IEnumerable?` | `null` | View-model collection. When set, takes precedence over `Pages` as the item source. Use together with `PageTemplate` to convert each item into a `Page`. |
@@ -41,7 +41,7 @@ You will probably use these properties most often:
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 | ----- | ----------- |
 | `SelectionChanged` | Raised when the selected page changes. Provides `PreviousPage` and `CurrentPage`. |
 | `CurrentPageChanged` | Raised when `CurrentPage` changes. |

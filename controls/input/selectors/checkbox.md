@@ -16,7 +16,7 @@ Clicking the control toggles the value in the sequence: checked, unchecked, unkn
 
 You will probably use these properties most often:
 
-| 属性       | Type    | 说明                                                                 |
+| 属性       | 类型    | 说明                                                                 |
 | -------------- | ------- | --------------------------------------------------------------------------- |
 | `IsChecked`    | `bool?` | Gets or sets the checked state. `true` for checked, `false` for unchecked, `null` for indeterminate. |
 | `IsThreeState` | `bool`  | When `true`, the control cycles through three states: checked, unchecked, and indeterminate. |

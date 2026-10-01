@@ -17,7 +17,7 @@ In most cases, you will not need to use `ScrollBar` directly. The `ScrollViewer`
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | [`Orientation`](/api/avalonia/layout/orientation) | `Orientation` | Sets the orientation of the scroll bar. Use `Horizontal` or `Vertical`. The default is `Vertical`. |
 | `Minimum` | `double` | The smallest value the scroll bar can represent. The default is `0`. |

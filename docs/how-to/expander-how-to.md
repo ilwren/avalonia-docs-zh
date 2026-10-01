@@ -247,7 +247,7 @@ When you set `IsEnabled="False"` on an `Expander`, the header is no longer inter
 
 ## Key properties reference
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Header` | `object` | Content shown in the always-visible header area. |
 | `IsExpanded` | `bool` | Whether the content section is visible. Default is `False`. |

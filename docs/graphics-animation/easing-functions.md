@@ -61,7 +61,7 @@ Avalonia includes a comprehensive set of easing functions. Each function comes i
 
 ### Linear
 
-| 名称 | Behavior |
+| 名称 | 行为 |
 |---|---|
 | `LinearEasing` | Constant speed. No acceleration or deceleration. |
 

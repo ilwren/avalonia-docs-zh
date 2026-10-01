@@ -15,7 +15,7 @@ You cannot place a `ScrollViewer` inside a control that has infinite height or w
 
 You will probably use these properties most often:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `HorizontalScrollBarVisibility` | [`ScrollBarVisibility`](/api/avalonia/controls/primitives/scrollbarvisibility) | Controls the horizontal scrollbar: `Auto`, `Visible`, `Hidden`, `Disabled`. |
 | `VerticalScrollBarVisibility` | `ScrollBarVisibility` | Controls the vertical scrollbar: `Auto`, `Visible`, `Hidden`, `Disabled`. |
@@ -31,7 +31,7 @@ You will probably use these properties most often:
 
 Each scrollbar direction accepts one of the following `ScrollBarVisibility` values:
 
-| 值 | Behavior |
+| 值 | 行为 |
 |---|---|
 | `Auto` | Shows the scrollbar only when content overflows. This is the default for vertical scrolling. |
 | `Visible` | Always shows the scrollbar, even when content fits within the viewport. |

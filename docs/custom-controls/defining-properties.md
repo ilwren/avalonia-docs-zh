@@ -15,7 +15,7 @@ When creating a custom control, you can give it the following types of propertie
 2. [Direct property](#direct-properties): Has a backing C# field, supports data binding.
 3. [Attached property](#attached-properties): Hosted in a separate container class, then configured in XAML.
 
-## Styled properties
+## 样式化属性 {#styled-properties}
 
 A styled property stores its value inside the Avalonia property system, not a backing field. As a result, styled properties can participate in styling, animations and value precedence. Use a styled property when you want to allow users to style or animate the property.
 
@@ -37,7 +37,7 @@ public static readonly StyledProperty<double> CornerRadiusProperty = ...
 <local:MyControl CornerRadius="8" />
 ```
 
-### Registering a styled property
+### 注册样式化属性 {#registering-a-styled-property}
 
 To register a styled property:
 
@@ -164,7 +164,7 @@ namespace AvaloniaCCExample.CustomControls
 
 <Image light={DefiningPropertyPreviewScreenshot} alt="Preview of a custom control with a defined property" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Direct properties
+## 直接属性 {#direct-properties}
 
 A direct property is backed by a conventional C# field. It does not participate in styling or animation, but supports data binding and change notifications. Use a direct property when:
 
@@ -172,7 +172,7 @@ A direct property is backed by a conventional C# field. It does not participate 
 - You want **better performance**. (Values of direct properties are read directly from the field.)
 - You want a property that **cannot be styled**.
 
-### Registering a direct property
+### 注册直接属性 {#registering-a-direct-property}
 
 Use `AvaloniaProperty.RegisterDirect`. Provide getter and setter delegates that point to your backing field:
 
@@ -199,7 +199,7 @@ public class MyControl : Control
 Always use `SetAndRaise` in the CLR setter instead of assigning the backing field directly. `SetAndRaise` updates the field and raises the property-changed notification in a single call. Calling `SetValue` on a direct property will throw an exception.
 :::
 
-### Read-only direct properties
+### 只读的直接属性 {#read-only-direct-properties}
 
 To create a read-only property, omit the setter delegate from the registration call and keep the CLR setter `private`:
 
@@ -223,17 +223,17 @@ public class MyControl : Control
 
 ## Styled vs. direct properties
 
-| Behavior | Styled property | Direct property |
+| 行为 | Styled property | Direct property |
 |---|---|---|
-| Participates in styling | Yes | No |
-| Participates in animations | Yes | No |
-| Supports value precedence | Yes | No (single value) |
-| Can inherit values | Yes | No |
-| Supports coercion | Yes | No |
-| Performance | Property store lookup | Direct field access |
-| Can be read-only | No | Yes |
+| 参与样式 | Yes | No |
+| 参与动画 | Yes | No |
+| 支持取值优先级 | Yes | 否（只有单一取值） |
+| 可继承取值 | Yes | No |
+| 支持强制转换 | Yes | No |
+| 性能 | 需查属性存储 | 直接访问字段 |
+| 可以只读 | No | Yes |
 
-## Responding to property changes
+## 响应属性变化 {#responding-to-property-changes}
 
 For styled and direct properties, you can react to property value changes by overriding `OnPropertyChanged` in your control.
 
@@ -498,7 +498,7 @@ public partial class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
 
 </Tabs>
 
-## Attached properties
+## 附加属性 {#attached-properties}
 
 An attached property lives in its own container class and is configured on compatible controls in XAML. This allows you to have additional properties that are not part of your custom control's own control class. For example, you may wish to use an attached property to allow child elements to specify their own layout positions within the parent custom control. (See [Custom Panel](/docs/custom-controls/custom-panel#adding-an-attached-property) for a practical example.)
 
@@ -507,7 +507,7 @@ An attached property lives in its own container class and is configured on compa
 - Like styled properties, the static field for the attached property follows the pattern `[PropertyName]Property`.
 - The name parameter is `[PropertyName]` alone (without the `Property` suffix).
 
-### Registering an attached property
+### 注册附加属性 {#registering-an-attached-property}
 
 1. Add a new container class inheriting from `AvaloniaObject`.
 2. Use the `AvaloniaProperty.RegisterAttached` method to register the attached property.

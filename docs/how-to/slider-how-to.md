@@ -198,7 +198,7 @@ Template part names such as `PART_DecreaseButton` and `PART_IncreaseButton` are 
 
 ## Key properties reference
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Minimum` | `double` | Lower bound. Default: 0. |
 | `Maximum` | `double` | Upper bound. Default: 100. |

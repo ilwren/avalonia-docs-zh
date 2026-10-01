@@ -16,7 +16,7 @@ Data formats are considered equal if they have the same kind and identifier.
 Universal formats are cross-platform formats that Avalonia directly understands.  
 There are currently three universal formats:
 
-| Format              | Identifier | Type           | 说明         |
+| Format              | Identifier | 类型           | 说明         |
 | --------------------|------------|----------------|---------------------|
 | `DataFormat.Text`   | "Text"     | `string`       | Plain text data     |
 | `DataFormat.File`   | "File"     | [`IStorageItem`](/api/avalonia/platform/storage/istorageitem) | A file or directory |

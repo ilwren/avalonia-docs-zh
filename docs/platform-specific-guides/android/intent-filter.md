@@ -38,7 +38,7 @@ public class MainActivity : AvaloniaMainActivity
 
 ### Choosing `DataMimeType` and `DataPathPattern`
 
-| 属性 | 用途 | Example |
+| 属性 | 用途 | 示例 |
 |---|---|---|
 | `DataMimeType` | Matches the MIME type reported by the sending app. | `"text/plain"`, `"application/pdf"` |
 | `DataPathPattern` | Matches the file path (only effective for the `file` scheme). | `".*\\.txt"`, `".*\\.csv"` |

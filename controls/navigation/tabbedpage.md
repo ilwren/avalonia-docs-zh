@@ -22,7 +22,7 @@ If you need a simple tab strip without page-based navigation features (lifecycle
 
 ## Useful properties
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `Pages` | `IEnumerable<Page>?` | Empty list | The collection of [`Page`](/api/avalonia/controls/page) children displayed as tabs. |
 | `ItemsSource` | `IEnumerable?` | `null` | A view-model collection used to generate pages with `PageTemplate`. When set, it takes precedence over `Pages`. |
@@ -45,9 +45,9 @@ If you need a simple tab strip without page-based navigation features (lifecycle
 | `Left` | Tabs are placed along the left edge. |
 | `Right` | Tabs are placed along the right edge. |
 
-### Attached properties
+### 附加属性 {#attached-properties}
 
-| Attached Property | Type | Default | 说明 |
+| Attached Property | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `TabbedPage.IsTabEnabled` | `bool` | `true` | Set on a child `Page` to enable or disable its tab. A disabled tab cannot be selected by the user. |
 
@@ -64,7 +64,7 @@ Common icon values include:
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 | --- | --- |
 | `SelectionChanged` | Raised when the selected tab changes. Provides `PreviousPage` and `CurrentPage`. |
 | `CurrentPageChanged` | Raised when the current page changes. |

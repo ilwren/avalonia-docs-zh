@@ -15,7 +15,7 @@ Because `PathIcon` uses vector paths rather than raster images, your icons scale
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Data` | `Geometry` | The stream geometry that defines the icon shape. |
 | `Foreground` | `IBrush` | The brush used to fill the icon. If you do not set this property, the value is inherited from the parent control. |

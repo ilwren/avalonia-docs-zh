@@ -110,7 +110,7 @@ private void OnSliderValueChanged(object? sender, ValueChangedEventArgs e)
 
 </Tabs>
 
-## Class handlers
+## 类处理程序 {#class-handlers}
 
 Class handlers register event handling logic at the class level rather than on individual instances. They are typically registered in the static constructor. They are invoked before instance handlers, meaning they apply automatically to every instance of the same type.
 

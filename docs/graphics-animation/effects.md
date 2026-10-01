@@ -11,7 +11,7 @@ Avalonia supports visual effects that add depth and visual interest to controls.
 
 The [`BoxShadow`](/api/avalonia/media/boxshadow) property on [`Border`](/api/avalonia/controls/border) and `ContentPresenter` adds drop shadows or inset shadows to elements. The syntax follows CSS box-shadow conventions.
 
-### Basic syntax
+### 基本语法 {#basic-syntax}
 
 ```xml
 <Border BoxShadow="5 5 10 0 #80000000" CornerRadius="8"

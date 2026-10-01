@@ -94,7 +94,7 @@ await Viewer.UpdateStickyNoteAsync(0, index, "Checked", null);
 
 The **Stamp** dropdown offers a list of labels such as **Approved**, **Draft** and **Received**, a style selector and an **Include date** toggle. Stamps are saved as standard `/Stamp` annotations, so other readers render and move them.
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `StampLabels` | `IReadOnlyList<string>` | `DefaultStampLabels` | Labels offered by the dropdown. Drawn in capitals. |
 | `StampColor` | `PdfAnnotationColor?` | `null` | Colour for every stamp. `null` picks one by label: green for the built-in approval labels (Approved, Completed, Paid, Received, Reviewed, Final, For Public Release), blue for the built-in status labels (Draft, For Comment, As Is, Experimental, Departmental, Copy), and red for everything else, including your own labels. |
@@ -123,7 +123,7 @@ Non-Latin text in text boxes, shapes and stamps (Cyrillic, Greek, CJK and so on)
 
 ### Default colours and typography
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 |---|---|---|---|
 | `HighlightColor` | `PdfAnnotationColor` | Yellow, 50% alpha | Highlight colour. |
 | `UnderlineColor` | `PdfAnnotationColor` | Green | Underline colour. |

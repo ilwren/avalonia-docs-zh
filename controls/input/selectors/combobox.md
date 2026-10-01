@@ -15,7 +15,7 @@ import ComboBoxEditable from '/img/controls/combobox/combobox-editable.gif';
 
 You will probably use these properties most often:
 
-| 属性                   | Type       | 说明                                                                                                              |
+| 属性                   | 类型       | 说明                                                                                                              |
 | -------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `ItemsSource`                    | `IEnumerable?` | The bound collection that is used as the data source for the control. Inherited from [`ItemsControl`](/controls/data-display/collections/itemscontrol).                                                                                           |
 | `SelectedIndex`            | `int`      | The index (zero-based) of the selected item.                                                                             |

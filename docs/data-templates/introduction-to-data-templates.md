@@ -1,21 +1,21 @@
 ---
 id: introduction-to-data-templates
-title: Introduction to data templates
-description: Define how Avalonia displays data objects using data templates with type matching and reuse.
+title: 数据模板入门
+description: 用数据模板定义 Avalonia 如何显示数据对象，包括类型匹配与复用。
 doc-type: overview
 ---
 
-Data templates in Avalonia define the visual representation of your data. They specify how data objects are presented and formatted in the UI. This page introduces data templates and shows how to use them in your applications.
+Avalonia 中的数据模板定义了数据的视觉表现：它规定数据对象在界面上如何呈现、如何排布。本文介绍数据模板，并演示如何在你的应用中使用它们。
 
-## What is a data template?
+## 什么是数据模板？ {#what-is-a-data-template}
 
-At its core, a Data Template is a reusable definition that specifies how to present data of a particular type. It defines the visual structure and appearance of the data when displayed in the user interface. In Avalonia, a Data Template is often associated with a list control, such as a [`ListBox`](/api/avalonia/controls/listbox) or `ItemsControl`, and is responsible for rendering individual items of data within that control.
+说到底，数据模板就是一份可复用的定义，规定了某一类型的数据该如何呈现 —— 包括数据显示在用户界面上时的视觉结构和外观。在 Avalonia 中，数据模板常与列表类控件（如 [`ListBox`](/api/avalonia/controls/listbox) 或 `ItemsControl`）搭配使用，负责渲染该控件中的每一个数据项。
 
-## Applying a data template to a ListBox
+## 给 ListBox 套用数据模板 {#applying-a-data-template-to-a-listbox}
 
-To apply a Data Template to a `ListBox`, you typically use the `ItemTemplate` property of the control. 
+要给 `ListBox` 套用数据模板，通常用控件的 `ItemTemplate` 属性。 
 
-For instance, if you have a `ListBox` that should display a collection of `Item` objects using the defined Data Template, you can set the `ItemTemplate` property like this:
+举例来说，若有一个 `ListBox` 要用已定义的数据模板来显示一组 `Item` 对象，可以这样设置 `ItemTemplate` 属性：
 
 ```xml
 <ListBox ItemsSource="{Binding Items}">
@@ -30,11 +30,11 @@ For instance, if you have a `ListBox` that should display a collection of `Item`
 </ListBox>
 ```
 
-In this example, the Data Template defines a visual layout using a `StackPanel` container. Within the `StackPanel`, we have a `TextBlock` bound to the `Name` property of the item and an `Image` control bound to the `ImageSource` property.
+本例中，数据模板用一个 `StackPanel` 容器定义视觉布局。`StackPanel` 内部有一个绑定到数据项 `Name` 属性的 `TextBlock`，以及一个绑定到 `ImageSource` 属性的 `Image` 控件。
 
-## Type-specific data templates
+## 针对特定类型的数据模板 {#type-specific-data-templates}
 
-Use `DataType` to automatically select a template based on the type of the object being displayed:
+用 `DataType` 可以根据待显示对象的类型自动挑选模板：
 
 ```xml
 <Window.DataTemplates>
@@ -54,21 +54,21 @@ Use `DataType` to automatically select a template based on the type of the objec
 </Window.DataTemplates>
 ```
 
-When Avalonia encounters an object in a content area, it searches for a matching `DataTemplate` by type. The search starts at the control and walks up the tree until a match is found.
+当 Avalonia 在某个内容区域里遇到一个对象时，会按类型搜寻匹配的 `DataTemplate`。搜索从该控件开始，沿树向上直到找到匹配为止。
 
-## Where data templates can be defined
+## 数据模板可以定义在哪里 {#where-data-templates-can-be-defined}
 
-| Location | Scope |
+| 位置 | 作用范围 |
 |---|---|
-| `Control.DataTemplates` | Available to that control and its children. |
-| `Window.DataTemplates` | Available to the entire window. |
-| `Application.DataTemplates` | Available to the entire application. |
-| `ContentTemplate` property | Applied directly to a specific `ContentControl`. |
-| `ItemTemplate` property | Applied to each item in a list or collection control. |
+| `Control.DataTemplates` | 该控件及其子元素可用。 |
+| `Window.DataTemplates` | 整个窗口可用。 |
+| `Application.DataTemplates` | 整个应用可用。 |
+| `ContentTemplate` property | 直接应用于某个特定的 `ContentControl`。 |
+| `ItemTemplate` property | 应用于列表或集合类控件中的每一项。 |
 
-## Data templates in resources
+## 定义在资源中的数据模板 {#data-templates-in-resources}
 
-Define a reusable template as a resource:
+把可复用的模板定义成资源：
 
 ```xml
 <Application.Resources>
@@ -78,7 +78,7 @@ Define a reusable template as a resource:
 </Application.Resources>
 ```
 
-Then reference it:
+然后这样引用它：
 
 ```xml
 <ContentControl Content="{Binding SelectedCustomer}"
@@ -87,7 +87,7 @@ Then reference it:
 
 ## 另请参阅 {#see-also}
 
-- [Control Content](/docs/data-templates/control-content): How controls display non-control content.
-- [Content Templates](/docs/data-templates/content-templates): Using `ContentTemplate` directly.
-- [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.
-- [Reusing Data Templates](/docs/data-templates/reusing-data-templates): Sharing templates across your application.
+- [控件内容](/docs/data-templates/control-content)：控件如何显示非控件内容。
+- [内容模板](/docs/data-templates/content-templates)：直接使用 `ContentTemplate`。
+- [数据模板集合](/docs/data-templates/data-template-collection)：按类型定义多个模板。
+- [复用数据模板](/docs/data-templates/reusing-data-templates)：在整个应用中共享模板。

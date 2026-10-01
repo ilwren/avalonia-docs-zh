@@ -21,7 +21,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 
 ## 属性 {#properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |----------|------|-------------|
 | `InputMethods` | `IEnumerable\<VirtualKeyboardInputMethod>` | Gets or sets the collection of input methods available to users. |
 

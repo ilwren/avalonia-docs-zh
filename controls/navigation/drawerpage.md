@@ -36,7 +36,7 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 ## Useful properties
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `Content` | `object?` | `null` | The main content area of the page. |
 | `ContentTemplate` | `IDataTemplate?` | Default page template | A data template for the main content. |
@@ -95,7 +95,7 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 ## 事件 {#events}
 
-| Event | 说明 |
+| 事件 | 说明 |
 | --- | --- |
 | `Opened` | Raised when the drawer finishes opening. |
 | `Closing` | Raised when the drawer is about to close. Set `Cancel = true` on the event args to prevent closing. |

@@ -109,7 +109,7 @@ viewer.Document = FlowDocument.Load(stream, new RtfSerializer());
 
 Pick a serializer based on the file format:
 
-| Extension | Serializer | Package | Direction |
+| Extension | Serializer | Package | 方向 |
 |---|---|---|---|
 | `.rtf` | `RtfSerializer` | `Avalonia.Controls.Documents.Serialization.Rtf` | Read and write |
 | `.docx` | `DocxSerializer` | `Avalonia.Controls.Documents.Serialization.Docx` | Read and write |
@@ -277,7 +277,7 @@ FlowDocument
 
 All blocks inherit from `Block` and share these properties:
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Margin` | `Thickness` | Outer spacing |
 | `Padding` | `Thickness` | Inner spacing |
@@ -290,7 +290,7 @@ All blocks inherit from `Block` and share these properties:
 
 ### Common inline properties
 
-| 属性 | Type | Available On |
+| 属性 | 类型 | Available On |
 |---|---|---|
 | `Text` | `string` | `RichRun` |
 | `FontSize` | `double` | All inlines (inherited) |
@@ -400,7 +400,7 @@ Enable `ShowPageBounds` to render visual indicators at the page boundary. This i
 
 ### Viewer properties
 
-| 属性 | Type | 说明 | Default |
+| 属性 | 类型 | 说明 | Default |
 |---|---|---|---|
 | `IsSelectionEnabled` | `bool` | Set to `False` to make the viewer a pure display control. The inner view stops being focusable, which matters for a viewer inside an items control. | `true` |
 | `IsCaretVisible` | `bool` | Shows an insertion caret without enabling editing. | `false` |
@@ -656,7 +656,7 @@ FlowDocument BuildReport(IReadOnlyList<SalesRecord> records)
 viewer.Document = BuildReport(salesData);
 ```
 
-## Limitations
+## 限制 {#limitations}
 
 Current limitations of `FlowDocumentScrollViewer`:
 

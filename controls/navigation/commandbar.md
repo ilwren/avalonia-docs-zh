@@ -26,7 +26,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBar properties
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `PrimaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of primary commands displayed directly in the bar. |
 | `SecondaryCommands` | `IList<ICommandBarElement>` | Empty | The collection of secondary commands displayed in the overflow menu. |
@@ -46,7 +46,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBar events
 
-| Event | 说明 |
+| 事件 | 说明 |
 | --- | --- |
 | `Opened` | Raised when the overflow menu is opened. |
 | `Closed` | Raised when the overflow menu is closed. |
@@ -71,7 +71,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBarButton properties
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `Icon` | `object?` | `null` | The icon displayed on the button. Typically a `PathIcon`, `SymbolIcon`, or `BitmapIcon`. |
 | `Label` | `string?` | `null` | The text label for the button. |
@@ -84,7 +84,7 @@ Items placed in a `CommandBar` must implement the `ICommandBarElement` interface
 
 ## CommandBarToggleButton properties
 
-| 属性 | Type | Default | 说明 |
+| 属性 | 类型 | Default | 说明 |
 | --- | --- | --- | --- |
 | `Icon` | `object?` | `null` | The icon displayed on the toggle button. |
 | `Label` | `string?` | `null` | The text label for the toggle button. |

@@ -13,7 +13,7 @@ Avalonia provides two kinds of gestures:
 
 **Built-in gesture events** cover the most common interactions:
 
-| Event | 说明 |
+| 事件 | 说明 |
 |---|---|
 | `Tapped` | A pointer was pressed and released on a control. |
 | `DoubleTapped` | Two taps occurred in the same location within the platform's double-tap time and distance threshold. |

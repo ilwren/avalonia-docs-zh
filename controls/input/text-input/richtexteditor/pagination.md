@@ -61,7 +61,7 @@ Continuous views mark a flagged block with a dashed rule across its top edge, si
 
 Three properties determine where an automatic cut lands. All three move a cut earlier, never later. All three round-trip through DOCX, RTF and XAML; the HTML reader maps `break-inside: avoid`, `break-after: avoid` and `orphans`/`widows` onto them.
 
-| 属性 | Effect | DOCX | RTF |
+| 属性 | 效果 | DOCX | RTF |
 |---|---|---|---|
 | `Block.KeepTogether` | Move the whole block to the next page rather than split it | `w:keepLines` | `\keep` |
 | `Block.KeepWithNext` | Keep the block's end on the same page as the next block's start | `w:keepNext` | `\keepn` |

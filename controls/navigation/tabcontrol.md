@@ -17,7 +17,7 @@ If you only need the function of the tab headers part of this control, consider 
 
 ## 常用属性 {#common-properties}
 
-| 属性 | Type | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `TabStripPlacement` | `Dock` | Position of the tab strip: `Top`, `Bottom`, `Left`, `Right`. Default is `Top`. |
 | `SelectedIndex` | `int` | The zero-based index of the currently selected tab. |

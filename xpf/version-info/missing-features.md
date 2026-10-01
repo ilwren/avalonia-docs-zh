@@ -16,7 +16,7 @@ The following features are available but have known restrictions:
 - **`WebBrowser`**: XPF provides web content embedding through a different mechanism. See the [WebView docs](/docs/app-development/embedding-web-content) for details.
 - **`FlowDocument`**: Basic flow document rendering is supported, but with the following limitations:
   - Paginated documents are not supported.
-  - `PageHeader` and `PageFooter` are not supported.
+  - 不支持 `PageHeader` 和 `PageFooter`。
   - `Floater` is not supported.
   - Some table features, such as row and column spans, are not supported.
 

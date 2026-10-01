@@ -100,7 +100,7 @@ var options = new PdfSerializerOptions
 
 ## Fonts
 
-| `PdfFontEmbedding` | Behavior |
+| `PdfFontEmbedding` | 行为 |
 |---|---|
 | `Full` (default) | Embed the complete font file for every font the document uses. |
 | `Subset` | Not implemented yet. Behaves like `Full`. |

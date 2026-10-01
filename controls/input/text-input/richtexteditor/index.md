@@ -203,7 +203,7 @@ editor.Save(stream, new RtfSerializer());
 
 Available serializers:
 
-| Serializer | Package | Extension | Direction |
+| Serializer | Package | Extension | 方向 |
 |---|---|---|---|
 | `RtfSerializer` | `Avalonia.Controls.Documents.Serialization.Rtf` | `.rtf` | Read and write |
 | `DocxSerializer` | `Avalonia.Controls.Documents.Serialization.Docx` | `.docx` | Read and write |
@@ -275,7 +275,7 @@ A document also owns two kinds of nested document, each a `FlowDocument` in its 
 
 These properties are used by the `RichTextEditor` component.
 
-| 属性 | Type | 说明 | Default |
+| 属性 | 类型 | 说明 | Default |
 | --- | --- | --- | --- |
 | `AcceptsReturn` | `bool`| Determines whether the editor accepts return key input. | `true` |
 | `AcceptsTab` | `bool` | Determines whether the editor accepts tab key input. | `true` |
@@ -301,7 +301,7 @@ These properties are used by the `RichTextEditor` component.
 
 These properties are used by the `FlowDocument` component.
 
-| 属性 | Type | 说明 | Default |
+| 属性 | 类型 | 说明 | Default |
 | --- | --- | --- | --- |
 | `Background` | `IBrush` | Color of the document's background, as an ARGB value. | `Null` |
 | `FontFamily` | `FontFamily ` | Font family for text in the document. | `Null` |
@@ -340,7 +340,7 @@ Block elements are used by `FlowDocument` to build the document model and organi
 
 ### 属性 {#properties}
 
-| 属性 | Type | 说明 | Default |
+| 属性 | 类型 | 说明 | Default |
 | --- | --- | --- | --- |
 | `Background` | `IBrush` | Color of the block's background, as an ARGB value. | `Null` |
 | `BorderBrush`| `IBrush` | Color of the block's borders, as an ARGB value. | `Null` |
@@ -402,7 +402,7 @@ Inline elements are used to specify content styles within a block.
 
 ### 属性 {#properties-1}
 
-| 属性 | Type | Used by | 说明 |
+| 属性 | 类型 | Used by | 说明 |
 | --- | --- | --- | --- |
 | `AltText` | `string?` | `RichImage` | Alternative text for the image. |
 | `Child` | `Control` | `RichInlineUIContainer` | Defines the control to be placed in the inline container. |

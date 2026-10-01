@@ -153,7 +153,7 @@ Set the `ToggleType` property on a `MenuItem` to create checkable or radio-style
 </MenuItem>
 ```
 
-| ToggleType | Behavior |
+| ToggleType | 行为 |
 |---|---|
 | `None` | Standard menu item (default). |
 | `CheckBox` | Toggles `IsChecked` independently. |

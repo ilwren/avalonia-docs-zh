@@ -53,7 +53,7 @@ public partial class MainWindow : Window
 
 ## Drag-and-drop events
 
-| Event | When it fires |
+| 事件 | When it fires |
 |---|---|
 | `DragEnter` | The pointer enters the target element while dragging. |
 | `DragLeave` | The pointer leaves the target element while dragging. |
@@ -146,7 +146,7 @@ private async void OnPointerPressed(object? sender, PointerPressedEventArgs e)
 
 The `DataTransfer` class is a mutable container for drag-and-drop data. Use `DataFormat` static properties for standard formats:
 
-| Format | Type | 说明 |
+| Format | 类型 | 说明 |
 |---|---|---|
 | `DataFormat.Text` | `string` | Plain text. |
 | `DataFormat.Bitmap` | `Bitmap` | Bitmap image data. |
