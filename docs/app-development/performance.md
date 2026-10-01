@@ -212,7 +212,7 @@ For visuals that are expensive to render but change infrequently, use `BitmapCac
 </Border>
 ```
 
- #### `BitmapCache` 的属性 {#bitmapcache-properties}
+#### `BitmapCache` 的属性 {#bitmapcache-properties}
 
 | 属性 | 类型 | Default | 说明 |
 |---|---|---|---|

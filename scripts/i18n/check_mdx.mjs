@@ -29,13 +29,16 @@ async function* walk(dir) {
 }
 
 /**
- * Docusaurus 在交给 MDX 编译器之前，会先把标题行末尾的显式锚点 `{#id}` 摘掉
- * （见 parseMarkdownHeadingId）。独立调用 @mdx-js/mdx 时没有这一步，`{#id}`
- * 会被当成 JS 表达式而报 "Could not parse expression with acorn"。
- * 这里复刻该预处理，让校验结果与真实构建保持一致。
+ * 复刻 Docusaurus 交给 MDX 编译器之前的预处理（见 @docusaurus/utils 的
+ * escapeMarkdownHeadingIds）：只有「行首（无缩进）」的 ATX 标题，其中的 `{#`
+ * 才会被转义成 `\\{#`。带缩进的标题不在此列 —— 它的 `{#id}` 会被 MDX 当作
+ * JS 表达式，直接报 "Could not parse expression with acorn"。
+ * 这里一比一照搬该正则，使校验结果与真实构建完全一致。
  */
-function stripExplicitHeadingIds(source) {
-  return source.replace(/^(\s{0,3}#{1,6}\s.*?)\s*\{#[\w-]+\}\s*$/gm, '$1');
+function escapeMarkdownHeadingIds(content) {
+  const markdownHeadingRegexp = /(?:^|\n)#{1,6}(?!#).*/g;
+  return content.replaceAll(markdownHeadingRegexp, (substring) =>
+    substring.replace('{#', '\\{#').replace('\\\\{#', '\\{#'));
 }
 
 const options = {
@@ -55,10 +58,11 @@ for (const root of roots) {
   }
   for await (const file of walk(root)) {
     checked++;
-    const source = stripExplicitHeadingIds(await readFile(file, 'utf8'));
+    const source = escapeMarkdownHeadingIds(await readFile(file, 'utf8'));
     try {
-      // Docusaurus 对 .md 走的是更宽松的 CommonMark 解析，这里统一按 mdx 严格校验
-      await compile(source, { ...options, format: file.endsWith('.mdx') ? 'mdx' : 'md' });
+      // docusaurus.config.ts 未设置 markdown.format，默认即 'mdx'：
+      // .md 与 .mdx 一律按 MDX 编译，这里保持一致。
+      await compile(source, options);
     } catch (error) {
       failures.push({ file, message: error.message?.split('\n')[0] ?? String(error) });
     }

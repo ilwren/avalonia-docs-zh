@@ -279,6 +279,12 @@ class Walker:
             slug = self._claim_slug(_slugify(body))
             if slug and slug != _slugify(new_body):
                 anchor = " {#%s}" % slug
+        if anchor:
+            # Docusaurus 只对行首（无缩进）的标题转义 `{#`，
+            # 见 @docusaurus/utils 的 escapeMarkdownHeadingIds。
+            # 带缩进的标题若挂上锚点，MDX 会把 `{#id}` 当表达式解析并报错，
+            # 因此这里顺手把缩进去掉。
+            prefix = prefix.lstrip()
         return prefix + new_body + anchor
 
     def _claim_slug(self, slug: str) -> str:
