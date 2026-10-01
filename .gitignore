@@ -24,7 +24,10 @@ yarn-debug.log*
 yarn-error.log*
 
 .npmrc
-.vsscripts/i18n/batch.json
+.vs
+
+# i18n 工具的临时产物
+scripts/i18n/batch.json
 scripts/i18n/tm/*.todo.json
 
 # Python
