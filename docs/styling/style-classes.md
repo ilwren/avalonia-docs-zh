@@ -1,6 +1,6 @@
 ---
 id: style-classes
-title: Style classes
+title: 样式类
 description: Learn how to assign and use style classes in Avalonia to apply conditional styling to controls.
 doc-type: explanation
 ---

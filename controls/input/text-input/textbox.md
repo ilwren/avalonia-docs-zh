@@ -1,12 +1,12 @@
 ---
 title: TextBox
-description: A single-line or multi-line text input control that supports watermarks, password masking, validation, and inner content.
+description: 单行或多行的文本输入控件，支持水印、密码掩码、校验和内嵌内容。
 doc-type: reference
 ---
 
 import TextBoxEntryScreenshot from '/img/controls/textbox/textbox-entry.gif';
 
-The [`TextBox`](/api/avalonia/controls/textbox) presents an area for typed (keyboard) input. You can use it for single-line fields such as a username, or enable multi-line editing for longer-form content like notes or comments.
+[`TextBox`](/api/avalonia/controls/textbox) 提供一块供键盘输入的区域。它既可以当作用户名这类单行字段，也可以开启多行编辑，用来写笔记、评论等较长的内容。
 
 ## 常用属性 {#useful-properties}
 
@@ -14,25 +14,25 @@ The [`TextBox`](/api/avalonia/controls/textbox) presents an area for typed (keyb
 
 | 属性 | 类型 | 说明 |
 |---|---|---|
-| `Text` | `string` | The current text in the input. |
-| `PlaceholderText` | `string` | Appears as a faded hint whenever the input is empty. Sometimes called a watermark. |
+| `Text` | `string` | 输入框中当前的文本。 |
+| `PlaceholderText` | `string` | 输入为空时显示的淡色提示文字，有时也叫水印。 |
 | `PlaceholderForeground` | `IBrush` | 渲染占位文字所用的画刷。 |
-| `PasswordChar` | `char` | Hides any characters typed, replacing them with the given character instead. |
-| `RevealPassword` | `bool` | When `true`, shows the actual password text instead of mask characters. |
-| `AcceptsReturn` | `bool` | Makes the input multi-line by allowing the user to enter line returns. |
-| `AcceptsTab` | `bool` | Allows the user to insert tab characters instead of moving focus. |
-| `TextWrapping` | `TextWrapping` | Defines how horizontal line overflow is handled. Options: `NoWrap`, `Wrap`, `WrapWithOverflow`. |
-| `MaxLength` | `int` | Limits the number of characters the user can enter. `0` means no limit. |
-| `IsReadOnly` | `bool` | When `true`, the user can select and copy text but cannot edit it. |
-| `TextAlignment` | `TextAlignment` | Horizontal alignment of the text: `Left`, `Center`, `Right`. |
-| `InnerLeftContent` | `object` | Content displayed inside the `TextBox` on the left side (for icons or labels). |
-| `InnerRightContent` | `object` | Content displayed inside the `TextBox` on the right side (for buttons or indicators). |
-| `MinLines` | `int` | Minimum number of visible lines. The `TextBox` sizes itself to show at least this many lines when `AcceptsReturn` is `true`. |
-| `CaretBlinkInterval` | `TimeSpan` | The interval at which the caret blinks. Set to `TimeSpan.Zero` to disable blinking. |
+| `PasswordChar` | `char` | 把键入的字符统统藏起来，用指定的字符代替显示。 |
+| `RevealPassword` | `bool` | 为 `true` 时显示真实的密码文本，而不是掩码字符。 |
+| `AcceptsReturn` | `bool` | 允许用户输入换行，从而把输入框变成多行的。 |
+| `AcceptsTab` | `bool` | 允许用户插入制表符，而不是用 Tab 切换焦点。 |
+| `TextWrapping` | `TextWrapping` | 决定一行横向超出时如何处理。可选值：`NoWrap`、`Wrap`、`WrapWithOverflow`。 |
+| `MaxLength` | `int` | 限制用户最多能输入多少个字符。`0` 表示不限。 |
+| `IsReadOnly` | `bool` | 为 `true` 时，用户可以选择和复制文本，但不能编辑。 |
+| `TextAlignment` | `TextAlignment` | 文本的水平对齐方式：`Left`、`Center`、`Right`。 |
+| `InnerLeftContent` | `object` | 显示在 `TextBox` 内部左侧的内容（用于图标或标签）。 |
+| `InnerRightContent` | `object` | 显示在 `TextBox` 内部右侧的内容（用于按钮或指示符）。 |
+| `MinLines` | `int` | 可见的最少行数。当 `AcceptsReturn` 为 `true` 时，`TextBox` 会把自己撑到至少能显示这么多行。 |
+| `CaretBlinkInterval` | `TimeSpan` | 插入符闪烁的间隔。设为 `TimeSpan.Zero` 可以让它不闪。 |
 
 ## Example
 
-This example has a basic one-line text box, a password box, and a text-wrapping multiline text box:
+下面的例子包含一个基础的单行文本框、一个密码框，以及一个会自动换行的多行文本框：
 
 ```xml
 <StackPanel Margin="20">
@@ -47,20 +47,20 @@ This example has a basic one-line text box, a password box, and a text-wrapping 
 
 <Image light={TextBoxEntryScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Watermark (placeholder text)
+## 水印（占位文字） {#watermark-placeholder-text}
 
-Set `PlaceholderText` to display a hint when the `TextBox` is empty. You can style the hint color with `PlaceholderForeground`:
+设置 `PlaceholderText` 即可在 `TextBox` 为空时显示一行提示。提示文字的颜色可以用 `PlaceholderForeground` 来定：
 
 ```xml
 <TextBox PlaceholderText="e.g. jane@example.com"
          PlaceholderForeground="Gray" />
 ```
 
-The placeholder disappears automatically as soon as your user begins typing and reappears when the text is cleared.
+用户一开始输入，占位文字就自动消失；内容被清空后它又会回来。
 
-## Multi-line input
+## 多行输入 {#multi-line-input}
 
-To accept multiple lines, set `AcceptsReturn` to `True`. Combine it with `TextWrapping="Wrap"` so that long lines wrap instead of scrolling horizontally. Use `MinLines` to guarantee a minimum visible height:
+要接受多行内容，请把 `AcceptsReturn` 设为 `True`，并配合 `TextWrapping="Wrap"`，让长行自动换行而不是横向滚动。用 `MinLines` 可以保证一个最小可见高度：
 
 ```xml
 <TextBox AcceptsReturn="True"
@@ -69,21 +69,21 @@ To accept multiple lines, set `AcceptsReturn` to `True`. Combine it with `TextWr
          PlaceholderText="Enter your comments here..." />
 ```
 
-If you also set `AcceptsTab` to `True`, pressing Tab inserts a tab character rather than moving focus to the next control.
+若同时把 `AcceptsTab` 设为 `True`，按 Tab 会插入制表符，而不是把焦点移到下一个控件。
 
-## Limiting input length
+## 限制输入长度 {#limiting-input-length}
 
-Use `MaxLength` to cap the number of characters your user can type. This is useful for fields with a known maximum, such as postal codes or usernames:
+用 `MaxLength` 可以限定用户最多能键入多少字符。对于长度上限已知的字段（邮政编码、用户名等），这很有用：
 
 ```xml
 <TextBox MaxLength="50" PlaceholderText="Username (max 50 characters)" />
 ```
 
-A value of `0` (the default) means no limit is applied.
+取值为 `0`（默认）表示不作限制。
 
 ## Validation
 
-You can validate `TextBox` input through data-annotation attributes on your view model. Avalonia's binding system surfaces validation errors automatically when you implement `INotifyDataErrorInfo`. For example, using the CommunityToolkit.Mvvm source generators:
+你可以在视图模型上用数据注解特性来校验 `TextBox` 的输入。只要实现了 `INotifyDataErrorInfo`，Avalonia 的绑定系统就会自动把校验错误呈现出来。例如，配合 CommunityToolkit.Mvvm 的源生成器：
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -103,11 +103,11 @@ public partial class MyViewModel : ObservableValidator
 <TextBox Text="{Binding Email}" PlaceholderText="Email address" />
 ```
 
-When validation fails, the `TextBox` displays an error border and tooltip by default. You can customize this appearance through the control's `:error` pseudo-class in your styles.
+校验未通过时，`TextBox` 默认会显示错误边框和工具提示。你可以在样式中通过该控件的 `:error` 伪类来定制这套外观。
 
 ## 视图模型绑定 {#view-model-binding}
 
-Bind `Text` with two-way mode (the default for `TextBox.Text`):
+以双向模式绑定 `Text`（这也是 `TextBox.Text` 的默认模式）：
 
 ```xml
 <TextBox Text="{Binding Username}" PlaceholderText="Enter username" />
@@ -118,9 +118,9 @@ Bind `Text` with two-way mode (the default for `TextBox.Text`):
 private string _username = "";
 ```
 
-## Input with inner content
+## 带内嵌内容的输入框 {#input-with-inner-content}
 
-You can add icons or buttons inside the `TextBox` using `InnerLeftContent` and `InnerRightContent`:
+用 `InnerLeftContent` 和 `InnerRightContent` 可以在 `TextBox` 内部放置图标或按钮：
 
 ```xml
 <TextBox PlaceholderText="Search...">
@@ -133,7 +133,7 @@ You can add icons or buttons inside the `TextBox` using `InnerLeftContent` and `
 
 ## 另请参阅 {#see-also}
 
-- [TextBox API reference](/api/avalonia/controls/textbox)
+- [TextBox API 参考](/api/avalonia/controls/textbox)
 - [GitHub 上的 `TextBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBox.cs)
 - [MaskedTextBox](/controls/input/text-input/maskedtextbox)
 - [AutoCompleteBox](/controls/input/text-input/autocompletebox)

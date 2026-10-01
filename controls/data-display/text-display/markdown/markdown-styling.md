@@ -125,7 +125,7 @@ Scoped nesting selectors also work. For example, remove paragraph margins inside
 </Style>
 ```
 
-## Customizable resources
+## 可定制的资源 {#customizable-resources}
 
 In addition to style selectors, you can override named resources in your theme or resource dictionary. These are used by the default styles and provide an easy way to adjust values without rewriting selectors.
 
@@ -239,7 +239,7 @@ Each header exposes `FontSize`, `BorderThickness`, `Padding`, `Margin`.
 | `MarkdownCopyButtonFill` | Brush | `#59636e` | `#8b949e` | Copy button fill color |
 | `MarkdownCopyButtonContentTemplate` | DataTemplate | — | — | Content template for copy button |
 
-## How to override
+## 如何覆盖 {#how-to-override}
 
 ### Style selectors (recommended)
 
