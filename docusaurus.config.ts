@@ -5,6 +5,7 @@ import fs from 'fs';
 import redirects from './redirects/index';
 import tailwindPlugin from './plugins/tailwind-plugin';
 import plausiblePlugin from './plugins/plausible-plugin';
+const communityLinks = require('./plugins/community-links');
 import type { PluginOptions as LlmsTxtPluginOptions } from "@signalwire/docusaurus-plugin-llms-txt/public";
 
 const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
@@ -119,6 +120,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [communityLinks],
           editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
           editLocalizedFiles: true,
           showLastUpdateAuthor: true,
@@ -250,6 +252,7 @@ gtag('consent', 'default', {
         path: 'controls',
         routeBasePath: 'controls',
         sidebarPath: './controls-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -263,6 +266,7 @@ gtag('consent', 'default', {
         path: 'xpf',
         routeBasePath: 'xpf',
         sidebarPath: './xpf-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -276,6 +280,7 @@ gtag('consent', 'default', {
         path: 'tools',
         routeBasePath: 'tools',
         sidebarPath: './tools-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -289,6 +294,7 @@ gtag('consent', 'default', {
         path: 'troubleshooting',
         routeBasePath: 'troubleshooting',
         sidebarPath: './troubleshooting-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -329,7 +335,7 @@ gtag('consent', 'default', {
         routeBasePath: "api",
         disableVersioning: true,
         sidebarPath: require.resolve("./api-sidebars.ts"),
-        remarkPlugins: [[require("./plugins/apiref-xref"), { indexPath: "./dist/xref/12.1.3.xrefmap.json" }]],
+        remarkPlugins: [communityLinks, [require("./plugins/apiref-xref"), { indexPath: "./dist/xref/12.1.3.xrefmap.json" }]],
       },
     ]
   ],
@@ -410,8 +416,8 @@ gtag('consent', 'default', {
               rel: null
             },
             {
-              href: 'https://github.com/AvaloniaUI/Avalonia/discussions',
-              label: 'GitHub 讨论区',
+              href: 'https://github.com/ilwren/avalonia-docs-zh/discussions',
+              label: 'GitHub 讨论区（中文文档）',
               target: '_blank',
               rel: null,
             },

@@ -111,6 +111,14 @@ jobs:
           if [ "$DOCS_BASE_URL" != "/" ]; then
             grep -q "href=\"${DOCS_BASE_URL}assets/css" build/index.html
           fi
+          # 首页文档必须带 AI 翻译免责说明
+          grep -aq "AI 翻译免责说明" build/docs/welcome.html
+          # 社区讨论区入口必须指向本仓库（指向上游具体帖子的引用不在此列）
+          if grep -arq 'https://github.com/AvaloniaUI/Avalonia/discussions"' build --include='*.html'; then
+            echo "::error::站点里仍有指向上游通用讨论区的链接"
+            exit 1
+          fi
+          grep -arq 'https://github.com/ilwren/avalonia-docs-zh/discussions' build/docs/welcome.html
           SIZE=$(du -sh build | cut -f1)
           PAGES=$(find build -name 'index.html' | wc -l)
           echo "产物体积：$SIZE，页面数量：$PAGES"
