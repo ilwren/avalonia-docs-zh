@@ -118,7 +118,7 @@ The action if found; otherwise, null.
 | [BulletMarkerStyle](#uid-561191110b) | Gets the Bullet Marker Style action (changes marker symbol on bullet lists). |
 | [Copy](#uid-8a0d47316a) | 获取复制操作。 |
 | [Cut](#uid-40739e40a8) | 获取剪切操作。 |
-| [DeleteColumn](#uid-4497ba0f06) | Gets the Delete Column action. |
+| [DeleteColumn](#uid-4497ba0f06) | 获取删除列操作。 |
 | [DeleteImage](#uid-d32431ae06) | Gets the Delete Image action (removes the selected inline image). |
 | [DeleteRow](#uid-2ab61950c1) | 获取删除行操作。 |
 | [DeleteTable](#uid-6fb1381f58) | 获取删除表格操作。 |
@@ -156,7 +156,7 @@ The action if found; otherwise, null.
 | [ReturnToBody](#uid-3eab04c2b1) | Gets the action that leaves the band or note the caret is in for the body. |
 | [SelectAll](#uid-62b023c06f) | 获取全选操作。 |
 | [SplitCell](#uid-87feee1a55) | 获取拆分单元格操作。 |
-| [Strikethrough](#uid-6b3ec8b4b9) | Gets the Strikethrough action. |
+| [Strikethrough](#uid-6b3ec8b4b9) | 获取删除线操作。 |
 | [Subscript](#uid-bfc2ccd279) | 获取下标操作。 |
 | [Superscript](#uid-bbdbe05fb9) | 获取上标操作。 |
 | [TextAlignmentAction](#uid-365261dfa4) | Gets the Text Alignment action (Left, Center, Right, Justify). |
@@ -393,7 +393,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Cut { get; s
 
 ### DeleteColumn 属性 {#deletecolumn-property}
 
-Gets the Delete Column action.
+获取删除列操作。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction DeleteColumn { get; set; }
@@ -949,7 +949,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction SplitCell { 
 
 ### Strikethrough 属性 {#strikethrough-property}
 
-Gets the Strikethrough action.
+获取删除线操作。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction Strikethrough { get; set; }

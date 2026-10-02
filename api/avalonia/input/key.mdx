@@ -99,7 +99,7 @@ public enum Key
 | [DbeDbcsChar](#uid-1307d04e50) | DBE_DBCSCHAR 键。 |
 | [DbeDetermineString](#uid-0a4a21cbed) | DBE_DETERMINESTRING 键。 |
 | [DbeEnterDialogConversionMode](#uid-0d25b760c4) | The DBE_ENTERDLGCONVERSIONMODE key. |
-| [DbeEnterImeConfigureMode](#uid-8873e85509) | The DBE_ENTERIMECONFIGMODE key. |
+| [DbeEnterImeConfigureMode](#uid-8873e85509) | DBE_ENTERIMECONFIGMODE 键。 |
 | [DbeEnterWordRegisterMode](#uid-01ff97d4f4) | The DBE_ENTERWORDREGISTERMODE key. |
 | [DbeFlushString](#uid-f09e1d5117) | DBE_FLUSHSTRING 键。 |
 | [DbeHiragana](#uid-8301c24f91) | DBE_HIRAGANA 键。 |
@@ -149,7 +149,7 @@ public enum Key
 | [FnDownArrow](#uid-c2210c2fa4) | OSX Platform-specific Fn+Down key |
 | [FnLeftArrow](#uid-4e4ebf5774) | OSX Platform-specific Fn+Left key |
 | [FnRightArrow](#uid-d9882a73b7) | OSX Platform-specific Fn+Right key |
-| [FnUpArrow](#uid-ecf61c7467) | OSX Platform-specific Fn+Up key |
+| [FnUpArrow](#uid-ecf61c7467) | OSX 平台专属的 Fn+Up 键 |
 | [G](#uid-cf4bd12474) | G 键。 |
 | [H](#uid-dd12596e6e) | H 键。 |
 | [HangulMode](#uid-e2ec502af4) | IME 韩文模式键。 |
@@ -169,8 +169,8 @@ public enum Key
 | [KanaMode](#uid-24ee81f0d0) | IME 假名模式键。 |
 | [KanjiMode](#uid-eeef91a1c1) | IME Kanji 模式键。 |
 | [L](#uid-300c5659eb) | L 键。 |
-| [LaunchApplication1](#uid-3519916434) | The Launch Application 1 key. |
-| [LaunchApplication2](#uid-f4b330426c) | The Launch Application 2 key. |
+| [LaunchApplication1](#uid-3519916434) | 启动应用程序 1 键。 |
+| [LaunchApplication2](#uid-f4b330426c) | 启动应用程序 2 键。 |
 | [LaunchMail](#uid-36262ee082) | 启动邮件键。 |
 | [Left](#uid-3b04cafbbb) | 向左方向键。 |
 | [LeftAlt](#uid-3dfa0bd254) | 左 Alt 键。 |
@@ -191,8 +191,8 @@ public enum Key
 | [MediaNextTrack](#uid-1626fe7a0b) | 媒体“下一曲”键。 |
 | [MediaOption](#uid-ab63ca4eb7) | 遥控器选项按钮 |
 | [MediaPlayPause](#uid-4fa0b28dca) | 媒体“播放/暂停”键。 |
-| [MediaPreviousChannel](#uid-2ffcd2bf47) | Remote control Previous Channel |
-| [MediaPreviousTrack](#uid-2369b3e5a9) | The media Previous Track key. |
+| [MediaPreviousChannel](#uid-2ffcd2bf47) | 遥控器“上一频道” |
+| [MediaPreviousTrack](#uid-2369b3e5a9) | 媒体“上一曲”键。 |
 | [MediaRecord](#uid-ab3d54f75e) | 电视频道减 |
 | [MediaRed](#uid-3c6098980d) | 遥控器红色按钮 |
 | [MediaSearch](#uid-8750e7a02e) | 遥控器搜索按钮 |
@@ -810,7 +810,7 @@ public Avalonia.Input.Key DbeEnterDialogConversionMode
 
 ### DbeEnterImeConfigureMode 字段 {#dbeenterimeconfiguremode-field}
 
-The DBE_ENTERIMECONFIGMODE key.
+DBE_ENTERIMECONFIGMODE 键。
 
 ```csharp
 public Avalonia.Input.Key DbeEnterImeConfigureMode
@@ -1510,7 +1510,7 @@ public Avalonia.Input.Key FnRightArrow
 
 ### FnUpArrow 字段 {#fnuparrow-field}
 
-OSX Platform-specific Fn+Up key
+OSX 平台专属的 Fn+Up 键
 
 ```csharp
 public Avalonia.Input.Key FnUpArrow
@@ -1790,7 +1790,7 @@ public Avalonia.Input.Key L
 
 ### LaunchApplication1 字段 {#launchapplication1-field}
 
-The Launch Application 1 key.
+启动应用程序 1 键。
 
 ```csharp
 public Avalonia.Input.Key LaunchApplication1
@@ -1804,7 +1804,7 @@ public Avalonia.Input.Key LaunchApplication1
 
 ### LaunchApplication2 字段 {#launchapplication2-field}
 
-The Launch Application 2 key.
+启动应用程序 2 键。
 
 ```csharp
 public Avalonia.Input.Key LaunchApplication2
@@ -2098,7 +2098,7 @@ public Avalonia.Input.Key MediaPlayPause
 
 ### MediaPreviousChannel 字段 {#mediapreviouschannel-field}
 
-Remote control Previous Channel
+遥控器“上一频道”
 
 ```csharp
 public Avalonia.Input.Key MediaPreviousChannel
@@ -2112,7 +2112,7 @@ public Avalonia.Input.Key MediaPreviousChannel
 
 ### MediaPreviousTrack 字段 {#mediaprevioustrack-field}
 
-The media Previous Track key.
+媒体“上一曲”键。
 
 ```csharp
 public Avalonia.Input.Key MediaPreviousTrack

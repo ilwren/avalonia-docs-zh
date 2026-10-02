@@ -77,7 +77,7 @@ public FbDevOutputOptions()
 | [FileName](#uid-ab4343b5d5) | The frame buffer device name. Defaults to the value in environment variable FRAMEBUFFER or /dev/fb0 when FRAMEBUFFER is not set |
 | [PixelFormat](#uid-72686a3c01) | The required pixel format for the frame buffer. A null value will leave the frame buffer in the current pixel format. Otherwise sets the frame buffer to the required format |
 | [RenderDirectlyToMappedMemory](#uid-57bbe53816) | If set to true, double-buffering will be disabled and scene will be composed directly into mmap-ed memory region While this mode saves a blit, you need to check if it won't cause rendering artifacts your particular device. |
-| [Scaling](#uid-164d54cd8c) | The initial scale factor to use |
+| [Scaling](#uid-164d54cd8c) | 初始使用的缩放系数 |
 | [UseAsyncFrontBufferBlit](#uid-ed5d0e22ed) | If set to true, FBIO_WAITFORVSYNC ioctl and following memcpy call will run on a dedicated thread saving current one from doing nothing in a blocking call |
 
 <section className="apiref-page__member-entry">
@@ -132,7 +132,7 @@ public bool RenderDirectlyToMappedMemory { get; set; }
 
 ### Scaling 属性 {#scaling-property}
 
-The initial scale factor to use
+初始使用的缩放系数
 
 ```csharp
 public double Scaling { get; set; }

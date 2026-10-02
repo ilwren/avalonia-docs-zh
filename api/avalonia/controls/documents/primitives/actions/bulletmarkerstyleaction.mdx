@@ -89,7 +89,7 @@ public BulletMarkerStyleAction()
 | [ClearValue](#uid-8bb90adc1e) | 清除标记样式。列表总是有一个标记，因此这不起任何作用。 |
 | [Execute](#uid-f6c058eaaf) | 同步执行该操作。 |
 | [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
-| [GetAvailableValues](#uid-4b619dbff9) | Returns bullet [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle) values. |
+| [GetAvailableValues](#uid-4b619dbff9) | 返回项目符号的 [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle) 取值。 |
 | [GetState](#uid-fda447b072) | 获取该操作的当前状态。 |
 | [GetValue](#uid-4e5bc56f9b) | Gets the current marker style of the first bullet list containing the caret/selection. |
 | [HasConsistentValue](#uid-7abac97d0d) | 获取受影响的所有块在该属性上取值是否一致。 |
@@ -181,7 +181,7 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 ### GetAvailableValues 方法 {#getavailablevalues-method}
 
-Returns bullet [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle) values.
+返回项目符号的 [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle) 取值。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle> GetAvailableValues()

@@ -122,7 +122,7 @@ public NavigationPage()
 | [Measure](../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [PopAllModalsAsync (2 overloads)](#uid-97b710ba48) | Pops all modal pages using [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition). |
 | [PopAsync（2 个重载）](#uid-1232dddbb7) | Pops the top page from the navigation stack asynchronously using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
-| [PopModalAsync (2 overloads)](#uid-25a0bccba6) | Pops the top modal page using [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition). |
+| [PopModalAsync（2 个重载）](#uid-25a0bccba6) | Pops the top modal page using [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition). |
 | [PopToPageAsync (2 overloads)](#uid-537b1d248e) | Pops to a specific page in the stack using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
 | [PopToRootAsync (2 overloads)](#uid-5c3c54243e) | Pops all pages to the root page using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
 | [PushAsync（2 个重载）](#uid-3c25ff75d5) | Pushes `page` onto the navigation stack asynchronously using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
@@ -131,7 +131,7 @@ public NavigationPage()
 | [RemoveHandler（2 个重载）](../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../interactivity/interactive.mdx)。 |
 | [RemovePage](#uid-e3354b754f) | Removes a page from the navigation stack without animation. |
 | [Render](../visual.mdx#uid-615917604b) | 将该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。继承自 [Visual](../visual.mdx)。 |
-| [ReplaceAsync (2 overloads)](#uid-694bcda035) | Replaces the top page with `page` using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
+| [ReplaceAsync（2 个重载）](#uid-694bcda035) | Replaces the top page with `page` using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
 | [SetBackButtonContent](#uid-d29059d019) | Sets custom content for the back button on the specified page. |
 | [SetBarHeightOverride](#uid-0dda3948bc) | 暂无摘要。 |
 | [SetBarLayoutBehavior](#uid-04b7a9f2d9) | 暂无摘要。 |
@@ -423,7 +423,7 @@ events differ from calling [Avalonia.Controls.NavigationPage.PopModalAsync](xref
 
 - [Avalonia.Controls.Page.Navigating](xref:Avalonia.Controls.Page.Navigating) is consulted only on the topmost modal. Intermediate modals do not receive a cancellation opportunity. If the top modal cancels, the entire dismiss is aborted and no modals are popped.
 - [Avalonia.Controls.Page.NavigatedFrom](xref:Avalonia.Controls.Page.NavigatedFrom) fires on every dismissed modal in LIFO order.
-- [Avalonia.Controls.Page.NavigatedTo](xref:Avalonia.Controls.Page.NavigatedTo) fires only on [Avalonia.Controls.Page.CurrentPage](xref:Avalonia.Controls.Page.CurrentPage).
+- [Avalonia.Controls.Page.NavigatedTo](xref:Avalonia.Controls.Page.NavigatedTo) 只在 [Avalonia.Controls.Page.CurrentPage](xref:Avalonia.Controls.Page.CurrentPage) 上触发。
 
 </section>
 
@@ -456,7 +456,7 @@ events differ from calling [Avalonia.Controls.NavigationPage.PopModalAsync](xref
 
 - [Avalonia.Controls.Page.Navigating](xref:Avalonia.Controls.Page.Navigating) is consulted only on the topmost modal. Intermediate modals do not receive a cancellation opportunity. If the top modal cancels, the entire dismiss is aborted and no modals are popped.
 - [Avalonia.Controls.Page.NavigatedFrom](xref:Avalonia.Controls.Page.NavigatedFrom) fires on every dismissed modal in LIFO order.
-- [Avalonia.Controls.Page.NavigatedTo](xref:Avalonia.Controls.Page.NavigatedTo) fires only on [Avalonia.Controls.Page.CurrentPage](xref:Avalonia.Controls.Page.CurrentPage).
+- [Avalonia.Controls.Page.NavigatedTo](xref:Avalonia.Controls.Page.NavigatedTo) 只在 [Avalonia.Controls.Page.CurrentPage](xref:Avalonia.Controls.Page.CurrentPage) 上触发。
 
 </section>
 

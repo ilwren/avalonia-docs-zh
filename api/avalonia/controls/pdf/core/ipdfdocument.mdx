@@ -59,7 +59,7 @@ public interface IPdfDocument
 | 名称 | 说明 |
 | --- | --- |
 | [GetOutline](#uid-d4199f4fa4) | 获取文档大纲（书签）。 |
-| [GetPage](#uid-63a4f83213) | Gets a page by index (0-based). |
+| [GetPage](#uid-63a4f83213) | 按索引取得某一页（从 0 开始）。 |
 | [GetPageSize](#uid-a90d4af392) | Gets page dimensions without loading the full page. |
 | [GetUserBookmarks](#uid-0582dbd8eb) | Reads user-created bookmarks (saved page positions) from the document's XMP metadata. These are the Preview-style bookmarks stored under the `apple-preview` namespace, distinct from the author outline returned by [Avalonia.Controls.Pdf.Core.IPdfDocument.GetOutline](xref:Avalonia.Controls.Pdf.Core.IPdfDocument.GetOutline). Returns an empty list when the document has none. |
 
@@ -88,7 +88,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.Pdf.Core.PdfBookm
 
 ### GetPage 方法 {#getpage-method}
 
-Gets a page by index (0-based).
+按索引取得某一页（从 0 开始）。
 
 ```csharp
 public Avalonia.Controls.Pdf.Core.IPdfPage GetPage(int index)
@@ -158,7 +158,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.Pdf.Core.PdfUserB
 | --- | --- |
 | [IsPasswordProtected](#uid-9b11f995a1) | Gets whether the document is password-protected. |
 | [Metadata](#uid-eb0e50fde1) | 获取文档元数据。 |
-| [PageCount](#uid-4411aba12c) | Gets the total number of pages. |
+| [PageCount](#uid-4411aba12c) | 获取总页数。 |
 | [Permissions](#uid-6f34e1b9d8) | Gets the raw PDF permission bits (as returned by the PDF security handler). `0xFFFFFFFF` means no restrictions. |
 | [Version](#uid-9796e13f72) | Gets the PDF version (e.g., "1.7" for PDF 1.7). |
 
@@ -196,7 +196,7 @@ public Avalonia.Controls.Pdf.Core.PdfMetadata Metadata { get; set; }
 
 ### PageCount 属性 {#pagecount-property}
 
-Gets the total number of pages.
+获取总页数。
 
 ```csharp
 public int PageCount { get; set; }

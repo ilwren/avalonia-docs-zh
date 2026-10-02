@@ -1429,7 +1429,7 @@ public Avalonia.StyledProperty<double> ZoomSensitivityProperty
 | [TextInputMethodClientRequested](../../input/inputelement.mdx#uid-5d96b89080) | 当输入元素获得输入焦点、输入法正在查找对应的输入客户端时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [Unloaded](../control.mdx#uid-fdfd878e56) | 当控件从视觉树中移除时发生。继承自 [Control](../control.mdx)。 |
 | [ZoomChanged](#uid-a651d4f1cb) | Occurs when the chart zoom level or viewport changes. |
-| [ZoomReset](#uid-c342c072b3) | Occurs when the zoom is reset. |
+| [ZoomReset](#uid-c342c072b3) | 缩放被重置时发生。 |
 
 <section className="apiref-page__member-entry">
 
@@ -1479,7 +1479,7 @@ public event EventHandler<Avalonia.Controls.Charts.ChartZoomEventArgs> ZoomChang
 
 ### ZoomReset 事件 {#zoomreset-event}
 
-Occurs when the zoom is reset.
+缩放被重置时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Charts.ChartZoomResetEventArgs> ZoomReset

@@ -76,7 +76,7 @@ public class DrawingContext
 | [PushOpacityMask](#uid-f50efb14c4) | 压入一个不透明度蒙版。 |
 | [PushRenderOptions](#uid-8050498062) | 压入一组渲染选项。 |
 | [PushTextOptions](#uid-15dfd2b97e) | Pushes text options for the drawing context. |
-| [PushTransform](#uid-edfc386ff3) | Pushes a matrix transformation. |
+| [PushTransform](#uid-edfc386ff3) | 压入一次矩阵变换。 |
 
 <section className="apiref-page__member-entry">
 
@@ -376,7 +376,7 @@ public void DrawLine(Avalonia.Media.IPen pen, Avalonia.Point p1, Avalonia.Point 
 
 `p2` [Avalonia.Point](xref:Avalonia.Point)
 
-The second point of the line.
+线段的第二个点。
 
 
 </section>
@@ -813,7 +813,7 @@ A disposable to undo the text options.
 
 ### PushTransform 方法 {#pushtransform-method}
 
-Pushes a matrix transformation.
+压入一次矩阵变换。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushTransform(Avalonia.Matrix matrix)

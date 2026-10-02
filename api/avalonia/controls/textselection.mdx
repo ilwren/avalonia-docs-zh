@@ -95,7 +95,7 @@ The text document containing the selection.
 | [ClearPropertyValue](documents/textmodel/textrange.mdx#uid-ecf1a6ea8a) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
 | [ClearSelection](#uid-761fa71ea2) | Clears the selection, placing the caret at the current caret position. |
 | [ClearSpringloadProperties](#uid-f769cc1d42) | Clears all springloaded properties. |
-| [ClearSpringloadProperty](#uid-c84ee1d189) | Clears a springloaded property. |
+| [ClearSpringloadProperty](#uid-c84ee1d189) | 清除某个 springloaded 属性。 |
 | [Contains（2 个重载）](documents/textmodel/textrange.mdx#uid-f71713cd49) | Checks if the range contains the specified pointer. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [CreateSnapshot](documents/textmodel/textrange.mdx#uid-462c656203) | Creates an immutable, thread-safe snapshot of this range's document structure. The caller chooses a serializer to convert the snapshot to a specific format. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [Delete](#uid-f17bc53d58) | Deletes the selected content, then collapses the selection to the deletion point and resets direction. |
@@ -187,7 +187,7 @@ public void ClearSpringloadProperties()
 
 ### ClearSpringloadProperty 方法 {#clearspringloadproperty-method}
 
-Clears a springloaded property.
+清除某个 springloaded 属性。
 
 ```csharp
 public void ClearSpringloadProperty(Avalonia.AvaloniaProperty property)

@@ -92,10 +92,10 @@ public AvaloniaObject()
 
 | 名称 | 说明 |
 | --- | --- |
-| [Bind（8 个重载）](#uid-1c60c7bda3) | Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase). |
+| [Bind（8 个重载）](#uid-1c60c7bda3) | 把 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。 |
 | [CheckAccess](#uid-260ff7a68d) | Returns a value indicating whether the current thread is the UI thread. |
-| [ClearValue（4 个重载）](#uid-41de208fbe) | Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value. |
-| [CoerceValue](#uid-3bec32f39e) | Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). |
+| [ClearValue（4 个重载）](#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的本地值。 |
+| [CoerceValue](#uid-3bec32f39e) | 强制校正指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。 |
 | [Equals](#uid-a8a8e94305) | Compares two objects using reference equality. |
 | [GetBaseValue](#uid-9c615efbba) | 暂无摘要。 |
 | [GetHashCode](#uid-7f7db1e7a2) | Gets the hash code for the object. |
@@ -116,7 +116,7 @@ public AvaloniaObject()
 
 #### Bind 方法 {#bind-method}
 
-Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase).
+把 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。
 
 ```csharp
 public Avalonia.Data.BindingExpressionBase Bind(Avalonia.AvaloniaProperty property, Avalonia.Data.BindingBase binding)
@@ -391,7 +391,7 @@ true if the current thread is the UI thread; otherwise false.
 
 #### ClearValue 方法 {#clearvalue-method}
 
-Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value.
+清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的本地值。
 
 ```csharp
 public void ClearValue(Avalonia.AvaloniaProperty property)
@@ -478,7 +478,7 @@ public void ClearValue<T>(Avalonia.StyledProperty<TValue><T> property)
 
 ### CoerceValue 方法 {#coercevalue-method}
 
-Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty).
+强制校正指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。
 
 ```csharp
 public void CoerceValue(Avalonia.AvaloniaProperty property)

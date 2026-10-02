@@ -646,7 +646,7 @@ public void WriteTextTo(int offset, int length, System.Text.StringBuilder sb)
 | [Footnotes](#uid-48a5dec0e7) | The footnotes the document owns (nested document snapshots) in anchor order, paired by id with the [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode) anchors in the body. A range snapshot carries the notes of the anchors inside the range. |
 | [Generation](#uid-311eda4811) | Document generation at snapshot time. Can be used to detect changes. |
 | [PageBands](#uid-d0e3d0b379) | The page bands the document owns (nested document snapshots), placed by their role and rule, or referenced by index from the sections' [Avalonia.Controls.Documents.Serialization.Snapshot.SectionSnapshotNode.PageBandReferences](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SectionSnapshotNode.PageBandReferences). Empty for range snapshots and for snapshots taken at the text-model level. |
-| [Root](#uid-874e5d74e4) | The root of the snapshot tree. |
+| [Root](#uid-874e5d74e4) | 快照树的根。 |
 | [TextLength](#uid-f55d45e331) | Total text length of the document at snapshot time. |
 
 <section className="apiref-page__member-entry">
@@ -716,7 +716,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Seri
 
 ### Root 属性 {#root-property}
 
-The root of the snapshot tree.
+快照树的根。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode Root { get; set; }

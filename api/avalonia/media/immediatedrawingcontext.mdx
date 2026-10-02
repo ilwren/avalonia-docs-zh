@@ -72,7 +72,7 @@ public class ImmediateDrawingContext
 | [PushPostTransform](#uid-4c5d73998c) | Pushes a matrix post-transformation. |
 | [PushPreTransform](#uid-8f56fb7622) | Pushes a matrix pre-transformation. |
 | [PushSetTransform](#uid-b2cf50e9d7) | Sets the current matrix transformation. |
-| [PushTransformContainer](#uid-0615f1cb5b) | Pushes a new transform context. |
+| [PushTransformContainer](#uid-0615f1cb5b) | 压入一个新的变换上下文。 |
 | [TryGetFeature](#uid-130ead2774) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
@@ -248,7 +248,7 @@ public void DrawLine(Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Point p
 
 `p2` [Avalonia.Point](xref:Avalonia.Point)
 
-The second point of the line.
+线段的第二个点。
 
 
 </section>
@@ -582,7 +582,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushSetTransform(Avalo
 
 ### PushTransformContainer 方法 {#pushtransformcontainer-method}
 
-Pushes a new transform context.
+压入一个新的变换上下文。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushTransformContainer()

@@ -51,10 +51,10 @@ public interface IStorageProvider
 | 名称 | 说明 |
 | --- | --- |
 | [OpenFileBookmarkAsync](#uid-0c31116322) | 按书签 ID 打开 [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile)。 |
-| [OpenFilePickerAsync](#uid-22907f4437) | Opens the file picker dialog. |
+| [OpenFilePickerAsync](#uid-22907f4437) | 打开文件选取对话框。 |
 | [OpenFilePickerWithResultAsync](#uid-726f9331ff) | Opens the file picker dialog and returns additional information about the result. |
 | [OpenFolderBookmarkAsync](#uid-2edc4c9105) | 按书签 ID 打开 [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder)。 |
-| [OpenFolderPickerAsync](#uid-6bb27fee7f) | Opens the folder picker dialog. |
+| [OpenFolderPickerAsync](#uid-6bb27fee7f) | 打开文件夹选取对话框。 |
 | [SaveFilePickerAsync](#uid-4e68fc0b1f) | Opens the save file picker dialog. |
 | [SaveFilePickerWithResultAsync](#uid-1a9bca9667) | Opens the save file picker dialog and returns additional information about the result. |
 | [TryGetFileFromPathAsync](#uid-9c134ae673) | 尝试按路径从文件系统中读取文件。 |
@@ -95,7 +95,7 @@ Bookmarked file or null if OS denied request.
 
 ### OpenFilePickerAsync 方法 {#openfilepickerasync-method}
 
-Opens the file picker dialog.
+打开文件选取对话框。
 
 ```csharp
 public System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.IStorageFile>> OpenFilePickerAsync(Avalonia.Platform.Storage.FilePickerOpenOptions options)
@@ -175,7 +175,7 @@ Bookmarked folder or null if OS denied request.
 
 ### OpenFolderPickerAsync 方法 {#openfolderpickerasync-method}
 
-Opens the folder picker dialog.
+打开文件夹选取对话框。
 
 ```csharp
 public System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.IStorageFolder>> OpenFolderPickerAsync(Avalonia.Platform.Storage.FolderPickerOpenOptions options)

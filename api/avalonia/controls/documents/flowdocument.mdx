@@ -138,7 +138,7 @@ The [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) to a
 | [InitializeTextDocument](#uid-9705bb2c7b) | 若后备存储尚不存在则创建它，并把它返回。 |
 | [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Load（2 个重载）](#uid-bbf188f438) | Reads a document from a stream. |
+| [Load（2 个重载）](#uid-bbf188f438) | 从流中读取一篇文档。 |
 | [LoadAsync](#uid-e1a5a76bbb) | Loads a document from a stream, parsing off the calling thread. |
 | [Save（2 个重载）](#uid-58c41f4af7) | Writes this document to a stream. |
 | [SaveAsync](#uid-6000bb6211) | Saves the document to a stream, writing off the calling thread. |
@@ -537,7 +537,7 @@ Read [Avalonia.Controls.Documents.FlowDocument.TextDocument](xref:Avalonia.Contr
 
 #### Load 方法 {#load-method}
 
-Reads a document from a stream.
+从流中读取一篇文档。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocument Load(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer)
@@ -595,7 +595,7 @@ public Avalonia.Controls.Documents.FlowDocument Load(System.IO.Stream stream, Av
 
 `cancellationToken` System.Threading.CancellationToken
 
-Token to cancel the operation.
+用于取消该操作的令牌。
 
 
 ##### 返回值 {#returns-7}
@@ -647,7 +647,7 @@ public System.Threading.Tasks.Task<Avalonia.Controls.Documents.FlowDocument> Loa
 
 `cancellationToken` System.Threading.CancellationToken
 
-Token to cancel the operation.
+用于取消该操作的令牌。
 
 
 #### 返回值 {#returns-8}

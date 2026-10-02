@@ -1759,7 +1759,7 @@ public void ZoomOut()
 | [SaveCommand](#uid-365e479db8) | Gets a command that saves the document in place. Honors [Avalonia.Controls.PdfViewer.AllowDocumentSaving](xref:Avalonia.Controls.PdfViewer.AllowDocumentSaving). |
 | [SearchMatchCase](#uid-f4b8ae2ad5) | Gets or sets whether the toolbar search matches letter case. Default `false`. |
 | [SearchMatchWholeWord](#uid-e3d3df1825) | Gets or sets whether the toolbar search matches whole words only. Default `false`. |
-| [SearchQuery](#uid-877f9dc4a9) | Gets or sets the search query. |
+| [SearchQuery](#uid-877f9dc4a9) | 获取或设置搜索查询。 |
 | [SearchResultCount](#uid-51d4a9fa8a) | Gets the number of matches for the current search. |
 | [SearchResults](#uid-0e883b2a7c) | Gets the current search results. |
 | [SelectAllCommand](#uid-7d8e6d76df) | Gets a command that selects all text on the current page. |
@@ -1773,7 +1773,7 @@ public void ZoomOut()
 | [ShareCommand](#uid-86883758fa) | Gets a command that shares the document via the configured [Avalonia.Controls.PdfViewer.ShareService](xref:Avalonia.Controls.PdfViewer.ShareService) or a [Avalonia.Controls.PdfViewer.ShareRequested](xref:Avalonia.Controls.PdfViewer.ShareRequested) handler. Disabled when neither is available. |
 | [ShareService](#uid-d8f24c093b) | Gets or sets the share service used by [Avalonia.Controls.PdfViewer.Share](xref:Avalonia.Controls.PdfViewer.Share), [Avalonia.Controls.PdfViewer.ShareAsync(Avalonia.Controls.Pdf.Services.ShareOptions,System.Threading.CancellationToken)](xref:Avalonia.Controls.PdfViewer.ShareAsync%28Avalonia.Controls.Pdf.Services.ShareOptions%2CSystem.Threading.CancellationToken%29) and [Avalonia.Controls.PdfViewer.ShareCommand](xref:Avalonia.Controls.PdfViewer.ShareCommand). Same semantics as [Avalonia.Controls.PdfViewer.PrintService](xref:Avalonia.Controls.PdfViewer.PrintService): unset resolves to the platform service, `null` disables it, clearing the property restores the default. |
 | [ShowBookmarkIndicators](#uid-b28a13de1e) | Gets or sets whether a bookmark ribbon is drawn in the top-right corner of bookmarked pages. Defaults to . |
-| [SidebarMode](#uid-9bd535e09b) | Gets or sets the sidebar mode. |
+| [SidebarMode](#uid-9bd535e09b) | 获取或设置侧边栏模式。 |
 | [SidebarPlacement](#uid-ed245ebb6f) | Gets or sets how the sidebar sits relative to the document. [Avalonia.Controls.SidebarPlacement.Auto](xref:Avalonia.Controls.SidebarPlacement.Auto) (default) mirrors the toolbar layout — overlay on mobile, offset on desktop; [Avalonia.Controls.SidebarPlacement.Overlay](xref:Avalonia.Controls.SidebarPlacement.Overlay) floats it over a centered document; [Avalonia.Controls.SidebarPlacement.Offset](xref:Avalonia.Controls.SidebarPlacement.Offset) shifts the document canvas right by the sidebar width so they don't overlap. |
 | [SidebarSelectionBrush](#uid-8fb5504782) | Optional override for the selection colour used across all sidebar panes — table of contents, bookmarks, and the selected thumbnail. When set it replaces the theme's selection accent; when the theme default applies (accent-aware in Fluent, monotone in the Default theme). The contrasting foreground (text/chevron) is chosen automatically from the brush's luminance. |
 | [SidebarWidth](#uid-44a85c886d) | Gets or sets the sidebar width in DIPs (100–300). |
@@ -3095,7 +3095,7 @@ public bool SearchMatchWholeWord { get; set; }
 
 ### SearchQuery 属性 {#searchquery-property}
 
-Gets or sets the search query.
+获取或设置搜索查询。
 
 ```csharp
 public string SearchQuery { get; set; }
@@ -3298,7 +3298,7 @@ public bool ShowBookmarkIndicators { get; set; }
 
 ### SidebarMode 属性 {#sidebarmode-property}
 
-Gets or sets the sidebar mode.
+获取或设置侧边栏模式。
 
 ```csharp
 public Avalonia.Controls.SidebarMode SidebarMode { get; set; }
@@ -5756,7 +5756,7 @@ public Avalonia.StyledProperty<double> ZoomStepProperty
 | [KeyDown](../input/inputelement.mdx#uid-ee9d987ed5) | 当控件拥有焦点且有按键被按下时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [KeyUp](../input/inputelement.mdx#uid-1131e95f55) | 当控件拥有焦点且有按键被释放时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LayoutUpdated](../layout/layoutable.mdx#uid-05ea32f689) | 当控件完成一次布局时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [LinkClicked](#uid-3e32204247) | Raised when a link is clicked. |
+| [LinkClicked](#uid-3e32204247) | 链接被点击时抛出。 |
 | [Loaded](control.mdx#uid-c0a1ac2bc3) | 当控件在视觉树中完全构建完毕、且布局与渲染均已完成时发生。继承自 [Control](control.mdx)。 |
 | [LoadError](#uid-c1dbc7127b) | 加载失败时抛出。 |
 | [LosingFocus](../input/inputelement.mdx#uid-425fe24716) | 在控件即将失去焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -5883,7 +5883,7 @@ public event EventHandler<Avalonia.Controls.PdfDocumentLoadedEventArgs> Document
 
 ### LinkClicked 事件 {#linkclicked-event}
 
-Raised when a link is clicked.
+链接被点击时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.PdfLinkClickedEventArgs> LinkClicked

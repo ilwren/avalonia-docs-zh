@@ -191,7 +191,7 @@ int
 | [Anchor](#uid-f780461280) | Frozen anchor pointer. Shares its cached leaf with the source selection. |
 | [AnchorLeafOffset](#uid-a30e19d6b9) | 捕获时在 [Avalonia.Controls.Documents.Undo.SelectionSnapshot.Anchor](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot.Anchor) 叶节点内的偏移量。 |
 | [IsEmpty](#uid-0882690688) | True when the anchor and moving pointers coincide. |
-| [Moving](#uid-dec8c38557) | Frozen caret / moving pointer. |
+| [Moving](#uid-dec8c38557) | 插入符冻结 / 指针移动。 |
 | [MovingLeafOffset](#uid-aae6a7125c) | 捕获时在 [Avalonia.Controls.Documents.Undo.SelectionSnapshot.Moving](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot.Moving) 叶节点内的偏移量。 |
 
 <section className="apiref-page__member-entry">
@@ -242,7 +242,7 @@ public bool IsEmpty { get; set; }
 
 ### Moving 属性 {#moving-property}
 
-Frozen caret / moving pointer.
+插入符冻结 / 指针移动。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer Moving { get; set; }

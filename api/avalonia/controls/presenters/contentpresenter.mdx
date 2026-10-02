@@ -234,7 +234,7 @@ and is particularly useful in unit tests.
 | [IsVisible](../../visual.mdx#uid-da2b0ca167) | 获取或设置一个值，指示该控件是否可见。继承自 [Visual](../../visual.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [KeyBindings](../../input/inputelement.mdx#uid-827a5420b2) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [LetterSpacing](#uid-f3b784f4c0) | Gets or sets the letter spacing |
+| [LetterSpacing](#uid-f3b784f4c0) | 获取或设置字间距 |
 | [LineHeight](#uid-ccfe532b6d) | 获取或设置行高 |
 | [Margin](../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxHeight](../../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -256,9 +256,9 @@ and is particularly useful in unit tests.
 | [TabIndex](../../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [Tag](../control.mdx#uid-2790b0c958) | 获取或设置附加在控件上的用户自定义对象。继承自 [Control](../control.mdx)。 |
 | [TemplatedParent](../../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [TextAlignment](#uid-d442ab642a) | Gets or sets the text alignment |
-| [TextTrimming](#uid-45488c1795) | Gets or sets the text trimming |
-| [TextWrapping](#uid-2b8116b736) | Gets or sets the text wrapping |
+| [TextAlignment](#uid-d442ab642a) | 获取或设置文本对齐方式 |
+| [TextTrimming](#uid-45488c1795) | 获取或设置文本裁剪方式 |
+| [TextWrapping](#uid-2b8116b736) | 获取或设置文本换行方式 |
 | [Theme](../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -497,7 +497,7 @@ public Avalonia.Layout.HorizontalAlignment HorizontalContentAlignment { get; set
 
 ### LetterSpacing 属性 {#letterspacing-property}
 
-Gets or sets the letter spacing
+获取或设置字间距
 
 ```csharp
 public double LetterSpacing { get; set; }
@@ -567,7 +567,7 @@ public bool RecognizesAccessKey { get; set; }
 
 ### TextAlignment 属性 {#textalignment-property}
 
-Gets or sets the text alignment
+获取或设置文本对齐方式
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }
@@ -581,7 +581,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 ### TextTrimming 属性 {#texttrimming-property}
 
-Gets or sets the text trimming
+获取或设置文本裁剪方式
 
 ```csharp
 public Avalonia.Media.TextTrimming TextTrimming { get; set; }
@@ -595,7 +595,7 @@ public Avalonia.Media.TextTrimming TextTrimming { get; set; }
 
 ### TextWrapping 属性 {#textwrapping-property}
 
-Gets or sets the text wrapping
+获取或设置文本换行方式
 
 ```csharp
 public Avalonia.Media.TextWrapping TextWrapping { get; set; }

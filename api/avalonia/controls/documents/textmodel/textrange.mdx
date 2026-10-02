@@ -113,7 +113,7 @@ The end position.
 | [Overlaps](#uid-97e89eec06) | Checks if this range overlaps with another range. |
 | [ReplaceText（2 个重载）](#uid-860443a3a7) | 暂无摘要。 |
 | [ReplaceTextAt](#uid-a1020d16a5) | Replaces text at the specified range relative to this range. Manages transaction automatically. |
-| [Save](#uid-0ebfb1caa1) | Writes this range to a stream. |
+| [Save](#uid-0ebfb1caa1) | 把该范围写入一个流。 |
 | [SetImageAltText](#uid-2113b9397b) | Sets the alternative text of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable change. |
 | [SetImageSize](#uid-15eda4245a) | Sets the display size of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable change. Pass [double.NaN](xref:System.Double.NaN) for a dimension to use the image's intrinsic pixel size. |
 | [ToString](#uid-2b81309a1f) | 暂无摘要。 |
@@ -836,7 +836,7 @@ A [TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) after th
 
 ### Save 方法 {#save-method}
 
-Writes this range to a stream.
+把该范围写入一个流。
 
 ```csharp
 public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer)
@@ -1087,7 +1087,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; se
 
 | 名称 | 说明 |
 | --- | --- |
-| [Changed](#uid-ea82965a4b) | Occurs when the range changes. |
+| [Changed](#uid-ea82965a4b) | 范围发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
@@ -1095,7 +1095,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; se
 
 ### Changed 事件 {#changed-event}
 
-Occurs when the range changes.
+范围发生变化时发生。
 
 ```csharp
 public event EventHandler Changed

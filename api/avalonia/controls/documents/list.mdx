@@ -133,7 +133,7 @@ public List()
 | [LastChildElement](richtextelement.mdx#uid-ea00d129b3) | 获取文档树中最后一个直接子元素；若不存在则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [LetterSpacing](richtextelement.mdx#uid-a0f0542ed1) | 获取或设置字间距。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [LineHeight](block.mdx#uid-0b29471292) | 获取或设置块内各行文本的最小行高。继承自 [Block](block.mdx)。 |
-| [ListItems](#uid-cca1573825) | Gets the list item collection. |
+| [ListItems](#uid-cca1573825) | 获取列表项集合。 |
 | [Margin](block.mdx#uid-667a6f2ab4) | 获取或设置块外侧的外边距。继承自 [Block](block.mdx)。 |
 | [MarkerAlignment](#uid-49d4c9bb5e) | Gets or sets how the marker is aligned within its column (Word's `w:lvlJc`). [Avalonia.Media.TextAlignment.Left](xref:Avalonia.Media.TextAlignment.Left) starts every marker at the same x; [Avalonia.Media.TextAlignment.Right](xref:Avalonia.Media.TextAlignment.Right) ends every marker at the same x with a consistent gap to the content, matching how Word aligns e.g. roman-numeral markers. The property default is [Avalonia.Media.TextAlignment.Left](xref:Avalonia.Media.TextAlignment.Left), but a list that never sets it renders numbered markers right-aligned and bullets left-aligned by convention. |
 | [MarkerOffset](#uid-7fbc6aaacc) | Gets or sets the offset between the list marker and the item content. |
@@ -161,7 +161,7 @@ public List()
 
 ### ListItems 属性 {#listitems-property}
 
-Gets the list item collection.
+获取列表项集合。
 
 ```csharp
 public Avalonia.Controls.Documents.RichTextElementCollection<T><Avalonia.Controls.Documents.ListItem> ListItems { get; set; }

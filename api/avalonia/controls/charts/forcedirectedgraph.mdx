@@ -181,7 +181,7 @@ public void ReplayAnimation()
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Easing](chartbase.mdx#uid-adaaf54336) | 获取或设置图表动画的缓动函数。它通过各类动画图表与数据系列渲染器共用的图表动画进度管线生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [EdgeSourcePath](#uid-9f3db23486) | Gets or sets the property path for edge source IDs. |
-| [EdgesSource](#uid-0264a9e552) | Gets or sets the edges source. |
+| [EdgesSource](#uid-0264a9e552) | 获取或设置边的数据源。 |
 | [EdgeTargetPath](#uid-6c97f66a7a) | Gets or sets the property path for edge target IDs. |
 | [Effect](../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../visual.mdx)。 |
 | [FlowDirection](../../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../../visual.mdx)。 |
@@ -230,7 +230,7 @@ public void ReplayAnimation()
 | [NodeIdPath](#uid-067e6125f6) | Gets or sets the property path for node IDs. |
 | [NodeLabelPath](#uid-d7f72cae6c) | 获取或设置节点标签所用的属性路径。 |
 | [NodeRadius](#uid-03a0aca4cb) | Gets or sets the radius of the nodes. |
-| [NodesSource](#uid-ceed3c19ce) | Gets or sets the nodes source. |
+| [NodesSource](#uid-ceed3c19ce) | 获取或设置节点的数据源。 |
 | [Opacity](../../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../../visual.mdx)。 |
 | [OpacityMask](../../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../../visual.mdx)。 |
 | [Padding](../primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -292,7 +292,7 @@ public string EdgeSourcePath { get; set; }
 
 ### EdgesSource 属性 {#edgessource-property}
 
-Gets or sets the edges source.
+获取或设置边的数据源。
 
 ```csharp
 public System.Collections.IEnumerable EdgesSource { get; set; }
@@ -362,7 +362,7 @@ public double NodeRadius { get; set; }
 
 ### NodesSource 属性 {#nodessource-property}
 
-Gets or sets the nodes source.
+获取或设置节点的数据源。
 
 ```csharp
 public System.Collections.IEnumerable NodesSource { get; set; }

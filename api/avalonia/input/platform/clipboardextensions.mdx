@@ -64,9 +64,9 @@ public class ClipboardExtensions
 | --- | --- |
 | [GetDataFormatsAsync](#uid-cbeb8b6ee4) | Gets a list containing the formats currently available from the clipboard. |
 | [SetBitmapAsync](#uid-a692e1644e) | Places a bitmap on the clipboard. |
-| [SetFileAsync](#uid-261202830d) | Places a file on the clipboard. |
+| [SetFileAsync](#uid-261202830d) | 把一个文件放到剪贴板上。 |
 | [SetFilesAsync](#uid-b5acdd9ee1) | 暂无摘要。 |
-| [SetTextAsync](#uid-27f8de40cc) | Places a text on the clipboard. |
+| [SetTextAsync](#uid-27f8de40cc) | 把一段文本放到剪贴板上。 |
 | [SetValueAsync](#uid-bd62710180) | 暂无摘要。 |
 | [SetValuesAsync](#uid-7776d74383) | 暂无摘要。 |
 | [TryGetBitmapAsync](#uid-eb3b91154a) | Returns a bitmap, if available, from the clipboard. |
@@ -150,7 +150,7 @@ System.Threading.Tasks.Task
 
 ### SetFileAsync 方法 {#setfileasync-method}
 
-Places a file on the clipboard.
+把一个文件放到剪贴板上。
 
 ```csharp
 public System.Threading.Tasks.Task SetFileAsync(Avalonia.Input.Platform.IClipboard clipboard, Avalonia.Platform.Storage.IStorageItem file)
@@ -217,7 +217,7 @@ System.Threading.Tasks.Task
 
 ### SetTextAsync 方法 {#settextasync-method}
 
-Places a text on the clipboard.
+把一段文本放到剪贴板上。
 
 ```csharp
 public System.Threading.Tasks.Task SetTextAsync(Avalonia.Input.Platform.IClipboard clipboard, string text)

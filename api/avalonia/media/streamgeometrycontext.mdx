@@ -101,7 +101,7 @@ The platform-specific implementation.
 | [ArcTo](#uid-be50654767) | 画一段圆弧到指定点。 |
 | [BeginFigure](#uid-11ae2a0392) | 开始一段新图形。 |
 | [CubicBezierTo](#uid-4f50e8a6a8) | 画一条贝塞尔曲线到指定点。 |
-| [Dispose](#uid-944781a4ee) | Finishes the drawing session. |
+| [Dispose](#uid-944781a4ee) | 结束本次绘制会话。 |
 | [EndFigure](#uid-f3cfbc992f) | 结束由 [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29) 开始的那段图形。 |
 | [LineTo](#uid-10f817d4ee) | 画一条直线到指定点。 |
 | [PreciseArcTo](#uid-06926b62a0) | Draws an arc to the specified point using polylines, quadratic or cubic Bezier curves Significantly more precise when drawing elliptic arcs with extreme width:height ratios. |
@@ -224,7 +224,7 @@ public void CubicBezierTo(Avalonia.Point controlPoint1, Avalonia.Point controlPo
 
 ### Dispose 方法 {#dispose-method}
 
-Finishes the drawing session.
+结束本次绘制会话。
 
 ```csharp
 public void Dispose()
