@@ -70,7 +70,7 @@ public class PdfAnnotationInfo
 | [InteriorColor](#uid-2b84795a60) | 填充/内部颜色；未设置时为 `null`。 |
 | [IsStar](#uid-4cab105a1d) | Whether a polygon annotation represents a star shape. |
 | [LineEnd](#uid-b1d85ae2d9) | 线条批注的终点；若无则为 `null`。 |
-| [LineStart](#uid-4002538702) | Start point for line annotations, or `null`. |
+| [LineStart](#uid-4002538702) | 线条批注的起点；若无则为 `null`。 |
 | [PageIndex](#uid-e0a4414b7a) | Zero-based page index this annotation belongs to. |
 | [Sides](#uid-062b57080c) | Number of sides (polygon) or spikes (star), or `null`. |
 | [Type](#uid-49398e681e) | 批注的子类型。 |
@@ -236,7 +236,7 @@ public Nullable<Avalonia.Controls.Pdf.Core.PdfPoint> LineEnd { get; set; }
 
 ### LineStart 属性 {#linestart-property}
 
-Start point for line annotations, or `null`.
+线条批注的起点；若无则为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfPoint> LineStart { get; set; }

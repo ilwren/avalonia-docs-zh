@@ -154,7 +154,7 @@ public void Merge(Avalonia.AvaloniaPropertyMetadata baseMetadata, Avalonia.Avalo
 
 | 名称 | 说明 |
 | --- | --- |
-| [CoerceValue](#uid-a439fc7f25) | Gets the value coercion callback, if any. |
+| [CoerceValue](#uid-a439fc7f25) | 获取值强制校正回调（若有）。 |
 | [DefaultBindingMode](avaloniapropertymetadata.mdx#uid-b6d03b8752) | Gets the default binding mode for the property. Inherited from [AvaloniaPropertyMetadata](avaloniapropertymetadata.mdx). |
 | [DefaultValue](#uid-2232ffa60f) | 获取该属性的默认值。 |
 | [EnableDataValidation](avaloniapropertymetadata.mdx#uid-aa782b0da1) | Gets a value indicating whether the property is interested in data validation. Inherited from [AvaloniaPropertyMetadata](avaloniapropertymetadata.mdx). |
@@ -166,7 +166,7 @@ public void Merge(Avalonia.AvaloniaPropertyMetadata baseMetadata, Avalonia.Avalo
 
 ### CoerceValue 属性 {#coercevalue-property}
 
-Gets the value coercion callback, if any.
+获取值强制校正回调（若有）。
 
 ```csharp
 public Func<Avalonia.AvaloniaObject, TValue, TValue> CoerceValue { get; set; }

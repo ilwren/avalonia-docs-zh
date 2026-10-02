@@ -176,7 +176,7 @@ public NumericUpDown()
 | [IsLoaded](control.mdx#uid-7b8aa52b02) | 获取一个值，指示控件是否已在视觉树中完全构建完毕，且布局与渲染均已完成。继承自 [Control](control.mdx)。 |
 | [IsMeasureValid](../layout/layoutable.mdx#uid-2b3ce6ad30) | 获取一个值，指示控件的布局测量结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsPointerOver](../input/inputelement.mdx#uid-09e1553c00) | 获取一个值，指示指针当前是否悬停在控件上方。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [IsReadOnly](#uid-484749b193) | Gets or sets if the control is read only. |
+| [IsReadOnly](#uid-484749b193) | 获取或设置该控件是否为只读。 |
 | [IsTabStop](../input/inputelement.mdx#uid-455d73fca4) | 获取或设置一个值，指示该控件是否参与 Tab 键导航。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsVisible](../visual.mdx#uid-da2b0ca167) | 获取或设置一个值，指示该控件是否可见。继承自 [Visual](../visual.mdx)。 |
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -190,7 +190,7 @@ public NumericUpDown()
 | [Minimum](#uid-5e459949bc) | 获取或设置允许的最小值。 |
 | [MinWidth](../layout/layoutable.mdx#uid-5bd3b5bb2c) | 获取或设置元素的最小宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [Name](../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../styledelement.mdx)。 |
-| [NumberFormat](#uid-3eea2fc663) | Gets or sets the current NumberFormatInfo |
+| [NumberFormat](#uid-3eea2fc663) | 获取或设置当前的 NumberFormatInfo |
 | [Opacity](../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../visual.mdx)。 |
 | [OpacityMask](../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../visual.mdx)。 |
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
@@ -340,7 +340,7 @@ public object InnerRightContent { get; set; }
 
 ### IsReadOnly 属性 {#isreadonly-property}
 
-Gets or sets if the control is read only.
+获取或设置该控件是否为只读。
 
 ```csharp
 public bool IsReadOnly { get; set; }
@@ -382,7 +382,7 @@ public decimal Minimum { get; set; }
 
 ### NumberFormat 属性 {#numberformat-property}
 
-Gets or sets the current NumberFormatInfo
+获取或设置当前的 NumberFormatInfo
 
 ```csharp
 public System.Globalization.NumberFormatInfo NumberFormat { get; set; }

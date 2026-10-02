@@ -90,7 +90,7 @@ public ChartSelectionChangingEventArgs(System.Collections.IList newSelection, Sy
 | [NewIndexes](#uid-26f83726b6) | Gets the editable requested indexes for index-based selection surfaces. This aliases [Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.NewSelection](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.NewSelection) and is meaningful only when the sender selects data points by index. |
 | [NewSelection](#uid-51748ce50d) | Gets the editable snapshot that represents the requested new selection. |
 | [OldIndexes](#uid-1908aaf00f) | Gets a snapshot of the previous indexes for index-based selection surfaces. This aliases [Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.OldSelection](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.OldSelection) and is meaningful only when the sender selects data points by index. |
-| [OldSelection](#uid-aab084a31c) | Gets a snapshot of the previous selection. |
+| [OldSelection](#uid-aab084a31c) | 获取先前选择状态的快照。 |
 
 <section className="apiref-page__member-entry">
 
@@ -144,7 +144,7 @@ public System.Collections.IList OldIndexes { get; set; }
 
 ### OldSelection 属性 {#oldselection-property}
 
-Gets a snapshot of the previous selection.
+获取先前选择状态的快照。
 
 ```csharp
 public System.Collections.IList OldSelection { get; set; }

@@ -1193,7 +1193,7 @@ public Avalonia.StyledProperty<Avalonia.Layout.VerticalAlignment> VerticalConten
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
 | [Closed](#uid-91c68016c4) | Occurs when [Avalonia.Controls.DrawerPage.IsOpen](xref:Avalonia.Controls.DrawerPage.IsOpen) changes to and closing is not cancelled. |
-| [Closing](#uid-0a1cec6ca6) | Occurs when the drawer is about to close. |
+| [Closing](#uid-0a1cec6ca6) | 抽屉即将关闭时发生。 |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [DataContextChanged](../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -1266,7 +1266,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Closed
 
 ### Closing 事件 {#closing-event}
 
-Occurs when the drawer is about to close.
+抽屉即将关闭时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.DrawerClosingEventArgs> Closing

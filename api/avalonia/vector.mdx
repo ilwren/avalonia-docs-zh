@@ -100,7 +100,7 @@ Y 分量。
 | [Abs](#uid-46c877565a) | 返回一个向量，其各元素为指定向量对应元素的绝对值。 |
 | [Add](#uid-5223085307) | 把第二个向量加到第一个向量上 |
 | [Clamp](#uid-a7f3ebdb43) | 把向量限制在最小值与最大值之间。 |
-| [Cross](#uid-fe0327d565) | Returns the cross product of two vectors. |
+| [Cross](#uid-fe0327d565) | 返回两个向量的叉积。 |
 | [Deconstruct](#uid-2a859cf516) | 暂无摘要。 |
 | [Distance](#uid-f1e68aa94c) | 计算给定两点之间的欧几里得距离。 |
 | [DistanceSquared](#uid-8f960f5cea) | Returns the Euclidean distance squared between two specified points |
@@ -112,7 +112,7 @@ Y 分量。
 | [Min](#uid-e5a3e14aec) | 返回一个向量，其各元素为两个指定向量中对应元素的较小者 |
 | [Multiply（2 个重载）](#uid-3669f7bd63) | 用第一个向量乘以第二个向量。 |
 | [NearlyEquals](#uid-2fc575cc4e) | 判断两个向量是否近似相等（数值比较）。 |
-| [Negate (2 overloads)](#uid-318cdc1482) | Returns a negated version of this vector. |
+| [Negate (2 overloads)](#uid-318cdc1482) | 返回该向量取反后的结果。 |
 | [Normalize (2 overloads)](#uid-f0c0c4d580) | 返回该向量的归一化形式。 |
 | [Parse](#uid-1bf83f4e65) | 解析 [Avalonia.Vector](xref:Avalonia.Vector) 字符串。 |
 | [Subtract](#uid-a968b81add) | 从第一个向量中减去第二个向量 |
@@ -208,7 +208,7 @@ public Avalonia.Vector Clamp(Avalonia.Vector value, Avalonia.Vector min, Avaloni
 
 ### Cross 方法 {#cross-method}
 
-Returns the cross product of two vectors.
+返回两个向量的叉积。
 
 ```csharp
 public double Cross(Avalonia.Vector a, Avalonia.Vector b)
@@ -653,7 +653,7 @@ bool
 
 #### Negate 方法 {#negate-method}
 
-Returns a negated version of this vector.
+返回该向量取反后的结果。
 
 ```csharp
 public Avalonia.Vector Negate()

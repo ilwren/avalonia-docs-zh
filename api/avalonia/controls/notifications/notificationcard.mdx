@@ -220,7 +220,7 @@ public void SetCloseOnClick(Avalonia.Controls.Button obj, bool value)
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HorizontalContentAlignment](../contentcontrol.mdx#uid-91c4dbcd1a) | 获取或设置内容在控件内的水平对齐方式。继承自 [ContentControl](../contentcontrol.mdx)。 |
 | [IsArrangeValid](../../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [IsClosed](#uid-b39c3d6671) | Determines if the notification is closed. |
+| [IsClosed](#uid-b39c3d6671) | 判断该通知是否已关闭。 |
 | [IsClosing](#uid-6f0728fa24) | Determines if the notification is already closing. |
 | [IsEffectivelyEnabled](../../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsEffectivelyVisible](../../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../../visual.mdx)。 |
@@ -243,7 +243,7 @@ public void SetCloseOnClick(Avalonia.Controls.Button obj, bool value)
 | [MinHeight](../../layout/layoutable.mdx#uid-822cd64c83) | 获取或设置元素的最小高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MinWidth](../../layout/layoutable.mdx#uid-5bd3b5bb2c) | 获取或设置元素的最小宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [NotificationType](#uid-dafe0896b9) | Gets or sets the type of the notification |
+| [NotificationType](#uid-dafe0896b9) | 获取或设置该通知的类型 |
 | [Opacity](../../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../../visual.mdx)。 |
 | [OpacityMask](../../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../../visual.mdx)。 |
 | [Padding](../primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -272,7 +272,7 @@ public void SetCloseOnClick(Avalonia.Controls.Button obj, bool value)
 
 ### IsClosed 属性 {#isclosed-property}
 
-Determines if the notification is closed.
+判断该通知是否已关闭。
 
 ```csharp
 public bool IsClosed { get; set; }
@@ -300,7 +300,7 @@ public bool IsClosing { get; set; }
 
 ### NotificationType 属性 {#notificationtype-property}
 
-Gets or sets the type of the notification
+获取或设置该通知的类型
 
 ```csharp
 public Avalonia.Controls.Notifications.NotificationType NotificationType { get; set; }

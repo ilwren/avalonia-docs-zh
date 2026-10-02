@@ -389,7 +389,7 @@ double
 | [Length](#uid-b0d5ceded3) | Gets the total character length of the document text. |
 | [PageBandDistance](#uid-23be7e570a) | Gets or sets the distance from the sheet edge to a page band in DIPs: the header's top sits this far below the sheet top, the footer's bottom this far above the sheet bottom. Null (the default) means [Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance](xref:Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance). |
 | [PageBands](#uid-390689d71b) | The page bands this document owns: nested documents placed by their role and rule or by a section's references. The text model is complete without an element facade: the bands snapshot and restore with the document, and [Avalonia.Controls.Documents.PageBandPolicy](xref:Avalonia.Controls.Documents.PageBandPolicy) resolves a page's band from the nodes. |
-| [PageHeight](#uid-045f5c3f7a) | The page height, or to grow with content. |
+| [PageHeight](#uid-045f5c3f7a) | 页面高度；为 null 时随内容增长。 |
 | [PagePadding](#uid-38114b978f) | The padding inside the page, or for the default. |
 | [PageSetup](#uid-730bf9a401) | Gets or sets the document-wide page setup: padding, page size and whether either dimension is fixed, the page-band distance and the footnote numbering. |
 | [PageWidth](#uid-6716adf2f7) | The page width, or to size to the viewport. |
@@ -637,7 +637,7 @@ public Avalonia.Controls.Documents.TextModel.TextPageBandCollection PageBands { 
 
 ### PageHeight 属性 {#pageheight-property}
 
-The page height, or to grow with content.
+页面高度；为 null 时随内容增长。
 
 ```csharp
 public Nullable<double> PageHeight { get; set; }

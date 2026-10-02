@@ -98,7 +98,7 @@ public PdfViewer()
 | [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [FindNext](#uid-8fc4e5ff0d) | Advances to the next search match (wraps around). |
 | [FindPrevious](#uid-652138c2c2) | Moves to the previous search match (wraps around). |
-| [FitHeight](#uid-abaf2c393d) | Fits the current page height to the view. |
+| [FitHeight](#uid-abaf2c393d) | 让当前页的高度适应视图。 |
 | [FitPage](#uid-fd19256949) | 让整页适应视图。 |
 | [FitWidth](#uid-63c966d5e8) | 让页宽适应视图。 |
 | [Focus](../input/inputelement.mdx#uid-6b657af583) | 让控件获得焦点。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -409,7 +409,7 @@ public void FindPrevious()
 
 ### FitHeight 方法 {#fitheight-method}
 
-Fits the current page height to the view.
+让当前页的高度适应视图。
 
 ```csharp
 public void FitHeight()
@@ -1812,7 +1812,7 @@ public void ZoomOut()
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
 | [ZoomInCommand](#uid-65904ecbba) | Gets a command that zooms in one step. Enabled while a document is loaded. |
-| [ZoomLevel](#uid-59e0a9eb34) | Gets or sets the zoom level (1.0 = 100%). |
+| [ZoomLevel](#uid-59e0a9eb34) | 获取或设置缩放级别（1.0 即 100%）。 |
 | [ZoomMode](#uid-7006434dbd) | Gets or sets how pages are sized to the viewport. Fit modes recalculate [Avalonia.Controls.PdfViewer.ZoomLevel](xref:Avalonia.Controls.PdfViewer.ZoomLevel) on resize; [Avalonia.Controls.PdfZoomMode.Manual](xref:Avalonia.Controls.PdfZoomMode.Manual) leaves it fixed. |
 | [ZoomOutCommand](#uid-6e9bf32c9f) | Gets a command that zooms out one step. Enabled while a document is loaded. |
 | [ZoomStep](#uid-58df621fa4) | Gets or sets the additive increment used by [Avalonia.Controls.PdfViewer.ZoomIn](xref:Avalonia.Controls.PdfViewer.ZoomIn) / [Avalonia.Controls.PdfViewer.ZoomOut](xref:Avalonia.Controls.PdfViewer.ZoomOut). When `0` (the default), the built-in preset levels are used instead. |
@@ -3700,7 +3700,7 @@ public System.Windows.Input.ICommand ZoomInCommand { get; set; }
 
 ### ZoomLevel 属性 {#zoomlevel-property}
 
-Gets or sets the zoom level (1.0 = 100%).
+获取或设置缩放级别（1.0 即 100%）。
 
 ```csharp
 public double ZoomLevel { get; set; }

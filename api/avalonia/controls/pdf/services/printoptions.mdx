@@ -82,7 +82,7 @@ public PrintOptions()
 | [Duplex](#uid-1bb5831206) | 双面打印模式。 |
 | [Orientation](#uid-47352dd3f3) | 页面方向。 |
 | [Owner](#uid-9983566154) | Top level that owns the system print dialog. The viewer fills this in automatically. |
-| [PageRange](#uid-13fa1893c3) | Page range to print (null for all pages). |
+| [PageRange](#uid-13fa1893c3) | 要打印的页面范围（为 null 表示全部页面）。 |
 | [Scaling](#uid-e7e515a4b4) | 页面缩放模式。 |
 | [Title](#uid-d975227f07) | 打印作业的文档标题。 |
 
@@ -177,7 +177,7 @@ public Avalonia.Controls.TopLevel Owner { get; set; }
 
 ### PageRange 属性 {#pagerange-property}
 
-Page range to print (null for all pages).
+要打印的页面范围（为 null 表示全部页面）。
 
 ```csharp
 public Avalonia.Controls.Pdf.Services.PageRange PageRange { get; set; }

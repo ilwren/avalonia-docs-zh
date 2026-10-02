@@ -246,7 +246,7 @@ public int Value { get; set; }
 | [Background](#uid-3bb9b4756e) | The job will be processed after other non-idle operations have completed. |
 | [ContextIdle](#uid-9301e8c271) | The job will be processed after background operations have completed. |
 | [DataBind](#uid-b54d0fc666) | The job will be processed with the same priority as data binding. |
-| [Default](#uid-11c7f8fe22) | The lowest foreground dispatcher priority |
+| [Default](#uid-11c7f8fe22) | 前台 dispatcher 中最低的优先级 |
 | [Inactive](#uid-9d6d87ac15) | A dispatcher priority for jobs that shouldn't be executed yet |
 | [Input](#uid-37e6f3144c) | The job will be processed with the same priority as input. |
 | [Invalid](#uid-e8a15fcd01) | 供 dispatcher 代码内部使用 |
@@ -319,7 +319,7 @@ public Avalonia.Threading.DispatcherPriority DataBind
 
 ### Default 字段 {#default-field}
 
-The lowest foreground dispatcher priority
+前台 dispatcher 中最低的优先级
 
 ```csharp
 public Avalonia.Threading.DispatcherPriority Default
