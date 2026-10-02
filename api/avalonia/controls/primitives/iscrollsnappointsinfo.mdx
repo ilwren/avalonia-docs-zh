@@ -56,7 +56,7 @@ public interface IScrollSnapPointsInfo
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetIrregularSnapPoints](#uid-293f2953f2) | Returns the set of distances between irregular snap points for a specified orientation and alignment. |
+| [GetIrregularSnapPoints](#uid-293f2953f2) | 返回在指定方向和对齐方式下，各个不规则吸附点之间的距离集合。 |
 | [GetRegularSnapPoints](#uid-86f0de3bae) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
@@ -65,7 +65,7 @@ public interface IScrollSnapPointsInfo
 
 ### GetIrregularSnapPoints 方法 {#getirregularsnappoints-method}
 
-Returns the set of distances between irregular snap points for a specified orientation and alignment.
+返回在指定方向和对齐方式下，各个不规则吸附点之间的距离集合。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<double> GetIrregularSnapPoints(Avalonia.Layout.Orientation orientation, Avalonia.Controls.Primitives.SnapPointsAlignment snapPointsAlignment)
@@ -159,8 +159,8 @@ public bool AreVerticalSnapPointsRegular { get; set; }
 
 | 名称 | 说明 |
 | --- | --- |
-| [HorizontalSnapPointsChanged](#uid-1915b35dc7) | Occurs when the measurements for horizontal snap points change. |
-| [VerticalSnapPointsChanged](#uid-c925cfc981) | Occurs when the measurements for vertical snap points change. |
+| [HorizontalSnapPointsChanged](#uid-1915b35dc7) | 水平吸附点的度量发生变化时发生。 |
+| [VerticalSnapPointsChanged](#uid-c925cfc981) | 垂直吸附点的度量发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
@@ -168,7 +168,7 @@ public bool AreVerticalSnapPointsRegular { get; set; }
 
 ### HorizontalSnapPointsChanged 事件 {#horizontalsnappointschanged-event}
 
-Occurs when the measurements for horizontal snap points change.
+水平吸附点的度量发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> HorizontalSnapPointsChanged
@@ -182,7 +182,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> HorizontalSnap
 
 ### VerticalSnapPointsChanged 事件 {#verticalsnappointschanged-event}
 
-Occurs when the measurements for vertical snap points change.
+垂直吸附点的度量发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> VerticalSnapPointsChanged

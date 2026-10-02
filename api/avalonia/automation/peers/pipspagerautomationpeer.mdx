@@ -115,7 +115,7 @@ The control associated with this peer.
 | [GetParent](automationpeer.mdx#uid-947969c77f) | 获取作为此 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) 父级的 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)。继承自 [AutomationPeer](automationpeer.mdx)。 |
 | [GetPlaceholderText](automationpeer.mdx#uid-1ced74e763) | 获取为与该自动化对等体关联的元素提供占位提示的文本。继承自 [AutomationPeer](automationpeer.mdx)。 |
 | [GetProvider](automationpeer.mdx#uid-ee05fc8d1e) | 继承自 [AutomationPeer](automationpeer.mdx)。 |
-| [GetSelection](#uid-ad6a0968a4) | Retrieves a provider for each child element that is selected. |
+| [GetSelection](#uid-ad6a0968a4) | 为每个被选中的子元素取得一个提供程序。 |
 | [HasKeyboardFocus](automationpeer.mdx#uid-5f0d3a3d10) | 获取一个值，指示与该自动化对等体关联的元素当前是否拥有键盘焦点。继承自 [AutomationPeer](automationpeer.mdx)。 |
 | [IsContentElement](automationpeer.mdx#uid-5202d69eb1) | 获取一个值，指示与该自动化对等体关联的元素是否承载了呈现给用户的数据。继承自 [AutomationPeer](automationpeer.mdx)。 |
 | [IsControlElement](automationpeer.mdx#uid-665cdd1957) | 获取一个值，指示用户是否会将该元素理解为可交互元素，或理解为构成图形界面中控件逻辑结构的一部分。继承自 [AutomationPeer](automationpeer.mdx)。 |
@@ -133,7 +133,7 @@ The control associated with this peer.
 
 ### GetSelection 方法 {#getselection-method}
 
-Retrieves a provider for each child element that is selected.
+为每个被选中的子元素取得一个提供程序。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Automation.Peers.AutomationPeer> GetSelection()
@@ -147,7 +147,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Automation.Peers.Automatio
 #### 备注 {#remarks}
 
 - Windows`ISelectionProvider.GetSelection`
-- macOS`NSAccessibilityProtocol.accessibilitySelectedChildren` (not implemented).
+- macOS`NSAccessibilityProtocol.accessibilitySelectedChildren`（尚未实现）。
 
 </section>
 

@@ -193,7 +193,7 @@ bool
 
 | 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariant](#uid-776bcbe4bf) | Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty. |
+| [ActualThemeVariant](#uid-776bcbe4bf) | 获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。 |
 | [Classes](#uid-b7b7edea05) | Gets or sets the styled element's classes. |
 | [DataContext](#uid-647f924a56) | Gets or sets the control's data context. |
 | [Dispatcher](avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
@@ -214,7 +214,7 @@ bool
 
 ### ActualThemeVariant 属性 {#actualthemevariant-property}
 
-Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty.
+获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant ActualThemeVariant { get; set; }
@@ -487,7 +487,7 @@ public Avalonia.StyledProperty<TValue><Avalonia.Styling.ControlTheme> ThemePrope
 
 | 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariantChanged](#uid-e69ef27e71) | Raised when the theme variant is changed on the element or an ancestor of the element. |
+| [ActualThemeVariantChanged](#uid-e69ef27e71) | 当该元素或其某个祖先上的主题变体发生变化时抛出。 |
 | [AttachedToLogicalTree](#uid-717aa68e85) | Raised when the styled element is attached to a rooted logical tree. |
 | [DataContextChanged](#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性变化时发生。 |
 | [DetachedFromLogicalTree](#uid-d9f5afa535) | Raised when the styled element is detached from a rooted logical tree. |
@@ -501,7 +501,7 @@ public Avalonia.StyledProperty<TValue><Avalonia.Styling.ControlTheme> ThemePrope
 
 ### ActualThemeVariantChanged 事件 {#actualthemevariantchanged-event}
 
-Raised when the theme variant is changed on the element or an ancestor of the element.
+当该元素或其某个祖先上的主题变体发生变化时抛出。
 
 ```csharp
 public event EventHandler ActualThemeVariantChanged

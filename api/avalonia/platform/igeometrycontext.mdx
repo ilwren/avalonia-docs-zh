@@ -65,9 +65,9 @@ public interface IGeometryContext
 | [ArcTo](#uid-528688a318) | 画一段圆弧到指定点。 |
 | [BeginFigure](#uid-59fecc3071) | 开始一段新图形。 |
 | [CubicBezierTo](#uid-50f83ecbba) | 画一条贝塞尔曲线到指定点。 |
-| [EndFigure](#uid-b37d0fd9b8) | Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29). |
+| [EndFigure](#uid-b37d0fd9b8) | 结束由 [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29) 开始的那段图形。 |
 | [LineTo](#uid-9a46d29fe4) | 画一条直线到指定点。 |
-| [QuadraticBezierTo](#uid-1eff7e8afa) | Draws a quadratic Bezier curve to the specified point. |
+| [QuadraticBezierTo](#uid-1eff7e8afa) | 画一条二次贝塞尔曲线到指定点。 |
 | [SetFillRule](#uid-f5a505acea) | Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure. |
 
 <section className="apiref-page__member-entry">
@@ -170,7 +170,7 @@ The second control point used to specify the shape of the curve.
 
 `endPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The destination point for the end of the curve.
+曲线终点所在的目标点。
 
 
 `isStroked` bool
@@ -186,7 +186,7 @@ The destination point for the end of the curve.
 
 ### EndFigure 方法 {#endfigure-method}
 
-Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29).
+结束由 [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29) 开始的那段图形。
 
 ```csharp
 public void EndFigure(bool isClosed)
@@ -233,7 +233,7 @@ The destination point.
 
 ### QuadraticBezierTo 方法 {#quadraticbezierto-method}
 
-Draws a quadratic Bezier curve to the specified point.
+画一条二次贝塞尔曲线到指定点。
 
 ```csharp
 public void QuadraticBezierTo(Avalonia.Point controlPoint, Avalonia.Point endPoint, bool isStroked)
@@ -248,7 +248,7 @@ The control point used to specify the shape of the curve.
 
 `endPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The destination point for the end of the curve.
+曲线终点所在的目标点。
 
 
 `isStroked` bool

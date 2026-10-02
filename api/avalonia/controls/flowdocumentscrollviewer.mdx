@@ -114,7 +114,7 @@ public FlowDocumentScrollViewer()
 | [ClearSelection](#uid-bf225079a7) | 清除当前选区。 |
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Copy](#uid-196a12e88c) | Copies the current selection to the clipboard without waiting for the clipboard write. |
+| [Copy](#uid-196a12e88c) | 把当前选区复制到剪贴板，不等待剪贴板写入完成。 |
 | [CopyAsync](#uid-31c8a480f5) | Copies the current selection to the clipboard as plain text. The returned task completes once the clipboard write has, and faults with whatever the platform clipboard threw. |
 | [EndInit](../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -202,7 +202,7 @@ public void ClearSelection()
 
 ### Copy 方法 {#copy-method}
 
-Copies the current selection to the clipboard without waiting for the clipboard write.
+把当前选区复制到剪贴板，不等待剪贴板写入完成。
 
 ```csharp
 public void Copy()

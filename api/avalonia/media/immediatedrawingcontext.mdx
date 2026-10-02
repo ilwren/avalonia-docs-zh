@@ -61,12 +61,12 @@ public class ImmediateDrawingContext
 | --- | --- |
 | [Dispose](#uid-2d411e2b08) | Disposes of any resources held by the [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext). |
 | [DrawBitmap (2 overloads)](#uid-78ded9e840) | Draws an bitmap. |
-| [DrawEllipse](#uid-6a8d2f378f) | Draws an ellipse with the specified Brush and Pen. |
+| [DrawEllipse](#uid-6a8d2f378f) | 用指定的 Brush 和 Pen 画一个椭圆。 |
 | [DrawGlyphRun](#uid-8e52f9db3c) | Draws a glyph run. |
 | [DrawLine](#uid-8fe6821f2c) | Draws a line. |
-| [DrawRectangle (2 overloads)](#uid-22a0fbf526) | Draws a rectangle with the specified Brush and Pen. |
+| [DrawRectangle (2 overloads)](#uid-22a0fbf526) | 用指定的 Brush 和 Pen 画一个矩形。 |
 | [FillRectangle](#uid-441055ae7b) | Draws a filled rectangle. |
-| [PushClip (2 overloads)](#uid-8a904d15d1) | Pushes a clip rectangle. |
+| [PushClip (2 overloads)](#uid-8a904d15d1) | 压入一个裁剪矩形。 |
 | [PushOpacity](#uid-303ee6ec70) | Pushes an opacity value. |
 | [PushOpacityMask](#uid-54458b5ed2) | Pushes an opacity mask. |
 | [PushPostTransform](#uid-4c5d73998c) | Pushes a matrix post-transformation. |
@@ -114,7 +114,7 @@ The bitmap.
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the output to draw to.
+输出中要绘制到的那块矩形。
 
 
 </section>
@@ -145,7 +145,7 @@ The rect in the image to draw.
 
 `destRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the output to draw to.
+输出中要绘制到的那块矩形。
 
 
 </section>
@@ -156,7 +156,7 @@ The rect in the output to draw to.
 
 ### DrawEllipse 方法 {#drawellipse-method}
 
-Draws an ellipse with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个椭圆。
 
 ```csharp
 public void DrawEllipse(Avalonia.Media.IImmutableBrush brush, Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Point center, double radiusX, double radiusY)
@@ -263,7 +263,7 @@ The second point of the line.
 
 #### DrawRectangle 方法 {#drawrectangle-method}
 
-Draws a rectangle with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个矩形。
 
 ```csharp
 public void DrawRectangle(Avalonia.Media.IImmutableBrush brush, Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Rect rect, double radiusX, double radiusY, Avalonia.Media.BoxShadows boxShadows)
@@ -382,7 +382,7 @@ The corner radius.
 
 #### PushClip 方法 {#pushclip-method}
 
-Pushes a clip rectangle.
+压入一个裁剪矩形。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushClip(Avalonia.Rect clip)
@@ -515,7 +515,7 @@ The matrix
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>
@@ -543,7 +543,7 @@ The matrix
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>
@@ -571,7 +571,7 @@ The matrix
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>
@@ -592,7 +592,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushTransformContainer
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>

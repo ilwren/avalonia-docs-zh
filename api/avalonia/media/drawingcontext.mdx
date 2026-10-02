@@ -61,15 +61,15 @@ public class DrawingContext
 | --- | --- |
 | [Custom](#uid-3173939add) | Draws a custom drawing operation |
 | [Dispose](#uid-7e988cb5bd) | 暂无摘要。 |
-| [DrawEllipse (2 overloads)](#uid-20f7294bf2) | Draws an ellipse with the specified Brush and Pen. |
+| [DrawEllipse (2 overloads)](#uid-20f7294bf2) | 用指定的 Brush 和 Pen 画一个椭圆。 |
 | [DrawGeometry (2 overloads)](#uid-e74ce18cb0) | Draws a geometry. |
 | [DrawGlyphRun](#uid-35674e50e5) | Draws a glyph run. |
 | [DrawImage (2 overloads)](#uid-492fc6db89) | Draws an image. |
 | [DrawLine](#uid-d5a6cf0d81) | Draws a line. |
-| [DrawRectangle (3 overloads)](#uid-d05ce290ae) | Draws a rectangle with the specified Brush and Pen. |
+| [DrawRectangle (3 overloads)](#uid-d05ce290ae) | 用指定的 Brush 和 Pen 画一个矩形。 |
 | [DrawText](#uid-9bbf20a539) | Draws text. |
 | [FillRectangle](#uid-3a2836cb4a) | Draws a filled rectangle. |
-| [PushClip (2 overloads)](#uid-581bbdf395) | Pushes a clip rectangle. |
+| [PushClip (2 overloads)](#uid-581bbdf395) | 压入一个裁剪矩形。 |
 | [PushEffect](#uid-5cbe64db83) | Pushes an effect. |
 | [PushGeometryClip](#uid-54c8cd9487) | Pushes a clip geometry. |
 | [PushOpacity](#uid-b8823fb27f) | Pushes an opacity value. |
@@ -121,7 +121,7 @@ public void Dispose()
 
 #### DrawEllipse 方法 {#drawellipse-method}
 
-Draws an ellipse with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个椭圆。
 
 ```csharp
 public void DrawEllipse(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, Avalonia.Point center, double radiusX, double radiusY)
@@ -167,7 +167,7 @@ If the pen is null, then no stoke is performed. If both the pen and the brush ar
 
 #### DrawEllipse 方法 {#drawellipse-method-1}
 
-Draws an ellipse with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个椭圆。
 
 ```csharp
 public void DrawEllipse(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, Avalonia.Rect rect)
@@ -314,7 +314,7 @@ The image.
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the output to draw to.
+输出中要绘制到的那块矩形。
 
 
 </section>
@@ -345,7 +345,7 @@ The rect in the image to draw.
 
 `destRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the output to draw to.
+输出中要绘制到的那块矩形。
 
 
 </section>
@@ -391,7 +391,7 @@ The second point of the line.
 
 #### DrawRectangle 方法 {#drawrectangle-method}
 
-Draws a rectangle with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个矩形。
 
 ```csharp
 public void DrawRectangle(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, Avalonia.Rect rect, double radiusX, double radiusY, Avalonia.Media.BoxShadows boxShadows)
@@ -444,7 +444,7 @@ If the pen is null, then no stroke is performed. If both the pen and the brush a
 
 #### DrawRectangle 方法 {#drawrectangle-method-1}
 
-Draws a rectangle with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个矩形。
 
 ```csharp
 public void DrawRectangle(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, Avalonia.RoundedRect rrect, Avalonia.Media.BoxShadows boxShadows)
@@ -577,7 +577,7 @@ The corner radius.
 
 #### PushClip 方法 {#pushclip-method}
 
-Pushes a clip rectangle.
+压入一个裁剪矩形。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushClip(Avalonia.Rect clip)
@@ -605,7 +605,7 @@ A disposable used to undo the clip rectangle.
 
 #### PushClip 方法 {#pushclip-method-1}
 
-Pushes a clip rectangle.
+压入一个裁剪矩形。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushClip(Avalonia.RoundedRect clip)
@@ -830,7 +830,7 @@ The matrix
 
 [Avalonia.Media.DrawingContext.PushedState](xref:Avalonia.Media.DrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>

@@ -60,9 +60,9 @@ public class ColorSlider
 
 ## 备注 {#remarks}
 
-The control class extends [Avalonia.Input.InputElement](xref:Avalonia.Input.InputElement) and adds the following features:
+该控件类扩展自 [Avalonia.Input.InputElement](xref:Avalonia.Input.InputElement)，并添加了以下功能：
 
-- A [Avalonia.Controls.Control.Tag](xref:Avalonia.Controls.Control.Tag) property to allow user-defined data to be attached to the control.
+- 一个 [Avalonia.Controls.Control.Tag](xref:Avalonia.Controls.Control.Tag) 属性，可用来把用户自定义数据挂到控件上。
 
 ## 构造函数 {#constructors}
 
@@ -140,7 +140,7 @@ public ColorSlider()
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Clip](../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../visual.mdx)。 |
 | [ClipToBounds](../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../visual.mdx)。 |
-| [Color](#uid-1db1e49a10) | Gets or sets the currently selected color in the RGB color model. |
+| [Color](#uid-1db1e49a10) | 获取或设置以 RGB 颜色模型表示的当前选中颜色。 |
 | [ColorComponent](#uid-aff42a56ec) | Gets or sets the color component represented by the slider. |
 | [ColorModel](#uid-19602ccd29) | Gets or sets the active color model used by the slider. |
 | [ContextFlyout](../control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](../control.mdx)。 |
@@ -166,7 +166,7 @@ public ColorSlider()
 | [HasMirrorTransform](../../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../../visual.mdx)。 |
 | [Height](../../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [HsvColor](#uid-998f623768) | Gets or sets the currently selected color in the HSV color model. |
+| [HsvColor](#uid-998f623768) | 获取或设置以 HSV 颜色模型表示的当前选中颜色。 |
 | [IsAlphaVisible](#uid-f05e6af42a) | Gets or sets a value indicating whether the alpha component is visible and rendered. When false, this ensures that the gradient is always visible and never transparent regardless of the actual color. This property is ignored when the alpha component itself is being displayed. |
 | [IsArrangeValid](../../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsDirectionReversed](../slider.mdx#uid-bd128a785b) | Gets or sets the direction of increasing value. Inherited from [Slider](../slider.mdx). |
@@ -229,7 +229,7 @@ public ColorSlider()
 
 ### Color 属性 {#color-property}
 
-Gets or sets the currently selected color in the RGB color model.
+获取或设置以 RGB 颜色模型表示的当前选中颜色。
 
 ```csharp
 public Avalonia.Media.Color Color { get; set; }
@@ -276,7 +276,7 @@ public Avalonia.Controls.ColorModel ColorModel { get; set; }
 
 ### HsvColor 属性 {#hsvcolor-property}
 
-Gets or sets the currently selected color in the HSV color model.
+获取或设置以 HSV 颜色模型表示的当前选中颜色。
 
 ```csharp
 public Avalonia.Media.HsvColor HsvColor { get; set; }
@@ -401,7 +401,7 @@ values while the [Avalonia.Media.Color](xref:Avalonia.Media.Color) struct uses b
 | [HorizontalAlignmentProperty](../../layout/layoutable.mdx#uid-43606c2354) | 定义 [Avalonia.Layout.Layoutable.HorizontalAlignment](xref:Avalonia.Layout.Layoutable.HorizontalAlignment) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HsvColorProperty](#uid-26f8e37676) | 定义 [Avalonia.Controls.Primitives.ColorSlider.HsvColor](xref:Avalonia.Controls.Primitives.ColorSlider.HsvColor) 属性。 |
 | [IsAlphaVisibleProperty](#uid-6978dc2801) | 定义 [Avalonia.Controls.Primitives.ColorSlider.IsAlphaVisible](xref:Avalonia.Controls.Primitives.ColorSlider.IsAlphaVisible) 属性。 |
-| [IsDirectionReversedProperty](../slider.mdx#uid-8925dcbad0) | Defines the [Avalonia.Controls.Slider.IsDirectionReversed](xref:Avalonia.Controls.Slider.IsDirectionReversed) property. Inherited from [Slider](../slider.mdx). |
+| [IsDirectionReversedProperty](../slider.mdx#uid-8925dcbad0) | 定义 [Avalonia.Controls.Slider.IsDirectionReversed](xref:Avalonia.Controls.Slider.IsDirectionReversed) 属性。继承自 [Slider](../slider.mdx)。 |
 | [IsEffectivelyEnabledProperty](../../input/inputelement.mdx#uid-df18a2cff1) | 定义 [Avalonia.Input.InputElement.IsEffectivelyEnabled](xref:Avalonia.Input.InputElement.IsEffectivelyEnabled) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsEnabledProperty](../../input/inputelement.mdx#uid-2f2893a804) | 定义 [Avalonia.Input.InputElement.IsEnabled](xref:Avalonia.Input.InputElement.IsEnabled) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsFocusedProperty](../../input/inputelement.mdx#uid-ec811cc35b) | 定义 [Avalonia.Input.InputElement.IsFocused](xref:Avalonia.Input.InputElement.IsFocused) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -412,7 +412,7 @@ values while the [Avalonia.Media.Color](xref:Avalonia.Media.Color) struct uses b
 | [IsPerceptiveProperty](#uid-e916830259) | 定义 [Avalonia.Controls.Primitives.ColorSlider.IsPerceptive](xref:Avalonia.Controls.Primitives.ColorSlider.IsPerceptive) 属性。 |
 | [IsPointerOverProperty](../../input/inputelement.mdx#uid-be6c8adde2) | 定义 [Avalonia.Input.InputElement.IsPointerOver](xref:Avalonia.Input.InputElement.IsPointerOver) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsRoundingEnabledProperty](#uid-a4a638c8c2) | 定义 [Avalonia.Controls.Primitives.ColorSlider.IsRoundingEnabled](xref:Avalonia.Controls.Primitives.ColorSlider.IsRoundingEnabled) 属性。 |
-| [IsSnapToTickEnabledProperty](../slider.mdx#uid-66f59aacfc) | Defines the [Avalonia.Controls.Slider.IsSnapToTickEnabled](xref:Avalonia.Controls.Slider.IsSnapToTickEnabled) property. Inherited from [Slider](../slider.mdx). |
+| [IsSnapToTickEnabledProperty](../slider.mdx#uid-66f59aacfc) | 定义 [Avalonia.Controls.Slider.IsSnapToTickEnabled](xref:Avalonia.Controls.Slider.IsSnapToTickEnabled) 属性。继承自 [Slider](../slider.mdx)。 |
 | [IsTabStopProperty](../../input/inputelement.mdx#uid-ed162e7441) | 定义 [Avalonia.Input.InputElement.IsTabStop](xref:Avalonia.Input.InputElement.IsTabStop) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsTemplateFocusTargetProperty](templatedcontrol.mdx#uid-e50dcff99d) | 定义 IsTemplateFocusTarget 附加属性。继承自 [TemplatedControl](templatedcontrol.mdx)。 |
 | [IsVisibleProperty](../../visual.mdx#uid-8e0edf21ac) | 定义 [Avalonia.Visual.IsVisible](xref:Avalonia.Visual.IsVisible) 属性。继承自 [Visual](../../visual.mdx)。 |
@@ -433,7 +433,7 @@ values while the [Avalonia.Media.Color](xref:Avalonia.Media.Color) struct uses b
 | [NameProperty](../../styledelement.mdx#uid-bcdbb9de56) | 定义 [Avalonia.StyledElement.Name](xref:Avalonia.StyledElement.Name) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [OpacityMaskProperty](../../visual.mdx#uid-aad2c3f7c2) | 定义 [Avalonia.Visual.OpacityMask](xref:Avalonia.Visual.OpacityMask) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [OpacityProperty](../../visual.mdx#uid-2a53e27b1f) | 定义 [Avalonia.Visual.Opacity](xref:Avalonia.Visual.Opacity) 属性。继承自 [Visual](../../visual.mdx)。 |
-| [OrientationProperty](../slider.mdx#uid-ee7a45a7e3) | Defines the [Avalonia.Controls.Slider.Orientation](xref:Avalonia.Controls.Slider.Orientation) property. Inherited from [Slider](../slider.mdx). |
+| [OrientationProperty](../slider.mdx#uid-ee7a45a7e3) | 定义 [Avalonia.Controls.Slider.Orientation](xref:Avalonia.Controls.Slider.Orientation) 属性。继承自 [Slider](../slider.mdx)。 |
 | [PaddingProperty](templatedcontrol.mdx#uid-8836c61358) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.Padding](xref:Avalonia.Controls.Primitives.TemplatedControl.Padding) 属性。继承自 [TemplatedControl](templatedcontrol.mdx)。 |
 | [ParentProperty](../../styledelement.mdx#uid-dc6481a488) | 定义 [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [PinchEndedEvent](../../input/inputelement.mdx#uid-3f6a3485dd) | 定义 [Avalonia.Input.InputElement.PinchEnded](xref:Avalonia.Input.InputElement.PinchEnded) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -470,9 +470,9 @@ values while the [Avalonia.Media.Color](xref:Avalonia.Media.Color) struct uses b
 | [TextInputEvent](../../input/inputelement.mdx#uid-b82dd03ac9) | 定义 [Avalonia.Input.InputElement.TextInput](xref:Avalonia.Input.InputElement.TextInput) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [TextInputMethodClientRequestedEvent](../../input/inputelement.mdx#uid-679852bb37) | 定义 [Avalonia.Input.InputElement.TextInputMethodClientRequested](xref:Avalonia.Input.InputElement.TextInputMethodClientRequested) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ThemeProperty](../../styledelement.mdx#uid-05852d7b9a) | 定义 [Avalonia.StyledElement.Theme](xref:Avalonia.StyledElement.Theme) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [TickFrequencyProperty](../slider.mdx#uid-464ab762ef) | Defines the [Avalonia.Controls.Slider.TickFrequency](xref:Avalonia.Controls.Slider.TickFrequency) property. Inherited from [Slider](../slider.mdx). |
-| [TickPlacementProperty](../slider.mdx#uid-590610277e) | Defines the [Avalonia.Controls.Slider.TickPlacement](xref:Avalonia.Controls.Slider.TickPlacement) property. Inherited from [Slider](../slider.mdx). |
-| [TicksProperty](../slider.mdx#uid-cc31f357eb) | Defines the [Avalonia.Controls.Slider.Ticks](xref:Avalonia.Controls.Slider.Ticks) property. Inherited from [Slider](../slider.mdx). |
+| [TickFrequencyProperty](../slider.mdx#uid-464ab762ef) | 定义 [Avalonia.Controls.Slider.TickFrequency](xref:Avalonia.Controls.Slider.TickFrequency) 属性。继承自 [Slider](../slider.mdx)。 |
+| [TickPlacementProperty](../slider.mdx#uid-590610277e) | 定义 [Avalonia.Controls.Slider.TickPlacement](xref:Avalonia.Controls.Slider.TickPlacement) 属性。继承自 [Slider](../slider.mdx)。 |
+| [TicksProperty](../slider.mdx#uid-cc31f357eb) | 定义 [Avalonia.Controls.Slider.Ticks](xref:Avalonia.Controls.Slider.Ticks) 属性。继承自 [Slider](../slider.mdx)。 |
 | [TransitionsProperty](../../animation/animatable.mdx#uid-c79f18fac2) | 定义 [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) 属性。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UnloadedEvent](../control.mdx#uid-382a8f6733) | 定义 [Avalonia.Controls.Control.Unloaded](xref:Avalonia.Controls.Control.Unloaded) 事件。继承自 [Control](../control.mdx)。 |
 | [UseLayoutRoundingProperty](../../layout/layoutable.mdx#uid-e6d86b68b5) | 定义 [Avalonia.Layout.Layoutable.UseLayoutRounding](xref:Avalonia.Layout.Layoutable.UseLayoutRounding) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |

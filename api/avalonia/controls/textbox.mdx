@@ -314,7 +314,7 @@ public void Undo()
 | [BorderThickness](primitives/templatedcontrol.mdx#uid-4e2cc431b4) | 获取或设置控件边框的粗细。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Bounds](../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../visual.mdx)。 |
 | [CacheMode](../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../visual.mdx)。 |
-| [CanCopy](#uid-9e68708071) | Property for determining if the Copy command can be executed. |
+| [CanCopy](#uid-9e68708071) | 用于判断能否执行复制命令的属性。 |
 | [CanCut](#uid-1b23e9b283) | Property for determining if the Cut command can be executed. |
 | [CanPaste](#uid-72eb7d88eb) | Property for determining if the Paste command can be executed. |
 | [CanRedo](#uid-3941dd5f1e) | Gets a value that indicates whether the redo stack has an action that can be redone |
@@ -352,8 +352,8 @@ public void Undo()
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalContentAlignment](#uid-aac511c2a6) | 获取或设置内容在控件内的水平对齐方式。 |
-| [InnerLeftContent](#uid-0d69af4ca0) | Gets or sets custom content that is positioned on the left side of the text layout box |
-| [InnerRightContent](#uid-07f1e039b6) | Gets or sets custom content that is positioned on the right side of the text layout box |
+| [InnerLeftContent](#uid-0d69af4ca0) | 获取或设置摆放在文本布局框左侧的自定义内容 |
+| [InnerRightContent](#uid-07f1e039b6) | 获取或设置摆放在文本布局框右侧的自定义内容 |
 | [IsArrangeValid](../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsEffectivelyEnabled](../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsEffectivelyVisible](../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../visual.mdx)。 |
@@ -457,7 +457,7 @@ public bool AcceptsTab { get; set; }
 
 ### CanCopy 属性 {#cancopy-property}
 
-Property for determining if the Copy command can be executed.
+用于判断能否执行复制命令的属性。
 
 ```csharp
 public bool CanCopy { get; set; }
@@ -625,7 +625,7 @@ public Avalonia.Layout.HorizontalAlignment HorizontalContentAlignment { get; set
 
 ### InnerLeftContent 属性 {#innerleftcontent-property}
 
-Gets or sets custom content that is positioned on the left side of the text layout box
+获取或设置摆放在文本布局框左侧的自定义内容
 
 ```csharp
 public object InnerLeftContent { get; set; }
@@ -639,7 +639,7 @@ public object InnerLeftContent { get; set; }
 
 ### InnerRightContent 属性 {#innerrightcontent-property}
 
-Gets or sets custom content that is positioned on the right side of the text layout box
+获取或设置摆放在文本布局框右侧的自定义内容
 
 ```csharp
 public object InnerRightContent { get; set; }

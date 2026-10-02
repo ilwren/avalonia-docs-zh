@@ -297,11 +297,11 @@ The number of rows in the selection.
 | 名称 | 说明 |
 | --- | --- |
 | [Count](#uid-80f392fb22) | Gets the number of cells currently selected. |
-| [IsCellSelectionModel](#uid-41a16315c0) | Gets a value indicating whether this is a cell selection model. |
+| [IsCellSelectionModel](#uid-41a16315c0) | 获取该模型是否为单元格级的选择模型。 |
 | [SelectedIndex](#uid-48f7e44756) | Gets or sets the index of the currently selected cell. |
 | [SelectedIndexes](#uid-14221c8b68) | Gets a read-only list of the indices of all selected cells. |
 | [SingleSelect](#uid-5eef67c7c1) | Gets or sets a value indicating whether only a single cell can be selected at a time. |
-| [Source](#uid-8703b78b1d) | Gets the data source for the selection model. |
+| [Source](#uid-8703b78b1d) | 获取选择模型所用的数据源。 |
 
 <section className="apiref-page__member-entry">
 
@@ -323,7 +323,7 @@ public int Count { get; set; }
 
 ### IsCellSelectionModel 属性 {#iscellselectionmodel-property}
 
-Gets a value indicating whether this is a cell selection model.
+获取该模型是否为单元格级的选择模型。
 
 ```csharp
 public bool IsCellSelectionModel { get; set; }
@@ -396,7 +396,7 @@ When set to false, additional cells can be selected by holding Shift.
 
 ### Source 属性 {#source-property}
 
-Gets the data source for the selection model.
+获取选择模型所用的数据源。
 
 ```csharp
 public System.Collections.IEnumerable Source { get; set; }

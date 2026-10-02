@@ -62,7 +62,7 @@ public interface IThemeVariantHost
 
 | 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariant](#uid-bdc494ff64) | Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty. |
+| [ActualThemeVariant](#uid-bdc494ff64) | 获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。 |
 
 <section className="apiref-page__member-entry">
 
@@ -70,7 +70,7 @@ public interface IThemeVariantHost
 
 ### ActualThemeVariant 属性 {#actualthemevariant-property}
 
-Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty.
+获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant ActualThemeVariant { get; set; }
@@ -88,7 +88,7 @@ Otherwise, current OS theme variant is returned.
 
 | 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariantChanged](#uid-9594a95b3e) | Raised when the theme variant is changed on the element or an ancestor of the element. |
+| [ActualThemeVariantChanged](#uid-9594a95b3e) | 当该元素或其某个祖先上的主题变体发生变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
@@ -96,7 +96,7 @@ Otherwise, current OS theme variant is returned.
 
 ### ActualThemeVariantChanged 事件 {#actualthemevariantchanged-event}
 
-Raised when the theme variant is changed on the element or an ancestor of the element.
+当该元素或其某个祖先上的主题变体发生变化时抛出。
 
 ```csharp
 public event EventHandler ActualThemeVariantChanged

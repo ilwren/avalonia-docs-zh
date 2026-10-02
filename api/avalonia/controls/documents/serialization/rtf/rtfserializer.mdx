@@ -64,13 +64,13 @@ Supports reading and writing RTF documents with:
 - Paragraph formatting: alignment, indentation
 - Unicode text
 
-This serializer is thread-safe for concurrent operations.
+该序列化器是线程安全的，可并发操作。
 
 ## 构造函数 {#constructors}
 
 | 名称 | 说明 |
 | --- | --- |
-| [RtfSerializer](#uid-72fca32a9e) | Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer](xref:Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer) with optional serialization options. |
+| [RtfSerializer](#uid-72fca32a9e) | 用可选的序列化选项初始化 [Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer](xref:Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer) 的新实例。 |
 
 <section className="apiref-page__member-entry">
 
@@ -78,7 +78,7 @@ This serializer is thread-safe for concurrent operations.
 
 ### RtfSerializer 构造函数 {#rtfserializer-constructor}
 
-Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer](xref:Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer) with optional serialization options.
+用可选的序列化选项初始化 [Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer](xref:Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer) 的新实例。
 
 ```csharp
 public RtfSerializer(Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions options)
@@ -98,7 +98,7 @@ Serialization options; defaults are used when .
 | 名称 | 说明 |
 | --- | --- |
 | [CanDeserialize](#uid-ad95b78f71) | 检查某个流看起来是否属于这种格式。 |
-| [Deserialize (2 overloads)](#uid-504444cde9) | 在调用线程上从流中反序列化出文档。 |
+| [Deserialize（2 个重载）](#uid-504444cde9) | 在调用线程上从流中反序列化出文档。 |
 | [DeserializeAsync](#uid-fbbc313289) | 在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29)。 |
 | [Serialize (2 overloads)](#uid-97b9f367f1) | Serializes a document snapshot to an RTF string. |
 | [SerializeAsync](#uid-2ef73fc9ef) | 在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Rtf.RtfSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29)。 |
@@ -137,7 +137,7 @@ bool
 
 <span id="uid-504444cde9"></span>
 
-### Deserialize overloads
+### Deserialize 的重载 {#deserialize-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -180,8 +180,8 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deser
 
 - [\`stream\` 为 null。](xref:System.ArgumentNullException)
 - [\`stream\` 不可读。](xref:System.ArgumentException)
-- [This serializer cannot read; see \[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead\](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead).](xref:System.NotSupportedException)
-- [The stream content is invalid for this format.](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
+- [该序列化器无法读取；参见 \[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead\](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead)。](xref:System.NotSupportedException)
+- [流中的内容不符合该格式。](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
 
 </section>
 

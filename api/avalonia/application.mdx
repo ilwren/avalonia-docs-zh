@@ -221,7 +221,7 @@ bool
 
 | 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariant](#uid-64e2c748c4) | Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty. |
+| [ActualThemeVariant](#uid-64e2c748c4) | 获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。 |
 | [ApplicationLifetime](#uid-a0da2fa113) | Application lifetime, use it for things like setting the main window and exiting the app from code Currently supported lifetimes are: - [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime) - [Avalonia.Controls.ApplicationLifetimes.ISingleViewApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.ISingleViewApplicationLifetime) - [Avalonia.Controls.ApplicationLifetimes.ISingleTopLevelApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.ISingleTopLevelApplicationLifetime) - [Avalonia.Controls.ApplicationLifetimes.IControlledApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.IControlledApplicationLifetime) |
 | [Current](#uid-6f6086e220) | Gets the current instance of the [Avalonia.Application](xref:Avalonia.Application) class. |
 | [DataContext](#uid-3090ece934) | Gets or sets the Applications's data context. |
@@ -240,7 +240,7 @@ bool
 
 ### ActualThemeVariant 属性 {#actualthemevariant-property}
 
-Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty.
+获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant ActualThemeVariant { get; set; }
@@ -486,7 +486,7 @@ public Avalonia.StyledProperty<Avalonia.Styling.ThemeVariant> RequestedThemeVari
 
 | 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariantChanged](#uid-cfaf9aa916) | Raised when the theme variant is changed on the element or an ancestor of the element. |
+| [ActualThemeVariantChanged](#uid-cfaf9aa916) | 当该元素或其某个祖先上的主题变体发生变化时抛出。 |
 | [PropertyChanged](avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
 | [ResourcesChanged](#uid-deb388f7cf) | Raised when the resources change on the element or an ancestor of the element. |
 
@@ -496,7 +496,7 @@ public Avalonia.StyledProperty<Avalonia.Styling.ThemeVariant> RequestedThemeVari
 
 ### ActualThemeVariantChanged 事件 {#actualthemevariantchanged-event}
 
-Raised when the theme variant is changed on the element or an ancestor of the element.
+当该元素或其某个祖先上的主题变体发生变化时抛出。
 
 ```csharp
 public event EventHandler ActualThemeVariantChanged

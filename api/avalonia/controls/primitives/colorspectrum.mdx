@@ -60,9 +60,9 @@ public class ColorSpectrum
 
 ## 备注 {#remarks}
 
-The control class extends [Avalonia.Input.InputElement](xref:Avalonia.Input.InputElement) and adds the following features:
+该控件类扩展自 [Avalonia.Input.InputElement](xref:Avalonia.Input.InputElement)，并添加了以下功能：
 
-- A [Avalonia.Controls.Control.Tag](xref:Avalonia.Controls.Control.Tag) property to allow user-defined data to be attached to the control.
+- 一个 [Avalonia.Controls.Control.Tag](xref:Avalonia.Controls.Control.Tag) 属性，可用来把用户自定义数据挂到控件上。
 
 ## 构造函数 {#constructors}
 
@@ -153,7 +153,7 @@ public void RaiseColorChanged()
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Clip](../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../visual.mdx)。 |
 | [ClipToBounds](../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../visual.mdx)。 |
-| [Color](#uid-de143482cf) | Gets or sets the currently selected color in the RGB color model. |
+| [Color](#uid-de143482cf) | 获取或设置以 RGB 颜色模型表示的当前选中颜色。 |
 | [Components](#uid-2c1a41b8df) | 获取或设置色谱所显示的那两个 HSV 颜色分量。 |
 | [ContextFlyout](../control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](../control.mdx)。 |
 | [ContextMenu](../control.mdx#uid-95e5e3ccc3) | 获取或设置控件的上下文菜单。继承自 [Control](../control.mdx)。 |
@@ -178,7 +178,7 @@ public void RaiseColorChanged()
 | [HasMirrorTransform](../../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../../visual.mdx)。 |
 | [Height](../../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [HsvColor](#uid-012db86e36) | Gets or sets the currently selected color in the HSV color model. |
+| [HsvColor](#uid-012db86e36) | 获取或设置以 HSV 颜色模型表示的当前选中颜色。 |
 | [IsArrangeValid](../../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsEffectivelyEnabled](../../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsEffectivelyVisible](../../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../../visual.mdx)。 |
@@ -235,7 +235,7 @@ public void RaiseColorChanged()
 
 ### Color 属性 {#color-property}
 
-Gets or sets the currently selected color in the RGB color model.
+获取或设置以 RGB 颜色模型表示的当前选中颜色。
 
 ```csharp
 public Avalonia.Media.Color Color { get; set; }
@@ -272,7 +272,7 @@ public Avalonia.Controls.ColorSpectrumComponents Components { get; set; }
 
 ### HsvColor 属性 {#hsvcolor-property}
 
-Gets or sets the currently selected color in the HSV color model.
+获取或设置以 HSV 颜色模型表示的当前选中颜色。
 
 ```csharp
 public Avalonia.Media.HsvColor HsvColor { get; set; }

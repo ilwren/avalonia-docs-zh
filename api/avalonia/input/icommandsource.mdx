@@ -90,7 +90,7 @@ The event sender.
 | --- | --- |
 | [Command](#uid-8148535dad) | The command that will be executed when the class is "invoked." Classes that implement this interface should enable or disable based on the command's CanExecute return value. The property may be implemented as read-write if desired. |
 | [CommandParameter](#uid-6f613dbc61) | The parameter that will be passed to the command when executing the command. The property may be implemented as read-write if desired. |
-| [IsEffectivelyEnabled](#uid-09a2634b4d) | Gets a value indicating whether this control and all its parents are enabled. |
+| [IsEffectivelyEnabled](#uid-09a2634b4d) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。 |
 
 <section className="apiref-page__member-entry">
 
@@ -129,7 +129,7 @@ public object CommandParameter { get; set; }
 
 ### IsEffectivelyEnabled 属性 {#iseffectivelyenabled-property}
 
-Gets a value indicating whether this control and all its parents are enabled.
+获取一个值，指示该控件及其所有父级是否均处于启用状态。
 
 ```csharp
 public bool IsEffectivelyEnabled { get; set; }

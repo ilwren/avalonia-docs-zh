@@ -88,9 +88,9 @@ public StandardAssetLoader(System.Reflection.Assembly assembly)
 
 | 名称 | 说明 |
 | --- | --- |
-| [Exists](#uid-cd2e4a5b72) | Checks if an asset with the specified URI exists. |
+| [Exists](#uid-cd2e4a5b72) | 检查指定 URI 的资产是否存在。 |
 | [GetAssembly](#uid-7ba9def467) | 暂无摘要。 |
-| [GetAssets](#uid-6f83c235fe) | Gets all assets of a folder and subfolders that match specified uri. |
+| [GetAssets](#uid-6f83c235fe) | 获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。 |
 | [InvalidateAssemblyCache (2 overloads)](#uid-371c85a4f3) | 暂无摘要。 |
 | [Open](#uid-11b09534e4) | 按请求的 URI 打开资产。 |
 | [OpenAndGetAssembly](#uid-11100a9b4f) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
@@ -103,7 +103,7 @@ public StandardAssetLoader(System.Reflection.Assembly assembly)
 
 ### Exists 方法 {#exists-method}
 
-Checks if an asset with the specified URI exists.
+检查指定 URI 的资产是否存在。
 
 ```csharp
 public bool Exists(Uri uri, Uri baseUri)
@@ -161,7 +161,7 @@ System.Reflection.Assembly
 
 ### GetAssets 方法 {#getassets-method}
 
-Gets all assets of a folder and subfolders that match specified uri.
+获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Uri> GetAssets(Uri uri, Uri baseUri)

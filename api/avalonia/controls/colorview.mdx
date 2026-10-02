@@ -63,9 +63,9 @@ public class ColorView
 
 ## 备注 {#remarks}
 
-The control class extends [Avalonia.Input.InputElement](xref:Avalonia.Input.InputElement) and adds the following features:
+该控件类扩展自 [Avalonia.Input.InputElement](xref:Avalonia.Input.InputElement)，并添加了以下功能：
 
-- A [Avalonia.Controls.Control.Tag](xref:Avalonia.Controls.Control.Tag) property to allow user-defined data to be attached to the control.
+- 一个 [Avalonia.Controls.Control.Tag](xref:Avalonia.Controls.Control.Tag) 属性，可用来把用户自定义数据挂到控件上。
 
 ## 构造函数 {#constructors}
 
@@ -143,7 +143,7 @@ public ColorView()
 | [Classes](../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Clip](../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../visual.mdx)。 |
 | [ClipToBounds](../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../visual.mdx)。 |
-| [Color](#uid-565abe5a2d) | Gets or sets the currently selected color in the RGB color model. |
+| [Color](#uid-565abe5a2d) | 获取或设置以 RGB 颜色模型表示的当前选中颜色。 |
 | [ColorModel](#uid-4e392ee7fc) | Gets or sets the active color model used by the slider. |
 | [ColorSpectrumComponents](#uid-dc82908013) | 获取或设置色谱所显示的那两个 HSV 颜色分量。 |
 | [ColorSpectrumShape](#uid-5dcb631483) | 获取或设置色谱显示成什么形状。 |
@@ -171,7 +171,7 @@ public ColorView()
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HexInputAlphaPosition](#uid-0bae0eeca6) | 获取或设置十六进制输入框中 alpha 分量相对于其他颜色分量的位置。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [HsvColor](#uid-5beafe132c) | Gets or sets the currently selected color in the HSV color model. |
+| [HsvColor](#uid-5beafe132c) | 获取或设置以 HSV 颜色模型表示的当前选中颜色。 |
 | [IsAccentColorsVisible](#uid-669d40d055) | 获取或设置一个值，指示是否在预览色旁一并显示强调色。 |
 | [IsAlphaEnabled](#uid-9309a51957) | 获取或设置一个值，指示是否启用 alpha 分量。停用（设为 false）时，alpha 分量会被固定为最大值，相关编辑控件也会被禁用。 |
 | [IsAlphaVisible](#uid-7606769d23) | Gets or sets a value indicating whether the alpha component editing controls (Slider(s) and [TextBox](xref:Avalonia.Controls.TextBox)) are visible. When hidden, the existing alpha component value is maintained. |
@@ -242,7 +242,7 @@ public ColorView()
 
 ### Color 属性 {#color-property}
 
-Gets or sets the currently selected color in the RGB color model.
+获取或设置以 RGB 颜色模型表示的当前选中颜色。
 
 ```csharp
 public Avalonia.Media.Color Color { get; set; }
@@ -327,7 +327,7 @@ public Avalonia.Controls.AlphaComponentPosition HexInputAlphaPosition { get; set
 
 ### HsvColor 属性 {#hsvcolor-property}
 
-Gets or sets the currently selected color in the HSV color model.
+获取或设置以 HSV 颜色模型表示的当前选中颜色。
 
 ```csharp
 public Avalonia.Media.HsvColor HsvColor { get; set; }

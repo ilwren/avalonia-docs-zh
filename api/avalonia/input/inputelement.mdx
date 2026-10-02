@@ -259,9 +259,9 @@ public void SetIsHoldWithMouseEnabled(Avalonia.StyledElement element, bool value
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsArrangeValid](../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [IsEffectivelyEnabled](#uid-48ba4c0379) | Gets a value indicating whether this control and all its parents are enabled. |
+| [IsEffectivelyEnabled](#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。 |
 | [IsEffectivelyVisible](../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../visual.mdx)。 |
-| [IsEnabled](#uid-31817dbbc9) | Gets or sets a value indicating whether the control is enabled for user interaction. |
+| [IsEnabled](#uid-31817dbbc9) | 获取或设置一个值，指示该控件是否接受用户交互。 |
 | [IsFocused](#uid-e4cd1a3717) | Gets a value indicating whether the control is focused. |
 | [IsHitTestVisible](#uid-11cb006f8b) | Gets or sets a value indicating whether the control is considered for hit testing. |
 | [IsInitialized](../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -341,7 +341,7 @@ public Avalonia.Input.GestureRecognizers.GestureRecognizerCollection GestureReco
 
 ### IsEffectivelyEnabled 属性 {#iseffectivelyenabled-property}
 
-Gets a value indicating whether this control and all its parents are enabled.
+获取一个值，指示该控件及其所有父级是否均处于启用状态。
 
 ```csharp
 public bool IsEffectivelyEnabled { get; set; }
@@ -361,7 +361,7 @@ controls. The [Avalonia.Input.IInputElement.IsEffectivelyEnabled](xref:Avalonia.
 
 ### IsEnabled 属性 {#isenabled-property}
 
-Gets or sets a value indicating whether the control is enabled for user interaction.
+获取或设置一个值，指示该控件是否接受用户交互。
 
 ```csharp
 public bool IsEnabled { get; set; }

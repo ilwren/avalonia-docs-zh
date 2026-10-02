@@ -65,7 +65,7 @@ Supports all block and inline types with their full formatting properties.
 Uses [System.Xml.XmlReader](xref:System.Xml.XmlReader) and [System.Xml.XmlWriter](xref:System.Xml.XmlWriter)
 for parsing and generation, avoiding dependency on Avalonia's XAML runtime loader.
 
-This serializer is thread-safe for concurrent operations.
+该序列化器是线程安全的，可并发操作。
 
 ## 构造函数 {#constructors}
 
@@ -97,7 +97,7 @@ public XamlSerializer()
 
 #### XamlSerializer 构造函数 {#xamlserializer-constructor-1}
 
-Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer](xref:Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer) with optional serialization options.
+用可选的序列化选项初始化 [Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer](xref:Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer) 的新实例。
 
 ```csharp
 public XamlSerializer(Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions options)
@@ -117,7 +117,7 @@ Serialization options; defaults are used when .
 | 名称 | 说明 |
 | --- | --- |
 | [CanDeserialize](#uid-1d6095dbf1) | 检查某个流看起来是否属于这种格式。 |
-| [Deserialize (2 overloads)](#uid-1ae1f33b1c) | 在调用线程上从流中反序列化出文档。 |
+| [Deserialize（2 个重载）](#uid-1ae1f33b1c) | 在调用线程上从流中反序列化出文档。 |
 | [DeserializeAsync](#uid-6817ed128e) | 在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29)。 |
 | [Serialize (2 overloads)](#uid-385644ad57) | Serializes a document snapshot to a XAML string. |
 | [SerializeAsync](#uid-521662fae0) | 在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Xaml.XamlSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29)。 |
@@ -156,7 +156,7 @@ bool
 
 <span id="uid-1ae1f33b1c"></span>
 
-### Deserialize overloads
+### Deserialize 的重载 {#deserialize-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -199,8 +199,8 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deser
 
 - [\`stream\` 为 null。](xref:System.ArgumentNullException)
 - [\`stream\` 不可读。](xref:System.ArgumentException)
-- [This serializer cannot read; see \[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead\](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead).](xref:System.NotSupportedException)
-- [The stream content is invalid for this format.](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
+- [该序列化器无法读取；参见 \[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead\](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead)。](xref:System.NotSupportedException)
+- [流中的内容不符合该格式。](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
 
 </section>
 

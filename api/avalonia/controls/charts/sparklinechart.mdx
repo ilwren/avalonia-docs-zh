@@ -225,7 +225,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
-| [ShowMarkers](#uid-2254101d12) | Gets or sets whether to show markers at each data point. |
+| [ShowMarkers](#uid-2254101d12) | 获取或设置是否在每个数据点处显示标记。 |
 | [ShowMinMax](#uid-9e09daad96) | Gets or sets whether to highlight minimum and maximum values. |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [SparklineType](#uid-6e84b0ea01) | Gets or sets the type of sparkline visualization (Line, Bar, Area, WinLoss). |
@@ -241,7 +241,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ToggleSeriesVisibility](chartbase.mdx#uid-9c88230ede) | 获取或设置点击图例项是否切换数据系列的可见性。该设置仅对图例代表可隐藏数据系列或类别的图表有效；图例为说明性刻度的图表会将此值强制改回 。继承自 [ChartBase](chartbase.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [ValuePath](#uid-ec530fc881) | Gets or sets the property path to extract values from data items. |
+| [ValuePath](#uid-ec530fc881) | 获取或设置用于从数据项中取值的属性路径。 |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Width](../../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [WinBrush](#uid-941de978a3) | Gets or sets the brush used for positive values in [Avalonia.Controls.Charts.SparklineType.WinLoss](xref:Avalonia.Controls.Charts.SparklineType.WinLoss) mode. |
@@ -324,7 +324,7 @@ public Avalonia.Media.IBrush LossBrush { get; set; }
 
 ### ShowMarkers 属性 {#showmarkers-property}
 
-Gets or sets whether to show markers at each data point.
+获取或设置是否在每个数据点处显示标记。
 
 ```csharp
 public bool ShowMarkers { get; set; }
@@ -380,7 +380,7 @@ public double StrokeThickness { get; set; }
 
 ### ValuePath 属性 {#valuepath-property}
 
-Gets or sets the property path to extract values from data items.
+获取或设置用于从数据项中取值的属性路径。
 
 ```csharp
 public string ValuePath { get; set; }

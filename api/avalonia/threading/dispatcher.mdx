@@ -76,7 +76,7 @@ public class Dispatcher
 | [InvokeAsync (10 overloads)](#uid-9073eca221) | Executes the specified Action asynchronously on the thread that the Dispatcher was created on. |
 | [InvokeShutdown](#uid-c0fd05eaaa) | Initiates the shutdown process of the Dispatcher synchronously. |
 | [MainLoop](#uid-d9a8bdca2b) | Runs the dispatcher's main loop. |
-| [Post (2 overloads)](#uid-83e5d7c4e0) | Posts an action that will be invoked on the dispatcher thread. |
+| [Post (2 overloads)](#uid-83e5d7c4e0) | 投递一个将在 dispatcher 线程上调用的操作。 |
 | [PushFrame](#uid-2d9c72f33e) | Push an execution frame. |
 | [Resume (2 overloads)](#uid-d8b7553b3d) | Creates an awaitable object that asynchronously resumes execution on the dispatcher. |
 | [RunJobs](#uid-ede9418d73) | 暂无摘要。 |
@@ -890,7 +890,7 @@ A cancellation token used to exit the main loop.
 
 #### Post 方法 {#post-method}
 
-Posts an action that will be invoked on the dispatcher thread.
+投递一个将在 dispatcher 线程上调用的操作。
 
 ```csharp
 public void Post(Action action, Avalonia.Threading.DispatcherPriority priority)
@@ -916,7 +916,7 @@ The priority with which to invoke the method.
 
 #### Post 方法 {#post-method-1}
 
-Posts an action that will be invoked on the dispatcher thread.
+投递一个将在 dispatcher 线程上调用的操作。
 
 ```csharp
 public void Post(System.Threading.SendOrPostCallback action, object arg, Avalonia.Threading.DispatcherPriority priority)

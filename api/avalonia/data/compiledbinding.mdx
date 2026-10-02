@@ -183,13 +183,13 @@ public Avalonia.Data.CompiledBinding Create<TIn, TOut>(System.Linq.Expressions.E
 | [ConverterCulture](#uid-8557e5d29e) | 获取或设置执行转换器时所用的区域性。 |
 | [ConverterParameter](#uid-6d9782b4c9) | 获取或设置要传给 [Avalonia.Data.CompiledBinding.Converter](xref:Avalonia.Data.CompiledBinding.Converter) 的参数。 |
 | [Delay](#uid-0bf0d20318) | Gets or sets the amount of time, in milliseconds, to wait before updating the binding source after the value on the target changes. |
-| [FallbackValue](#uid-95e9c1e2f6) | Gets or sets the value to use when the binding is unable to produce a value. |
+| [FallbackValue](#uid-95e9c1e2f6) | 获取或设置绑定无法产出值时所用的替代值。 |
 | [Mode](#uid-06c843929f) | 获取或设置绑定模式。 |
 | [Path](#uid-3c9fd8a221) | Gets or sets the binding path. |
 | [Priority](#uid-6c4332c942) | 获取或设置绑定优先级。 |
 | [Source](#uid-78b9327aba) | Gets or sets the source for the binding. |
 | [StringFormat](#uid-33c4f73df3) | 获取或设置字符串格式。 |
-| [TargetNullValue](#uid-6ebfe776f4) | Gets or sets the value to use when the binding result is null. |
+| [TargetNullValue](#uid-6ebfe776f4) | 获取或设置绑定结果为 null 时所用的值。 |
 | [UpdateSourceTrigger](#uid-56a3da996f) | Gets or sets a value that determines the timing of binding source updates for [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) and [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource) bindings. |
 
 <section className="apiref-page__member-entry">
@@ -270,7 +270,7 @@ or [Avalonia.Data.BindingExpressionBase.UpdateSource](xref:Avalonia.Data.Binding
 
 ### FallbackValue 属性 {#fallbackvalue-property}
 
-Gets or sets the value to use when the binding is unable to produce a value.
+获取或设置绑定无法产出值时所用的替代值。
 
 ```csharp
 public object FallbackValue { get; set; }
@@ -354,7 +354,7 @@ public string StringFormat { get; set; }
 
 ### TargetNullValue 属性 {#targetnullvalue-property}
 
-Gets or sets the value to use when the binding result is null.
+获取或设置绑定结果为 null 时所用的值。
 
 ```csharp
 public object TargetNullValue { get; set; }

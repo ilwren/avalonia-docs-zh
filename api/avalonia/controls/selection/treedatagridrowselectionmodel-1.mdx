@@ -309,14 +309,14 @@ cleared first. This method does nothing when
 | --- | --- |
 | [AnchorIndex](#uid-53c460df07) | Gets or sets the anchor index. |
 | [Count](#uid-8b55b5da6d) | Gets the number of selected items. |
-| [IsCellSelectionModel](#uid-6a10385dfa) | Gets a value indicating whether this is a cell selection model. |
+| [IsCellSelectionModel](#uid-6a10385dfa) | 获取该模型是否为单元格级的选择模型。 |
 | [RangeAnchorIndex](#uid-d7d024ac17) | Gets or sets the range anchor index. |
 | [SelectedIndex](#uid-cdc1462ee3) | Gets or sets the selected index within the data. |
 | [SelectedIndexes](#uid-5951beb0b0) | Gets the indexes of the selected items. |
 | [SelectedItem](#uid-d03873e1f9) | Gets the currently selected item. |
 | [SelectedItems](#uid-51a5504eb2) | Gets a collection containing all selected items. |
 | [SingleSelect](#uid-c98ed464f3) | Gets or sets a value indicating whether only a single item can be selected at a time. |
-| [Source](#uid-4053d3eb2c) | Gets the data source for the selection model. |
+| [Source](#uid-4053d3eb2c) | 获取选择模型所用的数据源。 |
 
 <section className="apiref-page__member-entry">
 
@@ -364,7 +364,7 @@ public int Count { get; set; }
 
 ### IsCellSelectionModel 属性 {#iscellselectionmodel-property}
 
-Gets a value indicating whether this is a cell selection model.
+获取该模型是否为单元格级的选择模型。
 
 ```csharp
 public bool IsCellSelectionModel { get; set; }
@@ -487,7 +487,7 @@ public bool SingleSelect { get; set; }
 
 ### Source 属性 {#source-property}
 
-Gets the data source for the selection model.
+获取选择模型所用的数据源。
 
 ```csharp
 public System.Collections.IEnumerable Source { get; set; }

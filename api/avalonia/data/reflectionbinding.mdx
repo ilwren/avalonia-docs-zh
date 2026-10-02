@@ -115,14 +115,14 @@ The binding path.
 | [ConverterParameter](#uid-a66fd908cb) | 获取或设置要传给 [Avalonia.Data.ReflectionBinding.Converter](xref:Avalonia.Data.ReflectionBinding.Converter) 的参数。 |
 | [Delay](#uid-5f725d75b9) | Gets or sets the amount of time, in milliseconds, to wait before updating the binding source after the value on the target changes. |
 | [ElementName](#uid-c5576e6ba1) | Gets or sets the name of the element to use as the binding source. |
-| [FallbackValue](#uid-4167f89070) | Gets or sets the value to use when the binding is unable to produce a value. |
+| [FallbackValue](#uid-4167f89070) | 获取或设置绑定无法产出值时所用的替代值。 |
 | [Mode](#uid-094aff5586) | 获取或设置绑定模式。 |
 | [Path](#uid-9f99936cab) | Gets or sets the binding path. |
 | [Priority](#uid-d52ca0f81c) | 获取或设置绑定优先级。 |
 | [RelativeSource](#uid-349a17205a) | Gets or sets the relative source for the binding. |
 | [Source](#uid-0c3d8d9565) | Gets or sets the source for the binding. |
 | [StringFormat](#uid-4dae1cc603) | 获取或设置字符串格式。 |
-| [TargetNullValue](#uid-ba726385ba) | Gets or sets the value to use when the binding result is null. |
+| [TargetNullValue](#uid-ba726385ba) | 获取或设置绑定结果为 null 时所用的值。 |
 | [TypeResolver](#uid-878d6742bf) | Gets or sets a function used to resolve types from names in the binding path. |
 | [UpdateSourceTrigger](#uid-4b2dab820f) | Gets or sets a value that determines the timing of binding source updates for [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) and [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource) bindings. |
 
@@ -218,7 +218,7 @@ public string ElementName { get; set; }
 
 ### FallbackValue 属性 {#fallbackvalue-property}
 
-Gets or sets the value to use when the binding is unable to produce a value.
+获取或设置绑定无法产出值时所用的替代值。
 
 ```csharp
 public object FallbackValue { get; set; }
@@ -316,7 +316,7 @@ public string StringFormat { get; set; }
 
 ### TargetNullValue 属性 {#targetnullvalue-property}
 
-Gets or sets the value to use when the binding result is null.
+获取或设置绑定结果为 null 时所用的值。
 
 ```csharp
 public object TargetNullValue { get; set; }

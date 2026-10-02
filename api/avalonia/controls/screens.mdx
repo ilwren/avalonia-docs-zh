@@ -65,9 +65,9 @@ public class Screens
 | [RequestScreenDetails](#uid-22fd0897f8) | Asks underlying platform to provide detailed screen information. On some platforms it might include non-primary screens, as well as display names. |
 | [ScreenFromBounds](#uid-eaf8a4f3a3) | Retrieves a Screen for the display that contains the rectangle. |
 | [ScreenFromPoint](#uid-33a8414294) | Retrieves a Screen for the display that contains the specified point. |
-| [ScreenFromTopLevel](#uid-8d0ddac6d3) | Retrieves a Screen for the display that contains the specified [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel). |
-| [ScreenFromVisual](#uid-2100666c09) | Retrieves a Screen for the display that contains the specified [Avalonia.Visual](xref:Avalonia.Visual). |
-| [ScreenFromWindow](#uid-303ce34047) | Retrieves a Screen for the display that contains the specified [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase). |
+| [ScreenFromTopLevel](#uid-8d0ddac6d3) | 取得容纳指定 [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel) 的那块显示器所对应的 Screen。 |
+| [ScreenFromVisual](#uid-2100666c09) | 取得容纳指定 [Avalonia.Visual](xref:Avalonia.Visual) 的那块显示器所对应的 Screen。 |
+| [ScreenFromWindow](#uid-303ce34047) | 取得容纳指定 [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase) 的那块显示器所对应的 Screen。 |
 
 <section className="apiref-page__member-entry">
 
@@ -165,7 +165,7 @@ On mobile, this method always returns null.
 
 ### ScreenFromTopLevel 方法 {#screenfromtoplevel-method}
 
-Retrieves a Screen for the display that contains the specified [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel).
+取得容纳指定 [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel) 的那块显示器所对应的 Screen。
 
 ```csharp
 public Avalonia.Platform.Screen ScreenFromTopLevel(Avalonia.Controls.TopLevel topLevel)
@@ -197,7 +197,7 @@ The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 ### ScreenFromVisual 方法 {#screenfromvisual-method}
 
-Retrieves a Screen for the display that contains the specified [Avalonia.Visual](xref:Avalonia.Visual).
+取得容纳指定 [Avalonia.Visual](xref:Avalonia.Visual) 的那块显示器所对应的 Screen。
 
 ```csharp
 public Avalonia.Platform.Screen ScreenFromVisual(Avalonia.Visual visual)
@@ -225,7 +225,7 @@ The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 ### ScreenFromWindow 方法 {#screenfromwindow-method}
 
-Retrieves a Screen for the display that contains the specified [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase).
+取得容纳指定 [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase) 的那块显示器所对应的 Screen。
 
 ```csharp
 public Avalonia.Platform.Screen ScreenFromWindow(Avalonia.Controls.WindowBase window)

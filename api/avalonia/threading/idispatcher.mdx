@@ -57,7 +57,7 @@ public interface IDispatcher
 | 名称 | 说明 |
 | --- | --- |
 | [CheckAccess](#uid-80daf8478f) | Determines whether the calling thread is the thread associated with this [Avalonia.Threading.IDispatcher](xref:Avalonia.Threading.IDispatcher). |
-| [Post](#uid-edfbf6b423) | Posts an action that will be invoked on the dispatcher thread. |
+| [Post](#uid-edfbf6b423) | 投递一个将在 dispatcher 线程上调用的操作。 |
 | [VerifyAccess](#uid-f70cfaa9e1) | Throws an exception if the calling thread is not the thread associated with this [Avalonia.Threading.IDispatcher](xref:Avalonia.Threading.IDispatcher). |
 
 <section className="apiref-page__member-entry">
@@ -87,7 +87,7 @@ True if he calling thread is the thread associated with the dispatched, otherwis
 
 ### Post 方法 {#post-method}
 
-Posts an action that will be invoked on the dispatcher thread.
+投递一个将在 dispatcher 线程上调用的操作。
 
 ```csharp
 public void Post(Action action, Avalonia.Threading.DispatcherPriority priority)

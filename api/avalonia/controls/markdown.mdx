@@ -93,7 +93,7 @@ public Markdown()
 | [ClearSelection](#uid-a573ec0ae9) | 清除当前选区。 |
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Copy](#uid-bc93dcb05b) | Copies the current selection to the clipboard without waiting for the clipboard write. |
+| [Copy](#uid-bc93dcb05b) | 把当前选区复制到剪贴板，不等待剪贴板写入完成。 |
 | [CopyAsync](#uid-c24ff6c985) | 把当前选区复制到剪贴板。 |
 | [EndInit](../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -200,7 +200,7 @@ public void ClearSelection()
 
 ### Copy 方法 {#copy-method}
 
-Copies the current selection to the clipboard without waiting for the clipboard write.
+把当前选区复制到剪贴板，不等待剪贴板写入完成。
 
 ```csharp
 public void Copy()
@@ -465,7 +465,7 @@ If the component is currently attached, it receives an
 | [BorderThickness](primitives/templatedcontrol.mdx#uid-4e2cc431b4) | 获取或设置控件边框的粗细。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Bounds](../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../visual.mdx)。 |
 | [CacheMode](../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../visual.mdx)。 |
-| [CanCopy](#uid-3ac36e15ff) | Property for determining if the Copy command can be executed. |
+| [CanCopy](#uid-3ac36e15ff) | 用于判断能否执行复制命令的属性。 |
 | [CaretBrush](#uid-a463643a87) | 获取或设置绘制插入符所用的画刷。 |
 | [Classes](../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Clip](../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../visual.mdx)。 |
@@ -568,7 +568,7 @@ until the user scrolls back to the bottom.
 
 ### CanCopy 属性 {#cancopy-property}
 
-Property for determining if the Copy command can be executed.
+用于判断能否执行复制命令的属性。
 
 ```csharp
 public bool CanCopy { get; set; }

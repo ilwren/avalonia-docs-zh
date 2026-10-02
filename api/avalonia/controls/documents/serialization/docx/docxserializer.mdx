@@ -66,13 +66,13 @@ Supports reading and writing DOCX documents with:
 - Tables: column widths, cell formatting
 - Hyperlinks
 
-This serializer is thread-safe for concurrent operations.
+该序列化器是线程安全的，可并发操作。
 
 ## 构造函数 {#constructors}
 
 | 名称 | 说明 |
 | --- | --- |
-| [DocxSerializer](#uid-46e884f108) | Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer](xref:Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer) with optional serialization options. |
+| [DocxSerializer](#uid-46e884f108) | 用可选的序列化选项初始化 [Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer](xref:Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer) 的新实例。 |
 
 <section className="apiref-page__member-entry">
 
@@ -80,7 +80,7 @@ This serializer is thread-safe for concurrent operations.
 
 ### DocxSerializer 构造函数 {#docxserializer-constructor}
 
-Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer](xref:Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer) with optional serialization options.
+用可选的序列化选项初始化 [Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer](xref:Avalonia.Controls.Documents.Serialization.Docx.DocxSerializer) 的新实例。
 
 ```csharp
 public DocxSerializer(Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions options)
@@ -178,8 +178,8 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deser
 
 - [\`stream\` 为 null。](xref:System.ArgumentNullException)
 - [\`stream\` 不可读。](xref:System.ArgumentException)
-- [This serializer cannot read; see \[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead\](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead).](xref:System.NotSupportedException)
-- [The stream content is invalid for this format.](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
+- [该序列化器无法读取；参见 \[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead\](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.CanRead)。](xref:System.NotSupportedException)
+- [流中的内容不符合该格式。](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
 
 </section>
 
