@@ -62,7 +62,7 @@ public struct TextDocumentNodeKind
 
 | 名称 | 说明 |
 | --- | --- |
-| [Equals（2 个重载）](#uid-62a622ca16) | Returns if this kind equals `other`. |
+| [Equals（2 个重载）](#uid-62a622ca16) | 返回该种类是否等于 `other`。 |
 | [GetHashCode](#uid-39828a42fb) | 暂无摘要。 |
 | [Register (4 overloads)](#uid-90b270bf5a) | Registers a custom node kind with the given name and category flags. |
 | [ToString](#uid-6379fb71d9) | 暂无摘要。 |
@@ -78,7 +78,7 @@ public struct TextDocumentNodeKind
 
 #### Equals 方法 {#equals-method}
 
-Returns if this kind equals `other`.
+返回该种类是否等于 `other`。
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind other)
@@ -414,10 +414,10 @@ public string Name { get; set; }
 | [Hyperlink](#uid-1efb56ee40) | A hyperlink inline container kind. |
 | [Image](#uid-be6660fa38) | An inline image kind. Occupies a single object-replacement character. |
 | [InlineUIContainer](#uid-9bba0173cf) | 一种内联 UI 容器类型。 |
-| [Italic](#uid-550716d226) | An italic inline container kind. |
+| [Italic](#uid-550716d226) | 一种斜体内联容器类型。 |
 | [LineBreak](#uid-e855071e17) | 一种换行叶节点类型。 |
 | [List](#uid-916dbfcdbd) | 一种列表块类型。 |
-| [ListItem](#uid-6334b8c488) | A list item block container kind. |
+| [ListItem](#uid-6334b8c488) | 一种列表项块容器类型。 |
 | [PageBand](#uid-ce57f8778d) | The root of a page band's document: a header or footer is a nested document whose root carries this kind instead of [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document), so what a document is travels with its tree and its snapshots. |
 | [PageNumberField](#uid-6351057c60) | A page-number field kind (current page / page count). Its text range holds the field's last calculated result, so it renders and exports as plain text until paginated rendering resolves it. |
 | [Paragraph](#uid-e627f4b468) | A paragraph inline container kind. |
@@ -584,7 +584,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind InlineUIContai
 
 ### Italic 字段 {#italic-field}
 
-An italic inline container kind.
+一种斜体内联容器类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Italic
@@ -626,7 +626,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind List
 
 ### ListItem 字段 {#listitem-field}
 
-A list item block container kind.
+一种列表项块容器类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind ListItem

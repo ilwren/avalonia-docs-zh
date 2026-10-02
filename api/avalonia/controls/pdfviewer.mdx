@@ -99,8 +99,8 @@ public PdfViewer()
 | [FindNext](#uid-8fc4e5ff0d) | Advances to the next search match (wraps around). |
 | [FindPrevious](#uid-652138c2c2) | Moves to the previous search match (wraps around). |
 | [FitHeight](#uid-abaf2c393d) | Fits the current page height to the view. |
-| [FitPage](#uid-fd19256949) | Fits the entire page to the view. |
-| [FitWidth](#uid-63c966d5e8) | Fits the page width to the view. |
+| [FitPage](#uid-fd19256949) | 让整页适应视图。 |
+| [FitWidth](#uid-63c966d5e8) | 让页宽适应视图。 |
 | [Focus](../input/inputelement.mdx#uid-6b657af583) | 让控件获得焦点。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [FocusViewer](#uid-dc3523c9d2) | Focuses the PDF viewer control for keyboard navigation. Call this after external interactions (like opening a file) to enable keyboard navigation. |
 | [FormatStampDate](#uid-025c261c4c) | Formats `date` the way a stamp's date line is drawn. |
@@ -423,7 +423,7 @@ public void FitHeight()
 
 ### FitPage 方法 {#fitpage-method}
 
-Fits the entire page to the view.
+让整页适应视图。
 
 ```csharp
 public void FitPage()
@@ -437,7 +437,7 @@ public void FitPage()
 
 ### FitWidth 方法 {#fitwidth-method}
 
-Fits the page width to the view.
+让页宽适应视图。
 
 ```csharp
 public void FitWidth()
@@ -1761,7 +1761,7 @@ public void ZoomOut()
 | [SearchMatchWholeWord](#uid-e3d3df1825) | Gets or sets whether the toolbar search matches whole words only. Default `false`. |
 | [SearchQuery](#uid-877f9dc4a9) | 获取或设置搜索查询。 |
 | [SearchResultCount](#uid-51d4a9fa8a) | Gets the number of matches for the current search. |
-| [SearchResults](#uid-0e883b2a7c) | Gets the current search results. |
+| [SearchResults](#uid-0e883b2a7c) | 获取当前的搜索结果。 |
 | [SelectAllCommand](#uid-7d8e6d76df) | Gets a command that selects all text on the current page. |
 | [SelectedShapeType](#uid-3e6d2d9fe9) | Gets or sets the active shape tool type. |
 | [SelectedText](#uid-15ca7a64a2) | 获取当前选中的文本。 |
@@ -3123,7 +3123,7 @@ public int SearchResultCount { get; set; }
 
 ### SearchResults 属性 {#searchresults-property}
 
-Gets the current search results.
+获取当前的搜索结果。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Pdf.Core.PdfSearchResult> SearchResults { get; set; }
@@ -5746,7 +5746,7 @@ public Avalonia.StyledProperty<double> ZoomStepProperty
 | [DetachedFromLogicalTree](../styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [DetachedFromVisualTree](../visual.mdx#uid-3f64dafb1c) | 当控件从带根的视觉树中分离时引发。继承自 [Visual](../visual.mdx)。 |
 | [DocumentClosed](#uid-3ec18466ad) | Raised when the current document is closed. |
-| [DocumentLoaded](#uid-6d1bd15d65) | Raised when a document is loaded. |
+| [DocumentLoaded](#uid-6d1bd15d65) | 文档加载完成时抛出。 |
 | [DoubleTapped](../input/inputelement.mdx#uid-ad13083e0c) | 当用户在同一点短暂接触并松开两次、且位移不明显时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [EffectiveViewportChanged](../layout/layoutable.mdx#uid-1922b89fa5) | 当元素的有效视口发生变化时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [GettingFocus](../input/inputelement.mdx#uid-4d054164ee) | 在控件即将获得焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -5869,7 +5869,7 @@ public event EventHandler DocumentClosed
 
 ### DocumentLoaded 事件 {#documentloaded-event}
 
-Raised when a document is loaded.
+文档加载完成时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.PdfDocumentLoadedEventArgs> DocumentLoaded

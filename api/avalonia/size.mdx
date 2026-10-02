@@ -124,10 +124,10 @@ The vector to take values from.
 | --- | --- |
 | [Constrain](#uid-2d29cf854e) | 约束该尺寸。 |
 | [Deconstruct](#uid-f874a31ae4) | 暂无摘要。 |
-| [Deflate](#uid-eeadea36f8) | Deflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
+| [Deflate](#uid-eeadea36f8) | 按 [Avalonia.Thickness](xref:Avalonia.Thickness) 收缩该尺寸。 |
 | [Equals（2 个重载）](#uid-b9cb8dbbef) | Returns a boolean indicating whether the size is equal to the other given size (bitwise). |
 | [GetHashCode](#uid-0468d68394) | 返回 [Avalonia.Size](xref:Avalonia.Size) 的哈希码。 |
-| [Inflate](#uid-6053fa86c5) | Inflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
+| [Inflate](#uid-6053fa86c5) | 按 [Avalonia.Thickness](xref:Avalonia.Thickness) 扩张该尺寸。 |
 | [NearlyEquals](#uid-9d4346ca02) | Returns a boolean indicating whether the size is equal to the other given size (numerically). |
 | [Parse](#uid-b50eddb408) | 解析 [Avalonia.Size](xref:Avalonia.Size) 字符串。 |
 | [ToString](#uid-0123cae676) | 返回该尺寸的字符串表示形式。 |
@@ -188,7 +188,7 @@ public void Deconstruct(double& width, double& height)
 
 ### Deflate 方法 {#deflate-method}
 
-Deflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness).
+按 [Avalonia.Thickness](xref:Avalonia.Thickness) 收缩该尺寸。
 
 ```csharp
 public Avalonia.Size Deflate(Avalonia.Thickness thickness)
@@ -301,7 +301,7 @@ int
 
 ### Inflate 方法 {#inflate-method}
 
-Inflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness).
+按 [Avalonia.Thickness](xref:Avalonia.Thickness) 扩张该尺寸。
 
 ```csharp
 public Avalonia.Size Inflate(Avalonia.Thickness thickness)

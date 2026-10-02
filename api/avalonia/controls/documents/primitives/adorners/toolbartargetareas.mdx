@@ -60,10 +60,10 @@ public enum ToolbarTargetAreas
 | 名称 | 说明 |
 | --- | --- |
 | [All](#uid-067525899a) | The caret-derived target areas. The released name for [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas), which reads better beside the areas that are opted into by name. |
-| [Block](#uid-e5c7216bb4) | Applies to block-level elements. |
+| [Block](#uid-e5c7216bb4) | 适用于块级元素。 |
 | [CaretAreas](#uid-251ec05923) | The caret-derived target areas. Not every flag: a selection-driven area ([Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.TableCells](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.TableCells)) and the nested-document areas ([Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand), [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.Footnote](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.Footnote)) are opted into by name. |
 | [Footnote](#uid-09cb2356f6) | A footnote: the caret is in a note's document. Like [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand), outside [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas), so a tool opts in to notes. |
-| [Image](#uid-824e58d0d1) | Applies to inline image elements. |
+| [Image](#uid-824e58d0d1) | 适用于内联图像元素。 |
 | [List](#uid-9de1b334f9) | 适用于列表元素。 |
 | [None](#uid-be15ebeb3f) | 无目标区域。 |
 | [PageBand](#uid-ba87d936b3) | Applies while the caret is in a page band (a header or footer on a page sheet). A band is text too, so tools targeting the text areas stay available there; deliberately not part of [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas), so a tool that lists this area alone appears only inside a band. |
@@ -92,7 +92,7 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas All
 
 ### Block 字段 {#block-field}
 
-Applies to block-level elements.
+适用于块级元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Block
@@ -137,7 +137,7 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Footno
 
 ### Image 字段 {#image-field}
 
-Applies to inline image elements.
+适用于内联图像元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Image

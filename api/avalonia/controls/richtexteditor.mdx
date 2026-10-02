@@ -98,7 +98,7 @@ public RichTextEditor()
 | [Bind（8 个重载）](../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [ClearSelection](#uid-eb3d10454f) | 清除当前选区。 |
-| [ClearUndoHistory](#uid-613d301989) | Clears the undo and redo history. |
+| [ClearUndoHistory](#uid-613d301989) | 清空撤销与重做历史。 |
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [EndInit](../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../styledelement.mdx)。 |
@@ -128,7 +128,7 @@ public RichTextEditor()
 | [Save](#uid-b5907ac0b4) | 把该文档保存到一个流。 |
 | [SaveAsync](#uid-94926e59c4) | Saves the document to a stream asynchronously on a background thread. |
 | [Select](#uid-f8717c4da1) | Sets the selection to the specified range. |
-| [SelectAll](#uid-983aefc0ca) | Selects all text in the document. |
+| [SelectAll](#uid-983aefc0ca) | 选中文档中的全部文本。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../visual.mdx)。 |
 | [SetIsHoldingEnabled](../input/inputelement.mdx#uid-90a47948ad) | 继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -194,7 +194,7 @@ public void ClearSelection()
 
 ### ClearUndoHistory 方法 {#clearundohistory-method}
 
-Clears the undo and redo history.
+清空撤销与重做历史。
 
 ```csharp
 public void ClearUndoHistory()
@@ -460,7 +460,7 @@ The end position of the selection.
 
 ### SelectAll 方法 {#selectall-method}
 
-Selects all text in the document.
+选中文档中的全部文本。
 
 ```csharp
 public void SelectAll()

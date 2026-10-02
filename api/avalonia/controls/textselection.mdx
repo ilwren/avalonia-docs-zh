@@ -105,7 +105,7 @@ The text document containing the selection.
 | [ExtendTo](#uid-189ba2e59b) | Extends the selection to a new position while keeping the anchor fixed. |
 | [GetContainingBlock](#uid-e1f67b2c4d) | 暂无摘要。 |
 | [GetPropertyValue](documents/textmodel/textrange.mdx#uid-71aaf13562) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
-| [GetSpringloadProperties](#uid-b3c7991220) | Gets all springloaded properties. |
+| [GetSpringloadProperties](#uid-b3c7991220) | 获取所有 springloaded 属性。 |
 | [GetText](documents/textmodel/textrange.mdx#uid-c626a57a24) | Returns the text content covered by this range. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [InsertFootnote](documents/textmodel/textrange.mdx#uid-17dcc48a9d) | Replaces the range content with a footnote: the anchor (its number as ordinary text) lands at the range position, splitting a run when it sits mid-run, and the note body is created in the document's trailing footnote container with a fresh id - selection delete, anchor, body, and the anchor renumbering are one undo unit. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [InsertImage](documents/textmodel/textrange.mdx#uid-582fca47b6) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
@@ -275,7 +275,7 @@ public Avalonia.Controls.Documents.Block GetContainingBlock()
 
 ### GetSpringloadProperties 方法 {#getspringloadproperties-method}
 
-Gets all springloaded properties.
+获取所有 springloaded 属性。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyDictionary<Avalonia.AvaloniaProperty, object> GetSpringloadProperties()

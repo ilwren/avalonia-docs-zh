@@ -140,7 +140,7 @@ The [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) to a
 | [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Load（2 个重载）](#uid-bbf188f438) | 从流中读取一篇文档。 |
 | [LoadAsync](#uid-e1a5a76bbb) | Loads a document from a stream, parsing off the calling thread. |
-| [Save（2 个重载）](#uid-58c41f4af7) | Writes this document to a stream. |
+| [Save（2 个重载）](#uid-58c41f4af7) | 把该文档写入一个流。 |
 | [SaveAsync](#uid-6000bb6211) | Saves the document to a stream, writing off the calling thread. |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -695,7 +695,7 @@ and is inherently UI-bound.
 
 #### Save 方法 {#save-method}
 
-Writes this document to a stream.
+把该文档写入一个流。
 
 ```csharp
 public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer)

@@ -1272,7 +1272,7 @@ public Avalonia.DirectProperty<Avalonia.Controls.Window, Avalonia.Controls.Windo
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
 | [BackRequested](toplevel.mdx#uid-3ef3790149) | 按下物理返回键或收到返回导航请求时发生。继承自 [TopLevel](toplevel.mdx)。 |
 | [Closed](toplevel.mdx#uid-feb963478f) | 窗口关闭时触发。继承自 [TopLevel](toplevel.mdx)。 |
-| [Closing](#uid-fa2686ce93) | Fired before a window is closed. |
+| [Closing](#uid-fa2686ce93) | 窗口关闭之前触发。 |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [DataContextChanged](../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -1330,7 +1330,7 @@ public Avalonia.DirectProperty<Avalonia.Controls.Window, Avalonia.Controls.Windo
 
 ### Closing 事件 {#closing-event}
 
-Fired before a window is closed.
+窗口关闭之前触发。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.WindowClosingEventArgs> Closing

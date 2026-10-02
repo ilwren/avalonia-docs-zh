@@ -78,7 +78,7 @@ public class DocumentSnapshotBuilder
 | [AddText (2 overloads)](#uid-58cfe76beb) | 暂无摘要。 |
 | [AddUnderline](#uid-c2775c4852) | 向当前段落添加带下划线的文本。 |
 | [BeginDeferredTableCells](#uid-bfd93dc27e) | Switches the current table to deferred finalization: its rows and cells stay editable until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable), so a serializer can set each cell's span (and drop merge continuations) once the whole table and its column grid are known. Applies only to the current table; other tables keep the eager path. |
-| [Build](#uid-932d90d3b1) | Builds the [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot). |
+| [Build](#uid-932d90d3b1) | 构建出 [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)。 |
 | [Create（2 个重载）](#uid-ccd7b83233) | Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder). |
 | [DropDeferredTableCell](#uid-7c04072918) | Marks a deferred cell (a vertical-merge continuation folded into the cell above) so it is not emitted when the table finalizes. |
 | [EndContainer](#uid-d1a5b716a5) | Ends the most recent [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) and restores the prior container. |
@@ -855,7 +855,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### Build 方法 {#build-method}
 
-Builds the [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot).
+构建出 [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Build()

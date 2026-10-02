@@ -109,7 +109,7 @@ The action if found; otherwise, null.
 | [AlignLeft](#uid-f01b6ddfe1) | 获取左对齐操作。 |
 | [AlignRight](#uid-44b56a0eb6) | 获取右对齐操作。 |
 | [All](#uid-6832244a53) | Gets all built-in actions, grouped by category in declaration order. |
-| [BackgroundColor](#uid-395759f903) | Gets the Background Color action. |
+| [BackgroundColor](#uid-395759f903) | 获取背景色操作。 |
 | [BlockBackground](#uid-6b0d74bba6) | Gets the Block Background action for block elements. |
 | [BlockBorder](#uid-cf5ff3925c) | Gets the Block Border toggle action. |
 | [Bold](#uid-d7d610c563) | 获取加粗操作。 |
@@ -126,7 +126,7 @@ The action if found; otherwise, null.
 | [DifferentOddAndEvenPages](#uid-86c0c3f21f) | Gets the toggle that gives the even pages a header and footer of their own. |
 | [FontFamily](#uid-baf078d9aa) | 获取字体族操作。 |
 | [FontSize](#uid-4cac10bb24) | 获取字号操作。 |
-| [ForegroundColor](#uid-fc0f72ef19) | Gets the Foreground Color action. |
+| [ForegroundColor](#uid-fc0f72ef19) | 获取前景色操作。 |
 | [GoToFooter](#uid-15f1e46182) | Gets the action that enters the footer of the caret's page, creating the document's running footer when the page shows none. |
 | [GoToFootnote](#uid-8fd3123368) | Gets the action that enters the note cited by the footnote anchor at the caret. |
 | [GoToFootnoteReference](#uid-3ce5758988) | Gets the action that leaves the note the caret is in for its anchor in the body. |
@@ -137,7 +137,7 @@ The action if found; otherwise, null.
 | [InsertImage](#uid-7a21b81b80) | 获取插入图像操作。 |
 | [InsertPageCount](#uid-fa9b48889f) | Gets the action that inserts a page-count field in the band the caret is in. |
 | [InsertPageNumber](#uid-5c8ac19f5e) | Gets the action that inserts a page-number field in the band the caret is in. |
-| [InsertRowAfter](#uid-ed70ce3981) | Gets the Insert Row After action. |
+| [InsertRowAfter](#uid-ed70ce3981) | 获取“在下方插入行”操作。 |
 | [InsertRowBefore](#uid-ebca66f571) | Gets the Insert Row Before action. |
 | [InsertTable](#uid-bd60053f9c) | 获取插入表格操作。 |
 | [Italic](#uid-1823a2e3de) | 获取倾斜操作。 |
@@ -241,7 +241,7 @@ public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primit
 
 ### BackgroundColor 属性 {#backgroundcolor-property}
 
-Gets the Background Color action.
+获取背景色操作。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction BackgroundColor { get; set; }
@@ -505,7 +505,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction FontSize { g
 
 ### ForegroundColor 属性 {#foregroundcolor-property}
 
-Gets the Foreground Color action.
+获取前景色操作。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction ForegroundColor { get; set; }
@@ -661,7 +661,7 @@ public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertPageNu
 
 ### InsertRowAfter 属性 {#insertrowafter-property}
 
-Gets the Insert Row After action.
+获取“在下方插入行”操作。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Actions.IEditorAction InsertRowAfter { get; set; }

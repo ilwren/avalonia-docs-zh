@@ -98,7 +98,7 @@ The end position.
 | [ClearPropertyValue](#uid-ecf1a6ea8a) | 暂无摘要。 |
 | [Contains（2 个重载）](#uid-f71713cd49) | Checks if the range contains the specified pointer. |
 | [CreateSnapshot](#uid-462c656203) | Creates an immutable, thread-safe snapshot of this range's document structure. The caller chooses a serializer to convert the snapshot to a specific format. |
-| [Delete](#uid-4cc238f628) | Deletes the content of the range. |
+| [Delete](#uid-4cc238f628) | 删除该范围内的内容。 |
 | [DeleteCurrentBlock (2 overloads)](#uid-a2fe640aaf) | Deletes the block this range starts in, and collapses the range onto the deletion point. |
 | [DeleteText](#uid-4266eab3ed) | Deletes the content of this range. Removes whatever the range covers — characters, inline runs, paragraphs, list items, tables, sections — depending on which nodes the range fully encloses. When the deletion crosses block boundaries and both surviving boundary blocks are paragraphs, `mergeBlocks` controls whether the surviving fragments fuse into one paragraph. Manages transaction automatically. |
 | [DeleteTextAt](#uid-9beff62495) | Deletes text at the specified range relative to this range. Manages transaction automatically. |
@@ -270,7 +270,7 @@ A [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Ava
 
 ### Delete 方法 {#delete-method}
 
-Deletes the content of the range.
+删除该范围内的内容。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer Delete()

@@ -1171,7 +1171,7 @@ public Avalonia.StyledProperty<string> ValuePathProperty
 | [Invalidated](maplayer.mdx#uid-995465c2b4) | 图层需要重绘时抛出的事件。继承自 [MapLayer](maplayer.mdx)。 |
 | [PropertyChanged](../../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SelectionChanged](#uid-34c6516cbd) | 选择发生变化时发生。 |
-| [SelectionChanging](#uid-7303179825) | Occurs before selection changes. |
+| [SelectionChanging](#uid-7303179825) | 选择发生变化之前发生。 |
 
 <section className="apiref-page__member-entry">
 
@@ -1193,7 +1193,7 @@ public event EventHandler<Avalonia.Controls.Charts.ChartSelectionChangedEventArg
 
 ### SelectionChanging 事件 {#selectionchanging-event}
 
-Occurs before selection changes.
+选择发生变化之前发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Charts.ChartSelectionChangingEventArgs> SelectionChanging

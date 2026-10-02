@@ -344,7 +344,7 @@ bool
 | [CodePageCoverage](#uid-13288467e7) | Gets the codepage coverage advertised by the font via the OpenType `OS/2.ulCodePageRange1/2` bitfields. |
 | [DesignLanguages](#uid-891390f33f) | Gets the BCP-47 language tags the font's designer declared as the design target for the font (the `dlng` data tag in the OpenType `meta` table). |
 | [FaceNames](#uid-d5bea81105) | Gets a read-only mapping of culture-specific face names. |
-| [FamilyName](#uid-7117edd23d) | Gets the family name of the font. |
+| [FamilyName](#uid-7117edd23d) | 获取该字体的字体族名称。 |
 | [FamilyNames](#uid-c2fc7a9ce5) | Gets a read-only mapping of localized culture-specific family names. |
 | [FontSimulations](#uid-d4b3d5b8f6) | Gets the font simulation settings applied to the [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface). |
 | [GlyphCount](#uid-f8b29671db) | Gets the number of glyphs held by this font. |
@@ -445,7 +445,7 @@ the corresponding localized face name. The dictionary is empty if no face names 
 
 ### FamilyName 属性 {#familyname-property}
 
-Gets the family name of the font.
+获取该字体的字体族名称。
 
 ```csharp
 public string FamilyName { get; set; }

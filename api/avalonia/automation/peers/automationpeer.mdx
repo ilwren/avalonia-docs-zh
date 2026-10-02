@@ -71,7 +71,7 @@ public class AutomationPeer
 | [GetAutomationControlType](#uid-f7daf3a583) | 获取与该 UI 自动化 peer 相关联元素的控件类型。 |
 | [GetAutomationId](#uid-ec722c2168) | Gets the automation ID of the element that is associated with the UI Automation peer. |
 | [GetBoundingRectangle](#uid-f04c4b54df) | Gets the bounding rectangle of the element that is associated with the automation peer in top-level coordinates. |
-| [GetChildren](#uid-1974fa1efa) | Gets the child automation peers. |
+| [GetChildren](#uid-1974fa1efa) | 获取各个子级自动化 peer。 |
 | [GetClassName](#uid-ee7505094d) | Gets a string that describes the class of the element. |
 | [GetHeadingLevel](#uid-52680c5dea) | Gets the heading level that is associated with this automation peer. |
 | [GetHelpText](#uid-3613ae2a30) | Gets text that provides help for the element that is associated with this automation peer. |
@@ -249,7 +249,7 @@ public Avalonia.Rect GetBoundingRectangle()
 
 ### GetChildren 方法 {#getchildren-method}
 
-Gets the child automation peers.
+获取各个子级自动化 peer。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Automation.Peers.AutomationPeer> GetChildren()

@@ -61,7 +61,7 @@ public enum EmptyPointMode
 | [Average](#uid-51fd0aea4b) | Empty points are calculated as the average of the neighbor points. |
 | [Gap](#uid-4b36380f60) | Empty points cause a break in the line or area. |
 | [Interpolate](#uid-97e2f065dc) | Empty points are ignored and connected to the next valid point. |
-| [Zero](#uid-a380e4b718) | Empty points are treated as zero. |
+| [Zero](#uid-a380e4b718) | 空数据点按零处理。 |
 
 <section className="apiref-page__member-entry">
 
@@ -111,7 +111,7 @@ public Avalonia.Controls.Charts.EmptyPointMode Interpolate
 
 ### Zero 字段 {#zero-field}
 
-Empty points are treated as zero.
+空数据点按零处理。
 
 ```csharp
 public Avalonia.Controls.Charts.EmptyPointMode Zero
