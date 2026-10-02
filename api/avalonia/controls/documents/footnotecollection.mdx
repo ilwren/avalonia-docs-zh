@@ -36,16 +36,13 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-The footnotes a document owns, as elements, in anchor order: a view over the text
-document's [Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes](xref:Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes), which owns the notes, materializing
-a [Avalonia.Controls.Documents.Footnote](xref:Avalonia.Controls.Documents.Footnote) element per note on demand. It follows the contract of the
-block collection: the document becomes a note's logical parent the moment it is
-added; while the document has no text document the note waits pending, and it
-joins the text document when that is initialized, before the pending blocks
-materialize; once the text document exists a note joins it at once. Under the
-anchor-owns-its-note lifecycle the notes come and go with their anchors; a note
-added here pairs with the anchor carrying its id, or waits for one. Ownership is
-exclusive, and a nested document (a page band, a note) owns no notes.
+文档所拥有的脚注，以元素形式按锚点顺序给出：它是文本文档 [Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes](xref:Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes) 的一个视图，
+真正持有这些便签的是后者，这里按需为每条便签实体化出一个 [Avalonia.Controls.Documents.Footnote](xref:Avalonia.Controls.Documents.Footnote) 元素。
+它遵循块集合的约定：便签一加入，文档便成为它的逻辑父级；文档尚无文本文档时，
+便签处于待定状态，待文本文档初始化后便加入其中——这发生在待定的块实体化之前；
+文本文档已存在时，便签则立即加入。在「锚点拥有其便签」的生命周期下，
+便签随锚点来去；在此添加的便签会与携带其 id 的锚点配对，或等待这样一个锚点出现。
+所有权是独占的，而嵌套文档（页眉页脚带状区域、便签）不拥有任何便签。
 
 </div>
 

@@ -36,10 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Read-only metadata for an undo/redo operation. The reversal mechanics
-live on an internal contract, so a unit obtained from
-[Avalonia.Controls.Documents.Undo.UndoManager.Undo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Undo) or [Avalonia.Controls.Documents.Undo.IUndoScope.Unit](xref:Avalonia.Controls.Documents.Undo.IUndoScope.Unit) can be
-described but not replayed by a caller.
+撤销/重做操作的只读元数据。真正执行回退的机制挂在一份内部契约上，
+因此从 [Avalonia.Controls.Documents.Undo.UndoManager.Undo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Undo) 或 [Avalonia.Controls.Documents.Undo.IUndoScope.Unit](xref:Avalonia.Controls.Documents.Undo.IUndoScope.Unit) 取到的单元只能被描述，调用方无法重放它。
 
 </div>
 

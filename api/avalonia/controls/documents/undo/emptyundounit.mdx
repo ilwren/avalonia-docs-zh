@@ -36,13 +36,10 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Sentinel [Avalonia.Controls.Documents.Undo.IUndoUnit](xref:Avalonia.Controls.Documents.Undo.IUndoUnit) returned by empty / no-op undo scopes
-(when undo is disabled, or while a replay is in progress and
-[Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit(string,Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit%28System.String%2CSystem.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29) short-circuits to an empty
-scope). Never appears on
-[Avalonia.Controls.Documents.TextModel.DocumentChangedEventArgs.UndoUnit](xref:Avalonia.Controls.Documents.TextModel.DocumentChangedEventArgs.UndoUnit) — that
-property is when no real unit was opened, so
-`null` and [Avalonia.Controls.Documents.Undo.EmptyUndoUnit.Instance](xref:Avalonia.Controls.Documents.Undo.EmptyUndoUnit.Instance) retain distinct semantics.
+空作用域或无操作的撤销作用域所返回的哨兵 [Avalonia.Controls.Documents.Undo.IUndoUnit](xref:Avalonia.Controls.Documents.Undo.IUndoUnit)（撤销被禁用时，
+或正在重放、[Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit(string,Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.UndoManager.BeginUndoUnit%28System.String%2CSystem.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29) 短路返回空作用域时）。
+它绝不会出现在 [Avalonia.Controls.Documents.TextModel.DocumentChangedEventArgs.UndoUnit](xref:Avalonia.Controls.Documents.TextModel.DocumentChangedEventArgs.UndoUnit) 上——该属性表示压根没有开启真正的单元，
+因此 `null` 与 [Avalonia.Controls.Documents.Undo.EmptyUndoUnit.Instance](xref:Avalonia.Controls.Documents.Undo.EmptyUndoUnit.Instance) 保持着各自不同的语义。
 
 </div>
 
