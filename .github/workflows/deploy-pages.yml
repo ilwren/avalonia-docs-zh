@@ -89,17 +89,23 @@ jobs:
       - name: 构建站点
         env:
           NODE_OPTIONS: --max-old-space-size=12288
+          # GitHub Pages 会把 /foo 重定向到 /foo/，这会让 api 页面里的相对链接多算一层目录；
+          # 关闭 trailingSlash 后产出 foo.html，相对链接才能正确解析。
+          DOCS_TRAILING_SLASH: 'false'
         run: npx docusaurus build
 
       - name: 产物自检
         run: |
           set -e
           test -f build/index.html
-          test -f build/docs/welcome/index.html
-          grep -q "欢迎" build/docs/welcome/index.html
+          test -f build/docs/welcome.html
+          grep -q "欢迎" build/docs/welcome.html
           if [ "$DOCS_SKIP_API" != "1" ]; then
-            test -f build/api/avalonia/controls/button/index.html
-            grep -q "命名空间" build/api/avalonia/controls/button/index.html
+            test -f build/api/avalonia/controls/button.html
+            grep -q "命名空间" build/api/avalonia/controls/button.html
+            # 继承链等相对链接的目标必须存在（曾因 trailingSlash 导致整片 404）
+            test -f build/api/avalonia/controls/control.html
+            test -f build/api/avalonia/controls/contentcontrol.html
           fi
           # 资源引用必须带上基路径，否则子路径部署会 404
           if [ "$DOCS_BASE_URL" != "/" ]; then

@@ -18,12 +18,19 @@ const siteUrl = process.env.DOCS_SITE_URL ?? 'https://docs.avaloniaui.net';
 const rawBaseUrl = process.env.DOCS_BASE_URL ?? '/';
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 const withBase = (path: string) => baseUrl + path.replace(/^[/]+/, '');
+// GitHub Pages 这类静态托管会把 /foo 301 到 /foo/，导致 api 页面里大量的相对链接
+// （<a href="control">）多算一层目录而 404。把 trailingSlash 设为 false 后，
+// Docusaurus 产出 foo.html 而不是 foo/index.html，相对链接即可正确解析。
+const trailingSlash = process.env.DOCS_TRAILING_SLASH
+  ? process.env.DOCS_TRAILING_SLASH === 'true'
+  : undefined;
 
 const config: Config = {
   title: 'Avalonia 中文文档',
   tagline: '开发者文档门户',
   url: siteUrl,
   baseUrl,
+  trailingSlash,
   markdown: {
     mermaid: true,
   },
