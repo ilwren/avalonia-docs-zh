@@ -92,9 +92,9 @@ public CandlestickSeries()
 | [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Focus](../../input/inputelement.mdx#uid-6b657af583) | 让控件获得焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [GetDataPoints](financialseries.mdx#uid-5926b56436) | Returns close values for Cartesian-series compatibility. Financial series use close as their representative scalar value when consumed by shared Cartesian features such as overlays, labels, and generic point enumeration. Inherited from [FinancialSeries](financialseries.mdx). |
-| [GetDataPointsWithItems](financialseries.mdx#uid-6e613c881f) | Returns close values for Cartesian-series compatibility together with the source item. Inherited from [FinancialSeries](financialseries.mdx). |
-| [GetFinancialPoints](financialseries.mdx#uid-21ae97a736) | Gets the financial data points (OHLC) from the ItemsSource. Inherited from [FinancialSeries](financialseries.mdx). |
+| [GetDataPoints](financialseries.mdx#uid-5926b56436) | 返回收盘值，以便与笛卡尔系列兼容。被叠加层、标签、通用点枚举等共用的笛卡尔功能使用时，金融系列以收盘价作为其代表性标量值。继承自 [FinancialSeries](financialseries.mdx)。 |
+| [GetDataPointsWithItems](financialseries.mdx#uid-6e613c881f) | 返回收盘值连同其源数据项，以便与笛卡尔系列兼容。继承自 [FinancialSeries](financialseries.mdx)。 |
+| [GetFinancialPoints](financialseries.mdx#uid-21ae97a736) | 从 ItemsSource 中取得金融数据点（OHLC）。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [GetFlowDirection](../../visual.mdx#uid-12716acd38) | 获取控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../../visual.mdx)。 |
 | [GetHashCode](../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetIsHoldingEnabled](../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -156,22 +156,22 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [Bounds](../../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../../visual.mdx)。 |
 | [CacheMode](../../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../../visual.mdx)。 |
 | [CandleWidth](#uid-11ab9a0b22) | Gets or sets the width of each candle as a fraction of available space (0.0 to 1.0). |
-| [CategoryPath](financialseries.mdx#uid-99f585eb97) | Compatibility alias for [Avalonia.Controls.Charts.FinancialSeries.DatePath](xref:Avalonia.Controls.Charts.FinancialSeries.DatePath). Inherited from [FinancialSeries](financialseries.mdx). |
+| [CategoryPath](financialseries.mdx#uid-99f585eb97) | [Avalonia.Controls.Charts.FinancialSeries.DatePath](xref:Avalonia.Controls.Charts.FinancialSeries.DatePath) 的兼容别名。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Clip](../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../visual.mdx)。 |
 | [ClipToBounds](../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../visual.mdx)。 |
-| [ClosePath](financialseries.mdx#uid-dd55ba45ed) | Gets or sets the property path for the Close value. Inherited from [FinancialSeries](financialseries.mdx). |
+| [ClosePath](financialseries.mdx#uid-dd55ba45ed) | 获取或设置 Close 值所用的属性路径。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [ContextFlyout](../control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](../control.mdx)。 |
 | [ContextMenu](../control.mdx#uid-95e5e3ccc3) | 获取或设置控件的上下文菜单。继承自 [Control](../control.mdx)。 |
 | [CornerRadius](../primitives/templatedcontrol.mdx#uid-91a447dd4a) | 获取或设置边框圆角的半径。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Cursor](../../input/inputelement.mdx#uid-4222de38cf) | 获取或设置关联的鼠标指针样式。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [DataContext](../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [DataTemplates](../control.mdx#uid-78ff251b26) | 获取或设置控件使用的数据模板。继承自 [Control](../control.mdx)。 |
-| [DatePath](financialseries.mdx#uid-df7dc1d225) | Gets or sets the property path for the date/time category used by financial series. Financial series expose date/category mapping through this property instead of the inherited Cartesian category name. Inherited from [FinancialSeries](financialseries.mdx). |
+| [DatePath](financialseries.mdx#uid-df7dc1d225) | 获取或设置金融系列所用的日期/时间类别的属性路径。金融系列通过该属性来做日期/类别映射，而不沿用继承自笛卡尔系列的类别名。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [DesiredSize](../../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [DownFill](financialseries.mdx#uid-e473affd02) | Gets or sets the fill brush for downward (bearish) candles. Inherited from [FinancialSeries](financialseries.mdx). |
-| [DownStroke](financialseries.mdx#uid-0f7fbb5415) | Gets or sets the stroke brush for downward (bearish) candles. Inherited from [FinancialSeries](financialseries.mdx). |
+| [DownFill](financialseries.mdx#uid-e473affd02) | 获取或设置下跌（看跌）K 线的填充画刷。继承自 [FinancialSeries](financialseries.mdx)。 |
+| [DownStroke](financialseries.mdx#uid-0f7fbb5415) | 获取或设置下跌（看跌）K 线的描边画刷。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [Effect](../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../visual.mdx)。 |
 | [EmptyPointMode](cartesianseries.mdx#uid-be95f2d1ba) | 获取或设置空数据点（null 或 NaN）的渲染方式。继承自 [CartesianSeries](cartesianseries.mdx)。 |
 | [Fill](chartseries.mdx#uid-d890c5c158) | 获取或设置数据系列的默认画刷。对于支持填充的数据系列，它即为填充画刷；对于折线类数据系列，在未设置 [Avalonia.Controls.Charts.ChartSeries.Stroke](xref:Avalonia.Controls.Charts.ChartSeries.Stroke) 时，它将作为主色的回退值。继承自 [ChartSeries](chartseries.mdx)。 |
@@ -188,7 +188,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [GestureRecognizers](../../input/inputelement.mdx#uid-ddee464eee) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [HasMirrorTransform](../../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../../visual.mdx)。 |
 | [Height](../../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [HighPath](financialseries.mdx#uid-3875bbd1fe) | Gets or sets the property path for the High value. Inherited from [FinancialSeries](financialseries.mdx). |
+| [HighPath](financialseries.mdx#uid-3875bbd1fe) | 获取或设置 High 值所用的属性路径。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsArrangeValid](../../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsEffectivelyEnabled](../../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -217,7 +217,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [LabelOffset](cartesianseries.mdx#uid-3b4f03049a) | 获取或设置标签与数据点之间的距离。继承自 [CartesianSeries](cartesianseries.mdx)。 |
 | [LabelPadding](cartesianseries.mdx#uid-360b907b65) | 获取或设置标签的内边距。继承自 [CartesianSeries](cartesianseries.mdx)。 |
 | [LetterSpacing](../primitives/templatedcontrol.mdx#uid-2d96a527e6) | 获取或设置控件文本内容的字间距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
-| [LowPath](financialseries.mdx#uid-76730a4744) | Gets or sets the property path for the Low value. Inherited from [FinancialSeries](financialseries.mdx). |
+| [LowPath](financialseries.mdx#uid-76730a4744) | 获取或设置 Low 值所用的属性路径。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [Margin](../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MarkerFill](cartesianseries.mdx#uid-efe15f5a47) | 获取或设置标记点的填充画刷。继承自 [CartesianSeries](cartesianseries.mdx)。 |
 | [MarkerShape](cartesianseries.mdx#uid-8d8bfcbdf5) | 获取或设置标记点的形状。继承自 [CartesianSeries](cartesianseries.mdx)。 |
@@ -231,7 +231,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Opacity](../../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../../visual.mdx)。 |
 | [OpacityMask](../../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../../visual.mdx)。 |
-| [OpenPath](financialseries.mdx#uid-e137c9b41c) | Gets or sets the property path for the Open value. Inherited from [FinancialSeries](financialseries.mdx). |
+| [OpenPath](financialseries.mdx#uid-e137c9b41c) | 获取或设置 Open 值所用的属性路径。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [OwnerChart](chartseries.mdx#uid-5bb0e98167) | 获取或设置拥有该数据系列的父图表。继承自 [ChartSeries](chartseries.mdx)。 |
 | [Padding](../primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -264,8 +264,8 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [TooltipTemplate](chartseries.mdx#uid-09e2016e27) | 获取或设置该数据系列工具提示的自定义模板。继承自 [ChartSeries](chartseries.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [Trendlines](cartesianseries.mdx#uid-b4d29f02b8) | 获取该数据系列的趋势线集合。继承自 [CartesianSeries](cartesianseries.mdx)。 |
-| [UpFill](financialseries.mdx#uid-86f0c5ad7d) | Gets or sets the fill brush for upward (bullish) candles. Inherited from [FinancialSeries](financialseries.mdx). |
-| [UpStroke](financialseries.mdx#uid-2d13247067) | Gets or sets the stroke brush for upward (bullish) candles. Inherited from [FinancialSeries](financialseries.mdx). |
+| [UpFill](financialseries.mdx#uid-86f0c5ad7d) | 获取或设置上涨（看涨）K 线的填充画刷。继承自 [FinancialSeries](financialseries.mdx)。 |
+| [UpStroke](financialseries.mdx#uid-2d13247067) | 获取或设置上涨（看涨）K 线的描边画刷。继承自 [FinancialSeries](financialseries.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [ValuePath](chartseries.mdx#uid-4297742d2f) | 获取或设置属性路径，用于从每个数据项中取出数值。继承自 [ChartSeries](chartseries.mdx)。 |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |

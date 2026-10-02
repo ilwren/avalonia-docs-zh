@@ -218,7 +218,7 @@ public void Open()
 | [IsKeyboardFocusWithin](../input/inputelement.mdx#uid-6e5855b185) | 获取一个值，指示键盘焦点是否位于该元素或其视觉树子元素之中。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsLoaded](control.mdx#uid-7b8aa52b02) | 获取一个值，指示控件是否已在视觉树中完全构建完毕，且布局与渲染均已完成。继承自 [Control](control.mdx)。 |
 | [IsMeasureValid](../layout/layoutable.mdx#uid-2b3ce6ad30) | 获取一个值，指示控件的布局测量结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [IsOpen](menubase.mdx#uid-44b8dbd909) | Gets a value indicating whether the menu is open. Inherited from [MenuBase](menubase.mdx). |
+| [IsOpen](menubase.mdx#uid-44b8dbd909) | 获取一个值，指示该菜单是否处于打开状态。继承自 [MenuBase](menubase.mdx)。 |
 | [IsPointerOver](../input/inputelement.mdx#uid-09e1553c00) | 获取一个值，指示指针当前是否悬停在控件上方。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsTabStop](../input/inputelement.mdx#uid-455d73fca4) | 获取或设置一个值，指示该控件是否参与 Tab 键导航。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsTextSearchEnabled](primitives/selectingitemscontrol.mdx#uid-1e61c4aca1) | 获取或设置用户能否通过键入来跳到某个值。继承自 [SelectingItemsControl](primitives/selectingitemscontrol.mdx)。 |
@@ -315,7 +315,7 @@ public void Open()
 | [IsHoldingEnabledProperty](../input/inputelement.mdx#uid-a893be5e44) | 定义 IsHoldingEnabled 附加属性。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsHoldWithMouseEnabledProperty](../input/inputelement.mdx#uid-3f460ccdfe) | 定义 IsHoldWithMouseEnabled 附加属性。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsKeyboardFocusWithinProperty](../input/inputelement.mdx#uid-2dc1dd0d3d) | 定义 [Avalonia.Input.InputElement.IsKeyboardFocusWithin](xref:Avalonia.Input.InputElement.IsKeyboardFocusWithin) 属性。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [IsOpenProperty](menubase.mdx#uid-ce97abd192) | Defines the [Avalonia.Controls.MenuBase.IsOpen](xref:Avalonia.Controls.MenuBase.IsOpen) property. Inherited from [MenuBase](menubase.mdx). |
+| [IsOpenProperty](menubase.mdx#uid-ce97abd192) | 定义 [Avalonia.Controls.MenuBase.IsOpen](xref:Avalonia.Controls.MenuBase.IsOpen) 属性。继承自 [MenuBase](menubase.mdx)。 |
 | [IsPointerOverProperty](../input/inputelement.mdx#uid-be6c8adde2) | 定义 [Avalonia.Input.InputElement.IsPointerOver](xref:Avalonia.Input.InputElement.IsPointerOver) 属性。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsSelectedChangedEvent](primitives/selectingitemscontrol.mdx#uid-17ba978e7b) | 容器的选中状态发生变化时应当抛出该事件，以便通知父级 [Avalonia.Controls.Primitives.SelectingItemsControl](xref:Avalonia.Controls.Primitives.SelectingItemsControl) 其选中状态已变。继承自 [SelectingItemsControl](primitives/selectingitemscontrol.mdx)。 |
 | [IsSelectedProperty](primitives/selectingitemscontrol.mdx#uid-104e831b83) | 定义 IsSelected 附加属性。继承自 [SelectingItemsControl](primitives/selectingitemscontrol.mdx)。 |
@@ -399,7 +399,7 @@ public void Open()
 | [ActualThemeVariantChanged](../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
-| [Closed](menubase.mdx#uid-681bd27501) | Occurs when a [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) is closed. Inherited from [MenuBase](menubase.mdx). |
+| [Closed](menubase.mdx#uid-681bd27501) | [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) 关闭时发生。继承自 [MenuBase](menubase.mdx)。 |
 | [ContainerClearing](itemscontrol.mdx#uid-1787ccc417) | 每当某个容器被清理时发生。继承自 [ItemsControl](itemscontrol.mdx)。 |
 | [ContainerIndexChanged](itemscontrol.mdx#uid-18f18a0c7f) | 当某个已实体化容器所代表项的索引发生变化时，对该容器发生。继承自 [ItemsControl](itemscontrol.mdx)。 |
 | [ContainerPrepared](itemscontrol.mdx#uid-c04fd3df67) | 每当某个容器准备就绪时发生。继承自 [ItemsControl](itemscontrol.mdx)。 |
@@ -420,7 +420,7 @@ public void Open()
 | [Loaded](control.mdx#uid-c0a1ac2bc3) | 当控件在视觉树中完全构建完毕、且布局与渲染均已完成时发生。继承自 [Control](control.mdx)。 |
 | [LosingFocus](../input/inputelement.mdx#uid-425fe24716) | 在控件即将失去焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LostFocus](../input/inputelement.mdx#uid-2061fc85a1) | 当控件失去焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [Opened](menubase.mdx#uid-3786ebb278) | Occurs when a [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) is opened. Inherited from [MenuBase](menubase.mdx). |
+| [Opened](menubase.mdx#uid-3786ebb278) | [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) 打开时发生。继承自 [MenuBase](menubase.mdx)。 |
 | [Pinch](../input/inputelement.mdx#uid-96b68421dc) | 当用户将两个接触点相向靠拢时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PinchEnded](../input/inputelement.mdx#uid-50614bd917) | 当用户松开捏合手势所用的两个接触点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PointerCaptureLost](../input/inputelement.mdx#uid-2121c500a4) | 当控件或其子控件因任何原因失去指针捕获时发生；若捕获被转移给同一父控件下的另一个子控件，则不会为该父控件触发此事件。继承自 [InputElement](../input/inputelement.mdx)。 |

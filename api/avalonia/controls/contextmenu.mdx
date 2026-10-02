@@ -264,7 +264,7 @@ public void Open(Avalonia.Controls.Control control)
 | [IsKeyboardFocusWithin](../input/inputelement.mdx#uid-6e5855b185) | 获取一个值，指示键盘焦点是否位于该元素或其视觉树子元素之中。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsLoaded](control.mdx#uid-7b8aa52b02) | 获取一个值，指示控件是否已在视觉树中完全构建完毕，且布局与渲染均已完成。继承自 [Control](control.mdx)。 |
 | [IsMeasureValid](../layout/layoutable.mdx#uid-2b3ce6ad30) | 获取一个值，指示控件的布局测量结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [IsOpen](menubase.mdx#uid-44b8dbd909) | Gets a value indicating whether the menu is open. Inherited from [MenuBase](menubase.mdx). |
+| [IsOpen](menubase.mdx#uid-44b8dbd909) | 获取一个值，指示该菜单是否处于打开状态。继承自 [MenuBase](menubase.mdx)。 |
 | [IsPointerOver](../input/inputelement.mdx#uid-09e1553c00) | 获取一个值，指示指针当前是否悬停在控件上方。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsTabStop](../input/inputelement.mdx#uid-455d73fca4) | 获取或设置一个值，指示该控件是否参与 Tab 键导航。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsTextSearchEnabled](primitives/selectingitemscontrol.mdx#uid-1e61c4aca1) | 获取或设置用户能否通过键入来跳到某个值。继承自 [SelectingItemsControl](primitives/selectingitemscontrol.mdx)。 |
@@ -292,9 +292,9 @@ public void Open(Avalonia.Controls.Control control)
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Placement](#uid-4eb0156430) | 获取或设置弹出层相对于 [Avalonia.Controls.Primitives.Popup.PlacementTarget](xref:Avalonia.Controls.Primitives.Popup.PlacementTarget) 的期望放置方式。 |
-| [PlacementAnchor](#uid-5672347453) | Gets or sets the anchor point on the [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity). |
-| [PlacementConstraintAdjustment](#uid-96ebd63394) | Gets or sets a value describing how the popup position will be adjusted if the unadjusted position would result in the popup being partly constrained. |
-| [PlacementGravity](#uid-c606ce9f72) | Gets or sets a value which defines in what direction the popup should open when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity). |
+| [PlacementAnchor](#uid-5672347453) | 获取或设置当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) 为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时 [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) 上的锚点。 |
+| [PlacementConstraintAdjustment](#uid-96ebd63394) | 获取或设置一个值，描述当未调整的位置会让弹出层被部分遮挡时，该如何调整它的位置。 |
+| [PlacementGravity](#uid-c606ce9f72) | 获取或设置一个值，指定当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) 为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时弹出层朝哪个方向展开。 |
 | [PlacementRect](#uid-ce97f7c7e5) | Gets or sets the anchor rectangle within the parent that the popup will be placed relative to when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity). |
 | [PlacementTarget](#uid-2f2efa4a31) | 获取或设置用来确定弹出层位置的那个控件。 |
 | [Presenter](itemscontrol.mdx#uid-b58ddca64e) | 获取项呈现器控件。继承自 [ItemsControl](itemscontrol.mdx)。 |
@@ -369,8 +369,8 @@ public Avalonia.Controls.PlacementMode Placement { get; set; }
 
 ### PlacementAnchor 属性 {#placementanchor-property}
 
-Gets or sets the anchor point on the [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement)
-is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity).
+获取或设置当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement)
+为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时 [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) 上的锚点。
 
 ```csharp
 public Avalonia.Controls.Primitives.PopupPositioning.PopupAnchor PlacementAnchor { get; set; }
@@ -384,8 +384,8 @@ public Avalonia.Controls.Primitives.PopupPositioning.PopupAnchor PlacementAnchor
 
 ### PlacementConstraintAdjustment 属性 {#placementconstraintadjustment-property}
 
-Gets or sets a value describing how the popup position will be adjusted if the
-unadjusted position would result in the popup being partly constrained.
+获取或设置一个值，描述当未调整的位置会让弹出层
+被部分遮挡时，该如何调整它的位置。
 
 ```csharp
 public Avalonia.Controls.Primitives.PopupPositioning.PopupPositionerConstraintAdjustment PlacementConstraintAdjustment { get; set; }
@@ -399,8 +399,8 @@ public Avalonia.Controls.Primitives.PopupPositioning.PopupPositionerConstraintAd
 
 ### PlacementGravity 属性 {#placementgravity-property}
 
-Gets or sets a value which defines in what direction the popup should open
-when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity).
+获取或设置一个值，指定当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) 为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时
+弹出层朝哪个方向展开。
 
 ```csharp
 public Avalonia.Controls.Primitives.PopupPositioning.PopupGravity PlacementGravity { get; set; }
@@ -521,7 +521,7 @@ public bool WindowManagerAddShadowHint { get; set; }
 | [IsHoldingEnabledProperty](../input/inputelement.mdx#uid-a893be5e44) | 定义 IsHoldingEnabled 附加属性。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsHoldWithMouseEnabledProperty](../input/inputelement.mdx#uid-3f460ccdfe) | 定义 IsHoldWithMouseEnabled 附加属性。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsKeyboardFocusWithinProperty](../input/inputelement.mdx#uid-2dc1dd0d3d) | 定义 [Avalonia.Input.InputElement.IsKeyboardFocusWithin](xref:Avalonia.Input.InputElement.IsKeyboardFocusWithin) 属性。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [IsOpenProperty](menubase.mdx#uid-ce97abd192) | Defines the [Avalonia.Controls.MenuBase.IsOpen](xref:Avalonia.Controls.MenuBase.IsOpen) property. Inherited from [MenuBase](menubase.mdx). |
+| [IsOpenProperty](menubase.mdx#uid-ce97abd192) | 定义 [Avalonia.Controls.MenuBase.IsOpen](xref:Avalonia.Controls.MenuBase.IsOpen) 属性。继承自 [MenuBase](menubase.mdx)。 |
 | [IsPointerOverProperty](../input/inputelement.mdx#uid-be6c8adde2) | 定义 [Avalonia.Input.InputElement.IsPointerOver](xref:Avalonia.Input.InputElement.IsPointerOver) 属性。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsSelectedChangedEvent](primitives/selectingitemscontrol.mdx#uid-17ba978e7b) | 容器的选中状态发生变化时应当抛出该事件，以便通知父级 [Avalonia.Controls.Primitives.SelectingItemsControl](xref:Avalonia.Controls.Primitives.SelectingItemsControl) 其选中状态已变。继承自 [SelectingItemsControl](primitives/selectingitemscontrol.mdx)。 |
 | [IsSelectedProperty](primitives/selectingitemscontrol.mdx#uid-104e831b83) | 定义 IsSelected 附加属性。继承自 [SelectingItemsControl](primitives/selectingitemscontrol.mdx)。 |
@@ -753,7 +753,7 @@ public Avalonia.StyledProperty<bool> WindowManagerAddShadowHintProperty
 | [ActualThemeVariantChanged](../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
-| [Closed](menubase.mdx#uid-681bd27501) | Occurs when a [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) is closed. Inherited from [MenuBase](menubase.mdx). |
+| [Closed](menubase.mdx#uid-681bd27501) | [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) 关闭时发生。继承自 [MenuBase](menubase.mdx)。 |
 | [Closing](#uid-0a31a6ab10) | Occurs when the value of the [Avalonia.Controls.ContextMenu.IsOpen](xref:Avalonia.Controls.ContextMenu.IsOpen) property is changing from true to false. |
 | [ContainerClearing](itemscontrol.mdx#uid-1787ccc417) | 每当某个容器被清理时发生。继承自 [ItemsControl](itemscontrol.mdx)。 |
 | [ContainerIndexChanged](itemscontrol.mdx#uid-18f18a0c7f) | 当某个已实体化容器所代表项的索引发生变化时，对该容器发生。继承自 [ItemsControl](itemscontrol.mdx)。 |
@@ -775,7 +775,7 @@ public Avalonia.StyledProperty<bool> WindowManagerAddShadowHintProperty
 | [Loaded](control.mdx#uid-c0a1ac2bc3) | 当控件在视觉树中完全构建完毕、且布局与渲染均已完成时发生。继承自 [Control](control.mdx)。 |
 | [LosingFocus](../input/inputelement.mdx#uid-425fe24716) | 在控件即将失去焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LostFocus](../input/inputelement.mdx#uid-2061fc85a1) | 当控件失去焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [Opened](menubase.mdx#uid-3786ebb278) | Occurs when a [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) is opened. Inherited from [MenuBase](menubase.mdx). |
+| [Opened](menubase.mdx#uid-3786ebb278) | [Avalonia.Controls.Menu](xref:Avalonia.Controls.Menu) 打开时发生。继承自 [MenuBase](menubase.mdx)。 |
 | [Opening](#uid-d8cb864a24) | Occurs when the value of the [Avalonia.Controls.ContextMenu.IsOpen](xref:Avalonia.Controls.ContextMenu.IsOpen) property is changing from false to true. |
 | [Pinch](../input/inputelement.mdx#uid-96b68421dc) | 当用户将两个接触点相向靠拢时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PinchEnded](../input/inputelement.mdx#uid-50614bd917) | 当用户松开捏合手势所用的两个接触点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |

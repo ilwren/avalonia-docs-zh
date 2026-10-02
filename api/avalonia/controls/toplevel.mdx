@@ -431,7 +431,7 @@ could not be retrieved.
 | [RenderScaling](#uid-713cad322e) | 暂无摘要。 |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
-| [RequestedThemeVariant](#uid-8116f29014) | Gets or sets the UI theme variant that is used by the control (and its child elements) for resource determination. The UI theme you specify with [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) can override the app-level [ThemeVariant](xref:Avalonia.Styling.ThemeVariant). |
+| [RequestedThemeVariant](#uid-8116f29014) | 获取或设置该控件（及其子元素）在解析资源时所用的界面主题变体。你用 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) 指定的界面主题可以覆盖应用级的 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant)。 |
 | [Resources](../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Screens](#uid-05dbf070ac) | 获取平台的屏幕实现。 |
 | [StorageProvider](#uid-e2ce35d5c2) | File System storage service used for file pickers and bookmarks. |
@@ -625,8 +625,8 @@ public double RenderScaling { get; set; }
 
 ### RequestedThemeVariant 属性 {#requestedthemevariant-property}
 
-Gets or sets the UI theme variant that is used by the control (and its child elements) for resource determination.
-The UI theme you specify with [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) can override the app-level [ThemeVariant](xref:Avalonia.Styling.ThemeVariant).
+获取或设置该控件（及其子元素）在解析资源时所用的界面主题变体。
+你用 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) 指定的界面主题可以覆盖应用级的 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant)。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant RequestedThemeVariant { get; set; }
@@ -634,7 +634,7 @@ public Avalonia.Styling.ThemeVariant RequestedThemeVariant { get; set; }
 
 #### 备注 {#remarks-3}
 
-Setting RequestedThemeVariant to [Avalonia.Styling.ThemeVariant.Default](xref:Avalonia.Styling.ThemeVariant.Default) will apply parent's actual theme variant on the current scope.
+把 RequestedThemeVariant 设为 [Avalonia.Styling.ThemeVariant.Default](xref:Avalonia.Styling.ThemeVariant.Default)，会在当前作用域内沿用父级的实际主题变体。
 
 </section>
 

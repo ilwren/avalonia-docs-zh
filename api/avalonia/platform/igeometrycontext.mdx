@@ -91,19 +91,19 @@ public void ArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
 
-The radii of an ellipse whose path is used to draw the arc.
+用于绘制该圆弧的椭圆路径的两个半径。
 
 
 `rotationAngle` double
 
-The rotation angle (in degrees) of the ellipse that specifies the path of the arc; positive values are clockwise.
-This will rotate the entire arc relative to the X-axis and is not commonly used.
+确定弧线路径的那个椭圆的旋转角度（以度计），正值表示顺时针。
+它会把整段弧相对 X 轴整体旋转，平时并不常用。
 
 
 `isLargeArc` bool
 
-Specifies whether the arc should follow the longer path around an ellipse rather than the shorter one.
-`true` to draw the arc greater than 180 degrees; otherwise, `false`.
+指定该圆弧是走椭圆上较长的那条路径，还是较短的那条。
+画大于 180 度的弧时为 `true`，否则为 `false`。
 
 
 `sweepDirection` [Avalonia.Media.SweepDirection](xref:Avalonia.Media.SweepDirection)
@@ -160,12 +160,12 @@ public void CubicBezierTo(Avalonia.Point controlPoint1, Avalonia.Point controlPo
 
 `controlPoint1` [Avalonia.Point](xref:Avalonia.Point)
 
-The first control point used to specify the shape of the curve.
+用于确定曲线形状的第一个控制点。
 
 
 `controlPoint2` [Avalonia.Point](xref:Avalonia.Point)
 
-The second control point used to specify the shape of the curve.
+用于确定曲线形状的第二个控制点。
 
 
 `endPoint` [Avalonia.Point](xref:Avalonia.Point)
@@ -243,7 +243,7 @@ public void QuadraticBezierTo(Avalonia.Point controlPoint, Avalonia.Point endPoi
 
 `controlPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The control point used to specify the shape of the curve.
+用于确定曲线形状的控制点。
 
 
 `endPoint` [Avalonia.Point](xref:Avalonia.Point)

@@ -102,8 +102,8 @@ The Y co-ordinate.
 | [FromPointWithDpi (2 overloads)](#uid-1334c8745d) | 按指定的每英寸点数（DPI）把 [Avalonia.Point](xref:Avalonia.Point) 换算成设备像素。 |
 | [GetHashCode](#uid-61c5d6442e) | 返回 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) 的哈希码。 |
 | [Parse](#uid-ed7841f67e) | 解析 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) 字符串。 |
-| [ToPoint (2 overloads)](#uid-0a49304e51) | Converts the [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) to a device-independent [Avalonia.Point](xref:Avalonia.Point) using the specified scaling factor. |
-| [ToPointWithDpi (2 overloads)](#uid-3c44106e38) | Converts the [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) to a device-independent [Avalonia.Point](xref:Avalonia.Point) using the specified dots per inch (DPI). |
+| [ToPoint (2 overloads)](#uid-0a49304e51) | 按指定的缩放系数把 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) 换算成设备无关的 [Avalonia.Point](xref:Avalonia.Point)。 |
+| [ToPointWithDpi (2 overloads)](#uid-3c44106e38) | 按指定的每英寸点数（DPI）把 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) 换算成设备无关的 [Avalonia.Point](xref:Avalonia.Point)。 |
 | [ToString](#uid-cf9f043d5f) | 返回该点的字符串表示形式。 |
 | [WithX](#uid-b00b2ed10d) | Returns a new [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) with the same Y co-ordinate and the specified X co-ordinate. |
 | [WithY](#uid-1261b633a5) | Returns a new [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) with the same X co-ordinate and the specified Y co-ordinate. |
@@ -135,7 +135,7 @@ public bool Equals(Avalonia.PixelPoint other)
 
 bool
 
-True if this point is equal to other; False otherwise.
+若该点与 other 相等则为 True，否则为 False。
 
 
 </section>

@@ -61,7 +61,7 @@ public interface IAssetLoader
 | [GetAssets](#uid-124a555456) | 获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。 |
 | [InvalidateAssemblyCache（2 个重载）](#uid-adac6efb6a) | 把所有程序集从缓存中移除。 |
 | [Open](#uid-1f12830fe4) | 按请求的 URI 打开资产。 |
-| [OpenAndGetAssembly](#uid-1f69abc1fa) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
+| [OpenAndGetAssembly](#uid-1f69abc1fa) | 按请求的 URI 打开资产，返回资产流以及承载该资产的程序集。 |
 | [SetDefaultAssembly](#uid-dab91beb44) | We need a way to override the default assembly selected by the host platform because right now it is selecting the wrong one for PCL based Apps. The [AssetLoader](xref:Avalonia.Platform.AssetLoader) needs a refactor cause right now it lives in 3+ platforms which can all be loaded on Windows. |
 
 <section className="apiref-page__member-entry">
@@ -158,7 +158,7 @@ The base URI.
 
 System.Collections.Generic.IEnumerable&lt;Uri&gt;
 
-All matching assets as a tuple of the absolute path to the asset and the assembly containing the asset
+所有匹配的资产，以“资产绝对路径 + 承载该资产的程序集”元组的形式给出
 
 
 </section>
@@ -245,8 +245,8 @@ System.IO.Stream
 
 ### OpenAndGetAssembly 方法 {#openandgetassembly-method}
 
-Opens the asset with the requested URI and returns the asset stream and the
-assembly containing the asset.
+按请求的 URI 打开资产，返回资产流以及
+承载该资产的程序集。
 
 ```csharp
 public ValueTuple<System.IO.Stream, System.Reflection.Assembly> OpenAndGetAssembly(Uri uri, Uri baseUri)

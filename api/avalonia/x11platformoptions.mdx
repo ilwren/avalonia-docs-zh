@@ -86,7 +86,7 @@ public X11PlatformOptions()
 | [GlProfiles](#uid-9d2c834088) | 暂无摘要。 |
 | [GlxRendererBlacklist](#uid-e68483e0ce) | 暂无摘要。 |
 | [OverlayPopups](#uid-bb565b2ba8) | 设为 true 时把弹出层嵌入窗口内，默认值为 false。 |
-| [RenderingMode](#uid-1eb188c693) | Gets or sets Avalonia rendering modes with fallbacks. The first element in the array has the highest priority. The default value is: [Avalonia.X11RenderingMode.Glx](xref:Avalonia.X11RenderingMode.Glx), [Avalonia.X11RenderingMode.Software](xref:Avalonia.X11RenderingMode.Software). |
+| [RenderingMode](#uid-1eb188c693) | 获取或设置带回退顺序的 Avalonia 渲染模式。数组中的第一项优先级最高。默认值为：[Avalonia.X11RenderingMode.Glx](xref:Avalonia.X11RenderingMode.Glx)、[Avalonia.X11RenderingMode.Software](xref:Avalonia.X11RenderingMode.Software)。 |
 | [ShouldRenderOnUIThread](#uid-82559e476f) | Render directly on the UI thread instead of using a dedicated render thread. This can be usable if your device don't have multiple cores to begin with. This setting is false by default. |
 | [UseDBusFilePicker](#uid-2ea5009019) | Enables DBus file picker instead of GTK. The default value is true. |
 | [UseDBusMenu](#uid-d169320b9a) | Enables global menu support on Linux desktop environments where it's supported (e. g. XFCE and MATE with plugin, KDE, etc). The default value is true. |
@@ -266,9 +266,9 @@ public bool OverlayPopups { get; set; }
 
 ### RenderingMode 属性 {#renderingmode-property}
 
-Gets or sets Avalonia rendering modes with fallbacks.
-The first element in the array has the highest priority.
-The default value is: [Avalonia.X11RenderingMode.Glx](xref:Avalonia.X11RenderingMode.Glx), [Avalonia.X11RenderingMode.Software](xref:Avalonia.X11RenderingMode.Software).
+获取或设置带回退顺序的 Avalonia 渲染模式。
+数组中的第一项优先级最高。
+默认值为：[Avalonia.X11RenderingMode.Glx](xref:Avalonia.X11RenderingMode.Glx)、[Avalonia.X11RenderingMode.Software](xref:Avalonia.X11RenderingMode.Software)。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.X11RenderingMode> RenderingMode { get; set; }

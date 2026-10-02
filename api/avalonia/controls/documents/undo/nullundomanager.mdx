@@ -141,8 +141,8 @@ public void Record(Avalonia.Controls.Documents.Undo.IUndoUnit unit)
 
 `unit` [Avalonia.Controls.Documents.Undo.IUndoUnit](xref:Avalonia.Controls.Documents.Undo.IUndoUnit)
 
-The unit to record. It has to satisfy an internal contract, so a unit built outside
-this assembly is rejected. Group edits with [Avalonia.Controls.Documents.Undo.IUndoManager.BeginUndoUnit(string,Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.IUndoManager.BeginUndoUnit%28System.String%2CSystem.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29) instead.
+要记录的单元。它必须满足一份内部契约，因此在本程序集之外构造的单元会被拒绝。
+要把多次编辑归为一组，请改用 [Avalonia.Controls.Documents.Undo.IUndoManager.BeginUndoUnit(string,Nullable&#123;Avalonia.Controls.Documents.Undo.SelectionSnapshot&#125;)](xref:Avalonia.Controls.Documents.Undo.IUndoManager.BeginUndoUnit%28System.String%2CSystem.Nullable%7BAvalonia.Controls.Documents.Undo.SelectionSnapshot%7D%29)。
 
 
 </section>

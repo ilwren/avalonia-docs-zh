@@ -93,7 +93,7 @@ public StandardAssetLoader(System.Reflection.Assembly assembly)
 | [GetAssets](#uid-6f83c235fe) | 获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。 |
 | [InvalidateAssemblyCache（2 个重载）](#uid-371c85a4f3) | 暂无摘要。 |
 | [Open](#uid-11b09534e4) | 按请求的 URI 打开资产。 |
-| [OpenAndGetAssembly](#uid-11100a9b4f) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
+| [OpenAndGetAssembly](#uid-11100a9b4f) | 按请求的 URI 打开资产，返回资产流以及承载该资产的程序集。 |
 | [RegisterResUriParsers](#uid-6cffcfb154) | 暂无摘要。 |
 | [SetDefaultAssembly](#uid-a66a77b805) | Sets the default assembly from which to load assets for which no assembly is specified. |
 
@@ -183,7 +183,7 @@ Base URI that is used if `uri` is relative.
 
 System.Collections.Generic.IEnumerable&lt;Uri&gt;
 
-All matching assets as a tuple of the absolute path to the asset and the assembly containing the asset
+所有匹配的资产，以“资产绝对路径 + 承载该资产的程序集”元组的形式给出
 
 
 </section>
@@ -264,8 +264,8 @@ System.IO.Stream
 
 ### OpenAndGetAssembly 方法 {#openandgetassembly-method}
 
-Opens the asset with the requested URI and returns the asset stream and the
-assembly containing the asset.
+按请求的 URI 打开资产，返回资产流以及
+承载该资产的程序集。
 
 ```csharp
 public ValueTuple<System.IO.Stream, System.Reflection.Assembly> OpenAndGetAssembly(Uri uri, Uri baseUri)

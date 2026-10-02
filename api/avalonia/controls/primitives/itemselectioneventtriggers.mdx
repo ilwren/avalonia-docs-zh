@@ -64,7 +64,7 @@ public class ItemSelectionEventTriggers
 | --- | --- |
 | [HasRangeSelectionModifier](#uid-f31980b869) | Analyses an input event received by a selectable element, and determines whether the action should trigger range selection. |
 | [HasToggleSelectionModifier](#uid-c8fad760c9) | Analyses an input event received by a selectable element, and determines whether the action should trigger toggle selection. |
-| [ShouldTriggerSelection (2 overloads)](#uid-b4c5552f97) | Analyses an input event received by a selectable element, and determines whether the action should trigger selection on press, on release, or not at all. |
+| [ShouldTriggerSelection (2 overloads)](#uid-b4c5552f97) | 分析某个可选元素收到的输入事件，判断该操作应当在按下时触发选择、在松开时触发，还是压根不触发。 |
 
 <section className="apiref-page__member-entry">
 
@@ -146,7 +146,7 @@ bool
 
 #### ShouldTriggerSelection 方法 {#shouldtriggerselection-method}
 
-Analyses an input event received by a selectable element, and determines whether the action should trigger selection on press, on release, or not at all.
+分析某个可选元素收到的输入事件，判断该操作应当在按下时触发选择、在松开时触发，还是压根不触发。
 
 ```csharp
 public bool ShouldTriggerSelection(Avalonia.Visual selectable, Avalonia.Input.KeyEventArgs eventArgs)
@@ -177,7 +177,7 @@ bool
 
 #### ShouldTriggerSelection 方法 {#shouldtriggerselection-method-1}
 
-Analyses an input event received by a selectable element, and determines whether the action should trigger selection on press, on release, or not at all.
+分析某个可选元素收到的输入事件，判断该操作应当在按下时触发选择、在松开时触发，还是压根不触发。
 
 ```csharp
 public bool ShouldTriggerSelection(Avalonia.Visual selectable, Avalonia.Input.PointerEventArgs eventArgs)

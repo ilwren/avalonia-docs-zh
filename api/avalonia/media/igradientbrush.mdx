@@ -63,7 +63,7 @@ public interface IGradientBrush
 | 名称 | 说明 |
 | --- | --- |
 | [GradientStops](#uid-0d18507892) | 获取该画刷的渐变停止点。 |
-| [SpreadMethod](#uid-a698f6a3f1) | Gets the brush's spread method that defines how to draw a gradient that doesn't fill the bounds of the destination control. |
+| [SpreadMethod](#uid-a698f6a3f1) | 获取该画刷的扩散方式，它决定当渐变填不满目标控件范围时该如何绘制。 |
 
 <section className="apiref-page__member-entry">
 
@@ -85,8 +85,8 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Media.IGradientStop> Gr
 
 ### SpreadMethod 属性 {#spreadmethod-property}
 
-Gets the brush's spread method that defines how to draw a gradient that doesn't fill
-the bounds of the destination control.
+获取该画刷的扩散方式，它决定当渐变填不满
+目标控件范围时该如何绘制。
 
 ```csharp
 public Avalonia.Media.GradientSpreadMethod SpreadMethod { get; set; }

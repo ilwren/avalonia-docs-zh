@@ -62,8 +62,8 @@ public class InputExtensions
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetInputElementsAt (2 overloads)](#uid-65f6aa8f40) | Returns the active input elements at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement). |
-| [InputHitTest (4 overloads)](#uid-f46f08bee9) | Returns the topmost active input element at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement). |
+| [GetInputElementsAt (2 overloads)](#uid-65f6aa8f40) | 返回 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) 上某一点处处于活动状态的输入元素。 |
+| [InputHitTest (4 overloads)](#uid-f46f08bee9) | 返回 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) 上某一点处最顶层的活动输入元素。 |
 
 <span id="uid-65f6aa8f40"></span>
 
@@ -75,7 +75,7 @@ public class InputExtensions
 
 #### GetInputElementsAt 方法 {#getinputelementsat-method}
 
-Returns the active input elements at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
+返回 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) 上某一点处处于活动状态的输入元素。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Input.IInputElement> GetInputElementsAt(Avalonia.Input.IInputElement element, Avalonia.Point p)
@@ -113,7 +113,7 @@ The active input elements found at the point, ordered topmost first.
 
 #### GetInputElementsAt 方法 {#getinputelementsat-method-1}
 
-Returns the active input elements at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
+返回 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) 上某一点处处于活动状态的输入元素。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Input.IInputElement> GetInputElementsAt(Avalonia.Input.IInputElement element, Avalonia.Point p, bool enabledElementsOnly)
@@ -155,7 +155,7 @@ The active input elements found at the point, ordered topmost first.
 
 #### InputHitTest 方法 {#inputhittest-method}
 
-Returns the topmost active input element at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
+返回 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) 上某一点处最顶层的活动输入元素。
 
 ```csharp
 public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement element, Avalonia.Point p)
@@ -193,7 +193,7 @@ The topmost [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) at
 
 #### InputHitTest 方法 {#inputhittest-method-1}
 
-Returns the topmost active input element at a point on an [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
+返回 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement) 上某一点处最顶层的活动输入元素。
 
 ```csharp
 public Avalonia.Input.IInputElement InputHitTest(Avalonia.Input.IInputElement element, Avalonia.Point p, bool enabledElementsOnly)

@@ -230,7 +230,7 @@ bool
 | [Item](avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
 | [Name](#uid-9e435be47d) | Application name to be used for various platform-specific purposes |
 | [PlatformSettings](#uid-37be27508e) | Represents a contract for accessing global platform-specific settings. |
-| [RequestedThemeVariant](#uid-5c366c1387) | Gets or sets the UI theme variant that is used by the control (and its child elements) for resource determination. The UI theme you specify with [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) can override the app-level [ThemeVariant](xref:Avalonia.Styling.ThemeVariant). |
+| [RequestedThemeVariant](#uid-5c366c1387) | 获取或设置该控件（及其子元素）在解析资源时所用的界面主题变体。你用 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) 指定的界面主题可以覆盖应用级的 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant)。 |
 | [Resources](#uid-ad05e868f8) | Gets the application's global resource dictionary. |
 | [Styles](#uid-56724faecc) | Gets the application's global styles. |
 
@@ -248,8 +248,8 @@ public Avalonia.Styling.ThemeVariant ActualThemeVariant { get; set; }
 
 #### 返回值 {#returns-2}
 
-If current control is contained in the [ThemeVariantScope](xref:Avalonia.Controls.ThemeVariantScope), [TopLevel](xref:Avalonia.Controls.TopLevel) or Application with non-default RequestedThemeVariant, that value will be returned.
-Otherwise, current OS theme variant is returned.
+若当前控件处在某个 RequestedThemeVariant 非默认值的 [ThemeVariantScope](xref:Avalonia.Controls.ThemeVariantScope)、[TopLevel](xref:Avalonia.Controls.TopLevel) 或 Application 之内，返回的便是那个值。
+否则返回当前操作系统的主题变体。
 
 
 </section>
@@ -371,8 +371,8 @@ as specific top levels might have different settings set-up.
 
 ### RequestedThemeVariant 属性 {#requestedthemevariant-property}
 
-Gets or sets the UI theme variant that is used by the control (and its child elements) for resource determination.
-The UI theme you specify with [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) can override the app-level [ThemeVariant](xref:Avalonia.Styling.ThemeVariant).
+获取或设置该控件（及其子元素）在解析资源时所用的界面主题变体。
+你用 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) 指定的界面主题可以覆盖应用级的 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant)。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant RequestedThemeVariant { get; set; }
@@ -380,7 +380,7 @@ public Avalonia.Styling.ThemeVariant RequestedThemeVariant { get; set; }
 
 #### 备注 {#remarks-4}
 
-Setting RequestedThemeVariant to [Avalonia.Styling.ThemeVariant.Default](xref:Avalonia.Styling.ThemeVariant.Default) will apply parent's actual theme variant on the current scope.
+把 RequestedThemeVariant 设为 [Avalonia.Styling.ThemeVariant.Default](xref:Avalonia.Styling.ThemeVariant.Default)，会在当前作用域内沿用父级的实际主题变体。
 
 </section>
 

@@ -74,7 +74,7 @@ public AndroidPlatformOptions()
 
 | 名称 | 说明 |
 | --- | --- |
-| [RenderingMode](#uid-5dc669b30e) | Gets or sets Avalonia rendering modes with fallbacks. The first element in the array has the highest priority. The default value is: [Avalonia.AndroidRenderingMode.Egl](xref:Avalonia.AndroidRenderingMode.Egl), [Avalonia.AndroidRenderingMode.Software](xref:Avalonia.AndroidRenderingMode.Software). |
+| [RenderingMode](#uid-5dc669b30e) | 获取或设置带回退顺序的 Avalonia 渲染模式。数组中的第一项优先级最高。默认值为：[Avalonia.AndroidRenderingMode.Egl](xref:Avalonia.AndroidRenderingMode.Egl)、[Avalonia.AndroidRenderingMode.Software](xref:Avalonia.AndroidRenderingMode.Software)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -82,9 +82,9 @@ public AndroidPlatformOptions()
 
 ### RenderingMode 属性 {#renderingmode-property}
 
-Gets or sets Avalonia rendering modes with fallbacks.
-The first element in the array has the highest priority.
-The default value is: [Avalonia.AndroidRenderingMode.Egl](xref:Avalonia.AndroidRenderingMode.Egl), [Avalonia.AndroidRenderingMode.Software](xref:Avalonia.AndroidRenderingMode.Software).
+获取或设置带回退顺序的 Avalonia 渲染模式。
+数组中的第一项优先级最高。
+默认值为：[Avalonia.AndroidRenderingMode.Egl](xref:Avalonia.AndroidRenderingMode.Egl)、[Avalonia.AndroidRenderingMode.Software](xref:Avalonia.AndroidRenderingMode.Software)。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.AndroidRenderingMode> RenderingMode { get; set; }

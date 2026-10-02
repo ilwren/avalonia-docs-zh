@@ -109,7 +109,7 @@ public Avalonia.Media.IImmutableBrush ToImmutable()
 | [GradientStops](#uid-383377499c) | 获取该画刷的渐变停止点。 |
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Opacity](brush.mdx#uid-56a58be17e) | 获取或设置画刷的不透明度。继承自 [Brush](brush.mdx)。 |
-| [SpreadMethod](#uid-e79c8aab1c) | Gets the brush's spread method that defines how to draw a gradient that doesn't fill the bounds of the destination control. |
+| [SpreadMethod](#uid-e79c8aab1c) | 获取该画刷的扩散方式，它决定当渐变填不满目标控件范围时该如何绘制。 |
 | [Transform](brush.mdx#uid-8d25869723) | 获取或设置画刷的变换。继承自 [Brush](brush.mdx)。 |
 | [TransformOrigin](brush.mdx#uid-406d6c9e88) | 获取或设置画刷 [Avalonia.Media.Brush.Transform](xref:Avalonia.Media.Brush.Transform) 的原点。继承自 [Brush](brush.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
@@ -134,8 +134,8 @@ public Avalonia.Media.GradientStops GradientStops { get; set; }
 
 ### SpreadMethod 属性 {#spreadmethod-property}
 
-Gets the brush's spread method that defines how to draw a gradient that doesn't fill
-the bounds of the destination control.
+获取该画刷的扩散方式，它决定当渐变填不满
+目标控件范围时该如何绘制。
 
 ```csharp
 public Avalonia.Media.GradientSpreadMethod SpreadMethod { get; set; }

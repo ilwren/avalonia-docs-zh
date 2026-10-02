@@ -351,10 +351,10 @@ public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priori
 
 `cancellationToken` System.Threading.CancellationToken
 
-A cancellation token that can be used to cancel the operation.
-If the operation has not started, it will be aborted when the
-cancellation token is canceled. If the operation has started,
-the operation can cooperate with the cancellation request.
+一个取消令牌，可用来取消该操作。
+若操作尚未开始，取消令牌被取消时它会被中止；
+若操作已经开始，
+则由操作自行配合这次取消请求。
 
 
 </section>
@@ -386,10 +386,10 @@ public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priori
 
 `cancellationToken` System.Threading.CancellationToken
 
-A cancellation token that can be used to cancel the operation.
-If the operation has not started, it will be aborted when the
-cancellation token is canceled. If the operation has started,
-the operation can cooperate with the cancellation request.
+一个取消令牌，可用来取消该操作。
+若操作尚未开始，取消令牌被取消时它会被中止；
+若操作已经开始，
+则由操作自行配合这次取消请求。
 
 
 `timeout` TimeSpan
@@ -537,8 +537,8 @@ TResult
 
 #### InvokeAsync 方法 {#invokeasync-method}
 
-Executes the specified Action asynchronously on the thread
-that the Dispatcher was created on.
+在创建该 Dispatcher 的那个线程上
+异步执行指定的 Action。
 
 ```csharp
 public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback)
@@ -555,7 +555,7 @@ public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback)
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)
 
-An operation representing the queued delegate to be invoked.
+一个操作，代表已排队等待调用的那个委托。
 
 
 ##### 备注 {#remarks-2}
@@ -570,8 +570,8 @@ Note that the default priority is DispatcherPriority.Default.
 
 #### InvokeAsync 方法 {#invokeasync-method-1}
 
-Executes the specified Action asynchronously on the thread
-that the Dispatcher was created on.
+在创建该 Dispatcher 的那个线程上
+异步执行指定的 Action。
 
 ```csharp
 public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback, Avalonia.Threading.DispatcherPriority priority)
@@ -594,7 +594,7 @@ public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback, Avalo
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)
 
-An operation representing the queued delegate to be invoked.
+一个操作，代表已排队等待调用的那个委托。
 
 
 </section>
@@ -605,8 +605,8 @@ An operation representing the queued delegate to be invoked.
 
 #### InvokeAsync 方法 {#invokeasync-method-2}
 
-Executes the specified Action asynchronously on the thread
-that the Dispatcher was created on.
+在创建该 Dispatcher 的那个线程上
+异步执行指定的 Action。
 
 ```csharp
 public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken)
@@ -627,17 +627,17 @@ public Avalonia.Threading.DispatcherOperation InvokeAsync(Action callback, Avalo
 
 `cancellationToken` System.Threading.CancellationToken
 
-A cancellation token that can be used to cancel the operation.
-If the operation has not started, it will be aborted when the
-cancellation token is canceled. If the operation has started,
-the operation can cooperate with the cancellation request.
+一个取消令牌，可用来取消该操作。
+若操作尚未开始，取消令牌被取消时它会被中止；
+若操作已经开始，
+则由操作自行配合这次取消请求。
 
 
 ##### 返回值 {#returns-12}
 
 [Avalonia.Threading.DispatcherOperation](xref:Avalonia.Threading.DispatcherOperation)
 
-An operation representing the queued delegate to be invoked.
+一个操作，代表已排队等待调用的那个委托。
 
 
 </section>

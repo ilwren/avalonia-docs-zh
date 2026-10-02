@@ -176,9 +176,9 @@ True to show at pointer
 | [OverlayDismissEventPassThrough](#uid-9750f2448e) | Gets or sets a value indicating whether the event that closes the flyout is passed through to the parent window. |
 | [OverlayInputPassThroughElement](#uid-158b3b043a) | Gets or sets an element that should receive pointer input events even when underneath the flyout's overlay. |
 | [Placement](#uid-6cc5d900ca) | 获取或设置弹出层相对于 [Avalonia.Controls.Primitives.Popup.PlacementTarget](xref:Avalonia.Controls.Primitives.Popup.PlacementTarget) 的期望放置方式。 |
-| [PlacementAnchor](#uid-2821742058) | Gets or sets the anchor point on the [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity). |
-| [PlacementConstraintAdjustment](#uid-88ee296e55) | Gets or sets a value describing how the popup position will be adjusted if the unadjusted position would result in the popup being partly constrained. |
-| [PlacementGravity](#uid-3e06cc8143) | Gets or sets a value which defines in what direction the popup should open when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity). |
+| [PlacementAnchor](#uid-2821742058) | 获取或设置当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) 为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时 [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) 上的锚点。 |
+| [PlacementConstraintAdjustment](#uid-88ee296e55) | 获取或设置一个值，描述当未调整的位置会让弹出层被部分遮挡时，该如何调整它的位置。 |
+| [PlacementGravity](#uid-3e06cc8143) | 获取或设置一个值，指定当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) 为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时弹出层朝哪个方向展开。 |
 | [Popup](#uid-7deeda2b3c) | 暂无摘要。 |
 | [ShowMode](#uid-ac3c5d7690) | Gets or sets the desired ShowMode |
 | [Target](flyoutbase.mdx#uid-1555361c2e) | 获取显示该 Flyout 时所用的 Target。继承自 [FlyoutBase](flyoutbase.mdx)。 |
@@ -269,8 +269,8 @@ public Avalonia.Controls.PlacementMode Placement { get; set; }
 
 ### PlacementAnchor 属性 {#placementanchor-property}
 
-Gets or sets the anchor point on the [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement)
-is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity).
+获取或设置当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement)
+为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时 [Avalonia.Controls.Primitives.Popup.PlacementRect](xref:Avalonia.Controls.Primitives.Popup.PlacementRect) 上的锚点。
 
 ```csharp
 public Avalonia.Controls.Primitives.PopupPositioning.PopupAnchor PlacementAnchor { get; set; }
@@ -284,8 +284,8 @@ public Avalonia.Controls.Primitives.PopupPositioning.PopupAnchor PlacementAnchor
 
 ### PlacementConstraintAdjustment 属性 {#placementconstraintadjustment-property}
 
-Gets or sets a value describing how the popup position will be adjusted if the
-unadjusted position would result in the popup being partly constrained.
+获取或设置一个值，描述当未调整的位置会让弹出层
+被部分遮挡时，该如何调整它的位置。
 
 ```csharp
 public Avalonia.Controls.Primitives.PopupPositioning.PopupPositionerConstraintAdjustment PlacementConstraintAdjustment { get; set; }
@@ -299,8 +299,8 @@ public Avalonia.Controls.Primitives.PopupPositioning.PopupPositionerConstraintAd
 
 ### PlacementGravity 属性 {#placementgravity-property}
 
-Gets or sets a value which defines in what direction the popup should open
-when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity).
+获取或设置一个值，指定当 [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) 为 [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity) 时
+弹出层朝哪个方向展开。
 
 ```csharp
 public Avalonia.Controls.Primitives.PopupPositioning.PopupGravity PlacementGravity { get; set; }

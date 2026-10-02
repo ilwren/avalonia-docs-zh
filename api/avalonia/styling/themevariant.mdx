@@ -83,12 +83,12 @@ public ThemeVariant(object key, Avalonia.Styling.ThemeVariant inheritVariant)
 
 `key` object
 
-Key of the theme variant by which variants are compared.
+主题变体的键，变体之间以它作比较。
 
 
 `inheritVariant` [Avalonia.Styling.ThemeVariant](xref:Avalonia.Styling.ThemeVariant)
 
-Reference to a theme variant which should be used, if resource wasn't found for the requested variant.
+指向某个主题变体的引用；当所请求的变体下找不到资源时便改用它。
 
 
 #### 异常 {#exceptions}
@@ -212,8 +212,8 @@ string
 | --- | --- |
 | [Dark](#uid-46a433b308) | Use the Dark theme variant. |
 | [Default](#uid-512c40a7a6) | Inherit theme variant from the parent. If set on Application, system theme is inherited. Using Default as the ResourceDictionary.Key marks this dictionary as a fallback in case the theme variant or resource key is not found in other theme dictionaries. |
-| [InheritVariant](#uid-abdb39dbb3) | Reference to a theme variant which should be used, if resource wasn't found for the requested variant. |
-| [Key](#uid-e88e858545) | Key of the theme variant by which variants are compared. |
+| [InheritVariant](#uid-abdb39dbb3) | 指向某个主题变体的引用；当所请求的变体下找不到资源时便改用它。 |
+| [Key](#uid-e88e858545) | 主题变体的键，变体之间以它作比较。 |
 | [Light](#uid-0c2c1e660f) | Use the Light theme variant. |
 
 <section className="apiref-page__member-entry">
@@ -251,7 +251,7 @@ public Avalonia.Styling.ThemeVariant Default { get; set; }
 
 ### InheritVariant 属性 {#inheritvariant-property}
 
-Reference to a theme variant which should be used, if resource wasn't found for the requested variant.
+指向某个主题变体的引用；当所请求的变体下找不到资源时便改用它。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant InheritVariant { get; set; }
@@ -265,7 +265,7 @@ public Avalonia.Styling.ThemeVariant InheritVariant { get; set; }
 
 ### Key 属性 {#key-property}
 
-Key of the theme variant by which variants are compared.
+主题变体的键，变体之间以它作比较。
 
 ```csharp
 public object Key { get; set; }

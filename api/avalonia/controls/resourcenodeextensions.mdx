@@ -56,7 +56,7 @@ public class ResourceNodeExtensions
 
 | 名称 | 说明 |
 | --- | --- |
-| [FindResource (2 overloads)](#uid-285f576e62) | Finds the specified resource by searching up the logical tree and then global styles. |
+| [FindResource (2 overloads)](#uid-285f576e62) | 先沿逻辑树向上、再到全局样式中查找指定的资源。 |
 | [GetResourceObservable (3 overloads)](#uid-ed9785dc04) | 暂无摘要。 |
 | [TryFindResource (2 overloads)](#uid-9444696616) | 暂无摘要。 |
 | [TryGetResource](#uid-c358b1cce0) | 暂无摘要。 |
@@ -71,7 +71,7 @@ public class ResourceNodeExtensions
 
 #### FindResource 方法 {#findresource-method}
 
-Finds the specified resource by searching up the logical tree and then global styles.
+先沿逻辑树向上、再到全局样式中查找指定的资源。
 
 ```csharp
 public object FindResource(Avalonia.Controls.IResourceHost control, Avalonia.Styling.ThemeVariant theme, object key)
@@ -109,7 +109,7 @@ The resource, or [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaPr
 
 #### FindResource 方法 {#findresource-method-1}
 
-Finds the specified resource by searching up the logical tree and then global styles.
+先沿逻辑树向上、再到全局样式中查找指定的资源。
 
 ```csharp
 public object FindResource(Avalonia.Controls.IResourceHost control, object key)

@@ -80,7 +80,7 @@ public WMAIndicator()
 | [CheckAccess](../../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [ClearValue（4 个重载）](../../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [CoerceValue](../../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Compute](movingaverageindicatorbase.mdx#uid-ab55caa2cb) | Called when the target series data updates to recalculate the indicator values. Inherited from [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx). |
+| [Compute](movingaverageindicatorbase.mdx#uid-ab55caa2cb) | 目标系列的数据更新时调用，用于重新计算指标值。继承自 [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx)。 |
 | [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetHashCode](../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -88,7 +88,7 @@ public WMAIndicator()
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Render](movingaverageindicatorbase.mdx#uid-247a15d091) | Renders the indicator into the specified plot area. Inherited from [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx). |
+| [Render](movingaverageindicatorbase.mdx#uid-247a15d091) | 把该指标渲染到指定的绘图区中。继承自 [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx)。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -100,7 +100,7 @@ public WMAIndicator()
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsVisible](charttechnicalindicator.mdx#uid-7b26aa00a1) | 获取或设置一个值，指示该指标是否可见。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Period](movingaverageindicatorbase.mdx#uid-b99423eea2) | Gets or sets the period used for the moving-average calculation. Inherited from [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx). |
+| [Period](movingaverageindicatorbase.mdx#uid-b99423eea2) | 获取或设置移动平均计算所用的周期。继承自 [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx)。 |
 | [Stroke](charttechnicalindicator.mdx#uid-12dd1e33ee) | 获取或设置主指标线所用的画刷。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [StrokeDashStyle](charttechnicalindicator.mdx#uid-0595074efe) | 获取或设置指标线的虚线样式。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [StrokeLineCap](charttechnicalindicator.mdx#uid-1b5b85f7e6) | 获取或设置指标线的线端样式。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
@@ -114,7 +114,7 @@ public WMAIndicator()
 | 名称 | 说明 |
 | --- | --- |
 | [IsVisibleProperty](charttechnicalindicator.mdx#uid-e4b6903e6f) | 标识 [Avalonia.Controls.Charts.ChartTechnicalIndicator.IsVisible](xref:Avalonia.Controls.Charts.ChartTechnicalIndicator.IsVisible) Avalonia 属性。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
-| [PeriodProperty](movingaverageindicatorbase.mdx#uid-4ac6dd4a09) | Identifies the [Avalonia.Controls.Charts.MovingAverageIndicatorBase.Period](xref:Avalonia.Controls.Charts.MovingAverageIndicatorBase.Period) Avalonia property. Inherited from [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx). |
+| [PeriodProperty](movingaverageindicatorbase.mdx#uid-4ac6dd4a09) | 标识 [Avalonia.Controls.Charts.MovingAverageIndicatorBase.Period](xref:Avalonia.Controls.Charts.MovingAverageIndicatorBase.Period) Avalonia 属性。继承自 [MovingAverageIndicatorBase](movingaverageindicatorbase.mdx)。 |
 | [StrokeDashStyleProperty](charttechnicalindicator.mdx#uid-84c8e3c012) | 标识 [Avalonia.Controls.Charts.ChartTechnicalIndicator.StrokeDashStyle](xref:Avalonia.Controls.Charts.ChartTechnicalIndicator.StrokeDashStyle) Avalonia 属性。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [StrokeLineCapProperty](charttechnicalindicator.mdx#uid-84dbabda41) | 标识 [Avalonia.Controls.Charts.ChartTechnicalIndicator.StrokeLineCap](xref:Avalonia.Controls.Charts.ChartTechnicalIndicator.StrokeLineCap) Avalonia 属性。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [StrokeLineJoinProperty](charttechnicalindicator.mdx#uid-215ed86e0d) | 标识 [Avalonia.Controls.Charts.ChartTechnicalIndicator.StrokeLineJoin](xref:Avalonia.Controls.Charts.ChartTechnicalIndicator.StrokeLineJoin) Avalonia 属性。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
