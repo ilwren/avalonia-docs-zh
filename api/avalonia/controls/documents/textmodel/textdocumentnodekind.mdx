@@ -405,15 +405,15 @@ public string Name { get; set; }
 | 名称 | 说明 |
 | --- | --- |
 | [Block](#uid-6acbd08c49) | 一种通用块类型。 |
-| [BlockUIContainer](#uid-b93e566a8b) | A block UI container kind. |
-| [Bold](#uid-a25e2f9ab9) | A bold inline container kind. |
-| [Document](#uid-ff32c0760e) | The root document node kind. |
+| [BlockUIContainer](#uid-b93e566a8b) | 一种块级 UI 容器类型。 |
+| [Bold](#uid-a25e2f9ab9) | 一种加粗内联容器类型。 |
+| [Document](#uid-ff32c0760e) | 根文档节点类型。 |
 | [Footnote](#uid-aa945c6546) | The root of a footnote's document: a note is a nested document paired with its anchor by note id. It survives while empty - the note goes with its anchor. |
 | [FootnoteCitation](#uid-93917fe535) | A further citation of a note that already has its anchor: a second reference to the same note, or a reference from inside another note. Like the anchor it is an atom of one object replacement character showing the note's number, but it owns no note - deleting it leaves the note and the numbering alone. |
 | [FootnoteReference](#uid-15e678f369) | A footnote anchor leaf. Its text range holds the note's number (the anchor order ordinal), so it renders and exports as plain text; the paired note is a nested document in the document's [Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes](xref:Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes). |
 | [Hyperlink](#uid-1efb56ee40) | A hyperlink inline container kind. |
 | [Image](#uid-be6660fa38) | An inline image kind. Occupies a single object-replacement character. |
-| [InlineUIContainer](#uid-9bba0173cf) | An inline UI container kind. |
+| [InlineUIContainer](#uid-9bba0173cf) | 一种内联 UI 容器类型。 |
 | [Italic](#uid-550716d226) | An italic inline container kind. |
 | [LineBreak](#uid-e855071e17) | 一种换行叶节点类型。 |
 | [List](#uid-916dbfcdbd) | 一种列表块类型。 |
@@ -423,7 +423,7 @@ public string Name { get; set; }
 | [Paragraph](#uid-e627f4b468) | A paragraph inline container kind. |
 | [Run](#uid-28b803a475) | 一种文本运行叶节点类型。 |
 | [Section](#uid-8279f55fb8) | A section block container kind. |
-| [Span](#uid-4202fee56d) | A span inline container kind. |
+| [Span](#uid-4202fee56d) | 一种 span 内联容器类型。 |
 | [Subscript](#uid-71360df36d) | A subscript inline container kind. |
 | [Superscript](#uid-7b1ad0401f) | A superscript inline container kind. |
 | [Table](#uid-cf9861b8bf) | 一种表格块类型。 |
@@ -452,7 +452,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Block
 
 ### BlockUIContainer 字段 {#blockuicontainer-field}
 
-A block UI container kind.
+一种块级 UI 容器类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind BlockUIContainer
@@ -466,7 +466,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind BlockUIContain
 
 ### Bold 字段 {#bold-field}
 
-A bold inline container kind.
+一种加粗内联容器类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Bold
@@ -480,7 +480,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Bold
 
 ### Document 字段 {#document-field}
 
-The root document node kind.
+根文档节点类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Document
@@ -570,7 +570,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Image
 
 ### InlineUIContainer 字段 {#inlineuicontainer-field}
 
-An inline UI container kind.
+一种内联 UI 容器类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind InlineUIContainer
@@ -714,7 +714,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Section
 
 ### Span 字段 {#span-field}
 
-A span inline container kind.
+一种 span 内联容器类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Span

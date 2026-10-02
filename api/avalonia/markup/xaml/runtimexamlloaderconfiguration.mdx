@@ -76,7 +76,7 @@ public RuntimeXamlLoaderConfiguration()
 | --- | --- |
 | [CreateSourceInfo](#uid-d4d9a1c382) | When enabled, the XAML compiler embeds SourceInfo metadata (file path, line, and column) into generated code. Default is 'false'. |
 | [DesignMode](#uid-e3929fafda) | Indicates whether the XAML is being loaded in design mode. Default is 'false'. |
-| [DiagnosticHandler](#uid-5bfabbf87e) | XAML diagnostics handler. |
+| [DiagnosticHandler](#uid-5bfabbf87e) | XAML 诊断处理程序。 |
 | [LocalAssembly](#uid-aa3a33f9ca) | clr-namespace: 所用的默认程序集。 |
 | [UseCompiledBindingsByDefault](#uid-0f0a7eda8b) | Defines is [CompiledBinding](xref:Avalonia.Data.CompiledBinding) should be used by default. Default is 'false'. |
 
@@ -116,7 +116,7 @@ public bool DesignMode { get; set; }
 
 ### DiagnosticHandler 属性 {#diagnostichandler-property}
 
-XAML diagnostics handler.
+XAML 诊断处理程序。
 
 ```csharp
 public Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration.XamlDiagnosticFunc DiagnosticHandler { get; set; }

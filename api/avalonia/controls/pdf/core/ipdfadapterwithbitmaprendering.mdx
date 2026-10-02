@@ -58,7 +58,7 @@ public interface IPdfAdapterWithBitmapRendering
 
 | 名称 | 说明 |
 | --- | --- |
-| [RenderPageAsync](#uid-b4e61c8ec6) | Renders a page to a bitmap. |
+| [RenderPageAsync](#uid-b4e61c8ec6) | 把某一页渲染成位图。 |
 | [RenderPageRegionAsync](#uid-93ad70d5c0) | Renders a rectangular region of a page to a bitmap (for tiled rendering). |
 
 <section className="apiref-page__member-entry">
@@ -67,7 +67,7 @@ public interface IPdfAdapterWithBitmapRendering
 
 ### RenderPageAsync 方法 {#renderpageasync-method}
 
-Renders a page to a bitmap.
+把某一页渲染成位图。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> RenderPageAsync(Avalonia.Controls.Pdf.Core.IPdfPage page, double scale, double dpiScale, System.Threading.CancellationToken cancellationToken)

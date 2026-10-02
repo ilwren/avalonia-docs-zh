@@ -251,7 +251,7 @@ public int Value { get; set; }
 | [Input](#uid-37e6f3144c) | The job will be processed with the same priority as input. |
 | [Invalid](#uid-e8a15fcd01) | Used internally in dispatcher code |
 | [Loaded](#uid-ea1f3e0469) | The job will be processed after layout and render but before input. |
-| [MaxValue](#uid-dfb5638419) | Maximum possible priority |
+| [MaxValue](#uid-dfb5638419) | 可取的最高优先级 |
 | [Normal](#uid-10614c3949) | The job will be processed with normal priority. |
 | [Render](#uid-b42303fdd5) | The job will be processed with the same priority as render. |
 | [Send](#uid-3d524495d2) | The job will be processed before other asynchronous operations. |
@@ -389,7 +389,7 @@ public Avalonia.Threading.DispatcherPriority Loaded
 
 ### MaxValue 字段 {#maxvalue-field}
 
-Maximum possible priority
+可取的最高优先级
 
 ```csharp
 public Avalonia.Threading.DispatcherPriority MaxValue

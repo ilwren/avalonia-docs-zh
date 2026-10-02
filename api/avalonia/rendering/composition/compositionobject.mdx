@@ -73,7 +73,7 @@ public class CompositionObject
 | [StartAnimation](#uid-4d2f25fec7) | Connects an animation with the specified property of the object and starts the animation. |
 | [StartAnimationGroup](#uid-4846f860a0) | Starts an animation group. The StartAnimationGroup method on [CompositionObject](xref:Avalonia.Rendering.Composition.CompositionObject) lets you start [CompositionAnimationGroup](xref:Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup). All the animations in the group will be started at the same time on the object. |
 | [StopAnimation](#uid-01077c2b21) | Disconnects an animation from the specified property and stops the animation. |
-| [StopAnimationGroup](#uid-81dbd02845) | Stops an animation group. |
+| [StopAnimationGroup](#uid-81dbd02845) | 停止一个动画组。 |
 
 <section className="apiref-page__member-entry">
 
@@ -145,7 +145,7 @@ The name of the property to disconnect the animation from.
 
 ### StopAnimationGroup 方法 {#stopanimationgroup-method}
 
-Stops an animation group.
+停止一个动画组。
 
 ```csharp
 public void StopAnimationGroup(Avalonia.Rendering.Composition.Animations.ICompositionAnimationBase grp)
@@ -164,7 +164,7 @@ The animation group to stop.
 
 | 名称 | 说明 |
 | --- | --- |
-| [Compositor](#uid-bd6bbc1391) | The associated Compositor |
+| [Compositor](#uid-bd6bbc1391) | 关联的 Compositor |
 | [ImplicitAnimations](#uid-3929e9ea34) | The collection of implicit animations attached to this object. |
 | [IsDisposed](#uid-e01437c946) | 暂无摘要。 |
 
@@ -174,7 +174,7 @@ The animation group to stop.
 
 ### Compositor 属性 {#compositor-property}
 
-The associated Compositor
+关联的 Compositor
 
 ```csharp
 public Avalonia.Rendering.Composition.Compositor Compositor { get; set; }

@@ -131,7 +131,7 @@ public MarkdownImage()
 | [Foreground](richtextelement.mdx#uid-0c97ada7e3) | 获取或设置绘制控件前景所用的画刷。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [Height](richimage.mdx#uid-0f2bba1bbd) | Gets or sets the display height in device-independent pixels. [double.NaN](xref:System.Double.NaN) (the default) uses the image's intrinsic pixel size. Inherited from [RichImage](richimage.mdx). |
 | [ImageLoader](#uid-0fde56b99e) | Gets or sets the image loader used to resolve the image URL. Falls back to the [Avalonia.Controls.Markdown.ImageLoader](xref:Avalonia.Controls.Markdown.ImageLoader) the containing control supplies when this image sets none of its own. |
-| [ImageSource](#uid-49735161df) | Gets or sets the image URL. |
+| [ImageSource](#uid-49735161df) | 获取或设置图像 URL。 |
 | [ImageTitle](#uid-5da66e5005) | Gets or sets the image title (used as tooltip). `null` when the source declared none. |
 | [IsAttachedToDocument](richtextelement.mdx#uid-9e20282634) | 获取一个值，指示该元素当前是否已挂接到 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -176,7 +176,7 @@ public Avalonia.Controls.MarkdownImageLoader ImageLoader { get; set; }
 
 ### ImageSource 属性 {#imagesource-property}
 
-Gets or sets the image URL.
+获取或设置图像 URL。
 
 ```csharp
 public string ImageSource { get; set; }

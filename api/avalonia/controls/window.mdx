@@ -160,7 +160,7 @@ The window implementation.
 | [SetSystemBarColor](toplevel.mdx#uid-1359f0a6ef) | 获取或设置该窗口的键盘导航处理程序。继承自 [TopLevel](toplevel.mdx)。 |
 | [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Show（2 个重载）](#uid-cadc232152) | 显示该窗口。 |
-| [ShowDialog](#uid-4355328b25) | Shows the window as a dialog. |
+| [ShowDialog](#uid-4355328b25) | 以对话框方式显示该窗口。 |
 | [SortWindowsByZOrder](#uid-a899c96091) | 暂无摘要。 |
 | [TryGetPlatformHandle](toplevel.mdx#uid-f886eb2cf2) | 尝试取得这个派生自 [TopLevel](xref:Avalonia.Controls.TopLevel) 的控件所对应的平台句柄。继承自 [TopLevel](toplevel.mdx)。 |
 | [TryGetResource](../styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](../styledelement.mdx)。 |
@@ -322,7 +322,7 @@ Window that will be the owner of the shown window.
 
 ### ShowDialog 方法 {#showdialog-method}
 
-Shows the window as a dialog.
+以对话框方式显示该窗口。
 
 ```csharp
 public System.Threading.Tasks.Task<TResult> ShowDialog<TResult>(Avalonia.Controls.Window owner)

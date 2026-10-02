@@ -90,7 +90,7 @@ public PdfViewer()
 | [ClearSearch](#uid-32102b73a4) | Clears the current search query, results, and highlights. |
 | [ClearSelection](#uid-906d44eb28) | Clears the current text selection. |
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [CloseDocument](#uid-45f1dc2e12) | Closes the current document. |
+| [CloseDocument](#uid-45f1dc2e12) | 关闭当前文档。 |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CopySelectionToClipboard](#uid-835f5f07ee) | 把当前选区复制到剪贴板。 |
 | [DefaultStampColorFor](#uid-8818074faf) | The colour a stamp is drawn in when [Avalonia.Controls.PdfViewer.StampColor](xref:Avalonia.Controls.PdfViewer.StampColor) is not set. |
@@ -118,7 +118,7 @@ public PdfViewer()
 | [GetTextAsync](#uid-53cafd6109) | Extracts the plain text of the whole document, one page per element. |
 | [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [GoToBookmark](#uid-f0b443777b) | Navigates to a bookmark's target: its full destination (page plus position) when it has one, else its page. Returns `true` if the bookmark has a page target. |
-| [GoToPage](#uid-5ec442ed9e) | Navigates to a specific page. |
+| [GoToPage](#uid-5ec442ed9e) | 导航到指定页。 |
 | [HighlightSelectionAsync](#uid-6996edd2db) | 暂无摘要。 |
 | [InvalidateArrange](../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../layout/layoutable.mdx)。 |
@@ -324,7 +324,7 @@ public void ClearSelection()
 
 ### CloseDocument 方法 {#closedocument-method}
 
-Closes the current document.
+关闭当前文档。
 
 ```csharp
 public void CloseDocument()
@@ -660,7 +660,7 @@ bool
 
 ### GoToPage 方法 {#gotopage-method}
 
-Navigates to a specific page.
+导航到指定页。
 
 ```csharp
 public void GoToPage(int pageNumber)
@@ -721,7 +721,7 @@ bool
 
 <span id="uid-7c5fb53752"></span>
 
-### LoadDocumentAsync overloads
+### LoadDocumentAsync 的重载 {#loaddocumentasync-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -1808,7 +1808,7 @@ public void ZoomOut()
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalScrollOffset](#uid-42f7d6e15b) | Gets or sets the vertical scroll offset of the page area, in device-independent pixels. |
-| [ViewMode](#uid-054f1adea9) | Gets or sets the view mode. |
+| [ViewMode](#uid-054f1adea9) | 获取或设置视图模式。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
 | [ZoomInCommand](#uid-65904ecbba) | Gets a command that zooms in one step. Enabled while a document is loaded. |
@@ -3672,7 +3672,7 @@ public double VerticalScrollOffset { get; set; }
 
 ### ViewMode 属性 {#viewmode-property}
 
-Gets or sets the view mode.
+获取或设置视图模式。
 
 ```csharp
 public Avalonia.Controls.PdfViewMode ViewMode { get; set; }
@@ -3863,7 +3863,7 @@ public double ZoomStep { get; set; }
 | [KeyUpEvent](../input/inputelement.mdx#uid-e694f9abc6) | 定义 [Avalonia.Input.InputElement.KeyUp](xref:Avalonia.Input.InputElement.KeyUp) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LetterSpacingProperty](primitives/templatedcontrol.mdx#uid-cd0904df0e) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.LetterSpacing](xref:Avalonia.Controls.Primitives.TemplatedControl.LetterSpacing) 属性。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [LoadedEvent](control.mdx#uid-f76afcf3e6) | 定义 [Avalonia.Controls.Control.Loaded](xref:Avalonia.Controls.Control.Loaded) 事件。继承自 [Control](control.mdx)。 |
-| [LoadingClass](#uid-48190afd69) | A document is being loaded. |
+| [LoadingClass](#uid-48190afd69) | 文档正在加载中。 |
 | [LosingFocusEvent](../input/inputelement.mdx#uid-6ed71d3568) | 定义 [Avalonia.Input.InputElement.LosingFocus](xref:Avalonia.Input.InputElement.LosingFocus) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LostFocusEvent](../input/inputelement.mdx#uid-267344bb96) | 定义 [Avalonia.Input.InputElement.LostFocus](xref:Avalonia.Input.InputElement.LostFocus) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [MarginProperty](../layout/layoutable.mdx#uid-e730ad0d44) | 定义 [Avalonia.Layout.Layoutable.Margin](xref:Avalonia.Layout.Layoutable.Margin) 属性。继承自 [Layoutable](../layout/layoutable.mdx)。 |
@@ -4802,7 +4802,7 @@ public Avalonia.StyledProperty<bool> IsUnderlineToolVisibleProperty
 
 ### LoadingClass 字段 {#loadingclass-field}
 
-A document is being loaded.
+文档正在加载中。
 
 ```csharp
 public string LoadingClass
@@ -5758,7 +5758,7 @@ public Avalonia.StyledProperty<double> ZoomStepProperty
 | [LayoutUpdated](../layout/layoutable.mdx#uid-05ea32f689) | 当控件完成一次布局时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [LinkClicked](#uid-3e32204247) | Raised when a link is clicked. |
 | [Loaded](control.mdx#uid-c0a1ac2bc3) | 当控件在视觉树中完全构建完毕、且布局与渲染均已完成时发生。继承自 [Control](control.mdx)。 |
-| [LoadError](#uid-c1dbc7127b) | Raised when loading fails. |
+| [LoadError](#uid-c1dbc7127b) | 加载失败时抛出。 |
 | [LosingFocus](../input/inputelement.mdx#uid-425fe24716) | 在控件即将失去焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LostFocus](../input/inputelement.mdx#uid-2061fc85a1) | 当控件失去焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [OpenRequested](#uid-d7c76af79a) | Raised when opening a document is requested (menu, [Avalonia.Controls.PdfViewer.Open](xref:Avalonia.Controls.PdfViewer.Open), [Avalonia.Controls.PdfViewer.OpenAsync(System.Threading.CancellationToken)](xref:Avalonia.Controls.PdfViewer.OpenAsync%28System.Threading.CancellationToken%29) or [Avalonia.Controls.PdfViewer.OpenCommand](xref:Avalonia.Controls.PdfViewer.OpenCommand)) before the built-in file picker is shown. Set [Avalonia.Controls.PdfOpenRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfOpenRequestedEventArgs.Handled) to open the document in the application. |
@@ -5897,7 +5897,7 @@ public event EventHandler<Avalonia.Controls.PdfLinkClickedEventArgs> LinkClicked
 
 ### LoadError 事件 {#loaderror-event}
 
-Raised when loading fails.
+加载失败时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.PdfLoadErrorEventArgs> LoadError

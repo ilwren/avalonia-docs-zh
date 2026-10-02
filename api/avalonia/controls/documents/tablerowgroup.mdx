@@ -128,7 +128,7 @@ public TableRowGroup()
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [PreviousElement](richtextelement.mdx#uid-a864691ebc) | 获取文档树中的上一个同级元素；若不存在则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [Rows](#uid-c45cd41b15) | Gets the rows in this group. |
+| [Rows](#uid-c45cd41b15) | 获取该分组中的各行。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Table](#uid-4a07f2b27e) | Gets the [Avalonia.Controls.Documents.Table](xref:Avalonia.Controls.Documents.Table) this group belongs to, or `null` while it belongs to none. Adding the group to a table's [Avalonia.Controls.Documents.Table.RowGroups](xref:Avalonia.Controls.Documents.Table.RowGroups) is what reparents it. |
@@ -143,7 +143,7 @@ public TableRowGroup()
 
 ### Rows 属性 {#rows-property}
 
-Gets the rows in this group.
+获取该分组中的各行。
 
 ```csharp
 public Avalonia.Controls.Documents.RichTextElementCollection<T><Avalonia.Controls.Documents.TableRow> Rows { get; set; }
