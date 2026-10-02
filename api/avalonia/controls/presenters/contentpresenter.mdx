@@ -184,7 +184,7 @@ and is particularly useful in unit tests.
 | --- | --- |
 | [ActualThemeVariant](../../styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Background](#uid-492998d98c) | 获取或设置绘制背景所用的画刷。 |
-| [BackgroundSizing](#uid-13da265e18) | Gets or sets how the background is drawn relative to the border. |
+| [BackgroundSizing](#uid-13da265e18) | 获取或设置背景相对于边框如何绘制。 |
 | [BorderBrush](#uid-9e4c555ce5) | 获取或设置绘制边框所用的画刷。 |
 | [BorderThickness](#uid-d12ade3e53) | 获取或设置边框的粗细。 |
 | [Bounds](../../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../../visual.mdx)。 |
@@ -195,7 +195,7 @@ and is particularly useful in unit tests.
 | [Clip](../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../visual.mdx)。 |
 | [ClipToBounds](../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../visual.mdx)。 |
 | [Content](#uid-9196220f2b) | Gets or sets the content to be displayed by the presenter. |
-| [ContentTemplate](#uid-e682d2f5f7) | Gets or sets the data template used to display the content of the control. |
+| [ContentTemplate](#uid-e682d2f5f7) | 获取或设置用于显示控件内容的数据模板。 |
 | [ContextFlyout](../control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](../control.mdx)。 |
 | [ContextMenu](../control.mdx#uid-95e5e3ccc3) | 获取或设置控件的上下文菜单。继承自 [Control](../control.mdx)。 |
 | [CornerRadius](#uid-7a6305b874) | 获取或设置边框圆角的半径。 |
@@ -287,7 +287,7 @@ public Avalonia.Media.IBrush Background { get; set; }
 
 ### BackgroundSizing 属性 {#backgroundsizing-property}
 
-Gets or sets how the background is drawn relative to the border.
+获取或设置背景相对于边框如何绘制。
 
 ```csharp
 public Avalonia.Media.BackgroundSizing BackgroundSizing { get; set; }
@@ -371,7 +371,7 @@ public object Content { get; set; }
 
 ### ContentTemplate 属性 {#contenttemplate-property}
 
-Gets or sets the data template used to display the content of the control.
+获取或设置用于显示控件内容的数据模板。
 
 ```csharp
 public Avalonia.Controls.Templates.IDataTemplate ContentTemplate { get; set; }

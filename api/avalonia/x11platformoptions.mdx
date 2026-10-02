@@ -85,7 +85,7 @@ public X11PlatformOptions()
 | [ForceDrawnDecorations](#uid-aec79283c7) | Forces client-side drawn window decorations on X11 for all windows, even when the app has not opted in via ExtendClientAreaToDecorationsHint. In this mode, Window.ClientSize reflects the usable content area (platform client size minus decoration margins) and the app is unaware of the decorations. Implies EnableDrawnDecorations = true. |
 | [GlProfiles](#uid-9d2c834088) | 暂无摘要。 |
 | [GlxRendererBlacklist](#uid-e68483e0ce) | 暂无摘要。 |
-| [OverlayPopups](#uid-bb565b2ba8) | Embeds popups to the window when set to true. The default value is false. |
+| [OverlayPopups](#uid-bb565b2ba8) | 设为 true 时把弹出层嵌入窗口内，默认值为 false。 |
 | [RenderingMode](#uid-1eb188c693) | Gets or sets Avalonia rendering modes with fallbacks. The first element in the array has the highest priority. The default value is: [Avalonia.X11RenderingMode.Glx](xref:Avalonia.X11RenderingMode.Glx), [Avalonia.X11RenderingMode.Software](xref:Avalonia.X11RenderingMode.Software). |
 | [ShouldRenderOnUIThread](#uid-82559e476f) | Render directly on the UI thread instead of using a dedicated render thread. This can be usable if your device don't have multiple cores to begin with. This setting is false by default. |
 | [UseDBusFilePicker](#uid-2ea5009019) | Enables DBus file picker instead of GTK. The default value is true. |
@@ -252,7 +252,7 @@ public System.Collections.Generic.IList<string> GlxRendererBlacklist { get; set;
 
 ### OverlayPopups 属性 {#overlaypopups-property}
 
-Embeds popups to the window when set to true. The default value is false.
+设为 true 时把弹出层嵌入窗口内，默认值为 false。
 
 ```csharp
 public bool OverlayPopups { get; set; }

@@ -91,7 +91,7 @@ public ScrollContentPresenter()
 | [Arrange](../../layout/layoutable.mdx#uid-d7a19ca8f7) | 排列该控件及其子元素。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [BeginInit](../../styledelement.mdx#uid-91c6ccadce) | 继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Bind（8 个重载）](../../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [BringDescendantIntoView](#uid-b43645b520) | Attempts to bring a portion of the target visual into view by scrolling the content. |
+| [BringDescendantIntoView](#uid-b43645b520) | 尝试通过滚动内容，把目标视觉元素的某一部分带入可见范围。 |
 | [CheckAccess](../../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [ClearValue（4 个重载）](../../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [CoerceValue](../../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -129,7 +129,7 @@ public ScrollContentPresenter()
 
 ### BringDescendantIntoView 方法 {#bringdescendantintoview-method}
 
-Attempts to bring a portion of the target visual into view by scrolling the content.
+尝试通过滚动内容，把目标视觉元素的某一部分带入可见范围。
 
 ```csharp
 public bool BringDescendantIntoView(Avalonia.Visual target, Avalonia.Rect targetRect)
@@ -201,7 +201,7 @@ True if the scroll offset was changed; otherwise false.
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HorizontalContentAlignment](contentpresenter.mdx#uid-5355613664) | Gets or sets the horizontal alignment of the content within the border the control. Inherited from [ContentPresenter](contentpresenter.mdx). |
 | [HorizontalSnapPointsAlignment](#uid-be24e2d24d) | Gets or sets how the existing snap points are horizontally aligned versus the initial viewport. |
-| [HorizontalSnapPointsType](#uid-ec4bdf4821) | Gets or sets how scroll gesture reacts to the snap points along the horizontal axis. |
+| [HorizontalSnapPointsType](#uid-ec4bdf4821) | 获取或设置滚动手势如何响应横轴方向上的吸附点。 |
 | [IsArrangeValid](../../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsEffectivelyEnabled](../../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsEffectivelyVisible](../../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../../visual.mdx)。 |
@@ -213,7 +213,7 @@ True if the scroll offset was changed; otherwise false.
 | [IsLoaded](../control.mdx#uid-7b8aa52b02) | 获取一个值，指示控件是否已在视觉树中完全构建完毕，且布局与渲染均已完成。继承自 [Control](../control.mdx)。 |
 | [IsMeasureValid](../../layout/layoutable.mdx#uid-2b3ce6ad30) | 获取一个值，指示控件的布局测量结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsPointerOver](../../input/inputelement.mdx#uid-09e1553c00) | 获取一个值，指示指针当前是否悬停在控件上方。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [IsScrollChainingEnabled](#uid-565a8d6f9f) | Gets or sets if scroll chaining is enabled. The default value is true. |
+| [IsScrollChainingEnabled](#uid-565a8d6f9f) | 获取或设置是否启用滚动链接，默认值为 true。 |
 | [IsTabStop](../../input/inputelement.mdx#uid-455d73fca4) | 获取或设置一个值，指示该控件是否参与 Tab 键导航。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsVisible](../../visual.mdx#uid-da2b0ca167) | 获取或设置一个值，指示该控件是否可见。继承自 [Visual](../../visual.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -249,8 +249,8 @@ True if the scroll offset was changed; otherwise false.
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [VerticalContentAlignment](contentpresenter.mdx#uid-395082dcf8) | Gets or sets the vertical alignment of the content within the border of the control. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [VerticalSnapPointsAlignment](#uid-5b0aaeb4e5) | Gets or sets how the existing snap points are vertically aligned versus the initial viewport. |
-| [VerticalSnapPointsType](#uid-47a3fd666b) | Gets or sets how scroll gesture reacts to the snap points along the vertical axis. |
+| [VerticalSnapPointsAlignment](#uid-5b0aaeb4e5) | 获取或设置现有吸附点相对于初始视口在纵向上如何对齐。 |
+| [VerticalSnapPointsType](#uid-47a3fd666b) | 获取或设置滚动手势如何响应纵轴方向上的吸附点。 |
 | [Viewport](#uid-b556ccb1a4) | 获取可滚动内容上视口的尺寸。 |
 | [Width](../../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [ZIndex](../../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../../visual.mdx)。 |
@@ -317,7 +317,7 @@ public Avalonia.Controls.Primitives.SnapPointsAlignment HorizontalSnapPointsAlig
 
 ### HorizontalSnapPointsType 属性 {#horizontalsnappointstype-property}
 
-Gets or sets how scroll gesture reacts to the snap points along the horizontal axis.
+获取或设置滚动手势如何响应横轴方向上的吸附点。
 
 ```csharp
 public Avalonia.Controls.Primitives.SnapPointsType HorizontalSnapPointsType { get; set; }
@@ -331,7 +331,7 @@ public Avalonia.Controls.Primitives.SnapPointsType HorizontalSnapPointsType { ge
 
 ### IsScrollChainingEnabled 属性 {#isscrollchainingenabled-property}
 
-Gets or sets if scroll chaining is enabled. The default value is true.
+获取或设置是否启用滚动链接，默认值为 true。
 
 ```csharp
 public bool IsScrollChainingEnabled { get; set; }
@@ -365,7 +365,7 @@ public Avalonia.Vector Offset { get; set; }
 
 ### VerticalSnapPointsAlignment 属性 {#verticalsnappointsalignment-property}
 
-Gets or sets how the existing snap points are vertically aligned versus the initial viewport.
+获取或设置现有吸附点相对于初始视口在纵向上如何对齐。
 
 ```csharp
 public Avalonia.Controls.Primitives.SnapPointsAlignment VerticalSnapPointsAlignment { get; set; }
@@ -379,7 +379,7 @@ public Avalonia.Controls.Primitives.SnapPointsAlignment VerticalSnapPointsAlignm
 
 ### VerticalSnapPointsType 属性 {#verticalsnappointstype-property}
 
-Gets or sets how scroll gesture reacts to the snap points along the vertical axis.
+获取或设置滚动手势如何响应纵轴方向上的吸附点。
 
 ```csharp
 public Avalonia.Controls.Primitives.SnapPointsType VerticalSnapPointsType { get; set; }

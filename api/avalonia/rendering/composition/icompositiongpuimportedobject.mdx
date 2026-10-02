@@ -63,7 +63,7 @@ public interface ICompositionGpuImportedObject
 | 名称 | 说明 |
 | --- | --- |
 | [ImportCompleted](#uid-93f26986bf) | Tracks the import status of the object. Once the task is completed, the user code is allowed to free the resource owner in case when a non-owning sharing handle was used. |
-| [IsLost](#uid-455f141d6f) | Indicates if the device context this instance is associated with is no longer available |
+| [IsLost](#uid-455f141d6f) | 指示与该实例关联的设备上下文是否已不再可用 |
 
 <section className="apiref-page__member-entry">
 
@@ -87,7 +87,7 @@ public System.Threading.Tasks.Task ImportCompleted { get; set; }
 
 ### IsLost 属性 {#islost-property}
 
-Indicates if the device context this instance is associated with is no longer available
+指示与该实例关联的设备上下文是否已不再可用
 
 ```csharp
 public bool IsLost { get; set; }

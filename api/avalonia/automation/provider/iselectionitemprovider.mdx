@@ -58,8 +58,8 @@ public interface ISelectionItemProvider
 | 名称 | 说明 |
 | --- | --- |
 | [AddToSelection](#uid-f5d16c51fc) | 把当前元素加入选中项集合。 |
-| [RemoveFromSelection](#uid-9a753f219d) | Removes the current element from the collection of selected items. |
-| [Select](#uid-db41fba969) | Clears any existing selection and then selects the current element. |
+| [RemoveFromSelection](#uid-9a753f219d) | 把当前元素从选中项集合中移除。 |
+| [Select](#uid-db41fba969) | 先清除现有选择，再选中当前元素。 |
 
 <section className="apiref-page__member-entry">
 
@@ -86,7 +86,7 @@ public void AddToSelection()
 
 ### RemoveFromSelection 方法 {#removefromselection-method}
 
-Removes the current element from the collection of selected items.
+把当前元素从选中项集合中移除。
 
 ```csharp
 public void RemoveFromSelection()
@@ -105,7 +105,7 @@ public void RemoveFromSelection()
 
 ### Select 方法 {#select-method}
 
-Clears any existing selection and then selects the current element.
+先清除现有选择，再选中当前元素。
 
 ```csharp
 public void Select()

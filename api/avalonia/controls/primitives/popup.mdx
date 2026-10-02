@@ -294,7 +294,7 @@ The value of the TakesFocusFromNativeControl property.
 | [PlacementConstraintAdjustment](#uid-a7809e5438) | Gets or sets a value describing how the popup position will be adjusted if the unadjusted position would result in the popup being partly constrained. |
 | [PlacementGravity](#uid-c35f37b666) | Gets or sets a value which defines in what direction the popup should open when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity). |
 | [PlacementRect](#uid-cb9f219f4d) | Gets or sets the anchor rectangle within the parent that the popup will be placed relative to when [Avalonia.Controls.Primitives.Popup.Placement](xref:Avalonia.Controls.Primitives.Popup.Placement) is [Avalonia.Controls.PlacementMode.AnchorAndGravity](xref:Avalonia.Controls.PlacementMode.AnchorAndGravity). |
-| [PlacementTarget](#uid-cd21345353) | Gets or sets the control that is used to determine the popup's position. |
+| [PlacementTarget](#uid-cd21345353) | 获取或设置用来确定弹出层位置的那个控件。 |
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -312,7 +312,7 @@ The value of the TakesFocusFromNativeControl property.
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [VerticalOffset](#uid-23c453f8f5) | 获取或设置弹出层相对于 [Avalonia.Controls.Primitives.Popup.PlacementTarget](xref:Avalonia.Controls.Primitives.Popup.PlacementTarget) 的垂直偏移量。 |
 | [Width](../../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [WindowManagerAddShadowHint](#uid-d76b89b058) | Gets or sets a hint to the window manager that a shadow should be added to the popup. |
+| [WindowManagerAddShadowHint](#uid-d76b89b058) | 获取或设置给窗口管理器的提示，指明是否应为弹出层添加阴影。 |
 | [ZIndex](../../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../../visual.mdx)。 |
 
 <section className="apiref-page__member-entry">
@@ -588,7 +588,7 @@ If unset, the anchor rectangle will be the bounds of the [Avalonia.Controls.Prim
 
 ### PlacementTarget 属性 {#placementtarget-property}
 
-Gets or sets the control that is used to determine the popup's position.
+获取或设置用来确定弹出层位置的那个控件。
 
 ```csharp
 public Avalonia.Controls.Control PlacementTarget { get; set; }
@@ -673,7 +673,7 @@ public double VerticalOffset { get; set; }
 
 ### WindowManagerAddShadowHint 属性 {#windowmanageraddshadowhint-property}
 
-Gets or sets a hint to the window manager that a shadow should be added to the popup.
+获取或设置给窗口管理器的提示，指明是否应为弹出层添加阴影。
 
 ```csharp
 public bool WindowManagerAddShadowHint { get; set; }

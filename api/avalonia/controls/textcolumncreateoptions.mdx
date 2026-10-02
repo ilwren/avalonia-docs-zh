@@ -88,13 +88,13 @@ public TextColumnCreateOptions()
 | [Culture](#uid-8d964fc4cf) | Culture info used in conjunction with [Avalonia.Controls.TextColumnCreateOptions.StringFormat](xref:Avalonia.Controls.TextColumnCreateOptions.StringFormat) |
 | [HorizontalContentAlignment](columncreateoptions.mdx#uid-b48fbd7d1b) | 获取或设置单元格内容的水平对齐方式。继承自 [ColumnCreateOptions](columncreateoptions.mdx)。 |
 | [IsReadOnly](#uid-e110d12073) | 获取或设置该列是否为只读。 |
-| [IsTextSearchEnabled](#uid-f10fb2914e) | Gets or sets a value indicating whether the column takes part in text searches. |
+| [IsTextSearchEnabled](#uid-f10fb2914e) | 获取或设置一个值，指示该列是否参与文本搜索。 |
 | [MaxWidth](columncreateoptions.mdx#uid-4554236b2f) | 获取或设置列的最大宽度。继承自 [ColumnCreateOptions](columncreateoptions.mdx)。 |
 | [MinWidth](columncreateoptions.mdx#uid-1776db3e6c) | 获取或设置列的最小宽度。继承自 [ColumnCreateOptions](columncreateoptions.mdx)。 |
 | [StringFormat](#uid-3b661f0634) | Gets or sets the format string for the cells in the column. |
-| [TextAlignment](#uid-a923371860) | Gets or sets the text alignment mode for the cells in the column. |
-| [TextTrimming](#uid-032c3ee539) | Gets or sets the text trimming mode for the cells in the column. |
-| [TextWrapping](#uid-44607fef93) | Gets or sets the text wrapping mode for the cells in the column. |
+| [TextAlignment](#uid-a923371860) | 获取或设置该列单元格的文本对齐方式。 |
+| [TextTrimming](#uid-032c3ee539) | 获取或设置该列单元格的文本裁剪方式。 |
+| [TextWrapping](#uid-44607fef93) | 获取或设置该列单元格的文本换行方式。 |
 | [UseDrawnCells](#uid-8f20149cfe) | Gets or sets a value indicating whether the column uses drawn cells instead of control-based cells for improved performance. |
 | [VerticalContentAlignment](columncreateoptions.mdx#uid-77a5b34ee7) | 获取或设置单元格内容的垂直对齐方式。继承自 [ColumnCreateOptions](columncreateoptions.mdx)。 |
 | [Width](columncreateoptions.mdx#uid-3cd08b17fd) | 获取或设置列宽。继承自 [ColumnCreateOptions](columncreateoptions.mdx)。 |
@@ -138,7 +138,7 @@ or init-only property) is always read-only, regardless of the value of this prop
 
 ### IsTextSearchEnabled 属性 {#istextsearchenabled-property}
 
-Gets or sets a value indicating whether the column takes part in text searches.
+获取或设置一个值，指示该列是否参与文本搜索。
 
 ```csharp
 public bool IsTextSearchEnabled { get; set; }
@@ -166,7 +166,7 @@ public string StringFormat { get; set; }
 
 ### TextAlignment 属性 {#textalignment-property}
 
-Gets or sets the text alignment mode for the cells in the column.
+获取或设置该列单元格的文本对齐方式。
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }
@@ -180,7 +180,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 ### TextTrimming 属性 {#texttrimming-property}
 
-Gets or sets the text trimming mode for the cells in the column.
+获取或设置该列单元格的文本裁剪方式。
 
 ```csharp
 public Avalonia.Media.TextTrimming TextTrimming { get; set; }
@@ -194,7 +194,7 @@ public Avalonia.Media.TextTrimming TextTrimming { get; set; }
 
 ### TextWrapping 属性 {#textwrapping-property}
 
-Gets or sets the text wrapping mode for the cells in the column.
+获取或设置该列单元格的文本换行方式。
 
 ```csharp
 public Avalonia.Media.TextWrapping TextWrapping { get; set; }

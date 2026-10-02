@@ -488,7 +488,7 @@ public Avalonia.StyledProperty<Avalonia.Styling.ThemeVariant> RequestedThemeVari
 | --- | --- |
 | [ActualThemeVariantChanged](#uid-cfaf9aa916) | 当该元素或其某个祖先上的主题变体发生变化时抛出。 |
 | [PropertyChanged](avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
-| [ResourcesChanged](#uid-deb388f7cf) | Raised when the resources change on the element or an ancestor of the element. |
+| [ResourcesChanged](#uid-deb388f7cf) | 当该元素或其某个祖先上的资源发生变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
@@ -510,7 +510,7 @@ public event EventHandler ActualThemeVariantChanged
 
 ### ResourcesChanged 事件 {#resourceschanged-event}
 
-Raised when the resources change on the element or an ancestor of the element.
+当该元素或其某个祖先上的资源发生变化时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ResourcesChangedEventArgs> ResourcesChanged

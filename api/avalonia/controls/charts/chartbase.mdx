@@ -105,7 +105,7 @@ public ChartBase()
 | [GetIsHoldWithMouseEnabled](../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [GetLegendItems](#uid-2856543d8e) | 依据该图表的各个系列取得对应的图例项。 |
-| [GetSeriesBrush](#uid-d4e14c761c) | Gets the brush for a series at the specified index from the palette. |
+| [GetSeriesBrush](#uid-d4e14c761c) | 从调色板中取出指定索引处系列所用的画刷。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [InvalidateArrange](../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -250,7 +250,7 @@ A collection of legend items.
 
 ### GetSeriesBrush 方法 {#getseriesbrush-method}
 
-Gets the brush for a series at the specified index from the palette.
+从调色板中取出指定索引处系列所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush GetSeriesBrush(int index)

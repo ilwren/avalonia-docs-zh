@@ -139,7 +139,7 @@ bool
 | [Canceled](#uid-1dde0794b7) | Gets whether focus change is canceled. |
 | [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | 获取或设置一个值，指示该路由事件是否已被处理。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 | [KeyModifiers](#uid-a5e86a9b49) | 获取或设置获得焦点时处于按下状态的修饰键。 |
-| [NavigationMethod](#uid-ff4aeddeda) | Gets or sets a value indicating how the change in focus occurred. |
+| [NavigationMethod](#uid-ff4aeddeda) | 获取或设置一个值，指示这次焦点变化因何发生。 |
 | [NewFocusedElement](#uid-b44a46322b) | 获取或设置焦点转移到的那个元素。 |
 | [OldFocusedElement](#uid-fc5ed27a4b) | 获取或设置先前持有焦点的那个元素。 |
 | [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | 获取或设置路由事件的路由策略（直接、冒泡或隧道）。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
@@ -180,7 +180,7 @@ public Avalonia.Input.KeyModifiers KeyModifiers { get; set; }
 
 ### NavigationMethod 属性 {#navigationmethod-property}
 
-Gets or sets a value indicating how the change in focus occurred.
+获取或设置一个值，指示这次焦点变化因何发生。
 
 ```csharp
 public Avalonia.Input.NavigationMethod NavigationMethod { get; set; }

@@ -125,7 +125,7 @@ public TreeDataGridAutomationPeer(Avalonia.Controls.TreeDataGrid owner)
 | [IsKeyboardFocusable](../../../automation/peers/automationpeer.mdx#uid-c9dfcdf842) | 获取一个值，指示该元素是否能够接受键盘焦点。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [IsOffscreen](../../../automation/peers/automationpeer.mdx#uid-72084dcbfb) | 获取一个值，指示元素是否位于屏幕可见区域之外。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [RaisePropertyChangedEvent](../../../automation/peers/automationpeer.mdx#uid-ffcc0e3d63) | 引发事件，通知自动化客户端某个属性值已发生变化。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
-| [Scroll](#uid-5441333dd2) | Scrolls the visible region of the content area horizontally and vertically. |
+| [Scroll](#uid-5441333dd2) | 在水平和垂直方向上滚动内容区域的可见范围。 |
 | [SetFocus](../../../automation/peers/automationpeer.mdx#uid-6a8d233e48) | 将键盘焦点设置到与该自动化对等体关联的元素上。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [SetScrollPercent](#uid-e2ab010e79) | Sets the horizontal and vertical scroll position as a percentage of the total content area within the control. |
 | [ShowContextMenu](../../../automation/peers/automationpeer.mdx#uid-8bfe04d25b) | 显示与该自动化对等体关联的元素的上下文菜单。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
@@ -161,7 +161,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Automation.Peers.Automatio
 
 ### Scroll 方法 {#scroll-method}
 
-Scrolls the visible region of the content area horizontally and vertically.
+在水平和垂直方向上滚动内容区域的可见范围。
 
 ```csharp
 public void Scroll(Avalonia.Automation.Provider.ScrollAmount horizontalAmount, Avalonia.Automation.Provider.ScrollAmount verticalAmount)
@@ -227,12 +227,12 @@ cannot be scrolled in this direction.
 | 名称 | 说明 |
 | --- | --- |
 | [CanSelectMultiple](#uid-3c6ac4d014) | Gets a value that indicates whether the provider allows more than one child element to be selected concurrently. |
-| [HorizontallyScrollable](#uid-5b46e08c14) | Gets a value that indicates whether the control can scroll horizontally. |
+| [HorizontallyScrollable](#uid-5b46e08c14) | 获取一个值，指示该控件能否水平滚动。 |
 | [HorizontalScrollPercent](#uid-f3efc1aaa7) | 获取当前的水平滚动位置。 |
 | [HorizontalViewSize](#uid-77dc804358) | 获取当前的横向视图尺寸。 |
 | [IsSelectionRequired](#uid-b200e68439) | Gets a value that indicates whether the provider requires at least one child element to be selected. |
 | [Owner](#uid-5678fe5259) | 获取所表示的 [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid)。 |
-| [VerticallyScrollable](#uid-737ee1a554) | Gets a value that indicates whether the control can scroll vertically. |
+| [VerticallyScrollable](#uid-737ee1a554) | 获取一个值，指示该控件能否垂直滚动。 |
 | [VerticalScrollPercent](#uid-c0a892342d) | 获取当前的垂直滚动位置。 |
 | [VerticalViewSize](#uid-1558a119cf) | 获取纵向视图尺寸。 |
 
@@ -262,7 +262,7 @@ public bool CanSelectMultiple { get; set; }
 
 ### HorizontallyScrollable 属性 {#horizontallyscrollable-property}
 
-Gets a value that indicates whether the control can scroll horizontally.
+获取一个值，指示该控件能否水平滚动。
 
 ```csharp
 public bool HorizontallyScrollable { get; set; }
@@ -353,7 +353,7 @@ public Avalonia.Controls.TreeDataGrid Owner { get; set; }
 
 ### VerticallyScrollable 属性 {#verticallyscrollable-property}
 
-Gets a value that indicates whether the control can scroll vertically.
+获取一个值，指示该控件能否垂直滚动。
 
 ```csharp
 public bool VerticallyScrollable { get; set; }

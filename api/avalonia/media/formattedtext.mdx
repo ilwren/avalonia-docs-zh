@@ -838,17 +838,17 @@ public void SetTextDecorations(Avalonia.Media.TextDecorationCollection textDecor
 
 | 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-251fac2fdb) | The distance from the top of the first line to the baseline of the first line. |
+| [Baseline](#uid-251fac2fdb) | 从第一行顶部到第一行基线的距离。 |
 | [Extent](#uid-5bcfa580b8) | The distance from the topmost black pixel of the first line to the bottommost black pixel of the last line. |
 | [FlowDirection](#uid-33c99f7ffa) | Defines the flow direction |
-| [Height](#uid-a0a6d2e274) | The distance from the top of the first line to the bottom of the last line. |
+| [Height](#uid-a0a6d2e274) | 从第一行顶部到最后一行底部的距离。 |
 | [LineHeight](#uid-aef1a803a4) | Gets or sets the height of, or the spacing between, each line where zero represents the default line height. |
 | [MaxLineCount](#uid-01e3d26228) | Defines the maximum number of lines to display. The last line of text displayed is the lineCount-1'th line, or the last whole line that will fit within the count set by MaxTextHeight, whichever occurs first. Use the Trimming property to control how the omission of text is indicated |
 | [MaxTextHeight](#uid-f9eb5e6882) | Sets the maximum length of a column of text. The last line of text displayed is the last whole line that will fit within this limit, or the nth line as specified by MaxLineCount, whichever occurs first. Use the Trimming property to control how the omission of text is indicated. |
 | [MaxTextWidth](#uid-57f90e10fb) | The MaxTextWidth property defines the alignment edges for the [FormattedText](xref:Avalonia.Media.FormattedText). For example, left aligned text is wrapped such that the leftmost glyph alignment point on each line falls exactly on the left edge of the rectangle. Note that for many fonts, especially in italic style, some glyph strokes may extend beyond the edges of the alignment rectangle. For this reason, it is recommended that clients draw text with at least 1/6 em (i.e of the font size) unused margin space either side. Zero value of MaxTextWidth is equivalent to the maximum possible paragraph width. |
-| [OverhangAfter](#uid-c1044dfc68) | The distance from the bottom of the last line to the extent bottom. |
-| [OverhangLeading](#uid-1b2c990646) | The maximum distance from the leading black pixel to the leading alignment point of a line. |
-| [OverhangTrailing](#uid-b1e41e0899) | The maximum distance from the trailing black pixel to the trailing alignment point of a line. |
+| [OverhangAfter](#uid-c1044dfc68) | 从最后一行底部到内容范围底部的距离。 |
+| [OverhangLeading](#uid-1b2c990646) | 从一行中最靠前的黑色像素到该行前端对齐点的最大距离。 |
+| [OverhangTrailing](#uid-b1e41e0899) | 从一行中最靠后的黑色像素到该行末端对齐点的最大距离。 |
 | [TextAlignment](#uid-28594ca2eb) | Defines the alignment of text within the column |
 | [Trimming](#uid-b553306ee9) | Defines how omission of text is indicated. CharacterEllipsis trimming allows partial words to be displayed, while WordEllipsis removes whole words to fit. Both guarantee to include an ellipsis ('...') at the end of the lines where text has been trimmed as a result of line and column limits. |
 | [Width](#uid-d96abbc72b) | The maximum advance width between the leading and trailing alignment points of a line, excluding the width of whitespace characters at the end of the line. |
@@ -860,7 +860,7 @@ public void SetTextDecorations(Avalonia.Media.TextDecorationCollection textDecor
 
 ### Baseline 属性 {#baseline-property}
 
-The distance from the top of the first line to the baseline of the first line.
+从第一行顶部到第一行基线的距离。
 
 ```csharp
 public double Baseline { get; set; }
@@ -903,7 +903,7 @@ public Avalonia.Media.FlowDirection FlowDirection { get; set; }
 
 ### Height 属性 {#height-property}
 
-The distance from the top of the first line to the bottom of the last line.
+从第一行顶部到最后一行底部的距离。
 
 ```csharp
 public double Height { get; set; }
@@ -986,7 +986,7 @@ public double MaxTextWidth { get; set; }
 
 ### OverhangAfter 属性 {#overhangafter-property}
 
-The distance from the bottom of the last line to the extent bottom.
+从最后一行底部到内容范围底部的距离。
 
 ```csharp
 public double OverhangAfter { get; set; }
@@ -1000,7 +1000,7 @@ public double OverhangAfter { get; set; }
 
 ### OverhangLeading 属性 {#overhangleading-property}
 
-The maximum distance from the leading black pixel to the leading alignment point of a line.
+从一行中最靠前的黑色像素到该行前端对齐点的最大距离。
 
 ```csharp
 public double OverhangLeading { get; set; }
@@ -1014,7 +1014,7 @@ public double OverhangLeading { get; set; }
 
 ### OverhangTrailing 属性 {#overhangtrailing-property}
 
-The maximum distance from the trailing black pixel to the trailing alignment point of a line.
+从一行中最靠后的黑色像素到该行末端对齐点的最大距离。
 
 ```csharp
 public double OverhangTrailing { get; set; }

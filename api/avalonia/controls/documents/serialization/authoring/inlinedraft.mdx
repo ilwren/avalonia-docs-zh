@@ -123,7 +123,7 @@ public void SetFormatMetadata<T>(T metadata)
 | [CustomData](#uid-df8d35d8af) | Extension-specific custom data. Transferred to the resulting [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) during document building. |
 | [ElementFormatting](#uid-e72d04f6a2) | Base-level element formatting (font, foreground, background, letter spacing). |
 | [FormatMetadata](#uid-44323a64b0) | Format-specific metadata for round-trip preservation (e.g. RTF underline variant). Transferred to the resulting [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) during document building. |
-| [Formatting](#uid-5bc8ad789d) | Inline-specific formatting (text decorations, baseline alignment). |
+| [Formatting](#uid-5bc8ad789d) | 内联元素特有的格式设置（文本装饰、基线对齐）。 |
 | [Inlines](#uid-1eaa3c4f70) | Gets the mutable list of child inline drafts. |
 | [Kind](#uid-e8bc97d972) | Gets the [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind) that identifies this draft's inline type. |
 
@@ -177,7 +177,7 @@ public object FormatMetadata { get; set; }
 
 ### Formatting 属性 {#formatting-property}
 
-Inline-specific formatting (text decorations, baseline alignment).
+内联元素特有的格式设置（文本装饰、基线对齐）。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting Formatting { get; set; }

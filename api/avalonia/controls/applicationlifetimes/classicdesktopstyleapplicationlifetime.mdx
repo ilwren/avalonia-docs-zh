@@ -262,7 +262,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Window> Window
 | 名称 | 说明 |
 | --- | --- |
 | [Exit](#uid-5eb5262df0) | 应用即将退出时发送。 |
-| [ShutdownRequested](#uid-f33cbb7442) | Raised by the platform when an application shutdown is requested. |
+| [ShutdownRequested](#uid-f33cbb7442) | 平台请求关闭应用时抛出。 |
 | [Startup](#uid-7bbb774223) | 应用启动时发送。 |
 
 <section className="apiref-page__member-entry">
@@ -285,7 +285,7 @@ public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ControlledAppli
 
 ### ShutdownRequested 事件 {#shutdownrequested-event}
 
-Raised by the platform when an application shutdown is requested.
+平台请求关闭应用时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ShutdownRequestedEventArgs> ShutdownRequested

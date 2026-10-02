@@ -96,7 +96,7 @@ public TreeDataGridRowAutomationPeer(Avalonia.Controls.Primitives.TreeDataGridRo
 | --- | --- |
 | [AddToSelection](#uid-249044e167) | 把当前元素加入选中项集合。 |
 | [BringIntoView](../../../automation/peers/automationpeer.mdx#uid-0ce0c26ad7) | 尝试将与该自动化对等体关联的元素滚动到可见区域。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
-| [Collapse](#uid-e6bff69dda) | Hides all nodes, controls, or content that are descendants of the control. |
+| [Collapse](#uid-e6bff69dda) | 隐藏该控件下所有作为其后代的节点、控件或内容。 |
 | [CreatePeerForElement](../../../automation/peers/controlautomationpeer.mdx#uid-01e76040e7) | 获取 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) 对应的 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)，必要时会创建一个。继承自 [ControlAutomationPeer](../../../automation/peers/controlautomationpeer.mdx)。 |
 | [Expand](#uid-e786d85bb0) | 展示该控件的所有子节点、控件或内容。 |
 | [FromElement](../../../automation/peers/controlautomationpeer.mdx#uid-f0c358c33d) | 获取 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) 已有的 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)。继承自 [ControlAutomationPeer](../../../automation/peers/controlautomationpeer.mdx)。 |
@@ -127,8 +127,8 @@ public TreeDataGridRowAutomationPeer(Avalonia.Controls.Primitives.TreeDataGridRo
 | [IsKeyboardFocusable](../../../automation/peers/automationpeer.mdx#uid-c9dfcdf842) | 获取一个值，指示该元素是否能够接受键盘焦点。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [IsOffscreen](../../../automation/peers/automationpeer.mdx#uid-72084dcbfb) | 获取一个值，指示元素是否位于屏幕可见区域之外。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [RaisePropertyChangedEvent](../../../automation/peers/automationpeer.mdx#uid-ffcc0e3d63) | 引发事件，通知自动化客户端某个属性值已发生变化。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
-| [RemoveFromSelection](#uid-b651bcd61f) | Removes the current element from the collection of selected items. |
-| [Select](#uid-0cca0f84bb) | Clears any existing selection and then selects the current element. |
+| [RemoveFromSelection](#uid-b651bcd61f) | 把当前元素从选中项集合中移除。 |
+| [Select](#uid-0cca0f84bb) | 先清除现有选择，再选中当前元素。 |
 | [SetFocus](../../../automation/peers/automationpeer.mdx#uid-6a8d233e48) | 将键盘焦点设置到与该自动化对等体关联的元素上。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [ShowContextMenu](../../../automation/peers/automationpeer.mdx#uid-8bfe04d25b) | 显示与该自动化对等体关联的元素的上下文菜单。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [ToScreen](../../../automation/peers/automationpeer.mdx#uid-51bb13f806) | 将 [Avalonia.Automation.Peers.AutomationPeer.GetBoundingRectangle](xref:Avalonia.Automation.Peers.AutomationPeer.GetBoundingRectangle) 返回的、位于对等体坐标系中的矩形转换为屏幕坐标；若该对等体当前未承载于已渲染的视觉树中，则返回 null。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
@@ -158,7 +158,7 @@ public void AddToSelection()
 
 ### Collapse 方法 {#collapse-method}
 
-Hides all nodes, controls, or content that are descendants of the control.
+隐藏该控件下所有作为其后代的节点、控件或内容。
 
 ```csharp
 public void Collapse()
@@ -196,7 +196,7 @@ public void Expand()
 
 ### RemoveFromSelection 方法 {#removefromselection-method}
 
-Removes the current element from the collection of selected items.
+把当前元素从选中项集合中移除。
 
 ```csharp
 public void RemoveFromSelection()
@@ -215,7 +215,7 @@ public void RemoveFromSelection()
 
 ### Select 方法 {#select-method}
 
-Clears any existing selection and then selects the current element.
+先清除现有选择，再选中当前元素。
 
 ```csharp
 public void Select()

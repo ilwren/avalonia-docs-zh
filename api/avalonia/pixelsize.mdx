@@ -106,8 +106,8 @@ public PixelSize(int width, int height)
 | [ToSizeWithDpi (2 overloads)](#uid-64f7abb2c1) | Converts the [Avalonia.PixelSize](xref:Avalonia.PixelSize) to a device-independent [Avalonia.Size](xref:Avalonia.Size) using the specified dots per inch (DPI). |
 | [ToString](#uid-1bf3300292) | 返回该尺寸的字符串表示形式。 |
 | [TryParse](#uid-da4fd59734) | 暂无摘要。 |
-| [WithHeight](#uid-c0cedf7124) | Returns a new [Avalonia.PixelSize](xref:Avalonia.PixelSize) with the same width and the specified height. |
-| [WithWidth](#uid-71f53c69c4) | Returns a new [Avalonia.PixelSize](xref:Avalonia.PixelSize) with the same height and the specified width. |
+| [WithHeight](#uid-c0cedf7124) | 返回一个宽度不变、高度为指定值的新 [Avalonia.PixelSize](xref:Avalonia.PixelSize)。 |
+| [WithWidth](#uid-71f53c69c4) | 返回一个高度不变、宽度为指定值的新 [Avalonia.PixelSize](xref:Avalonia.PixelSize)。 |
 
 <span id="uid-af4273c925"></span>
 
@@ -538,7 +538,7 @@ bool
 
 ### WithHeight 方法 {#withheight-method}
 
-Returns a new [Avalonia.PixelSize](xref:Avalonia.PixelSize) with the same width and the specified height.
+返回一个宽度不变、高度为指定值的新 [Avalonia.PixelSize](xref:Avalonia.PixelSize)。
 
 ```csharp
 public Avalonia.PixelSize WithHeight(int height)
@@ -566,7 +566,7 @@ public Avalonia.PixelSize WithHeight(int height)
 
 ### WithWidth 方法 {#withwidth-method}
 
-Returns a new [Avalonia.PixelSize](xref:Avalonia.PixelSize) with the same height and the specified width.
+返回一个高度不变、宽度为指定值的新 [Avalonia.PixelSize](xref:Avalonia.PixelSize)。
 
 ```csharp
 public Avalonia.PixelSize WithWidth(int width)

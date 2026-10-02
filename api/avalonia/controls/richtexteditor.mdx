@@ -503,8 +503,8 @@ public void UnregisterComponent(Avalonia.Controls.Documents.Primitives.Component
 
 #### 备注 {#remarks-6}
 
-If the component is currently attached, it receives an
-[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach) callback before removal.
+若该组件当前处于附加状态，移除之前它会收到一次
+[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach) 回调。
 
 </section>
 
@@ -582,7 +582,7 @@ If the component is currently attached, it receives an
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [PageBandDistance](#uid-0c7f96ba44) | Gets or sets the distance from the sheet edge to a page band in [Avalonia.Controls.DocumentViewMode.PageLayout](xref:Avalonia.Controls.DocumentViewMode.PageLayout): the header's top sits this far below the sheet top, the footer's bottom this far above the sheet bottom (Word's header and footer distance). The document owns the value; this property is a handle on it, so setting it writes through and a document carrying its own distance is reflected here when it is attached. |
 | [PageBandFocusBrush](#uid-db39755ba2) | Gets or sets the brush of the frame drawn around the page band the caret is in. |
-| [PageBoundsBrush](#uid-82fbac4212) | Gets or sets the brush used to render the background of the page bounds area. |
+| [PageBoundsBrush](#uid-82fbac4212) | 获取或设置绘制页面范围区域背景所用的画刷。 |
 | [PageGap](#uid-8b4a20a25f) | Gets or sets the vertical gap between page sheets in [Avalonia.Controls.DocumentViewMode.PageLayout](xref:Avalonia.Controls.DocumentViewMode.PageLayout). The same gap surrounds the sheet stack above the first and below the last page. |
 | [PageMargins](#uid-c01c4002a9) | Gets or sets the page margins used in [Avalonia.Controls.DocumentViewMode.PageLayout](xref:Avalonia.Controls.DocumentViewMode.PageLayout). When null, the document's page padding is used, falling back to 2 cm on every side. |
 | [PageSize](#uid-2d499141f0) | Gets or sets the page size used in [Avalonia.Controls.DocumentViewMode.PageLayout](xref:Avalonia.Controls.DocumentViewMode.PageLayout), in device-independent pixels. When null, the document's fixed page dimensions are used, falling back to A4 per dimension. |
@@ -802,7 +802,7 @@ public Avalonia.Media.IBrush PageBandFocusBrush { get; set; }
 
 ### PageBoundsBrush 属性 {#pageboundsbrush-property}
 
-Gets or sets the brush used to render the background of the page bounds area.
+获取或设置绘制页面范围区域背景所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush PageBoundsBrush { get; set; }

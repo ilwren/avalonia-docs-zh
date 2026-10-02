@@ -327,8 +327,8 @@ public void UnregisterComponent(Avalonia.Controls.Documents.Primitives.Component
 
 #### 备注 {#remarks-3}
 
-If the component is currently attached, it receives an
-[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach) callback before removal.
+若该组件当前处于附加状态，移除之前它会收到一次
+[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach) 回调。
 
 </section>
 
@@ -400,7 +400,7 @@ If the component is currently attached, it receives an
 | [Opacity](../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../visual.mdx)。 |
 | [OpacityMask](../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../visual.mdx)。 |
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
-| [PageBoundsBrush](#uid-06547beb90) | Gets or sets the brush used to render the background of the page bounds area. |
+| [PageBoundsBrush](#uid-06547beb90) | 获取或设置绘制页面范围区域背景所用的画刷。 |
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
@@ -524,7 +524,7 @@ public bool IsSelectionEnabled { get; set; }
 
 ### PageBoundsBrush 属性 {#pageboundsbrush-property}
 
-Gets or sets the brush used to render the background of the page bounds area.
+获取或设置绘制页面范围区域背景所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush PageBoundsBrush { get; set; }

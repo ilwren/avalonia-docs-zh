@@ -83,7 +83,7 @@ public FilePickerOpenOptions()
 | [AllowMultiple](#uid-2a28bff5e1) | 获取或设置一个选项，指示打开选取器是否允许用户选中多个文件。 |
 | [FileTypeFilter](#uid-c21c750c4e) | 获取或设置文件打开选取器所显示的文件类型集合。 |
 | [SuggestedFileName](pickeroptions.mdx#uid-87696bd66c) | Gets or sets the file name that the file picker suggests to the user. Inherited from [PickerOptions](pickeroptions.mdx). |
-| [SuggestedFileType](#uid-c00a06479e) | Gets or sets the file type that should be preselected when the dialog is opened. |
+| [SuggestedFileType](#uid-c00a06479e) | 获取或设置对话框打开时预先选中的文件类型。 |
 | [SuggestedStartLocation](pickeroptions.mdx#uid-792044079c) | Gets or sets the initial location where the file open picker looks for files to present to the user. Can be obtained from previously picked folder or using [Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync(Uri)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync%28System.Uri%29) or [Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync%28Avalonia.Platform.Storage.WellKnownFolder%29). Inherited from [PickerOptions](pickeroptions.mdx). |
 | [Title](pickeroptions.mdx#uid-825079a1b0) | Gets or sets the text that appears in the title bar of a picker. Inherited from [PickerOptions](pickeroptions.mdx). |
 
@@ -121,7 +121,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.FilePi
 
 ### SuggestedFileType 属性 {#suggestedfiletype-property}
 
-Gets or sets the file type that should be preselected when the dialog is opened.
+获取或设置对话框打开时预先选中的文件类型。
 
 ```csharp
 public Avalonia.Platform.Storage.FilePickerFileType SuggestedFileType { get; set; }

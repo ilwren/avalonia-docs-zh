@@ -63,7 +63,7 @@ public class DataTransferExtensions
 | 名称 | 说明 |
 | --- | --- |
 | [Contains](#uid-fd19a2ef22) | 获取某个 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 是否支持特定格式。 |
-| [GetItems](#uid-12948ec178) | Gets the list of [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) contained in this object, filtered by a given format. |
+| [GetItems](#uid-12948ec178) | 获取该对象中包含的 [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) 列表，并按给定格式筛选。 |
 | [TryGetBitmap](#uid-d54ba1699a) | 从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出位图（若有）。 |
 | [TryGetFile](#uid-d8e8d736ce) | 从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出文件（若有）。 |
 | [TryGetFiles](#uid-cd9312c50d) | 从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出文件列表（若有）。 |
@@ -110,7 +110,7 @@ bool
 
 ### GetItems 方法 {#getitems-method}
 
-Gets the list of [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) contained in this object, filtered by a given format.
+获取该对象中包含的 [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) 列表，并按给定格式筛选。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Input.IDataTransferItem> GetItems(Avalonia.Input.IDataTransfer dataTransfer, Avalonia.Input.DataFormat format)
@@ -134,7 +134,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Input.IDataTransferItem](xre
 Some platforms (such as Windows and X11) may only support a single data item for all formats
 except [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File).
 
-Items returned by this property must stay valid until the [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) is disposed.
+该属性返回的各项必须在 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 被释放之前始终有效。
 
 </section>
 

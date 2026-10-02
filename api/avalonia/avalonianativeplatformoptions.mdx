@@ -82,7 +82,7 @@ public AvaloniaNativePlatformOptions()
 | --- | --- |
 | [AppSandboxEnabled](#uid-6d7dbd8e7b) | If you distribute your app in App Store - it should be with sandbox enabled. This parameter enables [Avalonia.Platform.Storage.IStorageItem.SaveBookmarkAsync](xref:Avalonia.Platform.Storage.IStorageItem.SaveBookmarkAsync) and related APIs, as well as wrapping all storage related calls in secure context. The default value is true. |
 | [AvaloniaNativeLibraryPath](#uid-b803078be8) | This property should be used in case you want to build Avalonia OSX native part by yourself and make your Avalonia app run with it. The default value is null. |
-| [OverlayPopups](#uid-8d93333eba) | Embeds popups to the window when set to true. The default value is false. |
+| [OverlayPopups](#uid-8d93333eba) | 设为 true 时把弹出层嵌入窗口内，默认值为 false。 |
 | [RenderingMode](#uid-f081327cee) | Gets or sets Avalonia rendering modes with fallbacks. The first element in the array has the highest priority. The default value is: [Avalonia.AvaloniaNativeRenderingMode.OpenGl](xref:Avalonia.AvaloniaNativeRenderingMode.OpenGl), [Avalonia.AvaloniaNativeRenderingMode.Software](xref:Avalonia.AvaloniaNativeRenderingMode.Software). |
 
 <section className="apiref-page__member-entry">
@@ -122,7 +122,7 @@ public string AvaloniaNativeLibraryPath { get; set; }
 
 ### OverlayPopups 属性 {#overlaypopups-property}
 
-Embeds popups to the window when set to true. The default value is false.
+设为 true 时把弹出层嵌入窗口内，默认值为 false。
 
 ```csharp
 public bool OverlayPopups { get; set; }

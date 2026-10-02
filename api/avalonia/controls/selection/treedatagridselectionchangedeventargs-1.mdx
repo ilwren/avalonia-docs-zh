@@ -96,11 +96,11 @@ public TreeDataGridSelectionChangedEventArgs<T>(System.Collections.Generic.IRead
 
 | 名称 | 说明 |
 | --- | --- |
-| [DeselectedCellIndexes](#uid-0d798599fe) | Gets the cell indexes of the cells that were removed from the selection. |
-| [DeselectedIndexes](#uid-ba821e2b64) | Gets the row indexes of the items that were removed from the selection. |
+| [DeselectedCellIndexes](#uid-0d798599fe) | 获取已从选区中移除的那些单元格的索引。 |
+| [DeselectedIndexes](#uid-ba821e2b64) | 获取已从选区中移除的那些项所在的行索引。 |
 | [DeselectedItems](#uid-65334d7b85) | Gets the strongly-typed items that were removed from the selection. |
-| [SelectedCellIndexes](#uid-c000e38c3f) | Gets the cell indexes of the cells that were added to the selection. |
-| [SelectedIndexes](#uid-1de705665f) | Gets the row indexes of the items that were added to the selection. |
+| [SelectedCellIndexes](#uid-c000e38c3f) | 获取新加入选区的那些单元格的索引。 |
+| [SelectedIndexes](#uid-1de705665f) | 获取新加入选区的那些项所在的行索引。 |
 | [SelectedItems](#uid-e194577189) | Gets the strongly-typed items that were added to the selection. |
 
 <section className="apiref-page__member-entry">
@@ -109,7 +109,7 @@ public TreeDataGridSelectionChangedEventArgs<T>(System.Collections.Generic.IRead
 
 ### DeselectedCellIndexes 属性 {#deselectedcellindexes-property}
 
-Gets the cell indexes of the cells that were removed from the selection.
+获取已从选区中移除的那些单元格的索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.CellIndex> DeselectedCellIndexes { get; set; }
@@ -128,7 +128,7 @@ For cell selection, this contains the specific deselected cells.
 
 ### DeselectedIndexes 属性 {#deselectedindexes-property}
 
-Gets the row indexes of the items that were removed from the selection.
+获取已从选区中移除的那些项所在的行索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> DeselectedIndexes { get; set; }
@@ -171,7 +171,7 @@ modification (for example from an asynchronous or dispatcher-queued handler) thr
 
 ### SelectedCellIndexes 属性 {#selectedcellindexes-property}
 
-Gets the cell indexes of the cells that were added to the selection.
+获取新加入选区的那些单元格的索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.CellIndex> SelectedCellIndexes { get; set; }
@@ -190,7 +190,7 @@ For cell selection, this contains the specific selected cells.
 
 ### SelectedIndexes 属性 {#selectedindexes-property}
 
-Gets the row indexes of the items that were added to the selection.
+获取新加入选区的那些项所在的行索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> SelectedIndexes { get; set; }

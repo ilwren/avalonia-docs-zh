@@ -197,11 +197,11 @@ public NumericUpDown()
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [ParsingNumberStyle](#uid-1e38717840) | Gets or sets the parsing style (AllowLeadingWhite, Float, AllowHexSpecifier, ...). By default, Any. Note that Hex style does not work with decimal. For hexadecimal display, use [Avalonia.Controls.NumericUpDown.TextConverter](xref:Avalonia.Controls.NumericUpDown.TextConverter). |
 | [PlaceholderForeground](#uid-96c752c781) | 获取或设置占位文本前景色所用的画刷。 |
-| [PlaceholderText](#uid-0afb5abc73) | Gets or sets the object to use as a placeholder if the [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) is null. |
+| [PlaceholderText](#uid-0afb5abc73) | 获取或设置 [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) 为 null 时用作占位的对象。 |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
 | [Resources](../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../styledelement.mdx)。 |
-| [ShowButtonSpinner](#uid-b6a8780a52) | Gets or sets a value indicating whether the spin buttons should be shown. |
+| [ShowButtonSpinner](#uid-b6a8780a52) | 获取或设置一个值，指示是否显示微调按钮。 |
 | [StyleKey](../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Styles](../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../styledelement.mdx)。 |
 | [TabIndex](../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -217,7 +217,7 @@ public NumericUpDown()
 | [Value](#uid-ba4a60a466) | 获取或设置该值。 |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalContentAlignment](#uid-a2ba0c5181) | 获取或设置内容在控件内的垂直对齐方式。 |
-| [Watermark](#uid-501e63203b) | Gets or sets the object to use as a placeholder if the [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) is null. |
+| [Watermark](#uid-501e63203b) | 获取或设置 [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) 为 null 时用作占位的对象。 |
 | [WatermarkForeground](#uid-73c9d1da65) | 获取或设置占位文本前景色所用的画刷。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
@@ -426,7 +426,7 @@ public Avalonia.Media.IBrush PlaceholderForeground { get; set; }
 
 ### PlaceholderText 属性 {#placeholdertext-property}
 
-Gets or sets the object to use as a placeholder if the [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) is null.
+获取或设置 [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) 为 null 时用作占位的对象。
 
 ```csharp
 public string PlaceholderText { get; set; }
@@ -440,7 +440,7 @@ public string PlaceholderText { get; set; }
 
 ### ShowButtonSpinner 属性 {#showbuttonspinner-property}
 
-Gets or sets a value indicating whether the spin buttons should be shown.
+获取或设置一个值，指示是否显示微调按钮。
 
 ```csharp
 public bool ShowButtonSpinner { get; set; }
@@ -526,7 +526,7 @@ public Avalonia.Layout.VerticalAlignment VerticalContentAlignment { get; set; }
 
 ### Watermark 属性 {#watermark-property}
 
-Gets or sets the object to use as a placeholder if the [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) is null.
+获取或设置 [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) 为 null 时用作占位的对象。
 
 ```csharp
 public string Watermark { get; set; }

@@ -78,9 +78,9 @@ public class DocumentNode
 | [GetHashCode](../../../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
 | [GetIsHoldingEnabled](../../../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../../../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../../../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../../../input/inputelement.mdx)。 |
-| [GetLineFromPosition](#uid-58c07fbee6) | Returns the line info for the given text position, or if not found. |
+| [GetLineFromPosition](#uid-58c07fbee6) | 返回给定文本位置所在的行信息；找不到则返回 null。 |
 | [GetLines](#uid-3d2fba6808) | 返回该节点内的所有文本行。 |
-| [GetRectFromTextPointer](#uid-26838f00bd) | Returns the caret rectangle for `position` within this node, or if outside. |
+| [GetRectFromTextPointer](#uid-26838f00bd) | 返回该节点内 `position` 处的插入符矩形；若在节点之外则返回 null。 |
 | [GetSelectionRects](#uid-da19f78d47) | 返回该节点内容区域内的各个选区矩形。 |
 | [GetSelectionText](#uid-c6fba18466) | Returns selected text segments within the node's content area. |
 | [GetValue（3 个重载）](../../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
@@ -109,7 +109,7 @@ public class DocumentNode
 
 ### GetLineFromPosition 方法 {#getlinefromposition-method}
 
-Returns the line info for the given text position, or if not found.
+返回给定文本位置所在的行信息；找不到则返回 null。
 
 ```csharp
 public Nullable<Avalonia.Controls.Documents.Primitives.TextLineInfo> GetLineFromPosition(Avalonia.Controls.Documents.TextModel.TextPointer position)
@@ -152,7 +152,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Primitive
 
 ### GetRectFromTextPointer 方法 {#getrectfromtextpointer-method}
 
-Returns the caret rectangle for `position` within this node, or if outside.
+返回该节点内 `position` 处的插入符矩形；若在节点之外则返回 null。
 
 ```csharp
 public Nullable<Avalonia.Rect> GetRectFromTextPointer(Avalonia.Controls.Documents.TextModel.TextPointer position, Avalonia.Controls.Documents.TextModel.LogicalDirection direction)
@@ -279,10 +279,10 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [Classes](../../../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../../../styledelement.mdx)。 |
 | [Clip](../../../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../../../visual.mdx)。 |
 | [ClipToBounds](../../../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../../../visual.mdx)。 |
-| [ContentEnd](#uid-1ee2f9e71d) | Gets the text pointer to the end of content covered by this node. |
+| [ContentEnd](#uid-1ee2f9e71d) | 获取指向该节点所涵盖内容末尾的文本指针。 |
 | [ContentLength](#uid-d2977f6a39) | Gets the character length of this node's content. |
 | [ContentRange](#uid-ddc292f7ff) | Gets the text range covering the full content of this node. |
-| [ContentStart](#uid-e48f293bb1) | Gets the text pointer to the start of content covered by this node. |
+| [ContentStart](#uid-e48f293bb1) | 获取指向该节点所涵盖内容开头的文本指针。 |
 | [CornerRadius](#uid-8992ff2bc5) | Gets the current corner radius applied to this node's border. |
 | [Cursor](../../../../input/inputelement.mdx#uid-4222de38cf) | 获取或设置关联的鼠标指针样式。继承自 [InputElement](../../../../input/inputelement.mdx)。 |
 | [DataContext](../../../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../../../styledelement.mdx)。 |
@@ -384,7 +384,7 @@ public Avalonia.Thickness BorderThickness { get; set; }
 
 ### ContentEnd 属性 {#contentend-property}
 
-Gets the text pointer to the end of content covered by this node.
+获取指向该节点所涵盖内容末尾的文本指针。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer ContentEnd { get; set; }
@@ -426,7 +426,7 @@ public Avalonia.Controls.Documents.TextModel.TextRange ContentRange { get; set; 
 
 ### ContentStart 属性 {#contentstart-property}
 
-Gets the text pointer to the start of content covered by this node.
+获取指向该节点所涵盖内容开头的文本指针。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer ContentStart { get; set; }

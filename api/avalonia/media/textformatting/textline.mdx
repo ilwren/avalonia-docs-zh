@@ -346,22 +346,22 @@ A [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.Te
 | 名称 | 说明 |
 | --- | --- |
 | [Baseline](#uid-3e2e7add61) | Gets the distance from the top to the baseline of the current [TextLine](xref:Avalonia.Media.TextFormatting.TextLine) object. |
-| [Extent](#uid-2e81cac616) | Gets the distance from the top-most to bottom-most black pixel in a line. |
+| [Extent](#uid-2e81cac616) | 获取一行中最上方与最下方黑色像素之间的距离。 |
 | [FirstTextSourceIndex](#uid-cc4f06cc4e) | Gets the first TextSource position of the current line. |
 | [HasCollapsed](#uid-946498f189) | Gets a value that indicates whether the line is collapsed. |
 | [HasOverflowed](#uid-e491880656) | Gets a value that indicates whether content of the line overflows the specified paragraph width. |
 | [Height](#uid-681e96dc6b) | 获取一行文本的高度。 |
 | [Length](#uid-24a2f5d871) | Gets the total number of TextSource positions of the current line. |
 | [NewLineLength](#uid-1153d44e15) | 获取一行末尾换行符的个数。 |
-| [OverhangAfter](#uid-acfa66abd7) | Gets the distance that black pixels extend beyond the bottom alignment edge of a line. |
+| [OverhangAfter](#uid-acfa66abd7) | 获取黑色像素超出一行底部对齐边缘的距离。 |
 | [OverhangLeading](#uid-1547e77441) | Gets the distance that black pixels extend prior to the left leading alignment edge of the line. |
 | [OverhangTrailing](#uid-d8979e0c8b) | Gets the distance that black pixels extend following the right trailing alignment edge of the line. |
-| [Start](#uid-75744b1a92) | Gets the distance from the start of a paragraph to the starting point of a line. |
+| [Start](#uid-75744b1a92) | 获取从段落起点到某一行起点的距离。 |
 | [TextLineBreak](#uid-bb9d1dbfd1) | Gets the state of the line when broken by line breaking process. |
 | [TextRuns](#uid-6aa3d176f8) | Gets the text runs that are contained within a line. |
-| [TrailingWhitespaceLength](#uid-9d60de0372) | Gets the number of whitespace code points beyond the last non-blank character in a line. |
-| [Width](#uid-def8e65d69) | Gets the width of a line of text, excluding trailing whitespace characters. |
-| [WidthIncludingTrailingWhitespace](#uid-e241207a08) | Gets the width of a line of text, including trailing whitespace characters. |
+| [TrailingWhitespaceLength](#uid-9d60de0372) | 获取一行中最后一个非空白字符之后的空白码点个数。 |
+| [Width](#uid-def8e65d69) | 获取一行文本的宽度，不含行尾的空白字符。 |
+| [WidthIncludingTrailingWhitespace](#uid-e241207a08) | 获取一行文本的宽度，含行尾的空白字符。 |
 
 <section className="apiref-page__member-entry">
 
@@ -388,7 +388,7 @@ A [double](xref:System.Double) that represents the baseline distance.
 
 ### Extent 属性 {#extent-property}
 
-Gets the distance from the top-most to bottom-most black pixel in a line.
+获取一行中最上方与最下方黑色像素之间的距离。
 
 ```csharp
 public double Extent { get; set; }
@@ -511,7 +511,7 @@ The number of newline characters.
 
 ### OverhangAfter 属性 {#overhangafter-property}
 
-Gets the distance that black pixels extend beyond the bottom alignment edge of a line.
+获取黑色像素超出一行底部对齐边缘的距离。
 
 ```csharp
 public double OverhangAfter { get; set; }
@@ -580,7 +580,7 @@ The [Avalonia.Media.TextFormatting.TextLine.OverhangTrailing](xref:Avalonia.Medi
 
 ### Start 属性 {#start-property}
 
-Gets the distance from the start of a paragraph to the starting point of a line.
+获取从段落起点到某一行起点的距离。
 
 ```csharp
 public double Start { get; set; }
@@ -637,7 +637,7 @@ The contained text runs.
 
 ### TrailingWhitespaceLength 属性 {#trailingwhitespacelength-property}
 
-Gets the number of whitespace code points beyond the last non-blank character in a line.
+获取一行中最后一个非空白字符之后的空白码点个数。
 
 ```csharp
 public int TrailingWhitespaceLength { get; set; }
@@ -656,7 +656,7 @@ The number of whitespace code points beyond the last non-blank character in a li
 
 ### Width 属性 {#width-property}
 
-Gets the width of a line of text, excluding trailing whitespace characters.
+获取一行文本的宽度，不含行尾的空白字符。
 
 ```csharp
 public double Width { get; set; }
@@ -675,7 +675,7 @@ The text line width, excluding trailing whitespace characters.
 
 ### WidthIncludingTrailingWhitespace 属性 {#widthincludingtrailingwhitespace-property}
 
-Gets the width of a line of text, including trailing whitespace characters.
+获取一行文本的宽度，含行尾的空白字符。
 
 ```csharp
 public double WidthIncludingTrailingWhitespace { get; set; }

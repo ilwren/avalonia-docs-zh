@@ -63,7 +63,7 @@ public class AsyncDataTransferExtensions
 | 名称 | 说明 |
 | --- | --- |
 | [Contains](#uid-ea0b329271) | 获取某个 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 是否支持特定格式。 |
-| [GetItems](#uid-821f08e900) | Gets the list of [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) contained in this object, filtered by a given format. |
+| [GetItems](#uid-821f08e900) | 获取该对象中包含的 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 列表，并按给定格式筛选。 |
 | [TryGetBitmapAsync](#uid-b420c53c68) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出位图（若有）。 |
 | [TryGetFileAsync](#uid-f3422d40ae) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文件（若有）。 |
 | [TryGetFilesAsync](#uid-b38149a1db) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文件列表（若有）。 |
@@ -110,7 +110,7 @@ bool
 
 ### GetItems 方法 {#getitems-method}
 
-Gets the list of [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) contained in this object, filtered by a given format.
+获取该对象中包含的 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 列表，并按给定格式筛选。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Input.IAsyncDataTransferItem> GetItems(Avalonia.Input.IAsyncDataTransfer dataTransfer, Avalonia.Input.DataFormat format)
@@ -134,7 +134,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Input.IAsyncDataTransferItem
 Some platforms (such as Windows and X11) may only support a single data item for all formats
 except [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File).
 
-Items returned by this property must stay valid until the [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) is disposed.
+该属性返回的各项必须在 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 被释放之前始终有效。
 
 </section>
 

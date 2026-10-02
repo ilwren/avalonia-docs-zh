@@ -68,7 +68,7 @@ public class AutomationPeer
 | [BringIntoView](#uid-0ce0c26ad7) | Attempts to bring the element associated with the automation peer into view. |
 | [GetAcceleratorKey](#uid-b27b870e23) | Gets the accelerator key combinations for the element that is associated with the UI Automation peer. |
 | [GetAccessKey](#uid-0c0606dfaf) | Gets the access key for the element that is associated with the automation peer. |
-| [GetAutomationControlType](#uid-f7daf3a583) | Gets the control type for the element that is associated with the UI Automation peer. |
+| [GetAutomationControlType](#uid-f7daf3a583) | 获取与该 UI 自动化 peer 相关联元素的控件类型。 |
 | [GetAutomationId](#uid-ec722c2168) | Gets the automation ID of the element that is associated with the UI Automation peer. |
 | [GetBoundingRectangle](#uid-f04c4b54df) | Gets the bounding rectangle of the element that is associated with the automation peer in top-level coordinates. |
 | [GetChildren](#uid-1974fa1efa) | Gets the child automation peers. |
@@ -78,7 +78,7 @@ public class AutomationPeer
 | [GetItemStatus](#uid-798f219773) | Gets the item status that is associated with this automation peer. |
 | [GetItemType](#uid-d858421abf) | Gets the item type that is associated with this automation peer. |
 | [GetLabeledBy](#uid-98bd49471d) | Gets the automation peer for the label that is targeted to the element. |
-| [GetLandmarkType](#uid-57bba04eba) | Gets the control type for the element that is associated with the UI Automation peer. |
+| [GetLandmarkType](#uid-57bba04eba) | 获取与该 UI 自动化 peer 相关联元素的控件类型。 |
 | [GetLiveSetting](#uid-75007f578a) | Gets the current live setting that is associated with this this automation peer. |
 | [GetLocalizedControlType](#uid-262763e857) | Gets a human-readable localized string that represents the type of the control that is associated with this automation peer. |
 | [GetName](#uid-ac6dd5a547) | Gets text that describes the element that is associated with this automation peer. |
@@ -174,7 +174,7 @@ would press ALT+F.
 
 ### GetAutomationControlType 方法 {#getautomationcontroltype-method}
 
-Gets the control type for the element that is associated with the UI Automation peer.
+获取与该 UI 自动化 peer 相关联元素的控件类型。
 
 ```csharp
 public Avalonia.Automation.Peers.AutomationControlType GetAutomationControlType()
@@ -423,7 +423,7 @@ label for this element.
 
 ### GetLandmarkType 方法 {#getlandmarktype-method}
 
-Gets the control type for the element that is associated with the UI Automation peer.
+获取与该 UI 自动化 peer 相关联元素的控件类型。
 
 ```csharp
 public Nullable<Avalonia.Automation.Peers.AutomationLandmarkType> GetLandmarkType()

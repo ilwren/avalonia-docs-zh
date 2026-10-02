@@ -170,7 +170,7 @@ public CommandBarButton()
 | [Icon](#uid-830367e803) | 获取或设置按钮的图标内容。 |
 | [IsArrangeValid](../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsCancel](button.mdx#uid-25bc6e8f75) | 获取或设置该按钮是否为窗口的取消按钮。继承自 [Button](button.mdx)。 |
-| [IsCompact](#uid-f9025db18b) | Gets or sets whether the button is in compact mode (icon only, label hidden). |
+| [IsCompact](#uid-f9025db18b) | 获取或设置该按钮是否处于紧凑模式（只显示图标，隐藏标签）。 |
 | [IsDefault](button.mdx#uid-3a0ae38686) | 获取或设置该按钮是否为窗口的默认按钮。继承自 [Button](button.mdx)。 |
 | [IsEffectivelyEnabled](../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsEffectivelyVisible](../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../visual.mdx)。 |
@@ -189,7 +189,7 @@ public CommandBarButton()
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [KeyBindings](../input/inputelement.mdx#uid-827a5420b2) | 继承自 [InputElement](../input/inputelement.mdx)。 |
 | [Label](#uid-dbfb2cea65) | 获取或设置按钮的文本标签。 |
-| [LabelPosition](#uid-02d02e2045) | Gets or sets the label position. This is set automatically by the parent [Avalonia.Controls.CommandBar](xref:Avalonia.Controls.CommandBar). |
+| [LabelPosition](#uid-02d02e2045) | 获取或设置标签位置。该值由父级 [Avalonia.Controls.CommandBar](xref:Avalonia.Controls.CommandBar) 自动设定。 |
 | [LetterSpacing](primitives/templatedcontrol.mdx#uid-2d96a527e6) | 获取或设置控件文本内容的字间距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Margin](../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MaxHeight](../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
@@ -254,7 +254,7 @@ public object Icon { get; set; }
 
 ### IsCompact 属性 {#iscompact-property}
 
-Gets or sets whether the button is in compact mode (icon only, label hidden).
+获取或设置该按钮是否处于紧凑模式（只显示图标，隐藏标签）。
 
 ```csharp
 public bool IsCompact { get; set; }
@@ -297,7 +297,7 @@ public string Label { get; set; }
 
 ### LabelPosition 属性 {#labelposition-property}
 
-Gets or sets the label position. This is set automatically by the parent [Avalonia.Controls.CommandBar](xref:Avalonia.Controls.CommandBar).
+获取或设置标签位置。该值由父级 [Avalonia.Controls.CommandBar](xref:Avalonia.Controls.CommandBar) 自动设定。
 
 ```csharp
 public Avalonia.Controls.CommandBarDefaultLabelPosition LabelPosition { get; set; }

@@ -114,16 +114,16 @@ public TreeDataGridTextColumn()
 | [Header](treedatagridcolumn.mdx#uid-e8ac01fc32) | 获取或设置列标题。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [HorizontalContentAlignment](treedatagridcolumn.mdx#uid-6a2355e9f1) | 获取或设置该列单元格内内容的水平对齐方式。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [IsReadOnly](treedatagridboundcolumn.mdx#uid-a7feb9feba) | Gets or sets a value indicating whether the column is readonly. Inherited from [TreeDataGridBoundColumn](treedatagridboundcolumn.mdx). |
-| [IsTextSearchEnabled](#uid-b1af27f6ac) | Gets or sets a value indicating whether the column takes part in text searches. |
+| [IsTextSearchEnabled](#uid-b1af27f6ac) | 获取或设置一个值，指示该列是否参与文本搜索。 |
 | [IsVisible](treedatagridcolumn.mdx#uid-56b3ceb8c9) | 获取或设置一个值，指示该列是否可见。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [MaxWidth](treedatagridcolumn.mdx#uid-86cf116775) | 获取或设置列的最大宽度。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [MinWidth](treedatagridcolumn.mdx#uid-02e431a650) | 获取或设置列的最小宽度。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [SortDirection](treedatagridcolumn.mdx#uid-2ec9c41915) | 获取或设置显示在该列上的排序方向指示符。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [Tag](treedatagridcolumn.mdx#uid-1da1891e70) | 获取或设置挂在该列上的用户自定义对象。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
-| [TextAlignment](#uid-ccc9367a9c) | Gets or sets the text alignment mode for the cells in the column. |
-| [TextTrimming](#uid-ffeff8b463) | Gets or sets the text trimming mode for the cells in the column. |
-| [TextWrapping](#uid-5c1e460fc5) | Gets or sets the text wrapping mode for the cells in the column. |
+| [TextAlignment](#uid-ccc9367a9c) | 获取或设置该列单元格的文本对齐方式。 |
+| [TextTrimming](#uid-ffeff8b463) | 获取或设置该列单元格的文本裁剪方式。 |
+| [TextWrapping](#uid-5c1e460fc5) | 获取或设置该列单元格的文本换行方式。 |
 | [UseDrawnCells](#uid-d14f5b2ff3) | Gets or sets a value indicating whether the column uses drawn cells instead of control-based cells for improved performance. |
 | [VerticalContentAlignment](treedatagridcolumn.mdx#uid-2f39fa8e0f) | 获取或设置该列单元格内内容的垂直对齐方式。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [Width](treedatagridcolumn.mdx#uid-e2a65dc530) | 获取或设置列宽。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
@@ -134,7 +134,7 @@ public TreeDataGridTextColumn()
 
 ### IsTextSearchEnabled 属性 {#istextsearchenabled-property}
 
-Gets or sets a value indicating whether the column takes part in text searches.
+获取或设置一个值，指示该列是否参与文本搜索。
 
 ```csharp
 public bool IsTextSearchEnabled { get; set; }
@@ -148,7 +148,7 @@ public bool IsTextSearchEnabled { get; set; }
 
 ### TextAlignment 属性 {#textalignment-property}
 
-Gets or sets the text alignment mode for the cells in the column.
+获取或设置该列单元格的文本对齐方式。
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }
@@ -162,7 +162,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 ### TextTrimming 属性 {#texttrimming-property}
 
-Gets or sets the text trimming mode for the cells in the column.
+获取或设置该列单元格的文本裁剪方式。
 
 ```csharp
 public Avalonia.Media.TextTrimming TextTrimming { get; set; }
@@ -176,7 +176,7 @@ public Avalonia.Media.TextTrimming TextTrimming { get; set; }
 
 ### TextWrapping 属性 {#textwrapping-property}
 
-Gets or sets the text wrapping mode for the cells in the column.
+获取或设置该列单元格的文本换行方式。
 
 ```csharp
 public Avalonia.Media.TextWrapping TextWrapping { get; set; }
@@ -211,7 +211,7 @@ per-cell controls, which can significantly improve performance for large dataset
 | [ActualWidthProperty](treedatagridcolumn.mdx#uid-e364c8be18) | 定义 [Avalonia.Controls.TreeDataGridColumn.ActualWidth](xref:Avalonia.Controls.TreeDataGridColumn.ActualWidth) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [AllowTriStateSortingProperty](treedatagridcolumn.mdx#uid-6ae1bb0dd4) | 定义 [Avalonia.Controls.TreeDataGridColumn.AllowTriStateSorting](xref:Avalonia.Controls.TreeDataGridColumn.AllowTriStateSorting) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [BeginEditGesturesProperty](treedatagridcolumn.mdx#uid-dc2ed09efd) | 定义 [Avalonia.Controls.TreeDataGridColumn.BeginEditGestures](xref:Avalonia.Controls.TreeDataGridColumn.BeginEditGestures) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
-| [BindingProperty](treedatagridboundcolumn.mdx#uid-ed4b06fd8b) | Defines the [Avalonia.Controls.TreeDataGridBoundColumn.Binding](xref:Avalonia.Controls.TreeDataGridBoundColumn.Binding) property. Inherited from [TreeDataGridBoundColumn](treedatagridboundcolumn.mdx). |
+| [BindingProperty](treedatagridboundcolumn.mdx#uid-ed4b06fd8b) | 定义 [Avalonia.Controls.TreeDataGridBoundColumn.Binding](xref:Avalonia.Controls.TreeDataGridBoundColumn.Binding) 属性。继承自 [TreeDataGridBoundColumn](treedatagridboundcolumn.mdx)。 |
 | [CanUserReorderProperty](treedatagridcolumn.mdx#uid-805d490f76) | 定义 [Avalonia.Controls.TreeDataGridColumn.CanUserReorder](xref:Avalonia.Controls.TreeDataGridColumn.CanUserReorder) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [CanUserResizeProperty](treedatagridcolumn.mdx#uid-571bbcdf1a) | 定义 [Avalonia.Controls.TreeDataGridColumn.CanUserResize](xref:Avalonia.Controls.TreeDataGridColumn.CanUserResize) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [CanUserSortProperty](treedatagridcolumn.mdx#uid-ba3617e072) | 定义 [Avalonia.Controls.TreeDataGridColumn.CanUserSort](xref:Avalonia.Controls.TreeDataGridColumn.CanUserSort) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
@@ -219,7 +219,7 @@ per-cell controls, which can significantly improve performance for large dataset
 | [CompareDescendingProperty](treedatagridcolumn.mdx#uid-8793ea737f) | 定义 [Avalonia.Controls.TreeDataGridColumn.CompareDescending](xref:Avalonia.Controls.TreeDataGridColumn.CompareDescending) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [HeaderProperty](treedatagridcolumn.mdx#uid-6bf85e990c) | 定义 [Avalonia.Controls.TreeDataGridColumn.Header](xref:Avalonia.Controls.TreeDataGridColumn.Header) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [HorizontalContentAlignmentProperty](treedatagridcolumn.mdx#uid-09683680d2) | 定义 [Avalonia.Controls.TreeDataGridColumn.HorizontalContentAlignment](xref:Avalonia.Controls.TreeDataGridColumn.HorizontalContentAlignment) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
-| [IsReadOnlyProperty](treedatagridboundcolumn.mdx#uid-74e252a9be) | Defines the [Avalonia.Controls.TreeDataGridBoundColumn.IsReadOnly](xref:Avalonia.Controls.TreeDataGridBoundColumn.IsReadOnly) property. Inherited from [TreeDataGridBoundColumn](treedatagridboundcolumn.mdx). |
+| [IsReadOnlyProperty](treedatagridboundcolumn.mdx#uid-74e252a9be) | 定义 [Avalonia.Controls.TreeDataGridBoundColumn.IsReadOnly](xref:Avalonia.Controls.TreeDataGridBoundColumn.IsReadOnly) 属性。继承自 [TreeDataGridBoundColumn](treedatagridboundcolumn.mdx)。 |
 | [IsTextSearchEnabledProperty](#uid-3702a01722) | 定义 [Avalonia.Controls.TreeDataGridTextColumn.IsTextSearchEnabled](xref:Avalonia.Controls.TreeDataGridTextColumn.IsTextSearchEnabled) 属性。 |
 | [IsVisibleProperty](treedatagridcolumn.mdx#uid-3b84d0d8ca) | 定义 [Avalonia.Controls.TreeDataGridColumn.IsVisible](xref:Avalonia.Controls.TreeDataGridColumn.IsVisible) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |
 | [MaxWidthProperty](treedatagridcolumn.mdx#uid-dc42964fc0) | 定义 [Avalonia.Controls.TreeDataGridColumn.MaxWidth](xref:Avalonia.Controls.TreeDataGridColumn.MaxWidth) 属性。继承自 [TreeDataGridColumn](treedatagridcolumn.mdx)。 |

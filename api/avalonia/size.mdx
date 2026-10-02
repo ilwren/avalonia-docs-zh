@@ -131,8 +131,8 @@ The vector to take values from.
 | [NearlyEquals](#uid-9d4346ca02) | Returns a boolean indicating whether the size is equal to the other given size (numerically). |
 | [Parse](#uid-b50eddb408) | 解析 [Avalonia.Size](xref:Avalonia.Size) 字符串。 |
 | [ToString](#uid-0123cae676) | 返回该尺寸的字符串表示形式。 |
-| [WithHeight](#uid-4878b9be3d) | Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same width and the specified height. |
-| [WithWidth](#uid-db13f0fbd4) | Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same height and the specified width. |
+| [WithHeight](#uid-4878b9be3d) | 返回一个宽度不变、高度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。 |
+| [WithWidth](#uid-db13f0fbd4) | 返回一个高度不变、宽度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -406,7 +406,7 @@ The string representation of the size.
 
 ### WithHeight 方法 {#withheight-method}
 
-Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same width and the specified height.
+返回一个宽度不变、高度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。
 
 ```csharp
 public Avalonia.Size WithHeight(double height)
@@ -434,7 +434,7 @@ public Avalonia.Size WithHeight(double height)
 
 ### WithWidth 方法 {#withwidth-method}
 
-Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same height and the specified width.
+返回一个高度不变、宽度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。
 
 ```csharp
 public Avalonia.Size WithWidth(double width)

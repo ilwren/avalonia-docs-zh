@@ -79,9 +79,9 @@ public class ContainerNode
 | [GetHashCode](../../../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
 | [GetIsHoldingEnabled](../../../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../../../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../../../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../../../input/inputelement.mdx)。 |
-| [GetLineFromPosition](#uid-66efc194c9) | Returns the line info for the given text position, or if not found. |
+| [GetLineFromPosition](#uid-66efc194c9) | 返回给定文本位置所在的行信息；找不到则返回 null。 |
 | [GetLines](#uid-57fb8e58e6) | 返回该节点内的所有文本行。 |
-| [GetRectFromTextPointer](#uid-a943f72050) | Returns the caret rectangle for `position` within this node, or if outside. |
+| [GetRectFromTextPointer](#uid-a943f72050) | 返回该节点内 `position` 处的插入符矩形；若在节点之外则返回 null。 |
 | [GetSelectionRects](#uid-315ca4ca8c) | Returns selection rectangles for all child nodes that overlap `selection`. |
 | [GetSelectionText](#uid-2c87a31af0) | Returns selected text segments for all child nodes that overlap `selection`. |
 | [GetValue（3 个重载）](../../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
@@ -110,7 +110,7 @@ public class ContainerNode
 
 ### GetLineFromPosition 方法 {#getlinefromposition-method}
 
-Returns the line info for the given text position, or if not found.
+返回给定文本位置所在的行信息；找不到则返回 null。
 
 ```csharp
 public Nullable<Avalonia.Controls.Documents.Primitives.TextLineInfo> GetLineFromPosition(Avalonia.Controls.Documents.TextModel.TextPointer position)
@@ -153,7 +153,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Primitive
 
 ### GetRectFromTextPointer 方法 {#getrectfromtextpointer-method}
 
-Returns the caret rectangle for `position` within this node, or if outside.
+返回该节点内 `position` 处的插入符矩形；若在节点之外则返回 null。
 
 ```csharp
 public Nullable<Avalonia.Rect> GetRectFromTextPointer(Avalonia.Controls.Documents.TextModel.TextPointer position, Avalonia.Controls.Documents.TextModel.LogicalDirection direction)
@@ -227,9 +227,9 @@ System.Collections.Generic.IEnumerable&lt;string&gt;
 | 名称 | 说明 |
 | --- | --- |
 | [ActualThemeVariant](../../../../styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](../../../../styledelement.mdx)。 |
-| [BackgroundSize](documentnode.mdx#uid-c6ef123ec9) | Gets the size used for rendering the background and border. Inherited from [DocumentNode](documentnode.mdx). |
-| [BorderBrush](documentnode.mdx#uid-df1efd607e) | Gets the current border brush applied to this node. Inherited from [DocumentNode](documentnode.mdx). |
-| [BorderThickness](documentnode.mdx#uid-f1a94fc619) | Gets the current border thickness applied to this node. Inherited from [DocumentNode](documentnode.mdx). |
+| [BackgroundSize](documentnode.mdx#uid-c6ef123ec9) | 获取绘制背景和边框所用的尺寸。继承自 [DocumentNode](documentnode.mdx)。 |
+| [BorderBrush](documentnode.mdx#uid-df1efd607e) | 获取当前作用于该节点的边框画刷。继承自 [DocumentNode](documentnode.mdx)。 |
+| [BorderThickness](documentnode.mdx#uid-f1a94fc619) | 获取当前作用于该节点的边框粗细。继承自 [DocumentNode](documentnode.mdx)。 |
 | [Bounds](../../../../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../../../../visual.mdx)。 |
 | [CacheMode](../../../../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../../../../visual.mdx)。 |
 | [ChildNodes](#uid-644ec8dffb) | Gets the realized child document nodes in layout order. |
@@ -237,10 +237,10 @@ System.Collections.Generic.IEnumerable&lt;string&gt;
 | [Clip](../../../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../../../visual.mdx)。 |
 | [ClipToBounds](../../../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../../../visual.mdx)。 |
 | [ContentEnd](documentnode.mdx#uid-1ee2f9e71d) | Gets the text pointer to the end of content covered by this node. Inherited from [DocumentNode](documentnode.mdx). |
-| [ContentLength](documentnode.mdx#uid-d2977f6a39) | Gets the character length of this node's content. Inherited from [DocumentNode](documentnode.mdx). |
-| [ContentRange](documentnode.mdx#uid-ddc292f7ff) | Gets the text range covering the full content of this node. Inherited from [DocumentNode](documentnode.mdx). |
+| [ContentLength](documentnode.mdx#uid-d2977f6a39) | 获取该节点内容的字符长度。继承自 [DocumentNode](documentnode.mdx)。 |
+| [ContentRange](documentnode.mdx#uid-ddc292f7ff) | 获取涵盖该节点全部内容的文本范围。继承自 [DocumentNode](documentnode.mdx)。 |
 | [ContentStart](documentnode.mdx#uid-e48f293bb1) | Gets the text pointer to the start of content covered by this node. Inherited from [DocumentNode](documentnode.mdx). |
-| [CornerRadius](documentnode.mdx#uid-8992ff2bc5) | Gets the current corner radius applied to this node's border. Inherited from [DocumentNode](documentnode.mdx). |
+| [CornerRadius](documentnode.mdx#uid-8992ff2bc5) | 获取当前作用于该节点边框的圆角半径。继承自 [DocumentNode](documentnode.mdx)。 |
 | [Cursor](../../../../input/inputelement.mdx#uid-4222de38cf) | 获取或设置关联的鼠标指针样式。继承自 [InputElement](../../../../input/inputelement.mdx)。 |
 | [DataContext](../../../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../../../styledelement.mdx)。 |
 | [DesiredSize](../../../../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../../../../layout/layoutable.mdx)。 |
@@ -275,9 +275,9 @@ System.Collections.Generic.IEnumerable&lt;string&gt;
 | [Name](../../../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../../../styledelement.mdx)。 |
 | [Opacity](../../../../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../../../../visual.mdx)。 |
 | [OpacityMask](../../../../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../../../../visual.mdx)。 |
-| [Padding](documentnode.mdx#uid-b399ee7a26) | Gets the current padding applied to this node's content area. Inherited from [DocumentNode](documentnode.mdx). |
+| [Padding](documentnode.mdx#uid-b399ee7a26) | 获取当前作用于该节点内容区域的内边距。继承自 [DocumentNode](documentnode.mdx)。 |
 | [Parent](../../../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../../../styledelement.mdx)。 |
-| [ParentNode](documentnode.mdx#uid-9ebf74eb6a) | Gets the parent document node, or if this is the root. Inherited from [DocumentNode](documentnode.mdx). |
+| [ParentNode](documentnode.mdx#uid-9ebf74eb6a) | 获取父级文档节点；若它本身就是根则为 null。继承自 [DocumentNode](documentnode.mdx)。 |
 | [RenderTransform](../../../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../../../visual.mdx)。 |
 | [RenderTransformOrigin](../../../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../../../visual.mdx)。 |
 | [Resources](../../../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../../../styledelement.mdx)。 |
@@ -285,7 +285,7 @@ System.Collections.Generic.IEnumerable&lt;string&gt;
 | [Styles](../../../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../../../styledelement.mdx)。 |
 | [TabIndex](../../../../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../../../../input/inputelement.mdx)。 |
 | [TemplatedParent](../../../../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../../../../styledelement.mdx)。 |
-| [TextView](documentnode.mdx#uid-006550d8e4) | Gets or sets the text view this node belongs to. Inherited from [DocumentNode](documentnode.mdx). |
+| [TextView](documentnode.mdx#uid-006550d8e4) | 获取或设置该节点所属的文本视图。继承自 [DocumentNode](documentnode.mdx)。 |
 | [Theme](../../../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../../../styledelement.mdx)。 |
 | [Transitions](../../../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../../../layout/layoutable.mdx)。 |

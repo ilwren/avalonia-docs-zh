@@ -57,7 +57,7 @@ public interface IScrollProvider
 
 | 名称 | 说明 |
 | --- | --- |
-| [Scroll](#uid-2c98c2b745) | Scrolls the visible region of the content area horizontally and vertically. |
+| [Scroll](#uid-2c98c2b745) | 在水平和垂直方向上滚动内容区域的可见范围。 |
 | [SetScrollPercent](#uid-3735cebfd9) | Sets the horizontal and vertical scroll position as a percentage of the total content area within the control. |
 
 <section className="apiref-page__member-entry">
@@ -66,7 +66,7 @@ public interface IScrollProvider
 
 ### Scroll 方法 {#scroll-method}
 
-Scrolls the visible region of the content area horizontally and vertically.
+在水平和垂直方向上滚动内容区域的可见范围。
 
 ```csharp
 public void Scroll(Avalonia.Automation.Provider.ScrollAmount horizontalAmount, Avalonia.Automation.Provider.ScrollAmount verticalAmount)
@@ -131,10 +131,10 @@ cannot be scrolled in this direction.
 
 | 名称 | 说明 |
 | --- | --- |
-| [HorizontallyScrollable](#uid-b71163329b) | Gets a value that indicates whether the control can scroll horizontally. |
+| [HorizontallyScrollable](#uid-b71163329b) | 获取一个值，指示该控件能否水平滚动。 |
 | [HorizontalScrollPercent](#uid-b1248aa738) | 获取当前的水平滚动位置。 |
 | [HorizontalViewSize](#uid-e0b06e8d92) | 获取当前的横向视图尺寸。 |
-| [VerticallyScrollable](#uid-f6a3279088) | Gets a value that indicates whether the control can scroll vertically. |
+| [VerticallyScrollable](#uid-f6a3279088) | 获取一个值，指示该控件能否垂直滚动。 |
 | [VerticalScrollPercent](#uid-29deba5aa9) | 获取当前的垂直滚动位置。 |
 | [VerticalViewSize](#uid-d04ac6b142) | 获取纵向视图尺寸。 |
 
@@ -144,7 +144,7 @@ cannot be scrolled in this direction.
 
 ### HorizontallyScrollable 属性 {#horizontallyscrollable-property}
 
-Gets a value that indicates whether the control can scroll horizontally.
+获取一个值，指示该控件能否水平滚动。
 
 ```csharp
 public bool HorizontallyScrollable { get; set; }
@@ -201,7 +201,7 @@ public double HorizontalViewSize { get; set; }
 
 ### VerticallyScrollable 属性 {#verticallyscrollable-property}
 
-Gets a value that indicates whether the control can scroll vertically.
+获取一个值，指示该控件能否垂直滚动。
 
 ```csharp
 public bool VerticallyScrollable { get; set; }

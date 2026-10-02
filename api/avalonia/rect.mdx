@@ -188,7 +188,7 @@ Y 位置。
 | [Contains（2 个重载）](#uid-5040bd7115) | Determines whether a point is in the bounds of the rectangle. |
 | [ContainsExclusive](#uid-54c66388ba) | Determines whether a point is in the bounds of the rectangle, exclusive of the rectangle's bottom/right edge. |
 | [Deflate (2 overloads)](#uid-80a0b4cabe) | Deflates the rectangle by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
-| [Equals（2 个重载）](#uid-2ef0deadf5) | Returns a boolean indicating whether the rect is equal to the other given rect. |
+| [Equals（2 个重载）](#uid-2ef0deadf5) | 返回一个布尔值，指示该矩形是否与给定的另一个矩形相等。 |
 | [GetHashCode](#uid-80cde6e52c) | 返回该实例的哈希码。 |
 | [Inflate (2 overloads)](#uid-c822ee841c) | Inflates the rectangle. |
 | [Intersect](#uid-3fe10318df) | 获取两个矩形的交集。 |
@@ -259,7 +259,7 @@ public bool Contains(Avalonia.Point p)
 
 bool
 
-true if the point is in the bounds of the rectangle; otherwise false.
+若该点落在矩形范围内则为 true，否则为 false。
 
 
 </section>
@@ -316,7 +316,7 @@ public bool ContainsExclusive(Avalonia.Point p)
 
 bool
 
-true if the point is in the bounds of the rectangle; otherwise false.
+若该点落在矩形范围内则为 true，否则为 false。
 
 
 </section>
@@ -391,7 +391,7 @@ The deflated rectangle.
 
 #### Equals 方法 {#equals-method}
 
-Returns a boolean indicating whether the rect is equal to the other given rect.
+返回一个布尔值，指示该矩形是否与给定的另一个矩形相等。
 
 ```csharp
 public bool Equals(Avalonia.Rect other)

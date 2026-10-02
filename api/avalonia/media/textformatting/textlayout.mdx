@@ -438,17 +438,17 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt
 
 | 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-a399cc33c8) | The distance from the top of the first line to the baseline of the first line. |
+| [Baseline](#uid-a399cc33c8) | 从第一行顶部到第一行基线的距离。 |
 | [Extent](#uid-cdba7eec5d) | The distance from the topmost black pixel of the first line to the bottommost black pixel of the last line. |
-| [Height](#uid-b0af910e96) | The distance from the top of the first line to the bottom of the last line. |
+| [Height](#uid-b0af910e96) | 从第一行顶部到最后一行底部的距离。 |
 | [LetterSpacing](#uid-34ca790fe9) | Gets the text spacing. |
 | [LineHeight](#uid-d84fb6d803) | Gets or sets the height of each line of text. |
 | [MaxHeight](#uid-ece983d1ce) | Gets the maximum height. |
 | [MaxLines](#uid-79084a6d26) | Gets the maximum number of text lines. |
 | [MaxWidth](#uid-5ed97ef0f1) | Gets the maximum width. |
-| [OverhangAfter](#uid-33e5208f4d) | The distance from the bottom of the last line to the extent bottom. |
-| [OverhangLeading](#uid-b2077de5b8) | The maximum distance from the leading black pixel to the leading alignment point of a line. |
-| [OverhangTrailing](#uid-71d80b63be) | The maximum distance from the trailing black pixel to the trailing alignment point of a line. |
+| [OverhangAfter](#uid-33e5208f4d) | 从最后一行底部到内容范围底部的距离。 |
+| [OverhangLeading](#uid-b2077de5b8) | 从一行中最靠前的黑色像素到该行前端对齐点的最大距离。 |
+| [OverhangTrailing](#uid-71d80b63be) | 从一行中最靠后的黑色像素到该行末端对齐点的最大距离。 |
 | [TextLines](#uid-50b954b8ca) | Gets the text lines. |
 | [Width](#uid-0da390cad0) | The maximum advance width between the leading and trailing alignment points of a line, excluding the width of whitespace characters at the end of the line. |
 | [WidthIncludingTrailingWhitespace](#uid-98963e3c9f) | The maximum advance width between the leading and trailing alignment points of a line, including the width of whitespace characters at the end of the line. |
@@ -459,7 +459,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt
 
 ### Baseline 属性 {#baseline-property}
 
-The distance from the top of the first line to the baseline of the first line.
+从第一行顶部到第一行基线的距离。
 
 ```csharp
 public double Baseline { get; set; }
@@ -488,7 +488,7 @@ public double Extent { get; set; }
 
 ### Height 属性 {#height-property}
 
-The distance from the top of the first line to the bottom of the last line.
+从第一行顶部到最后一行底部的距离。
 
 ```csharp
 public double Height { get; set; }
@@ -577,7 +577,7 @@ public double MaxWidth { get; set; }
 
 ### OverhangAfter 属性 {#overhangafter-property}
 
-The distance from the bottom of the last line to the extent bottom.
+从最后一行底部到内容范围底部的距离。
 
 ```csharp
 public double OverhangAfter { get; set; }
@@ -591,7 +591,7 @@ public double OverhangAfter { get; set; }
 
 ### OverhangLeading 属性 {#overhangleading-property}
 
-The maximum distance from the leading black pixel to the leading alignment point of a line.
+从一行中最靠前的黑色像素到该行前端对齐点的最大距离。
 
 ```csharp
 public double OverhangLeading { get; set; }
@@ -605,7 +605,7 @@ public double OverhangLeading { get; set; }
 
 ### OverhangTrailing 属性 {#overhangtrailing-property}
 
-The maximum distance from the trailing black pixel to the trailing alignment point of a line.
+从一行中最靠后的黑色像素到该行末端对齐点的最大距离。
 
 ```csharp
 public double OverhangTrailing { get; set; }

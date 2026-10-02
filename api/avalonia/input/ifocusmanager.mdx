@@ -58,7 +58,7 @@ public interface IFocusManager
 | --- | --- |
 | [FindFirstFocusableElement](#uid-2421936cd0) | 取得第一个可获得焦点的元素。 |
 | [FindLastFocusableElement](#uid-be6613a4e6) | 取得最后一个可获得焦点的元素。 |
-| [FindNextElement](#uid-a0ee3bab13) | Retrieves the element that should receive focus based on the specified navigation direction. |
+| [FindNextElement](#uid-a0ee3bab13) | 按指定的导航方向取得应当获得焦点的那个元素。 |
 | [Focus](#uid-b26213438c) | 让某个控件获得焦点。 |
 | [GetFocusedElement](#uid-545fef5b56) | 获取当前获得焦点的 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)。 |
 | [TryMoveFocus](#uid-13ddb00a08) | Attempts to change focus from the element with focus to the next focusable element in the specified direction. |
@@ -111,7 +111,7 @@ The last focusable element.
 
 ### FindNextElement 方法 {#findnextelement-method}
 
-Retrieves the element that should receive focus based on the specified navigation direction.
+按指定的导航方向取得应当获得焦点的那个元素。
 
 ```csharp
 public Avalonia.Input.IInputElement FindNextElement(Avalonia.Input.NavigationDirection direction, Avalonia.Input.FindNextElementOptions options)

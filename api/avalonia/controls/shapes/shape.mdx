@@ -176,9 +176,9 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [Stretch](#uid-db920455b0) | Gets or sets a [Avalonia.Controls.Shapes.Shape.Stretch](xref:Avalonia.Controls.Shapes.Shape.Stretch) enumeration value that describes how the shape fills its allocated space. |
 | [Stroke](#uid-14ca8f2a4d) | Gets or sets the [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush) that specifies how the shape's outline is painted. |
 | [StrokeDashArray](#uid-ad26eedd35) | Gets or sets a collection of [double](xref:System.Double) values that indicate the pattern of dashes and gaps that is used to outline shapes. |
-| [StrokeDashOffset](#uid-661d24b819) | Gets or sets a value that specifies the distance within the dash pattern where a dash begins. |
+| [StrokeDashOffset](#uid-661d24b819) | 获取或设置虚线图案中起始短划所在的偏移距离。 |
 | [StrokeJoin](#uid-ce435703c8) | Gets or sets a [Avalonia.Media.PenLineJoin](xref:Avalonia.Media.PenLineJoin) enumeration value that specifies the type of join that is used at the vertices of a Shape. |
-| [StrokeLineCap](#uid-9f349e1555) | Gets or sets a [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap) enumeration value that describes the shape at the ends of a line. |
+| [StrokeLineCap](#uid-9f349e1555) | 获取或设置描述线端形状的 [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap) 枚举值。 |
 | [StrokeMiterLimit](#uid-dc785a15a8) | Gets or sets the limit on the ratio of the miter length to half the [Avalonia.Controls.Shapes.Shape.StrokeThickness](xref:Avalonia.Controls.Shapes.Shape.StrokeThickness) of the pen. |
 | [StrokeThickness](#uid-3c3cdaa5cc) | Gets or sets the width of the shape outline. |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -283,7 +283,7 @@ public Avalonia.Collections.AvaloniaList<double> StrokeDashArray { get; set; }
 
 ### StrokeDashOffset 属性 {#strokedashoffset-property}
 
-Gets or sets a value that specifies the distance within the dash pattern where a dash begins.
+获取或设置虚线图案中起始短划所在的偏移距离。
 
 ```csharp
 public double StrokeDashOffset { get; set; }
@@ -311,7 +311,7 @@ public Avalonia.Media.PenLineJoin StrokeJoin { get; set; }
 
 ### StrokeLineCap 属性 {#strokelinecap-property}
 
-Gets or sets a [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap) enumeration value that describes the shape at the ends of a line.
+获取或设置描述线端形状的 [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap) 枚举值。
 
 ```csharp
 public Avalonia.Media.PenLineCap StrokeLineCap { get; set; }

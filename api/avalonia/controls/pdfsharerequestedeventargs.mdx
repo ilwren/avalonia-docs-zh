@@ -59,7 +59,7 @@ public class PdfShareRequestedEventArgs
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetDocumentBytesAsync](#uid-0da655b11e) | Exports the document, including unsaved annotation edits, as PDF bytes. |
+| [GetDocumentBytesAsync](#uid-0da655b11e) | 把文档（含尚未保存的批注改动）导出为 PDF 字节。 |
 
 <section className="apiref-page__member-entry">
 
@@ -67,7 +67,7 @@ public class PdfShareRequestedEventArgs
 
 ### GetDocumentBytesAsync 方法 {#getdocumentbytesasync-method}
 
-Exports the document, including unsaved annotation edits, as PDF bytes.
+把文档（含尚未保存的批注改动）导出为 PDF 字节。
 
 ```csharp
 public System.Threading.Tasks.Task<byte[]> GetDocumentBytesAsync(System.Threading.CancellationToken cancellationToken)

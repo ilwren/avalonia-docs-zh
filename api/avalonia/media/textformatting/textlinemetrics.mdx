@@ -156,18 +156,18 @@ string
 
 | 名称 | 说明 |
 | --- | --- |
-| [Extent](#uid-11692b1546) | Gets the distance from the top-most to bottom-most black pixel in a line. |
+| [Extent](#uid-11692b1546) | 获取一行中最上方与最下方黑色像素之间的距离。 |
 | [HasOverflowed](#uid-8969f79e49) | Gets a value that indicates whether content of the line overflows the specified paragraph width. |
 | [Height](#uid-ce4c8d39b5) | 获取一行文本的高度。 |
 | [NewlineLength](#uid-de59e9b52c) | 获取一行末尾换行符的个数。 |
-| [OverhangAfter](#uid-4e98a18b86) | Gets the distance that black pixels extend beyond the bottom alignment edge of a line. |
+| [OverhangAfter](#uid-4e98a18b86) | 获取黑色像素超出一行底部对齐边缘的距离。 |
 | [OverhangLeading](#uid-d904ea0e0f) | Gets the distance that black pixels extend prior to the left leading alignment edge of the line. |
 | [OverhangTrailing](#uid-a2805dd4ae) | Gets the distance that black pixels extend following the right trailing alignment edge of the line. |
-| [Start](#uid-20723b6419) | Gets the distance from the start of a paragraph to the starting point of a line. |
-| [TextBaseline](#uid-c04cfc44b9) | Gets the distance from the top to the baseline of the line of text. |
-| [TrailingWhitespaceLength](#uid-1a19da5d26) | Gets the number of whitespace code points beyond the last non-blank character in a line. |
-| [Width](#uid-f74c6922cc) | Gets the width of a line of text, excluding trailing whitespace characters. |
-| [WidthIncludingTrailingWhitespace](#uid-c0e249b6d4) | Gets the width of a line of text, including trailing whitespace characters. |
+| [Start](#uid-20723b6419) | 获取从段落起点到某一行起点的距离。 |
+| [TextBaseline](#uid-c04cfc44b9) | 获取从顶部到该行文本基线的距离。 |
+| [TrailingWhitespaceLength](#uid-1a19da5d26) | 获取一行中最后一个非空白字符之后的空白码点个数。 |
+| [Width](#uid-f74c6922cc) | 获取一行文本的宽度，不含行尾的空白字符。 |
+| [WidthIncludingTrailingWhitespace](#uid-c0e249b6d4) | 获取一行文本的宽度，含行尾的空白字符。 |
 
 <section className="apiref-page__member-entry">
 
@@ -175,7 +175,7 @@ string
 
 ### Extent 属性 {#extent-property}
 
-Gets the distance from the top-most to bottom-most black pixel in a line.
+获取一行中最上方与最下方黑色像素之间的距离。
 
 ```csharp
 public double Extent { get; set; }
@@ -231,7 +231,7 @@ public int NewlineLength { get; set; }
 
 ### OverhangAfter 属性 {#overhangafter-property}
 
-Gets the distance that black pixels extend beyond the bottom alignment edge of a line.
+获取黑色像素超出一行底部对齐边缘的距离。
 
 ```csharp
 public double OverhangAfter { get; set; }
@@ -273,7 +273,7 @@ public double OverhangTrailing { get; set; }
 
 ### Start 属性 {#start-property}
 
-Gets the distance from the start of a paragraph to the starting point of a line.
+获取从段落起点到某一行起点的距离。
 
 ```csharp
 public double Start { get; set; }
@@ -287,7 +287,7 @@ public double Start { get; set; }
 
 ### TextBaseline 属性 {#textbaseline-property}
 
-Gets the distance from the top to the baseline of the line of text.
+获取从顶部到该行文本基线的距离。
 
 ```csharp
 public double TextBaseline { get; set; }
@@ -301,7 +301,7 @@ public double TextBaseline { get; set; }
 
 ### TrailingWhitespaceLength 属性 {#trailingwhitespacelength-property}
 
-Gets the number of whitespace code points beyond the last non-blank character in a line.
+获取一行中最后一个非空白字符之后的空白码点个数。
 
 ```csharp
 public int TrailingWhitespaceLength { get; set; }
@@ -315,7 +315,7 @@ public int TrailingWhitespaceLength { get; set; }
 
 ### Width 属性 {#width-property}
 
-Gets the width of a line of text, excluding trailing whitespace characters.
+获取一行文本的宽度，不含行尾的空白字符。
 
 ```csharp
 public double Width { get; set; }
@@ -329,7 +329,7 @@ public double Width { get; set; }
 
 ### WidthIncludingTrailingWhitespace 属性 {#widthincludingtrailingwhitespace-property}
 
-Gets the width of a line of text, including trailing whitespace characters.
+获取一行文本的宽度，含行尾的空白字符。
 
 ```csharp
 public double WidthIncludingTrailingWhitespace { get; set; }

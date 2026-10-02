@@ -155,8 +155,8 @@ public Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore ImportSemapho
 | --- | --- |
 | [DeviceLuid](#uid-50b8b6c55d) | 暂无摘要。 |
 | [DeviceUuid](#uid-eaceb219d1) | 暂无摘要。 |
-| [SupportedImageHandleTypes](#uid-7d19d9997b) | Returns the list of image handle types supported by the current GPU backend, see [Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes) |
-| [SupportedSemaphoreTypes](#uid-cd6e7bd9dc) | Returns the list of semaphore types supported by the current GPU backend, see [Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes) |
+| [SupportedImageHandleTypes](#uid-7d19d9997b) | 返回当前 GPU 后端所支持的图像句柄类型列表，参见 [Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes) |
+| [SupportedSemaphoreTypes](#uid-cd6e7bd9dc) | 返回当前 GPU 后端所支持的信号量类型列表，参见 [Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes) |
 
 <section className="apiref-page__member-entry">
 
@@ -188,7 +188,7 @@ public byte[] DeviceUuid { get; set; }
 
 ### SupportedImageHandleTypes 属性 {#supportedimagehandletypes-property}
 
-Returns the list of image handle types supported by the current GPU backend, see [Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes)
+返回当前 GPU 后端所支持的图像句柄类型列表，参见 [Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes)
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<string> SupportedImageHandleTypes { get; set; }
@@ -202,7 +202,7 @@ public System.Collections.Generic.IReadOnlyList<string> SupportedImageHandleType
 
 ### SupportedSemaphoreTypes 属性 {#supportedsemaphoretypes-property}
 
-Returns the list of semaphore types supported by the current GPU backend, see [Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes)
+返回当前 GPU 后端所支持的信号量类型列表，参见 [Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes](xref:Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes)
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<string> SupportedSemaphoreTypes { get; set; }

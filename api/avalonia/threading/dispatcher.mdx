@@ -81,7 +81,7 @@ public class Dispatcher
 | [Resume (2 overloads)](#uid-d8b7553b3d) | Creates an awaitable object that asynchronously resumes execution on the dispatcher. |
 | [RunJobs](#uid-ede9418d73) | 暂无摘要。 |
 | [ToTaskScheduler (2 overloads)](#uid-9ea307a8a9) | Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskScheduler) which executes tasks on this [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher). A [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority) is captured from the current [Avalonia.Threading.AvaloniaSynchronizationContext](xref:Avalonia.Threading.AvaloniaSynchronizationContext) if one is available. Otherwise, [Avalonia.Threading.DispatcherPriority.Default](xref:Avalonia.Threading.DispatcherPriority.Default) is used. |
-| [VerifyAccess](#uid-57fef0e640) | Checks that the current thread is the UI thread and throws if not. |
+| [VerifyAccess](#uid-57fef0e640) | 检查当前线程是否为 UI 线程，若不是则抛出异常。 |
 | [Yield (2 overloads)](#uid-b45ed6d37d) | Creates an awaitable object that asynchronously yields control back to the current dispatcher and provides an opportunity for the dispatcher to process other events. |
 
 <span id="uid-2892588fd8"></span>
@@ -278,8 +278,7 @@ bool
 
 #### Invoke 方法 {#invoke-method}
 
-Executes the specified Action synchronously on the thread that
-the Dispatcher was created on.
+在创建该 Dispatcher 的那个线程上同步执行指定的 Action。
 
 ```csharp
 public void Invoke(Action callback)
@@ -304,8 +303,7 @@ Note that the default priority is DispatcherPriority.Send.
 
 #### Invoke 方法 {#invoke-method-1}
 
-Executes the specified Action synchronously on the thread that
-the Dispatcher was created on.
+在创建该 Dispatcher 的那个线程上同步执行指定的 Action。
 
 ```csharp
 public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priority)
@@ -332,8 +330,7 @@ public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priori
 
 #### Invoke 方法 {#invoke-method-2}
 
-Executes the specified Action synchronously on the thread that
-the Dispatcher was created on.
+在创建该 Dispatcher 的那个线程上同步执行指定的 Action。
 
 ```csharp
 public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken)
@@ -368,8 +365,7 @@ the operation can cooperate with the cancellation request.
 
 #### Invoke 方法 {#invoke-method-3}
 
-Executes the specified Action synchronously on the thread that
-the Dispatcher was created on.
+在创建该 Dispatcher 的那个线程上同步执行指定的 Action。
 
 ```csharp
 public void Invoke(Action callback, Avalonia.Threading.DispatcherPriority priority, System.Threading.CancellationToken cancellationToken, TimeSpan timeout)
@@ -1088,7 +1084,7 @@ System.Threading.Tasks.TaskScheduler
 
 ### VerifyAccess 方法 {#verifyaccess-method}
 
-Checks that the current thread is the UI thread and throws if not.
+检查当前线程是否为 UI 线程，若不是则抛出异常。
 
 ```csharp
 public void VerifyAccess()

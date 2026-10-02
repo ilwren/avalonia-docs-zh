@@ -86,7 +86,7 @@ public NumberedMarkerStyleAction()
 | 名称 | 说明 |
 | --- | --- |
 | [CanExecute](#uid-56aeafec17) | 获取该操作当前是否可执行。 |
-| [ClearValue](#uid-75a853aec2) | Clears the marker style. A list always has one, so this does nothing. |
+| [ClearValue](#uid-75a853aec2) | 清除标记样式。列表总是有一个标记，因此这不起任何作用。 |
 | [Execute](#uid-96d3a49776) | 同步执行该操作。 |
 | [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
 | [GetAvailableValues](#uid-f6e99a4acc) | Returns numbered [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle) values. |
@@ -134,7 +134,7 @@ bool
 
 ### ClearValue 方法 {#clearvalue-method}
 
-Clears the marker style. A list always has one, so this does nothing.
+清除标记样式。列表总是有一个标记，因此这不起任何作用。
 
 ```csharp
 public void ClearValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -285,7 +285,7 @@ False if blocks have different values (mixed state).
 UI controls should show a mixed/indeterminate state when this returns false.
 For example, a [ComboBox](xref:Avalonia.Controls.ComboBox) might show "Mixed" placeholder text.
 
-For collapsed selections, this always returns true (single block).
+对于折叠选区，它始终返回 true（只涉及单个块）。
 
 </section>
 

@@ -104,7 +104,7 @@ public AvaloniaObject()
 | [IsSet](#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. |
 | [SetCurrentValue（2 个重载）](#uid-38759fd088) | Sets the value of a dependency property without changing its value source. |
 | [SetValue（3 个重载）](#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. |
-| [VerifyAccess](#uid-3b9d3c9793) | Checks that the current thread is the UI thread and throws if not. |
+| [VerifyAccess](#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。 |
 
 <span id="uid-1c60c7bda3"></span>
 
@@ -904,7 +904,7 @@ IDisposable
 
 ### VerifyAccess 方法 {#verifyaccess-method}
 
-Checks that the current thread is the UI thread and throws if not.
+检查当前线程是否为 UI 线程，若不是则抛出异常。
 
 ```csharp
 public void VerifyAccess()

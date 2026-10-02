@@ -187,7 +187,7 @@ Y 位置。
 | [CenterRect](#uid-26d920a1da) | 把另一个矩形在该矩形内居中。 |
 | [Contains（2 个重载）](#uid-a458e3c264) | Determines whether a point in the bounds of the rectangle. |
 | [ContainsExclusive](#uid-3a64b5f0e8) | Determines whether a point is in the bounds of the rectangle, exclusive of the rectangle's bottom/right edge. |
-| [Equals（2 个重载）](#uid-dab286ffc1) | Returns a boolean indicating whether the rect is equal to the other given rect. |
+| [Equals（2 个重载）](#uid-dab286ffc1) | 返回一个布尔值，指示该矩形是否与给定的另一个矩形相等。 |
 | [FromRect (2 overloads)](#uid-83a2288e85) | 按指定的缩放系数把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。 |
 | [FromRectWithDpi (2 overloads)](#uid-07364607c9) | 按指定的每英寸点数（DPI）把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。 |
 | [GetHashCode](#uid-9c96c5b3a7) | 返回该实例的哈希码。 |
@@ -259,7 +259,7 @@ public bool Contains(Avalonia.PixelPoint p)
 
 bool
 
-true if the point is in the bounds of the rectangle; otherwise false.
+若该点落在矩形范围内则为 true，否则为 false。
 
 
 </section>
@@ -316,7 +316,7 @@ public bool ContainsExclusive(Avalonia.PixelPoint p)
 
 bool
 
-true if the point is in the bounds of the rectangle; otherwise false.
+若该点落在矩形范围内则为 true，否则为 false。
 
 
 </section>
@@ -331,7 +331,7 @@ true if the point is in the bounds of the rectangle; otherwise false.
 
 #### Equals 方法 {#equals-method}
 
-Returns a boolean indicating whether the rect is equal to the other given rect.
+返回一个布尔值，指示该矩形是否与给定的另一个矩形相等。
 
 ```csharp
 public bool Equals(Avalonia.PixelRect other)

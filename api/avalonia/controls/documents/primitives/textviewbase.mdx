@@ -125,11 +125,11 @@ public TextViewBase()
 | [GetIsTemplateFocusTarget](../../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../../primitives/templatedcontrol.mdx)。 |
 | [GetLineFromPosition](#uid-82e6936504) | 获取包含指定位置的那一行。 |
 | [GetNextLine](#uid-638192c88b) | 获取指定行之后的下一行。 |
-| [GetPositionAtLineEnd](#uid-c13929f0ea) | Gets the position at the end of the line containing the specified position. |
-| [GetPositionAtLineStart](#uid-dc09cf92fe) | Gets the position at the start of the line containing the specified position. |
+| [GetPositionAtLineEnd](#uid-c13929f0ea) | 获取包含指定位置的那一行的行尾位置。 |
+| [GetPositionAtLineStart](#uid-dc09cf92fe) | 获取包含指定位置的那一行的行首位置。 |
 | [GetPositionAtLineX](#uid-9a6aef4836) | Returns the text position on `line` closest to the specified X coordinate. The result is guaranteed to stay on `line`; it never crosses into a neighbouring line or block, regardless of how far `x` lies outside the line's horizontal bounds. |
 | [GetPreviousLine](#uid-4ffd2bc4f4) | 获取指定行之前的上一行。 |
-| [GetRectangleFromTextPosition](#uid-70aa84398d) | Gets the bounding rectangle for a character at the specified position. |
+| [GetRectangleFromTextPosition](#uid-70aa84398d) | 获取指定位置处某个字符的外接矩形。 |
 | [GetTextPositionFromPoint](#uid-f67cf57d54) | 由屏幕坐标点取得对应的文本位置。 |
 | [GetValue（3 个重载）](../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../avaloniaobject.mdx)。 |
 | [GetVisibleLineAtOrAfter](#uid-ac58a95270) | 获取位于指定位置处或其后的第一个可见行。 |
@@ -235,7 +235,7 @@ The next line, or null if at the last line.
 
 ### GetPositionAtLineEnd 方法 {#getpositionatlineend-method}
 
-Gets the position at the end of the line containing the specified position.
+获取包含指定位置的那一行的行尾位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer GetPositionAtLineEnd(Avalonia.Controls.Documents.TextModel.TextPointer position)
@@ -263,7 +263,7 @@ The position at line end, or null if the position is not visible.
 
 ### GetPositionAtLineStart 方法 {#getpositionatlinestart-method}
 
-Gets the position at the start of the line containing the specified position.
+获取包含指定位置的那一行的行首位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer GetPositionAtLineStart(Avalonia.Controls.Documents.TextModel.TextPointer position)
@@ -364,7 +364,7 @@ The previous line, or null if at the first line.
 
 ### GetRectangleFromTextPosition 方法 {#getrectanglefromtextposition-method}
 
-Gets the bounding rectangle for a character at the specified position.
+获取指定位置处某个字符的外接矩形。
 
 ```csharp
 public Avalonia.Rect GetRectangleFromTextPosition(Avalonia.Controls.Documents.TextModel.TextPointer position, Avalonia.Controls.Documents.TextModel.LogicalDirection direction)
