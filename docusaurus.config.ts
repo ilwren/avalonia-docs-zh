@@ -12,11 +12,18 @@ const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
 // `npm run start:light` sets this to leave the generated API reference out of local previews, so they compile much faster.
 const skipApi = process.env.DOCS_SKIP_API === '1';
 
+// 站点地址与基路径可由环境变量覆盖，便于部署到 GitHub Pages 等子路径环境。
+// DOCS_BASE_URL 必须以 '/' 结尾，例如 '/avalonia-docs-zh/'。
+const siteUrl = process.env.DOCS_SITE_URL ?? 'https://docs.avaloniaui.net';
+const rawBaseUrl = process.env.DOCS_BASE_URL ?? '/';
+const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const withBase = (path: string) => baseUrl + path.replace(/^[/]+/, '');
+
 const config: Config = {
   title: 'Avalonia 中文文档',
   tagline: '开发者文档门户',
-  url: 'https://docs.avaloniaui.net',
-  baseUrl: '/',
+  url: siteUrl,
+  baseUrl,
   markdown: {
     mermaid: true,
   },
@@ -33,7 +40,7 @@ const config: Config = {
       attributes: {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/favicons/apple-touch-icon.png",
+        href: withBase("/favicons/apple-touch-icon.png"),
       },
     },
     {
@@ -42,7 +49,7 @@ const config: Config = {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/favicons/favicon-32x32.png",
+        href: withBase("/favicons/favicon-32x32.png"),
       },
     },
     {
@@ -51,7 +58,7 @@ const config: Config = {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: "/favicons/favicon-16x16.png",
+        href: withBase("/favicons/favicon-16x16.png"),
       },
     },
     {
@@ -59,14 +66,14 @@ const config: Config = {
       attributes: {
         rel: "shortcut icon",
         type: "image/x-icon",
-        href: "/favicons/favicon.ico",
+        href: withBase("/favicons/favicon.ico"),
       },
     },
     {
       tagName: "link",
       attributes: {
         rel: "manifest",
-        href: "/favicons/site.webmanifest",
+        href: withBase("/favicons/site.webmanifest"),
       },
     },
     {
@@ -74,7 +81,7 @@ const config: Config = {
       attributes: {
         rel: "mask-icon",
         color: "#ffffff",
-        href: "/favicons/safari-pinned-tab.svg",
+        href: withBase("/favicons/safari-pinned-tab.svg"),
       },
     },
     {
@@ -88,7 +95,7 @@ const config: Config = {
       tagName: "meta",
       attributes: {
         name: "msapplication-config",
-        content: "/favicons/browserconfig.xml",
+        content: withBase("/favicons/browserconfig.xml"),
       },
     },
   ],
