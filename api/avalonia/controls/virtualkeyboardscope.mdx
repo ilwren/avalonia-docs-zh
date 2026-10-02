@@ -36,8 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-This component wraps your UI into a special container that manages virtual keyboard visibility
-based on the current input focus
+该组件把你的界面包进一个特殊容器中，由它依据当前输入焦点来管理虚拟键盘的显隐
 
 </div>
 
@@ -164,7 +163,7 @@ public VirtualKeyboardScope()
 | [IsHitTestVisible](../input/inputelement.mdx#uid-11cb006f8b) | 获取或设置一个值，指示该控件是否参与命中测试。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsInitialized](../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../styledelement.mdx)。 |
 | [IsKeyboardFocusWithin](../input/inputelement.mdx#uid-6e5855b185) | 获取一个值，指示键盘焦点是否位于该元素或其视觉树子元素之中。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [IsKeyboardPresenterVisible](#uid-9273aa0877) | Exposes the current visibility of the [VirtualKeyboardPresenter](xref:Avalonia.Controls.Presenters.VirtualKeyboardPresenter). |
+| [IsKeyboardPresenterVisible](#uid-9273aa0877) | 暴露 [VirtualKeyboardPresenter](xref:Avalonia.Controls.Presenters.VirtualKeyboardPresenter) 当前的可见性。 |
 | [IsLoaded](control.mdx#uid-7b8aa52b02) | 获取一个值，指示控件是否已在视觉树中完全构建完毕，且布局与渲染均已完成。继承自 [Control](control.mdx)。 |
 | [IsMeasureValid](../layout/layoutable.mdx#uid-2b3ce6ad30) | 获取一个值，指示控件的布局测量结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsPointerOver](../input/inputelement.mdx#uid-09e1553c00) | 获取一个值，指示指针当前是否悬停在控件上方。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -221,7 +220,7 @@ public System.Collections.Generic.IEnumerable<Avalonia.Controls.VirtualKeyboardI
 
 ### IsKeyboardPresenterVisible 属性 {#iskeyboardpresentervisible-property}
 
-Exposes the current visibility of the [VirtualKeyboardPresenter](xref:Avalonia.Controls.Presenters.VirtualKeyboardPresenter).
+暴露 [VirtualKeyboardPresenter](xref:Avalonia.Controls.Presenters.VirtualKeyboardPresenter) 当前的可见性。
 
 ```csharp
 public bool IsKeyboardPresenterVisible { get; set; }

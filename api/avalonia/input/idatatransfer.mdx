@@ -40,7 +40,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Represents an object providing a list of [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) usableduring a drag and drop operation.
+表示一个对象，它提供拖放操作期间可用的 [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) 列表。
 
 </div>
 
@@ -60,8 +60,8 @@ public interface IDataTransfer
 
 ## 备注 {#remarks}
 
-When an implementation of this interface is used as a drag source using [Avalonia.Input.DragDrop.DoDragDropAsync(Avalonia.Input.PointerPressedEventArgs,Avalonia.Input.IDataTransfer,Avalonia.Input.DragDropEffects)](xref:Avalonia.Input.DragDrop.DoDragDropAsync%28Avalonia.Input.PointerPressedEventArgs%2CAvalonia.Input.IDataTransfer%2CAvalonia.Input.DragDropEffects%29),
-it must NOT be disposed by the caller. The system will dispose of it automatically when the drag operation completes.
+当该接口的实现通过 [Avalonia.Input.DragDrop.DoDragDropAsync(Avalonia.Input.PointerPressedEventArgs,Avalonia.Input.IDataTransfer,Avalonia.Input.DragDropEffects)](xref:Avalonia.Input.DragDrop.DoDragDropAsync%28Avalonia.Input.PointerPressedEventArgs%2CAvalonia.Input.IDataTransfer%2CAvalonia.Input.DragDropEffects%29) 用作拖动源时，
+调用方**不得**自行释放它——拖动操作结束时系统会自动释放。
 
 ## 另请参阅 {#see-also}
 

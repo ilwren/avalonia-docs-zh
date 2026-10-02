@@ -130,7 +130,7 @@ public Polyline()
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Effect](../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../visual.mdx)。 |
 | [Fill](shape.mdx#uid-2d665bbf70) | 获取或设置决定形状内部如何填充的 [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)。继承自 [Shape](shape.mdx)。 |
-| [FillRule](#uid-714b28d8c6) | Gets or sets how the interior of the polyline is determined when a [Avalonia.Controls.Shapes.Shape.Fill](xref:Avalonia.Controls.Shapes.Shape.Fill) is applied. |
+| [FillRule](#uid-714b28d8c6) | 获取或设置套用 [Avalonia.Controls.Shapes.Shape.Fill](xref:Avalonia.Controls.Shapes.Shape.Fill) 时，如何判定该折线的内部区域。 |
 | [FlowDirection](../../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../../visual.mdx)。 |
 | [Focusable](../../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [FocusAdorner](../control.mdx#uid-96de66ccc5) | 获取或设置控件的焦点修饰元素。继承自 [Control](../control.mdx)。 |
@@ -193,7 +193,7 @@ public Polyline()
 
 ### FillRule 属性 {#fillrule-property}
 
-Gets or sets how the interior of the polyline is determined when a [Avalonia.Controls.Shapes.Shape.Fill](xref:Avalonia.Controls.Shapes.Shape.Fill) is applied.
+获取或设置套用 [Avalonia.Controls.Shapes.Shape.Fill](xref:Avalonia.Controls.Shapes.Shape.Fill) 时，如何判定该折线的内部区域。
 
 ```csharp
 public Avalonia.Media.FillRule FillRule { get; set; }

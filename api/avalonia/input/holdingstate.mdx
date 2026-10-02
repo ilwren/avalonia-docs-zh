@@ -56,9 +56,9 @@ public enum HoldingState
 
 | 名称 | 说明 |
 | --- | --- |
-| [Canceled](#uid-e51ac44fd5) | An additional contact is detected or a subsequent gesture (such as a slide) is detected. |
+| [Canceled](#uid-e51ac44fd5) | 检测到又一个触点，或检测到后续手势（比如滑动）。 |
 | [Completed](#uid-8dfe114ab1) | 唯一的那个触点已抬起。 |
-| [Started](#uid-974a18fac0) | A single contact has been detected and a time threshold is crossed without the contact being lifted, another contact detected, or another gesture started. |
+| [Started](#uid-974a18fac0) | 检测到单个触点，且在该触点抬起、出现另一个触点或另一个手势开始之前，持续时间已越过某个阈值。 |
 
 <section className="apiref-page__member-entry">
 
@@ -66,7 +66,7 @@ public enum HoldingState
 
 ### Canceled 字段 {#canceled-field}
 
-An additional contact is detected or a subsequent gesture (such as a slide) is detected.
+检测到又一个触点，或检测到后续手势（比如滑动）。
 
 ```csharp
 public Avalonia.Input.HoldingState Canceled
@@ -94,7 +94,7 @@ public Avalonia.Input.HoldingState Completed
 
 ### Started 字段 {#started-field}
 
-A single contact has been detected and a time threshold is crossed without the contact being lifted, another contact detected, or another gesture started.
+检测到单个触点，且在该触点抬起、出现另一个触点或另一个手势开始之前，持续时间已越过某个阈值。
 
 ```csharp
 public Avalonia.Input.HoldingState Started

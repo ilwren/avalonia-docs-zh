@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Options for text search.
+文本搜索的选项。
 
 </div>
 
@@ -78,7 +78,7 @@ public SearchOptions()
 | --- | --- |
 | [MatchCase](#uid-b3c97655f5) | 搜索时区分大小写。 |
 | [MatchWholeWord](#uid-00471aceff) | 只匹配整词。 |
-| [MaxResults](#uid-655955aa6d) | Maximum number of results to return (0 for unlimited). |
+| [MaxResults](#uid-655955aa6d) | 最多返回多少条结果（0 表示不限）。 |
 | [StartPage](#uid-25d5a4a81c) | 搜索的起始页索引。 |
 
 <section className="apiref-page__member-entry">
@@ -115,7 +115,7 @@ public bool MatchWholeWord { get; set; }
 
 ### MaxResults 属性 {#maxresults-property}
 
-Maximum number of results to return (0 for unlimited).
+最多返回多少条结果（0 表示不限）。
 
 ```csharp
 public int MaxResults { get; set; }

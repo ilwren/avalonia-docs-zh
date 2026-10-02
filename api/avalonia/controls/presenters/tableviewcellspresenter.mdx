@@ -39,8 +39,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Lays out the cells of a [Avalonia.Controls.TableViewRow](xref:Avalonia.Controls.TableViewRow) according to the column definitions
-of the parent [Avalonia.Controls.TableView](xref:Avalonia.Controls.TableView).
+依据父级 [Avalonia.Controls.TableView](xref:Avalonia.Controls.TableView) 的列定义，摆放 [Avalonia.Controls.TableViewRow](xref:Avalonia.Controls.TableViewRow) 中的各个单元格。
 
 </div>
 
@@ -60,8 +59,8 @@ public class TableViewCellsPresenter
 
 ## 备注 {#remarks}
 
-The cells are recycled alongside their owning row in a [Avalonia.Controls.VirtualizingStackPanel](xref:Avalonia.Controls.VirtualizingStackPanel),
-but are not virtualized in a single row (i.e. there is no column virtualization).
+这些单元格会随其所属行在 [Avalonia.Controls.VirtualizingStackPanel](xref:Avalonia.Controls.VirtualizingStackPanel) 中一并回收复用，
+但在同一行内并不虚拟化（也就是说没有列虚拟化）。
 
 ## 构造函数 {#constructors}
 

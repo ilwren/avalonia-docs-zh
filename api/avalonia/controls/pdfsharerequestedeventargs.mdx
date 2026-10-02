@@ -36,8 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Raised before the viewer shares. Set [Avalonia.Controls.PdfShareRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfShareRequestedEventArgs.Handled) to take over sharing in the
-application; the built-in platform share service is then skipped.
+查看器共享之前抛出。把 [Avalonia.Controls.PdfShareRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfShareRequestedEventArgs.Handled) 设上即可由应用接管共享，
+此时会跳过内置的平台共享服务。
 
 </div>
 
@@ -91,7 +91,7 @@ System.Threading.Tasks.Task&lt;byte[]&gt;
 | --- | --- |
 | [Document](#uid-6462af8b7a) | 加载得到的文档。 |
 | [Handled](#uid-8d5095ed10) | 当应用已自行处理该请求时，把它设为 `true`。 |
-| [Options](#uid-d132616a1a) | Share options; the viewer pre-fills [Avalonia.Controls.Pdf.Services.ShareOptions.Title](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Title), [Avalonia.Controls.Pdf.Services.ShareOptions.Owner](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Owner) and [Avalonia.Controls.Pdf.Services.ShareOptions.Anchor](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Anchor). |
+| [Options](#uid-d132616a1a) | 共享选项；查看器会预先填好 [Avalonia.Controls.Pdf.Services.ShareOptions.Title](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Title)、[Avalonia.Controls.Pdf.Services.ShareOptions.Owner](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Owner) 和 [Avalonia.Controls.Pdf.Services.ShareOptions.Anchor](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Anchor)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -127,7 +127,7 @@ public bool Handled { get; set; }
 
 ### Options 属性 {#options-property}
 
-Share options; the viewer pre-fills [Avalonia.Controls.Pdf.Services.ShareOptions.Title](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Title), [Avalonia.Controls.Pdf.Services.ShareOptions.Owner](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Owner) and [Avalonia.Controls.Pdf.Services.ShareOptions.Anchor](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Anchor).
+共享选项；查看器会预先填好 [Avalonia.Controls.Pdf.Services.ShareOptions.Title](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Title)、[Avalonia.Controls.Pdf.Services.ShareOptions.Owner](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Owner) 和 [Avalonia.Controls.Pdf.Services.ShareOptions.Anchor](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Anchor)。
 
 ```csharp
 public Avalonia.Controls.Pdf.Services.ShareOptions Options { get; set; }

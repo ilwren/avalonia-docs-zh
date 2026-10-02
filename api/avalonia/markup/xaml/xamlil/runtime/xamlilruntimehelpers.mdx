@@ -57,7 +57,7 @@ public class XamlIlRuntimeHelpers
 | 名称 | 说明 |
 | --- | --- |
 | [ApplyNonMatchingMarkupExtensionV1](#uid-70ad20a9d3) | 暂无摘要。 |
-| [AsEagerParentStackProvider](#uid-c543aa31f9) | Converts a [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider) into a [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider). |
+| [AsEagerParentStackProvider](#uid-c543aa31f9) | 把 [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider) 转换成 [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider)。 |
 | [CreateInnerServiceProviderV1](#uid-b878ea7170) | 暂无摘要。 |
 | [CreateRootServiceProviderV2](#uid-fd4ec5b6cd) | 暂无摘要。 |
 | [CreateRootServiceProviderV3](#uid-778a9653ce) | 暂无摘要。 |
@@ -97,8 +97,7 @@ public void ApplyNonMatchingMarkupExtensionV1(object target, object property, IS
 
 ### AsEagerParentStackProvider 方法 {#aseagerparentstackprovider-method}
 
-Converts a [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider) into a
-[Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider).
+把 [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider) 转换成 [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider)。
 
 ```csharp
 public Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider AsEagerParentStackProvider(Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlParentStackProvider provider)

@@ -303,7 +303,7 @@ public void ShowCaret()
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [KeyBindings](../../input/inputelement.mdx#uid-827a5420b2) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [LetterSpacing](#uid-3957a0922e) | 获取或设置字间距。 |
-| [LineHeight](#uid-59b9e2a280) | Gets or sets the line height. By default, this is set to [double.NaN](xref:System.Double.NaN), which determines the appropriate height automatically. |
+| [LineHeight](#uid-59b9e2a280) | 获取或设置行高。它默认为 [double.NaN](xref:System.Double.NaN)，即自动决定合适的高度。 |
 | [Margin](../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxHeight](../../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxWidth](../../layout/layoutable.mdx#uid-ea6041bc57) | 获取或设置元素的最大宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -324,7 +324,7 @@ public void ShowCaret()
 | [SelectionEnd](#uid-f9d4535b44) | 暂无摘要。 |
 | [SelectionForegroundBrush](#uid-bd20df334c) | 暂无摘要。 |
 | [SelectionStart](#uid-ff5a3489d5) | 暂无摘要。 |
-| [ShowSelectionHighlight](#uid-7336083fb0) | Gets or sets a value that determines whether the [TextPresenter](xref:Avalonia.Controls.Presenters.TextPresenter) shows a selection highlight. |
+| [ShowSelectionHighlight](#uid-7336083fb0) | 获取或设置一个值，决定 [TextPresenter](xref:Avalonia.Controls.Presenters.TextPresenter) 是否显示选区高亮。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [TabIndex](../../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -511,7 +511,7 @@ public double LetterSpacing { get; set; }
 
 ### LineHeight 属性 {#lineheight-property}
 
-Gets or sets the line height. By default, this is set to [double.NaN](xref:System.Double.NaN), which determines the appropriate height automatically.
+获取或设置行高。它默认为 [double.NaN](xref:System.Double.NaN)，即自动决定合适的高度。
 
 ```csharp
 public double LineHeight { get; set; }
@@ -621,7 +621,7 @@ public int SelectionStart { get; set; }
 
 ### ShowSelectionHighlight 属性 {#showselectionhighlight-property}
 
-Gets or sets a value that determines whether the [TextPresenter](xref:Avalonia.Controls.Presenters.TextPresenter) shows a selection highlight.
+获取或设置一个值，决定 [TextPresenter](xref:Avalonia.Controls.Presenters.TextPresenter) 是否显示选区高亮。
 
 ```csharp
 public bool ShowSelectionHighlight { get; set; }

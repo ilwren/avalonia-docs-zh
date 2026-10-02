@@ -56,7 +56,7 @@ public class RuntimeXamlLoaderDocument
 
 | 名称 | 说明 |
 | --- | --- |
-| [RuntimeXamlLoaderDocument (8 overloads)](#uid-56bebfe1a0) | 暂无摘要。 |
+| [RuntimeXamlLoaderDocument（8 个重载）](#uid-56bebfe1a0) | 暂无摘要。 |
 
 <span id="uid-56bebfe1a0"></span>
 
@@ -229,7 +229,7 @@ public RuntimeXamlLoaderDocument(Uri baseUri, string xaml)
 | [BaseUri](#uid-b5de20e5af) | 所加载 XAML 的 URI。 |
 | [Document](#uid-ddceede5e2) | 正在加载的那个 XAML 文档的路径。 |
 | [RootInstance](#uid-086cd0f9b2) | XAML 要加载进的目标实例，可选。 |
-| [ServiceProvider](#uid-29c6758014) | Parent's service provider to pass to the Build method or type ctor, if available. |
+| [ServiceProvider](#uid-29c6758014) | 父级的服务提供程序（若有），会传给 Build 方法或类型的构造函数。 |
 | [XamlStream](#uid-d73bbd126f) | 包含该 XAML 的流。 |
 
 <section className="apiref-page__member-entry">
@@ -280,7 +280,7 @@ public object RootInstance { get; set; }
 
 ### ServiceProvider 属性 {#serviceprovider-property}
 
-Parent's service provider to pass to the Build method or type ctor, if available.
+父级的服务提供程序（若有），会传给 Build 方法或类型的构造函数。
 
 ```csharp
 public IServiceProvider ServiceProvider { get; set; }

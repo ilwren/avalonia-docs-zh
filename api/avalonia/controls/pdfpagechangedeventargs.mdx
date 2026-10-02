@@ -86,8 +86,8 @@ public PdfPageChangedEventArgs(int oldPage, int newPage)
 
 | 名称 | 说明 |
 | --- | --- |
-| [NewPage](#uid-f64d1bdcfe) | Gets the 1-based page number that is now current. |
-| [OldPage](#uid-5556588388) | Gets the 1-based page number that was previously current (0 if none). |
+| [NewPage](#uid-f64d1bdcfe) | 获取现在当前所在的页码（从 1 开始）。 |
+| [OldPage](#uid-5556588388) | 获取此前当前所在的页码（从 1 开始；若没有则为 0）。 |
 
 <section className="apiref-page__member-entry">
 
@@ -95,7 +95,7 @@ public PdfPageChangedEventArgs(int oldPage, int newPage)
 
 ### NewPage 属性 {#newpage-property}
 
-Gets the 1-based page number that is now current.
+获取现在当前所在的页码（从 1 开始）。
 
 ```csharp
 public int NewPage { get; set; }
@@ -109,7 +109,7 @@ public int NewPage { get; set; }
 
 ### OldPage 属性 {#oldpage-property}
 
-Gets the 1-based page number that was previously current (0 if none).
+获取此前当前所在的页码（从 1 开始；若没有则为 0）。
 
 ```csharp
 public int OldPage { get; set; }

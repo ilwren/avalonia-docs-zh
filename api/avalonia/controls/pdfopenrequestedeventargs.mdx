@@ -36,9 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Arguments for [Avalonia.Controls.PdfViewer.OpenRequested](xref:Avalonia.Controls.PdfViewer.OpenRequested). Set [Avalonia.Controls.PdfOpenRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfOpenRequestedEventArgs.Handled) to open the
-document in the application (for example with your own file picker) instead of the viewer's
-built-in one.
+[Avalonia.Controls.PdfViewer.OpenRequested](xref:Avalonia.Controls.PdfViewer.OpenRequested) 的参数。把 [Avalonia.Controls.PdfOpenRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfOpenRequestedEventArgs.Handled) 设上，即可改由应用自己打开文档
+（比如用你自己的文件选取器），而不走查看器内置的那个。
 
 </div>
 
@@ -60,7 +59,7 @@ public class PdfOpenRequestedEventArgs
 
 | 名称 | 说明 |
 | --- | --- |
-| [Handled](#uid-f3d8906efc) | Set to `true` to skip the built-in file picker. |
+| [Handled](#uid-f3d8906efc) | 设为 `true` 可跳过内置的文件选取器。 |
 
 <section className="apiref-page__member-entry">
 
@@ -68,7 +67,7 @@ public class PdfOpenRequestedEventArgs
 
 ### Handled 属性 {#handled-property}
 
-Set to `true` to skip the built-in file picker.
+设为 `true` 可跳过内置的文件选取器。
 
 ```csharp
 public bool Handled { get; set; }

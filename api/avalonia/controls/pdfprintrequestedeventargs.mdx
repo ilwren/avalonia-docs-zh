@@ -36,8 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Raised before the viewer prints. Set [Avalonia.Controls.PdfPrintRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfPrintRequestedEventArgs.Handled) to take over printing in the
-application; the built-in platform print service is then skipped.
+查看器打印之前抛出。把 [Avalonia.Controls.PdfPrintRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfPrintRequestedEventArgs.Handled) 设上即可由应用接管打印，
+此时会跳过内置的平台打印服务。
 
 </div>
 
@@ -91,7 +91,7 @@ System.Threading.Tasks.Task&lt;byte[]&gt;
 | --- | --- |
 | [Document](#uid-1a8d25c812) | 加载得到的文档。 |
 | [Handled](#uid-3d4e5638b8) | 当应用已自行处理该请求时，把它设为 `true`。 |
-| [Options](#uid-a2a17a57c9) | Print options; the viewer pre-fills [Avalonia.Controls.Pdf.Services.PrintOptions.Title](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Title) and [Avalonia.Controls.Pdf.Services.PrintOptions.Owner](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Owner). |
+| [Options](#uid-a2a17a57c9) | 打印选项；查看器会预先填好 [Avalonia.Controls.Pdf.Services.PrintOptions.Title](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Title) 和 [Avalonia.Controls.Pdf.Services.PrintOptions.Owner](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Owner)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -127,7 +127,7 @@ public bool Handled { get; set; }
 
 ### Options 属性 {#options-property}
 
-Print options; the viewer pre-fills [Avalonia.Controls.Pdf.Services.PrintOptions.Title](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Title) and [Avalonia.Controls.Pdf.Services.PrintOptions.Owner](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Owner).
+打印选项；查看器会预先填好 [Avalonia.Controls.Pdf.Services.PrintOptions.Title](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Title) 和 [Avalonia.Controls.Pdf.Services.PrintOptions.Owner](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Owner)。
 
 ```csharp
 public Avalonia.Controls.Pdf.Services.PrintOptions Options { get; set; }
