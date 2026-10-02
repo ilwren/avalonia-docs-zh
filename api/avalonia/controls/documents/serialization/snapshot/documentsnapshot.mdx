@@ -90,7 +90,7 @@ await Task.Run(() => serializer.Serialize(snapshot, stream));
 | [EnumerateNodes (2 overloads)](#uid-331b73817d) | Enumerates all nodes in document order (pre-order traversal). |
 | [EnumerateParagraphs](#uid-35adb86ae1) | Enumerates all paragraphs in document order. |
 | [EnumerateTextRuns](#uid-519912edce) | Enumerates all text runs in document order. |
-| [FindFootnote](#uid-971ad87405) | The note paired with `noteId`, or null. |
+| [FindFootnote](#uid-971ad87405) | 与 `noteId` 配对的那条便签，或 null。 |
 | [GetFootnoteOrdinal](#uid-826733c0cd) | The number the anchor of `noteId` shows: the 1-based position of its note among [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.Footnotes](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.Footnotes), which are in anchor order; 0 when no note carries the id. |
 | [GetText (2 overloads)](#uid-a465c7b499) | Gets text for a node's range as a string. Prefer [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory%28Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode%29) or [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.WriteTextTo(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode,System.IO.TextWriter)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.WriteTextTo%28Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode%2CSystem.IO.TextWriter%29) to avoid allocation. |
 | [GetTextMemory (2 overloads)](#uid-a80175f9af) | Gets a zero-copy memory chunk for a snapshot node's text range. The returned memory may be shorter than the node's full length when the text spans multiple rope leaves. Use [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.WriteTextTo(Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode,System.IO.TextWriter)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.WriteTextTo%28Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode%2CSystem.IO.TextWriter%29) or iterate with [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory(int,int)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.GetTextMemory%28System.Int32%2CSystem.Int32%29) for complete text. |
@@ -337,7 +337,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Documents.Serializa
 
 ### FindFootnote 方法 {#findfootnote-method}
 
-The note paired with `noteId`, or null.
+与 `noteId` 配对的那条便签，或 null。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteSnapshot FindFootnote(int noteId)

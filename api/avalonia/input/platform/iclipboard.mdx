@@ -59,7 +59,7 @@ public interface IClipboard
 | [ClearAsync](#uid-47f6c46264) | Clears any data from the system clipboard. |
 | [FlushAsync](#uid-1a1264d68c) | Permanently adds the data that is on the Clipboard so that it is available after the data's original application closes. |
 | [SetDataAsync](#uid-b5e371f49c) | Places a data object on the clipboard. The data object is responsible for providing supported formats and data upon request. |
-| [TryGetDataAsync](#uid-ee8535d426) | Retrieves data from the clipboard. |
+| [TryGetDataAsync](#uid-ee8535d426) | 从剪贴板中取回数据。 |
 | [TryGetInProcessDataAsync](#uid-fcfaed595d) | Retrieves the exact instance of a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) previously placed on the clipboard by [Avalonia.Input.Platform.IClipboard.SetDataAsync(Avalonia.Input.IAsyncDataTransfer)](xref:Avalonia.Input.Platform.IClipboard.SetDataAsync%28Avalonia.Input.IAsyncDataTransfer%29), if any. |
 
 <section className="apiref-page__member-entry">
@@ -145,7 +145,7 @@ The clipboard will dispose of it automatically when it becomes unused.
 
 ### TryGetDataAsync 方法 {#trygetdataasync-method}
 
-Retrieves data from the clipboard.
+从剪贴板中取回数据。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Input.IAsyncDataTransfer> TryGetDataAsync()

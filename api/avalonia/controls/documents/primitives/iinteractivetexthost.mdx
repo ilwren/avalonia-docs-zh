@@ -190,7 +190,7 @@ public void UnregisterComponent(Avalonia.Controls.Documents.Primitives.Component
 | --- | --- |
 | [ActiveDocument](#uid-f412cd08d9) | Gets the nested document the selection is in (a page band or a footnote the caret entered), or null while the selection is in the main document. A host without nested documents always answers null. |
 | [Selection](#uid-776a60c8a7) | 获取当前的文本选区。 |
-| [TextDocument](#uid-9c77226b13) | Gets the underlying text document. |
+| [TextDocument](#uid-9c77226b13) | 获取底层的文本文档。 |
 | [UIScope](#uid-65f19a2e63) | Gets the UI element scope for input handling (pointer events, etc.). |
 
 <section className="apiref-page__member-entry">
@@ -229,7 +229,7 @@ public Avalonia.Controls.TextSelection Selection { get; set; }
 
 ### TextDocument 属性 {#textdocument-property}
 
-Gets the underlying text document.
+获取底层的文本文档。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; set; }

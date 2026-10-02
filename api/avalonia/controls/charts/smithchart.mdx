@@ -218,7 +218,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ReactancePath](#uid-48359398ea) | Path to the Imaginary part (Reactance). |
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
-| [ResistancePath](#uid-c99254143d) | Path to the Real part (Resistance). |
+| [ResistancePath](#uid-c99254143d) | 指向实部（电阻）的路径。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
@@ -272,7 +272,7 @@ public string ReactancePath { get; set; }
 
 ### ResistancePath 属性 {#resistancepath-property}
 
-Path to the Real part (Resistance).
+指向实部（电阻）的路径。
 
 ```csharp
 public string ResistancePath { get; set; }

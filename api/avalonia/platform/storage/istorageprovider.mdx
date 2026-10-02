@@ -55,7 +55,7 @@ public interface IStorageProvider
 | [OpenFilePickerWithResultAsync](#uid-726f9331ff) | Opens the file picker dialog and returns additional information about the result. |
 | [OpenFolderBookmarkAsync](#uid-2edc4c9105) | 按书签 ID 打开 [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder)。 |
 | [OpenFolderPickerAsync](#uid-6bb27fee7f) | 打开文件夹选取对话框。 |
-| [SaveFilePickerAsync](#uid-4e68fc0b1f) | Opens the save file picker dialog. |
+| [SaveFilePickerAsync](#uid-4e68fc0b1f) | 打开文件保存选取对话框。 |
 | [SaveFilePickerWithResultAsync](#uid-1a9bca9667) | Opens the save file picker dialog and returns additional information about the result. |
 | [TryGetFileFromPathAsync](#uid-9c134ae673) | 尝试按路径从文件系统中读取文件。 |
 | [TryGetFolderFromPathAsync](#uid-8e5af1db8a) | 尝试按路径从文件系统中读取文件夹。 |
@@ -201,7 +201,7 @@ Array of selected [Avalonia.Platform.Storage.IStorageFolder](xref:Avalonia.Platf
 
 ### SaveFilePickerAsync 方法 {#savefilepickerasync-method}
 
-Opens the save file picker dialog.
+打开文件保存选取对话框。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFile> SaveFilePickerAsync(Avalonia.Platform.Storage.FilePickerSaveOptions options)

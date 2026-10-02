@@ -249,7 +249,7 @@ public int Value { get; set; }
 | [Default](#uid-11c7f8fe22) | The lowest foreground dispatcher priority |
 | [Inactive](#uid-9d6d87ac15) | A dispatcher priority for jobs that shouldn't be executed yet |
 | [Input](#uid-37e6f3144c) | The job will be processed with the same priority as input. |
-| [Invalid](#uid-e8a15fcd01) | Used internally in dispatcher code |
+| [Invalid](#uid-e8a15fcd01) | 供 dispatcher 代码内部使用 |
 | [Loaded](#uid-ea1f3e0469) | The job will be processed after layout and render but before input. |
 | [MaxValue](#uid-dfb5638419) | 可取的最高优先级 |
 | [Normal](#uid-10614c3949) | The job will be processed with normal priority. |
@@ -361,7 +361,7 @@ public Avalonia.Threading.DispatcherPriority Input
 
 ### Invalid 字段 {#invalid-field}
 
-Used internally in dispatcher code
+供 dispatcher 代码内部使用
 
 ```csharp
 public Avalonia.Threading.DispatcherPriority Invalid

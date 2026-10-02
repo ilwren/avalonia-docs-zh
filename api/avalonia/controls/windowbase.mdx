@@ -563,7 +563,7 @@ public Avalonia.StyledProperty<bool> TopmostProperty
 
 | 名称 | 说明 |
 | --- | --- |
-| [Activated](#uid-b61aa01b09) | Fired when the window is activated. |
+| [Activated](#uid-b61aa01b09) | 窗口被激活时触发。 |
 | [ActualThemeVariantChanged](../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
@@ -604,7 +604,7 @@ public Avalonia.StyledProperty<bool> TopmostProperty
 | [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [PullGesture](../input/inputelement.mdx#uid-d85f52cac5) | 当用户从控件边缘向内拖动时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PullGestureEnded](../input/inputelement.mdx#uid-a37f51b846) | 当用户在下拉手势后松开指针时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [Resized](#uid-25bc80543b) | Occurs when the window is resized. |
+| [Resized](#uid-25bc80543b) | 窗口大小改变时发生。 |
 | [ResourcesChanged](../styledelement.mdx#uid-99a7f47c56) | 当该样式化元素或其上级中的资源发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [RightTapped](../input/inputelement.mdx#uid-11a576692d) | 当用户通过输入设备上被识别为右键或其等效机制，在某一点短暂接触并松开、且位移不明显时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ScalingChanged](toplevel.mdx#uid-de8f4f22e5) | 获取或设置 [TopLevel](xref:Avalonia.Controls.TopLevel) 缩放发生变化时调用的方法。继承自 [TopLevel](toplevel.mdx)。 |
@@ -626,7 +626,7 @@ public Avalonia.StyledProperty<bool> TopmostProperty
 
 ### Activated 事件 {#activated-event}
 
-Fired when the window is activated.
+窗口被激活时触发。
 
 ```csharp
 public event EventHandler Activated
@@ -668,7 +668,7 @@ public event EventHandler<Avalonia.Controls.PixelPointEventArgs> PositionChanged
 
 ### Resized 事件 {#resized-event}
 
-Occurs when the window is resized.
+窗口大小改变时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.WindowResizedEventArgs> Resized

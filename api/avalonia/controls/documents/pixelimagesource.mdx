@@ -92,7 +92,7 @@ The decoded pixels. Owned for rendering, carried into snapshots for serializatio
 
 | 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-8bf95cd2c4) | Releases the cached render bitmap. |
+| [Dispose](#uid-8bf95cd2c4) | 释放缓存的渲染位图。 |
 | [ResolveAsync](#uid-fc549bc3d6) | 解析出已解码的图像。内嵌源会同步完成；延迟源则在后台抓取并解码。无法产出图像时返回 null。调用方不得释放返回的图像——它的生命周期归源（或其加载器）所有；持有已解码位图的源会实现 [IDisposable](xref:System.IDisposable)。 |
 | [TryGetIntrinsicPixelSize](#uid-e319b15f47) | 暂无摘要。 |
 | [TryGetPixels](#uid-b6664cf481) | 暂无摘要。 |
@@ -103,7 +103,7 @@ The decoded pixels. Owned for rendering, carried into snapshots for serializatio
 
 ### Dispose 方法 {#dispose-method}
 
-Releases the cached render bitmap.
+释放缓存的渲染位图。
 
 ```csharp
 public void Dispose()

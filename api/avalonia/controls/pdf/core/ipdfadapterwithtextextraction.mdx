@@ -59,7 +59,7 @@ public interface IPdfAdapterWithTextExtraction
 | 名称 | 说明 |
 | --- | --- |
 | [ExtractTextAsync](#uid-6b16e77a1f) | 从某一页中提取文本。 |
-| [SearchAsync](#uid-7a1b72af6b) | Searches for text in the document. |
+| [SearchAsync](#uid-7a1b72af6b) | 在文档中搜索文本。 |
 
 <section className="apiref-page__member-entry">
 
@@ -94,7 +94,7 @@ System.Threading.Tasks.Task&lt;string&gt;
 
 ### SearchAsync 方法 {#searchasync-method}
 
-Searches for text in the document.
+在文档中搜索文本。
 
 ```csharp
 public System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Pdf.Core.PdfSearchResult>> SearchAsync(Avalonia.Controls.Pdf.Core.IPdfDocument document, string query, Avalonia.Controls.Pdf.Core.SearchOptions options, System.Threading.CancellationToken cancellationToken)

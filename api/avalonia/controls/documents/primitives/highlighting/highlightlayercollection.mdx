@@ -85,7 +85,7 @@ public HighlightLayerCollection()
 | [Clear](#uid-d2edcf0297) | Clears all layers from the collection. |
 | [GetEnumerator](#uid-9ff12f020b) | Returns an enumerator that walks the layers in render order. |
 | [GetLayer](#uid-6f11117844) | 按名称取得某个图层。 |
-| [GetLayers](#uid-8b38baa2ab) | Gets all layers ordered by Z-index. |
+| [GetLayers](#uid-8b38baa2ab) | 按 Z 序取得所有图层。 |
 | [Remove](#uid-39f4055166) | Removes a highlight layer from the collection. |
 | [Render](#uid-f0864c0cbe) | 渲染所有可见图层。 |
 
@@ -182,7 +182,7 @@ The layer with the specified name, or null if not found.
 
 ### GetLayers 方法 {#getlayers-method}
 
-Gets all layers ordered by Z-index.
+按 Z 序取得所有图层。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primitives.Highlighting.IHighlightLayer> GetLayers()

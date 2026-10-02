@@ -94,7 +94,7 @@ The text document containing the selection.
 | [ClearAllProperties](documents/textmodel/textrange.mdx#uid-1d087e30fc) | Clears all inline formatting properties from the range. Content is preserved; only formatting is removed. Produces a single [Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit](xref:Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit) for atomic undo/redo. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [ClearPropertyValue](documents/textmodel/textrange.mdx#uid-ecf1a6ea8a) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
 | [ClearSelection](#uid-761fa71ea2) | Clears the selection, placing the caret at the current caret position. |
-| [ClearSpringloadProperties](#uid-f769cc1d42) | Clears all springloaded properties. |
+| [ClearSpringloadProperties](#uid-f769cc1d42) | 清除所有 springloaded 属性。 |
 | [ClearSpringloadProperty](#uid-c84ee1d189) | 清除某个 springloaded 属性。 |
 | [Contains（2 个重载）](documents/textmodel/textrange.mdx#uid-f71713cd49) | Checks if the range contains the specified pointer. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [CreateSnapshot](documents/textmodel/textrange.mdx#uid-462c656203) | Creates an immutable, thread-safe snapshot of this range's document structure. The caller chooses a serializer to convert the snapshot to a specific format. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
@@ -173,7 +173,7 @@ public void ClearSelection()
 
 ### ClearSpringloadProperties 方法 {#clearspringloadproperties-method}
 
-Clears all springloaded properties.
+清除所有 springloaded 属性。
 
 ```csharp
 public void ClearSpringloadProperties()

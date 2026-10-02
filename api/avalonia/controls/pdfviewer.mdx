@@ -88,7 +88,7 @@ public PdfViewer()
 | [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [ClearError](#uid-4ae95e6d03) | Clears [Avalonia.Controls.PdfViewer.ErrorMessage](xref:Avalonia.Controls.PdfViewer.ErrorMessage). An open document stays open; after a failed load the viewer returns to its empty state. The template's dismiss buttons call this. |
 | [ClearSearch](#uid-32102b73a4) | Clears the current search query, results, and highlights. |
-| [ClearSelection](#uid-906d44eb28) | Clears the current text selection. |
+| [ClearSelection](#uid-906d44eb28) | 清除当前的文本选区。 |
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CloseDocument](#uid-45f1dc2e12) | 关闭当前文档。 |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -126,7 +126,7 @@ public PdfViewer()
 | [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsPageBookmarked](#uid-862708a08c) | Returns whether the given 1-based page currently has a bookmark. |
 | [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [LoadDocumentAsync (3 overloads)](#uid-7c5fb53752) | Loads a PDF document from a stream. The stream is read once, from its current position (a seekable stream left at its end is read from the start), and is never disposed or kept: the viewer holds its own copy of the bytes, so the caller may dispose the stream as soon as this call returns. The document has no path; save with [Avalonia.Controls.PdfViewer.SaveDocumentAsync(string)](xref:Avalonia.Controls.PdfViewer.SaveDocumentAsync%28System.String%29) or Save As. |
+| [LoadDocumentAsync（3 个重载）](#uid-7c5fb53752) | Loads a PDF document from a stream. The stream is read once, from its current position (a seekable stream left at its end is read from the start), and is never disposed or kept: the viewer holds its own copy of the bytes, so the caller may dispose the stream as soon as this call returns. The document has no path; save with [Avalonia.Controls.PdfViewer.SaveDocumentAsync(string)](xref:Avalonia.Controls.PdfViewer.SaveDocumentAsync%28System.String%29) or Save As. |
 | [Measure](../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [NavigateTo](#uid-e54d608498) | Navigates to a link destination: the page, and in the continuous view modes the position on it (an /XYZ or /FitH target lands with its top edge at the top of the viewport, not the page top); an /XYZ zoom that is set is applied first. Returns `true` if it was an in-document page destination that could be resolved. |
 | [NextPage](#uid-38445ff615) | Navigates to the next page (or next spread in two-page mode). |
@@ -173,7 +173,7 @@ public PdfViewer()
 | [UpdateLayout](../layout/layoutable.mdx#uid-529d4a08ea) | 执行一次布局。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [UpdateStickyNoteAsync](#uid-639b5d6ebd) | 暂无摘要。 |
 | [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [ZoomIn](#uid-4c1ab67ace) | Zooms in to the next preset level. |
+| [ZoomIn](#uid-4c1ab67ace) | 放大到下一档预设级别。 |
 | [ZoomOut](#uid-e6758c2d91) | Zooms out to the previous preset level. |
 
 <section className="apiref-page__member-entry">
@@ -310,7 +310,7 @@ public void ClearSearch()
 
 ### ClearSelection 方法 {#clearselection-method}
 
-Clears the current text selection.
+清除当前的文本选区。
 
 ```csharp
 public void ClearSelection()
@@ -1586,7 +1586,7 @@ System.Threading.Tasks.Task
 
 ### ZoomIn 方法 {#zoomin-method}
 
-Zooms in to the next preset level.
+放大到下一档预设级别。
 
 ```csharp
 public void ZoomIn()

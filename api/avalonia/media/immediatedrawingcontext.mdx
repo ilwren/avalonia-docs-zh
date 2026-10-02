@@ -70,7 +70,7 @@ public class ImmediateDrawingContext
 | [PushOpacity](#uid-303ee6ec70) | 压入一个不透明度值。 |
 | [PushOpacityMask](#uid-54458b5ed2) | 压入一个不透明度蒙版。 |
 | [PushPostTransform](#uid-4c5d73998c) | Pushes a matrix post-transformation. |
-| [PushPreTransform](#uid-8f56fb7622) | Pushes a matrix pre-transformation. |
+| [PushPreTransform](#uid-8f56fb7622) | 压入一次矩阵前置变换。 |
 | [PushSetTransform](#uid-b2cf50e9d7) | Sets the current matrix transformation. |
 | [PushTransformContainer](#uid-0615f1cb5b) | 压入一个新的变换上下文。 |
 | [TryGetFeature](#uid-130ead2774) | 暂无摘要。 |
@@ -186,7 +186,7 @@ The horizontal radius of the ellipse.
 
 `radiusY` double
 
-The vertical radius of the ellipse.
+该椭圆的垂直半径。
 
 
 #### 备注 {#remarks}
@@ -526,7 +526,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushPostTransform(Aval
 
 ### PushPreTransform 方法 {#pushpretransform-method}
 
-Pushes a matrix pre-transformation.
+压入一次矩阵前置变换。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushPreTransform(Avalonia.Matrix matrix)

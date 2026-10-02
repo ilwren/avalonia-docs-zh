@@ -64,7 +64,7 @@ public interface ISkiaGpuRenderSession
 | --- | --- |
 | [GrContext](#uid-ffa8d69d60) | 本次会话所用的 GrContext。 |
 | [ScaleFactor](#uid-11b1dfc9bc) | 缩放系数。 |
-| [SkSurface](#uid-3609396a7c) | Canvas that will be used to render. |
+| [SkSurface](#uid-3609396a7c) | 将用于渲染的那块画布。 |
 | [SurfaceOrigin](#uid-abd625cc08) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
@@ -101,7 +101,7 @@ public double ScaleFactor { get; set; }
 
 ### SkSurface 属性 {#sksurface-property}
 
-Canvas that will be used to render.
+将用于渲染的那块画布。
 
 ```csharp
 public SkiaSharp.SKSurface SkSurface { get; set; }

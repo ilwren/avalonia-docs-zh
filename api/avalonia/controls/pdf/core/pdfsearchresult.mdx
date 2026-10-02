@@ -91,7 +91,7 @@ public PdfSearchResult(int pageIndex, int charIndex, int charCount, System.Colle
 | 名称 | 说明 |
 | --- | --- |
 | [Bounds](#uid-dcfbd57192) | Bounding rectangles of the matched text in page coordinates. |
-| [CharCount](#uid-91635d0946) | Number of characters in the match. |
+| [CharCount](#uid-91635d0946) | 匹配内容的字符数。 |
 | [CharIndex](#uid-a51f694017) | Character index in the page text where the match starts. |
 | [PageIndex](#uid-03e34541bc) | Page index (0-based) where the match was found. |
 
@@ -115,7 +115,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Rect> Bounds { get; set
 
 ### CharCount 属性 {#charcount-property}
 
-Number of characters in the match.
+匹配内容的字符数。
 
 ```csharp
 public int CharCount { get; set; }

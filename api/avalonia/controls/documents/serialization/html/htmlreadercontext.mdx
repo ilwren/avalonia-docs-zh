@@ -62,7 +62,7 @@ public class HtmlReaderContext
 | [AddLineBreak](#uid-fbdb71263c) | 添加一个内联换行。 |
 | [CloseParagraph](#uid-3eb9acfac2) | Closes the current paragraph (if open). |
 | [EnsureParagraph](#uid-25f2f4c538) | Ensures a paragraph is open, creating one if needed. |
-| [PopInline](#uid-9b1a3d3ca1) | Pops the current formatting inline. |
+| [PopInline](#uid-9b1a3d3ca1) | 弹出当前的格式化内联元素。 |
 | [PushInline](#uid-7cd2b5e196) | Pushes a formatting inline onto the stack. |
 | [WriteText](#uid-b1a90a6eb9) | Writes text with the current inline formatting. |
 
@@ -114,7 +114,7 @@ public void EnsureParagraph()
 
 ### PopInline 方法 {#popinline-method}
 
-Pops the current formatting inline.
+弹出当前的格式化内联元素。
 
 ```csharp
 public void PopInline()

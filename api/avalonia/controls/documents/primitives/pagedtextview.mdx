@@ -115,7 +115,7 @@ public PagedTextView()
 | [GetIsTemplateFocusTarget](../../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../../primitives/templatedcontrol.mdx)。 |
 | [GetLineFromPosition](textviewbase.mdx#uid-82e6936504) | Gets the line containing the specified position. Inherited from [TextViewBase](textviewbase.mdx). |
 | [GetNextLine](textviewbase.mdx#uid-638192c88b) | Gets the next line after the specified line. Inherited from [TextViewBase](textviewbase.mdx). |
-| [GetPageContext](#uid-8ff8ac690d) | Gets the page context of a control. |
+| [GetPageContext](#uid-8ff8ac690d) | 获取某个控件的页面上下文。 |
 | [GetPositionAtLineEnd](textviewbase.mdx#uid-c13929f0ea) | Gets the position at the end of the line containing the specified position. Inherited from [TextViewBase](textviewbase.mdx). |
 | [GetPositionAtLineStart](textviewbase.mdx#uid-dc09cf92fe) | Gets the position at the start of the line containing the specified position. Inherited from [TextViewBase](textviewbase.mdx). |
 | [GetPositionAtLineX](textviewbase.mdx#uid-9a6aef4836) | Returns the text position on `line` closest to the specified X coordinate. The result is guaranteed to stay on `line`; it never crosses into a neighbouring line or block, regardless of how far `x` lies outside the line's horizontal bounds. Inherited from [TextViewBase](textviewbase.mdx). |
@@ -171,7 +171,7 @@ public void BringPageIntoView(int pageNumber)
 
 ### GetPageContext 方法 {#getpagecontext-method}
 
-Gets the page context of a control.
+获取某个控件的页面上下文。
 
 ```csharp
 public Nullable<Avalonia.Controls.Documents.Primitives.PageContext> GetPageContext(Avalonia.Controls.Control control)

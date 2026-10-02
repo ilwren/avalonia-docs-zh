@@ -66,7 +66,7 @@ public class MarkdownNodeKinds
 | [HtmlInline](#uid-a3b8595c83) | Node kind for an unrecognized inline HTML tag, preserved as raw source in [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData). Zero-length and invisible in the viewer, emitted verbatim on write. |
 | [Image](#uid-74e3598dfd) | Node kind for inline image elements. |
 | [Marked](#uid-47d3db43bc) | Node kind for a highlighted span (`==marked==`). The kind is what makes the span a mark, so recolouring the highlight - through a style, a theme, or an editing command - leaves it writing back as `==...==`. |
-| [QuoteBlock](#uid-36731ae34c) | Node kind for blockquote sections. |
+| [QuoteBlock](#uid-36731ae34c) | 引用块对应的节点类型。 |
 | [TaskListItem](#uid-469bbad8f9) | Node kind for task list items (checkboxes). |
 | [ThematicBreak](#uid-9129cb6fc4) | Node kind for thematic breaks (horizontal rules). |
 
@@ -196,7 +196,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Marked
 
 ### QuoteBlock 字段 {#quoteblock-field}
 
-Node kind for blockquote sections.
+引用块对应的节点类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind QuoteBlock

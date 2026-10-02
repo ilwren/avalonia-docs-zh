@@ -57,7 +57,7 @@ public class TextInputMethodClient
 | 名称 | 说明 |
 | --- | --- |
 | [ExecuteContextMenuAction](#uid-09a71bff40) | Execute specific context menu actions |
-| [SetPreeditText (2 overloads)](#uid-07ee636bcb) | Sets the non-committed input string |
+| [SetPreeditText (2 overloads)](#uid-07ee636bcb) | 设置尚未提交的输入字符串 |
 
 <section className="apiref-page__member-entry">
 
@@ -90,7 +90,7 @@ The [Avalonia.Input.TextInput.ContextMenuAction](xref:Avalonia.Input.TextInput.C
 
 #### SetPreeditText 方法 {#setpreedittext-method}
 
-Sets the non-committed input string
+设置尚未提交的输入字符串
 
 ```csharp
 public void SetPreeditText(string preeditText)
@@ -132,7 +132,7 @@ public void SetPreeditText(string preeditText, Nullable<int> cursorPos)
 | [SupportsPreedit](#uid-98d5f46c95) | Indicates if TextViewVisual is capable of displaying non-committed input on the cursor position |
 | [SupportsSurroundingText](#uid-b000dfcc62) | Indicates if text input client is capable of providing the text around the cursor |
 | [SurroundingText](#uid-31223fd910) | Returns the text around the cursor, usually the current paragraph |
-| [TextViewVisual](#uid-0cd0343efd) | The visual that's showing the text |
+| [TextViewVisual](#uid-0cd0343efd) | 正在显示该文本的视觉元素 |
 
 <section className="apiref-page__member-entry">
 
@@ -210,7 +210,7 @@ public string SurroundingText { get; set; }
 
 ### TextViewVisual 属性 {#textviewvisual-property}
 
-The visual that's showing the text
+正在显示该文本的视觉元素
 
 ```csharp
 public Avalonia.Visual TextViewVisual { get; set; }

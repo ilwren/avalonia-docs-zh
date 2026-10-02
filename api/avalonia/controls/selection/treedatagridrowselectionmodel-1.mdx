@@ -105,8 +105,8 @@ public TreeDataGridRowSelectionModel<TModel>(Avalonia.Controls.TreeDataGridSourc
 | [EndBatchUpdate](#uid-0bfd82da33) | 结束由 [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601.BeginBatchUpdate) 开始的批量更新。 |
 | [IsSelected](#uid-8bfc2b06d0) | Queries whether an item is currently selected. |
 | [Select](#uid-f5c53b35ba) | Selects an item by its index in the source data. |
-| [SelectAll](#uid-3502c9e4bf) | Selects all currently visible rows. |
-| [SelectRange](#uid-1d2e1f4810) | Selects an inclusive range of rows. |
+| [SelectAll](#uid-3502c9e4bf) | 选中当前所有可见的行。 |
+| [SelectRange](#uid-1d2e1f4810) | 选中一段闭区间内的行。 |
 
 <section className="apiref-page__member-entry">
 
@@ -255,7 +255,7 @@ The index path of the item to select.
 
 ### SelectAll 方法 {#selectall-method}
 
-Selects all currently visible rows.
+选中当前所有可见的行。
 
 ```csharp
 public void SelectAll()
@@ -276,7 +276,7 @@ collapsed rows are not selected. This method does nothing when
 
 ### SelectRange 方法 {#selectrange-method}
 
-Selects an inclusive range of rows.
+选中一段闭区间内的行。
 
 ```csharp
 public void SelectRange(Avalonia.Controls.IndexPath start, Avalonia.Controls.IndexPath end)

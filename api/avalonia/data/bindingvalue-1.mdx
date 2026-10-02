@@ -122,7 +122,7 @@ public BindingValue<T>(T value)
 | [Equals（2 个重载）](#uid-4a184e5d1e) | 暂无摘要。 |
 | [FromUntyped (2 overloads)](#uid-e471c0663b) | Creates a [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601) from an object, handling the special values [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue), [Avalonia.Data.BindingOperations.DoNothing](xref:Avalonia.Data.BindingOperations.DoNothing) and [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification). |
 | [GetHashCode](#uid-6659ee4d4a) | 暂无摘要。 |
-| [GetValueOrDefault (3 overloads)](#uid-419c82c88c) | Gets the value of the binding value if present, otherwise the default value. |
+| [GetValueOrDefault（3 个重载）](#uid-419c82c88c) | Gets the value of the binding value if present, otherwise the default value. |
 | [ToOptional](#uid-1a36aed827) | Converts the binding value to an [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601). |
 | [ToString](#uid-e15e641fb3) | 暂无摘要。 |
 | [ToUntyped](#uid-9eb66563d8) | Converts the value to untyped representation, using [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue), [Avalonia.Data.BindingOperations.DoNothing](xref:Avalonia.Data.BindingOperations.DoNothing) and [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) where appropriate. |
@@ -614,7 +614,7 @@ The new binding value.
 | [Error](#uid-1640174bff) | Gets the binding or data validation error. |
 | [HasError](#uid-0c59876f79) | Gets a value indicating whether the binding value represents either a binding or data validation error. |
 | [HasValue](#uid-f5132d92ed) | Gets a value indicating whether the binding value has a value. |
-| [Type](#uid-2aebe2533d) | Gets the type of the binding value. |
+| [Type](#uid-2aebe2533d) | 获取绑定值的类型。 |
 | [Unset](#uid-6c5003d0fb) | 返回类型为 [Avalonia.Data.BindingValueType.UnsetValue](xref:Avalonia.Data.BindingValueType.UnsetValue) 的绑定值。 |
 | [Value](#uid-e59c76570a) | Gets the binding value or fallback value. |
 
@@ -681,7 +681,7 @@ public bool HasValue { get; set; }
 
 ### Type 属性 {#type-property}
 
-Gets the type of the binding value.
+获取绑定值的类型。
 
 ```csharp
 public Avalonia.Data.BindingValueType Type { get; set; }

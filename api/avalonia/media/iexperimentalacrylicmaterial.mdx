@@ -58,8 +58,8 @@ public interface IExperimentalAcrylicMaterial
 | --- | --- |
 | [BackgroundSource](#uid-1871500d27) | 获取该材质的 [Avalonia.Media.AcrylicBackgroundSource](xref:Avalonia.Media.AcrylicBackgroundSource)。 |
 | [FallbackColor](#uid-1ed8a79de5) | 获取回退颜色。 |
-| [MaterialColor](#uid-dadb94bd6e) | Gets the effective material color. |
-| [TintColor](#uid-ebdf5d45c1) | Gets the TintColor of the material. |
+| [MaterialColor](#uid-dadb94bd6e) | 获取实际生效的材质颜色。 |
+| [TintColor](#uid-ebdf5d45c1) | 获取该材质的 TintColor。 |
 | [TintOpacity](#uid-da497f1345) | Gets the TintOpacity of the material. |
 
 <section className="apiref-page__member-entry">
@@ -96,7 +96,7 @@ public Avalonia.Media.Color FallbackColor { get; set; }
 
 ### MaterialColor 属性 {#materialcolor-property}
 
-Gets the effective material color.
+获取实际生效的材质颜色。
 
 ```csharp
 public Avalonia.Media.Color MaterialColor { get; set; }
@@ -110,7 +110,7 @@ public Avalonia.Media.Color MaterialColor { get; set; }
 
 ### TintColor 属性 {#tintcolor-property}
 
-Gets the TintColor of the material.
+获取该材质的 TintColor。
 
 ```csharp
 public Avalonia.Media.Color TintColor { get; set; }
