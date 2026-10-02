@@ -200,7 +200,7 @@ True if the scroll offset was changed; otherwise false.
 | [Height](../../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HorizontalContentAlignment](contentpresenter.mdx#uid-5355613664) | Gets or sets the horizontal alignment of the content within the border the control. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [HorizontalSnapPointsAlignment](#uid-be24e2d24d) | Gets or sets how the existing snap points are horizontally aligned versus the initial viewport. |
+| [HorizontalSnapPointsAlignment](#uid-be24e2d24d) | 获取或设置现有吸附点相对于初始视口在横向上如何对齐。 |
 | [HorizontalSnapPointsType](#uid-ec4bdf4821) | 获取或设置滚动手势如何响应横轴方向上的吸附点。 |
 | [IsArrangeValid](../../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsEffectivelyEnabled](../../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -303,7 +303,7 @@ public Avalonia.Size Extent { get; set; }
 
 ### HorizontalSnapPointsAlignment 属性 {#horizontalsnappointsalignment-property}
 
-Gets or sets how the existing snap points are horizontally aligned versus the initial viewport.
+获取或设置现有吸附点相对于初始视口在横向上如何对齐。
 
 ```csharp
 public Avalonia.Controls.Primitives.SnapPointsAlignment HorizontalSnapPointsAlignment { get; set; }
@@ -339,9 +339,9 @@ public bool IsScrollChainingEnabled { get; set; }
 
 #### 备注 {#remarks}
 
-After a user hits a scroll limit on an element that has been nested within another scrollable element,
-you can specify whether that parent element should continue the scrolling operation begun in its child element.
-This is called scroll chaining.
+当用户在一个嵌套于另一个可滚动元素内的元素上滚到尽头时，
+你可以指定父元素是否接着把子元素中开始的滚动继续下去，
+这就是所谓的滚动链接。
 
 </section>
 

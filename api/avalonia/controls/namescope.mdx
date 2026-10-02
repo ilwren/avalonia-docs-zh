@@ -84,7 +84,7 @@ public NameScope()
 | 名称 | 说明 |
 | --- | --- |
 | [Complete](#uid-6412b604db) | 暂无摘要。 |
-| [Find](#uid-2b1b1d98b0) | Finds a named element in the name scope, returns immediately, doesn't traverse the name scope stack |
+| [Find](#uid-2b1b1d98b0) | 在名称作用域中查找具名元素，就地返回，不会沿名称作用域栈向上查找 |
 | [FindAsync](#uid-50f6013761) | 暂无摘要。 |
 | [GetNameScope](#uid-cdd3344597) | Gets the value of the attached [Avalonia.Controls.NameScope.NameScopeProperty](xref:Avalonia.Controls.NameScope.NameScopeProperty) on a styled element. |
 | [Register](#uid-4f0d08f4fb) | 把某个元素注册进名称作用域。 |
@@ -108,7 +108,7 @@ public void Complete()
 
 ### Find 方法 {#find-method}
 
-Finds a named element in the name scope, returns immediately, doesn't traverse the name scope stack
+在名称作用域中查找具名元素，就地返回，不会沿名称作用域栈向上查找
 
 ```csharp
 public object Find(string name)

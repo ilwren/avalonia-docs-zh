@@ -97,7 +97,7 @@ The Y component.
 
 | 名称 | 说明 |
 | --- | --- |
-| [Abs](#uid-46c877565a) | Returns a vector whose elements are the absolute values of each of the specified vector's elements. |
+| [Abs](#uid-46c877565a) | 返回一个向量，其各元素为指定向量对应元素的绝对值。 |
 | [Add](#uid-5223085307) | 把第二个向量加到第一个向量上 |
 | [Clamp](#uid-a7f3ebdb43) | 把向量限制在最小值与最大值之间。 |
 | [Cross](#uid-fe0327d565) | Returns the cross product of two vectors. |
@@ -108,8 +108,8 @@ The Y component.
 | [Dot](#uid-4148913918) | Returns the dot product of two vectors. |
 | [Equals（2 个重载）](#uid-ce2cfe6ee3) | 判断两个向量是否相等（按位比较）。 |
 | [GetHashCode](#uid-c00d23029d) | 暂无摘要。 |
-| [Max](#uid-2be81d4b1f) | Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors |
-| [Min](#uid-e5a3e14aec) | Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors |
+| [Max](#uid-2be81d4b1f) | 返回一个向量，其各元素为两个指定向量中对应元素的较大者 |
+| [Min](#uid-e5a3e14aec) | 返回一个向量，其各元素为两个指定向量中对应元素的较小者 |
 | [Multiply (2 overloads)](#uid-3669f7bd63) | 用第一个向量乘以第二个向量。 |
 | [NearlyEquals](#uid-2fc575cc4e) | 判断两个向量是否近似相等（数值比较）。 |
 | [Negate (2 overloads)](#uid-318cdc1482) | Returns a negated version of this vector. |
@@ -126,7 +126,7 @@ The Y component.
 
 ### Abs 方法 {#abs-method}
 
-Returns a vector whose elements are the absolute values of each of the specified vector's elements.
+返回一个向量，其各元素为指定向量对应元素的绝对值。
 
 ```csharp
 public Avalonia.Vector Abs()
@@ -374,7 +374,7 @@ public Avalonia.Vector Divide(Avalonia.Vector vector, double scalar)
 
 `vector` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The vector
+该向量
 
 
 `scalar` double
@@ -497,7 +497,7 @@ int
 
 ### Max 方法 {#max-method}
 
-Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors
+返回一个向量，其各元素为两个指定向量中对应元素的较大者
 
 ```csharp
 public Avalonia.Vector Max(Avalonia.Vector left, Avalonia.Vector right)
@@ -524,7 +524,7 @@ public Avalonia.Vector Max(Avalonia.Vector left, Avalonia.Vector right)
 
 ### Min 方法 {#min-method}
 
-Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors
+返回一个向量，其各元素为两个指定向量中对应元素的较小者
 
 ```csharp
 public Avalonia.Vector Min(Avalonia.Vector left, Avalonia.Vector right)
@@ -598,7 +598,7 @@ public Avalonia.Vector Multiply(Avalonia.Vector vector, double scalar)
 
 `vector` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The vector
+该向量
 
 
 `scalar` double
@@ -737,7 +737,7 @@ public Avalonia.Vector Normalize(Avalonia.Vector vector)
 
 `vector` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The vector
+该向量
 
 
 ##### 返回值 {#returns-20}

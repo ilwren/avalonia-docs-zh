@@ -78,7 +78,7 @@ Derived classes only need to:
 | 名称 | 说明 |
 | --- | --- |
 | [CanExecute](#uid-333fea44db) | 获取该操作当前是否可执行。 |
-| [ClearValue](#uid-8eb88fed9c) | Clears the property value for the selection, reverting affected elements to their inherited or default value. |
+| [ClearValue](#uid-8eb88fed9c) | 清除选区的该属性值，让受影响的元素回到继承值或默认值。 |
 | [Execute](#uid-eabe4cfab7) | 同步执行该操作。 |
 | [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
 | [GetAvailableValues](#uid-b8641a532d) | 暂无摘要。 |
@@ -126,8 +126,8 @@ bool
 
 ### ClearValue 方法 {#clearvalue-method}
 
-Clears the property value for the selection, reverting affected elements
-to their inherited or default value.
+清除选区的该属性值，让受影响的元素
+回到继承值或默认值。
 
 ```csharp
 public void ClearValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -270,14 +270,14 @@ public bool HasConsistentValue(Avalonia.Controls.Documents.Primitives.ITextEdito
 
 bool
 
-True if all affected blocks have the same property value.
-False if blocks have different values (mixed state).
+若受影响的所有块属性值一致则为 true；
+若各块取值不同（混合状态）则为 false。
 
 
 #### 备注 {#remarks-4}
 
-UI controls should show a mixed/indeterminate state when this returns false.
-For example, a [ComboBox](xref:Avalonia.Controls.ComboBox) might show "Mixed" placeholder text.
+当它返回 false 时，界面控件应当呈现混合/不确定状态。
+例如 [ComboBox](xref:Avalonia.Controls.ComboBox) 可以显示 “Mixed” 这样的占位文本。
 
 对于折叠选区，它始终返回 true（只涉及单个块）。
 

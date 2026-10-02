@@ -66,8 +66,8 @@ public class CompositionDrawingSurface
 | [StopAnimationGroup](compositionobject.mdx#uid-81dbd02845) | 停止一个动画组。继承自 [CompositionObject](compositionobject.mdx)。 |
 | [UpdateAsync](#uid-d9381b09c8) | Updates the surface contents using an unspecified automatic means of synchronization provided by the underlying platform |
 | [UpdateWithKeyedMutexAsync](#uid-8c0468851c) | Updates the surface contents using an imported memory image using a keyed mutex as the means of synchronization |
-| [UpdateWithSemaphoresAsync](#uid-1f3f69b88a) | Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization |
-| [UpdateWithTimelineSemaphoresAsync](#uid-6b68142bde) | Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization |
+| [UpdateWithSemaphoresAsync](#uid-1f3f69b88a) | 借助一对信号量作同步手段，用导入的内存图像更新表面内容 |
+| [UpdateWithTimelineSemaphoresAsync](#uid-6b68142bde) | 借助一对信号量作同步手段，用导入的内存图像更新表面内容 |
 
 <section className="apiref-page__member-entry">
 
@@ -105,7 +105,7 @@ public System.Threading.Tasks.Task UpdateAsync(Avalonia.Rendering.Composition.IC
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>
@@ -143,7 +143,7 @@ The mutex key to release for after accessing the image
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>
@@ -154,7 +154,7 @@ A task that completes when update operation is completed and user code is free t
 
 ### UpdateWithSemaphoresAsync 方法 {#updatewithsemaphoresasync-method}
 
-Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization
+借助一对信号量作同步手段，用导入的内存图像更新表面内容
 
 ```csharp
 public System.Threading.Tasks.Task UpdateWithSemaphoresAsync(Avalonia.Rendering.Composition.ICompositionImportedGpuImage image, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore waitForSemaphore, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore signalSemaphore)
@@ -181,7 +181,7 @@ The semaphore to signal after accessing the image
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>
@@ -192,7 +192,7 @@ A task that completes when update operation is completed and user code is free t
 
 ### UpdateWithTimelineSemaphoresAsync 方法 {#updatewithtimelinesemaphoresasync-method}
 
-Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization
+借助一对信号量作同步手段，用导入的内存图像更新表面内容
 
 ```csharp
 public System.Threading.Tasks.Task UpdateWithTimelineSemaphoresAsync(Avalonia.Rendering.Composition.ICompositionImportedGpuImage image, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore waitForSemaphore, ulong waitForValue, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore signalSemaphore, ulong signalValue)
@@ -229,7 +229,7 @@ The value to signal after accessing the image
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>

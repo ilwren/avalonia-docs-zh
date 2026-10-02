@@ -70,7 +70,7 @@ to the next typed character.
 | 名称 | 说明 |
 | --- | --- |
 | [CanExecute](#uid-0722ba283b) | 获取该操作当前是否可执行。 |
-| [ClearValue](#uid-c88f8b7d4f) | Clears the property value for the selection, reverting affected elements to their inherited or default value. |
+| [ClearValue](#uid-c88f8b7d4f) | 清除选区的该属性值，让受影响的元素回到继承值或默认值。 |
 | [Execute](#uid-e871243fd1) | 同步执行该操作。 |
 | [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
 | [GetAvailableValues](#uid-d627a8a532) | 暂无摘要。 |
@@ -117,8 +117,8 @@ bool
 
 ### ClearValue 方法 {#clearvalue-method}
 
-Clears the property value for the selection, reverting affected elements
-to their inherited or default value.
+清除选区的该属性值，让受影响的元素
+回到继承值或默认值。
 
 ```csharp
 public void ClearValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)

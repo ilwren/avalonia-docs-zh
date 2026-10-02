@@ -89,7 +89,7 @@ public PathGeometryContext(Avalonia.Media.PathGeometry pathGeometry)
 | [EndFigure](#uid-3985090f0f) | 结束由 [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29) 开始的那段图形。 |
 | [LineTo](#uid-fa3e8f3e23) | 画一条直线到指定点。 |
 | [QuadraticBezierTo](#uid-28beab71d3) | 画一条二次贝塞尔曲线到指定点。 |
-| [SetFillRule](#uid-b6b80d3a91) | Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure. |
+| [SetFillRule](#uid-b6b80d3a91) | 设置路径的填充规则（默认为 EvenOdd）。该方法应在任何 BeginFigure 调用之前调用。 |
 
 <section className="apiref-page__member-entry">
 
@@ -129,7 +129,7 @@ Specifies whether the arc should follow the longer path around an ellipse rather
 
 `sweepDirection` [Avalonia.Media.SweepDirection](xref:Avalonia.Media.SweepDirection)
 
-A value that indicates whether the arc is drawn in the Clockwise or Counterclockwise direction.
+一个值，指示圆弧按顺时针还是逆时针方向绘制。
 
 
 `isStroked` bool
@@ -297,7 +297,7 @@ The control point used to specify the shape of the curve.
 
 ### SetFillRule 方法 {#setfillrule-method}
 
-Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure.
+设置路径的填充规则（默认为 EvenOdd）。该方法应在任何 BeginFigure 调用之前调用。
 
 ```csharp
 public void SetFillRule(Avalonia.Media.FillRule fillRule)

@@ -155,7 +155,7 @@ string
 | 名称 | 说明 |
 | --- | --- |
 | [Files](#uid-4fa9efd413) | Gets the list of files selected by the user, or empty if the user canceled the dialog. |
-| [SelectedFileType](#uid-a0e514753b) | Gets the file type selected by the user, or null if the platform does not support this feature. |
+| [SelectedFileType](#uid-a0e514753b) | 获取用户选中的文件类型；若平台不支持此功能则为 null。 |
 
 <section className="apiref-page__member-entry">
 
@@ -177,7 +177,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.IStora
 
 ### SelectedFileType 属性 {#selectedfiletype-property}
 
-Gets the file type selected by the user, or null if the platform does not support this feature.
+获取用户选中的文件类型；若平台不支持此功能则为 null。
 
 ```csharp
 public Avalonia.Platform.Storage.FilePickerFileType SelectedFileType { get; set; }

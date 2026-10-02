@@ -151,7 +151,7 @@ double
 | --- | --- |
 | [ActualThemeVariant](../../styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [AxisLineDashStyle](chartaxis.mdx#uid-2927587df1) | 获取或设置坐标轴线的虚线样式。继承自 [ChartAxis](chartaxis.mdx)。 |
-| [AxisLineStroke](chartaxis.mdx#uid-78e6ca1843) | Gets or sets the brush for the axis line. When set, overrides the default axis brush for this axis's line. Inherited from [ChartAxis](chartaxis.mdx). |
+| [AxisLineStroke](chartaxis.mdx#uid-78e6ca1843) | 获取或设置该坐标轴线所用的画刷。设置后会覆盖这条轴线的默认画刷。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [AxisLineStrokeThickness](chartaxis.mdx#uid-d9215669f0) | 获取或设置坐标轴线的粗细。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [Background](../primitives/templatedcontrol.mdx#uid-50dbd38ef5) | 获取或设置绘制控件背景所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BackgroundSizing](../primitives/templatedcontrol.mdx#uid-07ef33f604) | 获取或设置控件背景相对于其边框的绘制方式。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -182,7 +182,7 @@ double
 | [FontWeight](../primitives/templatedcontrol.mdx#uid-967cc71125) | 获取或设置绘制控件文本所用的字重。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Foreground](../primitives/templatedcontrol.mdx#uid-dff6480679) | 获取或设置绘制控件文本及其他前景元素所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [GestureRecognizers](../../input/inputelement.mdx#uid-ddee464eee) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [GridLineBrush](chartaxis.mdx#uid-1da37cf49e) | Gets or sets the brush for this axis's grid lines. When set, overrides the owning chart's [Avalonia.Controls.Charts.IGridLineBrushChart.GridLineBrush](xref:Avalonia.Controls.Charts.IGridLineBrushChart.GridLineBrush) for this axis. Inherited from [ChartAxis](chartaxis.mdx). |
+| [GridLineBrush](chartaxis.mdx#uid-1da37cf49e) | 获取或设置该坐标轴网格线所用的画刷。设置后，对这条轴而言会覆盖所属图表的 [Avalonia.Controls.Charts.IGridLineBrushChart.GridLineBrush](xref:Avalonia.Controls.Charts.IGridLineBrushChart.GridLineBrush)。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [GridLineCap](chartaxis.mdx#uid-8c165bd052) | 获取或设置主网格线的线端样式。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [GridLineDashStyle](chartaxis.mdx#uid-94f0087f26) | 获取或设置主网格线的虚线样式。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [GridLineJoin](chartaxis.mdx#uid-81a45978b7) | 获取或设置主网格线的连接样式。继承自 [ChartAxis](chartaxis.mdx)。 |
@@ -209,7 +209,7 @@ double
 | [LabelFontSize](chartaxis.mdx#uid-83d90d59c2) | 获取或设置坐标轴标签的字号。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [LabelForeground](chartaxis.mdx#uid-49db27ae71) | 获取或设置坐标轴标签的前景画刷。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [LabelFormat](chartaxis.mdx#uid-5df4afcf42) | 获取或设置坐标轴标签的格式字符串。继承自 [ChartAxis](chartaxis.mdx)。 |
-| [LabelRotation](chartaxis.mdx#uid-a7eed5fd55) | Gets or sets the rotation angle for labels (in degrees) when [Avalonia.Controls.Charts.ChartAxis.LabelFitMode](xref:Avalonia.Controls.Charts.ChartAxis.LabelFitMode) is [Avalonia.Controls.Charts.LabelFitMode.CustomRotation](xref:Avalonia.Controls.Charts.LabelFitMode.CustomRotation). Inherited from [ChartAxis](chartaxis.mdx). |
+| [LabelRotation](chartaxis.mdx#uid-a7eed5fd55) | 获取或设置当 [Avalonia.Controls.Charts.ChartAxis.LabelFitMode](xref:Avalonia.Controls.Charts.ChartAxis.LabelFitMode) 为 [Avalonia.Controls.Charts.LabelFitMode.CustomRotation](xref:Avalonia.Controls.Charts.LabelFitMode.CustomRotation) 时标签的旋转角度（以度计）。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [LetterSpacing](../primitives/templatedcontrol.mdx#uid-2d96a527e6) | 获取或设置控件文本内容的字间距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [MajorStep](#uid-38e6382b24) | Gets or sets the major tick interval. If null, auto-calculated. |
 | [Margin](../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -578,7 +578,7 @@ public Avalonia.StyledProperty<System.Collections.Generic.IList<Avalonia.Control
 | [ActualThemeVariantChanged](../../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [AttachedToVisualTree](../../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../../visual.mdx)。 |
-| [AxisChanged](chartaxis.mdx#uid-946b0fc019) | Raised when a property of the axis changes that requires the owning chart to redraw. This complements [Avalonia.Visual.InvalidateVisual](xref:Avalonia.Visual.InvalidateVisual) on the axis itself: the axis invalidation covers standalone/template rendering, while this event covers chart-owned axis rendering in Cartesian and financial charts. Inherited from [ChartAxis](chartaxis.mdx). |
+| [AxisChanged](chartaxis.mdx#uid-946b0fc019) | 当坐标轴上某个需要所属图表重绘的属性发生变化时抛出。它与坐标轴自身的 [Avalonia.Visual.InvalidateVisual](xref:Avalonia.Visual.InvalidateVisual) 互为补充：坐标轴的失效机制管的是独立/模板渲染，而该事件管的是笛卡尔图表和金融图表中由图表负责的坐标轴渲染。继承自 [ChartAxis](chartaxis.mdx)。 |
 | [ContextCanceled](../../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ContextRequested](../../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [DataContextChanged](../../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |

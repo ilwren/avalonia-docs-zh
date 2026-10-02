@@ -349,9 +349,9 @@ bool
 
 #### 备注 {#remarks}
 
-After a user hits a scroll limit on an element that has been nested within another scrollable element,
-you can specify whether that parent element should continue the scrolling operation begun in its child element.
-This is called scroll chaining.
+当用户在一个嵌套于另一个可滚动元素内的元素上滚到尽头时，
+你可以指定父元素是否接着把子元素中开始的滚动继续下去，
+这就是所谓的滚动链接。
 
 </section>
 
@@ -802,9 +802,9 @@ public void SetIsScrollChainingEnabled(Avalonia.Controls.Control control, bool v
 
 #### 备注 {#remarks-1}
 
-After a user hits a scroll limit on an element that has been nested within another scrollable element,
-you can specify whether that parent element should continue the scrolling operation begun in its child element.
-This is called scroll chaining.
+当用户在一个嵌套于另一个可滚动元素内的元素上滚到尽头时，
+你可以指定父元素是否接着把子元素中开始的滚动继续下去，
+这就是所谓的滚动链接。
 
 </section>
 
@@ -974,7 +974,7 @@ public void UnregisterAnchorCandidate(Avalonia.Controls.Control element)
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalContentAlignment](contentcontrol.mdx#uid-91c4dbcd1a) | 获取或设置内容在控件内的水平对齐方式。继承自 [ContentControl](contentcontrol.mdx)。 |
 | [HorizontalScrollBarVisibility](#uid-b14c97a62a) | Gets or sets the horizontal scrollbar visibility. |
-| [HorizontalSnapPointsAlignment](#uid-e7764eb99f) | Gets or sets how the existing snap points are horizontally aligned versus the initial viewport. |
+| [HorizontalSnapPointsAlignment](#uid-e7764eb99f) | 获取或设置现有吸附点相对于初始视口在横向上如何对齐。 |
 | [HorizontalSnapPointsType](#uid-d5806cc2d3) | 获取或设置滚动手势如何响应横轴方向上的吸附点。 |
 | [IsArrangeValid](../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsDeferredScrollingEnabled](#uid-158c470cf5) | Gets or sets whether dragging of [Avalonia.Controls.Primitives.Thumb](xref:Avalonia.Controls.Primitives.Thumb) elements should update the [Avalonia.Controls.ScrollViewer](xref:Avalonia.Controls.ScrollViewer) only when the user releases the mouse. |
@@ -1126,7 +1126,7 @@ public Avalonia.Controls.Primitives.ScrollBarVisibility HorizontalScrollBarVisib
 
 ### HorizontalSnapPointsAlignment 属性 {#horizontalsnappointsalignment-property}
 
-Gets or sets how the existing snap points are horizontally aligned versus the initial viewport.
+获取或设置现有吸附点相对于初始视口在横向上如何对齐。
 
 ```csharp
 public Avalonia.Controls.Primitives.SnapPointsAlignment HorizontalSnapPointsAlignment { get; set; }
@@ -1190,9 +1190,9 @@ public bool IsScrollChainingEnabled { get; set; }
 
 #### 备注 {#remarks-3}
 
-After a user hits a scroll limit on an element that has been nested within another scrollable element,
-you can specify whether that parent element should continue the scrolling operation begun in its child element.
-This is called scroll chaining.
+当用户在一个嵌套于另一个可滚动元素内的元素上滚到尽头时，
+你可以指定父元素是否接着把子元素中开始的滚动继续下去，
+这就是所谓的滚动链接。
 
 </section>
 

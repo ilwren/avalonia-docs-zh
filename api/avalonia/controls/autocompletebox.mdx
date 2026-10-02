@@ -234,7 +234,7 @@ PopulateComplete to indicate the drop-down is populated.
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [PlaceholderForeground](#uid-3733bb7934) | 获取或设置占位文本前景色所用的画刷。 |
-| [PlaceholderText](#uid-7610fee8be) | Gets or sets the placeholder or descriptive text that is displayed even if the text is not yet set. |
+| [PlaceholderText](#uid-7610fee8be) | 获取或设置占位文本或说明文字，即便尚未设置文本也会显示出来。 |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
 | [Resources](../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -254,7 +254,7 @@ PopulateComplete to indicate the drop-down is populated.
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ValueMemberBinding](#uid-ffa31bf8a5) | Gets or sets the [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase) that is used to get the values for display in the text portion of the [Avalonia.Controls.AutoCompleteBox](xref:Avalonia.Controls.AutoCompleteBox) control. |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [Watermark](#uid-f35c587d99) | Gets or sets the placeholder or descriptive text that is displayed even if the text is not yet set. |
+| [Watermark](#uid-f35c587d99) | 获取或设置占位文本或说明文字，即便尚未设置文本也会显示出来。 |
 | [WatermarkForeground](#uid-cd5456c1a6) | 获取或设置占位文本前景色所用的画刷。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
@@ -620,7 +620,7 @@ public Avalonia.Media.IBrush PlaceholderForeground { get; set; }
 
 ### PlaceholderText 属性 {#placeholdertext-property}
 
-Gets or sets the placeholder or descriptive text that is displayed even if the text is not yet set.
+获取或设置占位文本或说明文字，即便尚未设置文本也会显示出来。
 
 ```csharp
 public string PlaceholderText { get; set; }
@@ -779,7 +779,7 @@ The [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase) object used when
 
 ### Watermark 属性 {#watermark-property}
 
-Gets or sets the placeholder or descriptive text that is displayed even if the text is not yet set.
+获取或设置占位文本或说明文字，即便尚未设置文本也会显示出来。
 
 ```csharp
 public string Watermark { get; set; }

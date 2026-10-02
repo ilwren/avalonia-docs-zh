@@ -46,11 +46,11 @@ this struct is optimized for actual processing that doesn't really care
 about Width and Height but pretty much always only cares about
 Right and Bottom edge coordinates
 
-Not having to constantly convert between Width/Height and Right/Bottom for no actual reason
-saves us some perf
+不必在 Width/Height 与 Right/Bottom 之间来回换算（本来也没必要），
+这为我们省下了一些性能开销
 
-This structure is intended to be mostly internal, but it's exposed as a PrivateApi type so it can
-be passed to the drawing backend when needed
+这个结构本意基本是内部用的，但为了需要时能传给绘图后端，
+它被公开为 PrivateApi 类型
 
 </div>
 

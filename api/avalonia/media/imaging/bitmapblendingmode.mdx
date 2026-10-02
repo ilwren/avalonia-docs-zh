@@ -74,10 +74,10 @@ public enum BitmapBlendingMode
 | [Difference](#uid-e6c0d26f4b) | 效果类似 Difference 模式，但对比度更低。 |
 | [Exclusion](#uid-2603b9403e) | 源色与目标色相乘，结果取代目标 |
 | [HardLight](#uid-9a3680a691) | 视源色的取值，把颜色调暗或调亮。 |
-| [Hue](#uid-c4f43ead4f) | Creates a color with the hue of the source color and the saturation and luminosity of the backdrop color. |
+| [Hue](#uid-c4f43ead4f) | 用源色的色相，配上背景色的饱和度和亮度，合成一个颜色。 |
 | [Lighten](#uid-1868734de0) | Selects the lighter of the backdrop and source colors. |
 | [Luminosity](#uid-c8f3d919b7) | Creates a color with the luminosity of the source color and the hue and saturation of the backdrop color. |
-| [Multiply](#uid-48e9195200) | Creates a color with the hue of the source color and the saturation and luminosity of the backdrop color. |
+| [Multiply](#uid-48e9195200) | 用源色的色相，配上背景色的饱和度和亮度，合成一个颜色。 |
 | [Overlay](#uid-740309ccc9) | Multiplies or screens the colors, depending on the backdrop color value. |
 | [Plus](#uid-0f88edadb2) | 显示源图与目标图之和。 |
 | [Saturation](#uid-505c4c36ac) | Creates a color with the saturation of the source color and the hue and luminosity of the backdrop color. |
@@ -265,7 +265,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode HardLight
 
 ### Hue 字段 {#hue-field}
 
-Creates a color with the hue of the source color and the saturation and luminosity of the backdrop color.
+用源色的色相，配上背景色的饱和度和亮度，合成一个颜色。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Hue
@@ -307,7 +307,7 @@ public Avalonia.Media.Imaging.BitmapBlendingMode Luminosity
 
 ### Multiply 字段 {#multiply-field}
 
-Creates a color with the hue of the source color and the saturation and luminosity of the backdrop color.
+用源色的色相，配上背景色的饱和度和亮度，合成一个颜色。
 
 ```csharp
 public Avalonia.Media.Imaging.BitmapBlendingMode Multiply

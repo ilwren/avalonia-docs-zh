@@ -88,7 +88,7 @@ public Vector3D(double X, double Y, double Z)
 
 | 名称 | 说明 |
 | --- | --- |
-| [Abs](#uid-fc1af86743) | Returns a vector whose elements are the absolute values of each of the specified vector's elements. |
+| [Abs](#uid-fc1af86743) | 返回一个向量，其各元素为指定向量对应元素的绝对值。 |
 | [Add](#uid-ed5e0e177b) | 把第二个向量加到第一个向量上 |
 | [Clamp](#uid-0467b800d3) | 把向量限制在最小值与最大值之间。 |
 | [Deconstruct](#uid-803792bb97) | 暂无摘要。 |
@@ -98,8 +98,8 @@ public Vector3D(double X, double Y, double Z)
 | [Dot](#uid-7cbc06f210) | Calculates the dot product of two vectors. |
 | [Equals（2 个重载）](#uid-be9039705b) | 暂无摘要。 |
 | [GetHashCode](#uid-05d10e9f04) | 暂无摘要。 |
-| [Max](#uid-9f08821f68) | Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors |
-| [Min](#uid-3b5021a75f) | Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors |
+| [Max](#uid-9f08821f68) | 返回一个向量，其各元素为两个指定向量中对应元素的较大者 |
+| [Min](#uid-3b5021a75f) | 返回一个向量，其各元素为两个指定向量中对应元素的较小者 |
 | [Multiply (2 overloads)](#uid-ca8b2dd3f3) | 用第一个向量乘以第二个向量。 |
 | [Normalize](#uid-561aeb3cee) | 返回该向量的归一化形式。 |
 | [Parse](#uid-7c201400f8) | 解析 [Avalonia.Vector](xref:Avalonia.Vector) 字符串。 |
@@ -112,7 +112,7 @@ public Vector3D(double X, double Y, double Z)
 
 ### Abs 方法 {#abs-method}
 
-Returns a vector whose elements are the absolute values of each of the specified vector's elements.
+返回一个向量，其各元素为指定向量对应元素的绝对值。
 
 ```csharp
 public Avalonia.Vector3D Abs()
@@ -415,7 +415,7 @@ int
 
 ### Max 方法 {#max-method}
 
-Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors
+返回一个向量，其各元素为两个指定向量中对应元素的较大者
 
 ```csharp
 public Avalonia.Vector3D Max(Avalonia.Vector3D left, Avalonia.Vector3D right)
@@ -442,7 +442,7 @@ public Avalonia.Vector3D Max(Avalonia.Vector3D left, Avalonia.Vector3D right)
 
 ### Min 方法 {#min-method}
 
-Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors
+返回一个向量，其各元素为两个指定向量中对应元素的较小者
 
 ```csharp
 public Avalonia.Vector3D Min(Avalonia.Vector3D left, Avalonia.Vector3D right)

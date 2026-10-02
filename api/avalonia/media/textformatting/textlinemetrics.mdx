@@ -157,12 +157,12 @@ string
 | 名称 | 说明 |
 | --- | --- |
 | [Extent](#uid-11692b1546) | 获取一行中最上方与最下方黑色像素之间的距离。 |
-| [HasOverflowed](#uid-8969f79e49) | Gets a value that indicates whether content of the line overflows the specified paragraph width. |
+| [HasOverflowed](#uid-8969f79e49) | 获取一个值，指示该行的内容是否超出了指定的段落宽度。 |
 | [Height](#uid-ce4c8d39b5) | 获取一行文本的高度。 |
 | [NewlineLength](#uid-de59e9b52c) | 获取一行末尾换行符的个数。 |
 | [OverhangAfter](#uid-4e98a18b86) | 获取黑色像素超出一行底部对齐边缘的距离。 |
-| [OverhangLeading](#uid-d904ea0e0f) | Gets the distance that black pixels extend prior to the left leading alignment edge of the line. |
-| [OverhangTrailing](#uid-a2805dd4ae) | Gets the distance that black pixels extend following the right trailing alignment edge of the line. |
+| [OverhangLeading](#uid-d904ea0e0f) | 获取黑色像素超出一行左侧前端对齐边缘的距离。 |
+| [OverhangTrailing](#uid-a2805dd4ae) | 获取黑色像素超出一行右侧末端对齐边缘的距离。 |
 | [Start](#uid-20723b6419) | 获取从段落起点到某一行起点的距离。 |
 | [TextBaseline](#uid-c04cfc44b9) | 获取从顶部到该行文本基线的距离。 |
 | [TrailingWhitespaceLength](#uid-1a19da5d26) | 获取一行中最后一个非空白字符之后的空白码点个数。 |
@@ -189,7 +189,7 @@ public double Extent { get; set; }
 
 ### HasOverflowed 属性 {#hasoverflowed-property}
 
-Gets a value that indicates whether content of the line overflows the specified paragraph width.
+获取一个值，指示该行的内容是否超出了指定的段落宽度。
 
 ```csharp
 public bool HasOverflowed { get; set; }
@@ -245,7 +245,7 @@ public double OverhangAfter { get; set; }
 
 ### OverhangLeading 属性 {#overhangleading-property}
 
-Gets the distance that black pixels extend prior to the left leading alignment edge of the line.
+获取黑色像素超出一行左侧前端对齐边缘的距离。
 
 ```csharp
 public double OverhangLeading { get; set; }
@@ -259,7 +259,7 @@ public double OverhangLeading { get; set; }
 
 ### OverhangTrailing 属性 {#overhangtrailing-property}
 
-Gets the distance that black pixels extend following the right trailing alignment edge of the line.
+获取黑色像素超出一行右侧末端对齐边缘的距离。
 
 ```csharp
 public double OverhangTrailing { get; set; }

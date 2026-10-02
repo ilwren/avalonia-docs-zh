@@ -156,7 +156,7 @@ string
 | 名称 | 说明 |
 | --- | --- |
 | [File](#uid-01a24bff25) | Gets the file selected by the user, or null if the user canceled the dialog. |
-| [SelectedFileType](#uid-711f47a123) | Gets the file type selected by the user, or null if the platform does not support this feature. |
+| [SelectedFileType](#uid-711f47a123) | 获取用户选中的文件类型；若平台不支持此功能则为 null。 |
 
 <section className="apiref-page__member-entry">
 
@@ -178,7 +178,7 @@ public Avalonia.Platform.Storage.IStorageFile File { get; set; }
 
 ### SelectedFileType 属性 {#selectedfiletype-property}
 
-Gets the file type selected by the user, or null if the platform does not support this feature.
+获取用户选中的文件类型；若平台不支持此功能则为 null。
 
 ```csharp
 public Avalonia.Platform.Storage.FilePickerFileType SelectedFileType { get; set; }

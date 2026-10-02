@@ -85,7 +85,7 @@ public class ContainerNode
 | [GetSelectionRects](#uid-315ca4ca8c) | Returns selection rectangles for all child nodes that overlap `selection`. |
 | [GetSelectionText](#uid-2c87a31af0) | Returns selected text segments for all child nodes that overlap `selection`. |
 | [GetValue（3 个重载）](../../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
-| [HitTestPoint](documentnode.mdx#uid-56eac342b5) | Returns the text pointer at the given point, or if outside bounds. Inherited from [DocumentNode](documentnode.mdx). |
+| [HitTestPoint](documentnode.mdx#uid-56eac342b5) | 返回给定点处的文本指针；若超出范围则返回 null。继承自 [DocumentNode](documentnode.mdx)。 |
 | [InvalidateArrange](../../../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../../../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../../../../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../../../layout/layoutable.mdx)。 |
 | [InvalidateVisual](../../../../visual.mdx#uid-1cd22a7496) | 使视觉元素失效并排入重绘队列。继承自 [Visual](../../../../visual.mdx)。 |
@@ -246,7 +246,7 @@ System.Collections.Generic.IEnumerable&lt;string&gt;
 | [DesiredSize](../../../../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../../../../layout/layoutable.mdx)。 |
 | [Dispatcher](../../../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
 | [Effect](../../../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../../../visual.mdx)。 |
-| [Element](documentnode.mdx#uid-0c00f57c17) | Gets the element this node renders, or for the nested-document container ([Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode)), whose content lives on [Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode.Document](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode.Document) instead. Inherited from [DocumentNode](documentnode.mdx). |
+| [Element](documentnode.mdx#uid-0c00f57c17) | 获取该节点所渲染的元素；若为嵌套文档容器（[Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode)），其内容则挂在 [Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode.Document](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.NestedDocumentNode.Document) 上。继承自 [DocumentNode](documentnode.mdx)。 |
 | [FlowDirection](../../../../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../../../../visual.mdx)。 |
 | [Focusable](../../../../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../../../../input/inputelement.mdx)。 |
 | [GestureRecognizers](../../../../input/inputelement.mdx#uid-ddee464eee) | 继承自 [InputElement](../../../../input/inputelement.mdx)。 |

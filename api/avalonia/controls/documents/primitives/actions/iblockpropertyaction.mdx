@@ -88,14 +88,14 @@ public bool HasConsistentValue(Avalonia.Controls.Documents.Primitives.ITextEdito
 
 bool
 
-True if all affected blocks have the same property value.
-False if blocks have different values (mixed state).
+若受影响的所有块属性值一致则为 true；
+若各块取值不同（混合状态）则为 false。
 
 
 #### 备注 {#remarks-1}
 
-UI controls should show a mixed/indeterminate state when this returns false.
-For example, a [ComboBox](xref:Avalonia.Controls.ComboBox) might show "Mixed" placeholder text.
+当它返回 false 时，界面控件应当呈现混合/不确定状态。
+例如 [ComboBox](xref:Avalonia.Controls.ComboBox) 可以显示 “Mixed” 这样的占位文本。
 
 对于折叠选区，它始终返回 true（只涉及单个块）。
 

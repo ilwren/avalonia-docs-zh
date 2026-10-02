@@ -131,8 +131,8 @@ System.Threading.Tasks.Task
 
 #### 备注 {#remarks-1}
 
-If `dataTransfer` is null, nothing will get placed on the clipboard and this method
-will be equivalent to [Avalonia.Input.Platform.IClipboard.ClearAsync](xref:Avalonia.Input.Platform.IClipboard.ClearAsync).
+若 `dataTransfer` 为 null，则不会往剪贴板里放任何内容，
+该方法等同于 [Avalonia.Input.Platform.IClipboard.ClearAsync](xref:Avalonia.Input.Platform.IClipboard.ClearAsync)。
 
 The [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) must NOT be disposed by the caller after this call.
 The clipboard will dispose of it automatically when it becomes unused.

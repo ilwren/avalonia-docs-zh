@@ -391,7 +391,7 @@ public void Undo()
 | [PasswordChar](#uid-6027a307f8) | Gets or sets the [char](xref:System.Char) that should be used for password masking |
 | [PasteGesture](#uid-f5612c2bee) | Gets a platform-specific [Avalonia.Input.KeyGesture](xref:Avalonia.Input.KeyGesture) for the Paste action |
 | [PlaceholderForeground](#uid-5071296137) | 获取或设置占位文本前景色所用的画刷。 |
-| [PlaceholderText](#uid-1f5fcadea9) | Gets or sets the placeholder or descriptive text that is displayed even if the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) property is not yet set. |
+| [PlaceholderText](#uid-1f5fcadea9) | 获取或设置占位文本或说明文字，即便 [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) 属性尚未设置也会显示出来。 |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
 | [Resources](../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -413,12 +413,12 @@ public void Undo()
 | [Theme](../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [UndoLimit](#uid-9878e5a1a0) | Gets or sets the maximum number of items that can reside in the Undo stack |
-| [UseFloatingPlaceholder](#uid-99e7d25d8b) | Gets or sets a value indicating whether the [Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) will still be shown above the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) even after a text value is set. |
-| [UseFloatingWatermark](#uid-08905d7ad0) | Gets or sets a value indicating whether the [Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) will still be shown above the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) even after a text value is set. |
+| [UseFloatingPlaceholder](#uid-99e7d25d8b) | 获取或设置一个值，指示即便已设置了文本值，[Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) 是否仍显示在 [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) 上方。 |
+| [UseFloatingWatermark](#uid-08905d7ad0) | 获取或设置一个值，指示即便已设置了文本值，[Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) 是否仍显示在 [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) 上方。 |
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalContentAlignment](#uid-fd925c0f55) | 获取或设置内容在控件内的垂直对齐方式。 |
-| [Watermark](#uid-f510bda508) | Gets or sets the placeholder or descriptive text that is displayed even if the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) property is not yet set. |
+| [Watermark](#uid-f510bda508) | 获取或设置占位文本或说明文字，即便 [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) 属性尚未设置也会显示出来。 |
 | [WatermarkForeground](#uid-a7ed10d0d3) | 获取或设置占位文本前景色所用的画刷。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
@@ -808,8 +808,8 @@ public Avalonia.Media.IBrush PlaceholderForeground { get; set; }
 
 ### PlaceholderText 属性 {#placeholdertext-property}
 
-Gets or sets the placeholder or descriptive text that is displayed even if the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text)
-property is not yet set.
+获取或设置占位文本或说明文字，即便 [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text)
+属性尚未设置也会显示出来。
 
 ```csharp
 public string PlaceholderText { get; set; }
@@ -968,8 +968,8 @@ public int UndoLimit { get; set; }
 
 ### UseFloatingPlaceholder 属性 {#usefloatingplaceholder-property}
 
-Gets or sets a value indicating whether the [Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) will still be shown above the
-[Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) even after a text value is set.
+获取或设置一个值，指示即便已设置了文本值，[Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) 是否仍显示在
+[Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) 上方。
 
 ```csharp
 public bool UseFloatingPlaceholder { get; set; }
@@ -983,8 +983,8 @@ public bool UseFloatingPlaceholder { get; set; }
 
 ### UseFloatingWatermark 属性 {#usefloatingwatermark-property}
 
-Gets or sets a value indicating whether the [Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) will still be shown above the
-[Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) even after a text value is set.
+获取或设置一个值，指示即便已设置了文本值，[Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) 是否仍显示在
+[Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) 上方。
 
 ```csharp
 public bool UseFloatingWatermark { get; set; }
@@ -1012,8 +1012,8 @@ public Avalonia.Layout.VerticalAlignment VerticalContentAlignment { get; set; }
 
 ### Watermark 属性 {#watermark-property}
 
-Gets or sets the placeholder or descriptive text that is displayed even if the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text)
-property is not yet set.
+获取或设置占位文本或说明文字，即便 [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text)
+属性尚未设置也会显示出来。
 
 ```csharp
 public string Watermark { get; set; }

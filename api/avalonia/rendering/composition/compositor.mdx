@@ -82,8 +82,8 @@ public class Compositor
 | [CreateVector3KeyFrameAnimation](#uid-d4bdffe43c) | 暂无摘要。 |
 | [CreateVector4KeyFrameAnimation](#uid-65eb4c836b) | 暂无摘要。 |
 | [CreateVectorKeyFrameAnimation](#uid-9d7562aa67) | 暂无摘要。 |
-| [RequestCommitAsync](#uid-1b4bd4c0f6) | Requests pending changes in the composition objects to be serialized and sent to the render thread |
-| [RequestCompositionBatchCommitAsync](#uid-597adef303) | Requests pending changes in the composition objects to be serialized and sent to the render thread |
+| [RequestCommitAsync](#uid-1b4bd4c0f6) | 请求把合成对象中尚未提交的改动序列化并发送到渲染线程 |
+| [RequestCompositionBatchCommitAsync](#uid-597adef303) | 请求把合成对象中尚未提交的改动序列化并发送到渲染线程 |
 | [RequestCompositionUpdate](#uid-9f81b9e7ae) | Enqueues a callback to be called before the next scheduled commit. If there is no scheduled commit it automatically schedules one This is useful for updating your composition tree objects after binding and layout passes have completed |
 | [TryGetCompositionGpuInterop](#uid-2ef6811b7e) | Attempts to query for GPU interop feature from the platform render interface |
 | [TryGetDefaultCompositor](#uid-f25f58f1a3) | Attempts to get the Compositor instance that will be used by default for new TopLevels created by the current platform backend. |
@@ -457,7 +457,7 @@ public Avalonia.Rendering.Composition.VectorKeyFrameAnimation CreateVectorKeyFra
 
 ### RequestCommitAsync 方法 {#requestcommitasync-method}
 
-Requests pending changes in the composition objects to be serialized and sent to the render thread
+请求把合成对象中尚未提交的改动序列化并发送到渲染线程
 
 ```csharp
 public System.Threading.Tasks.Task RequestCommitAsync()
@@ -478,7 +478,7 @@ A task that completes when sent changes are applied on the render thread
 
 ### RequestCompositionBatchCommitAsync 方法 {#requestcompositionbatchcommitasync-method}
 
-Requests pending changes in the composition objects to be serialized and sent to the render thread
+请求把合成对象中尚未提交的改动序列化并发送到渲染线程
 
 ```csharp
 public Avalonia.Rendering.Composition.Transport.CompositionBatch RequestCompositionBatchCommitAsync()
