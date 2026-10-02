@@ -33,3 +33,4 @@ scripts/i18n/tm/*.todo.json
 # Python
 __pycache__/
 *.py[cod]
+build-pages-smoke/
