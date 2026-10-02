@@ -1,8 +1,14 @@
 name: 部署到 GitHub Pages
 
 # 把中文文档站构建后发布到 GitHub Pages，用于在线预览。
-# - 手动触发（workflow_dispatch）可选择是否跳过体量庞大的 API 参考，便于快速出预览。
-# - 推送到当前工作分支时自动部署。
+#
+# 首次使用前需要在仓库里打开一次开关（只需一次）：
+#   Settings → Pages → Build and deployment → Source 选择 “GitHub Actions”
+# 若要从非默认分支部署，还需放行该分支：
+#   Settings → Environments → github-pages → Deployment branches → 添加当前分支（或选 All branches）
+#
+# 即使 Pages 尚未启用，“构建站点产物” 这个 job 也会照常跑完并产出可下载的站点压缩包，
+# 可据此验证「部署不会报错」。
 on:
   workflow_dispatch:
     inputs:
@@ -12,6 +18,7 @@ on:
         default: false
   push:
     branches:
+      - main
       - arena/01a0f56b-avalonia-docs-zh
 
 permissions:
@@ -28,6 +35,8 @@ jobs:
   build:
     name: 构建站点产物
     runs-on: ubuntu-latest
+    outputs:
+      pages_ready: ${{ steps.pages.outcome == 'success' }}
     steps:
       - name: 检出仓库
         uses: actions/checkout@v5
@@ -40,22 +49,32 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: 配置 GitHub Pages（必要时自动启用）
+      # Pages 未启用时这一步会失败，但不阻断构建：下面会退回到按仓库名推导的默认地址。
+      - name: 读取 GitHub Pages 配置
         id: pages
+        continue-on-error: true
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: 计算站点地址与基路径
         run: |
+          OWNER='${{ github.repository_owner }}'
+          REPO='${{ github.event.repository.name }}'
           ORIGIN='${{ steps.pages.outputs.origin }}'
           BASE='${{ steps.pages.outputs.base_path }}'
+
+          if [ -z "$ORIGIN" ]; then
+            ORIGIN="https://$(echo "$OWNER" | tr '[:upper:]' '[:lower:]').github.io"
+          fi
+          if [ -z "$BASE" ]; then
+            BASE="/$REPO"
+          fi
           # 用户站点的 base_path 可能为空或 '/'，项目站点形如 '/avalonia-docs-zh'
-          if [ -z "$BASE" ] || [ "$BASE" = "/" ]; then
+          if [ "$BASE" = "/" ]; then
             BASE='/'
           else
             BASE="${BASE%/}/"
           fi
+
           echo "DOCS_SITE_URL=$ORIGIN" >> "$GITHUB_ENV"
           echo "DOCS_BASE_URL=$BASE" >> "$GITHUB_ENV"
           echo "站点地址：$ORIGIN"
@@ -80,13 +99,24 @@ jobs:
             test -f build/api/avalonia/controls/button/index.html
             grep -q "命名空间" build/api/avalonia/controls/button/index.html
           fi
-          echo "产物体积：$(du -sh build | cut -f1)"
-          echo "页面数量：$(find build -name 'index.html' | wc -l)"
+          # 资源引用必须带上基路径，否则子路径部署会 404
+          if [ "$DOCS_BASE_URL" != "/" ]; then
+            grep -q "href=\"${DOCS_BASE_URL}assets/css" build/index.html
+          fi
+          SIZE=$(du -sh build | cut -f1)
+          PAGES=$(find build -name 'index.html' | wc -l)
+          echo "产物体积：$SIZE，页面数量：$PAGES"
           {
-            echo '## 部署产物'
-            echo "- 站点地址：${DOCS_SITE_URL}${DOCS_BASE_URL#/}"
-            echo "- 产物体积：$(du -sh build | cut -f1)"
-            echo "- 页面数量：$(find build -name 'index.html' | wc -l)"
+            echo '## 站点产物'
+            echo "- 预期访问地址：${DOCS_SITE_URL}${DOCS_BASE_URL}"
+            echo "- 产物体积：$SIZE"
+            echo "- 页面数量：$PAGES"
+            if [ "${{ steps.pages.outcome }}" != 'success' ]; then
+              echo ''
+              echo '> ⚠️ 仓库尚未启用 GitHub Pages，本次只构建、不发布。'
+              echo '> 请到 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，'
+              echo '> 再到 **Settings → Environments → github-pages → Deployment branches** 放行当前分支，然后重跑本工作流。'
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: 上传 Pages 产物
@@ -97,6 +127,7 @@ jobs:
   deploy:
     name: 发布到 Pages
     needs: build
+    if: needs.build.outputs.pages_ready == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
