@@ -197,10 +197,10 @@ string
 | 名称 | 说明 |
 | --- | --- |
 | [BidiLevel](#uid-a39f9db201) | Get the bidi level of the text. |
-| [Culture](#uid-c82a97ba76) | Get the culture. |
-| [FontFeatures](#uid-6819d68282) | Get features. |
+| [Culture](#uid-c82a97ba76) | 获取区域性。 |
+| [FontFeatures](#uid-6819d68282) | 获取各项特性。 |
 | [FontRenderingEmSize](#uid-b9eb5ff677) | Get the font rendering em size. |
-| [GlyphTypeface](#uid-43d67386ba) | Get the typeface. |
+| [GlyphTypeface](#uid-43d67386ba) | 获取字型。 |
 | [IncrementalTabWidth](#uid-ca721dff2e) | Get the incremental tab width. |
 | [LetterSpacing](#uid-6cf9b2adfe) | Get the letter spacing. |
 
@@ -224,7 +224,7 @@ public sbyte BidiLevel { get; set; }
 
 ### Culture 属性 {#culture-property}
 
-Get the culture.
+获取区域性。
 
 ```csharp
 public System.Globalization.CultureInfo Culture { get; set; }
@@ -238,7 +238,7 @@ public System.Globalization.CultureInfo Culture { get; set; }
 
 ### FontFeatures 属性 {#fontfeatures-property}
 
-Get features.
+获取各项特性。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.FontFeature> FontFeatures { get; set; }
@@ -266,7 +266,7 @@ public double FontRenderingEmSize { get; set; }
 
 ### GlyphTypeface 属性 {#glyphtypeface-property}
 
-Get the typeface.
+获取字型。
 
 ```csharp
 public Avalonia.Media.GlyphTypeface GlyphTypeface { get; set; }

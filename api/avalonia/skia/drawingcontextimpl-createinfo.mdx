@@ -62,14 +62,14 @@ public struct DrawingContextImpl.CreateInfo
 
 | 名称 | 说明 |
 | --- | --- |
-| [Canvas](#uid-c3eb0e23e1) | Canvas to draw to. |
+| [Canvas](#uid-c3eb0e23e1) | 要绘制到的画布。 |
 | [CurrentSession](#uid-19463fc5c1) | 暂无摘要。 |
 | [DisableSubpixelTextRendering](#uid-573556b642) | Render text without subpixel antialiasing. |
 | [Dpi](#uid-afb7579f67) | Dpi for intermediate surfaces |
 | [Gpu](#uid-c43d01f5a5) | Skia GPU provider context (optional) |
 | [GrContext](#uid-da93c7706f) | GPU 加速的上下文（可选） |
 | [ScaleDrawingToDpi](#uid-58e7e61bb4) | Makes DPI to be applied as a hidden matrix transform |
-| [Surface](#uid-f162a5fdb6) | Surface to draw to. |
+| [Surface](#uid-f162a5fdb6) | 要绘制到的表面。 |
 
 <section className="apiref-page__member-entry">
 
@@ -77,7 +77,7 @@ public struct DrawingContextImpl.CreateInfo
 
 ### Canvas 字段 {#canvas-field}
 
-Canvas to draw to.
+要绘制到的画布。
 
 ```csharp
 public SkiaSharp.SKCanvas Canvas
@@ -173,7 +173,7 @@ public bool ScaleDrawingToDpi
 
 ### Surface 字段 {#surface-field}
 
-Surface to draw to.
+要绘制到的表面。
 
 ```csharp
 public SkiaSharp.SKSurface Surface

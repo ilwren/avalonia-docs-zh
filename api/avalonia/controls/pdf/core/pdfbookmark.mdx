@@ -87,11 +87,11 @@ public PdfBookmark(string title, Nullable<int> pageIndex, System.Collections.Gen
 
 | 名称 | 说明 |
 | --- | --- |
-| [Children](#uid-f7b5d55bff) | Child bookmarks. |
+| [Children](#uid-f7b5d55bff) | 子书签。 |
 | [Destination](#uid-0ce88d4306) | The bookmark's full destination when it has one: the page plus the position and zoom of an /XYZ, /FitH, /FitV or /FitR view. Null for bookmarks without a page target. |
 | [IsExpanded](#uid-875d60edc3) | Whether this bookmark is expanded by default. |
 | [PageIndex](#uid-b15ab82f6b) | Target page index (0-based), or null if external/unsupported. |
-| [Title](#uid-cb0a62e3d9) | Bookmark title. |
+| [Title](#uid-cb0a62e3d9) | 书签标题。 |
 
 <section className="apiref-page__member-entry">
 
@@ -99,7 +99,7 @@ public PdfBookmark(string title, Nullable<int> pageIndex, System.Collections.Gen
 
 ### Children 属性 {#children-property}
 
-Child bookmarks.
+子书签。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Pdf.Core.PdfBookmark> Children { get; set; }
@@ -156,7 +156,7 @@ public Nullable<int> PageIndex { get; set; }
 
 ### Title 属性 {#title-property}
 
-Bookmark title.
+书签标题。
 
 ```csharp
 public string Title { get; set; }

@@ -65,7 +65,7 @@ public enum NodeKindFlags
 | [Inline](#uid-5ba1025cc9) | Inline element (Run, Bold, Italic, Span, Hyperlink, LineBreak, etc.). |
 | [InlineContainer](#uid-53fa31813f) | Inline container that holds [Avalonia.Controls.Documents.RichInline](xref:Avalonia.Controls.Documents.RichInline) children directly (Paragraph, Span, Bold, Italic, Underline, Superscript, Subscript, Hyperlink). |
 | [Leaf](#uid-fd817c4e7c) | Leaf node that never has children (Run, LineBreak). |
-| [None](#uid-669d860e07) | No flags set. |
+| [None](#uid-669d860e07) | 未设置任何标志。 |
 | [RemoveWhenChildless](#uid-b6c9a79e00) | Container that should be automatically removed when all its children have been deleted (List, [ListItem](xref:Avalonia.Controls.Documents.ListItem), Table, [TableRow](xref:Avalonia.Controls.Documents.TableRow), [TableRowGroup](xref:Avalonia.Controls.Documents.TableRowGroup), Section). |
 | [Root](#uid-afad4177c8) | The kind of a document root: the top of a tree, which no block navigation crosses. [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document) and [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand) carry it; a further document variant adds another root kind with it. |
 | [TableStructure](#uid-2aa14211ac) | Table-structural node whose children form isolated editing regions (Table, [TableRowGroup](xref:Avalonia.Controls.Documents.TableRowGroup), [TableRow](xref:Avalonia.Controls.Documents.TableRow)). |
@@ -148,7 +148,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags Leaf
 
 ### None 字段 {#none-field}
 
-No flags set.
+未设置任何标志。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.NodeKindFlags None

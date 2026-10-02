@@ -67,10 +67,10 @@ public class DrawingContext
 | [DrawImage (2 overloads)](#uid-492fc6db89) | 绘制一幅图像。 |
 | [DrawLine](#uid-d5a6cf0d81) | 画一条直线。 |
 | [DrawRectangle (3 overloads)](#uid-d05ce290ae) | 用指定的 Brush 和 Pen 画一个矩形。 |
-| [DrawText](#uid-9bbf20a539) | Draws text. |
+| [DrawText](#uid-9bbf20a539) | 绘制文本。 |
 | [FillRectangle](#uid-3a2836cb4a) | 画一个填充矩形。 |
 | [PushClip (2 overloads)](#uid-581bbdf395) | 压入一个裁剪矩形。 |
-| [PushEffect](#uid-5cbe64db83) | Pushes an effect. |
+| [PushEffect](#uid-5cbe64db83) | 压入一个效果。 |
 | [PushGeometryClip](#uid-54c8cd9487) | Pushes a clip geometry. |
 | [PushOpacity](#uid-b8823fb27f) | 压入一个不透明度值。 |
 | [PushOpacityMask](#uid-f50efb14c4) | 压入一个不透明度蒙版。 |
@@ -217,7 +217,7 @@ public void DrawGeometry(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, A
 
 `brush` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The fill brush.
+填充画刷。
 
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
@@ -227,7 +227,7 @@ The fill brush.
 
 `geometry` [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
 
-The geometry.
+该几何图形。
 
 
 </section>
@@ -248,7 +248,7 @@ public void DrawGeometry(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, A
 
 `brush` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The fill brush.
+填充画刷。
 
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
@@ -258,7 +258,7 @@ The fill brush.
 
 `geometry` [Avalonia.Platform.IGeometryImpl](xref:Avalonia.Platform.IGeometryImpl)
 
-The geometry.
+该几何图形。
 
 
 </section>
@@ -284,7 +284,7 @@ The foreground brush.
 
 `glyphRun` [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun)
 
-The glyph run.
+该字形运行。
 
 
 </section>
@@ -309,7 +309,7 @@ public void DrawImage(Avalonia.Media.IImage source, Avalonia.Rect rect)
 
 `source` [Avalonia.Media.IImage](xref:Avalonia.Media.IImage)
 
-The image.
+该图像。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -335,7 +335,7 @@ public void DrawImage(Avalonia.Media.IImage source, Avalonia.Rect sourceRect, Av
 
 `source` [Avalonia.Media.IImage](xref:Avalonia.Media.IImage)
 
-The image.
+该图像。
 
 
 `sourceRect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -516,7 +516,7 @@ public void DrawRectangle(Avalonia.Media.IPen pen, Avalonia.Rect rect, float cor
 
 ### DrawText 方法 {#drawtext-method}
 
-Draws text.
+绘制文本。
 
 ```csharp
 public void DrawText(Avalonia.Media.FormattedText text, Avalonia.Point origin)
@@ -569,7 +569,7 @@ public void FillRectangle(Avalonia.Media.IBrush brush, Avalonia.Rect rect, float
 
 <span id="uid-581bbdf395"></span>
 
-### PushClip overloads
+### PushClip 的重载 {#pushclip-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -633,7 +633,7 @@ public Avalonia.Media.DrawingContext.PushedState PushClip(Avalonia.RoundedRect c
 
 ### PushEffect 方法 {#pusheffect-method}
 
-Pushes an effect.
+压入一个效果。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushEffect(Avalonia.Media.IEffect effect, Avalonia.Rect bounds)
@@ -643,7 +643,7 @@ public Avalonia.Media.DrawingContext.PushedState PushEffect(Avalonia.Media.IEffe
 
 `effect` [Avalonia.Media.IEffect](xref:Avalonia.Media.IEffect)
 
-The effect.
+该效果。
 
 
 `bounds` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -706,7 +706,7 @@ public Avalonia.Media.DrawingContext.PushedState PushOpacity(double opacity)
 
 `opacity` double
 
-The opacity.
+不透明度。
 
 
 #### 返回值 {#returns-4}
@@ -734,7 +734,7 @@ public Avalonia.Media.DrawingContext.PushedState PushOpacityMask(Avalonia.Media.
 
 `mask` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The opacity mask.
+不透明度蒙版。
 
 
 `bounds` [Avalonia.Rect](xref:Avalonia.Rect)

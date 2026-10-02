@@ -60,7 +60,7 @@ public class ImmediateDrawingContext
 | 名称 | 说明 |
 | --- | --- |
 | [Dispose](#uid-2d411e2b08) | Disposes of any resources held by the [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext). |
-| [DrawBitmap (2 overloads)](#uid-78ded9e840) | Draws an bitmap. |
+| [DrawBitmap (2 overloads)](#uid-78ded9e840) | 绘制一幅位图。 |
 | [DrawEllipse](#uid-6a8d2f378f) | 用指定的 Brush 和 Pen 画一个椭圆。 |
 | [DrawGlyphRun](#uid-8e52f9db3c) | 绘制一段字形运行。 |
 | [DrawLine](#uid-8fe6821f2c) | 画一条直线。 |
@@ -99,7 +99,7 @@ public void Dispose()
 
 #### DrawBitmap 方法 {#drawbitmap-method}
 
-Draws an bitmap.
+绘制一幅位图。
 
 ```csharp
 public void DrawBitmap(Avalonia.Media.Imaging.Bitmap source, Avalonia.Rect rect)
@@ -109,7 +109,7 @@ public void DrawBitmap(Avalonia.Media.Imaging.Bitmap source, Avalonia.Rect rect)
 
 `source` [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)
 
-The bitmap.
+该位图。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -135,7 +135,7 @@ public void DrawBitmap(Avalonia.Media.Imaging.Bitmap source, Avalonia.Rect sourc
 
 `source` [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)
 
-The bitmap.
+该位图。
 
 
 `sourceRect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -217,7 +217,7 @@ The foreground brush.
 
 `glyphRun` [Avalonia.Media.IImmutableGlyphRunReference](xref:Avalonia.Media.IImmutableGlyphRunReference)
 
-The glyph run.
+该字形运行。
 
 
 </section>
@@ -374,7 +374,7 @@ public void FillRectangle(Avalonia.Media.IImmutableBrush brush, Avalonia.Rect re
 
 <span id="uid-8a904d15d1"></span>
 
-### PushClip overloads
+### PushClip 的重载 {#pushclip-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -442,7 +442,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushOpacity(double opa
 
 `opacity` double
 
-The opacity.
+不透明度。
 
 
 `bounds` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -475,7 +475,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushOpacityMask(Avalon
 
 `mask` [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The opacity mask.
+不透明度蒙版。
 
 
 `bounds` [Avalonia.Rect](xref:Avalonia.Rect)

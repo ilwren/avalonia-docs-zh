@@ -74,7 +74,7 @@ public class ImageSnapshotNode
 | [EndOffset](snapshotnode.mdx#uid-9d03a730e3) | 获取绝对结束偏移量（不含该位置）。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [FormatMetadata](snapshotnode.mdx#uid-a481dfd525) | 用于往返保真的格式专属元数据。序列化器（RtfWriter、DocxWriter 等）可在此附上各自格式的状态，以保留那些无法妥帖映射到语义快照模型的信息。它不是线程安全的，只能单线程访问。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [Height](#uid-bd6c8dc820) | Display height of the image in device-independent pixels. |
-| [ImageData](#uid-25e823f8b8) | Image data bytes. |
+| [ImageData](#uid-25e823f8b8) | 图像数据字节。 |
 | [ImageMimeType](#uid-933fb5d9a1) | MIME type of the image (e.g., "image/png", "image/jpeg"). |
 | [IsBlock](snapshotnode.mdx#uid-e26b8c2e53) | 获取该节点是否为块级节点。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [IsInline](snapshotnode.mdx#uid-719f57e3e5) | 获取该节点是否为内联级节点。继承自 [SnapshotNode](snapshotnode.mdx)。 |
@@ -122,7 +122,7 @@ public double Height { get; set; }
 
 ### ImageData 属性 {#imagedata-property}
 
-Image data bytes.
+图像数据字节。
 
 ```csharp
 public ReadOnlyMemory<byte> ImageData { get; set; }

@@ -72,11 +72,11 @@ one survives an edit instead of degrading to a plain underline.
 | --- | --- |
 | [DashDot](#uid-875d5da0e7) | An alternating dash-dot line. |
 | [DashDotDot](#uid-73628a4118) | An alternating dash-dot-dot line. |
-| [Dashed](#uid-c6ae1b958a) | A dashed line. |
-| [Dotted](#uid-9e0e949b90) | A dotted line. |
+| [Dashed](#uid-c6ae1b958a) | 虚线。 |
+| [Dotted](#uid-9e0e949b90) | 点线。 |
 | [Double](#uid-29bb0e82ec) | Two parallel solid lines. |
 | [None](#uid-f76fa1965d) | No underline style. Distinct from an unset (null) style: it records that the source explicitly said "no style", which is what RTF `\ulnone` and DOCX `w:val="none"` produce. Those also leave [Avalonia.Controls.Documents.TextModel.Formatting.TextDecorationFlags.Underline](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextDecorationFlags.Underline) off, so nothing draws. |
-| [Single](#uid-05f4b6d824) | A single solid line. |
+| [Single](#uid-05f4b6d824) | 一条实线。 |
 | [Thick](#uid-876d4452b1) | A single line of increased thickness. |
 | [Wave](#uid-a27dc9939b) | A wavy line. Approximated when drawn, because a text decoration is a straight stroke. |
 | [Word](#uid-453eeddde3) | Words are underlined but the spaces between them are not. A scope rather than a line style, so it draws as [Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single](xref:Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single). |
@@ -115,7 +115,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle DashDotDo
 
 ### Dashed 字段 {#dashed-field}
 
-A dashed line.
+虚线。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Dashed
@@ -129,7 +129,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Dashed
 
 ### Dotted 字段 {#dotted-field}
 
-A dotted line.
+点线。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Dotted
@@ -173,7 +173,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle None
 
 ### Single 字段 {#single-field}
 
-A single solid line.
+一条实线。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Single

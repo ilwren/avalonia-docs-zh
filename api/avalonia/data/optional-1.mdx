@@ -70,7 +70,7 @@ note that null is a valid value for reference types. It is also similar to
 To create a new optional value you can:
 
 - For a simple value, call the [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601) constructor or use an implicit
-conversion from `T`
+由 `T` 转换而来
 - For an missing value, use [Avalonia.Data.Optional&lt;T&gt;.Empty](xref:Avalonia.Data.Optional%601.Empty) or simply `default`
 
 ## 构造函数 {#constructors}
@@ -299,7 +299,7 @@ string
 | --- | --- |
 | [Empty](#uid-0b3429dc46) | Returns an [Avalonia.Data.Optional&lt;T&gt;](xref:Avalonia.Data.Optional%601) without a value. |
 | [HasValue](#uid-1727d4bf92) | Gets a value indicating whether a value is present. |
-| [Value](#uid-a37ba8c329) | Gets the value. |
+| [Value](#uid-a37ba8c329) | 获取该值。 |
 
 <section className="apiref-page__member-entry">
 
@@ -335,7 +335,7 @@ public bool HasValue { get; set; }
 
 ### Value 属性 {#value-property}
 
-Gets the value.
+获取该值。
 
 ```csharp
 public T Value { get; set; }

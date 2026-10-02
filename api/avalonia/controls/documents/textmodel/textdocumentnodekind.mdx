@@ -416,7 +416,7 @@ public string Name { get; set; }
 | [InlineUIContainer](#uid-9bba0173cf) | An inline UI container kind. |
 | [Italic](#uid-550716d226) | An italic inline container kind. |
 | [LineBreak](#uid-e855071e17) | A line break leaf kind. |
-| [List](#uid-916dbfcdbd) | A list block kind. |
+| [List](#uid-916dbfcdbd) | 一种列表块类型。 |
 | [ListItem](#uid-6334b8c488) | A list item block container kind. |
 | [PageBand](#uid-ce57f8778d) | The root of a page band's document: a header or footer is a nested document whose root carries this kind instead of [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document), so what a document is travels with its tree and its snapshots. |
 | [PageNumberField](#uid-6351057c60) | A page-number field kind (current page / page count). Its text range holds the field's last calculated result, so it renders and exports as plain text until paginated rendering resolves it. |
@@ -426,9 +426,9 @@ public string Name { get; set; }
 | [Span](#uid-4202fee56d) | A span inline container kind. |
 | [Subscript](#uid-71360df36d) | A subscript inline container kind. |
 | [Superscript](#uid-7b1ad0401f) | A superscript inline container kind. |
-| [Table](#uid-cf9861b8bf) | A table block kind. |
+| [Table](#uid-cf9861b8bf) | 一种表格块类型。 |
 | [TableCell](#uid-7bc6449b4e) | A table cell block container kind. |
-| [TableRow](#uid-7784249dc8) | A table row kind. |
+| [TableRow](#uid-7784249dc8) | 一种表格行类型。 |
 | [TableRowGroup](#uid-8461af6fb0) | A table row group kind. |
 | [Underline](#uid-39fce4ff0f) | An underline inline container kind. |
 
@@ -612,7 +612,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind LineBreak
 
 ### List 字段 {#list-field}
 
-A list block kind.
+一种列表块类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind List
@@ -756,7 +756,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Superscript
 
 ### Table 字段 {#table-field}
 
-A table block kind.
+一种表格块类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Table
@@ -784,7 +784,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind TableCell
 
 ### TableRow 字段 {#tablerow-field}
 
-A table row kind.
+一种表格行类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind TableRow

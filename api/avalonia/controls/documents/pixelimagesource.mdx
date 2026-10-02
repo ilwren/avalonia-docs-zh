@@ -93,7 +93,7 @@ The decoded pixels. Owned for rendering, carried into snapshots for serializatio
 | 名称 | 说明 |
 | --- | --- |
 | [Dispose](#uid-8bf95cd2c4) | Releases the cached render bitmap. |
-| [ResolveAsync](#uid-fc549bc3d6) | Resolves the decoded image. Embedded sources complete synchronously; deferred sources fetch/decode in the background. Returns when the image cannot be produced. Callers must not dispose the returned image — its lifetime is owned by the source (or its loader); a source that owns a decoded bitmap implements [IDisposable](xref:System.IDisposable). |
+| [ResolveAsync](#uid-fc549bc3d6) | 解析出已解码的图像。内嵌源会同步完成；延迟源则在后台抓取并解码。无法产出图像时返回 null。调用方不得释放返回的图像——它的生命周期归源（或其加载器）所有；持有已解码位图的源会实现 [IDisposable](xref:System.IDisposable)。 |
 | [TryGetIntrinsicPixelSize](#uid-e319b15f47) | 暂无摘要。 |
 | [TryGetPixels](#uid-b6664cf481) | 暂无摘要。 |
 
@@ -117,11 +117,11 @@ public void Dispose()
 
 ### ResolveAsync 方法 {#resolveasync-method}
 
-Resolves the decoded image. Embedded sources complete synchronously;
-deferred sources fetch/decode in the background. Returns
-when the image cannot be produced. Callers must not
-dispose the returned image — its lifetime is owned by the source (or its
-loader); a source that owns a decoded bitmap implements [IDisposable](xref:System.IDisposable).
+解析出已解码的图像。内嵌源会同步完成；
+延迟源则在后台抓取并解码。无法产出图像时
+返回 null。调用方不得释放返回的图像——
+它的生命周期归源（或其加载器）所有；持有已解码位图的源
+会实现 [IDisposable](xref:System.IDisposable)。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Media.IImage> ResolveAsync()

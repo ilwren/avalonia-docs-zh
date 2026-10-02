@@ -191,7 +191,7 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
 | --- | --- |
 | [CanRedo](#uid-f2d2c701e9) | 获取是否还有可重做的内容。 |
 | [CanUndo](#uid-8f4aff9147) | 获取是否还有可撤销的内容。 |
-| [Instance](#uid-dfb6ef2900) | The single instance. |
+| [Instance](#uid-dfb6ef2900) | 唯一的那个实例。 |
 | [IsEnabled](#uid-62dd4eb853) | 获取或设置是否记录编辑。 |
 | [RedoUnits](#uid-dcdaefe28c) | 可重做的各个单元，最近的排在最后。 |
 | [UndoLimit](#uid-d5e3858fb0) | 获取或设置历史记录保留多少个单元。 |
@@ -231,7 +231,7 @@ public bool CanUndo { get; set; }
 
 ### Instance 属性 {#instance-property}
 
-The single instance.
+唯一的那个实例。
 
 ```csharp
 public Avalonia.Controls.Documents.Undo.NullUndoManager Instance { get; set; }
