@@ -371,11 +371,12 @@ gtag('consent', 'default', {
           to: '/tools',
           activeBasePath: '/tools'
         },
-        {
+        // 预览构建（DOCS_SKIP_API=1）不生成 API 参考，这时隐藏入口，避免死链。
+        ...(skipApi ? [] : [{
           label: 'API 参考',
           to: '/api',
           activeBasePath: '/api'
-        },
+        }]),
         {
           label: '更多',
           items: [
