@@ -63,17 +63,17 @@ public class DrawingContext
 | [Dispose](#uid-7e988cb5bd) | 暂无摘要。 |
 | [DrawEllipse (2 overloads)](#uid-20f7294bf2) | 用指定的 Brush 和 Pen 画一个椭圆。 |
 | [DrawGeometry (2 overloads)](#uid-e74ce18cb0) | Draws a geometry. |
-| [DrawGlyphRun](#uid-35674e50e5) | Draws a glyph run. |
-| [DrawImage (2 overloads)](#uid-492fc6db89) | Draws an image. |
-| [DrawLine](#uid-d5a6cf0d81) | Draws a line. |
+| [DrawGlyphRun](#uid-35674e50e5) | 绘制一段字形运行。 |
+| [DrawImage (2 overloads)](#uid-492fc6db89) | 绘制一幅图像。 |
+| [DrawLine](#uid-d5a6cf0d81) | 画一条直线。 |
 | [DrawRectangle (3 overloads)](#uid-d05ce290ae) | 用指定的 Brush 和 Pen 画一个矩形。 |
 | [DrawText](#uid-9bbf20a539) | Draws text. |
-| [FillRectangle](#uid-3a2836cb4a) | Draws a filled rectangle. |
+| [FillRectangle](#uid-3a2836cb4a) | 画一个填充矩形。 |
 | [PushClip (2 overloads)](#uid-581bbdf395) | 压入一个裁剪矩形。 |
 | [PushEffect](#uid-5cbe64db83) | Pushes an effect. |
 | [PushGeometryClip](#uid-54c8cd9487) | Pushes a clip geometry. |
-| [PushOpacity](#uid-b8823fb27f) | Pushes an opacity value. |
-| [PushOpacityMask](#uid-f50efb14c4) | Pushes an opacity mask. |
+| [PushOpacity](#uid-b8823fb27f) | 压入一个不透明度值。 |
+| [PushOpacityMask](#uid-f50efb14c4) | 压入一个不透明度蒙版。 |
 | [PushRenderOptions](#uid-8050498062) | Pushes render options. |
 | [PushTextOptions](#uid-15dfd2b97e) | Pushes text options for the drawing context. |
 | [PushTransform](#uid-edfc386ff3) | Pushes a matrix transformation. |
@@ -156,8 +156,8 @@ The vertical radius of the ellipse.
 
 ##### 备注 {#remarks}
 
-The brush and the pen can both be null. If the brush is null, then no fill is performed.
-If the pen is null, then no stoke is performed. If both the pen and the brush are null, then the drawing is not visible.
+画刷和画笔都可以为 null。画刷为 null 时不作填充，
+画笔为 null 时不作描边；两者都为 null 时，这次绘制便什么也看不见。
 
 </section>
 
@@ -192,8 +192,8 @@ The bounding rect.
 
 ##### 备注 {#remarks-1}
 
-The brush and the pen can both be null. If the brush is null, then no fill is performed.
-If the pen is null, then no stoke is performed. If both the pen and the brush are null, then the drawing is not visible.
+画刷和画笔都可以为 null。画刷为 null 时不作填充，
+画笔为 null 时不作描边；两者都为 null 时，这次绘制便什么也看不见。
 
 </section>
 
@@ -222,7 +222,7 @@ The fill brush.
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
 
-The stroke pen.
+描边所用的画笔。
 
 
 `geometry` [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
@@ -253,7 +253,7 @@ The fill brush.
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
 
-The stroke pen.
+描边所用的画笔。
 
 
 `geometry` [Avalonia.Platform.IGeometryImpl](xref:Avalonia.Platform.IGeometryImpl)
@@ -269,7 +269,7 @@ The geometry.
 
 ### DrawGlyphRun 方法 {#drawglyphrun-method}
 
-Draws a glyph run.
+绘制一段字形运行。
 
 ```csharp
 public void DrawGlyphRun(Avalonia.Media.IBrush foreground, Avalonia.Media.GlyphRun glyphRun)
@@ -299,7 +299,7 @@ The glyph run.
 
 #### DrawImage 方法 {#drawimage-method}
 
-Draws an image.
+绘制一幅图像。
 
 ```csharp
 public void DrawImage(Avalonia.Media.IImage source, Avalonia.Rect rect)
@@ -325,7 +325,7 @@ The image.
 
 #### DrawImage 方法 {#drawimage-method-1}
 
-Draws an image.
+绘制一幅图像。
 
 ```csharp
 public void DrawImage(Avalonia.Media.IImage source, Avalonia.Rect sourceRect, Avalonia.Rect destRect)
@@ -356,7 +356,7 @@ The rect in the image to draw.
 
 ### DrawLine 方法 {#drawline-method}
 
-Draws a line.
+画一条直线。
 
 ```csharp
 public void DrawLine(Avalonia.Media.IPen pen, Avalonia.Point p1, Avalonia.Point p2)
@@ -366,7 +366,7 @@ public void DrawLine(Avalonia.Media.IPen pen, Avalonia.Point p1, Avalonia.Point 
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
 
-The stroke pen.
+描边所用的画笔。
 
 
 `p1` [Avalonia.Point](xref:Avalonia.Point)
@@ -474,8 +474,8 @@ Box shadow effect parameters
 
 ##### 备注 {#remarks-3}
 
-The brush and the pen can both be null. If the brush is null, then no fill is performed.
-If the pen is null, then no stoke is performed. If both the pen and the brush are null, then the drawing is not visible.
+画刷和画笔都可以为 null。画刷为 null 时不作填充，
+画笔为 null 时不作描边；两者都为 null 时，这次绘制便什么也看不见。
 
 </section>
 
@@ -495,7 +495,7 @@ public void DrawRectangle(Avalonia.Media.IPen pen, Avalonia.Rect rect, float cor
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
 
-The pen.
+该画笔。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -505,7 +505,7 @@ The pen.
 
 `cornerRadius` float
 
-The corner radius.
+圆角半径。
 
 
 </section>
@@ -542,7 +542,7 @@ The upper-left corner of the text.
 
 ### FillRectangle 方法 {#fillrectangle-method}
 
-Draws a filled rectangle.
+画一个填充矩形。
 
 ```csharp
 public void FillRectangle(Avalonia.Media.IBrush brush, Avalonia.Rect rect, float cornerRadius)
@@ -552,7 +552,7 @@ public void FillRectangle(Avalonia.Media.IBrush brush, Avalonia.Rect rect, float
 
 `brush` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The brush.
+该画刷。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -562,7 +562,7 @@ The brush.
 
 `cornerRadius` float
 
-The corner radius.
+圆角半径。
 
 
 </section>
@@ -696,7 +696,7 @@ A disposable used to undo the clip geometry.
 
 ### PushOpacity 方法 {#pushopacity-method}
 
-Pushes an opacity value.
+压入一个不透明度值。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushOpacity(double opacity)
@@ -724,7 +724,7 @@ A disposable used to undo the opacity.
 
 ### PushOpacityMask 方法 {#pushopacitymask-method}
 
-Pushes an opacity mask.
+压入一个不透明度蒙版。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushOpacityMask(Avalonia.Media.IBrush mask, Avalonia.Rect bounds)
@@ -823,7 +823,7 @@ public Avalonia.Media.DrawingContext.PushedState PushTransform(Avalonia.Matrix m
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-The matrix
+该矩阵
 
 
 #### 返回值 {#returns-8}

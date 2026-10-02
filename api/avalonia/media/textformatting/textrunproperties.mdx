@@ -146,13 +146,13 @@ int
 | 名称 | 说明 |
 | --- | --- |
 | [BackgroundBrush](#uid-0a4c37a880) | Brush used to paint background of run. |
-| [BaselineAlignment](#uid-7046d8d028) | Run vertical box alignment |
-| [CultureInfo](#uid-3f5b9577a7) | Run text culture. |
+| [BaselineAlignment](#uid-7046d8d028) | 文本运行的纵向盒对齐方式 |
+| [CultureInfo](#uid-3f5b9577a7) | 文本运行的区域性。 |
 | [FontFeatures](#uid-3fc0e30e62) | Optional features of used font. |
 | [FontRenderingEmSize](#uid-b0e03009ed) | 用于排版和显示文本的字体 em 大小 |
-| [ForegroundBrush](#uid-8d9e648c28) | Brush used to fill text. |
+| [ForegroundBrush](#uid-8d9e648c28) | 用于填充文本的画刷。 |
 | [TextDecorations](#uid-f5b89469dc) | Run [TextDecorations](xref:Avalonia.Media.TextDecorations). |
-| [Typeface](#uid-410ed80435) | Run typeface |
+| [Typeface](#uid-410ed80435) | 文本运行所用的字型 |
 
 <section className="apiref-page__member-entry">
 
@@ -174,7 +174,7 @@ public Avalonia.Media.IBrush BackgroundBrush { get; set; }
 
 ### BaselineAlignment 属性 {#baselinealignment-property}
 
-Run vertical box alignment
+文本运行的纵向盒对齐方式
 
 ```csharp
 public Avalonia.Media.BaselineAlignment BaselineAlignment { get; set; }
@@ -188,7 +188,7 @@ public Avalonia.Media.BaselineAlignment BaselineAlignment { get; set; }
 
 ### CultureInfo 属性 {#cultureinfo-property}
 
-Run text culture.
+文本运行的区域性。
 
 ```csharp
 public System.Globalization.CultureInfo CultureInfo { get; set; }
@@ -230,7 +230,7 @@ public double FontRenderingEmSize { get; set; }
 
 ### ForegroundBrush 属性 {#foregroundbrush-property}
 
-Brush used to fill text.
+用于填充文本的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush ForegroundBrush { get; set; }
@@ -258,7 +258,7 @@ public Avalonia.Media.TextDecorationCollection TextDecorations { get; set; }
 
 ### Typeface 属性 {#typeface-property}
 
-Run typeface
+文本运行所用的字型
 
 ```csharp
 public Avalonia.Media.Typeface Typeface { get; set; }

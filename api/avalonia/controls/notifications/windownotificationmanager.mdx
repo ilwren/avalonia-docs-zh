@@ -119,7 +119,7 @@ The [TopLevel](xref:Avalonia.Controls.TopLevel) that will host the control.
 | [CheckAccess](../../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [ClearValue（4 个重载）](../../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Close (2 overloads)](#uid-c8e4cffc24) | 关闭一条通知。 |
-| [CloseAll](#uid-53a9d455d3) | Closes all notifications. |
+| [CloseAll](#uid-53a9d455d3) | 关闭所有通知。 |
 | [CoerceValue](../../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [EndInit](../../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -146,7 +146,7 @@ The [TopLevel](xref:Avalonia.Controls.TopLevel) that will host the control.
 | [SetIsHoldWithMouseEnabled](../../input/inputelement.mdx#uid-a494efd7c7) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [SetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-281801c25f) | 设置控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Show (3 overloads)](#uid-a56e1346a7) | Show a notification. |
+| [Show (3 overloads)](#uid-a56e1346a7) | 显示一条通知。 |
 | [TryGetResource](../../styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](../../styledelement.mdx)。 |
 | [UpdateLayout](../../layout/layoutable.mdx#uid-529d4a08ea) | 执行一次布局。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -203,7 +203,7 @@ The content to be closed.
 
 ### CloseAll 方法 {#closeall-method}
 
-Closes all notifications.
+关闭所有通知。
 
 ```csharp
 public void CloseAll()
@@ -221,7 +221,7 @@ public void CloseAll()
 
 #### Show 方法 {#show-method}
 
-Show a notification.
+显示一条通知。
 
 ```csharp
 public void Show(Avalonia.Controls.Notifications.INotification content)

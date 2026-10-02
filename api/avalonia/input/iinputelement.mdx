@@ -57,8 +57,8 @@ public interface IInputElement
 | 名称 | 说明 |
 | --- | --- |
 | [AddHandler](#uid-4ed662f866) | Adds a handler for the specified routed event. |
-| [Focus](#uid-2aed735c56) | Focuses the control. |
-| [RaiseEvent](#uid-55167c193d) | Raises a routed event. |
+| [Focus](#uid-2aed735c56) | 让该控件获得焦点。 |
+| [RaiseEvent](#uid-55167c193d) | 抛出一个路由事件。 |
 | [RemoveHandler](#uid-580f070f3a) | Removes a handler for the specified routed event. |
 
 <section className="apiref-page__member-entry">
@@ -77,12 +77,12 @@ public void AddHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delegate 
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
-The routed event.
+该路由事件。
 
 
 `handler` Delegate
 
-The handler.
+该处理程序。
 
 
 `routes` [Avalonia.Interactivity.RoutingStrategies](xref:Avalonia.Interactivity.RoutingStrategies)
@@ -108,7 +108,7 @@ A disposable that terminates the event subscription.
 
 ### Focus 方法 {#focus-method}
 
-Focuses the control.
+让该控件获得焦点。
 
 ```csharp
 public bool Focus(Avalonia.Input.NavigationMethod method, Avalonia.Input.KeyModifiers keyModifiers)
@@ -139,7 +139,7 @@ bool
 
 ### RaiseEvent 方法 {#raiseevent-method}
 
-Raises a routed event.
+抛出一个路由事件。
 
 ```csharp
 public void RaiseEvent(Avalonia.Interactivity.RoutedEventArgs e)
@@ -170,12 +170,12 @@ public void RemoveHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delega
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
-The routed event.
+该路由事件。
 
 
 `handler` Delegate
 
-The handler.
+该处理程序。
 
 
 </section>

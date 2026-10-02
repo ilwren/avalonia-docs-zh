@@ -350,14 +350,14 @@ bool
 | [GlyphCount](#uid-f8b29671db) | Gets the number of glyphs held by this font. |
 | [Metrics](#uid-49ad964e00) | Gets the font metrics associated with this font. |
 | [PlatformTypeface](#uid-239ceb6ee3) | Gets the platform-specific typeface associated with this font. |
-| [Stretch](#uid-bef0dfc38f) | Gets the font stretch. |
-| [Style](#uid-d762ed5152) | Gets the font style. |
+| [Stretch](#uid-bef0dfc38f) | 获取字宽。 |
+| [Style](#uid-d762ed5152) | 获取字形。 |
 | [SupportedFeatures](#uid-61839489bf) | Gets the list of OpenType feature tags supported by the font. |
 | [SupportedLanguages](#uid-039c8f5835) | Gets the BCP-47 language tags the font advertises as supported (the `slng` data tag in the OpenType `meta` table). |
 | [SupportedUnicodeRange](#uid-c0034604d7) | Gets the union of Unicode codepoint ranges covered by the font's character map. |
 | [TextShaperTypeface](#uid-df45934655) | Gets the typeface information used by the text shaper for this font. |
 | [TypographicFamilyName](#uid-5249100e36) | Gets the typographic family name of the font. |
-| [Weight](#uid-076de7204b) | Gets the font weight. |
+| [Weight](#uid-076de7204b) | 获取字重。 |
 
 <section className="apiref-page__member-entry">
 
@@ -534,7 +534,7 @@ public Avalonia.Media.IPlatformTypeface PlatformTypeface { get; set; }
 
 ### Stretch 属性 {#stretch-property}
 
-Gets the font stretch.
+获取字宽。
 
 ```csharp
 public Avalonia.Media.FontStretch Stretch { get; set; }
@@ -548,7 +548,7 @@ public Avalonia.Media.FontStretch Stretch { get; set; }
 
 ### Style 属性 {#style-property}
 
-Gets the font style.
+获取字形。
 
 ```csharp
 public Avalonia.Media.FontStyle Style { get; set; }
@@ -657,7 +657,7 @@ public string TypographicFamilyName { get; set; }
 
 ### Weight 属性 {#weight-property}
 
-Gets the font weight.
+获取字重。
 
 ```csharp
 public Avalonia.Media.FontWeight Weight { get; set; }

@@ -59,7 +59,7 @@ public interface IFocusManager
 | [FindFirstFocusableElement](#uid-2421936cd0) | Retrieves the first element that can receive focus. |
 | [FindLastFocusableElement](#uid-be6613a4e6) | Retrieves the last element that can receive focus. |
 | [FindNextElement](#uid-a0ee3bab13) | Retrieves the element that should receive focus based on the specified navigation direction. |
-| [Focus](#uid-b26213438c) | Focuses a control. |
+| [Focus](#uid-b26213438c) | 让某个控件获得焦点。 |
 | [GetFocusedElement](#uid-545fef5b56) | Gets the currently focused [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement). |
 | [TryMoveFocus](#uid-13ddb00a08) | Attempts to change focus from the element with focus to the next focusable element in the specified direction. |
 
@@ -147,7 +147,7 @@ The next element to receive focus, if any.
 
 ### Focus 方法 {#focus-method}
 
-Focuses a control.
+让某个控件获得焦点。
 
 ```csharp
 public bool Focus(Avalonia.Input.IInputElement element, Avalonia.Input.NavigationMethod method, Avalonia.Input.KeyModifiers keyModifiers)

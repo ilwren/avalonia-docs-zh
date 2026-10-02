@@ -5762,7 +5762,7 @@ public Avalonia.StyledProperty<double> ZoomStepProperty
 | [LosingFocus](../input/inputelement.mdx#uid-425fe24716) | 在控件即将失去焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LostFocus](../input/inputelement.mdx#uid-2061fc85a1) | 当控件失去焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [OpenRequested](#uid-d7c76af79a) | Raised when opening a document is requested (menu, [Avalonia.Controls.PdfViewer.Open](xref:Avalonia.Controls.PdfViewer.Open), [Avalonia.Controls.PdfViewer.OpenAsync(System.Threading.CancellationToken)](xref:Avalonia.Controls.PdfViewer.OpenAsync%28System.Threading.CancellationToken%29) or [Avalonia.Controls.PdfViewer.OpenCommand](xref:Avalonia.Controls.PdfViewer.OpenCommand)) before the built-in file picker is shown. Set [Avalonia.Controls.PdfOpenRequestedEventArgs.Handled](xref:Avalonia.Controls.PdfOpenRequestedEventArgs.Handled) to open the document in the application. |
-| [PageChanged](#uid-10b759d8af) | Raised when [Avalonia.Controls.PdfViewer.CurrentPage](xref:Avalonia.Controls.PdfViewer.CurrentPage) changes. |
+| [PageChanged](#uid-10b759d8af) | [Avalonia.Controls.PdfViewer.CurrentPage](xref:Avalonia.Controls.PdfViewer.CurrentPage) 变化时抛出。 |
 | [PageRendered](#uid-a44eb66ee6) | Raised after a page's bitmap has been rendered to the view. |
 | [Pinch](../input/inputelement.mdx#uid-96b68421dc) | 当用户将两个接触点相向靠拢时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PinchEnded](../input/inputelement.mdx#uid-50614bd917) | 当用户松开捏合手势所用的两个接触点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -5797,7 +5797,7 @@ public Avalonia.StyledProperty<double> ZoomStepProperty
 | [TextInputMethodClientRequested](../input/inputelement.mdx#uid-5d96b89080) | 当输入元素获得输入焦点、输入法正在查找对应的输入客户端时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [UndoRedoStateChanged](#uid-730b7c2cf3) | Raised whenever [Avalonia.Controls.PdfViewer.CanUndo](xref:Avalonia.Controls.PdfViewer.CanUndo) or [Avalonia.Controls.PdfViewer.CanRedo](xref:Avalonia.Controls.PdfViewer.CanRedo) changes. |
 | [Unloaded](control.mdx#uid-fdfd878e56) | 当控件从视觉树中移除时发生。继承自 [Control](control.mdx)。 |
-| [ZoomChanged](#uid-9667d5a3e9) | Raised when [Avalonia.Controls.PdfViewer.ZoomLevel](xref:Avalonia.Controls.PdfViewer.ZoomLevel) changes. |
+| [ZoomChanged](#uid-9667d5a3e9) | [Avalonia.Controls.PdfViewer.ZoomLevel](xref:Avalonia.Controls.PdfViewer.ZoomLevel) 变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
@@ -5927,7 +5927,7 @@ public event EventHandler<Avalonia.Controls.PdfOpenRequestedEventArgs> OpenReque
 
 ### PageChanged 事件 {#pagechanged-event}
 
-Raised when [Avalonia.Controls.PdfViewer.CurrentPage](xref:Avalonia.Controls.PdfViewer.CurrentPage) changes.
+[Avalonia.Controls.PdfViewer.CurrentPage](xref:Avalonia.Controls.PdfViewer.CurrentPage) 变化时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.PdfPageChangedEventArgs> PageChanged
@@ -6031,7 +6031,7 @@ public event EventHandler UndoRedoStateChanged
 
 ### ZoomChanged 事件 {#zoomchanged-event}
 
-Raised when [Avalonia.Controls.PdfViewer.ZoomLevel](xref:Avalonia.Controls.PdfViewer.ZoomLevel) changes.
+[Avalonia.Controls.PdfViewer.ZoomLevel](xref:Avalonia.Controls.PdfViewer.ZoomLevel) 变化时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.PdfZoomChangedEventArgs> ZoomChanged

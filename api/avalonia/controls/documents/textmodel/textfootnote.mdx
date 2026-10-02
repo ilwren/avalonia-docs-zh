@@ -114,7 +114,7 @@ public TextFootnote(Avalonia.Controls.Documents.TextModel.TextDocument document,
 
 | 名称 | 说明 |
 | --- | --- |
-| [Document](#uid-9fe48918cc) | The note's body. |
+| [Document](#uid-9fe48918cc) | 该便签的正文。 |
 | [Label](#uid-041db1784b) | The note's name in formats that address notes by name (markdown's `[^label]`); never displayed, null for a note created in the editor. |
 | [NoteId](#uid-829086fa7a) | The identity pairing this note with its anchor, document-unique and assigned by the pairing; 0 while unpaired. The displayed number is not the id: ordinals follow anchor order. |
 | [Owner](#uid-8346e4fcf5) | The document that owns the note, null while it is unowned. |
@@ -125,7 +125,7 @@ public TextFootnote(Avalonia.Controls.Documents.TextModel.TextDocument document,
 
 ### Document 属性 {#document-property}
 
-The note's body.
+该便签的正文。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument Document { get; set; }

@@ -62,13 +62,13 @@ public class ImmediateDrawingContext
 | [Dispose](#uid-2d411e2b08) | Disposes of any resources held by the [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext). |
 | [DrawBitmap (2 overloads)](#uid-78ded9e840) | Draws an bitmap. |
 | [DrawEllipse](#uid-6a8d2f378f) | 用指定的 Brush 和 Pen 画一个椭圆。 |
-| [DrawGlyphRun](#uid-8e52f9db3c) | Draws a glyph run. |
-| [DrawLine](#uid-8fe6821f2c) | Draws a line. |
+| [DrawGlyphRun](#uid-8e52f9db3c) | 绘制一段字形运行。 |
+| [DrawLine](#uid-8fe6821f2c) | 画一条直线。 |
 | [DrawRectangle (2 overloads)](#uid-22a0fbf526) | 用指定的 Brush 和 Pen 画一个矩形。 |
-| [FillRectangle](#uid-441055ae7b) | Draws a filled rectangle. |
+| [FillRectangle](#uid-441055ae7b) | 画一个填充矩形。 |
 | [PushClip (2 overloads)](#uid-8a904d15d1) | 压入一个裁剪矩形。 |
-| [PushOpacity](#uid-303ee6ec70) | Pushes an opacity value. |
-| [PushOpacityMask](#uid-54458b5ed2) | Pushes an opacity mask. |
+| [PushOpacity](#uid-303ee6ec70) | 压入一个不透明度值。 |
+| [PushOpacityMask](#uid-54458b5ed2) | 压入一个不透明度蒙版。 |
 | [PushPostTransform](#uid-4c5d73998c) | Pushes a matrix post-transformation. |
 | [PushPreTransform](#uid-8f56fb7622) | Pushes a matrix pre-transformation. |
 | [PushSetTransform](#uid-b2cf50e9d7) | Sets the current matrix transformation. |
@@ -125,7 +125,7 @@ The bitmap.
 
 #### DrawBitmap 方法 {#drawbitmap-method-1}
 
-Draws an image.
+绘制一幅图像。
 
 ```csharp
 public void DrawBitmap(Avalonia.Media.Imaging.Bitmap source, Avalonia.Rect sourceRect, Avalonia.Rect destRect)
@@ -191,8 +191,8 @@ The vertical radius of the ellipse.
 
 #### 备注 {#remarks}
 
-The brush and the pen can both be null. If the brush is null, then no fill is performed.
-If the pen is null, then no stoke is performed. If both the pen and the brush are null, then the drawing is not visible.
+画刷和画笔都可以为 null。画刷为 null 时不作填充，
+画笔为 null 时不作描边；两者都为 null 时，这次绘制便什么也看不见。
 
 </section>
 
@@ -202,7 +202,7 @@ If the pen is null, then no stoke is performed. If both the pen and the brush ar
 
 ### DrawGlyphRun 方法 {#drawglyphrun-method}
 
-Draws a glyph run.
+绘制一段字形运行。
 
 ```csharp
 public void DrawGlyphRun(Avalonia.Media.IImmutableBrush foreground, Avalonia.Media.IImmutableGlyphRunReference glyphRun)
@@ -228,7 +228,7 @@ The glyph run.
 
 ### DrawLine 方法 {#drawline-method}
 
-Draws a line.
+画一条直线。
 
 ```csharp
 public void DrawLine(Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Point p1, Avalonia.Point p2)
@@ -238,7 +238,7 @@ public void DrawLine(Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Point p
 
 `pen` [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The stroke pen.
+描边所用的画笔。
 
 
 `p1` [Avalonia.Point](xref:Avalonia.Point)
@@ -305,8 +305,8 @@ Box shadow effect parameters
 
 ##### 备注 {#remarks-1}
 
-The brush and the pen can both be null. If the brush is null, then no fill is performed.
-If the pen is null, then no stoke is performed. If both the pen and the brush are null, then the drawing is not visible.
+画刷和画笔都可以为 null。画刷为 null 时不作填充，
+画笔为 null 时不作描边；两者都为 null 时，这次绘制便什么也看不见。
 
 </section>
 
@@ -326,7 +326,7 @@ public void DrawRectangle(Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Re
 
 `pen` [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The pen.
+该画笔。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -336,7 +336,7 @@ The pen.
 
 `cornerRadius` float
 
-The corner radius.
+圆角半径。
 
 
 </section>
@@ -347,7 +347,7 @@ The corner radius.
 
 ### FillRectangle 方法 {#fillrectangle-method}
 
-Draws a filled rectangle.
+画一个填充矩形。
 
 ```csharp
 public void FillRectangle(Avalonia.Media.IImmutableBrush brush, Avalonia.Rect rect, float cornerRadius)
@@ -357,7 +357,7 @@ public void FillRectangle(Avalonia.Media.IImmutableBrush brush, Avalonia.Rect re
 
 `brush` [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The brush.
+该画刷。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -367,7 +367,7 @@ The brush.
 
 `cornerRadius` float
 
-The corner radius.
+圆角半径。
 
 
 </section>
@@ -432,7 +432,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushClip(Avalonia.Roun
 
 ### PushOpacity 方法 {#pushopacity-method}
 
-Pushes an opacity value.
+压入一个不透明度值。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushOpacity(double opacity, Avalonia.Rect bounds)
@@ -465,7 +465,7 @@ A disposable used to undo the opacity.
 
 ### PushOpacityMask 方法 {#pushopacitymask-method}
 
-Pushes an opacity mask.
+压入一个不透明度蒙版。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushOpacityMask(Avalonia.Media.IImmutableBrush mask, Avalonia.Rect bounds)
@@ -508,7 +508,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushPostTransform(Aval
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-The matrix
+该矩阵
 
 
 #### 返回值 {#returns-4}
@@ -536,7 +536,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushPreTransform(Avalo
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-The matrix
+该矩阵
 
 
 #### 返回值 {#returns-5}
@@ -564,7 +564,7 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushSetTransform(Avalo
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-The matrix
+该矩阵
 
 
 #### 返回值 {#returns-6}

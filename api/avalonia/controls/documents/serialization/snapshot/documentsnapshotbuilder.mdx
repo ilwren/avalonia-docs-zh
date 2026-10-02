@@ -72,21 +72,21 @@ public class DocumentSnapshotBuilder
 | [AddPageBand](#uid-91f574c98e) | 暂无摘要。 |
 | [AddPageBreak](#uid-0f618f2100) | Applies an explicit page break at the current position. The break is a split instruction, not content: a paragraph with content ends here and continues in a clone of itself, and the next committed block receives [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting.PageBreakBefore](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting.PageBreakBefore). A block that would commit empty while the break is pending is the break's own remainder (or a break-only carrier paragraph) and is dropped - the break carries forward; at a container boundary or the document end the pending break materializes as an empty flagged landing paragraph. |
 | [AddPageNumberField](#uid-5b3195e88a) | Adds a page-number field to the current paragraph. The field's cached result becomes its text content, so plain rendering and export show it until paginated rendering resolves the field per page. |
-| [AddParagraph (5 overloads)](#uid-6b0203da31) | Adds a new empty paragraph. |
+| [AddParagraph (5 overloads)](#uid-6b0203da31) | 添加一个新的空段落。 |
 | [AddParagraphRange](#uid-bbe99d3a64) | Registers a paragraph that references a range within previously set bulk text. The text at [`offset`, `offset` + `length`) must already exist in the rope via a prior [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.SetBulkText(ReadOnlyMemory&#123;char&#125;)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.SetBulkText%28System.ReadOnlyMemory%7BSystem.Char%7D%29) call. No rope insert is performed; only the snapshot node tree is updated. |
 | [AddRun](#uid-6b489b6651) | 暂无摘要。 |
 | [AddText (2 overloads)](#uid-58cfe76beb) | 暂无摘要。 |
 | [AddUnderline](#uid-c2775c4852) | Adds underlined text to the current paragraph. |
 | [BeginDeferredTableCells](#uid-bfd93dc27e) | Switches the current table to deferred finalization: its rows and cells stay editable until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable), so a serializer can set each cell's span (and drop merge continuations) once the whole table and its column grid are known. Applies only to the current table; other tables keep the eager path. |
 | [Build](#uid-932d90d3b1) | Builds the [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot). |
-| [Create (2 overloads)](#uid-ccd7b83233) | Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder). |
+| [Create（2 个重载）](#uid-ccd7b83233) | Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder). |
 | [DropDeferredTableCell](#uid-7c04072918) | Marks a deferred cell (a vertical-merge continuation folded into the cell above) so it is not emitted when the table finalizes. |
 | [EndContainer](#uid-d1a5b716a5) | Ends the most recent [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) and restores the prior container. |
 | [EndList](#uid-549b89ed1e) | Ends the current list and restores the parent list if nested. |
 | [EndSection](#uid-9ced19ffd0) | Ends the current section and adds it as a block to the parent container. |
-| [EndTable](#uid-149074c46b) | Ends the current table. |
-| [EndTableCell](#uid-8c8906255e) | Ends the current table cell. |
-| [EndTableRow](#uid-d875e64365) | Ends the current table row. |
+| [EndTable](#uid-149074c46b) | 结束当前表格。 |
+| [EndTableCell](#uid-8c8906255e) | 结束当前表格单元格。 |
+| [EndTableRow](#uid-d875e64365) | 结束当前表格行。 |
 | [GetDeferredTableRowCellCount](#uid-dedaa7a911) | Number of cells emitted so far in a deferred row, or -1 if that row does not exist. A serializer compares this against its own cell count to confirm it can address the cells before applying spans. |
 | [SetBulkText](#uid-beefee8698) | 暂无摘要。 |
 | [SetContainerCustomData](#uid-390df2acff) | Sets [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) on the active block container. Works with sections, generic containers, list items, and table cells. |
@@ -129,9 +129,9 @@ public class DocumentSnapshotBuilder
 | [StartList](#uid-9ce411976f) | Starts a new list with the specified marker style. When called inside an active list item, automatically nests the new list inside the current item instead of finalizing it. |
 | [StartNestedList](#uid-637a5fbdac) | Starts a nested list inside the current list item. |
 | [StartSection (2 overloads)](#uid-77ca3ab3da) | Starts a new section container. Blocks added after this call are placed inside the section until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection) is called. |
-| [StartTable](#uid-e1fe530904) | Starts a new table. |
-| [StartTableCell](#uid-a28f1085c9) | Starts a new table cell. |
-| [StartTableRow](#uid-297fdbbb7e) | Starts a new table row. |
+| [StartTable](#uid-e1fe530904) | 开始一个新表格。 |
+| [StartTableCell](#uid-a28f1085c9) | 开始一个新的表格单元格。 |
+| [StartTableRow](#uid-297fdbbb7e) | 开始新的一行表格行。 |
 
 <section className="apiref-page__member-entry">
 
@@ -551,7 +551,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 `fieldKind` [Avalonia.Controls.Documents.PageNumberFieldKind](xref:Avalonia.Controls.Documents.PageNumberFieldKind)
 
-What the field resolves to.
+该字段最终解析成什么。
 
 
 #### 返回值 {#returns-14}
@@ -571,7 +571,7 @@ What the field resolves to.
 
 #### AddParagraph 方法 {#addparagraph-method}
 
-Adds a new empty paragraph.
+添加一个新的空段落。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddParagraph()
@@ -870,7 +870,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Build
 
 <span id="uid-ccd7b83233"></span>
 
-### Create overloads
+### Create 的重载 {#create-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -1006,7 +1006,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### EndTable 方法 {#endtable-method}
 
-Ends the current table.
+结束当前表格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndTable()
@@ -1025,7 +1025,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### EndTableCell 方法 {#endtablecell-method}
 
-Ends the current table cell.
+结束当前表格单元格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndTableCell()
@@ -1044,7 +1044,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### EndTableRow 方法 {#endtablerow-method}
 
-Ends the current table row.
+结束当前表格行。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndTableRow()
@@ -2178,7 +2178,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### StartTable 方法 {#starttable-method}
 
-Starts a new table.
+开始一个新表格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartTable()
@@ -2197,7 +2197,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### StartTableCell 方法 {#starttablecell-method}
 
-Starts a new table cell.
+开始一个新的表格单元格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartTableCell()
@@ -2216,7 +2216,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### StartTableRow 方法 {#starttablerow-method}
 
-Starts a new table row.
+开始新的一行表格行。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartTableRow()

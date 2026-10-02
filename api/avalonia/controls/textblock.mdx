@@ -555,7 +555,7 @@ public void SetTextWrapping(Avalonia.Controls.Control control, Avalonia.Media.Te
 | [HasMirrorTransform](../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../visual.mdx)。 |
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [Inlines](#uid-f513d77443) | Gets or sets the inlines. |
+| [Inlines](#uid-f513d77443) | 获取或设置内联元素集合。 |
 | [IsArrangeValid](../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsEffectivelyEnabled](../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsEffectivelyVisible](../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../visual.mdx)。 |
@@ -593,7 +593,7 @@ public void SetTextWrapping(Avalonia.Controls.Control control, Avalonia.Media.Te
 | [TabIndex](../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [Tag](control.mdx#uid-2790b0c958) | 获取或设置附加在控件上的用户自定义对象。继承自 [Control](control.mdx)。 |
 | [TemplatedParent](../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../styledelement.mdx)。 |
-| [Text](#uid-38ad01f1f7) | Gets or sets the text. |
+| [Text](#uid-38ad01f1f7) | 获取或设置文本。 |
 | [TextAlignment](#uid-9d2ff6508a) | Gets or sets the text alignment. |
 | [TextDecorations](#uid-64fe8c0662) | Gets or sets the text decorations. |
 | [TextLayout](#uid-b056ac80fb) | Gets the [Avalonia.Controls.TextBlock.TextLayout](xref:Avalonia.Controls.TextBlock.TextLayout) used to render the text. |
@@ -738,7 +738,7 @@ public Avalonia.Media.IBrush Foreground { get; set; }
 
 ### Inlines 属性 {#inlines-property}
 
-Gets or sets the inlines.
+获取或设置内联元素集合。
 
 ```csharp
 public Avalonia.Controls.Documents.InlineCollection Inlines { get; set; }
@@ -822,7 +822,7 @@ public Avalonia.Thickness Padding { get; set; }
 
 ### Text 属性 {#text-property}
 
-Gets or sets the text.
+获取或设置文本。
 
 ```csharp
 public string Text { get; set; }

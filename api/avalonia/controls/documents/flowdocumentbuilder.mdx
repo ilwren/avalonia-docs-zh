@@ -64,7 +64,7 @@ public class FlowDocumentBuilder
 | [AddInline](#uid-d5f9c27ab1) | Adds an inline element to the current paragraph. |
 | [AddItalic](#uid-aceba1bdc3) | Adds italic text to the current paragraph. |
 | [AddListItem (2 overloads)](#uid-a5742234e0) | Adds a new empty list item to the current list. |
-| [AddParagraph (3 overloads)](#uid-fe4723b0ad) | Adds a new empty paragraph. |
+| [AddParagraph (3 overloads)](#uid-fe4723b0ad) | 添加一个新的空段落。 |
 | [AddSection](#uid-e919d305dc) | 暂无摘要。 |
 | [AddTableCell](#uid-bd686955f5) | Adds a table cell with the specified text. |
 | [AddText](#uid-5214197cca) | 向当前段落添加文本。 |
@@ -72,17 +72,17 @@ public class FlowDocumentBuilder
 | [Build](#uid-185ce01b88) | Builds the document and creates its backing store, so the content the builder staged is live when the caller receives it. |
 | [Create](#uid-8d8952c156) | Creates a new [FlowDocumentBuilder](xref:Avalonia.Controls.Documents.FlowDocumentBuilder). |
 | [EndList](#uid-bd2c9b4570) | Ends the current list and restores the parent list if nested. |
-| [EndTable](#uid-09d350cd63) | Ends the current table. |
-| [EndTableCell](#uid-d371a092cd) | Ends the current table cell. |
-| [EndTableRow](#uid-8f2585dc88) | Ends the current table row. |
+| [EndTable](#uid-09d350cd63) | 结束当前表格。 |
+| [EndTableCell](#uid-d371a092cd) | 结束当前表格单元格。 |
+| [EndTableRow](#uid-8f2585dc88) | 结束当前表格行。 |
 | [GetDocument](#uid-dbb89b8626) | Gets the document without initializing its [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument). |
 | [SetTableCellBackground](#uid-a6644a3ed0) | Sets the background color of the current table cell. |
 | [SetTableColumns](#uid-8c0b8946a9) | 暂无摘要。 |
 | [StartList](#uid-5ba9a38442) | Starts a new list with the specified marker style. |
 | [StartNestedList](#uid-5214604bef) | Starts a nested list inside the current list item. |
-| [StartTable](#uid-0577a50a1f) | Starts a new table. |
-| [StartTableCell](#uid-7e80fac71c) | Starts a new table cell. |
-| [StartTableRow](#uid-11c2c85531) | Starts a new table row. |
+| [StartTable](#uid-0577a50a1f) | 开始一个新表格。 |
+| [StartTableCell](#uid-7e80fac71c) | 开始一个新的表格单元格。 |
+| [StartTableRow](#uid-11c2c85531) | 开始新的一行表格行。 |
 
 <section className="apiref-page__member-entry">
 
@@ -240,7 +240,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddListItem(string text)
 
 #### AddParagraph 方法 {#addparagraph-method}
 
-Adds a new empty paragraph.
+添加一个新的空段落。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddParagraph()
@@ -461,7 +461,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder EndList()
 
 ### EndTable 方法 {#endtable-method}
 
-Ends the current table.
+结束当前表格。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder EndTable()
@@ -480,7 +480,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder EndTable()
 
 ### EndTableCell 方法 {#endtablecell-method}
 
-Ends the current table cell.
+结束当前表格单元格。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder EndTableCell()
@@ -499,7 +499,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder EndTableCell()
 
 ### EndTableRow 方法 {#endtablerow-method}
 
-Ends the current table row.
+结束当前表格行。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder EndTableRow()
@@ -644,7 +644,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartNestedList(Avalonia.
 
 ### StartTable 方法 {#starttable-method}
 
-Starts a new table.
+开始一个新表格。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartTable()
@@ -663,7 +663,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartTable()
 
 ### StartTableCell 方法 {#starttablecell-method}
 
-Starts a new table cell.
+开始一个新的表格单元格。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartTableCell()
@@ -682,7 +682,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder StartTableCell()
 
 ### StartTableRow 方法 {#starttablerow-method}
 
-Starts a new table row.
+开始新的一行表格行。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder StartTableRow()

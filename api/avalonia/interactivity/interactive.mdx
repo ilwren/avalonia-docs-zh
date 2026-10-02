@@ -104,7 +104,7 @@ public Interactive()
 | [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Measure](../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [RaiseEvent](#uid-d6aba452e6) | Raises a routed event. |
+| [RaiseEvent](#uid-d6aba452e6) | 抛出一个路由事件。 |
 | [RemoveHandler（2 个重载）](#uid-456e485be9) | Removes a handler for the specified routed event. |
 | [Render](../visual.mdx#uid-615917604b) | 将该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。继承自 [Visual](../visual.mdx)。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -134,12 +134,12 @@ public void AddHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delegate 
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
-The routed event.
+该路由事件。
 
 
 `handler` Delegate
 
-The handler.
+该处理程序。
 
 
 `routes` [Avalonia.Interactivity.RoutingStrategies](xref:Avalonia.Interactivity.RoutingStrategies)
@@ -191,7 +191,7 @@ public void AddHandler<TEventArgs>(Avalonia.Interactivity.RoutedEvent<TEventArgs
 
 ### RaiseEvent 方法 {#raiseevent-method}
 
-Raises a routed event.
+抛出一个路由事件。
 
 ```csharp
 public void RaiseEvent(Avalonia.Interactivity.RoutedEventArgs e)
@@ -226,12 +226,12 @@ public void RemoveHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delega
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
-The routed event.
+该路由事件。
 
 
 `handler` Delegate
 
-The handler.
+该处理程序。
 
 
 </section>

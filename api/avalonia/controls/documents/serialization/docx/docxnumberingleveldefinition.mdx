@@ -155,7 +155,7 @@ string
 | [HangingIndentTwips](#uid-1a0c9e0626) | Hanging indent in twips. |
 | [Justification](#uid-a8639d5a31) | Paragraph justification value for this level (left, right, center, both, ...). |
 | [LeftIndentTwips](#uid-a9c1961556) | Left indent in twips. |
-| [Level](#uid-cc35fec409) | Level index (0-based). |
+| [Level](#uid-cc35fec409) | 层级索引（从 0 开始）。 |
 | [MarkerJustification](#uid-69a6593105) | Marker justification for this level (w:lvlJc): how the number/bullet aligns within its column — "left" (default) or "right" (as Word uses for roman-numeral levels). |
 | [MarkerStyle](#uid-1a7fa61ac1) | List marker style mapped from w:numFmt. |
 | [RightIndentTwips](#uid-708b41a1f2) | Right indent in twips. |
@@ -223,7 +223,7 @@ public Nullable<int> LeftIndentTwips { get; set; }
 
 ### Level 属性 {#level-property}
 
-Level index (0-based).
+层级索引（从 0 开始）。
 
 ```csharp
 public int Level { get; set; }

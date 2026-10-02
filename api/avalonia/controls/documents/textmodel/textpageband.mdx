@@ -148,7 +148,7 @@ public TextPageBand(Guid id, Avalonia.Controls.Documents.TextModel.TextDocument 
 
 | 名称 | 说明 |
 | --- | --- |
-| [Document](#uid-c28d6caaa5) | The band's content. |
+| [Document](#uid-c28d6caaa5) | 该带状区域的内容。 |
 | [Id](#uid-97ae960624) | The band's identity, kept through snapshots and clones: what a section's references name. |
 | [Name](#uid-0a46247550) | The band's name, when the source format named it; null otherwise. Formats that reference bands by name rather than by identity write it back on save, so a document loaded and saved keeps the names it arrived with. |
 | [Owner](#uid-7a91ed9807) | The document that owns the band, null while it is unowned. |
@@ -161,7 +161,7 @@ public TextPageBand(Guid id, Avalonia.Controls.Documents.TextModel.TextDocument 
 
 ### Document 属性 {#document-property}
 
-The band's content.
+该带状区域的内容。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument Document { get; set; }
