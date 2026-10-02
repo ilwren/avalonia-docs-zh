@@ -89,21 +89,21 @@ public Vector3D(double X, double Y, double Z)
 | 名称 | 说明 |
 | --- | --- |
 | [Abs](#uid-fc1af86743) | Returns a vector whose elements are the absolute values of each of the specified vector's elements. |
-| [Add](#uid-ed5e0e177b) | Adds the second to the first vector |
+| [Add](#uid-ed5e0e177b) | 把第二个向量加到第一个向量上 |
 | [Clamp](#uid-0467b800d3) | Restricts a vector between a minimum and a maximum value. |
 | [Deconstruct](#uid-803792bb97) | 暂无摘要。 |
 | [Distance](#uid-ccc54c032e) | 计算给定两点之间的欧几里得距离。 |
 | [DistanceSquared](#uid-4c80d659ae) | Computes the squared Euclidean distance between the two given points. |
-| [Divide (2 overloads)](#uid-a2d8f86330) | Divides the first vector by the second. |
+| [Divide (2 overloads)](#uid-a2d8f86330) | 用第二个向量去除第一个向量。 |
 | [Dot](#uid-7cbc06f210) | Calculates the dot product of two vectors. |
 | [Equals（2 个重载）](#uid-be9039705b) | 暂无摘要。 |
 | [GetHashCode](#uid-05d10e9f04) | 暂无摘要。 |
 | [Max](#uid-9f08821f68) | Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors |
 | [Min](#uid-3b5021a75f) | Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors |
-| [Multiply (2 overloads)](#uid-ca8b2dd3f3) | Multiplies the first vector by the second. |
-| [Normalize](#uid-561aeb3cee) | Returns a normalized version of this vector. |
+| [Multiply (2 overloads)](#uid-ca8b2dd3f3) | 用第一个向量乘以第二个向量。 |
+| [Normalize](#uid-561aeb3cee) | 返回该向量的归一化形式。 |
 | [Parse](#uid-7c201400f8) | 解析 [Avalonia.Vector](xref:Avalonia.Vector) 字符串。 |
-| [Substract](#uid-55e0a513e7) | Subtracts the second from the first vector |
+| [Substract](#uid-55e0a513e7) | 从第一个向量中减去第二个向量 |
 | [ToString](#uid-3a9153b9b1) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
@@ -131,7 +131,7 @@ public Avalonia.Vector3D Abs()
 
 ### Add 方法 {#add-method}
 
-Adds the second to the first vector
+把第二个向量加到第一个向量上
 
 ```csharp
 public Avalonia.Vector3D Add(Avalonia.Vector3D left, Avalonia.Vector3D right)
@@ -269,7 +269,7 @@ double
 
 #### Divide 方法 {#divide-method}
 
-Divides the first vector by the second.
+用第二个向量去除第一个向量。
 
 ```csharp
 public Avalonia.Vector3D Divide(Avalonia.Vector3D left, Avalonia.Vector3D right)
@@ -473,7 +473,7 @@ public Avalonia.Vector3D Min(Avalonia.Vector3D left, Avalonia.Vector3D right)
 
 #### Multiply 方法 {#multiply-method}
 
-Multiplies the first vector by the second.
+用第一个向量乘以第二个向量。
 
 ```csharp
 public Avalonia.Vector3D Multiply(Avalonia.Vector3D left, Avalonia.Vector3D right)
@@ -527,7 +527,7 @@ public Avalonia.Vector3D Multiply(Avalonia.Vector3D left, double right)
 
 ### Normalize 方法 {#normalize-method}
 
-Returns a normalized version of this vector.
+返回该向量的归一化形式。
 
 ```csharp
 public Avalonia.Vector3D Normalize(Avalonia.Vector3D value)
@@ -579,7 +579,7 @@ The [Avalonia.Vector3D](xref:Avalonia.Vector3D).
 
 ### Substract 方法 {#substract-method}
 
-Subtracts the second from the first vector
+从第一个向量中减去第二个向量
 
 ```csharp
 public Avalonia.Vector3D Substract(Avalonia.Vector3D left, Avalonia.Vector3D right)

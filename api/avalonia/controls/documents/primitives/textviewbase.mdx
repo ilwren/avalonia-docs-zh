@@ -124,13 +124,13 @@ public TextViewBase()
 | [GetIsHoldWithMouseEnabled](../../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](../../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../../primitives/templatedcontrol.mdx)。 |
 | [GetLineFromPosition](#uid-82e6936504) | Gets the line containing the specified position. |
-| [GetNextLine](#uid-638192c88b) | Gets the next line after the specified line. |
+| [GetNextLine](#uid-638192c88b) | 获取指定行之后的下一行。 |
 | [GetPositionAtLineEnd](#uid-c13929f0ea) | Gets the position at the end of the line containing the specified position. |
 | [GetPositionAtLineStart](#uid-dc09cf92fe) | Gets the position at the start of the line containing the specified position. |
 | [GetPositionAtLineX](#uid-9a6aef4836) | Returns the text position on `line` closest to the specified X coordinate. The result is guaranteed to stay on `line`; it never crosses into a neighbouring line or block, regardless of how far `x` lies outside the line's horizontal bounds. |
 | [GetPreviousLine](#uid-4ffd2bc4f4) | Gets the previous line before the specified line. |
 | [GetRectangleFromTextPosition](#uid-70aa84398d) | Gets the bounding rectangle for a character at the specified position. |
-| [GetTextPositionFromPoint](#uid-f67cf57d54) | Gets the text position from a screen point. |
+| [GetTextPositionFromPoint](#uid-f67cf57d54) | 由屏幕坐标点取得对应的文本位置。 |
 | [GetValue（3 个重载）](../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../avaloniaobject.mdx)。 |
 | [GetVisibleLineAtOrAfter](#uid-ac58a95270) | Gets the first visible line at or after the specified position. |
 | [InvalidateArrange](../../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
@@ -207,7 +207,7 @@ The line containing the position, or null if the position is not visible.
 
 ### GetNextLine 方法 {#getnextline-method}
 
-Gets the next line after the specified line.
+获取指定行之后的下一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetNextLine(Avalonia.Controls.Documents.Primitives.ITextLine currentLine)
@@ -401,7 +401,7 @@ Check [Avalonia.Controls.Documents.Primitives.ITextView.IsLayoutValid](xref:Aval
 
 ### GetTextPositionFromPoint 方法 {#gettextpositionfrompoint-method}
 
-Gets the text position from a screen point.
+由屏幕坐标点取得对应的文本位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer GetTextPositionFromPoint(Avalonia.Point point, bool snapToText)

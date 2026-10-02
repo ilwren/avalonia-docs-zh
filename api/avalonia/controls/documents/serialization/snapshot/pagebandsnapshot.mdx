@@ -100,7 +100,7 @@ public PageBandSnapshot(string name, Avalonia.Controls.Documents.Serialization.S
 | [Content](#uid-2ffe5c3e5f) | 该带状区域的内容。 |
 | [Id](#uid-cde6efdf90) | The band's identity: what a section's references name, kept by the restored band. |
 | [Name](#uid-dbcb3d369a) | The band's name, when the source format named it; null otherwise. |
-| [Role](#uid-00e4518c3d) | Whether the band is a header or a footer. |
+| [Role](#uid-00e4518c3d) | 该带状区域是页眉还是页脚。 |
 | [Rule](#uid-7fc1db60c3) | Which pages the band claims by itself. |
 
 <section className="apiref-page__member-entry">
@@ -151,7 +151,7 @@ public string Name { get; set; }
 
 ### Role 属性 {#role-property}
 
-Whether the band is a header or a footer.
+该带状区域是页眉还是页脚。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBandRole Role { get; set; }

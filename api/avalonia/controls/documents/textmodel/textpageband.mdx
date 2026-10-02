@@ -152,7 +152,7 @@ public TextPageBand(Guid id, Avalonia.Controls.Documents.TextModel.TextDocument 
 | [Id](#uid-97ae960624) | The band's identity, kept through snapshots and clones: what a section's references name. |
 | [Name](#uid-0a46247550) | The band's name, when the source format named it; null otherwise. Formats that reference bands by name rather than by identity write it back on save, so a document loaded and saved keeps the names it arrived with. |
 | [Owner](#uid-7a91ed9807) | The document that owns the band, null while it is unowned. |
-| [Role](#uid-8fd810da93) | Whether the band is a header or a footer. |
+| [Role](#uid-8fd810da93) | 该带状区域是页眉还是页脚。 |
 | [Rule](#uid-502d1f43f7) | Which pages the band claims by itself; see [Avalonia.Controls.Documents.PageBandRule](xref:Avalonia.Controls.Documents.PageBandRule). |
 
 <section className="apiref-page__member-entry">
@@ -219,7 +219,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument Owner { get; set; }
 
 ### Role 属性 {#role-property}
 
-Whether the band is a header or a footer.
+该带状区域是页眉还是页脚。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBandRole Role { get; set; }

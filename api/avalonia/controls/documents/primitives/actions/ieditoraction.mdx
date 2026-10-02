@@ -62,7 +62,7 @@ Actions are typically singletons accessed via the [Avalonia.Controls.Documents.P
 | --- | --- |
 | [CanExecute](#uid-7c2846e8e1) | 获取该操作当前是否可执行。 |
 | [Execute](#uid-069802ca26) | 同步执行该操作。 |
-| [ExecuteAsync](#uid-3eb6289632) | Executes the action asynchronously. |
+| [ExecuteAsync](#uid-3eb6289632) | 异步执行该操作。 |
 | [GetState](#uid-096b254a52) | 获取该操作的当前状态。 |
 
 <section className="apiref-page__member-entry">
@@ -130,7 +130,7 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 ### ExecuteAsync 方法 {#executeasync-method}
 
-Executes the action asynchronously.
+异步执行该操作。
 
 ```csharp
 public System.Threading.Tasks.Task ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)

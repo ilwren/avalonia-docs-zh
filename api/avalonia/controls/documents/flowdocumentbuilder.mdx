@@ -60,9 +60,9 @@ public class FlowDocumentBuilder
 | 名称 | 说明 |
 | --- | --- |
 | [AddBold](#uid-cfc17574c3) | 向当前段落添加粗体文本。 |
-| [AddHyperlink](#uid-4cf5e990b3) | Adds a hyperlink to the current paragraph. |
+| [AddHyperlink](#uid-4cf5e990b3) | 向当前段落添加一个超链接。 |
 | [AddInline](#uid-d5f9c27ab1) | Adds an inline element to the current paragraph. |
-| [AddItalic](#uid-aceba1bdc3) | Adds italic text to the current paragraph. |
+| [AddItalic](#uid-aceba1bdc3) | 向当前段落添加斜体文本。 |
 | [AddListItem (2 overloads)](#uid-a5742234e0) | Adds a new empty list item to the current list. |
 | [AddParagraph (3 overloads)](#uid-fe4723b0ad) | 添加一个新的空段落。 |
 | [AddSection](#uid-e919d305dc) | 暂无摘要。 |
@@ -114,7 +114,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddBold(string text)
 
 ### AddHyperlink 方法 {#addhyperlink-method}
 
-Adds a hyperlink to the current paragraph.
+向当前段落添加一个超链接。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddHyperlink(string text, Uri navigateUri)
@@ -165,7 +165,7 @@ public Avalonia.Controls.Documents.FlowDocumentBuilder AddInline(Avalonia.Contro
 
 ### AddItalic 方法 {#additalic-method}
 
-Adds italic text to the current paragraph.
+向当前段落添加斜体文本。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocumentBuilder AddItalic(string text)

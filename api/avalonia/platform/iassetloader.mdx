@@ -57,7 +57,7 @@ public interface IAssetLoader
 | 名称 | 说明 |
 | --- | --- |
 | [Exists](#uid-7b66d5fcd8) | 检查指定 URI 的资产是否存在。 |
-| [GetAssembly](#uid-a9cbf6df3d) | Extracts assembly information from URI |
+| [GetAssembly](#uid-a9cbf6df3d) | 从 URI 中提取程序集信息 |
 | [GetAssets](#uid-124a555456) | 获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。 |
 | [InvalidateAssemblyCache (2 overloads)](#uid-adac6efb6a) | Removes all assemblies from the cache. |
 | [Open](#uid-1f12830fe4) | 按请求的 URI 打开资产。 |
@@ -103,7 +103,7 @@ True if the asset could be found; otherwise false.
 
 ### GetAssembly 方法 {#getassembly-method}
 
-Extracts assembly information from URI
+从 URI 中提取程序集信息
 
 ```csharp
 public System.Reflection.Assembly GetAssembly(Uri uri, Uri baseUri)

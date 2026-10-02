@@ -57,7 +57,7 @@ public interface ITextLine
 | [ContainingElement](#uid-1101022e19) | Gets the node whose content this line belongs to, if any. Selection rendering and vertical navigation group lines by it, so a line that reports none is skipped by both. |
 | [EndPosition](#uid-b66caf3cd4) | Gets the end position of this line as a lightweight value type. |
 | [HasLineBreak](#uid-fb809b2c64) | Gets whether this line ends with a hard line break. |
-| [Height](#uid-182cd43021) | Gets the height of this line. |
+| [Height](#uid-182cd43021) | 获取该行的高度。 |
 | [Length](#uid-cc5ea53799) | Gets the character length of text in this line. |
 | [StartPosition](#uid-bd3a8aa765) | Gets the start position of this line as a lightweight value type. |
 | [Width](#uid-dd50ef7964) | 获取该行的宽度。 |
@@ -146,7 +146,7 @@ public bool HasLineBreak { get; set; }
 
 ### Height 属性 {#height-property}
 
-Gets the height of this line.
+获取该行的高度。
 
 ```csharp
 public double Height { get; set; }

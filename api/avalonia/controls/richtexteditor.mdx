@@ -597,7 +597,7 @@ If the component is currently attached, it receives an
 | [ShowPageBandsInContinuousLayout](#uid-753c8e21b6) | Gets or sets whether [Avalonia.Controls.DocumentViewMode.Continuous](xref:Avalonia.Controls.DocumentViewMode.Continuous) shows the document's running header above the body and its running footer below it, editable in place like the bands on the sheets. Off by default: the continuous view is a draft view, and the band commands switch to [Avalonia.Controls.DocumentViewMode.PageLayout](xref:Avalonia.Controls.DocumentViewMode.PageLayout) to edit a band, as Word switches to print layout. First-page and even-page bands and a section's own bands stay page-layout only, and a page-number field shows its cached result here. |
 | [ShowPageBounds](#uid-5790aa237a) | Gets or sets whether page boundary indicators are rendered on the underlying [Avalonia.Controls.Documents.Primitives.InteractiveTextView](xref:Avalonia.Controls.Documents.Primitives.InteractiveTextView). |
 | [ShowSelectionFlyout](#uid-7f5d53deb7) | Gets or sets whether the selection mini-bar flyout is shown when text is selected. |
-| [ShowToolbar](#uid-2e74c114f1) | Gets or sets whether the toolbar is visible. |
+| [ShowToolbar](#uid-2e74c114f1) | 获取或设置工具栏是否可见。 |
 | [StyleKey](../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Styles](../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../styledelement.mdx)。 |
 | [TabIndex](../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -991,7 +991,7 @@ Default is true. Set to false to hide the selection flyout.
 
 ### ShowToolbar 属性 {#showtoolbar-property}
 
-Gets or sets whether the toolbar is visible.
+获取或设置工具栏是否可见。
 
 ```csharp
 public bool ShowToolbar { get; set; }
@@ -1540,13 +1540,13 @@ public Avalonia.StyledProperty<Avalonia.Controls.DocumentViewMode> ViewModePrope
 | [ActualThemeVariantChanged](../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
-| [ContentChanged](#uid-02416e8976) | Occurs when the document content changes. |
+| [ContentChanged](#uid-02416e8976) | 文档内容发生变化时发生。 |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [DataContextChanged](../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [DetachedFromLogicalTree](../styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [DetachedFromVisualTree](../visual.mdx#uid-3f64dafb1c) | 当控件从带根的视觉树中分离时引发。继承自 [Visual](../visual.mdx)。 |
-| [DocumentChanged](#uid-fbc6bf7a9a) | Occurs when the document is replaced. |
+| [DocumentChanged](#uid-fbc6bf7a9a) | 文档被替换时发生。 |
 | [DoubleTapped](../input/inputelement.mdx#uid-ad13083e0c) | 当用户在同一点短暂接触并松开两次、且位移不明显时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [EffectiveViewportChanged](../layout/layoutable.mdx#uid-1922b89fa5) | 当元素的有效视口发生变化时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [GettingFocus](../input/inputelement.mdx#uid-4d054164ee) | 在控件即将获得焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -1611,7 +1611,7 @@ public event EventHandler ActiveDocumentChanged
 
 ### ContentChanged 事件 {#contentchanged-event}
 
-Occurs when the document content changes.
+文档内容发生变化时发生。
 
 ```csharp
 public event EventHandler ContentChanged
@@ -1633,7 +1633,7 @@ no-op change blocks (opened without edits) are suppressed.
 
 ### DocumentChanged 事件 {#documentchanged-event}
 
-Occurs when the document is replaced.
+文档被替换时发生。
 
 ```csharp
 public event EventHandler DocumentChanged

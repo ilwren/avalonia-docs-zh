@@ -224,7 +224,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ShowLabels](#uid-8fbfa53d89) | 获取或设置是否显示标签。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
-| [StartAngle](#uid-cf9e60b95d) | Gets or sets the starting angle in degrees. |
+| [StartAngle](#uid-cf9e60b95d) | 获取或设置起始角度，以度为单位。 |
 | [Stroke](#uid-8df079f7e4) | 获取或设置描边画刷。 |
 | [StrokeThickness](#uid-79e3795439) | 获取或设置描边粗细。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -305,7 +305,7 @@ public bool ShowLabels { get; set; }
 
 ### StartAngle 属性 {#startangle-property}
 
-Gets or sets the starting angle in degrees.
+获取或设置起始角度，以度为单位。
 
 ```csharp
 public double StartAngle { get; set; }

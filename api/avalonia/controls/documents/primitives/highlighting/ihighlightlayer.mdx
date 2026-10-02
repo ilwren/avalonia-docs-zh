@@ -52,7 +52,7 @@ public interface IHighlightLayer
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetRegions](#uid-228b4723bb) | Gets all highlight regions in this layer. |
+| [GetRegions](#uid-228b4723bb) | 获取该图层中的所有高亮区域。 |
 | [GetRegionsInRange](#uid-d7382d8400) | Gets highlight regions that intersect with the specified range. |
 | [Render](#uid-6b4228ea88) | 渲染该图层。 |
 
@@ -62,7 +62,7 @@ public interface IHighlightLayer
 
 ### GetRegions 方法 {#getregions-method}
 
-Gets all highlight regions in this layer.
+获取该图层中的所有高亮区域。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion> GetRegions()
@@ -192,7 +192,7 @@ public int ZIndex { get; set; }
 
 | 名称 | 说明 |
 | --- | --- |
-| [RegionsChanged](#uid-8d4d6676be) | Event raised when regions change. |
+| [RegionsChanged](#uid-8d4d6676be) | 区域发生变化时抛出的事件。 |
 
 <section className="apiref-page__member-entry">
 
@@ -200,7 +200,7 @@ public int ZIndex { get; set; }
 
 ### RegionsChanged 事件 {#regionschanged-event}
 
-Event raised when regions change.
+区域发生变化时抛出的事件。
 
 ```csharp
 public event EventHandler RegionsChanged

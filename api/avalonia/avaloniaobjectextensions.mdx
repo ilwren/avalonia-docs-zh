@@ -65,8 +65,8 @@ public class AvaloniaObjectExtensions
 | [AddClassHandler (2 overloads)](#uid-12da34fda2) | 暂无摘要。 |
 | [Bind (2 overloads)](#uid-d8548d79f1) | 暂无摘要。 |
 | [GetBaseValue (2 overloads)](#uid-a44baab4f1) | Gets an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) base value. |
-| [GetBindingObservable (4 overloads)](#uid-5976ecb078) | Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). |
-| [GetObservable (4 overloads)](#uid-0707411a55) | Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). |
+| [GetBindingObservable (4 overloads)](#uid-5976ecb078) | 获取某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的可观察序列。 |
+| [GetObservable (4 overloads)](#uid-0707411a55) | 获取某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的可观察序列。 |
 | [GetPropertyChangedObservable](#uid-ef3b80a9cc) | Gets an observable that listens for property changed events for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). |
 | [GetValue](#uid-7a26ab89ee) | 暂无摘要。 |
 | [ToBinding](#uid-c28a43eaea) | 暂无摘要。 |
@@ -297,7 +297,7 @@ Avalonia.Data.Optional&lt;T&gt;&lt;T&gt;
 
 #### GetBindingObservable 方法 {#getbindingobservable-method}
 
-Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty).
+获取某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的可观察序列。
 
 ```csharp
 public IObservable<Avalonia.Data.BindingValue<T><object>> GetBindingObservable(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty property)
@@ -438,7 +438,7 @@ IObservable&lt;Avalonia.Data.BindingValue&lt;T&gt;&lt;TResult&gt;&gt;
 
 #### GetObservable 方法 {#getobservable-method}
 
-Gets an observable for an [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty).
+获取某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的可观察序列。
 
 ```csharp
 public IObservable<object> GetObservable(Avalonia.AvaloniaObject o, Avalonia.AvaloniaProperty property)

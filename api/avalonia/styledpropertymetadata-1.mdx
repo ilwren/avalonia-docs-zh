@@ -156,7 +156,7 @@ The property to which the metadata is being applied.
 | --- | --- |
 | [CoerceValue](#uid-a439fc7f25) | Gets the value coercion callback, if any. |
 | [DefaultBindingMode](avaloniapropertymetadata.mdx#uid-b6d03b8752) | Gets the default binding mode for the property. Inherited from [AvaloniaPropertyMetadata](avaloniapropertymetadata.mdx). |
-| [DefaultValue](#uid-2232ffa60f) | Gets the default value for the property. |
+| [DefaultValue](#uid-2232ffa60f) | 获取该属性的默认值。 |
 | [EnableDataValidation](avaloniapropertymetadata.mdx#uid-aa782b0da1) | Gets a value indicating whether the property is interested in data validation. Inherited from [AvaloniaPropertyMetadata](avaloniapropertymetadata.mdx). |
 | [IsReadOnly](avaloniapropertymetadata.mdx#uid-8222a9d293) | Gets whether this instance is read-only and can't be modified. Inherited from [AvaloniaPropertyMetadata](avaloniapropertymetadata.mdx). |
 
@@ -180,7 +180,7 @@ public Func<Avalonia.AvaloniaObject, TValue, TValue> CoerceValue { get; set; }
 
 ### DefaultValue 属性 {#defaultvalue-property}
 
-Gets the default value for the property.
+获取该属性的默认值。
 
 ```csharp
 public TValue DefaultValue { get; set; }

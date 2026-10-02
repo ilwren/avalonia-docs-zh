@@ -50,10 +50,10 @@ public interface IStorageProvider
 
 | 名称 | 说明 |
 | --- | --- |
-| [OpenFileBookmarkAsync](#uid-0c31116322) | Open [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile) from the bookmark ID. |
+| [OpenFileBookmarkAsync](#uid-0c31116322) | 按书签 ID 打开 [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile)。 |
 | [OpenFilePickerAsync](#uid-22907f4437) | Opens the file picker dialog. |
 | [OpenFilePickerWithResultAsync](#uid-726f9331ff) | Opens the file picker dialog and returns additional information about the result. |
-| [OpenFolderBookmarkAsync](#uid-2edc4c9105) | Open [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder) from the bookmark ID. |
+| [OpenFolderBookmarkAsync](#uid-2edc4c9105) | 按书签 ID 打开 [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder)。 |
 | [OpenFolderPickerAsync](#uid-6bb27fee7f) | Opens the folder picker dialog. |
 | [SaveFilePickerAsync](#uid-4e68fc0b1f) | Opens the save file picker dialog. |
 | [SaveFilePickerWithResultAsync](#uid-1a9bca9667) | Opens the save file picker dialog and returns additional information about the result. |
@@ -67,7 +67,7 @@ public interface IStorageProvider
 
 ### OpenFileBookmarkAsync 方法 {#openfilebookmarkasync-method}
 
-Open [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile) from the bookmark ID.
+按书签 ID 打开 [Avalonia.Platform.Storage.IStorageBookmarkFile](xref:Avalonia.Platform.Storage.IStorageBookmarkFile)。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageBookmarkFile> OpenFileBookmarkAsync(string bookmark)
@@ -147,7 +147,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.OpenFilePickerResult](
 
 ### OpenFolderBookmarkAsync 方法 {#openfolderbookmarkasync-method}
 
-Open [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder) from the bookmark ID.
+按书签 ID 打开 [Avalonia.Platform.Storage.IStorageBookmarkFolder](xref:Avalonia.Platform.Storage.IStorageBookmarkFolder)。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageBookmarkFolder> OpenFolderBookmarkAsync(string bookmark)

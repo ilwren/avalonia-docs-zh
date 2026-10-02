@@ -77,7 +77,7 @@ public RuntimeXamlLoaderConfiguration()
 | [CreateSourceInfo](#uid-d4d9a1c382) | When enabled, the XAML compiler embeds SourceInfo metadata (file path, line, and column) into generated code. Default is 'false'. |
 | [DesignMode](#uid-e3929fafda) | Indicates whether the XAML is being loaded in design mode. Default is 'false'. |
 | [DiagnosticHandler](#uid-5bfabbf87e) | XAML diagnostics handler. |
-| [LocalAssembly](#uid-aa3a33f9ca) | Default assembly for clr-namespace:. |
+| [LocalAssembly](#uid-aa3a33f9ca) | clr-namespace: 所用的默认程序集。 |
 | [UseCompiledBindingsByDefault](#uid-0f0a7eda8b) | Defines is [CompiledBinding](xref:Avalonia.Data.CompiledBinding) should be used by default. Default is 'false'. |
 
 <section className="apiref-page__member-entry">
@@ -136,7 +136,7 @@ Note, severity cannot be set lower than minimal for specific diagnostic.
 
 ### LocalAssembly 属性 {#localassembly-property}
 
-Default assembly for clr-namespace:.
+clr-namespace: 所用的默认程序集。
 
 ```csharp
 public System.Reflection.Assembly LocalAssembly { get; set; }

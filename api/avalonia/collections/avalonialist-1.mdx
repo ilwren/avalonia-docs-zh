@@ -168,7 +168,7 @@ The initial items for the collection.
 | [Insert](#uid-8cd746cd54) | Inserts an item at the specified index. |
 | [InsertRange](#uid-c0a5e1213f) | 暂无摘要。 |
 | [Move](#uid-e45f94fdd0) | 把某一项移到新的索引处。 |
-| [MoveRange](#uid-d5c954bee9) | Moves multiple items to a new index. |
+| [MoveRange](#uid-d5c954bee9) | 把多个项移到新的索引处。 |
 | [Remove](#uid-867c926626) | Removes an item from the collection. |
 | [RemoveAll](#uid-4fefc41f09) | 暂无摘要。 |
 | [RemoveAt](#uid-a51b185a94) | Removes the item at the specified index. |
@@ -455,7 +455,7 @@ The index to move the item to.
 
 ### MoveRange 方法 {#moverange-method}
 
-Moves multiple items to a new index.
+把多个项移到新的索引处。
 
 ```csharp
 public void MoveRange(int oldIndex, int count, int newIndex)
@@ -577,7 +577,7 @@ The number of items to remove.
 | 名称 | 说明 |
 | --- | --- |
 | [Capacity](#uid-4a853a2f80) | Gets or sets the total number of elements the internal data structure can hold without resizing. |
-| [Count](#uid-b41fd65fb1) | Gets the number of items in the collection. |
+| [Count](#uid-b41fd65fb1) | 获取集合中的项数。 |
 | [Item](#uid-1d41620245) | 暂无摘要。 |
 | [ResetBehavior](#uid-518fc92cf0) | Gets or sets the reset behavior of the list. |
 | [Validate](#uid-71ccb4ef1d) | Gets or sets a validation routine that can be used to validate items before they are added. |
@@ -602,7 +602,7 @@ public int Capacity { get; set; }
 
 ### Count 属性 {#count-property}
 
-Gets the number of items in the collection.
+获取集合中的项数。
 
 ```csharp
 public int Count { get; set; }

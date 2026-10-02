@@ -262,8 +262,8 @@ the document area but excludes UI elements like toolbars.
 | 名称 | 说明 |
 | --- | --- |
 | [ActiveDocumentChanged](#uid-f3522e207c) | Occurs when [Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument](xref:Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument) changes: the selection entered a page band or a footnote, or returned to the main document. A host without nested documents never raises it, but must still declare it - a component that follows the caret across documents has no other way to learn of the move, because a pure activation carries no selection change. |
-| [ContentChanged](#uid-78f3ed8b4a) | Occurs when the document content changes. |
-| [DocumentChanged](#uid-2bf45a283a) | Occurs when the document is replaced. |
+| [ContentChanged](#uid-78f3ed8b4a) | 文档内容发生变化时发生。 |
+| [DocumentChanged](#uid-2bf45a283a) | 文档被替换时发生。 |
 | [SelectionChanged](#uid-d2145c6272) | 选择发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
@@ -295,7 +295,7 @@ host has no nested documents to move between, so there is nothing for it to rais
 
 ### ContentChanged 事件 {#contentchanged-event}
 
-Occurs when the document content changes.
+文档内容发生变化时发生。
 
 ```csharp
 public event EventHandler ContentChanged
@@ -309,7 +309,7 @@ public event EventHandler ContentChanged
 
 ### DocumentChanged 事件 {#documentchanged-event}
 
-Occurs when the document is replaced.
+文档被替换时发生。
 
 ```csharp
 public event EventHandler DocumentChanged

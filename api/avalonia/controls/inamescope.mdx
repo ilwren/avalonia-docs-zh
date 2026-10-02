@@ -59,7 +59,7 @@ public interface INameScope
 | [Complete](#uid-dbae865813) | Marks the name scope as completed, no further registrations will be allowed |
 | [Find](#uid-6d3e11c791) | Finds a named element in the name scope, returns immediately, doesn't traverse the name scope stack |
 | [FindAsync](#uid-0b5bb4d230) | Finds a named element in the name scope, waits for the scope to be completely populated before returning null Returned task is configured to run any continuations synchronously. |
-| [Register](#uid-0a39fc228f) | Registers an element in the name scope. |
+| [Register](#uid-0a39fc228f) | 把某个元素注册进名称作用域。 |
 
 <section className="apiref-page__member-entry">
 
@@ -138,7 +138,7 @@ The element, or null if the name was not found.
 
 ### Register 方法 {#register-method}
 
-Registers an element in the name scope.
+把某个元素注册进名称作用域。
 
 ```csharp
 public void Register(string name, object element)

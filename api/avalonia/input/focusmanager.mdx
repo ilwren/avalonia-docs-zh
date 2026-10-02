@@ -69,7 +69,7 @@ public class FocusManager
 | [FindLastFocusableElement (2 overloads)](#uid-570f89db7f) | Retrieves the last element that can receive focus. |
 | [FindNextElement](#uid-67d3ffd912) | Retrieves the element that should receive focus based on the specified navigation direction. |
 | [Focus](#uid-b3849d7e6b) | 让某个控件获得焦点。 |
-| [GetFocusedElement](#uid-4d67ddec7f) | Gets the currently focused [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement). |
+| [GetFocusedElement](#uid-4d67ddec7f) | 获取当前获得焦点的 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)。 |
 | [TryMoveFocus](#uid-034c19a98d) | Attempts to change focus from the element with focus to the next focusable element in the specified direction. |
 
 <span id="uid-bcea3c7c45"></span>
@@ -235,7 +235,7 @@ The control to focus.
 
 `method` [Avalonia.Input.NavigationMethod](xref:Avalonia.Input.NavigationMethod)
 
-The method by which focus was changed.
+焦点因何种方式发生变化。
 
 
 `keyModifiers` [Avalonia.Input.KeyModifiers](xref:Avalonia.Input.KeyModifiers)
@@ -266,7 +266,7 @@ When this method returns `false`, the focus may have been canceled or redirected
 
 ### GetFocusedElement 方法 {#getfocusedelement-method}
 
-Gets the currently focused [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement).
+获取当前获得焦点的 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)。
 
 ```csharp
 public Avalonia.Input.IInputElement GetFocusedElement()

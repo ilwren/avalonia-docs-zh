@@ -72,7 +72,7 @@ Derived classes should override [Avalonia.Controls.Documents.Primitives.Actions.
 | --- | --- |
 | [CanExecute](#uid-bbc60544cc) | 获取该操作当前是否可执行。 |
 | [Execute](#uid-c3008d9fa7) | 同步执行该操作。 |
-| [ExecuteAsync](#uid-6a0258eff0) | Executes the action asynchronously. |
+| [ExecuteAsync](#uid-6a0258eff0) | 异步执行该操作。 |
 | [GetState](#uid-e9737aed90) | 获取该操作的当前状态。 |
 
 <section className="apiref-page__member-entry">
@@ -140,7 +140,7 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 ### ExecuteAsync 方法 {#executeasync-method}
 
-Executes the action asynchronously.
+异步执行该操作。
 
 ```csharp
 public System.Threading.Tasks.Task ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)

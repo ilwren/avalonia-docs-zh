@@ -70,9 +70,9 @@ second implementation of the contract to exist.
 | [BeginUndoUnit](#uid-b6b29aac47) | 暂无摘要。 |
 | [Clear](#uid-25e8017caf) | 丢弃整个历史记录。 |
 | [Dispose](#uid-55dca3de7f) | 暂无摘要。 |
-| [Record](#uid-bed6fae961) | Records a unit directly onto the undo stack. |
+| [Record](#uid-bed6fae961) | 直接把一个单元记到撤销栈上。 |
 | [Redo](#uid-4158c5200a) | Redoes the most recently undone unit and returns it. |
-| [Undo](#uid-8842d461c7) | Undoes the most recent unit and returns it. |
+| [Undo](#uid-8842d461c7) | 撤销最近的一个单元并把它返回。 |
 
 <section className="apiref-page__member-entry">
 
@@ -131,7 +131,7 @@ public void Dispose()
 
 ### Record 方法 {#record-method}
 
-Records a unit directly onto the undo stack.
+直接把一个单元记到撤销栈上。
 
 ```csharp
 public void Record(Avalonia.Controls.Documents.Undo.IUndoUnit unit)
@@ -172,7 +172,7 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Redo()
 
 ### Undo 方法 {#undo-method}
 
-Undoes the most recent unit and returns it.
+撤销最近的一个单元并把它返回。
 
 ```csharp
 public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
@@ -189,10 +189,10 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
 
 | 名称 | 说明 |
 | --- | --- |
-| [CanRedo](#uid-f2d2c701e9) | Gets whether there is anything to redo. |
-| [CanUndo](#uid-8f4aff9147) | Gets whether there is anything to undo. |
+| [CanRedo](#uid-f2d2c701e9) | 获取是否还有可重做的内容。 |
+| [CanUndo](#uid-8f4aff9147) | 获取是否还有可撤销的内容。 |
 | [Instance](#uid-dfb6ef2900) | The single instance. |
-| [IsEnabled](#uid-62dd4eb853) | Gets or sets whether edits are recorded. |
+| [IsEnabled](#uid-62dd4eb853) | 获取或设置是否记录编辑。 |
 | [RedoUnits](#uid-dcdaefe28c) | The units that can be redone, most recent last. |
 | [UndoLimit](#uid-d5e3858fb0) | Gets or sets how many units the history keeps. |
 | [UndoUnits](#uid-580e9e1689) | The units that can be undone, most recent last. |
@@ -203,7 +203,7 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
 
 ### CanRedo 属性 {#canredo-property}
 
-Gets whether there is anything to redo.
+获取是否还有可重做的内容。
 
 ```csharp
 public bool CanRedo { get; set; }
@@ -217,7 +217,7 @@ public bool CanRedo { get; set; }
 
 ### CanUndo 属性 {#canundo-property}
 
-Gets whether there is anything to undo.
+获取是否还有可撤销的内容。
 
 ```csharp
 public bool CanUndo { get; set; }
@@ -245,7 +245,7 @@ public Avalonia.Controls.Documents.Undo.NullUndoManager Instance { get; set; }
 
 ### IsEnabled 属性 {#isenabled-property}
 
-Gets or sets whether edits are recorded.
+获取或设置是否记录编辑。
 
 ```csharp
 public bool IsEnabled { get; set; }

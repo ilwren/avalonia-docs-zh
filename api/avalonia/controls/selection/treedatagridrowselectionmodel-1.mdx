@@ -99,7 +99,7 @@ public TreeDataGridRowSelectionModel<TModel>(Avalonia.Controls.TreeDataGridSourc
 | 名称 | 说明 |
 | --- | --- |
 | [BatchUpdate](#uid-b429a7d5e5) | Creates a batch update operation that will defer selection change notifications until disposed. |
-| [BeginBatchUpdate](#uid-ed5f30f702) | Begins a batch update of the selection. |
+| [BeginBatchUpdate](#uid-ed5f30f702) | 开始对选择做一次批量更新。 |
 | [Clear](#uid-2f92e71c89) | 清除选区。 |
 | [Deselect](#uid-faf9452a6f) | Deselects an item by its index in the source data. |
 | [EndBatchUpdate](#uid-0bfd82da33) | Ends a batch update started by [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601.BeginBatchUpdate). |
@@ -143,7 +143,7 @@ calling [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.Begi
 
 ### BeginBatchUpdate 方法 {#beginbatchupdate-method}
 
-Begins a batch update of the selection.
+开始对选择做一次批量更新。
 
 ```csharp
 public void BeginBatchUpdate()
@@ -308,11 +308,11 @@ cleared first. This method does nothing when
 | 名称 | 说明 |
 | --- | --- |
 | [AnchorIndex](#uid-53c460df07) | Gets or sets the anchor index. |
-| [Count](#uid-8b55b5da6d) | Gets the number of selected items. |
+| [Count](#uid-8b55b5da6d) | 获取选中项的数量。 |
 | [IsCellSelectionModel](#uid-6a10385dfa) | 获取该模型是否为单元格级的选择模型。 |
 | [RangeAnchorIndex](#uid-d7d024ac17) | Gets or sets the range anchor index. |
 | [SelectedIndex](#uid-cdc1462ee3) | Gets or sets the selected index within the data. |
-| [SelectedIndexes](#uid-5951beb0b0) | Gets the indexes of the selected items. |
+| [SelectedIndexes](#uid-5951beb0b0) | 获取选中项的索引。 |
 | [SelectedItem](#uid-d03873e1f9) | Gets the currently selected item. |
 | [SelectedItems](#uid-51a5504eb2) | Gets a collection containing all selected items. |
 | [SingleSelect](#uid-c98ed464f3) | Gets or sets a value indicating whether only a single item can be selected at a time. |
@@ -350,7 +350,7 @@ Shift+Up then recomputes the range from the pivot 1 to the new end 2.
 
 ### Count 属性 {#count-property}
 
-Gets the number of selected items.
+获取选中项的数量。
 
 ```csharp
 public int Count { get; set; }
@@ -417,7 +417,7 @@ public Avalonia.Controls.IndexPath SelectedIndex { get; set; }
 
 ### SelectedIndexes 属性 {#selectedindexes-property}
 
-Gets the indexes of the selected items.
+获取选中项的索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> SelectedIndexes { get; set; }

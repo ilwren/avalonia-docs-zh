@@ -204,7 +204,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [KeyBindings](../../input/inputelement.mdx#uid-827a5420b2) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [LabelForeground](chartbase.mdx#uid-7ba97907ce) | 获取或设置坐标轴及图表级标签所用的画刷。若数据系列或批注自带标签画刷属性，则会在局部覆盖此设置。继承自 [ChartBase](chartbase.mdx)。 |
 | [LabelPath](#uid-bb293f9390) | 获取或设置标签所用的属性路径。 |
-| [LeftBrush](#uid-0d747d4738) | Gets or sets the brush for the left bars. |
+| [LeftBrush](#uid-0d747d4738) | 获取或设置左侧条形所用的画刷。 |
 | [LeftTitle](#uid-2d1fff4218) | Gets or sets the title for the left side. |
 | [LeftValuePath](#uid-4634aef49d) | Gets or sets the property path for the left values. |
 | [LegendAlignment](chartbase.mdx#uid-8d2828bd19) | 获取或设置图例的对齐方式。继承自 [ChartBase](chartbase.mdx)。 |
@@ -226,7 +226,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [RightBrush](#uid-91dd16f053) | Gets or sets the brush for the right bars. |
+| [RightBrush](#uid-91dd16f053) | 获取或设置右侧条形所用的画刷。 |
 | [RightTitle](#uid-0aa02026f3) | Gets or sets the title for the right side. |
 | [RightValuePath](#uid-b090885ac0) | Gets or sets the property path for the right values. |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
@@ -308,7 +308,7 @@ public string LabelPath { get; set; }
 
 ### LeftBrush 属性 {#leftbrush-property}
 
-Gets or sets the brush for the left bars.
+获取或设置左侧条形所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush LeftBrush { get; set; }
@@ -350,7 +350,7 @@ public string LeftValuePath { get; set; }
 
 ### RightBrush 属性 {#rightbrush-property}
 
-Gets or sets the brush for the right bars.
+获取或设置右侧条形所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush RightBrush { get; set; }

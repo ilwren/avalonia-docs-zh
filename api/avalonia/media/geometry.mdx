@@ -83,7 +83,7 @@ public class Geometry
 | [GetWidenedGeometry](#uid-9265c7d05d) | Gets a [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) that is the shape defined by the stroke on the Geometry produced by the specified Pen. |
 | [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Parse](#uid-f0f323635b) | Creates a [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) from a string. |
+| [Parse](#uid-f0f323635b) | 由字符串创建 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [StrokeContains](#uid-9137804922) | Indicates whether the geometry's stroke contains the specified point. |
@@ -129,12 +129,12 @@ public Avalonia.Media.Geometry Combine(Avalonia.Media.Geometry geometry1, Avalon
 
 `geometry1` [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
 
-The first geometry to combine.
+要合并的第一个几何图形。
 
 
 `geometry2` [Avalonia.Media.RectangleGeometry](xref:Avalonia.Media.RectangleGeometry)
 
-The second geometry to combine.
+要合并的第二个几何图形。
 
 
 `combineMode` [Avalonia.Media.GeometryCombineMode](xref:Avalonia.Media.GeometryCombineMode)
@@ -245,7 +245,7 @@ The outlined geometry.
 
 ### Parse 方法 {#parse-method}
 
-Creates a [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) from a string.
+由字符串创建 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)。
 
 ```csharp
 public Avalonia.Media.Geometry Parse(string s)

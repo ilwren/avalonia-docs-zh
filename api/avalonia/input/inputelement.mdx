@@ -138,7 +138,7 @@ public bool Focus(Avalonia.Input.NavigationMethod method, Avalonia.Input.KeyModi
 
 `method` [Avalonia.Input.NavigationMethod](xref:Avalonia.Input.NavigationMethod)
 
-The method by which focus was changed.
+焦点因何种方式发生变化。
 
 
 `keyModifiers` [Avalonia.Input.KeyModifiers](xref:Avalonia.Input.KeyModifiers)
@@ -247,7 +247,7 @@ public void SetIsHoldWithMouseEnabled(Avalonia.StyledElement element, bool value
 | [Classes](../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Clip](../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../visual.mdx)。 |
 | [ClipToBounds](../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../visual.mdx)。 |
-| [Cursor](#uid-4222de38cf) | Gets or sets associated mouse cursor. |
+| [Cursor](#uid-4222de38cf) | 获取或设置关联的鼠标光标。 |
 | [DataContext](../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../styledelement.mdx)。 |
 | [DesiredSize](../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -301,7 +301,7 @@ public void SetIsHoldWithMouseEnabled(Avalonia.StyledElement element, bool value
 
 ### Cursor 属性 {#cursor-property}
 
-Gets or sets associated mouse cursor.
+获取或设置关联的鼠标光标。
 
 ```csharp
 public Avalonia.Input.Cursor Cursor { get; set; }
@@ -474,9 +474,9 @@ public int TabIndex { get; set; }
 | [CacheModeProperty](../visual.mdx#uid-5c89b0f2fc) | 定义 [Avalonia.Visual.CacheMode](xref:Avalonia.Visual.CacheMode) 属性。继承自 [Visual](../visual.mdx)。 |
 | [ClipProperty](../visual.mdx#uid-06ffce3308) | 定义 [Avalonia.Visual.Clip](xref:Avalonia.Visual.Clip) 属性。继承自 [Visual](../visual.mdx)。 |
 | [ClipToBoundsProperty](../visual.mdx#uid-4bc41df166) | 定义 [Avalonia.Visual.ClipToBounds](xref:Avalonia.Visual.ClipToBounds) 属性。继承自 [Visual](../visual.mdx)。 |
-| [ContextCanceledEvent](#uid-c58107fdb9) | Provides event data for the [Avalonia.Input.InputElement.ContextCanceled](xref:Avalonia.Input.InputElement.ContextCanceled) event. |
-| [ContextRequestedEvent](#uid-11362fc1dd) | Provides event data for the [Avalonia.Input.InputElement.ContextRequested](xref:Avalonia.Input.InputElement.ContextRequested) event. |
-| [CursorProperty](#uid-37a51ae89c) | Gets or sets associated mouse cursor. |
+| [ContextCanceledEvent](#uid-c58107fdb9) | 为 [Avalonia.Input.InputElement.ContextCanceled](xref:Avalonia.Input.InputElement.ContextCanceled) 事件提供事件数据。 |
+| [ContextRequestedEvent](#uid-11362fc1dd) | 为 [Avalonia.Input.InputElement.ContextRequested](xref:Avalonia.Input.InputElement.ContextRequested) 事件提供事件数据。 |
+| [CursorProperty](#uid-37a51ae89c) | 获取或设置关联的鼠标光标。 |
 | [DataContextProperty](../styledelement.mdx#uid-7eefabb929) | 定义 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性。继承自 [StyledElement](../styledelement.mdx)。 |
 | [DesiredSizeProperty](../layout/layoutable.mdx#uid-b46bed86fe) | 定义 [Avalonia.Layout.Layoutable.DesiredSize](xref:Avalonia.Layout.Layoutable.DesiredSize) 属性。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [DoubleTappedEvent](#uid-932047336f) | 定义 [Avalonia.Input.InputElement.DoubleTapped](xref:Avalonia.Input.InputElement.DoubleTapped) 事件。 |
@@ -553,7 +553,7 @@ public int TabIndex { get; set; }
 
 ### ContextCanceledEvent 字段 {#contextcanceledevent-field}
 
-Provides event data for the [Avalonia.Input.InputElement.ContextCanceled](xref:Avalonia.Input.InputElement.ContextCanceled) event.
+为 [Avalonia.Input.InputElement.ContextCanceled](xref:Avalonia.Input.InputElement.ContextCanceled) 事件提供事件数据。
 
 ```csharp
 public Avalonia.Interactivity.RoutedEvent<TEventArgs><Avalonia.Interactivity.RoutedEventArgs> ContextCanceledEvent
@@ -567,7 +567,7 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><Avalonia.Interactivity.Rou
 
 ### ContextRequestedEvent 字段 {#contextrequestedevent-field}
 
-Provides event data for the [Avalonia.Input.InputElement.ContextRequested](xref:Avalonia.Input.InputElement.ContextRequested) event.
+为 [Avalonia.Input.InputElement.ContextRequested](xref:Avalonia.Input.InputElement.ContextRequested) 事件提供事件数据。
 
 ```csharp
 public Avalonia.Interactivity.RoutedEvent<TEventArgs><Avalonia.Input.ContextRequestedEventArgs> ContextRequestedEvent
@@ -581,7 +581,7 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><Avalonia.Input.ContextRequ
 
 ### CursorProperty 字段 {#cursorproperty-field}
 
-Gets or sets associated mouse cursor.
+获取或设置关联的鼠标光标。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Input.Cursor> CursorProperty
@@ -1192,19 +1192,19 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><Avalonia.Input.TextInput.T
 | [DoubleTapped](#uid-ad13083e0c) | Occurs when the user briefly contacts and releases twice on a single point, without significant movement. |
 | [EffectiveViewportChanged](../layout/layoutable.mdx#uid-1922b89fa5) | 当元素的有效视口发生变化时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [GettingFocus](#uid-4d054164ee) | Occurs before the control receives focus. |
-| [GotFocus](#uid-d41d7ad59c) | Occurs when the control receives focus. |
+| [GotFocus](#uid-d41d7ad59c) | 该控件获得焦点时发生。 |
 | [Holding](#uid-8cda030fe2) | Occurs when the user makes a single contact, then maintains contact beyond a given time threshold without releasing or making another contact. |
 | [Initialized](../styledelement.mdx#uid-bd6a5e5c0e) | 当该样式化元素完成初始化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [KeyDown](#uid-ee9d987ed5) | Occurs when a key is pressed while the control has focus. |
 | [KeyUp](#uid-1131e95f55) | Occurs when a key is released while the control has focus. |
 | [LayoutUpdated](../layout/layoutable.mdx#uid-05ea32f689) | 当控件完成一次布局时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [LosingFocus](#uid-425fe24716) | Occurs before the control loses focus. |
-| [LostFocus](#uid-2061fc85a1) | Occurs when the control loses focus. |
+| [LostFocus](#uid-2061fc85a1) | 该控件失去焦点时发生。 |
 | [Pinch](#uid-96b68421dc) | Occurs when the user moves two contact points closer together. |
 | [PinchEnded](#uid-50614bd917) | Occurs when the user releases both contact points used in a pinch gesture. |
 | [PointerCaptureLost](#uid-2121c500a4) | Occurs when the control or its child control loses the pointer capture for any reason, event will not be triggered for a parent control if capture was transferred to another child of that parent control. |
-| [PointerEntered](#uid-a81f2c5c9a) | Occurs when the pointer enters the control. |
-| [PointerExited](#uid-522e8d0a47) | Occurs when the pointer leaves the control. |
+| [PointerEntered](#uid-a81f2c5c9a) | 指针进入该控件时发生。 |
+| [PointerExited](#uid-522e8d0a47) | 指针离开该控件时发生。 |
 | [PointerMoved](#uid-0990295ea3) | Occurs when the pointer moves over the control. |
 | [PointerPressed](#uid-913cdc0df1) | Occurs when the pointer is pressed over the control. |
 | [PointerReleased](#uid-5b59b21d5e) | Occurs when the pointer is released over the control. |
@@ -1288,7 +1288,7 @@ public event EventHandler<Avalonia.Input.FocusChangingEventArgs> GettingFocus
 
 ### GotFocus 事件 {#gotfocus-event}
 
-Occurs when the control receives focus.
+该控件获得焦点时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.FocusChangedEventArgs> GotFocus
@@ -1358,7 +1358,7 @@ public event EventHandler<Avalonia.Input.FocusChangingEventArgs> LosingFocus
 
 ### LostFocus 事件 {#lostfocus-event}
 
-Occurs when the control loses focus.
+该控件失去焦点时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.FocusChangedEventArgs> LostFocus
@@ -1415,7 +1415,7 @@ public event EventHandler<Avalonia.Input.PointerCaptureLostEventArgs> PointerCap
 
 ### PointerEntered 事件 {#pointerentered-event}
 
-Occurs when the pointer enters the control.
+指针进入该控件时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.PointerEventArgs> PointerEntered
@@ -1429,7 +1429,7 @@ public event EventHandler<Avalonia.Input.PointerEventArgs> PointerEntered
 
 ### PointerExited 事件 {#pointerexited-event}
 
-Occurs when the pointer leaves the control.
+指针离开该控件时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.PointerEventArgs> PointerExited

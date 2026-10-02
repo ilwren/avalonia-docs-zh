@@ -259,7 +259,7 @@ public void ShowCaret()
 | [Background](#uid-474bdfcf3c) | 获取或设置绘制控件背景所用的画刷。 |
 | [Bounds](../../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../../visual.mdx)。 |
 | [CacheMode](../../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../../visual.mdx)。 |
-| [CaretBlinkInterval](#uid-f2a9a2b6ac) | Gets or sets the caret blink rate |
+| [CaretBlinkInterval](#uid-f2a9a2b6ac) | 获取或设置插入符的闪烁频率 |
 | [CaretBrush](#uid-f98cb7126c) | 暂无摘要。 |
 | [CaretIndex](#uid-61668152bd) | 暂无摘要。 |
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -331,8 +331,8 @@ public void ShowCaret()
 | [Tag](../control.mdx#uid-2790b0c958) | 获取或设置附加在控件上的用户自定义对象。继承自 [Control](../control.mdx)。 |
 | [TemplatedParent](../../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Text](#uid-b4eb5ec575) | 获取或设置文本。 |
-| [TextAlignment](#uid-e948b8ddc3) | Gets or sets the text alignment. |
-| [TextLayout](#uid-2e9a67b531) | Gets the [Avalonia.Controls.Presenters.TextPresenter.TextLayout](xref:Avalonia.Controls.Presenters.TextPresenter.TextLayout) used to render the text. |
+| [TextAlignment](#uid-e948b8ddc3) | 获取或设置文本对齐方式。 |
+| [TextLayout](#uid-2e9a67b531) | 获取渲染该文本所用的 [Avalonia.Controls.Presenters.TextPresenter.TextLayout](xref:Avalonia.Controls.Presenters.TextPresenter.TextLayout)。 |
 | [TextWrapping](#uid-9df343bb03) | Gets or sets the control's text wrapping mode. |
 | [Theme](../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
@@ -361,7 +361,7 @@ public Avalonia.Media.IBrush Background { get; set; }
 
 ### CaretBlinkInterval 属性 {#caretblinkinterval-property}
 
-Gets or sets the caret blink rate
+获取或设置插入符的闪烁频率
 
 ```csharp
 public TimeSpan CaretBlinkInterval { get; set; }
@@ -649,7 +649,7 @@ public string Text { get; set; }
 
 ### TextAlignment 属性 {#textalignment-property}
 
-Gets or sets the text alignment.
+获取或设置文本对齐方式。
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }
@@ -663,7 +663,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 ### TextLayout 属性 {#textlayout-property}
 
-Gets the [Avalonia.Controls.Presenters.TextPresenter.TextLayout](xref:Avalonia.Controls.Presenters.TextPresenter.TextLayout) used to render the text.
+获取渲染该文本所用的 [Avalonia.Controls.Presenters.TextPresenter.TextLayout](xref:Avalonia.Controls.Presenters.TextPresenter.TextLayout)。
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextLayout TextLayout { get; set; }

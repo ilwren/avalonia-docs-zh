@@ -184,21 +184,21 @@ Y 位置。
 
 | 名称 | 说明 |
 | --- | --- |
-| [CenterRect](#uid-2472614349) | Centers another rectangle in this rectangle. |
+| [CenterRect](#uid-2472614349) | 把另一个矩形在该矩形内居中。 |
 | [Contains（2 个重载）](#uid-5040bd7115) | Determines whether a point is in the bounds of the rectangle. |
 | [ContainsExclusive](#uid-54c66388ba) | Determines whether a point is in the bounds of the rectangle, exclusive of the rectangle's bottom/right edge. |
 | [Deflate (2 overloads)](#uid-80a0b4cabe) | Deflates the rectangle by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
 | [Equals（2 个重载）](#uid-2ef0deadf5) | Returns a boolean indicating whether the rect is equal to the other given rect. |
 | [GetHashCode](#uid-80cde6e52c) | 返回该实例的哈希码。 |
 | [Inflate (2 overloads)](#uid-c822ee841c) | Inflates the rectangle. |
-| [Intersect](#uid-3fe10318df) | Gets the intersection of two rectangles. |
+| [Intersect](#uid-3fe10318df) | 获取两个矩形的交集。 |
 | [Intersects](#uid-364e7cc562) | Determines whether a rectangle intersects with this rectangle. |
 | [Normalize](#uid-3629fbea6d) | Normalizes the rectangle so both the [Avalonia.Rect.Width](xref:Avalonia.Rect.Width) and [Avalonia.Rect.Height](xref:Avalonia.Rect.Height) are positive, without changing the location of the rectangle |
 | [Parse](#uid-9058fe2601) | 解析 [Avalonia.Rect](xref:Avalonia.Rect) 字符串。 |
 | [ToString](#uid-48d1660868) | Returns the string representation of the rectangle. |
 | [TransformToAABB](#uid-9b40128191) | Returns the axis-aligned bounding box of a transformed rectangle. |
-| [Translate](#uid-1bc7e8335f) | Translates the rectangle by an offset. |
-| [Union](#uid-951f6c32aa) | Gets the union of two rectangles. |
+| [Translate](#uid-1bc7e8335f) | 按某个偏移量平移该矩形。 |
+| [Union](#uid-951f6c32aa) | 获取两个矩形的并集。 |
 | [WithHeight](#uid-304dbb7634) | Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified height. |
 | [WithWidth](#uid-520737bfa4) | Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified width. |
 | [WithX](#uid-1e6448c5ea) | Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified X position. |
@@ -210,7 +210,7 @@ Y 位置。
 
 ### CenterRect 方法 {#centerrect-method}
 
-Centers another rectangle in this rectangle.
+把另一个矩形在该矩形内居中。
 
 ```csharp
 public Avalonia.Rect CenterRect(Avalonia.Rect rect)
@@ -528,7 +528,7 @@ The inflated rectangle.
 
 ### Intersect 方法 {#intersect-method}
 
-Gets the intersection of two rectangles.
+获取两个矩形的交集。
 
 ```csharp
 public Avalonia.Rect Intersect(Avalonia.Rect rect)
@@ -686,7 +686,7 @@ The bounding box
 
 ### Translate 方法 {#translate-method}
 
-Translates the rectangle by an offset.
+按某个偏移量平移该矩形。
 
 ```csharp
 public Avalonia.Rect Translate(Avalonia.Vector offset)
@@ -714,7 +714,7 @@ The translated rectangle.
 
 ### Union 方法 {#union-method}
 
-Gets the union of two rectangles.
+获取两个矩形的并集。
 
 ```csharp
 public Avalonia.Rect Union(Avalonia.Rect rect)
@@ -852,18 +852,18 @@ The y position.
 
 | 名称 | 说明 |
 | --- | --- |
-| [Bottom](#uid-9463039512) | Gets the bottom position of the rectangle. |
-| [BottomLeft](#uid-b1ae4617a3) | Gets the bottom left point of the rectangle. |
+| [Bottom](#uid-9463039512) | 获取该矩形下边缘的位置。 |
+| [BottomLeft](#uid-b1ae4617a3) | 获取该矩形的左下角点。 |
 | [BottomRight](#uid-c3eebdc20d) | Gets the bottom right point of the rectangle. |
-| [Center](#uid-82560a8c5b) | Gets the center point of the rectangle. |
+| [Center](#uid-82560a8c5b) | 获取该矩形的中心点。 |
 | [Height](#uid-aec34b0ad3) | 获取高度。 |
 | [Left](#uid-78a4b0ba67) | Gets the left position. |
-| [Position](#uid-79620f185d) | Gets the position of the rectangle. |
-| [Right](#uid-95c66b7e57) | Gets the right position of the rectangle. |
-| [Size](#uid-4f385f158f) | Gets the size of the rectangle. |
+| [Position](#uid-79620f185d) | 获取该矩形的位置。 |
+| [Right](#uid-95c66b7e57) | 获取该矩形右边缘的位置。 |
+| [Size](#uid-4f385f158f) | 获取该矩形的尺寸。 |
 | [Top](#uid-cb140f1340) | Gets the top position. |
-| [TopLeft](#uid-4d37e32e39) | Gets the top left point of the rectangle. |
-| [TopRight](#uid-0da1c79764) | Gets the top right point of the rectangle. |
+| [TopLeft](#uid-4d37e32e39) | 获取该矩形的左上角点。 |
+| [TopRight](#uid-0da1c79764) | 获取该矩形的右上角点。 |
 | [Width](#uid-756b1401ba) | 获取宽度。 |
 | [X](#uid-758a8e6e3a) | 获取 X 位置。 |
 | [Y](#uid-9b180e6629) | 获取 Y 位置。 |
@@ -874,7 +874,7 @@ The y position.
 
 ### Bottom 属性 {#bottom-property}
 
-Gets the bottom position of the rectangle.
+获取该矩形下边缘的位置。
 
 ```csharp
 public double Bottom { get; set; }
@@ -888,7 +888,7 @@ public double Bottom { get; set; }
 
 ### BottomLeft 属性 {#bottomleft-property}
 
-Gets the bottom left point of the rectangle.
+获取该矩形的左下角点。
 
 ```csharp
 public Avalonia.Point BottomLeft { get; set; }
@@ -916,7 +916,7 @@ public Avalonia.Point BottomRight { get; set; }
 
 ### Center 属性 {#center-property}
 
-Gets the center point of the rectangle.
+获取该矩形的中心点。
 
 ```csharp
 public Avalonia.Point Center { get; set; }
@@ -958,7 +958,7 @@ public double Left { get; set; }
 
 ### Position 属性 {#position-property}
 
-Gets the position of the rectangle.
+获取该矩形的位置。
 
 ```csharp
 public Avalonia.Point Position { get; set; }
@@ -972,7 +972,7 @@ public Avalonia.Point Position { get; set; }
 
 ### Right 属性 {#right-property}
 
-Gets the right position of the rectangle.
+获取该矩形右边缘的位置。
 
 ```csharp
 public double Right { get; set; }
@@ -986,7 +986,7 @@ public double Right { get; set; }
 
 ### Size 属性 {#size-property}
 
-Gets the size of the rectangle.
+获取该矩形的尺寸。
 
 ```csharp
 public Avalonia.Size Size { get; set; }
@@ -1014,7 +1014,7 @@ public double Top { get; set; }
 
 ### TopLeft 属性 {#topleft-property}
 
-Gets the top left point of the rectangle.
+获取该矩形的左上角点。
 
 ```csharp
 public Avalonia.Point TopLeft { get; set; }
@@ -1028,7 +1028,7 @@ public Avalonia.Point TopLeft { get; set; }
 
 ### TopRight 属性 {#topright-property}
 
-Gets the top right point of the rectangle.
+获取该矩形的右上角点。
 
 ```csharp
 public Avalonia.Point TopRight { get; set; }

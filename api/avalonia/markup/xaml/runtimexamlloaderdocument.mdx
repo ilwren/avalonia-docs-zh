@@ -226,11 +226,11 @@ public RuntimeXamlLoaderDocument(Uri baseUri, string xaml)
 
 | 名称 | 说明 |
 | --- | --- |
-| [BaseUri](#uid-b5de20e5af) | The URI of the XAML being loaded. |
+| [BaseUri](#uid-b5de20e5af) | 所加载 XAML 的 URI。 |
 | [Document](#uid-ddceede5e2) | Path to the XAML document being loaded. |
 | [RootInstance](#uid-086cd0f9b2) | The optional instance into which the XAML should be loaded. |
 | [ServiceProvider](#uid-29c6758014) | Parent's service provider to pass to the Build method or type ctor, if available. |
-| [XamlStream](#uid-d73bbd126f) | The stream containing the XAML. |
+| [XamlStream](#uid-d73bbd126f) | 包含该 XAML 的流。 |
 
 <section className="apiref-page__member-entry">
 
@@ -238,7 +238,7 @@ public RuntimeXamlLoaderDocument(Uri baseUri, string xaml)
 
 ### BaseUri 属性 {#baseuri-property}
 
-The URI of the XAML being loaded.
+所加载 XAML 的 URI。
 
 ```csharp
 public Uri BaseUri { get; set; }
@@ -294,7 +294,7 @@ public IServiceProvider ServiceProvider { get; set; }
 
 ### XamlStream 属性 {#xamlstream-property}
 
-The stream containing the XAML.
+包含该 XAML 的流。
 
 ```csharp
 public System.IO.Stream XamlStream { get; set; }

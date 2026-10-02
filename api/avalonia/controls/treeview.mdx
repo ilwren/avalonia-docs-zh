@@ -121,7 +121,7 @@ public TreeView()
 | [RemoveHandler（2 个重载）](../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../interactivity/interactive.mdx)。 |
 | [Render](../visual.mdx#uid-615917604b) | 将该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。继承自 [Visual](../visual.mdx)。 |
 | [ScrollIntoView（2 个重载）](itemscontrol.mdx#uid-bf3e50e7bb) | 把指定项滚动到可见范围内。继承自 [ItemsControl](itemscontrol.mdx)。 |
-| [SelectAll](#uid-07fa2f5d78) | Selects all items in the [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView). |
+| [SelectAll](#uid-07fa2f5d78) | 选中 [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView) 中的所有项。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../visual.mdx)。 |
 | [SetIsHoldingEnabled](../input/inputelement.mdx#uid-90a47948ad) | 继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -131,7 +131,7 @@ public TreeView()
 | [TreeContainerFromItem](#uid-065d96ca3a) | 暂无摘要。 |
 | [TreeItemFromContainer](#uid-7d55b4ee8f) | 暂无摘要。 |
 | [TryGetResource](../styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](../styledelement.mdx)。 |
-| [UnselectAll](#uid-92831b2ff9) | Deselects all items in the [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView). |
+| [UnselectAll](#uid-92831b2ff9) | 取消选中 [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView) 中的所有项。 |
 | [UpdateLayout](../layout/layoutable.mdx#uid-529d4a08ea) | 执行一次布局。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [UpdateSelectionFromEvent](#uid-862c559cad) | Updates the selection based on an event that may have originated in a container that belongs to the control. |
 | [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -201,7 +201,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Control](xref:Avalo
 
 ### SelectAll 方法 {#selectall-method}
 
-Selects all items in the [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView).
+选中 [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView) 中的所有项。
 
 ```csharp
 public void SelectAll()
@@ -264,7 +264,7 @@ object
 
 ### UnselectAll 方法 {#unselectall-method}
 
-Deselects all items in the [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView).
+取消选中 [Avalonia.Controls.TreeView](xref:Avalonia.Controls.TreeView) 中的所有项。
 
 ```csharp
 public void UnselectAll()
@@ -687,7 +687,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.SelectionMode> SelectionModePro
 | [ScrollGesture](../input/inputelement.mdx#uid-b571ab3acc) | 当用户在控件范围内沿同一方向持续移动指针时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ScrollGestureEnded](../input/inputelement.mdx#uid-eb3914c3a8) | 当滚动手势完全停止时发生，其中已计入用户松开指针后继续滚动的惯性过程。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStarting](../input/inputelement.mdx#uid-c8cd2731a5) | 在滚动手势过程中，当用户松开指针、滚动转入惯性滑动阶段时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [SelectionChanged](#uid-8c4488ae73) | Occurs when the control's selection changes. |
+| [SelectionChanged](#uid-8c4488ae73) | 该控件的选择发生变化时发生。 |
 | [SizeChanged](control.mdx#uid-6cfea6b6c5) | 当控件的边界（实际尺寸）发生变化时发生。继承自 [Control](control.mdx)。 |
 | [SwipeGesture](../input/inputelement.mdx#uid-0f4fc613ec) | 当用户在控件上沿单一方向快速拖动指针时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [SwipeGestureEnded](../input/inputelement.mdx#uid-137ae2fd9d) | 当控件上的滑动手势结束时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -703,7 +703,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.SelectionMode> SelectionModePro
 
 ### SelectionChanged 事件 {#selectionchanged-event}
 
-Occurs when the control's selection changes.
+该控件的选择发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.SelectionChangedEventArgs> SelectionChanged

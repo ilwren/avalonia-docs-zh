@@ -127,11 +127,11 @@ public Notification(string title, string message, Avalonia.Controls.Notification
 | 名称 | 说明 |
 | --- | --- |
 | [Expiration](#uid-6fa56101ad) | Gets the expiration time of the notification after which it will automatically close. If the value is [TimeSpan.Zero](xref:System.TimeSpan.Zero) then the notification will remain open until the user closes it. |
-| [Message](#uid-e0a025cb3b) | Gets the notification message. |
+| [Message](#uid-e0a025cb3b) | 获取通知的消息内容。 |
 | [OnClick](#uid-e4001bd734) | Gets an Action to be run when the notification is clicked. |
 | [OnClose](#uid-2e72068dd2) | Gets an Action to be run when the notification is closed. |
-| [Title](#uid-de74ea6caf) | Gets the Title of the notification. |
-| [Type](#uid-406e41cb27) | Gets the [Avalonia.Controls.Notifications.NotificationType](xref:Avalonia.Controls.Notifications.NotificationType) of the notification. |
+| [Title](#uid-de74ea6caf) | 获取通知的标题。 |
+| [Type](#uid-406e41cb27) | 获取该通知的 [Avalonia.Controls.Notifications.NotificationType](xref:Avalonia.Controls.Notifications.NotificationType)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -154,7 +154,7 @@ public TimeSpan Expiration { get; set; }
 
 ### Message 属性 {#message-property}
 
-Gets the notification message.
+获取通知的消息内容。
 
 ```csharp
 public string Message { get; set; }
@@ -196,7 +196,7 @@ public Action OnClose { get; set; }
 
 ### Title 属性 {#title-property}
 
-Gets the Title of the notification.
+获取通知的标题。
 
 ```csharp
 public string Title { get; set; }
@@ -210,7 +210,7 @@ public string Title { get; set; }
 
 ### Type 属性 {#type-property}
 
-Gets the [Avalonia.Controls.Notifications.NotificationType](xref:Avalonia.Controls.Notifications.NotificationType) of the notification.
+获取该通知的 [Avalonia.Controls.Notifications.NotificationType](xref:Avalonia.Controls.Notifications.NotificationType)。
 
 ```csharp
 public Avalonia.Controls.Notifications.NotificationType Type { get; set; }

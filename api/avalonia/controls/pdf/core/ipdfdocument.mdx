@@ -58,7 +58,7 @@ public interface IPdfDocument
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetOutline](#uid-d4199f4fa4) | Gets the document outline (bookmarks). |
+| [GetOutline](#uid-d4199f4fa4) | 获取文档大纲（书签）。 |
 | [GetPage](#uid-63a4f83213) | Gets a page by index (0-based). |
 | [GetPageSize](#uid-a90d4af392) | Gets page dimensions without loading the full page. |
 | [GetUserBookmarks](#uid-0582dbd8eb) | Reads user-created bookmarks (saved page positions) from the document's XMP metadata. These are the Preview-style bookmarks stored under the `apple-preview` namespace, distinct from the author outline returned by [Avalonia.Controls.Pdf.Core.IPdfDocument.GetOutline](xref:Avalonia.Controls.Pdf.Core.IPdfDocument.GetOutline). Returns an empty list when the document has none. |
@@ -69,7 +69,7 @@ public interface IPdfDocument
 
 ### GetOutline 方法 {#getoutline-method}
 
-Gets the document outline (bookmarks).
+获取文档大纲（书签）。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Pdf.Core.PdfBookmark> GetOutline()

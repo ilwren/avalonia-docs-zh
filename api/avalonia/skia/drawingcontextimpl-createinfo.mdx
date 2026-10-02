@@ -67,7 +67,7 @@ public struct DrawingContextImpl.CreateInfo
 | [DisableSubpixelTextRendering](#uid-573556b642) | Render text without subpixel antialiasing. |
 | [Dpi](#uid-afb7579f67) | Dpi for intermediate surfaces |
 | [Gpu](#uid-c43d01f5a5) | Skia GPU provider context (optional) |
-| [GrContext](#uid-da93c7706f) | GPU-accelerated context (optional) |
+| [GrContext](#uid-da93c7706f) | GPU 加速的上下文（可选） |
 | [ScaleDrawingToDpi](#uid-58e7e61bb4) | Makes DPI to be applied as a hidden matrix transform |
 | [Surface](#uid-f162a5fdb6) | Surface to draw to. |
 
@@ -145,7 +145,7 @@ public Avalonia.Skia.ISkiaGpu Gpu
 
 ### GrContext 字段 {#grcontext-field}
 
-GPU-accelerated context (optional)
+GPU 加速的上下文（可选）
 
 ```csharp
 public SkiaSharp.GRContext GrContext

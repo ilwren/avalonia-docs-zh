@@ -111,10 +111,10 @@ public PdfViewer()
 | [GetIsHoldingEnabled](../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
-| [GetOutline](#uid-2c0b26abe0) | Gets the document outline (bookmarks). |
+| [GetOutline](#uid-2c0b26abe0) | 获取文档大纲（书签）。 |
 | [GetPageLabel](#uid-7dcc368181) | The page's label from the document's /PageLabels ("iv", "A-2"), or null when the document defines none. `pageNumber` is 1-based. |
 | [GetPageTextAsync](#uid-124f767e74) | Extracts the plain text of a single page (0-based index). Returns an empty string when no document is loaded or the index is out of range. |
-| [GetSelectedText](#uid-6b2b6090c8) | Gets the currently selected text. |
+| [GetSelectedText](#uid-6b2b6090c8) | 获取当前选中的文本。 |
 | [GetTextAsync](#uid-53cafd6109) | Extracts the plain text of the whole document, one page per element. |
 | [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [GoToBookmark](#uid-f0b443777b) | Navigates to a bookmark's target: its full destination (page plus position) when it has one, else its page. Returns `true` if the bookmark has a page target. |
@@ -518,7 +518,7 @@ System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyList&lt;[Aval
 
 ### GetOutline 方法 {#getoutline-method}
 
-Gets the document outline (bookmarks).
+获取文档大纲（书签）。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Pdf.Core.PdfBookmark> GetOutline()
@@ -590,7 +590,7 @@ System.Threading.Tasks.Task&lt;string&gt;
 
 ### GetSelectedText 方法 {#getselectedtext-method}
 
-Gets the currently selected text.
+获取当前选中的文本。
 
 ```csharp
 public string GetSelectedText()
@@ -1715,7 +1715,7 @@ public void ZoomOut()
 | [IsTableOfContentsEnabled](#uid-c6f2611360) | Gets or sets whether the Table of Contents sidebar pane is available. When its tab is hidden and the mode can't be selected. Default . |
 | [IsTabStop](../input/inputelement.mdx#uid-455d73fca4) | 获取或设置一个值，指示该控件是否参与 Tab 键导航。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsTextToolVisible](#uid-244c984b30) | Gets or sets whether the Add Text (free text) tool is shown. Default . |
-| [IsToolbarVisible](#uid-96d8889c79) | Gets or sets whether the toolbar is visible. |
+| [IsToolbarVisible](#uid-96d8889c79) | 获取或设置工具栏是否可见。 |
 | [IsUnderlineToolVisible](#uid-46106fec35) | Gets or sets whether the Underline tool is shown. Default . |
 | [IsVisible](../visual.mdx#uid-da2b0ca167) | 获取或设置一个值，指示该控件是否可见。继承自 [Visual](../visual.mdx)。 |
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -1764,7 +1764,7 @@ public void ZoomOut()
 | [SearchResults](#uid-0e883b2a7c) | Gets the current search results. |
 | [SelectAllCommand](#uid-7d8e6d76df) | Gets a command that selects all text on the current page. |
 | [SelectedShapeType](#uid-3e6d2d9fe9) | Gets or sets the active shape tool type. |
-| [SelectedText](#uid-15ca7a64a2) | Gets the currently selected text. |
+| [SelectedText](#uid-15ca7a64a2) | 获取当前选中的文本。 |
 | [SetToolCommand](#uid-dee887ea7f) | Gets a command that activates a tool: the parameter is a [Avalonia.Controls.PdfViewerTool](xref:Avalonia.Controls.PdfViewerTool) (or its name). Lets a host with its own toolbar drive the same tools as the built-in one. |
 | [ShapeFillColor](#uid-7cfbc26f3f) | Gets or sets the default shape fill color. Null means no fill. |
 | [ShapeStrokeColor](#uid-d96ca5830c) | Gets or sets the default shape stroke color. Null means no stroke. |
@@ -2687,7 +2687,7 @@ public bool IsTextToolVisible { get; set; }
 
 ### IsToolbarVisible 属性 {#istoolbarvisible-property}
 
-Gets or sets whether the toolbar is visible.
+获取或设置工具栏是否可见。
 
 ```csharp
 public bool IsToolbarVisible { get; set; }
@@ -3165,7 +3165,7 @@ public Avalonia.Controls.ShapeType SelectedShapeType { get; set; }
 
 ### SelectedText 属性 {#selectedtext-property}
 
-Gets the currently selected text.
+获取当前选中的文本。
 
 ```csharp
 public string SelectedText { get; set; }
@@ -3868,8 +3868,8 @@ public double ZoomStep { get; set; }
 | [LostFocusEvent](../input/inputelement.mdx#uid-267344bb96) | 定义 [Avalonia.Input.InputElement.LostFocus](xref:Avalonia.Input.InputElement.LostFocus) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [MarginProperty](../layout/layoutable.mdx#uid-e730ad0d44) | 定义 [Avalonia.Layout.Layoutable.Margin](xref:Avalonia.Layout.Layoutable.Margin) 属性。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MaxHeightProperty](../layout/layoutable.mdx#uid-0a0a1f20cb) | 定义 [Avalonia.Layout.Layoutable.MaxHeight](xref:Avalonia.Layout.Layoutable.MaxHeight) 属性。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [MaxPageRenderBuffer](#uid-8b22a14209) | The largest accepted value for [Avalonia.Controls.PdfViewer.PageRenderBuffer](xref:Avalonia.Controls.PdfViewer.PageRenderBuffer). |
-| [MaxPageRetentionBuffer](#uid-0a96e59fa8) | The largest accepted value for [Avalonia.Controls.PdfViewer.PageRetentionBuffer](xref:Avalonia.Controls.PdfViewer.PageRetentionBuffer). |
+| [MaxPageRenderBuffer](#uid-8b22a14209) | [Avalonia.Controls.PdfViewer.PageRenderBuffer](xref:Avalonia.Controls.PdfViewer.PageRenderBuffer) 可接受的最大值。 |
+| [MaxPageRetentionBuffer](#uid-0a96e59fa8) | [Avalonia.Controls.PdfViewer.PageRetentionBuffer](xref:Avalonia.Controls.PdfViewer.PageRetentionBuffer) 可接受的最大值。 |
 | [MaxRedactionUndoStepsLimit](#uid-fdc22b5974) | Largest redaction undo history the control accepts. Each step holds a serialized copy of the document, so this is far lower than [Avalonia.Controls.PdfViewer.MaxUndoStepsLimit](xref:Avalonia.Controls.PdfViewer.MaxUndoStepsLimit). |
 | [MaxRedactionUndoStepsProperty](#uid-222a95b591) | 定义 [Avalonia.Controls.PdfViewer.MaxRedactionUndoSteps](xref:Avalonia.Controls.PdfViewer.MaxRedactionUndoSteps) 属性。 |
 | [MaxRenderScaleProperty](#uid-4f034eb299) | 定义 [Avalonia.Controls.PdfViewer.MaxRenderScale](xref:Avalonia.Controls.PdfViewer.MaxRenderScale) 属性。 |
@@ -4816,7 +4816,7 @@ public string LoadingClass
 
 ### MaxPageRenderBuffer 字段 {#maxpagerenderbuffer-field}
 
-The largest accepted value for [Avalonia.Controls.PdfViewer.PageRenderBuffer](xref:Avalonia.Controls.PdfViewer.PageRenderBuffer).
+[Avalonia.Controls.PdfViewer.PageRenderBuffer](xref:Avalonia.Controls.PdfViewer.PageRenderBuffer) 可接受的最大值。
 
 ```csharp
 public int MaxPageRenderBuffer
@@ -4830,7 +4830,7 @@ public int MaxPageRenderBuffer
 
 ### MaxPageRetentionBuffer 字段 {#maxpageretentionbuffer-field}
 
-The largest accepted value for [Avalonia.Controls.PdfViewer.PageRetentionBuffer](xref:Avalonia.Controls.PdfViewer.PageRetentionBuffer).
+[Avalonia.Controls.PdfViewer.PageRetentionBuffer](xref:Avalonia.Controls.PdfViewer.PageRetentionBuffer) 可接受的最大值。
 
 ```csharp
 public int MaxPageRetentionBuffer

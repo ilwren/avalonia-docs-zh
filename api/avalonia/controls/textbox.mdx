@@ -122,7 +122,7 @@ public TextBox()
 | [RemoveHandler（2 个重载）](../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../interactivity/interactive.mdx)。 |
 | [Render](../visual.mdx#uid-615917604b) | 将该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。继承自 [Visual](../visual.mdx)。 |
 | [ScrollToLine](#uid-ed750281ba) | Scroll the [Avalonia.Controls.TextBox](xref:Avalonia.Controls.TextBox) to the specified line index. |
-| [SelectAll](#uid-b750f49e3a) | Select all text in the [TextBox](xref:Avalonia.Controls.TextBox) |
+| [SelectAll](#uid-b750f49e3a) | 选中 [TextBox](xref:Avalonia.Controls.TextBox) 中的所有文本 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../visual.mdx)。 |
 | [SetIsHoldingEnabled](../input/inputelement.mdx#uid-90a47948ad) | 继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -279,7 +279,7 @@ The line index to scroll to.
 
 ### SelectAll 方法 {#selectall-method}
 
-Select all text in the [TextBox](xref:Avalonia.Controls.TextBox)
+选中 [TextBox](xref:Avalonia.Controls.TextBox) 中的所有文本
 
 ```csharp
 public void SelectAll()
@@ -319,7 +319,7 @@ public void Undo()
 | [CanPaste](#uid-72eb7d88eb) | Property for determining if the Paste command can be executed. |
 | [CanRedo](#uid-3941dd5f1e) | Gets a value that indicates whether the redo stack has an action that can be redone |
 | [CanUndo](#uid-17dd5fba71) | Gets a value that indicates whether the undo stack has an action that can be undone |
-| [CaretBlinkInterval](#uid-34b0d666cf) | Gets or sets the caret blink rate |
+| [CaretBlinkInterval](#uid-34b0d666cf) | 获取或设置插入符的闪烁频率 |
 | [CaretBrush](#uid-86d52c1f69) | Gets or sets a brush that is used for the text caret |
 | [CaretIndex](#uid-14d749d5ea) | Gets or sets the index of the text caret |
 | [Classes](../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -408,8 +408,8 @@ public void Undo()
 | [Template](primitives/templatedcontrol.mdx#uid-7a289f7bd4) | 获取或设置定义控件外观的模板。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [TemplatedParent](../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Text](#uid-3360a21b7f) | Gets or sets the Text content of the [TextBox](xref:Avalonia.Controls.TextBox) |
-| [TextAlignment](#uid-d93b059c73) | Gets or sets the [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment) of the [TextBox](xref:Avalonia.Controls.TextBox) |
-| [TextWrapping](#uid-72c9995873) | Gets or sets the [Avalonia.Media.TextWrapping](xref:Avalonia.Media.TextWrapping) of the [TextBox](xref:Avalonia.Controls.TextBox) |
+| [TextAlignment](#uid-d93b059c73) | 获取或设置 [TextBox](xref:Avalonia.Controls.TextBox) 的 [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment) |
+| [TextWrapping](#uid-72c9995873) | 获取或设置 [TextBox](xref:Avalonia.Controls.TextBox) 的 [Avalonia.Media.TextWrapping](xref:Avalonia.Media.TextWrapping) |
 | [Theme](../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [UndoLimit](#uid-9878e5a1a0) | Gets or sets the maximum number of items that can reside in the Undo stack |
@@ -527,7 +527,7 @@ public bool CanUndo { get; set; }
 
 ### CaretBlinkInterval 属性 {#caretblinkinterval-property}
 
-Gets or sets the caret blink rate
+获取或设置插入符的闪烁频率
 
 ```csharp
 public TimeSpan CaretBlinkInterval { get; set; }
@@ -926,7 +926,7 @@ public string Text { get; set; }
 
 ### TextAlignment 属性 {#textalignment-property}
 
-Gets or sets the [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment) of the [TextBox](xref:Avalonia.Controls.TextBox)
+获取或设置 [TextBox](xref:Avalonia.Controls.TextBox) 的 [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment)
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }
@@ -940,7 +940,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 ### TextWrapping 属性 {#textwrapping-property}
 
-Gets or sets the [Avalonia.Media.TextWrapping](xref:Avalonia.Media.TextWrapping) of the [TextBox](xref:Avalonia.Controls.TextBox)
+获取或设置 [TextBox](xref:Avalonia.Controls.TextBox) 的 [Avalonia.Media.TextWrapping](xref:Avalonia.Media.TextWrapping)
 
 ```csharp
 public Avalonia.Media.TextWrapping TextWrapping { get; set; }

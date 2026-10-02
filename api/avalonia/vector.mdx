@@ -98,24 +98,24 @@ The Y component.
 | 名称 | 说明 |
 | --- | --- |
 | [Abs](#uid-46c877565a) | Returns a vector whose elements are the absolute values of each of the specified vector's elements. |
-| [Add](#uid-5223085307) | Adds the second to the first vector |
+| [Add](#uid-5223085307) | 把第二个向量加到第一个向量上 |
 | [Clamp](#uid-a7f3ebdb43) | Restricts a vector between a minimum and a maximum value. |
 | [Cross](#uid-fe0327d565) | Returns the cross product of two vectors. |
 | [Deconstruct](#uid-2a859cf516) | 暂无摘要。 |
 | [Distance](#uid-f1e68aa94c) | 计算给定两点之间的欧几里得距离。 |
 | [DistanceSquared](#uid-8f960f5cea) | Returns the Euclidean distance squared between two specified points |
-| [Divide (2 overloads)](#uid-4e3b9274dd) | Divides the first vector by the second. |
+| [Divide (2 overloads)](#uid-4e3b9274dd) | 用第二个向量去除第一个向量。 |
 | [Dot](#uid-4148913918) | Returns the dot product of two vectors. |
-| [Equals（2 个重载）](#uid-ce2cfe6ee3) | Check if two vectors are equal (bitwise). |
+| [Equals（2 个重载）](#uid-ce2cfe6ee3) | 判断两个向量是否相等（按位比较）。 |
 | [GetHashCode](#uid-c00d23029d) | 暂无摘要。 |
 | [Max](#uid-2be81d4b1f) | Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors |
 | [Min](#uid-e5a3e14aec) | Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors |
-| [Multiply (2 overloads)](#uid-3669f7bd63) | Multiplies the first vector by the second. |
+| [Multiply (2 overloads)](#uid-3669f7bd63) | 用第一个向量乘以第二个向量。 |
 | [NearlyEquals](#uid-2fc575cc4e) | Check if two vectors are nearly equal (numerically). |
 | [Negate (2 overloads)](#uid-318cdc1482) | Returns a negated version of this vector. |
-| [Normalize (2 overloads)](#uid-f0c0c4d580) | Returns a normalized version of this vector. |
+| [Normalize (2 overloads)](#uid-f0c0c4d580) | 返回该向量的归一化形式。 |
 | [Parse](#uid-1bf83f4e65) | 解析 [Avalonia.Vector](xref:Avalonia.Vector) 字符串。 |
-| [Subtract](#uid-a968b81add) | Subtracts the second from the first vector |
+| [Subtract](#uid-a968b81add) | 从第一个向量中减去第二个向量 |
 | [ToString](#uid-668c8eb0f9) | Returns the string representation of the vector. |
 | [WithX](#uid-8154f8665f) | Returns a new vector with the specified X component. |
 | [WithY](#uid-57fd81b139) | Returns a new vector with the specified Y component. |
@@ -145,7 +145,7 @@ public Avalonia.Vector Abs()
 
 ### Add 方法 {#add-method}
 
-Adds the second to the first vector
+把第二个向量加到第一个向量上
 
 ```csharp
 public Avalonia.Vector Add(Avalonia.Vector a, Avalonia.Vector b)
@@ -331,7 +331,7 @@ The Euclidean distance squared.
 
 #### Divide 方法 {#divide-method}
 
-Divides the first vector by the second.
+用第二个向量去除第一个向量。
 
 ```csharp
 public Avalonia.Vector Divide(Avalonia.Vector a, Avalonia.Vector b)
@@ -434,7 +434,7 @@ The dot product.
 
 #### Equals 方法 {#equals-method}
 
-Check if two vectors are equal (bitwise).
+判断两个向量是否相等（按位比较）。
 
 ```csharp
 public bool Equals(Avalonia.Vector other)
@@ -555,7 +555,7 @@ public Avalonia.Vector Min(Avalonia.Vector left, Avalonia.Vector right)
 
 #### Multiply 方法 {#multiply-method}
 
-Multiplies the first vector by the second.
+用第一个向量乘以第二个向量。
 
 ```csharp
 public Avalonia.Vector Multiply(Avalonia.Vector a, Avalonia.Vector b)
@@ -706,7 +706,7 @@ The vector to negate.
 
 #### Normalize 方法 {#normalize-method}
 
-Returns a normalized version of this vector.
+返回该向量的归一化形式。
 
 ```csharp
 public Avalonia.Vector Normalize()
@@ -783,7 +783,7 @@ The [Avalonia.Vector](xref:Avalonia.Vector).
 
 ### Subtract 方法 {#subtract-method}
 
-Subtracts the second from the first vector
+从第一个向量中减去第二个向量
 
 ```csharp
 public Avalonia.Vector Subtract(Avalonia.Vector a, Avalonia.Vector b)

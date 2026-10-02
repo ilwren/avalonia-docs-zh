@@ -545,7 +545,7 @@ public void SetTextWrapping(Avalonia.Controls.Control control, Avalonia.Media.Te
 | [Focusable](../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [FocusAdorner](control.mdx#uid-96de66ccc5) | 获取或设置控件的焦点修饰元素。继承自 [Control](control.mdx)。 |
 | [FontFamily](#uid-be6e439365) | Gets or sets the font family used to draw the control's text. |
-| [FontFeatures](#uid-c5e0a09dc0) | Gets or sets the font features. |
+| [FontFeatures](#uid-c5e0a09dc0) | 获取或设置字体特性。 |
 | [FontSize](#uid-824bdb92c4) | Gets or sets the size of the control's text in points. |
 | [FontStretch](#uid-2fb56e104a) | Gets or sets the font stretch used to draw the control's text. |
 | [FontStyle](#uid-e7885ca5ea) | Gets or sets the font style used to draw the control's text. |
@@ -594,9 +594,9 @@ public void SetTextWrapping(Avalonia.Controls.Control control, Avalonia.Media.Te
 | [Tag](control.mdx#uid-2790b0c958) | 获取或设置附加在控件上的用户自定义对象。继承自 [Control](control.mdx)。 |
 | [TemplatedParent](../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Text](#uid-38ad01f1f7) | 获取或设置文本。 |
-| [TextAlignment](#uid-9d2ff6508a) | Gets or sets the text alignment. |
+| [TextAlignment](#uid-9d2ff6508a) | 获取或设置文本对齐方式。 |
 | [TextDecorations](#uid-64fe8c0662) | Gets or sets the text decorations. |
-| [TextLayout](#uid-b056ac80fb) | Gets the [Avalonia.Controls.TextBlock.TextLayout](xref:Avalonia.Controls.TextBlock.TextLayout) used to render the text. |
+| [TextLayout](#uid-b056ac80fb) | 获取渲染该文本所用的 [Avalonia.Controls.TextBlock.TextLayout](xref:Avalonia.Controls.TextBlock.TextLayout)。 |
 | [TextTrimming](#uid-3d00d0001b) | Gets or sets the control's text trimming mode. |
 | [TextWrapping](#uid-5bf193bb6f) | Gets or sets the control's text wrapping mode. |
 | [Theme](../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -654,7 +654,7 @@ public Avalonia.Media.FontFamily FontFamily { get; set; }
 
 ### FontFeatures 属性 {#fontfeatures-property}
 
-Gets or sets the font features.
+获取或设置字体特性。
 
 ```csharp
 public Avalonia.Media.FontFeatureCollection FontFeatures { get; set; }
@@ -836,7 +836,7 @@ public string Text { get; set; }
 
 ### TextAlignment 属性 {#textalignment-property}
 
-Gets or sets the text alignment.
+获取或设置文本对齐方式。
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }
@@ -864,7 +864,7 @@ public Avalonia.Media.TextDecorationCollection TextDecorations { get; set; }
 
 ### TextLayout 属性 {#textlayout-property}
 
-Gets the [Avalonia.Controls.TextBlock.TextLayout](xref:Avalonia.Controls.TextBlock.TextLayout) used to render the text.
+获取渲染该文本所用的 [Avalonia.Controls.TextBlock.TextLayout](xref:Avalonia.Controls.TextBlock.TextLayout)。
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextLayout TextLayout { get; set; }

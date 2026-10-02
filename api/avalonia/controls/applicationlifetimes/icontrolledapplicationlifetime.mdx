@@ -83,8 +83,8 @@ An integer exit code for an application. The default exit code is 0.
 
 | 名称 | 说明 |
 | --- | --- |
-| [Exit](#uid-24be6dcaff) | Sent when the application is exiting. |
-| [Startup](#uid-2481c92d33) | Sent when the application is starting up. |
+| [Exit](#uid-24be6dcaff) | 应用即将退出时发送。 |
+| [Startup](#uid-2481c92d33) | 应用启动时发送。 |
 
 <section className="apiref-page__member-entry">
 
@@ -92,7 +92,7 @@ An integer exit code for an application. The default exit code is 0.
 
 ### Exit 事件 {#exit-event}
 
-Sent when the application is exiting.
+应用即将退出时发送。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ControlledApplicationLifetimeExitEventArgs> Exit
@@ -106,7 +106,7 @@ public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ControlledAppli
 
 ### Startup 事件 {#startup-event}
 
-Sent when the application is starting up.
+应用启动时发送。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ControlledApplicationLifetimeStartupEventArgs> Startup

@@ -184,21 +184,21 @@ Y 位置。
 
 | 名称 | 说明 |
 | --- | --- |
-| [CenterRect](#uid-26d920a1da) | Centers another rectangle in this rectangle. |
+| [CenterRect](#uid-26d920a1da) | 把另一个矩形在该矩形内居中。 |
 | [Contains（2 个重载）](#uid-a458e3c264) | Determines whether a point in the bounds of the rectangle. |
 | [ContainsExclusive](#uid-3a64b5f0e8) | Determines whether a point is in the bounds of the rectangle, exclusive of the rectangle's bottom/right edge. |
 | [Equals（2 个重载）](#uid-dab286ffc1) | Returns a boolean indicating whether the rect is equal to the other given rect. |
 | [FromRect (2 overloads)](#uid-83a2288e85) | 按指定的缩放系数把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。 |
 | [FromRectWithDpi (2 overloads)](#uid-07364607c9) | 按指定的每英寸点数（DPI）把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。 |
 | [GetHashCode](#uid-9c96c5b3a7) | 返回该实例的哈希码。 |
-| [Intersect](#uid-19f3ba3fa5) | Gets the intersection of two rectangles. |
+| [Intersect](#uid-19f3ba3fa5) | 获取两个矩形的交集。 |
 | [Intersects](#uid-1917bf56e7) | Determines whether a rectangle intersects with this rectangle. |
 | [Parse](#uid-4a1cfac60a) | 解析 [Avalonia.PixelRect](xref:Avalonia.PixelRect) 字符串。 |
 | [ToRect (2 overloads)](#uid-7369b38e30) | Converts the [Avalonia.PixelRect](xref:Avalonia.PixelRect) to a device-independent [Avalonia.Rect](xref:Avalonia.Rect) using the specified scaling factor. |
 | [ToRectWithDpi (2 overloads)](#uid-4535c004c4) | Converts the [Avalonia.PixelRect](xref:Avalonia.PixelRect) to a device-independent [Avalonia.Rect](xref:Avalonia.Rect) using the specified dots per inch (DPI). |
 | [ToString](#uid-abe42ff357) | Returns the string representation of the rectangle. |
-| [Translate](#uid-edd250bd5d) | Translates the rectangle by an offset. |
-| [Union](#uid-a1e9518241) | Gets the union of two rectangles. |
+| [Translate](#uid-edd250bd5d) | 按某个偏移量平移该矩形。 |
+| [Union](#uid-a1e9518241) | 获取两个矩形的并集。 |
 | [WithHeight](#uid-910a5ae14b) | Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified height. |
 | [WithWidth](#uid-24f0d2659f) | Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified width. |
 | [WithX](#uid-773a9cfcf4) | Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified X position. |
@@ -210,7 +210,7 @@ Y 位置。
 
 ### CenterRect 方法 {#centerrect-method}
 
-Centers another rectangle in this rectangle.
+把另一个矩形在该矩形内居中。
 
 ```csharp
 public Avalonia.PixelRect CenterRect(Avalonia.PixelRect rect)
@@ -548,7 +548,7 @@ int
 
 ### Intersect 方法 {#intersect-method}
 
-Gets the intersection of two rectangles.
+获取两个矩形的交集。
 
 ```csharp
 public Avalonia.PixelRect Intersect(Avalonia.PixelRect rect)
@@ -777,7 +777,7 @@ The string representation of the rectangle.
 
 ### Translate 方法 {#translate-method}
 
-Translates the rectangle by an offset.
+按某个偏移量平移该矩形。
 
 ```csharp
 public Avalonia.PixelRect Translate(Avalonia.PixelVector offset)
@@ -805,7 +805,7 @@ The translated rectangle.
 
 ### Union 方法 {#union-method}
 
-Gets the union of two rectangles.
+获取两个矩形的并集。
 
 ```csharp
 public Avalonia.PixelRect Union(Avalonia.PixelRect rect)
@@ -943,16 +943,16 @@ The y position.
 
 | 名称 | 说明 |
 | --- | --- |
-| [Bottom](#uid-ffd8bc65d1) | Gets the bottom position of the rectangle. |
-| [BottomLeft](#uid-a17dcd1536) | Gets the bottom left point of the rectangle. |
+| [Bottom](#uid-ffd8bc65d1) | 获取该矩形下边缘的位置。 |
+| [BottomLeft](#uid-a17dcd1536) | 获取该矩形的左下角点。 |
 | [BottomRight](#uid-be536e5c16) | Gets the bottom right point of the rectangle. |
-| [Center](#uid-ae34e432d9) | Gets the center point of the rectangle. |
+| [Center](#uid-ae34e432d9) | 获取该矩形的中心点。 |
 | [Height](#uid-51d9d79874) | 获取高度。 |
-| [Position](#uid-502dd64523) | Gets the position of the rectangle. |
-| [Right](#uid-bd7518528b) | Gets the right position of the rectangle. |
-| [Size](#uid-a0445e84ef) | Gets the size of the rectangle. |
-| [TopLeft](#uid-9d12b8370b) | Gets the top left point of the rectangle. |
-| [TopRight](#uid-40bad8b70f) | Gets the top right point of the rectangle. |
+| [Position](#uid-502dd64523) | 获取该矩形的位置。 |
+| [Right](#uid-bd7518528b) | 获取该矩形右边缘的位置。 |
+| [Size](#uid-a0445e84ef) | 获取该矩形的尺寸。 |
+| [TopLeft](#uid-9d12b8370b) | 获取该矩形的左上角点。 |
+| [TopRight](#uid-40bad8b70f) | 获取该矩形的右上角点。 |
 | [Width](#uid-6d6da23ec9) | 获取宽度。 |
 | [X](#uid-8596bffbd8) | 获取 X 位置。 |
 | [Y](#uid-1eb4bdafa1) | 获取 Y 位置。 |
@@ -963,7 +963,7 @@ The y position.
 
 ### Bottom 属性 {#bottom-property}
 
-Gets the bottom position of the rectangle.
+获取该矩形下边缘的位置。
 
 ```csharp
 public int Bottom { get; set; }
@@ -977,7 +977,7 @@ public int Bottom { get; set; }
 
 ### BottomLeft 属性 {#bottomleft-property}
 
-Gets the bottom left point of the rectangle.
+获取该矩形的左下角点。
 
 ```csharp
 public Avalonia.PixelPoint BottomLeft { get; set; }
@@ -1005,7 +1005,7 @@ public Avalonia.PixelPoint BottomRight { get; set; }
 
 ### Center 属性 {#center-property}
 
-Gets the center point of the rectangle.
+获取该矩形的中心点。
 
 ```csharp
 public Avalonia.PixelPoint Center { get; set; }
@@ -1033,7 +1033,7 @@ public int Height { get; set; }
 
 ### Position 属性 {#position-property}
 
-Gets the position of the rectangle.
+获取该矩形的位置。
 
 ```csharp
 public Avalonia.PixelPoint Position { get; set; }
@@ -1047,7 +1047,7 @@ public Avalonia.PixelPoint Position { get; set; }
 
 ### Right 属性 {#right-property}
 
-Gets the right position of the rectangle.
+获取该矩形右边缘的位置。
 
 ```csharp
 public int Right { get; set; }
@@ -1061,7 +1061,7 @@ public int Right { get; set; }
 
 ### Size 属性 {#size-property}
 
-Gets the size of the rectangle.
+获取该矩形的尺寸。
 
 ```csharp
 public Avalonia.PixelSize Size { get; set; }
@@ -1075,7 +1075,7 @@ public Avalonia.PixelSize Size { get; set; }
 
 ### TopLeft 属性 {#topleft-property}
 
-Gets the top left point of the rectangle.
+获取该矩形的左上角点。
 
 ```csharp
 public Avalonia.PixelPoint TopLeft { get; set; }
@@ -1089,7 +1089,7 @@ public Avalonia.PixelPoint TopLeft { get; set; }
 
 ### TopRight 属性 {#topright-property}
 
-Gets the top right point of the rectangle.
+获取该矩形的右上角点。
 
 ```csharp
 public Avalonia.PixelPoint TopRight { get; set; }
