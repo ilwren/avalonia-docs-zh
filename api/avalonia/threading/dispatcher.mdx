@@ -69,7 +69,7 @@ public class Dispatcher
 | [BeginInvokeShutdown](#uid-b4dd26d733) | Begins the process of shutting down the dispatcher. |
 | [CheckAccess](#uid-fa78847cc4) | Checks that the current thread is the UI thread. |
 | [DisableProcessing](#uid-ad12393bf3) | Disable the event processing of the dispatcher. |
-| [ExitAllFrames](#uid-10cc431c4c) | Requests that all nested frames exit. |
+| [ExitAllFrames](#uid-10cc431c4c) | 请求所有嵌套帧退出。 |
 | [FromThread](#uid-74ab1e87f3) | 暂无摘要。 |
 | [HasJobsWithPriority](#uid-7a6fc1a6a4) | 暂无摘要。 |
 | [Invoke (8 overloads)](#uid-33a1b2993f) | Executes the specified Action synchronously on the thread that the Dispatcher was created on. |
@@ -216,7 +216,7 @@ unrelated reentrancy. The effect of disabling processing is:
 
 ### ExitAllFrames 方法 {#exitallframes-method}
 
-Requests that all nested frames exit.
+请求所有嵌套帧退出。
 
 ```csharp
 public void ExitAllFrames()

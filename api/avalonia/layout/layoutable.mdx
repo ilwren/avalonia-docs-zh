@@ -85,7 +85,7 @@ public Layoutable()
 | --- | --- |
 | [ApplyStyling](../styledelement.mdx#uid-b0f81a6f8f) | 若控件已初始化且尚未应用样式，则为其应用样式。继承自 [StyledElement](../styledelement.mdx)。 |
 | [ApplyTemplate](#uid-cc46768b1a) | 必要时创建该控件的视觉子级 |
-| [Arrange](#uid-d7a19ca8f7) | Arranges the control and its children. |
+| [Arrange](#uid-d7a19ca8f7) | 排列该控件及其子级。 |
 | [BeginInit](../styledelement.mdx#uid-91c6ccadce) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [Bind（8 个重载）](../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -131,7 +131,7 @@ public void ApplyTemplate()
 
 ### Arrange 方法 {#arrange-method}
 
-Arranges the control and its children.
+排列该控件及其子级。
 
 ```csharp
 public void Arrange(Avalonia.Rect rect)
@@ -257,7 +257,7 @@ schedule layout passes itself.
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [UseLayoutRounding](#uid-5998a3d47c) | Gets or sets a value that determines whether the element should be snapped to pixel boundaries at layout time. |
 | [VerticalAlignment](#uid-9652a1b295) | Gets or sets the element's preferred vertical alignment in its parent. |
-| [Width](#uid-491c41475f) | Gets or sets the width of the element. |
+| [Width](#uid-491c41475f) | 获取或设置该元素的宽度。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
 
 <section className="apiref-page__member-entry">
@@ -435,7 +435,7 @@ public Avalonia.Layout.VerticalAlignment VerticalAlignment { get; set; }
 
 ### Width 属性 {#width-property}
 
-Gets or sets the width of the element.
+获取或设置该元素的宽度。
 
 ```csharp
 public double Width { get; set; }

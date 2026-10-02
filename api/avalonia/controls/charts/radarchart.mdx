@@ -150,7 +150,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [AnimationProgress](chartbase.mdx#uid-a985586f7b) | 获取或设置图表的整体动画进度。继承自 [ChartBase](chartbase.mdx)。 |
 | [AxisBrush](axisgridchartbase.mdx#uid-301f5c98a6) | 获取或设置绘制坐标轴线和刻度所用的画刷。继承自 [AxisGridChartBase](axisgridchartbase.mdx)。 |
 | [AxisCount](#uid-ab86ee5794) | Gets or sets the number of axes (spokes) in the radar chart. |
-| [AxisLabels](#uid-c00a608899) | Gets or sets the labels for each axis. |
+| [AxisLabels](#uid-c00a608899) | 获取或设置各坐标轴的标签。 |
 | [Background](../primitives/templatedcontrol.mdx#uid-50dbd38ef5) | 获取或设置绘制控件背景所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BackgroundSizing](../primitives/templatedcontrol.mdx#uid-07ef33f604) | 获取或设置控件背景相对于其边框的绘制方式。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BorderBrush](../primitives/templatedcontrol.mdx#uid-cf666d3678) | 获取或设置绘制控件边框所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -226,7 +226,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Series](#uid-60df886689) | Gets the collection of radar series displayed in this chart. |
-| [ShowGridLines](#uid-c910a3c3fc) | Gets or sets whether to show the grid. |
+| [ShowGridLines](#uid-c910a3c3fc) | 获取或设置是否显示网格。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -264,7 +264,7 @@ public int AxisCount { get; set; }
 
 ### AxisLabels 属性 {#axislabels-property}
 
-Gets or sets the labels for each axis.
+获取或设置各坐标轴的标签。
 
 ```csharp
 public System.Collections.Generic.IList<string> AxisLabels { get; set; }
@@ -306,7 +306,7 @@ public Avalonia.Collections.AvaloniaList<Avalonia.Controls.Charts.RadarSeries> S
 
 ### ShowGridLines 属性 {#showgridlines-property}
 
-Gets or sets whether to show the grid.
+获取或设置是否显示网格。
 
 ```csharp
 public bool ShowGridLines { get; set; }

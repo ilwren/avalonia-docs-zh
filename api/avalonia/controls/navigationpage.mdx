@@ -106,7 +106,7 @@ public NavigationPage()
 | [GetHasBackButton](#uid-b2bb280ef8) | Gets whether the back button is visible for the specified page. |
 | [GetHashCode](../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [GetHasNavigationBar](#uid-bf3e8f9963) | Gets whether the navigation bar is visible for the specified page. |
-| [GetHeader](#uid-785565bca2) | Gets the header of the specified page. |
+| [GetHeader](#uid-785565bca2) | 获取指定页面的标题。 |
 | [GetIsBackButtonEnabled](#uid-918f91ea56) | Gets whether the back button is enabled for the specified page. |
 | [GetIsHoldingEnabled](../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -122,7 +122,7 @@ public NavigationPage()
 | [Measure](../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [PopAllModalsAsync（2 个重载）](#uid-97b710ba48) | 用 [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition) 弹出所有模态页面。 |
 | [PopAsync（2 个重载）](#uid-1232dddbb7) | Pops the top page from the navigation stack asynchronously using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
-| [PopModalAsync（2 个重载）](#uid-25a0bccba6) | Pops the top modal page using [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition). |
+| [PopModalAsync（2 个重载）](#uid-25a0bccba6) | 用 [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition) 弹出最顶上的模态页面。 |
 | [PopToPageAsync（2 个重载）](#uid-537b1d248e) | Pops to a specific page in the stack using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
 | [PopToRootAsync（2 个重载）](#uid-5c3c54243e) | Pops all pages to the root page using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
 | [PushAsync（2 个重载）](#uid-3c25ff75d5) | Pushes `page` onto the navigation stack asynchronously using [Avalonia.Controls.NavigationPage.PageTransition](xref:Avalonia.Controls.NavigationPage.PageTransition). |
@@ -140,7 +140,7 @@ public NavigationPage()
 | [SetFlowDirection](../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../visual.mdx)。 |
 | [SetHasBackButton](#uid-f56d3103cc) | Sets whether the back button is visible for the specified page. |
 | [SetHasNavigationBar](#uid-5c4192f3a7) | Sets whether the navigation bar is visible for the specified page. |
-| [SetHeader](#uid-052e0c6d99) | Sets the header of the specified page. |
+| [SetHeader](#uid-052e0c6d99) | 设置指定页面的标题。 |
 | [SetIsBackButtonEnabled](#uid-00ef6ab339) | Sets whether the back button is enabled for the specified page. |
 | [SetIsHoldingEnabled](../input/inputelement.mdx#uid-90a47948ad) | 继承自 [InputElement](../input/inputelement.mdx)。 |
 | [SetIsHoldWithMouseEnabled](../input/inputelement.mdx#uid-a494efd7c7) | 继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -301,7 +301,7 @@ bool
 
 ### GetHeader 方法 {#getheader-method}
 
-Gets the header of the specified page.
+获取指定页面的标题。
 
 ```csharp
 public object GetHeader(Avalonia.Controls.Page page)
@@ -522,7 +522,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Controls.Page](xref:Avalonia.Controls.P
 
 #### PopModalAsync 方法 {#popmodalasync-method}
 
-Pops the top modal page using [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition).
+用 [Avalonia.Controls.NavigationPage.ModalTransition](xref:Avalonia.Controls.NavigationPage.ModalTransition) 弹出最顶上的模态页面。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Controls.Page> PopModalAsync()
@@ -1025,7 +1025,7 @@ public void SetHasNavigationBar(Avalonia.Controls.Page page, bool value)
 
 ### SetHeader 方法 {#setheader-method}
 
-Sets the header of the specified page.
+设置指定页面的标题。
 
 ```csharp
 public void SetHeader(Avalonia.Controls.Page page, object header)

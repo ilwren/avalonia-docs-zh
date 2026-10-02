@@ -102,7 +102,7 @@ public class DocumentSnapshotBuilder
 | [SetListItemTextElementFormatting](#uid-668dd30319) | Sets base-level element formatting for the current list item. |
 | [SetListMarkerAlignment](#uid-ad90dc72e2) | Sets how the current list's marker is aligned within its column (Word's `w:lvlJc`): left starts every marker at the same x, right ends them at the same x with a consistent gap to the content. Shared by every item in the list. |
 | [SetListMarkerOffset](#uid-e61ed41e12) | Sets the current list's marker offset (its hanging indent — how far the marker sits back from the item content). Shared by every item in the list. |
-| [SetParagraphCustomData](#uid-693084e4d6) | Sets [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) on the current paragraph. |
+| [SetParagraphCustomData](#uid-693084e4d6) | 在当前段落上设置 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData)。 |
 | [SetParagraphFormatMetadata](#uid-40be1825fd) | Sets format-specific metadata for the current paragraph. Serializers use this to attach round-trip metadata (e.g., RTF twips, DOCX style IDs). |
 | [SetParagraphFormatting](#uid-09a39b99c3) | Sets formatting for the current paragraph, or queues it for the next paragraph. |
 | [SetParagraphTextElementFormatting](#uid-cf543077c7) | Sets base-level element formatting for the current paragraph. If no paragraph is active, queues it for the next paragraph. |
@@ -1449,7 +1449,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### SetParagraphCustomData 方法 {#setparagraphcustomdata-method}
 
-Sets [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) on the current paragraph.
+在当前段落上设置 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData)。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetParagraphCustomData(object data)

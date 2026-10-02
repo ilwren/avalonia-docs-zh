@@ -101,7 +101,7 @@ public PageBandSnapshot(string name, Avalonia.Controls.Documents.Serialization.S
 | [Id](#uid-cde6efdf90) | The band's identity: what a section's references name, kept by the restored band. |
 | [Name](#uid-dbcb3d369a) | The band's name, when the source format named it; null otherwise. |
 | [Role](#uid-00e4518c3d) | 该带状区域是页眉还是页脚。 |
-| [Rule](#uid-7fc1db60c3) | Which pages the band claims by itself. |
+| [Rule](#uid-7fc1db60c3) | 该带状区域自身占据哪些页面。 |
 
 <section className="apiref-page__member-entry">
 
@@ -165,7 +165,7 @@ public Avalonia.Controls.Documents.PageBandRole Role { get; set; }
 
 ### Rule 属性 {#rule-property}
 
-Which pages the band claims by itself.
+该带状区域自身占据哪些页面。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBandRule Rule { get; set; }

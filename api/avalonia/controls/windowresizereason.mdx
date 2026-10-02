@@ -63,7 +63,7 @@ public enum WindowResizeReason
 | 名称 | 说明 |
 | --- | --- |
 | [Application](#uid-c3cc4c35c0) | The resize was initiated by the application, for example by setting one of the sizing- related properties on [Avalonia.Controls.Window](xref:Avalonia.Controls.Window) such as [Avalonia.Layout.Layoutable.Width](xref:Avalonia.Layout.Layoutable.Width) or [Avalonia.Layout.Layoutable.Height](xref:Avalonia.Layout.Layoutable.Height). |
-| [DpiChange](#uid-443828ee31) | The resize was due to a change in DPI. |
+| [DpiChange](#uid-443828ee31) | 这次尺寸变化缘于 DPI 改变。 |
 | [Layout](#uid-3e5e7ef93f) | The resize was initiated by the layout system. |
 | [Unspecified](#uid-976ca6e4d5) | The resize reason is unknown or unspecified. |
 | [User](#uid-3dffad441c) | The resize was due to the user resizing the window, for example by dragging the window frame. |
@@ -90,7 +90,7 @@ public Avalonia.Controls.WindowResizeReason Application
 
 ### DpiChange 字段 {#dpichange-field}
 
-The resize was due to a change in DPI.
+这次尺寸变化缘于 DPI 改变。
 
 ```csharp
 public Avalonia.Controls.WindowResizeReason DpiChange

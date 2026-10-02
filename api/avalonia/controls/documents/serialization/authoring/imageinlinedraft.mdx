@@ -145,7 +145,7 @@ public ImageInlineDraft(ReadOnlyMemory<byte> imageData, string imageMimeType, do
 | [Formatting](inlinedraft.mdx#uid-5bc8ad789d) | 内联元素特有的格式设置（文本装饰、基线对齐）。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [Height](#uid-a3a34d3b4e) | Gets or sets the display height in device-independent pixels. [double.NaN](xref:System.Double.NaN) uses the intrinsic pixel size. |
 | [ImageData](#uid-7ade528876) | 获取或设置编码后的图像字节。 |
-| [ImageMimeType](#uid-b0c1561d88) | Gets or sets the MIME type of [Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData](xref:Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData). |
+| [ImageMimeType](#uid-b0c1561d88) | 获取或设置 [Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData](xref:Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData) 的 MIME 类型。 |
 | [Inlines](inlinedraft.mdx#uid-1eaa3c4f70) | 获取可变的子级内联草稿列表。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [Kind](inlinedraft.mdx#uid-e8bc97d972) | 获取标识该草稿内联类型的 [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [SourceUri](#uid-31b02025f7) | The reference URI for a deferred/linked image (e.g. an image URL), or for an embedded-byte image. When set, [Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData](xref:Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData) is typically empty. |
@@ -200,7 +200,7 @@ public ReadOnlyMemory<byte> ImageData { get; set; }
 
 ### ImageMimeType 属性 {#imagemimetype-property}
 
-Gets or sets the MIME type of [Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData](xref:Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData).
+获取或设置 [Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData](xref:Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData) 的 MIME 类型。
 
 ```csharp
 public string ImageMimeType { get; set; }

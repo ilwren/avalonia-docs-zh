@@ -608,7 +608,7 @@ public void UnregisterComponent(Avalonia.Controls.Documents.Primitives.Component
 | [Toolbar](#uid-49c3746d84) | Gets or sets the custom toolbar for this editor. |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [UndoLimit](#uid-e78274c7d9) | Gets or sets the maximum number of undo operations to retain. |
-| [UndoManager](#uid-ec471b2074) | Gets the undo manager for this editor. |
+| [UndoManager](#uid-ec471b2074) | 获取该编辑器的撤销管理器。 |
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ViewMode](#uid-5105223d8e) | Gets or sets how the editor lays out the document: [Avalonia.Controls.DocumentViewMode.Continuous](xref:Avalonia.Controls.DocumentViewMode.Continuous) (the default single column) or [Avalonia.Controls.DocumentViewMode.PageLayout](xref:Avalonia.Controls.DocumentViewMode.PageLayout) (discrete page sheets, Word's print layout). Switching swaps the hosted text view via the `:page-layout` pseudo-class; the document, selection, and editing stack carry over. |
@@ -1049,7 +1049,7 @@ Default value is 100. Setting this property will update the current
 
 ### UndoManager 属性 {#undomanager-property}
 
-Gets the undo manager for this editor.
+获取该编辑器的撤销管理器。
 
 ```csharp
 public Avalonia.Controls.Documents.Undo.IUndoManager UndoManager { get; set; }

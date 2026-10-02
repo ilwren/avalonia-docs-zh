@@ -178,10 +178,10 @@ public DatePickerPresenter()
 | [Margin](../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MaxHeight](../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MaxWidth](../layout/layoutable.mdx#uid-ea6041bc57) | 获取或设置元素的最大宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [MaxYear](#uid-688d4bcc91) | Gets or sets the maximum pickable year |
+| [MaxYear](#uid-688d4bcc91) | 获取或设置可选的最大年份 |
 | [MinHeight](../layout/layoutable.mdx#uid-822cd64c83) | 获取或设置元素的最小高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MinWidth](../layout/layoutable.mdx#uid-5bd3b5bb2c) | 获取或设置元素的最小宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [MinYear](#uid-e71913ab7c) | Gets or sets the minimum pickable year |
+| [MinYear](#uid-e71913ab7c) | 获取或设置可选的最小年份 |
 | [MonthFormat](#uid-474ff3d91b) | 获取或设置月份格式 |
 | [MonthVisible](#uid-f22628b232) | Gets or sets whether the month selector is visible |
 | [Name](../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -255,7 +255,7 @@ public bool DayVisible { get; set; }
 
 ### MaxYear 属性 {#maxyear-property}
 
-Gets or sets the maximum pickable year
+获取或设置可选的最大年份
 
 ```csharp
 public DateTimeOffset MaxYear { get; set; }
@@ -269,7 +269,7 @@ public DateTimeOffset MaxYear { get; set; }
 
 ### MinYear 属性 {#minyear-property}
 
-Gets or sets the minimum pickable year
+获取或设置可选的最小年份
 
 ```csharp
 public DateTimeOffset MinYear { get; set; }

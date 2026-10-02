@@ -224,7 +224,7 @@ public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bo
 | --- | --- |
 | [Duration](#uid-cb46c3b57d) | 获取该动画的时长。 |
 | [FillMode](#uid-e066627e36) | Gets or sets the fill mode applied to both slide animations. Defaults to [Avalonia.Animation.FillMode.Forward](xref:Avalonia.Animation.FillMode.Forward), which keeps the final transform value after the animation completes and prevents a one-frame flash where the outgoing element snaps back to its original position before `IsVisible = false` takes effect. |
-| [Orientation](#uid-3f35e71b0b) | Gets the orientation of the animation. |
+| [Orientation](#uid-3f35e71b0b) | 获取该动画的方向。 |
 | [SlideInEasing](#uid-c709af8e90) | 获取或设置元素入场的缓动。 |
 | [SlideOutEasing](#uid-5d64b2750e) | 获取或设置元素退场的缓动。 |
 
@@ -265,7 +265,7 @@ public Avalonia.Animation.FillMode FillMode { get; set; }
 
 ### Orientation 属性 {#orientation-property}
 
-Gets the orientation of the animation.
+获取该动画的方向。
 
 ```csharp
 public Avalonia.Animation.PageSlide.SlideAxis Orientation { get; set; }

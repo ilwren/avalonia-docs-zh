@@ -249,11 +249,11 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [LabelForeground](#uid-7e931c37e0) | Gets or sets the foreground brush of the label. |
 | [LabelFormat](#uid-a62b77d386) | Gets or sets the format string for the label. &#123;0&#125; is the value, &#123;1&#125; is the category. |
 | [LabelOffset](#uid-3b4f03049a) | Gets or sets the distance from the data point to the label. |
-| [LabelPadding](#uid-360b907b65) | Gets or sets the padding of the label. |
+| [LabelPadding](#uid-360b907b65) | 获取或设置标签的内边距。 |
 | [LetterSpacing](../primitives/templatedcontrol.mdx#uid-2d96a527e6) | 获取或设置控件文本内容的字间距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Margin](../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MarkerFill](#uid-efe15f5a47) | Gets or sets the fill brush for the markers. |
-| [MarkerShape](#uid-8d8bfcbdf5) | Gets or sets the shape of the markers. |
+| [MarkerShape](#uid-8d8bfcbdf5) | 获取或设置标记的形状。 |
 | [MarkerSize](#uid-1112d5bd2e) | 获取或设置标记的大小。 |
 | [MarkerStroke](#uid-ccf56ed706) | Gets or sets the stroke brush for the markers. |
 | [MarkerStrokeThickness](#uid-9d5aaa6875) | Gets or sets the stroke thickness for the markers. |
@@ -422,7 +422,7 @@ public double LabelOffset { get; set; }
 
 ### LabelPadding 属性 {#labelpadding-property}
 
-Gets or sets the padding of the label.
+获取或设置标签的内边距。
 
 ```csharp
 public Avalonia.Thickness LabelPadding { get; set; }
@@ -450,7 +450,7 @@ public Avalonia.Media.IBrush MarkerFill { get; set; }
 
 ### MarkerShape 属性 {#markershape-property}
 
-Gets or sets the shape of the markers.
+获取或设置标记的形状。
 
 ```csharp
 public Avalonia.Controls.Charts.MarkerShape MarkerShape { get; set; }

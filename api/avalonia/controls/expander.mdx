@@ -478,7 +478,7 @@ public Avalonia.StyledProperty<bool> IsExpandedProperty
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
 | [Collapsed](#uid-5ace79a727) | Occurs after the content area has closed and only the header is visible. |
-| [Collapsing](#uid-97ca336169) | Occurs as the content area is closing. |
+| [Collapsing](#uid-97ca336169) | 内容区正在关闭时发生。 |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [DataContextChanged](../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -487,7 +487,7 @@ public Avalonia.StyledProperty<bool> IsExpandedProperty
 | [DoubleTapped](../input/inputelement.mdx#uid-ad13083e0c) | 当用户在同一点短暂接触并松开两次、且位移不明显时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [EffectiveViewportChanged](../layout/layoutable.mdx#uid-1922b89fa5) | 当元素的有效视口发生变化时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [Expanded](#uid-71871c0c7c) | Occurs after the [Avalonia.Controls.Expander](xref:Avalonia.Controls.Expander) has opened to display both its header and content. |
-| [Expanding](#uid-0f22bff77c) | Occurs as the content area is opening. |
+| [Expanding](#uid-0f22bff77c) | 内容区正在打开时发生。 |
 | [GettingFocus](../input/inputelement.mdx#uid-4d054164ee) | 在控件即将获得焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [GotFocus](../input/inputelement.mdx#uid-d41d7ad59c) | 当控件获得焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [Holding](../input/inputelement.mdx#uid-8cda030fe2) | 当用户单点接触并持续保持超过设定的时间阈值，期间既未松开也未产生新的接触点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -547,7 +547,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Collapsed
 
 ### Collapsing 事件 {#collapsing-event}
 
-Occurs as the content area is closing.
+内容区正在关闭时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.CancelRoutedEventArgs> Collapsing
@@ -580,7 +580,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Expanded
 
 ### Expanding 事件 {#expanding-event}
 
-Occurs as the content area is opening.
+内容区正在打开时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.CancelRoutedEventArgs> Expanding
