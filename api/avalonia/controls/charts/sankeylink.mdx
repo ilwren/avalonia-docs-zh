@@ -36,8 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Represents a link (flow connection) between two nodes in a Sankey diagram,
-with a value indicating the magnitude of the flow.
+表示桑基图中两个节点之间的一条连线（流量连接），其取值表示流量的大小。
 
 </div>
 
@@ -79,7 +78,7 @@ public SankeyLink()
 | --- | --- |
 | [Source](#uid-4da6556859) | 获取或设置源节点 ID。 |
 | [Target](#uid-adbd500c70) | 获取或设置目标节点 ID。 |
-| [Value](#uid-82f1bc96fa) | Gets or sets the magnitude of the flow represented by the link. |
+| [Value](#uid-82f1bc96fa) | 获取或设置该连线所代表流量的大小。 |
 
 <section className="apiref-page__member-entry">
 
@@ -115,7 +114,7 @@ public string Target { get; set; }
 
 ### Value 属性 {#value-property}
 
-Gets or sets the magnitude of the flow represented by the link.
+获取或设置该连线所代表流量的大小。
 
 ```csharp
 public double Value { get; set; }

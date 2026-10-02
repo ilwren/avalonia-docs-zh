@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-An [Avalonia.Controls.Documents.Undo.IUndoManager](xref:Avalonia.Controls.Documents.Undo.IUndoManager) that records nothing.
+一个什么都不记录的 [Avalonia.Controls.Documents.Undo.IUndoManager](xref:Avalonia.Controls.Documents.Undo.IUndoManager)。
 
 </div>
 
@@ -59,9 +59,8 @@ public class NullUndoManager
 
 ## 备注 {#remarks}
 
-Prefer a real [Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) with [Avalonia.Controls.Documents.Undo.UndoManager.IsEnabled](xref:Avalonia.Controls.Documents.Undo.UndoManager.IsEnabled) set to
-, or no manager at all. Both record nothing and neither needs a
-second implementation of the contract to exist.
+更推荐用一个真正的 [Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) 并把 [Avalonia.Controls.Documents.Undo.UndoManager.IsEnabled](xref:Avalonia.Controls.Documents.Undo.UndoManager.IsEnabled) 设为 false，
+或者干脆不要管理器。两种做法同样什么都不记录，也都不需要为这份契约再添一个实现。
 
 ## 方法 {#methods}
 

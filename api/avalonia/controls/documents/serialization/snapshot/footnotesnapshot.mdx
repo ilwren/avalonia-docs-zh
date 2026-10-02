@@ -36,9 +36,9 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-A footnote in a document snapshot: the note's body as a nested document snapshot,
-the id pairing it with the [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode) anchor of
-the same id, and an optional name for formats that address notes by name.
+文档快照中的一条脚注：便签正文以嵌套文档快照的形式保存，
+id 把它与同 id 的 [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode) 锚点配成一对，
+另有一个可选名称，供那些按名称寻址便签的格式使用。
 
 </div>
 
@@ -92,7 +92,7 @@ public FootnoteSnapshot(int noteId, Avalonia.Controls.Documents.Serialization.Sn
 | 名称 | 说明 |
 | --- | --- |
 | [Content](#uid-f3e60efb2b) | 该便签的正文。 |
-| [Label](#uid-12a7405a0c) | The note's name, when the source format named it; null otherwise. |
+| [Label](#uid-12a7405a0c) | 当源格式为该便签命名时，这里便是它的名称；否则为 null。 |
 | [NoteId](#uid-3281d8c6fc) | 把便签与其锚点配对起来的 id。 |
 
 <section className="apiref-page__member-entry">
@@ -115,7 +115,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Conte
 
 ### Label 属性 {#label-property}
 
-The note's name, when the source format named it; null otherwise.
+当源格式为该便签命名时，这里便是它的名称；否则为 null。
 
 ```csharp
 public string Label { get; set; }

@@ -36,9 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Action that toggles subscript formatting on the current selection.
-Sets [Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty](xref:Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty) to
-[Avalonia.Media.BaselineAlignment.Subscript](xref:Avalonia.Media.BaselineAlignment.Subscript); font size scaling is applied at render time.
+对当前选区切换下标格式的操作。
+它把 [Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty](xref:Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty) 设为 [Avalonia.Media.BaselineAlignment.Subscript](xref:Avalonia.Media.BaselineAlignment.Subscript)；字号缩放则在渲染时施加。
 
 </div>
 
@@ -58,12 +57,10 @@ public class SubscriptAction
 
 ## 备注 {#remarks}
 
-Superscript and subscript are mutually exclusive: both toggle the single
-[Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty](xref:Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty), so enabling one replaces
-the other automatically (there is only one model/springload key). All toggle,
-springload, and toolbar-state behaviour — including lighting up at a collapsed
-caret parked inside an existing subscript span — is inherited from
-[Avalonia.Controls.Documents.Primitives.Actions.FormattingToggleAction&lt;T&gt;](xref:Avalonia.Controls.Documents.Primitives.Actions.FormattingToggleAction%601), the same path as Bold/Italic/Underline.
+上标与下标互斥：两者切换的是同一个 [Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty](xref:Avalonia.Controls.Documents.RichInline.BaselineAlignmentProperty)，
+因此启用其一会自动顶替另一个（模型/springload 键只有一个）。
+所有切换、springload 与工具栏状态行为——包括插入符折叠停在已有下标 span 内时高亮点亮——
+都继承自 [Avalonia.Controls.Documents.Primitives.Actions.FormattingToggleAction&lt;T&gt;](xref:Avalonia.Controls.Documents.Primitives.Actions.FormattingToggleAction%601)，与 Bold/Italic/Underline 走的是同一条路。
 
 ## 构造函数 {#constructors}
 

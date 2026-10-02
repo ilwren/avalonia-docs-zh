@@ -36,8 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-A menu item that auto-populates child items from the available font
-families, rendering each entry in its own typeface.
+一个会依据可用字体族自动填充子项的菜单项，每一项都用其本身的字型来呈现。
 
 </div>
 
@@ -57,12 +56,10 @@ public class FontFamilyMenuItem
 
 ## 备注 {#remarks}
 
-The font list is sourced from the bound [Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem.Action](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem.Action)
-when it implements [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction). Each child
-[Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem) sets `FontFamily` on its header so the
-user sees a live preview of the typeface in the overflow menu.
-Use this as the [Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem) for the
-font family [Avalonia.Controls.Documents.Primitives.Toolbar.ComboBoxTool](xref:Avalonia.Controls.Documents.Primitives.Toolbar.ComboBoxTool).
+当绑定的 [Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem.Action](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem.Action) 实现了 [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction) 时，字体列表便取自它。
+每个子 [Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem) 都会在其标题上设置 `FontFamily`，
+这样用户在溢出菜单里就能实时看到该字型的样子。
+请把它用作字体族 [Avalonia.Controls.Documents.Primitives.Toolbar.ComboBoxTool](xref:Avalonia.Controls.Documents.Primitives.Toolbar.ComboBoxTool) 的 [Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem)。
 
 ## 构造函数 {#constructors}
 

@@ -59,8 +59,8 @@ public struct TableColumnWidth
 
 ## 备注 {#remarks}
 
-12 bytes per column (8 double + 4 enum). Stored in a flat array
-inside [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting) to avoid per-column object overhead.
+每列 12 字节（8 字节 double + 4 字节枚举）。它们存放在 [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting) 内的一个扁平数组里，
+以免为每一列都付出一个对象的开销。
 
 ## 构造函数 {#constructors}
 
@@ -90,8 +90,8 @@ public TableColumnWidth(double Value, Avalonia.Controls.GridUnitType UnitType)
 
 #### 备注 {#remarks-1}
 
-12 bytes per column (8 double + 4 enum). Stored in a flat array
-inside [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting) to avoid per-column object overhead.
+每列 12 字节（8 字节 double + 4 字节枚举）。它们存放在 [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting) 内的一个扁平数组里，
+以免为每一列都付出一个对象的开销。
 
 </section>
 
@@ -101,7 +101,7 @@ inside [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:A
 | --- | --- |
 | [Deconstruct](#uid-ede8f16d76) | 暂无摘要。 |
 | [Equals（2 个重载）](#uid-e7d3ebd84d) | 暂无摘要。 |
-| [FromGridLength](#uid-2e56b40359) | Creates a [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth) from an existing [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength). |
+| [FromGridLength](#uid-2e56b40359) | 由已有的 [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength) 创建一个 [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth)。 |
 | [GetHashCode](#uid-73e68ce8d5) | 暂无摘要。 |
 | [ToGridLength](#uid-d7f9fb50d7) | 依据该定义创建一个 [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength)。 |
 | [ToString](#uid-b8e4ece255) | 暂无摘要。 |
@@ -180,7 +180,7 @@ bool
 
 ### FromGridLength 方法 {#fromgridlength-method}
 
-Creates a [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth) from an existing [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength).
+由已有的 [Avalonia.Controls.GridLength](xref:Avalonia.Controls.GridLength) 创建一个 [Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth)。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth FromGridLength(Avalonia.Controls.GridLength gl)

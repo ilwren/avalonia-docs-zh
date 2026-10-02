@@ -109,8 +109,8 @@ public MenuFlyout()
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [ItemContainerTheme](#uid-f19b13c928) | 获取或设置应用到为每一项生成的容器元素上的 [Avalonia.Styling.ControlTheme](xref:Avalonia.Styling.ControlTheme)。 |
 | [Items](#uid-0b047c064d) | 暂无摘要。 |
-| [ItemsSource](#uid-b0b460c7ad) | Gets or sets the items of the [MenuFlyout](xref:Avalonia.Controls.MenuFlyout) |
-| [ItemTemplate](#uid-b166572e05) | Gets or sets the template used for the items |
+| [ItemsSource](#uid-b0b460c7ad) | 获取或设置 [MenuFlyout](xref:Avalonia.Controls.MenuFlyout) 中的各项 |
+| [ItemTemplate](#uid-b166572e05) | 获取或设置各项所用的模板 |
 | [OverlayDismissEventPassThrough](primitives/popupflyoutbase.mdx#uid-9750f2448e) | 获取或设置一个值，指示关闭浮出的那个事件是否继续传给父窗口。继承自 [PopupFlyoutBase](primitives/popupflyoutbase.mdx)。 |
 | [OverlayInputPassThroughElement](primitives/popupflyoutbase.mdx#uid-158b3b043a) | 获取或设置一个元素，即便它位于浮出叠加层之下，也应当照常接收指针输入事件。继承自 [PopupFlyoutBase](primitives/popupflyoutbase.mdx)。 |
 | [Placement](primitives/popupflyoutbase.mdx#uid-6cc5d900ca) | 获取或设置弹出层相对于 [Avalonia.Controls.Primitives.Popup.PlacementTarget](xref:Avalonia.Controls.Primitives.Popup.PlacementTarget) 的期望放置方式。继承自 [PopupFlyoutBase](primitives/popupflyoutbase.mdx)。 |
@@ -180,7 +180,7 @@ public Avalonia.Controls.ItemCollection Items { get; set; }
 
 ### ItemsSource 属性 {#itemssource-property}
 
-Gets or sets the items of the [MenuFlyout](xref:Avalonia.Controls.MenuFlyout)
+获取或设置 [MenuFlyout](xref:Avalonia.Controls.MenuFlyout) 中的各项
 
 ```csharp
 public System.Collections.IEnumerable ItemsSource { get; set; }
@@ -194,7 +194,7 @@ public System.Collections.IEnumerable ItemsSource { get; set; }
 
 ### ItemTemplate 属性 {#itemtemplate-property}
 
-Gets or sets the template used for the items
+获取或设置各项所用的模板
 
 ```csharp
 public Avalonia.Controls.Templates.IDataTemplate ItemTemplate { get; set; }

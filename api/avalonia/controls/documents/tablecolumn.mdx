@@ -112,7 +112,7 @@ public TableColumn()
 | [TemplatedParent](../../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Theme](../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
-| [Width](#uid-c4c5b1847a) | Gets or sets the column width. Pixel widths are taken as they stand, Star widths share what the pixel and auto columns leave, and Auto measures the column's content. A width set after the table was laid out re-measures it. |
+| [Width](#uid-c4c5b1847a) | 获取或设置列宽。像素宽度按原样采用；星号宽度瓜分像素列与自动列剩下的空间；Auto 则依据该列内容来测量。表格布局完成后再设置宽度，会触发重新测量。 |
 
 <section className="apiref-page__member-entry">
 
@@ -120,9 +120,8 @@ public TableColumn()
 
 ### Width 属性 {#width-property}
 
-Gets or sets the column width. Pixel widths are taken as they stand, Star
-widths share what the pixel and auto columns leave, and Auto measures the
-column's content. A width set after the table was laid out re-measures it.
+获取或设置列宽。像素宽度按原样采用；星号宽度瓜分像素列与自动列剩下的空间；
+Auto 则依据该列内容来测量。表格布局完成后再设置宽度，会触发重新测量。
 
 ```csharp
 public Avalonia.Controls.GridLength Width { get; set; }

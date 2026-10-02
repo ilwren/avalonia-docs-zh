@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-The identifiers of the built-in editor actions.
+内置编辑器操作的各个标识符。
 
 </div>
 
@@ -56,10 +56,9 @@ public class EditorActionIds
 
 ## 备注 {#remarks}
 
-[Avalonia.Controls.Documents.Primitives.Actions.EditorActions.GetById(string)](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.GetById%28System.String%29) takes a bare string, so without these constants
-a caller has no way to check a lookup against the shipped set until it returns null
-at runtime. Each value is the [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Id](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Id) of the matching
-[Avalonia.Controls.Documents.Primitives.Actions.EditorActions](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions) singleton.
+[Avalonia.Controls.Documents.Primitives.Actions.EditorActions.GetById(string)](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.GetById%28System.String%29) 接受的是一个裸字符串，若没有这些常量，
+调用方在运行时拿到 null 之前根本无从核对自己查的是不是随包提供的那一套。
+每个取值都是对应 [Avalonia.Controls.Documents.Primitives.Actions.EditorActions](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions) 单例的 [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Id](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Id)。
 
 ## 字段 {#fields}
 

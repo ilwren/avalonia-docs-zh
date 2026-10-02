@@ -36,8 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Action for splitting the merged cell at the caret back into its grid
-slots.
+把插入符所在的合并单元格拆回各个网格槽位的操作。
 
 </div>
 
@@ -57,9 +56,8 @@ public class SplitTableCellAction
 
 ## 备注 {#remarks}
 
-The cell keeps its top-left slot and all of its content; fresh empty
-cells cloning the cell's block formatting fill the columns and rows
-the spans covered.
+该单元格保留其左上角槽位及全部内容；原先跨越的那些列与行，
+则由克隆了该单元格块级格式的全新空单元格填上。
 
 ## 构造函数 {#constructors}
 

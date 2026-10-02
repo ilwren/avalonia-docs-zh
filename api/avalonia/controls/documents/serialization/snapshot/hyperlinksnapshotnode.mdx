@@ -75,7 +75,7 @@ public class HyperlinkSnapshotNode
 | [FormatMetadata](snapshotnode.mdx#uid-a481dfd525) | 用于往返保真的格式专属元数据。序列化器（RtfWriter、DocxWriter 等）可在此附上各自格式的状态，以保留那些无法妥帖映射到语义快照模型的信息。它不是线程安全的，只能单线程访问。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [HyperlinkTitle](#uid-72fa78e37b) | Optional link title. `null` when the source declared none — distinct from an empty string title. |
 | [HyperlinkUri](#uid-9516c4d078) | 超链接目标的 URI。 |
-| [InlineFormatting](inlinesnapshotnode.mdx#uid-180f4abcea) | Inline-specific formatting (text decorations, baseline alignment). Inherited from [InlineSnapshotNode](inlinesnapshotnode.mdx). |
+| [InlineFormatting](inlinesnapshotnode.mdx#uid-180f4abcea) | 内联元素特有的格式设置（文本装饰、基线对齐）。继承自 [InlineSnapshotNode](inlinesnapshotnode.mdx)。 |
 | [IsBlock](snapshotnode.mdx#uid-e26b8c2e53) | 获取该节点是否为块级节点。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [IsInline](snapshotnode.mdx#uid-719f57e3e5) | 获取该节点是否为内联级节点。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [IsLeaf](snapshotnode.mdx#uid-f246822b7f) | 获取该节点是否为叶节点（没有子节点）。继承自 [SnapshotNode](snapshotnode.mdx)。 |

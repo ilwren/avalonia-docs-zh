@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Action that pastes content from the clipboard.
+从剪贴板粘贴内容的操作。
 
 </div>
 
@@ -56,11 +56,10 @@ public class PasteAction
 
 ## 备注 {#remarks}
 
-Probes the clipboard for the richest available format that the editor can
-deserialize (RTF first via [Avalonia.Controls.Documents.Primitives.Actions.EditorClipboardSerializers.Default](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorClipboardSerializers.Default),
-then plain text). The resulting `DocumentSnapshot` is grafted into the
-current selection through `TextRange.InsertSnapshot`, preserving
-block, inline, and formatting structure.
+它会探查剪贴板，找出编辑器能反序列化的最丰富格式
+（先经 [Avalonia.Controls.Documents.Primitives.Actions.EditorClipboardSerializers.Default](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorClipboardSerializers.Default) 尝试 RTF，再退回纯文本）。
+得到的 `DocumentSnapshot` 通过 `TextRange.InsertSnapshot` 嫁接进当前选区，
+块结构、内联结构与格式设置都得以保留。
 
 ## 构造函数 {#constructors}
 

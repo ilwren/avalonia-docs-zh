@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Manages the lifecycle of the selection mini-bar ([Avalonia.Controls.Documents.Primitives.EditorSelectionFlyout](xref:Avalonia.Controls.Documents.Primitives.EditorSelectionFlyout)).
+管理选区迷你工具条（[Avalonia.Controls.Documents.Primitives.EditorSelectionFlyout](xref:Avalonia.Controls.Documents.Primitives.EditorSelectionFlyout)）的生命周期。
 
 </div>
 
@@ -56,10 +56,8 @@ public class TextEditorSelectionFlyout
 
 ## 备注 {#remarks}
 
-The mini-bar opens on pointer release when a non-empty selection exists,
-and closes automatically when the selection becomes empty or the user
-presses Escape. The right-click context menu is handled separately by
-[Avalonia.Controls.Documents.Primitives.Components.TextViewContextMenu](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewContextMenu).
+当存在非空选区时，迷你工具条会在指针松开时弹出；
+选区变空或用户按下 Escape 时自动关闭。右键上下文菜单则由 [Avalonia.Controls.Documents.Primitives.Components.TextViewContextMenu](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewContextMenu) 单独负责。
 
 ## 构造函数 {#constructors}
 

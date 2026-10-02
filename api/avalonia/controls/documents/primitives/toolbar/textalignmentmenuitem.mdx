@@ -36,9 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-A menu item that auto-populates child items for text alignment options
-(left, center, right, justify) and updates its icon to reflect the
-current alignment state.
+一个会自动填充文本对齐选项（左对齐、居中、右对齐、两端对齐）子项的菜单项，
+并会更新自身图标以反映当前的对齐状态。
 
 </div>
 
@@ -58,12 +57,10 @@ public class TextAlignmentMenuItem
 
 ## 备注 {#remarks}
 
-Each alignment option becomes an [Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem) with a
-checkmark for the active alignment. The parent icon shows the current
-alignment queried from the [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction) instances.
-Icons are resolved from XAML resources using the `EditorIcons.AlignXxx`[Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) keys defined in `EditorIcons.axaml`.
-Use this as the [Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem) for
-[Avalonia.Controls.Documents.Primitives.Toolbar.AlignmentFlyoutTool](xref:Avalonia.Controls.Documents.Primitives.Toolbar.AlignmentFlyoutTool) instances.
+每个对齐选项都会变成一个 [Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorMenuItem)，当前生效的那个带勾选标记。
+父级图标显示的是从各个 [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction) 实例查询到的当前对齐方式。
+图标按 `EditorIcons.axaml` 中定义的 `EditorIcons.AlignXxx`[Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) 键从 XAML 资源中解析而来。
+请把它用作 [Avalonia.Controls.Documents.Primitives.Toolbar.AlignmentFlyoutTool](xref:Avalonia.Controls.Documents.Primitives.Toolbar.AlignmentFlyoutTool) 实例的 [Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem](xref:Avalonia.Controls.Documents.Primitives.Toolbar.EditorTool.OverflowMenuItem)。
 
 ## 构造函数 {#constructors}
 

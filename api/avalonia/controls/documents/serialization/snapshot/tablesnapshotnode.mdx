@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Snapshot node for tables. Contains table-specific formatting.
+面向表格的快照节点，其中含表格专属的格式信息。
 
 </div>
 
@@ -79,7 +79,7 @@ public class TableSnapshotNode
 | [Kind](snapshotnode.mdx#uid-db297bdaf4) | 该节点所代表的文档元素种类。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [Length](snapshotnode.mdx#uid-a57ff5b8bf) | 该节点内容的字符长度。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [StartOffset](snapshotnode.mdx#uid-d01a240b2e) | 该节点在文档文本中起始位置的绝对偏移量。继承自 [SnapshotNode](snapshotnode.mdx)。 |
-| [TableFormatting](#uid-df4ddf32a0) | Table formatting captured from the element. |
+| [TableFormatting](#uid-df4ddf32a0) | 从元素上捕获到的表格格式设置。 |
 | [TextElementFormatting](snapshotnode.mdx#uid-d3de6c54dc) | 来自 [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) 的基础层面格式设置，为每一种节点类型携带字体、前景、背景和字间距。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 
 <section className="apiref-page__member-entry">
@@ -88,7 +88,7 @@ public class TableSnapshotNode
 
 ### TableFormatting 属性 {#tableformatting-property}
 
-Table formatting captured from the element.
+从元素上捕获到的表格格式设置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting TableFormatting { get; set; }

@@ -36,10 +36,10 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-The bands a text document owns. Adding a band makes the document its owner and
-joins the band's undo to the document's stack; removing it releases both. Ownership
-is exclusive, a band document owns no bands, and the first band with a given role
-and rule is the one the rule places.
+文本文档所拥有的带状区域。添加一个带状区域会让该文档成为它的所有者，
+并把它的撤销记录并入文档的撤销栈；移除时两者一并解除。所有权是独占的，
+带状区域文档自身不拥有任何带状区域；某个角色与规则下的第一个带状区域，
+就是该规则所摆放的那一个。
 
 </div>
 
@@ -100,7 +100,7 @@ public Avalonia.Controls.Documents.TextModel.TextPageBand Find(Avalonia.Controls
 
 #### Find 方法 {#find-method-1}
 
-The band with `id`, or null: what a section's reference names.
+带有 `id` 的那个带状区域，或 null：也就是某个 section 的引用所指向的那一个。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPageBand Find(Guid id)

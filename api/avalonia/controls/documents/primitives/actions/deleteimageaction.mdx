@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Deletes the inline [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) at the current selection or caret.
+删除当前选区或插入符处的内联 [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage)。
 
 </div>
 
@@ -56,12 +56,10 @@ public class DeleteImageAction
 
 ## 备注 {#remarks}
 
-Enabled only when an image is the current context (see
-[Avalonia.Controls.Documents.Primitives.BlockContextResolver.GetContextImage(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.BlockContextResolver.GetContextImage%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29)). Deleting and undoing
-restores the image whole. Removal goes through
-[Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode(Avalonia.Controls.Documents.TextModel.TextDocumentNode)](xref:Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode%28Avalonia.Controls.Documents.TextModel.TextDocumentNode%29) so the image node is detached
-cleanly — a character-range delete would strip the object character but
-leave a zero-length orphan node behind.
+仅当图像是当前上下文时才启用（见 [Avalonia.Controls.Documents.Primitives.BlockContextResolver.GetContextImage(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.BlockContextResolver.GetContextImage%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29)）。
+删除后再撤销会把整幅图像完整复原。移除走的是 [Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode(Avalonia.Controls.Documents.TextModel.TextDocumentNode)](xref:Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode%28Avalonia.Controls.Documents.TextModel.TextDocumentNode%29)，
+好让图像节点干净地脱离——若按字符范围删除，虽然会去掉那个对象字符，
+却会留下一个零长度的孤儿节点。
 
 ## 构造函数 {#constructors}
 

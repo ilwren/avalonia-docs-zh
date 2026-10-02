@@ -36,9 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Resolves the image URLs of a markdown document to images. Override
-[Avalonia.Controls.MarkdownImageLoader.LoadImageAsync(string)](xref:Avalonia.Controls.MarkdownImageLoader.LoadImageAsync%28System.String%29) to supply images from somewhere other than
-HTTP and the local file system.
+把 markdown 文档中的图像 URL 解析成图像。若要从 HTTP 和本地文件系统之外的地方提供图像，
+请重写 [Avalonia.Controls.MarkdownImageLoader.LoadImageAsync(string)](xref:Avalonia.Controls.MarkdownImageLoader.LoadImageAsync%28System.String%29)。
 
 </div>
 
@@ -96,7 +95,7 @@ public System.Threading.Tasks.Task<Avalonia.Media.IImage> LoadImageAsync(string 
 
 `url` string
 
-Url to Resolve.
+要解析的 Url。
 
 
 #### 返回值 {#returns}

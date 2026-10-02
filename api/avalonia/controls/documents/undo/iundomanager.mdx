@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Records and replays document edits.
+记录并重放文档编辑。
 
 </div>
 
@@ -56,10 +56,9 @@ public interface IUndoManager
 
 ## 备注 {#remarks}
 
-[Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) is the only implementation, and the one a document creates for
-itself. Prefer that type where you can name it: an abstraction with a single
-implementation buys nothing, and [Avalonia.Controls.Documents.Undo.IUndoManager.Record(Avalonia.Controls.Documents.Undo.IUndoUnit)](xref:Avalonia.Controls.Documents.Undo.IUndoManager.Record%28Avalonia.Controls.Documents.Undo.IUndoUnit%29) in particular cannot be satisfied
-from outside this assembly.
+[Avalonia.Controls.Documents.Undo.UndoManager](xref:Avalonia.Controls.Documents.Undo.UndoManager) 是唯一的实现，也是文档为自己创建的那一个。
+能指名道姓时请优先用它：只有一个实现的抽象并无价值，
+尤其是 [Avalonia.Controls.Documents.Undo.IUndoManager.Record(Avalonia.Controls.Documents.Undo.IUndoUnit)](xref:Avalonia.Controls.Documents.Undo.IUndoManager.Record%28Avalonia.Controls.Documents.Undo.IUndoUnit%29)，在本程序集之外根本无法满足。
 
 ## 方法 {#methods}
 

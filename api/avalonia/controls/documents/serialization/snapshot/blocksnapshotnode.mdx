@@ -36,8 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Base class for block-level snapshot nodes.
-Contains block formatting information.
+块级快照节点的基类。
+其中保存块级格式信息。
 
 </div>
 
@@ -111,7 +111,7 @@ public BlockSnapshotNode(Avalonia.Controls.Documents.TextModel.TextDocumentNodeK
 
 | 名称 | 说明 |
 | --- | --- |
-| [BlockFormatting](#uid-b6263b5d6e) | Block formatting captured from the element. |
+| [BlockFormatting](#uid-b6263b5d6e) | 从元素上捕获到的块级格式设置。 |
 | [Children](snapshotnode.mdx#uid-b1710f532c) | 子节点。叶节点为空数组。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [CustomData](snapshotnode.mdx#uid-36dcca3067) | 面向自定义节点种类的扩展专属数据。构建路径（[Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)）借助它把自定义数据从序列化导入器传递到快照节点。为支持后台序列化，它必须是不可变的或线程安全的。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [EndOffset](snapshotnode.mdx#uid-9d03a730e3) | 获取绝对结束偏移量（不含该位置）。继承自 [SnapshotNode](snapshotnode.mdx)。 |
@@ -131,7 +131,7 @@ public BlockSnapshotNode(Avalonia.Controls.Documents.TextModel.TextDocumentNodeK
 
 ### BlockFormatting 属性 {#blockformatting-property}
 
-Block formatting captured from the element.
+从元素上捕获到的块级格式设置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting BlockFormatting { get; set; }

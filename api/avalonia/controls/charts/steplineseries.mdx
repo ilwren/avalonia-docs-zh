@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-A series that displays data as a stepped line (horizontal then vertical transitions).
+把数据画成阶梯线（先水平后垂直地转折）的系列。
 
 </div>
 
@@ -259,7 +259,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [ShowInLegend](chartseries.mdx#uid-35fe807fbe) | 获取或设置该数据系列是否向图表图例贡献一个条目。继承自 [ChartSeries](chartseries.mdx)。 |
 | [ShowLabels](cartesianseries.mdx#uid-0af65ffcba) | 获取或设置是否显示数据标签。继承自 [CartesianSeries](cartesianseries.mdx)。 |
 | [ShowMarkers](cartesianseries.mdx#uid-d2cec94e0d) | 获取或设置是否在每个数据点上显示标记。继承自 [CartesianSeries](cartesianseries.mdx)。 |
-| [StepMode](#uid-68a218a1c0) | Gets or sets the step mode (horizontal first or vertical first). |
+| [StepMode](#uid-68a218a1c0) | 获取或设置阶梯模式（先水平还是先垂直）。 |
 | [Stroke](chartseries.mdx#uid-dbb40e7623) | 获取或设置该数据系列显式指定的描边（轮廓）画刷。折线类数据系列应优先使用该属性来指定线条颜色。继承自 [ChartSeries](chartseries.mdx)。 |
 | [StrokeDashStyle](cartesianseries.mdx#uid-7b70e59589) | 获取或设置描边的虚线样式。继承自 [CartesianSeries](cartesianseries.mdx)。 |
 | [StrokeLineCap](cartesianseries.mdx#uid-75eec6415e) | 获取或设置线条端点的形状。继承自 [CartesianSeries](cartesianseries.mdx)。 |
@@ -289,7 +289,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 
 ### StepMode 属性 {#stepmode-property}
 
-Gets or sets the step mode (horizontal first or vertical first).
+获取或设置阶梯模式（先水平还是先垂直）。
 
 ```csharp
 public Avalonia.Controls.Charts.StepLineMode StepMode { get; set; }

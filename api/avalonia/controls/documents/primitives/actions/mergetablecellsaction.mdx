@@ -36,8 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Action for merging the table cells covered by the current selection
-into a single spanned cell.
+把当前选区覆盖的表格单元格合并成一个跨格单元格的操作。
 
 </div>
 
@@ -57,10 +56,10 @@ public class MergeTableCellsAction
 
 ## 备注 {#remarks}
 
-The covered cells grow to the smallest rectangle of whole cells (a
-partial overlap pulls the whole cell in, matching Word). The top-left
-cell keeps the combined content, appended in row-major order, and
-takes the rectangle's column and row span.
+被覆盖的单元格会向外扩成由完整单元格组成的最小矩形
+（只要有部分重叠就把整个单元格纳入，与 Word 的做法一致）。
+左上角那个单元格保留合并后的内容——按行优先顺序依次拼接——
+并取得该矩形的跨列数与跨行数。
 
 ## 构造函数 {#constructors}
 

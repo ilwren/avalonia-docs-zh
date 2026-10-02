@@ -36,16 +36,13 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-The page bands a document owns, as elements: a view over the text document's
-[Avalonia.Controls.Documents.TextModel.TextDocument.PageBands](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageBands), which owns the bands, materializing a
-[Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand) element per band on demand. It follows the contract of the
-block collection: the document becomes a band's logical parent the moment it is
-added; while the document has no text document the band waits pending, and it
-joins the text document when that is initialized, before the pending blocks
-materialize; once the text document exists a band joins it at once. Removing a band
-releases owner, logical parent and undo and clears every section reference to it.
-Ownership is exclusive: a band owned by another document is refused until it is
-removed there. The first band with a given role and rule is the one the rule places.
+文档所拥有的页面带状区域，以元素形式给出：它是文本文档 [Avalonia.Controls.Documents.TextModel.TextDocument.PageBands](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageBands) 的一个视图，
+真正持有这些带状区域的是后者，这里按需为每个带状区域实体化出一个 [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand) 元素。
+它遵循块集合的约定：带状区域一加入，文档便成为它的逻辑父级；文档尚无文本文档时，
+带状区域处于待定状态，待文本文档初始化后便加入其中——这发生在待定的块实体化之前；
+文本文档已存在时，带状区域则立即加入。移除某个带状区域会一并解除其所有者、逻辑父级
+与撤销关联，并清除所有指向它的 section 引用。所有权是独占的：已归属其他文档的带状区域，
+在从那边移除之前不会被接纳。某个角色与规则下的第一个带状区域，就是该规则所摆放的那一个。
 
 </div>
 
@@ -189,7 +186,7 @@ public Avalonia.Controls.Documents.PageBand Find(Avalonia.Controls.Documents.Pag
 
 #### Find 方法 {#find-method-1}
 
-The band with `id`, or null: what a section's reference names.
+带有 `id` 的那个带状区域，或 null：也就是某个 section 的引用所指向的那一个。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBand Find(Guid id)

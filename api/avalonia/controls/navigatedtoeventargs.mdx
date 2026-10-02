@@ -80,7 +80,7 @@ public NavigatedToEventArgs(Avalonia.Controls.Page previousPage, Avalonia.Contro
 
 `previousPage` [Avalonia.Controls.Page](xref:Avalonia.Controls.Page)
 
-The page that was active before this navigation, or for the root page.
+本次导航之前处于活动状态的那个页面；若是根页面则为 null。
 
 
 `navigationType` [Avalonia.Controls.NavigationType](xref:Avalonia.Controls.NavigationType)
@@ -95,7 +95,7 @@ The page that was active before this navigation, or for the root page.
 | 名称 | 说明 |
 | --- | --- |
 | [NavigationType](#uid-c13412353f) | 获取触发该事件的导航类型。 |
-| [PreviousPage](#uid-91752c6d3e) | Gets the page that was active before this navigation. |
+| [PreviousPage](#uid-91752c6d3e) | 获取本次导航之前处于活动状态的那个页面。 |
 
 <section className="apiref-page__member-entry">
 
@@ -117,7 +117,7 @@ public Avalonia.Controls.NavigationType NavigationType { get; set; }
 
 ### PreviousPage 属性 {#previouspage-property}
 
-Gets the page that was active before this navigation.
+获取本次导航之前处于活动状态的那个页面。
 
 ```csharp
 public Avalonia.Controls.Page PreviousPage { get; set; }

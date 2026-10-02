@@ -36,9 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Inline draft for a footnote anchor. The builder inserts a single object
-replacement character for it: the number the anchor shows is its note's
-position among the document's notes, resolved at render time rather than stored.
+表示脚注锚点的内联草稿。构建器只为它插入一个对象替换字符：
+锚点显示的数字取决于其便签在文档所有便签中的位次，这个数字在渲染时解析，而非预先存下来。
 
 </div>
 
@@ -100,7 +99,7 @@ public FootnoteReferenceInlineDraft(int noteId)
 | [Formatting](inlinedraft.mdx#uid-5bc8ad789d) | 内联元素特有的格式设置（文本装饰、基线对齐）。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [Inlines](inlinedraft.mdx#uid-1eaa3c4f70) | 获取可变的子级内联草稿列表。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [Kind](inlinedraft.mdx#uid-e8bc97d972) | 获取标识该草稿内联类型的 [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)。继承自 [InlineDraft](inlinedraft.mdx)。 |
-| [NoteId](#uid-78a44421ab) | Gets the identity pairing the anchor with its note body. |
+| [NoteId](#uid-78a44421ab) | 获取把锚点与其便签正文配对起来的那个标识。 |
 
 <section className="apiref-page__member-entry">
 
@@ -108,7 +107,7 @@ public FootnoteReferenceInlineDraft(int noteId)
 
 ### NoteId 属性 {#noteid-property}
 
-Gets the identity pairing the anchor with its note body.
+获取把锚点与其便签正文配对起来的那个标识。
 
 ```csharp
 public int NoteId { get; set; }

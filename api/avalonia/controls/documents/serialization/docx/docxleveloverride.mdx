@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Level override for DOCX numbering round-trip.
+用于 DOCX 编号往返的层级覆盖设置。
 
 </div>
 
@@ -152,7 +152,7 @@ string
 | 名称 | 说明 |
 | --- | --- |
 | [Level](#uid-f38297cd65) | 层级索引（从 0 开始）。 |
-| [StartOverride](#uid-7a293fa577) | Start override value, or null if not overridden. |
+| [StartOverride](#uid-7a293fa577) | 起始编号的覆盖值；未覆盖时为 null。 |
 
 <section className="apiref-page__member-entry">
 
@@ -174,7 +174,7 @@ public int Level { get; set; }
 
 ### StartOverride 属性 {#startoverride-property}
 
-Start override value, or null if not overridden.
+起始编号的覆盖值；未覆盖时为 null。
 
 ```csharp
 public Nullable<int> StartOverride { get; set; }

@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Action for toggling block borders on/off for affected blocks.
+对受影响的块切换块边框开关的操作。
 
 </div>
 
@@ -59,13 +59,10 @@ public class BlockBorderToggleAction
 
 ## 备注 {#remarks}
 
-Targets every block-level element covered by the selection. When a
-paragraph sits inside a [Avalonia.Controls.Documents.TableCell](xref:Avalonia.Controls.Documents.TableCell), the cell is
-preferred over the inner paragraph so the border wraps the cell;
-outside of tables the paragraph itself is the target. When the
-document is empty, an implicit Paragraph is materialized so the
-user can apply a border before typing — same convention as text
-input and the other block-level actions.
+它作用于选区覆盖的每一个块级元素。当段落位于 [Avalonia.Controls.Documents.TableCell](xref:Avalonia.Controls.Documents.TableCell) 中时，
+优先取单元格而非内层段落，好让边框包住整个单元格；表格之外则以段落本身为目标。
+文档为空时会实体化出一个隐式 Paragraph，这样用户在输入之前就能先加边框——
+与文本输入以及其他块级操作遵循同样的约定。
 
 ## 构造函数 {#constructors}
 

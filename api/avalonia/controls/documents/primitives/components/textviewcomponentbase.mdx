@@ -36,8 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Base class for [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent) implementations that are
-not already derived from another type (e.g., [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)).
+面向那些尚未派生自其他类型（例如 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)）的 [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent) 实现的基类。
 
 </div>
 
@@ -63,10 +62,9 @@ public class TextViewComponentBase
 
 ## 备注 {#remarks}
 
-Provides automatic [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host) tracking, [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached)
-state, and re-attach safety (detach-before-attach). Subclasses override
-[Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached) and [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached) to subscribe and
-unsubscribe from host events.
+它提供自动的 [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host) 跟踪、[Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached) 状态，
+以及重复附加时的安全处理（先分离再附加）。子类重写
+[Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached) 和 [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached) 来订阅和取消订阅宿主事件。
 
 ## 属性 {#properties}
 
