@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPropertyAccessor Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data.Core.Plugins</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data.Core.Plugins</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Core/Plugins/IPropertyAccessor.cs">IPropertyAccessor.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Core/Plugins/IPropertyAccessor.cs">IPropertyAccessor.cs</a>
 </div>
 
 </div>
@@ -54,31 +54,31 @@ public interface IPropertyAccessor
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SetValue](#uid-920c069334) | Sets the property value. |
-| [Subscribe](#uid-c921d7ba8d) | No summary available. |
-| [Unsubscribe](#uid-b3e34178af) | Unsubscribes to the value of the member. |
+| [SetValue](#uid-920c069334) | 设置该属性的值。 |
+| [Subscribe](#uid-c921d7ba8d) | 暂无摘要。 |
+| [Unsubscribe](#uid-b3e34178af) | 取消订阅该成员的值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-920c069334"></span>
 
-### SetValue Method
+### SetValue 方法 {#setvalue-method}
 
-Sets the property value.
+设置该属性的值。
 
 ```csharp
 public bool SetValue(object value, Avalonia.Data.BindingPriority priority)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` object
 
@@ -90,7 +90,7 @@ The value to set. Guaranteed to be of a valid type for the property.
 The priority with which to set the value.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -103,13 +103,13 @@ True if the property was set; false if the property could not be set.
 
 <span id="uid-c921d7ba8d"></span>
 
-### Subscribe Method
+### Subscribe 方法 {#subscribe-method}
 
 ```csharp
 public void Subscribe(Action<object> listener)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `listener` Action&lt;object&gt;
 
@@ -120,9 +120,9 @@ public void Subscribe(Action<object> listener)
 
 <span id="uid-b3e34178af"></span>
 
-### Unsubscribe Method
+### Unsubscribe 方法 {#unsubscribe-method}
 
-Unsubscribes to the value of the member.
+取消订阅该成员的值。
 
 ```csharp
 public void Unsubscribe()
@@ -130,26 +130,26 @@ public void Unsubscribe()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PropertyType](#uid-d7909bfc94) | Gets the type of the property. |
-| [Value](#uid-0c25b45a44) | Gets the current value of the property. |
+| [PropertyType](#uid-d7909bfc94) | 获取该属性的类型。 |
+| [Value](#uid-0c25b45a44) | 获取该属性的当前值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d7909bfc94"></span>
 
-### PropertyType Property
+### PropertyType 属性 {#propertytype-property}
 
-Gets the type of the property.
+获取该属性的类型。
 
 ```csharp
 public Type PropertyType { get; set; }
 ```
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [The accessor has not been subscribed to yet.](xref:System.InvalidOperationException)
 
@@ -159,9 +159,9 @@ public Type PropertyType { get; set; }
 
 <span id="uid-0c25b45a44"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
-Gets the current value of the property.
+获取该属性的当前值。
 
 ```csharp
 public object Value { get; set; }

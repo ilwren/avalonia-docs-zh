@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">VisualExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.VisualTree</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.VisualTree</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/VisualTree/VisualExtensions.cs">VisualExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/VisualTree/VisualExtensions.cs">VisualExtensions.cs</a>
 </div>
 
 </div>
@@ -54,40 +54,40 @@ public class VisualExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> VisualExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> VisualExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CalculateDistanceFromAncestor](#uid-2bcae1cf48) | Calculates the distance from a visual's ancestor. |
 | [CalculateDistanceFromRoot](#uid-58cb5b3968) | Calculates the distance from a visual's root. |
-| [FindAncestorOfType (2 overloads)](#uid-ac924aa932) | No summary available. |
+| [FindAncestorOfType (2 overloads)](#uid-ac924aa932) | 暂无摘要。 |
 | [FindCommonVisualAncestor](#uid-e2a8c77885) | Tries to get the first common ancestor of two visuals. |
-| [FindDescendantOfType (2 overloads)](#uid-3137febcb3) | No summary available. |
+| [FindDescendantOfType (2 overloads)](#uid-3137febcb3) | 暂无摘要。 |
 | [GetLayoutManager](#uid-c260324354) | Gets the layout manager for the visual's presentation source, or null if the visual is not attached to a visual root. |
 | [GetPlatformSettings](#uid-309dd67ab3) | Attempts to obtain platform settings from the visual's root. This will return null if the visual is not attached to a visual root. |
-| [GetPresentationSource](#uid-67d648fa7f) | No summary available. |
+| [GetPresentationSource](#uid-67d648fa7f) | 暂无摘要。 |
 | [GetSelfAndVisualAncestors](#uid-4f4085c684) | Enumerates an [Avalonia.Visual](xref:Avalonia.Visual) and its ancestors in the visual tree. |
 | [GetSelfAndVisualDescendants](#uid-a62ec3fa53) | Enumerates an [Avalonia.Visual](xref:Avalonia.Visual) and its descendants in the visual tree. |
-| [GetTransformedBounds](#uid-9dd6a1542d) | No summary available. |
+| [GetTransformedBounds](#uid-9dd6a1542d) | 暂无摘要。 |
 | [GetVisualAncestors](#uid-3718ba8e9e) | Enumerates the ancestors of an [Avalonia.Visual](xref:Avalonia.Visual) in the visual tree. |
 | [GetVisualAt (2 overloads)](#uid-558e3c5252) | Gets the first visual in the visual tree whose bounds contain a point. |
 | [GetVisualChildren](#uid-46c0f766d8) | Enumerates the children of an [Avalonia.Visual](xref:Avalonia.Visual) in the visual tree. |
 | [GetVisualDescendants](#uid-b12bb1e778) | Enumerates the descendants of an [Avalonia.Visual](xref:Avalonia.Visual) in the visual tree. |
-| [GetVisualParent](#uid-3b19a7efbd) | Gets the visual parent of an [Avalonia.Visual](xref:Avalonia.Visual). |
+| [GetVisualParent](#uid-3b19a7efbd) | 获取 [Avalonia.Visual](xref:Avalonia.Visual) 的视觉父级。 |
 | [GetVisualsAt (2 overloads)](#uid-80be4d730c) | Enumerates the visible visuals in the visual tree whose bounds contain a point. |
 | [IsAttachedToVisualTree](#uid-6f068f121d) | Returns a value indicating whether this control is attached to a visual root. |
 | [IsVisualAncestorOf](#uid-7d9754bffc) | Tests whether an [Avalonia.Visual](xref:Avalonia.Visual) is an ancestor of another visual. |
-| [SortByZIndex](#uid-d2c1ad496d) | No summary available. |
+| [SortByZIndex](#uid-d2c1ad496d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2bcae1cf48"></span>
 
-### CalculateDistanceFromAncestor Method
+### CalculateDistanceFromAncestor 方法 {#calculatedistancefromancestor-method}
 
 Calculates the distance from a visual's ancestor.
 
@@ -95,11 +95,11 @@ Calculates the distance from a visual's ancestor.
 public int CalculateDistanceFromAncestor(Avalonia.Visual visual, Avalonia.Visual ancestor)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
 `ancestor` [Avalonia.Visual](xref:Avalonia.Visual)
@@ -107,7 +107,7 @@ The visual.
 The ancestor visual.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 int
 
@@ -121,7 +121,7 @@ The number of steps from the visual to the ancestor or -1 if
 
 <span id="uid-58cb5b3968"></span>
 
-### CalculateDistanceFromRoot Method
+### CalculateDistanceFromRoot 方法 {#calculatedistancefromroot-method}
 
 Calculates the distance from a visual's root.
 
@@ -129,14 +129,14 @@ Calculates the distance from a visual's root.
 public int CalculateDistanceFromRoot(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 int
 
@@ -153,13 +153,13 @@ The number of steps from the visual to the root.
 
 <span id="uid-2d8e7357f1"></span>
 
-#### FindAncestorOfType Method
+#### FindAncestorOfType 方法 {#findancestoroftype-method}
 
 ```csharp
 public T FindAncestorOfType<T>(Avalonia.Visual visual, bool includeSelf)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -172,7 +172,7 @@ public T FindAncestorOfType<T>(Avalonia.Visual visual, bool includeSelf)
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 T
 
@@ -183,13 +183,13 @@ T
 
 <span id="uid-cead99a72f"></span>
 
-#### FindAncestorOfType Method
+#### FindAncestorOfType 方法 {#findancestoroftype-method-1}
 
 ```csharp
 public T FindAncestorOfType<T>(Avalonia.Visual visual, bool includeSelf, Predicate<T> predicate)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -205,7 +205,7 @@ public T FindAncestorOfType<T>(Avalonia.Visual visual, bool includeSelf, Predica
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 T
 
@@ -216,7 +216,7 @@ T
 
 <span id="uid-e2a8c77885"></span>
 
-### FindCommonVisualAncestor Method
+### FindCommonVisualAncestor 方法 {#findcommonvisualancestor-method}
 
 Tries to get the first common ancestor of two visuals.
 
@@ -224,7 +224,7 @@ Tries to get the first common ancestor of two visuals.
 public Avalonia.Visual FindCommonVisualAncestor(Avalonia.Visual visual, Avalonia.Visual target)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -236,7 +236,7 @@ The first visual.
 The second visual.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -253,13 +253,13 @@ The common ancestor, or null if not found.
 
 <span id="uid-fb596ca834"></span>
 
-#### FindDescendantOfType Method
+#### FindDescendantOfType 方法 {#finddescendantoftype-method}
 
 ```csharp
 public T FindDescendantOfType<T>(Avalonia.Visual visual, bool includeSelf)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -272,7 +272,7 @@ public T FindDescendantOfType<T>(Avalonia.Visual visual, bool includeSelf)
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 T
 
@@ -283,13 +283,13 @@ T
 
 <span id="uid-1711a15e6b"></span>
 
-#### FindDescendantOfType Method
+#### FindDescendantOfType 方法 {#finddescendantoftype-method-1}
 
 ```csharp
 public T FindDescendantOfType<T>(Avalonia.Visual visual, bool includeSelf, Predicate<T> predicate)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -305,7 +305,7 @@ public T FindDescendantOfType<T>(Avalonia.Visual visual, bool includeSelf, Predi
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 T
 
@@ -316,7 +316,7 @@ T
 
 <span id="uid-c260324354"></span>
 
-### GetLayoutManager Method
+### GetLayoutManager 方法 {#getlayoutmanager-method}
 
 Gets the layout manager for the visual's presentation source, or null if the visual is not attached to a visual root.
 
@@ -324,12 +324,12 @@ Gets the layout manager for the visual's presentation source, or null if the vis
 public Avalonia.Layout.ILayoutManager GetLayoutManager(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Layout.ILayoutManager](xref:Avalonia.Layout.ILayoutManager)
 
@@ -340,7 +340,7 @@ public Avalonia.Layout.ILayoutManager GetLayoutManager(Avalonia.Visual visual)
 
 <span id="uid-309dd67ab3"></span>
 
-### GetPlatformSettings Method
+### GetPlatformSettings 方法 {#getplatformsettings-method}
 
 Attempts to obtain platform settings from the visual's root.
 This will return null if the visual is not attached to a visual root.
@@ -349,12 +349,12 @@ This will return null if the visual is not attached to a visual root.
 public Avalonia.Platform.IPlatformSettings GetPlatformSettings(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Platform.IPlatformSettings](xref:Avalonia.Platform.IPlatformSettings)
 
@@ -365,18 +365,18 @@ public Avalonia.Platform.IPlatformSettings GetPlatformSettings(Avalonia.Visual v
 
 <span id="uid-67d648fa7f"></span>
 
-### GetPresentationSource Method
+### GetPresentationSource 方法 {#getpresentationsource-method}
 
 ```csharp
 public Avalonia.Rendering.IPresentationSource GetPresentationSource(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 [Avalonia.Rendering.IPresentationSource](xref:Avalonia.Rendering.IPresentationSource)
 
@@ -387,7 +387,7 @@ public Avalonia.Rendering.IPresentationSource GetPresentationSource(Avalonia.Vis
 
 <span id="uid-4f4085c684"></span>
 
-### GetSelfAndVisualAncestors Method
+### GetSelfAndVisualAncestors 方法 {#getselfandvisualancestors-method}
 
 Enumerates an [Avalonia.Visual](xref:Avalonia.Visual) and its ancestors in the visual tree.
 
@@ -395,18 +395,18 @@ Enumerates an [Avalonia.Visual](xref:Avalonia.Visual) and its ancestors in the v
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetSelfAndVisualAncestors(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
-The visual and its ancestors.
+该视觉元素及其各个祖先。
 
 
 </section>
@@ -415,7 +415,7 @@ The visual and its ancestors.
 
 <span id="uid-a62ec3fa53"></span>
 
-### GetSelfAndVisualDescendants Method
+### GetSelfAndVisualDescendants 方法 {#getselfandvisualdescendants-method}
 
 Enumerates an [Avalonia.Visual](xref:Avalonia.Visual) and its descendants in the visual tree.
 
@@ -423,18 +423,18 @@ Enumerates an [Avalonia.Visual](xref:Avalonia.Visual) and its descendants in the
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetSelfAndVisualDescendants(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
-The visual and its ancestors.
+该视觉元素及其各个祖先。
 
 
 </section>
@@ -443,18 +443,18 @@ The visual and its ancestors.
 
 <span id="uid-9dd6a1542d"></span>
 
-### GetTransformedBounds Method
+### GetTransformedBounds 方法 {#gettransformedbounds-method}
 
 ```csharp
 public Nullable<Avalonia.VisualTree.TransformedBounds> GetTransformedBounds(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
 
-#### Returns
+#### 返回值 {#returns-12}
 
 Nullable&lt;[Avalonia.VisualTree.TransformedBounds](xref:Avalonia.VisualTree.TransformedBounds)&gt;
 
@@ -465,7 +465,7 @@ Nullable&lt;[Avalonia.VisualTree.TransformedBounds](xref:Avalonia.VisualTree.Tra
 
 <span id="uid-3718ba8e9e"></span>
 
-### GetVisualAncestors Method
+### GetVisualAncestors 方法 {#getvisualancestors-method}
 
 Enumerates the ancestors of an [Avalonia.Visual](xref:Avalonia.Visual) in the visual tree.
 
@@ -473,18 +473,18 @@ Enumerates the ancestors of an [Avalonia.Visual](xref:Avalonia.Visual) in the vi
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetVisualAncestors(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
-#### Returns
+#### 返回值 {#returns-13}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
-The visual's ancestors.
+该视觉元素的各个祖先。
 
 
 </section>
@@ -497,7 +497,7 @@ The visual's ancestors.
 
 <span id="uid-645d3d4da8"></span>
 
-#### GetVisualAt Method
+#### GetVisualAt 方法 {#getvisualat-method}
 
 Gets the first visual in the visual tree whose bounds contain a point.
 
@@ -505,19 +505,19 @@ Gets the first visual in the visual tree whose bounds contain a point.
 public Avalonia.Visual GetVisualAt(Avalonia.Visual visual, Avalonia.Point p)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The root visual to test.
+要测试的根视觉元素。
 
 
 `p` [Avalonia.Point](xref:Avalonia.Point)
 
-The point.
+该点。
 
 
-##### Returns
+##### 返回值 {#returns-14}
 
 [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -530,13 +530,13 @@ The visual at the requested point.
 
 <span id="uid-5928854718"></span>
 
-#### GetVisualAt Method
+#### GetVisualAt 方法 {#getvisualat-method-1}
 
 ```csharp
 public Avalonia.Visual GetVisualAt(Avalonia.Visual visual, Avalonia.Point p, Func<Avalonia.Visual, bool> filter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -547,7 +547,7 @@ public Avalonia.Visual GetVisualAt(Avalonia.Visual visual, Avalonia.Point p, Fun
 `filter` Func&lt;[Avalonia.Visual](xref:Avalonia.Visual), bool&gt;
 
 
-##### Returns
+##### 返回值 {#returns-15}
 
 [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -558,7 +558,7 @@ public Avalonia.Visual GetVisualAt(Avalonia.Visual visual, Avalonia.Point p, Fun
 
 <span id="uid-46c0f766d8"></span>
 
-### GetVisualChildren Method
+### GetVisualChildren 方法 {#getvisualchildren-method}
 
 Enumerates the children of an [Avalonia.Visual](xref:Avalonia.Visual) in the visual tree.
 
@@ -566,14 +566,14 @@ Enumerates the children of an [Avalonia.Visual](xref:Avalonia.Visual) in the vis
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetVisualChildren(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-16}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
-#### Returns
+#### 返回值 {#returns-16}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
@@ -586,7 +586,7 @@ The visual children.
 
 <span id="uid-b12bb1e778"></span>
 
-### GetVisualDescendants Method
+### GetVisualDescendants 方法 {#getvisualdescendants-method}
 
 Enumerates the descendants of an [Avalonia.Visual](xref:Avalonia.Visual) in the visual tree.
 
@@ -594,18 +594,18 @@ Enumerates the descendants of an [Avalonia.Visual](xref:Avalonia.Visual) in the 
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetVisualDescendants(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-17}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
-#### Returns
+#### 返回值 {#returns-17}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
-The visual's ancestors.
+该视觉元素的各个祖先。
 
 
 </section>
@@ -614,22 +614,22 @@ The visual's ancestors.
 
 <span id="uid-3b19a7efbd"></span>
 
-### GetVisualParent Method
+### GetVisualParent 方法 {#getvisualparent-method}
 
-Gets the visual parent of an [Avalonia.Visual](xref:Avalonia.Visual).
+获取 [Avalonia.Visual](xref:Avalonia.Visual) 的视觉父级。
 
 ```csharp
 public T GetVisualParent<T>(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-18}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
-#### Returns
+#### 返回值 {#returns-18}
 
 [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -646,7 +646,7 @@ The parent, or null if the visual is unparented.
 
 <span id="uid-1ab66edfa1"></span>
 
-#### GetVisualsAt Method
+#### GetVisualsAt 方法 {#getvisualsat-method}
 
 Enumerates the visible visuals in the visual tree whose bounds contain a point.
 
@@ -654,19 +654,19 @@ Enumerates the visible visuals in the visual tree whose bounds contain a point.
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetVisualsAt(Avalonia.Visual visual, Avalonia.Point p)
 ```
 
-##### Parameters
+##### 参数 {#parameters-19}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The root visual to test.
+要测试的根视觉元素。
 
 
 `p` [Avalonia.Point](xref:Avalonia.Point)
 
-The point.
+该点。
 
 
-##### Returns
+##### 返回值 {#returns-19}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
@@ -679,13 +679,13 @@ The visuals at the requested point.
 
 <span id="uid-af26952a32"></span>
 
-#### GetVisualsAt Method
+#### GetVisualsAt 方法 {#getvisualsat-method-1}
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetVisualsAt(Avalonia.Visual visual, Avalonia.Point p, Func<Avalonia.Visual, bool> filter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-20}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -696,7 +696,7 @@ public System.Collections.Generic.IEnumerable<Avalonia.Visual> GetVisualsAt(Aval
 `filter` Func&lt;[Avalonia.Visual](xref:Avalonia.Visual), bool&gt;
 
 
-##### Returns
+##### 返回值 {#returns-20}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
@@ -707,7 +707,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual
 
 <span id="uid-6f068f121d"></span>
 
-### IsAttachedToVisualTree Method
+### IsAttachedToVisualTree 方法 {#isattachedtovisualtree-method}
 
 Returns a value indicating whether this control is attached to a visual root.
 
@@ -715,12 +715,12 @@ Returns a value indicating whether this control is attached to a visual root.
 public bool IsAttachedToVisualTree(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-21}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
 
-#### Returns
+#### 返回值 {#returns-21}
 
 bool
 
@@ -731,7 +731,7 @@ bool
 
 <span id="uid-7d9754bffc"></span>
 
-### IsVisualAncestorOf Method
+### IsVisualAncestorOf 方法 {#isvisualancestorof-method}
 
 Tests whether an [Avalonia.Visual](xref:Avalonia.Visual) is an ancestor of another visual.
 
@@ -739,19 +739,19 @@ Tests whether an [Avalonia.Visual](xref:Avalonia.Visual) is an ancestor of anoth
 public bool IsVisualAncestorOf(Avalonia.Visual visual, Avalonia.Visual target)
 ```
 
-#### Parameters
+#### 参数 {#parameters-22}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
 `target` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The potential descendant.
+可能的后代元素。
 
 
-#### Returns
+#### 返回值 {#returns-22}
 
 bool
 
@@ -765,18 +765,18 @@ otherwise false.
 
 <span id="uid-d2c1ad496d"></span>
 
-### SortByZIndex Method
+### SortByZIndex 方法 {#sortbyzindex-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Visual> SortByZIndex(System.Collections.Generic.IEnumerable<Avalonia.Visual> elements)
 ```
 
-#### Parameters
+#### 参数 {#parameters-23}
 
 `elements` System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-23}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Visual](xref:Avalonia.Visual)&gt;
 

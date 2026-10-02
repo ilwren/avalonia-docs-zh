@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">NodeKindFlags Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -52,20 +52,20 @@ public enum NodeKindFlags
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> NodeKindFlags
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> NodeKindFlags
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Block](#uid-9415ba0dca) | Block-level element (Paragraph, List, Table, Section, etc.). |
 | [BlockContainer](#uid-c4659a9b5b) | Block container whose direct children are block-level elements (Document, Section, [ListItem](xref:Avalonia.Controls.Documents.ListItem), [TableCell](xref:Avalonia.Controls.Documents.TableCell)). |
 | [Inline](#uid-5ba1025cc9) | Inline element (Run, Bold, Italic, Span, Hyperlink, LineBreak, etc.). |
 | [InlineContainer](#uid-53fa31813f) | Inline container that holds [Avalonia.Controls.Documents.RichInline](xref:Avalonia.Controls.Documents.RichInline) children directly (Paragraph, Span, Bold, Italic, Underline, Superscript, Subscript, Hyperlink). |
 | [Leaf](#uid-fd817c4e7c) | Leaf node that never has children (Run, LineBreak). |
-| [None](#uid-669d860e07) | No flags set. |
+| [None](#uid-669d860e07) | 未设置任何标志。 |
 | [RemoveWhenChildless](#uid-b6c9a79e00) | Container that should be automatically removed when all its children have been deleted (List, [ListItem](xref:Avalonia.Controls.Documents.ListItem), Table, [TableRow](xref:Avalonia.Controls.Documents.TableRow), [TableRowGroup](xref:Avalonia.Controls.Documents.TableRowGroup), Section). |
 | [Root](#uid-afad4177c8) | The kind of a document root: the top of a tree, which no block navigation crosses. [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document) and [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand) carry it; a further document variant adds another root kind with it. |
 | [TableStructure](#uid-2aa14211ac) | Table-structural node whose children form isolated editing regions (Table, [TableRowGroup](xref:Avalonia.Controls.Documents.TableRowGroup), [TableRow](xref:Avalonia.Controls.Documents.TableRow)). |
@@ -74,7 +74,7 @@ public enum NodeKindFlags
 
 <span id="uid-9415ba0dca"></span>
 
-### Block Field
+### Block 字段 {#block-field}
 
 Block-level element (Paragraph, List, Table, Section, etc.).
 
@@ -88,7 +88,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags Block
 
 <span id="uid-c4659a9b5b"></span>
 
-### BlockContainer Field
+### BlockContainer 字段 {#blockcontainer-field}
 
 Block container whose direct children are block-level elements
 (Document, Section, [ListItem](xref:Avalonia.Controls.Documents.ListItem), [TableCell](xref:Avalonia.Controls.Documents.TableCell)).
@@ -103,7 +103,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags BlockContainer
 
 <span id="uid-5ba1025cc9"></span>
 
-### Inline Field
+### Inline 字段 {#inline-field}
 
 Inline element (Run, Bold, Italic, Span, Hyperlink, LineBreak, etc.).
 
@@ -117,7 +117,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags Inline
 
 <span id="uid-53fa31813f"></span>
 
-### InlineContainer Field
+### InlineContainer 字段 {#inlinecontainer-field}
 
 Inline container that holds [Avalonia.Controls.Documents.RichInline](xref:Avalonia.Controls.Documents.RichInline) children directly
 (Paragraph, Span, Bold, Italic, Underline, Superscript, Subscript, Hyperlink).
@@ -132,7 +132,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags InlineContainer
 
 <span id="uid-fd817c4e7c"></span>
 
-### Leaf Field
+### Leaf 字段 {#leaf-field}
 
 Leaf node that never has children (Run, LineBreak).
 
@@ -146,9 +146,9 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags Leaf
 
 <span id="uid-669d860e07"></span>
 
-### None Field
+### None 字段 {#none-field}
 
-No flags set.
+未设置任何标志。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.NodeKindFlags None
@@ -160,7 +160,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags None
 
 <span id="uid-b6c9a79e00"></span>
 
-### RemoveWhenChildless Field
+### RemoveWhenChildless 字段 {#removewhenchildless-field}
 
 Container that should be automatically removed when all its children
 have been deleted (List, [ListItem](xref:Avalonia.Controls.Documents.ListItem), Table, [TableRow](xref:Avalonia.Controls.Documents.TableRow), [TableRowGroup](xref:Avalonia.Controls.Documents.TableRowGroup), Section).
@@ -175,7 +175,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags RemoveWhenChildless
 
 <span id="uid-afad4177c8"></span>
 
-### Root Field
+### Root 字段 {#root-field}
 
 The kind of a document root: the top of a tree, which no block navigation crosses.
 [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.Document) and [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand)
@@ -191,7 +191,7 @@ public Avalonia.Controls.Documents.TextModel.NodeKindFlags Root
 
 <span id="uid-2aa14211ac"></span>
 
-### TableStructure Field
+### TableStructure 字段 {#tablestructure-field}
 
 Table-structural node whose children form isolated editing regions
 (Table, [TableRowGroup](xref:Avalonia.Controls.Documents.TableRowGroup), [TableRow](xref:Avalonia.Controls.Documents.TableRow)).

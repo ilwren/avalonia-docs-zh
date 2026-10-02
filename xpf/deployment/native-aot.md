@@ -1,15 +1,15 @@
 ---
 id: native-aot
 title: Native AOT
-description: Publish XPF applications as native executables using ahead-of-time compilation, including trimming requirements and XAML type preservation.
+description: 用预先编译（AOT）把 XPF 应用发布为本机可执行文件，内含裁剪要求与 XAML 类型保留的注意事项。
 doc-type: how-to
 ---
 
-Native AOT (Ahead-of-Time) compilation is supported in XPF. Unlike WPF, XPF does not use COM marshalling, which allows it to be compatible with AOT compilation. Large applications using third-party control libraries can be successfully compiled with Native AOT.
+XPF 支持 Native AOT（预先编译）。与 WPF 不同，XPF 不使用 COM 封送，因此能与 AOT 编译相容。即便是用了第三方控件库的大型应用，也能成功地用 Native AOT 编出来。
 
-## Project configuration
+## 项目配置 {#project-configuration}
 
-Add `PublishAot` to your `.csproj`.
+在你的 `.csproj` 中加上 `PublishAot`。
 
 ```xml
 <PropertyGroup>
@@ -17,27 +17,27 @@ Add `PublishAot` to your `.csproj`.
 </PropertyGroup>
 ```
 
-## Publishing
+## 发布 {#publishing}
 
-To publish your app, run `dotnet publish` in the command line:
+在命令行运行 `dotnet publish` 即可发布应用：
 
 ```
 dotnet publish -r <runtime> -c Release
 ```
 
-As an example, `dotnet publish -r osx-arm64 -c Release` would publish the app for Apple Silicon devices.
+举例来说，`dotnet publish -r osx-arm64 -c Release` 会为 Apple Silicon 设备发布应用。
 
-For more information, please see [Native AOT deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8#publish-native-aot-using-the-cli) and [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish) on the .NET documentation site.
+更多信息请参阅 .NET 官方文档站上的 [Native AOT 部署](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8#publish-native-aot-using-the-cli)和 [dotnet publish](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish)。
 
-## Trimming by the Native AOT linker
+## Native AOT 链接器的裁剪 {#trimming-by-the-native-aot-linker}
 
-To use AOT with XPF, trimming and linking must be conservative.
+要在 XPF 上用 AOT，裁剪和链接都得保守些。
 
-By default, the XPF SDK ships with an `rd.xml` root descriptor that force-includes XPF runtime libraries, including all built-in WPF assemblies and any user-executable assemblies on which `Xpf.Sdk` is set.
+XPF SDK 默认自带一份 `rd.xml` 根描述符，会强制保留 XPF 运行时库，其中包括所有内置的 WPF 程序集，以及设置了 `Xpf.Sdk` 的用户可执行程序集。
 
-However, if your application references third-party WPF libraries, they must have equivalent trimming configurations. Otherwise, the Native AOT linker may remove types that are only referenced from XAML, which it cannot detect as being in use.
+不过，若你的应用引用了第三方 WPF 库，它们也得有相应的裁剪配置；否则 Native AOT 链接器会把那些只在 XAML 中被引用的类型剪掉——它看不出这些类型其实在用。
 
-If you are experiencing runtime errors due to missing types, check if you are using any third-party libraries that do not ship with a root descriptor. Add a root descriptor for these to your `.csproj` file.
+若运行时因缺少类型而报错，先看看你是不是用了某些不带根描述符的第三方库。给它们在 `.csproj` 文件中补上根描述符即可。
 
 ```xml title=".csproj"
 <ItemGroup>
@@ -46,11 +46,11 @@ If you are experiencing runtime errors due to missing types, check if you are us
 </ItemGroup>
 ```
 
-For information, please see [Trimming](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file) on the .NET documentation site.
+相关说明请参阅 .NET 官方文档站上的[裁剪](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming#csproj-file)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Native AOT (Avalonia)](/docs/deployment/native-aot): AOT setup for standard Avalonia applications
+- [Native AOT（Avalonia）](/docs/deployment/native-aot)：标准 Avalonia 应用的 AOT 配置
 - [Windows Deployment](/xpf/deployment/windows)
 - [macOS Deployment](/xpf/deployment/macos)
 - [Linux Deployment](/xpf/deployment/linux)

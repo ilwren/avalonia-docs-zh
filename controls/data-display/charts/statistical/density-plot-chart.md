@@ -1,25 +1,25 @@
 ---
 id: density-plot-chart
-title: Density plot chart
-description: Uses kernel density estimation to render a smooth distribution curve, with optional filled area under the curve.
+title: 密度图
+description: 用核密度估计绘出平滑的分布曲线，曲线下方可选填充。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Density plots smooth a numeric distribution into a continuous curve so peaks and spread are easier to see than in raw point lists.
+密度图把数值分布平滑成一条连续曲线，相比原始的散点列表，峰值和离散程度看得更清楚。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Distribution shape**: Inspect concentration, skew, and multiple peaks.
-- **Smoother histograms**: Show the same story as a histogram with a continuous curve.
-- **Sampling comparisons**: Present the overall shape of a dataset without plotting every point.
+- **分布形态**：考察数据的集中程度、偏态以及是否多峰。
+- **更平滑的直方图**：讲同一个故事，但用的是连续曲线。
+- **抽样对比**：不必把每个点都画出来，也能呈现数据集的整体形态。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -30,7 +30,7 @@ Density plots smooth a numeric distribution into a continuous curve so peaks and
                                    ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record Measurement(double Value);
@@ -45,19 +45,19 @@ public ObservableCollection<Measurement> DensityData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of numeric samples. | `null` |
-| `ValuePath` | Path to the numeric sample value. | `null` |
-| `Bandwidth` | Kernel bandwidth. Automatically calculated if set to `0.0`. | `0.0` |
-| `FillOpacity` | Opacity of the filled area under the curve. | `0.3` |
-| `ShowArea` | Whether to fill the area under the curve. | `true` |
-| `ShowGridLines` | Whether to draw background grid lines. | `true` |
-| `Stroke` | Brush used for the density curve. | `null` |
+| `ItemsSource` | 数值样本的集合。 | `null` |
+| `ValuePath` | 指向数值样本的路径。 | `null` |
+| `Bandwidth` | 核函数带宽。设为 `0.0` 时自动计算。 | `0.0` |
+| `FillOpacity` | 曲线下方填充区域的不透明度。 | `0.3` |
+| `ShowArea` | 是否填充曲线下方的区域。 | `true` |
+| `ShowGridLines` | 是否绘制背景网格线。 | `true` |
+| `Stroke` | 密度曲线所用的画刷。 | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Histogram chart](/controls/data-display/charts/cartesian/histogram-chart)
-- [Violin plot](/controls/data-display/charts/statistical/violin-plot-chart)
+- [直方图](/controls/data-display/charts/cartesian/histogram-chart)
+- [小提琴图](/controls/data-display/charts/statistical/violin-plot-chart)

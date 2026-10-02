@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SliceClickedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -50,13 +50,13 @@ public class SliceClickedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> SliceClickedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> SliceClickedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SliceClickedEventArgs](#uid-7a20f8ef7e) | Creates a new instance of [SliceClickedEventArgs](xref:Avalonia.Controls.Charts.SliceClickedEventArgs). |
 
@@ -64,7 +64,7 @@ public class SliceClickedEventArgs
 
 <span id="uid-7a20f8ef7e"></span>
 
-### SliceClickedEventArgs Constructor
+### SliceClickedEventArgs 构造函数 {#sliceclickedeventargs-constructor}
 
 Creates a new instance of [SliceClickedEventArgs](xref:Avalonia.Controls.Charts.SliceClickedEventArgs).
 
@@ -72,7 +72,7 @@ Creates a new instance of [SliceClickedEventArgs](xref:Avalonia.Controls.Charts.
 public SliceClickedEventArgs(int sliceIndex, string label, double value, double percentage, object dataItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `sliceIndex` int
 
@@ -91,23 +91,23 @@ public SliceClickedEventArgs(int sliceIndex, string label, double value, double 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DataItem](#uid-34ff884ab9) | Gets the original data item if available. |
-| [Label](#uid-04042cdbdd) | Gets the label of the clicked slice. |
+| [DataItem](#uid-34ff884ab9) | 若有原始数据项则取得它。 |
+| [Label](#uid-04042cdbdd) | 获取被点击扇区的标签。 |
 | [Percentage](#uid-f3252e3204) | Gets the percentage of the total that this slice represents. |
-| [SliceIndex](#uid-fe184acfb8) | Gets the index of the clicked slice. |
-| [Value](#uid-72bd523919) | Gets the value of the clicked slice. |
+| [SliceIndex](#uid-fe184acfb8) | 获取被点击扇区的索引。 |
+| [Value](#uid-72bd523919) | 获取被点击扇区的值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-34ff884ab9"></span>
 
-### DataItem Property
+### DataItem 属性 {#dataitem-property}
 
-Gets the original data item if available.
+若有原始数据项则取得它。
 
 ```csharp
 public object DataItem { get; set; }
@@ -119,9 +119,9 @@ public object DataItem { get; set; }
 
 <span id="uid-04042cdbdd"></span>
 
-### Label Property
+### Label 属性 {#label-property}
 
-Gets the label of the clicked slice.
+获取被点击扇区的标签。
 
 ```csharp
 public string Label { get; set; }
@@ -133,7 +133,7 @@ public string Label { get; set; }
 
 <span id="uid-f3252e3204"></span>
 
-### Percentage Property
+### Percentage 属性 {#percentage-property}
 
 Gets the percentage of the total that this slice represents.
 
@@ -147,9 +147,9 @@ public double Percentage { get; set; }
 
 <span id="uid-fe184acfb8"></span>
 
-### SliceIndex Property
+### SliceIndex 属性 {#sliceindex-property}
 
-Gets the index of the clicked slice.
+获取被点击扇区的索引。
 
 ```csharp
 public int SliceIndex { get; set; }
@@ -161,9 +161,9 @@ public int SliceIndex { get; set; }
 
 <span id="uid-72bd523919"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
-Gets the value of the clicked slice.
+获取被点击扇区的值。
 
 ```csharp
 public double Value { get; set; }

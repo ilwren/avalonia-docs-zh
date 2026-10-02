@@ -1,28 +1,28 @@
 ---
 id: visual-and-logical-trees
-title: Visual and logical trees
-description: Understand the logical and visual tree structures used for layout, rendering, and events.
+title: 视觉树与逻辑树
+description: 理解用于布局、渲染和事件的两套树形结构：逻辑树与视觉树。
 doc-type: explanation
 video:
   src: https://youtu.be/1cY3LKDBCz8
-  title: Avalonia Visual Tree vs Logical Tree — DataContext Inheritance, Styles & Tree Navigation
+  title: Avalonia 视觉树与逻辑树 —— DataContext 继承、样式与树的遍历
 ---
 
-Avalonia organizes controls into two parallel tree structures: the logical tree and the visual tree. Understanding these trees is important for resource lookup, event routing, styling, and custom control development.
+Avalonia 把控件组织成两棵并行的树：逻辑树和视觉树。资源查找、事件路由、样式以及自定义控件开发，都离不开对这两棵树的理解。
 
-If you wish to view the logical and visual trees of your application, use the [Elements tool](/tools/developer-tools/elements-tool) of the Avalonia Dev Tools.
+想查看应用的逻辑树和视觉树，可以使用 Avalonia 开发者工具的 [Elements 工具](/tools/developer-tools/elements-tool)。
 
-## Logical tree
+## 逻辑树 {#logical-tree}
 
-The logical tree represents the hierarchy of your UI as defined in XAML. It contains the controls you explicitly declare, without the internal template structure.
+逻辑树表示的是你在 XAML 中定义的界面层次结构。它只包含你显式声明的控件，不含模板内部的结构。
 
-The logical tree is used for:
-- **Resource lookup:** `StaticResource` and `DynamicResource` walk up the logical tree.
-- **Data context inheritance:** `DataContext` propagates down the logical tree.
-- **Property inheritance:** Inherited properties like `FontSize`, `Foreground` or `FlowDirection` flow down the logical tree.
-- **Named element lookup:** `x:Name` references resolve within the logical tree scope.
+逻辑树用于：
+- **资源查找：** `StaticResource` 和 `DynamicResource` 沿逻辑树向上查找。
+- **数据上下文继承：** `DataContext` 沿逻辑树向下传播。
+- **属性继承：** `FontSize`、`Foreground`、`FlowDirection` 这类可继承属性沿逻辑树向下流动。
+- **具名元素查找：** `x:Name` 引用在逻辑树的作用域内解析。
 
-For example, the following XAML of three controls inside a [`StackPanel`](/controls/layout/panels/stackpanel) inside a [`Window`](/controls/primitives/window) produces the corresponding logical tree.
+举例来说，下面这段 XAML —— 一个 [`Window`](/controls/primitives/window) 里套一个 [`StackPanel`](/controls/layout/panels/stackpanel)，其中放了三个控件 —— 对应的逻辑树如图所示。
 
 <Tabs>
 <TabItem value="xaml" label="XAML">
@@ -52,7 +52,7 @@ Window
 </TabItem>
 </Tabs>
 
-### Navigating the logical tree
+### 遍历逻辑树 {#navigating-the-logical-tree}
 
 ```csharp
 // Get the logical parent
@@ -68,33 +68,33 @@ var window = myControl.FindLogicalAncestorOfType<Window>();
 var allTextBlocks = myPanel.GetLogicalDescendants().OfType<TextBlock>();
 ```
 
-### Mutating the logical tree
+### 改动逻辑树 {#mutating-the-logical-tree}
 
-It is only safe to add or remove `LogicalChildren` when the framework is not already walking the tree. Several common operations trigger such walks, most notably propagation of inherited properties such as `DataContext`. Mutating `LogicalChildren` while one of these walks is in progress can corrupt the iteration and surface as binding errors.
+只有当框架没有正在遍历这棵树时，增删 `LogicalChildren` 才是安全的。好几种常见操作都会引发这类遍历，最典型的就是 `DataContext` 等可继承属性的传播。在遍历进行期间改动 `LogicalChildren`，可能破坏迭代过程，表现出来就是各种绑定错误。
 
-**Safe places to add or remove logical children:**
+**可以安全增删逻辑子元素的时机：**
 
-- The control's constructor, before it is attached to any tree.
-- `OnApplyTemplate`, after calling `base.OnApplyTemplate(e)`.
-- Routed input or command handlers (for example, a `Click` or `Tapped` handler).
-- The `Loaded` event handler.
+- 控件的构造函数中 —— 此时它还没挂到任何树上。
+- `OnApplyTemplate` 中，且在调用 `base.OnApplyTemplate(e)` 之后。
+- 路由输入或命令的处理程序中（例如 `Click` 或 `Tapped` 的处理程序）。
+- `Loaded` 事件的处理程序中。
 
-**Avoid mutating logical children from:**
+**不要在以下场合改动逻辑子元素：**
 
-- `OnPropertyChanged` or `PropertyChanged` callbacks. The framework may be partway through propagating an inherited property to the children you are about to modify.
-- `DataContextChanged`, for the same reason.
+- `OnPropertyChanged` 或 `PropertyChanged` 回调中 —— 框架可能正把某个可继承属性传播给你即将改动的那些子元素，而且传播还没走完。
+- `DataContextChanged` 中，原因同上。
 
-## Visual tree
+## 视觉树 {#visual-tree}
 
-The visual tree represents everything that Avalonia is actually running. This means every visual element that participates in rendering, including the properties set on controls and the internal template parts of controls.
+视觉树表示 Avalonia 实际在跑的全部内容，也就是所有参与渲染的视觉元素，既包括控件上设置的属性，也包括控件模板内部的各个部件。
 
-The visual tree is used for:
-- **Rendering:** The renderer walks the visual tree to draw the UI.
-- **Hit testing:** Pointer events use the visual tree to determine which element is under the cursor.
-- **Layout:** Measure and arrange passes traverse the visual tree.
-- **Event routing:** Routed events tunnel down or bubble up the visual tree.
+视觉树用于：
+- **渲染：** 渲染器遍历视觉树来绘制界面。
+- **命中测试：** 指针事件靠视觉树判断光标下面是哪个元素。
+- **布局：** 测量与排列两个阶段都遍历视觉树。
+- **事件路由：** 路由事件沿视觉树向下隧道传播、或向上冒泡。
 
-For example, a single `Button` in the logical tree expands in the visual tree to include its `ContentPresenter`, `Border`, and other template elements. The same `Button` from [the previous example](#logical-tree) might have this visual tree:
+举例来说，逻辑树中一个孤零零的 `Button`，到了视觉树里会展开成 `ContentPresenter`、`Border` 以及其他模板元素。[前面例子](#logical-tree)中的那个 `Button`，其视觉树可能长这样：
 
 ```text title="Visual tree"
 Button
@@ -104,7 +104,7 @@ Button
                  └─ TextBlock ("Save")
 ```
 
-### Navigating the visual tree
+### 遍历视觉树 {#navigating-the-visual-tree}
 
 ```csharp
 // Get the visual parent
@@ -131,37 +131,37 @@ var visibleTextBox = myPanel.FindDescendantOfType<TextBox>(
 var allVisuals = myControl.GetVisualDescendants();
 ```
 
-## Differences between the trees
+## 两棵树的区别 {#differences-between-the-trees}
 
-| &nbsp; | Logical tree | Visual tree |
+| &nbsp; | 逻辑树 | 视觉树 |
 |---|---|---|
-| Contains | Controls you declare in XAML | All visual elements including template internals |
-| Resource lookup | Yes | No |
-| Data context inheritance | Yes | No |
-| Property inheritance | Yes | No |
-| Template expansion | No (templates are single nodes) | Yes (templates are expanded into parts) |
-| Event routing | No | Yes (tunnel and bubble) |
+| Contains | 你在 XAML 中声明的控件 | 全部视觉元素，含模板内部结构 |
+| 资源查找 | Yes | No |
+| 数据上下文继承 | Yes | No |
+| 属性继承 | Yes | No |
+| 模板展开 | 否（模板只算单个节点） | 是（模板展开为各个部件） |
+| 事件路由 | No | 是（隧道与冒泡） |
 | Rendering | No | Yes |
-| Hit testing | No | Yes |
+| 命中测试 | No | Yes |
 | Layout | Partially | Yes |
 
-## When to use which tree
+## 该用哪棵树 {#when-to-use-which-tree}
 
-**Use the logical tree when:**
-- Looking up resources or data context
-- Finding named elements
-- Walking from a control to its logical parent
-- Working with `ItemsControl` children (items are in the logical tree)
+**以下情形用逻辑树：**
+- 查找资源或数据上下文
+- 查找具名元素
+- 从某个控件向上找它的逻辑父级
+- 处理 `ItemsControl` 的子项（这些项位于逻辑树中）
 
-**Use the visual tree when:**
-- Finding template parts inside a control
-- Walking the rendered element hierarchy
-- Implementing hit testing
-- Translating coordinates between elements (`TranslatePoint`)
+**以下情形用视觉树：**
+- 查找控件内部的模板部件
+- 遍历已渲染的元素层次
+- 实现命中测试
+- 在元素之间换算坐标（`TranslatePoint`）
 
-## Examining trees at runtime
+## 在运行时查看这两棵树 {#examining-trees-at-runtime}
 
-Use the Avalonia DevTools (press F12 in a debug build) to inspect both trees interactively. The DevTools Logical Tree and Visual Tree tabs show the full hierarchy with properties.
+用 Avalonia DevTools（调试版中按 F12）可以交互式地查看两棵树。DevTools 的 Logical Tree 和 Visual Tree 标签页会连同属性一起展示完整层次。
 
 ```csharp
 // Print the logical tree for debugging
@@ -179,9 +179,9 @@ static void PrintLogicalTree(StyledElement element, int indent = 0)
 }
 ```
 
-## Template parts and the visual tree
+## 模板部件与视觉树 {#template-parts-and-the-visual-tree}
 
-When you create a control template, the elements inside it become part of the visual tree but not the logical tree. To access template parts from a custom control, override `OnApplyTemplate`:
+你创建控件模板时，模板内部的元素会进入视觉树，但不会进入逻辑树。要在自定义控件中访问模板部件，请重写 `OnApplyTemplate`：
 
 ```csharp
 protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -194,21 +194,21 @@ protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
 }
 ```
 
-Template parts are conventionally named with a `PART_` prefix to distinguish them from logical children.
+按惯例，模板部件的名称都带 `PART_` 前缀，以便和逻辑子元素区分开。
 
-## Overlay layers
+## 覆盖层 {#overlay-layers}
 
-Avalonia manages several special layers above the normal control content within each window. These layers handle adorners, custom overlays, and popups:
+在每个窗口里，Avalonia 都在常规控件内容之上管理着几个特殊的层。它们分别负责装饰器、自定义覆盖内容和弹出窗口：
 
-| Layer | Purpose | Access method |
+| 层 | 用途 | 访问方式 |
 |---|---|---|
-| `AdornerLayer` | Focus indicators, drag adorners, and visual decorations attached to controls. | `AdornerLayer.GetAdornerLayer(visual)` |
-| `OverlayLayer` | Custom overlay content you add on top of normal controls but beneath popups. | `OverlayLayer.GetOverlayLayer(visual)` |
-| Popup layer | Internal layer for hosting popups (menus, tooltips, combo box dropdowns). Managed by the framework. | Managed internally by the popup system. |
+| `AdornerLayer` | 焦点指示器、拖放装饰器，以及附着在控件上的各种视觉装饰。 | `AdornerLayer.GetAdornerLayer(visual)` |
+| `OverlayLayer` | 你自己叠加的覆盖内容，位于常规控件之上、弹出窗口之下。 | `OverlayLayer.GetOverlayLayer(visual)` |
+| 弹出层 | 承载弹出窗口（菜单、工具提示、下拉框列表）的内部层，由框架管理。 | 由弹出窗口系统在内部管理。 |
 
-### Adding custom overlay content
+### 添加自定义覆盖内容 {#adding-custom-overlay-content}
 
-Use `OverlayLayer` to display content that floats above the normal visual tree, such as a loading indicator, floating toolbar, or custom notification panel:
+用 `OverlayLayer` 可以展示浮在常规视觉树之上的内容，比如加载指示器、浮动工具栏或自定义通知面板：
 
 ```csharp
 var overlay = OverlayLayer.GetOverlayLayer(myControl);
@@ -234,11 +234,11 @@ if (overlay is not null)
 }
 ```
 
-Overlay content appears above all normal controls in the window but beneath popups, menus, and tooltips.
+覆盖内容显示在窗口中所有常规控件之上，但位于弹出窗口、菜单和工具提示之下。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [UI composition](/docs/fundamentals/ui-composition): How controls compose into a UI.
-- [Control trees](/docs/custom-controls/control-trees): Visual and logical trees in custom control development.
-- [Events overview](/docs/events): How events route through the visual tree.
-- [Templated controls](/docs/custom-controls/templated-controls): Building controls with templates.
+- [界面组合](/docs/fundamentals/ui-composition)：控件如何组合成界面。
+- [控件树](/docs/custom-controls/control-trees)：自定义控件开发中的视觉树与逻辑树。
+- [事件总览](/docs/events)：事件如何沿视觉树路由。
+- [模板化控件](/docs/custom-controls/templated-controls)：用模板构建控件。

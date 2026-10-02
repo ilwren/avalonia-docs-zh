@@ -1,7 +1,7 @@
 ---
 id: tooltip-chart
-title: Tooltips
-description: Displays detailed information about data points on hover, with DataTemplate support for custom tooltip content.
+title: 工具提示
+description: 在悬停时显示数据点的详细信息，并支持用 DataTemplate 自定义提示内容。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,21 +10,21 @@ tags:
 import chartsFeaturesTooltip from '/img/controls/charts/charts-tooltips.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Tooltips provide detailed information about data points when the user hovers over them. They add precision and context without cluttering the main chart area.
+用户悬停在数据点上时，工具提示会给出该点的详细信息。它既补足了精度和背景信息，又不会把图表主体弄乱。
 
-Default Cartesian and financial chart tooltips format category and date values through the chart's horizontal axis formatting.
+笛卡尔图表和金融图表的默认工具提示，会按图表横轴的格式设置来格式化类别和日期值。
 
 <Image light={chartsFeaturesTooltip} maxWidth={400} position="center" cornerRadius="true" alt="Chart with an interactive tooltip popup appearing on hover showing the exact value and category of a data point." />
 
-## When to use
-- **High-density data**: Pinpointing values in a crowded line or scatter chart.
-- **Additional context**: Showing metadata (e.g., "Update Date") that isn't mapped to an axis.
-- **Hover interactions**: Showing focused details while the pointer is over a data point.
+## 适用场景 {#when-to-use}
+- **高密度数据**：在拥挤的折线图或散点图中精确定位数值。
+- **补充信息**：显示那些没有映射到坐标轴上的元数据（比如「更新日期」）。
+- **悬停交互**：指针停在某个数据点上时，集中展示该点的细节。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -46,7 +46,7 @@ Default Cartesian and financial chart tooltips format category and date values t
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<double> Series1Data { get; } = new()
 {
@@ -59,15 +59,15 @@ public ObservableCollection<double> Series2Data { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `IsTooltipEnabled` | Global toggle for tooltip visibility. | `true` |
-| `TooltipTemplate` | Custom DataTemplate for the tooltip UI (on series). | System default |
+| `IsTooltipEnabled` | 工具提示可见性的总开关。 | `true` |
+| `TooltipTemplate` | 工具提示界面所用的自定义 DataTemplate（设置在系列上）。 | 系统默认值 |
 
-## Data item conventions
+## 数据项约定 {#data-item-conventions}
 
-If the hit data item has a non-empty string property named `TooltipText`, the default tooltip displays that text instead of generated series, category, and value content.
+若命中的数据项带有一个名为 `TooltipText` 的非空字符串属性，默认工具提示会显示该文本，而不再自动拼装系列、类别和数值信息。
 
-Use `TooltipTemplate` on a series when the tooltip needs custom layout, controls, or multiple bound fields.
+当工具提示需要自定义布局、放入控件或绑定多个字段时，请在系列上使用 `TooltipTemplate`。

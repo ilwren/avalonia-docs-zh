@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">GlyphRun Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/GlyphRun.cs">GlyphRun.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/GlyphRun.cs">GlyphRun.cs</a>
 </div>
 
 </div>
@@ -54,34 +54,34 @@ public class GlyphRun
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> GlyphRun
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> GlyphRun
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GlyphRun (2 overloads)](#uid-e2f38debc1) | No summary available. |
+| [GlyphRun (2 overloads)](#uid-e2f38debc1) | 暂无摘要。 |
 
 <span id="uid-e2f38debc1"></span>
 
-### GlyphRun overloads
+### GlyphRun 的重载 {#glyphrun-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-fe9b5e19a9"></span>
 
-#### GlyphRun Constructor
+#### GlyphRun 构造函数 {#glyphrun-constructor}
 
 ```csharp
 public GlyphRun(Avalonia.Media.GlyphTypeface glyphTypeface, double fontRenderingEmSize, ReadOnlyMemory<char> characters, System.Collections.Generic.IReadOnlyList<Avalonia.Media.TextFormatting.GlyphInfo> glyphInfos, Nullable<Avalonia.Point> baselineOrigin, int biDiLevel)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `glyphTypeface` [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface)
 
@@ -107,13 +107,13 @@ public GlyphRun(Avalonia.Media.GlyphTypeface glyphTypeface, double fontRendering
 
 <span id="uid-42a5244e24"></span>
 
-#### GlyphRun Constructor
+#### GlyphRun 构造函数 {#glyphrun-constructor-1}
 
 ```csharp
 public GlyphRun(Avalonia.Media.GlyphTypeface glyphTypeface, double fontRenderingEmSize, ReadOnlyMemory<char> characters, System.Collections.Generic.IReadOnlyList<ushort> glyphIndices, Nullable<Avalonia.Point> baselineOrigin, int biDiLevel)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `glyphTypeface` [Avalonia.Media.GlyphTypeface](xref:Avalonia.Media.GlyphTypeface)
 
@@ -135,34 +135,34 @@ public GlyphRun(Avalonia.Media.GlyphTypeface glyphTypeface, double fontRendering
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BuildGeometry](#uid-cf91c83fe2) | Obtains geometry for the glyph run. |
-| [Dispose](#uid-278570385c) | No summary available. |
+| [BuildGeometry](#uid-cf91c83fe2) | 取得该字形运行的几何图形。 |
+| [Dispose](#uid-278570385c) | 暂无摘要。 |
 | [FindGlyphIndex](#uid-10244c375b) | Finds a glyph index for given character index. |
-| [FindNearestCharacterHit](#uid-f54f26d06a) | No summary available. |
-| [GetCharacterHitFromDistance](#uid-067259b333) | No summary available. |
+| [FindNearestCharacterHit](#uid-f54f26d06a) | 暂无摘要。 |
+| [GetCharacterHitFromDistance](#uid-067259b333) | 暂无摘要。 |
 | [GetDistanceFromCharacterHit](#uid-d5b6f8b32d) | Retrieves the offset from the leading edge of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun) to the leading or trailing edge of a caret stop containing the specified character hit. |
 | [GetIntersections](#uid-2087dc8294) | Gets the intersections of specified upper and lower limit. |
 | [GetNextCaretCharacterHit](#uid-809121e182) | Retrieves the next valid caret character hit in the logical direction in the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
 | [GetPreviousCaretCharacterHit](#uid-02e6bed1e6) | Retrieves the previous valid caret character hit in the logical direction in the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
-| [TryCreateImmutableGlyphRunReference](#uid-9fb0b850ca) | No summary available. |
+| [TryCreateImmutableGlyphRunReference](#uid-9fb0b850ca) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cf91c83fe2"></span>
 
-### BuildGeometry Method
+### BuildGeometry 方法 {#buildgeometry-method}
 
-Obtains geometry for the glyph run.
+取得该字形运行的几何图形。
 
 ```csharp
 public Avalonia.Media.Geometry BuildGeometry()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
 
@@ -175,7 +175,7 @@ The geometry returned contains the combined geometry of all glyphs in the glyph 
 
 <span id="uid-278570385c"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -187,7 +187,7 @@ public void Dispose()
 
 <span id="uid-10244c375b"></span>
 
-### FindGlyphIndex Method
+### FindGlyphIndex 方法 {#findglyphindex-method}
 
 Finds a glyph index for given character index.
 
@@ -195,14 +195,14 @@ Finds a glyph index for given character index.
 public int FindGlyphIndex(int characterIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `characterIndex` int
 
 The character index.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 int
 
@@ -215,13 +215,13 @@ The glyph index.
 
 <span id="uid-f54f26d06a"></span>
 
-### FindNearestCharacterHit Method
+### FindNearestCharacterHit 方法 {#findnearestcharacterhit-method}
 
 ```csharp
 public Avalonia.Media.CharacterHit FindNearestCharacterHit(int index, double& width)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `index` int
 
@@ -229,7 +229,7 @@ public Avalonia.Media.CharacterHit FindNearestCharacterHit(int index, double& wi
 `width` double&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -240,13 +240,13 @@ public Avalonia.Media.CharacterHit FindNearestCharacterHit(int index, double& wi
 
 <span id="uid-067259b333"></span>
 
-### GetCharacterHitFromDistance Method
+### GetCharacterHitFromDistance 方法 {#getcharacterhitfromdistance-method}
 
 ```csharp
 public Avalonia.Media.CharacterHit GetCharacterHitFromDistance(double distance, bool& isInside)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `distance` double
 
@@ -254,7 +254,7 @@ public Avalonia.Media.CharacterHit GetCharacterHitFromDistance(double distance, 
 `isInside` bool&amp;
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -265,7 +265,7 @@ public Avalonia.Media.CharacterHit GetCharacterHitFromDistance(double distance, 
 
 <span id="uid-d5b6f8b32d"></span>
 
-### GetDistanceFromCharacterHit Method
+### GetDistanceFromCharacterHit 方法 {#getdistancefromcharacterhit-method}
 
 Retrieves the offset from the leading edge of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun)
 to the leading or trailing edge of a caret stop containing the specified character hit.
@@ -274,14 +274,14 @@ to the leading or trailing edge of a caret stop containing the specified charact
 public double GetDistanceFromCharacterHit(Avalonia.Media.CharacterHit characterHit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `characterHit` [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
 The [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit) to use for computing the offset.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 double
 
@@ -295,7 +295,7 @@ to the leading or trailing edge of a caret stop containing the character hit.
 
 <span id="uid-2087dc8294"></span>
 
-### GetIntersections Method
+### GetIntersections 方法 {#getintersections-method}
 
 Gets the intersections of specified upper and lower limit.
 
@@ -303,7 +303,7 @@ Gets the intersections of specified upper and lower limit.
 public System.Collections.Generic.IReadOnlyList<float> GetIntersections(float lowerLimit, float upperLimit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `lowerLimit` float
 
@@ -315,7 +315,7 @@ Upper limit.
 Lower limit.
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 System.Collections.Generic.IReadOnlyList&lt;float&gt;
 
@@ -326,7 +326,7 @@ System.Collections.Generic.IReadOnlyList&lt;float&gt;
 
 <span id="uid-809121e182"></span>
 
-### GetNextCaretCharacterHit Method
+### GetNextCaretCharacterHit 方法 {#getnextcaretcharacterhit-method}
 
 Retrieves the next valid caret character hit in the logical direction in the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -334,14 +334,14 @@ Retrieves the next valid caret character hit in the logical direction in the [Av
 public Avalonia.Media.CharacterHit GetNextCaretCharacterHit(Avalonia.Media.CharacterHit characterHit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `characterHit` [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
 The [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit) to use for computing the next hit value.
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -355,7 +355,7 @@ If the return value is equal to `characterHit`, no further navigation is possibl
 
 <span id="uid-02e6bed1e6"></span>
 
-### GetPreviousCaretCharacterHit Method
+### GetPreviousCaretCharacterHit 方法 {#getpreviouscaretcharacterhit-method}
 
 Retrieves the previous valid caret character hit in the logical direction in the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -363,14 +363,14 @@ Retrieves the previous valid caret character hit in the logical direction in the
 public Avalonia.Media.CharacterHit GetPreviousCaretCharacterHit(Avalonia.Media.CharacterHit characterHit)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `characterHit` [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
 The [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit) to use for computing the previous hit value.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit)
 
@@ -384,22 +384,22 @@ If the return value is equal to `characterHit`, no further navigation is possibl
 
 <span id="uid-9fb0b850ca"></span>
 
-### TryCreateImmutableGlyphRunReference Method
+### TryCreateImmutableGlyphRunReference 方法 {#trycreateimmutableglyphrunreference-method}
 
 ```csharp
 public Avalonia.Media.IImmutableGlyphRunReference TryCreateImmutableGlyphRunReference()
 ```
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Media.IImmutableGlyphRunReference](xref:Avalonia.Media.IImmutableGlyphRunReference)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BaselineOrigin](#uid-8aa5de2c7a) | Gets or sets the baseline origin of the[Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
 | [BiDiLevel](#uid-675d46b58c) | Gets or sets the bidirectional nesting level of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
@@ -407,16 +407,16 @@ public Avalonia.Media.IImmutableGlyphRunReference TryCreateImmutableGlyphRunRefe
 | [Characters](#uid-ca48e5ed44) | Gets or sets the list of UTF16 code points that represent the Unicode content of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
 | [FontRenderingEmSize](#uid-ac261e95fc) | Gets or sets the em size used for rendering the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
 | [GlyphInfos](#uid-a5fe313c08) | Gets or sets the list of glyphs to use to render this run. |
-| [GlyphTypeface](#uid-daa6bc349c) | Gets the [Avalonia.Media.GlyphRun.GlyphTypeface](xref:Avalonia.Media.GlyphRun.GlyphTypeface) for the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
+| [GlyphTypeface](#uid-daa6bc349c) | 获取 [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun) 的 [Avalonia.Media.GlyphRun.GlyphTypeface](xref:Avalonia.Media.GlyphRun.GlyphTypeface)。 |
 | [InkBounds](#uid-cdd7824107) | Gets the conservative bounding box of the inked area of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun). |
 | [IsLeftToRight](#uid-964a430ddd) | Returns `true` if the text direction is left-to-right. Otherwise, returns `false`. |
-| [Metrics](#uid-e9df7b4b7a) | No summary available. |
+| [Metrics](#uid-e9df7b4b7a) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8aa5de2c7a"></span>
 
-### BaselineOrigin Property
+### BaselineOrigin 属性 {#baselineorigin-property}
 
 Gets or sets the baseline origin of the[Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -430,7 +430,7 @@ public Avalonia.Point BaselineOrigin { get; set; }
 
 <span id="uid-675d46b58c"></span>
 
-### BiDiLevel Property
+### BiDiLevel 属性 {#bidilevel-property}
 
 Gets or sets the bidirectional nesting level of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -444,7 +444,7 @@ public int BiDiLevel { get; set; }
 
 <span id="uid-ba6b22dd20"></span>
 
-### Bounds Property
+### Bounds 属性 {#bounds-property}
 
 Gets the conservative bounding box of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -458,7 +458,7 @@ public Avalonia.Rect Bounds { get; set; }
 
 <span id="uid-ca48e5ed44"></span>
 
-### Characters Property
+### Characters 属性 {#characters-property}
 
 Gets or sets the list of UTF16 code points that represent the Unicode content of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -472,7 +472,7 @@ public ReadOnlyMemory<char> Characters { get; set; }
 
 <span id="uid-ac261e95fc"></span>
 
-### FontRenderingEmSize Property
+### FontRenderingEmSize 属性 {#fontrenderingemsize-property}
 
 Gets or sets the em size used for rendering the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -486,7 +486,7 @@ public double FontRenderingEmSize { get; set; }
 
 <span id="uid-a5fe313c08"></span>
 
-### GlyphInfos Property
+### GlyphInfos 属性 {#glyphinfos-property}
 
 Gets or sets the list of glyphs to use to render this run.
 
@@ -500,9 +500,9 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Media.TextFormatting.Gl
 
 <span id="uid-daa6bc349c"></span>
 
-### GlyphTypeface Property
+### GlyphTypeface 属性 {#glyphtypeface-property}
 
-Gets the [Avalonia.Media.GlyphRun.GlyphTypeface](xref:Avalonia.Media.GlyphRun.GlyphTypeface) for the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
+获取 [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun) 的 [Avalonia.Media.GlyphRun.GlyphTypeface](xref:Avalonia.Media.GlyphRun.GlyphTypeface)。
 
 ```csharp
 public Avalonia.Media.GlyphTypeface GlyphTypeface { get; set; }
@@ -514,7 +514,7 @@ public Avalonia.Media.GlyphTypeface GlyphTypeface { get; set; }
 
 <span id="uid-cdd7824107"></span>
 
-### InkBounds Property
+### InkBounds 属性 {#inkbounds-property}
 
 Gets the conservative bounding box of the inked area of the [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun).
 
@@ -528,7 +528,7 @@ public Avalonia.Rect InkBounds { get; set; }
 
 <span id="uid-964a430ddd"></span>
 
-### IsLeftToRight Property
+### IsLeftToRight 属性 {#islefttoright-property}
 
 Returns `true` if the text direction is left-to-right. Otherwise, returns `false`.
 
@@ -542,7 +542,7 @@ public bool IsLeftToRight { get; set; }
 
 <span id="uid-e9df7b4b7a"></span>
 
-### Metrics Property
+### Metrics 属性 {#metrics-property}
 
 ```csharp
 public Avalonia.Media.GlyphRunMetrics Metrics { get; set; }

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EventRoute Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Interactivity</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Interactivity</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Interactivity/EventRoute.cs">EventRoute.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Interactivity/EventRoute.cs">EventRoute.cs</a>
 </div>
 
 </div>
@@ -54,32 +54,32 @@ public class EventRoute
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EventRoute
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EventRoute
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [EventRoute](#uid-41664681f3) | Initializes a new instance of the [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent) class. |
+| [EventRoute](#uid-41664681f3) | 初始化 [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-41664681f3"></span>
 
-### EventRoute Constructor
+### EventRoute 构造函数 {#eventroute-constructor}
 
-Initializes a new instance of the [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent) class.
+初始化 [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent) 类的新实例。
 
 ```csharp
 public EventRoute(Avalonia.Interactivity.RoutedEvent e)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `e` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
@@ -88,26 +88,26 @@ The routed event to be raised.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Add](#uid-0f7dc04cf2) | No summary available. |
-| [AddClassHandler](#uid-b69b3099ee) | Adds a class handler to the route. |
-| [Dispose](#uid-483febc3dd) | Disposes of the event route. |
-| [RaiseEvent](#uid-904a4d5620) | Raises an event along the route. |
+| [Add](#uid-0f7dc04cf2) | 暂无摘要。 |
+| [AddClassHandler](#uid-b69b3099ee) | 向路由中添加一个类处理程序。 |
+| [Dispose](#uid-483febc3dd) | 释放该事件路由。 |
+| [RaiseEvent](#uid-904a4d5620) | 沿路由抛出一个事件。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0f7dc04cf2"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
 ```csharp
 public void Add(Avalonia.Interactivity.Interactive target, Delegate handler, Avalonia.Interactivity.RoutingStrategies routes, bool handledEventsToo, Action<Delegate, object, Avalonia.Interactivity.RoutedEventArgs> adapter)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `target` [Avalonia.Interactivity.Interactive](xref:Avalonia.Interactivity.Interactive)
 
@@ -130,15 +130,15 @@ public void Add(Avalonia.Interactivity.Interactive target, Delegate handler, Ava
 
 <span id="uid-b69b3099ee"></span>
 
-### AddClassHandler Method
+### AddClassHandler 方法 {#addclasshandler-method}
 
-Adds a class handler to the route.
+向路由中添加一个类处理程序。
 
 ```csharp
 public void AddClassHandler(Avalonia.Interactivity.Interactive target)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `target` [Avalonia.Interactivity.Interactive](xref:Avalonia.Interactivity.Interactive)
 
@@ -151,9 +151,9 @@ The target on which the event should be raised.
 
 <span id="uid-483febc3dd"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
-Disposes of the event route.
+释放该事件路由。
 
 ```csharp
 public void Dispose()
@@ -165,15 +165,15 @@ public void Dispose()
 
 <span id="uid-904a4d5620"></span>
 
-### RaiseEvent Method
+### RaiseEvent 方法 {#raiseevent-method}
 
-Raises an event along the route.
+沿路由抛出一个事件。
 
 ```csharp
 public void RaiseEvent(Avalonia.Interactivity.Interactive source, Avalonia.Interactivity.RoutedEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `source` [Avalonia.Interactivity.Interactive](xref:Avalonia.Interactivity.Interactive)
 
@@ -182,14 +182,14 @@ The event source.
 
 `e` [Avalonia.Interactivity.RoutedEventArgs](xref:Avalonia.Interactivity.RoutedEventArgs)
 
-The event args.
+事件参数。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HasHandlers](#uid-a037c44ddb) | Gets a value indicating whether the route has any handlers. |
 
@@ -197,7 +197,7 @@ The event args.
 
 <span id="uid-a037c44ddb"></span>
 
-### HasHandlers Property
+### HasHandlers 属性 {#hashandlers-property}
 
 Gets a value indicating whether the route has any handlers.
 

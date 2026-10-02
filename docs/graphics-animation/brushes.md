@@ -1,15 +1,15 @@
 ---
 id: brushes
-title: Brushes
-description: Brush types for painting surfaces in Avalonia including solid colors, gradients, and tile brushes.
+title: 画刷
+description: Avalonia 中用于绘制表面的各类画刷：纯色、渐变和平铺画刷。
 doc-type: reference
 ---
 
-Brushes define how surfaces are painted in Avalonia. Every property that accepts a `Brush` (such as `Background`, `Foreground`, `BorderBrush`, `Fill`, and `Stroke`) can use any of the brush types described here.
+画刷决定了 Avalonia 中各个表面如何被绘制。凡是接受 `Brush` 的属性（比如 `Background`、`Foreground`、`BorderBrush`、`Fill` 和 `Stroke`），都能用上本文介绍的任意一种画刷。
 
 ## SolidColorBrush
 
-Fills an area with a single color. This is the most common brush type and is used implicitly when you set a color string on a brush property.
+用单一颜色填充区域。这是最常用的画刷类型——当你给某个画刷属性直接赋一个颜色字符串时，用的就是它。
 
 ```xml
 <Border Background="SteelBlue" />
@@ -22,22 +22,22 @@ Fills an area with a single color. This is the most common brush type and is use
 </Border>
 ```
 
-Colors can be specified as:
+颜色可以这样写：
 
-| Format | Example | Description |
+| 格式 | 示例 | 说明 |
 |---|---|---|
-| Named color | `Red`, `SteelBlue` | Any standard CSS/WPF color name. |
+| 具名颜色 | `Red`, `SteelBlue` | 任意标准的 CSS/WPF 颜色名。 |
 | `#RRGGBB` | `#4682B4` | Hex RGB. |
-| `#AARRGGBB` | `#804682B4` | Hex ARGB (with alpha). |
-| `#RGB` | `#F00` | Short hex RGB. |
-| `rgb()` | `rgb(70, 130, 180)` | CSS RGB function. Values 0-255. |
-| `rgba()` | `rgba(70, 130, 180, 0.8)` | CSS RGB with alpha (0.0-1.0). |
-| `hsl()` | `hsl(207, 44%, 49%)` | CSS HSL (hue, saturation, lightness). |
-| `hsla()` | `hsla(207, 44%, 49%, 0.8)` | CSS HSL with alpha. |
-| `hsv()` | `hsv(207, 61%, 71%)` | HSV (hue, saturation, value). |
-| `hsva()` | `hsva(207, 61%, 71%, 0.8)` | HSV with alpha. |
+| `#AARRGGBB` | `#804682B4` | 十六进制 ARGB（含 alpha）。 |
+| `#RGB` | `#F00` | 简写的十六进制 RGB。 |
+| `rgb()` | `rgb(70, 130, 180)` | CSS 的 RGB 函数写法，取值 0–255。 |
+| `rgba()` | `rgba(70, 130, 180, 0.8)` | 带 alpha 的 CSS RGB（0.0–1.0）。 |
+| `hsl()` | `hsl(207, 44%, 49%)` | CSS HSL（色相、饱和度、亮度）。 |
+| `hsla()` | `hsla(207, 44%, 49%, 0.8)` | 带 alpha 的 CSS HSL。 |
+| `hsv()` | `hsv(207, 61%, 71%)` | HSV（色相、饱和度、明度）。 |
+| `hsva()` | `hsva(207, 61%, 71%, 0.8)` | 带 alpha 的 HSV。 |
 
-These formats work anywhere a brush or color is expected, including XAML attributes, styles, and `Brush.Parse()` / `Color.Parse()` in code.
+凡是需要画刷或颜色的地方，这些写法都通用，XAML 特性、样式，以及代码中的 `Brush.Parse()` / `Color.Parse()` 都包括在内。
 
 ```xml
 <!-- All of these are equivalent -->
@@ -47,7 +47,7 @@ These formats work anywhere a brush or color is expected, including XAML attribu
 <Border Background="hsl(207, 44%, 49%)" />
 ```
 
-### Creating in code
+### 在代码中创建 {#creating-in-code}
 
 ```csharp
 var brush = new SolidColorBrush(Colors.SteelBlue);
@@ -57,11 +57,11 @@ var brush4 = Brush.Parse("hsl(207, 44%, 49%)");
 myBorder.Background = brush;
 ```
 
-`Brush.Parse()` accepts all the same color formats listed above, including named colors, hex values, and CSS color functions.
+`Brush.Parse()` 接受上面列出的全部颜色格式，具名颜色、十六进制值和 CSS 颜色函数都认。
 
 ## LinearGradientBrush
 
-Fills an area with a gradient that transitions between colors along a line. For a focused guide on linear gradients, see [Gradients](/docs/graphics-animation/gradients).
+用沿一条直线在若干颜色之间过渡的渐变填充区域。关于线性渐变的专题讲解，请参阅[渐变](/docs/graphics-animation/gradients)。
 
 ```xml
 <Border Height="80" CornerRadius="8">
@@ -74,17 +74,17 @@ Fills an area with a gradient that transitions between colors along a line. For 
 </Border>
 ```
 
-### Key properties
+### 关键属性 {#key-properties}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `StartPoint` | The starting point of the gradient line. Uses relative (`50%,0%`) or absolute coordinates. |
-| `EndPoint` | The ending point of the gradient line. |
-| [`GradientStops`](/api/avalonia/media/gradientstops) | A collection of `GradientStop` objects defining colors and positions. |
-| `SpreadMethod` | How the gradient fills space beyond its defined area: `Pad` (default), `Reflect`, or `Repeat`. |
-| `Opacity` | Overall opacity of the brush (0.0 to 1.0). |
+| `StartPoint` | 渐变线的起点，可用相对坐标（`50%,0%`）或绝对坐标。 |
+| `EndPoint` | 渐变线的终点。 |
+| [`GradientStops`](/api/avalonia/media/gradientstops) | 一组 `GradientStop` 对象，用来定义各个颜色及其位置。 |
+| `SpreadMethod` | 渐变如何填充其定义区域之外的空间：`Pad`（默认）、`Reflect` 或 `Repeat`。 |
+| `Opacity` | 画刷的整体不透明度（0.0 到 1.0）。 |
 
-### Gradient directions
+### 渐变方向 {#gradient-directions}
 
 ```xml
 <!-- Horizontal (left to right) -->
@@ -99,7 +99,7 @@ Fills an area with a gradient that transitions between colors along a line. For 
 
 ## RadialGradientBrush
 
-Fills an area with a gradient that radiates from a center point outward.
+用自中心点向外辐射的渐变填充区域。
 
 ```xml
 <Ellipse Width="150" Height="150">
@@ -113,19 +113,19 @@ Fills an area with a gradient that radiates from a center point outward.
 </Ellipse>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-1}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Center` | The center of the outermost circle. Default is `50%,50%`. |
-| `GradientOrigin` | The origin of the gradient (focal point). Offset from center creates a spotlight effect. |
-| `RadiusX`, `RadiusY` | The horizontal and vertical radius of the outermost gradient circle. Default is `50%`. |
-| `GradientStops` | Colors and positions along the radius. |
+| `Center` | 最外层圆的圆心，默认为 `50%,50%`。 |
+| `GradientOrigin` | 渐变的原点（焦点）。把它从圆心偏开，就能做出聚光灯一样的效果。 |
+| `RadiusX`, `RadiusY` | 最外层渐变圆的水平与垂直半径，默认为 `50%`。 |
+| `GradientStops` | 沿半径分布的各个颜色及其位置。 |
 | `SpreadMethod` | `Pad`, `Reflect`, or `Repeat`. |
 
 ## ConicGradientBrush
 
-Fills an area with a gradient that sweeps around a center point, transitioning colors as it rotates.
+用绕中心点旋转扫掠的渐变填充区域，颜色随角度推移而过渡。
 
 ```xml
 <Ellipse Width="150" Height="150">
@@ -141,17 +141,17 @@ Fills an area with a gradient that sweeps around a center point, transitioning c
 </Ellipse>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-2}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Center` | The center point of the conic gradient. Default is `50%,50%`. |
-| `Angle` | The starting angle in degrees. Default is `0`. |
-| `GradientStops` | Colors and positions around the sweep. |
+| `Center` | 锥形渐变的中心点，默认为 `50%,50%`。 |
+| `Angle` | 起始角度，单位为度，默认为 `0`。 |
+| `GradientStops` | 沿扫掠方向分布的各个颜色及其位置。 |
 
 ## ImageBrush
 
-Paints an area with an image.
+用一张图片来绘制区域。
 
 ```xml
 <Border Width="200" Height="200">
@@ -164,21 +164,21 @@ Paints an area with an image.
 </Border>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-3}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Source` | The image source. Supports `avares://` URIs and file paths. |
-| `Stretch` | How the image fills the area: `None`, `Fill`, `Uniform` (default), `UniformToFill`. |
-| `TileMode` | How the image tiles: `None` (default), `Tile`, `FlipX`, `FlipY`, `FlipXY`. |
-| `AlignmentX` | Horizontal alignment of the image within the tile: `Left`, `Center` (default), `Right`. |
-| `AlignmentY` | Vertical alignment of the image within the tile: `Top`, `Center` (default), `Bottom`. |
-| `SourceRect` | A rectangular region of the source image to use. |
-| `DestinationRect` | The destination rectangle within the target area. |
-| `Opacity` | Overall opacity of the brush. |
-| `BitmapInterpolationMode` | Interpolation quality: `Default`, `LowQuality`, `MediumQuality`, `HighQuality`. |
+| `Source` | 图片来源，支持 `avares://` URI 和文件路径。 |
+| `Stretch` | 图片如何填满区域：`None`、`Fill`、`Uniform`（默认）、`UniformToFill`。 |
+| `TileMode` | 图片如何平铺：`None`（默认）、`Tile`、`FlipX`、`FlipY`、`FlipXY`。 |
+| `AlignmentX` | 图片在单块平铺区内的水平对齐方式：`Left`、`Center`（默认）、`Right`。 |
+| `AlignmentY` | 图片在单块平铺区内的垂直对齐方式：`Top`、`Center`（默认）、`Bottom`。 |
+| `SourceRect` | 要取用的源图矩形区域。 |
+| `DestinationRect` | 目标区域内的目的矩形。 |
+| `Opacity` | 画刷的整体不透明度。 |
+| `BitmapInterpolationMode` | 插值质量：`Default`、`LowQuality`、`MediumQuality`、`HighQuality`。 |
 
-### Tiling example
+### 平铺示例 {#tiling-example}
 
 ```xml
 <Border Width="300" Height="200">
@@ -192,7 +192,7 @@ Paints an area with an image.
 
 ## VisualBrush
 
-Paints an area using the rendered output of another visual element.
+用另一个视觉元素的渲染结果来绘制区域。
 
 ```xml
 <Border Width="200" Height="200" BorderBrush="Gray" BorderThickness="1">
@@ -208,33 +208,33 @@ Paints an area using the rendered output of another visual element.
 </Border>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-4}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Visual` | The visual element to render as the brush content. |
-| `Stretch` | How the visual fills the area. |
-| `TileMode` | Tiling mode for repeating the visual. |
-| `SourceRect` | The portion of the visual to use. |
-| `DestinationRect` | The destination rectangle for each tile. |
+| `Visual` | 作为画刷内容渲染的那个视觉元素。 |
+| `Stretch` | 该视觉元素如何填满区域。 |
+| `TileMode` | 重复该视觉元素时的平铺模式。 |
+| `SourceRect` | 要取用的视觉元素的哪一部分。 |
+| `DestinationRect` | 每块平铺区对应的目的矩形。 |
 
 :::info
-`VisualBrush` captures the visual appearance of any control. This is useful for creating reflection effects, watermarks, and preview thumbnails.
+`VisualBrush` 可以捕获任意控件的视觉外观，用来做倒影效果、水印和预览缩略图都很合适。
 :::
 
-## Common brush properties
+## 画刷的通用属性 {#common-brush-properties}
 
-All brush types share these properties:
+所有画刷类型都具备这些属性：
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Opacity` | A value between 0.0 (transparent) and 1.0 (opaque). |
-| `Transform` | A transform applied to the brush coordinates. |
-| `TransformOrigin` | The origin point for the brush transform. |
+| `Opacity` | 取值介于 0.0（完全透明）和 1.0（完全不透明）之间。 |
+| `Transform` | 施加在画刷坐标上的变换。 |
+| `TransformOrigin` | 画刷变换的原点。 |
 
 ## OpacityMask
 
-Any control's `OpacityMask` property accepts a brush that controls per-pixel transparency. The alpha channel of the mask brush determines the opacity of each pixel in the control.
+任意控件的 `OpacityMask` 属性都接受一个画刷，用来逐像素控制透明度。遮罩画刷的 alpha 通道决定了控件中每个像素的不透明度。
 
 ```xml
 <Image Source="avares://MyApp/Assets/photo.png" Width="200" Height="200">
@@ -247,11 +247,11 @@ Any control's `OpacityMask` property accepts a brush that controls per-pixel tra
 </Image>
 ```
 
-In this example, the image fades from fully visible at the top to transparent at the bottom. The color values in the mask do not matter; only the alpha channel is used.
+这个例子里，图片从顶部的完全可见渐变到底部的完全透明。遮罩中的颜色值无关紧要，只有 alpha 通道起作用。
 
-## Using brushes as resources
+## 把画刷当作资源使用 {#using-brushes-as-resources}
 
-Define brushes as resources for reuse across your application:
+把画刷定义成资源，便可在整个应用中复用：
 
 ```xml
 <Application.Resources>
@@ -268,7 +268,7 @@ Define brushes as resources for reuse across your application:
 <Border Background="{DynamicResource AccentGradient}" />
 ```
 
-## Brushes in code
+## 在代码中使用画刷 {#brushes-in-code}
 
 ```csharp
 // SolidColorBrush
@@ -299,8 +299,8 @@ var radial = new RadialGradientBrush
 myBorder.Background = linear;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Gradients](/docs/graphics-animation/gradients): Focused guide on linear gradient usage.
-- [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes and geometries.
-- [Image Interpolation](/docs/graphics-animation/image-interpolation): Bitmap rendering quality settings.
+- [渐变](/docs/graphics-animation/gradients)：线性渐变用法的专题讲解。
+- [绘制图形](/docs/graphics-animation/drawing-graphics)：形状与几何。
+- [图像插值](/docs/graphics-animation/image-interpolation)：位图渲染的质量设置。

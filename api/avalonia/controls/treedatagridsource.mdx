@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridSource Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,19 +50,19 @@ public class TreeDataGridSource
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridSource
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridSource
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="treedatagridsource-1">TreeDataGridSource&lt;TModel&gt;</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="treedatagridsource-1">TreeDataGridSource&lt;TModel&gt;</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> INotifyPropertyChanged
+<span className="apiref-page__meta-label">实现接口：</span> INotifyPropertyChanged
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ClearSort](#uid-73580c67ae) | Clears any sorting applied to the specified column. |
 | [ModelIndexToRowIndex](#uid-3d48074efa) | Converts a model index to the corresponding row index in the current view. |
@@ -73,7 +73,7 @@ public class TreeDataGridSource
 
 <span id="uid-73580c67ae"></span>
 
-### ClearSort Method
+### ClearSort 方法 {#clearsort-method}
 
 Clears any sorting applied to the specified column.
 
@@ -81,11 +81,11 @@ Clears any sorting applied to the specified column.
 public void ClearSort(Avalonia.Controls.TreeDataGridColumn column)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `column` [Avalonia.Controls.TreeDataGridColumn](xref:Avalonia.Controls.TreeDataGridColumn)
 
-The column.
+该列。
 
 
 </section>
@@ -94,7 +94,7 @@ The column.
 
 <span id="uid-3d48074efa"></span>
 
-### ModelIndexToRowIndex Method
+### ModelIndexToRowIndex 方法 {#modelindextorowindex-method}
 
 Converts a model index to the corresponding row index in the current view.
 
@@ -102,14 +102,14 @@ Converts a model index to the corresponding row index in the current view.
 public int ModelIndexToRowIndex(Avalonia.Controls.IndexPath modelIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `modelIndex` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 The model index.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 int
 
@@ -117,7 +117,7 @@ The corresponding row index, or -1 if the model index is not currently displayed
 (for example because it is collapsed or filtered out).
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 A model index identifies an item by its position in the source data, whereas a row
 index identifies a row by its position in the flattened, sorted and filtered view.
@@ -128,7 +128,7 @@ index identifies a row by its position in the flattened, sorted and filtered vie
 
 <span id="uid-e6412f2880"></span>
 
-### RowIndexToModelIndex Method
+### RowIndexToModelIndex 方法 {#rowindextomodelindex-method}
 
 Converts a row index in the current view to the corresponding model index.
 
@@ -136,21 +136,21 @@ Converts a row index in the current view to the corresponding model index.
 public Avalonia.Controls.IndexPath RowIndexToModelIndex(int rowIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `rowIndex` int
 
 The row index.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
 The corresponding model index, or an empty path if the row index is not valid.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 A row index identifies a row by its position in the flattened, sorted and filtered
 view, whereas a model index identifies an item by its position in the source data.
@@ -161,7 +161,7 @@ view, whereas a model index identifies an item by its position in the source dat
 
 <span id="uid-903693cc11"></span>
 
-### SortBy Method
+### SortBy 方法 {#sortby-method}
 
 Requests to sort the source by the specified column.
 
@@ -169,11 +169,11 @@ Requests to sort the source by the specified column.
 public bool SortBy(Avalonia.Controls.TreeDataGridColumn column, System.ComponentModel.ListSortDirection direction)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `column` [Avalonia.Controls.TreeDataGridColumn](xref:Avalonia.Controls.TreeDataGridColumn)
 
-The column.
+该列。
 
 
 `direction` System.ComponentModel.ListSortDirection
@@ -181,7 +181,7 @@ The column.
 The sort direction.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
@@ -190,30 +190,30 @@ True if the sort could be performed; otherwise false.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AllowTriStateSorting](#uid-0ef74541df) | Gets or sets a value indicating whether tri-state sorting (ascending, descending, unsorted) is allowed when clicking column headers. |
 | [AutoDragDropRows](#uid-2e14fdd621) | Gets or sets a value indicating whether rows can be automatically dragged and dropped within the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid). |
 | [CanUserReorderColumns](#uid-715f65de2f) | Gets or sets a value indicating whether users can reorder columns by dragging column headers. |
-| [CanUserResizeColumns](#uid-083b508cda) | Gets or sets a value indicating whether users can resize columns. |
+| [CanUserResizeColumns](#uid-083b508cda) | 获取或设置一个值，指示用户能否调整列宽。 |
 | [CanUserSortColumns](#uid-f1d0ed4a92) | Gets or sets a value indicating whether users can sort columns by clicking column headers. |
-| [Columns](#uid-2c5a69e525) | Gets the columns to be displayed. |
+| [Columns](#uid-2c5a69e525) | 获取要显示的列。 |
 | [FrozenColumnCount](#uid-054e878da2) | Gets or sets the number of columns that are frozen at the start of the grid. |
 | [IsFiltered](#uid-933895739e) | Gets a value indicating whether the data source is filtered. |
 | [IsHierarchical](#uid-bbc43b1d92) | Gets a value indicating whether the data source is hierarchical. |
 | [IsSorted](#uid-9b1ff08d8b) | Gets a value indicating whether the data source is currently sorted. |
-| [Items](#uid-0b657ef430) | Gets the items in the data source. |
-| [Rows](#uid-8fb1b1429e) | Gets the rows to be displayed. |
-| [Selection](#uid-2528b656d1) | Gets or sets the selection model. |
+| [Items](#uid-0b657ef430) | 获取数据源中的各项。 |
+| [Rows](#uid-8fb1b1429e) | 获取要显示的各行。 |
+| [Selection](#uid-2528b656d1) | 获取或设置选择模型。 |
 | [ShowColumnHeaders](#uid-dbc7f6507a) | Gets or sets a value indicating whether column headers are shown. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0ef74541df"></span>
 
-### AllowTriStateSorting Property
+### AllowTriStateSorting 属性 {#allowtristatesorting-property}
 
 Gets or sets a value indicating whether tri-state sorting (ascending, descending, unsorted)
 is allowed when clicking column headers.
@@ -228,7 +228,7 @@ public bool AllowTriStateSorting { get; set; }
 
 <span id="uid-2e14fdd621"></span>
 
-### AutoDragDropRows Property
+### AutoDragDropRows 属性 {#autodragdroprows-property}
 
 Gets or sets a value indicating whether rows can be automatically dragged and dropped
 within the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
@@ -243,7 +243,7 @@ public bool AutoDragDropRows { get; set; }
 
 <span id="uid-715f65de2f"></span>
 
-### CanUserReorderColumns Property
+### CanUserReorderColumns 属性 {#canuserreordercolumns-property}
 
 Gets or sets a value indicating whether users can reorder columns by dragging column
 headers.
@@ -258,9 +258,9 @@ public bool CanUserReorderColumns { get; set; }
 
 <span id="uid-083b508cda"></span>
 
-### CanUserResizeColumns Property
+### CanUserResizeColumns 属性 {#canuserresizecolumns-property}
 
-Gets or sets a value indicating whether users can resize columns.
+获取或设置一个值，指示用户能否调整列宽。
 
 ```csharp
 public bool CanUserResizeColumns { get; set; }
@@ -272,7 +272,7 @@ public bool CanUserResizeColumns { get; set; }
 
 <span id="uid-f1d0ed4a92"></span>
 
-### CanUserSortColumns Property
+### CanUserSortColumns 属性 {#canusersortcolumns-property}
 
 Gets or sets a value indicating whether users can sort columns by clicking column headers.
 
@@ -286,9 +286,9 @@ public bool CanUserSortColumns { get; set; }
 
 <span id="uid-2c5a69e525"></span>
 
-### Columns Property
+### Columns 属性 {#columns-property}
 
-Gets the columns to be displayed.
+获取要显示的列。
 
 ```csharp
 public Avalonia.Controls.TreeDataGridColumns Columns { get; set; }
@@ -300,7 +300,7 @@ public Avalonia.Controls.TreeDataGridColumns Columns { get; set; }
 
 <span id="uid-054e878da2"></span>
 
-### FrozenColumnCount Property
+### FrozenColumnCount 属性 {#frozencolumncount-property}
 
 Gets or sets the number of columns that are frozen at the start of the grid.
 
@@ -314,7 +314,7 @@ public int FrozenColumnCount { get; set; }
 
 <span id="uid-933895739e"></span>
 
-### IsFiltered Property
+### IsFiltered 属性 {#isfiltered-property}
 
 Gets a value indicating whether the data source is filtered.
 
@@ -328,7 +328,7 @@ public bool IsFiltered { get; set; }
 
 <span id="uid-bbc43b1d92"></span>
 
-### IsHierarchical Property
+### IsHierarchical 属性 {#ishierarchical-property}
 
 Gets a value indicating whether the data source is hierarchical.
 
@@ -342,7 +342,7 @@ public bool IsHierarchical { get; set; }
 
 <span id="uid-9b1ff08d8b"></span>
 
-### IsSorted Property
+### IsSorted 属性 {#issorted-property}
 
 Gets a value indicating whether the data source is currently sorted.
 
@@ -356,9 +356,9 @@ public bool IsSorted { get; set; }
 
 <span id="uid-0b657ef430"></span>
 
-### Items Property
+### Items 属性 {#items-property}
 
-Gets the items in the data source.
+获取数据源中的各项。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<object> Items { get; set; }
@@ -370,9 +370,9 @@ public System.Collections.Generic.IEnumerable<object> Items { get; set; }
 
 <span id="uid-8fb1b1429e"></span>
 
-### Rows Property
+### Rows 属性 {#rows-property}
 
-Gets the rows to be displayed.
+获取要显示的各行。
 
 ```csharp
 public Avalonia.Controls.TreeDataGridRows Rows { get; set; }
@@ -384,15 +384,15 @@ public Avalonia.Controls.TreeDataGridRows Rows { get; set; }
 
 <span id="uid-2528b656d1"></span>
 
-### Selection Property
+### Selection 属性 {#selection-property}
 
-Gets or sets the selection model.
+获取或设置选择模型。
 
 ```csharp
 public Avalonia.Controls.Selection.TreeDataGridSelectionModel Selection { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The selection mode of the control may be changed by setting this property to either an
 instance of [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601) for row selection, or
@@ -404,7 +404,7 @@ instance of [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;]
 
 <span id="uid-dbc7f6507a"></span>
 
-### ShowColumnHeaders Property
+### ShowColumnHeaders 属性 {#showcolumnheaders-property}
 
 Gets or sets a value indicating whether column headers are shown.
 
@@ -414,19 +414,19 @@ public bool ShowColumnHeaders { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PropertyChanged](#uid-dc42cb3af6) | Occurs when a property value changes. |
+| [PropertyChanged](#uid-dc42cb3af6) | 当属性值发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-dc42cb3af6"></span>
 
-### PropertyChanged Event
+### PropertyChanged 事件 {#propertychanged-event}
 
-Occurs when a property value changes.
+当属性值发生变化时发生。
 
 ```csharp
 public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged

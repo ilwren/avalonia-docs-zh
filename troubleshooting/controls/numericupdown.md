@@ -1,19 +1,19 @@
 ---
 id: numericupdown
-title: NumericUpDown issues
-description: Troubleshoot problems with the NumericUpDown selector control
+title: NumericUpDown 问题
+description: 排查 NumericUpDown 选择控件的毛病
 doc-type: troubleshooting
 sidebar_label: NumericUpDown
 ---
 
-## Invalid cast exception when `NumericUpDown` text box is cleared
+## 清空 `NumericUpDown` 文本框时抛出无效强制转换异常 {#invalid-cast-exception-when-numericupdown-text-box-is-cleared}
 
-When the text box of `NumericUpDown` is entirely cleared of input, the control may throw an invalid cast exception, e.g., `Invalid cast from string to decimal?`
+当 `NumericUpDown` 的文本框内容被清空时，控件可能抛出无效强制转换异常，例如 `Invalid cast from string to decimal?`
 
-To prevent these exceptions appearing, try the following:
+想避免这类异常，可以试试下面的办法：
 
-- Set `TargetNullValue` and `FallbackValue` on your `Binding` (both to `0`). Ensure the values are explicitly typed to match the source property type (usually `decimal` or `int`) so they are treated as numbers rather than a `string`. This stops the empty text box from logging as a binding failure.
-- (Optional) Set `UpdateSourceTrigger=LostFocus` to stop the view model updating during edit states. This can reduce occurrences, but doesn't prevent them entirely.
+- 在你的 `Binding` 上设置 `TargetNullValue` 和 `FallbackValue`（都设为 `0`）。注意要让它们的类型与源属性类型（通常是 `decimal` 或 `int`）明确一致，这样它们才会被当作数字而非 `string`。如此一来，空文本框就不会再被记成一次绑定失败。
+- （可选）设置 `UpdateSourceTrigger=LostFocus`，让视图模型在编辑过程中不被更新。这能减少异常出现的次数，但不能彻底根除。
 
 ```xml
 <NumericUpDown Minimum="0" Maximum="10000000">
@@ -26,7 +26,7 @@ To prevent these exceptions appearing, try the following:
 </NumericUpDown>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [NumericUpDown control](/controls/input/selectors/numericupdown)
-- [Data binding syntax](/docs/data-binding/data-binding-syntax)
+- [NumericUpDown 控件](/controls/input/selectors/numericupdown)
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)

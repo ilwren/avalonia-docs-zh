@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SkiaOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Skia</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Skia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Skia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Skia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Skia/Avalonia.Skia/SkiaOptions.cs">SkiaOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Skia/Avalonia.Skia/SkiaOptions.cs">SkiaOptions.cs</a>
 </div>
 
 </div>
@@ -54,21 +54,21 @@ public class SkiaOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> SkiaOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> SkiaOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SkiaOptions](#uid-a5845e4027) | No summary available. |
+| [SkiaOptions](#uid-a5845e4027) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a5845e4027"></span>
 
-### SkiaOptions Constructor
+### SkiaOptions 构造函数 {#skiaoptions-constructor}
 
 ```csharp
 public SkiaOptions()
@@ -76,9 +76,9 @@ public SkiaOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [MaxGpuResourceSizeBytes](#uid-4018646757) | The maximum number of bytes for video memory to store textures and resources. |
 | [UseOpacitySaveLayer](#uid-44688647b8) | Use Skia's SaveLayer API to handling opacity. |
@@ -88,7 +88,7 @@ public SkiaOptions()
 
 <span id="uid-4018646757"></span>
 
-### MaxGpuResourceSizeBytes Property
+### MaxGpuResourceSizeBytes 属性 {#maxgpuresourcesizebytes-property}
 
 The maximum number of bytes for video memory to store textures and resources.
 
@@ -96,7 +96,7 @@ The maximum number of bytes for video memory to store textures and resources.
 public Nullable<long> MaxGpuResourceSizeBytes { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 This is set by default to the recommended value for Avalonia.
 Setting this to null will give you the default Skia value.
@@ -107,7 +107,7 @@ Setting this to null will give you the default Skia value.
 
 <span id="uid-44688647b8"></span>
 
-### UseOpacitySaveLayer Property
+### UseOpacitySaveLayer 属性 {#useopacitysavelayer-property}
 
 Use Skia's SaveLayer API to handling opacity.
 
@@ -115,7 +115,7 @@ Use Skia's SaveLayer API to handling opacity.
 public bool UseOpacitySaveLayer { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Enabling this might have performance implications.
 
@@ -125,7 +125,7 @@ Enabling this might have performance implications.
 
 <span id="uid-bd78c2ba9c"></span>
 
-### UseStencilBuffers Property
+### UseStencilBuffers 属性 {#usestencilbuffers-property}
 
 Gets whether stencil buffers can be used for various draw operations, improving clipping performance.
 Enabling them lets Skia pick multisample-based path rendering, which quantizes edge coverage and

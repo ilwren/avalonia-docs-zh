@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RoutedEvent Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Interactivity</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Interactivity</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Interactivity/RoutedEvent.cs">RoutedEvent.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Interactivity/RoutedEvent.cs">RoutedEvent.cs</a>
 </div>
 
 </div>
@@ -48,30 +48,30 @@ public class RoutedEvent
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> RoutedEvent
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> RoutedEvent
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="routedevent-1">RoutedEvent&lt;TEventArgs&gt;</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="routedevent-1">RoutedEvent&lt;TEventArgs&gt;</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RoutedEvent](#uid-604ceb1833) | No summary available. |
+| [RoutedEvent](#uid-604ceb1833) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-604ceb1833"></span>
 
-### RoutedEvent Constructor
+### RoutedEvent 构造函数 {#routedevent-constructor}
 
 ```csharp
 public RoutedEvent(string name, Avalonia.Interactivity.RoutingStrategies routingStrategies, Type eventArgsType, Type ownerType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `name` string
 
@@ -79,35 +79,35 @@ public RoutedEvent(string name, Avalonia.Interactivity.RoutingStrategies routing
 `routingStrategies` [Avalonia.Interactivity.RoutingStrategies](xref:Avalonia.Interactivity.RoutingStrategies)
 
 
-`eventArgsType` Type
+`eventArgsType` 类型
 
 
-`ownerType` Type
+`ownerType` 类型
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddClassHandler](#uid-b6d8630c3e) | No summary available. |
-| [Register (2 overloads)](#uid-4633745f66) | No summary available. |
-| [ToString](#uid-091891d52b) | No summary available. |
+| [AddClassHandler](#uid-b6d8630c3e) | 暂无摘要。 |
+| [Register（2 个重载）](#uid-4633745f66) | 暂无摘要。 |
+| [ToString](#uid-091891d52b) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b6d8630c3e"></span>
 
-### AddClassHandler Method
+### AddClassHandler 方法 {#addclasshandler-method}
 
 ```csharp
 public IDisposable AddClassHandler(Type targetType, EventHandler<Avalonia.Interactivity.RoutedEventArgs> handler, Avalonia.Interactivity.RoutingStrategies routes, bool handledEventsToo)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
-`targetType` Type
+`targetType` 类型
 
 
 `handler` EventHandler&lt;[Avalonia.Interactivity.RoutedEventArgs](xref:Avalonia.Interactivity.RoutedEventArgs)&gt;
@@ -119,7 +119,7 @@ public IDisposable AddClassHandler(Type targetType, EventHandler<Avalonia.Intera
 `handledEventsToo` bool
 
 
-#### Returns
+#### 返回值 {#returns}
 
 IDisposable
 
@@ -128,19 +128,19 @@ IDisposable
 
 <span id="uid-4633745f66"></span>
 
-### Register overloads
+### Register 的重载 {#register-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-09fd5b336e"></span>
 
-#### Register Method
+#### Register 方法 {#register-method}
 
 ```csharp
 public Avalonia.Interactivity.RoutedEvent<TEventArgs><TEventArgs> Register<TOwner, TEventArgs>(string name, Avalonia.Interactivity.RoutingStrategies routingStrategy)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `name` string
 
@@ -156,7 +156,7 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><TEventArgs> Register<TOwne
 `TEventArgs`
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)&lt;TEventArgs&gt;&lt;TEventArgs&gt;
 
@@ -167,13 +167,13 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><TEventArgs> Register<TOwne
 
 <span id="uid-38061d7680"></span>
 
-#### Register Method
+#### Register 方法 {#register-method-1}
 
 ```csharp
 public Avalonia.Interactivity.RoutedEvent<TEventArgs><TEventArgs> Register<TEventArgs>(string name, Avalonia.Interactivity.RoutingStrategies routingStrategy, Type ownerType)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `name` string
 
@@ -181,7 +181,7 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><TEventArgs> Register<TEven
 `routingStrategy` [Avalonia.Interactivity.RoutingStrategies](xref:Avalonia.Interactivity.RoutingStrategies)
 
 
-`ownerType` Type
+`ownerType` 类型
 
 
 ##### Type Parameters
@@ -189,7 +189,7 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><TEventArgs> Register<TEven
 `TEventArgs`
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)&lt;TEventArgs&gt;&lt;TEventArgs&gt;
 
@@ -200,36 +200,36 @@ public Avalonia.Interactivity.RoutedEvent<TEventArgs><TEventArgs> Register<TEven
 
 <span id="uid-091891d52b"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [EventArgsType](#uid-02254d700b) | No summary available. |
-| [HasRaisedSubscriptions](#uid-600aa2a7c4) | No summary available. |
-| [Name](#uid-c1a91d3f61) | No summary available. |
-| [OwnerType](#uid-bea5e282a0) | No summary available. |
-| [Raised](#uid-6ca70edd01) | No summary available. |
-| [RouteFinished](#uid-f6e46eddce) | No summary available. |
-| [RoutingStrategies](#uid-e5ef0ca772) | No summary available. |
+| [EventArgsType](#uid-02254d700b) | 暂无摘要。 |
+| [HasRaisedSubscriptions](#uid-600aa2a7c4) | 暂无摘要。 |
+| [Name](#uid-c1a91d3f61) | 暂无摘要。 |
+| [OwnerType](#uid-bea5e282a0) | 暂无摘要。 |
+| [Raised](#uid-6ca70edd01) | 暂无摘要。 |
+| [RouteFinished](#uid-f6e46eddce) | 暂无摘要。 |
+| [RoutingStrategies](#uid-e5ef0ca772) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-02254d700b"></span>
 
-### EventArgsType Property
+### EventArgsType 属性 {#eventargstype-property}
 
 ```csharp
 public Type EventArgsType { get; set; }
@@ -241,7 +241,7 @@ public Type EventArgsType { get; set; }
 
 <span id="uid-600aa2a7c4"></span>
 
-### HasRaisedSubscriptions Property
+### HasRaisedSubscriptions 属性 {#hasraisedsubscriptions-property}
 
 ```csharp
 public bool HasRaisedSubscriptions { get; set; }
@@ -253,7 +253,7 @@ public bool HasRaisedSubscriptions { get; set; }
 
 <span id="uid-c1a91d3f61"></span>
 
-### Name Property
+### Name 属性 {#name-property}
 
 ```csharp
 public string Name { get; set; }
@@ -265,7 +265,7 @@ public string Name { get; set; }
 
 <span id="uid-bea5e282a0"></span>
 
-### OwnerType Property
+### OwnerType 属性 {#ownertype-property}
 
 ```csharp
 public Type OwnerType { get; set; }
@@ -277,7 +277,7 @@ public Type OwnerType { get; set; }
 
 <span id="uid-6ca70edd01"></span>
 
-### Raised Property
+### Raised 属性 {#raised-property}
 
 ```csharp
 public IObservable<ValueTuple<object,Avalonia.Interactivity.RoutedEventArgs>> Raised { get; set; }
@@ -289,7 +289,7 @@ public IObservable<ValueTuple<object,Avalonia.Interactivity.RoutedEventArgs>> Ra
 
 <span id="uid-f6e46eddce"></span>
 
-### RouteFinished Property
+### RouteFinished 属性 {#routefinished-property}
 
 ```csharp
 public IObservable<Avalonia.Interactivity.RoutedEventArgs> RouteFinished { get; set; }
@@ -301,7 +301,7 @@ public IObservable<Avalonia.Interactivity.RoutedEventArgs> RouteFinished { get; 
 
 <span id="uid-e5ef0ca772"></span>
 
-### RoutingStrategies Property
+### RoutingStrategies 属性 {#routingstrategies-property}
 
 ```csharp
 public Avalonia.Interactivity.RoutingStrategies RoutingStrategies { get; set; }

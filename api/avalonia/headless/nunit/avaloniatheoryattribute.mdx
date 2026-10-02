@@ -20,28 +20,28 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaTheoryAttribute Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Headless.NUnit</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Headless.NUnit</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Headless.NUnit</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Headless.NUnit</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Headless.NUnit</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Headless.NUnit</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Headless/Avalonia.Headless.NUnit/AvaloniaTheory.cs">AvaloniaTheory.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Headless/Avalonia.Headless.NUnit/AvaloniaTheory.cs">AvaloniaTheory.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Identifies a nunit theory that starts on Avalonia Dispatcher
-such that awaited expressions resume on the test's "main thread".
+标记一个在 Avalonia Dispatcher 上启动的 nunit theory，
+从而让被 await 的表达式在测试的“主线程”上恢复执行。
 
 </div>
 
@@ -55,24 +55,24 @@ public class AvaloniaTheoryAttribute
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> TheoryAttribute <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaTheoryAttribute
+<span className="apiref-page__meta-label">继承关系：</span> TheoryAttribute <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaTheoryAttribute
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> ICommandWrapper, IWrapSetUpTearDown
+<span className="apiref-page__meta-label">实现接口：</span> ICommandWrapper, IWrapSetUpTearDown
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AvaloniaTheoryAttribute](#uid-fb47a4de6c) | No summary available. |
+| [AvaloniaTheoryAttribute](#uid-fb47a4de6c) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-fb47a4de6c"></span>
 
-### AvaloniaTheoryAttribute Constructor
+### AvaloniaTheoryAttribute 构造函数 {#avaloniatheoryattribute-constructor}
 
 ```csharp
 public AvaloniaTheoryAttribute()
@@ -80,28 +80,28 @@ public AvaloniaTheoryAttribute()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Wrap](#uid-c37f281ba1) | No summary available. |
+| [Wrap](#uid-c37f281ba1) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c37f281ba1"></span>
 
-### Wrap Method
+### Wrap 方法 {#wrap-method}
 
 ```csharp
 public NUnit.Framework.Internal.Commands.TestCommand Wrap(NUnit.Framework.Internal.Commands.TestCommand command)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `command` NUnit.Framework.Internal.Commands.TestCommand
 
 
-#### Returns
+#### 返回值 {#returns}
 
 NUnit.Framework.Internal.Commands.TestCommand
 

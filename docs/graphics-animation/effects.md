@@ -1,17 +1,17 @@
 ---
 id: effects
-title: Effects
-description: Visual effects including box shadows, clipping, and opacity masks for Avalonia controls.
+title: 效果
+description: Avalonia 控件可用的视觉效果：盒阴影、裁剪与不透明度遮罩。
 doc-type: explanation
 ---
 
-Avalonia supports visual effects that add depth and visual interest to controls. The primary effect types are box shadows, clipping, and opacity masks.
+Avalonia 支持各种视觉效果，为控件增添层次感和观赏性。主要有三类：盒阴影、裁剪和不透明度遮罩。
 
-## Box shadows
+## 阴影 {#box-shadows}
 
-The [`BoxShadow`](/api/avalonia/media/boxshadow) property on [`Border`](/api/avalonia/controls/border) and `ContentPresenter` adds drop shadows or inset shadows to elements. The syntax follows CSS box-shadow conventions.
+[`Border`](/api/avalonia/controls/border) 和 `ContentPresenter` 上的 [`BoxShadow`](/api/avalonia/media/boxshadow) 属性可为元素添加投影或内阴影，语法沿用 CSS box-shadow 的那一套。
 
-### Basic syntax
+### 基本语法 {#basic-syntax}
 
 ```xml
 <Border BoxShadow="5 5 10 0 #80000000" CornerRadius="8"
@@ -20,19 +20,19 @@ The [`BoxShadow`](/api/avalonia/media/boxshadow) property on [`Border`](/api/ava
 </Border>
 ```
 
-The shadow parameters are, in order: `offsetX offsetY blur spread color`.
+阴影的各项参数依次为：`offsetX offsetY blur spread color`。
 
-| Parameter | Description |
+| 参数 | 说明 |
 |---|---|
-| `offsetX` | Horizontal offset. Positive values move the shadow right. |
-| `offsetY` | Vertical offset. Positive values move the shadow down. |
-| `blur` | Blur radius. Larger values create softer shadows. Must be non-negative. |
-| `spread` | Spread radius. Positive values expand the shadow, negative values shrink it. |
-| `color` | The shadow color. Accepts hex values (`#80000000`), named colors (`Gray`), and color functions (`rgba(0,0,0,0.5)`, `hsla(0,0%,0%,0.3)`). |
+| `offsetX` | 水平偏移，正值把阴影往右推。 |
+| `offsetY` | 垂直偏移，正值把阴影往下推。 |
+| `blur` | 模糊半径，值越大阴影越柔和，不能为负。 |
+| `spread` | 扩散半径，正值让阴影变大，负值让它收缩。 |
+| `color` | 阴影颜色。十六进制值（`#80000000`）、具名颜色（`Gray`）和颜色函数（`rgba(0,0,0,0.5)`、`hsla(0,0%,0%,0.3)`）都认。 |
 
-### Color functions in shadows
+### 在阴影中使用颜色函数 {#color-functions-in-shadows}
 
-Color functions with commas (such as `rgba()` and `hsla()`) are fully supported, including in multiple shadow definitions:
+带逗号的颜色函数（比如 `rgba()` 和 `hsla()`）完全可用，在多重阴影定义中也不例外：
 
 ```xml
 <Border BoxShadow="0 4 8 0 rgba(0,0,0,0.3), 0 2 4 0 rgba(0,0,0,0.1)"
@@ -41,9 +41,9 @@ Color functions with commas (such as `rgba()` and `hsla()`) are fully supported,
 </Border>
 ```
 
-### Inset shadows
+### 内阴影 {#inset-shadows}
 
-Prefix the shadow definition with `inset` to draw the shadow inside the element:
+在阴影定义前加上 `inset`，阴影就画在元素内部：
 
 ```xml
 <Border BoxShadow="inset 0 2 4 0 #40000000" CornerRadius="8"
@@ -52,9 +52,9 @@ Prefix the shadow definition with `inset` to draw the shadow inside the element:
 </Border>
 ```
 
-### Multiple shadows
+### 多重阴影 {#multiple-shadows}
 
-Separate multiple shadow definitions with commas:
+多条阴影定义之间用逗号分隔：
 
 ```xml
 <Border BoxShadow="0 2 4 0 #20000000, 0 8 16 0 #10000000"
@@ -63,7 +63,7 @@ Separate multiple shadow definitions with commas:
 </Border>
 ```
 
-### Common shadow patterns
+### 常见的阴影写法 {#common-shadow-patterns}
 
 ```xml
 <!-- Subtle elevation -->
@@ -82,7 +82,7 @@ Separate multiple shadow definitions with commas:
 <Border BoxShadow="inset 0 2 4 0 #40000000" />
 ```
 
-### Box shadows in code
+### 在代码中使用盒阴影 {#box-shadows-in-code}
 
 ```csharp
 myBorder.BoxShadow = BoxShadows.Parse("0 4 8 0 #40000000");
@@ -90,7 +90,7 @@ myBorder.BoxShadow = BoxShadows.Parse("0 4 8 0 #40000000");
 
 ## BlurEffect
 
-The [`Effect`](/api/avalonia/media/effect) property on any `Visual` accepts effect objects. `BlurEffect` applies a Gaussian blur to the entire element:
+任意 `Visual` 上的 [`Effect`](/api/avalonia/media/effect) 属性都接受效果对象。`BlurEffect` 会给整个元素施加高斯模糊：
 
 ```xml
 <Border Background="SteelBlue" Padding="20" CornerRadius="8">
@@ -101,13 +101,13 @@ The [`Effect`](/api/avalonia/media/effect) property on any `Visual` accepts effe
 </Border>
 ```
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Radius` | The blur radius in pixels. Larger values produce a stronger blur. Default is 5. |
+| `Radius` | 模糊半径，单位为像素。值越大模糊越强，默认为 5。 |
 
 ## DropShadowEffect
 
-`DropShadowEffect` adds a shadow behind the entire visual element using the `Effect` property. This is different from `BoxShadow`, which only applies to `Border` elements.
+`DropShadowEffect` 借助 `Effect` 属性在整个视觉元素背后加一层阴影。这与 `BoxShadow` 不同——后者只作用于 `Border` 元素。
 
 ```xml
 <TextBlock Text="Shadow Text" FontSize="24">
@@ -118,17 +118,17 @@ The [`Effect`](/api/avalonia/media/effect) property on any `Visual` accepts effe
 </TextBlock>
 ```
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `OffsetX` | Horizontal shadow offset in pixels. Default is approximately 3.5. |
-| `OffsetY` | Vertical shadow offset in pixels. Default is approximately 3.5. |
-| `BlurRadius` | Shadow blur radius. Default is 5. |
-| `Color` | Shadow color. Default is `Black`. |
-| `Opacity` | Shadow opacity from 0.0 to 1.0. Default is 1.0. |
+| `OffsetX` | 阴影的水平偏移，单位为像素，默认约 3.5。 |
+| `OffsetY` | 阴影的垂直偏移，单位为像素，默认约 3.5。 |
+| `BlurRadius` | 阴影的模糊半径，默认为 5。 |
+| `Color` | 阴影颜色，默认为 `Black`。 |
+| `Opacity` | 阴影不透明度，取值 0.0 到 1.0，默认为 1.0。 |
 
 ### DropShadowDirectionEffect
 
-An alternative that uses direction and depth instead of explicit offsets:
+另一种写法：用方向和距离代替显式偏移量：
 
 ```xml
 <Border Background="White" Padding="20" CornerRadius="8">
@@ -140,21 +140,21 @@ An alternative that uses direction and depth instead of explicit offsets:
 </Border>
 ```
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `ShadowDepth` | Distance of the shadow from the element. Default is 5. |
-| `Direction` | Angle in degrees (0-360) indicating shadow direction. Default is 315 (lower-right). |
-| `BlurRadius` | Shadow blur radius. Default is 5. |
-| `Color` | Shadow color. Default is `Black`. |
-| `Opacity` | Shadow opacity. Default is 1.0. |
+| `ShadowDepth` | 阴影与元素之间的距离，默认为 5。 |
+| `Direction` | 表示阴影方向的角度（0–360 度），默认为 315（右下方）。 |
+| `BlurRadius` | 阴影的模糊半径，默认为 5。 |
+| `Color` | 阴影颜色，默认为 `Black`。 |
+| `Opacity` | 阴影不透明度，默认为 1.0。 |
 
 :::info
-`Effect` (BlurEffect, DropShadowEffect) applies to any visual element including text and images. `BoxShadow` only applies to `Border` and `ContentPresenter` controls but is more performant for rectangular shadows.
+`Effect`（BlurEffect、DropShadowEffect）适用于任意视觉元素，文字和图片也包括在内；`BoxShadow` 只能用在 `Border` 和 `ContentPresenter` 控件上，但画矩形阴影时性能更好。
 :::
 
 ## Clipping
 
-The `ClipToBounds` property on any control clips child content that extends beyond the element's bounds.
+任意控件上的 `ClipToBounds` 属性都会裁掉超出元素边界的子内容。
 
 ```xml
 <Border Width="100" Height="100" ClipToBounds="True" CornerRadius="50">
@@ -163,11 +163,11 @@ The `ClipToBounds` property on any control clips child content that extends beyo
 </Border>
 ```
 
-This creates a circular image by clipping to the rounded border.
+这会裁出圆角边框的形状，从而做出圆形图片。
 
-### Clip property
+### Clip 属性 {#clip-property}
 
-For custom clip shapes, use the `Clip` property with a `Geometry`:
+要自定义裁剪形状，请配合 `Geometry` 使用 `Clip` 属性：
 
 ```xml
 <Image Source="avares://MyApp/Assets/photo.png" Width="200" Height="200">
@@ -177,7 +177,7 @@ For custom clip shapes, use the `Clip` property with a `Geometry`:
 </Image>
 ```
 
-You can use any geometry type for clipping:
+任何几何类型都能用来裁剪：
 
 ```xml
 <Image Source="avares://MyApp/Assets/photo.png" Width="200" Height="200">
@@ -196,7 +196,7 @@ You can use any geometry type for clipping:
 
 ## OpacityMask
 
-The `OpacityMask` property uses a brush to control per-pixel transparency. Only the alpha channel of the mask brush is used. Black areas are fully visible, transparent areas are hidden.
+`OpacityMask` 属性用一个画刷逐像素控制透明度，只有遮罩画刷的 alpha 通道起作用：黑色区域完全可见，透明区域则被隐去。
 
 ```xml
 <!-- Fade from top to bottom -->
@@ -211,7 +211,7 @@ The `OpacityMask` property uses a brush to control per-pixel transparency. Only 
 </Image>
 ```
 
-### Radial fade
+### 径向淡出 {#radial-fade}
 
 ```xml
 <Border Width="200" Height="200" Background="SteelBlue">
@@ -226,7 +226,7 @@ The `OpacityMask` property uses a brush to control per-pixel transparency. Only 
 
 ## Opacity
 
-The `Opacity` property on any `Visual` controls the overall transparency of the element and all its children:
+任意 `Visual` 上的 `Opacity` 属性控制该元素及其全部子元素的整体透明度：
 
 ```xml
 <Border Opacity="0.5" Background="Red" Padding="20">
@@ -234,18 +234,18 @@ The `Opacity` property on any `Visual` controls the overall transparency of the 
 </Border>
 ```
 
-Values range from `0.0` (fully transparent) to `1.0` (fully opaque). Unlike `OpacityMask`, this applies uniformly to the entire element.
+取值从 `0.0`（完全透明）到 `1.0`（完全不透明）。与 `OpacityMask` 不同，它对整个元素一视同仁。
 
-### IsVisible vs Opacity
+### IsVisible 与 Opacity 的区别 {#isvisible-vs-opacity}
 
-| Approach | Layout impact | Interaction | Animations |
+| 办法 | 对布局的影响 | 交互 | 动画 |
 | --- | --- | --- | --- |
-| `IsVisible="False"` | Element is removed from layout. | Cannot receive input. | [Keyframe animations](/docs/graphics-animation/keyframe-animations) pause by default. |
-| `Opacity="0"` | Element still occupies space. | Can still receive pointer and keyboard input. | [Keyframe animations](/docs/graphics-animation/keyframe-animations) keep running. |
+| `IsVisible="False"` | 元素被移出布局。 | 无法接收输入。 | [关键帧动画](/docs/graphics-animation/keyframe-animations)默认暂停。 |
+| `Opacity="0"` | 元素依然占着位置。 | 仍可接收指针和键盘输入。 | [关键帧动画](/docs/graphics-animation/keyframe-animations)继续播放。 |
 
-## Animating effects
+## 为效果加动画 {#animating-effects}
 
-Box shadows and opacity can be animated with transitions:
+盒阴影和不透明度都可以用过渡来加动画：
 
 ```xml
 <Border Background="White" CornerRadius="8" Padding="20"
@@ -265,9 +265,9 @@ Box shadows and opacity can be animated with transitions:
 </Border>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Brushes](/docs/graphics-animation/brushes): All brush types including gradient and image brushes.
-- [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes, geometries, and path data.
-- [Transforms](/docs/graphics-animation/transforms): Rotate, scale, skew, and translate elements.
-- [Control Transitions](/docs/graphics-animation/control-transitions): Animate property changes.
+- [画刷](/docs/graphics-animation/brushes)：全部画刷类型，渐变画刷和图片画刷也包括在内。
+- [绘制图形](/docs/graphics-animation/drawing-graphics)：形状、几何与路径数据。
+- [变换](/docs/graphics-animation/transforms)：元素的旋转、缩放、倾斜与平移。
+- [控件过渡](/docs/graphics-animation/control-transitions)：为属性变化加动画。

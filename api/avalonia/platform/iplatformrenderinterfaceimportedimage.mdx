@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPlatformRenderInterfaceImportedImage Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/IExternalObjectsRenderInterfaceContextFeature.cs">IExternalObjectsRenderInterfaceContextFeature.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/IExternalObjectsRenderInterfaceContextFeature.cs">IExternalObjectsRenderInterfaceContextFeature.cs</a>
 </div>
 
 </div>
@@ -48,30 +48,30 @@ public interface IPlatformRenderInterfaceImportedImage
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iplatformrenderinterfaceimportedobject">IPlatformRenderInterfaceImportedObject</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iplatformrenderinterfaceimportedobject">IPlatformRenderInterfaceImportedObject</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SnapshotWithAutomaticSync](#uid-44a67a09f1) | No summary available. |
-| [SnapshotWithKeyedMutex](#uid-6bc09dfc8c) | No summary available. |
-| [SnapshotWithSemaphores](#uid-8568fc9453) | No summary available. |
-| [SnapshotWithTimelineSemaphores](#uid-63542c19d0) | No summary available. |
+| [SnapshotWithAutomaticSync](#uid-44a67a09f1) | 暂无摘要。 |
+| [SnapshotWithKeyedMutex](#uid-6bc09dfc8c) | 暂无摘要。 |
+| [SnapshotWithSemaphores](#uid-8568fc9453) | 暂无摘要。 |
+| [SnapshotWithTimelineSemaphores](#uid-63542c19d0) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-44a67a09f1"></span>
 
-### SnapshotWithAutomaticSync Method
+### SnapshotWithAutomaticSync 方法 {#snapshotwithautomaticsync-method}
 
 ```csharp
 public Avalonia.Platform.IBitmapImpl SnapshotWithAutomaticSync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Platform.IBitmapImpl](xref:Avalonia.Platform.IBitmapImpl)
 
@@ -82,13 +82,13 @@ public Avalonia.Platform.IBitmapImpl SnapshotWithAutomaticSync()
 
 <span id="uid-6bc09dfc8c"></span>
 
-### SnapshotWithKeyedMutex Method
+### SnapshotWithKeyedMutex 方法 {#snapshotwithkeyedmutex-method}
 
 ```csharp
 public Avalonia.Platform.IBitmapImpl SnapshotWithKeyedMutex(uint acquireIndex, uint releaseIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `acquireIndex` uint
 
@@ -96,7 +96,7 @@ public Avalonia.Platform.IBitmapImpl SnapshotWithKeyedMutex(uint acquireIndex, u
 `releaseIndex` uint
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Platform.IBitmapImpl](xref:Avalonia.Platform.IBitmapImpl)
 
@@ -107,13 +107,13 @@ public Avalonia.Platform.IBitmapImpl SnapshotWithKeyedMutex(uint acquireIndex, u
 
 <span id="uid-8568fc9453"></span>
 
-### SnapshotWithSemaphores Method
+### SnapshotWithSemaphores 方法 {#snapshotwithsemaphores-method}
 
 ```csharp
 public Avalonia.Platform.IBitmapImpl SnapshotWithSemaphores(Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore waitForSemaphore, Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore signalSemaphore)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `waitForSemaphore` [Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore](xref:Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore)
 
@@ -121,7 +121,7 @@ public Avalonia.Platform.IBitmapImpl SnapshotWithSemaphores(Avalonia.Platform.IP
 `signalSemaphore` [Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore](xref:Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Platform.IBitmapImpl](xref:Avalonia.Platform.IBitmapImpl)
 
@@ -132,13 +132,13 @@ public Avalonia.Platform.IBitmapImpl SnapshotWithSemaphores(Avalonia.Platform.IP
 
 <span id="uid-63542c19d0"></span>
 
-### SnapshotWithTimelineSemaphores Method
+### SnapshotWithTimelineSemaphores 方法 {#snapshotwithtimelinesemaphores-method}
 
 ```csharp
 public Avalonia.Platform.IBitmapImpl SnapshotWithTimelineSemaphores(Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore waitForSemaphore, ulong waitForValue, Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore signalSemaphore, ulong signalValue)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `waitForSemaphore` [Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore](xref:Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore)
 
@@ -152,7 +152,7 @@ public Avalonia.Platform.IBitmapImpl SnapshotWithTimelineSemaphores(Avalonia.Pla
 `signalValue` ulong
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Platform.IBitmapImpl](xref:Avalonia.Platform.IBitmapImpl)
 

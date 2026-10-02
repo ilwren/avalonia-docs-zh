@@ -1,6 +1,6 @@
 ---
 id: toolbar
-title: Toolbar and Selection Flyouts
+title: 工具栏与选区浮层
 doc-type: reference
 tags:
  - avalonia pro
@@ -21,22 +21,22 @@ import CustomThemeToolbar from '/img/controls/richtexteditor/custom-theme-toolba
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-By default, `RichTextEditor` includes a primary toolbar, a selection mini-bar, and a right-click context menu. Each of these toolbars is built from the same basic system and can be customized independently. You can swap layouts, add your own tools, fine-tune the overflow menu, re-theme buttons, and more. This guide takes you through your customization options, from most common to most advanced.
+默认情况下，`RichTextEditor` 自带一条主工具栏、一条选区迷你工具条和一个右键上下文菜单。这几条工具栏都建立在同一套基础机制之上，可以各自独立地定制：换布局、加自己的工具、调教溢出菜单、给按钮换主题，等等。本指南按从常见到进阶的顺序，带你过一遍可用的定制手段。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Toolbar architecture
+## 工具栏架构 {#toolbar-architecture}
 
-The toolbar system separates UI presentation from behavioral logic. `EditorToolbar` is a `TemplatedControl` with a strongly-typed `Tools` collection (`AvaloniaList<EditorTool>`) marked as the `[Content]` property — XAML children are added to `Tools` automatically and can only be `EditorTool` instances. Action-bearing tools derive from `ActionTool` (which adds `Action`/`Icon`/`ToolTipText`); separators and groups derive from `EditorTool` directly.
+工具栏系统把界面呈现与行为逻辑分了开来。`EditorToolbar` 是一个 `TemplatedControl`，带有一个强类型的 `Tools` 集合（`AvaloniaList<EditorTool>`）并被标记为 `[Content]` 属性——XAML 子元素会自动加入 `Tools`，且只能是 `EditorTool` 的实例。带动作的工具派生自 `ActionTool`（它补充了 `Action`/`Icon`/`ToolTipText`）；分隔线和分组则直接派生自 `EditorTool`。
 
-- **`EditorTool`**: the abstract base for any item hosted inside an `EditorToolbar` or `ToolbarGroup`. It carries target-area visibility, overflow metadata, and editor-host discovery.
-- **`ActionTool`**: the abstract base for tools that bind to an `IEditorAction`. Adds `Action`, `Icon`, and `ToolTipText`, and synchronizes `IsEnabled` with `Action.CanExecute(host)`. Most concrete tools (button, toggle, combobox, flyout) derive from this.
-- **`ToolbarGroup`**: itself an `EditorTool`. Hosts its own strongly-typed `Tools` collection of child tools. Groups share visibility status, i.e., they collapse together into the overflow menu if there is insufficient space. Groups can nest, and a nested group contributes its children to the enclosing top-level group's overflow section rather than collapsing as a unit, because a group carries no overflow menu item to stand in for its children.
-- **`EditorToolbar`**: a `TemplatedControl` that exposes a strongly-typed `Tools` collection (`AvaloniaList<EditorTool>`) marked as the `[Content]` property. Wires items to the editor, pushes the active target areas onto every tool, and runs the overflow-collapse layout pass. Items are inserted into a `Panel` named `PART_ItemsHost` in the control template, published as the constant `EditorToolbar.PartItemsHost`.
+- **`EditorTool`**：凡是寄宿在 `EditorToolbar` 或 `ToolbarGroup` 中的项，都以它为抽象基类。它负责按目标区域控制可见性、承载溢出相关的元数据，并负责发现编辑器宿主。
+- **`ActionTool`**：绑定到 `IEditorAction` 的那类工具的抽象基类。它补充了 `Action`、`Icon` 和 `ToolTipText`，并让 `IsEnabled` 与 `Action.CanExecute(host)` 保持同步。大多数具体工具（按钮、切换、下拉框、浮层）都派生自它。
+- **`ToolbarGroup`**：它本身就是一个 `EditorTool`，内部寄宿着自己那套强类型的子工具 `Tools` 集合。同一分组共享可见性状态，也就是说空间不够时它们会一起收进溢出菜单。分组可以嵌套，而嵌套分组会把自己的子项并入外层顶级分组的溢出区，而不是作为一个整体折叠——因为分组本身没有一个溢出菜单项来代表它的子项。
+- **`EditorToolbar`**：一个 `TemplatedControl`，对外暴露强类型的 `Tools` 集合（`AvaloniaList<EditorTool>`）并标记为 `[Content]` 属性。它负责把各项接到编辑器上、把当前活动的目标区域推送给每个工具，并执行溢出折叠的布局遍历。各项会被插入到控件模板中名为 `PART_ItemsHost` 的 `Panel` 里，该名称以常量 `EditorToolbar.PartItemsHost` 的形式公开。
 
-Both `EditorToolbar` and `ToolbarGroup` use a `Panel` template part named `PART_ItemsHost`. The default theme uses a `WrapPanel`; the toolbar embedded inside `RichTextEditor` uses a horizontal `StackPanel`. Re-template either control with any panel type to change the layout. Every templated toolbar control declares its parts with `[TemplatePart]` and publishes the names as `public const string Part*` members.
+`EditorToolbar` 和 `ToolbarGroup` 都使用一个名为 `PART_ItemsHost` 的 `Panel` 模板部件。默认主题用的是 `WrapPanel`；嵌在 `RichTextEditor` 里的那条工具栏则用横向的 `StackPanel`。给任一控件重做模板、换成任意面板类型，即可改变布局。每个模板化的工具栏控件都用 `[TemplatePart]` 声明自己的部件，并把名称以 `public const string Part*` 成员的形式公开。
 
 ```
 RichTextEditor
@@ -59,60 +59,60 @@ using Avalonia.Controls.Documents.Primitives; // EditorSelectionFlyout, EditorCo
 using Avalonia.Controls.Documents.Primitives.Adorners; // ToolbarTargetAreas
 ```
 
-All of these types are available in XAML under the default Avalonia namespace (`https://github.com/avaloniaui`).
+以上这些类型在 XAML 中都位于 Avalonia 的默认命名空间（`https://github.com/avaloniaui`）下。
 
-## Migration from earlier `EditorToolbar` API
+## 从早期 `EditorToolbar` API 迁移 {#migration-from-earlier-editortoolbar-api}
 
-If you have existing code that uses the legacy `ItemsControl`-based surface, update it as follows:
+如果你的现有代码还在用基于 `ItemsControl` 的旧接口，请按下表更新：
 
-| Before | After |
+| 旧写法 | 新写法 |
 |---|---|
 | `EditorToolbar.Items` / `ToolbarGroup.Items` | `Tools` (typed `AvaloniaList<EditorTool>`, `[Content]`) |
-| `EditorToolbar.ItemsPanel` / `ItemsSource` | Removed. Re-template the toolbar with a `Panel` named `PART_ItemsHost`. |
-| `EditorToolbar`/`ToolbarGroup` derived from `ItemsControl` | Both are now `TemplatedControl`. `ToolbarGroup` derives from `EditorTool`. |
-| `EditorTool.Action` / `Icon` / `ToolTipText` | Moved to `ActionTool`. Custom action-bound tools should derive from `ActionTool` (passive tools stay on `EditorTool`). |
+| `EditorToolbar.ItemsPanel` / `ItemsSource` | 已移除。请给工具栏重做模板，放一个名为 `PART_ItemsHost` 的 `Panel`。 |
+| `EditorToolbar`/`ToolbarGroup` 派生自 `ItemsControl` | 两者现在都是 `TemplatedControl`。`ToolbarGroup` 派生自 `EditorTool`。 |
+| `EditorTool.Action` / `Icon` / `ToolTipText` | 已移至 `ActionTool`。绑定动作的自定义工具应派生自 `ActionTool`（被动型工具仍留在 `EditorTool` 上）。 |
 <br />
 
-Implicit XAML child syntax (`<EditorToolbar><ToolbarGroup>…</ToolbarGroup></EditorToolbar>`) is unchanged — children are added to `Tools` via the `[Content]` attribute. Only explicit `<EditorToolbar.Items>` / `<EditorToolbar.ItemsPanel>` element-form usages need renaming. In code, replace `toolbar.Items.Add(...)` with `toolbar.Tools.Add(...)`.
+XAML 的隐式子元素写法（`<EditorToolbar><ToolbarGroup>…</ToolbarGroup></EditorToolbar>`）没有变化——子元素通过 `[Content]` 特性加入 `Tools`。只有显式写成 `<EditorToolbar.Items>` / `<EditorToolbar.ItemsPanel>` 元素形式的地方需要改名。在代码中，把 `toolbar.Items.Add(...)` 换成 `toolbar.Tools.Add(...)`。
 
-### Changes in 12.3
+### 12.3 中的变化 {#changes-in-123}
 
-| Change | What it means |
+| 变更 | 含义 |
 |---|---|
-| `ToolbarGroup` nests | Adding a group to another group's `Tools` used to throw, which surfaced as an `XamlLoadException` at parse time. Overflow descends the tree. |
-| `EditorToolbar.EditorHost` | Binds the toolbar to an editing host. `Editor` keeps its `RichTextEditor?` type. The toolbar drives whichever of the two carries a value. |
-| Toolbar pushes `ActiveTargetAreas` | The value is derived on every selection and document change. The per-tool theme setters that used to propagate it are gone. A tool that follows the caret binds `IsVisible` to `IsVisibleForTargetArea`, both settable properties. |
-| `ToolbarTargetAreas.CaretAreas` | Names the areas an ordinary caret reaches. Default for `EditorTool.TargetAreas`. |
-| Clicking a tool bound to a block property action | Does nothing. It used to throw `NotSupportedException` from an unobserved task. |
+| `ToolbarGroup` nests | 过去把分组加进另一个分组的 `Tools` 会抛异常，在解析时表现为 `XamlLoadException`。现在溢出逻辑会沿树下探。 |
+| `EditorToolbar.EditorHost` | 把工具栏绑定到编辑宿主。`Editor` 保持 `RichTextEditor?` 类型不变。两者中哪个有值，工具栏就驱动哪个。 |
+| 工具栏推送 `ActiveTargetAreas` | 该值在每次选区和文档变化时重新推导。过去用于传播它的那些逐工具主题 setter 已经没有了。需要跟随插入符的工具，请把 `IsVisible` 绑定到 `IsVisibleForTargetArea`，两者都是可写属性。 |
+| `ToolbarTargetAreas.CaretAreas` | 指明普通插入符可以抵达的区域。`EditorTool.TargetAreas` 的默认值。 |
+| 点击绑定了块属性动作的工具 | 什么也不会发生。过去它会从一个无人观察的任务中抛出 `NotSupportedException`。 |
 
-## Default toolbar
+## 默认工具栏 {#default-toolbar}
 
-The built-in `EditorToolbar`, populated via `RichTextEditor.Toolbar` in the editor's default control theme, contains the following tools, appearing in this order and sorted into these groups.
+内置的 `EditorToolbar` 由编辑器默认控件主题中的 `RichTextEditor.Toolbar` 填充，包含下列工具，按此顺序排列并归入这些分组。
 
 <Image light={DefaultToolbar} position="center" cornerRadius="true" alt="The default RichTextEditor toolbar with history, clipboard, font, inline formatting, lists, table, block layout, and overflow groups."/>
 <br />
 
-1. **History** — Undo, Redo
-2. **Clipboard** — Cut, Copy, Paste, Select All
-3. **Font** — Font family, Font size, Foreground color, Background color
-4. **Inline formatting** — Bold, Italic, Underline, Strikethrough, Superscript, Subscript, Link
-5. **Lists** — Bullet list, Numbered list
-6. **Insert** — Insert table, Insert image, Header and footer
-7. **Block layout** — Text alignment, Block border
-8. **Image** — Image size (shown only while the caret is on an image)
-9. **Overflow** — "..." button that presents collapsed tools when clicked
+1. **历史** —— 撤销、重做
+2. **剪贴板** —— 剪切、复制、粘贴、全选
+3. **字体** —— 字体、字号、前景色、背景色
+4. **行内格式** —— 加粗、斜体、下划线、删除线、上标、下标、链接
+5. **列表** —— 项目符号列表、编号列表
+6. **插入** —— 插入表格、插入图片、页眉和页脚
+7. **块布局** —— 文本对齐、块边框
+8. **图片** —— 图片尺寸（仅在插入符位于图片上时显示）
+9. **溢出** —— 「...」按钮，点击后列出被折叠的工具
 
-A second `EditorToolbar`, built from the same tool infrastructure, is hosted by the table overlay's actions flyout, appearing as the "..." button on a hovered cell and on row and column strip selections. It carries table structure actions only.
+还有第二条 `EditorToolbar`，用的是同一套工具机制，寄宿在表格覆盖层的操作浮层中——即悬停单元格、以及选中行列条带时出现的那个「...」按钮。它只包含表格结构相关的操作。
 
-Most tools are context-sensitive, meaning they disappear automatically when out of context, e.g., list tools are hidden outside lists, table tools are hidden outside tables. This is done by declaring the [`ToolbarTargetAreas`](#toolbar-target-areas) of each tool or group.
+大多数工具会随上下文变化：脱离相应语境就自动隐去，比如列表工具在列表之外不显示，表格工具在表格之外不显示。这是通过声明每个工具或分组的 [`ToolbarTargetAreas`](#toolbar-target-areas) 来实现的。
 
-## Replacing the default toolbar
+## 替换默认工具栏 {#replacing-the-default-toolbar}
 
-There are two ways to customize the default toolbar, depending on your UI requirements.
+定制默认工具栏有两条路子，取决于你的界面需求。
 
 ### Option 1: Set `RichTextEditor.Toolbar`
 
-Assign a custom `EditorToolbar` to the `Toolbar` setter on `RichTextEditor`. Place this in the editor's control theme so it applies to every `RichTextEditor` in your application:
+把一个自定义的 `EditorToolbar` 赋给 `RichTextEditor` 上的 `Toolbar` setter。把它放进编辑器的控件主题，即可作用于应用中的每一个 `RichTextEditor`：
 
 ```xml
 <Application.Resources>
@@ -143,11 +143,11 @@ Assign a custom `EditorToolbar` to the `Toolbar` setter on `RichTextEditor`. Pla
 </Application.Resources>
 ```
 
-### Option 2: Build a toolbar separately from the editor
+### 方案二：把工具栏与编辑器分开摆放 {#option-2-build-a-toolbar-separately-from-the-editor}
 
-If you need the toolbar to live somewhere other than above the editor (e.g., in a side panel, in a window chrome, shared across multiple editors), you can hide the built-in toolbar and place an `EditorToolbar` wherever you want.
+若工具栏不该待在编辑器上方，而要放到别处（比如侧边栏、窗口外框里，或由多个编辑器共用），可以隐藏内置工具栏，再把一个 `EditorToolbar` 摆到你想要的位置。
 
-To do so, define the standalone `EditorToolbar` in XAML and attach it to the editor in the corresponding code-behind.
+做法是：在 XAML 中定义独立的 `EditorToolbar`，再在对应的代码隐藏中把它挂到编辑器上。
 
 <Tabs>
 <TabItem value="xaml" label="XAML">
@@ -184,12 +184,12 @@ public MainWindow()
 </Tabs>
 
 :::tip
-You can wire one `EditorToolbar` to different editors at runtime by reassigning `EditorToolbar.Editor`. This is a common pattern for tabbed document interfaces where a single shared toolbar tracks the active tab.
+运行时重新给 `EditorToolbar.Editor` 赋值，就能让同一个 `EditorToolbar` 为不同的编辑器服务。多标签页的文档界面常用这一招——一条共享工具栏跟随当前活动的标签页。
 :::
 
-### Minimalist example
+### 极简示例 {#minimalist-example}
 
-A minimal toolbar with only Undo/Redo and Bold/Italic. Note that tool icons are set in a separate tag from the tool action.
+一条只有撤销/重做和加粗/斜体的极简工具栏。注意工具图标是在与工具动作不同的标签中设置的。
 
 <Image light={CustomToolbarMinimal} position="center" cornerRadius="true" alt="A minimal custom toolbar containing Undo, Redo, Bold, and Italic tools separated by a divider."/>
 <br />
@@ -234,70 +234,70 @@ A minimal toolbar with only Undo/Redo and Bold/Italic. Note that tool icons are 
 </ControlTheme>
 ```
 
-## EditorTool types
+## EditorTool 的各种类型 {#editortool-types}
 
-Components on the toolbar, such as buttons, toggles, comboboxes, etc., are subclasses of `EditorTool`. The hierarchy is split in two:
+工具栏上的各类组件——按钮、切换、下拉框等等——都是 `EditorTool` 的子类。这套继承体系分成两支：
 
-- `EditorTool` itself is the abstract base for any toolbar item. It handles target-area visibility, overflow metadata, focus-return helpers, and editor-host discovery. `SeparatorTool` and `ToolbarGroup` derive from it directly because they don't bind to an action.
-- `ActionTool` is the abstract intermediate that adds action-bearing properties (`Action`, `Icon`, `ToolTipText`) and keeps state in sync with the editor. Most concrete widgets — buttons, toggles, comboboxes, flyouts — derive from it.
+- `EditorTool` 本身是所有工具栏项的抽象基类，负责按目标区域控制可见性、承载溢出元数据、提供焦点归还辅助，以及发现编辑器宿主。`SeparatorTool` 和 `ToolbarGroup` 不绑定动作，因此直接派生自它。
+- `ActionTool` 是中间层抽象类，补充了与动作相关的属性（`Action`、`Icon`、`ToolTipText`），并让状态与编辑器保持同步。大多数具体控件——按钮、切换、下拉框、浮层——都派生自它。
 
-In practice, you'll rarely need to use either base class directly. The built-in subclasses listed below have been designed to meet most use-cases.
+实际开发中，你很少需要直接用这两个基类。下面列出的内置子类已经能覆盖绝大多数场景。
 
-### Built-in subclasses
+### 内置子类 {#built-in-subclasses}
 
-| Class | Base | Widget | Typical use |
+| 类 | 基类 | 控件形态 | 典型用途 |
 |---|---|---|---|
-| `ButtonTool` | `ActionTool` | Button | One-shot commands, e.g., Undo, Cut, Paste. |
-| `ToggleTool` | `ActionTool` | Toggle button | Formatting, e.g., Bold, Italic. |
-| `ListToggleTool` | `ToggleTool` | Split toggle button | List toggles (bullet/numbered) that also reflect the active marker style. |
-| `ComboBoxTool` | `ActionTool` | Combobox | Selection from a list, e.g., font family, font size. |
-| `ColorTool` | `ActionTool` | Abstract base | Shared base for the two color pickers. Its `SelectedColor` is `Color?`, where `null` means no color. |
-| `ColorPickerTool` | `ColorTool` | Split button + Avalonia `ColorPicker` flyout | Pick an arbitrary color, e.g., foreground color, background color. |
-| `ColorSwatchTool` | `ColorTool` | Split button + swatch palette flyout | Pick from a fixed palette. |
-| `AlignmentFlyoutTool` | `ActionTool` | Button with flyout | Text alignment: Left, Right, Center, Justify. |
-| `HyperlinkFlyoutTool` | `ActionTool` | Button with flyout | Insert/edit hyperlinks. |
-| `ImageFlyoutTool` | `ActionTool` | Button with flyout | Insert and resize an inline image. |
-| `ImageLinkFlyoutTool` | `ActionTool` | Button with flyout | Attach or clear a hyperlink on the selected image. |
-| `PageBandFlyoutTool` | `ActionTool` | Button with flyout | Header and footer tools in one flyout. See [Headers and footers](#headers-and-footers) for details. |
-| `TablePickerTool` | `ActionTool` | Grid picker | Insert a table by sizing a grid. |
-| `BorderFlyoutTool` | `ActionTool` | Button with flyout | Block border configuration, e.g., sides, thickness, color. |
-| `OverflowTool` | `ActionTool` | "..." button with flyout | Menu flyout that presents collapsed tools. |
-| `SeparatorTool` | `EditorTool` | Vertical rule | Visual divider. |
+| `ButtonTool` | `ActionTool` | Button | 一次性命令，比如撤销、剪切、粘贴。 |
+| `ToggleTool` | `ActionTool` | 切换按钮 | 格式设置，比如加粗、斜体。 |
+| `ListToggleTool` | `ToggleTool` | 分段切换按钮 | 列表开关（项目符号/编号），同时还能反映当前的标记样式。 |
+| `ComboBoxTool` | `ActionTool` | Combobox | 从列表中选择，比如字体、字号。 |
+| `ColorTool` | `ActionTool` | 抽象基类 | 两种拾色工具共用的基类。它的 `SelectedColor` 是 `Color?`，其中 `null` 表示无颜色。 |
+| `ColorPickerTool` | `ColorTool` | 分段按钮 + Avalonia `ColorPicker` 浮层 | 挑选任意颜色，比如前景色、背景色。 |
+| `ColorSwatchTool` | `ColorTool` | 分段按钮 + 色块调色板浮层 | 从固定调色板中挑选。 |
+| `AlignmentFlyoutTool` | `ActionTool` | 带浮层的按钮 | 文本对齐：左对齐、右对齐、居中、两端对齐。 |
+| `HyperlinkFlyoutTool` | `ActionTool` | 带浮层的按钮 | 插入/编辑超链接。 |
+| `ImageFlyoutTool` | `ActionTool` | 带浮层的按钮 | 插入行内图片并调整尺寸。 |
+| `ImageLinkFlyoutTool` | `ActionTool` | 带浮层的按钮 | 给选中的图片附加或清除超链接。 |
+| `PageBandFlyoutTool` | `ActionTool` | 带浮层的按钮 | 把页眉页脚相关工具收进一个浮层。详见[页眉与页脚](#headers-and-footers)。 |
+| `TablePickerTool` | `ActionTool` | 网格选择器 | 通过拉选网格大小来插入表格。 |
+| `BorderFlyoutTool` | `ActionTool` | 带浮层的按钮 | 块边框的配置，比如边、粗细、颜色。 |
+| `OverflowTool` | `ActionTool` | 带浮层的「...」按钮 | 用菜单浮层列出被折叠的工具。 |
+| `SeparatorTool` | `EditorTool` | 竖线 | 视觉分隔线。 |
 
-List marker styles are reached through `ListToggleTool`, which the default selection mini-bar uses. Outside a list, it behaves as a plain toggle. Inside a matching list, it becomes a split button whose secondary half opens the marker options for that list type, driving `EditorActions.BulletMarkerStyle` and `EditorActions.NumberedMarkerStyle`. The main toolbar uses a plain `ToggleTool` for the two list toggles, so marker style is not exposed there by default.
+列表标记样式通过 `ListToggleTool` 使用，默认的选区迷你工具条用的就是它。在列表之外，它就是个普通切换按钮；进入匹配的列表后，它变成分段按钮，副半边会打开该列表类型的标记选项，驱动 `EditorActions.BulletMarkerStyle` 和 `EditorActions.NumberedMarkerStyle`。主工具栏的两个列表开关用的是普通的 `ToggleTool`，因此默认并不暴露标记样式。
 
-### Core properties
+### 核心属性 {#core-properties}
 
-`EditorTool` exposes the following on every toolbar item:
+`EditorTool` 为每个工具栏项提供下列成员：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `TargetAreas` | `ToolbarTargetAreas` | Contexts in which this tool should appear. Defaults to `CaretAreas`. See [ToolbarTargetAreas](#toolbar-target-areas). |
-| `ActiveTargetAreas` | `ToolbarTargetAreas` | Read-only. The areas the caret is currently in, pushed here by the host toolbar as the selection moves. |
-| `IsVisibleForTargetArea` | `bool` | Read-only. Whether `TargetAreas` matches `ActiveTargetAreas`. |
-| `OverflowMenuItem` | `MenuItem?` | Menu item shown when this tool is collapsed into the overflow menu. `null` means the tool cannot be collapsed. |
-| `CanCollapseOverride` | `bool?` | Explicit override for overflow collapse. |
+| `TargetAreas` | `ToolbarTargetAreas` | 该工具应在哪些上下文中出现。默认值为 `CaretAreas`。参阅 [ToolbarTargetAreas](#toolbar-target-areas)。 |
+| `ActiveTargetAreas` | `ToolbarTargetAreas` | 只读。插入符当前所处的区域，由宿主工具栏随选区移动推送过来。 |
+| `IsVisibleForTargetArea` | `bool` | 只读。`TargetAreas` 是否与 `ActiveTargetAreas` 匹配。 |
+| `OverflowMenuItem` | `MenuItem?` | 该工具被折叠进溢出菜单时所显示的菜单项。`null` 表示该工具不可折叠。 |
+| `CanCollapseOverride` | `bool?` | 显式指定是否折叠进溢出菜单，覆盖自动判断。 |
 
-`ActionTool` adds the action-bearing surface (inherited by every interactive tool):
+`ActionTool` 补充了与动作相关的那部分接口（所有可交互工具都继承它）：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Action` | `IEditorAction?` | The action this tool executes. |
-| `Icon` | `object?` | Display icon for the tool. |
-| `ToolTipText` | `string?` | Text displayed as tooltip on hover. Defaults to `Action.DisplayName` if unset. |
+| `Action` | `IEditorAction?` | 该工具执行的动作。 |
+| `Icon` | `object?` | 该工具显示的图标。 |
+| `ToolTipText` | `string?` | 悬停时作为工具提示显示的文字。未设置时默认取 `Action.DisplayName`。 |
 
-`EditorToolbar` itself carries:
+`EditorToolbar` 自身则带有：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Editor` | `RichTextEditor?` | The host this toolbar drives. Reassign it to retarget the toolbar at runtime. |
-| `EditorHost` | `ITextEditorHost?` | The host this toolbar drives that is not a `RichTextEditor`. |
-| `Tools` | `AvaloniaList<EditorTool>` | The `[Content]` collection of toolbar items. |
-| `ActiveTargetAreas` | `ToolbarTargetAreas` | Read-only. Derived from the selection and pushed onto every tool. |
-| `ShowShortcuts` | `bool` | Whether tooltips display the action's keyboard gesture. |
-| `ToolSpacing` | `double` | Uniform spacing between items in the toolbar panel. `ToolbarGroup` has one of its own for its children. |
+| `Editor` | `RichTextEditor?` | 该工具栏所驱动的宿主。重新赋值即可在运行时让工具栏改换目标。 |
+| `EditorHost` | `ITextEditorHost?` | 该工具栏所驱动的、并非 `RichTextEditor` 的那个宿主。 |
+| `Tools` | `AvaloniaList<EditorTool>` | 工具栏项的 `[Content]` 集合。 |
+| `ActiveTargetAreas` | `ToolbarTargetAreas` | 只读。由选区推导得出，并推送给每一个工具。 |
+| `ShowShortcuts` | `bool` | 工具提示中是否显示该动作的键盘手势。 |
+| `ToolSpacing` | `double` | 工具栏面板中各项之间的统一间距。`ToolbarGroup` 对其子项另有一个自己的间距。 |
 
-### XAML usage
+### XAML 用法 {#xaml-usage}
 
 ```xml
 <!-- One-shot command -->
@@ -324,28 +324,28 @@ List marker styles are reached through `ListToggleTool`, which the default selec
 </ComboBoxTool>
 ```
 
-## Creating a custom tool
+## 创建自定义工具 {#creating-a-custom-tool}
 
-You can derive a custom implementation if you need a widget that isn't covered by the built-in subclasses. Pick the base class that matches your use case:
+若内置子类覆盖不了你想要的控件形态，可以自行派生实现。请按使用场景挑选基类：
 
-- **`EditorTool`** — for passive widgets (status displays, decorative chips) that don't bind to an action. Override `OnApplyTemplate` for template-part lookup and `OnEditorHostAttached` to react when an editor host becomes available.
-- **`ActionTool`** — for interactive tools that execute an `IEditorAction`. You inherit `Action`, `Icon`, `ToolTipText`, and an `UpdateState()` virtual that runs whenever the selection/content/document changes.
+- **`EditorTool`** —— 用于不绑定动作的被动型控件（状态显示、装饰性标签）。重写 `OnApplyTemplate` 来获取模板部件，重写 `OnEditorHostAttached` 以便在编辑器宿主就位时作出反应。
+- **`ActionTool`** —— 用于执行 `IEditorAction` 的交互式工具。你会继承到 `Action`、`Icon`、`ToolTipText`，以及一个在选区/内容/文档发生变化时触发的虚方法 `UpdateState()`。
 
-In both cases:
+两种情况下都要：
 
-1. Expose a control template that renders your widget.
-2. Override `OnApplyTemplate` to get references to template parts.
-3. For `ActionTool`, override `UpdateState` to refresh extra state (e.g., a custom badge). For `EditorTool`, hook `OnEditorHostAttached` and your own event subscriptions.
-4. Inside handlers, call `EnsureEditorFocus()` before executing an action so the caret returns to the editor.
+1. 提供一个控件模板来渲染你的控件。
+2. 重写 `OnApplyTemplate` 以取得模板部件的引用。
+3. 若基类是 `ActionTool`，重写 `UpdateState` 来刷新额外状态（比如自定义徽标）；若是 `EditorTool`，则挂上 `OnEditorHostAttached` 并自行订阅所需事件。
+4. 在处理程序中，请先调用 `EnsureEditorFocus()` 再执行动作，好让焦点回到编辑器。
 
-### Example: Word count tool
+### 示例：字数统计工具 {#example-word-count-tool}
 
 <Image light={WordCountTool} position="center" cornerRadius="true" alt="A custom word count tool docked at the end of the toolbar, displaying the current word count."/>
 <br />
 
-The word count display is a passive widget and does not execute an action. It derives from `EditorTool` directly. `UpdateState` lives on `ActionTool`, so a passive tool refreshes itself by subscribing to the host's own events in `OnEditorHostAttached` and unsubscribing in `OnEditorHostDetached`.
+字数显示是个被动型控件，不执行任何动作，因此直接派生自 `EditorTool`。`UpdateState` 定义在 `ActionTool` 上，所以被动型工具要在 `OnEditorHostAttached` 中订阅宿主自身的事件来刷新自己，并在 `OnEditorHostDetached` 中退订。
 
-The implementation counts words by walking the document's `DocumentSnapshot`. Enumerating `Run` nodes and treating block boundaries and line breaks as word separators avoids allocating a full plain-text string and avoids merging the last word of one paragraph with the first word of the next.
+这个实现通过遍历文档的 `DocumentSnapshot` 来统计字数。它枚举 `Run` 节点，并把块边界和换行当作词的分隔符，这样既不必分配一整份纯文本字符串，也不会把上一段的末词与下一段的首词粘在一起。
 
 <Tabs>
 <TabItem value="class" label="C#">
@@ -484,9 +484,9 @@ public class WordCountTool : EditorTool
 </TabItem>
 </Tabs>
 
-## Editor actions
+## 编辑器动作 {#editor-actions}
 
-Every tool binds to an `IEditorAction` supplied by the static `EditorActions` class. The action tells the tool how to execute the command, when it is available, and (for toggles and property actions) what state to display. Bind from XAML with `{x:Static EditorActions.<Name>}`, or invoke an action directly from code:
+每个工具都绑定到由静态类 `EditorActions` 提供的某个 `IEditorAction`。动作告诉工具：命令怎么执行、什么时候可用，以及（对切换类和属性类动作而言）该显示什么状态。在 XAML 中用 `{x:Static EditorActions.<Name>}` 绑定，也可以在代码中直接调用动作：
 
 ```csharp
 if (EditorActions.Bold.CanExecute(editorHost))
@@ -503,25 +503,25 @@ var current = EditorActions.FontSize.GetValue(editorHost);
 bool isBold = EditorActions.Bold.IsChecked(editorHost);
 ```
 
-`EditorActions` singletons are how you reference built-in actions. The concrete action classes behind them (e.g., `BoldAction`) are internal. `InsertImageAction` and `InsertTableAction` are exceptions: they are public to allow access to parameterized entry points.
+引用内置动作的方式就是这些 `EditorActions` 单例。它们背后的具体动作类（比如 `BoldAction`）都是 internal 的。`InsertImageAction` 和 `InsertTableAction` 是例外：它们是公开的，以便提供带参数的入口。
 
-You can still write custom editor actions using the public classes `IEditorAction`, `IToggleAction`, `IPropertyAction`, `IPropertyAction<T>`, `IBlockPropertyAction`, `IBlockPropertyAction<T>`, `EditorAction`, `FormattingToggleAction<T>`, `PropertyAction<T>` and `BlockPropertyAction<T>`.
+你仍然可以用这些公开类编写自定义编辑器动作：`IEditorAction`、`IToggleAction`、`IPropertyAction`、`IPropertyAction<T>`、`IBlockPropertyAction`、`IBlockPropertyAction<T>`、`EditorAction`、`FormattingToggleAction<T>`、`PropertyAction<T>` 和 `BlockPropertyAction<T>`。
 
 :::note
-An action's `Gesture` is what tooltips and menu items display. It registers nothing. The shortcut that actually fires is handled by the editor's keyboard component.
+动作的 `Gesture` 只是工具提示和菜单项上显示的内容，它不注册任何东西。真正触发的快捷键由编辑器的键盘组件处理。
 :::
 
-### Reading action state
+### 读取动作状态 {#reading-action-state}
 
-Every singleton is declared as `IEditorAction`. Cast to the interface that carries the state you want.
+每个单例的声明类型都是 `IEditorAction`。要取哪种状态，就转换成携带该状态的那个接口。
 
-| Actions | Interface | State accessor |
+| 动作 | 接口 | 状态访问器 |
 |---|---|---|
 | `Bold`, `Italic`, `Underline`, `Strikethrough`, `Superscript`, `Subscript`, `BlockBorder`, `AlignLeft`, `AlignCenter`, `AlignRight`, `AlignJustify`, `ToggleBulletList`, `ToggleNumberedList`, `DifferentFirstPage`, `DifferentOddAndEvenPages`, `LinkToPrevious` | `IToggleAction` | `IsChecked(host)` |
 | `FontFamily` | `IPropertyAction<FontFamily>` | `GetValue(host)`, `SetValue(host, value)`, `ClearValue(host)` |
 | `FontSize` | `IPropertyAction<double>` | same |
 | `ForegroundColor`, `BackgroundColor` | `IPropertyAction<IBrush?>` | same |
-| `LineHeight` | `IBlockPropertyAction<double>` | same, plus `HasConsistentValue(host)` |
+| `LineHeight` | `IBlockPropertyAction<double>` | 同上，外加 `HasConsistentValue(host)` |
 | `Margin`, `Padding`, `BorderThickness` | `IBlockPropertyAction<Thickness>` | same |
 | `BlockBackground`, `BorderBrush` | `IBlockPropertyAction<IBrush?>` | same |
 | `BulletMarkerStyle`, `NumberedMarkerStyle` | `IBlockPropertyAction<TextMarkerStyle>` | same |
@@ -530,124 +530,124 @@ Every singleton is declared as `IEditorAction`. Cast to the interface that carri
 | `InsertTable` | `InsertTableAction` | `ExecuteWithSize(host, rowCount, columnCount)` |
 <br />
 
-`IBlockPropertyAction<T>` derives from `IPropertyAction<T>`, so its value members are inherited rather than redeclared.
+`IBlockPropertyAction<T>` 派生自 `IPropertyAction<T>`，因此那些取值成员是继承来的，并未重新声明。
 
-`IEditorAction.GetState(host)` returns the same value untyped. It is kept for compatibility and says nothing about which family the value came from.
+`IEditorAction.GetState(host)` 返回同一个值，但不带类型。它是为兼容而保留的，无法说明这个值出自哪一族。
 
-Invoking a block property action with no value does nothing. You must use `SetValue` to apply a block property.
+调用块属性动作时若不传值，则什么也不会发生。要应用块属性，必须使用 `SetValue`。
 
-### Edit operations
+### 编辑操作 {#edit-operations}
 
-| Action | Gesture | Description |
+| 动作 | 快捷键 | 说明 |
 |---|---|---|
-| `Undo` | Ctrl+Z | Undo the last operation. |
-| `Redo` | Ctrl+Y | Redo the last undone operation. |
-| `Cut` | Ctrl+X | Cut the current selection to the clipboard. |
-| `Copy` | Ctrl+C | Copy the current selection to the clipboard. |
-| `Paste` | Ctrl+V | Paste clipboard contents at the caret. |
-| `PasteUnformatted` | N/A | Paste clipboard contents as plain text. |
-| `SelectAll` | Ctrl+A | Select all content. |
+| `Undo` | Ctrl+Z | 撤销上一步操作。 |
+| `Redo` | Ctrl+Y | 重做上一步被撤销的操作。 |
+| `Cut` | Ctrl+X | 把当前选区剪切到剪贴板。 |
+| `Copy` | Ctrl+C | 把当前选区复制到剪贴板。 |
+| `Paste` | Ctrl+V | 在插入符处粘贴剪贴板内容。 |
+| `PasteUnformatted` | 不适用 | 以纯文本形式粘贴剪贴板内容。 |
+| `SelectAll` | Ctrl+A | 全选内容。 |
 
-### Text formatting
+### 文本格式 {#text-formatting}
 
-| Action | Gesture | Description |
+| 动作 | 快捷键 | 说明 |
 |---|---|---|
-| `Bold` | Ctrl+B | Toggle bold. |
-| `Italic` | Ctrl+I | Toggle italic. |
-| `Underline` | Ctrl+U | Toggle underline. |
-| `Strikethrough` | Ctrl+- | Toggle strikethrough. |
-| `Superscript` | Ctrl+Shift++ | Toggle superscript baseline alignment. |
-| `Subscript` | Ctrl++ | Toggle subscript baseline alignment. |
-| `FontFamily` | N/A | Get or set the font family. |
-| `FontSize` | N/A | Get or set the font size. |
+| `Bold` | Ctrl+B | 切换加粗。 |
+| `Italic` | Ctrl+I | 切换斜体。 |
+| `Underline` | Ctrl+U | 切换下划线。 |
+| `Strikethrough` | Ctrl+- | 切换删除线。 |
+| `Superscript` | Ctrl+Shift++ | 切换上标基线对齐。 |
+| `Subscript` | Ctrl++ | 切换下标基线对齐。 |
+| `FontFamily` | 不适用 | 获取或设置字体。 |
+| `FontSize` | 不适用 | 获取或设置字号。 |
 
 ### Colors
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `ForegroundColor` | Get or set the text foreground color. |
-| `BackgroundColor` | Get or set the text background (highlight) color. |
+| `ForegroundColor` | 获取或设置文本前景色。 |
+| `BackgroundColor` | 获取或设置文本背景色（高亮色）。 |
 
-### Block alignment
+### 块对齐 {#block-alignment}
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `TextAlignmentAction` | Get or set block alignment as a value. |
-| `AlignLeft` | Left-align the blocks. |
-| `AlignCenter` | Center-align the blocks. |
-| `AlignRight` | Right-align the blocks. |
-| `AlignJustify` | Justify the blocks. |
+| `TextAlignmentAction` | 按值获取或设置块对齐方式。 |
+| `AlignLeft` | 块左对齐。 |
+| `AlignCenter` | 块居中对齐。 |
+| `AlignRight` | 块右对齐。 |
+| `AlignJustify` | 块两端对齐。 |
 
-### Block spacing and styling
+### 块的间距与样式 {#block-spacing-and-styling}
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `LineHeight` | Get or set block line height. |
-| `Margin` | Get or set block margin. Uniform on all sides. |
-| `Padding` | Get or set block padding. Uniform on all sides |
-| `BlockBackground` | Get or set block background color. |
-| `BorderThickness` | Get or set block border thickness. |
-| `BorderBrush` | Get or set block border color. |
-| `BlockBorder` | Toggle block border on or off. |
+| `LineHeight` | 获取或设置块的行高。 |
+| `Margin` | 获取或设置块的外边距，四边一致。 |
+| `Padding` | 获取或设置块的内边距，四边一致 |
+| `BlockBackground` | 获取或设置块的背景色。 |
+| `BorderThickness` | 获取或设置块的边框粗细。 |
+| `BorderBrush` | 获取或设置块的边框颜色。 |
+| `BlockBorder` | 开关块边框。 |
 
 ### Lists
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `ToggleBulletList` | Wrap or unwrap as an unordered list. |
-| `ToggleNumberedList` | Wrap or unwrap as an ordered list. |
-| `BulletMarkerStyle` | Set the bullet marker style (e.g., Disc, Circle, Square). |
-| `NumberedMarkerStyle` | Set the numbered marker style (e.g., Decimal, LowerLatin, UpperRoman). |
+| `ToggleBulletList` | 包成无序列表，或解除无序列表。 |
+| `ToggleNumberedList` | 包成有序列表，或解除有序列表。 |
+| `BulletMarkerStyle` | 设置项目符号的标记样式（比如 Disc、Circle、Square）。 |
+| `NumberedMarkerStyle` | 设置编号的标记样式（比如 Decimal、LowerLatin、UpperRoman）。 |
 
 ### Tables
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `InsertTable` | Insert a table at the caret. Defaults to 3×3. |
-| `InsertRowBefore` | Insert a row above the current row. |
-| `InsertRowAfter` | Insert a row below the current row. |
-| `DeleteRow` | Delete the current row. |
-| `InsertColumnBefore` | Insert a column to the left of the current column. |
-| `InsertColumnAfter` | Insert a column to the right of the current column. |
-| `DeleteColumn` | Delete the current column. |
-| `MergeCells` | Merge the selected cells into one. |
-| `SplitCell` | Split the current merged cell. |
-| `DeleteTable` | Delete the entire table. |
+| `InsertTable` | 在插入符处插入表格，默认 3×3。 |
+| `InsertRowBefore` | 在当前行上方插入一行。 |
+| `InsertRowAfter` | 在当前行下方插入一行。 |
+| `DeleteRow` | 删除当前行。 |
+| `InsertColumnBefore` | 在当前列左侧插入一列。 |
+| `InsertColumnAfter` | 在当前列右侧插入一列。 |
+| `DeleteColumn` | 删除当前列。 |
+| `MergeCells` | 把选中的单元格合并成一个。 |
+| `SplitCell` | 拆分当前已合并的单元格。 |
+| `DeleteTable` | 删除整个表格。 |
 
 ### Images
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `InsertImage` | Insert an inline image at the caret. `ExecuteWith` takes the image data directly. |
-| `ReplaceImage` | Replace the selected image. |
-| `DeleteImage` | Delete the selected image. |
+| `InsertImage` | 在插入符处插入行内图片。`ExecuteWith` 直接接受图片数据。 |
+| `ReplaceImage` | 替换选中的图片。 |
+| `DeleteImage` | 删除选中的图片。 |
 
-### Headers and footers
+### 页眉与页脚 {#headers-and-footers}
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `GoToHeader` | Enter the header of the caret's page. Creates the running header if none. |
-| `GoToFooter` | Enter the footer of the caret's page. Creates the running footer if none. |
-| `RemoveHeader` | Remove the header on the caret's page or the caret is inside. |
-| `RemoveFooter` | Remove the footer on the caret's page or the caret is inside. |
-| `DifferentFirstPage` | Toggle separate header and footer on the first page. |
-| `DifferentOddAndEvenPages` | Toggle separate headers and footers for odd / even pages. |
-| `LinkToPrevious` | Toggle whether the caret's section inherits the previous section's header and footer. |
-| `InsertPageNumber` | Insert a current-page field. |
-| `InsertPageCount` | Insert a page-count field. |
-| `ReturnToBody` | Leave the band and return the caret to the body. |
+| `GoToHeader` | 进入插入符所在页的页眉。若尚无页眉，则创建通栏页眉。 |
+| `GoToFooter` | 进入插入符所在页的页脚。若尚无页脚，则创建通栏页脚。 |
+| `RemoveHeader` | 移除插入符所在页的、或插入符当前所处的页眉。 |
+| `RemoveFooter` | 移除插入符所在页的、或插入符当前所处的页脚。 |
+| `DifferentFirstPage` | 开关首页单独的页眉页脚。 |
+| `DifferentOddAndEvenPages` | 开关奇偶页各自独立的页眉页脚。 |
+| `LinkToPrevious` | 开关插入符所在小节是否沿用上一小节的页眉和页脚。 |
+| `InsertPageNumber` | 插入当前页码字段。 |
+| `InsertPageCount` | 插入总页数字段。 |
+| `ReturnToBody` | 离开页眉页脚带，把插入符带回正文。 |
 
 ### Footnotes
 
-| Action | Description |
+| 动作 | 说明 |
 |---|---|
-| `InsertFootnote` | Insert a footnote anchor at the caret and open the note. |
-| `GoToFootnote` | Move the caret from an anchor into its note. |
-| `GoToFootnoteReference` | Move the caret from a note back to its anchor. |
+| `InsertFootnote` | 在插入符处插入脚注锚点并打开该注释。 |
+| `GoToFootnote` | 把插入符从锚点移进它的注释。 |
+| `GoToFootnoteReference` | 把插入符从注释移回它的锚点。 |
 
-### Lookup by ID
+### 按 ID 查找 {#lookup-by-id}
 
-Action IDs follow the pattern `"Category.Name"` (e.g., `"Format.Bold"`, `"Table.InsertRowAfter"`). `EditorActionIds` names the ID of every built-in action as a `public const string`, so a lookup is written against a constant rather than a literal.
+动作 ID 遵循 `"Category.Name"` 的格式（比如 `"Format.Bold"`、`"Table.InsertRowAfter"`）。`EditorActionIds` 把每个内置动作的 ID 都定义成了 `public const string`，于是查找时可以引用常量而不必写字面量。
 
 ```csharp
 var action = EditorActions.GetById(EditorActionIds.Bold);
@@ -659,19 +659,19 @@ foreach (var a in EditorActions.All)
     Console.WriteLine($"{a.Id}: {a.DisplayName}");
 ```
 
-### Springload behavior
+### 预载格式（springload）行为 {#springload-behavior}
 
-When the selection is empty, toggle and property actions set a _springload_, meaning the formatting applies to the next character typed. This matches the behavior users expect from common word processors.
+选区为空时，切换类和属性类动作会设置一个 _预载_，意即该格式将作用于接下来键入的字符。这与常见文字处理软件给用户的预期是一致的。
 
 ## ToolbarGroup
 
-`ToolbarGroup` groups a set of related tools to share collective visibility. If the group's `TargetAreas` don't match the current caret context, the entire group is hidden.
+`ToolbarGroup` 把一组相关工具归在一起，共享同一份可见性。若该分组的 `TargetAreas` 与当前插入符所处的语境不匹配，整个分组都会隐藏。
 
-### Nesting groups
+### 嵌套分组 {#nesting-groups}
 
-Groups can nest. A `ToolbarGroup` is an `EditorTool`, so it can sit in another group's `Tools`. Nesting is how a sub-group gets its own `TargetAreas` or `ToolSpacing` inside a wider group.
+分组可以嵌套。`ToolbarGroup` 本身是 `EditorTool`，因此它可以待在另一个分组的 `Tools` 里。要让某个子分组在更大的分组内拥有自己的 `TargetAreas` 或 `ToolSpacing`，靠的就是嵌套。
 
-Overflow descends the whole tree, and a nested group contributes its own children to the enclosing top-level group's menu section rather than collapsing as a unit. Setting `CanCollapseOverride="False"` on a nested group pins its children in place.
+溢出逻辑会沿整棵树下探：嵌套分组交出的是它自己的子项，而不是把自己整体折叠。给嵌套分组设置 `CanCollapseOverride="False"` 可以把它的子项钉在原位。
 
 ```xml
 <ToolbarGroup Classes="AreaAware" TargetAreas="Text">
@@ -686,9 +686,9 @@ Overflow descends the whole tree, and a nested group contributes its own childre
 </ToolbarGroup>
 ```
 
-### Applying the `AreaAware` class
+### 套用 `AreaAware` 样式类 {#applying-the-areaaware-class}
 
-`ToolbarGroup` does not react to the editor's active context by default. To enable contextual awareness, add the `AreaAware` class. `TargetAreas` defaults to `CaretAreas`—see [Toolbar target areas](#toolbar-target-areas) for which areas are included.
+`ToolbarGroup` 默认不会对编辑器的当前语境作出反应。要启用语境感知，请加上 `AreaAware` 类。`TargetAreas` 默认为 `CaretAreas`——具体包含哪些区域，参阅[工具栏目标区域](#toolbar-target-areas)。
 
 <Image light={AreaAware} position="center" maxWidth={250} cornerRadius="true" alt="Animation showing toolbar groups appearing and disappearing as the caret moves between body text, a list, and a table."/>
 <br />
@@ -714,57 +714,57 @@ Overflow descends the whole tree, and a nested group contributes its own childre
 </ToolbarGroup>
 ```
 
-## Toolbar target areas
+## 工具栏目标区域 {#toolbar-target-areas}
 
-`ToolbarTargetAreas` is a `[Flags]` enum in `Avalonia.Controls.Documents.Primitives.Adorners` describing the contexts in which a tool, a menu entry or a block adorner applies. `EditorToolbar` derives the active areas from the selection on every selection and document change and pushes them onto every tool.
+`ToolbarTargetAreas` 是 `Avalonia.Controls.Documents.Primitives.Adorners` 中的一个 `[Flags]` 枚举，用来描述某个工具、菜单项或块装饰物适用于哪些语境。每次选区和文档变化时，`EditorToolbar` 都会从选区推导出当前活动的区域，并推送给每一个工具。
 
-| Flag | Caret context |
+| 标志位 | 插入符所处语境 |
 |---|---|
-| `None` | No target area. |
-| `Text` | The caret is in any text-editable position. |
-| `Block` | The caret is in a block-level context. |
-| `Table` | The caret is in a table. |
-| `List` | The caret is in a list. |
-| `Image` | The caret is on an inline image. |
-| `TableCells` | The selection is a set of whole table cells. Driven by the selection shape rather than the caret's ancestry. |
-| `PageBand` | The caret is in a header or footer (band). Bands are text, so tools targeting text areas are available. |
-| `Footnote` | The caret is in a footnote. |
-| `All` | Visible in all areas. |
-| `CaretAreas` | Visible in caret-derived areas: `Text`, `Block`, `Table`, `List` and `Image`. Default for `EditorTool.TargetAreas`. |
+| `None` | 无目标区域。 |
+| `Text` | 插入符位于任意可编辑文本的位置。 |
+| `Block` | 插入符位于块级语境中。 |
+| `Table` | 插入符位于表格中。 |
+| `List` | 插入符位于列表中。 |
+| `Image` | 插入符落在一张行内图片上。 |
+| `TableCells` | 选区是若干个完整的表格单元格。由选区形状而非插入符的祖先链决定。 |
+| `PageBand` | 插入符位于页眉或页脚（带）中。带本身也是文本，因此针对文本区域的工具同样可用。 |
+| `Footnote` | 插入符位于脚注中。 |
+| `All` | 在所有区域中都可见。 |
+| `CaretAreas` | 在由插入符推导出的区域中可见：`Text`、`Block`、`Table`、`List` 和 `Image`。`EditorTool.TargetAreas` 的默认值。 |
 <br />
 
-`CaretAreas` is deliberately not every flag. `TableCells`, `PageBand` and `Footnote` must be opted into by name.
+`CaretAreas` 有意不包含全部标志位。`TableCells`、`PageBand` 和 `Footnote` 必须按名字显式加上。
 
 :::info
-`CaretAreas` is new in v12.3. `All` is unchanged. Both are combinations of the other flags, so existing XAML such as `TargetAreas="Text,List"` or `TargetAreas="All"` still binds.
+`CaretAreas` 是 v12.3 新增的，`All` 则维持原样。两者都是其他标志位的组合，因此 `TargetAreas="Text,List"`、`TargetAreas="All"` 这类既有的 XAML 写法依然有效。
 :::
 
-If required, you can combine `ToolbarTargetAreas` to make a tool visible in multiple contexts.
+如有需要，可以把多个 `ToolbarTargetAreas` 组合起来，让某个工具在多种语境下都可见。
 
 ```xml
 <ToolbarGroup Classes="AreaAware" TargetAreas="Text,List">
 ```
 
-## Managing the overflow menu
+## 打理溢出菜单 {#managing-the-overflow-menu}
 
-The overflow menu is the "..." button at the end of the toolbar. When the toolbar runs out of horizontal space, `EditorToolbar` collapses tools into this menu, starting from right to left by default.
+溢出菜单就是工具栏末尾那个「...」按钮。当工具栏的横向空间不够时，`EditorToolbar` 会把工具收进这个菜单，默认从右往左收。
 
-Collection descends the whole tool tree. A nested `ToolbarGroup` contributes its own children rather than itself, and the menu reads in the same sequence the tools appear on the bar. A tool that is hidden by its target areas is skipped.
+收集过程会沿整棵工具树下探：嵌套的 `ToolbarGroup` 交出的是它自己的子项而非它本身，菜单中的顺序与工具在栏上的排列一致。因目标区域不匹配而隐藏的工具会被跳过。
 
-### Rules for what collapses
+### 哪些会被折叠 {#rules-for-what-collapses}
 
-| `CanCollapseOverride` | `OverflowMenuItem` | Result |
+| `CanCollapseOverride` | `OverflowMenuItem` | 结果 |
 |-----------------------|--------------------|---------|
-| `null` | set | Collapsible (default) |
-| `null` | `null` | Not collapsible |
+| `null` | set | 可折叠（默认） |
+| `null` | `null` | 不可折叠 |
 | `true` | set | Collapsible |
-| `true` | `null` | Not collapsible (no menu representation) |
-| `false` | set | Not collapsible (pinned) |
-| `false` | `null` | Not collapsible |
+| `true` | `null` | 不可折叠（没有菜单形态可用） |
+| `false` | set | 不可折叠（已钉住） |
+| `false` | `null` | 不可折叠 |
 
-### Declaring overflow representations
+### 声明溢出时的呈现形态 {#declaring-overflow-representations}
 
-Each collapsible tool must have its own `OverflowMenuItem`. In most cases, the menu item can be a simple `EditorMenuItem`.
+每个可折叠的工具都必须有自己的 `OverflowMenuItem`。多数情况下，菜单项用一个简单的 `EditorMenuItem` 就够了。
 
 ```xml
 <!-- Collapses into a simple menu item with the same icon -->
@@ -782,18 +782,18 @@ Each collapsible tool must have its own `OverflowMenuItem`. In most cases, the m
 </ButtonTool>
 ```
 
-### Overflow for specialized tools
+### 特殊工具的溢出形态 {#overflow-for-specialized-tools}
 
-The following specialized subclasses of `EditorMenuItem` are available for tools that may not work well as plain menu items in an overflow menu.
+有些工具做成普通菜单项放进溢出菜单并不好用，为此 `EditorMenuItem` 提供了下列特化子类。
 
-| Source tool | Overflow item | Behavior |
+| 来源工具 | 溢出菜单项 | 行为 |
 |---|---|---|
-| `ComboBoxTool` (fonts) | `FontFamilyMenuItem` | Submenu of fonts, each rendered in its own typeface. |
-| `ComboBoxTool` (generic) | `PropertyMenuItem` | Submenu of values auto-populated from the action. |
-| `ColorPickerTool` / `ColorSwatchTool` | `ColorMenuItem` | Submenu with color swatches and optional "No Color". |
-| `AlignmentFlyoutTool` | `TextAlignmentMenuItem` | Submenu of alignment options. |
+| `ComboBoxTool` (fonts) | `FontFamilyMenuItem` | 字体子菜单，每一项都用它自己的字型呈现。 |
+| `ComboBoxTool` (generic) | `PropertyMenuItem` | 取值子菜单，由动作自动填充。 |
+| `ColorPickerTool` / `ColorSwatchTool` | `ColorMenuItem` | 带色块的子菜单，可选「无颜色」。 |
+| `AlignmentFlyoutTool` | `TextAlignmentMenuItem` | 对齐方式子菜单。 |
 
-#### Examples
+#### 示例 {#examples}
 
 ```xml
 <!-- Font selector submenu -->
@@ -820,9 +820,9 @@ The following specialized subclasses of `EditorMenuItem` are available for tools
 </AlignmentFlyoutTool>
 ```
 
-### Pinning important tools
+### 钉住重要的工具 {#pinning-important-tools}
 
-To guarantee a tool always stays in the toolbar, even when horizontal space is tight, omit `OverflowMenuItem`. Undo and Redo are pinned this way in the default toolbar. Use `CanCollapseOverride="False"` only when you want to keep an overflow definition for conditional toggling.
+若要保证某个工具始终留在工具栏上、哪怕横向空间吃紧，省略 `OverflowMenuItem` 即可。默认工具栏里的撤销和重做就是这么钉住的。只有当你想保留一份溢出定义以便按条件切换时，才使用 `CanCollapseOverride="False"`。
 
 ```xml
 <!-- Undo can never be collapsed -->
@@ -833,30 +833,30 @@ To guarantee a tool always stays in the toolbar, even when horizontal space is t
 </ButtonTool>
 ```
 
-## Default mini-bar
+## 默认迷你工具条 {#default-mini-bar}
 
-When the user selects text, a compact floating toolbar appears near the selection. This is the `SelectionFlyout`, an `EditorSelectionFlyout` (a `Flyout` subclass) that hosts a trimmed-down `EditorToolbar`.
+用户选中文本时，选区附近会浮出一条紧凑的工具条。这就是 `SelectionFlyout`——一个 `EditorSelectionFlyout`（`Flyout` 的子类），内部寄宿着一条精简版的 `EditorToolbar`。
 
 <Image light={DefaultMiniBar} position="center" cornerRadius="true" alt="The default selection mini-bar floating above selected text, showing inline formatting, list, and block configuration tools."/>
 <br />
 
-The default mini-bar includes:
+默认的迷你工具条包含：
 
-- **Inline formatting** (`Text`): Bold, Italic, Underline, Strikethrough, Text color, Highlight color
-- **List toggles** (`Text`, `List`): Bullet, Numbered (each a `ListToggleTool` whose split half offers marker styles)
-- **Block configuration**: Block background, Borders, Text alignment
-- **Table cell operations** (`TableCells`): Merge cells, Split cell, Delete row, Delete column
-- **Image actions** (`Image`): Align left/center/right, Image size, Replace image, Add or edit link, Delete image
+- **行内格式**（`Text`）：加粗、斜体、下划线、删除线、文字颜色、高亮颜色
+- **列表开关**（`Text`、`List`）：项目符号、编号（各自是一个 `ListToggleTool`，其分段的另一半提供标记样式）
+- **块配置**：块背景、边框、文本对齐
+- **表格单元格操作**（`TableCells`）：合并单元格、拆分单元格、删除行、删除列
+- **图片操作**（`Image`）：左/中/右对齐、图片尺寸、替换图片、添加或编辑链接、删除图片
 
-The mini-bar anchors to the block containing the selection, rather than the pointer. Each group declares its own `TargetAreas`, so the table cell and image groups appear only for those selections.
+迷你工具条锚定在包含选区的那个块上，而不是跟着指针走。每个分组都声明了自己的 `TargetAreas`，因此表格单元格分组和图片分组只在相应选区下才出现。
 
-## Replacing the default mini-bar
+## 替换默认迷你工具条 {#replacing-the-default-mini-bar}
 
-Within the `<RichTextEditor>` XAML tags, add a `<RichTextEditor.SelectionFlyout>` and specify a custom `EditorSelectionFlyout`. This can be used to host an `EditorToolbar`.
+在 `<RichTextEditor>` 的 XAML 标签内加一个 `<RichTextEditor.SelectionFlyout>`，并指定自定义的 `EditorSelectionFlyout`，即可在其中寄宿一个 `EditorToolbar`。
 
-The outer `Border` named `PART_Chrome` is required — `EditorSelectionFlyout` uses it to distinguish the chrome from the surrounding shadow gutter when handling dismiss events.
+外层那个名为 `PART_Chrome` 的 `Border` 是必需的——`EditorSelectionFlyout` 在处理关闭事件时，靠它把浮层主体与周围的阴影留白区分开来。
 
-This example shows a minimal mini-bar that only provides basic text formatting options.
+下面这个例子是一条极简的迷你工具条，只提供最基本的文本格式选项。
 
 <Image light={CustomMiniBarMinimal} position="center" cornerRadius="true" alt="A custom selection mini-bar with only Bold, Italic, and Underline toggles."/>
 <br />
@@ -894,39 +894,39 @@ This example shows a minimal mini-bar that only provides basic text formatting o
 </RichTextEditor>
 ```
 
-Some recommendations:
+几点建议：
 
-- Apply the `EditorMiniBarChrome` style class to the surrounding `Border` for the default rounded, shadowed appearance.
-- Keep the set of tools small. The mini-bar should complement the main toolbar, not duplicate it.
+- 给外层的 `Border` 套上 `EditorMiniBarChrome` 样式类，即可获得默认的圆角加阴影外观。
+- 工具要少而精。迷你工具条应当是主工具栏的补充，而不是它的翻版。
 
-### Disabling the mini-bar
+### 关闭迷你工具条 {#disabling-the-mini-bar}
 
-Within the `<RichTextEditor>` XAML tags, set `SelectionFlyout` to `{x:Null}` to turn it off entirely.
+在 `<RichTextEditor>` 的 XAML 标签内把 `SelectionFlyout` 设为 `{x:Null}`，即可彻底关掉它。
 
 ```xml
 <RichTextEditor SelectionFlyout="{x:Null}" />
 ```
 
-## Default context menu
+## 默认上下文菜单 {#default-context-menu}
 
-The contextual menu that opens when right-clicking within the text editor is the `EditorContextMenu` — a `MenuFlyout` subclass attached to `RichTextEditor.ContextFlyout`.
+在文本编辑器内右键点击时弹出的那个菜单是 `EditorContextMenu`——一个附着在 `RichTextEditor.ContextFlyout` 上的 `MenuFlyout` 子类。
 
 <Image light={DefaultContextMenu} position="center" maxWidth={250} cornerRadius="true" alt="The default right-click context menu with Cut, Copy, Paste, Select All, and table operations."/>
 <br />
 
-The default context menu contains:
+默认上下文菜单包含：
 
 - Cut, Copy, Paste
 - Select All
-- Table operations (Insert/Delete row, Insert/Delete column, Merge cells, Split cell, Delete table), visible only when the caret is inside a table
-- Image operations (Replace image, Delete image), visible only on an image
-- Page band operations (Insert page number, Insert page count, Return to body), visible only inside a header or footer
+- 表格操作（插入/删除行、插入/删除列、合并单元格、拆分单元格、删除表格），仅当插入符位于表格内时可见
+- 图片操作（替换图片、删除图片），仅当落在图片上时可见
+- 页眉页脚带操作（插入页码、插入总页数、返回正文），仅在页眉或页脚内可见
 
-`EditorContextMenu` reads `TargetAreas` on each `EditorMenuItem` to hide items that do not apply to the current context. Unused separator lines left by hidden groups are also hidden automatically. Right-clicking moves the caret to the clicked position first before opening the menu. This ensures the menu opens with the correct context.
+`EditorContextMenu` 会读取每个 `EditorMenuItem` 上的 `TargetAreas`，把不适用于当前语境的项隐去。因分组隐藏而多余的分隔线也会自动隐藏。右键点击时会先把插入符移到点击位置，再打开菜单，以确保菜单带着正确的语境弹出。
 
-## Replacing the context menu
+## 替换上下文菜单 {#replacing-the-context-menu}
 
-Within the `<RichTextEditor>` XAML tags, add a `<RichTextEditor.ContextFlyout>` and specify a custom `EditorContextMenu`. To add actions to the menu, add individual tags for `<EditorMenuItem>`.
+在 `<RichTextEditor>` 的 XAML 标签内加一个 `<RichTextEditor.ContextFlyout>`，并指定自定义的 `EditorContextMenu`。要往菜单里加动作，逐个添加 `<EditorMenuItem>` 标签即可。
 
 <Image light={CustomContextMenu} position="center" maxWidth={250} cornerRadius="true" alt="A custom context menu with clipboard commands and context-sensitive table operations."/>
 <br />
@@ -957,9 +957,9 @@ Within the `<RichTextEditor>` XAML tags, add a `<RichTextEditor.ContextFlyout>` 
 </RichTextEditor>
 ```
 
-### Adding property submenus
+### 添加属性子菜单 {#adding-property-submenus}
 
-The same [specialized menu items used for overflow](#overflow-for-specialized-tools) also work in the context menu.
+[用于溢出菜单的那些特化菜单项](#overflow-for-specialized-tools)在上下文菜单里同样适用。
 
 <Image light={CustomContextMenuSpecialized} position="center" maxWidth={250} cornerRadius="true" alt="A custom context menu with specialized submenus for font family, text color, and alignment."/>
 <br />
@@ -980,32 +980,32 @@ The same [specialized menu items used for overflow](#overflow-for-specialized-to
 </EditorContextMenu>
 ```
 
-### Disabling the context menu
+### 关闭上下文菜单 {#disabling-the-context-menu}
 
-Within the `<RichTextEditor>` XAML tags, set `ContextFlyout` to `{x:Null}` to turn it off entirely.
+在 `<RichTextEditor>` 的 XAML 标签内把 `ContextFlyout` 设为 `{x:Null}`，即可彻底关掉它。
 
 ```xml
 <RichTextEditor ContextFlyout="{x:Null}" />
 ```
 
-## Theming and styling
+## 主题与样式 {#theming-and-styling}
 
-Toolbar visuals are controlled through dynamic resources and style classes. You can override default settings at the application level, the window level, or on an individual `EditorToolbar`.
+工具栏的视觉效果由动态资源和样式类控制。你可以在应用级、窗口级，或某个具体的 `EditorToolbar` 上覆盖默认设置。
 
-### Sizing and color resources
+### 尺寸与颜色资源 {#sizing-and-color-resources}
 
-| Resource | Default | Purpose |
+| 资源 | 默认值 | 用途 |
 |---|---|---|
-| `EditorToolbarToolHeight` | 30 | Tool button height. |
-| `EditorToolbarToolMinWidth` | 28 | Minimum tool button width. |
-| `EditorToolbarToolPadding` | 6,4 | Internal padding of tool buttons. |
-| `EditorToolbarButtonCornerRadius` | 6 | Corner radius of tool buttons. |
-| `EditorToolbarToolOpacity` | 0.9 | Tool opacity. |
-| `EditorToolbarSeparatorHeight` | 18 | Separator line height. |
-| `EditorToolbarSubtleBorderBrush` | Theme | Separator and subtle border color. |
-| `EditorToolbarPointerOverBackgroundBrush` | Theme | Hover background color. |
-| `EditorToolbarCheckedBackgroundBrush` | Theme | Active/checked background color. |
-| `EditorToolbarDisabledForegroundBrush` | Theme | Disabled foreground color. |
+| `EditorToolbarToolHeight` | 30 | 工具按钮高度。 |
+| `EditorToolbarToolMinWidth` | 28 | 工具按钮最小宽度。 |
+| `EditorToolbarToolPadding` | 6,4 | 工具按钮的内边距。 |
+| `EditorToolbarButtonCornerRadius` | 6 | 工具按钮的圆角半径。 |
+| `EditorToolbarToolOpacity` | 0.9 | 工具的不透明度。 |
+| `EditorToolbarSeparatorHeight` | 18 | 分隔线高度。 |
+| `EditorToolbarSubtleBorderBrush` | Theme | 分隔线及浅边框的颜色。 |
+| `EditorToolbarPointerOverBackgroundBrush` | Theme | 悬停时的背景色。 |
+| `EditorToolbarCheckedBackgroundBrush` | Theme | 激活/选中时的背景色。 |
+| `EditorToolbarDisabledForegroundBrush` | Theme | 禁用时的前景色。 |
 
 #### Example
 
@@ -1027,17 +1027,17 @@ Toolbar visuals are controlled through dynamic resources and style classes. You 
 </Application.Resources>
 ```
 
-### Style classes
+### 样式类 {#style-classes}
 
-| Class | Applies to | Effect |
+| 类 | 适用于 | 效果 |
 |---|---|---|
-| `ToolbarTool` | `Button`, `ToggleButton`, `SplitButton` | Standard toolbar button sizing, transparency, hover/checked/disabled visuals, transitions. Apply when embedding a stock button inside an `EditorToolbar` so it blends with surrounding tools. |
-| `AreaAware` | `ToolbarGroup`, `ToggleTool`, `SeparatorTool`, `TablePickerTool`, `AlignmentFlyoutTool`, and other `EditorTool` subclasses | Binds the active target area from the ancestor `EditorToolbar` and optionally drives `IsVisible`. Required on `ToolbarGroup` for contextual visibility to work. |
-| `EditorMiniBarChrome` | `Border` | Compact rounded-border, drop-shadow appearance used by the default selection mini-bar. |
+| `ToolbarTool` | `Button`, `ToggleButton`, `SplitButton` | 标准工具按钮的尺寸、透明度，以及悬停/选中/禁用状态的视觉效果和过渡动画。当你把一个普通按钮嵌进 `EditorToolbar` 时套用它，可以让按钮与周围的工具浑然一体。 |
+| `AreaAware` | `ToolbarGroup`、`ToggleTool`、`SeparatorTool`、`TablePickerTool`、`AlignmentFlyoutTool` 以及 `EditorTool` 的其他子类 | 从祖先 `EditorToolbar` 绑定当前活动的目标区域，并可选地驱动 `IsVisible`。要让语境可见性生效，`ToolbarGroup` 上必须加它。 |
+| `EditorMiniBarChrome` | `Border` | 默认选区迷你工具条所用的紧凑圆角边框加投影外观。 |
 
 #### Example
 
-Add a plain `Button` to the toolbar without it looking out of place.
+往工具栏里加一个普通的 `Button`，又不显得突兀。
 
 ```xml
 <EditorToolbar>
@@ -1050,9 +1050,9 @@ Add a plain `Button` to the toolbar without it looking out of place.
 </EditorToolbar>
 ```
 
-### Targeted styles
+### 精确定向的样式 {#targeted-styles}
 
-For precise control, write a style selector that targets a specific element within the toolbar.
+若要精细控制，可以写一个选择器，直接定向到工具栏内部的某个具体元素。
 
 ```xml
 <Style Selector="EditorToolbar > ToolbarGroup > ToggleTool">
@@ -1060,9 +1060,9 @@ For precise control, write a style selector that targets a specific element with
 </Style>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [RichTextEditor reference](/controls/input/text-input/richtexteditor)
+- [RichTextEditor 参考](/controls/input/text-input/richtexteditor)
 - [Extension Patterns](/controls/input/text-input/richtexteditor/extension-patterns)
 - [Performance Tuning](/controls/input/text-input/richtexteditor/performance-tuning)
 - [Troubleshooting RichTextEditor](/troubleshooting/controls/richtexteditor)

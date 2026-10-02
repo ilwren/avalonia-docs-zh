@@ -1,6 +1,6 @@
 ---
 id: virtualkeyboard-control
-title: VirtualKeyboard control reference
+title: VirtualKeyboard 控件参考
 tags:
   - avalonia pro
   - avalonia enterprise
@@ -8,26 +8,26 @@ tags:
 
 import VirtualKeyboardStyles from '/img/avalonia-pro/virtual-keyboard/styles.png';
 
-The `VirtualKeyboard` is a standalone control that provides an on-screen keyboard. This control can be manually placed in your application's layout. Unlike `VirtualKeyboardScope`, which automatically manages keyboard visibility based on focus, `VirtualKeyboard` is explicitly directed at a specific target input element.
+`VirtualKeyboard` 是一个独立的屏幕键盘控件，可以手动摆进应用布局中。`VirtualKeyboardScope` 会根据焦点自动管理键盘的显示隐藏，`VirtualKeyboard` 则不同——它明确指向某个特定的目标输入元素。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Overview
+## 概述 {#overview}
 
-`VirtualKeyboard` gives you direct control over keyboard placement and behavior. It sends input directly to its designated target, regardless of which control has input focus. This makes it useful for specialized input scenarios where automatic focus-based keyboard display is inappropriate.
+`VirtualKeyboard` 让你直接掌控键盘的位置和行为。不管焦点落在哪个控件上，它都把输入直接送给自己指定的目标。因此，当「随焦点自动弹出键盘」并不合适时，它就派上用场了。
 
-## Properties
+## 属性 {#properties}
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |----------|------|-------------|
-| `Target` | `IInputElement` | Gets or sets the input element to receive keystrokes from the keyboard. |
-| `InputMethods` | `IEnumerable<VirtualKeyboardInputMethod>` | Gets or sets the collection of input methods available to users. |
+| `Target` | `IInputElement` | 获取或设置接收键盘按键的输入元素。 |
+| `InputMethods` | `IEnumerable<VirtualKeyboardInputMethod>` | 获取或设置可供用户使用的输入法集合。 |
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
-### Minimal implementation
+### 最简实现 {#minimal-implementation}
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -40,7 +40,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 </Window>
 ```
 
-### Multiple input methods
+### 多种输入法 {#multiple-input-methods}
 
 ```xml
 <StackPanel>
@@ -50,7 +50,7 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
 </StackPanel>
 ```
 
-### Code-behind configuration
+### 在代码隐藏中配置 {#code-behind-configuration}
 
 ```csharp
 // Get input methods for specific languages using SelectMany + ToList
@@ -69,9 +69,9 @@ var keyboard = new VirtualKeyboard
 myContainer.Children.Add(keyboard);
 ```
 
-## Working with `TextInputOptions`
+## 配合 `TextInputOptions` 使用 {#working-with-textinputoptions}
 
-`TextInputOptions` attached properties can be applied to the target element to customize keyboard behavior:
+`TextInputOptions` 附加属性可以加在目标元素上，用来定制键盘行为：
 
 ```xml
 <StackPanel>
@@ -84,74 +84,74 @@ myContainer.Children.Add(keyboard);
 </StackPanel>
 ```
 
-## When to use `VirtualKeyboard` vs. `VirtualKeyboardScope`
+## `VirtualKeyboard` 与 `VirtualKeyboardScope` 怎么选 {#when-to-use-virtualkeyboard-vs-virtualkeyboardscope}
 
-### Choose VirtualKeyboard when:
+### 这些情况下选 VirtualKeyboard： {#choose-virtualkeyboard-when}
 
-- **Fixed target**: You need the keyboard to always target a specific input control, regardless of focus.
-- **Specialized input**: You're building a custom input experience where focus doesn't drive the keyboard target.
+- **目标固定**：无论焦点在哪，你都要让键盘始终指向某个特定的输入控件。
+- **特殊输入场景**：你在打造自定义的输入体验，键盘目标并不由焦点决定。
 
-### Choose VirtualKeyboardScope when:
+### 这些情况下选 VirtualKeyboardScope： {#choose-virtualkeyboardscope-when}
 
-- **Standard input**: You want the keyboard to follow focus automatically.
-- **Simpler integration**: You prefer a container-based approach with fewer configuration options.
-- **Automatic visibility**: You want automatic show/hide behavior based on focus changes.
+- **常规输入**：你希望键盘自动跟随焦点。
+- **集成更省事**：你更喜欢基于容器、配置项更少的方案。
+- **自动显隐**：你希望键盘随焦点变化自动显示和隐藏。
 
-## Best practices
+## 实践建议 {#best-practices}
 
-1. **Set a valid target.**
-   - Always set the `Target` property to a valid input element that can receive keystrokes.
-   - If the target is invalid, the keyboard input will have nowhere to go.
+1. **设好有效的目标。**
+   - 务必把 `Target` 属性设为一个能接收按键的有效输入元素。
+   - 目标无效时，键盘的输入就无处可去了。
 
-2. **Place the keyboard with care.**
-   - Position the keyboard where it won't obscure important content, typically at the bottom of the screen.
-   - `VirtualKeyboard` doesn't automatically manage content scrolling, unlike `VirtualKeyboardScope`, so you may need to handle scrolling or layout adjustments yourself.
+2. **摆放键盘要讲究。**
+   - 把键盘放在不会遮挡重要内容的位置，通常是屏幕底部。
+   - 与 `VirtualKeyboardScope` 不同，`VirtualKeyboard` 不会自动打理内容滚动，因此滚动或布局调整可能需要你自己处理。
 
-3. **Choose relevant input methods.**
-   - Choose input methods appropriate for your target audience.
-   - For international applications, include layouts for all supported regions.
+3. **挑选合适的输入法。**
+   - 选择与目标用户相称的输入法。
+   - 面向国际化的应用，请把所有支持地区的布局都带上。
 
-4. **Minimize memory usage.**
-   - If creating keyboards dynamically, remember to remove them from the visual tree when no longer needed.
+4. **控制内存占用。**
+   - 若是动态创建键盘，用完后记得把它从视觉树中移除。
 
-5. **Design a responsive layout.**
-   - Plan your layout to accommodate the keyboard's space requirements.
-   - Consider using a [`Grid`](/controls/layout/panels/grid) with row definitions to allocate space for the keyboard.
+5. **做好自适应布局。**
+   - 规划布局时要给键盘预留出位置。
+   - 可以考虑用带行定义的 [`Grid`](/controls/layout/panels/grid) 为键盘划出空间。
 
 ## Styling
 
-`VirtualKeyboard` is styled via named resources. You can override these resources in your application to customize the appearance of keyboard elements.
+`VirtualKeyboard` 的样式通过具名资源来设定。你可以在应用中覆盖这些资源，以定制键盘各部分的外观。
 
-### Customizable resources
+### 可定制的资源 {#customizable-resources}
 
 <Image light={VirtualKeyboardStyles} maxWidth={400} alignment="center" />
 
-Below is a list of resources you can override in your theme or resource dictionary:
+下面列出你可以在主题或资源字典中覆盖的资源：
 
-| Key | Type | Default |
+| 按键 | 类型 | 默认值 |
 |---|---|---|
-| `KeyboardActionButtonBackground` | Brush | `Goldenrod` | 
-| `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` | 
-| `KeyboardButtonBackground` | Brush | `GhostWhite` | 
-| `KeyboardButtonBackgroundPressed` | Brush | `FloralWhite` | 
-| `KeyboardButtonBorderBrush` | Brush | `Black` | 
+| `KeyboardActionButtonBackground` | Brush | `Goldenrod` |
+| `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` |
+| `KeyboardButtonBackground` | Brush | `GhostWhite` |
+| `KeyboardButtonBackgroundPressed` | Brush | `FloralWhite` |
+| `KeyboardButtonBorderBrush` | Brush | `Black` |
 | `KeyboardButtonFontSize` | Double | `24` |
-| `KeyboardButtonForeground` | Brush | `Black` | 
-| `KeyboardFunctionalButtonBackground` | Brush | `LightSteelBlue` | 
-| `KeyboardFunctionalButtonBackgroundPressed` | Brush | `LightBlue` | 
-| `KeyboardPaneBackground` | Brush | `DarkGray` | 
+| `KeyboardButtonForeground` | Brush | `Black` |
+| `KeyboardFunctionalButtonBackground` | Brush | `LightSteelBlue` |
+| `KeyboardFunctionalButtonBackgroundPressed` | Brush | `LightBlue` |
+| `KeyboardPaneBackground` | Brush | `DarkGray` |
 | `KeyboardPanePadding` | Thickness |  `4` |
-| `KeyboardPopupKeySelectedBackground` | Brush | `PaleTurquoise` | 
+| `KeyboardPopupKeySelectedBackground` | Brush | `PaleTurquoise` |
 
-### How to override
+### 如何覆盖 {#how-to-override}
 
-To customize, define these resources in your application theme or resource dictionary. For example:
+要定制外观，请在应用主题或资源字典中定义这些资源。例如：
 
 ```xml
 <SolidColorBrush x:Key="KeyboardButtonForeground" Color="#FF0000" />
 ```
 
-### Example: Custom theme
+### 示例：自定义主题 {#example-custom-theme}
 
 ```xml
 <ResourceDictionary>
@@ -161,9 +161,9 @@ To customize, define these resources in your application theme or resource dicti
 </ResourceDictionary>
 ```
 
-## Input methods
+## 输入法 {#input-methods}
 
-| Identifier | Description | Notes |
+| 标识符 | 说明 | 注释支持情况 |
 | --- | --- | --- |
 |`af:kbd:standard` | Afrikaans | |
 |`ar:kbd:standard` | Arabic | |
@@ -242,11 +242,11 @@ To customize, define these resources in your application theme or resource dicti
 |`uz-UZ:kbd:standard` | Uzbek (Uzbekistan) | |
 |`vi:kbd:standard` | Vietnamese | |
 |`zu:kbd:standard` | Zulu | |
-|`zh:ime:rime` | Chinese (RIME) | Requires the `Avalonia.Controls.VirtualKeyboard.Ime.Rime` plugin package. |
+|`zh:ime:rime` | Chinese (RIME) | 需要 `Avalonia.Controls.VirtualKeyboard.Ime.Rime` 插件包。 |
 
-## RIME input method engine
+## RIME 输入法引擎 {#rime-input-method-engine}
 
-The [RIME](https://rime.im/) input method engine provides Chinese text input (Pinyin and more). It is distributed as a separate plugin package that bundles native binaries and schema data.
+[RIME](https://rime.im/) 输入法引擎提供中文输入（拼音等）。它以独立插件包的形式分发，内含原生二进制文件和方案数据。
 
 ### Installing RIME
 
@@ -254,11 +254,11 @@ The [RIME](https://rime.im/) input method engine provides Chinese text input (Pi
 dotnet add package Avalonia.Controls.VirtualKeyboard.Ime.Rime
 ```
 
-This package includes the RIME native binary for all supported platforms and the Luna Pinyin schema data.
+该包囊括了所有受支持平台的 RIME 原生二进制文件，以及朙月拼音（Luna Pinyin）方案数据。
 
 ### Enabling RIME
 
-Call `WithVirtualKeyboardRimePlugin()` on your `AppBuilder` and ensure `DataPath` is set in `VirtualKeyboardOptions`:
+在你的 `AppBuilder` 上调用 `WithVirtualKeyboardRimePlugin()`，并确保 `VirtualKeyboardOptions` 中已设置 `DataPath`：
 
 ```csharp
 using Avalonia.Controls;
@@ -277,10 +277,10 @@ public static AppBuilder BuildAvaloniaApp()
 ```
 
 :::warning
-`VirtualKeyboardOptions.DataPath` is **required** when using RIME. This path specifies a writable directory where RIME stores user dictionaries and compiled schema data. If `DataPath` is not set, the application will throw an `InvalidOperationException` at startup.
+使用 RIME 时**必须**设置 `VirtualKeyboardOptions.DataPath`。该路径指向一个可写目录，RIME 会把用户词典和编译后的方案数据存放在那里。若未设置 `DataPath`，应用启动时会抛出 `InvalidOperationException`。
 :::
 
-### Using RIME in XAML
+### 在 XAML 中使用 RIME {#using-rime-in-xaml}
 
 ```xml
 <VirtualKeyboardScope InputMethods="en-US:kbd:standard, zh:ime:rime">
@@ -290,6 +290,6 @@ public static AppBuilder BuildAvaloniaApp()
 </VirtualKeyboardScope>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [VirtualKeyboardScope](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope): A container control that automatically manages keyboard visibility,
+- [VirtualKeyboardScope](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope)：容器控件，可自动管理键盘的显示隐藏，

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EglPlatformImageSurfaceRenderTargetBase Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.OpenGL.Egl</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.OpenGL.Egl</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.OpenGL</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.OpenGL</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglGlPlatformImageSurfaceBase.cs">EglGlPlatformImageSurfaceBase.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglGlPlatformImageSurfaceBase.cs">EglGlPlatformImageSurfaceBase.cs</a>
 </div>
 </div>
 
@@ -54,37 +54,37 @@ public class EglPlatformImageSurfaceRenderTargetBase
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglPlatformImageSurfaceRenderTargetBase
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglPlatformImageSurfaceRenderTargetBase
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../surfaces/iglplatformsurfacerendertarget">IGlPlatformSurfaceRenderTarget</a>, <a href="../../platform/surfaces/iplatformrendersurfacerendertarget">IPlatformRenderSurfaceRenderTarget</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../surfaces/iglplatformsurfacerendertarget">IGlPlatformSurfaceRenderTarget</a>, <a href="../../platform/surfaces/iplatformrendersurfacerendertarget">IPlatformRenderSurfaceRenderTarget</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BeginDraw](#uid-7782dd1215) | No summary available. |
-| [BeginDrawCore](#uid-a5d6fa044a) | No summary available. |
+| [BeginDraw](#uid-7782dd1215) | 暂无摘要。 |
+| [BeginDrawCore](#uid-a5d6fa044a) | 暂无摘要。 |
 | [Dispose](#uid-96947caaf5) | Destroys the cached framebuffer and texture, if any. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7782dd1215"></span>
 
-### BeginDraw Method
+### BeginDraw 方法 {#begindraw-method}
 
 ```csharp
 public Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession BeginDraw(RenderTargetSceneInfo sceneInfo)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `sceneInfo` RenderTargetSceneInfo
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession](xref:Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession)
 
@@ -95,18 +95,18 @@ public Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession BeginDraw(Ren
 
 <span id="uid-a5d6fa044a"></span>
 
-### BeginDrawCore Method
+### BeginDrawCore 方法 {#begindrawcore-method}
 
 ```csharp
 public Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession BeginDrawCore(RenderTargetSceneInfo sceneInfo)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `sceneInfo` RenderTargetSceneInfo
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession](xref:Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession)
 
@@ -117,7 +117,7 @@ public Avalonia.OpenGL.Surfaces.IGlPlatformSurfaceRenderingSession BeginDrawCore
 
 <span id="uid-96947caaf5"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 Destroys the cached framebuffer and texture, if any.
 
@@ -127,9 +127,9 @@ public void Dispose()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsCorrupted](#uid-b4bd614e19) | Gets a value indicating whether the underlying GL context has been lost. |
 | [State](#uid-ad4c559df0) | Gets the render target state: [Avalonia.Platform.PlatformRenderTargetState.Corrupted](xref:Avalonia.Platform.PlatformRenderTargetState.Corrupted) when [Avalonia.OpenGL.Egl.EglPlatformImageSurfaceRenderTargetBase.IsCorrupted](xref:Avalonia.OpenGL.Egl.EglPlatformImageSurfaceRenderTargetBase.IsCorrupted) is `true`, otherwise [Avalonia.Platform.PlatformRenderTargetState.Ready](xref:Avalonia.Platform.PlatformRenderTargetState.Ready). |
@@ -138,7 +138,7 @@ public void Dispose()
 
 <span id="uid-b4bd614e19"></span>
 
-### IsCorrupted Property
+### IsCorrupted 属性 {#iscorrupted-property}
 
 Gets a value indicating whether the underlying GL context has been lost.
 
@@ -152,7 +152,7 @@ public bool IsCorrupted { get; set; }
 
 <span id="uid-ad4c559df0"></span>
 
-### State Property
+### State 属性 {#state-property}
 
 Gets the render target state: [Avalonia.Platform.PlatformRenderTargetState.Corrupted](xref:Avalonia.Platform.PlatformRenderTargetState.Corrupted) when
 [Avalonia.OpenGL.Egl.EglPlatformImageSurfaceRenderTargetBase.IsCorrupted](xref:Avalonia.OpenGL.Egl.EglPlatformImageSurfaceRenderTargetBase.IsCorrupted) is `true`, otherwise [Avalonia.Platform.PlatformRenderTargetState.Ready](xref:Avalonia.Platform.PlatformRenderTargetState.Ready).

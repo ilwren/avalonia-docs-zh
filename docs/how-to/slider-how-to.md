@@ -1,15 +1,15 @@
 ---
 id: slider-how-to
-title: "How to: Work with Slider"
-description: "Learn how to configure Slider ranges, display values, add tick marks, set orientation, and bind to view models in Avalonia UI."
+title: "操作指南：使用 Slider"
+description: "学会在 Avalonia UI 中配置 Slider 的取值范围、显示数值、添加刻度、设置朝向，以及绑定到视图模型。"
 doc-type: how-to
 ---
 
-This guide covers common [`Slider`](/api/avalonia/controls/slider) scenarios including range configuration, value display, tick marks, vertical orientation, and two-way data binding.
+本指南介绍 [`Slider`](/api/avalonia/controls/slider) 的常见场景，包括范围配置、数值显示、刻度线、纵向朝向以及双向数据绑定。
 
-## Basic slider with value display
+## 带数值显示的基本滑块 {#basic-slider-with-value-display}
 
-You can show the current value alongside the slider by binding a `TextBlock` to the slider's `Value` property. The `StringFormat` markup lets you control how the number appears:
+把 `TextBlock` 绑定到滑块的 `Value` 属性，就能在滑块旁边显示当前值。用 `StringFormat` 标记可以控制数字的呈现方式：
 
 ```xml
 <StackPanel Spacing="8">
@@ -18,11 +18,11 @@ You can show the current value alongside the slider by binding a `TextBlock` to 
 </StackPanel>
 ```
 
-The `#slider` syntax references the control by its `x:Name`. This approach is useful for quick prototypes, but for production code you should prefer binding through a view model.
+`#slider` 语法按 `x:Name` 引用控件。这种写法适合快速搭原型，但生产代码还是应当通过视图模型来绑定。
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
-For proper separation of concerns, bind `Value` to a property on your view model. The binding is two-way by default for `Slider`, so changes from either the UI or your code stay in sync:
+为了把关注点分清楚，请把 `Value` 绑定到视图模型的属性。`Slider` 的绑定默认就是双向的，所以无论改动来自界面还是代码，两边都能保持同步：
 
 ```csharp
 public partial class SettingsViewModel : ObservableObject
@@ -37,12 +37,12 @@ public partial class SettingsViewModel : ObservableObject
 ```
 
 :::tip
-If you need to react when the value changes (for example, to save a preference), add a partial method such as `OnBrightnessChanged` in your view model. The MVVM Toolkit source generator creates it automatically.
+若你想在值变化时作出响应（比如保存某项偏好设置），可以在视图模型里加一个 `OnBrightnessChanged` 之类的分部方法，MVVM Toolkit 的源生成器会自动把它造出来。
 :::
 
-## Tick marks and snapping
+## 刻度线与吸附 {#tick-marks-and-snapping}
 
-Use `TickFrequency` with `IsSnapToTickEnabled` to restrict values to discrete steps. This is especially helpful when your domain requires round numbers (volume levels, percentage increments, star ratings):
+用 `TickFrequency` 配合 `IsSnapToTickEnabled` 可以把取值限制在离散的档位上。当你的业务需要整数时（音量档位、百分比增量、星级评分），这尤其有用：
 
 ```xml
 <!-- Snaps to multiples of 10 -->
@@ -52,22 +52,22 @@ Use `TickFrequency` with `IsSnapToTickEnabled` to restrict values to discrete st
         TickPlacement="BottomRight" />
 ```
 
-[`TickPlacement`](/api/avalonia/controls/tickplacement) options:
+[`TickPlacement`](/api/avalonia/controls/tickplacement) 的取值：
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
-| `None` | No tick marks (default). |
-| `TopLeft` | Ticks above (horizontal) or left (vertical). |
-| `BottomRight` | Ticks below (horizontal) or right (vertical). |
-| `Outside` | Ticks on both sides. |
+| `None` | 不显示刻度线（默认）。 |
+| `TopLeft` | 刻度在上方（横向）或左侧（纵向）。 |
+| `BottomRight` | 刻度在下方（横向）或右侧（纵向）。 |
+| `Outside` | 两侧都显示刻度。 |
 
 :::note
-Setting `TickFrequency` without `IsSnapToTickEnabled="True"` draws tick marks but still allows the user to drag to any value between them. Always pair the two properties when you want constrained input.
+只设 `TickFrequency` 而不设 `IsSnapToTickEnabled="True"`，刻度线会画出来，但用户仍可拖到刻度之间的任意值。想要约束输入，这两个属性必须成对使用。
 :::
 
-## Small and large change
+## 小步长与大步长 {#small-and-large-change}
 
-`SmallChange` and `LargeChange` control how much the value moves per keyboard or track interaction. Adjust these when the default increments are too coarse or too fine for your range:
+`SmallChange` 和 `LargeChange` 决定键盘操作或点击轨道时数值移动多少。若默认增量对你的取值范围来说太粗或太细，就调整它们：
 
 ```xml
 <Slider Minimum="0" Maximum="1" Value="0.5"
@@ -75,16 +75,16 @@ Setting `TickFrequency` without `IsSnapToTickEnabled="True"` draws tick marks bu
         LargeChange="0.1" />
 ```
 
-| Property | Trigger | Default |
+| 属性 | 触发方式 | 默认值 |
 |---|---|---|
-| `SmallChange` | Arrow keys | 1 |
-| `LargeChange` | Clicking the track or pressing Page Up / Page Down | 10 |
+| `SmallChange` | 方向键 | 1 |
+| `LargeChange` | 点击轨道，或按 Page Up / Page Down | 10 |
 
-For a slider with a small range (for example, 0 to 1), you should lower both values so that keyboard users can reach all meaningful positions.
+若滑块的范围很小（比如 0 到 1），你应当把这两个值都调小，好让键盘用户也能停到每一个有意义的位置上。
 
-## Vertical slider
+## 纵向滑块 {#vertical-slider}
 
-Set the [`Orientation`](/api/avalonia/layout/orientation) property to `Vertical`. You should also set an explicit `Height` so the slider does not collapse:
+把 [`Orientation`](/api/avalonia/layout/orientation) 属性设为 `Vertical`。你还应当显式设置 `Height`，免得滑块被压扁：
 
 ```xml
 <Slider Orientation="Vertical" Height="200"
@@ -92,12 +92,12 @@ Set the [`Orientation`](/api/avalonia/layout/orientation) property to `Vertical`
 ```
 
 :::tip
-When you use a vertical slider, `TopLeft` tick marks appear on the left and `BottomRight` tick marks appear on the right. Set `IsDirectionReversed="True"` if you want the minimum value at the top instead of the bottom.
+使用纵向滑块时，`TopLeft` 的刻度出现在左侧，`BottomRight` 的刻度出现在右侧。若希望最小值在顶部而非底部，请设置 `IsDirectionReversed="True"`。
 :::
 
-## Integer-only slider
+## 只取整数的滑块 {#integer-only-slider}
 
-To restrict a slider to whole numbers, set `TickFrequency` to `1` and enable snapping. This prevents fractional values from reaching your view model:
+要把滑块限制为整数，请把 `TickFrequency` 设为 `1` 并启用吸附，这样小数值就不会跑进你的视图模型：
 
 ```xml
 <Slider Minimum="1" Maximum="10"
@@ -106,11 +106,11 @@ To restrict a slider to whole numbers, set `TickFrequency` to `1` and enable sna
         Value="{Binding FontSizeChoice}" />
 ```
 
-Because `Value` is typed as `double`, your view model property should also be `double`. If you need an `int` in your domain logic, convert it after binding (for example, with `(int)Math.Round(value)`).
+由于 `Value` 的类型是 `double`，你的视图模型属性也应当是 `double`。若业务逻辑里需要 `int`，请在绑定之后再转换（比如用 `(int)Math.Round(value)`）。
 
-## Slider with labels
+## 带标签的滑块 {#slider-with-labels}
 
-Show min/max labels on either side of the slider using a `Grid`. This helps users understand the range at a glance:
+用 `Grid` 在滑块两侧显示最小值和最大值标签，用户一眼就能看明白取值范围：
 
 ```xml
 <Grid ColumnDefinitions="Auto,*,Auto" VerticalAlignment="Center">
@@ -122,11 +122,11 @@ Show min/max labels on either side of the slider using a `Grid`. This helps user
 </Grid>
 ```
 
-You can also bind the label text to the same `Minimum` and `Maximum` properties on the slider if you set those values dynamically.
+若这些值是动态设定的，你也可以把标签文字绑定到滑块上同样的 `Minimum` 和 `Maximum` 属性。
 
-## Color preview slider
+## 颜色预览滑块 {#color-preview-slider}
 
-Combine multiple sliders for an RGB color picker. Each slider controls one channel (0 to 255) and displays its current value:
+把多个滑块组合起来，做一个 RGB 调色器。每个滑块控制一个通道（0 到 255）并显示当前值：
 
 ```xml
 <StackPanel Spacing="8">
@@ -148,11 +148,11 @@ Combine multiple sliders for an RGB color picker. Each slider controls one chann
 </StackPanel>
 ```
 
-For a smoother experience, consider setting `SmallChange="1"` and `LargeChange="16"` on each slider so that keyboard increments match typical color-editing workflows.
+为了让体验更顺手，不妨给每个滑块设上 `SmallChange="1"` 和 `LargeChange="16"`，让键盘增量契合调色时的常见操作。
 
-## Disabled and read-only states
+## 禁用状态与只读状态 {#disabled-and-read-only-states}
 
-You can prevent user interaction with a slider in two ways:
+有两种办法可以阻止用户与滑块交互：
 
 ```xml
 <!-- Fully disabled: grayed-out appearance -->
@@ -162,13 +162,13 @@ You can prevent user interaction with a slider in two ways:
 <Slider IsHitTestVisible="False" Value="{Binding Progress}" />
 ```
 
-Use `IsEnabled="False"` when you want to communicate visually that the control is unavailable. Use `IsHitTestVisible="False"` when you want the slider to look normal but act as a read-only indicator (for example, displaying download progress).
+若想在视觉上表明控件暂不可用，就用 `IsEnabled="False"`；若希望滑块看上去如常、但只作只读指示（比如显示下载进度），则用 `IsHitTestVisible="False"`。
 
-## Styling the slider
+## 为滑块设置样式 {#styling-the-slider}
 
-### Custom track and thumb colors
+### 自定义轨道与滑块颜色 {#custom-track-and-thumb-colors}
 
-You can override the track color by targeting the template parts inside the slider. The `PART_DecreaseButton` fills the area before the thumb:
+写样式指向滑块内部的模板部件，即可改写轨道颜色。`PART_DecreaseButton` 负责填充滑块手柄之前的那一段：
 
 ```xml
 <Slider Value="50">
@@ -180,9 +180,9 @@ You can override the track color by targeting the template parts inside the slid
 </Slider>
 ```
 
-### Wider track
+### 更粗的轨道 {#wider-track}
 
-Increase the track height for a bolder appearance or to make touch targets easier to hit:
+调高轨道高度，既显得更醒目，也更容易点中：
 
 ```xml
 <Slider.Styles>
@@ -193,27 +193,27 @@ Increase the track height for a bolder appearance or to make touch targets easie
 ```
 
 :::note
-Template part names such as `PART_DecreaseButton` and `PART_IncreaseButton` are defined by the default Fluent theme. If you use a custom control template, your part names may differ.
+`PART_DecreaseButton`、`PART_IncreaseButton` 这些模板部件名由默认的 Fluent 主题定义。若你用的是自定义控件模板，部件名可能不同。
 :::
 
-## Key properties reference
+## 关键属性速查 {#key-properties-reference}
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Minimum` | `double` | Lower bound. Default: 0. |
-| `Maximum` | `double` | Upper bound. Default: 100. |
-| `Value` | `double` | Current value. |
-| `SmallChange` | `double` | Arrow key increment. Default: 1. |
-| `LargeChange` | `double` | Track click or Page key increment. Default: 10. |
-| `TickFrequency` | `double` | Spacing between tick marks. |
-| `IsSnapToTickEnabled` | `bool` | Snap value to nearest tick. |
-| `TickPlacement` | `TickPlacement` | Where to draw tick marks. |
-| `Orientation` | `Orientation` | `Horizontal` (default) or `Vertical`. |
-| `IsDirectionReversed` | `bool` | Reverse the direction of increasing value. |
+| `Minimum` | `double` | 下界，默认值：0。 |
+| `Maximum` | `double` | 上界，默认值：100。 |
+| `Value` | `double` | 当前值。 |
+| `SmallChange` | `double` | 方向键的增量，默认值：1。 |
+| `LargeChange` | `double` | 点击轨道或按 Page 键时的增量，默认值：10。 |
+| `TickFrequency` | `double` | 刻度线之间的间隔。 |
+| `IsSnapToTickEnabled` | `bool` | 把取值吸附到最近的刻度。 |
+| `TickPlacement` | `TickPlacement` | 刻度线画在哪一侧。 |
+| `Orientation` | `Orientation` | `Horizontal`（默认）或 `Vertical`。 |
+| `IsDirectionReversed` | `bool` | 反转数值增大的方向。 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Slider](/controls/input/selectors/slider): Full property and event reference for the `Slider` control.
-- [Binding to controls](/docs/data-binding/binding-to-controls): Bind one control's property to another using `#name` syntax.
-- [Data validation](/docs/app-development/data-validation): Add validation rules to slider-bound properties.
-- [Accessibility](/docs/app-development/accessibility): Keyboard and screen-reader considerations for interactive controls.
+- [Slider](/controls/input/selectors/slider)：`Slider` 控件的完整属性与事件参考。
+- [绑定到控件](/docs/data-binding/binding-to-controls)：用 `#name` 语法把一个控件的属性绑定到另一个控件。
+- [数据校验](/docs/app-development/data-validation)：为滑块绑定的属性加上校验规则。
+- [无障碍](/docs/app-development/accessibility)：可交互控件在键盘和屏幕阅读器方面的注意事项。

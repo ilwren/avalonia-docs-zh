@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridColumnHeadersPresenter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class TreeDataGridColumnHeadersPresenter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> TreeDataGridColumnarPresenterBase&lt;TreeDataGridColumn&gt; <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridColumnHeadersPresenter
+<span className="apiref-page__meta-label">继承关系：</span> TreeDataGridColumnarPresenterBase&lt;TreeDataGridColumn&gt; <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridColumnHeadersPresenter
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../logicaltree/ichildindexprovider">IChildIndexProvider</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../logicaltree/ichildindexprovider">IChildIndexProvider</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [TreeDataGridColumnHeadersPresenter](xref:Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter) is responsible for creating, recycling, and arranging
 column headers horizontally at the top of a [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid). It handles the virtualization of
@@ -68,17 +68,17 @@ This presenter coordinates with the [Avalonia.Controls.TreeDataGridColumns](xref
 widths, measurement, and layout. It also handles column resizing by committing the actual
 column widths during arrangement.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridColumnHeadersPresenter](#uid-d80143b8aa) | No summary available. |
+| [TreeDataGridColumnHeadersPresenter](#uid-d80143b8aa) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d80143b8aa"></span>
 
-### TreeDataGridColumnHeadersPresenter Constructor
+### TreeDataGridColumnHeadersPresenter 构造函数 {#treedatagridcolumnheaderspresenter-constructor}
 
 ```csharp
 public TreeDataGridColumnHeadersPresenter()
@@ -86,18 +86,18 @@ public TreeDataGridColumnHeadersPresenter()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetChildIndex](#uid-22f07cee90) | Gets the index of a logical child element. |
-| [TryGetTotalCount](#uid-a72570dfae) | No summary available. |
+| [TryGetTotalCount](#uid-a72570dfae) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-22f07cee90"></span>
 
-### GetChildIndex Method
+### GetChildIndex 方法 {#getchildindex-method}
 
 Gets the index of a logical child element.
 
@@ -105,21 +105,21 @@ Gets the index of a logical child element.
 public int GetChildIndex(Avalonia.LogicalTree.ILogical child)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `child` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
 The logical child element.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 int
 
 The index of the child element, or -1 if the element is not a column header or is not found.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This method is part of the [Avalonia.LogicalTree.IChildIndexProvider](xref:Avalonia.LogicalTree.IChildIndexProvider) interface implementation,
 which allows the presenter to provide indices for its logical children.
@@ -130,61 +130,61 @@ which allows the presenter to provide indices for its logical children.
 
 <span id="uid-a72570dfae"></span>
 
-### TryGetTotalCount Method
+### TryGetTotalCount 方法 {#trygettotalcount-method}
 
 ```csharp
 public bool TryGetTotalCount(int& count)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `count` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FrozenColumnCount](#uid-b18c4d654f) | Gets or sets the number of frozen columns. |
+| [FrozenColumnCount](#uid-b18c4d654f) | 获取或设置冻结列的数量。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b18c4d654f"></span>
 
-### FrozenColumnCount Property
+### FrozenColumnCount 属性 {#frozencolumncount-property}
 
-Gets or sets the number of frozen columns.
+获取或设置冻结列的数量。
 
 ```csharp
 public int FrozenColumnCount { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-Frozen columns do not scroll horizontally and remain visible at all times.
+冻结列不会随水平滚动而移动，始终保持可见。
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FrozenColumnCountProperty](#uid-8a2e566f56) | Defines the [Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount](xref:Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount) property. |
+| [FrozenColumnCountProperty](#uid-8a2e566f56) | 定义 [Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount](xref:Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount) 属性。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8a2e566f56"></span>
 
-### FrozenColumnCountProperty Field
+### FrozenColumnCountProperty 字段 {#frozencolumncountproperty-field}
 
-Defines the [Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount](xref:Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount) property.
+定义 [Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount](xref:Avalonia.Controls.Primitives.TreeDataGridColumnHeadersPresenter.FrozenColumnCount) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<int> FrozenColumnCountProperty
@@ -192,25 +192,25 @@ public Avalonia.StyledProperty<int> FrozenColumnCountProperty
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ChildIndexChanged](#uid-a869eb1c83) | Occurs when the index of a child element in the presenter changes. |
+| [ChildIndexChanged](#uid-a869eb1c83) | 呈现器中某个子元素的索引发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a869eb1c83"></span>
 
-### ChildIndexChanged Event
+### ChildIndexChanged 事件 {#childindexchanged-event}
 
-Occurs when the index of a child element in the presenter changes.
+呈现器中某个子元素的索引发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.LogicalTree.ChildIndexChangedEventArgs> ChildIndexChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 This event is raised when column headers are realized, unrealized, or when their
 indices change due to column insertions or removals.

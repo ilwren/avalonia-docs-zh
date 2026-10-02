@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DispatcherTimer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Threading</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Threading</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/DispatcherTimer.cs">DispatcherTimer.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/DispatcherTimer.cs">DispatcherTimer.cs</a>
 </div>
 
 </div>
@@ -55,25 +55,25 @@ public class DispatcherTimer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DispatcherTimer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DispatcherTimer
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DispatcherTimer (6 overloads)](#uid-c83de3d8be) | Creates a timer that uses [Avalonia.Threading.Dispatcher.CurrentDispatcher](xref:Avalonia.Threading.Dispatcher.CurrentDispatcher) to process the timer event at background priority. |
 
 <span id="uid-c83de3d8be"></span>
 
-### DispatcherTimer overloads
+### DispatcherTimer 的重载 {#dispatchertimer-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-fc899f7790"></span>
 
-#### DispatcherTimer Constructor
+#### DispatcherTimer 构造函数 {#dispatchertimer-constructor}
 
 Creates a timer that uses [Avalonia.Threading.Dispatcher.CurrentDispatcher](xref:Avalonia.Threading.Dispatcher.CurrentDispatcher) to
 process the timer event at background priority.
@@ -88,7 +88,7 @@ public DispatcherTimer()
 
 <span id="uid-d116c72116"></span>
 
-#### DispatcherTimer Constructor
+#### DispatcherTimer 构造函数 {#dispatchertimer-constructor-1}
 
 Creates a timer that uses [Avalonia.Threading.Dispatcher.CurrentDispatcher](xref:Avalonia.Threading.Dispatcher.CurrentDispatcher) to
 process the timer event at the specified priority.
@@ -97,11 +97,11 @@ process the timer event at the specified priority.
 public DispatcherTimer(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
-The priority to process the timer at.
+处理该计时器所用的优先级。
 
 
 </section>
@@ -110,7 +110,7 @@ The priority to process the timer at.
 
 <span id="uid-866d558367"></span>
 
-#### DispatcherTimer Constructor
+#### DispatcherTimer 构造函数 {#dispatchertimer-constructor-2}
 
 Creates a timer that uses the specified [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher) to
 process the timer event at the specified priority.
@@ -119,16 +119,16 @@ process the timer event at the specified priority.
 public DispatcherTimer(Avalonia.Threading.DispatcherPriority priority, Avalonia.Threading.Dispatcher dispatcher)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
-The priority to process the timer at.
+处理该计时器所用的优先级。
 
 
 `dispatcher` [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher)
 
-The dispatcher to use to process the timer.
+用来处理该计时器的 dispatcher。
 
 
 </section>
@@ -137,7 +137,7 @@ The dispatcher to use to process the timer.
 
 <span id="uid-9038078464"></span>
 
-#### DispatcherTimer Constructor
+#### DispatcherTimer 构造函数 {#dispatchertimer-constructor-3}
 
 Creates a timer that uses the specified [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher) to
 process the timer event at the specified priority after the specified timeout.
@@ -146,21 +146,21 @@ process the timer event at the specified priority after the specified timeout.
 public DispatcherTimer(TimeSpan interval, Avalonia.Threading.DispatcherPriority priority, Avalonia.Threading.Dispatcher dispatcher)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `interval` TimeSpan
 
-The interval to tick the timer after.
+计时器每隔多久触发一次。
 
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
-The priority to process the timer at.
+处理该计时器所用的优先级。
 
 
 `dispatcher` [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher)
 
-The dispatcher to use to process the timer.
+用来处理该计时器的 dispatcher。
 
 
 </section>
@@ -169,7 +169,7 @@ The dispatcher to use to process the timer.
 
 <span id="uid-d98cffe166"></span>
 
-#### DispatcherTimer Constructor
+#### DispatcherTimer 构造函数 {#dispatchertimer-constructor-4}
 
 Creates a timer that uses the specified [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher) to
 process the timer event at the specified priority after the specified timeout and with
@@ -179,21 +179,21 @@ the specified handler.
 public DispatcherTimer(TimeSpan interval, Avalonia.Threading.DispatcherPriority priority, Avalonia.Threading.Dispatcher dispatcher, EventHandler callback)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `interval` TimeSpan
 
-The interval to tick the timer after.
+计时器每隔多久触发一次。
 
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
-The priority to process the timer at.
+处理该计时器所用的优先级。
 
 
 `dispatcher` [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher)
 
-The dispatcher to use to process the timer.
+用来处理该计时器的 dispatcher。
 
 
 `callback` EventHandler
@@ -201,7 +201,7 @@ The dispatcher to use to process the timer.
 The callback to call when the timer ticks.
 
 
-##### Remarks
+##### 备注 {#remarks}
 
 This constructor immediately starts the timer.
 
@@ -211,7 +211,7 @@ This constructor immediately starts the timer.
 
 <span id="uid-97fafa82a4"></span>
 
-#### DispatcherTimer Constructor
+#### DispatcherTimer 构造函数 {#dispatchertimer-constructor-5}
 
 Creates a timer that uses [Avalonia.Threading.Dispatcher.CurrentDispatcher](xref:Avalonia.Threading.Dispatcher.CurrentDispatcher) to
 process the timer event at the specified priority after the specified timeout and with
@@ -221,16 +221,16 @@ the specified handler.
 public DispatcherTimer(TimeSpan interval, Avalonia.Threading.DispatcherPriority priority, EventHandler callback)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `interval` TimeSpan
 
-The interval to tick the timer after.
+计时器每隔多久触发一次。
 
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
-The priority to process the timer at.
+处理该计时器所用的优先级。
 
 
 `callback` EventHandler
@@ -238,32 +238,32 @@ The priority to process the timer at.
 The callback to call when the timer ticks.
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
 This constructor immediately starts the timer.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Run](#uid-2b5f5f961d) | No summary available. |
+| [Run](#uid-2b5f5f961d) | 暂无摘要。 |
 | [RunOnce](#uid-67b1f4f56d) | Runs a method once, after the specified interval. |
-| [Start](#uid-54f94d09c4) | Starts the timer. |
-| [Stop](#uid-a33fed7146) | Stops the timer. |
+| [Start](#uid-54f94d09c4) | 启动该计时器。 |
+| [Stop](#uid-a33fed7146) | 停止该计时器。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2b5f5f961d"></span>
 
-### Run Method
+### Run 方法 {#run-method}
 
 ```csharp
 public IDisposable Run(Func<bool> action, TimeSpan interval, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `action` Func&lt;bool&gt;
 
@@ -274,7 +274,7 @@ public IDisposable Run(Func<bool> action, TimeSpan interval, Avalonia.Threading.
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 IDisposable
 
@@ -285,7 +285,7 @@ IDisposable
 
 <span id="uid-67b1f4f56d"></span>
 
-### RunOnce Method
+### RunOnce 方法 {#runonce-method}
 
 Runs a method once, after the specified interval.
 
@@ -293,7 +293,7 @@ Runs a method once, after the specified interval.
 public IDisposable RunOnce(Action action, TimeSpan interval, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `action` Action
 
@@ -310,7 +310,7 @@ The interval after which to call the method.
 The priority to use.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 IDisposable
 
@@ -323,9 +323,9 @@ An [IDisposable](xref:System.IDisposable) used to cancel the timer.
 
 <span id="uid-54f94d09c4"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
-Starts the timer.
+启动该计时器。
 
 ```csharp
 public void Start()
@@ -337,9 +337,9 @@ public void Start()
 
 <span id="uid-a33fed7146"></span>
 
-### Stop Method
+### Stop 方法 {#stop-method}
 
-Stops the timer.
+停止该计时器。
 
 ```csharp
 public void Stop()
@@ -347,9 +347,9 @@ public void Stop()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Dispatcher](#uid-15af505ee6) | Gets the dispatcher this timer is associated with. |
 | [Interval](#uid-dfa363fbd7) | Gets or sets the time between timer ticks. |
@@ -360,7 +360,7 @@ public void Stop()
 
 <span id="uid-15af505ee6"></span>
 
-### Dispatcher Property
+### Dispatcher 属性 {#dispatcher-property}
 
 Gets the dispatcher this timer is associated with.
 
@@ -374,7 +374,7 @@ public Avalonia.Threading.Dispatcher Dispatcher { get; set; }
 
 <span id="uid-dfa363fbd7"></span>
 
-### Interval Property
+### Interval 属性 {#interval-property}
 
 Gets or sets the time between timer ticks.
 
@@ -388,7 +388,7 @@ public TimeSpan Interval { get; set; }
 
 <span id="uid-b8bf5f8e8d"></span>
 
-### IsEnabled Property
+### IsEnabled 属性 {#isenabled-property}
 
 Gets or sets whether the timer is running.
 
@@ -402,7 +402,7 @@ public bool IsEnabled { get; set; }
 
 <span id="uid-dbb68dcdf3"></span>
 
-### Tag Property
+### Tag 属性 {#tag-property}
 
 Any data that the caller wants to pass along with the timer.
 
@@ -412,9 +412,9 @@ public object Tag { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Tick](#uid-1ce5b2923e) | Occurs when the specified timer interval has elapsed and the timer is enabled. |
 
@@ -422,7 +422,7 @@ public object Tag { get; set; }
 
 <span id="uid-1ce5b2923e"></span>
 
-### Tick Event
+### Tick 事件 {#tick-event}
 
 Occurs when the specified timer interval has elapsed and the
 timer is enabled.

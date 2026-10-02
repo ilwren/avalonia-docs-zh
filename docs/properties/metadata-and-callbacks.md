@@ -1,33 +1,33 @@
 ---
 id: metadata-and-callbacks
-title: Metadata and callbacks
+title: 元数据与回调
 ---
 
-Every Avalonia property has associated metadata that controls its default value, binding behavior, and optional coercion logic. You can specify metadata when registering a property and override it for derived types.
+每个 Avalonia 属性都带有一份元数据，用来控制它的默认值、绑定行为以及可选的强制转换逻辑。你可以在注册属性时指定元数据，也可以在派生类型中覆盖它。
 
-## Styled property metadata
+## 样式化属性的元数据 {#styled-property-metadata}
 
-The `StyledPropertyMetadata<T>` class controls the behavior of styled properties:
+`StyledPropertyMetadata<T>` 类控制着样式化属性的行为：
 
-| Parameter | Type | Description |
+| 参数 | 类型 | 说明 |
 |---|---|---|
-| `defaultValue` | `T` | The default value for the property. Used when no other value source provides a value. |
-| `defaultBindingMode` | `BindingMode` | The binding mode used when a binding does not specify one explicitly. |
-| `coerce` | `Func<AvaloniaObject, T, T>?` | A callback that can adjust or constrain the property value before it is applied. |
-| `enableDataValidation` | `bool` | Whether the property participates in data validation. |
+| `defaultValue` | `T` | 属性的默认值。当没有任何其他取值来源提供值时使用它。 |
+| `defaultBindingMode` | `BindingMode` | 绑定未显式指定模式时所采用的绑定模式。 |
+| `coerce` | `Func<AvaloniaObject, T, T>?` | 一个回调，可在取值生效前对其进行调整或施加约束。 |
+| `enableDataValidation` | `bool` | 该属性是否参与数据校验。 |
 
-## Default values
+## 默认值 {#default-values}
 
-Specify a default value when registering a property:
+注册属性时指定默认值：
 
 ```csharp
 public static readonly StyledProperty<double> OpacityProperty =
     AvaloniaProperty.Register<MyControl, double>(nameof(Opacity), defaultValue: 1.0);
 ```
 
-### Overriding default values
+### 覆盖默认值 {#overriding-default-values}
 
-A derived control can change the default value of an inherited property:
+派生控件可以改变继承而来的属性的默认值：
 
 ```csharp
 public class MySpecialButton : Button
@@ -40,7 +40,7 @@ public class MySpecialButton : Button
 }
 ```
 
-You can also supply full metadata when overriding:
+覆盖时也可以提供一整份元数据：
 
 ```csharp
 static MySpecialButton()
@@ -51,12 +51,12 @@ static MySpecialButton()
 ```
 
 :::caution
-Metadata overrides must be registered in the static constructor of the type. Overriding metadata after any instance of the type has been created results in undefined behavior.
+元数据的覆盖必须在类型的静态构造函数中注册。若在该类型已有实例创建之后再覆盖元数据，行为是未定义的。
 :::
 
-## Value coercion
+## 取值强制转换 {#value-coercion}
 
-A coercion callback adjusts the property value before it is stored. This is useful for enforcing constraints, such as clamping a number to a valid range.
+强制转换回调会在取值被存储之前对其进行调整。要施加约束时（比如把数字夹到合法区间内）这很有用。
 
 ```csharp
 public static readonly StyledProperty<double> ProgressProperty =
@@ -78,11 +78,11 @@ public double Progress
 }
 ```
 
-The coercion callback receives the `AvaloniaObject` instance and the proposed value, and returns the adjusted value. Coercion runs every time the effective value changes, regardless of the value source (local, style, animation, and similar).
+强制转换回调会收到 `AvaloniaObject` 实例和待设置的值，并返回调整后的值。只要有效值发生变化，无论来源是本地值、样式还是动画，强制转换都会执行一次。
 
-### Triggering re-coercion
+### 触发重新强制转换 {#triggering-re-coercion}
 
-If your coercion logic depends on another property, you can trigger re-coercion when that other property changes:
+若你的强制转换逻辑依赖另一个属性，可以在那个属性变化时触发一次重新强制转换：
 
 ```csharp
 protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -97,9 +97,9 @@ protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs chang
 }
 ```
 
-## Value validation
+## 取值校验 {#value-validation}
 
-A validation callback rejects values that are never valid for a property. Unlike coercion, validation does not adjust the value. It returns `true` to accept or `false` to reject. Invalid values throw an exception.
+校验回调用于拒绝那些对该属性永远不合法的取值。与强制转换不同，校验并不调整取值，而是返回 `true` 表示接受、返回 `false` 表示拒绝。非法取值会抛出异常。
 
 ```csharp
 public static readonly StyledProperty<int> ColumnSpanProperty =
@@ -115,17 +115,17 @@ public int ColumnSpan
 }
 ```
 
-Setting `ColumnSpan` to `0` or a negative number will throw an exception.
+把 `ColumnSpan` 设为 `0` 或负数都会抛出异常。
 
 :::info
-Validation is set once at registration time and cannot be overridden per type. Use coercion when you need per-type or instance-dependent value adjustment.
+校验只在注册时设定一次，不能按类型覆盖。若需要按类型或按实例来调整取值，请改用强制转换。
 :::
 
-## Responding to property changes
+## 响应属性变化 {#responding-to-property-changes}
 
 ### Override `OnPropertyChanged`
 
-The most common way to respond to property changes in a custom control:
+在自定义控件中响应属性变化，最常见的写法是：
 
 ```csharp
 protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -143,7 +143,7 @@ protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs chang
 
 ### `GetObservable`
 
-Subscribe to changes on a specific object from external code:
+从外部代码订阅某个具体对象上的变化：
 
 ```csharp
 myControl.GetObservable(MyControl.IsExpandedProperty)
@@ -153,9 +153,9 @@ myControl.GetObservable(MyControl.IsExpandedProperty)
     });
 ```
 
-### Class handlers
+### 类处理程序 {#class-handlers}
 
-Register a handler that fires for all instances of a type. This is typically done in a static constructor:
+注册一个对该类型所有实例都生效的处理程序，通常写在静态构造函数里：
 
 ```csharp
 static MyControl()
@@ -172,17 +172,17 @@ private void OnIsExpandedChanged(AvaloniaPropertyChangedEventArgs args)
 }
 ```
 
-## Direct property metadata
+## 直接属性的元数据 {#direct-property-metadata}
 
-Direct properties use `DirectPropertyMetadata<T>`:
+直接属性使用 `DirectPropertyMetadata<T>`：
 
-| Parameter | Type | Description |
+| 参数 | 类型 | 说明 |
 |---|---|---|
-| `unsetValue` | `T` | The value used when the property is cleared. This serves as the effective default for direct properties. |
-| `defaultBindingMode` | `BindingMode` | The default binding mode. |
-| `enableDataValidation` | `bool` | Whether the property participates in data validation. |
+| `unsetValue` | `T` | 属性被清除时所采用的值。对直接属性而言，它就是实际意义上的默认值。 |
+| `defaultBindingMode` | `BindingMode` | 默认绑定模式。 |
+| `enableDataValidation` | `bool` | 该属性是否参与数据校验。 |
 
-Direct properties do not support coercion or value validation through metadata. Implement these checks in the CLR property setter instead:
+直接属性不支持通过元数据做强制转换或取值校验，请把这些检查写在 CLR 属性的 setter 里：
 
 ```csharp
 private int _retryCount;
@@ -199,8 +199,8 @@ public int RetryCount
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Property system overview](/docs/properties): Overview of property types and registration.
-- [Value precedence](/docs/properties/value-precedence): How the property system resolves values from multiple sources.
-- [Property value inheritance](/docs/properties/property-value-inheritance): How values propagate down the tree.
+- [属性系统总览](/docs/properties)：属性种类与注册方式总览。
+- [取值优先级](/docs/properties/value-precedence)：属性系统如何在多个来源之间裁决取值。
+- [属性值继承](/docs/properties/property-value-inheritance)：取值如何沿树向下传播。

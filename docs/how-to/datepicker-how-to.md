@@ -1,29 +1,29 @@
 ---
 id: datepicker-how-to
-title: "How to: Work with Date and Time Pickers"
-description: Bind dates, format display, validate input, and configure date ranges with Avalonia pickers.
+title: "操作指南：使用日期和时间选择器"
+description: 用 Avalonia 的各种选择器绑定日期、格式化显示、校验输入并限定日期范围。
 doc-type: how-to
 ---
 
-This guide covers DatePicker, TimePicker, CalendarDatePicker, and Calendar patterns: binding dates, formatting, validation, and date ranges.
+本指南介绍 DatePicker、TimePicker、CalendarDatePicker 与 Calendar 的用法：绑定日期、格式化、校验以及日期范围。
 
 ## DatePicker Basics
 
-The `DatePicker` uses spinner controls for day, month, and year selection:
+`DatePicker` 用微调控件来选择日、月、年：
 
 ```xml
 <DatePicker />
 ```
 
-### Setting an initial date
+### 设置初始日期 {#setting-an-initial-date}
 
-Date properties must be set in code (not XAML attributes) because there is no built-in string-to-DateTimeOffset converter:
+日期属性必须在代码中设置（不能写成 XAML 特性），因为没有内置的字符串到 DateTimeOffset 的转换器：
 
 ```csharp
 myDatePicker.SelectedDate = new DateTimeOffset(new DateTime(2025, 6, 15));
 ```
 
-Or bind to a view model property:
+或者绑定到视图模型的属性：
 
 ```csharp
 [ObservableProperty]
@@ -36,7 +36,7 @@ private DateTimeOffset? _birthDate;
 
 ## Custom Date Formats
 
-Control how each part of the date displays:
+控制日期各部分的显示方式：
 
 ```xml
 <!-- Show abbreviated day name -->
@@ -49,9 +49,9 @@ Control how each part of the date displays:
 <DatePicker YearFormat="yyyy" />
 ```
 
-Common format strings:
+常用格式字符串：
 
-| Format | Output example |
+| 格式 | 输出示例 |
 |---|---|
 | `d` | 5 |
 | `dd` | 05 |
@@ -66,7 +66,7 @@ Common format strings:
 
 ## Hiding Date Parts
 
-Show only the fields you need:
+只显示你需要的字段：
 
 ```xml
 <!-- Month and year only (no day) -->
@@ -78,13 +78,13 @@ Show only the fields you need:
 
 ## TimePicker
 
-The `TimePicker` provides hour and minute spinners:
+`TimePicker` 提供小时和分钟的微调框：
 
 ```xml
 <TimePicker />
 ```
 
-### 12-hour vs 24-hour clock
+### 12 小时制与 24 小时制 {#12-hour-vs-24-hour-clock}
 
 ```xml
 <!-- 12-hour with AM/PM -->
@@ -94,14 +94,14 @@ The `TimePicker` provides hour and minute spinners:
 <TimePicker ClockIdentifier="24HourClock" />
 ```
 
-### Minute increments
+### 分钟步进 {#minute-increments}
 
 ```xml
 <!-- 15-minute intervals -->
 <TimePicker MinuteIncrement="15" />
 ```
 
-### Binding the selected time
+### 绑定选中的时间 {#binding-the-selected-time}
 
 ```csharp
 [ObservableProperty]
@@ -114,23 +114,23 @@ private TimeSpan? _alarmTime;
 
 ## CalendarDatePicker
 
-The `CalendarDatePicker` shows a text field that opens a full calendar dropdown:
+`CalendarDatePicker` 显示一个文本框，点开后弹出完整的日历下拉面板：
 
 ```xml
 <CalendarDatePicker PlaceholderText="Select a date"
                     SelectedDate="{Binding EventDate}" />
 ```
 
-### Display format
+### 显示格式 {#display-format}
 
 ```xml
 <CalendarDatePicker DisplayFormat="yyyy-MM-dd"
                     SelectedDate="{Binding EventDate}" />
 ```
 
-### Blackout dates
+### 禁选日期 {#blackout-dates}
 
-Disable specific dates from selection:
+禁止选择特定日期：
 
 ```csharp
 calendarDatePicker.BlackoutDates.Add(
@@ -139,14 +139,14 @@ calendarDatePicker.BlackoutDates.Add(
 
 ## Calendar Control
 
-The `Calendar` displays a full month view for inline date selection:
+`Calendar` 直接显示整月视图，方便就地选日期：
 
 ```xml
 <Calendar SelectedDate="{Binding SelectedDate}"
           SelectionMode="SingleDate" />
 ```
 
-### Selection modes
+### 选择模式 {#selection-modes}
 
 ```xml
 <!-- Single date -->
@@ -162,7 +162,7 @@ The `Calendar` displays a full month view for inline date selection:
 <Calendar SelectionMode="None" />
 ```
 
-### Display modes
+### 显示模式 {#display-modes}
 
 ```xml
 <!-- Show month view (default) -->
@@ -175,16 +175,16 @@ The `Calendar` displays a full month view for inline date selection:
 <Calendar DisplayMode="Decade" />
 ```
 
-### Date range limits
+### 日期范围限制 {#date-range-limits}
 
-Restrict the navigable date range:
+限定可浏览的日期范围：
 
 ```xml
 <Calendar DisplayDateStart="2025-01-01"
           DisplayDateEnd="2025-12-31" />
 ```
 
-### Blackout dates in code
+### 在代码中设置禁选日期 {#blackout-dates-in-code}
 
 ```csharp
 // Block weekends
@@ -197,7 +197,7 @@ for (var date = startDate; date <= endDate; date = date.AddDays(1))
 
 ## Date Validation
 
-Validate that a selected date is within an acceptable range:
+校验选中的日期是否落在允许的范围内：
 
 ```csharp
 public partial class BookingViewModel : ObservableValidator
@@ -216,9 +216,9 @@ public partial class BookingViewModel : ObservableValidator
 }
 ```
 
-## Date Formatting in Display
+## 显示时的日期格式化 {#date-formatting-in-display}
 
-Show the selected date formatted in a TextBlock:
+在 TextBlock 中显示格式化后的选中日期：
 
 ```xml
 <StackPanel Spacing="8">
@@ -227,9 +227,9 @@ Show the selected date formatted in a TextBlock:
 </StackPanel>
 ```
 
-## Combining Date and Time
+## 把日期和时间组合起来 {#combining-date-and-time}
 
-Use both pickers together for a complete datetime:
+两个选择器搭配使用，凑成完整的日期时间：
 
 ```xml
 <StackPanel Orientation="Horizontal" Spacing="12">
@@ -238,7 +238,7 @@ Use both pickers together for a complete datetime:
 </StackPanel>
 ```
 
-Combine them in the view model:
+在视图模型中把它们合到一起：
 
 ```csharp
 public DateTime? CombinedDateTime
@@ -258,27 +258,27 @@ public DateTime? CombinedDateTime
 
 ### DatePicker
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `SelectedDate` | `DateTimeOffset?` | The selected date. |
-| `DayVisible` | `bool` | Show/hide the day spinner. |
-| `MonthVisible` | `bool` | Show/hide the month spinner. |
-| `YearVisible` | `bool` | Show/hide the year spinner. |
-| `DayFormat` | `string` | Format for the day display. |
-| `MonthFormat` | `string` | Format for the month display. |
-| `YearFormat` | `string` | Format for the year display. |
+| `SelectedDate` | `DateTimeOffset?` | 选中的日期。 |
+| `DayVisible` | `bool` | 显示或隐藏「日」微调框。 |
+| `MonthVisible` | `bool` | 显示或隐藏「月」微调框。 |
+| `YearVisible` | `bool` | 显示或隐藏「年」微调框。 |
+| `DayFormat` | `string` | 「日」的显示格式。 |
+| `MonthFormat` | `string` | 「月」的显示格式。 |
+| `YearFormat` | `string` | 「年」的显示格式。 |
 
 ### TimePicker
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `SelectedTime` | `TimeSpan?` | The selected time. |
+| `SelectedTime` | `TimeSpan?` | 选中的时间。 |
 | `ClockIdentifier` | `string` | `"12HourClock"` or `"24HourClock"`. |
-| `MinuteIncrement` | `int` | Step size for the minute spinner. |
+| `MinuteIncrement` | `int` | 「分钟」微调框的步长。 |
 
 ## See Also
 
-- [DatePicker Control Reference](/controls/input/date-and-time/datepicker): Property tables.
-- [TimePicker Control Reference](/controls/input/date-and-time/timepicker): Time selection control.
-- [Calendar Control Reference](/controls/input/date-and-time/calendar): Full calendar display.
-- [Data Validation](/docs/data-binding/binding-validation): Validating bound values.
+- [DatePicker 控件参考](/controls/input/date-and-time/datepicker)：属性表。
+- [TimePicker 控件参考](/controls/input/date-and-time/timepicker)：时间选择控件。
+- [Calendar 控件参考](/controls/input/date-and-time/calendar)：完整的日历显示。
+- [数据校验](/docs/data-binding/binding-validation)：校验绑定的值。

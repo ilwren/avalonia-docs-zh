@@ -1,21 +1,21 @@
 ---
 id: templated-controls
-title: Templated controls
-description: Build lookless templated controls with control themes, template parts, and pseudo-classes.
+title: 模板化控件
+description: 用控件主题、模板部件和伪类打造无外观的模板化控件。
 doc-type: how-to
 ---
 
-Templated controls contain no rendering code in the control class. Instead, their appearance is defined by a [`ControlTemplate`](/api/avalonia/markup/xaml/templates/controltemplate). This separates the control's visual structure from its behavior, allowing developers and designers to restyle the control without modifying its logic.
+模板化控件的控件类里没有任何渲染代码，它的外观由 [`ControlTemplate`](/api/avalonia/markup/xaml/templates/controltemplate) 定义。这把控件的视觉结构与行为分了家，于是开发者和设计师无需改动逻辑就能给控件换装。
 
-If you are familiar with WPF, these are sometimes called "lookless" controls.
+熟悉 WPF 的话你会知道，这类控件有时被称作「无外观（lookless）」控件。
 
-Many of Avalonia's built-in controls are templated controls (e.g., `Button`, `TextBox`, and `ListBox`). You can follow the same pattern to build your own.
+Avalonia 许多内置控件都是模板化控件（比如 `Button`、`TextBox` 和 `ListBox`）。你照着同样的路子就能写出自己的。
 
-## Creating a templated control
+## 编写一个模板化控件 {#creating-a-templated-control}
 
-To create a templated control, add a new control class that inherits from `TemplatedControl` and register your custom properties using `StyledProperty`.
+要做模板化控件，新建一个继承自 `TemplatedControl` 的控件类，并用 `StyledProperty` 注册你的自定义属性。
 
-The following example is a templated control with a `LabelText` property, but no visual representation.
+下面这个例子是一个带 `LabelText` 属性、但还没有视觉呈现的模板化控件。
 
 ```csharp
 public class ToggleLabel : TemplatedControl
@@ -31,15 +31,15 @@ public class ToggleLabel : TemplatedControl
 }
 ```
 
-:::caution Do not set DataContext = this
-Never assign `DataContext = this` in a custom control's constructor. This overrides the `DataContext` that your users expect to inherit from the parent visual tree. Bindings set on your control, such as `<MyControl Items="{Binding SelectedItems}" />`, will resolve against the control type instead of the parent's `ViewModel`, causing silent binding failures.
+:::caution 不要设置 DataContext = this
+千万别在自定义控件的构造函数里给 `DataContext = this` 赋值。这么做会盖掉使用者本指望从父级视觉树继承下来的 `DataContext`。于是设在你控件上的绑定（比如 `<MyControl Items="{Binding SelectedItems}" />`）会去控件类型上找，而不是父级的 `ViewModel`，导致绑定悄无声息地失败。
 
-Templated controls do not need a self-referencing `DataContext`. Use [`TemplateBinding`](#templatebinding) inside your control template to access your control's properties, and let the `DataContext` flow from the parent.
+模板化控件根本不需要自引用的 `DataContext`。在控件模板内部用 [`TemplateBinding`](#templatebinding) 访问控件自身的属性，`DataContext` 则让它从父级自然流下来。
 :::
 
-## Defining the control theme
+## 定义控件主题 {#defining-the-control-theme}
 
-Every templated control must have a default `ControlTheme` that contains its `ControlTemplate`. This control theme is typically specified in a theme file, which can included in your application resources in `App.axaml` using `ResourceInclude`.
+每个模板化控件都必须有一个包含其 `ControlTemplate` 的默认 `ControlTheme`。这个控件主题通常写在一个主题文件里，再用 `ResourceInclude` 引入 `App.axaml` 中的应用资源。
 
 ```xml title="App.axaml"
 <Application.Resources>
@@ -55,20 +55,20 @@ Every templated control must have a default `ControlTheme` that contains its `Co
 </Application.Resources>
 ```
 
-Notes:
+几点说明：
 
-- `x:Key="{x:Type local:ToggleLabel}"` instructs Avalonia to apply the default theme to all instances of `ToggleLabel`.
-- To add an alternative look that you can apply to selected instances of the control, add a string key, e.g., `x:Key="CompactToggleLabel"`. Individual instances of `ToggleLabel` can then use the alternative by setting `Theme="{StaticResource CompactToggleLabel}"`. See [control theme lookup](/docs/styling/control-themes#control-theme-lookup) for more information.
-- `TargetType` scopes the theme, so that property setters and template bindings resolve against the correct type.
-- Inside the `ControlTemplate`, use [`TemplateBinding`](/api/avalonia/data/templatebinding) to bind to properties on the templated control.
+- `x:Key="{x:Type local:ToggleLabel}"` 告诉 Avalonia：把这个默认主题套用到 `ToggleLabel` 的所有实例上。
+- 若想加一套可供部分实例选用的备选外观，给它加个字符串键，比如 `x:Key="CompactToggleLabel"`。这样个别 `ToggleLabel` 实例只要设置 `Theme="{StaticResource CompactToggleLabel}"` 就能换上这套外观。详见[控件主题查找](/docs/styling/control-themes#control-theme-lookup)。
+- `TargetType` 限定了主题的作用类型，好让属性 setter 和模板绑定都针对正确的类型解析。
+- 在 `ControlTemplate` 内部，用 [`TemplateBinding`](/api/avalonia/data/templatebinding) 绑定到模板化控件上的属性。
 
-## Template parts
+## 模板部件 {#template-parts}
 
-Sometimes, a templated control needs to interact with specific elements in its template from code. You can specify these elements by defining them as [`TemplatePart`](/api/avalonia/controls/metadata/templatepartattribute). By convention, template parts are named with the `PART_` prefix.
+有时模板化控件需要在代码中操作模板里的某些特定元素。把这些元素定义成[`TemplatePart`](/api/avalonia/controls/metadata/templatepartattribute)即可。按惯例，模板部件的名字以 `PART_` 为前缀。
 
-### Declaring parts
+### 声明部件 {#declaring-parts}
 
-Apply the [`TemplatePart`](/api/avalonia/controls/metadata/templatepartattribute) attribute to the control class. Create one `TemplatePart` for each element that should be recognized as an individual part.
+给控件类加上 [`TemplatePart`](/api/avalonia/controls/metadata/templatepartattribute) 特性：每个要被识别为独立部件的元素，都写一条 `TemplatePart`。
 
 ```csharp
 [TemplatePart("PART_Button", typeof(Button), IsRequired = true)]
@@ -79,26 +79,26 @@ public class ToggleLabel : TemplatedControl
 }
 ```
 
-Each declaration carries three values:
+每条声明包含三项内容：
 
-| Value | Meaning |
+| 值 | 含义 |
 | --- | --- |
-| `Name` | `x:Name` that the element uses. Must begin with the `PART_` prefix. |
-| `Type` | Control type of the element, e.g., `Button`, `Panel`. |
-| `IsRequired` | Whether the part is mandatory for the template. Defaults to `false`. |
+| `Name` | 该元素所用的 `x:Name`，必须以 `PART_` 为前缀。 |
+| `Type` | 该元素的控件类型，比如 `Button`、`Panel`。 |
+| `IsRequired` | 该部件在模板中是否必需，默认为 `false`。 |
 
 :::note
-Declarations are inherited, so a control deriving from `ToggleLabel` would inherit its parts.
+这些声明可以继承，因此派生自 `ToggleLabel` 的控件会继承它的部件声明。
 :::
 
-### Retrieving parts in code
+### 在代码中取出部件 {#retrieving-parts-in-code}
 
-Override `OnApplyTemplate` to locate parts after the template has been applied:
+重写 `OnApplyTemplate`，在模板套用之后定位各个部件：
 
-- [`Get<T>`](/api/avalonia/controls/namescopeextensions) for a required part
-- [`Find<T>`](/api/avalonia/controls/namescopeextensions) for an optional part
+- 必需部件用 [`Get<T>`](/api/avalonia/controls/namescopeextensions)
+- 可选部件用 [`Find<T>`](/api/avalonia/controls/namescopeextensions)
 
-`Get` throws a `NotFound` exception if the target part is missing. `Find` returns `null` if the target part is missing. Both `Get` and `Find` throw an `InvalidOperation` exception if the target part is present but is incompatible with the declared control `Type`.
+目标部件缺失时，`Get` 会抛出 `NotFound` 异常，`Find` 则返回 `null`。若目标部件存在、但与声明的控件 `Type` 不匹配，`Get` 和 `Find` 都会抛出 `InvalidOperation` 异常。
 
 ```csharp
 private Button? _button;
@@ -123,12 +123,12 @@ protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
 ```
 
 :::tip
-See the [`ToggleSwitch` source code](https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ToggleSwitch.cs) for an example of both `Get<T>` and `Find<T>` in use.
+`Get<T>` 和 `Find<T>` 的用法示例，可参考 [`ToggleSwitch` 源码](https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ToggleSwitch.cs)。
 :::
 
 ## `TemplateBinding`
 
-Use `TemplateBinding` if you are creating a control template and you want to bind to the templated parent.
+如果你在写控件模板、且想绑定到模板化父级，就用 `TemplateBinding`。
 
 ```xml
 <TextBlock Name="tb" Text="{TemplateBinding Caption}"/>
@@ -137,9 +137,9 @@ Use `TemplateBinding` if you are creating a control template and you want to bin
 <TextBlock Name="tb" Text="{Binding Caption, RelativeSource={RelativeSource TemplatedParent}}"/>
 ```
 
-Although the two syntaxes are equivalent in most cases, there are four differences:
+这两种写法多数情况下等价，但有四点差别：
 
-1.  `TemplateBinding` accepts only a single property, rather than a property path. If you want to bind using a property path, you must use the longer syntax:
+1.  `TemplateBinding` 只接受单个属性，不接受属性路径。若要按属性路径绑定，就得写成更长的那种形式：
 
     ```xml
     <!-- This WON'T work -->
@@ -149,14 +149,14 @@ Although the two syntaxes are equivalent in most cases, there are four differenc
     <TextBlock Name="tb" Text="{Binding Caption.Length, RelativeSource={RelativeSource TemplatedParent}}"/>
     ```
 
-2.  `TemplateBinding` supports `OneWay` and `TwoWay` modes. `OneTime` and `OneWayToSource` modes are not supported. The default is `OneWay`. Request `TwoWay` explicitly if you need the value written back to the templated parent. (**Note:** This differs from WPF, where [`TemplateBinding` is `OneWay` only](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/templatebinding-markup-extension#remarks).)
+2.  `TemplateBinding` 支持 `OneWay` 和 `TwoWay` 两种模式，不支持 `OneTime` 和 `OneWayToSource`，默认是 `OneWay`。若需要把值写回模板化父级，请显式指定 `TwoWay`。（**注意：**这与 WPF 不同，在 WPF 中 [`TemplateBinding` 只能是 `OneWay`](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/templatebinding-markup-extension#remarks)。）
 
     ```xml
     <!-- Writes the slider's value back to the templated parent -->
     <Slider Value="{TemplateBinding Value, Mode=TwoWay}"/>
     ```
 
-3. `TemplateBinding` can only be used on a `StyledElement`. (**Warning:** If used on a property that is not a `StyledElement`, the binding fails without logging an error, and the property keeps its default value.)
+3. `TemplateBinding` 只能用在 `StyledElement` 上。（**警告：**若用在非 `StyledElement` 的属性上，绑定会失败且不记录任何错误，该属性仍保持默认值。）
 
     ```xml
     <!-- This WON'T work because GeometryDrawing is not a StyledElement -->
@@ -168,11 +168,11 @@ Although the two syntaxes are equivalent in most cases, there are four differenc
 
 ## Pseudoclasses
 
-Templated controls can expose visual states through [pseudoclasses](/api/avalonia/controls/metadata/pseudoclassesattribute). This lets theme authors style the control differently based on its state, without needing code-behind access.
+模板化控件可以通过[伪类](/api/avalonia/controls/metadata/pseudoclassesattribute)把自己的视觉状态暴露出来。于是主题作者无需接触代码隐藏，就能按控件状态分别设样式。
 
-### Declaring pseudoclasses
+### 声明伪类 {#declaring-pseudoclasses}
 
-Apply [`PseudoClasses`](/api/avalonia/controls/metadata/pseudoclassesattribute) to the control class to declare which ones your control uses. Pseudoclass names must include the leading `:`.
+给控件类加上 [`PseudoClasses`](/api/avalonia/controls/metadata/pseudoclassesattribute)，声明你的控件会用到哪些伪类。伪类名必须带上开头的 `:`。
 
 ```csharp
 [PseudoClasses(":active", ":dragging")]
@@ -182,15 +182,15 @@ public class ToggleLabel : TemplatedControl
 }
 ```
 
-### Setting pseudoclasses in code
+### 在代码中设置伪类 {#setting-pseudoclasses-in-code}
 
-Set the pseudoclass state in your control logic.
+在控件逻辑中设置伪类的状态。
 
 ```csharp
 PseudoClasses.Set(":active", isActive);
 ```
 
-Then, target the pseudoclass in your control theme. Nest the `Style` inside the `ControlTheme` so that `^` resolves to the control.
+然后在控件主题中选中这个伪类。把 `Style` 嵌在 `ControlTheme` 内部，`^` 才会解析成该控件。
 
 ```xml
 <ControlTheme x:Key="{x:Type local:ToggleLabel}" TargetType="local:ToggleLabel">
@@ -204,13 +204,13 @@ Then, target the pseudoclass in your control theme. Nest the `Style` inside the 
 </ControlTheme>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Defining properties](/docs/custom-controls/defining-properties): Add styled, direct, and attached properties to a custom control.
-- [Defining events](/docs/custom-controls/defining-events): Add routed events to a custom control.
-- [Control themes](/docs/styling/control-themes): How control themes define the appearance of a templated control.
-- [Control template walkthrough](/docs/styling/control-template-walkthrough): A worked example of a control template.
-- [Pseudoclasses](/docs/styling/pseudoclasses): How pseudoclasses expose control state to styles.
-- [Creating custom controls](/docs/custom-controls): Overview of the custom control types.
-- [`TemplatePartAttribute`](/api/avalonia/controls/metadata/templatepartattribute): API reference for declaring template parts.
-- [`PseudoClassesAttribute`](/api/avalonia/controls/metadata/pseudoclassesattribute): API reference for declaring pseudoclasses.
+- [定义属性](/docs/custom-controls/defining-properties)：为自定义控件添加样式化属性、直接属性和附加属性。
+- [定义事件](/docs/custom-controls/defining-events)：给自定义控件添加路由事件。
+- [控件主题](/docs/styling/control-themes)：控件主题如何定义模板化控件的外观。
+- [控件模板演练](/docs/styling/control-template-walkthrough)：一个完整的控件模板实例。
+- [伪类](/docs/styling/pseudoclasses)：伪类如何把控件状态暴露给样式。
+- [创建自定义控件](/docs/custom-controls)：各类自定义控件概览。
+- [`TemplatePartAttribute`](/api/avalonia/controls/metadata/templatepartattribute)：声明模板部件的 API 参考。
+- [`PseudoClassesAttribute`](/api/avalonia/controls/metadata/pseudoclassesattribute)：声明伪类的 API 参考。

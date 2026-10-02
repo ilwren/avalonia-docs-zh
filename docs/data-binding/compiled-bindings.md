@@ -1,30 +1,30 @@
 ---
 id: compiled-bindings
-title: Compiled bindings
-description: Use compiled bindings for compile-time validation and improved performance in Avalonia XAML.
+title: 编译绑定
+description: 使用编译绑定，在 Avalonia XAML 中获得编译期校验和更好的性能。
 doc-type: how-to
 ---
 
-Avalonia uses compiled bindings by default (as of [version 12](/docs/avalonia12-breaking-changes)) to access requested properties in the view model. Compiled bindings offer the following benefits:
+Avalonia 默认使用编译绑定（自[版本 12](/docs/avalonia12-breaking-changes) 起）来访问视图模型中的目标属性。编译绑定有这些好处：
 
-* If the property you bind to is not found, you get a compile-time error to aid debugging.
-* Reflection is known to be slow. Compiled bindings can improve the performance of your application.
+* 绑定的属性不存在时，你会直接拿到一个编译错误，排查起来更省事。
+* 众所周知反射很慢，编译绑定能提升应用的性能。
 
-## Enabling and disabling compiled bindings
+## 启用与关闭编译绑定 {#enabling-and-disabling-compiled-bindings}
 
-Since version 12, Avalonia enables compiled bindings by default. This means you only need to provide `x:DataType` for the objects you want to bind to, and do not need to set `x:CompileBindings="[True|False]"` on controls and windows.
+从版本 12 起，Avalonia 默认启用编译绑定。也就是说，你只需为要绑定的对象提供 `x:DataType`，不必再在控件和窗口上设置 `x:CompileBindings="[True|False]"`。
 
-If you wish to disable compiled bindings, you can go to the `.csproj` file of your project and add a `<AvaloniaUseCompiledBindingsByDefault>` flag, which you can set to `false`. Disabling compiled bindings is not recommended.
+如果你确实想关掉编译绑定，可以在项目的 `.csproj` 文件中加上 `<AvaloniaUseCompiledBindingsByDefault>` 标记并设为 `false`。不过并不建议这么做。
 
-If `<AvaloniaUseCompiledBindingsByDefault>` is undefined in your project file, it defaults to `true` from v12, but is `false` in earlier versions of Avalonia.
+若项目文件中没有定义 `<AvaloniaUseCompiledBindingsByDefault>`，它从 v12 起默认为 `true`，在更早的 Avalonia 版本中则是 `false`。
 
-## Setting the data type
+## 指定数据类型 {#setting-the-data-type}
 
-Compiled bindings must have the `DataType` of the object you want to bind to.
+编译绑定必须知道所绑定对象的 `DataType`。
 
-[`DataTemplates`](/docs/data-templates/introduction-to-data-templates) have a `DataType` property. For all other elements, set the data type with an `x:DataType` in the root node, typically `Window` or `UserControl`.
+[`DataTemplates`](/docs/data-templates/introduction-to-data-templates) 自带 `DataType` 属性。其余元素则在根节点上用 `x:DataType` 指定数据类型，通常是 `Window` 或 `UserControl`。
 
-Alternatively, you can also specify the `DataType` in the `Binding` directly.
+也可以直接在 `Binding` 中指定 `DataType`。
 
 ```xml
 <!-- Set DataType in the root node -->
@@ -49,11 +49,11 @@ Alternatively, you can also specify the `DataType` in the `Binding` directly.
 </UserControl>
 ```
 
-## `DataContext` type inference
+## `DataContext` 类型推断 {#datacontext-type-inference}
 
-With compiled bindings, the Avalonia XAML compiler can infer the target type, even when you reference it via a named element (`#MyElement.DataContext`) or a parent lookup (`$parent[ControlType].DataContext`).
+使用编译绑定时，即便你是通过具名元素（`#MyElement.DataContext`）或向上查找父级（`$parent[ControlType].DataContext`）来引用目标，Avalonia 的 XAML 编译器也能推断出目标类型。
 
-You do not need explicit type casting in most cases.
+大多数情况下都不需要显式类型转换。
 
 ```xml
 <Window x:Name="MyWindow"
@@ -65,14 +65,14 @@ You do not need explicit type casting in most cases.
 ```
 
 :::note
-`DataContext` type inference was introduced in 11.3.0. Earlier versions of Avalonia needed explicit type casting for instances where the target type of the binding expression could not be automatically determined.
+`DataContext` 类型推断自 11.3.0 起引入。在更早的 Avalonia 版本中，凡是绑定表达式的目标类型无法自动确定的场合，都需要显式类型转换。
 :::
 
-### Explicit type casting
+### 显式类型转换 {#explicit-type-casting}
 
-If you are using an earlier version of Avalonia, or if the compiler fails to infer the type, you can still use an explicit type cast in the binding expression to ensure the correct type is used.
+如果你用的是较早版本的 Avalonia，或者编译器推断不出类型，仍可在绑定表达式中写显式类型转换，以确保用上正确的类型。
 
-Explicit type casting is not generally recommended.
+一般不推荐使用显式类型转换。
 
 ```xml
 <Window x:Name="MyWindow"
@@ -83,11 +83,11 @@ Explicit type casting is not generally recommended.
 </Window>
 ```
 
-## `ReflectionBinding` and `CompiledBinding` markup
+## `ReflectionBinding` 与 `CompiledBinding` 标记 {#reflectionbinding-and-compiledbinding-markup}
 
-If you want to use reflection binding in a specific binding, use the `ReflectionBinding` markup.
+想让某个绑定单独走反射绑定，用 `ReflectionBinding` 标记。
 
-The reverse is also true: If you have [disabled compiled bindings in your project](#enabling-and-disabling-compiled-bindings), you can still use the `CompiledBinding` markup to use compiled binding in a specific binding.
+反过来也成立：即便你已经[在项目中关闭了编译绑定](#enabling-and-disabling-compiled-bindings)，仍可以用 `CompiledBinding` 标记让某个绑定单独走编译绑定。
 
 <Tabs>
 
@@ -144,20 +144,20 @@ The reverse is also true: If you have [disabled compiled bindings in your projec
 
 </Tabs>
 
-## Differences from reflection bindings
+## 与反射绑定的差异 {#differences-from-reflection-bindings}
 
-Both binding types resolve the same binding paths, but there are two behavioral differences:
+两种绑定解析的是同一套绑定路径，但行为上有两点不同：
 
-**Command parameter conversion.** When a `Command` binds to a method that accepts a typed parameter, a reflection binding converts the `CommandParameter` value to that type at runtime. A compiled binding casts the value instead, and throws an exception if the types do not match. For more information, see [Binding directly to a method](/docs/data-binding/binding-to-commands#binding-directly-to-a-method).
+**命令参数的转换。** 当 `Command` 绑定到一个接受强类型参数的方法时，反射绑定会在运行时把 `CommandParameter` 的值转换成该类型；而编译绑定走的是类型转换，类型对不上就抛异常。详见[直接绑定到方法](/docs/data-binding/binding-to-commands#binding-directly-to-a-method)。
 
-**Error timing.** A compiled binding reports an unresolved path as a build error. A reflection binding reports it at runtime, as a binding error in the log. For more information, see [Binding debugging](/docs/data-binding/binding-debugging).
+**报错时机。** 编译绑定把无法解析的路径报成构建错误；反射绑定则在运行时把它作为绑定错误写进日志。详见[调试数据绑定](/docs/data-binding/binding-debugging)。
 
-## Compiled bindings from code
+## 在代码中使用编译绑定 {#compiled-bindings-from-code}
 
-You can also create compiled bindings in C# code using the `CompiledBinding.Create` factory method. This gives you the same compile-time safety and performance benefits as XAML compiled bindings, using LINQ expressions instead of string property paths. See [Compiled bindings from code](/docs/data-binding/binding-from-code#creating-compiled-bindings-from-code) for examples.
+你也可以用 `CompiledBinding.Create` 工厂方法在 C# 代码中创建编译绑定。它用 LINQ 表达式取代字符串属性路径，带来与 XAML 编译绑定同样的编译期安全性和性能优势。示例见[在代码中使用编译绑定](/docs/data-binding/binding-from-code#creating-compiled-bindings-from-code)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Compiled bindings from code](/docs/data-binding/binding-from-code#creating-compiled-bindings-from-code)
-- [Data binding syntax](/docs/data-binding/data-binding-syntax)
-- [Binding to commands](/docs/data-binding/binding-to-commands)
+- [在代码中使用编译绑定](/docs/data-binding/binding-from-code#creating-compiled-bindings-from-code)
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)
+- [绑定到命令](/docs/data-binding/binding-to-commands)

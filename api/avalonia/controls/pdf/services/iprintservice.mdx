@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPrintService Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Services</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Services</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -48,18 +48,18 @@ public interface IPrintService
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PrintAsync](#uid-2894ba8e3b) | Prints the document using the system print dialog. |
-| [ShowPrintPreviewAsync](#uid-0a92b9be62) | Shows a print preview. |
+| [ShowPrintPreviewAsync](#uid-0a92b9be62) | 显示打印预览。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2894ba8e3b"></span>
 
-### PrintAsync Method
+### PrintAsync 方法 {#printasync-method}
 
 Prints the document using the system print dialog.
 
@@ -67,7 +67,7 @@ Prints the document using the system print dialog.
 public System.Threading.Tasks.Task PrintAsync(Avalonia.Controls.Pdf.Core.IPdfDocument document, Avalonia.Controls.Pdf.Services.PrintOptions options, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `document` [Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Avalonia.Controls.Pdf.Core.IPdfDocument)
 
@@ -76,15 +76,15 @@ The document to print.
 
 `options` [Avalonia.Controls.Pdf.Services.PrintOptions](xref:Avalonia.Controls.Pdf.Services.PrintOptions)
 
-Print options.
+打印选项。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -95,15 +95,15 @@ System.Threading.Tasks.Task
 
 <span id="uid-0a92b9be62"></span>
 
-### ShowPrintPreviewAsync Method
+### ShowPrintPreviewAsync 方法 {#showprintpreviewasync-method}
 
-Shows a print preview.
+显示打印预览。
 
 ```csharp
 public System.Threading.Tasks.Task ShowPrintPreviewAsync(Avalonia.Controls.Pdf.Core.IPdfDocument document, Avalonia.Controls.Pdf.Services.PrintOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `document` [Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Avalonia.Controls.Pdf.Core.IPdfDocument)
 
@@ -112,19 +112,19 @@ The document to preview.
 
 `options` [Avalonia.Controls.Pdf.Services.PrintOptions](xref:Avalonia.Controls.Pdf.Services.PrintOptions)
 
-Print options.
+打印选项。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsSupported](#uid-621552f1bd) | Gets whether printing is supported on the current platform. |
 
@@ -132,7 +132,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-621552f1bd"></span>
 
-### IsSupported Property
+### IsSupported 属性 {#issupported-property}
 
 Gets whether printing is supported on the current platform.
 

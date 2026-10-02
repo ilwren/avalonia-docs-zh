@@ -6,18 +6,18 @@ title: TableView
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `TableView` displays a collection of items in configurable columns. It is a read-only, tabular control: it presents data, but does not provide in-place editing of cell contents.
+`TableView` 把一组条目按可配置的列展示出来。它是一个只读的表格控件：只负责呈现数据，不提供对单元格内容的就地编辑。
 
-`TableView` derives from [`ListBox`](/controls/data-display/collections/listbox), so it reuses the same `ItemsSource` and `SelectionModel`. Each row is a `TableViewRow`, and each column is a `TableViewColumn`.
+`TableView` 派生自 [`ListBox`](/controls/data-display/collections/listbox)，因此沿用同样的 `ItemsSource` 和 `SelectionModel`。每一行是一个 `TableViewRow`，每一列是一个 `TableViewColumn`。
 
 :::info
-`TableView` is part of the core **Avalonia.Controls** package. No additional NuGet package or style include is required. It is available from Avalonia 12.1.
+`TableView` 属于核心的 **Avalonia.Controls** 包，无需额外的 NuGet 包，也不必引入额外样式。它自 Avalonia 12.1 起提供。
 :::
 
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
-Bind the `ItemsSource` property to a collection in your view model, then declare one `TableViewColumn` per column inside `TableView.Columns`. Use the column's `Binding` property to pick the value shown in each cell:
+把 `ItemsSource` 属性绑定到视图模型中的某个集合，然后在 `TableView.Columns` 内为每一列声明一个 `TableViewColumn`。用列的 `Binding` 属性指定每个单元格所显示的值：
 
 <Tabs
   defaultValue="xaml"
@@ -73,38 +73,38 @@ public record Country(string Name, string Region, int Population);
 </Tabs>
 
 :::info
-These examples use the MVVM pattern with data binding to an `ObservableCollection`. For more information on the concepts behind data binding, see [Introduction to data binding](/docs/data-binding/introduction-to-data-binding).
+这些例子采用 MVVM 写法，绑定到一个 `ObservableCollection`。数据绑定背后的概念请参阅[数据绑定简介](/docs/data-binding/introduction-to-data-binding)。
 :::
 
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these `TableView` properties most often:
+下面这几个 `TableView` 属性大概是你用得最多的：
 
-| Property                | Description                                                                                                                            |
+| 属性                | 说明                                                                                                                            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `ItemsSource`           | The bound collection used as the data source for the rows.                                                                            |
-| `Columns`               | The collection of `TableViewColumn` objects that define how each column is displayed. See [Columns](#columns). |
-| `CanUserResizeColumns`  | Whether the user can resize columns by dragging the separator between column headers. The default is `true`.                          |
+| `ItemsSource`           | 用作各行数据源的绑定集合。                                                                            |
+| `Columns`               | `TableViewColumn` 对象的集合，定义每一列如何显示。参见[列](#columns)。 |
+| `CanUserResizeColumns`  | 用户能否拖动列标题之间的分隔线来调整列宽。默认为 `true`。                          |
 
-Because `TableView` derives from `ListBox`, the standard selection members also apply; for example `SelectionMode`, `SelectedItem`, `SelectedItems`, and `SelectedIndex`. See [ListBox](/controls/data-display/collections/listbox) for details.
+由于 `TableView` 派生自 `ListBox`，标准的选择相关成员同样适用，比如 `SelectionMode`、`SelectedItem`、`SelectedItems` 和 `SelectedIndex`。详情参见 [ListBox](/controls/data-display/collections/listbox)。
 
 
 ## Columns
 
-A `TableView` is composed of a `Columns` collection. Each `TableViewColumn` describes both the header cell and the data cells for that column.
+一个 `TableView` 由 `Columns` 集合组成。每个 `TableViewColumn` 同时描述该列的标题单元格和数据单元格。
 
 
-### Displaying cell values
+### 显示单元格的值 {#displaying-cell-values}
 
-There are two ways to determine what a cell displays:
+决定单元格显示什么，有两种方式：
 
-| Property       | Description                                                                                                                                           |
+| 属性       | 说明                                                                                                                                           |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Binding`      | Retrieves the cell value from the row's data item through a binding. Intended for simple property displays, e.g., `Binding="{Binding Name}"`.             |
-| `CellTemplate` | Builds the cell content using a data template. The whole row data item is passed as the template's data context, so you can bind to any property.   |
+| `Binding`      | 通过绑定从该行的数据项中取出单元格的值。适合简单的属性展示，比如 `Binding="{Binding Name}"`。             |
+| `CellTemplate` | 用数据模板构建单元格内容。整个行数据项会作为模板的数据上下文传入，因此你可以绑定其中任意属性。   |
 
-`CellTemplate` takes priority over `Binding`. Use `Binding` for plain text values and `CellTemplate` when you need richer content such as images, buttons, or several properties combined:
+`CellTemplate` 的优先级高于 `Binding`。纯文本取值用 `Binding`；需要图片、按钮或多个属性组合等更丰富的内容时，则用 `CellTemplate`：
 
 ```xml
 <TableView ItemsSource="{Binding Countries}">
@@ -123,26 +123,26 @@ There are two ways to determine what a cell displays:
 </TableView>
 ```
 
-### Column properties
+### 列的属性 {#column-properties}
 
-| Property                     | Description                                                                                                                                                   |
+| 属性                     | 说明                                                                                                                                                   |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Header`                     | The content displayed in the column header.                                                                                                                  |
-| `HeaderTemplate`             | A data template used to display the header content.                                                                                                          |
-| `HeaderTheme`                | A `ControlTheme` applied to the header. It must target `TableViewColumnHeader`.                                                                              |
-| `Binding`                    | A binding that reads the cell value from the row data item ([see above](#displaying-cell-values)).                                                                                      |
-| `CellTemplate`               | A data template for the cell content, receiving the row data item as its data context ([see above](#displaying-cell-values)).                                                          |
-| `CellTheme`                  | A `ControlTheme` applied to the cells. It must target `TableViewCell`.                                                                                       |
-| `Width`                      | The column width, expressed as a `GridLength` ([see below](#column-width)). The default is `1*`.                                                                              |
-| `CanUserResize`              | Whether this specific column can be resized. When left at its default (`null`), the value falls back to the `CanUserResizeColumns` property of the `TableView` ([see above](#useful-properties)).                  |
-| `HorizontalContentAlignment` | The horizontal alignment of the content inside both the header and the cells of the column. The default is `Left`.                                          |
+| `Header`                     | 列标题中显示的内容。                                                                                                                  |
+| `HeaderTemplate`             | 用于显示标题内容的数据模板。                                                                                                          |
+| `HeaderTheme`                | 作用于标题的 `ControlTheme`，其 TargetType 必须是 `TableViewColumnHeader`。                                                                              |
+| `Binding`                    | 从行数据项中读取单元格值的绑定（[见上文](#displaying-cell-values)）。                                                                                      |
+| `CellTemplate`               | 单元格内容所用的数据模板，其数据上下文为该行的数据项（[见上文](#displaying-cell-values)）。                                                          |
+| `CellTheme`                  | 作用于各单元格的 `ControlTheme`，其 TargetType 必须是 `TableViewCell`。                                                                                       |
+| `Width`                      | 列宽，以 `GridLength` 表示（[见下文](#column-width)）。默认为 `1*`。                                                                              |
+| `CanUserResize`              | 这一列本身能否调整宽度。保持默认值（`null`）时，取值回落到 `TableView` 的 `CanUserResizeColumns` 属性（[见上文](#useful-properties)）。                  |
+| `HorizontalContentAlignment` | 该列标题和各单元格中内容的水平对齐方式。默认为 `Left`。                                          |
 
-### Column width
+### 列宽 {#column-width}
 
-The `Width` property is a `GridLength`, so a column can be sized in absolute or relative units, just like a [Grid](/controls/layout/panels/grid) column:
+`Width` 属性是 `GridLength`，因此列宽可以用绝对单位或相对单位指定，就跟 [Grid](/controls/layout/panels/grid) 的列一样：
 
-- **Star** (`*`): the column takes a proportional share of the remaining space. This is the default (`1*`).
-- **Pixel**: an absolute width in device-independent pixels.
+- **星号**（`*`）：该列按比例分得剩余空间。这是默认值（`1*`）。
+- **像素**：以设备无关像素表示的绝对宽度。
 
 ```xml
 <TableView.Columns>
@@ -152,9 +152,9 @@ The `Width` property is a `GridLength`, so a column can be sized in absolute or 
 </TableView.Columns>
 ```
 
-### Resizing columns
+### 调整列宽 {#resizing-columns}
 
-By default, users can resize columns by dragging the separator between two column headers. To turn this off for the whole `TableView`, set `CanUserResizeColumns` to `False`.
+默认情况下，用户可以拖动两个列标题之间的分隔线来调整列宽。要为整个 `TableView` 关掉这一行为，把 `CanUserResizeColumns` 设为 `False`。
 
 ```xml
 <TableView ItemsSource="{Binding Countries}"
@@ -163,7 +163,7 @@ By default, users can resize columns by dragging the separator between two colum
 </TableView>
 ```
 
-You can also override the behavior for individual columns with `CanUserResize`. When it is left at its default value of `null`, the column follows the `CanUserResizeColumns` setting of the overall `TableView`. Changing it to `True` or `False` overrides the setting for that column only:
+你也可以用 `CanUserResize` 为单独某一列改写该行为。保持默认值 `null` 时，该列跟随整个 `TableView` 的 `CanUserResizeColumns` 设置；改成 `True` 或 `False` 则只覆盖这一列：
 
 ```xml
 <TableView.Columns>
@@ -176,20 +176,20 @@ You can also override the behavior for individual columns with `CanUserResize`. 
 ```
 
 :::info
-Dragging a resizer switches that column to a pixel width.
+拖动调整手柄会把该列切换为像素宽度。
 :::
 
 
 ## Virtualization
 
-Similar to `ListBox`, rows are virtualized and recycled by default. Cells are also recycled alongside their owning rows.
+与 `ListBox` 类似，行默认会被虚拟化和回收复用。单元格也会随其所属的行一同回收复用。
 
 :::warning
-The `TableView` virtualizes its rows but does **not** virtualize columns. Every column is always realized, so keep the number of columns reasonable.
+`TableView` 会虚拟化行，但**不会**虚拟化列。所有列始终都是实体化的，因此列数要控制在合理范围内。
 :::
 
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ListBox](/controls/data-display/collections/listbox)
-- [TableView API reference](https://api-docs.avaloniaui.net/docs/T_Avalonia_Controls_TableView)
+- [TableView API 参考](https://api-docs.avaloniaui.net/docs/T_Avalonia_Controls_TableView)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Visual Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Visual.cs">Visual.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Visual.cs">Visual.cs</a>
 </div>
 
 </div>
@@ -54,36 +54,36 @@ public class Visual
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="animation/animatable">Animatable</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="styledelement">StyledElement</a> <span className="apiref-page__relation-separator">-&gt;</span> Visual
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="animation/animatable">Animatable</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="styledelement">StyledElement</a> <span className="apiref-page__relation-separator">-&gt;</span> Visual
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="layout/layoutable">Layoutable</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="layout/layoutable">Layoutable</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IAvaloniaListItemValidator&lt;Visual&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IAvaloniaListItemValidator&lt;Visual&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 The [Avalonia.Visual](xref:Avalonia.Visual) class represents elements that have a visual on-screen
 representation and stores all the information needed for an
 [Avalonia.Rendering.IRenderer](xref:Avalonia.Rendering.IRenderer) to render the control. To traverse the visual tree, use the
 extension methods defined in [Avalonia.VisualExtensions](xref:Avalonia.VisualExtensions).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Visual](#uid-94584ffd3d) | Initializes a new instance of the [Avalonia.Visual](xref:Avalonia.Visual) class. |
+| [Visual](#uid-94584ffd3d) | 初始化 [Avalonia.Visual](xref:Avalonia.Visual) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-94584ffd3d"></span>
 
-### Visual Constructor
+### Visual 构造函数 {#visual-constructor}
 
-Initializes a new instance of the [Avalonia.Visual](xref:Avalonia.Visual) class.
+初始化 [Avalonia.Visual](xref:Avalonia.Visual) 类的新实例。
 
 ```csharp
 public Visual()
@@ -91,56 +91,56 @@ public Visual()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ApplyStyling](styledelement.mdx#uid-b0f81a6f8f) | Applies styling to the control if the control is initialized and styling is not already applied. Inherited from [StyledElement](styledelement.mdx). |
-| [BeginInit](styledelement.mdx#uid-91c6ccadce) | Inherited from [StyledElement](styledelement.mdx). |
-| [Bind (8 overloads)](avaloniaobject.mdx#uid-1c60c7bda3) | Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase). Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [CheckAccess](avaloniaobject.mdx#uid-260ff7a68d) | Returns a value indicating whether the current thread is the UI thread. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [ClearValue (4 overloads)](avaloniaobject.mdx#uid-41de208fbe) | Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [CoerceValue](avaloniaobject.mdx#uid-3bec32f39e) | Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [EndInit](styledelement.mdx#uid-17b450469d) | Inherited from [StyledElement](styledelement.mdx). |
-| [Equals](avaloniaobject.mdx#uid-a8a8e94305) | Compares two objects using reference equality. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [GetBaseValue](avaloniaobject.mdx#uid-9c615efbba) | Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [GetFlowDirection](#uid-12716acd38) | Gets the value of the attached [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) on a control. |
-| [GetHashCode](avaloniaobject.mdx#uid-7f7db1e7a2) | Gets the hash code for the object. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [GetValue (3 overloads)](avaloniaobject.mdx#uid-5142cd4792) | Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [InvalidateVisual](#uid-1cd22a7496) | Invalidates the visual and queues a repaint. |
-| [IsAnimating](avaloniaobject.mdx#uid-8cbfc7521a) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is animating. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [IsSet](avaloniaobject.mdx#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [Render](#uid-615917604b) | Renders the visual to a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext). |
-| [SetCurrentValue (2 overloads)](avaloniaobject.mdx#uid-38759fd088) | Sets the value of a dependency property without changing its value source. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [SetFlowDirection](#uid-a670b680eb) | Sets the value of the attached [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) on a control. |
-| [SetValue (3 overloads)](avaloniaobject.mdx#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [TryGetResource](styledelement.mdx#uid-2046a6b284) | Inherited from [StyledElement](styledelement.mdx). |
-| [VerifyAccess](avaloniaobject.mdx#uid-3b9d3c9793) | Checks that the current thread is the UI thread and throws if not. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
+| [ApplyStyling](styledelement.mdx#uid-b0f81a6f8f) | 若控件已初始化且尚未应用样式，则为其应用样式。继承自 [StyledElement](styledelement.mdx)。 |
+| [BeginInit](styledelement.mdx#uid-91c6ccadce) | 继承自 [StyledElement](styledelement.mdx)。 |
+| [Bind（8 个重载）](avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [CheckAccess](avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [ClearValue（4 个重载）](avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [CoerceValue](avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [EndInit](styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](styledelement.mdx)。 |
+| [Equals](avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [GetBaseValue](avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [GetFlowDirection](#uid-12716acd38) | 获取某个控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。 |
+| [GetHashCode](avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [GetValue（3 个重载）](avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [InvalidateVisual](#uid-1cd22a7496) | 使视觉失效并排入一次重绘。 |
+| [IsAnimating](avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [IsSet](avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [Render](#uid-615917604b) | 把该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。 |
+| [SetCurrentValue（2 个重载）](avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [SetFlowDirection](#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。 |
+| [SetValue（3 个重载）](avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [TryGetResource](styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](styledelement.mdx)。 |
+| [VerifyAccess](avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-12716acd38"></span>
 
-### GetFlowDirection Method
+### GetFlowDirection 方法 {#getflowdirection-method}
 
-Gets the value of the attached [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) on a control.
+获取某个控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。
 
 ```csharp
 public Avalonia.Media.FlowDirection GetFlowDirection(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.FlowDirection](xref:Avalonia.Media.FlowDirection)
 
-The flow direction.
+排列方向。
 
 
 </section>
@@ -149,9 +149,9 @@ The flow direction.
 
 <span id="uid-1cd22a7496"></span>
 
-### InvalidateVisual Method
+### InvalidateVisual 方法 {#invalidatevisual-method}
 
-Invalidates the visual and queues a repaint.
+使视觉失效并排入一次重绘。
 
 ```csharp
 public void InvalidateVisual()
@@ -163,19 +163,19 @@ public void InvalidateVisual()
 
 <span id="uid-615917604b"></span>
 
-### Render Method
+### Render 方法 {#render-method}
 
-Renders the visual to a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext).
+把该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。
 
 ```csharp
 public void Render(Avalonia.Media.DrawingContext context)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `context` [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 </section>
@@ -184,66 +184,66 @@ The drawing context.
 
 <span id="uid-a670b680eb"></span>
 
-### SetFlowDirection Method
+### SetFlowDirection 方法 {#setflowdirection-method}
 
-Sets the value of the attached [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) on a control.
+设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。
 
 ```csharp
 public void SetFlowDirection(Avalonia.Visual visual, Avalonia.Media.FlowDirection value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control.
+该控件。
 
 
 `value` [Avalonia.Media.FlowDirection](xref:Avalonia.Media.FlowDirection)
 
-The property value to set.
+要设置的属性值。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariant](styledelement.mdx#uid-776bcbe4bf) | Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty. Inherited from [StyledElement](styledelement.mdx). |
+| [ActualThemeVariant](styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](styledelement.mdx)。 |
 | [Bounds](#uid-a01c3022f7) | Gets the bounds of the control relative to its parent. |
 | [CacheMode](#uid-c565afad32) | Gets or sets the cache mode of the visual. |
-| [Classes](styledelement.mdx#uid-b7b7edea05) | Gets or sets the styled element's classes. Inherited from [StyledElement](styledelement.mdx). |
+| [Classes](styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](styledelement.mdx)。 |
 | [Clip](#uid-7623faaeaf) | Gets or sets the geometry clip for this visual. |
 | [ClipToBounds](#uid-63c348aebd) | Gets or sets a value indicating whether the control should be clipped to its bounds. |
-| [DataContext](styledelement.mdx#uid-647f924a56) | Gets or sets the control's data context. Inherited from [StyledElement](styledelement.mdx). |
-| [Dispatcher](avaloniaobject.mdx#uid-b25fa51632) | Returns the [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher) that this [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) is associated with. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [Effect](#uid-65e2be6b7c) | Gets or sets the effect of the control. |
-| [FlowDirection](#uid-c7929bde53) | Gets or sets the text flow direction. |
+| [DataContext](styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](styledelement.mdx)。 |
+| [Dispatcher](avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [Effect](#uid-65e2be6b7c) | 获取或设置该控件的效果。 |
+| [FlowDirection](#uid-c7929bde53) | 获取或设置文本的排列方向。 |
 | [HasMirrorTransform](#uid-70dc13a730) | Gets or sets a value indicating whether to apply mirror transform on this control. |
-| [IsEffectivelyVisible](#uid-03d6c15a63) | Gets a value indicating whether this control and all its parents are visible. |
-| [IsInitialized](styledelement.mdx#uid-59a7cddacb) | Gets a value that indicates whether the element has finished initialization. Inherited from [StyledElement](styledelement.mdx). |
+| [IsEffectivelyVisible](#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均可见。 |
+| [IsInitialized](styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](styledelement.mdx)。 |
 | [IsVisible](#uid-da2b0ca167) | Gets or sets a value indicating whether this control is visible. |
-| [Item](avaloniaobject.mdx#uid-c1d1f1bc0f) | Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [Name](styledelement.mdx#uid-245f4ccff5) | Gets or sets the name of the styled element. Inherited from [StyledElement](styledelement.mdx). |
-| [Opacity](#uid-9eaf1e3d57) | Gets or sets the opacity of the control. |
+| [Item](avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [Name](styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](styledelement.mdx)。 |
+| [Opacity](#uid-9eaf1e3d57) | 获取或设置该控件的不透明度。 |
 | [OpacityMask](#uid-b6579b9244) | Gets or sets the opacity mask of the control. |
-| [Parent](styledelement.mdx#uid-aad2c5c78d) | Gets the styled element's logical parent. Inherited from [StyledElement](styledelement.mdx). |
+| [Parent](styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](styledelement.mdx)。 |
 | [RenderTransform](#uid-7ee76ff32a) | Gets or sets the render transform of the control. |
 | [RenderTransformOrigin](#uid-3501120c25) | Gets or sets the transform origin of the control. |
-| [Resources](styledelement.mdx#uid-f6488ca4b7) | Gets or sets the styled element's resource dictionary. Inherited from [StyledElement](styledelement.mdx). |
-| [StyleKey](styledelement.mdx#uid-081584075e) | Gets the type by which the element is styled. Inherited from [StyledElement](styledelement.mdx). |
-| [Styles](styledelement.mdx#uid-ae663139cc) | Gets the styles for the styled element. Inherited from [StyledElement](styledelement.mdx). |
-| [TemplatedParent](styledelement.mdx#uid-dbf6ddacc3) | Gets the styled element whose lookless template this styled element is part of. Inherited from [StyledElement](styledelement.mdx). |
-| [Theme](styledelement.mdx#uid-1aebed283d) | Gets or sets the theme to be applied to the element. Inherited from [StyledElement](styledelement.mdx). |
-| [Transitions](animation/animatable.mdx#uid-1b3138f517) | Gets or sets the property transitions for the control. Inherited from [Animatable](animation/animatable.mdx). |
-| [ZIndex](#uid-a3275ade9d) | Gets or sets the Z index of the control. |
+| [Resources](styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](styledelement.mdx)。 |
+| [StyleKey](styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](styledelement.mdx)。 |
+| [Styles](styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](styledelement.mdx)。 |
+| [TemplatedParent](styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](styledelement.mdx)。 |
+| [Theme](styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](styledelement.mdx)。 |
+| [Transitions](animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](animation/animatable.mdx)。 |
+| [ZIndex](#uid-a3275ade9d) | 获取或设置该控件的 Z 序。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a01c3022f7"></span>
 
-### Bounds Property
+### Bounds 属性 {#bounds-property}
 
 Gets the bounds of the control relative to its parent.
 
@@ -257,7 +257,7 @@ public Avalonia.Rect Bounds { get; set; }
 
 <span id="uid-c565afad32"></span>
 
-### CacheMode Property
+### CacheMode 属性 {#cachemode-property}
 
 Gets or sets the cache mode of the visual.
 
@@ -271,7 +271,7 @@ public Avalonia.Media.CacheMode CacheMode { get; set; }
 
 <span id="uid-7623faaeaf"></span>
 
-### Clip Property
+### Clip 属性 {#clip-property}
 
 Gets or sets the geometry clip for this visual.
 
@@ -285,7 +285,7 @@ public Avalonia.Media.Geometry Clip { get; set; }
 
 <span id="uid-63c348aebd"></span>
 
-### ClipToBounds Property
+### ClipToBounds 属性 {#cliptobounds-property}
 
 Gets or sets a value indicating whether the control should be clipped to its bounds.
 
@@ -299,9 +299,9 @@ public bool ClipToBounds { get; set; }
 
 <span id="uid-65e2be6b7c"></span>
 
-### Effect Property
+### Effect 属性 {#effect-property}
 
-Gets or sets the effect of the control.
+获取或设置该控件的效果。
 
 ```csharp
 public Avalonia.Media.IEffect Effect { get; set; }
@@ -313,9 +313,9 @@ public Avalonia.Media.IEffect Effect { get; set; }
 
 <span id="uid-c7929bde53"></span>
 
-### FlowDirection Property
+### FlowDirection 属性 {#flowdirection-property}
 
-Gets or sets the text flow direction.
+获取或设置文本的排列方向。
 
 ```csharp
 public Avalonia.Media.FlowDirection FlowDirection { get; set; }
@@ -327,7 +327,7 @@ public Avalonia.Media.FlowDirection FlowDirection { get; set; }
 
 <span id="uid-70dc13a730"></span>
 
-### HasMirrorTransform Property
+### HasMirrorTransform 属性 {#hasmirrortransform-property}
 
 Gets or sets a value indicating whether to apply mirror transform on this control.
 
@@ -341,9 +341,9 @@ public bool HasMirrorTransform { get; set; }
 
 <span id="uid-03d6c15a63"></span>
 
-### IsEffectivelyVisible Property
+### IsEffectivelyVisible 属性 {#iseffectivelyvisible-property}
 
-Gets a value indicating whether this control and all its parents are visible.
+获取一个值，指示该控件及其所有父级是否均可见。
 
 ```csharp
 public bool IsEffectivelyVisible { get; set; }
@@ -355,7 +355,7 @@ public bool IsEffectivelyVisible { get; set; }
 
 <span id="uid-da2b0ca167"></span>
 
-### IsVisible Property
+### IsVisible 属性 {#isvisible-property}
 
 Gets or sets a value indicating whether this control is visible.
 
@@ -369,9 +369,9 @@ public bool IsVisible { get; set; }
 
 <span id="uid-9eaf1e3d57"></span>
 
-### Opacity Property
+### Opacity 属性 {#opacity-property}
 
-Gets or sets the opacity of the control.
+获取或设置该控件的不透明度。
 
 ```csharp
 public double Opacity { get; set; }
@@ -383,7 +383,7 @@ public double Opacity { get; set; }
 
 <span id="uid-b6579b9244"></span>
 
-### OpacityMask Property
+### OpacityMask 属性 {#opacitymask-property}
 
 Gets or sets the opacity mask of the control.
 
@@ -397,7 +397,7 @@ public Avalonia.Media.IBrush OpacityMask { get; set; }
 
 <span id="uid-7ee76ff32a"></span>
 
-### RenderTransform Property
+### RenderTransform 属性 {#rendertransform-property}
 
 Gets or sets the render transform of the control.
 
@@ -411,7 +411,7 @@ public Avalonia.Media.ITransform RenderTransform { get; set; }
 
 <span id="uid-3501120c25"></span>
 
-### RenderTransformOrigin Property
+### RenderTransformOrigin 属性 {#rendertransformorigin-property}
 
 Gets or sets the transform origin of the control.
 
@@ -425,15 +425,15 @@ public Avalonia.RelativePoint RenderTransformOrigin { get; set; }
 
 <span id="uid-a3275ade9d"></span>
 
-### ZIndex Property
+### ZIndex 属性 {#zindex-property}
 
-Gets or sets the Z index of the control.
+获取或设置该控件的 Z 序。
 
 ```csharp
 public int ZIndex { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Controls with a higher [Avalonia.Visual.ZIndex](xref:Avalonia.Visual.ZIndex) will appear in front of controls with
 a lower ZIndex. If two controls have the same ZIndex then the control that appears
@@ -441,38 +441,38 @@ later in the containing element's children collection will appear on top.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BoundsProperty](#uid-f22a27348f) | Defines the [Avalonia.Visual.Bounds](xref:Avalonia.Visual.Bounds) property. |
-| [CacheModeProperty](#uid-5c89b0f2fc) | Defines the [Avalonia.Visual.CacheMode](xref:Avalonia.Visual.CacheMode) property. |
-| [ClipProperty](#uid-06ffce3308) | Defines the [Avalonia.Visual.Clip](xref:Avalonia.Visual.Clip) property. |
-| [ClipToBoundsProperty](#uid-4bc41df166) | Defines the [Avalonia.Visual.ClipToBounds](xref:Avalonia.Visual.ClipToBounds) property. |
-| [DataContextProperty](styledelement.mdx#uid-7eefabb929) | Defines the [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) property. Inherited from [StyledElement](styledelement.mdx). |
-| [EffectProperty](#uid-9374086bff) | Defines the [Avalonia.Visual.Effect](xref:Avalonia.Visual.Effect) property. |
-| [FlowDirectionProperty](#uid-79d00f257f) | Defines the [Avalonia.Visual.FlowDirection](xref:Avalonia.Visual.FlowDirection) property. |
-| [HasMirrorTransformProperty](#uid-1f37ec4745) | Defines the [Avalonia.Visual.HasMirrorTransform](xref:Avalonia.Visual.HasMirrorTransform) property. |
-| [IsVisibleProperty](#uid-8e0edf21ac) | Defines the [Avalonia.Visual.IsVisible](xref:Avalonia.Visual.IsVisible) property. |
-| [NameProperty](styledelement.mdx#uid-bcdbb9de56) | Defines the [Avalonia.StyledElement.Name](xref:Avalonia.StyledElement.Name) property. Inherited from [StyledElement](styledelement.mdx). |
-| [OpacityMaskProperty](#uid-aad2c3f7c2) | Defines the [Avalonia.Visual.OpacityMask](xref:Avalonia.Visual.OpacityMask) property. |
-| [OpacityProperty](#uid-2a53e27b1f) | Defines the [Avalonia.Visual.Opacity](xref:Avalonia.Visual.Opacity) property. |
-| [ParentProperty](styledelement.mdx#uid-dc6481a488) | Defines the [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) property. Inherited from [StyledElement](styledelement.mdx). |
-| [RenderTransformOriginProperty](#uid-963d266cdd) | Defines the [Avalonia.Visual.RenderTransformOrigin](xref:Avalonia.Visual.RenderTransformOrigin) property. |
-| [RenderTransformProperty](#uid-31d20942c2) | Defines the [Avalonia.Visual.RenderTransform](xref:Avalonia.Visual.RenderTransform) property. |
-| [TemplatedParentProperty](styledelement.mdx#uid-a2c7149a6b) | Defines the [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) property. Inherited from [StyledElement](styledelement.mdx). |
-| [ThemeProperty](styledelement.mdx#uid-05852d7b9a) | Defines the [Avalonia.StyledElement.Theme](xref:Avalonia.StyledElement.Theme) property. Inherited from [StyledElement](styledelement.mdx). |
-| [TransitionsProperty](animation/animatable.mdx#uid-c79f18fac2) | Defines the [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) property. Inherited from [Animatable](animation/animatable.mdx). |
-| [VisualParentProperty](#uid-12214f81b9) | Defines the [Avalonia.Visual.VisualParent](xref:Avalonia.Visual.VisualParent) property. |
-| [ZIndexProperty](#uid-1dc9376c1e) | Defines the [Avalonia.Visual.ZIndex](xref:Avalonia.Visual.ZIndex) property. |
+| [BoundsProperty](#uid-f22a27348f) | 定义 [Avalonia.Visual.Bounds](xref:Avalonia.Visual.Bounds) 属性。 |
+| [CacheModeProperty](#uid-5c89b0f2fc) | 定义 [Avalonia.Visual.CacheMode](xref:Avalonia.Visual.CacheMode) 属性。 |
+| [ClipProperty](#uid-06ffce3308) | 定义 [Avalonia.Visual.Clip](xref:Avalonia.Visual.Clip) 属性。 |
+| [ClipToBoundsProperty](#uid-4bc41df166) | 定义 [Avalonia.Visual.ClipToBounds](xref:Avalonia.Visual.ClipToBounds) 属性。 |
+| [DataContextProperty](styledelement.mdx#uid-7eefabb929) | 定义 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性。继承自 [StyledElement](styledelement.mdx)。 |
+| [EffectProperty](#uid-9374086bff) | 定义 [Avalonia.Visual.Effect](xref:Avalonia.Visual.Effect) 属性。 |
+| [FlowDirectionProperty](#uid-79d00f257f) | 定义 [Avalonia.Visual.FlowDirection](xref:Avalonia.Visual.FlowDirection) 属性。 |
+| [HasMirrorTransformProperty](#uid-1f37ec4745) | 定义 [Avalonia.Visual.HasMirrorTransform](xref:Avalonia.Visual.HasMirrorTransform) 属性。 |
+| [IsVisibleProperty](#uid-8e0edf21ac) | 定义 [Avalonia.Visual.IsVisible](xref:Avalonia.Visual.IsVisible) 属性。 |
+| [NameProperty](styledelement.mdx#uid-bcdbb9de56) | 定义 [Avalonia.StyledElement.Name](xref:Avalonia.StyledElement.Name) 属性。继承自 [StyledElement](styledelement.mdx)。 |
+| [OpacityMaskProperty](#uid-aad2c3f7c2) | 定义 [Avalonia.Visual.OpacityMask](xref:Avalonia.Visual.OpacityMask) 属性。 |
+| [OpacityProperty](#uid-2a53e27b1f) | 定义 [Avalonia.Visual.Opacity](xref:Avalonia.Visual.Opacity) 属性。 |
+| [ParentProperty](styledelement.mdx#uid-dc6481a488) | 定义 [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) 属性。继承自 [StyledElement](styledelement.mdx)。 |
+| [RenderTransformOriginProperty](#uid-963d266cdd) | 定义 [Avalonia.Visual.RenderTransformOrigin](xref:Avalonia.Visual.RenderTransformOrigin) 属性。 |
+| [RenderTransformProperty](#uid-31d20942c2) | 定义 [Avalonia.Visual.RenderTransform](xref:Avalonia.Visual.RenderTransform) 属性。 |
+| [TemplatedParentProperty](styledelement.mdx#uid-a2c7149a6b) | 定义 [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) 属性。继承自 [StyledElement](styledelement.mdx)。 |
+| [ThemeProperty](styledelement.mdx#uid-05852d7b9a) | 定义 [Avalonia.StyledElement.Theme](xref:Avalonia.StyledElement.Theme) 属性。继承自 [StyledElement](styledelement.mdx)。 |
+| [TransitionsProperty](animation/animatable.mdx#uid-c79f18fac2) | 定义 [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) 属性。继承自 [Animatable](animation/animatable.mdx)。 |
+| [VisualParentProperty](#uid-12214f81b9) | 定义 [Avalonia.Visual.VisualParent](xref:Avalonia.Visual.VisualParent) 属性。 |
+| [ZIndexProperty](#uid-1dc9376c1e) | 定义 [Avalonia.Visual.ZIndex](xref:Avalonia.Visual.ZIndex) 属性。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f22a27348f"></span>
 
-### BoundsProperty Field
+### BoundsProperty 字段 {#boundsproperty-field}
 
-Defines the [Avalonia.Visual.Bounds](xref:Avalonia.Visual.Bounds) property.
+定义 [Avalonia.Visual.Bounds](xref:Avalonia.Visual.Bounds) 属性。
 
 ```csharp
 public Avalonia.DirectProperty<TOwner,TValue><Avalonia.Visual, Avalonia.Rect> BoundsProperty
@@ -484,9 +484,9 @@ public Avalonia.DirectProperty<TOwner,TValue><Avalonia.Visual, Avalonia.Rect> Bo
 
 <span id="uid-5c89b0f2fc"></span>
 
-### CacheModeProperty Field
+### CacheModeProperty 字段 {#cachemodeproperty-field}
 
-Defines the [Avalonia.Visual.CacheMode](xref:Avalonia.Visual.CacheMode) property.
+定义 [Avalonia.Visual.CacheMode](xref:Avalonia.Visual.CacheMode) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.CacheMode> CacheModeProperty
@@ -498,9 +498,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.CacheMode> CacheModeProper
 
 <span id="uid-06ffce3308"></span>
 
-### ClipProperty Field
+### ClipProperty 字段 {#clipproperty-field}
 
-Defines the [Avalonia.Visual.Clip](xref:Avalonia.Visual.Clip) property.
+定义 [Avalonia.Visual.Clip](xref:Avalonia.Visual.Clip) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.Geometry> ClipProperty
@@ -512,9 +512,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.Geometry> ClipProperty
 
 <span id="uid-4bc41df166"></span>
 
-### ClipToBoundsProperty Field
+### ClipToBoundsProperty 字段 {#cliptoboundsproperty-field}
 
-Defines the [Avalonia.Visual.ClipToBounds](xref:Avalonia.Visual.ClipToBounds) property.
+定义 [Avalonia.Visual.ClipToBounds](xref:Avalonia.Visual.ClipToBounds) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><bool> ClipToBoundsProperty
@@ -526,9 +526,9 @@ public Avalonia.StyledProperty<TValue><bool> ClipToBoundsProperty
 
 <span id="uid-9374086bff"></span>
 
-### EffectProperty Field
+### EffectProperty 字段 {#effectproperty-field}
 
-Defines the [Avalonia.Visual.Effect](xref:Avalonia.Visual.Effect) property.
+定义 [Avalonia.Visual.Effect](xref:Avalonia.Visual.Effect) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.IEffect> EffectProperty
@@ -540,9 +540,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.IEffect> EffectProperty
 
 <span id="uid-79d00f257f"></span>
 
-### FlowDirectionProperty Field
+### FlowDirectionProperty 字段 {#flowdirectionproperty-field}
 
-Defines the [Avalonia.Visual.FlowDirection](xref:Avalonia.Visual.FlowDirection) property.
+定义 [Avalonia.Visual.FlowDirection](xref:Avalonia.Visual.FlowDirection) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<TValue><Avalonia.Media.FlowDirection> FlowDirectionProperty
@@ -554,9 +554,9 @@ public Avalonia.AttachedProperty<TValue><Avalonia.Media.FlowDirection> FlowDirec
 
 <span id="uid-1f37ec4745"></span>
 
-### HasMirrorTransformProperty Field
+### HasMirrorTransformProperty 字段 {#hasmirrortransformproperty-field}
 
-Defines the [Avalonia.Visual.HasMirrorTransform](xref:Avalonia.Visual.HasMirrorTransform) property.
+定义 [Avalonia.Visual.HasMirrorTransform](xref:Avalonia.Visual.HasMirrorTransform) 属性。
 
 ```csharp
 public Avalonia.DirectProperty<TOwner,TValue><Avalonia.Visual, bool> HasMirrorTransformProperty
@@ -568,9 +568,9 @@ public Avalonia.DirectProperty<TOwner,TValue><Avalonia.Visual, bool> HasMirrorTr
 
 <span id="uid-8e0edf21ac"></span>
 
-### IsVisibleProperty Field
+### IsVisibleProperty 字段 {#isvisibleproperty-field}
 
-Defines the [Avalonia.Visual.IsVisible](xref:Avalonia.Visual.IsVisible) property.
+定义 [Avalonia.Visual.IsVisible](xref:Avalonia.Visual.IsVisible) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><bool> IsVisibleProperty
@@ -582,9 +582,9 @@ public Avalonia.StyledProperty<TValue><bool> IsVisibleProperty
 
 <span id="uid-aad2c3f7c2"></span>
 
-### OpacityMaskProperty Field
+### OpacityMaskProperty 字段 {#opacitymaskproperty-field}
 
-Defines the [Avalonia.Visual.OpacityMask](xref:Avalonia.Visual.OpacityMask) property.
+定义 [Avalonia.Visual.OpacityMask](xref:Avalonia.Visual.OpacityMask) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.IBrush> OpacityMaskProperty
@@ -596,9 +596,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.IBrush> OpacityMaskPropert
 
 <span id="uid-2a53e27b1f"></span>
 
-### OpacityProperty Field
+### OpacityProperty 字段 {#opacityproperty-field}
 
-Defines the [Avalonia.Visual.Opacity](xref:Avalonia.Visual.Opacity) property.
+定义 [Avalonia.Visual.Opacity](xref:Avalonia.Visual.Opacity) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><double> OpacityProperty
@@ -610,9 +610,9 @@ public Avalonia.StyledProperty<TValue><double> OpacityProperty
 
 <span id="uid-963d266cdd"></span>
 
-### RenderTransformOriginProperty Field
+### RenderTransformOriginProperty 字段 {#rendertransformoriginproperty-field}
 
-Defines the [Avalonia.Visual.RenderTransformOrigin](xref:Avalonia.Visual.RenderTransformOrigin) property.
+定义 [Avalonia.Visual.RenderTransformOrigin](xref:Avalonia.Visual.RenderTransformOrigin) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.RelativePoint> RenderTransformOriginProperty
@@ -624,9 +624,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.RelativePoint> RenderTransformOr
 
 <span id="uid-31d20942c2"></span>
 
-### RenderTransformProperty Field
+### RenderTransformProperty 字段 {#rendertransformproperty-field}
 
-Defines the [Avalonia.Visual.RenderTransform](xref:Avalonia.Visual.RenderTransform) property.
+定义 [Avalonia.Visual.RenderTransform](xref:Avalonia.Visual.RenderTransform) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.ITransform> RenderTransformProperty
@@ -638,9 +638,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.ITransform> RenderTransfor
 
 <span id="uid-12214f81b9"></span>
 
-### VisualParentProperty Field
+### VisualParentProperty 字段 {#visualparentproperty-field}
 
-Defines the [Avalonia.Visual.VisualParent](xref:Avalonia.Visual.VisualParent) property.
+定义 [Avalonia.Visual.VisualParent](xref:Avalonia.Visual.VisualParent) 属性。
 
 ```csharp
 public Avalonia.DirectProperty<TOwner,TValue><Avalonia.Visual, Avalonia.Visual> VisualParentProperty
@@ -652,9 +652,9 @@ public Avalonia.DirectProperty<TOwner,TValue><Avalonia.Visual, Avalonia.Visual> 
 
 <span id="uid-1dc9376c1e"></span>
 
-### ZIndexProperty Field
+### ZIndexProperty 字段 {#zindexproperty-field}
 
-Defines the [Avalonia.Visual.ZIndex](xref:Avalonia.Visual.ZIndex) property.
+定义 [Avalonia.Visual.ZIndex](xref:Avalonia.Visual.ZIndex) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><int> ZIndexProperty
@@ -662,25 +662,25 @@ public Avalonia.StyledProperty<TValue><int> ZIndexProperty
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariantChanged](styledelement.mdx#uid-e69ef27e71) | Raised when the theme variant is changed on the element or an ancestor of the element. Inherited from [StyledElement](styledelement.mdx). |
-| [AttachedToLogicalTree](styledelement.mdx#uid-717aa68e85) | Raised when the styled element is attached to a rooted logical tree. Inherited from [StyledElement](styledelement.mdx). |
+| [ActualThemeVariantChanged](styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](styledelement.mdx)。 |
+| [AttachedToLogicalTree](styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](styledelement.mdx)。 |
 | [AttachedToVisualTree](#uid-df40bddf6b) | Raised when the control is attached to a rooted visual tree. |
-| [DataContextChanged](styledelement.mdx#uid-4b1cc873f8) | Occurs when the [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) property changes. Inherited from [StyledElement](styledelement.mdx). |
-| [DetachedFromLogicalTree](styledelement.mdx#uid-d9f5afa535) | Raised when the styled element is detached from a rooted logical tree. Inherited from [StyledElement](styledelement.mdx). |
+| [DataContextChanged](styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](styledelement.mdx)。 |
+| [DetachedFromLogicalTree](styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](styledelement.mdx)。 |
 | [DetachedFromVisualTree](#uid-3f64dafb1c) | Raised when the control is detached from a rooted visual tree. |
-| [Initialized](styledelement.mdx#uid-bd6a5e5c0e) | Occurs when the styled element has finished initialization. Inherited from [StyledElement](styledelement.mdx). |
-| [PropertyChanged](avaloniaobject.mdx#uid-d758e26fae) | Raised when a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value changes on this object. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [ResourcesChanged](styledelement.mdx#uid-99a7f47c56) | Occurs when a resource in this styled element or a parent styled element has changed. Inherited from [StyledElement](styledelement.mdx). |
+| [Initialized](styledelement.mdx#uid-bd6a5e5c0e) | 当该样式化元素完成初始化时引发。继承自 [StyledElement](styledelement.mdx)。 |
+| [PropertyChanged](avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [ResourcesChanged](styledelement.mdx#uid-99a7f47c56) | 当该样式化元素或其上级中的资源发生变化时引发。继承自 [StyledElement](styledelement.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-df40bddf6b"></span>
 
-### AttachedToVisualTree Event
+### AttachedToVisualTree 事件 {#attachedtovisualtree-event}
 
 Raised when the control is attached to a rooted visual tree.
 
@@ -694,7 +694,7 @@ public event EventHandler<Avalonia.VisualTreeAttachmentEventArgs> AttachedToVisu
 
 <span id="uid-3f64dafb1c"></span>
 
-### DetachedFromVisualTree Event
+### DetachedFromVisualTree 事件 {#detachedfromvisualtree-event}
 
 Raised when the control is detached from a rooted visual tree.
 

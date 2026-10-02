@@ -1,27 +1,27 @@
 ---
 id: pagination
-title: Pagination
+title: 分页
 doc-type: guide
 tags:
  - avalonia pro
  - avalonia enterprise
 ---
 
-Paginated output, the paged view of `FlowDocumentPageViewer`, the editor in `DocumentViewMode.PageLayout` and the [PDF export](/controls/input/text-input/richtexteditor/pdf-export) display content by filling pages line by line and consulting the document for where a page may end. This guide covers how to control page layout: explicit page breaks, the three keep rules, and per-section page setup.
+分页输出——`FlowDocumentPageViewer` 的分页视图、处于 `DocumentViewMode.PageLayout` 的编辑器，以及 [PDF 导出](/controls/input/text-input/richtexteditor/pdf-export)——都是逐行填充页面，并随时向文档确认一页可以在哪里结束。本指南讲如何控制页面布局：显式分页符、三条保持规则，以及各小节自己的页面设置。
 
-The continuous view ignores every one of them except drawing the page-break marker.
+连续视图对这些一概无视，只会把分页符标记画出来。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Identical output
+## 输出完全一致 {#identical-output}
 
-There are two pagination engines: the paged view's fill walk and the PDF paginator. Although they have their own processing mechanics, both follow the same rules to decide where a page ends. As a result, the same document breaks on the same lines on screen and in a PDF export.
+分页引擎有两个：分页视图的填充遍历，以及 PDF 分页器。两者内部机制各不相同，但判断一页在哪里结束时遵循的是同一套规则。于是同一份文档在屏幕上和在 PDF 导出中，都在同样的位置断页。
 
-## Explicit page breaks
+## 显式分页符 {#explicit-page-breaks}
 
-There is no page-break element. A break is a request on a block: `Block.BreakPageBefore`.
+框架里没有「分页符」这种元素。一个分页符就是加在某个块上的一项请求：`Block.BreakPageBefore`。
 
 ```csharp title="C#"
 heading.BreakPageBefore = true;
@@ -33,39 +33,39 @@ heading.BreakPageBefore = true;
 </Paragraph>
 ```
 
-In the editor, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (or <kbd>Cmd</kbd>+<kbd>Return</kbd> on macOS) applies `BreakPageBefore` at the caret, replacing any selection. The action is one undo step. The effect of the break on content depends on the caret's position:
+在编辑器中，<kbd>Ctrl</kbd>+<kbd>Enter</kbd>（macOS 上是 <kbd>Cmd</kbd>+<kbd>Return</kbd>）会在插入符处应用 `BreakPageBefore`，并替换掉当前选区。该操作算作一步撤销。分页符对内容的影响取决于插入符的位置：
 
-- At a block boundary, it sets `BreakPageBefore` on the following block.
-- Mid-content, it splits the block like <kbd>Enter</kbd>.
+- 位于块边界时，它给后一个块置上 `BreakPageBefore`。
+- 位于内容中间时，它像按 <kbd>Enter</kbd> 那样把块一分为二。
 
-Deleting a break results in a paragraph merge, causing the flagged paragraph to merge with its preceding neighbor and the flag to travel away. If merging is impossible, the deletion only clears the flag.
+删除一个分页符会导致段落合并：被标记的段落与它前面的邻居合为一体，标记也随之消失。若无法合并，则这次删除只是把标记清掉。
 
-An explicit break always wins over a keep rule. Forced cuts are never keep-adjusted.
+显式分页符永远压过保持规则。强制断页从不为保持规则作让步。
 
-The flag round-trips through every format from the one place it lives:
+这个标记只存在一处，并能在所有格式之间往返：
 
-- In DOCX, it becomes `w:pageBreakBefore`, including style-defined breaks, or `w:br` on read.
-- In RTF, it becomes `\pagebb`, or `\page` on read.
-- In XAML and plain text, it writes a form feed as the flagged block's separator, and maps form feeds back to the flag on read.
+- 在 DOCX 中它写作 `w:pageBreakBefore`（包含由样式定义的分页符），读取时则对应 `w:br`。
+- 在 RTF 中它写作 `\pagebb`，读取时对应 `\page`。
+- 在 XAML 和纯文本中，它以换页符作为被标记块的分隔符写出，读取时再把换页符映射回该标记。
 
-### Seeing breaks in the continuous view
+### 在连续视图中查看分页符 {#seeing-breaks-in-the-continuous-view}
 
-Continuous views mark a flagged block with a dashed rule across its top edge, similar to draft view in MS Word. It is paint-only and never affects layout.
+连续视图会在被标记的块顶边画一条虚线，类似 MS Word 的草稿视图。它只是画出来而已，绝不影响布局。
 
-| Member (on `TextViewBase`) | Default | Meaning |
+| 成员（位于 `TextViewBase` 上） | 默认值 | 含义 |
 |---|---|---|
-| `ShowPageBreakMarkers` | `true` | Whether the rule is drawn |
-| `PageBreakMarkerBrush` | `DocumentPageBreakMarkerBrush` | The rule's color |
+| `ShowPageBreakMarkers` | `true` | 是否绘制这条线 |
+| `PageBreakMarkerBrush` | `DocumentPageBreakMarkerBrush` | 线的颜色 |
 
-## Keep rules
+## 保持规则 {#keep-rules}
 
-Three properties determine where an automatic cut lands. All three move a cut earlier, never later. All three round-trip through DOCX, RTF and XAML; the HTML reader maps `break-inside: avoid`, `break-after: avoid` and `orphans`/`widows` onto them.
+有三个属性决定自动断页落在哪里。三者都只会把断点往前挪，绝不会往后推。三者都能在 DOCX、RTF 和 XAML 之间往返；HTML 读取器会把 `break-inside: avoid`、`break-after: avoid` 和 `orphans`/`widows` 映射到它们上面。
 
-| Property | Effect | DOCX | RTF |
+| 属性 | 效果 | DOCX | RTF |
 |---|---|---|---|
-| `Block.KeepTogether` | Move the whole block to the next page rather than split it | `w:keepLines` | `\keep` |
-| `Block.KeepWithNext` | Keep the block's end on the same page as the next block's start | `w:keepNext` | `\keepn` |
-| `Paragraph.WidowControl` | Keep at least two lines of the paragraph on each side of a break | `w:widowControl` | `\nowidctlpar` when off |
+| `Block.KeepTogether` | 把整个块挪到下一页，而不是把它拆开 | `w:keepLines` | `\keep` |
+| `Block.KeepWithNext` | 让该块的结尾与下一个块的开头留在同一页 | `w:keepNext` | `\keepn` |
+| `Paragraph.WidowControl` | 确保分页符两侧各至少留有两行该段落的文字 | `w:widowControl` | 关闭时为 `\nowidctlpar` |
 <br />
 
 ```csharp
@@ -74,15 +74,15 @@ table.KeepTogether = true;        // this table moves rather than splits
 paragraph.WidowControl = false;   // let this paragraph strand a single line
 ```
 
-`KeepTogether` cannot prevent a block paginating if it is taller than one page.
+若某个块本身就比一整页还高，`KeepTogether` 也拦不住它被分页。
 
-`KeepWithNext` chains. You can have consecutive flagged blocks (e.g., a heading, a subheading and the first paragraph) that move as one unit. Like `KeepTogether`, this cannot prevent pagination if the chain is longer than one page.
+`KeepWithNext` 可以串联：连续几个被标记的块（比如标题、副标题和第一段）会作为一个整体一起挪动。和 `KeepTogether` 一样，若整条链比一页还长，它同样拦不住分页。
 
-### Widow control
+### 孤行控制 {#widow-control}
 
-`Paragraph.WidowControl` is `true` by default, meaning at least two lines stay on the page and at least two move. A three-line paragraph never splits at all.
+`Paragraph.WidowControl` 默认为 `true`，意即至少两行留在本页、至少两行挪到下页。因此三行的段落根本不会被拆开。
 
-To let a paragraph strand a single line, turn it off:
+若允许段落落下孤零零一行，把它关掉即可：
 
 ```csharp
 foreach (var block in document.Blocks)
@@ -92,18 +92,18 @@ foreach (var block in document.Blocks)
 }
 ```
 
-The default only applies to paragraphs for which no other settings are in place. A document loaded from DOCX or RTF carries whatever the file says, style-defined values included.
+这个默认值只对没有另行设置的段落生效。从 DOCX 或 RTF 加载的文档一律以文件中的设定为准，包括由样式定义的值。
 
-## Per-section page setup
+## 逐小节的页面设置 {#per-section-page-setup}
 
-A `Section` can declare its own page setup. `PageWidth`, `PageHeight` and `PagePadding` are inherited from the document's property definitions, or that of an enclosing section, when none are declared.
+`Section` 可以声明自己的页面设置。未声明时，`PageWidth`、`PageHeight` 和 `PagePadding` 继承自文档的属性定义，或外层小节的定义。
 
-A section that declares **any** of the three properties is a page-geometry section:
+只要声明了这三个属性中的**任意一个**，该小节就是一个页面几何小节：
 
-- It starts on a fresh page. The content after it starts on another.
-- Its pages use its page size and margins.
-- Its content is measured and wrapped at its own content width.
-- Entering and leaving it are break edges, so they sever a keep-with-next chain the way an explicit break does.
+- 它从新的一页开始，其后的内容也要另起一页。
+- 它的页面采用它自己的页面尺寸和页边距。
+- 它的内容按它自己的内容宽度测量和折行。
+- 进入和离开它都算断页边界，因此它会像显式分页符那样切断「与下段同页」的链条。
 
 ```xml title="XAML"
 <Section PageWidth="1056" PageHeight="816" PagePadding="48">
@@ -129,33 +129,33 @@ var section = new Section
 };
 ```
 
-A section without page setup stays a pure grouping container with no page semantics. Page bands (i.e., headers and footers) ignore section geometry entirely.
+没有页面设置的小节只是个纯粹的分组容器，不具备任何页面语义。页眉页脚带则完全不理会小节的页面几何。
 
-In paged view, each section is rendered at its specified page size, centered on its width. Page navigation, `CurrentPageNumber`, fit zoom and scroll geometry follow the variable stack, i.e., scrolling into a landscape section re-fits to the wider sheet.
+在分页视图中，每个小节都按它指定的页面尺寸渲染，并在宽度方向居中。翻页、`CurrentPageNumber`、适应缩放和滚动几何都随这种可变的页面堆叠而变——滚动进入横向小节时，会重新适配更宽的纸面。
 
-PDF export emits a `MediaBox` per page, which breaks the document on identical boundaries.
+PDF 导出为每一页输出一个 `MediaBox`，断页位置与屏幕上完全一致。
 
-There is a uniform-paper override. An explicit `PageSize` or `PageMargins` on the viewer, or `PdfSerializerOptions.PageSize` and `Margins`, causes all pages to be the same size. A section with a unique page setup still starts its own page, but does not get the requested page setup.
+有一个「统一纸张」的覆盖开关：在阅读器上显式设置 `PageSize` 或 `PageMargins`，或设置 `PdfSerializerOptions.PageSize` 和 `Margins`，会让所有页面尺寸一致。此时有独立页面设置的小节依然会另起一页，但不会获得它所要求的页面设置。
 
-Section page setup round-trips through DOCX (`sectPr`), RTF and XAML, and travels in range snapshots and `Clone`.
+小节的页面设置能在 DOCX（`sectPr`）、RTF 和 XAML 之间往返，也会随区间快照和 `Clone` 一起传递。
 
-## How content fills a page
+## 内容如何填满一页 {#how-content-fills-a-page}
 
-For reference, these are the fill rules the page-break policy sits on top of:
+作为参照，分页策略所依托的填充规则如下：
 
-- Pages fill line by line. A line that does not fit starts the next page exactly at its content top, and the spacing above it is swallowed at the page top.
-- A line taller than a page overflows.
-- Paragraphs split mid-content.
-- Lists split between and inside items.
-- Tables split between rows and never through one. Rows covered by a row-spanning cell move together with their anchor row. The grid closes above the break and reopens below it.
-- A split element stays one element whose geometry spans pages. Selection, copy, caret placement and hit-testing all work mid-fragment.
+- 页面逐行填充。放不下的那一行会另起一页，并恰好从内容顶端开始，它上方的间距在页顶被吞掉。
+- 比一页还高的行会溢出。
+- 段落可以从内容中间拆开。
+- 列表可以在条目之间拆开，也可以在条目内部拆开。
+- 表格只在行与行之间拆开，绝不从一行中间穿过。被跨行单元格覆盖的各行会与它们的锚定行一起挪动。网格在断点之上收口，在断点之下重新展开。
+- 被拆开的元素仍是同一个元素，只是几何形状跨越了页面。选择、复制、放置插入符和命中测试在片段中间照常可用。
 
-Footnotes take part in the fill. A line carrying anchors reserves its notes' heights at the bottom of its page, and a line that no longer fits moves to the next page with its notes. See [Footnotes](/controls/input/text-input/richtexteditor/footnotes).
+脚注也参与填充。含有锚点的行会在所在页底部预留出相应注释的高度，放不下的行会连同注释一起挪到下一页。参阅[脚注](/controls/input/text-input/richtexteditor/footnotes)。
 
-Headers or footers that outgrow their margins shorten the page's body. See [Headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers).
+超出页边距的页眉或页脚会压缩该页的正文高度。参阅[页眉与页脚](/controls/input/text-input/richtexteditor/headers-and-footers)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [PDF export](/controls/input/text-input/richtexteditor/pdf-export) - the same policy, written to a file
-- [Headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers) - page bands and the distance that shortens a page
-- [Footnotes](/controls/input/text-input/richtexteditor/footnotes) - notes reserve room at the bottom of their page
+- [PDF 导出](/controls/input/text-input/richtexteditor/pdf-export) —— 同一套策略，只是写进了文件
+- [页眉与页脚](/controls/input/text-input/richtexteditor/headers-and-footers) —— 页眉页脚带，以及那个会压缩页面的距离
+- [脚注](/controls/input/text-input/richtexteditor/footnotes) —— 注释在所属页底部预留的空间

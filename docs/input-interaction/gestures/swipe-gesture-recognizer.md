@@ -1,17 +1,17 @@
 ---
 id: swipe-gesture-recognizer
-title: Swipe
+title: 滑动
 doc-type: reference
-description: Swipe gesture recognizer detects when a user rapidly drags a pointer in a single direction, providing per-event velocity data to support transition effects.
+description: 滑动手势识别器能辨认出用户朝某一方向快速拖动指针的动作，并逐事件给出速度数据，便于实现过渡效果。
 ---
 
-A gesture recognizer that tracks swipe gestures for discrete paging interactions. `SwipeGestureRecognizer` detects when a user rapidly drags a pointer in a single direction, providing per-event velocity data that enables speed-sensitive transitions such as carousel page changes. Unlike `ScrollGestureRecognizer`, it does not include inertia or continuous scrolling physics.
+一个跟踪滑动手势、用于离散翻页交互的手势识别器。`SwipeGestureRecognizer` 会检测用户朝某一方向快速拖动指针的动作，并逐事件给出速度数据，从而支持轮播翻页之类对速度敏感的过渡。与 `ScrollGestureRecognizer` 不同，它不带惯性，也没有连续滚动的物理效果。
 
-Use `SwipeGestureRecognizer` when a control needs to respond to deliberate directional flicks (such as navigating between pages in a carousel). For continuous panning with inertia, use [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gesture-recognizer) instead.
+当控件需要响应刻意为之的方向性轻扫时（比如在轮播图中翻页），请用 `SwipeGestureRecognizer`。若要的是带惯性的连续平移，请改用 [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gesture-recognizer)。
 
-## Using a SwipeGestureRecognizer
+## 使用 SwipeGestureRecognizer {#using-a-swipegesturerecognizer}
 
-A `SwipeGestureRecognizer` can be attached to a control using the control's `GestureRecognizers` property.
+通过控件的 `GestureRecognizers` 属性，可以把 `SwipeGestureRecognizer` 挂到控件上。
 ```xml
 <Border Name="swipeArea" Background="Transparent" Height="300">
     <Border.GestureRecognizers>
@@ -31,11 +31,11 @@ swipeArea.GestureRecognizers.Add(new SwipeGestureRecognizer
 });
 ```
 
-The `SwipeGestureRecognizer` raises an `InputElement.SwipeGestureEvent` during the swipe as the pointer moves. When the swipe ends, from the pointer being released or another gesture starting, it raises an `InputElement.SwipeGestureEndedEvent`.
+滑动过程中指针每移动一下，`SwipeGestureRecognizer` 就会引发一次 `InputElement.SwipeGestureEvent`；当滑动结束——指针松开或另一个手势开始——时，它会引发 `InputElement.SwipeGestureEndedEvent`。
 
-## Binding events
+## 绑定事件 {#binding-events}
 
-After the `SwipeGestureRecognizer` has been added to your control, bind them in your code-behind, either through an inline handler or to an event function:
+把 `SwipeGestureRecognizer` 添加到控件之后，请在代码隐藏中绑定这些事件，既可以写内联处理程序，也可以绑到一个事件函数上：
 
 ```csharp title='C#'
 swipeArea.AddHandler(InputElement.SwipeGestureEvent, (s, e) => { });
@@ -50,45 +50,45 @@ private void OnSwipeGesture(object? sender, SwipeGestureEventArgs e) { }
 private void OnSwipeGestureEnded(object? sender, SwipeGestureEndedEventArgs e) { }
 ```
 
-If your event handles the gesture completely, mark the event as handled by setting:
+若你的事件处理程序已经把这个手势处理完毕，可以这样把事件标记为已处理：
 
 ```csharp title='C#'
 e.Handled = true;
 ```
 
-## Event args
+## 事件参数 {#event-args}
 
-`SwipeGestureEventArgs` is raised during the gesture:
+`SwipeGestureEventArgs` 在手势进行期间引发：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Id` | `int` | Unique identifier for this gesture sequence. |
-| `Delta` | `Vector` | Pixel delta since the last event. |
-| `Velocity` | `Vector` | Current swipe velocity in pixels per second. |
-| `SwipeDirection` | `SwipeDirection` | Dominant swipe direction: `Left`, `Right`, `Up`, or `Down`. |
+| `Id` | `int` | 本次手势序列的唯一标识。 |
+| `Delta` | `Vector` | 自上一次事件以来的像素增量。 |
+| `Velocity` | `Vector` | 当前的滑动速度，单位为像素每秒。 |
+| `SwipeDirection` | `SwipeDirection` | 滑动的主方向：`Left`、`Right`、`Up` 或 `Down`。 |
 
-`SwipeGestureEndedEventArgs` is raised when the pointer is released:
+`SwipeGestureEndedEventArgs` 在指针松开时引发：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Id` | `int` | Unique identifier for this gesture sequence. |
-| `Velocity` | `Vector` | Swipe velocity at the moment the pointer was released. |
+| `Id` | `int` | 本次手势序列的唯一标识。 |
+| `Velocity` | `Vector` | 指针松开那一刻的滑动速度。 |
 
-## Properties
+## 属性 {#properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property | Type | Description | Default |
+| 属性 | 类型 | 说明 | 默认值 |
 |---|---|---|---|
-| `CanHorizontallySwipe` | `bool` | Enables tracking of horizontal (left/right) swipes. | `false` |
-| `CanVerticallySwipe` | `bool` | Enables tracking of vertical (up/down) swipes. | `false` |
-| `Threshold` | `double` | Minimum pointer movement in pixels before the swipe is recognized. If set to 0, the platform default threshold is used. | 0 |
-| `IsMouseEnabled` | `bool` | When `true`, mouse pointer events trigger swipe gestures in addition to touch and pen. | `false` |
-| `IsEnabled` | `bool` | Enables or disables the recognizer entirely. | `true`. |
+| `CanHorizontallySwipe` | `bool` | 启用对横向（左/右）滑动的跟踪。 | `false` |
+| `CanVerticallySwipe` | `bool` | 启用对纵向（上/下）滑动的跟踪。 | `false` |
+| `Threshold` | `double` | 指针至少要移动多少像素才算识别出滑动。设为 0 时采用平台默认阈值。 | 0 |
+| `IsMouseEnabled` | `bool` | 为 `true` 时，除触摸和触控笔外，鼠标指针事件也能触发滑动手势。 | `false` |
+| `IsEnabled` | `bool` | 整体启用或禁用该识别器。 | `true`. |
 
-## Examples
+## 示例 {#examples}
 
-### Detecting horizontal swipes to navigate pages
+### 检测横向滑动以实现翻页 {#detecting-horizontal-swipes-to-navigate-pages}
 
 ```csharp title='C#'
 int currentPage = 0;
@@ -106,7 +106,7 @@ swipeArea.AddHandler(InputElement.SwipeGestureEndedEvent, (s, e) =>
 });
 ```
 
-### Vertical swipe detection
+### 纵向滑动检测 {#vertical-swipe-detection}
 
 ```xml
 <Border Name="verticalSwipeArea" Background="Transparent">
@@ -116,9 +116,9 @@ swipeArea.AddHandler(InputElement.SwipeGestureEndedEvent, (s, e) =>
 </Border>
 ```
 
-### Enabling mouse support
+### 启用鼠标支持 {#enabling-mouse-support}
 
-By default, only touch and pen input trigger swipe gestures. Enable mouse support for desktop scenarios:
+默认情况下只有触摸和触控笔输入会触发滑动手势。桌面场景下可以启用鼠标支持：
 
 ```xml
 <Border.GestureRecognizers>
@@ -127,11 +127,11 @@ By default, only touch and pen input trigger swipe gestures. Enable mouse suppor
 </Border.GestureRecognizers>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [API reference](/api/avalonia/input/gesturerecognizers/swipegesturerecognizer)
-- [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/SwipeGestureRecognizer.cs)
-- [Gestures](/docs/input-interaction/gestures): Overview of gesture recognizers and built-in gesture events.
-- [Scroll](/docs/input-interaction/gestures/scroll-gesture-recognizer): Scroll gesture for continuous panning with inertia.
-- [Pull](/docs/input-interaction/gestures/pull-gesture-recognizer): Pull gesture for pull-to-refresh interactions.
-- [Pinch](/docs/input-interaction/gestures/pinch-gesture-recognizer): Pinch gesture for zoom interactions.
+- [API 参考](/api/avalonia/input/gesturerecognizers/swipegesturerecognizer)
+- [源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/SwipeGestureRecognizer.cs)
+- [手势](/docs/input-interaction/gestures)：手势识别器与内置手势事件概览。
+- [滚动](/docs/input-interaction/gestures/scroll-gesture-recognizer)：带惯性的连续平移滚动手势。
+- [拉拽](/docs/input-interaction/gestures/pull-gesture-recognizer)：用于下拉刷新交互的拉拽手势。
+- [捏合](/docs/input-interaction/gestures/pinch-gesture-recognizer)：用于缩放交互的捏合手势。

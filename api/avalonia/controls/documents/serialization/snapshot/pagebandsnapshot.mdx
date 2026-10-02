@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PageBandSnapshot Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -52,29 +52,29 @@ public class PageBandSnapshot
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageBandSnapshot
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageBandSnapshot
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PageBandSnapshot](#uid-1b0b8b3ca8) | Initializes a band snapshot. |
+| [PageBandSnapshot](#uid-1b0b8b3ca8) | 初始化一份带状区域快照。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1b0b8b3ca8"></span>
 
-### PageBandSnapshot Constructor
+### PageBandSnapshot 构造函数 {#pagebandsnapshot-constructor}
 
-Initializes a band snapshot.
+初始化一份带状区域快照。
 
 ```csharp
 public PageBandSnapshot(string name, Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot content, Avalonia.Controls.Documents.PageBandRole role, Avalonia.Controls.Documents.PageBandRule rule, Guid id)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `name` string
 
@@ -93,23 +93,23 @@ public PageBandSnapshot(string name, Avalonia.Controls.Documents.Serialization.S
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Content](#uid-2ffe5c3e5f) | The band's content. |
+| [Content](#uid-2ffe5c3e5f) | 该带状区域的内容。 |
 | [Id](#uid-cde6efdf90) | The band's identity: what a section's references name, kept by the restored band. |
 | [Name](#uid-dbcb3d369a) | The band's name, when the source format named it; null otherwise. |
-| [Role](#uid-00e4518c3d) | Whether the band is a header or a footer. |
-| [Rule](#uid-7fc1db60c3) | Which pages the band claims by itself. |
+| [Role](#uid-00e4518c3d) | 该带状区域是页眉还是页脚。 |
+| [Rule](#uid-7fc1db60c3) | 该带状区域自身占据哪些页面。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2ffe5c3e5f"></span>
 
-### Content Property
+### Content 属性 {#content-property}
 
-The band's content.
+该带状区域的内容。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Content { get; set; }
@@ -121,7 +121,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Conte
 
 <span id="uid-cde6efdf90"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 The band's identity: what a section's references name, kept by the restored band.
 
@@ -135,7 +135,7 @@ public Guid Id { get; set; }
 
 <span id="uid-dbcb3d369a"></span>
 
-### Name Property
+### Name 属性 {#name-property}
 
 The band's name, when the source format named it; null otherwise.
 
@@ -149,9 +149,9 @@ public string Name { get; set; }
 
 <span id="uid-00e4518c3d"></span>
 
-### Role Property
+### Role 属性 {#role-property}
 
-Whether the band is a header or a footer.
+该带状区域是页眉还是页脚。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBandRole Role { get; set; }
@@ -163,9 +163,9 @@ public Avalonia.Controls.Documents.PageBandRole Role { get; set; }
 
 <span id="uid-7fc1db60c3"></span>
 
-### Rule Property
+### Rule 属性 {#rule-property}
 
-Which pages the band claims by itself.
+该带状区域自身占据哪些页面。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBandRule Rule { get; set; }

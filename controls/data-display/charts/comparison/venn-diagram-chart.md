@@ -1,25 +1,25 @@
 ---
 id: venn-diagram-chart
-title: Venn diagram chart
-description: Visualizes set overlap and intersection values, useful for comparing memberships and shared segments.
+title: 韦恩图
+description: 呈现集合之间的重叠与交集数值，适合比较成员归属和共有部分。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Venn diagram charts show how sets overlap, which regions are unique, and how much value belongs to each intersection.
+韦恩图展示各集合如何相互重叠、哪些区域是各自独有的，以及每块交集各占多少。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Set comparison**: Show overlap between product audiences, features, or experiments.
-- **Shared membership**: Highlight unique and intersecting segments.
-- **Selection workflows**: Let users inspect or select regions in the diagram.
+- **集合对比**：呈现产品受众、功能或实验之间的重叠。
+- **共有成员**：凸显各自独有和彼此交叠的部分。
+- **选择式操作**：让用户查看或选中图中的某个区域。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -30,7 +30,7 @@ Venn diagram charts show how sets overlap, which regions are unique, and how muc
                                    IsSelectionEnabled="True" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<VennItem> VennItems { get; } = new()
@@ -41,28 +41,28 @@ public ObservableCollection<VennItem> VennItems { get; } = new()
 };
 ```
 
-## Common properties (`VennDiagramChart`)
+## 常用属性（`VennDiagramChart`） {#common-properties-venndiagramchart}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of `VennItem` regions. | `null` |
-| `IsSelectionEnabled` | Whether regions can be selected. | `false` |
-| `SelectionMode` | Selection behavior. | `SingleDeselect` |
-| `SelectionBrush` | Brush used for selected regions. | Theme-dependent |
-| `SelectionStroke` | Stroke used for selected regions. | `null` |
-| `SelectionStrokeThickness` | Stroke thickness used for selected regions. | `2.0` |
-| `SelectedIndex` | Index of the selected region, or `-1` when nothing is selected. | `-1` |
+| `ItemsSource` | `VennItem` 区域的集合。 | `null` |
+| `IsSelectionEnabled` | 各区域是否可选。 | `false` |
+| `SelectionMode` | 选择行为。 | `SingleDeselect` |
+| `SelectionBrush` | 选中区域所用的画刷。 | Theme-dependent |
+| `SelectionStroke` | 选中区域所用的描边。 | `null` |
+| `SelectionStrokeThickness` | 选中区域所用的描边粗细。 | `2.0` |
+| `SelectedIndex` | 选中区域的索引；未选中任何区域时为 `-1`。 | `-1` |
 
-## Common properties (`VennItem`)
+## 常用属性（`VennItem`） {#common-properties-vennitem}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Sets` | Collection of set identifiers, such as `["A"]` or `["A", "B"]`. | Empty collection |
-| `Value` | Numeric value represented by the set or intersection. | `0.0` |
-| `Name` | Optional region label. | `null` |
-| `Fill` | Optional fill brush for the region. | `null` |
+| `Sets` | 集合标识符的集合，比如 `["A"]` 或 `["A", "B"]`。 | 空集合 |
+| `Value` | 该集合或交集所代表的数值。 | `0.0` |
+| `Name` | 可选的区域标签。 | `null` |
+| `Fill` | 该区域可选的填充画刷。 | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Circle packing chart](/controls/data-display/charts/hierarchy/circle-packing-chart)
-- [Parliament chart](/controls/data-display/charts/comparison/parliament-chart)
+- [圆堆积图](/controls/data-display/charts/hierarchy/circle-packing-chart)
+- [议席图](/controls/data-display/charts/comparison/parliament-chart)

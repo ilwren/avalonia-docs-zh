@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HtmlSerializerOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 </div>
 
@@ -51,25 +51,25 @@ public class HtmlSerializerOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlSerializerOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlSerializerOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HtmlSerializerOptions (2 overloads)](#uid-c9126528ce) | Initializes options with no custom tag handlers. |
 
 <span id="uid-c9126528ce"></span>
 
-### HtmlSerializerOptions overloads
+### HtmlSerializerOptions 的重载 {#htmlserializeroptions-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-dba98f3f5c"></span>
 
-#### HtmlSerializerOptions Constructor
+#### HtmlSerializerOptions 构造函数 {#htmlserializeroptions-constructor}
 
 Initializes options with no custom tag handlers.
 
@@ -83,22 +83,22 @@ public HtmlSerializerOptions()
 
 <span id="uid-a4c6e0299f"></span>
 
-#### HtmlSerializerOptions Constructor
+#### HtmlSerializerOptions 构造函数 {#htmlserializeroptions-constructor-1}
 
 ```csharp
 public HtmlSerializerOptions(System.Collections.Generic.IReadOnlyDictionary<string, Avalonia.Controls.Documents.Serialization.Html.IHtmlTagHandler> tagHandlers)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `tagHandlers` System.Collections.Generic.IReadOnlyDictionary&lt;string, [Avalonia.Controls.Documents.Serialization.Html.IHtmlTagHandler](xref:Avalonia.Controls.Documents.Serialization.Html.IHtmlTagHandler)&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BaseFontSize](#uid-f0064aa80a) | Base font size in DIPs used for heading scale calculations. Defaults to 14.0 (matching Avalonia's default font size). |
 | [Document](#uid-3c08221bab) | Shared serializer options common to all document serializers. HTML import reads [Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.MaxImageBytes](xref:Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.MaxImageBytes) from it, which caps the payload a `data:` image source may decode to. |
@@ -109,7 +109,7 @@ public HtmlSerializerOptions(System.Collections.Generic.IReadOnlyDictionary<stri
 
 <span id="uid-f0064aa80a"></span>
 
-### BaseFontSize Property
+### BaseFontSize 属性 {#basefontsize-property}
 
 Base font size in DIPs used for heading scale calculations.
 Defaults to 14.0 (matching Avalonia's default font size).
@@ -124,7 +124,7 @@ public double BaseFontSize { get; set; }
 
 <span id="uid-3c08221bab"></span>
 
-### Document Property
+### Document 属性 {#document-property}
 
 Shared serializer options common to all document serializers. HTML import reads
 [Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.MaxImageBytes](xref:Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.MaxImageBytes) from it, which caps the payload
@@ -140,7 +140,7 @@ public Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions Docum
 
 <span id="uid-7188da6ee0"></span>
 
-### PreserveUnknownTagContent Property
+### PreserveUnknownTagContent 属性 {#preserveunknowntagcontent-property}
 
 When `true` (default), unrecognized tags are silently consumed
 and their text content is preserved. When `false`, unrecognized
@@ -156,7 +156,7 @@ public bool PreserveUnknownTagContent { get; set; }
 
 <span id="uid-5a7976bcf5"></span>
 
-### TagHandlers Property
+### TagHandlers 属性 {#taghandlers-property}
 
 Custom tag handlers keyed by tag name (case-insensitive).
 Built-in tags are processed first; custom handlers are only consulted
@@ -168,9 +168,9 @@ public System.Collections.Generic.IReadOnlyDictionary<string, Avalonia.Controls.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Default](#uid-6d5880e8e5) | Default options with no custom tag handlers. |
 
@@ -178,7 +178,7 @@ public System.Collections.Generic.IReadOnlyDictionary<string, Avalonia.Controls.
 
 <span id="uid-6d5880e8e5"></span>
 
-### Default Field
+### Default 字段 {#default-field}
 
 Default options with no custom tag handlers.
 

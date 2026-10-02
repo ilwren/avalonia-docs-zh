@@ -1,35 +1,35 @@
 ---
 id: data-validation
-title: Data validation
-description: Validate user input in Avalonia using DataAnnotationsValidationPlugin.
+title: 数据校验
+description: 在 Avalonia 中用 DataAnnotationsValidationPlugin 校验用户输入。
 doc-type: overview
 ---
 
-This page explains how to use Avalonia to validate data input by users.
+本文介绍如何用 Avalonia 校验用户输入的数据。
 
-## Data annotations validation plugin
+## 数据注解校验插件 {#data-annotations-validation-plugin}
 
-Avalonia's data annotations validation support allows you to validate any [`Validation-Attributes`](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationattribute) associated with the `Properties` of your `ViewModel`.
+Avalonia 的数据注解校验支持让你能够校验与 `ViewModel` 的 `Properties` 相关联的任何 [`Validation-Attributes`](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationattribute)。
 
-You can validate built-in validation attributes, [`CustomValidationAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.customvalidationattribute), or your own attributes derived from `ValidationAttribute`.
+可以校验内置的校验特性、[`CustomValidationAttribute`](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.customvalidationattribute)，也可以校验你自己从 `ValidationAttribute` 派生出的特性。
 
 ### Enable `DataAnnotationsValidationPlugin`
 
-Since Avalonia v12, the data annotations validation plugin is disabled by default. To enable the plugin:
+从 Avalonia v12 起，数据注解校验插件默认是关闭的。启用方法：
 
-1. Go to the `Program.cs` file of your project.
-2. Within the `AppBuilder`, add this line:
+1. 打开项目中的 `Program.cs` 文件。
+2. 在 `AppBuilder` 里加上这行：
 
 ```csharp
 .WithDataAnnotationsValidation()
 ```
 
-If you are migrating an earlier project that manually specified the removal of the data annotations validation plugin with `BindingPlugins.DataValidators.Remove(plugin);` or similar, you can now delete it. It is no longer needed.
+如果你要迁移的旧项目里曾用 `BindingPlugins.DataValidators.Remove(plugin);` 之类的写法手动移除数据注解校验插件，现在可以把它删掉了，不再需要。
 
-### Example: The property `EMail` is required and must be a valid e-mail-address
+### 示例：`EMail` 属性为必填，且必须是合法的电子邮件地址 {#example-the-property-email-is-required-and-must-be-a-valid-e-mail-address}
 
 :::note
-`RaiseAndSetIfChanged` is a ReactiveUI method. This example requires ReactiveUI to work.
+`RaiseAndSetIfChanged` 是 ReactiveUI 提供的方法，这个示例需要 ReactiveUI 才能运行。
 :::
 
 ```csharp
@@ -42,13 +42,13 @@ public string? EMail
 }
 ```
 
-## Customize the appearance of the validation message
+## 定制校验消息的外观 {#customize-the-appearance-of-the-validation-message}
 
-The [`DataValidationErrors class`](/api/avalonia/controls/datavalidationerrors) is used to display validation error messages. It can be placed as a control inside the `ControlTemplate` of any control that supports data validation, such as a `TextBox`.
+[`DataValidationErrors class`](/api/avalonia/controls/datavalidationerrors) 用于显示校验错误消息。它可以作为控件放进任何支持数据校验的控件（比如 `TextBox`）的 `ControlTemplate` 中。
 
-Set a `Style` in your .axaml file to customize the appearance of the error message.
+在 .axaml 文件中设置 `Style`，即可定制错误消息的外观。
 
-### Example: Custom data validation error message
+### 示例：自定义数据校验错误消息 {#example-custom-data-validation-error-message}
 
 ```xml
 <Style Selector="DataValidationErrors">
@@ -93,7 +93,7 @@ Set a `Style` in your .axaml file to customize the appearance of the error messa
 </Style>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Data Binding](/docs/data-binding/introduction-to-data-binding): Binding data to controls.
-- [Community Toolkit MVVM](https://learn.microsoft.com/en-us/windows/communitytoolkit/mvvm/observablevalidator): Using `ObservableValidator` for validation.
+- [数据绑定](/docs/data-binding/introduction-to-data-binding)：把数据绑定到控件。
+- [Community Toolkit MVVM](https://learn.microsoft.com/en-us/windows/communitytoolkit/mvvm/observablevalidator)：用 `ObservableValidator` 做校验。

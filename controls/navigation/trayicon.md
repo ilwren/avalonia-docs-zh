@@ -1,36 +1,36 @@
 ---
 id: trayicon
 title: TrayIcon
-description: A system tray icon control that displays an icon and native context menu in the operating system notification area.
+description: 一个系统托盘图标控件，在操作系统通知区域显示图标和原生上下文菜单。
 doc-type: reference
 ---
 
 import TrayIconScreenshot from '/img/controls/trayicon/trayicon.gif';
 
-The [`TrayIcon`](/api/avalonia/controls/trayicon) control lets your Avalonia application display an icon and a native menu in the system tray (notification area). It is supported on Windows, macOS, and some Linux distributions (confirmed to work on Ubuntu).
+[`TrayIcon`](/api/avalonia/controls/trayicon) 控件让你的 Avalonia 应用在系统托盘（通知区域）中显示图标和原生菜单。它支持 Windows、macOS，以及部分 Linux 发行版（已确认在 Ubuntu 上可用）。
 
-You define tray icons in your `App.axaml` file using the `TrayIcon.Icons` attached property on the `Application` element.
+托盘图标在 `App.axaml` 文件中定义：在 `Application` 元素上使用 `TrayIcon.Icons` 附加属性。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Icon` | `WindowIcon` | The icon to display in the system tray. Typically loaded from your application assets. |
-| `ToolTipText` | `string` | Tooltip text displayed when the user hovers over the tray icon. |
-| `IsVisible` | `bool` | Controls whether the tray icon is shown. Default is `true`. |
-| `Command` | `ICommand` | The command to execute when the user clicks the tray icon. |
-| `CommandParameter` | `object` | The parameter to pass to the `Command`. |
-| `Menu` | `NativeMenu` | The native menu control attached to the tray icon. |
+| `Icon` | `WindowIcon` | 在系统托盘中显示的图标，通常从应用资产中加载。 |
+| `ToolTipText` | `string` | 鼠标悬停在托盘图标上时显示的提示文字。 |
+| `IsVisible` | `bool` | 控制托盘图标是否显示，默认值为 `true`。 |
+| `Command` | `ICommand` | 用户点击托盘图标时执行的命令。 |
+| `CommandParameter` | `object` | 传给 `Command` 的参数。 |
+| `Menu` | `NativeMenu` | 挂在托盘图标上的原生菜单控件。 |
 
 :::info
-You must use a `NativeMenu` with the tray icon, not the Avalonia `Menu` control. For full details about native menus, see the [NativeMenu](/controls/menus/nativemenu) reference.
+托盘图标必须搭配 `NativeMenu` 使用，而不是 Avalonia 的 `Menu` 控件。原生菜单的完整说明请参阅 [NativeMenu](/controls/menus/nativemenu) 参考。
 :::
 
 ## Example
 
-This example defines a simple tray icon with a nested menu in the `App.axaml` file:
+下面的例子在 `App.axaml` 文件中定义了一个带嵌套菜单的简单托盘图标：
 
 ```xml title="App.axaml"
 <Application xmlns="https://github.com/avaloniaui"
@@ -58,7 +58,7 @@ This example defines a simple tray icon with a nested menu in the `App.axaml` fi
 </Application>
 ```
 
-Include the `.ico` file in your `.csproj` file as an `AvaloniaResource`:
+把 `.ico` 文件作为 `AvaloniaResource` 加入你的 `.csproj` 文件：
 
 ```xml title="MyApplication.csproj"
 <Project Sdk="Microsoft.NET.Sdk">
@@ -70,9 +70,9 @@ Include the `.ico` file in your `.csproj` file as an `AvaloniaResource`:
 
 <Image light={TrayIconScreenshot} alt="TrayIcon with a context menu shown in the system tray" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Binding menu commands
+## 绑定菜单命令 {#binding-menu-commands}
 
-You can bind tray menu item commands to a view model. The `Command` on the `TrayIcon` itself fires when the user clicks the icon directly, while each `NativeMenuItem` can have its own `Command`:
+托盘菜单项的命令可以绑定到视图模型。`TrayIcon` 自身的 `Command` 在用户直接点击图标时触发，而每个 `NativeMenuItem` 也可以有自己的 `Command`：
 
 ```xml title="App.axaml"
 <TrayIcon Icon="/Assets/app-icon.ico"
@@ -90,12 +90,12 @@ You can bind tray menu item commands to a view model. The `Command` on the `Tray
 ```
 
 :::tip
-To bind commands to a view model, set the `DataContext` on your `Application` object or use a compiled binding with `x:DataType` so the tray icon can resolve the binding path.
+若要把命令绑定到视图模型，请在 `Application` 对象上设置 `DataContext`，或使用带 `x:DataType` 的编译绑定，这样托盘图标才能解析绑定路径。
 :::
 
-## Showing and hiding the tray icon
+## 显示与隐藏托盘图标 {#showing-and-hiding-the-tray-icon}
 
-You can toggle tray icon visibility at runtime by binding the `IsVisible` property. This is useful when your application minimizes to the tray:
+绑定 `IsVisible` 属性即可在运行时切换托盘图标的可见性。应用最小化到托盘时，这很有用：
 
 ```xml title="App.axaml"
 <TrayIcon Icon="/Assets/app-icon.ico"
@@ -103,23 +103,23 @@ You can toggle tray icon visibility at runtime by binding the `IsVisible` proper
           ToolTipText="My Application" />
 ```
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
-- The `TrayIcon` is defined at the `Application` level, not inside a `Window`. It persists regardless of which windows are open.
-- On macOS, clicking the tray icon shows the menu. On Windows, right-clicking shows the menu and left-clicking fires the `Command`.
-- You can define multiple `TrayIcon` elements inside a single `TrayIcons` collection if your application requires more than one tray icon.
-- If the tray icon does not appear on Linux, verify that your desktop environment supports `StatusNotifierItem` or `AppIndicator`. GNOME users may need the AppIndicator extension.
+- `TrayIcon` 定义在 `Application` 这一级，而不是某个 `Window` 内部。无论哪些窗口处于打开状态，它都一直在。
+- 在 macOS 上，点击托盘图标会弹出菜单；在 Windows 上，右键弹出菜单，左键触发 `Command`。
+- 如果应用需要不止一个托盘图标，可以在同一个 `TrayIcons` 集合里定义多个 `TrayIcon` 元素。
+- 如果托盘图标在 Linux 上没出现，请确认你的桌面环境支持 `StatusNotifierItem` 或 `AppIndicator`。GNOME 用户可能需要安装 AppIndicator 扩展。
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Platform | Support |
+| 平台 | 支持情况 |
 |---|---|
-| Windows | Full support |
-| macOS | Full support |
-| Linux | Works on distributions with `StatusNotifierItem` or `AppIndicator` support (confirmed on Ubuntu) |
+| Windows | 完整支持 |
+| macOS | 完整支持 |
+| Linux | 在支持 `StatusNotifierItem` 或 `AppIndicator` 的发行版上可用（已在 Ubuntu 上确认） |
 
-## See also
+## 另请参阅 {#see-also}
 
 - [NativeMenu](/controls/menus/nativemenu)
 - [Window](/controls/primitives/window)
-- [`TrayIcon` source code (GitHub)](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TrayIcon.cs)
+- [`TrayIcon` 源码（GitHub）](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TrayIcon.cs)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IChildIndexProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.LogicalTree</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.LogicalTree</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/IChildIndexProvider.cs">IChildIndexProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/IChildIndexProvider.cs">IChildIndexProvider.cs</a>
 </div>
 
 </div>
@@ -52,41 +52,41 @@ public interface IChildIndexProvider
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Used by nth-child and nth-last-child selectors.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetChildIndex](#uid-147b451016) | Gets child's actual index in order of the original source. |
-| [TryGetTotalCount](#uid-478d7ebd91) | No summary available. |
+| [GetChildIndex](#uid-147b451016) | 获取子级按原始数据源顺序排列时的实际索引。 |
+| [TryGetTotalCount](#uid-478d7ebd91) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-147b451016"></span>
 
-### GetChildIndex Method
+### GetChildIndex 方法 {#getchildindex-method}
 
-Gets child's actual index in order of the original source.
+获取子级按原始数据源顺序排列时的实际索引。
 
 ```csharp
 public int GetChildIndex(Avalonia.LogicalTree.ILogical child)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `child` [Avalonia.LogicalTree.ILogical](xref:Avalonia.LogicalTree.ILogical)
 
-Logical child.
+逻辑子级。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 int
 
-Index or -1 if child was not found.
+索引；若未找到该子级则为 -1。
 
 
 </section>
@@ -95,27 +95,27 @@ Index or -1 if child was not found.
 
 <span id="uid-478d7ebd91"></span>
 
-### TryGetTotalCount Method
+### TryGetTotalCount 方法 {#trygettotalcount-method}
 
 ```csharp
 public bool TryGetTotalCount(int& count)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `count` int&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ChildIndexChanged](#uid-41b7f16f4a) | Notifies subscriber when a child's index was changed. |
 
@@ -123,7 +123,7 @@ bool
 
 <span id="uid-41b7f16f4a"></span>
 
-### ChildIndexChanged Event
+### ChildIndexChanged 事件 {#childindexchanged-event}
 
 Notifies subscriber when a child's index was changed.
 

@@ -20,24 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextViewComponentBase Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Base class for [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent) implementations that are
-not already derived from another type (e.g., [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)).
+面向那些尚未派生自其他类型（例如 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)）的 [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent) 实现的基类。
 
 </div>
 
@@ -51,36 +50,35 @@ public class TextViewComponentBase
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextViewComponentBase
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextViewComponentBase
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="texteditorselectionflyout">TextEditorSelectionFlyout</a>, <a href="texteditortyping">TextEditorTyping</a>, <a href="textviewcontextmenu">TextViewContextMenu</a>, <a href="textviewkeyboard">TextViewKeyboard</a>, <a href="textviewmouse">TextViewMouse</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="texteditorselectionflyout">TextEditorSelectionFlyout</a>, <a href="texteditortyping">TextEditorTyping</a>, <a href="textviewcontextmenu">TextViewContextMenu</a>, <a href="textviewkeyboard">TextViewKeyboard</a>, <a href="textviewmouse">TextViewMouse</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="itextviewcomponent">ITextViewComponent</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="itextviewcomponent">ITextViewComponent</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-Provides automatic [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host) tracking, [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached)
-state, and re-attach safety (detach-before-attach). Subclasses override
-[Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached) and [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached) to subscribe and
-unsubscribe from host events.
+它提供自动的 [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.Host) 跟踪、[Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.IsAttached) 状态，
+以及重复附加时的安全处理（先分离再附加）。子类重写
+[Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnAttached) 和 [Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewComponentBase.OnDetached) 来订阅和取消订阅宿主事件。
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsAttached](#uid-7df392cfdc) | Gets whether this component is currently attached to a host. |
+| [IsAttached](#uid-7df392cfdc) | 获取该组件当前是否已附加到某个宿主上。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7df392cfdc"></span>
 
-### IsAttached Property
+### IsAttached 属性 {#isattached-property}
 
-Gets whether this component is currently attached to a host.
+获取该组件当前是否已附加到某个宿主上。
 
 ```csharp
 public bool IsAttached { get; set; }

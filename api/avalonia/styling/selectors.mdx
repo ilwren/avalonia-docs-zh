@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Selectors Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Styling</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Styling</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Styling/Selectors.cs">Selectors.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Styling/Selectors.cs">Selectors.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Extension methods for [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector).
+面向 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector) 的扩展方法。
 
 </div>
 
@@ -54,25 +54,25 @@ public class Selectors
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Selectors
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Selectors
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Child](#uid-7d65ee1278) | Returns a selector which matches a previous selector's child. |
 | [Class](#uid-8b8f95a723) | Returns a selector which matches a control's style class. |
 | [Descendant](#uid-40f6b234ab) | Returns a selector which matches a descendant of a previous selector. |
-| [Is (2 overloads)](#uid-943070bad5) | No summary available. |
+| [Is (2 overloads)](#uid-943070bad5) | 暂无摘要。 |
 | [Name](#uid-3a46ab87f6) | Returns a selector which matches a control's Name. |
-| [Nesting](#uid-69cdb5d416) | No summary available. |
+| [Nesting](#uid-69cdb5d416) | 暂无摘要。 |
 | [Not (2 overloads)](#uid-13eaaea405) | Returns a selector which inverts the results of selector argument. |
-| [NthChild](#uid-96765779fa) | No summary available. |
-| [NthLastChild](#uid-3a26efd644) | No summary available. |
-| [OfType (2 overloads)](#uid-c972f6ecd6) | No summary available. |
-| [Or (2 overloads)](#uid-a1c438c394) | Returns a selector which ORs selectors. |
+| [NthChild](#uid-96765779fa) | 暂无摘要。 |
+| [NthLastChild](#uid-3a26efd644) | 暂无摘要。 |
+| [OfType (2 overloads)](#uid-c972f6ecd6) | 暂无摘要。 |
+| [Or（2 个重载）](#uid-a1c438c394) | 返回一个把若干选择器取或的选择器。 |
 | [PropertyEquals (2 overloads)](#uid-0631b3fd45) | Returns a selector which matches a control with the specified property value. |
 | [Template](#uid-6d6fb7392d) | Returns a selector which enters a lookless control's template. |
 
@@ -80,7 +80,7 @@ public class Selectors
 
 <span id="uid-7d65ee1278"></span>
 
-### Child Method
+### Child 方法 {#child-method}
 
 Returns a selector which matches a previous selector's child.
 
@@ -88,18 +88,18 @@ Returns a selector which matches a previous selector's child.
 public Avalonia.Styling.Selector Child(Avalonia.Styling.Selector previous)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -108,7 +108,7 @@ The selector.
 
 <span id="uid-8b8f95a723"></span>
 
-### Class Method
+### Class 方法 {#class-method}
 
 Returns a selector which matches a control's style class.
 
@@ -116,11 +116,11 @@ Returns a selector which matches a control's style class.
 public Avalonia.Styling.Selector Class(Avalonia.Styling.Selector previous, string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
 `name` string
@@ -128,11 +128,11 @@ The previous selector.
 The name of the style class.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -141,7 +141,7 @@ The selector.
 
 <span id="uid-40f6b234ab"></span>
 
-### Descendant Method
+### Descendant 方法 {#descendant-method}
 
 Returns a selector which matches a descendant of a previous selector.
 
@@ -149,18 +149,18 @@ Returns a selector which matches a descendant of a previous selector.
 public Avalonia.Styling.Selector Descendant(Avalonia.Styling.Selector previous)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -173,13 +173,13 @@ The selector.
 
 <span id="uid-5e9fed44c8"></span>
 
-#### Is Method
+#### Is 方法 {#is-method}
 
 ```csharp
 public Avalonia.Styling.Selector Is<T>(Avalonia.Styling.Selector previous)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -189,7 +189,7 @@ public Avalonia.Styling.Selector Is<T>(Avalonia.Styling.Selector previous)
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -200,7 +200,7 @@ public Avalonia.Styling.Selector Is<T>(Avalonia.Styling.Selector previous)
 
 <span id="uid-0f4a9e3750"></span>
 
-#### Is Method
+#### Is 方法 {#is-method-1}
 
 Returns a selector which matches a type or a derived type.
 
@@ -208,23 +208,23 @@ Returns a selector which matches a type or a derived type.
 public Avalonia.Styling.Selector Is(Avalonia.Styling.Selector previous, Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -233,7 +233,7 @@ The selector.
 
 <span id="uid-3a46ab87f6"></span>
 
-### Name Method
+### Name 方法 {#name-method}
 
 Returns a selector which matches a control's Name.
 
@@ -241,23 +241,23 @@ Returns a selector which matches a control's Name.
 public Avalonia.Styling.Selector Name(Avalonia.Styling.Selector previous, string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
 `name` string
 
-The name.
+名称。
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -266,18 +266,18 @@ The selector.
 
 <span id="uid-69cdb5d416"></span>
 
-### Nesting Method
+### Nesting 方法 {#nesting-method}
 
 ```csharp
 public Avalonia.Styling.Selector Nesting(Avalonia.Styling.Selector previous)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -292,7 +292,7 @@ public Avalonia.Styling.Selector Nesting(Avalonia.Styling.Selector previous)
 
 <span id="uid-e58ce39e8e"></span>
 
-#### Not Method
+#### Not 方法 {#not-method}
 
 Returns a selector which inverts the results of selector argument.
 
@@ -300,11 +300,11 @@ Returns a selector which inverts the results of selector argument.
 public Avalonia.Styling.Selector Not(Avalonia.Styling.Selector previous, Avalonia.Styling.Selector argument)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
 `argument` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
@@ -312,11 +312,11 @@ The previous selector.
 The selector to be not-ed.
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -325,13 +325,13 @@ The selector.
 
 <span id="uid-72c7b2472b"></span>
 
-#### Not Method
+#### Not 方法 {#not-method-1}
 
 ```csharp
 public Avalonia.Styling.Selector Not(Avalonia.Styling.Selector previous, Func<Avalonia.Styling.Selector, Avalonia.Styling.Selector> argument)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -339,7 +339,7 @@ public Avalonia.Styling.Selector Not(Avalonia.Styling.Selector previous, Func<Av
 `argument` Func&lt;[Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector), [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)&gt;
 
 
-##### Returns
+##### 返回值 {#returns-8}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -350,13 +350,13 @@ public Avalonia.Styling.Selector Not(Avalonia.Styling.Selector previous, Func<Av
 
 <span id="uid-96765779fa"></span>
 
-### NthChild Method
+### NthChild 方法 {#nthchild-method}
 
 ```csharp
 public Avalonia.Styling.Selector NthChild(Avalonia.Styling.Selector previous, int step, int offset)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -367,11 +367,11 @@ public Avalonia.Styling.Selector NthChild(Avalonia.Styling.Selector previous, in
 `offset` int
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -380,13 +380,13 @@ The selector.
 
 <span id="uid-3a26efd644"></span>
 
-### NthLastChild Method
+### NthLastChild 方法 {#nthlastchild-method}
 
 ```csharp
 public Avalonia.Styling.Selector NthLastChild(Avalonia.Styling.Selector previous, int step, int offset)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -397,11 +397,11 @@ public Avalonia.Styling.Selector NthLastChild(Avalonia.Styling.Selector previous
 `offset` int
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -414,13 +414,13 @@ The selector.
 
 <span id="uid-0703ec81eb"></span>
 
-#### OfType Method
+#### OfType 方法 {#oftype-method}
 
 ```csharp
 public Avalonia.Styling.Selector OfType<T>(Avalonia.Styling.Selector previous)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -430,7 +430,7 @@ public Avalonia.Styling.Selector OfType<T>(Avalonia.Styling.Selector previous)
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-11}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -441,7 +441,7 @@ public Avalonia.Styling.Selector OfType<T>(Avalonia.Styling.Selector previous)
 
 <span id="uid-50fc0b0592"></span>
 
-#### OfType Method
+#### OfType 方法 {#oftype-method-1}
 
 Returns a selector which matches a type.
 
@@ -449,55 +449,55 @@ Returns a selector which matches a type.
 public Avalonia.Styling.Selector OfType(Avalonia.Styling.Selector previous, Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-12}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
 
 <span id="uid-a1c438c394"></span>
 
-### Or overloads
+### Or 的重载 {#or-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4793492b30"></span>
 
-#### Or Method
+#### Or 方法 {#or-method}
 
-Returns a selector which ORs selectors.
+返回一个把若干选择器取或的选择器。
 
 ```csharp
 public Avalonia.Styling.Selector Or(Avalonia.Styling.Selector[] selectors)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `selectors` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)[]
 
 The selectors to be OR'd.
 
 
-##### Returns
+##### 返回值 {#returns-13}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -506,18 +506,18 @@ The selector.
 
 <span id="uid-3bc0df7f01"></span>
 
-#### Or Method
+#### Or 方法 {#or-method-1}
 
 ```csharp
 public Avalonia.Styling.Selector Or(System.Collections.Generic.IReadOnlyList<Avalonia.Styling.Selector> selectors)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `selectors` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)&gt;
 
 
-##### Returns
+##### 返回值 {#returns-14}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -532,7 +532,7 @@ public Avalonia.Styling.Selector Or(System.Collections.Generic.IReadOnlyList<Ava
 
 <span id="uid-e1db62437b"></span>
 
-#### PropertyEquals Method
+#### PropertyEquals 方法 {#propertyequals-method}
 
 Returns a selector which matches a control with the specified property value.
 
@@ -540,28 +540,28 @@ Returns a selector which matches a control with the specified property value.
 public Avalonia.Styling.Selector PropertyEquals(Avalonia.Styling.Selector previous, Avalonia.AvaloniaProperty property, object value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
 `property` [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
-The property.
+该属性。
 
 
 `value` object
 
-The property value.
+属性值。
 
 
-##### Returns
+##### 返回值 {#returns-15}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>
@@ -570,13 +570,13 @@ The selector.
 
 <span id="uid-87b8c8c9b5"></span>
 
-#### PropertyEquals Method
+#### PropertyEquals 方法 {#propertyequals-method-1}
 
 ```csharp
 public Avalonia.Styling.Selector PropertyEquals<T>(Avalonia.Styling.Selector previous, Avalonia.AvaloniaProperty<TValue><T> property, object value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-16}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -592,7 +592,7 @@ public Avalonia.Styling.Selector PropertyEquals<T>(Avalonia.Styling.Selector pre
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-16}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
@@ -603,7 +603,7 @@ public Avalonia.Styling.Selector PropertyEquals<T>(Avalonia.Styling.Selector pre
 
 <span id="uid-6d6fb7392d"></span>
 
-### Template Method
+### Template 方法 {#template-method}
 
 Returns a selector which enters a lookless control's template.
 
@@ -611,18 +611,18 @@ Returns a selector which enters a lookless control's template.
 public Avalonia.Styling.Selector Template(Avalonia.Styling.Selector previous)
 ```
 
-#### Parameters
+#### 参数 {#parameters-17}
 
 `previous` [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The previous selector.
+先前的选择器。
 
 
-#### Returns
+#### 返回值 {#returns-17}
 
 [Avalonia.Styling.Selector](xref:Avalonia.Styling.Selector)
 
-The selector.
+该选择器。
 
 
 </section>

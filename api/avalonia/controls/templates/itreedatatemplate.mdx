@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITreeDataTemplate Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Templates</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Templates</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/ITreeDataTemplate.cs">ITreeDataTemplate.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/ITreeDataTemplate.cs">ITreeDataTemplate.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public interface ITreeDataTemplate
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="idatatemplate">IDataTemplate</a>, ITemplate&lt;object,Control&gt;
+<span className="apiref-page__meta-label">实现接口：</span> <a href="idatatemplate">IDataTemplate</a>，ITemplate&lt;object,Control&gt;
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BindChildren](#uid-02882febdc) | Binds the children of the specified item to a property on a target object. |
 
@@ -68,7 +68,7 @@ public interface ITreeDataTemplate
 
 <span id="uid-02882febdc"></span>
 
-### BindChildren Method
+### BindChildren 方法 {#bindchildren-method}
 
 Binds the children of the specified item to a property on a target object.
 
@@ -76,11 +76,11 @@ Binds the children of the specified item to a property on a target object.
 public IDisposable BindChildren(Avalonia.AvaloniaObject target, Avalonia.AvaloniaProperty targetProperty, object item)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The target object.
+目标对象。
 
 
 `targetProperty` [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
@@ -93,7 +93,7 @@ The target property.
 The item whose children should be bound.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 IDisposable
 

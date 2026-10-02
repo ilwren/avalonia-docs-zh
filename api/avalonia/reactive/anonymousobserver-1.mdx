@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AnonymousObserver&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Reactive</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Reactive</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Reactive/AnonymousObserver.cs">AnonymousObserver.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Reactive/AnonymousObserver.cs">AnonymousObserver.cs</a>
 </div>
 
 </div>
@@ -54,34 +54,34 @@ public class AnonymousObserver<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AnonymousObserver&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AnonymousObserver&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IObserver&lt;&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IObserver&lt;&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AnonymousObserver&lt;T&gt; (5 overloads)](#uid-b2ae0db13b) | No summary available. |
+| [AnonymousObserver&lt;T&gt; (5 overloads)](#uid-b2ae0db13b) | 暂无摘要。 |
 
 <span id="uid-b2ae0db13b"></span>
 
-### AnonymousObserver&lt;T&gt; overloads
+### AnonymousObserver&lt;T&gt; 的重载 {#anonymousobserverlttgt-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b0c1639abd"></span>
 
-#### AnonymousObserver&lt;T&gt; Constructor
+#### AnonymousObserver&lt;T&gt; 构造函数 {#anonymousobserverlttgt-constructor}
 
 ```csharp
 public AnonymousObserver<T>(Action<T> onNext)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `onNext` Action&lt;T&gt;
 
@@ -92,13 +92,13 @@ public AnonymousObserver<T>(Action<T> onNext)
 
 <span id="uid-cc747c7efa"></span>
 
-#### AnonymousObserver&lt;T&gt; Constructor
+#### AnonymousObserver&lt;T&gt; 构造函数 {#anonymousobserverlttgt-constructor-1}
 
 ```csharp
 public AnonymousObserver<T>(Action<T> onNext, Action onCompleted)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `onNext` Action&lt;T&gt;
 
@@ -112,13 +112,13 @@ public AnonymousObserver<T>(Action<T> onNext, Action onCompleted)
 
 <span id="uid-e26b7eb5bf"></span>
 
-#### AnonymousObserver&lt;T&gt; Constructor
+#### AnonymousObserver&lt;T&gt; 构造函数 {#anonymousobserverlttgt-constructor-2}
 
 ```csharp
 public AnonymousObserver<T>(Action<T> onNext, Action<Exception> onError)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `onNext` Action&lt;T&gt;
 
@@ -132,13 +132,13 @@ public AnonymousObserver<T>(Action<T> onNext, Action<Exception> onError)
 
 <span id="uid-9af2f0bdd2"></span>
 
-#### AnonymousObserver&lt;T&gt; Constructor
+#### AnonymousObserver&lt;T&gt; 构造函数 {#anonymousobserverlttgt-constructor-3}
 
 ```csharp
 public AnonymousObserver<T>(Action<T> onNext, Action<Exception> onError, Action onCompleted)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `onNext` Action&lt;T&gt;
 
@@ -155,32 +155,32 @@ public AnonymousObserver<T>(Action<T> onNext, Action<Exception> onError, Action 
 
 <span id="uid-52aa2fd2d0"></span>
 
-#### AnonymousObserver&lt;T&gt; Constructor
+#### AnonymousObserver&lt;T&gt; 构造函数 {#anonymousobserverlttgt-constructor-4}
 
 ```csharp
 public AnonymousObserver<T>(System.Threading.Tasks.TaskCompletionSource<T> tcs)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `tcs` System.Threading.Tasks.TaskCompletionSource&lt;T&gt;
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [OnCompleted](#uid-7301a5da3c) | No summary available. |
-| [OnError](#uid-221f6caf8a) | No summary available. |
-| [OnNext](#uid-950afdad72) | No summary available. |
+| [OnCompleted](#uid-7301a5da3c) | 暂无摘要。 |
+| [OnError](#uid-221f6caf8a) | 暂无摘要。 |
+| [OnNext](#uid-950afdad72) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7301a5da3c"></span>
 
-### OnCompleted Method
+### OnCompleted 方法 {#oncompleted-method}
 
 ```csharp
 public void OnCompleted()
@@ -192,13 +192,13 @@ public void OnCompleted()
 
 <span id="uid-221f6caf8a"></span>
 
-### OnError Method
+### OnError 方法 {#onerror-method}
 
 ```csharp
 public void OnError(Exception error)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `error` Exception
 
@@ -209,13 +209,13 @@ public void OnError(Exception error)
 
 <span id="uid-950afdad72"></span>
 
-### OnNext Method
+### OnNext 方法 {#onnext-method}
 
 ```csharp
 public void OnNext(T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `value` T
 

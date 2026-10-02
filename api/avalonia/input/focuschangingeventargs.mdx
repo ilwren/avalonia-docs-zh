@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FocusChangingEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 </div>
 
@@ -44,45 +44,45 @@ public class FocusChangingEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> FocusChangingEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> <a href="../interactivity/routedeventargs">RoutedEventArgs</a> <span className="apiref-page__relation-separator">-&gt;</span> FocusChangingEventArgs
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ikeymodifierseventargs">IKeyModifiersEventArgs</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ikeymodifierseventargs">IKeyModifiersEventArgs</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/FocusChangingEventArgs.cs">FocusChangingEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/FocusChangingEventArgs.cs">FocusChangingEventArgs.cs</a>
 </div>
 
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FocusChangingEventArgs](#uid-d4cd77b2ad) | Provides data for focus changing. |
+| [FocusChangingEventArgs](#uid-d4cd77b2ad) | 为焦点变更提供数据。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d4cd77b2ad"></span>
 
-### FocusChangingEventArgs Constructor
+### FocusChangingEventArgs 构造函数 {#focuschangingeventargs-constructor}
 
-Provides data for focus changing.
+为焦点变更提供数据。
 
 ```csharp
 public FocusChangingEventArgs(Avalonia.Interactivity.RoutedEvent routedEvent)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `routedEvent` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TryCancel](#uid-715aa46789) | Attempts to cancel the current focus change |
 | [TrySetNewFocusedElement](#uid-33c47afc04) | Attempts to redirect focus from the targeted element to the specified element. |
@@ -91,7 +91,7 @@ public FocusChangingEventArgs(Avalonia.Interactivity.RoutedEvent routedEvent)
 
 <span id="uid-715aa46789"></span>
 
-### TryCancel Method
+### TryCancel 方法 {#trycancel-method}
 
 Attempts to cancel the current focus change
 
@@ -99,7 +99,7 @@ Attempts to cancel the current focus change
 public bool TryCancel()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -112,7 +112,7 @@ true if focus change was cancelled; otherwise, false
 
 <span id="uid-33c47afc04"></span>
 
-### TrySetNewFocusedElement Method
+### TrySetNewFocusedElement 方法 {#trysetnewfocusedelement-method}
 
 Attempts to redirect focus from the targeted element to the specified element.
 
@@ -120,39 +120,39 @@ Attempts to redirect focus from the targeted element to the specified element.
 public bool TrySetNewFocusedElement(Avalonia.Input.IInputElement inputElement)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `inputElement` [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Canceled](#uid-1dde0794b7) | Gets whether focus change is canceled. |
-| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | Gets or sets a value indicating whether the routed event has already been handled. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [KeyModifiers](#uid-a5e86a9b49) | Gets or sets any key modifiers active at the time of focus. |
-| [NavigationMethod](#uid-ff4aeddeda) | Gets or sets a value indicating how the change in focus occurred. |
-| [NewFocusedElement](#uid-b44a46322b) | Gets or sets the element that focus has moved to. |
-| [OldFocusedElement](#uid-fc5ed27a4b) | Gets or sets the element that previously had focus. |
-| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | Gets or sets the routing strategy (direct, bubbling, or tunneling) of the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | Gets or sets the routed event associated with these event args. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
-| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | Gets or sets the source object that raised the routed event. Inherited from [RoutedEventArgs](../interactivity/routedeventargs.mdx). |
+| [Canceled](#uid-1dde0794b7) | 获取这次焦点变更是否已被取消。 |
+| [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | 获取或设置一个值，指示该路由事件是否已被处理。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [KeyModifiers](#uid-a5e86a9b49) | 获取或设置获得焦点时处于按下状态的修饰键。 |
+| [NavigationMethod](#uid-ff4aeddeda) | 获取或设置一个值，指示这次焦点变化因何发生。 |
+| [NewFocusedElement](#uid-b44a46322b) | 获取或设置焦点转移到的那个元素。 |
+| [OldFocusedElement](#uid-fc5ed27a4b) | 获取或设置先前持有焦点的那个元素。 |
+| [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | 获取或设置路由事件的路由策略（直接、冒泡或隧道）。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | 获取或设置与这组事件参数关联的路由事件。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
+| [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | 获取或设置引发该路由事件的源对象。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1dde0794b7"></span>
 
-### Canceled Property
+### Canceled 属性 {#canceled-property}
 
-Gets whether focus change is canceled.
+获取这次焦点变更是否已被取消。
 
 ```csharp
 public bool Canceled { get; set; }
@@ -164,9 +164,9 @@ public bool Canceled { get; set; }
 
 <span id="uid-a5e86a9b49"></span>
 
-### KeyModifiers Property
+### KeyModifiers 属性 {#keymodifiers-property}
 
-Gets or sets any key modifiers active at the time of focus.
+获取或设置获得焦点时处于按下状态的修饰键。
 
 ```csharp
 public Avalonia.Input.KeyModifiers KeyModifiers { get; set; }
@@ -178,9 +178,9 @@ public Avalonia.Input.KeyModifiers KeyModifiers { get; set; }
 
 <span id="uid-ff4aeddeda"></span>
 
-### NavigationMethod Property
+### NavigationMethod 属性 {#navigationmethod-property}
 
-Gets or sets a value indicating how the change in focus occurred.
+获取或设置一个值，指示这次焦点变化因何发生。
 
 ```csharp
 public Avalonia.Input.NavigationMethod NavigationMethod { get; set; }
@@ -192,9 +192,9 @@ public Avalonia.Input.NavigationMethod NavigationMethod { get; set; }
 
 <span id="uid-b44a46322b"></span>
 
-### NewFocusedElement Property
+### NewFocusedElement 属性 {#newfocusedelement-property}
 
-Gets or sets the element that focus has moved to.
+获取或设置焦点转移到的那个元素。
 
 ```csharp
 public Avalonia.Input.IInputElement NewFocusedElement { get; set; }
@@ -206,9 +206,9 @@ public Avalonia.Input.IInputElement NewFocusedElement { get; set; }
 
 <span id="uid-fc5ed27a4b"></span>
 
-### OldFocusedElement Property
+### OldFocusedElement 属性 {#oldfocusedelement-property}
 
-Gets or sets the element that previously had focus.
+获取或设置先前持有焦点的那个元素。
 
 ```csharp
 public Avalonia.Input.IInputElement OldFocusedElement { get; set; }

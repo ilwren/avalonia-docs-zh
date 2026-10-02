@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HtmlWebSocketTransport Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.DesignerSupport.Remote.HtmlTransport</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.DesignerSupport.Remote.HtmlTransport</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.DesignerSupport</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.DesignerSupport</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.DesignerSupport/Remote/HtmlTransport/HtmlTransport.cs">HtmlTransport.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.DesignerSupport/Remote/HtmlTransport/HtmlTransport.cs">HtmlTransport.cs</a>
 </div>
 
 </div>
@@ -48,30 +48,30 @@ public class HtmlWebSocketTransport
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlWebSocketTransport
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlWebSocketTransport
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IAvaloniaRemoteTransportConnection, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IAvaloniaRemoteTransportConnection, IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [HtmlWebSocketTransport](#uid-80d44de251) | No summary available. |
+| [HtmlWebSocketTransport](#uid-80d44de251) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-80d44de251"></span>
 
-### HtmlWebSocketTransport Constructor
+### HtmlWebSocketTransport 构造函数 {#htmlwebsockettransport-constructor}
 
 ```csharp
 public HtmlWebSocketTransport(Avalonia.Remote.Protocol.IAvaloniaRemoteTransportConnection signalTransport, Uri listenUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `signalTransport` Avalonia.Remote.Protocol.IAvaloniaRemoteTransportConnection
 
@@ -81,19 +81,19 @@ public HtmlWebSocketTransport(Avalonia.Remote.Protocol.IAvaloniaRemoteTransportC
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-b229be76ac) | No summary available. |
-| [Send](#uid-8b5ac90655) | No summary available. |
-| [Start](#uid-d8cef7222b) | No summary available. |
+| [Dispose](#uid-b229be76ac) | 暂无摘要。 |
+| [Send](#uid-8b5ac90655) | 暂无摘要。 |
+| [Start](#uid-d8cef7222b) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b229be76ac"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -105,18 +105,18 @@ public void Dispose()
 
 <span id="uid-8b5ac90655"></span>
 
-### Send Method
+### Send 方法 {#send-method}
 
 ```csharp
 public System.Threading.Tasks.Task Send(object data)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `data` object
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -127,7 +127,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-d8cef7222b"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
 ```csharp
 public void Start()
@@ -135,18 +135,18 @@ public void Start()
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [OnException](#uid-4224a3aa7f) | No summary available. |
-| [OnMessage](#uid-cb552896d5) | No summary available. |
+| [OnException](#uid-4224a3aa7f) | 暂无摘要。 |
+| [OnMessage](#uid-cb552896d5) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4224a3aa7f"></span>
 
-### OnException Event
+### OnException 事件 {#onexception-event}
 
 ```csharp
 public event Action<Avalonia.Remote.Protocol.IAvaloniaRemoteTransportConnection, Exception> OnException
@@ -158,7 +158,7 @@ public event Action<Avalonia.Remote.Protocol.IAvaloniaRemoteTransportConnection,
 
 <span id="uid-cb552896d5"></span>
 
-### OnMessage Event
+### OnMessage 事件 {#onmessage-event}
 
 ```csharp
 public event Action<Avalonia.Remote.Protocol.IAvaloniaRemoteTransportConnection, object> OnMessage

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HoldingState Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/HoldingRoutedEventArgs.cs">HoldingRoutedEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/HoldingRoutedEventArgs.cs">HoldingRoutedEventArgs.cs</a>
 </div>
 
 </div>
@@ -48,25 +48,25 @@ public enum HoldingState
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> HoldingState
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> HoldingState
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Canceled](#uid-e51ac44fd5) | An additional contact is detected or a subsequent gesture (such as a slide) is detected. |
-| [Completed](#uid-8dfe114ab1) | The single contact is lifted. |
-| [Started](#uid-974a18fac0) | A single contact has been detected and a time threshold is crossed without the contact being lifted, another contact detected, or another gesture started. |
+| [Canceled](#uid-e51ac44fd5) | 检测到又一个触点，或检测到后续手势（比如滑动）。 |
+| [Completed](#uid-8dfe114ab1) | 唯一的那个触点已抬起。 |
+| [Started](#uid-974a18fac0) | 检测到单个触点，且在该触点抬起、出现另一个触点或另一个手势开始之前，持续时间已越过某个阈值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e51ac44fd5"></span>
 
-### Canceled Field
+### Canceled 字段 {#canceled-field}
 
-An additional contact is detected or a subsequent gesture (such as a slide) is detected.
+检测到又一个触点，或检测到后续手势（比如滑动）。
 
 ```csharp
 public Avalonia.Input.HoldingState Canceled
@@ -78,9 +78,9 @@ public Avalonia.Input.HoldingState Canceled
 
 <span id="uid-8dfe114ab1"></span>
 
-### Completed Field
+### Completed 字段 {#completed-field}
 
-The single contact is lifted.
+唯一的那个触点已抬起。
 
 ```csharp
 public Avalonia.Input.HoldingState Completed
@@ -92,9 +92,9 @@ public Avalonia.Input.HoldingState Completed
 
 <span id="uid-974a18fac0"></span>
 
-### Started Field
+### Started 字段 {#started-field}
 
-A single contact has been detected and a time threshold is crossed without the contact being lifted, another contact detected, or another gesture started.
+检测到单个触点，且在该触点抬起、出现另一个触点或另一个手势开始之前，持续时间已越过某个阈值。
 
 ```csharp
 public Avalonia.Input.HoldingState Started

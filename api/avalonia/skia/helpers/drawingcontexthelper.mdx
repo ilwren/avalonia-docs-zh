@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DrawingContextHelper Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Skia.Helpers</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Skia.Helpers</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Skia</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Skia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Skia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Skia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Skia/Avalonia.Skia/Helpers/DrawingContextHelper.cs">DrawingContextHelper.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Skia/Avalonia.Skia/Helpers/DrawingContextHelper.cs">DrawingContextHelper.cs</a>
 </div>
 
 </div>
@@ -48,16 +48,16 @@ public class DrawingContextHelper
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DrawingContextHelper
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DrawingContextHelper
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RenderAsync (2 overloads)](#uid-72c183036e) | Renders Avalonia visual into a SKCanvas instance. This is useful in scenarios where canvas is not controlled by application, but received from another non avalonia api like: SKCanvas canvas = SKDocument.BeginPage(...); |
-| [TryCreateDashEffect](#uid-f6558ea199) | No summary available. |
+| [TryCreateDashEffect](#uid-f6558ea199) | 暂无摘要。 |
 
 <span id="uid-72c183036e"></span>
 
@@ -67,7 +67,7 @@ public class DrawingContextHelper
 
 <span id="uid-e8c4c5d2bb"></span>
 
-#### RenderAsync Method
+#### RenderAsync 方法 {#renderasync-method}
 
 Renders Avalonia visual into a SKCanvas instance.
 This is useful in scenarios where canvas is not controlled by application, but received from another non avalonia api
@@ -77,29 +77,29 @@ like: SKCanvas canvas = SKDocument.BeginPage(...);
 public System.Threading.Tasks.Task RenderAsync(SkiaSharp.SKCanvas canvas, Avalonia.Visual visual)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `canvas` SkiaSharp.SKCanvas
 
-Skia canvas to render into.
+要渲染到的 Skia 画布。
 
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-Avalonia visual.
+Avalonia 视觉元素。
 
 
 `clipRect`
 
-Clipping rectangle.
+裁剪矩形。
 
 
 `dpi`
 
-Dpi of drawings.
+绘制内容的 Dpi。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -110,7 +110,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-25faa69cb9"></span>
 
-#### RenderAsync Method
+#### RenderAsync 方法 {#renderasync-method-1}
 
 Renders Avalonia visual into a SKCanvas instance.
 This is useful in scenarios where canvas is not controlled by application, but received from another non avalonia api
@@ -120,29 +120,29 @@ like: SKCanvas canvas = SKDocument.BeginPage(...);
 public System.Threading.Tasks.Task RenderAsync(SkiaSharp.SKCanvas canvas, Avalonia.Visual visual, Avalonia.Rect clipRect, Avalonia.Vector dpi)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `canvas` SkiaSharp.SKCanvas
 
-Skia canvas to render into.
+要渲染到的 Skia 画布。
 
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-Avalonia visual.
+Avalonia 视觉元素。
 
 
 `clipRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-Clipping rectangle.
+裁剪矩形。
 
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-Dpi of drawings.
+绘制内容的 Dpi。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
@@ -153,13 +153,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-f6558ea199"></span>
 
-### TryCreateDashEffect Method
+### TryCreateDashEffect 方法 {#trycreatedasheffect-method}
 
 ```csharp
 public bool TryCreateDashEffect(Avalonia.Media.IPen pen, SkiaSharp.SKPathEffect& effect)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
 
@@ -167,7 +167,7 @@ public bool TryCreateDashEffect(Avalonia.Media.IPen pen, SkiaSharp.SKPathEffect&
 `effect` SkiaSharp.SKPathEffect&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 

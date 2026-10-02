@@ -1,52 +1,52 @@
 ---
 id: known-differences
-title: Known Differences from WPF
+title: 与 WPF 的已知差异
 ---
 
-## Overview
+## 概述 {#overview}
 
-XPF maintains API and binary compatibility with WPF, but there are behavioral differences due to the different rendering engine (Skia instead of MilCore) and cross-platform requirements. This page documents the known differences to help you plan your migration.
+XPF 与 WPF 保持 API 和二进制兼容，但由于渲染引擎不同（用 Skia 而非 MilCore）以及跨平台的需要，行为上仍有一些出入。本页把这些已知差异记录下来，便于你规划迁移。
 
 ## Rendering
 
-### Dashed strokes and line caps
+### 虚线描边与线帽 {#dashed-strokes-and-line-caps}
 
-Skia renders dashed strokes with line caps differently from WPF's milcore engine. If your application uses `StrokeDashArray` with custom line caps (triangular, round), the visual output may differ slightly between WPF and XPF. This is a fundamental difference in the Skia rendering backend.
+Skia 渲染带线帽的虚线描边时，与 WPF 的 milcore 引擎有所不同。若你的应用用了 `StrokeDashArray` 并配上自定义线帽（三角、圆头），WPF 和 XPF 下的视觉效果可能略有差异。这是 Skia 渲染后端的固有区别。
 
-### Blur effects
+### 模糊效果 {#blur-effects}
 
-Blur effects (`BlurEffect`, `DropShadowEffect`) are computationally more expensive in Skia than in WPF's hardware-accelerated pipeline. Applications with heavy blur usage may see reduced framerates. See [Performance: Blur Effects](/xpf/configuration/performance#blur-effects) for mitigation strategies.
+模糊效果（`BlurEffect`、`DropShadowEffect`）在 Skia 中比 WPF 的硬件加速管线更吃算力。大量使用模糊的应用可能掉帧。缓解办法请见[性能：模糊效果](/xpf/configuration/performance#blur-effects)。
 
 ## Controls
 
 ### ContextMenu
 
-In WPF, `PlacementTarget` is implicitly set when you open a context menu programmatically. In XPF, you must set it explicitly:
+在 WPF 中，以编程方式打开上下文菜单时会隐式设置 `PlacementTarget`；在 XPF 中，你必须显式设置它：
 
 ```csharp
 myContextMenu.PlacementTarget = targetElement;
 myContextMenu.IsOpen = true;
 ```
 
-Right-click context menus work identically to WPF without any changes.
+右键上下文菜单的表现与 WPF 完全一致，无需任何改动。
 
 ### MessageBox
 
-`System.Windows.MessageBox` and `System.Windows.Forms.MessageBox` are both supported, but the rendered output may differ from native Windows message boxes:
+`System.Windows.MessageBox` 和 `System.Windows.Forms.MessageBox` 都受支持，但渲染出来的样子可能与 Windows 原生消息框不同：
 
-- Text line breaks may appear at different positions (XPF limits width to approximately 400px)
-- Icon positioning may vary slightly
-- Button styling uses the platform's native appearance
+- 文本换行的位置可能不一样（XPF 把宽度限制在约 400px）
+- 图标位置可能略有出入
+- 按钮样式采用平台的原生外观
 
-### TextBox touch behavior
+### TextBox 的触摸行为 {#textbox-touch-behavior}
 
-On touchscreen devices, dragging a finger on a `TextBox` causes the text to scroll/slide. This behavior is inherited from WPF. To disable it:
+在触屏设备上，在 `TextBox` 上拖动手指会让文本跟着滑动。这一行为继承自 WPF。要关掉它：
 
 ```csharp
 ScrollViewer.SetPanningMode(myTextBox, PanningMode.None);
 ```
 
-Or in XAML:
+或者在 XAML 中：
 
 ```xml
 <TextBox ScrollViewer.PanningMode="None" />
@@ -54,35 +54,35 @@ Or in XAML:
 
 ### FlowDocument
 
-FlowDocument is available with limitations:
-- No pagination support
-- No floater support
-- Limited table support
+FlowDocument 可用，但有以下限制：
+- 不支持分页
+- 不支持 floater
+- 表格支持有限
 
-See [Missing Features](/xpf/version-info/missing-features) for the full list.
+完整清单请见[尚未支持的特性](/xpf/version-info/missing-features)。
 
-## Window management
+## 窗口管理 {#window-management}
 
-### Transparent windows
+### 透明窗口 {#transparent-windows}
 
-XPF uses `WS_EX_NOREDIRECTIONBITMAP` rather than `WS_EX_LAYERED` (which WPF uses). This means:
+XPF 用的是 `WS_EX_NOREDIRECTIONBITMAP`，而非 WPF 所用的 `WS_EX_LAYERED`。这意味着：
 
-- Per-pixel hit transparency is not supported. Mouse clicks on transparent regions of a window are not passed through to windows underneath.
-- For overlay scenarios, embed content in a single window rather than layering transparent windows. See [Performance: Embedding High-Performance Content](/xpf/configuration/performance#embedding-high-performance-content) for OpenGL embedding.
+- 不支持逐像素的命中测试透明。点在窗口透明区域上的鼠标点击不会穿透到下面的窗口。
+- 若要做叠加层，请把内容放进同一个窗口，而不是把若干透明窗口摞在一起。OpenGL 的嵌入方式请见[性能：嵌入高性能内容](/xpf/configuration/performance#embedding-high-performance-content)。
 
-### Multiple UI threads
+### 多个 UI 线程 {#multiple-ui-threads}
 
-WPF supports creating windows on separate dispatcher threads. XPF does not support multiple UI threads on macOS (only one is allowed by the platform). On Windows and Linux, multiple dispatchers have limited support. Patterns that rely on splash screens or progress windows on a separate thread should be refactored to use the main dispatcher.
+WPF 允许在不同的 dispatcher 线程上创建窗口。XPF 在 macOS 上不支持多个 UI 线程（平台本身只允许一个）；在 Windows 和 Linux 上，多 dispatcher 的支持也很有限。那些把启动画面或进度窗口放在另一线程的写法，应当改造成统一走主 dispatcher。
 
 ### Window.ShowActivated
 
-The `ShowActivated` property is supported in XPF 1.6.0 and later.
+自 XPF 1.6.0 起支持 `ShowActivated` 属性。
 
-### Window closing event
+### 窗口关闭事件 {#window-closing-event}
 
-The `Closing` event fires once when a window is closed programmatically or via the close button. In earlier XPF versions (before 1.6.0), `Closing` could fire twice when using `Window.Close()`.
+无论是以编程方式关闭窗口还是点关闭按钮，`Closing` 事件都只触发一次。在更早的 XPF 版本（1.6.0 之前）中，用 `Window.Close()` 时 `Closing` 可能触发两次。
 
-To override the close behavior, handle the `Closing` event and set `e.Cancel = true`:
+要改写关闭行为，请处理 `Closing` 事件并设置 `e.Cancel = true`：
 
 ```csharp
 protected override void OnClosing(CancelEventArgs e)
@@ -92,15 +92,15 @@ protected override void OnClosing(CancelEventArgs e)
 }
 ```
 
-### Win32 window messages
+### Win32 窗口消息 {#win32-window-messages}
 
-XPF's Win32 API shim layer generates window messages (such as `WM_ACTIVATEAPP`, `WM_SETFOCUS`) to the extent needed by supported third-party controls. Not all Win32 messages are generated on all platforms. If your application relies on specific window messages for inter-window communication, use .NET IPC mechanisms (such as named pipes or memory-mapped files) instead.
+XPF 的 Win32 API shim 层会生成窗口消息（比如 `WM_ACTIVATEAPP`、`WM_SETFOCUS`），但只覆盖所支持的第三方控件所需的那些。并非所有 Win32 消息都会在所有平台上生成。若你的应用靠特定窗口消息在窗口之间通信，请改用 .NET 的 IPC 机制（比如命名管道或内存映射文件）。
 
 ## APIs
 
 ### VisualTreeHelper.GetDpi
 
-`VisualTreeHelper.GetDpi()` may not return accurate values on macOS. Use the Avalonia interop API instead:
+`VisualTreeHelper.GetDpi()` 在 macOS 上未必给得出准确值，请改用 Avalonia 的互操作 API：
 
 ```csharp
 using Atlantis;
@@ -111,48 +111,48 @@ double scaling = topLevel.RenderScaling;
 
 ### CursorInteropHelper.Create
 
-`CursorInteropHelper.Create()` is not fully implemented because it relies on native Windows cursor handles. XPF 1.6.0+ provides a fallback to the default cursor. For custom cursor mapping, see [Windows: CefSharp](/xpf/platforms/windows#cefsharp).
+`CursorInteropHelper.Create()` 没有完整实现，因为它依赖 Windows 原生的光标句柄。XPF 1.6.0+ 会回退到默认光标。自定义光标映射请见 [Windows：CefSharp](/xpf/platforms/windows#cefsharp)。
 
 ### SystemSounds.Beep
 
-`System.Media.SystemSounds.Beep` throws `PlatformNotSupportedException` on macOS and Linux. Guard calls to this API with a platform check or remove them for cross-platform builds.
+`System.Media.SystemSounds.Beep` 在 macOS 和 Linux 上会抛出 `PlatformNotSupportedException`。请给这个 API 的调用加上平台判断，或者在跨平台构建中干脆去掉它。
 
 ### System.Drawing.Common
 
-`System.Drawing.Common` (GDI+) is deprecated on non-Windows platforms. Third-party controls that depend on GDI+ for rendering (such as certain DevExpress controls) will throw exceptions on macOS and Linux. See [macOS: GDI+ and System.Drawing.Common](/xpf/platforms/macos#gdi-and-systemdrawingcommon) for workarounds.
+`System.Drawing.Common`（GDI+）在非 Windows 平台上已废弃。依赖 GDI+ 渲染的第三方控件（比如某些 DevExpress 控件）在 macOS 和 Linux 上会抛异常。变通办法请见 [macOS：GDI+ 与 System.Drawing.Common](/xpf/platforms/macos#gdi-and-systemdrawingcommon)。
 
-## File dialogs
+## 文件对话框 {#file-dialogs}
 
 ### FilterIndex
 
-`FilterIndex` for `OpenFileDialog` and `SaveFileDialog` is fully supported in XPF 1.6.0 and later.
+自 XPF 1.6.0 起，针对 `OpenFileDialog` 和 `SaveFileDialog` 的 `FilterIndex` 已完整支持。
 
-### `InitialDirectory` on Linux
+### Linux 上的 `InitialDirectory` {#initialdirectory-on-linux}
 
-On older Linux distributions, `InitialDirectory` may be ignored if the GNOME version does not support the DBus file dialog protocol. See [Linux: File Dialogs on Older Distributions](/xpf/platforms/linux#file-dialogs-on-older-distributions) for a workaround.
+在较老的 Linux 发行版上，若 GNOME 版本不支持 DBus 文件对话框协议，`InitialDirectory` 可能被忽略。变通办法请见 [Linux：老发行版上的文件对话框](/xpf/platforms/linux#file-dialogs-on-older-distributions)。
 
 ### OpenFolderDialog
 
-Use `Microsoft.Win32.OpenFolderDialog` for cross-platform folder selection. Some third-party folder dialog implementations (such as DevExpress FolderDialog) may not work on macOS.
+跨平台选择文件夹请用 `Microsoft.Win32.OpenFolderDialog`。某些第三方的文件夹对话框实现（比如 DevExpress 的 FolderDialog）在 macOS 上可能用不了。
 
 ### FolderBrowserDialog (System.Windows.Forms)
 
-`System.Windows.Forms.FolderBrowserDialog` is supported in XPF but maps to the platform's native folder picker. On Linux and macOS, the dialog appearance and behavior will differ from Windows. For consistent behavior, prefer `Microsoft.Win32.OpenFolderDialog`.
+XPF 支持 `System.Windows.Forms.FolderBrowserDialog`，但它会映射到平台原生的文件夹选取器。在 Linux 和 macOS 上，对话框的外观和行为都与 Windows 不同。想要表现一致，请优先用 `Microsoft.Win32.OpenFolderDialog`。
 
-### Dialog migration patterns
+### 对话框的迁移套路 {#dialog-migration-patterns}
 
-When migrating WPF dialog code to XPF for cross-platform use:
+把 WPF 的对话框代码迁到 XPF 以便跨平台时：
 
-- Replace `System.Windows.Forms.OpenFileDialog` with `Microsoft.Win32.OpenFileDialog` where possible
-- Avoid setting Windows-specific dialog properties (such as `DereferenceLinks`) that have no cross-platform equivalent
-- On macOS, avoid showing modal dialogs during window activation. See [macOS: Startup and Modal Dialogs](/xpf/platforms/macos#startup-and-modal-dialogs)
+- 尽量把 `System.Windows.Forms.OpenFileDialog` 换成 `Microsoft.Win32.OpenFileDialog`
+- 别去设那些没有跨平台对应物的 Windows 专属对话框属性（比如 `DereferenceLinks`）
+- 在 macOS 上，避免在窗口激活期间弹出模态对话框。请见 [macOS：启动与模态对话框](/xpf/platforms/macos#startup-and-modal-dialogs)
 
 ## Clipboard
 
-See [Clipboard](/xpf/migration/clipboard) for a full breakdown of clipboard differences.
+剪贴板差异的完整说明请见[剪贴板](/xpf/migration/clipboard)。
 
 ## Fonts
 
-- Font matching rules differ between WPF and XPF. Fonts with non-standard style names may not be matched correctly.
-- Font fallback behavior can be customized. See [Getting Started: Fonts](/xpf/getting-started#fonts).
-- Cross-platform rendering uses different text backends per platform, so visual differences are expected.
+- WPF 与 XPF 的字体匹配规则不同，样式名不太规范的字体可能匹配不上。
+- 字体回退行为可以定制，请见[快速上手：字体](/xpf/getting-started#fonts)。
+- 跨平台渲染在各平台上用的是不同的文本后端，因此视觉上有差异是正常的。

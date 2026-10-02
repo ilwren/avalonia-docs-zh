@@ -1,15 +1,15 @@
 ---
 id: listbox-how-to
-title: "How to: Work with ListBox"
-description: Selection handling, item templates, virtualization, styling, and advanced ListBox patterns.
+title: "操作指南：使用 ListBox"
+description: ListBox 的选择处理、项模板、虚拟化、样式与进阶用法。
 doc-type: how-to
 ---
 
-This guide covers common ListBox scenarios: selection handling, item templates, virtualization, styling, and advanced patterns.
+本指南介绍 ListBox 的常见场景：选择处理、项模板、虚拟化、样式以及一些进阶用法。
 
 ## Item Templates
 
-Customize how items appear using `ItemTemplate`:
+用 `ItemTemplate` 自定义项目的外观：
 
 ```xml
 <ListBox ItemsSource="{Binding Contacts}">
@@ -38,7 +38,7 @@ Customize how items appear using `ItemTemplate`:
 
 ## Selection Modes
 
-### Single selection (default)
+### 单选（默认） {#single-selection-default}
 
 ```xml
 <ListBox SelectionMode="Single"
@@ -46,34 +46,34 @@ Customize how items appear using `ItemTemplate`:
          ItemsSource="{Binding Contacts}" />
 ```
 
-### Multiple selection
+### 多选 {#multiple-selection}
 
 ```xml
 <ListBox SelectionMode="Multiple"
          ItemsSource="{Binding Contacts}" />
 ```
 
-In multiple selection mode, users click items to toggle their selection. Access selected items through the `SelectionChanged` event or `SelectedItems` property.
+在多选模式下，用户点击项目即可切换它的选中状态。你可以通过 `SelectionChanged` 事件或 `SelectedItems` 属性拿到选中的项目。
 
-### Toggle selection
+### 切换式选择 {#toggle-selection}
 
 ```xml
 <ListBox SelectionMode="Toggle"
          ItemsSource="{Binding Contacts}" />
 ```
 
-Toggle mode lets users click to select and click again to deselect without holding Ctrl.
+切换模式下，用户点一下选中、再点一下取消，无需按住 Ctrl。
 
-### Always selected
+### 始终有选中项 {#always-selected}
 
 ```xml
 <ListBox SelectionMode="AlwaysSelected"
          ItemsSource="{Binding Contacts}" />
 ```
 
-Prevents deselecting all items. At least one item remains selected.
+不允许取消全部选中，至少会保留一项处于选中状态。
 
-### Handling selection changes
+### 处理选择变化 {#handling-selection-changes}
 
 ```csharp
 [ObservableProperty]
@@ -86,7 +86,7 @@ partial void OnSelectedContactChanged(Contact? value)
 }
 ```
 
-Or using the event:
+也可以改用事件：
 
 ```xml
 <ListBox SelectionChanged="OnSelectionChanged" />
@@ -108,9 +108,9 @@ private void OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
 
 ## Virtualization
 
-ListBox virtualizes by default: it creates controls only for visible items. This works when the ListBox has a constrained height.
+ListBox 默认启用虚拟化：只为可见的项目创建控件。这需要 ListBox 的高度受到约束才有效。
 
-### Ensuring virtualization is active
+### 确认虚拟化真的生效了 {#ensuring-virtualization-is-active}
 
 ```xml
 <!-- BAD: StackPanel gives infinite height, disabling virtualization -->
@@ -127,15 +127,15 @@ ListBox virtualizes by default: it creates controls only for visible items. This
 <ListBox ItemsSource="{Binding LargeList}" Height="400" />
 ```
 
-### Scroll to an item
+### 滚动到某一项 {#scroll-to-an-item}
 
-Scroll programmatically to bring an item into view:
+用代码把某一项滚动到可见范围内：
 
 ```csharp
 listBox.ScrollIntoView(targetItem);
 ```
 
-Or scroll to an index:
+或者滚动到某个索引：
 
 ```csharp
 listBox.ScrollIntoView(listBox.ItemsSource.ElementAt(50));
@@ -143,7 +143,7 @@ listBox.ScrollIntoView(listBox.ItemsSource.ElementAt(50));
 
 ## Horizontal ListBox
 
-Display items horizontally by changing the items panel:
+换一个项目面板，让项目横向排列：
 
 ```xml
 <ListBox ItemsSource="{Binding Tags}">
@@ -162,7 +162,7 @@ Display items horizontally by changing the items panel:
 </ListBox>
 ```
 
-For a single horizontal row:
+若只要单独一行横排：
 
 ```xml
 <ListBox ItemsSource="{Binding Items}">
@@ -174,13 +174,13 @@ For a single horizontal row:
 </ListBox>
 ```
 
-Note: Using `StackPanel` or `WrapPanel` disables virtualization. For large horizontal lists, use `VirtualizingStackPanel` with `Orientation="Horizontal"`.
+注意：用 `StackPanel` 或 `WrapPanel` 会关掉虚拟化。横向的长列表请用 `VirtualizingStackPanel` 并设置 `Orientation="Horizontal"`。
 
 ## Styling ListBox Items
 
-### Custom selection appearance
+### 自定义选中项的外观 {#custom-selection-appearance}
 
-Override how selected items look:
+改写选中项的样子：
 
 ```xml
 <ListBox.Styles>
@@ -196,9 +196,9 @@ Override how selected items look:
 </ListBox.Styles>
 ```
 
-### Removing the selection highlight
+### 去掉选中高亮 {#removing-the-selection-highlight}
 
-For a list that displays items without selection visual feedback:
+若想让列表只负责展示、不给出选中的视觉反馈：
 
 ```xml
 <ListBox.Styles>
@@ -214,9 +214,9 @@ For a list that displays items without selection visual feedback:
 </ListBox.Styles>
 ```
 
-### Item spacing
+### 项目间距 {#item-spacing}
 
-Add spacing between items without modifying the template:
+不改模板也能为项目之间加上间距：
 
 ```xml
 <ListBox.Styles>
@@ -227,9 +227,9 @@ Add spacing between items without modifying the template:
 </ListBox.Styles>
 ```
 
-## Commands on ListBox Items
+## 为 ListBox 项目挂上命令 {#commands-on-listbox-items}
 
-Invoke a command when an item is clicked, passing the item as the parameter:
+点击某一项时调用命令，并把该项作为参数传过去：
 
 ```xml
 <ListBox ItemsSource="{Binding Items}">
@@ -248,7 +248,7 @@ Invoke a command when an item is clicked, passing the item as the parameter:
 
 ## Empty State
 
-Show a message when the list is empty:
+列表为空时显示一条提示：
 
 ```xml
 <Panel>
@@ -262,9 +262,9 @@ Show a message when the list is empty:
 </Panel>
 ```
 
-## ListBox with CheckBoxes
+## 带复选框的 ListBox {#listbox-with-checkboxes}
 
-Create a checkable list:
+做一个可勾选的列表：
 
 ```xml
 <ListBox ItemsSource="{Binding Tasks}" SelectionMode="Toggle,Multiple">
@@ -279,7 +279,7 @@ Create a checkable list:
 
 ## Grouping Items
 
-Display items in groups using the flat list with headers pattern:
+用「扁平列表 + 分组标题」的套路分组显示项目：
 
 ```csharp
 public abstract class ListEntry { }
@@ -316,11 +316,11 @@ public class ContactEntry : ListEntry
 </ListBox>
 ```
 
-See [Collection Views](/docs/data-binding/collection-views) for details on building grouped lists.
+构建分组列表的详细做法，请参阅[集合视图](/docs/data-binding/collection-views)。
 
 ## See Also
 
-- [ListBox Control Reference](/controls/data-display/collections/listbox): Property tables and basic examples.
-- [Collection Views](/docs/data-binding/collection-views): Sorting, filtering, and grouping collections.
-- [Performance](/docs/app-development/performance): Virtualization and large collection tips.
-- [Data Templates](/docs/data-templates/introduction-to-data-templates): How templates work.
+- [ListBox 控件参考](/controls/data-display/collections/listbox)：属性表与基础示例。
+- [集合视图](/docs/data-binding/collection-views)：集合的排序、筛选与分组。
+- [性能](/docs/app-development/performance)：虚拟化与大集合的优化建议。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：模板的运作原理。

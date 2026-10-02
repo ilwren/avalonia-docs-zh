@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SimpleWebSocketHttpRequest Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.DesignerSupport.Remote.HtmlTransport</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.DesignerSupport.Remote.HtmlTransport</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.DesignerSupport</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.DesignerSupport</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.DesignerSupport/Remote/HtmlTransport/SimpleWebSocketHttpServer.cs">SimpleWebSocketHttpServer.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.DesignerSupport/Remote/HtmlTransport/SimpleWebSocketHttpServer.cs">SimpleWebSocketHttpServer.cs</a>
 </div>
 
 </div>
@@ -48,30 +48,30 @@ public class SimpleWebSocketHttpRequest
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> SimpleWebSocketHttpRequest
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> SimpleWebSocketHttpRequest
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SimpleWebSocketHttpRequest](#uid-c71a954f8d) | No summary available. |
+| [SimpleWebSocketHttpRequest](#uid-c71a954f8d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c71a954f8d"></span>
 
-### SimpleWebSocketHttpRequest Constructor
+### SimpleWebSocketHttpRequest 构造函数 {#simplewebsockethttprequest-constructor}
 
 ```csharp
 public SimpleWebSocketHttpRequest(System.Net.Sockets.NetworkStream stream, string path, System.Collections.Generic.Dictionary<string, string> headers)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `stream` System.Net.Sockets.NetworkStream
 
@@ -84,30 +84,30 @@ public SimpleWebSocketHttpRequest(System.Net.Sockets.NetworkStream stream, strin
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AcceptWebSocket](#uid-5413e20205) | No summary available. |
-| [Dispose](#uid-46328b4baa) | No summary available. |
-| [RespondAsync](#uid-f87e52b871) | No summary available. |
+| [AcceptWebSocket](#uid-5413e20205) | 暂无摘要。 |
+| [Dispose](#uid-46328b4baa) | 暂无摘要。 |
+| [RespondAsync](#uid-f87e52b871) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5413e20205"></span>
 
-### AcceptWebSocket Method
+### AcceptWebSocket 方法 {#acceptwebsocket-method}
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.DesignerSupport.Remote.HtmlTransport.SimpleWebSocket> AcceptWebSocket(string protocol)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `protocol` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.DesignerSupport.Remote.HtmlTransport.SimpleWebSocket](xref:Avalonia.DesignerSupport.Remote.HtmlTransport.SimpleWebSocket)&gt;
 
@@ -118,7 +118,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.DesignerSupport.Remote.HtmlTransport.Si
 
 <span id="uid-46328b4baa"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -130,13 +130,13 @@ public void Dispose()
 
 <span id="uid-f87e52b871"></span>
 
-### RespondAsync Method
+### RespondAsync 方法 {#respondasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task RespondAsync(int code, byte[] data, string contentType)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `code` int
 
@@ -147,27 +147,27 @@ public System.Threading.Tasks.Task RespondAsync(int code, byte[] data, string co
 `contentType` string
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Headers](#uid-b4c0491db4) | No summary available. |
-| [IsWebsocketRequest](#uid-44ea20ded6) | No summary available. |
-| [Path](#uid-213344bc8d) | No summary available. |
-| [WebSocketProtocols](#uid-be91900750) | No summary available. |
+| [Headers](#uid-b4c0491db4) | 暂无摘要。 |
+| [IsWebsocketRequest](#uid-44ea20ded6) | 暂无摘要。 |
+| [Path](#uid-213344bc8d) | 暂无摘要。 |
+| [WebSocketProtocols](#uid-be91900750) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b4c0491db4"></span>
 
-### Headers Property
+### Headers 属性 {#headers-property}
 
 ```csharp
 public System.Collections.Generic.Dictionary<string, string> Headers { get; set; }
@@ -179,7 +179,7 @@ public System.Collections.Generic.Dictionary<string, string> Headers { get; set;
 
 <span id="uid-44ea20ded6"></span>
 
-### IsWebsocketRequest Property
+### IsWebsocketRequest 属性 {#iswebsocketrequest-property}
 
 ```csharp
 public bool IsWebsocketRequest { get; set; }
@@ -191,7 +191,7 @@ public bool IsWebsocketRequest { get; set; }
 
 <span id="uid-213344bc8d"></span>
 
-### Path Property
+### Path 属性 {#path-property}
 
 ```csharp
 public string Path { get; set; }
@@ -203,7 +203,7 @@ public string Path { get; set; }
 
 <span id="uid-be91900750"></span>
 
-### WebSocketProtocols Property
+### WebSocketProtocols 属性 {#websocketprotocols-property}
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<string> WebSocketProtocols { get; set; }

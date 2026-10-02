@@ -1,7 +1,7 @@
 ---
 id: nightingale-rose-chart
-title: Nightingale rose chart
-description: Polar area chart with equal angles and variable radii, useful for comparing category magnitudes in a circular layout.
+title: 南丁格尔玫瑰图
+description: 一种各扇段角度相等、半径不等的极坐标面积图，适合在环形版面中比较各类别的量级。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsRadialRose from '/img/controls/charts/charts-radial-rose.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-The Nightingale rose chart is a polar area chart with equal angles and variable radii. It is useful when you want a circular alternative to a bar chart while keeping one value per category.
+南丁格尔玫瑰图是一种极坐标面积图，各扇段角度相等而半径不等。当你想用环形形式取代条形图、同时每个类别仍只有一个数值时，它很合用。
 
 <Image light={chartsRadialRose} maxWidth={400} position="center" cornerRadius="true" alt="Nightingale rose chart with stacked sub-segments in each circular slice comparing composition across cyclical categories." />
 
-## When to use
-- **Seasonal summaries**: Comparing one measurement across months or quarters.
-- **Category comparison**: Showing relative magnitude without using Cartesian axes.
-- **Circular dashboards**: Using a radial layout when the categories form a cycle.
+## 适用场景 {#when-to-use}
+- **季节性概览**：比较同一项指标在各月份或各季度的表现。
+- **类别对比**：不借助笛卡尔坐标轴也能呈现相对量级。
+- **环形仪表板**：当各类别本身构成一个循环时，采用径向版面。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,7 +35,7 @@ The Nightingale rose chart is a polar area chart with equal angles and variable 
                                LabelPath="Label" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record RadialPoint(string Label, double Value);
 
@@ -48,14 +48,14 @@ public ObservableCollection<RadialPoint> NightingaleData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of segments. | `null` |
-| `ValuePath` | Radius magnitude of each segment. | `null` |
-| `LabelPath` | Category label for each segment. | `null` |
-| `InnerRadiusFactor` | Inner radius ratio, where `0.0` creates a solid rose chart. | `0.0` |
-| `ShowLabels` | Whether to display segment labels. | `true` |
-| `ShowValues` | Whether to display numeric values with the labels. | `false` |
-| `IsHighlightEnabled` | Enables hover highlighting for segments. | `false` |
+| `ItemsSource` | 各扇段的集合。 | `null` |
+| `ValuePath` | 每个扇段的半径量值。 | `null` |
+| `LabelPath` | 每个扇段的类别标签。 | `null` |
+| `InnerRadiusFactor` | 内半径比例，取 `0.0` 时得到一张实心的玫瑰图。 | `0.0` |
+| `ShowLabels` | 是否显示扇段标签。 | `true` |
+| `ShowValues` | 是否在标签旁一并显示数值。 | `false` |
+| `IsHighlightEnabled` | 为各扇段启用悬停高亮。 | `false` |

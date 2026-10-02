@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DefaultMenuInteractionHandler Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/DefaultMenuInteractionHandler.cs">DefaultMenuInteractionHandler.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/DefaultMenuInteractionHandler.cs">DefaultMenuInteractionHandler.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Provides the default keyboard and pointer interaction for menus.
+为菜单提供默认的键盘与指针交互。
 
 </div>
 
@@ -54,34 +54,34 @@ public class DefaultMenuInteractionHandler
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DefaultMenuInteractionHandler
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DefaultMenuInteractionHandler
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="imenuinteractionhandler">IMenuInteractionHandler</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="imenuinteractionhandler">IMenuInteractionHandler</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DefaultMenuInteractionHandler (2 overloads)](#uid-2bddbe8aee) | No summary available. |
+| [DefaultMenuInteractionHandler（2 个重载）](#uid-2bddbe8aee) | 暂无摘要。 |
 
 <span id="uid-2bddbe8aee"></span>
 
-### DefaultMenuInteractionHandler overloads
+### DefaultMenuInteractionHandler 的重载 {#defaultmenuinteractionhandler-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0d7129217d"></span>
 
-#### DefaultMenuInteractionHandler Constructor
+#### DefaultMenuInteractionHandler 构造函数 {#defaultmenuinteractionhandler-constructor}
 
 ```csharp
 public DefaultMenuInteractionHandler(bool isContextMenu)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `isContextMenu` bool
 
@@ -92,13 +92,13 @@ public DefaultMenuInteractionHandler(bool isContextMenu)
 
 <span id="uid-cdeea65b22"></span>
 
-#### DefaultMenuInteractionHandler Constructor
+#### DefaultMenuInteractionHandler 构造函数 {#defaultmenuinteractionhandler-constructor-1}
 
 ```csharp
 public DefaultMenuInteractionHandler(bool isContextMenu, Avalonia.Input.IInputManager inputManager, Action<Action, TimeSpan> delayRun)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `isContextMenu` bool
 
@@ -111,24 +111,24 @@ public DefaultMenuInteractionHandler(bool isContextMenu, Avalonia.Input.IInputMa
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Attach](#uid-66d9c76ad1) | No summary available. |
-| [Detach](#uid-78d4c8f416) | No summary available. |
+| [Attach](#uid-66d9c76ad1) | 暂无摘要。 |
+| [Detach](#uid-78d4c8f416) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-66d9c76ad1"></span>
 
-### Attach Method
+### Attach 方法 {#attach-method}
 
 ```csharp
 public void Attach(Avalonia.Controls.MenuBase menu)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `menu` [Avalonia.Controls.MenuBase](xref:Avalonia.Controls.MenuBase)
 
@@ -139,30 +139,30 @@ public void Attach(Avalonia.Controls.MenuBase menu)
 
 <span id="uid-78d4c8f416"></span>
 
-### Detach Method
+### Detach 方法 {#detach-method}
 
 ```csharp
 public void Detach(Avalonia.Controls.MenuBase menu)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `menu` [Avalonia.Controls.MenuBase](xref:Avalonia.Controls.MenuBase)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [MenuShowDelay](#uid-d632ead1d1) | No summary available. |
+| [MenuShowDelay](#uid-d632ead1d1) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d632ead1d1"></span>
 
-### MenuShowDelay Property
+### MenuShowDelay 属性 {#menushowdelay-property}
 
 ```csharp
 public TimeSpan MenuShowDelay { get; set; }

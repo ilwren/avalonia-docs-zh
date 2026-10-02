@@ -1,25 +1,25 @@
 ---
 id: carpet-plot-chart
-title: Carpet plot chart
-description: Maps two independent variables and one dependent variable into a skewed grid, useful for engineering trade-off surfaces.
+title: 地毯图
+description: 把两个自变量和一个因变量映射到一张倾斜的网格上，适合呈现工程上的权衡曲面。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Carpet plots visualize how two independent variables relate to a third value by drawing a distorted grid of intersecting isolines.
+地毯图画出一张由等值线交织而成的扭曲网格，借此呈现两个自变量与第三个数值之间的关系。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Engineering trade-offs**: Compare two design inputs against an outcome surface.
-- **Performance maps**: Visualize operating regions for efficiency, pressure, or temperature.
-- **Multi-variable analysis**: Inspect relationships that do not fit a simple Cartesian line chart.
+- **工程权衡**：把两个设计输入与结果曲面放在一起比较。
+- **性能图谱**：呈现效率、压力或温度的工作区间。
+- **多变量分析**：考察那些用普通笛卡尔折线图说不清的关系。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Carpet plots visualize how two independent variables relate to a third value by 
                              YAxisPath="Efficiency" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record CarpetPoint(double Speed, double Load, double Efficiency);
@@ -46,18 +46,18 @@ public ObservableCollection<CarpetPoint> CarpetData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of measurement points. | `null` |
-| `AAxisPath` | Path to the first independent variable. | `null` |
-| `BAxisPath` | Path to the second independent variable. | `null` |
-| `YAxisPath` | Path to the dependent value. | `null` |
-| `CarpetOffset` | Visual offset factor used to create the carpet effect. | `0.5` |
-| `PlotAreaBackground` | Optional background brush for the plot area. | `null` |
+| `ItemsSource` | 测量点的集合。 | `null` |
+| `AAxisPath` | 指向第一个自变量的路径。 | `null` |
+| `BAxisPath` | 指向第二个自变量的路径。 | `null` |
+| `YAxisPath` | 指向因变量数值的路径。 | `null` |
+| `CarpetOffset` | 用于营造地毯效果的视觉偏移系数。 | `0.5` |
+| `PlotAreaBackground` | 绘图区可选的背景画刷。 | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Ternary chart](/controls/data-display/charts/engineering/ternary-chart)
-- [Contour plot chart](/controls/data-display/charts/statistical/contour-plot-chart)
+- [三元图](/controls/data-display/charts/engineering/ternary-chart)
+- [等值线图](/controls/data-display/charts/statistical/contour-plot-chart)

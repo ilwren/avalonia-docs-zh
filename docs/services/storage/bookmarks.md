@@ -1,46 +1,46 @@
 ---
 id: bookmarks
-title: Bookmarks
+title: 书签
 ---
 
-Bookmarks are particularly important for maintaining access to files and folders in modern operating systems that have strict security and privacy controls. For instance, on platforms like iOS and newer versions of macOS, direct file system access is heavily restricted. Instead, applications request the user to select a file or folder through a system-provided file picker, and the operating system then gives the application a security-scoped bookmark that it can use to access that file or folder in the future.
+在安全和隐私管控严格的现代操作系统上，书签对维持文件和文件夹的访问权限尤为要紧。比如在 iOS 和较新版 macOS 这类平台上，直接访问文件系统受到重重限制：应用得请用户通过系统提供的文件选取器挑选文件或文件夹，随后操作系统交给应用一个带安全作用域的书签，日后凭它访问该文件或文件夹。
 
-In Avalonia's `StorageProvider`, these bookmarks are represented as `IStorageBookmarkFile` and `IStorageBookmarkFolder` interfaces.
+在 Avalonia 的 `StorageProvider` 中，这些书签由 `IStorageBookmarkFile` 和 `IStorageBookmarkFolder` 两个接口表示。
 
 ## Avalonia.Platform.Storage
 ### `IStorageBookmarkItem` interface
-The `IStorageBookmarkItem` interface represents a bookmarked storage item. It inherits from IStorageItem and IDisposable. This interface is not client implementable, meaning you cannot create your own classes that implement it without special permissions.
+`IStorageBookmarkItem` 接口表示一个已加书签的存储项，继承自 IStorageItem 和 IDisposable。该接口不供客户端实现——没有特别许可，你无法编写自己的实现类。
 
-Here are the key properties and methods it provides:
+它提供的主要属性和方法如下：
 
-#### Properties:
+#### 属性： {#properties}
 
-`CanBookmark`: A property that indicates if the item can be bookmarked and reused later.
+`CanBookmark`：指示该项能否加书签以便日后复用。
 
-`Name`: The name of the item.
+`Name`：该项的名称。
 
-`Path`: The file-system path of the item.
+`Path`：该项在文件系统中的路径。
 
-#### Methods:
+#### 方法： {#methods}
 `CreateFileAsync(String)`,`CreateFolderAsync(String)`,`DeleteAsync()`,`Dispose()`,`GetBasicPropertiesAsync()`,`GetFileAsync(String)`,`GetFolderAsync(String)`,`GetItemsAsync()`,`GetParentAsync()`,`MoveAsync(IStorageFolder)`,`ReleaseBookmarkAsync()`,`SaveBookmarkAsync()`.
 
 ### `IStorageBookmarkFolder` interface
 
-#### Properties:
-same as IStorageBookmarkItem
+#### 属性： {#properties-1}
+同 IStorageBookmarkItem
 
-#### Methods:
+#### 方法： {#methods-1}
 `DeleteAsync()`,`Dispose()`,`GetBasicPropertiesAsync()`,`GetBasicPropertiesAsync()`,`GetParentAsync()`,`MoveAsync(IStorageFolder)`,`OpenReadAsync()`,`OpenWriteAsync()`,`ReleaseBookmarkAsync()`,`SaveBookmarkAsync()`.
 
 
 
-## How to use bookmark methods
-This section provides a practical guide on using `bookmark`.
+## 书签方法怎么用 {#how-to-use-bookmark-methods}
+本节给出 `bookmark` 的实用指引。
 
-### Saving and loading bookmarks
-To get a bookmark ID for a specific folder or file, use the `SaveBookmarkAsync()` asynchronous method on a storage item. Once you have a bookmark ID, you can save it to a local database for future use instead of requiring the user to select a folder every time.
+### 保存与加载书签 {#saving-and-loading-bookmarks}
+要取得某个文件夹或文件的书签 ID，请在存储项上调用异步方法 `SaveBookmarkAsync()`。拿到书签 ID 后，你可以把它存进本地数据库以备日后使用，省得每次都要用户重新选一遍文件夹。
 
-`SaveBookmarkAsync()`: This method is used to get a `bookmark ID` for a selected file or folder, which can be stored for future use.
+`SaveBookmarkAsync()`：用于为选中的文件或文件夹取得 `bookmark ID`，可存下来日后再用。
 
 ```csharp
 // Example usage
@@ -59,7 +59,7 @@ private async Task SaveBookmarksAsync(Control control)
 }
 ```
 
-You can use the `OpenFolderBookmarkAsync()` methods to open a bookmarked folder via a `bookmark ID`. This will return the bookmarked folder or null if the operating system denies the request.
+你可以用 `OpenFolderBookmarkAsync()` 系列方法，凭 `bookmark ID` 打开已加书签的文件夹。它会返回该文件夹；若操作系统拒绝了请求，则返回 null。
 
 ```csharp
 // Example usage
@@ -82,7 +82,7 @@ private async Task LoadFolderByBookmarkAsync(Control control, string bookmarkId)
 }
 ```
 
-`ReleaseBookmarkAsync()`: This method is used to revoke the security-scoped access granted by the operating system. You should call this when you no longer need access to the bookmarked item.
+`ReleaseBookmarkAsync()`：用于撤销操作系统授予的安全作用域访问权限。当你不再需要访问该书签项时，应当调用它。
 
 ```csharp
 // Example usage
@@ -109,14 +109,14 @@ private async Task ReleaseBookmarkAsync(Control control, string bookmarkId)
 ```
 
 
-### Reading and writing file content from a bookmark
+### 从书签读写文件内容 {#reading-and-writing-file-content-from-a-bookmark}
 
-`OpenFileBookmarkAsync()`: This method is used to open a bookmarked file from a stored `bookmark ID`. It will return the bookmarked file or null if the operating system denies the request.
+`OpenFileBookmarkAsync()`：用于凭存下来的 `bookmark ID` 打开已加书签的文件。它会返回该文件；若操作系统拒绝了请求，则返回 null。
 
 
-Once you retrieve a bookmarked file using `OpenFileBookmarkAsync()`, you can read its content with `OpenReadAsync()` or modify it with `OpenWriteAsync()`.
+用 `OpenFileBookmarkAsync()` 取回已加书签的文件后，你就能用 `OpenReadAsync()` 读取其内容，或用 `OpenWriteAsync()` 修改它。
 
-`OpenReadAsync()`: Opens a stream for read access to the bookmarked file.
+`OpenReadAsync()`：打开一个流以读取该书签文件。
 
 ```csharp
 // Example usage
@@ -139,7 +139,7 @@ private async Task LoadFileByBookmarkAsync(Control control, string bookmarkId)
 }
 ```
 
-`OpenWriteAsync()`: Opens a stream for writing to the bookmarked file.
+`OpenWriteAsync()`：打开一个流以写入该书签文件。
 
 ```csharp
 // Example usage
@@ -163,10 +163,10 @@ private async Task SaveFileByBookmarkAsync(Control control, string bookmarkId)
 ```
 
 
-### Managing bookmarked files and folders
-Once a bookmark is loaded, you can use the inherited methods from `IStorageItem` to manipulate the file or folder.
+### 管理已加书签的文件和文件夹 {#managing-bookmarked-files-and-folders}
+书签加载之后，你就能用从 `IStorageItem` 继承来的那些方法操作该文件或文件夹。
 
-`DeleteAsync()`: This method asynchronously deletes the current storage item and its contents.
+`DeleteAsync()`：异步删除当前存储项及其内容。
 
 ```csharp
 // Example usage
@@ -180,7 +180,7 @@ private async Task DeleteFileAsync()
 }
 ```
 
-`MoveAsync(IStorageFolder)`: This method asynchronously moves the bookmarked item to a new location.
+`MoveAsync(IStorageFolder)`：异步把该书签项移到新位置。
 
 ```csharp
 IStorageFile bookmarkedFile = ...;
@@ -188,7 +188,7 @@ IStorageFolder newDestinationFolder = ...;
 await bookmarkedFile.MoveAsync(newDestinationFolder);
 ```
 
-`GetBasicPropertiesAsync()`: This method asynchronously retrieves basic properties of the storage item, such as its size and modification date.
+`GetBasicPropertiesAsync()`：异步取得存储项的基本属性，比如大小和修改日期。
 
 ```csharp
 // Example usage
@@ -197,7 +197,7 @@ var properties = await bookmarkedFile.GetBasicPropertiesAsync();
 long size = properties.Size;
 ```
 
-`GetParentAsync()`: This method asynchronously gets the parent folder of the current storage item.
+`GetParentAsync()`：异步取得当前存储项的父文件夹。
 
 ```csharp
 // Example usage
@@ -206,7 +206,7 @@ var parentFolder = await bookmarkedFile.GetParentAsync();
 string parentName = parentFolder.Name;
 ```
 
-`TryGetLocalPath()`: This extension method attempts to get the local file system path as a string. It's useful for platform-specific operations where a local path is required.
+`TryGetLocalPath()`：这个扩展方法会尝试以字符串形式取得本地文件系统路径，在需要本地路径的平台专属操作中很有用。
 
 ```csharp
 // This will work on Windows but may return null on other platforms
@@ -214,23 +214,23 @@ IStorageFile bookmarkedFile = ...;
 string? localPath = bookmarkedFile.TryGetLocalPath();
 ```
 
-## Platform-specific bookmark representation
-The way a `bookmark ID` is represented can vary by platform:
+## 各平台上书签的表示形式 {#platform-specific-bookmark-representation}
+`bookmark ID` 的表示形式因平台而异：
 
-**Windows**: A bookmark is a simple absolute path string, so a bookmark might look like `C:\Documents\Avalonia\bookmarks.pdf`
+**Windows**：书签就是一个简单的绝对路径字符串，长得像 `C:\Documents\Avalonia\bookmarks.pdf` 这样
 
-**Android**: Think of the content provider like a waiter that your apps can ask for a certain file/folder through a Content URI. The URI format looks like `content://[Authority]/[path]/[id]`. For example, `com.android.externalstorage.documents` is an `Authority` for accessing External Storage providers, so a bookmark might look like `content://com.android.externalstorage.documents/tree/[your folder path]`(Reference: [Create a content provider | Android Developers](https://developer.android.com/guide/topics/providers/content-provider-creating)).
+**Android**：不妨把内容提供程序想成一位服务员，应用通过 Content URI 向它点取某个文件/文件夹。URI 的格式形如 `content://[Authority]/[path]/[id]`。举例来说，`com.android.externalstorage.documents` 是访问外部存储提供程序的 `Authority`，于是书签可能长成 `content://com.android.externalstorage.documents/tree/[your folder path]` 这样（参考：[创建内容提供程序 | Android Developers](https://developer.android.com/guide/topics/providers/content-provider-creating)）。
 
 :::note
-The exact behavior and capabilities can depend on the specific operating system and its security policies. For instance, on some platforms, a bookmark might become invalid if the user moves or renames the file or folder that it points to.
+具体行为和能力取决于各操作系统及其安全策略。比如在某些平台上，用户一旦移动或重命名书签指向的文件或文件夹，该书签就可能失效。
 :::
 
 :::note
-It's not recommended to store bookmark IDs in a remote database, as bookmarks might not be persistent and might contain sensitive file path information.
+不建议把书签 ID 存到远程数据库：书签未必能长期有效，而且可能含有敏感的文件路径信息。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Storage Provider](/docs/services/storage/storage-provider): Full storage provider API reference.
-- [Storage Items](/docs/services/storage/storage-item): Working with files and folders.
-- [File Dialogs](/docs/services/file-dialogs): Using file open, save, and folder picker dialogs.
+- [存储提供程序](/docs/services/storage/storage-provider)：完整的存储提供程序 API 参考。
+- [存储项](/docs/services/storage/storage-item)：与文件和文件夹打交道。
+- [文件对话框](/docs/services/file-dialogs)：使用打开、保存和文件夹选取对话框。

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ILogical Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.LogicalTree</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.LogicalTree</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/ILogical.cs">ILogical.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/ILogical.cs">ILogical.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface ILogical
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [NotifyAttachedToLogicalTree](#uid-b24afde4d7) | Notifies the control that it is being attached to a rooted logical tree. |
 | [NotifyDetachedFromLogicalTree](#uid-45be203798) | Notifies the control that it is being detached from a rooted logical tree. |
@@ -64,7 +64,7 @@ public interface ILogical
 
 <span id="uid-b24afde4d7"></span>
 
-### NotifyAttachedToLogicalTree Method
+### NotifyAttachedToLogicalTree 方法 {#notifyattachedtologicaltree-method}
 
 Notifies the control that it is being attached to a rooted logical tree.
 
@@ -72,17 +72,16 @@ Notifies the control that it is being attached to a rooted logical tree.
 public void NotifyAttachedToLogicalTree(Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `e` [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs)
 
-The event args.
+事件参数。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-This method will be called automatically by the framework, you should not need to call
-this method yourself.
+该方法会由框架自动调用，你不必自己去调用它。
 
 </section>
 
@@ -90,7 +89,7 @@ this method yourself.
 
 <span id="uid-45be203798"></span>
 
-### NotifyDetachedFromLogicalTree Method
+### NotifyDetachedFromLogicalTree 方法 {#notifydetachedfromlogicaltree-method}
 
 Notifies the control that it is being detached from a rooted logical tree.
 
@@ -98,17 +97,16 @@ Notifies the control that it is being detached from a rooted logical tree.
 public void NotifyDetachedFromLogicalTree(Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `e` [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs)
 
-The event args.
+事件参数。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-This method will be called automatically by the framework, you should not need to call
-this method yourself.
+该方法会由框架自动调用，你不必自己去调用它。
 
 </section>
 
@@ -116,7 +114,7 @@ this method yourself.
 
 <span id="uid-2e041f2f08"></span>
 
-### NotifyResourcesChanged Method
+### NotifyResourcesChanged 方法 {#notifyresourceschanged-method}
 
 Notifies the control that a change has been made to resources that apply to it.
 
@@ -124,33 +122,32 @@ Notifies the control that a change has been made to resources that apply to it.
 public void NotifyResourcesChanged(Avalonia.Controls.ResourcesChangedEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `e` [Avalonia.Controls.ResourcesChangedEventArgs](xref:Avalonia.Controls.ResourcesChangedEventArgs)
 
-The event args.
+事件参数。
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-This method will be called automatically by the framework, you should not need to call
-this method yourself.
+该方法会由框架自动调用，你不必自己去调用它。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsAttachedToLogicalTree](#uid-755d809324) | Gets a value indicating whether the element is attached to a rooted logical tree. |
-| [LogicalChildren](#uid-2b5e6f88d7) | Gets the logical children. |
-| [LogicalParent](#uid-0261e2a5c6) | Gets the logical parent. |
+| [LogicalChildren](#uid-2b5e6f88d7) | 获取逻辑子级。 |
+| [LogicalParent](#uid-0261e2a5c6) | 获取逻辑父级。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-755d809324"></span>
 
-### IsAttachedToLogicalTree Property
+### IsAttachedToLogicalTree 属性 {#isattachedtologicaltree-property}
 
 Gets a value indicating whether the element is attached to a rooted logical tree.
 
@@ -164,9 +161,9 @@ public bool IsAttachedToLogicalTree { get; set; }
 
 <span id="uid-2b5e6f88d7"></span>
 
-### LogicalChildren Property
+### LogicalChildren 属性 {#logicalchildren-property}
 
-Gets the logical children.
+获取逻辑子级。
 
 ```csharp
 public Avalonia.Collections.IAvaloniaReadOnlyList<T><Avalonia.LogicalTree.ILogical> LogicalChildren { get; set; }
@@ -178,9 +175,9 @@ public Avalonia.Collections.IAvaloniaReadOnlyList<T><Avalonia.LogicalTree.ILogic
 
 <span id="uid-0261e2a5c6"></span>
 
-### LogicalParent Property
+### LogicalParent 属性 {#logicalparent-property}
 
-Gets the logical parent.
+获取逻辑父级。
 
 ```csharp
 public Avalonia.LogicalTree.ILogical LogicalParent { get; set; }
@@ -188,9 +185,9 @@ public Avalonia.LogicalTree.ILogical LogicalParent { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AttachedToLogicalTree](#uid-7a354cf341) | Raised when the control is attached to a rooted logical tree. |
 | [DetachedFromLogicalTree](#uid-8368318817) | Raised when the control is detached from a rooted logical tree. |
@@ -199,7 +196,7 @@ public Avalonia.LogicalTree.ILogical LogicalParent { get; set; }
 
 <span id="uid-7a354cf341"></span>
 
-### AttachedToLogicalTree Event
+### AttachedToLogicalTree 事件 {#attachedtologicaltree-event}
 
 Raised when the control is attached to a rooted logical tree.
 
@@ -213,7 +210,7 @@ public event EventHandler<Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs> A
 
 <span id="uid-8368318817"></span>
 
-### DetachedFromLogicalTree Event
+### DetachedFromLogicalTree 事件 {#detachedfromlogicaltree-event}
 
 Raised when the control is detached from a rooted logical tree.
 

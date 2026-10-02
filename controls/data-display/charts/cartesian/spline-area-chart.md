@@ -1,24 +1,24 @@
 ---
 id: spline-area-chart
-title: Spline area chart
-description: Displays a filled area beneath a smooth spline curve, combining the visual flow of spline charts with the volume emphasis of area charts.
+title: 样条面积图
+description: 在平滑的样条曲线下方填充区域，兼具样条图的流畅线条和面积图对体量的强调。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Spline area charts display a filled area under a smooth interpolated curve. They combine the aesthetic smoothness of spline curves with the volume emphasis of area fills, making trends visually prominent.
+样条面积图在平滑插值曲线的下方填充出一片区域。它把样条曲线的流畅美感与面积填充对体量的强调结合起来，让趋势格外醒目。
 
-## When to use
-- **Smooth trends**: Displaying continuous data where smooth interpolation better represents the underlying trend.
-- **Volume emphasis**: Highlighting the magnitude of values with the filled area beneath the curve.
-- **Time series**: Visualizing data that changes gradually over time, such as revenue or traffic.
+## 适用场景 {#when-to-use}
+- **平滑趋势**：数据连续变化、用平滑插值更能体现其走势时。
+- **强调体量**：用曲线下方的填充区域凸显数值的量级。
+- **时间序列**：呈现随时间缓缓变化的数据，比如营收或流量。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -38,7 +38,7 @@ Spline area charts display a filled area under a smooth interpolated curve. They
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> SplineAreaSeriesData { get; } = new()
 {
@@ -46,21 +46,21 @@ public ObservableCollection<int> SplineAreaSeriesData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series shown in the legend. | `null` |
-| `ItemsSource` | The collection of data items to display. | `null` |
-| `CategoryPath` | Path to the property used for the X-axis. | `null` |
-| `ValuePath` | Path to the property used for the Y-axis. | `null` |
-| `Fill` | The color/brush used to fill the area. | Theme-dependent |
-| `Stroke` | The color of the spline curve outline. | `Transparent` |
-| `FillOpacity` | The opacity of the fill area (0.0 to 1.0). | `0.5` |
-| `SplineTension` | The tension of the spline curve (0.0 to 1.0). Lower values create sharper curves, higher values create smoother curves. | `0.25` |
+| `Title` | 在图例中显示的系列名称。 | `null` |
+| `ItemsSource` | 要显示的数据项集合。 | `null` |
+| `CategoryPath` | 指向 X 轴所用属性的路径。 | `null` |
+| `ValuePath` | 指向 Y 轴所用属性的路径。 | `null` |
+| `Fill` | 填充区域所用的颜色/画刷。 | Theme-dependent |
+| `Stroke` | 样条曲线轮廓的颜色。 | `Transparent` |
+| `FillOpacity` | 填充区域的不透明度（0.0 到 1.0）。 | `0.5` |
+| `SplineTension` | 样条曲线的张力（0.0 到 1.0）。值越小曲线转折越锐利，值越大则越平滑。 | `0.25` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Area chart](/controls/data-display/charts/cartesian/area-chart)
-- [Spline chart](/controls/data-display/charts/cartesian/spline-chart)
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
+- [面积图](/controls/data-display/charts/cartesian/area-chart)
+- [样条图](/controls/data-display/charts/cartesian/spline-chart)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FontManagerOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/FontManagerOptions.cs">FontManagerOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/FontManagerOptions.cs">FontManagerOptions.cs</a>
 </div>
 
 </div>
@@ -48,21 +48,21 @@ public class FontManagerOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FontManagerOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FontManagerOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FontManagerOptions](#uid-35d2618c27) | No summary available. |
+| [FontManagerOptions](#uid-35d2618c27) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-35d2618c27"></span>
 
-### FontManagerOptions Constructor
+### FontManagerOptions 构造函数 {#fontmanageroptions-constructor}
 
 ```csharp
 public FontManagerOptions()
@@ -70,19 +70,19 @@ public FontManagerOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DefaultFamilyName](#uid-eeb8b71ac1) | Gets or sets the default font family's name |
-| [FontFallbacks](#uid-3749c5bb7c) | Gets or sets the font fallbacks. |
-| [FontFamilyMappings](#uid-1868b78c76) | Gets or sets the font family mappings. |
+| [FontFallbacks](#uid-3749c5bb7c) | 获取或设置字体回退列表。 |
+| [FontFamilyMappings](#uid-1868b78c76) | 获取或设置字体族映射。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-eeb8b71ac1"></span>
 
-### DefaultFamilyName Property
+### DefaultFamilyName 属性 {#defaultfamilyname-property}
 
 Gets or sets the default font family's name
 
@@ -96,15 +96,15 @@ public string DefaultFamilyName { get; set; }
 
 <span id="uid-3749c5bb7c"></span>
 
-### FontFallbacks Property
+### FontFallbacks 属性 {#fontfallbacks-property}
 
-Gets or sets the font fallbacks.
+获取或设置字体回退列表。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.FontFallback> FontFallbacks { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 A fallback is fullfilled before anything else when the font manager tries to match a specific codepoint.
 
@@ -114,15 +114,15 @@ A fallback is fullfilled before anything else when the font manager tries to mat
 
 <span id="uid-1868b78c76"></span>
 
-### FontFamilyMappings Property
+### FontFamilyMappings 属性 {#fontfamilymappings-property}
 
-Gets or sets the font family mappings.
+获取或设置字体族映射。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyDictionary<string, Avalonia.Media.FontFamily> FontFamilyMappings { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 A font family mapping is used if a requested family name can't be resolved.
 

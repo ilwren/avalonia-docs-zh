@@ -1,73 +1,73 @@
 ---
 id: breakpoints-tool
-title: Breakpoints tool
+title: 断点工具
 doc-type: reference
 ---
 
-The Application Breakpoints Tool allows you to monitor and debug property changes and events in Avalonia applications without modifying code. Breakpoints can be set on properties, events to help diagnose issues and understand application behavior.
+应用断点工具让你不改代码就能监视和调试 Avalonia 应用中的属性变化与事件。断点可以下在属性和事件上，帮你定位问题、摸清应用的行为。
 
-A breakpoint considered to be `Hit` (and correspondingly, increment `Hit Count` value, or suspend execution) when:
-1. Property is changed (for property breakpoints) or event is raised (for event breakpoints).
-2. Breakpoint is enabled.
-3. If breakpoint has a target, it matches source of the property/event.
-4. Hit count criteria is satisfied.
+满足以下条件时，断点即被视为 `Hit`（相应地会让 `Hit Count` 值加一，或挂起执行）：
+1. 属性发生变化（属性断点）或事件被触发（事件断点）。
+2. 断点处于启用状态。
+3. 若断点设了目标，则该目标与属性/事件的来源相符。
+4. 命中次数条件得到满足。
 
-Depending on how breakpoint was created, it might have Target assigned to it.
-For example, event breakpoints without target are considered global, and are triggered when _any_ element has this event raised.
+断点可能带有 Target，这取决于它是怎么创建的。
+举例来说，不带目标的事件断点算是全局断点，_任何_元素触发该事件时它都会命中。
 
-![List of breakpoints with options panel](/img/tools/dev-tools/breakpoints-list.png)
+![带选项面板的断点列表](/img/tools/dev-tools/breakpoints-list.png)
 
 
-## Adding breakpoints
+## 添加断点 {#adding-breakpoints}
 
-### Adding a property breakpoint
+### 添加属性断点 {#adding-a-property-breakpoint}
 
-On the [Properties](/tools/developer-tools/elements-tool) list each dependency property has a **Set Breakpoint** context menu item.
+在[属性](/tools/developer-tools/elements-tool)列表中，每个依赖属性的右键菜单里都有 **Set Breakpoint** 一项。
 
-Created breakpoint is bound to the element on which it was set. 
+这样创建的断点会绑定到你下断点的那个元素上。 
 
-![Setting breakpoint on a property](/img/tools/dev-tools/breakpoint-set-on-propety.png)
+![在属性上下断点](/img/tools/dev-tools/breakpoint-set-on-propety.png)
 
-### Adding an event breakpoint
+### 添加事件断点 {#adding-an-event-breakpoint}
 
-On the [Events](/tools/developer-tools/events-tool) tool each raised event has an option to set a breakpoint.
+在[事件](/tools/developer-tools/events-tool)工具中，每个已触发的事件都可以下断点。
 
-Setting **On a Source** will bind breakpoint to the source element this previously raised event had. Alternatively, the **Globally** option will create an unbound breakpoint, which gets hit on any element with this event. 
+选 **On a Source** 会把断点绑定到之前触发该事件的源元素上；选 **Globally** 则创建一个不绑定的断点，任何元素触发该事件时都会命中。 
 
-![Setting breakpoint on a raised event](/img/tools/dev-tools/breakpoint-set-on-raised-event.png)
+![在已触发的事件上下断点](/img/tools/dev-tools/breakpoint-set-on-raised-event.png)
 
-It's also possible to set a breakpoint bound to a specific routed chain element. Or from the "Event Listeners" flyout.  
+你也可以把断点绑定到路由链上的某个特定元素，或者从 “Event Listeners” 浮出菜单里下断点。  
 
-![Setting breakpoint on a chain element](/img/tools/dev-tools/breakpoint-set-on-chain-element.png)
+![在链路元素上下断点](/img/tools/dev-tools/breakpoint-set-on-chain-element.png)
 
-## Managing breakpoints
+## 管理断点 {#managing-breakpoints}
 
-By default, any breakpoint only increments Hit Count, when it's triggered.
+默认情况下，断点命中时只会让 Hit Count 加一。
 
-There are several other options that can be enabled:
+另外还有几个选项可以启用：
 
-### Suspend execution
+### 挂起执行 {#suspend-execution}
 
-Similar to how breakpoints work in a typical IDE, stopping execution and navigating you to the breakpoint location.
+与常规 IDE 中的断点类似：停下执行，并把你带到断点所在位置。
 
-This option is primarily useful, when there is a need to see what exactly triggered property change or an event. By reading stacktrace in the IDE.
+当你需要通过 IDE 里的调用栈看清究竟是什么触发了属性变化或事件时，这个选项特别管用。
 
-Connected application must have a third-party Debugger attached. Otherwise this breakpoint is ignored.
+被连接的应用必须挂着第三方调试器，否则这类断点会被忽略。
 
-Since `Developer Tools` uses standard `Debugger.Break()` method, any conventional IDE with a debugger will work: Visual Studio, Rider or VSCode.
-Unfortunately, there is no clean way to override breakpoint Stacktrace, because of that IDE might show internal code from the `Debugger.Break` location.
+由于 `Developer Tools` 用的是标准的 `Debugger.Break()` 方法，任何带调试器的常规 IDE 都能用：Visual Studio、Rider 或 VSCode。
+可惜没有干净的办法覆盖断点的调用栈，因此 IDE 可能会显示来自 `Debugger.Break` 的内部代码。
 
-### Log message
+### 日志消息 {#log-message}
 
-When enabled, breakpoint will write a log message into [Logs](/tools/developer-tools/logs-tool) tool.
+启用后，断点会往[日志](/tools/developer-tools/logs-tool)工具里写一条日志消息。
 
-![Log output from triggered breakpoints](/img/tools/dev-tools/breakpoints-logs-ouput.png)
+![断点命中时的日志输出](/img/tools/dev-tools/breakpoints-logs-ouput.png)
 
-### Remove once hit
+### 命中后移除 {#remove-once-hit}
 
-As the name suggests, breakpoint is removed once it is hit. Can be combined with other options.
+顾名思义，断点一旦命中就会被移除。可与其他选项搭配使用。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Events tool](/tools/developer-tools/events-tool)
-- [Logs tool](/tools/developer-tools/logs-tool)
+- [事件工具](/tools/developer-tools/events-tool)
+- [日志工具](/tools/developer-tools/logs-tool)

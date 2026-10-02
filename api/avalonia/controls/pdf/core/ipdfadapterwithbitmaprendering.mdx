@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPdfAdapterWithBitmapRendering Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -50,30 +50,30 @@ public interface IPdfAdapterWithBitmapRendering
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ipdfadapter">IPdfAdapter</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ipdfadapter">IPdfAdapter</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RenderPageAsync](#uid-b4e61c8ec6) | Renders a page to a bitmap. |
+| [RenderPageAsync](#uid-b4e61c8ec6) | 把某一页渲染成位图。 |
 | [RenderPageRegionAsync](#uid-93ad70d5c0) | Renders a rectangular region of a page to a bitmap (for tiled rendering). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b4e61c8ec6"></span>
 
-### RenderPageAsync Method
+### RenderPageAsync 方法 {#renderpageasync-method}
 
-Renders a page to a bitmap.
+把某一页渲染成位图。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> RenderPageAsync(Avalonia.Controls.Pdf.Core.IPdfPage page, double scale, double dpiScale, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `page` [Avalonia.Controls.Pdf.Core.IPdfPage](xref:Avalonia.Controls.Pdf.Core.IPdfPage)
 
@@ -93,10 +93,10 @@ pixels but the bitmap reports a DIP size of `scale`. Default 1.0.
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)&gt;
 
@@ -107,7 +107,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Med
 
 <span id="uid-93ad70d5c0"></span>
 
-### RenderPageRegionAsync Method
+### RenderPageRegionAsync 方法 {#renderpageregionasync-method}
 
 Renders a rectangular region of a page to a bitmap (for tiled rendering).
 
@@ -115,7 +115,7 @@ Renders a rectangular region of a page to a bitmap (for tiled rendering).
 public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> RenderPageRegionAsync(Avalonia.Controls.Pdf.Core.IPdfPage page, double scale, Avalonia.Rect region, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `page` [Avalonia.Controls.Pdf.Core.IPdfPage](xref:Avalonia.Controls.Pdf.Core.IPdfPage)
 
@@ -129,7 +129,7 @@ public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> RenderPageRegi
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)&gt;
 

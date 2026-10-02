@@ -1,17 +1,17 @@
 ---
 id: control-transitions
-title: Setting control transitions
-description: Configure transitions that animate property changes on Avalonia controls.
+title: 设置控件过渡
+description: 配置过渡，为 Avalonia 控件的属性变化加上动画。
 doc-type: how-to
 ---
 
-Transitions in Avalonia are also heavily inspired by CSS Animations. They listen to any changes in target property's value and subsequently animate the change according to its parameters. They can be defined on any `Control` via the [`Transitions`](/api/avalonia/animation/transitions) property.
+Avalonia 的过渡同样深受 CSS Animations 的启发。它们监听目标属性值的变化，并按设定的参数为这次变化加上动画。任何 `Control` 都能通过 [`Transitions`](/api/avalonia/animation/transitions) 属性定义过渡。
 
 :::note
-Unlike [keyframe animations](/docs/graphics-animation/keyframe-animations), transitions do not pause on hidden controls.
+与[关键帧动画](/docs/graphics-animation/keyframe-animations)不同，过渡在控件被隐藏时不会暂停。
 :::
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui">
@@ -38,9 +38,9 @@ Unlike [keyframe animations](/docs/graphics-animation/keyframe-animations), tran
 </Window>
 ```
 
-The above example will listen to changes in the `Rectangle`'s `Opacity` property, and when the value changes, apply a smooth transition from the old value to the new value over 2 seconds.
+上面的例子会监听 `Rectangle` 的 `Opacity` 属性：一旦取值变化，就用 2 秒钟从旧值平滑过渡到新值。
 
-Transitions can also be defined in any style by using a `Setter` with `Transitions` as the target property and encapsulating them in a `Transitions` object, like so:
+过渡也可以写在任意样式里：用一个 `Setter` 以 `Transitions` 为目标属性，并把过渡装进一个 `Transitions` 对象中，像这样：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui">
@@ -66,19 +66,19 @@ Transitions can also be defined in any style by using a `Setter` with `Transitio
 </Window>
 ```
 
-Every transition has a `Property`, `Delay`, `Duration` and an optional `Easing` property.
+每个过渡都有 `Property`、`Delay`、`Duration` 三项，外加一个可选的 `Easing` 属性。
 
-`Property` refers to a transition's target for listening and animating values upon.
+`Property` 指的是过渡要监听并施加动画的目标属性。
 
-`Delay` refers to the amount of time before the transition is applied to the target.
+`Delay` 指的是过渡施加到目标上之前要等多久。
 
-`Duration` refers to the amount of time that the transition plays.
+`Duration` 指的是过渡播放的时长。
 
-For a full list of easing functions, see the [Easing functions page](/docs/graphics-animation/easing-functions).
+完整的缓动函数清单请参阅[缓动函数页面](/docs/graphics-animation/easing-functions)。
 
-The correct transition type must be used for the type of the property being animated:
+被动画的属性是什么类型，就必须用对应类型的过渡：
 
-| Transition | Property type |
+| 过渡动画 | 属性类型 |
 |---|---|
 | `BoolTransition` | `bool` |
 | `BoxShadowsTransition` | `BoxShadows` |
@@ -94,9 +94,9 @@ The correct transition type must be used for the type of the property being anim
 | `TransformOperationsTransition` | `ITransform` |
 | `VectorTransition` | `Vector` |
 
-## Transitioning render transforms
+## 为渲染变换加过渡 {#transitioning-render-transforms}
 
-Render transforms applied to controls using CSS-like syntax can be transitioned. The following example shows a Border which rotates 45 degrees when the pointer is hovered over it:
+用类 CSS 语法施加在控件上的渲染变换是可以加过渡的。下面的例子展示了一个边框，指针悬停在它上面时它会旋转 45 度：
 
 ```xml title='XAML'
 <Border Width="100" Height="100" Background="Red">
@@ -154,9 +154,9 @@ new Border
 };
 ```
 
-The available transitions are:
+可用的过渡有：
 
-| Transition   | Sample                                    | Acceptable units             |
+| 过渡动画   | 示例                                    | 可用单位             |
 | ------------ | ----------------------------------------- | ---------------------------- |
 | `translate`  | `translate(10px)`, `translate(0px, 10px)` | `px`                         |
 | `translateX` | `translateX(10px)`                        | `px`                         |
@@ -171,11 +171,11 @@ The available transitions are:
 | `matrix`     | `matrix(1,2,3,4,5,6)`                     |                              |
 
 :::info
-Avalonia also supports WPF-style render transforms such as `RotateTransform` and `ScaleTransform`. These transforms cannot be transitioned: always use the CSS-like format if you want to apply a transition to a render transform.
+Avalonia 也支持 `RotateTransform`、`ScaleTransform` 这类 WPF 风格的渲染变换，但它们没法加过渡。若想给渲染变换加过渡，请一律使用类 CSS 的写法。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Multi-step keyframe animations.
-- [Animation Settings](/docs/graphics-animation/animation-settings): Duration, delay, iteration count, and playback direction.
-- [Easing Functions](/docs/graphics-animation/easing-functions): All available easing functions.
+- [关键帧动画](/docs/graphics-animation/keyframe-animations)：多步关键帧动画。
+- [动画设置](/docs/graphics-animation/animation-settings)：时长、延迟、重复次数与播放方向。
+- [缓动函数](/docs/graphics-animation/easing-functions)：全部可用的缓动函数。

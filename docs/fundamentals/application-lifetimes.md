@@ -1,18 +1,18 @@
 ---
 id: application-lifetimes
-title: Application lifetimes
-description: Choose and configure application lifetime models for desktop, mobile, and browser platforms.
+title: 应用程序生命周期
+description: 为桌面、移动和浏览器平台选择并配置合适的应用程序生命周期模型。
 doc-type: explanation
 video:
   src: https://youtu.be/1_LLm3-YEt8
   title: Desktop, Mobile & Web All Start Your App Differently
 ---
 
-Not all platforms are created equal! For example, the lifetime management that you may be used to developing with in Windows Forms or WPF can operate only on desktop-style platforms. Avalonia is a cross-platform framework; so to make your application portable, it provides several different lifetime models for your application, and also allows you to control everything manually if the target platform permits.
+各个平台并不是一个模子刻出来的。举例来说，你在 Windows Forms 或 WPF 里习以为常的那套生命周期管理，只在桌面类平台上成立。Avalonia 是跨平台框架，为了让应用具备可移植性，它提供了好几种生命周期模型；只要目标平台允许，你也完全可以手动接管全部流程。
 
-## How do lifetimes work?
+## 生命周期是怎么运作的？ {#how-do-lifetimes-work}
 
-For a desktop application, you initialise like this:
+桌面应用的初始化写法如下：
 
 ```csharp
 class Program
@@ -29,7 +29,7 @@ class Program
 }
 ```
 
-Then the main window is created in the `Application` class:
+主窗口则在 `Application` 类中创建：
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -47,62 +47,62 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-This method is called when the framework has initialized and the `ApplicationLifetime` property contains the chosen lifetime if any.
+该方法会在框架初始化完毕后被调用，此时 `ApplicationLifetime` 属性中就是选定的生命周期（如果有的话）。
 
 :::info
-If you run the application in design mode (this uses the IDE previewer process), then `ApplicationLifetime` is null.
+如果应用运行在设计模式下（也就是 IDE 预览器进程中），`ApplicationLifetime` 为 null。
 :::
 
-## Lifetime interfaces
+## 生命周期接口 {#lifetime-interfaces}
 
-Avalonia provides a range of interfaces to allow you to choose a level of control that is suitable for your application. These are provided by the `BuildAvaloniaApp().Start[Something]` family of methods.
+Avalonia 提供了一组接口，让你按需挑选控制粒度。它们由 `BuildAvaloniaApp().Start[Something]` 系列方法提供。
 
 ### IControlledApplicationLifetime
 
-Provided by:
+提供者：
 
 * `StartWithClassicDesktopLifetime`
 * `StartLinuxFramebuffer`
 
-Allows you to subscribe to `Startup` and `Exit` events and permits explicitly shutting down of the application by calling the `Shutdown` method. This interface gives you control of the application's exit procedures.
+可订阅 `Startup` 和 `Exit` 事件，并允许调用 `Shutdown` 方法显式关闭应用。这个接口把应用的退出流程交到了你手上。
 
 ### IClassicDesktopStyleApplicationLifetime
 
-Inherits: `IControlledApplicationLifetime`
+继承自：`IControlledApplicationLifetime`
 
-Provided by:
+提供者：
 
 * `StartWithClassicDesktopLifetime`
 
-Allows you to control your application lifetime in the manner of a Windows Forms or WPF application. This interface provides a way to access the list of the currently opened windows, to set a main window, and has three shutdown modes:
+让你像管理 Windows Forms 或 WPF 应用那样管理生命周期。该接口可以访问当前已打开的窗口列表、指定主窗口，并提供三种关闭模式：
 
-* `OnLastWindowClose` - shuts down the application when the last window is closed
-* `OnMainWindowClose` - shuts down the application when the main window is closed (if it has been set).
-* `OnExplicitShutdown` - disables automatic shutdown of the application, you need to call the `Shutdown` method in your code.
+* `OnLastWindowClose` —— 最后一个窗口关闭时退出应用
+* `OnMainWindowClose` —— 主窗口关闭时退出应用（前提是已指定主窗口）。
+* `OnExplicitShutdown` —— 关闭自动退出机制，需要你在代码中自行调用 `Shutdown` 方法。
 
 ### ISingleViewApplicationLifetime
 
-Provided by:
+提供者：
 
 * `StartLinuxFramebuffer`
 * iOS
-* web platform (WebAssembly/WASM)
+* Web 平台（WebAssembly/WASM）
 
-Some platforms do not have a concept of a desktop main window and only allow one view on the device's screen at a time. For these platforms the lifetime allows you to set and change the main view class (`MainView`) instead.
+有些平台没有桌面主窗口的概念，屏幕上同一时刻只能呈现一个视图。对这类平台，生命周期改为让你设置和切换主视图类（`MainView`）。
 
 :::info
-To implement a navigation stack on platforms like this (with a single main view), you can use a routing control or navigation framework. A common approach is to manage a stack of view models, pushing and popping them as the user navigates, with a host control that automatically displays the corresponding view.
+在这类只有单一主视图的平台上实现导航栈，可以借助路由控件或导航框架。常见做法是自己维护一个视图模型栈，随用户导航压栈出栈，再配一个宿主控件自动展示对应的视图。
 :::
 
 ### IActivityApplicationLifetime
 
-Provided by:
+提供者：
 
 * Android
 
-Android can create multiple instances of your main activity during the app's lifetime (for example, when the user taps a notification or returns from another app). A single `MainView` instance cannot be reused across these activity recreations, so Android uses a factory function instead.
+Android 可能在应用存续期间多次创建主 Activity（比如用户点开通知、或从别的应用切回来）。单个 `MainView` 实例无法跨 Activity 重建复用，因此 Android 改用工厂函数。
 
-Set the `MainViewFactory` property to a function that creates a new view each time an activity is started:
+把 `MainViewFactory` 属性设为一个函数，每次 Activity 启动时由它创建新视图：
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -117,11 +117,11 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-The factory is called each time a new activity instance is created, producing a fresh view with its own state. This avoids the crashes that occurred when reusing a single view instance across multiple activity launches.
+每创建一个 Activity 实例，工厂就会被调用一次，产出一个自带独立状态的新视图。这样就避免了以往跨多次 Activity 启动复用同一视图实例所导致的崩溃。
 
-## Manual lifetime management
+## 手动管理生命周期 {#manual-lifetime-management}
 
-If you need to, you can take full control of your application's lifetime management. For example on a desktop platform you can pass a delegate to `AppMain` to the `BuildAvaloniaApp.Start` method, and then manage things manually from there:
+有需要的话，你可以完全接管应用的生命周期管理。比如在桌面平台上，向 `BuildAvaloniaApp.Start` 方法传入一个 `AppMain` 委托，后续流程就全由你自己掌控：
 
 ```csharp
 class Program
@@ -152,7 +152,7 @@ class Program
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Main window](/docs/fundamentals/main-window)
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
+- [主窗口](/docs/fundamentals/main-window)
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)

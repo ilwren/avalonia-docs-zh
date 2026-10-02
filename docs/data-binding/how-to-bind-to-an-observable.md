@@ -1,41 +1,41 @@
 ---
 id: how-to-bind-to-an-observable
-title: How to bind to an observable
-description: Bind control properties to IObservable streams for reactive data updates in the UI.
+title: 如何绑定到可观察序列
+description: 把控件属性绑定到 IObservable 流，实现界面的响应式更新。
 doc-type: how-to
 ---
 
-Avalonia supports binding directly to `IObservable<T>` properties using the `^` (stream binding) operator. Each time the observable produces a new value, the binding updates automatically.
+Avalonia 支持用 `^`（流绑定）运算符直接绑定到 `IObservable<T>` 属性。可观察序列每推出一个新值，绑定就自动更新一次。
 
-## When to use observable bindings
+## 何时使用可观察序列绑定 {#when-to-use-observable-bindings}
 
-Use `IObservable<T>` bindings when your data arrives as a continuous stream of values over time. Common scenarios include:
+当数据是随时间持续流入的值序列时，就该用 `IObservable<T>` 绑定。常见场景包括：
 
-- **Real-time data feeds** such as clocks, sensor readings, or stock prices.
-- **Reactive search** where you throttle, debounce, or transform user input before querying a service.
-- **Event-driven state** where values are pushed to you rather than pulled on demand.
+- **实时数据源**，比如时钟、传感器读数或股票行情。
+- **响应式搜索** —— 在请求服务之前，对用户输入做节流、防抖或变换。
+- **事件驱动的状态** —— 值是被推送过来的，而不是你主动去取的。
 
-For most view-model properties that change in response to user actions, a standard property that raises `INotifyPropertyChanged` (or an Avalonia `StyledProperty` / `DirectProperty`) is simpler and sufficient. Choose observables when you genuinely benefit from the composition operators that `System.Reactive` provides, such as `Throttle`, `DistinctUntilChanged`, `CombineLatest`, and `Switch`.
+对于大多数随用户操作而变化的视图模型属性，用一个会引发 `INotifyPropertyChanged` 的普通属性（或 Avalonia 的 `StyledProperty` / `DirectProperty`）更简单，也完全够用。只有当你确实能从 `System.Reactive` 提供的组合运算符（如 `Throttle`、`DistinctUntilChanged`、`CombineLatest`、`Switch`）中获益时，才值得改用可观察序列。
 
-## Basic observable binding
+## 基本的可观察序列绑定 {#basic-observable-binding}
 
-If `DataContext.Name` is an `IObservable<string>`, you can bind to its current value:
+若 `DataContext.Name` 是一个 `IObservable<string>`，可以直接绑定到它的当前值：
 
 ```xml
 <TextBlock Text="{Binding Name^}" />
 ```
 
-The `^` operator subscribes to the observable and updates the control each time a new value is emitted.
+`^` 运算符会订阅该可观察序列，每推出一个新值就刷新一次控件。
 
-## Binding to a property of the emitted value
+## 绑定到所推出值的某个属性 {#binding-to-a-property-of-the-emitted-value}
 
-You can chain property access after the `^` operator. For example, to bind to the `Length` of each string produced:
+可以在 `^` 运算符之后继续访问属性。例如，绑定到所产出的每个字符串的 `Length`：
 
 ```xml
 <TextBlock Text="{Binding Name^.Length}" />
 ```
 
-## Example: clock using an observable
+## 示例：用可观察序列实现时钟 {#example-clock-using-an-observable}
 
 ```csharp
 public class ClockViewModel
@@ -50,7 +50,7 @@ public class ClockViewModel
 <TextBlock Text="{Binding CurrentTime^}" FontSize="24" />
 ```
 
-## Example: search results stream
+## 示例：搜索结果流 {#example-search-results-stream}
 
 ```csharp
 public class SearchViewModel
@@ -81,29 +81,29 @@ public class SearchViewModel
 <ListBox ItemsSource="{Binding Results^}" />
 ```
 
-## FallbackValue for initial state
+## 用 FallbackValue 处理初始状态 {#fallbackvalue-for-initial-state}
 
-Since observables may not have emitted a value yet, use `FallbackValue` to display a placeholder:
+可观察序列可能还没推出过任何值，这时可以用 `FallbackValue` 显示一个占位内容：
 
 ```xml
 <TextBlock Text="{Binding CurrentTime^, FallbackValue='Loading...'}" />
 ```
 
-## Combining with task binding
+## 与任务绑定配合 {#combining-with-task-binding}
 
-The `^` operator also works with `Task<T>` properties. See [How to bind to a task result](/docs/data-binding/how-to-bind-to-a-task-result) for details.
+`^` 运算符同样适用于 `Task<T>` 属性，详见[如何绑定到任务结果](/docs/data-binding/how-to-bind-to-a-task-result)。
 
-## Cleanup and disposal
+## 清理与释放 {#cleanup-and-disposal}
 
-Avalonia automatically subscribes to your `IObservable<T>` when the binding is activated and unsubscribes when the bound control is removed from the visual tree. In most cases you do not need to manage the subscription yourself.
+绑定激活时，Avalonia 会自动订阅你的 `IObservable<T>`；当绑定的控件从视觉树中移除时又会自动退订。大多数情况下，你不需要自己管理订阅。
 
-Keep the following points in mind:
+但请留意以下几点：
 
-- **Hot observables** (such as `Subject<T>`) stay alive as long as something references them. If the observable is owned by a long-lived service, make sure the view model does not keep it alive after the view is gone.
-- **Cold observables** (such as `Observable.Interval`) create a new subscription each time. Because Avalonia disposes the subscription when the control detaches, no manual cleanup is required.
-- If your view model implements `IDisposable` and you create subscriptions outside of XAML bindings (for example, inside the constructor for derived properties), dispose of those subscriptions in your `Dispose` method to avoid memory leaks.
+- **热可观察序列**（如 `Subject<T>`）只要还有人引用就会一直存活。如果该序列由一个长生命周期的服务持有，务必确保视图销毁之后视图模型不会把它一直吊着。
+- **冷可观察序列**（如 `Observable.Interval`）每次订阅都会新建一份。由于控件分离时 Avalonia 会释放订阅，不需要手动清理。
+- 如果你的视图模型实现了 `IDisposable`，并且在 XAML 绑定之外还创建了订阅（比如在构造函数中为派生属性订阅），请在 `Dispose` 方法中释放这些订阅，以免内存泄漏。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [How to bind to a task result](/docs/data-binding/how-to-bind-to-a-task-result)
-- [Data binding syntax](/docs/data-binding/data-binding-syntax)
+- [如何绑定到任务结果](/docs/data-binding/how-to-bind-to-a-task-result)
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)

@@ -20,32 +20,29 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PageBandCollection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-The page bands a document owns, as elements: a view over the text document's
-[Avalonia.Controls.Documents.TextModel.TextDocument.PageBands](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageBands), which owns the bands, materializing a
-[Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand) element per band on demand. It follows the contract of the
-block collection: the document becomes a band's logical parent the moment it is
-added; while the document has no text document the band waits pending, and it
-joins the text document when that is initialized, before the pending blocks
-materialize; once the text document exists a band joins it at once. Removing a band
-releases owner, logical parent and undo and clears every section reference to it.
-Ownership is exclusive: a band owned by another document is refused until it is
-removed there. The first band with a given role and rule is the one the rule places.
+文档所拥有的页面带状区域，以元素形式给出：它是文本文档 [Avalonia.Controls.Documents.TextModel.TextDocument.PageBands](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageBands) 的一个视图，
+真正持有这些带状区域的是后者，这里按需为每个带状区域实体化出一个 [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand) 元素。
+它遵循块集合的约定：带状区域一加入，文档便成为它的逻辑父级；文档尚无文本文档时，
+带状区域处于待定状态，待文本文档初始化后便加入其中——这发生在待定的块实体化之前；
+文本文档已存在时，带状区域则立即加入。移除某个带状区域会一并解除其所有者、逻辑父级
+与撤销关联，并清除所有指向它的 section 引用。所有权是独占的：已归属其他文档的带状区域，
+在从那边移除之前不会被接纳。某个角色与规则下的第一个带状区域，就是该规则所摆放的那一个。
 
 </div>
 
@@ -59,39 +56,39 @@ public class PageBandCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageBandCollection
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PageBandCollection
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> ICollection&lt;PageBand&gt;, IEnumerable&lt;PageBand&gt;, IList&lt;PageBand&gt;, IReadOnlyCollection&lt;PageBand&gt;, IReadOnlyList&lt;PageBand&gt;, IEnumerable
+<span className="apiref-page__meta-label">实现接口：</span> ICollection&lt;PageBand&gt;, IEnumerable&lt;PageBand&gt;, IList&lt;PageBand&gt;, IReadOnlyCollection&lt;PageBand&gt;, IReadOnlyList&lt;PageBand&gt;, IEnumerable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Add](#uid-94d4f694a5) | No summary available. |
-| [Clear](#uid-80037a33da) | No summary available. |
-| [Contains](#uid-6061004f4f) | No summary available. |
-| [CopyTo](#uid-84ee892d17) | No summary available. |
-| [Find (2 overloads)](#uid-5a805a4661) | The first band with `role` and `rule`: the one the rule places. |
-| [GetEnumerator](#uid-b4cbe8ccca) | No summary available. |
-| [IndexOf](#uid-bdc9d3491b) | No summary available. |
-| [Insert](#uid-1955f370a9) | No summary available. |
-| [Remove](#uid-a91bb82504) | No summary available. |
-| [RemoveAt](#uid-a13fbf93dc) | No summary available. |
+| [Add](#uid-94d4f694a5) | 暂无摘要。 |
+| [Clear](#uid-80037a33da) | 暂无摘要。 |
+| [Contains](#uid-6061004f4f) | 暂无摘要。 |
+| [CopyTo](#uid-84ee892d17) | 暂无摘要。 |
+| [Find（2 个重载）](#uid-5a805a4661) | 带有 `role` 和 `rule` 的第一个带状区域：即规则所放置的那一个。 |
+| [GetEnumerator](#uid-b4cbe8ccca) | 暂无摘要。 |
+| [IndexOf](#uid-bdc9d3491b) | 暂无摘要。 |
+| [Insert](#uid-1955f370a9) | 暂无摘要。 |
+| [Remove](#uid-a91bb82504) | 暂无摘要。 |
+| [RemoveAt](#uid-a13fbf93dc) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-94d4f694a5"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
 ```csharp
 public void Add(Avalonia.Controls.Documents.PageBand item)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `item` [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)
 
@@ -102,7 +99,7 @@ public void Add(Avalonia.Controls.Documents.PageBand item)
 
 <span id="uid-80037a33da"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 ```csharp
 public void Clear()
@@ -114,18 +111,18 @@ public void Clear()
 
 <span id="uid-6061004f4f"></span>
 
-### Contains Method
+### Contains 方法 {#contains-method}
 
 ```csharp
 public bool Contains(Avalonia.Controls.Documents.PageBand item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `item` [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -136,13 +133,13 @@ bool
 
 <span id="uid-84ee892d17"></span>
 
-### CopyTo Method
+### CopyTo 方法 {#copyto-method}
 
 ```csharp
 public void CopyTo(Avalonia.Controls.Documents.PageBand[] array, int arrayIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `array` [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)[]
 
@@ -154,21 +151,21 @@ public void CopyTo(Avalonia.Controls.Documents.PageBand[] array, int arrayIndex)
 
 <span id="uid-5a805a4661"></span>
 
-### Find overloads
+### Find 的重载 {#find-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1bc74b620a"></span>
 
-#### Find Method
+#### Find 方法 {#find-method}
 
-The first band with `role` and `rule`: the one the rule places.
+带有 `role` 和 `rule` 的第一个带状区域：即规则所放置的那一个。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBand Find(Avalonia.Controls.Documents.PageBandRole role, Avalonia.Controls.Documents.PageBandRule rule)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `role` [Avalonia.Controls.Documents.PageBandRole](xref:Avalonia.Controls.Documents.PageBandRole)
 
@@ -176,7 +173,7 @@ public Avalonia.Controls.Documents.PageBand Find(Avalonia.Controls.Documents.Pag
 `rule` [Avalonia.Controls.Documents.PageBandRule](xref:Avalonia.Controls.Documents.PageBandRule)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)
 
@@ -187,20 +184,20 @@ public Avalonia.Controls.Documents.PageBand Find(Avalonia.Controls.Documents.Pag
 
 <span id="uid-c0aa826c91"></span>
 
-#### Find Method
+#### Find 方法 {#find-method-1}
 
-The band with `id`, or null: what a section's reference names.
+带有 `id` 的那个带状区域，或 null：也就是某个 section 的引用所指向的那一个。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBand Find(Guid id)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `id` Guid
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)
 
@@ -211,13 +208,13 @@ public Avalonia.Controls.Documents.PageBand Find(Guid id)
 
 <span id="uid-b4cbe8ccca"></span>
 
-### GetEnumerator Method
+### GetEnumerator 方法 {#getenumerator-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerator<Avalonia.Controls.Documents.PageBand> GetEnumerator()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Collections.Generic.IEnumerator&lt;[Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)&gt;
 
@@ -228,18 +225,18 @@ System.Collections.Generic.IEnumerator&lt;[Avalonia.Controls.Documents.PageBand]
 
 <span id="uid-bdc9d3491b"></span>
 
-### IndexOf Method
+### IndexOf 方法 {#indexof-method}
 
 ```csharp
 public int IndexOf(Avalonia.Controls.Documents.PageBand item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `item` [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 int
 
@@ -250,13 +247,13 @@ int
 
 <span id="uid-1955f370a9"></span>
 
-### Insert Method
+### Insert 方法 {#insert-method}
 
 ```csharp
 public void Insert(int index, Avalonia.Controls.Documents.PageBand item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `index` int
 
@@ -270,18 +267,18 @@ public void Insert(int index, Avalonia.Controls.Documents.PageBand item)
 
 <span id="uid-a91bb82504"></span>
 
-### Remove Method
+### Remove 方法 {#remove-method}
 
 ```csharp
 public bool Remove(Avalonia.Controls.Documents.PageBand item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `item` [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand)
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 bool
 
@@ -292,32 +289,32 @@ bool
 
 <span id="uid-a13fbf93dc"></span>
 
-### RemoveAt Method
+### RemoveAt 方法 {#removeat-method}
 
 ```csharp
 public void RemoveAt(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `index` int
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Count](#uid-f286d9ebd5) | No summary available. |
-| [IsReadOnly](#uid-c661580c3b) | No summary available. |
-| [Item](#uid-bbc0bfa6f5) | No summary available. |
+| [Count](#uid-f286d9ebd5) | 暂无摘要。 |
+| [IsReadOnly](#uid-c661580c3b) | 暂无摘要。 |
+| [Item](#uid-bbc0bfa6f5) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f286d9ebd5"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 ```csharp
 public int Count { get; set; }
@@ -329,7 +326,7 @@ public int Count { get; set; }
 
 <span id="uid-c661580c3b"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
 ```csharp
 public bool IsReadOnly { get; set; }
@@ -341,7 +338,7 @@ public bool IsReadOnly { get; set; }
 
 <span id="uid-bbc0bfa6f5"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public Avalonia.Controls.Documents.PageBand Item { get; set; }

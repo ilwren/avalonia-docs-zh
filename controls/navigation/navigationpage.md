@@ -1,7 +1,7 @@
 ---
 id: navigationpage
 title: NavigationPage
-description: '`NavigationPage` provides stack-based page navigation. It includes a navigation bar, a back button, and optional page-specific command bars.'
+description: '`NavigationPage` 提供基于栈的页面导航，自带导航栏、返回按钮，还可以为每个页面配上专属命令栏。'
 doc-type: reference
 ---
 
@@ -15,109 +15,109 @@ import NavigationPageAppearanceScreenshot from '/img/controls/navigationpage/nav
 import NavigationPageModalScreenshot from '/img/controls/navigationpage/navigationpage-modal.png';
 import NavigationPageDrawerIntegrationScreenshot from '/img/controls/navigationpage/navigationpage-drawer-integration.png';
 
-The [`NavigationPage`](/api/avalonia/controls/navigationpage) manages a stack-based navigation system, allowing you to push and pop pages with animated transitions. It displays a navigation bar with a back button and the current page's header.
+[`NavigationPage`](/api/avalonia/controls/navigationpage) 管理一套基于栈的导航系统，让你把页面推入、弹出，并配上过渡动画。它会显示一个导航栏，其中含返回按钮和当前页面的页头。
 
-`NavigationPage` implements the `INavigation` interface, providing a full set of async navigation methods for pushing, popping, and replacing pages.
+`NavigationPage` 实现了 `INavigation` 接口，提供了一整套异步导航方法，用于推入、弹出和替换页面。
 
-## Navigation bar layout
+## 导航栏的布局 {#navigation-bar-layout}
 
-The navigation bar is divided into three zones:
+导航栏分为三个区域：
 
-| Zone | Content |
+| 区域 | 内容 |
 | --- | --- |
-| Left | Back button (when applicable) or custom `BackButtonContent` |
-| Center | The current page's `Header` |
-| Right | Per-page command content from `NavigationPage.TopCommandBar` |
+| Left | 返回按钮（在合适的时候）或自定义的 `BackButtonContent` |
+| Center | 当前页面的 `Header` |
+| Right | 来自 `NavigationPage.TopCommandBar` 的、各页面专属的命令内容 |
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-| Property | Type | Default | Description |
+| 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `Content` | `object?` | `null` | The initial root page displayed in the navigation stack. Assigns a [`Page`](/api/avalonia/controls/page) instance. |
-| `PageTransition` | [`IPageTransition?`](/api/avalonia/animation/ipagetransition) | Theme default | The transition animation used when navigating between pages. |
-| `ModalTransition` | `IPageTransition?` | Theme default | The transition animation used when presenting or dismissing modal pages. |
-| `HasShadow` | `bool` | `false` | Displays a shadow beneath the navigation bar. |
-| `BarHeight` | `double` | `48` | The height of the navigation bar. |
-| `EffectiveBarHeight` | `double` | Computed | Read-only. The actual bar height after applying safe area insets and overrides. |
-| `IsBackButtonVisible` | `bool` | `true` | Controls whether the back button is shown when navigation is possible. |
-| `IsGestureEnabled` | `bool` | `true` | Enables swipe gestures for back navigation. |
-| `IsNavigating` | `bool` | `false` | Read-only. Returns `true` while a navigation operation is running. |
-| `CanGoBack` | `bool` | `false` | Read-only. Returns `true` when there is more than one page on the navigation stack. |
-| `IsBackButtonEffectivelyVisible` | `bool` | Computed | Read-only. The resolved visibility of the back button, accounting for stack depth, `IsBackButtonVisible`, and per-page overrides. |
-| `NavigationStack` | `IReadOnlyList<Page>` | Empty | Read-only. The current stack of pages. |
-| `ModalStack` | `IReadOnlyList<Page>` | Empty | Read-only. The current stack of modal pages. |
-| `StackDepth` | `int` | `0` | Read-only. The number of pages in the navigation stack. |
+| `Content` | `object?` | `null` | 导航栈中显示的初始根页面，赋值为一个 [`Page`](/api/avalonia/controls/page) 实例。 |
+| `PageTransition` | [`IPageTransition?`](/api/avalonia/animation/ipagetransition) | 主题默认值 | 页面之间导航时使用的过渡动画。 |
+| `ModalTransition` | `IPageTransition?` | 主题默认值 | 呈现或关闭模态页面时使用的过渡动画。 |
+| `HasShadow` | `bool` | `false` | 在导航栏下方显示阴影。 |
+| `BarHeight` | `double` | `48` | 导航栏的高度。 |
+| `EffectiveBarHeight` | `double` | Computed | 只读。计入安全区边衬与各项覆盖设置之后，导航栏的实际高度。 |
+| `IsBackButtonVisible` | `bool` | `true` | 控制在可以返回时是否显示返回按钮。 |
+| `IsGestureEnabled` | `bool` | `true` | 启用滑动手势来返回上一页。 |
+| `IsNavigating` | `bool` | `false` | 只读。导航操作进行期间返回 `true`。 |
+| `CanGoBack` | `bool` | `false` | 只读。当导航栈中不止一个页面时返回 `true`。 |
+| `IsBackButtonEffectivelyVisible` | `bool` | Computed | 只读。综合栈深度、`IsBackButtonVisible` 以及各页面的覆盖设置后，返回按钮最终的可见性。 |
+| `NavigationStack` | `IReadOnlyList<Page>` | Empty | 只读。当前的页面栈。 |
+| `ModalStack` | `IReadOnlyList<Page>` | Empty | 只读。当前的模态页面栈。 |
+| `StackDepth` | `int` | `0` | 只读。导航栈中的页面数量。 |
 
-## Attached properties
+## 附加属性 {#attached-properties}
 
-These properties can be set on individual `Page` instances to customize their appearance within the `NavigationPage`:
+下列属性可以设在单个 `Page` 实例上，用来定制它在 `NavigationPage` 中的外观：
 
-| Attached Property | Type | Default | Description |
+| Attached Property | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `NavigationPage.HasNavigationBar` | `bool` | `true` | Whether the navigation bar is visible for this page. |
-| `NavigationPage.HasBackButton` | `bool` | `true` | Whether the back button is shown for this page. |
-| `NavigationPage.IsBackButtonEnabled` | `bool` | `true` | Whether the back button is enabled for this page. |
-| `NavigationPage.BackButtonContent` | `object?` | `null` | Custom content for the back button. |
-| `NavigationPage.TopCommandBar` | `Control?` | `null` | Command content displayed on the right side of the navigation bar for this page. |
-| `NavigationPage.BottomCommandBar` | `Control?` | `null` | A command bar displayed below the page content. |
-| `NavigationPage.BarLayoutBehavior` | `BarLayoutBehavior?` | `null` | Controls how the navigation bar interacts with page content. |
-| `NavigationPage.BarHeightOverride` | `double?` | `null` | Overrides the bar height for this page. |
+| `NavigationPage.HasNavigationBar` | `bool` | `true` | 该页面是否显示导航栏。 |
+| `NavigationPage.HasBackButton` | `bool` | `true` | 该页面是否显示返回按钮。 |
+| `NavigationPage.IsBackButtonEnabled` | `bool` | `true` | 该页面的返回按钮是否可用。 |
+| `NavigationPage.BackButtonContent` | `object?` | `null` | 返回按钮的自定义内容。 |
+| `NavigationPage.TopCommandBar` | `Control?` | `null` | 该页面显示在导航栏右侧的命令内容。 |
+| `NavigationPage.BottomCommandBar` | `Control?` | `null` | 显示在页面内容下方的命令栏。 |
+| `NavigationPage.BarLayoutBehavior` | `BarLayoutBehavior?` | `null` | 控制导航栏与页面内容之间的相处方式。 |
+| `NavigationPage.BarHeightOverride` | `double?` | `null` | 为该页面单独指定导航栏高度。 |
 
-### BarLayoutBehavior values
+### BarLayoutBehavior 的取值 {#barlayoutbehavior-values}
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
-| `Inset` | The navigation bar pushes page content down. This is the default behavior. |
-| `Overlay` | The navigation bar floats over the page content without affecting its layout. |
+| `Inset` | 导航栏把页面内容往下挤，这是默认行为。 |
+| `Overlay` | 导航栏浮在页面内容之上，不影响内容布局。 |
 
-## Navigation methods
+## 导航方法 {#navigation-methods}
 
-Navigation methods that change the visible page are asynchronous and return `Task`. Those methods have an overload that accepts an `IPageTransition` parameter to override the default transition. `InsertPage` and `RemovePage` modify the stack without animation and return `void`.
+会改变当前可见页面的导航方法都是异步的，返回 `Task`。它们都有一个接受 `IPageTransition` 参数的重载，可用于覆盖默认过渡。`InsertPage` 和 `RemovePage` 只修改栈而不播放动画，返回 `void`。
 
-| Method | Description |
+| 方法 | 说明 |
 | --- | --- |
-| `PushAsync(Page)` | Pushes a new page onto the navigation stack. |
-| `PopAsync()` | Removes the current page from the stack and returns it. |
-| `PopToRootAsync()` | Pops all pages except the root page. |
-| `PopToPageAsync(Page)` | Pops pages until the specified page is on top. |
-| `ReplaceAsync(Page)` | Replaces the current page with a new page. |
-| `InsertPage(Page, Page)` | Inserts a page into the stack before the specified page. |
-| `RemovePage(Page)` | Removes a specific page from the stack. |
+| `PushAsync(Page)` | 把一个新页面推入导航栈。 |
+| `PopAsync()` | 把当前页面从栈中移除并返回它。 |
+| `PopToRootAsync()` | 弹出除根页面之外的所有页面。 |
+| `PopToPageAsync(Page)` | 不断弹出页面，直到指定页面位于栈顶。 |
+| `ReplaceAsync(Page)` | 用新页面替换当前页面。 |
+| `InsertPage(Page, Page)` | 把一个页面插入到指定页面之前。 |
+| `RemovePage(Page)` | 把指定页面从栈中移除。 |
 
-### Modal navigation
+### 模态导航 {#modal-navigation}
 
-| Method | Description |
+| 方法 | 说明 |
 | --- | --- |
-| `PushModalAsync(Page)` | Presents a page as a modal overlay. |
-| `PopModalAsync()` | Dismisses the current modal and returns it. |
-| `PopAllModalsAsync()` | Dismisses all modals. |
+| `PushModalAsync(Page)` | 以模态浮层的形式呈现一个页面。 |
+| `PopModalAsync()` | 关闭当前模态页面并返回它。 |
+| `PopAllModalsAsync()` | 关闭所有模态页面。 |
 
-### Stack properties
+### 栈相关属性 {#stack-properties}
 
-| Property | Description |
+| 属性 | 说明 |
 | --- | --- |
-| `NavigationStack` | Read-only list of pages currently on the navigation stack. |
-| `ModalStack` | Read-only list of pages currently presented as modals. |
-| `StackDepth` | The number of pages on the navigation stack. |
-| `CanGoBack` | Returns `true` when there is more than one page on the stack. |
+| `NavigationStack` | 只读列表，列出当前位于导航栈中的页面。 |
+| `ModalStack` | 只读列表，列出当前以模态形式呈现的页面。 |
+| `StackDepth` | 导航栈中的页面数量。 |
+| `CanGoBack` | 当栈中不止一个页面时返回 `true`。 |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| 事件 | 说明 |
 | --- | --- |
-| `Pushed` | Raised after a page is pushed onto the stack. |
-| `Popped` | Raised after a page is popped from the stack. |
-| `PoppedToRoot` | Raised after all pages are popped to the root. |
-| `PageInserted` | Raised after a page is inserted into the stack. |
-| `PageRemoved` | Raised after a page is removed from the stack. |
-| `ModalPushed` | Raised after a modal page is presented. |
-| `ModalPopped` | Raised after a modal page is dismissed. |
+| `Pushed` | 页面被推入栈之后引发。 |
+| `Popped` | 页面被弹出栈之后引发。 |
+| `PoppedToRoot` | 所有页面被弹回根页面之后引发。 |
+| `PageInserted` | 页面被插入栈之后引发。 |
+| `PageRemoved` | 页面被移出栈之后引发。 |
+| `ModalPushed` | 模态页面呈现之后引发。 |
+| `ModalPopped` | 模态页面关闭之后引发。 |
 
-## Examples
+## 示例 {#examples}
 
-### Basic NavigationPage in XAML
+### XAML 中的基础 NavigationPage {#basic-navigationpage-in-xaml}
 
-Define a `NavigationPage` with an initial root page:
+定义一个带初始根页面的 `NavigationPage`：
 
 ```xml
 <NavigationPage xmlns="https://github.com/avaloniaui">
@@ -132,9 +132,9 @@ Define a `NavigationPage` with an initial root page:
 
 <Image light={NavigationPageRootScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage with root page"/>
 
-### Basic NavigationPage in code
+### 代码中的基础 NavigationPage {#basic-navigationpage-in-code}
 
-You can also create a `NavigationPage` and set its root page in code:
+你也可以在代码里创建 `NavigationPage` 并设置它的根页面：
 
 ```csharp
 var navigationPage = new NavigationPage
@@ -156,9 +156,9 @@ var navigationPage = new NavigationPage
 };
 ```
 
-### Pushing and popping pages
+### 推入与弹出页面 {#pushing-and-popping-pages}
 
-Every `Page` exposes a `Navigation` property (of type `INavigation`) that references the nearest `NavigationPage` ancestor. Use this to navigate from within any page:
+每个 `Page` 都有一个 `Navigation` 属性（类型为 `INavigation`），指向最近的 `NavigationPage` 祖先。在任意页面内都可以靠它来导航：
 
 ```csharp
 // Push a new page onto the stack
@@ -173,9 +173,9 @@ await Navigation.PopToRootAsync();
 
 <Image light={NavigationPagePushedScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage after pushing a page"/>
 
-### Tracking stack depth
+### 跟踪栈深度 {#tracking-stack-depth}
 
-Use the `StackDepth` property or the `CanGoBack` property to respond to navigation changes:
+用 `StackDepth` 属性或 `CanGoBack` 属性响应导航变化：
 
 ```csharp
 navigationPage.Pushed += (sender, args) =>
@@ -190,9 +190,9 @@ navigationPage.Popped += (sender, args) =>
 };
 ```
 
-### Hiding the navigation bar
+### 隐藏导航栏 {#hiding-the-navigation-bar}
 
-Set the `NavigationPage.HasNavigationBar` attached property to `False` on a page to hide the navigation bar for that page:
+在页面上把 `NavigationPage.HasNavigationBar` 附加属性设为 `False`，即可为该页面隐藏导航栏：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -205,9 +205,9 @@ Set the `NavigationPage.HasNavigationBar` attached property to `False` on a page
 
 <Image light={NavigationPageNoNavbarScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage with hidden navigation bar"/>
 
-### Hiding the back button
+### 隐藏返回按钮 {#hiding-the-back-button}
 
-Set the `NavigationPage.HasBackButton` attached property to `False` on a page to hide the back button while keeping the navigation bar visible:
+在页面上把 `NavigationPage.HasBackButton` 附加属性设为 `False`，即可只隐藏返回按钮而保留导航栏：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -217,9 +217,9 @@ Set the `NavigationPage.HasBackButton` attached property to `False` on a page to
 </ContentPage>
 ```
 
-### Custom back button content
+### 自定义返回按钮内容 {#custom-back-button-content}
 
-Provide custom content for the back button using the `NavigationPage.BackButtonContent` attached property:
+用 `NavigationPage.BackButtonContent` 附加属性为返回按钮提供自定义内容：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -237,9 +237,9 @@ Provide custom content for the back button using the `NavigationPage.BackButtonC
 
 <Image light={NavigationPageCustomBackButtonScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage with custom back button content"/>
 
-### Per-page TopCommandBar
+### 为单个页面设置 TopCommandBar {#per-page-topcommandbar}
 
-Add command content to the right side of the navigation bar for a specific page using the `NavigationPage.TopCommandBar` attached property:
+用 `NavigationPage.TopCommandBar` 附加属性，为某个页面在导航栏右侧添加命令内容：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -263,9 +263,9 @@ Add command content to the right side of the navigation bar for a specific page 
 
 <Image light={NavigationPageTopCommandBarScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage with top command bar"/>
 
-### Page transitions
+### 页面过渡 {#page-transitions}
 
-Customize the transition animation used when pushing and popping pages:
+定制推入和弹出页面时使用的过渡动画：
 
 ```xml
 <NavigationPage xmlns="https://github.com/avaloniaui">
@@ -279,7 +279,7 @@ Customize the transition animation used when pushing and popping pages:
 </NavigationPage>
 ```
 
-You can also override the transition for a single navigation call:
+你也可以只为某一次导航调用覆盖过渡效果：
 
 ```csharp
 var customTransition = new PageSlide(TimeSpan.FromMilliseconds(500));
@@ -288,9 +288,9 @@ await Navigation.PushAsync(new DetailsPage(), customTransition);
 
 <Image light={NavigationPageAppearanceScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage appearance and transitions"/>
 
-### Modal pages
+### 模态页面 {#modal-pages}
 
-Modal pages are presented on top of the current navigation stack. They have their own separate stack:
+模态页面呈现在当前导航栈之上，它们有自己独立的栈：
 
 ```csharp
 // Present a modal page
@@ -305,9 +305,9 @@ await Navigation.PopAllModalsAsync();
 
 <Image light={NavigationPageModalScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage with modal page"/>
 
-### Modal transitions
+### 模态过渡 {#modal-transitions}
 
-Customize the transition animation for modal pages separately from regular page transitions:
+模态页面的过渡动画可以与普通页面过渡分开定制：
 
 ```xml
 <NavigationPage xmlns="https://github.com/avaloniaui">
@@ -321,9 +321,9 @@ Customize the transition animation for modal pages separately from regular page 
 </NavigationPage>
 ```
 
-### Customizing bar height
+### 定制导航栏高度 {#customizing-bar-height}
 
-Set a custom height for the navigation bar across all pages, or override it for a specific page:
+既可以为所有页面统一设置导航栏高度，也可以为某个页面单独覆盖：
 
 ```xml
 <!-- Global bar height -->
@@ -344,9 +344,9 @@ Set a custom height for the navigation bar across all pages, or override it for 
 </ContentPage>
 ```
 
-### Navigation bar shadow
+### 导航栏阴影 {#navigation-bar-shadow}
 
-Enable a shadow beneath the navigation bar for a subtle depth effect:
+在导航栏下方加一层阴影，带来淡淡的层次感：
 
 ```xml
 <NavigationPage xmlns="https://github.com/avaloniaui"
@@ -357,9 +357,9 @@ Enable a shadow beneath the navigation bar for a subtle depth effect:
 </NavigationPage>
 ```
 
-### Overlay navigation bar
+### 浮层式导航栏 {#overlay-navigation-bar}
 
-Use the `BarLayoutBehavior` attached property to make the navigation bar float over the page content instead of pushing it down:
+用 `BarLayoutBehavior` 附加属性，让导航栏浮在页面内容之上，而不是把内容往下挤：
 
 ```xml
 <ContentPage xmlns="https://github.com/avaloniaui"
@@ -372,20 +372,20 @@ Use the `BarLayoutBehavior` attached property to make the navigation bar float o
 
 <Image light={NavigationPageOverlayBarScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage with overlay bar layout"/>
 
-### Replacing a login screen
+### 替换登录页 {#replacing-a-login-screen}
 
-Use `ReplaceAsync` to swap the current page without adding to the back stack. This is useful for replacing a login screen with the main app screen after authentication:
+用 `ReplaceAsync` 换掉当前页面而不往返回栈里加东西。登录成功后把登录页换成主界面，正适合这么做：
 
 ```csharp
 // After successful login, replace the login page with the main page
 await Navigation.ReplaceAsync(new MainPage());
 ```
 
-The user will not be able to navigate back to the replaced page.
+用户将无法再返回到被替换掉的那个页面。
 
-### DrawerPage integration
+### 与 DrawerPage 的集成 {#drawerpage-integration}
 
-When a `DrawerPage` hosts a `NavigationPage` as its `Content`, the hamburger menu icon appears in the navigation bar at the root of the stack. It automatically switches to a back button when pages are pushed:
+当 `DrawerPage` 把 `NavigationPage` 作为它的 `Content` 时，栈根部的导航栏里会显示汉堡菜单图标；一旦有页面被推入，它会自动切换成返回按钮：
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -410,9 +410,9 @@ When a `DrawerPage` hosts a `NavigationPage` as its `Content`, the hamburger men
 
 <Image light={NavigationPageDrawerIntegrationScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="NavigationPage with DrawerPage integration"/>
 
-### Disabling back-swipe gesture
+### 停用侧滑返回手势 {#disabling-back-swipe-gesture}
 
-Disable the swipe-to-go-back gesture globally or check whether it is enabled:
+全局停用侧滑返回手势，或查询它当前是否启用：
 
 ```xml
 <NavigationPage xmlns="https://github.com/avaloniaui"
@@ -423,11 +423,11 @@ Disable the swipe-to-go-back gesture globally or check whether it is enabled:
 </NavigationPage>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentPage](/controls/navigation/contentpage)
 - [TabbedPage](/controls/navigation/tabbedpage)
 - [DrawerPage](/controls/navigation/drawerpage)
 - [Page Transitions](/docs/graphics-animation/page-transitions)
-- [NavigationPage API reference](/api/avalonia/controls/navigationpage)
-- [`NavigationPage.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/NavigationPage.cs)
+- [NavigationPage API 参考](/api/avalonia/controls/navigationpage)
+- [GitHub 上的 `NavigationPage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/NavigationPage.cs)

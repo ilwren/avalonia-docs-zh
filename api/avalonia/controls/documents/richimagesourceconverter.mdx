@@ -20,26 +20,24 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RichImageSourceConverter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Converts a URI string into a [Avalonia.Controls.Documents.RichImageSource](xref:Avalonia.Controls.Documents.RichImageSource) so a
-[Avalonia.Controls.Documents.RichImage.Source](xref:Avalonia.Controls.Documents.RichImage.Source) can be authored directly in XAML — for example
-`<RichImage Source="avares://MyApp/Assets/picture.png" />`, or a path
-relative to the current XAML file, `<RichImage Source="/Assets/picture.png" />`.
+把 URI 字符串转换成 [Avalonia.Controls.Documents.RichImageSource](xref:Avalonia.Controls.Documents.RichImageSource)，这样就能直接在 XAML 中撰写 [Avalonia.Controls.Documents.RichImage.Source](xref:Avalonia.Controls.Documents.RichImage.Source)——
+例如 `<RichImage Source="avares://MyApp/Assets/picture.png" />`，或者相对于当前 XAML 文件的路径 `<RichImage Source="/Assets/picture.png" />`。
 
 </div>
 
@@ -53,32 +51,29 @@ public class RichImageSourceConverter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> TypeConverter <span className="apiref-page__relation-separator">-&gt;</span> RichImageSourceConverter
+<span className="apiref-page__meta-label">继承关系：</span> TypeConverter <span className="apiref-page__relation-separator">-&gt;</span> RichImageSourceConverter
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-A relative URI is resolved against the XAML base URI of the document being loaded,
-the same way [Avalonia.Media.FontFamily](xref:Avalonia.Media.FontFamily) and Avalonia's `Image.Source`
-resolve relative asset references. Local assets (`avares:`/`resm:` via the
-asset loader, or `file:` from disk) are read immediately and embedded as an
-[Avalonia.Controls.Documents.EmbeddedImageSource](xref:Avalonia.Controls.Documents.EmbeddedImageSource), so the pixels travel with — and serialize with —
-the document. Remote images (`http:`/`https:`) become a
-[Avalonia.Controls.Documents.DeferredImageSource](xref:Avalonia.Controls.Documents.DeferredImageSource) that records the URL; the editor shows a placeholder
-until a loader resolves it. The MIME type is inferred from the file extension.
+相对 URI 会相对于正在加载文档的 XAML 基 URI 解析，与 [Avalonia.Media.FontFamily](xref:Avalonia.Media.FontFamily) 和 Avalonia 的 `Image.Source`
+解析相对资产引用的方式一致。本地资产（经资产加载器的 `avares:`/`resm:`，或来自磁盘的 `file:`）
+会被立即读入并以 [Avalonia.Controls.Documents.EmbeddedImageSource](xref:Avalonia.Controls.Documents.EmbeddedImageSource) 的形式内嵌，这样像素数据便随文档一起走、一起序列化。
+远程图像（`http:`/`https:`）则变成记录了该 URL 的 [Avalonia.Controls.Documents.DeferredImageSource](xref:Avalonia.Controls.Documents.DeferredImageSource)；在加载器解析出来之前，
+编辑器会先显示一个占位图。MIME 类型由文件扩展名推断。
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RichImageSourceConverter](#uid-c19bd448d2) | No summary available. |
+| [RichImageSourceConverter](#uid-c19bd448d2) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c19bd448d2"></span>
 
-### RichImageSourceConverter Constructor
+### RichImageSourceConverter 构造函数 {#richimagesourceconverter-constructor}
 
 ```csharp
 public RichImageSourceConverter()
@@ -86,32 +81,32 @@ public RichImageSourceConverter()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanConvertFrom](#uid-de8fb6b09e) | No summary available. |
-| [ConvertFrom](#uid-9ee9f36285) | No summary available. |
+| [CanConvertFrom](#uid-de8fb6b09e) | 暂无摘要。 |
+| [ConvertFrom](#uid-9ee9f36285) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-de8fb6b09e"></span>
 
-### CanConvertFrom Method
+### CanConvertFrom 方法 {#canconvertfrom-method}
 
 ```csharp
 public bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, Type sourceType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `context` System.ComponentModel.ITypeDescriptorContext
 
 
-`sourceType` Type
+`sourceType` 类型
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -122,13 +117,13 @@ bool
 
 <span id="uid-9ee9f36285"></span>
 
-### ConvertFrom Method
+### ConvertFrom 方法 {#convertfrom-method}
 
 ```csharp
 public object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `context` System.ComponentModel.ITypeDescriptorContext
 
@@ -139,7 +134,7 @@ public object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, 
 `value` object
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 

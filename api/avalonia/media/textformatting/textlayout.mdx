@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextLayout Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLayout.cs">TextLayout.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLayout.cs">TextLayout.cs</a>
 </div>
 
 </div>
@@ -54,36 +54,36 @@ public class TextLayout
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextLayout
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextLayout
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextLayout (4 overloads)](#uid-878bd1e583) | Initializes a new instance of the [Avalonia.Media.TextFormatting.TextLayout](xref:Avalonia.Media.TextFormatting.TextLayout) class. |
+| [TextLayout (4 overloads)](#uid-878bd1e583) | 初始化 [Avalonia.Media.TextFormatting.TextLayout](xref:Avalonia.Media.TextFormatting.TextLayout) 类的新实例。 |
 
 <span id="uid-878bd1e583"></span>
 
-### TextLayout overloads
+### TextLayout 的重载 {#textlayout-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-04d8fd2652"></span>
 
-#### TextLayout Constructor
+#### TextLayout 构造函数 {#textlayout-constructor}
 
-Initializes a new instance of the [Avalonia.Media.TextFormatting.TextLayout](xref:Avalonia.Media.TextFormatting.TextLayout) class.
+初始化 [Avalonia.Media.TextFormatting.TextLayout](xref:Avalonia.Media.TextFormatting.TextLayout) 类的新实例。
 
 ```csharp
 public TextLayout(Avalonia.Media.TextFormatting.ITextSource textSource, Avalonia.Media.TextFormatting.TextParagraphProperties paragraphProperties, Avalonia.Media.TextTrimming textTrimming, double maxWidth, double maxHeight, int maxLines)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `textSource` [Avalonia.Media.TextFormatting.ITextSource](xref:Avalonia.Media.TextFormatting.ITextSource)
 
@@ -103,7 +103,7 @@ public TextLayout(Avalonia.Media.TextFormatting.ITextSource textSource, Avalonia
 `maxLines` int
 
 
-##### Remarks
+##### 备注 {#remarks}
 
 This overload is provided for binary compatibility. New code should use the overload that accepts a [Avalonia.Media.TextFormatting.TextRunCache](xref:Avalonia.Media.TextFormatting.TextRunCache).
 
@@ -113,19 +113,19 @@ This overload is provided for binary compatibility. New code should use the over
 
 <span id="uid-1173f3bcfb"></span>
 
-#### TextLayout Constructor
+#### TextLayout 构造函数 {#textlayout-constructor-1}
 
-Initializes a new instance of the [Avalonia.Media.TextFormatting.TextLayout](xref:Avalonia.Media.TextFormatting.TextLayout) class.
+初始化 [Avalonia.Media.TextFormatting.TextLayout](xref:Avalonia.Media.TextFormatting.TextLayout) 类的新实例。
 
 ```csharp
 public TextLayout(Avalonia.Media.TextFormatting.ITextSource textSource, Avalonia.Media.TextFormatting.TextParagraphProperties paragraphProperties, Avalonia.Media.TextTrimming textTrimming, double maxWidth, double maxHeight, int maxLines, Avalonia.Media.TextFormatting.TextRunCache textRunCache)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `textSource` [Avalonia.Media.TextFormatting.ITextSource](xref:Avalonia.Media.TextFormatting.ITextSource)
 
-The text source.
+文本源。
 
 
 `paragraphProperties` [Avalonia.Media.TextFormatting.TextParagraphProperties](xref:Avalonia.Media.TextFormatting.TextParagraphProperties)
@@ -164,13 +164,13 @@ An optional cache for shaped text runs to avoid redundant shaping.
 
 <span id="uid-404e97d1e8"></span>
 
-#### TextLayout Constructor
+#### TextLayout 构造函数 {#textlayout-constructor-2}
 
 ```csharp
 public TextLayout(string text, Avalonia.Media.Typeface typeface, double fontSize, Avalonia.Media.IBrush foreground, Avalonia.Media.TextAlignment textAlignment, Avalonia.Media.TextWrapping textWrapping, Avalonia.Media.TextTrimming textTrimming, Avalonia.Media.TextDecorationCollection textDecorations, Avalonia.Media.FlowDirection flowDirection, double maxWidth, double maxHeight, double lineHeight, double letterSpacing, int maxLines, Avalonia.Media.FontFeatureCollection fontFeatures, System.Collections.Generic.IReadOnlyList<Avalonia.Utilities.ValueSpan<T><Avalonia.Media.TextFormatting.TextRunProperties>> textStyleOverrides)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `text` string
 
@@ -226,13 +226,13 @@ public TextLayout(string text, Avalonia.Media.Typeface typeface, double fontSize
 
 <span id="uid-5882faea3b"></span>
 
-#### TextLayout Constructor
+#### TextLayout 构造函数 {#textlayout-constructor-3}
 
 ```csharp
 public TextLayout(string text, Avalonia.Media.Typeface typeface, double fontSize, Avalonia.Media.IBrush foreground, Avalonia.Media.TextAlignment textAlignment, Avalonia.Media.TextWrapping textWrapping, Avalonia.Media.TextTrimming textTrimming, Avalonia.Media.TextDecorationCollection textDecorations, Avalonia.Media.FlowDirection flowDirection, double maxWidth, double maxHeight, double lineHeight, double letterSpacing, int maxLines, Avalonia.Media.FontFeatureCollection fontFeatures, System.Collections.Generic.IReadOnlyList<Avalonia.Utilities.ValueSpan<T><Avalonia.Media.TextFormatting.TextRunProperties>> textStyleOverrides, Avalonia.Media.TextFormatting.TextRunCache textRunCache)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `text` string
 
@@ -287,22 +287,22 @@ public TextLayout(string text, Avalonia.Media.Typeface typeface, double fontSize
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-85f45b4ca9) | No summary available. |
-| [Draw](#uid-c06aeac108) | Draws the text layout. |
-| [GetLineIndexFromCharacterIndex](#uid-7772f5e88c) | No summary available. |
-| [HitTestPoint](#uid-403b1ef700) | No summary available. |
+| [Dispose](#uid-85f45b4ca9) | 暂无摘要。 |
+| [Draw](#uid-c06aeac108) | 绘制该文本布局。 |
+| [GetLineIndexFromCharacterIndex](#uid-7772f5e88c) | 暂无摘要。 |
+| [HitTestPoint](#uid-403b1ef700) | 暂无摘要。 |
 | [HitTestTextPosition](#uid-625e22810e) | Get the pixel location relative to the top-left of the layout box given the text position. |
-| [HitTestTextRange](#uid-44317486da) | No summary available. |
+| [HitTestTextRange](#uid-44317486da) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-85f45b4ca9"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -314,24 +314,24 @@ public void Dispose()
 
 <span id="uid-c06aeac108"></span>
 
-### Draw Method
+### Draw 方法 {#draw-method}
 
-Draws the text layout.
+绘制该文本布局。
 
 ```csharp
 public void Draw(Avalonia.Media.DrawingContext context, Avalonia.Point origin)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `context` [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 `origin` [Avalonia.Point](xref:Avalonia.Point)
 
-The origin.
+原点。
 
 
 </section>
@@ -340,13 +340,13 @@ The origin.
 
 <span id="uid-7772f5e88c"></span>
 
-### GetLineIndexFromCharacterIndex Method
+### GetLineIndexFromCharacterIndex 方法 {#getlineindexfromcharacterindex-method}
 
 ```csharp
 public int GetLineIndexFromCharacterIndex(int charIndex, bool trailingEdge)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `charIndex` int
 
@@ -354,7 +354,7 @@ public int GetLineIndexFromCharacterIndex(int charIndex, bool trailingEdge)
 `trailingEdge` bool
 
 
-#### Returns
+#### 返回值 {#returns}
 
 int
 
@@ -365,18 +365,18 @@ int
 
 <span id="uid-403b1ef700"></span>
 
-### HitTestPoint Method
+### HitTestPoint 方法 {#hittestpoint-method}
 
 ```csharp
 public Avalonia.Media.TextHitTestResult HitTestPoint(Avalonia.Point& point)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Media.TextHitTestResult](xref:Avalonia.Media.TextHitTestResult)
 
@@ -387,7 +387,7 @@ public Avalonia.Media.TextHitTestResult HitTestPoint(Avalonia.Point& point)
 
 <span id="uid-625e22810e"></span>
 
-### HitTestTextPosition Method
+### HitTestTextPosition 方法 {#hittesttextposition-method}
 
 Get the pixel location relative to the top-left of the layout box given the text position.
 
@@ -395,14 +395,14 @@ Get the pixel location relative to the top-left of the layout box given the text
 public Avalonia.Rect HitTestTextPosition(int textPosition)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `textPosition` int
 
-The text position.
+文本位置。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Rect](xref:Avalonia.Rect)
 
@@ -413,13 +413,13 @@ The text position.
 
 <span id="uid-44317486da"></span>
 
-### HitTestTextRange Method
+### HitTestTextRange 方法 {#hittesttextrange-method}
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Rect> HitTestTextRange(int start, int length)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `start` int
 
@@ -427,29 +427,29 @@ public System.Collections.Generic.IEnumerable<Avalonia.Rect> HitTestTextRange(in
 `length` int
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-a399cc33c8) | The distance from the top of the first line to the baseline of the first line. |
+| [Baseline](#uid-a399cc33c8) | 从第一行顶部到第一行基线的距离。 |
 | [Extent](#uid-cdba7eec5d) | The distance from the topmost black pixel of the first line to the bottommost black pixel of the last line. |
-| [Height](#uid-b0af910e96) | The distance from the top of the first line to the bottom of the last line. |
-| [LetterSpacing](#uid-34ca790fe9) | Gets the text spacing. |
+| [Height](#uid-b0af910e96) | 从第一行顶部到最后一行底部的距离。 |
+| [LetterSpacing](#uid-34ca790fe9) | 获取文本间距。 |
 | [LineHeight](#uid-d84fb6d803) | Gets or sets the height of each line of text. |
-| [MaxHeight](#uid-ece983d1ce) | Gets the maximum height. |
-| [MaxLines](#uid-79084a6d26) | Gets the maximum number of text lines. |
-| [MaxWidth](#uid-5ed97ef0f1) | Gets the maximum width. |
-| [OverhangAfter](#uid-33e5208f4d) | The distance from the bottom of the last line to the extent bottom. |
-| [OverhangLeading](#uid-b2077de5b8) | The maximum distance from the leading black pixel to the leading alignment point of a line. |
-| [OverhangTrailing](#uid-71d80b63be) | The maximum distance from the trailing black pixel to the trailing alignment point of a line. |
-| [TextLines](#uid-50b954b8ca) | Gets the text lines. |
+| [MaxHeight](#uid-ece983d1ce) | 获取最大高度。 |
+| [MaxLines](#uid-79084a6d26) | 获取文本行数的上限。 |
+| [MaxWidth](#uid-5ed97ef0f1) | 获取最大宽度。 |
+| [OverhangAfter](#uid-33e5208f4d) | 从最后一行底部到内容范围底部的距离。 |
+| [OverhangLeading](#uid-b2077de5b8) | 从一行中最靠前的黑色像素到该行前端对齐点的最大距离。 |
+| [OverhangTrailing](#uid-71d80b63be) | 从一行中最靠后的黑色像素到该行末端对齐点的最大距离。 |
+| [TextLines](#uid-50b954b8ca) | 获取各行文本。 |
 | [Width](#uid-0da390cad0) | The maximum advance width between the leading and trailing alignment points of a line, excluding the width of whitespace characters at the end of the line. |
 | [WidthIncludingTrailingWhitespace](#uid-98963e3c9f) | The maximum advance width between the leading and trailing alignment points of a line, including the width of whitespace characters at the end of the line. |
 
@@ -457,9 +457,9 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt
 
 <span id="uid-a399cc33c8"></span>
 
-### Baseline Property
+### Baseline 属性 {#baseline-property}
 
-The distance from the top of the first line to the baseline of the first line.
+从第一行顶部到第一行基线的距离。
 
 ```csharp
 public double Baseline { get; set; }
@@ -471,7 +471,7 @@ public double Baseline { get; set; }
 
 <span id="uid-cdba7eec5d"></span>
 
-### Extent Property
+### Extent 属性 {#extent-property}
 
 The distance from the topmost black pixel of the first line
 to the bottommost black pixel of the last line.
@@ -486,9 +486,9 @@ public double Extent { get; set; }
 
 <span id="uid-b0af910e96"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
-The distance from the top of the first line to the bottom of the last line.
+从第一行顶部到最后一行底部的距离。
 
 ```csharp
 public double Height { get; set; }
@@ -500,9 +500,9 @@ public double Height { get; set; }
 
 <span id="uid-34ca790fe9"></span>
 
-### LetterSpacing Property
+### LetterSpacing 属性 {#letterspacing-property}
 
-Gets the text spacing.
+获取文本间距。
 
 ```csharp
 public double LetterSpacing { get; set; }
@@ -514,7 +514,7 @@ public double LetterSpacing { get; set; }
 
 <span id="uid-d84fb6d803"></span>
 
-### LineHeight Property
+### LineHeight 属性 {#lineheight-property}
 
 Gets or sets the height of each line of text.
 
@@ -522,7 +522,7 @@ Gets or sets the height of each line of text.
 public double LineHeight { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 A value of NaN (equivalent to an attribute value of "Auto") indicates that the line height
 is determined automatically from the current font characteristics. The default is NaN.
@@ -533,9 +533,9 @@ is determined automatically from the current font characteristics. The default i
 
 <span id="uid-ece983d1ce"></span>
 
-### MaxHeight Property
+### MaxHeight 属性 {#maxheight-property}
 
-Gets the maximum height.
+获取最大高度。
 
 ```csharp
 public double MaxHeight { get; set; }
@@ -547,9 +547,9 @@ public double MaxHeight { get; set; }
 
 <span id="uid-79084a6d26"></span>
 
-### MaxLines Property
+### MaxLines 属性 {#maxlines-property}
 
-Gets the maximum number of text lines.
+获取文本行数的上限。
 
 ```csharp
 public int MaxLines { get; set; }
@@ -561,9 +561,9 @@ public int MaxLines { get; set; }
 
 <span id="uid-5ed97ef0f1"></span>
 
-### MaxWidth Property
+### MaxWidth 属性 {#maxwidth-property}
 
-Gets the maximum width.
+获取最大宽度。
 
 ```csharp
 public double MaxWidth { get; set; }
@@ -575,9 +575,9 @@ public double MaxWidth { get; set; }
 
 <span id="uid-33e5208f4d"></span>
 
-### OverhangAfter Property
+### OverhangAfter 属性 {#overhangafter-property}
 
-The distance from the bottom of the last line to the extent bottom.
+从最后一行底部到内容范围底部的距离。
 
 ```csharp
 public double OverhangAfter { get; set; }
@@ -589,9 +589,9 @@ public double OverhangAfter { get; set; }
 
 <span id="uid-b2077de5b8"></span>
 
-### OverhangLeading Property
+### OverhangLeading 属性 {#overhangleading-property}
 
-The maximum distance from the leading black pixel to the leading alignment point of a line.
+从一行中最靠前的黑色像素到该行前端对齐点的最大距离。
 
 ```csharp
 public double OverhangLeading { get; set; }
@@ -603,9 +603,9 @@ public double OverhangLeading { get; set; }
 
 <span id="uid-71d80b63be"></span>
 
-### OverhangTrailing Property
+### OverhangTrailing 属性 {#overhangtrailing-property}
 
-The maximum distance from the trailing black pixel to the trailing alignment point of a line.
+从一行中最靠后的黑色像素到该行末端对齐点的最大距离。
 
 ```csharp
 public double OverhangTrailing { get; set; }
@@ -617,15 +617,15 @@ public double OverhangTrailing { get; set; }
 
 <span id="uid-50b954b8ca"></span>
 
-### TextLines Property
+### TextLines 属性 {#textlines-property}
 
-Gets the text lines.
+获取各行文本。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.TextFormatting.TextLine> TextLines { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The text lines.
 
@@ -636,7 +636,7 @@ The text lines.
 
 <span id="uid-0da390cad0"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
 The maximum advance width between the leading and trailing alignment points of a line,
 excluding the width of whitespace characters at the end of the line.
@@ -651,7 +651,7 @@ public double Width { get; set; }
 
 <span id="uid-98963e3c9f"></span>
 
-### WidthIncludingTrailingWhitespace Property
+### WidthIncludingTrailingWhitespace 属性 {#widthincludingtrailingwhitespace-property}
 
 The maximum advance width between the leading and trailing alignment points of a line,
 including the width of whitespace characters at the end of the line.

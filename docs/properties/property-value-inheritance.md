@@ -1,37 +1,37 @@
 ---
 id: property-value-inheritance
-title: Property value inheritance
-description: How Avalonia properties propagate values from parent to descendant elements in the visual tree, including built-in inherited properties and creating custom ones.
+title: 属性值继承
+description: Avalonia 属性如何在视觉树中由父元素向后代传播取值，内置的可继承属性有哪些，以及如何自定义可继承属性。
 doc-type: explanation
 ---
 
-Property value inheritance allows a property value set on a parent element to propagate down to its descendants in the visual tree, without each descendant needing to set the value explicitly. This is commonly used for properties like `FontSize`, `FontFamily`, `Foreground`, and `FlowDirection`.
+属性值继承，指的是设置在父元素上的属性值会沿视觉树向下传播给后代，后代不必逐个显式设置。`FontSize`、`FontFamily`、`Foreground`、`FlowDirection` 等属性常用到这一机制。
 
-## How it works
+## 运作原理 {#how-it-works}
 
-When an Avalonia property is registered with `inherits: true`, the property system checks ancestor elements in the visual tree if no local, styled, or animated value is set on the current element. The first ancestor that has a value for the property provides the inherited value.
+若某个 Avalonia 属性在注册时带了 `inherits: true`，那么当前元素上没有本地值、样式值或动画值时，属性系统就会沿视觉树向上查看祖先元素。第一个为该属性提供了取值的祖先，就是继承值的来源。
 
-Inherited values have the lowest priority in the [value precedence](/docs/properties/value-precedence) system (just above `Unset`). A local value, style, or animation on a child will always override an inherited value.
+在[取值优先级](/docs/properties/value-precedence)体系中，继承值的优先级最低（仅高于 `Unset`）。子元素上的本地值、样式或动画，总是会覆盖继承来的值。
 
-## Built-in inherited properties
+## 内置的可继承属性 {#built-in-inherited-properties}
 
-Several common properties in Avalonia are registered as inherited:
+Avalonia 中有若干常用属性注册为可继承：
 
-| Property | Defined On | Effect |
+| 属性 | 定义于 | 效果 |
 |---|---|---|
-| `FontFamily` | [`TextElement`](/api/avalonia/controls/documents/textelement) | Text controls inherit the font family from their parent. |
-| `FontSize` | `TextElement` | Text controls inherit the font size from their parent. |
-| `FontStyle` | `TextElement` | Text controls inherit the font style (italic, normal). |
-| `FontWeight` | `TextElement` | Text controls inherit the font weight (bold, normal). |
-| `Foreground` | `TextElement` | Text controls inherit the foreground brush. |
-| `LetterSpacing` | `TextElement` | Text controls inherit the spacing between characters. |
-| `FlowDirection` | `Visual` | Controls inherit left-to-right or right-to-left layout direction. |
-| `DataContext` | `StyledElement` | Controls inherit their data context from their parent. |
-| `RequestedThemeVariant` | `ThemeVariantScope` | Controls inherit the requested theme variant (light/dark). |
+| `FontFamily` | [`TextElement`](/api/avalonia/controls/documents/textelement) | 文本控件从父级继承字体族。 |
+| `FontSize` | `TextElement` | 文本控件从父级继承字号。 |
+| `FontStyle` | `TextElement` | 文本控件继承字体样式（倾斜、常规）。 |
+| `FontWeight` | `TextElement` | 文本控件继承字重（加粗、常规）。 |
+| `Foreground` | `TextElement` | 文本控件继承前景画刷。 |
+| `LetterSpacing` | `TextElement` | 文本控件继承字符间距。 |
+| `FlowDirection` | `Visual` | 控件继承从左到右或从右到左的布局方向。 |
+| `DataContext` | `StyledElement` | 控件从父级继承数据上下文。 |
+| `RequestedThemeVariant` | `ThemeVariantScope` | 控件继承所请求的主题变体（浅色/深色）。 |
 
 ## Example
 
-Setting `FontSize` on a parent element applies that value to all descendant text controls that do not set their own `FontSize`:
+在父元素上设置 `FontSize`，会让所有未自行设置 `FontSize` 的后代文本控件都用上这个值：
 
 ```xml
 <StackPanel FontSize="18">
@@ -46,9 +46,9 @@ Setting `FontSize` on a parent element applies that value to all descendant text
 </StackPanel>
 ```
 
-## Creating an inherited property
+## 创建可继承属性 {#creating-an-inherited-property}
 
-To create a custom property that inherits its value, set `inherits: true` when registering:
+要让自定义属性具备继承能力，注册时设置 `inherits: true`：
 
 ```csharp
 public class MyControl : Control
@@ -67,11 +67,11 @@ public class MyControl : Control
 }
 ```
 
-Now any descendant of `MyControl` can read the `IsCompact` value. If the descendant is also a `MyControl` (or has added ownership of the property), it automatically receives the inherited value.
+这样 `MyControl` 的任何后代都能读到 `IsCompact` 的值。若该后代同样是 `MyControl`（或者已为该属性追加了所有权），它就会自动收到继承来的值。
 
-### Making the property available to descendants
+### 让其他类型的后代也能用上该属性 {#making-the-property-available-to-descendants}
 
-For descendants of different types to read the inherited property, they need to register ownership:
+要让不同类型的后代也能读取这个可继承属性，它们需要注册所有权：
 
 ```csharp
 public class MyChildControl : Control
@@ -87,9 +87,9 @@ public class MyChildControl : Control
 }
 ```
 
-## Inheritance and `DataContext`
+## 继承与 `DataContext` {#inheritance-and-datacontext}
 
-`DataContext` is one of the most important inherited properties. When you set a `DataContext` on a `Window`, all controls within that window inherit it:
+`DataContext` 是最重要的可继承属性之一。你在 `Window` 上设置 `DataContext` 之后，该窗口内的所有控件都会继承它：
 
 ```csharp
 public partial class MainWindow : Window
@@ -115,8 +115,8 @@ public partial class MainWindow : Window
 </Window>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Property system overview](/docs/properties): Overview of property types and registration.
-- [Value precedence](/docs/properties/value-precedence): How inherited values fit into the priority order.
-- [Data context](/docs/data-binding/data-context): How the DataContext inherited property works with data binding.
+- [属性系统总览](/docs/properties)：属性种类与注册方式总览。
+- [取值优先级](/docs/properties/value-precedence)：继承值在优先级序列中的位置。
+- [数据上下文](/docs/data-binding/data-context)：DataContext 这个可继承属性如何与数据绑定配合。

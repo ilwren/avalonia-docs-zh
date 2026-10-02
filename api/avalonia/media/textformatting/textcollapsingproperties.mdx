@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextCollapsingProperties Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextCollapsingProperties.cs">TextCollapsingProperties.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextCollapsingProperties.cs">TextCollapsingProperties.cs</a>
 </div>
 
 </div>
@@ -54,60 +54,57 @@ public class TextCollapsingProperties
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextCollapsingProperties
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextCollapsingProperties
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="textleadingprefixcharacterellipsis">TextLeadingPrefixCharacterEllipsis</a>, <a href="texttrailingcharacterellipsis">TextTrailingCharacterEllipsis</a>, <a href="texttrailingwordellipsis">TextTrailingWordEllipsis</a>, <a href="../textpathsegmentellipsis">TextPathSegmentEllipsis</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="textleadingprefixcharacterellipsis">TextLeadingPrefixCharacterEllipsis</a>, <a href="texttrailingcharacterellipsis">TextTrailingCharacterEllipsis</a>, <a href="texttrailingwordellipsis">TextTrailingWordEllipsis</a>, <a href="../textpathsegmentellipsis">TextPathSegmentEllipsis</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Collapse](#uid-c0e1200b8b) | Collapses the given text line and returns the resulting runs, or if no collapse is needed (the consumer then keeps the original line unchanged). |
+| [Collapse](#uid-c0e1200b8b) | 折叠给定的文本行并返回折叠后的各个运行；若无需折叠则返回 null（调用方随即保持原行不变）。 |
 | [CreateCollapsedRuns](#uid-3f1ae847f7) | Creates a list of runs for given collapsed length which includes specified symbol at the end. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c0e1200b8b"></span>
 
-### Collapse Method
+### Collapse 方法 {#collapse-method}
 
-Collapses the given text line and returns the resulting runs, or
-if no collapse is needed (the consumer
-then keeps the original line unchanged).
+折叠给定的文本行并返回折叠后的各个运行；
+若无需折叠则返回 null（调用方
+随即保持原行不变）。
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextRun[] Collapse(Avalonia.Media.TextFormatting.TextLine textLine)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `textLine` [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)
 
-Text line to collapse.
+要折叠的文本行。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextFormatting.TextRun)[]
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-Implementations MUST return runs in logical order. The
-consumer (`TextLineImpl.Collapse`) wraps the returned array
-in a new [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) and re-runs the BiDi reorderer
-via `FinalizeLine`, so pre-applying visual order here would
-be reordered a second time and produce garbled output on RTL or
-mixed-bidi lines.
+实现方**必须**按逻辑顺序返回各个运行。调用方（`TextLineImpl.Collapse`）会把返回的数组
+包进一个新的 [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) 并通过 `FinalizeLine` 重新跑一遍 BiDi 重排，
+因此若在此处预先套用视觉顺序，就会被重排第二次，
+在 RTL 或双向混排的行上产出一团乱码。
 
-Iterate the source line's runs via
-`LogicalTextRunEnumerator`, not [Avalonia.Media.TextFormatting.TextLine.TextRuns](xref:Avalonia.Media.TextFormatting.TextLine.TextRuns)
-(which is post-bidi visual order). Use
-[Avalonia.Media.TextFormatting.TextCollapsingProperties.CreateCollapsedRuns(Avalonia.Media.TextFormatting.TextLine,int,Avalonia.Media.TextFormatting.TextRun)](xref:Avalonia.Media.TextFormatting.TextCollapsingProperties.CreateCollapsedRuns%28Avalonia.Media.TextFormatting.TextLine%2CSystem.Int32%2CAvalonia.Media.TextFormatting.TextRun%29) when an implementation only
-needs the standard "logical prefix + symbol" shape.
+请通过 `LogicalTextRunEnumerator` 遍历源行的各个运行，
+而不要用 [Avalonia.Media.TextFormatting.TextLine.TextRuns](xref:Avalonia.Media.TextFormatting.TextLine.TextRuns)（那是 bidi 处理之后的视觉顺序）。
+若某个实现只需要标准的“逻辑前缀 + 符号”形态，
+用 [Avalonia.Media.TextFormatting.TextCollapsingProperties.CreateCollapsedRuns(Avalonia.Media.TextFormatting.TextLine,int,Avalonia.Media.TextFormatting.TextRun)](xref:Avalonia.Media.TextFormatting.TextCollapsingProperties.CreateCollapsedRuns%28Avalonia.Media.TextFormatting.TextLine%2CSystem.Int32%2CAvalonia.Media.TextFormatting.TextRun%29) 即可。
 
 </section>
 
@@ -115,7 +112,7 @@ needs the standard "logical prefix + symbol" shape.
 
 <span id="uid-3f1ae847f7"></span>
 
-### CreateCollapsedRuns Method
+### CreateCollapsedRuns 方法 {#createcollapsedruns-method}
 
 Creates a list of runs for given collapsed length which includes specified symbol at the end.
 
@@ -123,7 +120,7 @@ Creates a list of runs for given collapsed length which includes specified symbo
 public Avalonia.Media.TextFormatting.TextRun[] CreateCollapsedRuns(Avalonia.Media.TextFormatting.TextLine textLine, int collapsedLength, Avalonia.Media.TextFormatting.TextRun shapedSymbol)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `textLine` [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)
 
@@ -140,7 +137,7 @@ The collapsed length.
 The symbol.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextFormatting.TextRun)[]
 
@@ -149,19 +146,19 @@ List of remaining runs.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FlowDirection](#uid-d9e94298aa) | Gets the flow direction that is used for collapsing. |
-| [Symbol](#uid-0840453083) | Gets the text run that is used as collapsing symbol. |
-| [Width](#uid-abfb22c286) | Gets the width in which the collapsible range is constrained to. |
+| [Symbol](#uid-0840453083) | 获取用作折叠符号的文本运行。 |
+| [Width](#uid-abfb22c286) | 获取可折叠范围被约束到的宽度。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d9e94298aa"></span>
 
-### FlowDirection Property
+### FlowDirection 属性 {#flowdirection-property}
 
 Gets the flow direction that is used for collapsing.
 
@@ -175,9 +172,9 @@ public Avalonia.Media.FlowDirection FlowDirection { get; set; }
 
 <span id="uid-0840453083"></span>
 
-### Symbol Property
+### Symbol 属性 {#symbol-property}
 
-Gets the text run that is used as collapsing symbol.
+获取用作折叠符号的文本运行。
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextRun Symbol { get; set; }
@@ -189,9 +186,9 @@ public Avalonia.Media.TextFormatting.TextRun Symbol { get; set; }
 
 <span id="uid-abfb22c286"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
-Gets the width in which the collapsible range is constrained to.
+获取可折叠范围被约束到的宽度。
 
 ```csharp
 public double Width { get; set; }

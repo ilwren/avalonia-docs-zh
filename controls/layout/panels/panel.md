@@ -1,26 +1,26 @@
 ---
 id: panel
-title: Panel
-description: A basic layout control that overlays multiple child controls on top of each other, positioning them with alignment properties.
+title: 面板
+description: 一个基础布局控件：把多个子控件层叠在一起，并按对齐属性摆放它们。
 doc-type: reference
 ---
 
 # Panel
 
-The `Panel` is the most basic layout control that can contain multiple child controls. It draws children in the order they appear in your XAML, layering them on top of each other. Each child is positioned according to its `HorizontalAlignment` and `VerticalAlignment` properties.
+`Panel` 是能容纳多个子控件的最基础布局控件。它按子控件在 XAML 中出现的顺序绘制，一层层叠上去，每个子元素则按自己的 `HorizontalAlignment` 和 `VerticalAlignment` 属性定位。
 
-Because `Panel` does not arrange children into rows, columns, or any other structure, it is best suited for scenarios where you need overlapping content, such as placing text over an image or stacking decorative elements.
+由于 `Panel` 不会把子元素排成行、列或任何其他结构，它最适合需要内容重叠的场合，比如把文字压在图片上，或堆叠若干装饰元素。
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Background` | `IBrush` | The background brush for the panel. You must set this (even to `Transparent`) for the panel to receive pointer events. |
-| `Children` | `Controls` | The collection of child controls contained in the panel. |
+| `Background` | `IBrush` | 面板的背景画刷。必须设置它（哪怕设成 `Transparent`），面板才能接收指针事件。 |
+| `Children` | `Controls` | 面板中所含子控件的集合。 |
 
-## Basic example
+## 基本示例 {#basic-example}
 
-This example uses some 50% opacities to demonstrate that child controls overlap.
+这个例子用了几处 50% 的不透明度，好让你看清子控件是重叠的。
 
 <XamlPreview>
 
@@ -36,9 +36,9 @@ This example uses some 50% opacities to demonstrate that child controls overlap.
 
 </XamlPreview>
 
-## Controlling overlap with `ZIndex`
+## 用 `ZIndex` 控制重叠关系 {#controlling-overlap-with-zindex}
 
-When children overlap, you can control the draw order with the `ZIndex` attached property. Higher values draw on top of lower values. By default, all children have a `ZIndex` of 0 and are drawn in the order they appear in markup.
+子元素重叠时，可以用 `ZIndex` 附加属性控制绘制顺序：值大的画在值小的上面。默认情况下所有子元素的 `ZIndex` 都是 0，按它们在标记中出现的顺序绘制。
 
 ```xml
 <Panel>
@@ -47,11 +47,11 @@ When children overlap, you can control the draw order with the `ZIndex` attached
 </Panel>
 ```
 
-In this example, the blue border renders on top of the red border because it has a higher `ZIndex`.
+本例中蓝色边框渲染在红色边框之上，因为它的 `ZIndex` 更大。
 
-## Setting a background for hit testing
+## 设置背景以便命中测试 {#setting-a-background-for-hit-testing}
 
-If you leave `Background` unset, the panel is transparent to pointer events. Clicks and other pointer interactions pass through to whatever is behind the panel. To make the panel respond to pointer events across its entire area, set `Background` to `Transparent`:
+若不设置 `Background`，面板对指针事件是透明的：点击等指针交互会直接穿透到它背后的内容上。要让面板在整个区域内都响应指针事件，请把 `Background` 设为 `Transparent`：
 
 ```xml
 <Panel Background="Transparent">
@@ -59,9 +59,9 @@ If you leave `Background` unset, the panel is transparent to pointer events. Cli
 </Panel>
 ```
 
-## Using `Panel` as a base for custom panels
+## 以 `Panel` 为基类做自定义面板 {#using-panel-as-a-base-for-custom-panels}
 
-`Panel` serves as the base class for all built-in panel controls. If none of the built-in panels meet your layout requirements, you can create a custom panel by deriving from `Panel` and overriding its `MeasureOverride` and `ArrangeOverride` methods.
+`Panel` 是所有内置面板控件的基类。如果内置面板都满足不了你的布局需求，可以从 `Panel` 派生并重写它的 `MeasureOverride` 和 `ArrangeOverride` 方法，做一个自定义面板。
 
 ```csharp
 public class MyCustomPanel : Panel
@@ -89,23 +89,23 @@ public class MyCustomPanel : Panel
 ```
 
 :::info
-For a complete walkthrough, see [Custom panel](/docs/custom-controls/custom-panel).
+完整演练请参阅[自定义面板](/docs/custom-controls/custom-panel)。
 :::
 
-## Other panel controls
+## 其他面板控件 {#other-panel-controls}
 
-If you need more control over how child elements are positioned, consider one of these specialized panels:
+如果你想更精细地控制子元素的位置，不妨考虑下面这些专门的面板：
 
-- [Stack panel](/controls/layout/panels/stackpanel): arranges children in a single horizontal or vertical line.
-- [Dock panel](/controls/layout/panels/dockpanel): docks children to the edges of the panel.
-- [Grid](/controls/layout/panels/grid): arranges children in rows and columns.
-- [Wrap panel](/controls/layout/panels/wrappanel): arranges children in a line that wraps when it reaches the panel edge.
-- [Canvas](/controls/layout/panels/canvas): positions children at explicit coordinates.
-- [Relative panel](/controls/layout/panels/relativepanel): positions children relative to each other or to the panel itself.
-- [Uniform grid](/controls/layout/panels/uniformgrid): arranges children in a grid with equally sized cells.
+- [堆叠面板](/controls/layout/panels/stackpanel)：把子元素横着或竖着排成一条线。
+- [停靠面板](/controls/layout/panels/dockpanel)：把子元素停靠到面板的各个边缘。
+- [网格](/controls/layout/panels/grid)：把子元素按行列排布。
+- [环绕面板](/controls/layout/panels/wrappanel)：把子元素排成一行，到达面板边缘时自动换行。
+- [画布](/controls/layout/panels/canvas)：把子元素摆在显式指定的坐标上。
+- [相对面板](/controls/layout/panels/relativepanel)：让子元素相对彼此或相对面板本身定位。
+- [均分网格](/controls/layout/panels/uniformgrid)：把子元素排进单元格大小相同的网格里。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Panel API reference](/api/avalonia/controls/panel)
-- [`Panel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Panel.cs)
-- [Custom panel](/docs/custom-controls/custom-panel)
+- [Panel API 参考](/api/avalonia/controls/panel)
+- [GitHub 上的 `Panel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Panel.cs)
+- [自定义面板](/docs/custom-controls/custom-panel)

@@ -1,15 +1,15 @@
 ---
 id: events
-title: Events
-description: Differences between WPF and Avalonia routed events, tunnelling, and event naming.
+title: 事件
+description: WPF 与 Avalonia 在路由事件、隧道机制和事件命名上的差异。
 doc-type: migration
 ---
 
-Avalonia's event system is conceptually similar to WPF's routed event model. Events can bubble up or tunnel down the visual tree, and you can register class handlers or instance handlers. However, there are important differences in the API surface, event naming, and how tunnelling is handled. This guide covers the key differences you need to know when migrating from WPF to Avalonia.
+Avalonia 的事件系统在概念上与 WPF 的路由事件模型相仿：事件既能沿视觉树向上冒泡，也能向下隧道；你既可以注册类处理程序，也可以注册实例处理程序。不过在 API 形态、事件命名以及隧道的处理方式上，二者有几处要紧的区别。本指南讲的就是从 WPF 迁到 Avalonia 时你该知道的那些关键差异。
 
-## Routed events
+## 路由事件 {#routed-events}
 
-Both WPF and Avalonia support routed events, but the registration API differs. In WPF, you use `EventManager.RegisterRoutedEvent`, while in Avalonia you use `RoutedEvent.Register`.
+WPF 和 Avalonia 都支持路由事件，但注册 API 不同：WPF 用 `EventManager.RegisterRoutedEvent`，Avalonia 用 `RoutedEvent.Register`。
 
 ```csharp title='WPF'
 public static readonly RoutedEvent TapEvent = EventManager.RegisterRoutedEvent(
@@ -25,15 +25,15 @@ public static readonly RoutedEvent<RoutedEventArgs> TapEvent = RoutedEvent.Regis
     RoutingStrategy.Bubble);
 ```
 
-Key differences to note:
+需要留意的关键差异：
 
-- Avalonia uses a generic `RoutedEvent<TEventArgs>` type, providing stronger typing for event arguments.
-- The registration call in Avalonia uses generic type parameters for both the owner type and the event args type, rather than passing `typeof()` arguments.
-- The delegate type is inferred from the generic type parameter in Avalonia, so you do not need to specify it explicitly.
+- Avalonia 用的是泛型 `RoutedEvent<TEventArgs>` 类型，事件参数的类型约束更强。
+- Avalonia 的注册调用对所有者类型和事件参数类型都使用泛型类型参数，而不是传 `typeof()` 实参。
+- 在 Avalonia 中，委托类型由泛型类型参数推断得出，你不必显式指明。
 
-## Class handlers
+## 类处理程序 {#class-handlers}
 
-In WPF, class handlers for events can be added by calling [EventManager.RegisterClassHandler](https://msdn.microsoft.com/en-us/library/ms597875.aspx). In Avalonia, you call `AddClassHandler` directly on the routed event instance.
+在 WPF 中，调用 [EventManager.RegisterClassHandler](https://msdn.microsoft.com/en-us/library/ms597875.aspx) 即可为事件添加类处理程序；在 Avalonia 中，则直接在路由事件实例上调用 `AddClassHandler`。
 
 ```csharp title='WPF'
 static MyControl()
@@ -57,13 +57,13 @@ private void HandleMyEvent(RoutedEventArgs e)
 }
 ```
 
-Notice that in WPF you have to add the class handler as a static method, whereas in Avalonia the class handler is not static: the notification is automatically directed to the correct instance. The `sender` parameter typical of event handlers is not necessary in this case and everything remains strongly typed.
+注意在 WPF 中类处理程序必须是静态方法，而在 Avalonia 中它不是静态的——通知会自动送到正确的实例上。事件处理程序里惯有的 `sender` 参数在这里也就不必要了，而且一切都保持强类型。
 
-## Tunnelling events
+## 隧道事件 {#tunnelling-events}
 
-In WPF, tunnelling (preview) events are exposed as separate CLR events with a `Preview` prefix. For example, `PreviewKeyDown` is the tunnelling counterpart to `KeyDown`. These are two distinct CLR events that you can subscribe to independently.
+在 WPF 中，隧道（预览）事件是带 `Preview` 前缀的独立 CLR 事件。比如 `PreviewKeyDown` 就是 `KeyDown` 的隧道版本。它们是两个各自独立、可分别订阅的 CLR 事件。
 
-Avalonia takes a different approach. There are no separate `Preview*` CLR events. Instead, tunnelling and bubbling share the same `RoutedEvent` instance. To subscribe to the tunnelling phase, you call `AddHandler` and pass `RoutingStrategies.Tunnel`.
+Avalonia 的路子不同。这里没有单独的 `Preview*` CLR 事件，隧道与冒泡共用同一个 `RoutedEvent` 实例。要订阅隧道阶段，请调用 `AddHandler` 并传入 `RoutingStrategies.Tunnel`。
 
 ```csharp title='WPF'
 // In WPF, subscribe to the Preview event directly
@@ -85,7 +85,7 @@ void OnPreviewKeyDown(object? sender, KeyEventArgs e)
 }
 ```
 
-You can also subscribe to both tunnelling and bubbling phases simultaneously by combining the flags:
+把这些标志组合起来，还能同时订阅隧道和冒泡两个阶段：
 
 ```csharp title='Avalonia'
 myControl.AddHandler(
@@ -94,19 +94,19 @@ myControl.AddHandler(
     RoutingStrategies.Tunnel | RoutingStrategies.Bubble);
 ```
 
-## Event handler attachment
+## 挂载事件处理程序 {#event-handler-attachment}
 
-### XAML event handlers
+### XAML 中的事件处理程序 {#xaml-event-handlers}
 
-Attaching event handlers in XAML works the same way in both WPF and Avalonia:
+在 XAML 中挂事件处理程序，WPF 和 Avalonia 的做法完全相同：
 
 ```xml
 <Button Click="OnButtonClick" />
 ```
 
-### Code-behind with AddHandler
+### 在代码隐藏中使用 AddHandler {#code-behind-with-addhandler}
 
-In WPF, `AddHandler` takes the routed event and a delegate. Avalonia's `AddHandler` accepts additional parameters for routing strategy and handled-events behavior.
+WPF 的 `AddHandler` 接收路由事件和一个委托；Avalonia 的 `AddHandler` 则还多收几个参数，用于指定路由策略和「已处理事件」的行为。
 
 ```csharp title='WPF'
 myButton.AddHandler(Button.ClickEvent, new RoutedEventHandler(OnButtonClick));
@@ -116,9 +116,9 @@ myButton.AddHandler(Button.ClickEvent, new RoutedEventHandler(OnButtonClick));
 myButton.AddHandler(Button.ClickEvent, OnButtonClick);
 ```
 
-### The handledEventsToo parameter
+### handledEventsToo 参数 {#the-handledeventstoo-parameter}
 
-Both WPF and Avalonia support receiving events even after they have been marked as handled. The parameter works similarly in both frameworks.
+WPF 和 Avalonia 都支持在事件被标记为已处理之后仍然收到它，这个参数在两个框架中的用法相仿。
 
 ```csharp title='WPF'
 myControl.AddHandler(
@@ -135,31 +135,31 @@ myControl.AddHandler(
     handledEventsToo: true);
 ```
 
-Note that in Avalonia you must specify the `RoutingStrategies` parameter before `handledEventsToo`.
+注意在 Avalonia 中，`RoutingStrategies` 参数必须写在 `handledEventsToo` 之前。
 
-## Common event name differences
+## 常见的事件名差异 {#common-event-name-differences}
 
-Many input events have different names in Avalonia compared to WPF. The following table lists the most common mappings:
+许多输入事件在 Avalonia 中的名字与 WPF 不同。下表列出最常见的对应关系：
 
-| WPF Event | Avalonia Equivalent | Notes |
+| WPF Event | Avalonia Equivalent | 注释支持情况 |
 |---|---|---|
-| `MouseLeftButtonDown` | `PointerPressed` | Check [`PointerUpdateKind`](/api/avalonia/input/pointerupdatekind) for button type |
-| `MouseLeftButtonUp` | `PointerReleased` | Check `PointerUpdateKind` for button type |
-| `MouseRightButtonDown` | `PointerPressed` | Check `PointerUpdateKind` for button type |
-| `MouseRightButtonUp` | `PointerReleased` | Check `PointerUpdateKind` for button type |
+| `MouseLeftButtonDown` | `PointerPressed` | 查看 [`PointerUpdateKind`](/api/avalonia/input/pointerupdatekind) 判断是哪个按键 |
+| `MouseLeftButtonUp` | `PointerReleased` | 查看 `PointerUpdateKind` 判断是哪个按键 |
+| `MouseRightButtonDown` | `PointerPressed` | 查看 `PointerUpdateKind` 判断是哪个按键 |
+| `MouseRightButtonUp` | `PointerReleased` | 查看 `PointerUpdateKind` 判断是哪个按键 |
 | `MouseMove` | `PointerMoved` | |
 | `MouseEnter` | `PointerEntered` | |
 | `MouseLeave` | `PointerExited` | |
 | `MouseWheel` | `PointerWheelChanged` | |
-| `PreviewKeyDown` | Use `AddHandler` with `RoutingStrategies.Tunnel` on `KeyDownEvent` | No separate Preview event |
-| `PreviewKeyUp` | Use `AddHandler` with `RoutingStrategies.Tunnel` on `KeyUpEvent` | No separate Preview event |
-| `PreviewMouseDown` | Use `AddHandler` with `RoutingStrategies.Tunnel` on `PointerPressedEvent` | No separate Preview event |
+| `PreviewKeyDown` | 在 `KeyDownEvent` 上用 `AddHandler` 配 `RoutingStrategies.Tunnel` | 没有单独的 Preview 事件 |
+| `PreviewKeyUp` | 在 `KeyUpEvent` 上用 `AddHandler` 配 `RoutingStrategies.Tunnel` | 没有单独的 Preview 事件 |
+| `PreviewMouseDown` | 在 `PointerPressedEvent` 上用 `AddHandler` 配 `RoutingStrategies.Tunnel` | 没有单独的 Preview 事件 |
 
-Avalonia uses pointer-based event names because it supports pointer devices beyond a mouse, including touch and pen input.
+Avalonia 采用以 pointer 为名的事件，因为它支持的输入设备不止鼠标，还包括触摸和触控笔。
 
-## Custom routed events
+## 自定义路由事件 {#custom-routed-events}
 
-When defining custom routed events, the registration pattern differs between WPF and Avalonia. Below is a complete comparison showing how to define, register, and raise a custom routed event.
+定义自定义路由事件时，WPF 和 Avalonia 的注册写法有所不同。下面完整对比了如何定义、注册并引发一个自定义路由事件。
 
 ```csharp title='WPF'
 public class MyControl : Control
@@ -203,13 +203,13 @@ public class MyControl : Control
 }
 ```
 
-The main differences are:
+主要差异有：
 
-- Avalonia uses the generic `RoutedEvent<T>` for type safety.
-- The CLR event wrapper in Avalonia uses `EventHandler<RoutedEventArgs>` rather than `RoutedEventHandler`.
-- Registration uses generic type parameters instead of `typeof()` arguments.
+- Avalonia 用泛型 `RoutedEvent<T>` 来保证类型安全。
+- Avalonia 中的 CLR 事件包装器用的是 `EventHandler<RoutedEventArgs>`，而不是 `RoutedEventHandler`。
+- 注册时用的是泛型类型参数，而不是 `typeof()` 实参。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Routed Events Overview](/docs/events)
 - [Input Events](/docs/events/input-events)

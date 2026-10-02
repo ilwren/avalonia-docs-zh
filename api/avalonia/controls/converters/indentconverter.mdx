@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IndentConverter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Converters</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Converters</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -51,14 +51,14 @@ public class IndentConverter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> IndentConverter
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> IndentConverter
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../data/converters/ivalueconverter">IValueConverter</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../data/converters/ivalueconverter">IValueConverter</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [IndentConverter](xref:Avalonia.Controls.Converters.IndentConverter) is primarily used in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) control to create appropriate left
 margin indentation for hierarchical data. It multiplies the input indent level by 20
@@ -74,17 +74,17 @@ Example usage in XAML:
 <Border Margin="{Binding Indent, Converter={x:Static converters:IndentConverter.Instance}}"/>
 ```
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IndentConverter](#uid-a6f1eb7935) | No summary available. |
+| [IndentConverter](#uid-a6f1eb7935) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a6f1eb7935"></span>
 
-### IndentConverter Constructor
+### IndentConverter 构造函数 {#indentconverter-constructor}
 
 ```csharp
 public IndentConverter()
@@ -92,9 +92,9 @@ public IndentConverter()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Convert](#uid-d9511519b4) | Converts an integer indent value to a [Avalonia.Thickness](xref:Avalonia.Thickness) with the appropriate left margin. |
 | [ConvertBack](#uid-471de4841c) | Converts a thickness back to an integer indent value. |
@@ -103,7 +103,7 @@ public IndentConverter()
 
 <span id="uid-d9511519b4"></span>
 
-### Convert Method
+### Convert 方法 {#convert-method}
 
 Converts an integer indent value to a [Avalonia.Thickness](xref:Avalonia.Thickness) with the appropriate left margin.
 
@@ -111,29 +111,29 @@ Converts an integer indent value to a [Avalonia.Thickness](xref:Avalonia.Thickne
 public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` object
 
 An integer representing the indentation level.
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the binding target property.
+绑定目标属性的类型。
 
 
 `parameter` object
 
-Optional parameter (not used).
+可选参数（未使用）。
 
 
 `culture` System.Globalization.CultureInfo
 
-Culture information (not used).
+区域性信息（未使用）。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
@@ -147,7 +147,7 @@ Returns an empty [Avalonia.Thickness](xref:Avalonia.Thickness) if value is not a
 
 <span id="uid-471de4841c"></span>
 
-### ConvertBack Method
+### ConvertBack 方法 {#convertback-method}
 
 Converts a thickness back to an integer indent value.
 
@@ -155,54 +155,54 @@ Converts a thickness back to an integer indent value.
 public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `value` object
 
 The thickness to convert back.
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the binding target property.
+绑定目标属性的类型。
 
 
 `parameter` object
 
-Optional parameter (not used).
+可选参数（未使用）。
 
 
 `culture` System.Globalization.CultureInfo
 
-Culture information (not used).
+区域性信息（未使用）。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 
 This operation is not supported and will throw [NotImplementedException](xref:System.NotImplementedException).
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [This method is not implemented.](xref:System.NotImplementedException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Instance](#uid-82c6eb7369) | Gets a shared instance of the [Avalonia.Controls.Converters.IndentConverter](xref:Avalonia.Controls.Converters.IndentConverter). |
+| [Instance](#uid-82c6eb7369) | 获取共享的那个 [Avalonia.Controls.Converters.IndentConverter](xref:Avalonia.Controls.Converters.IndentConverter) 实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-82c6eb7369"></span>
 
-### Instance Property
+### Instance 属性 {#instance-property}
 
-Gets a shared instance of the [Avalonia.Controls.Converters.IndentConverter](xref:Avalonia.Controls.Converters.IndentConverter).
+获取共享的那个 [Avalonia.Controls.Converters.IndentConverter](xref:Avalonia.Controls.Converters.IndentConverter) 实例。
 
 ```csharp
 public Avalonia.Controls.Converters.IndentConverter Instance { get; set; }

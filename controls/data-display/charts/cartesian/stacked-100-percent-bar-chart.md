@@ -1,24 +1,24 @@
 ---
 id: stacked-100-percent-bar-chart
-title: Stacked 100% bar chart
-description: Displays bars that always fill to 100%, showing the relative proportion of each series within a category rather than absolute values.
+title: 百分比堆叠条形图
+description: 条形始终铺满 100%，呈现各系列在同一类别中所占的相对比例，而非绝对数值。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Stacked 100% bar charts display bars that always extend to the same height, showing the percentage composition of each category. Each segment represents a series' proportional share, so readers can compare relative contributions.
+百分比堆叠条形图中的条形总是等高，用来呈现各类别的百分比构成。每一段代表一个系列所占的比例，读者据此可以比较各自的相对贡献。
 
-## When to use
-- **Proportional comparison**: Comparing how different segments contribute to the whole across categories.
-- **Market share**: Showing relative market share or budget allocation across departments.
-- **Survey results**: Displaying percentage breakdowns such as agree/disagree responses per question.
+## 适用场景 {#when-to-use}
+- **占比对比**：比较不同类别中各组成部分对整体的贡献。
+- **市场份额**：呈现相对市场份额，或各部门的预算分配。
+- **调查结果**：展示百分比构成，比如每道题赞成/反对的比例。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -49,7 +49,7 @@ Stacked 100% bar charts display bars that always extend to the same height, show
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record BrowserShare(string Year, double Share);
 
@@ -69,22 +69,22 @@ public ObservableCollection<BrowserShare> SafariData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series shown in the legend. | `null` |
-| `ItemsSource` | The collection of data items to display. | `null` |
-| `CategoryPath` | Path to the property used for the X-axis. | `null` |
-| `ValuePath` | Path to the property used for the Y-axis. | `null` |
-| `Fill` | The color/brush used to fill the bars. | Theme-dependent |
-| `Stroke` | The outline color of the bars. | `Transparent` |
-| `StackGroup` | The group name used to combine multiple series into one stacked bar. | `"default"` |
-| `BarWidth` | The width of each bar as a fraction of the category band (0.0 to 1.0). | `0.7` |
-| `BarCornerRadius` | The rounding of the bar corners. | `0` |
+| `Title` | 在图例中显示的系列名称。 | `null` |
+| `ItemsSource` | 要显示的数据项集合。 | `null` |
+| `CategoryPath` | 指向 X 轴所用属性的路径。 | `null` |
+| `ValuePath` | 指向 Y 轴所用属性的路径。 | `null` |
+| `Fill` | 填充条形所用的颜色/画刷。 | Theme-dependent |
+| `Stroke` | 条形的轮廓颜色。 | `Transparent` |
+| `StackGroup` | 把多个系列合并进同一根堆叠条形所用的分组名称。 | `"default"` |
+| `BarWidth` | 每根条形的宽度，以类别带宽的比例表示（0.0 到 1.0）。 | `0.7` |
+| `BarCornerRadius` | 条形的圆角程度。 | `0` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
-- [Stacked bar chart](/controls/data-display/charts/cartesian/stacked-bar-chart)
-- [Combo chart](/controls/data-display/charts/cartesian/combo-chart)
+- [条形图](/controls/data-display/charts/cartesian/bar-chart)
+- [堆叠条形图](/controls/data-display/charts/cartesian/stacked-bar-chart)
+- [组合图](/controls/data-display/charts/cartesian/combo-chart)

@@ -1,7 +1,7 @@
 ---
 id: table-chart
-title: Table chart
-description: Combines tabular data with embedded visual cues such as color scales, suitable for dense reports requiring exact values.
+title: 表格图
+description: 把表格数据与内嵌的视觉提示（比如色阶）结合起来，适合既要精确数值又信息密集的报表。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsAnalyticsTable from '/img/controls/charts/charts-analytics-table.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Table charts combine traditional tabular data with embedded visual cues. They are useful for dense reports where users need exact values and quick visual comparison.
+表格图把传统的表格数据与内嵌的视觉提示结合在一起。当用户既需要精确数值、又想快速作视觉比较时，这类信息密集的报表很适合用它。
 
 <Image light={chartsAnalyticsTable} maxWidth={400} position="center" cornerRadius="true" alt="Table chart displaying rows of data with color-coded indicators for visual comparison." />
 
-## When to use
-- **Product comparisons**: Showing features across many items in a grid.
-- **Financial status**: Displaying accounts with color-coded "health" indicators.
-- **Multi-metric reports**: When users need to compare several metrics in a compact layout.
+## 适用场景 {#when-to-use}
+- **产品对比**：在一张网格里展示众多产品的各项特性。
+- **财务状况**：展示各个账户，并用颜色标出「健康度」。
+- **多指标报表**：用户需要在紧凑的版面中比较多项指标时。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Table charts combine traditional tabular data with embedded visual cues. They ar
                                          RowLabelPath="Product" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using Avalonia.Controls.Charts;
 using Avalonia.Media;
@@ -86,19 +86,19 @@ public ObservableCollection<TableChartColumn> TableColumns { get; } = new()
 };
 ```
 
-`Columns` takes `TableChartColumn` objects. Each column can define a `Header`, `ValuePath`, `Format`, and optional color-scale settings.
+`Columns` 接受若干 `TableChartColumn` 对象。每一列都可以定义 `Header`、`ValuePath`、`Format`，以及可选的色阶设置。
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The row data source. | `null` |
-| `RowLabelPath` | Path to the text displayed in the left row header column. | `null` |
-| `Columns` | The configuration for grid columns. | `null` |
-| `RowHeight` | Height of each data row. | `40.0` |
-| `ColumnWidth` | Minimum width for each metric column. | `80.0` |
-| `RowLabelWidth` | Width of the row label column. | `100.0` |
-| `HeaderHeight` | Height of the header row. | `50.0` |
-| `ShowGridLines`| Whether to show grid lines between rows and columns. | `true` |
-| `CellPadding` | Padding inside each table cell. | `5.0` |
-| `LabelFontSize` | Font size used for headers and cell values. | `12.0` |
+| `ItemsSource` | 行数据源。 | `null` |
+| `RowLabelPath` | 指向左侧行标题列所显示文本的路径。 | `null` |
+| `Columns` | 网格各列的配置。 | `null` |
+| `RowHeight` | 每个数据行的高度。 | `40.0` |
+| `ColumnWidth` | 每个指标列的最小宽度。 | `80.0` |
+| `RowLabelWidth` | 行标签列的宽度。 | `100.0` |
+| `HeaderHeight` | 表头行的高度。 | `50.0` |
+| `ShowGridLines`| 是否显示行列之间的网格线。 | `true` |
+| `CellPadding` | 每个表格单元格内部的内边距。 | `5.0` |
+| `LabelFontSize` | 表头和单元格数值所用的字号。 | `12.0` |

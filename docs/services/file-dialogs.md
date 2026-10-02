@@ -1,17 +1,17 @@
 ---
 id: file-dialogs
 title: File Dialogs
-description: Using the StorageProvider API to open file picker, save file, and folder picker dialogs in Avalonia applications.
+description: 在 Avalonia 应用中用 StorageProvider API 打开文件选取、文件保存和文件夹选取对话框。
 doc-type: reference
 ---
 
-The file dialog functionality is accessed through the [`StorageProvider`](/docs/services/storage/storage-provider) service API, which is available from the `Window` or `TopLevel` classes. This page shows only basic usage and for more information about this API please visit StorageProvider page.
+文件对话框功能通过 [`StorageProvider`](/docs/services/storage/storage-provider) 服务 API 使用，可从 `Window` 或 `TopLevel` 类取得。本页只讲基本用法，关于该 API 的更多信息请访问 StorageProvider 页面。
 
 <GitHubSampleLink title="File Dialog" link="https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/FileOps"/>
 
 ## OpenFilePickerAsync
 
-This method opens a file picker dialog, allowing the user to select a file. `FilePickerOpenOptions` defines options that are passed to the OS dialog.
+本方法打开文件选取对话框，让用户选择文件。`FilePickerOpenOptions` 用于指定传给系统对话框的各项选项。
 
 ```csharp
 public class MyView : UserControl
@@ -44,7 +44,7 @@ public class MyView : UserControl
 
 ## SaveFilePickerAsync
 
-This method opens a file save dialog, allowing the user to save a file. `FilePickerSaveOptions` defines options that are passed to the OS dialog.
+本方法打开文件保存对话框，让用户保存文件。`FilePickerSaveOptions` 用于指定传给系统对话框的各项选项。
 
 ### Example
 
@@ -78,7 +78,7 @@ public class MyView : UserControl
 
 ## SaveFilePickerWithResultAsync
 
-This method works like `SaveFilePickerAsync` but also returns which file type filter the user selected. This is useful when the file extension depends on the user's choice (for example, exporting as PNG vs JPEG).
+本方法与 `SaveFilePickerAsync` 类似，但还会返回用户选中的是哪个文件类型筛选项。当文件扩展名取决于用户的选择时（比如导出成 PNG 还是 JPEG），这就有用了。
 
 ### Example
 
@@ -110,24 +110,24 @@ public class MyView : UserControl
 }
 ```
 
-The returned `SaveFilePickerResult` struct contains:
+返回的 `SaveFilePickerResult` 结构体包含：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `StorageFile` | `IStorageFile?` | The saved file, or `null` if the user cancelled. |
-| `SelectedFileType` | `FilePickerFileType?` | The file type filter the user selected in the dialog. |
+| `StorageFile` | `IStorageFile?` | 保存下来的文件；若用户取消了，则为 `null`。 |
+| `SelectedFileType` | `FilePickerFileType?` | 用户在对话框中选中的文件类型筛选项。 |
 
-For more information on StorageProvider service including on how to keep access to the picked files and what possible options are supported, please visit [`StorageProvider`](/docs/services/storage/storage-provider) documentation page and subpages.
+关于 StorageProvider 服务的更多信息（包括如何保持对所选文件的访问权限、支持哪些选项等），请访问 [`StorageProvider`](/docs/services/storage/storage-provider) 文档页及其子页。
 
 :::note
-The provided examples directly access the [`StorageProvider`](/docs/services/storage/storage-provider) API inside the ViewModel for learning purposes. In a real-world application, it's recommended to adhere to MVVM principles by creating service classes and locating them with Dependency Injection / Inversion of Control (DI/IoC). Please refer to the [IoCFileOps](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/IoCFileOps) and DepInject projects for samples of how to achieve this.
+为便于讲解，这里的示例直接在 ViewModel 里访问 [`StorageProvider`](/docs/services/storage/storage-provider) API。在真实项目中，建议遵循 MVVM 原则，把它封成服务类，再用依赖注入／控制反转（DI/IoC）取用。具体做法可参考 [IoCFileOps](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/IoCFileOps) 和 DepInject 这两个示例项目。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [`StorageProvider`](/docs/services/storage/storage-provider): Full storage provider API reference.
-- [File Picker Options](/docs/services/storage/file-picker-options): Configuring file type filters and dialog options.
-- [Bookmarks](/docs/services/storage/bookmarks): Persisting access to picked files and folders.
+- [`StorageProvider`](/docs/services/storage/storage-provider)：完整的存储提供程序 API 参考。
+- [文件选取器选项](/docs/services/storage/file-picker-options)：配置文件类型筛选和对话框选项。
+- [书签](/docs/services/storage/bookmarks)：持久保存对所选文件和文件夹的访问权限。
 
 
 

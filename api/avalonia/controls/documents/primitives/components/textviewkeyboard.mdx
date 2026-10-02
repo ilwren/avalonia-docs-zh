@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextViewKeyboard Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,14 +51,14 @@ public class TextViewKeyboard
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textviewcomponentbase">TextViewComponentBase</a> <span className="apiref-page__relation-separator">-&gt;</span> TextViewKeyboard
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textviewcomponentbase">TextViewComponentBase</a> <span className="apiref-page__relation-separator">-&gt;</span> TextViewKeyboard
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="texteditorkeyboard">TextEditorKeyboard</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="texteditorkeyboard">TextEditorKeyboard</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This component works with [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) and [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection),
 using their [TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer) support for all operations.
@@ -66,9 +66,9 @@ The caret operations a subclass would need are internal, so the type is closed:
 the constructor is internal and only this library derives from it. Add behaviour to
 a view with an [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent) of your own, or a highlight layer.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TextViewKeyboard](#uid-55b131490c) | Creates the component. A view builds its own, so a consumer rarely needs to. |
 
@@ -76,7 +76,7 @@ a view with an [Avalonia.Controls.Documents.Primitives.Components.ITextViewCompo
 
 <span id="uid-55b131490c"></span>
 
-### TextViewKeyboard Constructor
+### TextViewKeyboard 构造函数 {#textviewkeyboard-constructor}
 
 Creates the component. A view builds its own, so a consumer rarely needs to.
 
@@ -84,7 +84,7 @@ Creates the component. A view builds its own, so a consumer rarely needs to.
 public TextViewKeyboard()
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Deriving from this type is not supported: the seams a subclass would need are
 internal to the view. The constructor is public for compatibility with the
@@ -92,26 +92,26 @@ released surface, not as an invitation.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Copy](#uid-a21dbb1e2e) | Copies the current selection to the clipboard without waiting for the clipboard write. |
-| [CopyAsync](#uid-bcd811dc65) | Copies the current selection to the clipboard. |
+| [Copy](#uid-a21dbb1e2e) | 把当前选区复制到剪贴板，不等待剪贴板写入完成。 |
+| [CopyAsync](#uid-bcd811dc65) | 把当前选区复制到剪贴板。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a21dbb1e2e"></span>
 
-### Copy Method
+### Copy 方法 {#copy-method}
 
-Copies the current selection to the clipboard without waiting for the clipboard write.
+把当前选区复制到剪贴板，不等待剪贴板写入完成。
 
 ```csharp
 public void Copy()
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Await [Avalonia.Controls.Documents.Primitives.Components.TextViewKeyboard.CopyAsync(System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Primitives.Components.TextViewKeyboard.CopyAsync%28System.Threading.CancellationToken%29) instead. The clipboard is a platform resource another
 process can hold, so the write can fail after this method has already returned, and a
@@ -123,38 +123,38 @@ caller here can neither see that nor sequence anything after it.
 
 <span id="uid-bcd811dc65"></span>
 
-### CopyAsync Method
+### CopyAsync 方法 {#copyasync-method}
 
-Copies the current selection to the clipboard.
+把当前选区复制到剪贴板。
 
 ```csharp
 public System.Threading.Tasks.Task CopyAsync(System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `cancellationToken` System.Threading.CancellationToken
 
-Abandons the copy before the clipboard is written.
+在写入剪贴板之前放弃这次复制。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Base behaviour publishes plain text only. The editor overrides this to also
 publish the rich-format (RTF) payload.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsAttached](textviewcomponentbase.mdx#uid-7df392cfdc) | Gets whether this component is currently attached to a host. Inherited from [TextViewComponentBase](textviewcomponentbase.mdx). |
+| [IsAttached](textviewcomponentbase.mdx#uid-7df392cfdc) | 获取该组件当前是否已附加到某个宿主上。继承自 [TextViewComponentBase](textviewcomponentbase.mdx)。 |
 
 </ApiRefPage>
 

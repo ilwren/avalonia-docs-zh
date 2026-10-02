@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PreciseEllipticArcHelper.EllipticalArc Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/PreciseEllipticArcHelper.cs">PreciseEllipticArcHelper.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/PreciseEllipticArcHelper.cs">PreciseEllipticArcHelper.cs</a>
 </div>
 
 </div>
@@ -45,7 +45,7 @@ This class represents an elliptical arc on a 2D plane.
 This class is adapted for use with WPF [StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext), and needs to be created explicitly
 for each particular arc.
 
-Some helpers
+一些辅助方法
 
 It can handle ellipses which are not aligned with the x and y reference axes of the plane,
 as well as their parts.
@@ -73,25 +73,25 @@ public class PreciseEllipticArcHelper.EllipticalArc
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PreciseEllipticArcHelper.EllipticalArc
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PreciseEllipticArcHelper.EllipticalArc
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PreciseEllipticArcHelper.EllipticalArc (5 overloads)](#uid-2b7cb4f51d) | Builds an elliptical arc composed of the full unit circle around (0,0) |
 
 <span id="uid-2b7cb4f51d"></span>
 
-### PreciseEllipticArcHelper.EllipticalArc overloads
+### PreciseEllipticArcHelper.EllipticalArc 的重载 {#preciseellipticarchelperellipticalarc-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7ca2ceddbe"></span>
 
-#### PreciseEllipticArcHelper.EllipticalArc Constructor
+#### PreciseEllipticArcHelper.EllipticalArc 构造函数 {#preciseellipticarchelperellipticalarc-constructor}
 
 Builds an elliptical arc composed of the full unit circle around (0,0)
 
@@ -105,7 +105,7 @@ public PreciseEllipticArcHelper.EllipticalArc()
 
 <span id="uid-766aca1765"></span>
 
-#### PreciseEllipticArcHelper.EllipticalArc Constructor
+#### PreciseEllipticArcHelper.EllipticalArc 构造函数 {#preciseellipticarchelperellipticalarc-constructor-1}
 
 Build a full ellipse from its canonical geometrical elements
 
@@ -113,26 +113,26 @@ Build a full ellipse from its canonical geometrical elements
 public PreciseEllipticArcHelper.EllipticalArc(Avalonia.Point center, double a, double b, double theta)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `center` [Avalonia.Point](xref:Avalonia.Point)
 
-Center of the ellipse
+椭圆的中心
 
 
 `a` double
 
-Semi-major axis
+长半轴
 
 
 `b` double
 
-Semi-minor axis
+短半轴
 
 
 `theta` double
 
-Orientation of the major axis with respect to the x axis
+长轴相对于 x 轴的朝向
 
 
 </section>
@@ -141,7 +141,7 @@ Orientation of the major axis with respect to the x axis
 
 <span id="uid-021aae7a6d"></span>
 
-#### PreciseEllipticArcHelper.EllipticalArc Constructor
+#### PreciseEllipticArcHelper.EllipticalArc 构造函数 {#preciseellipticarchelperellipticalarc-constructor-2}
 
 Builds an elliptical arc from its canonical geometrical elements
 
@@ -149,36 +149,36 @@ Builds an elliptical arc from its canonical geometrical elements
 public PreciseEllipticArcHelper.EllipticalArc(Avalonia.Point center, double a, double b, double theta, double lambda1, double lambda2, bool isPieSlice)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `center` [Avalonia.Point](xref:Avalonia.Point)
 
-Center of the ellipse
+椭圆的中心
 
 
 `a` double
 
-Semi-major axis
+长半轴
 
 
 `b` double
 
-Semi-minor axis
+短半轴
 
 
 `theta` double
 
-Orientation of the major axis with respect to the x axis
+长轴相对于 x 轴的朝向
 
 
 `lambda1` double
 
-Start angle of the arc
+圆弧的起始角度
 
 
 `lambda2` double
 
-End angle of the arc
+圆弧的终止角度
 
 
 `isPieSlice` bool
@@ -193,7 +193,7 @@ and the endpoints are part of the shape (it is pie slice like)
 
 <span id="uid-c26189ed08"></span>
 
-#### PreciseEllipticArcHelper.EllipticalArc Constructor
+#### PreciseEllipticArcHelper.EllipticalArc 构造函数 {#preciseellipticarchelperellipticalarc-constructor-3}
 
 Build a full ellipse from its canonical geometrical elements
 
@@ -201,31 +201,31 @@ Build a full ellipse from its canonical geometrical elements
 public PreciseEllipticArcHelper.EllipticalArc(double cx, double cy, double a, double b, double theta)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `cx` double
 
-Abscissa of the center of the ellipse
+椭圆中心的横坐标
 
 
 `cy` double
 
-Ordinate of the center of the ellipse
+椭圆中心的纵坐标
 
 
 `a` double
 
-Semi-major axis
+长半轴
 
 
 `b` double
 
-Semi-minor axis
+短半轴
 
 
 `theta` double
 
-Orientation of the major axis with respect to the x axis
+长轴相对于 x 轴的朝向
 
 
 </section>
@@ -234,7 +234,7 @@ Orientation of the major axis with respect to the x axis
 
 <span id="uid-3d68a49e43"></span>
 
-#### PreciseEllipticArcHelper.EllipticalArc Constructor
+#### PreciseEllipticArcHelper.EllipticalArc 构造函数 {#preciseellipticarchelperellipticalarc-constructor-4}
 
 Builds an elliptical arc from its canonical geometrical elements
 
@@ -242,41 +242,41 @@ Builds an elliptical arc from its canonical geometrical elements
 public PreciseEllipticArcHelper.EllipticalArc(double cx, double cy, double a, double b, double theta, double lambda1, double lambda2, bool isPieSlice)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `cx` double
 
-Abscissa of the center of the ellipse
+椭圆中心的横坐标
 
 
 `cy` double
 
-Ordinate of the center of the ellipse
+椭圆中心的纵坐标
 
 
 `a` double
 
-Semi-major axis
+长半轴
 
 
 `b` double
 
-Semi-minor axis
+短半轴
 
 
 `theta` double
 
-Orientation of the major axis with respect to the x axis
+长轴相对于 x 轴的朝向
 
 
 `lambda1` double
 
-Start angle of the arc
+圆弧的起始角度
 
 
 `lambda2` double
 
-End angle of the arc
+圆弧的终止角度
 
 
 `isPieSlice` bool
@@ -287,9 +287,9 @@ and the endpoints are part of the shape (it is pie slice like)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BuildArc (3 overloads)](#uid-23090d999a) | Builds the arc outline using given [StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) and default (max) Bezier curve degree and acceptable error of half a pixel (0.5) |
 | [Contains (4 overloads)](#uid-2197568c00) | Tests if a specified Point2D is inside the boundary of a closed path derived from this arc. The closed path is derived with respect to the IsPieSlice value. |
@@ -308,7 +308,7 @@ and the endpoints are part of the shape (it is pie slice like)
 
 <span id="uid-e4af24f0a7"></span>
 
-#### BuildArc Method
+#### BuildArc 方法 {#buildarc-method}
 
 Builds the arc outline using given [StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) and default (max) Bezier curve degree and acceptable error of half a pixel (0.5)
 
@@ -316,7 +316,7 @@ Builds the arc outline using given [StreamGeometryContext](xref:Avalonia.Media.S
 public void BuildArc(Avalonia.Media.StreamGeometryContext path)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `path` [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext)
 
@@ -329,7 +329,7 @@ A [StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) to output t
 
 <span id="uid-9c592a528b"></span>
 
-#### BuildArc Method
+#### BuildArc 方法 {#buildarc-method-1}
 
 ArcTo Helper for [StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext)
 
@@ -337,7 +337,7 @@ ArcTo Helper for [StreamGeometryContext](xref:Avalonia.Media.StreamGeometryConte
 public void BuildArc(Avalonia.Media.StreamGeometryContext path, Avalonia.Point p1, Avalonia.Point p2, Avalonia.Size size, double theta, bool isLargeArc, bool clockwise)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `path` [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext)
 
@@ -380,7 +380,7 @@ Clockwise direction flag
 
 <span id="uid-1a2302de36"></span>
 
-#### BuildArc Method
+#### BuildArc 方法 {#buildarc-method-2}
 
 Builds the arc outline using given [StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext)
 
@@ -388,7 +388,7 @@ Builds the arc outline using given [StreamGeometryContext](xref:Avalonia.Media.S
 public void BuildArc(Avalonia.Media.StreamGeometryContext path, int degree, double threshold, bool openNewFigure)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `path` [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext)
 
@@ -414,13 +414,13 @@ if true, a new figure will be started in the specified [StreamGeometryContext](x
 
 <span id="uid-2197568c00"></span>
 
-### Contains overloads
+### Contains 的重载 {#contains-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5e625b5a65"></span>
 
-#### Contains Method
+#### Contains 方法 {#contains-method}
 
 Tests if a specified Point2D is inside the boundary of a closed path derived from this arc.
 The closed path is derived with respect to the IsPieSlice value.
@@ -429,14 +429,14 @@ The closed path is derived with respect to the IsPieSlice value.
 public bool Contains(Avalonia.Point p)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `p` [Avalonia.Point](xref:Avalonia.Point)
 
 Test point
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -449,7 +449,7 @@ true if the specified point is inside a closed path derived from this arc
 
 <span id="uid-11a4eba5ca"></span>
 
-#### Contains Method
+#### Contains 方法 {#contains-method-1}
 
 Tests if the interior of a closed path derived from this arc entirely contains the specified Rectangle2D.
 The closed path is derived with respect to the IsPieSlice value.
@@ -458,14 +458,14 @@ The closed path is derived with respect to the IsPieSlice value.
 public bool Contains(Avalonia.Rect r)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `r` [Avalonia.Rect](xref:Avalonia.Rect)
 
 Test rectangle
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -478,7 +478,7 @@ True if the interior of a closed path derived from this arc entirely contains th
 
 <span id="uid-6463ca1d36"></span>
 
-#### Contains Method
+#### Contains 方法 {#contains-method-2}
 
 Tests if the specified coordinates are inside the closed shape formed by this arc.
 If this is not a pie, then a shape derived by adding a closing chord is considered.
@@ -487,7 +487,7 @@ If this is not a pie, then a shape derived by adding a closing chord is consider
 public bool Contains(double x, double y)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `x` double
 
@@ -499,7 +499,7 @@ Abscissa of the test point
 Ordinate of the test point
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -512,7 +512,7 @@ True if the specified coordinates are inside the closed shape of this arc
 
 <span id="uid-569c2eddb1"></span>
 
-#### Contains Method
+#### Contains 方法 {#contains-method-3}
 
 Tests if the interior of a closed path derived from this arc entirely contains the specified rectangular area.
 The closed path is derived with respect to the IsPieSlice value.
@@ -521,7 +521,7 @@ The closed path is derived with respect to the IsPieSlice value.
 public bool Contains(double x, double y, double w, double h)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `x` double
 
@@ -543,7 +543,7 @@ Width of the test rectangle
 Height of the test rectangle
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 bool
 
@@ -556,7 +556,7 @@ true if the interior of a closed path derived from this arc entirely contains th
 
 <span id="uid-a58d65ad0e"></span>
 
-### EstimateError Method
+### EstimateError 方法 {#estimateerror-method}
 
 Estimate the approximation error for a sub-arc of the instance
 
@@ -564,7 +564,7 @@ Estimate the approximation error for a sub-arc of the instance
 public double EstimateError(int degree, double etaA, double etaB)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `degree` int
 
@@ -581,7 +581,7 @@ Start angle of the sub-arc
 End angle of the sub-arc
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 double
 
@@ -594,7 +594,7 @@ Upper bound of the approximation error between the Bezier curve and the real ell
 
 <span id="uid-87882cce5e"></span>
 
-### GetBounds Method
+### GetBounds 方法 {#getbounds-method}
 
 Returns an integer Rectangle that completely encloses the closed path derived from this arc.
 The closed path is derived with respect to the IsPieSlice value.
@@ -603,7 +603,7 @@ The closed path is derived with respect to the IsPieSlice value.
 public Avalonia.Rect GetBounds()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Rect](xref:Avalonia.Rect)
 
@@ -618,7 +618,7 @@ public Avalonia.Rect GetBounds()
 
 <span id="uid-4ade8d4a35"></span>
 
-#### Intersects Method
+#### Intersects 方法 {#intersects-method}
 
 Tests if the interior of the closed path derived from this arc intersects the interior of a specified rectangular area.
 The closed path is derived with respect to the IsPieSlice value.
@@ -627,12 +627,12 @@ The closed path is derived with respect to the IsPieSlice value.
 public bool Intersects(Avalonia.Rect r)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `r` [Avalonia.Rect](xref:Avalonia.Rect)
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 bool
 
@@ -643,7 +643,7 @@ bool
 
 <span id="uid-d59780bfcd"></span>
 
-#### Intersects Method
+#### Intersects 方法 {#intersects-method-1}
 
 Tests if the interior of the closed path derived from this arc intersects the interior of a specified rectangular area.
 The closed path is derived with respect to the IsPieSlice value.
@@ -652,7 +652,7 @@ The closed path is derived with respect to the IsPieSlice value.
 public bool Intersects(double x, double y, double w, double h)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `x` double
 
@@ -666,7 +666,7 @@ public bool Intersects(double x, double y, double w, double h)
 `h` double
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 bool
 
@@ -677,7 +677,7 @@ bool
 
 <span id="uid-25762eed73"></span>
 
-### PointAt Method
+### PointAt 方法 {#pointat-method}
 
 Get the elliptical arc point for a given angular parameter
 
@@ -685,14 +685,14 @@ Get the elliptical arc point for a given angular parameter
 public Avalonia.Point PointAt(double lambda)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `lambda` double
 
 Angular parameter for which point is desired
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -705,7 +705,7 @@ The desired elliptical arc point location
 
 <span id="uid-6968a05ff5"></span>
 
-### SetDefaultFlatness Method
+### SetDefaultFlatness 方法 {#setdefaultflatness-method}
 
 Sets the default flatness for Bezier curve approximation
 
@@ -713,14 +713,14 @@ Sets the default flatness for Bezier curve approximation
 public void SetDefaultFlatness(double defaultFlatness)
 ```
 
-#### Parameters
+#### 参数 {#parameters-15}
 
 `defaultFlatness` double
 
 default flatness (must be greater than 1e-10)
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Thrown if defaultFlatness is lower than 1e-10](xref:System.ArgumentException)
 
@@ -730,7 +730,7 @@ default flatness (must be greater than 1e-10)
 
 <span id="uid-917f8c09ee"></span>
 
-### SetMaxDegree Method
+### SetMaxDegree 方法 {#setmaxdegree-method}
 
 Sets the maximal degree allowed for Bezier curve approximation.
 
@@ -738,30 +738,30 @@ Sets the maximal degree allowed for Bezier curve approximation.
 public void SetMaxDegree(int maxDegree)
 ```
 
-#### Parameters
+#### 参数 {#parameters-16}
 
 `maxDegree` int
 
 Maximal allowed degree (must be between 1 and 3)
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [Thrown if maxDegree is not between 1 and 3](xref:System.ArgumentException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DrawInOppositeDirection](#uid-3d516436dc) | No summary available. |
+| [DrawInOppositeDirection](#uid-3d516436dc) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3d516436dc"></span>
 
-### DrawInOppositeDirection Property
+### DrawInOppositeDirection 属性 {#drawinoppositedirection-property}
 
 ```csharp
 public bool DrawInOppositeDirection { get; set; }

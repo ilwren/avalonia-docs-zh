@@ -25,3 +25,13 @@ yarn-error.log*
 
 .npmrc
 .vs
+
+# i18n 工具的临时产物
+scripts/i18n/batch.json
+scripts/i18n/tm/*.todo.json
+
+# Python
+__pycache__/
+*.py[cod]
+build-pages-smoke/
+build-smoke/

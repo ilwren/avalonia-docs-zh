@@ -1,27 +1,27 @@
 ---
 id: input-events
-title: Input events
-description: Handle pointer, keyboard, and gesture input events in Avalonia controls.
+title: 输入事件
+description: 在 Avalonia 控件中处理指针、键盘和手势输入事件。
 doc-type: reference
 ---
 
-Avalonia provides a comprehensive set of input events for handling pointer (mouse/touch/pen), keyboard, and gesture interactions. Most input events use a combined `Tunnel | Bubble` routing strategy, giving parent elements the opportunity to intercept input before it reaches the target.
+Avalonia 提供了一整套输入事件，用于处理指针（鼠标/触摸/手写笔）、键盘和手势交互。大多数输入事件采用 `Tunnel | Bubble` 组合路由策略，让父元素有机会在输入抵达目标之前先行拦截。
 
-## Pointer events
+## 指针事件 {#pointer-events}
 
-Pointer events abstract mouse, touch, and pen input into a unified model. They bubble up the visual tree by default.
+指针事件把鼠标、触摸和手写笔输入抽象成统一的模型，默认沿视觉树向上冒泡。
 
-| Event | Fires When |
+| 事件 | 触发时机 |
 |---|---|
-| `PointerEntered` | The pointer enters the bounds of the control. |
-| `PointerExited` | The pointer leaves the bounds of the control. |
-| `PointerMoved` | The pointer moves within the control. |
-| `PointerPressed` | A pointer button is pressed over the control. |
-| `PointerReleased` | A pointer button is released over the control. |
-| `PointerCaptureLost` | The control loses pointer capture. |
-| `PointerWheelChanged` | The mouse wheel or trackpad scrolls over the control. |
+| `PointerEntered` | 指针进入控件范围。 |
+| `PointerExited` | 指针离开控件范围。 |
+| `PointerMoved` | 指针在控件内移动。 |
+| `PointerPressed` | 在控件上按下指针按键。 |
+| `PointerReleased` | 在控件上松开指针按键。 |
+| `PointerCaptureLost` | 控件失去指针捕获。 |
+| `PointerWheelChanged` | 鼠标滚轮或触控板在控件上滚动。 |
 
-### Handling pointer events
+### 处理指针事件 {#handling-pointer-events}
 
 ```csharp
 protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -38,18 +38,18 @@ protected override void OnPointerPressed(PointerPressedEventArgs e)
 }
 ```
 
-### Key properties on `PointerEventArgs`
+### `PointerEventArgs` 上的关键属性 {#key-properties-on-pointereventargs}
 
-| Property / Method | Description |
+| Property / Method | 说明 |
 |---|---|
-| `GetPosition(Visual)` | Returns the pointer position relative to the specified visual. |
-| `GetCurrentPoint(Visual)` | Returns a `PointerPoint` with position and button state. |
-| `Pointer` | The `Pointer` instance, useful for capture operations. |
-| `KeyModifiers` | Whether Shift, Control, Alt, or Meta keys are held. |
+| `GetPosition(Visual)` | 返回指针相对于指定视觉元素的位置。 |
+| `GetCurrentPoint(Visual)` | 返回一个 `PointerPoint`，其中包含位置和按键状态。 |
+| `Pointer` | `Pointer` 实例，做捕获操作时会用到。 |
+| `KeyModifiers` | Shift、Control、Alt 或 Meta 键是否处于按下状态。 |
 
-### Pointer capture
+### 指针捕获 {#pointer-capture}
 
-When you capture the pointer, all subsequent pointer events are directed to the capturing control until capture is released:
+捕获指针之后，后续所有指针事件都会被定向到发起捕获的那个控件，直到捕获被释放：
 
 ```csharp
 protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -65,19 +65,19 @@ protected override void OnPointerReleased(PointerReleasedEventArgs e)
 }
 ```
 
-Only one element can hold pointer capture at a time across the entire application. This matches operating system behavior where a single physical mouse device can only have one captured element. When a different control captures the pointer (for example, in a popup window), the previous capture is released and the original control receives a `PointerCaptureLost` event.
+整个应用在同一时刻只能有一个元素持有指针捕获。这与操作系统的行为一致 —— 一个物理鼠标设备只能对应一个被捕获的元素。当另一个控件（比如弹出窗口中的控件）捕获指针时，先前的捕获即被释放，原控件会收到一个 `PointerCaptureLost` 事件。
 
-## Keyboard events
+## 键盘事件 {#keyboard-events}
 
-Keyboard events fire on the currently focused element and bubble up the tree.
+键盘事件在当前获得焦点的元素上触发，并沿树向上冒泡。
 
-| Event | Fires When |
+| 事件 | 触发时机 |
 |---|---|
-| `KeyDown` | A key is pressed. |
-| `KeyUp` | A key is released. |
-| `TextInput` | Character input is received (after IME processing). |
+| `KeyDown` | 按下某个键。 |
+| `KeyUp` | 松开某个键。 |
+| `TextInput` | 收到字符输入（经过输入法处理之后）。 |
 
-### Handling keyboard events
+### 处理键盘事件 {#handling-keyboard-events}
 
 ```csharp
 protected override void OnKeyDown(KeyEventArgs e)
@@ -98,17 +98,17 @@ protected override void OnKeyDown(KeyEventArgs e)
 }
 ```
 
-### Key properties on `KeyEventArgs`
+### `KeyEventArgs` 上的关键属性 {#key-properties-on-keyeventargs}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Key` | The physical key pressed (from the `Key` enum). |
-| `KeyModifiers` | Modifier keys held (Control, Shift, Alt, Meta). |
-| `KeySymbol` | The character produced by the key press, if any. |
+| `Key` | 被按下的物理按键（取自 `Key` 枚举）。 |
+| `KeyModifiers` | 处于按下状态的修饰键（Control、Shift、Alt、Meta）。 |
+| `KeySymbol` | 该次按键产生的字符（若有）。 |
 
-## Tunneling (preview) events
+## 隧道（预览）事件 {#tunneling-preview-events}
 
-For input events that use `Tunnel | Bubble` routing, the tunneling phase fires first. You can intercept events during the tunnel phase by using the routing strategy parameter:
+对于采用 `Tunnel | Bubble` 路由的输入事件，隧道阶段先行发生。你可以通过路由策略参数，在隧道阶段拦截事件：
 
 ```csharp
 myControl.AddHandler(InputElement.PointerPressedEvent, OnPreviewPointerPressed,
@@ -123,19 +123,19 @@ private void OnPreviewPointerPressed(object? sender, PointerPressedEventArgs e)
 }
 ```
 
-This is useful for intercepting input at a parent level before child controls process it.
+当你想在子控件处理输入之前先在父级拦下它时，这招很好用。
 
-## Gesture events
+## 手势事件 {#gesture-events}
 
-Avalonia provides high-level gesture events built on top of raw pointer events:
+Avalonia 在原始指针事件之上提供了一组高层手势事件：
 
-| Event | Fires When |
+| 事件 | 触发时机 |
 |---|---|
-| `Tapped` | A quick tap/click gesture completes. |
-| `DoubleTapped` | A double-tap/double-click gesture completes. |
-| `Holding` | A long-press gesture is detected (touch). |
+| `Tapped` | 完成一次快速点按/单击手势。 |
+| `DoubleTapped` | 完成一次双击手势。 |
+| `Holding` | 检测到长按手势（触摸）。 |
 
-Gesture events bubble up the tree. For more complex gestures (pinch, pull, scroll), see [Gestures](/docs/input-interaction/gestures).
+手势事件沿树向上冒泡。更复杂的手势（捏合、下拉、滚动）请见[手势](/docs/input-interaction/gestures)。
 
 ```xml
 <Border Tapped="OnBorderTapped" Background="LightGray">
@@ -150,9 +150,9 @@ private void OnBorderTapped(object? sender, TappedEventArgs e)
 }
 ```
 
-## Common input patterns
+## 常见的输入处理套路 {#common-input-patterns}
 
-### Drag detection
+### 检测拖拽 {#drag-detection}
 
 ```csharp
 private Point _pressPoint;
@@ -195,7 +195,7 @@ protected override void OnPointerReleased(PointerReleasedEventArgs e)
 }
 ```
 
-### Keyboard shortcuts on a window
+### 窗口级的键盘快捷键 {#keyboard-shortcuts-on-a-window}
 
 ```csharp
 public partial class MainWindow : Window
@@ -219,13 +219,13 @@ public partial class MainWindow : Window
 ```
 
 :::tip
-For declarative keyboard shortcuts, consider using [KeyBindings and HotKeys](/docs/input-interaction/keyboard-and-hotkeys) instead of handling `KeyDown` manually.
+若只是声明式的键盘快捷键，不妨改用 [KeyBindings 与 HotKeys](/docs/input-interaction/keyboard-and-hotkeys)，不必手动处理 `KeyDown`。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Events Overview](/docs/events): How routed events work in Avalonia.
-- [Pointer Input](/docs/input-interaction/pointer): Detailed pointer input reference.
-- [Keyboard and Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Keyboard shortcuts and key bindings.
-- [Gestures](/docs/input-interaction/gestures): Touch and multi-pointer gesture recognition.
-- [Focus](/docs/input-interaction/focus): How keyboard focus works.
+- [事件总览](/docs/events)：Avalonia 中路由事件的工作方式。
+- [指针输入](/docs/input-interaction/pointer)：指针输入的详细参考。
+- [键盘与快捷键](/docs/input-interaction/keyboard-and-hotkeys)：键盘快捷键与按键绑定。
+- [手势](/docs/input-interaction/gestures)：触摸与多指手势识别。
+- [焦点](/docs/input-interaction/focus)：键盘焦点的工作方式。

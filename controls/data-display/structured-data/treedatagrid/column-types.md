@@ -1,20 +1,20 @@
 ---
 id: column-types
-title: Column types
+title: 列类型
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 ## TreeDataGridTextColumn
 
-`TreeDataGridTextColumn` displays property values as text. Values are converted to strings using `ToString()` for display. For editable columns, text input is converted back to the property type using `Convert.ChangeType()`.
+`TreeDataGridTextColumn` 把属性值当作文本显示，显示时用 `ToString()` 转成字符串。对可编辑的列，输入的文本会用 `Convert.ChangeType()` 转回属性本身的类型。
 
-### XAML usage
+### XAML 用法 {#xaml-usage}
 
 ```xml
 <!-- Read-only column -->
@@ -32,11 +32,11 @@ This control is available as part of [Avalonia Pro](https://avaloniaui.net/prici
                         MaxWidth="150" />
 ```
 
-Columns bound to a writable property are editable by default. To make a column read-only, set `IsReadOnly="True"`.
+绑定到可写属性的列默认可编辑。要让某一列只读，请设置 `IsReadOnly="True"`。
 
-### Code-behind usage
+### 在代码隐藏中使用 {#code-behind-usage}
 
-Use the `WithTextColumn` fluent method. The getter expression is used for two-way binding automatically when the expression is writable. When the header matches the property name, you can omit it:
+使用 `WithTextColumn` 流式方法。只要取值表达式可写，它就会自动用于双向绑定。当列标题与属性同名时，标题可以省略：
 
 ```csharp
 // Header inferred from property name
@@ -53,36 +53,36 @@ source.WithTextColumn("First Name", x => x.FirstName, o =>
 })
 ```
 
-### Options
+### 选项 {#options}
 
-Options can be set as attributes in XAML or configured via the `TextColumnCreateOptions` lambda in code-behind:
+这些选项既可以在 XAML 中写成特性，也可以在代码隐藏中通过 `TextColumnCreateOptions` lambda 配置：
 
-| Option | XAML attribute | Default | Description |
+| 选项 | XAML 特性 | 默认值 | 说明 |
 |---|---|---|---|
-| `Width` | `Width` | `Auto` | Column width |
-| `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
-| `StringFormat` | Use binding `StringFormat` | N/A | Format string for display (e.g. `"{0:C}"` for currency) |
-| `Culture` | N/A | `CurrentCulture` | Culture for formatting |
-| `TextAlignment` | `TextAlignment` | `Left` | Horizontal text alignment |
-| `TextTrimming` | `TextTrimming` | N/A | How text is trimmed when too long |
-| `TextWrapping` | `TextWrapping` | `NoWrap` | How text wraps within the cell |
-| `IsTextSearchEnabled` | `IsTextSearchEnabled` | `true` | Whether the column participates in text search |
-| `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
-| `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |
-| `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | Allow ascending/descending/unsorted states |
-| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | N/A | Minimum and maximum column widths |
-| `CompareAscending` / `CompareDescending` | N/A | N/A | Custom comparison functions for sorting |
-| `BeginEditGestures` | `BeginEditGestures` | N/A | Gestures that trigger edit mode (`None`, `F2`, `Tap`, `DoubleTap`, `WhenSelected`) |
+| `Width` | `Width` | `Auto` | 列宽 |
+| `IsReadOnly` | `IsReadOnly` | `false` | 该列是否只读 |
+| `StringFormat` | 使用绑定 `StringFormat` | 不适用 | 显示用的格式字符串（比如用 `"{0:C}"` 表示货币） |
+| `Culture` | 不适用 | `CurrentCulture` | 格式化所用的区域设置 |
+| `TextAlignment` | `TextAlignment` | `Left` | 文本的水平对齐方式 |
+| `TextTrimming` | `TextTrimming` | 不适用 | 文本过长时如何截断 |
+| `TextWrapping` | `TextWrapping` | `NoWrap` | 文本在单元格内如何换行 |
+| `IsTextSearchEnabled` | `IsTextSearchEnabled` | `true` | 该列是否参与文本检索 |
+| `CanUserResize` | `CanUserResize` | `true` | 用户能否调整该列宽度 |
+| `CanUserSortColumn` | `CanUserSortColumn` | `true` | 用户能否点击标题排序 |
+| `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | 是否允许升序/降序/不排序三种状态 |
+| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | 不适用 | 列的最小宽度与最大宽度 |
+| `CompareAscending` / `CompareDescending` | 不适用 | 不适用 | 排序所用的自定义比较函数 |
+| `BeginEditGestures` | `BeginEditGestures` | 不适用 | 触发编辑模式的手势（`None`、`F2`、`Tap`、`DoubleTap`、`WhenSelected`） |
 
 :::note
-`IsTextSearchEnabled` defaults to `true` for text columns. Set it to `false` explicitly if you don't want a column to participate in text search.
+对文本列而言，`IsTextSearchEnabled` 默认为 `true`。若不想让某一列参与文本检索，请显式把它设为 `false`。
 :::
 
 ## TreeDataGridCheckBoxColumn
 
-`TreeDataGridCheckBoxColumn` displays Boolean values as checkboxes.
+`TreeDataGridCheckBoxColumn` 把布尔值显示为复选框。
 
-### XAML usage
+### XAML 用法 {#xaml-usage-1}
 
 ```xml
 <!-- Basic checkbox -->
@@ -94,9 +94,9 @@ Options can be set as attributes in XAML or configured via the `TextColumnCreate
                             IsReadOnly="True" />
 ```
 
-### Code-behind usage
+### 在代码隐藏中使用 {#code-behind-usage-1}
 
-Use `WithCheckBoxColumn` for `bool` properties, or `WithThreeStateCheckBoxColumn` for `bool?` (nullable) properties:
+`bool` 属性用 `WithCheckBoxColumn`，`bool?`（可空）属性则用 `WithThreeStateCheckBoxColumn`：
 
 ```csharp
 // Basic checkbox
@@ -116,28 +116,28 @@ source.WithCheckBoxColumn(x => x.IsActive, o =>
 })
 ```
 
-### Options
+### 选项 {#options-1}
 
-| Option | XAML attribute | Default | Description |
+| 选项 | XAML 特性 | 默认值 | 说明 |
 |---|---|---|---|
-| `Width` | `Width` | `Auto` | Column width |
-| `IsReadOnly` | `IsReadOnly` | `false` | Whether the column is read-only |
-| `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
-| `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |
-| `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | Allow ascending/descending/unsorted states |
-| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | N/A | Minimum and maximum column widths |
-| `CompareAscending` / `CompareDescending` | N/A | N/A | Custom comparison functions for sorting |
-| `BeginEditGestures` | `BeginEditGestures` | N/A | Gestures that trigger edit mode |
+| `Width` | `Width` | `Auto` | 列宽 |
+| `IsReadOnly` | `IsReadOnly` | `false` | 该列是否只读 |
+| `CanUserResize` | `CanUserResize` | `true` | 用户能否调整该列宽度 |
+| `CanUserSortColumn` | `CanUserSortColumn` | `true` | 用户能否点击标题排序 |
+| `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | 是否允许升序/降序/不排序三种状态 |
+| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | 不适用 | 列的最小宽度与最大宽度 |
+| `CompareAscending` / `CompareDescending` | 不适用 | 不适用 | 排序所用的自定义比较函数 |
+| `BeginEditGestures` | `BeginEditGestures` | 不适用 | 触发编辑模式的手势 |
 
 ## TreeDataGridHierarchicalExpanderColumn
 
-`TreeDataGridHierarchicalExpanderColumn` displays hierarchical tree data with an expander control to show/hide child items. This column type can only be used with hierarchical data.
+`TreeDataGridHierarchicalExpanderColumn` 用于展示层级树数据，带一个展开器控件来显示/隐藏子项。这种列类型只能用于层级数据。
 
-The expander column wraps an inner column (typically a `TreeDataGridTextColumn` or `TreeDataGridTemplateColumn`) which defines what content appears next to the expander icon.
+展开器列会包住一个内层列（通常是 `TreeDataGridTextColumn` 或 `TreeDataGridTemplateColumn`），由后者决定展开器图标旁边显示什么内容。
 
-### XAML usage
+### XAML 用法 {#xaml-usage-2}
 
-Define the expander column in XAML with bindings for children, and nest the inner column as content:
+在 XAML 中定义展开器列时，为子项集合写好绑定，再把内层列作为内容嵌进去：
 
 ```xml
 <TreeDataGridHierarchicalExpanderColumn Header="Name" Width="*"
@@ -148,15 +148,15 @@ Define the expander column in XAML with bindings for children, and nest the inne
 </TreeDataGridHierarchicalExpanderColumn>
 ```
 
-| Attribute | Description |
+| 特性 | 说明 |
 |---|---|
-| `ChildrenBinding` | Binding to the children collection for each row (required) |
-| `HasChildrenBinding` | Binding to check if a row has children without loading them (useful for lazy loading) |
-| `IsExpandedBinding` | Binding to persist the expanded state to a property in the model |
+| `ChildrenBinding` | 绑定到每一行的子项集合（必填） |
+| `HasChildrenBinding` | 绑定到一个判断「该行是否有子项」的属性，无需加载子项即可判定（适合延迟加载） |
+| `IsExpandedBinding` | 把展开状态持久化到模型某个属性上的绑定 |
 
-### Code-behind usage
+### 在代码隐藏中使用 {#code-behind-usage-2}
 
-For a text column inside the expander, use `WithHierarchicalExpanderTextColumn`:
+展开器内若放文本列，请使用 `WithHierarchicalExpanderTextColumn`：
 
 ```csharp
 source.WithHierarchicalExpanderTextColumn(x => x.Name, x => x.Children)
@@ -170,7 +170,7 @@ source.WithHierarchicalExpanderTextColumn(x => x.Name, x => x.Children, o =>
 })
 ```
 
-For a custom inner column (e.g. a template column), use `WithHierarchicalExpanderColumn`:
+若内层列是自定义的（比如模板列），请使用 `WithHierarchicalExpanderColumn`：
 
 ```csharp
 source.WithHierarchicalExpanderColumn(
@@ -187,11 +187,11 @@ source.WithHierarchicalExpanderColumn(
 
 ## TreeDataGridTemplateColumn
 
-`TreeDataGridTemplateColumn` uses data templates to render cell content, allowing complete control over appearance and behavior.
+`TreeDataGridTemplateColumn` 用数据模板渲染单元格内容，外观和行为完全由你掌控。
 
-### XAML usage
+### XAML 用法 {#xaml-usage-3}
 
-Define the cell template (and optional editing template) inline:
+就地定义单元格模板（以及可选的编辑模板）：
 
 ```xml
 <TreeDataGridTemplateColumn Header="Region">
@@ -209,9 +209,9 @@ Define the cell template (and optional editing template) inline:
 </TreeDataGridTemplateColumn>
 ```
 
-### Code-behind usage
+### 在代码隐藏中使用 {#code-behind-usage-3}
 
-#### Using `IDataTemplate` instances:
+#### 使用 `IDataTemplate` 实例： {#using-idatatemplate-instances}
 
 ```csharp
 source.WithTemplateColumn(
@@ -222,9 +222,9 @@ source.WithTemplateColumn(
     }))
 ```
 
-#### Using XAML resource keys:
+#### 使用 XAML 资源键： {#using-xaml-resource-keys}
 
-Define a template in your `TreeDataGrid.Resources`:
+先在 `TreeDataGrid.Resources` 中定义模板：
 
 ```xml
 <TreeDataGrid Source="{Binding Source}">
@@ -236,7 +236,7 @@ Define a template in your `TreeDataGrid.Resources`:
 </TreeDataGrid>
 ```
 
-Then reference it by key:
+再按键引用它：
 
 ```csharp
 source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell")
@@ -245,20 +245,20 @@ source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell")
 source.WithTemplateColumnFromResourceKeys("Selected", "CheckBoxCell", "CheckBoxCellEdit")
 ```
 
-### Options
+### 选项 {#options-2}
 
-| Option | XAML attribute | Default | Description |
+| 选项 | XAML 特性 | 默认值 | 说明 |
 |---|---|---|---|
-| `Width` | `Width` | `Auto` | Column width |
-| `TextSearchBinding` | N/A | N/A | Binding to extract searchable text from the model |
-| `CanUserResize` | `CanUserResize` | `true` | Whether the user can resize the column |
-| `CanUserSortColumn` | `CanUserSortColumn` | `true` | Whether the user can sort by clicking the header |
-| `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | Allow ascending/descending/unsorted states |
-| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | N/A | Minimum and maximum column widths |
-| `CompareAscending` / `CompareDescending` | N/A | N/A | Custom comparison functions for sorting |
-| `BeginEditGestures` | `BeginEditGestures` | N/A | Gestures that trigger edit mode |
+| `Width` | `Width` | `Auto` | 列宽 |
+| `TextSearchBinding` | 不适用 | 不适用 | 用于从模型中取出可检索文本的绑定 |
+| `CanUserResize` | `CanUserResize` | `true` | 用户能否调整该列宽度 |
+| `CanUserSortColumn` | `CanUserSortColumn` | `true` | 用户能否点击标题排序 |
+| `AllowTriStateSorting` | `AllowTriStateSorting` | `false` | 是否允许升序/降序/不排序三种状态 |
+| `MinWidth` / `MaxWidth` | `MinWidth` / `MaxWidth` | 不适用 | 列的最小宽度与最大宽度 |
+| `CompareAscending` / `CompareDescending` | 不适用 | 不适用 | 排序所用的自定义比较函数 |
+| `BeginEditGestures` | `BeginEditGestures` | 不适用 | 触发编辑模式的手势 |
 
-To enable text search on a template column, set `TextSearchBinding` using `CompiledBinding.Create`:
+要为模板列启用文本检索，请用 `CompiledBinding.Create` 设置 `TextSearchBinding`：
 
 ```csharp
 source.WithTemplateColumnFromResourceKeys("Name", "FileNameCell", "FileNameEditCell", o =>
@@ -269,9 +269,9 @@ source.WithTemplateColumnFromResourceKeys("Name", "FileNameCell", "FileNameEditC
 
 ## TreeDataGridRowHeaderColumn
 
-`TreeDataGridRowHeaderColumn` displays row headers (typically row numbers) in the leftmost column.
+`TreeDataGridRowHeaderColumn` 在最左侧一列显示行标题（通常是行号）。
 
-### XAML usage
+### XAML 用法 {#xaml-usage-4}
 
 ```xml
 <TreeDataGrid ItemsSource="{Binding Data}">
@@ -280,12 +280,12 @@ source.WithTemplateColumnFromResourceKeys("Name", "FileNameCell", "FileNameEditC
 </TreeDataGrid>
 ```
 
-### Code-behind usage
+### 在代码隐藏中使用 {#code-behind-usage-4}
 
 ```csharp
 source.WithRowHeaderColumn()
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)

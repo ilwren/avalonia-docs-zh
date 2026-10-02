@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaSynchronizationContext Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Threading</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Threading</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/AvaloniaSynchronizationContext.cs">AvaloniaSynchronizationContext.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/AvaloniaSynchronizationContext.cs">AvaloniaSynchronizationContext.cs</a>
 </div>
 
 </div>
@@ -54,25 +54,25 @@ public class AvaloniaSynchronizationContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> SynchronizationContext <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaSynchronizationContext
+<span className="apiref-page__meta-label">继承关系：</span> SynchronizationContext <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaSynchronizationContext
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AvaloniaSynchronizationContext (3 overloads)](#uid-9eb820849c) | No summary available. |
+| [AvaloniaSynchronizationContext (3 overloads)](#uid-9eb820849c) | 暂无摘要。 |
 
 <span id="uid-9eb820849c"></span>
 
-### AvaloniaSynchronizationContext overloads
+### AvaloniaSynchronizationContext 的重载 {#avaloniasynchronizationcontext-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-da8ac8ab0c"></span>
 
-#### AvaloniaSynchronizationContext Constructor
+#### AvaloniaSynchronizationContext 构造函数 {#avaloniasynchronizationcontext-constructor}
 
 ```csharp
 public AvaloniaSynchronizationContext()
@@ -84,13 +84,13 @@ public AvaloniaSynchronizationContext()
 
 <span id="uid-6054aafd69"></span>
 
-#### AvaloniaSynchronizationContext Constructor
+#### AvaloniaSynchronizationContext 构造函数 {#avaloniasynchronizationcontext-constructor-1}
 
 ```csharp
 public AvaloniaSynchronizationContext(Avalonia.Threading.Dispatcher dispatcher, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `dispatcher` [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher)
 
@@ -104,29 +104,29 @@ public AvaloniaSynchronizationContext(Avalonia.Threading.Dispatcher dispatcher, 
 
 <span id="uid-93a854fe46"></span>
 
-#### AvaloniaSynchronizationContext Constructor
+#### AvaloniaSynchronizationContext 构造函数 {#avaloniasynchronizationcontext-constructor-2}
 
 ```csharp
 public AvaloniaSynchronizationContext(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Ensure (2 overloads)](#uid-1ca5c5965e) | No summary available. |
+| [Ensure (2 overloads)](#uid-1ca5c5965e) | 暂无摘要。 |
 | [InstallIfNeeded](#uid-43d33fdad2) | Installs synchronization context in current thread |
-| [Post](#uid-f456ade104) | No summary available. |
-| [Send](#uid-955eff3bfe) | No summary available. |
+| [Post](#uid-f456ade104) | 暂无摘要。 |
+| [Send](#uid-955eff3bfe) | 暂无摘要。 |
 | [ToTaskScheduler](#uid-4e24f9c587) | Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskScheduler) associated with this [Avalonia.Threading.AvaloniaSynchronizationContext](xref:Avalonia.Threading.AvaloniaSynchronizationContext). |
-| [Wait](#uid-cb4f22cead) | No summary available. |
+| [Wait](#uid-cb4f22cead) | 暂无摘要。 |
 
 <span id="uid-1ca5c5965e"></span>
 
@@ -136,13 +136,13 @@ public AvaloniaSynchronizationContext(Avalonia.Threading.DispatcherPriority prio
 
 <span id="uid-eb1fb66038"></span>
 
-#### Ensure Method
+#### Ensure 方法 {#ensure-method}
 
 ```csharp
 public Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext Ensure(Avalonia.Threading.Dispatcher dispatcher, Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `dispatcher` [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher)
 
@@ -150,7 +150,7 @@ public Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext Ensure(A
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext](xref:Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext)
 
@@ -161,18 +161,18 @@ public Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext Ensure(A
 
 <span id="uid-3e9e9f65f8"></span>
 
-#### Ensure Method
+#### Ensure 方法 {#ensure-method-1}
 
 ```csharp
 public Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext Ensure(Avalonia.Threading.DispatcherPriority priority)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `priority` [Avalonia.Threading.DispatcherPriority](xref:Avalonia.Threading.DispatcherPriority)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext](xref:Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext)
 
@@ -183,7 +183,7 @@ public Avalonia.Threading.AvaloniaSynchronizationContext.RestoreContext Ensure(A
 
 <span id="uid-43d33fdad2"></span>
 
-### InstallIfNeeded Method
+### InstallIfNeeded 方法 {#installifneeded-method}
 
 Installs synchronization context in current thread
 
@@ -197,13 +197,13 @@ public void InstallIfNeeded()
 
 <span id="uid-f456ade104"></span>
 
-### Post Method
+### Post 方法 {#post-method}
 
 ```csharp
 public void Post(System.Threading.SendOrPostCallback d, object state)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `d` System.Threading.SendOrPostCallback
 
@@ -217,13 +217,13 @@ public void Post(System.Threading.SendOrPostCallback d, object state)
 
 <span id="uid-955eff3bfe"></span>
 
-### Send Method
+### Send 方法 {#send-method}
 
 ```csharp
 public void Send(System.Threading.SendOrPostCallback d, object state)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `d` System.Threading.SendOrPostCallback
 
@@ -237,7 +237,7 @@ public void Send(System.Threading.SendOrPostCallback d, object state)
 
 <span id="uid-4e24f9c587"></span>
 
-### ToTaskScheduler Method
+### ToTaskScheduler 方法 {#totaskscheduler-method}
 
 Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskScheduler) associated with this [Avalonia.Threading.AvaloniaSynchronizationContext](xref:Avalonia.Threading.AvaloniaSynchronizationContext).
 
@@ -245,7 +245,7 @@ Gets a [System.Threading.Tasks.TaskScheduler](xref:System.Threading.Tasks.TaskSc
 public System.Threading.Tasks.TaskScheduler ToTaskScheduler()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.TaskScheduler
 
@@ -256,13 +256,13 @@ System.Threading.Tasks.TaskScheduler
 
 <span id="uid-cb4f22cead"></span>
 
-### Wait Method
+### Wait 方法 {#wait-method}
 
 ```csharp
 public int Wait(IntPtr[] waitHandles, bool waitAll, int millisecondsTimeout)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `waitHandles` IntPtr[]
 
@@ -273,16 +273,16 @@ public int Wait(IntPtr[] waitHandles, bool waitAll, int millisecondsTimeout)
 `millisecondsTimeout` int
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 int
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AutoInstall](#uid-8a51cd6630) | Controls if SynchronizationContext should be installed in InstallIfNeeded. Used by Designer. |
 
@@ -290,7 +290,7 @@ int
 
 <span id="uid-8a51cd6630"></span>
 
-### AutoInstall Property
+### AutoInstall 属性 {#autoinstall-property}
 
 Controls if SynchronizationContext should be installed in InstallIfNeeded. Used by Designer.
 

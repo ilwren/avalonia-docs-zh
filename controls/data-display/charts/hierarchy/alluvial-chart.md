@@ -1,7 +1,7 @@
 ---
 id: alluvial-chart
-title: Alluvial chart
-description: Represents structural changes across sequential stages using flowing bands between vertical node columns, similar to a Sankey diagram.
+title: 冲积图
+description: 用在各列节点之间流淌的色带呈现结构随阶段的变迁，与桑基图相仿。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFlowAlluvial from '/img/controls/charts/charts-flow-alluvial.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Alluvial charts represent changes in structure over time or across categories. They are similar to Sankey diagrams but are typically organized into distinct vertical columns.
+冲积图呈现结构随时间或跨类别的变化。它与桑基图相仿，但通常被组织成一列列清晰的纵向节点。
 
 <Image light={chartsFlowAlluvial} maxWidth={400} position="center" cornerRadius="true" alt="Alluvial chart with vertical node columns connected by flowing bands representing categorical transitions between stages." />
 
-## When to use
-- **Workflow analysis**: Tracking how items move through sequential process stages.
-- **Categorical flow**: Visualizing how members of one category belong to others (e.g., voters' changing affiliations).
-- **Structural shifts**: Showing how a population's grouping changes between two points in time.
+## 适用场景 {#when-to-use}
+- **流程分析**：追踪事项在各道工序之间的流转。
+- **类别流动**：呈现某一类别的成员如何归属到其他类别（比如选民立场的变迁）。
+- **结构变迁**：展示某个群体的分组在两个时间点之间如何改变。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Alluvial charts represent changes in structure over time or across categories. T
                         Links="{Binding AlluvialLinks}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<AlluvialNode> AlluvialNodes { get; } = new()
 {
@@ -50,11 +50,11 @@ public ObservableCollection<AlluvialLink> AlluvialLinks { get; } = new()
 };
 ```
 
-`AlluvialChart` uses the strongly typed `AlluvialNode` and `AlluvialLink` classes. Each node defines an `Id`, `Label`, `Step`, and `Value`.
+`AlluvialChart` 使用强类型的 `AlluvialNode` 和 `AlluvialLink` 类。每个节点都要定义 `Id`、`Label`、`Step` 和 `Value`。
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Nodes` | The collection of categorical nodes (columns). | `null` |
-| `Links` | The collection of connections between nodes. | `null` |
+| `Nodes` | 类别节点（列）的集合。 | `null` |
+| `Links` | 节点之间连接的集合。 | `null` |

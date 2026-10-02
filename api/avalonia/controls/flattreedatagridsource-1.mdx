@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FlatTreeDataGridSource&lt;TModel&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-A data source for a [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) which displays a flat grid.
+面向以扁平网格呈现数据的 [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) 的数据源。
 
 </div>
 
@@ -50,57 +50,57 @@ public class FlatTreeDataGridSource<TModel>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> TreeDataGridSource&lt;&gt; <span className="apiref-page__relation-separator">-&gt;</span> FlatTreeDataGridSource&lt;TModel&gt;
+<span className="apiref-page__meta-label">继承关系：</span> TreeDataGridSource&lt;&gt; <span className="apiref-page__relation-separator">-&gt;</span> FlatTreeDataGridSource&lt;TModel&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FlatTreeDataGridSource&lt;TModel&gt;](#uid-879b27cb82) | No summary available. |
+| [FlatTreeDataGridSource&lt;TModel&gt;](#uid-879b27cb82) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-879b27cb82"></span>
 
-### FlatTreeDataGridSource&lt;TModel&gt; Constructor
+### FlatTreeDataGridSource&lt;TModel&gt; 构造函数 {#flattreedatagridsourcelttmodelgt-constructor}
 
 ```csharp
 public FlatTreeDataGridSource<TModel>(System.Collections.Generic.IEnumerable<TModel> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `items` System.Collections.Generic.IEnumerable&lt;TModel&gt;
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ClearSort](#uid-2baf03fefa) | No summary available. |
-| [Dispose](#uid-217f8a3654) | No summary available. |
-| [Filter](#uid-1a55ef6c0a) | No summary available. |
-| [RefreshFilter](#uid-df5d01f953) | Refreshes the current filter applied to the collection. |
-| [SortBy](#uid-fe09321740) | No summary available. |
+| [ClearSort](#uid-2baf03fefa) | 暂无摘要。 |
+| [Dispose](#uid-217f8a3654) | 暂无摘要。 |
+| [Filter](#uid-1a55ef6c0a) | 暂无摘要。 |
+| [RefreshFilter](#uid-df5d01f953) | 刷新当前作用于该集合的筛选器。 |
+| [SortBy](#uid-fe09321740) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2baf03fefa"></span>
 
-### ClearSort Method
+### ClearSort 方法 {#clearsort-method}
 
 ```csharp
 public void ClearSort(Avalonia.Controls.TreeDataGridColumn column)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `column` [Avalonia.Controls.TreeDataGridColumn](xref:Avalonia.Controls.TreeDataGridColumn)
 
@@ -111,7 +111,7 @@ public void ClearSort(Avalonia.Controls.TreeDataGridColumn column)
 
 <span id="uid-217f8a3654"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -123,13 +123,13 @@ public void Dispose()
 
 <span id="uid-1a55ef6c0a"></span>
 
-### Filter Method
+### Filter 方法 {#filter-method}
 
 ```csharp
 public void Filter(Func<TModel, bool> filter)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `filter` Func&lt;TModel, bool&gt;
 
@@ -140,18 +140,17 @@ public void Filter(Func<TModel, bool> filter)
 
 <span id="uid-df5d01f953"></span>
 
-### RefreshFilter Method
+### RefreshFilter 方法 {#refreshfilter-method}
 
-Refreshes the current filter applied to the collection.
+刷新当前作用于该集合的筛选器。
 
 ```csharp
 public void RefreshFilter()
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
-Call this method if the filter predicate depends on external state which has changed,
-to re-apply the filter to the collection.
+若筛选谓词依赖的外部状态发生了变化，请调用该方法，以便对集合重新应用筛选。
 
 </section>
 
@@ -159,13 +158,13 @@ to re-apply the filter to the collection.
 
 <span id="uid-fe09321740"></span>
 
-### SortBy Method
+### SortBy 方法 {#sortby-method}
 
 ```csharp
 public bool SortBy(Avalonia.Controls.TreeDataGridColumn column, System.ComponentModel.ListSortDirection direction)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `column` [Avalonia.Controls.TreeDataGridColumn](xref:Avalonia.Controls.TreeDataGridColumn)
 
@@ -173,32 +172,32 @@ public bool SortBy(Avalonia.Controls.TreeDataGridColumn column, System.Component
 `direction` System.ComponentModel.ListSortDirection
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Columns](#uid-2ee8e1d951) | Gets the columns to be displayed. |
-| [IsFiltered](#uid-7abc1a3443) | No summary available. |
-| [IsHierarchical](#uid-0c6d0344a7) | No summary available. |
-| [IsSorted](#uid-3754e2690d) | No summary available. |
-| [Items](#uid-1cbefbf7e7) | No summary available. |
-| [Rows](#uid-ea28c771a3) | No summary available. |
-| [Selection](#uid-f3189f01f1) | No summary available. |
+| [Columns](#uid-2ee8e1d951) | 获取要显示的列。 |
+| [IsFiltered](#uid-7abc1a3443) | 暂无摘要。 |
+| [IsHierarchical](#uid-0c6d0344a7) | 暂无摘要。 |
+| [IsSorted](#uid-3754e2690d) | 暂无摘要。 |
+| [Items](#uid-1cbefbf7e7) | 暂无摘要。 |
+| [Rows](#uid-ea28c771a3) | 暂无摘要。 |
+| [Selection](#uid-f3189f01f1) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2ee8e1d951"></span>
 
-### Columns Property
+### Columns 属性 {#columns-property}
 
-Gets the columns to be displayed.
+获取要显示的列。
 
 ```csharp
 public Avalonia.Controls.TreeDataGridColumns Columns { get; set; }
@@ -210,7 +209,7 @@ public Avalonia.Controls.TreeDataGridColumns Columns { get; set; }
 
 <span id="uid-7abc1a3443"></span>
 
-### IsFiltered Property
+### IsFiltered 属性 {#isfiltered-property}
 
 ```csharp
 public bool IsFiltered { get; set; }
@@ -222,7 +221,7 @@ public bool IsFiltered { get; set; }
 
 <span id="uid-0c6d0344a7"></span>
 
-### IsHierarchical Property
+### IsHierarchical 属性 {#ishierarchical-property}
 
 ```csharp
 public bool IsHierarchical { get; set; }
@@ -234,7 +233,7 @@ public bool IsHierarchical { get; set; }
 
 <span id="uid-3754e2690d"></span>
 
-### IsSorted Property
+### IsSorted 属性 {#issorted-property}
 
 ```csharp
 public bool IsSorted { get; set; }
@@ -246,7 +245,7 @@ public bool IsSorted { get; set; }
 
 <span id="uid-1cbefbf7e7"></span>
 
-### Items Property
+### Items 属性 {#items-property}
 
 ```csharp
 public System.Collections.Generic.IEnumerable<TModel> Items { get; set; }
@@ -258,7 +257,7 @@ public System.Collections.Generic.IEnumerable<TModel> Items { get; set; }
 
 <span id="uid-ea28c771a3"></span>
 
-### Rows Property
+### Rows 属性 {#rows-property}
 
 ```csharp
 public Avalonia.Controls.TreeDataGridRows Rows { get; set; }
@@ -270,7 +269,7 @@ public Avalonia.Controls.TreeDataGridRows Rows { get; set; }
 
 <span id="uid-f3189f01f1"></span>
 
-### Selection Property
+### Selection 属性 {#selection-property}
 
 ```csharp
 public Avalonia.Controls.Selection.TreeDataGridSelectionModel Selection { get; set; }

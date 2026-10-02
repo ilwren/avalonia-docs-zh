@@ -3,25 +3,25 @@ id: headless-testing
 title: Headless Testing
 ---
 
-## Overview
+## 概述 {#overview}
 
-Unit-testing was always a complicated scenario with WPF. The most common solution was to run heavy automation based e2e testing suits. Making it slower and locking it to Windows only testing.
+WPF 的单元测试向来是件麻烦事。最常见的办法是跑一整套基于自动化的重量级端到端测试，既慢，又把测试锁死在 Windows 上。
 
-Instead of automation testing, try Headless testing first as it's fast and portable.
-Since XPF is based on the same core as Avalonia, headless testing is available for WPF apps too.
+与其走自动化测试，不如先试试无头测试——它又快又可移植。
+由于 XPF 与 Avalonia 同根同源，WPF 应用同样能用上无头测试。
 
 :::tip
-A complete [CalculatorDemo sample](https://github.com/AvaloniaUIOU/CalculatorDemo) with headless tests is available. Ask the support team for access to this repository if needed.
+有一个带无头测试的完整 [CalculatorDemo 示例](https://github.com/AvaloniaUIOU/CalculatorDemo)。需要访问这个仓库的话，请找支持团队。
 :::
 
 :::note
-For more detailed documentation on the Headless platform and Avalonia extensions, see [Headless Testing with XUnit](/docs/testing/headless-xunit) and [Headless Testing with NUnit](/docs/testing/headless-nunit). Understanding how headless testing works with Avalonia also helps with XPF/WPF.
+关于无头平台和 Avalonia 扩展的更详尽文档，请见[用 XUnit 做无头测试](/docs/testing/headless-xunit)和[用 NUnit 做无头测试](/docs/testing/headless-nunit)。弄懂无头测试在 Avalonia 中的运作方式，对 XPF/WPF 同样大有裨益。
 :::
 
-## Configuring the testing project
+## 配置测试项目 {#configuring-the-testing-project}
 
-`XUnit`, `NUnit`, and `MSTest` are supported by XPF/Avalonia headless testing.
-It's necessary to include integration nuget package in the testing project:
+XPF/Avalonia 的无头测试支持 `XUnit`、`NUnit` 和 `MSTest`。
+测试项目中需要引入集成用的 nuget 包：
 
 ```xml
 <ItemGroup>
@@ -31,9 +31,9 @@ It's necessary to include integration nuget package in the testing project:
 </ItemGroup>
 ```
 
-`$(XpfAvaloniaVersion)` is pre-defined const in the `Xpf.Sdk`, which also needs to be set in testing project. It can be skipped, if you specify latest `PackageReference` version manually.
+`$(XpfAvaloniaVersion)` 是 `Xpf.Sdk` 中预定义的常量，测试项目里同样要设置它。若你手动指定了最新的 `PackageReference` 版本，这一步可以省掉。
 
-`AvaloniaUI.Xpf.LicenseKey` is also required for testing project to pass runtime validation. See [Getting started](/xpf/getting-started) page if you need more information where to get this key.
+测试项目要通过运行时校验，还需要 `AvaloniaUI.Xpf.LicenseKey`。若想知道这个密钥从哪儿来，请见[快速上手](/xpf/getting-started)页。
 
 ```xml
 <ItemGroup>
@@ -41,11 +41,11 @@ It's necessary to include integration nuget package in the testing project:
 </ItemGroup>
 ```
 
-## (Optional) Configuring the testing application
+## （可选）配置测试用的应用 {#optional-configuring-the-testing-application}
 
-Similarly to Avalonia headless, you can configure cross-platform `AppBuilder` to be used in the project.
-When not defined, headless platform is using default parameters, which might limit your XPF testing experience.
-Note, if you already override AppBuilder for your XPF app (as per [Customizing Initialization](/xpf/configuration/customizing-initialization) documentation), you can reuse the same initialization code, but add `.UseHeadless()` in the end of the chain.
+与 Avalonia 无头测试类似，你可以为项目配置跨平台的 `AppBuilder`。
+不配的话，无头平台就用默认参数，这可能限制你在 XPF 下的测试体验。
+注意，若你已经按[定制初始化](/xpf/configuration/customizing-initialization)文档为 XPF 应用重写了 AppBuilder，那套初始化代码可以直接复用，只需在链式调用末尾加上 `.UseHeadless()`。
 
 ```csharp
 [assembly: AvaloniaTestApplication(typeof(TestAppBuilder))]
@@ -64,17 +64,17 @@ public class TestAppBuilder
 }
 ```
 
-## Writing tests
+## 编写测试 {#writing-tests}
 
-Your tests are running in the same process as the XPF application, making it easier to send any events and access any output of the app.
-As with normal WPF app, everything has to start with a Window, which can be create in the same test method, or reused from set-up methods (`[SetUp]` method in NUnit or constructor in XUnit).
+测试与 XPF 应用跑在同一个进程里，因此发送各种事件、读取应用的各种输出都方便得很。
+和普通 WPF 应用一样，一切都得从一个 Window 开始——它可以在同一个测试方法里创建，也可以从准备方法（NUnit 的 `[SetUp]` 方法或 XUnit 的构造函数）中复用。
 
 :::note
-NUnit [Test] and [Theory] needs to be replaced with [AvaloniaTest] [AvaloniaTheory],
-as well as XUnit [Fact] replaced with [AvaloniaFact].
+NUnit 的 [Test] 和 [Theory] 要换成 [AvaloniaTest] 和 [AvaloniaTheory]，
+XUnit 的 [Fact] 则要换成 [AvaloniaFact]。
 :::
 
-Very basic NUnit test would look like this:
+一个最基础的 NUnit 测试长这样：
 
 ```csharp
 [AvaloniaTest]
@@ -92,7 +92,7 @@ public void Should_Be_Able_To_Raise_Event()
 }
 ```
 
-Where Button logic is as follows:
+其中按钮的逻辑如下：
 
 ```csharp
 private int _clickCount = 0;
@@ -103,15 +103,15 @@ private void ClickingButton_OnClick(object sender, RoutedEventArgs e)
 ```
 
 :::tip
-To access `ClickingButton` from the testing project, you either need to set `x:FieldModifier="public"` on the control in XAML, or add an `[assembly: InternalsVisibleTo("YourTestProject")]` attribute to your main project.
+要在测试项目中访问 `ClickingButton`，你要么在 XAML 里给控件设上 `x:FieldModifier="public"`，要么给主项目加一个 `[assembly: InternalsVisibleTo("YourTestProject")]` 特性。
 :::
 
-## Accessing Avalonia headless extensions
+## 使用 Avalonia 的无头扩展 {#accessing-avalonia-headless-extensions}
 
-Avalonia provides headless extensions for simulating clicks and keyboard input, avoiding the need to raise fake WPF events.
+Avalonia 提供了模拟点击和键盘输入的无头扩展，省得你去伪造 WPF 事件。
 
-This extensions are only available on Avalonia Window, and can't be used on WPF Window.
-But lucky, it's possible to get Avalonia Window in headless tests:
+这些扩展只对 Avalonia 的 Window 可用，WPF 的 Window 上用不了。
+好在无头测试中是能拿到 Avalonia Window 的：
 
 ```csharp
 // Get Avalonia window and send text input to currently focused control.
@@ -119,29 +119,29 @@ var avWindow = XpfWpfAbstraction.GetAvaloniaWindowForWindow(xpfWindow);
 avWindow.KeyTextInput("Hello");
 ```
 
-See [Avalonia Interop](/xpf/interop/embedding-avalonia-in-xpf#accessing-avalonia-features) for more details on integration with Avalonia.
+与 Avalonia 集成的更多细节，请见 [Avalonia 互操作](/xpf/interop/embedding-avalonia-in-xpf#accessing-avalonia-features)。
 
-## (Optional) Using XPF headless testing with WPF app/project
+## （可选）在 WPF 应用/项目上使用 XPF 无头测试 {#optional-using-xpf-headless-testing-with-wpf-appproject}
 
-Only startup project has to use Xpf.Sdk testing.
-Which also means that you can have normal "net8.0-windows" project with your controls, and reference them in XPF headless project.
+只有启动项目必须用 Xpf.Sdk 测试。
+换句话说，你完全可以把控件放在一个普通的 “net8.0-windows” 项目里，再从 XPF 无头项目中引用它们。
 
-It can be useful, if you have shared controls library that and want to headless test it, or maybe if you have normal Windows WPF application and need headless testing without fully using XPF.
+若你有一个共享控件库想做无头测试，或者手头是普通的 Windows WPF 应用、只想要无头测试而不打算全面改用 XPF，这招就很管用。
 
-All the usage steps are the same, but you also need to set testing project TargetFramework to `net8.0-windows` and set `EnableWindowsTargeting` to true (only if you need to run it on Linux/macOS machines).
+使用步骤都一样，只是还得把测试项目的 TargetFramework 设为 `net8.0-windows`，并把 `EnableWindowsTargeting` 设为 true（只有当你要在 Linux/macOS 机器上跑它时才需要）。
 
-## MSTest support
+## MSTest 支持 {#mstest-support}
 
-For MSTest projects, the setup is similar but requires additional configuration:
+MSTest 项目的配置大同小异，只是要多做几步：
 
-1. Set `DisableAutomaticXpfInit` to `true` in your test project's `.csproj`:
+1. 在测试项目的 `.csproj` 中把 `DisableAutomaticXpfInit` 设为 `true`：
    ```xml
    <PropertyGroup>
        <DisableAutomaticXpfInit>true</DisableAutomaticXpfInit>
    </PropertyGroup>
    ```
 
-2. Configure the headless AppBuilder and use `[AvaloniaTestMethod]` instead of `[TestMethod]`:
+2. 配置好无头 AppBuilder，并用 `[AvaloniaTestMethod]` 取代 `[TestMethod]`：
    ```csharp
    [assembly: AvaloniaTestApplication(typeof(TestAppBuilder))]
 
@@ -158,26 +158,26 @@ For MSTest projects, the setup is similar but requires additional configuration:
    }
    ```
 
-## Test isolation
+## 测试隔离 {#test-isolation}
 
-If you experience flaky tests (such as `TaskScheduler` errors or inconsistent state between tests), configure test isolation per assembly:
+若测试时灵时不灵（比如报 `TaskScheduler` 错误，或者测试之间状态互相串味），请按程序集配置测试隔离：
 
 ```csharp
 [assembly: AvaloniaTestApplication(typeof(TestAppBuilder), AvaloniaTestIsolationLevel.PerAssembly)]
 ```
 
-This ensures the Avalonia runtime is initialized once per test assembly rather than per test, preventing race conditions between test teardown and initialization.
+这样 Avalonia 运行时就只在每个测试程序集中初始化一次，而不是每个测试都来一遍，从而避免测试清理与初始化之间的竞态。
 
-## Running tests in CI
+## 在 CI 中运行测试 {#running-tests-in-ci}
 
-When running XPF headless tests in CI environments on Linux:
+在 Linux 的 CI 环境中跑 XPF 无头测试时：
 
-- Ensure the license key is configured in the test project (see [Getting Started](/xpf/getting-started#step-4-add-your-licence-key))
-- No display server is required when using headless mode
-- If `XOpenDisplay failed` errors occur, verify that `DisableAutomaticXpfInit` is set to `true` and the headless AppBuilder is configured correctly
+- 确认测试项目中配好了许可证密钥（见[快速上手](/xpf/getting-started#step-4-add-your-licence-key)）
+- 使用无头模式时不需要显示服务器
+- 若出现 `XOpenDisplay failed` 错误，请确认 `DisableAutomaticXpfInit` 已设为 `true`，且无头 AppBuilder 配置无误
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Headless testing with XUnit](/docs/testing/headless-xunit)
-- [Headless testing with NUnit](/docs/testing/headless-nunit)
-- [Setting up the headless platform](/docs/testing/setting-up-the-headless-platform)
+- [用 XUnit 做无头测试](/docs/testing/headless-xunit)
+- [用 NUnit 做无头测试](/docs/testing/headless-nunit)
+- [搭建无头平台](/docs/testing/setting-up-the-headless-platform)

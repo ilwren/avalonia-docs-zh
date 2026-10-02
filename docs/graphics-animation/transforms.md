@@ -1,15 +1,15 @@
 ---
 id: transforms
-title: Transforms
-description: Render transforms and layout transforms for modifying position, size, rotation, and skew.
+title: 变换
+description: 用渲染变换和布局变换改变位置、尺寸、旋转与倾斜。
 doc-type: explanation
 ---
 
-Transforms modify the position, size, rotation, or skew of visual elements without changing their layout. Avalonia supports render transforms (applied after layout) and layout transforms (applied during layout via [`LayoutTransformControl`](/api/avalonia/controls/layouttransformcontrol)).
+变换可以改变视觉元素的位置、尺寸、旋转或倾斜，而不改动它们的布局。Avalonia 既支持渲染变换（在布局之后施加），也支持布局变换（通过 [`LayoutTransformControl`](/api/avalonia/controls/layouttransformcontrol) 在布局过程中施加）。
 
 ## RenderTransform
 
-The `RenderTransform` property is available on every `Visual` element. It applies a transformation after layout has been calculated, so it does not affect the size or position of neighboring controls.
+每个 `Visual` 元素都有 `RenderTransform` 属性。它在布局算完之后才施加变换，因此不会影响相邻控件的尺寸和位置。
 
 ```xml
 <Button Content="Rotated" RenderTransformOrigin="50%,50%">
@@ -21,7 +21,7 @@ The `RenderTransform` property is available on every `Visual` element. It applie
 
 ### RenderTransformOrigin
 
-The `RenderTransformOrigin` property defines the point around which transforms are applied, using relative coordinates. The default is `50%,50%` (center of the element).
+`RenderTransformOrigin` 属性用相对坐标定义变换绕之进行的那个点，默认为 `50%,50%`（元素中心）。
 
 ```xml
 <Image Source="avares://MyApp/Assets/logo.png"
@@ -32,16 +32,16 @@ The `RenderTransformOrigin` property defines the point around which transforms a
 </Image>
 ```
 
-## Transform types
+## 变换类型 {#transform-types}
 
 ### RotateTransform
 
-Rotates an element by a specified angle in degrees.
+按指定角度（单位为度）旋转元素。
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Angle` | The rotation angle in degrees. Positive values rotate clockwise. |
-| `CenterX`, `CenterY` | An additional offset from `RenderTransformOrigin` for the center of rotation, in device-independent pixels. Defaults to 0. |
+| `Angle` | 旋转角度，单位为度。正值表示顺时针旋转。 |
+| `CenterX`, `CenterY` | 相对 `RenderTransformOrigin` 的额外偏移量，用于确定旋转中心，单位为设备无关像素，默认为 0。 |
 
 ```xml
 <Border Width="100" Height="100" Background="SteelBlue"
@@ -54,12 +54,12 @@ Rotates an element by a specified angle in degrees.
 
 ### ScaleTransform
 
-Scales an element horizontally, vertically, or both.
+在水平、垂直或两个方向上缩放元素。
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `ScaleX` | The horizontal scale factor. 1.0 is normal size, 2.0 is double, 0.5 is half. |
-| `ScaleY` | The vertical scale factor. |
+| `ScaleX` | 水平缩放系数。1.0 为原始大小，2.0 为两倍，0.5 为一半。 |
+| `ScaleY` | 垂直缩放系数。 |
 
 ```xml
 <!-- Double the width, keep the height -->
@@ -79,12 +79,12 @@ Scales an element horizontally, vertically, or both.
 
 ### SkewTransform
 
-Shears an element along the X or Y axis.
+沿 X 轴或 Y 轴切变元素。
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `AngleX` | The horizontal skew angle in degrees. |
-| `AngleY` | The vertical skew angle in degrees. |
+| `AngleX` | 水平倾斜角度，单位为度。 |
+| `AngleY` | 垂直倾斜角度，单位为度。 |
 
 ```xml
 <Border Width="100" Height="60" Background="Orange"
@@ -97,12 +97,12 @@ Shears an element along the X or Y axis.
 
 ### TranslateTransform
 
-Moves an element by a specified offset without affecting layout.
+按指定偏移量移动元素，且不影响布局。
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `X` | The horizontal offset in device-independent pixels. |
-| `Y` | The vertical offset in device-independent pixels. |
+| `X` | 水平偏移量，单位为设备无关像素。 |
+| `Y` | 垂直偏移量，单位为设备无关像素。 |
 
 ```xml
 <TextBlock Text="Shifted" RenderTransformOrigin="50%,50%">
@@ -114,11 +114,11 @@ Moves an element by a specified offset without affecting layout.
 
 ### MatrixTransform
 
-Applies an arbitrary 2D affine transformation defined by a 3x2 matrix.
+施加由 3x2 矩阵定义的任意二维仿射变换。
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Matrix` | A string in the format `m11,m12,m21,m22,offsetX,offsetY`. |
+| `Matrix` | 格式为 `m11,m12,m21,m22,offsetX,offsetY` 的字符串。 |
 
 ```xml
 <Border Width="80" Height="80" Background="Purple">
@@ -128,11 +128,11 @@ Applies an arbitrary 2D affine transformation defined by a 3x2 matrix.
 </Border>
 ```
 
-The identity matrix is `1,0,0,1,0,0` (no transformation).
+单位矩阵是 `1,0,0,1,0,0`（不作任何变换）。
 
 ### TransformGroup
 
-Combines multiple transforms into a single transformation. Transforms are applied in the order they appear.
+把多个变换合成一个，按书写顺序依次施加。
 
 ```xml
 <Border Width="100" Height="60" Background="Teal"
@@ -147,12 +147,12 @@ Combines multiple transforms into a single transformation. Transforms are applie
 ```
 
 :::info
-The order of transforms within a `TransformGroup` matters. Scaling then rotating produces a different result than rotating then scaling.
+`TransformGroup` 中各变换的先后顺序很重要：先缩放后旋转与先旋转后缩放，结果并不相同。
 :::
 
-## Shorthand syntax
+## 简写写法 {#shorthand-syntax}
 
-Avalonia supports a CSS-like shorthand for `RenderTransform`:
+Avalonia 为 `RenderTransform` 提供了一种类似 CSS 的简写：
 
 ```xml
 <Border RenderTransform="rotate(45deg)" />
@@ -161,7 +161,7 @@ Avalonia supports a CSS-like shorthand for `RenderTransform`:
 <Border RenderTransform="skew(15deg, 0deg)" />
 ```
 
-Multiple transforms can be chained:
+多个变换可以串联书写：
 
 ```xml
 <Border RenderTransform="scale(1.5) rotate(30deg)" />
@@ -169,7 +169,7 @@ Multiple transforms can be chained:
 
 ## LayoutTransformControl
 
-`RenderTransform` does not affect layout calculations, which means neighboring controls are not aware of the transformation. If you need a transform that participates in layout (for example, rotating a sidebar so adjacent content adjusts), wrap the element in a `LayoutTransformControl`:
+`RenderTransform` 不参与布局计算，也就是说相邻控件对这个变换一无所知。若你需要让变换参与布局（比如旋转侧边栏并让相邻内容随之调整），请把元素包进 `LayoutTransformControl`：
 
 ```xml
 <LayoutTransformControl>
@@ -180,11 +180,11 @@ Multiple transforms can be chained:
 </LayoutTransformControl>
 ```
 
-The `LayoutTransformControl` measures and arranges its child with the transform applied, so the parent panel allocates space for the transformed size.
+`LayoutTransformControl` 会在施加变换之后再测量和排列子元素，这样父面板就会按变换后的尺寸来分配空间。
 
-## Animating transforms
+## 为变换加动画 {#animating-transforms}
 
-Transforms are commonly animated using keyframe animations or transitions. Bind the transform property to animate smooth rotations, scaling effects, or movement.
+人们常用关键帧动画或过渡来为变换加动画。绑定变换属性即可做出平滑的旋转、缩放或位移效果。
 
 ```xml
 <Border Width="80" Height="80" Background="Coral"
@@ -206,9 +206,9 @@ Transforms are commonly animated using keyframe animations or transitions. Bind 
 </Border>
 ```
 
-For more information on animations, see [Keyframe Animations](/docs/graphics-animation/keyframe-animations) and [Control Transitions](/docs/graphics-animation/control-transitions).
+关于动画的更多内容，请参阅[关键帧动画](/docs/graphics-animation/keyframe-animations)和[控件过渡](/docs/graphics-animation/control-transitions)。
 
-## Transforms in code
+## 在代码中使用变换 {#transforms-in-code}
 
 ```csharp
 var rotateTransform = new RotateTransform(45);
@@ -225,8 +225,8 @@ myBorder.RenderTransform = group;
 rotateTransform.Angle = 90; // Immediate change
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Animate transforms over time.
-- [Control Transitions](/docs/graphics-animation/control-transitions): Apply transitions when property values change.
-- [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes and geometries.
+- [关键帧动画](/docs/graphics-animation/keyframe-animations)：让变换随时间变化。
+- [控件过渡](/docs/graphics-animation/control-transitions)：在属性值变化时施加过渡。
+- [绘制图形](/docs/graphics-animation/drawing-graphics)：形状与几何。

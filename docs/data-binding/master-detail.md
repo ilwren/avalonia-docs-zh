@@ -1,15 +1,15 @@
 ---
 id: master-detail
-title: Master-detail binding
-description: Implement master-detail patterns where selecting an item displays its details in a bound view.
+title: 主从绑定
+description: 实现主从（master-detail）模式：选中某一项时，在绑定的视图中显示它的详细信息。
 doc-type: how-to
 ---
 
-A master-detail pattern displays a list of items (the "master") alongside the details of the currently selected item. You will find this pattern in email clients, settings screens, file managers, and many other applications. Avalonia makes it straightforward to wire up through data binding and `DataContext` inheritance.
+主从模式在一侧显示条目列表（「主」），在另一侧显示当前选中项的详情。邮件客户端、设置界面、文件管理器等等，到处都能见到这种模式。借助数据绑定和 `DataContext` 的继承机制，在 Avalonia 中搭起这套结构相当省事。
 
-## Basic master-detail
+## 基本的主从结构 {#basic-master-detail}
 
-Bind a [`ListBox`](/api/avalonia/controls/listbox) to a collection and display the selected item's properties in an adjacent panel. The detail panel sets its `DataContext` to the `SelectedPerson` property, so every binding inside it resolves against the selected object:
+把 [`ListBox`](/api/avalonia/controls/listbox) 绑定到一个集合，并在相邻的面板中显示选中项的各个属性。详情面板把自己的 `DataContext` 设为 `SelectedPerson` 属性，这样面板内部的每一处绑定都相对选中对象来解析：
 
 ```xml
 <Grid ColumnDefinitions="250,*">
@@ -36,7 +36,7 @@ Bind a [`ListBox`](/api/avalonia/controls/listbox) to a collection and display t
 </Grid>
 ```
 
-The view model:
+视图模型：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -56,16 +56,16 @@ public record Person(string Name, string Email, string Department);
 ```
 
 :::tip
-When you set `DataContext` on the detail panel, every binding inside it resolves relative to the selected item. This keeps your XAML concise because you do not need to repeat `SelectedPerson.` before each property path.
+一旦给详情面板设置了 `DataContext`，面板内部的所有绑定都相对选中项来解析。这让 XAML 简洁不少 —— 不必在每个属性路径前都重复写一遍 `SelectedPerson.`。
 :::
 
 :::note
-The `IsVisible` binding on the detail panel reaches back up through the visual tree to the parent `Grid` and casts its `DataContext` to your view model type. This is necessary because the detail panel's own `DataContext` is `null` when nothing is selected, so a local `IsVisible` binding would not evaluate correctly.
+详情面板上的 `IsVisible` 绑定会沿视觉树向上找到父级 `Grid`，再把它的 `DataContext` 转换为你的视图模型类型。这一步是必要的：没有选中项时，详情面板自身的 `DataContext` 为 `null`，直接写本地的 `IsVisible` 绑定是求不出正确结果的。
 :::
 
-## Editable detail view
+## 可编辑的详情视图 {#editable-detail-view}
 
-For two-way binding in the detail panel, use `TwoWay` mode and ensure your model implements `INotifyPropertyChanged`. When you use the MVVM Toolkit, the `[ObservableProperty]` attribute generates the required notification logic:
+要在详情面板中做双向绑定，请使用 `TwoWay` 模式，并确保模型实现了 `INotifyPropertyChanged`。若你用的是 MVVM Toolkit，`[ObservableProperty]` 特性会自动生成所需的通知逻辑：
 
 ```csharp
 public partial class Person : ObservableObject
@@ -97,15 +97,15 @@ public partial class Person : ObservableObject
 </StackPanel>
 ```
 
-Changes in the text boxes update the item in the master list automatically because both panels share the same object reference. If you used a `record` type for your model (as in the basic example above), you would need to switch to a class that raises `PropertyChanged` notifications for editable scenarios.
+由于两侧面板引用的是同一个对象，文本框里的改动会自动反映到主列表的条目上。如果模型用的是 `record` 类型（就像前面的基础示例那样），遇到可编辑场景就得换成一个会引发 `PropertyChanged` 通知的类。
 
 :::warning
-If your `ListBox.ItemTemplate` displays the same property you are editing (for example, `Name`), the list entry only updates in real time when the model raises `PropertyChanged`. A plain POCO or C# record will not trigger a UI refresh in the master list.
+如果 `ListBox.ItemTemplate` 中显示的正是你正在编辑的那个属性（比如 `Name`），那么只有当模型引发 `PropertyChanged` 时，列表项才会实时更新。普通的 POCO 或 C# record 是不会触发主列表刷新的。
 :::
 
-## Master-detail with a separate detail view model
+## 为详情单独准备一个视图模型 {#master-detail-with-a-separate-detail-view-model}
 
-For complex detail views, create a dedicated view model that updates when the selection changes. This approach is useful when you need to load additional data, run validation, or manage detail-specific commands:
+详情视图较复杂时，可以为它专门写一个视图模型，并在选中项变化时更新。需要加载额外数据、执行校验，或管理详情专属命令时，这种做法尤其合适：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -161,12 +161,12 @@ public partial class PersonDetailViewModel : ObservableObject
 ```
 
 :::tip
-If your detail data is loaded asynchronously, consider setting placeholder values (or showing a loading indicator) in the constructor, then updating the properties once the async operation completes. This prevents blank content from flashing briefly while data loads.
+如果详情数据是异步加载的，不妨在构造函数里先填上占位值（或显示加载指示器），等异步操作完成后再更新属性。这样可以避免加载期间内容一闪而过的空白。
 :::
 
-## Master-detail with navigation
+## 带导航的主从结构 {#master-detail-with-navigation}
 
-In mobile or compact layouts, the detail replaces the master list instead of appearing side by side. You can achieve this with a visibility toggle and `TransitioningContentControl` for animated transitions:
+在移动端或空间紧凑的布局中，详情不是并排显示，而是直接把主列表替换掉。用一个可见性开关配合 `TransitioningContentControl` 就能实现带动画的切换：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -209,12 +209,12 @@ public partial class MainViewModel : ObservableObject
 ```
 
 :::note
-If you want to preserve the user's scroll position in the master list when they navigate back, keep the `ListBox` in the visual tree (using `IsVisible`) rather than removing it with a `ContentControl` swap. Hidden controls retain their state.
+如果希望用户返回时主列表仍停留在原来的滚动位置，请让 `ListBox` 留在视觉树中（用 `IsVisible` 控制），而不要用 `ContentControl` 把它整个换掉。隐藏的控件会保留自身状态。
 :::
 
-## Nested master-detail
+## 嵌套的主从结构 {#nested-master-detail}
 
-For hierarchical data such as categories containing items, you can chain multiple master-detail levels. Each column binds its `ItemsSource` to the selected item from the previous level:
+对于「分类下面挂条目」这类层级数据，可以把多级主从串联起来。每一列都把自己的 `ItemsSource` 绑定到上一级的选中项：
 
 ```xml
 <Grid ColumnDefinitions="200,200,*">
@@ -250,12 +250,12 @@ For hierarchical data such as categories containing items, you can chain multipl
 ```
 
 :::warning
-When the user selects a new category, the second-level `ListBox` receives a new `ItemsSource` and loses its selection. If you do not explicitly clear `SelectedItem` in your view model when `SelectedCategory` changes, you may display stale detail content from the previous category. Handle this by resetting `SelectedItem` to `null` inside `OnSelectedCategoryChanged`.
+用户选中新分类时，第二级的 `ListBox` 会拿到新的 `ItemsSource` 并丢失原有选中项。如果 `SelectedCategory` 变化时你没有在视图模型中显式清空 `SelectedItem`，界面上可能还留着上一个分类的陈旧详情。解决办法是在 `OnSelectedCategoryChanged` 中把 `SelectedItem` 重置为 `null`。
 :::
 
-## Placeholder for empty selection
+## 未选中时的占位内容 {#placeholder-for-empty-selection}
 
-Show a message or graphic when no item is selected so that the detail area does not appear blank:
+没有选中任何条目时显示一段提示文字或一张图，免得详情区域一片空白：
 
 ```xml
 <Panel Grid.Column="1">
@@ -276,12 +276,12 @@ Show a message or graphic when no item is selected so that the detail area does 
 </Panel>
 ```
 
-You can replace the placeholder `TextBlock` with an image, an icon, or any custom layout that fits your application's design.
+你可以把占位用的 `TextBlock` 换成图片、图标，或任何契合应用设计风格的自定义布局。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Bind to a collection](/docs/data-binding/how-to-bind-to-a-collection): Binding `ItemsSource` and `DataTemplate` usage.
-- [Data templates](/docs/data-templates/introduction-to-data-templates): Controlling how items are displayed.
-- [Data context](/docs/data-binding/data-context): How `DataContext` flows through the control tree.
-- [Collection views](/docs/data-binding/collection-views): Sorting, filtering, and grouping bound collections.
-- [Compiled bindings](/docs/data-binding/compiled-bindings): Improve binding performance and catch errors at compile time.
+- [绑定到集合](/docs/data-binding/how-to-bind-to-a-collection)：`ItemsSource` 与 `DataTemplate` 的用法。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：控制数据项的呈现方式。
+- [数据上下文](/docs/data-binding/data-context)：`DataContext` 在控件树中如何向下流动。
+- [集合视图](/docs/data-binding/collection-views)：对绑定的集合做排序、筛选和分组。
+- [编译绑定](/docs/data-binding/compiled-bindings)：提升绑定性能，并在编译期发现错误。

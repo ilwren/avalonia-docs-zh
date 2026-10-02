@@ -1,7 +1,7 @@
 ---
 id: process-flow-chart
-title: Process flow chart
-description: Uses FlowChart nodes and edges to visualize business workflows and decision trees.
+title: 工序流程图
+description: 用 FlowChart 的节点和边呈现业务工作流与决策树。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFlowProcess from '/img/controls/charts/charts-flow-process.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Process flow charts are used to visualize sequences of steps, decisions, and logical outcomes in a system. In `Avalonia.Controls.Charts`, this is implemented with `FlowChart`, `FlowNode`, and `FlowEdge`.
+工序流程图用来呈现系统中的步骤序列、判断分支和逻辑结果。在 `Avalonia.Controls.Charts` 中，它由 `FlowChart`、`FlowNode` 和 `FlowEdge` 实现。
 
 <Image light={chartsFlowProcess} maxWidth={400} position="center" cornerRadius="true" alt="Process flow chart with start, decision, and action nodes connected by directional arrows showing a workflow sequence." />
 
-## When to use
-- **Workflow mapping**: Visualizing business processes or approval chains.
-- **Decision trees**: Showing the logic path for troubleshooting or user journeys.
-- **System architecture**: Mapping connections between different modules or services.
+## 适用场景 {#when-to-use}
+- **工作流梳理**：呈现业务流程或审批链路。
+- **决策树**：展示故障排查或用户旅程的逻辑路径。
+- **系统架构**：梳理各模块或各服务之间的连接。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Process flow charts are used to visualize sequences of steps, decisions, and log
                   Edges="{Binding FlowEdges}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using Avalonia.Media;
 
@@ -111,12 +111,12 @@ public ObservableCollection<FlowEdge> FlowEdges { get; } = new()
 };
 ```
 
-## Common properties (`FlowChart`)
+## 常用属性（`FlowChart`） {#common-properties-flowchart}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Nodes` | Collection of `FlowNode` items representing process steps. | `null` |
-| `Edges` | Collection of `FlowEdge` items representing connections. | `null` |
-| `NodeCornerRadius` | Rounding of rendered node boxes. | `10.0` |
-| `Groups` | Optional collection of `FlowGroup` containers. | `null` |
-| `FlowEdge.ShowArrow` | Whether the connection ends with an arrow head. | `true` |
+| `Nodes` | 表示各道工序的 `FlowNode` 项集合。 | `null` |
+| `Edges` | 表示各条连接的 `FlowEdge` 项集合。 | `null` |
+| `NodeCornerRadius` | 所绘节点方框的圆角程度。 | `10.0` |
+| `Groups` | 可选的 `FlowGroup` 容器集合。 | `null` |
+| `FlowEdge.ShowArrow` | 连接末端是否带箭头。 | `true` |

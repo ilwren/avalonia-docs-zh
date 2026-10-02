@@ -1,24 +1,24 @@
 ---
 id: lollipop-chart
-title: Lollipop chart
-description: Displays data as dots with thin stems connecting to the axis, combining the precision of dot plots with the visual anchoring of bar charts.
+title: 棒棒糖图
+description: 把数据画成圆点，再用细杆连到坐标轴上，兼具点图的精确和条形图的视觉落点。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Lollipop charts display data points as dots with thin stems extending to the baseline. They are a lightweight alternative to bar charts that reduce visual clutter while maintaining clear value communication.
+棒棒糖图把数据点画成圆点，并用细杆延伸到基线。它是条形图的轻量替代品，既减少了视觉上的杂乱，又把数值交代得清清楚楚。
 
-## When to use
-- **Lightweight comparison**: When bar charts feel too heavy and you want a cleaner look.
-- **Many categories**: Reducing ink-to-data ratio when comparing many categories side-by-side.
-- **Presentations**: Creating visually appealing charts where emphasis is on the data point value.
+## 适用场景 {#when-to-use}
+- **轻量对比**：觉得条形图太「重」、想要更清爽的观感时。
+- **类别众多**：并排比较大量类别时，降低墨水与数据的比例。
+- **演示汇报**：做出好看的图表，又让重点落在数据点的数值上。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -40,7 +40,7 @@ Lollipop charts display data points as dots with thin stems extending to the bas
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record SalesItem(string Month, double Amount);
 
@@ -54,22 +54,22 @@ public ObservableCollection<SalesItem> MonthlySales { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series shown in the legend. | `null` |
-| `ItemsSource` | The collection of data items to display. | `null` |
-| `CategoryPath` | Path to the property used for the X-axis. | `null` |
-| `ValuePath` | Path to the property used for the Y-axis. | `null` |
-| `Fill` | The color/brush used to fill the dot. | Theme-dependent |
-| `Stroke` | The outline color of the dot. | `Transparent` |
-| `StemThickness` | The thickness of the stem line. | `2` |
-| `StemBrush` | The brush for the stem line. | `null` (Defaults to same color as `Fill` when unset.) |
-| `Orientation` | The direction of the stems, `Vertical` or `Horizontal`. | `Vertical` |
+| `Title` | 在图例中显示的系列名称。 | `null` |
+| `ItemsSource` | 要显示的数据项集合。 | `null` |
+| `CategoryPath` | 指向 X 轴所用属性的路径。 | `null` |
+| `ValuePath` | 指向 Y 轴所用属性的路径。 | `null` |
+| `Fill` | 填充圆点所用的颜色/画刷。 | Theme-dependent |
+| `Stroke` | 圆点的轮廓颜色。 | `Transparent` |
+| `StemThickness` | 细杆的粗细。 | `2` |
+| `StemBrush` | 细杆所用的画刷。 | `null`（未设置时与 `Fill` 同色。） |
+| `Orientation` | 细杆的方向，`Vertical` 或 `Horizontal`。 | `Vertical` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Dot plot chart](/controls/data-display/charts/cartesian/dot-plot-chart)
-- [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
-- [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart)
+- [点图](/controls/data-display/charts/cartesian/dot-plot-chart)
+- [条形图](/controls/data-display/charts/cartesian/bar-chart)
+- [散点图](/controls/data-display/charts/cartesian/scatter-chart)

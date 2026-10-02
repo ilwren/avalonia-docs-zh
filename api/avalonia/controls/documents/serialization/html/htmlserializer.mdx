@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HtmlSerializer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Html</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents.Serialization.Html</code>
 </div>
 </div>
 
@@ -51,23 +51,23 @@ public class HtmlSerializer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlSerializer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> HtmlSerializer
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../idocumentserializer">IDocumentSerializer</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../idocumentserializer">IDocumentSerializer</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Serialization (write) is not supported. [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29) throws
 [NotSupportedException](xref:System.NotSupportedException). Use RTF or DOCX serializers for export.
 
 Custom tag handling is available via [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions.TagHandlers](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions.TagHandlers).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HtmlSerializer](#uid-0464fbe9ab) | Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer) with optional HTML options. |
 
@@ -75,7 +75,7 @@ Custom tag handling is available via [Avalonia.Controls.Documents.Serialization.
 
 <span id="uid-0464fbe9ab"></span>
 
-### HtmlSerializer Constructor
+### HtmlSerializer 构造函数 {#htmlserializer-constructor}
 
 Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer) with optional HTML options.
 
@@ -83,7 +83,7 @@ Initializes a new instance of [Avalonia.Controls.Documents.Serialization.Html.Ht
 public HtmlSerializer(Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions options)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `options` [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializerOptions)
 
@@ -92,57 +92,57 @@ HTML reader options; [Avalonia.Controls.Documents.Serialization.Html.HtmlSeriali
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanDeserialize](#uid-6388f7e520) | Checks if a stream appears to contain this format. |
-| [Deserialize (2 overloads)](#uid-c454230d11) | Deserializes a document from an HTML stream. |
-| [DeserializeAsync](#uid-393ede2118) | Runs [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread. |
-| [Serialize](#uid-d18efe0210) | Serializes a document snapshot to a stream on the calling thread. |
-| [SerializeAsync](#uid-b2d1ef43eb) | Runs [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread. |
+| [CanDeserialize](#uid-6388f7e520) | 检查某个流看起来是否属于这种格式。 |
+| [Deserialize（2 个重载）](#uid-c454230d11) | Deserializes a document from an HTML stream. |
+| [DeserializeAsync](#uid-393ede2118) | 在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29)。 |
+| [Serialize](#uid-d18efe0210) | 在调用线程上把文档快照序列化到流中。 |
+| [SerializeAsync](#uid-b2d1ef43eb) | 在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6388f7e520"></span>
 
-### CanDeserialize Method
+### CanDeserialize 方法 {#candeserialize-method}
 
-Checks if a stream appears to contain this format.
+检查某个流看起来是否属于这种格式。
 
 ```csharp
 public bool CanDeserialize(System.IO.Stream stream)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `stream` System.IO.Stream
 
-The stream to check. Must be readable and seekable.
+要检查的流，必须可读且可定位。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
-True if the stream likely contains this format; otherwise, false.
+若该流很可能属于这种格式则为 true，否则为 false。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-This method does not consume the stream; it restores the original position after checking.
+该方法不会消耗流；检查完毕后会把流恢复到原来的位置。
 
 </section>
 
 <span id="uid-c454230d11"></span>
 
-### Deserialize overloads
+### Deserialize 的重载 {#deserialize-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-41acfaac30"></span>
 
-#### Deserialize Method
+#### Deserialize 方法 {#deserialize-method}
 
 Deserializes a document from an HTML stream.
 
@@ -150,7 +150,7 @@ Deserializes a document from an HTML stream.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deserialize(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `stream` System.IO.Stream
 
@@ -158,7 +158,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deser
 `cancellationToken` System.Threading.CancellationToken
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -169,7 +169,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deser
 
 <span id="uid-f0c2171d11"></span>
 
-#### Deserialize Method
+#### Deserialize 方法 {#deserialize-method-1}
 
 Deserializes a document from an HTML string.
 
@@ -177,12 +177,12 @@ Deserializes a document from an HTML string.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deserialize(string html)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `html` string
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -193,38 +193,37 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Deser
 
 <span id="uid-393ede2118"></span>
 
-### DeserializeAsync Method
+### DeserializeAsync 方法 {#deserializeasync-method}
 
-Runs [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread.
+在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29)。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot> DeserializeAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)&gt;
 
-The deserialized snapshot.
+反序列化得到的快照。
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-A thread-offload convenience, not asynchronous I/O: no format here reads asynchronously.
-Where you are already off the UI thread, call [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) and keep the
-thread you are on.
+这只是把活儿挪到别的线程上图个方便，并非异步 I/O——这里没有哪种格式是异步读取的。
+若你本就不在 UI 线程上，直接调用 [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) 并留在当前线程即可。
 
 </section>
 
@@ -232,37 +231,37 @@ thread you are on.
 
 <span id="uid-d18efe0210"></span>
 
-### Serialize Method
+### Serialize 方法 {#serialize-method}
 
-Serializes a document snapshot to a stream on the calling thread.
+在调用线程上把文档快照序列化到流中。
 
 ```csharp
 public void Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
-The document snapshot to serialize.
+要序列化的文档快照。
 
 
 `stream` System.IO.Stream
 
-The stream to write to. Must be writable.
+要写入的流，必须可写。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
-Defaults to blocking on [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29), so a serializer written against the
-released interface keeps working. Implement this member instead.
+默认实现会阻塞调用 [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.SerializeAsync%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29)，这样照着已发布接口写的序列化器
+仍能照常工作。请改为实现该成员。
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Always thrown. HTML serialization is not supported.](xref:System.NotSupportedException)
 
@@ -272,71 +271,71 @@ released interface keeps working. Implement this member instead.
 
 <span id="uid-b2d1ef43eb"></span>
 
-### SerializeAsync Method
+### SerializeAsync 方法 {#serializeasync-method}
 
-Runs [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29) on a pool thread.
+在线程池线程上运行 [Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.Html.HtmlSerializer.Serialize%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.IO.Stream%2CSystem.Threading.CancellationToken%29)。
 
 ```csharp
 public System.Threading.Tasks.Task SerializeAsync(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
-The snapshot to serialize.
+要序列化的快照。
 
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Threading.Tasks.Task
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
-A thread-offload convenience, not asynchronous I/O. The snapshot is already detached from
-the document, so the work needs no UI thread either way.
+这只是把活儿挪到别的线程上图个方便，并非异步 I/O。快照早已与文档脱钩，
+这些工作本来也用不着 UI 线程。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanRead](#uid-33c53a3c23) | Whether this serializer supports reading. Read-only UIs can filter serializer lists on this instead of catching [NotSupportedException](xref:System.NotSupportedException) from [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29). |
-| [CanWrite](#uid-e5a7c70a22) | Whether this serializer supports writing documents. |
-| [FileExtension](#uid-b97155f220) | Gets the file extension including the dot (e.g., ".rtf"). |
-| [FormatName](#uid-b4c47085d0) | Gets the format name this serializer handles (e.g., "Rtf", "Docx", "PlainText"). |
-| [MimeType](#uid-6e6eb9ac47) | Gets the MIME type for the format (e.g., "application/rtf"). |
+| [CanRead](#uid-33c53a3c23) | 该序列化器是否支持读取。只读界面可据此筛掉不支持的序列化器，而不必去捕获 [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) 抛出的 [NotSupportedException](xref:System.NotSupportedException)。 |
+| [CanWrite](#uid-e5a7c70a22) | 该序列化器是否支持写出文档。 |
+| [FileExtension](#uid-b97155f220) | 获取带点的文件扩展名（例如 ".rtf"）。 |
+| [FormatName](#uid-b4c47085d0) | 获取该序列化器所处理的格式名称（例如 "Rtf"、"Docx"、"PlainText"）。 |
+| [MimeType](#uid-6e6eb9ac47) | 获取该格式的 MIME 类型（例如 "application/rtf"）。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-33c53a3c23"></span>
 
-### CanRead Property
+### CanRead 属性 {#canread-property}
 
-Whether this serializer supports reading. Read-only UIs can filter serializer lists on
-this instead of catching [NotSupportedException](xref:System.NotSupportedException) from
-[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29).
+该序列化器是否支持读取。只读界面可据此筛掉不支持的序列化器，
+而不必去捕获
+[Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize(System.IO.Stream,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.Deserialize%28System.IO.Stream%2CSystem.Threading.CancellationToken%29) 抛出的 [NotSupportedException](xref:System.NotSupportedException)。
 
 ```csharp
 public bool CanRead { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
-Defaults to so a serializer written before this member existed
-still compiles. A serializer that cannot read says so.
+默认实现为 false，这样在该成员出现之前写就的序列化器
+仍能编译通过。读不了的序列化器自会如实相告。
 
 </section>
 
@@ -344,18 +343,18 @@ still compiles. A serializer that cannot read says so.
 
 <span id="uid-e5a7c70a22"></span>
 
-### CanWrite Property
+### CanWrite 属性 {#canwrite-property}
 
-Whether this serializer supports writing documents.
+该序列化器是否支持写出文档。
 
 ```csharp
 public bool CanWrite { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
-Defaults to so a serializer written before this member existed
-still compiles. A serializer that cannot write says so.
+默认实现为 false，这样在该成员出现之前写就的序列化器
+仍能编译通过。写不了的序列化器自会如实相告。
 
 </section>
 
@@ -363,9 +362,9 @@ still compiles. A serializer that cannot write says so.
 
 <span id="uid-b97155f220"></span>
 
-### FileExtension Property
+### FileExtension 属性 {#fileextension-property}
 
-Gets the file extension including the dot (e.g., ".rtf").
+获取带点的文件扩展名（例如 ".rtf"）。
 
 ```csharp
 public string FileExtension { get; set; }
@@ -377,9 +376,9 @@ public string FileExtension { get; set; }
 
 <span id="uid-b4c47085d0"></span>
 
-### FormatName Property
+### FormatName 属性 {#formatname-property}
 
-Gets the format name this serializer handles (e.g., "Rtf", "Docx", "PlainText").
+获取该序列化器所处理的格式名称（例如 "Rtf"、"Docx"、"PlainText"）。
 
 ```csharp
 public string FormatName { get; set; }
@@ -391,9 +390,9 @@ public string FormatName { get; set; }
 
 <span id="uid-6e6eb9ac47"></span>
 
-### MimeType Property
+### MimeType 属性 {#mimetype-property}
 
-Gets the MIME type for the format (e.g., "application/rtf").
+获取该格式的 MIME 类型（例如 "application/rtf"）。
 
 ```csharp
 public string MimeType { get; set; }

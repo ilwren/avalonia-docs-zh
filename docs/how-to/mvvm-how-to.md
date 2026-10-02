@@ -1,25 +1,25 @@
 ---
 id: mvvm-how-to
-title: "How to: Implement common MVVM patterns"
-description: Learn how to implement common MVVM patterns in Avalonia using CommunityToolkit.Mvvm, including observable properties, commands, messaging, dependency injection, and validation.
+title: "操作指南：实现常见的 MVVM 套路"
+description: 学会在 Avalonia 中用 CommunityToolkit.Mvvm 实现常见的 MVVM 套路，包括可观察属性、命令、消息传递、依赖注入与校验。
 doc-type: how-to
 ---
 
-This guide covers practical MVVM patterns for Avalonia using `CommunityToolkit.Mvvm`, the recommended MVVM framework. Each section walks you through a specific pattern with code you can adapt to your own projects.
+本指南介绍在 Avalonia 中使用 `CommunityToolkit.Mvvm`（推荐的 MVVM 框架）的实用套路。每一节都带你走一遍某个具体做法，代码可以直接改到你自己的项目里。
 
-## Setting up CommunityToolkit.Mvvm
+## 配置 CommunityToolkit.Mvvm {#setting-up-communitytoolkitmvvm}
 
-Install the NuGet package in your project:
+在项目中安装 NuGet 包：
 
 ```bash
 dotnet add package CommunityToolkit.Mvvm
 ```
 
-Once installed, you can use source generators and base classes from the toolkit to eliminate boilerplate code in your view models.
+装好之后，你就能用这个工具包的源生成器和基类，省去视图模型里的大量样板代码。
 
-## Observable properties
+## 可观察属性 {#observable-properties}
 
-Use the `[ObservableProperty]` attribute to generate properties with `INotifyPropertyChanged` support automatically. You declare a private backing field, and the source generator creates a public property for you:
+用 `[ObservableProperty]` 特性自动生成带 `INotifyPropertyChanged` 支持的属性。你只需声明一个私有的后备字段，源生成器就会替你造出公共属性：
 
 ```csharp
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -36,11 +36,11 @@ public partial class PersonViewModel : ObservableObject
 }
 ```
 
-Your class must be marked `partial` so the source generator can add the generated members. The generated property names follow .NET conventions: `_firstName` becomes `FirstName`.
+你的类必须标记为 `partial`，源生成器才能往里面添加生成的成员。生成的属性名遵循 .NET 惯例：`_firstName` 会变成 `FirstName`。
 
-### Computed properties
+### 计算属性 {#computed-properties}
 
-When one property depends on another, use `[NotifyPropertyChangedFor]` to raise change notifications for the dependent property automatically:
+当一个属性依赖另一个属性时，用 `[NotifyPropertyChangedFor]` 自动为依赖方引发变更通知：
 
 ```csharp
 [ObservableProperty]
@@ -54,11 +54,11 @@ private string _lastName = "";
 public string FullName => $"{FirstName} {LastName}";
 ```
 
-Whenever `FirstName` or `LastName` changes, the toolkit also raises `PropertyChanged` for `FullName`, keeping your UI in sync.
+`FirstName` 或 `LastName` 一变，工具包就会顺带为 `FullName` 引发 `PropertyChanged`，让界面保持同步。
 
-### Property changed callbacks
+### 属性变更回调 {#property-changed-callbacks}
 
-You can run code when a property changes by defining partial methods that the source generator calls automatically:
+定义若干分部方法，源生成器会自动调用它们，你就能在属性变化时执行代码：
 
 ```csharp
 [ObservableProperty]
@@ -76,15 +76,15 @@ partial void OnSearchTextChanging(string value)
 }
 ```
 
-The `OnSearchTextChanging` callback fires before the value is assigned, giving you a chance to inspect the incoming value. The `OnSearchTextChanged` callback fires after the assignment, which is useful for triggering side effects like filtering a list.
+`OnSearchTextChanging` 回调在赋值之前触发，让你有机会检视传进来的值；`OnSearchTextChanged` 回调在赋值之后触发，适合用来引发筛选列表之类的副作用。
 
 ## Commands
 
-Commands let you bind UI actions (such as button clicks) to methods in your view model.
+命令让你能把界面上的操作（比如按钮点击）绑定到视图模型中的方法。
 
-### Basic command
+### 基本命令 {#basic-command}
 
-Apply `[RelayCommand]` to a method, and the toolkit generates an `IRelayCommand` property for you:
+给方法加上 `[RelayCommand]`，工具包就会替你生成一个 `IRelayCommand` 属性：
 
 ```csharp
 [RelayCommand]
@@ -94,11 +94,11 @@ private void Save()
 }
 ```
 
-This generates a `SaveCommand` property. The naming convention appends "Command" to your method name.
+这会生成一个 `SaveCommand` 属性。命名惯例是在你的方法名后面加上「Command」。
 
-### Command with a parameter
+### 带参数的命令 {#command-with-a-parameter}
 
-You can pass data from the view to your command by adding a parameter to the method:
+给方法加一个参数，就能把数据从视图传给命令：
 
 ```csharp
 [RelayCommand]
@@ -108,7 +108,7 @@ private void Delete(Item item)
 }
 ```
 
-Bind the command and its parameter in AXAML:
+在 AXAML 中绑定命令及其参数：
 
 ```xml
 <Button Content="Delete"
@@ -116,9 +116,9 @@ Bind the command and its parameter in AXAML:
         CommandParameter="{Binding SelectedItem}" />
 ```
 
-### Async command
+### 异步命令 {#async-command}
 
-For long-running operations, use an `async Task` method. The toolkit handles disabling the command while it runs and provides built-in cancellation support:
+耗时较久的操作请用 `async Task` 方法。工具包会在执行期间自动禁用该命令，并内置了取消支持：
 
 ```csharp
 [RelayCommand]
@@ -131,11 +131,11 @@ private async Task LoadDataAsync(CancellationToken token)
 }
 ```
 
-The generated command automatically:
+生成的命令会自动：
 
-- Disables the associated button while the task is running
-- Passes a `CancellationToken` you can use to cancel the operation
-- Exposes an `IsRunning` property for progress indication
+- 在任务运行期间禁用与之关联的按钮
+- 传入一个 `CancellationToken`，供你取消操作
+- 公开一个 `IsRunning` 属性，便于显示进度
 
 ```xml
 <Button Content="Load" Command="{Binding LoadDataCommand}" />
@@ -144,7 +144,7 @@ The generated command automatically:
 
 ### CanExecute
 
-You can conditionally enable or disable a command based on your view model state. Use `[NotifyCanExecuteChangedFor]` on properties that affect the condition so the command re-evaluates automatically:
+你可以根据视图模型的状态有条件地启用或禁用命令。给影响该条件的属性加上 `[NotifyCanExecuteChangedFor]`，命令就会自动重新判定：
 
 ```csharp
 [ObservableProperty]
@@ -160,13 +160,13 @@ private void Save()
 private bool CanSave() => !string.IsNullOrWhiteSpace(Name);
 ```
 
-The button bound to `SaveCommand` is automatically disabled when `CanSave()` returns `false`. When `Name` changes, the command re-evaluates whether it can execute.
+当 `CanSave()` 返回 `false` 时，绑定到 `SaveCommand` 的按钮会自动禁用。`Name` 一变，命令便重新判定自己能否执行。
 
-## View model communication
+## 视图模型之间的通信 {#view-model-communication}
 
-### Using a messenger
+### 使用 messenger {#using-a-messenger}
 
-The `WeakReferenceMessenger` lets you send messages between view models without creating direct references between them. This keeps your view models decoupled:
+`WeakReferenceMessenger` 让你在视图模型之间收发消息，而不必让它们彼此持有引用，从而保持解耦：
 
 ```csharp
 using CommunityToolkit.Mvvm.Messaging;
@@ -192,11 +192,11 @@ public class DetailViewModel : ObservableRecipient, IRecipient<ItemSelectedMessa
 }
 ```
 
-Setting `IsActive = true` registers the view model to receive messages. When you set it to `false` (or when the object is garbage collected), the registration is removed automatically.
+设置 `IsActive = true` 会把视图模型注册为消息接收方。当你把它设为 `false`（或该对象被垃圾回收）时，注册会自动解除。
 
-### Request/response pattern
+### 请求/响应模式 {#requestresponse-pattern}
 
-For scenarios where you need a response (such as a confirmation dialog), use a request message:
+若某个场景需要拿到回复（比如确认对话框），请使用请求消息：
 
 ```csharp
 public record ConfirmDeleteRequest(Item Item);
@@ -213,9 +213,9 @@ WeakReferenceMessenger.Default.Register<ConfirmDeleteRequest>(this, async (r, m)
 });
 ```
 
-## Dependency injection
+## 依赖注入 {#dependency-injection}
 
-Register your view models and services with a DI container to manage their lifetimes and dependencies cleanly:
+把视图模型和服务注册到 DI 容器里，干净利落地管理它们的生命周期与依赖：
 
 ```csharp
 public static class ServiceCollectionExtensions
@@ -230,7 +230,7 @@ public static class ServiceCollectionExtensions
 }
 ```
 
-Wire up the container in `App.axaml.cs`:
+在 `App.axaml.cs` 中搭好容器：
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -251,11 +251,11 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-Use `AddTransient` for view models that should be created fresh each time, and `AddSingleton` for shared services that maintain state across the application.
+每次都应新建的视图模型用 `AddTransient`；需要跨应用维持状态的共享服务用 `AddSingleton`。
 
-## View model with constructor injection
+## 通过构造函数注入的视图模型 {#view-model-with-constructor-injection}
 
-When you register your view models in a DI container, you can inject services through the constructor. The container resolves all dependencies automatically:
+把视图模型注册进 DI 容器之后，你就能通过构造函数注入服务，容器会自动解析全部依赖：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -278,13 +278,13 @@ public partial class MainViewModel : ObservableObject
 }
 ```
 
-This pattern makes your view models testable because you can substitute mock implementations of `IDataService` and `INavigationService` in your unit tests.
+这种写法让视图模型变得可测试——在单元测试里，你可以把 `IDataService` 和 `INavigationService` 换成模拟实现。
 
-## ObservableCollection patterns
+## ObservableCollection 的用法 {#observablecollection-patterns}
 
-### Replace vs. add
+### 整体替换还是逐项添加 {#replace-vs-add}
 
-When updating a large number of items, replacing the entire collection is significantly faster than adding items individually. Each call to `Add` triggers a UI update, whereas assigning a new collection triggers only one:
+要更新大量项目时，整体替换集合比逐个添加快得多。每调用一次 `Add` 都会触发一次界面更新，而赋一个新集合只触发一次：
 
 ```csharp
 // Slow: UI updates on each Add
@@ -295,9 +295,9 @@ foreach (var item in newItems)
 Items = new ObservableCollection<Item>(newItems);
 ```
 
-### Filtered collection
+### 筛选后的集合 {#filtered-collection}
 
-You can implement filtering by replacing the displayed collection whenever the filter text changes:
+筛选的做法很简单：筛选文本一变，就把展示用的集合换掉：
 
 ```csharp
 [ObservableProperty]
@@ -313,11 +313,11 @@ partial void OnFilterChanged(string value)
 }
 ```
 
-Bind your `ItemsControl` or `ListBox` to `FilteredItems` rather than the underlying `_allItems` collection.
+请把 `ItemsControl` 或 `ListBox` 绑定到 `FilteredItems`，而不是底层的 `_allItems` 集合。
 
 ## Validation
 
-Use `ObservableValidator` as your base class to enable data annotation validation on your view model properties:
+把 `ObservableValidator` 用作基类，即可为视图模型的属性启用数据注解校验：
 
 ```csharp
 public partial class RegisterViewModel : ObservableValidator
@@ -339,14 +339,14 @@ public partial class RegisterViewModel : ObservableValidator
 }
 ```
 
-The `[NotifyDataErrorInfo]` attribute tells the source generator to trigger validation automatically when the property changes. Avalonia's data binding system picks up these validation errors and can display them in the UI using `DataValidationErrors`.
+`[NotifyDataErrorInfo]` 特性告诉源生成器：属性变化时自动触发校验。Avalonia 的数据绑定系统会接住这些校验错误，并可借助 `DataValidationErrors` 把它们显示在界面上。
 
-For more information about displaying validation errors in your views, see [Validation in data binding](/docs/data-binding/binding-validation).
+关于如何在视图中显示校验错误，请参阅[数据绑定中的校验](/docs/data-binding/binding-validation)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
-- [Binding to commands](/docs/data-binding/binding-to-commands)
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)
+- [绑定到命令](/docs/data-binding/binding-to-commands)
 - [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged)
-- [Dependency injection](/docs/app-development/dependency-injection)
-- [Validation in data binding](/docs/data-binding/binding-validation)
+- [依赖注入](/docs/app-development/dependency-injection)
+- [数据绑定中的校验](/docs/data-binding/binding-validation)

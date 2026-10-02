@@ -1,28 +1,22 @@
 ---
 id: breaking-changes-v12
-title: TreeDataGrid v12 breaking changes
+title: TreeDataGrid v12 破坏性变更
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-This document describes the breaking changes between TreeDataGrid 11.x and 12.x and
-provides migration guidance.
+本文梳理 TreeDataGrid 11.x 到 12.x 之间的破坏性变更，并给出迁移指引。
 
-TreeDataGrid 12.0 represents a major refactor of the TreeDataGrid API in an effort to
-future-proof the API and provide API stability promises that were not present for
-TreeDataGrid 11.x.
+TreeDataGrid 12.0 对其 API 作了一次大规模重构，目的是让 API 面向未来，并提供 11.x 时期所不具备的 API 稳定性承诺。
 
-TreeDataGrid 12.x requires Avalonia 12. For Avalonia 12 breaking changes, see the
-[Avalonia 12 breaking changes](https://docs.avaloniaui.net/docs/avalonia12-breaking-changes)
-document.
+TreeDataGrid 12.x 需要 Avalonia 12。Avalonia 12 自身的破坏性变更请参阅 [Avalonia 12 破坏性变更](https://docs.avaloniaui.net/docs/avalonia12-breaking-changes)文档。
 
-## Generic type parameters removed from columns
+## 列类型不再带泛型参数 {#generic-type-parameters-removed-from-columns}
 
-All column classes have had their generic type parameters removed and have been renamed
-with a `TreeDataGrid` prefix. Columns are no longer generic over the model type.
+所有列类都去掉了泛型类型参数，并改用 `TreeDataGrid` 前缀重新命名。列不再按模型类型泛型化。
 
-| 12.x | Replaces |
+| 12.x | 取代 |
 |---|---|
 | `TreeDataGridTextColumn` | `TextColumn<TModel, TValue>` |
 | `TreeDataGridCheckBoxColumn` | `CheckBoxColumn<TModel>` |
@@ -31,10 +25,9 @@ with a `TreeDataGrid` prefix. Columns are no longer generic over the model type.
 | `TreeDataGridRowHeaderColumn` | `RowHeaderColumn<TModel>` |
 | `TreeDataGridColumns` | `ColumnList<TModel>` |
 
-## XAML support
+## XAML 支持 {#xaml-support}
 
-TreeDataGrid now supports defining columns directly in XAML without a code-behind source.
-Set the `ItemsSource` property and define columns as content:
+TreeDataGrid 现在支持直接在 XAML 中定义列，不必再写代码隐藏里的数据源。设置 `ItemsSource` 属性，然后把各列作为内容写进去即可：
 
 ```xml
 <TreeDataGrid ItemsSource="{Binding Countries}" SelectionMode="Row,Multiple">
@@ -44,7 +37,7 @@ Set the `ItemsSource` property and define columns as content:
 </TreeDataGrid>
 ```
 
-For hierarchical data, use `TreeDataGridHierarchicalExpanderColumn`:
+层级数据则使用 `TreeDataGridHierarchicalExpanderColumn`：
 
 ```xml
 <TreeDataGrid ItemsSource="{Binding Files}">
@@ -57,18 +50,15 @@ For hierarchical data, use `TreeDataGridHierarchicalExpanderColumn`:
 </TreeDataGrid>
 ```
 
-The code-behind `FlatTreeDataGridSource` / `HierarchicalTreeDataGridSource` approach
-continues to work as before (with the API changes described in this document).
+代码隐藏中 `FlatTreeDataGridSource` / `HierarchicalTreeDataGridSource` 那套写法照旧可用（API 变动见本文所述）。
 
-## Fluent column API
+## 流式列 API {#fluent-column-api}
 
-There is now a fluent API for creating columns from code.
+现在提供了一套流式 API，可用代码创建列。
 
-Separate getter/setter lambdas are no longer used. The getter expression is used for
-two-way binding automatically when the expression is writable. If you wish to create a read-only
-column, set `IsReadOnly` in the options callback.
+不再需要分别写取值和赋值两个 lambda。只要取值表达式可写，它就会自动用于双向绑定。若想创建只读列，请在选项回调中设置 `IsReadOnly`。
 
-When the header matches the property selected by the lambda, you can omit it.
+当列标题与 lambda 所选的属性同名时，标题可以省略。
 
 ### `WithTextColumn`
 
@@ -81,7 +71,7 @@ When the header matches the property selected by the lambda, you can omit it.
 +source.WithTextColumn("Country", x => x.Name, o => o.Width = new GridLength(6, GridUnitType.Star))
 ```
 
-Some examples:
+几个例子：
 
 ```csharp
 source.WithTextColumn("Name", x => x.Name)
@@ -92,7 +82,7 @@ source.WithTextColumn(x => x.Name, o => o.Width = GridLength.Star)
 
 ### `WithCheckBoxColumn`/`WithThreeStateCheckBoxColumn`
 
-Checkboxes can be added using `WithCheckBoxColumn` or `WithThreeStateCheckBoxColumn`:
+复选框可以用 `WithCheckBoxColumn` 或 `WithThreeStateCheckBoxColumn` 添加：
 
 ```diff
 -new CheckBoxColumn<FileTreeNodeModel>(
@@ -104,7 +94,7 @@ Checkboxes can be added using `WithCheckBoxColumn` or `WithThreeStateCheckBoxCol
 
 ### `WithTemplateColumn`
 
-Template columns can be added using `IDataTemplate` instances or resource keys:
+模板列可以用 `IDataTemplate` 实例或资源键来添加：
 
 ```diff
 -new TemplateColumn<Country>(
@@ -116,7 +106,7 @@ Template columns can be added using `IDataTemplate` instances or resource keys:
 
 ### `WithHierarchicalExpanderColumn`/`WithHierarchicalExpanderTextColumn`
 
-For hierarchical data with a text column inside the expander:
+若层级数据的展开器内要放一个文本列：
 
 ```diff
 -new HierarchicalExpanderColumn<FileTreeNodeModel>(
@@ -133,10 +123,9 @@ For hierarchical data with a text column inside the expander:
 +})
 ```
 
-The header and width have now moved from the inner column to the expander column.
+标题和宽度现已从内层列移到了展开器列上。
 
-For an expander with a custom inner column (e.g. a template column), use
-`WithHierarchicalExpanderColumn`:
+若展开器内要放自定义的内层列（比如模板列），请使用 `WithHierarchicalExpanderColumn`：
 
 ```csharp
 source.WithHierarchicalExpanderColumn(
@@ -151,7 +140,7 @@ source.WithHierarchicalExpanderColumn(
     })
 ```
 
-### Full chaining example
+### 完整的链式调用示例 {#full-chaining-example}
 
 ```csharp
 var source = new FlatTreeDataGridSource<Country>(data)
@@ -166,12 +155,11 @@ var source = new FlatTreeDataGridSource<Country>(data)
     .WithTextColumn(x => x.Area, o => o.Width = new GridLength(3, GridUnitType.Star));
 ```
 
-## Column options
+## 列的选项 {#column-options}
 
-Column options classes have been replaced with top-level `*CreateOptions` classes,
-configured via a lambda callback on the fluent methods:
+各个列选项类已被顶层的 `*CreateOptions` 类取代，改为通过流式方法上的 lambda 回调来配置：
 
-| 12.x | Replaces |
+| 12.x | 取代 |
 |---|---|
 | `ColumnCreateOptions` | `ColumnOptions<TModel>` |
 | `TextColumnCreateOptions` | `TextColumnOptions<TModel>` |
@@ -194,21 +182,19 @@ configured via a lambda callback on the fluent methods:
 +})
 ```
 
-The `CanUserResizeColumn` property has been renamed to `CanUserResize`.
+`CanUserResizeColumn` 属性已更名为 `CanUserResize`。
 
-`IsTextSearchEnabled` on `TextColumnCreateOptions` now defaults to `true`. Previously, it was
-`false` in 11.x. If you do not want text search on a text column, you must now explicitly
-disable it:
+`TextColumnCreateOptions` 上的 `IsTextSearchEnabled` 现在默认为 `true`，而在 11.x 中默认是 `false`。如果你不希望某个文本列参与文本检索，现在必须显式关掉它：
 
 ```csharp
 source.WithTextColumn("Name", x => x.Name, o => o.IsTextSearchEnabled = false)
 ```
 
-## Interfaces replaced with abstract classes
+## 接口改为抽象类 {#interfaces-replaced-with-abstract-classes}
 
-The major interfaces in the TreeDataGrid API have been replaced with abstract classes:
+TreeDataGrid API 中的几个主要接口已改为抽象类：
 
-| 12.x | Replaces |
+| 12.x | 取代 |
 |---|---|
 | `TreeDataGridSource` | `ITreeDataGridSource` |
 | `TreeDataGridSource<TModel>` | `ITreeDataGridSource<TModel>` |
@@ -219,18 +205,18 @@ The major interfaces in the TreeDataGrid API have been replaced with abstract cl
 | `TreeDataGridRowSelectionModel<T>` | `ITreeDataGridRowSelectionModel<T>` |
 | `TreeDataGridCellSelectionModel<T>` | `ITreeDataGridCellSelectionModel<T>` |
 
-## Renamed types
+## 更名的类型 {#renamed-types}
 
-The following types have been renamed:
+下列类型已更名：
 
-| 12.x | Replaces |
+| 12.x | 取代 |
 |---|---|
 | `ITreeDataGridCellModel` | `ICell` |
 | `ITreeDataGridRowModel` | `IRow` |
 
-## Removed types
+## 移除的类型 {#removed-types}
 
-The following types were removed:
+下列类型已被移除：
 
 - `NotifyingBase`, `ReadOnlyListBase<T>`, `SortableRowsBase<TModel, TRow>`
 - `AnonymousSortableRows<TModel>`, `HierarchicalRows<TModel>`, `HierarchicalRow<TModel>`
@@ -243,17 +229,15 @@ The following types were removed:
 - `NotifyingListBase<T>`
 - `DragInfo`
 
-If you depended on any of these types, please open an issue and we will discuss a replacement.
+如果你依赖其中任何一个类型，请提交 issue，我们再一起讨论替代方案。
 
-## Sources are now sealed
+## 数据源类型现已 sealed {#sources-are-now-sealed}
 
-`FlatTreeDataGridSource<TModel>` and `HierarchicalTreeDataGridSource<TModel>` are now
-`sealed` classes. They can no longer be subclassed.
+`FlatTreeDataGridSource<TModel>` 和 `HierarchicalTreeDataGridSource<TModel>` 现在是 `sealed` 类，不能再派生子类。
 
-## Custom sort comparisons use `object?`
+## 自定义排序比较改用 `object?` {#custom-sort-comparisons-use-object}
 
-Custom sort comparison delegates on `CompareAscending` and `CompareDescending` have
-changed from `Comparison<TModel?>?` to `Comparison<object?>?`:
+`CompareAscending` 和 `CompareDescending` 上的自定义排序比较委托，已从 `Comparison<TModel?>?` 改为 `Comparison<object?>?`：
 
 ```diff
 -options: new ColumnOptions<Country>
@@ -268,28 +252,23 @@ changed from `Comparison<TModel?>?` to `Comparison<object?>?`:
 
 ## Unified `SelectionChangedEventArgs`
 
-Selection changed events now use `TreeDataGridSelectionChangedEventArgs` (or the generic
-`TreeDataGridSelectionChangedEventArgs<TModel>`), replacing the previous
-`TreeSelectionModelSelectionChangedEventArgs<T>`. The new event args provide:
+选择变更事件现在使用 `TreeDataGridSelectionChangedEventArgs`（或泛型版 `TreeDataGridSelectionChangedEventArgs<TModel>`），取代原先的 `TreeSelectionModelSelectionChangedEventArgs<T>`。新的事件参数提供：
 
 - `SelectedIndexes` / `DeselectedIndexes`
 - `SelectedItems` / `DeselectedItems`
 - `SelectedCellIndexes` / `DeselectedCellIndexes`
 
-A `SelectionChanged` event has also been added to the `TreeDataGrid` control itself.
+`TreeDataGrid` 控件自身也新增了一个 `SelectionChanged` 事件。
 
-## Row events use `TreeDataGridRowModelEventArgs`
+## 行相关事件改用 `TreeDataGridRowModelEventArgs` {#row-events-use-treedatagridrowmodeleventargs}
 
-The `RowExpanding`, `RowExpanded`, `RowCollapsing`, and `RowCollapsed` events now use
-`TreeDataGridRowModelEventArgs` instead of `RowEventArgs<HierarchicalRow<TModel>>`.
+`RowExpanding`、`RowExpanded`、`RowCollapsing` 和 `RowCollapsed` 这几个事件现在改用 `TreeDataGridRowModelEventArgs`，不再使用 `RowEventArgs<HierarchicalRow<TModel>>`。
 
-## Text search uses bindings
+## 文本检索改用绑定 {#text-search-uses-bindings}
 
-Text search configuration has changed from lambda-based value selectors to Avalonia
-bindings.
+文本检索的配置方式，已从基于 lambda 的取值选择器改为 Avalonia 绑定。
 
-For template columns, the `TextSearchValueSelector` lambda on `TemplateColumnOptions` has
-been replaced with a `TextSearchBinding` property on `TemplateColumnCreateOptions`:
+对模板列而言，`TemplateColumnOptions` 上的 `TextSearchValueSelector` lambda 已被 `TemplateColumnCreateOptions` 上的 `TextSearchBinding` 属性取代：
 
 ```diff
 -new TemplateColumn<FileTreeNodeModel>(
@@ -306,21 +285,14 @@ been replaced with a `TextSearchBinding` property on `TemplateColumnCreateOption
 +})
 ```
 
-For text columns, text search is enabled by default via the `IsTextSearchEnabled` property
-on `TextColumnCreateOptions` and uses the column's own binding automatically.
+对文本列而言，文本检索通过 `TextColumnCreateOptions` 上的 `IsTextSearchEnabled` 属性默认开启，并自动复用该列自己的绑定。
 
-## Namespace changes
+## 命名空间变更 {#namespace-changes}
 
-The `Avalonia.Controls.Models.TreeDataGrid` namespace (which contained the old column types
-such as `TextColumn<TModel, TValue>`, `TemplateColumn<TModel>`, `HierarchicalExpanderColumn<TModel>`,
-`TextColumnOptions<TModel>`, etc.) has been removed. The new column types and options classes
-are in the `Avalonia.Controls` namespace. Remove `using Avalonia.Controls.Models.TreeDataGrid`
-from your code.
+`Avalonia.Controls.Models.TreeDataGrid` 命名空间（原先存放 `TextColumn<TModel, TValue>`、`TemplateColumn<TModel>`、`HierarchicalExpanderColumn<TModel>`、`TextColumnOptions<TModel>` 等旧列类型）已被移除。新的列类型和选项类位于 `Avalonia.Controls` 命名空间下。请把代码中的 `using Avalonia.Controls.Models.TreeDataGrid` 删掉。
 
-## Experimental bindings removed
+## 实验性绑定已移除 {#experimental-bindings-removed}
 
-The `Avalonia.Experimental.Data` namespace and all its types have been removed. This
-includes `TypedBinding<TIn, TOut>`, `TypedBindingExpression<TIn, TOut>`,
-`LightweightObservableBase<T>`, `SingleSubscriberObservableBase<T>`, and related types.
+`Avalonia.Experimental.Data` 命名空间及其全部类型已被移除，其中包括 `TypedBinding<TIn, TOut>`、`TypedBindingExpression<TIn, TOut>`、`LightweightObservableBase<T>`、`SingleSubscriberObservableBase<T>` 以及相关类型。
 
-TreeDataGrid 12.x uses standard Avalonia bindings instead.
+TreeDataGrid 12.x 改用标准的 Avalonia 绑定。

@@ -1,55 +1,55 @@
 ---
 id: mediasource
-title: MediaSource class
+title: MediaSource 类
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-The `MediaSource` class hierarchy provides an abstraction for different types of media content sources in Avalonia Pro MediaControls. This allows the media playback system to handle various content sources (files, URLs, streams) through a unified interface.
+在 Avalonia Pro MediaControls 中，`MediaSource` 这组类对各类媒体内容源做了抽象，让媒体播放系统能够用统一的接口对接文件、URL、流等不同来源。
 
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## MediaSource (abstract base class)
+## MediaSource（抽象基类） {#mediasource-abstract-base-class}
 
-`MediaSource` is an abstract base class that defines the common interface for all media sources.
+`MediaSource` 是抽象基类，为所有媒体源定义了统一接口。
 
-### Methods
+### 方法 {#methods}
 
-| Method    | Return Type | Description                                  |
+| 方法    | Return Type | 说明                                  |
 |-----------|-------------|----------------------------------------------|
-| Dispose() | void        | Releases resources used by the media source. |
+| Dispose() | void        | 释放媒体源占用的资源。 |
 
-## UriSource class
+## UriSource 类 {#urisource-class}
 
-The `UriSource` class represents media content referenced by a URI, which can point to local files or network resources.
+`UriSource` 类表示用 URI 指向的媒体内容，URI 可以指向本地文件，也可以指向网络资源。
 
-### Properties
+### 属性 {#properties}
 
-| Property | Type | Description                                    |
+| 属性 | 类型 | 说明                                    |
 |----------|------|------------------------------------------------|
-| Source   | Uri  | Gets the URI that points to the media content. |
+| Source   | Uri  | 获取指向媒体内容的 URI。 |
 
-### Constructors
+### 构造函数 {#constructors}
 
-| Constructor              | Description                                |
+| 构造函数              | 说明                                |
 |--------------------------|--------------------------------------------|
-| UriSource(Uri source)    | Initializes with the specified URI.        |
-| UriSource(string source) | Initializes with the specified URI string. |
+| UriSource(Uri source)    | 用指定的 URI 初始化。        |
+| UriSource(string source) | 用指定的 URI 字符串初始化。 |
 
-### Methods
+### 方法 {#methods-1}
 
-| Method                  | Return Type | Description                                 |
+| 方法                  | Return Type | 说明                                 |
 |-------------------------|-------------|---------------------------------------------|
-| Equals(UriSource other) | bool        | Determines equality with another UriSource. |
-| Equals(object obj)      | bool        | Determines equality with an object.         |
-| GetHashCode()           | int         | Returns the hash code for this instance.    |
-| Dispose()               | void        | Releases resources (typically a no-op).     |
+| Equals(UriSource other) | bool        | 判断与另一个 UriSource 是否相等。 |
+| Equals(object obj)      | bool        | 判断与某个对象是否相等。         |
+| GetHashCode()           | int         | 返回该实例的哈希码。    |
+| Dispose()               | void        | 释放资源（通常什么也不做）。     |
 
-### Usage examples
+### 用法示例 {#usage-examples}
 
 ```csharp
 // From a string URL
@@ -63,32 +63,31 @@ var uri = new Uri("rtsp://example.com/stream");
 var streamSource = new UriSource(uri);
 ```
 
-## StreamSource class
+## StreamSource 类 {#streamsource-class}
 
-The `StreamSource` class represents media content provided as a stream, allowing for dynamic or in-memory content to be
-played.
+`StreamSource` 类表示以流的形式提供的媒体内容，让运行时动态生成的内容或内存中的内容也能播放。
 
-### Properties
+### 属性 {#properties-1}
 
-| Property     | Type   | Description                                          |
+| 属性     | 类型   | 说明                                          |
 |--------------|--------|------------------------------------------------------|
-| TargetStream | Stream | Gets the underlying stream containing media data.    |
-| IsSeekable   | bool   | Gets whether the underlying stream supports seeking. |
+| TargetStream | Stream | 获取承载媒体数据的底层流。    |
+| IsSeekable   | bool   | 获取底层流是否支持跳转。 |
 
-### Constructors
+### 构造函数 {#constructors-1}
 
-| Constructor                       | Description                            |
+| 构造函数                       | 说明                            |
 |-----------------------------------|----------------------------------------|
-| StreamSource(Stream targetStream) | Initializes with the specified stream. |
+| StreamSource(Stream targetStream) | 用指定的流初始化。 |
 
-### Methods
+### 方法 {#methods-2}
 
-| Method                     | Return Type | Description                                          |
+| 方法                     | Return Type | 说明                                          |
 |----------------------------|-------------|------------------------------------------------------|
-| Equals(StreamSource other) | bool        | Determines equality with another StreamSource.       |
-| Dispose()                  | void        | Releases resources, including the underlying stream. |
+| Equals(StreamSource other) | bool        | 判断与另一个 StreamSource 是否相等。       |
+| Dispose()                  | void        | 释放资源，包括底层的流。 |
 
-### Usage examples
+### 用法示例 {#usage-examples-1}
 
 ```csharp
 // From a file stream
@@ -106,68 +105,68 @@ var responseStream = webRequest.GetResponse().GetResponseStream();
 var networkStreamSource = new StreamSource(responseStream);
 ```
 
-## Choosing between `UriSource` and `StreamSource`
+## `UriSource` 与 `StreamSource` 的取舍 {#choosing-between-urisource-and-streamsource}
 
-### When to use `UriSource`
+### 何时使用 `UriSource` {#when-to-use-urisource}
 
-- Local media files.
-- Network streams with direct URLs.
-- Real-time protocol streams (RTSP/RTMP/RDP).
-- Any media with a standard URI representation.
+- 本地媒体文件。
+- 带直链 URL 的网络流。
+- 实时协议流（RTSP/RTMP/RDP）。
+- 任何能用标准 URI 表示的媒体。
 
-**Advantages**:
+**优点**：
 
-- Lower overhead.
-- Native handling by media backends.
-- No memory or lifetime management concerns.
+- 开销更低。
+- 由媒体后端原生处理。
+- 不必操心内存和生存期管理。
 
-### When to use `StreamSource`
+### 何时使用 `StreamSource` {#when-to-use-streamsource}
 
-- In-memory media content.
-- Dynamic content generated at runtime.
-- Content loaded from non-standard sources.
-- Content that needs preprocessing before playback.
+- 内存中的媒体内容。
+- 运行时动态生成的内容。
+- 从非标准来源加载的内容。
+- 播放前需要预处理的内容。
 
-**Advantages**:
+**优点**：
 
-- Flexibility for custom content sources.
-- No need for temporary files.
-- Works with encrypted or protected content.
+- 对接自定义内容源更灵活。
+- 不需要临时文件。
+- 可处理加密或受保护的内容。
 
-## Resource management
+## 资源管理 {#resource-management}
 
-Both `UriSource` and `StreamSource` implement `IDisposable`:
+`UriSource` 和 `StreamSource` 都实现了 `IDisposable`：
 
-- For `UriSource`, the `Dispose` method is typically a no-op.
-- For `StreamSource`, the `Dispose` method disposes the underlying stream.
+- 对 `UriSource` 而言，`Dispose` 方法通常什么也不做。
+- 对 `StreamSource` 而言，`Dispose` 方法会释放底层的流。
 
-The `MediaPlayer` manages the lifecycle automatically:
+`MediaPlayer` 会自动管理生命周期：
 
-- When setting a new Source, the previous Source is disposed.
-- When the player is released or uninitiated, the current Source is disposed.
+- 设置新的 Source 时，先前的 Source 会被释放。
+- 播放器被释放或反初始化时，当前的 Source 会被释放。
 
-## Best practices
+## 实践建议 {#best-practices}
 
 1. **Resource Management**:
-    - Don't dispose streams passed to a `StreamSource` as it takes ownership.
+    - 交给 `StreamSource` 的流不要自行释放，它已经接管了所有权。
 
 2. **Source Selection**:
-    - Use `UriSource` for file and network media when possible (more efficient).
-    - Use `StreamSource` for in-memory content or preprocessing.
+    - 文件和网络媒体尽量用 `UriSource`，效率更高。
+    - 内存中的内容、或需要预处理的内容则用 `StreamSource`。
 
 3. **Error Handling**:
-    - Validate URIs before creating a `UriSource`
-    - Verify streams are readable before creating a `StreamSource`
-    - Handle exceptions when opening files or network resources
+    - 创建 `UriSource` 之前先校验 URI
+    - 创建 `StreamSource` 之前先确认流可读
+    - 打开文件或网络资源时注意处理异常
 
 4. **Seeking Considerations**:
-    - Check `StreamSource.IsSeekable` to determine if seeking is supported.
-    - If seeking is required, ensure the stream supports it (`CanSeek` = true).
+    - 查看 `StreamSource.IsSeekable` 可判断是否支持跳转。
+    - 若需要跳转，请确保流本身支持（`CanSeek` = true）。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [MediaPlayer control](/controls/media/mediaplayer)
-- [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)
+- [MediaPlayer 控件](/controls/media/mediaplayer)
+- [MediaPlayer 类](/controls/media/mediaplayer/mediaplayer-class)
 - [Implementing MediaPlayer](/controls/media/mediaplayer/media-playback)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)
-- [Troubleshooting](/troubleshooting/controls/mediaplayer)
+- [疑难排查](/troubleshooting/controls/mediaplayer)

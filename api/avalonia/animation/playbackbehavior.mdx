@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PlaybackBehavior Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Animation</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Animation</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/PlaybackBehavior.cs">PlaybackBehavior.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/PlaybackBehavior.cs">PlaybackBehavior.cs</a>
 </div>
 
 </div>
@@ -55,13 +55,13 @@ public enum PlaybackBehavior
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> PlaybackBehavior
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> PlaybackBehavior
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Always](#uid-95bde3d723) | The animation always plays regardless of the control's effective visibility state. |
 | [Auto](#uid-b85e6650e0) | The system decides based on context. Manually started animations (via [Avalonia.Animation.Animation.RunAsync(Avalonia.Animation.Animatable,System.Threading.CancellationToken)](xref:Avalonia.Animation.Animation.RunAsync%28Avalonia.Animation.Animatable%2CSystem.Threading.CancellationToken%29)) and animations that target [Avalonia.Visual.IsVisibleProperty](xref:Avalonia.Visual.IsVisibleProperty) always play. Style-applied animations pause when the control is not effectively visible (see [Avalonia.Visual.IsEffectivelyVisible](xref:Avalonia.Visual.IsEffectivelyVisible)). |
@@ -71,7 +71,7 @@ public enum PlaybackBehavior
 
 <span id="uid-95bde3d723"></span>
 
-### Always Field
+### Always 字段 {#always-field}
 
 The animation always plays regardless of the control's effective visibility state.
 
@@ -85,7 +85,7 @@ public Avalonia.Animation.PlaybackBehavior Always
 
 <span id="uid-b85e6650e0"></span>
 
-### Auto Field
+### Auto 字段 {#auto-field}
 
 The system decides based on context. Manually started animations
 (via [Avalonia.Animation.Animation.RunAsync(Avalonia.Animation.Animatable,System.Threading.CancellationToken)](xref:Avalonia.Animation.Animation.RunAsync%28Avalonia.Animation.Animatable%2CSystem.Threading.CancellationToken%29))
@@ -103,7 +103,7 @@ public Avalonia.Animation.PlaybackBehavior Auto
 
 <span id="uid-b74c2e6ab1"></span>
 
-### OnlyIfVisible Field
+### OnlyIfVisible 字段 {#onlyifvisible-field}
 
 The animation pauses when the control is not effectively visible
 (see [Avalonia.Visual.IsEffectivelyVisible](xref:Avalonia.Visual.IsEffectivelyVisible)).

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PixelHolder Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Imaging</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Imaging</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -54,14 +54,14 @@ public struct PixelHolder
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PixelHolder
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PixelHolder
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;PixelHolder&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;PixelHolder&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 The pixels are plain managed memory: immutable (never mutated after
 construction), garbage-collected, and free of platform or UI affinity — so a
@@ -70,9 +70,9 @@ from a background serializer. Call [Avalonia.Controls.Documents.Imaging.PixelHol
 [Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer) view when handing the pixels to an Avalonia
 bitmap or an image codec; the holder keeps owning the buffer.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PixelHolder](#uid-94ca1a1268) | Initializes a new [Avalonia.Controls.Documents.Imaging.PixelHolder](xref:Avalonia.Controls.Documents.Imaging.PixelHolder) that takes ownership of `pixels`. |
 
@@ -80,7 +80,7 @@ bitmap or an image codec; the holder keeps owning the buffer.
 
 <span id="uid-94ca1a1268"></span>
 
-### PixelHolder Constructor
+### PixelHolder 构造函数 {#pixelholder-constructor}
 
 Initializes a new [Avalonia.Controls.Documents.Imaging.PixelHolder](xref:Avalonia.Controls.Documents.Imaging.PixelHolder) that takes ownership of
 `pixels`.
@@ -89,7 +89,7 @@ Initializes a new [Avalonia.Controls.Documents.Imaging.PixelHolder](xref:Avaloni
 public PixelHolder(byte[] pixels, Avalonia.PixelSize size, int stride, Avalonia.Platform.PixelFormat format, Avalonia.Platform.AlphaFormat alphaFormat, Avalonia.Vector dpi)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `pixels` byte[]
 
@@ -98,48 +98,48 @@ The decoded pixel bytes, row-major. Must not be mutated after this call.
 
 `size` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
-The pixel dimensions.
+以像素计的尺寸。
 
 
 `stride` int
 
-The number of bytes per pixel row.
+每一行像素所占的字节数。
 
 
 `format` [Avalonia.Platform.PixelFormat](xref:Avalonia.Platform.PixelFormat)
 
-The pixel format describing the byte layout.
+描述字节布局的像素格式。
 
 
 `alphaFormat` [Avalonia.Platform.AlphaFormat](xref:Avalonia.Platform.AlphaFormat)
 
-Whether the alpha channel is premultiplied, straight, or absent.
+alpha 通道是预乘的、直通的，还是压根没有。
 
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The intended resolution, in dots per inch.
+期望的分辨率，以每英寸点数计。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-d52455c755) | Determines whether this holder and `other` wrap the same pixel buffer with the same descriptor. Buffer identity is by reference. |
-| [GetHashCode](#uid-fc979317ab) | No summary available. |
+| [Equals（2 个重载）](#uid-d52455c755) | Determines whether this holder and `other` wrap the same pixel buffer with the same descriptor. Buffer identity is by reference. |
+| [GetHashCode](#uid-fc979317ab) | 暂无摘要。 |
 | [Lock](#uid-e7d616c5ba) | Pins the pixel buffer and returns a transient [Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer) view over it for interop with Avalonia bitmaps or an image codec. Dispose the returned framebuffer to unpin; the pixels remain owned by this holder. |
 
 <span id="uid-d52455c755"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ea45432898"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Determines whether this holder and `other` wrap the same
 pixel buffer with the same descriptor. Buffer identity is by reference.
@@ -148,12 +148,12 @@ pixel buffer with the same descriptor. Buffer identity is by reference.
 public bool Equals(Avalonia.Controls.Documents.Imaging.PixelHolder other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.Controls.Documents.Imaging.PixelHolder](xref:Avalonia.Controls.Documents.Imaging.PixelHolder)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -164,18 +164,18 @@ bool
 
 <span id="uid-169e877665"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -186,13 +186,13 @@ bool
 
 <span id="uid-fc979317ab"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -203,7 +203,7 @@ int
 
 <span id="uid-e7d616c5ba"></span>
 
-### Lock Method
+### Lock 方法 {#lock-method}
 
 Pins the pixel buffer and returns a transient [Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer)
 view over it for interop with Avalonia bitmaps or an image codec. Dispose the
@@ -213,36 +213,36 @@ returned framebuffer to unpin; the pixels remain owned by this holder.
 public Avalonia.Platform.ILockedFramebuffer Lock()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer)
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [The holder is empty.](xref:System.InvalidOperationException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AlphaFormat](#uid-b4779a88b7) | Whether the alpha channel is premultiplied, straight, or absent. |
-| [Dpi](#uid-38677e6352) | The intended resolution, in dots per inch. |
-| [Format](#uid-68f3193c7a) | The pixel format describing the byte layout. |
-| [IsEmpty](#uid-3168db3ed1) | when this holder carries no pixels. |
+| [AlphaFormat](#uid-b4779a88b7) | alpha 通道是预乘的、直通的，还是压根没有。 |
+| [Dpi](#uid-38677e6352) | 期望的分辨率，以每英寸点数计。 |
+| [Format](#uid-68f3193c7a) | 描述字节布局的像素格式。 |
+| [IsEmpty](#uid-3168db3ed1) | 当该持有者不携带任何像素时。 |
 | [Pixels](#uid-67d1c08038) | The decoded pixel bytes, row-major with [Avalonia.Controls.Documents.Imaging.PixelHolder.Stride](xref:Avalonia.Controls.Documents.Imaging.PixelHolder.Stride) bytes per row. |
-| [Size](#uid-b49c447a64) | The pixel dimensions. |
-| [Stride](#uid-ad9518700a) | The number of bytes per pixel row. |
+| [Size](#uid-b49c447a64) | 以像素计的尺寸。 |
+| [Stride](#uid-ad9518700a) | 每一行像素所占的字节数。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b4779a88b7"></span>
 
-### AlphaFormat Property
+### AlphaFormat 属性 {#alphaformat-property}
 
-Whether the alpha channel is premultiplied, straight, or absent.
+alpha 通道是预乘的、直通的，还是压根没有。
 
 ```csharp
 public Avalonia.Platform.AlphaFormat AlphaFormat { get; set; }
@@ -254,9 +254,9 @@ public Avalonia.Platform.AlphaFormat AlphaFormat { get; set; }
 
 <span id="uid-38677e6352"></span>
 
-### Dpi Property
+### Dpi 属性 {#dpi-property}
 
-The intended resolution, in dots per inch.
+期望的分辨率，以每英寸点数计。
 
 ```csharp
 public Avalonia.Vector Dpi { get; set; }
@@ -268,9 +268,9 @@ public Avalonia.Vector Dpi { get; set; }
 
 <span id="uid-68f3193c7a"></span>
 
-### Format Property
+### Format 属性 {#format-property}
 
-The pixel format describing the byte layout.
+描述字节布局的像素格式。
 
 ```csharp
 public Avalonia.Platform.PixelFormat Format { get; set; }
@@ -282,9 +282,9 @@ public Avalonia.Platform.PixelFormat Format { get; set; }
 
 <span id="uid-3168db3ed1"></span>
 
-### IsEmpty Property
+### IsEmpty 属性 {#isempty-property}
 
-when this holder carries no pixels.
+当该持有者不携带任何像素时。
 
 ```csharp
 public bool IsEmpty { get; set; }
@@ -296,7 +296,7 @@ public bool IsEmpty { get; set; }
 
 <span id="uid-67d1c08038"></span>
 
-### Pixels Property
+### Pixels 属性 {#pixels-property}
 
 The decoded pixel bytes, row-major with [Avalonia.Controls.Documents.Imaging.PixelHolder.Stride](xref:Avalonia.Controls.Documents.Imaging.PixelHolder.Stride) bytes per row.
 
@@ -310,9 +310,9 @@ public ReadOnlyMemory<byte> Pixels { get; set; }
 
 <span id="uid-b49c447a64"></span>
 
-### Size Property
+### Size 属性 {#size-property}
 
-The pixel dimensions.
+以像素计的尺寸。
 
 ```csharp
 public Avalonia.PixelSize Size { get; set; }
@@ -324,9 +324,9 @@ public Avalonia.PixelSize Size { get; set; }
 
 <span id="uid-ad9518700a"></span>
 
-### Stride Property
+### Stride 属性 {#stride-property}
 
-The number of bytes per pixel row.
+每一行像素所占的字节数。
 
 ```csharp
 public int Stride { get; set; }

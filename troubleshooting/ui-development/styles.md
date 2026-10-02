@@ -1,23 +1,23 @@
 ---
 id: styles
-title: Styles
-description: Troubleshooting common issues with Avalonia styles.
+title: 样式
+description: 排查 Avalonia 样式的常见问题。
 doc-type: troubleshooting
 ---
 
-## Selector has no targets
+## 选择器匹配不到任何目标 {#selector-has-no-targets}
 
-An Avalonia selector, like a CSS selector, does not raise an error or warning when there are no controls it can match. The style will silently fail to show.
+和 CSS 选择器一样，Avalonia 的选择器匹配不到控件时既不报错也不警告，样式就这么悄无声息地没了踪影。
 
-Check whether you have used a name or class that does not exist.
+看看你是不是用了并不存在的名称或样式类。
 
-Check whether you have used a child selector where there are no children to match.
+看看你是不是用了子级选择器，而那儿压根没有子级可匹配。
 
-## Wrong style is applied
+## 生效的是另一条样式 {#wrong-style-is-applied}
 
-Given the same `BindingPriority`, styles are applied in order of declaration. If you are using multiple style files that target the same control property, the last matching style wins.
+在 `BindingPriority` 相同的前提下，样式按声明顺序应用。若多个样式文件都瞄准同一个控件属性，最后匹配上的那条胜出。
 
-For example, in the files below, styles from `Style2.axaml` take priority over styles from `Style1.axaml`. The resulting `TextBlock` will have `FontSize="16"` and `Foreground="Blue"`. The same order prioritization happens within the same style file as well.
+比如在下面这几个文件中，`Style2.axaml` 里的样式优先于 `Style1.axaml` 里的，最终 `TextBlock` 会是 `FontSize="16"` 和 `Foreground="Blue"`。同一个样式文件内部也是按这个先后顺序定优先级的。
 
 <Tabs>
 
@@ -57,9 +57,9 @@ For example, in the files below, styles from `Style2.axaml` take priority over s
 
 </Tabs>
 
-## Style cannot override a local property
+## 样式盖不过本地属性 {#style-cannot-override-a-local-property}
 
-A local property value defined directly on a control has higher priority than any style value. For example, this text block will have a red foreground:
+直接设在控件上的本地属性值，优先级高于任何样式值。比如下面这个文本块的前景色就是红的：
 
 ```xml
 <Style Selector="TextBlock.header">
@@ -69,11 +69,11 @@ A local property value defined directly on a control has higher priority than an
 <TextBlock Classes="header" Foreground="Red" />
 ```
 
-To allow styles to change the property at runtime, avoid setting it locally and set it through a style instead.
+若想让样式在运行时改得动这个属性，就别在本地设它，改为通过样式来设。
 
-## Pseudoclass style is not applied
+## 伪类样式没有生效 {#pseudoclass-style-is-not-applied}
 
-Some pseudoclasses may not work as you might expect because of how the control template is structured. In the below example, the `Button` turns gray when hovered, although you would think it should turn blue, as specified by the `:pointerover` pseudoclass.
+受控件模板结构所限，有些伪类的表现未必如你所料。下面的例子里，`Button` 悬停时变成了灰色，可按 `:pointerover` 伪类的写法，你本以为它该变蓝才对。
 
 <XamlPreview>
 
@@ -95,7 +95,7 @@ Some pseudoclasses may not work as you might expect because of how the control t
 
 </XamlPreview>
 
-The reason is in the [Fluent theme button template](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Themes.Fluent/Controls/Button.xaml), which is used by default in new Avalonia projects. In the template, the button's background is rendered by a `ContentPresenter` bound to the button's `Background` property. When in the pointer-over state, the selector applies a different background directly to the `ContentPresenter` template part, bypassing any other property setters for `Background`. Because of this mechanism, any change to the button's `Background` does nothing, even if applied by an animation.
+原因出在 [Fluent 主题的按钮模板](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Themes.Fluent/Controls/Button.xaml)上——新建的 Avalonia 项目默认就用它。在该模板中，按钮的背景由一个绑定到按钮 `Background` 属性的 `ContentPresenter` 负责绘制。进入 pointer-over 状态时，选择器会把另一种背景直接套到 `ContentPresenter` 这个模板部件上，绕开了针对 `Background` 的其他属性 setter。正因如此，哪怕是动画改了按钮的 `Background`，也起不了任何作用。
 
 ```xml
 <Style Selector="Button">
@@ -113,7 +113,7 @@ The reason is in the [Fluent theme button template](https://github.com/AvaloniaU
 </Style>
 ```
 
-To ensure your pseudoclass style is applied properly, you must target the relevant template part with the style selector. In this case, the blue background setter can be amended to select `PART_ContentPresenter`.
+要让伪类样式确实生效，你的样式选择器必须瞄准相关的模板部件。就本例而言，把那条蓝色背景 setter 改成选中 `PART_ContentPresenter` 即可。
 
 <XamlPreview>
 
@@ -135,23 +135,23 @@ To ensure your pseudoclass style is applied properly, you must target the releva
 
 </XamlPreview>
 
-## Previous property value is not restored when style is no longer applied
+## 样式不再生效时，先前的属性值没有恢复 {#previous-property-value-is-not-restored-when-style-is-no-longer-applied}
 
-Avalonia has multiple types of properties, which you can learn more about in [Defining properties](/docs/custom-controls/defining-properties).
+Avalonia 有多种属性类型，详见[定义属性](/docs/custom-controls/defining-properties)。
 
-**Direct properties** do not support styling. Instead of storing multiple values depending on priority, they only use the latest applied value and thus cannot restore to an earlier value. They are intended to offer lower overhead and higher performance in situations where only simple mechanics are required.
+**直接属性**不支持样式化。它不会按优先级存多个值，而是只认最后一次写入的值，因此也无从恢复到先前的值。它的用意是在只需简单机制的场合降低开销、提高性能。
 
-If you are unable to restore an earlier property value, it is likely you are using a direct property. Consider changing to a different property, or [customizing a property](/docs/custom-controls/defining-properties).
+若你发现先前的属性值恢复不了，多半是碰上了直接属性。不妨换一个属性，或者[自定义一个属性](/docs/custom-controls/defining-properties)。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
-- [Style selectors](/docs/styling/style-selectors)
-- [Style selector syntax](/docs/styling/style-selector-syntax)
+- [样式选择器](/docs/styling/style-selectors)
+- [样式选择器语法](/docs/styling/style-selector-syntax)
 - [Pseudoclasses](/docs/styling/pseudoclasses)
-- [Property setters](/docs/styling/property-setters)
-- [Property value precedence](/docs/properties/value-precedence)
-- [Sharing styles](/docs/styling/sharing-styles)
-- [Control template walkthrough](/docs/styling/control-template-walkthrough)
-- [Defining properties](/docs/custom-controls/defining-properties)
-- [Troubleshooting themes](/troubleshooting/ui-development/themes)
+- [属性 setter](/docs/styling/property-setters)
+- [属性值优先级](/docs/properties/value-precedence)
+- [共享样式](/docs/styling/sharing-styles)
+- [控件模板实战](/docs/styling/control-template-walkthrough)
+- [定义属性](/docs/custom-controls/defining-properties)
+- [排查主题问题](/troubleshooting/ui-development/themes)

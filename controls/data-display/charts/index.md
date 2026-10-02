@@ -1,28 +1,28 @@
 ---
 id: index
-title: Chart controls
-description: Avalonia Charts is a library of over 70 data visualization controls and patterns for dashboards, finance, analytics, and more.
+title: 图表控件
+description: Avalonia Charts 是一套 70 多种数据可视化控件和范式的库，服务于仪表板、金融、分析等各类场景。
 doc-type: overview
 tags:
   - avalonia pro
   - avalonia charts
 ---
 
-Charts provide a library of data visualization controls and documented composition patterns for building dashboards, analytics, financial tools, scientific reports, and more. Common charting features, such as tooltips, legends, and interactivity, are supported out of the box and integrate with Avalonia's theming system.
+Charts 提供一套数据可视化控件，以及成文的组合范式，可用来搭建仪表板、分析工具、金融工具、科研报告等等。工具提示、图例、交互等常见图表能力开箱即用，并与 Avalonia 的主题系统打通。
 
 :::info
-Charts are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+Charts 需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-## Getting started
+## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.Charts` NuGet package by running `dotnet add package`.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.Charts` NuGet 包。
 
 ```bash
 dotnet add package Avalonia.Controls.Charts
 ```
 
-2. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+2. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 ```xml
 <ItemGroup>
@@ -31,10 +31,10 @@ dotnet add package Avalonia.Controls.Charts
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
-3. (Optional) If you wish to use Charts in a separate XML namespace, you can use `https://avaloniaui.net/controls/charts`. This is not required—the default `https://github.com/avaloniaui` namespace also contains `Avalonia.Controls.Charts`.
+3. （可选）如果你想把 Charts 放在单独的 XML 命名空间下，可以使用 `https://avaloniaui.net/controls/charts`。这并非必需——默认的 `https://github.com/avaloniaui` 命名空间同样包含 `Avalonia.Controls.Charts`。
 
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -47,293 +47,293 @@ For multi-project solutions, you can store your licence key in an [environment v
 </UserControl>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
-## Example use cases
+## 适用场景举例 {#example-use-cases}
 
-Charts are suited for:
+Charts 适合下列场景：
 
-- **Business dashboards:** KPI cards, trend lines, bar comparisons, and funnel views for operational data.
-- **Financial applications:** Candlestick, OHLC, Heikin-Ashi, and other price-action charts for trading and market analysis.
-- **Analytics and reporting:** Heatmaps, scatter plots, histograms, and table charts for exploring and presenting datasets.
-- **Scientific and statistical views:** Box plots, violin plots, error bars, and mosaic charts for distributional analysis.
-- **Process and hierarchy visualization:** Sankey diagrams, organization charts, treemaps, and network graphs for relational data.
-- **Geographic data:** Choropleth, bubble map, and heatmap overlays for regional comparisons.
-- **Progress and status indicators:** Circular gauges, linear gauges, and liquid-fill gauges for real-time monitoring.
+- **业务仪表板：** 用 KPI 卡片、趋势折线、条形对比和漏斗视图呈现运营数据。
+- **金融应用：** 用 K 线、OHLC、平均 K 线等价格行为图表服务交易与行情分析。
+- **分析与报表：** 用热力图、散点图、直方图和表格图探索并呈现数据集。
+- **科学与统计视图：** 用箱线图、小提琴图、误差棒和马赛克图作分布分析。
+- **流程与层级呈现：** 用桑基图、组织结构图、矩形树图和网络图呈现关系型数据。
+- **地理数据：** 用分级统计图、气泡地图和热力图叠加层作区域对比。
+- **进度与状态指示：** 用圆形仪表、线性仪表和液位仪表作实时监控。
 
-## Data sources
+## 数据源 {#data-sources}
 
-Cartesian series can bind to object collections through `ItemsSource`, `CategoryPath`, and `ValuePath`. For simple numeric series, `ItemsSource` can also be a direct `IList<double>`, `IList<int>`, `IList<float>`, `IList<decimal>`, or `IList<Point>`. Direct numeric lists use the item index as the category value.
+笛卡尔系列可以通过 `ItemsSource`、`CategoryPath` 和 `ValuePath` 绑定到对象集合。对于简单的数值系列，`ItemsSource` 也可以直接是 `IList<double>`、`IList<int>`、`IList<float>`、`IList<decimal>` 或 `IList<Point>`。直接给出数值列表时，条目索引即作为类别值。
 
-Series skip non-finite numeric values such as `NaN` and infinity when computing bounds and rendering continuous data.
+在计算取值范围和渲染连续数据时，系列会跳过 `NaN`、无穷大等非有限数值。
 
-Cartesian series use `EmptyPointMode` to control how null or non-finite points are handled in the rendered series. Supported values are `Zero`, `Gap`, `Average`, and `Interpolate`. The default is `Zero`.
+笛卡尔系列用 `EmptyPointMode` 控制如何处理所渲染系列中的 null 或非有限数据点。可选值有 `Zero`、`Gap`、`Average` 和 `Interpolate`，默认是 `Zero`。
 
-## Common chart properties
+## 图表的公共属性 {#common-chart-properties}
 
-Most chart controls share these properties through `ChartBase`.
+大多数图表控件通过 `ChartBase` 共享下列属性。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | Text displayed above the chart. | `null` |
-| `Palette` | Optional chart palette used to generate series or item colors. | `null` |
-| `LabelForeground` | Brush used for chart-level labels when a more specific label brush is not set. | `null` |
-| `PlotAreaContent` | Optional control arranged over the effective plot area. | `null` |
+| `Title` | 显示在图表上方的文字。 | `null` |
+| `Palette` | 可选的图表调色板，用于生成各系列或各条目的颜色。 | `null` |
+| `LabelForeground` | 未指定更具体的标签画刷时，图表级标签所用的画刷。 | `null` |
+| `PlotAreaContent` | 可选控件，摆放在实际绘图区之上。 | `null` |
 
-Some chart types also expose additional chart-level styling surfaces when the visual surface exists on that chart.
+若某种图表具备相应的视觉元素，它还会额外提供一些图表级的样式接口。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `AxisBrush` | Brush used for axis lines, ticks, radial axes, or equivalent scale guides. | `null` |
-| `GridLineBrush` | Brush used for chart-level grid lines. | `null` |
-| `PlotAreaBackground` | Brush used for the data plot rectangle only, not the whole chart background. | `null` |
+| `AxisBrush` | 轴线、刻度、径向轴或同类刻度参考线所用的画刷。 | `null` |
+| `GridLineBrush` | 图表级网格线所用的画刷。 | `null` |
+| `PlotAreaBackground` | 仅用于数据绘图矩形区的画刷，不涉及整张图表的背景。 | `null` |
 
-## Common series properties
+## 系列的公共属性 {#common-series-properties}
 
-Most series share these properties through `ChartSeries`. Individual chart pages list additional properties for their specific series type.
+大多数系列通过 `ChartSeries` 共享下列属性。各图表页面还会列出其特定系列类型的额外属性。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | Series name shown in legends and generated tooltip content. | `null` |
-| `ItemsSource` | Data collection used by the series. | `null` |
-| `ValuePath` | Property path used for the primary numeric value. | `null` |
-| `Fill` | Brush used for filled series surfaces or item interiors. | `null` |
-| `Stroke` | Brush used for series outlines, lines, or item borders. | `null` |
-| `StrokeThickness` | Base stroke thickness. Some default themes set a type-specific value. | `1.0` |
-| `PointBrushPath` | Optional property path that resolves an `IBrush` per data item. Supported series use it for individual points, markers, segments, or slices. | `null` |
+| `Title` | 在图例和自动生成的工具提示中显示的系列名称。 | `null` |
+| `ItemsSource` | 该系列所用的数据集合。 | `null` |
+| `ValuePath` | 主数值所用的属性路径。 | `null` |
+| `Fill` | 填充系列区域或条目内部所用的画刷。 | `null` |
+| `Stroke` | 系列轮廓、线条或条目边框所用的画刷。 | `null` |
+| `StrokeThickness` | 基准线条粗细。部分默认主题会为特定类型设定专门的值。 | `1.0` |
+| `PointBrushPath` | 可选的属性路径，用于为每个数据项解析出一个 `IBrush`。支持该特性的系列会把它用在各个数据点、标记、分段或扇区上。 | `null` |
 
 ## Animation
 
-Charts and series share an animation pipeline.
+图表与系列共用同一套动画流水线。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `IsAnimationEnabled` | Enables chart entry animations. | `true` |
-| `AnimationDuration` | Duration of the chart entry animation. | `00:00:01` |
-| `Easing` | Easing function applied to chart animation progress. | `CubicEaseOut` |
-| `AnimationDelay` | Series-level delay before the series animation starts. | `00:00:00` |
-| `AnimationProgress` | Series-level animation progress from `0.0` to `1.0`. | `1.0` |
+| `IsAnimationEnabled` | 启用图表的入场动画。 | `true` |
+| `AnimationDuration` | 图表入场动画的时长。 | `00:00:01` |
+| `Easing` | 作用于图表动画进度的缓动函数。 | `CubicEaseOut` |
+| `AnimationDelay` | 系列级的延迟：动画开始前先等这么久。 | `00:00:00` |
+| `AnimationProgress` | 系列级的动画进度，从 `0.0` 到 `1.0`。 | `1.0` |
 
 ## Extensibility
 
-Custom Cartesian series derive from `CartesianSeries` and implement `RenderSeries(in SeriesRenderContext context)`. The render context provides the chart instance, plot area, category map, viewport bounds, and resolved brushes needed by the series drawing logic. Series can override `CreateLegendItem` to customize their legend marker and can expose data through `GetDataPoints()` or related range and polar data-point structs for bounds, tooltips, and interactions. When upgrading an existing custom Cartesian series, move any older `TryRenderSelf(...)` rendering logic into `RenderSeries(in SeriesRenderContext context)`.
+自定义笛卡尔系列需派生自 `CartesianSeries` 并实现 `RenderSeries(in SeriesRenderContext context)`。渲染上下文会提供图表实例、绘图区、类别映射、视口范围以及已解析的画刷，供系列的绘制逻辑取用。系列可以重写 `CreateLegendItem` 来定制自己的图例标记，也可以通过 `GetDataPoints()` 或相关的区间、极坐标数据点结构体对外提供数据，供范围计算、工具提示和交互使用。升级既有的自定义笛卡尔系列时，请把原先 `TryRenderSelf(...)` 中的渲染逻辑挪进 `RenderSeries(in SeriesRenderContext context)`。
 
-Financial overlays can render in `FinancialChart` by implementing `IFinancialChartOverlaySeries`. See [Financial chart](/controls/data-display/charts/financial/financial-chart) for overlay-specific behavior.
+金融叠加层只要实现 `IFinancialChartOverlaySeries`，就能在 `FinancialChart` 中绘制。叠加层特有的行为请参阅[金融图表](/controls/data-display/charts/financial/financial-chart)。
 
-## Chart categories
+## 图表分类 {#chart-categories}
 
-### Analytics and KPI charts
+### 分析与 KPI 类 {#analytics-and-kpi-charts}
 
-Charts for summarizing metrics, identifying patterns, and presenting findings.
+用于概括指标、发现规律、呈现结论的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [KPI card](/controls/data-display/charts/analytics/kpi-card) | Displays a key metric alongside a trend indicator and a sparkline. |
-| [Heatmap chart](/controls/data-display/charts/analytics/heatmap-chart) | Shows a matrix of values as a color-coded grid. |
-| [Funnel chart](/controls/data-display/charts/analytics/funnel-chart) | Visualizes a sequential process where volume decreases at each stage. |
-| [Waffle chart](/controls/data-display/charts/analytics/waffle-chart) | Represents a percentage as filled cells in a grid. |
-| [Word cloud chart](/controls/data-display/charts/analytics/word-cloud-chart) | Sizes words by frequency to show prominence in a dataset. |
-| [Bullet chart](/controls/data-display/charts/analytics/bullet-chart) | Compares a primary value to a target and qualitative ranges in a compact layout. |
-| [Calendar heatmap chart](/controls/data-display/charts/analytics/calendar-heatmap-chart) | Shows daily activity intensity in a week-by-week calendar grid. |
-| [Matrix chart](/controls/data-display/charts/analytics/matrix-chart) | Displays relationships between two sets of categories in a grid. |
-| [Table chart](/controls/data-display/charts/analytics/table-chart) | Presents data in rows and columns with optional conditional formatting. |
-| [Bump chart](/controls/data-display/charts/analytics/bump-chart) | Tracks rank changes over time using crossed lines. |
-| [Slope chart](/controls/data-display/charts/analytics/slope-chart) | Compares values at two points in time using angled lines. |
-| [Pyramid chart](/controls/data-display/charts/analytics/pyramid-chart) | Stacks segments vertically to show hierarchical or sequential proportions. |
-| [Theme river chart](/controls/data-display/charts/analytics/theme-river-chart) | Builds a theme-river-style layout with stacked area series and a centered spacer offset. |
-| [Pictorial bar chart](/controls/data-display/charts/analytics/pictorial-bar-chart) | Replaces standard bars with icons or shapes sized by value. |
+| [KPI 卡片](/controls/data-display/charts/analytics/kpi-card) | 展示一项关键指标，并配上趋势指示和迷你走势图。 |
+| [热力图](/controls/data-display/charts/analytics/heatmap-chart) | 把一组数值以带颜色编码的网格呈现出来。 |
+| [漏斗图](/controls/data-display/charts/analytics/funnel-chart) | 呈现一条逐级递减的顺序流程。 |
+| [华夫图](/controls/data-display/charts/analytics/waffle-chart) | 用网格中点亮的格子表示百分比。 |
+| [词云](/controls/data-display/charts/analytics/word-cloud-chart) | 按词频决定字号，凸显数据集中的高频词。 |
+| [子弹图](/controls/data-display/charts/analytics/bullet-chart) | 在紧凑的版面里把主值与目标值及定性区间作对比。 |
+| [日历热力图](/controls/data-display/charts/analytics/calendar-heatmap-chart) | 在逐周排布的日历网格中呈现每天的活跃强度。 |
+| [矩阵图](/controls/data-display/charts/analytics/matrix-chart) | 用网格呈现两组类别之间的关系。 |
+| [表格图](/controls/data-display/charts/analytics/table-chart) | 以行列形式呈现数据，并可按条件设置格式。 |
+| [凹凸图](/controls/data-display/charts/analytics/bump-chart) | 用交错的折线追踪名次随时间的变化。 |
+| [斜率图](/controls/data-display/charts/analytics/slope-chart) | 用斜线比较两个时间点上的数值。 |
+| [金字塔图](/controls/data-display/charts/analytics/pyramid-chart) | 把各段自上而下堆叠，呈现层级或顺序上的占比。 |
+| [主题河流图](/controls/data-display/charts/analytics/theme-river-chart) | 用堆叠面积系列加居中的留白偏移，搭出主题河流式的版面。 |
+| [图形条形图](/controls/data-display/charts/analytics/pictorial-bar-chart) | 用大小随数值变化的图标或形状取代普通条形。 |
 
-### Bubble and packed charts
+### 气泡与堆积类 {#bubble-and-packed-charts}
 
-Charts that encode magnitude with marker size and often omit traditional axes or grids.
+用标记大小表示量级的图表，通常不设传统的坐标轴或网格。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Bubble chart](/controls/data-display/charts/bubble/bubble-chart) | Plots X and Y values and uses bubble size for a third measure. |
-| [Bubble cloud chart](/controls/data-display/charts/bubble/bubble-cloud-chart) | Arranges sized bubbles in an organic, clustered layout without axes. |
-| [Packed bubble chart](/controls/data-display/charts/bubble/packed-bubble-chart) | Packs category bubbles tightly into a compact space for part-to-whole comparison. |
+| [气泡图](/controls/data-display/charts/bubble/bubble-chart) | 绘制 X、Y 值，并用气泡大小表示第三个指标。 |
+| [气泡云图](/controls/data-display/charts/bubble/bubble-cloud-chart) | 不设坐标轴，把大小不一的气泡自然地聚成一簇。 |
+| [紧凑气泡图](/controls/data-display/charts/bubble/packed-bubble-chart) | 把类别气泡紧密码进有限空间，用于部分与整体的比较。 |
 
-### Cartesian charts
+### 笛卡尔类 {#cartesian-charts}
 
-Charts that plot data on horizontal and vertical axes. Use these for trends, comparisons, distributions, and correlations.
+在横纵坐标轴上绘制数据的图表。趋势、对比、分布和相关性分析都靠它们。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Bar chart](/controls/data-display/charts/cartesian/bar-chart) | Compares discrete quantities across categories using rectangular bars. |
-| [Line chart](/controls/data-display/charts/cartesian/line-chart) | Connects data points with straight segments to show trends over time. |
-| [Area chart](/controls/data-display/charts/cartesian/area-chart) | Fills the area below a line to emphasize cumulative totals or volume. |
-| [Combo chart](/controls/data-display/charts/cartesian/combo-chart) | Combines multiple Cartesian series types on one plot, with optional secondary Y-axis support. |
-| [Scatter chart](/controls/data-display/charts/cartesian/scatter-chart) | Plots individual data points to reveal correlations between two variables. |
-| [Spline chart](/controls/data-display/charts/cartesian/spline-chart) | Connects data points with curved lines to show gradual changes in time-dependent data. |
-| [Step line chart](/controls/data-display/charts/cartesian/step-line-chart) | Connects points with horizontal and vertical steps for discrete state changes. |
-| [Stacked bar chart](/controls/data-display/charts/cartesian/stacked-bar-chart) | Shows part-to-whole relationships across categories using stacked bars. |
-| [Stacked area chart](/controls/data-display/charts/cartesian/stacked-area-chart) | Shows cumulative totals over time using stacked filled areas. |
-| [Range area chart](/controls/data-display/charts/cartesian/range-area-chart) | Displays high-low ranges as a filled band between two values. |
-| [Waterfall chart](/controls/data-display/charts/cartesian/waterfall-chart) | Shows how an initial value changes through a series of positive and negative contributions. |
-| [Histogram chart](/controls/data-display/charts/cartesian/histogram-chart) | Groups continuous values into bins to show frequency distribution. |
-| [Pareto chart](/controls/data-display/charts/cartesian/pareto-chart) | Combines bars and a cumulative line to identify significant factors. |
+| [条形图](/controls/data-display/charts/cartesian/bar-chart) | 用矩形条比较各类别之间的离散数量。 |
+| [折线图](/controls/data-display/charts/cartesian/line-chart) | 用直线段连接数据点，呈现随时间的走势。 |
+| [面积图](/controls/data-display/charts/cartesian/area-chart) | 填充折线下方的区域，强调累计总量或体量。 |
+| [组合图](/controls/data-display/charts/cartesian/combo-chart) | 在同一张图上组合多种笛卡尔系列，并可选支持次 Y 轴。 |
+| [散点图](/controls/data-display/charts/cartesian/scatter-chart) | 绘制一个个数据点，揭示两个变量之间的相关性。 |
+| [样条图](/controls/data-display/charts/cartesian/spline-chart) | 用曲线连接数据点，呈现时序数据的平缓变化。 |
+| [阶梯折线图](/controls/data-display/charts/cartesian/step-line-chart) | 用横竖阶梯连接各点，表现离散的状态跃迁。 |
+| [堆叠条形图](/controls/data-display/charts/cartesian/stacked-bar-chart) | 用堆叠条形呈现各类别中部分与整体的关系。 |
+| [堆叠面积图](/controls/data-display/charts/cartesian/stacked-area-chart) | 用层层堆叠的填充面积呈现随时间的累计总量。 |
+| [区间面积图](/controls/data-display/charts/cartesian/range-area-chart) | 把高低区间画成两个数值之间的填充带。 |
+| [瀑布图](/controls/data-display/charts/cartesian/waterfall-chart) | 呈现初始值如何在一连串正负变动中改变。 |
+| [直方图](/controls/data-display/charts/cartesian/histogram-chart) | 把连续数值分入区间，呈现频数分布。 |
+| [帕累托图](/controls/data-display/charts/cartesian/pareto-chart) | 结合条形与累计折线，找出起决定作用的因素。 |
 
-### Circular charts
+### 环形类 {#circular-charts}
 
-Charts that represent data as segments of a circle.
+把数据表示为圆的各个扇段的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Pie chart](/controls/data-display/charts/circular/pie-chart) | Divides a circle into proportional slices to show part-to-whole relationships. |
-| [Donut chart](/controls/data-display/charts/circular/donut-chart) | A pie chart with a hollow center, often used to display a total in the middle. |
-| [Semi-donut chart](/controls/data-display/charts/circular/semi-donut-chart) | A half-circle donut for compact part-to-whole views. |
+| [饼图](/controls/data-display/charts/circular/pie-chart) | 把圆按比例切分成扇形，呈现部分与整体的关系。 |
+| [环形图](/controls/data-display/charts/circular/donut-chart) | 中心镂空的饼图，常在中间显示总计。 |
+| [半环形图](/controls/data-display/charts/circular/semi-donut-chart) | 半圆形的环形图，适合紧凑的部分与整体视图。 |
 
-### Comparison charts
+### 对比类 {#comparison-charts}
 
-Charts for before-and-after analysis, back-to-back comparison, and proportional allocation.
+用于前后对比、背靠背比较和按比例分配的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Diverging bar chart](/controls/data-display/charts/comparison/diverging-bar-chart) | Extends bars left and right from a centered baseline. |
-| [Dumbbell chart](/controls/data-display/charts/comparison/dumbbell-chart) | Connects two values per category with a line and markers. |
-| [Mekko chart](/controls/data-display/charts/comparison/mekko-chart) | Combines variable-width columns with stacked segments to show size and composition. |
-| [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart) | Places two bar series back to back around a center line. |
-| [Parliament chart](/controls/data-display/charts/comparison/parliament-chart) | Displays seat distribution in a hemicycle layout. |
-| [Population pyramid chart](/controls/data-display/charts/comparison/population-pyramid-chart) | Shows two opposing population distributions by ordered bands. |
-| [Tornado chart](/controls/data-display/charts/comparison/tornado-chart) | Draws bidirectional horizontal bars for sensitivity or ranked comparisons. |
-| [Venn diagram chart](/controls/data-display/charts/comparison/venn-diagram-chart) | Visualizes set overlap and intersection values. |
+| [双向条形图](/controls/data-display/charts/comparison/diverging-bar-chart) | 条形从居中的基准线向左右两侧延伸。 |
+| [哑铃图](/controls/data-display/charts/comparison/dumbbell-chart) | 用一条连线和两个标记点连接每个类别的两个数值。 |
+| [Mekko 图](/controls/data-display/charts/comparison/mekko-chart) | 把宽度不等的柱子与堆叠分段结合，同时呈现规模与构成。 |
+| [镜像条形图](/controls/data-display/charts/comparison/mirror-bar-chart) | 把两组条形系列以中线为轴背靠背排布。 |
+| [议席图](/controls/data-display/charts/comparison/parliament-chart) | 以半圆形版面呈现议席分布。 |
+| [人口金字塔图](/controls/data-display/charts/comparison/population-pyramid-chart) | 按有序分段呈现相对的两组人口分布。 |
+| [龙卷风图](/controls/data-display/charts/comparison/tornado-chart) | 绘制双向横条，用于敏感性分析或带排名的对比。 |
+| [韦恩图](/controls/data-display/charts/comparison/venn-diagram-chart) | 呈现集合之间的重叠与交集数值。 |
 
-### Engineering and scientific charts
+### 工程与科学类 {#engineering-and-scientific-charts}
 
-Charts for technical surfaces, multivariate scientific views, and specialized coordinate systems.
+用于技术曲面、多变量科学视图和专用坐标系的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Carpet plot chart](/controls/data-display/charts/engineering/carpet-plot-chart) | Maps two independent variables and one dependent variable onto a skewed grid. |
-| [Hexbin chart](/controls/data-display/charts/engineering/hexbin-chart) | Aggregates dense 2D point clouds into hexagonal density bins. |
-| [Smith chart](/controls/data-display/charts/engineering/smith-chart) | Visualizes complex impedance or admittance data on a normalized radio frequency grid. |
-| [Ternary chart](/controls/data-display/charts/engineering/ternary-chart) | Plots three-part compositions that sum to a constant. |
-| [Wind rose chart](/controls/data-display/charts/engineering/wind-rose-chart) | Shows directional frequency distributions as stacked polar sectors. |
+| [地毯图](/controls/data-display/charts/engineering/carpet-plot-chart) | 把两个自变量和一个因变量映射到倾斜的网格上。 |
+| [六边形分箱图](/controls/data-display/charts/engineering/hexbin-chart) | 把密集的二维点云聚合成六边形密度分箱。 |
+| [史密斯圆图](/controls/data-display/charts/engineering/smith-chart) | 在归一化的射频网格上呈现复阻抗或复导纳数据。 |
+| [三元图](/controls/data-display/charts/engineering/ternary-chart) | 绘制三者之和恒定的三元组成。 |
+| [风玫瑰图](/controls/data-display/charts/engineering/wind-rose-chart) | 以堆叠的极坐标扇区呈现各方向上的频数分布。 |
 
-### Financial charts
+### 金融类 {#financial-charts}
 
-Specialized charts for price and market data analysis.
+专门用于价格与行情数据分析的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Financial chart](/controls/data-display/charts/financial/financial-chart) | Hosts financial series such as candlestick and OHLC on shared price axes. |
-| [Candlestick chart](/controls/data-display/charts/financial/candlestick-chart) | Shows open, high, low, and close prices per period as candle shapes. |
-| [OHLC chart](/controls/data-display/charts/financial/ohlc-chart) | Displays OHLC price data as vertical bars with tick marks. |
-| [Heikin-Ashi chart](/controls/data-display/charts/financial/heikin-ashi-chart) | A smoothed candlestick variant that filters out short-term noise. |
-| [Hilo chart](/controls/data-display/charts/financial/hilo-chart) | Plots only the high and low values per period as a vertical line. |
-| [Kagi chart](/controls/data-display/charts/financial/kagi-chart) | Filters small price moves to show significant direction changes. |
-| [Renko chart](/controls/data-display/charts/financial/renko-chart) | Plots price movement as fixed-size bricks, ignoring time. |
-| [Point and figure chart](/controls/data-display/charts/financial/point-and-figure-chart) | Uses columns of X and O symbols to track supply and demand. |
+| [金融图表](/controls/data-display/charts/financial/financial-chart) | 在共享的价格坐标轴上承载 K 线、OHLC 等金融系列。 |
+| [K 线图](/controls/data-display/charts/financial/candlestick-chart) | 用蜡烛形状展示每个周期的开、高、低、收价格。 |
+| [OHLC 图](/controls/data-display/charts/financial/ohlc-chart) | 用带刻度的竖向柱体呈现 OHLC 价格数据。 |
+| [平均 K 线图](/controls/data-display/charts/financial/heikin-ashi-chart) | 经过平滑的 K 线变体，滤除短期噪声。 |
+| [高低图](/controls/data-display/charts/financial/hilo-chart) | 只用一条竖线绘出每个周期的最高价和最低价。 |
+| [卡吉图](/controls/data-display/charts/financial/kagi-chart) | 滤掉小幅价格波动，只显示显著的方向变化。 |
+| [砖形图](/controls/data-display/charts/financial/renko-chart) | 用大小固定的砖块表示价格变动，忽略时间维度。 |
+| [点数图](/controls/data-display/charts/financial/point-and-figure-chart) | 用一列列 X 和 O 符号追踪供需变化。 |
 
 ### Gauges
 
-Visual displays of a single value relative to a range. Common in monitoring dashboards and real-time status panels.
+把单个数值放在一个取值范围内直观呈现。监控仪表板和实时状态面板中很常见。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Circular gauge](/controls/data-display/charts/gauges/circular-gauge-chart) | A dial-style gauge with a needle or arc indicator. |
-| [Gauge chart](/controls/data-display/charts/gauges/gauge-chart) | Displays a single value on a semi-circular dial with optional needle. |
-| [Linear gauge](/controls/data-display/charts/gauges/linear-gauge-chart) | A horizontal or vertical track with a pointer or fill. |
-| [Gradient ring chart](/controls/data-display/charts/gauges/gradient-ring-chart) | Draws multiple concentric progress rings against a shared maximum. |
-| [Liquid fill gauge](/controls/data-display/charts/gauges/liquid-fill-gauge) | Represents a percentage as a rising liquid level inside a shape. |
-| [Progress donut](/controls/data-display/charts/gauges/progress-donut-chart) | A circular arc that fills proportionally to indicate progress. |
+| [圆形仪表](/controls/data-display/charts/gauges/circular-gauge-chart) | 带指针或弧形指示的表盘式仪表。 |
+| [仪表图](/controls/data-display/charts/gauges/gauge-chart) | 在半圆形表盘上呈现单个数值，可选配指针。 |
+| [线性仪表](/controls/data-display/charts/gauges/linear-gauge-chart) | 带指针或填充的横向或纵向轨道。 |
+| [渐变圆环图](/controls/data-display/charts/gauges/gradient-ring-chart) | 以共享的最大值为参照，绘制多个同心进度环。 |
+| [液位仪表](/controls/data-display/charts/gauges/liquid-fill-gauge) | 用形状内不断上升的液面表示百分比。 |
+| [进度环形图](/controls/data-display/charts/gauges/progress-donut-chart) | 按比例填充的圆弧，用来指示进度。 |
 
-### Hierarchy and flow charts
+### 层级与流向类 {#hierarchy-and-flow-charts}
 
-Charts for visualizing relationships, flows, and tree structures.
+用于呈现关系、流动和树状结构的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Flow chart](/controls/data-display/charts/hierarchy/flow-chart) | Visualizes workflows, decision trees, and system maps using nodes and directed edges. |
-| [Sankey chart](/controls/data-display/charts/hierarchy/sankey-chart) | Shows flow quantities between nodes using proportional bands. |
-| [Alluvial chart](/controls/data-display/charts/hierarchy/alluvial-chart) | Tracks how items transition between categories across stages. |
-| [Treemap chart](/controls/data-display/charts/hierarchy/treemap-chart) | Represents hierarchical data as nested rectangles sized by value. |
-| [Sunburst chart](/controls/data-display/charts/hierarchy/sunburst-chart) | Displays hierarchy as concentric rings radiating from a center. |
-| [Circle packing chart](/controls/data-display/charts/hierarchy/circle-packing-chart) | Nests circles to represent hierarchical proportions. |
-| [Flame graph](/controls/data-display/charts/hierarchy/flame-graph) | Shows hierarchical stacks of cost or duration data from bottom to top. |
-| [Icicle chart](/controls/data-display/charts/hierarchy/icicle-chart) | Shows hierarchy as stacked rectangular bands from top to bottom. |
-| [Dendrogram chart](/controls/data-display/charts/hierarchy/dendrogram-chart) | A tree diagram used in clustering and classification contexts. |
-| [Indented tree chart](/controls/data-display/charts/hierarchy/indented-tree-chart) | Displays hierarchy as an indented list with expandable nodes. |
-| [Radial tree chart](/controls/data-display/charts/hierarchy/radial-tree-chart) | Arranges a tree hierarchy in a circular layout. |
-| [Organization chart](/controls/data-display/charts/hierarchy/organization-chart) | Visualizes reporting structures and team hierarchies. |
-| [Mind map chart](/controls/data-display/charts/hierarchy/mindmap-chart) | Builds an ideation layout on top of `FlowChart` with diverging nodes and links. |
-| [Network chart](/controls/data-display/charts/hierarchy/network-chart) | Plots nodes and edges to show relationships without a fixed hierarchy. |
-| [Force-directed graph](/controls/data-display/charts/hierarchy/force-directed-graph) | Arranges nodes using simulated physical forces to reveal clusters. |
-| [Chord diagram](/controls/data-display/charts/hierarchy/chord-diagram) | Shows pairwise relationships between entities as arcs around a circle. |
-| [Arc diagram](/controls/data-display/charts/hierarchy/arc-diagram-chart) | Displays connections between nodes laid out on a straight axis. |
-| [Process flow chart](/controls/data-display/charts/hierarchy/process-flow-chart) | Uses `FlowChart` to represent sequential or branching workflows. |
+| [流程图](/controls/data-display/charts/hierarchy/flow-chart) | 用节点和有向边呈现工作流、决策树和系统图。 |
+| [桑基图](/controls/data-display/charts/hierarchy/sankey-chart) | 用宽度成比例的色带呈现节点之间的流量。 |
+| [冲积图](/controls/data-display/charts/hierarchy/alluvial-chart) | 追踪事项在各阶段之间于不同类别间的流转。 |
+| [矩形树图](/controls/data-display/charts/hierarchy/treemap-chart) | 把层级数据画成按数值定尺寸的嵌套矩形。 |
+| [旭日图](/controls/data-display/charts/hierarchy/sunburst-chart) | 以自中心向外辐射的同心环呈现层级。 |
+| [圆堆积图](/controls/data-display/charts/hierarchy/circle-packing-chart) | 用层层嵌套的圆表示层级占比。 |
+| [火焰图](/controls/data-display/charts/hierarchy/flame-graph) | 自下而上呈现层级化的开销或耗时数据。 |
+| [冰柱图](/controls/data-display/charts/hierarchy/icicle-chart) | 自上而下以一排排矩形带呈现层级。 |
+| [聚类树图](/controls/data-display/charts/hierarchy/dendrogram-chart) | 用于聚类和分类场景的树状图。 |
+| [缩进树图](/controls/data-display/charts/hierarchy/indented-tree-chart) | 以可展开节点的缩进列表呈现层级。 |
+| [径向树图](/controls/data-display/charts/hierarchy/radial-tree-chart) | 以环形版面排布树状层级。 |
+| [组织结构图](/controls/data-display/charts/hierarchy/organization-chart) | 呈现汇报关系和团队层级。 |
+| [思维导图](/controls/data-display/charts/hierarchy/mindmap-chart) | 在 `FlowChart` 之上搭出发散式的节点与连接，用于梳理想法。 |
+| [网络图](/controls/data-display/charts/hierarchy/network-chart) | 绘制节点和边，呈现不依赖固定层级的关系。 |
+| [力导向图](/controls/data-display/charts/hierarchy/force-directed-graph) | 借助模拟的物理作用力排布节点，揭示簇群。 |
+| [和弦图](/controls/data-display/charts/hierarchy/chord-diagram) | 以圆周上的弧线呈现实体之间的两两关系。 |
+| [弧线图](/controls/data-display/charts/hierarchy/arc-diagram-chart) | 呈现沿直线轴排布的节点之间的连接。 |
+| [工序流程图](/controls/data-display/charts/hierarchy/process-flow-chart) | 用 `FlowChart` 呈现顺序式或分支式的工作流。 |
 
 ### Maps
 
-Charts that overlay data onto geographic or custom spatial layouts.
+把数据叠加到地理版图或自定义空间版面上的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Choropleth map](/controls/data-display/charts/maps/choropleth-map-chart) | Colors map regions by a numeric value to show geographic distribution. |
-| [Bubble map](/controls/data-display/charts/maps/bubble-map-chart) | Places sized circles on a map to represent values at specific locations. |
-| [Heatmap](/controls/data-display/charts/maps/heatmap-map-chart) | Applies a color gradient over a map to show intensity or density. |
-| [Shape map](/controls/data-display/charts/maps/shape-map-chart) | Renders custom regions as a data-driven map. |
-| [Seat map](/controls/data-display/charts/maps/seat-map-chart) | Displays venue or floor-plan layouts with interactive seat selection. |
+| [分级统计地图](/controls/data-display/charts/maps/choropleth-map-chart) | 按数值给地图各区域着色，呈现地理分布。 |
+| [气泡地图](/controls/data-display/charts/maps/bubble-map-chart) | 在地图上放置大小不等的圆，表示各地点的数值。 |
+| [Heatmap](/controls/data-display/charts/maps/heatmap-map-chart) | 在地图上叠加颜色渐变，呈现强度或密度。 |
+| [形状地图](/controls/data-display/charts/maps/shape-map-chart) | 把自定义区域渲染成数据驱动的地图。 |
+| [座位图](/controls/data-display/charts/maps/seat-map-chart) | 呈现场馆或平面布局，并支持交互式选座。 |
 
-### Radial charts
+### 径向类 {#radial-charts}
 
-Charts that use a circular coordinate system rather than Cartesian axes.
+采用环形坐标系而非笛卡尔坐标轴的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Polar chart](/controls/data-display/charts/radial/polar-chart) | Plots arbitrary angle and radius values in a polar coordinate system. |
-| [Radar chart](/controls/data-display/charts/radial/radar-chart) | Plots multivariate data as a polygon on a circular grid of axes. |
-| [Polar area chart](/controls/data-display/charts/radial/polar-area-chart) | Divides a circle into equal-angle segments sized by value. |
-| [Nightingale Rose chart](/controls/data-display/charts/radial/nightingale-rose-chart) | A polar area chart where radius, not area, encodes the value. |
-| [Radial bar chart](/controls/data-display/charts/radial/radial-bar-chart) | Displays categories as arcs of varying length around a center point. |
-| [Radial line chart](/controls/data-display/charts/radial/radial-line-chart) | A line chart projected onto a circular axis. |
+| [极坐标图](/controls/data-display/charts/radial/polar-chart) | 在极坐标系中绘制任意角度和半径的数值。 |
+| [雷达图](/controls/data-display/charts/radial/radar-chart) | 在环形轴网上把多变量数据画成一个多边形。 |
+| [极坐标面积图](/controls/data-display/charts/radial/polar-area-chart) | 把圆划分成等角度的扇段，各段大小由数值决定。 |
+| [南丁格尔玫瑰图](/controls/data-display/charts/radial/nightingale-rose-chart) | 一种极坐标面积图，用半径而非面积表示数值。 |
+| [径向条形图](/controls/data-display/charts/radial/radial-bar-chart) | 围绕中心点，把各类别画成长短不一的弧。 |
+| [径向折线图](/controls/data-display/charts/radial/radial-line-chart) | 投影到环形坐标轴上的折线图。 |
 
-### Scheduling and timeline charts
+### 排期与时间线类 {#scheduling-and-timeline-charts}
 
-Charts for time-based planning, project management, and sequential data.
+用于时间规划、项目管理和顺序数据的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Gantt chart](/controls/data-display/charts/scheduling/gantt-chart) | Shows tasks and their durations across a horizontal time axis. |
-| [Timeline chart](/controls/data-display/charts/scheduling/timeline-chart) | Displays events in chronological order along a linear axis. |
-| [Swimlane chart](/controls/data-display/charts/scheduling/swimlane-chart) | Organizes tasks into parallel rows to show ownership or phase. |
-| [Spiral timeline chart](/controls/data-display/charts/scheduling/spiral-timeline-chart) | Arranges time-based data along a spiral for cyclical patterns. |
-| [Sparkline chart](/controls/data-display/charts/scheduling/sparkline-chart) | An inline miniature chart for showing trends within a small space. |
+| [甘特图](/controls/data-display/charts/scheduling/gantt-chart) | 在横向时间轴上呈现各项任务及其工期。 |
+| [时间线图](/controls/data-display/charts/scheduling/timeline-chart) | 沿线性轴按时间先后呈现各个事件。 |
+| [泳道图](/controls/data-display/charts/scheduling/swimlane-chart) | 把任务编入并列的行，体现责任归属或所处阶段。 |
+| [螺旋时间线图](/controls/data-display/charts/scheduling/spiral-timeline-chart) | 沿螺旋线排布时间数据，呈现周期性规律。 |
+| [迷你走势图](/controls/data-display/charts/scheduling/sparkline-chart) | 行内的微型图表，在极小的空间里呈现走势。 |
 
-### Statistical charts
+### 统计类 {#statistical-charts}
 
-Charts for distributional and comparative statistical analysis.
+用于分布分析和统计对比的图表。
 
-| Chart | Description |
+| 图表 | 说明 |
 | --- | --- |
-| [Beeswarm plot chart](/controls/data-display/charts/statistical/beeswarm-plot-chart) | Displays individual observations as non-overlapping dots within each category. |
-| [Box plot chart](/controls/data-display/charts/statistical/boxplot-chart) | Summarizes a distribution using medians, quartiles, and outliers. |
-| [Contour plot chart](/controls/data-display/charts/statistical/contour-plot-chart) | Displays 2D scalar fields as contour lines and optional filled bands. |
-| [Density plot chart](/controls/data-display/charts/statistical/density-plot-chart) | Uses kernel density estimation to render a smooth distribution curve. |
-| [Error bar chart](/controls/data-display/charts/statistical/error-bar-chart) | Adds error or uncertainty indicators to data points. |
-| [Mosaic chart](/controls/data-display/charts/statistical/mosaic-chart) | Visualizes proportions across two categorical variables as nested rectangles. |
-| [Parallel coordinates chart](/controls/data-display/charts/statistical/parallel-coordinates-chart) | Compares multivariate records as lines across parallel axes. |
-| [Ridgeline chart](/controls/data-display/charts/statistical/ridgeline-chart) | Stacks multiple overlapping distributions for shape comparison. |
-| [Strip plot chart](/controls/data-display/charts/statistical/strip-plot-chart) | Displays individual observations per category with jitter and optional mean lines. |
-| [Violin plot chart](/controls/data-display/charts/statistical/violin-plot-chart) | Combines a box plot with a kernel density shape to show distribution. |
+| [蜂群图](/controls/data-display/charts/statistical/beeswarm-plot-chart) | 在每个类别内把各个观测值画成互不重叠的点。 |
+| [箱线图](/controls/data-display/charts/statistical/boxplot-chart) | 用中位数、四分位数和异常值概括一组分布。 |
+| [等值线图](/controls/data-display/charts/statistical/contour-plot-chart) | 用等值线和可选的填充带呈现二维标量场。 |
+| [密度图](/controls/data-display/charts/statistical/density-plot-chart) | 用核密度估计绘出平滑的分布曲线。 |
+| [误差棒图](/controls/data-display/charts/statistical/error-bar-chart) | 为数据点添加误差或不确定性指示。 |
+| [马赛克图](/controls/data-display/charts/statistical/mosaic-chart) | 用嵌套矩形呈现两个分类变量上的占比。 |
+| [平行坐标图](/controls/data-display/charts/statistical/parallel-coordinates-chart) | 在一组平行轴上以折线比较多变量记录。 |
+| [山脊图](/controls/data-display/charts/statistical/ridgeline-chart) | 把多条相互重叠的分布叠放在一起，便于比较形态。 |
+| [带状散点图](/controls/data-display/charts/statistical/strip-plot-chart) | 按类别呈现各个观测值，带抖动偏移和可选的均值线。 |
+| [小提琴图](/controls/data-display/charts/statistical/violin-plot-chart) | 把箱线图与核密度形状结合起来呈现分布。 |
 
-## Shared elements
+## 共用元素 {#shared-elements}
 
-Most chart types share the following configurable elements:
+大多数图表类型都共用下列可配置的元素：
 
-| Element | Description |
+| 元素 | 说明 |
 | --- | --- |
-| [Legend](/controls/data-display/charts/shared-elements/legend-chart) | Identifies each data series by name and color. |
-| [Tooltip](/controls/data-display/charts/shared-elements/tooltip-chart) | Shows data values on hover or tap. |
-| [Crosshairs](/controls/data-display/charts/shared-elements/crosshairs-chart) | Draws intersecting lines that follow the pointer across the chart. |
-| [Data labels](/controls/data-display/charts/shared-elements/data-labels-chart) | Renders the value of each data point directly on the chart. |
-| [Chart export](/controls/data-display/charts/shared-elements/export-chart) | Saves a chart view to a PNG or JPEG file, PNG stream, or save dialog. |
-| [Markers](/controls/data-display/charts/shared-elements/markers-chart) | Adds point symbols at each data value. |
-| [Trendline](/controls/data-display/charts/shared-elements/trendline-chart) | Overlays a regression or moving-average line on a series. |
-| [Annotations](/controls/data-display/charts/shared-elements/annotations-chart) | Places labels, lines, or shapes at specific data coordinates. |
-| [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart) | Controls tick marks, labels, gridlines, and scale. |
-| [Interactions](/controls/data-display/charts/shared-elements/interactions-chart) | Configures zoom, pan, selection, hover highlighting, and trackball behavior. |
+| [Legend](/controls/data-display/charts/shared-elements/legend-chart) | 按名称和颜色标识各个数据系列。 |
+| [Tooltip](/controls/data-display/charts/shared-elements/tooltip-chart) | 在悬停或点按时显示数据值。 |
+| [Crosshairs](/controls/data-display/charts/shared-elements/crosshairs-chart) | 绘制随指针移动、相互交叉的十字准线。 |
+| [数据标签](/controls/data-display/charts/shared-elements/data-labels-chart) | 把每个数据点的数值直接标在图上。 |
+| [图表导出](/controls/data-display/charts/shared-elements/export-chart) | 把图表视图保存为 PNG 或 JPEG 文件、PNG 流，或通过保存对话框导出。 |
+| [Markers](/controls/data-display/charts/shared-elements/markers-chart) | 在每个数据值处添加标记符号。 |
+| [Trendline](/controls/data-display/charts/shared-elements/trendline-chart) | 在系列上叠加一条回归线或移动平均线。 |
+| [Annotations](/controls/data-display/charts/shared-elements/annotations-chart) | 在指定的数据坐标处放置标签、线条或图形。 |
+| [坐标轴定制](/controls/data-display/charts/shared-elements/axis-customization-chart) | 控制刻度线、标签、网格线和刻度范围。 |
+| [Interactions](/controls/data-display/charts/shared-elements/interactions-chart) | 配置缩放、平移、选择、悬停高亮和轨迹球行为。 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Avalonia Pro pricing and access](https://avaloniaui.net/pricing)
+- [Avalonia Pro 定价与获取方式](https://avaloniaui.net/pricing)

@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPresentationSource Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/IPresentationSource.cs">IPresentationSource.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/IPresentationSource.cs">IPresentationSource.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents the host of the visual tree. On desktop platforms this is typically backed by a native window.
+表示视觉树的宿主。在桌面平台上，它通常由一个原生窗口支撑。
 
 </div>
 
@@ -52,20 +52,20 @@ public interface IPresentationSource
 
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RenderScaling](#uid-662eff2314) | The scaling factor to use in rendering. |
-| [RootVisual](#uid-be6f81943b) | The current root of the visual tree |
+| [RenderScaling](#uid-662eff2314) | 渲染时所用的缩放系数。 |
+| [RootVisual](#uid-be6f81943b) | 视觉树当前的根 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-662eff2314"></span>
 
-### RenderScaling Property
+### RenderScaling 属性 {#renderscaling-property}
 
-The scaling factor to use in rendering.
+渲染时所用的缩放系数。
 
 ```csharp
 public double RenderScaling { get; set; }
@@ -77,9 +77,9 @@ public double RenderScaling { get; set; }
 
 <span id="uid-be6f81943b"></span>
 
-### RootVisual Property
+### RootVisual 属性 {#rootvisual-property}
 
-The current root of the visual tree
+视觉树当前的根
 
 ```csharp
 public Avalonia.Visual RootVisual { get; set; }

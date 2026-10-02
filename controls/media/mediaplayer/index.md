@@ -6,22 +6,22 @@ tags:
   - avalonia enterprise
 ---
 
-The `MediaPlayerControl` is a fully-featured UI control for media playback that provides transport controls, progress display, volume control, and video rendering. It encapsulates a `MediaPlayer` instance and provides a rich user interface for media playback.
+`MediaPlayerControl` 是一个功能齐备的媒体播放界面控件，提供播放控制、进度显示、音量调节和视频渲染。它内部封装了一个 `MediaPlayer` 实例，并为媒体播放配上了完善的用户界面。
 
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Getting started
+## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.MediaPlayer` NuGet package by running `dotnet add package`.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.MediaPlayer` NuGet 包。
 
 ```bash
 dotnet add package Avalonia.Controls.MediaPlayer
 ```
 
-2. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+2. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 ```xml
 <ItemGroup>
@@ -30,10 +30,10 @@ dotnet add package Avalonia.Controls.MediaPlayer
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
-3. Reference the default `MediaFluentTheme` in the `Application.Styles` of your `App.axaml` file. This adds the resources needed by the media player control.
+3. 在 `App.axaml` 文件的 `Application.Styles` 中引用默认的 `MediaFluentTheme`，这会引入媒体播放控件所需的资源。
 
 ```xml
 <Application.Styles>
@@ -42,13 +42,13 @@ For multi-project solutions, you can store your licence key in an [environment v
 </Application.Styles>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
-### Basic usage
+### 基本用法 {#basic-usage}
 
-The default `MediaPlayerControl` comes with a full-featured UI. For more advanced usage and deeper customization, you can also [use the `MediaPlayer` class without `MediaPlayerControl`](/controls/media/mediaplayer/mediaplayer-class#using-mediaplayer-without-mediaplayercontrol).
+默认的 `MediaPlayerControl` 自带一套完整界面。若需更进阶的用法和更深度的定制，你也可以[抛开 `MediaPlayerControl` 直接使用 `MediaPlayer` 类](/controls/media/mediaplayer/mediaplayer-class#using-mediaplayer-without-mediaplayercontrol)。
 
 ```xml
 <MediaPlayerControl Name="mediaPlayerControl"
@@ -57,9 +57,9 @@ The default `MediaPlayerControl` comes with a full-featured UI. For more advance
                     LoadedBehavior="AutoPlay" />
 ```
 
-### Setting Source in code-behind
+### 在代码隐藏中设置 Source {#setting-source-in-code-behind}
 
-When setting `Source` in code-behind rather than through a binding, you must wait until the control has loaded. Setting the source in a constructor will fail silently because the underlying player backend has not been initialized yet.
+如果不走绑定、而是在代码隐藏中设置 `Source`，必须等控件加载完成之后再设。在构造函数里设置源会悄无声息地失败，因为此时底层播放后端还没初始化。
 
 ```csharp
 // Do NOT set Source in the constructor:
@@ -77,9 +77,9 @@ protected override void OnLoaded(RoutedEventArgs e)
 }
 ```
 
-See [Initialization Timing](/controls/media/mediaplayer/media-playback#initialization-timing) for details.
+详见[初始化时机](/controls/media/mediaplayer/media-playback#initialization-timing)。
 
-### Binding to commands
+### 绑定到命令 {#binding-to-commands}
 
 ```xml
 <Button Command="{Binding #mediaPlayerControl.PlayPauseCommand}" 
@@ -89,7 +89,7 @@ See [Initialization Timing](/controls/media/mediaplayer/media-playback#initializ
         Content="Stop" />
 ```
 
-### Error handling
+### 错误处理 {#error-handling}
 
 ```csharp
 mediaPlayerControl.ErrorOccurred += (sender, args) =>
@@ -99,70 +99,70 @@ mediaPlayerControl.ErrorOccurred += (sender, args) =>
 };
 ```
 
-**Note**: This callback gives you the opportunity to reset the state of the `MediaPlayerControl` gracefully.
+**注意**：这个回调给了你机会，让 `MediaPlayerControl` 的状态得以体面地复位。
 
-## Properties
+## 属性 {#properties}
 
-### Basic properties
+### 基本属性 {#basic-properties}
 
-| Property       | Type             | Description                                                                                 |
+| 属性       | 类型             | 说明                                                                                 |
 |----------------|------------------|---------------------------------------------------------------------------------------------|
-| Player         | MediaPlayer      | Gets the underlying MediaPlayer instance that handles the actual media playback operations. |
-| Source         | MediaSource      | Gets or sets the media source to be played (`UriSource` or `StreamSource`).                 |
-| LoadedBehavior | MediaPlayerState | Gets or sets the behavior when media is loaded (`AutoPlay` or `Manual`).                    |
+| Player         | MediaPlayer      | 获取底层的 MediaPlayer 实例，实际的媒体播放操作由它完成。 |
+| Source         | MediaSource      | 获取或设置要播放的媒体源（`UriSource` 或 `StreamSource`）。                 |
+| LoadedBehavior | MediaPlayerState | 获取或设置媒体加载完成后的行为（`AutoPlay` 或 `Manual`）。                    |
 
-### Playback properties
+### 播放相关属性 {#playback-properties}
 
-| Property                     | Type      | Description                                                                  |
+| 属性                     | 类型      | 说明                                                                  |
 |------------------------------|-----------|------------------------------------------------------------------------------|
-| Position                     | TimeSpan  | Gets or sets the current playback position.                                  |
-| Duration                     | TimeSpan? | Gets the total duration of the current media. Null for non-seekable media.   |
-| SkipTime                     | TimeSpan  | Gets or sets the time to skip with forward/backward commands (default: 10s). |
+| Position                     | TimeSpan  | 获取或设置当前播放位置。                                  |
+| Duration                     | TimeSpan? | 获取当前媒体的总时长。不可跳转的媒体返回 null。   |
+| SkipTime                     | TimeSpan  | 获取或设置快进/快退命令每次跳过的时长（默认 10 秒）。 |
 
-### State properties
+### 状态属性 {#state-properties}
 
-| Property                | Type    | Description                                                        |
+| 属性                | 类型    | 说明                                                        |
 |-------------------------|---------|--------------------------------------------------------------------|
-| IsBuffering             | bool    | Gets whether the media is currently buffering.                     |
-| BufferProgress          | double? | Gets the buffer progress (0.0-1.0). Null if not available.         |
-| IsPaused                | bool    | Gets whether the media playback is currently paused.               |
-| IsMediaActive           | bool    | Gets whether media is currently active (loaded and/or playing).    |
-| HasVideo                | bool    | Gets whether the current media contains video content.             |
-| IsSeekable              | bool    | Gets whether the current media can be seeked.                      |
-| IsOverlayTimeoutEnabled | bool    | Gets or sets whether control overlay should hide after inactivity. |
+| IsBuffering             | bool    | 获取媒体当前是否正在缓冲。                     |
+| BufferProgress          | double? | 获取缓冲进度（0.0-1.0）。无法获取时返回 null。         |
+| IsPaused                | bool    | 获取媒体播放当前是否已暂停。               |
+| IsMediaActive           | bool    | 获取媒体当前是否处于活动状态（已加载和/或正在播放）。    |
+| HasVideo                | bool    | 获取当前媒体是否包含视频内容。             |
+| IsSeekable              | bool    | 获取当前媒体是否支持跳转。                      |
+| IsOverlayTimeoutEnabled | bool    | 获取或设置一段时间无操作后是否隐藏控制浮层。 |
 
-### Audio properties
+### 音频属性 {#audio-properties}
 
-| Property | Type   | Description                                                              |
+| 属性 | 类型   | 说明                                                              |
 |----------|--------|--------------------------------------------------------------------------|
-| Volume   | double | Gets or sets the playback volume with normalized values (e.g., 0.0-1.0). |
-| IsMuted  | bool   | Gets whether audio is currently muted.                                   |
+| Volume   | double | 获取或设置播放音量，取值已归一化（如 0.0-1.0）。 |
+| IsMuted  | bool   | 获取当前是否已静音。                                   |
 
-### Command properties
+### 命令属性 {#command-properties}
 
-| Property            | Type     | Description                                                           |
+| 属性            | 类型     | 说明                                                           |
 |---------------------|----------|-----------------------------------------------------------------------|
-| PlayPauseCommand    | ICommand | Gets the command that toggles between play and pause states.          |
-| StopCommand         | ICommand | Gets the command that stops playback.                                 |
-| MuteCommand         | ICommand | Gets the command that toggles audio muting.                           |
-| SkipForwardCommand  | ICommand | Gets the command that skips forward by [SkipTime](#playback-properties) amount.  |
-| SkipBackwardCommand | ICommand | Gets the command that skips backward by [SkipTime](#playback-properties) amount. |
+| PlayPauseCommand    | ICommand | 获取在播放与暂停之间切换的命令。          |
+| StopCommand         | ICommand | 获取停止播放的命令。                                 |
+| MuteCommand         | ICommand | 获取切换静音的命令。                           |
+| SkipForwardCommand  | ICommand | 获取按 [SkipTime](#playback-properties) 时长快进的命令。  |
+| SkipBackwardCommand | ICommand | 获取按 [SkipTime](#playback-properties) 时长快退的命令。 |
 
-## Events
+## 事件 {#events}
 
-| Event           | Description                                                  |
+| 事件           | 说明                                                  |
 |-----------------|--------------------------------------------------------------|
-| ErrorOccurred | Occurs when an error is encountered during media operations. |
+| ErrorOccurred | 媒体操作过程中发生错误时引发。 |
 
-## Template parts and customization
+## 模板部件与定制 {#template-parts-and-customization}
 
-The default control template for `MediaPlayerControl` includes several key parts:
+`MediaPlayerControl` 的默认控件模板包含以下几个关键部件：
 
-- **PART_MediaPlayerPresenter**: Displays the video content
-- **MediaControlOverlay**: Contains the playback controls
-- **MediaHoverOverlay**: Contains UI elements for hover state
+- **PART_MediaPlayerPresenter**：显示视频内容
+- **MediaControlOverlay**：承载播放控制组件
+- **MediaHoverOverlay**：承载悬停状态下的界面元素
 
-The most basic configuration of the `MediaPlayerControl` can be like this:
+`MediaPlayerControl` 最简单的配置大致是这样：
 
 ```xml
 <!-- In a ResourceDictionary referenced by your app. -->
@@ -212,11 +212,11 @@ The most basic configuration of the `MediaPlayerControl` can be like this:
 </ControlTheme>
 ```
 
-You can use that and the default theme as a jumping point for your desired look for `MediaPlayerControl`
+你可以以此和默认主题为起点，把 `MediaPlayerControl` 调成你想要的样子
 
-## Lifecycle management
+## 生命周期管理 {#lifecycle-management}
 
-The `MediaPlayerControl` automatically manages the lifecycle of its internal `MediaPlayer`:
+`MediaPlayerControl` 会自动管理其内部 `MediaPlayer` 的生命周期：
 
 ```mermaid
 flowchart LR
@@ -244,8 +244,7 @@ flowchart LR
     class Init,Setup,Cleanup phase
 ```
 
-Here's a more comprehensive graph of `MediaPlayerControl`'s interactions with its internal `MediaPlayer` over the course of its
-lifetime:
+下图更完整地描绘了 `MediaPlayerControl` 在整个生存期内与内部 `MediaPlayer` 的交互过程：
 
 ```mermaid
 flowchart LR
@@ -293,23 +292,23 @@ flowchart LR
     class MP_Init,MP_SetSource,MP_Prepare,MP_Play,MP_Pause,MP_Stop,MP_Seek,MP_Complete playerStates
 ```
 
-## Best practices
+## 实践建议 {#best-practices}
 
 1. **Error Handling**:
-    - Always subscribe to the `ErrorOccurred` event to handle errors gracefully.
-    - Set the `Handled` property to true on the `ErrorOccurred` event handler if you've managed the error.
+    - 请始终订阅 `ErrorOccurred` 事件，以便体面地处理错误。
+    - 如果你已经处理了错误，请在 `ErrorOccurred` 事件处理程序中把 `Handled` 属性设为 true。
 
 2. **Resource Management**:
-    - The control manages the `MediaPlayerControl` lifecycle automatically.
+    - 控件会自动管理 `MediaPlayerControl` 的生命周期。
 
 3. **UI Integration**:
-    - Use the built-in commands for integrating with custom buttons/controls.
-    - The `IsMediaActive` property is useful for enabling/disabling UI elements.
+    - 要和自定义按钮或控件对接时，请使用内置命令。
+    - `IsMediaActive` 属性很适合用来启用或禁用界面元素。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [MediaPlayer class](/controls/media/mediaplayer/mediaplayer-class)
-- [MediaSource class](/controls/media/mediaplayer/mediasource)
+- [MediaPlayer 类](/controls/media/mediaplayer/mediaplayer-class)
+- [MediaSource 类](/controls/media/mediaplayer/mediasource)
 - [Implementing MediaPlayer](/controls/media/mediaplayer/media-playback)
 - [Installing Avalonia Pro](/tools/installing-avalonia-pro)
-- [Troubleshooting](/troubleshooting/controls/mediaplayer)
+- [疑难排查](/troubleshooting/controls/mediaplayer)

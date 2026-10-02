@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">MultiBinding Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/MultiBinding.cs">MultiBinding.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/MultiBinding.cs">MultiBinding.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-A XAML binding that calculates an aggregate value from multiple child [Avalonia.Data.MultiBinding.Bindings](xref:Avalonia.Data.MultiBinding.Bindings).
+一种 XAML 绑定，它由多个子 [Avalonia.Data.MultiBinding.Bindings](xref:Avalonia.Data.MultiBinding.Bindings) 汇总算出一个聚合值。
 
 </div>
 
@@ -54,21 +54,21 @@ public class MultiBinding
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bindingbase">BindingBase</a> <span className="apiref-page__relation-separator">-&gt;</span> MultiBinding
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bindingbase">BindingBase</a> <span className="apiref-page__relation-separator">-&gt;</span> MultiBinding
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [MultiBinding](#uid-e7f20ac947) | No summary available. |
+| [MultiBinding](#uid-e7f20ac947) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e7f20ac947"></span>
 
-### MultiBinding Constructor
+### MultiBinding 构造函数 {#multibinding-constructor}
 
 ```csharp
 public MultiBinding()
@@ -76,28 +76,28 @@ public MultiBinding()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Bindings](#uid-a44d033896) | Gets the collection of child bindings. |
-| [Converter](#uid-4671a72eec) | Gets or sets the [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter) to use. |
-| [ConverterCulture](#uid-14e24a8228) | Gets or sets the culture in which to evaluate the converter. |
-| [ConverterParameter](#uid-b87ccd9ab2) | Gets or sets a parameter to pass to [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter). |
-| [FallbackValue](#uid-4b6d87b7c3) | Gets or sets the value to use when the binding is unable to produce a value. |
-| [Mode](#uid-a392fad099) | Gets or sets the binding mode. |
-| [Priority](#uid-ef87706676) | Gets or sets the binding priority. |
-| [RelativeSource](#uid-314c25786f) | Gets or sets the relative source for the binding. |
-| [StringFormat](#uid-f401114a50) | Gets or sets the string format. |
-| [TargetNullValue](#uid-05378b9819) | Gets or sets the value to use when the binding result is null. |
+| [Bindings](#uid-a44d033896) | 获取子绑定的集合。 |
+| [Converter](#uid-4671a72eec) | 获取或设置要使用的 [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter)。 |
+| [ConverterCulture](#uid-14e24a8228) | 获取或设置执行转换器时所用的区域性。 |
+| [ConverterParameter](#uid-b87ccd9ab2) | 获取或设置要传给 [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter) 的参数。 |
+| [FallbackValue](#uid-4b6d87b7c3) | 获取或设置绑定无法产出值时所用的替代值。 |
+| [Mode](#uid-a392fad099) | 获取或设置绑定模式。 |
+| [Priority](#uid-ef87706676) | 获取或设置绑定优先级。 |
+| [RelativeSource](#uid-314c25786f) | 获取或设置绑定的相对源。 |
+| [StringFormat](#uid-f401114a50) | 获取或设置字符串格式。 |
+| [TargetNullValue](#uid-05378b9819) | 获取或设置绑定结果为 null 时所用的值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a44d033896"></span>
 
-### Bindings Property
+### Bindings 属性 {#bindings-property}
 
-Gets the collection of child bindings.
+获取子绑定的集合。
 
 ```csharp
 public System.Collections.Generic.IList<Avalonia.Data.BindingBase> Bindings { get; set; }
@@ -109,9 +109,9 @@ public System.Collections.Generic.IList<Avalonia.Data.BindingBase> Bindings { ge
 
 <span id="uid-4671a72eec"></span>
 
-### Converter Property
+### Converter 属性 {#converter-property}
 
-Gets or sets the [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter) to use.
+获取或设置要使用的 [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter)。
 
 ```csharp
 public Avalonia.Data.Converters.IMultiValueConverter Converter { get; set; }
@@ -123,22 +123,22 @@ public Avalonia.Data.Converters.IMultiValueConverter Converter { get; set; }
 
 <span id="uid-14e24a8228"></span>
 
-### ConverterCulture Property
+### ConverterCulture 属性 {#converterculture-property}
 
-Gets or sets the culture in which to evaluate the converter.
+获取或设置执行转换器时所用的区域性。
 
 ```csharp
 public System.Globalization.CultureInfo ConverterCulture { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
-The default value is null.
+默认值为 null。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-If this property is not set then [System.Globalization.CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture) will be used.
+若未设置该属性，则采用 [System.Globalization.CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture)。
 
 </section>
 
@@ -146,9 +146,9 @@ If this property is not set then [System.Globalization.CultureInfo.CurrentCultur
 
 <span id="uid-b87ccd9ab2"></span>
 
-### ConverterParameter Property
+### ConverterParameter 属性 {#converterparameter-property}
 
-Gets or sets a parameter to pass to [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter).
+获取或设置要传给 [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter) 的参数。
 
 ```csharp
 public object ConverterParameter { get; set; }
@@ -160,9 +160,9 @@ public object ConverterParameter { get; set; }
 
 <span id="uid-4b6d87b7c3"></span>
 
-### FallbackValue Property
+### FallbackValue 属性 {#fallbackvalue-property}
 
-Gets or sets the value to use when the binding is unable to produce a value.
+获取或设置绑定无法产出值时所用的替代值。
 
 ```csharp
 public object FallbackValue { get; set; }
@@ -174,9 +174,9 @@ public object FallbackValue { get; set; }
 
 <span id="uid-a392fad099"></span>
 
-### Mode Property
+### Mode 属性 {#mode-property}
 
-Gets or sets the binding mode.
+获取或设置绑定模式。
 
 ```csharp
 public Avalonia.Data.BindingMode Mode { get; set; }
@@ -188,9 +188,9 @@ public Avalonia.Data.BindingMode Mode { get; set; }
 
 <span id="uid-ef87706676"></span>
 
-### Priority Property
+### Priority 属性 {#priority-property}
 
-Gets or sets the binding priority.
+获取或设置绑定优先级。
 
 ```csharp
 public Avalonia.Data.BindingPriority Priority { get; set; }
@@ -202,9 +202,9 @@ public Avalonia.Data.BindingPriority Priority { get; set; }
 
 <span id="uid-314c25786f"></span>
 
-### RelativeSource Property
+### RelativeSource 属性 {#relativesource-property}
 
-Gets or sets the relative source for the binding.
+获取或设置绑定的相对源。
 
 ```csharp
 public Avalonia.Data.RelativeSource RelativeSource { get; set; }
@@ -216,9 +216,9 @@ public Avalonia.Data.RelativeSource RelativeSource { get; set; }
 
 <span id="uid-f401114a50"></span>
 
-### StringFormat Property
+### StringFormat 属性 {#stringformat-property}
 
-Gets or sets the string format.
+获取或设置字符串格式。
 
 ```csharp
 public string StringFormat { get; set; }
@@ -230,9 +230,9 @@ public string StringFormat { get; set; }
 
 <span id="uid-05378b9819"></span>
 
-### TargetNullValue Property
+### TargetNullValue 属性 {#targetnullvalue-property}
 
-Gets or sets the value to use when the binding result is null.
+获取或设置绑定结果为 null 时所用的值。
 
 ```csharp
 public object TargetNullValue { get; set; }

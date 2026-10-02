@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RangeDataPointWithItem Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Represents a range data point together with the original source item.
+表示一个区间数据点连同其原始源数据项。
 
 </div>
 
@@ -50,75 +50,75 @@ public struct RangeDataPointWithItem
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> RangeDataPointWithItem
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> RangeDataPointWithItem
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;RangeDataPointWithItem&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;RangeDataPointWithItem&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RangeDataPointWithItem](#uid-593e02aa41) | Represents a range data point together with the original source item. |
+| [RangeDataPointWithItem](#uid-593e02aa41) | 表示一个区间数据点连同其原始源数据项。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-593e02aa41"></span>
 
-### RangeDataPointWithItem Constructor
+### RangeDataPointWithItem 构造函数 {#rangedatapointwithitem-constructor}
 
-Represents a range data point together with the original source item.
+表示一个区间数据点连同其原始源数据项。
 
 ```csharp
 public RangeDataPointWithItem(object Category, double Low, double High, object DataItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `Category` object
 
-The category or horizontal value for the point.
+该点的类别值或横轴值。
 
 
 `Low` double
 
-The lower value for the range.
+范围的下限值。
 
 
 `High` double
 
-The upper value for the range.
+范围的上限值。
 
 
 `DataItem` object
 
-The original item from the series data source.
+来自系列数据源的原始项。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-6d70b1e14f) | No summary available. |
-| [Equals (2 overloads)](#uid-9125fa6361) | No summary available. |
-| [GetHashCode](#uid-5ac7c28517) | No summary available. |
-| [ToString](#uid-c4fa4a9114) | No summary available. |
+| [Deconstruct](#uid-6d70b1e14f) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-9125fa6361) | 暂无摘要。 |
+| [GetHashCode](#uid-5ac7c28517) | 暂无摘要。 |
+| [ToString](#uid-c4fa4a9114) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6d70b1e14f"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(object& Category, double& Low, double& High, object& DataItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `Category` object&amp;
 
@@ -136,24 +136,24 @@ public void Deconstruct(object& Category, double& Low, double& High, object& Dat
 
 <span id="uid-9125fa6361"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8ee9176c0a"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Charts.RangeDataPointWithItem other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.Charts.RangeDataPointWithItem](xref:Avalonia.Controls.Charts.RangeDataPointWithItem)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -164,18 +164,18 @@ bool
 
 <span id="uid-45d8634e99"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -186,13 +186,13 @@ bool
 
 <span id="uid-5ac7c28517"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -203,35 +203,35 @@ int
 
 <span id="uid-c4fa4a9114"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Category](#uid-0e45df75a8) | The category or horizontal value for the point. |
-| [DataItem](#uid-3ade1cdbf3) | The original item from the series data source. |
-| [High](#uid-d71da76006) | The upper value for the range. |
-| [Low](#uid-6f44a964ce) | The lower value for the range. |
+| [Category](#uid-0e45df75a8) | 该点的类别值或横轴值。 |
+| [DataItem](#uid-3ade1cdbf3) | 来自系列数据源的原始项。 |
+| [High](#uid-d71da76006) | 范围的上限值。 |
+| [Low](#uid-6f44a964ce) | 范围的下限值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0e45df75a8"></span>
 
-### Category Property
+### Category 属性 {#category-property}
 
-The category or horizontal value for the point.
+该点的类别值或横轴值。
 
 ```csharp
 public object Category { get; set; }
@@ -243,9 +243,9 @@ public object Category { get; set; }
 
 <span id="uid-3ade1cdbf3"></span>
 
-### DataItem Property
+### DataItem 属性 {#dataitem-property}
 
-The original item from the series data source.
+来自系列数据源的原始项。
 
 ```csharp
 public object DataItem { get; set; }
@@ -257,9 +257,9 @@ public object DataItem { get; set; }
 
 <span id="uid-d71da76006"></span>
 
-### High Property
+### High 属性 {#high-property}
 
-The upper value for the range.
+范围的上限值。
 
 ```csharp
 public double High { get; set; }
@@ -271,9 +271,9 @@ public double High { get; set; }
 
 <span id="uid-6f44a964ce"></span>
 
-### Low Property
+### Low 属性 {#low-property}
 
-The lower value for the range.
+范围的下限值。
 
 ```csharp
 public double Low { get; set; }

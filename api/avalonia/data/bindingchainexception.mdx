@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BindingChainException Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingChainException.cs">BindingChainException.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingChainException.cs">BindingChainException.cs</a>
 </div>
 
 </div>
@@ -56,27 +56,27 @@ public class BindingChainException
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Exception <span className="apiref-page__relation-separator">-&gt;</span> BindingChainException
+<span className="apiref-page__meta-label">继承关系：</span> Exception <span className="apiref-page__relation-separator">-&gt;</span> BindingChainException
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BindingChainException (3 overloads)](#uid-82707489f1) | Initializes a new instance of the [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) class. |
+| [BindingChainException (3 overloads)](#uid-82707489f1) | 初始化 [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) 类的新实例。 |
 
 <span id="uid-82707489f1"></span>
 
-### BindingChainException overloads
+### BindingChainException 的重载 {#bindingchainexception-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8c17dda5ac"></span>
 
-#### BindingChainException Constructor
+#### BindingChainException 构造函数 {#bindingchainexception-constructor}
 
-Initializes a new instance of the [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) class.
+初始化 [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) 类的新实例。
 
 ```csharp
 public BindingChainException()
@@ -88,19 +88,19 @@ public BindingChainException()
 
 <span id="uid-f7de989ef7"></span>
 
-#### BindingChainException Constructor
+#### BindingChainException 构造函数 {#bindingchainexception-constructor-1}
 
-Initializes a new instance of the [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) class.
+初始化 [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) 类的新实例。
 
 ```csharp
 public BindingChainException(string message)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `message` string
 
-The error message.
+错误消息。
 
 
 </section>
@@ -109,19 +109,19 @@ The error message.
 
 <span id="uid-a3a91a6a41"></span>
 
-#### BindingChainException Constructor
+#### BindingChainException 构造函数 {#bindingchainexception-constructor-2}
 
-Initializes a new instance of the [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) class.
+初始化 [Avalonia.Data.BindingChainException](xref:Avalonia.Data.BindingChainException) 类的新实例。
 
 ```csharp
 public BindingChainException(string message, string expression, string errorPoint)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `message` string
 
-The error message.
+错误消息。
 
 
 `expression` string
@@ -136,19 +136,19 @@ The point in the expression at which the error was encountered.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Expression](#uid-593abf2abb) | Gets the expression that could not be evaluated. |
 | [ExpressionErrorPoint](#uid-d29964fc36) | Gets the point in the expression at which the error occurred. |
-| [Message](#uid-d0466cb300) | No summary available. |
+| [Message](#uid-d0466cb300) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-593abf2abb"></span>
 
-### Expression Property
+### Expression 属性 {#expression-property}
 
 Gets the expression that could not be evaluated.
 
@@ -162,7 +162,7 @@ public string Expression { get; set; }
 
 <span id="uid-d29964fc36"></span>
 
-### ExpressionErrorPoint Property
+### ExpressionErrorPoint 属性 {#expressionerrorpoint-property}
 
 Gets the point in the expression at which the error occurred.
 
@@ -176,7 +176,7 @@ public string ExpressionErrorPoint { get; set; }
 
 <span id="uid-d0466cb300"></span>
 
-### Message Property
+### Message 属性 {#message-property}
 
 ```csharp
 public string Message { get; set; }

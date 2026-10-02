@@ -1,7 +1,7 @@
 ---
 id: texttrimming
 title: TextTrimming
-description: About the TextTrimming property
+description: 关于 TextTrimming 属性
 ---
 
 import CharacterEllipsis from '/img/reference/text/texttrimming/texttrimming-characterellipsis.png';
@@ -11,19 +11,19 @@ import PrefixCharacterEllipsis from '/img/reference/text/texttrimming/texttrimmi
 import WordEllipsis from '/img/reference/text/texttrimming/texttrimming-wordellipsis.png';
 import TextWrappingWithTextTrimming from '/img/reference/text/texttrimming/textwrapping-with-texttrimming.png';
 
-## Overview
+## 概述 {#overview}
 
-The [`TextTrimming`](/api/avalonia/media/texttrimming) property allows you to control how text is displayed when it exceeds the maximum available space in a control. This property is accessible by text-displaying controls, such as [`TextBlock`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBlock.cs), [`SelectableTextBlock`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SelectableTextBlock.cs) or [`ContentPresenter`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Presenters/ContentPresenter.cs).
+[`TextTrimming`](/api/avalonia/media/texttrimming) 属性让你控制文字超出控件可用空间时如何显示。[`TextBlock`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TextBlock.cs)、[`SelectableTextBlock`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SelectableTextBlock.cs)、[`ContentPresenter`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Presenters/ContentPresenter.cs) 等显示文本的控件都提供该属性。
 
-Text trimming adds an ellipsis (…) to indicate truncated text, instead of abruptly cutting off the text.
+文本截断会加上省略号（…）来表示文字被截短，而不是生硬地把文字切断。
 
 :::note
-Avalonia uses the Unicode ellipsis character `U+2026` by default, not three periods.
+Avalonia 默认使用 Unicode 省略号字符 `U+2026`，而不是三个句点。
 :::
 
-## Trimming modes
+## 截断模式 {#trimming-modes}
 
-Avalonia provides six text trimming options:
+Avalonia 提供六种文本截断方式：
 
 1. None
 2. CharacterEllipsis
@@ -34,7 +34,7 @@ Avalonia provides six text trimming options:
 
 ### None
 
-No trimming is applied. Text is cut off when it reaches the boundary of the control.
+不作截断。文字到达控件边界即被切断。
 
 ```xml
 <TextBlock Text="This is a very long line of text that will get cut off."
@@ -46,9 +46,9 @@ No trimming is applied. Text is cut off when it reaches the boundary of the cont
 
 ### CharacterEllipsis
 
-Trims text after a character ends. An ellipsis is added where the text is truncated.
+在某个字符结束处截断，并在截断处加上省略号。
 
-Intended for general-purposes trimming, when your UI design requires precise space usage.
+适合通用场景——当界面设计对空间占用有精确要求时。
 
 ```xml
 <TextBlock Text="This is a very long line of text that will get cut off."
@@ -60,9 +60,9 @@ Intended for general-purposes trimming, when your UI design requires precise spa
 
 ### WordEllipsis
 
-Trims text after a word ends. Whole words are preserved, and an ellipsis is added when this is no longer possible.
+在某个单词结束处截断，保证单词完整；实在放不下时再加省略号。
 
-Intended to maximize readability by preventing incomplete words from appearing.
+避免出现残缺的单词，以求可读性最佳。
 
 ```xml
 <TextBlock Text="This is a very long line of text that will get cut off."
@@ -74,11 +74,11 @@ Intended to maximize readability by preventing incomplete words from appearing.
 
 ### PrefixCharacterEllipsis
 
-Trims text in the middle. The beginning and end of the text string are displayed, with an ellipsis separating them.
+从中间截断。字符串的开头和结尾都保留，中间用省略号隔开。
 
-Default is to show the first eight characters, then an ellipsis, then however many characters are required to fill the available space.
+默认先显示前八个字符，接着是省略号，再把剩余可用空间用末尾的字符填满。
 
-Intended for file paths, URLs, or any other text where both the beginning and end should be displayed.
+适合文件路径、URL，以及任何开头和结尾都需要看到的文字。
 
 ```xml
 <TextBlock Text="C:\Users\Documents\Projects\MyProject\source.cs"
@@ -90,9 +90,9 @@ Intended for file paths, URLs, or any other text where both the beginning and en
 
 ### LeadingCharacterEllipsis
 
-Trims text from the beginning. An ellipsis starts the displayed text, followed by the characters at the end of the text.
+从开头截断。显示的文字以省略号开头，后面接文本末尾的字符。
 
-Intended for file paths or any other text where only the end is important.
+适合文件路径，以及任何只有结尾才重要的文字。
 
 ```xml
 <TextBlock Text="C:\Users\Documents\Projects\MyProject\source.cs"
@@ -104,9 +104,9 @@ Intended for file paths or any other text where only the end is important.
 
 ### PathSegmentEllipsis
 
-Collapses interior path segments while preserving the start (drive letter, server name) and end (filename) of a file path or URL. The algorithm removes segments near the middle of the path and replaces them with an ellipsis.
+折叠路径中间的若干段，同时保留文件路径或 URL 的开头（盘符、服务器名）和结尾（文件名）。算法会去掉靠近路径中部的那些段，用省略号代替。
 
-For example, `C:\Users\Alice\Documents\Projects\Avalonia\src\Button.cs` becomes `C:\Users\...\Button.cs` when space is limited.
+比如空间紧张时，`C:\Users\Alice\Documents\Projects\Avalonia\src\Button.cs` 会变成 `C:\Users\...\Button.cs`。
 
 ```xml
 <TextBlock Text="C:\Users\Alice\Documents\Projects\Avalonia\src\Controls\Button.cs"
@@ -114,13 +114,13 @@ For example, `C:\Users\Alice\Documents\Projects\Avalonia\src\Button.cs` becomes 
            Width="200" />
 ```
 
-This mode recognizes both forward slashes and backslashes as path separators, so it works for file system paths and URLs.
+这种模式把正斜杠和反斜杠都当作路径分隔符，因此文件系统路径和 URL 都适用。
 
-## Example uses
+## 用法示例 {#example-uses}
 
-### Combining with MaxWidth
+### 与 MaxWidth 搭配 {#combining-with-maxwidth}
 
-Combine `TextTrimming` with `MaxWidth` to create responsive text displays that maintain a consistent area on your UI.
+把 `TextTrimming` 与 `MaxWidth` 搭配使用，可以做出自适应的文字显示，同时让界面上的占位区域保持稳定。
 
 ```xml
 <TextBlock Text="{Binding UserName}"
@@ -128,9 +128,9 @@ Combine `TextTrimming` with `MaxWidth` to create responsive text displays that m
            TextTrimming="CharacterEllipsis" />
 ```
 
-### Combining with TextWrapping
+### 与 TextWrapping 搭配 {#combining-with-textwrapping}
 
-Combine `TextTrimming` and `TextWrapping` to apply trimming to the last visible line when wrapping is enabled.
+把 `TextTrimming` 和 `TextWrapping` 组合起来，即可在启用换行的同时，对最后一行可见文字作截断。
 
 ```xml
 <TextBlock Text="{Binding Content}"
@@ -142,8 +142,8 @@ Combine `TextTrimming` and `TextWrapping` to apply trimming to the last visible 
 
 <Image light={TextWrappingWithTextTrimming} alt="A screenshot of an IDE, displaying a long line of text in a box that wraps within the box for three lines, before being cut off with an ellipsis added." position="center" maxWidth={400} cornerRadius="true" />
 
-## See also
+## 另请参阅 {#see-also}
 
-- [TextBlock control](https://docs.avaloniaui.net/docs/reference/controls/textblock)
-- [SelectableTextBlock control](https://docs.avaloniaui.net/docs/reference/controls/selectable-textblock)
-- [TextTrimming API reference](https://reference.avaloniaui.net/api/Avalonia.Media/TextTrimming/)
+- [TextBlock 控件](https://docs.avaloniaui.net/docs/reference/controls/textblock)
+- [SelectableTextBlock 控件](https://docs.avaloniaui.net/docs/reference/controls/selectable-textblock)
+- [TextTrimming API 参考](https://reference.avaloniaui.net/api/Avalonia.Media/TextTrimming/)

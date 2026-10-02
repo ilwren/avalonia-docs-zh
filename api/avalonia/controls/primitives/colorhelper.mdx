@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ColorHelper Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/Helpers/ColorHelper.cs">ColorHelper.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/Helpers/ColorHelper.cs">ColorHelper.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class ColorHelper
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ColorHelper
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ColorHelper
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetRelativeLuminance](#uid-4396eaa68e) | Gets the relative (perceptual) luminance/brightness of the given color. 1 is closer to white while 0 is closer to black. |
 | [ToDisplayName](#uid-9f6d2ba493) | Determines an approximate display name for the given color. |
@@ -69,7 +69,7 @@ public class ColorHelper
 
 <span id="uid-4396eaa68e"></span>
 
-### GetRelativeLuminance Method
+### GetRelativeLuminance 方法 {#getrelativeluminance-method}
 
 Gets the relative (perceptual) luminance/brightness of the given color.
 1 is closer to white while 0 is closer to black.
@@ -78,14 +78,14 @@ Gets the relative (perceptual) luminance/brightness of the given color.
 public double GetRelativeLuminance(Avalonia.Media.Color color)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `color` [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
 The color to calculate relative luminance for.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 double
 
@@ -98,7 +98,7 @@ The relative (perceptual) luminance/brightness of the given color.
 
 <span id="uid-9f6d2ba493"></span>
 
-### ToDisplayName Method
+### ToDisplayName 方法 {#todisplayname-method}
 
 Determines an approximate display name for the given color.
 
@@ -106,14 +106,14 @@ Determines an approximate display name for the given color.
 public string ToDisplayName(Avalonia.Media.Color color)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `color` [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
 The color to get the display name for.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 string
 
@@ -122,9 +122,9 @@ The approximate color display name.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ToDisplayNameExists](#uid-586d82c131) | Determines if color display names are supported based on the current thread culture. |
 
@@ -132,7 +132,7 @@ The approximate color display name.
 
 <span id="uid-586d82c131"></span>
 
-### ToDisplayNameExists Property
+### ToDisplayNameExists 属性 {#todisplaynameexists-property}
 
 Determines if color display names are supported based on the current thread culture.
 
@@ -140,7 +140,7 @@ Determines if color display names are supported based on the current thread cult
 public bool ToDisplayNameExists { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Only English names are currently supported following known color names.
 In the future known color names could be localized.

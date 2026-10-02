@@ -1,15 +1,15 @@
 ---
 id: render-vs-layout-transforms
-title: Render transforms vs layout transforms
-description: Differences between render transforms and layout transforms in Avalonia.
+title: 渲染变换与布局变换
+description: Avalonia 中渲染变换与布局变换的区别。
 doc-type: explanation
 ---
 
-Avalonia provides two ways to transform controls: render transforms and layout transforms. They produce different visual results because they apply at different stages of the rendering pipeline.
+Avalonia 提供两种变换控件的方式：渲染变换和布局变换。二者作用于渲染管线的不同阶段，因此视觉效果也不一样。
 
-## Render transforms
+## 渲染变换 {#render-transforms}
 
-A **render transform** changes how a control is drawn without affecting layout. The control's position and size in the layout system remain unchanged. Other controls do not move to accommodate the transform.
+**渲染变换**只改变控件的绘制方式，不影响布局。控件在布局系统中的位置和尺寸保持不变，其他控件也不会为了迁就这个变换而挪位置。
 
 ```xml
 <StackPanel Spacing="8">
@@ -23,11 +23,11 @@ A **render transform** changes how a control is drawn without affecting layout. 
 </StackPanel>
 ```
 
-In this example, the rotated button visually overlaps adjacent buttons because the layout does not account for the rotation.
+在这个例子里，旋转后的按钮在视觉上压住了相邻按钮，因为布局并没有把旋转算进去。
 
 ### RenderTransformOrigin
 
-The pivot point for render transforms. In Avalonia, the default is `50%,50%` (center of the control), unlike WPF where the default is `0%,0%` (top-left).
+渲染变换的轴心点。在 Avalonia 中默认是 `50%,50%`（控件中心），这一点与 WPF 不同——WPF 的默认值是 `0%,0%`（左上角）。
 
 ```xml
 <!-- Rotate around the top-left corner -->
@@ -45,17 +45,17 @@ The pivot point for render transforms. In Avalonia, the default is `50%,50%` (ce
 </Border>
 ```
 
-### Common render transform types
+### 常见的渲染变换类型 {#common-render-transform-types}
 
-| Transform | Description | Example |
+| 变换 | 说明 | 示例 |
 |---|---|---|
-| `RotateTransform` | Rotates the control. | `<RotateTransform Angle="45" />` |
-| `ScaleTransform` | Scales the control. | `<ScaleTransform ScaleX="1.5" ScaleY="1.5" />` |
-| `TranslateTransform` | Moves the control visually. | `<TranslateTransform X="10" Y="-5" />` |
-| `SkewTransform` | Skews the control. | `<SkewTransform AngleX="15" />` |
-| `TransformGroup` | Combines multiple transforms. | See below. |
+| `RotateTransform` | 旋转控件。 | `<RotateTransform Angle="45" />` |
+| `ScaleTransform` | 缩放控件。 | `<ScaleTransform ScaleX="1.5" ScaleY="1.5" />` |
+| `TranslateTransform` | 在视觉上平移控件。 | `<TranslateTransform X="10" Y="-5" />` |
+| `SkewTransform` | 倾斜控件。 | `<SkewTransform AngleX="15" />` |
+| `TransformGroup` | 把多个变换组合起来。 | 见下文。 |
 
-### Combining transforms
+### 组合多个变换 {#combining-transforms}
 
 ```xml
 <Image Source="/assets/photo.jpg" Width="100" Height="100">
@@ -68,11 +68,11 @@ The pivot point for render transforms. In Avalonia, the default is `50%,50%` (ce
 </Image>
 ```
 
-## Layout transforms
+## 布局变换 {#layout-transforms}
 
-A **layout transform** changes a control's size and orientation before layout occurs. The parent panel sees the transformed size and positions other controls accordingly. This prevents overlap.
+**布局变换**在布局发生之前就改变了控件的尺寸和朝向。父面板看到的是变换之后的尺寸，并据此摆放其他控件，因此不会出现重叠。
 
-Use `LayoutTransformControl` to apply a layout transform:
+用 `LayoutTransformControl` 来施加布局变换：
 
 ```xml
 <StackPanel Spacing="8">
@@ -87,15 +87,15 @@ Use `LayoutTransformControl` to apply a layout transform:
 </StackPanel>
 ```
 
-The "Below" button is positioned below the rotated control's full bounds, with no overlap.
+「Below」按钮被摆在旋转后控件的完整边界之下，二者毫无重叠。
 
-### Common layout transform use cases
+### 布局变换的常见用途 {#common-layout-transform-use-cases}
 
-| Scenario | Why layout transform |
+| 场景 | 为什么要用布局变换 |
 |---|---|
-| Vertical text labels | The rotated text should reserve the correct amount of space. |
-| Scaled content areas | Adjacent panels should adapt to the scaled size. |
-| Rotated form fields | Labels and inputs should flow around the rotated element. |
+| 竖排文字标签 | 旋转后的文字应当占住正确大小的空间。 |
+| 经过缩放的内容区 | 相邻面板应当适应缩放后的尺寸。 |
+| 旋转过的表单字段 | 标签和输入框应当绕着旋转后的元素排布。 |
 
 ```xml
 <!-- Vertical text that takes correct space in a horizontal layout -->
@@ -115,33 +115,33 @@ The "Below" button is positioned below the rotated control's full bounds, with n
 
 ## Comparison
 
-| Feature | Render Transform | Layout Transform |
+| 特性 | Render Transform | Layout Transform |
 |---|---|---|
-| Affects layout | No | Yes |
-| Other controls adjust | No | Yes |
-| Performance | Faster (no re-layout) | Slower (triggers layout pass) |
-| Animatable | Yes | Yes, but causes layout recalculation each frame |
-| Applied via | `RenderTransform` property | `LayoutTransformControl` |
-| Default origin | Center (50%, 50%) | Center |
-| Overlap risk | Yes | No |
+| 是否影响布局 | No | Yes |
+| 其他控件会跟着调整 | No | Yes |
+| 性能 | 较快（无需重新布局） | 较慢（会触发布局过程） |
+| Animatable | Yes | 可以，但每一帧都会引发布局重算 |
+| 施加方式 | `RenderTransform` property | `LayoutTransformControl` |
+| 默认原点 | Center (50%, 50%) | Center |
+| 重叠风险 | Yes | No |
 
-## When to use which
+## 该选哪一种 {#when-to-use-which}
 
-**Use render transforms when:**
-- The transform is temporary or animated (hover effects, transitions)
-- Performance matters (animations should not trigger layout)
-- Overlap with other elements is acceptable or desired
-- You are creating visual effects (parallax, bounce, shake)
+**这些情况用渲染变换：**
+- 变换是临时的或带动画的（悬停效果、过渡）
+- 性能要紧（动画不该触发布局）
+- 与其他元素重叠可以接受，甚至正是你想要的
+- 你在做视觉效果（视差、弹跳、抖动）
 
-**Use layout transforms when:**
-- Adjacent controls must respect the transformed bounds
-- You need rotated text labels that correctly reserve space
-- The transform is part of the permanent layout (not animated)
-- Overlap would be a visual bug
+**这些情况用布局变换：**
+- 相邻控件必须尊重变换后的边界
+- 你需要旋转的文字标签，并让它正确占住空间
+- 变换是固定布局的一部分（不带动画）
+- 一旦重叠就算是视觉缺陷
 
-## Animating transforms
+## 为变换加动画 {#animating-transforms}
 
-Render transforms are ideal for animation because they do not trigger layout:
+渲染变换不会触发布局，因此很适合做动画：
 
 ```xml
 <Border Background="Blue" Width="80" Height="80">
@@ -160,10 +160,10 @@ Render transforms are ideal for animation because they do not trigger layout:
 </Border>
 ```
 
-Avoid animating layout transforms in performance-sensitive scenarios, as each frame triggers a full layout pass.
+在对性能敏感的场景里别给布局变换加动画——每一帧都会引发一次完整的布局过程。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Transforms](/docs/graphics-animation/transforms): Full transform reference.
-- [Animations](/docs/graphics-animation/animations): Keyframe and transition animations.
-- [Performance](/docs/app-development/performance): Layout performance tips.
+- [变换](/docs/graphics-animation/transforms)：完整的变换参考。
+- [动画](/docs/graphics-animation/animations)：关键帧动画与过渡动画。
+- [性能](/docs/app-development/performance)：布局性能建议。

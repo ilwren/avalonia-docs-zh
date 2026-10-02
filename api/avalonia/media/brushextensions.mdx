@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BrushExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/BrushExtensions.cs">BrushExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/BrushExtensions.cs">BrushExtensions.cs</a>
 </div>
 
 </div>
@@ -54,15 +54,15 @@ public class BrushExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> BrushExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> BrushExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ToImmutable (3 overloads)](#uid-0940e012df) | Converts a brush to an immutable brush. |
+| [ToImmutable (3 overloads)](#uid-0940e012df) | 把画刷转换为不可变画刷。 |
 
 <span id="uid-0940e012df"></span>
 
@@ -72,27 +72,27 @@ public class BrushExtensions
 
 <span id="uid-a4c9058c9c"></span>
 
-#### ToImmutable Method
+#### ToImmutable 方法 {#toimmutable-method}
 
-Converts a brush to an immutable brush.
+把画刷转换为不可变画刷。
 
 ```csharp
 public Avalonia.Media.IImmutableBrush ToImmutable(Avalonia.Media.IBrush brush)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `brush` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The brush.
+该画刷。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The result of calling [Avalonia.Media.IMutableBrush.ToImmutable](xref:Avalonia.Media.IMutableBrush.ToImmutable) if the brush is mutable,
-otherwise `brush`.
+若该画刷可变，则为调用 [Avalonia.Media.IMutableBrush.ToImmutable](xref:Avalonia.Media.IMutableBrush.ToImmutable) 的结果，
+否则为 `brush`。
 
 
 </section>
@@ -101,7 +101,7 @@ otherwise `brush`.
 
 <span id="uid-5ad0d76970"></span>
 
-#### ToImmutable Method
+#### ToImmutable 方法 {#toimmutable-method-1}
 
 Converts a dash style to an immutable dash style.
 
@@ -109,14 +109,14 @@ Converts a dash style to an immutable dash style.
 public Avalonia.Media.Immutable.ImmutableDashStyle ToImmutable(Avalonia.Media.IDashStyle style)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `style` [Avalonia.Media.IDashStyle](xref:Avalonia.Media.IDashStyle)
 
-The dash style.
+虚线样式。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Media.Immutable.ImmutableDashStyle](xref:Avalonia.Media.Immutable.ImmutableDashStyle)
 
@@ -130,7 +130,7 @@ otherwise `style`.
 
 <span id="uid-5fed10d501"></span>
 
-#### ToImmutable Method
+#### ToImmutable 方法 {#toimmutable-method-2}
 
 Converts a pen to an immutable pen.
 
@@ -138,19 +138,19 @@ Converts a pen to an immutable pen.
 public Avalonia.Media.Immutable.ImmutablePen ToImmutable(Avalonia.Media.IPen pen)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `pen` [Avalonia.Media.IPen](xref:Avalonia.Media.IPen)
 
-The pen.
+该画笔。
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The result of calling [Avalonia.Media.Pen.ToImmutable](xref:Avalonia.Media.Pen.ToImmutable) if the brush is mutable,
-otherwise `pen`.
+若该画刷可变，则为调用 [Avalonia.Media.Pen.ToImmutable](xref:Avalonia.Media.Pen.ToImmutable) 的结果，
+否则为 `pen`。
 
 
 </section>

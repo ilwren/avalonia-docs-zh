@@ -1,53 +1,53 @@
 ---
 id: installing-avalonia-pro
 title: Installing Avalonia Pro
-description: Configure your project to use Avalonia Pro NuGet packages and add your license key.
+description: 配置你的项目以使用 Avalonia Pro NuGet 包，并填入许可证密钥。
 doc-type: how-to
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-This guide explains how to configure your project to use Avalonia Pro packages. These packages are available as part of [Avalonia Pro or Enterprise](https://avaloniaui.net/pricing).
+本指南讲解如何配置项目以使用 Avalonia Pro 包。这些包是 [Avalonia Pro 或 Enterprise](https://avaloniaui.net/pricing)的一部分。
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
-Before you begin, make sure you have:
+动手之前，请确认你具备：
 
-- An Avalonia project targeting .NET 8 or later.
-- A valid Avalonia license key. You can obtain one from the [Avalonia portal](https://portal.avaloniaui.net).
+- 一个面向 .NET 8 或更高版本的 Avalonia 项目。
+- 一个有效的 Avalonia 许可证密钥，可在 [Avalonia 门户](https://portal.avaloniaui.net)获取。
 
-## NuGet package source
+## NuGet 包源 {#nuget-package-source}
 
-Avalonia Pro packages are distributed via [nuget.org](https://www.nuget.org/). No additional NuGet feed configuration is required.
+Avalonia Pro 包经由 [nuget.org](https://www.nuget.org/) 分发，不需要额外配置 NuGet 源。
 
 :::note
-Prior to October 13 2025, installing Avalonia Pro components required setting up a dedicated NuGet feed. That feed is no longer required. Use [nuget.org](https://www.nuget.org/) instead.
+2025 年 10 月 13 日之前，安装 Avalonia Pro 组件需要配置专用的 NuGet 源。那个源现已不再需要，改用 [nuget.org](https://www.nuget.org/) 即可。
 :::
 
-## Add the NuGet package
+## 添加 NuGet 包 {#add-the-nuget-package}
 
-Install the Avalonia Pro package you need by running the `dotnet add package` command. For example, to add the media player control:
+运行 `dotnet add package` 命令安装你需要的 Avalonia Pro 包。比如要添加媒体播放控件：
 
 ```bash
 dotnet add package Avalonia.Controls.MediaPlayer
 ```
 
-Replace the package name with the one you need. The following Avalonia Pro packages are available:
+把包名换成你需要的那个。下列 Avalonia Pro 包可供选用：
 
-| Package | Description |
+| NuGet 包 | 说明 |
 |---------|-------------|
-| [`Avalonia.Controls.Charts`](/controls/data-display/charts/#getting-started) | Library of graphs, dashboards, analytics |
-| [`Avalonia.Controls.Markdown`](/controls/data-display/text-display/markdown/#getting-started) | Markdown text rendering |
-| [`Avalonia.Controls.MediaPlayer`](/controls/media/mediaplayer/#getting-started) | Audio and video playback control |
-| [`Avalonia.Controls.PdfViewer`](/controls/data-display/pdfviewer/#getting-started) | PDF viewing, search, annotation and printing |
-| [`Avalonia.Controls.RichTextEditor`](/controls/input/text-input/richtexteditor/#getting-started) | Document editing and processing |
-| [`Avalonia.Controls.TreeDataGrid`](/controls/data-display/structured-data/treedatagrid/#getting-started) | Hierarchical and flat data grids |
-| [`Avalonia.Controls.VirtualKeyboard`](/controls/input/text-input/virtualkeyboard/#getting-started) | On-screen keyboard |
+| [`Avalonia.Controls.Charts`](/controls/data-display/charts/#getting-started) | 图表、仪表板与分析组件库 |
+| [`Avalonia.Controls.Markdown`](/controls/data-display/text-display/markdown/#getting-started) | Markdown 文本渲染 |
+| [`Avalonia.Controls.MediaPlayer`](/controls/media/mediaplayer/#getting-started) | 音频与视频播放控件 |
+| [`Avalonia.Controls.PdfViewer`](/controls/data-display/pdfviewer/#getting-started) | PDF 查看、搜索、批注与打印 |
+| [`Avalonia.Controls.RichTextEditor`](/controls/input/text-input/richtexteditor/#getting-started) | 文档编辑与处理 |
+| [`Avalonia.Controls.TreeDataGrid`](/controls/data-display/structured-data/treedatagrid/#getting-started) | 层级式与平铺式数据网格 |
+| [`Avalonia.Controls.VirtualKeyboard`](/controls/input/text-input/virtualkeyboard/#getting-started) | 屏幕键盘 |
 
-## Add your license key
+## 填入你的许可证密钥 {#add-your-license-key}
 
-Include your Avalonia license key in the executable project file (`.csproj`):
+把 Avalonia 许可证密钥写进可执行项目文件（`.csproj`）：
 
 ```xml
 <ItemGroup>
@@ -55,27 +55,27 @@ Include your Avalonia license key in the executable project file (`.csproj`):
 </ItemGroup>
 ```
 
-Replace `YOUR_LICENSE_KEY` with the key from your [Avalonia portal](https://portal.avaloniaui.net) account.
+把 `YOUR_LICENSE_KEY` 换成你 [Avalonia 门户](https://portal.avaloniaui.net)账号中的密钥。
 
-Do not leave the license key value blank. If left blank, you may be unable to build or open your project.
+不要把许可证密钥留空。留空的话，项目可能既构建不了也打不开。
 
 :::tip
-To share a license key between multiple projects, you can use an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example).
+若要在多个项目之间共用一个许可证密钥，可以借助[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)。
 
-See the [Avalonia Pro samples repository](https://github.com/AvaloniaUI/AvaloniaPro.Samples/blob/main/Directory.Build.props) for an example of how to do this with a shared `Directory.Build.props` file.
+用共享 `Directory.Build.props` 文件的具体做法，可参考 [Avalonia Pro 示例仓库](https://github.com/AvaloniaUI/AvaloniaPro.Samples/blob/main/Directory.Build.props)。
 :::
 
-## Verify the installation
+## 验证安装 {#verify-the-installation}
 
-Build your project to confirm that the package restores and your license key is accepted:
+构建项目，确认包能还原、许可证密钥被认可：
 
 ```bash
 dotnet build
 ```
 
-If the license key is missing or invalid, you will see a build warning. Check that the `<AvaloniaUILicenseKey>` element is in the correct project file and that the key value matches what is shown in your portal account.
+若密钥缺失或无效，构建时会出现警告。请检查 `<AvaloniaUILicenseKey>` 元素是否写在了正确的项目文件里，以及密钥值是否与门户账号中显示的一致。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Avalonia Tools overview](/tools/)
+- [Avalonia 工具概述](/tools/)
 - [FAQ](/tools/faq)

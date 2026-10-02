@@ -1,7 +1,7 @@
 ---
 id: bitmap-blend-modes
-title: Bitmap blend modes
-description: Bitmap blend modes for controlling how pixels combine during rendering in Avalonia.
+title: 位图混合模式
+description: 用位图混合模式控制 Avalonia 渲染时像素如何叠加。
 doc-type: reference
 ---
 
@@ -41,27 +41,27 @@ import BlendModeSourceOut from '/img/reference/animations-and-graphics/bitmap-bl
 import BlendModeSourceOver from '/img/reference/animations-and-graphics/bitmap-blend-modes/SourceOver.png';
 import BlendModeXor from '/img/reference/animations-and-graphics/bitmap-blend-modes/Xor.png';
 
-When rendering bitmaps graphics on screen, Avalonia supports specifying what blend mode to use while rendering. Blend modes changes the calculations performed when drawing new pixels (source) over existing pixels (destination).
+把位图绘制到屏幕上时，Avalonia 允许你指定使用哪种混合模式。混合模式改变的是「把新像素（源）画到既有像素（目标）之上」时所做的运算。
 
-Currently Avalonia Composite modes and Pixel Blend modes are located in a single enum called `BitmapBlendingMode`.
+目前 Avalonia 把合成模式和像素混合模式都放在同一个名为 `BitmapBlendingMode` 的枚举里。
 
-Composite modes enums mainly describes how the new pixels interact with the current on-screen pixels according to the alpha channel, this can be used to create, for example: "cookie cutters", exclusion zones or masks.
+合成模式枚举主要描述新像素如何依据 alpha 通道与屏幕上现有像素相互作用，可用来做出「饼干模子」式的抠形、排除区域或遮罩等效果。
 
-Pixel Blend modes on the other hand, specifies how the new colors will interact with the current colors. These modes can be used for example: on special effects, change color hues or other more complex image compositions.
+像素混合模式则规定新颜色如何与现有颜色相互作用，可用于特效、调整色相，或做更复杂的图像合成。
 
-See the [Wikipedia page](https://en.wikipedia.org/wiki/Blend_modes) on blend modes for examples of how they work and the math behind them.
+各种混合模式的效果和背后的数学原理，可以参考[维基百科上的混合模式条目](https://en.wikipedia.org/wiki/Blend_modes)。
 
 :::info
-Blend mode support depends on the rendering backend. The Skia renderer supports all blend modes listed below.
+混合模式的支持情况取决于渲染后端。Skia 渲染器支持下面列出的全部混合模式。
 :::
 
-## Default behavior
+## 默认表现 {#default-behavior}
 
-The default blend mode is `SourceOver`, meaning replacing all pixels values by the new values, dictated by the alpha channel. This is the standard way most applications overlay two images.
+默认混合模式是 `SourceOver`：依据 alpha 通道，用新值整体替换像素值。绝大多数应用叠加两张图片时用的都是这种标准方式。
 
-## How to use it
+## 怎么用 {#how-to-use-it}
 
-In XAML, you can specify what blend mode to use when rendering a Image control. The following example will render a color overlay over the picture of a very cute cat:
+在 XAML 中，你可以指定渲染 Image 控件时采用哪种混合模式。下面的例子会在一只超可爱的猫咪照片上叠一层颜色：
 
 ```xml
 <Panel>
@@ -70,7 +70,7 @@ In XAML, you can specify what blend mode to use when rendering a Image control. 
 </Panel>
 ```
 
-If you're creating a Custom User control and want to render a bitmap with code using one of these modes, you can do so by setting the `BitmapBlendingMode` in the control context render options:
+若你在写自定义用户控件，想用代码以某种混合模式绘制位图，只需在控件的渲染选项中设置 `BitmapBlendingMode`：
 
 ``` csharp
 // Inside the "Render" method, draw the bitmap like this:
@@ -81,70 +81,70 @@ using (context.PushRenderOptions(RenderOptions with { BitmapBlendingMode = Bitma
 }
 ```
 
-## Bitmap blend mode gallery
+## 位图混合模式一览 {#bitmap-blend-mode-gallery}
 
-Avalonia supports the following bitmap blend modes that can be applied to rendering:
+Avalonia 渲染时支持下列位图混合模式：
 
-### Pixel blend modes
+### 像素混合模式 {#pixel-blend-modes}
 
-Pixel blend modes affect only the color without taking into consideration the alpha channel.
+像素混合模式只影响颜色，不考虑 alpha 通道。
 
-These are the images used in the examples:
+示例中用到的是这两张图：
 
-| Cute Cat base image (destination) | Color Wheel overlay image (source) |
+| 可爱猫咪底图（目标） | 色轮叠加图（源） |
 |:---:|:---:|
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Cat.jpg" alt="Cat photo used as destination image" width="180"/> | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Overlay-Color.png" alt="Color wheel overlay used as source image" width="180"/> |
 
-Below are all the values currently supported by Avalonia
+下面是 Avalonia 目前支持的全部取值
 
-| Preview | Enum | Description |
+| 预览 | 枚举值 | 说明 |
 |---|---|---|
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Nothing.png" alt="Preview of Unspecified blend mode" width="180"/> | `Unspecified` | or `SourceOver` - Default Behavior. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Plus.png" alt="Preview of Plus blend mode" width="180"/> | `Plus` | Display the sum of the source image and destination image. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Screen.png" alt="Preview of Screen blend mode" width="180"/> | `Screen` | Multiplies the complements of the destination and source color values, then complements the result. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Overlay.png" alt="Preview of Overlay blend mode" width="180"/> | `Overlay` | Multiplies or screens the colors, depending on the destination color value. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Darken.png" alt="Preview of Darken blend mode" width="180"/> | `Darken` | Selects the darker of the destination and source colors. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/HardLight.png" alt="Preview of Lighten blend mode" width="180"/> | `Lighten` | Selects the lighter of the destination and source colors. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/ColorDodge.png" alt="Preview of ColorDodge blend mode" width="180"/> | `ColorDodge` | Darkens the destination color to reflect the source color. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/ColorBurn.png" alt="Preview of ColorBurn blend mode" width="180"/> | `ColorBurn` | Multiplies or screens the colors, depending on the source color value. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/HardLight.png" alt="Preview of HardLight blend mode" width="180"/> | `HardLight` | Darkens or lightens the colors, depending on the source color value. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SoftLight.png" alt="Preview of SoftLight blend mode" width="180"/> | `SoftLight` | Subtracts the darker of the two constituent colors from the lighter color. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Difference.png" alt="Preview of Difference blend mode" width="180"/> | `Difference` | Produces an effect similar to that of the Difference mode but lower in contrast. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Exclusion.png" alt="Preview of Exclusion blend mode" width="180"/> | `Exclusion` | The source color is multiplied by the destination color and replaces the destination|
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Multiply.png" alt="Preview of Multiply blend mode" width="180"/> | `Multiply` | Creates a color with the hue of the source color and the saturation and luminosity of the destination color. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Hue.png" alt="Preview of Hue blend mode" width="180"/> | `Hue` | Creates a color with the hue of the source color and the saturation and luminosity of the destination color. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Saturation.png" alt="Preview of Saturation blend mode" width="180"/> | `Saturation` | Creates a color with the saturation of the source color and the hue and luminosity of the destination color. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Color.png" alt="Preview of Color blend mode" width="180"/> | `Color` | Creates a color with the hue and saturation of the source color and the luminosity of the destination color. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Luminosity.png" alt="Preview of Luminosity blend mode" width="180"/> | `Luminosity` | Creates a color with the luminosity of the source color and the hue and saturation of the destination color. |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Nothing.png" alt="Preview of Unspecified blend mode" width="180"/> | `Unspecified` | 即 `SourceOver` —— 默认行为。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Plus.png" alt="Preview of Plus blend mode" width="180"/> | `Plus` | 显示源图与目标图之和。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Screen.png" alt="Preview of Screen blend mode" width="180"/> | `Screen` | 把目标色与源色各自取补后相乘，再对结果取补。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Overlay.png" alt="Preview of Overlay blend mode" width="180"/> | `Overlay` | 视目标色的取值，对颜色作正片叠底或滤色处理。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Darken.png" alt="Preview of Darken blend mode" width="180"/> | `Darken` | 在目标色和源色中取较暗者。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/HardLight.png" alt="Preview of Lighten blend mode" width="180"/> | `Lighten` | 在目标色和源色中取较亮者。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/ColorDodge.png" alt="Preview of ColorDodge blend mode" width="180"/> | `ColorDodge` | 加深目标色，以映出源色。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/ColorBurn.png" alt="Preview of ColorBurn blend mode" width="180"/> | `ColorBurn` | 视源色的取值，对颜色作正片叠底或滤色处理。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/HardLight.png" alt="Preview of HardLight blend mode" width="180"/> | `HardLight` | 视源色的取值，把颜色调暗或调亮。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SoftLight.png" alt="Preview of SoftLight blend mode" width="180"/> | `SoftLight` | 用两种颜色中较亮的减去较暗的。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Difference.png" alt="Preview of Difference blend mode" width="180"/> | `Difference` | 效果类似 Difference 模式，但对比度更低。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Exclusion.png" alt="Preview of Exclusion blend mode" width="180"/> | `Exclusion` | 源色与目标色相乘，结果取代目标|
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Multiply.png" alt="Preview of Multiply blend mode" width="180"/> | `Multiply` | 取源色的色相，配上目标色的饱和度和明度，合成新颜色。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Hue.png" alt="Preview of Hue blend mode" width="180"/> | `Hue` | 取源色的色相，配上目标色的饱和度和明度，合成新颜色。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Saturation.png" alt="Preview of Saturation blend mode" width="180"/> | `Saturation` | 取源色的饱和度，配上目标色的色相和明度，合成新颜色。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Color.png" alt="Preview of Color blend mode" width="180"/> | `Color` | 取源色的色相和饱和度，配上目标色的明度，合成新颜色。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Luminosity.png" alt="Preview of Luminosity blend mode" width="180"/> | `Luminosity` | 取源色的明度，配上目标色的色相和饱和度，合成新颜色。 |
 
-### Composition blend modes
+### 合成混合模式 {#composition-blend-modes}
 
-Composition blend modes affect only the alpha channel without messing with the colors.
+合成混合模式只影响 alpha 通道，不动颜色。
 
-These are the images used in the examples:
+示例中用到的是这两张图：
 
-| "A" base image (destination) | "B" overlay image (source) |
+| 「A」底图（目标） | 「B」叠加图（源） |
 |:---:|:---:|
 | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/A.png" alt="Image A used as destination for composition examples" width="180"/> | <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/B.png" alt="Image B used as source for composition examples" width="180"/> |
 
-Below are all the values currently supported by Avalonia. Please note that this demo is sensitive to the alpha channel and therefore the website background bleed through the images.
+下面是 Avalonia 目前支持的全部取值。请注意这组演示对 alpha 通道很敏感，所以网页背景会从图片中透出来。
 
-| Preview | Enum | Description |
+| 预览 | 枚举值 | 说明 |
 |---|---|---|
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Source.png" alt="Preview of Source composition mode" width="180"/> | `Source` | Only the source will be present. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceOver.png" alt="Preview of SourceOver composition mode" width="180"/> | `SourceOver` | or `Unspecified` - Default behavior, Source is placed over the destination. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceIn.png" alt="Preview of SourceIn composition mode" width="180"/> | `SourceIn` | The source that overlaps the destination, replaces the destination. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceOut.png" alt="Preview of SourceOut composition mode" width="180"/> | `SourceOut` | Source is placed, where it falls outside of the destination. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceAtop.png" alt="Preview of SourceAtop composition mode" width="180"/> | `SourceAtop` | Source which overlaps the destination, replaces the destination. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Xor.png" alt="Preview of Xor composition mode" width="180"/> | `Xor` | The non-overlapping regions of source and destination are combined. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Destination.png" alt="Preview of Destination composition mode" width="180"/> | `Destination` | Only the destination will be present. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationOver.png" alt="Preview of DestinationOver composition mode" width="180"/> | `DestinationOver` | Destination is placed over the source. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationIn.png" alt="Preview of DestinationIn composition mode" width="180"/> | `DestinationIn` | Destination which overlaps the source, replaces the source. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationOut.png" alt="Preview of DestinationOut composition mode" width="180"/> | `DestinationOut` | Destination is placed, where it falls outside of the source. |
-| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationAtop.png" alt="Preview of DestinationAtop composition mode" width="180"/> | `DestinationAtop` | Destination which overlaps the source replaces the source. |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Source.png" alt="Preview of Source composition mode" width="180"/> | `Source` | 只保留源。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceOver.png" alt="Preview of SourceOver composition mode" width="180"/> | `SourceOver` | 即 `Unspecified` —— 默认行为，源叠在目标之上。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceIn.png" alt="Preview of SourceIn composition mode" width="180"/> | `SourceIn` | 源与目标重叠的部分取代目标。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceOut.png" alt="Preview of SourceOut composition mode" width="180"/> | `SourceOut` | 只保留源落在目标之外的部分。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/SourceAtop.png" alt="Preview of SourceAtop composition mode" width="180"/> | `SourceAtop` | 源中与目标重叠的部分取代目标。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Xor.png" alt="Preview of Xor composition mode" width="180"/> | `Xor` | 保留源与目标互不重叠的区域并把它们合并。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/Destination.png" alt="Preview of Destination composition mode" width="180"/> | `Destination` | 只保留目标。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationOver.png" alt="Preview of DestinationOver composition mode" width="180"/> | `DestinationOver` | 目标叠在源之上。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationIn.png" alt="Preview of DestinationIn composition mode" width="180"/> | `DestinationIn` | 目标中与源重叠的部分取代源。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationOut.png" alt="Preview of DestinationOut composition mode" width="180"/> | `DestinationOut` | 只保留目标落在源之外的部分。 |
+| <img src="/img/reference/animations-and-graphics/bitmap-blend-modes/DestinationAtop.png" alt="Preview of DestinationAtop composition mode" width="180"/> | `DestinationAtop` | 目标中与源重叠的部分取代源。 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Brushes](/docs/graphics-animation/brushes): Brush types for fills and strokes.
-- [Drawing Graphics](/docs/graphics-animation/drawing-graphics): Shapes, geometries, and the graphics system.
-- [Custom Rendering](/docs/graphics-animation/custom-rendering): Drawing with `DrawingContext`.
+- [画刷](/docs/graphics-animation/brushes)：用于填充和描边的各类画刷。
+- [绘制图形](/docs/graphics-animation/drawing-graphics)：形状、几何与图形系统。
+- [自定义渲染](/docs/graphics-animation/custom-rendering)：用 `DrawingContext` 作画。

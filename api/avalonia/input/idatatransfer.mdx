@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IDataTransfer Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IDataTransfer.cs">IDataTransfer.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/IDataTransfer.cs">IDataTransfer.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents an object providing a list of [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) usableduring a drag and drop operation.
+表示一个对象，它提供拖放操作期间可用的 [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) 列表。
 
 </div>
 
@@ -54,33 +54,33 @@ public interface IDataTransfer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-When an implementation of this interface is used as a drag source using [Avalonia.Input.DragDrop.DoDragDropAsync(Avalonia.Input.PointerPressedEventArgs,Avalonia.Input.IDataTransfer,Avalonia.Input.DragDropEffects)](xref:Avalonia.Input.DragDrop.DoDragDropAsync%28Avalonia.Input.PointerPressedEventArgs%2CAvalonia.Input.IDataTransfer%2CAvalonia.Input.DragDropEffects%29),
-it must NOT be disposed by the caller. The system will dispose of it automatically when the drag operation completes.
+当该接口的实现通过 [Avalonia.Input.DragDrop.DoDragDropAsync(Avalonia.Input.PointerPressedEventArgs,Avalonia.Input.IDataTransfer,Avalonia.Input.DragDropEffects)](xref:Avalonia.Input.DragDrop.DoDragDropAsync%28Avalonia.Input.PointerPressedEventArgs%2CAvalonia.Input.IDataTransfer%2CAvalonia.Input.DragDropEffects%29) 用作拖动源时，
+调用方**不得**自行释放它——拖动操作结束时系统会自动释放。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia.Input.DataTransfer](xref:Avalonia.Input.DataTransfer)
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Formats](#uid-da959dd67b) | Gets the formats supported by a [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer). |
-| [Items](#uid-bd01544761) | Gets a list of [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) contained in this object. |
+| [Formats](#uid-da959dd67b) | 获取某个 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 支持的格式。 |
+| [Items](#uid-bd01544761) | 获取该对象中包含的 [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) 列表。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-da959dd67b"></span>
 
-### Formats Property
+### Formats 属性 {#formats-property}
 
-Gets the formats supported by a [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer).
+获取某个 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 支持的格式。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Input.DataFormat> Formats { get; set; }
@@ -92,20 +92,20 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Input.DataFormat> Forma
 
 <span id="uid-bd01544761"></span>
 
-### Items Property
+### Items 属性 {#items-property}
 
-Gets a list of [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) contained in this object.
+获取该对象中包含的 [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) 列表。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Input.IDataTransferItem> Items { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-Some platforms (such as Windows and X11) may only support a single data item for all formats
-except [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File).
+某些平台（比如 Windows 和 X11）除 [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) 之外，
+所有格式可能只支持单个数据项。
 
-Items returned by this property must stay valid until the [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) is disposed.
+该属性返回的各项必须在 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 被释放之前始终有效。
 
 </section>
 

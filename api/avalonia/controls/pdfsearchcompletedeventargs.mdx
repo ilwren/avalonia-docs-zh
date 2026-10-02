@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfSearchCompletedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.PdfViewer.SearchCompleted](xref:Avalonia.Controls.PdfViewer.SearchCompleted) event.
+为 [Avalonia.Controls.PdfViewer.SearchCompleted](xref:Avalonia.Controls.PdfViewer.SearchCompleted) 事件提供数据。
 
 </div>
 
@@ -50,29 +50,29 @@ public class PdfSearchCompletedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfSearchCompletedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PdfSearchCompletedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PdfSearchCompletedEventArgs](#uid-dd60ab41fc) | Initializes a new instance of the [Avalonia.Controls.PdfSearchCompletedEventArgs](xref:Avalonia.Controls.PdfSearchCompletedEventArgs) class. |
+| [PdfSearchCompletedEventArgs](#uid-dd60ab41fc) | 初始化 [Avalonia.Controls.PdfSearchCompletedEventArgs](xref:Avalonia.Controls.PdfSearchCompletedEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-dd60ab41fc"></span>
 
-### PdfSearchCompletedEventArgs Constructor
+### PdfSearchCompletedEventArgs 构造函数 {#pdfsearchcompletedeventargs-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.PdfSearchCompletedEventArgs](xref:Avalonia.Controls.PdfSearchCompletedEventArgs) class.
+初始化 [Avalonia.Controls.PdfSearchCompletedEventArgs](xref:Avalonia.Controls.PdfSearchCompletedEventArgs) 类的新实例。
 
 ```csharp
 public PdfSearchCompletedEventArgs(string query, int matchCount)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `query` string
 
@@ -82,20 +82,20 @@ public PdfSearchCompletedEventArgs(string query, int matchCount)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [MatchCount](#uid-83626647b2) | Gets the number of matches found. |
-| [Query](#uid-12f1fb3e50) | Gets the query that was searched. |
+| [MatchCount](#uid-83626647b2) | 获取找到的匹配数量。 |
+| [Query](#uid-12f1fb3e50) | 获取本次搜索所用的查询。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-83626647b2"></span>
 
-### MatchCount Property
+### MatchCount 属性 {#matchcount-property}
 
-Gets the number of matches found.
+获取找到的匹配数量。
 
 ```csharp
 public int MatchCount { get; set; }
@@ -107,9 +107,9 @@ public int MatchCount { get; set; }
 
 <span id="uid-12f1fb3e50"></span>
 
-### Query Property
+### Query 属性 {#query-property}
 
-Gets the query that was searched.
+获取本次搜索所用的查询。
 
 ```csharp
 public string Query { get; set; }

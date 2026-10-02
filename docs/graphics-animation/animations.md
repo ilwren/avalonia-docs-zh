@@ -1,31 +1,31 @@
 ---
 id: animations
-title: Animations
-description: Overview of animation types in Avalonia including keyframe, transitions, and composition.
+title: 动画
+description: Avalonia 中各类动画概览：关键帧动画、过渡与组合动画。
 doc-type: overview
 ---
 
 import KeyframeDiagram from '/img/concepts/ui-concepts/animations/animation-keyframe.png';
 
-Avalonia provides three types of animations:
+Avalonia 提供三类动画：
 
-| Type | Description | Use case |
+| 类型 | 说明 | 适用场景 |
 |---|---|---|
-| [Keyframe Animations](/docs/graphics-animation/keyframe-animations) | Change one or more properties over a timeline with multiple keyframes. | Complex, multi-step animations triggered by style selectors. |
-| [Control Transitions](/docs/graphics-animation/control-transitions) | Animate a single property when its value changes. | Smooth visual feedback for property changes (opacity, color, size). |
-| [Composition Animations](/docs/graphics-animation/composition-animations) | Code-driven animations that run on the render thread. | Performance-sensitive or programmatic animations controlled from C#. |
+| [Keyframe Animations](/docs/graphics-animation/keyframe-animations) | 沿时间轴、借由多个关键帧改变一个或多个属性。 | 由样式选择器触发的复杂多步动画。 |
+| [Control Transitions](/docs/graphics-animation/control-transitions) | 在某个属性的值发生变化时为它加动画。 | 为属性变化（不透明度、颜色、尺寸）提供顺滑的视觉反馈。 |
+| [Composition Animations](/docs/graphics-animation/composition-animations) | 由代码驱动、运行在渲染线程上的动画。 | 对性能敏感、或需要从 C# 中编程控制的动画。 |
 
-Additionally, [Page Transitions](/docs/graphics-animation/page-transitions) animate content switching in controls like `TransitioningContentControl` and `Carousel`.
+此外，[页面过渡](/docs/graphics-animation/page-transitions)负责为 `TransitioningContentControl`、`Carousel` 等控件的内容切换加动画。
 
-## Keyframe animations
+## 关键帧动画 {#keyframe-animations}
 
-The simplest keyframe animation changes one property value over a specified duration by defining two keyframes: one at the start (0%) and one at the end (100%).
+最简单的关键帧动画，就是定义起点（0%）和终点（100%）两个关键帧，让某个属性值在指定时长内完成变化。
 
 <Image light={KeyframeDiagram} alt="Diagram showing a keyframe animation timeline with start and end cue points" position="center" maxWidth={400} cornerRadius="true"/>
 
-The property value is interpolated between keyframes using an easing function. The default is linear interpolation.
+两个关键帧之间的属性值由缓动函数插值得出，默认是线性插值。
 
-### Quick example
+### 快速示例 {#quick-example}
 
 ```xml
 <Border Background="Blue" Width="100" Height="100">
@@ -47,13 +47,13 @@ The property value is interpolated between keyframes using an easing function. T
 </Border>
 ```
 
-This creates a pulsing opacity animation that runs forever, alternating between full and partial opacity.
+这会做出一个永不停歇的呼吸式不透明度动画，在全不透明和半透明之间来回变化。
 
-See [Keyframe Animations](/docs/graphics-animation/keyframe-animations) for the full syntax and more examples.
+完整语法和更多示例请参阅[关键帧动画](/docs/graphics-animation/keyframe-animations)。
 
-## Control transitions
+## 控件过渡 {#control-transitions}
 
-Transitions animate a property whenever its value changes, providing smooth visual feedback without writing explicit keyframes:
+过渡会在属性值发生变化时自动为它加动画，无需手写关键帧就能获得顺滑的视觉反馈：
 
 ```xml
 <Button Content="Hover me" Background="Blue">
@@ -66,11 +66,11 @@ Transitions animate a property whenever its value changes, providing smooth visu
 </Button>
 ```
 
-See [Control Transitions](/docs/graphics-animation/control-transitions) for transition types and configuration.
+过渡的种类和配置请参阅[控件过渡](/docs/graphics-animation/control-transitions)。
 
-## Composition animations
+## 组合动画 {#composition-animations}
 
-Composition animations provide a lower-level, code-driven approach that runs on the render thread. Use them when you need programmatic control or render-thread performance:
+组合动画是一套更底层、由代码驱动、运行在渲染线程上的方案。当你需要编程控制、或追求渲染线程级的性能时就用它：
 
 ```csharp
 var visual = ElementComposition.GetElementVisual(myControl);
@@ -84,14 +84,14 @@ animation.InsertKeyFrame(1f, new Vector3D(0, 0, 0));
 visual.StartAnimation("Offset", animation);
 ```
 
-See [Composition Animations](/docs/graphics-animation/composition-animations) for the full API, implicit animations, and integration patterns.
+完整 API、隐式动画和集成方式请参阅[组合动画](/docs/graphics-animation/composition-animations)。
 
-## Triggering animations
+## 触发动画 {#triggering-animations}
 
-Keyframe animations defined in XAML rely on style selectors for their triggering behavior:
+在 XAML 中定义的关键帧动画，其触发行为取决于样式选择器：
 
-- **Unconditional selector** (e.g., `Style Selector="Border"`): The animation starts when the control enters the visual tree.
-- **Conditional selector** (e.g., `Style Selector="Border:pointerover"`): The animation runs when the selector condition matches (e.g., pointer is over the border) and stops when it no longer matches.
+- **无条件选择器**（比如 `Style Selector="Border"`）：控件进入视觉树时动画开始。
+- **条件选择器**（比如 `Style Selector="Border:pointerover"`）：选择器条件成立时（比如指针悬停在边框上）动画播放，条件不再成立时停止。
 
 <XamlPreview>
 
@@ -117,28 +117,28 @@ Keyframe animations defined in XAML rely on style selectors for their triggering
 </XamlPreview>
 
 :::info
-By default, a style-applied keyframe animation pauses when its control is effectively invisible, and resumes when the control is visible again. See [Playback behavior](/docs/graphics-animation/keyframe-animations#playback-behavior).
+默认情况下，由样式施加的关键帧动画会在控件实际不可见时暂停，控件重新可见后恢复。参见[播放行为](/docs/graphics-animation/keyframe-animations#playback-behavior)。
 :::
 
-## Animation settings
+## 动画设置 {#animation-settings}
 
-Keyframe animations support these configuration options:
+关键帧动画支持下列配置项：
 
-| Setting | Description | Example |
+| 设置项 | 说明 | 示例 |
 |---|---|---|
-| `Duration` | How long one cycle takes. | `0:0:1` (1 second) |
-| `Delay` | Time to wait before starting. | `0:0:0.5` |
-| `Easing` | The interpolation curve between keyframes. | `CubicEaseInOut` |
-| `FillMode` | What happens when the animation ends. | `Forward`, `Backward`, `Both`, `None` |
-| `IterationCount` | Number of times to repeat. Use `infinite` for forever. | `3`, `INFINITE` |
-| `PlaybackBehavior` | Whether to pause the animation when the control is hidden. | `Normal`, `Reverse`, `Alternate`, `AlternateReverse` |
-| `PlaybackDirection` | Direction of playback. | `Auto`, `Always`, `OnlyIfVisible` |
+| `Duration` | 一个周期要走多久。 | `0:0:1` (1 second) |
+| `Delay` | 开始之前先等多久。 | `0:0:0.5` |
+| `Easing` | 关键帧之间的插值曲线。 | `CubicEaseInOut` |
+| `FillMode` | 动画结束时如何收场。 | `Forward`, `Backward`, `Both`, `None` |
+| `IterationCount` | 重复播放的次数，填 `infinite` 表示永远循环。 | `3`, `INFINITE` |
+| `PlaybackBehavior` | 控件被隐藏时是否暂停动画。 | `Normal`, `Reverse`, `Alternate`, `AlternateReverse` |
+| `PlaybackDirection` | 播放方向。 | `Auto`, `Always`, `OnlyIfVisible` |
 
-See [Animation Settings](/docs/graphics-animation/animation-settings) for details on each option and [Easing Functions](/docs/graphics-animation/easing-functions) for all available easing types.
+各个选项的详细说明请参阅[动画设置](/docs/graphics-animation/animation-settings)，全部可用的缓动类型请参阅[缓动函数](/docs/graphics-animation/easing-functions)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Keyframe Animations](/docs/graphics-animation/keyframe-animations): Full keyframe animation syntax and examples.
-- [Control Transitions](/docs/graphics-animation/control-transitions): Animating property changes.
-- [Composition Animations](/docs/graphics-animation/composition-animations): Code-driven render-thread animations.
-- [Page Transitions](/docs/graphics-animation/page-transitions): Animating content switching.
+- [关键帧动画](/docs/graphics-animation/keyframe-animations)：完整的关键帧动画语法和示例。
+- [控件过渡](/docs/graphics-animation/control-transitions)：为属性变化加动画。
+- [组合动画](/docs/graphics-animation/composition-animations)：由代码驱动、跑在渲染线程上的动画。
+- [页面过渡](/docs/graphics-animation/page-transitions)：为内容切换加动画。

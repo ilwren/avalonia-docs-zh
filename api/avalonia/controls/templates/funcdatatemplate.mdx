@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FuncDataTemplate Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Templates</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Templates</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/FuncDataTemplate.cs">FuncDataTemplate.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/FuncDataTemplate.cs">FuncDataTemplate.cs</a>
 </div>
 
 </div>
@@ -54,37 +54,37 @@ public class FuncDataTemplate
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> FuncTemplate&lt;object,Control&gt; <span className="apiref-page__relation-separator">-&gt;</span> FuncDataTemplate
+<span className="apiref-page__meta-label">继承关系：</span> FuncTemplate&lt;object,Control&gt; <span className="apiref-page__relation-separator">-&gt;</span> FuncDataTemplate
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="funcdatatemplate-1">FuncDataTemplate&lt;T&gt;</a>, <a href="functreedatatemplate">FuncTreeDataTemplate</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="funcdatatemplate-1">FuncDataTemplate&lt;T&gt;</a>, <a href="functreedatatemplate">FuncTreeDataTemplate</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="idatatemplate">IDataTemplate</a>, <a href="irecyclingdatatemplate">IRecyclingDataTemplate</a>, ITemplate&lt;object,Control&gt;
+<span className="apiref-page__meta-label">实现接口：</span> <a href="idatatemplate">IDataTemplate</a>, <a href="irecyclingdatatemplate">IRecyclingDataTemplate</a>，ITemplate&lt;object,Control&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FuncDataTemplate (2 overloads)](#uid-7a7a8b4ff2) | No summary available. |
+| [FuncDataTemplate (2 overloads)](#uid-7a7a8b4ff2) | 暂无摘要。 |
 
 <span id="uid-7a7a8b4ff2"></span>
 
-### FuncDataTemplate overloads
+### FuncDataTemplate 的重载 {#funcdatatemplate-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-081cc2ea9b"></span>
 
-#### FuncDataTemplate Constructor
+#### FuncDataTemplate 构造函数 {#funcdatatemplate-constructor}
 
 ```csharp
 public FuncDataTemplate(Func<object, bool> match, Func<object, Avalonia.Controls.INameScope, Avalonia.Controls.Control> build, bool supportsRecycling)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `match` Func&lt;object, bool&gt;
 
@@ -101,15 +101,15 @@ public FuncDataTemplate(Func<object, bool> match, Func<object, Avalonia.Controls
 
 <span id="uid-c27f2ab1db"></span>
 
-#### FuncDataTemplate Constructor
+#### FuncDataTemplate 构造函数 {#funcdatatemplate-constructor-1}
 
 ```csharp
 public FuncDataTemplate(Type type, Func<object, Avalonia.Controls.INameScope, Avalonia.Controls.Control> build, bool supportsRecycling)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
-`type` Type
+`type` 类型
 
 
 `build` Func&lt;object, [Avalonia.Controls.INameScope](xref:Avalonia.Controls.INameScope), [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)&gt;
@@ -120,38 +120,38 @@ public FuncDataTemplate(Type type, Func<object, Avalonia.Controls.INameScope, Av
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Build](#uid-910f460c06) | Creates or recycles a control to display the specified data. |
-| [Match](#uid-50eee6cfed) | Checks to see if this data template matches the specified data. |
+| [Build](#uid-910f460c06) | 创建或回收一个控件，用于显示指定的数据。 |
+| [Match](#uid-50eee6cfed) | 检查该数据模板是否与指定的数据相匹配。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-910f460c06"></span>
 
-### Build Method
+### Build 方法 {#build-method}
 
-Creates or recycles a control to display the specified data.
+创建或回收一个控件，用于显示指定的数据。
 
 ```csharp
 public Avalonia.Controls.Control Build(object data, Avalonia.Controls.Control existing)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `data` object
 
-The data to display.
+要显示的数据。
 
 
 `existing` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-An optional control to recycle.
+一个可供回收复用的控件，可选。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -159,7 +159,7 @@ The `existing` control if supplied and applicable to
 `data`, otherwise a new control or null.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 The caller should ensure that any control passed to `existing`
 originated from the same data template.
@@ -170,22 +170,22 @@ originated from the same data template.
 
 <span id="uid-50eee6cfed"></span>
 
-### Match Method
+### Match 方法 {#match-method}
 
-Checks to see if this data template matches the specified data.
+检查该数据模板是否与指定的数据相匹配。
 
 ```csharp
 public bool Match(object data)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `data` object
 
-The data.
+数据。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -194,9 +194,9 @@ True if the data template can build a control for the data, otherwise false.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Access](#uid-c964539ce7) | The default data template used in the case where no matching data template is found but [Avalonia.Controls.Primitives.AccessText](xref:Avalonia.Controls.Primitives.AccessText) should be used. |
 | [Default](#uid-70c1c9b32b) | The default data template used in the case where no matching data template is found. |
@@ -205,7 +205,7 @@ True if the data template can build a control for the data, otherwise false.
 
 <span id="uid-c964539ce7"></span>
 
-### Access Field
+### Access 字段 {#access-field}
 
 The default data template used in the case where no matching data template is found
 but [Avalonia.Controls.Primitives.AccessText](xref:Avalonia.Controls.Primitives.AccessText) should be used.
@@ -220,7 +220,7 @@ public Avalonia.Controls.Templates.FuncDataTemplate Access
 
 <span id="uid-70c1c9b32b"></span>
 
-### Default Field
+### Default 字段 {#default-field}
 
 The default data template used in the case where no matching data template is found.
 

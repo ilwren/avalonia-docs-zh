@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CompositionOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering.Composition</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering.Composition</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionOptions.cs">CompositionOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionOptions.cs">CompositionOptions.cs</a>
 </div>
 
 </div>
@@ -48,21 +48,21 @@ public class CompositionOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositionOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositionOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CompositionOptions](#uid-592365acc8) | No summary available. |
+| [CompositionOptions](#uid-592365acc8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-592365acc8"></span>
 
-### CompositionOptions Constructor
+### CompositionOptions 构造函数 {#compositionoptions-constructor}
 
 ```csharp
 public CompositionOptions()
@@ -70,9 +70,9 @@ public CompositionOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DirtyRectMergeEagerness](#uid-285c3acc1c) | Controls the eagerness of merging dirty rects. WPF uses 50000, Avalonia currently has a different default that's a subject to change. You can play with this property to find the best value for your application. |
 | [MaxDirtyRects](#uid-210bada917) | The maximum number of dirty rects to track when region clip is in use. Setting this to zero or negative value will remove the smarter algorithm and will use underlying drawing context region support directly. Default value is 8. |
@@ -83,7 +83,7 @@ public CompositionOptions()
 
 <span id="uid-285c3acc1c"></span>
 
-### DirtyRectMergeEagerness Property
+### DirtyRectMergeEagerness 属性 {#dirtyrectmergeeagerness-property}
 
 Controls the eagerness of merging dirty rects. WPF uses 50000, Avalonia currently has a different default
 that's a subject to change. You can play with this property to find the best value for your application.
@@ -98,7 +98,7 @@ public Nullable<double> DirtyRectMergeEagerness { get; set; }
 
 <span id="uid-210bada917"></span>
 
-### MaxDirtyRects Property
+### MaxDirtyRects 属性 {#maxdirtyrects-property}
 
 The maximum number of dirty rects to track when region clip is in use. Setting this to zero or negative
 value will remove the smarter algorithm and will use underlying drawing context region support directly.
@@ -114,7 +114,7 @@ public Nullable<int> MaxDirtyRects { get; set; }
 
 <span id="uid-f64a343f80"></span>
 
-### UseRegionDirtyRectClipping Property
+### UseRegionDirtyRectClipping 属性 {#useregiondirtyrectclipping-property}
 
 Enables more accurate tracking of dirty rects by utilizing regions if supported by the underlying
 drawing context
@@ -129,7 +129,7 @@ public Nullable<bool> UseRegionDirtyRectClipping { get; set; }
 
 <span id="uid-464a94f787"></span>
 
-### UseSaveLayerRootClip Property
+### UseSaveLayerRootClip 属性 {#usesavelayerrootclip-property}
 
 Enforces dirty contents to be rendered into an extra intermediate surface before being applied onto the
 saved frame.

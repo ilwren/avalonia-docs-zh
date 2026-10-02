@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DrawingContextImpl.CreateInfo Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Skia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Skia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Skia</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Skia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Skia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Skia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Skia/Avalonia.Skia/DrawingContextImpl.cs">DrawingContextImpl.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Skia/Avalonia.Skia/DrawingContextImpl.cs">DrawingContextImpl.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public struct DrawingContextImpl.CreateInfo
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> DrawingContextImpl.CreateInfo
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> DrawingContextImpl.CreateInfo
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Canvas](#uid-c3eb0e23e1) | Canvas to draw to. |
-| [CurrentSession](#uid-19463fc5c1) | No summary available. |
+| [Canvas](#uid-c3eb0e23e1) | 要绘制到的画布。 |
+| [CurrentSession](#uid-19463fc5c1) | 暂无摘要。 |
 | [DisableSubpixelTextRendering](#uid-573556b642) | Render text without subpixel antialiasing. |
-| [Dpi](#uid-afb7579f67) | Dpi for intermediate surfaces |
-| [Gpu](#uid-c43d01f5a5) | Skia GPU provider context (optional) |
-| [GrContext](#uid-da93c7706f) | GPU-accelerated context (optional) |
+| [Dpi](#uid-afb7579f67) | 中间表面所用的 Dpi |
+| [Gpu](#uid-c43d01f5a5) | Skia GPU 提供程序上下文（可选） |
+| [GrContext](#uid-da93c7706f) | GPU 加速的上下文（可选） |
 | [ScaleDrawingToDpi](#uid-58e7e61bb4) | Makes DPI to be applied as a hidden matrix transform |
-| [Surface](#uid-f162a5fdb6) | Surface to draw to. |
+| [Surface](#uid-f162a5fdb6) | 要绘制到的表面。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c3eb0e23e1"></span>
 
-### Canvas Field
+### Canvas 字段 {#canvas-field}
 
-Canvas to draw to.
+要绘制到的画布。
 
 ```csharp
 public SkiaSharp.SKCanvas Canvas
@@ -89,7 +89,7 @@ public SkiaSharp.SKCanvas Canvas
 
 <span id="uid-19463fc5c1"></span>
 
-### CurrentSession Field
+### CurrentSession 字段 {#currentsession-field}
 
 ```csharp
 public Avalonia.Skia.ISkiaGpuRenderSession CurrentSession
@@ -101,7 +101,7 @@ public Avalonia.Skia.ISkiaGpuRenderSession CurrentSession
 
 <span id="uid-573556b642"></span>
 
-### DisableSubpixelTextRendering Field
+### DisableSubpixelTextRendering 字段 {#disablesubpixeltextrendering-field}
 
 Render text without subpixel antialiasing.
 
@@ -115,9 +115,9 @@ public bool DisableSubpixelTextRendering
 
 <span id="uid-afb7579f67"></span>
 
-### Dpi Field
+### Dpi 字段 {#dpi-field}
 
-Dpi for intermediate surfaces
+中间表面所用的 Dpi
 
 ```csharp
 public Avalonia.Vector Dpi
@@ -129,9 +129,9 @@ public Avalonia.Vector Dpi
 
 <span id="uid-c43d01f5a5"></span>
 
-### Gpu Field
+### Gpu 字段 {#gpu-field}
 
-Skia GPU provider context (optional)
+Skia GPU 提供程序上下文（可选）
 
 ```csharp
 public Avalonia.Skia.ISkiaGpu Gpu
@@ -143,9 +143,9 @@ public Avalonia.Skia.ISkiaGpu Gpu
 
 <span id="uid-da93c7706f"></span>
 
-### GrContext Field
+### GrContext 字段 {#grcontext-field}
 
-GPU-accelerated context (optional)
+GPU 加速的上下文（可选）
 
 ```csharp
 public SkiaSharp.GRContext GrContext
@@ -157,7 +157,7 @@ public SkiaSharp.GRContext GrContext
 
 <span id="uid-58e7e61bb4"></span>
 
-### ScaleDrawingToDpi Field
+### ScaleDrawingToDpi 字段 {#scaledrawingtodpi-field}
 
 Makes DPI to be applied as a hidden matrix transform
 
@@ -171,9 +171,9 @@ public bool ScaleDrawingToDpi
 
 <span id="uid-f162a5fdb6"></span>
 
-### Surface Field
+### Surface 字段 {#surface-field}
 
-Surface to draw to.
+要绘制到的表面。
 
 ```csharp
 public SkiaSharp.SKSurface Surface

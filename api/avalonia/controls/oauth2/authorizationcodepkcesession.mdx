@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AuthorizationCodePkceSession Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.OAuth2</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.OAuth2</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.WebView</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.WebView</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.WebView</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.WebView</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia.Controls.WebView/blob/main/src/Avalonia.Controls.WebView.Core/OAuth2/AuthorizationCodePkceSession.cs">AuthorizationCodePkceSession.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia.Controls.WebView/blob/main/src/Avalonia.Controls.WebView.Core/OAuth2/AuthorizationCodePkceSession.cs">AuthorizationCodePkceSession.cs</a>
 </div>
 </div>
 
@@ -47,30 +47,30 @@ public class AuthorizationCodePkceSession
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AuthorizationCodePkceSession
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AuthorizationCodePkceSession
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Create](#uid-0f667271d5) | No summary available. |
-| [CreateAsync](#uid-5ec70310fe) | No summary available. |
-| [ExchangeCodeAsync](#uid-88e7dffcd1) | No summary available. |
-| [IsCallbackFor](#uid-caeac3d949) | No summary available. |
+| [Create](#uid-0f667271d5) | 暂无摘要。 |
+| [CreateAsync](#uid-5ec70310fe) | 暂无摘要。 |
+| [ExchangeCodeAsync](#uid-88e7dffcd1) | 暂无摘要。 |
+| [IsCallbackFor](#uid-caeac3d949) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0f667271d5"></span>
 
-### Create Method
+### Create 方法 {#create-method}
 
 ```csharp
 public Avalonia.Controls.OAuth2.AuthorizationCodePkceSession Create(Uri authorizationEndpoint, Uri tokenEndpoint, string clientId, string redirectUri, string scope, string nonce, string resource)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `authorizationEndpoint` Uri
 
@@ -93,7 +93,7 @@ public Avalonia.Controls.OAuth2.AuthorizationCodePkceSession Create(Uri authoriz
 `resource` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.OAuth2.AuthorizationCodePkceSession](xref:Avalonia.Controls.OAuth2.AuthorizationCodePkceSession)
 
@@ -104,13 +104,13 @@ public Avalonia.Controls.OAuth2.AuthorizationCodePkceSession Create(Uri authoriz
 
 <span id="uid-5ec70310fe"></span>
 
-### CreateAsync Method
+### CreateAsync 方法 {#createasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Controls.OAuth2.AuthorizationCodePkceSession> CreateAsync(string issuer, string clientId, string redirectUri, string scope, string nonce, string resource, System.Net.Http.HttpClient httpClient, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `issuer` string
 
@@ -136,7 +136,7 @@ public System.Threading.Tasks.Task<Avalonia.Controls.OAuth2.AuthorizationCodePkc
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.OAuth2.AuthorizationCodePkceSession](xref:Avalonia.Controls.OAuth2.AuthorizationCodePkceSession)&gt;
 
@@ -147,13 +147,13 @@ System.Threading.Tasks.Task&lt;[Avalonia.Controls.OAuth2.AuthorizationCodePkceSe
 
 <span id="uid-88e7dffcd1"></span>
 
-### ExchangeCodeAsync Method
+### ExchangeCodeAsync 方法 {#exchangecodeasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Controls.OAuth2.MetadataClient.OAuth2TokenResponse> ExchangeCodeAsync(Avalonia.Controls.WebAuthenticationResult result, string clientSecret, System.Net.Http.HttpClient httpClient, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `result` [Avalonia.Controls.WebAuthenticationResult](xref:Avalonia.Controls.WebAuthenticationResult)
 
@@ -167,7 +167,7 @@ public System.Threading.Tasks.Task<Avalonia.Controls.OAuth2.MetadataClient.OAuth
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.OAuth2.MetadataClient.OAuth2TokenResponse](xref:Avalonia.Controls.OAuth2.MetadataClient.OAuth2TokenResponse)&gt;
 
@@ -178,37 +178,37 @@ System.Threading.Tasks.Task&lt;[Avalonia.Controls.OAuth2.MetadataClient.OAuth2To
 
 <span id="uid-caeac3d949"></span>
 
-### IsCallbackFor Method
+### IsCallbackFor 方法 {#iscallbackfor-method}
 
 ```csharp
 public bool IsCallbackFor(Avalonia.Controls.WebAuthenticationResult result)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `result` [Avalonia.Controls.WebAuthenticationResult](xref:Avalonia.Controls.WebAuthenticationResult)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AuthorizationUri](#uid-a318b1a23f) | No summary available. |
-| [RedirectUri](#uid-8a6fe4cb58) | No summary available. |
-| [State](#uid-565c1fbba4) | No summary available. |
+| [AuthorizationUri](#uid-a318b1a23f) | 暂无摘要。 |
+| [RedirectUri](#uid-8a6fe4cb58) | 暂无摘要。 |
+| [State](#uid-565c1fbba4) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a318b1a23f"></span>
 
-### AuthorizationUri Property
+### AuthorizationUri 属性 {#authorizationuri-property}
 
 ```csharp
 public Uri AuthorizationUri { get; set; }
@@ -220,7 +220,7 @@ public Uri AuthorizationUri { get; set; }
 
 <span id="uid-8a6fe4cb58"></span>
 
-### RedirectUri Property
+### RedirectUri 属性 {#redirecturi-property}
 
 ```csharp
 public Uri RedirectUri { get; set; }
@@ -232,7 +232,7 @@ public Uri RedirectUri { get; set; }
 
 <span id="uid-565c1fbba4"></span>
 
-### State Property
+### State 属性 {#state-property}
 
 ```csharp
 public string State { get; set; }

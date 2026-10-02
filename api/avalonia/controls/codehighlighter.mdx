@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CodeHighlighter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Markdown</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Markdown</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Markdown</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Markdown</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Abstract base class for code syntax highlighters used by [Avalonia.Controls.Documents.MarkdownCodeBlock](xref:Avalonia.Controls.Documents.MarkdownCodeBlock).
+[Avalonia.Controls.Documents.MarkdownCodeBlock](xref:Avalonia.Controls.Documents.MarkdownCodeBlock) 所用代码语法高亮器的抽象基类。
 
 </div>
 
@@ -50,16 +50,16 @@ public class CodeHighlighter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> CodeHighlighter
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> CodeHighlighter
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-Derive from this to drive code blocks with your own lexer. The two shipped adapters,
-`ColorCodeHighlighter` and `TextMateHighlighter`, are ordinary subclasses.
-Attach one through [Avalonia.Controls.Markdown.CodeHighlighter](xref:Avalonia.Controls.Markdown.CodeHighlighter) for a whole control, or
-through [Avalonia.Controls.Documents.MarkdownCodeBlock.Highlighter](xref:Avalonia.Controls.Documents.MarkdownCodeBlock.Highlighter) for a single block.
+想用自己的词法分析器驱动代码块，就从它派生。随包提供的两个适配器
+`ColorCodeHighlighter` 和 `TextMateHighlighter` 不过是普通子类而已。
+通过 [Avalonia.Controls.Markdown.CodeHighlighter](xref:Avalonia.Controls.Markdown.CodeHighlighter) 可为整个控件挂上一个，
+通过 [Avalonia.Controls.Documents.MarkdownCodeBlock.Highlighter](xref:Avalonia.Controls.Documents.MarkdownCodeBlock.Highlighter) 则只作用于单个代码块。
 
 </ApiRefPage>
 

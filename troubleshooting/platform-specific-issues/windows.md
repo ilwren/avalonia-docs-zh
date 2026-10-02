@@ -1,46 +1,46 @@
 ---
 id: windows
-title: Windows issues
+title: Windows 问题
 sidebar_label: Windows
-description: Troubleshoot Windows-specific Avalonia issues including signing, rendering, scaling, and dark theme title bar problems.
+description: 排查 Windows 专属的 Avalonia 问题，包括签名、渲染、缩放以及深色主题下的标题栏。
 doc-type: troubleshooting
 ---
 
-## Packaging and signing
+## 打包与签名 {#packaging-and-signing}
 
-#### Signed executable still triggers SmartScreen warnings
+#### 明明签过名，SmartScreen 还是弹警告 {#signed-executable-still-triggers-smartscreen-warnings}
 
-This is normal for new certificates and applications. Different certificate types have different trust timelines:
+对新证书和新应用来说这很正常。不同类型的证书，建立信任所需的时间也不同：
 
-- **EV certificates and Microsoft Trusted Signing**: Immediate SmartScreen bypass.
-- **OV certificates**: Require reputation building (typically 3 to 6 months of consistent distribution).
+- **EV 证书和 Microsoft Trusted Signing**：立刻不受 SmartScreen 拦截。
+- **OV 证书**：需要慢慢积累声誉（通常要持续分发 3 到 6 个月）。
 
-To accelerate reputation building with an OV certificate:
+想让 OV 证书的声誉积累得快些：
 
-1. Submit your signed application to the [Microsoft Intelligent Security Graph (ISG)](https://www.microsoft.com/en-us/wdsi/filesubmission) for analysis.
-2. Distribute your application through well-known download sources so that Windows Defender telemetry can establish trust.
-3. Ensure every release is signed with the same certificate. Switching certificates resets your reputation.
+1. 把签过名的应用提交给 [Microsoft Intelligent Security Graph（ISG）](https://www.microsoft.com/en-us/wdsi/filesubmission)分析。
+2. 通过知名的下载渠道分发你的应用，好让 Windows Defender 的遥测数据帮你建立信任。
+3. 确保每个版本都用同一张证书签名——换证书会让声誉清零。
 
-If SmartScreen continues to block your application after several months, verify that the certificate chain is complete and that your timestamp server is reachable during signing. An incomplete chain or missing timestamp can prevent reputation from accumulating.
+若过了几个月 SmartScreen 仍然拦着你的应用，请确认证书链完整，且签名时时间戳服务器是通的。证书链不完整或缺时间戳，都会让声誉攒不起来。
 
-#### Azure authentication failures
+#### Azure 认证失败 {#azure-authentication-failures}
 
-If signing through Azure Trusted Signing fails with authentication errors:
+若通过 Azure Trusted Signing 签名时报认证错误：
 
-1. Verify that the following environment variables are set correctly: `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`.
-2. Confirm that the service principal has the **Trusted Signing Certificate Profile Signer** role assigned in the Azure portal.
-3. Check that your Azure Trusted Signing account and certificate profile are in the same region.
-4. If you use managed identity instead of a service principal, ensure that the hosting environment (such as Azure DevOps or GitHub Actions) supports it and that the identity is correctly linked.
-5. As an alternative, install the [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) and follow the [az login](https://learn.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest#az-login) flow to authenticate interactively and rule out credential issues.
+1. 确认下列环境变量设置无误：`AZURE_TENANT_ID`、`AZURE_CLIENT_ID`、`AZURE_CLIENT_SECRET`。
+2. 确认该服务主体在 Azure 门户中已被赋予 **Trusted Signing Certificate Profile Signer** 角色。
+3. 确认你的 Azure Trusted Signing 账户和证书配置文件处在同一个区域。
+4. 若你用的是托管标识而非服务主体，请确认承载环境（比如 Azure DevOps 或 GitHub Actions）支持它，且标识已正确关联。
+5. 另一个办法是安装 [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) 并走 [az login](https://learn.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest#az-login) 流程做交互式认证，以此排除凭据方面的问题。
 
 ## Rendering
 
-#### Application shows a blank or black window
+#### 应用窗口一片空白或全黑 {#application-shows-a-blank-or-black-window}
 
-If your application window appears but shows no content:
+若应用窗口出来了却看不到任何内容：
 
-1. Check whether you are running under a remote desktop session or a virtual machine without GPU passthrough. Avalonia falls back to software rendering in these environments, but some configurations may still fail.
-2. Force software rendering to confirm whether the issue is GPU-related. Add the following to your `Program.cs` before building the app:
+1. 先看看你是不是跑在远程桌面会话里，或是没有 GPU 直通的虚拟机上。这类环境下 Avalonia 会退回软件渲染，但某些配置仍可能失败。
+2. 强制走软件渲染，确认问题是不是出在 GPU 上。在构建应用之前，把下面的内容加进你的 `Program.cs`：
 
 ```csharp
 AppBuilder.Configure<App>()
@@ -55,44 +55,44 @@ AppBuilder.Configure<App>()
     .StartWithClassicDesktopLifetime(args);
 ```
 
-3. Update your GPU drivers. Outdated or buggy drivers are the most common cause of rendering failures on Windows.
+3. 更新显卡驱动。驱动过旧或有缺陷，是 Windows 上渲染失败最常见的原因。
 
-#### Flickering or visual artifacts during window resize
+#### 调整窗口大小时闪烁或出现画面残影 {#flickering-or-visual-artifacts-during-window-resize}
 
-Window resize flickering is a known limitation of the Win32 windowing model. To reduce it:
+改窗口大小时闪烁，是 Win32 窗口模型的已知局限。想减轻它：
 
-- Set `Background` on your top-level `Window` so that the clear color matches your application theme. This makes the flicker less noticeable.
-- Avoid heavy layout recalculations triggered by resize. Use `LayoutTransformControl` or fixed-size inner panels where possible.
+- 在顶层 `Window` 上设置 `Background`，让清屏颜色与应用主题一致，闪烁就不那么扎眼了。
+- 避免因调整大小而触发繁重的布局重算。尽量用 `LayoutTransformControl` 或固定尺寸的内层面板。
 
-## High-DPI and scaling
+## 高 DPI 与缩放 {#high-dpi-and-scaling}
 
-#### Controls appear too small or too large on high-DPI displays
+#### 控件在高 DPI 显示器上显得过小或过大 {#controls-appear-too-small-or-too-large-on-high-dpi-displays}
 
-Avalonia respects the per-monitor DPI setting on Windows. If your application renders at an unexpected scale:
+Avalonia 在 Windows 上遵循每显示器的 DPI 设置。若应用渲染出的缩放比例不对劲：
 
-1. Verify that your application manifest does not override DPI awareness. If you have an `app.manifest` file, ensure it declares per-monitor DPI awareness (or remove any DPI-related entries and let Avalonia handle it).
-2. Check the display scaling percentage in **Settings > Display > Scale and layout**. Avalonia should match this value automatically.
-3. If you embed Avalonia inside a WPF or WinForms host, the host application's DPI awareness mode takes precedence. Ensure the host is configured for per-monitor V2 awareness.
+1. 确认你的应用清单没有覆盖 DPI 感知设置。若你有 `app.manifest` 文件，请确保它声明的是每显示器 DPI 感知（或者干脆删掉所有 DPI 相关条目，交给 Avalonia 自己处理）。
+2. 到**设置 > 显示 > 缩放与布局**查看显示缩放百分比，Avalonia 本应自动与之一致。
+3. 若你把 Avalonia 嵌在 WPF 或 WinForms 宿主里，那么宿主应用的 DPI 感知模式说了算。请确认宿主配置为 per-monitor V2 感知。
 
-#### Bitmap or image assets appear blurry
+#### 位图或图片资产显得模糊 {#bitmap-or-image-assets-appear-blurry}
 
-When images appear blurry on high-DPI screens, provide multiple resolution variants of your assets. Avalonia selects the best match for the current DPI. You can place scaled variants alongside your base asset:
+若图片在高 DPI 屏幕上发虚，请为资产提供多种分辨率的版本，Avalonia 会按当前 DPI 挑最合适的那个。把缩放版本与基准资产放在一起即可：
 
 ```text
 /Assets/logo.png        (1x, base)
 /Assets/logo@2x.png     (2x, for 200% scaling)
 ```
 
-## Theme and appearance
+## 主题与外观 {#theme-and-appearance}
 
-#### Title bar stays light when switching to dark theme on Windows 10
+#### Windows 10 上切到深色主题后标题栏仍是浅色 {#title-bar-stays-light-when-switching-to-dark-theme-on-windows-10}
 
-On Windows 10, the native title bar does not automatically follow the application's `RequestedThemeVariant`. This is a platform limitation: Windows 10 does not provide an official API for darkening the title bar. On Windows 11, Avalonia handles this automatically.
+在 Windows 10 上，原生标题栏不会自动跟随应用的 `RequestedThemeVariant`。这是平台限制：Windows 10 没有提供让标题栏变暗的官方 API。在 Windows 11 上，Avalonia 会自动处理好。
 
-If you need a dark title bar on Windows 10, you have two options:
+若你在 Windows 10 上确实需要深色标题栏，有两条路可走：
 
-- **Use a custom title bar.** Set `ExtendClientAreaToDecorationsHint="True"` and `WindowDecorations="None"` to draw your own title bar with full theme control. See [Custom title bars](/docs/platform-specific-guides/windows#custom-title-bars) for details.
-- **Use the undocumented DWM API.** Call `DwmSetWindowAttribute` with `DWMWA_USE_IMMERSIVE_DARK_MODE` (attribute 20) via P/Invoke. This works on Windows 10 build 18985 and later, but it is undocumented and may change in future Windows updates.
+- **自己画标题栏。**设置 `ExtendClientAreaToDecorationsHint="True"` 和 `WindowDecorations="None"`，自绘标题栏，主题完全由你掌控。细节请见[自定义标题栏](/docs/platform-specific-guides/windows#custom-title-bars)。
+- **用未公开的 DWM API。**通过 P/Invoke 调用 `DwmSetWindowAttribute`，传入 `DWMWA_USE_IMMERSIVE_DARK_MODE`（属性 20）。它在 Windows 10 内部版本 18985 及以上可用，但毕竟未公开，日后的 Windows 更新中可能变卦。
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -115,20 +115,20 @@ private void SetDarkTitleBar(Window window, bool isDark)
 }
 ```
 
-Call this method after the window opens and whenever the theme changes (subscribe to `ActualThemeVariantChanged`).
+请在窗口打开之后、以及每次主题变化时调用该方法（订阅 `ActualThemeVariantChanged`）。
 
-## Window behavior
+## 窗口行为 {#window-behavior}
 
-#### Window position or size not restored correctly
+#### 窗口位置或大小没能正确恢复 {#window-position-or-size-not-restored-correctly}
 
-If you save and restore window bounds across sessions, be aware that monitor configurations can change. Always validate restored coordinates against the current screen layout using `Screens.All` before applying them. A window positioned off-screen will not be visible to your users.
+若你会跨会话保存并恢复窗口边界，要留心显示器配置可能已经变了。套用之前，务必先用 `Screens.All` 对照当前的屏幕布局校验一下坐标——窗口若落到了屏幕之外，用户可就看不见了。
 
-#### Taskbar icon missing for borderless or custom-chrome windows
+#### 无边框或自定义外壳的窗口在任务栏上没有图标 {#taskbar-icon-missing-for-borderless-or-custom-chrome-windows}
 
-If your window uses `WindowDecorations="None"` or a custom titlebar and does not appear in the taskbar, ensure that you have not set `ShowInTaskbar="False"` unintentionally. Some extended window styles applied by Win32 can also suppress the taskbar entry. Setting `ShowInTaskbar="True"` explicitly resolves this in most cases.
+若你的窗口用了 `WindowDecorations="None"` 或自定义标题栏却不出现在任务栏上，请先确认你没有无意间设了 `ShowInTaskbar="False"`。Win32 套用的某些扩展窗口样式也会把任务栏项抹掉。多数情况下，显式设置 `ShowInTaskbar="True"` 就能解决。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Windows platform guide](/docs/platform-specific-guides/windows) for transparency, Mica, and Win32 integration details
-- [macOS issues](/troubleshooting/platform-specific-issues/macos) and [WebAssembly issues](/troubleshooting/platform-specific-issues/webassembly) for other platform-specific troubleshooting
-- [Logging errors and warnings](/docs/app-development/logging-errors-and-warnings) for capturing diagnostic output from your application
+- [Windows 平台指南](/docs/platform-specific-guides/windows)——透明度、Mica 与 Win32 集成的细节
+- [macOS 问题](/troubleshooting/platform-specific-issues/macos)和 [WebAssembly 问题](/troubleshooting/platform-specific-issues/webassembly)——其他平台的排查指南
+- [记录错误与警告](/docs/app-development/logging-errors-and-warnings)——如何从应用中捕获诊断输出

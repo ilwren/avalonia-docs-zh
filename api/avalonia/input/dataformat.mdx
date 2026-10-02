@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DataFormat Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataFormat.cs">DataFormat.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/DataFormat.cs">DataFormat.cs</a>
 </div>
 
 </div>
@@ -54,35 +54,35 @@ public class DataFormat
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataFormat
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataFormat
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="dataformat-1">DataFormat&lt;T&gt;</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="dataformat-1">DataFormat&lt;T&gt;</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;DataFormat&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;DataFormat&gt;
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CreateBytesApplicationFormat](#uid-3fbe38b6ba) | Creates a new format specific to the application that returns an array of [byte](xref:System.Byte). |
 | [CreateBytesPlatformFormat](#uid-1efc4cf482) | Creates a new format for the current platform that returns an array of [byte](xref:System.Byte). |
-| [CreateInProcessFormat](#uid-9584d61758) | No summary available. |
+| [CreateInProcessFormat](#uid-9584d61758) | 暂无摘要。 |
 | [CreateStringApplicationFormat](#uid-7587d5d188) | Creates a new format specific to the application that returns a [string](xref:System.String). |
 | [CreateStringPlatformFormat](#uid-5b39021fd9) | Creates a new format for the current platform that returns a [string](xref:System.String). |
-| [Equals (2 overloads)](#uid-78ddc432ce) | No summary available. |
-| [GetHashCode](#uid-f95a08c254) | No summary available. |
-| [ToString](#uid-fd15320886) | No summary available. |
+| [Equals（2 个重载）](#uid-78ddc432ce) | 暂无摘要。 |
+| [GetHashCode](#uid-f95a08c254) | 暂无摘要。 |
+| [ToString](#uid-fd15320886) | 暂无摘要。 |
 | [ToSystemName](#uid-02047ff4d5) | Creates a name for this format, usable by the underlying platform. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3fbe38b6ba"></span>
 
-### CreateBytesApplicationFormat Method
+### CreateBytesApplicationFormat 方法 {#createbytesapplicationformat-method}
 
 Creates a new format specific to the application that returns an array of [byte](xref:System.Byte).
 
@@ -90,7 +90,7 @@ Creates a new format specific to the application that returns an array of [byte]
 public Avalonia.Input.DataFormat<T><byte[]> CreateBytesApplicationFormat(string identifier)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `identifier` string
 
@@ -102,11 +102,11 @@ are able to share data using this format.
 Only ASCII letters (A-Z, a-z), digits (0-9), the dot (.) and the hyphen (-) are accepted.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;byte[]&gt;
 
-A new [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat).
+新的 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)。
 
 
 </section>
@@ -115,7 +115,7 @@ A new [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat).
 
 <span id="uid-1efc4cf482"></span>
 
-### CreateBytesPlatformFormat Method
+### CreateBytesPlatformFormat 方法 {#createbytesplatformformat-method}
 
 Creates a new format for the current platform that returns an array of [byte](xref:System.Byte).
 
@@ -123,7 +123,7 @@ Creates a new format for the current platform that returns an array of [byte](xr
 public Avalonia.Input.DataFormat<T><byte[]> CreateBytesPlatformFormat(string identifier)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `identifier` string
 
@@ -131,11 +131,11 @@ The format identifier. This value is not validated and is passed AS IS to the un
 Most systems use mime types, but macOS requires Uniform Type Identifiers (UTI).
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;byte[]&gt;
 
-A new [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat).
+新的 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)。
 
 
 </section>
@@ -144,13 +144,13 @@ A new [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat).
 
 <span id="uid-9584d61758"></span>
 
-### CreateInProcessFormat Method
+### CreateInProcessFormat 方法 {#createinprocessformat-method}
 
 ```csharp
 public Avalonia.Input.DataFormat<T><T> CreateInProcessFormat<T>(string identifier)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `identifier` string
 
@@ -160,7 +160,7 @@ public Avalonia.Input.DataFormat<T><T> CreateInProcessFormat<T>(string identifie
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;T&gt;
 
@@ -171,7 +171,7 @@ public Avalonia.Input.DataFormat<T><T> CreateInProcessFormat<T>(string identifie
 
 <span id="uid-7587d5d188"></span>
 
-### CreateStringApplicationFormat Method
+### CreateStringApplicationFormat 方法 {#createstringapplicationformat-method}
 
 Creates a new format specific to the application that returns a [string](xref:System.String).
 
@@ -179,7 +179,7 @@ Creates a new format specific to the application that returns a [string](xref:Sy
 public Avalonia.Input.DataFormat<T><string> CreateStringApplicationFormat(string identifier)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `identifier` string
 
@@ -191,11 +191,11 @@ are able to share data using this format.
 Only ASCII letters (A-Z, a-z), digits (0-9), the dot (.) and the hyphen (-) are accepted.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;string&gt;
 
-A new [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat).
+新的 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)。
 
 
 </section>
@@ -204,7 +204,7 @@ A new [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat).
 
 <span id="uid-5b39021fd9"></span>
 
-### CreateStringPlatformFormat Method
+### CreateStringPlatformFormat 方法 {#createstringplatformformat-method}
 
 Creates a new format for the current platform that returns a [string](xref:System.String).
 
@@ -212,7 +212,7 @@ Creates a new format for the current platform that returns a [string](xref:Syste
 public Avalonia.Input.DataFormat<T><string> CreateStringPlatformFormat(string identifier)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `identifier` string
 
@@ -220,35 +220,35 @@ The format identifier. This value is not validated and is passed AS IS to the un
 Most systems use mime types, but macOS requires Uniform Type Identifiers (UTI).
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;T&gt;&lt;string&gt;
 
-A new [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat).
+新的 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)。
 
 
 </section>
 
 <span id="uid-78ddc432ce"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c4940ce0a6"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Input.DataFormat other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `other` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 bool
 
@@ -259,18 +259,18 @@ bool
 
 <span id="uid-87ed36a5e0"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 bool
 
@@ -281,13 +281,13 @@ bool
 
 <span id="uid-f95a08c254"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-7}
 
 int
 
@@ -298,13 +298,13 @@ int
 
 <span id="uid-fd15320886"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-8}
 
 string
 
@@ -315,7 +315,7 @@ string
 
 <span id="uid-02047ff4d5"></span>
 
-### ToSystemName Method
+### ToSystemName 方法 {#tosystemname-method}
 
 Creates a name for this format, usable by the underlying platform.
 
@@ -323,42 +323,42 @@ Creates a name for this format, usable by the underlying platform.
 public string ToSystemName(string applicationPrefix)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `applicationPrefix` string
 
 The system prefix used to recognize the name as an application format.
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 string
 
 A system name for the format.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This method can only be called if [Avalonia.Input.DataFormat.Kind](xref:Avalonia.Input.DataFormat.Kind) is
 [Avalonia.Input.DataFormatKind.Application](xref:Avalonia.Input.DataFormatKind.Application) or [Avalonia.Input.DataFormatKind.Platform](xref:Avalonia.Input.DataFormatKind.Platform).
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Bitmap](#uid-11b203b3e5) | Gets a data format representing a bitmap. Its data type is [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap). |
 | [File](#uid-4c6a2805bf) | Gets a data format representing a single file. Its data type is [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem). |
-| [Identifier](#uid-397db05437) | Gets the identifier of the data format. |
-| [Kind](#uid-65f1b1de50) | Gets the kind of the data format. |
+| [Identifier](#uid-397db05437) | 获取该数据格式的标识符。 |
+| [Kind](#uid-65f1b1de50) | 获取该数据格式的种类。 |
 | [Text](#uid-a2e19e2523) | Gets a data format representing plain text. Its data type is [string](xref:System.String). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-11b203b3e5"></span>
 
-### Bitmap Property
+### Bitmap 属性 {#bitmap-property}
 
 Gets a data format representing a bitmap.
 Its data type is [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap).
@@ -373,7 +373,7 @@ public Avalonia.Input.DataFormat<T><Avalonia.Media.Imaging.Bitmap> Bitmap { get;
 
 <span id="uid-4c6a2805bf"></span>
 
-### File Property
+### File 属性 {#file-property}
 
 Gets a data format representing a single file.
 Its data type is [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem).
@@ -388,9 +388,9 @@ public Avalonia.Input.DataFormat<T><Avalonia.Platform.Storage.IStorageItem> File
 
 <span id="uid-397db05437"></span>
 
-### Identifier Property
+### Identifier 属性 {#identifier-property}
 
-Gets the identifier of the data format.
+获取该数据格式的标识符。
 
 ```csharp
 public string Identifier { get; set; }
@@ -402,9 +402,9 @@ public string Identifier { get; set; }
 
 <span id="uid-65f1b1de50"></span>
 
-### Kind Property
+### Kind 属性 {#kind-property}
 
-Gets the kind of the data format.
+获取该数据格式的种类。
 
 ```csharp
 public Avalonia.Input.DataFormatKind Kind { get; set; }
@@ -416,7 +416,7 @@ public Avalonia.Input.DataFormatKind Kind { get; set; }
 
 <span id="uid-a2e19e2523"></span>
 
-### Text Property
+### Text 属性 {#text-property}
 
 Gets a data format representing plain text.
 Its data type is [string](xref:System.String).

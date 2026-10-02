@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">WeakEventHandlerManager Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Utilities</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Utilities</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/WeakEventHandlerManager.cs">WeakEventHandlerManager.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/WeakEventHandlerManager.cs">WeakEventHandlerManager.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Manages subscriptions to events using weak listeners.
+用弱侦听器管理事件订阅。
 
 </div>
 
@@ -54,28 +54,28 @@ public class WeakEventHandlerManager
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> WeakEventHandlerManager
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> WeakEventHandlerManager
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Subscribe](#uid-517cfe2bb8) | No summary available. |
-| [Unsubscribe](#uid-aa6dba287c) | No summary available. |
+| [Subscribe](#uid-517cfe2bb8) | 暂无摘要。 |
+| [Unsubscribe](#uid-aa6dba287c) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-517cfe2bb8"></span>
 
-### Subscribe Method
+### Subscribe 方法 {#subscribe-method}
 
 ```csharp
 public void Subscribe<TTarget, TEventArgs, TSubscriber>(TTarget target, string eventName, EventHandler<TEventArgs> subscriber)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `target` TTarget
 
@@ -103,13 +103,13 @@ public void Subscribe<TTarget, TEventArgs, TSubscriber>(TTarget target, string e
 
 <span id="uid-aa6dba287c"></span>
 
-### Unsubscribe Method
+### Unsubscribe 方法 {#unsubscribe-method}
 
 ```csharp
 public void Unsubscribe<TEventArgs, TSubscriber>(object target, string eventName, EventHandler<TEventArgs> subscriber)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `target` object
 

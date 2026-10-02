@@ -1,7 +1,7 @@
 ---
 id: chord-diagram
-title: Chord diagram
-description: Visualizes inter-relationships between entities in a circular layout, ideal for showing complex directional flows such as trade or migration patterns.
+title: 和弦图
+description: 以环形版面呈现实体之间的相互关系，最适合表现贸易、迁徙这类复杂的有向流动。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFlowChord from '/img/controls/charts/charts-flow-chord.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Chord diagrams visualize the inter-relationships between entities in a circular layout. They are useful for showing complex directional flows between a set of items.
+和弦图以环形版面呈现各实体之间的相互关系。要展现一组事物之间复杂的有向流动，用它正合适。
 
 <Image light={chartsFlowChord} maxWidth={400} position="center" cornerRadius="true" alt="Chord diagram showing directional flows between entities arranged in a circle with connecting chords of varying widths." />
 
-## When to use
-- **Trade relations**: Visualizing import/export relationships between countries.
-- **Migration patterns**: Showing movement of people between different geographic areas.
-- **System interactions**: Visualizing call dependencies between modules in a software system.
+## 适用场景 {#when-to-use}
+- **贸易往来**：呈现国家之间的进出口关系。
+- **迁徙模式**：展示人口在不同地区之间的流动。
+- **系统交互**：呈现软件系统中各模块之间的调用依赖。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Chord diagrams visualize the inter-relationships between entities in a circular 
                             ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record TradeLink(string Source, string Target, double Value);
 
@@ -47,15 +47,15 @@ public ObservableCollection<TradeLink> ChordData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of relationships. | `null` |
-| `SourcePath` | Path to the source entity. | `null` |
-| `TargetPath` | Path to the target entity. | `null` |
-| `ValuePath` | Path to the relationship strength/weight. | `null` |
-| `ArcPadding` | Angular spacing between segments on the outer ring. | `0.02` |
-| `ArcThickness` | Thickness of the outer arcs. | `20.0` |
-| `ChordOpacity` | Opacity applied to the connecting chords. | `0.6` |
-| `ShowLabels` | Whether to display labels for the outer arcs. | `true` |
+| `ItemsSource` | 各条关系的集合。 | `null` |
+| `SourcePath` | 指向起点实体的路径。 | `null` |
+| `TargetPath` | 指向终点实体的路径。 | `null` |
+| `ValuePath` | 指向关系强度/权重的路径。 | `null` |
+| `ArcPadding` | 外环上各段之间的角度间隔。 | `0.02` |
+| `ArcThickness` | 外弧的粗细。 | `20.0` |
+| `ChordOpacity` | 连接和弦所用的不透明度。 | `0.6` |
+| `ShowLabels` | 是否为外弧显示标签。 | `true` |

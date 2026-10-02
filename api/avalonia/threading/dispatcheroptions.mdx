@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DispatcherOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Threading</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Threading</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/DispatcherOptions.cs">DispatcherOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/DispatcherOptions.cs">DispatcherOptions.cs</a>
 </div>
 
 </div>
@@ -54,21 +54,21 @@ public class DispatcherOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DispatcherOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DispatcherOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DispatcherOptions](#uid-c4afd64c7d) | No summary available. |
+| [DispatcherOptions](#uid-c4afd64c7d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c4afd64c7d"></span>
 
-### DispatcherOptions Constructor
+### DispatcherOptions 构造函数 {#dispatcheroptions-constructor}
 
 ```csharp
 public DispatcherOptions()
@@ -76,9 +76,9 @@ public DispatcherOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [InputStarvationTimeout](#uid-727c33704c) | Gets or sets a timeout after which the dispatcher will start prioritizing input events over rendering. The default value is 1 second. |
 
@@ -86,7 +86,7 @@ public DispatcherOptions()
 
 <span id="uid-727c33704c"></span>
 
-### InputStarvationTimeout Property
+### InputStarvationTimeout 属性 {#inputstarvationtimeout-property}
 
 Gets or sets a timeout after which the dispatcher will start prioritizing input events over
 rendering. The default value is 1 second.
@@ -95,7 +95,7 @@ rendering. The default value is 1 second.
 public TimeSpan InputStarvationTimeout { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 If no input events are processed within this time, the dispatcher will start prioritizing
 input events over rendering to prevent the application from becoming unresponsive. This may

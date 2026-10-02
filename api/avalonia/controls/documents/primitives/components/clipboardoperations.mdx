@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ClipboardOperations Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public class ClipboardOperations
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ClipboardOperations
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ClipboardOperations
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Copy / cut publish the current selection as a single [Avalonia.Input.DataTransfer](xref:Avalonia.Input.DataTransfer) item
 carrying both [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) (eager, via
@@ -67,14 +67,14 @@ Paste probes the clipboard via
 [Avalonia.Controls.Documents.Primitives.Components.ClipboardOperations.TryGetSnapshotAsync(Avalonia.Input.Platform.IClipboard,System.Collections.Generic.IReadOnlyList&#123;Avalonia.Controls.Documents.Serialization.IDocumentSerializer&#125;,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.Primitives.Components.ClipboardOperations.TryGetSnapshotAsync%28Avalonia.Input.Platform.IClipboard%2CSystem.Collections.Generic.IReadOnlyList%7BAvalonia.Controls.Documents.Serialization.IDocumentSerializer%7D%2CSystem.Threading.CancellationToken%29)
 for the richest format the editor can deserialize; plain text is the fallback.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CopyAsync (2 overloads)](#uid-cb89512340) | No summary available. |
-| [CutAsync (2 overloads)](#uid-8a2ac41fc1) | No summary available. |
+| [CopyAsync (2 overloads)](#uid-cb89512340) | 暂无摘要。 |
+| [CutAsync (2 overloads)](#uid-8a2ac41fc1) | 暂无摘要。 |
 | [TryGetPlainTextSnapshotAsync](#uid-42f3e33a60) | Probes the clipboard and returns a [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot) that carries plain text only — no formatting, no metadata, no inline wrappers, no lists, no tables. Intended for the "Paste Without Formatting" (Ctrl+Shift+V) path. |
-| [TryGetSnapshotAsync](#uid-dc89228de4) | No summary available. |
+| [TryGetSnapshotAsync](#uid-dc89228de4) | 暂无摘要。 |
 
 <span id="uid-cb89512340"></span>
 
@@ -84,13 +84,13 @@ for the richest format the editor can deserialize; plain text is the fallback.
 
 <span id="uid-e312beb5f1"></span>
 
-#### CopyAsync Method
+#### CopyAsync 方法 {#copyasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task CopyAsync(Avalonia.Controls.TextSelection selection, Avalonia.Visual visual, System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Serialization.IDocumentSerializer> richSerializers)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `selection` [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection)
 
@@ -101,7 +101,7 @@ public System.Threading.Tasks.Task CopyAsync(Avalonia.Controls.TextSelection sel
 `richSerializers` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)&gt;
 
 
-##### Returns
+##### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -112,13 +112,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-ec462e4520"></span>
 
-#### CopyAsync Method
+#### CopyAsync 方法 {#copyasync-method-1}
 
 ```csharp
 public System.Threading.Tasks.Task CopyAsync(Avalonia.Controls.TextSelection selection, Avalonia.Visual visual, System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Serialization.IDocumentSerializer> richSerializers, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `selection` [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection)
 
@@ -132,7 +132,7 @@ public System.Threading.Tasks.Task CopyAsync(Avalonia.Controls.TextSelection sel
 `cancellationToken` System.Threading.CancellationToken
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
@@ -147,13 +147,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-0bc5c00871"></span>
 
-#### CutAsync Method
+#### CutAsync 方法 {#cutasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task CutAsync(Avalonia.Controls.TextSelection selection, Avalonia.Visual visual, System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Serialization.IDocumentSerializer> richSerializers)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `selection` [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection)
 
@@ -164,7 +164,7 @@ public System.Threading.Tasks.Task CutAsync(Avalonia.Controls.TextSelection sele
 `richSerializers` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)&gt;
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task
 
@@ -175,13 +175,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-5bd77834bd"></span>
 
-#### CutAsync Method
+#### CutAsync 方法 {#cutasync-method-1}
 
 ```csharp
 public System.Threading.Tasks.Task CutAsync(Avalonia.Controls.TextSelection selection, Avalonia.Visual visual, System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Serialization.IDocumentSerializer> richSerializers, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `selection` [Avalonia.Controls.TextSelection](xref:Avalonia.Controls.TextSelection)
 
@@ -195,7 +195,7 @@ public System.Threading.Tasks.Task CutAsync(Avalonia.Controls.TextSelection sele
 `cancellationToken` System.Threading.CancellationToken
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task
 
@@ -206,7 +206,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-42f3e33a60"></span>
 
-### TryGetPlainTextSnapshotAsync Method
+### TryGetPlainTextSnapshotAsync 方法 {#trygetplaintextsnapshotasync-method}
 
 Probes the clipboard and returns a [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot) that
 carries plain text only — no formatting, no metadata, no inline
@@ -217,7 +217,7 @@ Formatting" (Ctrl+Shift+V) path.
 public System.Threading.Tasks.Task<Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot> TryGetPlainTextSnapshotAsync(Avalonia.Input.Platform.IClipboard clipboard, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `clipboard` [Avalonia.Input.Platform.IClipboard](xref:Avalonia.Input.Platform.IClipboard)
 
@@ -225,12 +225,12 @@ public System.Threading.Tasks.Task<Avalonia.Controls.Documents.Serialization.Sna
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)&gt;
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Probe order:
 
@@ -247,13 +247,13 @@ next to it.
 
 <span id="uid-dc89228de4"></span>
 
-### TryGetSnapshotAsync Method
+### TryGetSnapshotAsync 方法 {#trygetsnapshotasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot> TryGetSnapshotAsync(Avalonia.Input.Platform.IClipboard clipboard, System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Serialization.IDocumentSerializer> richSerializers, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `clipboard` [Avalonia.Input.Platform.IClipboard](xref:Avalonia.Input.Platform.IClipboard)
 
@@ -264,7 +264,7 @@ public System.Threading.Tasks.Task<Avalonia.Controls.Documents.Serialization.Sna
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)&gt;
 

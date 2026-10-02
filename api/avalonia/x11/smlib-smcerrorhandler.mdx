@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SMLib.SmcErrorHandler Delegate</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.X11</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.X11</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.X11</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.X11</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.X11</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.X11</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.X11/SMLib.cs">SMLib.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.X11/SMLib.cs">SMLib.cs</a>
 </div>
 
 </div>
@@ -48,27 +48,27 @@ public delegate SMLib.SmcErrorHandler
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> MulticastDelegate <span className="apiref-page__relation-separator">-&gt;</span> SMLib.SmcErrorHandler
+<span className="apiref-page__meta-label">继承关系：</span> MulticastDelegate <span className="apiref-page__relation-separator">-&gt;</span> SMLib.SmcErrorHandler
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SMLib.SmcErrorHandler](#uid-be8588a9e6) | No summary available. |
+| [SMLib.SmcErrorHandler](#uid-be8588a9e6) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-be8588a9e6"></span>
 
-### SMLib.SmcErrorHandler Constructor
+### SMLib.SmcErrorHandler 构造函数 {#smlibsmcerrorhandler-constructor}
 
 ```csharp
 public SMLib.SmcErrorHandler(object object, IntPtr method)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `object` object
 
@@ -78,25 +78,25 @@ public SMLib.SmcErrorHandler(object object, IntPtr method)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BeginInvoke](#uid-976b8a32ec) | No summary available. |
-| [EndInvoke](#uid-b950bfa4de) | No summary available. |
-| [Invoke](#uid-83dba8cffc) | No summary available. |
+| [BeginInvoke](#uid-976b8a32ec) | 暂无摘要。 |
+| [EndInvoke](#uid-b950bfa4de) | 暂无摘要。 |
+| [Invoke](#uid-83dba8cffc) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-976b8a32ec"></span>
 
-### BeginInvoke Method
+### BeginInvoke 方法 {#begininvoke-method}
 
 ```csharp
 public IAsyncResult BeginInvoke(IntPtr smcConn, bool swap, int offendingMinorOpcode, UIntPtr offendingSequence, int errorClass, int severity, IntPtr values, AsyncCallback callback, object object)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `smcConn` IntPtr
 
@@ -125,7 +125,7 @@ public IAsyncResult BeginInvoke(IntPtr smcConn, bool swap, int offendingMinorOpc
 `object` object
 
 
-#### Returns
+#### 返回值 {#returns}
 
 IAsyncResult
 
@@ -136,13 +136,13 @@ IAsyncResult
 
 <span id="uid-b950bfa4de"></span>
 
-### EndInvoke Method
+### EndInvoke 方法 {#endinvoke-method}
 
 ```csharp
 public void EndInvoke(IAsyncResult result)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `result` IAsyncResult
 
@@ -153,13 +153,13 @@ public void EndInvoke(IAsyncResult result)
 
 <span id="uid-83dba8cffc"></span>
 
-### Invoke Method
+### Invoke 方法 {#invoke-method}
 
 ```csharp
 public void Invoke(IntPtr smcConn, bool swap, int offendingMinorOpcode, UIntPtr offendingSequence, int errorClass, int severity, IntPtr values)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `smcConn` IntPtr
 

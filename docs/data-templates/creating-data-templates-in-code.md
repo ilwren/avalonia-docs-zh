@@ -1,15 +1,15 @@
 ---
 id: creating-data-templates-in-code
-title: Creating data templates in code
-description: Create data templates in C# using FuncDataTemplate or by implementing IDataTemplate.
+title: 在代码中创建数据模板
+description: 用 FuncDataTemplate 或自行实现 IDataTemplate，在 C# 中创建数据模板。
 doc-type: how-to
 ---
 
 ## `FuncDataTemplate`
 
-_Avalonia UI_ supports creating a data template in code. You can do this by using the `FuncDataTemplate<T>` class that supports the [`IDataTemplate`](/api/avalonia/controls/templates/idatatemplate) interface.
+_Avalonia UI_ 支持在代码中创建数据模板。用实现了 [`IDataTemplate`](/api/avalonia/controls/templates/idatatemplate) 接口的 `FuncDataTemplate<T>` 类即可。
 
-At its simplest you can create a data template by passing a lambda function that creates a control to the `FuncDataTemplate<T>` constructor, like this:
+最简单的做法，是给 `FuncDataTemplate<T>` 构造函数传一个创建控件的 lambda 函数，就像这样：
 
 ```csharp
 var template = new FuncDataTemplate<Student>((value, namescope) =>
@@ -19,7 +19,7 @@ var template = new FuncDataTemplate<Student>((value, namescope) =>
     });
 ```
 
-Which is equivalent to the XAML:
+它等价于下面这段 XAML：
 
 ```xml
 <DataTemplate DataType="{x:Type local:Student}">
@@ -27,18 +27,18 @@ Which is equivalent to the XAML:
 </DataTemplate>
 ```
 
-## Taking more control in code
+## 在代码中做更精细的控制 {#taking-more-control-in-code}
 
-If you need take more control over a data template in code, you can write a class that implements the `IDataTemplate` interface yourself. This will allow you to present the properties of your bound data type in whatever way you require.
+如果你需要对代码中的数据模板做更精细的控制，可以自己写一个类来实现 `IDataTemplate` 接口。这样你想怎么呈现绑定数据类型的属性都行。
 
-To use the `IDataTemplate`interface you must implement the following two members in your data template class:
+要使用 `IDataTemplate` 接口，你的数据模板类必须实现以下两个成员：
 
-* `public bool Match(object data) { ... }` - implement this member to check whether the provided bound data matches your `IDataTemplate` or not. Return true if the bound data type matches, otherwise false.
-* `public Control Build(object param) { ... }` - implement this member to build and return the control that will present your data.
+* `public bool Match(object data) { ... }` —— 实现该成员，判断传入的绑定数据是否与你的 `IDataTemplate` 相符。类型匹配就返回 true，否则返回 false。
+* `public Control Build(object param) { ... }` —— 实现该成员，构建并返回用于呈现数据的控件。
 
 ## Example
 
-This is a simple implementation of the `IDataTemplate` interface to display some string data in a text block:
+下面是 `IDataTemplate` 接口的一个简单实现，它把字符串数据显示在文本块里：
 
 ```csharp
 using Avalonia.Controls.Templates;
@@ -57,7 +57,7 @@ public class MyDataTemplate : IDataTemplate
 }
 ```
 
-You can now use the class `MyDataTemplate` in your view, like this:
+现在就可以在视图中使用 `MyDataTemplate` 类了，像这样：
 
 ```xml
 <!-- xmlns:dataTemplates="using:MyApp.DataTemplates" -->
@@ -69,14 +69,14 @@ You can now use the class `MyDataTemplate` in your view, like this:
 </ContentControl>
 ```
 
-## More examples
+## 更多示例 {#more-examples}
 
-[Advanced uses of the `FuncDataTemplate<T>`class](https://github.com/AvaloniaUI/Avalonia.Samples/blob/main/src/Avalonia.Samples/DataTemplates/FuncDataTemplateSample).
+[`FuncDataTemplate<T>` 类的进阶用法](https://github.com/AvaloniaUI/Avalonia.Samples/blob/main/src/Avalonia.Samples/DataTemplates/FuncDataTemplateSample)。
 
-[Advanced implementations of the `IDataTemplate` interface](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample).
+[`IDataTemplate` 接口的进阶实现](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates): Overview of data templates in Avalonia.
-- [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.
-- [View Locator](/docs/data-templates/view-locator): Automatically resolving views for view models.
+- [数据模板入门](/docs/data-templates/introduction-to-data-templates)：Avalonia 数据模板总览。
+- [数据模板集合](/docs/data-templates/data-template-collection)：按类型定义多个模板。
+- [视图定位器](/docs/data-templates/view-locator)：为视图模型自动解析对应视图。

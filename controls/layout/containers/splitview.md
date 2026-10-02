@@ -1,40 +1,40 @@
 ---
 id: splitview
 title: SplitView
-description: Learn how to use the SplitView control to create collapsible side panes and navigation sidebars in Avalonia UI.
+description: 了解如何用 SplitView 控件在 Avalonia UI 中做出可折叠的侧边面板和导航侧栏。
 doc-type: reference
 ---
 
 import SplitViewCompactScreenshot from '/img/controls/splitview/splitview-expander.gif';
 
-A `SplitView` presents a container with two parts: the main content zone and a side pane. The main content zone is always visible. The pane can be expanded and collapsed. The collapsed pane can be completely hidden, or left slightly open - with enough space to host some icon buttons for example. 
+`SplitView` 呈现的容器分为两部分：主内容区和侧边面板。主内容区始终可见，面板则可以展开和收起。收起后的面板既可以完全隐藏，也可以留出一条缝——比如刚好放得下几个图标按钮。 
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property            | Description                                                                      |
+| 属性            | 说明                                                                      |
 | ------------------- | -------------------------------------------------------------------------------- |
-| `PanePlacement`     | Sets the position of the pane: `Left`, `Right`, `Top`, or `Bottom`.              |
-| `IsPaneOpen`        | Boolean, default is true. Is the pane in its open state?                         |
-| `DisplayMode`       | Controls how the pane is drawn in its open and closed states. See below.         |
-| `OpenPaneLength`    | Defines the width (or height for top/bottom) of the pane when it is open.        |
-| `CompactPaneLength` | Defines the width (or height for top/bottom) of the pane when it is closed and the display mode is compact. |
+| `PanePlacement`     | 设置面板的位置：`Left`、`Right`、`Top` 或 `Bottom`。              |
+| `IsPaneOpen`        | 布尔值，默认为 true。面板是否处于展开状态？                         |
+| `DisplayMode`       | 控制面板在展开和收起两种状态下如何绘制，详见下文。         |
+| `OpenPaneLength`    | 面板展开时的宽度（上下放置时则为高度）。        |
+| `CompactPaneLength` | 面板收起、且显示模式为紧凑时的宽度（上下放置时则为高度）。 |
 
-The display mode property controls how the pane is drawn in its open and closed states. There are four options:
+显示模式属性控制面板在展开和收起两种状态下如何绘制，共有四个选项：
 
 *   **Overlay**
 
-    The pane is completely hidden until opened. When open, the pane overlays the content area.
+    面板在展开之前完全隐藏；展开时覆盖在内容区之上。
 *   **Inline**
 
-    The pane is always visible, is a fixed width, and does not overlay the content area. The pane and content areas divide the available screen real estate, but if the container changes width, it is the content zone that resizes.
+    面板始终可见、宽度固定，且不覆盖内容区。面板和内容区分享可用的屏幕空间；容器宽度变化时，被调整的是内容区。
 *   **Compact Overlay**
 
-    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with the `CompactPaneLength` property value. If the pane is opened, it will overlay the content area.
+    此模式下面板始终露出窄窄的一条，刚好放得下图标。收起时的默认宽度为 48px，可用 `CompactPaneLength` 属性修改。面板展开时会覆盖在内容区之上。
 *   **Compact Inline**
 
-    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with `CompactPaneLength` property value. If the pane is opened, it will reduce the size of the content zone.
+    此模式下面板始终露出窄窄的一条，刚好放得下图标。收起时的默认宽度为 48px，可用 `CompactPaneLength` 属性修改。面板展开时会压缩内容区的尺寸。
 
 ## Example
 
@@ -63,15 +63,15 @@ The display mode property controls how the pane is drawn in its open and closed 
 
 </XamlPreview>
 
-## Compact display mode
+## 紧凑显示模式 {#compact-display-mode}
 
-You can use the MVVM pattern with the split view control and one of the compact display mode settings to implement a 'tool pane' style UI. There is enough room on the pane when it is closed to display an icon button that opens the pane.
+把 split view 控件、某种紧凑显示模式和 MVVM 模式搭在一起，就能做出「工具面板」式的界面：面板收起时仍有足够空间放一个图标按钮，点它即可展开面板。
 
 <Image light={SplitViewCompactScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Navigation sidebar pattern
+## 导航侧栏范式 {#navigation-sidebar-pattern}
 
-A common use of `SplitView` is a collapsible navigation sidebar with icon buttons:
+`SplitView` 的一种常见用法，是做成带图标按钮、可折叠的导航侧栏：
 
 ```xml
 <SplitView IsPaneOpen="{Binding IsPaneOpen}"
@@ -110,9 +110,9 @@ private bool _isPaneOpen = true;
 private void TogglePane() => IsPaneOpen = !IsPaneOpen;
 ```
 
-## Pane placement
+## 面板位置 {#pane-placement}
 
-Position the pane on any side of the content area:
+面板可以摆在内容区的任意一侧：
 
 ```xml
 <!-- Pane on the right -->
@@ -122,7 +122,7 @@ Position the pane on any side of the content area:
            OpenPaneLength="250">
 ```
 
-`Top` and `Bottom` placements create a vertical split where the pane appears above or below the content. `OpenPaneLength` and `CompactPaneLength` control the height of the pane in these orientations:
+`Top` 和 `Bottom` 会形成上下分割，面板位于内容上方或下方。这两种方向下，面板的高度由 `OpenPaneLength` 和 `CompactPaneLength` 控制：
 
 ```xml
 <!-- Pane on top -->
@@ -137,7 +137,7 @@ Position the pane on any side of the content area:
 </SplitView>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [SplitView API reference](/api/avalonia/controls/splitview)
-- [`SplitView.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitView/SplitView.cs)
+- [SplitView API 参考](/api/avalonia/controls/splitview)
+- [GitHub 上的 `SplitView.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/SplitView/SplitView.cs)

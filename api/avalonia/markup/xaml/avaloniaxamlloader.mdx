@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaXamlLoader Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Markup.Xaml</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Markup.Xaml</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Markup.Xaml</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Markup.Xaml</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/AvaloniaXamlLoader.cs">AvaloniaXamlLoader.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/AvaloniaXamlLoader.cs">AvaloniaXamlLoader.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Loads XAML for a avalonia application.
+为 avalonia 应用加载 XAML。
 
 </div>
 
@@ -54,42 +54,42 @@ public class AvaloniaXamlLoader
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaXamlLoader
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaXamlLoader
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Load (4 overloads)](#uid-c86998d3a6) | Loads the XAML into a Avalonia component. |
+| [Load（4 个重载）](#uid-c86998d3a6) | 把该 XAML 加载进一个 Avalonia 组件。 |
 
 <span id="uid-c86998d3a6"></span>
 
-### Load overloads
+### Load 的重载 {#load-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e70f947fe9"></span>
 
-#### Load Method
+#### Load 方法 {#load-method}
 
-Loads the XAML into a Avalonia component.
+把该 XAML 加载进一个 Avalonia 组件。
 
 ```csharp
 public void Load(IServiceProvider sp, object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `sp` IServiceProvider
 
-The parent's service provider.
+父级的服务提供程序。
 
 
 `obj` object
 
-The object to load the XAML into.
+要把 XAML 加载进去的那个对象。
 
 
 </section>
@@ -98,36 +98,36 @@ The object to load the XAML into.
 
 <span id="uid-a2a9550409"></span>
 
-#### Load Method
+#### Load 方法 {#load-method-1}
 
-Loads XAML from a URI.
+按 URI 加载 XAML。
 
 ```csharp
 public object Load(IServiceProvider sp, Uri uri, Uri baseUri)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `sp` IServiceProvider
 
-The parent's service provider.
+父级的服务提供程序。
 
 
 `uri` Uri
 
-The URI of the XAML file.
+该 XAML 文件的 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 object
 
-The loaded object.
+加载得到的对象。
 
 
 </section>
@@ -136,19 +136,19 @@ The loaded object.
 
 <span id="uid-c3951cc877"></span>
 
-#### Load Method
+#### Load 方法 {#load-method-2}
 
-Loads the XAML into a Avalonia component.
+把该 XAML 加载进一个 Avalonia 组件。
 
 ```csharp
 public void Load(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
-The object to load the XAML into.
+要把 XAML 加载进去的那个对象。
 
 
 </section>
@@ -157,31 +157,31 @@ The object to load the XAML into.
 
 <span id="uid-caa44d7b4b"></span>
 
-#### Load Method
+#### Load 方法 {#load-method-3}
 
-Loads XAML from a URI.
+按 URI 加载 XAML。
 
 ```csharp
 public object Load(Uri uri, Uri baseUri)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `uri` Uri
 
-The URI of the XAML file.
+该 XAML 文件的 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 object
 
-The loaded object.
+加载得到的对象。
 
 
 </section>

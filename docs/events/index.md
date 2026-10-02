@@ -1,42 +1,42 @@
 ---
 id: index
-title: Events overview
-description: Understand how routed events travel through the element tree in Avalonia.
+title: 事件总览
+description: 理解路由事件在 Avalonia 元素树中的传播方式。
 doc-type: overview
 ---
 
-Avalonia uses a routed event system similar to WPF. Routed events travel (or "route") through the [control tree](/docs/fundamentals/visual-and-logical-trees), allowing parent elements to handle events raised by their children. This is fundamental to how input, interaction, and control behavior work in Avalonia. By using routed events, multiple controls can respond to the same event, or event handling logic can be centralized at a common shared level higher in the visual tree.
+Avalonia 采用了一套类似 WPF 的路由事件系统。路由事件会在[控件树](/docs/fundamentals/visual-and-logical-trees)中传播（也就是「路由」），父元素因此能够处理子元素引发的事件。Avalonia 的输入、交互和控件行为都建立在这个机制之上。借助路由事件，多个控件可以响应同一个事件，事件处理逻辑也可以集中到视觉树上层某个公共位置。
 
-## Key features
+## 主要特性 {#key-features}
 
-- **Event routing:** Routed events can propagate up the tree (bubbling) or down the tree (tunneling), enabling controls at different levels to handle the same event. This allows for more flexible, centralized event handling.
+- **事件路由：** 路由事件既可以沿树向上传播（冒泡），也可以沿树向下传播（隧道），于是不同层级的控件都有机会处理同一个事件。这让事件处理更灵活，也更容易集中管理。
 
-- **Event handlers:** Routed events use event handlers to respond to events. Event handlers can be associated with specific controls, or attached at higher levels of the visual tree to handle events from multiple controls.
+- **事件处理程序：** 路由事件靠事件处理程序来响应。处理程序既可以挂在特定控件上，也可以挂在视觉树的上层，统一处理来自多个控件的事件。
 
-- **Handled state:** Routed events have a `Handled` property that can be used to mark an event as handled, preventing further propagation. This allows fine-grained control over event handling.
+- **已处理标记：** 路由事件带有 `Handled` 属性，可以把事件标记为已处理，从而阻止它继续传播。这让你能对事件处理做精细的控制。
 
-- **Routing strategies:** Avalonia supports different routing strategies for routed events, such as bubbling, tunneling, or direct routing. These strategies determine the order in which controls receive and handle events.
+- **路由策略：** Avalonia 为路由事件支持多种路由策略，如冒泡、隧道和直接路由。策略决定了各控件接收并处理事件的先后顺序。
 
-## Event routing strategies
+## 事件路由策略 {#event-routing-strategies}
 
-Every routed event has a routing strategy that determines how the event travels through the element tree:
+每个路由事件都有一种路由策略，决定它如何在元素树中传播：
 
-| Strategy | Direction | Description |
+| 策略 | 方向 | 说明 |
 |---|---|---|
-| `Bubble` | Child to parent | The event fires on the source element first, then travels up through each parent until it reaches the root. This is the most common strategy. |
-| `Tunnel` | Parent to child | The event fires on the root element first, then travels down through the tree to the source element. Tunneling events are typically used for preview/interception scenarios. |
-| `Direct` | Source only | The event fires only on the source element. It does not travel through the tree. |
+| `Bubble` | 由子到父 | 事件先在源元素上触发，然后逐级向上穿过各个父级，直到抵达根。这是最常用的策略。 |
+| `Tunnel` | 由父到子 | 事件先在根元素上触发，再沿树向下传到源元素。隧道事件通常用于预览/拦截场景。 |
+| `Direct` | 仅源元素 | 事件只在源元素上触发，不在树中传播。 |
 
-Events can combine strategies. For example, many input events use `Tunnel | Bubble`, which means the event first tunnels down from the root, then bubbles back up from the source.
+多种策略可以组合。比如很多输入事件采用 `Tunnel | Bubble`：事件先从根向下隧道传播，再从源元素向上冒泡回去。
 
 ```csharp
 RoutedEvent.Register<MyControl, RoutedEventArgs>(
     nameof(MyEvent), RoutingStrategies.Tunnel | RoutingStrategies.Bubble);
 ```
 
-### Bubble example
+### 冒泡示例 {#bubble-example}
 
-When a user clicks a `Button` inside a `StackPanel` inside a `Window`:
+当用户点击 `Window` 里 `StackPanel` 中的一个 `Button` 时：
 
 ```text
 Window          ← event arrives here last (bubble)
@@ -44,9 +44,9 @@ Window          ← event arrives here last (bubble)
        └─ Button ← event starts here (source)
 ```
 
-### Tunnel example
+### 隧道示例 {#tunnel-example}
 
-A tunneling event for the same tree:
+同一棵树上的隧道事件：
 
 ```text
 Window          ← event starts here first (tunnel)
@@ -54,11 +54,11 @@ Window          ← event starts here first (tunnel)
        └─ Button ← event arrives here last (source)
 ```
 
-## Handling routed events
+## 处理路由事件 {#handling-routed-events}
 
-### In XAML
+### 在 XAML 中 {#in-xaml}
 
-Attach an event handler using the event name as an attribute:
+把事件名当作特性来挂接事件处理程序：
 
 ```xml
 <Button Click="OnButtonClick" Content="Click me" />
@@ -72,9 +72,9 @@ private void OnButtonClick(object? sender, RoutedEventArgs e)
 }
 ```
 
-### In code
+### 在代码中 {#in-code}
 
-Use `AddHandler` and `RemoveHandler`:
+使用 `AddHandler` 和 `RemoveHandler`：
 
 ```csharp
 myButton.AddHandler(Button.ClickEvent, OnButtonClick);
@@ -83,9 +83,9 @@ myButton.AddHandler(Button.ClickEvent, OnButtonClick);
 myButton.RemoveHandler(Button.ClickEvent, OnButtonClick);
 ```
 
-### Handling bubbled events on a parent
+### 在父元素上处理冒泡事件 {#handling-bubbled-events-on-a-parent}
 
-Because events bubble up the tree, you can handle a child's event on a parent element:
+由于事件会沿树向上冒泡，你可以在父元素上处理子元素的事件：
 
 ```xml
 <StackPanel Tapped="OnStackPanelTapped">
@@ -107,9 +107,9 @@ private void OnStackPanelTapped(object? sender, TappedEventArgs e)
 }
 ```
 
-## Marking events as handled
+## 把事件标记为已处理 {#marking-events-as-handled}
 
-Set `e.Handled = true` to stop an event from continuing to route:
+设置 `e.Handled = true` 可以让事件停止继续路由：
 
 ```csharp
 private void OnButtonClick(object? sender, RoutedEventArgs e)
@@ -118,24 +118,24 @@ private void OnButtonClick(object? sender, RoutedEventArgs e)
 }
 ```
 
-If you need to receive events that have already been marked as handled, use the `handledEventsToo` parameter:
+若你希望连已被标记为已处理的事件也能收到，请使用 `handledEventsToo` 参数：
 
 ```csharp
 myPanel.AddHandler(Button.ClickEvent, OnButtonClick, RoutingStrategies.Bubble, handledEventsToo: true);
 ```
 
-## `RoutedEventArgs` properties
+## `RoutedEventArgs` 的属性 {#routedeventargs-properties}
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Source` | `object?` | The element that originally raised the event. |
-| `Handled` | `bool` | Whether the event has been handled. Set to `true` to stop routing. |
-| `Route` | `RoutingStrategies` | The current routing phase (`Tunnel`, `Bubble`, or `Direct`). |
-| `RoutedEvent` | `RoutedEvent` | The routed event being raised. |
+| `Source` | `object?` | 最初引发该事件的元素。 |
+| `Handled` | `bool` | 该事件是否已被处理。设为 `true` 即可终止路由。 |
+| `Route` | `RoutingStrategies` | 当前的路由阶段（`Tunnel`、`Bubble` 或 `Direct`）。 |
+| `RoutedEvent` | `RoutedEvent` | 正在引发的那个路由事件。 |
 
-## Registering custom routed events
+## 注册自定义路由事件 {#registering-custom-routed-events}
 
-Define a custom routed event in your control:
+在你的控件中定义一个自定义路由事件：
 
 ```csharp
 public class MyControl : Control
@@ -158,9 +158,9 @@ public class MyControl : Control
 }
 ```
 
-### Custom event args
+### 自定义事件参数 {#custom-event-args}
 
-For events that carry additional data, create a custom `RoutedEventArgs` subclass:
+若事件需要携带额外数据，请创建一个 `RoutedEventArgs` 的子类：
 
 ```csharp
 public class ValueChangedEventArgs : RoutedEventArgs
@@ -177,15 +177,15 @@ public class ValueChangedEventArgs : RoutedEventArgs
 }
 ```
 
-## Class handlers
+## 类处理程序 {#class-handlers}
 
-Class handlers let you respond to events for all instances of a type, since they run before instance handlers. They are typically registered in a static constructor.
+类处理程序让你能统一响应某个类型所有实例上的事件 —— 它们先于实例处理程序运行，通常在静态构造函数中注册。
 
-Class handlers are commonly used to define default event responses for custom controls. For more information, see [Defining events for custom controls](/docs/custom-controls/defining-events).
+类处理程序常用来为自定义控件定义默认的事件响应。更多内容请见[为自定义控件定义事件](/docs/custom-controls/defining-events)。
 
-## Next steps
+## 下一步 {#next-steps}
 
-- [Routed Events](/docs/input-interaction/routed-events): Detailed reference on the routed event system.
-- [Lifecycle Events](/docs/events/lifecycle-events): Events that fire during control creation, loading, and teardown.
-- [Input Events](/docs/events/input-events): Pointer, keyboard, and gesture events.
-- [Adding Interactivity](/docs/input-interaction/adding-interactivity): Practical guide to handling user interaction.
+- [路由事件](/docs/input-interaction/routed-events)：路由事件系统的详细参考。
+- [生命周期事件](/docs/events/lifecycle-events)：控件创建、加载与销毁期间触发的事件。
+- [输入事件](/docs/events/input-events)：指针、键盘与手势事件。
+- [添加交互](/docs/input-interaction/adding-interactivity)：处理用户交互的实用指南。

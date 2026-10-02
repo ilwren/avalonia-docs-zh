@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IScrollSnapPointsInfo Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Primitives/IScrollSnapPointsInfo.cs">IScrollSnapPointsInfo.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Primitives/IScrollSnapPointsInfo.cs">IScrollSnapPointsInfo.cs</a>
 </div>
 
 </div>
@@ -52,42 +52,42 @@ public interface IScrollSnapPointsInfo
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetIrregularSnapPoints](#uid-293f2953f2) | Returns the set of distances between irregular snap points for a specified orientation and alignment. |
-| [GetRegularSnapPoints](#uid-86f0de3bae) | No summary available. |
+| [GetIrregularSnapPoints](#uid-293f2953f2) | 返回在指定方向和对齐方式下，各个不规则吸附点之间的距离集合。 |
+| [GetRegularSnapPoints](#uid-86f0de3bae) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-293f2953f2"></span>
 
-### GetIrregularSnapPoints Method
+### GetIrregularSnapPoints 方法 {#getirregularsnappoints-method}
 
-Returns the set of distances between irregular snap points for a specified orientation and alignment.
+返回在指定方向和对齐方式下，各个不规则吸附点之间的距离集合。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<double> GetIrregularSnapPoints(Avalonia.Layout.Orientation orientation, Avalonia.Controls.Primitives.SnapPointsAlignment snapPointsAlignment)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `orientation` [Avalonia.Layout.Orientation](xref:Avalonia.Layout.Orientation)
 
-The orientation for the desired snap point set.
+所需吸附点集合对应的方向。
 
 
 `snapPointsAlignment` [Avalonia.Controls.Primitives.SnapPointsAlignment](xref:Avalonia.Controls.Primitives.SnapPointsAlignment)
 
-The alignment to use when applying the snap points.
+套用吸附点时所采用的对齐方式。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IReadOnlyList&lt;double&gt;
 
-The read-only collection of snap point distances. Returns an empty collection when no snap points are present.
+吸附点距离的只读集合。若不存在吸附点，则返回空集合。
 
 
 </section>
@@ -96,13 +96,13 @@ The read-only collection of snap point distances. Returns an empty collection wh
 
 <span id="uid-86f0de3bae"></span>
 
-### GetRegularSnapPoints Method
+### GetRegularSnapPoints 方法 {#getregularsnappoints-method}
 
 ```csharp
 public double GetRegularSnapPoints(Avalonia.Layout.Orientation orientation, Avalonia.Controls.Primitives.SnapPointsAlignment snapPointsAlignment, double& offset)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `orientation` [Avalonia.Layout.Orientation](xref:Avalonia.Layout.Orientation)
 
@@ -113,16 +113,16 @@ public double GetRegularSnapPoints(Avalonia.Layout.Orientation orientation, Aval
 `offset` double&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 double
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AreHorizontalSnapPointsRegular](#uid-6862389a6e) | Gets or sets a value that indicates whether the horizontal snap points for the container are equidistant from each other. |
 | [AreVerticalSnapPointsRegular](#uid-ec49211826) | Gets or sets a value that indicates whether the vertical snap points for the container are equidistant from each other. |
@@ -131,7 +131,7 @@ double
 
 <span id="uid-6862389a6e"></span>
 
-### AreHorizontalSnapPointsRegular Property
+### AreHorizontalSnapPointsRegular 属性 {#arehorizontalsnappointsregular-property}
 
 Gets or sets a value that indicates whether the horizontal snap points for the container are equidistant from each other.
 
@@ -145,7 +145,7 @@ public bool AreHorizontalSnapPointsRegular { get; set; }
 
 <span id="uid-ec49211826"></span>
 
-### AreVerticalSnapPointsRegular Property
+### AreVerticalSnapPointsRegular 属性 {#areverticalsnappointsregular-property}
 
 Gets or sets a value that indicates whether the vertical snap points for the container are equidistant from each other.
 
@@ -155,20 +155,20 @@ public bool AreVerticalSnapPointsRegular { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [HorizontalSnapPointsChanged](#uid-1915b35dc7) | Occurs when the measurements for horizontal snap points change. |
-| [VerticalSnapPointsChanged](#uid-c925cfc981) | Occurs when the measurements for vertical snap points change. |
+| [HorizontalSnapPointsChanged](#uid-1915b35dc7) | 水平吸附点的度量发生变化时发生。 |
+| [VerticalSnapPointsChanged](#uid-c925cfc981) | 垂直吸附点的度量发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1915b35dc7"></span>
 
-### HorizontalSnapPointsChanged Event
+### HorizontalSnapPointsChanged 事件 {#horizontalsnappointschanged-event}
 
-Occurs when the measurements for horizontal snap points change.
+水平吸附点的度量发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> HorizontalSnapPointsChanged
@@ -180,9 +180,9 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> HorizontalSnap
 
 <span id="uid-c925cfc981"></span>
 
-### VerticalSnapPointsChanged Event
+### VerticalSnapPointsChanged 事件 {#verticalsnappointschanged-event}
 
-Occurs when the measurements for vertical snap points change.
+垂直吸附点的度量发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> VerticalSnapPointsChanged

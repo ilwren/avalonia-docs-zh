@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BindingNotification Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingNotification.cs">BindingNotification.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/BindingNotification.cs">BindingNotification.cs</a>
 </div>
 
 </div>
@@ -55,49 +55,49 @@ public class BindingNotification
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> BindingNotification
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> BindingNotification
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This class is very similar to [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601), but where [Avalonia.Data.BindingValue&lt;T&gt;](xref:Avalonia.Data.BindingValue%601)
 is used by typed bindings, this class is used to hold binding and data validation errors in
 untyped bindings. As Avalonia moves towards using typed bindings by default we may want to remove
 this class.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BindingNotification (3 overloads)](#uid-7b71cd0a9f) | Initializes a new instance of the [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) class. |
+| [BindingNotification (3 overloads)](#uid-7b71cd0a9f) | 初始化 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) 类的新实例。 |
 
 <span id="uid-7b71cd0a9f"></span>
 
-### BindingNotification overloads
+### BindingNotification 的重载 {#bindingnotification-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a776052f35"></span>
 
-#### BindingNotification Constructor
+#### BindingNotification 构造函数 {#bindingnotification-constructor}
 
-Initializes a new instance of the [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) class.
+初始化 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) 类的新实例。
 
 ```csharp
 public BindingNotification(Exception error, Avalonia.Data.BindingErrorType errorType)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `error` Exception
 
-The binding error.
+绑定错误。
 
 
 `errorType` [Avalonia.Data.BindingErrorType](xref:Avalonia.Data.BindingErrorType)
 
-The type of the binding error.
+绑定错误的类型。
 
 
 </section>
@@ -106,29 +106,29 @@ The type of the binding error.
 
 <span id="uid-5cdc575f4a"></span>
 
-#### BindingNotification Constructor
+#### BindingNotification 构造函数 {#bindingnotification-constructor-1}
 
-Initializes a new instance of the [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) class.
+初始化 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) 类的新实例。
 
 ```csharp
 public BindingNotification(Exception error, Avalonia.Data.BindingErrorType errorType, object fallbackValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `error` Exception
 
-The binding error.
+绑定错误。
 
 
 `errorType` [Avalonia.Data.BindingErrorType](xref:Avalonia.Data.BindingErrorType)
 
-The type of the binding error.
+绑定错误的类型。
 
 
 `fallbackValue` object
 
-The fallback value.
+回退值。
 
 
 </section>
@@ -137,15 +137,15 @@ The fallback value.
 
 <span id="uid-e6706abb64"></span>
 
-#### BindingNotification Constructor
+#### BindingNotification 构造函数 {#bindingnotification-constructor-2}
 
-Initializes a new instance of the [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) class.
+初始化 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) 类的新实例。
 
 ```csharp
 public BindingNotification(object value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `value` object
 
@@ -154,33 +154,33 @@ The binding value.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddError](#uid-82f7cf32d6) | Adds an error to the [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification). |
+| [AddError](#uid-82f7cf32d6) | 向 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) 中添加一个错误。 |
 | [ClearValue](#uid-12c73d840e) | Removes the [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value) and makes [Avalonia.Data.BindingNotification.HasValue](xref:Avalonia.Data.BindingNotification.HasValue) return null. |
-| [Equals (2 overloads)](#uid-440cbded4f) | Compares a value to an instance of [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) for equality. |
+| [Equals（2 个重载）](#uid-440cbded4f) | Compares a value to an instance of [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) for equality. |
 | [ExtractError](#uid-19fdf147ee) | Gets an exception from an object that may be a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification). |
 | [ExtractValue](#uid-2bbe8d0e66) | Gets a value from an object that may be a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification). |
 | [GetHashCode](#uid-4b886034fc) | Gets the hash code for this instance of [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification). |
-| [SetValue](#uid-534c7b22d4) | Sets the [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value). |
-| [ToString](#uid-1c7fb2a6a9) | No summary available. |
+| [SetValue](#uid-534c7b22d4) | 设置 [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value)。 |
+| [ToString](#uid-1c7fb2a6a9) | 暂无摘要。 |
 | [UpdateValue](#uid-6fc39f5e3b) | Updates the value of an object that may be a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-82f7cf32d6"></span>
 
-### AddError Method
+### AddError 方法 {#adderror-method}
 
-Adds an error to the [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification).
+向 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) 中添加一个错误。
 
 ```csharp
 public void AddError(Exception e, Avalonia.Data.BindingErrorType type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `e` Exception
 
@@ -198,7 +198,7 @@ The error type.
 
 <span id="uid-12c73d840e"></span>
 
-### ClearValue Method
+### ClearValue 方法 {#clearvalue-method}
 
 Removes the [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value) and makes [Avalonia.Data.BindingNotification.HasValue](xref:Avalonia.Data.BindingNotification.HasValue) return null.
 
@@ -210,13 +210,13 @@ public void ClearValue()
 
 <span id="uid-440cbded4f"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1778213b8c"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Compares a value to an instance of [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) for equality.
 
@@ -224,14 +224,14 @@ Compares a value to an instance of [Avalonia.Data.BindingNotification](xref:Aval
 public bool Equals(Avalonia.Data.BindingNotification other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `other` [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification)
 
 The value to compare.
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -244,7 +244,7 @@ true if the two instances are equal; otherwise false.
 
 <span id="uid-72aee28829"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 Compares an object to an instance of [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) for equality.
 
@@ -252,14 +252,14 @@ Compares an object to an instance of [Avalonia.Data.BindingNotification](xref:Av
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `obj` object
 
-The object to compare.
+要比较的对象。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -272,7 +272,7 @@ true if the two instances are equal; otherwise false.
 
 <span id="uid-19fdf147ee"></span>
 
-### ExtractError Method
+### ExtractError 方法 {#extracterror-method}
 
 Gets an exception from an object that may be a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification).
 
@@ -280,21 +280,21 @@ Gets an exception from an object that may be a [Avalonia.Data.BindingNotificatio
 public object ExtractError(object o)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `o` object
 
-The object.
+该对象。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 object
 
-The value.
+该值。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 If `o` is a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) then returns the binding
 notification's [Avalonia.Data.BindingNotification.Error](xref:Avalonia.Data.BindingNotification.Error). If not, returns the object unchanged.
@@ -305,7 +305,7 @@ notification's [Avalonia.Data.BindingNotification.Error](xref:Avalonia.Data.Bind
 
 <span id="uid-2bbe8d0e66"></span>
 
-### ExtractValue Method
+### ExtractValue 方法 {#extractvalue-method}
 
 Gets a value from an object that may be a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification).
 
@@ -313,21 +313,21 @@ Gets a value from an object that may be a [Avalonia.Data.BindingNotification](xr
 public object ExtractValue(object o)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `o` object
 
-The object.
+该对象。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 object
 
-The value.
+该值。
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 If `o` is a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) then returns the binding
 notification's [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value). If not, returns the object unchanged.
@@ -338,7 +338,7 @@ notification's [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.Bind
 
 <span id="uid-4b886034fc"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 Gets the hash code for this instance of [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification).
 
@@ -346,11 +346,11 @@ Gets the hash code for this instance of [Avalonia.Data.BindingNotification](xref
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 int
 
-A hash code.
+一个哈希码。
 
 
 </section>
@@ -359,15 +359,15 @@ A hash code.
 
 <span id="uid-534c7b22d4"></span>
 
-### SetValue Method
+### SetValue 方法 {#setvalue-method}
 
-Sets the [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value).
+设置 [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value)。
 
 ```csharp
 public void SetValue(object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `value` object
 
@@ -378,13 +378,13 @@ public void SetValue(object value)
 
 <span id="uid-1c7fb2a6a9"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 string
 
@@ -395,7 +395,7 @@ string
 
 <span id="uid-6fc39f5e3b"></span>
 
-### UpdateValue Method
+### UpdateValue 方法 {#updatevalue-method}
 
 Updates the value of an object that may be a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification).
 
@@ -403,7 +403,7 @@ Updates the value of an object that may be a [Avalonia.Data.BindingNotification]
 public object UpdateValue(object o, object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `o` object
 
@@ -412,10 +412,10 @@ The object that may be a binding notification.
 
 `value` object
 
-The new value.
+新值。
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 object
 
@@ -423,7 +423,7 @@ The updated binding notification if `o` is a binding notification;
 otherwise `value`.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 If `o` is a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) then sets its value
 to `value`. If `value` is a
@@ -431,9 +431,9 @@ to `value`. If `value` is a
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Error](#uid-0d48ab39f1) | Gets the error that occurred on the source, if any. |
 | [ErrorType](#uid-2739077871) | Gets the type of error that [Avalonia.Data.BindingNotification.Error](xref:Avalonia.Data.BindingNotification.Error) represents, if any. |
@@ -444,7 +444,7 @@ to `value`. If `value` is a
 
 <span id="uid-0d48ab39f1"></span>
 
-### Error Property
+### Error 属性 {#error-property}
 
 Gets the error that occurred on the source, if any.
 
@@ -458,7 +458,7 @@ public Exception Error { get; set; }
 
 <span id="uid-2739077871"></span>
 
-### ErrorType Property
+### ErrorType 属性 {#errortype-property}
 
 Gets the type of error that [Avalonia.Data.BindingNotification.Error](xref:Avalonia.Data.BindingNotification.Error) represents, if any.
 
@@ -472,7 +472,7 @@ public Avalonia.Data.BindingErrorType ErrorType { get; set; }
 
 <span id="uid-032cbb332f"></span>
 
-### HasValue Property
+### HasValue 属性 {#hasvalue-property}
 
 Gets a value indicating whether [Avalonia.Data.BindingNotification.Value](xref:Avalonia.Data.BindingNotification.Value) should be pushed to the target.
 
@@ -486,7 +486,7 @@ public bool HasValue { get; set; }
 
 <span id="uid-d6e17b8825"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
 Gets the value that should be passed to the target when [Avalonia.Data.BindingNotification.HasValue](xref:Avalonia.Data.BindingNotification.HasValue)
 is true.
@@ -495,16 +495,16 @@ is true.
 public object Value { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 If this property is read when [Avalonia.Data.BindingNotification.HasValue](xref:Avalonia.Data.BindingNotification.HasValue) is false then it will return
 [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue).
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Null](#uid-68b23b28e5) | A binding notification representing the null value. |
 | [UnsetValue](#uid-223bd19879) | A binding notification representing [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue). |
@@ -513,7 +513,7 @@ If this property is read when [Avalonia.Data.BindingNotification.HasValue](xref:
 
 <span id="uid-68b23b28e5"></span>
 
-### Null Field
+### Null 字段 {#null-field}
 
 A binding notification representing the null value.
 
@@ -527,7 +527,7 @@ public Avalonia.Data.BindingNotification Null
 
 <span id="uid-223bd19879"></span>
 
-### UnsetValue Field
+### UnsetValue 字段 {#unsetvalue-field}
 
 A binding notification representing [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue).
 

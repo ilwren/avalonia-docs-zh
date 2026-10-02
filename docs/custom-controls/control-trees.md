@@ -1,24 +1,24 @@
 ---
 id: control-trees
-title: Control trees and custom controls
-description: Understand how to use lifecycle events of the logical and visual trees when building a custom control.
+title: 控件树与自定义控件
+description: 了解在编写自定义控件时，如何利用逻辑树和视觉树的生命周期事件。
 doc-type: explanation
 ---
 
-Avalonia organizes controls into two related tree structures: the **logical tree** and the **visual tree**. The logical tree represents the hierarchy of the application's controls, whereas the visual tree represents all visual elements that are being rendered.
+Avalonia 把控件组织成两棵相关联的树：**逻辑树**和**视觉树**。逻辑树体现应用中控件的层级关系，视觉树则囊括了所有正在渲染的视觉元素。
 
-This page provides guidance on working with the control trees when creating a custom control.
+本文讲的是编写自定义控件时如何与这两棵控件树打交道。
 
-For more information on control trees, see [Visual and logical trees](/docs/fundamentals/visual-and-logical-trees).
+关于控件树的更多内容，请参阅[视觉树与逻辑树](/docs/fundamentals/visual-and-logical-trees)。
 
-## Attachment/detachment events for custom controls
+## 自定义控件的附加/分离事件 {#attachmentdetachment-events-for-custom-controls}
 
-When building custom controls, you often need to respond to a control being added to or removed from a tree. Override these methods to hook into tree lifecycle events.
+编写自定义控件时，你常常需要在控件被加入或移出某棵树时做出反应。重写下面这些方法即可挂进树的生命周期事件。
 
-- `OnAttachedToLogicalTree` / `OnDetachedFromLogicalTree` for setup and cleanup of data bindings, subscriptions, or inherited properties.
-- `OnAttachedToVisualTree` / `OnDetachedFromVisualTree` for rendering-related setup, such as acquiring platform resources.
+- `OnAttachedToLogicalTree` / `OnDetachedFromLogicalTree`：用于准备和清理数据绑定、订阅或可继承属性。
+- `OnAttachedToVisualTree` / `OnDetachedFromVisualTree`：用于渲染相关的准备工作，比如申请平台资源。
 
-Here is an example showing how to hook your custom control to the visual tree lifecycle.
+下面这个例子演示如何把自定义控件挂到视觉树的生命周期上。
 
 ```csharp
 protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
@@ -34,15 +34,15 @@ protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e
 }
 ```
 
-## Where to mutate `LogicalChildren`
+## 该在哪里改动 `LogicalChildren` {#where-to-mutate-logicalchildren}
 
-When a custom container needs to add or remove logical children programmatically (for example, inserting separators between items), do this inside a structured lifecycle hook, e.g., `OnApplyTemplate`, rather than a property-change callback like `DataContextChanged` or `OnPropertyChanged`. Mutating `LogicalChildren` while the logical tree is being walked can result in binding errors.
+当自定义容器需要以代码方式增删逻辑子元素时（比如在各项之间插入分隔符），请把这件事放进结构化的生命周期钩子（例如 `OnApplyTemplate`）里，而不要放在 `DataContextChanged`、`OnPropertyChanged` 这类属性变更回调中。在逻辑树正被遍历时改动 `LogicalChildren` 可能引发绑定错误。
 
-See [Mutating the logical tree](/docs/fundamentals/visual-and-logical-trees#mutating-the-logical-tree) for more information on safe and unsafe contexts.
+关于哪些上下文安全、哪些不安全，详见[改动逻辑树](/docs/fundamentals/visual-and-logical-trees#mutating-the-logical-tree)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Visual and logical trees](/docs/fundamentals/visual-and-logical-trees): Fundamental concepts.
-- [Custom templated controls](/docs/custom-controls/templated-controls): How templates expand into the visual tree.
-- [Defining events](/docs/custom-controls/defining-events): Add routed events that travel through the control tree.
-- [Creating custom controls](/docs/custom-controls): Overview of the custom control types.
+- [视觉树与逻辑树](/docs/fundamentals/visual-and-logical-trees)：基础概念。
+- [自定义模板化控件](/docs/custom-controls/templated-controls)：模板如何展开成视觉树。
+- [定义事件](/docs/custom-controls/defining-events)：添加可在控件树中传播的路由事件。
+- [创建自定义控件](/docs/custom-controls)：各类自定义控件概览。

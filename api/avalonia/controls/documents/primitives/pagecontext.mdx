@@ -20,25 +20,24 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PageContext Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-The page a band host presents: the one-based page number and the page count. Set
-on a host by the paged view and inherited by the views inside it, so page-number
-fields resolve per page.
+带状区域宿主所呈现的页面信息：从 1 开始的页码，以及总页数。
+它由分页视图设置在宿主上，并被其中的各个视图继承，这样页码字段便能逐页解析出正确的值。
 
 </div>
 
@@ -52,34 +51,33 @@ public struct PageContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PageContext
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PageContext
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;PageContext&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;PageContext&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PageContext](#uid-7b41295c3a) | The page a band host presents: the one-based page number and the page count. Set on a host by the paged view and inherited by the views inside it, so page-number fields resolve per page. |
+| [PageContext](#uid-7b41295c3a) | 带状区域宿主所呈现的页面信息：从 1 开始的页码，以及总页数。它由分页视图设置在宿主上，并被其中的各个视图继承，这样页码字段便能逐页解析出正确的值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7b41295c3a"></span>
 
-### PageContext Constructor
+### PageContext 构造函数 {#pagecontext-constructor}
 
-The page a band host presents: the one-based page number and the page count. Set
-on a host by the paged view and inherited by the views inside it, so page-number
-fields resolve per page.
+带状区域宿主所呈现的页面信息：从 1 开始的页码，以及总页数。
+它由分页视图设置在宿主上，并被其中的各个视图继承，这样页码字段便能逐页解析出正确的值。
 
 ```csharp
 public PageContext(int PageNumber, int PageCount)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `PageNumber` int
 
@@ -89,26 +87,26 @@ public PageContext(int PageNumber, int PageCount)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-ef1c9a43e3) | No summary available. |
-| [Equals (2 overloads)](#uid-3f234bf50e) | No summary available. |
-| [GetHashCode](#uid-afa6d2d25f) | No summary available. |
-| [ToString](#uid-80e9273123) | No summary available. |
+| [Deconstruct](#uid-ef1c9a43e3) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-3f234bf50e) | 暂无摘要。 |
+| [GetHashCode](#uid-afa6d2d25f) | 暂无摘要。 |
+| [ToString](#uid-80e9273123) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ef1c9a43e3"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(int& PageNumber, int& PageCount)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `PageNumber` int&amp;
 
@@ -120,24 +118,24 @@ public void Deconstruct(int& PageNumber, int& PageCount)
 
 <span id="uid-3f234bf50e"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-478bf7c2b7"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.Primitives.PageContext other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.Documents.Primitives.PageContext](xref:Avalonia.Controls.Documents.Primitives.PageContext)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -148,18 +146,18 @@ bool
 
 <span id="uid-5800973664"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -170,13 +168,13 @@ bool
 
 <span id="uid-afa6d2d25f"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -187,31 +185,31 @@ int
 
 <span id="uid-80e9273123"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PageCount](#uid-74e1513e5d) | No summary available. |
-| [PageNumber](#uid-18ce92e82d) | No summary available. |
+| [PageCount](#uid-74e1513e5d) | 暂无摘要。 |
+| [PageNumber](#uid-18ce92e82d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-74e1513e5d"></span>
 
-### PageCount Property
+### PageCount 属性 {#pagecount-property}
 
 ```csharp
 public int PageCount { get; set; }
@@ -223,7 +221,7 @@ public int PageCount { get; set; }
 
 <span id="uid-18ce92e82d"></span>
 
-### PageNumber Property
+### PageNumber 属性 {#pagenumber-property}
 
 ```csharp
 public int PageNumber { get; set; }

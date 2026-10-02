@@ -1,88 +1,88 @@
 ---
 id: menu
-title: Menu
+title: 菜单
 ---
 
 import MenuTopDockScreenshot from '/img/controls/menu/menu-top-dock.gif';
 import MenuIconScreenshot from '/img/controls/menu/menu-icon.gif';
 
-The menu control can add menu structure to an application. You will usually place a menu at the top edge of a dock panel control, so that it is drawn at the top of a window.
+菜单控件可以为应用添加菜单结构。通常你会把菜单放在 DockPanel 控件的顶边，这样它就绘制在窗口顶部。
 
 :::info
-For reference information about the dock panel, see [DockPanel](/controls/layout/panels/dockpanel).
+DockPanel 的参考信息请见 [DockPanel](/controls/layout/panels/dockpanel)。
 :::
 
-## Menu items
+## 菜单项 {#menu-items}
 
-A menu element will usually contain a set of nested `<MenuItem>` elements. The first level of menu items defines the horizontal part of the menu. Subsequent levels of menu items are drop-downs.
+菜单元素内部通常嵌套一组 `<MenuItem>` 元素。第一层菜单项构成菜单的横向部分，再往下的层级则是下拉菜单。
 
-The caption of a menu item is set by the `Header` property. The content zone of a menu item can contain sub-items if required.
+菜单项的文字由 `Header` 属性设置。如有需要，菜单项的内容区里还可以放子项。
 
-You can add menu separator lines by including a `<Separator>` element or by adding a menu item with its header set to the minus sign, like this:
+加入 `<Separator>` 元素即可添加菜单分隔线；也可以添加一个 header 设为减号的菜单项，像这样：
 
 ```xml
 <MenuItem Header="-" />
 ```
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table>
   <thead>
     <tr>
       <th width="147.33333333333331">Element</th>
       <th width="190">Property</th>
-      <th>Description</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>Menu</code></td>
       <td><code>DockPanel.Dock</code></td>
-      <td>Position the menu on the top edge of a dock panel.</td>
+      <td>把菜单摆在 DockPanel 的顶边。</td>
     </tr>
     <tr>
       <td><code>MenuItem</code></td>
       <td><code>Header</code></td>
-      <td>The menu item caption.</td>
+      <td>菜单项的文字。</td>
     </tr>
     <tr>
       <td><code>MenuItem</code></td>
       <td><code>InputGesture</code></td>
-      <td>The displayed key shortcut for the menu item. Setting this property does not cause the input gesture to be handled by the menu item, it displays the gesture text in the menu.</td>
+      <td>菜单项上显示的快捷键。设置该属性并不会让菜单项真的去处理这个输入手势，它只负责把手势文字显示出来。</td>
     </tr>
     <tr>
       <td><code>MenuItem</code></td>
       <td><code>Command</code></td>
-      <td>The command to be executed when the menu item is clicked or selected with the keyboard.</td>
+      <td>菜单项被点击、或用键盘选中时所执行的命令。</td>
     </tr>
     <tr>
       <td><code>MenuItem</code></td>
       <td><code>MenuItem.Icon</code></td>
-      <td>Contains an icon graphic to display alongside the menu item.</td>
+      <td>放置一个图标，显示在菜单项旁边。</td>
     </tr>
     <tr>
       <td><code>Separator</code></td>
       <td></td>
-      <td>A menu item separator line.</td>
+      <td>菜单分隔线。</td>
     </tr>
     <tr>
       <td></td>
       <td><code>ItemsPanel</code></td>
-      <td>The container panel to place items in. By default, this is a `StackPanel`. See [Custom panel](/docs/how-to/itemscontrol-how-to#custom-panel) for how to customize the `ItemsPanel`.</td>
+      <td>承载各项的容器面板，默认是 `StackPanel`。自定义 `ItemsPanel` 的方法见[自定义面板](/docs/how-to/itemscontrol-how-to#custom-panel)。</td>
     </tr>
     <tr>
       <td></td>
       <td><code>Styles</code></td>
-      <td>The style that is applied to any child element of the ItemControl.</td>
+      <td>应用到 ItemControl 任意子元素上的样式。</td>
     </tr>
   </tbody>
 </table>
 
 ## Example
 
-This example creates a menu docked at the top edge of a window.
+本例创建一个停靠在窗口顶边的菜单。
 
 <Image light={MenuTopDockScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
@@ -105,25 +105,25 @@ This example creates a menu docked at the top edge of a window.
 </Window>
 ```
 
-## Accelerator keys
+## 访问键 {#accelerator-keys}
 
-An accelerator key is identified by a character in the header preceded by an underscore. For example:
+在 header 中某个字符前加下划线，即可把它定为访问键。例如：
 
 ```xml
  <MenuItem Header="_File">
 ```
 
-It allows the user to access a menu item quickly. It is also sometimes called a hot key, access key or mnemonic. Letters, numbers, and accented characters are all supported as access keys.
+有了它，用户可以快速访问某个菜单项。它有时也被称作热键、快捷字母或助记符。字母、数字和带重音的字符都可以作访问键。
 
-The user can access this feature by first pressing the Alt key, and then the accelerator key (or they can be pressed together). This is demonstrated in the second of the menu sequences in the example above.
+用户先按 Alt 键，再按访问键即可（两者也可以一起按）。上面例子中的第二组菜单操作序列演示了这一点。
 
-You will see that accelerator keys, where defined, are underlined on the menu as soon as the Alt key is pressed. Then any sub-menus are dropped down as soon as the accelerator key above is pressed.
+你会看到，一按下 Alt 键，菜单上凡是定义了访问键的字符都会显示下划线；再按下相应的访问键，对应的子菜单就展开了。
 
-Once keyboard interaction has been initiated with the Alt key, the user can also navigate the menus using the keyboard arrow keys. Menu items may be selected using the Enter key on the keyboard.
+一旦用 Alt 键开启了键盘交互，用户还可以用方向键在菜单间穿行，并用回车键选中菜单项。
 
-## Menu commands
+## 菜单命令 {#menu-commands}
 
-To initiate an action, the command property of a menu item can be bound to an `ICommand` object. The command will be executed when the menu item is clicked or selected with the keyboard. For example:
+要让菜单项发起操作，可以把它的 command 属性绑定到一个 `ICommand` 对象上。菜单项被点击或用键盘选中时，该命令就会执行。例如：
 
 ```xml
 <Menu>
@@ -134,12 +134,12 @@ To initiate an action, the command property of a menu item can be bound to an `I
 ```
 
 :::info
-For guidance on how to bind to commands, see [Adding interactivity](/docs/input-interaction/adding-interactivity).
+绑定命令的具体做法请见[添加交互](/docs/input-interaction/adding-interactivity)。
 :::
 
-## Toggle and radio menu items
+## 可勾选与单选式菜单项 {#toggle-and-radio-menu-items}
 
-Set the `ToggleType` property on a `MenuItem` to create checkable or radio-style menu items:
+在 `MenuItem` 上设置 `ToggleType` 属性，即可做出可勾选或单选式的菜单项：
 
 ```xml
 <MenuItem Header="_View">
@@ -153,15 +153,15 @@ Set the `ToggleType` property on a `MenuItem` to create checkable or radio-style
 </MenuItem>
 ```
 
-| ToggleType | Behavior |
+| ToggleType | 行为 |
 |---|---|
-| `None` | Standard menu item (default). |
-| `CheckBox` | Toggles `IsChecked` independently. |
-| `Radio` | Only one item in the same `GroupName` can be checked at a time. |
+| `None` | 标准菜单项（默认）。 |
+| `CheckBox` | 独立切换 `IsChecked`。 |
+| `Radio` | 同一个 `GroupName` 内同一时刻只能勾选一项。 |
 
-## Menu icons
+## 菜单图标 {#menu-icons}
 
-A menu icon can be displayed by placing an image or a path icon in the `<MenuItem.Icon>` attached property.
+把图片或路径图标放进 `<MenuItem.Icon>` 附加属性，就能显示菜单图标。
 
 <Image light={MenuIconScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
@@ -181,10 +181,10 @@ A menu icon can be displayed by placing an image or a path icon in the `<MenuIte
 ```
 
 :::info
-For more detailed guidance on how to add icons to your menus, see [Adding icons](/docs/graphics-animation/adding-icons).
+为菜单添加图标的详细做法，请见[添加图标](/docs/graphics-animation/adding-icons)。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Menu API reference](/api/avalonia/controls/menu)
-- [`Menu.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Menu.cs)
+- [Menu API 参考](/api/avalonia/controls/menu)
+- [GitHub 上的 `Menu.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Menu.cs)

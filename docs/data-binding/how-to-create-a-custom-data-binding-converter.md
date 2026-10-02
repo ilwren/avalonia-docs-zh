@@ -1,22 +1,22 @@
 ---
 id: how-to-create-a-custom-data-binding-converter
-title: How to create a custom data binding converter
-description: Implement IValueConverter to transform data between source and target in Avalonia bindings.
+title: 如何创建自定义数据绑定转换器
+description: 实现 IValueConverter，在 Avalonia 绑定中对源与目标之间的数据做转换。
 doc-type: how-to
 ---
 
 
-When one of the built-in data binding converters does not meet your conversion requirements, you can write a custom converter based on the [`IValueConverter`](/api/avalonia/data/converters/ivalueconverter) interface. This guide will show you how.
+当内置的数据绑定转换器满足不了你的转换需求时，可以基于 [`IValueConverter`](/api/avalonia/data/converters/ivalueconverter) 接口自己写一个。本文就来讲讲怎么做。
 
 :::info
-To review the _Microsoft_ documentation for the `IValueConverter` interface, see the [IValueConverter API reference](https://docs.microsoft.com/en-gb/dotnet/api/system.windows.data.ivalueconverter?view=netframework-4.7.1).
+`IValueConverter` 接口的 _Microsoft_ 官方文档，见 [IValueConverter API 参考](https://docs.microsoft.com/en-gb/dotnet/api/system.windows.data.ivalueconverter?view=netframework-4.7.1)。
 :::
 
 :::info
-As the `IValueConverter` interface was not available in .NET standard 2.0, Avalonia UI contains a copy in the `Avalonia.Data.Converters` namespace. You can see the [Avalonia IValueConverter API documentation](/api/avalonia/data/converters/ivalueconverter).
+由于 .NET Standard 2.0 中没有 `IValueConverter` 接口，Avalonia UI 在 `Avalonia.Data.Converters` 命名空间下自带了一份副本，参见 [Avalonia IValueConverter API 文档](/api/avalonia/data/converters/ivalueconverter)。
 :::
 
-You must reference a custom converter in some resources before it can be used. This can be at any level in your application. In this example, the custom converter `myConverter` is referenced in the window resources:
+自定义转换器必须先在某处资源中引用，才能使用。放在应用的哪一层都可以。本例中，自定义转换器 `myConverter` 是在窗口资源里引用的：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -33,7 +33,7 @@ You must reference a custom converter in some resources before it can be used. T
 
 ## Example
 
-This example data binding converter can convert text to specific case from a parameter:
+下面这个示例转换器可以根据参数把文本转换成指定的大小写形式：
 
 ```xml
 <TextBlock Text="{Binding TheContent, 
@@ -41,7 +41,7 @@ This example data binding converter can convert text to specific case from a par
     ConverterParameter=lower}" />
 ```
 
-The above XAML assumes that the `textCaseConverter` has been referenced in a resource.
+上面这段 XAML 的前提是 `textCaseConverter` 已经在资源中引用过了。
 
 ```csharp
 public class TextCaseConverter : IValueConverter
@@ -83,11 +83,11 @@ public class TextCaseConverter : IValueConverter
 }
 ```
 
-## Target property type
+## 目标属性类型 {#target-property-type}
 
-You may want to write a a custom converter that can switch the output type depending on what the target property requires. You can achieve this because the `Convert` method receives a `targetType` argument that you can test with the `IsAssignableTo` function.
+有时你希望转换器能根据目标属性的需要切换输出类型。这是可以做到的 —— `Convert` 方法会收到一个 `targetType` 参数，用 `IsAssignableTo` 函数判断它即可。
 
-In this example, the `animalConverter` can find an image, or a text name for a bound `Animal` class object:  
+在这个例子中，`animalConverter` 可以为绑定的 `Animal` 类对象取到一张图片，也可以取到一段文字名称：  
 
 ```xml title='XAML'
 <Image Width="42" 
@@ -144,18 +144,18 @@ public class AnimalConverter : IValueConverter
 }
 ```
 
-## FuncValueConverter and FuncMultiConverter
+## FuncValueConverter 与 FuncMultiConverter {#funcvalueconverter-and-funcmulticonverter}
 
-You can also implement a `FuncValueConverter`. The `FuncValueConverter` has two or three generic parameters:
+你也可以实现 `FuncValueConverter`。`FuncValueConverter` 带两个或三个泛型参数：
 
-* **TIn**: This parameter defines the expected input type. This can also be an array in case you want to use this converter in a MultiBinding.
+* **TIn**：指定期望的输入类型。如果想把该转换器用在 MultiBinding 中，这里也可以是数组。
 
-* **TParam** (optional): This parameter defines the type for `Binding.ConverterParameter` which gets passed in.
+* **TParam**（可选）：指定传入的 `Binding.ConverterParameter` 的类型。
 
-* **TOut**: This parameter defines the expected output type.
+* **TOut**：指定期望的输出类型。
 
 
-### One-way example
+### 单向绑定示例 {#one-way-example}
 
 ```csharp
 public static class MyConverters
@@ -168,9 +168,9 @@ public static class MyConverters
 }
 ```
 
-### Two-way example
+### 双向绑定示例 {#two-way-example}
 
-Pass an optional `convertBack` function to support two-way bindings:
+传入一个可选的 `convertBack` 函数即可支持双向绑定：
 
 ```csharp
 public static class MyConverters
@@ -201,8 +201,8 @@ public static class MyConverters
 </StackPanel>
 ```
 
-## More information
+## 更多信息 {#more-information}
 
 :::info
-For further guidance about how to bind images, see [How To Bind Image Files](/docs/data-binding/how-to-bind-image-files).
+关于绑定图片的更多说明，请见[如何绑定图片文件](/docs/data-binding/how-to-bind-image-files)。
 :::

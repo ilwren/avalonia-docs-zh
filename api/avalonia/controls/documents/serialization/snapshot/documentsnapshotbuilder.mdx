@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DocumentSnapshotBuilder Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,44 +51,44 @@ public class DocumentSnapshotBuilder
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DocumentSnapshotBuilder
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DocumentSnapshotBuilder
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddBold](#uid-324d03666b) | Adds bold text to the current paragraph. |
+| [AddBold](#uid-324d03666b) | 向当前段落添加粗体文本。 |
 | [AddFootnote](#uid-29886bc9c4) | Adds a footnote - a nested document snapshot, built with its own builder - paired with the [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnoteReference(int)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnoteReference%28System.Int32%29) anchor of the same `noteId`. `label` is the note's name in a format that addresses notes by name (markdown), or null. Notes are kept in the order added, which readers make the anchor order. |
 | [AddFootnoteCitation](#uid-f3971d6d1b) | Adds a further citation of the note `noteId` already anchored elsewhere: one object replacement character showing that note's number, owning no note of its own. Legal inside a note body, where an anchor is not. |
 | [AddFootnoteReference](#uid-27354e6d4d) | Adds a footnote anchor to the current paragraph: one object replacement character, showing the position of its note among the notes when rendered. `noteId` pairs it with the [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnote(int,Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,string)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnote%28System.Int32%2CAvalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.String%29) body of the same id. |
-| [AddHyperlink](#uid-30331edb81) | Adds a hyperlink to the current paragraph. |
-| [AddImage](#uid-a2827cc1f0) | No summary available. |
+| [AddHyperlink](#uid-30331edb81) | 向当前段落添加一个超链接。 |
+| [AddImage](#uid-a2827cc1f0) | 暂无摘要。 |
 | [AddImageReference](#uid-d32610b919) | Adds an inline image that references an external source (e.g. a URL) instead of embedding pixel bytes. The pixels are resolved at render time by a loader; the document stores only the reference. |
-| [AddInline](#uid-1e70216cc9) | Adds an inline element to the current paragraph. |
-| [AddItalic](#uid-bdd6ff3b9f) | Adds italic text to the current paragraph. |
-| [AddListItem (3 overloads)](#uid-5df907eea8) | Adds a new empty list item to the current list. |
-| [AddPageBand](#uid-91f574c98e) | No summary available. |
+| [AddInline](#uid-1e70216cc9) | 向当前段落添加一个内联元素。 |
+| [AddItalic](#uid-bdd6ff3b9f) | 向当前段落添加斜体文本。 |
+| [AddListItem (3 overloads)](#uid-5df907eea8) | 向当前列表添加一个新的空列表项。 |
+| [AddPageBand](#uid-91f574c98e) | 暂无摘要。 |
 | [AddPageBreak](#uid-0f618f2100) | Applies an explicit page break at the current position. The break is a split instruction, not content: a paragraph with content ends here and continues in a clone of itself, and the next committed block receives [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting.PageBreakBefore](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting.PageBreakBefore). A block that would commit empty while the break is pending is the break's own remainder (or a break-only carrier paragraph) and is dropped - the break carries forward; at a container boundary or the document end the pending break materializes as an empty flagged landing paragraph. |
 | [AddPageNumberField](#uid-5b3195e88a) | Adds a page-number field to the current paragraph. The field's cached result becomes its text content, so plain rendering and export show it until paginated rendering resolves the field per page. |
-| [AddParagraph (5 overloads)](#uid-6b0203da31) | Adds a new empty paragraph. |
+| [AddParagraph (5 overloads)](#uid-6b0203da31) | 添加一个新的空段落。 |
 | [AddParagraphRange](#uid-bbe99d3a64) | Registers a paragraph that references a range within previously set bulk text. The text at [`offset`, `offset` + `length`) must already exist in the rope via a prior [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.SetBulkText(ReadOnlyMemory&#123;char&#125;)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.SetBulkText%28System.ReadOnlyMemory%7BSystem.Char%7D%29) call. No rope insert is performed; only the snapshot node tree is updated. |
-| [AddRun](#uid-6b489b6651) | No summary available. |
-| [AddText (2 overloads)](#uid-58cfe76beb) | No summary available. |
-| [AddUnderline](#uid-c2775c4852) | Adds underlined text to the current paragraph. |
+| [AddRun](#uid-6b489b6651) | 暂无摘要。 |
+| [AddText (2 overloads)](#uid-58cfe76beb) | 暂无摘要。 |
+| [AddUnderline](#uid-c2775c4852) | 向当前段落添加带下划线的文本。 |
 | [BeginDeferredTableCells](#uid-bfd93dc27e) | Switches the current table to deferred finalization: its rows and cells stay editable until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable), so a serializer can set each cell's span (and drop merge continuations) once the whole table and its column grid are known. Applies only to the current table; other tables keep the eager path. |
-| [Build](#uid-932d90d3b1) | Builds the [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot). |
-| [Create (2 overloads)](#uid-ccd7b83233) | Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder). |
+| [Build](#uid-932d90d3b1) | 构建出 [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)。 |
+| [Create（2 个重载）](#uid-ccd7b83233) | Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder). |
 | [DropDeferredTableCell](#uid-7c04072918) | Marks a deferred cell (a vertical-merge continuation folded into the cell above) so it is not emitted when the table finalizes. |
 | [EndContainer](#uid-d1a5b716a5) | Ends the most recent [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) and restores the prior container. |
-| [EndList](#uid-549b89ed1e) | Ends the current list and restores the parent list if nested. |
+| [EndList](#uid-549b89ed1e) | 结束当前列表；若有嵌套则恢复到父级列表。 |
 | [EndSection](#uid-9ced19ffd0) | Ends the current section and adds it as a block to the parent container. |
-| [EndTable](#uid-149074c46b) | Ends the current table. |
-| [EndTableCell](#uid-8c8906255e) | Ends the current table cell. |
-| [EndTableRow](#uid-d875e64365) | Ends the current table row. |
+| [EndTable](#uid-149074c46b) | 结束当前表格。 |
+| [EndTableCell](#uid-8c8906255e) | 结束当前表格单元格。 |
+| [EndTableRow](#uid-d875e64365) | 结束当前表格行。 |
 | [GetDeferredTableRowCellCount](#uid-dedaa7a911) | Number of cells emitted so far in a deferred row, or -1 if that row does not exist. A serializer compares this against its own cell count to confirm it can address the cells before applying spans. |
-| [SetBulkText](#uid-beefee8698) | No summary available. |
+| [SetBulkText](#uid-beefee8698) | 暂无摘要。 |
 | [SetContainerCustomData](#uid-390df2acff) | Sets [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) on the active block container. Works with sections, generic containers, list items, and table cells. |
 | [SetDeferredTableCellSpan](#uid-3b5eee2bec) | Sets a deferred cell's column and row span by its row index and its cell index within that row (both in emit order). No-op unless deferral is active. |
 | [SetDocumentFormatMetadata](#uid-617fd86c1b) | Sets format-specific metadata for the document root node. Serializers use this to attach round-trip metadata (e.g., DOCX header/footer margins). |
@@ -102,7 +102,7 @@ public class DocumentSnapshotBuilder
 | [SetListItemTextElementFormatting](#uid-668dd30319) | Sets base-level element formatting for the current list item. |
 | [SetListMarkerAlignment](#uid-ad90dc72e2) | Sets how the current list's marker is aligned within its column (Word's `w:lvlJc`): left starts every marker at the same x, right ends them at the same x with a consistent gap to the content. Shared by every item in the list. |
 | [SetListMarkerOffset](#uid-e61ed41e12) | Sets the current list's marker offset (its hanging indent — how far the marker sits back from the item content). Shared by every item in the list. |
-| [SetParagraphCustomData](#uid-693084e4d6) | Sets [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) on the current paragraph. |
+| [SetParagraphCustomData](#uid-693084e4d6) | 在当前段落上设置 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData)。 |
 | [SetParagraphFormatMetadata](#uid-40be1825fd) | Sets format-specific metadata for the current paragraph. Serializers use this to attach round-trip metadata (e.g., RTF twips, DOCX style IDs). |
 | [SetParagraphFormatting](#uid-09a39b99c3) | Sets formatting for the current paragraph, or queues it for the next paragraph. |
 | [SetParagraphTextElementFormatting](#uid-cf543077c7) | Sets base-level element formatting for the current paragraph. If no paragraph is active, queues it for the next paragraph. |
@@ -115,42 +115,42 @@ public class DocumentSnapshotBuilder
 | [SetSectionPageBandReferences](#uid-a548ee6ea0) | Sets the current section's page-band references (indices from [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddPageBand(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,Avalonia.Controls.Documents.PageBandRole,Avalonia.Controls.Documents.PageBandRule,Guid@,string)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddPageBand%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CAvalonia.Controls.Documents.PageBandRole%2CAvalonia.Controls.Documents.PageBandRule%2CSystem.Guid%40%2CSystem.String%29)). |
 | [SetSectionPageSetup](#uid-0d381c5a56) | Sets the page setup of the section currently open via [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting,Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection%28Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup%29), replacing any value passed there. For readers whose format declares the setup after the section has started (RTF section control words follow `\sect`; a DOCX section's `sectPr` sits on its LAST paragraph). No effect when the active container is not a section. |
 | [SetTableBlockFormatting](#uid-239ac98cbe) | Sets block formatting for the current table. |
-| [SetTableCellBackground](#uid-5da468b1ea) | Sets the background color of the current table cell. |
-| [SetTableCellBorders](#uid-a185a4ecb5) | No summary available. |
+| [SetTableCellBackground](#uid-5da468b1ea) | 设置当前表格单元格的背景色。 |
+| [SetTableCellBorders](#uid-a185a4ecb5) | 暂无摘要。 |
 | [SetTableCellSpan](#uid-32033bc0b6) | Sets how many grid columns and rows the current table cell spans (Word's `w:gridSpan` and `w:vMerge`). Each value is clamped to at least 1; a span of 1 carries nothing, so an un-merged cell stays at the default. |
 | [SetTableCellTextElementFormatting](#uid-010fe20355) | Sets base-level element formatting for the current table cell. |
 | [SetTableCellVerticalAlignment](#uid-52d4fbfee9) | Sets the vertical alignment of the current table cell's content (Word's `w:vAlign`). Top is the default. |
-| [SetTableColumns](#uid-dfb17a0471) | No summary available. |
+| [SetTableColumns](#uid-dfb17a0471) | 暂无摘要。 |
 | [SetTableFormatMetadata](#uid-53530ff6b7) | Sets format-specific metadata for the current table. Serializers use this to attach round-trip metadata (e.g., original column widths). |
-| [SetTableInteriorBorders](#uid-99e9da545f) | No summary available. |
+| [SetTableInteriorBorders](#uid-99e9da545f) | 暂无摘要。 |
 | [SetTableRowHeight](#uid-a3b6449855) | Sets the current table row's minimum height in device-independent pixels (Word's `w:trHeight`). |
 | [SetTableRowTextElementFormatting](#uid-66e6768a42) | Sets base-level element formatting for the current table row. |
 | [StartContainer](#uid-9248d08dbd) | Starts a generic block container with an arbitrary [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind). Containers nest: calling [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) while another is active pushes the outer container onto a stack. [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndContainer](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndContainer) pops it. A container opened while a list item or a table cell is open nests inside it - the blocks added to the container are the container's, and the finished container is added back to the item or cell that enclosed it. |
 | [StartList](#uid-9ce411976f) | Starts a new list with the specified marker style. When called inside an active list item, automatically nests the new list inside the current item instead of finalizing it. |
-| [StartNestedList](#uid-637a5fbdac) | Starts a nested list inside the current list item. |
+| [StartNestedList](#uid-637a5fbdac) | 在当前列表项内开始一个嵌套列表。 |
 | [StartSection (2 overloads)](#uid-77ca3ab3da) | Starts a new section container. Blocks added after this call are placed inside the section until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection) is called. |
-| [StartTable](#uid-e1fe530904) | Starts a new table. |
-| [StartTableCell](#uid-a28f1085c9) | Starts a new table cell. |
-| [StartTableRow](#uid-297fdbbb7e) | Starts a new table row. |
+| [StartTable](#uid-e1fe530904) | 开始一个新表格。 |
+| [StartTableCell](#uid-a28f1085c9) | 开始一个新的表格单元格。 |
+| [StartTableRow](#uid-297fdbbb7e) | 开始新的一行表格行。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-324d03666b"></span>
 
-### AddBold Method
+### AddBold 方法 {#addbold-method}
 
-Adds bold text to the current paragraph.
+向当前段落添加粗体文本。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddBold(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -161,7 +161,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-29886bc9c4"></span>
 
-### AddFootnote Method
+### AddFootnote 方法 {#addfootnote-method}
 
 Adds a footnote - a nested document snapshot, built with its own builder - paired
 with the [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnoteReference(int)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnoteReference%28System.Int32%29) anchor of the same `noteId`.
@@ -173,7 +173,7 @@ the anchor order.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddFootnote(int noteId, Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot content, string label)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `noteId` int
 
@@ -184,7 +184,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `label` string
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -195,7 +195,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-f3971d6d1b"></span>
 
-### AddFootnoteCitation Method
+### AddFootnoteCitation 方法 {#addfootnotecitation-method}
 
 Adds a further citation of the note `noteId` already anchored
 elsewhere: one object replacement character showing that note's number, owning
@@ -205,12 +205,12 @@ no note of its own. Legal inside a note body, where an anchor is not.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddFootnoteCitation(int noteId)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `noteId` int
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -221,7 +221,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-27354e6d4d"></span>
 
-### AddFootnoteReference Method
+### AddFootnoteReference 方法 {#addfootnotereference-method}
 
 Adds a footnote anchor to the current paragraph: one object replacement
 character, showing the position of its note among the notes when rendered.
@@ -232,12 +232,12 @@ the same id.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddFootnoteReference(int noteId)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `noteId` int
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -248,15 +248,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-30331edb81"></span>
 
-### AddHyperlink Method
+### AddHyperlink 方法 {#addhyperlink-method}
 
-Adds a hyperlink to the current paragraph.
+向当前段落添加一个超链接。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddHyperlink(string text, string navigateUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `text` string
 
@@ -264,7 +264,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `navigateUri` string
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -275,13 +275,13 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-a2827cc1f0"></span>
 
-### AddImage Method
+### AddImage 方法 {#addimage-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddImage(ReadOnlyMemory<byte> imageData, string mimeType, double width, double height, string altText)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `imageData` ReadOnlyMemory&lt;byte&gt;
 
@@ -298,7 +298,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `altText` string
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -309,7 +309,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-d32610b919"></span>
 
-### AddImageReference Method
+### AddImageReference 方法 {#addimagereference-method}
 
 Adds an inline image that references an external source (e.g. a URL)
 instead of embedding pixel bytes. The pixels are resolved at render
@@ -319,7 +319,7 @@ time by a loader; the document stores only the reference.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddImageReference(string sourceUri, string mimeType, double width, double height, string altText)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `sourceUri` string
 
@@ -346,7 +346,7 @@ Display height in device-independent pixels; [double.NaN](xref:System.Double.NaN
 Optional alternative text describing the image.
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -357,20 +357,20 @@ Optional alternative text describing the image.
 
 <span id="uid-1e70216cc9"></span>
 
-### AddInline Method
+### AddInline 方法 {#addinline-method}
 
-Adds an inline element to the current paragraph.
+向当前段落添加一个内联元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddInline(Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft inline)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `inline` [Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft)
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -381,20 +381,20 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-bdd6ff3b9f"></span>
 
-### AddItalic Method
+### AddItalic 方法 {#additalic-method}
 
-Adds italic text to the current paragraph.
+向当前段落添加斜体文本。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddItalic(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -403,21 +403,21 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-5df907eea8"></span>
 
-### AddListItem overloads
+### AddListItem 的重载 {#addlistitem-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-72961b8acd"></span>
 
-#### AddListItem Method
+#### AddListItem 方法 {#addlistitem-method}
 
-Adds a new empty list item to the current list.
+向当前列表添加一个新的空列表项。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddListItem()
 ```
 
-##### Returns
+##### 返回值 {#returns-9}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -428,7 +428,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-cf5f3e3255"></span>
 
-#### AddListItem Method
+#### AddListItem 方法 {#addlistitem-method-1}
 
 Adds a new list item with a custom [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind) to the current list.
 The kind must have [Avalonia.Controls.Documents.TextModel.NodeKindFlags.Block](xref:Avalonia.Controls.Documents.TextModel.NodeKindFlags.Block) and [Avalonia.Controls.Documents.TextModel.NodeKindFlags.BlockContainer](xref:Avalonia.Controls.Documents.TextModel.NodeKindFlags.BlockContainer) flags.
@@ -437,12 +437,12 @@ The kind must have [Avalonia.Controls.Documents.TextModel.NodeKindFlags.Block](x
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddListItem(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `kind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
 
-##### Returns
+##### 返回值 {#returns-10}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -453,20 +453,20 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-9f3229d4cf"></span>
 
-#### AddListItem Method
+#### AddListItem 方法 {#addlistitem-method-2}
 
-Adds a new list item to the current list.
+向当前列表添加一个新的列表项。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddListItem(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `text` string
 
 
-##### Returns
+##### 返回值 {#returns-11}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -477,13 +477,13 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-91f574c98e"></span>
 
-### AddPageBand Method
+### AddPageBand 方法 {#addpageband-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddPageBand(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot content, Avalonia.Controls.Documents.PageBandRole role, Avalonia.Controls.Documents.PageBandRule rule, Guid& id, string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `content` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -500,7 +500,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `name` string
 
 
-#### Returns
+#### 返回值 {#returns-12}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -511,7 +511,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-0f618f2100"></span>
 
-### AddPageBreak Method
+### AddPageBreak 方法 {#addpagebreak-method}
 
 Applies an explicit page break at the current position. The break is a split
 instruction, not content: a paragraph with content ends here and continues in
@@ -526,7 +526,7 @@ break materializes as an empty flagged landing paragraph.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddPageBreak()
 ```
 
-#### Returns
+#### 返回值 {#returns-13}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -537,7 +537,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-5b3195e88a"></span>
 
-### AddPageNumberField Method
+### AddPageNumberField 方法 {#addpagenumberfield-method}
 
 Adds a page-number field to the current paragraph. The field's cached result
 becomes its text content, so plain rendering and export show it until
@@ -547,14 +547,14 @@ paginated rendering resolves the field per page.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddPageNumberField(Avalonia.Controls.Documents.PageNumberFieldKind fieldKind)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `fieldKind` [Avalonia.Controls.Documents.PageNumberFieldKind](xref:Avalonia.Controls.Documents.PageNumberFieldKind)
 
-What the field resolves to.
+该字段最终解析成什么。
 
 
-#### Returns
+#### 返回值 {#returns-14}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -563,21 +563,21 @@ What the field resolves to.
 
 <span id="uid-6b0203da31"></span>
 
-### AddParagraph overloads
+### AddParagraph 的重载 {#addparagraph-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3d394704af"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method}
 
-Adds a new empty paragraph.
+添加一个新的空段落。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddParagraph()
 ```
 
-##### Returns
+##### 返回值 {#returns-15}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -588,7 +588,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-afb6936021"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method-1}
 
 Adds a paragraph with the specified inline elements.
 
@@ -596,12 +596,12 @@ Adds a paragraph with the specified inline elements.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddParagraph(Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft[] inlines)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `inlines` [Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft)[]
 
 
-##### Returns
+##### 返回值 {#returns-16}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -612,7 +612,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-8126bd6d18"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method-2}
 
 Adds a new empty paragraph with a custom [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind).
 The kind must have the [Avalonia.Controls.Documents.TextModel.NodeKindFlags.InlineContainer](xref:Avalonia.Controls.Documents.TextModel.NodeKindFlags.InlineContainer) flag.
@@ -621,12 +621,12 @@ The kind must have the [Avalonia.Controls.Documents.TextModel.NodeKindFlags.Inli
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddParagraph(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `kind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
 
-##### Returns
+##### 返回值 {#returns-17}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -637,18 +637,18 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-95f4698753"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method-3}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddParagraph(ReadOnlyMemory<char> text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
 
-##### Returns
+##### 返回值 {#returns-18}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -659,7 +659,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-6b4aa7d18a"></span>
 
-#### AddParagraph Method
+#### AddParagraph 方法 {#addparagraph-method-4}
 
 Adds a new paragraph with the specified text.
 
@@ -667,12 +667,12 @@ Adds a new paragraph with the specified text.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddParagraph(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-16}
 
 `text` string
 
 
-##### Returns
+##### 返回值 {#returns-19}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -683,7 +683,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-bbe99d3a64"></span>
 
-### AddParagraphRange Method
+### AddParagraphRange 方法 {#addparagraphrange-method}
 
 Registers a paragraph that references a range within previously set bulk text.
 The text at [`offset`, `offset` + `length`)
@@ -694,7 +694,7 @@ No rope insert is performed; only the snapshot node tree is updated.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddParagraphRange(int offset, int length)
 ```
 
-#### Parameters
+#### 参数 {#parameters-17}
 
 `offset` int
 
@@ -702,12 +702,12 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `length` int
 
 
-#### Returns
+#### 返回值 {#returns-20}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Paragraph ranges must be contiguous: each call must start exactly
 where the previous paragraph ended. Gaps are rejected because
@@ -723,13 +723,13 @@ for the canonical encoding.
 
 <span id="uid-6b489b6651"></span>
 
-### AddRun Method
+### AddRun 方法 {#addrun-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddRun(ReadOnlyMemory<char> text, Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting formatting, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting elementFormatting, ReadOnlySpan<Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper> wrappers, object formatMetadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-18}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
@@ -746,7 +746,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `formatMetadata` object
 
 
-#### Returns
+#### 返回值 {#returns-21}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -761,18 +761,18 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-755836d5e1"></span>
 
-#### AddText Method
+#### AddText 方法 {#addtext-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddText(ReadOnlyMemory<char> text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-19}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
 
-##### Returns
+##### 返回值 {#returns-22}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -783,20 +783,20 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-b3cb64f7ab"></span>
 
-#### AddText Method
+#### AddText 方法 {#addtext-method-1}
 
-Adds text to the current paragraph.
+向当前段落添加文本。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddText(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-20}
 
 `text` string
 
 
-##### Returns
+##### 返回值 {#returns-23}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -807,20 +807,20 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-c2775c4852"></span>
 
-### AddUnderline Method
+### AddUnderline 方法 {#addunderline-method}
 
-Adds underlined text to the current paragraph.
+向当前段落添加带下划线的文本。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddUnderline(string text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-21}
 
 `text` string
 
 
-#### Returns
+#### 返回值 {#returns-24}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -831,7 +831,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-bfd93dc27e"></span>
 
-### BeginDeferredTableCells Method
+### BeginDeferredTableCells 方法 {#begindeferredtablecells-method}
 
 Switches the current table to deferred finalization: its rows and cells stay
 editable until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable), so a serializer can set each cell's span
@@ -842,7 +842,7 @@ Applies only to the current table; other tables keep the eager path.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder BeginDeferredTableCells()
 ```
 
-#### Returns
+#### 返回值 {#returns-25}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -853,15 +853,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-932d90d3b1"></span>
 
-### Build Method
+### Build 方法 {#build-method}
 
-Builds the [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot).
+构建出 [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Build()
 ```
 
-#### Returns
+#### 返回值 {#returns-26}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -870,13 +870,13 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Build
 
 <span id="uid-ccd7b83233"></span>
 
-### Create overloads
+### Create 的重载 {#create-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-93514adb44"></span>
 
-#### Create Method
+#### Create 方法 {#create-method}
 
 Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder).
 
@@ -884,7 +884,7 @@ Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Seriali
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder Create()
 ```
 
-##### Returns
+##### 返回值 {#returns-27}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -895,7 +895,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-69f9cf49ec"></span>
 
-#### Create Method
+#### Create 方法 {#create-method-1}
 
 Creates a builder whose root has `rootKind`, a root kind such as [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.PageBand) for band content.
 
@@ -903,12 +903,12 @@ Creates a builder whose root has `rootKind`, a root kind such as [Avalonia.Contr
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder Create(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind rootKind)
 ```
 
-##### Parameters
+##### 参数 {#parameters-22}
 
 `rootKind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
 
-##### Returns
+##### 返回值 {#returns-28}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -919,7 +919,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-7c04072918"></span>
 
-### DropDeferredTableCell Method
+### DropDeferredTableCell 方法 {#dropdeferredtablecell-method}
 
 Marks a deferred cell (a vertical-merge continuation folded into the cell above)
 so it is not emitted when the table finalizes.
@@ -928,7 +928,7 @@ so it is not emitted when the table finalizes.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder DropDeferredTableCell(int rowIndex, int cellIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-23}
 
 `rowIndex` int
 
@@ -936,7 +936,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `cellIndex` int
 
 
-#### Returns
+#### 返回值 {#returns-29}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -947,7 +947,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-d1a5b716a5"></span>
 
-### EndContainer Method
+### EndContainer 方法 {#endcontainer-method}
 
 Ends the most recent [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) and restores the prior container.
 
@@ -955,7 +955,7 @@ Ends the most recent [Avalonia.Controls.Documents.Serialization.Snapshot.Documen
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndContainer()
 ```
 
-#### Returns
+#### 返回值 {#returns-30}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -966,15 +966,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-549b89ed1e"></span>
 
-### EndList Method
+### EndList 方法 {#endlist-method}
 
-Ends the current list and restores the parent list if nested.
+结束当前列表；若有嵌套则恢复到父级列表。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndList()
 ```
 
-#### Returns
+#### 返回值 {#returns-31}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -985,7 +985,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-9ced19ffd0"></span>
 
-### EndSection Method
+### EndSection 方法 {#endsection-method}
 
 Ends the current section and adds it as a block to the parent container.
 
@@ -993,7 +993,7 @@ Ends the current section and adds it as a block to the parent container.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndSection()
 ```
 
-#### Returns
+#### 返回值 {#returns-32}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1004,15 +1004,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-149074c46b"></span>
 
-### EndTable Method
+### EndTable 方法 {#endtable-method}
 
-Ends the current table.
+结束当前表格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndTable()
 ```
 
-#### Returns
+#### 返回值 {#returns-33}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1023,15 +1023,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-8c8906255e"></span>
 
-### EndTableCell Method
+### EndTableCell 方法 {#endtablecell-method}
 
-Ends the current table cell.
+结束当前表格单元格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndTableCell()
 ```
 
-#### Returns
+#### 返回值 {#returns-34}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1042,15 +1042,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-d875e64365"></span>
 
-### EndTableRow Method
+### EndTableRow 方法 {#endtablerow-method}
 
-Ends the current table row.
+结束当前表格行。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndTableRow()
 ```
 
-#### Returns
+#### 返回值 {#returns-35}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1061,7 +1061,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-dedaa7a911"></span>
 
-### GetDeferredTableRowCellCount Method
+### GetDeferredTableRowCellCount 方法 {#getdeferredtablerowcellcount-method}
 
 Number of cells emitted so far in a deferred row, or -1 if that row does not exist.
 A serializer compares this against its own cell count to confirm it can address the
@@ -1071,12 +1071,12 @@ cells before applying spans.
 public int GetDeferredTableRowCellCount(int rowIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-24}
 
 `rowIndex` int
 
 
-#### Returns
+#### 返回值 {#returns-36}
 
 int
 
@@ -1087,18 +1087,18 @@ int
 
 <span id="uid-beefee8698"></span>
 
-### SetBulkText Method
+### SetBulkText 方法 {#setbulktext-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetBulkText(ReadOnlyMemory<char> text)
 ```
 
-#### Parameters
+#### 参数 {#parameters-25}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
 
-#### Returns
+#### 返回值 {#returns-37}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1109,7 +1109,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-390df2acff"></span>
 
-### SetContainerCustomData Method
+### SetContainerCustomData 方法 {#setcontainercustomdata-method}
 
 Sets [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) on the active block container.
 Works with sections, generic containers, list items, and table cells.
@@ -1118,12 +1118,12 @@ Works with sections, generic containers, list items, and table cells.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetContainerCustomData(object data)
 ```
 
-#### Parameters
+#### 参数 {#parameters-26}
 
 `data` object
 
 
-#### Returns
+#### 返回值 {#returns-38}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1134,7 +1134,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-3b5eee2bec"></span>
 
-### SetDeferredTableCellSpan Method
+### SetDeferredTableCellSpan 方法 {#setdeferredtablecellspan-method}
 
 Sets a deferred cell's column and row span by its row index and its cell index
 within that row (both in emit order). No-op unless deferral is active.
@@ -1143,7 +1143,7 @@ within that row (both in emit order). No-op unless deferral is active.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetDeferredTableCellSpan(int rowIndex, int cellIndex, int columnSpan, int rowSpan)
 ```
 
-#### Parameters
+#### 参数 {#parameters-27}
 
 `rowIndex` int
 
@@ -1157,7 +1157,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `rowSpan` int
 
 
-#### Returns
+#### 返回值 {#returns-39}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1168,7 +1168,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-617fd86c1b"></span>
 
-### SetDocumentFormatMetadata Method
+### SetDocumentFormatMetadata 方法 {#setdocumentformatmetadata-method}
 
 Sets format-specific metadata for the document root node.
 Serializers use this to attach round-trip metadata (e.g., DOCX header/footer margins).
@@ -1177,12 +1177,12 @@ Serializers use this to attach round-trip metadata (e.g., DOCX header/footer mar
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetDocumentFormatMetadata(object metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-28}
 
 `metadata` object
 
 
-#### Returns
+#### 返回值 {#returns-40}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1193,7 +1193,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-d33c3d9928"></span>
 
-### SetDocumentFormatting Method
+### SetDocumentFormatting 方法 {#setdocumentformatting-method}
 
 Sets document-level formatting (page margins, etc.).
 Call before or after adding any content; takes effect at [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.Build](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.Build) time.
@@ -1202,12 +1202,12 @@ Call before or after adding any content; takes effect at [Avalonia.Controls.Docu
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetDocumentFormatting(Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-29}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-41}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1218,7 +1218,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-7d2ba1a115"></span>
 
-### SetDocumentTextElementFormatting Method
+### SetDocumentTextElementFormatting 方法 {#setdocumenttextelementformatting-method}
 
 Sets the document's default text formatting - the font, size, foreground and
 background every block and inline inherits unless it declares its own. It
@@ -1228,12 +1228,12 @@ travels as the root node's [Avalonia.Controls.Documents.Serialization.Snapshot.S
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetDocumentTextElementFormatting(Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-30}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-42}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1244,7 +1244,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-029cf4f353"></span>
 
-### SetFootnoteNumberFormat Method
+### SetFootnoteNumberFormat 方法 {#setfootnotenumberformat-method}
 
 Sets the footnote numbering format alone, keeping the other document-level
 formatting; a reader learns the numbering and the page geometry from
@@ -1255,12 +1255,12 @@ render their numbers in that format.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetFootnoteNumberFormat(Avalonia.Controls.Documents.FootnoteNumberFormat format)
 ```
 
-#### Parameters
+#### 参数 {#parameters-31}
 
 `format` [Avalonia.Controls.Documents.FootnoteNumberFormat](xref:Avalonia.Controls.Documents.FootnoteNumberFormat)
 
 
-#### Returns
+#### 返回值 {#returns-43}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1271,7 +1271,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-8d04bc7563"></span>
 
-### SetListBlockFormatting Method
+### SetListBlockFormatting 方法 {#setlistblockformatting-method}
 
 Sets block formatting (e.g. explicit Padding) for the current list container.
 Only explicitly set properties are stored; auto-computed values (such as
@@ -1282,12 +1282,12 @@ intentionally omitted and recomputed at render time.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetListBlockFormatting(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-32}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-44}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1298,7 +1298,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-52a9912805"></span>
 
-### SetListFormatMetadata Method
+### SetListFormatMetadata 方法 {#setlistformatmetadata-method}
 
 Sets format-specific metadata for the current list.
 Serializers use this to attach round-trip metadata.
@@ -1307,12 +1307,12 @@ Serializers use this to attach round-trip metadata.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetListFormatMetadata(object metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-33}
 
 `metadata` object
 
 
-#### Returns
+#### 返回值 {#returns-45}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1323,7 +1323,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-e9305164b2"></span>
 
-### SetListItemFormatMetadata Method
+### SetListItemFormatMetadata 方法 {#setlistitemformatmetadata-method}
 
 Sets format-specific metadata for the current list item.
 Serializers use this to attach round-trip metadata.
@@ -1332,12 +1332,12 @@ Serializers use this to attach round-trip metadata.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetListItemFormatMetadata(object metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-34}
 
 `metadata` object
 
 
-#### Returns
+#### 返回值 {#returns-46}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1348,7 +1348,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-9f0e6854f9"></span>
 
-### SetListItemFormatting Method
+### SetListItemFormatting 方法 {#setlistitemformatting-method}
 
 Sets formatting for the current list item.
 
@@ -1356,12 +1356,12 @@ Sets formatting for the current list item.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetListItemFormatting(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-35}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-47}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1372,7 +1372,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-668dd30319"></span>
 
-### SetListItemTextElementFormatting Method
+### SetListItemTextElementFormatting 方法 {#setlistitemtextelementformatting-method}
 
 Sets base-level element formatting for the current list item.
 
@@ -1380,12 +1380,12 @@ Sets base-level element formatting for the current list item.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetListItemTextElementFormatting(Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-36}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-48}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1396,7 +1396,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-ad90dc72e2"></span>
 
-### SetListMarkerAlignment Method
+### SetListMarkerAlignment 方法 {#setlistmarkeralignment-method}
 
 Sets how the current list's marker is aligned within its column (Word's
 `w:lvlJc`): left starts every marker at the same x, right ends them at the
@@ -1406,12 +1406,12 @@ same x with a consistent gap to the content. Shared by every item in the list.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetListMarkerAlignment(Avalonia.Media.TextAlignment markerAlignment)
 ```
 
-#### Parameters
+#### 参数 {#parameters-37}
 
 `markerAlignment` [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment)
 
 
-#### Returns
+#### 返回值 {#returns-49}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1422,7 +1422,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-e61ed41e12"></span>
 
-### SetListMarkerOffset Method
+### SetListMarkerOffset 方法 {#setlistmarkeroffset-method}
 
 Sets the current list's marker offset (its hanging indent — how far the
 marker sits back from the item content). Shared by every item in the list.
@@ -1431,12 +1431,12 @@ marker sits back from the item content). Shared by every item in the list.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetListMarkerOffset(double markerOffset)
 ```
 
-#### Parameters
+#### 参数 {#parameters-38}
 
 `markerOffset` double
 
 
-#### Returns
+#### 返回值 {#returns-50}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1447,20 +1447,20 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-693084e4d6"></span>
 
-### SetParagraphCustomData Method
+### SetParagraphCustomData 方法 {#setparagraphcustomdata-method}
 
-Sets [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) on the current paragraph.
+在当前段落上设置 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData)。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetParagraphCustomData(object data)
 ```
 
-#### Parameters
+#### 参数 {#parameters-39}
 
 `data` object
 
 
-#### Returns
+#### 返回值 {#returns-51}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1471,7 +1471,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-40be1825fd"></span>
 
-### SetParagraphFormatMetadata Method
+### SetParagraphFormatMetadata 方法 {#setparagraphformatmetadata-method}
 
 Sets format-specific metadata for the current paragraph.
 Serializers use this to attach round-trip metadata (e.g., RTF twips, DOCX style IDs).
@@ -1480,12 +1480,12 @@ Serializers use this to attach round-trip metadata (e.g., RTF twips, DOCX style 
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetParagraphFormatMetadata(object metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-40}
 
 `metadata` object
 
 
-#### Returns
+#### 返回值 {#returns-52}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1496,7 +1496,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-09a39b99c3"></span>
 
-### SetParagraphFormatting Method
+### SetParagraphFormatting 方法 {#setparagraphformatting-method}
 
 Sets formatting for the current paragraph, or queues it for the next paragraph.
 
@@ -1504,12 +1504,12 @@ Sets formatting for the current paragraph, or queues it for the next paragraph.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetParagraphFormatting(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-41}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-53}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1520,7 +1520,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-cf543077c7"></span>
 
-### SetParagraphTextElementFormatting Method
+### SetParagraphTextElementFormatting 方法 {#setparagraphtextelementformatting-method}
 
 Sets base-level element formatting for the current paragraph.
 If no paragraph is active, queues it for the next paragraph.
@@ -1529,12 +1529,12 @@ If no paragraph is active, queues it for the next paragraph.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetParagraphTextElementFormatting(Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-42}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-54}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1545,7 +1545,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-26fbd4ca45"></span>
 
-### SetPendingParagraphFormatting Method
+### SetPendingParagraphFormatting 方法 {#setpendingparagraphformatting-method}
 
 Queues paragraph formatting for the next paragraph without affecting the current one.
 
@@ -1553,12 +1553,12 @@ Queues paragraph formatting for the next paragraph without affecting the current
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetPendingParagraphFormatting(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-43}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-55}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1569,7 +1569,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-8e1d2561d5"></span>
 
-### SetPendingParagraphTextElementFormatting Method
+### SetPendingParagraphTextElementFormatting 方法 {#setpendingparagraphtextelementformatting-method}
 
 Queues base-level element formatting for the next paragraph without affecting the current one.
 
@@ -1577,12 +1577,12 @@ Queues base-level element formatting for the next paragraph without affecting th
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetPendingParagraphTextElementFormatting(Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-44}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-56}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1593,7 +1593,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-ed3d52b7e6"></span>
 
-### SetRootCapacity Method
+### SetRootCapacity 方法 {#setrootcapacity-method}
 
 Pre-allocates capacity for the root container based on estimated paragraph count.
 Reduces array resizes during document construction.
@@ -1603,12 +1603,12 @@ Call after SetBulkText when paragraph count can be estimated.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetRootCapacity(int estimatedCapacity)
 ```
 
-#### Parameters
+#### 参数 {#parameters-45}
 
 `estimatedCapacity` int
 
 
-#### Returns
+#### 返回值 {#returns-57}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1619,7 +1619,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-8c8ca3bb25"></span>
 
-### SetRowCustomData Method
+### SetRowCustomData 方法 {#setrowcustomdata-method}
 
 Sets extension-specific custom data for the current table row
 (e.g. the markdown header-row flag).
@@ -1628,12 +1628,12 @@ Sets extension-specific custom data for the current table row
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetRowCustomData(object data)
 ```
 
-#### Parameters
+#### 参数 {#parameters-46}
 
 `data` object
 
 
-#### Returns
+#### 返回值 {#returns-58}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1644,7 +1644,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-82ab3736a9"></span>
 
-### SetRowFormatMetadata Method
+### SetRowFormatMetadata 方法 {#setrowformatmetadata-method}
 
 Sets format-specific metadata for the current table row.
 Serializers use this to attach round-trip metadata (e.g., row borders).
@@ -1653,12 +1653,12 @@ Serializers use this to attach round-trip metadata (e.g., row borders).
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetRowFormatMetadata(object metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-47}
 
 `metadata` object
 
 
-#### Returns
+#### 返回值 {#returns-59}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1669,7 +1669,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-f8abf254a4"></span>
 
-### SetSectionFormatMetadata Method
+### SetSectionFormatMetadata 方法 {#setsectionformatmetadata-method}
 
 Sets format-specific round-trip metadata on the section currently open via
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting,Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection%28Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup%29). No effect when the active container is not a section.
@@ -1678,12 +1678,12 @@ Sets format-specific round-trip metadata on the section currently open via
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetSectionFormatMetadata(object metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-48}
 
 `metadata` object
 
 
-#### Returns
+#### 返回值 {#returns-60}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1694,7 +1694,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-a548ee6ea0"></span>
 
-### SetSectionPageBandReferences Method
+### SetSectionPageBandReferences 方法 {#setsectionpagebandreferences-method}
 
 Sets the current section's page-band references (indices from
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddPageBand(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,Avalonia.Controls.Documents.PageBandRole,Avalonia.Controls.Documents.PageBandRule,Guid@,string)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddPageBand%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CAvalonia.Controls.Documents.PageBandRole%2CAvalonia.Controls.Documents.PageBandRule%2CSystem.Guid%40%2CSystem.String%29)).
@@ -1703,12 +1703,12 @@ Sets the current section's page-band references (indices from
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetSectionPageBandReferences(Avalonia.Controls.Documents.Serialization.Snapshot.PageBandReferences references)
 ```
 
-#### Parameters
+#### 参数 {#parameters-49}
 
 `references` [Avalonia.Controls.Documents.Serialization.Snapshot.PageBandReferences](xref:Avalonia.Controls.Documents.Serialization.Snapshot.PageBandReferences)
 
 
-#### Returns
+#### 返回值 {#returns-61}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1719,7 +1719,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-0d381c5a56"></span>
 
-### SetSectionPageSetup Method
+### SetSectionPageSetup 方法 {#setsectionpagesetup-method}
 
 Sets the page setup of the section currently open via [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting,Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection%28Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup%29),
 replacing any value passed there. For readers whose format declares the setup
@@ -1731,12 +1731,12 @@ No effect when the active container is not a section.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetSectionPageSetup(Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup pageSetup)
 ```
 
-#### Parameters
+#### 参数 {#parameters-50}
 
 `pageSetup` [Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup](xref:Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup)
 
 
-#### Returns
+#### 返回值 {#returns-62}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1747,7 +1747,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-239ac98cbe"></span>
 
-### SetTableBlockFormatting Method
+### SetTableBlockFormatting 方法 {#settableblockformatting-method}
 
 Sets block formatting for the current table.
 
@@ -1755,12 +1755,12 @@ Sets block formatting for the current table.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableBlockFormatting(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-51}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-63}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1771,20 +1771,20 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-5da468b1ea"></span>
 
-### SetTableCellBackground Method
+### SetTableCellBackground 方法 {#settablecellbackground-method}
 
-Sets the background color of the current table cell.
+设置当前表格单元格的背景色。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableCellBackground(uint argb)
 ```
 
-#### Parameters
+#### 参数 {#parameters-52}
 
 `argb` uint
 
 
-#### Returns
+#### 返回值 {#returns-64}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1795,13 +1795,13 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-a185a4ecb5"></span>
 
-### SetTableCellBorders Method
+### SetTableCellBorders 方法 {#settablecellborders-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableCellBorders(Nullable<Avalonia.Thickness> borderThickness, Nullable<uint> borderBrushArgb, Nullable<Avalonia.Thickness> padding)
 ```
 
-#### Parameters
+#### 参数 {#parameters-53}
 
 `borderThickness` Nullable&lt;[Avalonia.Thickness](xref:Avalonia.Thickness)&gt;
 
@@ -1812,7 +1812,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `padding` Nullable&lt;[Avalonia.Thickness](xref:Avalonia.Thickness)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-65}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1823,7 +1823,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-32033bc0b6"></span>
 
-### SetTableCellSpan Method
+### SetTableCellSpan 方法 {#settablecellspan-method}
 
 Sets how many grid columns and rows the current table cell spans (Word's
 `w:gridSpan` and `w:vMerge`). Each value is clamped to at least 1; a span
@@ -1833,7 +1833,7 @@ of 1 carries nothing, so an un-merged cell stays at the default.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableCellSpan(int columnSpan, int rowSpan)
 ```
 
-#### Parameters
+#### 参数 {#parameters-54}
 
 `columnSpan` int
 
@@ -1841,7 +1841,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `rowSpan` int
 
 
-#### Returns
+#### 返回值 {#returns-66}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1852,7 +1852,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-010fe20355"></span>
 
-### SetTableCellTextElementFormatting Method
+### SetTableCellTextElementFormatting 方法 {#settablecelltextelementformatting-method}
 
 Sets base-level element formatting for the current table cell.
 
@@ -1860,12 +1860,12 @@ Sets base-level element formatting for the current table cell.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableCellTextElementFormatting(Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-55}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-67}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1876,7 +1876,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-52d4fbfee9"></span>
 
-### SetTableCellVerticalAlignment Method
+### SetTableCellVerticalAlignment 方法 {#settablecellverticalalignment-method}
 
 Sets the vertical alignment of the current table cell's content
 (Word's `w:vAlign`). Top is the default.
@@ -1885,12 +1885,12 @@ Sets the vertical alignment of the current table cell's content
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableCellVerticalAlignment(Avalonia.Layout.VerticalAlignment verticalAlignment)
 ```
 
-#### Parameters
+#### 参数 {#parameters-56}
 
 `verticalAlignment` [Avalonia.Layout.VerticalAlignment](xref:Avalonia.Layout.VerticalAlignment)
 
 
-#### Returns
+#### 返回值 {#returns-68}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1901,18 +1901,18 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-dfb17a0471"></span>
 
-### SetTableColumns Method
+### SetTableColumns 方法 {#settablecolumns-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableColumns(System.Collections.Generic.IReadOnlyList<double> widths)
 ```
 
-#### Parameters
+#### 参数 {#parameters-57}
 
 `widths` System.Collections.Generic.IReadOnlyList&lt;double&gt;
 
 
-#### Returns
+#### 返回值 {#returns-69}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1923,7 +1923,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-53530ff6b7"></span>
 
-### SetTableFormatMetadata Method
+### SetTableFormatMetadata 方法 {#settableformatmetadata-method}
 
 Sets format-specific metadata for the current table.
 Serializers use this to attach round-trip metadata (e.g., original column widths).
@@ -1932,12 +1932,12 @@ Serializers use this to attach round-trip metadata (e.g., original column widths
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableFormatMetadata(object metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters-58}
 
 `metadata` object
 
 
-#### Returns
+#### 返回值 {#returns-70}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1948,13 +1948,13 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-99e9da545f"></span>
 
-### SetTableInteriorBorders Method
+### SetTableInteriorBorders 方法 {#settableinteriorborders-method}
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableInteriorBorders(double width, Nullable<uint> colorArgb)
 ```
 
-#### Parameters
+#### 参数 {#parameters-59}
 
 `width` double
 
@@ -1962,7 +1962,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `colorArgb` Nullable&lt;uint&gt;
 
 
-#### Returns
+#### 返回值 {#returns-71}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1973,7 +1973,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-a3b6449855"></span>
 
-### SetTableRowHeight Method
+### SetTableRowHeight 方法 {#settablerowheight-method}
 
 Sets the current table row's minimum height in device-independent pixels
 (Word's `w:trHeight`).
@@ -1982,12 +1982,12 @@ Sets the current table row's minimum height in device-independent pixels
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableRowHeight(double height)
 ```
 
-#### Parameters
+#### 参数 {#parameters-60}
 
 `height` double
 
 
-#### Returns
+#### 返回值 {#returns-72}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -1998,7 +1998,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-66e6768a42"></span>
 
-### SetTableRowTextElementFormatting Method
+### SetTableRowTextElementFormatting 方法 {#settablerowtextelementformatting-method}
 
 Sets base-level element formatting for the current table row.
 
@@ -2006,12 +2006,12 @@ Sets base-level element formatting for the current table row.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableRowTextElementFormatting(Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-61}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-73}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2022,7 +2022,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-9248d08dbd"></span>
 
-### StartContainer Method
+### StartContainer 方法 {#startcontainer-method}
 
 Starts a generic block container with an arbitrary [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind).
 Containers nest: calling [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) while another is active
@@ -2035,7 +2035,7 @@ container is added back to the item or cell that enclosed it.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting textElementFormatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-62}
 
 `kind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
@@ -2046,7 +2046,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `textElementFormatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-74}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2057,7 +2057,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-9ce411976f"></span>
 
-### StartList Method
+### StartList 方法 {#startlist-method}
 
 Starts a new list with the specified marker style.
 When called inside an active list item, automatically nests
@@ -2067,7 +2067,7 @@ the new list inside the current item instead of finalizing it.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartList(Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle markerStyle, int startIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-63}
 
 `markerStyle` [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle)
 
@@ -2075,7 +2075,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `startIndex` int
 
 
-#### Returns
+#### 返回值 {#returns-75}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2086,15 +2086,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-637a5fbdac"></span>
 
-### StartNestedList Method
+### StartNestedList 方法 {#startnestedlist-method}
 
-Starts a nested list inside the current list item.
+在当前列表项内开始一个嵌套列表。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartNestedList(Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle markerStyle, int startIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-64}
 
 `markerStyle` [Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle)
 
@@ -2102,7 +2102,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `startIndex` int
 
 
-#### Returns
+#### 返回值 {#returns-76}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2117,7 +2117,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-f13ca004de"></span>
 
-#### StartSection Method
+#### StartSection 方法 {#startsection-method}
 
 Starts a new section container. Blocks added after this call
 are placed inside the section until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection) is called.
@@ -2126,7 +2126,7 @@ are placed inside the section until [Avalonia.Controls.Documents.Serialization.S
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartSection(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting textElementFormatting)
 ```
 
-##### Parameters
+##### 参数 {#parameters-65}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
@@ -2134,7 +2134,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `textElementFormatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-##### Returns
+##### 返回值 {#returns-77}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2145,7 +2145,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-73b773c4f2"></span>
 
-#### StartSection Method
+#### StartSection 方法 {#startsection-method-1}
 
 Starts a new section container. Blocks added after this call
 are placed inside the section until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection) is called.
@@ -2154,7 +2154,7 @@ are placed inside the section until [Avalonia.Controls.Documents.Serialization.S
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartSection(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting textElementFormatting, Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup pageSetup)
 ```
 
-##### Parameters
+##### 参数 {#parameters-66}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
@@ -2165,7 +2165,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 `pageSetup` [Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup](xref:Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup)
 
 
-##### Returns
+##### 返回值 {#returns-78}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2176,15 +2176,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-e1fe530904"></span>
 
-### StartTable Method
+### StartTable 方法 {#starttable-method}
 
-Starts a new table.
+开始一个新表格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartTable()
 ```
 
-#### Returns
+#### 返回值 {#returns-79}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2195,15 +2195,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-a28f1085c9"></span>
 
-### StartTableCell Method
+### StartTableCell 方法 {#starttablecell-method}
 
-Starts a new table cell.
+开始一个新的表格单元格。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartTableCell()
 ```
 
-#### Returns
+#### 返回值 {#returns-80}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 
@@ -2214,15 +2214,15 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 <span id="uid-297fdbbb7e"></span>
 
-### StartTableRow Method
+### StartTableRow 方法 {#starttablerow-method}
 
-Starts a new table row.
+开始新的一行表格行。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartTableRow()
 ```
 
-#### Returns
+#### 返回值 {#returns-81}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)
 

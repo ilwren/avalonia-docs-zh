@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IInsetsManager Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/IInsetsManager.cs">IInsetsManager.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Platform/IInsetsManager.cs">IInsetsManager.cs</a>
 </div>
 
 </div>
@@ -46,21 +46,21 @@ public interface IInsetsManager
 
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DisplayEdgeToEdgePreference](#uid-494be8d52b) | Gets or sets whether the window draws edge to edge. behind any visible system bars. |
 | [DisplaysEdgeToEdge](#uid-814b86cb58) | Gets whether the window is currently displaying edge to edge. |
 | [IsSystemBarVisible](#uid-22c6a0cba3) | Gets or sets whether the system bars are visible. |
-| [SafeAreaPadding](#uid-52365cf938) | Gets the current safe area padding. |
+| [SafeAreaPadding](#uid-52365cf938) | 获取当前的安全区内边距。 |
 | [SystemBarColor](#uid-7b764b53c2) | Gets or sets the color of the platform's system bars |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-494be8d52b"></span>
 
-### DisplayEdgeToEdgePreference Property
+### DisplayEdgeToEdgePreference 属性 {#displayedgetoedgepreference-property}
 
 Gets or sets whether the window draws edge to edge. behind any visible system bars.
 
@@ -74,7 +74,7 @@ public bool DisplayEdgeToEdgePreference { get; set; }
 
 <span id="uid-814b86cb58"></span>
 
-### DisplaysEdgeToEdge Property
+### DisplaysEdgeToEdge 属性 {#displaysedgetoedge-property}
 
 Gets whether the window is currently displaying edge to edge.
 
@@ -88,7 +88,7 @@ public bool DisplaysEdgeToEdge { get; set; }
 
 <span id="uid-22c6a0cba3"></span>
 
-### IsSystemBarVisible Property
+### IsSystemBarVisible 属性 {#issystembarvisible-property}
 
 Gets or sets whether the system bars are visible.
 
@@ -102,9 +102,9 @@ public Nullable<bool> IsSystemBarVisible { get; set; }
 
 <span id="uid-52365cf938"></span>
 
-### SafeAreaPadding Property
+### SafeAreaPadding 属性 {#safeareapadding-property}
 
-Gets the current safe area padding.
+获取当前的安全区内边距。
 
 ```csharp
 public Avalonia.Thickness SafeAreaPadding { get; set; }
@@ -116,7 +116,7 @@ public Avalonia.Thickness SafeAreaPadding { get; set; }
 
 <span id="uid-7b764b53c2"></span>
 
-### SystemBarColor Property
+### SystemBarColor 属性 {#systembarcolor-property}
 
 Gets or sets the color of the platform's system bars
 
@@ -126,9 +126,9 @@ public Nullable<Avalonia.Media.Color> SystemBarColor { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [SafeAreaChanged](#uid-5a8d663a00) | Occurs when safe area for the current window changes. |
 
@@ -136,7 +136,7 @@ public Nullable<Avalonia.Media.Color> SystemBarColor { get; set; }
 
 <span id="uid-5a8d663a00"></span>
 
-### SafeAreaChanged Event
+### SafeAreaChanged 事件 {#safeareachanged-event}
 
 Occurs when safe area for the current window changes.
 

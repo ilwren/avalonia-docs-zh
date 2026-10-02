@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridRowSelectionModel&lt;TModel&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class TreeDataGridRowSelectionModel<TModel>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="treedatagridselectionmodel">TreeDataGridSelectionModel</a> <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowSelectionModel&lt;TModel&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="treedatagridselectionmodel">TreeDataGridSelectionModel</a> <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowSelectionModel&lt;TModel&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="itreedatagridrowselection">ITreeDataGridRowSelection</a>, <a href="itreedatagridselectioninteraction">ITreeDataGridSelectionInteraction</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="itreedatagridrowselection">ITreeDataGridRowSelection</a>, <a href="itreedatagridselectioninteraction">ITreeDataGridSelectionInteraction</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 TreeDataGridRowSelectionModel manages row selection in a [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid), supporting both
 single and multiple selection modes. It tracks selection using [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
@@ -71,48 +71,48 @@ Row selection supports the following user interactions:
 - Expanding and collapsing hierarchical rows with arrow keys
 - Type-to-select functionality for quickly finding rows
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridRowSelectionModel&lt;TModel&gt;](#uid-0dc9e85b67) | No summary available. |
+| [TreeDataGridRowSelectionModel&lt;TModel&gt;](#uid-0dc9e85b67) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0dc9e85b67"></span>
 
-### TreeDataGridRowSelectionModel&lt;TModel&gt; Constructor
+### TreeDataGridRowSelectionModel&lt;TModel&gt; 构造函数 {#treedatagridrowselectionmodellttmodelgt-constructor}
 
 ```csharp
 public TreeDataGridRowSelectionModel<TModel>(Avalonia.Controls.TreeDataGridSource<TModel><TModel> source)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `source` [Avalonia.Controls.TreeDataGridSource](xref:Avalonia.Controls.TreeDataGridSource)&lt;TModel&gt;&lt;TModel&gt;
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BatchUpdate](#uid-b429a7d5e5) | Creates a batch update operation that will defer selection change notifications until disposed. |
-| [BeginBatchUpdate](#uid-ed5f30f702) | Begins a batch update of the selection. |
-| [Clear](#uid-2f92e71c89) | Clears the selection. |
+| [BeginBatchUpdate](#uid-ed5f30f702) | 开始对选择做一次批量更新。 |
+| [Clear](#uid-2f92e71c89) | 清除选区。 |
 | [Deselect](#uid-faf9452a6f) | Deselects an item by its index in the source data. |
-| [EndBatchUpdate](#uid-0bfd82da33) | Ends a batch update started by [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601.BeginBatchUpdate). |
+| [EndBatchUpdate](#uid-0bfd82da33) | 结束由 [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601.BeginBatchUpdate) 开始的批量更新。 |
 | [IsSelected](#uid-8bfc2b06d0) | Queries whether an item is currently selected. |
 | [Select](#uid-f5c53b35ba) | Selects an item by its index in the source data. |
-| [SelectAll](#uid-3502c9e4bf) | Selects all currently visible rows. |
-| [SelectRange](#uid-1d2e1f4810) | Selects an inclusive range of rows. |
+| [SelectAll](#uid-3502c9e4bf) | 选中当前所有可见的行。 |
+| [SelectRange](#uid-1d2e1f4810) | 选中一段闭区间内的行。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b429a7d5e5"></span>
 
-### BatchUpdate Method
+### BatchUpdate 方法 {#batchupdate-method}
 
 Creates a batch update operation that will defer selection change notifications until
 disposed.
@@ -121,7 +121,7 @@ disposed.
 public Avalonia.Controls.Selection.TreeDataGridRowSelectionModel<TModel>.BatchUpdateOperation<TModel><TModel> BatchUpdate()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;TModel&gt;.BatchUpdateOperation&lt;TModel&gt;&lt;TModel&gt;
 
@@ -129,7 +129,7 @@ A disposable object that, when disposed, will commit the selection changes and r
 appropriate events.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Use this method with a using statement to group multiple selection operations together and
 raise only a single set of change events when the batch is complete. This is equivalent to
@@ -141,9 +141,9 @@ calling [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.Begi
 
 <span id="uid-ed5f30f702"></span>
 
-### BeginBatchUpdate Method
+### BeginBatchUpdate 方法 {#beginbatchupdate-method}
 
-Begins a batch update of the selection.
+开始对选择做一次批量更新。
 
 ```csharp
 public void BeginBatchUpdate()
@@ -155,9 +155,9 @@ public void BeginBatchUpdate()
 
 <span id="uid-2f92e71c89"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
-Clears the selection.
+清除选区。
 
 ```csharp
 public void Clear()
@@ -169,7 +169,7 @@ public void Clear()
 
 <span id="uid-faf9452a6f"></span>
 
-### Deselect Method
+### Deselect 方法 {#deselect-method}
 
 Deselects an item by its index in the source data.
 
@@ -177,7 +177,7 @@ Deselects an item by its index in the source data.
 public void Deselect(Avalonia.Controls.IndexPath index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `index` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
@@ -190,9 +190,9 @@ The index into the source data.
 
 <span id="uid-0bfd82da33"></span>
 
-### EndBatchUpdate Method
+### EndBatchUpdate 方法 {#endbatchupdate-method}
 
-Ends a batch update started by [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601.BeginBatchUpdate).
+结束由 [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601.BeginBatchUpdate) 开始的批量更新。
 
 ```csharp
 public void EndBatchUpdate()
@@ -204,7 +204,7 @@ public void EndBatchUpdate()
 
 <span id="uid-8bfc2b06d0"></span>
 
-### IsSelected Method
+### IsSelected 方法 {#isselected-method}
 
 Queries whether an item is currently selected.
 
@@ -212,14 +212,14 @@ Queries whether an item is currently selected.
 public bool IsSelected(Avalonia.Controls.IndexPath index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `index` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
-The index of the item in the source data.
+该项在源数据中的索引。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -232,7 +232,7 @@ True if the item is selected; otherwise false.
 
 <span id="uid-f5c53b35ba"></span>
 
-### Select Method
+### Select 方法 {#select-method}
 
 Selects an item by its index in the source data.
 
@@ -240,7 +240,7 @@ Selects an item by its index in the source data.
 public void Select(Avalonia.Controls.IndexPath index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `index` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
@@ -253,15 +253,15 @@ The index path of the item to select.
 
 <span id="uid-3502c9e4bf"></span>
 
-### SelectAll Method
+### SelectAll 方法 {#selectall-method}
 
-Selects all currently visible rows.
+选中当前所有可见的行。
 
 ```csharp
 public void SelectAll()
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Only rows that are currently materialized in the source (i.e. visible, taking into
 account the expanded/collapsed state of parent rows) are selected; descendants of
@@ -274,15 +274,15 @@ collapsed rows are not selected. This method does nothing when
 
 <span id="uid-1d2e1f4810"></span>
 
-### SelectRange Method
+### SelectRange 方法 {#selectrange-method}
 
-Selects an inclusive range of rows.
+选中一段闭区间内的行。
 
 ```csharp
 public void SelectRange(Avalonia.Controls.IndexPath start, Avalonia.Controls.IndexPath end)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `start` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
@@ -294,7 +294,7 @@ The index of the row at which the range starts.
 The index of the row at which the range ends.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 The range is selected by iterating the currently visible rows between
 `start` and `end`; any existing selection is
@@ -303,34 +303,34 @@ cleared first. This method does nothing when
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AnchorIndex](#uid-53c460df07) | Gets or sets the anchor index. |
-| [Count](#uid-8b55b5da6d) | Gets the number of selected items. |
-| [IsCellSelectionModel](#uid-6a10385dfa) | Gets a value indicating whether this is a cell selection model. |
-| [RangeAnchorIndex](#uid-d7d024ac17) | Gets or sets the range anchor index. |
+| [AnchorIndex](#uid-53c460df07) | 获取或设置锚点索引。 |
+| [Count](#uid-8b55b5da6d) | 获取选中项的数量。 |
+| [IsCellSelectionModel](#uid-6a10385dfa) | 获取该模型是否为单元格级的选择模型。 |
+| [RangeAnchorIndex](#uid-d7d024ac17) | 获取或设置区间锚点索引。 |
 | [SelectedIndex](#uid-cdc1462ee3) | Gets or sets the selected index within the data. |
-| [SelectedIndexes](#uid-5951beb0b0) | Gets the indexes of the selected items. |
-| [SelectedItem](#uid-d03873e1f9) | Gets the currently selected item. |
+| [SelectedIndexes](#uid-5951beb0b0) | 获取选中项的索引。 |
+| [SelectedItem](#uid-d03873e1f9) | 获取当前选中的项。 |
 | [SelectedItems](#uid-51a5504eb2) | Gets a collection containing all selected items. |
-| [SingleSelect](#uid-c98ed464f3) | Gets or sets a value indicating whether only a single item can be selected at a time. |
-| [Source](#uid-4053d3eb2c) | Gets the data source for the selection model. |
+| [SingleSelect](#uid-c98ed464f3) | 获取或设置一个值，指示是否同一时间只能选中一项。 |
+| [Source](#uid-4053d3eb2c) | 获取选择模型所用的数据源。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-53c460df07"></span>
 
-### AnchorIndex Property
+### AnchorIndex 属性 {#anchorindex-property}
 
-Gets or sets the anchor index.
+获取或设置锚点索引。
 
 ```csharp
 public Avalonia.Controls.IndexPath AnchorIndex { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 The anchor index is the moving end of the selection: the item that keyboard
 navigation acts on. Pressing an arrow key navigates relative to this index, and a
@@ -348,9 +348,9 @@ Shift+Up then recomputes the range from the pivot 1 to the new end 2.
 
 <span id="uid-8b55b5da6d"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
-Gets the number of selected items.
+获取选中项的数量。
 
 ```csharp
 public int Count { get; set; }
@@ -362,9 +362,9 @@ public int Count { get; set; }
 
 <span id="uid-6a10385dfa"></span>
 
-### IsCellSelectionModel Property
+### IsCellSelectionModel 属性 {#iscellselectionmodel-property}
 
-Gets a value indicating whether this is a cell selection model.
+获取该模型是否为单元格级的选择模型。
 
 ```csharp
 public bool IsCellSelectionModel { get; set; }
@@ -376,15 +376,15 @@ public bool IsCellSelectionModel { get; set; }
 
 <span id="uid-d7d024ac17"></span>
 
-### RangeAnchorIndex Property
+### RangeAnchorIndex 属性 {#rangeanchorindex-property}
 
-Gets or sets the range anchor index.
+获取或设置区间锚点索引。
 
 ```csharp
 public Avalonia.Controls.IndexPath RangeAnchorIndex { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 The range anchor index is the fixed pivot from which a range selection extends. It is
 set when a fresh selection begins (for example when [Avalonia.Controls.Selection.TreeDataGridRowSelectionModel&lt;T&gt;.SelectedIndex](xref:Avalonia.Controls.Selection.TreeDataGridRowSelectionModel%601.SelectedIndex) is set,
@@ -401,7 +401,7 @@ call or by extending a range; only by operations that start a new selection.
 
 <span id="uid-cdc1462ee3"></span>
 
-### SelectedIndex Property
+### SelectedIndex 属性 {#selectedindex-property}
 
 Gets or sets the selected index within the data.
 
@@ -415,9 +415,9 @@ public Avalonia.Controls.IndexPath SelectedIndex { get; set; }
 
 <span id="uid-5951beb0b0"></span>
 
-### SelectedIndexes Property
+### SelectedIndexes 属性 {#selectedindexes-property}
 
-Gets the indexes of the selected items.
+获取选中项的索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> SelectedIndexes { get; set; }
@@ -429,20 +429,20 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> Sel
 
 <span id="uid-d03873e1f9"></span>
 
-### SelectedItem Property
+### SelectedItem 属性 {#selecteditem-property}
 
-Gets the currently selected item.
+获取当前选中的项。
 
 ```csharp
 public TModel SelectedItem { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The selected item, or default(TModel) if no item is selected.
 
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 When multiple items are selected, this property returns the first selected item.
 
@@ -452,7 +452,7 @@ When multiple items are selected, this property returns the first selected item.
 
 <span id="uid-51a5504eb2"></span>
 
-### SelectedItems Property
+### SelectedItems 属性 {#selecteditems-property}
 
 Gets a collection containing all selected items.
 
@@ -460,7 +460,7 @@ Gets a collection containing all selected items.
 public System.Collections.Generic.IReadOnlyList<TModel> SelectedItems { get; set; }
 ```
 
-#### Value
+#### 值 {#value-1}
 
 A read-only list of the selected items.
 
@@ -471,9 +471,9 @@ A read-only list of the selected items.
 
 <span id="uid-c98ed464f3"></span>
 
-### SingleSelect Property
+### SingleSelect 属性 {#singleselect-property}
 
-Gets or sets a value indicating whether only a single item can be selected at a time.
+获取或设置一个值，指示是否同一时间只能选中一项。
 
 ```csharp
 public bool SingleSelect { get; set; }
@@ -485,9 +485,9 @@ public bool SingleSelect { get; set; }
 
 <span id="uid-4053d3eb2c"></span>
 
-### Source Property
+### Source 属性 {#source-property}
 
-Gets the data source for the selection model.
+获取选择模型所用的数据源。
 
 ```csharp
 public System.Collections.IEnumerable Source { get; set; }
@@ -495,28 +495,28 @@ public System.Collections.IEnumerable Source { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IndexesChanged](treedatagridselectionmodel.mdx#uid-c5c2106a08) | Occurs when item indexes change due to insertions or removals in the data source. Inherited from [TreeDataGridSelectionModel](treedatagridselectionmodel.mdx). |
 | [PropertyChanged](treedatagridselectionmodel.mdx#uid-c2ee82eef9) | Inherited from [TreeDataGridSelectionModel](treedatagridselectionmodel.mdx). |
-| [SelectionChanged](#uid-20d38a3933) | Occurs when the selection changes. |
+| [SelectionChanged](#uid-20d38a3933) | 选择发生变化时发生。 |
 | [SourceReset](treedatagridselectionmodel.mdx#uid-eac05c7ba6) | Occurs when the data source is reset. Inherited from [TreeDataGridSelectionModel](treedatagridselectionmodel.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-20d38a3933"></span>
 
-### SelectionChanged Event
+### SelectionChanged 事件 {#selectionchanged-event}
 
-Occurs when the selection changes.
+选择发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Selection.TreeDataGridSelectionChangedEventArgs<T><TModel>> SelectionChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 This event provides strongly-typed access to the selection changes, including the
 items and index paths that were selected and deselected.

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITextViewComponent Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -48,7 +48,7 @@ public interface ITextViewComponent
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Text view components are modular pieces that handle specific interaction functionality
 (keyboard navigation, mouse selection, caret rendering, etc.).
@@ -58,9 +58,9 @@ The host controls the lifecycle: components are registered via
 [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnAttach(Avalonia.Controls.Documents.Primitives.IInteractiveTextHost)](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnAttach%28Avalonia.Controls.Documents.Primitives.IInteractiveTextHost%29)/[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach) callbacks when the host
 activates or deactivates them.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [OnAttach](#uid-057f3cc657) | Called by the host when this component should activate (subscribe to events, acquire resources). |
 | [OnDetach](#uid-e291727397) | Called by the host when this component should deactivate (unsubscribe from events, release resources). |
@@ -69,7 +69,7 @@ activates or deactivates them.
 
 <span id="uid-057f3cc657"></span>
 
-### OnAttach Method
+### OnAttach 方法 {#onattach-method}
 
 Called by the host when this component should activate
 (subscribe to events, acquire resources).
@@ -78,7 +78,7 @@ Called by the host when this component should activate
 public void OnAttach(Avalonia.Controls.Documents.Primitives.IInteractiveTextHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.IInteractiveTextHost](xref:Avalonia.Controls.Documents.Primitives.IInteractiveTextHost)
 
@@ -91,7 +91,7 @@ The interactive text host that owns this component.
 
 <span id="uid-e291727397"></span>
 
-### OnDetach Method
+### OnDetach 方法 {#ondetach-method}
 
 Called by the host when this component should deactivate
 (unsubscribe from events, release resources).
@@ -102,19 +102,19 @@ public void OnDetach()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsAttached](#uid-7f3f2d7b80) | Gets whether this component is currently attached to a host. |
+| [IsAttached](#uid-7f3f2d7b80) | 获取该组件当前是否已附加到某个宿主上。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7f3f2d7b80"></span>
 
-### IsAttached Property
+### IsAttached 属性 {#isattached-property}
 
-Gets whether this component is currently attached to a host.
+获取该组件当前是否已附加到某个宿主上。
 
 ```csharp
 public bool IsAttached { get; set; }

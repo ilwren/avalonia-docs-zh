@@ -7,49 +7,49 @@ tags:
  - avalonia enterprise
 ---
 
-The `RichTextEditor` architecture uses immutable snapshots for background-safe serialization while requiring UI thread access for live document operations. This guide explains the threading model and safe patterns.
+`RichTextEditor` 的架构用不可变快照来支撑可在后台安全进行的序列化，而实时文档操作则必须在 UI 线程上进行。本指南讲解它的线程模型和安全写法。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
 :::caution
-Nothing in this library performs asynchronous I/O: every format tokenizes, builds a tree or lays out text against an in-memory buffer. `IDocumentSerializer.SerializeAsync` and `DeserializeAsync` are thread-offload conveniences that run the synchronous body on the thread pool. `Serialize` and `Deserialize` run on whichever thread calls them.
+这个库里没有任何东西会做异步 I/O：每种格式都是在内存缓冲区上做分词、建树或排版。`IDocumentSerializer.SerializeAsync` 和 `DeserializeAsync` 只是帮你把活儿挪出当前线程的便利封装，它们在线程池上执行同步的主体逻辑；`Serialize` 和 `Deserialize` 则是谁调用就在谁的线程上跑。
 
-If you need to move work off the UI thread, use either the shipped asynchronous pair or `Task.Run` at the call site.
+若需要把工作挪出 UI 线程，请使用随附的异步版本，或在调用处用 `Task.Run`。
 :::
 
-## Threading model
+## 线程模型 {#threading-model}
 
-### UI thread required
+### 必须在 UI 线程上做的事 {#ui-thread-required}
 
-These operations must run on the UI thread:
-- **Document editing** (`TextDocument`, `TextPointer`, `TextRange`)
+下列操作必须在 UI 线程上运行：
+- **文档编辑**（`TextDocument`、`TextPointer`、`TextRange`）
 - **Rendering** (`TextViewBase`, `InteractiveTextView`, `PagedTextView`, `ITextView`)
-- **User interaction** (`TextSelection`, components)
-- **Undo/redo operations**
-- **Element access** (`FlowDocument`, `RichTextElement`, and any child elements — they are Avalonia `StyledElement`s)
+- **用户交互**（`TextSelection`、各类组件）
+- **撤销/重做操作**
+- **元素访问**（`FlowDocument`、`RichTextElement` 以及任何子元素——它们都是 Avalonia 的 `StyledElement`）
 
-### Background thread safe
+### 可以在后台线程上做的事 {#background-thread-safe}
 
-These operations can run on background threads:
+下列操作可以在后台线程上运行：
 
-- **Serialization via `DocumentSnapshot`** — immutable
-- **`IDocumentSerializer.Serialize` / `Deserialize`** — synchronous and thread-agnostic, so they run on whichever thread calls them. Wrap in `Task.Run` to keep the work off the UI thread.
-- **RTF tokenization** — streaming
-- **`DocumentSnapshot` consumption** — `TextDocument.CreateSnapshot()` must be called on the UI thread, but the returned object is safe to read from any thread.
-- **`TextDocument.FromSnapshot`** — `TextDocument` carries the whole document and has no thread affinity, so a document can be materialized with no UI thread involvement.
+- **通过 `DocumentSnapshot` 序列化** —— 它是不可变的
+- **`IDocumentSerializer.Serialize` / `Deserialize`** —— 同步且不挑线程，谁调用就在谁的线程上跑。包进 `Task.Run` 即可把工作挪出 UI 线程。
+- **RTF 分词** —— 流式处理
+- **消费 `DocumentSnapshot`** —— `TextDocument.CreateSnapshot()` 必须在 UI 线程上调用，但返回的对象可以从任意线程安全读取。
+- **`TextDocument.FromSnapshot`** —— `TextDocument` 承载整篇文档且没有线程亲和性，因此可以完全不牵涉 UI 线程就把文档实体化。
 
-### Not thread-safe
+### 不是线程安全的 {#not-thread-safe}
 
-- **Live `TextDocument`** — no concurrent modification
-- **UI element access** — Avalonia controls are not thread-safe
-- **`TextPointer`/`TextRange`** — tied to UI-thread document
-- **`FlowDocumentBuilder`** — UI-thread only (the resulting `FlowDocument` is itself a `StyledElement`)
+- **活动中的 `TextDocument`** —— 不允许并发修改
+- **访问 UI 元素** —— Avalonia 控件不是线程安全的
+- **`TextPointer`/`TextRange`** —— 与 UI 线程上的文档绑定
+- **`FlowDocumentBuilder`** —— 只能在 UI 线程上（它返回的 `FlowDocument` 本身就是一个 `StyledElement`）
 
-## Safe patterns
+## 安全写法 {#safe-patterns}
 
-### Background serialization
+### 后台序列化 {#background-serialization}
 
 ```csharp
 async Task SaveAsync(string path)
@@ -61,7 +61,7 @@ async Task SaveAsync(string path)
 }
 ```
 
-If you need manual control over the snapshot (e.g., for a custom format):
+若你需要自己掌控快照（比如用于自定义格式）：
 
 ```csharp
 async Task SaveManualAsync(string path)
@@ -72,7 +72,7 @@ async Task SaveManualAsync(string path)
 }
 ```
 
-### Background deserialization
+### 后台反序列化 {#background-deserialization}
 
 ```csharp
 async Task LoadAsync(string path)
@@ -84,7 +84,7 @@ async Task LoadAsync(string path)
 }
 ```
 
-Or load independently of the editor:
+或者脱离编辑器单独加载：
 
 ```csharp
 async Task LoadStandaloneAsync(string path)
@@ -97,9 +97,9 @@ async Task LoadStandaloneAsync(string path)
 }
 ```
 
-`FlowDocument.LoadAsync` parses on the thread pool and then builds the element tree through an explicit `Dispatcher.UIThread.InvokeAsync`. The dispatch is explicit rather than left to an ambient `SynchronizationContext`, which a console host or a caller already off the UI thread does not have.
+`FlowDocument.LoadAsync` 在线程池上解析，随后通过显式的 `Dispatcher.UIThread.InvokeAsync` 构建元素树。这里的调度是显式的，而不是依赖环境中的 `SynchronizationContext`——控制台宿主、或本就不在 UI 线程上的调用方，根本就没有这么个东西。
 
-To stay off the UI thread entirely, read a `DocumentSnapshot` with the serializer and materialize it with `TextDocument.FromSnapshot`.
+若希望全程不碰 UI 线程，请用序列化器读出一个 `DocumentSnapshot`，再用 `TextDocument.FromSnapshot` 把它实体化。
 
 ```csharp
 // Any thread, no dispatcher involved
@@ -107,7 +107,7 @@ var snapshot = new RtfSerializer().Deserialize(stream, cancellationToken);
 var textDocument = TextDocument.FromSnapshot(snapshot);
 ```
 
-### Background document processing
+### 后台文档处理 {#background-document-processing}
 
 ```csharp
 async Task<string> ExtractPlainTextAsync()
@@ -124,9 +124,9 @@ async Task<string> ExtractPlainTextAsync()
 }
 ```
 
-## Unsafe patterns
+## 不安全的写法 {#unsafe-patterns}
 
-### Don't access live document from background thread
+### 别在后台线程上访问活动中的文档 {#dont-access-live-document-from-background-thread}
 
 ```csharp
 // WRONG — will throw
@@ -137,7 +137,7 @@ await Task.Run(() =>
 });
 ```
 
-### Don't modify document from background thread
+### 别在后台线程上修改文档 {#dont-modify-document-from-background-thread}
 
 ```csharp
 // WRONG — will throw
@@ -147,7 +147,7 @@ await Task.Run(() =>
 });
 ```
 
-### Don't access UI elements from background thread
+### 别在后台线程上访问 UI 元素 {#dont-access-ui-elements-from-background-thread}
 
 ```csharp
 // WRONG — will throw
@@ -160,17 +160,17 @@ await Task.Run(() =>
 });
 ```
 
-## DocumentSnapshot design
+## DocumentSnapshot 的设计 {#documentsnapshot-design}
 
-### Immutable structure
+### 不可变结构 {#immutable-structure}
 
-`DocumentSnapshot` is designed for thread safety:
-- **Immutable** — cannot be modified after creation
-- **No UI references** — pure data structure
-- **Shared nodes** — efficient memory sharing with live document
-- **Self-contained** — all data copied from live document
+`DocumentSnapshot` 就是为线程安全而设计的：
+- **不可变** —— 创建之后无法修改
+- **不引用 UI** —— 纯粹的数据结构
+- **共享节点** —— 与活动文档高效共享内存
+- **自成一体** —— 所有数据都已从活动文档复制过来
 
-### Snapshot hierarchy
+### 快照的层级结构 {#snapshot-hierarchy}
 
 ```
 DocumentSnapshot (thread-safe)
@@ -181,13 +181,13 @@ DocumentSnapshot (thread-safe)
    └─ InlineSnapshotNode
 ```
 
-`SnapshotNode` is the base of the tree. `BlockSnapshotNode` and `InlineSnapshotNode` create the two kinds of content. The tree is built once at capture and not mutated afterwards, and the text it references is an immutable rope snapshot. Reading the snapshot from any thread is safe.
+`SnapshotNode` 是这棵树的根基，`BlockSnapshotNode` 和 `InlineSnapshotNode` 分别构成两类内容。树在捕获时一次建成，此后不再变动，它所引用的文本也是不可变的 rope 快照。因此从任意线程读取快照都是安全的。
 
-Read text with `DocumentSnapshot.GetText`, `GetTextMemory` or `WriteTextTo`. Walk with `EnumerateNodes`.
+用 `DocumentSnapshot.GetText`、`GetTextMemory` 或 `WriteTextTo` 读取文本，用 `EnumerateNodes` 遍历。
 
-### Creating snapshots
+### 创建快照 {#creating-snapshots}
 
-`SaveAsync` and `LoadAsync` create and consume snapshots internally, so a typical save or load never touch a `DocumentSnapshot`:
+`SaveAsync` 和 `LoadAsync` 在内部自行创建并消费快照，因此一次寻常的保存或加载根本碰不到 `DocumentSnapshot`：
 
 ```csharp
 // Save using the async API (handles snapshot internally)
@@ -195,7 +195,7 @@ await using var stream = File.Create("output.rtf");
 await editor.SaveAsync(stream, new RtfSerializer());
 ```
 
-To share one snapshot across several consumers, for example exporting to more than one format, capture a snapshot explicitly with `FlowDocument.CreateSnapshot()` or `TextDocument.CreateSnapshot()` on the UI thread. Then, pass the result to background work:
+若要让多个使用方共用同一份快照（比如导出成不止一种格式），请在 UI 线程上用 `FlowDocument.CreateSnapshot()` 或 `TextDocument.CreateSnapshot()` 显式捕获快照，再把结果交给后台任务：
 
 ```csharp
 // UI thread
@@ -215,7 +215,7 @@ await Task.Run(() =>
 
 ## FlowDocumentBuilder
 
-`FlowDocumentBuilder` provides a fluent API for constructing documents. It runs on the UI thread:
+`FlowDocumentBuilder` 提供了一套构建文档的流式 API。它在 UI 线程上运行：
 
 ```csharp
 var builder = FlowDocumentBuilder.Create();
@@ -226,9 +226,9 @@ var document = builder.Build();
 editor.Document = document;
 ```
 
-## Synchronization strategies
+## 同步策略 {#synchronization-strategies}
 
-### Dispatcher pattern
+### 调度器写法 {#dispatcher-pattern}
 
 ```csharp
 async Task UpdateFromBackgroundAsync()
@@ -244,7 +244,7 @@ async Task UpdateFromBackgroundAsync()
 }
 ```
 
-### async/await pattern
+### async/await 写法 {#asyncawait-pattern}
 
 ```csharp
 async Task SaveAndProcessAsync(string path)
@@ -258,9 +258,9 @@ async Task SaveAndProcessAsync(string path)
 }
 ```
 
-## Common scenarios
+## 常见场景 {#common-scenarios}
 
-### Spell check on background thread
+### 在后台线程上做拼写检查 {#spell-check-on-background-thread}
 
 ```csharp
 class SpellChecker
@@ -302,7 +302,7 @@ class SpellChecker
 }
 ```
 
-### Word count in background
+### 在后台统计字数 {#word-count-in-background}
 
 ```csharp
 async Task<int> CountWordsAsync()
@@ -320,9 +320,9 @@ async Task<int> CountWordsAsync()
 }
 ```
 
-### Export to PDF on background thread
+### 在后台线程上导出 PDF {#export-to-pdf-on-background-thread}
 
-`PdfSerializer` is a normal `IDocumentSerializer`. Like every other serializer, it is synchronous and write-only. It takes a snapshot, so the layout runs with no UI involved:
+`PdfSerializer` 就是个普通的 `IDocumentSerializer`。和其他序列化器一样，它是同步且只写的。它接受一份快照，因此排版过程完全不牵涉 UI：
 
 ```csharp
 async Task ExportPdfAsync(string path)
@@ -339,11 +339,11 @@ async Task ExportPdfAsync(string path)
 }
 ```
 
-## Element lifetime and thread safety
+## 元素生命周期与线程安全 {#element-lifetime-and-thread-safety}
 
-The internal node tree holds weak references to the `RichTextElement` instances it presents, so the model does not pin UI elements in memory. 
+内部节点树对它所呈现的 `RichTextElement` 实例只持有弱引用，所以模型不会把 UI 元素钉死在内存里。 
 
-This means an element obtained through `TextPointer.GetContainingElement()` may be `null` until the document materializes it. Every element access is UI-thread only.
+这意味着在文档把元素实体化之前，通过 `TextPointer.GetContainingElement()` 拿到的元素可能是 `null`。所有元素访问都只能在 UI 线程上进行。
 
 ```csharp
 void SafeAccessElement(TextPointer pointer)
@@ -362,7 +362,7 @@ void SafeAccessElement(TextPointer pointer)
 }
 ```
 
-The same holds for reading the element tree directly:
+直接读取元素树时同样如此：
 
 ```csharp
 // Must be on UI thread
@@ -373,38 +373,38 @@ if (firstBlock != null)
 }
 ```
 
-## Best practices
+## 实践建议 {#best-practices}
 
 ### Do's
 
-1. **Create snapshots on UI thread** — fast operation
-2. **Process snapshots on background threads** — safe and efficient
-3. **Return to UI thread for document updates** — use Dispatcher
-4. **Check thread before UI operations** — defensive programming
-5. **Use async/await for clean code** — natural thread switching
+1. **在 UI 线程上创建快照** —— 这是个快操作
+2. **在后台线程上处理快照** —— 既安全又高效
+3. **回到 UI 线程再更新文档** —— 用 Dispatcher
+4. **做 UI 操作前先检查线程** —— 防御式编程
+5. **用 async/await 让代码清爽** —— 线程切换顺理成章
 
 ### Don'ts
 
-1. **Don't access live document from background threads**
-2. **Don't modify document from background threads**
-3. **Don't access UI elements from background threads**
-4. **Don't assume snapshots auto-update** — they're immutable
-5. **Don't hold long-lived references to elements** — resolve them from a pointer when you need them
+1. **别在后台线程上访问活动中的文档**
+2. **别在后台线程上修改文档**
+3. **别在后台线程上访问 UI 元素**
+4. **别指望快照会自动更新** —— 它们是不可变的
+5. **别长期持有元素引用** —— 要用的时候再从指针解析出来
 
-## Performance considerations
+## 性能考量 {#performance-considerations}
 
-### Snapshot creation cost
+### 创建快照的开销 {#snapshot-creation-cost}
 
-- **Small documents (&lt;10KB)**: ~1ms
-- **Large documents (1MB)**: ~10ms
-- **Impact**: Negligible for background operations
+- **小文档（&lt;10KB）**：约 1 毫秒
+- **大文档（1MB）**：约 10 毫秒
+- **影响**：对后台操作而言可以忽略不计
 
-### Thread switching cost
+### 线程切换的开销 {#thread-switching-cost}
 
-- **Dispatcher invoke**: ~1-2ms overhead
-- **Recommendation**: Batch UI updates, don't switch per character
+- **Dispatcher 调用**：约 1-2 毫秒的额外开销
+- **建议**：把界面更新攒成批，别每个字符都切一次线程
 
-### Optimal pattern
+### 最佳写法 {#optimal-pattern}
 
 ```csharp
 // Bad: Too many thread switches
@@ -436,8 +436,8 @@ await Dispatcher.UIThread.InvokeAsync(() =>
 });
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [RichTextEditor reference](/controls/input/text-input/richtexteditor)
-- [Performance tuning](/controls/input/text-input/richtexteditor/performance-tuning)
-- [Extension patterns](/controls/input/text-input/richtexteditor/extension-patterns)
+- [RichTextEditor 参考](/controls/input/text-input/richtexteditor)
+- [性能调优](/controls/input/text-input/richtexteditor/performance-tuning)
+- [扩展范式](/controls/input/text-input/richtexteditor/extension-patterns)

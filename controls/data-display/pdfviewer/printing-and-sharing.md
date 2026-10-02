@@ -1,40 +1,40 @@
 ---
 id: printing-and-sharing
-title: Printing and sharing
-description: Print and share PDF documents from the Avalonia PdfViewer through the native print dialog and share sheet, or handle the request with your own pipeline.
+title: 打印与分享
+description: 通过原生打印对话框和分享面板，从 Avalonia PdfViewer 打印和分享 PDF 文档，也可以用自己的流程接管这些请求。
 doc-type: how-to
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-**Print** and **Share** live in the toolbar's **More Options** menu and are also available as `Print()`, `PrintAsync()`, `Share()`, `ShareAsync()`, `PrintCommand` and `ShareCommand`. Both include the current edits.
+**打印**和**分享**位于工具栏的**更多选项**菜单中，同时也以 `Print()`、`PrintAsync()`、`Share()`、`ShareAsync()`、`PrintCommand` 和 `ShareCommand` 的形式提供。两者都会带上当前的改动。
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Platform | Print | Share |
+| 平台 | 打印 | 分享 |
 |---|---|---|
-| Windows | Standard print dialog, vector output. | Windows share sheet. Falls back to a save-a-copy picker if the share UI is unavailable. |
-| macOS | System print panel with preview. | System share picker, anchored to the toolbar button. |
-| iOS | System print controller. | System share sheet, as a popover on iPad. |
-| Android | System print framework. | Share chooser. No manifest changes are needed. |
-| Linux | Not built in. | Not built in. |
-| Browser | Not built in. | Not built in. |
+| Windows | 标准打印对话框，矢量输出。 | Windows 分享面板。分享界面不可用时，回退为「保存副本」选择器。 |
+| macOS | 系统打印面板，带预览。 | 系统分享选择器，锚定在工具栏按钮上。 |
+| iOS | 系统打印控制器。 | 系统分享面板，在 iPad 上以浮出框形式呈现。 |
+| Android | 系统打印框架。 | 分享选择器，无需改动清单文件。 |
+| Linux | 未内置。 | 未内置。 |
+| Browser | 未内置。 | 未内置。 |
 
-The menu entries are hidden when the platform has no service and the app does not handle the request. `CanPrint` and `CanShare` report whether printing or sharing is possible right now. Hide the entries explicitly with `IsPrintVisible`, `IsShareVisible` or `IsMoreOptionsVisible`.
+当平台没有相应服务、应用又不处理该请求时，对应的菜单项会隐藏。`CanPrint` 和 `CanShare` 会报告此刻能否打印或分享。若要显式隐藏这些菜单项，请使用 `IsPrintVisible`、`IsShareVisible` 或 `IsMoreOptionsVisible`。
 
-## Print or share from code
+## 用代码打印或分享 {#print-or-share-from-code}
 
 ```csharp
 await Viewer.PrintAsync();
 await Viewer.ShareAsync();
 ```
 
-`PrintAsync` accepts a `PrintOptions` (`Title`, `PageRange`, `Copies`, `Color`, `Duplex`, `Orientation`, `Scaling`) and `ShareAsync` a `ShareOptions` (`Title`, `Text`, `Subject`). Both are in the `Avalonia.Controls.Pdf.Services` namespace. The viewer fills in `Owner` and `Anchor` on both.
+`PrintAsync` 接受一个 `PrintOptions`（`Title`、`PageRange`、`Copies`、`Color`、`Duplex`、`Orientation`、`Scaling`），`ShareAsync` 则接受一个 `ShareOptions`（`Title`、`Text`、`Subject`）。两者都位于 `Avalonia.Controls.Pdf.Services` 命名空间下。查看器会为两者自动填好 `Owner` 和 `Anchor`。
 
-## Handle the request in your app
+## 在应用中自行处理请求 {#handle-the-request-in-your-app}
 
-Handle `PrintRequested` or `ShareRequested` to take over. Set `Handled` to `true` before the first `await` and the built-in service is skipped. `GetDocumentBytesAsync()` returns the PDF with its edits. This is also how you add printing on Linux and in the browser.
+处理 `PrintRequested` 或 `ShareRequested` 即可接管。在首次 `await` 之前把 `Handled` 设为 `true`，内置服务就会被跳过。`GetDocumentBytesAsync()` 会返回带改动的 PDF。在 Linux 和浏览器上添加打印能力，走的也是这条路。
 
 ```csharp
 Viewer.PrintRequested += async (_, e) =>
@@ -45,17 +45,17 @@ Viewer.PrintRequested += async (_, e) =>
 };
 ```
 
-## Replace the platform service
+## 替换平台服务 {#replace-the-platform-service}
 
-To replace the platform implementation, assign your own `IPrintService` or `IShareService` to `PrintService` or `ShareService`. `IPrintService` has `PrintAsync(IPdfDocument, PrintOptions?, CancellationToken)` and `ShowPrintPreviewAsync(IPdfDocument, PrintOptions?)`. `IShareService` has `ShareAsync(IPdfDocument, ShareOptions?, CancellationToken)` and `ShareFileAsync(string filePath, ShareOptions?, CancellationToken)`. Leave a property unset to use the built-in service, or set it to `null` to remove the feature.
+若要替换平台实现，请把你自己的 `IPrintService` 或 `IShareService` 赋给 `PrintService` 或 `ShareService`。`IPrintService` 带有 `PrintAsync(IPdfDocument, PrintOptions?, CancellationToken)` 和 `ShowPrintPreviewAsync(IPdfDocument, PrintOptions?)`，`IShareService` 带有 `ShareAsync(IPdfDocument, ShareOptions?, CancellationToken)` 和 `ShareFileAsync(string filePath, ShareOptions?, CancellationToken)`。属性留空则使用内置服务，设为 `null` 则关闭该功能。
 
 ```csharp
 Viewer.PrintService = new MyPrintService();
 Viewer.ShareService = null; // no Share entry
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [PdfViewer control](index.md)
-- [Loading and saving](loading-and-saving.md)
-- [Platforms and performance](platforms-and-performance.md)
+- [PdfViewer 控件](index.md)
+- [加载与保存](loading-and-saving.md)
+- [平台与性能](platforms-and-performance.md)

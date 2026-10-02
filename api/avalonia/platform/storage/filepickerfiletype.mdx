@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FilePickerFileType Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FilePickerFileType.cs">FilePickerFileType.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FilePickerFileType.cs">FilePickerFileType.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents a name mapped to the associated file types (extensions).
+表示一个名称以及与之关联的文件类型（扩展名）。
 
 </div>
 
@@ -54,72 +54,72 @@ public class FilePickerFileType
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FilePickerFileType
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FilePickerFileType
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FilePickerFileType](#uid-dd70c9d7d8) | Represents a name mapped to the associated file types (extensions). |
+| [FilePickerFileType](#uid-dd70c9d7d8) | 表示一个名称以及与之关联的文件类型（扩展名）。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-dd70c9d7d8"></span>
 
-### FilePickerFileType Constructor
+### FilePickerFileType 构造函数 {#filepickerfiletype-constructor}
 
-Represents a name mapped to the associated file types (extensions).
+表示一个名称以及与之关联的文件类型（扩展名）。
 
 ```csharp
 public FilePickerFileType(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `name` string
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ToString](#uid-8ce8a2223b) | No summary available. |
+| [ToString](#uid-8ce8a2223b) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8ce8a2223b"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AppleUniformTypeIdentifiers](#uid-30268f70de) | List of extensions in Apple uniform format. |
-| [MimeTypes](#uid-a6dc321d73) | List of extensions in MIME format. |
-| [Name](#uid-1f66aca370) | File type name. |
+| [MimeTypes](#uid-a6dc321d73) | 以 MIME 格式给出的扩展名列表。 |
+| [Name](#uid-1f66aca370) | 文件类型名称。 |
 | [Patterns](#uid-42b7c026bf) | List of extensions in GLOB format. I.e. "*.png" or "*.*". |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-30268f70de"></span>
 
-### AppleUniformTypeIdentifiers Property
+### AppleUniformTypeIdentifiers 属性 {#appleuniformtypeidentifiers-property}
 
 List of extensions in Apple uniform format.
 
@@ -127,7 +127,7 @@ List of extensions in Apple uniform format.
 public System.Collections.Generic.IReadOnlyList<string> AppleUniformTypeIdentifiers { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Used only on Apple devices.
 See https://developer.apple.com/documentation/uniformtypeidentifiers/system_declared_uniform_type_identifiers.
@@ -138,15 +138,15 @@ See https://developer.apple.com/documentation/uniformtypeidentifiers/system_decl
 
 <span id="uid-a6dc321d73"></span>
 
-### MimeTypes Property
+### MimeTypes 属性 {#mimetypes-property}
 
-List of extensions in MIME format.
+以 MIME 格式给出的扩展名列表。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<string> MimeTypes { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Used on Android, Linux and Browser platforms.
 
@@ -156,9 +156,9 @@ Used on Android, Linux and Browser platforms.
 
 <span id="uid-1f66aca370"></span>
 
-### Name Property
+### Name 属性 {#name-property}
 
-File type name.
+文件类型名称。
 
 ```csharp
 public string Name { get; set; }
@@ -170,7 +170,7 @@ public string Name { get; set; }
 
 <span id="uid-42b7c026bf"></span>
 
-### Patterns Property
+### Patterns 属性 {#patterns-property}
 
 List of extensions in GLOB format. I.e. "*.png" or "*.*".
 
@@ -178,7 +178,7 @@ List of extensions in GLOB format. I.e. "*.png" or "*.*".
 public System.Collections.Generic.IReadOnlyList<string> Patterns { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Used on Windows, Linux and Browser platforms.
 

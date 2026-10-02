@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">NavigatedToEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Page/NavigatedToEventArgs.cs">NavigatedToEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Page/NavigatedToEventArgs.cs">NavigatedToEventArgs.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.Page.NavigatedTo](xref:Avalonia.Controls.Page.NavigatedTo) event.
+为 [Avalonia.Controls.Page.NavigatedTo](xref:Avalonia.Controls.Page.NavigatedTo) 事件提供数据。
 
 </div>
 
@@ -54,56 +54,56 @@ public class NavigatedToEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> NavigatedToEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> NavigatedToEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [NavigatedToEventArgs](#uid-1328a76043) | Initializes a new instance of the [Avalonia.Controls.NavigatedToEventArgs](xref:Avalonia.Controls.NavigatedToEventArgs) class. |
+| [NavigatedToEventArgs](#uid-1328a76043) | 初始化 [Avalonia.Controls.NavigatedToEventArgs](xref:Avalonia.Controls.NavigatedToEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1328a76043"></span>
 
-### NavigatedToEventArgs Constructor
+### NavigatedToEventArgs 构造函数 {#navigatedtoeventargs-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.NavigatedToEventArgs](xref:Avalonia.Controls.NavigatedToEventArgs) class.
+初始化 [Avalonia.Controls.NavigatedToEventArgs](xref:Avalonia.Controls.NavigatedToEventArgs) 类的新实例。
 
 ```csharp
 public NavigatedToEventArgs(Avalonia.Controls.Page previousPage, Avalonia.Controls.NavigationType navigationType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `previousPage` [Avalonia.Controls.Page](xref:Avalonia.Controls.Page)
 
-The page that was active before this navigation, or for the root page.
+本次导航之前处于活动状态的那个页面；若是根页面则为 null。
 
 
 `navigationType` [Avalonia.Controls.NavigationType](xref:Avalonia.Controls.NavigationType)
 
-The type of navigation that triggered this event.
+触发该事件的导航类型。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [NavigationType](#uid-c13412353f) | Gets the type of navigation that triggered this event. |
-| [PreviousPage](#uid-91752c6d3e) | Gets the page that was active before this navigation. |
+| [NavigationType](#uid-c13412353f) | 获取触发该事件的导航类型。 |
+| [PreviousPage](#uid-91752c6d3e) | 获取本次导航之前处于活动状态的那个页面。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c13412353f"></span>
 
-### NavigationType Property
+### NavigationType 属性 {#navigationtype-property}
 
-Gets the type of navigation that triggered this event.
+获取触发该事件的导航类型。
 
 ```csharp
 public Avalonia.Controls.NavigationType NavigationType { get; set; }
@@ -115,9 +115,9 @@ public Avalonia.Controls.NavigationType NavigationType { get; set; }
 
 <span id="uid-91752c6d3e"></span>
 
-### PreviousPage Property
+### PreviousPage 属性 {#previouspage-property}
 
-Gets the page that was active before this navigation.
+获取本次导航之前处于活动状态的那个页面。
 
 ```csharp
 public Avalonia.Controls.Page PreviousPage { get; set; }

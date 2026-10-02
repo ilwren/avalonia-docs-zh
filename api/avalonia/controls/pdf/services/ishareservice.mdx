@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IShareService Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Services</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Services</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -48,9 +48,9 @@ public interface IShareService
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ShareAsync](#uid-ee9f4512a4) | Shares the document using the system share dialog. |
 | [ShareFileAsync](#uid-7f3b4683d2) | Shares a file using the system share dialog. |
@@ -59,7 +59,7 @@ public interface IShareService
 
 <span id="uid-ee9f4512a4"></span>
 
-### ShareAsync Method
+### ShareAsync 方法 {#shareasync-method}
 
 Shares the document using the system share dialog.
 
@@ -67,7 +67,7 @@ Shares the document using the system share dialog.
 public System.Threading.Tasks.Task ShareAsync(Avalonia.Controls.Pdf.Core.IPdfDocument document, Avalonia.Controls.Pdf.Services.ShareOptions options, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `document` [Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Avalonia.Controls.Pdf.Core.IPdfDocument)
 
@@ -76,15 +76,15 @@ The document to share.
 
 `options` [Avalonia.Controls.Pdf.Services.ShareOptions](xref:Avalonia.Controls.Pdf.Services.ShareOptions)
 
-Share options.
+共享选项。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -95,7 +95,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-7f3b4683d2"></span>
 
-### ShareFileAsync Method
+### ShareFileAsync 方法 {#sharefileasync-method}
 
 Shares a file using the system share dialog.
 
@@ -103,7 +103,7 @@ Shares a file using the system share dialog.
 public System.Threading.Tasks.Task ShareFileAsync(string filePath, Avalonia.Controls.Pdf.Services.ShareOptions options, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `filePath` string
 
@@ -112,24 +112,24 @@ Path to the file to share.
 
 `options` [Avalonia.Controls.Pdf.Services.ShareOptions](xref:Avalonia.Controls.Pdf.Services.ShareOptions)
 
-Share options.
+共享选项。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsSupported](#uid-718300922e) | Gets whether sharing is supported on the current platform. |
 
@@ -137,7 +137,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-718300922e"></span>
 
-### IsSupported Property
+### IsSupported 属性 {#issupported-property}
 
 Gets whether sharing is supported on the current platform.
 

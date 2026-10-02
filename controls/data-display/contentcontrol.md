@@ -1,44 +1,44 @@
 ---
 id: contentcontrol
 title: ContentControl
-description: A base control that displays a single piece of content, which can be a string, a control, or a data-bound object rendered through a data template.
+description: 一个基础控件，用于显示单块内容：可以是字符串、控件，也可以是经数据模板渲染的绑定对象。
 doc-type: reference
 ---
 
 import ControlContentStudentScreenshot from '/img/controls/contentcontrol/contentcontrol-student.png';
 
-[`ContentControl`](/api/avalonia/controls/contentcontrol) is a control that displays a single piece of content. The content can be a string, a control, or a data-bound object rendered through a `DataTemplate`. Many common Avalonia controls, including `Button`, `Window`, and `UserControl`, inherit from `ContentControl`, so understanding how it works is fundamental to building Avalonia applications.
+[`ContentControl`](/api/avalonia/controls/contentcontrol) 是一个显示单块内容的控件。内容可以是字符串、控件，也可以是经 `DataTemplate` 渲染的绑定对象。Avalonia 中许多常用控件都继承自 `ContentControl`，包括 `Button`、`Window` 和 `UserControl`，所以弄懂它的运作方式是构建 Avalonia 应用的基本功。
 
-## Common properties
+## 常用属性 {#common-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Content` | The content to display in the control. |
-| `ContentTemplate` | A `DataTemplate` used to render the `Content` object. |
-| `HorizontalContentAlignment` | Controls how the content is aligned horizontally within the control. |
-| `VerticalContentAlignment` | Controls how the content is aligned vertically within the control. |
+| `Content` | 要在控件中显示的内容。 |
+| `ContentTemplate` | 用于渲染 `Content` 对象的 `DataTemplate`。 |
+| `HorizontalContentAlignment` | 控制内容在控件内的水平对齐方式。 |
+| `VerticalContentAlignment` | 控制内容在控件内的垂直对齐方式。 |
 
-## Displaying content
+## 显示内容 {#displaying-content}
 
-At its simplest, a `ContentControl` displays the data you assign to its [`Content`](/api/avalonia/controls/contentcontrol#content-property) property.
+最简单的情形下，`ContentControl` 直接显示你赋给它 [`Content`](/api/avalonia/controls/contentcontrol#content-property) 属性的数据。
 
-For example:
+例如：
 
 ```xml
 <ContentControl Content="Hello World!"/>
 ```
 
-This displays the string "Hello World!". Because `Content` is the control's default (content) property, you can also write:
+这会显示字符串「Hello World!」。由于 `Content` 是该控件的默认（内容）属性，你也可以写成：
 
 ```xml
 <ContentControl>Hello World!</ContentControl>
 ```
 
-### Hosting a child control
+### 承载子控件 {#hosting-a-child-control}
 
-If you assign a control to a `ContentControl`, it renders that control directly:
+如果你把一个控件赋给 `ContentControl`，它就会直接渲染那个控件：
 
 ```xml
 <ContentControl>
@@ -46,7 +46,7 @@ If you assign a control to a `ContentControl`, it renders that control directly:
 </ContentControl>
 ```
 
-A `ContentControl` can hold only one direct child. If you need to display multiple elements, wrap them in a layout panel such as a `StackPanel` or `Grid`:
+`ContentControl` 只能容纳一个直接子元素。要显示多个元素，请把它们装进 `StackPanel`、`Grid` 之类的布局面板：
 
 ```xml
 <ContentControl>
@@ -57,9 +57,9 @@ A `ContentControl` can hold only one direct child. If you need to display multip
 </ContentControl>
 ```
 
-### Displaying content with templates
+### 用模板呈现内容 {#displaying-content-with-templates}
 
-`ContentControl` becomes especially useful when you combine it with data binding and data templates. By setting the `ContentTemplate` property, you control how a bound data object is rendered visually. For example, given the following view models:
+`ContentControl` 与数据绑定、数据模板搭配时尤其好用。设置 `ContentTemplate` 属性，就能掌控一个绑定的数据对象如何呈现。比如有下面这些视图模型：
 
 ```csharp
 namespace Example
@@ -89,9 +89,9 @@ namespace Example
 }
 ```
 
-> Note: The following examples assume an instance of `MainWindowViewModel` is assigned to the window's `DataContext`. See [the section on `DataContext`](/docs/data-binding/data-context) for more information.
+> 注意：下面的示例都假定窗口的 `DataContext` 已被赋为一个 `MainWindowViewModel` 实例。详情请参阅 [`DataContext` 一节](/docs/data-binding/data-context)。
 
-You can display the student's first and last name in a `ContentControl` using the `ContentTemplate` property:
+借助 `ContentTemplate` 属性，你可以在 `ContentControl` 中显示这名学生的姓和名：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui">
@@ -112,11 +112,11 @@ You can display the student's first and last name in a `ContentControl` using th
 
 <Image light={ControlContentStudentScreenshot} alt="Student first and last name" position="center" maxWidth={400} cornerRadius="true" />
 
-For more information, see the [data templates](/docs/data-templates/introduction-to-data-templates) page.
+更多内容请参阅[数据模板](/docs/data-templates/introduction-to-data-templates)页面。
 
-### Switching content dynamically
+### 动态切换内容 {#switching-content-dynamically}
 
-Because `Content` is a bindable property, you can swap what a `ContentControl` displays at runtime. This pattern is commonly used for view-based navigation, where you bind a view model to `Content` and use data templates (or a `ViewLocator`) to resolve the appropriate view:
+由于 `Content` 是可绑定属性，你可以在运行时随时更换 `ContentControl` 所显示的东西。基于视图的导航常用这一招：把视图模型绑定到 `Content`，再用数据模板（或 `ViewLocator`）解析出对应的视图：
 
 ```xml
 <ContentControl Content="{Binding CurrentPage}">
@@ -131,14 +131,14 @@ Because `Content` is a bindable property, you can swap what a `ContentControl` d
 </ContentControl>
 ```
 
-When your view model changes `CurrentPage` from a `HomeViewModel` to a `SettingsViewModel`, the `ContentControl` automatically renders the matching view.
+当视图模型把 `CurrentPage` 从 `HomeViewModel` 换成 `SettingsViewModel` 时，`ContentControl` 会自动渲染出匹配的视图。
 
-If you want an animated transition when the content changes, consider using [`TransitioningContentControl`](/controls/data-display/transitioningcontentcontrol) instead.
+若希望内容切换时带过渡动画，可以考虑改用 [`TransitioningContentControl`](/controls/data-display/transitioningcontentcontrol)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [ContentControl API reference](/api/avalonia/controls/contentcontrol)
-- [`ContentControl.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContentControl.cs)
-- [Data templates](/docs/data-templates/introduction-to-data-templates)
+- [ContentControl API 参考](/api/avalonia/controls/contentcontrol)
+- [GitHub 上的 `ContentControl.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ContentControl.cs)
+- [数据模板](/docs/data-templates/introduction-to-data-templates)
 - [`TransitioningContentControl`](/controls/data-display/transitioningcontentcontrol)
-- [Data binding](/docs/data-binding/data-context)
+- [数据绑定](/docs/data-binding/data-context)

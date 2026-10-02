@@ -1,123 +1,112 @@
 ---
 id: data-binding-syntax
-title: Data binding syntax
-description: Reference for Avalonia data binding markup syntax including paths, modes, converters, and fallback values.
+title: 数据绑定语法
+description: Avalonia 数据绑定标记语法参考，涵盖路径、模式、转换器与回退值。
 doc-type: reference
 ---
 
 import DataBindingModeDiagram from '/img/concepts/data-concepts/data-binding-syntax/data-binding-mode.png';
 
-Avalonia supports creating data bindings in XAML and code. Data bindings in XAML are typically created with the
-`Binding` [`MarkupExtension`](/api/avalonia/markup/xaml/markupextension) described by this document. To create data bindings in code,
-see [How to bind from code](/docs/data-binding/binding-from-code).
+Avalonia 支持在 XAML 和代码中创建数据绑定。XAML 中的数据绑定一般用 `Binding` [`MarkupExtension`](/api/avalonia/markup/xaml/markupextension) 创建，也就是本文要讲的内容。若想在代码中创建数据绑定，请见[如何在代码中创建绑定](/docs/data-binding/binding-from-code)。
 
-## Data binding `MarkupExtension`
+## 数据绑定 `MarkupExtension` {#data-binding-markupextension}
 
-The `Binding` `MarkupExtension` uses the keyword `Binding` in combination with optional parameters to define the data
-source and other options, as shown in the following example:
+`Binding` `MarkupExtension` 以关键字 `Binding` 开头，再搭配若干可选参数来指定数据源和其他选项，如下例所示：
 
 ```xml
 <SomeControl SomeProperty="{Binding Path, Mode=ModeValue, StringFormat=Pattern}" />
 ```
 
-| Parameter             | Description                                                                       |
+| 参数             | 说明                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------|
-| `Path`                | The name of the source property to bind to.                                       |
-| `Mode`                | The synchronization direction of the binding.                                     |
-| `Priority`            | Priority of the property setter.                                                  |
-| `Source`              | The object that contains the `Path`-specified property.                           |
-| `ElementName`         | Uses a named `Control` as the `Source`.                                           |
-| `RelativeSource`      | Uses a relative `Control` within the visual tree hierarchy as the `Source`.       |
-| `StringFormat`        | A pattern to format the property value as a string.                               |
-| `Converter`           | An `IValueConverter` that converts the source value to the target value and back. |
-| `ConverterParameter`  | A parameter to supply to the `Converter`.                                         |
-| `FallbackValue`       | Sets a value when the binding cannot be created or cannot produce a value.        |
-| `TargetNullValue`     | Sets a value when the source property contains a `null` value.                    |
-| [`UpdateSourceTrigger`](/api/avalonia/data/updatesourcetrigger) | Triggers a source property update when a predefined condition happens.            |
-| `Delay`               | Sets a delay before the binding target is updated after the source value changes. |
+| `Path`                | 要绑定的源属性名称。                                       |
+| `Mode`                | 绑定的数据同步方向。                                     |
+| `Priority`            | 属性赋值的优先级。                                                  |
+| `Source`              | 包含 `Path` 所指属性的那个对象。                           |
+| `ElementName`         | 以某个具名 `Control` 作为 `Source`。                                           |
+| `RelativeSource`      | 以视觉树层级中某个相对位置的 `Control` 作为 `Source`。       |
+| `StringFormat`        | 把属性值格式化为字符串所用的模式。                               |
+| `Converter`           | 负责在源值与目标值之间双向转换的 `IValueConverter`。 |
+| `ConverterParameter`  | 传给 `Converter` 的参数。                                         |
+| `FallbackValue`       | 当绑定无法建立、或无法产生值时所使用的值。        |
+| `TargetNullValue`     | 当源属性的值为 `null` 时所使用的值。                    |
+| [`UpdateSourceTrigger`](/api/avalonia/data/updatesourcetrigger) | 在满足预定义条件时触发源属性更新。            |
+| `Delay`               | 源值变化后，延迟多久再更新绑定目标。 |
 
-You must set these parameters at the time of binding creation. They are CLR properties that cannot
-be set or updated by additional bindings.
+这些参数必须在创建绑定时就设定好。它们是 CLR 属性，无法再由其他绑定来设置或更新。
 
-## Data binding path
+## 数据绑定路径 {#data-binding-path}
 
-The first parameter specified is usually the `Path`. This is the name of a property in the `Source` (`DataContext` by default) 
-that Avalonia locates when creating the binding.
+第一个参数通常就是 `Path`，即 `Source`（默认为 `DataContext`）中某个属性的名称，Avalonia 在创建绑定时会去定位它。
 
-You can omit `Path=` when it is the first parameter. The following two bindings are equivalent:
+当 `Path=` 作为第一个参数出现时可以省略不写。下面两种写法等价：
 
 ```xml
 <TextBlock Text="{Binding Name}"/>
 <TextBlock Text="{Binding Path=Name}"/>
 ```
 
-The binding path can be a single property or a subproperty chain. For example, if the data source has 
-a `Student` property and the object returned by that property has a property `Name`, then you can bind to the student's 
-name using syntax like this:
+绑定路径可以是单个属性，也可以是一串子属性。举例来说，如果数据源有个 `Student` 属性，而该属性返回的对象又有个 `Name` 属性，那么可以这样绑定到学生的姓名：
 
 ```xml
 <TextBlock Text="{Binding Student.Name}"/>
 ```
 
-If the data source can be indexed (such as an array or list), then you can add the index to the binding path like this:
+如果数据源支持索引（比如数组或列表），可以把索引写进绑定路径：
 
 ```xml
 <TextBlock Text="{Binding Students[0].Name}"/>
 ```
 
-### Null conditional operator
+### null 条件运算符 {#null-conditional-operator}
 
-Use the `?.` operator in a binding path to safely navigate through properties that may be `null`. If any segment in the path is `null`, the binding produces a `null` value instead of throwing an exception:
+在绑定路径中使用 `?.` 运算符，可以安全地穿过那些可能为 `null` 的属性。路径中任意一段为 `null` 时，绑定产生一个 `null` 值，而不会抛出异常：
 
 ```xml
 <TextBlock Text="{Binding SelectedStudent?.Address?.City}"/>
 ```
 
-This is equivalent to C#'s null conditional operator. Without `?.`, a `null` `SelectedStudent` would produce a binding error.
+它等同于 C# 的 null 条件运算符。若不写 `?.`，当 `null` 时 `SelectedStudent` 就会产生一个绑定错误。
 
-## Empty binding path
+## 空绑定路径 {#empty-binding-path}
 
-You can specify data bindings without a `Path`. This binds to the `DataContext` of the control itself (where you define the binding). These two syntaxes are equivalent:
+数据绑定也可以不写 `Path`，此时绑定的是声明该绑定的控件自身的 `DataContext`。下面两种写法等价：
 
 ```xml
 <TextBlock Text="{Binding}" />
 <TextBlock Text="{Binding .}" />
 ```
 
-## Data binding mode
+## 数据绑定模式 {#data-binding-mode}
 
-You can change the direction(s) data is synchronized by specifying the `Mode`.
+通过指定 `Mode` 可以改变数据同步的方向。
 
 <Image light={DataBindingModeDiagram} alt="Diagram showing data binding mode directions between source and target" position="center" maxWidth={400} cornerRadius="true"/>
 <br/><br/>
 
-For example:
+例如：
 
 ```xml
 <TextBlock Text="{Binding Name, Mode=OneTime}" />
 ```
 
-The available binding modes are:
+可用的绑定模式如下：
 
-| Mode             | Description                                                                                                               |
+| 模式             | 说明                                                                                                               |
 |------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `OneWay`         | Changes in the data source propagate to the binding target.                                                               |
-| `TwoWay`         | Changes in the data source propagate to the binding target and vice-versa.                                                |
-| `OneTime`        | The value from the data source is propagated once to the binding target. The binding re-evaluates if the `DataContext` changes, but subsequent property changes on the same source are ignored. |
-| `OneWayToSource` | Changes in the binding target propagate to the data source, but not the other way.                                        |
-| `Default`        | The binding mode is based on a default mode defined in the code for the property. See below.                              |
+| `OneWay`         | 数据源的变化会传播到绑定目标。                                                               |
+| `TwoWay`         | 数据源的变化会传播到绑定目标，反之亦然。                                                |
+| `OneTime`        | 数据源的值只向绑定目标传播一次。`DataContext` 变化时绑定会重新求值，但同一数据源上后续的属性变化会被忽略。 |
+| `OneWayToSource` | 绑定目标的变化会传播到数据源，反向则不会。                                        |
+| `Default`        | 采用该属性在代码中定义的默认模式，详见下文。                              |
 
-When no `Mode` is specified, the `Default` is used. For a control property that does not change value due to user interaction, 
-the default mode is generally `OneWay`. For a control property that does change value due to user input, the default mode 
-is usually `TwoWay`.
+未指定 `Mode` 时采用 `Default`。对于不会因用户交互而改变取值的控件属性，默认模式一般是 `OneWay`；而对于会因用户输入而改变取值的控件属性，默认模式通常是 `TwoWay`。
 
-For example, the default mode for a `TextBlock.Text` property is `OneWay`, and the default mode for a `TextBox.Text` property is `TwoWay`.
+举例来说，`TextBlock.Text` 属性的默认模式是 `OneWay`，而 `TextBox.Text` 属性的默认模式是 `TwoWay`。
 
-## Data binding sources
+## 数据绑定源 {#data-binding-sources}
 
-The `Source` specifies the root object instance that the `Path` is relative to. By default, this is the `DataContext` of the 
-containing `Control`. The most common scenario involves binding to another control using `ElementName` or `RelativeSource` 
-parameters or with their shorthand syntax as part of the `Path` (`#controlName` and `$parent[ControlType]` respectively).
+`Source` 指定 `Path` 所相对的根对象实例，默认是所在 `Control` 的 `DataContext`。最常见的场景是用 `ElementName` 或 `RelativeSource` 参数绑定到另一个控件，或者用它们在 `Path` 中的简写形式（分别是 `#controlName` 和 `$parent[ControlType]`）。
 
 ```xml
 <TextBox Name="input" />
@@ -130,52 +119,45 @@ parameters or with their shorthand syntax as part of the `Path` (`#controlName` 
 ```
 
 :::info
-For more details on how to bind to controls, see [How To Bind to a Control](/docs/data-binding/binding-to-controls)
+关于如何绑定到控件的更多细节，请见[如何绑定到控件](/docs/data-binding/binding-to-controls)
 :::
 
-## Converting bound values
+## 转换绑定值 {#converting-bound-values}
 
-Bindings offer multiple approaches to convert or substitute the value supplied by a data binding into a type or value 
-that is more appropriate for the target property.
+绑定提供了多种办法，把数据绑定送来的值转换或替换成更适合目标属性的类型或取值。
 
-### String formatting
+### 字符串格式化 {#string-formatting}
 
-You can apply a pattern to a `OneWay` binding to format the bound source property as text via the `StringFormat` 
-parameter which uses `string.Format` internally.
+可以给 `OneWay` 绑定设置 `StringFormat` 参数，用一个模式把绑定的源属性格式化成文本；该参数内部使用的是 `string.Format`。
 
-The pattern index is zero-based and must be inside curly braces. When the curly braces are at the beginning of 
-the pattern, even when also inside single quotes, they must be escaped. Escaping is done by adding an empty pair 
-of curly braces at the front of the pattern or a backslash on each brace.
+模式中的索引从 0 开始，且必须写在花括号里。当花括号位于模式开头时必须转义 —— 即便它同时被包在单引号中也一样。转义方式是在模式最前面加一对空花括号，或者给每个花括号加一个反斜杠。
 
 ```xml
 <TextBlock Text="{Binding FloatProperty, StringFormat={}{0:0.0}}" />
 ```
 
-Alternatively, you can use backslashes to escape the curly brackets needed for the pattern. For example:
+也可以用反斜杠来转义模式所需的花括号。例如：
 
 ```xml
 <TextBlock Text="{Binding FloatProperty, StringFormat=\{0:0.0\}}" />
 ```
 
-However, if your pattern does not start with a zero, you do not need the escape. Also, if you have whitespace in 
-your pattern, you must surround it with single quotes. For example:
+不过，如果模式不是以 0 开头，就不需要转义。另外，模式中若含有空白字符，必须用单引号把它包起来。例如：
 
 ```xml
 <TextBlock Text="{Binding Animals.Count, StringFormat='I have {0} animals.'}" />
 ```
 
-Notice that this means that if your pattern starts with the value that you are binding, then you do need the 
-escape. For example:
+换句话说，只要模式是以你绑定的那个值打头，就得转义。例如：
 
 ```xml
 <TextBlock Text="{Binding Animals.Count, 
     StringFormat='{}{0} animals live in the farm.'}" />
 ```
 
-### String formatting with multiple parameters
+### 带多个参数的字符串格式化 {#string-formatting-with-multiple-parameters}
 
-You can use `MultiBinding` to format a string that requires multiple bound parameters. The following example formats multiple
-numeric inputs as a single string to display.
+需要格式化多个绑定参数时，可以用 `MultiBinding`。下面的例子把多个数值输入拼成一个字符串显示出来。
 
 ```xml
 <StackPanel Spacing="8">
@@ -195,55 +177,50 @@ numeric inputs as a single string to display.
 </StackPanel>
 ```
 
-`FormatString` is used internally by `NumericUpDown` to change how its value is displayed. Here, because RGB colors are 
-integers, we should not display the decimal portion so `0.` is supplied as a custom numeric format specifier 
-that .NET understands.
+`NumericUpDown` 内部用 `FormatString` 来调整取值的显示方式。这里因为 RGB 颜色都是整数，不应显示小数部分，所以传入 .NET 认识的自定义数字格式说明符 `0.`。
 
-If the values for the inputs are `red = 100`, `green = 80`, and `blue = 255`, then the text displayed will 
-be `(r: 100, g: 80, b: 255)`.
+若三个输入的值分别为 `red = 100`、`green = 80` 和 `blue = 255`，则显示出来的文本是 `(r: 100, g: 80, b: 255)`。
 
 :::tip
-An alternative is to use an `InlineCollection` of `Run` elements each with their own single parameter 
-binding. This allows visual customization of each segment.
+另一种办法是用一组 `InlineCollection`，其中每个 `Run` 各自带一个单参数绑定。这样每一段的外观都能单独定制。
 :::
 
-### Built-in conversions
+### 内置转换 {#built-in-conversions}
 
-Avalonia has a range of built-in data binding converters. These include:
+Avalonia 提供了一系列内置的数据绑定转换器，包括：
 
-* Null-testing converters
-* Boolean operation converters
+* null 判定类转换器
+* 布尔运算类转换器
 
 :::info
-For a listing of Avalonia built-in data binding converters, see the [built-in data binding converters reference](/docs/data-binding/built-in-data-binding-converters).
+Avalonia 内置数据绑定转换器的完整清单，请见[内置数据绑定转换器参考](/docs/data-binding/built-in-data-binding-converters)。
 :::
 
-### Custom conversions
+### 自定义转换 {#custom-conversions}
 
-If the built-in converters do not meet your requirements, then you can create a custom converter by implementing `IValueConverter`.
+如果内置转换器满足不了需求，可以实现 `IValueConverter` 来创建自定义转换器。
 
 :::info
-For guidance on how to create a custom converter, see [How to create a custom data binding converter](/docs/data-binding/how-to-create-a-custom-data-binding-converter).
+自定义转换器的具体写法，请见[如何创建自定义数据绑定转换器](/docs/data-binding/how-to-create-a-custom-data-binding-converter)。
 :::
 
 ### FallbackValue
 
-`FallbackValue` is used when the property binding cannot be made or when a converter returns `AvaloniaProperty.UnsetValue`.
+当属性绑定无法建立、或转换器返回 `AvaloniaProperty.UnsetValue` 时，就会使用 `FallbackValue`。
 
-A common use case is when a parent property in a subproperty binding is `null`. If `Student` is `null` in the following example, the `FallbackValue` is used:
+一个常见场景是子属性绑定中的父级属性为 `null`。在下面的例子里，若 `Student` 为 `null`，则使用 `FallbackValue`：
 
 ```xml
 <TextBlock Text="{Binding Student.Name, FallbackValue=Cannot find name}"/>
 ```
 
 :::tip
-`ReflectionBinding` can bind to arbitrary types without regard to compile-time safety. When the binding cannot be made, 
-`FallbackValue` may be useful to substitute a value.
+`ReflectionBinding` 可以绑定到任意类型，不受编译期安全检查的约束。当绑定无法建立时，用 `FallbackValue` 顶上会很有用。
 :::
 
 ### `TargetNullValue`
 
-When a binding to a property is successfully created and the property value is `null`, you can use `TargetNullValue` to supply a specific value.
+当属性绑定成功建立、而属性值为 `null` 时，可以用 `TargetNullValue` 指定一个替代值。
 
 <XamlPreview>
 
@@ -260,9 +237,7 @@ When a binding to a property is successfully created and the property value is `
 
 ## `UpdateSourceTrigger`
 
-Controls like `TextBox` synchronize their `Text` binding to the source property on every keystroke by default. In
-some use cases, this may trigger a long-running task or undesirable validation. `UpdateSourceTrigger` lets you
-specify when synchronization should happen.
+像 `TextBox` 这类控件，默认每敲一个键就把 `Text` 绑定同步回源属性。某些场景下这会触发耗时任务或不必要的校验。`UpdateSourceTrigger` 让你自己决定何时同步。
 
 <XamlPreview>
 
@@ -284,32 +259,32 @@ specify when synchronization should happen.
 
 </XamlPreview>
 
-| UpdateSourceTrigger | Description                                                                                      |
+| UpdateSourceTrigger | 说明                                                                                      |
 |---------------------|--------------------------------------------------------------------------------------------------|
-| `Default`           | This currently defaults to `PropertyChanged`.                                                    |
-| `PropertyChanged`   | Updates the binding source immediately whenever the binding target property changes.             |
-| `LostFocus`         | Updates the binding source whenever the binding target element loses focus.                      |
-| `Explicit`          | Updates the binding source only when you call the `BindingExpressionBase.UpdateSource()` method. |
+| `Default`           | 目前默认为 `PropertyChanged`。                                                    |
+| `PropertyChanged`   | 绑定目标属性一变化，就立即更新绑定源。             |
+| `LostFocus`         | 绑定目标元素失去焦点时才更新绑定源。                      |
+| `Explicit`          | 仅在你调用 `BindingExpressionBase.UpdateSource()` 方法时才更新绑定源。 |
 
 ## `Delay`
 
-_Available since Avalonia 11.3_
+_自 Avalonia 11.3 起可用_
 
-The `Delay` parameter specifies a time (in milliseconds) to wait before the binding target is updated after the source value changes. Each time the source value changes, the delay timer resets. The target is only updated once the specified time has elapsed since the last change. This is commonly known as "debouncing."
+`Delay` 参数指定源值变化后要等待多久（单位：毫秒）再更新绑定目标。源值每变化一次，延时计时器就重新开始；只有距上次变化满了指定时长，目标才会更新。这种做法通常称为「防抖」。
 
-This is particularly useful for search-as-you-type scenarios, where you want to avoid triggering expensive operations (such as filtering or querying a service) on every keystroke.
+它在「边输入边搜索」这类场景中特别有用 —— 你不希望每敲一个键就触发一次昂贵的操作（比如筛选或请求服务）。
 
-### XAML usage
+### XAML 用法 {#xaml-usage}
 
 ```xml
 <TextBox Text="{Binding SearchText, Delay=300}" />
 ```
 
-In this example, the `SearchText` property on your view model is only updated 300 milliseconds after the user stops typing.
+在这个例子中，视图模型上的 `SearchText` 属性只会在用户停止输入 300 毫秒之后才更新。
 
-### Code usage
+### 代码用法 {#code-usage}
 
-When creating bindings in code, set the `Delay` property to a `TimeSpan`:
+在代码中创建绑定时，把 `Delay` 属性设为一个 `TimeSpan`：
 
 ```csharp
 var binding = new Binding("SearchText")
@@ -319,9 +294,9 @@ var binding = new Binding("SearchText")
 myTextBox.Bind(TextBox.TextProperty, binding);
 ```
 
-### Practical example
+### 实例演示 {#practical-example}
 
-The following example shows a search TextBox that waits 300ms after the user stops typing before updating the bound property. This prevents a search operation from running on every keystroke.
+下面的例子展示一个搜索用的 TextBox：它在用户停止输入 300 毫秒后才更新绑定的属性，避免每敲一个键都执行一次搜索。
 
 ```xml
 <StackPanel Spacing="8">
@@ -365,8 +340,8 @@ public class SearchViewModel : ObservableObject
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Data context](/docs/data-binding/data-context): Where the data binder gets the data object from.
-- [Compiled bindings](/docs/data-binding/compiled-bindings): Compile-time binding validation.
-- [How to create a custom data binding converter](/docs/data-binding/how-to-create-a-custom-data-binding-converter): Custom value converters.
+- [数据上下文](/docs/data-binding/data-context)：数据绑定器从何处取得数据对象。
+- [编译绑定](/docs/data-binding/compiled-bindings)：编译期的绑定校验。
+- [如何创建自定义数据绑定转换器](/docs/data-binding/how-to-create-a-custom-data-binding-converter)：自定义值转换器。

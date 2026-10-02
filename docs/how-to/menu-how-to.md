@@ -1,15 +1,15 @@
 ---
 id: menu-how-to
-title: "How to: Work with menus"
-description: Learn how to use the Menu, ContextMenu, and NativeMenu controls in Avalonia, including commands, keyboard shortcuts, dynamic items, checked items, submenus, and right-click context menus.
+title: "操作指南：使用菜单"
+description: 学会使用 Avalonia 的 Menu、ContextMenu 和 NativeMenu 控件，内容涵盖命令、键盘快捷键、动态菜单项、可勾选菜单项、子菜单以及右键上下文菜单。
 doc-type: how-to
 ---
 
-This guide covers [`Menu`](/controls/menus/menu) and [`ContextMenu`](/controls/menus/contextmenu) patterns in Avalonia, such as commands, keyboard shortcuts, dynamic menus, checked items, submenus, and right-click context menus.
+本指南介绍 Avalonia 中 [`Menu`](/controls/menus/menu) 和 [`ContextMenu`](/controls/menus/contextmenu) 的常见用法，比如命令、键盘快捷键、动态菜单、可勾选项、子菜单以及右键上下文菜单。
 
-## Basic menu bar
+## 基本菜单栏 {#basic-menu-bar}
 
-For a conventional menu bar, place a `Menu` inside a `DockPanel` docked to the top of your window.
+要做一条传统的菜单栏，请把 `Menu` 放进停靠在窗口顶部的 `DockPanel` 里。
 
 <XamlPreview>
 
@@ -85,19 +85,19 @@ public class RelayCommand : ICommand
 </XamlPreview>
 <br />
 
-:::tip Tips
-- This sample defines its own `RelayCommand` class to allow it to run as an in-browser preview. In your app, you can use the [`RelayCommand` attribute from CommunityToolkit.Mvvm](/docs/input-interaction/commanding).
-- The underscore before a letter defines the accelerator key (<kbd>Alt</kbd>+<kbd>key</kbd>). For example, `_File` lets a user press <kbd>Alt</kbd>+<kbd>F</kbd> to open the File menu.
-- Use a `Separator` between `MenuItem` entries to insert a visual divider and group related actions.
+:::tip 小贴士
+- 为了能在浏览器里预览，本示例自己定义了一个 `RelayCommand` 类。在你自己的应用里，可以改用 CommunityToolkit.Mvvm](/docs/input-interaction/commanding) 中的 [`RelayCommand` 特性。
+- 字母前面的下划线用来定义快捷键（<kbd>Alt</kbd>+<kbd>按键</kbd>）。例如写成 `_File`，用户按 <kbd>Alt</kbd>+<kbd>F</kbd> 就能打开「文件」菜单。
+- 在 `MenuItem` 条目之间插入 `Separator`，可以加一道分隔线，把相关的操作归拢到一起。
 :::
 
-## Menu with keyboard shortcuts
+## 带键盘快捷键的菜单 {#menu-with-keyboard-shortcuts}
 
-### Displaying shortcut hint text
+### 显示快捷键提示文字 {#displaying-shortcut-hint-text}
 
-Use `InputGesture` to display a shortcut hint next to a menu item.
+用 `InputGesture` 可以在菜单项旁边显示快捷键提示。
 
-Note that `InputGesture` only displays the text. For the shortcut to function, you must separately register the actual key binding that invokes the command.
+注意 `InputGesture` 只负责显示文字。要让快捷键真正起作用，你还得另外注册那个调用命令的按键绑定。
 
 <XamlPreview>
 
@@ -160,9 +160,9 @@ public class RelayCommand : ICommand
 
 </XamlPreview>
 
-### Creating the key binding
+### 创建按键绑定 {#creating-the-key-binding}
 
-To ensure the keyboard shortcut works even when the menu is closed, register the `KeyBinding` on the window or parent control.
+为了让快捷键在菜单关闭时也照样管用，请把 `KeyBinding` 注册到窗口或父控件上。
 
 ```xml
 <Window.KeyBindings>
@@ -172,12 +172,12 @@ To ensure the keyboard shortcut works even when the menu is closed, register the
 ```
 
 :::warning
-If you set `InputGesture` without a matching `KeyBinding`, the shortcut text appears in the menu, but pressing the key combination does nothing.
+若你设了 `InputGesture` 却没有配套的 `KeyBinding`，菜单里会显示快捷键文字，但按下组合键什么也不会发生。
 :::
 
-### Platform-aware shortcuts
+### 随平台而变的快捷键 {#platform-aware-shortcuts}
 
-You can make key bindings adapt to the target platform, e.g., <kbd>Cmd</kbd> replacing <kbd>Ctrl</kbd> on macOS. To do this, define different key bindings per platform, or use Avalonia's `KeyModifiers.Meta`.
+你可以让按键绑定随目标平台而变，比如在 macOS 上用 <kbd>Cmd</kbd> 代替 <kbd>Ctrl</kbd>。办法是为各平台分别定义按键绑定，或者使用 Avalonia 的 `KeyModifiers.Meta`。
 
 ```csharp
 var gesture = RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
@@ -185,9 +185,9 @@ var gesture = RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
     : new KeyGesture(Key.S, KeyModifiers.Control);
 ```
 
-## Menu with icons
+## 带图标的菜单 {#menu-with-icons}
 
-Add icons to your menu items using the `MenuItem.Icon` property. You can use `PathIcon` for a vector icon:
+用 `MenuItem.Icon` 属性为菜单项添加图标。矢量图标可以用 `PathIcon`：
 
 ```xml
 <MenuItem Header="Copy">
@@ -197,7 +197,7 @@ Add icons to your menu items using the `MenuItem.Icon` property. You can use `Pa
 </MenuItem>
 ```
 
-Or `Image` for a bitmap icon:
+位图图标则用 `Image`：
 
 ```xml
 <MenuItem Header="Copy">
@@ -208,12 +208,12 @@ Or `Image` for a bitmap icon:
 ```
 
 :::tip
-`PathIcon` scales cleanly at any DPI and is the recommended approach for most icons. Use `Image` only for complex artwork that cannot be drawn as a vector path.
+`PathIcon` 在任何 DPI 下都能干净地缩放，大多数图标都推荐这么做。只有矢量路径画不出来的复杂图稿才需要动用 `Image`。
 :::
 
-## Toggle menu items
+## 可切换的菜单项 {#toggle-menu-items}
 
-For menu items that toggle on and off, such as text formatting or word wrap, you can use a checkbox to indicate whether it is active. To do so, place a `CheckBox` inside `MenuItem.Icon`.
+对于文本格式、自动换行这类可开可关的菜单项，你可以用一个复选框来表示它当前是否处于开启状态。做法是把 `CheckBox` 放进 `MenuItem.Icon` 里。
 
 <Tabs>
 
@@ -258,7 +258,7 @@ public partial class MainViewModel : ViewModelBase
 
 </Tabs>
 
-An alternative approach is to bind a `PathIcon` to the same `IsWordWrapEnabled` property to create an icon that indicates when the toggle is active. 
+另一种做法是把 `PathIcon` 绑定到同一个 `IsWordWrapEnabled` 属性，用图标来指示开关是否开启。 
 
 ```xml
 <MenuItem Header="Word Wrap"
@@ -271,12 +271,12 @@ An alternative approach is to bind a `PathIcon` to the same `IsWordWrapEnabled` 
 ```
 
 :::tip
-If your menu item should act like a radio button, with only one item active out of a group of three or more, manage the state in your view model by deselecting the other options when one is selected.
+若你的菜单项要表现得像单选按钮——三个以上的选项中只有一个处于激活状态——请在视图模型里管理这个状态，选中一项时把其余的取消掉。
 :::
 
 ## Submenus
 
-Nest `MenuItem` elements to create submenus. Avalonia displays a flyout arrow and opens a child popup on hover.
+嵌套 `MenuItem` 元素即可做出子菜单。Avalonia 会显示一个浮出箭头，鼠标悬停时展开子弹出层。
 
 <XamlPreview>
 
@@ -345,13 +345,13 @@ public class RelayCommand : ICommand
 
 </XamlPreview>
 
-## Dynamic menus from a collection
+## 由集合生成的动态菜单 {#dynamic-menus-from-a-collection}
 
-Bind `ItemsSource` to generate menu items from a data collection. This can be used for recent files, window lists, plugin actions or similar dynamic functions.
+绑定 `ItemsSource` 即可由数据集合生成菜单项。最近文件、窗口列表、插件操作等动态功能都可以这么做。
 
-Below is an example that generates a list of recent files. An independent `Models/RecentFile.cs` class is used with an `ObservableCollection` in the main view model to create the collection, which can then be bound using `ItemContainerTheme` to map properties.
+下面这个例子生成了一份最近文件列表：先用一个独立的 `Models/RecentFile.cs` 类，再在主视图模型里用 `ObservableCollection` 构造出集合，之后就能用 `ItemContainerTheme` 绑定并映射各个属性。
 
-Note that the `ControlTheme` inside `ItemContainerTheme` must have its data type set to the `RecentFile` model.
+注意 `ItemContainerTheme` 里的 `ControlTheme` 必须把数据类型设成 `RecentFile` 模型。
 
 <Tabs>
 
@@ -424,7 +424,7 @@ public class RecentFile
 
 </Tabs>
 
-As an alternative to `ItemContainerTheme`, you can use `DataTemplates`:
+除了 `ItemContainerTheme`，你也可以改用 `DataTemplates`：
 
 ```xml
 <MenuItem Header="Recent Files" ItemsSource="{Binding RecentFiles}">
@@ -436,9 +436,9 @@ As an alternative to `ItemContainerTheme`, you can use `DataTemplates`:
 </MenuItem>
 ```
 
-### Showing an empty-state message
+### 显示空状态提示 {#showing-an-empty-state-message}
 
-Add a placeholder item that is displayed if the collection is empty:
+加一个占位项，在集合为空时显示出来：
 
 ```csharp
 public IEnumerable<object> RecentFilesOrPlaceholder =>
@@ -447,15 +447,15 @@ public IEnumerable<object> RecentFilesOrPlaceholder =>
         : new object[] { new MenuItem { Header = "(No recent files)", IsEnabled = false } };
 ```
 
-### Updating dynamic menus
+### 更新动态菜单 {#updating-dynamic-menus}
 
-In the above example, `RecentFiles` is an `ObservableCollection`, meaning it updates automatically whenever you add or remove items.
+上例中的 `RecentFiles` 是个 `ObservableCollection`，因此你增删项目时它会自动更新。
 
-If you need to replace an entire collection, raise `PropertyChanged` so the binding refreshes.
+若要整个替换集合，请引发 `PropertyChanged` 以便绑定刷新。
 
-## Context menu
+## 上下文菜单 {#context-menu}
 
-The `ContextMenu` property allows you to attach a context menu to another control. The menu opens when the user right-clicks, or performs an equivalent gesture.
+`ContextMenu` 属性让你能给另一个控件挂上上下文菜单。用户右键单击（或作出等效手势）时菜单就会弹出。
 
 <XamlPreview>
 
@@ -549,9 +549,9 @@ public class RelayCommand : ICommand
 
 </XamlPreview>
 
-### Passing the clicked item
+### 把被点击的项目传出去 {#passing-the-clicked-item}
 
-Use `CommandParameter` with a binding to pass the relevant item to your command.
+用 `CommandParameter` 配合绑定，把相关的项目传给你的命令。
 
 ```xml
 <ListBox.ContextMenu>
@@ -564,12 +564,12 @@ Use `CommandParameter` with a binding to pass the relevant item to your command.
 ```
 
 :::tip
-The `$parent[ListBox]` syntax walks up the visual tree to find the nearest `ListBox` ancestor. This is necessary because `ContextMenu` exists in a separate part of the tree from its placement target.
+`$parent[ListBox]` 语法会沿视觉树向上找到最近的 `ListBox` 祖先。之所以要这么写，是因为 `ContextMenu` 与它的宿主目标分处视觉树的不同位置。
 :::
 
-### Disabling items based on state
+### 按状态禁用菜单项 {#disabling-items-based-on-state}
 
-If your command implements `ICommand.CanExecute`, the `MenuItem` is automatically disabled when `CanExecute` returns `false`. With the `CommunityToolkit.Mvvm` source generators, you can also use the `[RelayCommand(CanExecute = ...)]` attribute.
+若你的命令实现了 `ICommand.CanExecute`，那么当 `CanExecute` 返回 `false` 时 `MenuItem` 会自动被禁用。若用上 `CommunityToolkit.Mvvm` 的源生成器，你还可以借助 `[RelayCommand(CanExecute = ...)]` 特性。
 
 ```csharp
 [RelayCommand(CanExecute = nameof(CanDelete))]
@@ -581,9 +581,9 @@ private void Delete(object item)
 private bool CanDelete(object item) => item is not null;
 ```
 
-### Context menu in code
+### 在代码中创建上下文菜单 {#context-menu-in-code}
 
-You can create or modify a context menu in code-behind:
+你也可以在代码隐藏中创建或修改上下文菜单：
 
 ```csharp
 var contextMenu = new ContextMenu
@@ -598,9 +598,9 @@ var contextMenu = new ContextMenu
 myControl.ContextMenu = contextMenu;
 ```
 
-## Opening and closing events
+## 打开与关闭事件 {#opening-and-closing-events}
 
-Handle menu lifecycle events to customize items at runtime or conditionally prevent the menu from opening:
+处理菜单的生命周期事件，即可在运行时调整菜单项，或者按条件阻止菜单弹出：
 
 ```xml title="XAML"
 <ContextMenu Opening="ContextMenu_Opening"
@@ -627,7 +627,7 @@ private void ContextMenu_Closing(object? sender, EventArgs e)
 
 ## `ContextFlyout` alternative
 
-Use `ContextFlyout` when you need richer content than a simple list of menu items. A context flyout can contain additional controls, allowing more complex customization.
+当你需要的内容比一列菜单项更丰富时，请改用 `ContextFlyout`。上下文浮出控件里可以放别的控件，定制空间更大。
 
 <XamlPreview>
 
@@ -654,12 +654,12 @@ Use `ContextFlyout` when you need richer content than a simple list of menu item
 <br />
 
 :::caution
-A control cannot have both a `ContextMenu` and a `ContextFlyout`. If you set both, only one will work.
+一个控件不能同时拥有 `ContextMenu` 和 `ContextFlyout`。两个都设的话，只有其中一个会生效。
 :::
 
 ## `NativeMenu` (macOS)
 
-On macOS, use [`NativeMenu`](/controls/menus/nativemenu) to integrate a native look with the system menu bar that appears at the top of the screen.
+在 macOS 上，请用 [`NativeMenu`](/controls/menus/nativemenu) 接入屏幕顶部的系统菜单栏，获得原生观感。
 
 ```xml
 <NativeMenu.Menu>
@@ -674,11 +674,11 @@ On macOS, use [`NativeMenu`](/controls/menus/nativemenu) to integrate a native l
 ```
 
 :::note
-`NativeMenu` is ignored on platforms other than macOS. You can safely include it without conditional compilation. On Windows and Linux, use the standard [`Menu`](/controls/menus/menu) instead.
+在 macOS 以外的平台上，`NativeMenu` 会被忽略，因此不必加条件编译也能放心写上。Windows 和 Linux 上请改用标准的 [`Menu`](/controls/menus/menu)。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Hotkeys](/docs/input-interaction/keyboard-and-hotkeys): Registering keyboard shortcuts and key bindings.
-- [Commanding](/docs/input-interaction/commanding): Using commands with controls.
-- [Data binding to commands](/docs/data-binding/binding-to-commands): Binding commands in MVVM patterns.
+- [快捷键](/docs/input-interaction/keyboard-and-hotkeys)：注册键盘快捷键与按键绑定。
+- [命令](/docs/input-interaction/commanding)：在控件上使用命令。
+- [把数据绑定到命令](/docs/data-binding/binding-to-commands)：在 MVVM 中绑定命令。

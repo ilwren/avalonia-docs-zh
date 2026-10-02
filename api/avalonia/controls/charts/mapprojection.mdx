@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">MapProjection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -54,29 +54,29 @@ public class MapProjection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> MapProjection
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> MapProjection
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [LatLonToScreen](#uid-1a7622a224) | No summary available. |
+| [LatLonToScreen](#uid-1a7622a224) | 暂无摘要。 |
 | [LatLonToViewport](#uid-09aad531a9) | Converts latitude/longitude to the intermediate viewport coordinates (0-200 x 0-100) using an equirectangular (plate carree) projection where longitude maps linearly to X and latitude maps linearly to Y. Unlike Mercator, spacing between parallels is uniform. |
-| [RadiusToScreen](#uid-2fa9e944c8) | No summary available. |
+| [RadiusToScreen](#uid-2fa9e944c8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1a7622a224"></span>
 
-### LatLonToScreen Method
+### LatLonToScreen 方法 {#latlontoscreen-method}
 
 ```csharp
 public Avalonia.Point LatLonToScreen(double latitude, double longitude, Avalonia.Rect chartArea, Nullable<Avalonia.Rect> mapBounds)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `latitude` double
 
@@ -90,7 +90,7 @@ public Avalonia.Point LatLonToScreen(double latitude, double longitude, Avalonia
 `mapBounds` Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -101,7 +101,7 @@ public Avalonia.Point LatLonToScreen(double latitude, double longitude, Avalonia
 
 <span id="uid-09aad531a9"></span>
 
-### LatLonToViewport Method
+### LatLonToViewport 方法 {#latlontoviewport-method}
 
 Converts latitude/longitude to the intermediate viewport coordinates (0-200 x 0-100)
 using an equirectangular (plate carree) projection where longitude maps linearly to X
@@ -111,7 +111,7 @@ and latitude maps linearly to Y. Unlike Mercator, spacing between parallels is u
 public Avalonia.Point LatLonToViewport(double latitude, double longitude)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `latitude` double
 
@@ -123,7 +123,7 @@ Latitude in degrees (-90 to 90).
 Longitude in degrees (-180 to 180).
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -136,13 +136,13 @@ Point in viewport coordinates.
 
 <span id="uid-2fa9e944c8"></span>
 
-### RadiusToScreen Method
+### RadiusToScreen 方法 {#radiustoscreen-method}
 
 ```csharp
 public double RadiusToScreen(double radiusDegrees, Avalonia.Rect chartArea, Nullable<Avalonia.Rect> mapBounds)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `radiusDegrees` double
 
@@ -153,16 +153,16 @@ public double RadiusToScreen(double radiusDegrees, Avalonia.Rect chartArea, Null
 `mapBounds` Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 double
 
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ViewportHeight](#uid-d08a4c94e8) | Standard intermediate viewport height used by GeoJSON parser. |
 | [ViewportWidth](#uid-ab8f8a998e) | Standard intermediate viewport width used by GeoJSON parser. |
@@ -171,7 +171,7 @@ double
 
 <span id="uid-d08a4c94e8"></span>
 
-### ViewportHeight Field
+### ViewportHeight 字段 {#viewportheight-field}
 
 Standard intermediate viewport height used by GeoJSON parser.
 
@@ -185,7 +185,7 @@ public double ViewportHeight
 
 <span id="uid-ab8f8a998e"></span>
 
-### ViewportWidth Field
+### ViewportWidth 字段 {#viewportwidth-field}
 
 Standard intermediate viewport width used by GeoJSON parser.
 

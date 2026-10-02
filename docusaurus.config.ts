@@ -5,6 +5,7 @@ import fs from 'fs';
 import redirects from './redirects/index';
 import tailwindPlugin from './plugins/tailwind-plugin';
 import plausiblePlugin from './plugins/plausible-plugin';
+const communityLinks = require('./plugins/community-links');
 import type { PluginOptions as LlmsTxtPluginOptions } from "@signalwire/docusaurus-plugin-llms-txt/public";
 
 const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
@@ -12,11 +13,25 @@ const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
 // `npm run start:light` sets this to leave the generated API reference out of local previews, so they compile much faster.
 const skipApi = process.env.DOCS_SKIP_API === '1';
 
+// 站点地址与基路径可由环境变量覆盖，便于部署到 GitHub Pages 等子路径环境。
+// DOCS_BASE_URL 必须以 '/' 结尾，例如 '/avalonia-docs-zh/'。
+const siteUrl = process.env.DOCS_SITE_URL ?? 'https://docs.avaloniaui.net';
+const rawBaseUrl = process.env.DOCS_BASE_URL ?? '/';
+const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const withBase = (path: string) => baseUrl + path.replace(/^[/]+/, '');
+// GitHub Pages 这类静态托管会把 /foo 301 到 /foo/，导致 api 页面里大量的相对链接
+// （<a href="control">）多算一层目录而 404。把 trailingSlash 设为 false 后，
+// Docusaurus 产出 foo.html 而不是 foo/index.html，相对链接即可正确解析。
+const trailingSlash = process.env.DOCS_TRAILING_SLASH
+  ? process.env.DOCS_TRAILING_SLASH === 'true'
+  : undefined;
+
 const config: Config = {
-  title: 'Avalonia Docs',
-  tagline: 'Developer Documentation Portal',
-  url: 'https://docs.avaloniaui.net',
-  baseUrl: '/',
+  title: 'Avalonia 中文文档',
+  tagline: '开发者文档门户',
+  url: siteUrl,
+  baseUrl,
+  trailingSlash,
   markdown: {
     mermaid: true,
   },
@@ -33,7 +48,7 @@ const config: Config = {
       attributes: {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/favicons/apple-touch-icon.png",
+        href: withBase("/favicons/apple-touch-icon.png"),
       },
     },
     {
@@ -42,7 +57,7 @@ const config: Config = {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/favicons/favicon-32x32.png",
+        href: withBase("/favicons/favicon-32x32.png"),
       },
     },
     {
@@ -51,7 +66,7 @@ const config: Config = {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: "/favicons/favicon-16x16.png",
+        href: withBase("/favicons/favicon-16x16.png"),
       },
     },
     {
@@ -59,14 +74,14 @@ const config: Config = {
       attributes: {
         rel: "shortcut icon",
         type: "image/x-icon",
-        href: "/favicons/favicon.ico",
+        href: withBase("/favicons/favicon.ico"),
       },
     },
     {
       tagName: "link",
       attributes: {
         rel: "manifest",
-        href: "/favicons/site.webmanifest",
+        href: withBase("/favicons/site.webmanifest"),
       },
     },
     {
@@ -74,7 +89,7 @@ const config: Config = {
       attributes: {
         rel: "mask-icon",
         color: "#ffffff",
-        href: "/favicons/safari-pinned-tab.svg",
+        href: withBase("/favicons/safari-pinned-tab.svg"),
       },
     },
     {
@@ -88,7 +103,7 @@ const config: Config = {
       tagName: "meta",
       attributes: {
         name: "msapplication-config",
-        content: "/favicons/browserconfig.xml",
+        content: withBase("/favicons/browserconfig.xml"),
       },
     },
   ],
@@ -105,6 +120,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [communityLinks],
           editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
           editLocalizedFiles: true,
           showLastUpdateAuthor: true,
@@ -236,6 +252,7 @@ gtag('consent', 'default', {
         path: 'controls',
         routeBasePath: 'controls',
         sidebarPath: './controls-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -249,6 +266,7 @@ gtag('consent', 'default', {
         path: 'xpf',
         routeBasePath: 'xpf',
         sidebarPath: './xpf-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -262,6 +280,7 @@ gtag('consent', 'default', {
         path: 'tools',
         routeBasePath: 'tools',
         sidebarPath: './tools-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -275,6 +294,7 @@ gtag('consent', 'default', {
         path: 'troubleshooting',
         routeBasePath: 'troubleshooting',
         sidebarPath: './troubleshooting-sidebar.ts',
+        remarkPlugins: [communityLinks],
         editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
         editLocalizedFiles: true,
         showLastUpdateAuthor: true,
@@ -315,7 +335,7 @@ gtag('consent', 'default', {
         routeBasePath: "api",
         disableVersioning: true,
         sidebarPath: require.resolve("./api-sidebars.ts"),
-        remarkPlugins: [[require("./plugins/apiref-xref"), { indexPath: "./dist/xref/12.1.3.xrefmap.json" }]],
+        remarkPlugins: [communityLinks, [require("./plugins/apiref-xref"), { indexPath: "./dist/xref/12.1.3.xrefmap.json" }]],
       },
     ]
   ],
@@ -350,59 +370,60 @@ gtag('consent', 'default', {
       },
       items: [
         {
-          label: 'Guides',
+          label: '开发指南',
           to: '/docs/welcome',
           activeBasePath: '/docs'
         },
         {
-          label: 'Controls',
+          label: '控件',
           to: '/controls',
           activeBasePath: '/controls'
         },
         {
-          label: 'Tools',
+          label: '工具',
           to: '/tools',
           activeBasePath: '/tools'
         },
-        {
-          label: 'APIs',
+        // 预览构建（DOCS_SKIP_API=1）不生成 API 参考，这时隐藏入口，避免死链。
+        ...(skipApi ? [] : [{
+          label: 'API 参考',
           to: '/api',
           activeBasePath: '/api'
-        },
+        }]),
         {
-          label: 'More',
+          label: '更多',
           items: [
             {
-              label: 'Troubleshooting',
+              label: '疑难排查',
               to: '/troubleshooting',
               activeBasePath: '/troubleshooting'
             },
             {
-              label: 'Community Translations',
+              label: '社区翻译',
               to: '/docs/community-translations',
               activeBasePath: '/docs/community-translations',
             },
             {
-              label: 'Enhanced Support',
+              label: '增强支持服务',
               href: 'https://avaloniaui.net/support?av_source=docs&av_medium=nav_link&av_content=support',
               target: '_blank',
               rel: null
             },
             {
-              label: 'Professional Services',
+              label: '专业服务',
               href: 'https://avaloniaui.net/services',
               target: '_blank',
               rel: null
             },
             {
-              href: 'https://github.com/AvaloniaUI/Avalonia/discussions',
-              label: 'GitHub Discussions',
+              href: 'https://github.com/ilwren/avalonia-docs-zh/discussions',
+              label: 'GitHub 讨论区（中文文档）',
               target: '_blank',
               rel: null,
             },
             {
               href: 'https://avaloniaui.net/blog',
-              label: 'Blog',
+              label: '博客',
               target: '_blank',
               rel: null,
             },

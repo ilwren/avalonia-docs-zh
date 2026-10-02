@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ImmediateDrawingContext Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/ImmediateDrawingContext.cs">ImmediateDrawingContext.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/ImmediateDrawingContext.cs">ImmediateDrawingContext.cs</a>
 </div>
 
 </div>
@@ -48,38 +48,38 @@ public class ImmediateDrawingContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ImmediateDrawingContext
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ImmediateDrawingContext
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../ioptionalfeatureprovider">IOptionalFeatureProvider</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../ioptionalfeatureprovider">IOptionalFeatureProvider</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Dispose](#uid-2d411e2b08) | Disposes of any resources held by the [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext). |
-| [DrawBitmap (2 overloads)](#uid-78ded9e840) | Draws an bitmap. |
-| [DrawEllipse](#uid-6a8d2f378f) | Draws an ellipse with the specified Brush and Pen. |
-| [DrawGlyphRun](#uid-8e52f9db3c) | Draws a glyph run. |
-| [DrawLine](#uid-8fe6821f2c) | Draws a line. |
-| [DrawRectangle (2 overloads)](#uid-22a0fbf526) | Draws a rectangle with the specified Brush and Pen. |
-| [FillRectangle](#uid-441055ae7b) | Draws a filled rectangle. |
-| [PushClip (2 overloads)](#uid-8a904d15d1) | Pushes a clip rectangle. |
-| [PushOpacity](#uid-303ee6ec70) | Pushes an opacity value. |
-| [PushOpacityMask](#uid-54458b5ed2) | Pushes an opacity mask. |
-| [PushPostTransform](#uid-4c5d73998c) | Pushes a matrix post-transformation. |
-| [PushPreTransform](#uid-8f56fb7622) | Pushes a matrix pre-transformation. |
-| [PushSetTransform](#uid-b2cf50e9d7) | Sets the current matrix transformation. |
-| [PushTransformContainer](#uid-0615f1cb5b) | Pushes a new transform context. |
-| [TryGetFeature](#uid-130ead2774) | No summary available. |
+| [DrawBitmap (2 overloads)](#uid-78ded9e840) | 绘制一幅位图。 |
+| [DrawEllipse](#uid-6a8d2f378f) | 用指定的 Brush 和 Pen 画一个椭圆。 |
+| [DrawGlyphRun](#uid-8e52f9db3c) | 绘制一段字形运行。 |
+| [DrawLine](#uid-8fe6821f2c) | 画一条直线。 |
+| [DrawRectangle (2 overloads)](#uid-22a0fbf526) | 用指定的 Brush 和 Pen 画一个矩形。 |
+| [FillRectangle](#uid-441055ae7b) | 画一个填充矩形。 |
+| [PushClip（2 个重载）](#uid-8a904d15d1) | 压入一个裁剪矩形。 |
+| [PushOpacity](#uid-303ee6ec70) | 压入一个不透明度值。 |
+| [PushOpacityMask](#uid-54458b5ed2) | 压入一个不透明度蒙版。 |
+| [PushPostTransform](#uid-4c5d73998c) | 压入一次矩阵后置变换。 |
+| [PushPreTransform](#uid-8f56fb7622) | 压入一次矩阵前置变换。 |
+| [PushSetTransform](#uid-b2cf50e9d7) | 设置当前的矩阵变换。 |
+| [PushTransformContainer](#uid-0615f1cb5b) | 压入一个新的变换上下文。 |
+| [TryGetFeature](#uid-130ead2774) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2d411e2b08"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 Disposes of any resources held by the [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext).
 
@@ -97,24 +97,24 @@ public void Dispose()
 
 <span id="uid-3d3799369b"></span>
 
-#### DrawBitmap Method
+#### DrawBitmap 方法 {#drawbitmap-method}
 
-Draws an bitmap.
+绘制一幅位图。
 
 ```csharp
 public void DrawBitmap(Avalonia.Media.Imaging.Bitmap source, Avalonia.Rect rect)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `source` [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)
 
-The bitmap.
+该位图。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the output to draw to.
+输出中要绘制到的那块矩形。
 
 
 </section>
@@ -123,29 +123,29 @@ The rect in the output to draw to.
 
 <span id="uid-1439393c76"></span>
 
-#### DrawBitmap Method
+#### DrawBitmap 方法 {#drawbitmap-method-1}
 
-Draws an image.
+绘制一幅图像。
 
 ```csharp
 public void DrawBitmap(Avalonia.Media.Imaging.Bitmap source, Avalonia.Rect sourceRect, Avalonia.Rect destRect)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `source` [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)
 
-The bitmap.
+该位图。
 
 
 `sourceRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the image to draw.
+图像中要绘制的那块矩形。
 
 
 `destRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the output to draw to.
+输出中要绘制到的那块矩形。
 
 
 </section>
@@ -154,24 +154,24 @@ The rect in the output to draw to.
 
 <span id="uid-6a8d2f378f"></span>
 
-### DrawEllipse Method
+### DrawEllipse 方法 {#drawellipse-method}
 
-Draws an ellipse with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个椭圆。
 
 ```csharp
 public void DrawEllipse(Avalonia.Media.IImmutableBrush brush, Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Point center, double radiusX, double radiusY)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `brush` [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The brush used to fill the ellipse, or `null` for no fill.
+填充椭圆所用的画刷；为 `null` 时不填充。
 
 
 `pen` [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The pen used to stroke the ellipse, or `null` for no stroke.
+描边椭圆所用的画笔；为 `null` 时不描边。
 
 
 `center` [Avalonia.Point](xref:Avalonia.Point)
@@ -181,18 +181,18 @@ The location of the center of the ellipse.
 
 `radiusX` double
 
-The horizontal radius of the ellipse.
+该椭圆的水平半径。
 
 
 `radiusY` double
 
-The vertical radius of the ellipse.
+该椭圆的垂直半径。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-The brush and the pen can both be null. If the brush is null, then no fill is performed.
-If the pen is null, then no stoke is performed. If both the pen and the brush are null, then the drawing is not visible.
+画刷和画笔都可以为 null。画刷为 null 时不作填充，
+画笔为 null 时不作描边；两者都为 null 时，这次绘制便什么也看不见。
 
 </section>
 
@@ -200,24 +200,24 @@ If the pen is null, then no stoke is performed. If both the pen and the brush ar
 
 <span id="uid-8e52f9db3c"></span>
 
-### DrawGlyphRun Method
+### DrawGlyphRun 方法 {#drawglyphrun-method}
 
-Draws a glyph run.
+绘制一段字形运行。
 
 ```csharp
 public void DrawGlyphRun(Avalonia.Media.IImmutableBrush foreground, Avalonia.Media.IImmutableGlyphRunReference glyphRun)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `foreground` [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The foreground brush.
+前景画刷。
 
 
 `glyphRun` [Avalonia.Media.IImmutableGlyphRunReference](xref:Avalonia.Media.IImmutableGlyphRunReference)
 
-The glyph run.
+该字形运行。
 
 
 </section>
@@ -226,64 +226,64 @@ The glyph run.
 
 <span id="uid-8fe6821f2c"></span>
 
-### DrawLine Method
+### DrawLine 方法 {#drawline-method}
 
-Draws a line.
+画一条直线。
 
 ```csharp
 public void DrawLine(Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Point p1, Avalonia.Point p2)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `pen` [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The stroke pen.
+描边所用的画笔。
 
 
 `p1` [Avalonia.Point](xref:Avalonia.Point)
 
-The first point of the line.
+线段的第一个点。
 
 
 `p2` [Avalonia.Point](xref:Avalonia.Point)
 
-The second point of the line.
+线段的第二个点。
 
 
 </section>
 
 <span id="uid-22a0fbf526"></span>
 
-### DrawRectangle overloads
+### DrawRectangle 的重载 {#drawrectangle-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-21c7802734"></span>
 
-#### DrawRectangle Method
+#### DrawRectangle 方法 {#drawrectangle-method}
 
-Draws a rectangle with the specified Brush and Pen.
+用指定的 Brush 和 Pen 画一个矩形。
 
 ```csharp
 public void DrawRectangle(Avalonia.Media.IImmutableBrush brush, Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Rect rect, double radiusX, double radiusY, Avalonia.Media.BoxShadows boxShadows)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `brush` [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The brush used to fill the rectangle, or `null` for no fill.
+填充矩形所用的画刷；为 `null` 时不填充。
 
 
 `pen` [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The pen used to stroke the rectangle, or `null` for no stroke.
+描边矩形所用的画笔；为 `null` 时不描边。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rectangle bounds.
+矩形边界。
 
 
 `radiusX` double
@@ -300,13 +300,13 @@ This value will be clamped to the range of 0 to Height/2
 
 `boxShadows` [Avalonia.Media.BoxShadows](xref:Avalonia.Media.BoxShadows)
 
-Box shadow effect parameters
+盒阴影效果的各项参数
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
-The brush and the pen can both be null. If the brush is null, then no fill is performed.
-If the pen is null, then no stoke is performed. If both the pen and the brush are null, then the drawing is not visible.
+画刷和画笔都可以为 null。画刷为 null 时不作填充，
+画笔为 null 时不作描边；两者都为 null 时，这次绘制便什么也看不见。
 
 </section>
 
@@ -314,29 +314,29 @@ If the pen is null, then no stoke is performed. If both the pen and the brush ar
 
 <span id="uid-4e09fb0989"></span>
 
-#### DrawRectangle Method
+#### DrawRectangle 方法 {#drawrectangle-method-1}
 
-Draws the outline of a rectangle.
+绘制矩形的轮廓。
 
 ```csharp
 public void DrawRectangle(Avalonia.Media.Immutable.ImmutablePen pen, Avalonia.Rect rect, float cornerRadius)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `pen` [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The pen.
+该画笔。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rectangle bounds.
+矩形边界。
 
 
 `cornerRadius` float
 
-The corner radius.
+圆角半径。
 
 
 </section>
@@ -345,61 +345,61 @@ The corner radius.
 
 <span id="uid-441055ae7b"></span>
 
-### FillRectangle Method
+### FillRectangle 方法 {#fillrectangle-method}
 
-Draws a filled rectangle.
+画一个填充矩形。
 
 ```csharp
 public void FillRectangle(Avalonia.Media.IImmutableBrush brush, Avalonia.Rect rect, float cornerRadius)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `brush` [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The brush.
+该画刷。
 
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rectangle bounds.
+矩形边界。
 
 
 `cornerRadius` float
 
-The corner radius.
+圆角半径。
 
 
 </section>
 
 <span id="uid-8a904d15d1"></span>
 
-### PushClip overloads
+### PushClip 的重载 {#pushclip-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8e732c87ea"></span>
 
-#### PushClip Method
+#### PushClip 方法 {#pushclip-method}
 
-Pushes a clip rectangle.
+压入一个裁剪矩形。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushClip(Avalonia.Rect clip)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `clip` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The clip rectangle.
+裁剪矩形。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the clip rectangle.
+一个可释放对象，用于撤销该裁剪矩形。
 
 
 </section>
@@ -408,18 +408,18 @@ A disposable used to undo the clip rectangle.
 
 <span id="uid-7498111f4c"></span>
 
-#### PushClip Method
+#### PushClip 方法 {#pushclip-method-1}
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushClip(Avalonia.RoundedRect clip)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `clip` [Avalonia.RoundedRect](xref:Avalonia.RoundedRect)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
@@ -430,19 +430,19 @@ public Avalonia.Media.ImmediateDrawingContext.PushedState PushClip(Avalonia.Roun
 
 <span id="uid-303ee6ec70"></span>
 
-### PushOpacity Method
+### PushOpacity 方法 {#pushopacity-method}
 
-Pushes an opacity value.
+压入一个不透明度值。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushOpacity(double opacity, Avalonia.Rect bounds)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `opacity` double
 
-The opacity.
+不透明度。
 
 
 `bounds` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -450,11 +450,11 @@ The opacity.
 The bounds.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the opacity.
+一个可释放对象，用于撤销该不透明度。
 
 
 </section>
@@ -463,19 +463,19 @@ A disposable used to undo the opacity.
 
 <span id="uid-54458b5ed2"></span>
 
-### PushOpacityMask Method
+### PushOpacityMask 方法 {#pushopacitymask-method}
 
-Pushes an opacity mask.
+压入一个不透明度蒙版。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushOpacityMask(Avalonia.Media.IImmutableBrush mask, Avalonia.Rect bounds)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `mask` [Avalonia.Media.IImmutableBrush](xref:Avalonia.Media.IImmutableBrush)
 
-The opacity mask.
+不透明度蒙版。
 
 
 `bounds` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -483,11 +483,11 @@ The opacity mask.
 The size of the brush's target area. TODO: Are we sure this is needed?
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable to undo the opacity mask.
+一个可释放对象，用于撤销该不透明度蒙版。
 
 
 </section>
@@ -496,26 +496,26 @@ A disposable to undo the opacity mask.
 
 <span id="uid-4c5d73998c"></span>
 
-### PushPostTransform Method
+### PushPostTransform 方法 {#pushposttransform-method}
 
-Pushes a matrix post-transformation.
+压入一次矩阵后置变换。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushPostTransform(Avalonia.Matrix matrix)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-The matrix
+该矩阵
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>
@@ -524,26 +524,26 @@ A disposable used to undo the transformation.
 
 <span id="uid-8f56fb7622"></span>
 
-### PushPreTransform Method
+### PushPreTransform 方法 {#pushpretransform-method}
 
-Pushes a matrix pre-transformation.
+压入一次矩阵前置变换。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushPreTransform(Avalonia.Matrix matrix)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-The matrix
+该矩阵
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>
@@ -552,26 +552,26 @@ A disposable used to undo the transformation.
 
 <span id="uid-b2cf50e9d7"></span>
 
-### PushSetTransform Method
+### PushSetTransform 方法 {#pushsettransform-method}
 
-Sets the current matrix transformation.
+设置当前的矩阵变换。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushSetTransform(Avalonia.Matrix matrix)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-The matrix
+该矩阵
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>
@@ -580,19 +580,19 @@ A disposable used to undo the transformation.
 
 <span id="uid-0615f1cb5b"></span>
 
-### PushTransformContainer Method
+### PushTransformContainer 方法 {#pushtransformcontainer-method}
 
-Pushes a new transform context.
+压入一个新的变换上下文。
 
 ```csharp
 public Avalonia.Media.ImmediateDrawingContext.PushedState PushTransformContainer()
 ```
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Media.ImmediateDrawingContext.PushedState](xref:Avalonia.Media.ImmediateDrawingContext.PushedState)
 
-A disposable used to undo the transformation.
+一个可释放对象，用于撤销该变换。
 
 
 </section>
@@ -601,36 +601,36 @@ A disposable used to undo the transformation.
 
 <span id="uid-130ead2774"></span>
 
-### TryGetFeature Method
+### TryGetFeature 方法 {#trygetfeature-method}
 
 ```csharp
 public object TryGetFeature(Type type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-15}
 
-`type` Type
+`type` 类型
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 object
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CurrentTransform](#uid-88abad79ed) | Gets the current transform of the drawing context. |
-| [PlatformImpl](#uid-b8d4c97fe8) | No summary available. |
+| [PlatformImpl](#uid-b8d4c97fe8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-88abad79ed"></span>
 
-### CurrentTransform Property
+### CurrentTransform 属性 {#currenttransform-property}
 
 Gets the current transform of the drawing context.
 
@@ -644,7 +644,7 @@ public Avalonia.Matrix CurrentTransform { get; set; }
 
 <span id="uid-b8d4c97fe8"></span>
 
-### PlatformImpl Property
+### PlatformImpl 属性 {#platformimpl-property}
 
 ```csharp
 public Avalonia.Platform.IDrawingContextImpl PlatformImpl { get; set; }

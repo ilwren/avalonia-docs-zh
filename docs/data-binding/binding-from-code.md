@@ -1,31 +1,31 @@
 ---
 id: binding-from-code
-title: How to bind from code
+title: 如何在代码中绑定
 doc-type: how-to
-description: Create and manage data bindings from C# code rather than XAML.
+description: 用 C# 代码而非 XAML 来创建和管理数据绑定。
 ---
 
-## Creating compiled bindings from code
+## 在代码中创建编译绑定 {#creating-compiled-bindings-from-code}
 
-The [`CompiledBinding.Create`](/api/avalonia/data/compiledbinding#create-method) method lets you create type-safe bindings using LINQ expressions. The expression is validated at compile time, so errors in property names produce compiler errors rather than silent runtime failures.
+[`CompiledBinding.Create`](/api/avalonia/data/compiledbinding#create-method) 方法让你能用 LINQ 表达式写出类型安全的绑定。表达式会在编译期接受校验，属性名写错会直接变成编译错误，而不是运行时悄悄失败。
 
-The method takes two generic parameters: the type of the [`DataContext`](/docs/data-binding/data-context) and the type of the property being selected. It then accepts a lambda expression to select the property to bind.
+该方法有两个泛型参数：[`DataContext`](/docs/data-binding/data-context) 的类型，以及所选属性的类型。随后它接受一个用于选取目标属性的 lambda 表达式。
 
-For example, if you have a control whose [`DataContext`](/docs/data-binding/data-context) is an instance of `MyViewModel`, and you want to select a `string Title { get; set; }` property from it, you would write:
+举例来说，若某控件的 [`DataContext`](/docs/data-binding/data-context) 是一个 `MyViewModel` 实例，而你想从中选取 `string Title { get; set; }` 属性，可以这样写：
 
 ```csharp
 var binding = CompiledBinding.Create<MyViewModel, string>(x => x.Title);
 ```
 
-Then to bind this to a control:
+然后把它绑定到控件上：
 
 ```csharp
 textBlock.Bind(TextBlock.TextProperty, binding);
 ```
 
-The [`CompiledBinding.Create`](/api/avalonia/data/compiledbinding#create-method) method takes various optional parameters to control the binding. 
+[`CompiledBinding.Create`](/api/avalonia/data/compiledbinding#create-method) 方法还有若干可选参数，用于调整绑定行为。 
 
-The following example selects a one-way binding from an explicit `viewModel` source (instead of using the data context):
+下面的例子从一个显式指定的 `viewModel` 源（而非数据上下文）选取一个单向绑定：
 
 ```csharp
 var binding = CompiledBinding.Create<MyViewModel, string>(
@@ -34,7 +34,7 @@ var binding = CompiledBinding.Create<MyViewModel, string>(
     mode: BindingMode.OneWay);
 ```
 
-The expression supports nested properties, indexers, and casts:
+表达式支持嵌套属性、索引器和类型转换：
 
 ```csharp
 // Nested property
@@ -47,7 +47,7 @@ CompiledBinding.Create<MyViewModel, bool>(
     mode: BindingMode.OneWay);
 ```
 
-You can also use it in object initializers:
+也可以写在对象初始化器里：
 
 ```csharp
 var textBlock = new TextBlock
@@ -57,20 +57,20 @@ var textBlock = new TextBlock
 };
 ```
 
-This approach gives you the same performance and safety benefits as XAML compiled bindings, but from C# code. See [Compiled Bindings](/docs/data-binding/compiled-bindings) for the XAML equivalent.
+这种写法能带来与 XAML 编译绑定同等的性能和安全性，只不过写在 C# 代码中。XAML 的对应写法见[编译绑定](/docs/data-binding/compiled-bindings)。
 
-## Subscribing to property changes
+## 订阅属性变化 {#subscribing-to-property-changes}
 
-You can subscribe to [`AvaloniaObject`](/api/avalonia/avaloniaobject) property changes by calling the [`GetObservable`](/api/avalonia/avaloniaobjectextensions#getobservable-method) extension method. This returns an [`IObservable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.iobservable-1?view=net-10.0) which can be used to listen for changes to the property:
+调用 [`GetObservable`](/api/avalonia/avaloniaobjectextensions#getobservable-method) 扩展方法即可订阅 [`AvaloniaObject`](/api/avalonia/avaloniaobject) 的属性变化。它返回一个 [`IObservable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.iobservable-1?view=net-10.0)，可用于监听该属性的变化：
 
 ```csharp
 var textBlock = new TextBlock();
 var text = textBlock.GetObservable(TextBlock.TextProperty);
 ```
 
-Each property that can be subscribed to has a static readonly field called `[PropertyName]Property` which is passed to `GetObservable` to subscribe to the property's changes.
+每个可供订阅的属性都有一个名为 `[PropertyName]Property` 的静态只读字段，把它传给 `GetObservable` 就能订阅该属性的变化。
 
-[`IObservable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.iobservable-1?view=net-10.0) (part of Reactive Extensions, or rx for short) is out of scope for this guide, but here's an example which uses the returned observable to print a message with the changing property values to the console:
+[`IObservable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.iobservable-1?view=net-10.0)（即 Reactive Extensions，简称 rx）不在本文讨论范围内，但这里给个例子：用返回的可观察序列把变化中的属性值打印到控制台。
 
 ```csharp
 var textBlock = new TextBlock();
@@ -78,13 +78,13 @@ var text = textBlock.GetObservable(TextBlock.TextProperty);
 text.Subscribe(value => Console.WriteLine(value + " Changed"));
 ```
 
-When the returned observable is subscribed, it will return the current value of the property immediately and then push a new value each time the property changes. If you don't want the current value, you can use the rx `Skip` operator:
+订阅返回的可观察序列时，它会立即推送该属性的当前值，之后每次属性变化再推送新值。如果不想要当前值，可以用 rx 的 `Skip` 运算符：
 
 ```csharp
 var text = textBlock.GetObservable(TextBlock.TextProperty).Skip(1);
 ```
 
-Alternatively, you can subscribe to the [`AvaloniaObject.PropertyChanged`](/api/avalonia/avaloniaobject#propertychanged-event) event, which fires whenever _any_ property changes on the element.
+另一种办法是订阅 [`AvaloniaObject.PropertyChanged`](/api/avalonia/avaloniaobject#propertychanged-event) 事件 —— 元素上_任何_属性发生变化时它都会触发。
 
 ```csharp
 textBlock.PropertyChanged += (s, e) =>
@@ -96,9 +96,9 @@ textBlock.PropertyChanged += (s, e) =>
 };
 ```
 
-## Binding to an observable
+## 绑定到可观察序列 {#binding-to-an-observable}
 
-You can bind a property to an observable using the [`AvaloniaObject.Bind`](/api/avalonia/avaloniaobject#bind-method-1) method:
+用 [`AvaloniaObject.Bind`](/api/avalonia/avaloniaobject#bind-method-1) 方法可以把属性绑定到一个可观察序列：
 
 ```csharp
 // We use an Rx Subject here so we can push new values using OnNext
@@ -117,15 +117,15 @@ source.OnNext("world!");
 subscription.Dispose();
 ```
 
-Notice that the `Bind` method returns an `IDisposable` which can be used to terminate the binding. If you never call this, then the binding will automatically terminate when the observable finishes via `OnCompleted` or `OnError`.
+注意 `Bind` 方法会返回一个 `IDisposable`，用它可以终止绑定。如果你一直不调用它，那么当可观察序列通过 `OnCompleted` 或 `OnError` 结束时，绑定会自动终止。
 
 :::note
-Unlike standard Avalonia bindings, observables do not use weak references, so you are responsible for controlling their lifetime and preventing leaks.
+与 Avalonia 的标准绑定不同，可观察序列不使用弱引用，因此生命周期管理和防泄漏得由你自己负责。
 :::
 
-## Setting a binding in an object initializer
+## 在对象初始化器中设置绑定 {#setting-a-binding-in-an-object-initializer}
 
-It is often useful to set up bindings in object initializers. You can do this using the indexer:
+在对象初始化器里搭好绑定往往很方便，用索引器即可：
 
 ```csharp
 var source = new Subject<string>();
@@ -137,35 +137,35 @@ var textBlock = new TextBlock
 };
 ```
 
-The indexer can be used outside of object initializers too:
+索引器在对象初始化器之外同样可用：
 
 ```csharp
 textBlock2[!TextBlock.TextProperty] = textBlock1[!TextBlock.TextProperty];
 ```
 
-The only downside of this syntax is that no `IDisposable` is returned. If you need to manually terminate the binding then you should use the `Bind` method.
+这种写法唯一的不足是拿不到 `IDisposable`。如果你需要手动终止绑定，就改用 `Bind` 方法。
 
-## Using reflection bindings from code
+## 在代码中使用反射绑定 {#using-reflection-bindings-from-code}
 
-To create a reflection binding from code:
+在代码中创建反射绑定的写法：
 
 ```csharp
 var binding = new ReflectionBinding("Name");
 ```
 
-For type-safe bindings that are validated at compile time, prefer [compiled bindings](#creating-compiled-bindings-from-code).
+若想要编译期即受校验的类型安全绑定，请优先选择[编译绑定](#creating-compiled-bindings-from-code)。
 
-## Subscribing to a property on any object
+## 订阅任意对象上的属性 {#subscribing-to-a-property-on-any-object}
 
-The `GetObservable` method returns an observable that tracks changes to a property on a single instance. However, if you're writing a control you may want to implement an `OnPropertyChanged` method which isn't tied to an instance of an object.
+`GetObservable` 方法返回的可观察序列只跟踪单个实例上的属性变化。但如果你是在写控件，可能想实现一个不绑定到具体实例的 `OnPropertyChanged` 方法。
 
-To do this you can subscribe to [`AvaloniaProperty.Changed`](/api/avalonia/avaloniaproperty) which is an observable which fires _every time the property is changed on any instance_.
+这时可以订阅 [`AvaloniaProperty.Changed`](/api/avalonia/avaloniaproperty) —— 它是一个可观察序列，_任何实例上该属性发生变化时_都会触发。
 
-> In WPF this is done by passing a static `PropertyChangedCallback` to the `DependencyProperty` registration method, but this only allows the control author to register a property changed callback.
+> 在 WPF 中，这是通过向 `DependencyProperty` 注册方法传入一个静态 `PropertyChangedCallback` 来实现的，但那种方式只允许控件作者注册属性变化回调。
 
-In addition there is an `AddClassHandler` extension method which can automatically route the event to a method on your control.
+此外还有一个 `AddClassHandler` 扩展方法，能自动把事件路由到你控件上的某个方法。
 
-For example if you want to listen to changes to your control's `Foo` property you'd do it like this:
+比如你想监听控件 `Foo` 属性的变化，可以这样写：
 
 ```csharp
 static MyControl()
@@ -179,9 +179,9 @@ private static void FooChanged(MyControl sender, AvaloniaPropertyChangedEventArg
 }
 ```
 
-## Inspecting active bindings
+## 查看生效中的绑定 {#inspecting-active-bindings}
 
-Use `BindingOperations.GetBindingExpressionBase` to retrieve the active binding expression on a property:
+用 `BindingOperations.GetBindingExpressionBase` 取出某个属性上正在生效的绑定表达式：
 
 ```csharp
 var expression = BindingOperations.GetBindingExpressionBase(myTextBlock, TextBlock.TextProperty);
@@ -191,11 +191,11 @@ if (expression is not null)
 }
 ```
 
-This is useful for diagnostics or for calling `UpdateSource()` when using `UpdateSourceTrigger.Explicit`.
+这在做诊断时很有用，使用 `UpdateSourceTrigger.Explicit` 时也可以借它调用 `UpdateSource()`。
 
-## Clearing bindings
+## 清除绑定 {#clearing-bindings}
 
-If you retained the `IDisposable` returned by `Bind`, dispose it to terminate the binding:
+如果你留住了 `Bind` 返回的 `IDisposable`，释放它即可终止绑定：
 
 ```csharp
 var subscription = textBlock.Bind(TextBlock.TextProperty, source);
@@ -204,15 +204,15 @@ var subscription = textBlock.Bind(TextBlock.TextProperty, source);
 subscription.Dispose();
 ```
 
-If you do not have the `IDisposable` (for example, when the binding was set through an object initializer or XAML), call `ClearValue` to remove the binding and revert the property to its next value in the [priority order](/docs/properties/value-precedence):
+如果手上没有 `IDisposable`（比如绑定是通过对象初始化器或 XAML 设置的），就调用 `ClearValue` 移除绑定，属性会回退到[优先级顺序](/docs/properties/value-precedence)中的下一个取值：
 
 ```csharp
 textBlock.ClearValue(TextBlock.TextProperty);
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): XAML binding syntax reference.
-- [Compiled Bindings](/docs/data-binding/compiled-bindings): Compile-time validated bindings.
-- [Binding Debugging](/docs/data-binding/binding-debugging): Diagnosing binding issues.
-- [Value Precedence](/docs/properties/value-precedence): How Avalonia resolves property values from multiple sources.
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：XAML 绑定语法参考。
+- [编译绑定](/docs/data-binding/compiled-bindings)：编译期受校验的绑定。
+- [调试数据绑定](/docs/data-binding/binding-debugging)：排查绑定问题。
+- [值优先级](/docs/properties/value-precedence)：Avalonia 如何在多个来源之间决定属性的最终取值。

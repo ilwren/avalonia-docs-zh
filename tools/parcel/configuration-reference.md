@@ -1,8 +1,8 @@
 ---
 id: configuration-reference
-title: Parcel configuration reference
-description: Reference for the general, .NET, Windows, macOS, and Linux settings stored in an Avalonia Parcel project.
-sidebar_label: Configuration reference
+title: Parcel 配置参考
+description: Avalonia Parcel 项目中通用、.NET、Windows、macOS 和 Linux 各项设置的参考。
+sidebar_label: 配置参考
 doc-type: reference
 tags:
   - avalonia plus
@@ -10,229 +10,229 @@ tags:
   - avalonia enterprise
 ---
 
-A `.parcel` file contains the settings that Parcel uses to publish, package, and sign an application. The file has five top-level sections: `GeneralSettings`, `PublishSettings`, `Win32Settings`, `MacOsSettings`, and `LinuxSettings`.
+`.parcel` 文件存放着 Parcel 用来发布、打包和签名应用的各项设置，共有五个顶层小节：`GeneralSettings`、`PublishSettings`、`Win32Settings`、`MacOsSettings` 和 `LinuxSettings`。
 
-Parcel resolves relative paths from the location of the `.parcel` file. If you use **Save As** or **Move To**, Parcel updates relative paths for the new project location.
+Parcel 以 `.parcel` 文件所在位置为基准解析相对路径。若你用了**另存为**或**移动到**，Parcel 会按新的项目位置更新相对路径。
 
-## Setting values
+## 设置取值 {#setting-values}
 
-For most scalar settings, you can specify a literal value, an environment variable, or an MSBuild property. In the GUI, select the value source next to the setting. Use environment variables for passwords, access tokens, and other secrets. Do not store secrets directly in a `.parcel` file.
+大多数标量设置既可以写字面值，也可以取环境变量或 MSBuild 属性。在图形界面中，可在设置项旁边选择取值来源。密码、访问令牌等机密请用环境变量，切勿直接存进 `.parcel` 文件。
 
-If the project does not define a supported setting, Parcel checks its automatic environment variable. The following tables give the exact variable names. Collection settings and structured-object settings do not have automatic environment-variable overrides.
+若项目中没有定义某个受支持的设置，Parcel 会去查它对应的自动环境变量。下面的表格给出了确切的变量名。集合类设置和结构化对象设置没有自动环境变量覆盖。
 
-The defaults in this reference describe the resulting package behavior. Parcel writes some defaults when it creates a project. It applies other defaults during packaging if a setting is empty.
+本参考中的默认值描述的是最终的打包行为。有些默认值是 Parcel 创建项目时写入的，另一些则是在打包时发现设置为空才套用的。
 
-## General settings
+## 通用设置 {#general-settings}
 
-These settings apply to every target platform. They appear on the **Basics** page.
+这些设置对所有目标平台都生效，位于 **Basics** 页。
 
-| Setting | `.parcel` property | Type or values | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型或取值 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Project | `GeneralSettings.NetProjectPath` | Path | Required | — | Path to the application `.csproj` file. Parcel manages this field. |
-| Package Name | `GeneralSettings.PackageName` | String | Assembly name | `PARCEL_GENERAL_PACKAGE_NAME` | Package identifier and output file name. Platform-specific normalization may apply. |
-| Assembly Name | `GeneralSettings.AssemblyName` | String | Project file name | `PARCEL_GENERAL_ASSEMBLY_NAME` | Name of the executable assembly. This advanced field is normally read from the .NET project. |
-| Application Name | `GeneralSettings.ApplicationName` | String | Package name | `PARCEL_GENERAL_APPLICATION_NAME` | Display name used by installers, bundles, shortcuts, and desktop entries. |
-| Version | `GeneralSettings.Version` | Version string | `1.0.0` | `PARCEL_GENERAL_VERSION` | Application and package version. Parcel converts it to the format required by each platform. |
-| Application Icon | `GeneralSettings.Icon` | Path to an icon | Parcel default icon | `PARCEL_GENERAL_ICON` | Shared application icon. A platform icon overrides it when configured. |
-| Company | `GeneralSettings.Company` | String | Package name where required | `PARCEL_GENERAL_COMPANY` | Sets the Windows publisher and Linux package maintainer unless a platform setting overrides it. Maximum 255 characters. |
-| File Associations | `GeneralSettings.FileTypes` | Collection | None | — | File types registered by supported installers and bundles. |
-| URL Schemes | `GeneralSettings.UrlTypes` | Collection | None | — | URL schemes registered by supported installers and bundles. |
+| Project | `GeneralSettings.NetProjectPath` | Path | Required | — | 应用 `.csproj` 文件的路径。该字段由 Parcel 维护。 |
+| Package Name | `GeneralSettings.PackageName` | String | 程序集名称 | `PARCEL_GENERAL_PACKAGE_NAME` | 包标识符和输出文件名。各平台可能会按自己的规则做规范化。 |
+| Assembly Name | `GeneralSettings.AssemblyName` | String | 项目文件名 | `PARCEL_GENERAL_ASSEMBLY_NAME` | 可执行程序集的名称。这是个高级字段，通常从 .NET 项目中读取。 |
+| Application Name | `GeneralSettings.ApplicationName` | String | 包名称 | `PARCEL_GENERAL_APPLICATION_NAME` | 安装程序、应用包、快捷方式和桌面项中使用的显示名称。 |
+| Version | `GeneralSettings.Version` | 版本字符串 | `1.0.0` | `PARCEL_GENERAL_VERSION` | 应用和包的版本。Parcel 会把它转换成各平台要求的格式。 |
+| Application Icon | `GeneralSettings.Icon` | 图标路径 | Parcel 默认图标 | `PARCEL_GENERAL_ICON` | 各平台共用的应用图标。若配置了平台专属图标，则以后者为准。 |
+| Company | `GeneralSettings.Company` | String | 需要时取包名称 | `PARCEL_GENERAL_COMPANY` | 设置 Windows 的发布者和 Linux 的包维护者，平台设置可覆盖它。最多 255 个字符。 |
+| File Associations | `GeneralSettings.FileTypes` | Collection | None | — | 由受支持的安装程序和应用包注册的文件类型。 |
+| URL Schemes | `GeneralSettings.UrlTypes` | Collection | None | — | 由受支持的安装程序和应用包注册的 URL 方案。 |
 
-### File associations <MinVersion version="1.1" isNewVersion="true" />
+### 文件关联 <MinVersion version="1.1" isNewVersion="true" /> {#file-associations}
 
-Each entry in `GeneralSettings.FileTypes` has the following properties:
+`GeneralSettings.FileTypes` 中的每一项都有以下属性：
 
-| Property | Type | Required | Description |
+| 属性 | 类型 | 必填 | 说明 |
 |---|---|---|---|
-| `GeneralSettings.FileTypes[].Name` | String | Yes | Human-readable file type name. |
-| `GeneralSettings.FileTypes[].Extension` | String | Extension or MIME type | Extension with or without a leading period. After normalization, it must contain 1–10 lowercase letters or digits. |
-| `GeneralSettings.FileTypes[].MimeType` | String | Extension or MIME type | MIME type such as `application/x-example`. Parcel generates one when Linux needs it and it is omitted. |
+| `GeneralSettings.FileTypes[].Name` | String | Yes | 供人阅读的文件类型名称。 |
+| `GeneralSettings.FileTypes[].Extension` | String | 扩展名或 MIME 类型 | 扩展名，带不带前导点都行。规范化之后必须是 1–10 个小写字母或数字。 |
+| `GeneralSettings.FileTypes[].MimeType` | String | 扩展名或 MIME 类型 | MIME 类型，比如 `application/x-example`。若 Linux 需要而你又没填，Parcel 会自动生成一个。 |
 
-Each entry in `GeneralSettings.UrlTypes` has the following properties:
+`GeneralSettings.UrlTypes` 中的每一项都有以下属性：
 
-| Property | Type | Required | Description |
+| 属性 | 类型 | 必填 | 说明 |
 |---|---|---|---|
-| `GeneralSettings.UrlTypes[].Name` | String | Yes | Human-readable name for the URL type. |
-| `GeneralSettings.UrlTypes[].Schemes` | String | Yes | One or more RFC 3986 schemes without `://`, separated by commas, semicolons, or spaces. |
+| `GeneralSettings.UrlTypes[].Name` | String | Yes | 供人阅读的 URL 类型名称。 |
+| `GeneralSettings.UrlTypes[].Schemes` | String | Yes | 一个或多个不含 `://` 的 RFC 3986 方案，用逗号、分号或空格分隔。 |
 
-Parcel adds associations to NSIS and MSIX packages on Windows, application bundles on macOS, and DEB and RPM desktop entries on Linux.
+Parcel 会把这些关联写进 Windows 上的 NSIS 和 MSIX 包、macOS 上的应用包，以及 Linux 上 DEB 和 RPM 的桌面项。
 
-On Windows, file association requires an extension. Windows cannot register an entry that contains only a MIME type.
+在 Windows 上，文件关联必须有扩展名；只给 MIME 类型的条目 Windows 注册不了。
 
-On macOS, associations require `MacOsSettings.CreateBundle`.
+在 macOS 上，关联需要 `MacOsSettings.CreateBundle`。
 
-## .NET publish settings
+## .NET 发布设置 {#net-publish-settings}
 
-These settings control the `dotnet publish` operation Parcel runs before packaging.
+这些设置控制 Parcel 在打包之前执行的 `dotnet publish` 操作。
 
-| Setting | `.parcel` property | Type | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Configuration | `PublishSettings.Configuration` | String | .NET project default | `PARCEL_NET_CONFIGURATION` | Build configuration. It must begin with a letter and contain only letters, digits, `_`, or `-`. |
-| Publish Single File | `PublishSettings.PublishSingleFile` | Boolean | Enabled for new Parcel projects | `PARCEL_NET_PUBLISH_SINGLE_FILE` | Publishes managed assemblies in a single executable. |
-| Publish Trimmed | `PublishSettings.PublishTrimmed` | Boolean | .NET project default | `PARCEL_NET_PUBLISH_TRIMMED` | Enables trimming to reduce the package size. Testing the trimmed application is recommended. |
-| Publish AOT | `PublishSettings.PublishAot` | Boolean | .NET project default | `PARCEL_NET_PUBLISH_AOT` | Enables Native AOT compilation. |
-| Publish ReadyToRun | `PublishSettings.PublishReadyToRun` | Boolean | .NET project default | `PARCEL_NET_PUBLISH_READY_TO_RUN` | Precompiles assemblies to improve startup performance. |
-| Publish Self-Contained | `PublishSettings.PublishSelfContained` | Boolean | `true` | `PARCEL_NET_PUBLISH_SELF_CONTAINED` | Includes the .NET runtime. This advanced field is not shown in the GUI. |
-| MSBuild Properties | `PublishSettings.ExtraBuildProperties` | String dictionary | Empty | — | Additional properties passed to `dotnet publish`. |
-| Exclude Files | `PublishSettings.ExcludeFilePatterns` | List of glob patterns | Empty | — | Removes matching files and directories from the published output before packaging. |
+| 配置 | `PublishSettings.Configuration` | String | 以 .NET 项目为准 | `PARCEL_NET_CONFIGURATION` | 构建配置。必须以字母开头，且只能含字母、数字、`_` 或 `-`。 |
+| Publish Single File | `PublishSettings.PublishSingleFile` | Boolean | 新建的 Parcel 项目默认启用 | `PARCEL_NET_PUBLISH_SINGLE_FILE` | 把托管程序集发布进单个可执行文件。 |
+| Publish Trimmed | `PublishSettings.PublishTrimmed` | Boolean | 以 .NET 项目为准 | `PARCEL_NET_PUBLISH_TRIMMED` | 启用裁剪以减小包体积。建议对裁剪后的应用做一遍测试。 |
+| Publish AOT | `PublishSettings.PublishAot` | Boolean | 以 .NET 项目为准 | `PARCEL_NET_PUBLISH_AOT` | 启用 Native AOT 编译。 |
+| Publish ReadyToRun | `PublishSettings.PublishReadyToRun` | Boolean | 以 .NET 项目为准 | `PARCEL_NET_PUBLISH_READY_TO_RUN` | 预编译程序集以改善启动性能。 |
+| 发布为自包含 | `PublishSettings.PublishSelfContained` | Boolean | `true` | `PARCEL_NET_PUBLISH_SELF_CONTAINED` | 把 .NET 运行时一并打包。这是个高级字段，图形界面中不显示。 |
+| MSBuild Properties | `PublishSettings.ExtraBuildProperties` | 字符串字典 | Empty | — | 传给 `dotnet publish` 的额外属性。 |
+| Exclude Files | `PublishSettings.ExcludeFilePatterns` | glob 模式列表 | Empty | — | 打包前把发布输出中匹配的文件和目录删掉。 |
 
 :::note
-Parcel respects .NET publish properties defined in the *.csproj file. There is no need to duplicate them in the Parcel config.
+Parcel 会遵循 *.csproj 文件中定义的 .NET 发布属性，不必在 Parcel 配置里再写一遍。
 :::
 
-## Windows settings
+## Windows 设置 {#windows-settings}
 
-### Installer and MSIX
+### 安装程序与 MSIX {#installer-and-msix}
 
-| Setting | `.parcel` property | Type | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Installer Icon | `Win32Settings.InstallerIcon` | Path to ICO or SVG | Application Icon | `PARCEL_WINDOWS_INSTALLER_ICON` | Overrides the shared icon for the NSIS installer and generated MSIX assets. |
-| Create Company Folder | `Win32Settings.CompanyFolder` | Boolean | `false` | `PARCEL_WINDOWS_COMPANY_FOLDER` | Adds a company directory to the NSIS installation and Start Menu paths. |
-| License File | `Win32Settings.InstallerLicense` | Path to TXT or RTF | None | `PARCEL_WINDOWS_INSTALLER_LICENSE` | Displays a license acceptance page in the NSIS installer. |
-| Requires Admin | `Win32Settings.InstallerRequiresAdmin` | Boolean | `true` | `PARCEL_WINDOWS_INSTALLER_REQUIRES_ADMIN` | Installs NSIS packages under Program Files with elevation. When disabled, installs for the current user. |
-| Include uninstaller with the app | `Win32Settings.IncludeUninstaller` | Boolean | `true` | `PARCEL_WINDOWS_INCLUDE_UNINSTALLER` | Includes an NSIS uninstaller and registers the application in Windows installed-app listings. |
-| Publisher | `Win32Settings.MsixPublisher` | Distinguished name | Company or application name | `PARCEL_WINDOWS_MSIX_PUBLISHER` | MSIX publisher identity. For signed packages, it must exactly match the certificate subject. |
+| Installer Icon | `Win32Settings.InstallerIcon` | ICO 或 SVG 的路径 | Application Icon | `PARCEL_WINDOWS_INSTALLER_ICON` | 为 NSIS 安装程序和生成的 MSIX 资产覆盖共用图标。 |
+| Create Company Folder | `Win32Settings.CompanyFolder` | Boolean | `false` | `PARCEL_WINDOWS_COMPANY_FOLDER` | 在 NSIS 的安装路径和开始菜单路径中加一层公司目录。 |
+| License File | `Win32Settings.InstallerLicense` | TXT 或 RTF 的路径 | None | `PARCEL_WINDOWS_INSTALLER_LICENSE` | 在 NSIS 安装程序中显示许可协议接受页。 |
+| Requires Admin | `Win32Settings.InstallerRequiresAdmin` | Boolean | `true` | `PARCEL_WINDOWS_INSTALLER_REQUIRES_ADMIN` | 以提权方式把 NSIS 包装到 Program Files 下。禁用时则为当前用户安装。 |
+| 随应用一并提供卸载程序 | `Win32Settings.IncludeUninstaller` | Boolean | `true` | `PARCEL_WINDOWS_INCLUDE_UNINSTALLER` | 附带 NSIS 卸载程序，并把应用注册到 Windows 的已安装应用列表中。 |
+| Publisher | `Win32Settings.MsixPublisher` | 可分辨名称 | 公司名或应用名 | `PARCEL_WINDOWS_MSIX_PUBLISHER` | MSIX 发布者标识。对已签名的包，它必须与证书主题一字不差。 |
 
 ### Signing
 
-`Win32Settings.SigningType` accepts `None`, `LocalCertificate`, `WindowsCertificateStore`, `AzureTrustedSigning`, `AzureKeyVault`, `AwsKeyManagementService`, `DigiCert`, `GoogleKeyManagementService`, or `ESigner`. The GUI names `AzureTrustedSigning` **Azure Artifact Signing**.
+`Win32Settings.SigningType` 接受 `None`、`LocalCertificate`、`WindowsCertificateStore`、`AzureTrustedSigning`、`AzureKeyVault`、`AwsKeyManagementService`、`DigiCert`、`GoogleKeyManagementService` 或 `ESigner`。图形界面中把 `AzureTrustedSigning` 称作 **Azure Artifact Signing**。
 
-| Setting | `.parcel` property | Type | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Signing Type | `Win32Settings.SigningType` | Signing type | `None` | `PARCEL_WINDOWS_SIGNING_TYPE` | Selects the Authenticode signing provider. |
-| Sign Installer | `Win32Settings.SignInstaller` | Boolean | `true` | `PARCEL_WINDOWS_SIGN_INSTALLER` | Signs the generated NSIS or MSIX package and the application files. Disable it when a store or later pipeline signs the package. |
-| Additional signing patterns | `Win32Settings.AdditionalSignPatterns` | List of glob patterns | Empty | — | Includes additional code files in application signing. |
-| Timestamp Server URL | `Win32Settings.SigningTimestampServer` | URL | None | `PARCEL_WINDOWS_SIGNING_TIMESTAMP_SERVER` | Timestamp authority used with a local certificate or the Windows certificate store. |
-| Local Signing Certificate File | `Win32Settings.LocalSigningCertificate` | Path to PFX or P12 | Required for local certificate | `PARCEL_WINDOWS_LOCAL_SIGNING_CERTIFICATE` | Certificate and private key used for local signing. |
-| Local Signing Certificate Password | `Win32Settings.LocalSigningCertificatePassword` | Secret string | Empty | `PARCEL_WINDOWS_LOCAL_SIGNING_CERTIFICATE_PASSWORD` | Password protecting the local certificate. |
-| Store Certificate Name | `Win32Settings.StoreCertificateName` | String | Required for certificate store | `PARCEL_WINDOWS_STORE_CERTIFICATE_NAME` | Certificate subject or thumbprint in the Windows certificate store. |
-| Use Local Machine Certificate Store | `Win32Settings.UseLocalMachineCertificateStore` | Boolean | `false` | `PARCEL_WINDOWS_USE_LOCAL_MACHINE_CERTIFICATE_STORE` | Searches Local Machine instead of Current User. Windows only. |
-| Auto-Detect Matching Certificate | `Win32Settings.AutoDetectMatchingCertificate` | Boolean | `false` | `PARCEL_WINDOWS_AUTO_DETECT_MATCHING_CERTIFICATE` | Allows SignTool to choose a matching certificate. Windows only. |
-| Azure Artifact Signing Endpoint | `Win32Settings.TrustedSigningEndpoint` | Azure signing URL | Required | `PARCEL_WINDOWS_TRUSTED_SIGNING_ENDPOINT` | Azure Artifact Signing service endpoint. |
-| Azure Artifact Signing Certificate Profile Name | `Win32Settings.TrustedSigningCertificateProfileName` | String | Required | `PARCEL_WINDOWS_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME` | Azure Artifact Signing certificate profile. |
-| Azure Artifact Signing Account Name | `Win32Settings.TrustedSigningCodeSigningAccountName` | String | Required | `PARCEL_WINDOWS_TRUSTED_SIGNING_CODE_SIGNING_ACCOUNT_NAME` | Azure Artifact Signing account. |
-| Azure Key Vault Name | `Win32Settings.AzureKeyVaultName` | String | Required unless URL identifies it | `PARCEL_WINDOWS_AZURE_KEY_VAULT_NAME` | Azure Key Vault name. |
-| Azure Key Vault URL | `Win32Settings.AzureKeyVaultUrl` | Absolute HTTP(S) URL | Public Azure endpoint | `PARCEL_WINDOWS_AZURE_KEY_VAULT_URL` | Full vault URL, including sovereign-cloud endpoints. |
-| Azure Key Vault Certificate Name | `Win32Settings.AzureKeyVaultCertificateName` | String | Required | `PARCEL_WINDOWS_AZURE_KEY_VAULT_CERTIFICATE_NAME` | Certificate stored in Azure Key Vault. |
-| AWS Region Code | `Win32Settings.AwsSigningRegionCode` | String | Required | `PARCEL_WINDOWS_AWS_SIGNING_REGION_CODE` | AWS region containing the signing key. |
-| AWS Signing Certificate File | `Win32Settings.AwsSigningCertificateFile` | Path | Required | `PARCEL_WINDOWS_AWS_SIGNING_CERTIFICATE_FILE` | Certificate corresponding to the private key in AWS KMS. |
-| AWS Signing Key ID or Alias | `Win32Settings.AwsSigningKeyIdOrAlias` | String | Required | `PARCEL_WINDOWS_AWS_SIGNING_KEY_ID_OR_ALIAS` | AWS KMS key identifier or alias. |
-| DigiCert API Key | `Win32Settings.DigiCertApiKey` | Secret string | Required | `PARCEL_WINDOWS_DIGI_CERT_API_KEY` | DigiCert ONE API key. |
-| DigiCert Keystore | `Win32Settings.DigiCertKeystore` | Path to PKCS#12 | Required | `PARCEL_WINDOWS_DIGI_CERT_KEYSTORE` | Client-authentication keystore. |
-| DigiCert Storepass | `Win32Settings.DigiCertStorepass` | Secret string | Required | `PARCEL_WINDOWS_DIGI_CERT_STOREPASS` | Password for the DigiCert keystore. |
-| DigiCert Certificate Name or ID | `Win32Settings.DigiCertCertificateNameOrId` | String | Required | `PARCEL_WINDOWS_DIGI_CERT_CERTIFICATE_NAME_OR_ID` | Certificate name or ID in DigiCert ONE. |
-| DigiCert Host | `Win32Settings.DigiCertHost` | HTTP(S) URL | US DigiCert ONE host | `PARCEL_WINDOWS_DIGI_CERT_HOST` | Overrides the DigiCert ONE service host. |
-| Google Access Token | `Win32Settings.GoogleAccessToken` | Secret string | Required | `PARCEL_WINDOWS_GOOGLE_ACCESS_TOKEN` | OAuth 2.0 access token for Google Cloud KMS. |
-| Google Signing Keyring | `Win32Settings.GoogleSigningKeyring` | Keyring resource path | Required | `PARCEL_WINDOWS_GOOGLE_SIGNING_KEYRING` | Resource path through `projects`, `locations`, and `keyRings`. |
-| Google Signing Certificate File | `Win32Settings.GoogleSigningCertificateFile` | Path | Required | `PARCEL_WINDOWS_GOOGLE_SIGNING_CERTIFICATE_FILE` | Certificate corresponding to the Google Cloud KMS key. |
-| Google Signing Certificate Version | `Win32Settings.GoogleSigningCertificateVersion` | String | Latest | `PARCEL_WINDOWS_GOOGLE_SIGNING_CERTIFICATE_VERSION` | Specific key version to use. |
-| eSigner User Name | `Win32Settings.ESignerUserName` | String | Required | `PARCEL_WINDOWS_E_SIGNER_USER_NAME` | SSL.com account username. |
-| eSigner Password | `Win32Settings.ESignerPassword` | Secret string | Required | `PARCEL_WINDOWS_E_SIGNER_PASSWORD` | SSL.com account password. |
-| eSigner Key Password | `Win32Settings.ESignerKeyPassword` | Secret string | Required | `PARCEL_WINDOWS_E_SIGNER_KEY_PASSWORD` | Base64-encoded TOTP secret. |
-| eSigner Credential ID | `Win32Settings.ESignerCredentialId` | String | Required | `PARCEL_WINDOWS_E_SIGNER_CREDENTIAL_ID` | SSL.com signing credential identifier. |
-| eSigner Sandbox | `Win32Settings.ESignerSandbox` | Boolean | `false` | `PARCEL_WINDOWS_E_SIGNER_SANDBOX` | Uses the SSL.com sandbox service. |
+| Signing Type | `Win32Settings.SigningType` | 签名类型 | `None` | `PARCEL_WINDOWS_SIGNING_TYPE` | 选择 Authenticode 签名提供方。 |
+| Sign Installer | `Win32Settings.SignInstaller` | Boolean | `true` | `PARCEL_WINDOWS_SIGN_INSTALLER` | 为生成的 NSIS 或 MSIX 包以及应用文件签名。若由应用商店或后续流水线来签名，请关闭此项。 |
+| 附加的签名匹配模式 | `Win32Settings.AdditionalSignPatterns` | glob 模式列表 | Empty | — | 把更多代码文件纳入应用签名范围。 |
+| Timestamp Server URL | `Win32Settings.SigningTimestampServer` | URL | None | `PARCEL_WINDOWS_SIGNING_TIMESTAMP_SERVER` | 使用本地证书或 Windows 证书存储时所用的时间戳颁发机构。 |
+| Local Signing Certificate File | `Win32Settings.LocalSigningCertificate` | PFX 或 P12 的路径 | 用本地证书时必填 | `PARCEL_WINDOWS_LOCAL_SIGNING_CERTIFICATE` | 本地签名所用的证书与私钥。 |
+| Local Signing Certificate Password | `Win32Settings.LocalSigningCertificatePassword` | 机密字符串 | Empty | `PARCEL_WINDOWS_LOCAL_SIGNING_CERTIFICATE_PASSWORD` | 保护本地证书的密码。 |
+| Store Certificate Name | `Win32Settings.StoreCertificateName` | String | 用证书存储时必填 | `PARCEL_WINDOWS_STORE_CERTIFICATE_NAME` | Windows 证书存储中的证书主题或指纹。 |
+| Use Local Machine Certificate Store | `Win32Settings.UseLocalMachineCertificateStore` | Boolean | `false` | `PARCEL_WINDOWS_USE_LOCAL_MACHINE_CERTIFICATE_STORE` | 搜索本地计算机而非当前用户。仅限 Windows。 |
+| 自动匹配证书 | `Win32Settings.AutoDetectMatchingCertificate` | Boolean | `false` | `PARCEL_WINDOWS_AUTO_DETECT_MATCHING_CERTIFICATE` | 允许 SignTool 自行挑选匹配的证书。仅限 Windows。 |
+| Azure Artifact Signing Endpoint | `Win32Settings.TrustedSigningEndpoint` | Azure 签名 URL | Required | `PARCEL_WINDOWS_TRUSTED_SIGNING_ENDPOINT` | Azure Artifact Signing 服务端点。 |
+| Azure Artifact Signing Certificate Profile Name | `Win32Settings.TrustedSigningCertificateProfileName` | String | Required | `PARCEL_WINDOWS_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME` | Azure Artifact Signing 证书配置文件。 |
+| Azure Artifact Signing Account Name | `Win32Settings.TrustedSigningCodeSigningAccountName` | String | Required | `PARCEL_WINDOWS_TRUSTED_SIGNING_CODE_SIGNING_ACCOUNT_NAME` | Azure Artifact Signing 账户。 |
+| Azure Key Vault Name | `Win32Settings.AzureKeyVaultName` | String | 除非 URL 中已指明，否则必填 | `PARCEL_WINDOWS_AZURE_KEY_VAULT_NAME` | Azure Key Vault 名称。 |
+| Azure Key Vault URL | `Win32Settings.AzureKeyVaultUrl` | Absolute HTTP(S) URL | 公有 Azure 端点 | `PARCEL_WINDOWS_AZURE_KEY_VAULT_URL` | 完整的保管库 URL，含主权云端点。 |
+| Azure Key Vault Certificate Name | `Win32Settings.AzureKeyVaultCertificateName` | String | Required | `PARCEL_WINDOWS_AZURE_KEY_VAULT_CERTIFICATE_NAME` | 存放在 Azure Key Vault 中的证书。 |
+| AWS Region Code | `Win32Settings.AwsSigningRegionCode` | String | Required | `PARCEL_WINDOWS_AWS_SIGNING_REGION_CODE` | 存有签名密钥的 AWS 区域。 |
+| AWS Signing Certificate File | `Win32Settings.AwsSigningCertificateFile` | Path | Required | `PARCEL_WINDOWS_AWS_SIGNING_CERTIFICATE_FILE` | 与 AWS KMS 中私钥相对应的证书。 |
+| AWS 签名密钥 ID 或别名 | `Win32Settings.AwsSigningKeyIdOrAlias` | String | Required | `PARCEL_WINDOWS_AWS_SIGNING_KEY_ID_OR_ALIAS` | AWS KMS 密钥标识符或别名。 |
+| DigiCert API Key | `Win32Settings.DigiCertApiKey` | 机密字符串 | Required | `PARCEL_WINDOWS_DIGI_CERT_API_KEY` | DigiCert ONE API 密钥。 |
+| DigiCert Keystore | `Win32Settings.DigiCertKeystore` | PKCS#12 的路径 | Required | `PARCEL_WINDOWS_DIGI_CERT_KEYSTORE` | 客户端认证用的密钥库。 |
+| DigiCert Storepass | `Win32Settings.DigiCertStorepass` | 机密字符串 | Required | `PARCEL_WINDOWS_DIGI_CERT_STOREPASS` | DigiCert 密钥库的密码。 |
+| DigiCert 证书名称或 ID | `Win32Settings.DigiCertCertificateNameOrId` | String | Required | `PARCEL_WINDOWS_DIGI_CERT_CERTIFICATE_NAME_OR_ID` | DigiCert ONE 中的证书名称或 ID。 |
+| DigiCert Host | `Win32Settings.DigiCertHost` | HTTP(S) URL | 美国区 DigiCert ONE 主机 | `PARCEL_WINDOWS_DIGI_CERT_HOST` | 覆盖 DigiCert ONE 的服务主机。 |
+| Google Access Token | `Win32Settings.GoogleAccessToken` | 机密字符串 | Required | `PARCEL_WINDOWS_GOOGLE_ACCESS_TOKEN` | Google Cloud KMS 的 OAuth 2.0 访问令牌。 |
+| Google Signing Keyring | `Win32Settings.GoogleSigningKeyring` | 密钥环资源路径 | Required | `PARCEL_WINDOWS_GOOGLE_SIGNING_KEYRING` | 贯穿 `projects`、`locations` 和 `keyRings` 的资源路径。 |
+| Google Signing Certificate File | `Win32Settings.GoogleSigningCertificateFile` | Path | Required | `PARCEL_WINDOWS_GOOGLE_SIGNING_CERTIFICATE_FILE` | 与 Google Cloud KMS 密钥相对应的证书。 |
+| Google Signing Certificate Version | `Win32Settings.GoogleSigningCertificateVersion` | String | Latest | `PARCEL_WINDOWS_GOOGLE_SIGNING_CERTIFICATE_VERSION` | 要使用的具体密钥版本。 |
+| eSigner User Name | `Win32Settings.ESignerUserName` | String | Required | `PARCEL_WINDOWS_E_SIGNER_USER_NAME` | SSL.com 账户用户名。 |
+| eSigner Password | `Win32Settings.ESignerPassword` | 机密字符串 | Required | `PARCEL_WINDOWS_E_SIGNER_PASSWORD` | SSL.com 账户密码。 |
+| eSigner Key Password | `Win32Settings.ESignerKeyPassword` | 机密字符串 | Required | `PARCEL_WINDOWS_E_SIGNER_KEY_PASSWORD` | Base64 编码的 TOTP 密钥。 |
+| eSigner Credential ID | `Win32Settings.ESignerCredentialId` | String | Required | `PARCEL_WINDOWS_E_SIGNER_CREDENTIAL_ID` | SSL.com 签名凭据标识符。 |
+| eSigner Sandbox | `Win32Settings.ESignerSandbox` | Boolean | `false` | `PARCEL_WINDOWS_E_SIGNER_SANDBOX` | 使用 SSL.com 的沙箱服务。 |
 
-## macOS settings
+## macOS 设置 {#macos-settings}
 
-### Bundle, DMG, and PKG
+### 应用包、DMG 与 PKG {#bundle-dmg-and-pkg}
 
-| Setting | `.parcel` property | Type | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Create Bundle | `MacOsSettings.CreateBundle` | Boolean | `true` for new projects | `PARCEL_MACOS_CREATE_BUNDLE` | Creates a macOS `.app` bundle. DMG, PKG, permissions, and associations require a bundle. |
-| Bundle Identifier | `MacOsSettings.BundleIdentifier` | Reverse-DNS string | Derived from company and package name | `PARCEL_MACOS_BUNDLE_IDENTIFIER` | `CFBundleIdentifier` used for signing and distribution. |
-| Team ID | `MacOsSettings.TeamId` | 10 uppercase letters or digits | None | `PARCEL_MACOS_TEAM_ID` | Apple Developer team identifier used for signing and notarization. |
-| App Category | `MacOsSettings.BundleCategory` | Apple bundle category | `Other` | `PARCEL_MACOS_BUNDLE_CATEGORY` | macOS and App Store application category. |
-| Application Icon | `MacOsSettings.AppIcon` | Path to ICNS or SVG | Application Icon | `PARCEL_MACOS_APP_ICON` | Overrides the shared icon for the app bundle. |
-| Permissions | `MacOsSettings.Permissions` | Permission-description dictionary | Empty | — | Adds macOS usage descriptions for Camera, Microphone, Location, Contacts, Calendars, Desktop, Documents, Downloads, and Network. |
-| Resource file patterns | `MacOsSettings.BundleResourcePatterns` | List of glob patterns | Empty | — | Moves matching files to `Contents/Resources` and replaces their original locations with symlinks. |
-| Automatically Move Bundle Frameworks | `MacOsSettings.AutomaticallyMoveBundleFrameworks` | Boolean | `false` | `PARCEL_MACOS_AUTOMATICALLY_MOVE_BUNDLE_FRAMEWORKS` | Advanced compatibility option for relocating frameworks. Not shown in the GUI. |
-| Automatically Move Bundle Resources | `MacOsSettings.AutomaticallyMoveBundleResources` | Boolean | `false` | `PARCEL_MACOS_AUTOMATICALLY_MOVE_BUNDLE_RESOURCES` | Advanced compatibility option for relocating resources. Not shown in the GUI. |
-| DMG Background Image | `MacOsSettings.DmgBackground` | Path to TIFF | None | `PARCEL_MACOS_DMG_BACKGROUND` | Background displayed in the DMG window. |
-| DMG Layout | `MacOsSettings.DmgLayout` | Layout object | Standard Parcel layout | — | Window, grid, icon, text, background color, app position, and Applications-link position settings. |
-| DMG License File | `MacOsSettings.DmgLicense` | Path | None | `PARCEL_MACOS_DMG_LICENSE` | File embedded at the root of the DMG. |
-| Install Location | `MacOsSettings.InstallerLocation` | Absolute path | `/Applications` | `PARCEL_MACOS_INSTALLER_LOCATION` | PKG installation directory. This advanced field is not shown in the GUI. |
-| Install Scripts Directory | `MacOsSettings.InstallerScripts` | Directory path | None | `PARCEL_MACOS_INSTALLER_SCRIPTS` | Directory containing executable `preinstall` and `postinstall` scripts. This advanced field is not shown in the GUI. |
-| Package Identifier | `MacOsSettings.InstallerIdentifier` | Reverse-DNS string | Bundle identifier | `PARCEL_MACOS_INSTALLER_IDENTIFIER` | Identifier registered by the PKG installer. This advanced field is not shown in the GUI. |
+| Create Bundle | `MacOsSettings.CreateBundle` | Boolean | 新项目默认为 `true` | `PARCEL_MACOS_CREATE_BUNDLE` | 生成 macOS 的 `.app` 应用包。DMG、PKG、权限和文件关联都以应用包为前提。 |
+| Bundle Identifier | `MacOsSettings.BundleIdentifier` | 反向 DNS 字符串 | 由公司名和包名推导得出 | `PARCEL_MACOS_BUNDLE_IDENTIFIER` | 用于签名和分发的 `CFBundleIdentifier`。 |
+| Team ID | `MacOsSettings.TeamId` | 10 位大写字母或数字 | None | `PARCEL_MACOS_TEAM_ID` | 用于签名和公证的 Apple Developer 团队标识符。 |
+| App Category | `MacOsSettings.BundleCategory` | Apple 应用包类别 | `Other` | `PARCEL_MACOS_BUNDLE_CATEGORY` | macOS 和 App Store 中的应用类别。 |
+| Application Icon | `MacOsSettings.AppIcon` | ICNS 或 SVG 的路径 | Application Icon | `PARCEL_MACOS_APP_ICON` | 为应用包覆盖共用图标。 |
+| Permissions | `MacOsSettings.Permissions` | 权限说明字典 | Empty | — | 为相机、麦克风、定位、通讯录、日历、桌面、文稿、下载和网络添加 macOS 用途说明。 |
+| 资源文件匹配模式 | `MacOsSettings.BundleResourcePatterns` | glob 模式列表 | Empty | — | 把匹配的文件挪到 `Contents/Resources`，并在原位置放上符号链接。 |
+| Automatically Move Bundle Frameworks | `MacOsSettings.AutomaticallyMoveBundleFrameworks` | Boolean | `false` | `PARCEL_MACOS_AUTOMATICALLY_MOVE_BUNDLE_FRAMEWORKS` | 用于重定位 framework 的高级兼容选项。图形界面中不显示。 |
+| Automatically Move Bundle Resources | `MacOsSettings.AutomaticallyMoveBundleResources` | Boolean | `false` | `PARCEL_MACOS_AUTOMATICALLY_MOVE_BUNDLE_RESOURCES` | 用于重定位资源的高级兼容选项。图形界面中不显示。 |
+| DMG Background Image | `MacOsSettings.DmgBackground` | TIFF 的路径 | None | `PARCEL_MACOS_DMG_BACKGROUND` | DMG 窗口中显示的背景图。 |
+| DMG Layout | `MacOsSettings.DmgLayout` | 布局对象 | Parcel 标准布局 | — | 窗口、网格、图标、文字、背景色、应用位置以及 Applications 链接位置等设置。 |
+| DMG License File | `MacOsSettings.DmgLicense` | Path | None | `PARCEL_MACOS_DMG_LICENSE` | 嵌入到 DMG 根目录的文件。 |
+| Install Location | `MacOsSettings.InstallerLocation` | 绝对路径 | `/Applications` | `PARCEL_MACOS_INSTALLER_LOCATION` | PKG 的安装目录。这是个高级字段，图形界面中不显示。 |
+| Install Scripts Directory | `MacOsSettings.InstallerScripts` | 目录路径 | None | `PARCEL_MACOS_INSTALLER_SCRIPTS` | 存放可执行的 `preinstall` 和 `postinstall` 脚本的目录。这是个高级字段，图形界面中不显示。 |
+| Package Identifier | `MacOsSettings.InstallerIdentifier` | 反向 DNS 字符串 | 应用包标识符 | `PARCEL_MACOS_INSTALLER_IDENTIFIER` | 由 PKG 安装程序注册的标识符。这是个高级字段，图形界面中不显示。 |
 
-The DMG layout object supports these advanced properties:
+DMG 布局对象支持下列高级属性：
 
-| `.parcel` property | Type | Default | Description |
+| `.parcel` 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `MacOsSettings.DmgLayout.BackgroundColorRed` | Number | `1` | Red component of the window background color. |
-| `MacOsSettings.DmgLayout.BackgroundColorGreen` | Number | `1` | Green component of the window background color. |
-| `MacOsSettings.DmgLayout.BackgroundColorBlue` | Number | `1` | Blue component of the window background color. |
-| `MacOsSettings.DmgLayout.GridOffsetX` | Integer | `0` | Horizontal grid offset. |
-| `MacOsSettings.DmgLayout.GridOffsetY` | Integer | `0` | Vertical grid offset. |
-| `MacOsSettings.DmgLayout.GridSpacing` | Integer | `100` | Spacing between grid positions. |
-| `MacOsSettings.DmgLayout.X` | Integer | `100` | Horizontal position of the DMG window. |
-| `MacOsSettings.DmgLayout.Y` | Integer | `100` | Vertical position of the DMG window. |
-| `MacOsSettings.DmgLayout.Width` | Integer | `660` | DMG window width. |
-| `MacOsSettings.DmgLayout.Height` | Integer | `422` | DMG window height. |
-| `MacOsSettings.DmgLayout.IconSize` | Integer | `128` | Icon size in pixels. |
-| `MacOsSettings.DmgLayout.TextSize` | Integer | `12` | Icon-label text size. |
-| `MacOsSettings.DmgLayout.BundlePositionX` | Integer | `173` | Horizontal position of the app bundle. |
-| `MacOsSettings.DmgLayout.BundlePositionY` | Integer | `231` | Vertical position of the app bundle. |
-| `MacOsSettings.DmgLayout.ApplicationsPositionX` | Integer | `485` | Horizontal position of the Applications link. |
-| `MacOsSettings.DmgLayout.ApplicationsPositionY` | Integer | `231` | Vertical position of the Applications link. |
+| `MacOsSettings.DmgLayout.BackgroundColorRed` | Number | `1` | 窗口背景色的红色分量。 |
+| `MacOsSettings.DmgLayout.BackgroundColorGreen` | Number | `1` | 窗口背景色的绿色分量。 |
+| `MacOsSettings.DmgLayout.BackgroundColorBlue` | Number | `1` | 窗口背景色的蓝色分量。 |
+| `MacOsSettings.DmgLayout.GridOffsetX` | Integer | `0` | 网格的水平偏移。 |
+| `MacOsSettings.DmgLayout.GridOffsetY` | Integer | `0` | 网格的垂直偏移。 |
+| `MacOsSettings.DmgLayout.GridSpacing` | Integer | `100` | 网格位置之间的间距。 |
+| `MacOsSettings.DmgLayout.X` | Integer | `100` | DMG 窗口的水平位置。 |
+| `MacOsSettings.DmgLayout.Y` | Integer | `100` | DMG 窗口的垂直位置。 |
+| `MacOsSettings.DmgLayout.Width` | Integer | `660` | DMG 窗口宽度。 |
+| `MacOsSettings.DmgLayout.Height` | Integer | `422` | DMG 窗口高度。 |
+| `MacOsSettings.DmgLayout.IconSize` | Integer | `128` | 图标大小，以像素为单位。 |
+| `MacOsSettings.DmgLayout.TextSize` | Integer | `12` | 图标标签的文字大小。 |
+| `MacOsSettings.DmgLayout.BundlePositionX` | Integer | `173` | 应用包的水平位置。 |
+| `MacOsSettings.DmgLayout.BundlePositionY` | Integer | `231` | 应用包的垂直位置。 |
+| `MacOsSettings.DmgLayout.ApplicationsPositionX` | Integer | `485` | Applications 链接的水平位置。 |
+| `MacOsSettings.DmgLayout.ApplicationsPositionY` | Integer | `231` | Applications 链接的垂直位置。 |
 
-### Application signing
+### 应用签名 {#application-signing}
 
-`MacOsSettings.SigningCredentialsType` accepts `None`, `AdHoc`, `KeyChainIdentity`, `P12Certificate`, or `PemCertificate`.
+`MacOsSettings.SigningCredentialsType` 接受 `None`、`AdHoc`、`KeyChainIdentity`、`P12Certificate` 或 `PemCertificate`。
 
-| Setting | `.parcel` property | Type | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Signing Credentials | `MacOsSettings.SigningCredentialsType` | Credential type | `AdHoc` | `PARCEL_MACOS_SIGNING_CREDENTIALS_TYPE` | Selects how the app bundle, code, and optionally DMG are signed. |
-| Enable App Sandbox | `MacOsSettings.EnableSandbox` | Boolean | `false` | `PARCEL_MACOS_ENABLE_SANDBOX` | Runs the application in the macOS App Sandbox. The application can access only resources covered by its entitlements. Required for Mac App Store distribution. |
-| Sign DMG | `MacOsSettings.SignDmg` | Boolean | `true` | `PARCEL_MACOS_SIGN_DMG` | Signs the generated DMG using the application-signing credentials. |
-| Additional signing patterns | `MacOsSettings.AdditionalSignPatterns` | List of glob patterns | Empty | — | Includes additional code files in bundle signing. |
-| Signing Identity | `MacOsSettings.SigningIdentity` | Keychain identity | Required for Keychain | `PARCEL_MACOS_SIGNING_IDENTITY` | Application-signing identity in the macOS Keychain. |
-| Signing P12 Certificate | `MacOsSettings.SigningP12Certificate` | Path to P12 | Required for P12 | `PARCEL_MACOS_SIGNING_P12_CERTIFICATE` | Portable application-signing certificate and private key. |
-| Signing Password | `MacOsSettings.SigningP12Password` | Secret string | Empty | `PARCEL_MACOS_SIGNING_P12_PASSWORD` | Password protecting the application P12 certificate. |
-| Signing PEM Certificate | `MacOsSettings.SigningPemCertificate` | Path to PEM | Required for PEM | `PARCEL_MACOS_SIGNING_PEM_CERTIFICATE` | PEM application-signing certificate. |
-| Deep Signing | `MacOsSettings.SignDeep` | Boolean | `false` | `PARCEL_MACOS_SIGN_DEEP` | Advanced compatibility option for deep signing. Not shown in the GUI. |
+| Signing Credentials | `MacOsSettings.SigningCredentialsType` | 凭据类型 | `AdHoc` | `PARCEL_MACOS_SIGNING_CREDENTIALS_TYPE` | 选择应用包、代码以及（可选的）DMG 以何种方式签名。 |
+| Enable App Sandbox | `MacOsSettings.EnableSandbox` | Boolean | `false` | `PARCEL_MACOS_ENABLE_SANDBOX` | 让应用跑在 macOS App Sandbox 中，只能访问其权利所涵盖的资源。发布到 Mac App Store 必须开启。 |
+| Sign DMG | `MacOsSettings.SignDmg` | Boolean | `true` | `PARCEL_MACOS_SIGN_DMG` | 用应用签名凭据为生成的 DMG 签名。 |
+| 附加的签名匹配模式 | `MacOsSettings.AdditionalSignPatterns` | glob 模式列表 | Empty | — | 把更多代码文件纳入应用包签名范围。 |
+| Signing Identity | `MacOsSettings.SigningIdentity` | 钥匙串标识 | 用钥匙串时必填 | `PARCEL_MACOS_SIGNING_IDENTITY` | macOS 钥匙串中的应用签名标识。 |
+| Signing P12 Certificate | `MacOsSettings.SigningP12Certificate` | P12 的路径 | 用 P12 时必填 | `PARCEL_MACOS_SIGNING_P12_CERTIFICATE` | 便携的应用签名证书与私钥。 |
+| Signing Password | `MacOsSettings.SigningP12Password` | 机密字符串 | Empty | `PARCEL_MACOS_SIGNING_P12_PASSWORD` | 保护应用 P12 证书的密码。 |
+| Signing PEM Certificate | `MacOsSettings.SigningPemCertificate` | PEM 的路径 | 用 PEM 时必填 | `PARCEL_MACOS_SIGNING_PEM_CERTIFICATE` | PEM 格式的应用签名证书。 |
+| Deep Signing | `MacOsSettings.SignDeep` | Boolean | `false` | `PARCEL_MACOS_SIGN_DEEP` | 用于深度签名的高级兼容选项。图形界面中不显示。 |
 
-### Installer signing
+### 安装程序签名 {#installer-signing}
 
-A PKG installer requires a separate installer certificate. `MacOsSettings.InstallerSigningCredentialsType` accepts the same credential types as [application signing](#application-signing). Ad hoc signing cannot create a signed PKG.
+PKG 安装程序需要一张单独的安装程序证书。`MacOsSettings.InstallerSigningCredentialsType` 接受的凭据类型与[应用签名](#application-signing)相同。临时签名（ad hoc）造不出已签名的 PKG。
 
-| Setting | `.parcel` property | Type | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Installer Signing Credentials | `MacOsSettings.InstallerSigningCredentialsType` | Credential type | `None` | `PARCEL_MACOS_INSTALLER_SIGNING_CREDENTIALS_TYPE` | Selects the certificate used to sign PKG installers. |
-| Installer Signing Identity | `MacOsSettings.InstallerSigningIdentity` | Keychain identity | Required for Keychain | `PARCEL_MACOS_INSTALLER_SIGNING_IDENTITY` | Installer identity in the macOS Keychain. |
-| Installer Signing P12 Certificate | `MacOsSettings.InstallerSigningP12Certificate` | Path to P12 | Required for P12 | `PARCEL_MACOS_INSTALLER_SIGNING_P12_CERTIFICATE` | Portable installer certificate and private key. |
-| Installer Signing Password | `MacOsSettings.InstallerSigningP12Password` | Secret string | Empty | `PARCEL_MACOS_INSTALLER_SIGNING_P12_PASSWORD` | Password protecting the installer P12 certificate. |
-| Installer Signing PEM Certificate | `MacOsSettings.InstallerSigningPemCertificate` | Path to PEM | Required for PEM | `PARCEL_MACOS_INSTALLER_SIGNING_PEM_CERTIFICATE` | PEM installer-signing certificate. |
+| Installer Signing Credentials | `MacOsSettings.InstallerSigningCredentialsType` | 凭据类型 | `None` | `PARCEL_MACOS_INSTALLER_SIGNING_CREDENTIALS_TYPE` | 选择用于为 PKG 安装程序签名的证书。 |
+| Installer Signing Identity | `MacOsSettings.InstallerSigningIdentity` | 钥匙串标识 | 用钥匙串时必填 | `PARCEL_MACOS_INSTALLER_SIGNING_IDENTITY` | macOS 钥匙串中的安装程序标识。 |
+| Installer Signing P12 Certificate | `MacOsSettings.InstallerSigningP12Certificate` | P12 的路径 | 用 P12 时必填 | `PARCEL_MACOS_INSTALLER_SIGNING_P12_CERTIFICATE` | 便携的安装程序证书与私钥。 |
+| Installer Signing Password | `MacOsSettings.InstallerSigningP12Password` | 机密字符串 | Empty | `PARCEL_MACOS_INSTALLER_SIGNING_P12_PASSWORD` | 保护安装程序 P12 证书的密码。 |
+| Installer Signing PEM Certificate | `MacOsSettings.InstallerSigningPemCertificate` | PEM 的路径 | 用 PEM 时必填 | `PARCEL_MACOS_INSTALLER_SIGNING_PEM_CERTIFICATE` | PEM 格式的安装程序签名证书。 |
 
 ### Notarization
 
-`MacOsSettings.NotaryCredentialsType` accepts `None`, `KeyChainProfile`, or `AppleAccount`.
+`MacOsSettings.NotaryCredentialsType` 接受 `None`、`KeyChainProfile` 或 `AppleAccount`。
 
-| Setting | `.parcel` property | Type | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Notary Credentials | `MacOsSettings.NotaryCredentialsType` | Credential type | `None` | `PARCEL_MACOS_NOTARY_CREDENTIALS_TYPE` | Selects authentication for Apple's notary service. |
-| Notary Keychain Profile | `MacOsSettings.NotaryKeychainProfile` | String | Required for Keychain profile | `PARCEL_MACOS_NOTARY_KEYCHAIN_PROFILE` | `notarytool` profile stored in the macOS Keychain. |
-| Notary Apple ID | `MacOsSettings.NotaryAppleId` | Email address | Required for Apple account | `PARCEL_MACOS_NOTARY_APPLE_ID` | Apple ID used for notarization. |
-| Notary App Password | `MacOsSettings.NotaryAppPassword` | Secret string | Required for Apple account | `PARCEL_MACOS_NOTARY_APP_PASSWORD` | App-specific password used by the notary service. |
+| Notary Credentials | `MacOsSettings.NotaryCredentialsType` | 凭据类型 | `None` | `PARCEL_MACOS_NOTARY_CREDENTIALS_TYPE` | 选择向 Apple 公证服务认证的方式。 |
+| Notary Keychain Profile | `MacOsSettings.NotaryKeychainProfile` | String | 用钥匙串配置文件时必填 | `PARCEL_MACOS_NOTARY_KEYCHAIN_PROFILE` | 存放在 macOS 钥匙串中的 `notarytool` 配置文件。 |
+| Notary Apple ID | `MacOsSettings.NotaryAppleId` | 电子邮件地址 | 用 Apple 账户时必填 | `PARCEL_MACOS_NOTARY_APPLE_ID` | 用于公证的 Apple ID。 |
+| Notary App Password | `MacOsSettings.NotaryAppPassword` | 机密字符串 | 用 Apple 账户时必填 | `PARCEL_MACOS_NOTARY_APP_PASSWORD` | 公证服务所用的 App 专用密码。 |
 
-## Linux settings
+## Linux 设置 {#linux-settings}
 
-| Setting | `.parcel` property | Type or values | Default | Environment variable | Description |
+| 设置项 | `.parcel` 属性 | 类型或取值 | 默认值 | 环境变量 | 说明 |
 |---|---|---|---|---|---|
-| Install Directory Name | `LinuxSettings.InstallDirName` | Lowercase package-directory name | `app-{package-name}` | `PARCEL_LINUX_INSTALL_DIR_NAME` | Directory created under `/usr/share`. It must start and end with a letter or number. Maximum 100 characters. |
-| Application Icon | `LinuxSettings.AppIcon` | Path to PNG or SVG | Application Icon | `PARCEL_LINUX_APP_ICON` | Overrides the shared icon for DEB and RPM packages. |
-| Maintainer | `LinuxSettings.Maintainer` | String | Company, then package name | `PARCEL_LINUX_MAINTAINER` | Package maintainer, preferably in `Name <email@example.com>` format. Maximum 255 characters. |
-| Copyright | `LinuxSettings.CopyrightFile` | Path | None | `PARCEL_LINUX_COPYRIGHT_FILE` | Copyright file included in DEB and RPM metadata. |
-| Desktop Category | `LinuxSettings.DesktopCategory` | Linux desktop category | `Application` | `PARCEL_LINUX_DESKTOP_CATEGORY` | Category used in desktop menus and mapped to package-manager metadata. |
-| Create `/usr/bin/` symlink | `LinuxSettings.CreateBinSymlink` | Boolean | `true` | `PARCEL_LINUX_CREATE_BIN_SYMLINK` | Creates a command-line symlink to the application executable. |
-| Additional DEB Dependencies | `LinuxSettings.AdditionalDebDependencies` | List | Empty | — | Adds Debian package dependencies. Separate alternatives with a vertical bar. |
-| Additional RPM Dependencies | `LinuxSettings.AdditionalRpmDependencies` | List | Empty | — | Adds RPM package names or capabilities. |
+| Install Directory Name | `LinuxSettings.InstallDirName` | 小写的包目录名 | `app-{package-name}` | `PARCEL_LINUX_INSTALL_DIR_NAME` | 在 `/usr/share` 下创建的目录。必须以字母或数字开头和结尾，最多 100 个字符。 |
+| Application Icon | `LinuxSettings.AppIcon` | PNG 或 SVG 的路径 | Application Icon | `PARCEL_LINUX_APP_ICON` | 为 DEB 和 RPM 包覆盖共用图标。 |
+| Maintainer | `LinuxSettings.Maintainer` | String | 先取公司名，再取包名 | `PARCEL_LINUX_MAINTAINER` | 包维护者，最好写成 `Name <email@example.com>` 格式。最多 255 个字符。 |
+| Copyright | `LinuxSettings.CopyrightFile` | Path | None | `PARCEL_LINUX_COPYRIGHT_FILE` | 写进 DEB 和 RPM 元数据的版权文件。 |
+| Desktop Category | `LinuxSettings.DesktopCategory` | Linux 桌面类别 | `Application` | `PARCEL_LINUX_DESKTOP_CATEGORY` | 桌面菜单中使用的类别，并会映射到包管理器的元数据。 |
+| 创建 `/usr/bin/` 符号链接 | `LinuxSettings.CreateBinSymlink` | Boolean | `true` | `PARCEL_LINUX_CREATE_BIN_SYMLINK` | 为应用的可执行文件创建一个命令行符号链接。 |
+| Additional DEB Dependencies | `LinuxSettings.AdditionalDebDependencies` | List | Empty | — | 添加 Debian 包依赖。备选项之间用竖线分隔。 |
+| Additional RPM Dependencies | `LinuxSettings.AdditionalRpmDependencies` | List | Empty | — | 添加 RPM 的包名或能力（capability）。 |
 
-You can use the main [freedesktop categories](https://specifications.freedesktop.org/menu-spec/latest/category-registry.html) and common additional categories, e.g., `Development`, `Education`, `Game`, `Graphics`, `Network`, `Office`, `Science`, `Settings`, `System`, `Utility`, `WebBrowser`, `TextEditor`, `TerminalEmulator`.
+你可以使用主要的 [freedesktop 类别](https://specifications.freedesktop.org/menu-spec/latest/category-registry.html)以及常见的附加类别，例如 `Development`、`Education`、`Game`、`Graphics`、`Network`、`Office`、`Science`、`Settings`、`System`、`Utility`、`WebBrowser`、`TextEditor`、`TerminalEmulator`。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Parcel setup](/tools/parcel/setup)
-- [Parcel command line reference](/tools/parcel/command-line-reference)
-- [Packaging for Windows](/tools/parcel/packaging-for-windows)
-- [Packaging for macOS](/tools/parcel/packaging-for-macos)
-- [Packaging for Linux](/tools/parcel/packaging-for-linux)
+- [Parcel 配置准备](/tools/parcel/setup)
+- [Parcel 命令行参考](/tools/parcel/command-line-reference)
+- [为 Windows 打包](/tools/parcel/packaging-for-windows)
+- [为 macOS 打包](/tools/parcel/packaging-for-macos)
+- [为 Linux 打包](/tools/parcel/packaging-for-linux)

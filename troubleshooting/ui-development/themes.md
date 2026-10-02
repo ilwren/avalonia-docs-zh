@@ -1,21 +1,21 @@
 ---
 id: themes
-title: Themes
-description: Troubleshooting common issues with Avalonia UI themes, including missing control themes, unintended style overrides, and transparent application windows.
+title: 主题
+description: 排查 Avalonia UI 主题的常见问题，包括找不到控件主题、意料之外的样式覆盖，以及应用窗口透明。
 doc-type: troubleshooting
 ---
 
-## My control theme isn't being found
+## 我的控件主题没被找到 {#my-control-theme-isnt-being-found}
 
-If your custom control theme is not being picked up by Avalonia, verify that the theme returns a [style key](/docs/styling/styles) that matches both the `x:Key` and `TargetType` of your control theme.
+若 Avalonia 没有采用你的自定义控件主题，请确认该主题返回的[样式键](/docs/styling/styles)与控件主题的 `x:Key` 和 `TargetType` 都对得上。
 
-Common causes include:
+常见原因有：
 
-- **Mismatched `x:Key`**: The key you reference in your XAML does not match the key defined in the control theme resource.
-- **Wrong `TargetType`**: The `TargetType` on your `ControlTheme` does not match the control you are trying to style.
-- **Theme not included**: You have not added a `StyleInclude` or `ResourceInclude` pointing to the file that contains your control theme.
+- **`x:Key` 对不上**：你在 XAML 中引用的键，与控件主题资源中定义的键不一致。
+- **`TargetType` 不对**：你 `ControlTheme` 上的 `TargetType` 与你想套样式的那个控件对不上。
+- **主题没被引入**：你没有添加指向控件主题所在文件的 `StyleInclude` 或 `ResourceInclude`。
 
-To diagnose the problem, open the [Avalonia DevTools](/tools/developer-tools/installation) at runtime and inspect the `Styles` panel. This shows you which styles and themes are active on the selected control, helping you confirm whether your theme has been loaded and applied.
+要诊断这个问题，可在运行时打开 [Avalonia DevTools](/tools/developer-tools/installation)，查看 `Styles` 面板。它会列出所选控件上生效的样式和主题，帮你确认自己的主题是否已加载并应用。
 
 ```xml title="Example: defining and referencing a control theme"
 <!-- In your theme file (e.g., MyButtonTheme.axaml) -->
@@ -31,11 +31,11 @@ To diagnose the problem, open the [Avalonia DevTools](/tools/developer-tools/ins
 </Application.Styles>
 ```
 
-## My control theme is breaking other controls
+## 我的控件主题把别的控件搞坏了 {#my-control-theme-is-breaking-other-controls}
 
-Many Avalonia controls are composed of other Avalonia controls internally. If you create a style or control theme that targets all controls of a given type, you might get unexpected results because the style applies to every instance of that type in the visual tree, including instances nested inside other controls.
+许多 Avalonia 控件内部本身就是由其他 Avalonia 控件拼起来的。若你写的样式或控件主题瞄准某个类型的所有控件，结果可能出人意料——它会套到视觉树中该类型的每个实例上，包括嵌在其他控件内部的那些。
 
-For example, if you create a style that targets `TextBlock` in a `Window`, that style is applied to every `TextBlock` in the window, even those that are part of another control's template (such as a `ListBox` item or a `Button` label).
+举例来说，若你在 `Window` 中写了一条瞄准 `TextBlock` 的样式，窗口里的每个 `TextBlock` 都会被套上，哪怕它是另一个控件模板的一部分（比如某个 `ListBox` 项或 `Button` 的标签）。
 
 ```xml title="Example: a style that unintentionally affects nested controls"
 <Window.Styles>
@@ -45,7 +45,7 @@ For example, if you create a style that targets `TextBlock` in a `Window`, that 
 </Window.Styles>
 ```
 
-To limit your style to only the controls you intend to affect, use a more specific selector. You can scope by style class, by name, or by nesting context:
+想让样式只作用于你真正想改的那些控件，就得把选择器写得更具体些。你可以按样式类、按名称，或者按嵌套上下文来圈定范围：
 
 ```xml title="Example: scoping a style with a class selector"
 <Window.Styles>
@@ -58,11 +58,11 @@ To limit your style to only the controls you intend to affect, use a more specif
 <TextBlock Classes="heading" Text="Page title" />
 ```
 
-## Application window is transparent or no content is rendered
+## 应用窗口透明，或者什么内容都没渲染 {#application-window-is-transparent-or-no-content-is-rendered}
 
-If your application window appears transparent or displays no visible content, the most likely cause is that no Avalonia theme has been installed. Avalonia requires a base theme (such as `FluentTheme` or `SimpleTheme`) to provide default control templates and styles. Without one, controls have no visual representation.
+若应用窗口显得透明，或者看不到任何可见内容，最可能的原因是没有装任何 Avalonia 主题。Avalonia 需要一套基础主题（比如 `FluentTheme` 或 `SimpleTheme`）来提供默认的控件模板和样式；没有它，控件就没有任何视觉呈现。
 
-To fix this, make sure your `App.axaml` includes a theme:
+解决办法是确保你的 `App.axaml` 中引入了一套主题：
 
 ```xml title="App.axaml"
 <Application.Styles>
@@ -70,18 +70,18 @@ To fix this, make sure your `App.axaml` includes a theme:
 </Application.Styles>
 ```
 
-If you are using a third-party theme, verify that:
+若你用的是第三方主题，请确认：
 
-- The theme's NuGet package is installed in your project.
-- The theme is included in your `Application.Styles` collection.
-- The theme is compatible with your version of Avalonia.
+- 该主题的 NuGet 包已装进你的项目。
+- 该主题已加入你的 `Application.Styles` 集合。
+- 该主题与你所用的 Avalonia 版本兼容。
 
-If the issue persists with a third-party theme, contact the theme's maintainers for support.
+若用第三方主题时问题依旧，请联系该主题的维护者寻求支持。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Themes overview](/docs/styling/themes)
+- [主题概述](/docs/styling/themes)
 - [Styles](/docs/styling/styles)
-- [Troubleshooting styles](/troubleshooting/ui-development/styles)
-- [How to use control themes](/docs/styling/control-themes)
-- [Developer tools](/tools/developer-tools/installation)
+- [排查样式问题](/troubleshooting/ui-development/styles)
+- [如何使用控件主题](/docs/styling/control-themes)
+- [开发者工具](/tools/developer-tools/installation)

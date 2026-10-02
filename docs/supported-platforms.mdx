@@ -1,155 +1,155 @@
 ---
 id: supported-platforms
-title: Supported platforms
+title: 受支持的平台
 ---
 
 import TierBadge from '@site/src/components/global/TierBadge';
 
-Avalonia apps can target Windows, macOS, Linux, iOS, Android, and WebAssembly. The level of support varies by operating system version, organised into three tiers. These tiers are reviewed with each major Avalonia release, so platforms may move between tiers over time.
+Avalonia 应用可面向 Windows、macOS、Linux、iOS、Android 和 WebAssembly。支持程度因操作系统版本而异，分为三个等级。每逢 Avalonia 大版本发布都会重新审视这些等级，因此平台所处的等级可能随时间变动。
 
-## Support tiers
+## 支持等级 {#support-tiers}
 
-:::tip[Tier 1: Fully tested and supported]
-Tested against every release. Bugs on Tier 1 platforms get fixed. Community PRs are actively reviewed and merged.
+:::tip[第 1 级：完整测试并支持]
+每个版本都会测试。第 1 级平台上的缺陷会被修复，社区 PR 也会得到积极审阅与合并。
 :::
 
-:::info[Tier 2: Best effort]
-Not part of the test matrix, but kept working on a best-effort basis. Issues are deprioritised behind Tier 1 work and some may never get fixed. Community PRs are evaluated case by case, and fixes may need to be backed by a [commercial engagement](https://avaloniaui.net/support) if the maintenance burden is significant.
+:::info[第 2 级：尽力而为]
+不在测试矩阵之列，但会尽力保持可用。相关问题的优先级排在第 1 级工作之后，有些可能始终不会被修复。社区 PR 逐案评估；若维护负担过重，修复可能需要有[商业合作](https://avaloniaui.net/support)托底。
 :::
 
-:::caution[Tier 3: Commercial support only]
-Any platform not listed in Tier 1 or Tier 2. Issues will be closed and PRs will not be reviewed. If you need Avalonia on a Tier 3 platform, see [Enhanced Support](https://avaloniaui.net/support).
+:::caution[第 3 级：仅提供商业支持]
+凡未列入第 1 级或第 2 级的平台皆属此列。相关问题会被关闭，PR 也不会被审阅。若你需要在第 3 级平台上用 Avalonia，请见[增强支持](https://avaloniaui.net/support)。
 :::
 
 ## Windows
 
-Avalonia uses the Win32 API directly on Windows. No additional workloads or dependencies are needed beyond the .NET SDK.
+在 Windows 上，Avalonia 直接使用 Win32 API。除 .NET SDK 外，不需要额外的工作负载或依赖。
 
-| Version | Minimum build | Architectures | Tier |
+| 版本 | 最低内部版本 | 体系结构 | 等级 |
 |---|---|---|---|
-| Windows 11 | 24H2 (build 26100) | x64, ARM64 | <TierBadge tier={1} /> |
-| Windows 11 | 22H2 (build 22621) | x64, ARM64 | <TierBadge tier={2} /> |
-| Windows 10 | 22H2 (build 19045) | x64 | <TierBadge tier={2} /> |
-| Windows 10 / 11 | Earlier builds | x64, x86 | <TierBadge tier={3} /> |
+| Windows 11 | 24H2（内部版本 26100） | x64、ARM64 | <TierBadge tier={1} /> |
+| Windows 11 | 22H2（内部版本 22621） | x64、ARM64 | <TierBadge tier={2} /> |
+| Windows 10 | 22H2（内部版本 19045） | x64 | <TierBadge tier={2} /> |
+| Windows 10 / 11 | 更早的内部版本 | x64、x86 | <TierBadge tier={3} /> |
 
-For WinForms interop and other Windows-specific features, see the [Windows platform guide](/docs/platform-specific-guides/windows).
+关于 WinForms 互操作及其他 Windows 专属特性，请见 [Windows 平台指南](/docs/platform-specific-guides/windows)。
 
 ## macOS
 
-Avalonia ships its own native Objective-C++ backend and does not use the standard .NET macOS workload. Apps can be cross-compiled from Windows or Linux.
+Avalonia 自带原生的 Objective-C++ 后端，不使用标准的 .NET macOS 工作负载。应用可以在 Windows 或 Linux 上交叉编译。
 
-| Version | Name | Architectures | Tier |
+| 版本 | 名称 | 体系结构 | 等级 |
 |---|---|---|---|
-| macOS 26 | Tahoe | ARM64 (Apple Silicon), x64 | <TierBadge tier={1} /> |
-| macOS 15 | Sequoia | ARM64, x64 | <TierBadge tier={2} /> |
-| macOS 14 | Sonoma | ARM64, x64 | <TierBadge tier={2} /> |
-| macOS 13 and earlier | | | <TierBadge tier={3} /> |
+| macOS 26 | Tahoe | ARM64（Apple Silicon）、x64 | <TierBadge tier={1} /> |
+| macOS 15 | Sequoia | ARM64、x64 | <TierBadge tier={2} /> |
+| macOS 14 | Sonoma | ARM64、x64 | <TierBadge tier={2} /> |
+| macOS 13 及更早版本 | | | <TierBadge tier={3} /> |
 
-For native menus, platform conventions, and embedding native views, see the [macOS platform guide](/docs/platform-specific-guides/macos).
+关于原生菜单、平台惯例和嵌入原生视图，请见 [macOS 平台指南](/docs/platform-specific-guides/macos)。
 
-## iOS and iPadOS
+## iOS 与 iPadOS {#ios-and-ipados}
 
-.NET support on iOS follows the MAUI lifecycle. When Microsoft drops support for a mobile OS version under the [MAUI support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/maui), our support for that version ends too.
+.NET 在 iOS 上的支持跟着 MAUI 的生命周期走。一旦微软依据 [MAUI 支持策略](https://dotnet.microsoft.com/en-us/platform/support/policy/maui)停止支持某个移动操作系统版本，我们对该版本的支持也随之终止。
 
-| Version | Architectures | Tier |
+| 版本 | 体系结构 | 等级 |
 |---|---|---|
 | iOS / iPadOS 26 | ARM64 | <TierBadge tier={1} /> |
 | iOS 18.x | ARM64 | <TierBadge tier={2} /> |
-| iOS 17.x and earlier | ARM64 | <TierBadge tier={3} /> |
+| iOS 17.x 及更早版本 | ARM64 | <TierBadge tier={3} /> |
 
-**Minimum .NET version:** .NET 10.0. Mobile .NET versions follow the [MAUI support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/maui). Microsoft removed .NET 8 mobile workloads from the .NET 10 SDK, so .NET 8 iOS builds are not available when using the .NET 10 SDK.
+**最低 .NET 版本：**.NET 10.0。移动端的 .NET 版本遵循 [MAUI 支持策略](https://dotnet.microsoft.com/en-us/platform/support/policy/maui)。微软已从 .NET 10 SDK 中移除 .NET 8 的移动工作负载，因此用 .NET 10 SDK 是构建不出 .NET 8 iOS 版本的。
 
-For setup instructions, see the [iOS platform guide](/docs/platform-specific-guides/ios).
+配置步骤请见 [iOS 平台指南](/docs/platform-specific-guides/ios)。
 
 ## Android
 
-.NET support on Android follows the MAUI lifecycle. When Microsoft drops support for a mobile OS version under the [MAUI support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/maui), our support for that version ends too.
+.NET 在 Android 上的支持跟着 MAUI 的生命周期走。一旦微软依据 [MAUI 支持策略](https://dotnet.microsoft.com/en-us/platform/support/policy/maui)停止支持某个移动操作系统版本，我们对该版本的支持也随之终止。
 
-| Version | API level | Architectures | Tier |
+| 版本 | API 级别 | 体系结构 | 等级 |
 |---|---|---|---|
-| Android 16 | API 36 | ARM64, x64 | <TierBadge tier={1} /> |
-| Android 12 to 15 | API 31 to 35 | ARM64, ARM32, x64 | <TierBadge tier={2} /> |
-| Android 11 and earlier | API 30 and below | | <TierBadge tier={3} /> |
+| Android 16 | API 36 | ARM64、x64 | <TierBadge tier={1} /> |
+| Android 12 至 15 | API 31 至 35 | ARM64、ARM32、x64 | <TierBadge tier={2} /> |
+| Android 11 及更早版本 | API 30 及以下 | | <TierBadge tier={3} /> |
 
-**Minimum .NET version:** .NET 10.0. Mobile .NET versions follow the [MAUI support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/maui). Microsoft removed .NET 8 mobile workloads from the .NET 10 SDK, so .NET 8 Android builds are not available when using the .NET 10 SDK.
+**最低 .NET 版本：**.NET 10.0。移动端的 .NET 版本遵循 [MAUI 支持策略](https://dotnet.microsoft.com/en-us/platform/support/policy/maui)。微软已从 .NET 10 SDK 中移除 .NET 8 的移动工作负载，因此用 .NET 10 SDK 是构建不出 .NET 8 Android 版本的。
 
-For setup instructions, see the [Android platform guide](/docs/platform-specific-guides/android).
+配置步骤请见 [Android 平台指南](/docs/platform-specific-guides/android)。
 
 ## Desktop Linux
 
-Avalonia targets X11 directly on Linux. A native Wayland backend is available as an experimental opt-in package starting with Avalonia 12.1.0; see the [Linux platform guide](/docs/platform-specific-guides/linux#wayland) for setup instructions. Most distributions that support the .NET SDK and have X11 or framebuffer capabilities will run Avalonia applications.
+在 Linux 上，Avalonia 直接面向 X11。从 Avalonia 12.1.0 起另有一个实验性的原生 Wayland 后端包可供选用，配置步骤请见 [Linux 平台指南](/docs/platform-specific-guides/linux#wayland)。只要能装 .NET SDK 且具备 X11 或 framebuffer 能力的发行版，大多都能跑 Avalonia 应用。
 
-| Distribution | Version | Architectures | Tier |
+| 发行版 | 版本 | 体系结构 | 等级 |
 |---|---|---|---|
-| Ubuntu | 25.x | x64, ARM64 | <TierBadge tier={1} /> |
+| Ubuntu | 25.x | x64、ARM64 | <TierBadge tier={1} /> |
 | Fedora | 43 | x64 | <TierBadge tier={1} /> |
-| Debian | 13 (Trixie) | x64, ARM64 | <TierBadge tier={1} /> |
-| Ubuntu | 16.04 to 24.x | x64, ARM64 | <TierBadge tier={2} /> |
+| Debian | 13 (Trixie) | x64、ARM64 | <TierBadge tier={1} /> |
+| Ubuntu | 16.04 至 24.x | x64、ARM64 | <TierBadge tier={2} /> |
 | Fedora | 30 to 42 | x64 | <TierBadge tier={2} /> |
-| Debian | 9 (Stretch) to 12 | x64, ARM64 | <TierBadge tier={2} /> |
-| Other distributions | (Arch, Alpine, NixOS, Gentoo, and others) | Varies | <TierBadge tier={3} /> |
+| Debian | 9（Stretch）至 12 | x64、ARM64 | <TierBadge tier={2} /> |
+| 其他发行版 | （Arch、Alpine、NixOS、Gentoo 等） | Varies | <TierBadge tier={3} /> |
 
-**Rendering:** OpenGL via Skia (X11), OpenGL or OpenGL ES via EGL (Wayland), software rendering (framebuffer).
-**glibc requirement:** Skia is built against glibc 2.17. Distributions using a different C library (such as musl) require a custom `libSkiaSharp.so` build. See [SkiaSharp](https://github.com/mono/SkiaSharp) for details. Distributions that need a custom Skia build are Tier 3.
+**渲染：**经 Skia 走 OpenGL（X11）、经 EGL 走 OpenGL 或 OpenGL ES（Wayland）、软件渲染（framebuffer）。
+**glibc 要求：**Skia 是针对 glibc 2.17 构建的。使用其他 C 库（比如 musl）的发行版需要自行构建 `libSkiaSharp.so`，细节见 [SkiaSharp](https://github.com/mono/SkiaSharp)。需要自行构建 Skia 的发行版属于第 3 级。
 
-**Required packages:**
+**必需的软件包：**
 ```bash
 libx11-6 libice6 libsm6 libfontconfig1
 ```
 
-For WSL 2 and other configuration details, see the [Linux platform guide](/docs/platform-specific-guides/linux).
+关于 WSL 2 及其他配置细节，请见 [Linux 平台指南](/docs/platform-specific-guides/linux)。
 
 ### Embedded Linux
 
-Avalonia supports running on embedded Linux devices without a desktop environment using either the Linux framebuffer or DRM (Direct Rendering Manager).
+Avalonia 支持借助 Linux framebuffer 或 DRM（Direct Rendering Manager），在没有桌面环境的嵌入式 Linux 设备上运行。
 
-| Distribution | Architectures | Runtime identifier | Tier |
+| 发行版 | 体系结构 | 运行时标识符 | 等级 |
 |---|---|---|---|
 | Raspberry Pi OS | ARM64, ARM32 | `linux-arm64`, `linux-arm` | <TierBadge tier={1} /> |
-| Other embedded Linux | Varies | Varies | <TierBadge tier={3} /> |
+| 其他嵌入式 Linux | Varies | Varies | <TierBadge tier={3} /> |
 
-**Required packages:** `libgbm1`, `libgl1-mesa-dri`, `libegl1-mesa`, `libinput10`
+**必需的软件包：**`libgbm1`、`libgl1-mesa-dri`、`libegl1-mesa`、`libinput10`
 
-For display output configuration and device setup, see the [Embedded Linux guide](/docs/platform-specific-guides/embedded-linux).
+关于显示输出配置和设备准备，请见[嵌入式 Linux 指南](/docs/platform-specific-guides/embedded-linux)。
 
 ## WebAssembly
 
-Avalonia runs in any browser with full WebAssembly support. No server-side component is required.
+Avalonia 可以跑在任何完整支持 WebAssembly 的浏览器里，不需要任何服务端组件。
 
-| Requirement | Details |
+| 要求 | 详情 |
 |---|---|
-| .NET version | .NET 8 or later |
-| Browser support | All browsers with WebAssembly support ([Can I use WebAssembly](https://caniuse.com/wasm)) |
-| Rendering | Skia via CanvasKit (WebGL) |
+| .NET 版本 | .NET 8 或更高 |
+| 浏览器支持 | 所有支持 WebAssembly 的浏览器（[Can I use WebAssembly](https://caniuse.com/wasm)） |
+| Rendering | 经 CanvasKit 走 Skia（WebGL） |
 
-For setup and deployment, see the [WebAssembly platform guide](/docs/platform-specific-guides/webassembly).
+关于配置与部署，请见 [WebAssembly 平台指南](/docs/platform-specific-guides/webassembly)。
 
-## .NET version requirements
+## .NET 版本要求 {#net-version-requirements}
 
-| Target | Minimum .NET version | Notes |
+| 目标平台 | 最低 .NET 版本 | 注释支持情况 |
 |---|---|---|
-| Desktop (Windows, macOS, Linux) | .NET 8.0 | Follows standard .NET LTS support. |
-| iOS / Android | .NET 10.0 | Mobile .NET versions follow the [MAUI support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/maui). .NET 8 mobile workloads are not available in the .NET 10 SDK. |
+| Desktop (Windows, macOS, Linux) | .NET 8.0 | 遵循 .NET 标准的 LTS 支持周期。 |
+| iOS / Android | .NET 10.0 | 移动端的 .NET 版本遵循 [MAUI 支持策略](https://dotnet.microsoft.com/en-us/platform/support/policy/maui)。.NET 10 SDK 中已没有 .NET 8 的移动工作负载。 |
 | WebAssembly | .NET 8.0 | |
 
-## Contributing platform-specific fixes
+## 贡献平台专属修复 {#contributing-platform-specific-fixes}
 
-Platform-specific contributions are welcome, but they need to align with the tiers above to keep the project healthy.
+我们欢迎针对特定平台的贡献，但为了项目的长期健康，这些贡献需要与上述等级划分相匹配。
 
-**Tier 1** fixes are always welcome and go through the normal review process.
+**第 1 级**的修复随时欢迎，走常规审阅流程即可。
 
-**Tier 2** fixes are evaluated case by case. The review considers the complexity involved, the risk of regression to Tier 1, and the ongoing maintenance cost. If the maintenance burden is significant, the work may need to be backed by a commercial engagement.
+**第 2 级**的修复逐案评估。审阅时会权衡改动的复杂度、拖累第 1 级的回归风险，以及后续的维护成本。若维护负担过重，这项工作可能需要有商业合作托底。
 
-**Tier 3** fixes require a commercial engagement before review. This applies no matter how small the change looks, because the cost is not in the patch itself, it is in maintaining and testing it release after release.
+**第 3 级**的修复需先有商业合作才会进入审阅。无论改动看上去多小都是如此——因为成本不在补丁本身，而在于一版接一版地维护和测试它。
 
-If you are not sure whether your contribution needs a commercial engagement, ask before you start work to save time up front.
+若拿不准你的贡献是否需要商业合作，不妨动手之前先问一声，省得白费功夫。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Windows platform guide](/docs/platform-specific-guides/windows)
-- [macOS platform guide](/docs/platform-specific-guides/macos)
-- [iOS platform guide](/docs/platform-specific-guides/ios)
-- [Android platform guide](/docs/platform-specific-guides/android)
-- [Linux platform guide](/docs/platform-specific-guides/linux)
-- [Embedded Linux guide](/docs/platform-specific-guides/embedded-linux)
-- [WebAssembly platform guide](/docs/platform-specific-guides/webassembly)
+- [Windows 平台指南](/docs/platform-specific-guides/windows)
+- [macOS 平台指南](/docs/platform-specific-guides/macos)
+- [iOS 平台指南](/docs/platform-specific-guides/ios)
+- [Android 平台指南](/docs/platform-specific-guides/android)
+- [Linux 平台指南](/docs/platform-specific-guides/linux)
+- [嵌入式 Linux 指南](/docs/platform-specific-guides/embedded-linux)
+- [WebAssembly 平台指南](/docs/platform-specific-guides/webassembly)

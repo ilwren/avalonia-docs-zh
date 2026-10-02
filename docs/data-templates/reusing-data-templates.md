@@ -1,23 +1,23 @@
 ---
 id: reusing-data-templates
-title: Reusing data templates
-description: Share data templates across windows by defining them in the Application.DataTemplates collection.
+title: 复用数据模板
+description: 把数据模板定义在 Application.DataTemplates 集合中，让它在所有窗口之间共享。
 doc-type: explanation
 ---
 
 import DataTemplatesScopeScreenshot from '/img/guides/data/data-templates/datatemplates-scope.png';
 
-If you define a data template in the `Window.DataTemplates` collection (as on the previous page), you can reuse it anywhere in the window. However, you can also extend the reuse of a data template to any window in your application.
+像上一页那样把数据模板定义在 `Window.DataTemplates` 集合里，它就能在整个窗口内复用。不过，你还可以把复用范围扩大到应用中的任意窗口。
 
-This works because _Avalonia UI_ performs a hierarchical search of its logical tree to choose a data template. At its most extensive, the search starts in a control, extends to any parent controls (recursively), then looks in the window (as on the previous page), and finally looks at the application itself for a data templates collection.
+这是因为 _Avalonia UI_ 挑选数据模板时，会沿逻辑树做层级搜索。搜索范围最大时，先从控件自身开始，再（递归地）扩展到各级父控件，接着查看窗口（即上一页的情形），最后还会到应用本身的数据模板集合里去找。
 
 :::info
-For more information on the logical tree concept in _Avalonia UI_, see [UI Composition](/docs/fundamentals/ui-composition).
+关于 _Avalonia UI_ 中逻辑树这一概念的更多说明，请见[界面组合](/docs/fundamentals/ui-composition)。
 :::
 
-Therefore if you want to reuse a template in any window of your application: define templates in the `Application.DataTemplates` collection, located in the app.axaml file.
+因此，若希望某个模板在应用的任意窗口中都能复用，就把它定义在 app.axaml 文件的 `Application.DataTemplates` 集合里。
 
-To see how this works, first add another view model as follows:
+来看看实际效果。先添加另一个视图模型：
 
 ```csharp
 namespace MySample
@@ -30,7 +30,7 @@ namespace MySample
 }
 ```
 
-And in the app.axaml file, add a data template for the type `Teacher`:
+再在 app.axaml 文件中，为 `Teacher` 类型添加一个数据模板：
 
 ```xml
 <Application xmlns="https://github.com/avaloniaui"
@@ -55,7 +55,7 @@ And in the app.axaml file, add a data template for the type `Teacher`:
 </Application>
 ```
 
-Use a local definition of a teacher in the window content zone:
+在窗口内容区里定义一个本地的 teacher 对象：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -81,16 +81,16 @@ Use a local definition of a teacher in the window content zone:
 </Window>
 ```
 
-Although there is no data template for a teacher in the window; Avalonia UI will find the template you defined in the application, and the display works as planned:
+尽管窗口里并没有针对 teacher 的数据模板，Avalonia UI 依然会找到你定义在应用一级的那个模板，显示效果符合预期：
 
 <Image light={DataTemplatesScopeScreenshot} alt="Window displaying a teacher name and subject using an application-level data template" position="center" maxWidth={400} cornerRadius="true"/>
 
 :::caution
-Remember to specify a `DataType` in every data template, wherever it is defined, because if _Avalonia UI_ fails to find a data template match for your data; then nothing will be displayed!
+切记：无论数据模板定义在哪里，都要为它指定 `DataType` —— 因为一旦 _Avalonia UI_ 给你的数据找不到匹配的数据模板，界面上就什么都不会显示！
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates): Overview of data templates in Avalonia.
-- [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.
-- [Creating Data Templates in Code](/docs/data-templates/creating-data-templates-in-code): Implementing `IDataTemplate` and using `FuncDataTemplate<T>`.
+- [数据模板入门](/docs/data-templates/introduction-to-data-templates)：Avalonia 数据模板总览。
+- [数据模板集合](/docs/data-templates/data-template-collection)：按类型定义多个模板。
+- [在代码中创建数据模板](/docs/data-templates/creating-data-templates-in-code)：实现 `IDataTemplate` 与使用 `FuncDataTemplate<T>`。

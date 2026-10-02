@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">GeometryCombineMode Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/CombinedGeometry.cs">CombinedGeometry.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/CombinedGeometry.cs">CombinedGeometry.cs</a>
 </div>
 
 </div>
@@ -48,13 +48,13 @@ public enum GeometryCombineMode
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> GeometryCombineMode
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> GeometryCombineMode
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Exclude](#uid-14b8405ee2) | The second region is excluded from the first. Given two geometries, A and B, the area of geometry B is removed from the area of geometry A, producing a region that is A-B. |
 | [Intersect](#uid-86df08c956) | The two regions are combined by taking their intersection. The new area consists of the overlapping region between the two geometries. |
@@ -65,7 +65,7 @@ public enum GeometryCombineMode
 
 <span id="uid-14b8405ee2"></span>
 
-### Exclude Field
+### Exclude 字段 {#exclude-field}
 
 The second region is excluded from the first. Given two geometries, A and B, the area of
 geometry B is removed from the area of geometry A, producing a region that is A-B.
@@ -80,7 +80,7 @@ public Avalonia.Media.GeometryCombineMode Exclude
 
 <span id="uid-86df08c956"></span>
 
-### Intersect Field
+### Intersect 字段 {#intersect-field}
 
 The two regions are combined by taking their intersection. The new area consists of the
 overlapping region between the two geometries.
@@ -95,7 +95,7 @@ public Avalonia.Media.GeometryCombineMode Intersect
 
 <span id="uid-1168bcde93"></span>
 
-### Union Field
+### Union 字段 {#union-field}
 
 The two regions are combined by taking the union of both. The resulting geometry is
 geometry A + geometry B.
@@ -110,7 +110,7 @@ public Avalonia.Media.GeometryCombineMode Union
 
 <span id="uid-2093051e79"></span>
 
-### Xor Field
+### Xor 字段 {#xor-field}
 
 The two regions are combined by taking the area that exists in the first region but not
 the second and the area that exists in the second region but not the first. The new

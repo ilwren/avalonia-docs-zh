@@ -1,7 +1,7 @@
 ---
 id: radial-tree-chart
-title: Radial tree chart
-description: Hierarchical layout where the root node is at the center and child nodes radiate outward in concentric rings, space-efficient for large trees.
+title: 径向树图
+description: 一种层级版面：根节点居中，子节点沿同心环向外辐射，大型树结构用它格外省地方。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsHierarchicalRadialtree from '/img/controls/charts/charts-hierarchical-radial-tree.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Radial tree charts represent hierarchical data where the root is at the center and child nodes radiate outward in concentric circles. This layout is highly space-efficient for large trees.
+径向树图呈现层级数据，根节点位于中心，子节点沿同心圆向外辐射。对于大型树结构，这种版面空间利用率极高。
 
 <Image light={chartsHierarchicalRadialtree} maxWidth={400} position="center" cornerRadius="true" alt="Radial tree chart with a root node at the center and child nodes radiating outward in concentric rings." />
 
-## When to use
-- **Directory visualizers**: Showing many levels of folders in a compact circular form.
-- **Genomic maps**: Visualizing relationships between many biological entities.
-- **Network topology**: Mapping devices in a network radiating from a central hub.
+## 适用场景 {#when-to-use}
+- **目录可视化**：以紧凑的环形把多层文件夹呈现出来。
+- **基因图谱**：呈现众多生物实体之间的关系。
+- **网络拓扑**：以中心枢纽为起点，梳理网络中的各台设备。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Radial tree charts represent hierarchical data where the root is at the center a
                           ChildrenPath="Children" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class TreeNode
 {
@@ -57,13 +57,13 @@ public ObservableCollection<TreeNode> RadialTreeData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The central root nodes. | `null` |
-| `ValuePath` | Path to the value associated with each node. | `null` |
-| `LabelPath` | Path to the text labels on the nodes. | `null` |
-| `ChildrenPath` | Path to the collection of outer nodes. | `null` |
-| `NodeSize` | Radius used to draw the node points. | `8.0` |
-| `LevelSpacing` | Preferred spacing between radial levels. | `60.0` |
+| `ItemsSource` | 居于中心的根节点。 | `null` |
+| `ValuePath` | 指向各节点关联数值的路径。 | `null` |
+| `LabelPath` | 指向节点文本标签的路径。 | `null` |
+| `ChildrenPath` | 指向外层节点集合的路径。 | `null` |
+| `NodeSize` | 绘制节点圆点所用的半径。 | `8.0` |
+| `LevelSpacing` | 径向各层级之间的理想间距。 | `60.0` |

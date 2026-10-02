@@ -1,87 +1,87 @@
 ---
 id: welcome
-title: Welcome
-description: Get started with the Avalonia cross-platform .NET UI framework. Find installation guides, tutorials, migration paths, and API references.
+title: 欢迎
+description: 开始使用跨平台 .NET UI 框架 Avalonia。这里有安装指南、教程、迁移路线和 API 参考。
 doc-type: overview
 ---
 
 <head>
-  <title>Avalonia documentation</title>
+  <title>Avalonia 文档</title>
   <meta
     name="description"
     content="Documentation for Avalonia, the cross-platform .NET UI framework. Build apps for Windows, macOS, Linux, iOS, Android, and WebAssembly from a single codebase."
   />
 </head>
 
-Welcome to the Avalonia documentation. Whether you are building your first app or migrating an existing project, these docs cover everything from installation to deployment.
+欢迎阅读 Avalonia 文档。无论你是在写第一个应用，还是在迁移现有项目，这里都涵盖了从安装到部署的全部内容。
 
 :::info
 
-These docs cover Avalonia 12. For Avalonia 11 documentation, visit [v11.docs.avaloniaui.net](https://v11.docs.avaloniaui.net/).
+本文档对应 Avalonia 12。Avalonia 11 的文档请访问 [v11.docs.avaloniaui.net](https://v11.docs.avaloniaui.net/)。
 
 :::
 
-## What is Avalonia?
+## Avalonia 是什么？ {#what-is-avalonia}
 
-Avalonia is an open-source, cross-platform UI framework for building applications with .NET. It uses its own rendering engine to draw controls, so your app looks and behaves the same on every platform. Write your UI once in C# or F# with XAML, and deploy to:
+Avalonia 是一个开源的 .NET 跨平台 UI 框架。它使用自研渲染引擎绘制控件，因此你的应用在每个平台上的外观和行为都完全一致。用 C# 或 F# 配合 XAML 写一次界面，即可发布到：
 
 - **Windows** (10, 11)
-- **macOS** (Apple Silicon and Intel)
-- **Desktop Linux** (X11 and Wayland)
-- **Embedded Linux** (framebuffer on Raspberry Pi and similar devices)
-- **iOS** and **Android**
+- **macOS**（Apple Silicon 与 Intel）
+- **桌面版 Linux**（X11 与 Wayland）
+- **嵌入式 Linux**（树莓派等设备上的 framebuffer）
+- **iOS** 与 **Android**
 - **WebAssembly**
 
-For exact version and architecture details, see [Supported platforms](/docs/supported-platforms).
+确切的版本与架构支持情况，请见[支持的平台](/docs/supported-platforms)。
 
-## Key capabilities
+## 核心能力 {#key-capabilities}
 
-| Capability | Description |
+| 能力 | 说明 |
 |---|---|
-| **Cross-platform rendering** | Avalonia's own rendering engine produces pixel-identical output on every platform. Skia is the default backend, and the team is collaborating with Google's Flutter team to bring the [Impeller](https://avaloniaui.net/blog/avalonia-partners-with-google-s-flutter-t-eam-to-bring-impeller-rendering-to-net) rendering engine to .NET. No native control wrappers, no platform-specific quirks. |
-| **XAML and code-behind** | Describe your UI declaratively with XAML or build it entirely in code. Avalonia XAML will feel familiar if you have worked with WPF or UWP. |
-| **Styling system** | A CSS-inspired styling system with selectors, style classes, pseudoclasses, and control themes. See [Styles](/docs/styling/styles). |
-| **Data binding** | Compiled bindings checked at build time, full MVVM support, and integration with CommunityToolkit.Mvvm. See [Data binding](/docs/data-binding/introduction-to-data-binding). |
-| **Rich control library** | 60+ built-in controls including DataGrid, TreeView, TabControl, Calendar, and more. Fully styleable and templatable. |
-| **Accessibility** | Built-in support for screen readers and keyboard navigation across platforms. |
-| **DevTools** | Press <kbd>F12</kbd> at runtime to inspect the visual tree, properties, styles, and layout. |
+| **跨平台渲染** | Avalonia 自研的渲染引擎能在每个平台上输出像素级一致的画面。默认后端是 Skia，同时团队正与 Google 的 Flutter 团队合作，把 [Impeller](https://avaloniaui.net/blog/avalonia-partners-with-google-s-flutter-t-eam-to-bring-impeller-rendering-to-net) 渲染引擎引入 .NET。没有原生控件的包装层，也没有各平台各自为政的怪脾气。 |
+| **XAML 与代码隐藏** | 既可以用 XAML 声明式地描述界面，也可以完全用代码构建。如果你用过 WPF 或 UWP，会觉得 Avalonia XAML 相当眼熟。 |
+| **样式系统** | 一套借鉴 CSS 的样式系统，支持选择器、样式类、伪类和控件主题。详见[样式](/docs/styling/styles)。 |
+| **数据绑定** | 编译期即完成校验的编译绑定、完整的 MVVM 支持，并可与 CommunityToolkit.Mvvm 集成。详见[数据绑定](/docs/data-binding/introduction-to-data-binding)。 |
+| **丰富的控件库** | 内置 60 多个控件，涵盖 DataGrid、TreeView、TabControl、Calendar 等，且全部支持自定义样式与模板。 |
+| **无障碍访问** | 跨平台内置支持屏幕阅读器与键盘导航。 |
+| **DevTools** | 运行时按 <kbd>F12</kbd> 即可检视视觉树、属性、样式和布局。 |
 
-## Choose your path
+## 选一条适合你的路线 {#choose-your-path}
 
-### New to Avalonia?
+### 初次接触 Avalonia？ {#new-to-avalonia}
 
-1. [Install Avalonia](/docs/get-started/install-avalonia) and [set up your IDE](/docs/get-started/set-up-your-ide)
-2. [Create your first project](/docs/get-started/create-your-first-project)
-3. [Follow the starter tutorial](/docs/get-started/starter-tutorial) to build a temperature converter app
-4. [Learn the fundamentals](/docs/fundamentals/avalonia-xaml): XAML, controls, layout, and the visual tree
+1. [安装 Avalonia](/docs/get-started/install-avalonia) 并[配置你的 IDE](/docs/get-started/set-up-your-ide)
+2. [创建你的第一个项目](/docs/get-started/create-your-first-project)
+3. [跟着入门教程](/docs/get-started/starter-tutorial)做一个温度换算器
+4. [掌握核心概念](/docs/fundamentals/avalonia-xaml)：XAML、控件、布局与视觉树
 
-### Coming from WPF?
+### 从 WPF 转过来？ {#coming-from-wpf}
 
-Avalonia's API is intentionally close to WPF, but there are important differences in styling, templates, and the property system.
+Avalonia 的 API 刻意向 WPF 看齐，但在样式、模板和属性系统上仍有一些重要差异。
 
-- [WPF migration guide](/docs/migration/wpf): a section-by-section comparison
-- [WPF cheat sheet](/docs/migration/wpf/cheat-sheet): quick mapping of WPF concepts to Avalonia equivalents
+- [WPF 迁移指南](/docs/migration/wpf)：逐节对照说明
+- [WPF 速查表](/docs/migration/wpf/cheat-sheet)：WPF 概念到 Avalonia 对应物的快速映射
 
-If you need to run an existing WPF application cross-platform without rewriting it, [Avalonia XPF](/xpf) provides binary-compatible WPF support on top of Avalonia's rendering engine.
+如果你需要让现有 WPF 应用在不重写的前提下跨平台运行，[Avalonia XPF](/xpf) 在 Avalonia 渲染引擎之上提供了二进制兼容的 WPF 支持。
 
-### Upgrading from Avalonia 11?
+### 从 Avalonia 11 升级？ {#upgrading-from-avalonia-11}
 
-Avalonia 12 includes compiled bindings by default, a new clipboard API, updated window decorations, and more.
+Avalonia 12 默认启用编译绑定，并带来了全新的剪贴板 API、更新后的窗口装饰等改动。
 
-- [Breaking changes in Avalonia 12](/docs/avalonia12-breaking-changes): full list with migration guidance for each change
+- [Avalonia 12 的破坏性变更](/docs/avalonia12-breaking-changes)：完整清单，每项都附有迁移指引
 
-### Looking for samples?
+### 想找示例？ {#looking-for-samples}
 
-- [Samples and tutorials](/docs/samples-tutorials): starter apps, real-world examples, and video walkthroughs
+- [示例与教程](/docs/samples-tutorials)：入门应用、实战案例和视频讲解
 
-## Need help?
+## 需要帮助？ {#need-help}
 
-If you get stuck, check the [Troubleshooting](/troubleshooting) pages or connect with the community on [GitHub Discussions](https://github.com/AvaloniaUI/Avalonia/discussions).
+如果卡住了，可以翻翻[疑难排查](/troubleshooting)页面，或者到 [GitHub Discussions](https://github.com/AvaloniaUI/Avalonia/discussions) 上与社区交流。
 
-To report a bug, open an issue on [GitHub](https://github.com/AvaloniaUI/Avalonia).
+要报告缺陷，请在 [GitHub](https://github.com/AvaloniaUI/Avalonia) 上提交 issue。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Supported platforms](/docs/supported-platforms)
-- [Samples and tutorials](/docs/samples-tutorials)
-- [Avalonia GitHub repository](https://github.com/AvaloniaUI/Avalonia)
+- [支持的平台](/docs/supported-platforms)
+- [示例与教程](/docs/samples-tutorials)
+- [Avalonia GitHub 仓库](https://github.com/AvaloniaUI/Avalonia)

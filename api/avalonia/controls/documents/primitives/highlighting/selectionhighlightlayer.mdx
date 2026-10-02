@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SelectionHighlightLayer Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Highlighting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Highlighting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,23 +50,23 @@ public class SelectionHighlightLayer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="highlightlayerbase">HighlightLayerBase</a> <span className="apiref-page__relation-separator">-&gt;</span> SelectionHighlightLayer
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="highlightlayerbase">HighlightLayerBase</a> <span className="apiref-page__relation-separator">-&gt;</span> SelectionHighlightLayer
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SelectionHighlightLayer](#uid-67e0de98d4) | Initializes a new instance of the [Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer) class. |
+| [SelectionHighlightLayer](#uid-67e0de98d4) | 初始化 [Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-67e0de98d4"></span>
 
-### SelectionHighlightLayer Constructor
+### SelectionHighlightLayer 构造函数 {#selectionhighlightlayer-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer) class.
+初始化 [Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer](xref:Avalonia.Controls.Documents.Primitives.Highlighting.SelectionHighlightLayer) 类的新实例。
 
 ```csharp
 public SelectionHighlightLayer()
@@ -74,28 +74,28 @@ public SelectionHighlightLayer()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetRegions](highlightlayerbase.mdx#uid-144ab4b076) | Gets all highlight regions in this layer. Inherited from [HighlightLayerBase](highlightlayerbase.mdx). |
 | [GetRegionsInRange](highlightlayerbase.mdx#uid-d2e912ad5d) | Gets highlight regions that intersect with the specified range. Inherited from [HighlightLayerBase](highlightlayerbase.mdx). |
 | [Render](highlightlayerbase.mdx#uid-da49a17564) | Renders this layer. Inherited from [HighlightLayerBase](highlightlayerbase.mdx). |
-| [UpdateSelection](#uid-11faf67095) | Updates the selection highlight. |
+| [UpdateSelection](#uid-11faf67095) | 更新选区高亮。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-11faf67095"></span>
 
-### UpdateSelection Method
+### UpdateSelection 方法 {#updateselection-method}
 
-Updates the selection highlight.
+更新选区高亮。
 
 ```csharp
 public void UpdateSelection(Avalonia.Controls.Documents.TextModel.TextPointer start, Avalonia.Controls.Documents.TextModel.TextPointer end)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `start` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -109,22 +109,22 @@ The end position of the selection, or null to clear.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsVisible](highlightlayerbase.mdx#uid-cd67c451b3) | Gets or sets a value indicating whether this layer is currently visible. Inherited from [HighlightLayerBase](highlightlayerbase.mdx). |
 | [Name](highlightlayerbase.mdx#uid-48a5e007e0) | Gets the name that identifies this layer within a [Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection](xref:Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection), which rejects a second layer carrying the same one and looks layers up by it. Inherited from [HighlightLayerBase](highlightlayerbase.mdx). |
-| [SelectionBrush](#uid-4b7aa5c784) | Gets or sets the brush used for selection highlighting. |
+| [SelectionBrush](#uid-4b7aa5c784) | 获取或设置高亮选区所用的画刷。 |
 | [ZIndex](highlightlayerbase.mdx#uid-82f2b21bb7) | Gets the Z-index for rendering order (higher = on top). Inherited from [HighlightLayerBase](highlightlayerbase.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4b7aa5c784"></span>
 
-### SelectionBrush Property
+### SelectionBrush 属性 {#selectionbrush-property}
 
-Gets or sets the brush used for selection highlighting.
+获取或设置高亮选区所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush SelectionBrush { get; set; }
@@ -132,9 +132,9 @@ public Avalonia.Media.IBrush SelectionBrush { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RegionsChanged](highlightlayerbase.mdx#uid-29ba96f891) | Event raised when regions change. Inherited from [HighlightLayerBase](highlightlayerbase.mdx). |
 

@@ -5,7 +5,7 @@ sidebar_label: Avalonia XPF
 ---
 
 <head>
-  <title>Avalonia documentation: XPF</title>
+  <title>Avalonia 文档：XPF</title>
   <meta
     name="description"
     content="Avalonia XPF runs your existing WPF applications on macOS, Linux, iOS, Android, and WebAssembly with minimal code changes."
@@ -14,63 +14,63 @@ sidebar_label: Avalonia XPF
 
 import TierBadge from '@site/src/components/global/TierBadge';
 
-You built your WPF application over years. It works. Your team knows the codebase. Your customers depend on it. Now someone is asking for macOS support, or Linux, or the web.
+你的 WPF 应用是多年打磨出来的。它运转良好，团队对这份代码了如指掌，客户也离不开它。而现在，有人要你支持 macOS，或者 Linux，又或者 Web。
 
-A full rewrite is not a few sprints. It is months at a minimum, often years. Every screen, every edge case, every workaround your team forgot about has to be rediscovered and rebuilt. If your application depends on third-party control suites like DevExpress, Telerik, or Syncfusion, the cost multiplies: those integrations do not carry over, and replacing them means evaluating new vendors, learning new APIs, and losing functionality you already shipped. Meanwhile, your team is split between two codebases that do the same thing. Every feature ships twice. Every fix ships twice. The longer it takes, the further behind you fall on the product work that actually matters.
+彻底重写可不是几个迭代的事，少说几个月，常常得耗上几年。每一个界面、每一处边界情况、每一个团队早已忘到脑后的变通办法，都得重新挖出来再实现一遍。若你的应用还依赖 DevExpress、Telerik、Syncfusion 这类第三方控件套件，代价还要翻几番：这些集成搬不过去，换掉它们意味着重新评估厂商、重新学 API，还得眼睁睁看着已经交付的功能缩水。与此同时，团队被两份做着同一件事的代码撕成两半——每个功能做两遍，每个修复也做两遍。拖得越久，真正重要的产品工作就落下得越多。
 
-Avalonia XPF is a different path. It replaces the rendering layer underneath WPF with Avalonia's cross-platform engine while keeping the API and binary compatibility your code depends on. Your XAML, your view models, your third-party controls from vendors like Telerik, DevExpress, Infragistics, Actipro, and Syncfusion all continue to work. You are not rewriting your application. You are running it somewhere new.
+Avalonia XPF 是另一条路。它把 WPF 底下的渲染层换成 Avalonia 的跨平台引擎，同时保住你的代码所依赖的 API 与二进制兼容性。你的 XAML、你的视图模型、来自 Telerik、DevExpress、Infragistics、Actipro、Syncfusion 等厂商的第三方控件，统统照常工作。你不是在重写应用，你只是把它搬到了新地方跑。
 
-## How it works
+## 运作原理 {#how-it-works}
 
-XPF swaps out WPF's low-level rendering component (MilCore) with Avalonia's rendering engine. Everything above that layer stays the same. Your application sees the same WPF APIs it always has, but those APIs now work on macOS, Linux, and beyond.
+XPF 把 WPF 的底层渲染组件（MilCore）换成了 Avalonia 的渲染引擎，这一层之上的一切原封不动。你的应用看到的还是那套熟悉的 WPF API，只不过这些 API 如今在 macOS、Linux 乃至更多平台上都管用了。
 
-This means:
+这意味着：
 
-- **No code changes for most applications.** If it compiles against WPF today, it will most likely compile against XPF.
-- **Third-party controls keep working.** XPF maintains binary compatibility, so controls from major vendors run without modification.
-- **You ship one codebase.** No fork, no parallel rewrite, no drift between platforms.
+- **多数应用一行代码都不用改。**今天它能对着 WPF 编译通过，那么对着 XPF 多半也能。
+- **第三方控件照常可用。**XPF 保持二进制兼容，主流厂商的控件不加改动就能跑。
+- **你只维护一份代码。**不分叉、不另写一套、各平台也不会渐行渐远。
 
 ## Hybrid XPF
 
-XPF is not an all-or-nothing commitment. With [Hybrid XPF](/xpf/interop/using-xpf-in-avalonia), you can mix Avalonia controls and WPF controls in the same application. This means you can start with XPF to get cross-platform today, then gradually replace WPF views with native Avalonia views at your own pace. Over time, XPF becomes a stepping stone to a full Avalonia migration, with no big-bang rewrite and no point where the application stops working.
+XPF 并非要你一步到位。借助 [Hybrid XPF](/xpf/interop/using-xpf-in-avalonia)，你可以在同一个应用里混用 Avalonia 控件和 WPF 控件。也就是说，你可以先用 XPF 把跨平台拿下，再按自己的节奏逐步把 WPF 视图换成原生的 Avalonia 视图。久而久之，XPF 便成了通往完整 Avalonia 迁移的垫脚石——不必来一场大爆炸式的重写，应用也从不会有停摆的时候。
 
-It works the other way too. If you are already building with Avalonia, Hybrid XPF gives you access to over 700 existing WPF controls from vendors like Telerik, DevExpress, Infragistics, Actipro, and Syncfusion without waiting for native Avalonia ports.
+反过来也成立。若你本就在用 Avalonia 开发，Hybrid XPF 让你直接用上 Telerik、DevExpress、Infragistics、Actipro、Syncfusion 等厂商的 700 多个现成 WPF 控件，不必苦等原生 Avalonia 版本。
 
-## Platform support
+## 平台支持 {#platform-support}
 
-| Platform | Internal | Business | Enterprise |
+| 平台 | Internal | Business | Enterprise |
 |---|---|---|---|
 | [Windows](/docs/supported-platforms#windows) | <TierBadge tier={1} /> | <TierBadge tier={1} /> | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
 | [macOS](/docs/supported-platforms#macos) | <TierBadge tier={1} /> | <TierBadge tier={1} /> | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
 | [Desktop Linux](/docs/supported-platforms#desktop-linux) | <TierBadge tier={1} /> | <TierBadge tier={1} /> | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
-| [Embedded Linux](/docs/supported-platforms#embedded-linux) | | Paid add-on | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
+| [Embedded Linux](/docs/supported-platforms#embedded-linux) | | 付费附加项 | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
 | [iOS](/xpf/platforms/mobile-and-browser) | | | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
 | [Android](/xpf/platforms/mobile-and-browser) | | | <TierBadge tier={1} /> <TierBadge tier={2} /> <TierBadge tier={3} /> |
 | [WebAssembly](/xpf/platforms/mobile-and-browser) | | | <TierBadge tier={1} /> |
 
-All tiers support Avalonia's [Tier 1 platforms](/docs/supported-platforms). Enterprise licenses include Tier 2 support and can arrange Tier 3 coverage on a case-by-case basis.
+所有档位都支持 Avalonia 的[一级平台](/docs/supported-platforms)。Enterprise 许可证包含二级平台支持，三级平台可按具体情况另行安排。
 
 ## Licensing
 
-XPF is a commercial product with three tiers: **Internal**, **Business**, and **Enterprise**. All licenses are perpetual, meaning your applications continue to work regardless of license status.
+XPF 是商业产品，分 **Internal**、**Business** 和 **Enterprise** 三档。所有许可证都是永久的——无论许可证状态如何，你的应用都能继续运行。
 
 | | Internal | Business | Enterprise |
 |---|---|---|---|
 | macOS, Desktop Linux | Yes | Yes | Yes |
-| Mix and Match Avalonia Controls | | Yes | Yes |
+| 与 Avalonia 控件混搭 | | Yes | Yes |
 | Cross-platform System.Drawing | | Yes | Yes |
-| Embedded Linux | | Paid add-on | Yes |
+| Embedded Linux | | 付费附加项 | Yes |
 | iOS, Android, WebAssembly | | | Yes |
-| SLA | 10 working days | 5 working days | 3 working days |
+| SLA | 10 个工作日 | 5 个工作日 | 3 个工作日 |
 
-Every license includes:
+每份许可证都包含：
 
-- A fully supported **30-day free trial**
-- A permanent license to build with XPF
-- 12 months of updates and engineering support
+- 全功能的 **30 天免费试用**
+- 一份用 XPF 开发的永久许可
+- 12 个月的更新与工程支持
 
-Enterprise trials are available by contacting sales. For pricing, see the [Avalonia website](https://avaloniaui.net/xpf?av_source=docs&av_medium=doc_link&av_content=xpf-index#pricing).
+Enterprise 试用请联系销售。价格详见 [Avalonia 官网](https://avaloniaui.net/xpf?av_source=docs&av_medium=doc_link&av_content=xpf-index#pricing)。
 
-## Get started
+## 开始上手 {#get-started}
 
-The [getting started guide](/xpf/getting-started) walks you through running your WPF application on a new platform. Most teams are up and running in minutes, not months.
+[快速上手指南](/xpf/getting-started)会带你把 WPF 应用跑到新平台上。多数团队几分钟就能跑通，而不是几个月。

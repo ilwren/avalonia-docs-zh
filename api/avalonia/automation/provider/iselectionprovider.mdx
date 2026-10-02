@@ -20,28 +20,28 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ISelectionProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Provider</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Provider</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/ISelectionProvider.cs">ISelectionProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/ISelectionProvider.cs">ISelectionProvider.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Exposes methods and properties to support access by a UI Automation client to controls
-that act as containers for a collection of individual, selectable child items.
+向 UI 自动化客户端暴露方法与属性，以便访问那些
+承载一组可单独选中子项的容器控件。
 
 </div>
 
@@ -53,60 +53,60 @@ public interface ISelectionProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetSelection](#uid-3792f3ac45) | Retrieves a provider for each child element that is selected. |
+| [GetSelection](#uid-3792f3ac45) | 为每个被选中的子元素取得一个提供程序。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3792f3ac45"></span>
 
-### GetSelection Method
+### GetSelection 方法 {#getselection-method}
 
-Retrieves a provider for each child element that is selected.
+为每个被选中的子元素取得一个提供程序。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Automation.Peers.AutomationPeer> GetSelection()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)&gt;
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 - Windows`ISelectionProvider.GetSelection`
-- macOS`NSAccessibilityProtocol.accessibilitySelectedChildren` (not implemented).
+- macOS`NSAccessibilityProtocol.accessibilitySelectedChildren`（尚未实现）。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanSelectMultiple](#uid-2169c399fa) | Gets a value that indicates whether the provider allows more than one child element to be selected concurrently. |
-| [IsSelectionRequired](#uid-82f4df0e29) | Gets a value that indicates whether the provider requires at least one child element to be selected. |
+| [CanSelectMultiple](#uid-2169c399fa) | 获取一个值，指示该提供程序是否允许同时选中多个子元素。 |
+| [IsSelectionRequired](#uid-82f4df0e29) | 获取一个值，指示该提供程序是否要求至少选中一个子元素。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2169c399fa"></span>
 
-### CanSelectMultiple Property
+### CanSelectMultiple 属性 {#canselectmultiple-property}
 
-Gets a value that indicates whether the provider allows more than one child element
-to be selected concurrently.
+获取一个值，指示该提供程序是否允许
+同时选中多个子元素。
 
 ```csharp
 public bool CanSelectMultiple { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 - Windows`ISelectionProvider.CanSelectMultiple`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -114,19 +114,19 @@ public bool CanSelectMultiple { get; set; }
 
 <span id="uid-82f4df0e29"></span>
 
-### IsSelectionRequired Property
+### IsSelectionRequired 属性 {#isselectionrequired-property}
 
-Gets a value that indicates whether the provider requires at least one child element
-to be selected.
+获取一个值，指示该提供程序是否要求
+至少选中一个子元素。
 
 ```csharp
 public bool IsSelectionRequired { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 - Windows`ISelectionProvider.IsSelectionRequired`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 

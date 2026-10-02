@@ -4,26 +4,26 @@ title: IDE Support
 doc-type: overview
 ---
 
-Avalonia works with the .NET IDEs you already use. Whether you prefer Visual Studio, VS Code, or Rider, you can build Avalonia applications with full IntelliSense, debugging, and project support out of the box. Where things differ is the XAML editing experience, specifically previewing, code completion, and designer tooling.
+Avalonia 与你惯用的 .NET IDE 都合得来。无论你偏爱 Visual Studio、VS Code 还是 Rider，开箱即可开发 Avalonia 应用，IntelliSense、调试和项目支持一应俱全。真正有差别的是 XAML 的编辑体验，具体说就是预览、代码补全和设计器工具。
 
 ## Visual Studio
 
-The [Avalonia for Visual Studio](/tools/visual-studio-extension) extension is part of Avalonia Plus and provides a full-featured XAML editing experience. It includes a live previewer, intelligent code completion with automatic namespace imports, error highlighting with fix suggestions, a drag-and-drop designer, and full XAML colorization.
+[Avalonia for Visual Studio](/tools/visual-studio-extension) 扩展是 Avalonia Plus 的一部分，提供全功能的 XAML 编辑体验：实时预览器、能自动导入命名空间的智能代码补全、带修复建议的错误高亮、拖放式设计器，以及完整的 XAML 着色。
 
-If you're working on Windows, this extension offers the fullest XAML editing and previewing support.
+若你在 Windows 上开发，这个扩展提供的 XAML 编辑与预览支持最为完备。
 
 ## Visual Studio Code
 
-The Avalonia for Visual Studio Code extension is built on the same XAML parser that powers the Visual Studio extension, which means both IDEs share the same underlying engine. Every code editing enhancement available in Visual Studio flows directly into VS Code.
+Avalonia for Visual Studio Code 扩展与 Visual Studio 扩展建立在同一套 XAML 解析器之上，也就是说两边的底层引擎是同一个。Visual Studio 里每一项代码编辑增强都会直接流向 VS Code。
 
-The extension provides rich IntelliSense with contextual completions, full `x:DataType` Quick Info for inspecting data context through your bindings, Go to Definition for XAML, automatic namespace imports, event handler generation, and clear, actionable diagnostics. It also includes a reliable XAML previewer with proper DPI handling and Zoom to Fit support.
+该扩展提供带上下文感知的丰富 IntelliSense、可顺着绑定查看数据上下文的完整 `x:DataType` 快速信息、XAML 的转到定义、自动导入命名空间、生成事件处理程序，以及清晰可操作的诊断信息。它还带有一个靠谱的 XAML 预览器，DPI 处理得当，并支持缩放以适应窗口。
 
 ## JetBrains Rider
 
-Rider provides excellent .NET support for Avalonia development, including project management, debugging, and code navigation. Rider does not ship with a built-in Avalonia XAML previewer, but the community-maintained [AvalonRider](https://plugins.jetbrains.com/plugin/14839-avalonrider) plugin adds previewer support directly within the IDE.
+Rider 为 Avalonia 开发提供了出色的 .NET 支持，项目管理、调试和代码导航都很顺手。它没有内置 Avalonia XAML 预览器，但社区维护的 [AvalonRider](https://plugins.jetbrains.com/plugin/14839-avalonrider) 插件把预览功能直接带进了 IDE。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia for Visual Studio](/tools/visual-studio-extension)
 - [AI Tools](/tools/ai-tools/)
-- [Avalonia Tools overview](/tools/)
+- [Avalonia 工具概述](/tools/)

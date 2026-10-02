@@ -7,45 +7,45 @@ import ImageUnscaledScreenshot from '/img/controls/image/image-unscaled.png';
 import ImageUniformToFillScreenshot from '/img/controls/image/image-uniform-to-fill.png';
 import BlendModeMultiply from '/img/reference/animations-and-graphics/bitmap-blend-modes/Multiply.png';
 
-The image can display raster images from a specified image source. The source can be:
+该控件可以显示来自指定图像源的位图。图像源可以是：
 
-* a string constant naming an application asset,
-* loaded as a bitmap from the bound name of an asset (by using a binding converter),
-* or can be loaded directly as a bitmap from a memory stream.  
+* 一个字符串常量，指明某个应用资产；
+* 通过（绑定转换器）从绑定的资产名加载而来的位图；
+* 也可以直接从内存流加载为位图。  
 
-Images can be used to compose the content of another control. For example, you can create a graphical button using image controls.
+图像可以用来组成其他控件的内容。比如说，用图像控件就能做出图形化按钮。
 
-The image can be rendered in a few different blend modes, which changes the way the image interacts with what's behind it. see the  [Bitmap Blend Modes](/docs/graphics-animation/bitmap-blend-modes) page for a list of all supported blend modes and an example gallery.
+图像可以用几种不同的混合模式渲染，不同模式下它与背后内容的相互作用也不同。全部受支持的混合模式及示例图集，请参阅[位图混合模式](/docs/graphics-animation/bitmap-blend-modes)页面。
 
-The image displayed can be resized and scaled.  The default settings for scaling (uniform stretch in both directions) will result in the image being fitted to the size (width and/or height) given.
+显示的图像可以调整尺寸和缩放。按默认的缩放设置（两个方向均匀拉伸），图像会被适配到给定的尺寸（宽度和/或高度）。
 
 :::info
-The scaling settings for an image are the same as for the [Viewbox](/controls/layout/containers/viewbox).
+图像的缩放设置与 [Viewbox](/controls/layout/containers/viewbox) 的相同。
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Source` | `IImage` | The image to display. Can be set from an asset URI string, a `Bitmap`, or a `DrawingImage`. |
-| `Stretch` | `Stretch` | How the image is resized to fill its bounds. See table below. |
-| `StretchDirection` | `StretchDirection` | Controls whether the image can scale up, down, or both. |
-| `BlendMode` | `BitmapBlendingMode` | The blend mode used when compositing the image. |
+| `Source` | `IImage` | 要显示的图像，可以用资产 URI 字符串、`Bitmap` 或 `DrawingImage` 来设置。 |
+| `Stretch` | `Stretch` | 图像如何缩放以填满自己的边界，见下表。 |
+| `StretchDirection` | `StretchDirection` | 控制图像可以放大、缩小，还是两者都行。 |
+| `BlendMode` | `BitmapBlendingMode` | 合成图像时使用的混合模式。 |
 
-### Stretch modes
+### Stretch 的取值 {#stretch-modes}
 
-| Value | Behavior |
+| 值 | 行为 |
 |---|---|
-| `None` | The image is displayed at its original size. |
-| `Fill` | The image is resized to fill the bounds. Aspect ratio is not preserved. |
-| `Uniform` | The image is resized to fit within the bounds while preserving aspect ratio (default). |
-| `UniformToFill` | The image is resized to fill the bounds while preserving aspect ratio. Parts may be clipped. |
+| `None` | 图像按原始尺寸显示。 |
+| `Fill` | 图像被拉伸填满边界，不保持宽高比。 |
+| `Uniform` | 图像在保持宽高比的前提下缩放至恰好装入边界（默认值）。 |
+| `UniformToFill` | 图像在保持宽高比的前提下缩放至填满边界，超出的部分会被裁掉。 |
 
-## Examples
+## 示例 {#examples}
 
 ### Basic
 
-This example shows a bitmap asset loaded into an image control where the height and width have been restricted, but the scaling settings remain defaulted. The image itself is not square, but the image width and height are set to the same value. The rectangle is included to give an idea of how the image has been scaled:
+下面的例子把一张位图资产载入图像控件，限定了高度和宽度，但缩放设置保持默认。图像本身不是正方形，而宽高却设成了同一个值。例子里还放了一个矩形，好让你看清图像是怎么被缩放的：
 
 ```xml
 <Panel>
@@ -59,7 +59,7 @@ This example shows a bitmap asset loaded into an image control where the height 
 
 ### Stretch
 
-In this next example, introducing the stretch setting `UniformToFill` fits in all the height of the image, but crops the width because it would otherwise be wider than specified.  The image is not distorted by this treatment.
+下一个例子引入了 `UniformToFill` 拉伸设置：图像的高度被完整容纳，宽度则被裁掉一部分——否则它会超出指定宽度。这种处理不会让图像变形。
 
 ```xml
 <Panel>
@@ -74,7 +74,7 @@ In this next example, introducing the stretch setting `UniformToFill` fits in al
 
 ### BlendMode
 
-This example is using two images, where the second image is using the `Multiply` Blend mode. For more information, read the [Bitmap Blend Modes](/docs/graphics-animation/bitmap-blend-modes) page.
+这个例子用了两张图像，第二张采用 `Multiply` 混合模式。更多内容请参阅[位图混合模式](/docs/graphics-animation/bitmap-blend-modes)页面。
 
 ```xml
 <Panel>
@@ -85,7 +85,7 @@ This example is using two images, where the second image is using the `Multiply`
 
 <Image light={BlendModeMultiply} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Image API reference](/api/avalonia/controls/image)
-- [`Image.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Image.cs)
+- [Image API 参考](/api/avalonia/controls/image)
+- [GitHub 上的 `Image.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Image.cs)

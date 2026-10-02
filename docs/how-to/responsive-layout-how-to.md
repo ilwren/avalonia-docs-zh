@@ -1,17 +1,17 @@
 ---
 id: responsive-layout-how-to
-title: "How to: Build responsive layouts"
-description: Create Avalonia layouts that adapt to different window sizes and form factors.
+title: "操作指南：构建响应式布局"
+description: 做出能适应不同窗口尺寸和设备形态的 Avalonia 布局。
 doc-type: how-to
 ---
 
 import ResponsiveCardGrid from '/img/how-to/responsive-card-grid.gif';
 
-This guide covers techniques for creating layouts that adapt to different window sizes and form factors. You will learn how to use form-factor markup extensions, container queries, breakpoint-driven view models, and reflowing item layouts to build UIs that work across desktop and mobile.
+本指南介绍如何做出适应不同窗口尺寸与设备形态的布局。你将学到形态因子标记扩展、容器查询、断点驱动的视图模型，以及会自动重排的项目布局，从而搭出桌面和移动端都好用的界面。
 
-## Adaptive grid columns
+## 自适应的网格列 {#adaptive-grid-columns}
 
-Use the `OnFormFactor` markup extension to change your layout structure based on the device type. In the following example, a two-column grid with a sidebar appears on desktop while mobile users see a single-column layout:
+用 `OnFormFactor` 标记扩展，根据设备类型改变布局结构。在下面的例子里，桌面端是带侧边栏的两列网格，而移动端用户看到的是单列布局：
 
 ```xml
 <Grid ColumnDefinitions="{OnFormFactor Desktop='250,*', Mobile='*'}">
@@ -26,13 +26,13 @@ Use the `OnFormFactor` markup extension to change your layout structure based on
 </Grid>
 ```
 
-`OnFormFactor` resolves at startup, so the value does not change if you resize the window at runtime. If you need your layout to respond to live size changes, use container queries or a breakpoint-based approach instead.
+`OnFormFactor` 在启动时就解析完毕，所以运行时改变窗口大小并不会让它的取值跟着变。若你的布局需要实时响应尺寸变化，请改用容器查询或基于断点的做法。
 
-## Container queries
+## 容器查询 {#container-queries}
 
-Container queries adapt layout based on a control's own rendered size rather than the window size. This makes them ideal for reusable components that may appear in panels of varying width.
+容器查询依据的是控件自身的渲染尺寸，而非窗口尺寸。因此它特别适合那些可能被放进不同宽度面板的可复用组件。
 
-The following example switches a `StackPanel` between vertical and horizontal orientation depending on the width of its parent `Border`:
+下面这个例子让 `StackPanel` 依据父级 `Border` 的宽度，在纵向和横向之间切换朝向：
 
 ```xml
 <Border>
@@ -54,11 +54,11 @@ The following example switches a `StackPanel` between vertical and horizontal or
 </Border>
 ```
 
-See [Container queries](/docs/styling/container-queries) for the full syntax and named-container support.
+完整语法以及具名容器的支持，请参阅[容器查询](/docs/styling/container-queries)。
 
-## Breakpoint-based layout
+## 基于断点的布局 {#breakpoint-based-layout}
 
-When you need fine-grained control over layout transitions, you can implement breakpoints by observing the window width in your view model. Define boolean properties for each breakpoint tier, then bind your XAML to them:
+若你需要对布局切换有更精细的掌控，可以在视图模型中观察窗口宽度，自行实现断点：为每个断点档位定义一个布尔属性，再在 XAML 里绑定它们：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -77,7 +77,7 @@ public partial class MainViewModel : ObservableObject
 }
 ```
 
-Call `UpdateLayout` from the window's `OnSizeChanged` override so that your properties stay in sync as the user resizes:
+在窗口的 `OnSizeChanged` 重写中调用 `UpdateLayout`，这样用户调整窗口大小时你的属性才能保持同步：
 
 ```csharp
 // In MainWindow code-behind
@@ -89,7 +89,7 @@ protected override void OnSizeChanged(SizeChangedEventArgs e)
 }
 ```
 
-In your AXAML, swap between compact and wide views by binding `IsVisible` to the breakpoint properties:
+在 AXAML 中，把 `IsVisible` 绑定到这些断点属性，即可在紧凑视图和宽视图之间切换：
 
 ```xml
 <Grid>
@@ -107,11 +107,11 @@ In your AXAML, swap between compact and wide views by binding `IsVisible` to the
 </Grid>
 ```
 
-This approach gives you full programmatic control and works well when your layout logic involves more than simple width thresholds (for example, combining orientation and platform checks).
+这种做法让你在代码里完全说了算，而且当布局逻辑不止于简单的宽度阈值时（比如还要结合朝向和平台判断）尤其好使。
 
-## Use `SplitView` for a collapsible sidebar
+## 用 `SplitView` 做可折叠的侧边栏 {#use-splitview-for-a-collapsible-sidebar}
 
-The `SplitView` control provides a built-in collapsible pane pattern. Set `DisplayMode` to `CompactInline` so the pane collapses to a narrow strip showing icons, then expands to reveal labels when you toggle `IsPaneOpen`:
+`SplitView` 控件自带一套可折叠窗格的做法。把 `DisplayMode` 设为 `CompactInline`，窗格折叠时会缩成只显示图标的窄条，切换 `IsPaneOpen` 后再展开露出文字标签：
 
 ```xml
 <SplitView IsPaneOpen="{Binding IsSidebarOpen}"
@@ -142,11 +142,11 @@ The `SplitView` control provides a built-in collapsible pane pattern. Set `Displ
 </SplitView>
 ```
 
-You can bind `IsPaneOpen` to your breakpoint properties so the sidebar opens automatically on wide screens and collapses on narrow ones.
+你可以把 `IsPaneOpen` 绑定到自己的断点属性，这样宽屏下侧边栏自动展开，窄屏下自动折叠。
 
-## Responsive card grid
+## 响应式卡片网格 {#responsive-card-grid}
 
-Use `ItemsControl` with a `WrapPanel` as the display panel to create a card grid that reflows as the available width changes. See [Custom panel](/docs/how-to/itemscontrol-how-to#custom-panel) for guidance on how to customize the `ItemsPanel` in an `ItemsControl`.
+用 `ItemsControl` 搭配 `WrapPanel` 作为显示面板，就能做出随可用宽度自动重排的卡片网格。关于如何在 `ItemsControl` 中自定义 `ItemsPanel`，请参阅[自定义面板](/docs/how-to/itemscontrol-how-to#custom-panel)。
 
 <Tabs>
 
@@ -242,9 +242,9 @@ public partial class CardItem : ObservableObject
 
 </Tabs>
 
-## Platform-specific spacing
+## 随平台而变的间距 {#platform-specific-spacing}
 
-Use `OnFormFactor` to adjust spacing, margins, and font sizes per platform. Mobile interfaces typically benefit from larger touch targets and slightly larger text:
+用 `OnFormFactor` 按平台调整间距、外边距和字号。移动端界面通常更适合大一点的触摸目标和略大的文字：
 
 ```xml
 <StackPanel Spacing="{OnFormFactor Desktop=8, Mobile=12}"
@@ -253,9 +253,9 @@ Use `OnFormFactor` to adjust spacing, margins, and font sizes per platform. Mobi
 </StackPanel>
 ```
 
-## Adaptive font sizes
+## 自适应字号 {#adaptive-font-sizes}
 
-Use [container queries](/docs/styling/container-queries) to scale text based on the size of an ancestor. Declare a container on the parent element with `Container.Name` and `Container.Sizing`, then apply a `ContainerQuery` to set different font sizes at different widths:
+用[容器查询](/docs/styling/container-queries)依据祖先元素的尺寸缩放文字：先在父元素上用 `Container.Name` 和 `Container.Sizing` 声明一个容器，再用 `ContainerQuery` 为不同宽度设定不同字号：
 
 ```xml
 <Panel Container.Name="content" Container.Sizing="Width">
@@ -276,11 +276,11 @@ Use [container queries](/docs/styling/container-queries) to scale text based on 
 </Panel>
 ```
 
-This technique keeps your typography responsive without relying on window-level breakpoints, so the text adapts correctly even when your control is hosted inside a split pane or dialog.
+这招让你的排版无需依赖窗口级断点也能保持响应式，于是哪怕控件被放进拆分窗格或对话框里，文字照样能正确适配。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Container queries](/docs/styling/container-queries): Responsive styling based on container size.
-- [Layout](/docs/layout): Avalonia layout system overview.
-- [Grid how-to](/docs/how-to/grid-how-to): Grid layout patterns.
-- [Cross-platform architecture](/docs/fundamentals/cross-platform-architecture): Platform detection and branching.
+- [容器查询](/docs/styling/container-queries)：依据容器尺寸的响应式样式。
+- [布局](/docs/layout)：Avalonia 布局系统概览。
+- [Grid 操作指南](/docs/how-to/grid-how-to)：Grid 布局的各种用法。
+- [跨平台架构](/docs/fundamentals/cross-platform-architecture)：平台检测与分支处理。

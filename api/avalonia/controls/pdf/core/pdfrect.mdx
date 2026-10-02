@@ -20,24 +20,24 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfRect Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-A rectangle in PDF user space. Coordinates are in points (1/72 inch) with the origin at the
-page's bottom-left corner; Y increases upward (PDF convention, not screen convention).
+PDF 用户空间中的一个矩形。坐标以磅（1/72 英寸）为单位，原点在页面左下角；
+Y 轴向上递增（这是 PDF 的约定，与屏幕坐标相反）。
 
 </div>
 
@@ -51,33 +51,33 @@ public struct PdfRect
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PdfRect
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PdfRect
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;PdfRect&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;PdfRect&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PdfRect](#uid-e29c077d8c) | A rectangle in PDF user space. Coordinates are in points (1/72 inch) with the origin at the page's bottom-left corner; Y increases upward (PDF convention, not screen convention). |
+| [PdfRect](#uid-e29c077d8c) | PDF 用户空间中的一个矩形。坐标以磅（1/72 英寸）为单位，原点在页面左下角；Y 轴向上递增（这是 PDF 的约定，与屏幕坐标相反）。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e29c077d8c"></span>
 
-### PdfRect Constructor
+### PdfRect 构造函数 {#pdfrect-constructor}
 
-A rectangle in PDF user space. Coordinates are in points (1/72 inch) with the origin at the
-page's bottom-left corner; Y increases upward (PDF convention, not screen convention).
+PDF 用户空间中的一个矩形。坐标以磅（1/72 英寸）为单位，原点在页面左下角；
+Y 轴向上递增（这是 PDF 的约定，与屏幕坐标相反）。
 
 ```csharp
 public PdfRect(double Left, double Bottom, double Right, double Top)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `Left` double
 
@@ -93,26 +93,26 @@ public PdfRect(double Left, double Bottom, double Right, double Top)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-a9aa70328e) | No summary available. |
-| [Equals (2 overloads)](#uid-d73d6d6dcb) | No summary available. |
-| [GetHashCode](#uid-2a50c5efe6) | No summary available. |
-| [ToString](#uid-dad88083c0) | No summary available. |
+| [Deconstruct](#uid-a9aa70328e) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-d73d6d6dcb) | 暂无摘要。 |
+| [GetHashCode](#uid-2a50c5efe6) | 暂无摘要。 |
+| [ToString](#uid-dad88083c0) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a9aa70328e"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(double& Left, double& Bottom, double& Right, double& Top)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `Left` double&amp;
 
@@ -130,24 +130,24 @@ public void Deconstruct(double& Left, double& Bottom, double& Right, double& Top
 
 <span id="uid-d73d6d6dcb"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-51f77e9fd7"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Pdf.Core.PdfRect other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.Pdf.Core.PdfRect](xref:Avalonia.Controls.Pdf.Core.PdfRect)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -158,18 +158,18 @@ bool
 
 <span id="uid-1d9e273a4f"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -180,13 +180,13 @@ bool
 
 <span id="uid-2a50c5efe6"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -197,35 +197,35 @@ int
 
 <span id="uid-dad88083c0"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Bottom](#uid-8a0ee92661) | No summary available. |
-| [Height](#uid-39b88eb6ee) | The rectangle height ([Avalonia.Controls.Pdf.Core.PdfRect.Top](xref:Avalonia.Controls.Pdf.Core.PdfRect.Top) − [Avalonia.Controls.Pdf.Core.PdfRect.Bottom](xref:Avalonia.Controls.Pdf.Core.PdfRect.Bottom)). |
-| [Left](#uid-cafa8cf8ad) | No summary available. |
-| [Right](#uid-2e7be78322) | No summary available. |
-| [Top](#uid-88f2b6e510) | No summary available. |
-| [Width](#uid-44e05e98ab) | The rectangle width ([Avalonia.Controls.Pdf.Core.PdfRect.Right](xref:Avalonia.Controls.Pdf.Core.PdfRect.Right) − [Avalonia.Controls.Pdf.Core.PdfRect.Left](xref:Avalonia.Controls.Pdf.Core.PdfRect.Left)). |
+| [Bottom](#uid-8a0ee92661) | 暂无摘要。 |
+| [Height](#uid-39b88eb6ee) | 矩形的高度（[Avalonia.Controls.Pdf.Core.PdfRect.Top](xref:Avalonia.Controls.Pdf.Core.PdfRect.Top) − [Avalonia.Controls.Pdf.Core.PdfRect.Bottom](xref:Avalonia.Controls.Pdf.Core.PdfRect.Bottom)）。 |
+| [Left](#uid-cafa8cf8ad) | 暂无摘要。 |
+| [Right](#uid-2e7be78322) | 暂无摘要。 |
+| [Top](#uid-88f2b6e510) | 暂无摘要。 |
+| [Width](#uid-44e05e98ab) | 矩形的宽度（[Avalonia.Controls.Pdf.Core.PdfRect.Right](xref:Avalonia.Controls.Pdf.Core.PdfRect.Right) − [Avalonia.Controls.Pdf.Core.PdfRect.Left](xref:Avalonia.Controls.Pdf.Core.PdfRect.Left)）。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8a0ee92661"></span>
 
-### Bottom Property
+### Bottom 属性 {#bottom-property}
 
 ```csharp
 public double Bottom { get; set; }
@@ -237,9 +237,9 @@ public double Bottom { get; set; }
 
 <span id="uid-39b88eb6ee"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
-The rectangle height ([Avalonia.Controls.Pdf.Core.PdfRect.Top](xref:Avalonia.Controls.Pdf.Core.PdfRect.Top) − [Avalonia.Controls.Pdf.Core.PdfRect.Bottom](xref:Avalonia.Controls.Pdf.Core.PdfRect.Bottom)).
+矩形的高度（[Avalonia.Controls.Pdf.Core.PdfRect.Top](xref:Avalonia.Controls.Pdf.Core.PdfRect.Top) − [Avalonia.Controls.Pdf.Core.PdfRect.Bottom](xref:Avalonia.Controls.Pdf.Core.PdfRect.Bottom)）。
 
 ```csharp
 public double Height { get; set; }
@@ -251,7 +251,7 @@ public double Height { get; set; }
 
 <span id="uid-cafa8cf8ad"></span>
 
-### Left Property
+### Left 属性 {#left-property}
 
 ```csharp
 public double Left { get; set; }
@@ -263,7 +263,7 @@ public double Left { get; set; }
 
 <span id="uid-2e7be78322"></span>
 
-### Right Property
+### Right 属性 {#right-property}
 
 ```csharp
 public double Right { get; set; }
@@ -275,7 +275,7 @@ public double Right { get; set; }
 
 <span id="uid-88f2b6e510"></span>
 
-### Top Property
+### Top 属性 {#top-property}
 
 ```csharp
 public double Top { get; set; }
@@ -287,9 +287,9 @@ public double Top { get; set; }
 
 <span id="uid-44e05e98ab"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
-The rectangle width ([Avalonia.Controls.Pdf.Core.PdfRect.Right](xref:Avalonia.Controls.Pdf.Core.PdfRect.Right) − [Avalonia.Controls.Pdf.Core.PdfRect.Left](xref:Avalonia.Controls.Pdf.Core.PdfRect.Left)).
+矩形的宽度（[Avalonia.Controls.Pdf.Core.PdfRect.Right](xref:Avalonia.Controls.Pdf.Core.PdfRect.Right) − [Avalonia.Controls.Pdf.Core.PdfRect.Left](xref:Avalonia.Controls.Pdf.Core.PdfRect.Left)）。
 
 ```csharp
 public double Width { get; set; }

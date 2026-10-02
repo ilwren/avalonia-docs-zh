@@ -1,117 +1,117 @@
 ---
 title: .NET MAUI
-description: Migrate from .NET MAUI to Avalonia or extend MAUI apps with the Avalonia MAUI Backend.
+description: 从 .NET MAUI 迁移到 Avalonia，或用 Avalonia MAUI 后端扩展现有的 MAUI 应用。
 doc-type: migration
 ---
 
-If you are a .NET MAUI developer, you have two paths to Avalonia. You can keep your existing MAUI codebase and use the Avalonia MAUI Backend to extend it to new platforms, or you can migrate your application to Avalonia directly for full control over the UI framework. This page covers both options.
+如果你是 .NET MAUI 开发者，通往 Avalonia 有两条路：一是保留现有的 MAUI 代码库，用 Avalonia MAUI 后端把它扩展到更多平台；二是直接把应用迁移到 Avalonia，从而完全掌控 UI 框架。本页把两条路都讲一讲。
 
-:::tip[Need help?]
-The Avalonia team has hands-on experience working with MAUI codebases. Whether you want to adopt the Avalonia MAUI Backend or migrate fully to Avalonia, this is a service we provide. See [Avalonia Services](https://avaloniaui.net/services) for more information.
+:::tip[需要帮助？]
+Avalonia 团队有大量与 MAUI 代码库打交道的实战经验。无论你是想采用 Avalonia MAUI 后端，还是打算完整迁移到 Avalonia，我们都提供相应服务。详见 [Avalonia 服务](https://avaloniaui.net/services)。
 :::
 
-## Option 1: Avalonia MAUI backend
+## 方案一：Avalonia MAUI 后端 {#option-1-avalonia-maui-backend}
 
-The Avalonia MAUI Backend lets you keep your .NET MAUI codebase and replace the rendering layer with Avalonia. Your existing MAUI code, controls, handlers, and layouts continue to work, but they render through Avalonia's cross-platform engine instead of native platform controls.
+Avalonia MAUI 后端让你保留现有的 .NET MAUI 代码库，只把渲染层换成 Avalonia。你现有的 MAUI 代码、控件、handler 和布局照常工作，只是改由 Avalonia 的跨平台引擎渲染，而不再走平台原生控件。
 
-This gives your MAUI application access to platforms that MAUI does not support on its own:
+这让你的 MAUI 应用得以涉足 MAUI 本身并不支持的平台：
 
-- **Desktop Linux:** First-class desktop support on Ubuntu, Debian, Fedora, and other distributions, using the same Avalonia renderer that powers demanding desktop applications in production today.
-- **Embedded Linux:** Avalonia already runs on embedded Linux devices, from Raspberry Pi panels to industrial HMIs. The MAUI Backend brings those same capabilities to your MAUI applications.
-- **WebAssembly:** Deploy your MAUI application to the browser with no native dependencies on the client.
-- **Improved desktop performance:** On Windows and macOS, the Avalonia backend plugs into Avalonia's mature desktop story. Early testing on macOS shows significantly improved performance compared to the Mac Catalyst approach.
+- **桌面 Linux：**在 Ubuntu、Debian、Fedora 等发行版上获得一流的桌面支持，所用的正是如今支撑着严苛生产级桌面应用的那个 Avalonia 渲染器。
+- **嵌入式 Linux：**从树莓派面板到工业 HMI，Avalonia 早已跑在各类嵌入式 Linux 设备上。MAUI 后端把这些能力一并带给你的 MAUI 应用。
+- **WebAssembly：**把你的 MAUI 应用部署到浏览器，客户端不带任何原生依赖。
+- **更好的桌面性能：**在 Windows 和 macOS 上，Avalonia 后端接入了 Avalonia 成熟的桌面方案。macOS 上的早期测试表明，其性能比走 Mac Catalyst 的路子有显著提升。
 
-Because Avalonia draws every control itself, your MAUI application looks and behaves consistently whether it runs on Windows, macOS, Linux, mobile, or in a browser tab.
+由于每个控件都由 Avalonia 亲自绘制，你的 MAUI 应用无论跑在 Windows、macOS、Linux、移动端还是浏览器标签页里，观感和行为都始终如一。
 
-### How it works
+### 运作原理 {#how-it-works}
 
-At its core, the Avalonia MAUI Backend builds a single set of handlers that map MAUI controls to Avalonia controls. When you create a [`Button`](/api/avalonia/controls/button) in MAUI, it renders as an Avalonia `Button` on every platform, rather than a platform-specific native control.
+Avalonia MAUI 后端的核心，是构建一套把 MAUI 控件映射到 Avalonia 控件的 handler。当你在 MAUI 中创建 [`Button`](/api/avalonia/controls/button) 时，它在所有平台上都渲染为 Avalonia 的 `Button`，而不是各平台的原生控件。
 
-MAUI's layout system works similarly. MAUI handles the positioning and constraint calculations itself, and the Avalonia backend positions controls exactly as MAUI specifies. In practice, this means many standard MAUI layout controls work without modification.
+MAUI 的布局系统也是同理：定位和约束计算仍由 MAUI 自己完成，Avalonia 后端严格按 MAUI 给出的结果摆放控件。实际效果是，许多标准的 MAUI 布局控件无需改动即可工作。
 
-Libraries that use `SkiaSharp` and `Microsoft.Maui.Graphics` also work, since Avalonia includes a SkiaSharp-based renderer. This enables a direct mapping of drawn controls with minimal changes.
+用到 `SkiaSharp` 和 `Microsoft.Maui.Graphics` 的库同样能用，因为 Avalonia 自带基于 SkiaSharp 的渲染器。这让自绘控件得以直接映射过来，改动极少。
 
-### What this means for your code
+### 这对你的代码意味着什么 {#what-this-means-for-your-code}
 
-You do not need to rewrite your application. You add the Avalonia MAUI Backend libraries to your existing project and target the new platforms. Your MAUI XAML, view models, services, and business logic stay the same.
+你不必重写应用。只需把 Avalonia MAUI 后端的库加进现有项目，并把新平台设为目标即可。你的 MAUI XAML、视图模型、服务和业务逻辑统统照旧。
 
-Build-time tools like Resizetizer continue to work. During the build, Resizetizer converts your images, SVGs, and fonts into resources, and the Avalonia backend maps them to Avalonia resources automatically.
+Resizetizer 之类的构建期工具照常可用。构建过程中，Resizetizer 会把你的图片、SVG 和字体转成资源，Avalonia 后端再自动把它们映射为 Avalonia 资源。
 
-### Current status
+### 当前进展 {#current-status}
 
-The Avalonia team is developing the MAUI Backend in collaboration with engineers from the MAUI ecosystem. The goal is a stable release alongside .NET 11. Preview releases will follow the .NET MAUI release cadence, with nightly builds available from CI.
+Avalonia 团队正在与 MAUI 生态的工程师合作开发这个 MAUI 后端，目标是与 .NET 11 同步发布稳定版。预览版将跟随 .NET MAUI 的发布节奏，CI 上也会提供每夜构建。
 
-The initial focus is on Linux and WebAssembly, since MAUI does not target those platforms today. The backend also runs on Windows and macOS, and support for all Avalonia targets is planned.
+由于 MAUI 目前并不支持 Linux 和 WebAssembly，前期工作会先聚焦这两个平台。该后端在 Windows 和 macOS 上同样可以运行，并计划支持 Avalonia 的全部目标平台。
 
-The project will not fork .NET MAUI. Any changes needed to support the integration are contributed upstream to the official .NET MAUI repository, so the work benefits the entire ecosystem.
+这个项目不会 fork .NET MAUI。为支撑这项集成所需的改动，都会回馈到 .NET MAUI 官方仓库的上游，让整个生态都受益。
 
 :::note
-The Avalonia MAUI Backend is in active development. Register your interest at [avaloniaui.net](https://avaloniaui.net) to get updates and early access.
+Avalonia MAUI 后端正在积极开发中。欢迎在 [avaloniaui.net](https://avaloniaui.net) 登记意向，以获取最新进展和抢先体验资格。
 :::
 
-## Option 2: migrate to Avalonia
+## 方案二：迁移到 Avalonia {#option-2-migrate-to-avalonia}
 
-If you want full control over the UI framework, or if your application needs capabilities beyond what MAUI offers (CSS-like styling, custom rendering, advanced desktop features), you can migrate your MAUI application to Avalonia directly.
+若你想完全掌控 UI 框架，或者你的应用需要 MAUI 给不了的能力（类 CSS 样式、自定义渲染、进阶桌面特性），那就直接把 MAUI 应用迁移到 Avalonia 吧。
 
-### Prerequisites
+### 前置条件 {#prerequisites}
 
-Before you begin, make sure you have the following in place:
+动手之前，请先确认以下几点已经就位：
 
-- **.NET 8 or later** installed. Avalonia 11+ targets .NET 8 as the minimum.
-- **Avalonia templates** installed. Run `dotnet new install Avalonia.Templates` from the command line.
-- **Your existing MAUI project compiles and runs.** Fix any existing build issues before starting. Having a working baseline makes it easier to verify each step.
-- Familiarity with XAML and the MVVM pattern. If you are coming from MAUI, you already have this.
+- 已安装 **.NET 8 或更高版本**。Avalonia 11+ 最低要求 .NET 8。
+- 已安装 **Avalonia 模板**。在命令行运行 `dotnet new install Avalonia.Templates` 即可。
+- **你现有的 MAUI 项目能编译、能运行。**动手前请先把已有的构建问题修掉。有个能跑起来的基线，每一步的验证都会轻松许多。
+- 熟悉 XAML 和 MVVM 模式。既然你从 MAUI 过来，这一条想必早就满足了。
 
-### Different rendering models
+### 渲染模型不同 {#different-rendering-models}
 
-The most important difference between MAUI and Avalonia is how they render.
+MAUI 与 Avalonia 最要紧的区别，在于二者的渲染方式。
 
-**MAUI** maps its controls to native platform controls. A `Button` on iOS is a `UIButton`. A `Button` on Android is an `Android.Widget.Button`. This means every platform can look subtly (or significantly) different, and platform-specific bugs are common.
+**MAUI** 把自己的控件映射到平台原生控件。iOS 上的 `Button` 其实是 `UIButton`，Android 上的 `Button` 其实是 `Android.Widget.Button`。这意味着各平台的外观多少会有出入（有时还相当明显），平台专属的 bug 也屡见不鲜。
 
-**Avalonia** draws every control itself using Skia or Direct2D. A `Button` in Avalonia looks the same on Windows, macOS, Linux, iOS, Android, and WebAssembly. You choose the theme, not the platform.
+**Avalonia** 用 Skia 或 Direct2D 亲自绘制每一个控件。Avalonia 中的 `Button` 在 Windows、macOS、Linux、iOS、Android 和 WebAssembly 上长得一模一样。拍板的是你选的主题，而不是平台。
 
-This distinction affects everything: styling, layout precision, debugging, and how much platform-specific code you end up writing.
+这个区别影响到方方面面：样式、布局精度、调试，以及你最终得写多少平台专属代码。
 
-### Key differences
+### 主要差异 {#key-differences}
 
-#### XAML dialect
+#### XAML 方言 {#xaml-dialect}
 
-Both frameworks use XAML, but the dialects differ. MAUI's XAML is rooted in Xamarin.Forms conventions. Avalonia's XAML is closer to WPF.
+两个框架都用 XAML，但方言有别。MAUI 的 XAML 源自 Xamarin.Forms 的那套惯例，Avalonia 的 XAML 则更贴近 WPF。
 
-| .NET MAUI | Avalonia | Notes |
+| .NET MAUI | Avalonia | 注释支持情况 |
 |---|---|---|
 | `xmlns="http://schemas.microsoft.com/dotnet/2021/maui"` | `xmlns="https://github.com/avaloniaui"` | |
-| `x:DataType` for compiled bindings | `x:DataType` + `x:CompileBindings` | Same concept, slightly different setup |
-| `{Binding Path}` | `{Binding Path}` | Same syntax |
-| `{Binding Source={RelativeSource Self}}` | `{Binding $self.Property}` | Shorthand syntax |
+| 用 `x:DataType` 启用编译绑定 | `x:DataType` + `x:CompileBindings` | 概念相同，配置略有不同 |
+| `{Binding Path}` | `{Binding Path}` | 语法相同 |
+| `{Binding Source={RelativeSource Self}}` | `{Binding $self.Property}` | 简写写法 |
 | `{Binding Source={x:Reference myControl}, Path=Text}` | `{Binding #myControl.Text}` | `#name` shorthand |
 
 #### Layout
 
-MAUI and Avalonia both use panels for layout, but the names and behaviour differ.
+MAUI 和 Avalonia 都用面板来布局，但名称和行为不尽相同。
 
-| .NET MAUI | Avalonia | Notes |
+| .NET MAUI | Avalonia | 注释支持情况 |
 |---|---|---|
-| `StackLayout` / `VerticalStackLayout` | `StackPanel` | Avalonia uses `Orientation` property |
+| `StackLayout` / `VerticalStackLayout` | `StackPanel` | Avalonia 用的是 `Orientation` 属性 |
 | `HorizontalStackLayout` | `StackPanel Orientation="Horizontal"` | |
-| `Grid` | `Grid` | Same concept. Avalonia supports shorthand `ColumnDefinitions="Auto,*"` |
-| `FlexLayout` | `WrapPanel` | Not a direct equivalent, but covers most use cases |
+| `Grid` | `Grid` | 概念相同。Avalonia 支持 `ColumnDefinitions="Auto,*"` 简写 |
+| `FlexLayout` | `WrapPanel` | 没有完全对应者，但多数用途都能覆盖 |
 | `AbsoluteLayout` | `Canvas` | |
 | `ScrollView` | `ScrollViewer` | |
 | `Frame` | `Border` | |
 | `ContentView` | `UserControl` or `ContentControl` | |
 | `Padding`, `Margin` | `Padding`, `Margin` | Same |
-| `Spacing` on layouts | `Spacing` on `StackPanel` | Same concept |
+| 布局上的 `Spacing` | `Spacing` on `StackPanel` | 概念相同 |
 
 #### Controls
 
-| .NET MAUI | Avalonia | Notes |
+| .NET MAUI | Avalonia | 注释支持情况 |
 |---|---|---|
 | `Entry` | [`TextBox`](/api/avalonia/controls/textbox) | |
 | `Editor` | `TextBox` with `AcceptsReturn="True"` | |
 | `Label` | `TextBlock` | |
 | `Button` | `Button` | Same |
-| `ImageButton` | `Button` with image content | |
+| `ImageButton` | 带图片内容的 `Button` | |
 | `CheckBox` | `CheckBox` | Same |
 | `Switch` | `ToggleSwitch` | |
 | `Slider` | `Slider` | Same |
@@ -123,20 +123,20 @@ MAUI and Avalonia both use panels for layout, but the names and behaviour differ
 | `ProgressBar` | `ProgressBar` | Same |
 | `ListView` / `CollectionView` | `ListBox` or `ItemsControl` | |
 | `CarouselView` | `Carousel` | |
-| `TableView` | No direct equivalent | Use `DataGrid` or compose with panels |
-| `WebView` | No built-in equivalent | Use a third-party control |
+| `TableView` | 没有直接对应者 | 改用 `DataGrid`，或者用面板拼出来 |
+| `WebView` | 没有内置的对应者 | 使用第三方控件 |
 | `RefreshView` | `RefreshContainer` | |
-| `SearchBar` | `TextBox` with custom styling | Or `AutoCompleteBox` for suggestions |
-| `Shell` | No equivalent | Avalonia does not impose a navigation framework |
+| `SearchBar` | 带自定义样式的 `TextBox` | 或者用 `AutoCompleteBox` 做输入建议 |
+| `Shell` | 没有对应者 | Avalonia 不强加某一套导航框架 |
 | `FlyoutPage` | `SplitView` | |
 | `TabbedPage` | `TabControl` | |
 | [`NavigationPage`](/api/avalonia/controls/navigationpage) | `NavigationPage` | See [NavigationPage](/controls/navigation/navigationpage) |
-| `ContentPage` | `ContentPage` | Used within `NavigationPage` |
+| `ContentPage` | `ContentPage` | 在 `NavigationPage` 内使用 |
 | `BoxView` | `Border` or `Rectangle` | |
 
 #### Styling
 
-MAUI uses a resource-dictionary approach with `Style` elements that target types. Avalonia uses CSS-like selectors.
+MAUI 走的是资源字典那一套，用指向类型的 `Style` 元素；Avalonia 用的则是类似 CSS 的选择器。
 
 **MAUI:**
 
@@ -156,7 +156,7 @@ MAUI uses a resource-dictionary approach with `Style` elements that target types
 </Style>
 ```
 
-The syntax is similar on the surface, but Avalonia's selectors support additional capabilities. You can target controls by class, name, state, nesting, and more:
+表面上看语法相仿，但 Avalonia 的选择器本事更大。你可以按样式类、名称、状态、嵌套关系等等来匹配控件：
 
 ```xml
 <Style Selector="Button.primary:pointerover">
@@ -164,11 +164,11 @@ The syntax is similar on the surface, but Avalonia's selectors support additiona
 </Style>
 ```
 
-MAUI has `VisualStateManager` for interactive states. Avalonia uses pseudo-classes (`:pointerover`, `:pressed`, `:disabled`, `:checked`) as part of the selector, which is more concise. See [Styles](/docs/styling/styles) for the full reference.
+MAUI 用 `VisualStateManager` 表示交互状态，Avalonia 则把伪类（`:pointerover`、`:pressed`、`:disabled`、`:checked`）直接写进选择器，更为紧凑。完整参考请见[样式](/docs/styling/styles)。
 
 #### Navigation
 
-MAUI provides `Shell`, `NavigationPage`, `FlyoutPage`, and `TabbedPage` as built-in navigation patterns. Avalonia provides `NavigationPage`, a stack-based navigation system that will feel familiar if you have used MAUI's `NavigationPage`. It supports pushing and popping pages with animated transitions, a built-in navigation bar with a back button, and modal presentation.
+MAUI 内置了 `Shell`、`NavigationPage`、`FlyoutPage` 和 `TabbedPage` 几种导航模式。Avalonia 提供的是 `NavigationPage`——一套基于栈的导航系统，用过 MAUI 的 `NavigationPage` 就会觉得眼熟。它支持带动画过渡的页面压栈与出栈、带返回按钮的内置导航栏，以及模态呈现。
 
 ```xml
 <NavigationPage xmlns="https://github.com/avaloniaui">
@@ -189,23 +189,23 @@ await Navigation.PushAsync(new DetailsPage());
 await Navigation.PopAsync();
 ```
 
-For applications that prefer a lighter approach, you can also handle navigation through view model composition by swapping the content of a `ContentControl` based on application state:
+若你的应用偏爱更轻的做法，也可以靠视图模型组合来实现导航——按应用状态替换 `ContentControl` 的内容即可：
 
 ```xml
 <ContentControl Content="{Binding CurrentPage}" />
 ```
 
-Avalonia resolves the correct view automatically if you register data templates for each view model type. This approach works well for applications that do not need a navigation bar or animated page transitions.
+只要你为每种视图模型类型注册了数据模板，Avalonia 就会自动解析出对应的视图。对于不需要导航栏和页面过渡动画的应用，这种办法很合适。
 
-For full details, see [NavigationPage](/controls/navigation/navigationpage).
+完整说明请参阅 [NavigationPage](/controls/navigation/navigationpage)。
 
-#### Platform-specific code
+#### 平台专属代码 {#platform-specific-code}
 
-In MAUI, platform differences leak through constantly. You end up writing handlers, custom renderers, or `#if` conditional compilation blocks to fix behaviour on specific platforms.
+在 MAUI 中，平台差异总会不断渗出来。为了修好某个平台上的行为，你少不了要写 handler、自定义渲染器，或者 `#if` 条件编译块。
 
-In Avalonia, platform-specific code is rare. Because Avalonia controls its own rendering, the same code produces the same result everywhere. When you do need platform-specific behaviour (for example, accessing a native API), Avalonia provides clean abstractions without requiring you to subclass renderers.
+在 Avalonia 中，平台专属代码很少见。由于渲染由 Avalonia 自己说了算，同一份代码在哪儿都给出同样的结果。确实需要平台专属行为时（比如调用某个原生 API），Avalonia 也提供了清爽的抽象，不必让你去继承什么渲染器。
 
-#### File structure
+#### 文件结构 {#file-structure}
 
 | .NET MAUI | Avalonia |
 |---|---|
@@ -213,7 +213,7 @@ In Avalonia, platform-specific code is rare. Because Avalonia controls its own r
 | `App.xaml` | `App.axaml` |
 | `MainPage.xaml` | `MainWindow.axaml` |
 | `.xaml.cs` code-behind | `.axaml.cs` code-behind |
-| `Platforms/` folder with per-platform code | Typically no platform folders needed |
+| 带有各平台代码的 `Platforms/` 文件夹 | 通常不需要平台专属文件夹 |
 | `MauiProgram.cs` builder | `Program.cs` with `AppBuilder` |
 
 #### Threading
@@ -224,74 +224,74 @@ In Avalonia, platform-specific code is rare. Because Avalonia controls its own r
 | `MainThread.InvokeOnMainThreadAsync()` | `Dispatcher.UIThread.InvokeAsync()` |
 | `MainThread.IsMainThread` | `Dispatcher.UIThread.CheckAccess()` |
 
-### Migration steps
+### 迁移步骤 {#migration-steps}
 
-There is no automated converter from MAUI to Avalonia. The migration is a manual process, but the similarities between the two frameworks make the process manageable. Work through your application one layer at a time.
+目前还没有从 MAUI 到 Avalonia 的自动转换工具，迁移是个手工活。好在两个框架颇多相似之处，这件事还算得上可控。逐层推进，一层一层来。
 
-#### 1. Create a new Avalonia project
+#### 1. 新建一个 Avalonia 项目 {#1-create-a-new-avalonia-project}
 
-Start with a fresh Avalonia project using the templates:
+先用模板起一个全新的 Avalonia 项目：
 
 ```bash
 dotnet new avalonia.mvvm -n MyApp
 ```
 
-This gives you a working project structure with `App.axaml`, `MainWindow.axaml`, and a view model base class. Do not try to convert your MAUI `.csproj` in place.
+这样你就有了一套能跑的项目结构，含 `App.axaml`、`MainWindow.axaml` 和一个视图模型基类。不要试图就地改造你的 MAUI `.csproj`。
 
-#### 2. Move your models and services
+#### 2. 搬运模型与服务 {#2-move-your-models-and-services}
 
-Copy your model classes, services, and any platform-independent business logic into the new project. These typically require no changes since they have no UI framework dependency.
+把模型类、服务，以及所有与界面框架无关的业务逻辑复制到新项目里。它们通常不需要任何改动，因为压根不依赖 UI 框架。
 
-#### 3. Migrate your view models
+#### 3. 迁移视图模型 {#3-migrate-your-view-models}
 
-Copy your view models. If you use `CommunityToolkit.Mvvm`, it works with Avalonia without modification. If your view models reference MAUI-specific types (such as `Microsoft.Maui.Controls.Application`), replace those references with Avalonia equivalents.
+把视图模型复制过来。若你用的是 `CommunityToolkit.Mvvm`，它在 Avalonia 下无需改动即可使用。若视图模型引用了 MAUI 专属的类型（比如 `Microsoft.Maui.Controls.Application`），请换成 Avalonia 中对应的东西。
 
-#### 4. Convert your XAML files
+#### 4. 转换 XAML 文件 {#4-convert-your-xaml-files}
 
-For each `.xaml` page in your MAUI project, create a corresponding `.axaml` file in the Avalonia project. Use the control and layout mapping tables in the [Key differences](#key-differences) section above to translate control names, properties, and binding syntax.
+为 MAUI 项目中的每个 `.xaml` 页面，在 Avalonia 项目里建一个对应的 `.axaml` 文件。控件名、属性和绑定语法怎么换，请参考上面[主要差异](#key-differences)一节中的控件与布局映射表。
 
-Key changes for every file:
-- Replace the root XML namespace with `xmlns="https://github.com/avaloniaui"`
-- Rename controls (`Entry` to `TextBox`, `Label` to `TextBlock`, etc.)
-- Replace `VisualStateManager` blocks with Avalonia style selectors and pseudo-classes
-- Update binding syntax where needed (`{x:Reference}` to `#name`, `RelativeSource Self` to `$self`)
+每个文件都要改的地方：
+- 把根元素的 XML 命名空间换成 `xmlns="https://github.com/avaloniaui"`
+- 给控件改名（`Entry` 改成 `TextBox`，`Label` 改成 `TextBlock`，诸如此类）
+- 把 `VisualStateManager` 块换成 Avalonia 的样式选择器和伪类
+- 按需更新绑定语法（`{x:Reference}` 改成 `#name`，`RelativeSource Self` 改成 `$self`）
 
-#### 5. Convert your styles and resources
+#### 5. 转换样式与资源 {#5-convert-your-styles-and-resources}
 
-Move your resource dictionaries. Replace `TargetType`-based styles with Avalonia selector-based styles. See the [Styling](#styling) section above for examples.
+把资源字典搬过来，再把基于 `TargetType` 的样式换成 Avalonia 基于选择器的样式。示例请见上面的[样式](#styling)一节。
 
-#### 6. Replace navigation
+#### 6. 替换导航 {#6-replace-navigation}
 
-If your MAUI app uses `Shell` or `NavigationPage`, replace it with Avalonia's `NavigationPage` or a view model composition pattern. See the [Navigation](#navigation) section above.
+若你的 MAUI 应用用了 `Shell` 或 `NavigationPage`，请换成 Avalonia 的 `NavigationPage` 或视图模型组合的做法。详见上面的[导航](#navigation)一节。
 
-#### 7. Handle platform-specific code
+#### 7. 处理平台专属代码 {#7-handle-platform-specific-code}
 
-Review any code in your MAUI `Platforms/` folder. Most platform-specific workarounds for rendering inconsistencies are no longer needed. For genuine platform API access (camera, file system, sensors), use .NET MAUI Essentials as a standalone package or replace with direct platform API calls.
+把 MAUI `Platforms/` 文件夹里的代码都过一遍。那些为了抹平渲染差异而做的平台变通，多半已经没必要了。至于真正需要调用平台 API 的部分（相机、文件系统、传感器），可以把 .NET MAUI Essentials 当作独立包来用，或者改为直接调用平台 API。
 
 ### Verification
 
-After completing the migration, verify that your application works correctly:
+迁移完成后，请逐项确认应用工作正常：
 
-1. **Build the project.** Fix any remaining compilation errors from missed type renames or namespace changes.
-2. **Run on your primary platform.** Confirm that the main window loads and navigation works.
-3. **Test on a second platform.** Run on a different OS (for example, macOS if you developed on Windows) to confirm cross-platform rendering consistency.
-4. **Walk through your core user flows.** Verify that data binding, commands, and input handling work as expected.
-5. **Check your styles.** Confirm that visual appearance matches your intent, paying attention to hover/pressed states that previously used `VisualStateManager`.
+1. **构建项目。**把漏改的类型名或命名空间导致的编译错误都修掉。
+2. **在你的主力平台上运行。**确认主窗口能加载、导航能用。
+3. **换一个平台再测一遍。**换个操作系统跑跑看（比如你在 Windows 上开发，那就试试 macOS），确认跨平台渲染的一致性。
+4. **把核心用户流程走一遍。**确认数据绑定、命令和输入处理都如预期工作。
+5. **检查样式。**确认视觉呈现符合你的本意，尤其留意此前用 `VisualStateManager` 实现的悬停/按下状态。
 
-### What you gain
+### 你能得到什么 {#what-you-gain}
 
-Moving from MAUI to Avalonia changes how you work day to day:
+从 MAUI 转到 Avalonia，会改变你日常的工作方式：
 
-- **Pixel-perfect consistency:** Your UI renders identically on every platform. No more chasing layout bugs that only appear on Android or styling quirks on iOS.
-- **First-class desktop support:** Avalonia was built for desktop from the start. Window management, menus, keyboard navigation, and multi-window support all work as expected.
-- **Linux support:** Avalonia runs natively on Linux. MAUI does not support Linux at all.
-- **No native control wrappers:** You are not debugging through layers of platform abstraction. What you see in XAML is what renders.
-- **WebAssembly:** Avalonia supports browser deployment through WebAssembly, a target MAUI does not offer.
+- **像素级一致：**你的界面在每个平台上渲染得分毫不差。再也不用追查只在 Android 上冒出来的布局 bug，或是 iOS 上的样式怪癖。
+- **一流的桌面支持：**Avalonia 从一开始就是为桌面而生的。窗口管理、菜单、键盘导航和多窗口支持，统统如你所愿。
+- **支持 Linux：**Avalonia 原生跑在 Linux 上，而 MAUI 压根不支持 Linux。
+- **没有原生控件包装层：**你不必穿过层层平台抽象去调试。XAML 里写的是什么，渲染出来就是什么。
+- **WebAssembly：**Avalonia 支持通过 WebAssembly 部署到浏览器，这是 MAUI 没有的目标平台。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Get started with Avalonia](/docs/get-started/create-your-first-project): Create your first Avalonia application.
-- [Styles](/docs/styling/styles): How Avalonia's CSS-like styling works.
-- [Data binding syntax](/docs/data-binding/data-binding-syntax): Avalonia binding syntax reference.
-- [Controls reference](/controls): Full Avalonia controls documentation.
-- [NavigationPage](/controls/navigation/navigationpage): Stack-based page navigation in Avalonia.
+- [Avalonia 入门](/docs/get-started/create-your-first-project)：创建你的第一个 Avalonia 应用。
+- [样式](/docs/styling/styles)：Avalonia 类 CSS 样式机制的运作方式。
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：Avalonia 绑定语法参考。
+- [控件参考](/controls)：Avalonia 控件的完整文档。
+- [NavigationPage](/controls/navigation/navigationpage)：Avalonia 中基于栈的页面导航。

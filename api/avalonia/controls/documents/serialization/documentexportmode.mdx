@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DocumentExportMode Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,19 +50,19 @@ public enum DocumentExportMode
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> DocumentExportMode
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> DocumentExportMode
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This enum replaces the former per-format `SpacingExportMode` and
 `Preserve*` boolean options with a single axis that determines both the
 control-word strategy and custom-marker behavior.
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [InteropSafe](#uid-8f846af08b) | Native, broadly interoperable controls understood by external editors. Custom ignorable markers are still emitted for properties that have no native representation, preserving round-trip fidelity for internal re-import. |
 | [Portable](#uid-9bdc3e00bf) | Maximum portability. Uses only native controls and omits all custom serializer markers. Suitable for export to external consumers that will never be re-imported. Some formatting may be lost. |
@@ -72,7 +72,7 @@ control-word strategy and custom-marker behavior.
 
 <span id="uid-8f846af08b"></span>
 
-### InteropSafe Field
+### InteropSafe 字段 {#interopsafe-field}
 
 Native, broadly interoperable controls understood by external editors.
 Custom ignorable markers are still emitted for properties that have no native
@@ -88,7 +88,7 @@ public Avalonia.Controls.Documents.Serialization.DocumentExportMode InteropSafe
 
 <span id="uid-9bdc3e00bf"></span>
 
-### Portable Field
+### Portable 字段 {#portable-field}
 
 Maximum portability. Uses only native controls and omits all custom
 serializer markers. Suitable for export to external consumers that
@@ -104,7 +104,7 @@ public Avalonia.Controls.Documents.Serialization.DocumentExportMode Portable
 
 <span id="uid-64aeaa688d"></span>
 
-### RoundTripStrict Field
+### RoundTripStrict 字段 {#roundtripstrict-field}
 
 Maximum internal round-trip fidelity.
 Emits synthetic controls (e.g., zero-width borders with `\brsp` spacing)

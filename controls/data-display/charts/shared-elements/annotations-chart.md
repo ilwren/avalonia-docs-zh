@@ -1,7 +1,7 @@
 ---
 id: annotations-chart
-title: Annotations
-description: Adds contextual lines, bands, shapes, and text to charts for highlighting thresholds, milestones, or regions of interest.
+title: 标注
+description: 为图表添加参考线、区间带、图形和文字，用来标出阈值、里程碑或值得关注的区域。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,20 +10,20 @@ tags:
 import chartsFeaturesAnnotation from '/img/controls/charts/charts-annotations.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Annotations allow you to add context to your charts using lines, bands, shapes, and custom text. They are useful for highlighting thresholds, milestones, or specific regions of interest.
+标注让你能用参考线、区间带、图形和自定义文字为图表补充背景信息，很适合标出阈值、里程碑，或某段值得关注的区域。
 
 <Image light={chartsFeaturesAnnotation} maxWidth={400} position="center" cornerRadius="true" alt="Chart with annotation overlays including a horizontal threshold line, a shaded comfort zone band, and a custom text label." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Thresholds**: Showing a "target" or "limit" line on a performance chart.
-- **Milestones**: Marking specific dates of interest on a timeline.
-- **Region highlighting**: Shading a "danger zone" or "comfort zone" across a set of values.
+- **阈值**：在绩效图上画一条「目标线」或「上限线」。
+- **里程碑**：在时间线上标出几个关键日期。
+- **区域高亮**：为某一段取值范围铺上「危险区」或「舒适区」的底色。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -61,7 +61,7 @@ Annotations allow you to add context to your charts using lines, bands, shapes, 
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record Point(double X, double Y);
@@ -73,70 +73,70 @@ public ObservableCollection<Point> ShapeData { get; } = new()
 };
 ```
 
-## Coordinate system
+## 坐标体系 {#coordinate-system}
 
-Annotation coordinates are specified in axis space. On category axes, horizontal values use zero-based category slot indexes. On continuous horizontal axes, horizontal values use the axis value domain, such as numeric values or `DateTime` ticks. Vertical values use the vertical axis value domain.
+标注的坐标以坐标轴空间为准。在类别轴上，横向取值使用从零开始的类别槽位索引；在连续横轴上，横向取值使用该轴的值域，比如数值或 `DateTime` 刻度。纵向取值一律使用纵轴的值域。
 
-Shape sizes are also measured in axis units. On logarithmic axes or axes with scale breaks, the same data delta can map to different pixel sizes depending on its origin. Custom annotation renderers should use `CartesianAnnotationRenderContext.DataXToPixel` and `DataYToPixel` for positions, and `DeltaXToPixelsAt(origin, value)` or `DeltaYToPixelsAt(origin, value)` for origin-sensitive sizes.
+图形的尺寸同样以坐标轴单位计量。在对数轴或带刻度断裂的轴上，同样的数据增量会因起点不同而对应不同的像素尺寸。自定义标注渲染器定位时应使用 `CartesianAnnotationRenderContext.DataXToPixel` 和 `DataYToPixel`，涉及起点的尺寸换算则应使用 `DeltaXToPixelsAt(origin, value)` 或 `DeltaYToPixelsAt(origin, value)`。
 
-## Common properties (LineAnnotation)
+## 公共属性（LineAnnotation） {#common-properties-lineannotation}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Value` | Axis-space value where the line is placed. Horizontal lines use vertical-axis values; vertical lines use horizontal-axis values. | `0` |
+| `Value` | 参考线所在的坐标轴空间取值。水平线取纵轴的值，垂直线取横轴的值。 | `0` |
 | `Orientation` | `Horizontal` or `Vertical`. | `Horizontal` |
-| `Stroke` | Color of the annotation line. | `Gray` |
-| `StrokeThickness` | Width of the annotation line. | `1.0` |
-| `DashStyle` | Dash style used for the annotation line. | `null` |
-| `Foreground` | Brush used for the label text. When `null`, the annotation falls back to `Stroke` where supported. | `null` |
-| `FontSize` | Font size used for annotation labels. | `12.0` |
-| `Label` | Text displayed next to the line. | `null` |
+| `Stroke` | 标注线的颜色。 | `Gray` |
+| `StrokeThickness` | 标注线的粗细。 | `1.0` |
+| `DashStyle` | 标注线所用的虚线样式。 | `null` |
+| `Foreground` | 标签文字所用的画刷。为 `null` 时，在支持的场合下标注会回落到 `Stroke`。 | `null` |
+| `FontSize` | 标注标签所用的字号。 | `12.0` |
+| `Label` | 显示在参考线旁的文字。 | `null` |
 
-## Common properties (`BandAnnotation`)
+## 常用属性（`BandAnnotation`） {#common-properties-bandannotation}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `FromValue` | Starting axis-space value of the band. Horizontal bands use vertical-axis values; vertical bands use horizontal-axis values. | `0` |
-| `ToValue` | Ending axis-space value of the band. | `0` |
+| `FromValue` | 区间带起始处的坐标轴空间取值。水平带取纵轴的值，垂直带取横轴的值。 | `0` |
+| `ToValue` | 区间带结束处的坐标轴空间取值。 | `0` |
 | `Orientation` | `Horizontal` or `Vertical`. | `Horizontal` |
-| `Fill` | The brush used to fill the shaded area. | `null` |
-| `Foreground` | Brush used for the band label text. When `null`, the annotation falls back to `Stroke` where supported. | `null` |
-| `FontSize` | Font size used for the band label. | `12.0` |
-| `Label` | Text displayed inside the band. | `null` |
+| `Fill` | 填充阴影区域所用的画刷。 | `null` |
+| `Foreground` | 区间带标签文字所用的画刷。为 `null` 时，在支持的场合下标注会回落到 `Stroke`。 | `null` |
+| `FontSize` | 区间带标签所用的字号。 | `12.0` |
+| `Label` | 显示在区间带内部的文字。 | `null` |
 
-## Common properties (TextAnnotation)
+## 公共属性（TextAnnotation） {#common-properties-textannotation}
 
-A text annotation placed at a specific coordinate on the chart area.
+放置在图表区指定坐标处的一条文字标注。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `X` | Horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
-| `Y` | Vertical-axis value. | `0` |
-| `Text` | Text displayed by the annotation. | `null` |
-| `Foreground` | Brush used for the text fill. | `null` |
-| `FontSize` | Font size used for the text. | `12.0` |
-| `Stroke` | Optional text outline brush. Text outlines are drawn only when `Stroke` is explicitly set. | `Gray` |
-| `StrokeThickness` | Optional text outline thickness. Applied only when `Stroke` is explicitly set. | `1.0` |
-| `Opacity` | Opacity of the annotation. | `1.0` |
+| `X` | 横轴取值。类别轴使用从零开始的类别槽位索引。 | `0` |
+| `Y` | 纵轴取值。 | `0` |
+| `Text` | 该标注所显示的文字。 | `null` |
+| `Foreground` | 文字填充所用的画刷。 | `null` |
+| `FontSize` | 文字所用的字号。 | `12.0` |
+| `Stroke` | 可选的文字描边画刷。只有显式设置了 `Stroke` 才会绘制文字描边。 | `Gray` |
+| `StrokeThickness` | 可选的文字描边粗细。只有显式设置了 `Stroke` 时才生效。 | `1.0` |
+| `Opacity` | 标注的不透明度。 | `1.0` |
 
-## Common properties (`RectangleAnnotation`)
+## 常用属性（`RectangleAnnotation`） {#common-properties-rectangleannotation}
 
-A rectangle annotation placed at specific coordinates on the chart area.
+放置在图表区指定坐标处的一个矩形标注。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `X` | Left horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
-| `Y` | Lower vertical-axis value. | `0` |
-| `Width` | Width in horizontal-axis units. | `0.5` |
-| `Height` | Height in vertical-axis units. | `10.0` |
-| `Fill` | Brush used to fill the rectangle. | `null` |
-| `CornerRadius` | Corner radius for rounded rectangles. | `0` |
-| `Label` | Text displayed at the center of the rectangle. | `null` |
-| `Stroke` | Color of the rectangle border. | `Gray` |
-| `StrokeThickness` | Width of the rectangle border. | `1` |
-| `Foreground` | Brush used for the rectangle label text. | `null` |
-| `FontSize` | Font size used for the rectangle label. | `12.0` |
-| `Opacity` | Opacity of the annotation. | `1.0` |
+| `X` | 左边缘的横轴取值。类别轴使用从零开始的类别槽位索引。 | `0` |
+| `Y` | 下边缘的纵轴取值。 | `0` |
+| `Width` | 宽度，以横轴单位计。 | `0.5` |
+| `Height` | 高度，以纵轴单位计。 | `10.0` |
+| `Fill` | 填充矩形所用的画刷。 | `null` |
+| `CornerRadius` | 圆角矩形的圆角半径。 | `0` |
+| `Label` | 显示在矩形中央的文字。 | `null` |
+| `Stroke` | 矩形边框的颜色。 | `Gray` |
+| `StrokeThickness` | 矩形边框的粗细。 | `1` |
+| `Foreground` | 矩形标签文字所用的画刷。 | `null` |
+| `FontSize` | 矩形标签所用的字号。 | `12.0` |
+| `Opacity` | 标注的不透明度。 | `1.0` |
 
 ### XAML
 
@@ -154,23 +154,23 @@ A rectangle annotation placed at specific coordinates on the chart area.
 </CartesianChart>
 ```
 
-## Common properties (`EllipseAnnotation`)
+## 常用属性（`EllipseAnnotation`） {#common-properties-ellipseannotation}
 
-An ellipse annotation placed at specific coordinates on the chart area.
+放置在图表区指定坐标处的一个椭圆标注。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `X` | Center horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
-| `Y` | Center vertical-axis value. | `0` |
-| `RadiusX` | Horizontal radius in axis units. | `0.25` |
-| `RadiusY` | Vertical radius in axis units. | `10.0` |
-| `Fill` | Brush used to fill the ellipse. | `null` |
-| `Label` | Text displayed at the center of the ellipse. | `null` |
-| `Stroke` | Color of the ellipse border. | `Gray` |
-| `StrokeThickness` | Width of the ellipse border. | `1` |
-| `Foreground` | Brush used for the ellipse label text. | `null` |
-| `FontSize` | Font size used for the ellipse label. | `12.0` |
-| `Opacity` | Opacity of the annotation. | `1.0` |
+| `X` | 圆心的横轴取值。类别轴使用从零开始的类别槽位索引。 | `0` |
+| `Y` | 圆心的纵轴取值。 | `0` |
+| `RadiusX` | 横向半径，以坐标轴单位计。 | `0.25` |
+| `RadiusY` | 纵向半径，以坐标轴单位计。 | `10.0` |
+| `Fill` | 填充椭圆所用的画刷。 | `null` |
+| `Label` | 显示在椭圆中央的文字。 | `null` |
+| `Stroke` | 椭圆边框的颜色。 | `Gray` |
+| `StrokeThickness` | 椭圆边框的粗细。 | `1` |
+| `Foreground` | 椭圆标签文字所用的画刷。 | `null` |
+| `FontSize` | 椭圆标签所用的字号。 | `12.0` |
+| `Opacity` | 标注的不透明度。 | `1.0` |
 
 ### XAML
 
@@ -188,25 +188,25 @@ An ellipse annotation placed at specific coordinates on the chart area.
 </CartesianChart>
 ```
 
-## Common properties (`ArrowLineAnnotation`)
+## 常用属性（`ArrowLineAnnotation`） {#common-properties-arrowlineannotation}
 
-A line annotation with optional arrowheads at either or both ends, useful for indicating direction or drawing attention between two data points.
+一种线条标注，可在一端或两端加箭头，适合指示方向，或在两个数据点之间牵引视线。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `X1` | Start horizontal-axis value. Category axes use zero-based category slot indexes. | `0` |
-| `Y1` | Start vertical-axis value. | `0` |
-| `X2` | End horizontal-axis value. | `0` |
-| `Y2` | End vertical-axis value. | `0` |
-| `ShowStartArrow` | Whether to show an arrowhead at the start. | `false` |
-| `ShowEndArrow` | Whether to show an arrowhead at the end. | `true` |
-| `ArrowSize` | Size of the arrowhead in pixels. | `8.0` |
-| `Label` | Text displayed at the midpoint of the line. | `null` |
-| `Stroke` | Color of the arrow line. | `Gray` |
-| `StrokeThickness` | Width of the arrow line. | `1` |
-| `Foreground` | Brush used for the arrow label text. | `null` |
-| `FontSize` | Font size used for the arrow label. | `12.0` |
-| `Opacity` | Opacity of the annotation. | `1.0` |
+| `X1` | 起点的横轴取值。类别轴使用从零开始的类别槽位索引。 | `0` |
+| `Y1` | 起点的纵轴取值。 | `0` |
+| `X2` | 终点的横轴取值。 | `0` |
+| `Y2` | 终点的纵轴取值。 | `0` |
+| `ShowStartArrow` | 是否在起点显示箭头。 | `false` |
+| `ShowEndArrow` | 是否在终点显示箭头。 | `true` |
+| `ArrowSize` | 箭头的大小，单位为像素。 | `8.0` |
+| `Label` | 显示在线段中点处的文字。 | `null` |
+| `Stroke` | 箭头线的颜色。 | `Gray` |
+| `StrokeThickness` | 箭头线的粗细。 | `1` |
+| `Foreground` | 箭头标签文字所用的画刷。 | `null` |
+| `FontSize` | 箭头标签所用的字号。 | `12.0` |
+| `Opacity` | 标注的不透明度。 | `1.0` |
 
 ### XAML
 

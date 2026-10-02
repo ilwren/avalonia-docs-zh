@@ -1,19 +1,19 @@
 ---
 id: menuflyout
 title: MenuFlyout
-description: A flyout that displays a simple menu of commands, typically attached to a button or other control.
+description: 一个浮出控件，用于展示一份简单的命令菜单，通常挂在按钮或其他控件上。
 doc-type: reference
 ---
 
 import MenuFlyoutScreenshot from '/img/reference/controls/menuflyout/menuflyout-button.gif';
 
-A `MenuFlyout` allows you to host a simple menu as the flyout for a control. You might use this as an alternative to the [ContextMenu](/controls/menus/contextmenu).
+`MenuFlyout` 让你把一份简单的菜单作为控件的浮出内容来承载。你可以拿它当作 [ContextMenu](/controls/menus/contextmenu) 的替代方案。
 
-The properties of a menu flyout are the same as for a [Flyout](/controls/layout/containers/flyout).
+菜单浮出控件的属性与 [Flyout](/controls/layout/containers/flyout) 相同。
 
 ## Example
 
-This is a simple example of the menu flyout:
+下面是菜单浮出控件的一个简单例子：
 
 <XamlPreview>
 
@@ -34,10 +34,10 @@ This is a simple example of the menu flyout:
 </XamlPreview>
 
 :::info
-Note the `<Separator/>` element will not work in a menu flyout. To make a separator line, use a `<MenuItem>` element with the header set to '-' as shown above.
+请注意 `<Separator/>` 元素在菜单浮出控件中不起作用。要画分隔线，请像上面那样用 header 设为 '-' 的 `<MenuItem>` 元素。
 :::
 
-## With Commands and Icons
+## 搭配命令与图标 {#with-commands-and-icons}
 
 ```xml
 <Button Content="Actions">
@@ -58,7 +58,7 @@ Note the `<Separator/>` element will not work in a menu flyout. To make a separa
 
 ## Dynamic MenuFlyout
 
-This is an example for a `MenuFlyout` that is created dynamically during runtime based on a collection `MyMenuItems` with items of type `MyMenuItemViewModel`.
+下面这个例子中的 `MenuFlyout` 是运行时动态生成的，数据源是一个元素类型为 `MyMenuItemViewModel` 的集合 `MyMenuItems`。
 
 ```xml
 <Button Content="Button">
@@ -82,7 +82,7 @@ This is an example for a `MenuFlyout` that is created dynamically during runtime
 
 ## Placement
 
-You can control where the flyout appears relative to its target control by setting the `Placement` property. This property accepts a `FlyoutPlacementMode` value, which includes options such as `Top`, `Bottom`, `Left`, `Right`, `TopEdgeAlignedLeft`, `TopEdgeAlignedRight`, `BottomEdgeAlignedLeft`, `BottomEdgeAlignedRight`, and others.
+设置 `Placement` 属性即可控制浮出内容相对目标控件出现的位置。该属性接受 `FlyoutPlacementMode` 取值，可选项包括 `Top`、`Bottom`、`Left`、`Right`、`TopEdgeAlignedLeft`、`TopEdgeAlignedRight`、`BottomEdgeAlignedLeft`、`BottomEdgeAlignedRight` 等。
 
 ```xml
 <Button Content="Options">
@@ -95,11 +95,11 @@ You can control where the flyout appears relative to its target control by setti
 </Button>
 ```
 
-If you do not set `Placement`, the flyout uses a default position determined by the control it is attached to.
+若不设置 `Placement`，浮出控件会采用由其所附着控件决定的默认位置。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [MenuFlyout API reference](/api/avalonia/controls/menuflyout)
-- [`MenuFlyout.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/MenuFlyout.cs)
+- [MenuFlyout API 参考](/api/avalonia/controls/menuflyout)
+- [GitHub 上的 `MenuFlyout.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Flyouts/MenuFlyout.cs)
 - [Separator](/controls/menus/separator)
 - [Menu](/controls/menus/menu)

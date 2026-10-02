@@ -1,7 +1,7 @@
 ---
 id: drawerpage
 title: DrawerPage
-description: '`DrawerPage` combines a sliding drawer pane with a main content area. The drawer can open as a flyout overlay, sit permanently alongside the content as a split sidebar, or render as a compact navigation rail.'
+description: '`DrawerPage` 把一个可滑出的抽屉面板与主内容区组合在一起。抽屉既可以作为浮层滑出，也可以作为分栏侧边栏常驻在内容旁边，还可以呈现为紧凑的导航栏。'
 doc-type: reference
 ---
 
@@ -14,12 +14,12 @@ import DrawerPageSplitScreenshot from '/img/controls/drawerpage/drawerpage-split
 import DrawerPageRightScreenshot from '/img/controls/drawerpage/drawerpage-right.png';
 import DrawerPageRtlScreenshot from '/img/controls/drawerpage/drawerpage-rtl.png';
 
-The [`DrawerPage`](/api/avalonia/controls/drawerpage) combines a sliding drawer pane with a main content area, providing a common navigation pattern for applications. It is built on top of `SplitView` and adds page-based navigation features such as lifecycle events, safe area support, and automatic integration with [`NavigationPage`](/api/avalonia/controls/navigationpage).
+[`DrawerPage`](/api/avalonia/controls/drawerpage) 把一个可滑出的抽屉面板与主内容区组合在一起，是应用中常见的导航范式。它构建在 `SplitView` 之上，并补充了基于页面的各项能力，比如生命周期事件、安全区支持，以及与 [`NavigationPage`](/api/avalonia/controls/navigationpage) 的自动集成。
 
-When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is shown in the navigation bar at the root of the navigation stack. It automatically switches to the back button when the navigation stack has more than one page.
+当 `DrawerPage` 的 `Content` 是 `NavigationPage` 时，导航栈根部会在导航栏中显示抽屉开关按钮；一旦导航栈里不止一个页面，它会自动切换成返回按钮。
 
 :::info
-`DrawerPage` is similar to [`SplitView`](/controls/layout/containers/splitview) but adds page-based navigation features such as lifecycle events, safe area support, and automatic integration with `NavigationPage`.
+`DrawerPage` 与 [`SplitView`](/controls/layout/containers/splitview) 相似，但补充了基于页面的各项能力，比如生命周期事件、安全区支持，以及与 `NavigationPage` 的自动集成。
 :::
 
 <Tabs>
@@ -34,84 +34,84 @@ When the `Content` of a `DrawerPage` is a `NavigationPage`, the drawer toggle is
 
 </Tabs>
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-| Property | Type | Default | Description |
+| 属性 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `Content` | `object?` | `null` | The main content area of the page. |
-| `ContentTemplate` | `IDataTemplate?` | Default page template | A data template for the main content. |
-| `Drawer` | `object?` | `null` | The content displayed inside the drawer pane. |
-| `DrawerTemplate` | `IDataTemplate?` | `null` | A data template for the drawer content. |
-| `IsOpen` | `bool` | `false` | Controls whether the drawer is open. |
-| `DrawerLength` | `double` | `320` | The width (or height) of the drawer when open. |
-| `CompactDrawerLength` | `double` | `48` | The width, or height for top and bottom placement, of the compact drawer rail. |
-| `DrawerBreakpointLength` | `double` | `0` | The container width, or height for top and bottom placement, at which the drawer automatically switches between overlay and inline modes. A value of `0` disables the breakpoint. |
-| `IsGestureEnabled` | `bool` | `true` | Enables swipe gestures to open and close the drawer. |
-| `DrawerBehavior` | `DrawerBehavior` | `Auto` | Controls drawer visibility behavior. See the DrawerBehavior Values table below. |
-| `DrawerLayoutBehavior` | `DrawerLayoutBehavior` | `Overlay` | How the drawer interacts with the content area. See the DrawerLayoutBehavior Values table below. |
-| `DrawerPlacement` | `DrawerPlacement` | `Left` | The logical side where the drawer appears. Left and right are mirrored when `FlowDirection` is `RightToLeft`. See the [DrawerPlacement Values table below](#drawerplacement-values). |
-| `DrawerHeader` | `object?` | `null` | Content displayed at the top of the drawer. |
-| `DrawerHeaderTemplate` | `IDataTemplate?` | `null` | A data template for `DrawerHeader`. |
-| `DrawerHeaderBackground` | `IBrush?` | `null` | The brush used for the drawer header background. |
-| `DrawerHeaderForeground` | `IBrush?` | `null` | The brush used for the drawer header foreground. |
-| `DrawerFooter` | `object?` | `null` | Content displayed at the bottom of the drawer. |
-| `DrawerFooterTemplate` | `IDataTemplate?` | `null` | A data template for `DrawerFooter`. |
-| `DrawerFooterBackground` | `IBrush?` | `null` | The brush used for the drawer footer background. |
-| `DrawerFooterForeground` | `IBrush?` | `null` | The brush used for the drawer footer foreground. |
-| `DrawerIcon` | `object?` | `null` | An icon shown in the drawer toggle button. |
-| `DrawerIconTemplate` | `IDataTemplate?` | `null` | A data template for `DrawerIcon` when the icon value is non-visual data. |
-| `DrawerBackground` | [`IBrush?`](/api/avalonia/media/ibrush) | `null` | The brush used for the drawer background. |
-| `BackdropBrush` | `IBrush?` | `null` | The brush used for the overlay backdrop when the drawer is open. |
-| `DisplayMode` | `SplitViewDisplayMode` | `Overlay` | The effective `SplitView` display mode resolved from `DrawerBehavior`, `DrawerLayoutBehavior`, and `DrawerBreakpointLength`. |
-| `HorizontalContentAlignment` | `HorizontalAlignment` | `Stretch` | Horizontal alignment of the main content. |
-| `VerticalContentAlignment` | `VerticalAlignment` | `Stretch` | Vertical alignment of the main content. |
+| `Content` | `object?` | `null` | 页面的主内容区。 |
+| `ContentTemplate` | `IDataTemplate?` | 主题默认模板 | 主内容使用的数据模板。 |
+| `Drawer` | `object?` | `null` | 抽屉面板内显示的内容。 |
+| `DrawerTemplate` | `IDataTemplate?` | `null` | 抽屉内容使用的数据模板。 |
+| `IsOpen` | `bool` | `false` | 控制抽屉是否打开。 |
+| `DrawerLength` | `double` | `320` | 抽屉打开时的宽度（或高度）。 |
+| `CompactDrawerLength` | `double` | `48` | 紧凑导航栏的宽度；抽屉位于顶部或底部时则为高度。 |
+| `DrawerBreakpointLength` | `double` | `0` | 抽屉在浮层模式与内联模式之间自动切换的容器宽度；抽屉位于顶部或底部时则为高度。设为 `0` 可关闭该断点。 |
+| `IsGestureEnabled` | `bool` | `true` | 启用滑动手势来开关抽屉。 |
+| `DrawerBehavior` | `DrawerBehavior` | `Auto` | 控制抽屉的显示行为，取值见下方 DrawerBehavior 取值表。 |
+| `DrawerLayoutBehavior` | `DrawerLayoutBehavior` | `Overlay` | 抽屉与内容区之间的相处方式，取值见下方 DrawerLayoutBehavior 取值表。 |
+| `DrawerPlacement` | `DrawerPlacement` | `Left` | 抽屉出现的逻辑侧边。当 `FlowDirection` 为 `RightToLeft` 时，左右会镜像对调。取值见[下方 DrawerPlacement 取值表](#drawerplacement-values)。 |
+| `DrawerHeader` | `object?` | `null` | 显示在抽屉顶部的内容。 |
+| `DrawerHeaderTemplate` | `IDataTemplate?` | `null` | `DrawerHeader` 使用的数据模板。 |
+| `DrawerHeaderBackground` | `IBrush?` | `null` | 抽屉页眉背景所用的画刷。 |
+| `DrawerHeaderForeground` | `IBrush?` | `null` | 抽屉页眉前景所用的画刷。 |
+| `DrawerFooter` | `object?` | `null` | 显示在抽屉底部的内容。 |
+| `DrawerFooterTemplate` | `IDataTemplate?` | `null` | `DrawerFooter` 使用的数据模板。 |
+| `DrawerFooterBackground` | `IBrush?` | `null` | 抽屉页脚背景所用的画刷。 |
+| `DrawerFooterForeground` | `IBrush?` | `null` | 抽屉页脚前景所用的画刷。 |
+| `DrawerIcon` | `object?` | `null` | 抽屉开关按钮上显示的图标。 |
+| `DrawerIconTemplate` | `IDataTemplate?` | `null` | 当图标值是非可视数据时，`DrawerIcon` 使用的数据模板。 |
+| `DrawerBackground` | [`IBrush?`](/api/avalonia/media/ibrush) | `null` | 抽屉背景所用的画刷。 |
+| `BackdropBrush` | `IBrush?` | `null` | 抽屉打开时，遮罩背景所用的画刷。 |
+| `DisplayMode` | `SplitViewDisplayMode` | `Overlay` | 由 `DrawerBehavior`、`DrawerLayoutBehavior` 和 `DrawerBreakpointLength` 共同决定的实际 `SplitView` 显示模式。 |
+| `HorizontalContentAlignment` | `HorizontalAlignment` | `Stretch` | 主内容的水平对齐方式。 |
+| `VerticalContentAlignment` | `VerticalAlignment` | `Stretch` | 主内容的垂直对齐方式。 |
 
-### DrawerBehavior values
+### DrawerBehavior 的取值 {#drawerbehavior-values}
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
-| `Auto` | The drawer opens and closes normally. `DrawerLayoutBehavior` and `DrawerBreakpointLength` determine whether it overlays or takes layout space. |
-| `Flyout` | The drawer behaves as a flyout overlay, closing automatically when the user taps outside. |
-| `Locked` | The drawer stays open and cannot be closed by the user. |
-| `Disabled` | The drawer is hidden and cannot be opened. |
+| `Auto` | 抽屉可以正常开关。至于它是浮在内容之上还是占用布局空间，由 `DrawerLayoutBehavior` 和 `DrawerBreakpointLength` 决定。 |
+| `Flyout` | 抽屉表现为浮出层，用户点击外部时自动关闭。 |
+| `Locked` | 抽屉保持打开，用户无法关闭。 |
+| `Disabled` | 抽屉被隐藏，且无法打开。 |
 
-### DrawerLayoutBehavior values
+### DrawerLayoutBehavior 的取值 {#drawerlayoutbehavior-values}
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
-| `Overlay` | The drawer slides over the content. The content area is not resized. |
-| `Split` | The drawer pushes the content to the side. Both the drawer and content are visible simultaneously. |
-| `CompactOverlay` | A narrow strip of the drawer is always visible (showing icons). When opened, the drawer overlays the content. |
-| `CompactInline` | A narrow strip of the drawer is always visible. When opened, the drawer pushes the content aside. |
+| `Overlay` | 抽屉滑动覆盖在内容之上，内容区尺寸不变。 |
+| `Split` | 抽屉把内容挤到一边，抽屉与内容同时可见。 |
+| `CompactOverlay` | 抽屉始终露出窄窄的一条（显示图标）。打开时，抽屉覆盖在内容之上。 |
+| `CompactInline` | 抽屉始终露出窄窄的一条。打开时，抽屉把内容挤到一边。 |
 
-### DrawerPlacement values
+### DrawerPlacement 的取值 {#drawerplacement-values}
 
-| Value | Description |
+| 值 | 说明 |
 | --- | --- |
-| `Left` | The drawer appears on the leading side: left in left-to-right layouts, right in right-to-left layouts. |
-| `Right` | The drawer appears on the trailing side: right in left-to-right layouts, left in right-to-left layouts. |
-| `Top` | The drawer appears at the top. |
-| `Bottom` | The drawer appears at the bottom. |
+| `Left` | 抽屉出现在起始侧：从左到右布局中在左边，从右到左布局中在右边。 |
+| `Right` | 抽屉出现在末尾侧：从左到右布局中在右边，从右到左布局中在左边。 |
+| `Top` | 抽屉出现在顶部。 |
+| `Bottom` | 抽屉出现在底部。 |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| 事件 | 说明 |
 | --- | --- |
-| `Opened` | Raised when the drawer finishes opening. |
-| `Closing` | Raised when the drawer is about to close. Set `Cancel = true` on the event args to prevent closing. |
-| `Closed` | Raised when the drawer finishes closing. |
+| `Opened` | 抽屉完全打开后引发。 |
+| `Closing` | 抽屉即将关闭时引发。把事件参数的 `Cancel = true` 置位即可阻止关闭。 |
+| `Closed` | 抽屉完全关闭后引发。 |
 
-## Gestures and keyboard
+## 手势与键盘 {#gestures-and-keyboard}
 
-`DrawerPage` supports swipe gestures to open and close the drawer on touch-enabled devices. This can be toggled with the `IsGestureEnabled` property.
+在支持触摸的设备上，`DrawerPage` 支持用滑动手势开关抽屉。这一行为可以用 `IsGestureEnabled` 属性开关。
 
-On desktop, pressing the `Escape` key closes the drawer when it is open in `Overlay` or `CompactOverlay` mode.
+在桌面端，当抽屉以 `Overlay` 或 `CompactOverlay` 模式打开时，按 `Escape` 键可将其关闭。
 
-## NavigationPage integration
+## 与 NavigationPage 的集成 {#navigationpage-integration}
 
-When a `DrawerPage` hosts a `NavigationPage` as its `Content`, and pages are pushed onto the navigation stack, the hamburger menu icon in the navigation bar automatically becomes a back button. This provides a seamless transition between drawer navigation and hierarchical page navigation without additional code.
+当 `DrawerPage` 把 `NavigationPage` 作为它的 `Content`，且有页面被推入导航栈时，导航栏里的汉堡菜单图标会自动变成返回按钮。不用额外写代码，抽屉导航与层级式页面导航之间就能自然衔接。
 
-## Examples
+## 示例 {#examples}
 
 ### Basic XAML
 
@@ -132,7 +132,7 @@ When a `DrawerPage` hosts a `NavigationPage` as its `Content`, and pages are pus
 </DrawerPage>
 ```
 
-### Basic code
+### 基础代码 {#basic-code}
 
 ```csharp
 var drawerPage = new DrawerPage
@@ -159,7 +159,7 @@ var drawerPage = new DrawerPage
 };
 ```
 
-### Toggling the drawer
+### 开关抽屉 {#toggling-the-drawer}
 
 ```csharp
 private void ToggleDrawer()
@@ -168,7 +168,7 @@ private void ToggleDrawer()
 }
 ```
 
-### Navigating from the drawer
+### 从抽屉发起导航 {#navigating-from-the-drawer}
 
 ```csharp
 private async void OnSettingsClicked(object? sender, RoutedEventArgs e)
@@ -181,9 +181,9 @@ private async void OnSettingsClicked(object? sender, RoutedEventArgs e)
 }
 ```
 
-### Header and footer
+### 页眉与页脚 {#header-and-footer}
 
-Use `DrawerHeader` and `DrawerFooter` for fixed content above and below the drawer body. They do not replace the drawer content. Put menu items inside `DrawerPage.Drawer`.
+用 `DrawerHeader` 和 `DrawerFooter` 在抽屉主体上下放置固定内容，它们不会取代抽屉内容。菜单项应放进 `DrawerPage.Drawer`。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -224,13 +224,13 @@ Use `DrawerHeader` and `DrawerFooter` for fixed content above and below the draw
 
 <Image light={DrawerPageHeaderFooterScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="DrawerPage with header and footer"/>
 
-### Split layout
+### 分栏布局 {#split-layout}
 
-Use `DrawerLayoutBehavior="Split"` when an open drawer should take layout space instead of overlaying the content.
+若希望抽屉打开时占用布局空间而不是覆盖内容，请使用 `DrawerLayoutBehavior="Split"`。
 
-Set `IsOpen="True"` to show the drawer initially.
+设置 `IsOpen="True"` 可让抽屉一开始就是打开的。
 
-Use `DrawerBehavior="Locked"` to make the drawer a permanently visible sidebar.
+用 `DrawerBehavior="Locked"` 可把抽屉变成常驻可见的侧边栏。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -251,9 +251,9 @@ Use `DrawerBehavior="Locked"` to make the drawer a permanently visible sidebar.
 
 <Image light={DrawerPageSplitScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="DrawerPage in split mode"/>
 
-### Compact navigation rail
+### 紧凑导航栏 {#compact-navigation-rail}
 
-Use `CompactOverlay` or `CompactInline` to show a narrow strip of the drawer (such as icon buttons) when closed, expanding to the full drawer on open.
+用 `CompactOverlay` 或 `CompactInline`，可让抽屉在关闭时仍露出窄窄的一条（比如一列图标按钮），打开时再展开为完整抽屉。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -284,9 +284,9 @@ Use `CompactOverlay` or `CompactInline` to show a narrow strip of the drawer (su
 
 </Tabs>
 
-### Responsive layout
+### 响应式布局 {#responsive-layout}
 
-Automatically switch the drawer between overlay and inline based on the container width, or height for top and bottom drawers.
+根据容器宽度（顶部和底部抽屉则看高度）在浮层与内联之间自动切换。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -304,9 +304,9 @@ Automatically switch the drawer between overlay and inline based on the containe
 </DrawerPage>
 ```
 
-### RTL support
+### RTL 支持 {#rtl-support}
 
-`DrawerPage` respects `FlowDirection` for drawer placement, gesture direction, and safe-area handling. `DrawerPlacement="Left"` is the leading side, so it appears on the right in a right-to-left (RTL) layout.
+`DrawerPage` 在抽屉位置、手势方向和安全区处理上都会遵循 `FlowDirection`。`DrawerPlacement="Left"` 指的是起始侧，因此在从右到左（RTL）布局中它出现在右边。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -325,7 +325,7 @@ Automatically switch the drawer between overlay and inline based on the containe
 
 <Image light={DrawerPageRtlScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="DrawerPage with RTL layout"/>
 
-### Right-side drawer
+### 右侧抽屉 {#right-side-drawer}
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -345,9 +345,9 @@ Automatically switch the drawer between overlay and inline based on the containe
 
 <Image light={DrawerPageRightScreenshot} position="center" maxWidth={400} cornerRadius="true" alt="DrawerPage with right-side drawer"/>
 
-### Backdrop scrim
+### 背景遮罩 {#backdrop-scrim}
 
-Use the `BackdropBrush` property to add a semi-transparent overlay behind the drawer when it is open in overlay mode.
+用 `BackdropBrush` 属性，可在抽屉以浮层模式打开时于其后方加一层半透明遮罩。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -363,9 +363,9 @@ Use the `BackdropBrush` property to add a semi-transparent overlay behind the dr
 </DrawerPage>
 ```
 
-### Cancelling close
+### 取消关闭 {#cancelling-close}
 
-Handle the `Closing` event to prevent the drawer from closing under certain conditions.
+处理 `Closing` 事件，即可在特定条件下阻止抽屉关闭。
 
 ```csharp
 private void OnDrawerClosing(object sender, DrawerClosingEventArgs e)
@@ -377,7 +377,7 @@ private void OnDrawerClosing(object sender, DrawerClosingEventArgs e)
 }
 ```
 
-### Responding to open/close
+### 响应开关状态 {#responding-to-openclose}
 
 ```csharp
 private void OnDrawerOpened(object? sender, RoutedEventArgs e)
@@ -391,9 +391,9 @@ private void OnDrawerClosed(object? sender, RoutedEventArgs e)
 }
 ```
 
-### MVVM binding
+### MVVM 绑定 {#mvvm-binding}
 
-Bind the `IsOpen` property to a view model for full control over the drawer state.
+把 `IsOpen` 属性绑定到视图模型，即可完全掌控抽屉状态。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -410,9 +410,9 @@ Bind the `IsOpen` property to a view model for full control over the drawer stat
 </DrawerPage>
 ```
 
-### Custom drawer icon
+### 自定义抽屉图标 {#custom-drawer-icon}
 
-Replace the default hamburger icon with a custom icon.
+把默认的汉堡图标换成自定义图标。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -431,9 +431,9 @@ Replace the default hamburger icon with a custom icon.
 </DrawerPage>
 ```
 
-### Locked drawer
+### 锁定抽屉 {#locked-drawer}
 
-Use `DrawerBehavior="Locked"` to keep the drawer permanently open.
+用 `DrawerBehavior="Locked"` 让抽屉保持常开。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -452,9 +452,9 @@ Use `DrawerBehavior="Locked"` to keep the drawer permanently open.
 </DrawerPage>
 ```
 
-### Disabling the drawer
+### 停用抽屉 {#disabling-the-drawer}
 
-Use `DrawerBehavior="Disabled"` to hide the drawer entirely.
+用 `DrawerBehavior="Disabled"` 把抽屉彻底隐藏。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -464,9 +464,9 @@ Use `DrawerBehavior="Disabled"` to hide the drawer entirely.
 </DrawerPage>
 ```
 
-### NavigationPage content
+### 以 NavigationPage 作内容 {#navigationpage-content}
 
-When the main content is a `NavigationPage`, the hamburger menu icon automatically becomes a back button when pages are pushed.
+当主内容是 `NavigationPage` 时，一旦有页面被推入栈中，汉堡菜单图标会自动变成返回按钮。
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -489,9 +489,9 @@ When the main content is a `NavigationPage`, the hamburger menu icon automatical
 </DrawerPage>
 ```
 
-### Navigation transitions
+### 导航过渡 {#navigation-transitions}
 
-`DrawerPage` does not have its own `PageTransition` property. If the drawer hosts a `NavigationPage`, configure transitions on that `NavigationPage`:
+`DrawerPage` 本身没有 `PageTransition` 属性。如果抽屉里承载的是 `NavigationPage`，请在那个 `NavigationPage` 上配置过渡：
 
 ```xml
 <DrawerPage xmlns="https://github.com/avaloniaui"
@@ -515,10 +515,10 @@ When the main content is a `NavigationPage`, the hamburger menu icon automatical
 </DrawerPage>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ContentPage](/controls/navigation/contentpage)
 - [NavigationPage](/controls/navigation/navigationpage)
 - [SplitView](/controls/layout/containers/splitview)
-- [DrawerPage API reference](/api/avalonia/controls/drawerpage)
-- [`DrawerPage.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/DrawerPage.cs)
+- [DrawerPage API 参考](/api/avalonia/controls/drawerpage)
+- [GitHub 上的 `DrawerPage.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Page/DrawerPage.cs)

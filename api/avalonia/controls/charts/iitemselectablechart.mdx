@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IItemSelectableChart Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Selection contract for chart components that select bound items directly.
+面向那些直接选中绑定项的图表组件的选择契约。
 
 </div>
 
@@ -50,41 +50,41 @@ public interface IItemSelectableChart
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iselectablechart">ISelectableChart</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iselectablechart">ISelectableChart</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsItemSelected](#uid-905e0076eb) | Checks whether the specified item is selected. |
-| [TrySelectItem](#uid-4140cb9ea4) | Attempts to select the specified item. |
+| [IsItemSelected](#uid-905e0076eb) | 检查指定的项是否处于选中状态。 |
+| [TrySelectItem](#uid-4140cb9ea4) | 尝试选中指定的项。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-905e0076eb"></span>
 
-### IsItemSelected Method
+### IsItemSelected 方法 {#isitemselected-method}
 
-Checks whether the specified item is selected.
+检查指定的项是否处于选中状态。
 
 ```csharp
 public bool IsItemSelected(object item)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `item` object
 
-The item to check.
+要检查的项。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
-True if the item is selected.
+若该项处于选中状态则为 true。
 
 
 </section>
@@ -93,44 +93,44 @@ True if the item is selected.
 
 <span id="uid-4140cb9ea4"></span>
 
-### TrySelectItem Method
+### TrySelectItem 方法 {#tryselectitem-method}
 
-Attempts to select the specified item.
+尝试选中指定的项。
 
 ```csharp
 public bool TrySelectItem(object item)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `item` object
 
-The item to select.
+要选中的项。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
-True if the selection state changed.
+若选中状态发生了变化则为 true。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SelectedItem](#uid-7e4f8420ea) | Gets the primary selected item, if any. |
-| [SelectedItems](#uid-e6e0f47d76) | Gets the current collection of selected items, if any. |
+| [SelectedItem](#uid-7e4f8420ea) | 获取主选中项（若有）。 |
+| [SelectedItems](#uid-e6e0f47d76) | 获取当前选中项的集合（若有）。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7e4f8420ea"></span>
 
-### SelectedItem Property
+### SelectedItem 属性 {#selecteditem-property}
 
-Gets the primary selected item, if any.
+获取主选中项（若有）。
 
 ```csharp
 public object SelectedItem { get; set; }
@@ -142,9 +142,9 @@ public object SelectedItem { get; set; }
 
 <span id="uid-e6e0f47d76"></span>
 
-### SelectedItems Property
+### SelectedItems 属性 {#selecteditems-property}
 
-Gets the current collection of selected items, if any.
+获取当前选中项的集合（若有）。
 
 ```csharp
 public System.Collections.IList SelectedItems { get; set; }

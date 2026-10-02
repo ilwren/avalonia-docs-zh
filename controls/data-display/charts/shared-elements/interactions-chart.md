@@ -1,7 +1,7 @@
 ---
 id: interactions-chart
-title: Interactions
-description: Enables users to zoom, pan, select, hover-highlight, and inspect values with trackball guides in dense or interactive chart data.
+title: 交互
+description: 让用户在数据密集或可交互的图表中缩放、平移、选择、悬停高亮，并借助轨迹球参考线读取数值。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,20 +10,20 @@ tags:
 import chartsFeaturesZoom from '/img/controls/charts/charts-zoom.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Chart interactions allow users to explore data dynamically with zooming, panning, selection, hover highlighting, and trackball inspection.
+图表交互让用户可以通过缩放、平移、选择、悬停高亮和轨迹球查看等方式动态探索数据。
 
 <Image light={chartsFeaturesZoom} maxWidth={400} position="center" cornerRadius="true" alt="Chart with interactive zoom and pan controls allowing users to focus on specific regions of a dense dataset." />
 
-## When to use
-- **Big data visualization**: Exploring line charts with thousands of points.
-- **Deep-dive analysis**: Zooming into a specific time window for detailed study.
-- **Interactive reports**: Giving users agency to focus on areas of interest.
-- **Hover inspection**: Dimming non-hovered items so the active data point or segment is easier to identify.
+## 适用场景 {#when-to-use}
+- **大数据呈现**：探索含成千上万个点的折线图。
+- **深入分析**：放大到某个时间窗口细看。
+- **交互式报表**：把主动权交给用户，让他们聚焦自己关心的部分。
+- **悬停查看**：把未悬停的元素调暗，让当前的数据点或分段更显眼。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -78,7 +78,7 @@ Chart interactions allow users to explore data dynamically with zooming, panning
 </StackPanel>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 
@@ -109,107 +109,107 @@ private static ObservableCollection<DateTimePoint> CreateZoomData()
 }
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-### Zoom and pan
+### 缩放与平移 {#zoom-and-pan}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `IsZoomEnabled` | Enables the ability to zoom into the chart. | `false` |
-| `IsPanEnabled` | Enables the ability to pan (scroll) the chart view. | `false` |
-| `ZoomMode` | `X`, `Y`, or `XY` axis zooming. | `XY` |
-| `ZoomSensitivity` | Non-negative mouse wheel zoom sensitivity. `0` disables wheel zoom; invalid values are coerced to `0`. | `0.1` |
-| `ShowRangeSelector` | Show a range selector control for zooming. | `true` |
-| `ZoomHistoryLimit` | Maximum number of viewport states kept for zoom-back navigation. Set to `0` to keep all pushed states. | `20` |
-| `CanGoBackZoom` | Read-only state indicating whether `GoBackZoom()` can restore a previous viewport. | `false` |
+| `IsZoomEnabled` | 启用图表的缩放能力。 | `false` |
+| `IsPanEnabled` | 启用图表视图的平移（滚动）能力。 | `false` |
+| `ZoomMode` | 沿 `X`、`Y` 或 `XY` 轴缩放。 | `XY` |
+| `ZoomSensitivity` | 鼠标滚轮缩放的灵敏度，取非负值。`0` 表示禁用滚轮缩放；无效取值会被强制为 `0`。 | `0.1` |
+| `ShowRangeSelector` | 显示一个区间选择器控件，用于缩放。 | `true` |
+| `ZoomHistoryLimit` | 为「回退上一视图」保留的视口状态上限。设为 `0` 则保留全部已入栈的状态。 | `20` |
+| `CanGoBackZoom` | 只读状态，指示 `GoBackZoom()` 能否恢复到上一个视口。 | `false` |
 
-### Range selector
+### 区间选择器 {#range-selector}
 
-`CartesianChart` creates embedded `ChartRangeSelector` controls when `IsZoomEnabled`, `ShowRangeSelector`, and the current `ZoomMode` require them. Use `ChartRangeSelector` directly when a separate range selection surface is needed.
+当 `IsZoomEnabled`、`ShowRangeSelector` 和当前的 `ZoomMode` 有此需要时，`CartesianChart` 会创建内嵌的 `ChartRangeSelector` 控件。若需要一块独立的区间选择区域，请直接使用 `ChartRangeSelector`。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Orientation` | Selector orientation, `Horizontal` or `Vertical`. | `Horizontal` |
-| `Minimum` | Minimum data value represented by the selector. | `0.0` |
-| `Maximum` | Maximum data value represented by the selector. | `100.0` |
-| `SelectedMinimum` | Selected range start value. This property binds two-way by default. | `0.0` |
-| `SelectedMaximum` | Selected range end value. This property binds two-way by default. | `100.0` |
-| `GripSize` | Size of the draggable range handles in pixels. | `24.0` |
-| `PlotAreaOffset` | Offset used to align the selector track with a chart plot area. | `0.0` |
-| `SmallChange` | Keyboard navigation increment. | `1.0` |
-| `KeyboardStepRatio` | Optional keyboard movement step in normalized selector space when ratio converters are set. `1.0` represents the full track length. When unset, keyboard movement uses `SmallChange`. | `null` |
-| `ValueToRatio` | Optional converter from data values to normalized selector positions. Used for non-linear axes and scale breaks. | `null` |
-| `RatioToValue` | Optional converter from normalized selector positions back to data values. | `null` |
+| `Orientation` | 选择器的方向，`Horizontal` 或 `Vertical`。 | `Horizontal` |
+| `Minimum` | 选择器所表示的数据最小值。 | `0.0` |
+| `Maximum` | 选择器所表示的数据最大值。 | `100.0` |
+| `SelectedMinimum` | 所选区间的起始值。该属性默认双向绑定。 | `0.0` |
+| `SelectedMaximum` | 所选区间的结束值。该属性默认双向绑定。 | `100.0` |
+| `GripSize` | 可拖动区间手柄的大小，单位为像素。 | `24.0` |
+| `PlotAreaOffset` | 用于把选择器轨道对齐到图表绘图区的偏移量。 | `0.0` |
+| `SmallChange` | 键盘操作的步进量。 | `1.0` |
+| `KeyboardStepRatio` | 设置了比例转换器时，键盘在归一化选择器空间中可选的移动步长。`1.0` 代表整条轨道的长度。未设置时，键盘移动采用 `SmallChange`。 | `null` |
+| `ValueToRatio` | 可选的转换器，把数据值换算成归一化的选择器位置。用于非线性坐标轴和刻度断裂。 | `null` |
+| `RatioToValue` | 可选的转换器，把归一化的选择器位置换算回数据值。 | `null` |
 
-| Event | Description |
+| 事件 | 说明 |
 | :--- | :--- |
-| `RangeDragStarted` | Raised when the user starts dragging the selector thumb or a grip. |
-| `RangeDragCompleted` | Raised when the active range drag completes. |
+| `RangeDragStarted` | 用户开始拖动选择器滑块或手柄时触发。 |
+| `RangeDragCompleted` | 当前这次区间拖动结束时触发。 |
 
-### Hover highlighting
+### 悬停高亮 {#hover-highlighting}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `IsHighlightEnabled` | Enables hover highlighting. On series, hovering a data point dims other items in that series. On supported standalone charts, hovering a segment or cell dims the other items in that chart. | `false` |
+| `IsHighlightEnabled` | 启用悬停高亮。在系列上，悬停某个数据点会把同系列的其他元素调暗；在支持此特性的独立图表上，悬停某个分段或单元格会把该图表中的其他元素调暗。 | `false` |
 
-Supported standalone charts include `BubbleCloud`, `PackedBubbleChart`, `NightingaleRoseChart`, `RadialBarChart`, `SemiDonutChart`, `SunburstChart`, comparison charts, funnel charts, grid charts, `TreeMapChart`, `FinancialChart`, `PolarAreaChart`, `PolarChart`, and `RadarChart`.
+支持该特性的独立图表包括 `BubbleCloud`、`PackedBubbleChart`、`NightingaleRoseChart`、`RadialBarChart`、`SemiDonutChart`、`SunburstChart`、对比类图表、漏斗图、网格类图表、`TreeMapChart`、`FinancialChart`、`PolarAreaChart`、`PolarChart` 和 `RadarChart`。
 
 ### Trackball
 
-`CartesianChart` can display a trackball guide line and value tooltips while the pointer moves over the plot area.
+指针在绘图区上移动时，`CartesianChart` 可以显示一条轨迹球参考线以及数值工具提示。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `TrackballMode` | Trackball line mode: `None`, `Vertical`, or `Horizontal`. | `None` |
-| `TrackballDisplayMode` | Tooltip display mode: `FloatAllPoints` or `GroupAllPoints`. | `FloatAllPoints` |
-| `TrackballLineStroke` | Brush used for the trackball guide line. When `null`, `DimGray` is used. | `null` |
-| `TrackballLineStrokeThickness` | Thickness of the trackball guide line. | `1.0` |
+| `TrackballMode` | 轨迹球参考线模式：`None`、`Vertical` 或 `Horizontal`。 | `None` |
+| `TrackballDisplayMode` | 工具提示的显示模式：`FloatAllPoints` 或 `GroupAllPoints`。 | `FloatAllPoints` |
+| `TrackballLineStroke` | 轨迹球参考线所用的画刷。为 `null` 时，使用 `DimGray`。 | `null` |
+| `TrackballLineStrokeThickness` | 轨迹球参考线的粗细。 | `1.0` |
 
 ### Selection
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `IsSelectionEnabled` | Enables pointer selection for supported series or chart items. | `false` |
-| `SelectionMode` | Selection behavior, such as `None`, `Single`, `SingleDeselect`, or `Multiple`. | `SingleDeselect` |
-| `SelectedIndex` | Two-way index of the primary selected item, or `-1` when nothing is selected. | `-1` |
-| `SelectedIndexes` | Read-only snapshot of selected indexes for multi-selection scenarios. | Empty collection |
-| `SelectionBrush` | Brush used for selected items. | `#314A6E` |
-| `SelectionStroke` | Optional outline brush for selected items. | `null` |
-| `SelectionStrokeThickness` | Outline thickness for selected items. | `2.0` |
+| `IsSelectionEnabled` | 为支持的系列或图表元素启用指针选择。 | `false` |
+| `SelectionMode` | 选择行为，比如 `None`、`Single`、`SingleDeselect` 或 `Multiple`。 | `SingleDeselect` |
+| `SelectedIndex` | 主选中项的索引，双向绑定；未选中任何项时为 `-1`。 | `-1` |
+| `SelectedIndexes` | 多选场景下选中索引的只读快照。 | 空集合 |
+| `SelectionBrush` | 选中项所用的画刷。 | `#314A6E` |
+| `SelectionStroke` | 选中项可选的轮廓画刷。 | `null` |
+| `SelectionStrokeThickness` | 选中项的轮廓粗细。 | `2.0` |
 
-Selection APIs are available on selectable chart controls and selectable series. `SelectionChanging` is raised before a selection is committed and can be canceled or edited by updating the event data. `SelectionChanged` is raised after the applied selection changes.
+可选择的图表控件和系列都提供选择相关的 API。`SelectionChanging` 在选择生效之前触发，可以在事件数据中改写，也可以直接取消。`SelectionChanged` 则在选择真正变更之后触发。
 
-### Events and methods
+### 事件与方法 {#events-and-methods}
 
-| Member | Description |
+| 成员 | 说明 |
 | :--- | :--- |
-| `DataPointClicked` | Raised when a data point is clicked. Event data exposes the `Series`, `DataPointIndex`, `Category`, `Value`, and original `DataItem` when available. |
-| `DataPointHovered` | Raised after the hover debounce when the pointer moves over a data point or leaves all data points. This event does not require `IsHighlightEnabled`; that property only controls highlight visuals. Event data exposes `Source` and `DataPointIndex`. |
-| `GoBackZoom()` | Restores the previous zoom viewport and returns `true` when a history entry was applied. |
-| `ResetZoom()` | Clears the active viewport and zoom history. |
-| `ClearSelection()` | Clears the current selection on selectable charts, series, or layers. |
-| `TrySelectDataPoint(index)` | Attempts to select a data point by index on selectable charts or series. |
-| `IsDataPointSelected(index)` | Returns whether a data point index is currently selected. |
-| `TrySelectItem(item)` | Attempts to select a data item on item-selectable controls such as `ShapeLayer`. |
-| `IsItemSelected(item)` | Returns whether a data item is selected on item-selectable controls. |
-| `SelectionChanging` | Raised before selection changes. Event data exposes editable `NewSelection` and `NewIndexes`, previous `OldSelection` and `OldIndexes`, and `Cancel`. |
-| `SelectionChanged` | Raised after selection changes. Event data exposes snapshots of `NewSelection`, `OldSelection`, `NewIndexes`, and `OldIndexes`. |
-| `ZoomChanged` | Raised when the zoom viewport changes. Event data exposes `Axis`, previous and current zoom factor, previous and current zoom position, and visible viewport bounds. |
-| `ZoomReset` | Raised after zoom is reset. Event data exposes previous viewport bounds and the previous zoom factor. |
-| `SeriesAdded` | Raised by `CartesianChart` after a series is added to its `Series` collection. |
-| `SeriesRemoved` | Raised by `CartesianChart` after a series is removed from its `Series` collection. |
+| `DataPointClicked` | 数据点被点击时触发。事件数据会提供 `Series`、`DataPointIndex`、`Category`、`Value`，以及原始的 `DataItem`（如果有）。 |
+| `DataPointHovered` | 指针移到某个数据点上或离开所有数据点后，经防抖延迟触发。该事件不依赖 `IsHighlightEnabled`——那个属性只控制高亮效果。事件数据提供 `Source` 和 `DataPointIndex`。 |
+| `GoBackZoom()` | 恢复到上一个缩放视口；若确实套用了一条历史记录，则返回 `true`。 |
+| `ResetZoom()` | 清除当前视口和缩放历史。 |
+| `ClearSelection()` | 清除可选择的图表、系列或图层上的当前选择。 |
+| `TrySelectDataPoint(index)` | 在可选择的图表或系列上按索引尝试选中某个数据点。 |
+| `IsDataPointSelected(index)` | 返回指定索引的数据点当前是否处于选中状态。 |
+| `TrySelectItem(item)` | 在 `ShapeLayer` 这类按项选择的控件上尝试选中某个数据项。 |
+| `IsItemSelected(item)` | 返回按项选择的控件上某个数据项是否被选中。 |
+| `SelectionChanging` | 选择变更之前触发。事件数据提供可改写的 `NewSelection` 和 `NewIndexes`、变更前的 `OldSelection` 和 `OldIndexes`，以及 `Cancel`。 |
+| `SelectionChanged` | 选择变更之后触发。事件数据提供 `NewSelection`、`OldSelection`、`NewIndexes` 和 `OldIndexes` 的快照。 |
+| `ZoomChanged` | 缩放视口变化时触发。事件数据提供 `Axis`、变更前后的缩放倍数、变更前后的缩放位置，以及可见视口的范围。 |
+| `ZoomReset` | 缩放被重置后触发。事件数据提供先前的视口范围和先前的缩放倍数。 |
+| `SeriesAdded` | 由 `CartesianChart` 在某个系列被加入其 `Series` 集合后触发。 |
+| `SeriesRemoved` | 由 `CartesianChart` 在某个系列从其 `Series` 集合移除后触发。 |
 
-## Interaction controls
-- **Mouse Wheel**: Zoom in/out at the cursor position.
-- **Ctrl + Drag**: Pan across the chart area.
-- **Shift + Drag**: Draw a rectangle to zoom into a specific region.
-- **Hover**: Highlights the active data point or segment when `IsHighlightEnabled` is `true`.
-- **Double Click**: Reset zoom and pan to default view.
+## 交互操作方式 {#interaction-controls}
+- **鼠标滚轮**：以光标位置为中心放大/缩小。
+- **Ctrl + 拖动**：在图表区内平移。
+- **Shift + 拖动**：框选一个矩形，放大到该区域。
+- **悬停**：当 `IsHighlightEnabled` 为 `true` 时，高亮当前的数据点或分段。
+- **双击**：把缩放和平移重置回默认视图。
 
-Charts also support pinch-to-zoom, mouse wheel zoom, and selection zoom.
+图表还支持双指捏合缩放、滚轮缩放和框选缩放。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Tooltip](/controls/data-display/charts/shared-elements/tooltip-chart)
 - [Crosshairs](/controls/data-display/charts/shared-elements/crosshairs-chart)
-- [Axis customization](/controls/data-display/charts/shared-elements/axis-customization-chart)
+- [坐标轴定制](/controls/data-display/charts/shared-elements/axis-customization-chart)

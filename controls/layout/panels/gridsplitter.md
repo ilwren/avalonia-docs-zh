@@ -1,44 +1,44 @@
 ---
 id: gridsplitter
 title: GridSplitter
-description: A control that lets users resize columns or rows in a Grid by dragging a splitter bar at runtime.
+description: 一个控件：用户在运行时拖动分隔条，即可调整 Grid 中列或行的尺寸。
 doc-type: reference
 ---
 
-The [`GridSplitter`](/api/avalonia/controls/gridsplitter) control allows a user to resize the columns or rows in a `Grid` at runtime. The splitter is drawn as a column or row (size can be specified), and has a grip that the user can manipulate at runtime.
+[`GridSplitter`](/api/avalonia/controls/gridsplitter) 控件让用户在运行时调整 `Grid` 中列或行的尺寸。分隔器本身绘制成一列或一行（尺寸可以指定），并带有一个可供用户在运行时拖动的手柄。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Background` | `IBrush` | Background color for the splitter bar. |
-| `ResizeDirection` | `GridResizeDirection` | The direction of travel for the splitter: `Auto`, `Columns`, `Rows`. See note below. |
-| `ResizeBehavior` | `GridResizeBehavior` | Which columns/rows are resized: `BasedOnAlignment`, `CurrentAndNext`, `PreviousAndCurrent`, `PreviousAndNext`. |
-| `DragIncrement` | `double` | The minimum number of pixels the splitter moves at a time. |
-| `ShowsPreview` | `bool` | When `true`, shows a preview line while dragging instead of resizing in real time. |
+| `Background` | `IBrush` | 分隔条的背景色。 |
+| `ResizeDirection` | `GridResizeDirection` | 分隔器的移动方向：`Auto`、`Columns`、`Rows`。参见下方说明。 |
+| `ResizeBehavior` | `GridResizeBehavior` | 调整哪些列/行：`BasedOnAlignment`、`CurrentAndNext`、`PreviousAndCurrent`、`PreviousAndNext`。 |
+| `DragIncrement` | `double` | 分隔器每次移动的最小像素数。 |
+| `ShowsPreview` | `bool` | 为 `true` 时，拖动过程中只显示一条预览线，而不实时调整尺寸。 |
 
 :::caution
-To provide any meaningful movement, the direction of travel of the splitter must be the same as its position definition. That is: for a column splitter specify `ResizeDirection="Columns"` and for a row splitter specify `ResizeDirection="Rows"`.
+要让拖动真正起作用，分隔器的移动方向必须与它的位置定义一致。也就是说：列分隔器指定 `ResizeDirection="Columns"`，行分隔器指定 `ResizeDirection="Rows"`。
 :::
 
-## Drag behavior
+## 拖动行为 {#drag-behavior}
 
-When the user clicks and drags the `GridSplitter`, adjacent columns or rows are resized according to the `ResizeBehavior` property:
+用户按住并拖动 `GridSplitter` 时，相邻的列或行会按 `ResizeBehavior` 属性来调整尺寸：
 
-- **`BasedOnAlignment`** (default): The columns or rows that are resized depend on the `HorizontalAlignment` or `VerticalAlignment` of the splitter within its cell.
-- **`CurrentAndNext`**: Resizes the current column/row and the next one.
-- **`PreviousAndCurrent`**: Resizes the previous column/row and the current one.
-- **`PreviousAndNext`**: Resizes the previous column/row and the next one, skipping the splitter's own column/row.
+- **`BasedOnAlignment`**（默认值）：具体调整哪些列或行，取决于分隔器在其单元格内的 `HorizontalAlignment` 或 `VerticalAlignment`。
+- **`CurrentAndNext`**：调整当前列/行与它后面那一个。
+- **`PreviousAndCurrent`**：调整当前列/行与它前面那一个。
+- **`PreviousAndNext`**：调整前一个和后一个列/行，跳过分隔器自己所在的那一列/行。
 
-If you set `ShowsPreview` to `true`, a translucent preview indicator follows your pointer while dragging. The actual resize is applied only when you release the mouse button. This can improve performance for complex layouts.
+若把 `ShowsPreview` 设为 `true`，拖动时会有一条半透明的预览线跟着指针走，直到松开鼠标才真正应用尺寸调整。布局复杂时，这能改善性能。
 
-The `DragIncrement` property controls the snap granularity. For example, setting `DragIncrement="10"` means the splitter position snaps in increments of 10 pixels.
+`DragIncrement` 属性控制吸附粒度。比如设成 `DragIncrement="10"`，分隔器的位置就会按 10 像素的步长吸附。
 
-## Min/max constraints
+## 最小/最大约束 {#minmax-constraints}
 
-You can set `MinWidth`/`MaxWidth` on `ColumnDefinition` elements (or `MinHeight`/`MaxHeight` on `RowDefinition` elements) to limit how far the splitter can travel. The `GridSplitter` respects these constraints automatically, so the user cannot drag beyond the defined limits.
+可以在 `ColumnDefinition` 元素上设置 `MinWidth`/`MaxWidth`（或在 `RowDefinition` 元素上设置 `MinHeight`/`MaxHeight`），限定分隔器能走多远。`GridSplitter` 会自动遵守这些约束，用户拖不出设定的范围。
 
 ```xml
 <Grid>
@@ -57,20 +57,20 @@ You can set `MinWidth`/`MaxWidth` on `ColumnDefinition` elements (or `MinHeight`
 </Grid>
 ```
 
-## Keyboard support
+## 键盘支持 {#keyboard-support}
 
-The `GridSplitter` supports keyboard interaction for accessibility. When the splitter has focus, you can use the following keys:
+出于无障碍考虑，`GridSplitter` 支持键盘操作。分隔器获得焦点后，可以使用以下按键：
 
-| Key | Action |
+| 按键 | 动作 |
 |---|---|
-| `Left` / `Right` | Moves a column splitter left or right. |
-| `Up` / `Down` | Moves a row splitter up or down. |
+| `Left` / `Right` | 把列分隔器左移或右移。 |
+| `Up` / `Down` | 把行分隔器上移或下移。 |
 
-Each key press moves the splitter by the amount specified in `DragIncrement` (defaults to 1 pixel).
+每按一次，分隔器移动 `DragIncrement` 指定的距离（默认 1 像素）。
 
-## Examples
+## 示例 {#examples}
 
-This is a column splitter. Drag the border between the columns to resize them.
+这是一个列分隔器。拖动列与列之间的边界即可调整它们的宽度。
 
 <XamlPreview>
 
@@ -85,7 +85,7 @@ This is a column splitter. Drag the border between the columns to resize them.
 
 </XamlPreview>
 
-This is a row splitter. Drag the border between the rows to resize them.
+这是一个行分隔器。拖动行与行之间的边界即可调整它们的高度。
 
 <XamlPreview>
 
@@ -100,8 +100,8 @@ This is a row splitter. Drag the border between the rows to resize them.
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Grid](/controls/layout/panels/grid)
-- [GridSplitter API reference](/api/avalonia/controls/gridsplitter)
-- [`GridSplitter.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/GridSplitter.cs)
+- [GridSplitter API 参考](/api/avalonia/controls/gridsplitter)
+- [GitHub 上的 `GridSplitter.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/GridSplitter.cs)

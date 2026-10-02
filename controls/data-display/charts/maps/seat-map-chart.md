@@ -1,24 +1,24 @@
 ---
 id: seat-map-chart
-title: Non-geographic map (seat map)
-description: Uses the ShapeMap control with custom GeoJSON for non-geographic layouts such as seating plans, floor plans, or interactive venue arrangements.
+title: 非地理地图（座位图）
+description: 用 ShapeMap 控件配上自定义 GeoJSON，呈现座位表、平面图、可交互场馆布局等非地理版面。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-The ShapeMap control can handle non-geographic coordinate systems, making it perfect for custom layouts like aircraft seating, floor plans, or theater arrangements.
+ShapeMap 控件能处理非地理坐标系，因此特别适合用来做飞机座位表、楼层平面图、剧院座次这类自定义版面。
 
-## When to use
-- **Seat reservations**: Interactive seating plans for transportation or venues.
-- **Facility management**: Visualizing data on top of a building floor plan.
-- **Interactive UI**: Creating clickable, data-driven custom shape layouts.
+## 适用场景 {#when-to-use}
+- **订座**：交通工具或场馆的交互式座位表。
+- **设施管理**：在建筑平面图之上呈现数据。
+- **交互式图示**：打造可点击、数据驱动的自定义形状版面。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,9 +35,9 @@ The ShapeMap control can handle non-geographic coordinate systems, making it per
 </ShapeMap>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
-Ensure the GeoJSON file is included in your project and available at the specified relative path at runtime.
+请确保 GeoJSON 文件已包含在项目中，并且运行时可以在指定的相对路径下找到它。
 
 ```csharp
 using System.IO;
@@ -58,13 +58,13 @@ public ObservableCollection<SeatInfo> SeatMapData { get; } = new()
 public ObservableCollection<SeatInfo> SelectedSeats { get; } = new();
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `GeoJson` | Custom GeoJSON representing the layout. | `null` |
-| `RegionPath` | Property used to match data to shapes. | `null` |
-| `ValuePath` | Property used to color-code shapes based on state. | `null` |
+| `GeoJson` | 表示该版面的自定义 GeoJSON。 | `null` |
+| `RegionPath` | 用于把数据与形状匹配起来的属性。 | `null` |
+| `ValuePath` | 用于按状态给形状着色的属性。 | `null` |
 | `SelectionMode` | `None`, `Single`, `SingleDeselect`, or `Multiple`. | `None` |
-| `SelectedItems` | Binding to the selected data items. | `null` |
-*(Note: Seat map uses custom GeoJSON to render non-geographical shapes)*
+| `SelectedItems` | 绑定到选中的数据项。 | `null` |
+*（注：座位图通过自定义 GeoJSON 来渲染非地理形状）*

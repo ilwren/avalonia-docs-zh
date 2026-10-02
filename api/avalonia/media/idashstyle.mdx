@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IDashStyle Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IDashStyle.cs">IDashStyle.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IDashStyle.cs">IDashStyle.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents the sequence of dashes and gaps that will be applied by a [Avalonia.Media.Pen](xref:Avalonia.Media.Pen).
+表示 [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) 将要套用的短划与间隙序列。
 
 </div>
 
@@ -52,20 +52,20 @@ public interface IDashStyle
 
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dashes](#uid-f539c27f29) | Gets or sets the length of alternating dashes and gaps. |
-| [Offset](#uid-9be19cfdd8) | Gets or sets how far in the dash sequence the stroke will start. |
+| [Dashes](#uid-f539c27f29) | 获取或设置交替出现的短划与间隙的长度。 |
+| [Offset](#uid-9be19cfdd8) | 获取或设置描边从虚线序列中的哪个位置开始。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f539c27f29"></span>
 
-### Dashes Property
+### Dashes 属性 {#dashes-property}
 
-Gets or sets the length of alternating dashes and gaps.
+获取或设置交替出现的短划与间隙的长度。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<double> Dashes { get; set; }
@@ -77,9 +77,9 @@ public System.Collections.Generic.IReadOnlyList<double> Dashes { get; set; }
 
 <span id="uid-9be19cfdd8"></span>
 
-### Offset Property
+### Offset 属性 {#offset-property}
 
-Gets or sets how far in the dash sequence the stroke will start.
+获取或设置描边从虚线序列中的哪个位置开始。
 
 ```csharp
 public double Offset { get; set; }

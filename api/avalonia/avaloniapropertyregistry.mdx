@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaPropertyRegistry Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaPropertyRegistry.cs">AvaloniaPropertyRegistry.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/AvaloniaPropertyRegistry.cs">AvaloniaPropertyRegistry.cs</a>
 </div>
 
 </div>
@@ -54,21 +54,21 @@ public class AvaloniaPropertyRegistry
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaPropertyRegistry
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaPropertyRegistry
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AvaloniaPropertyRegistry](#uid-0f2ac83e17) | No summary available. |
+| [AvaloniaPropertyRegistry](#uid-0f2ac83e17) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0f2ac83e17"></span>
 
-### AvaloniaPropertyRegistry Constructor
+### AvaloniaPropertyRegistry 构造函数 {#avaloniapropertyregistry-constructor}
 
 ```csharp
 public AvaloniaPropertyRegistry()
@@ -76,20 +76,20 @@ public AvaloniaPropertyRegistry()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [FindRegistered (2 overloads)](#uid-64b201f2b3) | Finds a registered property on an object by name. |
-| [FindRegisteredDirect](#uid-2b0d9feded) | No summary available. |
-| [GetRegistered (2 overloads)](#uid-8976733651) | Gets all [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a object. |
+| [FindRegisteredDirect](#uid-2b0d9feded) | 暂无摘要。 |
+| [GetRegistered（2 个重载）](#uid-8976733651) | 获取注册在某个对象上的所有 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。 |
 | [GetRegisteredAttached](#uid-ae78b652e6) | Gets all attached [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a type. |
-| [GetRegisteredDirect (2 overloads)](#uid-aa57862c5b) | No summary available. |
+| [GetRegisteredDirect (2 overloads)](#uid-aa57862c5b) | 暂无摘要。 |
 | [GetRegisteredInherited](#uid-19893acf68) | Gets all inherited [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a type. |
 | [IsRegistered (2 overloads)](#uid-f5dfaca7be) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is registered on a object. |
-| [Register](#uid-6f7e93830a) | Registers a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) on a type. |
-| [RegisterAttached](#uid-524ce404c3) | Registers an attached [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) on a type. |
-| [UnregisterByModule](#uid-b44e115ad1) | No summary available. |
+| [Register](#uid-6f7e93830a) | 在某个类型上注册 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。 |
+| [RegisterAttached](#uid-524ce404c3) | 在某个类型上注册一个附加 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。 |
+| [UnregisterByModule](#uid-b44e115ad1) | 暂无摘要。 |
 
 <span id="uid-64b201f2b3"></span>
 
@@ -99,7 +99,7 @@ public AvaloniaPropertyRegistry()
 
 <span id="uid-d2d25bd2bd"></span>
 
-#### FindRegistered Method
+#### FindRegistered 方法 {#findregistered-method}
 
 Finds a registered property on an object by name.
 
@@ -107,28 +107,28 @@ Finds a registered property on an object by name.
 public Avalonia.AvaloniaProperty FindRegistered(Avalonia.AvaloniaObject o, string name)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The object.
+该对象。
 
 
 `name` string
 
-The property name.
+属性名称。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
 The registered property or null if no matching property found.
 
 
-##### Exceptions
+##### 异常 {#exceptions}
 
-- [The property name contains a '.'.](xref:System.InvalidOperationException)
+- [属性名中含有 '.'。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -136,7 +136,7 @@ The registered property or null if no matching property found.
 
 <span id="uid-dcc1729794"></span>
 
-#### FindRegistered Method
+#### FindRegistered 方法 {#findregistered-method-1}
 
 Finds a registered property on a type by name.
 
@@ -144,28 +144,28 @@ Finds a registered property on a type by name.
 public Avalonia.AvaloniaProperty FindRegistered(Type type, string name)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
 `name` string
 
-The property name.
+属性名称。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
 The registered property or null if no matching property found.
 
 
-##### Exceptions
+##### 异常 {#exceptions-1}
 
-- [The property name contains a '.'.](xref:System.InvalidOperationException)
+- [属性名中含有 '.'。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -173,13 +173,13 @@ The registered property or null if no matching property found.
 
 <span id="uid-2b0d9feded"></span>
 
-### FindRegisteredDirect Method
+### FindRegisteredDirect 方法 {#findregistereddirect-method}
 
 ```csharp
 public Avalonia.DirectPropertyBase<TValue><T> FindRegisteredDirect<T>(Avalonia.AvaloniaObject o, Avalonia.DirectPropertyBase<TValue><T> property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -192,7 +192,7 @@ public Avalonia.DirectPropertyBase<TValue><T> FindRegisteredDirect<T>(Avalonia.A
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 Avalonia.DirectPropertyBase&lt;TValue&gt;&lt;T&gt;
 
@@ -201,32 +201,32 @@ Avalonia.DirectPropertyBase&lt;TValue&gt;&lt;T&gt;
 
 <span id="uid-8976733651"></span>
 
-### GetRegistered overloads
+### GetRegistered 的重载 {#getregistered-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-01ab9d09c8"></span>
 
-#### GetRegistered Method
+#### GetRegistered 方法 {#getregistered-method}
 
-Gets all [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a object.
+获取注册在某个对象上的所有 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.AvaloniaProperty> GetRegistered(Avalonia.AvaloniaObject o)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The object.
+该对象。
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)&gt;
 
-A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) definitions.
+一组 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 定义。
 
 
 </section>
@@ -235,7 +235,7 @@ A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) defi
 
 <span id="uid-845952cb71"></span>
 
-#### GetRegistered Method
+#### GetRegistered 方法 {#getregistered-method-1}
 
 Gets all non-attached [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a type.
 
@@ -243,18 +243,18 @@ Gets all non-attached [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty
 public System.Collections.Generic.IReadOnlyList<Avalonia.AvaloniaProperty> GetRegistered(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)&gt;
 
-A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) definitions.
+一组 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 定义。
 
 
 </section>
@@ -263,7 +263,7 @@ A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) defi
 
 <span id="uid-ae78b652e6"></span>
 
-### GetRegisteredAttached Method
+### GetRegisteredAttached 方法 {#getregisteredattached-method}
 
 Gets all attached [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a type.
 
@@ -271,18 +271,18 @@ Gets all attached [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s r
 public System.Collections.Generic.IReadOnlyList<Avalonia.AvaloniaProperty> GetRegisteredAttached(Type type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)&gt;
 
-A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) definitions.
+一组 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 定义。
 
 
 </section>
@@ -295,13 +295,13 @@ A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) defi
 
 <span id="uid-52ec2c43a4"></span>
 
-#### GetRegisteredDirect Method
+#### GetRegisteredDirect 方法 {#getregistereddirect-method}
 
 ```csharp
 public Avalonia.DirectPropertyBase<TValue><T> GetRegisteredDirect<T>(Avalonia.AvaloniaObject o, Avalonia.DirectPropertyBase<TValue><T> property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `o` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -314,7 +314,7 @@ public Avalonia.DirectPropertyBase<TValue><T> GetRegisteredDirect<T>(Avalonia.Av
 `T`
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 Avalonia.DirectPropertyBase&lt;TValue&gt;&lt;T&gt;
 
@@ -325,7 +325,7 @@ Avalonia.DirectPropertyBase&lt;TValue&gt;&lt;T&gt;
 
 <span id="uid-ce2b1ab0d3"></span>
 
-#### GetRegisteredDirect Method
+#### GetRegisteredDirect 方法 {#getregistereddirect-method-1}
 
 Gets all direct [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a type.
 
@@ -333,18 +333,18 @@ Gets all direct [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s reg
 public System.Collections.Generic.IReadOnlyList<Avalonia.AvaloniaProperty> GetRegisteredDirect(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)&gt;
 
-A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) definitions.
+一组 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 定义。
 
 
 </section>
@@ -353,7 +353,7 @@ A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) defi
 
 <span id="uid-19893acf68"></span>
 
-### GetRegisteredInherited Method
+### GetRegisteredInherited 方法 {#getregisteredinherited-method}
 
 Gets all inherited [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s registered on a type.
 
@@ -361,18 +361,18 @@ Gets all inherited [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)s 
 public System.Collections.Generic.IReadOnlyList<Avalonia.AvaloniaProperty> GetRegisteredInherited(Type type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)&gt;
 
-A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) definitions.
+一组 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 定义。
 
 
 </section>
@@ -385,7 +385,7 @@ A collection of [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) defi
 
 <span id="uid-b49799a141"></span>
 
-#### IsRegistered Method
+#### IsRegistered 方法 {#isregistered-method}
 
 Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is registered on a object.
 
@@ -393,19 +393,19 @@ Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is 
 public bool IsRegistered(object o, Avalonia.AvaloniaProperty property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `o` object
 
-The object.
+该对象。
 
 
 `property` [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
-The property.
+该属性。
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 bool
 
@@ -418,7 +418,7 @@ True if the property is registered, otherwise false.
 
 <span id="uid-6aaaa03a92"></span>
 
-#### IsRegistered Method
+#### IsRegistered 方法 {#isregistered-method-1}
 
 Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is registered on a type.
 
@@ -426,19 +426,19 @@ Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is 
 public bool IsRegistered(Type type, Avalonia.AvaloniaProperty property)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
 `property` [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
-The property.
+该属性。
 
 
-##### Returns
+##### 返回值 {#returns-10}
 
 bool
 
@@ -451,27 +451,27 @@ True if the property is registered, otherwise false.
 
 <span id="uid-6f7e93830a"></span>
 
-### Register Method
+### Register 方法 {#register-method}
 
-Registers a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) on a type.
+在某个类型上注册 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。
 
 ```csharp
 public void Register(Type type, Avalonia.AvaloniaProperty property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
 `property` [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
-The property.
+该属性。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 You won't usually want to call this method directly, instead use the
 [Avalonia.AvaloniaProperty.Register&lt;T1, T2&gt;(string,&lt;T&gt;,bool,Avalonia.Data.BindingMode,Func&#123;&lt;T&gt;,bool&#125;,Func&#123;Avalonia.AvaloniaObject,&lt;T&gt;,&lt;T&gt;&#125;,bool)](xref:Avalonia.AvaloniaProperty.Register%60%602%28System.String%2C%60%601%2CSystem.Boolean%2CAvalonia.Data.BindingMode%2CSystem.Func%7B%60%601%2CSystem.Boolean%7D%2CSystem.Func%7BAvalonia.AvaloniaObject%2C%60%601%2C%60%601%7D%2CSystem.Boolean%29)
@@ -483,27 +483,27 @@ method.
 
 <span id="uid-524ce404c3"></span>
 
-### RegisterAttached Method
+### RegisterAttached 方法 {#registerattached-method}
 
-Registers an attached [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) on a type.
+在某个类型上注册一个附加 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。
 
 ```csharp
 public void RegisterAttached(Type type, Avalonia.AvaloniaProperty property)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
 `property` [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)
 
-The property.
+该属性。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 You won't usually want to call this method directly, instead use the
 [Avalonia.AvaloniaProperty.RegisterAttached&lt;T1, T2&gt;(string,Type,&lt;T&gt;,bool,Avalonia.Data.BindingMode,Func&#123;&lt;T&gt;,bool&#125;,Func&#123;Avalonia.AvaloniaObject,&lt;T&gt;,&lt;T&gt;&#125;)](xref:Avalonia.AvaloniaProperty.RegisterAttached%60%602%28System.String%2CSystem.Type%2C%60%601%2CSystem.Boolean%2CAvalonia.Data.BindingMode%2CSystem.Func%7B%60%601%2CSystem.Boolean%7D%2CSystem.Func%7BAvalonia.AvaloniaObject%2C%60%601%2C%60%601%7D%29)
@@ -515,37 +515,37 @@ method.
 
 <span id="uid-b44e115ad1"></span>
 
-### UnregisterByModule Method
+### UnregisterByModule 方法 {#unregisterbymodule-method}
 
 ```csharp
 public bool UnregisterByModule(System.Collections.Generic.IEnumerable<Type> types)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `types` System.Collections.Generic.IEnumerable&lt;Type&gt;
 
 
-#### Returns
+#### 返回值 {#returns-11}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Instance](#uid-5c6252da24) | Gets the [Avalonia.AvaloniaPropertyRegistry](xref:Avalonia.AvaloniaPropertyRegistry) instance |
+| [Instance](#uid-5c6252da24) | 获取 [Avalonia.AvaloniaPropertyRegistry](xref:Avalonia.AvaloniaPropertyRegistry) 实例 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5c6252da24"></span>
 
-### Instance Property
+### Instance 属性 {#instance-property}
 
-Gets the [Avalonia.AvaloniaPropertyRegistry](xref:Avalonia.AvaloniaPropertyRegistry) instance
+获取 [Avalonia.AvaloniaPropertyRegistry](xref:Avalonia.AvaloniaPropertyRegistry) 实例
 
 ```csharp
 public Avalonia.AvaloniaPropertyRegistry Instance { get; set; }

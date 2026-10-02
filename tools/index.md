@@ -21,46 +21,46 @@ import DocsCards from '@site/src/components/global/DocsCards';
   `}</style>
 </head>
 
-Avalonia is a free, open-source UI framework. You can build and ship cross-platform .NET applications at no cost. The framework is MIT licensed and maintained by a growing team.
+Avalonia 是一个免费开源的 UI 框架。你可以零成本地开发并发布跨平台 .NET 应用。框架采用 MIT 许可证，由一支不断壮大的团队维护。
 
-Development tooling covers the tasks around the framework itself: diagnosing layout issues, packaging your app for multiple operating systems, and previewing XAML as you write it.
+开发工具链管的是框架之外的那些活儿：诊断布局问题、为多种操作系统打包应用，以及边写边预览 XAML。
 
 ## Avalonia Plus
 
-Avalonia Plus is a suite of professional tools built specifically for Avalonia development.
+Avalonia Plus 是一套专为 Avalonia 开发打造的专业工具。
 
 <DocsCards>
 <DocsCard header="Dev Tools" href="/tools/developer-tools/installation" img="/icons/feature-devtools-icon.png">
-  <p>Inspect and diagnose your Avalonia apps visually. Edit properties in real time, profile performance, and debug layouts without guesswork.</p>
+  <p>可视化地检视和诊断你的 Avalonia 应用：实时改属性、分析性能、调试布局，不必再靠猜。</p>
 </DocsCard>
 
 <DocsCard header="Parcel" href="/tools/parcel/setup" img="/icons/feature-parcel-icon.png">
-  <p>Package your apps for Windows, macOS, and Linux in a single tool. Code signing, notarisation, and installers handled for you.</p>
+  <p>一个工具搞定 Windows、macOS 和 Linux 的打包，代码签名、公证和安装包都替你办妥。</p>
 </DocsCard>
 
 <DocsCard header="Avalonia for Visual Studio" href="/tools/visual-studio-extension" img="/icons/feature-vs-ext-icon.png">
-  <p>A purpose-built Visual Studio extension with XAML previewing, code completion, and a drag-and-drop designer.</p>
+  <p>专门打造的 Visual Studio 扩展，带 XAML 预览、代码补全和拖放式设计器。</p>
 </DocsCard>
 </DocsCards>
 
 ## Avalonia Pro
 
-Avalonia Pro includes all professional tools in Avalonia Plus, and additionally includes premium UI controls such as [Charts](/controls/data-display/charts/), [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/), [RichTextEditor](/controls/input/text-input/richtexteditor/), [PdfViewer](/controls/data-display/pdfviewer/), [VirtualKeyboard](/controls/input/text-input/virtualkeyboard), and more. These components cover use cases from displaying hierarchical data to embedding native web content without bundling Chromium.
+Avalonia Pro 涵盖 Avalonia Plus 中的全部专业工具，另外还包含 [Charts](/controls/data-display/charts/)、[TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)、[RichTextEditor](/controls/input/text-input/richtexteditor/)、[PdfViewer](/controls/data-display/pdfviewer/)、[VirtualKeyboard](/controls/input/text-input/virtualkeyboard) 等高级 UI 控件。从展示层级数据到不捆绑 Chromium 就能嵌入原生网页内容，这些组件都能应付。
 
-## Who gets access
+## 谁可以用 {#who-gets-access}
 
-For non-commercial use, the [Community license](https://avaloniaui.net/pricing) gives you free access to Avalonia Plus tools and components. No trial period, no feature gates.
+用于非商业用途时，[Community 许可证](https://avaloniaui.net/pricing)让你免费使用 Avalonia Plus 的工具和组件，没有试用期，也不锁功能。
 
-For larger teams and organizations, paid subscriptions are available. See our [pricing page](https://avaloniaui.net/pricing) for details.
+面向更大的团队和组织，我们提供付费订阅，详见[价格页](https://avaloniaui.net/pricing)。
 
-Subscriptions fund continued development of the open-source framework.
+订阅收入用于支撑这个开源框架的持续开发。
 
 <br />
 <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
   <Button label="Purchase Avalonia Enterprise" link="https://avaloniaui.net/pricing" variant="secondary" outline />
 </div>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [AI Tools](/tools/ai-tools/)
 - [IDE Support](/tools/ide/)

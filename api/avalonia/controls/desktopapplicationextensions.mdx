@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DesktopApplicationExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/DesktopApplicationExtensions.cs">DesktopApplicationExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/DesktopApplicationExtensions.cs">DesktopApplicationExtensions.cs</a>
 </div>
 
 </div>
@@ -48,16 +48,16 @@ public class DesktopApplicationExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DesktopApplicationExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DesktopApplicationExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Run (3 overloads)](#uid-3bc7934b45) | On desktop-style platforms runs the application's main loop until main window is closed |
-| [RunWithMainWindow](#uid-42908e930f) | No summary available. |
+| [RunWithMainWindow](#uid-42908e930f) | 暂无摘要。 |
 
 <span id="uid-3bc7934b45"></span>
 
@@ -67,7 +67,7 @@ public class DesktopApplicationExtensions
 
 <span id="uid-9c92fcd0cc"></span>
 
-#### Run Method
+#### Run 方法 {#run-method}
 
 On desktop-style platforms runs the application's main loop until main window is closed
 
@@ -75,7 +75,7 @@ On desktop-style platforms runs the application's main loop until main window is
 public void Run(Avalonia.Application app, Avalonia.Controls.Window mainWindow)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `app` [Avalonia.Application](xref:Avalonia.Application)
 
@@ -83,7 +83,7 @@ public void Run(Avalonia.Application app, Avalonia.Controls.Window mainWindow)
 `mainWindow` [Avalonia.Controls.Window](xref:Avalonia.Controls.Window)
 
 
-##### Remarks
+##### 备注 {#remarks}
 
 Consider using StartWithDesktopStyleLifetime instead, see https://github.com/AvaloniaUI/Avalonia/wiki/Application-lifetimes for details
 
@@ -93,7 +93,7 @@ Consider using StartWithDesktopStyleLifetime instead, see https://github.com/Ava
 
 <span id="uid-0fe9ee9782"></span>
 
-#### Run Method
+#### Run 方法 {#run-method-1}
 
 On desktop-style platforms runs the application's main loop until closable is closed
 
@@ -101,7 +101,7 @@ On desktop-style platforms runs the application's main loop until closable is cl
 public void Run(Avalonia.Application app, Avalonia.Input.ICloseable closable)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `app` [Avalonia.Application](xref:Avalonia.Application)
 
@@ -109,7 +109,7 @@ public void Run(Avalonia.Application app, Avalonia.Input.ICloseable closable)
 `closable` [Avalonia.Input.ICloseable](xref:Avalonia.Input.ICloseable)
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
 Consider using StartWithDesktopStyleLifetime instead, see https://github.com/AvaloniaUI/Avalonia/wiki/Application-lifetimes for details
 
@@ -119,7 +119,7 @@ Consider using StartWithDesktopStyleLifetime instead, see https://github.com/Ava
 
 <span id="uid-3698ed72b2"></span>
 
-#### Run Method
+#### Run 方法 {#run-method-2}
 
 On desktop-style platforms runs the application's main loop with custom CancellationToken
 without setting a lifetime.
@@ -128,7 +128,7 @@ without setting a lifetime.
 public void Run(Avalonia.Application app, System.Threading.CancellationToken token)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `app` [Avalonia.Application](xref:Avalonia.Application)
 
@@ -146,13 +146,13 @@ The token to track.
 
 <span id="uid-42908e930f"></span>
 
-### RunWithMainWindow Method
+### RunWithMainWindow 方法 {#runwithmainwindow-method}
 
 ```csharp
 public void RunWithMainWindow<TWindow>(Avalonia.Application app)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `app` [Avalonia.Application](xref:Avalonia.Application)
 

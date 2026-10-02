@@ -1,7 +1,7 @@
 ---
 id: choropleth-map-chart
-title: Choropleth map
-description: Shades geographic regions in proportion to a statistical variable, used to visualize data density, demographics, or market performance across territories.
+title: 分级统计地图
+description: 按某个统计变量的高低给各地理区域着色，用来呈现各地的数据密度、人口特征或市场表现。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsMapsChoropleth from '/img/controls/charts/charts-maps.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Choropleth maps shade geographical areas in proportion to a statistical variable. They are suited to visualizing data density or trends across discrete regions.
+分级统计地图按统计变量的大小给各地理区域着色。要呈现若干离散区域上的数据密度或走势，用它很合适。
 
 <Image light={chartsMapsChoropleth} maxWidth={400} position="center" cornerRadius="true" alt="Choropleth map shading geographic regions in varying color intensities to represent population density." />
 
-## When to use
-- **Demographics**: Showing population density, income levels, or voting patterns.
-- **Market penetration**: Visualizing sales performance across different territories.
-- **Environmental data**: Showing climate data or resource distribution by region.
+## 适用场景 {#when-to-use}
+- **人口特征**：呈现人口密度、收入水平或投票倾向。
+- **市场渗透**：呈现各区域的销售表现。
+- **环境数据**：按区域展示气候数据或资源分布。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -51,9 +51,9 @@ Choropleth maps shade geographical areas in proportion to a statistical variable
                     </ChoroplethMap>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
-Ensure the GeoJSON file is included in your project and available at the specified relative path at runtime.
+请确保 GeoJSON 文件已包含在项目中，并且运行时可以在指定的相对路径下找到它。
 
 ```csharp
 using System.IO;
@@ -84,29 +84,29 @@ public CountryDensityData[] ShapeLayerData { get; } = new CountryDensityData[]
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `DataLayer` | Canonical `ShapeLayer` used to render choropleth regions. A default layer is created automatically. | Auto-created `ShapeLayer` |
+| `DataLayer` | 用于渲染分级统计区域的标准 `ShapeLayer`。框架会自动创建一个默认图层。 | Auto-created `ShapeLayer` |
 
-## Common properties (`DataLayer` / `ShapeLayer`)
+## 公共属性（`DataLayer` / `ShapeLayer`） {#common-properties-datalayer-shapelayer}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of region data items. | `null` |
-| `GeoJson` | The GeoJSON geometry source. | `null` |
-| `GeoJsonIdPath` | Property name in the GeoJSON used to identify regions. | `ISO_A2` |
-| `RegionPath` | Linking property name in the `ItemsSource`. | `null` |
-| `ValuePath` | Numerical property name for color intensity. | `null` |
-| `MinValue` | Minimum value used for color normalization. | `0.0` |
-| `MaxValue` | Maximum value used for color normalization. | `100.0` |
-| `LowBrush` | Brush used for the low end of the data range. | `#E3F2FD` |
-| `HighBrush` | Brush used for the high end of the data range. | `#1565C0` |
-| `Stroke` | Brush used for region borders. | `null` |
-| `TooltipTemplate` | Data template used for map tooltips. | `null` |
+| `ItemsSource` | 区域数据项的集合。 | `null` |
+| `GeoJson` | GeoJSON 几何数据源。 | `null` |
+| `GeoJsonIdPath` | GeoJSON 中用于标识区域的属性名。 | `ISO_A2` |
+| `RegionPath` | `ItemsSource` 中用于关联的属性名。 | `null` |
+| `ValuePath` | 决定颜色深浅的数值属性名。 | `null` |
+| `MinValue` | 用于颜色归一化的最小值。 | `0.0` |
+| `MaxValue` | 用于颜色归一化的最大值。 | `100.0` |
+| `LowBrush` | 数据区间低端所用的画刷。 | `#E3F2FD` |
+| `HighBrush` | 数据区间高端所用的画刷。 | `#1565C0` |
+| `Stroke` | 区域边界所用的画刷。 | `null` |
+| `TooltipTemplate` | 地图工具提示所用的数据模板。 | `null` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Shape map](/controls/data-display/charts/maps/shape-map-chart)
-- [Bubble map](/controls/data-display/charts/maps/bubble-map-chart)
+- [形状地图](/controls/data-display/charts/maps/shape-map-chart)
+- [气泡地图](/controls/data-display/charts/maps/bubble-map-chart)

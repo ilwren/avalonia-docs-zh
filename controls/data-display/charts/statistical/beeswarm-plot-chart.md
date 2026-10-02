@@ -1,25 +1,25 @@
 ---
 id: beeswarm-plot-chart
-title: Beeswarm plot chart
-description: Displays individual observations per category as non-overlapping dots, preserving point density without full jitter noise.
+title: 蜂群图
+description: 把每个类别中的各个观测值画成互不重叠的点，既保留了数据的疏密，又不像全随机抖动那样嘈杂。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Beeswarm plots arrange points within each category to avoid overlap while preserving the distribution of individual observations.
+蜂群图在每个类别内部重新摆放各个点以避免重叠，同时如实保留各观测值的分布。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Raw observation display**: Show every point instead of only summary statistics.
-- **Category comparison**: Compare spread and clustering across groups.
-- **Distribution detail**: Reveal dense stacks that a plain scatter plot would hide.
+- **展示原始观测**：把每个点都画出来，而不只给出汇总统计量。
+- **类别对比**：比较各组数据的离散程度和聚集情况。
+- **分布细节**：把普通散点图会掩盖掉的密集堆叠显露出来。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -31,7 +31,7 @@ Beeswarm plots arrange points within each category to avoid overlap while preser
                                     ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record BeeswarmPoint(string Category, double Value);
@@ -45,21 +45,21 @@ public ObservableCollection<BeeswarmPoint> BeeswarmData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of observations. | `null` |
-| `CategoryPath` | Path to the grouping category. | `null` |
-| `ValuePath` | Path to the numeric value. | `null` |
-| `PointRadius` | Radius of each point. | `5.0` |
-| `Fill` | Brush used to fill points. | `null` |
-| `Stroke` | Brush used for point outlines. | `null` |
-| `StrokeThickness` | Thickness of point outlines. | `1.0` |
-| `ShowCategoryLabels` | Whether to draw category labels. | `true` |
-| `ShowAxes` | Whether to draw the value axis. | `true` |
+| `ItemsSource` | 观测值的集合。 | `null` |
+| `CategoryPath` | 指向分组类别的路径。 | `null` |
+| `ValuePath` | 指向数值的路径。 | `null` |
+| `PointRadius` | 每个点的半径。 | `5.0` |
+| `Fill` | 填充数据点所用的画刷。 | `null` |
+| `Stroke` | 数据点轮廓所用的画刷。 | `null` |
+| `StrokeThickness` | 数据点轮廓的粗细。 | `1.0` |
+| `ShowCategoryLabels` | 是否绘制类别标签。 | `true` |
+| `ShowAxes` | 是否绘制数值轴。 | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Strip plot chart](/controls/data-display/charts/statistical/strip-plot-chart)
-- [Violin plot](/controls/data-display/charts/statistical/violin-plot-chart)
+- [带状散点图](/controls/data-display/charts/statistical/strip-plot-chart)
+- [小提琴图](/controls/data-display/charts/statistical/violin-plot-chart)

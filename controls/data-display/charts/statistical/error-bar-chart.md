@@ -1,7 +1,7 @@
 ---
 id: error-bar-chart
-title: Error bar chart
-description: Represents data variability by adding error indicators to data points, showing standard deviation, confidence intervals, or measurement uncertainty.
+title: 误差棒图
+description: 为数据点添加误差指示来表现数据的波动，可呈现标准差、置信区间或测量不确定度。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsStatisticalErrorbar from '/img/controls/charts/charts-statistical-error.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Error bar charts represent the variability of data and are used on graphs to indicate the error or uncertainty in a reported measurement.
+误差棒图用来表现数据的波动性，在图上标示出所报告测量值的误差或不确定度。
 
 <Image light={chartsStatisticalErrorbar} maxWidth={400} position="center" cornerRadius="true" alt="Chart with data points and vertical error indicators showing standard deviation ranges for each sample." />
 
-## When to use
-- **Scientific research**: Visualizing standard deviation or confidence intervals.
-- **Quality control**: Showing the range of tolerance in manufacturing.
-- **Survey data**: Indicating the margin of error in statistical polls.
+## 适用场景 {#when-to-use}
+- **科学研究**：呈现标准差或置信区间。
+- **质量管控**：呈现制造过程中的公差范围。
+- **调查数据**：标明统计民调的误差幅度。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -42,7 +42,7 @@ Error bar charts represent the variability of data and are used on graphs to ind
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record ErrorBarItem(string Sample, double Value, double Error);
 
@@ -56,17 +56,17 @@ public ObservableCollection<ErrorBarItem> ErrorBarData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of measured data. | `null` |
-| `ValuePath` | The central value (Mean/Median). | `null` |
-| `ErrorPath` | Symmetric error amount applied above and below the value. | `null` |
-| `LowErrorPath` | Lower error amount for asymmetric error bars. | `null` |
-| `HighErrorPath` | Upper error amount for asymmetric error bars. | `null` |
-| `ErrorMode` | Whether to draw the error bar above, below, or on both sides of the value. | `Both` |
-| `CapWidth` | The width of the horizontal caps on the error bars. | `8` |
-| `ShowMarkers` | Whether to draw a marker at each central value. | `false` |
-| `MarkerSize` | Size of the central marker. | `8` |
-| `Stroke` | Color of the error indicator lines. | Theme-dependent |
+| `ItemsSource` | 实测数据的集合。 | `null` |
+| `ValuePath` | 中心值（均值/中位数）。 | `null` |
+| `ErrorPath` | 对称误差量，在数值上下各延伸这么多。 | `null` |
+| `LowErrorPath` | 非对称误差棒的下侧误差量。 | `null` |
+| `HighErrorPath` | 非对称误差棒的上侧误差量。 | `null` |
+| `ErrorMode` | 误差棒画在数值的上方、下方，还是两侧都画。 | `Both` |
+| `CapWidth` | 误差棒两端横向封口的宽度。 | `8` |
+| `ShowMarkers` | 是否在每个中心值处绘制标记。 | `false` |
+| `MarkerSize` | 中心标记的大小。 | `8` |
+| `Stroke` | 误差指示线的颜色。 | Theme-dependent |

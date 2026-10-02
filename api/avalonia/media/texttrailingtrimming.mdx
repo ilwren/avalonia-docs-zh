@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextTrailingTrimming Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextTrailingTrimming.cs">TextTrailingTrimming.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextTrailingTrimming.cs">TextTrailingTrimming.cs</a>
 </div>
 
 </div>
@@ -48,27 +48,27 @@ public class TextTrailingTrimming
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="texttrimming">TextTrimming</a> <span className="apiref-page__relation-separator">-&gt;</span> TextTrailingTrimming
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="texttrimming">TextTrimming</a> <span className="apiref-page__relation-separator">-&gt;</span> TextTrailingTrimming
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextTrailingTrimming](#uid-b6701b3d93) | No summary available. |
+| [TextTrailingTrimming](#uid-b6701b3d93) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b6701b3d93"></span>
 
-### TextTrailingTrimming Constructor
+### TextTrailingTrimming 构造函数 {#texttrailingtrimming-constructor}
 
 ```csharp
 public TextTrailingTrimming(string ellipsis, bool isWordBased)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `ellipsis` string
 
@@ -78,30 +78,30 @@ public TextTrailingTrimming(string ellipsis, bool isWordBased)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CreateCollapsingProperties](#uid-5ca3119b23) | No summary available. |
-| [Parse](texttrimming.mdx#uid-88f35cc419) | Parses a text trimming string. Names must match static properties defined in this class. Inherited from [TextTrimming](texttrimming.mdx). |
-| [ToString](#uid-d555c59d68) | No summary available. |
+| [CreateCollapsingProperties](#uid-5ca3119b23) | 暂无摘要。 |
+| [Parse](texttrimming.mdx#uid-88f35cc419) | 解析文本裁剪字符串。名称必须与该类中定义的静态属性一致。继承自 [TextTrimming](texttrimming.mdx)。 |
+| [ToString](#uid-d555c59d68) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5ca3119b23"></span>
 
-### CreateCollapsingProperties Method
+### CreateCollapsingProperties 方法 {#createcollapsingproperties-method}
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextCollapsingProperties CreateCollapsingProperties(Avalonia.Media.TextCollapsingCreateInfo createInfo)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `createInfo` [Avalonia.Media.TextCollapsingCreateInfo](xref:Avalonia.Media.TextCollapsingCreateInfo)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.TextFormatting.TextCollapsingProperties](xref:Avalonia.Media.TextFormatting.TextCollapsingProperties)
 
@@ -112,29 +112,29 @@ public Avalonia.Media.TextFormatting.TextCollapsingProperties CreateCollapsingPr
 
 <span id="uid-d555c59d68"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CharacterEllipsis](texttrimming.mdx#uid-e084945626) | Text is trimmed at a character boundary. An ellipsis (...) is drawn in place of remaining text. Inherited from [TextTrimming](texttrimming.mdx). |
-| [LeadingCharacterEllipsis](texttrimming.mdx#uid-b98185ed17) | Text is trimmed at a character boundary starting from the beginning. An ellipsis (...) is drawn in place of remaining text. Inherited from [TextTrimming](texttrimming.mdx). |
-| [None](texttrimming.mdx#uid-b45a12be51) | Text is not trimmed. Inherited from [TextTrimming](texttrimming.mdx). |
-| [PathSegmentEllipsis](texttrimming.mdx#uid-240bf38530) | Gets a text trimming strategy that inserts an ellipsis to indicate omitted segments in a path string. Inherited from [TextTrimming](texttrimming.mdx). |
-| [PrefixCharacterEllipsis](texttrimming.mdx#uid-31f7b79bf5) | Text is trimmed after a given prefix length. An ellipsis (...) is drawn in between prefix and suffix and represents remaining text. Inherited from [TextTrimming](texttrimming.mdx). |
-| [WordEllipsis](texttrimming.mdx#uid-2b9b4c2055) | Text is trimmed at a word boundary. An ellipsis (...) is drawn in place of remaining text. Inherited from [TextTrimming](texttrimming.mdx). |
+| [CharacterEllipsis](texttrimming.mdx#uid-e084945626) | 在字符边界处裁剪文本，并以省略号（...）代替其余内容。继承自 [TextTrimming](texttrimming.mdx)。 |
+| [LeadingCharacterEllipsis](texttrimming.mdx#uid-b98185ed17) | 从开头起在字符边界处裁剪文本，并以省略号（...）代替其余内容。继承自 [TextTrimming](texttrimming.mdx)。 |
+| [None](texttrimming.mdx#uid-b45a12be51) | 不裁剪文本。继承自 [TextTrimming](texttrimming.mdx)。 |
+| [PathSegmentEllipsis](texttrimming.mdx#uid-240bf38530) | 获取一种文本裁剪策略，它在路径字符串中插入省略号来标示被略去的片段。继承自 [TextTrimming](texttrimming.mdx)。 |
+| [PrefixCharacterEllipsis](texttrimming.mdx#uid-31f7b79bf5) | 在给定的前缀长度之后裁剪文本，并在前缀与后缀之间画上省略号（...）代表略去的内容。继承自 [TextTrimming](texttrimming.mdx)。 |
+| [WordEllipsis](texttrimming.mdx#uid-2b9b4c2055) | 在词边界处裁剪文本，并以省略号（...）代替其余内容。继承自 [TextTrimming](texttrimming.mdx)。 |
 
 </ApiRefPage>
 

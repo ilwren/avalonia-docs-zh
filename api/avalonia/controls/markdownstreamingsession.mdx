@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">MarkdownStreamingSession Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Markdown</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Markdown</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Markdown</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Markdown</code>
 </div>
 </div>
 
@@ -52,14 +52,14 @@ public class MarkdownStreamingSession
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> MarkdownStreamingSession
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> MarkdownStreamingSession
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IAsyncDisposable, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IAsyncDisposable, IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Internally operates at the [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)/[Avalonia.Controls.Documents.TextModel.TextDocumentNode](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNode)
 level to avoid temporary [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) allocations and eager element
@@ -71,15 +71,15 @@ The parse, diff, and snapshot-build phases run on a background thread to keep
 the UI thread free for layout and input. Only the final tree-mutation step
 (apply delta) runs on the UI thread.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Append (2 overloads)](#uid-e16fe04462) | No summary available. |
+| [Append (2 overloads)](#uid-e16fe04462) | 暂无摘要。 |
 | [Complete](#uid-62d5b107f4) | Signals that the LLM stream is finished. Performs a final parse and render pass, then cleans up resources. |
 | [CompleteAsync](#uid-fda89c74dc) | Async version of [Avalonia.Controls.MarkdownStreamingSession.Complete](xref:Avalonia.Controls.MarkdownStreamingSession.Complete) that awaits the final layout pass. |
-| [Dispose](#uid-20f3f75a7e) | No summary available. |
-| [DisposeAsync](#uid-13cc1baeb1) | No summary available. |
+| [Dispose](#uid-20f3f75a7e) | 暂无摘要。 |
+| [DisposeAsync](#uid-13cc1baeb1) | 暂无摘要。 |
 
 <span id="uid-e16fe04462"></span>
 
@@ -89,13 +89,13 @@ the UI thread free for layout and input. Only the final tree-mutation step
 
 <span id="uid-f66bf7fa10"></span>
 
-#### Append Method
+#### Append 方法 {#append-method}
 
 ```csharp
 public void Append(ReadOnlyMemory<char> text)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
@@ -106,7 +106,7 @@ public void Append(ReadOnlyMemory<char> text)
 
 <span id="uid-a2ffa85f9c"></span>
 
-#### Append Method
+#### Append 方法 {#append-method-1}
 
 Appends a text chunk to the streaming buffer.
 Safe to call from any thread.
@@ -115,7 +115,7 @@ Safe to call from any thread.
 public void Append(string text)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `text` string
 
@@ -126,7 +126,7 @@ public void Append(string text)
 
 <span id="uid-62d5b107f4"></span>
 
-### Complete Method
+### Complete 方法 {#complete-method}
 
 Signals that the LLM stream is finished. Performs a final parse and
 render pass, then cleans up resources.
@@ -141,7 +141,7 @@ public void Complete()
 
 <span id="uid-fda89c74dc"></span>
 
-### CompleteAsync Method
+### CompleteAsync 方法 {#completeasync-method}
 
 Async version of [Avalonia.Controls.MarkdownStreamingSession.Complete](xref:Avalonia.Controls.MarkdownStreamingSession.Complete) that awaits the final layout pass.
 
@@ -149,7 +149,7 @@ Async version of [Avalonia.Controls.MarkdownStreamingSession.Complete](xref:Aval
 public System.Threading.Tasks.ValueTask CompleteAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.ValueTask
 
@@ -160,7 +160,7 @@ System.Threading.Tasks.ValueTask
 
 <span id="uid-20f3f75a7e"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -172,22 +172,22 @@ public void Dispose()
 
 <span id="uid-13cc1baeb1"></span>
 
-### DisposeAsync Method
+### DisposeAsync 方法 {#disposeasync-method}
 
 ```csharp
 public System.Threading.Tasks.ValueTask DisposeAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.ValueTask
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsCompleted](#uid-f24e73aee3) | Gets whether the session has been completed. |
 
@@ -195,7 +195,7 @@ System.Threading.Tasks.ValueTask
 
 <span id="uid-f24e73aee3"></span>
 
-### IsCompleted Property
+### IsCompleted 属性 {#iscompleted-property}
 
 Gets whether the session has been completed.
 
@@ -205,9 +205,9 @@ public bool IsCompleted { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Updated](#uid-44b4b8d105) | Raised on the UI thread after each visible update is applied. |
 
@@ -215,7 +215,7 @@ public bool IsCompleted { get; set; }
 
 <span id="uid-44b4b8d105"></span>
 
-### Updated Event
+### Updated 事件 {#updated-event}
 
 Raised on the UI thread after each visible update is applied.
 

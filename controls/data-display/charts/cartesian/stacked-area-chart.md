@@ -1,7 +1,7 @@
 ---
 id: stacked-area-chart
-title: Stacked area chart
-description: Stacks multiple area series on top of each other to show how several variables contribute to a cumulative total over time.
+title: 堆叠面积图
+description: 把多个面积系列层层叠放，呈现若干变量如何随时间汇聚成累计总量。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianStackedarea from '/img/controls/charts/charts-cartesian-stackedarea.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Stacked area charts display multiple area series stacked on top of each other. They are ideal for showing how several variables contribute to a total over time.
+堆叠面积图把多个面积系列层层叠放。要呈现若干变量如何随时间汇成总量，它最为合适。
 
 <Image light={chartsCartesianStackedarea} maxWidth={400} position="center" cornerRadius="true" alt="Stacked area chart with multiple colored layers representing traffic sources stacked to show cumulative total." />
 
-## When to use
-- **Accumulation**: Visualizing the sum of multiple categories over a period.
-- **Temporal composition**: Showing how the makeup of a total value changes chronologically.
-- **Trend comparison**: Comparing the relative growth of different layers.
+## 适用场景 {#when-to-use}
+- **累加**：呈现一段时期内多个类别的总和。
+- **构成随时间的变化**：展示总量的构成如何按时间推移而改变。
+- **趋势对比**：比较各层之间的相对增长。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -50,7 +50,7 @@ Stacked area charts display multiple area series stacked on top of each other. T
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> StackedAreaDesktop { get; } =
     new() { 500, 480, 520, 510, 490, 530, 550 };
@@ -62,12 +62,12 @@ public ObservableCollection<int> StackedAreaTablet { get; } =
     new() { 100, 120, 130, 140, 150, 160, 170 };
 ```
 
-## Common properties (StackedAreaSeries)
+## 常用属性（StackedAreaSeries） {#common-properties-stackedareaseries}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The series name. | `null` |
-| `ItemsSource` | The data collection for this layer. | `null` |
-| `Fill` | Brush used for this specific area layer. | Auto-generated |
-| `FillOpacity` | Transparency level (0.0 to 1.0). | `0.7` |
-| `StackGroup` | Stack identifier. Series with the same value are stacked together. | `"default"` |
+| `Title` | 系列名称。 | `null` |
+| `ItemsSource` | 该层所用的数据集合。 | `null` |
+| `Fill` | 这一层面积所用的画刷。 | Auto-generated |
+| `FillOpacity` | 透明度（0.0 到 1.0）。 | `0.7` |
+| `StackGroup` | 堆叠标识。取值相同的系列会叠在一起。 | `"default"` |

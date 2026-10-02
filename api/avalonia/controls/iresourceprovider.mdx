@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IResourceProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IResourceProvider.cs">IResourceProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IResourceProvider.cs">IResourceProvider.cs</a>
 </div>
 
 </div>
@@ -54,39 +54,39 @@ public interface IResourceProvider
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iresourcenode">IResourceNode</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iresourcenode">IResourceNode</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface is implemented by [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary), [Avalonia.Styling.Style](xref:Avalonia.Styling.Style) and
 [Avalonia.Styling.Styles](xref:Avalonia.Styling.Styles)
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddOwner](#uid-881ae8c626) | Adds an owner to the resource provider. |
-| [RemoveOwner](#uid-22f466e22f) | Removes a resource provider owner. |
+| [AddOwner](#uid-881ae8c626) | 为该资源提供程序添加一个所有者。 |
+| [RemoveOwner](#uid-22f466e22f) | 移除一个资源提供程序所有者。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-881ae8c626"></span>
 
-### AddOwner Method
+### AddOwner 方法 {#addowner-method}
 
-Adds an owner to the resource provider.
+为该资源提供程序添加一个所有者。
 
 ```csharp
 public void AddOwner(Avalonia.Controls.IResourceHost owner)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `owner` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
-The owner.
+所有者。
 
 
 </section>
@@ -95,60 +95,60 @@ The owner.
 
 <span id="uid-22f466e22f"></span>
 
-### RemoveOwner Method
+### RemoveOwner 方法 {#removeowner-method}
 
-Removes a resource provider owner.
+移除一个资源提供程序所有者。
 
 ```csharp
 public void RemoveOwner(Avalonia.Controls.IResourceHost owner)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `owner` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
-The owner.
+所有者。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Owner](#uid-96b327c927) | Gets the owner of the resource provider. |
+| [Owner](#uid-96b327c927) | 获取该资源提供程序的所有者。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-96b327c927"></span>
 
-### Owner Property
+### Owner 属性 {#owner-property}
 
-Gets the owner of the resource provider.
+获取该资源提供程序的所有者。
 
 ```csharp
 public Avalonia.Controls.IResourceHost Owner { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 If multiple owners are added, returns the first.
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [OwnerChanged](#uid-2492577133) | Raised when the [Avalonia.Controls.IResourceProvider.Owner](xref:Avalonia.Controls.IResourceProvider.Owner) of the resource provider changes. |
+| [OwnerChanged](#uid-2492577133) | 资源提供程序的 [Avalonia.Controls.IResourceProvider.Owner](xref:Avalonia.Controls.IResourceProvider.Owner) 发生变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2492577133"></span>
 
-### OwnerChanged Event
+### OwnerChanged 事件 {#ownerchanged-event}
 
-Raised when the [Avalonia.Controls.IResourceProvider.Owner](xref:Avalonia.Controls.IResourceProvider.Owner) of the resource provider changes.
+资源提供程序的 [Avalonia.Controls.IResourceProvider.Owner](xref:Avalonia.Controls.IResourceProvider.Owner) 发生变化时抛出。
 
 ```csharp
 public event EventHandler OwnerChanged

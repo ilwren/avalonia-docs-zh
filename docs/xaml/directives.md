@@ -1,11 +1,11 @@
 ---
 id: directives
-title: "x: directives"
+title: "x: 指令"
 ---
 
-XAML directives are special attributes in the `x:` namespace that control how the XAML engine processes elements. They are part of the XAML language specification, not specific to any particular control.
+XAML 指令是 `x:` 命名空间下的一组特殊特性，用来控制 XAML 引擎如何处理元素。它们属于 XAML 语言规范的一部分，并不针对某个具体控件。
 
-To use these directives, you need the XAML language namespace declaration:
+要使用这些指令，需要先声明 XAML 语言命名空间：
 
 ```xml
 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -13,7 +13,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 
 ## `x:Class`
 
-Connects a XAML file to its code-behind class. This directive must be placed on the root element of the XAML file.
+把 XAML 文件与它的代码隐藏类关联起来。该指令必须写在 XAML 文件的根元素上。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -22,7 +22,7 @@ Connects a XAML file to its code-behind class. This directive must be placed on 
 </Window>
 ```
 
-The specified class must be a `partial` class that inherits from the type of the root element:
+所指定的类必须是 `partial` 类，且继承自根元素的类型：
 
 ```csharp
 namespace MyApp;
@@ -38,7 +38,7 @@ public partial class MainWindow : Window
 
 ## `x:Name`
 
-Assigns a name to an element, generating a field in the code-behind class so you can reference the control from C#.
+为元素取个名字，并在代码隐藏类中生成相应字段，于是你可以在 C# 里引用该控件。
 
 ```xml
 <TextBox x:Name="SearchBox" PlaceholderText="Search..." />
@@ -54,12 +54,12 @@ private void OnSearchClick(object? sender, RoutedEventArgs e)
 ```
 
 :::info
-`x:Name` and `Name` are interchangeable for most Avalonia controls. The `Name` property exists on `StyledElement` and sets the same underlying value. Use `x:Name` when the element type does not have a `Name` property.
+对大多数 Avalonia 控件而言，`x:Name` 和 `Name` 可以互换使用：`StyledElement` 上的 `Name` 属性设置的是同一个底层值。当元素类型本身没有 `Name` 属性时，就用 `x:Name`。
 :::
 
 ## `x:Key`
 
-Assigns a dictionary key to a resource, used within `ResourceDictionary`, `Styles`, or `Application.Resources`:
+为资源指定字典键，用在 `ResourceDictionary`、`Styles` 或 `Application.Resources` 中：
 
 ```xml
 <Application.Resources>
@@ -68,7 +68,7 @@ Assigns a dictionary key to a resource, used within `ResourceDictionary`, `Style
 </Application.Resources>
 ```
 
-Resources are retrieved using `{StaticResource}` or `{DynamicResource}`:
+取用资源时用 `{StaticResource}` 或 `{DynamicResource}`：
 
 ```xml
 <Border Background="{StaticResource PrimaryBrush}" Padding="{StaticResource DefaultSpacing}" />
@@ -76,7 +76,7 @@ Resources are retrieved using `{StaticResource}` or `{DynamicResource}`:
 
 ## `x:DataType`
 
-Specifies the expected data type for data binding within a scope. This is required for [compiled bindings](/docs/data-binding/compiled-bindings) and enables IntelliSense for binding paths.
+指定某个作用域内数据绑定所期望的数据类型。[编译绑定](/docs/data-binding/compiled-bindings)必须有它，它也让绑定路径获得 IntelliSense 支持。
 
 ```xml
 <Window x:DataType="vm:MainWindowViewModel">
@@ -84,7 +84,7 @@ Specifies the expected data type for data binding within a scope. This is requir
 </Window>
 ```
 
-On `DataTemplate`:
+在 `DataTemplate` 上：
 
 ```xml
 <DataTemplate x:DataType="vm:TodoItemViewModel">
@@ -97,7 +97,7 @@ On `DataTemplate`:
 
 ## `x:CompileBindings`
 
-Enables or disables compiled bindings for all bindings within the scope. Compiled bindings are validated at compile time and offer better performance.
+为作用域内的所有绑定启用或关闭编译绑定。编译绑定会在编译期得到校验，性能也更好。
 
 ```xml
 <UserControl x:CompileBindings="True"
@@ -107,13 +107,13 @@ Enables or disables compiled bindings for all bindings within the scope. Compile
 </UserControl>
 ```
 
-You can set this globally in your project file:
+也可以在项目文件中全局设置：
 
 ```xml
 <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
 ```
 
-To opt out of compiled bindings for a specific binding, use `ReflectionBinding`:
+若想让某个绑定单独退出编译绑定，用 `ReflectionBinding`：
 
 ```xml
 <TextBlock Text="{ReflectionBinding DynamicProperty}" />
@@ -121,7 +121,7 @@ To opt out of compiled bindings for a specific binding, use `ReflectionBinding`:
 
 ## `x:Static`
 
-References a static field, property, constant, or enum value:
+引用静态字段、属性、常量或枚举值：
 
 ```xml
 <TextBlock Text="{x:Static sys:Environment.MachineName}" />
@@ -131,7 +131,7 @@ References a static field, property, constant, or enum value:
 <Border Width="{x:Static local:Constants.DefaultWidth}" />
 ```
 
-For enum values:
+引用枚举值：
 
 ```xml
 <ComboBox SelectedItem="{x:Static local:Priority.High}" />
@@ -139,7 +139,7 @@ For enum values:
 
 ## `x:Type`
 
-References a `System.Type` object:
+引用一个 `System.Type` 对象：
 
 ```xml
 <Style Selector="Button">
@@ -149,7 +149,7 @@ References a `System.Type` object:
 
 ## `x:Null`
 
-Sets a property to `null`:
+把属性设为 `null`：
 
 ```xml
 <Button Background="{x:Null}" Content="No background" />
@@ -157,14 +157,14 @@ Sets a property to `null`:
 
 ## `x:True` and `x:False`
 
-Shorthand for boolean values. These are Avalonia-specific extensions:
+布尔值的简写形式。它们是 Avalonia 特有的扩展：
 
 ```xml
 <CheckBox IsChecked="{x:True}" />
 <TextBox IsReadOnly="{x:False}" />
 ```
 
-These are equivalent to:
+它们等价于：
 
 ```xml
 <CheckBox IsChecked="True" />
@@ -173,7 +173,7 @@ These are equivalent to:
 
 ## `x:Shared`
 
-Controls whether a resource is instantiated once and reused, or created fresh each time it is referenced. By default, resources are shared (a single instance is returned every time). Set `x:Shared="False"` to create a new instance on each reference:
+控制资源是只实例化一次反复复用，还是每次引用都重新创建。资源默认是共享的（每次都返回同一个实例）。设置 `x:Shared="False"` 可让每次引用都新建一个实例：
 
 ```xml
 <Application.Resources>
@@ -184,15 +184,15 @@ Controls whether a resource is instantiated once and reused, or created fresh ea
 </Application.Resources>
 ```
 
-Without `x:Shared="False"`, assigning the same `ColumnDefinitions` resource to multiple `Grid` controls would fail because a single instance cannot have multiple parents.
+若不加 `x:Shared="False"`，把同一个 `ColumnDefinitions` 资源赋给多个 `Grid` 控件会失败 —— 单个实例不可能有多个父级。
 
 :::info
-`x:Shared` only applies to resources in a `ResourceDictionary`. It has no effect outside of resource definitions.
+`x:Shared` 只对 `ResourceDictionary` 中的资源有效，在资源定义之外不起作用。
 :::
 
-## Primitive type elements
+## 基元类型元素 {#primitive-type-elements}
 
-The XAML language namespace provides elements for common .NET primitive types:
+XAML 语言命名空间为常见的 .NET 基元类型提供了对应的元素：
 
 ```xml
 <x:String>Hello World</x:String>
@@ -201,7 +201,7 @@ The XAML language namespace provides elements for common .NET primitive types:
 <x:Boolean>True</x:Boolean>
 ```
 
-These are useful for defining resources:
+它们在定义资源时很有用：
 
 ```xml
 <Application.Resources>
@@ -210,9 +210,9 @@ These are useful for defining resources:
 </Application.Resources>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [XAML Reference](/docs/xaml): Overview of XAML syntax.
-- [Namespaces](/docs/xaml/namespaces): How XAML namespaces work.
-- [Markup Extensions](/docs/xaml/markup-extensions): `{Binding}`, `{StaticResource}`, and other extensions.
-- [Compiled Bindings](/docs/data-binding/compiled-bindings): How compiled bindings work.
+- [XAML 参考](/docs/xaml)：XAML 语法总览。
+- [命名空间](/docs/xaml/namespaces)：XAML 命名空间的工作方式。
+- [标记扩展](/docs/xaml/markup-extensions)：`{Binding}`、`{StaticResource}` 及其他扩展。
+- [编译绑定](/docs/data-binding/compiled-bindings)：编译绑定的工作原理。

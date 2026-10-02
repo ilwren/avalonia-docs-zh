@@ -1,28 +1,28 @@
 ---
 id: typography
-title: Typography
-description: Font size, weight, style, stretch, letter spacing, line height, text decorations, and alignment properties for text.
+title: 排版
+description: 文本的字号、字重、字形、字宽、字间距、行高、文本装饰与对齐等属性。
 doc-type: reference
 ---
 
-Avalonia provides a set of properties for controlling how text appears in your application. These properties are defined on [`TextElement`](/api/avalonia/controls/documents/textelement) as inherited attached properties, so you can set them on any control to affect all text within its visual tree through [property value inheritance](/docs/properties/property-value-inheritance).
+Avalonia 提供了一组属性来掌控应用中文本的外观。这些属性定义在 [`TextElement`](/api/avalonia/controls/documents/textelement) 上，是可继承的附加属性，因此你可以把它们设在任意控件上，经由[属性值继承](/docs/properties/property-value-inheritance)作用于其视觉树中的所有文本。
 
-## TextElement attached properties
+## TextElement 的附加属性 {#textelement-attached-properties}
 
-The following properties are defined on `TextElement` and inherited by descendant controls. Set them directly on text controls like `TextBlock`, or on container controls to apply to all text within.
+下列属性定义在 `TextElement` 上，并由后代控件继承。你既可以直接设在 `TextBlock` 这类文本控件上，也可以设在容器控件上，让其中所有文本一并生效。
 
-| Attached property | Type | Default | Description |
+| 附加属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `TextElement.FontFamily` | [`FontFamily`](/api/avalonia/media/fontfamily) | Platform default | The typeface used to render text. |
-| `TextElement.FontSize` | `double` | `12` | The size of text in device-independent pixels. |
-| `TextElement.FontWeight` | [`FontWeight`](/api/avalonia/media/fontweight) | `Normal` | The thickness of character strokes. |
-| `TextElement.FontStyle` | [`FontStyle`](/api/avalonia/media/fontstyle) | `Normal` | Whether text is upright, italic, or oblique. |
-| `TextElement.FontStretch` | [`FontStretch`](/api/avalonia/media/fontstretch) | `Normal` | The width of characters relative to their normal aspect ratio. |
-| `TextElement.FontFeatures` | `FontFeatureCollection` | `null` | OpenType font features to enable or disable. |
-| `TextElement.Foreground` | `IBrush` | Inherited | The brush used to paint text. |
-| `TextElement.LetterSpacing` | `double` | `0` | Extra spacing between characters in device-independent pixels. |
+| `TextElement.FontFamily` | [`FontFamily`](/api/avalonia/media/fontfamily) | 平台默认值 | 渲染文本所用的字型。 |
+| `TextElement.FontSize` | `double` | `12` | 文本大小，以设备无关像素为单位。 |
+| `TextElement.FontWeight` | [`FontWeight`](/api/avalonia/media/fontweight) | `Normal` | 字符笔画的粗细。 |
+| `TextElement.FontStyle` | [`FontStyle`](/api/avalonia/media/fontstyle) | `Normal` | 文本是直立、斜体还是倾斜。 |
+| `TextElement.FontStretch` | [`FontStretch`](/api/avalonia/media/fontstretch) | `Normal` | 字符相对于常规宽高比的宽度。 |
+| `TextElement.FontFeatures` | `FontFeatureCollection` | `null` | 要启用或禁用的 OpenType 字体特性。 |
+| `TextElement.Foreground` | `IBrush` | Inherited | 绘制文本所用的画刷。 |
+| `TextElement.LetterSpacing` | `double` | `0` | 字符之间额外的间距，以设备无关像素为单位。 |
 
-When you set a property like `FontSize` directly on a `TextBlock`, it is equivalent to setting `TextElement.FontSize` on that control.
+直接在 `TextBlock` 上设 `FontSize` 这类属性，等同于在该控件上设 `TextElement.FontSize`。
 
 ```xml
 <!-- Set font properties on a container to apply to all child text -->
@@ -35,9 +35,9 @@ When you set a property like `FontSize` directly on a `TextBlock`, it is equival
 </StackPanel>
 ```
 
-## Font size
+## 字号 {#font-size}
 
-`FontSize` specifies the height of text in device-independent pixels. Set it on individual controls or on a container to affect all descendant text.
+`FontSize` 以设备无关像素指定文本的高度。你可以设在单个控件上，也可以设在容器上以影响其下所有文本。
 
 <XamlPreview>
 
@@ -52,11 +52,11 @@ When you set a property like `FontSize` directly on a `TextBlock`, it is equival
 
 </XamlPreview>
 
-## Font weight
+## 字重 {#font-weight}
 
-`FontWeight` controls the thickness of character strokes. You can use named values or numeric values from 1 to 999.
+`FontWeight` 控制字符笔画的粗细。你可以用具名值，也可以用 1 到 999 的数值。
 
-| Named value | Numeric value | Aliases |
+| 具名值 | 数值 | 别名 |
 |---|---|---|
 | `Thin` | 100 | |
 | `ExtraLight` | 200 | `UltraLight` |
@@ -86,7 +86,7 @@ When you set a property like `FontSize` directly on a `TextBlock`, it is equival
 
 </XamlPreview>
 
-You can also use numeric values directly in XAML or cast an integer in code:
+你也可以在 XAML 中直接写数值，或在代码中强制转换一个整数：
 
 ```xml
 <TextBlock FontWeight="550" Text="Custom weight 550" />
@@ -97,18 +97,18 @@ myTextBlock.FontWeight = (FontWeight)550;
 ```
 
 :::note
-The available weights depend on the font. If a requested weight is not available, Avalonia selects the closest match. Some fonts include only a few weights (such as Normal and Bold), while others provide the full range.
+可用的字重取决于字体。若所请求的字重没有，Avalonia 会挑一个最接近的。有些字体只带寥寥几档（比如 Normal 和 Bold），另一些则提供了完整档位。
 :::
 
-## Font style
+## 字形 {#font-style}
 
-`FontStyle` controls whether text is rendered upright, italic, or oblique.
+`FontStyle` 控制文本渲染成直立、斜体还是倾斜。
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
-| `Normal` | Upright text (default). |
-| `Italic` | Uses the italic variant of the font, designed with modified letterforms. |
-| `Oblique` | Slants the text algorithmically. Used when the font does not include a true italic variant. |
+| `Normal` | 直立文本（默认）。 |
+| `Italic` | 使用字体的斜体变体，字形经过专门设计。 |
+| `Oblique` | 由算法把文本倾斜。当字体不含真正的斜体变体时采用。 |
 
 <XamlPreview>
 
@@ -122,21 +122,21 @@ The available weights depend on the font. If a requested weight is not available
 
 </XamlPreview>
 
-## Font stretch
+## 字宽 {#font-stretch}
 
-`FontStretch` controls the width of characters relative to their normal aspect ratio. This property requires a font that includes condensed or expanded variants.
+`FontStretch` 控制字符相对于常规宽高比的宽度。该属性要求字体带有窄体或宽体变体。
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
-| `UltraCondensed` | Narrowest character width. |
-| `ExtraCondensed` | Narrower than `Condensed`. |
-| `Condensed` | Narrower than `SemiCondensed`. |
-| `SemiCondensed` | Slightly narrower than `Normal`. |
-| `Normal` | Default character width. |
-| `SemiExpanded` | Slightly wider than `Normal`. |
-| `Expanded` | Wider than `SemiExpanded`. |
-| `ExtraExpanded` | Wider than `Expanded`. |
-| `UltraExpanded` | Widest character width. |
+| `UltraCondensed` | 最窄的字符宽度。 |
+| `ExtraCondensed` | 比 `Condensed` 更窄。 |
+| `Condensed` | 比 `SemiCondensed` 更窄。 |
+| `SemiCondensed` | 比 `Normal` 略窄。 |
+| `Normal` | 默认的字符宽度。 |
+| `SemiExpanded` | 比 `Normal` 略宽。 |
+| `Expanded` | 比 `SemiExpanded` 更宽。 |
+| `ExtraExpanded` | 比 `Expanded` 更宽。 |
+| `UltraExpanded` | 最宽的字符宽度。 |
 
 ```xml
 <TextBlock FontStretch="Condensed" Text="Condensed text" />
@@ -145,12 +145,12 @@ The available weights depend on the font. If a requested weight is not available
 ```
 
 :::note
-Most fonts only include `Normal` width glyphs. `FontStretch` has no visible effect unless the font includes glyphs designed for the requested stretch value.
+多数字体只带 `Normal` 宽度的字形。除非字体确有针对所请求字宽设计的字形，否则 `FontStretch` 不会有任何可见效果。
 :::
 
-## Letter spacing
+## 字间距 {#letter-spacing}
 
-`LetterSpacing` adds extra space between characters, specified in device-independent pixels. Positive values increase spacing. Negative values decrease spacing.
+`LetterSpacing` 在字符之间添加额外空间，以设备无关像素为单位。正值加宽间距，负值收窄间距。
 
 <XamlPreview>
 
@@ -165,7 +165,7 @@ Most fonts only include `Normal` width glyphs. `FontStretch` has no visible effe
 
 </XamlPreview>
 
-Because `LetterSpacing` is an inherited attached property defined on `TextElement`, you can set it on a container to affect all text within:
+由于 `LetterSpacing` 是定义在 `TextElement` 上的可继承附加属性，你可以把它设在容器上，以影响其中所有文本：
 
 ```xml
 <StackPanel TextElement.LetterSpacing="1.5">
@@ -174,14 +174,14 @@ Because `LetterSpacing` is an inherited attached property defined on `TextElemen
 </StackPanel>
 ```
 
-## Line height and line spacing
+## 行高与行距 {#line-height-and-line-spacing}
 
-`LineHeight` and `LineSpacing` control the vertical distance between lines of text in a `TextBlock`.
+`LineHeight` 和 `LineSpacing` 控制 `TextBlock` 中各行文本之间的垂直距离。
 
-| Property | Type | Default | Description |
+| 属性 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
-| `LineHeight` | `double` | `NaN` | The total height of each line. When set to `NaN`, the font metrics determine line height automatically. |
-| `LineSpacing` | `double` | `0` | Extra distance added between lines, in device-independent pixels. Added on top of the font's natural line height. |
+| `LineHeight` | `double` | `NaN` | 每一行的总高度。设为 `NaN` 时，由字体度量自动决定行高。 |
+| `LineSpacing` | `double` | `0` | 行与行之间额外添加的距离，以设备无关像素为单位，叠加在字体本身的行高之上。 |
 
 <XamlPreview>
 
@@ -202,21 +202,21 @@ Because `LetterSpacing` is an inherited attached property defined on `TextElemen
 
 </XamlPreview>
 
-Use `LineHeight` when you need precise control over line dimensions. Use `LineSpacing` when you want to add breathing room between lines without overriding the font's natural metrics.
+当你需要精确掌控行的尺寸时用 `LineHeight`；若只是想让行与行之间松快些、又不想覆盖字体本身的度量，就用 `LineSpacing`。
 
-## Text alignment
+## 文本对齐 {#text-alignment}
 
-`TextAlignment` controls the horizontal positioning of text within its container.
+`TextAlignment` 控制文本在其容器内的水平位置。
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
-| `Left` | Text aligns to the left edge. |
-| `Center` | Text is centered horizontally. |
-| `Right` | Text aligns to the right edge. |
-| `Start` | Text aligns to the start edge, respecting `FlowDirection`. Equivalent to `Left` in left-to-right layouts. |
-| `End` | Text aligns to the end edge, respecting `FlowDirection`. Equivalent to `Right` in left-to-right layouts. |
-| `Justify` | Text is stretched so that each line (except the last) fills the full width. Requires `TextWrapping` to be enabled. |
-| `DetectFromContent` | Alignment is inferred from the text content's Unicode directionality. |
+| `Left` | 文本靠左边缘对齐。 |
+| `Center` | 文本水平居中。 |
+| `Right` | 文本靠右边缘对齐。 |
+| `Start` | 文本靠起始边缘对齐，并遵循 `FlowDirection`。在从左到右的布局中等同于 `Left`。 |
+| `End` | 文本靠末端边缘对齐，并遵循 `FlowDirection`。在从左到右的布局中等同于 `Right`。 |
+| `Justify` | 文本被拉伸，使每一行（最后一行除外）都铺满整个宽度。需要启用 `TextWrapping`。 |
+| `DetectFromContent` | 对齐方式由文本内容的 Unicode 书写方向推断得出。 |
 
 <XamlPreview>
 
@@ -233,21 +233,21 @@ Use `LineHeight` when you need precise control over line dimensions. Use `LineSp
 </XamlPreview>
 
 :::info
-Use `Start` and `End` instead of `Left` and `Right` when your application supports both left-to-right and right-to-left layouts. These values automatically adapt to the current `FlowDirection`.
+若你的应用同时支持从左到右和从右到左的布局，请用 `Start` 和 `End` 而非 `Left` 和 `Right`。这两个取值会自动适配当前的 `FlowDirection`。
 :::
 
-## Text decorations
+## 文本装饰 {#text-decorations}
 
-Text decorations draw lines on or around text. Avalonia provides four presets through the [`TextDecorations`](/api/avalonia/media/textdecorations) class, and supports fully customized decorations through the [`TextDecoration`](/api/avalonia/media/textdecoration) class.
+文本装饰在文字之上或周围画线。Avalonia 通过 [`TextDecorations`](/api/avalonia/media/textdecorations) 类提供了四种预设，并支持用 [`TextDecoration`](/api/avalonia/media/textdecoration) 类完全自定义装饰。
 
-### Preset decorations
+### 预设装饰 {#preset-decorations}
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
-| `Underline` | A line below the text baseline. |
-| `Strikethrough` | A line through the middle of the text. |
-| `Overline` | A line above the text. |
-| `Baseline` | A line at the text baseline. |
+| `Underline` | 文本基线下方的一条线。 |
+| `Strikethrough` | 穿过文字中部的一条线。 |
+| `Overline` | 文本上方的一条线。 |
+| `Baseline` | 位于文本基线处的一条线。 |
 
 <XamlPreview>
 
@@ -263,7 +263,7 @@ Text decorations draw lines on or around text. Avalonia provides four presets th
 
 </XamlPreview>
 
-You can apply decorations to individual `Run` elements within a `TextBlock`:
+你可以把装饰应用到 `TextBlock` 内部的单个 `Run` 元素上：
 
 ```xml
 <TextBlock>
@@ -273,20 +273,20 @@ You can apply decorations to individual `Run` elements within a `TextBlock`:
 </TextBlock>
 ```
 
-### Custom decorations
+### 自定义装饰 {#custom-decorations}
 
-For control over color, thickness, offset, and dash pattern, define a `TextDecoration` directly.
+若要掌控颜色、粗细、偏移和虚线样式，请直接定义一个 `TextDecoration`。
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Location` | [`TextDecorationLocation`](/api/avalonia/media/textdecorationlocation) | Where the line is drawn: `Underline`, `Strikethrough`, `Overline`, or `Baseline`. |
-| `Stroke` | `IBrush` | The brush used to paint the decoration line. |
-| `StrokeThickness` | `double` | The thickness of the decoration line. |
-| `StrokeThicknessUnit` | [`TextDecorationUnit`](/api/avalonia/media/textdecorationunit) | The unit for thickness: `FontRecommended` (default), `FontRenderingEmSize`, or `Pixel`. |
-| `StrokeOffset` | `double` | Vertical offset of the line from its default position. |
-| `StrokeOffsetUnit` | `TextDecorationUnit` | The unit for offset. |
-| `StrokeDashArray` | `AvaloniaList<double>` | A dash pattern for the decoration line. |
-| `StrokeLineCap` | `PenLineCap` | The shape at the ends of dashes: `Flat`, `Round`, or `Square`. |
+| `Location` | [`TextDecorationLocation`](/api/avalonia/media/textdecorationlocation) | 线画在哪里：`Underline`、`Strikethrough`、`Overline` 或 `Baseline`。 |
+| `Stroke` | `IBrush` | 绘制装饰线所用的画刷。 |
+| `StrokeThickness` | `double` | 装饰线的粗细。 |
+| `StrokeThicknessUnit` | [`TextDecorationUnit`](/api/avalonia/media/textdecorationunit) | 粗细的单位：`FontRecommended`（默认）、`FontRenderingEmSize` 或 `Pixel`。 |
+| `StrokeOffset` | `double` | 线相对于其默认位置的垂直偏移。 |
+| `StrokeOffsetUnit` | `TextDecorationUnit` | 偏移的单位。 |
+| `StrokeDashArray` | `AvaloniaList<double>` | 装饰线的虚线样式。 |
+| `StrokeLineCap` | `PenLineCap` | 虚线两端的形状：`Flat`、`Round` 或 `Square`。 |
 
 ```xml
 <TextBlock Text="Custom red dashed underline">
@@ -301,9 +301,9 @@ For control over color, thickness, offset, and dash pattern, define a `TextDecor
 </TextBlock>
 ```
 
-## OpenType font features
+## OpenType 字体特性 {#opentype-font-features}
 
-The `FontFeatures` property enables or disables OpenType features such as ligatures, tabular numbers, and small capitals. Features are specified as comma-separated tags using HarfBuzz syntax.
+`FontFeatures` 属性用来启用或禁用连字、等宽数字、小型大写字母等 OpenType 特性。特性以逗号分隔的标签形式给出，采用 HarfBuzz 语法。
 
 ```xml
 <TextBlock Text="0123456789" FontFeatures="+tnum" />
@@ -311,13 +311,13 @@ The `FontFeatures` property enables or disables OpenType features such as ligatu
 <TextBlock Text="Small Caps" FontFeatures="+smcp" />
 ```
 
-For a full list of common tags and usage examples, see [Custom fonts: OpenType font features](/docs/styling/custom-fonts#opentype-font-features).
+完整的常用标签清单和用法示例，请见[自定义字体：OpenType 字体特性](/docs/styling/custom-fonts#opentype-font-features)。
 
-## Creating a type scale with style classes
+## 用样式类搭一套字号体系 {#creating-a-type-scale-with-style-classes}
 
-Avalonia does not include built-in heading styles like HTML's `<h1>` through `<h6>`. You can create your own type scale using [style classes](/docs/styling/style-classes), giving you full control over the sizes, weights, and spacing that match your application's design.
+Avalonia 没有内置 HTML 那样从 `<h1>` 到 `<h6>` 的标题样式。你可以借助[样式类](/docs/styling/style-classes)自建一套字号体系，字号、字重和间距全由你定，恰好贴合应用的设计。
 
-Define the styles in your `App.axaml` (or any shared resource file) so they are available throughout your application:
+把这些样式定义在 `App.axaml`（或任意共享资源文件）中，这样整个应用都能用上：
 
 ```xml title="App.axaml"
 <Application.Styles>
@@ -354,7 +354,7 @@ Define the styles in your `App.axaml` (or any shared resource file) so they are 
 </Application.Styles>
 ```
 
-Then apply them with the `Classes` property:
+然后用 `Classes` 属性套上它们：
 
 ```xml
 <StackPanel Spacing="8">
@@ -367,17 +367,17 @@ Then apply them with the `Classes` property:
 </StackPanel>
 ```
 
-You can combine style classes with inline overrides when a specific instance needs to differ:
+当某个实例需要与众不同时，可以在样式类之外再做内联覆盖：
 
 ```xml
 <TextBlock Classes="h1" Foreground="DodgerBlue" Text="Colored heading" />
 ```
 
-This approach works well with [sharing styles](/docs/styling/sharing-styles) across your application. Define the type scale once, then use it consistently everywhere.
+这种做法与在应用中[共享样式](/docs/styling/sharing-styles)配合得很好：字号体系定义一次，之后处处沿用。
 
-## Setting typography from code
+## 在代码中设置排版属性 {#setting-typography-from-code}
 
-All `TextElement` attached properties have static `Get` and `Set` methods for use in code-behind:
+所有 `TextElement` 附加属性都有对应的静态 `Get` 和 `Set` 方法，可在代码隐藏中使用：
 
 ```csharp
 TextElement.SetFontSize(myPanel, 18);
@@ -386,7 +386,7 @@ TextElement.SetLetterSpacing(myPanel, 1.5);
 TextElement.SetFontStyle(myPanel, FontStyle.Italic);
 ```
 
-You can also set properties directly on text controls:
+你也可以直接在文本控件上设置这些属性：
 
 ```csharp
 myTextBlock.FontSize = 24;
@@ -395,13 +395,13 @@ myTextBlock.LineHeight = 32;
 myTextBlock.TextDecorations = TextDecorations.Underline;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Custom fonts](/docs/styling/custom-fonts): Embedding and loading custom font files.
-- [Text options](/docs/graphics-animation/text-options): Controlling text rendering, hinting, and baseline alignment.
-- [TextBlock](/controls/data-display/text-display/textblock): The primary control for displaying formatted text.
-- [TextTrimming](/controls/data-display/text-display/texttrimming): How text is truncated when it overflows.
-- [Property value inheritance](/docs/properties/property-value-inheritance): How font properties propagate through the visual tree.
-- [`TextElement` API reference](/api/avalonia/controls/documents/textelement)
-- [Style classes](/docs/styling/style-classes): Applying named style classes to controls.
-- [`FontWeight` API reference](/api/avalonia/media/fontweight)
+- [自定义字体](/docs/styling/custom-fonts)：嵌入并加载自定义字体文件。
+- [文本选项](/docs/graphics-animation/text-options)：掌控文本渲染、微调（hinting）与基线对齐。
+- [TextBlock](/controls/data-display/text-display/textblock)：显示格式化文本的主力控件。
+- [TextTrimming](/controls/data-display/text-display/texttrimming)：文本溢出时如何截断。
+- [属性值继承](/docs/properties/property-value-inheritance)：字体属性如何沿视觉树向下传递。
+- [`TextElement` API 参考](/api/avalonia/controls/documents/textelement)
+- [样式类](/docs/styling/style-classes)：给控件套上具名样式类。
+- [`FontWeight` API 参考](/api/avalonia/media/fontweight)

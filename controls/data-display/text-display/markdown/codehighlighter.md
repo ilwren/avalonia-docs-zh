@@ -1,49 +1,49 @@
 ---
 id: codehighlighter
 title: CodeHighlighter
-description: Adds syntax highlighting to code blocks rendered by the Markdown control, with ColorCode and TextMate implementations available as separate packages.
+description: 为 Markdown 控件渲染的代码块加上语法高亮；ColorCode 和 TextMate 两套实现以独立包的形式提供。
 doc-type: reference
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-The `Markdown` control supports syntax highlighting for fenced code blocks. Set `Markdown.CodeHighlighter` on the control and every code block in its document uses it. Two implementations ship as separate NuGet packages: `ColorCodeHighlighter` (lightweight, limited language support) and `TextMateHighlighter` (full TextMate grammar support with themes).
+`Markdown` 控件支持为围栏代码块加语法高亮。在控件上设置 `Markdown.CodeHighlighter`，其文档中的每个代码块就都会用上它。两套实现以独立的 NuGet 包分发：`ColorCodeHighlighter`（轻量，支持的语言有限）和 `TextMateHighlighter`（完整的 TextMate 语法支持，自带主题）。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Installation
+## 安装 {#installation}
 
-Highlighters are distributed as separate NuGet packages. Install the one that suits your needs:
+高亮器以独立的 NuGet 包分发。按需安装其中一个即可：
 
-**ColorCode** provides a lightweight highlighter that covers common languages such as C#, XML, JSON, and JavaScript:
+**ColorCode** 是一款轻量高亮器，覆盖 C#、XML、JSON、JavaScript 等常见语言：
 
 ```bash
 dotnet add package Avalonia.Controls.Markdown.ColorCode
 ```
 
-**TextMate** provides full TextMate grammar support with built-in themes, covering a wide range of languages:
+**TextMate** 提供完整的 TextMate 语法支持和内置主题，覆盖的语言相当广：
 
 ```bash
 dotnet add package Avalonia.Controls.Markdown.TextMate
 ```
 
-## Choosing a highlighter
+## 该选哪款高亮器 {#choosing-a-highlighter}
 
-| Feature | `ColorCodeHighlighter` | `TextMateHighlighter` |
+| 特性 | `ColorCodeHighlighter` | `TextMateHighlighter` |
 |---|---|---|
-| Language coverage | Common languages (C#, XML, JSON, JS, and others) | Broad coverage via TextMate grammars |
-| Theming | Inherits your application theme colors | Built-in `ThemeName` values such as `LightPlus` and `DarkPlus` |
-| Package size | Smaller | Larger (bundles grammar files) |
-| Setup | Minimal | Requires a `Theme` property value |
+| 语言覆盖面 | 常见语言（C#、XML、JSON、JS 等） | 借助 TextMate 语法，覆盖面很广 |
+| Theming | 沿用你的应用主题配色 | 内置若干 `ThemeName` 取值，比如 `LightPlus` 和 `DarkPlus` |
+| 包体积 | Smaller | 较大（内含语法文件） |
+| 配置 | Minimal | 需要给出 `Theme` 属性值 |
 
-If you only need to highlight a handful of popular languages and want to keep dependencies small, use `ColorCodeHighlighter`. If you need extensive language support or want to control the color theme independently of your application theme, use `TextMateHighlighter`.
+如果你只需高亮少数几种常见语言、又想让依赖尽量轻，请用 `ColorCodeHighlighter`；如果需要广泛的语言支持，或想让配色主题独立于应用主题，请用 `TextMateHighlighter`。
 
-## Using `TextMateHighlighter` in XAML
+## 在 XAML 中使用 `TextMateHighlighter` {#using-textmatehighlighter-in-xaml}
 
-`Markdown.CodeHighlighter` is an attached property. Set it on the control itself:
+`Markdown.CodeHighlighter` 是附加属性，直接设置在控件上：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -56,9 +56,9 @@ If you only need to highlight a handful of popular languages and want to keep de
 </Window>
 ```
 
-You can switch the theme at runtime by changing the `Theme` property on the highlighter. Every code block that uses it re-highlights.
+改变高亮器的 `Theme` 属性即可在运行时切换主题，用到它的每个代码块都会重新高亮。
 
-## Using `ColorCodeHighlighter` in XAML
+## 在 XAML 中使用 `ColorCodeHighlighter` {#using-colorcodehighlighter-in-xaml}
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -71,9 +71,9 @@ You can switch the theme at runtime by changing the `Theme` property on the high
 </Window>
 ```
 
-## Sharing one highlighter across several controls
+## 让多个控件共用一个高亮器 {#sharing-one-highlighter-across-several-controls}
 
-Declare the highlighter as a resource and point each control at it. One instance can serve any number of `Markdown` controls:
+把高亮器声明为资源，再让各个控件都指向它。一个实例可以服务任意多个 `Markdown` 控件：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -89,7 +89,7 @@ Declare the highlighter as a resource and point each control at it. One instance
 </Window>
 ```
 
-## Setting the highlighter in code
+## 在代码中设置高亮器 {#setting-the-highlighter-in-code}
 
 ```csharp
 using TextMateSharp.Grammars; // ThemeName
@@ -103,11 +103,11 @@ markdown.CodeHighlighter = highlighter;
 Markdown.SetCodeHighlighter(markdown, highlighter);
 ```
 
-To highlight one block differently from the rest, set `MarkdownCodeBlock.Highlighter` on that element. A value set on one block wins over the value supplied by the control.
+若想让某个代码块与众不同，可以在那个元素上设置 `MarkdownCodeBlock.Highlighter`。写在单个代码块上的取值会盖过控件给出的取值。
 
-## Specifying languages in code blocks
+## 在代码块中指定语言 {#specifying-languages-in-code-blocks}
 
-To get correct highlighting, specify the language identifier after the opening triple backticks in your Markdown source. For example:
+要获得正确的高亮，请在 Markdown 源码里起始的三个反引号后面写上语言标识符。例如：
 
 ````markdown
 ```csharp
@@ -115,15 +115,15 @@ Console.WriteLine("Hello, world!");
 ```
 ````
 
-If you omit the language identifier, the highlighter will render the block as plain text without coloring. The language identifier is stored on the `MarkdownCodeBlock.LanguageId` property.
+若省略语言标识符，高亮器会把该代码块当作纯文本渲染，不上色。语言标识符保存在 `MarkdownCodeBlock.LanguageId` 属性上。
 
-## Notes
+## 注释支持情况 {#notes}
 
-- Code blocks re-render on their own when you change a property of the highlighter they are using, such as `Theme`. A custom highlighter signals this by calling `OnInvalidated`.
-- `Markdown.CodeHighlighter` is an inheriting attached property, so a single instance covers every code block in the control's document without a style. `MarkdownCodeBlock.Highlighter` set on one block overrides it.
-- `MarkdownCodeBlock` extends `Paragraph` and is a full `StyledElement`, so a style selector still reaches it for visual customization, such as background, padding and font family.
+- 当你改变代码块所用高亮器的某个属性（比如 `Theme`）时，代码块会自行重新渲染。自定义高亮器要调用 `OnInvalidated` 来发出这一通知。
+- `Markdown.CodeHighlighter` 是一个可继承的附加属性，因此一个实例无需样式就能覆盖控件文档中的所有代码块。写在单个代码块上的 `MarkdownCodeBlock.Highlighter` 会覆盖它。
+- `MarkdownCodeBlock` 继承自 `Paragraph`，是完整的 `StyledElement`，因此样式选择器照样能选中它，用来定制背景、内边距、字体族等外观。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Markdown control](/controls/data-display/text-display/markdown)
-- [Markdown styling](/controls/data-display/text-display/markdown/markdown-styling)
+- [Markdown 控件](/controls/data-display/text-display/markdown)
+- [Markdown 样式](/controls/data-display/text-display/markdown/markdown-styling)

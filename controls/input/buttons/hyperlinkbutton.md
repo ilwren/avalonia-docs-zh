@@ -1,31 +1,31 @@
 ---
 id: hyperlinkbutton
 title: HyperlinkButton
-description: A button styled as a text hyperlink that opens a URI using the platform's default handler.
+description: 一个外观像文字超链接的按钮，点击后用平台默认的处理程序打开 URI。
 doc-type: reference
 ---
 
-The [`HyperlinkButton`](/api/avalonia/controls/hyperlinkbutton) is a button that appears as a text hyperlink and opens a URI when you click it. It uses the platform's default mechanism to launch URIs (opening a browser, email client, and so on).
+[`HyperlinkButton`](/api/avalonia/controls/hyperlinkbutton) 是一个外观像文字超链接的按钮，点击它会打开一个 URI。它借助平台默认的机制来启动 URI（打开浏览器、邮件客户端等等）。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `NavigateUri` | `Uri` | The URI to open when the button is clicked. |
-| `Content` | `object` | The content displayed in the button (typically text). |
-| `IsVisited` | `bool` | Whether the link has been visited. Automatically set to `true` after the URI is launched. |
-| `Command` | `ICommand` | An optional command executed when the button is clicked. |
+| `NavigateUri` | `Uri` | 点击按钮时要打开的 URI。 |
+| `Content` | `object` | 按钮中显示的内容（通常是文字）。 |
+| `IsVisited` | `bool` | 链接是否已访问过。URI 被启动后会自动置为 `true`。 |
+| `Command` | `ICommand` | 可选的命令，按钮被点击时执行。 |
 
-## Basic example
+## 基本示例 {#basic-example}
 
 ```xml
 <HyperlinkButton NavigateUri="https://avaloniaui.net"
                  Content="Visit Avalonia" />
 ```
 
-## Custom content
+## 自定义内容 {#custom-content}
 
-Like `Button`, `HyperlinkButton` supports arbitrary content:
+和 `Button` 一样，`HyperlinkButton` 也支持任意内容：
 
 ```xml
 <HyperlinkButton NavigateUri="https://github.com/AvaloniaUI/Avalonia">
@@ -36,26 +36,26 @@ Like `Button`, `HyperlinkButton` supports arbitrary content:
 </HyperlinkButton>
 ```
 
-## Binding the URI
+## 绑定 URI {#binding-the-uri}
 
 ```xml
 <HyperlinkButton NavigateUri="{Binding ProjectUrl}"
                  Content="{Binding ProjectName}" />
 ```
 
-## Platform behavior
+## 平台行为 {#platform-behavior}
 
-When you click a `HyperlinkButton`, URI launching is delegated to the operating system's default handler. The browser or application that opens depends on your platform settings. For example, a `https://` link opens in your default web browser, while a `mailto:` link opens in your default email client.
+点击 `HyperlinkButton` 时，URI 的启动交由操作系统的默认处理程序负责。究竟打开哪个浏览器或应用，取决于你的平台设置。比如 `https://` 链接会用默认浏览器打开，而 `mailto:` 链接则会用默认邮件客户端打开。
 
 ## Pseudoclasses
 
-| Pseudoclass | Description |
+| 伪类 | 说明 |
 |---|---|
-| `:visited` | Applied when `IsVisited` is `true`. |
-| `:pressed` | Applied while the button is being pressed. |
+| `:visited` | 当 `IsVisited` 为 `true` 时生效。 |
+| `:pressed` | 按钮被按下期间生效。 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Button](/controls/input/buttons/button): Standard push button.
+- [Button](/controls/input/buttons/button)：标准的按压式按钮。
 - [RepeatButton](/controls/input/buttons/repeatbutton)
-- [Launcher](/docs/services/launcher): Programmatic URI and file launching.
+- [Launcher](/docs/services/launcher)：用代码启动 URI 和文件。

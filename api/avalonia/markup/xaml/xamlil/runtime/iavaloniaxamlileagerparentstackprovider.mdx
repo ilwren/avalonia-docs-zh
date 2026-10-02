@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IAvaloniaXamlIlEagerParentStackProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Markup.Xaml.XamlIl.Runtime</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Markup.Xaml.XamlIl.Runtime</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Markup.Xaml</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Markup.Xaml</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/XamlIl/Runtime/IAvaloniaXamlIlParentStackProvider.cs">IAvaloniaXamlIlParentStackProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml/XamlIl/Runtime/IAvaloniaXamlIlParentStackProvider.cs">IAvaloniaXamlIlParentStackProvider.cs</a>
 </div>
 
 </div>
@@ -54,26 +54,26 @@ public interface IAvaloniaXamlIlEagerParentStackProvider
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iavaloniaxamlilparentstackprovider">IAvaloniaXamlIlParentStackProvider</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iavaloniaxamlilparentstackprovider">IAvaloniaXamlIlParentStackProvider</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface is used by the XAML compiler and shouldn't be implemented in your code.
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DirectParentsStack](#uid-0f5bf49d32) | Gets the directly available parents (which don't include ones returned by parent providers). The parents are returned in reverse order: the last element is the most direct parent while the first element is the most distant ancestor. |
-| [ParentProvider](#uid-495d3ac9d5) | Gets the parent [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider), if available. |
+| [ParentProvider](#uid-495d3ac9d5) | 取得父级 [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider)（若有）。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0f5bf49d32"></span>
 
-### DirectParentsStack Property
+### DirectParentsStack 属性 {#directparentsstack-property}
 
 Gets the directly available parents (which don't include ones returned by parent providers).
 The parents are returned in reverse order:
@@ -89,9 +89,9 @@ public System.Collections.Generic.IReadOnlyList<object> DirectParentsStack { get
 
 <span id="uid-495d3ac9d5"></span>
 
-### ParentProvider Property
+### ParentProvider 属性 {#parentprovider-property}
 
-Gets the parent [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider), if available.
+取得父级 [Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider](xref:Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider)（若有）。
 
 ```csharp
 public Avalonia.Markup.Xaml.XamlIl.Runtime.IAvaloniaXamlIlEagerParentStackProvider ParentProvider { get; set; }

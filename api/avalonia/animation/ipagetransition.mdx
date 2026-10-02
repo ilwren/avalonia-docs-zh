@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPageTransition Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Animation</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Animation</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/IPageTransition.cs">IPageTransition.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/IPageTransition.cs">IPageTransition.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Interface for animations that transition between two pages.
+在两个页面之间做过渡的动画接口。
 
 </div>
 
@@ -52,51 +52,51 @@ public interface IPageTransition
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Start](#uid-eeae41f0d0) | Starts the animation. |
+| [Start](#uid-eeae41f0d0) | 启动该动画。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-eeae41f0d0"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
-Starts the animation.
+启动该动画。
 
 ```csharp
 public System.Threading.Tasks.Task Start(Avalonia.Visual from, Avalonia.Visual to, bool forward, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `from` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control that is being transitioned away from. May be null.
+即将过渡离开的那个控件，可以为 null。
 
 
 `to` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The control that is being transitioned to. May be null.
+即将过渡到的那个控件，可以为 null。
 
 
 `forward` bool
 
-If the animation is bidirectional, controls the direction of the animation.
+若该动画是双向的，它控制动画的播放方向。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Animation cancellation.
+动画取消。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
-A [System.Threading.Tasks.Task](xref:System.Threading.Tasks.Task) that tracks the progress of the animation.
+一个用于跟踪该动画进度的 [System.Threading.Tasks.Task](xref:System.Threading.Tasks.Task)。
 
 
 </section>

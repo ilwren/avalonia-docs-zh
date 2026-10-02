@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DispatcherOperation&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Threading</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Threading</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/DispatcherOperation.cs">DispatcherOperation.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Threading/DispatcherOperation.cs">DispatcherOperation.cs</a>
 </div>
 
 </div>
@@ -48,27 +48,27 @@ public class DispatcherOperation<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="dispatcheroperation">DispatcherOperation</a> <span className="apiref-page__relation-separator">-&gt;</span> DispatcherOperation&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="dispatcheroperation">DispatcherOperation</a> <span className="apiref-page__relation-separator">-&gt;</span> DispatcherOperation&lt;T&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DispatcherOperation&lt;T&gt;](#uid-763da8bbb9) | No summary available. |
+| [DispatcherOperation&lt;T&gt;](#uid-763da8bbb9) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-763da8bbb9"></span>
 
-### DispatcherOperation&lt;T&gt; Constructor
+### DispatcherOperation&lt;T&gt; 构造函数 {#dispatcheroperationlttgt-constructor}
 
 ```csharp
 public DispatcherOperation<T>(Avalonia.Threading.Dispatcher dispatcher, Avalonia.Threading.DispatcherPriority priority, Func<T> callback)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `dispatcher` [Avalonia.Threading.Dispatcher](xref:Avalonia.Threading.Dispatcher)
 
@@ -81,26 +81,26 @@ public DispatcherOperation<T>(Avalonia.Threading.Dispatcher dispatcher, Avalonia
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Abort](dispatcheroperation.mdx#uid-cb67a1e87d) | Inherited from [DispatcherOperation](dispatcheroperation.mdx). |
-| [GetAwaiter](#uid-2a70bf99dd) | No summary available. |
-| [GetTask](#uid-3a602b7d5b) | No summary available. |
-| [Wait (2 overloads)](dispatcheroperation.mdx#uid-178e059bd4) | Waits for this operation to complete. Inherited from [DispatcherOperation](dispatcheroperation.mdx). |
+| [Abort](dispatcheroperation.mdx#uid-cb67a1e87d) | 继承自 [DispatcherOperation](dispatcheroperation.mdx)。 |
+| [GetAwaiter](#uid-2a70bf99dd) | 暂无摘要。 |
+| [GetTask](#uid-3a602b7d5b) | 暂无摘要。 |
+| [Wait（2 个重载）](dispatcheroperation.mdx#uid-178e059bd4) | Waits for this operation to complete. Inherited from [DispatcherOperation](dispatcheroperation.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2a70bf99dd"></span>
 
-### GetAwaiter Method
+### GetAwaiter 方法 {#getawaiter-method}
 
 ```csharp
 public System.Runtime.CompilerServices.TaskAwaiter<T> GetAwaiter()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Runtime.CompilerServices.TaskAwaiter&lt;T&gt;
 
@@ -111,33 +111,33 @@ System.Runtime.CompilerServices.TaskAwaiter&lt;T&gt;
 
 <span id="uid-3a602b7d5b"></span>
 
-### GetTask Method
+### GetTask 方法 {#gettask-method}
 
 ```csharp
 public System.Threading.Tasks.Task<T> GetTask()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;T&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispatcher](dispatcheroperation.mdx#uid-1b2bdaa79a) | Inherited from [DispatcherOperation](dispatcheroperation.mdx). |
-| [Priority](dispatcheroperation.mdx#uid-e98b1e57bd) | Inherited from [DispatcherOperation](dispatcheroperation.mdx). |
-| [Result](#uid-826538278e) | No summary available. |
-| [Status](dispatcheroperation.mdx#uid-8bbc21bb30) | Inherited from [DispatcherOperation](dispatcheroperation.mdx). |
+| [Dispatcher](dispatcheroperation.mdx#uid-1b2bdaa79a) | 继承自 [DispatcherOperation](dispatcheroperation.mdx)。 |
+| [Priority](dispatcheroperation.mdx#uid-e98b1e57bd) | 继承自 [DispatcherOperation](dispatcheroperation.mdx)。 |
+| [Result](#uid-826538278e) | 暂无摘要。 |
+| [Status](dispatcheroperation.mdx#uid-8bbc21bb30) | 继承自 [DispatcherOperation](dispatcheroperation.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-826538278e"></span>
 
-### Result Property
+### Result 属性 {#result-property}
 
 ```csharp
 public T Result { get; set; }
@@ -145,9 +145,9 @@ public T Result { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Aborted](dispatcheroperation.mdx#uid-2a2288d0ad) | An event that is raised when the operation is aborted or canceled. Inherited from [DispatcherOperation](dispatcheroperation.mdx). |
 | [Completed](dispatcheroperation.mdx#uid-b9f2587a42) | An event that is raised when the operation completes. Inherited from [DispatcherOperation](dispatcheroperation.mdx). |

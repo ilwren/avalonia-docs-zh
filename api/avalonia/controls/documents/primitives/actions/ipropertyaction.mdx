@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPropertyAction Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public interface IPropertyAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ieditoraction">IEditorAction</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ieditoraction">IEditorAction</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface provides object-based access to property values,
 allowing UI controls like combo boxes to work without knowing the
@@ -69,11 +69,11 @@ typed counterparts. [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAct
 [Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction&lt;T&gt;](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction%601) so an action implements it publicly and a
 caller holding the typed interface can reach it.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ClearValue](#uid-c61aab58eb) | Clears the property value for the selection, reverting affected elements to their inherited or default value. |
+| [ClearValue](#uid-c61aab58eb) | 清除选区的该属性值，让受影响的元素回到继承值或默认值。 |
 | [GetAvailableValuesAsObjects](#uid-25d7e5316c) | Gets the available values for this property as objects. |
 | [GetValueAsObject](#uid-0842b94043) | Gets the current property value for the selection as an object. |
 | [SetValueAsObject](#uid-0387453085) | Sets the property value for the selection from an object. |
@@ -82,20 +82,20 @@ caller holding the typed interface can reach it.
 
 <span id="uid-c61aab58eb"></span>
 
-### ClearValue Method
+### ClearValue 方法 {#clearvalue-method}
 
-Clears the property value for the selection, reverting affected elements
-to their inherited or default value.
+清除选区的该属性值，让受影响的元素
+回到继承值或默认值。
 
 ```csharp
 public void ClearValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to modify.
+要修改的编辑器宿主。
 
 
 </section>
@@ -104,7 +104,7 @@ The editor host to modify.
 
 <span id="uid-25d7e5316c"></span>
 
-### GetAvailableValuesAsObjects Method
+### GetAvailableValuesAsObjects 方法 {#getavailablevaluesasobjects-method}
 
 Gets the available values for this property as objects.
 
@@ -112,7 +112,7 @@ Gets the available values for this property as objects.
 public System.Collections.IEnumerable GetAvailableValuesAsObjects()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.IEnumerable
 
@@ -126,7 +126,7 @@ or null if the values should be determined by the UI.
 
 <span id="uid-0842b94043"></span>
 
-### GetValueAsObject Method
+### GetValueAsObject 方法 {#getvalueasobject-method}
 
 Gets the current property value for the selection as an object.
 
@@ -134,14 +134,14 @@ Gets the current property value for the selection as an object.
 public object GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to query.
+要查询的编辑器宿主。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 
@@ -154,7 +154,7 @@ The property value, or null for mixed/empty values.
 
 <span id="uid-0387453085"></span>
 
-### SetValueAsObject Method
+### SetValueAsObject 方法 {#setvalueasobject-method}
 
 Sets the property value for the selection from an object.
 
@@ -162,16 +162,16 @@ Sets the property value for the selection from an object.
 public void SetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost host, object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to modify.
+要修改的编辑器宿主。
 
 
 `value` object
 
-The value to apply.
+要施加的值。
 
 
 </section>

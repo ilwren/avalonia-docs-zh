@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextPathSegmentEllipsis Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextPathSegmentEllipsis.cs">TextPathSegmentEllipsis.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextPathSegmentEllipsis.cs">TextPathSegmentEllipsis.cs</a>
 </div>
 
 </div>
@@ -55,18 +55,18 @@ public class TextPathSegmentEllipsis
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textformatting/textcollapsingproperties">TextCollapsingProperties</a> <span className="apiref-page__relation-separator">-&gt;</span> TextPathSegmentEllipsis
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textformatting/textcollapsingproperties">TextCollapsingProperties</a> <span className="apiref-page__relation-separator">-&gt;</span> TextPathSegmentEllipsis
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This class is typically used to display file paths in a compact form by collapsing segments
 near the center and inserting an ellipsis, ensuring that the most significant parts of the path remain visible.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TextPathSegmentEllipsis](#uid-4306a931ad) | Initializes a new instance of the [TextPathSegmentEllipsis](xref:Avalonia.Media.TextPathSegmentEllipsis) class that represents an ellipsis segment in a text path with the specified symbol, width, text formatting properties, and flow direction. |
 
@@ -74,7 +74,7 @@ near the center and inserting an ellipsis, ensuring that the most significant pa
 
 <span id="uid-4306a931ad"></span>
 
-### TextPathSegmentEllipsis Constructor
+### TextPathSegmentEllipsis 构造函数 {#textpathsegmentellipsis-constructor}
 
 Initializes a new instance of the [TextPathSegmentEllipsis](xref:Avalonia.Media.TextPathSegmentEllipsis) class that represents an ellipsis segment in a
 text path with the specified symbol, width, text formatting properties, and flow direction.
@@ -83,7 +83,7 @@ text path with the specified symbol, width, text formatting properties, and flow
 public TextPathSegmentEllipsis(string ellipsis, double width, Avalonia.Media.TextFormatting.TextRunProperties textRunProperties, Avalonia.Media.FlowDirection flowDirection)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `ellipsis` string
 
@@ -92,7 +92,7 @@ The string to use as the ellipsis symbol in the text path segment. Cannot be nul
 
 `width` double
 
-The width.
+宽度。
 
 
 `textRunProperties` [Avalonia.Media.TextFormatting.TextRunProperties](xref:Avalonia.Media.TextFormatting.TextRunProperties)
@@ -108,48 +108,48 @@ right-to-left.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Collapse](#uid-fd97f03203) | No summary available. |
-| [CreateCollapsedRuns](textformatting/textcollapsingproperties.mdx#uid-3f1ae847f7) | Creates a list of runs for given collapsed length which includes specified symbol at the end. Inherited from [TextCollapsingProperties](textformatting/textcollapsingproperties.mdx). |
+| [Collapse](#uid-fd97f03203) | 暂无摘要。 |
+| [CreateCollapsedRuns](textformatting/textcollapsingproperties.mdx#uid-3f1ae847f7) | 按给定的折叠长度创建一组文本运行，并在末尾带上指定的符号。继承自 [TextCollapsingProperties](textformatting/textcollapsingproperties.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-fd97f03203"></span>
 
-### Collapse Method
+### Collapse 方法 {#collapse-method}
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextRun[] Collapse(Avalonia.Media.TextFormatting.TextLine textLine)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `textLine` [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.TextFormatting.TextRun](xref:Avalonia.Media.TextFormatting.TextRun)[]
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FlowDirection](#uid-b7593e407d) | No summary available. |
-| [Symbol](#uid-9f7d040b91) | No summary available. |
-| [Width](#uid-e6ca536da3) | No summary available. |
+| [FlowDirection](#uid-b7593e407d) | 暂无摘要。 |
+| [Symbol](#uid-9f7d040b91) | 暂无摘要。 |
+| [Width](#uid-e6ca536da3) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b7593e407d"></span>
 
-### FlowDirection Property
+### FlowDirection 属性 {#flowdirection-property}
 
 ```csharp
 public Avalonia.Media.FlowDirection FlowDirection { get; set; }
@@ -161,7 +161,7 @@ public Avalonia.Media.FlowDirection FlowDirection { get; set; }
 
 <span id="uid-9f7d040b91"></span>
 
-### Symbol Property
+### Symbol 属性 {#symbol-property}
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextRun Symbol { get; set; }
@@ -173,7 +173,7 @@ public Avalonia.Media.TextFormatting.TextRun Symbol { get; set; }
 
 <span id="uid-e6ca536da3"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
 ```csharp
 public double Width { get; set; }

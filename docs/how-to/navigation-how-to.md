@@ -1,27 +1,27 @@
 ---
 id: navigation-how-to
-title: "How to: Navigate between views"
-description: Common patterns for switching between views and pages in Avalonia applications.
+title: "操作指南：在视图之间导航"
+description: Avalonia 应用中切换视图与页面的常见套路。
 doc-type: how-to
 ---
 
-This guide covers common patterns for switching between views (pages) in your Avalonia applications. Each pattern suits a different scenario, from simple two-page apps to full desktop shells with history navigation.
+本指南介绍在 Avalonia 应用中切换视图（页面）的常见套路。从只有两个页面的小应用，到带历史导航的完整桌面外壳，每种套路各有适用的场景。
 
-## Choosing a navigation pattern
+## 挑选导航套路 {#choosing-a-navigation-pattern}
 
-Before you start, consider which pattern fits your requirements:
+动手之前，先想想哪种套路合你的需求：
 
-| Pattern | Best for |
+| 套路 | 适用场景 |
 |---|---|
-| [`ContentControl`](/api/avalonia/controls/contentcontrol) with data templates | Small apps with a few fixed pages |
-| [`TransitioningContentControl`](/api/avalonia/controls/transitioningcontentcontrol) | Same as above, but with animated transitions |
-| `TabControl` | Settings screens, document editors |
-| Sidebar navigation | Desktop apps with a primary menu |
-| Back-stack navigation | Wizard flows, browser-style history |
+| [`ContentControl`](/api/avalonia/controls/contentcontrol) 配数据模板 | 页面固定、数量不多的小应用 |
+| [`TransitioningContentControl`](/api/avalonia/controls/transitioningcontentcontrol) | 同上，但带过渡动画 |
+| `TabControl` | 设置界面、文档编辑器 |
+| 侧边栏导航 | 带主菜单的桌面应用 |
+| 带后退栈的导航 | 向导式流程、浏览器那样的历史记录 |
 
-## View switching with ContentControl
+## 用 ContentControl 切换视图 {#view-switching-with-contentcontrol}
 
-The simplest navigation pattern uses a `ContentControl` that displays different view models, with data templates to resolve the corresponding view.
+最简单的导航套路是用一个 `ContentControl` 显示不同的视图模型，再靠数据模板找出对应的视图。
 
 ```xml
 <Window x:Class="MyApp.Views.MainWindow"
@@ -47,7 +47,7 @@ The simplest navigation pattern uses a `ContentControl` that displays different 
 </Window>
 ```
 
-The view model:
+视图模型：
 
 ```csharp
 public partial class MainViewModel : ObservableObject
@@ -68,15 +68,15 @@ public partial class MainViewModel : ObservableObject
 }
 ```
 
-When `CurrentPage` changes, the `ContentControl` looks up the matching [`DataTemplate`](/api/avalonia/markup/xaml/templates/datatemplate) and displays the corresponding view automatically. This works because Avalonia walks up the visual tree looking for a `DataTemplate` whose `DataType` matches the object assigned to `Content`.
+`CurrentPage` 一变，`ContentControl` 就会查出匹配的 [`DataTemplate`](/api/avalonia/markup/xaml/templates/datatemplate) 并自动显示对应的视图。这之所以行得通，是因为 Avalonia 会沿视觉树往上找，寻找 `DataType` 与赋给 `Content` 的对象相匹配的 `DataTemplate`。
 
 :::tip
-If you have many view models, listing every `DataTemplate` by hand becomes tedious. See the [View locator pattern](#view-locator-pattern) later in this guide for an automatic alternative.
+视图模型一多，手写每一个 `DataTemplate` 就很烦人了。自动化的替代方案请见本指南后面的[视图定位器套路](#view-locator-pattern)。
 :::
 
-## View switching with transitions
+## 带过渡的视图切换 {#view-switching-with-transitions}
 
-You can add a page transition for animated view changes by replacing `ContentControl` with `TransitioningContentControl`:
+把 `ContentControl` 换成 `TransitioningContentControl`，就能为视图切换加上页面过渡动画：
 
 ```xml
 <TransitioningContentControl Content="{Binding CurrentPage}">
@@ -86,13 +86,13 @@ You can add a page transition for animated view changes by replacing `ContentCon
 </TransitioningContentControl>
 ```
 
-The following built-in transitions are available:
+可用的内置过渡有：
 
-| Transition | Effect |
+| 过渡动画 | 效果 |
 |---|---|
-| `CrossFade` | Fades between old and new content |
-| `PageSlide` | Slides content horizontally or vertically |
-| `CompositePageTransition` | Combines multiple transitions together |
+| `CrossFade` | 在新旧内容之间淡入淡出 |
+| `PageSlide` | 让内容横向或纵向滑动 |
+| `CompositePageTransition` | 把多种过渡组合到一起 |
 
 ```xml
 <!-- Slide transition -->
@@ -109,9 +109,9 @@ The following built-in transitions are available:
 </TransitioningContentControl.PageTransition>
 ```
 
-## Tab-based navigation
+## 标签页式导航 {#tab-based-navigation}
 
-Use `TabControl` when you want your users to switch between a fixed set of panels, such as settings categories or document tabs.
+当你希望用户在一组固定的面板之间切换时（比如设置分类或文档标签），请用 `TabControl`。
 
 ```xml
 <TabControl>
@@ -127,9 +127,9 @@ Use `TabControl` when you want your users to switch between a fixed set of panel
 </TabControl>
 ```
 
-### Dynamic tabs from a collection
+### 从集合动态生成选项卡 {#dynamic-tabs-from-a-collection}
 
-When you need tabs driven by data (for example, open documents), bind `ItemsSource` to a collection in your view model.
+若标签需要由数据驱动（比如已打开的文档），请把 `ItemsSource` 绑定到视图模型中的集合。
 
 ```xml
 <TabControl ItemsSource="{Binding OpenDocuments}"
@@ -152,9 +152,9 @@ When you need tabs driven by data (for example, open documents), bind `ItemsSour
 </TabControl>
 ```
 
-## Sidebar navigation
+## 侧边栏导航 {#sidebar-navigation}
 
-A common desktop pattern places a persistent menu in a sidebar while the main content area swaps views. This example uses a `ListBox` for the menu and a `TransitioningContentControl` for the content.
+桌面端有个常见做法：侧边栏放一份常驻菜单，主内容区则来回换视图。本例用 `ListBox` 做菜单，用 `TransitioningContentControl` 承载内容。
 
 ```xml
 <Grid ColumnDefinitions="220,*">
@@ -204,9 +204,9 @@ public partial class MainViewModel : ObservableObject
 public record MenuItem(string Title, string Icon, Func<ObservableObject> CreatePage);
 ```
 
-## Navigation with back stack
+## 带后退栈的导航 {#navigation-with-back-stack}
 
-If your application needs browser-style back and forward buttons (for example, a wizard or a file browser), you can maintain a history of visited pages using two stacks.
+若你的应用需要浏览器那样的前进后退按钮（比如向导或文件浏览器），可以用两个栈来维护访问历史。
 
 ```csharp
 public partial class NavigationViewModel : ObservableObject
@@ -273,9 +273,9 @@ public partial class NavigationViewModel : ObservableObject
 </Grid>
 ```
 
-## View locator pattern
+## 视图定位器套路 {#view-locator-pattern}
 
-Instead of declaring a `DataTemplate` for every view model, you can use a view locator to resolve views automatically by convention. The locator replaces `ViewModel` in the fully qualified type name with `View` and instantiates the result.
+与其为每个视图模型都声明一个 `DataTemplate`，不如用视图定位器按约定自动解析视图。定位器会把完全限定类型名中的 `ViewModel` 换成 `View`，再把结果实例化出来。
 
 ```csharp
 public class ViewLocator : IDataTemplate
@@ -302,7 +302,7 @@ public class ViewLocator : IDataTemplate
 }
 ```
 
-Register the locator in `App.axaml` so it applies globally:
+在 `App.axaml` 中注册这个定位器，让它全局生效：
 
 ```xml
 <Application.DataTemplates>
@@ -310,15 +310,15 @@ Register the locator in `App.axaml` so it applies globally:
 </Application.DataTemplates>
 ```
 
-Now any `ContentControl` bound to a view model will automatically resolve its view. For example, `HomeViewModel` maps to `HomeView`, and `SettingsViewModel` maps to `SettingsView`.
+现在任何绑定到视图模型的 `ContentControl` 都会自动解析出对应视图。例如 `HomeViewModel` 映射到 `HomeView`，`SettingsViewModel` 映射到 `SettingsView`。
 
 :::note
-This convention requires that your view and view model classes live in parallel namespaces (for example, `MyApp.ViewModels.HomeViewModel` and `MyApp.Views.HomeView`). If your project uses a different folder structure, adjust the string replacement logic in the `Build` method accordingly.
+这套约定要求视图类和视图模型类处在平行的命名空间中（比如 `MyApp.ViewModels.HomeViewModel` 和 `MyApp.Views.HomeView`）。若你的项目目录结构不同，请相应调整 `Build` 方法里的字符串替换逻辑。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Page transitions](/docs/graphics-animation/page-transitions): Transition animations between views.
-- [Data templates](/docs/data-templates/introduction-to-data-templates): How data templates resolve views.
-- [View locator](/docs/data-templates/view-locator): Automatic view-model to view mapping.
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern): View model architecture.
+- [页面过渡](/docs/graphics-animation/page-transitions)：视图之间的过渡动画。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：数据模板如何解析出视图。
+- [视图定位器](/docs/data-templates/view-locator)：视图模型到视图的自动映射。
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)：视图模型的架构。

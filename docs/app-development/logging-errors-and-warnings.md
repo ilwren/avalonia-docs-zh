@@ -1,22 +1,22 @@
 ---
 id: logging-errors-and-warnings
-title: Logging errors and warnings
-description: Enable and configure Avalonia diagnostic logging using the LogToTrace method and log areas.
+title: 记录错误与警告
+description: 用 LogToTrace 方法和日志区域启用并配置 Avalonia 的诊断日志。
 doc-type: how-to
 ---
 
 import LogToTraceOutputScreenshot from '/img/guides/app-development/log-to-trace-output.png';
 
-This guide shows you how to log warnings and errors in Avalonia using the standard `System.Diagnostics.Trace` component.
+本指南介绍如何用标准的 `System.Diagnostics.Trace` 组件在 Avalonia 中记录警告和错误。
 
-## Enabling logs
+## 启用日志 {#enabling-logs}
 
-The code to achieve logging is added to your project by the Avalonia solution templates if you use them.
+如果你用的是 Avalonia 解决方案模板，实现日志所需的代码已经帮你加好了。
 
-To enable, or to check that logging is enabled, follow this procedure:
+要启用日志，或确认日志已启用，请按以下步骤操作：
 
--  Locate the **Program.cs** file for your application.
--  Check that the `BuildAvaloniaApp` method calls `LogToTrace`, for example:
+-  找到你应用的 **Program.cs** 文件。
+-  确认 `BuildAvaloniaApp` 方法里调用了 `LogToTrace`，例如：
 
 ```csharp
 public static AppBuilder BuildAvaloniaApp()
@@ -25,7 +25,7 @@ public static AppBuilder BuildAvaloniaApp()
         .LogToTrace();
 ```
 
-Without parameters, `LogToTrace` will log messages with a severity of `Warning` or higher. You can change this to another level by passing a `LogLevel` parameter to the `LogToTrace` call. For example:
+不带参数时，`LogToTrace` 会记录严重程度为 `Warning` 及以上的消息。给 `LogToTrace` 调用传入一个 `LogLevel` 参数即可改成其他级别。例如：
 
 ```csharp
 using Avalonia.Logging;
@@ -37,18 +37,18 @@ public static AppBuilder BuildAvaloniaApp()
 ```
 
 :::info
-For the full API documentation, see the [`LogEventLevel` enum reference](/api/avalonia/logging/logeventlevel).
+完整的 API 文档请参阅 [`LogEventLevel` 枚举参考](/api/avalonia/logging/logeventlevel)。
 :::
 
-Log messages are then shown in the **Debug** view of the **Output** window of your IDE. For example, with verbose logging enabled:
+日志消息随后会显示在 IDE **输出**窗口的 **调试** 视图中。比如启用详细日志后：
 
 <Image light={LogToTraceOutputScreenshot} alt="Verbose log output in the IDE Debug Output window" position="center" maxWidth={400} cornerRadius="true"/>
 
-If you want to re-route these messages to different location, you can use the methods on the `System.Diagnostics.Trace` component.
+若想把这些消息转发到别的地方，可以使用 `System.Diagnostics.Trace` 组件上的方法。
 
-## Log area
+## 日志区域 {#log-area}
 
-Each message from Avalonia is assigned an area that can be used to filter the log. These are described by the members of `Avalonia.Logging.LogArea` static class:
+Avalonia 发出的每条消息都带有一个区域（area），可用来过滤日志。这些区域由 `Avalonia.Logging.LogArea` 静态类的成员定义：
 
 * `Property`
 * `Binding`
@@ -57,7 +57,7 @@ Each message from Avalonia is assigned an area that can be used to filter the lo
 * `Layout`
 * `Control`
 
-You can restrict the log to a specific area, or areas by adding arguments of type `Avalonia.Logging.LogArea` after the `LogEventLevel` argument in the `LogToTrace` call. For example, this will log only property and layout messages:
+在 `LogToTrace` 调用中、`LogEventLevel` 参数之后再追加若干 `Avalonia.Logging.LogArea` 类型的参数，即可把日志限定在一个或多个区域内。比如下面这样就只记录属性和布局相关的消息：
 
 ```csharp
 public static AppBuilder BuildAvaloniaApp()
@@ -66,11 +66,11 @@ public static AppBuilder BuildAvaloniaApp()
         .LogToTrace(LogEventLevel.Debug, LogArea.Property, LogArea.Layout);
 ```
 
-## Alternative log targets
+## 其他日志输出目标 {#alternative-log-targets}
 
 ### LogToDelegate
 
-Route log messages to a custom callback function:
+把日志消息转发给自定义的回调函数：
 
 ```csharp
 public static AppBuilder BuildAvaloniaApp()
@@ -84,7 +84,7 @@ public static AppBuilder BuildAvaloniaApp()
 
 ### LogToTextWriter
 
-Write log messages to any `TextWriter`, such as a file or `Console.Out`:
+把日志消息写入任意 `TextWriter`，比如文件或 `Console.Out`：
 
 ```csharp
 public static AppBuilder BuildAvaloniaApp()
@@ -93,9 +93,9 @@ public static AppBuilder BuildAvaloniaApp()
         .LogToTextWriter(File.CreateText("avalonia.log"));
 ```
 
-## Log sinks
+## 日志接收器 {#log-sinks}
 
-The `LogToTrace` extension method uses `StringLogSink`. Avalonia supports custom sinks by implementing `ILogSink`. Assigning your custom sink to `Avalonia.Logging.Logger.Sink` will allow Avalonia to use it.
+`LogToTrace` 扩展方法内部用的是 `StringLogSink`。Avalonia 允许你实现 `ILogSink` 来自定义接收器，把它赋给 `Avalonia.Logging.Logger.Sink`，Avalonia 就会改用它。
 
 ```csharp title='Extension method to assign Logger.Sink'
 using Avalonia.Controls;
@@ -122,10 +122,10 @@ public static AppBuilder BuildAvaloniaApp()
 ```
 
 :::info
-View the source code on _GitHub_ [`StringLogSink.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Logging/StringLogSink.cs)
+在 _GitHub_ 上查看源码：[`StringLogSink.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Logging/StringLogSink.cs)
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Setting Unhandled Exceptions](/docs/app-development/setting-unhandled-exceptions): Handling unhandled exceptions in your application.
-- [LogEventLevel API reference](/api/avalonia/logging/logeventlevel): Available log severity levels.
+- [处理未捕获异常](/docs/app-development/setting-unhandled-exceptions)：在应用中处理未捕获的异常。
+- [LogEventLevel API 参考](/api/avalonia/logging/logeventlevel)：可用的日志严重级别。

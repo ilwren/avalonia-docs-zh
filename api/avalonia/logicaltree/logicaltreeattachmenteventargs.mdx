@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">LogicalTreeAttachmentEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.LogicalTree</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.LogicalTree</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/LogicalTreeAttachmentEventArgs.cs">LogicalTreeAttachmentEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/LogicalTree/LogicalTreeAttachmentEventArgs.cs">LogicalTreeAttachmentEventArgs.cs</a>
 </div>
 
 </div>
@@ -55,29 +55,29 @@ public class LogicalTreeAttachmentEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> LogicalTreeAttachmentEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> LogicalTreeAttachmentEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [LogicalTreeAttachmentEventArgs](#uid-549559faf1) | Initializes a new instance of the [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs) class. |
+| [LogicalTreeAttachmentEventArgs](#uid-549559faf1) | 初始化 [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-549559faf1"></span>
 
-### LogicalTreeAttachmentEventArgs Constructor
+### LogicalTreeAttachmentEventArgs 构造函数 {#logicaltreeattachmenteventargs-constructor}
 
-Initializes a new instance of the [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs) class.
+初始化 [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs) 类的新实例。
 
 ```csharp
 public LogicalTreeAttachmentEventArgs(Avalonia.LogicalTree.ILogicalRoot root, Avalonia.LogicalTree.ILogical source, Avalonia.LogicalTree.ILogical parent)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `root` [Avalonia.LogicalTree.ILogicalRoot](xref:Avalonia.LogicalTree.ILogicalRoot)
 
@@ -96,9 +96,9 @@ The [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Parent](xref:Avalonia.L
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Parent](#uid-211343dc8d) | Gets the control that [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source) is being attached to or detached from. |
 | [Root](#uid-4097f192b8) | Gets the root of the logical tree that the control is being attached to or detached from. |
@@ -108,7 +108,7 @@ The [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Parent](xref:Avalonia.L
 
 <span id="uid-211343dc8d"></span>
 
-### Parent Property
+### Parent 属性 {#parent-property}
 
 Gets the control that [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source) is being attached to or detached from.
 
@@ -116,7 +116,7 @@ Gets the control that [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Sourc
 public Avalonia.LogicalTree.ILogical Parent { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 For logical tree attachment, holds the new logical parent of [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source). For
 detachment, holds the old logical parent of [Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source](xref:Avalonia.LogicalTree.LogicalTreeAttachmentEventArgs.Source). If the detachment event
@@ -128,7 +128,7 @@ was caused by a top-level control being closed, then this property will be null.
 
 <span id="uid-4097f192b8"></span>
 
-### Root Property
+### Root 属性 {#root-property}
 
 Gets the root of the logical tree that the control is being attached to or detached from.
 
@@ -142,7 +142,7 @@ public Avalonia.LogicalTree.ILogicalRoot Root { get; set; }
 
 <span id="uid-0f9181ef4c"></span>
 
-### Source Property
+### Source 属性 {#source-property}
 
 Gets the control that was attached or detached from the logical tree.
 
@@ -150,7 +150,7 @@ Gets the control that was attached or detached from the logical tree.
 public Avalonia.LogicalTree.ILogical Source { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Logical tree attachment events travel down the attached logical tree from the point of
 attachment/detachment, so this control may be different from the control that the

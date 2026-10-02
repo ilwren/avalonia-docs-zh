@@ -1,7 +1,7 @@
 ---
 id: legend-chart
-title: Legend
-description: Identifies data series within a chart by label and color, supporting multiple positions, orientations, and optional interactive series toggling.
+title: 图例
+description: 用标签和颜色标识图表中的各个数据系列，支持多种摆放位置和排列方向，并可交互式开关系列。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFeaturesLegend from '/img/controls/charts/charts-legend-right.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-The Legend component helps users identify different data series within a chart. It can be positioned around the chart area and styled to match your application's theme.
+图例组件帮用户分辨图表中的各个数据系列。它可以摆在图表区周围，样式也能调成与应用主题一致。
 
 <Image light={chartsFeaturesLegend} maxWidth={400} position="center" cornerRadius="true" alt="Chart with a legend panel showing color-coded series names positioned beside the chart area." />
 
-## When to use
-- **Multi-series charts**: Indispensable when more than one series is displayed.
-- **Interactive toggling**: When users need to show/hide series by clicking legend items.
-- **Complex visuals**: Helping to explain color or pattern coding (e.g., in a Pie or Map chart).
+## 适用场景 {#when-to-use}
+- **多系列图表**：只要显示了不止一个系列，它就不可或缺。
+- **交互式开关**：需要让用户点击图例项来显示/隐藏某个系列时。
+- **复杂图示**：帮助说明颜色或图案所代表的含义（比如饼图或地图中）。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -49,7 +49,7 @@ The Legend component helps users identify different data series within a chart. 
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> Data1 { get; } = new()
 {
@@ -62,51 +62,51 @@ public ObservableCollection<int> Data3 { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ShowLegend` | Toggles the visibility of the legend. | `false` |
+| `ShowLegend` | 开关图例的可见性。 | `false` |
 | `LegendPosition` | `None`, `Top`, `Bottom`, `Left`, `Right`, or `Floating`. | `None` |
 | `LegendAlignment` | `Near`, `Center`, or `Far`. | `Center` |
-| `LegendOffset` | Pixel offset applied to a floating legend. | `0,0` |
-| `ToggleSeriesVisibility` | Allows legend clicks to toggle series or category visibility. Scale legends such as `ShapeMap`, `CalendarHeatmapChart`, and `WaffleChart` coerce this value to `false`. | `true` |
+| `LegendOffset` | 作用于浮动图例的像素偏移量。 | `0,0` |
+| `ToggleSeriesVisibility` | 允许点击图例来开关系列或类别的可见性。`ShapeMap`、`CalendarHeatmapChart`、`WaffleChart` 这类刻度图例会把该值强制为 `false`。 | `true` |
 
-## Legend control properties
+## Legend 控件的属性 {#legend-control-properties}
 
-`ChartLegend` is the reusable legend control used by charts.
+`ChartLegend` 是各图表共用的可复用图例控件。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Items` | Legend item collection to display. | `null` |
-| `Orientation` | Layout direction for legend entries, `Horizontal` or `Vertical`. | `Vertical` |
-| `MarkerSize` | Size of each legend marker in pixels. | `12.0` |
-| `ItemSpacing` | Spacing between legend items in pixels. | `8.0` |
+| `Items` | 要显示的图例项集合。 | `null` |
+| `Orientation` | 图例条目的排列方向，`Horizontal` 或 `Vertical`。 | `Vertical` |
+| `MarkerSize` | 每个图例标记的大小，单位为像素。 | `12.0` |
+| `ItemSpacing` | 图例项之间的间距，单位为像素。 | `8.0` |
 
-## Legend item model
+## 图例项模型 {#legend-item-model}
 
-Legend entries are represented by `ChartLegendItem`. Built-in series create legend items automatically and choose marker shapes that match the rendered series style, such as line, band, candlestick, radar, OHLC, or point-and-figure markers. Custom series can override `CreateLegendItem` to change the marker, source, or toggle behavior.
+图例条目由 `ChartLegendItem` 表示。内置系列会自动创建图例项，并挑选与所渲染系列样式相称的标记形状，比如折线、色带、蜡烛、雷达、OHLC 或点数图标记。自定义系列可以重写 `CreateLegendItem` 来改变标记、来源对象或开关行为。
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Text` | Display text for the legend item. | `null` |
-| `Fill` | Fill brush for the marker. | `null` |
-| `Stroke` | Stroke brush for the marker. | `null` |
-| `SecondaryFill` | Secondary fill brush for composite markers such as financial markers or bands. | `null` |
-| `SecondaryStroke` | Secondary stroke brush for composite markers such as financial markers or bands. | `null` |
-| `MarkerShape` | Marker shape: `Rectangle`, `Circle`, `Line`, `Candlestick`, `Band`, `Radar`, `Ohlc`, or `PointAndFigure`. | `Rectangle` |
-| `IsVisible` | Visibility state represented by the legend item. | `true` |
-| `SeriesIndex` | Associated series index. | `0` |
-| `Source` | Series, technical indicator, or chart item represented by the legend item. | `null` |
-| `ToggleAction` | Optional action invoked when the legend item is toggled. | `null` |
+| `Text` | 图例项所显示的文字。 | `null` |
+| `Fill` | 标记的填充画刷。 | `null` |
+| `Stroke` | 标记的描边画刷。 | `null` |
+| `SecondaryFill` | 复合标记（比如金融标记或色带）所用的第二填充画刷。 | `null` |
+| `SecondaryStroke` | 复合标记（比如金融标记或色带）所用的第二描边画刷。 | `null` |
+| `MarkerShape` | 标记形状：`Rectangle`、`Circle`、`Line`、`Candlestick`、`Band`、`Radar`、`Ohlc` 或 `PointAndFigure`。 | `Rectangle` |
+| `IsVisible` | 该图例项所代表的可见性状态。 | `true` |
+| `SeriesIndex` | 关联的系列索引。 | `0` |
+| `Source` | 该图例项所代表的系列、技术指标或图表元素。 | `null` |
+| `ToggleAction` | 图例项被切换时调用的可选动作。 | `null` |
 
-## Events
+## 事件 {#events}
 
-| Event | Description |
+| 事件 | 说明 |
 | :--- | :--- |
-| `LegendItemClicked` | Raised after a legend item toggles the visibility of its associated source. Event data exposes the clicked `Item` and `IsNowVisible`. |
+| `LegendItemClicked` | 图例项切换其关联对象的可见性之后触发。事件数据提供被点击的 `Item` 和 `IsNowVisible`。 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Chart export](/controls/data-display/charts/shared-elements/export-chart)
+- [图表导出](/controls/data-display/charts/shared-elements/export-chart)
 - [Markers](/controls/data-display/charts/shared-elements/markers-chart)

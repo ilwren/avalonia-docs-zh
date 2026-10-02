@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SaveFilePickerResult Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/SaveFilePickerResult.cs">SaveFilePickerResult.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/SaveFilePickerResult.cs">SaveFilePickerResult.cs</a>
 </div>
 
 </div>
@@ -54,41 +54,41 @@ public struct SaveFilePickerResult
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SaveFilePickerResult
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> SaveFilePickerResult
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;SaveFilePickerResult&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;SaveFilePickerResult&gt;
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-a69888fc6e) | No summary available. |
-| [GetHashCode](#uid-0accbb5256) | No summary available. |
-| [ToString](#uid-9840e10d24) | No summary available. |
+| [Equals（2 个重载）](#uid-a69888fc6e) | 暂无摘要。 |
+| [GetHashCode](#uid-0accbb5256) | 暂无摘要。 |
+| [ToString](#uid-9840e10d24) | 暂无摘要。 |
 
 <span id="uid-a69888fc6e"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d636837015"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Platform.Storage.SaveFilePickerResult other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Platform.Storage.SaveFilePickerResult](xref:Avalonia.Platform.Storage.SaveFilePickerResult)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -99,18 +99,18 @@ bool
 
 <span id="uid-a77cbd7190"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -121,13 +121,13 @@ bool
 
 <span id="uid-0accbb5256"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -138,31 +138,31 @@ int
 
 <span id="uid-9840e10d24"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [File](#uid-01a24bff25) | Gets the file selected by the user, or null if the user canceled the dialog. |
-| [SelectedFileType](#uid-711f47a123) | Gets the file type selected by the user, or null if the platform does not support this feature. |
+| [SelectedFileType](#uid-711f47a123) | 获取用户选中的文件类型；若平台不支持此功能则为 null。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-01a24bff25"></span>
 
-### File Property
+### File 属性 {#file-property}
 
 Gets the file selected by the user, or null if the user canceled the dialog.
 
@@ -176,9 +176,9 @@ public Avalonia.Platform.Storage.IStorageFile File { get; set; }
 
 <span id="uid-711f47a123"></span>
 
-### SelectedFileType Property
+### SelectedFileType 属性 {#selectedfiletype-property}
 
-Gets the file type selected by the user, or null if the platform does not support this feature.
+获取用户选中的文件类型；若平台不支持此功能则为 null。
 
 ```csharp
 public Avalonia.Platform.Storage.FilePickerFileType SelectedFileType { get; set; }

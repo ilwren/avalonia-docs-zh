@@ -1,29 +1,29 @@
 ---
 id: focus-manager
 title: Focus Manager
-description: Manage keyboard focus in your Avalonia application using the FocusManager service to track, set, and clear the currently focused element.
+description: 用 FocusManager 服务管理 Avalonia 应用中的键盘焦点：跟踪、设置和清除当前获得焦点的元素。
 doc-type: reference
 ---
 
-The [`FocusManager`](/api/avalonia/input/focusmanager) service is responsible for managing keyboard focus in your application. It keeps track of the currently focused element and the current focus scope.
+[`FocusManager`](/api/avalonia/input/focusmanager) 服务负责管理应用中的键盘焦点，它会记录当前获得焦点的元素和当前的焦点范围。
 
-You can access `FocusManager` through an instance of [`TopLevel`](/api/avalonia/controls/toplevel) or `Window`. For more details on accessing `TopLevel`, visit the [TopLevel](/docs/fundamentals/top-level) page.
+你可以通过 [`TopLevel`](/api/avalonia/controls/toplevel) 或 `Window` 的实例取得 `FocusManager`。关于如何访问 `TopLevel`，更多细节请看 [TopLevel](/docs/fundamentals/top-level) 页。
 
 ```csharp
 var focusManager = window.FocusManager;
 ```
 
-## Methods
+## 方法 {#methods}
 
 ### `GetFocusedElement()`
 
-Returns the currently focused `IInputElement`, or `null` if no element has focus.
+返回当前获得焦点的 `IInputElement`；若没有元素获得焦点，则返回 `null`。
 
 ```csharp
 IInputElement? GetFocusedElement()
 ```
 
-You can use this method to inspect which control currently holds keyboard focus:
+你可以用这个方法查看当前是哪个控件握着键盘焦点：
 
 ```csharp
 var focused = focusManager.GetFocusedElement();
@@ -35,27 +35,27 @@ if (focused is TextBox textBox)
 
 ### `ClearFocus()`
 
-Removes keyboard focus from the currently focused element. After calling this method, `GetFocusedElement()` returns `null` until another element receives focus.
+把键盘焦点从当前元素上摘掉。调用之后，在别的元素获得焦点之前，`GetFocusedElement()` 都会返回 `null`。
 
 ```csharp
 void ClearFocus()
 ```
 
-## Tips
+## 小贴士 {#tips}
 
-### Focusing a control
+### 让某个控件获得焦点 {#focusing-a-control}
 
-You typically do not need the `FocusManager` service to focus a control. Instead, call the `Focus` method directly on the control:
+要让控件获得焦点，通常用不着 `FocusManager` 服务，直接在控件上调用 `Focus` 方法即可：
 
 ```csharp
 bool hasFocused = button.Focus();
 ```
 
-The `Focus` method returns `false` if the control is not visible or its `Focusable` property is set to `false`.
+若控件不可见，或其 `Focusable` 属性为 `false`，`Focus` 方法会返回 `false`。
 
-### Listening for global focus changes
+### 监听全局的焦点变化 {#listening-for-global-focus-changes}
 
-The `FocusManager.GetFocusedElement` method returns the currently focused control at a single point in time, so it is not suitable for reacting to focus changes as they happen. To listen for focus changes globally across all top levels, subscribe to the routed event:
+`FocusManager.GetFocusedElement` 方法返回的是某一时刻获得焦点的控件，因此并不适合用来响应焦点的实时变化。要跨所有顶层监听全局焦点变化，请订阅那个路由事件：
 
 ```csharp
 InputElement.GotFocusEvent.Raised.Subscribe(args =>
@@ -65,9 +65,9 @@ InputElement.GotFocusEvent.Raised.Subscribe(args =>
 });
 ```
 
-### Tab navigation order
+### Tab 导航顺序 {#tab-navigation-order}
 
-Controls are navigated in the order they appear in the visual tree by default. To change the tab order, set the `TabIndex` property on your controls:
+默认情况下，控件按它们在视觉树中出现的顺序接受导航。要改变 Tab 顺序，请在控件上设置 `TabIndex` 属性：
 
 ```xml
 <StackPanel>
@@ -77,17 +77,17 @@ Controls are navigated in the order they appear in the visual tree by default. T
 </StackPanel>
 ```
 
-### Preventing a control from receiving focus
+### 让控件不接受焦点 {#preventing-a-control-from-receiving-focus}
 
-Set `Focusable` to `False` to exclude a control from keyboard navigation:
+把 `Focusable` 设为 `False`，即可把控件排除在键盘导航之外：
 
 ```xml
 <Button Content="Not focusable" Focusable="False" />
 ```
 
-### Focus on load
+### 加载时设定焦点 {#focus-on-load}
 
-To focus a specific control when your view loads, override `OnLoaded` and call `Focus` on the target control:
+若想在视图加载时让某个控件获得焦点，请重写 `OnLoaded`，并对目标控件调用 `Focus`：
 
 ```csharp
 protected override void OnLoaded(RoutedEventArgs e)
@@ -97,7 +97,7 @@ protected override void OnLoaded(RoutedEventArgs e)
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Focus](/docs/input-interaction/focus): Focus system overview and focus events.
-- [TopLevel](/docs/fundamentals/top-level): Accessing platform services from `TopLevel`.
+- [焦点](/docs/input-interaction/focus)：焦点体系概览与焦点事件。
+- [TopLevel](/docs/fundamentals/top-level)：从 `TopLevel` 访问平台服务。

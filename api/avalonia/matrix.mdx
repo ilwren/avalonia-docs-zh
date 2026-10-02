@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Matrix Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Matrix.cs">Matrix.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Matrix.cs">Matrix.cs</a>
 </div>
 
 </div>
@@ -54,14 +54,14 @@ public struct Matrix
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Matrix
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Matrix
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;Matrix&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;Matrix&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Matrix layout:
 | 1st col | 2nd col | 3r col |
@@ -71,21 +71,21 @@ Matrix layout:
 
 Note: Skia.SkMatrix uses a transposed layout (where for example skewX/skewY and persp0/transX are swapped).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Matrix (2 overloads)](#uid-bfafac0ec5) | Initializes a new instance of the [Avalonia.Matrix](xref:Avalonia.Matrix) struct (equivalent to a 2x3 Matrix without perspective). |
 
 <span id="uid-bfafac0ec5"></span>
 
-### Matrix overloads
+### Matrix 的重载 {#matrix-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ece67b2d52"></span>
 
-#### Matrix Constructor
+#### Matrix 构造函数 {#matrix-constructor}
 
 Initializes a new instance of the [Avalonia.Matrix](xref:Avalonia.Matrix) struct (equivalent to a 2x3 Matrix without perspective).
 
@@ -93,36 +93,36 @@ Initializes a new instance of the [Avalonia.Matrix](xref:Avalonia.Matrix) struct
 public Matrix(double scaleX, double skewY, double skewX, double scaleY, double offsetX, double offsetY)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `scaleX` double
 
-The first element of the first row.
+第一行的第一个元素。
 
 
 `skewY` double
 
-The second element of the first row.
+第一行的第二个元素。
 
 
 `skewX` double
 
-The first element of the second row.
+第二行的第一个元素。
 
 
 `scaleY` double
 
-The second element of the second row.
+第二行的第二个元素。
 
 
 `offsetX` double
 
-The first element of the third row.
+第三行的第一个元素。
 
 
 `offsetY` double
 
-The second element of the third row.
+第三行的第二个元素。
 
 
 </section>
@@ -131,24 +131,24 @@ The second element of the third row.
 
 <span id="uid-7cbc33524e"></span>
 
-#### Matrix Constructor
+#### Matrix 构造函数 {#matrix-constructor-1}
 
-Initializes a new instance of the [Avalonia.Matrix](xref:Avalonia.Matrix) struct.
+初始化 [Avalonia.Matrix](xref:Avalonia.Matrix) 结构的新实例。
 
 ```csharp
 public Matrix(double scaleX, double skewY, double perspX, double skewX, double scaleY, double perspY, double offsetX, double offsetY, double perspZ)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `scaleX` double
 
-The first element of the first row.
+第一行的第一个元素。
 
 
 `skewY` double
 
-The second element of the first row.
+第一行的第二个元素。
 
 
 `perspX` double
@@ -158,12 +158,12 @@ The third element of the first row.
 
 `skewX` double
 
-The first element of the second row.
+第二行的第一个元素。
 
 
 `scaleY` double
 
-The second element of the second row.
+第二行的第二个元素。
 
 
 `perspY` double
@@ -173,12 +173,12 @@ The third element of the second row.
 
 `offsetX` double
 
-The first element of the third row.
+第三行的第一个元素。
 
 
 `offsetY` double
 
-The second element of the third row.
+第三行的第二个元素。
 
 
 `perspZ` double
@@ -188,9 +188,9 @@ The third element of the third row.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Append](#uid-49d3d1c0d9) | Appends another matrix as post-multiplication operation. Equivalent to this * value; |
 | [ContainsPerspective](#uid-6aa56c57fb) | Determines if the current matrix contains perspective (non-affine) transforms (true) or only (affine) transforms that could be mapped into an 2x3 matrix (false). |
@@ -198,23 +198,23 @@ The third element of the third row.
 | [CreateScale (2 overloads)](#uid-1aedc1baff) | Creates a scale matrix from the given vector scale. |
 | [CreateSkew](#uid-5c8d47eebd) | Creates a skew matrix from the given axis skew angles in radians. |
 | [CreateTranslation (2 overloads)](#uid-b210ad1303) | Creates a translation matrix from the given vector. |
-| [Equals (2 overloads)](#uid-2153aaeca3) | Returns a boolean indicating whether the matrix is equal to the other given matrix. |
+| [Equals（2 个重载）](#uid-2153aaeca3) | Returns a boolean indicating whether the matrix is equal to the other given matrix. |
 | [GetDeterminant](#uid-78ea0950ca) | Calculates the determinant for this matrix. |
-| [GetHashCode](#uid-3811a43856) | Returns the hash code for this instance. |
-| [Invert](#uid-4b9509b7bc) | Inverts the Matrix. |
-| [Parse](#uid-ea5c6d595d) | Parses a [Avalonia.Matrix](xref:Avalonia.Matrix) string. |
+| [GetHashCode](#uid-3811a43856) | 返回该实例的哈希码。 |
+| [Invert](#uid-4b9509b7bc) | 对该矩阵求逆。 |
+| [Parse](#uid-ea5c6d595d) | 解析 [Avalonia.Matrix](xref:Avalonia.Matrix) 字符串。 |
 | [Prepend](#uid-c73d3285dd) | Prepends another matrix as pre-multiplication operation. Equivalent to value * this; |
-| [ToRadians](#uid-a7bc401e4e) | Converts an angle in degrees to radians. |
+| [ToRadians](#uid-a7bc401e4e) | 把以度为单位的角度换算成弧度。 |
 | [ToString](#uid-ea457313be) | Returns a String representing this matrix instance. |
-| [Transform](#uid-f230dedf09) | Transforms the point with the matrix |
-| [TryDecomposeTransform](#uid-14ea9cf6a3) | No summary available. |
-| [TryInvert](#uid-2cb77ea177) | No summary available. |
+| [Transform](#uid-f230dedf09) | 用该矩阵变换这个点 |
+| [TryDecomposeTransform](#uid-14ea9cf6a3) | 暂无摘要。 |
+| [TryInvert](#uid-2cb77ea177) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-49d3d1c0d9"></span>
 
-### Append Method
+### Append 方法 {#append-method}
 
 Appends another matrix as post-multiplication operation.
 Equivalent to this * value;
@@ -223,14 +223,14 @@ Equivalent to this * value;
 public Avalonia.Matrix Append(Avalonia.Matrix value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A matrix.
+一个矩阵。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
@@ -243,7 +243,7 @@ Post-multiplied matrix.
 
 <span id="uid-6aa56c57fb"></span>
 
-### ContainsPerspective Method
+### ContainsPerspective 方法 {#containsperspective-method}
 
 Determines if the current matrix contains perspective (non-affine) transforms (true) or only (affine) transforms that could be mapped into an 2x3 matrix (false).
 
@@ -251,7 +251,7 @@ Determines if the current matrix contains perspective (non-affine) transforms (t
 public bool ContainsPerspective()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -266,7 +266,7 @@ bool
 
 <span id="uid-aed53c20e2"></span>
 
-#### CreateRotation Method
+#### CreateRotation 方法 {#createrotation-method}
 
 Creates a rotation matrix using the given rotation in radians.
 
@@ -274,18 +274,18 @@ Creates a rotation matrix using the given rotation in radians.
 public Avalonia.Matrix CreateRotation(double radians)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `radians` double
 
-The amount of rotation, in radians.
+旋转量，以弧度计。
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A rotation matrix.
+一个旋转矩阵。
 
 
 </section>
@@ -294,7 +294,7 @@ A rotation matrix.
 
 <span id="uid-008e509755"></span>
 
-#### CreateRotation Method
+#### CreateRotation 方法 {#createrotation-method-1}
 
 Creates a rotation matrix using the given rotation in radians around center point.
 
@@ -302,11 +302,11 @@ Creates a rotation matrix using the given rotation in radians around center poin
 public Avalonia.Matrix CreateRotation(double radians, Avalonia.Point center)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `radians` double
 
-The amount of rotation, in radians.
+旋转量，以弧度计。
 
 
 `center` [Avalonia.Point](xref:Avalonia.Point)
@@ -314,7 +314,7 @@ The amount of rotation, in radians.
 The location of center point.
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
@@ -329,7 +329,7 @@ The location of center point.
 
 <span id="uid-e7263ccc1b"></span>
 
-#### CreateScale Method
+#### CreateScale 方法 {#createscale-method}
 
 Creates a scale matrix from the given vector scale.
 
@@ -337,18 +337,18 @@ Creates a scale matrix from the given vector scale.
 public Avalonia.Matrix CreateScale(Avalonia.Vector scales)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `scales` [Avalonia.Vector](xref:Avalonia.Vector)
 
 The scale to use.
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A scaling matrix.
+一个缩放矩阵。
 
 
 </section>
@@ -357,7 +357,7 @@ A scaling matrix.
 
 <span id="uid-6140e734ba"></span>
 
-#### CreateScale Method
+#### CreateScale 方法 {#createscale-method-1}
 
 Creates a scale matrix from the given X and Y components.
 
@@ -365,7 +365,7 @@ Creates a scale matrix from the given X and Y components.
 public Avalonia.Matrix CreateScale(double xScale, double yScale)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `xScale` double
 
@@ -377,11 +377,11 @@ Value to scale by on the X-axis.
 Value to scale by on the Y-axis.
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A scaling matrix.
+一个缩放矩阵。
 
 
 </section>
@@ -390,7 +390,7 @@ A scaling matrix.
 
 <span id="uid-5c8d47eebd"></span>
 
-### CreateSkew Method
+### CreateSkew 方法 {#createskew-method}
 
 Creates a skew matrix from the given axis skew angles in radians.
 
@@ -398,7 +398,7 @@ Creates a skew matrix from the given axis skew angles in radians.
 public Avalonia.Matrix CreateSkew(double xAngle, double yAngle)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `xAngle` double
 
@@ -410,11 +410,11 @@ The amount of skew along the X-axis, in radians.
 The amount of skew along the Y-axis, in radians.
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A rotation matrix.
+一个旋转矩阵。
 
 
 </section>
@@ -427,7 +427,7 @@ A rotation matrix.
 
 <span id="uid-379d02a068"></span>
 
-#### CreateTranslation Method
+#### CreateTranslation 方法 {#createtranslation-method}
 
 Creates a translation matrix from the given vector.
 
@@ -435,18 +435,18 @@ Creates a translation matrix from the given vector.
 public Avalonia.Matrix CreateTranslation(Avalonia.Vector position)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `position` [Avalonia.Vector](xref:Avalonia.Vector)
 
 The translation position.
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A translation matrix.
+一个平移矩阵。
 
 
 </section>
@@ -455,7 +455,7 @@ A translation matrix.
 
 <span id="uid-5c426b0a62"></span>
 
-#### CreateTranslation Method
+#### CreateTranslation 方法 {#createtranslation-method-1}
 
 Creates a translation matrix from the given X and Y components.
 
@@ -463,36 +463,36 @@ Creates a translation matrix from the given X and Y components.
 public Avalonia.Matrix CreateTranslation(double xPosition, double yPosition)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `xPosition` double
 
-The X position.
+X 位置。
 
 
 `yPosition` double
 
-The Y position.
+Y 位置。
 
 
-##### Returns
+##### 返回值 {#returns-8}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A translation matrix.
+一个平移矩阵。
 
 
 </section>
 
 <span id="uid-2153aaeca3"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2287ab416d"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Returns a boolean indicating whether the matrix is equal to the other given matrix.
 
@@ -500,14 +500,14 @@ Returns a boolean indicating whether the matrix is equal to the other given matr
 public bool Equals(Avalonia.Matrix other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `other` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
 The other matrix to test equality against.
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 bool
 
@@ -520,7 +520,7 @@ True if this matrix is equal to other; False otherwise.
 
 <span id="uid-8ed5d8907a"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 Returns a boolean indicating whether the given Object is equal to this matrix instance.
 
@@ -528,14 +528,14 @@ Returns a boolean indicating whether the given Object is equal to this matrix in
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `obj` object
 
-The Object to compare against.
+要与之比较的那个 Object。
 
 
-##### Returns
+##### 返回值 {#returns-10}
 
 bool
 
@@ -548,7 +548,7 @@ True if the Object is equal to this matrix; False otherwise.
 
 <span id="uid-78ea0950ca"></span>
 
-### GetDeterminant Method
+### GetDeterminant 方法 {#getdeterminant-method}
 
 Calculates the determinant for this matrix.
 
@@ -556,14 +556,14 @@ Calculates the determinant for this matrix.
 public double GetDeterminant()
 ```
 
-#### Returns
+#### 返回值 {#returns-11}
 
 double
 
 The determinant.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 The determinant is calculated by expanding the matrix with a third column whose
 values are (0,0,1).
@@ -574,19 +574,19 @@ values are (0,0,1).
 
 <span id="uid-3811a43856"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
-Returns the hash code for this instance.
+返回该实例的哈希码。
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-12}
 
 int
 
-The hash code.
+哈希码。
 
 
 </section>
@@ -595,22 +595,22 @@ The hash code.
 
 <span id="uid-4b9509b7bc"></span>
 
-### Invert Method
+### Invert 方法 {#invert-method}
 
-Inverts the Matrix.
+对该矩阵求逆。
 
 ```csharp
 public Avalonia.Matrix Invert()
 ```
 
-#### Returns
+#### 返回值 {#returns-13}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
 The inverted matrix.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Matrix is not invertible.](xref:System.InvalidOperationException)
 
@@ -620,22 +620,22 @@ The inverted matrix.
 
 <span id="uid-ea5c6d595d"></span>
 
-### Parse Method
+### Parse 方法 {#parse-method}
 
-Parses a [Avalonia.Matrix](xref:Avalonia.Matrix) string.
+解析 [Avalonia.Matrix](xref:Avalonia.Matrix) 字符串。
 
 ```csharp
 public Avalonia.Matrix Parse(string s)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `s` string
 
 Six or nine comma-delimited double values (m11, m12, m21, m22, offsetX, offsetY[, perspX, perspY, perspZ]) that describe the new [Avalonia.Matrix](xref:Avalonia.Matrix)
 
 
-#### Returns
+#### 返回值 {#returns-14}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
@@ -648,7 +648,7 @@ The [Avalonia.Matrix](xref:Avalonia.Matrix).
 
 <span id="uid-c73d3285dd"></span>
 
-### Prepend Method
+### Prepend 方法 {#prepend-method}
 
 Prepends another matrix as pre-multiplication operation.
 Equivalent to value * this;
@@ -657,14 +657,14 @@ Equivalent to value * this;
 public Avalonia.Matrix Prepend(Avalonia.Matrix value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `value` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
-A matrix.
+一个矩阵。
 
 
-#### Returns
+#### 返回值 {#returns-15}
 
 [Avalonia.Matrix](xref:Avalonia.Matrix)
 
@@ -677,22 +677,22 @@ Pre-multiplied matrix.
 
 <span id="uid-a7bc401e4e"></span>
 
-### ToRadians Method
+### ToRadians 方法 {#toradians-method}
 
-Converts an angle in degrees to radians.
+把以度为单位的角度换算成弧度。
 
 ```csharp
 public double ToRadians(double angle)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `angle` double
 
 The angle in degrees.
 
 
-#### Returns
+#### 返回值 {#returns-16}
 
 double
 
@@ -705,7 +705,7 @@ The angle in radians.
 
 <span id="uid-ea457313be"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 Returns a String representing this matrix instance.
 
@@ -713,11 +713,11 @@ Returns a String representing this matrix instance.
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-17}
 
 string
 
-The string representation.
+字符串表示形式。
 
 
 </section>
@@ -726,22 +726,22 @@ The string representation.
 
 <span id="uid-f230dedf09"></span>
 
-### Transform Method
+### Transform 方法 {#transform-method}
 
-Transforms the point with the matrix
+用该矩阵变换这个点
 
 ```csharp
 public Avalonia.Point Transform(Avalonia.Point p)
 ```
 
-#### Parameters
+#### 参数 {#parameters-15}
 
 `p` [Avalonia.Point](xref:Avalonia.Point)
 
 The point to be transformed
 
 
-#### Returns
+#### 返回值 {#returns-18}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -754,13 +754,13 @@ The transformed point
 
 <span id="uid-14ea9cf6a3"></span>
 
-### TryDecomposeTransform Method
+### TryDecomposeTransform 方法 {#trydecomposetransform-method}
 
 ```csharp
 public bool TryDecomposeTransform(Avalonia.Matrix matrix, Avalonia.Matrix.Decomposed& decomposed)
 ```
 
-#### Parameters
+#### 参数 {#parameters-16}
 
 `matrix` [Avalonia.Matrix](xref:Avalonia.Matrix)
 
@@ -768,7 +768,7 @@ public bool TryDecomposeTransform(Avalonia.Matrix matrix, Avalonia.Matrix.Decomp
 `decomposed` [Avalonia.Matrix.Decomposed](xref:Avalonia.Matrix.Decomposed)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-19}
 
 bool
 
@@ -779,27 +779,27 @@ bool
 
 <span id="uid-2cb77ea177"></span>
 
-### TryInvert Method
+### TryInvert 方法 {#tryinvert-method}
 
 ```csharp
 public bool TryInvert(Avalonia.Matrix& inverted)
 ```
 
-#### Parameters
+#### 参数 {#parameters-17}
 
 `inverted` [Avalonia.Matrix](xref:Avalonia.Matrix)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-20}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [HasInverse](#uid-027d6e1b71) | HasInverse Property - returns true if this matrix is invertible, false otherwise. |
 | [Identity](#uid-6752e668f2) | Returns the multiplicative identity matrix. |
@@ -818,7 +818,7 @@ bool
 
 <span id="uid-027d6e1b71"></span>
 
-### HasInverse Property
+### HasInverse 属性 {#hasinverse-property}
 
 HasInverse Property - returns true if this matrix is invertible, false otherwise.
 
@@ -832,7 +832,7 @@ public bool HasInverse { get; set; }
 
 <span id="uid-6752e668f2"></span>
 
-### Identity Property
+### Identity 属性 {#identity-property}
 
 Returns the multiplicative identity matrix.
 
@@ -846,7 +846,7 @@ public Avalonia.Matrix Identity { get; set; }
 
 <span id="uid-7015e3959c"></span>
 
-### IsIdentity Property
+### IsIdentity 属性 {#isidentity-property}
 
 Returns whether the matrix is the identity matrix.
 
@@ -860,7 +860,7 @@ public bool IsIdentity { get; set; }
 
 <span id="uid-80e188c495"></span>
 
-### M11 Property
+### M11 属性 {#m11-property}
 
 The first element of the first row (scaleX).
 
@@ -874,7 +874,7 @@ public double M11 { get; set; }
 
 <span id="uid-b244954c6f"></span>
 
-### M12 Property
+### M12 属性 {#m12-property}
 
 The second element of the first row (skewY).
 
@@ -888,7 +888,7 @@ public double M12 { get; set; }
 
 <span id="uid-8aa929667d"></span>
 
-### M13 Property
+### M13 属性 {#m13-property}
 
 The third element of the first row (perspX: input x-axis perspective factor).
 
@@ -902,7 +902,7 @@ public double M13 { get; set; }
 
 <span id="uid-c6ed7b250d"></span>
 
-### M21 Property
+### M21 属性 {#m21-property}
 
 The first element of the second row (skewX).
 
@@ -916,7 +916,7 @@ public double M21 { get; set; }
 
 <span id="uid-69c8d4a46e"></span>
 
-### M22 Property
+### M22 属性 {#m22-property}
 
 The second element of the second row (scaleY).
 
@@ -930,7 +930,7 @@ public double M22 { get; set; }
 
 <span id="uid-781bce7982"></span>
 
-### M23 Property
+### M23 属性 {#m23-property}
 
 The third element of the second row (perspY: input y-axis perspective factor).
 
@@ -944,7 +944,7 @@ public double M23 { get; set; }
 
 <span id="uid-9a6bc33fcb"></span>
 
-### M31 Property
+### M31 属性 {#m31-property}
 
 The first element of the third row (offsetX/translateX).
 
@@ -958,7 +958,7 @@ public double M31 { get; set; }
 
 <span id="uid-70a33609c3"></span>
 
-### M32 Property
+### M32 属性 {#m32-property}
 
 The second element of the third row (offsetY/translateY).
 
@@ -972,7 +972,7 @@ public double M32 { get; set; }
 
 <span id="uid-6d68c03e90"></span>
 
-### M33 Property
+### M33 属性 {#m33-property}
 
 The third element of the third row (perspZ: perspective scale factor).
 

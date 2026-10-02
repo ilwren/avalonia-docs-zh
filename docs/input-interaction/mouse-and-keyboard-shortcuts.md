@@ -1,7 +1,7 @@
 ---
 id: mouse-and-keyboard-shortcuts
-title: Creating mouse and keyboard shortcuts
-description: Learn how to bind keyboard shortcuts and handle mouse events like double-click in Avalonia controls using KeyBindings, gestures, and context menus.
+title: 创建鼠标与键盘快捷键
+description: 学会在 Avalonia 控件中用 KeyBindings、手势和上下文菜单绑定键盘快捷键，并处理双击之类的鼠标事件。
 doc-type: how-to
 ---
 
@@ -10,11 +10,11 @@ import TabItem from '@theme/TabItem';
 
 import KeyMouseScreenshot from '/img/guides/ui-development/binding-key-mouse-test.gif';
 
-Avalonia lets you wire up keyboard shortcuts and mouse actions so your users can interact with controls without reaching for a toolbar or menu. This page walks you through the most common patterns: binding a key to a command with `KeyBindings`, handling double-click through the `DoubleTapped` event, and adding a right-click context menu.
+Avalonia 让你能把键盘快捷键和鼠标动作挂到控件上，这样用户不必去够工具栏或菜单也能完成操作。本页带你走一遍最常见的几种做法：用 `KeyBindings` 把按键绑定到命令、通过 `DoubleTapped` 事件处理双击，以及添加右键上下文菜单。
 
-## Key bindings
+## 按键绑定 {#key-bindings}
 
-You can attach one or more [`KeyBinding`](/api/avalonia/input/keybinding) elements to any control's `KeyBindings` collection. Each `KeyBinding` maps a `Gesture` (a key, optionally combined with modifiers) to a command on your view model.
+你可以往任意控件的 `KeyBindings` 集合里挂上一个或多个 [`KeyBinding`](/api/avalonia/input/keybinding) 元素。每个 `KeyBinding` 都把一个 `Gesture`（某个按键，可搭配修饰键）映射到视图模型上的某个命令。
 
 ```xml
 <ListBox.KeyBindings>
@@ -24,15 +24,15 @@ You can attach one or more [`KeyBinding`](/api/avalonia/input/keybinding) elemen
 </ListBox.KeyBindings>
 ```
 
-The `Gesture` string is parsed as a `KeyGesture`. You can use modifier shortcuts such as `Ctrl`, `Shift`, `Alt`, and `Cmd`. For a full list of supported keys and modifiers, see the [Keyboard and hotkeys](/docs/input-interaction/keyboard-and-hotkeys) reference.
+`Gesture` 字符串会被解析成 `KeyGesture`。你可以使用 `Ctrl`、`Shift`、`Alt`、`Cmd` 这类修饰键简写。受支持的按键和修饰键完整清单，请参阅[键盘与快捷键](/docs/input-interaction/keyboard-and-hotkeys)参考。
 
 :::tip
-`KeyBinding` only fires when the control (or one of its children) has keyboard focus. If you need an application-wide shortcut that works regardless of focus, use `HotKey` on a `MenuItem` or another `ICommandSource` instead.
+只有当控件（或它的某个子元素）持有键盘焦点时，`KeyBinding` 才会触发。若你需要一个不受焦点影响、全应用生效的快捷键，请改用 `MenuItem` 或别的 `ICommandSource` 上的 `HotKey`。
 :::
 
-## Handling double-click
+## 处理双击 {#handling-double-click}
 
-Avalonia does not provide a `MouseBinding` equivalent. To respond to a double-click, handle the `DoubleTapped` event in your code-behind and forward the action to your view model:
+Avalonia 没有提供与 `MouseBinding` 等价的东西。要响应双击，请在代码隐藏中处理 `DoubleTapped` 事件，再把动作转交给视图模型：
 
 ```csharp
 private void ListBox_DoubleTapped(object? sender, Avalonia.Input.TappedEventArgs e)
@@ -44,7 +44,7 @@ private void ListBox_DoubleTapped(object? sender, Avalonia.Input.TappedEventArgs
 }
 ```
 
-Attach the handler in XAML with the `DoubleTapped` attribute:
+在 XAML 中用 `DoubleTapped` 特性挂上处理程序：
 
 ```xml
 <ListBox DoubleTapped="ListBox_DoubleTapped"
@@ -52,9 +52,9 @@ Attach the handler in XAML with the `DoubleTapped` attribute:
          SelectedItem="{Binding OS}" />
 ```
 
-## Adding a context menu
+## 添加上下文菜单 {#adding-a-context-menu}
 
-You can attach a `ContextMenu` to any control. The menu appears when the user right-clicks (or long-presses on touch devices). Bind each `MenuItem` to a command on your view model:
+你可以给任意控件挂上 `ContextMenu`。用户右键单击（在触摸设备上则是长按）时菜单就会出现。把每个 `MenuItem` 绑定到视图模型上的命令：
 
 ```xml
 <TextBlock Text="{Binding Result}">
@@ -66,9 +66,9 @@ You can attach a `ContextMenu` to any control. The menu appears when the user ri
 </TextBlock>
 ```
 
-## Complete example
+## 完整示例 {#complete-example}
 
-The following example combines all three techniques in a single view. A `ListBox` displays a list of operating systems. Pressing Enter or double-clicking an item prints it to a `TextBlock`, and right-clicking the `TextBlock` clears the result.
+下面这个例子把三种做法揉进了同一个视图：用 `ListBox` 列出若干操作系统，按 Enter 或双击某一项会把它打印到 `TextBlock` 中，而右键点击 `TextBlock` 则会清空结果。
 
 <Tabs
   defaultValue="xaml"
@@ -161,18 +161,18 @@ public class MainViewModel : ViewModelBase
 
 <Image light={KeyMouseScreenshot} alt="Demo showing keyboard and mouse shortcut interactions with a ListBox" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Platform-specific notes
+## 各平台须知 {#platform-specific-notes}
 
-| Platform | Behavior |
+| 平台 | 行为 |
 |---|---|
-| **macOS** | Use `Cmd` instead of `Ctrl` for platform-idiomatic shortcuts (for example, `Cmd+S` for save). You can bind both `Ctrl` and `Cmd` variants to the same command to cover all platforms. |
-| **Linux / X11** | Context menus open on right-click by default. Long-press context menus are not available because X11 does not provide touch hold events. |
-| **Mobile (Android / iOS)** | `KeyBinding` has no effect when there is no physical keyboard attached. Use gesture recognizers and `ContextMenu` (activated by long-press) for touch-first interactions. |
-| **Browser (WASM)** | Most key gestures work, but certain browser-reserved shortcuts (such as `Ctrl+T` or `Ctrl+W`) cannot be intercepted by your application. |
+| **macOS** | 想要符合平台习惯的快捷键，请用 `Cmd` 而不是 `Ctrl`（比如保存写成 `Cmd+S`）。你也可以把 `Ctrl` 和 `Cmd` 两种写法都绑到同一个命令上，把各平台一网打尽。 |
+| **Linux / X11** | 上下文菜单默认在右键单击时弹出。长按呼出上下文菜单的方式用不了，因为 X11 不提供触摸按住事件。 |
+| **Mobile (Android / iOS)** | 没有接实体键盘时，`KeyBinding` 不起作用。触摸优先的交互请改用手势识别器和（由长按激活的）`ContextMenu`。 |
+| **Browser (WASM)** | 多数按键手势都能用，但某些被浏览器占用的快捷键（比如 `Ctrl+T` 或 `Ctrl+W`）你的应用是拦不住的。 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Keyboard and hotkeys](/docs/input-interaction/keyboard-and-hotkeys): key bindings and hotkey configuration.
-- [Commanding](/docs/input-interaction/commanding): the `ICommand` interface and command binding.
-- [Gestures](/docs/input-interaction/gestures): tap, double-tap, and multi-pointer gesture recognizers.
-- [Adding interactivity](/docs/input-interaction/adding-interactivity): events and commands overview.
+- [键盘与快捷键](/docs/input-interaction/keyboard-and-hotkeys)：按键绑定与快捷键配置。
+- [命令](/docs/input-interaction/commanding)：`ICommand` 接口与命令绑定。
+- [手势](/docs/input-interaction/gestures)：轻点、双击与多指手势识别器。
+- [加入交互](/docs/input-interaction/adding-interactivity)：事件与命令概览。

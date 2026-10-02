@@ -1,20 +1,20 @@
 ---
 id: coded-ui-how-to
-title: "How to: Build a Complete App Without XAML"
-description: Build a fully functional Avalonia application using only C# with no XAML files.
+title: "操作指南：不写 XAML 构建完整应用"
+description: 只用 C#、不写任何 XAML 文件，构建一个功能完整的 Avalonia 应用。
 doc-type: how-to
 ---
 
-This guide walks through building a fully functional Avalonia application using only C#, with no XAML files at all. You will create a simple counter app with styled controls, layout, event handling, and data binding, all from code.
+本指南带你只用 C#、一个 XAML 文件都不写，构建一个功能完整的 Avalonia 应用。你将做出一个简单的计数器应用，其中的样式、布局、事件处理和数据绑定全部出自代码。
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
-- .NET 10 SDK or later
-- A text editor or IDE (Visual Studio, Rider, or VS Code)
+- .NET 10 SDK 或更高版本
+- 一个文本编辑器或 IDE（Visual Studio、Rider 或 VS Code）
 
-## Step 1: Create the project
+## 第 1 步：创建项目 {#step-1-create-the-project}
 
-Create a new console application and add the Avalonia packages:
+新建一个控制台应用并添加 Avalonia 包：
 
 ```bash
 dotnet new console -n CodedUIApp
@@ -24,7 +24,7 @@ dotnet add package Avalonia.Desktop --version 12.0.0
 dotnet add package Avalonia.Themes.Fluent --version 12.0.0
 ```
 
-Your `.csproj` should look like this:
+此时你的 `.csproj` 应该是这样：
 
 ```xml title='CodedUIApp.csproj'
 <Project Sdk="Microsoft.NET.Sdk">
@@ -40,11 +40,11 @@ Your `.csproj` should look like this:
 </Project>
 ```
 
-Notice there is no `Avalonia.Markup.Xaml` package. You do not need it.
+注意这里没有 `Avalonia.Markup.Xaml` 包——你用不上它。
 
-## Step 2: Bootstrap the application
+## 第 2 步：引导应用启动 {#step-2-bootstrap-the-application}
 
-Replace the contents of `Program.cs` with:
+把 `Program.cs` 的内容替换为：
 
 ```csharp title='Program.cs'
 using Avalonia;
@@ -72,11 +72,11 @@ class Program
 }
 ```
 
-The `Start` method accepts a delegate that runs after Avalonia is fully initialized. Inside that delegate, you have access to the `Application` instance and can add themes, create windows, and start the event loop.
+`Start` 方法接受一个委托，它会在 Avalonia 完全初始化之后运行。在这个委托内部，你能拿到 `Application` 实例，可以添加主题、创建窗口并启动事件循环。
 
-## Step 3: Build the window
+## 第 3 步：搭建窗口 {#step-3-build-the-window}
 
-Create a new file called `CounterWindow.cs`:
+新建一个名为 `CounterWindow.cs` 的文件：
 
 ```csharp title='CounterWindow.cs'
 using Avalonia;
@@ -170,17 +170,17 @@ class CounterWindow : Window
 }
 ```
 
-Run the application:
+运行应用：
 
 ```bash
 dotnet run
 ```
 
-You should see a window with a large counter display and three buttons that increment, decrement, and reset the value.
+你应该会看到一个窗口，里面有一个大大的计数显示和三个按钮，分别用来加一、减一和归零。
 
-## Step 4: Add custom styles
+## 第 4 步：添加自定义样式 {#step-4-add-custom-styles}
 
-Enhance the appearance by adding programmatic styles. Update the constructor to apply styles before setting up the content:
+加上用代码写的样式，让外观更好看些。修改构造函数，在设置内容之前先套用样式：
 
 ```csharp title='CounterWindow.cs (add to constructor, before Content assignment)'
 // Style all buttons in this window
@@ -194,11 +194,11 @@ Styles.Add(new Avalonia.Styling.Style(x => x.OfType<Button>())
 });
 ```
 
-Styles added to the window's `Styles` collection apply to all matching controls within that window, just as they would in a XAML `<Window.Styles>` block.
+加入窗口 `Styles` 集合的样式会作用于该窗口内所有匹配的控件，效果与写在 XAML 的 `<Window.Styles>` 块里完全一样。
 
-## Step 5: Add data binding
+## 第 5 步：加入数据绑定 {#step-5-add-data-binding}
 
-For more complex scenarios, you can use data binding from code instead of directly updating control properties. Here is how to bind controls to a view model:
+场景更复杂时，你可以在代码里用数据绑定，而不是直接改控件属性。下面演示如何把控件绑定到视图模型：
 
 ```csharp title='CounterViewModel.cs'
 using System.ComponentModel;
@@ -235,7 +235,7 @@ class CounterViewModel : INotifyPropertyChanged
 }
 ```
 
-Then bind the label to the view model. You can use a string-based binding or a compiled binding. Compiled bindings are type-safe, validated at compile time, and provide full IntelliSense:
+然后把标签绑定到视图模型。你既可以用基于字符串的绑定，也可以用编译绑定。编译绑定是类型安全的，编译期就会校验，而且 IntelliSense 支持完整：
 
 ```csharp title='CounterWindow.cs (updated constructor, string-based)'
 var viewModel = new CounterViewModel();
@@ -261,11 +261,11 @@ decrementButton.Click += (_, _) => viewModel.Decrement();
 resetButton.Click += (_, _) => viewModel.Reset();
 ```
 
-This separates your UI logic from presentation, giving you the same MVVM benefits you would get with XAML, all expressed in code. The compiled binding variant catches property name errors at build time rather than silently failing at runtime.
+这样就把界面逻辑与呈现分离开了，你用代码照样享受到 XAML 那套 MVVM 的好处。采用编译绑定的那个版本还能在构建时就抓出属性名写错的问题，而不是到运行时悄无声息地失效。
 
-## Step 6: Add a grid layout
+## 第 6 步：加入网格布局 {#step-6-add-a-grid-layout}
 
-As your UI grows, you may want more precise layout control. Here is an example replacing the simple `StackPanel` with a `Grid`:
+界面一大起来，你可能想要更精细的布局掌控。下面这个例子把简单的 `StackPanel` 换成了 `Grid`：
 
 ```csharp
 var grid = new Grid
@@ -296,9 +296,9 @@ grid.Children.Add(resetButton);
 Content = grid;
 ```
 
-## Step 7: Add custom drawing (optional)
+## 第 7 步：加入自定义绘制（可选） {#step-7-add-custom-drawing-optional}
 
-For applications that need direct rendering, you can use a `Canvas` with shape controls:
+需要直接渲染的应用，可以用 `Canvas` 配合各种形状控件：
 
 ```csharp title='DrawingWindow.cs'
 using System;
@@ -349,9 +349,9 @@ class DrawingWindow : Window
 }
 ```
 
-## Multi-window applications
+## 多窗口应用 {#multi-window-applications}
 
-For apps with multiple windows, use `ClassicDesktopStyleApplicationLifetime` to manage application shutdown:
+对于有多个窗口的应用，请用 `ClassicDesktopStyleApplicationLifetime` 来管理应用退出：
 
 ```csharp title='Program.cs'
 using Avalonia;
@@ -380,39 +380,39 @@ class Program
 }
 ```
 
-You can open additional windows from anywhere in your code:
+你可以在代码的任何地方打开新窗口：
 
 ```csharp
 var secondWindow = new DrawingWindow();
 secondWindow.Show();
 ```
 
-With `ShutdownMode.OnLastWindowClose`, the application exits only after every open window has been closed.
+设为 `ShutdownMode.OnLastWindowClose` 后，应用只有在所有已打开的窗口都关闭之后才会退出。
 
-## Summary
+## 小结 {#summary}
 
-This guide demonstrated that you can build a complete, well-structured Avalonia application without a single line of XAML. The key patterns are:
+本指南表明：你完全可以不写一行 XAML，照样构建出结构清晰、功能完整的 Avalonia 应用。关键套路如下：
 
-| Concern | Code-Only Approach |
+| 关注点 | 纯代码的做法 |
 |---|---|
 | Bootstrap | `AppBuilder.Configure<Application>().UsePlatformDetect().Start(delegate)` |
 | Theme | `app.Styles.Add(new FluentTheme())` |
-| Controls | Instantiate with object initializers |
-| Layout | Add children to panels (`StackPanel`, `Grid`, `DockPanel`) |
-| Events | Wire handlers with `+=` or lambdas |
-| Styles | Create `Style` objects and add to `Styles` collection |
+| Controls | 用对象初始化器实例化 |
+| Layout | 把子元素添加到面板（`StackPanel`、`Grid`、`DockPanel`）中 |
+| 事件 | 用 `+=` 或 lambda 挂上处理程序 |
+| Styles | 创建 `Style` 对象并加入 `Styles` 集合 |
 | Binding | `control.Bind(property, new ReflectionBinding(...))` or `CompiledBinding.Create(expression)` |
-| Drawing | `Canvas` with `Line`, `Ellipse`, `Rectangle`, and other shapes |
+| Drawing | `Canvas` 搭配 `Line`、`Ellipse`、`Rectangle` 等形状 |
 | Multi-window | `ClassicDesktopStyleApplicationLifetime` with `ShutdownMode` |
 
 :::tip
-For a deeper look at the concepts behind each of these patterns, see [Code-Only UI](/docs/fundamentals/coded-ui).
+想更深入地了解这些套路背后的概念，请参阅[纯代码 UI](/docs/fundamentals/coded-ui)。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Code-Only UI](/docs/fundamentals/coded-ui)
-- [Application lifetimes](/docs/fundamentals/application-lifetimes)
-- [Binding from code](/docs/data-binding/binding-from-code)
-- [Creating data templates in code](/docs/data-templates/creating-data-templates-in-code)
+- [纯代码构建界面](/docs/fundamentals/coded-ui)
+- [应用程序生命周期](/docs/fundamentals/application-lifetimes)
+- [在代码中绑定](/docs/data-binding/binding-from-code)
+- [在代码中创建数据模板](/docs/data-templates/creating-data-templates-in-code)
 - [Threading](/docs/app-development/threading)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DirectPropertyBase&lt;TValue&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/DirectPropertyBase.cs">DirectPropertyBase.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/DirectPropertyBase.cs">DirectPropertyBase.cs</a>
 </div>
 
 </div>
@@ -54,47 +54,47 @@ public class DirectPropertyBase<TValue>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> AvaloniaProperty&lt;&gt; <span className="apiref-page__relation-separator">-&gt;</span> DirectPropertyBase&lt;TValue&gt;
+<span className="apiref-page__meta-label">继承关系：</span> AvaloniaProperty&lt;&gt; <span className="apiref-page__relation-separator">-&gt;</span> DirectPropertyBase&lt;TValue&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Whereas [Avalonia.DirectProperty&lt;T1, T2&gt;](xref:Avalonia.DirectProperty%602) is typed on the owner type, this base
 class provides a non-owner-typed interface to a direct property.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetMetadata (2 overloads)](#uid-b6c6ae1a42) | Gets the [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata) which applies to this property when it is used with the specified object. |
+| [GetMetadata（2 个重载）](#uid-b6c6ae1a42) | 获取该属性用于指定对象时所适用的 [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)。 |
 | [GetUnsetValue (2 overloads)](#uid-fe50eae041) | Gets the unset value for the property on the specified object. |
-| [OverrideMetadata (2 overloads)](#uid-1ce4e62b9a) | No summary available. |
+| [OverrideMetadata（2 个重载）](#uid-1ce4e62b9a) | 暂无摘要。 |
 
 <span id="uid-b6c6ae1a42"></span>
 
-### GetMetadata overloads
+### GetMetadata 的重载 {#getmetadata-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c1179f17b1"></span>
 
-#### GetMetadata Method
+#### GetMetadata 方法 {#getmetadata-method}
 
-Gets the [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata) which applies to this property when it is used with the specified object.
+获取该属性用于指定对象时所适用的 [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)。
 
 ```csharp
 public Avalonia.DirectPropertyMetadata<TValue><TValue> GetMetadata(Avalonia.AvaloniaObject owner)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `owner` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The object for which to retrieve metadata.
+要取得其元数据的那个对象。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 Avalonia.DirectPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
@@ -105,27 +105,27 @@ Avalonia.DirectPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
 <span id="uid-9cf4d7da4e"></span>
 
-#### GetMetadata Method
+#### GetMetadata 方法 {#getmetadata-method-1}
 
 ```csharp
 public Avalonia.DirectPropertyMetadata<TValue><TValue> GetMetadata(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
-`type` Type
+`type` 类型
 
-The type for which to retrieve metadata.
+要取得其元数据的那个类型。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 Avalonia.DirectPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
-For performance, prefer the [Avalonia.AvaloniaProperty.GetMetadata(Avalonia.AvaloniaObject)](xref:Avalonia.AvaloniaProperty.GetMetadata%28Avalonia.AvaloniaObject%29) overload when possible.
+出于性能考虑，条件允许时请优先用 [Avalonia.AvaloniaProperty.GetMetadata(Avalonia.AvaloniaObject)](xref:Avalonia.AvaloniaProperty.GetMetadata%28Avalonia.AvaloniaObject%29) 这个重载。
 
 </section>
 
@@ -137,7 +137,7 @@ For performance, prefer the [Avalonia.AvaloniaProperty.GetMetadata(Avalonia.Aval
 
 <span id="uid-1746ef5106"></span>
 
-#### GetUnsetValue Method
+#### GetUnsetValue 方法 {#getunsetvalue-method}
 
 Gets the unset value for the property on the specified object.
 
@@ -145,18 +145,18 @@ Gets the unset value for the property on the specified object.
 public TValue GetUnsetValue(Avalonia.AvaloniaObject owner)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `owner` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The object.
+该对象。
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 TValue
 
-The unset value.
+未设置值。
 
 
 </section>
@@ -165,7 +165,7 @@ The unset value.
 
 <span id="uid-e2534a53cd"></span>
 
-#### GetUnsetValue Method
+#### GetUnsetValue 方法 {#getunsetvalue-method-1}
 
 Gets the unset value for the property on the specified type.
 
@@ -173,37 +173,37 @@ Gets the unset value for the property on the specified type.
 public TValue GetUnsetValue(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 TValue
 
-The unset value.
+未设置值。
 
 
 </section>
 
 <span id="uid-1ce4e62b9a"></span>
 
-### OverrideMetadata overloads
+### OverrideMetadata 的重载 {#overridemetadata-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-76fb8d47ae"></span>
 
-#### OverrideMetadata Method
+#### OverrideMetadata 方法 {#overridemetadata-method}
 
 ```csharp
 public void OverrideMetadata<T>(Avalonia.DirectPropertyMetadata<TValue><TValue> metadata)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `metadata` Avalonia.DirectPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
@@ -219,15 +219,15 @@ public void OverrideMetadata<T>(Avalonia.DirectPropertyMetadata<TValue><TValue> 
 
 <span id="uid-5fcd8c28ed"></span>
 
-#### OverrideMetadata Method
+#### OverrideMetadata 方法 {#overridemetadata-method-1}
 
 ```csharp
 public void OverrideMetadata(Type type, Avalonia.DirectPropertyMetadata<TValue><TValue> metadata)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
-`type` Type
+`type` 类型
 
 
 `metadata` Avalonia.DirectPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
@@ -235,9 +235,9 @@ public void OverrideMetadata(Type type, Avalonia.DirectPropertyMetadata<TValue><
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Owner](#uid-9a89944347) | Gets the type that registered the property. |
 
@@ -245,7 +245,7 @@ public void OverrideMetadata(Type type, Avalonia.DirectPropertyMetadata<TValue><
 
 <span id="uid-9a89944347"></span>
 
-### Owner Property
+### Owner 属性 {#owner-property}
 
 Gets the type that registered the property.
 

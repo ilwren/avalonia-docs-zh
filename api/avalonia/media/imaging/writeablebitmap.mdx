@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">WriteableBitmap Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.Imaging</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.Imaging</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Imaging/WriteableBitmap.cs">WriteableBitmap.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Imaging/WriteableBitmap.cs">WriteableBitmap.cs</a>
 </div>
 
 </div>
@@ -54,31 +54,31 @@ public class WriteableBitmap
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bitmap">Bitmap</a> <span className="apiref-page__relation-separator">-&gt;</span> WriteableBitmap
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bitmap">Bitmap</a> <span className="apiref-page__relation-separator">-&gt;</span> WriteableBitmap
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [WriteableBitmap (2 overloads)](#uid-a75b10f06b) | No summary available. |
+| [WriteableBitmap (2 overloads)](#uid-a75b10f06b) | 暂无摘要。 |
 
 <span id="uid-a75b10f06b"></span>
 
-### WriteableBitmap overloads
+### WriteableBitmap 的重载 {#writeablebitmap-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e4b81d277f"></span>
 
-#### WriteableBitmap Constructor
+#### WriteableBitmap 构造函数 {#writeablebitmap-constructor}
 
 ```csharp
 public WriteableBitmap(Avalonia.PixelSize size, Avalonia.Vector dpi, Nullable<Avalonia.Platform.PixelFormat> format, Nullable<Avalonia.Platform.AlphaFormat> alphaFormat)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `size` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
@@ -98,7 +98,7 @@ public WriteableBitmap(Avalonia.PixelSize size, Avalonia.Vector dpi, Nullable<Av
 
 <span id="uid-092fa891e4"></span>
 
-#### WriteableBitmap Constructor
+#### WriteableBitmap 构造函数 {#writeablebitmap-constructor-1}
 
 Initializes a new instance of the [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap) class with existing pixel data
 The data is copied to the bitmap
@@ -107,65 +107,65 @@ The data is copied to the bitmap
 public WriteableBitmap(Avalonia.Platform.PixelFormat format, Avalonia.Platform.AlphaFormat alphaFormat, IntPtr data, Avalonia.PixelSize size, Avalonia.Vector dpi, int stride)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `format` [Avalonia.Platform.PixelFormat](xref:Avalonia.Platform.PixelFormat)
 
-The pixel format.
+像素格式。
 
 
 `alphaFormat` [Avalonia.Platform.AlphaFormat](xref:Avalonia.Platform.AlphaFormat)
 
-The alpha format.
+alpha 格式。
 
 
 `data` IntPtr
 
-The pointer to the source bytes.
+指向源字节的指针。
 
 
 `size` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
-The size of the bitmap in device pixels.
+该位图的尺寸，以设备像素计。
 
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The DPI of the bitmap.
+该位图的 DPI。
 
 
 `stride` int
 
-The number of bytes per row.
+每一行所占的字节数。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CopyPixels](bitmap.mdx#uid-9832292efe) | Copies pixels to the target buffer and transcodes the pixel and alpha format if needed. Inherited from [Bitmap](bitmap.mdx). |
-| [CopyPixels](#uid-6720be6cb4) | No summary available. |
+| [CopyPixels](#uid-6720be6cb4) | 暂无摘要。 |
 | [CreateScaledBitmap](bitmap.mdx#uid-6635fbb23b) | Creates a Bitmap scaled to a specified size from the current bitmap. Inherited from [Bitmap](bitmap.mdx). |
-| [Decode](#uid-338a5c9dca) | No summary available. |
+| [Decode](#uid-338a5c9dca) | 暂无摘要。 |
 | [DecodeToHeight](#uid-99543906ff) | Loads a Bitmap from a stream and decodes at the desired height. Aspect ratio is maintained. This is more efficient than loading and then resizing. |
 | [DecodeToWidth](#uid-48e5ce4aae) | Loads a [WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap) from a stream and decodes at the desired width. Aspect ratio is maintained. This is more efficient than loading and then resizing. |
-| [Dispose](bitmap.mdx#uid-104e904648) | Inherited from [Bitmap](bitmap.mdx). |
-| [Lock](#uid-a4f1529309) | No summary available. |
-| [Save (4 overloads)](bitmap.mdx#uid-2db10525bf) | Inherited from [Bitmap](bitmap.mdx). |
+| [Dispose](bitmap.mdx#uid-104e904648) | 继承自 [Bitmap](bitmap.mdx)。 |
+| [Lock](#uid-a4f1529309) | 暂无摘要。 |
+| [Save（4 个重载）](bitmap.mdx#uid-2db10525bf) | 继承自 [Bitmap](bitmap.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6720be6cb4"></span>
 
-### CopyPixels Method
+### CopyPixels 方法 {#copypixels-method}
 
 ```csharp
 public void CopyPixels(Avalonia.PixelRect sourceRect, IntPtr buffer, int bufferSize, int stride)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `sourceRect` [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
@@ -185,18 +185,18 @@ public void CopyPixels(Avalonia.PixelRect sourceRect, IntPtr buffer, int bufferS
 
 <span id="uid-338a5c9dca"></span>
 
-### Decode Method
+### Decode 方法 {#decode-method}
 
 ```csharp
 public Avalonia.Media.Imaging.WriteableBitmap Decode(System.IO.Stream stream)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `stream` System.IO.Stream
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap)
 
@@ -207,7 +207,7 @@ public Avalonia.Media.Imaging.WriteableBitmap Decode(System.IO.Stream stream)
 
 <span id="uid-99543906ff"></span>
 
-### DecodeToHeight Method
+### DecodeToHeight 方法 {#decodetoheight-method}
 
 Loads a Bitmap from a stream and decodes at the desired height. Aspect ratio is maintained.
 This is more efficient than loading and then resizing.
@@ -216,11 +216,11 @@ This is more efficient than loading and then resizing.
 public Avalonia.Media.Imaging.WriteableBitmap DecodeToHeight(System.IO.Stream stream, int height, Avalonia.Media.Imaging.BitmapInterpolationMode interpolationMode)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `stream` System.IO.Stream
 
-The stream to read the bitmap from. This can be any supported image format.
+用于读取位图的流，可以是任何受支持的图像格式。
 
 
 `height` int
@@ -230,14 +230,14 @@ The desired height of the resulting bitmap.
 
 `interpolationMode` [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode)
 
-The [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode) to use should any scaling be required.
+需要缩放时所使用的 [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode)。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap)
 
-An instance of the [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap) class.
+[Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap) 类的一个实例。
 
 
 </section>
@@ -246,7 +246,7 @@ An instance of the [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.
 
 <span id="uid-48e5ce4aae"></span>
 
-### DecodeToWidth Method
+### DecodeToWidth 方法 {#decodetowidth-method}
 
 Loads a [WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap) from a stream and decodes at the desired width. Aspect ratio is maintained.
 This is more efficient than loading and then resizing.
@@ -255,11 +255,11 @@ This is more efficient than loading and then resizing.
 public Avalonia.Media.Imaging.WriteableBitmap DecodeToWidth(System.IO.Stream stream, int width, Avalonia.Media.Imaging.BitmapInterpolationMode interpolationMode)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `stream` System.IO.Stream
 
-The stream to read the bitmap from. This can be any supported image format.
+用于读取位图的流，可以是任何受支持的图像格式。
 
 
 `width` int
@@ -269,14 +269,14 @@ The desired width of the resulting bitmap.
 
 `interpolationMode` [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode)
 
-The [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode) to use should any scaling be required.
+需要缩放时所使用的 [Avalonia.Media.Imaging.BitmapInterpolationMode](xref:Avalonia.Media.Imaging.BitmapInterpolationMode)。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap)
 
-An instance of the [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap) class.
+[Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.Imaging.WriteableBitmap) 类的一个实例。
 
 
 </section>
@@ -285,34 +285,34 @@ An instance of the [Avalonia.Media.Imaging.WriteableBitmap](xref:Avalonia.Media.
 
 <span id="uid-a4f1529309"></span>
 
-### Lock Method
+### Lock 方法 {#lock-method}
 
 ```csharp
 public Avalonia.Platform.ILockedFramebuffer Lock()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Platform.ILockedFramebuffer](xref:Avalonia.Platform.ILockedFramebuffer)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AlphaFormat](bitmap.mdx#uid-13f16f356b) | Inherited from [Bitmap](bitmap.mdx). |
-| [Dpi](bitmap.mdx#uid-636caa890c) | Inherited from [Bitmap](bitmap.mdx). |
-| [Format](#uid-d1631d07c3) | No summary available. |
-| [PixelSize](bitmap.mdx#uid-81acc3099d) | Inherited from [Bitmap](bitmap.mdx). |
+| [AlphaFormat](bitmap.mdx#uid-13f16f356b) | 继承自 [Bitmap](bitmap.mdx)。 |
+| [Dpi](bitmap.mdx#uid-636caa890c) | 继承自 [Bitmap](bitmap.mdx)。 |
+| [Format](#uid-d1631d07c3) | 暂无摘要。 |
+| [PixelSize](bitmap.mdx#uid-81acc3099d) | 继承自 [Bitmap](bitmap.mdx)。 |
 | [Size](bitmap.mdx#uid-c8d851e15e) | Gets the size of the image, in device independent pixels. Inherited from [Bitmap](bitmap.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d1631d07c3"></span>
 
-### Format Property
+### Format 属性 {#format-property}
 
 ```csharp
 public Nullable<Avalonia.Platform.PixelFormat> Format { get; set; }

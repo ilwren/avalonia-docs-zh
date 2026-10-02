@@ -1,7 +1,7 @@
 ---
 id: install-avalonia
 title: Install Avalonia
-description: Install the .NET SDK and Avalonia project templates so you can create Avalonia applications from the command line or your IDE.
+description: 安装 .NET SDK 与 Avalonia 项目模板，这样你就能从命令行或 IDE 创建 Avalonia 应用了。
 doc-type: how-to
 ---
 
@@ -12,35 +12,35 @@ import InstallAvaloniaInClassLibraryVSCode from '/img/get-started/install-avalon
 <p><small>{frontMatter.description}</small></p>
 <br/>
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
-Before you install Avalonia, make sure you have:
+动手安装 Avalonia 之前，请先确认：
 
-- **.NET 8.0 or later** (as of October 2025)
+- **.NET 8.0 或更高版本**（截至 2025 年 10 月）
 
-If you do not have .NET installed, download it from the [.NET website](https://dotnet.microsoft.com/en-us/download/dotnet) and follow the installation instructions for your operating system.
+如果还没装 .NET，请到 [.NET 官网](https://dotnet.microsoft.com/en-us/download/dotnet) 下载，并按你所用操作系统的说明完成安装。
 
-Verify your installation by running:
+运行以下命令验证安装结果：
 
 ```bash
 dotnet --version
 ```
 
-The output should show version `8.0` or higher. If the command is not recognized, make sure the .NET SDK directory is on your system `PATH`.
+输出的版本号应为 `8.0` 或更高。如果提示找不到该命令，请确认 .NET SDK 所在目录已加入系统 `PATH`。
 
-:::tip[Multiple .NET versions]
-You can have several .NET SDK versions installed. Avalonia requires .NET 8.0 or later, but your project can still target earlier frameworks through multi-targeting if needed. Run `dotnet --list-sdks` to see every SDK version on your machine.
+:::tip[同时安装多个 .NET 版本]
+你可以在同一台机器上安装多个 .NET SDK 版本。Avalonia 要求 .NET 8.0 或更高，但如有需要，项目仍可通过多目标框架编译到更早的版本。执行 `dotnet --list-sdks` 即可列出本机所有 SDK 版本。
 :::
 
-## Install the Avalonia templates
+## 安装 Avalonia 模板 {#install-the-avalonia-templates}
 
-Avalonia uses standard .NET templates to create new projects. Install them by running:
+Avalonia 使用标准的 .NET 模板来创建新项目。执行以下命令安装：
 
 ```bash
 dotnet new install Avalonia.Templates
 ```
 
-You should see output confirming the templates were installed:
+你应当看到模板安装成功的输出：
 
 ```text
 Template Name                                 Short Name                  Language    Tags
@@ -55,45 +55,45 @@ Avalonia UserControl                          avalonia.usercontrol        [C#],F
 Avalonia Window                               avalonia.window             [C#],F#     Desktop/Xaml/Avalonia/Windows/Linux/macOS
 ```
 
-You can check which templates are already installed by running:
+想确认哪些模板已经装好，可以执行：
 
 ```bash
 dotnet new list
 ```
 
-Look for entries with "Avalonia" in the name.
+在列表中找名字里带 “Avalonia” 的条目即可。
 
 :::note
-If you are using Visual Studio, the Avalonia for Visual Studio extension automatically includes these templates. You only need to run `dotnet new install` if you use a different IDE or the command line.
+如果你用的是 Visual Studio，Avalonia for Visual Studio 扩展已经自带这些模板。只有在使用其他 IDE 或命令行时，才需要执行 `dotnet new install`。
 :::
 
-### Update existing templates
+### 更新已安装的模板 {#update-existing-templates}
 
-If you installed the templates previously, you can update them to the latest version by running:
+如果你之前装过这些模板，执行以下命令即可升级到最新版：
 
 ```bash
 dotnet new update
 ```
 
-This updates all installed template packages, including `Avalonia.Templates`. To install a specific template version (for example, to match a particular Avalonia release), specify the version explicitly.
+该命令会更新所有已安装的模板包，其中也包括 `Avalonia.Templates`。若要安装特定版本的模板（例如与某个 Avalonia 发行版对齐），请显式指定版本号。
 
 ```bash
 dotnet new install Avalonia.Templates@12.1.1
 ```
 
-### Uninstall templates
+### 卸载模板 {#uninstall-templates}
 
-If you need to remove the Avalonia templates and start fresh, run:
+如果你想移除 Avalonia 模板、从头再来，执行：
 
 ```bash
 dotnet new uninstall Avalonia.Templates
 ```
 
-Then reinstall them with the `dotnet new install` command [shown above](#install-the-avalonia-templates).
+然后用[上文提到的](#install-the-avalonia-templates) `dotnet new install` 命令重新安装。
 
-## Verify the installation
+## 验证安装 {#verify-the-installation}
 
-Create a quick test project to confirm everything is working:
+创建一个小项目，确认一切正常：
 
 ```bash
 dotnet new avalonia.app -o TestApp
@@ -101,52 +101,52 @@ cd TestApp
 dotnet build
 ```
 
-If the build succeeds, your installation is ready. You can delete the `TestApp` folder when you are done.
+构建成功就说明安装没问题。确认完毕后，`TestApp` 文件夹可以直接删掉。
 
-### Common issues
+### 常见问题 {#common-issues}
 
-- **`dotnet new` does not list the Avalonia templates.** Make sure you ran `dotnet new install Avalonia.Templates` and that the command completed without errors. Restart your terminal and try again.
-- **Build errors referencing missing SDKs.** Confirm that `dotnet --version` reports 8.0 or later. If you have an older SDK set as the default by a `global.json` file in a parent directory, either remove that file or update it to require a compatible SDK version.
-- **Permission errors on macOS or Linux.** If the install command fails with a permission error, make sure you are not running it with `sudo`. The .NET template engine installs templates into your user profile directory and does not require elevated privileges.
+- **`dotnet new` 列不出 Avalonia 模板。** 请确认你确实执行过 `dotnet new install Avalonia.Templates`，并且命令没有报错。重启终端后再试一次。
+- **构建时报错，提示缺少 SDK。** 请确认 `dotnet --version` 输出的版本不低于 8.0。如果上层目录中有 `global.json` 文件把默认 SDK 锁定到了较旧的版本，请删除该文件，或将其改为要求一个兼容的 SDK 版本。
+- **在 macOS 或 Linux 上遇到权限错误。** 如果安装命令因权限问题失败，请确认你没有加 `sudo`。.NET 模板引擎会把模板装进当前用户的配置目录，并不需要提权。
 
-## Installing Avalonia in an existing .NET project
+## 在已有的 .NET 项目中引入 Avalonia {#installing-avalonia-in-an-existing-net-project}
 
-If you need to install Avalonia in an existing .NET project (e.g., [a class library](/docs/custom-controls/custom-control-library)), use the NuGet package management tab in your preferred IDE.
+如果你要在一个已有的 .NET 项目（例如[类库](/docs/custom-controls/custom-control-library)）中引入 Avalonia，请使用所在 IDE 的 NuGet 包管理界面。
 
 <Tabs groupId="ide">  
   <TabItem value="rider" label="Rider">
-    1. In the solution panel, select your .NET project.
-    2. Click **Tools → NuGet → Manage NuGet Packages**.
-    3. Search for "Avalonia" in the search bar.
+    1. 在解决方案面板中选中你的 .NET 项目。
+    2. 点击 **Tools → NuGet → Manage NuGet Packages**。
+    3. 在搜索栏中搜索 “Avalonia”。
     4. Select **Avalonia**.
-    5. Select the preferred version.
-    6. Click the name of your project at the bottom of the panel to install Avalonia to that project.
+    5. 选择需要的版本。
+    6. 点击面板底部的项目名称，即可把 Avalonia 安装到该项目。
 
     <Image light={InstallAvaloniaInClassLibraryRider} alt="A screenshot demonstrating how to install the Avalonia NuGet package in Rider." position="center" maxWidth={400} cornerRadius="true"/>
   </TabItem>
   <TabItem value="vs" label="Visual Studio">
-    1. In the solution explorer, select your .NET project.
-    2. Click **Project → Manage NuGet Packages**.
-    3. Go to the **Browse** tab. Search for "Avalonia".
+    1. 在解决方案资源管理器中选中你的 .NET 项目。
+    2. 点击 **项目 → 管理 NuGet 程序包**。
+    3. 切换到 **浏览** 选项卡，搜索 “Avalonia”。
     4. Select **Avalonia**.
-    5. Select the preferred version.
+    5. 选择需要的版本。
     6. Click **Install**.
 
     <Image light={InstallAvaloniaInClassLibraryVS} alt="A screenshot demonstrating how to install the Avalonia NuGet package in Visual Studio." position="center" maxWidth={400} cornerRadius="true"/>
   </TabItem>
   <TabItem value="vscode" label="VS Code">
-    1. Bring up the command palette using <kbd>Ctrl</kbd> <kbd>⇧</kbd> <kbd>P</kbd> on Windows, or <kbd>Cmd</kbd> <kbd>⇧</kbd> <kbd>P</kbd> on macOS.
-    2. Search for and select the command **NuGet: Add NuGet Package**.
-    3. Input the search term "Avalonia". Confirm the input.
-    4. Select the package **Avalonia** from the search results.
-    5. Select the desired package version to install it.
+    1. 打开命令面板：Windows 上按 <kbd>Ctrl</kbd> <kbd>⇧</kbd> <kbd>P</kbd>，macOS 上按 <kbd>Cmd</kbd> <kbd>⇧</kbd> <kbd>P</kbd>。
+    2. 搜索并执行命令 **NuGet: Add NuGet Package**。
+    3. 输入搜索词 “Avalonia” 并确认。
+    4. 从搜索结果中选择 **Avalonia** 包。
+    5. 选择需要的包版本即可完成安装。
 
     <Image light={InstallAvaloniaInClassLibraryVSCode} alt="A screenshot demonstrating how to install the Avalonia NuGet package in Visual Studio Code." position="center" maxWidth={400} cornerRadius="true"/>
   </TabItem>
 </Tabs>
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Set up your IDE](/docs/get-started/set-up-your-ide)
-- [Create your first project](/docs/get-started/create-your-first-project)
-- [Supported platforms](/docs/supported-platforms)
+- [配置你的 IDE](/docs/get-started/set-up-your-ide)
+- [创建你的第一个项目](/docs/get-started/create-your-first-project)
+- [支持的平台](/docs/supported-platforms)

@@ -1,19 +1,19 @@
 ---
 id: drag-and-drop-how-to
-title: "How to: Implement Drag and Drop"
-description: Initiate drags, handle drops, provide visual feedback, and accept file drops in Avalonia.
+title: "操作指南：实现拖放"
+description: 在 Avalonia 中发起拖拽、处理放下、给出视觉反馈，以及接收拖入的文件。
 doc-type: how-to
 ---
 
-This guide covers common drag-and-drop scenarios: initiating drags, handling drops, providing visual feedback, and accepting file drops.
+本指南介绍拖放的常见场景：发起拖拽、处理放下、给出视觉反馈，以及接收拖入的文件。
 
-## Accepting dropped files
+## 接收拖入的文件 {#accepting-dropped-files}
 
-The most common drag-and-drop scenario is accepting files that your users drag from the OS file manager.
+最常见的拖放场景，就是接收用户从操作系统文件管理器里拖过来的文件。
 
-### XAML setup
+### XAML 配置 {#xaml-setup}
 
-Enable dropping by setting `DragDrop.AllowDrop` to `True` on the target element:
+在目标元素上把 `DragDrop.AllowDrop` 设为 `True`，即可允许放下：
 
 ```xml
 <Border Background="#F3F4F6" Padding="40"
@@ -23,9 +23,9 @@ Enable dropping by setting `DragDrop.AllowDrop` to `True` on the target element:
 </Border>
 ```
 
-### Code-behind handler
+### 代码隐藏中的处理程序 {#code-behind-handler}
 
-Register handlers for `DragOver` (to indicate which effects you accept) and `Drop` (to process the dropped data):
+为 `DragOver`（表明你接受哪些效果）和 `Drop`（处理放下的数据）注册处理程序：
 
 ```csharp
 public MainWindow()
@@ -57,22 +57,22 @@ private void OnDrop(object? sender, DragEventArgs e)
 }
 ```
 
-The value you set in `e.DragEffects` also controls the cursor, which tells your users what the drop will do:
+你在 `e.DragEffects` 中设的值同时也决定了光标形状，好让用户明白放下之后会发生什么：
 
-| DragDropEffects | Cursor | Meaning |
+| DragDropEffects | 光标 | 含义 |
 |---|---|---|
-| `None` | No-drop cursor | Drop is not allowed. |
-| `Copy` | Copy cursor (+) | The item will be copied. |
-| `Move` | Move cursor | The item will be moved. |
-| `Link` | Link cursor | A link or shortcut will be created. |
+| `None` | 禁止放下光标 | 不允许放下。 |
+| `Copy` | 复制光标（+） | 项目将被复制。 |
+| `Move` | 移动光标 | 项目将被移动。 |
+| `Link` | 链接光标 | 将创建一个链接或快捷方式。 |
 
 :::tip
-Always set `e.DragEffects` in your `DragOver` handler. If you do not, the platform may show a "not allowed" cursor even when your control can accept the drop.
+请务必在 `DragOver` 处理程序中设置 `e.DragEffects`。否则即便你的控件本可接收，平台也可能显示「禁止放下」的光标。
 :::
 
-## Accepting dropped text
+## 接收拖入的文本 {#accepting-dropped-text}
 
-You can also accept plain text drops. Use `TryGetText()` to retrieve the string value:
+你也可以接收纯文本的放下操作，用 `TryGetText()` 取出字符串值：
 
 ```csharp
 private void OnDrop(object? sender, DragEventArgs e)
@@ -85,9 +85,9 @@ private void OnDrop(object? sender, DragEventArgs e)
 }
 ```
 
-## Initiating a drag operation
+## 发起拖拽操作 {#initiating-a-drag-operation}
 
-To start a drag from your control (for example, from a list item), call `DragDrop.DoDragDropAsync` inside a pointer-pressed handler:
+要从你的控件（比如某个列表项）发起拖拽，请在指针按下的处理程序中调用 `DragDrop.DoDragDropAsync`：
 
 ```csharp
 private async void OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -107,25 +107,25 @@ private async void OnPointerPressed(object? sender, PointerPressedEventArgs e)
 ```
 
 :::warning
-Avoid starting a drag on every `PointerPressed` event. Instead, add a minimum distance threshold or wait for `PointerMoved` to confirm the user intends to drag rather than click.
+别在每次 `PointerPressed` 事件里都发起拖拽。应当加一个最小距离阈值，或者等到 `PointerMoved` 再确认用户想拖而不是想点。
 :::
 
 :::note
-Do not dispose the `DataTransfer` you pass to `DoDragDropAsync`, and do not create it in a `using` statement. Avalonia disposes it automatically when the drag operation completes.
+不要释放你传给 `DoDragDropAsync` 的 `DataTransfer`，也不要在 `using` 语句中创建它。拖拽操作结束时 Avalonia 会自动释放它。
 :::
 
-## Drag between lists
+## 在两个列表之间拖拽 {#drag-between-lists}
 
-A common pattern is dragging items between two list controls. You set up one handler to initiate the drag from the source and another to accept the drop on the target.
+有个常见套路是在两个列表控件之间拖动项目：一个处理程序负责从源头发起拖拽，另一个负责在目标上接收放下。
 
-Both handlers share a custom data format. Because the item is a view model that never leaves your application, you can make it an in-process format:
+这两个处理程序共用一种自定义数据格式。由于被拖的项目是个视图模型、从不离开你的应用，你可以把它做成进程内格式：
 
 ```csharp
 private static readonly DataFormat<ItemViewModel> ItemFormat =
     DataFormat.CreateInProcessFormat<ItemViewModel>("my-app-item");
 ```
 
-### Source list
+### 源列表 {#source-list}
 
 ```csharp
 private async void SourceList_PointerPressed(object? sender, PointerPressedEventArgs e)
@@ -143,9 +143,9 @@ private async void SourceList_PointerPressed(object? sender, PointerPressedEvent
 }
 ```
 
-### Target list
+### 目标列表 {#target-list}
 
-In the drop handler, retrieve your custom object and add it to the target collection:
+在放下的处理程序中取出你的自定义对象，并把它加进目标集合：
 
 ```csharp
 private void TargetList_Drop(object? sender, DragEventArgs e)
@@ -158,9 +158,9 @@ private void TargetList_Drop(object? sender, DragEventArgs e)
 }
 ```
 
-## Visual feedback during drag
+## 拖拽过程中的视觉反馈 {#visual-feedback-during-drag}
 
-Providing visual feedback helps your users understand where they can drop. This example changes the drop target's appearance when the user drags something over it, assuming the target is a `Border` declared in XAML with `x:Name="DropZone"` and `DragDrop.AllowDrop="True"`:
+给出视觉反馈能帮用户看清哪里可以放下。下面这个例子会在用户把东西拖到放置目标上方时改变其外观——这里假定目标是在 XAML 中声明、并带有 `x:Name="DropZone"` 和 `DragDrop.AllowDrop="True"` 的 `Border`：
 
 ```csharp
 public MainWindow()
@@ -188,15 +188,15 @@ public MainWindow()
 }
 ```
 
-Attach the handlers to the drop zone itself rather than to the window. Otherwise, the highlight appears whenever the user drags anywhere over the window.
+请把处理程序挂在放置区本身上，而不是整个窗口上。否则用户在窗口任意位置拖动时都会触发高亮。
 
 :::tip
-Reset the visual state in both the `DragLeave` and `Drop` handlers. If you only reset on `DragLeave`, the highlight will remain when the user completes a drop.
+记得在 `DragLeave` 和 `Drop` 两个处理程序里都重置视觉状态。若只在 `DragLeave` 中重置，用户真的放下之后高亮就会一直留着。
 :::
 
-## Custom data formats
+## 自定义数据格式 {#custom-data-formats}
 
-To transfer your own data, create a typed `DataFormat<T>` once and reuse it on both the drag source and the drop target:
+若要传输你自己的数据，请创建一个带类型的 `DataFormat<T>`，并在拖拽源和放置目标两边复用它：
 
 ```csharp
 // Set
@@ -210,32 +210,32 @@ if (e.DataTransfer.TryGetValue(MyTypeFormat) is { } obj)
 }
 ```
 
-`MyTypeFormat` is a static field created with a `DataFormat` method, for example `DataFormat.CreateInProcessFormat<MyType>("my-app-type")`. See [the `DataFormat<T>` API reference](/api/avalonia/input/dataformat-1) for a full list of available methods and supported data types.
+`MyTypeFormat` 是一个静态字段，由 `DataFormat` 方法创建，例如 `DataFormat.CreateInProcessFormat<MyType>("my-app-type")`。可用方法和支持的数据类型清单，请参阅 [`DataFormat<T>` API 参考](/api/avalonia/input/dataformat-1)。
 
 :::caution
-Identifiers passed to `CreateStringApplicationFormat` and `CreateBytesApplicationFormat` can contain only ASCII letters, digits, dots (`.`) and hyphens (`-`). MIME-style identifiers such as `application/x-my-type` are not accepted.
+传给 `CreateStringApplicationFormat` 和 `CreateBytesApplicationFormat` 的标识只能包含 ASCII 字母、数字、点号（`.`）和连字符（`-`），不接受 `application/x-my-type` 这类 MIME 风格的标识。
 :::
 
-## Edge cases and troubleshooting
+## 边界情况与排查 {#edge-cases-and-troubleshooting}
 
-- **Drop handler not firing:** Verify that `DragDrop.AllowDrop` is set to `True` on the target element and that your `DragOver` handler sets `e.DragEffects` to a value other than `None`.
-- **Drag starts on single click:** Add a distance threshold before calling `DoDragDropAsync`. Without one, a simple click triggers a drag, which can confuse your users.
-- **Custom data lost across processes:** Data in a format created with `CreateInProcessFormat` never leaves the current process. To drag custom data to another process, serialize it to a `string` or `byte[]` and use an application or platform format instead.
-- **Multiple data formats:** Call `Set` several times on the same `DataTransferItem`, once per format, then add the item to the `DataTransfer`. This lets drop targets choose the richest format they support.
-- **Disposed data during a drag:** Do not dispose the `DataTransfer` you pass to `DoDragDropAsync`. Avalonia disposes it when the drag completes.
+- **放下的处理程序没触发：**确认目标元素上的 `DragDrop.AllowDrop` 已设为 `True`，并且你的 `DragOver` 处理程序把 `e.DragEffects` 设成了 `None` 以外的值。
+- **单击就开始拖拽：**在调用 `DoDragDropAsync` 之前加一个距离阈值。否则随手一点就会触发拖拽，容易把用户搞糊涂。
+- **自定义数据跨进程后丢失：**用 `CreateInProcessFormat` 创建的格式，其数据从不离开当前进程。要把自定义数据拖到另一个进程，请先把它序列化成 `string` 或 `byte[]`，并改用应用格式或平台格式。
+- **多种数据格式：**对同一个 `DataTransferItem` 多次调用 `Set`，每种格式一次，然后把这个项目加入 `DataTransfer`。这样放置目标就能从中挑出自己支持的最丰富的格式。
+- **拖拽途中数据被释放：**不要释放你传给 `DoDragDropAsync` 的 `DataTransfer`，拖拽结束时 Avalonia 会负责释放。
 
-## Platform notes
+## 平台须知 {#platform-notes}
 
-| Platform | Support level | Notes |
+| 平台 | 支持程度 | 注释支持情况 |
 |---|---|---|
-| Windows | Full | File drops from Explorer, inter-app text and bitmap drops, and custom formats within your application all work. |
-| macOS | Full | File drops from Finder are supported. The system drag cursor respects `DragDropEffects`. |
-| Linux (X11/Wayland) | Full | Behavior matches Windows. Wayland compositors may differ slightly in cursor rendering. |
-| Browser (WebAssembly) | Limited | File drops from the OS file manager are supported in most browsers. Dragging between elements within your app requires a custom implementation because the browser handles pointer capture. |
-| iOS / Android | Not supported | Drag-and-drop is not available. Consider using long-press gestures or list reorder patterns for similar functionality. |
+| Windows | Full | 从资源管理器拖入文件、跨应用拖放文本和位图，以及应用内的自定义格式，全都能用。 |
+| macOS | Full | 支持从 Finder 拖入文件。系统的拖拽光标会遵循 `DragDropEffects`。 |
+| Linux (X11/Wayland) | Full | 行为与 Windows 一致。各家 Wayland 合成器在光标渲染上可能略有差异。 |
+| Browser (WebAssembly) | Limited | 多数浏览器都支持从操作系统文件管理器拖入文件。但应用内元素之间的拖动需要自行实现，因为指针捕获由浏览器接管。 |
+| iOS / Android | 不支持 | 无法使用拖放。想实现类似功能，可以考虑长按手势或列表重排的交互方式。 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Drag and Drop](/docs/input-interaction/drag-and-drop): Conceptual overview of the drag-and-drop system.
-- [Gestures](/docs/input-interaction/gestures): Touch and pointer gesture recognizers.
-- [Storage Provider](/docs/services/storage/storage-provider): File access APIs used with `IStorageItem`.
+- [拖放](/docs/input-interaction/drag-and-drop)：拖放机制的概念性介绍。
+- [手势](/docs/input-interaction/gestures)：触摸与指针的手势识别器。
+- [存储提供程序](/docs/services/storage/storage-provider)：与 `IStorageItem` 搭配使用的文件访问 API。

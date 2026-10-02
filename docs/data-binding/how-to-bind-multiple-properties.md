@@ -1,30 +1,30 @@
 ﻿---
 id: how-to-bind-multiple-properties
-title: How to bind multiple properties
-description: Bind multiple view model properties to controls and combine them with multi-value converters.
+title: 如何同时绑定多个属性
+description: 把多个视图模型属性绑定到控件，并用多值转换器把它们合成一个结果。
 doc-type: how-to
 ---
 
 import MultiBindingRgbScreenshot from '/img/guides/data/multibinding-rgb.gif';
 
-When a single target property depends on values from several sources, you can use [`MultiBinding`](/api/avalonia/data/multibinding) to aggregate multiple `Binding` objects and produce a combined result through an [`IMultiValueConverter`](/api/avalonia/data/converters/imultivalueconverter). The converter's `Convert` method runs each time any of the bound properties raises a change notification, so the target property stays in sync automatically.
+当一个目标属性的取值同时取决于多个来源时，可以用 [`MultiBinding`](/api/avalonia/data/multibinding) 把多个 `Binding` 聚合起来，再通过 [`IMultiValueConverter`](/api/avalonia/data/converters/imultivalueconverter) 产出合成结果。只要其中任一绑定属性发出变更通知，转换器的 `Convert` 方法就会重新运行，目标属性因此始终保持同步。
 
-`MultiBinding` works with view model properties, named controls, and other binding sources, just like a standard `Binding`.
+和普通的 `Binding` 一样，`MultiBinding` 可以用于视图模型属性、具名控件以及其他各种绑定源。
 
 :::caution
-`MultiBinding` only supports `BindingMode.OneTime` and `BindingMode.OneWay`. Two-way multi-bindings are not supported because there is no general way to reverse a multi-value conversion back to individual source values.
+`MultiBinding` 只支持 `BindingMode.OneTime` 和 `BindingMode.OneWay`。双向多重绑定是不支持的 —— 把一次多值转换反推回各个源值，并没有通用的办法。
 :::
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
-Before you start, make sure you are familiar with:
+开始之前，请先熟悉：
 
-- [Data binding syntax](/docs/data-binding/data-binding-syntax) and how `Binding` expressions work.
-- Declaring resources in XAML with `x:Key` so you can reference converters via `StaticResource`.
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)以及 `Binding` 表达式的工作方式。
+- 如何用 `x:Key` 在 XAML 中声明资源，以便通过 `StaticResource` 引用转换器。
 
 ## Understand `IMultiValueConverter`
 
-`IMultiValueConverter` is similar to `IValueConverter`, but it receives a list of values instead of a single value. There is no `ConvertBack` method because aggregate operations are generally irreversible.
+`IMultiValueConverter` 与 `IValueConverter` 类似，区别在于它接收的是一组值而不是单个值。它没有 `ConvertBack` 方法，因为聚合运算通常不可逆。
 
 ```csharp
 public interface IMultiValueConverter
@@ -33,26 +33,26 @@ public interface IMultiValueConverter
 }
 ```
 
-Your converter receives:
+你的转换器会收到：
 
-| Parameter | Purpose |
+| 参数 | 用途 |
 |---|---|
-| `values` | The current values from each child `Binding`, in declaration order. |
-| `targetType` | The type of the target property (for example, `IBrush` or `string`). |
-| `parameter` | An optional value from `ConverterParameter`. |
-| `culture` | The culture passed by the binding engine. |
+| `values` | 各个子 `Binding` 的当前值，顺序与声明顺序一致。 |
+| `targetType` | 目标属性的类型（例如 `IBrush` 或 `string`）。 |
+| `parameter` | 来自 `ConverterParameter` 的可选值。 |
+| `culture` | 绑定引擎传入的区域性信息。 |
 
 :::tip
-During initialization, some entries in `values` may be `UnsetValueType` because the bindings have not yet resolved. Always check for this before processing.
+初始化期间，`values` 中可能有若干项为 `UnsetValueType`，因为那些绑定还没解析完。处理之前务必先做判断。
 :::
 
-## Bind RGB sliders to a foreground brush
+## 把 RGB 滑块绑定到前景画刷 {#bind-rgb-sliders-to-a-foreground-brush}
 
-The following walkthrough binds three `NumericUpDown` controls (red, green, and blue channels) to the `Foreground` of a `TextBlock`, producing a live color preview.
+下面这个示例把三个 `NumericUpDown` 控件（红、绿、蓝三个通道）绑定到 `TextBlock` 的 `Foreground` 上，实时预览合成出来的颜色。
 
-### Step 1: Define the XAML layout
+### 第 1 步：编写 XAML 布局 {#step-1-define-the-xaml-layout}
 
-Because `MultiBinding` requires property-element syntax for its child bindings, you write each `<Binding>` element explicitly. Use `ElementName` to point at the named `NumericUpDown` controls.
+`MultiBinding` 的子绑定必须用属性元素语法，所以每个 `<Binding>` 元素都要显式写出来。用 `ElementName` 指向那几个具名的 `NumericUpDown` 控件。
 
 ```xml title="MainWindow.axaml"
 <Window xmlns="https://github.com/avaloniaui"
@@ -81,9 +81,9 @@ Because `MultiBinding` requires property-element syntax for its child bindings, 
 </Window>
 ```
 
-### Step 2: Implement the converter
+### 第 2 步：实现转换器 {#step-2-implement-the-converter}
 
-Type-check each value carefully. `NumericUpDown.Value` is `decimal?`, so your converter must handle `decimal`, `null`, and `UnsetValueType`. Return `BindingOperations.DoNothing` for any value that is not yet resolved so the target property keeps its previous value while the bindings initialize.
+务必仔细做类型判断。`NumericUpDown.Value` 是 `decimal?`，所以转换器要能应付 `decimal`、`null` 和 `UnsetValueType`。对尚未解析出来的值一律返回 `BindingOperations.DoNothing`，这样在绑定初始化期间，目标属性会保留原来的值。
 
 ```csharp title="RgbToBrushMultiConverter.cs"
 using System;
@@ -120,15 +120,15 @@ public sealed class RgbToBrushMultiConverter : IMultiValueConverter
 }
 ```
 
-### Step 3: Run the application
+### 第 3 步：运行程序 {#step-3-run-the-application}
 
-Drag any of the three sliders and the text color updates immediately:
+拖动三个滑块中的任意一个，文字颜色都会立即跟着变化：
 
 <Image light={MultiBindingRgbScreenshot} alt="App showing RGB sliders bound to multiple properties producing a combined color" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Simplify with `FuncMultiValueConverter`
+## 用 `FuncMultiValueConverter` 简化写法 {#simplify-with-funcmultivalueconverter}
 
-For straightforward conversions you can skip creating a full class. Avalonia's `FuncMultiValueConverter<TIn, TOut>` lets you define the logic as a lambda. Expose the converter as a static property so XAML can reference it with `x:Static`.
+对于逻辑简单的转换，不必专门写一个类。Avalonia 的 `FuncMultiValueConverter<TIn, TOut>` 允许你直接用 lambda 定义转换逻辑。把转换器暴露成静态属性，XAML 里就能用 `x:Static` 引用它。
 
 ```csharp title="Converters.cs"
 using System.Linq;
@@ -152,17 +152,17 @@ public static class Converters
 </TextBlock>
 ```
 
-This approach removes the need for a resource declaration and keeps simple converters close to their usage site.
+这种写法省掉了资源声明，也让简单的转换器待在它被用到的地方附近。
 
-## Tips
+## 小贴士 {#tips}
 
-- **Register converters as resources** when you reference them with `StaticResource`, or expose them as `static` fields and use `x:Static` to avoid the resource lookup entirely.
-- **Return `BindingOperations.DoNothing`** instead of `null` when your converter cannot produce a valid result yet. This tells the binding engine to leave the target property unchanged.
-- **Consider a `MarkupExtension`** to simplify the XAML syntax when you reuse the same `MultiBinding` pattern in many places.
+- **把转换器注册为资源** —— 如果你打算用 `StaticResource` 引用它的话；或者把它暴露成 `static` 字段并改用 `x:Static`，彻底省掉资源查找。
+- 转换器暂时产不出有效结果时，**请返回 `BindingOperations.DoNothing`** 而不是 `null`。这会告诉绑定引擎：保持目标属性不变。
+- 当同一套 `MultiBinding` 写法要在很多地方重复使用时，**不妨考虑写一个 `MarkupExtension`** 来简化 XAML。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [MultiBinding](/docs/data-binding/multi-binding): Full `MultiBinding` reference, including `StringFormat`, `FallbackValue`, and the properties table.
-- [How to create a custom data binding converter](/docs/data-binding/how-to-create-a-custom-data-binding-converter): Single-value `IValueConverter` implementations.
-- [Built-in data binding converters](/docs/data-binding/built-in-data-binding-converters): Converters shipped with Avalonia.
-- [Data binding syntax](/docs/data-binding/data-binding-syntax): Binding parameters including `StringFormat` and `ConverterParameter`.
+- [MultiBinding](/docs/data-binding/multi-binding)：`MultiBinding` 的完整参考，包含 `StringFormat`、`FallbackValue` 以及属性一览表。
+- [如何创建自定义数据绑定转换器](/docs/data-binding/how-to-create-a-custom-data-binding-converter)：单值 `IValueConverter` 的实现方式。
+- [内置数据绑定转换器](/docs/data-binding/built-in-data-binding-converters)：Avalonia 自带的转换器。
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定参数，包括 `StringFormat` 和 `ConverterParameter`。

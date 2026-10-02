@@ -3,11 +3,11 @@ id: performance
 title: Performance Optimization
 ---
 
-## Reducing startup time with ReadyToRun
+## 用 ReadyToRun 缩短启动时间 {#reducing-startup-time-with-readytorun}
 
-XPF applications can benefit significantly from ReadyToRun (R2R) compilation, which pre-compiles assemblies to native code. WPF libraries shipped by Microsoft are normally pre-compiled as R2R, but XPF libraries are not by default.
+ReadyToRun（R2R）编译会把程序集预先编译成本机代码，XPF 应用从中受益颇多。微软发布的 WPF 库通常已做过 R2R 预编译，而 XPF 的库默认没有。
 
-Enable ReadyToRun in your `.csproj`:
+在你的 `.csproj` 中启用 ReadyToRun：
 
 ```xml
 <PropertyGroup>
@@ -15,23 +15,23 @@ Enable ReadyToRun in your `.csproj`:
 </PropertyGroup>
 ```
 
-Then publish with a runtime identifier:
+然后带上运行时标识符发布：
 
 ```bash
 dotnet publish -r linux-x64 -c Release
 ```
 
-This can reduce application startup time substantially, particularly on Linux embedded devices.
+这能显著缩短应用的启动时间，在 Linux 嵌入式设备上尤其明显。
 
 :::note
-On Linux, ReadyToRun may change how native `.so` libraries are resolved. See [Linux: Native Library Resolution](/xpf/platforms/linux#native-library-resolution-with-readytorun) for details.
+在 Linux 上，ReadyToRun 可能改变原生 `.so` 库的解析方式。细节请见 [Linux：原生库解析](/xpf/platforms/linux#native-library-resolution-with-readytorun)。
 :::
 
-## Rendering performance
+## 渲染性能 {#rendering-performance}
 
-### Configuring Skia and composition options
+### 配置 Skia 与合成选项 {#configuring-skia-and-composition-options}
 
-XPF uses Skia as its rendering engine. You can tune rendering performance through `SkiaOptions` and `CompositionOptions` in a [custom initialization](/xpf/configuration/customizing-initialization):
+XPF 以 Skia 作为渲染引擎。你可以在[自定义初始化](/xpf/configuration/customizing-initialization)中通过 `SkiaOptions` 和 `CompositionOptions` 调优渲染性能：
 
 ```csharp
 using Avalonia;
@@ -57,33 +57,33 @@ AppBuilder.Configure<AvaloniaUI.Xpf.Helpers.DefaultXpfAvaloniaApplication>()
     });
 ```
 
-- `MaxGpuResourceSizeBytes`: Increases the GPU texture cache, reducing re-uploads for applications with many visual elements.
-- `UseRegionDirtyRectClipping`: Limits rendering to only the regions of the screen that have changed, improving performance for partial updates.
+- `MaxGpuResourceSizeBytes`：增大 GPU 纹理缓存，对于视觉元素众多的应用可减少重复上传。
+- `UseRegionDirtyRectClipping`：只渲染屏幕上发生变化的区域，局部更新时性能更好。
 
-### Blur effects
+### 模糊效果 {#blur-effects}
 
-Blur effects (`BlurEffect`, `DropShadowEffect` with blur) are computationally expensive in Skia. A complex UI with blur enabled can reduce the framerate from 60fps to 30fps or lower. If rendering performance is a concern:
+模糊效果（`BlurEffect`、带模糊的 `DropShadowEffect`）在 Skia 中相当吃算力。复杂界面一旦开启模糊，帧率可能从 60fps 掉到 30fps 甚至更低。若你在意渲染性能：
 
-- Remove or reduce blur radii where possible
-- Consider using solid color backgrounds instead of acrylic/blur effects
-- Test on your target hardware early
+- 能去掉模糊就去掉，去不掉也尽量把模糊半径调小
+- 考虑用纯色背景代替亚克力/模糊效果
+- 尽早在你的目标硬件上实测
 
-## Dynamic XAML loading
+## 动态加载 XAML {#dynamic-xaml-loading}
 
-`XamlReader.Load` parses and instantiates XAML at runtime. For large XAML documents, this can block the UI thread for several seconds. This is a fundamental limitation shared with WPF.
+`XamlReader.Load` 会在运行时解析并实例化 XAML。面对大型 XAML 文档，它可能把 UI 线程阻塞好几秒。这是与 WPF 共有的根本性限制。
 
-Strategies for improving dynamic XAML performance:
+改善动态 XAML 性能的几种思路：
 
-- **Precompile XAML into assemblies**: If the XAML content is known at build time, compile it into a separate assembly and load the assembly dynamically at runtime. Compiled XAML (BAML) loads significantly faster than raw XAML parsing.
-- **Break up large XAML**: Split large XAML documents into smaller pieces and load them incrementally.
-- **Load on a background thread**: Parse the XAML string on a background thread, then instantiate the resulting object tree on the UI thread.
+- **把 XAML 预编译进程序集**：若 XAML 内容在构建期就已确定，可以把它编译进一个单独的程序集，运行时再动态加载。编译后的 XAML（BAML）比直接解析原始 XAML 快得多。
+- **把大 XAML 拆小**：把大型 XAML 文档切成若干小块，分批加载。
+- **在后台线程加载**：在后台线程上解析 XAML 字符串，再到 UI 线程上实例化出对象树。
 
 :::note
-BAML (compiled XAML) provides the best loading performance, but there is no supported public API for creating loose BAML files. Compile XAML into assemblies instead.
+BAML（编译后的 XAML）加载性能最好，但没有受支持的公开 API 可用来生成独立的 BAML 文件，所以还是把 XAML 编译进程序集吧。
 :::
 
-## Embedding high-performance content
+## 嵌入高性能内容 {#embedding-high-performance-content}
 
-For performance-critical rendering (such as real-time meters, audio visualizations, or 3D content), consider embedding Avalonia controls in your XPF application using [AvaloniaHost](/xpf/interop/embedding-avalonia-in-xpf). Avalonia's `CompositionCustomVisuals` API allows rendering directly on the composition thread, bypassing the WPF dispatcher entirely.
+对于性能吃紧的渲染场景（比如实时仪表、音频可视化或 3D 内容），不妨用 [AvaloniaHost](/xpf/interop/embedding-avalonia-in-xpf) 在 XPF 应用中嵌入 Avalonia 控件。Avalonia 的 `CompositionCustomVisuals` API 允许直接在合成线程上渲染，彻底绕开 WPF 的 dispatcher。
 
-For OpenGL content, see the [OpenGL sample](https://github.com/AvaloniaUI/Avalonia-XPF-Samples/tree/master/src/OpenGLSample) which demonstrates embedding OpenGL rendering within an XPF window using `ICompositionGpuInterop`.
+OpenGL 内容可参考 [OpenGL 示例](https://github.com/AvaloniaUI/Avalonia-XPF-Samples/tree/master/src/OpenGLSample)，它演示了如何用 `ICompositionGpuInterop` 在 XPF 窗口中嵌入 OpenGL 渲染。

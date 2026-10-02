@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InlineWrapper Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Authoring</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Authoring</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -52,23 +52,23 @@ public struct InlineWrapper
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> InlineWrapper
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> InlineWrapper
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;InlineWrapper&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;InlineWrapper&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 A reader that knows a run's whole chain up front - an innermost run inside bold inside
 underline, say - describes it as a span of these and pays nothing to describe it: the
 builder reads the span and constructs the snapshot nodes directly, where the draft path
 allocates a draft object, a child list, and that list's backing array per level.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [InlineWrapper](#uid-58265dc91d) | Initializes a wrapper of `kind` carrying the given formatting. |
 
@@ -76,7 +76,7 @@ allocates a draft object, a child list, and that list's backing array per level.
 
 <span id="uid-58265dc91d"></span>
 
-### InlineWrapper Constructor
+### InlineWrapper 构造函数 {#inlinewrapper-constructor}
 
 Initializes a wrapper of `kind` carrying the given formatting.
 
@@ -84,7 +84,7 @@ Initializes a wrapper of `kind` carrying the given formatting.
 public InlineWrapper(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind, Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting formatting, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting elementFormatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `kind` [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)
 
@@ -97,35 +97,35 @@ public InlineWrapper(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-c30e2eae51) | No summary available. |
-| [GetHashCode](#uid-eddd899fe2) | No summary available. |
+| [Equals（2 个重载）](#uid-c30e2eae51) | 暂无摘要。 |
+| [GetHashCode](#uid-eddd899fe2) | 暂无摘要。 |
 | [Span](#uid-9725b76cb4) | A span wrapper carrying arbitrary formatting, matching [Avalonia.Controls.Documents.Serialization.Authoring.SpanInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SpanInlineDraft). This is where formatting that no named wrapper represents belongs. |
-| [ToString](#uid-72b061fb35) | No summary available. |
+| [ToString](#uid-72b061fb35) | 暂无摘要。 |
 
 <span id="uid-c30e2eae51"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cae639ec72"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper](xref:Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -136,18 +136,18 @@ bool
 
 <span id="uid-1d181434bb"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -158,13 +158,13 @@ bool
 
 <span id="uid-eddd899fe2"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -175,7 +175,7 @@ int
 
 <span id="uid-9725b76cb4"></span>
 
-### Span Method
+### Span 方法 {#span-method}
 
 A span wrapper carrying arbitrary formatting, matching [Avalonia.Controls.Documents.Serialization.Authoring.SpanInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SpanInlineDraft).
 This is where formatting that no named wrapper represents belongs.
@@ -184,7 +184,7 @@ This is where formatting that no named wrapper represents belongs.
 public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Span(Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting formatting, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting elementFormatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting)
 
@@ -192,7 +192,7 @@ public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Span(Av
 `elementFormatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper](xref:Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper)
 
@@ -203,39 +203,39 @@ public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Span(Av
 
 <span id="uid-72b061fb35"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Bold](#uid-3e3f0fb980) | A bold wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft). |
+| [Bold](#uid-3e3f0fb980) | 一个加粗包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft) 对应。 |
 | [ElementFormatting](#uid-4bba4622d8) | Gets the element formatting the wrapper carries (font, foreground, background). |
 | [Formatting](#uid-77ccbad402) | Gets the inline formatting the wrapper carries (text decorations, baseline alignment). |
-| [Italic](#uid-2d2685dc21) | An italic wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft). |
-| [Kind](#uid-3dabe91c4d) | Gets the [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind) of the wrapping element. |
-| [Subscript](#uid-46bda0eabb) | A subscript wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft). |
-| [Superscript](#uid-cfeb803709) | A superscript wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft). |
-| [Underline](#uid-f2174622b2) | An underline wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft). |
+| [Italic](#uid-2d2685dc21) | 一个斜体包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft) 对应。 |
+| [Kind](#uid-3dabe91c4d) | 获取外层包装元素的 [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)。 |
+| [Subscript](#uid-46bda0eabb) | 一个下标包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft) 对应。 |
+| [Superscript](#uid-cfeb803709) | 一个上标包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft) 对应。 |
+| [Underline](#uid-f2174622b2) | 一个下划线包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft) 对应。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3e3f0fb980"></span>
 
-### Bold Property
+### Bold 属性 {#bold-property}
 
-A bold wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft).
+一个加粗包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.BoldInlineDraft) 对应。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Bold { get; set; }
@@ -247,7 +247,7 @@ public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Bold { 
 
 <span id="uid-4bba4622d8"></span>
 
-### ElementFormatting Property
+### ElementFormatting 属性 {#elementformatting-property}
 
 Gets the element formatting the wrapper carries (font, foreground, background).
 
@@ -261,7 +261,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting El
 
 <span id="uid-77ccbad402"></span>
 
-### Formatting Property
+### Formatting 属性 {#formatting-property}
 
 Gets the inline formatting the wrapper carries (text decorations, baseline alignment).
 
@@ -275,9 +275,9 @@ public Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting Formatt
 
 <span id="uid-2d2685dc21"></span>
 
-### Italic Property
+### Italic 属性 {#italic-property}
 
-An italic wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft).
+一个斜体包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.ItalicInlineDraft) 对应。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Italic { get; set; }
@@ -289,9 +289,9 @@ public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Italic 
 
 <span id="uid-3dabe91c4d"></span>
 
-### Kind Property
+### Kind 属性 {#kind-property}
 
-Gets the [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind) of the wrapping element.
+获取外层包装元素的 [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Kind { get; set; }
@@ -303,9 +303,9 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Kind { get; se
 
 <span id="uid-46bda0eabb"></span>
 
-### Subscript Property
+### Subscript 属性 {#subscript-property}
 
-A subscript wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft).
+一个下标包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SubscriptInlineDraft) 对应。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Subscript { get; set; }
@@ -317,9 +317,9 @@ public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Subscri
 
 <span id="uid-cfeb803709"></span>
 
-### Superscript Property
+### Superscript 属性 {#superscript-property}
 
-A superscript wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft).
+一个上标包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.SuperscriptInlineDraft) 对应。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Superscript { get; set; }
@@ -331,9 +331,9 @@ public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Supersc
 
 <span id="uid-f2174622b2"></span>
 
-### Underline Property
+### Underline 属性 {#underline-property}
 
-An underline wrapper, matching [Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft).
+一个下划线包装器，与 [Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft](xref:Avalonia.Controls.Documents.Serialization.Authoring.UnderlineInlineDraft) 对应。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Authoring.InlineWrapper Underline { get; set; }

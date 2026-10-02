@@ -20,28 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IRootProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Provider</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Provider</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IRootProvider.cs">IRootProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IRootProvider.cs">IRootProvider.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Exposes methods and properties to support UI Automation client access to the root of an
-automation tree.
+向 UI 自动化客户端暴露方法与属性，以便访问自动化树的根。
 
 </div>
 
@@ -53,11 +52,10 @@ public interface IRootProvider
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-This interface is implemented by the [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) class, and should only
-be implemented on true root elements, such as Windows. To embed an automation tree, use
-[Avalonia.Automation.Provider.IEmbeddedRootProvider](xref:Avalonia.Automation.Provider.IEmbeddedRootProvider) instead.
+该接口由 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) 类实现，且只应在真正的根元素（比如 Window）上实现。
+若要嵌入一棵自动化树，请改用 [Avalonia.Automation.Provider.IEmbeddedRootProvider](xref:Avalonia.Automation.Provider.IEmbeddedRootProvider)。
 
 </ApiRefPage>
 

@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CellIndex Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Represents a cell in a [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
+表示 [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) 中的一个单元格。
 
 </div>
 
@@ -50,65 +50,65 @@ public struct CellIndex
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> CellIndex
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> CellIndex
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;CellIndex&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;CellIndex&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CellIndex](#uid-326651a7ed) | Represents a cell in a [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid). |
+| [CellIndex](#uid-326651a7ed) | 表示 [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) 中的一个单元格。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-326651a7ed"></span>
 
-### CellIndex Constructor
+### CellIndex 构造函数 {#cellindex-constructor}
 
-Represents a cell in a [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid).
+表示 [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) 中的一个单元格。
 
 ```csharp
 public CellIndex(int ColumnIndex, Avalonia.Controls.IndexPath RowIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `ColumnIndex` int
 
-The index of the cell in the [Avalonia.Controls.TreeDataGrid.Columns](xref:Avalonia.Controls.TreeDataGrid.Columns) collection.
+该单元格在 [Avalonia.Controls.TreeDataGrid.Columns](xref:Avalonia.Controls.TreeDataGrid.Columns) 集合中的索引。
 
 
 `RowIndex` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
-The hierarchical index of the row model in the data source.
+该行模型在数据源中的层级索引。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-61f7d3d1e5) | No summary available. |
-| [Equals (2 overloads)](#uid-9f8f6efc10) | No summary available. |
-| [GetHashCode](#uid-59879d3065) | No summary available. |
-| [ToString](#uid-5840b33103) | No summary available. |
+| [Deconstruct](#uid-61f7d3d1e5) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-9f8f6efc10) | 暂无摘要。 |
+| [GetHashCode](#uid-59879d3065) | 暂无摘要。 |
+| [ToString](#uid-5840b33103) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-61f7d3d1e5"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(int& ColumnIndex, Avalonia.Controls.IndexPath& RowIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `ColumnIndex` int&amp;
 
@@ -120,24 +120,24 @@ public void Deconstruct(int& ColumnIndex, Avalonia.Controls.IndexPath& RowIndex)
 
 <span id="uid-9f8f6efc10"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-aefc8b9d1c"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.CellIndex other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.CellIndex](xref:Avalonia.Controls.CellIndex)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -148,18 +148,18 @@ bool
 
 <span id="uid-58e9aa5785"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -170,13 +170,13 @@ bool
 
 <span id="uid-59879d3065"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -187,33 +187,33 @@ int
 
 <span id="uid-5840b33103"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ColumnIndex](#uid-58106fbe94) | The index of the cell in the [Avalonia.Controls.TreeDataGrid.Columns](xref:Avalonia.Controls.TreeDataGrid.Columns) collection. |
-| [RowIndex](#uid-0b48722cc9) | The hierarchical index of the row model in the data source. |
+| [ColumnIndex](#uid-58106fbe94) | 该单元格在 [Avalonia.Controls.TreeDataGrid.Columns](xref:Avalonia.Controls.TreeDataGrid.Columns) 集合中的索引。 |
+| [RowIndex](#uid-0b48722cc9) | 该行模型在数据源中的层级索引。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-58106fbe94"></span>
 
-### ColumnIndex Property
+### ColumnIndex 属性 {#columnindex-property}
 
-The index of the cell in the [Avalonia.Controls.TreeDataGrid.Columns](xref:Avalonia.Controls.TreeDataGrid.Columns) collection.
+该单元格在 [Avalonia.Controls.TreeDataGrid.Columns](xref:Avalonia.Controls.TreeDataGrid.Columns) 集合中的索引。
 
 ```csharp
 public int ColumnIndex { get; set; }
@@ -225,9 +225,9 @@ public int ColumnIndex { get; set; }
 
 <span id="uid-0b48722cc9"></span>
 
-### RowIndex Property
+### RowIndex 属性 {#rowindex-property}
 
-The hierarchical index of the row model in the data source.
+该行模型在数据源中的层级索引。
 
 ```csharp
 public Avalonia.Controls.IndexPath RowIndex { get; set; }

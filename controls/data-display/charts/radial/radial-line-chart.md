@@ -1,24 +1,24 @@
 ---
 id: radial-line-chart
-title: Radial line chart
-description: Plots data points on a polar coordinate system connected by lines, suitable for showing how a variable fluctuates across cyclical or directional categories.
+title: 径向折线图
+description: 在极坐标系上绘制数据点并以线相连，适合呈现某个变量在周期性或方向性类别上的起伏。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Radial line charts plot data points on a `PolarChart` and connect them with lines, as defined by a `PolarLineSeries`. They are ideal for showing how a single variable fluctuates across cyclical categories.
+径向折线图在 `PolarChart` 上绘制数据点并以线相连，具体由 `PolarLineSeries` 定义。要呈现单个变量在周期性类别上的起伏，它最为合适。
 
-## When to use
-- **Daily activity**: Mapping heart rate or energy levels across 24 hours.
-- **Directional data**: Visualizing readings from a 360-degree sensor.
-- **Symmetry analysis**: Checking for patterns and balance in multi-variate profiles.
+## 适用场景 {#when-to-use}
+- **日常活动**：呈现 24 小时内的心率或精力水平。
+- **方向性数据**：呈现 360 度传感器的读数。
+- **对称性分析**：在多变量画像中检查规律与均衡。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Radial line charts plot data points on a `PolarChart` and connect them with line
 </PolarChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record ActivityPoint(double Angle, double Radius);
 
@@ -47,13 +47,13 @@ public ObservableCollection<ActivityPoint> RadialPoints { get; } = new()
 };
 ```
 
-## Common properties: `PolarLineSeries`
+## 公共属性：`PolarLineSeries` {#common-properties-polarlineseries}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of points to connect. | `null` |
-| `AnglePath` | Path of the angle (X). | `null` |
-| `RadiusPath` | Path of the radius (Y). | `null` |
-| `ShowMarkers` | Whether to show markers at each data point. | `false` |
-| `MarkerSize` | Size of the markers. | `8.0` |
-| `IsClosed` | Whether the first and last data points are connected. | `false` |
+| `ItemsSource` | 待连接的数据点集合。 | `null` |
+| `AnglePath` | 角度（X）的路径。 | `null` |
+| `RadiusPath` | 半径（Y）的路径。 | `null` |
+| `ShowMarkers` | 是否在每个数据点处显示标记。 | `false` |
+| `MarkerSize` | 标记的大小。 | `8.0` |
+| `IsClosed` | 首尾两个数据点是否相连。 | `false` |

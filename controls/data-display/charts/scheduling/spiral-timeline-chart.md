@@ -1,7 +1,7 @@
 ---
 id: spiral-timeline-chart
-title: Spiral timeline
-description: Wraps a chronological sequence into a spiral to reveal both long-term trends and recurring cyclical patterns within the same visualization.
+title: 螺旋时间线
+description: 把时间序列卷成一条螺线，在同一张图里同时呈现长期走势和反复出现的周期规律。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,20 +10,20 @@ tags:
 import chartsTimelineSpiral from '/img/controls/charts/charts-timeline-spiral.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Spiral timelines visualize data that has both a strong sequential component and a cyclical pattern. By wrapping the timeline into a spiral, long-term trends and short-term repetitions become visible.
+螺旋时间线适合呈现那些既有明显先后顺序、又带周期规律的数据。把时间轴卷成螺线之后，长期趋势和短期往复都能看得清楚。
 
 <Image light={chartsTimelineSpiral} maxWidth={400} position="center" cornerRadius="true" alt="Spiral timeline chart wrapping chronological data into an outward spiral to show both long-term trends and cyclical patterns." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Long-term cyclical data**: Visualizing annual climate changes over several decades.
-- **System logs**: Detecting patterns in server activity across weeks or months.
-- **Biological rhythms**: Showing sleep patterns or activity cycles over time.
+- **长周期数据**：呈现数十年间逐年的气候变化。
+- **系统日志**：发现服务器活动在数周或数月间的规律。
+- **生理节律**：呈现睡眠模式或活动周期随时间的变化。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -36,7 +36,7 @@ Spiral timelines visualize data that has both a strong sequential component and 
                                              LabelPath="Event" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 using System;
@@ -53,14 +53,14 @@ public ObservableCollection<SpiralEvent> SpiralEvents { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of points on the spiral. | `null` |
-| `DatePath` | Path to the chronological property. | `null` |
-| `ValuePath` | Numerical property determining point size/color. | `null` |
-| `LabelPath` | Path to the text label for each point. | `null` |
-| `Turns` | Number of turns in the spiral. | `3.0` |
-| `InnerRadius` | Inner radius of the spiral. | `30.0` |
-| `MarkerSize` | Size of the data point markers. | `8.0` |
+| `ItemsSource` | 螺线上各数据点的集合。 | `null` |
+| `DatePath` | 指向时间属性的路径。 | `null` |
+| `ValuePath` | 决定数据点大小/颜色的数值属性。 | `null` |
+| `LabelPath` | 指向各数据点文本标签的路径。 | `null` |
+| `Turns` | 螺线的圈数。 | `3.0` |
+| `InnerRadius` | 螺线的内半径。 | `30.0` |
+| `MarkerSize` | 数据点标记的大小。 | `8.0` |

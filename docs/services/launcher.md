@@ -1,33 +1,33 @@
 ---
 id: launcher
 title: Launcher
-description: Learn how to use the Avalonia Launcher service to open files, folders, and URIs in the user's default application.
+description: 了解如何用 Avalonia 的 Launcher 服务，以用户的默认应用打开文件、文件夹和 URI。
 doc-type: explanation
 ---
 
-The `Launcher` service allows you to open a file, folder, or URI in the default application associated with that item. For example, you can use it to open a URL in the user's default browser, or open a document in the application registered to handle its file type.
+`Launcher` 服务让你能用与某项内容关联的默认应用打开文件、文件夹或 URI。比如用它在用户的默认浏览器中打开网址，或者用注册处理该文件类型的应用打开文档。
 
-You can access the `Launcher` through an instance of `TopLevel` or `Window`. For more details on accessing `TopLevel`, visit the [TopLevel](/docs/fundamentals/top-level) page.
+你可以通过 `TopLevel` 或 `Window` 的实例取得 `Launcher`。关于如何访问 `TopLevel`，更多细节请看 [TopLevel](/docs/fundamentals/top-level) 页。
 
 ```csharp
 var launcher = TopLevel.GetTopLevel(control).Launcher;
 ```
 
-## Methods
+## 方法 {#methods}
 
 ### `LaunchUriAsync`
 
-Starts the default application associated with the URI scheme name for the specified URI.
+针对指定的 URI，启动与其方案名关联的默认应用。
 
 ```csharp
 Task<bool> LaunchUriAsync(Uri uri)
 ```
 
 :::note
-The input URI can have any scheme, including custom ones. However, it is up to the operating system to accept or deny the launcher request.
+传入的 URI 可以是任意方案，包括自定义方案。不过接不接受这次启动请求，要看操作系统的脸色。
 :::
 
-**Example: opening a URL in the default browser**
+**示例：在默认浏览器中打开网址**
 
 ```csharp
 var success = await launcher.LaunchUriAsync(new Uri("https://avaloniaui.net"));
@@ -35,17 +35,17 @@ var success = await launcher.LaunchUriAsync(new Uri("https://avaloniaui.net"));
 
 ### `LaunchFileAsync`
 
-Starts the default application associated with the specified storage file or folder.
+启动与指定存储文件或文件夹关联的默认应用。
 
 ```csharp
 Task<bool> LaunchFileAsync(IStorageItem storageItem);
 ```
 
 :::note
-`IStorageItem` is a file or folder retrieved from sandboxed APIs such as `IStorageProvider` or `IClipboard`. If you only target non-sandboxed desktop platforms, consider using the extension methods that accept `FileInfo` or `DirectoryInfo` instead.
+`IStorageItem` 是从 `IStorageProvider` 或 `IClipboard` 这类沙箱 API 取得的文件或文件夹。若你只面向非沙箱的桌面平台，不妨改用接受 `FileInfo` 或 `DirectoryInfo` 的那些扩展方法。
 :::
 
-**Example: opening a file picked by the user**
+**示例：打开用户选中的文件**
 
 ```csharp
 var files = await storageProvider.OpenFilePickerAsync(new FilePickerOpenOptions());
@@ -55,13 +55,13 @@ if (files.Count > 0)
 }
 ```
 
-## Extension methods
+## 扩展方法 {#extension-methods}
 
-The following extension methods are available for convenience when you are targeting non-sandboxed desktop platforms (Windows, macOS, Linux).
+面向非沙箱桌面平台（Windows、macOS、Linux）时，下面这些扩展方法用起来更顺手。
 
 ### `LaunchFileInfoAsync`
 
-Starts the default application associated with the specified file.
+启动与指定文件关联的默认应用。
 
 ```csharp
 Task<bool> LaunchFileInfoAsync(FileInfo fileInfo)
@@ -76,7 +76,7 @@ var success = await launcher.LaunchFileInfoAsync(file);
 
 ### `LaunchDirectoryInfoAsync`
 
-Starts the default application associated with the specified directory (folder). This typically opens the folder in the system file manager.
+启动与指定目录（文件夹）关联的默认应用，通常就是在系统文件管理器中打开该文件夹。
 
 ```csharp
 Task<bool> LaunchDirectoryInfoAsync(DirectoryInfo directoryInfo);
@@ -89,21 +89,21 @@ var folder = new DirectoryInfo("/path/to/folder");
 var success = await launcher.LaunchDirectoryInfoAsync(folder);
 ```
 
-## Return values
+## 返回值 {#return-values}
 
-Each of these methods returns a `bool` indicating whether the operating system was able to handle the request. A return value of `true` does not guarantee that an application actually opened the item. It only indicates that the OS accepted the request without error.
+这些方法都返回一个 `bool`，指示操作系统是否受理了该请求。返回 `true` 并不保证真有应用把该项打开了，只说明系统接下了这个请求且没有报错。
 
-## Platform compatibility
+## 平台兼容性 {#platform-compatibility}
 
-| Feature        | Windows | macOS | Linux | Browser | Android |  iOS |
+| 特性        | Windows | macOS | Linux | 浏览器 | Android |  iOS |
 |---------------|-------|-------|-------|-------|-------|-------|
 | `LaunchUriAsync` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | `LaunchFileAsync` | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ |
 | `LaunchFileInfoAsync` | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ |
 | `LaunchDirectoryInfoAsync` | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Storage Provider](/docs/services/storage/storage-provider): File and folder management API.
-- [Clipboard](/docs/services/clipboard): Reading and writing clipboard data.
-- [TopLevel](/docs/fundamentals/top-level): Accessing platform services from controls.
+- [存储提供程序](/docs/services/storage/storage-provider)：文件与文件夹管理 API。
+- [剪贴板](/docs/services/clipboard)：读写剪贴板数据。
+- [TopLevel](/docs/fundamentals/top-level)：从控件访问平台服务。

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EglContext Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.OpenGL.Egl</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.OpenGL.Egl</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.OpenGL</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.OpenGL</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglContext.cs">EglContext.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.OpenGL/Egl/EglContext.cs">EglContext.cs</a>
 </div>
 
 </div>
@@ -48,42 +48,42 @@ public class EglContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglContext
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EglContext
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../ioptionalfeatureprovider">IOptionalFeatureProvider</a>, <a href="../iglcontext">IGlContext</a>, <a href="../../platform/iplatformgraphicscontext">IPlatformGraphicsContext</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../ioptionalfeatureprovider">IOptionalFeatureProvider</a>, <a href="../iglcontext">IGlContext</a>, <a href="../../platform/iplatformgraphicscontext">IPlatformGraphicsContext</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CreateSharedContext](#uid-b84700637f) | No summary available. |
-| [Dispose](#uid-d128b06ef9) | No summary available. |
-| [EnsureCurrent](#uid-075dc13876) | No summary available. |
-| [EnsureLocked](#uid-64200f5857) | No summary available. |
-| [IsSharedWith](#uid-3c1f0760a6) | No summary available. |
-| [MakeCurrent (2 overloads)](#uid-55e38d3faf) | No summary available. |
-| [NotifyContextLost](#uid-ba613861c5) | No summary available. |
-| [TryGetFeature](#uid-24b6a55332) | No summary available. |
+| [CreateSharedContext](#uid-b84700637f) | 暂无摘要。 |
+| [Dispose](#uid-d128b06ef9) | 暂无摘要。 |
+| [EnsureCurrent](#uid-075dc13876) | 暂无摘要。 |
+| [EnsureLocked](#uid-64200f5857) | 暂无摘要。 |
+| [IsSharedWith](#uid-3c1f0760a6) | 暂无摘要。 |
+| [MakeCurrent (2 overloads)](#uid-55e38d3faf) | 暂无摘要。 |
+| [NotifyContextLost](#uid-ba613861c5) | 暂无摘要。 |
+| [TryGetFeature](#uid-24b6a55332) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b84700637f"></span>
 
-### CreateSharedContext Method
+### CreateSharedContext 方法 {#createsharedcontext-method}
 
 ```csharp
 public Avalonia.OpenGL.IGlContext CreateSharedContext(System.Collections.Generic.IEnumerable<Avalonia.OpenGL.GlVersion> preferredVersions)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `preferredVersions` System.Collections.Generic.IEnumerable&lt;[Avalonia.OpenGL.GlVersion](xref:Avalonia.OpenGL.GlVersion)&gt;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.OpenGL.IGlContext](xref:Avalonia.OpenGL.IGlContext)
 
@@ -94,7 +94,7 @@ public Avalonia.OpenGL.IGlContext CreateSharedContext(System.Collections.Generic
 
 <span id="uid-d128b06ef9"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -106,13 +106,13 @@ public void Dispose()
 
 <span id="uid-075dc13876"></span>
 
-### EnsureCurrent Method
+### EnsureCurrent 方法 {#ensurecurrent-method}
 
 ```csharp
 public IDisposable EnsureCurrent()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 IDisposable
 
@@ -123,13 +123,13 @@ IDisposable
 
 <span id="uid-64200f5857"></span>
 
-### EnsureLocked Method
+### EnsureLocked 方法 {#ensurelocked-method}
 
 ```csharp
 public IDisposable EnsureLocked()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 IDisposable
 
@@ -140,18 +140,18 @@ IDisposable
 
 <span id="uid-3c1f0760a6"></span>
 
-### IsSharedWith Method
+### IsSharedWith 方法 {#issharedwith-method}
 
 ```csharp
 public bool IsSharedWith(Avalonia.OpenGL.IGlContext context)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `context` [Avalonia.OpenGL.IGlContext](xref:Avalonia.OpenGL.IGlContext)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -166,13 +166,13 @@ bool
 
 <span id="uid-41e17bb438"></span>
 
-#### MakeCurrent Method
+#### MakeCurrent 方法 {#makecurrent-method}
 
 ```csharp
 public IDisposable MakeCurrent()
 ```
 
-##### Returns
+##### 返回值 {#returns-4}
 
 IDisposable
 
@@ -183,18 +183,18 @@ IDisposable
 
 <span id="uid-170563eec0"></span>
 
-#### MakeCurrent Method
+#### MakeCurrent 方法 {#makecurrent-method-1}
 
 ```csharp
 public IDisposable MakeCurrent(Avalonia.OpenGL.Egl.EglSurface surface)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `surface` [Avalonia.OpenGL.Egl.EglSurface](xref:Avalonia.OpenGL.Egl.EglSurface)
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 IDisposable
 
@@ -205,7 +205,7 @@ IDisposable
 
 <span id="uid-ba613861c5"></span>
 
-### NotifyContextLost Method
+### NotifyContextLost 方法 {#notifycontextlost-method}
 
 ```csharp
 public void NotifyContextLost()
@@ -217,45 +217,45 @@ public void NotifyContextLost()
 
 <span id="uid-24b6a55332"></span>
 
-### TryGetFeature Method
+### TryGetFeature 方法 {#trygetfeature-method}
 
 ```csharp
 public object TryGetFeature(Type featureType)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
-`featureType` Type
+`featureType` 类型
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 object
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanCreateSharedContext](#uid-7a3c045abd) | No summary available. |
-| [Context](#uid-7c3293dffe) | No summary available. |
-| [Display](#uid-ff39096414) | No summary available. |
-| [EglInterface](#uid-15ea76babb) | No summary available. |
-| [GlInterface](#uid-6c20077e10) | No summary available. |
-| [IsCurrent](#uid-e2a0fd2c9d) | No summary available. |
-| [IsLost](#uid-91022ae078) | No summary available. |
-| [OffscreenSurface](#uid-f0f550bd4e) | No summary available. |
-| [SampleCount](#uid-7912f57684) | No summary available. |
-| [StencilSize](#uid-2313731b0c) | No summary available. |
-| [Version](#uid-690a56c9af) | No summary available. |
+| [CanCreateSharedContext](#uid-7a3c045abd) | 暂无摘要。 |
+| [Context](#uid-7c3293dffe) | 暂无摘要。 |
+| [Display](#uid-ff39096414) | 暂无摘要。 |
+| [EglInterface](#uid-15ea76babb) | 暂无摘要。 |
+| [GlInterface](#uid-6c20077e10) | 暂无摘要。 |
+| [IsCurrent](#uid-e2a0fd2c9d) | 暂无摘要。 |
+| [IsLost](#uid-91022ae078) | 暂无摘要。 |
+| [OffscreenSurface](#uid-f0f550bd4e) | 暂无摘要。 |
+| [SampleCount](#uid-7912f57684) | 暂无摘要。 |
+| [StencilSize](#uid-2313731b0c) | 暂无摘要。 |
+| [Version](#uid-690a56c9af) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7a3c045abd"></span>
 
-### CanCreateSharedContext Property
+### CanCreateSharedContext 属性 {#cancreatesharedcontext-property}
 
 ```csharp
 public bool CanCreateSharedContext { get; set; }
@@ -267,7 +267,7 @@ public bool CanCreateSharedContext { get; set; }
 
 <span id="uid-7c3293dffe"></span>
 
-### Context Property
+### Context 属性 {#context-property}
 
 ```csharp
 public IntPtr Context { get; set; }
@@ -279,7 +279,7 @@ public IntPtr Context { get; set; }
 
 <span id="uid-ff39096414"></span>
 
-### Display Property
+### Display 属性 {#display-property}
 
 ```csharp
 public Avalonia.OpenGL.Egl.EglDisplay Display { get; set; }
@@ -291,7 +291,7 @@ public Avalonia.OpenGL.Egl.EglDisplay Display { get; set; }
 
 <span id="uid-15ea76babb"></span>
 
-### EglInterface Property
+### EglInterface 属性 {#eglinterface-property}
 
 ```csharp
 public Avalonia.OpenGL.Egl.EglInterface EglInterface { get; set; }
@@ -303,7 +303,7 @@ public Avalonia.OpenGL.Egl.EglInterface EglInterface { get; set; }
 
 <span id="uid-6c20077e10"></span>
 
-### GlInterface Property
+### GlInterface 属性 {#glinterface-property}
 
 ```csharp
 public Avalonia.OpenGL.GlInterface GlInterface { get; set; }
@@ -315,7 +315,7 @@ public Avalonia.OpenGL.GlInterface GlInterface { get; set; }
 
 <span id="uid-e2a0fd2c9d"></span>
 
-### IsCurrent Property
+### IsCurrent 属性 {#iscurrent-property}
 
 ```csharp
 public bool IsCurrent { get; set; }
@@ -327,7 +327,7 @@ public bool IsCurrent { get; set; }
 
 <span id="uid-91022ae078"></span>
 
-### IsLost Property
+### IsLost 属性 {#islost-property}
 
 ```csharp
 public bool IsLost { get; set; }
@@ -339,7 +339,7 @@ public bool IsLost { get; set; }
 
 <span id="uid-f0f550bd4e"></span>
 
-### OffscreenSurface Property
+### OffscreenSurface 属性 {#offscreensurface-property}
 
 ```csharp
 public Avalonia.OpenGL.Egl.EglSurface OffscreenSurface { get; set; }
@@ -351,7 +351,7 @@ public Avalonia.OpenGL.Egl.EglSurface OffscreenSurface { get; set; }
 
 <span id="uid-7912f57684"></span>
 
-### SampleCount Property
+### SampleCount 属性 {#samplecount-property}
 
 ```csharp
 public int SampleCount { get; set; }
@@ -363,7 +363,7 @@ public int SampleCount { get; set; }
 
 <span id="uid-2313731b0c"></span>
 
-### StencilSize Property
+### StencilSize 属性 {#stencilsize-property}
 
 ```csharp
 public int StencilSize { get; set; }
@@ -375,7 +375,7 @@ public int StencilSize { get; set; }
 
 <span id="uid-690a56c9af"></span>
 
-### Version Property
+### Version 属性 {#version-property}
 
 ```csharp
 public Avalonia.OpenGL.GlVersion Version { get; set; }

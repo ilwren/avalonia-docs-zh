@@ -1,7 +1,7 @@
 ---
 id: sorting
-title: Sorting
-description: How to enable, disable, and customize column sorting in the Avalonia TreeDataGrid control.
+title: 排序
+description: 如何在 Avalonia TreeDataGrid 控件中启用、关闭和定制列排序。
 doc-type: reference
 tags:
   - avalonia pro
@@ -9,33 +9,33 @@ tags:
 ---
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-The `TreeDataGrid` control supports sorting rows by clicking column headers. You can enable or disable sorting per column, provide custom comparison logic, and trigger sorting programmatically. This page covers each of these scenarios.
+`TreeDataGrid` 控件支持点击列标题对行排序。你可以逐列开关排序、提供自定义的比较逻辑，也可以用代码触发排序。本页逐一介绍这些场景。
 
-## Column sorting
+## 列排序 {#column-sorting}
 
-### Enable sorting
+### 启用排序 {#enable-sorting}
 
-Sorting is enabled by default for all columns. Users can click column headers to sort.
+所有列默认都可排序，用户点击列标题即可。
 
-To disable sorting for the entire grid:
+若要为整个网格关闭排序：
 
 ```xml
 <TreeDataGrid Source="{Binding Source}"
               CanUserSortColumns="False" />
 ```
 
-### Make specific columns non-sortable
+### 让某些列不可排序 {#make-specific-columns-non-sortable}
 
-In XAML, set the `CanUserSortColumn` attribute on the column:
+在 XAML 中为该列设置 `CanUserSortColumn` 特性：
 
 ```xml
 <TreeDataGridTextColumn Header="Name" Binding="{Binding Name}" CanUserSortColumn="False" />
 ```
 
-In code-behind, use the options lambda:
+在代码隐藏中则使用选项 lambda：
 
 ```csharp
 source.WithTextColumn("Name", x => x.Name, o =>
@@ -44,9 +44,9 @@ source.WithTextColumn("Name", x => x.Name, o =>
 })
 ```
 
-### Programmatic sorting
+### 用代码排序 {#programmatic-sorting}
 
-You can sort columns programmatically using the `SortBy` and `ClearSort` methods on the source:
+你可以调用数据源上的 `SortBy` 和 `ClearSort` 方法，用代码对列排序：
 
 ```csharp
 // Sort by a specific column
@@ -57,9 +57,9 @@ Source.SortBy(Source.Columns[1], ListSortDirection.Descending);
 Source.ClearSort(Source.Columns[0]);
 ```
 
-## Custom sorting
+## 自定义排序 {#custom-sorting}
 
-You can provide custom sorting logic using comparison delegates in code-behind. The delegates receive `object?` parameters that must be cast to your model type:
+在代码隐藏中，你可以用比较委托提供自定义的排序逻辑。委托收到的是 `object?` 参数，需要强制转换成你自己的模型类型：
 
 ```csharp
 source.WithTextColumn("Name", x => x.Name, o =>
@@ -71,18 +71,18 @@ source.WithTextColumn("Name", x => x.Name, o =>
 })
 ```
 
-This can be useful if you need to sort by multiple fields within a single column click.
+如果你想在点击一次列标题时按多个字段排序，这一招就派得上用场。
 
-Two separate comparer functions must be provided: one for ascending and one for descending order.
+必须分别提供两个比较函数：一个管升序，一个管降序。
 
 :::note
-`TreeDataGrid` supports single-column sorting only. When a user clicks a column header (or you call `SortBy` programmatically), any existing sort on another column is cleared. If you need to sort by multiple fields at once, use a custom comparer on one column that compares by the primary field first, then by secondary fields as tiebreakers.
+`TreeDataGrid` 只支持单列排序。用户点击某个列标题（或你用代码调用 `SortBy`）时，其他列上已有的排序会被清除。若需要同时按多个字段排序，请在某一列上写一个自定义比较器：先比主字段，再用次字段决胜负。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)
-- [Expand and collapse](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)
+- [展开与折叠](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)
 - [Filtering](/controls/data-display/structured-data/treedatagrid/filtering)
-- [Selection modes](/controls/data-display/structured-data/treedatagrid/selection-modes)
-- [Column types](/controls/data-display/structured-data/treedatagrid/column-types)
+- [选择模式](/controls/data-display/structured-data/treedatagrid/selection-modes)
+- [列类型](/controls/data-display/structured-data/treedatagrid/column-types)

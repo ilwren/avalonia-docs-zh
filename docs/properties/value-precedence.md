@@ -1,39 +1,39 @@
 ---
 id: value-precedence
-title: Property value precedence
-description: How Avalonia resolves competing property values using BindingPriority.
+title: 属性取值优先级
+description: Avalonia 如何借助 BindingPriority 裁决相互竞争的属性取值。
 doc-type: explanation
 ---
 
-When multiple sources provide a value for the same property, Avalonia must decide which value wins. For example, a property like `Foreground` may receive competing values from a local value, a style setter, an animation and an inherited value. The property system resolves this using a fixed priority order defined by the [`BindingPriority` enum](/api/avalonia/data/bindingpriority).
+当多个来源为同一个属性提供取值时，Avalonia 必须决定谁说了算。比如 `Foreground` 这样的属性，就可能同时收到本地值、样式 setter、动画和继承值的「投票」。属性系统依照 [`BindingPriority` 枚举](/api/avalonia/data/bindingpriority)所定义的固定优先级顺序来裁决。
 
-## Priority order
+## 优先级顺序 {#priority-order}
 
-Higher priority values are resolved over lower priority values, where 1 is the highest priority.
+优先级高的取值胜过优先级低的，其中 1 为最高优先级。
 
-| Priority | `BindingPriority` value | Description |
+| 优先级 | `BindingPriority` 值 | 说明 |
 |---|---|---|
-| 1 | `Animation` | Values applied by active animations. |
-| 2 | `LocalValue` | Values set directly on the object via `SetValue`, XAML attribute, or code. |
-| 3 | `StyleTrigger` | Values applied by style selectors with conditional activation, such as pseudoclasses (`:pointerover`), style classes (`.primary`), or property checks (`[IsChecked=True]`). |
-| 4 | `Template` | Values set within a control template. |
-| 5 | `Style` | Values applied by style selectors that always match, such as a type selector (`Button`) or name selector (`#saveButton`). |
-| 6 | `Inherited` | Values inherited from an ancestor element in the logical tree. See [Property value inheritance](/docs/properties/property-value-inheritance). |
-| 7 | `Unset` | No value set. The property's default value is used. |
+| 1 | `Animation` | 由活跃动画施加的取值。 |
+| 2 | `LocalValue` | 通过 `SetValue`、XAML 特性或代码直接设置在对象上的取值。 |
+| 3 | `StyleTrigger` | 由带条件激活的样式选择器施加的取值，例如伪类（`:pointerover`）、样式类（`.primary`）或属性判断（`[IsChecked=True]`）。 |
+| 4 | `Template` | 在控件模板内部设置的取值。 |
+| 5 | `Style` | 由始终匹配的样式选择器施加的取值，例如类型选择器（`Button`）或名称选择器（`#saveButton`）。 |
+| 6 | `Inherited` | 从逻辑树中某个祖先元素继承来的取值。见[属性值继承](/docs/properties/property-value-inheritance)。 |
+| 7 | `Unset` | 未设置任何取值，使用属性的默认值。 |
 
-## How precedence works
+## 优先级是怎么起作用的 {#how-precedence-works}
 
-When you request a property value (via `GetValue` or a binding), the property system checks each priority level in order and returns the first value it finds.
+当你（通过 `GetValue` 或绑定）请求属性值时，属性系统会按顺序逐级检查各优先级，返回第一个找到的取值。
 
 ### `StyleTrigger` vs. `Style`
 
-`StyleTrigger` (priority 3) and `Style` (priority 5) both hold values that come from styles. Avalonia decides between them by looking at the **selector**. A selector that conditionally matches during runtime beats a selector that always matches. In effect, this means pseudoclasses, style classes and property checks are prioritized over name and type selectors.
+`StyleTrigger`（优先级 3）和 `Style`（优先级 5）承载的都是来自样式的取值，Avalonia 靠**选择器**来区分二者：运行时有条件匹配的选择器，胜过始终匹配的选择器。实际效果就是，伪类、样式类和属性判断的优先级高于名称选择器和类型选择器。
 
-Two `StyleTrigger` values have equal priority, regardless of the number of activators present and the position of the activator within the selector syntax.
+两个 `StyleTrigger` 取值之间优先级相等，与激活条件的数量、以及激活条件在选择器语法中的位置无关。
 
 ### Example
 
-Consider a `Button` with a `Foreground` property:
+设想一个带 `Foreground` 属性的 `Button`：
 
 ```xml
 <!-- Application-level style (Priority: Style) -->
@@ -52,17 +52,17 @@ Consider a `Button` with a `Foreground` property:
 <Button Foreground="Red" Content="Click me" />
 ```
 
-In this scenario:
-- The button's `Foreground` is **Red** because `LocalValue` has higher priority than `Style` and `StyleTrigger`.
-- Even when the pointer hovers over the button, the `Foreground` remains **Red** because `LocalValue` (priority 2) outranks `StyleTrigger` (priority 3).
+在这种情况下：
+- 按钮的 `Foreground` 是**红色**，因为 `LocalValue` 的优先级高于 `Style` 和 `StyleTrigger`。
+- 即便指针悬停在按钮上，`Foreground` 依然是**红色** —— `LocalValue`（优先级 2）压过了 `StyleTrigger`（优先级 3）。
 
-If you remove the local `Foreground="Red"` attribute:
-- The button's `Foreground` is **Black** (from the `Style` setter) by default.
-- When the pointer hovers over the button, it changes to **Blue** (from the `StyleTrigger` for `:pointerover`).
+如果把本地的 `Foreground="Red"` 特性去掉：
+- 按钮的 `Foreground` 默认是**黑色**（来自 `Style` setter）。
+- 指针悬停到按钮上时，它变成**蓝色**（来自针对 `:pointerover` 的 `StyleTrigger`）。
 
-## Style declaration order
+## 样式的声明顺序 {#style-declaration-order}
 
-When two styles at the **same priority level** target the same property, the style declared later wins:
+当**同一优先级**上的两个样式指向同一个属性时，后声明的那个胜出：
 
 ```xml
 <Window.Styles>
@@ -77,9 +77,9 @@ When two styles at the **same priority level** target the same property, the sty
 </Window.Styles>
 ```
 
-Styles from different sources are evaluated in the order they appear in the logical tree, from the control upward to the application. A style declared on a `UserControl` overrides a matching style from `App.axaml` because the closer scope is evaluated later.
+来自不同位置的样式，按它们在逻辑树中出现的顺序求值 —— 从控件自身一路向上到应用。声明在 `UserControl` 上的样式会覆盖 `App.axaml` 中匹配的样式，因为越靠近的作用域求值越靠后。
 
-Declaration order only breaks ties **within** a level. A class or property selector sits at the style trigger level, so it beats a plain type selector regardless of order.
+声明顺序只在**同一优先级内部**用于打破平局。类选择器或属性选择器位于样式触发这一级，因此无论顺序如何，它都胜过单纯的类型选择器。
 
 ```xml
 <Window.Styles>
@@ -98,9 +98,9 @@ Declaration order only breaks ties **within** a level. A class or property selec
 <Button Classes="primary" Content="Primary" />
 ```
 
-## Animations override everything
+## 动画凌驾于一切之上 {#animations-override-everything}
 
-Animations have the highest priority. While an animation is active, its value overrides all other sources. This ensures visual transitions are never interrupted by style changes.
+动画的优先级最高。只要动画处于活跃状态，它的取值就压过其他所有来源。这样可以确保视觉过渡不会被样式变化打断。
 
 ```xml
 <Style Selector="Button:pointerover">
@@ -114,11 +114,11 @@ Animations have the highest priority. While an animation is active, its value ov
 </Style>
 ```
 
-## Template priority
+## 模板优先级 {#template-priority}
 
-`Template` (priority 4) applies to all properties set by a `ControlTemplate`. In the example below, `BorderThickness`, `Background`, and `Padding` have `Template` priority.
+`Template`（优先级 4）适用于由 `ControlTemplate` 设置的所有属性。在下面的例子中，`BorderThickness`、`Background` 和 `Padding` 都处于 `Template` 优先级。
 
-`Template` is a higher priority than `Style` (priority 5), meaning these values would override any set by a name or type selector.
+`Template` 的优先级高于 `Style`（优先级 5），也就是说这些取值会覆盖名称选择器或类型选择器所设置的值。
 
 ```xml
 <ControlTemplate>
@@ -128,11 +128,11 @@ Animations have the highest priority. While an animation is active, its value ov
 </ControlTemplate>
 ```
 
-## Working with priorities in code
+## 在代码中操作优先级 {#working-with-priorities-in-code}
 
-### Clearing values
+### 清除取值 {#clearing-values}
 
-When you call `ClearValue`, you remove the value at the `LocalValue` priority level. The property system then continues to the next available source.
+调用 `ClearValue` 会移除 `LocalValue` 这一优先级上的取值，属性系统随后顺延到下一个可用的取值来源。
 
 ```csharp
 // Set a local value (red foreground overrides other styles)
@@ -142,41 +142,41 @@ myButton.SetValue(Button.ForegroundProperty, Brushes.Red);
 myButton.ClearValue(Button.ForegroundProperty);
 ```
 
-### Setting values at specific priorities
+### 在指定优先级上设置取值 {#setting-values-at-specific-priorities}
 
-In advanced scenarios, you can set a value at a specific priority using the `SetValue` overload:
+在进阶场景下，可以用 `SetValue` 重载在指定优先级上设置取值：
 
 ```csharp
 myButton.SetValue(Button.ForegroundProperty, Brushes.Red, BindingPriority.Style);
 ```
 
-This is primarily used by the styling system internally. In most application code, you set local values (the default when calling `SetValue`).
+这主要供样式系统内部使用。在大多数应用代码中，你设置的都是本地值（调用 `SetValue` 时的默认行为）。
 
 ### `SetCurrentValue`
 
-The `SetCurrentValue` method sets a value at the current highest-priority level rather than at `LocalValue`. This can be used where you want to update a property without overriding styles:
+`SetCurrentValue` 方法会在当前最高优先级那一级上设值，而不是在 `LocalValue` 上。当你想更新属性但又不想覆盖样式时，可以用它：
 
 ```csharp
 // Sets the value without creating a LocalValue entry
 myButton.SetCurrentValue(Button.ForegroundProperty, Brushes.Green);
 ```
 
-### Impact on data binding
+### 对数据绑定的影响 {#impact-on-data-binding}
 
-Bindings are applied at the priority level of their source. A binding created through a style is applied at the `Style` or `StyleTrigger` level. A binding set directly in XAML is applied at the `LocalValue` level:
+绑定按其来源所在的优先级生效。通过样式创建的绑定作用在 `Style` 或 `StyleTrigger` 一级；直接写在 XAML 中的绑定则作用在 `LocalValue` 一级：
 
 ```xml
 <!-- This binding operates at LocalValue priority -->
 <Button Foreground="{Binding ButtonColor}" />
 ```
 
-Because `LocalValue` bindings outrank style values (both `Style` and `StyleTrigger`), a bound property value from XAML will override any style-set values.
+由于 `LocalValue` 绑定压过样式取值（`Style` 和 `StyleTrigger` 都算），XAML 中绑定得到的属性值会覆盖样式设置的任何取值。
 
-If you want styles to be able to override a property, avoid setting a value for that property in XAML. Instead, use a style at the appropriate level.
+如果你希望样式能够覆盖某个属性，就别在 XAML 中给它设值，改用相应层级的样式。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Property system overview](/docs/properties): Overview of Avalonia property types.
-- [Styles](/docs/styling/styles): How to define and apply styles.
-- [Animations](/docs/graphics-animation/animations): How animations interact with properties.
-- [Troubleshooting styles](/troubleshooting/ui-development/styles): Resolving common issues with styles.
+- [属性系统总览](/docs/properties)：Avalonia 属性种类总览。
+- [样式](/docs/styling/styles)：如何定义并应用样式。
+- [动画](/docs/graphics-animation/animations)：动画与属性之间如何相互影响。
+- [样式问题排查](/troubleshooting/ui-development/styles)：解决样式相关的常见问题。

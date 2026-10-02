@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ILockedFramebuffer Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/ILockedFramebuffer.cs">ILockedFramebuffer.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/ILockedFramebuffer.cs">ILockedFramebuffer.cs</a>
 </div>
 
 </div>
@@ -48,28 +48,28 @@ public interface ILockedFramebuffer
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Address](#uid-5086190648) | Address of the first pixel |
-| [AlphaFormat](#uid-a1809d4197) | Gets the alpha format. |
-| [Dpi](#uid-eb5ccbf69c) | DPI of underling screen |
-| [Format](#uid-014702d698) | Pixel format |
-| [RowBytes](#uid-35f667e4ca) | Number of bytes per row |
-| [Size](#uid-b94340b6f4) | Gets the framebuffer size in device pixels. |
+| [Address](#uid-5086190648) | 第一个像素的地址 |
+| [AlphaFormat](#uid-a1809d4197) | 获取 alpha 格式。 |
+| [Dpi](#uid-eb5ccbf69c) | 底层屏幕的 DPI |
+| [Format](#uid-014702d698) | 像素格式 |
+| [RowBytes](#uid-35f667e4ca) | 每一行所占的字节数 |
+| [Size](#uid-b94340b6f4) | 获取帧缓冲的尺寸，以设备像素计。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5086190648"></span>
 
-### Address Property
+### Address 属性 {#address-property}
 
-Address of the first pixel
+第一个像素的地址
 
 ```csharp
 public IntPtr Address { get; set; }
@@ -81,9 +81,9 @@ public IntPtr Address { get; set; }
 
 <span id="uid-a1809d4197"></span>
 
-### AlphaFormat Property
+### AlphaFormat 属性 {#alphaformat-property}
 
-Gets the alpha format.
+获取 alpha 格式。
 
 ```csharp
 public Avalonia.Platform.AlphaFormat AlphaFormat { get; set; }
@@ -95,9 +95,9 @@ public Avalonia.Platform.AlphaFormat AlphaFormat { get; set; }
 
 <span id="uid-eb5ccbf69c"></span>
 
-### Dpi Property
+### Dpi 属性 {#dpi-property}
 
-DPI of underling screen
+底层屏幕的 DPI
 
 ```csharp
 public Avalonia.Vector Dpi { get; set; }
@@ -109,9 +109,9 @@ public Avalonia.Vector Dpi { get; set; }
 
 <span id="uid-014702d698"></span>
 
-### Format Property
+### Format 属性 {#format-property}
 
-Pixel format
+像素格式
 
 ```csharp
 public Avalonia.Platform.PixelFormat Format { get; set; }
@@ -123,9 +123,9 @@ public Avalonia.Platform.PixelFormat Format { get; set; }
 
 <span id="uid-35f667e4ca"></span>
 
-### RowBytes Property
+### RowBytes 属性 {#rowbytes-property}
 
-Number of bytes per row
+每一行所占的字节数
 
 ```csharp
 public int RowBytes { get; set; }
@@ -137,9 +137,9 @@ public int RowBytes { get; set; }
 
 <span id="uid-b94340b6f4"></span>
 
-### Size Property
+### Size 属性 {#size-property}
 
-Gets the framebuffer size in device pixels.
+获取帧缓冲的尺寸，以设备像素计。
 
 ```csharp
 public Avalonia.PixelSize Size { get; set; }

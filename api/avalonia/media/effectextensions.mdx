@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EffectExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Effects/EffectExtesions.cs">EffectExtesions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Effects/EffectExtesions.cs">EffectExtesions.cs</a>
 </div>
 
 </div>
@@ -48,41 +48,41 @@ public class EffectExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EffectExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EffectExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ToImmutable](#uid-8ea8b6569e) | Converts a effect to an immutable effect. |
+| [ToImmutable](#uid-8ea8b6569e) | 把效果转换为不可变效果。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8ea8b6569e"></span>
 
-### ToImmutable Method
+### ToImmutable 方法 {#toimmutable-method}
 
-Converts a effect to an immutable effect.
+把效果转换为不可变效果。
 
 ```csharp
 public Avalonia.Media.IImmutableEffect ToImmutable(Avalonia.Media.IEffect effect)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `effect` [Avalonia.Media.IEffect](xref:Avalonia.Media.IEffect)
 
-The effect.
+该效果。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.IImmutableEffect](xref:Avalonia.Media.IImmutableEffect)
 
-The result of calling [Avalonia.Media.IMutableEffect.ToImmutable](xref:Avalonia.Media.IMutableEffect.ToImmutable) if the effect is mutable,
-otherwise `effect`.
+若该效果可变，则为调用 [Avalonia.Media.IMutableEffect.ToImmutable](xref:Avalonia.Media.IMutableEffect.ToImmutable) 的结果，
+否则为 `effect`。
 
 
 </section>

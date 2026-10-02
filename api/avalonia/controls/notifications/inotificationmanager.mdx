@@ -20,28 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">INotificationManager Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Notifications</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Notifications</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/INotificationManager.cs">INotificationManager.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Notifications/INotificationManager.cs">INotificationManager.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents a notification manager that can be used to show notifications in a window or using
-the host operating system.
+表示一个通知管理器，可用来在窗口中、或借助宿主操作系统显示通知。
 
 </div>
 
@@ -53,31 +52,31 @@ public interface INotificationManager
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Close](#uid-5532671cd3) | Closes a notification. |
-| [CloseAll](#uid-d0758eac00) | Closes all notifications. |
-| [Show](#uid-8f7b494e62) | Show a notification. |
+| [Close](#uid-5532671cd3) | 关闭一条通知。 |
+| [CloseAll](#uid-d0758eac00) | 关闭所有通知。 |
+| [Show](#uid-8f7b494e62) | 显示一条通知。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5532671cd3"></span>
 
-### Close Method
+### Close 方法 {#close-method}
 
-Closes a notification.
+关闭一条通知。
 
 ```csharp
 public void Close(Avalonia.Controls.Notifications.INotification notification)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `notification` [Avalonia.Controls.Notifications.INotification](xref:Avalonia.Controls.Notifications.INotification)
 
-The notification to be closed.
+要关闭的那条通知。
 
 
 </section>
@@ -86,9 +85,9 @@ The notification to be closed.
 
 <span id="uid-d0758eac00"></span>
 
-### CloseAll Method
+### CloseAll 方法 {#closeall-method}
 
-Closes all notifications.
+关闭所有通知。
 
 ```csharp
 public void CloseAll()
@@ -100,19 +99,19 @@ public void CloseAll()
 
 <span id="uid-8f7b494e62"></span>
 
-### Show Method
+### Show 方法 {#show-method}
 
-Show a notification.
+显示一条通知。
 
 ```csharp
 public void Show(Avalonia.Controls.Notifications.INotification notification)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `notification` [Avalonia.Controls.Notifications.INotification](xref:Avalonia.Controls.Notifications.INotification)
 
-The notification to be displayed.
+要显示的那条通知。
 
 
 </section>

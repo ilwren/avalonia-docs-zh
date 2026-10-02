@@ -20,25 +20,25 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FootnoteSnapshot Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Snapshot</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-A footnote in a document snapshot: the note's body as a nested document snapshot,
-the id pairing it with the [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode) anchor of
-the same id, and an optional name for formats that address notes by name.
+文档快照中的一条脚注：便签正文以嵌套文档快照的形式保存，
+id 把它与同 id 的 [Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.FootnoteReferenceSnapshotNode) 锚点配成一对，
+另有一个可选名称，供那些按名称寻址便签的格式使用。
 
 </div>
 
@@ -52,29 +52,29 @@ public class FootnoteSnapshot
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FootnoteSnapshot
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FootnoteSnapshot
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FootnoteSnapshot](#uid-d09a0adc54) | Initializes a note snapshot. |
+| [FootnoteSnapshot](#uid-d09a0adc54) | 初始化一份便签快照。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d09a0adc54"></span>
 
-### FootnoteSnapshot Constructor
+### FootnoteSnapshot 构造函数 {#footnotesnapshot-constructor}
 
-Initializes a note snapshot.
+初始化一份便签快照。
 
 ```csharp
 public FootnoteSnapshot(int noteId, Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot content, string label)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `noteId` int
 
@@ -87,21 +87,21 @@ public FootnoteSnapshot(int noteId, Avalonia.Controls.Documents.Serialization.Sn
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Content](#uid-f3e60efb2b) | The note's body. |
-| [Label](#uid-12a7405a0c) | The note's name, when the source format named it; null otherwise. |
-| [NoteId](#uid-3281d8c6fc) | The id pairing the note with its anchor. |
+| [Content](#uid-f3e60efb2b) | 该便签的正文。 |
+| [Label](#uid-12a7405a0c) | 当源格式为该便签命名时，这里便是它的名称；否则为 null。 |
+| [NoteId](#uid-3281d8c6fc) | 把便签与其锚点配对起来的 id。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f3e60efb2b"></span>
 
-### Content Property
+### Content 属性 {#content-property}
 
-The note's body.
+该便签的正文。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Content { get; set; }
@@ -113,9 +113,9 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot Conte
 
 <span id="uid-12a7405a0c"></span>
 
-### Label Property
+### Label 属性 {#label-property}
 
-The note's name, when the source format named it; null otherwise.
+当源格式为该便签命名时，这里便是它的名称；否则为 null。
 
 ```csharp
 public string Label { get; set; }
@@ -127,9 +127,9 @@ public string Label { get; set; }
 
 <span id="uid-3281d8c6fc"></span>
 
-### NoteId Property
+### NoteId 属性 {#noteid-property}
 
-The id pairing the note with its anchor.
+把便签与其锚点配对起来的 id。
 
 ```csharp
 public int NoteId { get; set; }

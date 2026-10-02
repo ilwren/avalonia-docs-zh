@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfSerializerOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization.Pdf</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization.Pdf</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents.Serialization.Pdf</code>
 </div>
 </div>
 
@@ -50,21 +50,21 @@ public class PdfSerializerOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfSerializerOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfSerializerOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PdfSerializerOptions](#uid-30763003d3) | No summary available. |
+| [PdfSerializerOptions](#uid-30763003d3) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-30763003d3"></span>
 
-### PdfSerializerOptions Constructor
+### PdfSerializerOptions 构造函数 {#pdfserializeroptions-constructor}
 
 ```csharp
 public PdfSerializerOptions()
@@ -72,9 +72,9 @@ public PdfSerializerOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Author](#uid-3f6b0f4521) | Document author written to the PDF metadata. |
 | [Deterministic](#uid-2c34ea334c) | Produces byte-stable output: a fixed creation date and file identifier are written instead of the current time and a random identifier. Intended for tests and reproducible pipelines. |
@@ -92,7 +92,7 @@ public PdfSerializerOptions()
 
 <span id="uid-3f6b0f4521"></span>
 
-### Author Property
+### Author 属性 {#author-property}
 
 Document author written to the PDF metadata.
 
@@ -106,7 +106,7 @@ public string Author { get; set; }
 
 <span id="uid-2c34ea334c"></span>
 
-### Deterministic Property
+### Deterministic 属性 {#deterministic-property}
 
 Produces byte-stable output: a fixed creation date and file identifier are written
 instead of the current time and a random identifier. Intended for tests and
@@ -122,7 +122,7 @@ public bool Deterministic { get; set; }
 
 <span id="uid-6818a65d1b"></span>
 
-### Diagnostics Property
+### Diagnostics 属性 {#diagnostics-property}
 
 Receives one [Avalonia.Controls.Documents.Serialization.Pdf.PdfDiagnostic](xref:Avalonia.Controls.Documents.Serialization.Pdf.PdfDiagnostic) per fidelity loss the export decided to
 accept rather than fail on - a font left unembedded because the options or its
@@ -134,7 +134,7 @@ is not a faithful copy of the document.
 public Action<Avalonia.Controls.Documents.Serialization.Pdf.PdfDiagnostic> Diagnostics { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Invoked on the thread running the export, before any bytes reach the target stream.
 Leave it to skip the checks entirely.
@@ -145,7 +145,7 @@ Leave it to skip the checks entirely.
 
 <span id="uid-32ce2ff88c"></span>
 
-### Document Property
+### Document 属性 {#document-property}
 
 Shared serializer options common to all document serializers. PDF export reads
 [Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.MaxImageBytes](xref:Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.MaxImageBytes) and
@@ -166,7 +166,7 @@ public Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions Docum
 
 <span id="uid-15420579da"></span>
 
-### FontEmbedding Property
+### FontEmbedding 属性 {#fontembedding-property}
 
 How fonts are embedded into the produced PDF.
 
@@ -180,7 +180,7 @@ public Avalonia.Controls.Documents.Serialization.Pdf.PdfFontEmbedding FontEmbedd
 
 <span id="uid-fc4941c7c5"></span>
 
-### Keywords Property
+### Keywords 属性 {#keywords-property}
 
 Document keywords written to the PDF metadata.
 
@@ -194,7 +194,7 @@ public string Keywords { get; set; }
 
 <span id="uid-20bf448ffd"></span>
 
-### Language Property
+### Language 属性 {#language-property}
 
 Document language (BCP 47, e.g. `en-US`) written as the PDF catalog language.
 
@@ -208,7 +208,7 @@ public string Language { get; set; }
 
 <span id="uid-a48a4d92ae"></span>
 
-### Margins Property
+### Margins 属性 {#margins-property}
 
 Page margins in device-independent pixels. When , the document's
 `PagePadding` is used, falling back to 2 cm on every side.
@@ -223,7 +223,7 @@ public Nullable<Avalonia.Thickness> Margins { get; set; }
 
 <span id="uid-41e56ee8b3"></span>
 
-### PageSize Property
+### PageSize 属性 {#pagesize-property}
 
 Page size in device-independent pixels (1/96 inch). When , the
 document-declared page size is used (fixed `PageWidth`/`PageHeight`), falling
@@ -239,7 +239,7 @@ public Nullable<Avalonia.Size> PageSize { get; set; }
 
 <span id="uid-88a34dddbc"></span>
 
-### Subject Property
+### Subject 属性 {#subject-property}
 
 Document subject written to the PDF metadata.
 
@@ -253,7 +253,7 @@ public string Subject { get; set; }
 
 <span id="uid-4cc86e12dc"></span>
 
-### Title Property
+### Title 属性 {#title-property}
 
 Document title written to the PDF metadata.
 

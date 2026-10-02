@@ -3,243 +3,243 @@ id: winapi-reference
 title: WinAPI Shim Reference
 ---
 
-This page lists the Win32 APIs available through XPF's shim layer. These shims exist to support third-party WPF controls on non-Windows platforms. They are not a general-purpose Win32 emulation layer.
+本页列出可经由 XPF shim 层使用的 Win32 API。这些 shim 的用意是让第三方 WPF 控件在非 Windows 平台上跑得起来，它并非通用的 Win32 模拟层。
 
-For setup and configuration, see [Win32 API Shims](/xpf/third-party/win32-api-shims).
+配置方法请见 [Win32 API shim](/xpf/third-party/win32-api-shims)。
 
 :::note
-"Shimmed" means XPF intercepts the call and provides a cross-platform implementation. The behavior may not be identical to native Win32 in all cases. Functions marked with (W) have both ANSI and Unicode variants available.
+“已 shim”的意思是 XPF 会拦下该调用并给出跨平台实现，其行为未必在所有情形下都与原生 Win32 分毫不差。标有 (W) 的函数同时提供 ANSI 和 Unicode 两种变体。
 :::
 
 ## user32.dll
 
-### Window creation and lifecycle
+### 窗口的创建与生命周期 {#window-creation-and-lifecycle}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `CreateWindowEx` (W) | Creates a window with extended styles. Returns a virtual HWND managed by XPF. |
-| `RegisterClass` | Registers a window class. |
-| `RegisterClassExW` | Registers a window class (extended). |
-| `DestroyWindow` | Destroys a window created with `CreateWindowEx`. |
+| `CreateWindowEx` (W) | 创建带扩展样式的窗口，返回一个由 XPF 管理的虚拟 HWND。 |
+| `RegisterClass` | 注册窗口类。 |
+| `RegisterClassExW` | 注册窗口类（扩展版）。 |
+| `DestroyWindow` | 销毁用 `CreateWindowEx` 创建的窗口。 |
 
-### Window properties and state
+### 窗口属性与状态 {#window-properties-and-state}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetWindowRect` | Gets the window bounding rectangle in screen coordinates. |
-| `GetClientRect` | Gets the client area rectangle. |
-| `GetWindowPlacement` | Gets the show state and positions of a window. |
-| `GetWindowInfo` | Gets window information including styles and borders. |
-| `IsWindow` | Tests whether a handle is a valid window. |
-| `IsWindowEnabled` | Tests whether a window accepts user input. |
-| `IsWindowVisible` | Tests whether a window is visible. |
-| `GetWindowLong` / `SetWindowLong` | Gets or sets a 32-bit value in the window data. |
-| `GetWindowLongPtr` (W) / `SetWindowLongPtr` | Gets or sets a pointer-sized value in the window data. Used for window styles and procedures. |
+| `GetWindowRect` | 获取窗口在屏幕坐标系中的外接矩形。 |
+| `GetClientRect` | 获取客户区矩形。 |
+| `GetWindowPlacement` | 获取窗口的显示状态和位置。 |
+| `GetWindowInfo` | 获取窗口信息，包括样式和边框。 |
+| `IsWindow` | 判断某个句柄是否为有效窗口。 |
+| `IsWindowEnabled` | 判断窗口是否接受用户输入。 |
+| `IsWindowVisible` | 判断窗口是否可见。 |
+| `GetWindowLong` / `SetWindowLong` | 读写窗口数据中的一个 32 位值。 |
+| `GetWindowLongPtr` (W) / `SetWindowLongPtr` | 读写窗口数据中一个指针大小的值，用于窗口样式和窗口过程。 |
 
-### Window position and layout
+### 窗口位置与布局 {#window-position-and-layout}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `SetWindowPos` | Sets the size, position, and Z-order of a window. |
-| `AdjustWindowRectEx` | Calculates the required window size for a given client area size. |
-| `BeginDeferWindowPos` / `EndDeferWindowPos` | Batches multiple window position changes for performance. |
+| `SetWindowPos` | 设置窗口的大小、位置和 Z 序。 |
+| `AdjustWindowRectEx` | 按给定的客户区尺寸算出所需的窗口尺寸。 |
+| `BeginDeferWindowPos` / `EndDeferWindowPos` | 把多次窗口位置变更批量处理，以提升性能。 |
 
-### Window hierarchy
+### 窗口层级 {#window-hierarchy}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetActiveWindow` | Returns the active window on the calling thread. |
-| `GetTopWindow` | Returns the topmost child window. |
-| `GetWindow` | Retrieves a related window (next, previous, owner, child). |
-| `GetDesktopWindow` | Returns a handle to the desktop window. |
-| `FindWindow` | Finds a top-level window by class name or title. |
-| `WindowFromPoint` | Returns the window at a given screen coordinate. |
-| `EnumChildWindows` | Enumerates child windows of a parent. |
-| `EnumThreadWindows` | Enumerates windows owned by a thread. |
+| `GetActiveWindow` | 返回调用线程上的活动窗口。 |
+| `GetTopWindow` | 返回最顶层的子窗口。 |
+| `GetWindow` | 取得相关联的窗口（下一个、上一个、所有者、子窗口）。 |
+| `GetDesktopWindow` | 返回桌面窗口的句柄。 |
+| `FindWindow` | 按类名或标题查找顶层窗口。 |
+| `WindowFromPoint` | 返回位于指定屏幕坐标处的窗口。 |
+| `EnumChildWindows` | 枚举某个父窗口的子窗口。 |
+| `EnumThreadWindows` | 枚举某个线程拥有的窗口。 |
 
-### Window display
+### 窗口显示 {#window-display}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `SetWindowRgn` | Sets a window's visible region. |
-| `RedrawWindow` | Redraws a window or region. |
-| `InvalidateRect` | Marks a rectangle as needing repaint. |
-| `SetWindowDisplayAffinity` | Controls whether a window can be captured by screen capture tools. Stub implementation. |
+| `SetWindowRgn` | 设置窗口的可见区域。 |
+| `RedrawWindow` | 重绘窗口或某个区域。 |
+| `InvalidateRect` | 把某个矩形标记为需要重绘。 |
+| `SetWindowDisplayAffinity` | 控制窗口能否被屏幕捕获工具录到。目前是空实现。 |
 
-### System menu
+### 系统菜单 {#system-menu}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetSystemMenu` | Returns a handle to the window's system menu (the menu shown when clicking the window icon). |
+| `GetSystemMenu` | 返回窗口系统菜单的句柄（即点击窗口图标时弹出的那个菜单）。 |
 
-### Focus and input
+### 焦点与输入 {#focus-and-input}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetFocus` | Returns the window with keyboard focus. |
-| `SetForegroundWindow` | Brings a window to the foreground and gives it focus. |
-| `GetCapture` / `ReleaseCapture` | Gets or releases mouse capture. |
-| `GetKeyState` | Returns the state of a virtual key (up, down, toggled). |
-| `GetCursorPos` | Returns the cursor position in screen coordinates. |
-| `GetMessagePos` / `GetMessageTime` | Returns the cursor position and time of the last message. |
+| `GetFocus` | 返回持有键盘焦点的窗口。 |
+| `SetForegroundWindow` | 把窗口带到前台并让它获得焦点。 |
+| `GetCapture` / `ReleaseCapture` | 捕获或释放鼠标。 |
+| `GetKeyState` | 返回某个虚拟键的状态（抬起、按下、切换）。 |
+| `GetCursorPos` | 返回光标在屏幕坐标系中的位置。 |
+| `GetMessagePos` / `GetMessageTime` | 返回光标位置以及最后一条消息的时间。 |
 
 ### Messages
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `SendMessage` | Sends a message to a window and waits for processing. Limited message support. |
-| `PostMessage` | Posts a message to a window's message queue. Limited message support. |
-| `DefWindowProc` (W) | Provides default processing for messages not handled by a window procedure. |
-| `FormatMessageW` | Formats a system error message string. |
+| `SendMessage` | 向窗口发送消息并等待处理完成。消息支持有限。 |
+| `PostMessage` | 把消息投递到窗口的消息队列。消息支持有限。 |
+| `DefWindowProc` (W) | 为窗口过程未处理的消息提供默认处理。 |
+| `FormatMessageW` | 把系统错误码格式化成消息字符串。 |
 
 ### Hooks
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `SetWindowsHookEx` | Installs a hook procedure. Limited hook types supported. |
-| `UnhookWindowsHookEx` | Removes a hook procedure. |
+| `SetWindowsHookEx` | 安装钩子过程。支持的钩子类型有限。 |
+| `UnhookWindowsHookEx` | 卸载钩子过程。 |
 
 ### Caret
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `CreateCaret` | Creates a caret (text cursor) for a window. |
-| `ShowCaret` / `HideCaret` | Shows or hides the caret. |
-| `DestroyCaret` | Destroys the current caret. |
-| `SetCaretPos` | Sets the caret position. |
+| `CreateCaret` | 为窗口创建插入符（文本光标）。 |
+| `ShowCaret` / `HideCaret` | 显示或隐藏插入符。 |
+| `DestroyCaret` | 销毁当前插入符。 |
+| `SetCaretPos` | 设置插入符的位置。 |
 
 ### Menus
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `TrackPopupMenuEx` | Displays a shortcut menu at a specified location. |
-| `EnableMenuItem` | Enables, disables, or grays a menu item. |
+| `TrackPopupMenuEx` | 在指定位置显示快捷菜单。 |
+| `EnableMenuItem` | 启用、禁用或灰显某个菜单项。 |
 
-### System information
+### 系统信息 {#system-information}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetSysColor` | Returns the current color of a display element (button face, window background, etc.). |
-| `SystemParametersInfo` (W) | Gets or sets system-wide parameters (scroll bar size, animation settings, etc.). |
-| `GetDoubleClickTime` | Returns the maximum interval between two clicks for a double-click. |
-| `GetSystemMetrics` | Returns system metric values (screen size, icon size, scroll bar dimensions, etc.). |
-| `GetCaretBlinkTime` | Returns the caret blink interval. |
+| `GetSysColor` | 返回某个显示元素（按钮面、窗口背景等）的当前颜色。 |
+| `SystemParametersInfo` (W) | 读写系统级参数（滚动条尺寸、动画设置等）。 |
+| `GetDoubleClickTime` | 返回判定为双击的两次点击之间的最大间隔。 |
+| `GetSystemMetrics` | 返回系统度量值（屏幕尺寸、图标尺寸、滚动条尺寸等）。 |
+| `GetCaretBlinkTime` | 返回插入符的闪烁间隔。 |
 
 ### Clipboard
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `AddClipboardFormatListener` | Registers a window to receive clipboard change notifications. |
+| `AddClipboardFormatListener` | 注册窗口以接收剪贴板变更通知。 |
 
 ## gdi32.dll
 
-### Device contexts
+### 设备上下文 {#device-contexts}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetDC` / `ReleaseDC` | Gets or releases a device context for a window. |
-| `CreateCompatibleDC` / `DeleteDC` | Creates or deletes a memory device context. |
-| `GetDeviceCaps` | Returns device capabilities (DPI, color depth, etc.). |
+| `GetDC` / `ReleaseDC` | 获取或释放窗口的设备上下文。 |
+| `CreateCompatibleDC` / `DeleteDC` | 创建或删除内存设备上下文。 |
+| `GetDeviceCaps` | 返回设备能力信息（DPI、色深等）。 |
 
-### Drawing objects
+### 绘图对象 {#drawing-objects}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `CreateRectRgn` | Creates a rectangular region. |
-| `CreateRoundRectRgn` | Creates a rectangular region with rounded corners. |
-| `CreateRectRgnIndirect` | Creates a rectangular region from a RECT structure. |
-| `DeleteObject` | Deletes a GDI object (region, brush, pen, etc.). |
-| `GetStockObject` | Returns a handle to a predefined stock object. |
+| `CreateRectRgn` | 创建矩形区域。 |
+| `CreateRoundRectRgn` | 创建圆角矩形区域。 |
+| `CreateRectRgnIndirect` | 根据 RECT 结构创建矩形区域。 |
+| `DeleteObject` | 删除 GDI 对象（区域、画刷、画笔等）。 |
+| `GetStockObject` | 返回预定义库存对象的句柄。 |
 
-### Coordinate mapping
+### 坐标映射 {#coordinate-mapping}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetMapMode` / `SetMapMode` | Gets or sets the mapping mode for a device context. |
-| `SetWindowExtEx` / `SetViewportExtEx` | Sets the window or viewport extents for coordinate mapping. |
-| `OffsetRect` | Moves a rectangle by a specified offset. |
+| `GetMapMode` / `SetMapMode` | 读写设备上下文的映射模式。 |
+| `SetWindowExtEx` / `SetViewportExtEx` | 设置坐标映射所用的窗口范围或视口范围。 |
+| `OffsetRect` | 按指定偏移量平移矩形。 |
 
 ## dwmapi.dll
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `DwmIsCompositionEnabled` | Returns whether desktop composition is enabled. Always returns true on non-Windows. |
-| `DwmExtendFrameIntoClientArea` | Extends the window frame into the client area. |
-| `DwmGetWindowAttribute` | Gets a DWM window attribute. Limited attribute support. |
-| `DwmSetWindowAttribute` | Sets a DWM window attribute. Limited attribute support. |
+| `DwmIsCompositionEnabled` | 返回桌面合成是否已启用。在非 Windows 上始终返回 true。 |
+| `DwmExtendFrameIntoClientArea` | 把窗口边框延伸进客户区。 |
+| `DwmGetWindowAttribute` | 获取 DWM 窗口属性。支持的属性有限。 |
+| `DwmSetWindowAttribute` | 设置 DWM 窗口属性。支持的属性有限。 |
 
 ## shcore.dll / Monitor APIs
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `MonitorFromPoint` | Returns the monitor containing a point. |
-| `MonitorFromRect` | Returns the monitor with the largest intersection with a rectangle. |
-| `MonitorFromWindow` | Returns the monitor containing the largest part of a window. |
-| `GetMonitorInfo` | Returns the display area and work area of a monitor. |
-| `EnumDisplayMonitors` | Enumerates display monitors. |
-| `GetDpiForMonitor` | Returns the DPI of a monitor. |
-| `GetDpiForWindow` | Returns the DPI for a window. |
-| `GetProcessDpiAwareness` | Returns the DPI awareness setting for a process. |
+| `MonitorFromPoint` | 返回包含指定点的显示器。 |
+| `MonitorFromRect` | 返回与指定矩形交叠面积最大的显示器。 |
+| `MonitorFromWindow` | 返回容纳窗口面积最大的那台显示器。 |
+| `GetMonitorInfo` | 返回某台显示器的显示区域和工作区。 |
+| `EnumDisplayMonitors` | 枚举显示器。 |
+| `GetDpiForMonitor` | 返回某台显示器的 DPI。 |
+| `GetDpiForWindow` | 返回某个窗口的 DPI。 |
+| `GetProcessDpiAwareness` | 返回某个进程的 DPI 感知设置。 |
 
 ## imm32.dll (Input Method Editor)
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `ImmCreateContext` / `ImmDestroyContext` | Creates or destroys an IME input context. |
-| `ImmGetContext` / `ImmReleaseContext` | Gets or releases the IME context for a window. |
-| `ImmAssociateContext` | Associates an IME context with a window. |
-| `ImmSetOpenStatus` / `ImmGetOpenStatus` | Opens or closes the IME, or queries the current state. |
-| `ImmNotifyIME` | Sends a notification to the IME. |
-| `ImmGetProperty` | Returns IME properties. |
-| `ImmGetCompositionString` (W) | Returns the composition string (the text being composed). |
-| `ImmSetCompositionFont` (W) | Sets the font used to display the composition string. |
-| `ImmConfigureIMEW` | Opens the IME configuration dialog. |
-| `ImmSetCompositionWindow` | Sets the position of the composition window. |
-| `ImmSetCandidateWindow` | Sets the position of the candidate list window. |
-| `ImmGetDefaultIMEWnd` | Returns the default IME window handle. |
+| `ImmCreateContext` / `ImmDestroyContext` | 创建或销毁 IME 输入上下文。 |
+| `ImmGetContext` / `ImmReleaseContext` | 获取或释放窗口的 IME 上下文。 |
+| `ImmAssociateContext` | 把 IME 上下文关联到某个窗口。 |
+| `ImmSetOpenStatus` / `ImmGetOpenStatus` | 打开或关闭 IME，或查询其当前状态。 |
+| `ImmNotifyIME` | 向 IME 发送通知。 |
+| `ImmGetProperty` | 返回 IME 的属性。 |
+| `ImmGetCompositionString` (W) | 返回组字字符串（正在输入组合中的文本）。 |
+| `ImmSetCompositionFont` (W) | 设置显示组字字符串所用的字体。 |
+| `ImmConfigureIMEW` | 打开 IME 配置对话框。 |
+| `ImmSetCompositionWindow` | 设置组字窗口的位置。 |
+| `ImmSetCandidateWindow` | 设置候选词列表窗口的位置。 |
+| `ImmGetDefaultIMEWnd` | 返回默认 IME 窗口的句柄。 |
 
 ## kernel32.dll
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `GetCurrentThreadId` | Returns the calling thread's ID. |
-| `GetModuleFileName` | Returns the full path of a loaded module. |
-| `GetModuleHandle` (W) | Returns the handle of a loaded module by name. |
-| `LoadLibrary` (W) | Loads a DLL. Intercepted by the shim to redirect Win32 DLL loads. |
-| `LoadString` (W) | Loads a string resource from an executable. |
-| `CloseHandle` | Closes an object handle. |
-| `RtlGetVersion` | Returns the OS version. Returns emulated Windows version info on non-Windows. |
+| `GetCurrentThreadId` | 返回调用线程的 ID。 |
+| `GetModuleFileName` | 返回已加载模块的完整路径。 |
+| `GetModuleHandle` (W) | 按名称返回已加载模块的句柄。 |
+| `LoadLibrary` (W) | 加载 DLL。该调用会被 shim 拦下，以便重定向 Win32 DLL 的加载。 |
+| `LoadString` (W) | 从可执行文件中加载字符串资源。 |
+| `CloseHandle` | 关闭对象句柄。 |
+| `RtlGetVersion` | 返回操作系统版本。在非 Windows 上返回模拟出的 Windows 版本信息。 |
 
-### File and memory mapping
+### 文件与内存映射 {#file-and-memory-mapping}
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `CreateFileMapping` | Creates or opens a file mapping object. |
-| `MapViewOfFile` / `UnmapViewOfFile` | Maps or unmaps a view of a file mapping into the process address space. |
-| `FindFirstFile` / `FindNextFile` / `FindClose` | Enumerates files in a directory. |
+| `CreateFileMapping` | 创建或打开文件映射对象。 |
+| `MapViewOfFile` / `UnmapViewOfFile` | 把文件映射的某个视图映射进进程地址空间，或解除映射。 |
+| `FindFirstFile` / `FindNextFile` / `FindClose` | 枚举目录中的文件。 |
 
 ### Memory
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `RtlMoveMemory` | Copies a block of memory. |
+| `RtlMoveMemory` | 复制一块内存。 |
 
 ## shell32.dll
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `SHGetFileInfo` (W) | Returns information about a file (icon, display name, type). |
-| `ExtractIconEx` (W) | Extracts icons from an executable or DLL. |
+| `SHGetFileInfo` (W) | 返回文件的相关信息（图标、显示名、类型）。 |
+| `ExtractIconEx` (W) | 从可执行文件或 DLL 中提取图标。 |
 
 ## uxtheme.dll
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `IsThemeActive` | Returns whether visual styles are active. |
-| `SetWindowThemeAttribute` | Sets theme attributes on a window. |
+| `IsThemeActive` | 返回视觉样式当前是否生效。 |
+| `SetWindowThemeAttribute` | 设置窗口的主题特性。 |
 
 ## msctf.dll
 
-| Function | Description |
+| 功能 | 说明 |
 |---|---|
-| `TF_CreateThreadMgr` | Creates a Text Services Framework thread manager. |
+| `TF_CreateThreadMgr` | 创建文本服务框架（TSF）线程管理器。 |

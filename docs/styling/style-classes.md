@@ -1,13 +1,13 @@
 ---
 id: style-classes
-title: Style classes
-description: Learn how to assign and use style classes in Avalonia to apply conditional styling to controls.
+title: 样式类
+description: 了解如何在 Avalonia 中指定和使用样式类，为控件套上按条件生效的样式。
 doc-type: explanation
 ---
 
-You can assign an Avalonia control one or more *style classes*, and use these to guide style selection. Style classes are assigned in a control element using the `Classes` attribute. If you want to assign more than one class, use a space-separated list.
+你可以给 Avalonia 控件指定一个或多个*样式类*，用它们来引导样式的选取。样式类通过控件元素上的 `Classes` 特性指定；要指定多个类，用空格分隔即可。
 
-For example, this button has both the `h1` and `blue` style classes applied:
+例如，这个按钮同时带有 `h1` 和 `blue` 两个样式类：
 
 ```xml
 <Button Classes="h1 blue"/>
@@ -15,11 +15,11 @@ For example, this button has both the `h1` and `blue` style classes applied:
 
 ## Pseudoclasses
 
-Like in CSS, controls can have pseudoclasses; these are classes that are defined in the control itself rather than by the user. The names of pseudo classes in a selector always start with a colon.
+和 CSS 一样，控件也可以有伪类——这类类由控件自身定义，而非用户指定。选择器中的伪类名总以冒号开头。
 
-For example, the `:pointerover` pseudo class indicates that the pointer input is currently over (inside the bounds of) a control. This pseudo class is similar to `:hover` in CSS.
+比如 `:pointerover` 伪类表示指针当前正悬在控件上（落在其边界内），它类似 CSS 中的 `:hover`。
 
-This is an example of a `:pointerover` pseudo class selector:
+下面是一个 `:pointerover` 伪类选择器的例子：
 
 <XamlPreview>
 
@@ -40,7 +40,7 @@ This is an example of a `:pointerover` pseudo class selector:
 
 </XamlPreview>
 
-In this example, the pseudo class selector changes properties inside a control template:
+这个例子中，伪类选择器改动的是控件模板内部的属性：
 
 <XamlPreview>
 
@@ -59,27 +59,27 @@ In this example, the pseudo class selector changes properties inside a control t
 
 </XamlPreview>
 
-Other pseudo classes include `:focus`, `:disabled`, `:pressed` for buttons, and `:checked` for checkboxes.
+其他伪类还有按钮的 `:focus`、`:disabled`、`:pressed`，以及复选框的 `:checked`。
 
 :::info
-For more detail about pseudo classes, see [Pseudoclasses](/docs/styling/pseudoclasses).
+关于伪类的更多细节，请见[伪类](/docs/styling/pseudoclasses)。
 :::
 
-## Conditional classes
+## 条件类 {#conditional-classes}
 
-If you need to add or remove a class using a bound condition, then you can use following special syntax:
+若你想按某个绑定条件添加或移除类，可以用下面这种特殊语法：
 
 ```xml
 <Button Classes.accent="{Binding IsSpecial}" />
 ```
 
-## Conditional styling patterns
+## 按条件套样式的套路 {#conditional-styling-patterns}
 
-Avalonia does not have WPF-style triggers. Instead, use style classes, pseudo-classes, and binding converters to achieve conditional styling.
+Avalonia 没有 WPF 那样的触发器。要实现条件样式，请改用样式类、伪类和绑定转换器。
 
-### Toggle appearance based on a bound property
+### 依绑定属性切换外观 {#toggle-appearance-based-on-a-bound-property}
 
-Define styles for each state using style classes, then bind the class conditionally:
+先用样式类为各个状态分别定义样式，再按条件绑定这个类：
 
 ```xml
 <StackPanel>
@@ -100,17 +100,17 @@ Define styles for each state using style classes, then bind the class conditiona
 </StackPanel>
 ```
 
-### Using a converter for non-boolean conditions
+### 非布尔条件请用转换器 {#using-a-converter-for-non-boolean-conditions}
 
-For conditions that are not simple booleans, use a value converter:
+若条件不是简单的布尔值，请使用值转换器：
 
 ```xml
 <Border Background="{Binding Priority, Converter={StaticResource PriorityToBrushConverter}}" />
 ```
 
-### Combining pseudo-classes with style classes
+### 伪类与样式类组合使用 {#combining-pseudo-classes-with-style-classes}
 
-Target specific interactive states of styled controls:
+圈定已套样式控件的某些交互状态：
 
 ```xml
 <StackPanel.Styles>
@@ -127,9 +127,9 @@ Target specific interactive states of styled controls:
 </StackPanel.Styles>
 ```
 
-### Custom pseudo-classes in your controls
+### 在自己的控件中定义伪类 {#custom-pseudo-classes-in-your-controls}
 
-Define custom pseudo-classes for states specific to your control:
+为你控件特有的状态定义自定义伪类：
 
 ```csharp
 public class StatusIndicator : TemplatedControl
@@ -154,7 +154,7 @@ public class StatusIndicator : TemplatedControl
 }
 ```
 
-Then style it with pseudo-class selectors:
+然后用伪类选择器为它写样式：
 
 ```xml
 <Style Selector="local|StatusIndicator:active">
@@ -162,9 +162,9 @@ Then style it with pseudo-class selectors:
 </Style>
 ```
 
-## Classes in code
+## 在代码中操作类 {#classes-in-code}
 
-You can manipulate style classes in code using the `Classes` collection:
+你可以在代码中通过 `Classes` 集合操作样式类：
 
 ```csharp
 control.Classes.Add("blue");
@@ -178,8 +178,8 @@ if (control.Classes.Contains("blue"))
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
 - [Pseudoclasses](/docs/styling/pseudoclasses)
-- [Style selectors](/docs/styling/style-selectors)
+- [样式选择器](/docs/styling/style-selectors)

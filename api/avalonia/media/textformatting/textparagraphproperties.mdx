@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextParagraphProperties Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextParagraphProperties.cs">TextParagraphProperties.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextParagraphProperties.cs">TextParagraphProperties.cs</a>
 </div>
 
 </div>
@@ -54,43 +54,43 @@ public class TextParagraphProperties
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextParagraphProperties
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextParagraphProperties
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="generictextparagraphproperties">GenericTextParagraphProperties</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="generictextparagraphproperties">GenericTextParagraphProperties</a>
 </div>
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AlwaysCollapsible](#uid-b52acf9a44) | Gets a value that indicates whether a formatted line can always be collapsed. |
-| [DefaultIncrementalTab](#uid-992c73fd19) | Gets the default incremental tab width. |
-| [DefaultTextRunProperties](#uid-87d6646d98) | Gets the default text run properties, such as typeface or foreground brush. |
-| [FirstLineInParagraph](#uid-1b10907fd7) | Gets a value that indicates whether the text run is the first line of the paragraph. |
-| [FlowDirection](#uid-a5c18817f3) | Gets a value that specifies whether the primary text advance direction shall be left-to-right, or right-to-left. |
-| [Indent](#uid-2a671bad58) | Gets the amount of line indentation. |
-| [LetterSpacing](#uid-c4a89292df) | Gets the amount of letter spacing. |
-| [LineHeight](#uid-7e134fef3a) | Gets the height of a line of text. |
-| [ParagraphIndent](#uid-a531ba54fe) | Gets the paragraph indentation. |
-| [TextAlignment](#uid-b3ed9316f0) | Gets a value that describes how an inline content of a block is aligned. |
+| [AlwaysCollapsible](#uid-b52acf9a44) | 获取一个值，指示排好版的行是否总是可以折叠。 |
+| [DefaultIncrementalTab](#uid-992c73fd19) | 获取默认的制表位递增宽度。 |
+| [DefaultTextRunProperties](#uid-87d6646d98) | 获取默认的文本运行属性，比如字型或前景画刷。 |
+| [FirstLineInParagraph](#uid-1b10907fd7) | 获取一个值，指示该文本运行是否为段落的第一行。 |
+| [FlowDirection](#uid-a5c18817f3) | 获取一个值，指定主要的文本推进方向是从左到右还是从右到左。 |
+| [Indent](#uid-2a671bad58) | 获取行缩进的大小。 |
+| [LetterSpacing](#uid-c4a89292df) | 获取字间距的大小。 |
+| [LineHeight](#uid-7e134fef3a) | 获取一行文本的高度。 |
+| [ParagraphIndent](#uid-a531ba54fe) | 获取段落缩进。 |
+| [TextAlignment](#uid-b3ed9316f0) | 获取一个值，描述块内的内联内容如何对齐。 |
 | [TextDecorations](#uid-2dbf9914a0) | Gets the collection of [TextDecoration](xref:Avalonia.Media.TextDecoration) objects. |
-| [TextWrapping](#uid-fbbc456c79) | Gets a value that controls whether text wraps when it reaches the flow edge of its containing block box. |
+| [TextWrapping](#uid-fbbc456c79) | 获取一个值，控制文本抵达所在块盒的排版边缘时是否换行。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b52acf9a44"></span>
 
-### AlwaysCollapsible Property
+### AlwaysCollapsible 属性 {#alwayscollapsible-property}
 
-Gets a value that indicates whether a formatted line can always be collapsed.
+获取一个值，指示排好版的行是否总是可以折叠。
 
 ```csharp
 public bool AlwaysCollapsible { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 If true, the formatted line may always be collapsed. If false (the default),
 only lines that overflow the paragraph width are collapsed.
@@ -101,9 +101,9 @@ only lines that overflow the paragraph width are collapsed.
 
 <span id="uid-992c73fd19"></span>
 
-### DefaultIncrementalTab Property
+### DefaultIncrementalTab 属性 {#defaultincrementaltab-property}
 
-Gets the default incremental tab width.
+获取默认的制表位递增宽度。
 
 ```csharp
 public double DefaultIncrementalTab { get; set; }
@@ -115,9 +115,9 @@ public double DefaultIncrementalTab { get; set; }
 
 <span id="uid-87d6646d98"></span>
 
-### DefaultTextRunProperties Property
+### DefaultTextRunProperties 属性 {#defaulttextrunproperties-property}
 
-Gets the default text run properties, such as typeface or foreground brush.
+获取默认的文本运行属性，比如字型或前景画刷。
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextRunProperties DefaultTextRunProperties { get; set; }
@@ -129,9 +129,9 @@ public Avalonia.Media.TextFormatting.TextRunProperties DefaultTextRunProperties 
 
 <span id="uid-1b10907fd7"></span>
 
-### FirstLineInParagraph Property
+### FirstLineInParagraph 属性 {#firstlineinparagraph-property}
 
-Gets a value that indicates whether the text run is the first line of the paragraph.
+获取一个值，指示该文本运行是否为段落的第一行。
 
 ```csharp
 public bool FirstLineInParagraph { get; set; }
@@ -143,9 +143,9 @@ public bool FirstLineInParagraph { get; set; }
 
 <span id="uid-a5c18817f3"></span>
 
-### FlowDirection Property
+### FlowDirection 属性 {#flowdirection-property}
 
-Gets a value that specifies whether the primary text advance direction shall be left-to-right, or right-to-left.
+获取一个值，指定主要的文本推进方向是从左到右还是从右到左。
 
 ```csharp
 public Avalonia.Media.FlowDirection FlowDirection { get; set; }
@@ -157,9 +157,9 @@ public Avalonia.Media.FlowDirection FlowDirection { get; set; }
 
 <span id="uid-2a671bad58"></span>
 
-### Indent Property
+### Indent 属性 {#indent-property}
 
-Gets the amount of line indentation.
+获取行缩进的大小。
 
 ```csharp
 public double Indent { get; set; }
@@ -171,9 +171,9 @@ public double Indent { get; set; }
 
 <span id="uid-c4a89292df"></span>
 
-### LetterSpacing Property
+### LetterSpacing 属性 {#letterspacing-property}
 
-Gets the amount of letter spacing.
+获取字间距的大小。
 
 ```csharp
 public double LetterSpacing { get; set; }
@@ -185,9 +185,9 @@ public double LetterSpacing { get; set; }
 
 <span id="uid-7e134fef3a"></span>
 
-### LineHeight Property
+### LineHeight 属性 {#lineheight-property}
 
-Gets the height of a line of text.
+获取一行文本的高度。
 
 ```csharp
 public double LineHeight { get; set; }
@@ -199,9 +199,9 @@ public double LineHeight { get; set; }
 
 <span id="uid-a531ba54fe"></span>
 
-### ParagraphIndent Property
+### ParagraphIndent 属性 {#paragraphindent-property}
 
-Gets the paragraph indentation.
+获取段落缩进。
 
 ```csharp
 public double ParagraphIndent { get; set; }
@@ -213,9 +213,9 @@ public double ParagraphIndent { get; set; }
 
 <span id="uid-b3ed9316f0"></span>
 
-### TextAlignment Property
+### TextAlignment 属性 {#textalignment-property}
 
-Gets a value that describes how an inline content of a block is aligned.
+获取一个值，描述块内的内联内容如何对齐。
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }
@@ -227,7 +227,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 <span id="uid-2dbf9914a0"></span>
 
-### TextDecorations Property
+### TextDecorations 属性 {#textdecorations-property}
 
 Gets the collection of [TextDecoration](xref:Avalonia.Media.TextDecoration) objects.
 
@@ -235,7 +235,7 @@ Gets the collection of [TextDecoration](xref:Avalonia.Media.TextDecoration) obje
 public Avalonia.Media.TextDecorationCollection TextDecorations { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 If not null, text decorations to apply to all runs in the line. This is in addition
 to any text decorations specified by the [TextRunProperties](xref:Avalonia.Media.TextFormatting.TextRunProperties) for individual text runs.
@@ -246,9 +246,9 @@ to any text decorations specified by the [TextRunProperties](xref:Avalonia.Media
 
 <span id="uid-fbbc456c79"></span>
 
-### TextWrapping Property
+### TextWrapping 属性 {#textwrapping-property}
 
-Gets a value that controls whether text wraps when it reaches the flow edge of its containing block box.
+获取一个值，控制文本抵达所在块盒的排版边缘时是否换行。
 
 ```csharp
 public Avalonia.Media.TextWrapping TextWrapping { get; set; }

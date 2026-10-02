@@ -1,22 +1,22 @@
 ---
 id: code-behind
-title: Code-behind
-description: Use code-behind files to access controls, set properties, and handle events from XAML.
+title: 代码隐藏
+description: 用代码隐藏文件访问控件、设置属性，并处理来自 XAML 的事件。
 doc-type: explanation
 video:
   src: https://youtu.be/cTreAu0Amyk
-  title: Avalonia Code-Behind Explained — Partial Classes, x:Name & Event Wiring
+  title: '吃透 Avalonia 代码隐藏 —— 分部类、x:Name 与事件接线'
 ---
 
 import VsSolutionExplorerScreenshot from '/img/concepts/core-concepts/code-behind/vs-solution-explorer.png';
 
-In addition to a XAML file, most Avalonia controls have a _code-behind_ file that is commonly written in C#. The code-behind file by convention has the file extension `.axaml.cs` and is often displayed nested below the XAML file in your IDE.
+除了 XAML 文件，大多数 Avalonia 控件还配有一个 _代码隐藏_ 文件，通常用 C# 编写。按惯例它的扩展名是 `.axaml.cs`，在 IDE 中一般嵌套显示在 XAML 文件下方。
 
-For instance, in the Visual Studio solution explorer, you can see a `MainWindow.axaml` file along with its code-behind file `MainWindow.axaml.cs`:
+比如在 Visual Studio 的解决方案资源管理器中，你会看到 `MainWindow.axaml` 文件和它的代码隐藏文件 `MainWindow.axaml.cs`：
 
 <Image light={VsSolutionExplorerScreenshot} alt="Visual Studio solution explorer showing a XAML file with its nested code-behind file" position="center" maxWidth={400} cornerRadius="true"/>
 
-Your code-behind file contains a `partial` class that shares the same name as the XAML file. The `partial` keyword is important because it allows the Avalonia build tooling to generate a companion file that wires up your named controls and calls into the XAML loader. For example:
+代码隐藏文件里有一个与 XAML 文件同名的 `partial` 类。`partial` 关键字很关键：有了它，Avalonia 的构建工具才能生成一个配套文件，把你命名过的控件接起来并调用 XAML 加载器。例如：
 
 ```csharp title='MainWindow.axaml.cs'
 using Avalonia.Controls;
@@ -33,7 +33,7 @@ namespace AvaloniaApplication1.Views
 }
 ```
 
-Notice that the class name matches the name of the XAML file and is also referenced in the `x:Class` attribute of the window element. The fully qualified name in `x:Class` must include the namespace.
+注意类名要与 XAML 文件名一致，并且会在窗口元素的 `x:Class` 特性中被引用。`x:Class` 里的全限定名必须带上命名空间。
 
 ```xml title='MainWindow.axaml'
 <Window xmlns="https://github.com/avaloniaui"
@@ -45,18 +45,18 @@ Notice that the class name matches the name of the XAML file and is also referen
 ```
 
 :::tip
-If you change the class name or its namespace in code, make sure the `x:Class` attribute always matches. A mismatch will produce a build or runtime error.
+如果你改了代码里的类名或命名空间，记得同步改 `x:Class` 特性。两者对不上会导致构建错误或运行时报错。
 :::
 
-When you first create a code-behind file, it contains only a constructor that calls the `InitializeComponent()` method. This call is required to load the corresponding XAML at runtime. If you remove it, your UI will not render.
+刚创建出来的代码隐藏文件里只有一个构造函数，其中会调用 `InitializeComponent()` 方法。这行调用用于在运行时加载对应的 XAML，删掉之后界面就不会渲染了。
 
-## Locating controls
+## 定位控件 {#locating-controls}
 
-When you work with code-behind, you often need to access the controls defined in your XAML.
+写代码隐藏时，经常需要访问 XAML 中定义的控件。
 
-To do this, give the target control a name using the `Name` (or `x:Name`) attribute in XAML. The Avalonia build tooling then generates a strongly typed field in your partial class so you can reference the control directly.
+做法是在 XAML 里用 `Name`（或 `x:Name`）特性给目标控件起个名字。Avalonia 的构建工具随后会在你的分部类中生成一个强类型字段，于是就能直接引用该控件了。
 
-Here is an example of a XAML file with a named `Button`:
+下面是一个带命名 `Button` 的 XAML 示例：
 
 ```xml title='MainWindow.axaml'
 <Window xmlns="https://github.com/avaloniaui"
@@ -67,7 +67,7 @@ Here is an example of a XAML file with a named `Button`:
 </Window>
 ```
 
-You can now access the button through the auto-generated `greetingButton` field in your code-behind:
+现在就可以在代码隐藏中通过自动生成的 `greetingButton` 字段访问这个按钮了：
 
 ```csharp title='MainWindow.axaml.cs'
 using Avalonia.Controls;
@@ -87,18 +87,18 @@ namespace AvaloniaApplication1.Views
 ```
 
 :::tip
-Because the field is generated at build time, your IDE may show a warning until the project is compiled. Building the project resolves the warning.
+由于该字段是在构建期生成的，项目编译之前 IDE 可能会报警告。编译一次即可消除。
 :::
 
-## Setting properties
+## 设置属性 {#setting-properties}
 
-Once you have a reference to a control in your code-behind, you can get or set any of its properties. For example, you can change the `Background` property of your button:
+在代码隐藏中拿到控件引用之后，就可以读写它的任意属性了。比如修改按钮的 `Background` 属性：
 
 ```csharp title='C#'
 greetingButton.Background = Brushes.Blue;
 ```
 
-You can also read property values. This is useful when you need to inspect the current state of a control before deciding what action to take:
+属性值同样可以读取。想先探明控件当前状态再决定下一步动作时，这很有用：
 
 ```csharp title='C#'
 if (greetingButton.IsVisible)
@@ -107,11 +107,11 @@ if (greetingButton.IsVisible)
 }
 ```
 
-## Handling events
+## 处理事件 {#handling-events}
 
-Most interactive applications need to respond to user actions such as clicks, key presses, or pointer movements. When you use the code-behind pattern, you write event handler methods in the code-behind file and reference them from your XAML with an event attribute.
+多数带交互的应用都需要响应用户操作，比如点击、按键或指针移动。采用代码隐藏模式时，你在代码隐藏文件里写事件处理方法，再在 XAML 中用事件特性引用它。
 
-For example, to handle a button click, add a `Click` attribute in XAML that points to a method in your code-behind:
+例如要处理按钮点击，在 XAML 中添加一个 `Click` 特性，指向代码隐藏里的某个方法：
 
 ```xml title='MainWindow.axaml'
 <Window xmlns="https://github.com/avaloniaui"
@@ -136,26 +136,26 @@ public partial class MainWindow : Window
 }
 ```
 
-The `sender` parameter is the control that raised the event, and the `RoutedEventArgs` parameter carries information about how the event was generated and propagated through the visual tree.
+`sender` 参数是引发该事件的控件，`RoutedEventArgs` 参数则携带着事件如何产生、又如何在视觉树中传播的信息。
 
-You can also attach event handlers in code rather than in XAML. This is useful when you need to add or remove handlers dynamically:
+事件处理程序也可以在代码中挂接，而不写在 XAML 里。需要动态增删处理程序时，这种方式更合适：
 
 ```csharp title='C#'
 greetingButton.Click += GreetingButtonClickHandler;
 ```
 
 :::info
-For more information on event routing, see [Routed events](/docs/input-interaction/routed-events).
+关于事件路由的更多说明，请见[路由事件](/docs/input-interaction/routed-events)。
 :::
 
-## When to use code-behind vs. MVVM
+## 代码隐藏与 MVVM：该怎么选 {#when-to-use-code-behind-vs-mvvm}
 
-Code-behind works well for small applications, prototypes, or view-specific logic such as animations and focus management. For larger applications, consider the MVVM pattern, which separates your UI logic into view models that are easier to test and maintain. You can also combine both approaches, using MVVM for your data and business logic while keeping view-specific code in code-behind.
+代码隐藏适合小型应用、原型，以及动画、焦点管理这类纯视图逻辑。应用规模一大，就该考虑 MVVM 模式了 —— 它把界面逻辑剥离到视图模型中，更易于测试和维护。两者也可以并用：数据与业务逻辑交给 MVVM，视图专属的代码仍放在代码隐藏里。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Avalonia XAML](/docs/fundamentals/avalonia-xaml)
-- [Code-only UI](/docs/fundamentals/coded-ui)
-- [The MVVM pattern](/docs/fundamentals/the-mvvm-pattern)
-- [UI composition](/docs/fundamentals/ui-composition)
-- [Routed events](/docs/input-interaction/routed-events)
+- [纯代码构建界面](/docs/fundamentals/coded-ui)
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)
+- [界面组合](/docs/fundamentals/ui-composition)
+- [路由事件](/docs/input-interaction/routed-events)

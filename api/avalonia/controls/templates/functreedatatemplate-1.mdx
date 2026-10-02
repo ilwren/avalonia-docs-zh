@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FuncTreeDataTemplate&lt;T&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Templates</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Templates</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/FuncTreeDataTemplate%601.cs">FuncTreeDataTemplate`1.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/FuncTreeDataTemplate%601.cs">FuncTreeDataTemplate`1.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-A template used to build hierarchical data.
+用于构建层级数据的模板。
 
 </div>
 
@@ -54,31 +54,31 @@ public class FuncTreeDataTemplate<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> FuncTemplate&lt;object,Control&gt; <span className="apiref-page__relation-separator">-&gt;</span> <a href="funcdatatemplate">FuncDataTemplate</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="functreedatatemplate">FuncTreeDataTemplate</a> <span className="apiref-page__relation-separator">-&gt;</span> FuncTreeDataTemplate&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> FuncTemplate&lt;object,Control&gt; <span className="apiref-page__relation-separator">-&gt;</span> <a href="funcdatatemplate">FuncDataTemplate</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="functreedatatemplate">FuncTreeDataTemplate</a> <span className="apiref-page__relation-separator">-&gt;</span> FuncTreeDataTemplate&lt;T&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FuncTreeDataTemplate&lt;T&gt; (2 overloads)](#uid-73e94e45f4) | No summary available. |
+| [FuncTreeDataTemplate&lt;T&gt; (2 overloads)](#uid-73e94e45f4) | 暂无摘要。 |
 
 <span id="uid-73e94e45f4"></span>
 
-### FuncTreeDataTemplate&lt;T&gt; overloads
+### FuncTreeDataTemplate&lt;T&gt; 的重载 {#functreedatatemplatelttgt-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d2fc273bee"></span>
 
-#### FuncTreeDataTemplate&lt;T&gt; Constructor
+#### FuncTreeDataTemplate&lt;T&gt; 构造函数 {#functreedatatemplatelttgt-constructor}
 
 ```csharp
 public FuncTreeDataTemplate<T>(Func<T, bool> match, Func<T, Avalonia.Controls.INameScope, Avalonia.Controls.Control> build, Func<T, System.Collections.IEnumerable> itemsSelector)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `match` Func&lt;T, bool&gt;
 
@@ -95,13 +95,13 @@ public FuncTreeDataTemplate<T>(Func<T, bool> match, Func<T, Avalonia.Controls.IN
 
 <span id="uid-77d8fce0cd"></span>
 
-#### FuncTreeDataTemplate&lt;T&gt; Constructor
+#### FuncTreeDataTemplate&lt;T&gt; 构造函数 {#functreedatatemplatelttgt-constructor-1}
 
 ```csharp
 public FuncTreeDataTemplate<T>(Func<T, Avalonia.Controls.INameScope, Avalonia.Controls.Control> build, Func<T, System.Collections.IEnumerable> itemsSelector)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `build` Func&lt;T, [Avalonia.Controls.INameScope](xref:Avalonia.Controls.INameScope), [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)&gt;
 
@@ -111,20 +111,20 @@ public FuncTreeDataTemplate<T>(Func<T, Avalonia.Controls.INameScope, Avalonia.Co
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BindChildren](functreedatatemplate.mdx#uid-466057c57b) | Inherited from [FuncTreeDataTemplate](functreedatatemplate.mdx). |
-| [Build](funcdatatemplate.mdx#uid-910f460c06) | Creates or recycles a control to display the specified data. Inherited from [FuncDataTemplate](funcdatatemplate.mdx). |
-| [Match](funcdatatemplate.mdx#uid-50eee6cfed) | Checks to see if this data template matches the specified data. Inherited from [FuncDataTemplate](funcdatatemplate.mdx). |
+| [Build](funcdatatemplate.mdx#uid-910f460c06) | 创建或回收一个控件，用于显示指定的数据。继承自 [FuncDataTemplate](funcdatatemplate.mdx)。 |
+| [Match](funcdatatemplate.mdx#uid-50eee6cfed) | 检查该数据模板是否与指定的数据相匹配。继承自 [FuncDataTemplate](funcdatatemplate.mdx)。 |
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Access](funcdatatemplate.mdx#uid-c964539ce7) | The default data template used in the case where no matching data template is found but [Avalonia.Controls.Primitives.AccessText](xref:Avalonia.Controls.Primitives.AccessText) should be used. Inherited from [FuncDataTemplate](funcdatatemplate.mdx). |
-| [Default](funcdatatemplate.mdx#uid-70c1c9b32b) | The default data template used in the case where no matching data template is found. Inherited from [FuncDataTemplate](funcdatatemplate.mdx). |
+| [Access](funcdatatemplate.mdx#uid-c964539ce7) | 找不到匹配的数据模板、但应当使用 [Avalonia.Controls.Primitives.AccessText](xref:Avalonia.Controls.Primitives.AccessText) 时所用的默认数据模板。继承自 [FuncDataTemplate](funcdatatemplate.mdx)。 |
+| [Default](funcdatatemplate.mdx#uid-70c1c9b32b) | 找不到匹配的数据模板时所用的默认数据模板。继承自 [FuncDataTemplate](funcdatatemplate.mdx)。 |
 
 </ApiRefPage>
 

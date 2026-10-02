@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RoutedEventRegistry Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Interactivity</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Interactivity</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Interactivity/RoutedEventRegistry.cs">RoutedEventRegistry.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Interactivity/RoutedEventRegistry.cs">RoutedEventRegistry.cs</a>
 </div>
 
 </div>
@@ -54,21 +54,21 @@ public class RoutedEventRegistry
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> RoutedEventRegistry
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> RoutedEventRegistry
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RoutedEventRegistry](#uid-214ec73639) | No summary available. |
+| [RoutedEventRegistry](#uid-214ec73639) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-214ec73639"></span>
 
-### RoutedEventRegistry Constructor
+### RoutedEventRegistry 构造函数 {#routedeventregistry-constructor}
 
 ```csharp
 public RoutedEventRegistry()
@@ -76,19 +76,19 @@ public RoutedEventRegistry()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [GetAllRegistered](#uid-396c5219f9) | Returns all routed events, that are currently registered in the event registry. |
-| [GetRegistered (2 overloads)](#uid-68a2e56b91) | No summary available. |
-| [Register](#uid-6b61f44227) | Registers a [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent) on a type. |
+| [GetRegistered（2 个重载）](#uid-68a2e56b91) | 暂无摘要。 |
+| [Register](#uid-6b61f44227) | 在某个类型上注册 [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-396c5219f9"></span>
 
-### GetAllRegistered Method
+### GetAllRegistered 方法 {#getallregistered-method}
 
 Returns all routed events, that are currently registered in the event registry.
 
@@ -96,7 +96,7 @@ Returns all routed events, that are currently registered in the event registry.
 public System.Collections.Generic.IEnumerable<Avalonia.Interactivity.RoutedEvent> GetAllRegistered()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)&gt;
 
@@ -107,13 +107,13 @@ All routed events, that are currently registered in the event registry.
 
 <span id="uid-68a2e56b91"></span>
 
-### GetRegistered overloads
+### GetRegistered 的重载 {#getregistered-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4476d626c9"></span>
 
-#### GetRegistered Method
+#### GetRegistered 方法 {#getregistered-method}
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Interactivity.RoutedEvent> GetRegistered<TOwner>()
@@ -124,7 +124,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Interactivity.RoutedEve
 `TOwner`
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)&gt;
 
@@ -135,7 +135,7 @@ System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Interactivity.RoutedEvent]
 
 <span id="uid-9ea2ff0028"></span>
 
-#### GetRegistered Method
+#### GetRegistered 方法 {#getregistered-method-1}
 
 Returns all routed events registered with the provided type.
 If the type is not found or does not provide any routed events, an empty list is returned.
@@ -144,14 +144,14 @@ If the type is not found or does not provide any routed events, an empty list is
 public System.Collections.Generic.IReadOnlyList<Avalonia.Interactivity.RoutedEvent> GetRegistered(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)&gt;
 
@@ -164,19 +164,19 @@ All routed events registered with the provided type.
 
 <span id="uid-6b61f44227"></span>
 
-### Register Method
+### Register 方法 {#register-method}
 
-Registers a [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent) on a type.
+在某个类型上注册 [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)。
 
 ```csharp
 public void Register(Type type, Avalonia.Interactivity.RoutedEvent event)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
 `event` [Avalonia.Interactivity.RoutedEvent](xref:Avalonia.Interactivity.RoutedEvent)
@@ -184,7 +184,7 @@ The type.
 The event.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 You won't usually want to call this method directly, instead use the
 [Avalonia.Interactivity.RoutedEvent.Register&lt;T1, T2&gt;(string,Avalonia.Interactivity.RoutingStrategies)](xref:Avalonia.Interactivity.RoutedEvent.Register%60%602%28System.String%2CAvalonia.Interactivity.RoutingStrategies%29)
@@ -192,19 +192,19 @@ method.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Instance](#uid-1bddaa3cb2) | Gets the [Avalonia.Interactivity.RoutedEventRegistry](xref:Avalonia.Interactivity.RoutedEventRegistry) instance. |
+| [Instance](#uid-1bddaa3cb2) | 获取 [Avalonia.Interactivity.RoutedEventRegistry](xref:Avalonia.Interactivity.RoutedEventRegistry) 实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1bddaa3cb2"></span>
 
-### Instance Property
+### Instance 属性 {#instance-property}
 
-Gets the [Avalonia.Interactivity.RoutedEventRegistry](xref:Avalonia.Interactivity.RoutedEventRegistry) instance.
+获取 [Avalonia.Interactivity.RoutedEventRegistry](xref:Avalonia.Interactivity.RoutedEventRegistry) 实例。
 
 ```csharp
 public Avalonia.Interactivity.RoutedEventRegistry Instance { get; set; }

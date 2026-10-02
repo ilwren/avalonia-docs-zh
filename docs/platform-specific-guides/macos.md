@@ -3,53 +3,53 @@ id: macos
 title: macOS
 ---
 
-## How Avalonia runs on macOS
+## Avalonia 在 macOS 上如何运行 {#how-avalonia-runs-on-macos}
 
-Avalonia does not use the standard .NET macOS workload (`net10.0-macos`). Instead, it ships its own native platform backend that interfaces with macOS APIs through a compiled dynamic library (`libAvaloniaNative.dylib`), bypassing Microsoft's managed macOS bindings entirely.
+Avalonia 并不使用标准的 .NET macOS 工作负载（`net10.0-macos`），而是自带一套原生平台后端：它通过一个编译好的动态库（`libAvaloniaNative.dylib`）与 macOS API 打交道，完全绕开了微软的托管 macOS 绑定。
 
-This native backend is written in Objective-C++ (`.mm` files) and lives in the Avalonia repository at [`native/Avalonia.Native/src/OSX`](https://github.com/AvaloniaUI/Avalonia/tree/master/native/Avalonia.Native/src/OSX). It provides the platform essentials: windowing, input handling, Metal and OpenGL rendering, clipboard, menus, drag-and-drop, system tray, file dialogs, and accessibility. The .NET side communicates with this native code through MicroCom, a lightweight COM-style interop layer. Interfaces between the two sides are defined in an [IDL file](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Native/avn.idl), and MicroCom generates the managed wrappers that marshal calls across the boundary.
+这套原生后端用 Objective-C++（`.mm` 文件）写成，位于 Avalonia 仓库的 [`native/Avalonia.Native/src/OSX`](https://github.com/AvaloniaUI/Avalonia/tree/master/native/Avalonia.Native/src/OSX)。它提供了平台最基本的那些能力：窗口、输入处理、Metal 与 OpenGL 渲染、剪贴板、菜单、拖放、系统托盘、文件对话框和无障碍。.NET 一侧通过轻量的 COM 风格互操作层 MicroCom 与这些原生代码通信：两侧的接口定义在一个 [IDL 文件](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Native/avn.idl)中，MicroCom 据此生成负责跨边界封送调用的托管包装。
 
-This has an important practical benefit: you can build and compile Avalonia desktop apps for macOS from Windows or Linux without installing the macOS workload or having access to a Mac. The default target framework is simply `net9.0` (or `net10.0`), not a platform-specific one.
+这带来一个很实在的好处：你可以在 Windows 或 Linux 上构建、编译面向 macOS 的 Avalonia 桌面应用，既不用装 macOS 工作负载，也不需要一台 Mac。默认目标框架就是 `net9.0`（或 `net10.0`），而非某个平台专属框架。
 
-The trade-off is that Avalonia's native bindings are minimal. They cover what the framework needs for UI, but they don't expose the full breadth of macOS platform APIs (such as MapKit, HealthKit, StoreKit, etc.).
+代价是 Avalonia 的原生绑定很精简：它只覆盖框架做界面所需的那部分，并不暴露 macOS 平台 API 的全貌（比如 MapKit、HealthKit、StoreKit 等）。
 
-### Accessing the full macOS API surface
+### 用上完整的 macOS API {#accessing-the-full-macos-api-surface}
 
-If your app needs macOS APIs beyond what Avalonia exposes, change your target framework to a macOS-specific one:
+若你的应用需要 Avalonia 未暴露的 macOS API，请把目标框架改成 macOS 专属的：
 
 ```xml
 <TargetFramework>net10.0-macos</TargetFramework>
 ```
 
-This gives you access to the complete set of APIs provided by the .NET macOS workload, but it comes with a constraint: **builds targeting a macOS TFM must be performed on macOS**. You lose the ability to cross-compile from Windows or Linux.
+这样你就能用上 .NET macOS 工作负载提供的全部 API，但也随之带来一个约束：**面向 macOS TFM 的构建必须在 macOS 上进行**，你将失去从 Windows 或 Linux 交叉编译的能力。
 
-## Application name and identity
+## 应用名称与标识 {#application-name-and-identity}
 
-macOS shows your application's name in several places: the menu bar, the "About" dialog, the "Quit" menu item, the Dock tooltip, and the window title bar. Getting these right requires setting the name in the correct locations.
+macOS 会在好几处显示你的应用名称：菜单栏、"关于"对话框、"退出"菜单项、程序坞提示和窗口标题栏。要让它们都对，就得在正确的地方设置名称。
 
-### Where the name comes from
+### 名称都是从哪儿来的 {#where-the-name-comes-from}
 
-| Location | Source | Notes |
+| 位置 | Source | 注释支持情况 |
 |---|---|---|
-| Menu bar (bold app name) | `CFBundleName` in `Info.plist` (bundled), or `Application.Name` (unbundled) | `CFBundleName` is limited to 15 characters. |
-| Dock tooltip | `CFBundleDisplayName` in `Info.plist`, falling back to `CFBundleName` | Use `CFBundleDisplayName` for names longer than 15 characters. |
-| "About" menu item | Header text of your [`NativeMenuItem`](/api/avalonia/controls/nativemenuitem) | You control this text entirely. |
-| "Quit" menu item | `CFBundleName` or `Application.Name` | Avalonia generates "Quit App Name" automatically. |
-| Window title bar | `Window.Title` property | Independent of the app name. |
+| 菜单栏（粗体的应用名） | `Info.plist` 中的 `CFBundleName`（已打包），或 `Application.Name`（未打包） | `CFBundleName` 最多 15 个字符。 |
+| 程序坞提示 | `Info.plist` 中的 `CFBundleDisplayName`，回退到 `CFBundleName` | 名称超过 15 个字符时请用 `CFBundleDisplayName`。 |
+| "关于"菜单项 | 你的 [`NativeMenuItem`](/api/avalonia/controls/nativemenuitem) 的标题文字 | 这段文字完全由你掌控。 |
+| "退出"菜单项 | `CFBundleName` or `Application.Name` | Avalonia 会自动生成 "Quit App Name"。 |
+| 窗口标题栏 | `Window.Title` property | 与应用名称无关。 |
 
-### Setting the application name
+### 设置应用名称 {#setting-the-application-name}
 
-**Step 1: Set `Application.Name` in `App.axaml`**
+**第 1 步：在 `App.axaml` 中设置 `Application.Name`**
 
-This controls the name during development (before you have an `.app` bundle):
+它决定开发期间（还没有 `.app` 包时）显示的名称：
 
 ```xml
 <Application Name="My Application" ...>
 ```
 
-**Step 2: Set `CFBundleName` and `CFBundleDisplayName` in `Info.plist`**
+**第 2 步：在 `Info.plist` 中设置 `CFBundleName` 和 `CFBundleDisplayName`**
 
-When your app runs as a bundled `.app`, macOS reads the name from `Info.plist` instead of `Application.Name`. Keep these values consistent:
+当应用以打包好的 `.app` 形式运行时，macOS 会从 `Info.plist` 而非 `Application.Name` 读取名称。请保持这些值一致：
 
 ```xml
 <key>CFBundleName</key>
@@ -59,15 +59,15 @@ When your app runs as a bundled `.app`, macOS reads the name from `Info.plist` i
 <string>My Application</string>
 ```
 
-`CFBundleName` is limited to 15 characters and is used for the menu bar and "Quit" item. `CFBundleDisplayName` has no length limit and is used by Finder and the Dock. If your app name fits in 15 characters, you only need `CFBundleName`.
+`CFBundleName` 最多 15 个字符，用于菜单栏和"退出"项；`CFBundleDisplayName` 没有长度限制，供访达和程序坞使用。若你的应用名在 15 个字符以内，只设 `CFBundleName` 就够了。
 
-## Native menu bar
+## 原生菜单栏 {#native-menu-bar}
 
-macOS applications have a menu bar at the top of the screen, separate from the application window. Avalonia supports this through [`NativeMenu`](/api/avalonia/controls/nativemenu), which renders as a native macOS menu bar.
+macOS 应用的菜单栏在屏幕顶端，与应用窗口相互独立。Avalonia 通过 [`NativeMenu`](/api/avalonia/controls/nativemenu) 支持它，渲染出来就是原生的 macOS 菜单栏。
 
-### Application menu
+### 应用程序菜单 {#application-menu}
 
-The leftmost menu in the menu bar carries your application's name and typically contains "About", "Preferences", and "Quit" items. Define it by attaching a `NativeMenu` to your `Application` in `App.axaml`:
+菜单栏最左边那个菜单顶着你的应用名，通常含有"关于"、"偏好设置"和"退出"几项。在 `App.axaml` 里给你的 `Application` 附上一个 `NativeMenu` 即可定义它：
 
 ```xml
 <Application xmlns="https://github.com/avaloniaui"
@@ -85,13 +85,13 @@ The leftmost menu in the menu bar carries your application's name and typically 
 </Application>
 ```
 
-If you do not define a `NativeMenu`, Avalonia creates a default application menu that includes an "About Avalonia" item. Define your own menu to replace it.
+若你没有定义 `NativeMenu`，Avalonia 会生成一个默认的应用程序菜单，其中含有"About Avalonia"项。自己定义一个菜单即可取而代之。
 
-Avalonia automatically appends standard items after your custom menu items, including a separator and the "Quit App Name" item with <kbd>⌘</kbd><kbd>Q</kbd>. You do not need to add a Quit item yourself.
+Avalonia 会在你的自定义菜单项之后自动补上标准项，包括一条分隔线和快捷键为 <kbd>⌘</kbd><kbd>Q</kbd> 的"Quit App Name"。你不必自己添加退出项。
 
-### Replacing the About dialog
+### 替换"关于"对话框 {#replacing-the-about-dialog}
 
-The "About" item in the application menu is a `NativeMenuItem` you define yourself. It has no special built-in behavior. Wire its `Click` event to show whatever UI you want:
+应用程序菜单里的"关于"项是你自己定义的 `NativeMenuItem`，并无特殊的内建行为。给它的 `Click` 事件挂个处理程序，想显示什么界面都行：
 
 ```csharp
 private void About_OnClick(object? sender, EventArgs e)
@@ -101,11 +101,11 @@ private void About_OnClick(object? sender, EventArgs e)
 }
 ```
 
-macOS users expect the About item to be the first entry in the application menu, with the header text "About My Application..." followed by an ellipsis. This is a convention, not a requirement enforced by the framework.
+macOS 用户习惯「关于」项排在应用程序菜单的头一位，标题写成 "About My Application..."，末尾带省略号。这是惯例，框架并不强制。
 
-### Window menus
+### 窗口菜单 {#window-menus}
 
-To add standard menus like File and Edit, attach a `NativeMenu` to your `Window`:
+要添加「文件」「编辑」这类标准菜单，请给你的 `Window` 附上一个 `NativeMenu`：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui">
@@ -137,13 +137,13 @@ To add standard menus like File and Edit, attach a `NativeMenu` to your `Window`
 </Window>
 ```
 
-A menu item named "Edit" is special on macOS. Avalonia automatically adds standard macOS text editing features (such as autocomplete and character substitution) to any menu with this header.
+在 macOS 上，名为 "Edit" 的菜单项有特殊待遇：Avalonia 会自动为任何以此为标题的菜单添上 macOS 标准的文本编辑功能（比如自动补全和字符替换）。
 
-Each `NativeMenuItem` requires either a `Click` event handler or a `Command` binding to be enabled. Without one of these, the item appears greyed out.
+每个 `NativeMenuItem` 都得有 `Click` 事件处理程序或 `Command` 绑定才会启用，两者皆无则该项会呈灰色。
 
-### Dock menu
+### 程序坞菜单 {#dock-menu}
 
-macOS displays a context menu when users right-click (or Control-click) your application's icon in the Dock. You can customize this menu by attaching a `NativeDock.Menu` to your `Application` in `App.axaml`:
+当用户在程序坞中右键（或按住 Control 点击）你的应用图标时，macOS 会弹出一个上下文菜单。在 `App.axaml` 里给你的 `Application` 附上一个 `NativeDock.Menu` 即可自定义这个菜单：
 
 ```xml
 <Application xmlns="https://github.com/avaloniaui"
@@ -161,9 +161,9 @@ macOS displays a context menu when users right-click (or Control-click) your app
 </Application>
 ```
 
-The dock menu items appear above the standard system items (such as "Options" and "Quit") that macOS adds automatically.
+程序坞菜单项会显示在 macOS 自动添加的系统标准项（比如"选项"和"退出"）上方。
 
-You can also modify the dock menu at runtime:
+你也可以在运行时修改程序坞菜单：
 
 ```csharp
 var dockMenu = NativeDock.GetMenu(this);
@@ -174,51 +174,51 @@ if (dockMenu is not null)
 ```
 
 :::note
-`NativeDock.Menu` only has an effect on macOS. On other platforms, the property is ignored.
+`NativeDock.Menu` 只在 macOS 上起作用，其他平台会忽略该属性。
 :::
 
-### Keyboard shortcuts
+### 键盘快捷键 {#keyboard-shortcuts}
 
-The `Gesture` property assigns a keyboard shortcut to a menu item. Avalonia uses platform-neutral modifier names in gesture strings. On macOS, these map to the standard modifier keys:
+`Gesture` 属性为菜单项指定键盘快捷键。Avalonia 在手势字符串中使用平台中立的修饰键名称，在 macOS 上它们会映射到标准修饰键：
 
-| Avalonia modifier | macOS key | Symbol |
+| Avalonia 修饰键 | macOS 按键 | 符号 |
 |---|---|---|
 | `Meta` | Command | <kbd>⌘</kbd> |
 | `Control` | Control | <kbd>⌃</kbd> |
 | `Shift` | Shift | <kbd>⇧</kbd> |
 | `Alt` | Option | <kbd>⌥</kbd> |
 
-A gesture string joins one or more modifiers with `+`, followed by the key name:
+手势字符串用 `+` 连接一个或多个修饰键，后面跟上键名：
 
-| `Gesture` value | macOS shortcut |
+| `Gesture` 值 | macOS 快捷键 |
 |---|---|
 | `Meta+S` | <kbd>⌘</kbd> <kbd>S</kbd> |
 | `Meta+Shift+S` | <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>S</kbd> |
 | `Meta+Comma` | <kbd>⌘</kbd> <kbd>,</kbd> |
 | `Meta+Alt+Q` | <kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>Q</kbd> |
 
-## macOS platform conventions
+## macOS 平台惯例 {#macos-platform-conventions}
 
-macOS users expect certain standard keyboard shortcuts and behaviours. Avalonia handles some of these automatically, but others require explicit configuration.
+macOS 用户对某些标准快捷键和行为有既定预期。其中一部分 Avalonia 会自动照应，另一部分则需要你显式配置。
 
-### Standard shortcuts
+### 标准快捷键 {#standard-shortcuts}
 
-The following shortcuts are conventions that macOS users expect. Configure them using `NativeMenu` gestures or `KeyBinding`:
+下列快捷键是 macOS 用户默认会用的惯例。请用 `NativeMenu` 手势或 `KeyBinding` 来配置：
 
-| Action | Shortcut | Notes |
+| 动作 | 快捷键 | 注释支持情况 |
 |---|---|---|
-| Preferences | <kbd>⌘</kbd> <kbd>,</kbd> | Should open your settings/preferences view |
-| Quit | <kbd>⌘</kbd> <kbd>Q</kbd> | Handled automatically by the native menu |
-| Close Window | <kbd>⌘</kbd> <kbd>W</kbd> | Bind to close the active window |
-| Minimize | <kbd>⌘</kbd> <kbd>M</kbd> | Handled automatically |
-| Hide | <kbd>⌘</kbd> <kbd>H</kbd> | Handled automatically |
-| Full Screen | <kbd>⌘</kbd> <kbd>⌃</kbd> <kbd>F</kbd> | Handled automatically |
-| Select All | <kbd>⌘</kbd> <kbd>A</kbd> | Handled automatically in text controls |
-| Find | <kbd>⌘</kbd> <kbd>F</kbd> | Bind to your search/find functionality |
+| Preferences | <kbd>⌘</kbd> <kbd>,</kbd> | 应当打开你的设置/偏好设置视图 |
+| Quit | <kbd>⌘</kbd> <kbd>Q</kbd> | 由原生菜单自动处理 |
+| Close Window | <kbd>⌘</kbd> <kbd>W</kbd> | 绑定为关闭当前活动窗口 |
+| Minimize | <kbd>⌘</kbd> <kbd>M</kbd> | 自动处理 |
+| Hide | <kbd>⌘</kbd> <kbd>H</kbd> | 自动处理 |
+| Full Screen | <kbd>⌘</kbd> <kbd>⌃</kbd> <kbd>F</kbd> | 自动处理 |
+| Select All | <kbd>⌘</kbd> <kbd>A</kbd> | 在文本控件中自动处理 |
+| Find | <kbd>⌘</kbd> <kbd>F</kbd> | 绑定到你的搜索/查找功能 |
 
 ### PlatformHotkeyConfiguration
 
-Avalonia automatically adapts common hotkeys to the active platform. On macOS, copy/paste/cut use Cmd rather than Ctrl. You can query the current platform's hotkey mappings at runtime through `PlatformSettings.HotkeyConfiguration`:
+Avalonia 会自动把常用热键适配到当前平台。在 macOS 上，复制/粘贴/剪切用的是 Cmd 而非 Ctrl。你可以在运行时通过 `PlatformSettings.HotkeyConfiguration` 查询当前平台的热键映射：
 
 ```csharp
 protected override void OnKeyDown(KeyEventArgs e)
@@ -231,13 +231,13 @@ protected override void OnKeyDown(KeyEventArgs e)
 }
 ```
 
-This is useful when building custom controls that need to respond to platform-standard shortcuts without hardcoding modifier keys.
+当你编写的自定义控件需要响应平台标准快捷键、又不想把修饰键写死时，这一手很有用。
 
-## Embedding native views
+## 嵌入原生视图 {#embedding-native-views}
 
-You can host native macOS views (NSView subclasses) inside an Avalonia control using `NativeControlHost`. This is useful for integrating platform-specific UI components that have no Avalonia equivalent, such as a map view, camera preview, or platform media player.
+借助 `NativeControlHost`，你可以在 Avalonia 控件内承载 macOS 原生视图（NSView 的子类）。当你要集成 Avalonia 没有对应物的平台专属界面组件时（比如地图视图、相机预览或平台媒体播放器），这就派上用场了。
 
-`NativeControlHost` works by providing a region of the window where a native view is composited alongside the Avalonia rendering surface. To use it, create a platform-specific implementation that returns a handle to the native view:
+`NativeControlHost` 的做法是在窗口中划出一块区域，让原生视图与 Avalonia 的渲染表面合成在一起。使用时，请写一个平台专属的实现，返回指向原生视图的句柄：
 
 ```csharp
 public class NativeControlHostExample : NativeControlHost
@@ -263,19 +263,19 @@ public class NativeControlHostExample : NativeControlHost
 }
 ```
 
-Native views rendered this way sit in a separate compositing layer from Avalonia's rendering, so they always appear above or below Avalonia content rather than participating in the normal visual tree z-ordering.
+这样渲染出来的原生视图处在与 Avalonia 渲染相互独立的合成层中，因此它们要么始终在 Avalonia 内容之上、要么始终在其之下，不参与正常视觉树的 z 序。
 
 :::note
-Embedding native views requires the `net10.0-macos` target framework, since you need access to the macOS APIs to create the native views. See [Accessing the full macOS API surface](#accessing-the-full-macos-api-surface) above.
+嵌入原生视图需要 `net10.0-macos` 目标框架，因为创建原生视图得用到 macOS API。请见上文的[用上完整的 macOS API](#accessing-the-full-macos-api-surface)。
 :::
 
-### Embedding Avalonia in a native macOS app
+### 把 Avalonia 嵌进原生 macOS 应用 {#embedding-avalonia-in-a-native-macos-app}
 
-The reverse is also possible. You can host Avalonia UI inside a native macOS (Cocoa or Mac Catalyst) application by embedding Avalonia's rendering surface as an NSView within your native view hierarchy. This is useful when migrating an existing macOS application to Avalonia incrementally, or when you want to use Avalonia for specific views within an otherwise native app.
+反过来也行：把 Avalonia 的渲染表面作为一个 NSView 嵌入你的原生视图层次结构，就能在原生 macOS（Cocoa 或 Mac Catalyst）应用中承载 Avalonia 界面。当你要把既有 macOS 应用逐步迁到 Avalonia，或者只想在一个原生应用的某些视图里用 Avalonia 时，这很有用。
 
-## URL protocol handlers
+## URL 协议处理程序 {#url-protocol-handlers}
 
-You can register your app to handle custom URL schemes (e.g., `myapp://open`) so that clicking a link in a browser or another app launches yours. Add a `CFBundleURLTypes` entry to your `Info.plist`:
+你可以把应用注册为自定义 URL 方案（比如 `myapp://open`）的处理方，这样在浏览器或别的应用里点击链接就能拉起你的应用。请在 `Info.plist` 中加一条 `CFBundleURLTypes` 条目：
 
 ```xml
 <key>CFBundleURLTypes</key>
@@ -293,11 +293,11 @@ You can register your app to handle custom URL schemes (e.g., `myapp://open`) so
 </array>
 ```
 
-With this in place, URLs like `myapp://some-action` will open your application. You can inspect the `Info.plist` files of other apps in `/Applications` to see how they configure their URL schemes.
+配好之后，`myapp://some-action` 这样的 URL 就会打开你的应用了。你可以翻看 `/Applications` 下其他应用的 `Info.plist` 文件，看看它们是怎么配置 URL 方案的。
 
-## File type associations
+## 文件类型关联 {#file-type-associations}
 
-You can register your app as the handler for specific file types so that double-clicking a file in Finder opens it in your app. Add a `CFBundleDocumentTypes` entry to your `Info.plist`:
+你可以把应用注册为特定文件类型的处理方，这样在访达里双击文件就会用你的应用打开。请在 `Info.plist` 中加一条 `CFBundleDocumentTypes` 条目：
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -319,19 +319,19 @@ You can register your app as the handler for specific file types so that double-
 </array>
 ```
 
-| Key | Description |
+| 按键 | 说明 |
 |---|---|
-| `CFBundleTypeName` | A human-readable name for the file type. |
-| `CFBundleTypeExtensions` | Array of file extensions to associate (without the leading dot). |
-| `CFBundleTypeIconFile` | Icon to display for files of this type. |
-| `CFBundleTypeRole` | Your app's role: `Editor` (can read and write), `Viewer` (read-only), or `None`. |
-| `LSHandlerRank` | Priority: `Owner` (your app created this type), `Default`, `Alternate`, or `None`. |
+| `CFBundleTypeName` | 该文件类型的可读名称。 |
+| `CFBundleTypeExtensions` | 要关联的文件扩展名数组（不带前面的点）。 |
+| `CFBundleTypeIconFile` | 该类型文件显示的图标。 |
+| `CFBundleTypeRole` | 你的应用扮演的角色：`Editor`（可读可写）、`Viewer`（只读）或 `None`。 |
+| `LSHandlerRank` | 优先级：`Owner`（该类型由你的应用创建）、`Default`、`Alternate` 或 `None`。 |
 
-## Native code
+## 原生代码 {#native-code}
 
-The Avalonia native macOS code is located at `native/Avalonia.Native/src/OSX`. If you need to modify or debug the native layer, open the `Avalonia.Native.OSX.xcodeproj` project in Xcode.
+Avalonia 的 macOS 原生代码位于 `native/Avalonia.Native/src/OSX`。若你需要修改或调试原生层，请在 Xcode 中打开 `Avalonia.Native.OSX.xcodeproj` 项目。
 
-You can compile changes in Xcode using <kbd>⌘</kbd> <kbd>B</kbd>, then point your Avalonia application to the modified dylib. Find the output path by clicking on the dylib under **Products** in Xcode's project navigator, then specify it in your `AppBuilder`:
+你可以在 Xcode 中用 <kbd>⌘</kbd> <kbd>B</kbd> 编译改动，然后让 Avalonia 应用指向改过的 dylib。在 Xcode 项目导航器的 **Products** 下点击该 dylib 即可找到输出路径，再把它写进你的 `AppBuilder`：
 
 ```csharp
 .With(new AvaloniaNativePlatformOptions
@@ -340,11 +340,11 @@ You can compile changes in Xcode using <kbd>⌘</kbd> <kbd>B</kbd>, then point y
 })
 ```
 
-### Running as an app bundle during development
+### 开发期间以 app bundle 形式运行 {#running-as-an-app-bundle-during-development}
 
-Some macOS features require your app to run as a proper `.app` bundle. For example, the Xcode Accessibility Inspector will not recognise your application otherwise.
+有些 macOS 功能要求你的应用以规规矩矩的 `.app` 包形式运行。比如不这么做，Xcode 的辅助功能检查器就认不出你的应用。
 
-To achieve this without a full packaging step, modify the output path in your `.csproj` to resemble a bundle structure:
+若不想走完整的打包流程，可以改一改 `.csproj` 里的输出路径，让它长得像个 bundle 结构：
 
 ```xml
 <OutputPath>bin\$(Configuration)\$(Platform)\MyApp.app/Contents/MacOS</OutputPath>
@@ -352,15 +352,15 @@ To achieve this without a full packaging step, modify the output path in your `.
 <UseAppHost>true</UseAppHost>
 ```
 
-Then place a valid `Info.plist` in the `Contents` directory. See the [macOS deployment guide](/docs/deployment/macos) for `Info.plist` details.
+然后在 `Contents` 目录里放一份有效的 `Info.plist`。关于 `Info.plist` 的细节请见 [macOS 部署指南](/docs/deployment/macos)。
 
-## Mac Catalyst alternative
+## Mac Catalyst 这条路 {#mac-catalyst-alternative}
 
-Avalonia also supports running iOS apps on macOS through Apple's Mac Catalyst framework. This is a different approach from the Avalonia Native backend described on this page. Mac Catalyst requires a Mac to build and depends on the `maccatalyst` .NET workload, so you lose the ability to cross-compile from Windows or Linux. It is primarily useful when your app depends heavily on UIKit APIs or when embedding Avalonia inside a MAUI hybrid application. For most Avalonia apps, the default macOS backend described above is the recommended choice. See [Mac Catalyst](/docs/platform-specific-guides/ios#mac-catalyst) in the iOS platform guide for details.
+Avalonia 也支持借助 Apple 的 Mac Catalyst 框架，让 iOS 应用跑在 macOS 上。这与本页介绍的 Avalonia Native 后端是两条不同的路子。Mac Catalyst 必须在 Mac 上构建，并且依赖 `maccatalyst` .NET 工作负载，于是你会失去从 Windows 或 Linux 交叉编译的能力。它主要适用于重度依赖 UIKit API 的应用，或者要把 Avalonia 嵌进 MAUI 混合应用的场合。对多数 Avalonia 应用而言，上文介绍的默认 macOS 后端才是推荐之选。细节请见 iOS 平台指南中的 [Mac Catalyst](/docs/platform-specific-guides/ios#mac-catalyst)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Deploying on macOS](/docs/deployment/macos)
-- [iOS platform guide](/docs/platform-specific-guides/ios) (includes Mac Catalyst)
-- [NativeMenu control reference](/controls/menus/nativemenu)
-- [Keyboard and hotkeys](/docs/input-interaction/keyboard-and-hotkeys)
+- [在 macOS 上部署](/docs/deployment/macos)
+- [iOS 平台指南](/docs/platform-specific-guides/ios)（含 Mac Catalyst）
+- [NativeMenu 控件参考](/controls/menus/nativemenu)
+- [键盘与热键](/docs/input-interaction/keyboard-and-hotkeys)

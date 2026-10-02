@@ -1,63 +1,63 @@
 ---
 id: app-performance-issues
-title: App performance issues
+title: 应用性能问题
 ---
 
-Is your app running too slowly? The performance of Avalonia applications can be significantly improved by taking into account several key considerations during the development process. This document discusses the steps you can take to optimize the performance of your Avalonia applications.
+你的应用跑得太慢？只要在开发过程中留心几个要点，Avalonia 应用的性能往往能有不小的提升。本文就来说说可以从哪些地方着手优化。
 
 ## Use CompiledBindings
 
-One of the most effective ways to improve performance in Avalonia is to use [`CompiledBindings`](/docs/data-binding/compiled-bindings) in your application. Compiled bindings enable faster data binding by compiling the binding path at compile time, thus reducing the overhead of reflection at runtime. 
+在 Avalonia 中提升性能最立竿见影的办法之一，就是在应用里用 [`CompiledBindings`](/docs/data-binding/compiled-bindings)。编译绑定在编译期就把绑定路径解析好，省去了运行时反射的开销，数据绑定自然更快。 
 
-## Choose the right control for data display
+## 按数据展示需求挑对控件 {#choose-the-right-control-for-data-display}
 
-When you need to display a large amount of data in a `DataGrid` or a `TreeView` with many nodes, it is recommended to use the `TreeDataGrid` control. `TreeDataGrid` is built from scratch and provides better performance than the normal `DataGrid`. It supports virtualization and is particularly useful if you need a virtualized tree, as it has hierarchical data templates.
+当你需要在 `DataGrid` 中展示大量数据，或者 `TreeView` 里节点众多时，推荐用 `TreeDataGrid` 控件。`TreeDataGrid` 是从零写起的，性能比普通的 `DataGrid` 更好。它支持虚拟化，还带有层级数据模板，若你需要一棵虚拟化的树，它尤其合用。
 
-Avoid using the `DataGrid` control if you don't need editing features. It's generally regarded as a less optimal control for performance.
+若用不上编辑功能，就别用 `DataGrid` 控件——论性能，它一向算不上优选。
 
 :::caution
-[`TreeDataGrid`](/controls/data-display/structured-data/treedatagrid) is maintained as part of Avalonia Pro as of October 2025. It is presently still the recommended option for large datasets.
+自 2025 年 10 月起，[`TreeDataGrid`](/controls/data-display/structured-data/treedatagrid) 作为 Avalonia Pro 的一部分维护。面对大数据集，它目前仍是推荐选择。
 :::
 
 ## Virtualization
 
-When working with large amounts of data, enabling virtualization can improve the performance of your Avalonia application. Virtualization means that only the visible items in the control are rendered, which significantly improves the performance when there are a large number of items to display.
+处理大量数据时，启用虚拟化能让 Avalonia 应用跑得更快。所谓虚拟化，就是只渲染控件中可见的那些项；当要显示的项数庞大时，性能提升相当可观。
 
 ### TreeDataGrid
 
-`TreeDataGrid` supports virtualization and can handle thousands of rows with complex cells effectively.
+`TreeDataGrid` 支持虚拟化，哪怕成千上万行、单元格还挺复杂，也应付得来。
 
 :::caution
-[`TreeDataGrid`](/controls/data-display/structured-data/treedatagrid) is maintained as part of Avalonia Pro as of October 2025. It is presently still the recommended option for large datasets.
+自 2025 年 10 月起，[`TreeDataGrid`](/controls/data-display/structured-data/treedatagrid) 作为 Avalonia Pro 的一部分维护。面对大数据集，它目前仍是推荐选择。
 :::
 
-## Optimize your visual tree structure
+## 精简视觉树结构 {#optimize-your-visual-tree-structure}
 
-Performance can often be hindered by a deeply nested and complicated layout. Strive to maintain your XAML markup as uncomplicated and flat as possible. Rendering UI elements onscreen triggers a "layout pass" twice for every single element (a measure pass followed by an arrange pass).
+嵌套过深、结构复杂的布局常常是性能的绊脚石。尽量把 XAML 标记写得简单、扁平些。每把一个 UI 元素渲染到屏幕上，都要为它跑两趟“布局过程”（先测量，后排列）。
 
-This layout pass process is computation-heavy: the more child elements an item has, the more calculations are needed. Therefore, minimizing the complexity of your visual tree in Avalonia can significantly enhance the application's performance.
+这个布局过程相当吃算力：一个元素的子级越多，要算的账就越多。所以在 Avalonia 中把视觉树的复杂度压下来，往往能显著改善应用性能。
 
-## Minimize use of run for setting text properties
+## 少用 Run 来设置文本属性 {#minimize-use-of-run-for-setting-text-properties}
 
-It's advisable to minimize the use of Run within a TextBlock as it can lead to more resource-demanding operations. If you're utilizing Run to define text properties, consider setting those properties directly on the TextBlock instead. This practice can help enhance the performance of your application.
+建议尽量少在 TextBlock 里使用 Run，它会带来更吃资源的操作。若你只是用 Run 来设定文本属性，不妨把那些属性直接设在 TextBlock 上，这么做有助于提升应用性能。
 
-## Use StreamGeometries over PathGeometries
+## 用 StreamGeometry 而非 PathGeometry {#use-streamgeometries-over-pathgeometries}
 
-When dealing with geometries in Avalonia, `StreamGeometry` is a more efficient alternative to `PathGeometry`. `StreamGeometry` is specifically optimized to handle numerous `PathGeometry` objects, consuming less memory and offering superior performance. Hence, when a choice is available, it's recommended to use `StreamGeometry` over `PathGeometry` for improved application performance.
+在 Avalonia 中处理几何图形时，`StreamGeometry` 比 `PathGeometry` 更高效。`StreamGeometry` 专为应付大量 `PathGeometry` 对象而优化，占内存更少、性能更佳。因此在两者可选时，推荐用 `StreamGeometry` 而非 `PathGeometry`，应用性能会更好看。
 
-## Use reduced image sizes
+## 改用尺寸更小的图片 {#use-reduced-image-sizes}
 
-When your application necessitates the display of smaller images or thumbnails, it's beneficial to generate and use reduced-size versions of your images. By default, Avalonia will load and decode your image at its original full size, which can potentially lead to performance bottlenecks if you're loading large images and scaling them down to thumbnail sizes in controls like an `ItemsControl`.
+当应用只需显示小图或缩略图时，不妨另外生成一份小尺寸图片来用。Avalonia 默认会按原始尺寸加载并解码图片；若你加载的是大图，却在 `ItemsControl` 这类控件里缩成缩略图显示，性能很可能因此吃紧。
 
-## Resolve your binding errors 
+## 把绑定错误都解决掉 {#resolve-your-binding-errors}
 
-Binding errors are a prevalent source of performance issues in Avalonia applications. Each occurrence of a binding error causes a performance dip as the application attempts to resolve the binding and logs the error to the trace log. Naturally, the more binding errors present, the greater the impact on performance. 
+绑定错误是 Avalonia 应用中常见的性能杀手。每出现一次绑定错误，应用都要尝试解析该绑定并把错误写进跟踪日志，性能随之一沉。绑定错误越多，拖累自然越重。 
 
-A significant contributor to binding errors is the use of `RelativeSource` bindings in `DataTemplates`, as the binding usually isn't resolved correctly until the `DataTemplate` has completed its initialization. It's recommended to avoid `RelativeSource.FindAncestor` entirely. A more efficient approach is to define an attached property and utilize property inheritance to push values down the visual tree, rather than performing a lookup of the visual tree.
+绑定错误的一大来源是在 `DataTemplates` 中使用 `RelativeSource` 绑定——在 `DataTemplate` 初始化完成之前，这类绑定通常解析不出正确结果。建议干脆别用 `RelativeSource.FindAncestor`。更高效的做法是定义一个附加属性，借助属性继承把值沿视觉树往下推，而不是反过来去视觉树里查找。
 
-## Asynchronously load data
+## 异步加载数据 {#asynchronously-load-data}
 
-Performance issues, UI freezes, and unresponsive applications often stem from the way data is loaded. To prevent overloading the UI thread, ensure that your data is loaded asynchronously.
+性能问题、界面卡死、应用无响应，往往都出在数据加载的方式上。别让 UI 线程不堪重负——务必让数据异步加载。
 
 
 

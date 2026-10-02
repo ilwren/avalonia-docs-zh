@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridRowsPresenter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class TreeDataGridRowsPresenter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> TreeDataGridPresenterBase&lt;ITreeDataGridRowModel&gt; <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowsPresenter
+<span className="apiref-page__meta-label">继承关系：</span> TreeDataGridPresenterBase&lt;ITreeDataGridRowModel&gt; <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridRowsPresenter
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../logicaltree/ichildindexprovider">IChildIndexProvider</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../logicaltree/ichildindexprovider">IChildIndexProvider</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 [TreeDataGridRowsPresenter](xref:Avalonia.Controls.Primitives.TreeDataGridRowsPresenter) is responsible for creating, recycling, and arranging rows
 vertically in a [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid). It handles the virtualization of rows, ensuring that only
@@ -66,17 +66,17 @@ visible rows are realized in the visual tree to improve performance.
 This presenter is typically used within a [Avalonia.Controls.TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid) control template to
 display the rows for that control.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridRowsPresenter](#uid-abd761e263) | No summary available. |
+| [TreeDataGridRowsPresenter](#uid-abd761e263) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-abd761e263"></span>
 
-### TreeDataGridRowsPresenter Constructor
+### TreeDataGridRowsPresenter 构造函数 {#treedatagridrowspresenter-constructor}
 
 ```csharp
 public TreeDataGridRowsPresenter()
@@ -84,9 +84,9 @@ public TreeDataGridRowsPresenter()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Columns](#uid-f3ea4bfbff) | Gets or sets the columns collection used to define the structure of rows. |
 
@@ -94,7 +94,7 @@ public TreeDataGridRowsPresenter()
 
 <span id="uid-f3ea4bfbff"></span>
 
-### Columns Property
+### Columns 属性 {#columns-property}
 
 Gets or sets the columns collection used to define the structure of rows.
 
@@ -104,19 +104,19 @@ public Avalonia.Controls.TreeDataGridColumns Columns { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ColumnsProperty](#uid-97bf443459) | Defines the [Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns](xref:Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns) property. |
+| [ColumnsProperty](#uid-97bf443459) | 定义 [Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns](xref:Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns) 属性。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-97bf443459"></span>
 
-### ColumnsProperty Field
+### ColumnsProperty 字段 {#columnsproperty-field}
 
-Defines the [Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns](xref:Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns) property.
+定义 [Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns](xref:Avalonia.Controls.Primitives.TreeDataGridRowsPresenter.Columns) 属性。
 
 ```csharp
 public Avalonia.DirectProperty<Avalonia.Controls.Primitives.TreeDataGridRowsPresenter, Avalonia.Controls.TreeDataGridColumns> ColumnsProperty
@@ -124,25 +124,25 @@ public Avalonia.DirectProperty<Avalonia.Controls.Primitives.TreeDataGridRowsPres
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ChildIndexChanged](#uid-5c03449208) | Occurs when the index of a child element in the presenter changes. |
+| [ChildIndexChanged](#uid-5c03449208) | 呈现器中某个子元素的索引发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5c03449208"></span>
 
-### ChildIndexChanged Event
+### ChildIndexChanged 事件 {#childindexchanged-event}
 
-Occurs when the index of a child element in the presenter changes.
+呈现器中某个子元素的索引发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.LogicalTree.ChildIndexChangedEventArgs> ChildIndexChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This event is raised when rows are realized, unrealized, or when their indices change
 due to insertions or removals.

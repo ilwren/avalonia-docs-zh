@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DataAnnotationsValidationPlugin Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data.Core.Plugins</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data.Core.Plugins</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Core/Plugins/DataAnnotationsValidationPlugin.cs">DataAnnotationsValidationPlugin.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Core/Plugins/DataAnnotationsValidationPlugin.cs">DataAnnotationsValidationPlugin.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Validates properties on that have [System.ComponentModel.DataAnnotations.ValidationAttribute](xref:System.ComponentModel.DataAnnotations.ValidationAttribute)s.
+校验那些带有 [System.ComponentModel.DataAnnotations.ValidationAttribute](xref:System.ComponentModel.DataAnnotations.ValidationAttribute) 的属性。
 
 </div>
 
@@ -54,24 +54,24 @@ public class DataAnnotationsValidationPlugin
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataAnnotationsValidationPlugin
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DataAnnotationsValidationPlugin
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDataValidationPlugin
+<span className="apiref-page__meta-label">实现接口：</span> IDataValidationPlugin
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DataAnnotationsValidationPlugin](#uid-5b7f12e3f1) | No summary available. |
+| [DataAnnotationsValidationPlugin](#uid-5b7f12e3f1) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5b7f12e3f1"></span>
 
-### DataAnnotationsValidationPlugin Constructor
+### DataAnnotationsValidationPlugin 构造函数 {#dataannotationsvalidationplugin-constructor}
 
 ```csharp
 public DataAnnotationsValidationPlugin()
@@ -79,24 +79,24 @@ public DataAnnotationsValidationPlugin()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Match](#uid-313821e03f) | No summary available. |
-| [Start](#uid-bd097204cf) | No summary available. |
+| [Match](#uid-313821e03f) | 暂无摘要。 |
+| [Start](#uid-bd097204cf) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-313821e03f"></span>
 
-### Match Method
+### Match 方法 {#match-method}
 
 ```csharp
 public bool Match(WeakReference<object> reference, string memberName)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `reference` WeakReference&lt;object&gt;
 
@@ -104,7 +104,7 @@ public bool Match(WeakReference<object> reference, string memberName)
 `memberName` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -115,13 +115,13 @@ bool
 
 <span id="uid-bd097204cf"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
 ```csharp
 public Avalonia.Data.Core.Plugins.IPropertyAccessor Start(WeakReference<object> reference, string name, Avalonia.Data.Core.Plugins.IPropertyAccessor inner)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `reference` WeakReference&lt;object&gt;
 
@@ -132,7 +132,7 @@ public Avalonia.Data.Core.Plugins.IPropertyAccessor Start(WeakReference<object> 
 `inner` [Avalonia.Data.Core.Plugins.IPropertyAccessor](xref:Avalonia.Data.Core.Plugins.IPropertyAccessor)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Data.Core.Plugins.IPropertyAccessor](xref:Avalonia.Data.Core.Plugins.IPropertyAccessor)
 

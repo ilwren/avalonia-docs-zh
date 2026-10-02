@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Design Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Design.cs">Design.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Design.cs">Design.cs</a>
 </div>
 
 </div>
@@ -54,24 +54,24 @@ public class Design
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Design
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Design
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetDataContext (2 overloads)](#uid-730975f9b1) | Gets the design-time data context for a control. |
-| [GetDesignStyle](#uid-aa9086667b) | Gets the design-time style for a control. |
+| [GetDataContext (2 overloads)](#uid-730975f9b1) | 获取某个控件的设计时数据上下文。 |
+| [GetDesignStyle](#uid-aa9086667b) | 获取某个控件的设计时样式。 |
 | [GetHeight](#uid-d7570e141d) | Gets the design-time height for a control. |
-| [GetPreviewWith (4 overloads)](#uid-3f2107265d) | Gets the preview control for the specified [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) at design-time. |
-| [GetWidth](#uid-93a3ad0a96) | Gets the design-time width for a control. |
-| [SetDataContext (2 overloads)](#uid-e52d4759ea) | Sets the design-time data context for a control. |
-| [SetDesignStyle](#uid-ac3a719e27) | Sets the design-time style for a control. |
+| [GetPreviewWith (4 overloads)](#uid-3f2107265d) | 在设计时取得指定 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 的预览控件。 |
+| [GetWidth](#uid-93a3ad0a96) | 获取某个控件的设计时宽度。 |
+| [SetDataContext (2 overloads)](#uid-e52d4759ea) | 设置某个控件的设计时数据上下文。 |
+| [SetDesignStyle](#uid-ac3a719e27) | 设置某个控件的设计时样式。 |
 | [SetHeight](#uid-44fd86c56e) | Sets the design-time height for a control. |
 | [SetPreviewWith (8 overloads)](#uid-d8dac897b3) | Sets a preview control for the specified [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) at design-time. |
-| [SetWidth](#uid-90374ec669) | Sets the design-time width for a control. |
+| [SetWidth](#uid-90374ec669) | 设置某个控件的设计时宽度。 |
 
 <span id="uid-730975f9b1"></span>
 
@@ -81,26 +81,26 @@ public class Design
 
 <span id="uid-37e8be5cf6"></span>
 
-#### GetDataContext Method
+#### GetDataContext 方法 {#getdatacontext-method}
 
-Gets the design-time data context for a control.
+获取某个控件的设计时数据上下文。
 
 ```csharp
 public object GetDataContext(Avalonia.Controls.Control control)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The control to get the data context from.
+要从中读取数据上下文的那个控件。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 object
 
-The data context value.
+数据上下文的值。
 
 
 </section>
@@ -109,26 +109,26 @@ The data context value.
 
 <span id="uid-b27cb3cb6b"></span>
 
-#### GetDataContext Method
+#### GetDataContext 方法 {#getdatacontext-method-1}
 
-Gets the design-time data context for a control.
+获取某个控件的设计时数据上下文。
 
 ```csharp
 public object GetDataContext(Avalonia.Controls.Templates.IDataTemplate control)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `control` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
-The control to get the data context from.
+要从中读取数据上下文的那个控件。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 object
 
-The data context value.
+数据上下文的值。
 
 
 </section>
@@ -137,26 +137,26 @@ The data context value.
 
 <span id="uid-aa9086667b"></span>
 
-### GetDesignStyle Method
+### GetDesignStyle 方法 {#getdesignstyle-method}
 
-Gets the design-time style for a control.
+获取某个控件的设计时样式。
 
 ```csharp
 public Avalonia.Styling.IStyle GetDesignStyle(Avalonia.Controls.Control control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
 The control to get the style from.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)
 
-The style value.
+样式值。
 
 
 </section>
@@ -165,7 +165,7 @@ The style value.
 
 <span id="uid-d7570e141d"></span>
 
-### GetHeight Method
+### GetHeight 方法 {#getheight-method}
 
 Gets the design-time height for a control.
 
@@ -173,18 +173,18 @@ Gets the design-time height for a control.
 public double GetHeight(Avalonia.Controls.Control control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
 The control to get the height from.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 double
 
-The height value.
+高度值。
 
 
 </section>
@@ -197,26 +197,26 @@ The height value.
 
 <span id="uid-be0b252cb3"></span>
 
-#### GetPreviewWith Method
+#### GetPreviewWith 方法 {#getpreviewwith-method}
 
-Gets the preview control for the specified [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) at design-time.
+在设计时取得指定 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 的预览控件。
 
 ```csharp
 public Avalonia.Controls.Control GetPreviewWith(Avalonia.AvaloniaObject target)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The target object.
+目标对象。
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control, or null.
+预览控件；若没有则为 null。
 
 
 </section>
@@ -225,26 +225,26 @@ The preview control, or null.
 
 <span id="uid-a840a2f083"></span>
 
-#### GetPreviewWith Method
+#### GetPreviewWith 方法 {#getpreviewwith-method-1}
 
-Gets the preview control for the specified [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) at design-time.
+在设计时取得指定 [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) 的预览控件。
 
 ```csharp
 public Avalonia.Controls.Control GetPreviewWith(Avalonia.Controls.ResourceDictionary target)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `target` [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary)
 
-The resource dictionary.
+资源字典。
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control, or null.
+预览控件；若没有则为 null。
 
 
 </section>
@@ -253,26 +253,26 @@ The preview control, or null.
 
 <span id="uid-16607989b4"></span>
 
-#### GetPreviewWith Method
+#### GetPreviewWith 方法 {#getpreviewwith-method-2}
 
-Gets the preview control for the specified [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) at design-time.
+在设计时取得指定 [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) 的预览控件。
 
 ```csharp
 public Avalonia.Controls.Control GetPreviewWith(Avalonia.Controls.Templates.IDataTemplate target)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `target` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
-The data template.
+数据模板。
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control, or null.
+预览控件；若没有则为 null。
 
 
 </section>
@@ -281,26 +281,26 @@ The preview control, or null.
 
 <span id="uid-518bf28d0e"></span>
 
-#### GetPreviewWith Method
+#### GetPreviewWith 方法 {#getpreviewwith-method-3}
 
-Gets the preview control for the specified [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle) at design-time.
+在设计时取得指定 [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle) 的预览控件。
 
 ```csharp
 public Avalonia.Controls.Control GetPreviewWith(Avalonia.Styling.IStyle target)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `target` [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)
 
 The style.
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control, or null.
+预览控件；若没有则为 null。
 
 
 </section>
@@ -309,26 +309,26 @@ The preview control, or null.
 
 <span id="uid-93a3ad0a96"></span>
 
-### GetWidth Method
+### GetWidth 方法 {#getwidth-method}
 
-Gets the design-time width for a control.
+获取某个控件的设计时宽度。
 
 ```csharp
 public double GetWidth(Avalonia.Controls.Control control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
 The control to get the width from.
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 double
 
-The width value.
+宽度值。
 
 
 </section>
@@ -341,24 +341,24 @@ The width value.
 
 <span id="uid-c1ecf57e6d"></span>
 
-#### SetDataContext Method
+#### SetDataContext 方法 {#setdatacontext-method}
 
-Sets the design-time data context for a control.
+设置某个控件的设计时数据上下文。
 
 ```csharp
 public void SetDataContext(Avalonia.Controls.Control control, object value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The control to set the data context for.
+要为其设置数据上下文的那个控件。
 
 
 `value` object
 
-The data context value.
+数据上下文的值。
 
 
 </section>
@@ -367,24 +367,24 @@ The data context value.
 
 <span id="uid-41951bd399"></span>
 
-#### SetDataContext Method
+#### SetDataContext 方法 {#setdatacontext-method-1}
 
-Sets the design-time data context for a control.
+设置某个控件的设计时数据上下文。
 
 ```csharp
 public void SetDataContext(Avalonia.Controls.Templates.IDataTemplate control, object value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `control` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
-The control to set the data context for.
+要为其设置数据上下文的那个控件。
 
 
 `value` object
 
-The data context value.
+数据上下文的值。
 
 
 </section>
@@ -393,15 +393,15 @@ The data context value.
 
 <span id="uid-ac3a719e27"></span>
 
-### SetDesignStyle Method
+### SetDesignStyle 方法 {#setdesignstyle-method}
 
-Sets the design-time style for a control.
+设置某个控件的设计时样式。
 
 ```csharp
 public void SetDesignStyle(Avalonia.Controls.Control control, Avalonia.Styling.IStyle value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -410,7 +410,7 @@ The control to set the style for.
 
 `value` [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)
 
-The style value.
+样式值。
 
 
 </section>
@@ -419,7 +419,7 @@ The style value.
 
 <span id="uid-44fd86c56e"></span>
 
-### SetHeight Method
+### SetHeight 方法 {#setheight-method}
 
 Sets the design-time height for a control.
 
@@ -427,7 +427,7 @@ Sets the design-time height for a control.
 public void SetHeight(Avalonia.Controls.Control control, double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -436,7 +436,7 @@ The control to set the height for.
 
 `value` double
 
-The height value.
+高度值。
 
 
 </section>
@@ -449,7 +449,7 @@ The height value.
 
 <span id="uid-c162a7ef5e"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method}
 
 Sets a preview control for the specified [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) at design-time.
 
@@ -457,16 +457,16 @@ Sets a preview control for the specified [Avalonia.AvaloniaObject](xref:Avalonia
 public void SetPreviewWith(Avalonia.AvaloniaObject target, Avalonia.Controls.Control control)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The target object.
+目标对象。
 
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control.
+预览控件。
 
 
 </section>
@@ -475,13 +475,13 @@ The preview control.
 
 <span id="uid-ee64d0440c"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method-1}
 
 ```csharp
 public void SetPreviewWith(Avalonia.AvaloniaObject target, Avalonia.Controls.ITemplate<TControl><Avalonia.Controls.Control> template)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -495,27 +495,27 @@ public void SetPreviewWith(Avalonia.AvaloniaObject target, Avalonia.Controls.ITe
 
 <span id="uid-ba0ae1afe0"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method-2}
 
-Sets a preview template for the specified [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) at design-time.
+在设计时为指定的 [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) 设置预览模板。
 
 ```csharp
 public void SetPreviewWith(Avalonia.Controls.ResourceDictionary target, Avalonia.Controls.Control control)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `target` [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary)
 
-The resource dictionary.
+资源字典。
 
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control.
+预览控件。
 
 
-##### Remarks
+##### 备注 {#remarks}
 
 This method allows you to specify a substitute control to be rendered in the previewer.
 [ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) is attached to that control, displaying real time changes on the control.
@@ -526,13 +526,13 @@ This method allows you to specify a substitute control to be rendered in the pre
 
 <span id="uid-ec0f5256fc"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method-3}
 
 ```csharp
 public void SetPreviewWith(Avalonia.Controls.ResourceDictionary target, Avalonia.Controls.ITemplate<TControl><Avalonia.Controls.Control> template)
 ```
 
-##### Parameters
+##### 参数 {#parameters-16}
 
 `target` [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary)
 
@@ -546,27 +546,27 @@ public void SetPreviewWith(Avalonia.Controls.ResourceDictionary target, Avalonia
 
 <span id="uid-08c9783ea1"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method-4}
 
-Sets a preview template for the specified [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) at design-time.
+在设计时为指定的 [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) 设置预览模板。
 
 ```csharp
 public void SetPreviewWith(Avalonia.Controls.Templates.IDataTemplate target, Avalonia.Controls.Control control)
 ```
 
-##### Parameters
+##### 参数 {#parameters-17}
 
 `target` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
-The data template.
+数据模板。
 
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control.
+预览控件。
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
 This method allows you to specify a substitute control to be rendered in the previewer.
 Template must return [ContentControl](xref:Avalonia.Controls.ContentControl), and [IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) will be set assigned to ContentControl.ContentTemplate property.
@@ -577,13 +577,13 @@ Template must return [ContentControl](xref:Avalonia.Controls.ContentControl), an
 
 <span id="uid-ff3f33201a"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method-5}
 
 ```csharp
 public void SetPreviewWith(Avalonia.Controls.Templates.IDataTemplate target, Avalonia.Controls.ITemplate<TControl><Avalonia.Controls.Control> template)
 ```
 
-##### Parameters
+##### 参数 {#parameters-18}
 
 `target` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
@@ -597,27 +597,27 @@ public void SetPreviewWith(Avalonia.Controls.Templates.IDataTemplate target, Ava
 
 <span id="uid-8cca5b8ccd"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method-6}
 
-Sets a preview template for the specified [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) at design-time.
+在设计时为指定的 [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) 设置预览模板。
 
 ```csharp
 public void SetPreviewWith(Avalonia.Styling.IStyle target, Avalonia.Controls.Control control)
 ```
 
-##### Parameters
+##### 参数 {#parameters-19}
 
 `target` [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)
 
-The data template.
+数据模板。
 
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The preview control.
+预览控件。
 
 
-##### Remarks
+##### 备注 {#remarks-2}
 
 This method allows you to specify a substitute control to be rendered in the previewer.
 Template must return [ContentControl](xref:Avalonia.Controls.ContentControl), and [IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate) will be set assigned to ContentControl.ContentTemplate property.
@@ -628,13 +628,13 @@ Template must return [ContentControl](xref:Avalonia.Controls.ContentControl), an
 
 <span id="uid-9c64a05574"></span>
 
-#### SetPreviewWith Method
+#### SetPreviewWith 方法 {#setpreviewwith-method-7}
 
 ```csharp
 public void SetPreviewWith(Avalonia.Styling.IStyle target, Avalonia.Controls.ITemplate<TControl><Avalonia.Controls.Control> template)
 ```
 
-##### Parameters
+##### 参数 {#parameters-20}
 
 `target` [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)
 
@@ -648,15 +648,15 @@ public void SetPreviewWith(Avalonia.Styling.IStyle target, Avalonia.Controls.ITe
 
 <span id="uid-90374ec669"></span>
 
-### SetWidth Method
+### SetWidth 方法 {#setwidth-method}
 
-Sets the design-time width for a control.
+设置某个控件的设计时宽度。
 
 ```csharp
 public void SetWidth(Avalonia.Controls.Control control, double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-21}
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -665,14 +665,14 @@ The control to set the width for.
 
 `value` double
 
-The width value.
+宽度值。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsDesignMode](#uid-d65d5f3b36) | Gets a value indicating whether the application is running in design mode. |
 
@@ -680,7 +680,7 @@ The width value.
 
 <span id="uid-d65d5f3b36"></span>
 
-### IsDesignMode Property
+### IsDesignMode 属性 {#isdesignmode-property}
 
 Gets a value indicating whether the application is running in design mode.
 
@@ -688,28 +688,28 @@ Gets a value indicating whether the application is running in design mode.
 public bool IsDesignMode { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 This property is typically used to enable or disable features that should only be available
 at design-time, such as sample/preview data.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [DataContextProperty](#uid-ecbf08df66) | Defines the DataContext attached property. |
 | [DesignStyleProperty](#uid-d5ba4a1fb8) | Identifies the DesignStyle attached property for design-time use. |
-| [HeightProperty](#uid-da67a69258) | Defines the Height attached property. |
+| [HeightProperty](#uid-da67a69258) | 定义 Height 附加属性。 |
 | [PreviewWithProperty](#uid-5a7c962a11) | Defines the PreviewWith attached property. |
-| [WidthProperty](#uid-a44c6d14ef) | Defines the Width attached property. |
+| [WidthProperty](#uid-a44c6d14ef) | 定义 Width 附加属性。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ecbf08df66"></span>
 
-### DataContextProperty Field
+### DataContextProperty 字段 {#datacontextproperty-field}
 
 Defines the DataContext attached property.
 
@@ -723,7 +723,7 @@ public Avalonia.AttachedProperty<object> DataContextProperty
 
 <span id="uid-d5ba4a1fb8"></span>
 
-### DesignStyleProperty Field
+### DesignStyleProperty 字段 {#designstyleproperty-field}
 
 Identifies the DesignStyle attached property for design-time use.
 
@@ -731,7 +731,7 @@ Identifies the DesignStyle attached property for design-time use.
 public Avalonia.AttachedProperty<Avalonia.Styling.IStyle> DesignStyleProperty
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 This property allows you to apply a style to a control only at design-time, enabling
 custom visualizations or highlighting in the designer without affecting the runtime appearance.
@@ -742,9 +742,9 @@ custom visualizations or highlighting in the designer without affecting the runt
 
 <span id="uid-da67a69258"></span>
 
-### HeightProperty Field
+### HeightProperty 字段 {#heightproperty-field}
 
-Defines the Height attached property.
+定义 Height 附加属性。
 
 ```csharp
 public Avalonia.AttachedProperty<double> HeightProperty
@@ -756,7 +756,7 @@ public Avalonia.AttachedProperty<double> HeightProperty
 
 <span id="uid-5a7c962a11"></span>
 
-### PreviewWithProperty Field
+### PreviewWithProperty 字段 {#previewwithproperty-field}
 
 Defines the PreviewWith attached property.
 
@@ -770,9 +770,9 @@ public Avalonia.AttachedProperty<Avalonia.Controls.Control> PreviewWithProperty
 
 <span id="uid-a44c6d14ef"></span>
 
-### WidthProperty Field
+### WidthProperty 字段 {#widthproperty-field}
 
-Defines the Width attached property.
+定义 Width 附加属性。
 
 ```csharp
 public Avalonia.AttachedProperty<double> WidthProperty

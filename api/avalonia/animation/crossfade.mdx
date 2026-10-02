@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CrossFade Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Animation</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Animation</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/CrossFade.cs">CrossFade.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Animation/CrossFade.cs">CrossFade.cs</a>
 </div>
 
 </div>
@@ -54,30 +54,30 @@ public class CrossFade
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> CrossFade
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> CrossFade
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ipagetransition">IPageTransition</a>, <a href="iprogresspagetransition">IProgressPageTransition</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ipagetransition">IPageTransition</a>, <a href="iprogresspagetransition">IProgressPageTransition</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CrossFade (2 overloads)](#uid-f820766fd9) | Initializes a new instance of the [Avalonia.Animation.CrossFade](xref:Avalonia.Animation.CrossFade) class. |
+| [CrossFade (2 overloads)](#uid-f820766fd9) | 初始化 [Avalonia.Animation.CrossFade](xref:Avalonia.Animation.CrossFade) 类的新实例。 |
 
 <span id="uid-f820766fd9"></span>
 
-### CrossFade overloads
+### CrossFade 的重载 {#crossfade-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d19002e5f1"></span>
 
-#### CrossFade Constructor
+#### CrossFade 构造函数 {#crossfade-constructor}
 
-Initializes a new instance of the [Avalonia.Animation.CrossFade](xref:Avalonia.Animation.CrossFade) class.
+初始化 [Avalonia.Animation.CrossFade](xref:Avalonia.Animation.CrossFade) 类的新实例。
 
 ```csharp
 public CrossFade()
@@ -89,48 +89,48 @@ public CrossFade()
 
 <span id="uid-9bca2b5024"></span>
 
-#### CrossFade Constructor
+#### CrossFade 构造函数 {#crossfade-constructor-1}
 
-Initializes a new instance of the [Avalonia.Animation.CrossFade](xref:Avalonia.Animation.CrossFade) class.
+初始化 [Avalonia.Animation.CrossFade](xref:Avalonia.Animation.CrossFade) 类的新实例。
 
 ```csharp
 public CrossFade(TimeSpan duration)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `duration` TimeSpan
 
-The duration of the animation.
+该动画的时长。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Reset](#uid-271d3e5493) | Resets any visual state applied to the given visual by this transition. |
-| [Start](#uid-ed8bb3dfc3) | No summary available. |
-| [Update](#uid-82a57fe2fd) | No summary available. |
+| [Reset](#uid-271d3e5493) | 重置该过渡施加在给定视觉元素上的所有视觉状态。 |
+| [Start](#uid-ed8bb3dfc3) | 暂无摘要。 |
+| [Update](#uid-82a57fe2fd) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-271d3e5493"></span>
 
-### Reset Method
+### Reset 方法 {#reset-method}
 
-Resets any visual state applied to the given visual by this transition.
+重置该过渡施加在给定视觉元素上的所有视觉状态。
 
 ```csharp
 public void Reset(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual to reset.
+要重置的视觉元素。
 
 
 </section>
@@ -139,13 +139,13 @@ The visual to reset.
 
 <span id="uid-ed8bb3dfc3"></span>
 
-### Start Method
+### Start 方法 {#start-method}
 
 ```csharp
 public System.Threading.Tasks.Task Start(Avalonia.Visual from, Avalonia.Visual to, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `from` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -156,7 +156,7 @@ public System.Threading.Tasks.Task Start(Avalonia.Visual from, Avalonia.Visual t
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -167,13 +167,13 @@ System.Threading.Tasks.Task
 
 <span id="uid-82a57fe2fd"></span>
 
-### Update Method
+### Update 方法 {#update-method}
 
 ```csharp
 public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bool forward, double pageLength, System.Collections.Generic.IReadOnlyList<Avalonia.Animation.PageTransitionItem> visibleItems)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `progress` double
 
@@ -195,22 +195,22 @@ public void Update(double progress, Avalonia.Visual from, Avalonia.Visual to, bo
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Duration](#uid-fdf0301563) | Gets the duration of the animation. |
-| [FadeInEasing](#uid-c8a448bdad) | Gets or sets element entrance easing. |
-| [FadeOutEasing](#uid-c99095c437) | Gets or sets element exit easing. |
+| [Duration](#uid-fdf0301563) | 获取该动画的时长。 |
+| [FadeInEasing](#uid-c8a448bdad) | 获取或设置元素入场的缓动。 |
+| [FadeOutEasing](#uid-c99095c437) | 获取或设置元素退场的缓动。 |
 | [FillMode](#uid-3af1c02aeb) | Gets or sets the fill mode applied to both fade animations. Defaults to [Avalonia.Animation.FillMode.Forward](xref:Avalonia.Animation.FillMode.Forward). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-fdf0301563"></span>
 
-### Duration Property
+### Duration 属性 {#duration-property}
 
-Gets the duration of the animation.
+获取该动画的时长。
 
 ```csharp
 public TimeSpan Duration { get; set; }
@@ -222,9 +222,9 @@ public TimeSpan Duration { get; set; }
 
 <span id="uid-c8a448bdad"></span>
 
-### FadeInEasing Property
+### FadeInEasing 属性 {#fadeineasing-property}
 
-Gets or sets element entrance easing.
+获取或设置元素入场的缓动。
 
 ```csharp
 public Avalonia.Animation.Easings.Easing FadeInEasing { get; set; }
@@ -236,9 +236,9 @@ public Avalonia.Animation.Easings.Easing FadeInEasing { get; set; }
 
 <span id="uid-c99095c437"></span>
 
-### FadeOutEasing Property
+### FadeOutEasing 属性 {#fadeouteasing-property}
 
-Gets or sets element exit easing.
+获取或设置元素退场的缓动。
 
 ```csharp
 public Avalonia.Animation.Easings.Easing FadeOutEasing { get; set; }
@@ -250,7 +250,7 @@ public Avalonia.Animation.Easings.Easing FadeOutEasing { get; set; }
 
 <span id="uid-3af1c02aeb"></span>
 
-### FillMode Property
+### FillMode 属性 {#fillmode-property}
 
 Gets or sets the fill mode applied to both fade animations.
 Defaults to [Avalonia.Animation.FillMode.Forward](xref:Avalonia.Animation.FillMode.Forward).

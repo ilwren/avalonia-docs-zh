@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IClassicDesktopStyleApplicationLifetime Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/IClassicDesktopStyleApplicationLifetime.cs">IClassicDesktopStyleApplicationLifetime.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/IClassicDesktopStyleApplicationLifetime.cs">IClassicDesktopStyleApplicationLifetime.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public interface IClassicDesktopStyleApplicationLifetime
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iapplicationlifetime">IApplicationLifetime</a>, <a href="icontrolledapplicationlifetime">IControlledApplicationLifetime</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iapplicationlifetime">IApplicationLifetime</a>, <a href="icontrolledapplicationlifetime">IControlledApplicationLifetime</a>
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TryShutdown](#uid-9be46576e6) | Tries to Shutdown the application. [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownRequested](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownRequested) event can be used to cancel the shutdown. |
 
@@ -68,7 +68,7 @@ public interface IClassicDesktopStyleApplicationLifetime
 
 <span id="uid-9be46576e6"></span>
 
-### TryShutdown Method
+### TryShutdown 方法 {#tryshutdown-method}
 
 Tries to Shutdown the application. [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownRequested](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownRequested) event can be used to cancel the shutdown.
 
@@ -76,34 +76,34 @@ Tries to Shutdown the application. [Avalonia.Controls.ApplicationLifetimes.IClas
 public bool TryShutdown(int exitCode)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `exitCode` int
 
-An integer exit code for an application. The default exit code is 0.
+应用的整数退出码，默认为 0。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Args](#uid-f7541f62f3) | Gets the arguments passed to the [Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime(Avalonia.AppBuilder,string\[\],Avalonia.Controls.ShutdownMode)](xref:Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime%28Avalonia.AppBuilder%2CSystem.String%5B%5D%2CAvalonia.Controls.ShutdownMode%29) method. |
-| [MainWindow](#uid-f42ca673ff) | Gets or sets the main window of the application. |
+| [MainWindow](#uid-f42ca673ff) | 获取或设置该应用的主窗口。 |
 | [ShutdownMode](#uid-eb16069b5f) | Gets or sets the [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode). This property indicates whether the application is shutdown explicitly or implicitly. If [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode) is set to OnExplicitShutdown the application is only closes if Shutdown is called. The default is OnLastWindowClose |
-| [Windows](#uid-e103f97d1e) | Gets the list of all open windows in the application. |
+| [Windows](#uid-e103f97d1e) | 获取该应用中所有已打开窗口的列表。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f7541f62f3"></span>
 
-### Args Property
+### Args 属性 {#args-property}
 
 Gets the arguments passed to the
 [Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime(Avalonia.AppBuilder,string\[\],Avalonia.Controls.ShutdownMode)](xref:Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime%28Avalonia.AppBuilder%2CSystem.String%5B%5D%2CAvalonia.Controls.ShutdownMode%29)
@@ -119,17 +119,17 @@ public string[] Args { get; set; }
 
 <span id="uid-f42ca673ff"></span>
 
-### MainWindow Property
+### MainWindow 属性 {#mainwindow-property}
 
-Gets or sets the main window of the application.
+获取或设置该应用的主窗口。
 
 ```csharp
 public Avalonia.Controls.Window MainWindow { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
-The main window.
+主窗口。
 
 
 </section>
@@ -138,7 +138,7 @@ The main window.
 
 <span id="uid-eb16069b5f"></span>
 
-### ShutdownMode Property
+### ShutdownMode 属性 {#shutdownmode-property}
 
 Gets or sets the [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode). This property indicates whether the application is shutdown explicitly or implicitly.
 If [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode) is set to OnExplicitShutdown the application is only closes if Shutdown is called.
@@ -148,9 +148,9 @@ The default is OnLastWindowClose
 public Avalonia.Controls.ShutdownMode ShutdownMode { get; set; }
 ```
 
-#### Value
+#### 值 {#value-1}
 
-The shutdown mode.
+关闭模式。
 
 
 </section>
@@ -159,9 +159,9 @@ The shutdown mode.
 
 <span id="uid-e103f97d1e"></span>
 
-### Windows Property
+### Windows 属性 {#windows-property}
 
-Gets the list of all open windows in the application.
+获取该应用中所有已打开窗口的列表。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Window> Windows { get; set; }
@@ -169,25 +169,25 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Window> Window
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ShutdownRequested](#uid-9d6f0ce09c) | Raised by the platform when an application shutdown is requested. |
+| [ShutdownRequested](#uid-9d6f0ce09c) | 平台请求关闭应用时抛出。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9d6f0ce09c"></span>
 
-### ShutdownRequested Event
+### ShutdownRequested 事件 {#shutdownrequested-event}
 
-Raised by the platform when an application shutdown is requested.
+平台请求关闭应用时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ShutdownRequestedEventArgs> ShutdownRequested
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Application Shutdown can be requested for various reasons like OS shutdown.
 

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">LineGeometry Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/LineGeometry.cs">LineGeometry.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/LineGeometry.cs">LineGeometry.cs</a>
 </div>
 
 </div>
@@ -54,27 +54,27 @@ public class LineGeometry
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="geometry">Geometry</a> <span className="apiref-page__relation-separator">-&gt;</span> LineGeometry
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="geometry">Geometry</a> <span className="apiref-page__relation-separator">-&gt;</span> LineGeometry
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [LineGeometry (2 overloads)](#uid-b719a9a9e9) | Initializes a new instance of the [Avalonia.Media.LineGeometry](xref:Avalonia.Media.LineGeometry) class. |
+| [LineGeometry (2 overloads)](#uid-b719a9a9e9) | 初始化 [Avalonia.Media.LineGeometry](xref:Avalonia.Media.LineGeometry) 类的新实例。 |
 
 <span id="uid-b719a9a9e9"></span>
 
-### LineGeometry overloads
+### LineGeometry 的重载 {#linegeometry-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b904f8a620"></span>
 
-#### LineGeometry Constructor
+#### LineGeometry 构造函数 {#linegeometry-constructor}
 
-Initializes a new instance of the [Avalonia.Media.LineGeometry](xref:Avalonia.Media.LineGeometry) class.
+初始化 [Avalonia.Media.LineGeometry](xref:Avalonia.Media.LineGeometry) 类的新实例。
 
 ```csharp
 public LineGeometry()
@@ -86,19 +86,19 @@ public LineGeometry()
 
 <span id="uid-f6cb227a60"></span>
 
-#### LineGeometry Constructor
+#### LineGeometry 构造函数 {#linegeometry-constructor-1}
 
-Initializes a new instance of the [Avalonia.Media.LineGeometry](xref:Avalonia.Media.LineGeometry) class.
+初始化 [Avalonia.Media.LineGeometry](xref:Avalonia.Media.LineGeometry) 类的新实例。
 
 ```csharp
 public LineGeometry(Avalonia.Point startPoint, Avalonia.Point endPoint)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `startPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The start point.
+起点。
 
 
 `endPoint` [Avalonia.Point](xref:Avalonia.Point)
@@ -108,74 +108,74 @@ The end point.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Bind (8 overloads)](../avaloniaobject.mdx#uid-1c60c7bda3) | Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase). Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | Returns a value indicating whether the current thread is the UI thread. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [ClearValue (4 overloads)](../avaloniaobject.mdx#uid-41de208fbe) | Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [Clone](#uid-e5555f7523) | Clones the geometry. |
-| [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [Combine](geometry.mdx#uid-03ba6ba14f) | Combines the two geometries using the specified [Avalonia.Media.GeometryCombineMode](xref:Avalonia.Media.GeometryCombineMode) and applies the specified transform to the resulting geometry. Inherited from [Geometry](geometry.mdx). |
-| [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | Compares two objects using reference equality. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [FillContains](geometry.mdx#uid-1ecc042e3b) | Indicates whether the geometry's fill contains the specified point. Inherited from [Geometry](geometry.mdx). |
-| [GetBaseValue](../avaloniaobject.mdx#uid-9c615efbba) | Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetHashCode](../avaloniaobject.mdx#uid-7f7db1e7a2) | Gets the hash code for the object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetRenderBounds](geometry.mdx#uid-4f903c64e7) | Gets the geometry's bounding rectangle with the specified pen. Inherited from [Geometry](geometry.mdx). |
-| [GetValue (3 overloads)](../avaloniaobject.mdx#uid-5142cd4792) | Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetWidenedGeometry](geometry.mdx#uid-9265c7d05d) | Gets a [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) that is the shape defined by the stroke on the Geometry produced by the specified Pen. Inherited from [Geometry](geometry.mdx). |
-| [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is animating. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [Parse](geometry.mdx#uid-f0f323635b) | Creates a [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) from a string. Inherited from [Geometry](geometry.mdx). |
-| [SetCurrentValue (2 overloads)](../avaloniaobject.mdx#uid-38759fd088) | Sets the value of a dependency property without changing its value source. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [SetValue (3 overloads)](../avaloniaobject.mdx#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [StrokeContains](geometry.mdx#uid-9137804922) | Indicates whether the geometry's stroke contains the specified point. Inherited from [Geometry](geometry.mdx). |
-| [TryGetPointAndTangentAtDistance](geometry.mdx#uid-0cb785d427) | Inherited from [Geometry](geometry.mdx). |
-| [TryGetPointAtDistance](geometry.mdx#uid-8e9f7dcc61) | Inherited from [Geometry](geometry.mdx). |
-| [TryGetSegment](geometry.mdx#uid-50b46fd171) | Inherited from [Geometry](geometry.mdx). |
-| [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | Checks that the current thread is the UI thread and throws if not. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
+| [Bind（8 个重载）](../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [Clone](#uid-e5555f7523) | 克隆该几何图形。 |
+| [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [Combine](geometry.mdx#uid-03ba6ba14f) | 用指定的 [Avalonia.Media.GeometryCombineMode](xref:Avalonia.Media.GeometryCombineMode) 合并两个几何图形，并对结果应用指定的变换。继承自 [Geometry](geometry.mdx)。 |
+| [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [FillContains](geometry.mdx#uid-1ecc042e3b) | 指示该几何图形的填充区域是否包含指定点。继承自 [Geometry](geometry.mdx)。 |
+| [GetBaseValue](../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetHashCode](../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetRenderBounds](geometry.mdx#uid-4f903c64e7) | 获取在指定画笔下该几何图形的外接矩形。继承自 [Geometry](geometry.mdx)。 |
+| [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetWidenedGeometry](geometry.mdx#uid-9265c7d05d) | 获取一个 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)，它是用指定画笔对该 Geometry 描边所得形状。继承自 [Geometry](geometry.mdx)。 |
+| [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [Parse](geometry.mdx#uid-f0f323635b) | 由字符串创建 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)。继承自 [Geometry](geometry.mdx)。 |
+| [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [StrokeContains](geometry.mdx#uid-9137804922) | 指示该几何图形的描边是否包含指定点。继承自 [Geometry](geometry.mdx)。 |
+| [TryGetPointAndTangentAtDistance](geometry.mdx#uid-0cb785d427) | 继承自 [Geometry](geometry.mdx)。 |
+| [TryGetPointAtDistance](geometry.mdx#uid-8e9f7dcc61) | 继承自 [Geometry](geometry.mdx)。 |
+| [TryGetSegment](geometry.mdx#uid-50b46fd171) | 继承自 [Geometry](geometry.mdx)。 |
+| [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e5555f7523"></span>
 
-### Clone Method
+### Clone 方法 {#clone-method}
 
-Clones the geometry.
+克隆该几何图形。
 
 ```csharp
 public Avalonia.Media.Geometry Clone()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
 
-A cloned geometry.
+克隆出的几何图形。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Bounds](geometry.mdx#uid-404ee0d0a8) | Gets the geometry's bounding rectangle. Inherited from [Geometry](geometry.mdx). |
-| [ContourLength](geometry.mdx#uid-5dc65c547e) | Gets the geometry's total length as if all its contours are placed in a straight line. Inherited from [Geometry](geometry.mdx). |
-| [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | Returns the [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher) that this [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) is associated with. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [EndPoint](#uid-e3a4c84df3) | Gets or sets the end point of the line. |
-| [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [StartPoint](#uid-621931bda4) | Gets or sets the start point of the line. |
-| [Transform](geometry.mdx#uid-ca73562bb3) | Gets or sets a transform to apply to the geometry. Inherited from [Geometry](geometry.mdx). |
+| [Bounds](geometry.mdx#uid-404ee0d0a8) | 获取该几何图形的外接矩形。继承自 [Geometry](geometry.mdx)。 |
+| [ContourLength](geometry.mdx#uid-5dc65c547e) | 获取把该几何图形的所有轮廓拉直首尾相接后的总长度。继承自 [Geometry](geometry.mdx)。 |
+| [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [EndPoint](#uid-e3a4c84df3) | 获取或设置线段的终点。 |
+| [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [StartPoint](#uid-621931bda4) | 获取或设置线段的起点。 |
+| [Transform](geometry.mdx#uid-ca73562bb3) | 获取或设置要应用到该几何图形上的变换。继承自 [Geometry](geometry.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e3a4c84df3"></span>
 
-### EndPoint Property
+### EndPoint 属性 {#endpoint-property}
 
-Gets or sets the end point of the line.
+获取或设置线段的终点。
 
 ```csharp
 public Avalonia.Point EndPoint { get; set; }
@@ -187,9 +187,9 @@ public Avalonia.Point EndPoint { get; set; }
 
 <span id="uid-621931bda4"></span>
 
-### StartPoint Property
+### StartPoint 属性 {#startpoint-property}
 
-Gets or sets the start point of the line.
+获取或设置线段的起点。
 
 ```csharp
 public Avalonia.Point StartPoint { get; set; }
@@ -197,21 +197,21 @@ public Avalonia.Point StartPoint { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [EndPointProperty](#uid-28fb94f4db) | Defines the [Avalonia.Media.LineGeometry.EndPoint](xref:Avalonia.Media.LineGeometry.EndPoint) property. |
-| [StartPointProperty](#uid-95b1f9f1f1) | Defines the [Avalonia.Media.LineGeometry.StartPoint](xref:Avalonia.Media.LineGeometry.StartPoint) property. |
-| [TransformProperty](geometry.mdx#uid-deccb386d8) | Defines the [Avalonia.Media.Geometry.Transform](xref:Avalonia.Media.Geometry.Transform) property. Inherited from [Geometry](geometry.mdx). |
+| [EndPointProperty](#uid-28fb94f4db) | 定义 [Avalonia.Media.LineGeometry.EndPoint](xref:Avalonia.Media.LineGeometry.EndPoint) 属性。 |
+| [StartPointProperty](#uid-95b1f9f1f1) | 定义 [Avalonia.Media.LineGeometry.StartPoint](xref:Avalonia.Media.LineGeometry.StartPoint) 属性。 |
+| [TransformProperty](geometry.mdx#uid-deccb386d8) | 定义 [Avalonia.Media.Geometry.Transform](xref:Avalonia.Media.Geometry.Transform) 属性。继承自 [Geometry](geometry.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-28fb94f4db"></span>
 
-### EndPointProperty Field
+### EndPointProperty 字段 {#endpointproperty-field}
 
-Defines the [Avalonia.Media.LineGeometry.EndPoint](xref:Avalonia.Media.LineGeometry.EndPoint) property.
+定义 [Avalonia.Media.LineGeometry.EndPoint](xref:Avalonia.Media.LineGeometry.EndPoint) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Point> EndPointProperty
@@ -223,9 +223,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Point> EndPointProperty
 
 <span id="uid-95b1f9f1f1"></span>
 
-### StartPointProperty Field
+### StartPointProperty 字段 {#startpointproperty-field}
 
-Defines the [Avalonia.Media.LineGeometry.StartPoint](xref:Avalonia.Media.LineGeometry.StartPoint) property.
+定义 [Avalonia.Media.LineGeometry.StartPoint](xref:Avalonia.Media.LineGeometry.StartPoint) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Point> StartPointProperty
@@ -233,12 +233,12 @@ public Avalonia.StyledProperty<TValue><Avalonia.Point> StartPointProperty
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Changed](geometry.mdx#uid-9001f59bae) | Raised when the geometry changes. Inherited from [Geometry](geometry.mdx). |
-| [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | Raised when a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value changes on this object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
+| [Changed](geometry.mdx#uid-9001f59bae) | 几何图形发生变化时抛出。继承自 [Geometry](geometry.mdx)。 |
+| [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 </ApiRefPage>
 

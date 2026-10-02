@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FlowDocument Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,33 +50,33 @@ public class FlowDocument
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="../../animation/animatable">Animatable</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="../../styledelement">StyledElement</a> <span className="apiref-page__relation-separator">-&gt;</span> FlowDocument
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="../../animation/animatable">Animatable</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="../../styledelement">StyledElement</a> <span className="apiref-page__relation-separator">-&gt;</span> FlowDocument
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="footnote">Footnote</a>, <a href="pageband">PageBand</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="footnote">Footnote</a>, <a href="pageband">PageBand</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../../logicaltree/ichildindexprovider">IChildIndexProvider</a>, IAddChild&lt;Control&gt;, IAddChild&lt;Block&gt;, IAddChild&lt;RichInline&gt;, ck, cn
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../../logicaltree/ichildindexprovider">IChildIndexProvider</a>, IAddChild&lt;Control&gt;, IAddChild&lt;Block&gt;, IAddChild&lt;RichInline&gt;, ck, cn
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FlowDocument (2 overloads)](#uid-2a63ecfb7e) | Initializes a new instance of the [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) class. |
+| [FlowDocument (2 overloads)](#uid-2a63ecfb7e) | 初始化 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) 类的新实例。 |
 
 <span id="uid-2a63ecfb7e"></span>
 
-### FlowDocument overloads
+### FlowDocument 的重载 {#flowdocument-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-29ca5c5346"></span>
 
-#### FlowDocument Constructor
+#### FlowDocument 构造函数 {#flowdocument-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) class.
+初始化 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) 类的新实例。
 
 ```csharp
 public FlowDocument()
@@ -88,7 +88,7 @@ public FlowDocument()
 
 <span id="uid-f6a7f94b99"></span>
 
-#### FlowDocument Constructor
+#### FlowDocument 构造函数 {#flowdocument-constructor-1}
 
 Initializes a new instance of the [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) class with an existing [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument).
 
@@ -96,70 +96,70 @@ Initializes a new instance of the [Avalonia.Controls.Documents.FlowDocument](xre
 public FlowDocument(Avalonia.Controls.Documents.TextModel.TextDocument textDocument)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `textDocument` [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
 The [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) to attach to this [FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument).
 
 
-##### Exceptions
+##### 异常 {#exceptions}
 
-- [\`textDocument\` is null.](xref:System.ArgumentNullException)
+- [\`textDocument\` 为 null。](xref:System.ArgumentNullException)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ApplyBlockFormatting](#uid-e6d7623c1c) | Applies captured formatting to an element. |
-| [ApplyInlineFormatting](#uid-0531842318) | Applies captured formatting to an element. |
-| [ApplyListItemFormatting](#uid-750f1a81c5) | Applies captured formatting to an element. |
-| [ApplyStyling](../../styledelement.mdx#uid-b0f81a6f8f) | Applies styling to the control if the control is initialized and styling is not already applied. Inherited from [StyledElement](../../styledelement.mdx). |
-| [ApplyTableCellFormatting](#uid-c630c53ae6) | Applies captured formatting to an element. |
-| [ApplyTableRowFormatting](#uid-1b714b165e) | Applies captured formatting to an element. |
-| [ApplyTextElementFormatting](#uid-cbbb04c22b) | Applies captured formatting to an element. |
-| [BeginInit](../../styledelement.mdx#uid-91c6ccadce) | Inherited from [StyledElement](../../styledelement.mdx). |
-| [Bind (8 overloads)](../../avaloniaobject.mdx#uid-1c60c7bda3) | Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase). Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [CheckAccess](../../avaloniaobject.mdx#uid-260ff7a68d) | Returns a value indicating whether the current thread is the UI thread. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [ClearValue (4 overloads)](../../avaloniaobject.mdx#uid-41de208fbe) | Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
+| [ApplyBlockFormatting](#uid-e6d7623c1c) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyInlineFormatting](#uid-0531842318) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyListItemFormatting](#uid-750f1a81c5) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyStyling](../../styledelement.mdx#uid-b0f81a6f8f) | 若控件已初始化且尚未应用样式，则为其应用样式。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [ApplyTableCellFormatting](#uid-c630c53ae6) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyTableRowFormatting](#uid-1b714b165e) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyTextElementFormatting](#uid-cbbb04c22b) | 把捕获到的格式应用到某个元素上。 |
+| [BeginInit](../../styledelement.mdx#uid-91c6ccadce) | 继承自 [StyledElement](../../styledelement.mdx)。 |
+| [Bind（8 个重载）](../../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [CheckAccess](../../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [ClearValue（4 个重载）](../../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Clone](#uid-655217def6) | Creates a deep, independent copy of this document — content, block/inline structure, formatting and page settings. The source document is left untouched. This is the way to show the same content in several places at once; adding this document's blocks to another document moves them instead, because an element belongs to exactly one document at a time. |
-| [CoerceValue](../../avaloniaobject.mdx#uid-3bec32f39e) | Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
+| [CoerceValue](../../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [CreateSnapshot](#uid-d9a10c1bbc) | Creates an immutable, thread-safe snapshot of the current document state. |
-| [EndInit](../../styledelement.mdx#uid-17b450469d) | Inherited from [StyledElement](../../styledelement.mdx). |
-| [EnsureTextDocument](#uid-b379cd22d4) | Creates the backing store if it does not exist yet, and returns it. |
-| [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | Compares two objects using reference equality. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
+| [EndInit](../../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../../styledelement.mdx)。 |
+| [EnsureTextDocument](#uid-b379cd22d4) | 若后备存储尚不存在则创建它，并把它返回。 |
+| [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [FindFootnote](#uid-01298728ef) | The note paired with `anchor`, or null while the anchor has none (a dangling anchor, or one not in this document). Under the anchor-owns-its-note lifecycle a note exists for every anchor added through the element channel - this is how callers reach it. |
-| [FromSnapshot](#uid-58357881c2) | No summary available. |
-| [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [GetHashCode](../../avaloniaobject.mdx#uid-7f7db1e7a2) | Gets the hash code for the object. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [GetValue (3 overloads)](../../avaloniaobject.mdx#uid-5142cd4792) | Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [InitializeTextDocument](#uid-9705bb2c7b) | Creates the backing store if it does not exist yet, and returns it. |
-| [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is animating. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [Load (2 overloads)](#uid-bbf188f438) | Reads a document from a stream. |
+| [FromSnapshot](#uid-58357881c2) | 暂无摘要。 |
+| [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [GetHashCode](../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [InitializeTextDocument](#uid-9705bb2c7b) | 若后备存储尚不存在则创建它，并把它返回。 |
+| [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [Load（2 个重载）](#uid-bbf188f438) | 从流中读取一篇文档。 |
 | [LoadAsync](#uid-e1a5a76bbb) | Loads a document from a stream, parsing off the calling thread. |
-| [Save (2 overloads)](#uid-58c41f4af7) | Writes this document to a stream. |
+| [Save（2 个重载）](#uid-58c41f4af7) | 把该文档写入一个流。 |
 | [SaveAsync](#uid-6000bb6211) | Saves the document to a stream, writing off the calling thread. |
-| [SetCurrentValue (2 overloads)](../../avaloniaobject.mdx#uid-38759fd088) | Sets the value of a dependency property without changing its value source. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [SetValue (3 overloads)](../../avaloniaobject.mdx#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [TryGetResource](../../styledelement.mdx#uid-2046a6b284) | Inherited from [StyledElement](../../styledelement.mdx). |
-| [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | Checks that the current thread is the UI thread and throws if not. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
+| [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [TryGetResource](../../styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](../../styledelement.mdx)。 |
+| [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e6d7623c1c"></span>
 
-### ApplyBlockFormatting Method
+### ApplyBlockFormatting 方法 {#applyblockformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyBlockFormatting(Avalonia.Controls.Documents.Block block, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `block` [Avalonia.Controls.Documents.Block](xref:Avalonia.Controls.Documents.Block)
 
@@ -168,19 +168,19 @@ The block to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-Resets every property the snapshot tracks, clearing whatever it does not carry.
-It exists to serve element materialization; to format a live document use
-[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29).
+重置快照所跟踪的每一个属性，把它不携带的内容一并清空。
+它是为元素实体化而生的；若要给活动文档套格式，请用
+[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29)。
 
 </section>
 
@@ -188,15 +188,15 @@ It exists to serve element materialization; to format a live document use
 
 <span id="uid-0531842318"></span>
 
-### ApplyInlineFormatting Method
+### ApplyInlineFormatting 方法 {#applyinlineformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyInlineFormatting(Avalonia.Controls.Documents.RichInline inline, Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `inline` [Avalonia.Controls.Documents.RichInline](xref:Avalonia.Controls.Documents.RichInline)
 
@@ -205,19 +205,19 @@ The inline to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-Resets every property the snapshot tracks, clearing whatever it does not carry.
-It exists to serve element materialization; to format a live document use
-[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29).
+重置快照所跟踪的每一个属性，把它不携带的内容一并清空。
+它是为元素实体化而生的；若要给活动文档套格式，请用
+[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29)。
 
 </section>
 
@@ -225,15 +225,15 @@ It exists to serve element materialization; to format a live document use
 
 <span id="uid-750f1a81c5"></span>
 
-### ApplyListItemFormatting Method
+### ApplyListItemFormatting 方法 {#applylistitemformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyListItemFormatting(Avalonia.Controls.Documents.ListItem item, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `item` [Avalonia.Controls.Documents.ListItem](xref:Avalonia.Controls.Documents.ListItem)
 
@@ -242,19 +242,19 @@ The list item to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-Resets every property the snapshot tracks, clearing whatever it does not carry.
-It exists to serve element materialization; to format a live document use
-[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29).
+重置快照所跟踪的每一个属性，把它不携带的内容一并清空。
+它是为元素实体化而生的；若要给活动文档套格式，请用
+[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29)。
 
 </section>
 
@@ -262,15 +262,15 @@ It exists to serve element materialization; to format a live document use
 
 <span id="uid-c630c53ae6"></span>
 
-### ApplyTableCellFormatting Method
+### ApplyTableCellFormatting 方法 {#applytablecellformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyTableCellFormatting(Avalonia.Controls.Documents.TableCell cell, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `cell` [Avalonia.Controls.Documents.TableCell](xref:Avalonia.Controls.Documents.TableCell)
 
@@ -279,19 +279,19 @@ The cell to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
-Resets every property the snapshot tracks, clearing whatever it does not carry.
-It exists to serve element materialization; to format a live document use
-[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29).
+重置快照所跟踪的每一个属性，把它不携带的内容一并清空。
+它是为元素实体化而生的；若要给活动文档套格式，请用
+[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29)。
 
 </section>
 
@@ -299,15 +299,15 @@ It exists to serve element materialization; to format a live document use
 
 <span id="uid-1b714b165e"></span>
 
-### ApplyTableRowFormatting Method
+### ApplyTableRowFormatting 方法 {#applytablerowformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyTableRowFormatting(Avalonia.Controls.Documents.TableRow row, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `row` [Avalonia.Controls.Documents.TableRow](xref:Avalonia.Controls.Documents.TableRow)
 
@@ -316,19 +316,19 @@ The row to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
-Resets every property the snapshot tracks, clearing whatever it does not carry.
-It exists to serve element materialization; to format a live document use
-[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29).
+重置快照所跟踪的每一个属性，把它不携带的内容一并清空。
+它是为元素实体化而生的；若要给活动文档套格式，请用
+[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29)。
 
 </section>
 
@@ -336,31 +336,31 @@ It exists to serve element materialization; to format a live document use
 
 <span id="uid-cbbb04c22b"></span>
 
-### ApplyTextElementFormatting Method
+### ApplyTextElementFormatting 方法 {#applytextelementformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyTextElementFormatting(Avalonia.Controls.Documents.RichTextElement element, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `element` [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
-The element to write onto.
+要写入的元素。
 
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
-#### Remarks
+#### 备注 {#remarks-5}
 
-Resets every property the snapshot tracks, clearing whatever it does not carry.
-It exists to serve element materialization; to format a live document use
-[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29).
+重置快照所跟踪的每一个属性，把它不携带的内容一并清空。
+它是为元素实体化而生的；若要给活动文档套格式，请用
+[Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue&lt;T&gt;(Avalonia.StyledProperty&#123;&lt;&gt;&#125;,&lt;&gt;)](xref:Avalonia.Controls.Documents.TextModel.TextRange.ApplyPropertyValue%60%601%28Avalonia.StyledProperty%7B%60%600%7D%2C%60%600%29)。
 
 </section>
 
@@ -368,7 +368,7 @@ It exists to serve element materialization; to format a live document use
 
 <span id="uid-655217def6"></span>
 
-### Clone Method
+### Clone 方法 {#clone-method}
 
 Creates a deep, independent copy of this document — content,
 block/inline structure, formatting and page settings. The source
@@ -381,7 +381,7 @@ exactly one document at a time.
 public Avalonia.Controls.Documents.FlowDocument Clone()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument)
 
@@ -394,7 +394,7 @@ A new [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Document
 
 <span id="uid-d9a10c1bbc"></span>
 
-### CreateSnapshot Method
+### CreateSnapshot 方法 {#createsnapshot-method}
 
 Creates an immutable, thread-safe snapshot of the current document state.
 
@@ -402,14 +402,14 @@ Creates an immutable, thread-safe snapshot of the current document state.
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot CreateSnapshot()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
 A [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot) that can be serialized from any thread.
 
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 The snapshot captures text content (O(1) — references immutable rope nodes),
 tree structure (O(n) — copies node tree), and formatting (O(n) — value types).
@@ -429,22 +429,22 @@ new DocxSerializer().Serialize(snapshot, docxStream);
 
 <span id="uid-b379cd22d4"></span>
 
-### EnsureTextDocument Method
+### EnsureTextDocument 方法 {#ensuretextdocument-method}
 
-Creates the backing store if it does not exist yet, and returns it.
+若后备存储尚不存在则创建它，并把它返回。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument EnsureTextDocument()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
-The document's [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument).
+该文档的 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)。
 
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 Read [Avalonia.Controls.Documents.FlowDocument.TextDocument](xref:Avalonia.Controls.Documents.FlowDocument.TextDocument) instead; it creates the store on first read.
 
@@ -454,7 +454,7 @@ Read [Avalonia.Controls.Documents.FlowDocument.TextDocument](xref:Avalonia.Contr
 
 <span id="uid-01298728ef"></span>
 
-### FindFootnote Method
+### FindFootnote 方法 {#findfootnote-method}
 
 The note paired with `anchor`, or null while the anchor has
 none (a dangling anchor, or one not in this document). Under the
@@ -465,12 +465,12 @@ the element channel - this is how callers reach it.
 public Avalonia.Controls.Documents.Footnote FindFootnote(Avalonia.Controls.Documents.RichFootnoteReference anchor)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `anchor` [Avalonia.Controls.Documents.RichFootnoteReference](xref:Avalonia.Controls.Documents.RichFootnoteReference)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.Footnote](xref:Avalonia.Controls.Documents.Footnote)
 
@@ -481,13 +481,13 @@ public Avalonia.Controls.Documents.Footnote FindFootnote(Avalonia.Controls.Docum
 
 <span id="uid-58357881c2"></span>
 
-### FromSnapshot Method
+### FromSnapshot 方法 {#fromsnapshot-method}
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocument FromSnapshot(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot snapshot, Action<Avalonia.Controls.Documents.RichTextElement, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode> formatCallback)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `snapshot` [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 
@@ -495,7 +495,7 @@ public Avalonia.Controls.Documents.FlowDocument FromSnapshot(Avalonia.Controls.D
 `formatCallback` Action&lt;[Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement), [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)&gt;
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument)
 
@@ -506,22 +506,22 @@ public Avalonia.Controls.Documents.FlowDocument FromSnapshot(Avalonia.Controls.D
 
 <span id="uid-9705bb2c7b"></span>
 
-### InitializeTextDocument Method
+### InitializeTextDocument 方法 {#initializetextdocument-method}
 
-Creates the backing store if it does not exist yet, and returns it.
+若后备存储尚不存在则创建它，并把它返回。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument InitializeTextDocument()
 ```
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
-The document's [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument).
+该文档的 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)。
 
 
-#### Remarks
+#### 备注 {#remarks-8}
 
 Read [Avalonia.Controls.Documents.FlowDocument.TextDocument](xref:Avalonia.Controls.Documents.FlowDocument.TextDocument) instead; it creates the store on first read.
 
@@ -529,40 +529,40 @@ Read [Avalonia.Controls.Documents.FlowDocument.TextDocument](xref:Avalonia.Contr
 
 <span id="uid-bbf188f438"></span>
 
-### Load overloads
+### Load 的重载 {#load-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-75be1f9d8f"></span>
 
-#### Load Method
+#### Load 方法 {#load-method}
 
-Reads a document from a stream.
+从流中读取一篇文档。
 
 ```csharp
 public Avalonia.Controls.Documents.FlowDocument Load(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer for the format.
+该格式所用的序列化器。
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument)
 
 The document.
 
 
-##### Remarks
+##### 备注 {#remarks-9}
 
 The overload taking a [System.Threading.CancellationToken](xref:System.Threading.CancellationToken) is the one to reach for: a
 large document cannot be abandoned through this one.
@@ -573,7 +573,7 @@ large document cannot be abandoned through this one.
 
 <span id="uid-7aa70c4b05"></span>
 
-#### Load Method
+#### Load 方法 {#load-method-1}
 
 Loads a document from a stream on the calling thread.
 
@@ -581,31 +581,31 @@ Loads a document from a stream on the calling thread.
 public Avalonia.Controls.Documents.FlowDocument Load(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Token to cancel the operation.
+用于取消该操作的令牌。
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument)
 
 A new [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) containing the loaded content.
 
 
-##### Remarks
+##### 备注 {#remarks-10}
 
 Parsing and element construction both happen on the calling thread, so a UI-thread
 caller pays the whole cost on the UI thread. For a large document use
@@ -613,11 +613,11 @@ caller pays the whole cost on the UI thread. For a large document use
 to the UI - see [Avalonia.Controls.Documents.FlowDocument.LoadAsync(System.IO.Stream,Avalonia.Controls.Documents.Serialization.IDocumentSerializer,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.FlowDocument.LoadAsync%28System.IO.Stream%2CAvalonia.Controls.Documents.Serialization.IDocumentSerializer%2CSystem.Threading.CancellationToken%29) for what a background thread may and may
 not construct.
 
-##### Exceptions
+##### 异常 {#exceptions-1}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
-- [The load was cancelled.](xref:System.OperationCanceledException)
-- [The stream content is invalid for the format.](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
+- [本次加载已被取消。](xref:System.OperationCanceledException)
+- [流中的内容不符合该格式。](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
 
 </section>
 
@@ -625,7 +625,7 @@ not construct.
 
 <span id="uid-e1a5a76bbb"></span>
 
-### LoadAsync Method
+### LoadAsync 方法 {#loadasync-method}
 
 Loads a document from a stream, parsing off the calling thread.
 
@@ -633,31 +633,31 @@ Loads a document from a stream, parsing off the calling thread.
 public System.Threading.Tasks.Task<Avalonia.Controls.Documents.FlowDocument> LoadAsync(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Token to cancel the operation.
+用于取消该操作的令牌。
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument)&gt;
 
 A new [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) with the loaded content.
 
 
-#### Remarks
+#### 备注 {#remarks-11}
 
 The parse runs on the thread pool; the element tree is then built on the UI thread.
 A [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) and its [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)s are
@@ -678,42 +678,42 @@ To stay off the UI thread entirely, skip the element facade: read a
 whole document and has no thread affinity; [Avalonia.Controls.Documents.FlowDocument](xref:Avalonia.Controls.Documents.FlowDocument) presents it
 and is inherently UI-bound.
 
-#### Exceptions
+#### 异常 {#exceptions-2}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
-- [The load was cancelled.](xref:System.OperationCanceledException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
+- [本次加载已被取消。](xref:System.OperationCanceledException)
 
 </section>
 
 <span id="uid-58c41f4af7"></span>
 
-### Save overloads
+### Save 的重载 {#save-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6be9a49f6c"></span>
 
-#### Save Method
+#### Save 方法 {#save-method}
 
-Writes this document to a stream.
+把该文档写入一个流。
 
 ```csharp
 public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer for the format.
+该格式所用的序列化器。
 
 
-##### Remarks
+##### 备注 {#remarks-12}
 
 The overload taking a [System.Threading.CancellationToken](xref:System.Threading.CancellationToken) is the one to reach for: a
 large document cannot be abandoned through this one.
@@ -724,7 +724,7 @@ large document cannot be abandoned through this one.
 
 <span id="uid-e41d6da5e0"></span>
 
-#### Save Method
+#### Save 方法 {#save-method-1}
 
 Saves the document to a stream on the calling thread.
 
@@ -732,32 +732,32 @@ Saves the document to a stream on the calling thread.
 public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer, System.Threading.CancellationToken cancellationToken)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-##### Remarks
+##### 备注 {#remarks-13}
 
 Both the snapshot and the write happen on the calling thread, so a UI-thread caller
 pays the whole cost on the UI thread. For a large document use
 [Avalonia.Controls.Documents.FlowDocument.SaveAsync(System.IO.Stream,Avalonia.Controls.Documents.Serialization.IDocumentSerializer,System.Threading.CancellationToken)](xref:Avalonia.Controls.Documents.FlowDocument.SaveAsync%28System.IO.Stream%2CAvalonia.Controls.Documents.Serialization.IDocumentSerializer%2CSystem.Threading.CancellationToken%29), which keeps only the snapshot here.
 
-##### Exceptions
+##### 异常 {#exceptions-3}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
 - [The save was cancelled.](xref:System.OperationCanceledException)
 
 </section>
@@ -766,7 +766,7 @@ pays the whole cost on the UI thread. For a large document use
 
 <span id="uid-6000bb6211"></span>
 
-### SaveAsync Method
+### SaveAsync 方法 {#saveasync-method}
 
 Saves the document to a stream, writing off the calling thread.
 
@@ -774,56 +774,56 @@ Saves the document to a stream, writing off the calling thread.
 public System.Threading.Tasks.Task SaveAsync(System.IO.Stream stream, Avalonia.Controls.Documents.Serialization.IDocumentSerializer serializer, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-14}
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
 
-Cancellation token.
+取消令牌。
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 System.Threading.Tasks.Task
 
 A task that completes when the save is finished.
 
 
-#### Remarks
+#### 备注 {#remarks-14}
 
 This is a thread-offload convenience, not asynchronous I/O: no serializer here
 performs any, so the write occupies a pool thread for its duration. The snapshot is
 still captured on the calling thread, because reading the document requires the
 thread that owns it.
 
-#### Exceptions
+#### 异常 {#exceptions-4}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariant](../../styledelement.mdx#uid-776bcbe4bf) | Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty. Inherited from [StyledElement](../../styledelement.mdx). |
+| [ActualThemeVariant](../../styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Background](#uid-88b1085a41) | Gets or sets the document-level background brush. |
 | [Blocks](#uid-256bf19392) | Gets the top-level blocks that make up this document's content. |
-| [Classes](../../styledelement.mdx#uid-b7b7edea05) | Gets or sets the styled element's classes. Inherited from [StyledElement](../../styledelement.mdx). |
+| [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [ContentEnd](#uid-f5863acf5f) | Gets a pointer at the end of the document content, or `null` while no backing store exists. |
 | [ContentRange](#uid-6ae5e36837) | Gets a range covering the whole document, or `null` while no backing store exists. |
 | [ContentStart](#uid-95bbe9144f) | Gets a pointer at the start of the document content, or `null` while no backing store exists. |
-| [DataContext](../../styledelement.mdx#uid-647f924a56) | Gets or sets the control's data context. Inherited from [StyledElement](../../styledelement.mdx). |
-| [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | Returns the [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher) that this [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) is associated with. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
+| [DataContext](../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [FontFamily](#uid-a6980f6e90) | Gets or sets the document-level font family. |
 | [FontSize](#uid-da30f27b23) | Gets or sets the document-level font size in device-independent pixels. |
 | [FontStretch](#uid-88f20fc1f7) | Gets or sets the document-level font stretch. |
@@ -833,30 +833,30 @@ thread that owns it.
 | [Footnotes](#uid-fd1a9be222) | Gets the footnotes this document owns, in anchor order: nested documents like [Avalonia.Controls.Documents.FlowDocument.PageBands](xref:Avalonia.Controls.Documents.FlowDocument.PageBands), each paired by id with the anchor in the body that carries its number. The text document owns them ([Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes](xref:Avalonia.Controls.Documents.TextModel.TextDocument.Footnotes)); they resolve resources and inherited formatting through this element and record undo into the shared undo manager. Notes come and go with their anchors ([Avalonia.Controls.Documents.FlowDocument.FindFootnote(Avalonia.Controls.Documents.RichFootnoteReference)](xref:Avalonia.Controls.Documents.FlowDocument.FindFootnote%28Avalonia.Controls.Documents.RichFootnoteReference%29)); a nested document has none. |
 | [Foreground](#uid-173087cfe3) | Gets or sets the document-level foreground brush. |
 | [IsDocumentInitialized](#uid-98613fbb26) | Whether the backing store has been created. |
-| [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | Gets a value that indicates whether the element has finished initialization. Inherited from [StyledElement](../../styledelement.mdx). |
-| [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [Name](../../styledelement.mdx#uid-245f4ccff5) | Gets or sets the name of the styled element. Inherited from [StyledElement](../../styledelement.mdx). |
+| [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [PageBandDistance](#uid-0850f66015) | Gets or sets the distance from the sheet edge to a page band in DIPs: the header's top sits this far below the sheet top, the footer's bottom this far above the sheet bottom. NaN (the default) leaves it to [Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance](xref:Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance). |
 | [PageBands](#uid-ba36b209bd) | Gets the page bands this document owns: the nested documents its root and top-level sections reference as headers and footers. A band added here - or adopted when an unowned band is set on a reference - belongs to this document: the text document owns it ([Avalonia.Controls.Documents.TextModel.TextDocument.PageBands](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageBands)), it resolves resources and inherited formatting through this element and records undo into the shared undo manager. Removing a band clears every reference to it. |
 | [PageHeight](#uid-25c274f87c) | Gets or sets the document page height in DIPs. Set NaN for automatic height from the attached view. |
 | [PagePadding](#uid-86bd8917bb) | Gets or sets the document-level page padding (page margins in document formats). Sections inherit it, like [Avalonia.Controls.Documents.FlowDocument.PageWidth](xref:Avalonia.Controls.Documents.FlowDocument.PageWidth) and [Avalonia.Controls.Documents.FlowDocument.PageHeight](xref:Avalonia.Controls.Documents.FlowDocument.PageHeight), unless they declare their own. |
 | [PageWidth](#uid-385c5486fe) | Gets or sets the document page width in DIPs. Set NaN for automatic width from the attached view. |
-| [Parent](../../styledelement.mdx#uid-aad2c5c78d) | Gets the styled element's logical parent. Inherited from [StyledElement](../../styledelement.mdx). |
-| [Resources](../../styledelement.mdx#uid-f6488ca4b7) | Gets or sets the styled element's resource dictionary. Inherited from [StyledElement](../../styledelement.mdx). |
+| [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [RootKind](#uid-1820f3151c) | The kind of the text document's root node: what kind of document this is. |
-| [StyleKey](../../styledelement.mdx#uid-081584075e) | Gets the type by which the element is styled. Inherited from [StyledElement](../../styledelement.mdx). |
-| [Styles](../../styledelement.mdx#uid-ae663139cc) | Gets the styles for the styled element. Inherited from [StyledElement](../../styledelement.mdx). |
-| [TemplatedParent](../../styledelement.mdx#uid-dbf6ddacc3) | Gets the styled element whose lookless template this styled element is part of. Inherited from [StyledElement](../../styledelement.mdx). |
+| [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [TemplatedParent](../../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [TextAlignment](#uid-36d9623cee) | Gets or sets the default text alignment for blocks in the document. |
 | [TextDocument](#uid-f63e9330f5) | Gets the [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) backing store, creating it on first read. |
-| [Theme](../../styledelement.mdx#uid-1aebed283d) | Gets or sets the theme to be applied to the element. Inherited from [StyledElement](../../styledelement.mdx). |
-| [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | Gets or sets the property transitions for the control. Inherited from [Animatable](../../animation/animatable.mdx). |
+| [Theme](../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-88b1085a41"></span>
 
-### Background Property
+### Background 属性 {#background-property}
 
 Gets or sets the document-level background brush.
 
@@ -870,7 +870,7 @@ public Avalonia.Media.IBrush Background { get; set; }
 
 <span id="uid-256bf19392"></span>
 
-### Blocks Property
+### Blocks 属性 {#blocks-property}
 
 Gets the top-level blocks that make up this document's content.
 
@@ -884,7 +884,7 @@ public Avalonia.Controls.Documents.BlockCollection Blocks { get; set; }
 
 <span id="uid-f5863acf5f"></span>
 
-### ContentEnd Property
+### ContentEnd 属性 {#contentend-property}
 
 Gets a pointer at the end of the document content, or `null` while no
 backing store exists.
@@ -893,7 +893,7 @@ backing store exists.
 public Avalonia.Controls.Documents.TextModel.TextPointer ContentEnd { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-15}
 
 Returns the backing store's cached pointer instance; see
 [Avalonia.Controls.Documents.FlowDocument.ContentStart](xref:Avalonia.Controls.Documents.FlowDocument.ContentStart) for the cloning requirement.
@@ -904,7 +904,7 @@ Returns the backing store's cached pointer instance; see
 
 <span id="uid-6ae5e36837"></span>
 
-### ContentRange Property
+### ContentRange 属性 {#contentrange-property}
 
 Gets a range covering the whole document, or `null` while no backing
 store exists.
@@ -913,7 +913,7 @@ store exists.
 public Avalonia.Controls.Documents.TextModel.TextRange ContentRange { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-16}
 
 Each read allocates a new range, so a mutation through one read does not
 re-target the range another read returned.
@@ -924,7 +924,7 @@ re-target the range another read returned.
 
 <span id="uid-95bbe9144f"></span>
 
-### ContentStart Property
+### ContentStart 属性 {#contentstart-property}
 
 Gets a pointer at the start of the document content, or `null` while no
 backing store exists.
@@ -933,7 +933,7 @@ backing store exists.
 public Avalonia.Controls.Documents.TextModel.TextPointer ContentStart { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-17}
 
 Returns the backing store's cached pointer instance. A caller storing
 it in a container that later refreshes it calls [Avalonia.Controls.Documents.TextModel.TextPointer.Clone](xref:Avalonia.Controls.Documents.TextModel.TextPointer.Clone)
@@ -945,7 +945,7 @@ first; see [Avalonia.Controls.Documents.TextModel.TextDocument.ContentStart](xre
 
 <span id="uid-a6980f6e90"></span>
 
-### FontFamily Property
+### FontFamily 属性 {#fontfamily-property}
 
 Gets or sets the document-level font family.
 
@@ -959,7 +959,7 @@ public Avalonia.Media.FontFamily FontFamily { get; set; }
 
 <span id="uid-da30f27b23"></span>
 
-### FontSize Property
+### FontSize 属性 {#fontsize-property}
 
 Gets or sets the document-level font size in device-independent pixels.
 
@@ -973,7 +973,7 @@ public double FontSize { get; set; }
 
 <span id="uid-88f20fc1f7"></span>
 
-### FontStretch Property
+### FontStretch 属性 {#fontstretch-property}
 
 Gets or sets the document-level font stretch.
 
@@ -987,7 +987,7 @@ public Avalonia.Media.FontStretch FontStretch { get; set; }
 
 <span id="uid-37ce681c00"></span>
 
-### FontStyle Property
+### FontStyle 属性 {#fontstyle-property}
 
 Gets or sets the document-level font style.
 
@@ -1001,7 +1001,7 @@ public Avalonia.Media.FontStyle FontStyle { get; set; }
 
 <span id="uid-7bcec7997d"></span>
 
-### FontWeight Property
+### FontWeight 属性 {#fontweight-property}
 
 Gets or sets the document-level font weight.
 
@@ -1015,7 +1015,7 @@ public Avalonia.Media.FontWeight FontWeight { get; set; }
 
 <span id="uid-317b96e6f6"></span>
 
-### FootnoteNumberFormat Property
+### FootnoteNumberFormat 属性 {#footnotenumberformat-property}
 
 Gets or sets how the document numbers its footnotes: the format of the ordinal
 each [Avalonia.Controls.Documents.RichFootnoteReference](xref:Avalonia.Controls.Documents.RichFootnoteReference) renders and its note shows in its
@@ -1034,7 +1034,7 @@ public Avalonia.Controls.Documents.FootnoteNumberFormat FootnoteNumberFormat { g
 
 <span id="uid-fd1a9be222"></span>
 
-### Footnotes Property
+### Footnotes 属性 {#footnotes-property}
 
 Gets the footnotes this document owns, in anchor order: nested documents like
 [Avalonia.Controls.Documents.FlowDocument.PageBands](xref:Avalonia.Controls.Documents.FlowDocument.PageBands), each paired by id with the anchor in the body that
@@ -1053,7 +1053,7 @@ public Avalonia.Controls.Documents.FootnoteCollection Footnotes { get; set; }
 
 <span id="uid-173087cfe3"></span>
 
-### Foreground Property
+### Foreground 属性 {#foreground-property}
 
 Gets or sets the document-level foreground brush.
 
@@ -1067,7 +1067,7 @@ public Avalonia.Media.IBrush Foreground { get; set; }
 
 <span id="uid-98613fbb26"></span>
 
-### IsDocumentInitialized Property
+### IsDocumentInitialized 属性 {#isdocumentinitialized-property}
 
 Whether the backing store has been created.
 
@@ -1075,7 +1075,7 @@ Whether the backing store has been created.
 public bool IsDocumentInitialized { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-18}
 
 An internal lazy-initialization detail. Reading [Avalonia.Controls.Documents.FlowDocument.TextDocument](xref:Avalonia.Controls.Documents.FlowDocument.TextDocument) creates the
 store, so this reports true from the first read onwards and there is nothing a caller
@@ -1087,7 +1087,7 @@ can usefully do with it.
 
 <span id="uid-0850f66015"></span>
 
-### PageBandDistance Property
+### PageBandDistance 属性 {#pagebanddistance-property}
 
 Gets or sets the distance from the sheet edge to a page band in DIPs: the header's
 top sits this far below the sheet top, the footer's bottom this far above the
@@ -1098,7 +1098,7 @@ sheet bottom. NaN (the default) leaves it to
 public double PageBandDistance { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-19}
 
 The value belongs to the document, not to a view of it: a band taller than the
 space it leaves pushes the body down, so screen, print and PDF must all break the
@@ -1111,7 +1111,7 @@ document on the same lines. It travels in
 
 <span id="uid-ba36b209bd"></span>
 
-### PageBands Property
+### PageBands 属性 {#pagebands-property}
 
 Gets the page bands this document owns: the nested documents its root and
 top-level sections reference as headers and footers. A band added here - or
@@ -1130,7 +1130,7 @@ public Avalonia.Controls.Documents.PageBandCollection PageBands { get; set; }
 
 <span id="uid-25c274f87c"></span>
 
-### PageHeight Property
+### PageHeight 属性 {#pageheight-property}
 
 Gets or sets the document page height in DIPs.
 Set NaN for automatic height from the attached view.
@@ -1145,7 +1145,7 @@ public double PageHeight { get; set; }
 
 <span id="uid-86bd8917bb"></span>
 
-### PagePadding Property
+### PagePadding 属性 {#pagepadding-property}
 
 Gets or sets the document-level page padding (page margins in document formats).
 Sections inherit it, like [Avalonia.Controls.Documents.FlowDocument.PageWidth](xref:Avalonia.Controls.Documents.FlowDocument.PageWidth) and [Avalonia.Controls.Documents.FlowDocument.PageHeight](xref:Avalonia.Controls.Documents.FlowDocument.PageHeight),
@@ -1161,7 +1161,7 @@ public Avalonia.Thickness PagePadding { get; set; }
 
 <span id="uid-385c5486fe"></span>
 
-### PageWidth Property
+### PageWidth 属性 {#pagewidth-property}
 
 Gets or sets the document page width in DIPs.
 Set NaN for automatic width from the attached view.
@@ -1176,7 +1176,7 @@ public double PageWidth { get; set; }
 
 <span id="uid-1820f3151c"></span>
 
-### RootKind Property
+### RootKind 属性 {#rootkind-property}
 
 The kind of the text document's root node: what kind of document this is.
 
@@ -1190,7 +1190,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind RootKind { get
 
 <span id="uid-36d9623cee"></span>
 
-### TextAlignment Property
+### TextAlignment 属性 {#textalignment-property}
 
 Gets or sets the default text alignment for blocks in the document.
 
@@ -1204,7 +1204,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 <span id="uid-f63e9330f5"></span>
 
-### TextDocument Property
+### TextDocument 属性 {#textdocument-property}
 
 Gets the [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) backing store, creating it on
 first read.
@@ -1213,7 +1213,7 @@ first read.
 public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-20}
 
 Creation is where the document becomes live: blocks, bands and notes added
 while no store existed materialize into it, and the change notifications are
@@ -1223,37 +1223,37 @@ element tree instead.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BackgroundProperty](#uid-f2272a50a5) | Defines the [Avalonia.Controls.Documents.FlowDocument.Background](xref:Avalonia.Controls.Documents.FlowDocument.Background) property. |
-| [DataContextProperty](../../styledelement.mdx#uid-7eefabb929) | Defines the [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) property. Inherited from [StyledElement](../../styledelement.mdx). |
-| [FontFamilyProperty](#uid-63277bd365) | Defines the [Avalonia.Controls.Documents.FlowDocument.FontFamily](xref:Avalonia.Controls.Documents.FlowDocument.FontFamily) property. |
-| [FontSizeProperty](#uid-102ac51748) | Defines the [Avalonia.Controls.Documents.FlowDocument.FontSize](xref:Avalonia.Controls.Documents.FlowDocument.FontSize) property. |
-| [FontStretchProperty](#uid-5ff1720682) | Defines the [Avalonia.Controls.Documents.FlowDocument.FontStretch](xref:Avalonia.Controls.Documents.FlowDocument.FontStretch) property. |
-| [FontStyleProperty](#uid-8121126ae8) | Defines the [Avalonia.Controls.Documents.FlowDocument.FontStyle](xref:Avalonia.Controls.Documents.FlowDocument.FontStyle) property. |
-| [FontWeightProperty](#uid-dea55f4025) | Defines the [Avalonia.Controls.Documents.FlowDocument.FontWeight](xref:Avalonia.Controls.Documents.FlowDocument.FontWeight) property. |
-| [FootnoteNumberFormatProperty](#uid-6bfe997de0) | Defines the [Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat](xref:Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat) property. |
-| [ForegroundProperty](#uid-d39d85e504) | Defines the [Avalonia.Controls.Documents.FlowDocument.Foreground](xref:Avalonia.Controls.Documents.FlowDocument.Foreground) property. |
-| [NameProperty](../../styledelement.mdx#uid-bcdbb9de56) | Defines the [Avalonia.StyledElement.Name](xref:Avalonia.StyledElement.Name) property. Inherited from [StyledElement](../../styledelement.mdx). |
+| [BackgroundProperty](#uid-f2272a50a5) | 定义 [Avalonia.Controls.Documents.FlowDocument.Background](xref:Avalonia.Controls.Documents.FlowDocument.Background) 属性。 |
+| [DataContextProperty](../../styledelement.mdx#uid-7eefabb929) | 定义 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [FontFamilyProperty](#uid-63277bd365) | 定义 [Avalonia.Controls.Documents.FlowDocument.FontFamily](xref:Avalonia.Controls.Documents.FlowDocument.FontFamily) 属性。 |
+| [FontSizeProperty](#uid-102ac51748) | 定义 [Avalonia.Controls.Documents.FlowDocument.FontSize](xref:Avalonia.Controls.Documents.FlowDocument.FontSize) 属性。 |
+| [FontStretchProperty](#uid-5ff1720682) | 定义 [Avalonia.Controls.Documents.FlowDocument.FontStretch](xref:Avalonia.Controls.Documents.FlowDocument.FontStretch) 属性。 |
+| [FontStyleProperty](#uid-8121126ae8) | 定义 [Avalonia.Controls.Documents.FlowDocument.FontStyle](xref:Avalonia.Controls.Documents.FlowDocument.FontStyle) 属性。 |
+| [FontWeightProperty](#uid-dea55f4025) | 定义 [Avalonia.Controls.Documents.FlowDocument.FontWeight](xref:Avalonia.Controls.Documents.FlowDocument.FontWeight) 属性。 |
+| [FootnoteNumberFormatProperty](#uid-6bfe997de0) | 定义 [Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat](xref:Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat) 属性。 |
+| [ForegroundProperty](#uid-d39d85e504) | 定义 [Avalonia.Controls.Documents.FlowDocument.Foreground](xref:Avalonia.Controls.Documents.FlowDocument.Foreground) 属性。 |
+| [NameProperty](../../styledelement.mdx#uid-bcdbb9de56) | 定义 [Avalonia.StyledElement.Name](xref:Avalonia.StyledElement.Name) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [PageBandDistanceProperty](#uid-cf8e5dada0) | Defines the [Avalonia.Controls.Documents.FlowDocument.PageBandDistance](xref:Avalonia.Controls.Documents.FlowDocument.PageBandDistance) property. NaN means the document declares none and the default distance applies. |
 | [PageHeightProperty](#uid-9b39d6bda5) | Defines the [Avalonia.Controls.Documents.FlowDocument.PageHeight](xref:Avalonia.Controls.Documents.FlowDocument.PageHeight) property. NaN means automatic height from the attached view. |
-| [PagePaddingProperty](#uid-747f0f07cf) | Defines the [Avalonia.Controls.Documents.FlowDocument.PagePadding](xref:Avalonia.Controls.Documents.FlowDocument.PagePadding) property. |
+| [PagePaddingProperty](#uid-747f0f07cf) | 定义 [Avalonia.Controls.Documents.FlowDocument.PagePadding](xref:Avalonia.Controls.Documents.FlowDocument.PagePadding) 属性。 |
 | [PageWidthProperty](#uid-39f2196301) | Defines the [Avalonia.Controls.Documents.FlowDocument.PageWidth](xref:Avalonia.Controls.Documents.FlowDocument.PageWidth) property. NaN means automatic width from the attached view. |
-| [ParentProperty](../../styledelement.mdx#uid-dc6481a488) | Defines the [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) property. Inherited from [StyledElement](../../styledelement.mdx). |
-| [TemplatedParentProperty](../../styledelement.mdx#uid-a2c7149a6b) | Defines the [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) property. Inherited from [StyledElement](../../styledelement.mdx). |
-| [TextAlignmentProperty](#uid-e55d1c01c9) | Defines the [Avalonia.Controls.Documents.FlowDocument.TextAlignment](xref:Avalonia.Controls.Documents.FlowDocument.TextAlignment) property. |
-| [ThemeProperty](../../styledelement.mdx#uid-05852d7b9a) | Defines the [Avalonia.StyledElement.Theme](xref:Avalonia.StyledElement.Theme) property. Inherited from [StyledElement](../../styledelement.mdx). |
-| [TransitionsProperty](../../animation/animatable.mdx#uid-c79f18fac2) | Defines the [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) property. Inherited from [Animatable](../../animation/animatable.mdx). |
+| [ParentProperty](../../styledelement.mdx#uid-dc6481a488) | 定义 [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [TemplatedParentProperty](../../styledelement.mdx#uid-a2c7149a6b) | 定义 [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [TextAlignmentProperty](#uid-e55d1c01c9) | 定义 [Avalonia.Controls.Documents.FlowDocument.TextAlignment](xref:Avalonia.Controls.Documents.FlowDocument.TextAlignment) 属性。 |
+| [ThemeProperty](../../styledelement.mdx#uid-05852d7b9a) | 定义 [Avalonia.StyledElement.Theme](xref:Avalonia.StyledElement.Theme) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [TransitionsProperty](../../animation/animatable.mdx#uid-c79f18fac2) | 定义 [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) 属性。继承自 [Animatable](../../animation/animatable.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f2272a50a5"></span>
 
-### BackgroundProperty Field
+### BackgroundProperty 字段 {#backgroundproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.Background](xref:Avalonia.Controls.Documents.FlowDocument.Background) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.Background](xref:Avalonia.Controls.Documents.FlowDocument.Background) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Media.IBrush> BackgroundProperty
@@ -1265,9 +1265,9 @@ public Avalonia.StyledProperty<Avalonia.Media.IBrush> BackgroundProperty
 
 <span id="uid-63277bd365"></span>
 
-### FontFamilyProperty Field
+### FontFamilyProperty 字段 {#fontfamilyproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.FontFamily](xref:Avalonia.Controls.Documents.FlowDocument.FontFamily) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.FontFamily](xref:Avalonia.Controls.Documents.FlowDocument.FontFamily) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Media.FontFamily> FontFamilyProperty
@@ -1279,9 +1279,9 @@ public Avalonia.AttachedProperty<Avalonia.Media.FontFamily> FontFamilyProperty
 
 <span id="uid-102ac51748"></span>
 
-### FontSizeProperty Field
+### FontSizeProperty 字段 {#fontsizeproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.FontSize](xref:Avalonia.Controls.Documents.FlowDocument.FontSize) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.FontSize](xref:Avalonia.Controls.Documents.FlowDocument.FontSize) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<double> FontSizeProperty
@@ -1293,9 +1293,9 @@ public Avalonia.AttachedProperty<double> FontSizeProperty
 
 <span id="uid-5ff1720682"></span>
 
-### FontStretchProperty Field
+### FontStretchProperty 字段 {#fontstretchproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.FontStretch](xref:Avalonia.Controls.Documents.FlowDocument.FontStretch) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.FontStretch](xref:Avalonia.Controls.Documents.FlowDocument.FontStretch) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Media.FontStretch> FontStretchProperty
@@ -1307,9 +1307,9 @@ public Avalonia.AttachedProperty<Avalonia.Media.FontStretch> FontStretchProperty
 
 <span id="uid-8121126ae8"></span>
 
-### FontStyleProperty Field
+### FontStyleProperty 字段 {#fontstyleproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.FontStyle](xref:Avalonia.Controls.Documents.FlowDocument.FontStyle) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.FontStyle](xref:Avalonia.Controls.Documents.FlowDocument.FontStyle) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Media.FontStyle> FontStyleProperty
@@ -1321,9 +1321,9 @@ public Avalonia.AttachedProperty<Avalonia.Media.FontStyle> FontStyleProperty
 
 <span id="uid-dea55f4025"></span>
 
-### FontWeightProperty Field
+### FontWeightProperty 字段 {#fontweightproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.FontWeight](xref:Avalonia.Controls.Documents.FlowDocument.FontWeight) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.FontWeight](xref:Avalonia.Controls.Documents.FlowDocument.FontWeight) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Media.FontWeight> FontWeightProperty
@@ -1335,9 +1335,9 @@ public Avalonia.AttachedProperty<Avalonia.Media.FontWeight> FontWeightProperty
 
 <span id="uid-6bfe997de0"></span>
 
-### FootnoteNumberFormatProperty Field
+### FootnoteNumberFormatProperty 字段 {#footnotenumberformatproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat](xref:Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat](xref:Avalonia.Controls.Documents.FlowDocument.FootnoteNumberFormat) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Controls.Documents.FootnoteNumberFormat> FootnoteNumberFormatProperty
@@ -1349,9 +1349,9 @@ public Avalonia.StyledProperty<Avalonia.Controls.Documents.FootnoteNumberFormat>
 
 <span id="uid-d39d85e504"></span>
 
-### ForegroundProperty Field
+### ForegroundProperty 字段 {#foregroundproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.Foreground](xref:Avalonia.Controls.Documents.FlowDocument.Foreground) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.Foreground](xref:Avalonia.Controls.Documents.FlowDocument.Foreground) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Media.IBrush> ForegroundProperty
@@ -1363,7 +1363,7 @@ public Avalonia.AttachedProperty<Avalonia.Media.IBrush> ForegroundProperty
 
 <span id="uid-cf8e5dada0"></span>
 
-### PageBandDistanceProperty Field
+### PageBandDistanceProperty 字段 {#pagebanddistanceproperty-field}
 
 Defines the [Avalonia.Controls.Documents.FlowDocument.PageBandDistance](xref:Avalonia.Controls.Documents.FlowDocument.PageBandDistance) property.
 NaN means the document declares none and the default distance applies.
@@ -1378,7 +1378,7 @@ public Avalonia.StyledProperty<double> PageBandDistanceProperty
 
 <span id="uid-9b39d6bda5"></span>
 
-### PageHeightProperty Field
+### PageHeightProperty 字段 {#pageheightproperty-field}
 
 Defines the [Avalonia.Controls.Documents.FlowDocument.PageHeight](xref:Avalonia.Controls.Documents.FlowDocument.PageHeight) property.
 NaN means automatic height from the attached view.
@@ -1393,9 +1393,9 @@ public Avalonia.StyledProperty<double> PageHeightProperty
 
 <span id="uid-747f0f07cf"></span>
 
-### PagePaddingProperty Field
+### PagePaddingProperty 字段 {#pagepaddingproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.PagePadding](xref:Avalonia.Controls.Documents.FlowDocument.PagePadding) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.PagePadding](xref:Avalonia.Controls.Documents.FlowDocument.PagePadding) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Thickness> PagePaddingProperty
@@ -1407,7 +1407,7 @@ public Avalonia.StyledProperty<Avalonia.Thickness> PagePaddingProperty
 
 <span id="uid-39f2196301"></span>
 
-### PageWidthProperty Field
+### PageWidthProperty 字段 {#pagewidthproperty-field}
 
 Defines the [Avalonia.Controls.Documents.FlowDocument.PageWidth](xref:Avalonia.Controls.Documents.FlowDocument.PageWidth) property.
 NaN means automatic width from the attached view.
@@ -1422,9 +1422,9 @@ public Avalonia.StyledProperty<double> PageWidthProperty
 
 <span id="uid-e55d1c01c9"></span>
 
-### TextAlignmentProperty Field
+### TextAlignmentProperty 字段 {#textalignmentproperty-field}
 
-Defines the [Avalonia.Controls.Documents.FlowDocument.TextAlignment](xref:Avalonia.Controls.Documents.FlowDocument.TextAlignment) property.
+定义 [Avalonia.Controls.Documents.FlowDocument.TextAlignment](xref:Avalonia.Controls.Documents.FlowDocument.TextAlignment) 属性。
 
 ```csharp
 public Avalonia.AttachedProperty<Avalonia.Media.TextAlignment> TextAlignmentProperty
@@ -1432,28 +1432,28 @@ public Avalonia.AttachedProperty<Avalonia.Media.TextAlignment> TextAlignmentProp
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariantChanged](../../styledelement.mdx#uid-e69ef27e71) | Raised when the theme variant is changed on the element or an ancestor of the element. Inherited from [StyledElement](../../styledelement.mdx). |
-| [AttachedToLogicalTree](../../styledelement.mdx#uid-717aa68e85) | Raised when the styled element is attached to a rooted logical tree. Inherited from [StyledElement](../../styledelement.mdx). |
-| [ChildIndexChanged](#uid-e9c74fd816) | Occurs when the child index of a logical child changes. |
-| [DataContextChanged](../../styledelement.mdx#uid-4b1cc873f8) | Occurs when the [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) property changes. Inherited from [StyledElement](../../styledelement.mdx). |
-| [DetachedFromLogicalTree](../../styledelement.mdx#uid-d9f5afa535) | Raised when the styled element is detached from a rooted logical tree. Inherited from [StyledElement](../../styledelement.mdx). |
+| [ActualThemeVariantChanged](../../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [AttachedToLogicalTree](../../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [ChildIndexChanged](#uid-e9c74fd816) | 某个逻辑子级的子索引发生变化时发生。 |
+| [DataContextChanged](../../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
+| [DetachedFromLogicalTree](../../styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [FootnotesChanged](#uid-d0e801538f) | Raised when the set of notes changes, a note's id or label changes, or the numbering format changes: the notes a page shows and the numbers they show follow from these, so views re-place them. |
-| [Initialized](../../styledelement.mdx#uid-bd6a5e5c0e) | Occurs when the styled element has finished initialization. Inherited from [StyledElement](../../styledelement.mdx). |
+| [Initialized](../../styledelement.mdx#uid-bd6a5e5c0e) | 当该样式化元素完成初始化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [PageBandsChanged](#uid-a6e7e3bd38) | Raised when the set of bands changes or a band's role or rule changes: the pages a band claims by rule follow from these, so views re-resolve their sheets. |
-| [PropertyChanged](../../avaloniaobject.mdx#uid-d758e26fae) | Raised when a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value changes on this object. Inherited from [AvaloniaObject](../../avaloniaobject.mdx). |
-| [ResourcesChanged](../../styledelement.mdx#uid-99a7f47c56) | Occurs when a resource in this styled element or a parent styled element has changed. Inherited from [StyledElement](../../styledelement.mdx). |
+| [PropertyChanged](../../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
+| [ResourcesChanged](../../styledelement.mdx#uid-99a7f47c56) | 当该样式化元素或其上级中的资源发生变化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e9c74fd816"></span>
 
-### ChildIndexChanged Event
+### ChildIndexChanged 事件 {#childindexchanged-event}
 
-Occurs when the child index of a logical child changes.
+某个逻辑子级的子索引发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.LogicalTree.ChildIndexChangedEventArgs> ChildIndexChanged
@@ -1465,7 +1465,7 @@ public event EventHandler<Avalonia.LogicalTree.ChildIndexChangedEventArgs> Child
 
 <span id="uid-d0e801538f"></span>
 
-### FootnotesChanged Event
+### FootnotesChanged 事件 {#footnoteschanged-event}
 
 Raised when the set of notes changes, a note's id or label changes, or the
 numbering format changes: the notes a page shows and the numbers they show
@@ -1481,7 +1481,7 @@ public event EventHandler FootnotesChanged
 
 <span id="uid-a6e7e3bd38"></span>
 
-### PageBandsChanged Event
+### PageBandsChanged 事件 {#pagebandschanged-event}
 
 Raised when the set of bands changes or a band's role or rule changes: the pages a
 band claims by rule follow from these, so views re-resolve their sheets.

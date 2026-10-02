@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IRecyclingDataTemplate Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Templates</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Templates</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/IRecyclingDataTemplate.cs">IRecyclingDataTemplate.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Templates/IRecyclingDataTemplate.cs">IRecyclingDataTemplate.cs</a>
 </div>
 
 </div>
@@ -54,41 +54,41 @@ public interface IRecyclingDataTemplate
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="idatatemplate">IDataTemplate</a>, ITemplate&lt;object,Control&gt;
+<span className="apiref-page__meta-label">实现接口：</span> <a href="idatatemplate">IDataTemplate</a>，ITemplate&lt;object,Control&gt;
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Build](#uid-b7a424bae2) | Creates or recycles a control to display the specified data. |
+| [Build](#uid-b7a424bae2) | 创建或回收一个控件，用于显示指定的数据。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b7a424bae2"></span>
 
-### Build Method
+### Build 方法 {#build-method}
 
-Creates or recycles a control to display the specified data.
+创建或回收一个控件，用于显示指定的数据。
 
 ```csharp
 public Avalonia.Controls.Control Build(object data, Avalonia.Controls.Control existing)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `data` object
 
-The data to display.
+要显示的数据。
 
 
 `existing` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-An optional control to recycle.
+一个可供回收复用的控件，可选。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -96,7 +96,7 @@ The `existing` control if supplied and applicable to
 `data`, otherwise a new control or null.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 The caller should ensure that any control passed to `existing`
 originated from the same data template.

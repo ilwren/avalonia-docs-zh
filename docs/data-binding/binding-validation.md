@@ -1,15 +1,15 @@
 ---
 id: binding-validation
-title: Validation in data binding
-description: Validate bound data using DataAnnotations, INotifyDataErrorInfo, or exception-based approaches.
+title: 数据绑定中的校验
+description: 用 DataAnnotations、INotifyDataErrorInfo 或基于异常的方式校验绑定数据。
 doc-type: how-to
 ---
 
-Avalonia supports data validation through the standard .NET validation mechanisms. When a bound property fails validation, the control displays an error indicator and the validation message.
+Avalonia 通过标准的 .NET 校验机制支持数据校验。当绑定的属性校验不通过时，控件会显示错误标识和对应的提示信息。
 
-## Validation with data annotations
+## 用数据注解做校验 {#validation-with-data-annotations}
 
-The simplest approach uses `System.ComponentModel.DataAnnotations` attributes on your view model properties. This works with CommunityToolkit.Mvvm's `ObservableValidator` base class:
+最简单的办法是在视图模型属性上加 `System.ComponentModel.DataAnnotations` 特性。它可以配合 CommunityToolkit.Mvvm 的 `ObservableValidator` 基类使用：
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -36,9 +36,9 @@ public partial class RegistrationViewModel : ObservableValidator
 }
 ```
 
-The `[NotifyDataErrorInfo]` attribute causes CommunityToolkit.Mvvm to validate the property when it changes and raise the appropriate `INotifyDataErrorInfo` events.
+有了 `[NotifyDataErrorInfo]` 特性，CommunityToolkit.Mvvm 会在属性变化时触发校验，并引发相应的 `INotifyDataErrorInfo` 事件。
 
-Bind the properties with `TwoWay` mode:
+绑定时使用 `TwoWay` 模式：
 
 ```xml
 <StackPanel Spacing="8">
@@ -48,11 +48,11 @@ Bind the properties with `TwoWay` mode:
 </StackPanel>
 ```
 
-When validation fails, the control displays a red border and the error message appears in a tooltip by default.
+校验失败时，控件默认会显示红色边框，错误信息则出现在工具提示中。
 
 ## INotifyDataErrorInfo
 
-`INotifyDataErrorInfo` is the standard .NET interface for property-level validation. Avalonia automatically picks up validation errors from any view model that implements it:
+`INotifyDataErrorInfo` 是 .NET 中用于属性级校验的标准接口。只要视图模型实现了它，Avalonia 就会自动接收其中的校验错误：
 
 ```csharp
 public class LoginViewModel : INotifyPropertyChanged, INotifyDataErrorInfo
@@ -115,9 +115,9 @@ public class LoginViewModel : INotifyPropertyChanged, INotifyDataErrorInfo
 }
 ```
 
-## Custom validation attributes
+## 自定义校验特性 {#custom-validation-attributes}
 
-Create custom validation attributes for reusable validation logic:
+把可复用的校验逻辑封装成自定义校验特性：
 
 ```csharp
 public class NotEqualToAttribute : ValidationAttribute
@@ -145,7 +145,7 @@ public class NotEqualToAttribute : ValidationAttribute
 }
 ```
 
-Use it on your view model:
+在视图模型上这样使用：
 
 ```csharp
 [ObservableProperty]
@@ -160,20 +160,20 @@ private string _password = "";
 private string _newPassword = "";
 ```
 
-## Validation error display
+## 校验错误的呈现 {#validation-error-display}
 
-### Default behavior
+### 默认表现 {#default-behavior}
 
-By default, Avalonia shows validation errors with:
-- A red border around the control
-- A tooltip containing the error message when hovering
-- A red adorner in the control's corner
+默认情况下，Avalonia 以这些方式展示校验错误：
+- 控件四周出现红色边框
+- 鼠标悬停时弹出含错误信息的工具提示
+- 控件角上出现一个红色修饰标记
 
-Validation errors are also automatically exposed to screen readers and other assistive technologies through the [`DataValidationErrors`](/api/avalonia/controls/datavalidationerrors) automation peer. See [Accessibility](/docs/app-development/accessibility#data-validation-errors) for details.
+校验错误还会通过 [`DataValidationErrors`](/api/avalonia/controls/datavalidationerrors) 自动化对等体自动暴露给屏幕阅读器等辅助技术，详见[无障碍访问](/docs/app-development/accessibility#data-validation-errors)。
 
-### Customizing error display
+### 自定义错误呈现方式 {#customizing-error-display}
 
-Use the `DataValidationErrors` control to customize how errors are shown. Restyle the `DataValidationErrors` template through a control theme:
+用 `DataValidationErrors` 控件可以自定义错误的展示方式。通过控件主题重写 `DataValidationErrors` 的模板即可：
 
 ```xml
 <Style Selector="DataValidationErrors">
@@ -209,9 +209,9 @@ Use the `DataValidationErrors` control to customize how errors are shown. Restyl
 </Style>
 ```
 
-### Showing errors below the control
+### 把错误信息显示在控件下方 {#showing-errors-below-the-control}
 
-A common pattern places error messages below the input field instead of in a tooltip:
+一种常见做法是把错误信息放在输入框下方，而不是塞进工具提示：
 
 ```xml
 <Style Selector="DataValidationErrors">
@@ -229,9 +229,9 @@ A common pattern places error messages below the input field instead of in a too
 </Style>
 ```
 
-## Validating on submit
+## 提交时统一校验 {#validating-on-submit}
 
-To validate the entire form when the user clicks a submit button:
+当用户点击提交按钮时校验整个表单：
 
 ```csharp
 public partial class RegistrationViewModel : ObservableValidator
@@ -251,11 +251,11 @@ public partial class RegistrationViewModel : ObservableValidator
 }
 ```
 
-`ValidateAllProperties()` runs all validation attributes on all properties at once, which is useful for catching errors on fields the user has not yet interacted with.
+`ValidateAllProperties()` 会一次性对所有属性跑完全部校验特性，这样就能把用户还没碰过的字段里的错误也一并查出来。
 
-## Exception-based validation
+## 基于异常的校验 {#exception-based-validation}
 
-Avalonia also catches exceptions thrown during binding updates and displays them as validation errors. This can be useful for simple type conversion validation:
+Avalonia 还会捕获绑定更新过程中抛出的异常，并把它们当作校验错误展示出来。做些简单的类型转换校验时，这招挺顺手：
 
 ```csharp
 private int _quantity;
@@ -272,10 +272,10 @@ public int Quantity
 }
 ```
 
-While this works, `INotifyDataErrorInfo` is the preferred approach because it supports multiple errors per property and async validation.
+这种办法虽然可行，但更推荐 `INotifyDataErrorInfo` —— 它支持同一属性上有多条错误，也支持异步校验。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Data Binding Syntax](/docs/data-binding/data-binding-syntax): Binding modes and parameters.
-- [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged): Change notification for view models.
-- [The MVVM Pattern](/docs/fundamentals/the-mvvm-pattern): View model patterns and CommunityToolkit.Mvvm.
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定模式与各项参数。
+- [INotifyPropertyChanged](/docs/data-binding/inotifypropertychanged)：视图模型的变更通知。
+- [MVVM 模式](/docs/fundamentals/the-mvvm-pattern)：视图模型的常见写法与 CommunityToolkit.Mvvm。

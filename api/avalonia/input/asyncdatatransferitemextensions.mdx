@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AsyncDataTransferItemExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Input</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Input</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/AsyncDataTransferItemExtensions.cs">AsyncDataTransferItemExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Input/AsyncDataTransferItemExtensions.cs">AsyncDataTransferItemExtensions.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Contains extension methods for [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem).
+包含面向 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 的扩展方法。
 
 </div>
 
@@ -54,49 +54,49 @@ public class AsyncDataTransferItemExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AsyncDataTransferItemExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AsyncDataTransferItemExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Contains](#uid-3f15c11f41) | Gets whether a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) supports a specific format. |
-| [TryGetBitmapAsync](#uid-738ac85b8f) | Returns a bitmap, if available, from a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance. |
-| [TryGetFileAsync](#uid-d99b89556b) | Returns a file, if available, from a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance. |
-| [TryGetTextAsync](#uid-a5ad2ed8e0) | Returns a text, if available, from a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance. |
-| [TryGetValueAsync](#uid-e9670d76b6) | No summary available. |
+| [Contains](#uid-3f15c11f41) | 获取某个 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 是否支持特定格式。 |
+| [TryGetBitmapAsync](#uid-738ac85b8f) | 从 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例中取出位图（若有）。 |
+| [TryGetFileAsync](#uid-d99b89556b) | 从 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例中取出文件（若有）。 |
+| [TryGetTextAsync](#uid-a5ad2ed8e0) | 从 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例中取出文本（若有）。 |
+| [TryGetValueAsync](#uid-e9670d76b6) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3f15c11f41"></span>
 
-### Contains Method
+### Contains 方法 {#contains-method}
 
-Gets whether a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) supports a specific format.
+获取某个 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 是否支持特定格式。
 
 ```csharp
 public bool Contains(Avalonia.Input.IAsyncDataTransferItem dataTransferItem, Avalonia.Input.DataFormat format)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `dataTransferItem` [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem)
 
-The [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance.
+该 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例。
 
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)
 
-The format to check.
+要检查的格式。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
-true if `format` is supported, false otherwise.
+若支持 `format` 则为 true，否则为 false。
 
 
 </section>
@@ -105,29 +105,29 @@ true if `format` is supported, false otherwise.
 
 <span id="uid-738ac85b8f"></span>
 
-### TryGetBitmapAsync Method
+### TryGetBitmapAsync 方法 {#trygetbitmapasync-method}
 
-Returns a bitmap, if available, from a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance.
+从 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例中取出位图（若有）。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> TryGetBitmapAsync(Avalonia.Input.IAsyncDataTransferItem dataTransferItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `dataTransferItem` [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem)
 
-The [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance.
+该 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)&gt;
 
-A [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap), or null if the format isn't available.
+一个 [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap)；若该格式不可用则为 null。
 
 
-#### See also
+#### 另请参阅 {#see-also}
 
 - [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap)
 
@@ -137,29 +137,29 @@ A [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap), or null i
 
 <span id="uid-d99b89556b"></span>
 
-### TryGetFileAsync Method
+### TryGetFileAsync 方法 {#trygetfileasync-method}
 
-Returns a file, if available, from a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance.
+从 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例中取出文件（若有）。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageItem> TryGetFileAsync(Avalonia.Input.IAsyncDataTransferItem dataTransferItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `dataTransferItem` [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem)
 
-The [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance.
+该 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)&gt;
 
-An [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem) (file or folder), or null if the format isn't available.
+一个 [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStorageItem)（文件或文件夹）；若该格式不可用则为 null。
 
 
-#### See also
+#### 另请参阅 {#see-also-1}
 
 - [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File)
 
@@ -169,29 +169,29 @@ An [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Storage.IStor
 
 <span id="uid-a5ad2ed8e0"></span>
 
-### TryGetTextAsync Method
+### TryGetTextAsync 方法 {#trygettextasync-method}
 
-Returns a text, if available, from a [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance.
+从 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例中取出文本（若有）。
 
 ```csharp
 public System.Threading.Tasks.Task<string> TryGetTextAsync(Avalonia.Input.IAsyncDataTransferItem dataTransferItem)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `dataTransferItem` [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem)
 
-The [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) instance.
+该 [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) 实例。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task&lt;string&gt;
 
-A string, or null if the format isn't available.
+一个字符串；若该格式不可用则为 null。
 
 
-#### See also
+#### 另请参阅 {#see-also-2}
 
 - [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text)
 
@@ -201,13 +201,13 @@ A string, or null if the format isn't available.
 
 <span id="uid-e9670d76b6"></span>
 
-### TryGetValueAsync Method
+### TryGetValueAsync 方法 {#trygetvalueasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task<T> TryGetValueAsync<T>(Avalonia.Input.IAsyncDataTransferItem dataTransferItem, Avalonia.Input.DataFormat<T><T> format)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `dataTransferItem` [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem)
 
@@ -220,7 +220,7 @@ public System.Threading.Tasks.Task<T> TryGetValueAsync<T>(Avalonia.Input.IAsyncD
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 System.Threading.Tasks.Task&lt;T&gt;
 

@@ -1,43 +1,43 @@
 ---
 id: togglebutton
 title: ToggleButton
-description: A button that toggles between checked and unchecked states, with optional three-state support.
+description: 一个在选中与未选中之间切换的按钮，还可以选配三态支持。
 doc-type: reference
 ---
 
 import ToggleButtonMuteScreenshot from '/img/controls/buttons/togglebutton/togglebutton-mute.gif';
 
-The [`ToggleButton`](/api/avalonia/controls/primitives/togglebutton) control presents a Boolean value by using styles and a pseudo class that is either present (true) or absent (false). This allows you to create a wide range of graphical presentations for the control in each of the pseudo class states.
+[`ToggleButton`](/api/avalonia/controls/primitives/togglebutton) 控件用样式和一个伪类来表示布尔值：伪类存在即为 true，不存在即为 false。于是你可以为各个伪类状态设计出五花八门的图形呈现。
 
-`ToggleButton` is found in the `Avalonia.Controls.Primitives` namespace and serves as the base class for `CheckBox` and other toggle-style controls.
+`ToggleButton` 位于 `Avalonia.Controls.Primitives` 命名空间，是 `CheckBox` 以及其他切换式控件的基类。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property        | Description                                                                 |
+| 属性        | 说明                                                                 |
 | --------------- | --------------------------------------------------------------------------- |
-| `IsChecked`     | Gets or sets whether the `ToggleButton` is checked. The value is a nullable `bool`. |
-| `IsThreeState`  | Gets or sets a value indicating whether the control supports three states.  |
-| `ClickMode`     | Determines when the `Click` event fires (on release, press, or hover).     |
+| `IsChecked`     | 获取或设置 `ToggleButton` 是否被选中，取值是可空的 `bool`。 |
+| `IsThreeState`  | 获取或设置一个值，指示该控件是否支持三态。  |
+| `ClickMode`     | 决定 `Click` 事件何时触发（抬起时、按下时，还是悬停时）。     |
 
-## Three-state behavior
+## 三态行为 {#three-state-behavior}
 
-By default, a `ToggleButton` cycles between two states: checked and unchecked. When you set `IsThreeState` to `true`, the control cycles through three states in order: checked, unchecked, and indeterminate.
+`ToggleButton` 默认只在选中和未选中两个状态之间循环。把 `IsThreeState` 设为 `true` 后，它会按选中、未选中、不确定的顺序在三个状态之间循环。
 
-In three-state mode, the `IsChecked` property is a nullable `bool?`:
+三态模式下，`IsChecked` 属性是可空的 `bool?`：
 
-- `true` corresponds to the checked state (`:checked` pseudo class).
-- `false` corresponds to the unchecked state.
-- `null` corresponds to the indeterminate state (`:indeterminate` pseudo class).
+- `true` 对应选中状态（`:checked` 伪类）。
+- `false` 对应未选中状态。
+- `null` 对应不确定状态（`:indeterminate` 伪类）。
 
-You can style each state independently using pseudo classes in your AXAML styles.
+在 AXAML 样式中用伪类，就能分别为每个状态设置样式。
 
-## Examples
+## 示例 {#examples}
 
-### Styling with pseudo classes
+### 用伪类设置样式 {#styling-with-pseudo-classes}
 
-This example shows a toggle button containing a speaker icon, or a muted speaker icon, depending on whether the button has the checked pseudo class or not.
+这个例子做了一个切换按钮：根据它是否带有 checked 伪类，分别显示一个喇叭图标或静音喇叭图标。
 
 <Image light={ToggleButtonMuteScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
@@ -96,13 +96,13 @@ This example shows a toggle button containing a speaker icon, or a muted speaker
 </Application>
 ```
 
-The content zone of the toggle button contains two path icon elements, only one of which is visible at a time. The path icons get their graphics from an assets file which is referenced as an included style set in the `App.xaml` file. The icon geometries are from the Avalonia [Fluent icons resource](https://avaloniaui.github.io/icons.html).
+切换按钮的内容区里放了两个 path 图标元素，同一时刻只有一个可见。这些 path 图标的图形来自一个资产文件，该文件在 `App.xaml` 中作为引入的样式集被引用。图标的几何数据取自 Avalonia 的 [Fluent 图标资源](https://avaloniaui.github.io/icons.html)。
 
-The visibility of the path icons is set by the window styles, and these use the `:checked` pseudo class to determine when the toggle button is in its checked state. When the toggle button is checked, the `audio-on` path icon is visible and the `audio-mute` path icon is hidden. Conversely, when the toggle button is not checked, the `audio-mute` path icon is visible and the `audio-on` path icon is hidden.
+path 图标的可见性由窗口样式控制，这些样式用 `:checked` 伪类判断切换按钮是否处于选中状态。选中时，`audio-on` 图标可见、`audio-mute` 图标隐藏；反之未选中时，`audio-mute` 图标可见、`audio-on` 图标隐藏。
 
-### Binding to a view model
+### 绑定到视图模型 {#binding-to-a-view-model}
 
-You can bind the `IsChecked` property to a `bool` or `bool?` property on your view model. This is the most common way to use a `ToggleButton` in an MVVM application.
+可以把 `IsChecked` 属性绑定到视图模型中的 `bool` 或 `bool?` 属性。在 MVVM 应用里，这是 `ToggleButton` 最常见的用法。
 
 ```xml
 <ToggleButton IsChecked="{Binding IsMuted}" Content="Mute" />
@@ -121,9 +121,9 @@ public class MyViewModel : ViewModelBase
 }
 ```
 
-### Three-state binding
+### 三态绑定 {#three-state-binding}
 
-When you need to represent an indeterminate state, set `IsThreeState` to `true` and bind to a nullable `bool?` property.
+若需要表示不确定状态，请把 `IsThreeState` 设为 `true`，并绑定到可空的 `bool?` 属性。
 
 ```xml
 <ToggleButton IsThreeState="True"
@@ -144,11 +144,11 @@ public class MyViewModel : ViewModelBase
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Button](/controls/input/buttons/button)
 - [CheckBox](/controls/input/selectors/checkbox)
 - [ToggleSplitButton](/controls/input/buttons/togglesplitbutton)
 - [RadioButton](/controls/input/buttons/radiobutton)
-- [ToggleButton API reference](/api/avalonia/controls/primitives/togglebutton)
-- [`ToggleButton.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/ToggleButton.cs)
+- [ToggleButton API 参考](/api/avalonia/controls/primitives/togglebutton)
+- [GitHub 上的 `ToggleButton.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Primitives/ToggleButton.cs)

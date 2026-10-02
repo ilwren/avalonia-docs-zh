@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">EditorAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,61 +50,61 @@ public class EditorAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> EditorAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> EditorAction
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="blockbordertoggleaction">BlockBorderToggleAction</a>, <a href="blockpropertyaction-1">BlockPropertyAction&lt;T&gt;</a>, <a href="bulletmarkerstyleaction">BulletMarkerStyleAction</a>, <a href="copyaction">CopyAction</a>, <a href="cutaction">CutAction</a>, <a href="deleteimageaction">DeleteImageAction</a>, <a href="deletetableaction">DeleteTableAction</a>, <a href="deletetablecolumnaction">DeleteTableColumnAction</a>, <a href="deletetablerowaction">DeleteTableRowAction</a>, <a href="formattingtoggleaction-1">FormattingToggleAction&lt;T&gt;</a>, <a href="insertimageaction">InsertImageAction</a>, <a href="inserttableaction">InsertTableAction</a>, <a href="inserttablecolumnaction">InsertTableColumnAction</a>, <a href="inserttablerowaction">InsertTableRowAction</a>, <a href="listtoggleaction">ListToggleAction</a>, <a href="mergetablecellsaction">MergeTableCellsAction</a>, <a href="numberedmarkerstyleaction">NumberedMarkerStyleAction</a>, <a href="pasteaction">PasteAction</a>, <a href="pasteunformattedaction">PasteUnformattedAction</a>, <a href="propertyaction-1">PropertyAction&lt;T&gt;</a>, <a href="redoaction">RedoAction</a>, <a href="replaceimageaction">ReplaceImageAction</a>, <a href="selectallaction">SelectAllAction</a>, <a href="splittablecellaction">SplitTableCellAction</a>, <a href="undoaction">UndoAction</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="blockbordertoggleaction">BlockBorderToggleAction</a>, <a href="blockpropertyaction-1">BlockPropertyAction&lt;T&gt;</a>, <a href="bulletmarkerstyleaction">BulletMarkerStyleAction</a>, <a href="copyaction">CopyAction</a>, <a href="cutaction">CutAction</a>, <a href="deleteimageaction">DeleteImageAction</a>, <a href="deletetableaction">DeleteTableAction</a>, <a href="deletetablecolumnaction">DeleteTableColumnAction</a>, <a href="deletetablerowaction">DeleteTableRowAction</a>, <a href="formattingtoggleaction-1">FormattingToggleAction&lt;T&gt;</a>, <a href="insertimageaction">InsertImageAction</a>, <a href="inserttableaction">InsertTableAction</a>, <a href="inserttablecolumnaction">InsertTableColumnAction</a>, <a href="inserttablerowaction">InsertTableRowAction</a>, <a href="listtoggleaction">ListToggleAction</a>, <a href="mergetablecellsaction">MergeTableCellsAction</a>, <a href="numberedmarkerstyleaction">NumberedMarkerStyleAction</a>, <a href="pasteaction">PasteAction</a>, <a href="pasteunformattedaction">PasteUnformattedAction</a>, <a href="propertyaction-1">PropertyAction&lt;T&gt;</a>, <a href="redoaction">RedoAction</a>, <a href="replaceimageaction">ReplaceImageAction</a>, <a href="selectallaction">SelectAllAction</a>, <a href="splittablecellaction">SplitTableCellAction</a>, <a href="undoaction">UndoAction</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ieditoraction">IEditorAction</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ieditoraction">IEditorAction</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Provides default implementations for common functionality.
 Derived classes should override [Avalonia.Controls.Documents.Primitives.Actions.EditorAction.Id](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorAction.Id), [Avalonia.Controls.Documents.Primitives.Actions.EditorAction.DisplayName](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorAction.DisplayName),
 [Avalonia.Controls.Documents.Primitives.Actions.EditorAction.CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorAction.CanExecute%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29), and [Avalonia.Controls.Documents.Primitives.Actions.EditorAction.Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorAction.Execute%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29).
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-bbc60544cc) | Gets whether the action can currently execute. |
-| [Execute](#uid-c3008d9fa7) | Executes the action synchronously. |
-| [ExecuteAsync](#uid-6a0258eff0) | Executes the action asynchronously. |
-| [GetState](#uid-e9737aed90) | Gets the current state of the action. |
+| [CanExecute](#uid-bbc60544cc) | 获取该操作当前是否可执行。 |
+| [Execute](#uid-c3008d9fa7) | 同步执行该操作。 |
+| [ExecuteAsync](#uid-6a0258eff0) | 异步执行该操作。 |
+| [GetState](#uid-e9737aed90) | 获取该操作的当前状态。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bbc60544cc"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
-Gets whether the action can currently execute.
+获取该操作当前是否可执行。
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to check against.
+要对照检查的编辑器宿主。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
-True if the action can execute; otherwise, false.
+若该操作可执行则为 true，否则为 false。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-This is called frequently to update UI state (button enabled/disabled).
-Implementations should be fast and avoid heavy computation.
+该方法会被频繁调用以更新界面状态（按钮启用/禁用），
+因此实现应当足够快，别做繁重的计算。
 
 </section>
 
@@ -112,25 +112,25 @@ Implementations should be fast and avoid heavy computation.
 
 <span id="uid-c3008d9fa7"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
-Executes the action synchronously.
+同步执行该操作。
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to execute on.
+要在其上执行的编辑器宿主。
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-For actions that require async operations (like file dialogs),
-use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead.
+若操作中需要异步动作（比如文件对话框），
+请改用 [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29)。
 
 </section>
 
@@ -138,29 +138,29 @@ use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(A
 
 <span id="uid-6a0258eff0"></span>
 
-### ExecuteAsync Method
+### ExecuteAsync 方法 {#executeasync-method}
 
-Executes the action asynchronously.
+异步执行该操作。
 
 ```csharp
 public System.Threading.Tasks.Task ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to execute on.
+要在其上执行的编辑器宿主。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 A task representing the asynchronous operation.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 The default implementation calls [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.Execute%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) synchronously.
 Override this for actions that need async operations like file dialogs.
@@ -171,60 +171,60 @@ Override this for actions that need async operations like file dialogs.
 
 <span id="uid-e9737aed90"></span>
 
-### GetState Method
+### GetState 方法 {#getstate-method}
 
-Gets the current state of the action.
+获取该操作的当前状态。
 
 ```csharp
 public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to query.
+要查询的编辑器宿主。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 object
 
-The current state, or null if the action has no state. A toggle action returns
-a boolean, a property action the current value.
+当前状态；若该操作没有状态则为 null。切换型操作返回布尔值，
+属性型操作返回当前值。
 
 
-#### Remarks
+#### 备注 {#remarks-4}
 
-Read [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) or
-[Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead. Both say which family
-the value came from, which an untyped object cannot.
+请改读 [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) 或
+[Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29)。两者都能说明值来自哪一族，
+而无类型的 object 做不到这一点。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DisplayName](#uid-f07298f749) | Gets the display name for UI purposes. |
-| [Gesture](#uid-557e9af400) | Gets the optional keyboard gesture for this action. |
-| [Id](#uid-80cef2dbb8) | Gets the unique identifier for this action. |
+| [DisplayName](#uid-f07298f749) | 获取用于界面展示的显示名称。 |
+| [Gesture](#uid-557e9af400) | 获取该操作可选的键盘手势。 |
+| [Id](#uid-80cef2dbb8) | 获取该操作的唯一标识符。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f07298f749"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
-Gets the display name for UI purposes.
+获取用于界面展示的显示名称。
 
 ```csharp
 public string DisplayName { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
-This is used for tooltips, menu items, and accessibility.
+它用于工具提示、菜单项和无障碍支持。
 
 </section>
 
@@ -232,15 +232,15 @@ This is used for tooltips, menu items, and accessibility.
 
 <span id="uid-557e9af400"></span>
 
-### Gesture Property
+### Gesture 属性 {#gesture-property}
 
-Gets the optional keyboard gesture for this action.
+获取该操作可选的键盘手势。
 
 ```csharp
 public Avalonia.Input.KeyGesture Gesture { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 The gesture is what tooltips and menu items display. It registers nothing:
 the shortcut that actually fires is handled by the editor's keyboard component,
@@ -253,22 +253,22 @@ shortcut that does nothing.
 
 <span id="uid-80cef2dbb8"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
-Gets the unique identifier for this action.
+获取该操作的唯一标识符。
 
 ```csharp
 public string Id { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
-IDs follow a hierarchical naming convention:
+ID 遵循层级式命名约定：
 
 - Edit.Undo, Edit.Redo, Edit.Cut, etc.
 - Format.Bold, Format.Italic, etc.
 - Block.TextAlignment.Left, List.ToggleBulletList, etc.
-[Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds) names the identifier of every built-in action.
+[Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActionIds) 给出每个内置操作的标识符。
 
 </section>
 

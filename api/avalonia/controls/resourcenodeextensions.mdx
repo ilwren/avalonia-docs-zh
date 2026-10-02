@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ResourceNodeExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/ResourceNodeExtensions.cs">ResourceNodeExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/ResourceNodeExtensions.cs">ResourceNodeExtensions.cs</a>
 </div>
 
 </div>
@@ -48,18 +48,18 @@ public class ResourceNodeExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ResourceNodeExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ResourceNodeExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FindResource (2 overloads)](#uid-285f576e62) | Finds the specified resource by searching up the logical tree and then global styles. |
-| [GetResourceObservable (3 overloads)](#uid-ed9785dc04) | No summary available. |
-| [TryFindResource (2 overloads)](#uid-9444696616) | No summary available. |
-| [TryGetResource](#uid-c358b1cce0) | No summary available. |
+| [FindResource (2 overloads)](#uid-285f576e62) | 先沿逻辑树向上、再到全局样式中查找指定的资源。 |
+| [GetResourceObservable (3 overloads)](#uid-ed9785dc04) | 暂无摘要。 |
+| [TryFindResource (2 overloads)](#uid-9444696616) | 暂无摘要。 |
+| [TryGetResource](#uid-c358b1cce0) | 暂无摘要。 |
 
 <span id="uid-285f576e62"></span>
 
@@ -69,19 +69,19 @@ public class ResourceNodeExtensions
 
 <span id="uid-9c011dc637"></span>
 
-#### FindResource Method
+#### FindResource 方法 {#findresource-method}
 
-Finds the specified resource by searching up the logical tree and then global styles.
+先沿逻辑树向上、再到全局样式中查找指定的资源。
 
 ```csharp
 public object FindResource(Avalonia.Controls.IResourceHost control, Avalonia.Styling.ThemeVariant theme, object key)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `control` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
-The control.
+该控件。
 
 
 `theme` [Avalonia.Styling.ThemeVariant](xref:Avalonia.Styling.ThemeVariant)
@@ -91,14 +91,14 @@ Theme used to select theme dictionary.
 
 `key` object
 
-The resource key.
+资源键。
 
 
-##### Returns
+##### 返回值 {#returns}
 
 object
 
-The resource, or [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue) if not found.
+该资源；若未找到则为 [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue)。
 
 
 </section>
@@ -107,31 +107,31 @@ The resource, or [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaPr
 
 <span id="uid-ccf49cf52b"></span>
 
-#### FindResource Method
+#### FindResource 方法 {#findresource-method-1}
 
-Finds the specified resource by searching up the logical tree and then global styles.
+先沿逻辑树向上、再到全局样式中查找指定的资源。
 
 ```csharp
 public object FindResource(Avalonia.Controls.IResourceHost control, object key)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `control` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
-The control.
+该控件。
 
 
 `key` object
 
-The resource key.
+资源键。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 object
 
-The resource, or [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue) if not found.
+该资源；若未找到则为 [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaProperty.UnsetValue)。
 
 
 </section>
@@ -144,13 +144,13 @@ The resource, or [Avalonia.AvaloniaProperty.UnsetValue](xref:Avalonia.AvaloniaPr
 
 <span id="uid-bf91918296"></span>
 
-#### GetResourceObservable Method
+#### GetResourceObservable 方法 {#getresourceobservable-method}
 
 ```csharp
 public IObservable<object> GetResourceObservable(Avalonia.Controls.IResourceHost control, object key, Func<object, object> converter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `control` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
@@ -161,7 +161,7 @@ public IObservable<object> GetResourceObservable(Avalonia.Controls.IResourceHost
 `converter` Func&lt;object, object&gt;
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 IObservable&lt;object&gt;
 
@@ -172,13 +172,13 @@ IObservable&lt;object&gt;
 
 <span id="uid-e1898da5af"></span>
 
-#### GetResourceObservable Method
+#### GetResourceObservable 方法 {#getresourceobservable-method-1}
 
 ```csharp
 public IObservable<object> GetResourceObservable(Avalonia.Controls.IResourceProvider resourceProvider, object key, Avalonia.Styling.ThemeVariant defaultThemeVariant, Func<object, object> converter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `resourceProvider` [Avalonia.Controls.IResourceProvider](xref:Avalonia.Controls.IResourceProvider)
 
@@ -192,7 +192,7 @@ public IObservable<object> GetResourceObservable(Avalonia.Controls.IResourceProv
 `converter` Func&lt;object, object&gt;
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 IObservable&lt;object&gt;
 
@@ -203,13 +203,13 @@ IObservable&lt;object&gt;
 
 <span id="uid-bd8335806f"></span>
 
-#### GetResourceObservable Method
+#### GetResourceObservable 方法 {#getresourceobservable-method-2}
 
 ```csharp
 public IObservable<object> GetResourceObservable(Avalonia.Controls.IResourceProvider resourceProvider, object key, Func<object, object> converter)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `resourceProvider` [Avalonia.Controls.IResourceProvider](xref:Avalonia.Controls.IResourceProvider)
 
@@ -220,7 +220,7 @@ public IObservable<object> GetResourceObservable(Avalonia.Controls.IResourceProv
 `converter` Func&lt;object, object&gt;
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 IObservable&lt;object&gt;
 
@@ -235,13 +235,13 @@ IObservable&lt;object&gt;
 
 <span id="uid-e84f3e6595"></span>
 
-#### TryFindResource Method
+#### TryFindResource 方法 {#tryfindresource-method}
 
 ```csharp
 public bool TryFindResource(Avalonia.Controls.IResourceHost control, object key, Avalonia.Styling.ThemeVariant theme, object& value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `control` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
@@ -255,7 +255,7 @@ public bool TryFindResource(Avalonia.Controls.IResourceHost control, object key,
 `value` object&amp;
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 bool
 
@@ -266,13 +266,13 @@ bool
 
 <span id="uid-9b16787778"></span>
 
-#### TryFindResource Method
+#### TryFindResource 方法 {#tryfindresource-method-1}
 
 ```csharp
 public bool TryFindResource(Avalonia.Controls.IResourceHost control, object key, object& value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `control` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
@@ -283,7 +283,7 @@ public bool TryFindResource(Avalonia.Controls.IResourceHost control, object key,
 `value` object&amp;
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 bool
 
@@ -294,13 +294,13 @@ bool
 
 <span id="uid-c358b1cce0"></span>
 
-### TryGetResource Method
+### TryGetResource 方法 {#trygetresource-method}
 
 ```csharp
 public bool TryGetResource(Avalonia.Controls.IResourceHost control, object key, object& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `control` [Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)
 
@@ -311,7 +311,7 @@ public bool TryGetResource(Avalonia.Controls.IResourceHost control, object key, 
 `value` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 bool
 

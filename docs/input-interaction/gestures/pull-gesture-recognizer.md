@@ -1,11 +1,11 @@
 ---
 id: pull-gesture-recognizer
-title: Pull
+title: 拉拽
 ---
 
-A gesture recognizer that tracks a pull gesture. A pull gesture occurs when a pointer is dragged from the edge of a control in a single, specific direction defined by the `PullDirection` property. The typical use case is pull-to-refresh, where the user drags down from the top of a list to trigger a data reload.
+一个跟踪拉拽手势的手势识别器。所谓拉拽手势，是指指针从控件边缘出发、沿 `PullDirection` 属性所定的某一个特定方向拖动。典型用途是下拉刷新：用户从列表顶部往下拖，触发数据重新加载。
 
-Unlike [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gesture-recognizer), `PullGestureRecognizer` is designed for deliberate, single-direction interactions rather than free-form panning. It requires a larger initial drag distance before activation, only recognizes movement in one configured direction, and does not apply inertia. These characteristics make it suitable for actions that need a clear user intent before triggering.
+与 [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gesture-recognizer) 不同，`PullGestureRecognizer` 面向的是刻意为之的单向交互，而非自由平移。它要求起手的拖动距离更长才会激活，只认一个预设方向上的移动，也不带惯性。这些特点让它很适合那些需要用户意图明确之后才触发的操作。
 
 <div style={{textAlign: 'center', margin: '24px 0'}}>
 <svg width="240" height="190" viewBox="0 0 240 190" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@ Unlike [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gestu
       values="0;0.5;0.5;0;0;0;0;0;0"
       keyTimes="0;0.02;0.20;0.23;0.25;0.50;0.75;0.98;1"
       dur="10s" repeatCount="indefinite"/>
-    Top to bottom
+    自上而下
   </text>
   <text x="120" y="176" textAnchor="middle"
     fill="currentColor" fontSize="13" fontFamily="system-ui, sans-serif">
@@ -91,7 +91,7 @@ Unlike [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gestu
       values="0;0;0;0.5;0.5;0;0;0;0"
       keyTimes="0;0.23;0.27;0.28;0.45;0.48;0.50;0.98;1"
       dur="10s" repeatCount="indefinite"/>
-    Bottom to top
+    自下而上
   </text>
   <text x="120" y="176" textAnchor="middle"
     fill="currentColor" fontSize="13" fontFamily="system-ui, sans-serif">
@@ -99,7 +99,7 @@ Unlike [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gestu
       values="0;0;0;0.5;0.5;0;0"
       keyTimes="0;0.48;0.52;0.53;0.70;0.73;1"
       dur="10s" repeatCount="indefinite"/>
-    Left to right
+    自左向右
   </text>
   <text x="120" y="176" textAnchor="middle"
     fill="currentColor" fontSize="13" fontFamily="system-ui, sans-serif">
@@ -107,13 +107,13 @@ Unlike [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gestu
       values="0;0;0;0.5;0.5;0;0"
       keyTimes="0;0.73;0.77;0.78;0.95;0.98;1"
       dur="10s" repeatCount="indefinite"/>
-    Right to left
+    自右向左
   </text>
 </svg>
 </div>
 
-## Using a PullGestureRecognizer
-A PullGestureRecognizer can be attached to a control using the control's `GestureRecognizers` property.
+## 使用 PullGestureRecognizer {#using-a-pullgesturerecognizer}
+通过控件的 `GestureRecognizers` 属性，可以把 PullGestureRecognizer 挂到控件上。
 ```xml
 <Border Width="500"
         Height="500"
@@ -132,19 +132,19 @@ border.GestureRecognizers.Add(new PullGestureRecognizer()
             });
 ```
 
-The `PullGestureRecognizer` raises `InputElement.PullGestureEvent` continuously as the pointer moves in the configured direction. When the pull ends (the pointer is released or another gesture starts), it raises `InputElement.PullGestureEndedEvent`.
+指针沿预设方向移动的过程中，`PullGestureRecognizer` 会持续引发 `InputElement.PullGestureEvent`；当拉拽结束（指针松开或另一个手势开始）时，则引发 `InputElement.PullGestureEndedEvent`。
 
-Controls listening for pull gestures should reset their visual state when `PullGestureEndedEvent` fires, unless the pull distance crossed a threshold that triggers the intended action. For example, a pull-to-refresh indicator should snap back if the user releases before pulling far enough.
+监听拉拽手势的控件，应当在 `PullGestureEndedEvent` 触发时把自己的视觉状态复位——除非拉拽距离已越过阈值、触发了既定的动作。举例来说，若用户没拉够距离就松手，下拉刷新指示器就该弹回原位。
 
 ### PullDirection
-This defines the direction of the pull. There are 4 available values;
-* `PullDirection.TopToBottom` : Pull starts from the top edge and moves towards the bottom
-* `PullDirection.BottomToTop` : Pull starts from the bottom edge and moves towards the top
-* `PullDirection.LeftToRight` : Pull starts from the left edge and moves towards the right
-* `PullDirection.RightToLeft` : Pull starts from the right edge and moves towards the left
+它定义了拉拽的方向，共有 4 个可选值：
+* `PullDirection.TopToBottom`：从上边缘开始，向下拉
+* `PullDirection.BottomToTop`：从下边缘开始，向上拉
+* `PullDirection.LeftToRight`：从左边缘开始，向右拉
+* `PullDirection.RightToLeft`：从右边缘开始，向左拉
 
-## Binding events
-After the PullGestureRecognizer has been added to your control, you need to bind them in your code behind either through an inline handler or to an event function:
+## 绑定事件 {#binding-events}
+把 PullGestureRecognizer 添加到控件之后，你需要在代码隐藏中绑定这些事件，既可以写内联处理程序，也可以绑到一个事件函数上：
 ```csharp title='C#'
 image.AddHandler(InputElement.PullGestureEvent, (s, e) => { });
 image.AddHandler(InputElement.PullGestureEndedEvent, (s, e) => { });
@@ -156,43 +156,43 @@ image.AddHandler(InputElement.PullGestureEndedEvent, Image_PullGestureEnded);
 private void Image_PullGesture(object? sender, PullGestureEventArgs e) { }
 private void Image_PullGestureEnded(object? sender, PullGestureEndedEventArgs e) { }
 ```
-If your event handles the gesture completely, you can mark the event as handled by setting:
+若你的事件处理程序已经把这个手势处理完毕，可以这样把事件标记为已处理：
 ```csharp title='C#'
 e.Handled = true;
 ```
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table>
     <thead>
       <tr>
         <th width="266">Property</th>
-        <th>Description</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>PullDirection</td>
-        <td>Defines the direction of the pull gesture. </td>
+        <td>定义拉拽手势的方向。 </td>
       </tr>
     </tbody>
   </table>
 
 
-## More information
+## 更多信息 {#more-information}
 
 :::info
-View the source code on _GitHub_
+在 _GitHub_ 上查看源码
 
 [`PullGestureRecognizer.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/PullGestureRecognizer.cs)
 
 [`PullGestureEventArgs.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/PullGestureEventArgs.cs)
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Gestures](/docs/input-interaction/gestures): Overview of gesture recognizers and built-in gesture events.
-- [Scroll Gesture Recognizer](/docs/input-interaction/gestures/scroll-gesture-recognizer): Scroll gesture for panning content.
-- [Pinch Gesture Recognizer](/docs/input-interaction/gestures/pinch-gesture-recognizer): Pinch gesture for zoom interactions.
+- [手势](/docs/input-interaction/gestures)：手势识别器与内置手势事件概览。
+- [滚动手势识别器](/docs/input-interaction/gestures/scroll-gesture-recognizer)：用于平移内容的滚动手势。
+- [捏合手势识别器](/docs/input-interaction/gestures/pinch-gesture-recognizer)：用于缩放交互的捏合手势。

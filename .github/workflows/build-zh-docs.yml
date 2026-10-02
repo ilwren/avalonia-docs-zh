@@ -1,0 +1,95 @@
+name: 构建中文文档
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-zh-docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-translations:
+    name: 校验翻译完整性
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # i18n 工具需要读取英文基线提交
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 校验译文结构（占位符 / 代码围栏 / JSX 标签）
+        run: python3 scripts/i18n/i18n_cli.py verify
+
+      - name: 输出翻译覆盖率
+        run: |
+          python3 scripts/i18n/i18n_cli.py stats | tee coverage.txt
+          {
+            echo '## 翻译覆盖率'
+            echo '```'
+            cat coverage.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 确认译文已回填到工作区
+        run: |
+          python3 scripts/i18n/i18n_cli.py apply --scope all
+          if ! git diff --quiet; then
+            echo "::error::翻译记忆库与仓库内文档不同步，请在本地执行 'python3 scripts/i18n/i18n_cli.py apply --scope all' 后提交。"
+            git diff --stat
+            exit 1
+          fi
+          echo "译文与翻译记忆库一致。"
+
+  build:
+    name: 构建站点
+    runs-on: ubuntu-latest
+    needs: verify-translations
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci --no-audit --no-fund
+
+      - name: 逐篇校验 MDX 语法
+        run: node scripts/i18n/check_mdx.mjs docs controls tools troubleshooting xpf api
+
+      - name: 构建
+        env:
+          NODE_OPTIONS: --max-old-space-size=12288
+        run: npx docusaurus build
+
+      - name: 校验构建产物
+        run: |
+          test -f build/index.html || { echo "::error::缺少 build/index.html"; exit 1; }
+          test -f build/docs/welcome/index.html || { echo "::error::缺少中文首页文档"; exit 1; }
+          if ! grep -q "Avalonia 文档" build/docs/welcome/index.html; then
+            echo "::error::构建产物中未检出中文内容"
+            exit 1
+          fi
+          echo "构建体积：$(du -sh build | cut -f1)"
+          echo "页面数量：$(find build -name '*.html' | wc -l)"
+
+      - name: 上传站点产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: avalonia-docs-zh-site
+          path: build
+          retention-days: 7
+          if-no-files-found: error

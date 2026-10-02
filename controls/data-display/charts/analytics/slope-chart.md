@@ -1,7 +1,7 @@
 ---
 id: slope-chart
-title: Slope chart
-description: Compares values for multiple entities between exactly two points in time or categories, highlighting which entities increased, decreased, or stayed the same.
+title: 斜率图
+description: 比较多个实体在恰好两个时间点或两个类别之间的数值，凸显谁上升、谁下降、谁原地不动。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsAnalyticsSlope from '/img/controls/charts/charts-statistical-slope.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Slope charts compare two points in time (or two categories) for multiple entities. They are ideal for visualizing the change in rank or value between two states.
+斜率图比较多个实体在两个时间点（或两个类别）上的情况。要呈现两种状态之间名次或数值的变化，它最为合适。
 
 <Image light={chartsAnalyticsSlope} maxWidth={400} position="center" cornerRadius="true" alt="Slope chart comparing entity values between two time points with labeled lines showing which increased or decreased." />
 
-## When to use
-- **Before/after analysis**: Showing the impact of a policy or event across different groups.
-- **Rank shifts**: Visualizing how product popularity changed between two quarters.
-- **Comparison of two states**: Highlighting which entities improved and which declined.
+## 适用场景 {#when-to-use}
+- **前后对比**：展示某项政策或事件对不同群体的影响。
+- **名次变动**：呈现产品人气在两个季度之间的此消彼长。
+- **两种状态对比**：凸显哪些实体有所改善、哪些有所下滑。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -38,7 +38,7 @@ Slope charts compare two points in time (or two categories) for multiple entitie
                                          ItemsSource="{Binding SlopeData}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record SlopeItem(string Label, double Before, double After);
 
@@ -50,20 +50,20 @@ public ObservableCollection<SlopeItem> SlopeData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of items to compare. | `null` |
-| `LabelPath` | Path to the entity name. | `null` |
-| `StartValuePath` | Path to the first value shown on the left side. | `null` |
-| `EndValuePath` | Path to the second value shown on the right side. | `null` |
-| `StartLabel` | Label displayed for the left side. | `"Before"` |
-| `EndLabel` | Label displayed for the right side. | `"After"` |
-| `StrokeThickness` | Width of the connecting lines. | `2.0` |
-| `MarkerSize` | Size of the markers at the start and end of each line. | `8.0` |
-| `ShowLabels` | Toggles the start and end value labels. | `true` |
-| `IsCurved` | Draws curved lines instead of straight connectors. | `false` |
-| `ShowGridLines` | Whether to draw guide lines for the start and end positions. | `false` |
-| `ShowXAxis` | Whether to draw the bottom axis and move the side labels below the chart. | `false` |
-| `IsHighlightEnabled` | Enables hover highlighting for slope lines. | `false` |
+| `ItemsSource` | 要作比较的项的集合。 | `null` |
+| `LabelPath` | 指向实体名称的路径。 | `null` |
+| `StartValuePath` | 指向左侧第一个数值的路径。 | `null` |
+| `EndValuePath` | 指向右侧第二个数值的路径。 | `null` |
+| `StartLabel` | 左侧显示的标签。 | `"Before"` |
+| `EndLabel` | 右侧显示的标签。 | `"After"` |
+| `StrokeThickness` | 连线的粗细。 | `2.0` |
+| `MarkerSize` | 每条线首尾标记点的大小。 | `8.0` |
+| `ShowLabels` | 开关首尾两端的数值标签。 | `true` |
+| `IsCurved` | 用曲线代替直线作为连线。 | `false` |
+| `ShowGridLines` | 是否为起止位置绘制参考线。 | `false` |
+| `ShowXAxis` | 是否绘制底部坐标轴，并把两侧标签移到图表下方。 | `false` |
+| `IsHighlightEnabled` | 为斜率连线启用悬停高亮。 | `false` |

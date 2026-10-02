@@ -1,6 +1,6 @@
 ---
 id: index
-title: TreeDataGrid control
+title: TreeDataGrid 控件
 tags:
   - avalonia pro
   - avalonia enterprise
@@ -9,28 +9,28 @@ tags:
 import FlatTreeDataGrid from '/img/avalonia-pro/treedatagrid/quickstart-flat-1.png';
 import HierarchicalTreeDataGrid from '/img/avalonia-pro/treedatagrid/quickstart-hierarchical-1.png';
 
-The `TreeDataGrid` combines tree view and data grid functionality in a single control, displaying hierarchical and tabular data together. It supports two modes:
+`TreeDataGrid` 把树视图和数据网格的能力合到了一个控件里，可以同时呈现层级数据和表格数据。它支持两种模式：
 
-* _Flat_ displays data in a two-dimensional table, similar to a standard data grid.
-* _Hierarchical_ displays data in an expandable tree with optional columns.
+* _扁平模式_以二维表格呈现数据，与普通数据网格类似。
+* _层级模式_以可展开的树呈现数据，并可带列。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-:::tip[Upgrading from v11?]
-TreeDataGrid v12 introduces significant API changes including renamed column types, a new XAML-first workflow, and a fluent code-behind API. See the [breaking changes document](/controls/data-display/structured-data/treedatagrid/breaking-changes-v12) for full migration guidance.
+:::tip[要从 v11 升级？]
+TreeDataGrid v12 带来了不小的 API 变动，包括列类型更名、全新的 XAML 优先工作流，以及一套流式的代码隐藏 API。完整的迁移指引请参阅[破坏性变更文档](/controls/data-display/structured-data/treedatagrid/breaking-changes-v12)。
 :::
 
-## Getting started
+## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.TreeDataGrid` NuGet package by running `dotnet add package`.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.TreeDataGrid` NuGet 包。
 
 ```bash
 dotnet add package Avalonia.Controls.TreeDataGrid
 ```
 
-2. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+2. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 ```xml
 <ItemGroup>
@@ -39,10 +39,10 @@ dotnet add package Avalonia.Controls.TreeDataGrid
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
-3. Reference the `TreeDataGrid` fluent theme via a `StyleInclude` in your `App.axaml` file. This adds the resources needed to render the control.
+3. 在 `App.axaml` 文件中通过 `StyleInclude` 引用 `TreeDataGrid` Fluent 主题。它会带来渲染该控件所需的资源。
 
 ```xml
 <Application.Styles>
@@ -51,34 +51,34 @@ For multi-project solutions, you can store your licence key in an [environment v
 </Application.Styles>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property               | Description                                                                                   |
+| 属性               | 说明                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------- |
-| `ItemsSource`          | Binds to a collection for XAML-defined columns.                                               |
-| `Source`               | The data source that drives the control's rows and columns (code-behind approach).            |
-| `SelectionMode`        | The selection mode, e.g. `Row`, `Cell`, `Row,Multiple`. Default is `Row` (single selection).  |
-| `CanUserResizeColumns` | Whether the user can adjust column widths with the pointer. Default is `false`.               |
-| `CanUserSortColumns`   | Whether the user can sort columns by clicking the header. Default is `true`.                  |
+| `ItemsSource`          | 为 XAML 中定义的列绑定数据集合。                                               |
+| `Source`               | 驱动该控件行与列的数据源（代码隐藏写法）。            |
+| `SelectionMode`        | 选择模式，比如 `Row`、`Cell`、`Row,Multiple`。默认为 `Row`（单选）。  |
+| `CanUserResizeColumns` | 用户能否用指针调整列宽。默认为 `false`。               |
+| `CanUserSortColumns`   | 用户能否点击标题排序。默认为 `true`。                  |
 
-### Two approaches
+### 两种写法 {#two-approaches}
 
-There are two ways to set up a `TreeDataGrid`:
+搭建 `TreeDataGrid` 有两条路子：
 
-- **XAML columns** — set `ItemsSource` and define columns directly in XAML markup. This is the simplest approach.
-- **Code-behind source** — create a `FlatTreeDataGridSource` or `HierarchicalTreeDataGridSource` in your view model using the fluent API, and bind it to the `Source` property. This approach is required for features like filtering and programmatic expand/collapse.
+- **XAML 列**——设置 `ItemsSource`，并直接在 XAML 标记中定义各列。这是最省事的做法。
+- **代码隐藏数据源**——用流式 API 在视图模型中创建 `FlatTreeDataGridSource` 或 `HierarchicalTreeDataGridSource`，再把它绑定到 `Source` 属性。筛选、以编程方式展开/折叠等功能必须走这条路。
 
-Both approaches are shown in the examples below.
+下面的例子两种写法都会给出。
 
-## Flat data
+## 扁平数据 {#flat-data}
 
-### Data model
+### 数据模型 {#data-model}
 
-Start with a simple `Person` class:
+先写一个简单的 `Person` 类：
 
 ```csharp
 public class Person
@@ -89,7 +89,7 @@ public class Person
 }
 ```
 
-Then create a `MainWindowViewModel` with some sample data stored in an [`ObservableCollection<T>`](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-6.0), so the grid automatically reflects changes:
+然后创建一个 `MainWindowViewModel`，把示例数据放进 [`ObservableCollection<T>`](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-6.0) 中，这样网格就能自动反映数据的变化：
 
 ```csharp
 using System.Collections.ObjectModel;
@@ -106,9 +106,9 @@ public class MainWindowViewModel
 }
 ```
 
-### XAML columns
+### XAML 列 {#xaml-columns}
 
-Define columns directly in the `TreeDataGrid` markup using `ItemsSource`:
+直接在 `TreeDataGrid` 标记中用 `ItemsSource` 定义各列：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -122,9 +122,9 @@ Define columns directly in the `TreeDataGrid` markup using `ItemsSource`:
 </Window>
 ```
 
-### Code-behind source
+### 代码隐藏数据源 {#code-behind-source}
 
-Alternatively, create a `FlatTreeDataGridSource<T>` in your view model using the fluent API and bind it to the `Source` property:
+另一种做法是用流式 API 在视图模型中创建 `FlatTreeDataGridSource<T>`，再把它绑定到 `Source` 属性：
 
 ```csharp
 using System.Collections.ObjectModel;
@@ -160,15 +160,15 @@ public class MainWindowViewModel
 </Window>
 ```
 
-### Run the application
+### 运行应用 {#run-the-application}
 
 <Image light={FlatTreeDataGrid} maxWidth={400} alignment="center" />
 
-## Hierarchical data
+## 层级数据 {#hierarchical-data}
 
-### Data model
+### 数据模型 {#data-model-1}
 
-The hierarchical model is the same `Person` class with an added `Children` collection:
+层级模型就是那个 `Person` 类，只是多加了一个 `Children` 集合：
 
 ```csharp
 public class Person
@@ -180,7 +180,7 @@ public class Person
 }
 ```
 
-The view model now contains nested data:
+此时视图模型中装的是嵌套数据：
 
 ```csharp
 using System.Collections.ObjectModel;
@@ -223,9 +223,9 @@ public class MainWindowViewModel
 }
 ```
 
-### XAML columns
+### XAML 列 {#xaml-columns-1}
 
-Use `TreeDataGridHierarchicalExpanderColumn` to wrap the column that should display the tree expander. The `ChildrenBinding` attribute specifies how to find child items:
+用 `TreeDataGridHierarchicalExpanderColumn` 包住应当显示树展开器的那一列。`ChildrenBinding` 特性则指明到哪里去找子项：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -242,9 +242,9 @@ Use `TreeDataGridHierarchicalExpanderColumn` to wrap the column that should disp
 </Window>
 ```
 
-### Code-behind source
+### 代码隐藏数据源 {#code-behind-source-1}
 
-For the code-behind approach, use `HierarchicalTreeDataGridSource<T>` with the `WithHierarchicalExpanderTextColumn` fluent method:
+若采用代码隐藏写法，请使用 `HierarchicalTreeDataGridSource<T>` 配合 `WithHierarchicalExpanderTextColumn` 流式方法：
 
 ```csharp
 using System.Collections.ObjectModel;
@@ -277,18 +277,18 @@ public class MainWindowViewModel
 </Window>
 ```
 
-### Run the application
+### 运行应用 {#run-the-application-1}
 
 <Image light={HierarchicalTreeDataGrid} maxWidth={400} alignment="center" />
 
-## Advanced usage
+## 进阶用法 {#advanced-usage}
 
-- [Column types](/controls/data-display/structured-data/treedatagrid/column-types)
-- [Selection modes](/controls/data-display/structured-data/treedatagrid/selection-modes)
-- [Expand and collapse operations](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)
+- [列类型](/controls/data-display/structured-data/treedatagrid/column-types)
+- [选择模式](/controls/data-display/structured-data/treedatagrid/selection-modes)
+- [展开与折叠操作](/controls/data-display/structured-data/treedatagrid/expand-and-collapse)
 - [Sorting](/controls/data-display/structured-data/treedatagrid/sorting)
 - [Filtering](/controls/data-display/structured-data/treedatagrid/filtering)
 
-## See also
+## 另请参阅 {#see-also}
 
 - [DataGrid](/controls/data-display/structured-data/datagrid/)

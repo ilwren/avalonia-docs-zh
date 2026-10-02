@@ -1,44 +1,44 @@
 ---
 id: ui-testing-with-appium
-title: UI Testing with Appium
+title: 用 Appium 做 UI 测试
 ---
 
-Appium is an open-source automation framework that drives your application through its accessibility tree, simulating real user interactions such as clicking buttons, typing text, and verifying control states. Unlike [headless tests](/docs/testing/setting-up-the-headless-platform), which run without a visible window and simulate input programmatically, Appium tests launch your compiled application in a real window and interact with it the same way a user would.
+Appium 是一个开源自动化框架，它通过应用的无障碍树来驱动程序，模拟点击按钮、输入文字、检查控件状态等真实的用户操作。[无头测试](/docs/testing/setting-up-the-headless-platform)不开窗口、以编程方式模拟输入，Appium 测试则不同：它在真实窗口中启动你编译好的应用，像用户那样与之交互。
 
-This makes Appium tests well suited for end-to-end validation, accessibility verification, and testing platform-specific behaviors. Avalonia uses Appium internally to test the framework itself across Windows and macOS.
+这让 Appium 测试很适合做端到端验证、无障碍核查以及平台专属行为的测试。Avalonia 自身也用 Appium 在 Windows 和 macOS 上测试框架本身。
 
-## When to use Appium vs headless
+## Appium 与无头测试该怎么选 {#when-to-use-appium-vs-headless}
 
-| Consideration | Headless | Appium |
+| 考量点 | 无头测试 | Appium |
 |---|---|---|
-| Speed | Fast (in-process, no GUI) | Slower (launches real app) |
-| Scope | Unit and component tests | End-to-end and integration tests |
-| Platform behavior | Simulated | Real (native windowing, menus, focus) |
-| Accessibility | Not tested | Tested (drives via accessibility tree) |
-| CI/CD | Runs anywhere | Requires a display (or virtual display on Linux) |
+| Speed | 快（进程内运行，无 GUI） | 较慢（要启动真实应用） |
+| Scope | 单元测试与组件测试 | 端到端测试与集成测试 |
+| 平台行为 | Simulated | 真实（原生窗口系统、菜单、焦点） |
+| 无障碍 | 测不到 | 能测（经由无障碍树驱动） |
+| CI/CD | 哪儿都能跑 | 需要显示器（Linux 上可用虚拟显示） |
 
-Use headless tests for fast feedback on control logic and data binding. Use Appium tests to verify that your application works correctly as a whole, including native platform integration.
+想对控件逻辑和数据绑定快速拿到反馈，就用无头测试；想验证应用作为一个整体（含原生平台集成）是否工作正常，就用 Appium 测试。
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
 ### Windows
 
-Install [WinAppDriver](https://github.com/microsoft/WinAppDriver/releases). WinAppDriver acts as the Appium server on Windows and requires Windows 10 or later. Enable **Developer Mode** in Windows Settings.
+安装 [WinAppDriver](https://github.com/microsoft/WinAppDriver/releases)。它在 Windows 上充当 Appium 服务器，要求 Windows 10 或更高版本。还需在 Windows 设置中启用**开发人员模式**。
 
 ### macOS
 
-Install Appium and the Mac2 driver:
+安装 Appium 和 Mac2 驱动：
 
 ```bash
 npm install -g appium
 appium driver install mac2
 ```
 
-You also need to grant accessibility permissions to the terminal or IDE you run tests from. Go to **System Settings > Privacy & Security > Accessibility** and add your terminal application.
+你还得把无障碍权限授予用来跑测试的终端或 IDE。打开**系统设置 > 隐私与安全性 > 辅助功能**，把你的终端应用加进去。
 
-## Project setup
+## 准备项目 {#project-setup}
 
-Create a new xUnit test project and install the Appium client:
+新建一个 xUnit 测试项目并安装 Appium 客户端：
 
 ```bash
 dotnet new xunit -n MyApp.UITests
@@ -46,9 +46,9 @@ cd MyApp.UITests
 dotnet add package Appium.WebDriver
 ```
 
-## Creating a test fixture
+## 创建测试 fixture {#creating-a-test-fixture}
 
-The fixture manages the Appium driver session. It starts your application, connects to it, and tears it down after tests complete.
+fixture 负责管理 Appium 驱动会话：启动你的应用、连上它，并在测试结束后把它拆掉。
 
 ```csharp
 using OpenQA.Selenium.Appium;
@@ -94,16 +94,16 @@ public class DefaultCollection : ICollectionFixture<AppFixture> { }
 ```
 
 :::tip
-On macOS, use `bundleId` to identify your application rather than a file path. Build your app as an `.app` bundle first.
+在 macOS 上，请用 `bundleId` 而非文件路径来指明你的应用，并先把应用构建成 `.app` 包。
 :::
 
-## Writing tests
+## 编写测试 {#writing-tests}
 
-Tests use `FindElementByAccessibilityId` to locate controls. This works because Avalonia exposes the `AutomationProperties.AutomationId` value (or the control's `Name`) through the platform accessibility API.
+测试用 `FindElementByAccessibilityId` 来定位控件。这之所以行得通，是因为 Avalonia 会通过平台的无障碍 API 暴露 `AutomationProperties.AutomationId` 的值（或控件的 `Name`）。
 
-### Setting AutomationId on controls
+### 给控件设置 AutomationId {#setting-automationid-on-controls}
 
-Give your controls an `AutomationId` so that tests can find them reliably:
+给控件配上 `AutomationId`，测试才能稳稳地找到它们：
 
 ```xml
 <Button AutomationProperties.AutomationId="SubmitButton" Content="Submit" />
@@ -111,7 +111,7 @@ Give your controls an `AutomationId` so that tests can find them reliably:
 <CheckBox AutomationProperties.AutomationId="AgreeCheckBox" Content="I agree" />
 ```
 
-### A basic test
+### 一个基础测试 {#a-basic-test}
 
 ```csharp
 using OpenQA.Selenium.Appium;
@@ -140,7 +140,7 @@ public class ButtonTests
 }
 ```
 
-### Testing checkbox state
+### 测试复选框状态 {#testing-checkbox-state}
 
 ```csharp
 [Fact]
@@ -159,7 +159,7 @@ public void CheckBox_Toggles_On_Click()
 }
 ```
 
-### Testing text input
+### 测试文本输入 {#testing-text-input}
 
 ```csharp
 [Fact]
@@ -174,9 +174,9 @@ public void TextBox_Accepts_Input()
 }
 ```
 
-## Platform-specific tests
+## 平台专属的测试 {#platform-specific-tests}
 
-Some tests only make sense on certain platforms (for example, native menu tests on macOS). You can create a custom attribute to skip tests on unsupported platforms:
+有些测试只在特定平台上才讲得通（比如 macOS 上的原生菜单测试）。你可以自定义一个特性，在不支持的平台上跳过这些测试：
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -211,7 +211,7 @@ public sealed class PlatformFactAttribute : FactAttribute
 }
 ```
 
-Use it on tests that target specific platforms:
+把它用在面向特定平台的测试上：
 
 ```csharp
 [PlatformFact(TestPlatforms.MacOS)]
@@ -221,9 +221,9 @@ public void Native_Menu_Shows_App_Name()
 }
 ```
 
-## Cross-platform helpers
+## 跨平台辅助方法 {#cross-platform-helpers}
 
-Attribute names and element lookup can differ between WinAppDriver and the macOS driver. Utility methods help keep tests clean:
+WinAppDriver 与 macOS 驱动在特性名称和元素查找上可能有出入。写几个工具方法，能让测试代码清爽不少：
 
 ```csharp
 public static class ElementExtensions
@@ -250,17 +250,17 @@ public static class ElementExtensions
 }
 ```
 
-## Running tests
+## 运行测试 {#running-tests}
 
 ### Windows
 
-Start WinAppDriver first (it runs as a local server):
+先启动 WinAppDriver（它以本地服务器的形式运行）：
 
 ```
 "C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe"
 ```
 
-Then run your tests:
+然后运行你的测试：
 
 ```bash
 dotnet test
@@ -268,28 +268,28 @@ dotnet test
 
 ### macOS
 
-Start the Appium server:
+启动 Appium 服务器：
 
 ```bash
 appium
 ```
 
-Then run your tests in another terminal:
+然后在另一个终端里运行你的测试：
 
 ```bash
 dotnet test
 ```
 
-## CI/CD considerations
+## CI/CD 方面的注意事项 {#cicd-considerations}
 
-- **Windows**: WinAppDriver must be running before tests start. In CI, add a setup step to launch it.
-- **macOS**: Appium and the mac2 driver must be installed. Grant accessibility permissions to the CI agent.
-- **Linux**: Appium does not have a stable Linux desktop driver. For Linux CI, use [headless tests](/docs/testing/setting-up-the-headless-platform) instead.
+- **Windows**：测试开始前 WinAppDriver 必须已在运行。在 CI 中请加一个启动它的准备步骤。
+- **macOS**：必须装好 Appium 和 mac2 驱动，并把无障碍权限授予 CI 代理。
+- **Linux**：Appium 在 Linux 桌面上没有稳定的驱动。Linux CI 请改用[无头测试](/docs/testing/setting-up-the-headless-platform)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Headless Testing with XUnit](/docs/testing/headless-xunit): Fast, in-process unit testing.
-- [Headless Testing with NUnit](/docs/testing/headless-nunit): NUnit integration for headless tests.
-- [Headless Platform Setup](/docs/testing/setting-up-the-headless-platform): Simulating input and capturing frames.
-- [Avalonia's own Appium tests](https://github.com/AvaloniaUI/Avalonia/tree/master/tests/Avalonia.IntegrationTests.Appium): The test suite Avalonia uses internally.
-- [Appium documentation](https://appium.io/docs/en/latest/): Official Appium guides.
+- [用 XUnit 做无头测试](/docs/testing/headless-xunit)：快速的进程内单元测试。
+- [用 NUnit 做无头测试](/docs/testing/headless-nunit)：无头测试的 NUnit 集成。
+- [无头平台配置](/docs/testing/setting-up-the-headless-platform)：模拟输入与捕获帧。
+- [Avalonia 自己的 Appium 测试](https://github.com/AvaloniaUI/Avalonia/tree/master/tests/Avalonia.IntegrationTests.Appium)：Avalonia 内部使用的测试套件。
+- [Appium 文档](https://appium.io/docs/en/latest/)：Appium 官方指南。

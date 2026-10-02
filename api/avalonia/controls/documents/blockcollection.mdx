@@ -20,25 +20,25 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BlockCollection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-The blocks of a document, section, cell or list item. A document's collection is
-its body; the notes live in [Avalonia.Controls.Documents.FlowDocument.Footnotes](xref:Avalonia.Controls.Documents.FlowDocument.Footnotes) and the bands in
-[Avalonia.Controls.Documents.FlowDocument.PageBands](xref:Avalonia.Controls.Documents.FlowDocument.PageBands), nested documents of their own.
+文档、section、单元格或列表项中的各个块。文档的这个集合即其正文；
+便签存放在 [Avalonia.Controls.Documents.FlowDocument.Footnotes](xref:Avalonia.Controls.Documents.FlowDocument.Footnotes) 中，页眉页脚带状区域存放在
+[Avalonia.Controls.Documents.FlowDocument.PageBands](xref:Avalonia.Controls.Documents.FlowDocument.PageBands) 中，它们各自都是嵌套文档。
 
 </div>
 
@@ -52,38 +52,37 @@ public class BlockCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> RichTextElementCollection&lt;Block&gt; <span className="apiref-page__relation-separator">-&gt;</span> BlockCollection
+<span className="apiref-page__meta-label">继承关系：</span> RichTextElementCollection&lt;Block&gt; <span className="apiref-page__relation-separator">-&gt;</span> BlockCollection
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BlockCollection](#uid-89458122de) | Initializes a new instance for `owner`. |
+| [BlockCollection](#uid-89458122de) | 为 `owner` 初始化一个新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-89458122de"></span>
 
-### BlockCollection Constructor
+### BlockCollection 构造函数 {#blockcollection-constructor}
 
-Initializes a new instance for `owner`.
+为 `owner` 初始化一个新实例。
 
 ```csharp
 public BlockCollection(Avalonia.AvaloniaObject owner)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `owner` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-Reach the collection through its owner rather than building one: an owner caches
-exactly one instance, and a second over the same owner splits pending content
-between them.
+请通过所有者取得该集合，而不要自行构造：一个所有者只缓存一个实例，
+再为同一个所有者造第二个，会把待处理内容拆散到两者之间。
 
 </section>
 

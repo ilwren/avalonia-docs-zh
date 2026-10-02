@@ -6,66 +6,65 @@ title: ToolTip
 import ToolTipTextHoverScreenshot from '/img/reference/controls/tooltip/tooltip-text-hover.gif';
 import ToolTipContentScreenshot from '/img/reference/controls/tooltip/tooltip-content-hover.gif';
 
-The `ToolTip` is a popup that shows its content when the user hovers over the 'host' control to which it is attached.
+`ToolTip` 是一个弹出提示：当用户把指针悬停在它所附着的「宿主」控件上时，它就把内容显示出来。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
 <table>
     <thead>
         <tr>
             <th width="298">Property</th>
-            <th>Description</th>
+            <th>说明</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>ToolTip.Tip</code></td>
-            <td>Attached property for the tooltip contents.</td>
+            <td>承载提示内容的附加属性。</td>
         </tr>
         <tr>
             <td><code>ToolTip.Placement</code></td>
-            <td>Defines the placement for the tooltip relative to the host or the pointer. Choose from top, bottom,
-                left, right, anchor and gravity, pointer. The default value is pointer which places the tip content at
-                the position where the pointer stops moving.</td>
+            <td>定义提示相对于宿主或指针的位置，可选 top、bottom、
+                left、right、anchor and gravity、pointer。默认值是 pointer，即把提示内容放在指针停下来的位置。</td>
         </tr>
         <tr>
             <td><code>ToolTip.HorizontalOffset</code></td>
-            <td>The tooltip horizontal offset from the placement (default 0).</td>
+            <td>提示相对于定位点的水平偏移（默认 0）。</td>
         </tr>
         <tr>
             <td><code>ToolTip.VerticalOffset</code></td>
-            <td>The tooltip vertical offset from the placement (default 20).</td>
+            <td>提示相对于定位点的垂直偏移（默认 20）。</td>
         </tr>
         <tr>
             <td><code>ToolTip.ShowDelay</code></td>
-            <td>The amount of time the pointer has to be still before the tooltip appears, in milliseconds (default
+            <td>指针需要静止多久提示才会出现，单位毫秒（默认
                 400).</td>
         </tr>
         <tr>
             <td><code>ToolTip.BetweenShowDelay</code></td>
-            <td>The amount of time the tooltip will not show up for after last show, in milliseconds (default 100).</td>
+            <td>上一次显示之后，多久之内不再弹出提示，单位毫秒（默认 100）。</td>
         </tr>
         <tr>
             <td><code>ToolTip.ShowOnDisabled</code></td>
-            <td>Determines whether the tooltip should be shown for disabled elements (default false).</td>
+            <td>决定是否为已禁用的元素显示提示（默认 false）。</td>
         </tr>
         <tr>
             <td><code>ToolTip.ServiceEnabled</code></td>
-            <td>Determines whether the tooltip service is enabled (default true).</td>
+            <td>决定提示服务是否启用（默认 true）。</td>
         </tr>
     </tbody>
 </table>
 
-## Events
+## 事件 {#events}
 
-| Event | Type | Description |
+| 事件 | 类型 | 说明 |
 |---|---|---|
-| `ToolTip.ToolTipOpening` | `CancelRoutedEventArgs` | Raised when a tooltip is about to open. Set `Cancel = true` to prevent the tooltip from showing. |
-| `ToolTip.ToolTipClosing` | `RoutedEventArgs` | Raised when a tooltip is about to close. |
+| `ToolTip.ToolTipOpening` | `CancelRoutedEventArgs` | 提示即将打开时引发。设置 `Cancel = true` 可阻止提示显示。 |
+| `ToolTip.ToolTipClosing` | `RoutedEventArgs` | 提示即将关闭时引发。 |
 
-These are attached routed events. Subscribe in XAML or code:
+它们是附加路由事件，可在 XAML 或代码中订阅：
 
 ```xml
 <Button Content="Hover me"
@@ -84,9 +83,9 @@ private void OnToolTipOpening(object? sender, CancelRoutedEventArgs e)
 }
 ```
 
-## Examples
+## 示例 {#examples}
 
-This is a simple text-based tooltip, using default values for the placement and delay properties. Hover over the rectangle in the preview to see the tooltip.
+这是一个简单的纯文本提示，位置和延时都用默认值。把指针悬停到预览里的矩形上就能看到效果。
 
 <XamlPreview>
 
@@ -101,7 +100,7 @@ This is a simple text-based tooltip, using default values for the placement and 
 
 <Image light={ToolTipTextHoverScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-To provide a richer presentation for a tooltip, use a `<ToolTip.Tip>` element. Hover over the rectangle in the preview to see the tooltip.
+想让提示的呈现更丰富，可以用 `<ToolTip.Tip>` 元素。把指针悬停到预览里的矩形上就能看到效果。
 
 <XamlPreview>
 
@@ -123,7 +122,7 @@ To provide a richer presentation for a tooltip, use a `<ToolTip.Tip>` element. H
 
 <Image light={ToolTipContentScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
-- [ToolTip API reference](/api/avalonia/controls/tooltip)
-- [`ToolTip.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ToolTip.cs)
+- [ToolTip API 参考](/api/avalonia/controls/tooltip)
+- [GitHub 上的 `ToolTip.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ToolTip.cs)

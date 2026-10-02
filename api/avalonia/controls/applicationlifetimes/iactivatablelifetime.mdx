@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IActivatableLifetime Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.ApplicationLifetimes</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/IActivatableApplicationLifetime.cs">IActivatableApplicationLifetime.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ApplicationLifetimes/IActivatableApplicationLifetime.cs">IActivatableApplicationLifetime.cs</a>
 </div>
 
 </div>
@@ -52,9 +52,9 @@ public interface IActivatableLifetime
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TryEnterBackground](#uid-b7246cb4e0) | Tells the application that it should attempt to enter its background state. For example on OSX this would be [NSApp hide] |
 | [TryLeaveBackground](#uid-521fff87f7) | Tells the application that it should attempt to leave its background state. For example on OSX this would be [NSApp unhide] |
@@ -63,7 +63,7 @@ public interface IActivatableLifetime
 
 <span id="uid-b7246cb4e0"></span>
 
-### TryEnterBackground Method
+### TryEnterBackground 方法 {#tryenterbackground-method}
 
 Tells the application that it should attempt to enter its background state.
 For example on OSX this would be [NSApp hide]
@@ -72,7 +72,7 @@ For example on OSX this would be [NSApp hide]
 public bool TryEnterBackground()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -85,7 +85,7 @@ true if it was possible and the platform supports this. false otherwise
 
 <span id="uid-521fff87f7"></span>
 
-### TryLeaveBackground Method
+### TryLeaveBackground 方法 {#tryleavebackground-method}
 
 Tells the application that it should attempt to leave its background state.
 For example on OSX this would be [NSApp unhide]
@@ -94,7 +94,7 @@ For example on OSX this would be [NSApp unhide]
 public bool TryLeaveBackground()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -103,9 +103,9 @@ true if it was possible and the platform supports this. false otherwise
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Activated](#uid-46bdd3249a) | An event that is raised when the application is Activated for various reasons as described by the [Avalonia.Controls.ApplicationLifetimes.ActivationKind](xref:Avalonia.Controls.ApplicationLifetimes.ActivationKind) enumeration. |
 | [Deactivated](#uid-c0e1aca534) | An event that is raised when the application is Deactivated for various reasons as described by the [Avalonia.Controls.ApplicationLifetimes.ActivationKind](xref:Avalonia.Controls.ApplicationLifetimes.ActivationKind) enumeration. |
@@ -114,7 +114,7 @@ true if it was possible and the platform supports this. false otherwise
 
 <span id="uid-46bdd3249a"></span>
 
-### Activated Event
+### Activated 事件 {#activated-event}
 
 An event that is raised when the application is Activated for various reasons
 as described by the [Avalonia.Controls.ApplicationLifetimes.ActivationKind](xref:Avalonia.Controls.ApplicationLifetimes.ActivationKind) enumeration.
@@ -129,7 +129,7 @@ public event EventHandler<Avalonia.Controls.ApplicationLifetimes.ActivatedEventA
 
 <span id="uid-c0e1aca534"></span>
 
-### Deactivated Event
+### Deactivated 事件 {#deactivated-event}
 
 An event that is raised when the application is Deactivated for various reasons
 as described by the [Avalonia.Controls.ApplicationLifetimes.ActivationKind](xref:Avalonia.Controls.ApplicationLifetimes.ActivationKind) enumeration.

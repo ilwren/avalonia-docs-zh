@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IInteractiveTextHost Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,11 +51,11 @@ public interface IInteractiveTextHost
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="itextviewhost">ITextViewHost</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="itextviewhost">ITextViewHost</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface provides everything a read-only interactive view needs:
 document access, selection, component registration, and input scope.
@@ -66,20 +66,20 @@ For editing support (text insertion, deletion, formatting), see
 `ITextEditorHost` which extends this interface with
 editing-specific members.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ActivateDocument](#uid-6ec996fa7d) | Makes `document` the document the host's selection covers: a nested document of the main one (a page band, a footnote), or the main document itself when null. The selection moves to `position` when one is given. Components call this when a pointer they resolved belongs to another document than the selection's. Reading needs the switch as much as editing does, so the viewers answer it too; a host without nested documents declines and the move is dropped, which keeps a nested document's text unselectable there. |
-| [GetComponent](#uid-dd6bb02fcf) | No summary available. |
-| [RegisterComponent](#uid-55e9929d46) | Registers a component with this host. |
-| [UnregisterComponent](#uid-d04f48d374) | Unregisters a component from this host. |
+| [GetComponent](#uid-dd6bb02fcf) | 暂无摘要。 |
+| [RegisterComponent](#uid-55e9929d46) | 向该宿主注册一个组件。 |
+| [UnregisterComponent](#uid-d04f48d374) | 从该宿主注销一个组件。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6ec996fa7d"></span>
 
-### ActivateDocument Method
+### ActivateDocument 方法 {#activatedocument-method}
 
 Makes `document` the document the host's selection covers: a
 nested document of the main one (a page band, a footnote), or the main document
@@ -93,7 +93,7 @@ move is dropped, which keeps a nested document's text unselectable there.
 public bool ActivateDocument(Avalonia.Controls.Documents.TextModel.TextDocument document, Avalonia.Controls.Documents.TextModel.TextPointer position)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `document` [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
@@ -101,7 +101,7 @@ public bool ActivateDocument(Avalonia.Controls.Documents.TextModel.TextDocument 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -114,7 +114,7 @@ Whether the document is the active one afterwards.
 
 <span id="uid-dd6bb02fcf"></span>
 
-### GetComponent Method
+### GetComponent 方法 {#getcomponent-method}
 
 ```csharp
 public T GetComponent<T>()
@@ -125,7 +125,7 @@ public T GetComponent<T>()
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 T
 
@@ -136,25 +136,25 @@ T
 
 <span id="uid-55e9929d46"></span>
 
-### RegisterComponent Method
+### RegisterComponent 方法 {#registercomponent-method}
 
-Registers a component with this host.
+向该宿主注册一个组件。
 
 ```csharp
 public void RegisterComponent(Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent component)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `component` [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent)
 
-The component to register.
+要注册的组件。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-If the host is already in the attached state, the component receives
-an immediate [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnAttach(Avalonia.Controls.Documents.Primitives.IInteractiveTextHost)](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnAttach%28Avalonia.Controls.Documents.Primitives.IInteractiveTextHost%29) callback.
+若宿主已处于附加状态，该组件会立刻收到一次
+[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnAttach(Avalonia.Controls.Documents.Primitives.IInteractiveTextHost)](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnAttach%28Avalonia.Controls.Documents.Primitives.IInteractiveTextHost%29) 回调。
 
 </section>
 
@@ -162,42 +162,42 @@ an immediate [Avalonia.Controls.Documents.Primitives.Components.ITextViewCompone
 
 <span id="uid-d04f48d374"></span>
 
-### UnregisterComponent Method
+### UnregisterComponent 方法 {#unregistercomponent-method}
 
-Unregisters a component from this host.
+从该宿主注销一个组件。
 
 ```csharp
 public void UnregisterComponent(Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent component)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `component` [Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent)
 
-The component to unregister.
+要注销的组件。
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-If the component is currently attached, it receives an
-[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach) callback before removal.
+若该组件当前处于附加状态，移除之前它会收到一次
+[Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach](xref:Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent.OnDetach) 回调。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ActiveDocument](#uid-f412cd08d9) | Gets the nested document the selection is in (a page band or a footnote the caret entered), or null while the selection is in the main document. A host without nested documents always answers null. |
-| [Selection](#uid-776a60c8a7) | Gets the current text selection. |
-| [TextDocument](#uid-9c77226b13) | Gets the underlying text document. |
+| [Selection](#uid-776a60c8a7) | 获取当前的文本选区。 |
+| [TextDocument](#uid-9c77226b13) | 获取底层的文本文档。 |
 | [UIScope](#uid-65f19a2e63) | Gets the UI element scope for input handling (pointer events, etc.). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f412cd08d9"></span>
 
-### ActiveDocument Property
+### ActiveDocument 属性 {#activedocument-property}
 
 Gets the nested document the selection is in (a page band or a footnote the
 caret entered), or null while the selection is in the main document. A host
@@ -213,9 +213,9 @@ public Avalonia.Controls.Documents.TextModel.TextDocument ActiveDocument { get; 
 
 <span id="uid-776a60c8a7"></span>
 
-### Selection Property
+### Selection 属性 {#selection-property}
 
-Gets the current text selection.
+获取当前的文本选区。
 
 ```csharp
 public Avalonia.Controls.TextSelection Selection { get; set; }
@@ -227,9 +227,9 @@ public Avalonia.Controls.TextSelection Selection { get; set; }
 
 <span id="uid-9c77226b13"></span>
 
-### TextDocument Property
+### TextDocument 属性 {#textdocument-property}
 
-Gets the underlying text document.
+获取底层的文本文档。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; set; }
@@ -241,7 +241,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; se
 
 <span id="uid-65f19a2e63"></span>
 
-### UIScope Property
+### UIScope 属性 {#uiscope-property}
 
 Gets the UI element scope for input handling (pointer events, etc.).
 
@@ -249,7 +249,7 @@ Gets the UI element scope for input handling (pointer events, etc.).
 public Avalonia.Input.InputElement UIScope { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 This property returns the element that should be used as the scope for
 pointer/mouse event handling. This is typically a container that wraps
@@ -257,20 +257,20 @@ the document area but excludes UI elements like toolbars.
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ActiveDocumentChanged](#uid-f3522e207c) | Occurs when [Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument](xref:Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument) changes: the selection entered a page band or a footnote, or returned to the main document. A host without nested documents never raises it, but must still declare it - a component that follows the caret across documents has no other way to learn of the move, because a pure activation carries no selection change. |
-| [ContentChanged](#uid-78f3ed8b4a) | Occurs when the document content changes. |
-| [DocumentChanged](#uid-2bf45a283a) | Occurs when the document is replaced. |
-| [SelectionChanged](#uid-d2145c6272) | Occurs when the selection changes. |
+| [ContentChanged](#uid-78f3ed8b4a) | 文档内容发生变化时发生。 |
+| [DocumentChanged](#uid-2bf45a283a) | 文档被替换时发生。 |
+| [SelectionChanged](#uid-d2145c6272) | 选择发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f3522e207c"></span>
 
-### ActiveDocumentChanged Event
+### ActiveDocumentChanged 事件 {#activedocumentchanged-event}
 
 Occurs when [Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument](xref:Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument) changes: the selection entered a page
 band or a footnote, or returned to the main document. A host without nested
@@ -282,7 +282,7 @@ pure activation carries no selection change.
 public event EventHandler ActiveDocumentChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 Defaults to a no-op so a host written before this member existed still compiles. Such a
 host has no nested documents to move between, so there is nothing for it to raise.
@@ -293,9 +293,9 @@ host has no nested documents to move between, so there is nothing for it to rais
 
 <span id="uid-78f3ed8b4a"></span>
 
-### ContentChanged Event
+### ContentChanged 事件 {#contentchanged-event}
 
-Occurs when the document content changes.
+文档内容发生变化时发生。
 
 ```csharp
 public event EventHandler ContentChanged
@@ -307,9 +307,9 @@ public event EventHandler ContentChanged
 
 <span id="uid-2bf45a283a"></span>
 
-### DocumentChanged Event
+### DocumentChanged 事件 {#documentchanged-event}
 
-Occurs when the document is replaced.
+文档被替换时发生。
 
 ```csharp
 public event EventHandler DocumentChanged
@@ -321,9 +321,9 @@ public event EventHandler DocumentChanged
 
 <span id="uid-d2145c6272"></span>
 
-### SelectionChanged Event
+### SelectionChanged 事件 {#selectionchanged-event}
 
-Occurs when the selection changes.
+选择发生变化时发生。
 
 ```csharp
 public event EventHandler SelectionChanged

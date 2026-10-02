@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TypeUtilities Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Utilities</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Utilities</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/TypeUtilities.cs">TypeUtilities.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/TypeUtilities.cs">TypeUtilities.cs</a>
 </div>
 
 </div>
@@ -54,23 +54,23 @@ public class TypeUtilities
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TypeUtilities
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TypeUtilities
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AcceptsNull (2 overloads)](#uid-4f32229275) | No summary available. |
-| [CanCast](#uid-1bc57e47b6) | No summary available. |
-| [ConvertImplicit](#uid-a5ec827ebc) | No summary available. |
+| [AcceptsNull (2 overloads)](#uid-4f32229275) | 暂无摘要。 |
+| [CanCast](#uid-1bc57e47b6) | 暂无摘要。 |
+| [ConvertImplicit](#uid-a5ec827ebc) | 暂无摘要。 |
 | [ConvertImplicitOrDefault](#uid-e02ea85d39) | Convert a value to a type using the implicit conversions allowed by the C# language or return the default for the type if the value could not be converted. |
 | [ConvertOrDefault](#uid-021554d856) | Convert a value to a type by any means possible, returning the default for that type if the value could not be converted. |
 | [Default](#uid-55f12a8f0d) | Gets the default value for the specified type. |
 | [IsNumeric](#uid-6adf09cecc) | Determines if a type is numeric. Nullable numeric types are considered numeric. |
-| [TryConvert](#uid-19e28b3b5f) | No summary available. |
-| [TryConvertImplicit](#uid-d9e79f4461) | No summary available. |
+| [TryConvert](#uid-19e28b3b5f) | 暂无摘要。 |
+| [TryConvertImplicit](#uid-d9e79f4461) | 暂无摘要。 |
 
 <span id="uid-4f32229275"></span>
 
@@ -80,7 +80,7 @@ public class TypeUtilities
 
 <span id="uid-86f1c83d4a"></span>
 
-#### AcceptsNull Method
+#### AcceptsNull 方法 {#acceptsnull-method}
 
 ```csharp
 public bool AcceptsNull<T>()
@@ -91,7 +91,7 @@ public bool AcceptsNull<T>()
 `T`
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -102,7 +102,7 @@ bool
 
 <span id="uid-870e76f538"></span>
 
-#### AcceptsNull Method
+#### AcceptsNull 方法 {#acceptsnull-method-1}
 
 Returns a value indicating whether null can be assigned to the specified type.
 
@@ -110,14 +110,14 @@ Returns a value indicating whether null can be assigned to the specified type.
 public bool AcceptsNull(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -130,13 +130,13 @@ True if the type accepts null values; otherwise false.
 
 <span id="uid-1bc57e47b6"></span>
 
-### CanCast Method
+### CanCast 方法 {#cancast-method}
 
 ```csharp
 public bool CanCast<T>(object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `value` object
 
@@ -146,7 +146,7 @@ public bool CanCast<T>(object value)
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
@@ -157,13 +157,13 @@ bool
 
 <span id="uid-a5ec827ebc"></span>
 
-### ConvertImplicit Method
+### ConvertImplicit 方法 {#convertimplicit-method}
 
 ```csharp
 public T ConvertImplicit<T>(object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value` object
 
@@ -173,7 +173,7 @@ public T ConvertImplicit<T>(object value)
 `T`
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 T
 
@@ -184,7 +184,7 @@ T
 
 <span id="uid-e02ea85d39"></span>
 
-### ConvertImplicitOrDefault Method
+### ConvertImplicitOrDefault 方法 {#convertimplicitordefault-method}
 
 Convert a value to a type using the implicit conversions allowed by the C# language or
 return the default for the type if the value could not be converted.
@@ -193,23 +193,23 @@ return the default for the type if the value could not be converted.
 public object ConvertImplicitOrDefault(object value, Type type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`type` Type
+`type` 类型
 
-The type to convert to.
+要转换成的类型。
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 object
 
-A value of `type`.
+取值为 `type`。
 
 
 </section>
@@ -218,7 +218,7 @@ A value of `type`.
 
 <span id="uid-021554d856"></span>
 
-### ConvertOrDefault Method
+### ConvertOrDefault 方法 {#convertordefault-method}
 
 Convert a value to a type by any means possible, returning the default for that type
 if the value could not be converted.
@@ -227,28 +227,28 @@ if the value could not be converted.
 public object ConvertOrDefault(object value, Type type, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`type` Type
+`type` 类型
 
-The type to convert to.
+要转换成的类型。
 
 
 `culture` System.Globalization.CultureInfo
 
-The culture to use.
+要使用的区域性信息。
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 object
 
-A value of `type`.
+取值为 `type`。
 
 
 </section>
@@ -257,7 +257,7 @@ A value of `type`.
 
 <span id="uid-55f12a8f0d"></span>
 
-### Default Method
+### Default 方法 {#default-method}
 
 Gets the default value for the specified type.
 
@@ -265,18 +265,18 @@ Gets the default value for the specified type.
 public object Default(Type type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 object
 
-The default value.
+默认值。
 
 
 </section>
@@ -285,7 +285,7 @@ The default value.
 
 <span id="uid-6adf09cecc"></span>
 
-### IsNumeric Method
+### IsNumeric 方法 {#isnumeric-method}
 
 Determines if a type is numeric. Nullable numeric types are considered numeric.
 
@@ -293,19 +293,19 @@ Determines if a type is numeric. Nullable numeric types are considered numeric.
 public bool IsNumeric(Type type)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
-`type` Type
+`type` 类型
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 bool
 
 True if the type is numeric; otherwise false.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Boolean is not considered numeric.
 
@@ -315,15 +315,15 @@ Boolean is not considered numeric.
 
 <span id="uid-19e28b3b5f"></span>
 
-### TryConvert Method
+### TryConvert 方法 {#tryconvert-method}
 
 ```csharp
 public bool TryConvert(Type to, object value, System.Globalization.CultureInfo culture, object& result)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
-`to` Type
+`to` 类型
 
 
 `value` object
@@ -335,7 +335,7 @@ public bool TryConvert(Type to, object value, System.Globalization.CultureInfo c
 `result` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 bool
 
@@ -346,15 +346,15 @@ bool
 
 <span id="uid-d9e79f4461"></span>
 
-### TryConvertImplicit Method
+### TryConvertImplicit 方法 {#tryconvertimplicit-method}
 
 ```csharp
 public bool TryConvertImplicit(Type to, object value, object& result)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
-`to` Type
+`to` 类型
 
 
 `value` object
@@ -363,7 +363,7 @@ public bool TryConvertImplicit(Type to, object value, object& result)
 `result` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 bool
 

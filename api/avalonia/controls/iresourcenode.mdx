@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IResourceNode Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IResourceNode.cs">IResourceNode.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IResourceNode.cs">IResourceNode.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents an object that can be queried for resources.
+表示一个可被查询资源的对象。
 
 </div>
 
@@ -52,29 +52,28 @@ public interface IResourceNode
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-The interface represents a common interface for both controls that host resources
-([Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)) and resource providers such as [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary)
-(see [Avalonia.Controls.IResourceProvider](xref:Avalonia.Controls.IResourceProvider)).
+该接口为两类对象规定了共同的接口：承载资源的控件（[Avalonia.Controls.IResourceHost](xref:Avalonia.Controls.IResourceHost)），
+以及 [Avalonia.Controls.ResourceDictionary](xref:Avalonia.Controls.ResourceDictionary) 这样的资源提供程序（见 [Avalonia.Controls.IResourceProvider](xref:Avalonia.Controls.IResourceProvider)）。
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TryGetResource](#uid-c9b2d98db4) | No summary available. |
+| [TryGetResource](#uid-c9b2d98db4) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c9b2d98db4"></span>
 
-### TryGetResource Method
+### TryGetResource 方法 {#trygetresource-method}
 
 ```csharp
 public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, object& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `key` object
 
@@ -85,26 +84,26 @@ public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, obje
 `value` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [HasResources](#uid-a143d159fe) | Gets a value indicating whether the object has resources. |
+| [HasResources](#uid-a143d159fe) | 获取一个值，指示该对象是否带有资源。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a143d159fe"></span>
 
-### HasResources Property
+### HasResources 属性 {#hasresources-property}
 
-Gets a value indicating whether the object has resources.
+获取一个值，指示该对象是否带有资源。
 
 ```csharp
 public bool HasResources { get; set; }

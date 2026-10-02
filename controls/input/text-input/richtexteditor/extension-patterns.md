@@ -10,33 +10,33 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The RichTextEditor is designed for extensibility at multiple levels. This guide covers patterns for extending functionality without modifying core code.
+RichTextEditor 在多个层面都为扩展留好了口子。本指南介绍如何在不改动核心代码的前提下扩展功能。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Extension points
+## 扩展点 {#extension-points}
 
-1. **Custom document elements** — new block/inline types
-2. **Custom highlight layers** — find, spell check, annotations
-3. **Custom serialization formats** — your own file format
-4. **Custom editor components** — new input handlers
-5. **Grouped undo operations** — via `UndoManager.BeginUndoUnit` (custom `IUndoUnit` subclasses are not a public extension point)
+1. **自定义文档元素** —— 新的块级/行内类型
+2. **自定义高亮层** —— 查找、拼写检查、批注
+3. **自定义序列化格式** —— 你自己的文件格式
+4. **自定义编辑器组件** —— 新的输入处理程序
+5. **成组的撤销操作** —— 通过 `UndoManager.BeginUndoUnit` 实现（自定义 `IUndoUnit` 子类并不是公开的扩展点）
 
 :::info
-Subclassing a view is not possible, due to sealed or internal elements. Instead, you can extend a view with `ITextViewComponent` or `IHighlightLayer`, or consider using  `InteractiveTextView`.
+由于相关元素是 sealed 或 internal 的，无法对视图做派生。你可以改用 `ITextViewComponent` 或 `IHighlightLayer` 来扩展视图，或者考虑使用 `InteractiveTextView`。
 :::
 
-## Custom document elements
+## 自定义文档元素 {#custom-document-elements}
 
-Custom document elements require three pieces:
+自定义文档元素需要三样东西：
 
-1. **Element class** — the model type (extends `RichSpan`, `RichHyperlink`, `Section`, etc.)
-2. **Snapshot node** — preserves custom data through snapshot/undo round-trips
-3. **Handler** — creates elements, captures snapshots, and restores formatting
+1. **元素类** —— 模型类型（继承 `RichSpan`、`RichHyperlink`、`Section` 等）
+2. **快照节点** —— 让自定义数据在快照/撤销的来回往返中得以保全
+3. **处理程序** —— 负责创建元素、采集快照并恢复格式
 
-Register each element at startup via `TextDocumentNodeKind.Register`:
+启动时通过 `TextDocumentNodeKind.Register` 注册每一种元素：
 
 ```csharp
 using Avalonia.Controls.Documents.TextModel;
@@ -61,9 +61,9 @@ public static class CustomNodeRegistration
 }
 ```
 
-### Creating a custom inline element
+### 创建自定义行内元素 {#creating-a-custom-inline-element}
 
-This example creates a `MentionInline` that extends `RichHyperlink`, so mentions get pointer-over effects, click handling, and tooltips for free. The handler sets `NavigateUri` to a `mention:{userId}` URI — handle `RequestNavigate` on the editor to intercept clicks.
+下面的例子做了一个继承自 `RichHyperlink` 的 `MentionInline`，于是「提及」自带了悬停效果、点击处理和工具提示。处理程序把 `NavigateUri` 设为一个 `mention:{userId}` URI——在编辑器上处理 `RequestNavigate` 即可拦截点击。
 
 <Tabs>
 <TabItem value="element" label="Element">
@@ -81,7 +81,7 @@ public class MentionInline : RichHyperlink
 </TabItem>
 <TabItem value="snapshot" label="Snapshot node">
 
-Preserves `UserId` / `DisplayName` through undo and serialization:
+让 `UserId` / `DisplayName` 在撤销与序列化的往返中得以保全：
 
 ```csharp
 using Avalonia.Controls.Documents.TextModel;
@@ -191,7 +191,7 @@ public class MentionHandler : InlineNodeKindHandler
 </TabItem>
 </Tabs>
 
-**Usage:**
+**用法：**
 
 ```csharp
 var mention = new MentionInline { UserId = "alice", DisplayName = "Alice" };
@@ -200,9 +200,9 @@ MentionHandler.ApplyDefaultStyle(mention);
 paragraph.Inlines.Add(mention);
 ```
 
-### Creating a custom block element
+### 创建自定义块级元素 {#creating-a-custom-block-element}
 
-This example creates a `CalloutBlock` that extends `Section` (a block container) and provides a custom `StackLayoutNode` subclass that paints a colored accent bar and tinted background. The `CalloutType` enum controls the color scheme.
+下面的例子做了一个继承自 `Section`（块容器）的 `CalloutBlock`，并提供了一个自定义的 `StackLayoutNode` 子类，用来绘制彩色强调条和带底色的背景。配色方案由 `CalloutType` 枚举控制。
 
 <Tabs>
 <TabItem value="element" label="Element">
@@ -247,7 +247,7 @@ public class CalloutSnapshotNode : BlockSnapshotNode
 </TabItem>
 <TabItem value="docnode" label="DocumentNode">
 
-Custom rendering with accent bar and tinted background:
+带强调条和底色背景的自定义渲染：
 
 ```csharp
 using Avalonia;
@@ -351,7 +351,7 @@ public class CalloutBlockHandler : BlockNodeKindHandler
 </TabItem>
 </Tabs>
 
-**Usage:**
+**用法：**
 
 ```csharp
 var callout = new CalloutBlock
@@ -366,11 +366,11 @@ callout.Blocks.Add(body);
 doc.Blocks.Add(callout);
 ```
 
-## Custom highlight layers
+## 自定义高亮层 {#custom-highlight-layers}
 
-### Find/replace highlight layer
+### 查找/替换高亮层 {#findreplace-highlight-layer}
 
-`HighlightLayerBase` takes only `(string name, int zIndex)`. `AddRegion`, `RemoveRegion` are `protected`, so a subclass exposes them through public wrappers. They raise `RegionsChanged` automatically, meaning a wrapper does not need to call `OnRegionsChanged` afterwards.
+`HighlightLayerBase` 只接受 `(string name, int zIndex)`。`AddRegion`、`RemoveRegion` 是 `protected` 的，因此子类需要用公开的包装方法把它们暴露出来。它们会自动引发 `RegionsChanged`，所以包装方法事后不必再调用 `OnRegionsChanged`。
 
 ```csharp
 using Avalonia.Controls.Documents.Primitives.Highlighting; // HighlightLayerBase, HighlightRegion, HighlightStyle
@@ -410,10 +410,10 @@ public class FindHighlightLayer : HighlightLayerBase
 ```
 
 :::warning
-- `HighlightLayerCollection` is sealed.
-- `Add` throws when a layer's `Name` is already in the collection, to ensure the `GetLayer` lookup works.
-- `HighlightLayerBase.RenderRegion` throws for a highlight style it has no renderer for, rather than drawing nothing.
-- `HighlightStyle.Custom` is no longer used. Override `RenderRegion` to draw custom highlights not provided by the built-in styles.
+- `HighlightLayerCollection` 是 sealed 的。
+- 当某个层的 `Name` 已存在于集合中时，`Add` 会抛出异常，以保证按 `GetLayer` 查找始终有效。
+- 遇到没有对应渲染器的高亮样式时，`HighlightLayerBase.RenderRegion` 会抛出异常，而不是悄悄什么都不画。
+- `HighlightStyle.Custom` 已不再使用。要绘制内置样式之外的自定义高亮，请重写 `RenderRegion`。
 :::
 
 **Integration:**
@@ -427,7 +427,7 @@ var matches = FindInDocument(searchText);
 findLayer.HighlightMatches(matches);
 ```
 
-### Spell check layer
+### 拼写检查层 {#spell-check-layer}
 
 ```csharp
 public class SpellCheckHighlightLayer : HighlightLayerBase
@@ -469,23 +469,23 @@ public class SpellCheckHighlightLayer : HighlightLayerBase
 }
 ```
 
-## Custom serialization formats
+## 自定义序列化格式 {#custom-serialization-formats}
 
-`IDocumentSerializer` is synchronous. Every implementation provides `Deserialize`, `Serialize`, `CanDeserialize`, and the following properties:
+`IDocumentSerializer` 是同步的。每个实现都要提供 `Deserialize`、`Serialize`、`CanDeserialize` 以及下列属性：
 - `FormatName`
 - `FileExtension`
 - `MimeType`
 - `CanRead`
 - `CanWrite`
 
-No serializer performs asynchronous I/O. Format work is processor-bound and assembles its output in memory. Wrapping a call in `Task.Run` moves the work off the caller's own thread.
+所有序列化器都不做异步 I/O：格式处理是 CPU 密集型的，输出也在内存中拼装。把调用包进 `Task.Run`，只是为了把这份工作从调用方自己的线程上挪开。
 
-`CanRead` and `CanWrite` have no defaults. You must declare both.
+`CanRead` 和 `CanWrite` 没有默认值，两者都必须显式声明。
 
-### Writing your own HTML serializer
+### 自己写一个 HTML 序列化器 {#writing-your-own-html-serializer}
 
 :::info
-The `HtmlSerializer` in `Avalonia.Controls.Documents.Serialization.Html` reads only. The example below creates a custom HTML serializer that reads and writes.
+`Avalonia.Controls.Documents.Serialization.Html` 中的 `HtmlSerializer` 只支持读。下面的例子做了一个可读可写的自定义 HTML 序列化器。
 :::
 
 ```csharp
@@ -583,7 +583,7 @@ public class MyHtmlSerializer : IDocumentSerializer
 }
 ```
 
-**Usage:**
+**用法：**
 
 ```csharp
 var serializer = new MyHtmlSerializer();
@@ -591,15 +591,15 @@ await using var stream = File.Create("output.html");
 await editor.SaveAsync(stream, serializer);
 ```
 
-There is no format registry to register a serializer with: every serializer package depends on the core, so a registry there could not reference them back. Specify `CanRead` / `CanWrite` / `CanDeserialize` to allow a format picker to discover the serializer.
+框架里没有可供注册序列化器的格式注册表：每个序列化器包都依赖核心包，核心包里的注册表自然没法反过来引用它们。请指定 `CanRead` / `CanWrite` / `CanDeserialize`，好让格式选择器能发现你的序列化器。
 
-## Custom editor components
+## 自定义编辑器组件 {#custom-editor-components}
 
-### Auto-complete component
+### 自动补全组件 {#auto-complete-component}
 
-The `ITextViewComponent` interface allows creating input handler components that integrate with the editor's host infrastructure.
+`ITextViewComponent` 接口让你能编写与编辑器宿主基础设施打通的输入处理组件。
 
-`ITextViewComponent.OnAttach` takes an `IInteractiveTextHost`. This is the host interface the read-only viewers implement, not the editor-only `ITextEditorHost`. Cast if you need the editor's own surface.
+`ITextViewComponent.OnAttach` 接受的是 `IInteractiveTextHost`——这是只读阅读器也实现的宿主接口，而非编辑器专有的 `ITextEditorHost`。若你需要编辑器自己的界面，请做一次类型转换。
 
 ```csharp
 using Avalonia.Controls.Documents.Primitives.Components; // ITextViewComponent, TextViewComponentBase
@@ -700,11 +700,11 @@ public class AutoCompleteComponent : ITextViewComponent
 editor.RegisterComponent(new AutoCompleteComponent());
 ```
 
-## Custom undo units
+## 自定义撤销单元 {#custom-undo-units}
 
-### Grouping operations into a single undo step
+### 把多步操作合并成一次撤销 {#grouping-operations-into-a-single-undo-step}
 
-Use `UndoManager.BeginUndoUnit` to record everything inside the scope as one undoable action:
+用 `UndoManager.BeginUndoUnit` 可以把作用域内的全部改动记录成单个可撤销的动作：
 
 ```csharp
 using Avalonia.Controls.Documents.Undo;
@@ -727,51 +727,51 @@ if (undoManager != null)
 
 #### `IUndoUnit`
 
-`IUndoUnit` exposes only the `Description` property, and its undo / redo / merge mechanics are internal. You cannot create a custom undo unit. Use `BeginUndoUnit`, or `TextDocument.BeginChange()` if not using an undo manager.
+`IUndoUnit` 只对外暴露 `Description` 属性，其撤销 / 重做 / 合并机制都是 internal 的，你无法创建自定义撤销单元。请改用 `BeginUndoUnit`；若没有用撤销管理器，则用 `TextDocument.BeginChange()`。
 
-#### How to turn off recording
+#### 如何关闭记录 {#how-to-turn-off-recording}
 
-To turn recording off, set `TextDocument.UndoManager` to `null`, or keep the instance and its subscribers with `new UndoManager { IsEnabled = false }`. `UndoManager.CanUndo`, `CanRedo` and `StateChanged` are what a UI binds to. The unit stacks themselves are internal.
+要关闭记录，可以把 `TextDocument.UndoManager` 设为 `null`，或者保留实例及其订阅者而改用 `new UndoManager { IsEnabled = false }`。界面通常绑定的是 `UndoManager.CanUndo`、`CanRedo` 和 `StateChanged`；撤销单元栈本身是 internal 的。
 
-#### Restoring the caret
+#### 恢复插入符位置 {#restoring-the-caret}
 
-`SelectionSnapshot.Capture(selection)` builds a snapshot that `BeginUndoUnit` and `IUndoScope.SetSelectionAfter` accept, so a grouped edit can restore the caret it started from.
+`SelectionSnapshot.Capture(selection)` 会生成一个 `BeginUndoUnit` 和 `IUndoScope.SetSelectionAfter` 都接受的快照，于是一次成组编辑可以把插入符恢复到它开始时的位置。
 
-## Best practices
+## 实践建议 {#best-practices}
 
 ### Do's
 
-1. **Implement `ITextViewComponent`** — use the attach/detach lifecycle for proper cleanup and initial-scan support
-2. **Subscribe to input events on `host.UIScope`** — the host itself does not receive input events; only the UIScope does
-3. **Use `RoutingStrategies.Tunnel` for pointer interception** — built-in components like `TextViewMouse` mark events as handled on Bubble; use Tunnel to inspect events first
-4. **Use `ITextView.GetTextPositionFromPoint` for hit-testing** — selection state may be stale (especially during Tunnel); hit-test the click point directly
-5. **Inherit from base classes** — use `HighlightLayerBase`, not raw `IHighlightLayer`; use `TextViewComponentBase` rather than implementing `ITextViewComponent` from scratch
-6. **Handle nulls gracefully** — hosts, UIScope, and TextView can be null during transitions
-7. **Write unit tests** — test extensions thoroughly
-8. **Use async for long operations** — don't block the UI thread
+1. **实现 `ITextViewComponent`** —— 借助 attach/detach 生命周期做好清理，并支持首次扫描
+2. **在 `host.UIScope` 上订阅输入事件** —— 宿主本身收不到输入事件，只有 UIScope 能收到
+3. **用 `RoutingStrategies.Tunnel` 拦截指针事件** —— `TextViewMouse` 等内置组件会在冒泡阶段把事件标记为已处理；用隧道阶段才能抢先查看
+4. **用 `ITextView.GetTextPositionFromPoint` 做命中测试** —— 选区状态可能是过时的（隧道阶段尤其如此），请直接对点击点做命中测试
+5. **从基类继承** —— 用 `HighlightLayerBase` 而不是裸的 `IHighlightLayer`；用 `TextViewComponentBase` 而不是从零实现 `ITextViewComponent`
+6. **妥善处理 null** —— 宿主、UIScope 和 TextView 在状态切换期间都可能为 null
+7. **写单元测试** —— 把扩展测充分
+8. **耗时操作用异步** —— 别阻塞 UI 线程
 
 ### Don'ts
 
-1. **Don't subscribe to events on the host/editor directly** — use `host.UIScope` via `AddHandler`/`RemoveHandler`
-2. **Don't rely on selection state in pointer handlers** — hit-test the point instead; selection hasn't been updated yet during the Tunnel phase
-3. **Don't subclass a view** — `TextViewBase` is abstract, `PagedTextView` is sealed, and the constructor of `TextViewKeyboard` is internal.
-4. **Don't access internals** — use public APIs only
-5. **Don't hold strong document references** — these cause memory leaks
-6. **Don't block the UI thread** — use async for CPU/IO work
-7. **Don't assume document structure** — validate before accessing
-8. **Don't bypass undo system** — always record undoable operations
-9. **Don't forget to detach** — clean up event handlers
+1. **别直接在宿主/编辑器上订阅事件** —— 请通过 `AddHandler`/`RemoveHandler` 使用 `host.UIScope`
+2. **别在指针处理程序里依赖选区状态** —— 改为对点做命中测试；隧道阶段选区还没来得及更新
+3. **别对视图做派生** —— `TextViewBase` 是抽象类，`PagedTextView` 是 sealed 的，而 `TextViewKeyboard` 的构造函数是 internal 的。
+4. **别碰内部实现** —— 只用公开 API
+5. **别持有文档的强引用** —— 那会导致内存泄漏
+6. **别阻塞 UI 线程** —— CPU 和 IO 的活儿请用异步
+7. **别臆断文档结构** —— 访问之前先校验
+8. **别绕开撤销系统** —— 可撤销的操作一律记录在案
+9. **别忘了 detach** —— 清理好事件处理程序
 
-## Complete example: Smart link detection
+## 完整示例：智能链接识别 {#complete-example-smart-link-detection}
 
-This component detects URLs in the document, highlights them with a blue underline, and supports <kbd>Ctrl</kbd>+Click to open links. Key patterns demonstrated:
+这个组件会识别文档中的 URL，用蓝色下划线高亮它们，并支持 <kbd>Ctrl</kbd>+单击打开链接。它演示了以下几个关键套路：
 
-- **`ITextViewComponent` lifecycle** — scans on attach (existing content) and on every subsequent text or document change
-- **`host.UIScope`** — subscribes to pointer events on the UIScope, not the host itself, because only the UIScope receives input events
-- **`RoutingStrategies.Tunnel`** — subscribes in the Tunnel phase so the handler fires before `TextViewMouse` marks the event as handled in the Bubble phase
-- **`ITextView` hit-testing** — uses `GetTextPositionFromPoint` to resolve the click position to a `TextPointer`; selection state is stale during the Tunnel phase
+- **`ITextViewComponent` 生命周期** —— attach 时扫描一遍现有内容，之后每次文本或文档变化都再扫一遍
+- **`host.UIScope`** —— 在 UIScope 而非宿主本身上订阅指针事件，因为只有 UIScope 才收得到输入事件
+- **`RoutingStrategies.Tunnel`** —— 在隧道阶段订阅，好让处理程序赶在 `TextViewMouse` 于冒泡阶段把事件标记为已处理之前触发
+- **`ITextView` 命中测试** —— 用 `GetTextPositionFromPoint` 把点击位置解析成 `TextPointer`；隧道阶段的选区状态是过时的
 
-The layer it paints through, wrapping the protected members of `HighlightLayerBase`:
+它用来绘制的那个层，包装了 `HighlightLayerBase` 的受保护成员：
 
 ```csharp
 public class LinkHighlightLayer : HighlightLayerBase
@@ -787,7 +787,7 @@ public class LinkHighlightLayer : HighlightLayerBase
 }
 ```
 
-The component itself:
+组件本身：
 
 ```csharp
 // Register via editor.RegisterComponent(new SmartLinkExtension()).
@@ -924,11 +924,11 @@ public class SmartLinkExtension : ITextViewComponent
 }
 ```
 
-## Testing extensions
+## 测试扩展 {#testing-extensions}
 
-`DocumentSnapshot.EnumerateNodes` is the public surface for inspecting a snapshot. To exercise the rebuild path as well, serialize the snapshot through your own format (or any bundled serializer) and load it back with `FlowDocument.Load`.
+`DocumentSnapshot.EnumerateNodes` 是检视快照的公开入口。若连重建路径也要一并验证，可以用你自己的格式（或任意随附的序列化器）把快照序列化出去，再用 `FlowDocument.Load` 读回来。
 
-Any test touching an `AvaloniaObject` needs `[AvaloniaFact]` rather than a plain `[Fact]`: thread affinity makes plain facts flaky.
+凡是涉及 `AvaloniaObject` 的测试都要用 `[AvaloniaFact]` 而不是普通的 `[Fact]`：线程亲和性会让普通写法变得时灵时不灵。
 
 ```csharp
 public class MentionInlineTests
@@ -963,8 +963,8 @@ public class MentionInlineTests
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [RichTextEditor reference](/controls/input/text-input/richtexteditor)
-- [Performance tuning](/controls/input/text-input/richtexteditor/performance-tuning)
-- [Thread safety](/controls/input/text-input/richtexteditor/thread-safety)
+- [RichTextEditor 参考](/controls/input/text-input/richtexteditor)
+- [性能调优](/controls/input/text-input/richtexteditor/performance-tuning)
+- [线程安全](/controls/input/text-input/richtexteditor/thread-safety)

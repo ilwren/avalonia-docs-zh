@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TableFormatting Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,14 +51,14 @@ public struct TableFormatting
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TableFormatting
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TableFormatting
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;TableFormatting&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;TableFormatting&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Memory footprint: ~8 bytes + array overhead (struct, inline in [SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)).
 
@@ -74,34 +74,34 @@ to match Avalonia property system conventions.
 
 Cell padding maps to `TableCell.Padding`, with the original RTF values (\trgaph) preserved in TableRtfMetadata for round-trip.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-a41f555fad) | No summary available. |
-| [GetHashCode](#uid-ce36a5e4ce) | No summary available. |
-| [ToString](#uid-75d85fb254) | No summary available. |
+| [Equals（2 个重载）](#uid-a41f555fad) | 暂无摘要。 |
+| [GetHashCode](#uid-ce36a5e4ce) | 暂无摘要。 |
+| [ToString](#uid-75d85fb254) | 暂无摘要。 |
 
 <span id="uid-a41f555fad"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7735cb5b20"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -112,18 +112,18 @@ bool
 
 <span id="uid-35edb1333b"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -134,13 +134,13 @@ bool
 
 <span id="uid-ce36a5e4ce"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -151,25 +151,25 @@ int
 
 <span id="uid-75d85fb254"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Columns](#uid-ca3dd5d605) | Column definitions with width value and unit type. Default means not explicitly set (use auto-layout or equal distribution). |
-| [Default](#uid-0cbd20d509) | Default formatting with no explicit values set. |
+| [Default](#uid-0cbd20d509) | 未显式设置任何值的默认格式。 |
 | [InsideBorderArgb](#uid-0ff1c50e43) | Packed ARGB colour of the interior gridlines. Null means no interior grid. |
 | [InsideBorderWidth](#uid-22adf359b7) | Width, in device-independent pixels, of the interior gridlines drawn between cells (Word's `w:insideH` / `w:insideV`). Zero means no interior grid. |
 
@@ -177,7 +177,7 @@ string
 
 <span id="uid-ca3dd5d605"></span>
 
-### Columns Property
+### Columns 属性 {#columns-property}
 
 Column definitions with width value and unit type.
 Default means not explicitly set (use auto-layout or equal distribution).
@@ -186,7 +186,7 @@ Default means not explicitly set (use auto-layout or equal distribution).
 public Avalonia.Controls.Documents.TextModel.Formatting.TableColumnWidth[] Columns { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 The widths carry their [Avalonia.Controls.GridUnitType](xref:Avalonia.Controls.GridUnitType), so a Star column stays a
 Star column across snapshot capture, undo and a serializer round trip. The
@@ -200,9 +200,9 @@ recorded state.
 
 <span id="uid-0cbd20d509"></span>
 
-### Default Property
+### Default 属性 {#default-property}
 
-Default formatting with no explicit values set.
+未显式设置任何值的默认格式。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting Default { get; set; }
@@ -214,7 +214,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.TableFormatting Default 
 
 <span id="uid-0ff1c50e43"></span>
 
-### InsideBorderArgb Property
+### InsideBorderArgb 属性 {#insideborderargb-property}
 
 Packed ARGB colour of the interior gridlines. Null means no interior grid.
 
@@ -228,7 +228,7 @@ public Nullable<uint> InsideBorderArgb { get; set; }
 
 <span id="uid-22adf359b7"></span>
 
-### InsideBorderWidth Property
+### InsideBorderWidth 属性 {#insideborderwidth-property}
 
 Width, in device-independent pixels, of the interior gridlines drawn between cells
 (Word's `w:insideH` / `w:insideV`). Zero means no interior grid.

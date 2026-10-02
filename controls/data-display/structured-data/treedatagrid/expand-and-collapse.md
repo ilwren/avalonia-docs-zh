@@ -1,7 +1,7 @@
 ---
 id: expand-and-collapse
-title: Expand and collapse operations
-description: Learn how to programmatically expand and collapse rows in a hierarchical TreeDataGrid, respond to expand/collapse events, and implement lazy loading on demand.
+title: 展开与折叠操作
+description: 了解如何以编程方式展开和折叠层级 TreeDataGrid 中的行、响应展开/折叠事件，并实现按需延迟加载。
 doc-type: reference
 tags:
   - avalonia pro
@@ -9,18 +9,18 @@ tags:
 ---
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-When you use a hierarchical `TreeDataGrid`, your users can expand and collapse rows to navigate parent-child relationships. Avalonia provides methods on `HierarchicalTreeDataGridSource<T>` that let you control this behavior programmatically, whether you need to expand a single node, expand all nodes at once, or conditionally expand rows that match a filter. You can also subscribe to events that fire before and after each expand or collapse operation.
+使用层级式 `TreeDataGrid` 时，用户可以展开和折叠行来浏览父子关系。Avalonia 在 `HierarchicalTreeDataGridSource<T>` 上提供了若干方法，让你以编程方式掌控这一行为：既可以展开单个节点，也可以一次性全部展开，还可以只展开符合某个条件的行。你也可以订阅在每次展开或折叠前后触发的事件。
 
 :::note
-Programmatic expand/collapse and expand/collapse events require the code-behind `Source` approach with `HierarchicalTreeDataGridSource<T>`.
+以编程方式展开/折叠，以及展开/折叠事件，都要求采用代码隐藏中的 `Source` 写法，配合 `HierarchicalTreeDataGridSource<T>`。
 :::
 
-## Basic expand and collapse operations
+## 基本的展开与折叠操作 {#basic-expand-and-collapse-operations}
 
-You can programmatically expand or collapse rows in a hierarchical `TreeDataGrid`:
+你可以用代码展开或折叠层级式 `TreeDataGrid` 中的行：
 
 ```csharp
 var Source = new HierarchicalTreeDataGridSource<Person>(_people)
@@ -35,12 +35,12 @@ Source.Collapse(new IndexPath(0));
 ```
 
 :::info
-For more information about `IndexPath` see [Selection modes](/controls/data-display/structured-data/treedatagrid/selection-modes)
+关于 `IndexPath` 的更多内容，请参阅[选择模式](/controls/data-display/structured-data/treedatagrid/selection-modes)
 :::
 
-### Expand all and collapse all
+### 全部展开与全部折叠 {#expand-all-and-collapse-all}
 
-The source provides built-in methods for expanding or collapsing all rows:
+数据源内置了一次性展开或折叠所有行的方法：
 
 ```csharp
 // Expand all rows in the tree
@@ -50,9 +50,9 @@ Source.ExpandAll();
 Source.CollapseAll();
 ```
 
-### Expand or collapse based on a condition
+### 按条件展开或折叠 {#expand-or-collapse-based-on-a-condition}
 
-You can expand or collapse rows based on a condition:
+你可以按条件展开或折叠行：
 
 ```csharp
 // Expand all rows where Person.Age > 18
@@ -62,9 +62,9 @@ Source.ExpandCollapseRecursive(person => person.Age > 18);
 Source.ExpandCollapseRecursive(_ => false);
 ```
 
-## Responding to expand and collapse events
+## 响应展开与折叠事件 {#responding-to-expand-and-collapse-events}
 
-You can handle expand and collapse events to load data on demand or perform other actions. These events use `TreeDataGridRowModelEventArgs`:
+你可以处理展开和折叠事件，用来按需加载数据或执行其他操作。这些事件使用 `TreeDataGridRowModelEventArgs`：
 
 ```csharp
 Source.RowExpanding += (sender, e) =>
@@ -94,9 +94,9 @@ Source.RowCollapsed += (sender, e) =>
 };
 ```
 
-## Lazy loading data on expand
+## 展开时延迟加载数据 {#lazy-loading-data-on-expand}
 
-A common pattern is to load child data on demand when the user expands a row, rather than loading your entire tree upfront. You can use the `RowExpanding` event to populate children just before a row opens. This keeps initial load times fast, especially for large data sets.
+一种常见做法是：不在一开始就把整棵树加载进来，而是等用户展开某一行时再加载它的子数据。你可以在 `RowExpanding` 事件中，赶在该行展开之前填充子项。这样初始加载会快得多，数据量大时尤其明显。
 
 ```csharp
 Source.RowExpanding += (sender, e) =>
@@ -113,10 +113,10 @@ Source.RowExpanding += (sender, e) =>
 };
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)
 - [Sorting](/controls/data-display/structured-data/treedatagrid/sorting)
 - [Filtering](/controls/data-display/structured-data/treedatagrid/filtering)
-- [Selection modes](/controls/data-display/structured-data/treedatagrid/selection-modes)
-- [Column types](/controls/data-display/structured-data/treedatagrid/column-types)
+- [选择模式](/controls/data-display/structured-data/treedatagrid/selection-modes)
+- [列类型](/controls/data-display/structured-data/treedatagrid/column-types)

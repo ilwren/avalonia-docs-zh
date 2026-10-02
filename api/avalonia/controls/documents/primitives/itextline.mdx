@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITextLine Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -48,27 +48,27 @@ public interface ITextLine
 
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-51ea79b491) | Gets the baseline offset from the top of the line. |
-| [Bounds](#uid-b50c8458ed) | Gets the bounding rectangle of this line in view coordinates. |
+| [Baseline](#uid-51ea79b491) | 获取自行顶部量起的基线偏移量。 |
+| [Bounds](#uid-b50c8458ed) | 获取该行在视图坐标系中的外接矩形。 |
 | [ContainingElement](#uid-1101022e19) | Gets the node whose content this line belongs to, if any. Selection rendering and vertical navigation group lines by it, so a line that reports none is skipped by both. |
-| [EndPosition](#uid-b66caf3cd4) | Gets the end position of this line as a lightweight value type. |
-| [HasLineBreak](#uid-fb809b2c64) | Gets whether this line ends with a hard line break. |
-| [Height](#uid-182cd43021) | Gets the height of this line. |
-| [Length](#uid-cc5ea53799) | Gets the character length of text in this line. |
-| [StartPosition](#uid-bd3a8aa765) | Gets the start position of this line as a lightweight value type. |
-| [Width](#uid-dd50ef7964) | Gets the width of this line. |
+| [EndPosition](#uid-b66caf3cd4) | 以轻量值类型的形式获取该行的结束位置。 |
+| [HasLineBreak](#uid-fb809b2c64) | 获取该行是否以硬换行结束。 |
+| [Height](#uid-182cd43021) | 获取该行的高度。 |
+| [Length](#uid-cc5ea53799) | 获取该行文本的字符长度。 |
+| [StartPosition](#uid-bd3a8aa765) | 以轻量值类型的形式获取该行的起始位置。 |
+| [Width](#uid-dd50ef7964) | 获取该行的宽度。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-51ea79b491"></span>
 
-### Baseline Property
+### Baseline 属性 {#baseline-property}
 
-Gets the baseline offset from the top of the line.
+获取自行顶部量起的基线偏移量。
 
 ```csharp
 public double Baseline { get; set; }
@@ -80,9 +80,9 @@ public double Baseline { get; set; }
 
 <span id="uid-b50c8458ed"></span>
 
-### Bounds Property
+### Bounds 属性 {#bounds-property}
 
-Gets the bounding rectangle of this line in view coordinates.
+获取该行在视图坐标系中的外接矩形。
 
 ```csharp
 public Avalonia.Rect Bounds { get; set; }
@@ -94,7 +94,7 @@ public Avalonia.Rect Bounds { get; set; }
 
 <span id="uid-1101022e19"></span>
 
-### ContainingElement Property
+### ContainingElement 属性 {#containingelement-property}
 
 Gets the node whose content this line belongs to, if any. Selection
 rendering and vertical navigation group lines by it, so a line that
@@ -104,7 +104,7 @@ reports none is skipped by both.
 public object ContainingElement { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Defaults to so a line written before this member existed
 still compiles. Such a line is skipped by selection rendering and by vertical
@@ -116,9 +116,9 @@ navigation, which is the same treatment it received before the member was added.
 
 <span id="uid-b66caf3cd4"></span>
 
-### EndPosition Property
+### EndPosition 属性 {#endposition-property}
 
-Gets the end position of this line as a lightweight value type.
+以轻量值类型的形式获取该行的结束位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.StaticTextPointer EndPosition { get; set; }
@@ -130,9 +130,9 @@ public Avalonia.Controls.Documents.TextModel.StaticTextPointer EndPosition { get
 
 <span id="uid-fb809b2c64"></span>
 
-### HasLineBreak Property
+### HasLineBreak 属性 {#haslinebreak-property}
 
-Gets whether this line ends with a hard line break.
+获取该行是否以硬换行结束。
 
 ```csharp
 public bool HasLineBreak { get; set; }
@@ -144,9 +144,9 @@ public bool HasLineBreak { get; set; }
 
 <span id="uid-182cd43021"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
-Gets the height of this line.
+获取该行的高度。
 
 ```csharp
 public double Height { get; set; }
@@ -158,9 +158,9 @@ public double Height { get; set; }
 
 <span id="uid-cc5ea53799"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
-Gets the character length of text in this line.
+获取该行文本的字符长度。
 
 ```csharp
 public int Length { get; set; }
@@ -172,9 +172,9 @@ public int Length { get; set; }
 
 <span id="uid-bd3a8aa765"></span>
 
-### StartPosition Property
+### StartPosition 属性 {#startposition-property}
 
-Gets the start position of this line as a lightweight value type.
+以轻量值类型的形式获取该行的起始位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.StaticTextPointer StartPosition { get; set; }
@@ -186,9 +186,9 @@ public Avalonia.Controls.Documents.TextModel.StaticTextPointer StartPosition { g
 
 <span id="uid-dd50ef7964"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
-Gets the width of this line.
+获取该行的宽度。
 
 ```csharp
 public double Width { get; set; }

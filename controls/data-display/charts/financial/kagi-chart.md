@@ -1,7 +1,7 @@
 ---
 id: kagi-chart
-title: Kagi chart
-description: Time-independent chart that tracks price movements using vertical lines, changing direction only when price exceeds a set reversal amount.
+title: 卡吉图
+description: 不依赖时间轴，用竖线追踪价格走势，只有当价格超过设定的反转幅度时才改变方向。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFinancialKagi from '/img/controls/charts/charts-financial-kagi.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Kagi charts are time-independent charts that track price movements using vertical lines. They change direction (and line thickness) only when price reaches a certain reversal amount.
+卡吉图（Kagi）不依赖时间轴，用竖线追踪价格走势。只有当价格达到一定的反转幅度时，它才改变方向（以及线条粗细）。
 
 <Image light={chartsFinancialKagi} maxWidth={400} position="center" cornerRadius="true" alt="Kagi chart with thick and thin vertical lines changing direction only when price reverses by a set amount." />
 
-## When to use
-- **Pure price action**: Focusing on price changes regardless of time or volume.
-- **Breakout identification**: Using the "Yang" (thick) and "Yin" (thin) lines to spot reversals.
-- **Following trends**: Filtering out small fluctuations that don't meet the reversal threshold.
+## 适用场景 {#when-to-use}
+- **纯粹的价格行为**：只盯价格变化，不理会时间和成交量。
+- **突破辨识**：借助「阳线」（粗）和「阴线」（细）发现反转。
+- **跟随趋势**：滤掉那些没达到反转阈值的小幅波动。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Kagi charts are time-independent charts that track price movements using vertica
                                         ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using System;
 
@@ -53,13 +53,13 @@ private static IEnumerable<KagiPoint> CreateKagiData()
 }
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of raw price points. | `null` |
-| `ValuePath` | Property representing the price. | `null` |
-| `ReversalAmount`| Minimum price change required to flip direction. | `1.0` |
-| `YangBrush` | Brush for the yang segments. (Rising above previous high) | `Green` |
-| `YinBrush` | Brush for the yin segments. (Falling below previous low) | `Red` |
-| `StrokeThickness` | Base stroke thickness. | `2.0` |
+| `ItemsSource` | 原始价格点的集合。 | `null` |
+| `ValuePath` | 表示价格的属性。 | `null` |
+| `ReversalAmount`| 触发方向翻转所需的最小价格变动。 | `1.0` |
+| `YangBrush` | 阳线段所用的画刷。（涨破前高） | `Green` |
+| `YinBrush` | 阴线段所用的画刷。（跌破前低） | `Red` |
+| `StrokeThickness` | 基础线条粗细。 | `2.0` |

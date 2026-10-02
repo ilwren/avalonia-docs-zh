@@ -1,7 +1,7 @@
 ---
 id: network-chart
-title: Network chart
-description: Displays nodes and edges in a static layout, suitable for infrastructure diagrams, dependency trees, and fixed structural visualizations.
+title: 网络图
+description: 以静态版面呈现节点和边，适合基础设施图、依赖树和结构固定的图示。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFlowNetwork from '/img/controls/charts/charts-flow-network.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Network charts provide a high-level view of nodes and edges. They are simpler and more static than force-directed graphs, suitable for fixed structural diagrams.
+网络图提供节点与边的概览视图。它比力导向图更简单、更静态，适合结构固定的图示。
 
 <Image light={chartsFlowNetwork} maxWidth={400} position="center" cornerRadius="true" alt="Network chart with labeled nodes connected by edges showing static relationships in a structural diagram." />
 
-## When to use
-- **Infrastructure diagrams**: Showing servers and their connections.
-- **Routing tables**: Mapping paths between network points.
-- **Dependency trees**: Visualizing module relationships in a system.
+## 适用场景 {#when-to-use}
+- **基础设施图**：呈现各台服务器及其连接。
+- **路由表**：梳理网络节点之间的路径。
+- **依赖树**：呈现系统中各模块之间的关系。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Network charts provide a high-level view of nodes and edges. They are simpler an
                        Edges="{Binding NetworkEdges}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<NetworkNode> NetworkNodes { get; } = new()
 {
@@ -53,11 +53,11 @@ public ObservableCollection<NetworkEdge> NetworkEdges { get; } = new()
 };
 ```
 
-`NetworkChart` uses `NetworkNode` and `NetworkEdge` objects directly, so labels and weights are defined on those types rather than through extra property-path settings.
+`NetworkChart` 直接使用 `NetworkNode` 和 `NetworkEdge` 对象，因此标签和权重定义在这些类型上，不必再额外设置属性路径。
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Nodes` | The collection of graph nodes. | `null` |
-| `Edges` | The collection of graph edges. | `null` |
+| `Nodes` | 图节点的集合。 | `null` |
+| `Edges` | 图的边的集合。 | `null` |

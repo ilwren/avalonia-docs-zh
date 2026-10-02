@@ -20,28 +20,28 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IThemeVariantProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IThemeVariantProvider.cs">IThemeVariantProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IThemeVariantProvider.cs">IThemeVariantProvider.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Resource provider with theme variant awareness.
-Can be used with [Avalonia.Controls.IResourceDictionary.ThemeDictionaries](xref:Avalonia.Controls.IResourceDictionary.ThemeDictionaries).
+能感知主题变体的资源提供程序。
+可与 [Avalonia.Controls.IResourceDictionary.ThemeDictionaries](xref:Avalonia.Controls.IResourceDictionary.ThemeDictionaries) 搭配使用。
 
 </div>
 
@@ -55,28 +55,28 @@ public interface IThemeVariantProvider
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iresourcenode">IResourceNode</a>, <a href="iresourceprovider">IResourceProvider</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iresourcenode">IResourceNode</a>, <a href="iresourceprovider">IResourceProvider</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-This is a helper interface for the XAML compiler to make Key property accessibly by the markup extensions.
-Which means, it can only be used with ResourceDictionaries and markup extensions in the XAML code.
+这是给 XAML 编译器用的辅助接口，好让标记扩展能访问到 Key 属性。
+也就是说，它只能用在 XAML 代码中的 ResourceDictionary 和标记扩展上。
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Key](#uid-b4dd6cccaf) | Key property set by the compiler. |
+| [Key](#uid-b4dd6cccaf) | 由编译器设置的 Key 属性。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b4dd6cccaf"></span>
 
-### Key Property
+### Key 属性 {#key-property}
 
-Key property set by the compiler.
+由编译器设置的 Key 属性。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant Key { get; set; }

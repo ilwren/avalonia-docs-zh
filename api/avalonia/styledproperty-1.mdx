@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StyledProperty&lt;TValue&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/StyledProperty.cs">StyledProperty.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/StyledProperty.cs">StyledProperty.cs</a>
 </div>
 
 </div>
@@ -54,36 +54,36 @@ public class StyledProperty<TValue>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> AvaloniaProperty&lt;&gt; <span className="apiref-page__relation-separator">-&gt;</span> StyledProperty&lt;TValue&gt;
+<span className="apiref-page__meta-label">继承关系：</span> AvaloniaProperty&lt;&gt; <span className="apiref-page__relation-separator">-&gt;</span> StyledProperty&lt;TValue&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IStyledPropertyAccessor
+<span className="apiref-page__meta-label">实现接口：</span> IStyledPropertyAccessor
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddOwner](#uid-c924301c33) | No summary available. |
-| [CoerceValue](#uid-061dd4a28b) | No summary available. |
+| [AddOwner](#uid-c924301c33) | 暂无摘要。 |
+| [CoerceValue](#uid-061dd4a28b) | 暂无摘要。 |
 | [GetDefaultValue (2 overloads)](#uid-3f68630f83) | Gets the default value for the property on the specified object. |
-| [GetMetadata (2 overloads)](#uid-93b7eff4df) | Gets the [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata) which applies to this property when it is used with the specified object. |
+| [GetMetadata（2 个重载）](#uid-93b7eff4df) | 获取该属性用于指定对象时所适用的 [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)。 |
 | [OverrideDefaultValue (2 overloads)](#uid-2e51c5f73c) | Overrides the default value for the property on the specified type. |
-| [OverrideMetadata (2 overloads)](#uid-2a40013894) | No summary available. |
-| [ToString](#uid-c313ea99bf) | Gets the string representation of the property. |
+| [OverrideMetadata（2 个重载）](#uid-2a40013894) | 暂无摘要。 |
+| [ToString](#uid-c313ea99bf) | 获取该属性的字符串表示形式。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c924301c33"></span>
 
-### AddOwner Method
+### AddOwner 方法 {#addowner-method}
 
 ```csharp
 public Avalonia.StyledProperty<TValue><TValue> AddOwner<TOwner>(Avalonia.StyledPropertyMetadata<TValue><TValue> metadata)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `metadata` Avalonia.StyledPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
@@ -93,7 +93,7 @@ public Avalonia.StyledProperty<TValue><TValue> AddOwner<TOwner>(Avalonia.StyledP
 `TOwner`
 
 
-#### Returns
+#### 返回值 {#returns}
 
 Avalonia.StyledProperty&lt;TValue&gt;&lt;TValue&gt;
 
@@ -104,13 +104,13 @@ Avalonia.StyledProperty&lt;TValue&gt;&lt;TValue&gt;
 
 <span id="uid-061dd4a28b"></span>
 
-### CoerceValue Method
+### CoerceValue 方法 {#coercevalue-method}
 
 ```csharp
 public TValue CoerceValue(Avalonia.AvaloniaObject instance, TValue baseValue)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `instance` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
@@ -118,7 +118,7 @@ public TValue CoerceValue(Avalonia.AvaloniaObject instance, TValue baseValue)
 `baseValue` TValue
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 TValue
 
@@ -133,7 +133,7 @@ TValue
 
 <span id="uid-8cf772e2c9"></span>
 
-#### GetDefaultValue Method
+#### GetDefaultValue 方法 {#getdefaultvalue-method}
 
 Gets the default value for the property on the specified object.
 
@@ -141,18 +141,18 @@ Gets the default value for the property on the specified object.
 public TValue GetDefaultValue(Avalonia.AvaloniaObject owner)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `owner` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The object.
+该对象。
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 TValue
 
-The default value.
+默认值。
 
 
 </section>
@@ -161,7 +161,7 @@ The default value.
 
 <span id="uid-e8ed2726a4"></span>
 
-#### GetDefaultValue Method
+#### GetDefaultValue 方法 {#getdefaultvalue-method-1}
 
 Gets the default value for the property on the specified type.
 
@@ -169,21 +169,21 @@ Gets the default value for the property on the specified type.
 public TValue GetDefaultValue(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 TValue
 
-The default value.
+默认值。
 
 
-##### Remarks
+##### 备注 {#remarks}
 
 For performance, prefer the [Avalonia.StyledProperty&lt;T&gt;.GetDefaultValue(Avalonia.AvaloniaObject)](xref:Avalonia.StyledProperty%601.GetDefaultValue%28Avalonia.AvaloniaObject%29) overload when possible.
 
@@ -191,28 +191,28 @@ For performance, prefer the [Avalonia.StyledProperty&lt;T&gt;.GetDefaultValue(Av
 
 <span id="uid-93b7eff4df"></span>
 
-### GetMetadata overloads
+### GetMetadata 的重载 {#getmetadata-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6b85e2327d"></span>
 
-#### GetMetadata Method
+#### GetMetadata 方法 {#getmetadata-method}
 
-Gets the [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata) which applies to this property when it is used with the specified object.
+获取该属性用于指定对象时所适用的 [Avalonia.AvaloniaPropertyMetadata](xref:Avalonia.AvaloniaPropertyMetadata)。
 
 ```csharp
 public Avalonia.StyledPropertyMetadata<TValue><TValue> GetMetadata(Avalonia.AvaloniaObject owner)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `owner` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The object for which to retrieve metadata.
+要取得其元数据的那个对象。
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 Avalonia.StyledPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
@@ -223,27 +223,27 @@ Avalonia.StyledPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
 <span id="uid-5fb9c310f0"></span>
 
-#### GetMetadata Method
+#### GetMetadata 方法 {#getmetadata-method-1}
 
 ```csharp
 public Avalonia.StyledPropertyMetadata<TValue><TValue> GetMetadata(Type type)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
-`type` Type
+`type` 类型
 
-The type for which to retrieve metadata.
+要取得其元数据的那个类型。
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 Avalonia.StyledPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
 
-##### Remarks
+##### 备注 {#remarks-1}
 
-For performance, prefer the [Avalonia.AvaloniaProperty.GetMetadata(Avalonia.AvaloniaObject)](xref:Avalonia.AvaloniaProperty.GetMetadata%28Avalonia.AvaloniaObject%29) overload when possible.
+出于性能考虑，条件允许时请优先用 [Avalonia.AvaloniaProperty.GetMetadata(Avalonia.AvaloniaObject)](xref:Avalonia.AvaloniaProperty.GetMetadata%28Avalonia.AvaloniaObject%29) 这个重载。
 
 </section>
 
@@ -255,7 +255,7 @@ For performance, prefer the [Avalonia.AvaloniaProperty.GetMetadata(Avalonia.Aval
 
 <span id="uid-9a841ead06"></span>
 
-#### OverrideDefaultValue Method
+#### OverrideDefaultValue 方法 {#overridedefaultvalue-method}
 
 Overrides the default value for the property on the specified type.
 
@@ -263,16 +263,16 @@ Overrides the default value for the property on the specified type.
 public void OverrideDefaultValue(Type type, TValue defaultValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
-`type` Type
+`type` 类型
 
-The type.
+该类型。
 
 
 `defaultValue` TValue
 
-The default value.
+默认值。
 
 
 </section>
@@ -281,13 +281,13 @@ The default value.
 
 <span id="uid-b55489bf4b"></span>
 
-#### OverrideDefaultValue Method
+#### OverrideDefaultValue 方法 {#overridedefaultvalue-method-1}
 
 ```csharp
 public void OverrideDefaultValue<T>(TValue defaultValue)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `defaultValue` TValue
 
@@ -301,19 +301,19 @@ public void OverrideDefaultValue<T>(TValue defaultValue)
 
 <span id="uid-2a40013894"></span>
 
-### OverrideMetadata overloads
+### OverrideMetadata 的重载 {#overridemetadata-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f16e35d0c6"></span>
 
-#### OverrideMetadata Method
+#### OverrideMetadata 方法 {#overridemetadata-method}
 
 ```csharp
 public void OverrideMetadata<T>(Avalonia.StyledPropertyMetadata<TValue><TValue> metadata)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `metadata` Avalonia.StyledPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
 
@@ -329,15 +329,15 @@ public void OverrideMetadata<T>(Avalonia.StyledPropertyMetadata<TValue><TValue> 
 
 <span id="uid-cfc9ee19c1"></span>
 
-#### OverrideMetadata Method
+#### OverrideMetadata 方法 {#overridemetadata-method-1}
 
 ```csharp
 public void OverrideMetadata(Type type, Avalonia.StyledPropertyMetadata<TValue><TValue> metadata)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
-`type` Type
+`type` 类型
 
 
 `metadata` Avalonia.StyledPropertyMetadata&lt;TValue&gt;&lt;TValue&gt;
@@ -349,26 +349,26 @@ public void OverrideMetadata(Type type, Avalonia.StyledPropertyMetadata<TValue><
 
 <span id="uid-c313ea99bf"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
-Gets the string representation of the property.
+获取该属性的字符串表示形式。
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-6}
 
 string
 
-The property's string representation.
+该属性的字符串表示形式。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ValidateValue](#uid-4f98099b69) | A method which returns "false" for values that are never valid for this property. |
 
@@ -376,7 +376,7 @@ The property's string representation.
 
 <span id="uid-4f98099b69"></span>
 
-### ValidateValue Property
+### ValidateValue 属性 {#validatevalue-property}
 
 A method which returns "false" for values that are never valid for this property.
 

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">LayoutHelper Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Layout</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Layout</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Layout/LayoutHelper.cs">LayoutHelper.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Layout/LayoutHelper.cs">LayoutHelper.cs</a>
 </div>
 
 </div>
@@ -54,20 +54,20 @@ public class LayoutHelper
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> LayoutHelper
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> LayoutHelper
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ApplyLayoutConstraints](#uid-e929f70b79) | Calculates a control's size based on its [Avalonia.Layout.Layoutable.Width](xref:Avalonia.Layout.Layoutable.Width), [Avalonia.Layout.Layoutable.Height](xref:Avalonia.Layout.Layoutable.Height), [Avalonia.Layout.Layoutable.MinWidth](xref:Avalonia.Layout.Layoutable.MinWidth), [Avalonia.Layout.Layoutable.MaxWidth](xref:Avalonia.Layout.Layoutable.MaxWidth), [Avalonia.Layout.Layoutable.MinHeight](xref:Avalonia.Layout.Layoutable.MinHeight) and [Avalonia.Layout.Layoutable.MaxHeight](xref:Avalonia.Layout.Layoutable.MaxHeight). |
-| [ArrangeChild (2 overloads)](#uid-bf39afb699) | No summary available. |
+| [ArrangeChild (2 overloads)](#uid-bf39afb699) | 暂无摘要。 |
 | [GetLayoutScale](#uid-da58c04ba6) | Obtains layout scale of the given control. |
 | [InvalidateSelfAndChildrenMeasure](#uid-3d6a70cf0c) | Invalidates measure for given control and all visual children recursively. |
-| [MeasureChild (2 overloads)](#uid-b5a20f13d6) | No summary available. |
-| [RoundLayoutPoint](#uid-0c5ce632a8) | No summary available. |
+| [MeasureChild (2 overloads)](#uid-b5a20f13d6) | 暂无摘要。 |
+| [RoundLayoutPoint](#uid-0c5ce632a8) | 暂无摘要。 |
 | [RoundLayoutSizeUp](#uid-87bf309333) | Rounds a size to integer values for layout purposes, compensating for high DPI screen coordinates by rounding the size up to the nearest pixel. |
 | [RoundLayoutThickness](#uid-6400b6f2d3) | Rounds a thickness to integer values for layout purposes, compensating for high DPI screen coordinates. |
 | [RoundLayoutValue](#uid-de14940545) | Calculates the value to be used for layout rounding at high DPI by rounding the value up or down to the nearest pixel. |
@@ -77,7 +77,7 @@ public class LayoutHelper
 
 <span id="uid-e929f70b79"></span>
 
-### ApplyLayoutConstraints Method
+### ApplyLayoutConstraints 方法 {#applylayoutconstraints-method}
 
 Calculates a control's size based on its [Avalonia.Layout.Layoutable.Width](xref:Avalonia.Layout.Layoutable.Width),
 [Avalonia.Layout.Layoutable.Height](xref:Avalonia.Layout.Layoutable.Height), [Avalonia.Layout.Layoutable.MinWidth](xref:Avalonia.Layout.Layoutable.MinWidth),
@@ -88,11 +88,11 @@ Calculates a control's size based on its [Avalonia.Layout.Layoutable.Width](xref
 public Avalonia.Size ApplyLayoutConstraints(Avalonia.Layout.Layoutable control, Avalonia.Size constraints)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
-The control.
+该控件。
 
 
 `constraints` [Avalonia.Size](xref:Avalonia.Size)
@@ -100,7 +100,7 @@ The control.
 The space available for the control.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -117,13 +117,13 @@ The control's size.
 
 <span id="uid-960d44b4df"></span>
 
-#### ArrangeChild Method
+#### ArrangeChild 方法 {#arrangechild-method}
 
 ```csharp
 public Avalonia.Size ArrangeChild(Avalonia.Layout.Layoutable child, Avalonia.Size availableSize, Avalonia.Thickness padding)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `child` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
@@ -134,7 +134,7 @@ public Avalonia.Size ArrangeChild(Avalonia.Layout.Layoutable child, Avalonia.Siz
 `padding` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -145,13 +145,13 @@ public Avalonia.Size ArrangeChild(Avalonia.Layout.Layoutable child, Avalonia.Siz
 
 <span id="uid-c4cc20929f"></span>
 
-#### ArrangeChild Method
+#### ArrangeChild 方法 {#arrangechild-method-1}
 
 ```csharp
 public Avalonia.Size ArrangeChild(Avalonia.Layout.Layoutable child, Avalonia.Size availableSize, Avalonia.Thickness padding, Avalonia.Thickness borderThickness)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `child` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
@@ -165,7 +165,7 @@ public Avalonia.Size ArrangeChild(Avalonia.Layout.Layoutable child, Avalonia.Siz
 `borderThickness` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -176,7 +176,7 @@ public Avalonia.Size ArrangeChild(Avalonia.Layout.Layoutable child, Avalonia.Siz
 
 <span id="uid-da58c04ba6"></span>
 
-### GetLayoutScale Method
+### GetLayoutScale 方法 {#getlayoutscale-method}
 
 Obtains layout scale of the given control.
 
@@ -184,19 +184,19 @@ Obtains layout scale of the given control.
 public double GetLayoutScale(Avalonia.Layout.Layoutable control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
-The control.
+该控件。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 double
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Thrown when control has no root or returned layout scaling is invalid.](xref:System.Exception)
 
@@ -206,7 +206,7 @@ double
 
 <span id="uid-3d6a70cf0c"></span>
 
-### InvalidateSelfAndChildrenMeasure Method
+### InvalidateSelfAndChildrenMeasure 方法 {#invalidateselfandchildrenmeasure-method}
 
 Invalidates measure for given control and all visual children recursively.
 
@@ -214,7 +214,7 @@ Invalidates measure for given control and all visual children recursively.
 public void InvalidateSelfAndChildrenMeasure(Avalonia.Layout.Layoutable control)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
@@ -229,13 +229,13 @@ public void InvalidateSelfAndChildrenMeasure(Avalonia.Layout.Layoutable control)
 
 <span id="uid-cb2b9a0d79"></span>
 
-#### MeasureChild Method
+#### MeasureChild 方法 {#measurechild-method}
 
 ```csharp
 public Avalonia.Size MeasureChild(Avalonia.Layout.Layoutable control, Avalonia.Size availableSize, Avalonia.Thickness padding)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
@@ -246,7 +246,7 @@ public Avalonia.Size MeasureChild(Avalonia.Layout.Layoutable control, Avalonia.S
 `padding` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -257,13 +257,13 @@ public Avalonia.Size MeasureChild(Avalonia.Layout.Layoutable control, Avalonia.S
 
 <span id="uid-b60e5f9298"></span>
 
-#### MeasureChild Method
+#### MeasureChild 方法 {#measurechild-method-1}
 
 ```csharp
 public Avalonia.Size MeasureChild(Avalonia.Layout.Layoutable control, Avalonia.Size availableSize, Avalonia.Thickness padding, Avalonia.Thickness borderThickness)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `control` [Avalonia.Layout.Layoutable](xref:Avalonia.Layout.Layoutable)
 
@@ -277,7 +277,7 @@ public Avalonia.Size MeasureChild(Avalonia.Layout.Layoutable control, Avalonia.S
 `borderThickness` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -288,13 +288,13 @@ public Avalonia.Size MeasureChild(Avalonia.Layout.Layoutable control, Avalonia.S
 
 <span id="uid-0c5ce632a8"></span>
 
-### RoundLayoutPoint Method
+### RoundLayoutPoint 方法 {#roundlayoutpoint-method}
 
 ```csharp
 public Avalonia.Point RoundLayoutPoint(Avalonia.Point point, double dpiScale)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -302,7 +302,7 @@ public Avalonia.Point RoundLayoutPoint(Avalonia.Point point, double dpiScale)
 `dpiScale` double
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
@@ -313,7 +313,7 @@ public Avalonia.Point RoundLayoutPoint(Avalonia.Point point, double dpiScale)
 
 <span id="uid-87bf309333"></span>
 
-### RoundLayoutSizeUp Method
+### RoundLayoutSizeUp 方法 {#roundlayoutsizeup-method}
 
 Rounds a size to integer values for layout purposes, compensating for high DPI screen
 coordinates by rounding the size up to the nearest pixel.
@@ -322,7 +322,7 @@ coordinates by rounding the size up to the nearest pixel.
 public Avalonia.Size RoundLayoutSizeUp(Avalonia.Size size, double dpiScale)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
 
@@ -331,22 +331,21 @@ Input size.
 
 `dpiScale` double
 
-The DPI scale.
+DPI 缩放系数。
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
 Value of size that will be rounded under screen DPI.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-This is a layout helper method. It takes DPI into account and also does not return
-the rounded value if it is unacceptable for layout, e.g. Infinity or NaN. It's a helper
-associated with the UseLayoutRounding property and should not be used as a general rounding
-utility.
+这是个布局辅助方法。它会把 DPI 考虑在内，并且当舍入结果对布局不可接受时
+（比如 Infinity 或 NaN）不会返回该值。它与 UseLayoutRounding 属性配套，
+不该拿来当作通用的取整工具。
 
 </section>
 
@@ -354,7 +353,7 @@ utility.
 
 <span id="uid-6400b6f2d3"></span>
 
-### RoundLayoutThickness Method
+### RoundLayoutThickness 方法 {#roundlayoutthickness-method}
 
 Rounds a thickness to integer values for layout purposes, compensating for high DPI screen
 coordinates.
@@ -363,7 +362,7 @@ coordinates.
 public Avalonia.Thickness RoundLayoutThickness(Avalonia.Thickness thickness, double dpiScale)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `thickness` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
@@ -372,22 +371,21 @@ Input thickness.
 
 `dpiScale` double
 
-The DPI scale.
+DPI 缩放系数。
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Thickness](xref:Avalonia.Thickness)
 
 Value of thickness that will be rounded under screen DPI.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-This is a layout helper method. It takes DPI into account and also does not return
-the rounded value if it is unacceptable for layout, e.g. Infinity or NaN. It's a helper
-associated with the UseLayoutRounding property and should not be used as a general rounding
-utility.
+这是个布局辅助方法。它会把 DPI 考虑在内，并且当舍入结果对布局不可接受时
+（比如 Infinity 或 NaN）不会返回该值。它与 UseLayoutRounding 属性配套，
+不该拿来当作通用的取整工具。
 
 </section>
 
@@ -395,7 +393,7 @@ utility.
 
 <span id="uid-de14940545"></span>
 
-### RoundLayoutValue Method
+### RoundLayoutValue 方法 {#roundlayoutvalue-method}
 
 Calculates the value to be used for layout rounding at high DPI by rounding the value
 up or down to the nearest pixel.
@@ -404,31 +402,30 @@ up or down to the nearest pixel.
 public double RoundLayoutValue(double value, double dpiScale)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `value` double
 
-Input value to be rounded.
+要取整的输入值。
 
 
 `dpiScale` double
 
-Ratio of screen's DPI to layout DPI
+屏幕 DPI 与布局 DPI 之比
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 double
 
 Adjusted value that will produce layout rounding on screen at high dpi.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-This is a layout helper method. It takes DPI into account and also does not return
-the rounded value if it is unacceptable for layout, e.g. Infinity or NaN. It's a helper
-associated with the UseLayoutRounding property and should not be used as a general rounding
-utility.
+这是个布局辅助方法。它会把 DPI 考虑在内，并且当舍入结果对布局不可接受时
+（比如 Infinity 或 NaN）不会返回该值。它与 UseLayoutRounding 属性配套，
+不该拿来当作通用的取整工具。
 
 </section>
 
@@ -436,7 +433,7 @@ utility.
 
 <span id="uid-0ba4643a8f"></span>
 
-### RoundLayoutValueUp Method
+### RoundLayoutValueUp 方法 {#roundlayoutvalueup-method}
 
 Calculates the value to be used for layout rounding at high DPI by rounding the value up
 to the nearest pixel.
@@ -445,37 +442,36 @@ to the nearest pixel.
 public double RoundLayoutValueUp(double value, double dpiScale)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `value` double
 
-Input value to be rounded.
+要取整的输入值。
 
 
 `dpiScale` double
 
-Ratio of screen's DPI to layout DPI
+屏幕 DPI 与布局 DPI 之比
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 double
 
 Adjusted value that will produce layout rounding on screen at high dpi.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
-This is a layout helper method. It takes DPI into account and also does not return
-the rounded value if it is unacceptable for layout, e.g. Infinity or NaN. It's a helper
-associated with the UseLayoutRounding property and should not be used as a general rounding
-utility.
+这是个布局辅助方法。它会把 DPI 考虑在内，并且当舍入结果对布局不可接受时
+（比如 Infinity 或 NaN）不会返回该值。它与 UseLayoutRounding 属性配套，
+不该拿来当作通用的取整工具。
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [LayoutEpsilon](#uid-5098935b55) | Epsilon value used for certain layout calculations. Based on the value in WPF LayoutDoubleUtil. |
 
@@ -483,7 +479,7 @@ utility.
 
 <span id="uid-5098935b55"></span>
 
-### LayoutEpsilon Property
+### LayoutEpsilon 属性 {#layoutepsilon-property}
 
 Epsilon value used for certain layout calculations.
 Based on the value in WPF LayoutDoubleUtil.

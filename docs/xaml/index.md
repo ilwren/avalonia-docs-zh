@@ -1,21 +1,21 @@
 ---
 id: index
-title: XAML reference
+title: XAML 参考
 ---
 
-This section provides a reference for the XAML language features available in Avalonia. While the [Avalonia XAML fundamentals page](/docs/fundamentals/avalonia-xaml) covers basic concepts, this reference goes deeper into syntax, directives, markup extensions, and the XAML compilation pipeline.
+本章是 Avalonia 中可用的 XAML 语言特性参考。基本概念已在 [Avalonia XAML 基础](/docs/fundamentals/avalonia-xaml)一文中讲过，这里则深入语法、指令、标记扩展以及 XAML 编译流程。
 
-## What is XAML?
+## 什么是 XAML？ {#what-is-xaml}
 
-XAML (eXtensible Application Markup Language) is an XML-based language for declaring object graphs. In Avalonia, XAML is used to define user interfaces declaratively. Each XML element maps to a .NET object, and XML attributes set properties on those objects.
+XAML（eXtensible Application Markup Language，可扩展应用程序标记语言）是一种基于 XML、用于声明对象图的语言。在 Avalonia 中，XAML 用来以声明的方式定义用户界面：每个 XML 元素对应一个 .NET 对象，XML 特性则为这些对象设置属性。
 
-Avalonia uses the `.axaml` file extension (Avalonia XAML) to distinguish its XAML files from WPF or other XAML dialects. This avoids conflicts in Visual Studio and other tooling.
+Avalonia 用 `.axaml` 作为文件扩展名（Avalonia XAML），以便和 WPF 或其他 XAML 方言的文件区分开，避免在 Visual Studio 等工具中产生冲突。
 
-## XAML syntax
+## XAML 语法 {#xaml-syntax}
 
-### Object elements
+### 对象元素 {#object-elements}
 
-An XML element creates an instance of the named type:
+一个 XML 元素就创建一个该类型的实例：
 
 ```xml
 <Button />
@@ -23,19 +23,19 @@ An XML element creates an instance of the named type:
 <StackPanel />
 ```
 
-### Property attributes
+### 属性特性 {#property-attributes}
 
-Set properties using XML attributes:
+用 XML 特性设置属性：
 
 ```xml
 <Button Content="Click me" Width="200" Background="Blue" />
 ```
 
-The XAML engine uses [type converters](/docs/xaml/type-converters) to convert the string attribute values to the appropriate .NET types (e.g., `"Blue"` becomes a `SolidColorBrush`).
+XAML 引擎借助[类型转换器](/docs/xaml/type-converters)把特性里的字符串转换成相应的 .NET 类型（例如 `"Blue"` 变成 `SolidColorBrush`）。
 
-### Property element syntax
+### 属性元素语法 {#property-element-syntax}
 
-For complex values that cannot be expressed as a string, use property element syntax:
+对于无法用字符串表达的复杂值，改用属性元素语法：
 
 ```xml
 <Button>
@@ -54,9 +54,9 @@ For complex values that cannot be expressed as a string, use property element sy
 </Button>
 ```
 
-### Content property
+### 内容属性 {#content-property}
 
-Many controls designate a default content property. Child elements placed directly inside the control's tags are assigned to that property:
+许多控件都指定了一个默认的内容属性。直接写在控件标签内部的子元素，就会被赋给该属性：
 
 ```xml
 <!-- These are equivalent -->
@@ -72,9 +72,9 @@ Many controls designate a default content property. Child elements placed direct
 </StackPanel>
 ```
 
-### Collection syntax
+### 集合语法 {#collection-syntax}
 
-Properties of collection types can be populated with multiple child elements:
+集合类型的属性可以用多个子元素来填充：
 
 ```xml
 <Grid.ColumnDefinitions>
@@ -84,15 +84,15 @@ Properties of collection types can be populated with multiple child elements:
 </Grid.ColumnDefinitions>
 ```
 
-Some collection properties support a compact string syntax:
+有些集合属性还支持紧凑的字符串写法：
 
 ```xml
 <Grid ColumnDefinitions="Auto,*,200" RowDefinitions="Auto,*" />
 ```
 
-### Attached property syntax
+### 附加属性语法 {#attached-property-syntax}
 
-Set attached properties using the `OwnerType.PropertyName` syntax:
+用 `OwnerType.PropertyName` 这种写法设置附加属性：
 
 ```xml
 <Grid>
@@ -102,13 +102,13 @@ Set attached properties using the `OwnerType.PropertyName` syntax:
 
 ## Topics
 
-- [Namespaces](/docs/xaml/namespaces): How XAML namespaces work and how to reference your own types.
-- [x: Directives](/docs/xaml/directives): Reference for `x:Name`, `x:Key`, `x:Class`, `x:DataType`, and other directives.
-- [Markup Extensions](/docs/xaml/markup-extensions): Reference for `{Binding}`, `{StaticResource}`, `{DynamicResource}`, `{TemplateBinding}`, and others.
-- [Type Converters](/docs/xaml/type-converters): How string values in XAML are converted to .NET types.
+- [命名空间](/docs/xaml/namespaces)：XAML 命名空间的工作方式，以及如何引用自己的类型。
+- [x: 指令](/docs/xaml/directives)：`x:Name`、`x:Key`、`x:Class`、`x:DataType` 等指令的参考。
+- [标记扩展](/docs/xaml/markup-extensions)：`{Binding}`、`{StaticResource}`、`{DynamicResource}`、`{TemplateBinding}` 等扩展的参考。
+- [类型转换器](/docs/xaml/type-converters)：XAML 中的字符串值如何转换成 .NET 类型。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Avalonia XAML](/docs/fundamentals/avalonia-xaml): XAML basics and file structure.
-- [Data Binding](/docs/data-binding/introduction-to-data-binding): Data binding reference.
-- [Styling](/docs/styling/styles): CSS-like styling in Avalonia.
+- [Avalonia XAML](/docs/fundamentals/avalonia-xaml)：XAML 基础与文件结构。
+- [数据绑定](/docs/data-binding/introduction-to-data-binding)：数据绑定参考。
+- [样式](/docs/styling/styles)：Avalonia 中类 CSS 的样式机制。

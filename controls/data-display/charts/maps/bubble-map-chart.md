@@ -1,7 +1,7 @@
 ---
 id: bubble-map-chart
-title: Bubble map
-description: Overlays proportionally-sized circles on geographic regions to represent data values, showing both location and value magnitude simultaneously.
+title: 气泡地图
+description: 在地理区域上叠加大小成比例的圆，同时呈现位置和数值的量级。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsMapsBubble from '/img/controls/charts/charts-maps-bubble.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Bubble maps use circles of different sizes to represent data values over geographic regions, using `ShapeMap` as a basis to display a `ShapeLayer` with a superimposed `BubbleLayer`. They show locality and value magnitude in the same view.
+气泡地图用大小不等的圆来表示各地理区域上的数值，做法是以 `ShapeMap` 为底，在 `ShapeLayer` 之上叠加一层 `BubbleLayer`。这样一来，位置和数值大小在同一视图中一览无余。
 
 <Image light={chartsMapsBubble} maxWidth={400} position="center" cornerRadius="true" alt="Bubble map overlaying circles of varying sizes on geographic regions to represent city activity levels." />
 
-## When to use
-- **Event distribution**: Mapping the location and scale of occurrences (e.g., earthquakes, sales events).
-- **Urban statistics**: Comparing populations or activity levels across specific cities.
-- **Global indicators**: Visualizing country-level data where the size of the bubble represents the value.
+## 适用场景 {#when-to-use}
+- **事件分布**：标出事发地点及其规模（比如地震、促销活动）。
+- **城市统计**：比较各座城市的人口或活跃程度。
+- **全球指标**：呈现国家级数据，气泡大小即代表数值。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -55,9 +55,9 @@ Bubble maps use circles of different sizes to represent data values over geograp
                     </ShapeMap>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
-Ensure the GeoJSON file is included in your project and available at the specified relative path at runtime.
+请确保 GeoJSON 文件已包含在项目中，并且运行时可以在指定的相对路径下找到它。
 
 ```csharp
 using System.IO;
@@ -84,44 +84,44 @@ public CityData[] CityBubbles { get; } = new CityData[]
 };
 ```
 
-## Common properties: `ShapeLayer`
+## 公共属性：`ShapeLayer` {#common-properties-shapelayer}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `GeoJson` | GeoJSON data. | `null` |
-| `Source` | URI for the source of the GeoJSON data. | `null` |
-| `GeoJsonIdPath` | Unique ID of the GeoJSON data. | `null` |
-| `ItemsSource` | Data collection containing map regions. | `null` |
-| `RegionPath` | Property linking data to GeoJSON coordinates. | `null` |
-| `ValuePath` | Property linking data to region values. | `null` |
-| `MinValue` | Minimum value for color normalization. | `0.0` |
-| `MaxValue` | Maximum value for color normalization. | `100.0` |
-| `LowBrush` | Color representing the lowest data value. | `#E3F2FD` |
-| `HighBrush` | Color representing the highest data value. | `#1565C0` |
-| `Stroke` | Color of region outlines. | `null` |
-| `StrokeThickness` | Thickness of region outlines. | `0.5` |
-| `ShowLabels` | Whether to display labels on regions. | `false` |
-| `LabelPath` | Path of the label text. | `null` |
-| `LabelForeground` | Brush used for region labels. | `null` |
-| `SelectionMode` | Selection mode for selecting regions. Use `None`, `Single`, `SingleDeselect`, or `Multiple`. | `None` |
-| `SelectionBrush` | Color of selected regions. | `#FFC107` |
-| `SelectionStroke` | Color of the outline of selected regions. | `null` |
-| `SelectionStrokeThickness` | Thickness of the outline of selected regions. | `2.0` |
-| `SelectedItem` | The currently selected region. | `null` |
-| `HoverBrush` | Brush used when a region is hovered. | `White` at 30% opacity |
+| `GeoJson` | GeoJSON 数据。 | `null` |
+| `Source` | GeoJSON 数据源的 URI。 | `null` |
+| `GeoJsonIdPath` | GeoJSON 数据的唯一 ID。 | `null` |
+| `ItemsSource` | 包含地图各区域的数据集合。 | `null` |
+| `RegionPath` | 把数据关联到 GeoJSON 坐标的属性。 | `null` |
+| `ValuePath` | 把数据关联到区域数值的属性。 | `null` |
+| `MinValue` | 颜色归一化的最小值。 | `0.0` |
+| `MaxValue` | 颜色归一化的最大值。 | `100.0` |
+| `LowBrush` | 代表数据最小值的颜色。 | `#E3F2FD` |
+| `HighBrush` | 代表数据最大值的颜色。 | `#1565C0` |
+| `Stroke` | 区域轮廓的颜色。 | `null` |
+| `StrokeThickness` | 区域轮廓的粗细。 | `0.5` |
+| `ShowLabels` | 是否在区域上显示标签。 | `false` |
+| `LabelPath` | 标签文本的路径。 | `null` |
+| `LabelForeground` | 区域标签所用的画刷。 | `null` |
+| `SelectionMode` | 区域的选择模式。可用 `None`、`Single`、`SingleDeselect` 或 `Multiple`。 | `None` |
+| `SelectionBrush` | 选中区域的颜色。 | `#FFC107` |
+| `SelectionStroke` | 选中区域轮廓的颜色。 | `null` |
+| `SelectionStrokeThickness` | 选中区域轮廓的粗细。 | `2.0` |
+| `SelectedItem` | 当前选中的区域。 | `null` |
+| `HoverBrush` | 区域被悬停时所用的画刷。 | `White`，不透明度 30% |
 
-## Common properties: `BubbleLayer`
+## 公共属性：`BubbleLayer` {#common-properties-bubblelayer}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Data source for bubbles. | `null` |
-| `LatitudePath` | Property path for latitude coordinates. | `null` |
-| `LongitudePath` | Property path for longitude coordinates. | `null` |
-| `SizePath` | Size of bubbles. | `null` |
-| `PointBrushPath` | Optional property path that supplies a brush or color per bubble. | `null` |
-| `ShowLabels` | Whether to display labels over bubbles. | `true` |
-| `LabelPath` | Content of labels. | `null` |
-| `MinBubbleSize` | Minimum bubble radius. | `8.0` |
-| `MaxBubbleSize` | Maximum bubble radius. | `40.0` |
-| `Fill` | Color of bubbles. | `null` |
-| `Stroke` | Color of bubble outlines. | `null` |
+| `ItemsSource` | 气泡的数据源。 | `null` |
+| `LatitudePath` | 纬度坐标所对应的属性路径。 | `null` |
+| `LongitudePath` | 经度坐标所对应的属性路径。 | `null` |
+| `SizePath` | 气泡的大小。 | `null` |
+| `PointBrushPath` | 可选的属性路径，为每个气泡提供画刷或颜色。 | `null` |
+| `ShowLabels` | 是否在气泡上显示标签。 | `true` |
+| `LabelPath` | 标签的内容。 | `null` |
+| `MinBubbleSize` | 气泡最小半径。 | `8.0` |
+| `MaxBubbleSize` | 气泡最大半径。 | `40.0` |
+| `Fill` | 气泡的颜色。 | `null` |
+| `Stroke` | 气泡轮廓的颜色。 | `null` |

@@ -1,25 +1,25 @@
 ---
 id: population-pyramid-chart
-title: Population pyramid chart
-description: Shows two population distributions back to back by age band or another ordered category.
+title: 人口金字塔图
+description: 按年龄段或其他有序类别，把两组人口分布背靠背地呈现出来。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Population pyramid charts visualize two opposing distributions, most often male and female populations across age groups.
+人口金字塔图呈现相对的两组分布，最常见的是各年龄段的男性与女性人口。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Demographic analysis**: Compare age distribution by sex or region.
-- **Segment comparison**: Show paired distributions across ordered bands.
-- **Planning views**: Surface concentration in younger or older cohorts quickly.
+- **人口分析**：按性别或地区比较年龄分布。
+- **分段对比**：在有序的分段上呈现成对的分布。
+- **规划视图**：迅速看出人口集中在年轻还是年长的群体。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -32,7 +32,7 @@ Population pyramid charts visualize two opposing distributions, most often male 
                                  FemaleValuePath="Female" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record PopulationBand(string AgeGroup, double Male, double Female);
@@ -45,22 +45,22 @@ public ObservableCollection<PopulationBand> PopulationData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of population bands. | `null` |
-| `AgeLabelPath` | Path to the band label. | `null` |
-| `MaleValuePath` | Path to the left-side population value. | `null` |
-| `FemaleValuePath` | Path to the right-side population value. | `null` |
-| `MaleBrush` | Brush used for the left-side bars. | `null` |
-| `FemaleBrush` | Brush used for the right-side bars. | `null` |
-| `BarGap` | Gap between adjacent bars. | `2.0` |
-| `ShowLabels` | Whether to show the band labels along the center line. | `true` |
-| `LabelFontSize` | Font size used for the band labels. | `10.0` |
-| `IsHighlightEnabled` | Enables hover highlighting for population bands. | `false` |
+| `ItemsSource` | 人口分段的集合。 | `null` |
+| `AgeLabelPath` | 指向分段标签的路径。 | `null` |
+| `MaleValuePath` | 指向左侧人口数值的路径。 | `null` |
+| `FemaleValuePath` | 指向右侧人口数值的路径。 | `null` |
+| `MaleBrush` | 左侧条形所用的画刷。 | `null` |
+| `FemaleBrush` | 右侧条形所用的画刷。 | `null` |
+| `BarGap` | 相邻条形之间的间隙。 | `2.0` |
+| `ShowLabels` | 是否沿中线显示分段标签。 | `true` |
+| `LabelFontSize` | 分段标签所用的字号。 | `10.0` |
+| `IsHighlightEnabled` | 为人口分段启用悬停高亮。 | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart)
-- [Tornado chart](/controls/data-display/charts/comparison/tornado-chart)
+- [镜像条形图](/controls/data-display/charts/comparison/mirror-bar-chart)
+- [龙卷风图](/controls/data-display/charts/comparison/tornado-chart)

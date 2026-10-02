@@ -1,11 +1,11 @@
 ---
 id: index
-title: Getting started
-description: Get started with Avalonia, the cross-platform .NET UI framework. Install the SDK, set up your IDE, and create your first project.
+title: 快速上手
+description: 开始使用跨平台 .NET UI 框架 Avalonia：安装 SDK、配置 IDE，并创建你的第一个项目。
 doc-type: overview
 video:
   src: https://youtu.be/qtNbDOJwuF8
-  title: Set Up Your Dev Environment in 9 Minutes
+  title: 9 分钟搭好你的开发环境
 ---
 
 import DocsCard from '@site/src/components/global/DocsCard';
@@ -14,32 +14,32 @@ import DocsCards from '@site/src/components/global/DocsCards';
 <p><small>{frontMatter.description}</small></p>
 <br/>
 
-This section walks you through everything you need to go from zero to a running Avalonia application. Follow the guides in order, or jump to the one you need.
+本章会带你走完从零到跑通一个 Avalonia 应用的全过程。你可以按顺序逐篇阅读，也可以直接跳到需要的那一篇。
 
 <DocsCards>
   <DocsCard header="Install Avalonia" href="/docs/get-started/install-avalonia">
-    <p>Install the .NET SDK and Avalonia project templates.</p>
+    <p>安装 .NET SDK 与 Avalonia 项目模板。</p>
   </DocsCard>
   <DocsCard header="Set Up Your IDE" href="/docs/get-started/set-up-your-ide">
-    <p>Configure JetBrains Rider, Visual Studio, or VS Code for Avalonia development.</p>
+    <p>为 Avalonia 开发配置 JetBrains Rider、Visual Studio 或 VS Code。</p>
   </DocsCard>
   <DocsCard header="Create Your First Project" href="/docs/get-started/create-your-first-project">
-    <p>Create an Avalonia app from a template and run it.</p>
+    <p>从模板创建一个 Avalonia 应用并运行它。</p>
   </DocsCard>
   <DocsCard header="Starter Tutorial" href="/docs/get-started/starter-tutorial">
-    <p>Build a temperature converter app and learn core Avalonia concepts.</p>
+    <p>动手做一个温度换算器，掌握 Avalonia 的核心概念。</p>
   </DocsCard>
 </DocsCards>
 
-## What is Avalonia?
+## Avalonia 是什么？ {#what-is-avalonia}
 
-Avalonia is an open-source, cross-platform UI framework for .NET. It uses its own rendering engine to draw controls, so your app looks and behaves the same on every platform. Write your UI once in C# or F# with XAML, and deploy to Windows, macOS, Linux, iOS, Android, and WebAssembly.
+Avalonia 是一个开源的 .NET 跨平台 UI 框架。它使用自研渲染引擎绘制控件，因此你的应用在每个平台上的外观和行为都完全一致。用 C# 或 F# 配合 XAML 写一次界面，就能发布到 Windows、macOS、Linux、iOS、Android 和 WebAssembly。
 
-If you have experience with WPF or UWP, Avalonia's XAML and API will feel familiar. If you are new to XAML-based frameworks, the [starter tutorial](/docs/get-started/starter-tutorial) is the best place to begin.
+如果你用过 WPF 或 UWP，会发现 Avalonia 的 XAML 和 API 相当眼熟。如果你是第一次接触基于 XAML 的框架，那就从[入门教程](/docs/get-started/starter-tutorial)开始最合适。
 
-## Already have .NET and an IDE?
+## 已经装好 .NET 和 IDE 了？ {#already-have-net-and-an-ide}
 
-If you already have .NET 8+ and your IDE configured, you can skip straight to creating a project:
+如果 .NET 8+ 和 IDE 都已经就绪，可以直接跳到创建项目这一步：
 
 ```bash
 dotnet new install Avalonia.Templates
@@ -48,8 +48,8 @@ cd MyApp
 dotnet run
 ```
 
-## Coming from WPF?
+## 从 WPF 转过来？ {#coming-from-wpf}
 
-Avalonia's API is intentionally close to WPF, but there are important differences in styling, templates, and the property system. See the [WPF migration guide](/docs/migration/wpf) for a section-by-section comparison.
+Avalonia 的 API 刻意向 WPF 看齐，但在样式、模板和属性系统上仍有一些重要差异。逐节对照可参阅 [WPF 迁移指南](/docs/migration/wpf)。
 
-If you need to run an existing WPF application cross-platform without rewriting it, [Avalonia XPF](/xpf) provides binary-compatible WPF support on top of Avalonia's rendering engine.
+如果你需要让现有 WPF 应用在不重写的前提下跨平台运行，[Avalonia XPF](/xpf) 在 Avalonia 渲染引擎之上提供了二进制兼容的 WPF 支持。

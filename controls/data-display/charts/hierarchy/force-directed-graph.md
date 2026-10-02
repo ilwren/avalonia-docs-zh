@@ -1,7 +1,7 @@
 ---
 id: force-directed-graph
-title: Force-Directed Graph
-description: Lays out network nodes using physical simulations to reveal clusters and structural relationships in complex interconnected data.
+title: 力导向图
+description: 借助物理模拟排布网络节点，揭示复杂互联数据中的簇群和结构关系。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFlowForceDirected from '/img/controls/charts/charts-flow-force-directed.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Force-directed graphs use physical simulations to lay out network nodes. They help reveal clusters and structural relationships in complex interconnected data.
+力导向图借助物理模拟来排布网络节点，有助于揭示复杂互联数据中的簇群和结构关系。
 
 <Image light={chartsFlowForceDirected} maxWidth={400} position="center" cornerRadius="true" alt="Force-directed graph with nodes and connecting edges arranged by physics simulation to reveal clusters." />
 
-## When to use
-- **Social networks**: Visualizing friendships, followers, or community structures.
-- **Knowledge graphs**: Showing relationships between concepts, entities, or research papers.
-- **System architecture**: Mapping microservices and their communication links.
+## 适用场景 {#when-to-use}
+- **社交网络**：呈现好友关系、关注关系或社群结构。
+- **知识图谱**：展示概念、实体或研究论文之间的关联。
+- **系统架构**：梳理各微服务及其通信链路。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -35,7 +35,7 @@ Force-directed graphs use physical simulations to lay out network nodes. They he
                              EdgeTargetPath="Target" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record GraphNode(string Id, string Label);
 public record GraphEdge(string Source, string Target);
@@ -61,17 +61,17 @@ public ObservableCollection<GraphEdge> ForceEdges { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `NodesSource` | Collection of nodes. | `null` |
-| `EdgesSource` | Collection of links. | `null` |
-| `NodeIdPath` | Property path for each node identifier. | `null` |
-| `NodeLabelPath` | Property path for each node label. | `null` |
-| `EdgeSourcePath` | Property path for each edge source identifier. | `null` |
-| `EdgeTargetPath` | Property path for each edge target identifier. | `null` |
-| `NodeRadius` | Radius of the node circles. | `20.0` |
-| `RepulsionForce` | Strength of the repulsive force between nodes. | `5000.0` |
-| `AttractionForce` | Strength of the attraction force along edges. | `0.01` |
-| `IsAnimationEnabled` | Runs the simulation and animated layout transitions. | `true` |
+| `NodesSource` | 节点的集合。 | `null` |
+| `EdgesSource` | 连接的集合。 | `null` |
+| `NodeIdPath` | 各节点标识所对应的属性路径。 | `null` |
+| `NodeLabelPath` | 各节点标签所对应的属性路径。 | `null` |
+| `EdgeSourcePath` | 各条边起点标识所对应的属性路径。 | `null` |
+| `EdgeTargetPath` | 各条边终点标识所对应的属性路径。 | `null` |
+| `NodeRadius` | 节点圆的半径。 | `20.0` |
+| `RepulsionForce` | 节点之间斥力的强度。 | `5000.0` |
+| `AttractionForce` | 沿边的引力强度。 | `0.01` |
+| `IsAnimationEnabled` | 是否运行模拟以及布局过渡动画。 | `true` |

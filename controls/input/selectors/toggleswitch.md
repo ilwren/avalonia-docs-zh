@@ -1,42 +1,42 @@
 ---
 id: toggleswitch
 title: ToggleSwitch
-description: A sliding on/off toggle control used for binary settings, with customizable on and off content.
+description: 一个滑动式开关控件，用于二选一的设置项，开与关的内容都可以自定义。
 doc-type: reference
 ---
 
-The [`ToggleSwitch`](/api/avalonia/controls/toggleswitch) control presents a sliding toggle that you can flip between on and off states. It behaves like a [`CheckBox`](/api/avalonia/controls/checkbox) but uses a track-and-thumb visual that feels natural on mobile and touch-first interfaces.
+[`ToggleSwitch`](/api/avalonia/controls/toggleswitch) 控件呈现一个可在开、关之间滑动的开关。它的行为和 [`CheckBox`](/api/avalonia/controls/checkbox) 相仿，但采用「轨道 + 滑钮」的视觉形式，在移动端和以触摸为主的界面上更自然。
 
-Use `ToggleSwitch` when you need an immediate on/off setting, such as enabling dark mode or toggling notifications. For form fields where users select multiple options from a list, a `CheckBox` is usually a better fit.
+当某项设置是即时生效的开关时（比如启用深色模式、开关通知），就用 `ToggleSwitch`。如果是让用户从列表中多选的表单字段，`CheckBox` 通常更合适。
 
-## Common properties
+## 常用属性 {#common-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property      | Type      | Description                                                        |
+| 属性      | 类型      | 说明                                                        |
 | ------------- | --------- | ------------------------------------------------------------------ |
-| `IsChecked`   | `bool?`   | Gets or sets the current toggle state. `true` is on, `false` is off. |
-| `OnContent`   | `object`  | Content displayed when the toggle is on. Defaults to "On".         |
-| `OffContent`  | `object`  | Content displayed when the toggle is off. Defaults to "Off".       |
-| `KnobTransitions` | `Transitions` | The transitions applied to the knob during state changes.    |
+| `IsChecked`   | `bool?`   | 获取或设置当前的开关状态：`true` 为开，`false` 为关。 |
+| `OnContent`   | `object`  | 开启时显示的内容，默认为「On」。         |
+| `OffContent`  | `object`  | 关闭时显示的内容，默认为「Off」。       |
+| `KnobTransitions` | `Transitions` | 状态切换时作用于滑钮的过渡动画。    |
 
-## Events
+## 事件 {#events}
 
-| Event              | Description                              |
+| 事件              | 说明                              |
 | ------------------ | ---------------------------------------- |
-| `IsCheckedChanged` | Raised when the `IsChecked` value changes. |
+| `IsCheckedChanged` | `IsChecked` 的值发生变化时引发。 |
 
-## Basic example
+## 基本示例 {#basic-example}
 
-Place a `ToggleSwitch` in your AXAML and bind `IsChecked` to a Boolean property on your view model:
+在 AXAML 中放一个 `ToggleSwitch`，并把 `IsChecked` 绑定到视图模型中的布尔属性：
 
 ```xml
 <ToggleSwitch IsChecked="{Binding IsEnabled}" />
 ```
 
-## Custom on/off labels
+## 自定义开/关文字 {#custom-onoff-labels}
 
-You can replace the default "On" and "Off" text with your own strings:
+默认的「On」和「Off」可以换成你自己的文字：
 
 ```xml
 <ToggleSwitch IsChecked="{Binding IsDarkMode}"
@@ -44,9 +44,9 @@ You can replace the default "On" and "Off" text with your own strings:
               OffContent="Light" />
 ```
 
-## Hiding the labels
+## 隐藏文字 {#hiding-the-labels}
 
-Set both content properties to empty strings to show only the sliding toggle:
+把两个内容属性都设为空字符串，就只剩下那个滑动开关：
 
 ```xml
 <ToggleSwitch IsChecked="{Binding IsActive}"
@@ -54,11 +54,11 @@ Set both content properties to empty strings to show only the sliding toggle:
               OffContent="" />
 ```
 
-This is useful when the surrounding layout already provides a label for the setting.
+如果周围的布局本就给这项设置配了标签，这样做正合适。
 
-## Rich content
+## 丰富的内容 {#rich-content}
 
-You can use any controls as the on and off content. The following example pairs a `PathIcon` with a `TextBlock`:
+开和关的内容可以是任意控件。下面的例子把 `PathIcon` 和 `TextBlock` 搭在一起：
 
 ```xml
 <ToggleSwitch IsChecked="{Binding NotificationsEnabled}">
@@ -77,9 +77,9 @@ You can use any controls as the on and off content. The following example pairs 
 </ToggleSwitch>
 ```
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
-Create Boolean properties in your view model and bind each `ToggleSwitch` to one of them:
+在视图模型中定义布尔属性，再把每个 `ToggleSwitch` 分别绑定到其中之一：
 
 ```csharp
 public partial class SettingsViewModel : ObservableObject
@@ -106,11 +106,11 @@ public partial class SettingsViewModel : ObservableObject
 </StackPanel>
 ```
 
-Because `ToggleSwitch` uses two-way binding by default, flipping the toggle immediately updates the view model property.
+由于 `ToggleSwitch` 默认采用双向绑定，一拨动开关，视图模型中的属性立刻就更新了。
 
-## Settings form pattern
+## 设置页范式 {#settings-form-pattern}
 
-A common layout pairs a description on the left with a label-free `ToggleSwitch` on the right:
+一种常见布局是：左边放说明文字，右边放一个不带文字的 `ToggleSwitch`：
 
 ```xml
 <StackPanel Spacing="16">
@@ -136,20 +136,20 @@ A common layout pairs a description on the left with a label-free `ToggleSwitch`
 </StackPanel>
 ```
 
-Setting `OnContent` and `OffContent` to empty strings removes the redundant labels because the `TextBlock` elements already describe each setting.
+把 `OnContent` 和 `OffContent` 设为空字符串即可去掉多余的文字，因为各项设置已经由 `TextBlock` 元素说明过了。
 
-## Choosing between `ToggleSwitch` and `CheckBox`
+## `ToggleSwitch` 与 `CheckBox` 的取舍 {#choosing-between-toggleswitch-and-checkbox}
 
-| Consideration | `ToggleSwitch` | `CheckBox` |
+| 考量点 | `ToggleSwitch` | `CheckBox` |
 | ------------- | -------------- | ---------- |
-| Visual style  | Sliding toggle | Check mark |
-| Best suited for | Settings, instant on/off states | Form fields, multi-select lists |
-| Three-state support | No | Yes (via `IsThreeState`) |
-| Platform feel | Mobile and touch friendly | Traditional desktop |
+| 视觉形式  | 滑动开关 | 勾选标记 |
+| 最适合 | 设置项、即时生效的开关状态 | 表单字段、多选列表 |
+| 是否支持三态 | No | 支持（通过 `IsThreeState`） |
+| 平台观感 | 适合移动端与触摸操作 | 传统桌面风格 |
 
-Choose `ToggleSwitch` when the change takes effect immediately. Choose `CheckBox` when the user must confirm or submit a form before the change is applied.
+改动立即生效的，选 `ToggleSwitch`；需要用户确认或提交表单后才生效的，选 `CheckBox`。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [CheckBox](/controls/input/selectors/checkbox)
 - [ToggleButton](/controls/input/buttons/togglebutton)

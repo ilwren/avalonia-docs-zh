@@ -1,0 +1,155 @@
+name: 部署到 GitHub Pages
+
+# 把中文文档站构建后发布到 GitHub Pages，用于在线预览。
+#
+# 首次使用前需要在仓库里打开一次开关（只需一次）：
+#   Settings → Pages → Build and deployment → Source 选择 “GitHub Actions”
+# 若要从非默认分支部署，还需放行该分支：
+#   Settings → Environments → github-pages → Deployment branches → 添加当前分支（或选 All branches）
+#
+# 即使 Pages 尚未启用，“构建站点产物” 这个 job 也会照常跑完并产出可下载的站点压缩包，
+# 可据此验证「部署不会报错」。
+on:
+  workflow_dispatch:
+    inputs:
+      skip_api:
+        description: '跳过 api/ 参考页面（勾选后只发布正文，构建更快；默认发布含 API 的全量站点）'
+        type: boolean
+        default: false
+  push:
+    branches:
+      - main
+      - arena/01a0f56b-avalonia-docs-zh
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一个部署，且不取消正在进行的部署，避免发布到一半被打断。
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: 构建站点产物
+    runs-on: ubuntu-latest
+    # 默认发布含 api/ 参考的全量站点；手动触发时勾选 skip_api 可只发布正文。
+    env:
+      DOCS_SKIP_API: ${{ (github.event_name == 'workflow_dispatch' && inputs.skip_api) && '1' || '0' }}
+    outputs:
+      pages_ready: ${{ steps.pages.outcome == 'success' }}
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v5
+        with:
+          submodules: true
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Pages 未启用时这一步会失败，但不阻断构建：下面会退回到按仓库名推导的默认地址。
+      - name: 读取 GitHub Pages 配置
+        id: pages
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+
+      - name: 计算站点地址与基路径
+        run: |
+          OWNER='${{ github.repository_owner }}'
+          REPO='${{ github.event.repository.name }}'
+          ORIGIN='${{ steps.pages.outputs.origin }}'
+          BASE='${{ steps.pages.outputs.base_path }}'
+
+          if [ -z "$ORIGIN" ]; then
+            ORIGIN="https://$(echo "$OWNER" | tr '[:upper:]' '[:lower:]').github.io"
+          fi
+          if [ -z "$BASE" ]; then
+            BASE="/$REPO"
+          fi
+          # 用户站点的 base_path 可能为空或 '/'，项目站点形如 '/avalonia-docs-zh'
+          if [ "$BASE" = "/" ]; then
+            BASE='/'
+          else
+            BASE="${BASE%/}/"
+          fi
+
+          echo "DOCS_SITE_URL=$ORIGIN" >> "$GITHUB_ENV"
+          echo "DOCS_BASE_URL=$BASE" >> "$GITHUB_ENV"
+          echo "站点地址：$ORIGIN"
+          echo "基路径：$BASE"
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 构建站点
+        env:
+          NODE_OPTIONS: --max-old-space-size=12288
+          # GitHub Pages 会把 /foo 重定向到 /foo/，这会让 api 页面里的相对链接多算一层目录；
+          # 关闭 trailingSlash 后产出 foo.html，相对链接才能正确解析。
+          DOCS_TRAILING_SLASH: 'false'
+        run: npx docusaurus build
+
+      - name: 产物自检
+        run: |
+          set -e
+          test -f build/index.html
+          test -f build/docs/welcome.html
+          grep -q "欢迎" build/docs/welcome.html
+          if [ "$DOCS_SKIP_API" != "1" ]; then
+            test -f build/api/avalonia/controls/button.html
+            grep -q "命名空间" build/api/avalonia/controls/button.html
+            # 继承链等相对链接的目标必须存在（曾因 trailingSlash 导致整片 404）
+            test -f build/api/avalonia/controls/control.html
+            test -f build/api/avalonia/controls/contentcontrol.html
+          fi
+          # 资源引用必须带上基路径，否则子路径部署会 404
+          if [ "$DOCS_BASE_URL" != "/" ]; then
+            grep -q "href=\"${DOCS_BASE_URL}assets/css" build/index.html
+          fi
+          # 首页文档必须带 AI 翻译免责说明
+          grep -aq "AI 翻译免责说明" build/docs/welcome.html
+          # 社区讨论区入口必须指向本仓库（指向上游具体帖子的引用不在此列）
+          if grep -arq 'https://github.com/AvaloniaUI/Avalonia/discussions"' build --include='*.html'; then
+            echo "::error::站点里仍有指向上游通用讨论区的链接"
+            exit 1
+          fi
+          grep -arq 'https://github.com/ilwren/avalonia-docs-zh/discussions' build/docs/welcome.html
+          SIZE=$(du -sh build | cut -f1)
+          PAGES=$(find build -name 'index.html' | wc -l)
+          echo "产物体积：$SIZE，页面数量：$PAGES"
+          {
+            echo '## 站点产物'
+            echo "- 预期访问地址：${DOCS_SITE_URL}${DOCS_BASE_URL}"
+            echo "- 内容范围：$([ "$DOCS_SKIP_API" = '1' ] && echo '正文（docs/controls/tools/troubleshooting/xpf），不含 api/' || echo '全量，含 api/ 参考')"
+            echo "- 产物体积：$SIZE"
+            echo "- 页面数量：$PAGES"
+            if [ "${{ steps.pages.outcome }}" != 'success' ]; then
+              echo ''
+              echo '> ⚠️ 仓库尚未启用 GitHub Pages，本次只构建、不发布。'
+              echo '> 请到 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，'
+              echo '> 再到 **Settings → Environments → github-pages → Deployment branches** 放行当前分支，然后重跑本工作流。'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 上传 Pages 产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    name: 发布到 Pages
+    needs: build
+    if: needs.build.outputs.pages_ready == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署
+        id: deployment
+        uses: actions/deploy-pages@v4

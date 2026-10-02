@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Pen Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Pen.cs">Pen.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Pen.cs">Pen.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Describes how a stroke is drawn.
+描述描边如何绘制。
 
 </div>
 
@@ -54,30 +54,30 @@ public class Pen
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> Pen
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="../avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> Pen
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ipen">IPen</a>, ICompositionRenderResource, ICompositionRenderResource&lt;IPen&gt;, ICompositorSerializable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ipen">IPen</a>, ICompositionRenderResource, ICompositionRenderResource&lt;IPen&gt;, ICompositorSerializable
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Pen (3 overloads)](#uid-54336c6365) | Initializes a new instance of the [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) class. |
+| [Pen (3 overloads)](#uid-54336c6365) | 初始化 [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) 类的新实例。 |
 
 <span id="uid-54336c6365"></span>
 
-### Pen overloads
+### Pen 的重载 {#pen-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-940183acc6"></span>
 
-#### Pen Constructor
+#### Pen 构造函数 {#pen-constructor}
 
-Initializes a new instance of the [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) class.
+初始化 [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) 类的新实例。
 
 ```csharp
 public Pen()
@@ -89,44 +89,44 @@ public Pen()
 
 <span id="uid-a6fc350d89"></span>
 
-#### Pen Constructor
+#### Pen 构造函数 {#pen-constructor-1}
 
-Initializes a new instance of the [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) class.
+初始化 [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) 类的新实例。
 
 ```csharp
 public Pen(Avalonia.Media.IBrush brush, double thickness, Avalonia.Media.IDashStyle dashStyle, Avalonia.Media.PenLineCap lineCap, Avalonia.Media.PenLineJoin lineJoin, double miterLimit)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `brush` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The brush used to draw.
+绘制所用的画刷。
 
 
 `thickness` double
 
-The stroke thickness.
+描边粗细。
 
 
 `dashStyle` [Avalonia.Media.IDashStyle](xref:Avalonia.Media.IDashStyle)
 
-The dash style.
+虚线样式。
 
 
 `lineCap` [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap)
 
-The line cap.
+线端样式。
 
 
 `lineJoin` [Avalonia.Media.PenLineJoin](xref:Avalonia.Media.PenLineJoin)
 
-The line join.
+线条连接方式。
 
 
 `miterLimit` double
 
-The miter limit.
+斜接限制。
 
 
 </section>
@@ -135,106 +135,106 @@ The miter limit.
 
 <span id="uid-81755864a4"></span>
 
-#### Pen Constructor
+#### Pen 构造函数 {#pen-constructor-2}
 
-Initializes a new instance of the [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) class.
+初始化 [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) 类的新实例。
 
 ```csharp
 public Pen(uint color, double thickness, Avalonia.Media.IDashStyle dashStyle, Avalonia.Media.PenLineCap lineCap, Avalonia.Media.PenLineJoin lineJoin, double miterLimit)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `color` uint
 
-The stroke color.
+描边颜色。
 
 
 `thickness` double
 
-The stroke thickness.
+描边粗细。
 
 
 `dashStyle` [Avalonia.Media.IDashStyle](xref:Avalonia.Media.IDashStyle)
 
-The dash style.
+虚线样式。
 
 
 `lineCap` [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap)
 
-Specifies the type of graphic shape to use on both ends of a line.
+指定线条两端所用的图形形状类型。
 
 
 `lineJoin` [Avalonia.Media.PenLineJoin](xref:Avalonia.Media.PenLineJoin)
 
-The line join.
+线条连接方式。
 
 
 `miterLimit` double
 
-The miter limit.
+斜接限制。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Bind (8 overloads)](../avaloniaobject.mdx#uid-1c60c7bda3) | Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase). Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | Returns a value indicating whether the current thread is the UI thread. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [ClearValue (4 overloads)](../avaloniaobject.mdx#uid-41de208fbe) | Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | Compares two objects using reference equality. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetBaseValue](../avaloniaobject.mdx#uid-9c615efbba) | Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetHashCode](../avaloniaobject.mdx#uid-7f7db1e7a2) | Gets the hash code for the object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [GetValue (3 overloads)](../avaloniaobject.mdx#uid-5142cd4792) | Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is animating. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [SetCurrentValue (2 overloads)](../avaloniaobject.mdx#uid-38759fd088) | Sets the value of a dependency property without changing its value source. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [SetValue (3 overloads)](../avaloniaobject.mdx#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [ToImmutable](#uid-ef3aaceb79) | Creates an immutable clone of the brush. |
-| [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | Checks that the current thread is the UI thread and throws if not. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
+| [Bind（8 个重载）](../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetBaseValue](../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetHashCode](../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [ToImmutable](#uid-ef3aaceb79) | 创建该画刷的不可变副本。 |
+| [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ef3aaceb79"></span>
 
-### ToImmutable Method
+### ToImmutable 方法 {#toimmutable-method}
 
-Creates an immutable clone of the brush.
+创建该画刷的不可变副本。
 
 ```csharp
 public Avalonia.Media.Immutable.ImmutablePen ToImmutable()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.Immutable.ImmutablePen](xref:Avalonia.Media.Immutable.ImmutablePen)
 
-The immutable clone.
+不可变副本。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Brush](#uid-7d4f87bb8d) | Gets or sets the brush used to draw the stroke. |
 | [DashStyle](#uid-997f550595) | Gets or sets the style of dashed lines drawn with a [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) object. |
-| [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | Returns the [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher) that this [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) is associated with. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
-| [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
+| [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
+| [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [LineCap](#uid-1db7e085d7) | Gets or sets the type of shape to use on both ends of a line. |
 | [LineJoin](#uid-3c535b9132) | Gets or sets the join style for the ends of two consecutive lines drawn with this [Avalonia.Media.Pen](xref:Avalonia.Media.Pen). |
 | [MiterLimit](#uid-6774cce551) | Gets or sets the limit of the thickness of the join on a mitered corner. |
-| [Thickness](#uid-3e28960c88) | Gets or sets the stroke thickness. |
+| [Thickness](#uid-3e28960c88) | 获取或设置描边粗细。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-7d4f87bb8d"></span>
 
-### Brush Property
+### Brush 属性 {#brush-property}
 
 Gets or sets the brush used to draw the stroke.
 
@@ -248,7 +248,7 @@ public Avalonia.Media.IBrush Brush { get; set; }
 
 <span id="uid-997f550595"></span>
 
-### DashStyle Property
+### DashStyle 属性 {#dashstyle-property}
 
 Gets or sets the style of dashed lines drawn with a [Avalonia.Media.Pen](xref:Avalonia.Media.Pen) object.
 
@@ -262,7 +262,7 @@ public Avalonia.Media.IDashStyle DashStyle { get; set; }
 
 <span id="uid-1db7e085d7"></span>
 
-### LineCap Property
+### LineCap 属性 {#linecap-property}
 
 Gets or sets the type of shape to use on both ends of a line.
 
@@ -276,7 +276,7 @@ public Avalonia.Media.PenLineCap LineCap { get; set; }
 
 <span id="uid-3c535b9132"></span>
 
-### LineJoin Property
+### LineJoin 属性 {#linejoin-property}
 
 Gets or sets the join style for the ends of two consecutive lines drawn with this
 [Avalonia.Media.Pen](xref:Avalonia.Media.Pen).
@@ -291,7 +291,7 @@ public Avalonia.Media.PenLineJoin LineJoin { get; set; }
 
 <span id="uid-6774cce551"></span>
 
-### MiterLimit Property
+### MiterLimit 属性 {#miterlimit-property}
 
 Gets or sets the limit of the thickness of the join on a mitered corner.
 
@@ -305,9 +305,9 @@ public double MiterLimit { get; set; }
 
 <span id="uid-3e28960c88"></span>
 
-### Thickness Property
+### Thickness 属性 {#thickness-property}
 
-Gets or sets the stroke thickness.
+获取或设置描边粗细。
 
 ```csharp
 public double Thickness { get; set; }
@@ -315,24 +315,24 @@ public double Thickness { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BrushProperty](#uid-8a5604b95b) | Defines the [Avalonia.Media.Pen.Brush](xref:Avalonia.Media.Pen.Brush) property. |
-| [DashStyleProperty](#uid-d266f5ccf3) | Defines the [Avalonia.Media.Pen.DashStyle](xref:Avalonia.Media.Pen.DashStyle) property. |
-| [LineCapProperty](#uid-21998a334e) | Defines the [Avalonia.Media.Pen.LineCap](xref:Avalonia.Media.Pen.LineCap) property. |
-| [LineJoinProperty](#uid-88ae5331aa) | Defines the [Avalonia.Media.Pen.LineJoin](xref:Avalonia.Media.Pen.LineJoin) property. |
-| [MiterLimitProperty](#uid-a75a366994) | Defines the [Avalonia.Media.Pen.MiterLimit](xref:Avalonia.Media.Pen.MiterLimit) property. |
-| [ThicknessProperty](#uid-0e68f24381) | Defines the [Avalonia.Media.Pen.Thickness](xref:Avalonia.Media.Pen.Thickness) property. |
+| [BrushProperty](#uid-8a5604b95b) | 定义 [Avalonia.Media.Pen.Brush](xref:Avalonia.Media.Pen.Brush) 属性。 |
+| [DashStyleProperty](#uid-d266f5ccf3) | 定义 [Avalonia.Media.Pen.DashStyle](xref:Avalonia.Media.Pen.DashStyle) 属性。 |
+| [LineCapProperty](#uid-21998a334e) | 定义 [Avalonia.Media.Pen.LineCap](xref:Avalonia.Media.Pen.LineCap) 属性。 |
+| [LineJoinProperty](#uid-88ae5331aa) | 定义 [Avalonia.Media.Pen.LineJoin](xref:Avalonia.Media.Pen.LineJoin) 属性。 |
+| [MiterLimitProperty](#uid-a75a366994) | 定义 [Avalonia.Media.Pen.MiterLimit](xref:Avalonia.Media.Pen.MiterLimit) 属性。 |
+| [ThicknessProperty](#uid-0e68f24381) | 定义 [Avalonia.Media.Pen.Thickness](xref:Avalonia.Media.Pen.Thickness) 属性。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8a5604b95b"></span>
 
-### BrushProperty Field
+### BrushProperty 字段 {#brushproperty-field}
 
-Defines the [Avalonia.Media.Pen.Brush](xref:Avalonia.Media.Pen.Brush) property.
+定义 [Avalonia.Media.Pen.Brush](xref:Avalonia.Media.Pen.Brush) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.IBrush> BrushProperty
@@ -344,9 +344,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.IBrush> BrushProperty
 
 <span id="uid-d266f5ccf3"></span>
 
-### DashStyleProperty Field
+### DashStyleProperty 字段 {#dashstyleproperty-field}
 
-Defines the [Avalonia.Media.Pen.DashStyle](xref:Avalonia.Media.Pen.DashStyle) property.
+定义 [Avalonia.Media.Pen.DashStyle](xref:Avalonia.Media.Pen.DashStyle) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.IDashStyle> DashStyleProperty
@@ -358,9 +358,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.IDashStyle> DashStylePrope
 
 <span id="uid-21998a334e"></span>
 
-### LineCapProperty Field
+### LineCapProperty 字段 {#linecapproperty-field}
 
-Defines the [Avalonia.Media.Pen.LineCap](xref:Avalonia.Media.Pen.LineCap) property.
+定义 [Avalonia.Media.Pen.LineCap](xref:Avalonia.Media.Pen.LineCap) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.PenLineCap> LineCapProperty
@@ -372,9 +372,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.PenLineCap> LineCapPropert
 
 <span id="uid-88ae5331aa"></span>
 
-### LineJoinProperty Field
+### LineJoinProperty 字段 {#linejoinproperty-field}
 
-Defines the [Avalonia.Media.Pen.LineJoin](xref:Avalonia.Media.Pen.LineJoin) property.
+定义 [Avalonia.Media.Pen.LineJoin](xref:Avalonia.Media.Pen.LineJoin) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><Avalonia.Media.PenLineJoin> LineJoinProperty
@@ -386,9 +386,9 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.PenLineJoin> LineJoinPrope
 
 <span id="uid-a75a366994"></span>
 
-### MiterLimitProperty Field
+### MiterLimitProperty 字段 {#miterlimitproperty-field}
 
-Defines the [Avalonia.Media.Pen.MiterLimit](xref:Avalonia.Media.Pen.MiterLimit) property.
+定义 [Avalonia.Media.Pen.MiterLimit](xref:Avalonia.Media.Pen.MiterLimit) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><double> MiterLimitProperty
@@ -400,9 +400,9 @@ public Avalonia.StyledProperty<TValue><double> MiterLimitProperty
 
 <span id="uid-0e68f24381"></span>
 
-### ThicknessProperty Field
+### ThicknessProperty 字段 {#thicknessproperty-field}
 
-Defines the [Avalonia.Media.Pen.Thickness](xref:Avalonia.Media.Pen.Thickness) property.
+定义 [Avalonia.Media.Pen.Thickness](xref:Avalonia.Media.Pen.Thickness) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<TValue><double> ThicknessProperty
@@ -410,11 +410,11 @@ public Avalonia.StyledProperty<TValue><double> ThicknessProperty
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | Raised when a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value changes on this object. Inherited from [AvaloniaObject](../avaloniaobject.mdx). |
+| [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 </ApiRefPage>
 

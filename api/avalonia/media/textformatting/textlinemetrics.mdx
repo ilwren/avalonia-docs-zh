@@ -20,28 +20,28 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextLineMetrics Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLineMetrics.cs">TextLineMetrics.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextLineMetrics.cs">TextLineMetrics.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents a metric for a [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) objects,
-that holds information about ascent, descent, line gap, size and origin of the text line.
+表示 [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) 对象的度量信息，
+其中含上伸高、下伸深、行间距、尺寸以及文本行的原点。
 
 </div>
 
@@ -55,41 +55,41 @@ public struct TextLineMetrics
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TextLineMetrics
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TextLineMetrics
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;TextLineMetrics&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;TextLineMetrics&gt;
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-7636fc681d) | No summary available. |
-| [GetHashCode](#uid-2f14fc2714) | No summary available. |
-| [ToString](#uid-c85be3b538) | No summary available. |
+| [Equals（2 个重载）](#uid-7636fc681d) | 暂无摘要。 |
+| [GetHashCode](#uid-2f14fc2714) | 暂无摘要。 |
+| [ToString](#uid-c85be3b538) | 暂无摘要。 |
 
 <span id="uid-7636fc681d"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3381c4bec6"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Media.TextFormatting.TextLineMetrics other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Media.TextFormatting.TextLineMetrics](xref:Avalonia.Media.TextFormatting.TextLineMetrics)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -100,18 +100,18 @@ bool
 
 <span id="uid-800f6405e4"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -122,13 +122,13 @@ bool
 
 <span id="uid-2f14fc2714"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -139,43 +139,43 @@ int
 
 <span id="uid-c85be3b538"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Extent](#uid-11692b1546) | Gets the distance from the top-most to bottom-most black pixel in a line. |
-| [HasOverflowed](#uid-8969f79e49) | Gets a value that indicates whether content of the line overflows the specified paragraph width. |
-| [Height](#uid-ce4c8d39b5) | Gets the height of a line of text. |
-| [NewlineLength](#uid-de59e9b52c) | Gets the number of newline characters at the end of a line. |
-| [OverhangAfter](#uid-4e98a18b86) | Gets the distance that black pixels extend beyond the bottom alignment edge of a line. |
-| [OverhangLeading](#uid-d904ea0e0f) | Gets the distance that black pixels extend prior to the left leading alignment edge of the line. |
-| [OverhangTrailing](#uid-a2805dd4ae) | Gets the distance that black pixels extend following the right trailing alignment edge of the line. |
-| [Start](#uid-20723b6419) | Gets the distance from the start of a paragraph to the starting point of a line. |
-| [TextBaseline](#uid-c04cfc44b9) | Gets the distance from the top to the baseline of the line of text. |
-| [TrailingWhitespaceLength](#uid-1a19da5d26) | Gets the number of whitespace code points beyond the last non-blank character in a line. |
-| [Width](#uid-f74c6922cc) | Gets the width of a line of text, excluding trailing whitespace characters. |
-| [WidthIncludingTrailingWhitespace](#uid-c0e249b6d4) | Gets the width of a line of text, including trailing whitespace characters. |
+| [Extent](#uid-11692b1546) | 获取一行中最上方与最下方黑色像素之间的距离。 |
+| [HasOverflowed](#uid-8969f79e49) | 获取一个值，指示该行的内容是否超出了指定的段落宽度。 |
+| [Height](#uid-ce4c8d39b5) | 获取一行文本的高度。 |
+| [NewlineLength](#uid-de59e9b52c) | 获取一行末尾换行符的个数。 |
+| [OverhangAfter](#uid-4e98a18b86) | 获取黑色像素超出一行底部对齐边缘的距离。 |
+| [OverhangLeading](#uid-d904ea0e0f) | 获取黑色像素超出一行左侧前端对齐边缘的距离。 |
+| [OverhangTrailing](#uid-a2805dd4ae) | 获取黑色像素超出一行右侧末端对齐边缘的距离。 |
+| [Start](#uid-20723b6419) | 获取从段落起点到某一行起点的距离。 |
+| [TextBaseline](#uid-c04cfc44b9) | 获取从顶部到该行文本基线的距离。 |
+| [TrailingWhitespaceLength](#uid-1a19da5d26) | 获取一行中最后一个非空白字符之后的空白码点个数。 |
+| [Width](#uid-f74c6922cc) | 获取一行文本的宽度，不含行尾的空白字符。 |
+| [WidthIncludingTrailingWhitespace](#uid-c0e249b6d4) | 获取一行文本的宽度，含行尾的空白字符。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-11692b1546"></span>
 
-### Extent Property
+### Extent 属性 {#extent-property}
 
-Gets the distance from the top-most to bottom-most black pixel in a line.
+获取一行中最上方与最下方黑色像素之间的距离。
 
 ```csharp
 public double Extent { get; set; }
@@ -187,9 +187,9 @@ public double Extent { get; set; }
 
 <span id="uid-8969f79e49"></span>
 
-### HasOverflowed Property
+### HasOverflowed 属性 {#hasoverflowed-property}
 
-Gets a value that indicates whether content of the line overflows the specified paragraph width.
+获取一个值，指示该行的内容是否超出了指定的段落宽度。
 
 ```csharp
 public bool HasOverflowed { get; set; }
@@ -201,9 +201,9 @@ public bool HasOverflowed { get; set; }
 
 <span id="uid-ce4c8d39b5"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
-Gets the height of a line of text.
+获取一行文本的高度。
 
 ```csharp
 public double Height { get; set; }
@@ -215,9 +215,9 @@ public double Height { get; set; }
 
 <span id="uid-de59e9b52c"></span>
 
-### NewlineLength Property
+### NewlineLength 属性 {#newlinelength-property}
 
-Gets the number of newline characters at the end of a line.
+获取一行末尾换行符的个数。
 
 ```csharp
 public int NewlineLength { get; set; }
@@ -229,9 +229,9 @@ public int NewlineLength { get; set; }
 
 <span id="uid-4e98a18b86"></span>
 
-### OverhangAfter Property
+### OverhangAfter 属性 {#overhangafter-property}
 
-Gets the distance that black pixels extend beyond the bottom alignment edge of a line.
+获取黑色像素超出一行底部对齐边缘的距离。
 
 ```csharp
 public double OverhangAfter { get; set; }
@@ -243,9 +243,9 @@ public double OverhangAfter { get; set; }
 
 <span id="uid-d904ea0e0f"></span>
 
-### OverhangLeading Property
+### OverhangLeading 属性 {#overhangleading-property}
 
-Gets the distance that black pixels extend prior to the left leading alignment edge of the line.
+获取黑色像素超出一行左侧前端对齐边缘的距离。
 
 ```csharp
 public double OverhangLeading { get; set; }
@@ -257,9 +257,9 @@ public double OverhangLeading { get; set; }
 
 <span id="uid-a2805dd4ae"></span>
 
-### OverhangTrailing Property
+### OverhangTrailing 属性 {#overhangtrailing-property}
 
-Gets the distance that black pixels extend following the right trailing alignment edge of the line.
+获取黑色像素超出一行右侧末端对齐边缘的距离。
 
 ```csharp
 public double OverhangTrailing { get; set; }
@@ -271,9 +271,9 @@ public double OverhangTrailing { get; set; }
 
 <span id="uid-20723b6419"></span>
 
-### Start Property
+### Start 属性 {#start-property}
 
-Gets the distance from the start of a paragraph to the starting point of a line.
+获取从段落起点到某一行起点的距离。
 
 ```csharp
 public double Start { get; set; }
@@ -285,9 +285,9 @@ public double Start { get; set; }
 
 <span id="uid-c04cfc44b9"></span>
 
-### TextBaseline Property
+### TextBaseline 属性 {#textbaseline-property}
 
-Gets the distance from the top to the baseline of the line of text.
+获取从顶部到该行文本基线的距离。
 
 ```csharp
 public double TextBaseline { get; set; }
@@ -299,9 +299,9 @@ public double TextBaseline { get; set; }
 
 <span id="uid-1a19da5d26"></span>
 
-### TrailingWhitespaceLength Property
+### TrailingWhitespaceLength 属性 {#trailingwhitespacelength-property}
 
-Gets the number of whitespace code points beyond the last non-blank character in a line.
+获取一行中最后一个非空白字符之后的空白码点个数。
 
 ```csharp
 public int TrailingWhitespaceLength { get; set; }
@@ -313,9 +313,9 @@ public int TrailingWhitespaceLength { get; set; }
 
 <span id="uid-f74c6922cc"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
-Gets the width of a line of text, excluding trailing whitespace characters.
+获取一行文本的宽度，不含行尾的空白字符。
 
 ```csharp
 public double Width { get; set; }
@@ -327,9 +327,9 @@ public double Width { get; set; }
 
 <span id="uid-c0e249b6d4"></span>
 
-### WidthIncludingTrailingWhitespace Property
+### WidthIncludingTrailingWhitespace 属性 {#widthincludingtrailingwhitespace-property}
 
-Gets the width of a line of text, including trailing whitespace characters.
+获取一行文本的宽度，含行尾的空白字符。
 
 ```csharp
 public double WidthIncludingTrailingWhitespace { get; set; }

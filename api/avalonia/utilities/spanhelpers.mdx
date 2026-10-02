@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SpanHelpers Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Utilities</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Utilities</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/SpanHelpers.cs">SpanHelpers.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/SpanHelpers.cs">SpanHelpers.cs</a>
 </div>
 
 </div>
@@ -48,32 +48,32 @@ public class SpanHelpers
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> SpanHelpers
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> SpanHelpers
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ParseDouble](#uid-b64df72a11) | No summary available. |
-| [TryParseByte](#uid-0cc415b2b1) | No summary available. |
-| [TryParseDouble](#uid-6e25064a29) | No summary available. |
-| [TryParseEnum](#uid-02b7a15ff4) | No summary available. |
-| [TryParseInt (2 overloads)](#uid-43fd4f5cfe) | No summary available. |
-| [TryParseUInt](#uid-f264c34aa6) | No summary available. |
+| [ParseDouble](#uid-b64df72a11) | 暂无摘要。 |
+| [TryParseByte](#uid-0cc415b2b1) | 暂无摘要。 |
+| [TryParseDouble](#uid-6e25064a29) | 暂无摘要。 |
+| [TryParseEnum](#uid-02b7a15ff4) | 暂无摘要。 |
+| [TryParseInt (2 overloads)](#uid-43fd4f5cfe) | 暂无摘要。 |
+| [TryParseUInt](#uid-f264c34aa6) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b64df72a11"></span>
 
-### ParseDouble Method
+### ParseDouble 方法 {#parsedouble-method}
 
 ```csharp
 public double ParseDouble(ReadOnlySpan<char> span, IFormatProvider provider)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `span` ReadOnlySpan&lt;char&gt;
 
@@ -81,7 +81,7 @@ public double ParseDouble(ReadOnlySpan<char> span, IFormatProvider provider)
 `provider` IFormatProvider
 
 
-#### Returns
+#### 返回值 {#returns}
 
 double
 
@@ -92,13 +92,13 @@ double
 
 <span id="uid-0cc415b2b1"></span>
 
-### TryParseByte Method
+### TryParseByte 方法 {#tryparsebyte-method}
 
 ```csharp
 public bool TryParseByte(ReadOnlySpan<char> span, System.Globalization.NumberStyles style, IFormatProvider provider, byte& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `span` ReadOnlySpan&lt;char&gt;
 
@@ -112,7 +112,7 @@ public bool TryParseByte(ReadOnlySpan<char> span, System.Globalization.NumberSty
 `value` byte&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
@@ -123,13 +123,13 @@ bool
 
 <span id="uid-6e25064a29"></span>
 
-### TryParseDouble Method
+### TryParseDouble 方法 {#tryparsedouble-method}
 
 ```csharp
 public bool TryParseDouble(ReadOnlySpan<char> span, System.Globalization.NumberStyles style, IFormatProvider provider, double& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `span` ReadOnlySpan&lt;char&gt;
 
@@ -143,7 +143,7 @@ public bool TryParseDouble(ReadOnlySpan<char> span, System.Globalization.NumberS
 `value` double&amp;
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 bool
 
@@ -154,13 +154,13 @@ bool
 
 <span id="uid-02b7a15ff4"></span>
 
-### TryParseEnum Method
+### TryParseEnum 方法 {#tryparseenum-method}
 
 ```csharp
 public bool TryParseEnum<TEnum>(ReadOnlySpan<char> span, bool ignoreCase, TEnum& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `span` ReadOnlySpan&lt;char&gt;
 
@@ -176,7 +176,7 @@ public bool TryParseEnum<TEnum>(ReadOnlySpan<char> span, bool ignoreCase, TEnum&
 `TEnum`
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 bool
 
@@ -191,13 +191,13 @@ bool
 
 <span id="uid-f3ea7c9fc7"></span>
 
-#### TryParseInt Method
+#### TryParseInt 方法 {#tryparseint-method}
 
 ```csharp
 public bool TryParseInt(ReadOnlySpan<char> span, System.Globalization.NumberStyles style, IFormatProvider provider, int& value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `span` ReadOnlySpan&lt;char&gt;
 
@@ -211,7 +211,7 @@ public bool TryParseInt(ReadOnlySpan<char> span, System.Globalization.NumberStyl
 `value` int&amp;
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 bool
 
@@ -222,13 +222,13 @@ bool
 
 <span id="uid-55af653b83"></span>
 
-#### TryParseInt Method
+#### TryParseInt 方法 {#tryparseint-method-1}
 
 ```csharp
 public bool TryParseInt(ReadOnlySpan<char> span, int& value)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `span` ReadOnlySpan&lt;char&gt;
 
@@ -236,7 +236,7 @@ public bool TryParseInt(ReadOnlySpan<char> span, int& value)
 `value` int&amp;
 
 
-##### Returns
+##### 返回值 {#returns-5}
 
 bool
 
@@ -247,13 +247,13 @@ bool
 
 <span id="uid-f264c34aa6"></span>
 
-### TryParseUInt Method
+### TryParseUInt 方法 {#tryparseuint-method}
 
 ```csharp
 public bool TryParseUInt(ReadOnlySpan<char> span, System.Globalization.NumberStyles style, IFormatProvider provider, uint& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `span` ReadOnlySpan&lt;char&gt;
 
@@ -267,7 +267,7 @@ public bool TryParseUInt(ReadOnlySpan<char> span, System.Globalization.NumberSty
 `value` uint&amp;
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 bool
 

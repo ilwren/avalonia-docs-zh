@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridIndexesChangedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,36 +50,36 @@ public class TreeDataGridIndexesChangedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridIndexesChangedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridIndexesChangedEventArgs
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This event is raised when indexes in the selection model change due to insertions,
 removals, or reordering in the underlying data source. It provides information
 about which range of indexes was affected and how they were shifted.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridIndexesChangedEventArgs](#uid-98b247bda2) | Initializes a new instance of the [Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs](xref:Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs) class. |
+| [TreeDataGridIndexesChangedEventArgs](#uid-98b247bda2) | 初始化 [Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs](xref:Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-98b247bda2"></span>
 
-### TreeDataGridIndexesChangedEventArgs Constructor
+### TreeDataGridIndexesChangedEventArgs 构造函数 {#treedatagridindexeschangedeventargs-constructor}
 
-Initializes a new instance of the
-[Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs](xref:Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs) class.
+初始化
+[Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs](xref:Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs) 类的新实例。
 
 ```csharp
 public TreeDataGridIndexesChangedEventArgs(Avalonia.Controls.IndexPath parentIndex, int startIndex, int endIndex, int delta)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `parentIndex` [Avalonia.Controls.IndexPath](xref:Avalonia.Controls.IndexPath)
 
@@ -101,7 +101,7 @@ The index at which the change ended.
 The number of items added or removed.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 The `delta` parameter will be positive when items are added and
 negative when items are removed.
@@ -111,20 +111,20 @@ The affected range is from `startIndex` (inclusive) to
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Delta](#uid-83787d966b) | Gets the delta of the change; i.e. the number of indexes added or removed. |
 | [EndIndex](#uid-70b6b239ae) | Gets the exclusive end index of the range of indexes that changed. |
-| [ParentIndex](#uid-5c8d4539ab) | Gets the index of the parent item. |
+| [ParentIndex](#uid-5c8d4539ab) | 获取父项的索引。 |
 | [StartIndex](#uid-a59d20a025) | Gets the inclusive start index of the range of indexes that changed. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-83787d966b"></span>
 
-### Delta Property
+### Delta 属性 {#delta-property}
 
 Gets the delta of the change; i.e. the number of indexes added or removed.
 
@@ -132,13 +132,13 @@ Gets the delta of the change; i.e. the number of indexes added or removed.
 public int Delta { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 A positive value indicates items were added; a negative value indicates items were
 removed.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 When items are added, [Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs.Delta](xref:Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs.Delta) represents the number of items inserted.
 
@@ -152,7 +152,7 @@ point to items after the change.
 
 <span id="uid-70b6b239ae"></span>
 
-### EndIndex Property
+### EndIndex 属性 {#endindex-property}
 
 Gets the exclusive end index of the range of indexes that changed.
 
@@ -160,7 +160,7 @@ Gets the exclusive end index of the range of indexes that changed.
 public int EndIndex { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 This is one past the last index affected by the change. The range of affected
 indexes is from [Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs.StartIndex](xref:Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs.StartIndex) (inclusive) to [Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs.EndIndex](xref:Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs.EndIndex)
@@ -172,15 +172,15 @@ indexes is from [Avalonia.Controls.Selection.TreeDataGridIndexesChangedEventArgs
 
 <span id="uid-5c8d4539ab"></span>
 
-### ParentIndex Property
+### ParentIndex 属性 {#parentindex-property}
 
-Gets the index of the parent item.
+获取父项的索引。
 
 ```csharp
 public Avalonia.Controls.IndexPath ParentIndex { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 For changes at the root level, this will be an empty index path.
 
@@ -190,7 +190,7 @@ For changes at the root level, this will be an empty index path.
 
 <span id="uid-a59d20a025"></span>
 
-### StartIndex Property
+### StartIndex 属性 {#startindex-property}
 
 Gets the inclusive start index of the range of indexes that changed.
 
@@ -198,7 +198,7 @@ Gets the inclusive start index of the range of indexes that changed.
 public int StartIndex { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 This is the first index affected by the change.
 

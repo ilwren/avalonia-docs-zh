@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Size Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Size.cs">Size.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Size.cs">Size.cs</a>
 </div>
 
 </div>
@@ -54,45 +54,45 @@ public struct Size
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Size
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Size
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;Size&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;Size&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Size (2 overloads)](#uid-454ccbb95a) | Initializes a new instance of the [Avalonia.Size](xref:Avalonia.Size) structure. |
+| [Size (2 overloads)](#uid-454ccbb95a) | 初始化 [Avalonia.Size](xref:Avalonia.Size) 结构的新实例。 |
 
 <span id="uid-454ccbb95a"></span>
 
-### Size overloads
+### Size 的重载 {#size-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-34605aafdc"></span>
 
-#### Size Constructor
+#### Size 构造函数 {#size-constructor}
 
-Initializes a new instance of the [Avalonia.Size](xref:Avalonia.Size) structure.
+初始化 [Avalonia.Size](xref:Avalonia.Size) 结构的新实例。
 
 ```csharp
 public Size(double width, double height)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `width` double
 
-The width.
+宽度。
 
 
 `height` double
 
-The height.
+高度。
 
 
 </section>
@@ -101,15 +101,15 @@ The height.
 
 <span id="uid-17dc211301"></span>
 
-#### Size Constructor
+#### Size 构造函数 {#size-constructor-1}
 
-Initializes a new instance of the [Avalonia.Size](xref:Avalonia.Size) structure.
+初始化 [Avalonia.Size](xref:Avalonia.Size) 结构的新实例。
 
 ```csharp
 public Size(System.Numerics.Vector2 vector2)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `vector2` System.Numerics.Vector2
 
@@ -118,42 +118,42 @@ The vector to take values from.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Constrain](#uid-2d29cf854e) | Constrains the size. |
-| [Deconstruct](#uid-f874a31ae4) | No summary available. |
-| [Deflate](#uid-eeadea36f8) | Deflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
-| [Equals (2 overloads)](#uid-b9cb8dbbef) | Returns a boolean indicating whether the size is equal to the other given size (bitwise). |
-| [GetHashCode](#uid-0468d68394) | Returns a hash code for a [Avalonia.Size](xref:Avalonia.Size). |
-| [Inflate](#uid-6053fa86c5) | Inflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
+| [Constrain](#uid-2d29cf854e) | 约束该尺寸。 |
+| [Deconstruct](#uid-f874a31ae4) | 暂无摘要。 |
+| [Deflate](#uid-eeadea36f8) | 按 [Avalonia.Thickness](xref:Avalonia.Thickness) 收缩该尺寸。 |
+| [Equals（2 个重载）](#uid-b9cb8dbbef) | Returns a boolean indicating whether the size is equal to the other given size (bitwise). |
+| [GetHashCode](#uid-0468d68394) | 返回 [Avalonia.Size](xref:Avalonia.Size) 的哈希码。 |
+| [Inflate](#uid-6053fa86c5) | 按 [Avalonia.Thickness](xref:Avalonia.Thickness) 扩张该尺寸。 |
 | [NearlyEquals](#uid-9d4346ca02) | Returns a boolean indicating whether the size is equal to the other given size (numerically). |
-| [Parse](#uid-b50eddb408) | Parses a [Avalonia.Size](xref:Avalonia.Size) string. |
-| [ToString](#uid-0123cae676) | Returns the string representation of the size. |
-| [WithHeight](#uid-4878b9be3d) | Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same width and the specified height. |
-| [WithWidth](#uid-db13f0fbd4) | Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same height and the specified width. |
+| [Parse](#uid-b50eddb408) | 解析 [Avalonia.Size](xref:Avalonia.Size) 字符串。 |
+| [ToString](#uid-0123cae676) | 返回该尺寸的字符串表示形式。 |
+| [WithHeight](#uid-4878b9be3d) | 返回一个宽度不变、高度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。 |
+| [WithWidth](#uid-db13f0fbd4) | 返回一个高度不变、宽度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2d29cf854e"></span>
 
-### Constrain Method
+### Constrain 方法 {#constrain-method}
 
-Constrains the size.
+约束该尺寸。
 
 ```csharp
 public Avalonia.Size Constrain(Avalonia.Size constraint)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `constraint` [Avalonia.Size](xref:Avalonia.Size)
 
 The size to constrain to.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -166,13 +166,13 @@ The constrained size.
 
 <span id="uid-f874a31ae4"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(double& width, double& height)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `width` double&amp;
 
@@ -186,29 +186,29 @@ public void Deconstruct(double& width, double& height)
 
 <span id="uid-eeadea36f8"></span>
 
-### Deflate Method
+### Deflate 方法 {#deflate-method}
 
-Deflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness).
+按 [Avalonia.Thickness](xref:Avalonia.Thickness) 收缩该尺寸。
 
 ```csharp
 public Avalonia.Size Deflate(Avalonia.Thickness thickness)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `thickness` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
-The thickness.
+厚度。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
 The deflated size.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 The deflated size cannot be less than 0.
 
@@ -216,13 +216,13 @@ The deflated size cannot be less than 0.
 
 <span id="uid-b9cb8dbbef"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8c4fee60a0"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Returns a boolean indicating whether the size is equal to the other given size (bitwise).
 
@@ -230,18 +230,18 @@ Returns a boolean indicating whether the size is equal to the other given size (
 public bool Equals(Avalonia.Size other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `other` [Avalonia.Size](xref:Avalonia.Size)
 
-The other size to test equality against.
+要与之比较是否相等的另一个尺寸。
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
-True if this size is equal to other; False otherwise.
+若该尺寸与 other 相等则为 True，否则为 False。
 
 
 </section>
@@ -250,7 +250,7 @@ True if this size is equal to other; False otherwise.
 
 <span id="uid-fe511f4364"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 Checks for equality between a size and an object.
 
@@ -258,18 +258,18 @@ Checks for equality between a size and an object.
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `obj` object
 
-The object.
+该对象。
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 bool
 
-True if `obj` is a size that equals the current size.
+若 `obj` 的尺寸与当前尺寸相等则为 true。
 
 
 </section>
@@ -278,19 +278,19 @@ True if `obj` is a size that equals the current size.
 
 <span id="uid-0468d68394"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
-Returns a hash code for a [Avalonia.Size](xref:Avalonia.Size).
+返回 [Avalonia.Size](xref:Avalonia.Size) 的哈希码。
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 int
 
-The hash code.
+哈希码。
 
 
 </section>
@@ -299,22 +299,22 @@ The hash code.
 
 <span id="uid-6053fa86c5"></span>
 
-### Inflate Method
+### Inflate 方法 {#inflate-method}
 
-Inflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness).
+按 [Avalonia.Thickness](xref:Avalonia.Thickness) 扩张该尺寸。
 
 ```csharp
 public Avalonia.Size Inflate(Avalonia.Thickness thickness)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `thickness` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
-The thickness.
+厚度。
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -327,7 +327,7 @@ The inflated size.
 
 <span id="uid-9d4346ca02"></span>
 
-### NearlyEquals Method
+### NearlyEquals 方法 {#nearlyequals-method}
 
 Returns a boolean indicating whether the size is equal to the other given size (numerically).
 
@@ -335,18 +335,18 @@ Returns a boolean indicating whether the size is equal to the other given size (
 public bool NearlyEquals(Avalonia.Size other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `other` [Avalonia.Size](xref:Avalonia.Size)
 
-The other size to test equality against.
+要与之比较是否相等的另一个尺寸。
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 bool
 
-True if this size is equal to other; False otherwise.
+若该尺寸与 other 相等则为 True，否则为 False。
 
 
 </section>
@@ -355,22 +355,22 @@ True if this size is equal to other; False otherwise.
 
 <span id="uid-b50eddb408"></span>
 
-### Parse Method
+### Parse 方法 {#parse-method}
 
-Parses a [Avalonia.Size](xref:Avalonia.Size) string.
+解析 [Avalonia.Size](xref:Avalonia.Size) 字符串。
 
 ```csharp
 public Avalonia.Size Parse(string s)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `s` string
 
-The string.
+该字符串。
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
@@ -383,19 +383,19 @@ The [Avalonia.Size](xref:Avalonia.Size).
 
 <span id="uid-0123cae676"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
-Returns the string representation of the size.
+返回该尺寸的字符串表示形式。
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-8}
 
 string
 
-The string representation of the size.
+该尺寸的字符串表示形式。
 
 
 </section>
@@ -404,26 +404,26 @@ The string representation of the size.
 
 <span id="uid-4878b9be3d"></span>
 
-### WithHeight Method
+### WithHeight 方法 {#withheight-method}
 
-Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same width and the specified height.
+返回一个宽度不变、高度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。
 
 ```csharp
 public Avalonia.Size WithHeight(double height)
 ```
 
-#### Parameters
+#### 参数 {#parameters-10}
 
 `height` double
 
-The height.
+高度。
 
 
-#### Returns
+#### 返回值 {#returns-9}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
-The new [Avalonia.Size](xref:Avalonia.Size).
+新的 [Avalonia.Size](xref:Avalonia.Size)。
 
 
 </section>
@@ -432,45 +432,45 @@ The new [Avalonia.Size](xref:Avalonia.Size).
 
 <span id="uid-db13f0fbd4"></span>
 
-### WithWidth Method
+### WithWidth 方法 {#withwidth-method}
 
-Returns a new [Avalonia.Size](xref:Avalonia.Size) with the same height and the specified width.
+返回一个高度不变、宽度为指定值的新 [Avalonia.Size](xref:Avalonia.Size)。
 
 ```csharp
 public Avalonia.Size WithWidth(double width)
 ```
 
-#### Parameters
+#### 参数 {#parameters-11}
 
 `width` double
 
-The width.
+宽度。
 
 
-#### Returns
+#### 返回值 {#returns-10}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
-The new [Avalonia.Size](xref:Avalonia.Size).
+新的 [Avalonia.Size](xref:Avalonia.Size)。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AspectRatio](#uid-84b8e2fcfa) | Gets the aspect ratio of the size. |
-| [Height](#uid-38d775d8b5) | Gets the height. |
-| [Width](#uid-646cb67085) | Gets the width. |
+| [AspectRatio](#uid-84b8e2fcfa) | 获取该尺寸的宽高比。 |
+| [Height](#uid-38d775d8b5) | 获取高度。 |
+| [Width](#uid-646cb67085) | 获取宽度。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-84b8e2fcfa"></span>
 
-### AspectRatio Property
+### AspectRatio 属性 {#aspectratio-property}
 
-Gets the aspect ratio of the size.
+获取该尺寸的宽高比。
 
 ```csharp
 public double AspectRatio { get; set; }
@@ -482,9 +482,9 @@ public double AspectRatio { get; set; }
 
 <span id="uid-38d775d8b5"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
-Gets the height.
+获取高度。
 
 ```csharp
 public double Height { get; set; }
@@ -496,9 +496,9 @@ public double Height { get; set; }
 
 <span id="uid-646cb67085"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
-Gets the width.
+获取宽度。
 
 ```csharp
 public double Width { get; set; }
@@ -506,19 +506,19 @@ public double Width { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Infinity](#uid-0a821f9fc4) | A size representing infinity. |
+| [Infinity](#uid-0a821f9fc4) | 一个表示无穷大的尺寸。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0a821f9fc4"></span>
 
-### Infinity Field
+### Infinity 字段 {#infinity-field}
 
-A size representing infinity.
+一个表示无穷大的尺寸。
 
 ```csharp
 public Avalonia.Size Infinity

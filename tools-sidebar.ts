@@ -26,7 +26,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Dev Tools',
+      label: '开发者工具',
       collapsed: true,
       items: [
         'developer-tools/installation',
@@ -38,7 +38,7 @@ const sidebars: SidebarsConfig = {
         'developer-tools/options',
         {
           type: 'category',
-          label: 'Tool reference',
+          label: '工具参考',
           collapsed: true,
           items: [
             'developer-tools/assets-tool',
@@ -69,7 +69,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'AI Tools',
+      label: 'AI 工具',
       collapsed: true,
       items: [
         'ai-tools/index',

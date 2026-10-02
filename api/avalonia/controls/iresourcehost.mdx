@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IResourceHost Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IResourceHost.cs">IResourceHost.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/IResourceHost.cs">IResourceHost.cs</a>
 </div>
 
 </div>
@@ -54,17 +54,17 @@ public interface IResourceHost
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iresourcenode">IResourceNode</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iresourcenode">IResourceNode</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This interface is implemented by [Avalonia.StyledElement](xref:Avalonia.StyledElement) and `Application`.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [NotifyHostedResourcesChanged](#uid-e60a587c09) | Notifies the resource host that one or more of its hosted resources has changed. |
 
@@ -72,7 +72,7 @@ This interface is implemented by [Avalonia.StyledElement](xref:Avalonia.StyledEl
 
 <span id="uid-e60a587c09"></span>
 
-### NotifyHostedResourcesChanged Method
+### NotifyHostedResourcesChanged 方法 {#notifyhostedresourceschanged-method}
 
 Notifies the resource host that one or more of its hosted resources has changed.
 
@@ -80,14 +80,14 @@ Notifies the resource host that one or more of its hosted resources has changed.
 public void NotifyHostedResourcesChanged(Avalonia.Controls.ResourcesChangedEventArgs e)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `e` [Avalonia.Controls.ResourcesChangedEventArgs](xref:Avalonia.Controls.ResourcesChangedEventArgs)
 
-The event args.
+事件参数。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This method will be called automatically by the framework, you should not need to call
 this method yourself. It is called when the resources hosted by this element have
@@ -96,19 +96,19 @@ in response to a resource being added or removed.
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ResourcesChanged](#uid-b07a533b55) | Raised when the resources change on the element or an ancestor of the element. |
+| [ResourcesChanged](#uid-b07a533b55) | 当该元素或其某个祖先上的资源发生变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b07a533b55"></span>
 
-### ResourcesChanged Event
+### ResourcesChanged 事件 {#resourceschanged-event}
 
-Raised when the resources change on the element or an ancestor of the element.
+当该元素或其某个祖先上的资源发生变化时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ResourcesChangedEventArgs> ResourcesChanged

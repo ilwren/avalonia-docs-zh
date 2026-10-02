@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FolderPickerOpenOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FolderPickerOpenOptions.cs">FolderPickerOpenOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FolderPickerOpenOptions.cs">FolderPickerOpenOptions.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Options class for [Avalonia.Platform.Storage.IStorageProvider.OpenFolderPickerAsync(Avalonia.Platform.Storage.FolderPickerOpenOptions)](xref:Avalonia.Platform.Storage.IStorageProvider.OpenFolderPickerAsync%28Avalonia.Platform.Storage.FolderPickerOpenOptions%29) method.
+[Avalonia.Platform.Storage.IStorageProvider.OpenFolderPickerAsync(Avalonia.Platform.Storage.FolderPickerOpenOptions)](xref:Avalonia.Platform.Storage.IStorageProvider.OpenFolderPickerAsync%28Avalonia.Platform.Storage.FolderPickerOpenOptions%29) 方法所用的选项类。
 
 </div>
 
@@ -54,21 +54,21 @@ public class FolderPickerOpenOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="pickeroptions">PickerOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> FolderPickerOpenOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="pickeroptions">PickerOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> FolderPickerOpenOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FolderPickerOpenOptions](#uid-8012a5ff45) | No summary available. |
+| [FolderPickerOpenOptions](#uid-8012a5ff45) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8012a5ff45"></span>
 
-### FolderPickerOpenOptions Constructor
+### FolderPickerOpenOptions 构造函数 {#folderpickeropenoptions-constructor}
 
 ```csharp
 public FolderPickerOpenOptions()
@@ -76,22 +76,22 @@ public FolderPickerOpenOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AllowMultiple](#uid-0908ae5d95) | Gets or sets an option indicating whether open picker allows users to select multiple folders. |
-| [SuggestedFileName](pickeroptions.mdx#uid-87696bd66c) | Gets or sets the file name that the file picker suggests to the user. Inherited from [PickerOptions](pickeroptions.mdx). |
-| [SuggestedStartLocation](pickeroptions.mdx#uid-792044079c) | Gets or sets the initial location where the file open picker looks for files to present to the user. Can be obtained from previously picked folder or using [Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync(Uri)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync%28System.Uri%29) or [Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync%28Avalonia.Platform.Storage.WellKnownFolder%29). Inherited from [PickerOptions](pickeroptions.mdx). |
-| [Title](pickeroptions.mdx#uid-825079a1b0) | Gets or sets the text that appears in the title bar of a picker. Inherited from [PickerOptions](pickeroptions.mdx). |
+| [AllowMultiple](#uid-0908ae5d95) | 获取或设置一个选项，指示打开选取器是否允许用户选中多个文件夹。 |
+| [SuggestedFileName](pickeroptions.mdx#uid-87696bd66c) | 获取或设置文件选取器向用户建议的文件名。继承自 [PickerOptions](pickeroptions.mdx)。 |
+| [SuggestedStartLocation](pickeroptions.mdx#uid-792044079c) | 获取或设置文件打开选取器呈现给用户时最初查看的位置。该值可以取自此前选过的文件夹，也可以用 [Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync(Uri)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync%28System.Uri%29) 或 [Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync%28Avalonia.Platform.Storage.WellKnownFolder%29) 取得。继承自 [PickerOptions](pickeroptions.mdx)。 |
+| [Title](pickeroptions.mdx#uid-825079a1b0) | 获取或设置显示在选取器标题栏中的文字。继承自 [PickerOptions](pickeroptions.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0908ae5d95"></span>
 
-### AllowMultiple Property
+### AllowMultiple 属性 {#allowmultiple-property}
 
-Gets or sets an option indicating whether open picker allows users to select multiple folders.
+获取或设置一个选项，指示打开选取器是否允许用户选中多个文件夹。
 
 ```csharp
 public bool AllowMultiple { get; set; }

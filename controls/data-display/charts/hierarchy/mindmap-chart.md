@@ -1,7 +1,7 @@
 ---
 id: mindmap-chart
-title: Mindmap / brainstorming
-description: Builds a mind map by arranging FlowChart nodes and links around a central topic.
+title: 思维导图 / 头脑风暴
+description: 围绕一个中心主题排布 FlowChart 的节点和连接，构建出一张思维导图。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFlowMindmap from '/img/controls/charts/charts-flow-mindmap.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Mindmaps are divergent diagrams used for brainstorming and project planning, radiating outward from a central topic to related ideas and sub-tasks. In `Avalonia.Controls.Charts`, this layout is built on top of `FlowChart`.
+思维导图是一种发散式的图示，从中心主题向外辐射出相关想法和子任务，常用于头脑风暴和项目规划。在 `Avalonia.Controls.Charts` 中，这种版面构建在 `FlowChart` 之上。
 
 <Image light={chartsFlowMindmap} maxWidth={400} position="center" cornerRadius="true" alt="Mindmap diagram radiating outward from a central topic node to connected sub-topics and ideas." />
 
-## When to use
-- **Idea generation**: Capturing and organizing thoughts during a meeting.
-- **Project scope**: Mapping out different modules and their requirements.
-- **Knowledge representation**: Visualizing complex concepts and their interconnectedness.
+## 适用场景 {#when-to-use}
+- **想法生发**：会议过程中随手记录并梳理思路。
+- **项目范围**：理清各个模块及其需求。
+- **知识表达**：呈现复杂概念及其相互关联。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -34,7 +34,7 @@ Mindmaps are divergent diagrams used for brainstorming and project planning, rad
                   CornerRadius="20" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 using Avalonia.Media;
 
@@ -158,12 +158,12 @@ public ObservableCollection<FlowEdge> MindmapEdges { get; } = new()
 };
 ```
 
-## Common properties (`FlowChart`)
+## 常用属性（`FlowChart`） {#common-properties-flowchart}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Nodes` | Collection of `FlowNode` items representing topics. | `null` |
-| `Edges` | Collection of `FlowEdge` items representing relationships. | `null` |
-| `NodeCornerRadius` | Rounding of the rendered node boxes. | `10.0` |
-| `Groups` | Optional collection of `FlowGroup` containers. | `null` |
-| `FlowNode.Shape` | Node shape, such as `Rectangle`, `Circle`, or `Diamond`. | `Rectangle` |
+| `Nodes` | 表示各主题的 `FlowNode` 项集合。 | `null` |
+| `Edges` | 表示各条关系的 `FlowEdge` 项集合。 | `null` |
+| `NodeCornerRadius` | 所绘节点方框的圆角程度。 | `10.0` |
+| `Groups` | 可选的 `FlowGroup` 容器集合。 | `null` |
+| `FlowNode.Shape` | 节点形状，比如 `Rectangle`、`Circle` 或 `Diamond`。 | `Rectangle` |

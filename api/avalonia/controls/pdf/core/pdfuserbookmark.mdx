@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfUserBookmark Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class PdfUserBookmark
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfUserBookmark
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfUserBookmark
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;PdfUserBookmark&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;PdfUserBookmark&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 These are distinct from the document outline ([Avalonia.Controls.Pdf.Core.PdfBookmark](xref:Avalonia.Controls.Pdf.Core.PdfBookmark)): the outline
 is the author-defined table of contents embedded in the PDF, whereas user bookmarks are
@@ -66,9 +66,9 @@ under Apple's private `apple-preview` namespace (`http://ns.apple.com/Preview/1.
 so bookmarks created here interoperate with macOS Preview and vice versa. The schema is a
 page index plus a stable UUID; there is at most one bookmark per page.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PdfUserBookmark](#uid-c977c0f315) | Creates a user bookmark for the given page. |
 
@@ -76,7 +76,7 @@ page index plus a stable UUID; there is at most one bookmark per page.
 
 <span id="uid-c977c0f315"></span>
 
-### PdfUserBookmark Constructor
+### PdfUserBookmark 构造函数 {#pdfuserbookmark-constructor}
 
 Creates a user bookmark for the given page.
 
@@ -84,7 +84,7 @@ Creates a user bookmark for the given page.
 public PdfUserBookmark(int pageIndex, string uuid)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `pageIndex` int
 
@@ -98,23 +98,23 @@ Stable identifier; a new one is generated when omitted.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-9e8844bd5c) | Two bookmarks are equal when they flag the same page. |
-| [GetHashCode](#uid-440ecc14c4) | No summary available. |
-| [ToString](#uid-110a183663) | No summary available. |
+| [Equals（2 个重载）](#uid-9e8844bd5c) | Two bookmarks are equal when they flag the same page. |
+| [GetHashCode](#uid-440ecc14c4) | 暂无摘要。 |
+| [ToString](#uid-110a183663) | 暂无摘要。 |
 
 <span id="uid-9e8844bd5c"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f95f95fe16"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 Two bookmarks are equal when they flag the same page.
 
@@ -122,12 +122,12 @@ Two bookmarks are equal when they flag the same page.
 public bool Equals(Avalonia.Controls.Pdf.Core.PdfUserBookmark other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.Controls.Pdf.Core.PdfUserBookmark](xref:Avalonia.Controls.Pdf.Core.PdfUserBookmark)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -138,18 +138,18 @@ bool
 
 <span id="uid-ec0d3d6e03"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -160,13 +160,13 @@ bool
 
 <span id="uid-440ecc14c4"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -177,24 +177,24 @@ int
 
 <span id="uid-110a183663"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PageIndex](#uid-83b1307d57) | Zero-based index of the bookmarked page. |
+| [PageIndex](#uid-83b1307d57) | 被加入书签那一页的索引（从 0 开始）。 |
 | [PageNumber](#uid-1819eaf3ce) | One-based page number of the bookmarked page. |
 | [Uuid](#uid-afbbc5eb65) | Stable identifier that round-trips with Preview (its `apple-preview:UUID`). |
 
@@ -202,9 +202,9 @@ string
 
 <span id="uid-83b1307d57"></span>
 
-### PageIndex Property
+### PageIndex 属性 {#pageindex-property}
 
-Zero-based index of the bookmarked page.
+被加入书签那一页的索引（从 0 开始）。
 
 ```csharp
 public int PageIndex { get; set; }
@@ -216,7 +216,7 @@ public int PageIndex { get; set; }
 
 <span id="uid-1819eaf3ce"></span>
 
-### PageNumber Property
+### PageNumber 属性 {#pagenumber-property}
 
 One-based page number of the bookmarked page.
 
@@ -230,7 +230,7 @@ public int PageNumber { get; set; }
 
 <span id="uid-afbbc5eb65"></span>
 
-### Uuid Property
+### Uuid 属性 {#uuid-property}
 
 Stable identifier that round-trips with Preview (its `apple-preview:UUID`).
 

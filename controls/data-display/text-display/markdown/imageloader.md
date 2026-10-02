@@ -1,22 +1,22 @@
 ---
 id: imageloader
 title: ImageLoader
-description: Customize how the Markdown control loads and resolves images by setting Markdown.ImageLoader to a MarkdownImageLoader.
+description: 把 Markdown.ImageLoader 设为一个 MarkdownImageLoader，即可定制 Markdown 控件加载和解析图片的方式。
 doc-type: reference
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-The `Markdown` control resolves image URLs through a `MarkdownImageLoader`. Set `Markdown.ImageLoader` on the control and every image in its document uses it.
+`Markdown` 控件通过 `MarkdownImageLoader` 来解析图片 URL。在控件上设置 `Markdown.ImageLoader`，其文档中的每张图片就都会用上它。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Default behavior
+## 默认表现 {#default-behavior}
 
-No loader is set by default, so images are not loaded until you supply one. The `MarkdownImageLoader` base class resolves the `http://`, `https://` and `file://` schemes, and returns an `IImage` on success or `null` on failure. For most common uses, you assign the loader directly and write no code:
+默认没有设置任何加载器，所以在你提供一个之前，图片不会被加载。基类 `MarkdownImageLoader` 能解析 `http://`、`https://` 和 `file://` 三种方案，成功时返回 `IImage`，失败时返回 `null`。大多数常见场景下，直接把加载器赋上去即可，一行代码都不用写：
 
 ```xml
 <Markdown Text="![Logo](https://example.com/logo.png)">
@@ -26,13 +26,13 @@ No loader is set by default, so images are not loaded until you supply one. The 
 </Markdown>
 ```
 
-Subclass the loader if you need a scheme, image format, authentication or caching strategy the base class does not cover.
+若需要基类未覆盖的协议方案、图片格式、鉴权方式或缓存策略，就派生一个自己的加载器。
 
-## Example: loading SVG images
+## 示例：加载 SVG 图片 {#example-loading-svg-images}
 
-### Required packages
+### 所需的包 {#required-packages}
 
-To use the custom image loader example below, you need to install the following NuGet package:
+要跑通下面这个自定义图片加载器的例子，你需要安装以下 NuGet 包：
 
 ```bash
  dotnet add package Avalonia.Svg.Skia
@@ -40,7 +40,7 @@ To use the custom image loader example below, you need to install the following 
 
 ### Implementation
 
-Below is an example of a custom image loader that supports SVG images:
+下面是一个支持 SVG 图片的自定义图片加载器示例：
 
 ```csharp
 using Avalonia.Controls;
@@ -132,9 +132,9 @@ public class CustomImageLoader : MarkdownImageLoader
 }
 ```
 
-## Usage
+## 用法 {#usage}
 
-`Markdown.ImageLoader` is an attached property. Set it on the control itself.
+`Markdown.ImageLoader` 是附加属性，直接设置在控件上即可。
 
 ### XAML
 
@@ -149,7 +149,7 @@ public class CustomImageLoader : MarkdownImageLoader
 </Window>
 ```
 
-To share one loader across several controls, declare it as a resource and point each control at it:
+若要让多个控件共用一个加载器，请把它声明为资源，再让各控件都指向它：
 
 ```xml
 <Window.Resources>
@@ -174,15 +174,15 @@ markdown.ImageLoader = loader;
 Markdown.SetImageLoader(markdown, loader);
 ```
 
-To resolve one image differently from the rest, set `MarkdownImage.ImageLoader` on that element. A value set on one image wins over the value supplied by the control.
+若想让某张图片与众不同，可以在那个元素上设置 `MarkdownImage.ImageLoader`。写在单张图片上的取值会盖过控件给出的取值。
 
-Image loading is deferred until both the URL (set automatically from the Markdown source) and a loader are available, and assigning a loader later re-resolves images already in the document. This decouples the document model from image resolution.
+图片加载会一直推迟到 URL（由 Markdown 源码自动设置）和加载器两者都就位；之后再赋上加载器，文档中已有的图片也会重新解析。这样一来，文档模型就与图片解析解耦了。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-You should implement a custom `MarkdownImageLoader` whenever the default image resolution does not meet your needs. For example, you might need to render SVG images, load images from a remote server that requires authentication, or apply a caching strategy to avoid repeated downloads. A custom loader gives you full control over how image URIs are resolved and what image types your `Markdown` control can display.
+只要默认的图片解析方式满足不了需求，你就该实现一个自定义的 `MarkdownImageLoader`。比如你可能需要渲染 SVG 图片、从需要鉴权的远程服务器加载图片，或是加一层缓存策略以免反复下载。自定义加载器让你完全掌控图片 URI 如何解析，以及 `Markdown` 控件能显示哪些图片类型。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Markdown control](/controls/data-display/text-display/markdown)
+- [Markdown 控件](/controls/data-display/text-display/markdown)
 - [CodeHighlighter](/controls/data-display/text-display/markdown/codehighlighter)

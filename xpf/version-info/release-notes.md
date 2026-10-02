@@ -1,326 +1,326 @@
 ---
 id: release-notes
-title: Release notes
+title: 发行说明
 ---
 
 ## XPF 1.6.7 (2026-09-15)
 
-* Avalonia version updated from 11.3.20 to 11.3.22
-* Fixed tooltips not disappearing when cursor moves out of the window (Linux)
-* Fixed ShutdownRequested cancellation not respected (macOS)
-* Fixed MessageBox being hidden behind topmost windows
-* Fixed popup not closing when another process activated
-* Fixed transparent windows being black when using Nvidia EGL drivers
-* Implemented heap and global memory API shims, GetShortPathName, QueryPerformanceCounter/Frequency, UnregisterClass
+* Avalonia 版本从 11.3.20 更新到 11.3.22
+* 修复光标移出窗口后工具提示不消失的问题（Linux）
+* 修复 ShutdownRequested 的取消请求未被遵从的问题（macOS）
+* 修复 MessageBox 被置顶窗口挡住的问题
+* 修复另一个进程被激活时弹出层不关闭的问题
+* 修复使用 Nvidia EGL 驱动时透明窗口显示为黑色的问题
+* 实现了堆与全局内存 API 的 shim，以及 GetShortPathName、QueryPerformanceCounter/Frequency、UnregisterClass
 
 ## XPF 1.6.6 (2026-08-11)
 
-* Avalonia version updated from 11.3.18 to 11.3.20
-* Added basic support for MahApps's windows
-* Fixed fail fast when `FontManagerOptions.DefaultFamilyName` does not point to a system font
-* Fixed `OutOfRangeException` on text input, which appeared since macOS 27
-* Fixed `NullReferenceException` when `TextBox.TextView` is null
-* Fixed popups appearing on the wrong monitor for maximized windows without chrome
-* Fixed tooltips not disappearing when cursor moves out of the window
-* Improved the heuristics to activate another window after one is closed (Linux)
-* The following dependencies were updated:
-  * System.Security.Cryptography.Xml 8.0.3 to 8.0.4 (fixes security vulnerability)
+* Avalonia 版本从 11.3.18 更新到 11.3.20
+* 新增对 MahApps 窗口的基本支持
+* 修复 `FontManagerOptions.DefaultFamilyName` 未指向系统字体时直接崩溃退出的问题
+* 修复 macOS 27 起出现的文本输入时 `OutOfRangeException` 问题
+* 修复 `TextBox.TextView` 为 null 时出现 `NullReferenceException` 的问题
+* 修复无外壳的最大化窗口上弹出层出现在错误显示器上的问题
+* 修复光标移出窗口后工具提示不消失的问题
+* 改进了某个窗口关闭后激活另一个窗口的判断逻辑（Linux）
+* 下列依赖已更新：
+  * System.Security.Cryptography.Xml 从 8.0.3 更新到 8.0.4（修复安全漏洞）
 
 ## XPF 1.6.5 (2026-07-02)
 
-* Avalonia version updated from 11.3.16 to 11.3.18
-* Added support for bitmaps with DPI other than 96
-* Fixed system font fallback taking over font family referenced using pack URI
-* Fixed `TextWrapping=Wrap` trimming each line when trimming enabled
-* Fixed extra click needed on context menu opened in inactive windows (macOS)
-* Fixed few pixels space around maximized windows (macOS, Linux)
-* Fixed an issue where some mouse cursor values would result in invisible cursor
+* Avalonia 版本从 11.3.16 更新到 11.3.18
+* 新增对 DPI 非 96 的位图的支持
+* 修复系统字体回退抢占了用 pack URI 引用的字体族的问题
+* 修复启用裁剪后 `TextWrapping=Wrap` 把每一行都裁掉的问题
+* 修复在非活动窗口中打开上下文菜单需要多点一次的问题（macOS）
+* 修复最大化窗口四周留出几像素空隙的问题（macOS、Linux）
+* 修复某些鼠标光标取值会导致光标不可见的问题
 
 ## XPF 1.6.4 (2026-05-27)
 
-* Avalonia version updated from 11.3.14 to 11.3.16
-* Fixed overly sensitive touchpad scrolling (especially on macOS)
-  * This can be disabled using `AvaloniaUI.Xpf.DisablePreciseMouseWheelScrolling` compatibility flag
-* Fixed `VisualBrush` with off-screen descendants rendering
-* Fixed scRGB to sRGB color conversion, resulting in slight color differences
-* Fixed an issue with `NativeControlHost` in `TabControl` showing incorrect content
+* Avalonia 版本从 11.3.14 更新到 11.3.16
+* 修复触控板滚动过于灵敏的问题（macOS 上尤为明显）
+  * 可用 `AvaloniaUI.Xpf.DisablePreciseMouseWheelScrolling` 兼容性开关关掉这一改动
+* 修复带屏幕外后代元素的 `VisualBrush` 渲染问题
+* 修复 scRGB 到 sRGB 的颜色转换，此前会导致颜色略有偏差
+* 修复 `TabControl` 中的 `NativeControlHost` 显示内容不对的问题
 
 ## XPF 1.6.3 (2026-04-22)
 
-* Avalonia version updated from 11.3.12 to 11.3.14
-* Added support for sections in flow documents
-* Fixed PNG decoder using wrong pixel format in some cases
-* Fixed swapped red and blue channels when copying bitmaps on macOS
-* The following dependencies were updated:
-  * System.Security.Cryptography.Xml 8.0.0 to 8.0.3 (fixes security vulnerability)
-  * SixLabors.ImageSharp from 3.1.9 to 3.1.12 (fixes security vulnerability)
+* Avalonia 版本从 11.3.12 更新到 11.3.14
+* 新增对流式文档中 section 的支持
+* 修复 PNG 解码器在某些情况下用错像素格式的问题
+* 修复 macOS 上复制位图时红蓝通道颠倒的问题
+* 下列依赖已更新：
+  * System.Security.Cryptography.Xml 从 8.0.0 更新到 8.0.3（修复安全漏洞）
+  * SixLabors.ImageSharp 从 3.1.9 更新到 3.1.12（修复安全漏洞）
 
 ## XPF 1.6.2 (2026-03-20)
 
-* Fixed crash on macOS when right-clicking TextBox while clipboard is empty
-* Fixed extra click required when closing popup from its button (macOS, Linux)
-* Fixed clicking on scrollbar inside ComboBox 
-* Fixed clicking on a menu item that has opened submenu
-* Fixed opening ComboBox inside Menu
-* Fixed menus with a lot of items taking too much space, covering the parent element
+* 修复 macOS 上剪贴板为空时右键点击 TextBox 导致崩溃的问题
+* 修复从弹出层自身的按钮关闭它时需要多点一次的问题（macOS、Linux）
+* 修复点击 ComboBox 内滚动条的问题 
+* 修复点击已展开子菜单的菜单项的问题
+* 修复在 Menu 中打开 ComboBox 的问题
+* 修复项数众多的菜单占地过大、盖住父元素的问题
 
 ## XPF 1.6.1 (2026-02-19)
 
-* Avalonia version updated from 11.3.11 to 11.3.12
-* Support for macOS bitmap formats pasted from clipboard
-* Fixed AvaloniaHost taking all input
-* Fixed switching tabs in TabControl taking all input
-* Fixed WinForms dialogs crash without FilterIndex
-* [Accessibility] Support for ItemType and ItemStatus properties
-* [Accessibility] Fixed lack of notification when children added
-* Implemented BringWindowToTop, DestroyWindow, IsChild, SetActiveWindow, SetFocus API shims
+* Avalonia 版本从 11.3.11 更新到 11.3.12
+* 支持从剪贴板粘贴 macOS 的位图格式
+* 修复 AvaloniaHost 吞掉所有输入的问题
+* 修复在 TabControl 中切换标签页后吞掉所有输入的问题
+* 修复 WinForms 对话框在没有 FilterIndex 时崩溃的问题
+* [无障碍] 支持 ItemType 和 ItemStatus 属性
+* [无障碍] 修复添加子元素时不发出通知的问题
+* 实现了 BringWindowToTop、DestroyWindow、IsChild、SetActiveWindow、SetFocus 这几个 API shim
 
-Known issues:
+已知问题：
 
-* Closing popup from its button might require an extra click (macOS, Linux)
+* 从弹出层自身的按钮关闭它时可能需要多点一次（macOS、Linux）
 
 ## XPF 1.6.0 (2026-01-19)
 
-* Avalonia version updated from 11.3.1 to 11.3.11
-* Major rework has been done in the following areas:
-  * Mouse capture and loss of capture
-  * Clipboard (bitmap support, custom formats, round-tripping)
-* Added support for Ctrl+Click on macOS, F10 as system key
-* Added support for System.Windows.Documents.Typography properties
-* Added support for filter index in file dialogs
-* Popup fixes (positioning, disabled when dialog shown)
-* MessageBox functionality aligned with Windows (title, max size)
-* Text fixes and improvements (line spacing, inline blocks, font loading and matching)
-* Automation fixes and improvements
-* DPI and scaling fixes and improvements-
-* All log sinks made available
+* Avalonia 版本从 11.3.1 更新到 11.3.11
+* 下列方面做了较大改动：
+  * 鼠标捕获与捕获丢失
+  * 剪贴板（位图支持、自定义格式、往返一致性）
+* 新增对 macOS 上 Ctrl+点击的支持，并把 F10 作为系统键
+* 新增对 System.Windows.Documents.Typography 属性的支持
+* 新增文件对话框中筛选器索引的支持
+* 弹出层相关修复（定位、显示对话框时被禁用）
+* MessageBox 的行为向 Windows 看齐（标题、最大尺寸）
+* 文本方面的修复与改进（行距、内联块、字体加载与匹配）
+* 自动化方面的修复与改进
+* DPI 与缩放方面的修复与改进
+* 所有日志 sink 现已开放
 
-Known issues:
-* Switching tabs in TabControl does not invalidate UIA tree
-* AvaloniaHost takes all input once focused
-* Closing popup from its button might require an extra click
+已知问题：
+* 在 TabControl 中切换标签页不会使 UIA 树失效
+* AvaloniaHost 一旦获得焦点就吞掉所有输入
+* 从弹出层自身的按钮关闭它时可能需要多点一次
 
 ## XPF 1.5.3 (2025-06-23)
 
-* Fix MediaContext to use Stopwatch instead of system clock
+* 修复 MediaContext，改用 Stopwatch 而非系统时钟
 * Adjust WinForms MessageBoxTheme
 * Enforce WPF LineSpacing
 
 ## XPF 1.5.2 (2025-06-09)
 
-* Limit the width of a MessageBox to 400px to closely follow the WIN32 behavior
-* Limit the MessageBox to 80% of the current screen's height
-* Update Avalonia to stable 11.3.1
+* 把 MessageBox 的宽度限制在 400px，以贴近 WIN32 的表现
+* 把 MessageBox 限制在当前屏幕高度的 80% 以内
+* 把 Avalonia 更新到稳定版 11.3.1
 
 ## XPF 1.5.1 (2025-05-21)
 
-* Change VB MsgBox default title to be identical to Windows
+* 把 VB MsgBox 的默认标题改得与 Windows 一致
 
 ## XPF 1.5.0 (2025-05-07)
 
-* Apply TextAlignment to overflowed AVTextLine
-* BmpBitmapDecoderHandle - support 1-Bit BMP
-* Fix Window.Closing event not being fired in certain situations
-* Fix ImageBrush being broken when used as opacity mask
-* Fix radial gradient and dash array rendering
-* Fix hiding/showing dialogs.
-* Set dialog task to complete when dialog is hidden
-* Constrain subtree content bounds by the clip bounds
-* Fix crash in file dialog when no filename is specified
-* Make sure draw rounded rectangle is executed with valid radii
-* Alternative menu capture fix
-* Use first monitor if no primary
-* Fix AvalonEdit completion window crash
-* Add support for FontFamily.FamilyTypefaces
-* Implemented SetCursorPos API shim
-* Improve bitmap performance
-* Invoke MediaContext update handler via BeginInvokeOnRender
-* Remove native calls in ribbon control
-* Fix win32 shims on x86
-* Added logging for APISHIM calls
-* File ok handling 
-* Update System.IO.Packaging to 6.0.2
-* Make sure the paragraphWidth is rounded up
-* Add support for VB MsgBox function
-* Add support for VB `InputBox`.
-* Fix Border Position of RichTextBox
-* Fix crash when XpfContain detached from tree
-* Handle Case for 8bpp Bitmaps
-* Rework font loading
-* Handle RectangleNode with zero height
+* 对溢出的 AVTextLine 应用 TextAlignment
+* BmpBitmapDecoderHandle——支持 1 位 BMP
+* 修复 Window.Closing 事件在某些情况下不触发的问题
+* 修复 ImageBrush 用作不透明度蒙版时失效的问题
+* 修复径向渐变和虚线数组的渲染
+* 修复对话框的隐藏/显示。
+* 对话框隐藏时把对话框任务置为完成
+* 用裁剪边界约束子树的内容边界
+* 修复文件对话框在未指定文件名时崩溃的问题
+* 确保绘制圆角矩形时半径取值有效
+* 菜单捕获问题的另一种修复方案
+* 没有主显示器时改用第一台显示器
+* 修复 AvalonEdit 补全窗口崩溃的问题
+* 新增对 FontFamily.FamilyTypefaces 的支持
+* 实现了 SetCursorPos API shim
+* 改善位图性能
+* 改为通过 BeginInvokeOnRender 调用 MediaContext 的更新处理程序
+* 去掉 ribbon 控件中的原生调用
+* 修复 x86 上的 win32 shim
+* 为 APISHIM 调用加上日志
+* 处理 file ok 相关逻辑 
+* 把 System.IO.Packaging 更新到 6.0.2
+* 确保 paragraphWidth 向上取整
+* 新增对 VB MsgBox 函数的支持
+* 新增对 VB `InputBox` 的支持。
+* 修复 RichTextBox 的边框位置
+* 修复 XpfContain 从树上分离时崩溃的问题
+* 处理 8bpp 位图的情形
+* 重做字体加载
+* 处理高度为零的 RectangleNode
 * Fix Font Metrics Rounding Error
-* Fix frame decode finalize
-* Fix PngBitmapDecoder alpha channel
-* Do not share the same FontMetrics between Font and FontFamily
-* Handle duplicate fonts when loading font collections
-* Fix custom font face simulation
-* Ensure localized font strings are mapped to available cultures
-* Simplify target pixel format for decoded bitmap data
-* Allow showing popups without placement target.
-* Add support for indexed bitmap sources
+* 修复帧解码的收尾处理
+* 修复 PngBitmapDecoder 的 alpha 通道
+* 不再让 Font 与 FontFamily 共用同一份 FontMetrics
+* 加载字体集合时处理重复字体
+* 修复自定义字形的模拟
+* 确保本地化的字体字符串能映射到可用的区域性
+* 简化解码后位图数据的目标像素格式
+* 允许在没有放置目标的情况下显示弹出层。
+* 新增对索引色位图源的支持
 * Implement OpenFolderDialog
-* Don't call win32 `GetCursorPos` in `Popup`.
+* 不再在 `Popup` 中调用 win32 的 `GetCursorPos`。
 
 ## XPF 1.4.0 (2025-01-08) 
 
-* Remove System.Configuration.ConfigurationManager usages
-* Fix ModifierKeys.MacControl value
-* Replace WebRequest/WebResponse base ctor calls with RuntimeHelpers.GetUninitializedObject + Frame control fixes
-* Fix key remapping exception
-* Reset modifier keys on lost focus
-* Simple 3d support
+* 移除 System.Configuration.ConfigurationManager 的使用
+* 修复 ModifierKeys.MacControl 的取值
+* 把 WebRequest/WebResponse 的基类构造函数调用换成 RuntimeHelpers.GetUninitializedObject，并修复 Frame 控件若干问题
+* 修复按键重映射抛异常的问题
+* 失去焦点时重置修饰键状态
+* 简单的 3D 支持
 * Fix Paragraph TextAlignment
-* Fix compilation error in MuceViewport3DVisual
+* 修复 MuceViewport3DVisual 中的编译错误
 * Add GetAvaloniaTopLevelForWindow
-* Window frame for single-view platforms like browser
-* Resizable single view windows, fix decorations
-* Implemented online licensing tickets
-* Include remaining platforms in License check
-* Fix avalon dock resizing issue
-* Fix lower right corner cursor
-* Replace binary formatter
+* 为浏览器这类单视图平台提供窗口边框
+* 单视图窗口可调整大小，并修复窗口装饰
+* 实现在线授权票据
+* 把其余平台也纳入许可证校验
+* 修复 avalon dock 调整大小的问题
+* 修复右下角的光标
+* 替换掉 binary formatter
 * Stub ShowSystemMenu
-* Fix DragOver exposing already disposed IDataObject
-* Do not crash when path simplification fails
-* Added ScreenToClient win32 API shim.
-* Fix XPF popups when embedded in Avalonia.
-* Use OpenGL by default on macOS
-* Implement JpegMetadata and allow reading the orientation
-* Fix NRE in ElementProxy
-* Add a runtime flag to enable interop for DataObject custom formats
-* Add support for reading and writing the exif MakerNote
-* Fix up "control is not in any visual tree"
+* 修复 DragOver 暴露已释放 IDataObject 的问题
+* 路径简化失败时不再崩溃
+* 新增 ScreenToClient 的 win32 API shim。
+* 修复 XPF 弹出层嵌入 Avalonia 时的问题。
+* macOS 上默认改用 OpenGL
+* 实现 JpegMetadata，并支持读取方向信息
+* 修复 ElementProxy 中的 NRE
+* 新增一个运行时开关，用于启用 DataObject 自定义格式的互操作
+* 新增对 exif MakerNote 的读写支持
+* 修复 “control is not in any visual tree” 的问题
 * Fix Cursors.None
-* Fix popup memory leak
-* Release mouse capture on Window deactivation.
+* 修复弹出层的内存泄漏
+* 窗口失活时释放鼠标捕获。
 * Update Avalonia.Licensing
-* Ensure visual root dpi is set
-* Fix BitmapSource 4 byte alignment
-* Normalize some metadata queries to lower case
-* Use default WPF behavior if ALC support wasn't explicitly enabled
-* Adjust TextLine clipping when the line isn't collapsed
+* 确保视觉根的 dpi 被设上
+* 修复 BitmapSource 的 4 字节对齐
+* 把部分元数据查询规范为小写
+* 未显式启用 ALC 支持时沿用 WPF 的默认行为
+* 行未折叠时调整 TextLine 的裁剪
 
 ## XPF 1.3.0 (2024-08-12)
 
-* Enable ECDSA-based license keys
-* Fix multiple Geometry APIs
-* Cache FontCollections and make them thread aware
-* Fix issue with geometry hit testing non-stroked segments
-* Update version on main to 1.3
+* 启用基于 ECDSA 的许可证密钥
+* 修复多个 Geometry API
+* 缓存 FontCollection 并让其支持多线程
+* 修复几何图形对无描边线段做命中测试的问题
+* 把 main 分支的版本号更新到 1.3
 * Implement BlockUIContainer
-* Update Avalonia version
-* Fix dispatch exception handling
-* Support loading XPF into a separate ALC for poor man's multithreading
-* Fixed MUCE geometry invalidation
-* Fixes large image docoding
-* Fix inlines TextDecorations and fix BaselineAlignment
+* 更新 Avalonia 版本
+* 修复派发时的异常处理
+* 支持把 XPF 加载进独立的 ALC，以此实现简陋版多线程
+* 修复 MUCE 几何图形的失效处理
+* 修复大图解码
+* 修复内联元素的 TextDecorations，并修复 BaselineAlignment
 * Fix TextDecorations
-* Fix Key Mapping on macOS
+* 修复 macOS 上的按键映射
 * Fix GetDpiForMonitor
-* Implement F32MonitorHandle and use new Screens APIs 
-* Hackfix for incorrect glyph run bounds
-* Don't process mouse events as touch
-* Call InternalClose from the externally available Window.Close method
-* Initial PDF generation support
-* Add support for corner radius in rectangle geometry
-* Add support for strokeless geometry segments
-* Update avalonia: fix win32 window shown state
-* Update avalonia- fix topmost owned window not working
-* AvaloniaHostContainer needs to set transform origin to zero instead of default 50%50%
-* Keep focus in avalonia host if window is reactivated
-* Add dummy AdjustWindowRectEx
-* Fix incorrectly set filename in save dialog
+* 实现 F32MonitorHandle 并改用新的 Screens API 
+* 对字形运行边界不正确的问题做了临时修复
+* 不再把鼠标事件当作触摸处理
+* 从对外公开的 Window.Close 方法中调用 InternalClose
+* 初步支持生成 PDF
+* 矩形几何图形新增圆角半径支持
+* 新增对无描边几何线段的支持
+* 更新 avalonia：修复 win32 窗口的显示状态
+* 更新 avalonia：修复置顶的从属窗口失效的问题
+* AvaloniaHostContainer 需要把变换原点设为零，而非默认的 50%50%
+* 窗口重新激活时把焦点留在 avalonia host 内
+* 添加 AdjustWindowRectEx 的空实现
+* 修复保存对话框中文件名设置错误的问题
 * Fix Window.Icon
-* Fix "Mouse events not fired properly if another mouse button is pressed"
-* Manually subscribe to all of subtree visual invalidation from MuceVisualBrush
-* Fix headless platform, avoid Skia hardcoding
-* Minor patcher improvement
-* Add a flag to disable stackframe tweaks for devexpress
-* Skip rendering content if it will be clipped away anyway
-* Change the way we pool MuceRenderData states
-* Fix FontAwesome.Sharp font loading
-* Bump image sharp
-* Stub for SHGetFileInfo
-* Implement bitmap.copypixels
-* Fixed DrawingImage, hackfixed parentless VisualBrush
-* Publish packages from all branches
-* Add regex semver checking for release tags
-* Update dotnet.yml to trim trailing backslash on version
+* 修复“按下另一个鼠标键时鼠标事件未正确触发”的问题
+* 改为在 MuceVisualBrush 中手动订阅整棵子树的视觉失效
+* 修复无头平台，避免把 Skia 写死
+* patcher 的小幅改进
+* 新增一个开关，用于关掉针对 devexpress 的调用栈微调
+* 内容若反正会被裁掉，就跳过渲染
+* 改变 MuceRenderData 状态的池化方式
+* 修复 FontAwesome.Sharp 的字体加载
+* 升级 image sharp
+* SHGetFileInfo 的桩实现
+* 实现 bitmap.copypixels
+* 修复 DrawingImage，并临时修复无父级的 VisualBrush
+* 从所有分支发布包
+* 为发布标签加上正则 semver 校验
+* 更新 dotnet.yml，去掉版本号末尾的反斜杠
 * Update Common.props
-* Remove UseWinForms + misc
+* 移除 UseWinForms 及若干杂项
 * Disable ImportWindowsDesktopTargets
-* Allow the user to enable logging via msbuild property or environment variable
-* Add XpfSingleProject property
+* 允许用户通过 msbuild 属性或环境变量启用日志
+* 新增 XpfSingleProject 属性
 * Update AvaloniaUI.Xpf.WinApiShim.targets
-* Browser compatibility improvements
-* Experimental WinAPI shims support for Browser
-* Fix browser winapi shims
-* Fix browser SDK
-* Various WinAPI shims fixes related to the Screen API
-* Some mono fixes
+* 浏览器兼容性方面的改进
+* 面向浏览器的实验性 WinAPI shim 支持
+* 修复浏览器上的 winapi shim
+* 修复浏览器 SDK
+* 修复 Screen API 相关的若干 WinAPI shim
+* 若干 mono 相关修复
 * SystemInformation.MouseWheelScrollDelta support
-* Reset popup _positionInfo when creating a new win
+* 创建新窗口时重置弹出层的 _positionInfo
 
 
 ## XPF 1.2.0 (2024-05-29)
 
 * Update ImageSharp
-* Make DragDrop handler work with any Control rather than TopLevel
-* Implement GetActiveWindow with virtual window handles
-* Make HwndWrapper usable
-* Ignore size to content from avalonia window
-* Patch XPF assemblies to throw on DllImport
+* 让 DragDrop 处理程序可用于任意 Control，而不限于 TopLevel
+* 用虚拟窗口句柄实现 GetActiveWindow
+* 让 HwndWrapper 可用
+* 忽略来自 avalonia 窗口的 size to content
+* 给 XPF 程序集打补丁，使其在 DllImport 时抛出异常
 * Update GetSizeFromHwnd
-* Update Avalonia nuget to 11.2 alpha
-* Check if XpfHost is actually attached to something to decide if popup creation should be deferred
-* Fix for situation when ExclusivelyOwnedWindow is actually null
-* Port wpf popup placement logic
-* Keep focus in avalonia host if window is reactivated
-* Make snoop work in more cases
-* Add support for corner radius in rectangle geometry
-* Reset popup _positionInfo when creating a new window
-* Fix for Telerik's RadTooltipWindow
-* Read hotspot from .cur files
-* Skip rendering content if it will be clipped away anyway
-* Use absolute transform origin for WPF's Brush.Transform property
-* Check if window has been activated before, when checking focus
-* Fixed VisualBrush regression
-* Add default bitmap cursor for Pen cursor type
-* Initial support for PDF generation
+* 把 Avalonia nuget 更新到 11.2 alpha
+* 判断是否推迟创建弹出层时，先检查 XpfHost 是否真的挂在了什么东西上
+* 修复 ExclusivelyOwnedWindow 实为 null 的情形
+* 移植 wpf 的弹出层放置逻辑
+* 窗口重新激活时把焦点留在 avalonia host 内
+* 让 snoop 在更多情形下可用
+* 矩形几何图形新增圆角半径支持
+* 创建新窗口时重置弹出层的 _positionInfo
+* 针对 Telerik 的 RadTooltipWindow 的修复
+* 从 .cur 文件中读取热点坐标
+* 内容若反正会被裁掉，就跳过渲染
+* 为 WPF 的 Brush.Transform 属性采用绝对变换原点
+* 检查焦点时，先看该窗口此前是否被激活过
+* 修复 VisualBrush 的回归问题
+* 为 Pen 光标类型添加默认位图光标
+* 初步支持生成 PDF
 * Added SystemInformation.MouseWheelScrollDelta
-* Raise position changed when window position is set on initial state
-* Activate window when control gains focus
-* Fix bitmap encoding issues
-* Block input during managed dragging
+* 在初始状态下设置窗口位置时抛出 position changed
+* 控件获得焦点时激活窗口
+* 修复位图编码的若干问题
+* 托管拖动期间屏蔽输入
 * Implemented BlockUIContainer
-* X11 - Keep track of whether window activation is complete from control focus
-* Fallback to setting dragpoint when position is set on linux
+* X11——依据控件焦点记录窗口激活是否已完成
+* Linux 上设置位置时回退为设置拖动点
 * Stub UnhookWindowsHookEx
-* Various WinAPI shims fixes related to the Screen API
-* Map more pixel formats
-* Actipro docking fixes
-* Don't call GetCapture from ComboBox in XPF
-* Send MILCMD_BITMAP_INVALIDATE for WriteableBitmap.AddDirtyRect
-* Properly configure DPI and page size metadata for PDF documents
-* Don't allow resizing on maximized windows x11
-* ManagedWindowDragHelper - keep track of previous positions and update position when WM_MOVING is handled
-* MonitorFromWindow: Do not throw for non attached visual
-* Fix unhandled exceptions
-* Fix some Geometry issues
-* Add support for strokeless geometry segments
-* Add SKColorFilter free callback
-* Allow the user to enable logging via msbuild property or environment variable
-* Don't call GetCapture from MenuBase in XPF
-* Update PresentationCore ref for XpfSkiaExtensions
-* Add background setting to MessageBoxTheme.axaml
-* Prevent non-client input when mouse is captured
-* Fix screen working area for popups
-* Fix crash on text box paste
-* Fix some docking issues
+* 修复 Screen API 相关的若干 WinAPI shim
+* 映射更多像素格式
+* Actipro 停靠相关修复
+* XPF 中不再从 ComboBox 调用 GetCapture
+* 为 WriteableBitmap.AddDirtyRect 发送 MILCMD_BITMAP_INVALIDATE
+* 为 PDF 文档正确配置 DPI 和页面尺寸元数据
+* x11 上不允许调整已最大化窗口的大小
+* ManagedWindowDragHelper——记录先前的位置，并在处理 WM_MOVING 时更新位置
+* MonitorFromWindow：对未附加的视觉元素不再抛异常
+* 修复若干未处理异常
+* 修复若干 Geometry 问题
+* 新增对无描边几何线段的支持
+* 添加 SKColorFilter 的释放回调
+* 允许用户通过 msbuild 属性或环境变量启用日志
+* XPF 中不再从 MenuBase 调用 GetCapture
+* 更新 XpfSkiaExtensions 对 PresentationCore 的引用
+* 为 MessageBoxTheme.axaml 添加背景设置
+* 鼠标被捕获时屏蔽非客户区输入
+* 修复弹出层所用的屏幕工作区
+* 修复文本框粘贴时崩溃的问题
+* 修复若干停靠相关问题
 
-### Known issues
+### 已知问题 {#known-issues}
 
-* Actipro docking: when tearing off a pane, preview is not shown on macOS
-* DevExpress docking: does not always show drop adorners on X11
-* Syncfusion docking: problems on all platforms
-* Telerik docking: Initial drag/tear-off stops registering mouse on Windows
+* Actipro 停靠：拖出面板时，macOS 上不显示预览
+* DevExpress 停靠：X11 上有时不显示放置装饰
+* Syncfusion 停靠：各平台均有问题
+* Telerik 停靠：Windows 上首次拖动/拖出时鼠标不再被识别

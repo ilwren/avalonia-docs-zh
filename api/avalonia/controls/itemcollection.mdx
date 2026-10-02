@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ItemCollection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ItemCollection.cs">ItemCollection.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/ItemCollection.cs">ItemCollection.cs</a>
 </div>
 
 </div>
@@ -54,24 +54,24 @@ public class ItemCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="itemssourceview">ItemsSourceView</a> <span className="apiref-page__relation-separator">-&gt;</span> ItemCollection
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="itemssourceview">ItemsSourceView</a> <span className="apiref-page__relation-separator">-&gt;</span> ItemCollection
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> ICollection, IEnumerable, IList
+<span className="apiref-page__meta-label">实现接口：</span> ICollection, IEnumerable, IList
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Add](#uid-915176b126) | Adds an item to the [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl). |
+| [Add](#uid-915176b126) | 向 [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl) 中添加一项。 |
 | [Clear](#uid-2b0925e5f9) | Clears the collection and releases the references on all items currently in the collection. |
-| [Contains](itemssourceview.mdx#uid-384f51208a) | Inherited from [ItemsSourceView](itemssourceview.mdx). |
+| [Contains](itemssourceview.mdx#uid-384f51208a) | 继承自 [ItemsSourceView](itemssourceview.mdx)。 |
 | [GetAt](itemssourceview.mdx#uid-6695c23d5f) | Retrieves the item at the specified index. Inherited from [ItemsSourceView](itemssourceview.mdx). |
-| [GetEnumerator](itemssourceview.mdx#uid-5163e5545c) | Inherited from [ItemsSourceView](itemssourceview.mdx). |
-| [GetOrCreate (2 overloads)](itemssourceview.mdx#uid-690d93f5ab) | Inherited from [ItemsSourceView](itemssourceview.mdx). |
-| [IndexOf](itemssourceview.mdx#uid-42b8595b39) | Inherited from [ItemsSourceView](itemssourceview.mdx). |
+| [GetEnumerator](itemssourceview.mdx#uid-5163e5545c) | 继承自 [ItemsSourceView](itemssourceview.mdx)。 |
+| [GetOrCreate（2 个重载）](itemssourceview.mdx#uid-690d93f5ab) | 继承自 [ItemsSourceView](itemssourceview.mdx)。 |
+| [IndexOf](itemssourceview.mdx#uid-42b8595b39) | 继承自 [ItemsSourceView](itemssourceview.mdx)。 |
 | [Insert](#uid-d9349833de) | Inserts an element into the collection at the specified index. |
 | [Remove](#uid-baf4374f06) | Removes the specified item reference from the collection or view. |
 | [RemoveAt](#uid-411eadb120) | Removes the item at the specified index of the collection or view. |
@@ -80,22 +80,22 @@ public class ItemCollection
 
 <span id="uid-915176b126"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
-Adds an item to the [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl).
+向 [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl) 中添加一项。
 
 ```csharp
 public int Add(object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` object
 
 The item to add to the collection.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 int
 
@@ -103,9 +103,9 @@ The position into which the new element was inserted, or -1 to indicate that
 the item was not inserted into the collection.
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
-- [The collection is in ItemsSource mode.](xref:System.InvalidOperationException)
+- [该集合处于 ItemsSource 模式。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -113,7 +113,7 @@ the item was not inserted into the collection.
 
 <span id="uid-2b0925e5f9"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
 Clears the collection and releases the references on all items currently in the
 collection.
@@ -122,9 +122,9 @@ collection.
 public void Clear()
 ```
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
-- [The collection is in ItemsSource mode.](xref:System.InvalidOperationException)
+- [该集合处于 ItemsSource 模式。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -132,7 +132,7 @@ public void Clear()
 
 <span id="uid-d9349833de"></span>
 
-### Insert Method
+### Insert 方法 {#insert-method}
 
 Inserts an element into the collection at the specified index.
 
@@ -140,7 +140,7 @@ Inserts an element into the collection at the specified index.
 public void Insert(int index, object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `index` int
 
@@ -152,9 +152,9 @@ The zero-based index at which to insert the item.
 The item to insert.
 
 
-#### Exceptions
+#### 异常 {#exceptions-2}
 
-- [The collection is in ItemsSource mode.](xref:System.InvalidOperationException)
+- [该集合处于 ItemsSource 模式。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -162,7 +162,7 @@ The item to insert.
 
 <span id="uid-baf4374f06"></span>
 
-### Remove Method
+### Remove 方法 {#remove-method}
 
 Removes the specified item reference from the collection or view.
 
@@ -170,23 +170,23 @@ Removes the specified item reference from the collection or view.
 public bool Remove(object value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value` object
 
 The object to remove.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
 True if the item was removed; otherwise false.
 
 
-#### Exceptions
+#### 异常 {#exceptions-3}
 
-- [The collection is in ItemsSource mode.](xref:System.InvalidOperationException)
+- [该集合处于 ItemsSource 模式。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -194,7 +194,7 @@ True if the item was removed; otherwise false.
 
 <span id="uid-411eadb120"></span>
 
-### RemoveAt Method
+### RemoveAt 方法 {#removeat-method}
 
 Removes the item at the specified index of the collection or view.
 
@@ -202,34 +202,34 @@ Removes the item at the specified index of the collection or view.
 public void RemoveAt(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `index` int
 
 The zero-based index of the item to remove.
 
 
-#### Exceptions
+#### 异常 {#exceptions-4}
 
-- [The collection is in ItemsSource mode.](xref:System.InvalidOperationException)
+- [该集合处于 ItemsSource 模式。](xref:System.InvalidOperationException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](itemssourceview.mdx#uid-c7dd90d709) | Gets the number of items in the collection. Inherited from [ItemsSourceView](itemssourceview.mdx). |
 | [Empty](itemssourceview.mdx#uid-4ca040a88a) | Gets an empty [Avalonia.Controls.ItemsSourceView](xref:Avalonia.Controls.ItemsSourceView) Inherited from [ItemsSourceView](itemssourceview.mdx). |
-| [IsReadOnly](#uid-78e7f9f89a) | No summary available. |
-| [Item](#uid-1fcf0095ee) | No summary available. |
+| [IsReadOnly](#uid-78e7f9f89a) | 暂无摘要。 |
+| [Item](#uid-1fcf0095ee) | 暂无摘要。 |
 | [Source](itemssourceview.mdx#uid-d81337be41) | Gets the source collection. Inherited from [ItemsSourceView](itemssourceview.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-78e7f9f89a"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
 ```csharp
 public bool IsReadOnly { get; set; }
@@ -241,7 +241,7 @@ public bool IsReadOnly { get; set; }
 
 <span id="uid-1fcf0095ee"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public object Item { get; set; }
@@ -249,9 +249,9 @@ public object Item { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [CollectionChanged](itemssourceview.mdx#uid-13328a2fb4) | Occurs when the collection has changed to indicate the reason for the change and which items changed. Inherited from [ItemsSourceView](itemssourceview.mdx). |
 

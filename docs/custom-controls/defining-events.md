@@ -1,20 +1,20 @@
 ---
 id: defining-events
-title: Defining events for custom controls
-sidebar_label: Defining events
-description: Define and raise routed events on custom Avalonia controls.
+title: 为自定义控件定义事件
+sidebar_label: 定义事件
+description: 在 Avalonia 自定义控件上定义并触发路由事件。
 doc-type: how-to
 ---
 
-Avalonia uses a routed event system, where events travel through the control tree and allow multiple controls to respond to the same event. There are a number of routing strategies, most notably tunneling (where the event travels down the control tree from the root) and bubbling (where the event travels up the control tree from the source).
+Avalonia 采用路由事件机制：事件在控件树中传播，使得多个控件都有机会响应同一个事件。路由策略有好几种，最常见的是隧道（事件自根部沿控件树向下传播）和冒泡（事件自源头沿控件树向上传播）。
 
-This page provides guidance on defining custom events for your controls.
+本文讲的是如何为你的控件定义自定义事件。
 
-For more information on routed events, see [Events overview](/docs/events).
+关于路由事件的更多内容，请参阅[事件概述](/docs/events)。
 
-## Custom routed events
+## 自定义路由事件 {#custom-routed-events}
 
-Here's an example of a routed event for a custom slider control. In this example, a custom event called `ValueChangedEvent` is defined for the control `MyCustomSlider`. The event is registered using the `RoutedEvent` system, allowing it to be subscribed by users of the control. A CLR event is also defined for convenience, which allows the event to be consumed by standard .NET APIs.
+下面是一个自定义滑块控件的路由事件示例：为控件 `MyCustomSlider` 定义一个名为 `ValueChangedEvent` 的自定义事件。该事件通过 `RoutedEvent` 系统注册，供控件使用者订阅。为方便起见还定义了一个 CLR 事件，这样标准 .NET API 也能用上它。
 
 ```csharp
 public class MyCustomSlider : Control
@@ -36,13 +36,13 @@ public class MyCustomSlider : Control
 }
 ```
 
-## Custom event arguments
+## 自定义事件参数 {#custom-event-arguments}
 
-If your event needs to carry additional data, you can customize the args accepted by that event.
+如果你的事件需要携带额外数据，可以定制它所接受的参数类型。
 
-Continuing with the example of `ValueChangedEvent` for `MyCustomSlider` from the section above:
+接着上一节 `MyCustomSlider` 的 `ValueChangedEvent` 这个例子往下讲：
 
-1. Start by creating a custom class that inherits from `RoutedEventArgs`.
+1. 先创建一个继承自 `RoutedEventArgs` 的自定义类。
 
     ```csharp
     public class ValueChangedEventArgs : RoutedEventArgs
@@ -59,7 +59,7 @@ Continuing with the example of `ValueChangedEvent` for `MyCustomSlider` from the
     }
     ```
 
-2. Update the event registration to use the custom args type.
+2. 把事件注册改成使用这个自定义参数类型。
 
     ```csharp
     public static readonly RoutedEvent<ValueChangedEventArgs> ValueChangedEvent =
@@ -67,7 +67,7 @@ Continuing with the example of `ValueChangedEvent` for `MyCustomSlider` from the
             nameof(ValueChanged), RoutingStrategies.Bubble);
     ```
 
-3. Update the CLR event wrapper and raise method to match.
+3. 同步更新 CLR 事件包装器和触发方法。
 
     ```csharp
     public event EventHandler<ValueChangedEventArgs> ValueChanged
@@ -83,9 +83,9 @@ Continuing with the example of `ValueChangedEvent` for `MyCustomSlider` from the
     }
     ```
 
-## Handling events in XAML
+## 在 XAML 中处理事件 {#handling-events-in-xaml}
 
-Users of your custom control can subscribe to the event directly in XAML, with the corresponding handler in code-behind.
+你这个自定义控件的使用者可以直接在 XAML 中订阅该事件，处理程序写在代码隐藏里。
 
 <Tabs>
 
@@ -110,11 +110,11 @@ private void OnSliderValueChanged(object? sender, ValueChangedEventArgs e)
 
 </Tabs>
 
-## Class handlers
+## 类处理程序 {#class-handlers}
 
-Class handlers register event handling logic at the class level rather than on individual instances. They are typically registered in the static constructor. They are invoked before instance handlers, meaning they apply automatically to every instance of the same type.
+类处理程序把事件处理逻辑注册在类这一层，而不是逐个实例注册，通常写在静态构造函数中。它们先于实例处理程序被调用，因此会自动作用于该类型的每一个实例。
 
-Class handlers are used for control implementations that need to intercept input events before any instance-level handler can mark them as handled. A common use case is to define default behaviors that should apply to all instances of a control.
+类处理程序适用于这样一类控件实现：需要在任何实例级处理程序把输入事件标记为已处理之前就先行拦截。一个常见用途，是定义应当作用于该控件所有实例的默认行为。
 
 ```csharp
 static MyCustomSlider()
@@ -128,10 +128,10 @@ private void OnValueChanged(ValueChangedEventArgs e)
 }
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Routed events](/docs/input-interaction/routed-events): Full routed events reference.
-- [Events overview](/docs/events): How routed events travel through the control tree.
-- [Input events](/docs/events/input-events): Built-in input events.
-- [Defining properties](/docs/custom-controls/defining-properties): Add styled, direct, and attached properties to your custom controls.
-- [Creating custom controls](/docs/custom-controls): Overview of the custom control types you can add events to.
+- [路由事件](/docs/input-interaction/routed-events)：路由事件的完整参考。
+- [事件概述](/docs/events)：路由事件如何在控件树中传播。
+- [输入事件](/docs/events/input-events)：内置的输入事件。
+- [定义属性](/docs/custom-controls/defining-properties)：给自定义控件添加样式化属性、直接属性和附加属性。
+- [创建自定义控件](/docs/custom-controls)：可以挂事件的各类自定义控件概览。

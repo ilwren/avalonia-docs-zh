@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DocumentFormatting Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public struct DocumentFormatting
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> DocumentFormatting
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> DocumentFormatting
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;DocumentFormatting&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;DocumentFormatting&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Contains format-agnostic page-level properties that apply to the entire document.
 Format-specific details (header/footer margins, gutter, etc.) are stored
@@ -65,34 +65,34 @@ in format-specific metadata on the root [Avalonia.Controls.Documents.Serializati
 
 All measurements are in device-independent pixels (DIPs) to match Avalonia conventions.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-b40a11a754) | No summary available. |
-| [GetHashCode](#uid-606ec22086) | No summary available. |
-| [ToString](#uid-759ce64257) | No summary available. |
+| [Equals（2 个重载）](#uid-b40a11a754) | 暂无摘要。 |
+| [GetHashCode](#uid-606ec22086) | 暂无摘要。 |
+| [ToString](#uid-759ce64257) | 暂无摘要。 |
 
 <span id="uid-b40a11a754"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d911ceaef0"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -103,18 +103,18 @@ bool
 
 <span id="uid-43b6fbc5d3"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -125,13 +125,13 @@ bool
 
 <span id="uid-606ec22086"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -142,24 +142,24 @@ int
 
 <span id="uid-759ce64257"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Default](#uid-e15a974777) | Default formatting with no explicit values set. |
+| [Default](#uid-e15a974777) | 未显式设置任何值的默认格式。 |
 | [FootnoteNumberFormat](#uid-ba63ee1c2d) | How the document numbers its footnotes. The anchor texts in the snapshot are already in this format. Maps to DOCX `w:footnotePr/w:numFmt` in the settings and to the RTF `\ftnn*` keywords. |
 | [IsPageHeightFixed](#uid-5209ea6a0e) | True when [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageHeight](xref:Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageHeight) is an explicit fixed value. False means height is auto/resolved from runtime view geometry. |
 | [IsPageWidthFixed](#uid-5aa123e18d) | True when [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageWidth) is an explicit fixed value. False means width is auto/resolved from runtime view geometry. |
@@ -172,9 +172,9 @@ string
 
 <span id="uid-e15a974777"></span>
 
-### Default Property
+### Default 属性 {#default-property}
 
-Default formatting with no explicit values set.
+未显式设置任何值的默认格式。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting Default { get; set; }
@@ -186,7 +186,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting Defau
 
 <span id="uid-ba63ee1c2d"></span>
 
-### FootnoteNumberFormat Property
+### FootnoteNumberFormat 属性 {#footnotenumberformat-property}
 
 How the document numbers its footnotes. The anchor texts in the snapshot are
 already in this format. Maps to DOCX `w:footnotePr/w:numFmt` in the
@@ -202,7 +202,7 @@ public Avalonia.Controls.Documents.FootnoteNumberFormat FootnoteNumberFormat { g
 
 <span id="uid-5209ea6a0e"></span>
 
-### IsPageHeightFixed Property
+### IsPageHeightFixed 属性 {#ispageheightfixed-property}
 
 True when [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageHeight](xref:Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageHeight) is an explicit fixed value.
 False means height is auto/resolved from runtime view geometry.
@@ -217,7 +217,7 @@ public bool IsPageHeightFixed { get; set; }
 
 <span id="uid-5aa123e18d"></span>
 
-### IsPageWidthFixed Property
+### IsPageWidthFixed 属性 {#ispagewidthfixed-property}
 
 True when [Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageWidth](xref:Avalonia.Controls.Documents.TextModel.Formatting.DocumentFormatting.PageWidth) is an explicit fixed value.
 False means width is auto/resolved from runtime view geometry.
@@ -232,7 +232,7 @@ public bool IsPageWidthFixed { get; set; }
 
 <span id="uid-38167def44"></span>
 
-### PageBandDistance Property
+### PageBandDistance 属性 {#pagebanddistance-property}
 
 Distance from the sheet edge to a page band in device-independent pixels: the
 header's top sits this far below the sheet top, the footer's bottom this far
@@ -245,7 +245,7 @@ above the sheet bottom. Null means the document declares none and
 public Nullable<double> PageBandDistance { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 A band taller than the space this leaves pushes the body down, so the value
 decides where pages break. Screen, print and PDF all read it from here: a
@@ -257,7 +257,7 @@ distance held by a view would break the same document on different lines.
 
 <span id="uid-60d0ca8ee9"></span>
 
-### PageHeight Property
+### PageHeight 属性 {#pageheight-property}
 
 Page height in device-independent pixels.
 Null means not explicitly known.
@@ -272,7 +272,7 @@ public Nullable<double> PageHeight { get; set; }
 
 <span id="uid-9f1d73e527"></span>
 
-### PagePadding Property
+### PagePadding 属性 {#pagepadding-property}
 
 Page padding (content margins) in device-independent pixels.
 Maps to page margins in DOCX (`w:pgMar`) and RTF
@@ -289,7 +289,7 @@ public Nullable<Avalonia.Thickness> PagePadding { get; set; }
 
 <span id="uid-2a82b6e7a5"></span>
 
-### PageWidth Property
+### PageWidth 属性 {#pagewidth-property}
 
 Page width in device-independent pixels.
 Null means not explicitly known.

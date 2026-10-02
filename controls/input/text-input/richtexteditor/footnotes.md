@@ -1,23 +1,23 @@
 ---
 id: footnotes
-title: Footnotes
+title: 脚注
 doc-type: guide
 tags:
  - avalonia pro
  - avalonia enterprise
 ---
 
-A footnote is two things that always travel together: a `RichFootnoteReference` anchor sitting in the text, and a `Footnote` body holding the note. The anchor shows a number, the body shows the same number beside its content, and the two are paired by `NoteId`. Neither stores the number, which is instead determined by the note's 1-based position among all of the document's notes. Every edit that moves, adds or deletes an anchor renumbers everything without touching a character of text.
+脚注总是由形影不离的两样东西组成：正文中的 `RichFootnoteReference` 锚点，以及承载注释内容的 `Footnote` 主体。锚点显示一个编号，主体在内容旁显示同一个编号，两者靠 `NoteId` 配对。编号本身谁都不存储，而是由该注释在全文所有注释中的位置（从 1 开始）决定。任何移动、新增或删除锚点的编辑都会让全文重新编号，而一个字符的文本都不用动。
 
-This guide covers inserting notes, editing them, numbering, the anchor-owns-its-note lifecycle, citing a note more than once, how notes render in the continuous and page views, and what survives a file round trip.
+本指南涵盖：插入注释、编辑注释、编号规则、「锚点拥有其注释」的生命周期、同一条注释的多次引用、注释在连续视图与分页视图中的呈现方式，以及文件来回存取后哪些信息能保留下来。
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Inserting a footnote
+## 插入脚注 {#inserting-a-footnote}
 
-In the editor, `EditorActions.InsertFootnote` is the whole gesture. The anchor replaces the selection, an empty note body is created, the anchors renumber, and the caret moves into the new note ready for typing. The entire sequence is one undo unit.
+在编辑器中，`EditorActions.InsertFootnote` 一步到位：锚点替换掉选区，随之创建一个空的注释主体，各锚点重新编号，插入符移进新注释，可以直接开始输入。整个过程算作一个撤销单元。
 
 ```csharp
 using Avalonia.Controls.Documents.Primitives.Actions;
@@ -27,9 +27,9 @@ if (EditorActions.InsertFootnote.CanExecute(editor))
     EditorActions.InsertFootnote.Execute(editor);
 ```
 
-There is no default key gesture and no built-in toolbar tool. To allow user access, bind the action to a menu item, a `ButtonTool`, or a key of your choosing. `CanExecute` is `false` while the caret is inside a page band or another note.
+框架没有预设按键手势，也没有内置的工具栏按钮。要让用户用上它，请把这个动作绑到菜单项、`ButtonTool` 或你选定的某个按键上。当插入符位于页眉页脚带或另一条注释内部时，`CanExecute` 为 `false`。
 
-In code, the verb is `TextRange.InsertFootnote`. It returns the created note, whose body is a single empty paragraph:
+在代码中，对应的动作是 `TextRange.InsertFootnote`。它返回新建的注释，其主体是一个空段落：
 
 ```csharp
 using Avalonia.Controls.Documents;
@@ -45,34 +45,34 @@ if (note is not null)
 }
 ```
 
-The selection is a range, so the same call works on the editor's live selection and gets replace-selection semantics for free:
+由于选区本身就是一个区间，同一个调用也能作用于编辑器的实时选区，并顺带获得「替换选区」的语义：
 
 ```csharp
 var note = editor.Selection?.InsertFootnote();
 ```
 
-`InsertFootnote` returns `null` rather than throwing when the range start cannot host an anchor: inside a page band, inside another note, or in a `TextDocument` with no `FlowDocument` root. Pass your own anchor element to pre-configure its formatting or to keep a reference to it:
+当区间起点无法承载锚点时（位于页眉页脚带内、另一条注释内，或位于没有 `FlowDocument` 根的 `TextDocument` 中），`InsertFootnote` 返回 `null` 而不是抛出异常。你也可以传入自己的锚点元素，以便预先设定它的格式，或留一个引用在手：
 
 ```csharp
 var anchor = new RichFootnoteReference();
 var note = editor.Selection?.InsertFootnote(anchor);
 ```
 
-## Reaching a note from its anchor
+## 从锚点找到它的注释 {#reaching-a-note-from-its-anchor}
 
-`FlowDocument.FindFootnote` resolves the pairing:
+`FlowDocument.FindFootnote` 负责解析这层配对关系：
 
 ```csharp
 Footnote? note = document.FindFootnote(anchor);
 ```
 
-It returns `null` for an anchor that belongs to another document or has no note yet. The whole set lives in `FlowDocument.Footnotes` (a `FootnoteCollection`), kept in anchor order, with `Find(int noteId)` for a lookup by ID. The text model owns its footnotes, holding all instances of `TextFootnote` in `TextDocument.Footnotes`. As a result, a document snapshotted, cloned, serialized or paginated with no element realized carries every note.
+若锚点属于别的文档、或还没有对应的注释，它返回 `null`。全部注释存放在 `FlowDocument.Footnotes`（一个 `FootnoteCollection`）中，按锚点顺序排列，并可用 `Find(int noteId)` 按 ID 查找。文本模型拥有自己的脚注，把 `TextFootnote` 的所有实例都存在 `TextDocument.Footnotes` 里。因此，哪怕一个元素都没实体化，被快照、克隆、序列化或分页的文档也会带上全部注释。
 
-`FlowDocument.FootnotesChanged` fires when the set of notes changes, when a note's ID or label changes, and when the numbering format changes. This event triggers a re-rendering of a view. You can use it as part of a "document modified" flag.
+注释集合发生变化、某条注释的 ID 或标签改变、编号格式改变时，都会触发 `FlowDocument.FootnotesChanged`。该事件会引发视图重新渲染，你也可以拿它来驱动「文档已修改」标记。
 
-## Authoring in XAML
+## 在 XAML 中撰写 {#authoring-in-xaml}
 
-`FlowDocument.Footnotes` is a collection property, so notes are declared alongside the body and paired by ID:
+`FlowDocument.Footnotes` 是集合属性，因此注释与正文并列声明，并靠 ID 配对：
 
 ```xml
 <FlowDocument>
@@ -90,43 +90,43 @@ It returns `null` for an anchor that belongs to another document or has no note 
 </FlowDocument>
 ```
 
-`NoteId` pairs `RichFootnoteReference` with `Footnote`. The `NoteId` value itself is never displayed. The numbers the reader sees come from anchor order, so reordering paragraphs renumbers the notes, but reordering the `Footnote` elements does not.
+`NoteId` 把 `RichFootnoteReference` 和 `Footnote` 配成一对。`NoteId` 的值本身永远不会显示出来。读者看到的编号来自锚点顺序，所以调整段落顺序会让注释重新编号，而调整 `Footnote` 元素的顺序则不会。
 
-## Editing a note
+## 编辑注释 {#editing-a-note}
 
-A note is a document of its own, presented in the view where it renders:
+注释本身就是一份独立的文档，在它渲染所在的视图中呈现：
 
-- Double-clicking an anchor enters its note, as does clicking into the note's container.
-- `EditorActions.GoToFootnote` enters the note of the anchor the caret sits on or has just passed.
-- `EditorActions.GoToFootnoteReference` goes the other way, leaving the note for the position just after its anchor in the body.
-- Escape returns to the body, which finds its selection where it was left. `EditorActions.ReturnToBody` is the command form for a button.
+- 双击锚点可以进入它的注释，点进注释容器同样可以。
+- `EditorActions.GoToFootnote` 会进入插入符当前所在、或刚刚经过的那个锚点对应的注释。
+- `EditorActions.GoToFootnoteReference` 则反其道而行：离开注释，回到正文中紧随其锚点之后的位置。
+- 按 Esc 返回正文，正文的选区仍停在离开时的位置。`EditorActions.ReturnToBody` 是供按钮使用的命令形式。
 
-While the caret is in a note, `RichTextEditor.ActiveDocument` is that note. The following conditions apply: (1) the `:footnote-editing` pseudo-class is set, (2) a frame in `PageBandFocusBrush` marks the note's container, and (3) `Selection`, the toolbar and formatting actions apply to the note. 
+插入符位于注释中时，`RichTextEditor.ActiveDocument` 就是那条注释。此时：（1）`:footnote-editing` 伪类被置上，（2）`PageBandFocusBrush` 中会有一个框标出该注释的容器，（3）`Selection`、工具栏和各项格式操作都作用于该注释。 
 
-Undo is still one stack shared with the body. Executing undo restores the caret into the document in which the edit was made.
+撤销仍与正文共用同一个栈。执行撤销时，插入符会回到当初做出该次编辑的那份文档中。
 
-Because a note is a separate document, a body selection never reaches into it, <kbd>Ctrl</kbd>+<kbd>A</kbd> in the body selects the body alone, and a character delete never crosses a note's edge.
+由于注释是独立文档，正文的选区永远不会伸进注释里；在正文中按 <kbd>Ctrl</kbd>+<kbd>A</kbd> 只会选中正文；删除字符也绝不会越过注释的边界。
 
 ## Numbering
 
-`FlowDocument.FootnoteNumberFormat` (mirroring `TextDocument.FootnoteNumberFormat`, which owns the value) sets the format document-wide. Numbering is continuous in anchor order.
+`FlowDocument.FootnoteNumberFormat`（它镜像的是真正持有该值的 `TextDocument.FootnoteNumberFormat`）为整篇文档设定编号格式。编号按锚点顺序连续排列。
 
-| `FootnoteNumberFormat` | Sequence |
+| `FootnoteNumberFormat` | 序列 |
 |---|---|
 | `Decimal` (default) | 1, 2, 3 |
-| `LowerRoman` | i, ii, iii |
+| `LowerRoman` | i、ii、iii |
 | `UpperRoman` | I, II, III |
-| `LowerLatin` | a, b, c, then aa, ab |
-| `UpperLatin` | A, B, C, then AA, AB |
-| `Symbols` | Asterisk, dagger, double dagger, section sign, double vertical line, pilcrow. The seventh note starts over with each symbol doubled, the thirteenth tripled, etc. |
+| `LowerLatin` | a、b、c，然后 aa、ab |
+| `UpperLatin` | A、B、C，然后 AA、AB |
+| `Symbols` | 星号、剑标、双剑标、分节符、双竖线、段落符。第七条注释起每个符号翻倍，第十三条起三倍，依此类推。 |
 
 ```csharp
 document.FootnoteNumberFormat = FootnoteNumberFormat.Symbols;
 ```
 
-Setting it is one undo unit that re-renders every anchor and every note number; because nothing numeric is stored, no text changes. A value set before the document's `TextDocument` exists applies when it is created, and a nested document (e.g., a band, a note) ignores its own value and follows the owner's.
+设置它算作一个撤销单元，会让每个锚点和每条注释的编号重新渲染；由于没有任何数字被存储下来，文本本身不会有任何改动。在文档的 `TextDocument` 尚不存在时设置的值，会在它创建时生效；而嵌套文档（比如页眉页脚带、注释）会忽略自己的取值，一律跟随所有者。
 
-The anchor's number draws at the superscript scale on the superscript baseline. The note's number follows the numbered-list rule instead: it takes family, size and color from the note's first run and sits in a strip at the note's left edge that every note of the document shares, wide enough for the document's last ordinal. A theme setter on `Footnote` therefore restyles a note's text and its number together:
+锚点的编号以上标字号绘制在上标基线上。注释自身的编号则遵循编号列表的规则：字体、字号和颜色取自注释的第一段文本，位置在注释左缘的一条竖带中——这条竖带由全文所有注释共用，宽度足以容纳文档中最大的序号。因此，给 `Footnote` 加一条主题 setter，就能把注释正文和它的编号一并改样式：
 
 ```xml
 <Style Selector="Footnote">
@@ -135,7 +135,7 @@ The anchor's number draws at the superscript scale on the superscript baseline. 
 </Style>
 ```
 
-## Anchor owns its note
+## 锚点拥有它的注释 {#anchor-owns-its-note}
 
 ```csharp
 paragraph.Inlines.Add(anchor);      // creates the paired empty note
@@ -143,69 +143,69 @@ paragraph.Inlines.Remove(anchor);   // the note leaves with the anchor
 otherParagraph.Inlines.Add(anchor); // and comes back, content intact
 ```
 
-If removed, an anchor preserves the content of its note, the same way a detached `RichRun` preserves its text. Reattaching the anchor restores the pair in the same document or another, meaning you can move the whole note by moving the anchor.
+锚点被移除时，它会保住注释的内容，就像脱离文档的 `RichRun` 会保住自己的文本一样。把锚点重新插回去——无论是插回原文档还是另一份文档——这一对就复原了；换句话说，移动锚点即可搬走整条注释。
 
-Similarly, deleting an anchor deletes the note along with it. Remaining footnotes are renumbered as part of the same action. Undo brings the same note back along with its content. A note emptied of content survives in the footnote collection unless its anchor is also deleted.
+同理，删除锚点会把注释一并删掉，其余脚注会在同一次操作中重新编号。撤销则会把那条注释连同内容一起找回来。内容被清空的注释仍留在脚注集合中，除非它的锚点也被删除。
 
-Copying a range that contains an anchor includes the note in the copy action. Pasting the copied content creates a clone of the note with a fresh ID.
+复制一段含有锚点的区间时，注释也会被一并复制。粘贴这段内容会克隆出一条带新 ID 的注释。
 
-An anchor pasted alone is dropped. It is also dropped if you attempt to paste an anchor into a page band or note body, which cannot host anchors.
+单独粘贴一个锚点会被丢弃。往页眉页脚带或注释主体里粘贴锚点同样会被丢弃，因为它们承载不了锚点。
 
-## Citing one note twice
+## 同一条注释引用两次 {#citing-one-note-twice}
 
-A note has exactly one anchor. To reference it again, use `RichFootnoteCitation`, which points at a note by `NoteId` without owning it:
+一条注释有且只有一个锚点。要再次引用它，请用 `RichFootnoteCitation`——它按 `NoteId` 指向某条注释，但并不拥有它：
 
 ```csharp
 paragraph.Inlines.Add(new RichFootnoteCitation { NoteId = anchor.NoteId });
 ```
 
-It renders exactly like the anchor, the same number, resolved from the note's position and stored nowhere, so adding or deleting a note renumbers every citation of it. What differs is ownership:
+它的呈现与锚点别无二致，编号也完全相同：由注释的位置推算得出，不存储在任何地方，所以新增或删除注释会让它的每一处引用一并重新编号。真正的区别在于归属：
 
 | &nbsp; | `RichFootnoteReference` | `RichFootnoteCitation` |
 |---|---|---|
-| Creates a note when inserted | Yes | No |
-| Deleting it deletes the note | Yes | No |
-| Legal inside a note body | No | Yes |
-| Pasted without its note | Dropped | Dropped |
+| 插入时会创建一条注释 | Yes | No |
+| 删除它会连带删除注释 | Yes | No |
+| 可以出现在注释主体内 | No | Yes |
+| 粘贴时不带上注释 | Dropped | Dropped |
 
-As indicated by the table above, citing an existing note from inside another note is allowed. If this occurs, the citation numbers against the document that owns the note.
+如上表所示，在一条注释内部引用另一条已有的注释是允许的。此时该引用按拥有这条注释的那份文档来编号。
 
-## How notes render
+## 注释如何呈现 {#how-notes-render}
 
-The note bodies are never blocks of the document, so no block-level style selector reaches them and they never flow with the body text.
+注释主体从来都不是文档的块，所以任何块级样式选择器都够不着它们，它们也不会与正文一起流排。
 
-**Continuous layouts** (`FlowDocumentScrollViewer`, and `RichTextEditor` in `DocumentViewMode.Continuous`) show every note of the document as a region below the last block, under a separator rule, one container per note in anchor order. The region appears whenever the document has notes; its height rides in the layout padding, so the scroll extent and scroll anchoring account for it.
+**连续布局**（`FlowDocumentScrollViewer`，以及 `DocumentViewMode.Continuous` 中的 `RichTextEditor`）把文档的所有注释显示为末个块下方的一个区域，上面有一条分隔线，按锚点顺序每条注释一个容器。只要文档里有注释，这个区域就会出现；它的高度算在布局内边距里，因此滚动范围和滚动锚定都会把它计算在内。
 
-**Paged layouts** (`FlowDocumentPageViewer`, `RichTextEditor` in `DocumentViewMode.PageLayout`) places each note at the bottom of the page its anchor lands on, MS Word-style:
+**分页布局**（`FlowDocumentPageViewer`、`DocumentViewMode.PageLayout` 中的 `RichTextEditor`）把每条注释放在其锚点所落页面的底部，就像 MS Word 那样：
 
-- A line carrying anchors reserves its notes' heights above the page bottom, plus one separator rule per page that has notes.
-- A line that no longer fits the reduced height moves to the next page together with its notes, so an anchor and its note always share a page.
-- Editing a note reflows the page where it is located.
-- A note taller than the page where it appears is placed by the empty-page rules.
+- 含有锚点的行会在页底之上预留出相应注释的高度，有注释的页面还会各加一条分隔线。
+- 若某一行在高度被压缩后放不下了，它会连同自己的注释一起挪到下一页——锚点与它的注释永远同处一页。
+- 编辑注释会让它所在的页面重新排版。
+- 比所在页面还高的注释按空页规则安置。
 
-Clicking into a note places the caret in the note's document. Hit-testing and caret geometry work inside the containers. `EnsurePositionVisible` can reach a note on an offscreen page or at the end of the flow.
+点进注释会把插入符放到该注释的文档中。命中测试和插入符的几何计算在容器内部照常工作。`EnsurePositionVisible` 能够抵达屏幕外页面上的注释，或流排末尾的注释。
 
-## Round trip
+## 来回存取 {#round-trip}
 
-Notes travel as nested snapshots on `DocumentSnapshot.Footnotes`, so `FlowDocument.Clone`, `FromSnapshot` and structural undo all preserve them, and every format below reads and writes them from the same place.
+注释是作为 `DocumentSnapshot.Footnotes` 上的嵌套快照随行的，所以 `FlowDocument.Clone`、`FromSnapshot` 和结构性撤销都会保全它们，下列各种格式也都从同一处读写它们。
 
-| Format | Notes |
+| 格式 | 注释支持情况 |
 |---|---|
-| XAML | Full: bodies, IDs, labels and the numbering format |
-| DOCX | Full: as Word footnotes |
-| RTF | Full: as RTF footnote groups |
-| Markdown | Read and write, addressed by name: `[^label]` citations and `[^label]: ...` definitions. See [Markdown serialization](/controls/input/text-input/richtexteditor/markdown-serialization) |
-| PDF | Write only, laid out at the bottom of the anchor's page exactly as the paged view does |
-| Plain text | The anchor writes as nothing, as every embedded object does |
+| XAML | 完整：主体、ID、标签以及编号格式 |
+| DOCX | 完整：作为 Word 脚注 |
+| RTF | 完整：作为 RTF 脚注组 |
+| Markdown | 可读可写，按名称寻址：`[^label]` 引用与 `[^label]: ...` 定义。参阅 [Markdown 序列化](/controls/input/text-input/richtexteditor/markdown-serialization) |
+| PDF | 只写，排在锚点所在页的底部，与分页视图完全一致 |
+| 纯文本 | 锚点不写出任何内容，所有嵌入对象都是如此 |
 
-`note.Label` is the note's name in formats that require one. It is never displayed. A note created in the `RichTextEditor` control does not have have a `Label` by default, and is named by its position when writing the document to another format. If you need a stable, readable name in the output file, you can set the `Label` explicitly:
+在要求名称的格式里，`note.Label` 就是注释的名字，它从不显示出来。在 `RichTextEditor` 控件中创建的注释默认没有 `Label`，写入其他格式时会按位置自动命名。若你希望输出文件里的名字稳定且可读，可以显式设置 `Label`：
 
 ```csharp
 note.Label = "constant-currency";
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Pagination](/controls/input/text-input/richtexteditor/pagination) - how notes take part in filling a page
-- [Headers and footers](/controls/input/text-input/richtexteditor/headers-and-footers) - the other nested document a page carries
-- [Markdown serialization](/controls/input/text-input/richtexteditor/markdown-serialization) - how markdown citations and definitions map onto notes
+- [分页](/controls/input/text-input/richtexteditor/pagination) —— 注释如何参与一页内容的填充
+- [页眉与页脚](/controls/input/text-input/richtexteditor/headers-and-footers) —— 页面承载的另一种嵌套文档
+- [Markdown 序列化](/controls/input/text-input/richtexteditor/markdown-serialization) —— markdown 的引用与定义如何映射到注释

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextRunCache Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextRunCache.cs">TextRunCache.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextRunCache.cs">TextRunCache.cs</a>
 </div>
 </div>
 
@@ -54,29 +54,29 @@ public class TextRunCache
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextRunCache
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextRunCache
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Uses an inline single-entry store for the common case of a single paragraph,
 and only promotes to a dictionary when multiple entries are added.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextRunCache](#uid-5e224e96fa) | No summary available. |
+| [TextRunCache](#uid-5e224e96fa) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5e224e96fa"></span>
 
-### TextRunCache Constructor
+### TextRunCache 构造函数 {#textruncache-constructor}
 
 ```csharp
 public TextRunCache()
@@ -84,11 +84,11 @@ public TextRunCache()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-280a754ff0) | No summary available. |
+| [Dispose](#uid-280a754ff0) | 暂无摘要。 |
 | [Invalidate](#uid-b0cc2172dc) | Invalidates all cached entries and disposes their shaped buffers. |
 | [InvalidateFrom](#uid-17aae5a847) | Invalidates all cached entries at or after the specified text source index. |
 
@@ -96,7 +96,7 @@ public TextRunCache()
 
 <span id="uid-280a754ff0"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -108,7 +108,7 @@ public void Dispose()
 
 <span id="uid-b0cc2172dc"></span>
 
-### Invalidate Method
+### Invalidate 方法 {#invalidate-method}
 
 Invalidates all cached entries and disposes their shaped buffers.
 
@@ -122,7 +122,7 @@ public void Invalidate()
 
 <span id="uid-17aae5a847"></span>
 
-### InvalidateFrom Method
+### InvalidateFrom 方法 {#invalidatefrom-method}
 
 Invalidates all cached entries at or after the specified text source index.
 
@@ -130,7 +130,7 @@ Invalidates all cached entries at or after the specified text source index.
 public void InvalidateFrom(int textSourceIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `textSourceIndex` int
 

@@ -1,32 +1,32 @@
 ---
 id: compilation
-title: XAML compilation
+title: XAML 编译
 ---
 
-Avalonia uses the XamlX compiler to process `.axaml` files at build time. Unlike WPF (which interprets XAML at runtime by default), Avalonia compiles XAML into IL code during the build, providing faster startup, smaller binaries, and compile-time error detection.
+Avalonia 用 XamlX 编译器在构建时处理 `.axaml` 文件。与 WPF（默认在运行时解释 XAML）不同，Avalonia 在构建期就把 XAML 编译成 IL 代码，因此启动更快、二进制更小，还能在编译期发现错误。
 
-## How XAML compilation works
+## XAML 编译是怎么回事 {#how-xaml-compilation-works}
 
-When you build an Avalonia project, the XamlX compiler:
+构建 Avalonia 项目时，XamlX 编译器会：
 
-1. Parses each `.axaml` file.
-2. Resolves all type references, namespaces, and property names.
-3. Validates property assignments and type conversions.
-4. Generates IL code that constructs the visual tree directly, without runtime XML parsing.
+1. 解析每个 `.axaml` 文件。
+2. 解析其中所有的类型引用、命名空间和属性名。
+3. 校验属性赋值与类型转换。
+4. 生成直接构建视觉树的 IL 代码，运行时不再需要解析 XML。
 
-This means many errors that would only appear at runtime in WPF are caught during compilation in Avalonia.
+也就是说，在 WPF 里要到运行时才暴露的许多错误，在 Avalonia 中编译阶段就被拦下了。
 
-## Compiled bindings
+## 编译绑定 {#compiled-bindings}
 
-By default, data bindings use reflection to resolve property paths at runtime. Compiled bindings resolve paths at build time, providing:
+数据绑定默认用反射在运行时解析属性路径。编译绑定则在构建期就把路径解析好，好处是：
 
-- **Build-time validation**: Typos in property names cause compiler errors.
-- **Better performance**: No reflection overhead at runtime.
-- **AOT compatibility**: Required for Native AOT deployment.
+- **构建期校验**：属性名写错会直接变成编译错误。
+- **性能更好**：运行时没有反射开销。
+- **兼容 AOT**：Native AOT 发布必须用它。
 
-### Enabling compiled bindings per control
+### 按控件启用编译绑定 {#enabling-compiled-bindings-per-control}
 
-Declare the data type with `x:DataType` and enable compilation with `x:CompileBindings`:
+用 `x:DataType` 声明数据类型，再用 `x:CompileBindings` 启用编译：
 
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -39,11 +39,11 @@ Declare the data type with `x:DataType` and enable compilation with `x:CompileBi
 </UserControl>
 ```
 
-If `UserName` does not exist on `MainViewModel`, the build fails with an error.
+若 `MainViewModel` 上并没有 `UserName`，构建就会报错失败。
 
-### Enabling compiled bindings project-wide
+### 在整个项目范围内启用编译绑定 {#enabling-compiled-bindings-project-wide}
 
-Add this property to your `.csproj` file to make compiled bindings the default:
+在 `.csproj` 文件中加上这个属性，编译绑定就成了默认行为：
 
 ```xml
 <PropertyGroup>
@@ -51,15 +51,15 @@ Add this property to your `.csproj` file to make compiled bindings the default:
 </PropertyGroup>
 ```
 
-With this setting, all bindings require an `x:DataType` declaration. To opt out for specific bindings that need runtime resolution, use [`ReflectionBinding`](/api/avalonia/data/reflectionbinding):
+开了这个设置之后，所有绑定都必须有 `x:DataType` 声明。个别确实需要运行时解析的绑定，可以用 [`ReflectionBinding`](/api/avalonia/data/reflectionbinding) 退出编译绑定：
 
 ```xml
 <TextBlock Text="{ReflectionBinding DynamicProperty}" />
 ```
 
-### x:DataType on nested elements
+### 在嵌套元素上使用 x:DataType {#xdatatype-on-nested-elements}
 
-You can change the data type within a template or nested scope:
+在模板或嵌套作用域内可以改变数据类型：
 
 ```xml
 <ListBox ItemsSource="{Binding Orders}">
@@ -71,47 +71,47 @@ You can change the data type within a template or nested scope:
 </ListBox>
 ```
 
-## Build-time error examples
+## 构建期报错示例 {#build-time-error-examples}
 
-With compiled XAML bindings, these common mistakes become build errors:
+有了 XAML 编译绑定，下面这些常见笔误都会变成构建错误：
 
-| Mistake | Error |
+| 错误写法 | 报错信息 |
 |---|---|
 | `{Binding UserNam}` (typo) | Cannot resolve property 'UserNam' on type 'MainViewModel' |
 | Missing `x:DataType` | Cannot use compiled binding without a DataType |
-| Wrong property type | Cannot assign 'string' to property of type 'int' |
+| 属性类型不匹配 | Cannot assign 'string' to property of type 'int' |
 
-## Native AOT considerations
+## Native AOT 相关注意事项 {#native-aot-considerations}
 
-When targeting Native AOT, compiled bindings are required because reflection-based bindings may not work without the full runtime. Ensure:
+以 Native AOT 为目标时必须使用编译绑定，因为基于反射的绑定在缺少完整运行时的情况下可能失效。请确认：
 
-1. `AvaloniaUseCompiledBindingsByDefault` is `true` in your `.csproj`.
-2. All bindings have a corresponding `x:DataType` declaration.
-3. No `ReflectionBinding` usage remains (or it is guarded with appropriate trimmer annotations).
+1. `.csproj` 中的 `AvaloniaUseCompiledBindingsByDefault` 已设为 `true`。
+2. 所有绑定都有对应的 `x:DataType` 声明。
+3. 代码里不再残留 `ReflectionBinding` 的用法（或者已经加上了恰当的裁剪器注解加以保护）。
 
-For more details on AOT deployment, see [Native AOT](/docs/deployment/native-aot).
+关于 AOT 发布的更多细节，请见 [Native AOT](/docs/deployment/native-aot)。
 
-## Obsolete and experimental diagnostics
+## 过时与实验性 API 的诊断 {#obsolete-and-experimental-diagnostics}
 
-The XAML compiler recognizes `[Obsolete]` and `[Experimental]` attributes on types and members. When you use an obsolete or experimental type, property, or event in XAML, the compiler emits a warning (or error, for `[Obsolete]` with `error: true`) with the appropriate diagnostic code and message.
+XAML 编译器能识别类型和成员上的 `[Obsolete]` 与 `[Experimental]` 特性。当你在 XAML 中使用被标记为过时或实验性的类型、属性或事件时，编译器会带上相应的诊断编号和说明发出警告（若是 `[Obsolete]` 且 `error: true`，则直接报错）。
 
-For example, if a control library marks a type as experimental:
+举例来说，若某个控件库把一个类型标记为实验性：
 
 ```csharp
 [Experimental("MYLIB0001")]
 public class PreviewPanel : Control { }
 ```
 
-Using it in XAML produces a build warning:
+在 XAML 中使用它就会产生一条构建警告：
 
 ```text
 warning MYLIB0001: 'PreviewPanel' is for evaluation purposes only and is subject to change or removal in future updates.
   --> Views/MainView.axaml(8,6)
 ```
 
-Similarly, using a member marked `[Obsolete("Use NewProperty instead")]` in XAML will emit an `AVLN2001` warning at build time instead of silently compiling.
+同样，在 XAML 中使用标记了 `[Obsolete("Use NewProperty instead")]` 的成员，构建时会发出 `AVLN2001` 警告，而不是悄无声息地编译过去。
 
-You can suppress these diagnostics in your project file if needed:
+如有需要，可以在项目文件中屏蔽这些诊断：
 
 ```xml
 <PropertyGroup>
@@ -119,28 +119,28 @@ You can suppress these diagnostics in your project file if needed:
 </PropertyGroup>
 ```
 
-## Troubleshooting XAML compilation
+## XAML 编译问题排查 {#troubleshooting-xaml-compilation}
 
-### Build errors in XAML files
+### XAML 文件中的构建错误 {#build-errors-in-xaml-files}
 
-XAML compilation errors appear in the IDE Error List and build output with the file name and line number:
+XAML 编译错误会连同文件名和行号一起出现在 IDE 的错误列表和构建输出中：
 
 ```text
 error AVLN2000: Unable to resolve property 'Naem' on type 'MyApp.ViewModels.PersonViewModel'
   --> Views/PersonView.axaml(12,34)
 ```
 
-### Suppressing errors for dynamic scenarios
+### 为动态场景屏蔽报错 {#suppressing-errors-for-dynamic-scenarios}
 
-If you need runtime-resolved bindings for specific cases (e.g., binding to `dynamic` or `ExpandoObject`), use `ReflectionBinding`:
+若某些场景确实需要运行时解析的绑定（例如绑定到 `dynamic` 或 `ExpandoObject`），请使用 `ReflectionBinding`：
 
 ```xml
 <TextBlock Text="{ReflectionBinding SomeDynamicProperty}" />
 ```
 
-### Design-time data types
+### 设计时数据类型 {#design-time-data-types}
 
-For the XAML previewer and IntelliSense, ensure `x:DataType` is set. This also enables auto-complete for binding paths in IDEs that support it.
+为了让 XAML 预览器和 IntelliSense 正常工作，请务必设置 `x:DataType`。在支持的 IDE 中，它还能为绑定路径提供自动补全。
 
 ```xml
 <UserControl x:DataType="vm:MainViewModel">
@@ -149,9 +149,9 @@ For the XAML previewer and IntelliSense, ensure `x:DataType` is set. This also e
 </UserControl>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Compiled Bindings](/docs/data-binding/compiled-bindings): Detailed compiled binding reference.
-- [Avalonia XAML](/docs/fundamentals/avalonia-xaml): XAML fundamentals.
-- [x: Directives](/docs/xaml/directives): Full reference for x:CompileBindings, x:DataType, and other directives.
-- [Native AOT](/docs/deployment/native-aot): AOT deployment guide.
+- [编译绑定](/docs/data-binding/compiled-bindings)：编译绑定的详细参考。
+- [Avalonia XAML](/docs/fundamentals/avalonia-xaml)：XAML 基础。
+- [x: 指令](/docs/xaml/directives)：x:CompileBindings、x:DataType 等指令的完整参考。
+- [Native AOT](/docs/deployment/native-aot)：AOT 发布指南。

@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">VisualExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/VisualExtensions.cs">VisualExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/VisualExtensions.cs">VisualExtensions.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Extension methods for [Avalonia.Visual](xref:Avalonia.Visual).
+面向 [Avalonia.Visual](xref:Avalonia.Visual) 的扩展方法。
 
 </div>
 
@@ -54,13 +54,13 @@ public class VisualExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> VisualExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> VisualExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [PointToClient](#uid-10509f3e2e) | Converts a point from screen to client coordinates. |
 | [PointToScreen](#uid-678ad8e33d) | Converts a point from client to screen coordinates. |
@@ -71,7 +71,7 @@ public class VisualExtensions
 
 <span id="uid-10509f3e2e"></span>
 
-### PointToClient Method
+### PointToClient 方法 {#pointtoclient-method}
 
 Converts a point from screen to client coordinates.
 
@@ -79,26 +79,26 @@ Converts a point from screen to client coordinates.
 public Avalonia.Point PointToClient(Avalonia.Visual visual, Avalonia.PixelPoint point)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
 `point` [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The point in screen coordinates.
+以屏幕坐标表示的点。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
-The point in client coordinates.
+以客户区坐标表示的点。
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [Thown when \`visual\` does not belong to a visual tree.](xref:System.ArgumentException)
 
@@ -108,7 +108,7 @@ The point in client coordinates.
 
 <span id="uid-678ad8e33d"></span>
 
-### PointToScreen Method
+### PointToScreen 方法 {#pointtoscreen-method}
 
 Converts a point from client to screen coordinates.
 
@@ -116,26 +116,26 @@ Converts a point from client to screen coordinates.
 public Avalonia.PixelPoint PointToScreen(Avalonia.Visual visual, Avalonia.Point point)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The point in client coordinates.
+以客户区坐标表示的点。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The point in screen coordinates.
+以屏幕坐标表示的点。
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [Thown when \`visual\` does not belong to a visual tree.](xref:System.ArgumentException)
 
@@ -145,7 +145,7 @@ The point in screen coordinates.
 
 <span id="uid-51afb751e0"></span>
 
-### TransformToVisual Method
+### TransformToVisual 方法 {#transformtovisual-method}
 
 Returns a transform that transforms the visual's coordinates into the coordinates
 of the specified `to`.
@@ -154,7 +154,7 @@ of the specified `to`.
 public Nullable<Avalonia.Matrix> TransformToVisual(Avalonia.Visual from, Avalonia.Visual to)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `from` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -166,7 +166,7 @@ The visual whose coordinates are to be transformed.
 The visual to translate the coordinates to.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 Nullable&lt;[Avalonia.Matrix](xref:Avalonia.Matrix)&gt;
 
@@ -180,7 +180,7 @@ common ancestor.
 
 <span id="uid-646d04f291"></span>
 
-### TranslatePoint Method
+### TranslatePoint 方法 {#translatepoint-method}
 
 Translates a point relative to this visual to coordinates that are relative to the specified visual.
 
@@ -188,11 +188,11 @@ Translates a point relative to this visual to coordinates that are relative to t
 public Nullable<Avalonia.Point> TranslatePoint(Avalonia.Visual visual, Avalonia.Point point, Avalonia.Visual relativeTo)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
-The visual.
+该视觉元素。
 
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
@@ -205,7 +205,7 @@ The point value, as relative to this visual.
 The visual to translate the given point into.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 Nullable&lt;[Avalonia.Point](xref:Avalonia.Point)&gt;
 

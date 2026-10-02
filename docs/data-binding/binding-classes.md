@@ -1,25 +1,25 @@
 ---
 id: binding-classes
-title: How to bind style classes
-description: Bind style classes to boolean properties to conditionally apply styling to Avalonia controls.
+title: 如何绑定样式类
+description: 把样式类绑定到布尔属性，按条件为 Avalonia 控件应用样式。
 doc-type: how-to
 ---
 
 import BindStyleClassSampleScreenshot from '/img/guides/data/bind-style-class.png';
 
-This guide shows you how to apply style classes to a control depending on the boolean value of a data binding.
+本文介绍如何根据数据绑定的布尔值，按条件给控件套上样式类。
 
-To do this, you need classes defined in a `<Styles>` collection that target the control class you are using.
+为此，你需要在 `<Styles>` 集合中定义若干样式类，并让它们指向你所使用的控件类型。
 
-You can then conditionally apply the classes to a control using the special `Classes.` syntax and a data binding. The syntax looks like this:
+随后就能借助特殊的 `Classes.` 语法配合数据绑定，按条件把这些类应用到控件上。写法如下：
 
 ```xml
 <SomeControl Classes.myClass="{Binding IsMyClassActive}">
 ```
 
-### Multiple class bindings
+### 绑定多个样式类 {#multiple-class-bindings}
 
-You can bind multiple classes to the same control. Each class binding operates independently, so you can combine them freely:
+同一个控件上可以绑定多个样式类。各个类绑定互不干扰，可以随意组合：
 
 ```xml
 <TextBlock Classes.error="{Binding HasError}"
@@ -27,20 +27,20 @@ You can bind multiple classes to the same control. Each class binding operates i
            Classes.large="{Binding IsLarge}" />
 ```
 
-### Negation operator
+### 取反运算符 {#negation-operator}
 
-You can use the negation operator (`!`) in a binding expression to apply a class when a boolean property is `false`. This is useful when you want to toggle between two mutually exclusive classes without creating an additional view model property:
+在绑定表达式中使用取反运算符（`!`），可以在布尔属性为 `false` 时应用某个类。想在两个互斥的类之间切换、又不愿为此多加一个视图模型属性时，这招很好用：
 
 ```xml
 <TextBlock Classes.classA="{Binding IsOptionA}"
            Classes.classB="{Binding !IsOptionA}" />
 ```
 
-In this example, `classA` is applied when `IsOptionA` is `true`, and `classB` is applied when `IsOptionA` is `false`.
+本例中，`IsOptionA` 为 `true` 时应用 `classA`，`IsOptionA` 为 `false` 时则应用 `classB`。
 
 ## Example
 
-In this example, two styles with class selectors have been defined. These give a `TextBlock` either a red or a green background. The `Classes.class1` binding assigns `class1` when the `IsClass1` property of an item is `true`. Using the negation operator, `class2` is assigned when `IsClass1` is `false`.
+本例定义了两条带类选择器的样式，分别把 `TextBlock` 的背景设为红色和绿色。当某一项的 `IsClass1` 属性为 `true` 时，`Classes.class1` 绑定会赋上 `class1`；借助取反运算符，`IsClass1` 为 `false` 时则赋上 `class2`。
 
 ```xml
 <StackPanel Margin="20">
@@ -101,7 +101,7 @@ public class ItemClass
 
 <Image light={BindStyleClassSampleScreenshot} alt="Sample app showing style classes toggled by data binding" position="center" maxWidth={400} cornerRadius="true"/>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Styles](/docs/styling/styles)
-- [Data binding syntax](/docs/data-binding/data-binding-syntax)
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)

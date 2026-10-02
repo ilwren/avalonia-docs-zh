@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IAvaloniaList&lt;T&gt; Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Collections</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Collections</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Collections/IAvaloniaList.cs">IAvaloniaList.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Collections/IAvaloniaList.cs">IAvaloniaList.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-A notifying list.
+一个带变更通知的列表。
 
 </div>
 
@@ -54,32 +54,32 @@ public interface IAvaloniaList<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IAvaloniaReadOnlyList&lt;&gt;, ICollection&lt;&gt;, IEnumerable&lt;&gt;, IList&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged
+<span className="apiref-page__meta-label">实现接口：</span> IAvaloniaReadOnlyList&lt;&gt;, ICollection&lt;&gt;, IEnumerable&lt;&gt;, IList&lt;&gt;, IReadOnlyCollection&lt;&gt;, IReadOnlyList&lt;&gt;, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddRange](#uid-5f42616823) | No summary available. |
-| [InsertRange](#uid-465519fba2) | No summary available. |
-| [Move](#uid-62a0acd40c) | Moves an item to a new index. |
-| [MoveRange](#uid-0304d42c8f) | Moves multiple items to a new index. |
-| [RemoveAll](#uid-a3473fc21f) | No summary available. |
-| [RemoveRange](#uid-639f028025) | Removes a range of elements from the collection. |
+| [AddRange](#uid-5f42616823) | 暂无摘要。 |
+| [InsertRange](#uid-465519fba2) | 暂无摘要。 |
+| [Move](#uid-62a0acd40c) | 把某一项移到新的索引处。 |
+| [MoveRange](#uid-0304d42c8f) | 把多个项移到新的索引处。 |
+| [RemoveAll](#uid-a3473fc21f) | 暂无摘要。 |
+| [RemoveRange](#uid-639f028025) | 从集合中移除一段范围内的元素。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5f42616823"></span>
 
-### AddRange Method
+### AddRange 方法 {#addrange-method}
 
 ```csharp
 public void AddRange(System.Collections.Generic.IEnumerable<T> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `items` System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -90,13 +90,13 @@ public void AddRange(System.Collections.Generic.IEnumerable<T> items)
 
 <span id="uid-465519fba2"></span>
 
-### InsertRange Method
+### InsertRange 方法 {#insertrange-method}
 
 ```csharp
 public void InsertRange(int index, System.Collections.Generic.IEnumerable<T> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `index` int
 
@@ -110,24 +110,24 @@ public void InsertRange(int index, System.Collections.Generic.IEnumerable<T> ite
 
 <span id="uid-62a0acd40c"></span>
 
-### Move Method
+### Move 方法 {#move-method}
 
-Moves an item to a new index.
+把某一项移到新的索引处。
 
 ```csharp
 public void Move(int oldIndex, int newIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `oldIndex` int
 
-The index of the item to move.
+要移动的那一项的索引。
 
 
 `newIndex` int
 
-The index to move the item to.
+要把该项移到的目标索引。
 
 
 </section>
@@ -136,29 +136,29 @@ The index to move the item to.
 
 <span id="uid-0304d42c8f"></span>
 
-### MoveRange Method
+### MoveRange 方法 {#moverange-method}
 
-Moves multiple items to a new index.
+把多个项移到新的索引处。
 
 ```csharp
 public void MoveRange(int oldIndex, int count, int newIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `oldIndex` int
 
-The first index of the items to move.
+要移动的这些项中第一项的索引。
 
 
 `count` int
 
-The number of items to move.
+要移动的项数。
 
 
 `newIndex` int
 
-The index to move the items to.
+要把这些项移到的目标索引。
 
 
 </section>
@@ -167,13 +167,13 @@ The index to move the items to.
 
 <span id="uid-a3473fc21f"></span>
 
-### RemoveAll Method
+### RemoveAll 方法 {#removeall-method}
 
 ```csharp
 public void RemoveAll(System.Collections.Generic.IEnumerable<T> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `items` System.Collections.Generic.IEnumerable&lt;T&gt;
 
@@ -184,42 +184,42 @@ public void RemoveAll(System.Collections.Generic.IEnumerable<T> items)
 
 <span id="uid-639f028025"></span>
 
-### RemoveRange Method
+### RemoveRange 方法 {#removerange-method}
 
-Removes a range of elements from the collection.
+从集合中移除一段范围内的元素。
 
 ```csharp
 public void RemoveRange(int index, int count)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `index` int
 
-The first index to remove.
+要移除的第一个索引。
 
 
 `count` int
 
-The number of items to remove.
+要移除的项数。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Count](#uid-6c7153fe3d) | Gets the number of items in the list. |
-| [Item](#uid-3043493a92) | No summary available. |
+| [Count](#uid-6c7153fe3d) | 获取列表中的项数。 |
+| [Item](#uid-3043493a92) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6c7153fe3d"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
-Gets the number of items in the list.
+获取列表中的项数。
 
 ```csharp
 public int Count { get; set; }
@@ -231,7 +231,7 @@ public int Count { get; set; }
 
 <span id="uid-3043493a92"></span>
 
-### Item Property
+### Item 属性 {#item-property}
 
 ```csharp
 public T Item { get; set; }

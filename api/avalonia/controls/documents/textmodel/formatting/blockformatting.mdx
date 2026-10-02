@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BlockFormatting Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel.Formatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,14 +51,14 @@ public struct BlockFormatting
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> BlockFormatting
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> BlockFormatting
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;BlockFormatting&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;BlockFormatting&gt;
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Contains only block-specific layout properties (alignment, spacing, indentation,
 margins, borders, tabs). Shared element-level properties (font, color, background)
@@ -88,34 +88,34 @@ feature is exercised). A new field must be threaded through every one of these:
 until both were taught about it. When adding a field, grep for a neighboring field
 (e.g. `TabStopPositions`) and mirror every hit.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-6c8ca8b75d) | No summary available. |
-| [GetHashCode](#uid-d4b5b850ec) | No summary available. |
-| [ToString](#uid-a19e34b0ed) | No summary available. |
+| [Equals（2 个重载）](#uid-6c8ca8b75d) | 暂无摘要。 |
+| [GetHashCode](#uid-d4b5b850ec) | 暂无摘要。 |
+| [ToString](#uid-a19e34b0ed) | 暂无摘要。 |
 
 <span id="uid-6c8ca8b75d"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-45ae76eb81"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -126,18 +126,18 @@ bool
 
 <span id="uid-31d58bcdbd"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -148,13 +148,13 @@ bool
 
 <span id="uid-d4b5b850ec"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -165,28 +165,28 @@ int
 
 <span id="uid-a19e34b0ed"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BorderBrushArgb](#uid-fb66e3ae63) | Packed ARGB value for border brush. Null means not explicitly set or no border. |
 | [BorderThickness](#uid-c20f0c238d) | Border thickness in device-independent pixels. Null means not explicitly set or no border. |
 | [ColumnSpan](#uid-1f36b451f9) | Number of grid columns the cell spans (maps to [Avalonia.Controls.Documents.TableCell.ColumnSpan](xref:Avalonia.Controls.Documents.TableCell.ColumnSpan) and Word's `w:gridSpan`). Only meaningful for table cells; null (treated as a span of 1) for other blocks and un-merged cells. |
 | [CornerRadius](#uid-8282d61631) | Corner radius of the block border in device-independent pixels. Null means not explicitly set (square corners). |
-| [Default](#uid-e207ec4d49) | Default formatting with no explicit values set. |
+| [Default](#uid-e207ec4d49) | 未显式设置任何值的默认格式。 |
 | [FlowDirection](#uid-cfa7960fb8) | Flow direction (LeftToRight or RightToLeft). Null means not explicitly set. |
 | [KeepTogether](#uid-a37de03298) | Avoids splitting the block across pages in paginated output; a block taller than one page still splits. Maps to RTF `\keep` and Word's `w:keepLines`; null means not explicitly set (off). The continuous on-screen flow ignores it. |
 | [KeepWithNext](#uid-950063c6e1) | Keeps the block's end on the same page as the start of the following block in paginated output. Maps to RTF `\keepn` and Word's `w:keepNext`; null means not explicitly set (off). The continuous on-screen flow ignores it. |
@@ -206,7 +206,7 @@ string
 
 <span id="uid-fb66e3ae63"></span>
 
-### BorderBrushArgb Property
+### BorderBrushArgb 属性 {#borderbrushargb-property}
 
 Packed ARGB value for border brush.
 Null means not explicitly set or no border.
@@ -215,7 +215,7 @@ Null means not explicitly set or no border.
 public Nullable<uint> BorderBrushArgb { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 When all border sides have the same color, stored here.
 Per-side colors require [Avalonia.Controls.Documents.BlockDecorationInfo](xref:Avalonia.Controls.Documents.BlockDecorationInfo) via
@@ -227,7 +227,7 @@ Per-side colors require [Avalonia.Controls.Documents.BlockDecorationInfo](xref:A
 
 <span id="uid-c20f0c238d"></span>
 
-### BorderThickness Property
+### BorderThickness 属性 {#borderthickness-property}
 
 Border thickness in device-independent pixels.
 Null means not explicitly set or no border.
@@ -242,7 +242,7 @@ public Nullable<Avalonia.Thickness> BorderThickness { get; set; }
 
 <span id="uid-1f36b451f9"></span>
 
-### ColumnSpan Property
+### ColumnSpan 属性 {#columnspan-property}
 
 Number of grid columns the cell spans (maps to
 [Avalonia.Controls.Documents.TableCell.ColumnSpan](xref:Avalonia.Controls.Documents.TableCell.ColumnSpan) and Word's
@@ -259,7 +259,7 @@ public Nullable<int> ColumnSpan { get; set; }
 
 <span id="uid-8282d61631"></span>
 
-### CornerRadius Property
+### CornerRadius 属性 {#cornerradius-property}
 
 Corner radius of the block border in device-independent pixels.
 Null means not explicitly set (square corners).
@@ -268,7 +268,7 @@ Null means not explicitly set (square corners).
 public Nullable<Avalonia.CornerRadius> CornerRadius { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 No file format carries it: it is an authoring and rendering property, and it is
 here so a clone, an undo of a structural edit, and a snapshot round trip keep it.
@@ -279,9 +279,9 @@ here so a clone, an undo of a structural edit, and a snapshot round trip keep it
 
 <span id="uid-e207ec4d49"></span>
 
-### Default Property
+### Default 属性 {#default-property}
 
-Default formatting with no explicit values set.
+未显式设置任何值的默认格式。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting Default { get; set; }
@@ -293,7 +293,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting Default 
 
 <span id="uid-cfa7960fb8"></span>
 
-### FlowDirection Property
+### FlowDirection 属性 {#flowdirection-property}
 
 Flow direction (LeftToRight or RightToLeft).
 Null means not explicitly set.
@@ -308,7 +308,7 @@ public Nullable<Avalonia.Media.FlowDirection> FlowDirection { get; set; }
 
 <span id="uid-a37de03298"></span>
 
-### KeepTogether Property
+### KeepTogether 属性 {#keeptogether-property}
 
 Avoids splitting the block across pages in paginated output; a block taller than
 one page still splits. Maps to RTF `\keep` and Word's `w:keepLines`;
@@ -324,7 +324,7 @@ public Nullable<bool> KeepTogether { get; set; }
 
 <span id="uid-950063c6e1"></span>
 
-### KeepWithNext Property
+### KeepWithNext 属性 {#keepwithnext-property}
 
 Keeps the block's end on the same page as the start of the following block in
 paginated output. Maps to RTF `\keepn` and Word's `w:keepNext`;
@@ -340,7 +340,7 @@ public Nullable<bool> KeepWithNext { get; set; }
 
 <span id="uid-5f13fc93f0"></span>
 
-### LineHeight Property
+### LineHeight 属性 {#lineheight-property}
 
 Line height in device-independent pixels.
 Null means not explicitly set.
@@ -349,7 +349,7 @@ Null means not explicitly set.
 public Nullable<double> LineHeight { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Interpretation depends on format-specific metadata. Without metadata, treated as Auto.
 For RTF round-trip, see RtfMetadata.LineSpacingTwips and LineSpacingRule.
@@ -360,7 +360,7 @@ For RTF round-trip, see RtfMetadata.LineSpacingTwips and LineSpacingRule.
 
 <span id="uid-a40c625b9d"></span>
 
-### Margin Property
+### Margin 属性 {#margin-property}
 
 Margin in device-independent pixels.
 Null means not explicitly set.
@@ -375,7 +375,7 @@ public Nullable<Avalonia.Thickness> Margin { get; set; }
 
 <span id="uid-c4d533fa22"></span>
 
-### MinHeight Property
+### MinHeight 属性 {#minheight-property}
 
 Minimum height in device-independent pixels. Only meaningful for table
 rows (maps to [Avalonia.Controls.Documents.TableRow.Height](xref:Avalonia.Controls.Documents.TableRow.Height)
@@ -391,7 +391,7 @@ public Nullable<double> MinHeight { get; set; }
 
 <span id="uid-16eb7366bf"></span>
 
-### Padding Property
+### Padding 属性 {#padding-property}
 
 Padding in device-independent pixels.
 Null means not explicitly set.
@@ -400,7 +400,7 @@ Null means not explicitly set.
 public Nullable<Avalonia.Thickness> Padding { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 Populated from RTF border spacing (\brsp).
 
@@ -410,7 +410,7 @@ Populated from RTF border spacing (\brsp).
 
 <span id="uid-a7fda7753b"></span>
 
-### PageBreakBefore Property
+### PageBreakBefore 属性 {#pagebreakbefore-property}
 
 Starts a new page before this block in paginated output (print/PDF). Maps to RTF
 `\pagebb` and Word's `w:pageBreakBefore`; null means no explicit break.
@@ -426,7 +426,7 @@ public Nullable<bool> PageBreakBefore { get; set; }
 
 <span id="uid-933ddaf194"></span>
 
-### RowSpan Property
+### RowSpan 属性 {#rowspan-property}
 
 Number of grid rows the cell spans (maps to
 [Avalonia.Controls.Documents.TableCell.RowSpan](xref:Avalonia.Controls.Documents.TableCell.RowSpan) and Word's
@@ -443,7 +443,7 @@ public Nullable<int> RowSpan { get; set; }
 
 <span id="uid-81ac77d558"></span>
 
-### TabStopPositions Property
+### TabStopPositions 属性 {#tabstoppositions-property}
 
 Tab stop positions in device-independent pixels.
 Default or empty means no custom tab stops defined.
@@ -452,7 +452,7 @@ Default or empty means no custom tab stops defined.
 public double[] TabStopPositions { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Format-agnostic: contains only positions. Format-specific details
 (alignment, leader styles) are stored in format metadata. The array is
@@ -464,7 +464,7 @@ immutable, so the value a background serializer reads cannot move under it.
 
 <span id="uid-b553b003ab"></span>
 
-### TextAlignment Property
+### TextAlignment 属性 {#textalignment-property}
 
 Text alignment (Left, Right, Center, Justify).
 
@@ -478,7 +478,7 @@ public Nullable<Avalonia.Media.TextAlignment> TextAlignment { get; set; }
 
 <span id="uid-0d3f447a72"></span>
 
-### TextIndent Property
+### TextIndent 属性 {#textindent-property}
 
 First-line text indent in device-independent pixels.
 Negative values create hanging indents.
@@ -494,7 +494,7 @@ public Nullable<double> TextIndent { get; set; }
 
 <span id="uid-851753032a"></span>
 
-### VerticalAlignment Property
+### VerticalAlignment 属性 {#verticalalignment-property}
 
 Vertical alignment of content within the block's height. Only meaningful
 for table cells (maps to [Avalonia.Controls.Documents.TableCell.VerticalAlignment](xref:Avalonia.Controls.Documents.TableCell.VerticalAlignment)
@@ -510,7 +510,7 @@ public Nullable<Avalonia.Layout.VerticalAlignment> VerticalAlignment { get; set;
 
 <span id="uid-11c5c03641"></span>
 
-### WidowControl Property
+### WidowControl 属性 {#widowcontrol-property}
 
 Widow/orphan control for paginated output: at least two lines of the paragraph
 stay and at least two lines move at a page break. Maps to RTF

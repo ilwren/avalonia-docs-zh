@@ -1,39 +1,39 @@
 ---
 id: window-how-to
-title: "How to: Work with windows"
-description: Sizing, positioning, dialogs, multi-window apps, startup behavior, and system chrome options.
+title: "操作指南：使用窗口"
+description: 尺寸、位置、对话框、多窗口应用、启动行为与系统边框选项。
 doc-type: how-to
 ---
 
-This guide covers common Window scenarios: sizing, positioning, dialogs, multi-window apps, startup behavior, and system chrome.
+本指南介绍 Window 的常见场景：尺寸、位置、对话框、多窗口应用、启动行为与系统边框。
 
-## Setting Window Size and Position
+## 设置窗口的尺寸与位置 {#setting-window-size-and-position}
 
-### Fixed size on startup
+### 启动时固定尺寸 {#fixed-size-on-startup}
 
 ```xml
 <Window Width="800" Height="600"
         WindowStartupLocation="CenterScreen">
 ```
 
-### Minimum and maximum size
+### 最小与最大尺寸 {#minimum-and-maximum-size}
 
 ```xml
 <Window MinWidth="400" MinHeight="300"
         MaxWidth="1920" MaxHeight="1080">
 ```
 
-### Startup location
+### 启动位置 {#startup-location}
 
-| Value | Description |
+| 值 | 说明 |
 |---|---|
-| `Manual` | Position set by `Position` property. |
-| `CenterScreen` | Centered on the primary screen. |
-| `CenterOwner` | Centered on the owner window (for dialogs). |
+| `Manual` | 由 `Position` 属性指定位置。 |
+| `CenterScreen` | 在主屏幕上居中。 |
+| `CenterOwner` | 在所有者窗口上居中（适用于对话框）。 |
 
-## Showing a Dialog Window
+## 显示一个对话框窗口 {#showing-a-dialog-window}
 
-Use `ShowDialog<T>` to open a modal dialog and get a result:
+用 `ShowDialog<T>` 打开模态对话框并取回结果：
 
 ```csharp
 var dialog = new SettingsWindow();
@@ -44,7 +44,7 @@ if (result)
 }
 ```
 
-Return a result by calling `Close` with a value:
+调用 `Close` 并传入一个值即可返回结果：
 
 ```csharp
 // In the dialog window
@@ -59,9 +59,9 @@ private void OnCancelClick(object sender, RoutedEventArgs e)
 }
 ```
 
-## Getting the Parent Window
+## 获取父窗口 {#getting-the-parent-window}
 
-From any control, use `TopLevel.GetTopLevel`:
+在任意控件中都可以使用 `TopLevel.GetTopLevel`：
 
 ```csharp
 var topLevel = TopLevel.GetTopLevel(this);
@@ -73,7 +73,7 @@ if (topLevel is Window window)
 
 ## Preventing Window Close
 
-Handle the `Closing` event to intercept close attempts:
+处理 `Closing` 事件即可拦截关闭操作：
 
 ```csharp
 protected override void OnClosing(WindowClosingEventArgs e)
@@ -114,23 +114,23 @@ private void Maximize()
 }
 ```
 
-## Disabling Minimize and Maximize Buttons
+## 禁用最小化与最大化按钮 {#disabling-minimize-and-maximize-buttons}
 
-Use `CanMinimize` and `CanMaximize` to control whether the title bar buttons are enabled:
+用 `CanMinimize` 和 `CanMaximize` 控制标题栏上这些按钮是否可用：
 
 ```xml
 <Window CanMinimize="False" CanMaximize="False">
 ```
 
-When `CanResize` is `false`, `CanMaximize` is automatically set to `false`.
+当 `CanResize` 为 `false` 时，`CanMaximize` 会自动被设为 `false`。
 
 :::note
-Platform behavior varies. On Windows, disabled buttons are hidden. On macOS, they appear greyed out. On Linux, behavior depends on the window manager.
+各平台的表现不尽相同：Windows 上被禁用的按钮会隐藏起来，macOS 上显示为灰色，Linux 上则取决于窗口管理器。
 :::
 
-## Hiding the Title Bar (Chromeless Window)
+## 隐藏标题栏（无边框窗口） {#hiding-the-title-bar-chromeless-window}
 
-Create a borderless window by disabling system decorations:
+关掉系统装饰，做一个无边框窗口：
 
 ```xml
 <Window WindowDecorations="None"
@@ -139,9 +139,9 @@ Create a borderless window by disabling system decorations:
         TransparencyLevelHint="AcrylicBlur">
 ```
 
-### Custom title bar with drag region
+### 带拖拽区域的自定义标题栏 {#custom-title-bar-with-drag-region}
 
-Mark an element as a title bar drag region using the `WindowDecorationProperties.ElementRole` attached property. The operating system handles drag and double-click-to-maximize behavior automatically:
+用 `WindowDecorationProperties.ElementRole` 附加属性把某个元素标记为标题栏拖拽区域，之后拖动和双击最大化的行为由操作系统自动接管：
 
 ```xml
 <Grid RowDefinitions="32,*">
@@ -167,20 +167,20 @@ Mark an element as a title bar drag region using the `WindowDecorationProperties
 </Grid>
 ```
 
-The `ElementRole` property supports these values:
+`ElementRole` 属性支持以下取值：
 
-| Value | Behavior |
+| 值 | 行为 |
 |---|---|
-| `None` | No special window chrome behavior (default). |
-| `TitleBar` | Acts as a draggable title bar region. |
-| `ResizeN`, `ResizeS`, `ResizeE`, `ResizeW` | Resize grip for the specified edge. |
-| `ResizeNE`, `ResizeNW`, `ResizeSE`, `ResizeSW` | Resize grip for the specified corner. |
+| `None` | 不启用任何特殊的窗口边框行为（默认）。 |
+| `TitleBar` | 充当可拖动的标题栏区域。 |
+| `ResizeN`, `ResizeS`, `ResizeE`, `ResizeW` | 指定边缘的尺寸调整手柄。 |
+| `ResizeNE`, `ResizeNW`, `ResizeSE`, `ResizeSW` | 指定角落的尺寸调整手柄。 |
 
-Interactive controls inside a `TitleBar` region (such as buttons) continue to receive input normally and do not trigger window dragging.
+`TitleBar` 区域内的可交互控件（比如按钮）照常接收输入，不会触发窗口拖动。
 
-## Multi-Window Application
+## 多窗口应用 {#multi-window-application}
 
-Open additional windows from the main window:
+从主窗口打开其他窗口：
 
 ```csharp
 [RelayCommand]
@@ -194,14 +194,14 @@ private void OpenNewWindow()
 }
 ```
 
-For a non-modal window that stays on top of the owner:
+若要一个非模态、但始终浮在所有者之上的窗口：
 
 ```csharp
 var toolWindow = new ToolWindow();
 toolWindow.Show(ownerWindow); // Stays above owner
 ```
 
-## Saving and Restoring Window Position
+## 保存与恢复窗口位置 {#saving-and-restoring-window-position}
 
 ```csharp
 protected override void OnOpened(EventArgs e)
@@ -240,18 +240,18 @@ protected override void OnClosing(WindowClosingEventArgs e)
 </Window>
 ```
 
-Check which transparency levels are supported at runtime:
+在运行时查看支持哪些透明度级别：
 
 ```csharp
 var supported = this.ActualTransparencyLevel;
 ```
 
-If `ActualTransparencyLevel` returns a lower level than requested, this may be due to an OS restriction rather than a configuration error. For example, macOS and Linux have more limited support for transparency, and Windows may suppress compositor effects when in battery saver mode. It is advisable to set a [`TransparencyBackgroundFallback`](/docs/fundamentals/top-level#transparencybackgroundfallback) with a solid color appropriate for your UI, in case transparency is unavailable on the user's device.
+若 `ActualTransparencyLevel` 返回的级别低于你请求的，这多半是操作系统的限制，而非配置有误。比如 macOS 和 Linux 对透明的支持更有限，而 Windows 在省电模式下可能会关掉合成器特效。稳妥起见，请设一个颜色不透明、与界面相称的 [`TransparencyBackgroundFallback`](/docs/fundamentals/top-level#transparencybackgroundfallback)，以防用户设备上压根用不了透明。
 
 :::note
-Avalonia currently does not support WPF-like transparent click-through behavior.
+Avalonia 目前还不支持 WPF 那种「透明穿透点击」的行为。
 
-If you wish to create a transparent click-through window using native platform APIs, please see our guidance on [Native platform interop](/docs/app-development/native-interop).
+若你想用原生平台 API 做一个可穿透点击的透明窗口，请参阅我们关于[原生平台互操作](/docs/app-development/native-interop)的说明。
 :::
 
 ## Window Icon
@@ -260,7 +260,7 @@ If you wish to create a transparent click-through window using native platform A
 <Window Icon="/Assets/app-icon.ico">
 ```
 
-Or set it in code:
+也可以在代码中设置：
 
 ```csharp
 Icon = new WindowIcon(AssetLoader.Open(new Uri("avares://MyApp/Assets/app-icon.ico")));
@@ -268,23 +268,23 @@ Icon = new WindowIcon(AssetLoader.Open(new Uri("avares://MyApp/Assets/app-icon.i
 
 ## Key Properties
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Title` | `string` | Window title bar text. |
+| `Title` | `string` | 窗口标题栏上的文字。 |
 | `WindowState` | `WindowState` | `Normal`, `Minimized`, `Maximized`, `FullScreen`. |
 | `WindowStartupLocation` | `WindowStartupLocation` | `Manual`, `CenterScreen`, `CenterOwner`. |
 | `WindowDecorations` | `WindowDecorations` | `Full`, `BorderOnly`, `None`. |
-| `CanResize` | `bool` | Whether the user can resize the window. |
-| `CanMinimize` | `bool` | Whether the minimize button is enabled. Defaults to `true`. |
-| `CanMaximize` | `bool` | Whether the maximize button is enabled. Defaults to `true`. Automatically `false` when `CanResize` is `false`. |
-| `Topmost` | `bool` | Keep the window above all others. |
-| `ShowInTaskbar` | `bool` | Show in the OS taskbar. |
-| `Icon` | `WindowIcon` | Window icon for title bar and taskbar. |
-| `TransparencyLevelHint` | `WindowTransparencyLevel` | Requested transparency: `None`, `Transparent`, `Blur`, `AcrylicBlur`, `Mica`. |
+| `CanResize` | `bool` | 用户能否调整窗口大小。 |
+| `CanMinimize` | `bool` | 最小化按钮是否可用，默认为 `true`。 |
+| `CanMaximize` | `bool` | 最大化按钮是否可用，默认为 `true`。当 `CanResize` 为 `false` 时会自动变成 `false`。 |
+| `Topmost` | `bool` | 让窗口始终浮在其他窗口之上。 |
+| `ShowInTaskbar` | `bool` | 在操作系统任务栏中显示。 |
+| `Icon` | `WindowIcon` | 标题栏和任务栏上的窗口图标。 |
+| `TransparencyLevelHint` | `WindowTransparencyLevel` | 请求的透明度：`None`、`Transparent`、`Blur`、`AcrylicBlur`、`Mica`。 |
 
 ## See Also
 
-- [Window Control Reference](/controls/primitives/window): Property tables.
-- [Dialogs How-To](/docs/how-to/dialogs-how-to): Dialog patterns and file pickers.
-- [Window Management](/docs/app-development/window-management): Window lifecycle.
-- [Application Lifetimes](/docs/fundamentals/application-lifetimes): Desktop vs mobile lifetime models.
+- [Window 控件参考](/controls/primitives/window)：属性表。
+- [对话框操作指南](/docs/how-to/dialogs-how-to)：对话框用法与文件选择器。
+- [窗口管理](/docs/app-development/window-management)：窗口生命周期。
+- [应用生命周期](/docs/fundamentals/application-lifetimes)：桌面与移动端的生命周期模型。

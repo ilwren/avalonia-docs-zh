@@ -1,26 +1,26 @@
 ---
 id: progressbar
 title: ProgressBar
-description: A horizontal or vertical bar that displays a value as a filled proportion, with optional text caption and indeterminate mode for unknown progress.
+description: 一条横向或纵向的进度条，按比例填充来表示取值，可显示文字说明，也支持进度未知时的不确定模式。
 doc-type: reference
 ---
 
-The `ProgressBar` presents a value as a proportionately filled bar with the option to show a caption. You can use it to indicate the completion status of long-running operations such as file downloads, installations, or data processing tasks.
+`ProgressBar` 把取值以按比例填充的进度条呈现出来，并可选地显示一段文字说明。它适合表示文件下载、安装、数据处理等耗时操作的完成状态。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property             | Description                                                                                     |
+| 属性             | 说明                                                                                     |
 |----------------------|-------------------------------------------------------------------------------------------------|
-| `Minimum`            | The minimum value of the range. Defaults to `0`.                                                |
-| `Maximum`            | The maximum value of the range. Defaults to `100`.                                              |
-| `Value`              | The current value within the range.                                                             |
-| `IsIndeterminate`    | When `true`, the bar displays an animated indicator instead of a filled proportion.             |
-| `Orientation`        | Sets the bar direction. Use `Horizontal` (default) or `Vertical`.                               |
-| `Foreground`         | The brush used to paint the filled portion of the bar.                                          |
-| `ShowProgressText`   | When `true`, the progress bar overlays a text caption showing the current progress.             |
-| `ProgressTextFormat` | A format string that controls how the progress text is rendered. See the section below.         |
+| `Minimum`            | 取值范围的最小值，默认 `0`。                                                |
+| `Maximum`            | 取值范围的最大值，默认 `100`。                                              |
+| `Value`              | 当前取值（位于取值范围之内）。                                                             |
+| `IsIndeterminate`    | 为 `true` 时，进度条显示一个动画指示器，而不是按比例填充。             |
+| `Orientation`        | 设置进度条的方向，可选 `Horizontal`（默认）或 `Vertical`。                               |
+| `Foreground`         | 用于绘制进度条已填充部分的画刷。                                          |
+| `ShowProgressText`   | 为 `true` 时，进度条上会叠加一段文字，显示当前进度。             |
+| `ProgressTextFormat` | 控制进度文字如何呈现的格式字符串，详见下一节。         |
 
 ## Example
 
@@ -41,17 +41,17 @@ You will probably use these properties most often:
 
 </XamlPreview>
 
-## Indeterminate mode
+## 不确定模式 {#indeterminate-mode}
 
-When the total amount of work is unknown, set `IsIndeterminate` to `True`. The bar displays a looping animation instead of a filled proportion, signaling that work is in progress without committing to a specific completion percentage.
+当工作总量未知时，把 `IsIndeterminate` 设为 `True`。此时进度条显示循环动画而非按比例填充，既表明工作正在进行，又不必给出具体的完成百分比。
 
 ```xml
 <ProgressBar IsIndeterminate="True" Height="20" />
 ```
 
-This is useful for operations such as connecting to a remote server, waiting for an external process, or loading data of unknown size.
+连接远程服务器、等待外部进程、加载大小未知的数据等场景都适合用它。
 
-To switch back to determinate mode, set `IsIndeterminate` to `False` and update `Value` as your operation progresses:
+要切回确定模式，把 `IsIndeterminate` 设为 `False`，并随着操作推进更新 `Value`：
 
 ```xml
 <ProgressBar IsIndeterminate="{Binding IsLoading}"
@@ -60,29 +60,26 @@ To switch back to determinate mode, set `IsIndeterminate` to `False` and update 
              Height="20" />
 ```
 
-## Customizing progress text with `ProgressTextFormat`
+## 用 `ProgressTextFormat` 自定义进度文字 {#customizing-progress-text-with-progresstextformat}
 
-By default, `ShowProgressText` displays the percentage completion calculated from
-[`Value`](/api/avalonia/controls/primitives/rangebase#value-property),
-[`Minimum`](/api/avalonia/controls/primitives/rangebase#minimum-property), and
-[`Maximum`](/api/avalonia/controls/primitives/rangebase#maximum-property). You can customize the displayed text by setting `ProgressTextFormat` to a format string. The string is passed to [`string.Format`](https://docs.microsoft.com/en-us/dotnet/api/system.string.format#system-string-format(system-string-system-object())) with the following format items:
+默认情况下，`ShowProgressText` 会根据 [`Value`](/api/avalonia/controls/primitives/rangebase#value-property)、[`Minimum`](/api/avalonia/controls/primitives/rangebase#minimum-property) 和 [`Maximum`](/api/avalonia/controls/primitives/rangebase#maximum-property) 算出完成百分比并显示出来。把 `ProgressTextFormat` 设为一个格式字符串即可自定义显示内容。该字符串会传给 [`string.Format`](https://docs.microsoft.com/en-us/dotnet/api/system.string.format#system-string-format(system-string-system-object()))，可用的格式项如下：
 
-| Index | Description                                                                                                    |
+| 索引 | 说明                                                                                                    |
 |-------|----------------------------------------------------------------------------------------------------------------|
-| `0`   | The current `Value`.                                                                                           |
-| `1`   | The value expressed as a percentage from 0 to 100 (for example, `Minimum = 0`, `Maximum = 50`, `Value = 25` yields `50`). |
-| `2`   | The `Minimum` value.                                                                                           |
-| `3`   | The `Maximum` value.                                                                                           |
+| `0`   | 当前的 `Value`。                                                                                           |
+| `1`   | 换算成 0 到 100 的百分比（例如 `Minimum = 0`、`Maximum = 50`、`Value = 25` 得到 `50`）。 |
+| `2`   | `Minimum` 的取值。                                                                                           |
+| `3`   | `Maximum` 的取值。                                                                                           |
 
-| Min | Max | Value | `ProgressTextFormat`                | Output                       |
+| 最小值 | 最大值 | 值 | `ProgressTextFormat`                | 输出                       |
 |-----|-----|-------|-------------------------------------|------------------------------|
 | 0   | 20  | 17    | `{}{0}/{3} Tasks Complete ({1:0}%)` | `17/20 Tasks Complete (85%)` |
 
-Because `{0}` would appear at the start of the string in this example, you must escape it with a leading `{}`.
+本例中 `{0}` 恰好位于字符串开头，因此必须在前面加 `{}` 转义。
 
-## Vertical orientation
+## 纵向摆放 {#vertical-orientation}
 
-You can display the progress bar vertically by setting the `Orientation` property:
+设置 `Orientation` 属性即可让进度条纵向显示：
 
 ```xml
 <ProgressBar Orientation="Vertical" Height="200" Width="20"
@@ -90,9 +87,9 @@ You can display the progress bar vertically by setting the `Orientation` propert
              ShowProgressText="True" />
 ```
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
-Bind `Value` to a property in your view model to track progress from an async operation:
+把 `Value` 绑定到视图模型的属性上，就能跟踪异步操作的进度：
 
 ```xml
 <ProgressBar Minimum="0" Maximum="100"
@@ -117,14 +114,14 @@ public async Task DownloadFileAsync()
 
 ## Styling
 
-You can restyle the `ProgressBar` through theme resources or by targeting its template parts. The control exposes the following key template parts:
+你可以通过主题资源、或者针对模板部件来重新设计 `ProgressBar` 的样式。该控件暴露了以下关键模板部件：
 
-| Part name              | Description                                           |
+| 部件名称              | 说明                                           |
 |------------------------|-------------------------------------------------------|
-| `PART_Indicator`       | The `Border` element that represents the filled area. |
-| `PART_ProgressBarText` | The `TextBlock` that displays the progress caption.   |
+| `PART_Indicator`       | 表示已填充区域的 `Border` 元素。 |
+| `PART_ProgressBarText` | 显示进度文字的 `TextBlock`。   |
 
-To change the track background or indicator color, override the relevant theme resources or set properties directly:
+要改变轨道背景或指示器颜色，可以覆盖相应的主题资源，或者直接设置属性：
 
 ```xml
 <ProgressBar Height="20" Value="60" Maximum="100"
@@ -132,7 +129,7 @@ To change the track background or indicator color, override the relevant theme r
              Background="LightGray" />
 ```
 
-For more advanced customization, you can provide a complete `ControlTheme`:
+若想做更深入的定制，可以整个换掉 `ControlTheme`：
 
 ```xml
 <ProgressBar Height="20" Value="50" Maximum="100">
@@ -144,8 +141,8 @@ For more advanced customization, you can provide a complete `ControlTheme`:
 </ProgressBar>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Slider](/controls/input/selectors/slider)
-- [ProgressBar API reference](/api/avalonia/controls/progressbar)
-- [`ProgressBar.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ProgressBar.cs)
+- [ProgressBar API 参考](/api/avalonia/controls/progressbar)
+- [GitHub 上的 `ProgressBar.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ProgressBar.cs)

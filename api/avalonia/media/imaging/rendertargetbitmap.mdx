@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RenderTargetBitmap Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.Imaging</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.Imaging</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Imaging/RenderTargetBitmap.cs">RenderTargetBitmap.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Imaging/RenderTargetBitmap.cs">RenderTargetBitmap.cs</a>
 </div>
 
 </div>
@@ -54,33 +54,33 @@ public class RenderTargetBitmap
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bitmap">Bitmap</a> <span className="apiref-page__relation-separator">-&gt;</span> RenderTargetBitmap
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="bitmap">Bitmap</a> <span className="apiref-page__relation-separator">-&gt;</span> RenderTargetBitmap
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RenderTargetBitmap (2 overloads)](#uid-e59aa6faef) | Initializes a new instance of the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap) class. |
+| [RenderTargetBitmap (2 overloads)](#uid-e59aa6faef) | 初始化 [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap) 类的新实例。 |
 
 <span id="uid-e59aa6faef"></span>
 
-### RenderTargetBitmap overloads
+### RenderTargetBitmap 的重载 {#rendertargetbitmap-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5fa6034f51"></span>
 
-#### RenderTargetBitmap Constructor
+#### RenderTargetBitmap 构造函数 {#rendertargetbitmap-constructor}
 
-Initializes a new instance of the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap) class.
+初始化 [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap) 类的新实例。
 
 ```csharp
 public RenderTargetBitmap(Avalonia.PixelSize pixelSize)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `pixelSize` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
@@ -93,40 +93,40 @@ The size of the bitmap.
 
 <span id="uid-e98dffc97d"></span>
 
-#### RenderTargetBitmap Constructor
+#### RenderTargetBitmap 构造函数 {#rendertargetbitmap-constructor-1}
 
-Initializes a new instance of the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap) class.
+初始化 [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap) 类的新实例。
 
 ```csharp
 public RenderTargetBitmap(Avalonia.PixelSize pixelSize, Avalonia.Vector dpi)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `pixelSize` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
-The size of the bitmap in device pixels.
+该位图的尺寸，以设备像素计。
 
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The DPI of the bitmap.
+该位图的 DPI。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CopyPixels (2 overloads)](bitmap.mdx#uid-c2cad1a858) | Inherited from [Bitmap](bitmap.mdx). |
+| [CopyPixels（2 个重载）](bitmap.mdx#uid-c2cad1a858) | 继承自 [Bitmap](bitmap.mdx)。 |
 | [CreateDrawingContext (2 overloads)](#uid-ac29f03669) | Creates a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext) for drawing to the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap). Clears the current image data to transparent. |
 | [CreateScaledBitmap](bitmap.mdx#uid-6635fbb23b) | Creates a Bitmap scaled to a specified size from the current bitmap. Inherited from [Bitmap](bitmap.mdx). |
 | [DecodeToHeight](bitmap.mdx#uid-d4e2c90246) | Loads a Bitmap from a stream and decodes at the desired height. Aspect ratio is maintained. This is more efficient than loading and then resizing. Inherited from [Bitmap](bitmap.mdx). |
 | [DecodeToWidth](bitmap.mdx#uid-16369c08f6) | Loads a Bitmap from a stream and decodes at the desired width. Aspect ratio is maintained. This is more efficient than loading and then resizing. Inherited from [Bitmap](bitmap.mdx). |
-| [Dispose](#uid-17a6cce2e1) | No summary available. |
-| [Render](#uid-f7507918c5) | Renders a visual to the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap). |
-| [Save (4 overloads)](bitmap.mdx#uid-2db10525bf) | Inherited from [Bitmap](bitmap.mdx). |
+| [Dispose](#uid-17a6cce2e1) | 暂无摘要。 |
+| [Render](#uid-f7507918c5) | 把某个视觉元素渲染到 [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap)。 |
+| [Save（4 个重载）](bitmap.mdx#uid-2db10525bf) | 继承自 [Bitmap](bitmap.mdx)。 |
 
 <span id="uid-ac29f03669"></span>
 
@@ -136,7 +136,7 @@ The DPI of the bitmap.
 
 <span id="uid-3dfdd4d26b"></span>
 
-#### CreateDrawingContext Method
+#### CreateDrawingContext 方法 {#createdrawingcontext-method}
 
 Creates a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext) for drawing to the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap).
 Clears the current image data to transparent.
@@ -145,11 +145,11 @@ Clears the current image data to transparent.
 public Avalonia.Media.DrawingContext CreateDrawingContext()
 ```
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 </section>
@@ -158,7 +158,7 @@ The drawing context.
 
 <span id="uid-7a74f241a7"></span>
 
-#### CreateDrawingContext Method
+#### CreateDrawingContext 方法 {#createdrawingcontext-method-1}
 
 Creates a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext) for drawing to the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap).
 
@@ -166,18 +166,18 @@ Creates a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext) fo
 public Avalonia.Media.DrawingContext CreateDrawingContext(bool clear)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `clear` bool
 
 If true, clears the current image data to transparent, if false, leaves the image data unchanged.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 </section>
@@ -186,7 +186,7 @@ The drawing context.
 
 <span id="uid-17a6cce2e1"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -198,15 +198,15 @@ public void Dispose()
 
 <span id="uid-f7507918c5"></span>
 
-### Render Method
+### Render 方法 {#render-method}
 
-Renders a visual to the [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap).
+把某个视觉元素渲染到 [Avalonia.Media.Imaging.RenderTargetBitmap](xref:Avalonia.Media.Imaging.RenderTargetBitmap)。
 
 ```csharp
 public void Render(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
@@ -215,14 +215,14 @@ The visual to render.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AlphaFormat](bitmap.mdx#uid-13f16f356b) | Inherited from [Bitmap](bitmap.mdx). |
-| [Dpi](bitmap.mdx#uid-636caa890c) | Inherited from [Bitmap](bitmap.mdx). |
-| [Format](bitmap.mdx#uid-bf4fc074f6) | Inherited from [Bitmap](bitmap.mdx). |
-| [PixelSize](bitmap.mdx#uid-81acc3099d) | Inherited from [Bitmap](bitmap.mdx). |
+| [AlphaFormat](bitmap.mdx#uid-13f16f356b) | 继承自 [Bitmap](bitmap.mdx)。 |
+| [Dpi](bitmap.mdx#uid-636caa890c) | 继承自 [Bitmap](bitmap.mdx)。 |
+| [Format](bitmap.mdx#uid-bf4fc074f6) | 继承自 [Bitmap](bitmap.mdx)。 |
+| [PixelSize](bitmap.mdx#uid-81acc3099d) | 继承自 [Bitmap](bitmap.mdx)。 |
 | [Size](bitmap.mdx#uid-c8d851e15e) | Gets the size of the image, in device independent pixels. Inherited from [Bitmap](bitmap.mdx). |
 
 </ApiRefPage>

@@ -8,35 +8,35 @@ doc-type: how-to
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## What is Parcel MCP?
+## Parcel MCP 是什么？ {#what-is-parcel-mcp}
 
-The Parcel MCP server lets AI assistants use Parcel packaging tools. Your assistant can create packaging configurations from .NET projects. It can also configure code signing and notarization, and build packages for Windows, macOS, and Linux.
+Parcel MCP 服务器让 AI 助手用上 Parcel 的打包能力。助手可以从 .NET 项目生成打包配置，也可以配置代码签名与公证，并为 Windows、macOS 和 Linux 构建安装包。
 
-For a general introduction to MCP, see [AI Tools](/tools/ai-tools/).
+关于 MCP 的总体介绍，请见 [AI 工具](/tools/ai-tools/)。
 
-## Prerequisites
+## 前置条件 {#prerequisites}
 
-Before you configure the MCP server, make sure that you have these items:
+配置 MCP 服务器之前，请确认你备齐了这些：
 
-1. **Parcel .NET tool installed.** Follow the [Setup guide](/tools/parcel/setup).
-2. **Valid Avalonia Plus license key.** You can get one from the [Avalonia portal](https://portal.avaloniaui.net/).
+1. **已安装 Parcel .NET 工具。**请按[配置指南](/tools/parcel/setup)操作。
+2. **有效的 Avalonia Plus 许可证密钥。**可在 [Avalonia 门户](https://portal.avaloniaui.net/)获取。
 
-### Setting your license key
+### 设置许可证密钥 {#setting-your-license-key}
 
-The MCP server reads the license from the `AVALONIA_TOOLS_LICENSE_KEY` environment variable. Get your license key from the [Avalonia Portal](https://portal.avaloniaui.net/). Parcel MCP is a paid feature and is not included with the Community edition.
+MCP 服务器从 `AVALONIA_TOOLS_LICENSE_KEY` 环境变量读取许可证。许可证密钥可在 [Avalonia 门户](https://portal.avaloniaui.net/)获取。Parcel MCP 属于付费功能，Community 版不含此项。
 
-Set the key in your shell profile so it persists across sessions:
+把密钥写进 shell 配置，这样跨会话也能一直生效：
 
 <Tabs>
 <TabItem value="macos-linux" label="macOS / Linux">
 
-Add this line to your shell profile (`~/.zshrc`, `~/.bashrc`, or equivalent):
+把这一行加进你的 shell 配置文件（`~/.zshrc`、`~/.bashrc` 或同类文件）：
 
 ```bash
 export AVALONIA_TOOLS_LICENSE_KEY="your-license-key"
 ```
 
-Then reload the profile or open a new terminal:
+然后重新加载配置，或者开一个新终端：
 
 ```bash
 source ~/.zshrc
@@ -45,13 +45,13 @@ source ~/.zshrc
 </TabItem>
 <TabItem value="windows-powershell" label="Windows (PowerShell)">
 
-Set a persistent environment variable for your user account:
+为你的用户账户设置一个持久的环境变量：
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable('AVALONIA_TOOLS_LICENSE_KEY', 'your-license-key', 'User')
 ```
 
-Restart any open terminals and editors to pick up the change.
+重启所有已打开的终端和编辑器，让改动生效。
 
 </TabItem>
 <TabItem value="windows-cmd" label="Windows (Command Prompt)">
@@ -60,13 +60,13 @@ Restart any open terminals and editors to pick up the change.
 setx AVALONIA_TOOLS_LICENSE_KEY "your-license-key"
 ```
 
-Restart any open terminals and editors to pick up the change.
+重启所有已打开的终端和编辑器，让改动生效。
 
 </TabItem>
 </Tabs>
 
-:::caution[Editors launched from GUI shortcuts]
-If you start your editor from a desktop shortcut or application menu, it might not read environment variables from your shell profile. If the MCP server reports a missing license key, add an `env` block to the MCP configuration:
+:::caution[从图形界面快捷方式启动的编辑器]
+若你的编辑器是从桌面快捷方式或应用菜单启动的，它可能读不到 shell 配置里的环境变量。当 MCP 服务器报告缺少许可证密钥时，请在 MCP 配置中加一个 `env` 块：
 
 ```json
 {
@@ -76,34 +76,34 @@ If you start your editor from a desktop shortcut or application menu, it might n
 }
 ```
 
-See the editor-specific setup instructions below for where to place this block.
+这个块该放在哪儿，请见下文针对各编辑器的配置说明。
 :::
 
 :::note
-Parcel MCP is only available with a full [Avalonia Plus](https://avaloniaui.net/pricing) license.
+Parcel MCP 仅对完整的 [Avalonia Plus](https://avaloniaui.net/pricing) 许可证开放。
 :::
 
-## Setting up the MCP server
+## 配置 MCP 服务器 {#setting-up-the-mcp-server}
 
-The Parcel MCP server runs as a local process. Its command is `parcel mcp`. You do not need to run this command manually. After configuration, your editor starts the server automatically.
+Parcel MCP 服务器以本地进程运行，命令是 `parcel mcp`。你不必手动跑它——配置好之后编辑器会自动把服务器拉起来。
 
-Choose your editor below:
+在下面选择你用的编辑器：
 
 <Tabs groupId="editor">
 <TabItem value="vscode" label="VS Code">
 
-**Option A: Command palette**
+**方式 A：命令面板**
 
-1. Open the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+1. 打开命令面板（`Ctrl+Shift+P` / `Cmd+Shift+P`）。
 2. Run **MCP: Add Server**.
-3. Select **stdio** as the server type.
-4. Enter `parcel mcp` as the command.
-5. Set the server name to `parcel`.
-6. Choose whether to install the server for this workspace or globally.
+3. 服务器类型选 **stdio**。
+4. 命令填 `parcel mcp`。
+5. 服务器名称设为 `parcel`。
+6. 选择把该服务器装到当前工作区还是全局。
 
-**Option B: Manual configuration**
+**方式 B：手动配置**
 
-Add the following to `.vscode/mcp.json` in your workspace root:
+把下列内容加进工作区根目录的 `.vscode/mcp.json`：
 
 ```json title=".vscode/mcp.json"
 {
@@ -120,9 +120,9 @@ Add the following to `.vscode/mcp.json` in your workspace root:
 </TabItem>
 <TabItem value="visual-studio" label="Visual Studio">
 
-Visual Studio 2022 (17.x and later) supports MCP servers through `mcp.json` configuration files.
+Visual Studio 2022（17.x 及更高版本）通过 `mcp.json` 配置文件支持 MCP 服务器。
 
-Add the following to `.vscode/mcp.json` in your solution directory:
+把下列内容加进解决方案目录下的 `.vscode/mcp.json`：
 
 ```json title=".vscode/mcp.json"
 {
@@ -137,24 +137,24 @@ Add the following to `.vscode/mcp.json` in your solution directory:
 ```
 
 :::tip
-Visual Studio reads from the same `.vscode/mcp.json` path as VS Code. If you already configured it for VS Code, it works in Visual Studio automatically.
+Visual Studio 读取的 `.vscode/mcp.json` 路径与 VS Code 相同。若你已为 VS Code 配置过，它在 Visual Studio 中自动就能用。
 :::
 
 </TabItem>
 <TabItem value="rider" label="Rider">
 
-JetBrains Rider supports MCP servers through the AI Assistant plugin and the GitHub Copilot plugin.
+JetBrains Rider 可通过 AI Assistant 插件和 GitHub Copilot 插件支持 MCP 服务器。
 
-**Option A: Settings UI**
+**方式 A：设置界面**
 
 1. Open **Settings** > **Tools** > **AI Assistant** > **MCP Servers**.
-2. Click **Add** and select **stdio** as the transport type.
-3. Set the command to `parcel` with argument `mcp`.
-4. Set the server name to `parcel`.
+2. 点击 **Add**，传输类型选 **stdio**。
+3. 把命令设为 `parcel`，参数设为 `mcp`。
+4. 服务器名称设为 `parcel`。
 
-**Option B: Manual configuration**
+**方式 B：手动配置**
 
-Create or edit `.idea/mcp.json` in your project directory:
+在项目目录中新建或编辑 `.idea/mcp.json`：
 
 ```json title=".idea/mcp.json"
 {
@@ -171,7 +171,7 @@ Create or edit `.idea/mcp.json` in your project directory:
 </TabItem>
 <TabItem value="cursor" label="Cursor">
 
-Add the following to `.cursor/mcp.json` in your project directory, or to `~/.cursor/mcp.json` for global configuration:
+把下列内容加进项目目录下的 `.cursor/mcp.json`，若要全局配置则加进 `~/.cursor/mcp.json`：
 
 ```json title=".cursor/mcp.json"
 {
@@ -187,13 +187,13 @@ Add the following to `.cursor/mcp.json` in your project directory, or to `~/.cur
 </TabItem>
 <TabItem value="claude-code" label="Claude Code">
 
-Run this command in your terminal:
+在终端里运行这条命令：
 
 ```bash
 claude mcp add --scope user parcel -- parcel mcp
 ```
 
-To verify it was added:
+验证是否添加成功：
 
 ```bash
 claude mcp list
@@ -202,8 +202,8 @@ claude mcp list
 </TabItem>
 <TabItem value="claude-desktop" label="Claude Desktop">
 
-1. Open **Settings** > **Developer** and click **Edit Config**.
-2. Add the Parcel MCP server to `claude_desktop_config.json`:
+1. 打开 **Settings** > **Developer**，点击 **Edit Config**。
+2. 把 Parcel MCP 服务器加进 `claude_desktop_config.json`：
 
 ```json
 {
@@ -219,52 +219,52 @@ claude mcp list
 }
 ```
 
-3. Save the file and restart Claude Desktop.
+3. 保存文件并重启 Claude Desktop。
 
 :::note
-Claude Desktop does not inherit environment variables from your shell profile, so the license key must be set directly in the configuration as shown above.
+Claude Desktop 不会从你的 shell 配置里继承环境变量，所以许可证密钥必须像上面那样直接写进配置。
 :::
 
 </TabItem>
 </Tabs>
 
-## Verify the connection
+## 验证连接 {#verify-the-connection}
 
-After you configure the MCP server, test the connection:
+配置好 MCP 服务器后，测一下连接：
 
-1. **Check the server is running.** Open your editor's MCP panel or status indicator and confirm `parcel` appears as a connected server. In VS Code, run **MCP: List Servers** from the command palette.
-2. **Test with a prompt.** Ask your AI assistant:
+1. **确认服务器正在运行。**打开编辑器的 MCP 面板或状态指示器，确认 `parcel` 以已连接服务器的身份出现。在 VS Code 中，可从命令面板运行 **MCP: List Servers**。
+2. **用一句提示词试一下。**问问你的 AI 助手：
 
 ```text
 "List the available Parcel packaging tools."
 ```
 
-If the assistant returns a list of capabilities, the connection works.
+若助手列出了一串能力清单，说明连接没问题。
 
-## Troubleshooting
+## 排查问题 {#troubleshooting}
 
-### "parcel" command not found
+### 找不到 “parcel” 命令 {#parcel-command-not-found}
 
-The `parcel` command must be on the system `PATH`. For a global .NET tool installation, check for `$HOME/.dotnet/tools` on macOS and Linux. On Windows, check for `%USERPROFILE%\.dotnet\tools`. If the applicable directory is not in `PATH`, add it.
+`parcel` 命令必须在系统 `PATH` 中。若装的是全局 .NET 工具，请在 macOS 和 Linux 上查看 `$HOME/.dotnet/tools`，在 Windows 上查看 `%USERPROFILE%\.dotnet\tools`；若相应目录不在 `PATH` 里，把它加进去。
 
-For more information, see [Troubleshooting .NET tool usage issues](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found).
+更多信息请见[排查 .NET 工具使用问题](https://learn.microsoft.com/en-us/dotnet/core/tools/troubleshoot-usage-issues#executable-file-not-found)。
 
-### License key not detected
+### 检测不到许可证密钥 {#license-key-not-detected}
 
-If the MCP server starts but reports a missing or invalid license key:
+若 MCP 服务器起来了却报告许可证密钥缺失或无效：
 
-- **Confirm the variable is set** by running `echo $AVALONIA_TOOLS_LICENSE_KEY` (macOS/Linux) or `echo %AVALONIA_TOOLS_LICENSE_KEY%` (Windows) in the same terminal where you launch your editor.
-- **If your editor is launched from a GUI shortcut**, it may not inherit shell environment variables. Add an `env` block to your MCP configuration as shown in the [license key setup](#setting-your-license-key) section above.
+- 在你启动编辑器的那个终端里运行 `echo $AVALONIA_TOOLS_LICENSE_KEY`（macOS/Linux）或 `echo %AVALONIA_TOOLS_LICENSE_KEY%`（Windows），**确认变量确实设上了**。
+- **若你的编辑器是从图形界面快捷方式启动的**，它可能不会继承 shell 环境变量。请按上文[设置许可证密钥](#setting-your-license-key)一节所示，在 MCP 配置中加一个 `env` 块。
 
-### MCP server does not appear in the editor
+### 编辑器里看不到 MCP 服务器 {#mcp-server-does-not-appear-in-the-editor}
 
-- **Restart your editor** after adding or modifying the MCP configuration file. Most editors require a restart to detect new MCP servers.
-- **Check the config file location.** Each editor expects the configuration in a specific path. See the setup instructions for your editor above.
-- **Validate your JSON.** A syntax error in the configuration file (missing comma, trailing comma, unmatched brace) will silently prevent the server from loading.
+- 添加或修改 MCP 配置文件后，**请重启编辑器**。多数编辑器都要重启才能发现新的 MCP 服务器。
+- **核对配置文件的位置。**每种编辑器都有各自约定的配置路径，请参照上文中你所用编辑器的配置说明。
+- **检查 JSON 是否合法。**配置文件里的语法错误（漏逗号、多余的尾逗号、括号不配对）会悄无声息地让服务器加载不起来。
 
 ### Updating Parcel
 
-If the tools do not work as expected, make sure that you use the latest version:
+若这些工具表现得不对劲，请确认你用的是最新版本：
 
 ```bash
 dotnet tool update --global AvaloniaUI.Parcel
@@ -272,43 +272,43 @@ dotnet tool update --global AvaloniaUI.Parcel
 
 ## Capabilities
 
-Once the MCP server is configured, your AI assistant can help with:
+配置好 MCP 服务器后，你的 AI 助手可以帮你：
 
-### Project configuration
+### 项目配置 {#project-configuration}
 
-- **Create Parcel configurations** from existing .NET projects
-- **Configure application properties** like package name, display name, icons, and bundle identifiers
-- **Set up build targets** for multiple platforms and architectures
+- 从既有的 .NET 项目**生成 Parcel 配置**
+- **配置应用属性**，比如包名、显示名、图标和应用包标识符
+- 为多平台、多架构**设置构建目标**
 
-### Code signing setup
+### 配置代码签名 {#code-signing-setup}
 
-- **Windows Azure Artifact Signing** - Configure certificates and signing parameters
-- **macOS Code Signing** - Set up P12 certificates and provisioning profiles
-- **macOS Notarization** - Configure Apple ID and app-specific passwords
+- **Windows Azure Artifact Signing**——配置证书和签名参数
+- **macOS 代码签名**——配置 P12 证书和描述文件
+- **macOS 公证**——配置 Apple ID 和 App 专用密码
 
-### Building and packaging
+### 构建与打包 {#building-and-packaging}
 
-- **Build and package** applications for multiple platforms (Windows, macOS, Linux)
-- **Generate packages** in NSIS, MSIX, DMG, PKG, DEB, RPM, and ZIP formats
-- **Cross-platform packaging** with runtime-specific outputs
+- 为多个平台（Windows、macOS、Linux）**构建并打包**应用
+- **生成** NSIS、MSIX、DMG、PKG、DEB、RPM 和 ZIP 格式的**安装包**
+- **跨平台打包**，输出各运行时对应的产物
 
-## Usage examples
+## 用法示例 {#usage-examples}
 
-Describe what you want to accomplish in natural language. The AI assistant calls the MCP tools automatically:
+用自然语言说清你想做什么，AI 助手会自动调用相应的 MCP 工具：
 
-**Project setup:**
+**准备项目：**
 
 ```text
 "Create a packaging config for my Avalonia project and set up macOS signing."
 ```
 
-**Packaging:**
+**打包：**
 
 ```text
 "Package my app for macOS as a DMG with code signing enabled."
 ```
 
-**Configuration management:**
+**管理配置：**
 
 ```text
 "Update my app's display name and icon, then rebuild the Windows installer."
@@ -316,9 +316,9 @@ Describe what you want to accomplish in natural language. The AI assistant calls
 
 <Video src="/video/parcel/parcel_mcp.mp4" title="Parcel MCP server in action" aspectRatio="1492 / 958" maxWidth="100%" />
 
-## See also
+## 另请参阅 {#see-also}
 
-- [AI Tools overview](/tools/ai-tools/)
-- [Parcel setup](/tools/parcel/setup)
-- [Parcel configuration reference](/tools/parcel/configuration-reference)
+- [AI 工具概述](/tools/ai-tools/)
+- [Parcel 配置准备](/tools/parcel/setup)
+- [Parcel 配置参考](/tools/parcel/configuration-reference)
 - [DevTools MCP](/tools/developer-tools/mcp)

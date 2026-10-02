@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PageInsertedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Page/PageInsertedEventArgs.cs">PageInsertedEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Page/PageInsertedEventArgs.cs">PageInsertedEventArgs.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.NavigationPage.PageInserted](xref:Avalonia.Controls.NavigationPage.PageInserted) event.
+为 [Avalonia.Controls.NavigationPage.PageInserted](xref:Avalonia.Controls.NavigationPage.PageInserted) 事件提供数据。
 
 </div>
 
@@ -54,29 +54,29 @@ public class PageInsertedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PageInsertedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> PageInsertedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PageInsertedEventArgs](#uid-0af6f57b51) | Initializes a new instance of the [Avalonia.Controls.PageInsertedEventArgs](xref:Avalonia.Controls.PageInsertedEventArgs) class. |
+| [PageInsertedEventArgs](#uid-0af6f57b51) | 初始化 [Avalonia.Controls.PageInsertedEventArgs](xref:Avalonia.Controls.PageInsertedEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-0af6f57b51"></span>
 
-### PageInsertedEventArgs Constructor
+### PageInsertedEventArgs 构造函数 {#pageinsertedeventargs-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.PageInsertedEventArgs](xref:Avalonia.Controls.PageInsertedEventArgs) class.
+初始化 [Avalonia.Controls.PageInsertedEventArgs](xref:Avalonia.Controls.PageInsertedEventArgs) 类的新实例。
 
 ```csharp
 public PageInsertedEventArgs(Avalonia.Controls.Page page, Avalonia.Controls.Page before)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `page` [Avalonia.Controls.Page](xref:Avalonia.Controls.Page)
 
@@ -90,18 +90,18 @@ The page before which the new page was inserted.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Before](#uid-43f7780c8b) | Gets the page before which the new page was inserted. |
-| [Page](#uid-2ebfdc43b1) | Gets the page that was inserted. |
+| [Page](#uid-2ebfdc43b1) | 获取被插入的那个页面。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-43f7780c8b"></span>
 
-### Before Property
+### Before 属性 {#before-property}
 
 Gets the page before which the new page was inserted.
 
@@ -115,9 +115,9 @@ public Avalonia.Controls.Page Before { get; set; }
 
 <span id="uid-2ebfdc43b1"></span>
 
-### Page Property
+### Page 属性 {#page-property}
 
-Gets the page that was inserted.
+获取被插入的那个页面。
 
 ```csharp
 public Avalonia.Controls.Page Page { get; set; }

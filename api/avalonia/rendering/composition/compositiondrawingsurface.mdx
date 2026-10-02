@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CompositionDrawingSurface Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering.Composition</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering.Composition</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionDrawingSurface.cs">CompositionDrawingSurface.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/CompositionDrawingSurface.cs">CompositionDrawingSurface.cs</a>
 </div>
 
 </div>
@@ -48,32 +48,32 @@ public class CompositionDrawingSurface
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="compositionobject">CompositionObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="compositionsurface">CompositionSurface</a> <span className="apiref-page__relation-separator">-&gt;</span> CompositionDrawingSurface
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="compositionobject">CompositionObject</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="compositionsurface">CompositionSurface</a> <span className="apiref-page__relation-separator">-&gt;</span> CompositionDrawingSurface
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Dispose](#uid-ff4f87a0e1) | No summary available. |
-| [StartAnimation](compositionobject.mdx#uid-4d2f25fec7) | Connects an animation with the specified property of the object and starts the animation. Inherited from [CompositionObject](compositionobject.mdx). |
-| [StartAnimationGroup](compositionobject.mdx#uid-4846f860a0) | Starts an animation group. The StartAnimationGroup method on [CompositionObject](xref:Avalonia.Rendering.Composition.CompositionObject) lets you start [CompositionAnimationGroup](xref:Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup). All the animations in the group will be started at the same time on the object. Inherited from [CompositionObject](compositionobject.mdx). |
-| [StopAnimation](compositionobject.mdx#uid-01077c2b21) | Disconnects an animation from the specified property and stops the animation. Inherited from [CompositionObject](compositionobject.mdx). |
-| [StopAnimationGroup](compositionobject.mdx#uid-81dbd02845) | Stops an animation group. Inherited from [CompositionObject](compositionobject.mdx). |
+| [Dispose](#uid-ff4f87a0e1) | 暂无摘要。 |
+| [StartAnimation](compositionobject.mdx#uid-4d2f25fec7) | 把动画关联到对象的指定属性并启动它。继承自 [CompositionObject](compositionobject.mdx)。 |
+| [StartAnimationGroup](compositionobject.mdx#uid-4846f860a0) | 启动一个动画组。[CompositionObject](xref:Avalonia.Rendering.Composition.CompositionObject) 上的 StartAnimationGroup 方法可用来启动 [CompositionAnimationGroup](xref:Avalonia.Rendering.Composition.Animations.CompositionAnimationGroup)，组内所有动画会同时在该对象上开始播放。继承自 [CompositionObject](compositionobject.mdx)。 |
+| [StopAnimation](compositionobject.mdx#uid-01077c2b21) | 断开动画与指定属性的关联，并停止该动画。继承自 [CompositionObject](compositionobject.mdx)。 |
+| [StopAnimationGroup](compositionobject.mdx#uid-81dbd02845) | 停止一个动画组。继承自 [CompositionObject](compositionobject.mdx)。 |
 | [UpdateAsync](#uid-d9381b09c8) | Updates the surface contents using an unspecified automatic means of synchronization provided by the underlying platform |
 | [UpdateWithKeyedMutexAsync](#uid-8c0468851c) | Updates the surface contents using an imported memory image using a keyed mutex as the means of synchronization |
-| [UpdateWithSemaphoresAsync](#uid-1f3f69b88a) | Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization |
-| [UpdateWithTimelineSemaphoresAsync](#uid-6b68142bde) | Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization |
+| [UpdateWithSemaphoresAsync](#uid-1f3f69b88a) | 借助一对信号量作同步手段，用导入的内存图像更新表面内容 |
+| [UpdateWithTimelineSemaphoresAsync](#uid-6b68142bde) | 借助一对信号量作同步手段，用导入的内存图像更新表面内容 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ff4f87a0e1"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
 ```csharp
 public void Dispose()
@@ -85,7 +85,7 @@ public void Dispose()
 
 <span id="uid-d9381b09c8"></span>
 
-### UpdateAsync Method
+### UpdateAsync 方法 {#updateasync-method}
 
 Updates the surface contents using an unspecified automatic means of synchronization
 provided by the underlying platform
@@ -94,18 +94,18 @@ provided by the underlying platform
 public System.Threading.Tasks.Task UpdateAsync(Avalonia.Rendering.Composition.ICompositionImportedGpuImage image)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `image` [Avalonia.Rendering.Composition.ICompositionImportedGpuImage](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuImage)
 
-GPU image with new surface contents
+承载新表面内容的 GPU 图像
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>
@@ -114,7 +114,7 @@ A task that completes when update operation is completed and user code is free t
 
 <span id="uid-8c0468851c"></span>
 
-### UpdateWithKeyedMutexAsync Method
+### UpdateWithKeyedMutexAsync 方法 {#updatewithkeyedmutexasync-method}
 
 Updates the surface contents using an imported memory image using a keyed mutex as the means of synchronization
 
@@ -122,11 +122,11 @@ Updates the surface contents using an imported memory image using a keyed mutex 
 public System.Threading.Tasks.Task UpdateWithKeyedMutexAsync(Avalonia.Rendering.Composition.ICompositionImportedGpuImage image, uint acquireIndex, uint releaseIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `image` [Avalonia.Rendering.Composition.ICompositionImportedGpuImage](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuImage)
 
-GPU image with new surface contents
+承载新表面内容的 GPU 图像
 
 
 `acquireIndex` uint
@@ -139,11 +139,11 @@ The mutex key to wait for before accessing the image
 The mutex key to release for after accessing the image
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>
@@ -152,19 +152,19 @@ A task that completes when update operation is completed and user code is free t
 
 <span id="uid-1f3f69b88a"></span>
 
-### UpdateWithSemaphoresAsync Method
+### UpdateWithSemaphoresAsync 方法 {#updatewithsemaphoresasync-method}
 
-Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization
+借助一对信号量作同步手段，用导入的内存图像更新表面内容
 
 ```csharp
 public System.Threading.Tasks.Task UpdateWithSemaphoresAsync(Avalonia.Rendering.Composition.ICompositionImportedGpuImage image, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore waitForSemaphore, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore signalSemaphore)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `image` [Avalonia.Rendering.Composition.ICompositionImportedGpuImage](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuImage)
 
-GPU image with new surface contents
+承载新表面内容的 GPU 图像
 
 
 `waitForSemaphore` [Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore)
@@ -177,11 +177,11 @@ The semaphore to wait for before accessing the image
 The semaphore to signal after accessing the image
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>
@@ -190,19 +190,19 @@ A task that completes when update operation is completed and user code is free t
 
 <span id="uid-6b68142bde"></span>
 
-### UpdateWithTimelineSemaphoresAsync Method
+### UpdateWithTimelineSemaphoresAsync 方法 {#updatewithtimelinesemaphoresasync-method}
 
-Updates the surface contents using an imported memory image using a semaphore pair as the means of synchronization
+借助一对信号量作同步手段，用导入的内存图像更新表面内容
 
 ```csharp
 public System.Threading.Tasks.Task UpdateWithTimelineSemaphoresAsync(Avalonia.Rendering.Composition.ICompositionImportedGpuImage image, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore waitForSemaphore, ulong waitForValue, Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore signalSemaphore, ulong signalValue)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `image` [Avalonia.Rendering.Composition.ICompositionImportedGpuImage](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuImage)
 
-GPU image with new surface contents
+承载新表面内容的 GPU 图像
 
 
 `waitForSemaphore` [Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore](xref:Avalonia.Rendering.Composition.ICompositionImportedGpuSemaphore)
@@ -225,22 +225,22 @@ The semaphore to signal after accessing the image
 The value to signal after accessing the image
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Threading.Tasks.Task
 
-A task that completes when update operation is completed and user code is free to destroy or dispose the image
+一个任务，它在更新操作完成、用户代码可以安全销毁或释放该图像时完成
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Compositor](compositionobject.mdx#uid-bd6bbc1391) | The associated Compositor Inherited from [CompositionObject](compositionobject.mdx). |
-| [ImplicitAnimations](compositionobject.mdx#uid-3929e9ea34) | The collection of implicit animations attached to this object. Inherited from [CompositionObject](compositionobject.mdx). |
-| [IsDisposed](compositionobject.mdx#uid-e01437c946) | Inherited from [CompositionObject](compositionobject.mdx). |
+| [Compositor](compositionobject.mdx#uid-bd6bbc1391) | 关联的 Compositor。继承自 [CompositionObject](compositionobject.mdx)。 |
+| [ImplicitAnimations](compositionobject.mdx#uid-3929e9ea34) | 附加到该对象上的隐式动画集合。继承自 [CompositionObject](compositionobject.mdx)。 |
+| [IsDisposed](compositionobject.mdx#uid-e01437c946) | 继承自 [CompositionObject](compositionobject.mdx)。 |
 
 </ApiRefPage>
 

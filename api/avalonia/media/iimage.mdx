@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IImage Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IImage.cs">IImage.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IImage.cs">IImage.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Represents a raster or vector image.
+表示一幅位图或矢量图。
 
 </div>
 
@@ -52,56 +52,56 @@ public interface IImage
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Draw](#uid-44209dd3b4) | Draws the image to a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext). |
+| [Draw](#uid-44209dd3b4) | 把该图像绘制到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-44209dd3b4"></span>
 
-### Draw Method
+### Draw 方法 {#draw-method}
 
-Draws the image to a [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext).
+把该图像绘制到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。
 
 ```csharp
 public void Draw(Avalonia.Media.DrawingContext context, Avalonia.Rect sourceRect, Avalonia.Rect destRect)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `context` [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)
 
-The drawing context.
+绘图上下文。
 
 
 `sourceRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the image to draw.
+图像中要绘制的那块矩形。
 
 
 `destRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the output to draw to.
+输出中要绘制到的那块矩形。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Size](#uid-e8ee007c6b) | Gets the size of the image, in device independent pixels. |
+| [Size](#uid-e8ee007c6b) | 获取图像的尺寸，以设备无关像素计。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e8ee007c6b"></span>
 
-### Size Property
+### Size 属性 {#size-property}
 
-Gets the size of the image, in device independent pixels.
+获取图像的尺寸，以设备无关像素计。
 
 ```csharp
 public Avalonia.Size Size { get; set; }

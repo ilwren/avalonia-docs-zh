@@ -1,24 +1,24 @@
 ---
 id: itemscontrol-how-to
-title: "How to: Work with ItemsControl"
-description: Customize collection layouts using ItemsControl
+title: "操作指南：使用 ItemsControl"
+description: 用 ItemsControl 自定义集合的排布方式
 doc-type: how-to
 ---
 
-This guide covers using [`ItemsControl`](/controls/data-display/collections/itemscontrol) to create custom collection layouts.
+本指南介绍如何用 [`ItemsControl`](/controls/data-display/collections/itemscontrol) 做出自定义的集合布局。
 
 ## `ItemsControl` vs. `ListBox`
 
-Use `ItemsControl` when you need to display a small-to-medium collection without selection behavior. Use `ListBox` when you need a virtualized, selectable collection.
+当你要展示中小规模的集合、又不需要选择行为时，用 `ItemsControl`；当你需要支持虚拟化、可选择的集合时，用 `ListBox`。
 
-| Control | Selection | Virtualization | Best For |
+| 控件 | 选择 | 虚拟化 | 最适合 |
 |---|---|---|---|
-| `ListBox` | Built-in | Yes | Selectable lists |
-| `ItemsControl` | None | No (by default) | Custom layouts |
+| `ListBox` | Built-in | Yes | 可选择的列表 |
+| `ItemsControl` | None | 否（默认情况下） | 自定义布局 |
 
-## `ItemsControl` basic usage
+## `ItemsControl` 基本用法 {#itemscontrol-basic-usage}
 
-`ItemsControl` renders each item identically according to a data template. It does not provide selection, hover, or focus styling.
+`ItemsControl` 按数据模板把每一项渲染成同样的模样，不提供选中、悬停或聚焦时的样式。
 
 <XamlPreview>
 
@@ -63,11 +63,11 @@ public class MainViewModel
 
 </XamlPreview>
 
-### Custom panel
+### 自定义面板 {#custom-panel}
 
-`ItemsControl` displays its content in an `ItemsPanel`, which is a layout control that defaults to `StackPanel`.
+`ItemsControl` 把内容显示在 `ItemsPanel` 中——那是个布局控件，默认为 `StackPanel`。
 
-To change how items are arranged, you can replace the `StackPanel` with a different control. Use `ItemsPanelTemplate` to override the default, then add a layout control of your choice.
+要改变项目的排布方式，可以把 `StackPanel` 换成别的控件：用 `ItemsPanelTemplate` 覆盖默认值，再放入你中意的布局控件。
 
 <XamlPreview>
 
@@ -120,9 +120,9 @@ public class MainViewModel
 
 </XamlPreview>
 
-### Horizontal layout
+### 横向排列 {#horizontal-layout}
 
-`StackPanel` arranges items in a vertical stack by default. To display items horizontally, customize the `ItemsPanelTemplate` as shown in the previous example and set `Orientation="Horizontal"`.
+`StackPanel` 默认把项目纵向堆叠。想横着排，就照上一个例子那样自定义 `ItemsPanelTemplate` 并设置 `Orientation="Horizontal"`。
 
 <XamlPreview>
 
@@ -190,11 +190,11 @@ public class MainViewModel
 
 </XamlPreview>
 
-### Empty state
+### 空状态 {#empty-state}
 
-To show an empty state indicator when the collection is empty, wrap `ItemsControl` in a `Panel` and set a second control that becomes visible when there are no items in the collection.
+要在集合为空时显示一个空状态提示，可以把 `ItemsControl` 包进 `Panel`，再放第二个控件，让它在集合中没有项目时现身。
 
-In this example, a `TextBlock` is used to display a simple text message. Its `IsVisible` property is bound to the `ItemsControl.ItemCount` property, so the message only appears when `ItemCount` is zero.
+本例用一个 `TextBlock` 显示简单的文字提示。它的 `IsVisible` 属性绑定到 `ItemsControl.ItemCount` 属性，因此只有 `ItemCount` 为零时提示才会出现。
 
 ```xml
 <!-- Set a resource that converts string to int, so that ItemCount can compare correctly. -->
@@ -233,11 +233,11 @@ In this example, a `TextBlock` is used to display a simple text message. Its `Is
 </Panel>
 ```
 
-### Virtualized scrollable items
+### 支持虚拟化的可滚动项目 {#virtualized-scrollable-items}
 
-To turn `ItemsControl` into a virtualized, scrollable display, you can wrap it in a [ScrollViewer](/controls/layout/containers/scrollviewer) and [customize the `ItemsPanel`](#custom-panel) into a [`VirtualizingStackPanel`](/api/avalonia/controls/virtualizingstackpanel).
+要把 `ItemsControl` 变成可滚动、支持虚拟化的显示，可以把它包进 [ScrollViewer](/controls/layout/containers/scrollviewer)，再[把 `ItemsPanel` 自定义](#custom-panel)成 [`VirtualizingStackPanel`](/api/avalonia/controls/virtualizingstackpanel)。
 
-The resulting control displays items similarly as a [`ListBox`](/controls/data-display/collections/listbox), but without selection behavior.
+这样做出来的控件，显示效果与 [`ListBox`](/controls/data-display/collections/listbox) 相仿，只是没有选择行为。
 
 <XamlPreview>
 
@@ -306,9 +306,9 @@ public class MainViewModel
 
 </XamlPreview>
 
-## Customizing containers with `PreparingContainer`
+## 用 `PreparingContainer` 自定义容器 {#customizing-containers-with-preparingcontainer}
 
-The `PreparingContainer` event fires each time `ItemsControl` creates or recycles a container for a data item. Use it to apply per-item customizations, such as conditional styling based on item data:
+每当 `ItemsControl` 为某个数据项创建或回收容器时，都会触发 `PreparingContainer` 事件。你可以借它为单个项目做定制，比如依据项目数据施加条件样式：
 
 ```csharp
 myItemsControl.PreparingContainer += (sender, e) =>
@@ -320,18 +320,18 @@ myItemsControl.PreparingContainer += (sender, e) =>
 };
 ```
 
-The companion `ContainerClearing` event fires each time a container is cleared, either for reuse or removal. Use this event to clean up customizations, if required.
+与之配套的 `ContainerClearing` 事件，会在容器被清空（无论是为了复用还是移除）时触发。需要的话，可以在这个事件里清理你做过的定制。
 
-## Performance tips
+## 性能建议 {#performance-tips}
 
-- Avoid using `WrapPanel` as the `ItemsPanel` for large collections, as it does not virtualize.
-- Keep item templates lightweight. Complex templates slow down scrolling.
+- 大集合别拿 `WrapPanel` 当 `ItemsPanel` 用——它不作虚拟化。
+- 项模板要尽量轻量，模板一复杂，滚动就会变卡。
 
-For more general tips on optimizing performance, see [Performance](/docs/app-development/performance).
+更通用的性能优化建议，请参阅[性能](/docs/app-development/performance)。
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ItemsControl](/controls/data-display/collections/itemscontrol)
-- [ItemsControl API reference](/api/avalonia/controls/itemscontrol)
-- [Data Templates](/docs/data-templates/introduction-to-data-templates): How templates work.
-- [ListBox How-To](/docs/how-to/listbox-how-to): When selection behavior is needed.
+- [ItemsControl API 参考](/api/avalonia/controls/itemscontrol)
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：模板的运作原理。
+- [ListBox 操作指南](/docs/how-to/listbox-how-to)：需要选择行为时该怎么办。

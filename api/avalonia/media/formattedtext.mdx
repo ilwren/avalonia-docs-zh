@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FormattedText Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/FormattedText.cs">FormattedText.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/FormattedText.cs">FormattedText.cs</a>
 </div>
 
 </div>
@@ -54,29 +54,29 @@ public class FormattedText
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FormattedText
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FormattedText
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FormattedText](#uid-cb0867d1d6) | Construct a [FormattedText](xref:Avalonia.Media.FormattedText) object. |
+| [FormattedText](#uid-cb0867d1d6) | 构造一个 [FormattedText](xref:Avalonia.Media.FormattedText) 对象。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cb0867d1d6"></span>
 
-### FormattedText Constructor
+### FormattedText 构造函数 {#formattedtext-constructor}
 
-Construct a [FormattedText](xref:Avalonia.Media.FormattedText) object.
+构造一个 [FormattedText](xref:Avalonia.Media.FormattedText) 对象。
 
 ```csharp
 public FormattedText(string textToFormat, System.Globalization.CultureInfo culture, Avalonia.Media.FlowDirection flowDirection, Avalonia.Media.Typeface typeface, double emSize, Avalonia.Media.IBrush foreground)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `textToFormat` string
 
@@ -110,29 +110,29 @@ Foreground brush used to render text.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BuildGeometry](#uid-806608ebb6) | Obtains geometry for the text, including underlines and strikethroughs. |
-| [BuildHighlightGeometry (2 overloads)](#uid-24a303ae8d) | Builds a highlight geometry object. |
+| [BuildHighlightGeometry (2 overloads)](#uid-24a303ae8d) | 构建一个高亮几何图形对象。 |
 | [GetMaxTextWidths](#uid-0c2b3daf80) | Obtains a copy of the array of lengths, which will be applied to each line of text in turn. If the text covers more lines than there are entries in the length array, the last entry is reused as many times as required. The maxTextWidths array overrides the MaxTextWidth property. |
-| [SetCulture (2 overloads)](#uid-74b990f385) | Sets or changes the culture for the text object. |
-| [SetFontFamily (4 overloads)](#uid-253942fbfc) | Sets or changes the font family for the text object |
-| [SetFontFeatures (2 overloads)](#uid-19d23fec95) | Sets or changes the font features for the text object |
-| [SetFontSize (2 overloads)](#uid-0548ca8790) | Sets or changes the font em size measured in MIL units |
-| [SetFontStyle (2 overloads)](#uid-0d603b2f82) | Sets or changes the font style |
-| [SetFontTypeface (2 overloads)](#uid-d39bb21641) | Sets or changes the type face |
-| [SetFontWeight (2 overloads)](#uid-c06d7ce529) | Sets or changes the font weight |
-| [SetForegroundBrush (2 overloads)](#uid-6301ed1522) | Sets foreground brush used for drawing text |
+| [SetCulture (2 overloads)](#uid-74b990f385) | 设置或更改该文本对象的区域性。 |
+| [SetFontFamily (4 overloads)](#uid-253942fbfc) | 为文本对象设置或更改字体族 |
+| [SetFontFeatures (2 overloads)](#uid-19d23fec95) | 设置或更改该文本对象的字体特性 |
+| [SetFontSize (2 overloads)](#uid-0548ca8790) | 设置或更改以 MIL 单位计的字体 em 大小 |
+| [SetFontStyle (2 overloads)](#uid-0d603b2f82) | 设置或更改字形 |
+| [SetFontTypeface (2 overloads)](#uid-d39bb21641) | 设置或更改字型 |
+| [SetFontWeight (2 overloads)](#uid-c06d7ce529) | 设置或更改字重 |
+| [SetForegroundBrush (2 overloads)](#uid-6301ed1522) | 设置绘制文本所用的前景画刷 |
 | [SetMaxTextWidths](#uid-613faea176) | Sets the array of lengths, which will be applied to each line of text in turn. If the text covers more lines than there are entries in the length array, the last entry is reused as many times as required. The maxTextWidths array overrides the MaxTextWidth property. |
-| [SetTextDecorations (2 overloads)](#uid-837121285d) | Sets or changes the text decorations |
+| [SetTextDecorations (2 overloads)](#uid-837121285d) | 设置或更改文本装饰 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-806608ebb6"></span>
 
-### BuildGeometry Method
+### BuildGeometry 方法 {#buildgeometry-method}
 
 Obtains geometry for the text, including underlines and strikethroughs.
 
@@ -140,14 +140,14 @@ Obtains geometry for the text, including underlines and strikethroughs.
 public Avalonia.Media.Geometry BuildGeometry(Avalonia.Point origin)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `origin` [Avalonia.Point](xref:Avalonia.Point)
 
 The left top origin of the resulting geometry.
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
 
@@ -166,22 +166,22 @@ Overlapping contours are merged by performing a Boolean union operation.
 
 <span id="uid-522d8b03f5"></span>
 
-#### BuildHighlightGeometry Method
+#### BuildHighlightGeometry 方法 {#buildhighlightgeometry-method}
 
-Builds a highlight geometry object.
+构建一个高亮几何图形对象。
 
 ```csharp
 public Avalonia.Media.Geometry BuildHighlightGeometry(Avalonia.Point origin)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `origin` [Avalonia.Point](xref:Avalonia.Point)
 
 The origin of the highlight region
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
 
@@ -194,7 +194,7 @@ Geometry that surrounds the text.
 
 <span id="uid-3ae4a96ed5"></span>
 
-#### BuildHighlightGeometry Method
+#### BuildHighlightGeometry 方法 {#buildhighlightgeometry-method-1}
 
 Builds a highlight geometry object for a given character range.
 
@@ -202,7 +202,7 @@ Builds a highlight geometry object for a given character range.
 public Avalonia.Media.Geometry BuildHighlightGeometry(Avalonia.Point origin, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `origin` [Avalonia.Point](xref:Avalonia.Point)
 
@@ -219,7 +219,7 @@ The start index of initial character the bounds should be obtained for.
 The number of characters the bounds should be obtained for.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry)
 
@@ -232,7 +232,7 @@ Geometry that surrounds the specified character range.
 
 <span id="uid-0c2b3daf80"></span>
 
-### GetMaxTextWidths Method
+### GetMaxTextWidths 方法 {#getmaxtextwidths-method}
 
 Obtains a copy of the array of lengths,
 which will be applied to each line of text in turn.
@@ -244,7 +244,7 @@ The maxTextWidths array overrides the MaxTextWidth property.
 public double[] GetMaxTextWidths()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 double[]
 
@@ -261,19 +261,19 @@ The copy of max text width array
 
 <span id="uid-805de3b9b1"></span>
 
-#### SetCulture Method
+#### SetCulture 方法 {#setculture-method}
 
-Sets or changes the culture for the text object.
+设置或更改该文本对象的区域性。
 
 ```csharp
 public void SetCulture(System.Globalization.CultureInfo culture)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `culture` System.Globalization.CultureInfo
 
-The new culture for the text object.
+该文本对象的新区域性。
 
 
 </section>
@@ -282,29 +282,29 @@ The new culture for the text object.
 
 <span id="uid-64f3f681bc"></span>
 
-#### SetCulture Method
+#### SetCulture 方法 {#setculture-method-1}
 
-Sets or changes the culture for the text object.
+设置或更改该文本对象的区域性。
 
 ```csharp
 public void SetCulture(System.Globalization.CultureInfo culture, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-5}
 
 `culture` System.Globalization.CultureInfo
 
-The new culture for the text object.
+该文本对象的新区域性。
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -317,19 +317,19 @@ The number of characters the change should be applied to.
 
 <span id="uid-a5c5392011"></span>
 
-#### SetFontFamily Method
+#### SetFontFamily 方法 {#setfontfamily-method}
 
-Sets or changes the font family for the text object
+为文本对象设置或更改字体族
 
 ```csharp
 public void SetFontFamily(Avalonia.Media.FontFamily fontFamily)
 ```
 
-##### Parameters
+##### 参数 {#parameters-6}
 
 `fontFamily` [Avalonia.Media.FontFamily](xref:Avalonia.Media.FontFamily)
 
-Font family
+字体族
 
 
 </section>
@@ -338,29 +338,29 @@ Font family
 
 <span id="uid-c718b478c1"></span>
 
-#### SetFontFamily Method
+#### SetFontFamily 方法 {#setfontfamily-method-1}
 
-Sets or changes the font family for the text object
+为文本对象设置或更改字体族
 
 ```csharp
 public void SetFontFamily(Avalonia.Media.FontFamily fontFamily, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `fontFamily` [Avalonia.Media.FontFamily](xref:Avalonia.Media.FontFamily)
 
-Font family
+字体族
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -369,19 +369,19 @@ The number of characters the change should be applied to.
 
 <span id="uid-990bd41541"></span>
 
-#### SetFontFamily Method
+#### SetFontFamily 方法 {#setfontfamily-method-2}
 
-Sets or changes the font family for the text object
+为文本对象设置或更改字体族
 
 ```csharp
 public void SetFontFamily(string fontFamily)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `fontFamily` string
 
-Font family name
+字体族名称
 
 
 </section>
@@ -390,29 +390,29 @@ Font family name
 
 <span id="uid-c02b4e6ce5"></span>
 
-#### SetFontFamily Method
+#### SetFontFamily 方法 {#setfontfamily-method-3}
 
-Sets or changes the font family for the text object
+为文本对象设置或更改字体族
 
 ```csharp
 public void SetFontFamily(string fontFamily, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-9}
 
 `fontFamily` string
 
-Font family name
+字体族名称
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -425,19 +425,19 @@ The number of characters the change should be applied to.
 
 <span id="uid-daae56a51d"></span>
 
-#### SetFontFeatures Method
+#### SetFontFeatures 方法 {#setfontfeatures-method}
 
-Sets or changes the font features for the text object
+设置或更改该文本对象的字体特性
 
 ```csharp
 public void SetFontFeatures(Avalonia.Media.FontFeatureCollection fontFeatures)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `fontFeatures` [Avalonia.Media.FontFeatureCollection](xref:Avalonia.Media.FontFeatureCollection)
 
-Feature collection
+特性集合
 
 
 </section>
@@ -446,29 +446,29 @@ Feature collection
 
 <span id="uid-a04a104c65"></span>
 
-#### SetFontFeatures Method
+#### SetFontFeatures 方法 {#setfontfeatures-method-1}
 
-Sets or changes the font features for the text object
+设置或更改该文本对象的字体特性
 
 ```csharp
 public void SetFontFeatures(Avalonia.Media.FontFeatureCollection fontFeatures, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `fontFeatures` [Avalonia.Media.FontFeatureCollection](xref:Avalonia.Media.FontFeatureCollection)
 
-Feature collection
+特性集合
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -481,19 +481,19 @@ The number of characters the change should be applied to.
 
 <span id="uid-a403413b09"></span>
 
-#### SetFontSize Method
+#### SetFontSize 方法 {#setfontsize-method}
 
-Sets or changes the font em size measured in MIL units
+设置或更改以 MIL 单位计的字体 em 大小
 
 ```csharp
 public void SetFontSize(double emSize)
 ```
 
-##### Parameters
+##### 参数 {#parameters-12}
 
 `emSize` double
 
-Font em size
+字体 em 大小
 
 
 </section>
@@ -502,29 +502,29 @@ Font em size
 
 <span id="uid-8ff5889da8"></span>
 
-#### SetFontSize Method
+#### SetFontSize 方法 {#setfontsize-method-1}
 
-Sets or changes the font em size measured in MIL units
+设置或更改以 MIL 单位计的字体 em 大小
 
 ```csharp
 public void SetFontSize(double emSize, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-13}
 
 `emSize` double
 
-Font em size
+字体 em 大小
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -537,19 +537,19 @@ The number of characters the change should be applied to.
 
 <span id="uid-ce5ed6ec61"></span>
 
-#### SetFontStyle Method
+#### SetFontStyle 方法 {#setfontstyle-method}
 
-Sets or changes the font style
+设置或更改字形
 
 ```csharp
 public void SetFontStyle(Avalonia.Media.FontStyle style)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `style` [Avalonia.Media.FontStyle](xref:Avalonia.Media.FontStyle)
 
-Font style
+字形
 
 
 </section>
@@ -558,29 +558,29 @@ Font style
 
 <span id="uid-a7e178daff"></span>
 
-#### SetFontStyle Method
+#### SetFontStyle 方法 {#setfontstyle-method-1}
 
-Sets or changes the font style
+设置或更改字形
 
 ```csharp
 public void SetFontStyle(Avalonia.Media.FontStyle style, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `style` [Avalonia.Media.FontStyle](xref:Avalonia.Media.FontStyle)
 
-Font style
+字形
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -593,15 +593,15 @@ The number of characters the change should be applied to.
 
 <span id="uid-1f893f4eaa"></span>
 
-#### SetFontTypeface Method
+#### SetFontTypeface 方法 {#setfonttypeface-method}
 
-Sets or changes the type face
+设置或更改字型
 
 ```csharp
 public void SetFontTypeface(Avalonia.Media.Typeface typeface)
 ```
 
-##### Parameters
+##### 参数 {#parameters-16}
 
 `typeface` [Avalonia.Media.Typeface](xref:Avalonia.Media.Typeface)
 
@@ -614,15 +614,15 @@ Typeface
 
 <span id="uid-838fa35686"></span>
 
-#### SetFontTypeface Method
+#### SetFontTypeface 方法 {#setfonttypeface-method-1}
 
-Sets or changes the type face
+设置或更改字型
 
 ```csharp
 public void SetFontTypeface(Avalonia.Media.Typeface typeface, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-17}
 
 `typeface` [Avalonia.Media.Typeface](xref:Avalonia.Media.Typeface)
 
@@ -631,12 +631,12 @@ Typeface
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -649,19 +649,19 @@ The number of characters the change should be applied to.
 
 <span id="uid-15e823cdb2"></span>
 
-#### SetFontWeight Method
+#### SetFontWeight 方法 {#setfontweight-method}
 
-Sets or changes the font weight
+设置或更改字重
 
 ```csharp
 public void SetFontWeight(Avalonia.Media.FontWeight weight)
 ```
 
-##### Parameters
+##### 参数 {#parameters-18}
 
 `weight` [Avalonia.Media.FontWeight](xref:Avalonia.Media.FontWeight)
 
-Font weight
+字重
 
 
 </section>
@@ -670,29 +670,29 @@ Font weight
 
 <span id="uid-09c759810b"></span>
 
-#### SetFontWeight Method
+#### SetFontWeight 方法 {#setfontweight-method-1}
 
-Sets or changes the font weight
+设置或更改字重
 
 ```csharp
 public void SetFontWeight(Avalonia.Media.FontWeight weight, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-19}
 
 `weight` [Avalonia.Media.FontWeight](xref:Avalonia.Media.FontWeight)
 
-Font weight
+字重
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -705,19 +705,19 @@ The number of characters the change should be applied to.
 
 <span id="uid-f4bfbe78b5"></span>
 
-#### SetForegroundBrush Method
+#### SetForegroundBrush 方法 {#setforegroundbrush-method}
 
-Sets foreground brush used for drawing text
+设置绘制文本所用的前景画刷
 
 ```csharp
 public void SetForegroundBrush(Avalonia.Media.IBrush foregroundBrush)
 ```
 
-##### Parameters
+##### 参数 {#parameters-20}
 
 `foregroundBrush` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-Foreground brush
+前景画刷
 
 
 </section>
@@ -726,29 +726,29 @@ Foreground brush
 
 <span id="uid-30ccca8e26"></span>
 
-#### SetForegroundBrush Method
+#### SetForegroundBrush 方法 {#setforegroundbrush-method-1}
 
-Sets foreground brush used for drawing text
+设置绘制文本所用的前景画刷
 
 ```csharp
 public void SetForegroundBrush(Avalonia.Media.IBrush foregroundBrush, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-21}
 
 `foregroundBrush` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-Foreground brush
+前景画刷
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
@@ -757,7 +757,7 @@ The number of characters the change should be applied to.
 
 <span id="uid-613faea176"></span>
 
-### SetMaxTextWidths Method
+### SetMaxTextWidths 方法 {#setmaxtextwidths-method}
 
 Sets the array of lengths,
 which will be applied to each line of text in turn.
@@ -769,7 +769,7 @@ The maxTextWidths array overrides the MaxTextWidth property.
 public void SetMaxTextWidths(double[] maxTextWidths)
 ```
 
-#### Parameters
+#### 参数 {#parameters-22}
 
 `maxTextWidths` double[]
 
@@ -786,19 +786,19 @@ The max text width array
 
 <span id="uid-f55b432064"></span>
 
-#### SetTextDecorations Method
+#### SetTextDecorations 方法 {#settextdecorations-method}
 
-Sets or changes the text decorations
+设置或更改文本装饰
 
 ```csharp
 public void SetTextDecorations(Avalonia.Media.TextDecorationCollection textDecorations)
 ```
 
-##### Parameters
+##### 参数 {#parameters-23}
 
 `textDecorations` [Avalonia.Media.TextDecorationCollection](xref:Avalonia.Media.TextDecorationCollection)
 
-Text decorations
+文本装饰
 
 
 </section>
@@ -807,48 +807,48 @@ Text decorations
 
 <span id="uid-784dd87f8d"></span>
 
-#### SetTextDecorations Method
+#### SetTextDecorations 方法 {#settextdecorations-method-1}
 
-Sets or changes the text decorations
+设置或更改文本装饰
 
 ```csharp
 public void SetTextDecorations(Avalonia.Media.TextDecorationCollection textDecorations, int startIndex, int count)
 ```
 
-##### Parameters
+##### 参数 {#parameters-24}
 
 `textDecorations` [Avalonia.Media.TextDecorationCollection](xref:Avalonia.Media.TextDecorationCollection)
 
-Text decorations
+文本装饰
 
 
 `startIndex` int
 
-The start index of initial character to apply the change to.
+该变更要作用到的起始字符索引。
 
 
 `count` int
 
-The number of characters the change should be applied to.
+该变更要作用到的字符数。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-251fac2fdb) | The distance from the top of the first line to the baseline of the first line. |
+| [Baseline](#uid-251fac2fdb) | 从第一行顶部到第一行基线的距离。 |
 | [Extent](#uid-5bcfa580b8) | The distance from the topmost black pixel of the first line to the bottommost black pixel of the last line. |
-| [FlowDirection](#uid-33c99f7ffa) | Defines the flow direction |
-| [Height](#uid-a0a6d2e274) | The distance from the top of the first line to the bottom of the last line. |
+| [FlowDirection](#uid-33c99f7ffa) | 定义排列方向 |
+| [Height](#uid-a0a6d2e274) | 从第一行顶部到最后一行底部的距离。 |
 | [LineHeight](#uid-aef1a803a4) | Gets or sets the height of, or the spacing between, each line where zero represents the default line height. |
 | [MaxLineCount](#uid-01e3d26228) | Defines the maximum number of lines to display. The last line of text displayed is the lineCount-1'th line, or the last whole line that will fit within the count set by MaxTextHeight, whichever occurs first. Use the Trimming property to control how the omission of text is indicated |
 | [MaxTextHeight](#uid-f9eb5e6882) | Sets the maximum length of a column of text. The last line of text displayed is the last whole line that will fit within this limit, or the nth line as specified by MaxLineCount, whichever occurs first. Use the Trimming property to control how the omission of text is indicated. |
 | [MaxTextWidth](#uid-57f90e10fb) | The MaxTextWidth property defines the alignment edges for the [FormattedText](xref:Avalonia.Media.FormattedText). For example, left aligned text is wrapped such that the leftmost glyph alignment point on each line falls exactly on the left edge of the rectangle. Note that for many fonts, especially in italic style, some glyph strokes may extend beyond the edges of the alignment rectangle. For this reason, it is recommended that clients draw text with at least 1/6 em (i.e of the font size) unused margin space either side. Zero value of MaxTextWidth is equivalent to the maximum possible paragraph width. |
-| [OverhangAfter](#uid-c1044dfc68) | The distance from the bottom of the last line to the extent bottom. |
-| [OverhangLeading](#uid-1b2c990646) | The maximum distance from the leading black pixel to the leading alignment point of a line. |
-| [OverhangTrailing](#uid-b1e41e0899) | The maximum distance from the trailing black pixel to the trailing alignment point of a line. |
+| [OverhangAfter](#uid-c1044dfc68) | 从最后一行底部到内容范围底部的距离。 |
+| [OverhangLeading](#uid-1b2c990646) | 从一行中最靠前的黑色像素到该行前端对齐点的最大距离。 |
+| [OverhangTrailing](#uid-b1e41e0899) | 从一行中最靠后的黑色像素到该行末端对齐点的最大距离。 |
 | [TextAlignment](#uid-28594ca2eb) | Defines the alignment of text within the column |
 | [Trimming](#uid-b553306ee9) | Defines how omission of text is indicated. CharacterEllipsis trimming allows partial words to be displayed, while WordEllipsis removes whole words to fit. Both guarantee to include an ellipsis ('...') at the end of the lines where text has been trimmed as a result of line and column limits. |
 | [Width](#uid-d96abbc72b) | The maximum advance width between the leading and trailing alignment points of a line, excluding the width of whitespace characters at the end of the line. |
@@ -858,9 +858,9 @@ The number of characters the change should be applied to.
 
 <span id="uid-251fac2fdb"></span>
 
-### Baseline Property
+### Baseline 属性 {#baseline-property}
 
-The distance from the top of the first line to the baseline of the first line.
+从第一行顶部到第一行基线的距离。
 
 ```csharp
 public double Baseline { get; set; }
@@ -872,7 +872,7 @@ public double Baseline { get; set; }
 
 <span id="uid-5bcfa580b8"></span>
 
-### Extent Property
+### Extent 属性 {#extent-property}
 
 The distance from the topmost black pixel of the first line
 to the bottommost black pixel of the last line.
@@ -887,9 +887,9 @@ public double Extent { get; set; }
 
 <span id="uid-33c99f7ffa"></span>
 
-### FlowDirection Property
+### FlowDirection 属性 {#flowdirection-property}
 
-Defines the flow direction
+定义排列方向
 
 ```csharp
 public Avalonia.Media.FlowDirection FlowDirection { get; set; }
@@ -901,9 +901,9 @@ public Avalonia.Media.FlowDirection FlowDirection { get; set; }
 
 <span id="uid-a0a6d2e274"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
-The distance from the top of the first line to the bottom of the last line.
+从第一行顶部到最后一行底部的距离。
 
 ```csharp
 public double Height { get; set; }
@@ -915,7 +915,7 @@ public double Height { get; set; }
 
 <span id="uid-aef1a803a4"></span>
 
-### LineHeight Property
+### LineHeight 属性 {#lineheight-property}
 
 Gets or sets the height of, or the spacing between, each line where
 zero represents the default line height.
@@ -930,7 +930,7 @@ public double LineHeight { get; set; }
 
 <span id="uid-01e3d26228"></span>
 
-### MaxLineCount Property
+### MaxLineCount 属性 {#maxlinecount-property}
 
 Defines the maximum number of lines to display.
 The last line of text displayed is the lineCount-1'th line,
@@ -948,7 +948,7 @@ public int MaxLineCount { get; set; }
 
 <span id="uid-f9eb5e6882"></span>
 
-### MaxTextHeight Property
+### MaxTextHeight 属性 {#maxtextheight-property}
 
 Sets the maximum length of a column of text.
 The last line of text displayed is the last whole line that will fit within this limit,
@@ -965,7 +965,7 @@ public double MaxTextHeight { get; set; }
 
 <span id="uid-57f90e10fb"></span>
 
-### MaxTextWidth Property
+### MaxTextWidth 属性 {#maxtextwidth-property}
 
 The MaxTextWidth property defines the alignment edges for the [FormattedText](xref:Avalonia.Media.FormattedText).
 For example, left aligned text is wrapped such that the leftmost glyph alignment point
@@ -984,9 +984,9 @@ public double MaxTextWidth { get; set; }
 
 <span id="uid-c1044dfc68"></span>
 
-### OverhangAfter Property
+### OverhangAfter 属性 {#overhangafter-property}
 
-The distance from the bottom of the last line to the extent bottom.
+从最后一行底部到内容范围底部的距离。
 
 ```csharp
 public double OverhangAfter { get; set; }
@@ -998,9 +998,9 @@ public double OverhangAfter { get; set; }
 
 <span id="uid-1b2c990646"></span>
 
-### OverhangLeading Property
+### OverhangLeading 属性 {#overhangleading-property}
 
-The maximum distance from the leading black pixel to the leading alignment point of a line.
+从一行中最靠前的黑色像素到该行前端对齐点的最大距离。
 
 ```csharp
 public double OverhangLeading { get; set; }
@@ -1012,9 +1012,9 @@ public double OverhangLeading { get; set; }
 
 <span id="uid-b1e41e0899"></span>
 
-### OverhangTrailing Property
+### OverhangTrailing 属性 {#overhangtrailing-property}
 
-The maximum distance from the trailing black pixel to the trailing alignment point of a line.
+从一行中最靠后的黑色像素到该行末端对齐点的最大距离。
 
 ```csharp
 public double OverhangTrailing { get; set; }
@@ -1026,7 +1026,7 @@ public double OverhangTrailing { get; set; }
 
 <span id="uid-28594ca2eb"></span>
 
-### TextAlignment Property
+### TextAlignment 属性 {#textalignment-property}
 
 Defines the alignment of text within the column
 
@@ -1040,7 +1040,7 @@ public Avalonia.Media.TextAlignment TextAlignment { get; set; }
 
 <span id="uid-b553306ee9"></span>
 
-### Trimming Property
+### Trimming 属性 {#trimming-property}
 
 Defines how omission of text is indicated.
 CharacterEllipsis trimming allows partial words to be displayed,
@@ -1058,7 +1058,7 @@ public Avalonia.Media.TextTrimming Trimming { get; set; }
 
 <span id="uid-d96abbc72b"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
 The maximum advance width between the leading and trailing alignment points of a line,
 excluding the width of whitespace characters at the end of the line.
@@ -1073,7 +1073,7 @@ public double Width { get; set; }
 
 <span id="uid-44f437e115"></span>
 
-### WidthIncludingTrailingWhitespace Property
+### WidthIncludingTrailingWhitespace 属性 {#widthincludingtrailingwhitespace-property}
 
 The maximum advance width between the leading and trailing alignment points of a line,
 including the width of whitespace characters at the end of the line.
@@ -1084,21 +1084,21 @@ public double WidthIncludingTrailingWhitespace { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DefaultIdealToReal](#uid-4f79e2376e) | No summary available. |
-| [DefaultRealToIdeal](#uid-64dd2d2fbb) | No summary available. |
-| [GreatestMultiplierOfEm](#uid-8bc99b53f6) | No summary available. |
-| [IdealInfiniteWidth](#uid-19a24b8963) | No summary available. |
-| [RealInfiniteWidth](#uid-69ecab5cd3) | No summary available. |
+| [DefaultIdealToReal](#uid-4f79e2376e) | 暂无摘要。 |
+| [DefaultRealToIdeal](#uid-64dd2d2fbb) | 暂无摘要。 |
+| [GreatestMultiplierOfEm](#uid-8bc99b53f6) | 暂无摘要。 |
+| [IdealInfiniteWidth](#uid-19a24b8963) | 暂无摘要。 |
+| [RealInfiniteWidth](#uid-69ecab5cd3) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4f79e2376e"></span>
 
-### DefaultIdealToReal Field
+### DefaultIdealToReal 字段 {#defaultidealtoreal-field}
 
 ```csharp
 public double DefaultIdealToReal
@@ -1110,7 +1110,7 @@ public double DefaultIdealToReal
 
 <span id="uid-64dd2d2fbb"></span>
 
-### DefaultRealToIdeal Field
+### DefaultRealToIdeal 字段 {#defaultrealtoideal-field}
 
 ```csharp
 public double DefaultRealToIdeal
@@ -1122,7 +1122,7 @@ public double DefaultRealToIdeal
 
 <span id="uid-8bc99b53f6"></span>
 
-### GreatestMultiplierOfEm Field
+### GreatestMultiplierOfEm 字段 {#greatestmultiplierofem-field}
 
 ```csharp
 public double GreatestMultiplierOfEm
@@ -1134,7 +1134,7 @@ public double GreatestMultiplierOfEm
 
 <span id="uid-19a24b8963"></span>
 
-### IdealInfiniteWidth Field
+### IdealInfiniteWidth 字段 {#idealinfinitewidth-field}
 
 ```csharp
 public int IdealInfiniteWidth
@@ -1146,7 +1146,7 @@ public int IdealInfiniteWidth
 
 <span id="uid-69ecab5cd3"></span>
 
-### RealInfiniteWidth Field
+### RealInfiniteWidth 字段 {#realinfinitewidth-field}
 
 ```csharp
 public double RealInfiniteWidth

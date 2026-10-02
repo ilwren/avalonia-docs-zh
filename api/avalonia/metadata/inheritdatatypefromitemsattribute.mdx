@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InheritDataTypeFromItemsAttribute Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Metadata</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Metadata</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Metadata/InheritDataTypeFromItemsAttribute.cs">InheritDataTypeFromItemsAttribute.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Metadata/InheritDataTypeFromItemsAttribute.cs">InheritDataTypeFromItemsAttribute.cs</a>
 </div>
 
 </div>
@@ -54,56 +54,56 @@ public class InheritDataTypeFromItemsAttribute
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Attribute <span className="apiref-page__relation-separator">-&gt;</span> InheritDataTypeFromItemsAttribute
+<span className="apiref-page__meta-label">继承关系：</span> Attribute <span className="apiref-page__relation-separator">-&gt;</span> InheritDataTypeFromItemsAttribute
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 A typical usage example is a [ListBox](xref:Avalonia.Controls.ListBox) control, where [Avalonia.Metadata.InheritDataTypeFromItemsAttribute](xref:Avalonia.Metadata.InheritDataTypeFromItemsAttribute) is defined on the ItemTemplate property,
 allowing the template to inherit the data type from the Items collection binding.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [InheritDataTypeFromItemsAttribute](#uid-ee14dfb5cd) | Initializes a new instance of the [Avalonia.Metadata.InheritDataTypeFromItemsAttribute](xref:Avalonia.Metadata.InheritDataTypeFromItemsAttribute) class. |
+| [InheritDataTypeFromItemsAttribute](#uid-ee14dfb5cd) | 初始化 [Avalonia.Metadata.InheritDataTypeFromItemsAttribute](xref:Avalonia.Metadata.InheritDataTypeFromItemsAttribute) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ee14dfb5cd"></span>
 
-### InheritDataTypeFromItemsAttribute Constructor
+### InheritDataTypeFromItemsAttribute 构造函数 {#inheritdatatypefromitemsattribute-constructor}
 
-Initializes a new instance of the [Avalonia.Metadata.InheritDataTypeFromItemsAttribute](xref:Avalonia.Metadata.InheritDataTypeFromItemsAttribute) class.
+初始化 [Avalonia.Metadata.InheritDataTypeFromItemsAttribute](xref:Avalonia.Metadata.InheritDataTypeFromItemsAttribute) 类的新实例。
 
 ```csharp
 public InheritDataTypeFromItemsAttribute(string ancestorItemsProperty)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `ancestorItemsProperty` string
 
-The name of the property whose item type should be used on the target property.
+该属性的名称，其项类型将被用在目标属性上。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AncestorItemsProperty](#uid-329ac4f787) | The name of the property whose item type should be used on the target property. |
+| [AncestorItemsProperty](#uid-329ac4f787) | 该属性的名称，其项类型将被用在目标属性上。 |
 | [AncestorType](#uid-ccda529168) | The ancestor type to be used in a lookup for the [Avalonia.Metadata.InheritDataTypeFromItemsAttribute.AncestorItemsProperty](xref:Avalonia.Metadata.InheritDataTypeFromItemsAttribute.AncestorItemsProperty). If null, the declaring type of the target property is used. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-329ac4f787"></span>
 
-### AncestorItemsProperty Property
+### AncestorItemsProperty 属性 {#ancestoritemsproperty-property}
 
-The name of the property whose item type should be used on the target property.
+该属性的名称，其项类型将被用在目标属性上。
 
 ```csharp
 public string AncestorItemsProperty { get; set; }
@@ -115,7 +115,7 @@ public string AncestorItemsProperty { get; set; }
 
 <span id="uid-ccda529168"></span>
 
-### AncestorType Property
+### AncestorType 属性 {#ancestortype-property}
 
 The ancestor type to be used in a lookup for the [Avalonia.Metadata.InheritDataTypeFromItemsAttribute.AncestorItemsProperty](xref:Avalonia.Metadata.InheritDataTypeFromItemsAttribute.AncestorItemsProperty).
 If null, the declaring type of the target property is used.

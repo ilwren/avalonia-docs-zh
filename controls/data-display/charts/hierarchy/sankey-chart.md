@@ -1,7 +1,7 @@
 ---
 id: sankey-chart
-title: Sankey chart
-description: Visualizes the flow of data, energy, or materials between stages using proportional-width links to represent quantity through each connection.
+title: 桑基图
+description: 呈现数据、能量或物料在各阶段之间的流动，连接带的宽度与流量成正比。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsFlowSankey from '/img/controls/charts/charts-flow-sankey.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Sankey charts visualize the flow of data, energy, or materials between stages. The width of the connecting links is proportional to the quantity of the flow.
+桑基图呈现数据、能量或物料在各阶段之间的流动。连接带的宽度与流量的大小成正比。
 
 <Image light={chartsFlowSankey} maxWidth={400} position="center" cornerRadius="true" alt="Sankey chart showing energy flow between stages with link widths proportional to the quantity transferred." />
 
-## When to use
-- **Energy audit**: Showing how energy is distributed from source to consumption.
-- **Web analytics**: Visualizing the path users take through a website (user journey).
-- **Budgeting**: Tracking how funds flow from income sources to various expenses.
+## 适用场景 {#when-to-use}
+- **能耗审计**：呈现能量如何从来源分配到各处消耗。
+- **网站分析**：呈现用户在网站中走过的路径（用户旅程）。
+- **预算编制**：追踪资金如何从各收入来源流向各项开支。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -33,7 +33,7 @@ Sankey charts visualize the flow of data, energy, or materials between stages. T
                       ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record FlowItem(string Source, string Target, double Value);
 
@@ -49,13 +49,13 @@ public ObservableCollection<FlowItem> SankeyData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of flow data. | `null` |
-| `SourcePath` | Property name for the starting node. | `null` |
-| `TargetPath` | Property name for the ending node. | `null` |
-| `ValuePath` | Property name for the flow magnitude. | `null` |
-| `NodeWidth` | The width of each node column. | `20` |
-| `NodePadding` | The vertical space between nodes in a column. | `10` |
+| `ItemsSource` | 流量数据的集合。 | `null` |
+| `SourcePath` | 起点节点所对应的属性名。 | `null` |
+| `TargetPath` | 终点节点所对应的属性名。 | `null` |
+| `ValuePath` | 流量大小所对应的属性名。 | `null` |
+| `NodeWidth` | 每一列节点的宽度。 | `20` |
+| `NodePadding` | 同一列中各节点之间的垂直间距。 | `10` |

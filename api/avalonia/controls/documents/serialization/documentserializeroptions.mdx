@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DocumentSerializerOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Serialization</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Serialization</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public class DocumentSerializerOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> DocumentSerializerOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> DocumentSerializerOptions
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Replaces the former per-format `RtfSerializerOptions` and `DocxSerializerOptions`
 with a single type. All serializer behavior is derived from [Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.ExportMode](xref:Avalonia.Controls.Documents.Serialization.DocumentSerializerOptions.ExportMode):
@@ -63,17 +63,17 @@ with a single type. All serializer behavior is derived from [Avalonia.Controls.D
 - [Avalonia.Controls.Documents.Serialization.DocumentExportMode.InteropSafe](xref:Avalonia.Controls.Documents.Serialization.DocumentExportMode.InteropSafe): native controls + custom markers for unsupported properties.
 - [Avalonia.Controls.Documents.Serialization.DocumentExportMode.Portable](xref:Avalonia.Controls.Documents.Serialization.DocumentExportMode.Portable): native controls only, no custom markers.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DocumentSerializerOptions](#uid-5525381a6c) | No summary available. |
+| [DocumentSerializerOptions](#uid-5525381a6c) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5525381a6c"></span>
 
-### DocumentSerializerOptions Constructor
+### DocumentSerializerOptions 构造函数 {#documentserializeroptions-constructor}
 
 ```csharp
 public DocumentSerializerOptions()
@@ -81,9 +81,9 @@ public DocumentSerializerOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ExportMode](#uid-2cd5c7cbe0) | Controls the export strategy for all serializers. Defaults to [Avalonia.Controls.Documents.Serialization.DocumentExportMode.RoundTripStrict](xref:Avalonia.Controls.Documents.Serialization.DocumentExportMode.RoundTripStrict). |
 | [ImageEncodingPolicy](#uid-d7c4371c12) | How images whose encoded format the target does not accept are handled. Defaults to [Avalonia.Controls.Documents.Serialization.ImageEncodingPolicy.ReencodeFromPixels](xref:Avalonia.Controls.Documents.Serialization.ImageEncodingPolicy.ReencodeFromPixels), which transcodes them to a format the target accepts using the built-in codec. |
@@ -93,7 +93,7 @@ public DocumentSerializerOptions()
 
 <span id="uid-2cd5c7cbe0"></span>
 
-### ExportMode Property
+### ExportMode 属性 {#exportmode-property}
 
 Controls the export strategy for all serializers.
 Defaults to [Avalonia.Controls.Documents.Serialization.DocumentExportMode.RoundTripStrict](xref:Avalonia.Controls.Documents.Serialization.DocumentExportMode.RoundTripStrict).
@@ -108,7 +108,7 @@ public Avalonia.Controls.Documents.Serialization.DocumentExportMode ExportMode {
 
 <span id="uid-d7c4371c12"></span>
 
-### ImageEncodingPolicy Property
+### ImageEncodingPolicy 属性 {#imageencodingpolicy-property}
 
 How images whose encoded format the target does not accept are handled. Defaults
 to [Avalonia.Controls.Documents.Serialization.ImageEncodingPolicy.ReencodeFromPixels](xref:Avalonia.Controls.Documents.Serialization.ImageEncodingPolicy.ReencodeFromPixels), which transcodes them to a
@@ -124,7 +124,7 @@ public Avalonia.Controls.Documents.Serialization.ImageEncodingPolicy ImageEncodi
 
 <span id="uid-bb4dd16c05"></span>
 
-### MaxImageBytes Property
+### MaxImageBytes 属性 {#maximagebytes-property}
 
 Maximum size, in bytes, of a single embedded image. An image whose payload exceeds
 this limit is skipped and the surrounding document still loads.
@@ -135,7 +135,7 @@ hostile or malformed documents with oversized image payloads.
 public Nullable<long> MaxImageBytes { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Applies to every format that carries image bytes: on read to RTF, DOCX, XAML and
 HTML, and on write to PDF, where the payload measured is the sample buffer for an

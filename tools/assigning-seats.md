@@ -1,7 +1,7 @@
 ---
 id: assigning-seats
-title: Assigning subscription seats
-description: This step-by-step guide shows you how to assign seats to members of your organization through the Avalonia portal.
+title: 分配订阅席位
+description: 本分步指南带你在 Avalonia 门户中为组织成员分配席位。
 doc-type: how-to
 tags:
   - avalonia plus
@@ -16,54 +16,54 @@ import GoToManagement from '/img/tools/assigning-seats/3-go-to-management.png';
 import ClickAssignSeats from '/img/tools/assigning-seats/4-click-assign-seats.png';
 import AssignModal from '/img/tools/assigning-seats/5-assign-modal.png';
 
-Your Avalonia subscription includes a certain number of seats, which must be assigned to members of your organization before they can use the advanced features of Avalonia Plus, Pro, Enterprise or XPF. This step-by-step guide shows you how to assign seats to your users.
+你的 Avalonia 订阅包含一定数量的席位，必须先分配给组织成员，他们才能使用 Avalonia Plus、Pro、Enterprise 或 XPF 的高级功能。本分步指南带你把席位分配给用户。
 
-Seat assignment works identically for both [Avalonia](https://avaloniaui.net/pricing) and [XPF](/xpf) subscriptions.
+[Avalonia](https://avaloniaui.net/pricing) 订阅与 [XPF](/xpf) 订阅的席位分配方式完全相同。
 
-**You must be an Admin of your organization to assign seats.**
+**你必须是组织的管理员才能分配席位。**
 
-## Log into the Avalonia portal
+## 登录 Avalonia 门户 {#log-into-the-avalonia-portal}
 
 <table>
   <tbody>
     <tr>
-      <td>1. Go to the Avalonia portal, [https://portal.avaloniaui.net/](https://portal.avaloniaui.net/).</td>
+      <td>1. 访问 Avalonia 门户 [https://portal.avaloniaui.net/](https://portal.avaloniaui.net/).</td>
       <td rowspan="2"><Image light={PortalLogin}/></td>
     </tr>
     <tr>
-      <td>2. Login with your credentials.</td>
+      <td>2. 用你的凭据登录。</td>
     </tr>
   </tbody>
 </table>
 
-## Go to the subscription management page
+## 进入订阅管理页 {#go-to-the-subscription-management-page}
 
 <table>
   <tbody>
     <tr>
-      <td>3. Click the relevant subscription plan from the tiles on the home page.</td>
+      <td>3. 在首页的磁贴中点击对应的订阅计划。</td>
       <td><Image light={SelectSubscription}/></td>
     </tr>
     <tr>
-      <td>4. Click **Manage Subscription** at the upper right of the subscription page.</td>
+      <td>4. 点击订阅页右上角的 **Manage Subscription**。</td>
       <td><Image light={GoToManagement}/></td>
     </tr>
   </tbody>
 </table>
 
-## Assign seats to users
+## 把席位分配给用户 {#assign-seats-to-users}
 
 <table>
   <tbody>
     <tr>
-      <td>5. Scroll down the subscription management page until you find the section titled "Assigned Seats".</td>
+      <td>5. 在订阅管理页向下滚动，找到标题为 “Assigned Seats” 的区域。</td>
       <td rowspan="2"><Image light={ClickAssignSeats}/></td>
     </tr>
     <tr>
       <td>6. Click **Assign Seats**.</td>
     </tr>
     <tr>
-      <td>7. In the selection modal, tick the user(s) you wish to assign a seat to.</td>
+      <td>7. 在弹出的选择框中，勾选你要分配席位的用户。</td>
       <td rowspan="2"><Image light={AssignModal}/></td>
     </tr>
     <tr>
@@ -73,11 +73,11 @@ Seat assignment works identically for both [Avalonia](https://avaloniaui.net/pri
 </table>
 
 :::warning
-Once assigned, a seat cannot be unassigned or reassigned.
+席位一经分配，便无法收回或转给他人。
 
-If you believe you have assigned a seat to the wrong user by mistake, please open a ticket in the [portal](https://portal.avaloniaui.net/).
+若你认为自己误把席位分给了错误的用户，请在[门户](https://portal.avaloniaui.net/)中提交工单。
 :::
 
-## See also
-- [Troubleshooting login issues](/troubleshooting/login-issues)
+## 另请参阅 {#see-also}
+- [排查登录问题](/troubleshooting/login-issues)
 - [Avalonia XPF](/xpf)

@@ -1,7 +1,7 @@
 ---
 id: dendrogram-chart
-title: Dendrogram chart
-description: Tree diagram that illustrates hierarchical clustering by showing how items are progressively merged into branches, used in statistical and biological analysis.
+title: 聚类树图
+description: 一种树状图，通过展示条目如何逐级合并成分支来呈现层次聚类，常用于统计和生物学分析。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsHierarchicalDendrogram from '/img/controls/charts/charts-hierarchical-dendrogram.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Dendrograms are tree diagrams frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering. They show how items are merged into a single branch.
+聚类树图（Dendrogram）是一种树状图，常用来呈现层次聚类所产生的簇是如何排布的，直观展示条目如何一步步合并成同一条分支。
 
 <Image light={chartsHierarchicalDendrogram} maxWidth={400} position="center" cornerRadius="true" alt="Dendrogram tree diagram showing hierarchical clustering with branches merging from leaf nodes toward the root." />
 
-## When to use
-- **Cluster analysis**: Visualizing the results of statistical clustering algorithms.
-- **Phylogenetic trees**: Showing evolutionary relationships between different species.
-- **Structural merges**: Representing data that stems from many parts but converges into a few groups.
+## 适用场景 {#when-to-use}
+- **聚类分析**：呈现统计聚类算法的结果。
+- **系统发生树**：展示不同物种之间的演化关系。
+- **结构合并**：刻画那些由众多部分出发、最终汇聚成少数几组的数据。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Dendrograms are tree diagrams frequently used to illustrate the arrangement of t
                           ChildrenPath="Children" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class TreeNode
 {
@@ -54,14 +54,14 @@ public ObservableCollection<TreeNode> DendrogramData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The hierarchical cluster data. | `null` |
-| `LabelPath` | Property for the leaf or node names. | `null` |
-| `ChildrenPath` | Path to the nested cluster items. | `null` |
-| `DistancePath` | Property for the cluster distance or merge height. | `null` |
-| `Orientation` | Orientation of the chart, `Horizontal` or `Vertical`. | `Horizontal` |
-| `LinkStyle` | Style of the lines linking items, `Elbow` or `Straight`. | `Elbow` |
-| `LeafSpacing` | Spacing between leaf nodes. | `25.0` |
+| `ItemsSource` | 层次聚类数据。 | `null` |
+| `LabelPath` | 表示叶节点或节点名称的属性。 | `null` |
+| `ChildrenPath` | 指向嵌套簇项的路径。 | `null` |
+| `DistancePath` | 表示簇间距离或合并高度的属性。 | `null` |
+| `Orientation` | 图表的方向，`Horizontal` 或 `Vertical`。 | `Horizontal` |
+| `LinkStyle` | 连接各项的线条样式，`Elbow` 或 `Straight`。 | `Elbow` |
+| `LeafSpacing` | 叶节点之间的间距。 | `25.0` |

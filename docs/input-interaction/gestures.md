@@ -1,36 +1,36 @@
 ---
 id: gestures
-title: Gestures
-description: Built-in gesture events, gesture recognizers, and custom gesture handling for touch, pen, and mouse input.
+title: 手势
+description: 内置手势事件、手势识别器，以及触摸、触控笔和鼠标输入的自定义手势处理。
 doc-type: overview
 ---
 
-Avalonia uses a unified pointer event system. Mouse, touch, and stylus input all flow through the same `PointerPressed`, `PointerMoved`, and `PointerReleased` events rather than having separate event types for each device. Pointer events tell you what the hardware did: a button went down, a finger moved.
+Avalonia 采用统一的指针事件体系。鼠标、触摸和触控笔输入都走同一套 `PointerPressed`、`PointerMoved`、`PointerReleased` 事件，而不是每种设备各有一套事件类型。指针事件告诉你硬件做了什么：某个按键按下了，某根手指移动了。
 
-Gestures are a higher-level abstraction built on top of pointer events that represent what the user *intended*: a tap, a pinch-to-zoom, a scroll.
+手势则是架在指针事件之上的更高层抽象，表达的是用户*想做什么*：轻点、捏合缩放、滚动。
 
-Avalonia provides two kinds of gestures:
+Avalonia 提供两类手势：
 
-**Built-in gesture events** cover the most common interactions:
+**内置手势事件**涵盖了最常见的交互：
 
-| Event | Description |
+| 事件 | 说明 |
 |---|---|
-| `Tapped` | A pointer was pressed and released on a control. |
-| `DoubleTapped` | Two taps occurred in the same location within the platform's double-tap time and distance threshold. |
-| `Holding` | A pointer was pressed and held without moving. Must be enabled per control with `InputElement.IsHoldingEnabled`. |
+| `Tapped` | 指针在控件上按下又松开。 |
+| `DoubleTapped` | 在平台规定的双击时限和距离阈值内，于同一位置轻点了两次。 |
+| `Holding` | 指针按下后不动地保持住。需要用 `InputElement.IsHoldingEnabled` 为每个控件单独启用。 |
 
-**Gesture recognizers** detect more complex multi-pointer or directional patterns. You attach them to a control's `GestureRecognizers` collection, and they monitor the control's pointer events to detect specific patterns:
+**手势识别器**负责辨认更复杂的多指或方向性模式。把它们添加到控件的 `GestureRecognizers` 集合里，它们就会盯着该控件的指针事件、从中识别特定模式：
 
-| Recognizer | Description |
+| 识别器 | 说明 |
 |---|---|
-| [`PinchGestureRecognizer`](/docs/input-interaction/gestures/pinch-gesture-recognizer) | Two pointers moving towards or away from each other. Used for pinch-to-zoom. |
-| [`PullGestureRecognizer`](/docs/input-interaction/gestures/pull-gesture-recognizer) | A pointer dragged from the edge of a control in a specific direction. Used for pull-to-refresh. |
-| [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gesture-recognizer) | A pointer dragged to scroll content horizontally, vertically, or both. |
-| [`SwipeGestureRecognizer`](/docs/input-interaction/gestures/swipe-gesture-recognizer) | A rapid directional pointer drag for discrete paging interactions. Provides velocity data for speed-sensitive transitions. |
+| [`PinchGestureRecognizer`](/docs/input-interaction/gestures/pinch-gesture-recognizer) | 两个指针相向或相背移动，用于捏合缩放。 |
+| [`PullGestureRecognizer`](/docs/input-interaction/gestures/pull-gesture-recognizer) | 指针从控件边缘朝某个方向拖动，用于下拉刷新。 |
+| [`ScrollGestureRecognizer`](/docs/input-interaction/gestures/scroll-gesture-recognizer) | 拖动指针以横向、纵向或双向滚动内容。 |
+| [`SwipeGestureRecognizer`](/docs/input-interaction/gestures/swipe-gesture-recognizer) | 快速的方向性拖动，用于离散的翻页式交互。会给出速度数据，便于做对速度敏感的过渡。 |
 
-## Attaching a gesture recognizer
+## 挂上手势识别器 {#attaching-a-gesture-recognizer}
 
-Gesture recognizers are added to a control in XAML or code-behind:
+手势识别器可以在 XAML 或代码隐藏中添加到控件上：
 
 ```xml
 <Image Stretch="UniformToFill" Name="image" Source="/image.jpg">
@@ -44,11 +44,11 @@ Gesture recognizers are added to a control in XAML or code-behind:
 image.GestureRecognizers.Add(new PinchGestureRecognizer());
 ```
 
-Once attached, the recognizer watches the control's pointer events and raises gesture-specific events when it detects a match. Each recognizer raises a start event (e.g. `InputElement.PinchEvent`) and an end event (e.g. `InputElement.PinchEndedEvent`).
+挂好之后，识别器就会盯着控件的指针事件，一旦识别出匹配的模式便引发对应的手势事件。每个识别器都会引发一个开始事件（比如 `InputElement.PinchEvent`）和一个结束事件（比如 `InputElement.PinchEndedEvent`）。
 
-## Subscribing to gesture events
+## 订阅手势事件 {#subscribing-to-gesture-events}
 
-Gesture recognizer events are routed events. Subscribe using `AddHandler`:
+手势识别器的事件都是路由事件，用 `AddHandler` 订阅：
 
 ```csharp title='C#'
 image.AddHandler(InputElement.PinchEvent, (sender, args) =>
@@ -58,23 +58,23 @@ image.AddHandler(InputElement.PinchEvent, (sender, args) =>
 });
 ```
 
-If your handler fully processes the gesture, mark it as handled to prevent it from bubbling further:
+若你的处理程序已经把这个手势处理妥当，可以把它标记为已处理，阻止它继续向上冒泡：
 
 ```csharp title='C#'
 args.Handled = true;
 ```
 
-## Holding gesture
+## 按住手势 {#holding-gesture}
 
-Unlike `Tapped` and `DoubleTapped`, the `Holding` gesture must be enabled per control by setting the `InputElement.IsHoldingEnabled` attached property:
+与 `Tapped` 和 `DoubleTapped` 不同，`Holding` 手势必须设置 `InputElement.IsHoldingEnabled` 附加属性，为每个控件单独启用：
 
 ```xml
 <Border InputElement.IsHoldingEnabled="True" Holding="OnHolding" />
 ```
 
-The hold duration is defined by `PlatformSettings.HoldWaitDuration` on the `TopLevel`. When the duration elapses, a `Holding` event fires with `HoldingState.Started`. On pointer release, it fires again with `HoldingState.Completed`. If a new gesture begins or a second pointer is pressed while holding, it fires with `HoldingState.Canceled`.
+按住的时长由 `TopLevel` 上的 `PlatformSettings.HoldWaitDuration` 决定。时长一到就会触发一次 `Holding` 事件，此时 `HoldingState.Started`；指针松开时再触发一次，此时 `HoldingState.Completed`。若按住期间开始了新手势、或按下了第二个指针，则触发时为 `HoldingState.Canceled`。
 
-To allow mouse pointers (not just touch) to trigger holding, set `InputElement.IsHoldWithMouseEnabled`:
+若想让鼠标指针（而不只是触摸）也能触发按住手势，请设置 `InputElement.IsHoldWithMouseEnabled`：
 
 ```xml
 <Border InputElement.IsHoldingEnabled="True"
@@ -82,9 +82,9 @@ To allow mouse pointers (not just touch) to trigger holding, set `InputElement.I
         Holding="OnHolding" />
 ```
 
-## Combining multiple gesture recognizers
+## 同时使用多个手势识别器 {#combining-multiple-gesture-recognizers}
 
-You can attach more than one gesture recognizer to the same control. For example, to support both pinch-to-zoom and panning on an image:
+同一个控件上可以挂多个手势识别器。比如要让一张图片既能捏合缩放又能平移：
 
 ```xml
 <Image Name="image" Source="/image.jpg">
@@ -96,13 +96,13 @@ You can attach more than one gesture recognizer to the same control. For example
 </Image>
 ```
 
-When multiple recognizers are attached, they each independently monitor the control's pointer events. Only one recognizer can be active at a time: when a recognizer captures a gesture, it prevents other recognizers from activating until the gesture completes.
+挂上多个识别器后，它们各自独立地盯着控件的指针事件。但同一时刻只能有一个识别器处于活动状态：某个识别器捕获了手势之后，其余识别器在该手势结束前都无法激活。
 
-## Pointer type filtering
+## 按指针类型过滤 {#pointer-type-filtering}
 
-Built-in gesture recognizers process all pointer types (mouse, touch, and pen). This can be a problem in applications that assign different behaviors to different input devices. For example, a drawing app might use pen input for drawing and touch input for panning and zooming.
+内置的手势识别器对所有指针类型（鼠标、触摸、触控笔）一视同仁。若应用要给不同输入设备安排不同行为，这就成了问题。比如绘图应用可能想用触控笔作画，用触摸来平移和缩放。
 
-To distinguish between input devices, check the `PointerType` on the pointer event args:
+要区分输入设备，请查看指针事件参数中的 `PointerType`：
 
 ```csharp title='C#'
 private void OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -120,11 +120,11 @@ private void OnPointerPressed(object? sender, PointerPressedEventArgs e)
 }
 ```
 
-Because the built-in recognizers do not filter by pointer type, scenarios that need device-specific gesture handling (such as reserving touch for pan/zoom while using pen for drawing) require a custom gesture recognizer.
+由于内置识别器并不按指针类型过滤，那些需要按设备区分手势的场景（比如把触摸留给平移缩放、把触控笔留给绘画），就得自己写一个手势识别器。
 
-## Custom gesture recognizers
+## 自定义手势识别器 {#custom-gesture-recognizers}
 
-To create a custom gesture recognizer, subclass `GestureRecognizer` and override its pointer-tracking methods. This gives you full control over which pointer events are captured, how gestures are detected, and which events are raised.
+要写一个自定义手势识别器，请继承 `GestureRecognizer` 并重写它的指针跟踪方法。这样你就能完全掌控捕获哪些指针事件、如何识别手势，以及引发哪些事件。
 
 ```csharp title='C#'
 public class TouchOnlyPinchRecognizer : GestureRecognizer
@@ -149,7 +149,7 @@ public class TouchOnlyPinchRecognizer : GestureRecognizer
 }
 ```
 
-Custom recognizers are attached the same way as built-in ones:
+自定义识别器的挂载方式与内置的别无二致：
 
 ```xml
 <Image Name="image" Source="/image.jpg">
@@ -159,9 +159,9 @@ Custom recognizers are attached the same way as built-in ones:
 </Image>
 ```
 
-For reference implementations, see the [built-in gesture recognizer source code](https://github.com/AvaloniaUI/Avalonia/tree/master/src/Avalonia.Base/Input/GestureRecognizers) on GitHub.
+需要参考实现的话，请看 GitHub 上的[内置手势识别器源码](https://github.com/AvaloniaUI/Avalonia/tree/master/src/Avalonia.Base/Input/GestureRecognizers)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Pointer Events](/docs/input-interaction/pointer): Lower-level pointer events that gestures are built on.
-- [Routed Events](/docs/input-interaction/routed-events): How events propagate through the element tree.
+- [指针事件](/docs/input-interaction/pointer)：手势所依托的底层指针事件。
+- [路由事件](/docs/input-interaction/routed-events)：事件如何在元素树中传播。

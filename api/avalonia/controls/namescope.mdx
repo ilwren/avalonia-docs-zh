@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">NameScope Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/NameScope.cs">NameScope.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Controls/NameScope.cs">NameScope.cs</a>
 </div>
 
 </div>
@@ -54,24 +54,24 @@ public class NameScope
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> NameScope
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> NameScope
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="inamescope">INameScope</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="inamescope">INameScope</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [NameScope](#uid-19022cf61d) | No summary available. |
+| [NameScope](#uid-19022cf61d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-19022cf61d"></span>
 
-### NameScope Constructor
+### NameScope 构造函数 {#namescope-constructor}
 
 ```csharp
 public NameScope()
@@ -79,22 +79,22 @@ public NameScope()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Complete](#uid-6412b604db) | No summary available. |
-| [Find](#uid-2b1b1d98b0) | Finds a named element in the name scope, returns immediately, doesn't traverse the name scope stack |
-| [FindAsync](#uid-50f6013761) | No summary available. |
+| [Complete](#uid-6412b604db) | 暂无摘要。 |
+| [Find](#uid-2b1b1d98b0) | 在名称作用域中查找具名元素，就地返回，不会沿名称作用域栈向上查找 |
+| [FindAsync](#uid-50f6013761) | 暂无摘要。 |
 | [GetNameScope](#uid-cdd3344597) | Gets the value of the attached [Avalonia.Controls.NameScope.NameScopeProperty](xref:Avalonia.Controls.NameScope.NameScopeProperty) on a styled element. |
-| [Register](#uid-4f0d08f4fb) | Registers an element in the name scope. |
+| [Register](#uid-4f0d08f4fb) | 把某个元素注册进名称作用域。 |
 | [SetNameScope](#uid-5cff727967) | Sets the value of the attached [Avalonia.Controls.NameScope.NameScopeProperty](xref:Avalonia.Controls.NameScope.NameScopeProperty) on a styled element. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6412b604db"></span>
 
-### Complete Method
+### Complete 方法 {#complete-method}
 
 ```csharp
 public void Complete()
@@ -106,26 +106,26 @@ public void Complete()
 
 <span id="uid-2b1b1d98b0"></span>
 
-### Find Method
+### Find 方法 {#find-method}
 
-Finds a named element in the name scope, returns immediately, doesn't traverse the name scope stack
+在名称作用域中查找具名元素，就地返回，不会沿名称作用域栈向上查找
 
 ```csharp
 public object Find(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `name` string
 
-The name.
+名称。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
-The element, or null if the name was not found.
+该元素；若找不到该名称则为 null。
 
 
 </section>
@@ -134,18 +134,18 @@ The element, or null if the name was not found.
 
 <span id="uid-50f6013761"></span>
 
-### FindAsync Method
+### FindAsync 方法 {#findasync-method}
 
 ```csharp
 public Avalonia.Utilities.SynchronousCompletionAsyncResult<T><object> FindAsync(string name)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `name` string
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 Avalonia.Utilities.SynchronousCompletionAsyncResult&lt;T&gt;&lt;object&gt;
 
@@ -156,7 +156,7 @@ Avalonia.Utilities.SynchronousCompletionAsyncResult&lt;T&gt;&lt;object&gt;
 
 <span id="uid-cdd3344597"></span>
 
-### GetNameScope Method
+### GetNameScope 方法 {#getnamescope-method}
 
 Gets the value of the attached [Avalonia.Controls.NameScope.NameScopeProperty](xref:Avalonia.Controls.NameScope.NameScopeProperty) on a styled element.
 
@@ -164,14 +164,14 @@ Gets the value of the attached [Avalonia.Controls.NameScope.NameScopeProperty](x
 public Avalonia.Controls.INameScope GetNameScope(Avalonia.StyledElement styled)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `styled` [Avalonia.StyledElement](xref:Avalonia.StyledElement)
 
-The styled element.
+该样式化元素。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.INameScope](xref:Avalonia.Controls.INameScope)
 
@@ -184,24 +184,24 @@ The value of the [NameScope](xref:Avalonia.Controls.NameScope) attached property
 
 <span id="uid-4f0d08f4fb"></span>
 
-### Register Method
+### Register 方法 {#register-method}
 
-Registers an element in the name scope.
+把某个元素注册进名称作用域。
 
 ```csharp
 public void Register(string name, object element)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `name` string
 
-The element name.
+元素名称。
 
 
 `element` object
 
-The element.
+该元素。
 
 
 </section>
@@ -210,7 +210,7 @@ The element.
 
 <span id="uid-5cff727967"></span>
 
-### SetNameScope Method
+### SetNameScope 方法 {#setnamescope-method}
 
 Sets the value of the attached [Avalonia.Controls.NameScope.NameScopeProperty](xref:Avalonia.Controls.NameScope.NameScopeProperty) on a styled element.
 
@@ -218,33 +218,33 @@ Sets the value of the attached [Avalonia.Controls.NameScope.NameScopeProperty](x
 public void SetNameScope(Avalonia.StyledElement styled, Avalonia.Controls.INameScope value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `styled` [Avalonia.StyledElement](xref:Avalonia.StyledElement)
 
-The styled element.
+该样式化元素。
 
 
 `value` [Avalonia.Controls.INameScope](xref:Avalonia.Controls.INameScope)
 
-The value to set.
+要设置的值。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsCompleted](#uid-47e0381d73) | Returns whether further registrations are allowed on the scope |
+| [IsCompleted](#uid-47e0381d73) | 返回该作用域是否还允许继续注册 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-47e0381d73"></span>
 
-### IsCompleted Property
+### IsCompleted 属性 {#iscompleted-property}
 
-Returns whether further registrations are allowed on the scope
+返回该作用域是否还允许继续注册
 
 ```csharp
 public bool IsCompleted { get; set; }
@@ -252,9 +252,9 @@ public bool IsCompleted { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [NameScopeProperty](#uid-86cfe784c0) | Defines the [NameScope](xref:Avalonia.Controls.NameScope) attached property. |
 
@@ -262,7 +262,7 @@ public bool IsCompleted { get; set; }
 
 <span id="uid-86cfe784c0"></span>
 
-### NameScopeProperty Field
+### NameScopeProperty 字段 {#namescopeproperty-field}
 
 Defines the [NameScope](xref:Avalonia.Controls.NameScope) attached property.
 

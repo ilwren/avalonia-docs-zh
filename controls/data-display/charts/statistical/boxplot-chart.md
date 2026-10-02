@@ -1,7 +1,7 @@
 ---
 id: boxplot-chart
-title: Box plot chart
-description: Graphical summary of data distribution showing the median, quartiles, and outliers using a box-and-whisker layout, useful for statistical comparisons.
+title: 箱线图
+description: 用箱体加须线的形式概括数据分布，呈现中位数、四分位数和异常值，适合作统计对比。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianBoxplot from '/img/controls/charts/charts-cartesian-boxplot.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-A box plot (or box-and-whisker plot) provides a graphical summary of the distribution, central tendency, and variability of data, including quartiles and outliers.
+箱线图（又称箱须图）以图形方式概括数据的分布、集中趋势和离散程度，并一并给出四分位数和异常值。
 
 <Image light={chartsCartesianBoxplot} maxWidth={400} position="center" cornerRadius="true" alt="Box plot chart with box-and-whisker symbols per category showing median, quartiles, and outlier data points." />
 
-## When to use
-- **Statistical analysis**: Comparing the distribution of several datasets (e.g., test scores across different classes).
-- **Outlier detection**: Identifying extreme data points that fall outside the "whiskers."
-- **Range visualization**: Showing the minimum, maximum, median, and interquartile range at a glance.
+## 适用场景 {#when-to-use}
+- **统计分析**：比较多组数据的分布（比如不同班级的考试成绩）。
+- **异常值检测**：找出落在「须线」之外的极端数据点。
+- **区间呈现**：一眼看清最小值、最大值、中位数和四分位距。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -43,7 +43,7 @@ A box plot (or box-and-whisker plot) provides a graphical summary of the distrib
 </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record BoxPlotPoint(string Category, double Min, double Q1, double Median, double Q3, double Max);
 
@@ -56,18 +56,18 @@ public ObservableCollection<BoxPlotPoint> BoxPlotData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of statistical data points. | `null` |
-| `MinPath` | Path to the minimum value. | `null` |
-| `MaxPath` | Path to the maximum value. | `null` |
-| `MedianPath` | Path to the median value. | `null` |
-| `Q1Path` | Path to the first quartile (25th percentile). | `null` |
-| `Q3Path` | Path to the third quartile (75th percentile). | `null` |
-| `BoxWidth` | Width of the box as a fraction of the category slot. | `0.6` |
-| `MedianStroke` | Brush used for the median line inside the box. | `null` |
-| `WhiskerThickness` | Thickness of the whisker lines. | `1.0` |
-| `Fill` | Brush used for the "box." | Theme-dependent |
-| `Stroke` | Color of the whiskers and box outline. | Theme-dependent |
+| `ItemsSource` | 统计数据点的集合。 | `null` |
+| `MinPath` | 指向最小值的路径。 | `null` |
+| `MaxPath` | 指向最大值的路径。 | `null` |
+| `MedianPath` | 指向中位数的路径。 | `null` |
+| `Q1Path` | 指向第一四分位数（第 25 百分位）的路径。 | `null` |
+| `Q3Path` | 指向第三四分位数（第 75 百分位）的路径。 | `null` |
+| `BoxWidth` | 箱体的宽度，以类别槽位的比例表示。 | `0.6` |
+| `MedianStroke` | 箱体内中位数线所用的画刷。 | `null` |
+| `WhiskerThickness` | 须线的粗细。 | `1.0` |
+| `Fill` | 「箱体」所用的画刷。 | Theme-dependent |
+| `Stroke` | 须线和箱体轮廓的颜色。 | Theme-dependent |

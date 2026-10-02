@@ -1,7 +1,7 @@
 ---
 id: line-chart
-title: Line chart
-description: Connects data points with straight line segments on X and Y axes, ideal for showing trends over time or across categories.
+title: 折线图
+description: 在 X、Y 轴上用直线段连接各数据点，最适合呈现随时间或跨类别的变化趋势。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsCartesianLines from '/img/controls/charts/charts-cartesian-lines.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Line charts use X and Y axes to visualize data points connected by straight line segments. They are ideal for showing trends over time or categories.
+折线图用 X、Y 轴呈现由直线段连接起来的数据点。要展现随时间或跨类别的趋势，它最为合适。
 
 <Image light={chartsCartesianLines} maxWidth={400} position="center" cornerRadius="true" alt="Line chart connecting data points with straight segments to show monthly sales trends over time." />
 
-## When to use
-- **Time series**: Visualizing changes in data over continuous time intervals.
-- **Trend analysis**: Identifying upward, downward, or fluctuating patterns.
-- **Multiple series**: Comparing trends across different categories using multiple lines.
+## 适用场景 {#when-to-use}
+- **时间序列**：呈现数据在连续时间区间上的变化。
+- **趋势分析**：辨识上升、下降或反复波动的走势。
+- **多系列对比**：用多条折线比较不同类别的走势。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -40,7 +40,7 @@ Line charts use X and Y axes to visualize data points connected by straight line
                     </CartesianChart>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public ObservableCollection<int> LineSeries2023 { get; } = new()
 {
@@ -53,19 +53,19 @@ public ObservableCollection<int> LineSeries2024 { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `Title` | The name of the series shown in the legend. | `null` |
-| `ItemsSource` | The collection of data items to display. | `null` |
-| `CategoryPath` | Path to the property used for the X-axis (category). | `null` |
-| `ValuePath` | Path to the property used for the Y-axis (value). | `null` |
-| `Stroke` | The color of the line. | Theme-dependent |
-| `StrokeThickness` | The thickness of the line. | `2` |
-| `ShowMarkers` | Whether to display individual data point markers. Marker styling is visible only when this is `true`. | `false` |
-| `MarkerSize` | The size of the markers in pixels. | `8` |
-| `MarkerShape` | The shape of the markers, such as `Circle` or `Square`. | `Circle` |
-| `MarkerFill` | Brush used to fill the markers. When `null`, the series stroke is used. | `null` |
-| `MarkerStroke` | Brush used for the marker outlines. | `null` |
-| `MarkerStrokeThickness` | Thickness of the marker outlines. When `NaN`, the series `StrokeThickness` is used. | `NaN` |
+| `Title` | 在图例中显示的系列名称。 | `null` |
+| `ItemsSource` | 要显示的数据项集合。 | `null` |
+| `CategoryPath` | 指向 X 轴（类别）所用属性的路径。 | `null` |
+| `ValuePath` | 指向 Y 轴（数值）所用属性的路径。 | `null` |
+| `Stroke` | 折线的颜色。 | Theme-dependent |
+| `StrokeThickness` | 折线的粗细。 | `2` |
+| `ShowMarkers` | 是否显示各个数据点的标记。只有它为 `true` 时，标记的样式设置才看得出效果。 | `false` |
+| `MarkerSize` | 标记的大小，单位为像素。 | `8` |
+| `MarkerShape` | 标记的形状，比如 `Circle` 或 `Square`。 | `Circle` |
+| `MarkerFill` | 填充标记所用的画刷。为 `null` 时，使用系列的线条颜色。 | `null` |
+| `MarkerStroke` | 标记轮廓所用的画刷。 | `null` |
+| `MarkerStrokeThickness` | 标记轮廓的粗细。为 `NaN` 时，使用系列的 `StrokeThickness`。 | `NaN` |

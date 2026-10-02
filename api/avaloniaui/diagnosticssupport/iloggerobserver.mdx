@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ILoggerObserver Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">AvaloniaUI.DiagnosticsSupport</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">AvaloniaUI.DiagnosticsSupport</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>AvaloniaUI.DiagnosticsSupport.Avalonia</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>AvaloniaUI.DiagnosticsSupport.Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>AvaloniaUI.DiagnosticsSupport</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>AvaloniaUI.DiagnosticsSupport</code>
 </div>
 </div>
 
@@ -42,24 +42,24 @@ public interface ILoggerObserver
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsEnabled](#uid-708f771f20) | No summary available. |
-| [Log](#uid-f8eb4fe79e) | No summary available. |
+| [IsEnabled](#uid-708f771f20) | 暂无摘要。 |
+| [Log](#uid-f8eb4fe79e) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-708f771f20"></span>
 
-### IsEnabled Method
+### IsEnabled 方法 {#isenabled-method}
 
 ```csharp
 public bool IsEnabled(AvaloniaUI.DiagnosticsProtocol.Application.LogEntryVerbosity level, string area)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `level` [AvaloniaUI.DiagnosticsProtocol.Application.LogEntryVerbosity](xref:AvaloniaUI.DiagnosticsProtocol.Application.LogEntryVerbosity)
 
@@ -67,7 +67,7 @@ public bool IsEnabled(AvaloniaUI.DiagnosticsProtocol.Application.LogEntryVerbosi
 `area` string
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -78,13 +78,13 @@ bool
 
 <span id="uid-f8eb4fe79e"></span>
 
-### Log Method
+### Log 方法 {#log-method}
 
 ```csharp
 public void Log(AvaloniaUI.DiagnosticsProtocol.Application.LogEntryVerbosity level, string area, object source, string messageTemplate, Exception exception, ReadOnlySpan<object> propertyValues)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `level` [AvaloniaUI.DiagnosticsProtocol.Application.LogEntryVerbosity](xref:AvaloniaUI.DiagnosticsProtocol.Application.LogEntryVerbosity)
 

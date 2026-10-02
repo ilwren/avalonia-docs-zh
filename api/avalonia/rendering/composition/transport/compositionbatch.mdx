@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">CompositionBatch Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Rendering.Composition.Transport</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Rendering.Composition.Transport</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/Transport/Batch.cs">Batch.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Rendering/Composition/Transport/Batch.cs">Batch.cs</a>
 </div>
 
 </div>
@@ -54,13 +54,13 @@ public class CompositionBatch
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositionBatch
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> CompositionBatch
 </div>
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Processed](#uid-37c34011e0) | Indicates that batch got deserialized on the render thread and will soon be rendered. It's generally a good time to start producing the next one |
 | [Rendered](#uid-7930b51027) | Indicates that batch got rendered on the render thread. It's generally a good time to start producing the next one |
@@ -69,7 +69,7 @@ public class CompositionBatch
 
 <span id="uid-37c34011e0"></span>
 
-### Processed Property
+### Processed 属性 {#processed-property}
 
 Indicates that batch got deserialized on the render thread and will soon be rendered.
 It's generally a good time to start producing the next one
@@ -78,7 +78,7 @@ It's generally a good time to start producing the next one
 public System.Threading.Tasks.Task Processed { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 To allow timing-sensitive code to receive the notification in time, the TaskCompletionSource
 is configured to invoke continuations _synchronously_, so your `await` could happen from the render loop
@@ -91,7 +91,7 @@ It's recommended to use Dispatcher.AwaitOnPriority when consuming from the UI th
 
 <span id="uid-7930b51027"></span>
 
-### Rendered Property
+### Rendered 属性 {#rendered-property}
 
 Indicates that batch got rendered on the render thread.
 It's generally a good time to start producing the next one
@@ -100,7 +100,7 @@ It's generally a good time to start producing the next one
 public System.Threading.Tasks.Task Rendered { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 To allow timing-sensitive code to receive the notification in time, the TaskCompletionSource
 is configured to invoke continuations _synchronously_, so your `await` could happen from the render loop

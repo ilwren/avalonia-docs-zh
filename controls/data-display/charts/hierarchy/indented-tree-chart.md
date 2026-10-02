@@ -1,7 +1,7 @@
 ---
 id: indented-tree-chart
-title: Indented tree chart
-description: Represents hierarchies using a file-explorer-style indented layout within a charting container, supporting advanced styling and interactions.
+title: 缩进树图
+description: 在图表容器内以文件管理器式的缩进版面呈现层级，支持更丰富的样式和交互。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsHierarchicalIndentedtree from '/img/controls/charts/charts-hierarchical-tree.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Indented tree charts represent hierarchies using a layout similar to a standard file explorer or tree view, but within a charting container for advanced styling and interactions.
+缩进树图的版面与常见的文件管理器或树视图类似，只是它位于图表容器之中，因而能获得更丰富的样式和交互能力。
 
 <Image light={chartsHierarchicalIndentedtree} maxWidth={400} position="center" cornerRadius="true" alt="Indented tree chart showing a file-explorer-style hierarchy with parent and child nodes offset by indentation." />
 
-## When to use
-- **File system explorer**: Building custom navigators for local or cloud storage.
-- **Bill of materials (BOM)**: Showing a multi-level product structure in manufacturing.
-- **Settings/config**: Grouping complex nested configuration options visually.
+## 适用场景 {#when-to-use}
+- **文件系统浏览器**：为本地或云端存储打造自定义导航界面。
+- **物料清单（BOM）**：呈现制造业中多层级的产品结构。
+- **设置/配置**：把层层嵌套的复杂配置项分门别类地呈现出来。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -32,7 +32,7 @@ Indented tree charts represent hierarchies using a layout similar to a standard 
                             ChildrenPath="Children" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public class TreeNode
 {
@@ -55,15 +55,15 @@ public ObservableCollection<TreeNode> IndentedTreeData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The root level nodes. | `null` |
-| `ValuePath` | Optional numeric value displayed next to each label. | `null` |
-| `LabelPath` | The property name for the item text. | `null` |
-| `ChildrenPath` | The property name for child collections. | `null` |
-| `IndentSize` | The horizontal offset for each hierarchy level. | `20.0` |
-| `RowHeight` | The height of each rendered row. | `24.0` |
-| `ShowLines` | Whether to display connector lines between nodes. | `true` |
-| `ShowIcons` | Whether to display folder and leaf icons. | `true` |
+| `ItemsSource` | 根层级的节点。 | `null` |
+| `ValuePath` | 显示在各标签旁边的可选数值。 | `null` |
+| `LabelPath` | 条目文本所对应的属性名。 | `null` |
+| `ChildrenPath` | 子集合所对应的属性名。 | `null` |
+| `IndentSize` | 每一层级的横向缩进量。 | `20.0` |
+| `RowHeight` | 每一行的渲染高度。 | `24.0` |
+| `ShowLines` | 是否在节点之间显示连接线。 | `true` |
+| `ShowIcons` | 是否显示文件夹和叶节点图标。 | `true` |

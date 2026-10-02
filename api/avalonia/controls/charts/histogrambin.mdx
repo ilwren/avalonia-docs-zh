@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HistogramBin Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Represents a computed histogram bin.
+表示一个算好的直方图分箱。
 
 </div>
 
@@ -50,70 +50,70 @@ public struct HistogramBin
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> HistogramBin
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> HistogramBin
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;HistogramBin&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;HistogramBin&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [HistogramBin](#uid-6408e38dcf) | Represents a computed histogram bin. |
+| [HistogramBin](#uid-6408e38dcf) | 表示一个算好的直方图分箱。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6408e38dcf"></span>
 
-### HistogramBin Constructor
+### HistogramBin 构造函数 {#histogrambin-constructor}
 
-Represents a computed histogram bin.
+表示一个算好的直方图分箱。
 
 ```csharp
 public HistogramBin(double BinStart, double BinEnd, int Count)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `BinStart` double
 
-The inclusive lower bound of the bin.
+该分箱的下界（含）。
 
 
 `BinEnd` double
 
-The upper bound of the bin.
+该分箱的上界。
 
 
 `Count` int
 
-The number of values in the bin.
+该分箱中的值的个数。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-e55481566f) | No summary available. |
-| [Equals (2 overloads)](#uid-bf3bde5eea) | No summary available. |
-| [GetHashCode](#uid-0d8e5f76bf) | No summary available. |
-| [ToString](#uid-a86a987cc7) | No summary available. |
+| [Deconstruct](#uid-e55481566f) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-bf3bde5eea) | 暂无摘要。 |
+| [GetHashCode](#uid-0d8e5f76bf) | 暂无摘要。 |
+| [ToString](#uid-a86a987cc7) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-e55481566f"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(double& BinStart, double& BinEnd, int& Count)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `BinStart` double&amp;
 
@@ -128,24 +128,24 @@ public void Deconstruct(double& BinStart, double& BinEnd, int& Count)
 
 <span id="uid-bf3bde5eea"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-24706b6b62"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Charts.HistogramBin other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.Charts.HistogramBin](xref:Avalonia.Controls.Charts.HistogramBin)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -156,18 +156,18 @@ bool
 
 <span id="uid-70501ba5d6"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -178,13 +178,13 @@ bool
 
 <span id="uid-0d8e5f76bf"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -195,34 +195,34 @@ int
 
 <span id="uid-a86a987cc7"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [BinEnd](#uid-4d0f801c7c) | The upper bound of the bin. |
-| [BinStart](#uid-00a3514d2a) | The inclusive lower bound of the bin. |
-| [Count](#uid-ab57ec5d2f) | The number of values in the bin. |
+| [BinEnd](#uid-4d0f801c7c) | 该分箱的上界。 |
+| [BinStart](#uid-00a3514d2a) | 该分箱的下界（含）。 |
+| [Count](#uid-ab57ec5d2f) | 该分箱中的值的个数。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4d0f801c7c"></span>
 
-### BinEnd Property
+### BinEnd 属性 {#binend-property}
 
-The upper bound of the bin.
+该分箱的上界。
 
 ```csharp
 public double BinEnd { get; set; }
@@ -234,9 +234,9 @@ public double BinEnd { get; set; }
 
 <span id="uid-00a3514d2a"></span>
 
-### BinStart Property
+### BinStart 属性 {#binstart-property}
 
-The inclusive lower bound of the bin.
+该分箱的下界（含）。
 
 ```csharp
 public double BinStart { get; set; }
@@ -248,9 +248,9 @@ public double BinStart { get; set; }
 
 <span id="uid-ab57ec5d2f"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
-The number of values in the bin.
+该分箱中的值的个数。
 
 ```csharp
 public int Count { get; set; }

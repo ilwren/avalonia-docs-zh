@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextPageBand Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -55,25 +55,25 @@ public class TextPageBand
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextPageBand
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextPageBand
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TextPageBand (3 overloads)](#uid-bb9cebf571) | Initializes a band over a new empty band document with a fresh identity. |
 
 <span id="uid-bb9cebf571"></span>
 
-### TextPageBand overloads
+### TextPageBand 的重载 {#textpageband-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-64a93b6452"></span>
 
-#### TextPageBand Constructor
+#### TextPageBand 构造函数 {#textpageband-constructor}
 
 Initializes a band over a new empty band document with a fresh identity.
 
@@ -81,7 +81,7 @@ Initializes a band over a new empty band document with a fresh identity.
 public TextPageBand(Avalonia.Controls.Documents.PageBandRole role, Avalonia.Controls.Documents.PageBandRule rule)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `role` [Avalonia.Controls.Documents.PageBandRole](xref:Avalonia.Controls.Documents.PageBandRole)
 
@@ -95,7 +95,7 @@ public TextPageBand(Avalonia.Controls.Documents.PageBandRole role, Avalonia.Cont
 
 <span id="uid-09e1fe8378"></span>
 
-#### TextPageBand Constructor
+#### TextPageBand 构造函数 {#textpageband-constructor-1}
 
 Initializes a band over `document`, a band-rooted document, with a fresh identity.
 
@@ -103,7 +103,7 @@ Initializes a band over `document`, a band-rooted document, with a fresh identit
 public TextPageBand(Avalonia.Controls.Documents.TextModel.TextDocument document, Avalonia.Controls.Documents.PageBandRole role, Avalonia.Controls.Documents.PageBandRule rule)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `document` [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
@@ -120,7 +120,7 @@ public TextPageBand(Avalonia.Controls.Documents.TextModel.TextDocument document,
 
 <span id="uid-e0d35647e7"></span>
 
-#### TextPageBand Constructor
+#### TextPageBand 构造函数 {#textpageband-constructor-2}
 
 Initializes a band over `document` with a known identity (a restored snapshot).
 
@@ -128,7 +128,7 @@ Initializes a band over `document` with a known identity (a restored snapshot).
 public TextPageBand(Guid id, Avalonia.Controls.Documents.TextModel.TextDocument document, Avalonia.Controls.Documents.PageBandRole role, Avalonia.Controls.Documents.PageBandRule rule)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `id` Guid
 
@@ -144,24 +144,24 @@ public TextPageBand(Guid id, Avalonia.Controls.Documents.TextModel.TextDocument 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Document](#uid-c28d6caaa5) | The band's content. |
+| [Document](#uid-c28d6caaa5) | 该带状区域的内容。 |
 | [Id](#uid-97ae960624) | The band's identity, kept through snapshots and clones: what a section's references name. |
 | [Name](#uid-0a46247550) | The band's name, when the source format named it; null otherwise. Formats that reference bands by name rather than by identity write it back on save, so a document loaded and saved keeps the names it arrived with. |
 | [Owner](#uid-7a91ed9807) | The document that owns the band, null while it is unowned. |
-| [Role](#uid-8fd810da93) | Whether the band is a header or a footer. |
+| [Role](#uid-8fd810da93) | 该带状区域是页眉还是页脚。 |
 | [Rule](#uid-502d1f43f7) | Which pages the band claims by itself; see [Avalonia.Controls.Documents.PageBandRule](xref:Avalonia.Controls.Documents.PageBandRule). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c28d6caaa5"></span>
 
-### Document Property
+### Document 属性 {#document-property}
 
-The band's content.
+该带状区域的内容。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument Document { get; set; }
@@ -173,7 +173,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument Document { get; set; }
 
 <span id="uid-97ae960624"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 The band's identity, kept through snapshots and clones: what a section's references name.
 
@@ -187,7 +187,7 @@ public Guid Id { get; set; }
 
 <span id="uid-0a46247550"></span>
 
-### Name Property
+### Name 属性 {#name-property}
 
 The band's name, when the source format named it; null otherwise. Formats that
 reference bands by name rather than by identity write it back on save, so a
@@ -203,7 +203,7 @@ public string Name { get; set; }
 
 <span id="uid-7a91ed9807"></span>
 
-### Owner Property
+### Owner 属性 {#owner-property}
 
 The document that owns the band, null while it is unowned.
 
@@ -217,9 +217,9 @@ public Avalonia.Controls.Documents.TextModel.TextDocument Owner { get; set; }
 
 <span id="uid-8fd810da93"></span>
 
-### Role Property
+### Role 属性 {#role-property}
 
-Whether the band is a header or a footer.
+该带状区域是页眉还是页脚。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBandRole Role { get; set; }
@@ -231,7 +231,7 @@ public Avalonia.Controls.Documents.PageBandRole Role { get; set; }
 
 <span id="uid-502d1f43f7"></span>
 
-### Rule Property
+### Rule 属性 {#rule-property}
 
 Which pages the band claims by itself; see [Avalonia.Controls.Documents.PageBandRule](xref:Avalonia.Controls.Documents.PageBandRule).
 
@@ -241,19 +241,19 @@ public Avalonia.Controls.Documents.PageBandRule Rule { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Changed](#uid-86dc8ebe0c) | Raised when the role or rule changes. |
+| [Changed](#uid-86dc8ebe0c) | 角色或规则发生变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-86dc8ebe0c"></span>
 
-### Changed Event
+### Changed 事件 {#changed-event}
 
-Raised when the role or rule changes.
+角色或规则发生变化时抛出。
 
 ```csharp
 public event EventHandler Changed

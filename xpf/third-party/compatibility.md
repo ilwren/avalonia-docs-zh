@@ -3,18 +3,18 @@ id: compatibility
 title: Library Compatibility
 ---
 
-This page covers compatibility notes for specific third-party libraries with Avalonia XPF. For enabling Win32 API shims (required by most third-party libraries on non-Windows platforms), see [Win32 API Shims](/xpf/third-party/win32-api-shims).
+本页汇总了特定第三方库与 Avalonia XPF 的兼容性说明。关于如何启用 Win32 API shim（多数第三方库在非 Windows 平台上都要靠它），请见 [Win32 API shim](/xpf/third-party/win32-api-shims)。
 
 ## DevExpress
 
-DevExpress controls are widely used with XPF. To get started:
+DevExpress 控件与 XPF 搭配的人不少。上手方法如下：
 
-1. Enable Win32 API shims in your `App` constructor or `Program.Main` (required for DevExpress controls):
+1. 在 `App` 构造函数或 `Program.Main` 中启用 Win32 API shim（DevExpress 控件必需）：
    ```csharp
    AvaloniaUI.Xpf.WinApiShim.WinApiShimSetup.AutoEnable();
    ```
 
-   If your application also uses libraries that provide their own cross-platform support (and should not be intercepted by the shim), use the filter callback:
+   若你的应用还用了自带跨平台支持、不该被 shim 拦截的库，请借助筛选回调：
    ```csharp
    AvaloniaUI.Xpf.WinApiShim.WinApiShimSetup.AutoEnable(asm =>
    {
@@ -26,39 +26,39 @@ DevExpress controls are widely used with XPF. To get started:
    });
    ```
 
-2. Verify shims are enabled in the correct location. A common mistake is enabling shims in `Program.cs` for the macOS launcher project but not in `App.xaml.cs` (or vice versa). Shims must be enabled before any third-party assembly attempts to call a Win32 API.
+2. 请确认 shim 启用在了对的地方。一个常见的疏漏是只在 macOS 启动器项目的 `Program.cs` 里启用了 shim，却漏了 `App.xaml.cs`（或者反过来）。shim 必须赶在任何第三方程序集调用 Win32 API 之前就启用。
 
-3. Be aware of the following platform-specific limitations:
+3. 另外还要留意下列平台专属的限制：
 
-   - **GDI+ dependency**: Some DevExpress controls (DocumentPreviewControl, PdfViewerControl, XtraReport) depend on `System.Drawing.Common` (GDI+), which is deprecated on non-Windows platforms. Enable DevExpress's Skia rendering engine where available. Contact DevExpress support for guidance on Skia support for specific controls.
-   - **LoadingDecorator**: The DevExpress `LoadingDecorator` with `UseSplashScreen=true` requires multiple UI threads, which is not supported on macOS. Use `WaitIndicator` as an alternative.
-   - **Linux dependencies**: DevExpress controls on Linux require `libgdiplus`. See [Linux: Other Dependencies](/xpf/platforms/linux#other-dependencies).
+   - **GDI+ 依赖**：某些 DevExpress 控件（DocumentPreviewControl、PdfViewerControl、XtraReport）依赖 `System.Drawing.Common`（GDI+），而它在非 Windows 平台上已废弃。能用的地方请启用 DevExpress 的 Skia 渲染引擎；具体控件对 Skia 的支持情况，请咨询 DevExpress 支持。
+   - **LoadingDecorator**：带 `UseSplashScreen=true` 的 DevExpress `LoadingDecorator` 需要多个 UI 线程，而 macOS 不支持。可改用 `WaitIndicator`。
+   - **Linux 依赖**：Linux 上的 DevExpress 控件需要 `libgdiplus`，请见 [Linux：其他依赖](/xpf/platforms/linux#other-dependencies)。
 
-4. Use the official DevExpress XPF sample as a reference for correct setup: [Avalonia-XPF-Samples/DevExpressApp](https://github.com/AvaloniaUI/Avalonia-XPF-Samples/tree/master/src/DevExpressApp).
+4. 正确的配置方式可参考官方的 DevExpress XPF 示例：[Avalonia-XPF-Samples/DevExpressApp](https://github.com/AvaloniaUI/Avalonia-XPF-Samples/tree/master/src/DevExpressApp)。
 
-DevExpress maintains a demo application showing which of their controls have been tested with XPF.
+DevExpress 维护着一个演示应用，展示他们哪些控件已在 XPF 上验证过。
 
 ## CefSharp
 
-`CefSharp.Wpf.NetCore` is designed for Windows and includes Windows-native Chromium binaries. It does not work on Linux or macOS.
+`CefSharp.Wpf.NetCore` 是为 Windows 设计的，自带 Windows 原生的 Chromium 二进制文件，在 Linux 和 macOS 上用不了。
 
-If CefSharp throws a `NotImplementedException` for `CursorInteropHelper.Create()`, upgrade to XPF 1.6.0 or later, which provides a fallback. As a workaround for older versions, derive from `ChromiumWebBrowser` and override `OnCursorChange` to map CefSharp cursor types to WPF `Cursors`.
+若 CefSharp 针对 `CursorInteropHelper.Create()` 抛出 `NotImplementedException`，请升级到 XPF 1.6.0 或更高版本，那里提供了回退方案。老版本上的变通办法是：从 `ChromiumWebBrowser` 派生并重写 `OnCursorChange`，把 CefSharp 的光标类型映射到 WPF 的 `Cursors`。
 
-For cross-platform browser alternatives, see [Web Content Embedding](/xpf/interop/web-content).
+跨平台的浏览器替代方案请见[嵌入网页内容](/xpf/interop/web-content)。
 
 ## Dragablz
 
-Dragablz uses Win32 APIs that are not fully implemented in the XPF shim layer (such as `DwmGetWindowAttribute` for specific window chrome effects). On Linux, this causes runtime exceptions.
+Dragablz 用到了一些 XPF shim 层尚未完整实现的 Win32 API（比如用于特定窗口外壳效果的 `DwmGetWindowAttribute`），在 Linux 上会抛出运行时异常。
 
-The recommended approach is to fork the Dragablz library and remove or guard the unsupported platform API calls. The unsupported calls are typically in window chrome and tab-tearing code that can be replaced with cross-platform alternatives.
+推荐的做法是 fork 一份 Dragablz，把那些不受支持的平台 API 调用删掉或加上保护。这些调用通常集中在窗口外壳和标签页拖出的代码里，换成跨平台的实现并不难。
 
 ## Caliburn.Micro
 
-When using Caliburn.Micro with XPF, you may encounter threading exceptions (e.g., "The calling thread cannot access this object because a different thread owns it") during startup. This is typically caused by Caliburn.Micro's `WindowManager` accessing WPF window properties from a non-UI thread. Ensure all window operations occur on the dispatcher thread.
+把 Caliburn.Micro 与 XPF 搭配使用时，启动阶段可能遇到线程异常（比如 “The calling thread cannot access this object because a different thread owns it”）。这通常是 Caliburn.Micro 的 `WindowManager` 从非 UI 线程访问 WPF 窗口属性所致。请确保所有窗口操作都在 dispatcher 线程上进行。
 
-## WinForms controls
+## WinForms 控件 {#winforms-controls}
 
-WinForms hosting within XPF is supported on Windows only. To enable native WinForms integration:
+XPF 中承载 WinForms 只在 Windows 上受支持。启用原生 WinForms 集成的方法：
 
 ```xml
 <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
@@ -66,22 +66,22 @@ WinForms hosting within XPF is supported on Windows only. To enable native WinFo
 </PropertyGroup>
 ```
 
-This disables XPF's WinForms shim layer. The conditional ensures your project still builds on other platforms. For cross-platform deployments, provide alternative UI for the functionality that WinForms controls handle on Windows.
+这会关掉 XPF 的 WinForms shim 层。加上条件判断，项目在其他平台上才照样构建得了。若要跨平台部署，请为 Windows 上由 WinForms 控件承担的那部分功能另备一套界面。
 
 ## Aspose
 
-Aspose libraries set their own `DllImportResolver` on certain assemblies. Because .NET allows only one resolver per assembly, this conflicts with XPF's WinApiShim. See [Win32 API Shims: Resolving DllImportResolver Conflicts](/xpf/third-party/win32-api-shims#resolving-dllimportresolver-conflicts) for the workaround.
+Aspose 的库会给某些程序集设置自己的 `DllImportResolver`。由于 .NET 规定每个程序集只能有一个解析器，这就与 XPF 的 WinApiShim 撞了车。变通办法请见 [Win32 API shim：解决 DllImportResolver 冲突](/xpf/third-party/win32-api-shims#resolving-dllimportresolver-conflicts)。
 
-## Compatibility database
+## 兼容性数据库 {#compatibility-database}
 
-A [compatibility database](https://avaloniaui.net/xpf/packages) is available for third-party controls. This database provides up-to-date status information for controls from major vendors.
+我们提供了一个面向第三方控件的[兼容性数据库](https://avaloniaui.net/xpf/packages)，其中收录了各大厂商控件的最新状态。
 
 :::info
-If you find that a control marked as `Fix In Progress` or `Untested` is mission-critical for your application, contact the support team. The Avalonia team is committed to working with you to ensure compatibility.
+若某个被标为 `Fix In Progress` 或 `Untested` 的控件对你的应用举足轻重，请联系支持团队。Avalonia 团队乐意与你一道把兼容性问题解决掉。
 :::
 
-### Compatibility notes
+### 兼容性说明 {#compatibility-notes}
 
-* **Pure WPF controls**: Third-party controls that are implemented purely in WPF typically work without any issues, even if not listed in the compatibility database.
-* **Unlisted vendors**: The absence of a control vendor from the database does not indicate incompatibility. Test any controls you need.
-* **Known challenges**: Issues most commonly arise with controls that use GDI or WinForms components.
+* **纯 WPF 控件**：纯用 WPF 实现的第三方控件通常都能正常工作，哪怕它没被收进兼容性数据库。
+* **未收录的厂商**：数据库里没有某家控件厂商，并不代表它不兼容。你需要的控件，自己测一测便知。
+* **常见的难题**：问题多半出在那些用到 GDI 或 WinForms 组件的控件上。

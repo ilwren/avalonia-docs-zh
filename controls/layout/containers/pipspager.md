@@ -1,7 +1,7 @@
 ---
 id: pipspager
 title: PipsPager
-description: Reference for the PipsPager control in Avalonia, which displays interactive dot indicators for paginated navigation with optional Previous/Next buttons.
+description: Avalonia PipsPager 控件参考：它用一排可交互的圆点指示分页位置，并可选配上一页/下一页按钮。
 doc-type: reference
 ---
 
@@ -14,59 +14,59 @@ import PipsPagerPillTemplateScreenshot from '/img/controls/pipspager/pipspager-p
 
 # PipsPager
 
-`PipsPager` is a page indicator control that displays a row of interactive dots (pips) representing pages in a paginated collection. Users click a pip or use the optional Previous/Next navigation buttons to change the selected page. When the number of pages exceeds `MaxVisiblePips`, the pips scroll automatically to keep the selected pip visible.
+`PipsPager` 是一个页码指示控件，用一排可交互的圆点（pip）表示分页集合中的各页。用户点击某个圆点，或使用可选的上一页/下一页按钮，即可切换当前页。当页数超过 `MaxVisiblePips` 时，圆点会自动滚动，始终让当前选中的那个保持可见。
 
-`PipsPager` is commonly used alongside a `Carousel` or `CarouselPage`, bound through `SelectedPageIndex`.
+`PipsPager` 常与 `Carousel` 或 `CarouselPage` 搭配使用，通过 `SelectedPageIndex` 绑定在一起。
 
 ## Useful Properties
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property | Type | Default | Description |
+| 属性 | 类型 | 默认值 | 说明 |
 | -------- | ---- | ------- | ----------- |
-| `NumberOfPages` | `int` | `0` | Total number of pages represented by the pips. |
-| `SelectedPageIndex` | `int` | `0` | Zero-based index of the currently selected page. Supports two-way binding. Clamped to `[0, NumberOfPages - 1]`. |
-| `MaxVisiblePips` | `int` | `5` | Maximum number of pips visible at once. When `NumberOfPages` exceeds this value, the pips scroll automatically. Minimum value is `1`. |
-| `Orientation` | `Orientation` | `Horizontal` | Layout direction of the pips. `Horizontal` or `Vertical`. |
-| `IsPreviousButtonVisible` | `bool` | `true` | Shows or hides the Previous navigation button. |
-| `IsNextButtonVisible` | `bool` | `true` | Shows or hides the Next navigation button. |
-| `PreviousButtonTheme` | `ControlTheme?` | `null` | Custom theme applied to the Previous navigation button. |
-| `NextButtonTheme` | `ControlTheme?` | `null` | Custom theme applied to the Next navigation button. |
+| `NumberOfPages` | `int` | `0` | 圆点所表示的总页数。 |
+| `SelectedPageIndex` | `int` | `0` | 当前选中页的索引，从 0 开始，支持双向绑定，取值会被钳制在 `[0, NumberOfPages - 1]` 范围内。 |
+| `MaxVisiblePips` | `int` | `5` | 同时可见的圆点数量上限。当 `NumberOfPages` 超过该值时，圆点会自动滚动。最小值为 `1`。 |
+| `Orientation` | `Orientation` | `Horizontal` | 圆点的排列方向：`Horizontal` 或 `Vertical`。 |
+| `IsPreviousButtonVisible` | `bool` | `true` | 显示或隐藏「上一页」导航按钮。 |
+| `IsNextButtonVisible` | `bool` | `true` | 显示或隐藏「下一页」导航按钮。 |
+| `PreviousButtonTheme` | `ControlTheme?` | `null` | 作用于「上一页」导航按钮的自定义主题。 |
+| `NextButtonTheme` | `ControlTheme?` | `null` | 作用于「下一页」导航按钮的自定义主题。 |
 
 ## Pseudo-classes
 
-| Pseudo-class | Condition |
+| 伪类 | 触发条件 |
 | ------------ | --------- |
 | `:first-page` | `SelectedPageIndex` is `0`. |
-| `:last-page` | `SelectedPageIndex` is `NumberOfPages - 1` and `NumberOfPages > 0`. |
+| `:last-page` | `SelectedPageIndex` 为 `NumberOfPages - 1` 且 `NumberOfPages > 0`。 |
 | `:horizontal` | `Orientation` is `Horizontal`. |
 | `:vertical` | `Orientation` is `Vertical`. |
 
-## Events
+## 事件 {#events}
 
-| Event | Args type | Description |
+| 事件 | 参数类型 | 说明 |
 | ----- | --------- | ----------- |
-| `SelectedIndexChanged` | `PipsPagerSelectedIndexChangedEventArgs` | Raised when the selected page changes. Provides `OldIndex` and `NewIndex`. |
+| `SelectedIndexChanged` | `PipsPagerSelectedIndexChangedEventArgs` | 选中页发生变化时引发，提供 `OldIndex` 和 `NewIndex`。 |
 
 ## Keyboard Navigation
 
-- Left / Up arrow: moves to the previous page.
-- Right / Down arrow: moves to the next page.
-- Home: jumps to the first page (index `0`).
-- End: jumps to the last page (`NumberOfPages - 1`).
+- 左 / 上方向键：切换到上一页。
+- 右 / 下方向键：切换到下一页。
+- Home：跳到第一页（索引 `0`）。
+- End：跳到最后一页（`NumberOfPages - 1`）。
 
 ## Styling Resource Keys
 
-Override these resource keys on the `PipsPager` or an ancestor to customize pip indicator colors:
+在 `PipsPager` 或它的某个祖先上覆盖下列资源键，即可定制圆点指示器的颜色：
 
-| Resource key | Description |
+| 资源键 | 说明 |
 | ------------ | ----------- |
-| `PipsPagerSelectionIndicatorForeground` | Default pip color. |
-| `PipsPagerSelectionIndicatorForegroundSelected` | Selected pip color. |
-| `PipsPagerSelectionIndicatorForegroundPointerOver` | Pip color on pointer hover. |
-| `PipsPagerSelectionIndicatorForegroundPressed` | Pip color when pressed. |
+| `PipsPagerSelectionIndicatorForeground` | 圆点的默认颜色。 |
+| `PipsPagerSelectionIndicatorForegroundSelected` | 选中圆点的颜色。 |
+| `PipsPagerSelectionIndicatorForegroundPointerOver` | 指针悬停时圆点的颜色。 |
+| `PipsPagerSelectionIndicatorForegroundPressed` | 按下时圆点的颜色。 |
 
-## Examples
+## 示例 {#examples}
 
 ### Basic PipsPager
 
@@ -76,7 +76,7 @@ Override these resource keys on the `PipsPager` or an ancestor to customize pip 
 
 <Image light={PipsPagerDefaultScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-### PipsPager in Code
+### 在代码中使用 PipsPager {#pipspager-in-code}
 
 ```csharp
 var pager = new PipsPager
@@ -101,9 +101,9 @@ var pager = new PipsPager
            IsNextButtonVisible="False" />
 ```
 
-### Two-Way Binding with a Carousel
+### 与 Carousel 双向绑定 {#two-way-binding-with-a-carousel}
 
-Bind `SelectedPageIndex` to a `Carousel.SelectedIndex` for synchronized navigation:
+把 `SelectedPageIndex` 与 `Carousel.SelectedIndex` 绑定起来，让两者的导航保持同步：
 
 ```xml
 <Grid RowDefinitions="*,Auto">
@@ -135,7 +135,7 @@ Bind `SelectedPageIndex` to a `Carousel.SelectedIndex` for synchronized navigati
 
 <Image light={PipsPagerCarouselScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-### Two-Way Binding with a CarouselPage
+### 与 CarouselPage 双向绑定 {#two-way-binding-with-a-carouselpage}
 
 ```xml
 <Grid RowDefinitions="*,Auto">
@@ -163,9 +163,9 @@ Bind `SelectedPageIndex` to a `Carousel.SelectedIndex` for synchronized navigati
 </Grid>
 ```
 
-### Large Collections with Auto-Scrolling Pips
+### 大集合与自动滚动的圆点 {#large-collections-with-auto-scrolling-pips}
 
-When `NumberOfPages` exceeds `MaxVisiblePips`, the pip strip scrolls automatically to keep the selected pip visible:
+当 `NumberOfPages` 超过 `MaxVisiblePips` 时，圆点条会自动滚动，始终让当前选中的那个保持可见：
 
 ```xml
 <PipsPager NumberOfPages="50"
@@ -175,7 +175,7 @@ When `NumberOfPages` exceeds `MaxVisiblePips`, the pip strip scrolls automatical
 
 <Image light={PipsPagerLargeCollectionScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-### Responding to Selection Changes
+### 响应选中项变化 {#responding-to-selection-changes}
 
 ```csharp
 pager.SelectedIndexChanged += (sender, e) =>
@@ -186,7 +186,7 @@ pager.SelectedIndexChanged += (sender, e) =>
 
 ### Custom Pip Colors
 
-Override the indicator resource keys on the `PipsPager` to change pip colors:
+在 `PipsPager` 上覆盖指示器的资源键，即可改变圆点颜色：
 
 ```xml
 <PipsPager NumberOfPages="5" MaxVisiblePips="5">
@@ -202,7 +202,7 @@ Override the indicator resource keys on the `PipsPager` to change pip colors:
 
 ### Custom Button Themes
 
-Replace the default chevron buttons with custom themed buttons using `PreviousButtonTheme` and `NextButtonTheme`:
+用 `PreviousButtonTheme` 和 `NextButtonTheme` 把默认的箭头按钮换成自定义主题的按钮：
 
 ```xml
 <PipsPager NumberOfPages="5" MaxVisiblePips="5">
@@ -249,9 +249,9 @@ Replace the default chevron buttons with custom themed buttons using `PreviousBu
 
 <Image light={PipsPagerCustomButtonsScreenshot} alt="" position="center" maxWidth={400} cornerRadius="true"/>
 
-### Custom Pip Templates (Pill-Shaped Indicator)
+### 自定义圆点模板（胶囊形指示器） {#custom-pip-templates-pill-shaped-indicator}
 
-Use Style selectors targeting the inner `ListBoxItem` to replace the default dot shape. This example transforms the selected pip from a circle into a horizontal pill:
+用样式选择器定位内部的 `ListBoxItem`，即可替换默认的圆点形状。下面的例子把选中的圆点从圆形变成横向胶囊：
 
 ```xml
 <PipsPager NumberOfPages="5"
@@ -330,7 +330,7 @@ pager.IsPreviousButtonVisible = false;
 pager.IsNextButtonVisible = false;
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [API reference](/api/avalonia/controls/pipspager)
-- [Source code](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PipsPager/PipsPager.cs)
+- [API 参考](/api/avalonia/controls/pipspager)
+- [源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/PipsPager/PipsPager.cs)

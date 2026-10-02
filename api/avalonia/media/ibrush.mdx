@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IBrush Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IBrush.cs">IBrush.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/IBrush.cs">IBrush.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Describes how an area is painted.
+描述一块区域如何绘制。
 
 </div>
 
@@ -52,21 +52,21 @@ public interface IBrush
 
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Opacity](#uid-10e35408e9) | Gets the opacity of the brush. |
-| [Transform](#uid-c200f52e37) | Gets the transform of the brush. |
-| [TransformOrigin](#uid-8d3aef6f1d) | Gets the origin of the brushes [Avalonia.Media.IBrush.Transform](xref:Avalonia.Media.IBrush.Transform) |
+| [Opacity](#uid-10e35408e9) | 获取画刷的不透明度。 |
+| [Transform](#uid-c200f52e37) | 获取画刷的变换。 |
+| [TransformOrigin](#uid-8d3aef6f1d) | 获取画刷 [Avalonia.Media.IBrush.Transform](xref:Avalonia.Media.IBrush.Transform) 的原点 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-10e35408e9"></span>
 
-### Opacity Property
+### Opacity 属性 {#opacity-property}
 
-Gets the opacity of the brush.
+获取画刷的不透明度。
 
 ```csharp
 public double Opacity { get; set; }
@@ -78,9 +78,9 @@ public double Opacity { get; set; }
 
 <span id="uid-c200f52e37"></span>
 
-### Transform Property
+### Transform 属性 {#transform-property}
 
-Gets the transform of the brush.
+获取画刷的变换。
 
 ```csharp
 public Avalonia.Media.ITransform Transform { get; set; }
@@ -92,9 +92,9 @@ public Avalonia.Media.ITransform Transform { get; set; }
 
 <span id="uid-8d3aef6f1d"></span>
 
-### TransformOrigin Property
+### TransformOrigin 属性 {#transformorigin-property}
 
-Gets the origin of the brushes [Avalonia.Media.IBrush.Transform](xref:Avalonia.Media.IBrush.Transform)
+获取画刷 [Avalonia.Media.IBrush.Transform](xref:Avalonia.Media.IBrush.Transform) 的原点
 
 ```csharp
 public Avalonia.RelativePoint TransformOrigin { get; set; }

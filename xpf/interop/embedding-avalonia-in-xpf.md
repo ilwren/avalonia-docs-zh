@@ -1,13 +1,13 @@
 ---
 id: embedding-avalonia-in-xpf
-title: Embedding Avalonia in XPF
+title: 在 XPF 中嵌入 Avalonia
 ---
 
-## Embedding Avalonia controls
+## 嵌入 Avalonia 控件 {#embedding-avalonia-controls}
 
-### Step 1: Add an Avalonia `UserControl`
+### 第 1 步：添加 Avalonia `UserControl` {#step-1-add-an-avalonia-usercontrol}
 
-Add an Avalonia `UserControl` to your application which contains the Avalonia content that you wish to host. For example:
+在应用中添加一个 Avalonia `UserControl`，用来放你想承载的 Avalonia 内容。例如：
 
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -34,9 +34,9 @@ public partial class MyAvaloniaView : UserControl
 }
 ```
 
-### Step 2: Host the Avalonia `UserControl`
+### 第 2 步：承载 Avalonia `UserControl` {#step-2-host-the-avalonia-usercontrol}
 
-Intiantiate an `AvaloniaHost` to host the Avalonia content in an XPF control:
+实例化一个 `AvaloniaHost`，把 Avalonia 内容承载到 XPF 控件中：
 
 ```xml
 <Window x:Class="MyXpfApplication.MainWindow"
@@ -57,13 +57,13 @@ Intiantiate an `AvaloniaHost` to host the Avalonia content in an XPF control:
 </Window>
 ```
 
-## Styling Avalonia controls
+## 为 Avalonia 控件设置样式 {#styling-avalonia-controls}
 
-In XPF you can add Style to the Avalonia control only with the code-behind. Please consider the sample below.
+在 XPF 中，只能通过代码隐藏给 Avalonia 控件加 Style。可参照下面的示例。
 
-### XAML code
+### XAML 代码 {#xaml-code}
 
-Here is an example XAML code snippet demonstrating how to embed an Avalonia control, specifically a `Button`, into a XPF `Window`:
+下面这段 XAML 示例演示了如何把 Avalonia 控件（这里是一个 `Button`）嵌进 XPF 的 `Window`：
 
 ```xml
 <Window
@@ -85,9 +85,9 @@ Here is an example XAML code snippet demonstrating how to embed an Avalonia cont
 </Window>
 ```
 
-### Code-behind C# code
+### 代码隐藏中的 C# 代码 {#code-behind-c-code}
 
-In the code-behind file (`MainWindow.xaml.cs`), you can apply styles to the Avalonia control using the `Styles` property. The following C# code demonstrates how to create a style for the Avalonia `Button`:
+在代码隐藏文件（`MainWindow.xaml.cs`）中，你可以借助 `Styles` 属性给 Avalonia 控件套样式。下面的 C# 代码演示了如何为 Avalonia 的 `Button` 写一条样式：
 
 ```csharp
 using Avalonia.Styling;
@@ -128,12 +128,12 @@ namespace YourNamespace
     }
 }
 ```
-Ensure you replace "YourNamespace" with the actual namespace of your project. This example sets the background color to green and the foreground color to red for the Avalonia `Button` embedded in XPF. Adjust the setters and other properties according to your styling requirements. And if you will follow all the steps correctly your Avalonia control will change according to the style.
+记得把 “YourNamespace” 换成你项目实际的命名空间。这个例子把嵌在 XPF 中的 Avalonia `Button` 的背景设成绿色、前景设成红色。setter 和其他属性请按你自己的样式需求调整。几步都照做下来，你的 Avalonia 控件就会按样式变了模样。
 
-## Adding global styles dynamically
+## 动态添加全局样式 {#adding-global-styles-dynamically}
 
-Adding global styles for Avalonia controls dynamically in code-behind provides flexibility and allows you to apply styles at runtime.
-Use the following C# code to achieve this:
+在代码隐藏中动态为 Avalonia 控件添加全局样式颇为灵活，样式可以在运行时套上去。
+用下面这段 C# 代码即可：
 ```csharp
  // Retrieve the current Avalonia application instance
 var avaloniaApp = Avalonia.Controls.Application.Current;
@@ -144,27 +144,26 @@ avaloniaApp.Styles.Add(new StyleInclude()
     Source = new Uri("avares://YourNamespace/Styles/CustomStyles.xaml") // Adjust the URI accordingly
 });
 ```
-Here, "CustomStyles.xaml" is the XAML file containing the Avalonia styles you want to apply globally.
+这里的 “CustomStyles.xaml” 就是存放你想全局应用的 Avalonia 样式的那个 XAML 文件。
 
-### With a custom Avalonia application
-In more advanced scenarios you may need to fully replace the styles applied by default with your custom styles and
-for that you will need to redefine the Avalonia Application. First step would be to disable the automatic XPF initialization.
+### 搭配自定义 Avalonia 应用类 {#with-a-custom-avalonia-application}
+在更高阶的场景下，你可能想把默认套用的样式整个换成自己的，这就得重新定义 Avalonia Application 了。第一步是关掉 XPF 的自动初始化。
 ```xml
   <PropertyGroup>
     <DisableAutomaticXpfInit>true</DisableAutomaticXpfInit>
   </PropertyGroup>
 ```
-Then you will need to create new Avalonia Application with XAML and code behind. Where in XAML you put your styles which you want to be defined globally.
+接着你要新建一个带 XAML 和代码隐藏的 Avalonia Application，把想全局生效的样式写在 XAML 里。
 
 :::note
-`DataGrid` theme is required for DevTools to work correctly.
+DevTools 要正常工作，`DataGrid` 主题是必需的。
 :::
 
 ```xml
  <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Simple.xaml"/>
 ```
 
-After that you will need to create a separate class which will initialize Avalonia for your XPF project. 
+之后还要再建一个类，由它为你的 XPF 项目初始化 Avalonia。 
 
 ```csharp
 public class MyXpfAvaloniaInitializer
@@ -189,18 +188,18 @@ public class MyXpfAvaloniaInitializer
 ```
 
 :::note
-`ModuleInitializer` attribute is not mandatory here. You can initialize Avalonia by yourself anywhere but you should keep in mind that Avalonia initialization should be done before WPF initialization. That information might be useful for people who are using XPF with F#.
+这里的 `ModuleInitializer` 特性不是必须的。你完全可以在任何地方自行初始化 Avalonia，但要记住一点：Avalonia 的初始化必须赶在 WPF 初始化之前。这一点对用 F# 搭配 XPF 的人尤其有用。
 :::
 
-And after that your styles would be applied for your whole Application.
+这么一来，你的样式就会作用于整个应用了。
 
-## Accessing Avalonia features
+## 用上 Avalonia 的能力 {#accessing-avalonia-features}
 
-Sometimes WPF APIs may not provide the specific features you need. In these cases, there is often an Avalonia API that you can use to fill that gap.
+有时 WPF 的 API 给不了你想要的功能，这时候往往能找到一个 Avalonia 的 API 来补上这个缺口。
 
-## Getting the Avalonia window
+## 取得 Avalonia 窗口 {#getting-the-avalonia-window}
 
-Many Avalonia features are exposed via the top-level `Window` class. Because an XPF `Window` is also an Avalonia `Window`, you can use the following pattern to get a reference to the underlying Avalonia `Window`:
+Avalonia 的许多能力都挂在顶层的 `Window` 类上。由于 XPF 的 `Window` 同时也是一个 Avalonia `Window`，你可以用下面这个写法拿到底层的 Avalonia `Window`：
 
 ```csharp
 if (XpfWpfAbstraction.GetAvaloniaWindowForWindow(xpfWindow) is { } avaloniaWindow)

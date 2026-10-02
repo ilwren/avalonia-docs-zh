@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridCellEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -51,19 +51,19 @@ public class TreeDataGridCellEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridCellEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridCellEventArgs
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This class is used in events such as [Avalonia.Controls.TreeDataGrid.CellPrepared](xref:Avalonia.Controls.TreeDataGrid.CellPrepared),
 [Avalonia.Controls.TreeDataGrid.CellClearing](xref:Avalonia.Controls.TreeDataGrid.CellClearing), and [Avalonia.Controls.TreeDataGrid.CellValueChanged](xref:Avalonia.Controls.TreeDataGrid.CellValueChanged)
 to provide information about the cell that triggered the event.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TreeDataGridCellEventArgs](#uid-98dd6b7785) | Initializes a new instance of the [Avalonia.Controls.TreeDataGridCellEventArgs](xref:Avalonia.Controls.TreeDataGridCellEventArgs) class with the specified cell, column index, and row index. |
 
@@ -71,7 +71,7 @@ to provide information about the cell that triggered the event.
 
 <span id="uid-98dd6b7785"></span>
 
-### TreeDataGridCellEventArgs Constructor
+### TreeDataGridCellEventArgs 构造函数 {#treedatagridcelleventargs-constructor}
 
 Initializes a new instance of the [Avalonia.Controls.TreeDataGridCellEventArgs](xref:Avalonia.Controls.TreeDataGridCellEventArgs) class with
 the specified cell, column index, and row index.
@@ -80,7 +80,7 @@ the specified cell, column index, and row index.
 public TreeDataGridCellEventArgs(Avalonia.Controls.Control cell, int columnIndex, int rowIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `cell` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
@@ -99,9 +99,9 @@ The index of the row that contains the cell.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Cell](#uid-1ded97f73e) | Gets the cell control that triggered the event, or null for drawn cells. |
 | [ColumnIndex](#uid-db9ee70afc) | Gets the index of the column that contains the cell. |
@@ -111,7 +111,7 @@ The index of the row that contains the cell.
 
 <span id="uid-1ded97f73e"></span>
 
-### Cell Property
+### Cell 属性 {#cell-property}
 
 Gets the cell control that triggered the event, or null for drawn cells.
 
@@ -119,7 +119,7 @@ Gets the cell control that triggered the event, or null for drawn cells.
 public Avalonia.Controls.Control Cell { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 A [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) that represents the cell in the [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid), or null if the
 event was raised for a drawn cell that does not have a corresponding control.
@@ -131,7 +131,7 @@ event was raised for a drawn cell that does not have a corresponding control.
 
 <span id="uid-db9ee70afc"></span>
 
-### ColumnIndex Property
+### ColumnIndex 属性 {#columnindex-property}
 
 Gets the index of the column that contains the cell.
 
@@ -139,7 +139,7 @@ Gets the index of the column that contains the cell.
 public int ColumnIndex { get; set; }
 ```
 
-#### Value
+#### 值 {#value-1}
 
 The zero-based index of the column.
 
@@ -150,7 +150,7 @@ The zero-based index of the column.
 
 <span id="uid-07bc13d918"></span>
 
-### RowIndex Property
+### RowIndex 属性 {#rowindex-property}
 
 Gets the index of the row that contains the cell.
 
@@ -158,7 +158,7 @@ Gets the index of the row that contains the cell.
 public int RowIndex { get; set; }
 ```
 
-#### Value
+#### 值 {#value-2}
 
 The zero-based index of the row.
 

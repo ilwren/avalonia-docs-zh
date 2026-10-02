@@ -20,26 +20,24 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IUndoUnit Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Read-only metadata for an undo/redo operation. The reversal mechanics
-live on an internal contract, so a unit obtained from
-[Avalonia.Controls.Documents.Undo.UndoManager.Undo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Undo) or [Avalonia.Controls.Documents.Undo.IUndoScope.Unit](xref:Avalonia.Controls.Documents.Undo.IUndoScope.Unit) can be
-described but not replayed by a caller.
+撤销/重做操作的只读元数据。真正执行回退的机制挂在一份内部契约上，
+因此从 [Avalonia.Controls.Documents.Undo.UndoManager.Undo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Undo) 或 [Avalonia.Controls.Documents.Undo.IUndoScope.Unit](xref:Avalonia.Controls.Documents.Undo.IUndoScope.Unit) 取到的单元只能被描述，调用方无法重放它。
 
 </div>
 
@@ -51,19 +49,19 @@ public interface IUndoUnit
 
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Description](#uid-15b1f4c6f5) | Gets a description of the operation. |
+| [Description](#uid-15b1f4c6f5) | 获取该操作的说明文字。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-15b1f4c6f5"></span>
 
-### Description Property
+### Description 属性 {#description-property}
 
-Gets a description of the operation.
+获取该操作的说明文字。
 
 ```csharp
 public string Description { get; set; }

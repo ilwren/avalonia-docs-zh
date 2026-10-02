@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ClipboardFormats Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -52,11 +52,11 @@ public class ClipboardFormats
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ClipboardFormats
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ClipboardFormats
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Format objects are cached as static singletons so that copy / paste hot
 paths do not allocate new [Avalonia.Input.DataFormat&lt;T&gt;](xref:Avalonia.Input.DataFormat%601) instances per call.
@@ -66,9 +66,9 @@ alternative aliases are also probed where applicable (Linux ships both
 `text/rtf` and `application/rtf`; macOS Word may use
 `com.microsoft.rtf-compatible`).
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TryGetClipboardFormat](#uid-a62b544115) | Returns the rich [Avalonia.Input.DataFormat&lt;T&gt;](xref:Avalonia.Input.DataFormat%601) matching the supplied [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.FormatName](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.FormatName), or when the format is unknown to the clipboard layer. |
 
@@ -76,7 +76,7 @@ alternative aliases are also probed where applicable (Linux ships both
 
 <span id="uid-a62b544115"></span>
 
-### TryGetClipboardFormat Method
+### TryGetClipboardFormat 方法 {#trygetclipboardformat-method}
 
 Returns the rich [Avalonia.Input.DataFormat&lt;T&gt;](xref:Avalonia.Input.DataFormat%601) matching the supplied
 [Avalonia.Controls.Documents.Serialization.IDocumentSerializer.FormatName](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer.FormatName), or
@@ -86,23 +86,23 @@ when the format is unknown to the clipboard layer.
 public Avalonia.Input.DataFormat<byte[]> TryGetClipboardFormat(string formatName)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `formatName` string
 
 Serializer format name (case-insensitive).
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)&lt;byte[]&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [InProcessSnapshot](#uid-cfd34424dd) | In-process-only format carrying a live [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot) reference. Created via [Avalonia.Input.DataFormat.CreateInProcessFormat&lt;T&gt;(string)](xref:Avalonia.Input.DataFormat.CreateInProcessFormat%60%601%28System.String%29) so the value never crosses the platform clipboard boundary — every clipboard backend (Windows, X11, macOS, iOS, Browser) skips [Avalonia.Input.DataFormatKind.InProcess](xref:Avalonia.Input.DataFormatKind.InProcess) entries when serializing to the OS clipboard. Consumed via [Avalonia.Input.Platform.IClipboard.TryGetInProcessDataAsync](xref:Avalonia.Input.Platform.IClipboard.TryGetInProcessDataAsync), which returns the exact same [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance the producer published on the same process. |
 | [Rtf](#uid-03fb021f5d) | Primary platform RTF format for the current OS: |
@@ -112,7 +112,7 @@ Serializer format name (case-insensitive).
 
 <span id="uid-cfd34424dd"></span>
 
-### InProcessSnapshot Property
+### InProcessSnapshot 属性 {#inprocesssnapshot-property}
 
 In-process-only format carrying a live [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot)
 reference. Created via [Avalonia.Input.DataFormat.CreateInProcessFormat&lt;T&gt;(string)](xref:Avalonia.Input.DataFormat.CreateInProcessFormat%60%601%28System.String%29)
@@ -128,7 +128,7 @@ the producer published on the same process.
 public Avalonia.Input.DataFormat<Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot> InProcessSnapshot { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Used by [Avalonia.Controls.Documents.Primitives.Components.ClipboardOperations](xref:Avalonia.Controls.Documents.Primitives.Components.ClipboardOperations) to ship the document snapshot
 reference alongside RTF + plain text, providing a 100%-fidelity
@@ -142,7 +142,7 @@ cross-process and cross-app cases.
 
 <span id="uid-03fb021f5d"></span>
 
-### Rtf Property
+### Rtf 属性 {#rtf-property}
 
 Primary platform RTF format for the current OS:
 
@@ -154,7 +154,7 @@ Primary platform RTF format for the current OS:
 public Avalonia.Input.DataFormat<byte[]> Rtf { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Published as a [Avalonia.Input.DataFormat&lt;T&gt;](xref:Avalonia.Input.DataFormat%601) of [byte](xref:System.Byte) array,
 not [string](xref:System.String). The Win32 clipboard backend writes
@@ -170,7 +170,7 @@ bytes are interchangeable with ASCII bytes here.
 
 <span id="uid-42ecb03ef4"></span>
 
-### RtfAliases Property
+### RtfAliases 属性 {#rtfaliases-property}
 
 Optional fallback identifiers to probe on paste. Empty when the
 primary format is the only known identifier on the current OS.

@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Vector Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Vector.cs">Vector.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Vector.cs">Vector.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Defines a vector.
+定义一个向量。
 
 </div>
 
@@ -54,68 +54,68 @@ public struct Vector
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Vector
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> Vector
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;Vector&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;Vector&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Vector](#uid-90b2ee44cc) | Initializes a new instance of the [Avalonia.Vector](xref:Avalonia.Vector) structure. |
+| [Vector](#uid-90b2ee44cc) | 初始化 [Avalonia.Vector](xref:Avalonia.Vector) 结构的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-90b2ee44cc"></span>
 
-### Vector Constructor
+### Vector 构造函数 {#vector-constructor}
 
-Initializes a new instance of the [Avalonia.Vector](xref:Avalonia.Vector) structure.
+初始化 [Avalonia.Vector](xref:Avalonia.Vector) 结构的新实例。
 
 ```csharp
 public Vector(double x, double y)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `x` double
 
-The X component.
+X 分量。
 
 
 `y` double
 
-The Y component.
+Y 分量。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Abs](#uid-46c877565a) | Returns a vector whose elements are the absolute values of each of the specified vector's elements. |
-| [Add](#uid-5223085307) | Adds the second to the first vector |
-| [Clamp](#uid-a7f3ebdb43) | Restricts a vector between a minimum and a maximum value. |
-| [Cross](#uid-fe0327d565) | Returns the cross product of two vectors. |
-| [Deconstruct](#uid-2a859cf516) | No summary available. |
-| [Distance](#uid-f1e68aa94c) | Computes the Euclidean distance between the two given points. |
+| [Abs](#uid-46c877565a) | 返回一个向量，其各元素为指定向量对应元素的绝对值。 |
+| [Add](#uid-5223085307) | 把第二个向量加到第一个向量上 |
+| [Clamp](#uid-a7f3ebdb43) | 把向量限制在最小值与最大值之间。 |
+| [Cross](#uid-fe0327d565) | 返回两个向量的叉积。 |
+| [Deconstruct](#uid-2a859cf516) | 暂无摘要。 |
+| [Distance](#uid-f1e68aa94c) | 计算给定两点之间的欧几里得距离。 |
 | [DistanceSquared](#uid-8f960f5cea) | Returns the Euclidean distance squared between two specified points |
-| [Divide (2 overloads)](#uid-4e3b9274dd) | Divides the first vector by the second. |
-| [Dot](#uid-4148913918) | Returns the dot product of two vectors. |
-| [Equals (2 overloads)](#uid-ce2cfe6ee3) | Check if two vectors are equal (bitwise). |
-| [GetHashCode](#uid-c00d23029d) | No summary available. |
-| [Max](#uid-2be81d4b1f) | Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors |
-| [Min](#uid-e5a3e14aec) | Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors |
-| [Multiply (2 overloads)](#uid-3669f7bd63) | Multiplies the first vector by the second. |
-| [NearlyEquals](#uid-2fc575cc4e) | Check if two vectors are nearly equal (numerically). |
-| [Negate (2 overloads)](#uid-318cdc1482) | Returns a negated version of this vector. |
-| [Normalize (2 overloads)](#uid-f0c0c4d580) | Returns a normalized version of this vector. |
-| [Parse](#uid-1bf83f4e65) | Parses a [Avalonia.Vector](xref:Avalonia.Vector) string. |
-| [Subtract](#uid-a968b81add) | Subtracts the second from the first vector |
+| [Divide（2 个重载）](#uid-4e3b9274dd) | 用第二个向量去除第一个向量。 |
+| [Dot](#uid-4148913918) | 返回两个向量的点积。 |
+| [Equals（2 个重载）](#uid-ce2cfe6ee3) | 判断两个向量是否相等（按位比较）。 |
+| [GetHashCode](#uid-c00d23029d) | 暂无摘要。 |
+| [Max](#uid-2be81d4b1f) | 返回一个向量，其各元素为两个指定向量中对应元素的较大者 |
+| [Min](#uid-e5a3e14aec) | 返回一个向量，其各元素为两个指定向量中对应元素的较小者 |
+| [Multiply（2 个重载）](#uid-3669f7bd63) | 用第一个向量乘以第二个向量。 |
+| [NearlyEquals](#uid-2fc575cc4e) | 判断两个向量是否近似相等（数值比较）。 |
+| [Negate (2 overloads)](#uid-318cdc1482) | 返回该向量取反后的结果。 |
+| [Normalize (2 overloads)](#uid-f0c0c4d580) | 返回该向量的归一化形式。 |
+| [Parse](#uid-1bf83f4e65) | 解析 [Avalonia.Vector](xref:Avalonia.Vector) 字符串。 |
+| [Subtract](#uid-a968b81add) | 从第一个向量中减去第二个向量 |
 | [ToString](#uid-668c8eb0f9) | Returns the string representation of the vector. |
 | [WithX](#uid-8154f8665f) | Returns a new vector with the specified X component. |
 | [WithY](#uid-57fd81b139) | Returns a new vector with the specified Y component. |
@@ -124,15 +124,15 @@ The Y component.
 
 <span id="uid-46c877565a"></span>
 
-### Abs Method
+### Abs 方法 {#abs-method}
 
-Returns a vector whose elements are the absolute values of each of the specified vector's elements.
+返回一个向量，其各元素为指定向量对应元素的绝对值。
 
 ```csharp
 public Avalonia.Vector Abs()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -143,27 +143,27 @@ public Avalonia.Vector Abs()
 
 <span id="uid-5223085307"></span>
 
-### Add Method
+### Add 方法 {#add-method}
 
-Adds the second to the first vector
+把第二个向量加到第一个向量上
 
 ```csharp
 public Avalonia.Vector Add(Avalonia.Vector a, Avalonia.Vector b)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `a` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first vector.
+第一个向量。
 
 
 `b` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second vector.
+第二个向量。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -176,15 +176,15 @@ The summed vector.
 
 <span id="uid-a7f3ebdb43"></span>
 
-### Clamp Method
+### Clamp 方法 {#clamp-method}
 
-Restricts a vector between a minimum and a maximum value.
+把向量限制在最小值与最大值之间。
 
 ```csharp
 public Avalonia.Vector Clamp(Avalonia.Vector value, Avalonia.Vector min, Avalonia.Vector max)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value` [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -195,7 +195,7 @@ public Avalonia.Vector Clamp(Avalonia.Vector value, Avalonia.Vector min, Avaloni
 `max` [Avalonia.Vector](xref:Avalonia.Vector)
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -206,27 +206,27 @@ public Avalonia.Vector Clamp(Avalonia.Vector value, Avalonia.Vector min, Avaloni
 
 <span id="uid-fe0327d565"></span>
 
-### Cross Method
+### Cross 方法 {#cross-method}
 
-Returns the cross product of two vectors.
+返回两个向量的叉积。
 
 ```csharp
 public double Cross(Avalonia.Vector a, Avalonia.Vector b)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `a` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first vector.
+第一个向量。
 
 
 `b` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second vector.
+第二个向量。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 double
 
@@ -239,13 +239,13 @@ The cross product.
 
 <span id="uid-2a859cf516"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(double& x, double& y)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `x` double&amp;
 
@@ -259,31 +259,31 @@ public void Deconstruct(double& x, double& y)
 
 <span id="uid-f1e68aa94c"></span>
 
-### Distance Method
+### Distance 方法 {#distance-method}
 
-Computes the Euclidean distance between the two given points.
+计算给定两点之间的欧几里得距离。
 
 ```csharp
 public double Distance(Avalonia.Vector value1, Avalonia.Vector value2)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `value1` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first point.
+第一个点。
 
 
 `value2` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second point.
+第二个点。
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 double
 
-The Euclidean distance.
+欧几里得距离。
 
 
 </section>
@@ -292,7 +292,7 @@ The Euclidean distance.
 
 <span id="uid-8f960f5cea"></span>
 
-### DistanceSquared Method
+### DistanceSquared 方法 {#distancesquared-method}
 
 Returns the Euclidean distance squared between two specified points
 
@@ -300,19 +300,19 @@ Returns the Euclidean distance squared between two specified points
 public double DistanceSquared(Avalonia.Vector value1, Avalonia.Vector value2)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `value1` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first point.
+第一个点。
 
 
 `value2` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second point.
+第二个点。
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 double
 
@@ -323,37 +323,37 @@ The Euclidean distance squared.
 
 <span id="uid-4e3b9274dd"></span>
 
-### Divide overloads
+### Divide 的重载 {#divide-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-da1aa4470a"></span>
 
-#### Divide Method
+#### Divide 方法 {#divide-method}
 
-Divides the first vector by the second.
+用第二个向量去除第一个向量。
 
 ```csharp
 public Avalonia.Vector Divide(Avalonia.Vector a, Avalonia.Vector b)
 ```
 
-##### Parameters
+##### 参数 {#parameters-7}
 
 `a` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first vector.
+第一个向量。
 
 
 `b` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second vector.
+第二个向量。
 
 
-##### Returns
+##### 返回值 {#returns-6}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaled vector.
+缩放后的向量。
 
 
 </section>
@@ -362,31 +362,31 @@ The scaled vector.
 
 <span id="uid-a9c5d076b3"></span>
 
-#### Divide Method
+#### Divide 方法 {#divide-method-1}
 
-Divides the vector by the given scalar.
+用给定的标量去除该向量。
 
 ```csharp
 public Avalonia.Vector Divide(Avalonia.Vector vector, double scalar)
 ```
 
-##### Parameters
+##### 参数 {#parameters-8}
 
 `vector` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The vector
+该向量
 
 
 `scalar` double
 
-The scalar value
+标量值
 
 
-##### Returns
+##### 返回值 {#returns-7}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaled vector.
+缩放后的向量。
 
 
 </section>
@@ -395,27 +395,27 @@ The scaled vector.
 
 <span id="uid-4148913918"></span>
 
-### Dot Method
+### Dot 方法 {#dot-method}
 
-Returns the dot product of two vectors.
+返回两个向量的点积。
 
 ```csharp
 public double Dot(Avalonia.Vector a, Avalonia.Vector b)
 ```
 
-#### Parameters
+#### 参数 {#parameters-9}
 
 `a` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first vector.
+第一个向量。
 
 
 `b` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second vector.
+第二个向量。
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 double
 
@@ -426,26 +426,26 @@ The dot product.
 
 <span id="uid-ce2cfe6ee3"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-22a91123f3"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
-Check if two vectors are equal (bitwise).
+判断两个向量是否相等（按位比较）。
 
 ```csharp
 public bool Equals(Avalonia.Vector other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-10}
 
 `other` [Avalonia.Vector](xref:Avalonia.Vector)
 
 
-##### Returns
+##### 返回值 {#returns-9}
 
 bool
 
@@ -456,18 +456,18 @@ bool
 
 <span id="uid-a8dcc78606"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-11}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-10}
 
 bool
 
@@ -478,13 +478,13 @@ bool
 
 <span id="uid-c00d23029d"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-11}
 
 int
 
@@ -495,15 +495,15 @@ int
 
 <span id="uid-2be81d4b1f"></span>
 
-### Max Method
+### Max 方法 {#max-method}
 
-Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors
+返回一个向量，其各元素为两个指定向量中对应元素的较大者
 
 ```csharp
 public Avalonia.Vector Max(Avalonia.Vector left, Avalonia.Vector right)
 ```
 
-#### Parameters
+#### 参数 {#parameters-12}
 
 `left` [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -511,7 +511,7 @@ public Avalonia.Vector Max(Avalonia.Vector left, Avalonia.Vector right)
 `right` [Avalonia.Vector](xref:Avalonia.Vector)
 
 
-#### Returns
+#### 返回值 {#returns-12}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -522,15 +522,15 @@ public Avalonia.Vector Max(Avalonia.Vector left, Avalonia.Vector right)
 
 <span id="uid-e5a3e14aec"></span>
 
-### Min Method
+### Min 方法 {#min-method}
 
-Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors
+返回一个向量，其各元素为两个指定向量中对应元素的较小者
 
 ```csharp
 public Avalonia.Vector Min(Avalonia.Vector left, Avalonia.Vector right)
 ```
 
-#### Parameters
+#### 参数 {#parameters-13}
 
 `left` [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -538,7 +538,7 @@ public Avalonia.Vector Min(Avalonia.Vector left, Avalonia.Vector right)
 `right` [Avalonia.Vector](xref:Avalonia.Vector)
 
 
-#### Returns
+#### 返回值 {#returns-13}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -547,37 +547,37 @@ public Avalonia.Vector Min(Avalonia.Vector left, Avalonia.Vector right)
 
 <span id="uid-3669f7bd63"></span>
 
-### Multiply overloads
+### Multiply 的重载 {#multiply-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-99976aa58d"></span>
 
-#### Multiply Method
+#### Multiply 方法 {#multiply-method}
 
-Multiplies the first vector by the second.
+用第一个向量乘以第二个向量。
 
 ```csharp
 public Avalonia.Vector Multiply(Avalonia.Vector a, Avalonia.Vector b)
 ```
 
-##### Parameters
+##### 参数 {#parameters-14}
 
 `a` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first vector.
+第一个向量。
 
 
 `b` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second vector.
+第二个向量。
 
 
-##### Returns
+##### 返回值 {#returns-14}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaled vector.
+缩放后的向量。
 
 
 </section>
@@ -586,7 +586,7 @@ The scaled vector.
 
 <span id="uid-e4bbf973e3"></span>
 
-#### Multiply Method
+#### Multiply 方法 {#multiply-method-1}
 
 Multiplies the vector by the given scalar.
 
@@ -594,23 +594,23 @@ Multiplies the vector by the given scalar.
 public Avalonia.Vector Multiply(Avalonia.Vector vector, double scalar)
 ```
 
-##### Parameters
+##### 参数 {#parameters-15}
 
 `vector` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The vector
+该向量
 
 
 `scalar` double
 
-The scalar value
+标量值
 
 
-##### Returns
+##### 返回值 {#returns-15}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaled vector.
+缩放后的向量。
 
 
 </section>
@@ -619,26 +619,26 @@ The scaled vector.
 
 <span id="uid-2fc575cc4e"></span>
 
-### NearlyEquals Method
+### NearlyEquals 方法 {#nearlyequals-method}
 
-Check if two vectors are nearly equal (numerically).
+判断两个向量是否近似相等（数值比较）。
 
 ```csharp
 public bool NearlyEquals(Avalonia.Vector other)
 ```
 
-#### Parameters
+#### 参数 {#parameters-16}
 
 `other` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The other vector.
+另一个向量。
 
 
-#### Returns
+#### 返回值 {#returns-16}
 
 bool
 
-True if vectors are nearly equal.
+若两个向量近似相等则为 true。
 
 
 </section>
@@ -651,15 +651,15 @@ True if vectors are nearly equal.
 
 <span id="uid-fbcb857f06"></span>
 
-#### Negate Method
+#### Negate 方法 {#negate-method}
 
-Returns a negated version of this vector.
+返回该向量取反后的结果。
 
 ```csharp
 public Avalonia.Vector Negate()
 ```
 
-##### Returns
+##### 返回值 {#returns-17}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -672,7 +672,7 @@ The negated vector.
 
 <span id="uid-f0680a96eb"></span>
 
-#### Negate Method
+#### Negate 方法 {#negate-method-1}
 
 Negates the vector
 
@@ -680,18 +680,18 @@ Negates the vector
 public Avalonia.Vector Negate(Avalonia.Vector vector)
 ```
 
-##### Parameters
+##### 参数 {#parameters-17}
 
 `vector` [Avalonia.Vector](xref:Avalonia.Vector)
 
 The vector to negate.
 
 
-##### Returns
+##### 返回值 {#returns-18}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaled vector.
+缩放后的向量。
 
 
 </section>
@@ -704,19 +704,19 @@ The scaled vector.
 
 <span id="uid-b5ccc4e6e3"></span>
 
-#### Normalize Method
+#### Normalize 方法 {#normalize-method}
 
-Returns a normalized version of this vector.
+返回该向量的归一化形式。
 
 ```csharp
 public Avalonia.Vector Normalize()
 ```
 
-##### Returns
+##### 返回值 {#returns-19}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The normalized vector.
+归一化后的向量。
 
 
 </section>
@@ -725,7 +725,7 @@ The normalized vector.
 
 <span id="uid-dcf2f0693d"></span>
 
-#### Normalize Method
+#### Normalize 方法 {#normalize-method-1}
 
 Normalizes the given vector.
 
@@ -733,18 +733,18 @@ Normalizes the given vector.
 public Avalonia.Vector Normalize(Avalonia.Vector vector)
 ```
 
-##### Parameters
+##### 参数 {#parameters-18}
 
 `vector` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The vector
+该向量
 
 
-##### Returns
+##### 返回值 {#returns-20}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The normalized vector.
+归一化后的向量。
 
 
 </section>
@@ -753,22 +753,22 @@ The normalized vector.
 
 <span id="uid-1bf83f4e65"></span>
 
-### Parse Method
+### Parse 方法 {#parse-method}
 
-Parses a [Avalonia.Vector](xref:Avalonia.Vector) string.
+解析 [Avalonia.Vector](xref:Avalonia.Vector) 字符串。
 
 ```csharp
 public Avalonia.Vector Parse(string s)
 ```
 
-#### Parameters
+#### 参数 {#parameters-19}
 
 `s` string
 
-The string.
+该字符串。
 
 
-#### Returns
+#### 返回值 {#returns-21}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -781,27 +781,27 @@ The [Avalonia.Vector](xref:Avalonia.Vector).
 
 <span id="uid-a968b81add"></span>
 
-### Subtract Method
+### Subtract 方法 {#subtract-method}
 
-Subtracts the second from the first vector
+从第一个向量中减去第二个向量
 
 ```csharp
 public Avalonia.Vector Subtract(Avalonia.Vector a, Avalonia.Vector b)
 ```
 
-#### Parameters
+#### 参数 {#parameters-20}
 
 `a` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The first vector.
+第一个向量。
 
 
 `b` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The second vector.
+第二个向量。
 
 
-#### Returns
+#### 返回值 {#returns-22}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
@@ -814,7 +814,7 @@ The difference vector.
 
 <span id="uid-668c8eb0f9"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 Returns the string representation of the vector.
 
@@ -822,7 +822,7 @@ Returns the string representation of the vector.
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-23}
 
 string
 
@@ -835,7 +835,7 @@ The string representation of the vector.
 
 <span id="uid-8154f8665f"></span>
 
-### WithX Method
+### WithX 方法 {#withx-method}
 
 Returns a new vector with the specified X component.
 
@@ -843,18 +843,18 @@ Returns a new vector with the specified X component.
 public Avalonia.Vector WithX(double x)
 ```
 
-#### Parameters
+#### 参数 {#parameters-21}
 
 `x` double
 
-The X component.
+X 分量。
 
 
-#### Returns
+#### 返回值 {#returns-24}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The new vector.
+新的向量。
 
 
 </section>
@@ -863,7 +863,7 @@ The new vector.
 
 <span id="uid-57fd81b139"></span>
 
-### WithY Method
+### WithY 方法 {#withy-method}
 
 Returns a new vector with the specified Y component.
 
@@ -871,42 +871,42 @@ Returns a new vector with the specified Y component.
 public Avalonia.Vector WithY(double y)
 ```
 
-#### Parameters
+#### 参数 {#parameters-22}
 
 `y` double
 
-The Y component.
+Y 分量。
 
 
-#### Returns
+#### 返回值 {#returns-25}
 
 [Avalonia.Vector](xref:Avalonia.Vector)
 
-The new vector.
+新的向量。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Length](#uid-a06f8dab3b) | Length of the vector. |
-| [One](#uid-01d5e8302a) | Returns the vector (1.0, 1.0). |
-| [SquaredLength](#uid-5f97b69ad8) | Squared Length of the vector. |
-| [UnitX](#uid-5b46c08276) | Returns the vector (1.0, 0.0). |
-| [UnitY](#uid-9d76c17fb1) | Returns the vector (0.0, 1.0). |
-| [X](#uid-99a4e6db09) | Gets the X component. |
-| [Y](#uid-38ae948a77) | Gets the Y component. |
-| [Zero](#uid-8dc4bebed3) | Returns the vector (0.0, 0.0). |
+| [Length](#uid-a06f8dab3b) | 向量的长度。 |
+| [One](#uid-01d5e8302a) | 返回向量 (1.0, 1.0)。 |
+| [SquaredLength](#uid-5f97b69ad8) | 向量长度的平方。 |
+| [UnitX](#uid-5b46c08276) | 返回向量 (1.0, 0.0)。 |
+| [UnitY](#uid-9d76c17fb1) | 返回向量 (0.0, 1.0)。 |
+| [X](#uid-99a4e6db09) | 获取 X 分量。 |
+| [Y](#uid-38ae948a77) | 获取 Y 分量。 |
+| [Zero](#uid-8dc4bebed3) | 返回向量 (0.0, 0.0)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a06f8dab3b"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
-Length of the vector.
+向量的长度。
 
 ```csharp
 public double Length { get; set; }
@@ -918,9 +918,9 @@ public double Length { get; set; }
 
 <span id="uid-01d5e8302a"></span>
 
-### One Property
+### One 属性 {#one-property}
 
-Returns the vector (1.0, 1.0).
+返回向量 (1.0, 1.0)。
 
 ```csharp
 public Avalonia.Vector One { get; set; }
@@ -932,9 +932,9 @@ public Avalonia.Vector One { get; set; }
 
 <span id="uid-5f97b69ad8"></span>
 
-### SquaredLength Property
+### SquaredLength 属性 {#squaredlength-property}
 
-Squared Length of the vector.
+向量长度的平方。
 
 ```csharp
 public double SquaredLength { get; set; }
@@ -946,9 +946,9 @@ public double SquaredLength { get; set; }
 
 <span id="uid-5b46c08276"></span>
 
-### UnitX Property
+### UnitX 属性 {#unitx-property}
 
-Returns the vector (1.0, 0.0).
+返回向量 (1.0, 0.0)。
 
 ```csharp
 public Avalonia.Vector UnitX { get; set; }
@@ -960,9 +960,9 @@ public Avalonia.Vector UnitX { get; set; }
 
 <span id="uid-9d76c17fb1"></span>
 
-### UnitY Property
+### UnitY 属性 {#unity-property}
 
-Returns the vector (0.0, 1.0).
+返回向量 (0.0, 1.0)。
 
 ```csharp
 public Avalonia.Vector UnitY { get; set; }
@@ -974,9 +974,9 @@ public Avalonia.Vector UnitY { get; set; }
 
 <span id="uid-99a4e6db09"></span>
 
-### X Property
+### X 属性 {#x-property}
 
-Gets the X component.
+获取 X 分量。
 
 ```csharp
 public double X { get; set; }
@@ -988,9 +988,9 @@ public double X { get; set; }
 
 <span id="uid-38ae948a77"></span>
 
-### Y Property
+### Y 属性 {#y-property}
 
-Gets the Y component.
+获取 Y 分量。
 
 ```csharp
 public double Y { get; set; }
@@ -1002,9 +1002,9 @@ public double Y { get; set; }
 
 <span id="uid-8dc4bebed3"></span>
 
-### Zero Property
+### Zero 属性 {#zero-property}
 
-Returns the vector (0.0, 0.0).
+返回向量 (0.0, 0.0)。
 
 ```csharp
 public Avalonia.Vector Zero { get; set; }

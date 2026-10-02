@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextFootnote Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -57,25 +57,25 @@ public class TextFootnote
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextFootnote
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> TextFootnote
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [TextFootnote (2 overloads)](#uid-6a9a96cc3c) | Initializes a note over a new empty note document, unpaired until an anchor claims it. |
 
 <span id="uid-6a9a96cc3c"></span>
 
-### TextFootnote overloads
+### TextFootnote 的重载 {#textfootnote-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-17ff1272a3"></span>
 
-#### TextFootnote Constructor
+#### TextFootnote 构造函数 {#textfootnote-constructor}
 
 Initializes a note over a new empty note document, unpaired until an anchor claims it.
 
@@ -89,7 +89,7 @@ public TextFootnote()
 
 <span id="uid-d36d9bc1ff"></span>
 
-#### TextFootnote Constructor
+#### TextFootnote 构造函数 {#textfootnote-constructor-1}
 
 Initializes a note over `document`, a note-rooted document.
 
@@ -97,7 +97,7 @@ Initializes a note over `document`, a note-rooted document.
 public TextFootnote(Avalonia.Controls.Documents.TextModel.TextDocument document, int noteId, string label)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `document` [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)
 
@@ -110,11 +110,11 @@ public TextFootnote(Avalonia.Controls.Documents.TextModel.TextDocument document,
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Document](#uid-9fe48918cc) | The note's body. |
+| [Document](#uid-9fe48918cc) | 该便签的正文。 |
 | [Label](#uid-041db1784b) | The note's name in formats that address notes by name (markdown's `[^label]`); never displayed, null for a note created in the editor. |
 | [NoteId](#uid-829086fa7a) | The identity pairing this note with its anchor, document-unique and assigned by the pairing; 0 while unpaired. The displayed number is not the id: ordinals follow anchor order. |
 | [Owner](#uid-8346e4fcf5) | The document that owns the note, null while it is unowned. |
@@ -123,9 +123,9 @@ public TextFootnote(Avalonia.Controls.Documents.TextModel.TextDocument document,
 
 <span id="uid-9fe48918cc"></span>
 
-### Document Property
+### Document 属性 {#document-property}
 
-The note's body.
+该便签的正文。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument Document { get; set; }
@@ -137,7 +137,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument Document { get; set; }
 
 <span id="uid-041db1784b"></span>
 
-### Label Property
+### Label 属性 {#label-property}
 
 The note's name in formats that address notes by name (markdown's
 `[^label]`); never displayed, null for a note created in the editor.
@@ -152,7 +152,7 @@ public string Label { get; set; }
 
 <span id="uid-829086fa7a"></span>
 
-### NoteId Property
+### NoteId 属性 {#noteid-property}
 
 The identity pairing this note with its anchor, document-unique and assigned
 by the pairing; 0 while unpaired. The displayed number is not the id: ordinals
@@ -168,7 +168,7 @@ public int NoteId { get; set; }
 
 <span id="uid-8346e4fcf5"></span>
 
-### Owner Property
+### Owner 属性 {#owner-property}
 
 The document that owns the note, null while it is unowned.
 
@@ -178,19 +178,19 @@ public Avalonia.Controls.Documents.TextModel.TextDocument Owner { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Changed](#uid-f2fd055b39) | Raised when the id or label changes. |
+| [Changed](#uid-f2fd055b39) | id 或标签发生变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-f2fd055b39"></span>
 
-### Changed Event
+### Changed 事件 {#changed-event}
 
-Raised when the id or label changes.
+id 或标签发生变化时抛出。
 
 ```csharp
 public event EventHandler Changed

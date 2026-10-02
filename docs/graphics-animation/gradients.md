@@ -1,25 +1,25 @@
 ---
 id: gradients
-title: Gradients
-description: How to use LinearGradientBrush, RadialGradientBrush, and ConicGradientBrush to create color transitions in Avalonia UI.
+title: 渐变
+description: 如何用 LinearGradientBrush、RadialGradientBrush 和 ConicGradientBrush 在 Avalonia UI 中做出颜色过渡。
 doc-type: reference
 ---
 
-Gradient brushes create smooth transitions between two or more colors. You can use them anywhere a brush is accepted, including `Background`, `Foreground`, `BorderBrush`, `Fill`, and `Stroke`. Avalonia provides three gradient brush types:
+渐变画刷能在两种或多种颜色之间平滑过渡。凡是接受画刷的地方都能用它们，包括 `Background`、`Foreground`、`BorderBrush`、`Fill` 和 `Stroke`。Avalonia 提供三种渐变画刷：
 
-| Brush | Description |
+| 画刷 | 说明 |
 |---|---|
-| [`LinearGradientBrush`](/api/avalonia/media/lineargradientbrush) | Transitions colors along a straight line. |
-| [`RadialGradientBrush`](/api/avalonia/media/radialgradientbrush) | Transitions colors outward from a center point in an ellipse. |
-| [`ConicGradientBrush`](/api/avalonia/media/conicgradientbrush) | Transitions colors in a sweep around a center point. |
+| [`LinearGradientBrush`](/api/avalonia/media/lineargradientbrush) | 沿一条直线过渡颜色。 |
+| [`RadialGradientBrush`](/api/avalonia/media/radialgradientbrush) | 从中心点向外、以椭圆形式过渡颜色。 |
+| [`ConicGradientBrush`](/api/avalonia/media/conicgradientbrush) | 绕中心点扫掠过渡颜色。 |
 
-All gradient brushes share the `GradientStops` collection and `SpreadMethod` property. The sections below cover each brush type, followed by shared concepts that apply to all of them.
+所有渐变画刷都共有 `GradientStops` 集合和 `SpreadMethod` 属性。下面先分别介绍三种画刷，再讲它们共通的概念。
 
-## Linear gradient brush
+## 线性渐变画刷 {#linear-gradient-brush}
 
-`LinearGradientBrush` blends colors along a line defined by a start point and an end point.
+`LinearGradientBrush` 沿一条由起点和终点定义的直线混合颜色。
 
-### Basic syntax
+### 基本语法 {#basic-syntax}
 
 ```xml
 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
@@ -30,17 +30,17 @@ All gradient brushes share the `GradientStops` collection and `SpreadMethod` pro
 
 ### `StartPoint` and `EndPoint`
 
-These two properties control the direction of the gradient. You can specify values as percentages (for example, `"0%,50%"`) or as absolute points in the bounding box (for example, `"10,15"`).
+这两个属性决定渐变的方向。取值可以写成百分比（比如 `"0%,50%"`），也可以写成边界框内的绝对坐标点（比如 `"10,15"`）。
 
-Common direction patterns:
+常见的方向写法：
 
-| Direction | `StartPoint` | `EndPoint` |
+| 方向 | `StartPoint` | `EndPoint` |
 |---|---|---|
-| Horizontal (left to right) | `0%,50%` | `100%,50%` |
-| Vertical (top to bottom) | `50%,0%` | `50%,100%` |
-| Diagonal (top-left to bottom-right) | `0%,0%` | `100%,100%` |
+| 水平（从左到右） | `0%,50%` | `100%,50%` |
+| 垂直（从上到下） | `50%,0%` | `50%,100%` |
+| 对角（从左上到右下） | `0%,0%` | `100%,100%` |
 
-### Horizontal gradient
+### 水平渐变 {#horizontal-gradient}
 
 ```xml
 <LinearGradientBrush StartPoint="0%,50%" EndPoint="100%,50%">
@@ -49,7 +49,7 @@ Common direction patterns:
 </LinearGradientBrush>
 ```
 
-### Vertical gradient
+### 垂直渐变 {#vertical-gradient}
 
 ```xml
 <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
@@ -58,9 +58,9 @@ Common direction patterns:
 </LinearGradientBrush>
 ```
 
-### Multi-color gradient
+### 多色渐变 {#multi-color-gradient}
 
-Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create transitions through multiple colors. Space the `Offset` values to control where each color appears:
+多加几个 [`GradientStop`](/api/avalonia/media/gradientstop) 元素，就能做出经由多种颜色的过渡。调整各自的 `Offset` 取值即可控制每种颜色出现在哪里：
 
 ```xml
 <LinearGradientBrush StartPoint="0%,50%" EndPoint="100%,50%">
@@ -71,9 +71,9 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 </LinearGradientBrush>
 ```
 
-### Common use cases
+### 常见用法 {#common-use-cases}
 
-#### Button background
+#### 按钮背景 {#button-background}
 
 ```xml
 <Button>
@@ -86,7 +86,7 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 </Button>
 ```
 
-#### Panel background
+#### 面板背景 {#panel-background}
 
 ```xml
 <Border CornerRadius="8">
@@ -100,11 +100,11 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 </Border>
 ```
 
-## Radial gradient brush
+## 径向渐变画刷 {#radial-gradient-brush}
 
-`RadialGradientBrush` blends colors outward from a center point in an elliptical shape.
+`RadialGradientBrush` 以椭圆形式，从中心点向外混合颜色。
 
-### Basic syntax
+### 基本语法 {#basic-syntax-1}
 
 ```xml
 <RadialGradientBrush GradientOrigin="50%,50%" Center="50%,50%" RadiusX="50%" RadiusY="50%">
@@ -113,15 +113,15 @@ Add more [`GradientStop`](/api/avalonia/media/gradientstop) elements to create t
 </RadialGradientBrush>
 ```
 
-### Key properties
+### 关键属性 {#key-properties}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Center` | The center of the outermost ellipse, as a percentage of the bounding box. Defaults to `50%,50%`. |
-| `GradientOrigin` | The point where the gradient starts (the innermost color). Defaults to match `Center`. |
-| `RadiusX`, `RadiusY` | The horizontal and vertical radii of the ellipse. Default to `50%`. |
+| `Center` | 最外层椭圆的中心，以边界框的百分比表示，默认为 `50%,50%`。 |
+| `GradientOrigin` | 渐变起始处（最内侧颜色）的位置，默认与 `Center` 相同。 |
+| `RadiusX`, `RadiusY` | 椭圆的水平和垂直半径，默认均为 `50%`。 |
 
-When you set `GradientOrigin` to a value different from `Center`, the gradient appears off-center, which is useful for simulating lighting effects:
+把 `GradientOrigin` 设成与 `Center` 不同的值，渐变就会偏离中心，这很适合模拟光照效果：
 
 ```xml
 <RadialGradientBrush GradientOrigin="30%,30%" Center="50%,50%">
@@ -130,9 +130,9 @@ When you set `GradientOrigin` to a value different from `Center`, the gradient a
 </RadialGradientBrush>
 ```
 
-### Elliptical gradient
+### 椭圆形渐变 {#elliptical-gradient}
 
-You can create non-circular gradients by giving `RadiusX` and `RadiusY` different values:
+给 `RadiusX` 和 `RadiusY` 设不同的值，即可做出非正圆的渐变：
 
 ```xml
 <RadialGradientBrush Center="50%,50%" RadiusX="80%" RadiusY="40%">
@@ -141,11 +141,11 @@ You can create non-circular gradients by giving `RadiusX` and `RadiusY` differen
 </RadialGradientBrush>
 ```
 
-## Conic gradient brush
+## 锥形渐变画刷 {#conic-gradient-brush}
 
-`ConicGradientBrush` sweeps colors around a center point, similar to the face of a color wheel.
+`ConicGradientBrush` 绕中心点扫掠着铺开颜色，效果就像一张色轮。
 
-### Basic syntax
+### 基本语法 {#basic-syntax-2}
 
 ```xml
 <ConicGradientBrush Center="50%,50%" Angle="0">
@@ -157,37 +157,37 @@ You can create non-circular gradients by giving `RadiusX` and `RadiusY` differen
 </ConicGradientBrush>
 ```
 
-### Key properties
+### 关键属性 {#key-properties-1}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Center` | The center of the sweep. Defaults to `50%,50%`. |
-| `Angle` | The starting angle in degrees, measured clockwise from the top. Defaults to `0`. |
+| `Center` | 扫掠的中心，默认为 `50%,50%`。 |
+| `Angle` | 起始角度，单位为度，自正上方起顺时针计量，默认为 `0`。 |
 
-To create a seamless sweep, set the last `GradientStop` color to match the first.
+要让扫掠首尾无缝衔接，把最后一个 `GradientStop` 的颜色设成与第一个相同即可。
 
-## Shared gradient concepts
+## 渐变的共通概念 {#shared-gradient-concepts}
 
 ### `GradientStop` elements
 
-Every gradient brush contains one or more `GradientStop` elements. Each stop defines a `Color` and an `Offset`:
+每个渐变画刷都含有一个或多个 `GradientStop` 元素，每个渐变停靠点都定义了 `Color` 和 `Offset`：
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Color` | Any valid color value (hex, named color, `rgb()`, `hsl()`, and so on). |
-| `Offset` | A value from `0.0` to `1.0` indicating the position along the gradient. |
+| `Color` | 任意合法的颜色值（十六进制、具名颜色、`rgb()`、`hsl()` 等）。 |
+| `Offset` | `0.0` 到 `1.0` 之间的值，表示在渐变上的位置。 |
 
-If you omit `Offset`, Avalonia distributes the stops evenly. When two stops share the same offset, you get a hard color edge instead of a smooth transition.
+若省略 `Offset`，Avalonia 会把各停靠点均匀铺开。两个停靠点取同一个偏移时，得到的不是平滑过渡，而是一道硬边。
 
 ### `SpreadMethod`
 
-`SpreadMethod` controls what happens when the gradient does not fill the entire area (for example, when a `LinearGradientBrush` has its start and end points inside the bounding box).
+`SpreadMethod` 决定渐变没铺满整片区域时该怎么办（比如 `LinearGradientBrush` 的起点和终点都落在边界框内部）。
 
-| Value | Behavior |
+| 值 | 行为 |
 |---|---|
-| `Pad` (default) | The end colors extend to fill the remaining space. |
-| `Reflect` | The gradient reverses direction and repeats. |
-| `Repeat` | The gradient repeats from the beginning. |
+| `Pad` (default) | 用两端的颜色延展开去，填满剩余空间。 |
+| `Reflect` | 渐变反向重复。 |
+| `Repeat` | 渐变从头开始重复。 |
 
 ```xml
 <LinearGradientBrush StartPoint="0%,50%" EndPoint="50%,50%" SpreadMethod="Reflect">
@@ -198,7 +198,7 @@ If you omit `Offset`, Avalonia distributes the stops evenly. When two stops shar
 
 ### `Opacity`
 
-All gradient brushes inherit the `Opacity` property from `Brush`. Set it to a value between `0.0` (fully transparent) and `1.0` (fully opaque) to make the entire gradient semi-transparent:
+所有渐变画刷都从 `Brush` 继承了 `Opacity` 属性。把它设成 `0.0`（完全透明）到 `1.0`（完全不透明）之间的值，整个渐变就会半透明：
 
 ```xml
 <LinearGradientBrush StartPoint="0%,50%" EndPoint="100%,50%" Opacity="0.5">
@@ -207,11 +207,11 @@ All gradient brushes inherit the `Opacity` property from `Brush`. Set it to a va
 </LinearGradientBrush>
 ```
 
-If you need per-color transparency instead, use an alpha channel in the `Color` value (for example, `#80FF6B6B`).
+若你想让各个颜色各自透明，请在 `Color` 的取值里带上 alpha 通道（比如 `#80FF6B6B`）。
 
-### Creating gradients in code-behind
+### 在代码隐藏中创建渐变 {#creating-gradients-in-code-behind}
 
-You can build gradient brushes in C# when you need to generate them dynamically:
+需要动态生成渐变画刷时，可以在 C# 中把它搭出来：
 
 ```csharp
 var brush = new LinearGradientBrush
@@ -228,9 +228,9 @@ var brush = new LinearGradientBrush
 myBorder.Background = brush;
 ```
 
-The same pattern applies to `RadialGradientBrush` and `ConicGradientBrush`.
+`RadialGradientBrush` 和 `ConicGradientBrush` 的写法同理。
 
-## Full example
+## 完整示例 {#full-example}
 
 <XamlPreview>
 
@@ -300,9 +300,9 @@ The same pattern applies to `RadialGradientBrush` and `ConicGradientBrush`.
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Brushes](/docs/graphics-animation/brushes): Overview of all brush types, including `SolidColorBrush` and tile brushes.
-- [Effects](/docs/graphics-animation/effects): Box shadows, clipping, and opacity masks.
-- [Shapes and geometries](/docs/graphics-animation/shapes-and-geometries): Drawing shapes that you can fill with gradient brushes.
-- [Custom rendering](/docs/graphics-animation/custom-rendering): Low-level drawing with `DrawingContext` where you can use gradient brushes directly.
+- [画刷](/docs/graphics-animation/brushes)：全部画刷类型概览，`SolidColorBrush` 和平铺画刷也包括在内。
+- [效果](/docs/graphics-animation/effects)：盒阴影、裁剪与不透明度遮罩。
+- [形状与几何](/docs/graphics-animation/shapes-and-geometries)：绘制可用渐变画刷填充的各种形状。
+- [自定义渲染](/docs/graphics-animation/custom-rendering)：用 `DrawingContext` 做底层绘制，其中可直接使用渐变画刷。

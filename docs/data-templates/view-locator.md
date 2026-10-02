@@ -1,30 +1,30 @@
 ---
 id: view-locator
-title: View locator
-description: Automatically resolve views for view models using a ViewLocator that implements IDataTemplate.
+title: 视图定位器
+description: 用实现了 IDataTemplate 的 ViewLocator，为视图模型自动解析对应的视图。
 doc-type: explanation
 ---
 
-In MVVM applications, view models contain application logic but have no knowledge of the UI. A *view locator* bridges this gap by automatically resolving the correct view for a given view model. When Avalonia encounters a view model object in a content area, the view locator determines which view to create and display.
+在 MVVM 应用中，视图模型只管应用逻辑，对界面一无所知。*视图定位器* 架起了这座桥：它为给定的视图模型自动找到正确的视图。当 Avalonia 在某个内容区域遇到一个视图模型对象时，就由视图定位器决定该创建并显示哪个视图。
 
 :::info
-ViewLocator is optional. You can achieve the same result using [DataTemplates](/docs/data-templates/data-template-collection) defined in XAML. ViewLocator is included in the default Avalonia project templates as a convenience for MVVM applications.
+ViewLocator 并非必需。用 XAML 中定义的 [DataTemplates](/docs/data-templates/data-template-collection) 也能达到同样效果。Avalonia 默认项目模板之所以带上 ViewLocator，只是为了方便 MVVM 应用。
 :::
 
-## How it works
+## 运作原理 {#how-it-works}
 
-ViewLocator implements the [`IDataTemplate`](/api/avalonia/controls/templates/idatatemplate) interface, which means it participates in Avalonia's standard data template resolution. When a [`ContentControl`](/api/avalonia/controls/contentcontrol) or similar presenter needs to display an object that is not a control, it searches for a matching `IDataTemplate`. A registered ViewLocator matches view model objects and builds the corresponding view.
+ViewLocator 实现了 [`IDataTemplate`](/api/avalonia/controls/templates/idatatemplate) 接口，也就是说它参与 Avalonia 标准的数据模板解析流程。当 [`ContentControl`](/api/avalonia/controls/contentcontrol) 之类的呈现器需要显示一个非控件对象时，就会去搜寻匹配的 `IDataTemplate`；注册过的 ViewLocator 会匹配上视图模型对象，并构建出相应的视图。
 
-The `IDataTemplate` interface has two members:
+`IDataTemplate` 接口有两个成员：
 
-- `Match(object data)` returns `true` if this template can handle the given object.
-- `Build(object data)` creates and returns the control to display.
+- `Match(object data)` —— 若该模板能处理给定对象，则返回 `true`。
+- `Build(object data)` —— 创建并返回用于显示的控件。
 
-## Default implementation
+## 默认实现 {#default-implementation}
 
-The default ViewLocator included in Avalonia project templates uses a naming convention: it replaces `"ViewModel"` with `"View"` in the fully qualified type name and resolves the view type via reflection.
+Avalonia 项目模板自带的 ViewLocator 走的是命名约定：把完全限定类型名中的 `"ViewModel"` 换成 `"View"`，再用反射解析出视图类型。
 
-For example, `MyApp.ViewModels.MainViewModel` resolves to `MyApp.Views.MainView`.
+例如，`MyApp.ViewModels.MainViewModel` 会解析为 `MyApp.Views.MainView`。
 
 ```csharp
 public class ViewLocator : IDataTemplate
@@ -49,15 +49,15 @@ public class ViewLocator : IDataTemplate
 }
 ```
 
-`Match` returns `true` for any object that inherits from `ViewModelBase`. `Build` constructs the view using `Activator.CreateInstance`, or returns an error `TextBlock` if the view type cannot be found.
+对任何继承自 `ViewModelBase` 的对象，`Match` 都返回 `true`。`Build` 用 `Activator.CreateInstance` 构造视图；若找不到对应的视图类型，则返回一个表示出错的 `TextBlock`。
 
 :::tip
-The reflection-based approach is convenient for getting started, but it is not compatible with Native AOT and provides no compile-time safety. For production applications, consider one of the alternatives described below.
+基于反射的做法上手方便，但它不兼容 Native AOT，也没有任何编译期安全保障。用于生产的应用，不妨考虑下面介绍的几种替代方案。
 :::
 
-## Registering the view locator
+## 注册视图定位器 {#registering-the-view-locator}
 
-Register your ViewLocator in `App.axaml` so it is available throughout the application:
+在 `App.axaml` 中注册你的 ViewLocator，让它在整个应用范围内可用：
 
 ```xml
 <Application xmlns="https://github.com/avaloniaui"
@@ -75,31 +75,31 @@ Register your ViewLocator in `App.axaml` so it is available throughout the appli
 </Application>
 ```
 
-Because `ViewLocator` implements `IDataTemplate`, it sits in the `DataTemplates` collection alongside any other data templates you define.
+由于 `ViewLocator` 实现了 `IDataTemplate`，它就和你定义的其他数据模板一样，待在 `DataTemplates` 集合里。
 
-## Using the view locator
+## 使用视图定位器 {#using-the-view-locator}
 
-Once registered, the view locator resolves views automatically wherever a view model appears as content. The most common pattern uses a `ContentControl` bound to a view model property:
+注册之后，凡是视图模型作为内容出现的地方，视图定位器都会自动解析出视图。最常见的写法是用一个 `ContentControl` 绑定到视图模型属性：
 
 ```xml
 <ContentControl Content="{Binding CurrentPage}" />
 ```
 
-When `CurrentPage` is set to an instance of `SettingsViewModel`, the view locator creates a `SettingsView` and displays it inside the `ContentControl`. Changing `CurrentPage` to a different view model automatically swaps the displayed view.
+当 `CurrentPage` 被设为某个 `SettingsViewModel` 实例时，视图定位器会创建一个 `SettingsView` 并把它显示在 `ContentControl` 内部。把 `CurrentPage` 换成另一个视图模型，显示的视图也会随之自动切换。
 
-You can also set a view model directly as a window's `DataContext`:
+也可以把视图模型直接设为窗口的 `DataContext`：
 
 ```csharp
 DataContext = new MainViewModel(); // ViewLocator resolves MainView
 ```
 
-## Alternative approaches
+## 其他做法 {#alternative-approaches}
 
-The default reflection-based ViewLocator works for prototyping, but has limitations: no compile-time verification that views exist, no AOT support, and no way to inject dependencies into views. The following alternatives address these limitations.
+默认那个基于反射的 ViewLocator 做原型够用，但有几处短板：无法在编译期确认视图是否存在、不支持 AOT，也没法给视图注入依赖。下面几种做法可以弥补这些不足。
 
-### Pattern matching
+### 模式匹配 {#pattern-matching}
 
-Replace reflection with explicit type mapping using C# pattern matching. This approach is AOT-compatible and provides compile-time safety:
+用 C# 的模式匹配做显式类型映射，取代反射。这种做法兼容 AOT，也有编译期安全保障：
 
 ```csharp
 public class ViewLocator : IDataTemplate
@@ -119,11 +119,11 @@ public class ViewLocator : IDataTemplate
 }
 ```
 
-You must add a new line to the `switch` expression for each view model. This is a deliberate trade-off: a small amount of manual maintenance in exchange for compile-time checks and AOT compatibility.
+每加一个视图模型，就得往 `switch` 表达式里添一行。这是有意为之的取舍：用少量手工维护，换来编译期检查和 AOT 兼容。
 
-### XAML data templates
+### XAML 数据模板 {#xaml-data-templates}
 
-You can skip ViewLocator entirely and define view-to-viewmodel mappings as standard data templates in XAML:
+你也可以完全不用 ViewLocator，直接在 XAML 中把「视图—视图模型」映射写成标准的数据模板：
 
 ```xml
 <Application.DataTemplates>
@@ -136,11 +136,11 @@ You can skip ViewLocator entirely and define view-to-viewmodel mappings as stand
 </Application.DataTemplates>
 ```
 
-This approach uses Avalonia's built-in template resolution with no custom code. See [Data Template Collection](/docs/data-templates/data-template-collection) for details on how template matching and search order work.
+这种做法用的是 Avalonia 内置的模板解析机制，一行自定义代码都不用写。模板匹配与搜索顺序的细节，请见[数据模板集合](/docs/data-templates/data-template-collection)。
 
-### Dependency injection
+### 依赖注入 {#dependency-injection}
 
-When views require constructor-injected services, combine pattern matching with your DI container:
+当视图需要通过构造函数注入服务时，把模式匹配和 DI 容器结合起来：
 
 ```csharp
 public class ViewLocator : IDataTemplate
@@ -166,7 +166,7 @@ public class ViewLocator : IDataTemplate
 }
 ```
 
-Because this ViewLocator requires a constructor parameter, register it in code rather than XAML:
+由于这个 ViewLocator 需要构造函数参数，请在代码中注册它，而不要写在 XAML 里：
 
 ```csharp
 public override void OnFrameworkInitializationCompleted()
@@ -178,31 +178,31 @@ public override void OnFrameworkInitializationCompleted()
 }
 ```
 
-See [Dependency Injection](/docs/app-development/dependency-injection) for setting up your service provider.
+服务提供程序的搭建方法，请见[依赖注入](/docs/app-development/dependency-injection)。
 
-### Source generators
+### 源生成器 {#source-generators}
 
-For large applications where maintaining a manual mapping is impractical, source generators can produce ViewLocator code at compile time. This provides zero runtime overhead and full AOT compatibility.
+对于手工维护映射已不现实的大型应用，可以用源生成器在编译期生成 ViewLocator 代码。这样既没有运行时开销，也完全兼容 AOT。
 
-Community packages that provide this:
+提供此类能力的社区包：
 
-- **[StaticViewLocator](https://github.com/wieslawsoltes/StaticViewLocator)**: A NuGet package that automatically discovers and registers view-viewmodel pairs.
+- **[StaticViewLocator](https://github.com/wieslawsoltes/StaticViewLocator)**：一个 NuGet 包，能自动发现并注册「视图—视图模型」配对。
 
-For building your own source generator, see [Microsoft's Source Generators documentation](https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview).
+想自己写源生成器，可参考 [Microsoft 的源生成器文档](https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview)。
 
-## Choosing an approach
+## 该选哪种办法 {#choosing-an-approach}
 
-| Approach | AOT compatible | Compile-time safe | Supports DI | Maintenance |
+| 办法 | 兼容 AOT | 编译期安全 | Supports DI | 维护成本 |
 |---|---|---|---|---|
-| Reflection (default) | No | No | No | None |
-| Pattern matching | Yes | Yes | Optional | Add line per view model |
-| XAML data templates | Yes | Yes | No | Add template per view model |
-| DI + pattern matching | Yes | Yes | Yes | Add line per view model |
-| Source generator | Yes | Yes | Varies | None (auto-generated) |
+| 反射（默认） | No | No | No | None |
+| 模式匹配 | Yes | Yes | Optional | 每个视图模型加一行 |
+| XAML 数据模板 | Yes | Yes | No | 每个视图模型加一个模板 |
+| 依赖注入 + 模式匹配 | Yes | Yes | Yes | 每个视图模型加一行 |
+| 源生成器 | Yes | Yes | Varies | 无（自动生成） |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates): How Avalonia selects and applies data templates.
-- [Data Template Collection](/docs/data-templates/data-template-collection): Defining multiple templates by type.
-- [Creating Data Templates in Code](/docs/data-templates/creating-data-templates-in-code): Implementing `IDataTemplate` and using `FuncDataTemplate<T>`.
-- [Dependency Injection](/docs/app-development/dependency-injection): Setting up service registration for your application.
+- [数据模板入门](/docs/data-templates/introduction-to-data-templates)：Avalonia 如何挑选并套用数据模板。
+- [数据模板集合](/docs/data-templates/data-template-collection)：按类型定义多个模板。
+- [在代码中创建数据模板](/docs/data-templates/creating-data-templates-in-code)：实现 `IDataTemplate` 与使用 `FuncDataTemplate<T>`。
+- [依赖注入](/docs/app-development/dependency-injection)：为应用配置服务注册。

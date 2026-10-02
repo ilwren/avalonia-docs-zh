@@ -1,27 +1,27 @@
 ---
 id: windowdrawndecorations
 title: WindowDrawnDecorations
-description: A logical element that manages the client-side presentation of window decorations, such as the titlebar and frame. It also defines interactions with caption buttons.
+description: 一个逻辑元素，负责在客户端绘制并管理窗口装饰（如标题栏和边框），同时定义标题栏按钮的交互行为。
 doc-type: reference
 ---
 
-`WindowDrawnDecorations` is not a visual control, but a logical element that holds the template and properties of window decorations, such as the titlebar and frame, in order to manage their client-side presentation.
+`WindowDrawnDecorations` 不是可视控件，而是一个逻辑元素：它持有标题栏、边框等窗口装饰的模板和属性，以便在客户端完成它们的绘制与呈现。
 
-In addition, `WindowDrawnDecorations` defines the interaction logic of caption buttons.
+此外，`WindowDrawnDecorations` 还定义了标题栏按钮的交互逻辑。
 
-This control replaces the `TitleBar`, `CaptionButtons` and `ChromeOverlayLayer` classes in earlier versions of Avalonia (before version 12).
+这个控件取代了早期版本（Avalonia 12 之前）中的 `TitleBar`、`CaptionButtons` 和 `ChromeOverlayLayer` 类。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-Use `WindowDrawnDecorations` to create customized window decorations—titlebar, frame, caption buttons, resize grips, etc.
+需要自定义窗口装饰时就用 `WindowDrawnDecorations`，比如标题栏、边框、标题栏按钮、缩放手柄等等。
 
-## Namespace
+## 命名空间 {#namespace}
 
-Located in `Avalonia.Controls.Chrome`.
+位于 `Avalonia.Controls.Chrome`。
 
-## Visual tree structure
+## 视觉树结构 {#visual-tree-structure}
 
-Visual elements in `WindowDrawnDecorations` are divided into **underlay**, **overlay** and **popover** layers. They are built into a visual tree according to this structure:
+`WindowDrawnDecorations` 中的可视元素分为**底层**、**覆盖层**和**浮层**三层，按下面的结构组装成视觉树：
 
 ```
 Visual root
@@ -32,15 +32,15 @@ Visual root
 └── Resize hit-test zones (automatic)
 ```
 
-See [`WindowDrawnDecorationsContent`](#windowdrawndecorationscontent) for how these layers are implemented in code.
+这些层在代码中如何实现，请参阅 [`WindowDrawnDecorationsContent`](#windowdrawndecorationscontent)。
 
 ## WindowDrawnDecorationsTemplate
 
-Custom template type that builds `WindowDrawnDecorationsContent`. (See [WindowDrawnDecorationsContent](#windowdrawndecorationscontent).)
+构建 `WindowDrawnDecorationsContent` 的自定义模板类型。（参见 [WindowDrawnDecorationsContent](#windowdrawndecorationscontent)。）
 
 ## WindowDrawnDecorationsContent
 
-Holds the three template slots used by `WindowDrawnDecorationsTemplate`. Logical children are divided into visual tree layers as described in [visual tree structure](#visual-tree-structure) above.
+持有 `WindowDrawnDecorationsTemplate` 使用的三个模板槽位。逻辑子元素按上文[视觉树结构](#visual-tree-structure)所述分入各个视觉树层。
 
 ```csharp
 public class WindowDrawnDecorationsContent : StyledElement
@@ -51,33 +51,33 @@ public class WindowDrawnDecorationsContent : StyledElement
 }
 ```
 
-## Properties
+## 属性 {#properties}
 
-| Property | Type | Visibility | Description |
+| 属性 | 类型 | 可见性 | 说明 |
 | --- | --- | --- | --- |
-| `Template` | `WindowDrawnDecorationsTemplate` | Styled | Decorations template. |
-| `DefaultTitleBarHeight` | `double` | Styled | Default titlebar height. Decided by theme if unset. |
-| `DefaultFrameThickness` | `Thickness` | Styled | Default frame thickness. Decided by theme if unset. |
-| `DefaultShadowThickness` | `Thickness` | Styled | Default shadow thickness. Decided by theme if unset. |
-| `TitleBarHeight` | `double` | Styled | Effective titlebar height. Local value set by `Window` overrides this. |
-| `FrameThickness` | `Thickness` | Styled | Effective frame thickness. Local value set by `Window` overrides this. |
-| `ShadowThickness` | `Thickness` | Styled | Effective shadow thickness. Local value set by `Window` overrides this. |
-| `Content` | `WindowDrawnDecorationsContent?` | Read-only | Built template content. |
+| `Template` | `WindowDrawnDecorationsTemplate` | Styled | 装饰模板。 |
+| `DefaultTitleBarHeight` | `double` | Styled | 默认标题栏高度。未设置时由主题决定。 |
+| `DefaultFrameThickness` | `Thickness` | Styled | 默认边框厚度。未设置时由主题决定。 |
+| `DefaultShadowThickness` | `Thickness` | Styled | 默认阴影厚度。未设置时由主题决定。 |
+| `TitleBarHeight` | `double` | Styled | 实际生效的标题栏高度。`Window` 上设置的本地值会覆盖它。 |
+| `FrameThickness` | `Thickness` | Styled | 实际生效的边框厚度。`Window` 上设置的本地值会覆盖它。 |
+| `ShadowThickness` | `Thickness` | Styled | 实际生效的阴影厚度。`Window` 上设置的本地值会覆盖它。 |
+| `Content` | `WindowDrawnDecorationsContent?` | Read-only | 构建完成的模板内容。 |
 
-## Decoration parts
+## 装饰部件 {#decoration-parts}
 
-The following decoration parts are available:
+可用的装饰部件如下：
 
 - Shadow
 - Border
 - Titlebar
-- Resize grips
+- 缩放手柄
 
-Usable decoration parts may vary depending on platform, e.g., macOS handles its own resize grips.
+具体能用哪些装饰部件因平台而异，比如 macOS 的缩放手柄由系统自己处理。
 
 ## Pseudoclasses
 
-Pseudoclasses are applied whenever window state changes, e.g., when `Window` goes from normal to full-screen. They are also applied when [decoration parts](#decoration-parts) are enabled or disabled, e.g., when going to full-screen would cause `Shadow` to be disabled.
+窗口状态变化时会应用相应的伪类，比如 `Window` 从普通变为全屏时。[装饰部件](#decoration-parts) 启用或停用时同样会应用伪类，比如进入全屏导致 `Shadow` 被停用时。
 
 - `:normal`
 - `:maximized`
@@ -87,45 +87,45 @@ Pseudoclasses are applied whenever window state changes, e.g., when `Window` goe
 - `:has-border`
 - `:has-titlebar`
 
-## Template parts
+## 模板部件 {#template-parts}
 
-`WindowDrawnDecorations` obtains template parts during template application and resolves whichever parts are specified. All template parts are optional, e.g., you may omit the full-screen button.
+`WindowDrawnDecorations` 在应用模板时获取模板部件，并解析其中指定的那些。所有模板部件都是可选的，比如你可以不提供全屏按钮。
 
-This functionality replaces the `CaptionButtons` class in earlier versions of Avalonia.
+这一功能取代了早期 Avalonia 版本中的 `CaptionButtons` 类。
 
-| Part | Type | Description |
+| 部件 | 类型 | 说明 |
 | --- | --- | --- |
-| `PART_CloseButton` | `Button?` | Close button. |
-| `PART_MinimizeButton` | `Button?` | Minimize button. |
-| `PART_MaximizeButton` | `Button?` | Maximize toggle button. |
-| `PART_FullScreenButton` | `Button?` | Fullscreen toggle button. |
+| `PART_CloseButton` | `Button?` | 关闭按钮。 |
+| `PART_MinimizeButton` | `Button?` | 最小化按钮。 |
+| `PART_MaximizeButton` | `Button?` | 最大化切换按钮。 |
+| `PART_FullScreenButton` | `Button?` | 全屏切换按钮。 |
 
-## Element roles
+## 元素角色 {#element-roles}
 
-`ElementRole` is an [attached property](/docs/properties#attached-properties) that marks each visual element with a specific role for cross-platform, non-client hit testing. It can be applied to any element in the visual tree, not only decoration children elements.
+`ElementRole` 是一个[附加属性](/docs/properties#attached-properties)，用于给每个可视元素标注特定角色，以便跨平台地进行非客户区命中测试。它可以用在视觉树中的任意元素上，不限于装饰的子元素。
 
-The following element roles are available:
+可用的元素角色如下：
 
-| Role | Description |
+| 角色 | 说明 |
 | --- | --- |
-| `None` | No role. Element is invisible to hit testing. |
-| `DecorationsElement` | Interactive element set on decoration template elements. Input is passed through to the element. |
-| `User` | Interactive element set by user code. Input is passed through to the element. |
-| `TitleBar` | Titlebar drag area. Clicking and dragging this element moves the window. |
-| `ResizeN` | Resize grip for the top edge (north). |
-| `ResizeS` | Resize grip for the bottom edge (south). |
-| `ResizeE` | Resize grip for the right edge (east). |
-| `ResizeW` | Resize grip for the left edge (west). |
-| `ResizeNE` | Resize grip for the top right corner (northeast). |
-| `ResizeSE` | Resize grip for the bottom right corner (southeast). |
-| `ResizeNW` | Resize grip for the top left corner (northwest). |
-| `ResizeSW` | Resize grip for the bottom left corner (southwest). |
-| `CloseButton` | Element performs window close behavior. |
-| `MaximizeButton` | Element performs window maximize behavior. |
-| `MinimizeButton` | Element performs window minimize behavior. |
-| `FullScreenButton` | Element performs window full-screen toggle behavior. |
+| `None` | 无角色。该元素对命中测试不可见。 |
+| `DecorationsElement` | 设在装饰模板元素上的可交互元素，输入会传递给该元素。 |
+| `User` | 由用户代码设定的可交互元素，输入会传递给该元素。 |
+| `TitleBar` | 标题栏拖动区域。按住并拖动该元素可移动窗口。 |
+| `ResizeN` | 上边缘（北）的缩放手柄。 |
+| `ResizeS` | 下边缘（南）的缩放手柄。 |
+| `ResizeE` | 右边缘（东）的缩放手柄。 |
+| `ResizeW` | 左边缘（西）的缩放手柄。 |
+| `ResizeNE` | 右上角（东北）的缩放手柄。 |
+| `ResizeSE` | 右下角（东南）的缩放手柄。 |
+| `ResizeNW` | 左上角（西北）的缩放手柄。 |
+| `ResizeSW` | 左下角（西南）的缩放手柄。 |
+| `CloseButton` | 该元素执行关闭窗口的行为。 |
+| `MaximizeButton` | 该元素执行最大化窗口的行为。 |
+| `MinimizeButton` | 该元素执行最小化窗口的行为。 |
+| `FullScreenButton` | 该元素执行切换全屏的行为。 |
 
-In the [example below](#example), an element role is marked for a `TextBlock` acting as a titlebar: `ElementRole="TitleBar"`.
+在[下面的示例](#example)中，一个充当标题栏的 `TextBlock` 被标注了元素角色：`ElementRole="TitleBar"`。
 
 ## Example
 
@@ -196,7 +196,7 @@ In the [example below](#example), an element role is marked for a `TextBlock` ac
 </ControlTheme>
 ```
 
-## See aslo
+## 另请参阅 {#see-aslo}
 
-- [Window control](/controls/primitives/window)
-- [Avalonia v12 breaking changes](/docs/avalonia12-breaking-changes)
+- [Window 控件](/controls/primitives/window)
+- [Avalonia v12 破坏性变更](/docs/avalonia12-breaking-changes)

@@ -20,25 +20,24 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ReplaceImageAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Replaces the inline [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) at the current selection with a new
-image chosen from a file picker, preserving the existing display size and alt
-text.
+把当前选区处的内联 [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) 替换成从文件选取器中挑选的新图像，
+并保留原有的显示尺寸与替代文本。
 
 </div>
 
@@ -52,29 +51,28 @@ public class ReplaceImageAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> ReplaceImageAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> ReplaceImageAction
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-The replacement removes the old image node via
-[Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode(Avalonia.Controls.Documents.TextModel.TextDocumentNode)](xref:Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode%28Avalonia.Controls.Documents.TextModel.TextDocumentNode%29) and inserts a fresh one at the same
-position, so undo restores the original from immutable snapshot bytes rather
-than a disposed [Avalonia.Controls.Documents.RichImage.Source](xref:Avalonia.Controls.Documents.RichImage.Source). A character-range delete of the
-old image would leave a zero-length orphan node, so node deletion is used.
+替换时先通过 [Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode(Avalonia.Controls.Documents.TextModel.TextDocumentNode)](xref:Avalonia.Controls.Documents.TextModel.TextDocument.DeleteNode%28Avalonia.Controls.Documents.TextModel.TextDocumentNode%29) 移除旧的图像节点，
+再在同一位置插入一个新节点，这样撤销时便能依据不可变的快照字节还原出原图，
+而不是去碰一个已被释放的 [Avalonia.Controls.Documents.RichImage.Source](xref:Avalonia.Controls.Documents.RichImage.Source)。若按字符范围删除旧图像，
+会留下一个零长度的孤儿节点，所以这里采用删除节点的做法。
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ReplaceImageAction](#uid-6728b46f3e) | No summary available. |
+| [ReplaceImageAction](#uid-6728b46f3e) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6728b46f3e"></span>
 
-### ReplaceImageAction Constructor
+### ReplaceImageAction 构造函数 {#replaceimageaction-constructor}
 
 ```csharp
 public ReplaceImageAction()
@@ -82,31 +80,31 @@ public ReplaceImageAction()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-20da856d5b) | No summary available. |
-| [Execute](#uid-d67751640d) | No summary available. |
-| [ExecuteAsync](#uid-f1511fcf4e) | No summary available. |
-| [GetState](editoraction.mdx#uid-e9737aed90) | Gets the current state of the action. Inherited from [EditorAction](editoraction.mdx). |
+| [CanExecute](#uid-20da856d5b) | 暂无摘要。 |
+| [Execute](#uid-d67751640d) | 暂无摘要。 |
+| [ExecuteAsync](#uid-f1511fcf4e) | 暂无摘要。 |
+| [GetState](editoraction.mdx#uid-e9737aed90) | 获取该操作的当前状态。继承自 [EditorAction](editoraction.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-20da856d5b"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -117,13 +115,13 @@ bool
 
 <span id="uid-d67751640d"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
@@ -134,37 +132,37 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 <span id="uid-f1511fcf4e"></span>
 
-### ExecuteAsync Method
+### ExecuteAsync 方法 {#executeasync-method}
 
 ```csharp
 public System.Threading.Tasks.Task ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DisplayName](#uid-875f31f354) | No summary available. |
-| [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
-| [Id](#uid-7e6f46ba43) | No summary available. |
+| [DisplayName](#uid-875f31f354) | 暂无摘要。 |
+| [Gesture](editoraction.mdx#uid-557e9af400) | 获取该操作可选的键盘手势。继承自 [EditorAction](editoraction.mdx)。 |
+| [Id](#uid-7e6f46ba43) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-875f31f354"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 ```csharp
 public string DisplayName { get; set; }
@@ -176,7 +174,7 @@ public string DisplayName { get; set; }
 
 <span id="uid-7e6f46ba43"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 ```csharp
 public string Id { get; set; }

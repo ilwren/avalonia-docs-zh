@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ISeriesChart Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Interface for charts that contain and manage series.
+承载并管理系列的图表所用的接口。
 
 </div>
 
@@ -48,30 +48,30 @@ public interface ISeriesChart
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetLegendItems](#uid-21c7c4e0c4) | Gets the legend items for this chart based on its series. |
-| [GetSeriesBrush](#uid-ec034f2e84) | Gets the brush for a series at the specified index from the palette. |
+| [GetLegendItems](#uid-21c7c4e0c4) | 依据该图表的各个系列取得对应的图例项。 |
+| [GetSeriesBrush](#uid-ec034f2e84) | 从调色板中取出指定索引处系列所用的画刷。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-21c7c4e0c4"></span>
 
-### GetLegendItems Method
+### GetLegendItems 方法 {#getlegenditems-method}
 
-Gets the legend items for this chart based on its series.
+依据该图表的各个系列取得对应的图例项。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Charts.ChartLegendItem> GetLegendItems()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Charts.ChartLegendItem](xref:Avalonia.Controls.Charts.ChartLegendItem)&gt;
 
-A collection of legend items.
+一组图例项。
 
 
 </section>
@@ -80,44 +80,44 @@ A collection of legend items.
 
 <span id="uid-ec034f2e84"></span>
 
-### GetSeriesBrush Method
+### GetSeriesBrush 方法 {#getseriesbrush-method}
 
-Gets the brush for a series at the specified index from the palette.
+从调色板中取出指定索引处系列所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush GetSeriesBrush(int index)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `index` int
 
-The series index.
+系列索引。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The brush to use for the series.
+该系列所用的画刷。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Palette](#uid-620b6d64af) | Gets the color palette used for series colors. |
-| [Series](#uid-248296729d) | Gets the collection of series in this chart. |
+| [Palette](#uid-620b6d64af) | 获取各系列配色所用的调色板。 |
+| [Series](#uid-248296729d) | 获取该图表中的系列集合。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-620b6d64af"></span>
 
-### Palette Property
+### Palette 属性 {#palette-property}
 
-Gets the color palette used for series colors.
+获取各系列配色所用的调色板。
 
 ```csharp
 public Avalonia.Controls.Charts.ChartPalette Palette { get; set; }
@@ -129,9 +129,9 @@ public Avalonia.Controls.Charts.ChartPalette Palette { get; set; }
 
 <span id="uid-248296729d"></span>
 
-### Series Property
+### Series 属性 {#series-property}
 
-Gets the collection of series in this chart.
+获取该图表中的系列集合。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Charts.ChartSeries> Series { get; set; }

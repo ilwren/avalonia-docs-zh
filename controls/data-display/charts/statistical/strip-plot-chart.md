@@ -1,25 +1,25 @@
 ---
 id: strip-plot-chart
-title: Strip plot chart
-description: Displays individual observations per category with controlled jitter, useful for raw-value comparison and mean overlays.
+title: 带状散点图
+description: 按类别呈现各个观测值，并施加可控的抖动偏移，适合比较原始取值并叠加均值线。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Strip plots show every observation in a category while applying jitter to reduce overlap and optional mean lines to summarize the center.
+带状散点图把每个类别中的所有观测值都画出来，用抖动偏移减少重叠，并可叠加均值线来标示中心位置。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Raw sample display**: Show every point rather than only quartiles or averages.
-- **Category spread**: Compare how tightly or widely values cluster per group.
-- **Hybrid views**: Combine raw observations with a simple mean reference line.
+- **展示原始样本**：把每个点都画出来，而不只给出四分位数或平均值。
+- **类别离散度**：比较各组数值聚得紧还是散得开。
+- **混合视图**：把原始观测值与一条简单的均值参考线结合起来。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -33,7 +33,7 @@ Strip plots show every observation in a category while applying jitter to reduce
                                  ShowMeanLine="True" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record StripPoint(string Category, double Value);
@@ -47,24 +47,24 @@ public ObservableCollection<StripPoint> StripData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of observations. | `null` |
-| `CategoryPath` | Path to the grouping category. | `null` |
-| `ValuePath` | Path to the numeric value. | `null` |
-| `PointRadius` | Radius of each point. | `4.0` |
-| `JitterAmount` | Horizontal jitter factor applied within each category. | `0.3` |
-| `Fill` | Brush used to fill points. | `null` |
-| `Stroke` | Brush used for point outlines. | `null` |
-| `StrokeThickness` | Thickness of point outlines. | `0.5` |
-| `PointOpacity` | Opacity applied to the plotted points. | `0.7` |
-| `ShowCategoryLabels` | Whether to draw category labels. | `true` |
-| `ShowAxes` | Whether to draw the value axis. | `true` |
-| `ShowMeanLine` | Whether to draw a mean line for each category. | `true` |
+| `ItemsSource` | 观测值的集合。 | `null` |
+| `CategoryPath` | 指向分组类别的路径。 | `null` |
+| `ValuePath` | 指向数值的路径。 | `null` |
+| `PointRadius` | 每个点的半径。 | `4.0` |
+| `JitterAmount` | 在每个类别内部施加的横向抖动系数。 | `0.3` |
+| `Fill` | 填充数据点所用的画刷。 | `null` |
+| `Stroke` | 数据点轮廓所用的画刷。 | `null` |
+| `StrokeThickness` | 数据点轮廓的粗细。 | `0.5` |
+| `PointOpacity` | 所绘数据点的不透明度。 | `0.7` |
+| `ShowCategoryLabels` | 是否绘制类别标签。 | `true` |
+| `ShowAxes` | 是否绘制数值轴。 | `true` |
+| `ShowMeanLine` | 是否为每个类别绘制均值线。 | `true` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Beeswarm plot chart](/controls/data-display/charts/statistical/beeswarm-plot-chart)
-- [Box plot chart](/controls/data-display/charts/statistical/boxplot-chart)
+- [蜂群图](/controls/data-display/charts/statistical/beeswarm-plot-chart)
+- [箱线图](/controls/data-display/charts/statistical/boxplot-chart)

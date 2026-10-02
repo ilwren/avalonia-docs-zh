@@ -1,49 +1,49 @@
 ---
 id: top-level
-title: Top level
-description: Access windowing, clipboard, storage, and other services through the TopLevel base class.
+title: 顶层（TopLevel）
+description: 通过 TopLevel 基类访问窗口、剪贴板、存储等各项服务。
 doc-type: reference
 video:
   src: https://youtu.be/sgLcNJiYRj8
-  title: Avalonia TopLevel vs MainWindow — GetTopLevel, Clipboard & FocusManager
+  title: Avalonia TopLevel 与 MainWindow 的区别 —— GetTopLevel、Clipboard 与 FocusManager
 ---
 
-The [`TopLevel`](/api/avalonia/controls/toplevel) acts as the visual root, and is the base class for all top level controls, for example [`Window`](/api/avalonia/controls/window). It handles scheduling layout, styling and rendering as well as keeping track of the client size. Most services are accessed through the `TopLevel`.
+[`TopLevel`](/api/avalonia/controls/toplevel) 充当视觉根，是所有顶层控件（例如 [`Window`](/api/avalonia/controls/window)）的基类。它负责调度布局、样式和渲染，并跟踪客户区尺寸。大多数服务都通过 `TopLevel` 来访问。
 
-## Getting the TopLevel
+## 获取 TopLevel {#getting-the-toplevel}
 
-Here are two common ways to access a `TopLevel` instance.
+下面是取得 `TopLevel` 实例的两种常见方式。
 
 ### Using TopLevel.GetTopLevel
 
-You can use the static `GetTopLevel` method of the `TopLevel` class to get the top-level control that contains the current control.
+可以用 `TopLevel` 类的静态方法 `GetTopLevel` 取得包含当前控件的那个顶层控件。
 
 ```csharp
 var topLevel = TopLevel.GetTopLevel(control);
 // Here you can reference various services like Clipboard or StorageProvider from topLevel instance.
 ```
 
-This method can be helpful if you're working within a user control or a lower-level component and need access to the TopLevel services.
+当你在用户控件或更底层的组件中工作，又需要访问 TopLevel 的各项服务时，这个办法很好使。
 
 :::note
-If `TopLevel.GetTopLevel` returns null, likely control is not yet attached to the root. To ensure control is attached, you should handle `Control.Loaded` and `Control.Unloaded` events and keep track of current top level from these events.
+如果 `TopLevel.GetTopLevel` 返回 null，多半是因为控件还没挂到根上。为确保控件已附加，应当处理 `Control.Loaded` 和 `Control.Unloaded` 事件，并在这两个事件中跟踪当前的顶层。
 :::
 
-### Using the Window class
+### 使用 Window 类 {#using-the-window-class}
 
-Since the `Window` class inherits from `TopLevel`, you can directly access services from an instance of `Window`:
+由于 `Window` 类继承自 `TopLevel`，你可以直接从 `Window` 实例上访问这些服务：
 
 ```csharp
 var topLevel = window;
 ```
 
-This method is typically used when you're already working within the context of a window, such as in a ViewModel or an event handler within the `Window` class.
+当你本来就处在某个窗口的上下文中时（比如在 ViewModel 里，或在 `Window` 类的事件处理程序中），一般就用这个办法。
 
-## Common properties
+## 常用属性 {#common-properties}
 
 ### ActualTransparencyLevel
 
-Gets the achieved `WindowTransparencyLevel` that the platform was able to provide.
+获取平台最终能够提供的 `WindowTransparencyLevel`。
 
 ```csharp
 WindowTransparencyLevel ActualTransparencyLevel { get; }
@@ -51,7 +51,7 @@ WindowTransparencyLevel ActualTransparencyLevel { get; }
 
 ### ClientSize
 
-Gets the client size of the window.
+获取窗口的客户区尺寸。
 
 ```csharp
 Size ClientSize { get; }
@@ -59,7 +59,7 @@ Size ClientSize { get; }
 
 ### Clipboard
 
-Gets the platform's [Clipboard](/docs/services/clipboard) implementation.
+获取平台的 [Clipboard](/docs/services/clipboard) 实现。
 
 ```csharp
 IClipboard? Clipboard { get; }
@@ -67,7 +67,7 @@ IClipboard? Clipboard { get; }
 
 ### FocusManager
 
-Gets [focus manager](/docs/services/focus-manager) of the root.
+获取根的[焦点管理器](/docs/services/focus-manager)。
 
 ```csharp
 IFocusManager? FocusManager { get; }
@@ -75,7 +75,7 @@ IFocusManager? FocusManager { get; }
 
 ### FrameSize
 
-Gets the total size of the top level including system frame if presented.
+获取顶层的总尺寸，若存在系统边框则一并计入。
 
 ```csharp
 Size? FrameSize { get; }
@@ -83,7 +83,7 @@ Size? FrameSize { get; }
 
 ### InsetsManager
 
-Gets the platform's [InsetsManager](/docs/services/insets-manager) implementation.
+获取平台的 [InsetsManager](/docs/services/insets-manager) 实现。
 
 ```csharp
 IInsetsManager? InsetsManager { get; }
@@ -91,7 +91,7 @@ IInsetsManager? InsetsManager { get; }
 
 ### PlatformSettings
 
-Represents a contract for accessing top-level [platform-specific settings](/docs/services/platform-settings).
+表示访问顶层[平台专有设置](/docs/services/platform-settings)的约定。
 
 ```csharp
 IPlatformSettings? PlatformSettings { get; }
@@ -99,7 +99,7 @@ IPlatformSettings? PlatformSettings { get; }
 
 ### RendererDiagnostics
 
-Gets a value indicating whether the renderer should draw specific diagnostics.
+获取一个值，指示渲染器是否应绘制特定的诊断信息。
 
 ```csharp
 RendererDiagnostics RendererDiagnostics { get; }
@@ -107,7 +107,7 @@ RendererDiagnostics RendererDiagnostics { get; }
 
 ### RenderScaling
 
-Gets the scaling factor to use in rendering.
+获取渲染时所用的缩放系数。
 
 ```csharp
 double RenderScaling { get; }
@@ -115,17 +115,17 @@ double RenderScaling { get; }
 
 ### Screens
 
-Gets the [`Screens`](/api/avalonia/controls/screens) instance that provides information about connected monitors, including resolution, working area, scaling, and orientation.
+获取 [`Screens`](/api/avalonia/controls/screens) 实例，可从中了解已连接显示器的信息，包括分辨率、工作区、缩放和方向。
 
 ```csharp
 Screens Screens { get; }
 ```
 
-Use `Screens` to query the primary display, enumerate all displays, or find the screen containing a specific window or point. See [Working with screens](/docs/app-development/window-management#working-with-screens) for usage examples.
+用 `Screens` 可以查询主显示器、枚举全部显示器，或找出包含某个窗口或某个点的屏幕。用法示例见[使用屏幕](/docs/app-development/window-management#working-with-screens)。
 
 ### RequestedThemeVariant
 
-Gets or sets the UI theme variant that is used by the control (and its child elements) for resource determination. The UI theme you specify with `ThemeVariant` can override the app-level `ThemeVariant`.
+获取或设置该控件（及其子元素）在解析资源时所用的界面主题变体。你用 `ThemeVariant` 指定的界面主题会覆盖应用级的 `ThemeVariant`。
 
 ```csharp
 ThemeVariant? RequestedThemeVariant { get; set; }
@@ -133,7 +133,7 @@ ThemeVariant? RequestedThemeVariant { get; set; }
 
 ### StorageProvider
 
-[File System storage](/docs/services/storage/storage-provider) service used for file pickers and bookmarks.
+供文件选择器和书签使用的[文件系统存储](/docs/services/storage/storage-provider)服务。
 
 ```csharp
 IStorageProvider StorageProvider { get; }
@@ -141,7 +141,7 @@ IStorageProvider StorageProvider { get; }
 
 ### TransparencyBackgroundFallback
 
-Gets or sets the `IBrush` that transparency will blend with when transparency is not supported or is restricted. By default this is a solid white brush.
+获取或设置当平台不支持或限制透明时，透明度所混合的 `IBrush`。默认是纯白色画刷。
 
 ```csharp
 IBrush TransparencyBackgroundFallback { get; set; }
@@ -149,17 +149,17 @@ IBrush TransparencyBackgroundFallback { get; set; }
 
 ### TransparencyLevelHint
 
-Gets or sets the `WindowTransparencyLevel` that the TopLevel should use when possible. Accepts multiple values which are applied in a fallback order. For instance, with "Mica, Blur" Mica will be applied only on platforms where it is possible, and Blur will be used on the rest of them. Default value is an empty array or "None".
+获取或设置 TopLevel 在条件允许时应采用的 `WindowTransparencyLevel`。可以给多个值，按回退顺序依次应用。例如填 "Mica, Blur"，则只在支持 Mica 的平台上应用 Mica，其余平台一律用 Blur。默认值是空数组，即 "None"。
 
 ```csharp
 IReadOnlyList<WindowTransparencyLevel> TransparencyLevelHint { get; set; }
 ```
 
-## Common events
+## 常用事件 {#common-events}
 
 ### BackRequested
 
-Occurs when physical Back Button is pressed or a back navigation has been requested.
+按下实体返回键、或收到返回导航请求时发生。
 
 ```csharp
 event EventHandler<RoutedEventArgs> BackRequested { add; remove; }
@@ -167,7 +167,7 @@ event EventHandler<RoutedEventArgs> BackRequested { add; remove; }
 
 ### Closed
 
-Fired when the window is closed.
+窗口关闭时触发。
 
 ```csharp
 event EventHandler Closed;
@@ -175,7 +175,7 @@ event EventHandler Closed;
 
 ### Opened
 
-Fired when the window is opened.
+窗口打开时触发。
 
 ```csharp
 event EventHandler Opened;
@@ -183,19 +183,19 @@ event EventHandler Opened;
 
 ### ScalingChanged
 
-Occurs when the TopLevel's scaling changes.
+TopLevel 的缩放发生变化时触发。
 
 ```csharp
 event EventHandler ScalingChanged;
 ```
 
-## Common methods
+## 常用方法 {#common-methods}
 
 ### GetTopLevel
 
-Gets the `TopLevel` in which the given `Visual` is hosted.
+获取承载给定 `Visual` 的那个 `TopLevel`。
 
-The `visual` parameter indicates the visual to be queried.
+`visual` 参数指定要查询的视觉元素。
 
 ```csharp
 static TopLevel? GetTopLevel(Visual? visual)
@@ -203,15 +203,15 @@ static TopLevel? GetTopLevel(Visual? visual)
 
 ### RequestAnimationFrame
 
-Enqueues a callback to be called on the next animation tick. The callback runs on the UI thread, synchronized with Avalonia's rendering cycle. Each call schedules a single invocation. To create a continuous animation loop, call `RequestAnimationFrame` again from within the callback.
+把一个回调排入队列，在下一个动画时间片上调用。该回调运行在 UI 线程上，与 Avalonia 的渲染周期同步。每次调用只安排一次执行；若要形成连续的动画循环，请在回调内部再次调用 `RequestAnimationFrame`。
 
-The `action` parameter receives a `TimeSpan` representing the elapsed time since the animation system started. Use this value to calculate frame-independent animation progress.
+`action` 参数会收到一个 `TimeSpan`，表示自动画系统启动以来经过的时间。用它来计算与帧率无关的动画进度。
 
 ```csharp
 void RequestAnimationFrame(Action<TimeSpan> action)
 ```
 
-#### Example: continuous animation loop
+#### 示例：连续的动画循环 {#example-continuous-animation-loop}
 
 ```csharp
 var topLevel = TopLevel.GetTopLevel(this);
@@ -229,11 +229,11 @@ private void OnAnimationFrame(TimeSpan elapsed)
 }
 ```
 
-This is the Avalonia equivalent of WPF's `CompositionTarget.Rendering`. For render-thread callbacks that do not block the UI thread, see [CompositionCustomVisualHandler](/docs/graphics-animation/custom-rendering#compositioncustomvisualhandler).
+这相当于 WPF 中的 `CompositionTarget.Rendering`。若需要不阻塞 UI 线程的渲染线程回调，请见 [CompositionCustomVisualHandler](/docs/graphics-animation/custom-rendering#compositioncustomvisualhandler)。
 
 ### RequestPlatformInhibition
 
-Requests a `PlatformInhibitionType` to be inhibited. The behavior remains inhibited until the return value is disposed. The available set of `PlatformInhibitionType`s depends on the platform. If a behavior is inhibited on a platform where this type is not supported the request will have no effect.
+请求抑制某项 `PlatformInhibitionType`。在返回值被释放之前，该行为将一直处于被抑制状态。可用的 `PlatformInhibitionType` 取决于平台；若在不支持该类型的平台上发起抑制请求，则请求不会产生任何效果。
 
 ```csharp
 async Task<IDisposable> RequestPlatformInhibition(PlatformInhibitionType type, string reason)
@@ -241,17 +241,17 @@ async Task<IDisposable> RequestPlatformInhibition(PlatformInhibitionType type, s
 
 ### TryGetPlatformHandle
 
-Tries to get the platform handle for the TopLevel-derived control.
+尝试获取该 TopLevel 派生控件的平台句柄。
 
 ```csharp
 IPlatformHandle? TryGetPlatformHandle()
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Main window](/docs/fundamentals/main-window)
-- [Application lifetimes](/docs/fundamentals/application-lifetimes)
-- [Working with screens](/docs/app-development/window-management#working-with-screens): Query monitor resolution, bounds, and scaling.
-- [Custom rendering](/docs/graphics-animation/custom-rendering): Custom drawing and render-thread callbacks.
-- [Composition animations](/docs/graphics-animation/composition-animations): Render-thread property animations.
-- [`TopLevel.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TopLevel.cs)
+- [主窗口](/docs/fundamentals/main-window)
+- [应用程序生命周期](/docs/fundamentals/application-lifetimes)
+- [使用屏幕](/docs/app-development/window-management#working-with-screens)：查询显示器的分辨率、边界与缩放。
+- [自定义渲染](/docs/graphics-animation/custom-rendering)：自定义绘制与渲染线程回调。
+- [合成动画](/docs/graphics-animation/composition-animations)：在渲染线程上执行的属性动画。
+- [GitHub 上的 `TopLevel.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/TopLevel.cs)

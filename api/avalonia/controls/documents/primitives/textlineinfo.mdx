@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextLineInfo Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,32 +51,32 @@ public struct TextLineInfo
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TextLineInfo
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> TextLineInfo
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="itextline">ITextLine</a>, IEquatable&lt;TextLineInfo&gt;
+<span className="apiref-page__meta-label">实现接口：</span> <a href="itextline">ITextLine</a>, IEquatable&lt;TextLineInfo&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextLineInfo](#uid-6cc9442253) | Creates a new [TextLineInfo](xref:Avalonia.Controls.Documents.Primitives.TextLineInfo). |
+| [TextLineInfo](#uid-6cc9442253) | 创建一个新的 [TextLineInfo](xref:Avalonia.Controls.Documents.Primitives.TextLineInfo)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6cc9442253"></span>
 
-### TextLineInfo Constructor
+### TextLineInfo 构造函数 {#textlineinfo-constructor}
 
-Creates a new [TextLineInfo](xref:Avalonia.Controls.Documents.Primitives.TextLineInfo).
+创建一个新的 [TextLineInfo](xref:Avalonia.Controls.Documents.Primitives.TextLineInfo)。
 
 ```csharp
 public TextLineInfo(Avalonia.Controls.Documents.TextModel.StaticTextPointer startPosition, Avalonia.Controls.Documents.TextModel.StaticTextPointer endPosition, Avalonia.Rect bounds, double baseline, bool hasLineBreak, object containingElement)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `startPosition` [Avalonia.Controls.Documents.TextModel.StaticTextPointer](xref:Avalonia.Controls.Documents.TextModel.StaticTextPointer)
 
@@ -110,33 +110,33 @@ The node whose content the line belongs to.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-2bc8c6cbf3) | No summary available. |
-| [GetHashCode](#uid-0c4b9a6355) | No summary available. |
+| [Equals（2 个重载）](#uid-2bc8c6cbf3) | 暂无摘要。 |
+| [GetHashCode](#uid-0c4b9a6355) | 暂无摘要。 |
 
 <span id="uid-2bc8c6cbf3"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4efc8e2203"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Documents.Primitives.TextLineInfo other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` [Avalonia.Controls.Documents.Primitives.TextLineInfo](xref:Avalonia.Controls.Documents.Primitives.TextLineInfo)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -147,18 +147,18 @@ bool
 
 <span id="uid-0835baaaa9"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -169,41 +169,41 @@ bool
 
 <span id="uid-0c4b9a6355"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-4ebad1a45e) | Gets the baseline offset from the top of the line. |
-| [Bounds](#uid-004dd75f03) | Gets the bounding rectangle of this line in view coordinates. |
+| [Baseline](#uid-4ebad1a45e) | 获取自行顶部量起的基线偏移量。 |
+| [Bounds](#uid-004dd75f03) | 获取该行在视图坐标系中的外接矩形。 |
 | [ContainingElement](#uid-5dc32d48e8) | Gets the node whose content this line belongs to, if any. Selection rendering and vertical navigation group lines by it, so a line that reports none is skipped by both. |
-| [EndPosition](#uid-1f8cc52f66) | Gets the end position of this line as a lightweight value type. |
-| [HasLineBreak](#uid-9a85e5caa8) | Gets whether this line ends with a hard line break. |
-| [Height](#uid-44fc984588) | Gets the height of this line. |
+| [EndPosition](#uid-1f8cc52f66) | 以轻量值类型的形式获取该行的结束位置。 |
+| [HasLineBreak](#uid-9a85e5caa8) | 获取该行是否以硬换行结束。 |
+| [Height](#uid-44fc984588) | 获取该行的高度。 |
 | [IsValid](#uid-f8334f023b) | Gets whether this line info is valid (non-empty). |
-| [Length](#uid-d16ecfd8f2) | Gets the character length of text in this line. |
-| [StartPosition](#uid-70a0ea7aca) | Gets the start position of this line as a lightweight value type. |
-| [Width](#uid-41a4c35abf) | Gets the width of this line. |
+| [Length](#uid-d16ecfd8f2) | 获取该行文本的字符长度。 |
+| [StartPosition](#uid-70a0ea7aca) | 以轻量值类型的形式获取该行的起始位置。 |
+| [Width](#uid-41a4c35abf) | 获取该行的宽度。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4ebad1a45e"></span>
 
-### Baseline Property
+### Baseline 属性 {#baseline-property}
 
-Gets the baseline offset from the top of the line.
+获取自行顶部量起的基线偏移量。
 
 ```csharp
 public double Baseline { get; set; }
@@ -215,9 +215,9 @@ public double Baseline { get; set; }
 
 <span id="uid-004dd75f03"></span>
 
-### Bounds Property
+### Bounds 属性 {#bounds-property}
 
-Gets the bounding rectangle of this line in view coordinates.
+获取该行在视图坐标系中的外接矩形。
 
 ```csharp
 public Avalonia.Rect Bounds { get; set; }
@@ -229,7 +229,7 @@ public Avalonia.Rect Bounds { get; set; }
 
 <span id="uid-5dc32d48e8"></span>
 
-### ContainingElement Property
+### ContainingElement 属性 {#containingelement-property}
 
 Gets the node whose content this line belongs to, if any. Selection
 rendering and vertical navigation group lines by it, so a line that
@@ -239,7 +239,7 @@ reports none is skipped by both.
 public object ContainingElement { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Defaults to so a line written before this member existed
 still compiles. Such a line is skipped by selection rendering and by vertical
@@ -251,9 +251,9 @@ navigation, which is the same treatment it received before the member was added.
 
 <span id="uid-1f8cc52f66"></span>
 
-### EndPosition Property
+### EndPosition 属性 {#endposition-property}
 
-Gets the end position of this line as a lightweight value type.
+以轻量值类型的形式获取该行的结束位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.StaticTextPointer EndPosition { get; set; }
@@ -265,9 +265,9 @@ public Avalonia.Controls.Documents.TextModel.StaticTextPointer EndPosition { get
 
 <span id="uid-9a85e5caa8"></span>
 
-### HasLineBreak Property
+### HasLineBreak 属性 {#haslinebreak-property}
 
-Gets whether this line ends with a hard line break.
+获取该行是否以硬换行结束。
 
 ```csharp
 public bool HasLineBreak { get; set; }
@@ -279,9 +279,9 @@ public bool HasLineBreak { get; set; }
 
 <span id="uid-44fc984588"></span>
 
-### Height Property
+### Height 属性 {#height-property}
 
-Gets the height of this line.
+获取该行的高度。
 
 ```csharp
 public double Height { get; set; }
@@ -293,7 +293,7 @@ public double Height { get; set; }
 
 <span id="uid-f8334f023b"></span>
 
-### IsValid Property
+### IsValid 属性 {#isvalid-property}
 
 Gets whether this line info is valid (non-empty).
 
@@ -307,9 +307,9 @@ public bool IsValid { get; set; }
 
 <span id="uid-d16ecfd8f2"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
-Gets the character length of text in this line.
+获取该行文本的字符长度。
 
 ```csharp
 public int Length { get; set; }
@@ -321,9 +321,9 @@ public int Length { get; set; }
 
 <span id="uid-70a0ea7aca"></span>
 
-### StartPosition Property
+### StartPosition 属性 {#startposition-property}
 
-Gets the start position of this line as a lightweight value type.
+以轻量值类型的形式获取该行的起始位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.StaticTextPointer StartPosition { get; set; }
@@ -335,9 +335,9 @@ public Avalonia.Controls.Documents.TextModel.StaticTextPointer StartPosition { g
 
 <span id="uid-41a4c35abf"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
-Gets the width of this line.
+获取该行的宽度。
 
 ```csharp
 public double Width { get; set; }
@@ -345,19 +345,19 @@ public double Width { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Empty](#uid-8247e77faa) | Represents an empty/invalid text line. |
+| [Empty](#uid-8247e77faa) | 表示一行空的/无效的文本。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8247e77faa"></span>
 
-### Empty Field
+### Empty 字段 {#empty-field}
 
-Represents an empty/invalid text line.
+表示一行空的/无效的文本。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.TextLineInfo Empty

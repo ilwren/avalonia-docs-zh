@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ImmutableGradientBrush Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.Immutable</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.Immutable</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Immutable/ImmutableGradientBrush.cs">ImmutableGradientBrush.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/Immutable/ImmutableGradientBrush.cs">ImmutableGradientBrush.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-A brush that draws with a gradient.
+一支以渐变绘制的画刷。
 
 </div>
 
@@ -54,33 +54,33 @@ public class ImmutableGradientBrush
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ImmutableGradientBrush
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ImmutableGradientBrush
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="immutableconicgradientbrush">ImmutableConicGradientBrush</a>, <a href="immutablelineargradientbrush">ImmutableLinearGradientBrush</a>, <a href="immutableradialgradientbrush">ImmutableRadialGradientBrush</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="immutableconicgradientbrush">ImmutableConicGradientBrush</a>, <a href="immutablelineargradientbrush">ImmutableLinearGradientBrush</a>, <a href="immutableradialgradientbrush">ImmutableRadialGradientBrush</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../ibrush">IBrush</a>, <a href="../igradientbrush">IGradientBrush</a>, <a href="../iimmutablebrush">IImmutableBrush</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../ibrush">IBrush</a>, <a href="../igradientbrush">IGradientBrush</a>, <a href="../iimmutablebrush">IImmutableBrush</a>
 </div>
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GradientStops](#uid-9d195fdf3e) | Gets the brush's gradient stops. |
-| [Opacity](#uid-5f6e07ee47) | Gets the opacity of the brush. |
-| [SpreadMethod](#uid-9b5fcc3168) | Gets the brush's spread method that defines how to draw a gradient that doesn't fill the bounds of the destination control. |
-| [Transform](#uid-2c0dd3ffd3) | Gets the transform of the brush. |
-| [TransformOrigin](#uid-56b8b5945b) | Gets the transform origin of the brush |
+| [GradientStops](#uid-9d195fdf3e) | 获取该画刷的渐变停止点。 |
+| [Opacity](#uid-5f6e07ee47) | 获取画刷的不透明度。 |
+| [SpreadMethod](#uid-9b5fcc3168) | 获取该画刷的扩散方式，它决定当渐变填不满目标控件范围时该如何绘制。 |
+| [Transform](#uid-2c0dd3ffd3) | 获取画刷的变换。 |
+| [TransformOrigin](#uid-56b8b5945b) | 获取该画刷的变换原点 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9d195fdf3e"></span>
 
-### GradientStops Property
+### GradientStops 属性 {#gradientstops-property}
 
-Gets the brush's gradient stops.
+获取该画刷的渐变停止点。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.IGradientStop> GradientStops { get; set; }
@@ -92,9 +92,9 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Media.IGradientStop> Gr
 
 <span id="uid-5f6e07ee47"></span>
 
-### Opacity Property
+### Opacity 属性 {#opacity-property}
 
-Gets the opacity of the brush.
+获取画刷的不透明度。
 
 ```csharp
 public double Opacity { get; set; }
@@ -106,10 +106,10 @@ public double Opacity { get; set; }
 
 <span id="uid-9b5fcc3168"></span>
 
-### SpreadMethod Property
+### SpreadMethod 属性 {#spreadmethod-property}
 
-Gets the brush's spread method that defines how to draw a gradient that doesn't fill
-the bounds of the destination control.
+获取该画刷的扩散方式，它决定当渐变填不满
+目标控件范围时该如何绘制。
 
 ```csharp
 public Avalonia.Media.GradientSpreadMethod SpreadMethod { get; set; }
@@ -121,9 +121,9 @@ public Avalonia.Media.GradientSpreadMethod SpreadMethod { get; set; }
 
 <span id="uid-2c0dd3ffd3"></span>
 
-### Transform Property
+### Transform 属性 {#transform-property}
 
-Gets the transform of the brush.
+获取画刷的变换。
 
 ```csharp
 public Avalonia.Media.ITransform Transform { get; set; }
@@ -135,9 +135,9 @@ public Avalonia.Media.ITransform Transform { get; set; }
 
 <span id="uid-56b8b5945b"></span>
 
-### TransformOrigin Property
+### TransformOrigin 属性 {#transformorigin-property}
 
-Gets the transform origin of the brush
+获取该画刷的变换原点
 
 ```csharp
 public Avalonia.RelativePoint TransformOrigin { get; set; }

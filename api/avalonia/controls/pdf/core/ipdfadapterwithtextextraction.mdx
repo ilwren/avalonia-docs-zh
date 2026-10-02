@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IPdfAdapterWithTextExtraction Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Extension interface for adapters that support text extraction.
+面向支持文本提取的适配器的扩展接口。
 
 </div>
 
@@ -50,30 +50,30 @@ public interface IPdfAdapterWithTextExtraction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ipdfadapter">IPdfAdapter</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ipdfadapter">IPdfAdapter</a>, IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ExtractTextAsync](#uid-6b16e77a1f) | Extracts text from a page. |
-| [SearchAsync](#uid-7a1b72af6b) | Searches for text in the document. |
+| [ExtractTextAsync](#uid-6b16e77a1f) | 从某一页中提取文本。 |
+| [SearchAsync](#uid-7a1b72af6b) | 在文档中搜索文本。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6b16e77a1f"></span>
 
-### ExtractTextAsync Method
+### ExtractTextAsync 方法 {#extracttextasync-method}
 
-Extracts text from a page.
+从某一页中提取文本。
 
 ```csharp
 public System.Threading.Tasks.Task<string> ExtractTextAsync(Avalonia.Controls.Pdf.Core.IPdfPage page, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `page` [Avalonia.Controls.Pdf.Core.IPdfPage](xref:Avalonia.Controls.Pdf.Core.IPdfPage)
 
@@ -81,7 +81,7 @@ public System.Threading.Tasks.Task<string> ExtractTextAsync(Avalonia.Controls.Pd
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;string&gt;
 
@@ -92,15 +92,15 @@ System.Threading.Tasks.Task&lt;string&gt;
 
 <span id="uid-7a1b72af6b"></span>
 
-### SearchAsync Method
+### SearchAsync 方法 {#searchasync-method}
 
-Searches for text in the document.
+在文档中搜索文本。
 
 ```csharp
 public System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Pdf.Core.PdfSearchResult>> SearchAsync(Avalonia.Controls.Pdf.Core.IPdfDocument document, string query, Avalonia.Controls.Pdf.Core.SearchOptions options, System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `document` [Avalonia.Controls.Pdf.Core.IPdfDocument](xref:Avalonia.Controls.Pdf.Core.IPdfDocument)
 
@@ -114,7 +114,7 @@ public System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Aval
 `cancellationToken` System.Threading.CancellationToken
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Controls.Pdf.Core.PdfSearchResult](xref:Avalonia.Controls.Pdf.Core.PdfSearchResult)&gt;&gt;
 

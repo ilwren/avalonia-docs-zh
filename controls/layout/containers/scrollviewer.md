@@ -1,42 +1,42 @@
 ---
 id: scrollviewer
 title: ScrollViewer
-description: A container control that provides scrollbars when its content exceeds the visible area.
+description: 一个容器控件：当内容超出可见区域时提供滚动条。
 doc-type: reference
 ---
 
-The [`ScrollViewer`](/api/avalonia/controls/scrollviewer) control can have content that is bigger than its content zone. It provides scroll bars so your users can move hidden content into view.
+[`ScrollViewer`](/api/avalonia/controls/scrollviewer) 控件允许其内容大于自身的内容区，并提供滚动条，让用户把隐藏的内容滚动到视野中。
 
 :::warning
-You cannot place a `ScrollViewer` inside a control that has infinite height or width (depending on the scrolling direction), such as a `StackPanel`. To avoid this problem, set a fixed `Height`/`Width` or `MaxHeight`/`MaxWidth` on the `ScrollViewer`, or choose a different container panel.
+不能把 `ScrollViewer` 放进在滚动方向上高度或宽度无限的控件里（比如 `StackPanel`）。要避开这个坑，可以给 `ScrollViewer` 设置固定的 `Height`/`Width` 或 `MaxHeight`/`MaxWidth`，或者换一个容器面板。
 :::
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `HorizontalScrollBarVisibility` | [`ScrollBarVisibility`](/api/avalonia/controls/primitives/scrollbarvisibility) | Controls the horizontal scrollbar: `Auto`, `Visible`, `Hidden`, `Disabled`. |
-| `VerticalScrollBarVisibility` | `ScrollBarVisibility` | Controls the vertical scrollbar: `Auto`, `Visible`, `Hidden`, `Disabled`. |
-| `AllowAutoHide` | `bool` | Default `true`. Sets whether scrollbars hide automatically when the pointer is not over the control. |
-| `Offset` | `Vector` | The current scroll position (X, Y). |
-| `Extent` | `Size` | The total size of the scrollable content. |
-| `Viewport` | `Size` | The size of the visible area. |
-| `IsScrollChainingEnabled` | `bool` | Attached property. Default `true`. When set on an inner scrollable control, determines whether scroll events chain to the outer `ScrollViewer`. |
-| `IsDeferredScrollingEnabled` | `bool` | Default `false`. When `true`, the content does not scroll until the user releases the scrollbar thumb. Useful for performance with heavy content. |
-| `BringIntoViewOnFocusChange` | `bool` | Default `true`. When a child control receives focus, the `ScrollViewer` automatically scrolls to bring it into view. |
+| `HorizontalScrollBarVisibility` | [`ScrollBarVisibility`](/api/avalonia/controls/primitives/scrollbarvisibility) | 控制水平滚动条：`Auto`、`Visible`、`Hidden`、`Disabled`。 |
+| `VerticalScrollBarVisibility` | `ScrollBarVisibility` | 控制垂直滚动条：`Auto`、`Visible`、`Hidden`、`Disabled`。 |
+| `AllowAutoHide` | `bool` | 默认 `true`。设置指针移开控件时滚动条是否自动隐藏。 |
+| `Offset` | `Vector` | 当前的滚动位置（X, Y）。 |
+| `Extent` | `Size` | 可滚动内容的总尺寸。 |
+| `Viewport` | `Size` | 可见区域的尺寸。 |
+| `IsScrollChainingEnabled` | `bool` | 附加属性，默认 `true`。设在内层可滚动控件上，决定滚动事件是否向外层 `ScrollViewer` 传递。 |
+| `IsDeferredScrollingEnabled` | `bool` | 默认 `false`。为 `true` 时，内容要等到用户松开滚动条滑块之后才滚动。内容很重时，这有助于性能。 |
+| `BringIntoViewOnFocusChange` | `bool` | 默认 `true`。当某个子控件获得焦点时，`ScrollViewer` 会自动滚动，把它带进视野。 |
 
-## Scrollbar visibility options
+## 滚动条可见性的取值 {#scrollbar-visibility-options}
 
-Each scrollbar direction accepts one of the following `ScrollBarVisibility` values:
+两个方向的滚动条都接受以下 `ScrollBarVisibility` 取值之一：
 
-| Value | Behavior |
+| 值 | 行为 |
 |---|---|
-| `Auto` | Shows the scrollbar only when content overflows. This is the default for vertical scrolling. |
-| `Visible` | Always shows the scrollbar, even when content fits within the viewport. |
-| `Hidden` | Hides the scrollbar but still allows scrolling by touch, mouse wheel, or keyboard. |
-| `Disabled` | Disables scrolling in that direction entirely. This is the default for horizontal scrolling. |
+| `Auto` | 仅当内容溢出时显示滚动条。这是垂直滚动的默认值。 |
+| `Visible` | 始终显示滚动条，哪怕内容在视口内放得下。 |
+| `Hidden` | 隐藏滚动条，但仍可用触摸、鼠标滚轮或键盘滚动。 |
+| `Disabled` | 彻底禁止该方向的滚动。这是水平滚动的默认值。 |
 
 ```xml
 <!-- Always show the vertical scrollbar, disable horizontal scrolling -->
@@ -46,9 +46,9 @@ Each scrollbar direction accepts one of the following `ScrollBarVisibility` valu
 </ScrollViewer>
 ```
 
-## Scroll chaining
+## 滚动传递 {#scroll-chaining}
 
-When you nest a scrollable control inside a `ScrollViewer`, and the user reaches the scroll limit on the inner control, scroll chaining determines whether the outer `ScrollViewer` continues scrolling. You can enable or disable this behavior with the `IsScrollChainingEnabled` attached property on the inner control:
+当你把一个可滚动控件嵌进 `ScrollViewer`，而用户又把内层控件滚到了头，滚动传递决定外层 `ScrollViewer` 是否接着滚。在内层控件上用 `IsScrollChainingEnabled` 附加属性即可开关这一行为：
 
 ```xml
 <ScrollViewer>
@@ -62,7 +62,7 @@ When you nest a scrollable control inside a `ScrollViewer`, and the user reaches
 </ScrollViewer>
 ```
 
-This attached property is available on the following controls:
+下列控件支持该附加属性：
 
 * `ScrollViewer`
 * `DataGrid`
@@ -70,9 +70,9 @@ This attached property is available on the following controls:
 * `TextBox`
 * `TreeView`
 
-## Programmatic scrolling
+## 用代码控制滚动 {#programmatic-scrolling}
 
-You can control the scroll position from code-behind or your view model:
+滚动位置可以在代码隐藏或视图模型中控制：
 
 ```csharp
 // Scroll to a specific position
@@ -88,7 +88,7 @@ scrollViewer.Offset = new Vector(scrollViewer.Offset.X, scrollViewer.Extent.Heig
 targetControl.BringIntoView();
 ```
 
-You can also listen for scroll position changes by subscribing to property changes on `Offset`:
+订阅 `Offset` 的属性变化，还能监听滚动位置的改变：
 
 ```csharp
 scrollViewer.GetObservable(ScrollViewer.OffsetProperty).Subscribe(offset =>
@@ -100,7 +100,7 @@ scrollViewer.GetObservable(ScrollViewer.OffsetProperty).Subscribe(offset =>
 
 ## Example
 
-This example creates a `StackPanel` that is taller than the `Border` that contains it. The `ScrollViewer` automatically displays a vertical scrollbar.
+下面的例子创建了一个比它所在的 `Border` 更高的 `StackPanel`，于是 `ScrollViewer` 自动显示出垂直滚动条。
 
 <XamlPreview>
 
@@ -120,9 +120,9 @@ This example creates a `StackPanel` that is taller than the `Border` that contai
 
 </XamlPreview>
 
-### Horizontal scrolling
+### 水平滚动 {#horizontal-scrolling}
 
-To enable horizontal scrolling, set `HorizontalScrollBarVisibility` to `Auto` or `Visible`:
+要启用水平滚动，请把 `HorizontalScrollBarVisibility` 设为 `Auto` 或 `Visible`：
 
 ```xml
 <ScrollViewer HorizontalScrollBarVisibility="Auto"
@@ -137,8 +137,8 @@ To enable horizontal scrolling, set `HorizontalScrollBarVisibility` to `Auto` or
 </ScrollViewer>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [ScrollViewer API reference](/api/avalonia/controls/scrollviewer)
-- [`ScrollViewer.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ScrollViewer.cs)
+- [ScrollViewer API 参考](/api/avalonia/controls/scrollviewer)
+- [GitHub 上的 `ScrollViewer.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/ScrollViewer.cs)
 

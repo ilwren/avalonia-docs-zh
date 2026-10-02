@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FlatColorPalette Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.ColorPicker</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.ColorPicker</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/ColorPalettes/FlatColorPalette.cs">FlatColorPalette.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls.ColorPicker/ColorPalettes/FlatColorPalette.cs">FlatColorPalette.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Implements a reduced flat design or flat UI color palette.
+实现一套精简的扁平设计（flat UI）配色。
 
 </div>
 
@@ -54,33 +54,33 @@ public class FlatColorPalette
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FlatColorPalette
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FlatColorPalette
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="icolorpalette">IColorPalette</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="icolorpalette">IColorPalette</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
-See:
+参见：
 - https://htmlcolorcodes.com/color-chart/
 - https://htmlcolorcodes.com/color-chart/flat-design-color-chart/
 - http://designmodo.github.io/Flat-UI/
 
-The GitHub project is licensed as MIT: https://github.com/designmodo/Flat-UI.
+该 GitHub 项目以 MIT 许可：https://github.com/designmodo/Flat-UI.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FlatColorPalette](#uid-318b3d5312) | No summary available. |
+| [FlatColorPalette](#uid-318b3d5312) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-318b3d5312"></span>
 
-### FlatColorPalette Constructor
+### FlatColorPalette 构造函数 {#flatcolorpalette-constructor}
 
 ```csharp
 public FlatColorPalette()
@@ -88,70 +88,70 @@ public FlatColorPalette()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetColor](#uid-cc21f2bce4) | Gets a color in the palette by index. |
+| [GetColor](#uid-cc21f2bce4) | 按索引获取调色板中的某个颜色。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cc21f2bce4"></span>
 
-### GetColor Method
+### GetColor 方法 {#getcolor-method}
 
-Gets a color in the palette by index.
+按索引获取调色板中的某个颜色。
 
 ```csharp
 public Avalonia.Media.Color GetColor(int colorIndex, int shadeIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `colorIndex` int
 
-The index of the color in the palette.
-The index must be between zero and [Avalonia.Controls.IColorPalette.ColorCount](xref:Avalonia.Controls.IColorPalette.ColorCount).
+该颜色在调色板中的索引。
+索引必须介于零与 [Avalonia.Controls.IColorPalette.ColorCount](xref:Avalonia.Controls.IColorPalette.ColorCount) 之间。
 
 
 `shadeIndex` int
 
-The index of the color shade in the palette.
-The index must be between zero and [Avalonia.Controls.IColorPalette.ShadeCount](xref:Avalonia.Controls.IColorPalette.ShadeCount).
+该色度在调色板中的索引。
+索引必须介于零与 [Avalonia.Controls.IColorPalette.ShadeCount](xref:Avalonia.Controls.IColorPalette.ShadeCount) 之间。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
-The color at the specified index or an exception.
+指定索引处的颜色，或抛出异常。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ColorCount](#uid-5eac91433e) | Gets the total number of colors in this palette. A color is not necessarily a single value and may be composed of several shades. |
-| [ShadeCount](#uid-b04ed0c81a) | Gets the total number of shades for each color in this palette. Shades are usually a variation of the color lightening or darkening it. |
+| [ColorCount](#uid-5eac91433e) | 获取该调色板中颜色的总数。一个颜色未必只是单个取值，它可能由若干色度组成。 |
+| [ShadeCount](#uid-b04ed0c81a) | 获取该调色板中每个颜色的色度总数。所谓色度，通常是把颜色调亮或调暗后得到的变体。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5eac91433e"></span>
 
-### ColorCount Property
+### ColorCount 属性 {#colorcount-property}
 
-Gets the total number of colors in this palette.
-A color is not necessarily a single value and may be composed of several shades.
+获取该调色板中颜色的总数。
+一个颜色未必只是单个取值，它可能由若干色度组成。
 
 ```csharp
 public int ColorCount { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-Represents total columns in a table.
+表示表格的总列数。
 
 </section>
 
@@ -159,18 +159,18 @@ Represents total columns in a table.
 
 <span id="uid-b04ed0c81a"></span>
 
-### ShadeCount Property
+### ShadeCount 属性 {#shadecount-property}
 
-Gets the total number of shades for each color in this palette.
-Shades are usually a variation of the color lightening or darkening it.
+获取该调色板中每个颜色的色度总数。
+所谓色度，通常是把颜色调亮或调暗后得到的变体。
 
 ```csharp
 public int ShadeCount { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-Represents total rows in a table.
+表示表格的总行数。
 
 </section>
 

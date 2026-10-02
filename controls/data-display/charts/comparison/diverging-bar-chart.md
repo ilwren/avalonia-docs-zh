@@ -1,25 +1,25 @@
 ---
 id: diverging-bar-chart
-title: Diverging bar chart
-description: Extends bars left and right from a baseline to compare positive and negative values or opposing responses.
+title: 双向条形图
+description: 条形从基准线向左右两侧延伸，用来比较正负数值或对立的反馈。
 doc-type: reference
 tags:
   - avalonia pro
 ---
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Diverging bar charts use a centered baseline so values can extend in opposite directions from the same origin.
+双向条形图把基准线放在中间，数值由同一个原点向相反方向延伸。
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **Sentiment splits**: Show positive and negative responses around zero.
-- **Variance views**: Compare over- and under-performance against a baseline.
-- **Balanced comparisons**: Highlight directional differences without two separate charts.
+- **情感分化**：以零为中心展示正面和负面的反馈。
+- **偏差视图**：比较相对基准线的超额与不足。
+- **平衡对比**：不必画两张图，就能凸显方向上的差异。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -31,7 +31,7 @@ Diverging bar charts use a centered baseline so values can extend in opposite di
                             ValuePath="Score" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public record SentimentPoint(string Label, double Score);
@@ -44,21 +44,21 @@ public ObservableCollection<SentimentPoint> SentimentData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | Collection of items to compare. | `null` |
-| `ValuePath` | Path to the value plotted relative to the baseline. | `null` |
-| `LabelPath` | Path to the category label. | `null` |
-| `Baseline` | Center baseline value. | `0.0` |
-| `PositiveBrush` | Brush used for values above the baseline. | `null` |
-| `NegativeBrush` | Brush used for values below the baseline. | `null` |
-| `BarHeight` | Bar height as a fraction of the row height. | `0.7` |
-| `ShowValues` | Whether to draw value labels inside the bars. | `true` |
-| `IsHighlightEnabled` | Enables hover highlighting for bars. | `false` |
+| `ItemsSource` | 待比较项的集合。 | `null` |
+| `ValuePath` | 指向相对基准线所绘数值的路径。 | `null` |
+| `LabelPath` | 指向类别标签的路径。 | `null` |
+| `Baseline` | 中心基准值。 | `0.0` |
+| `PositiveBrush` | 高于基准线的数值所用的画刷。 | `null` |
+| `NegativeBrush` | 低于基准线的数值所用的画刷。 | `null` |
+| `BarHeight` | 条形高度，以行高的比例表示。 | `0.7` |
+| `ShowValues` | 是否在条形内部绘制数值标签。 | `true` |
+| `IsHighlightEnabled` | 为条形启用悬停高亮。 | `false` |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Bar chart](/controls/data-display/charts/cartesian/bar-chart)
-- [Mirror bar chart](/controls/data-display/charts/comparison/mirror-bar-chart)
+- [条形图](/controls/data-display/charts/cartesian/bar-chart)
+- [镜像条形图](/controls/data-display/charts/comparison/mirror-bar-chart)

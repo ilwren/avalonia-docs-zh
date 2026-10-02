@@ -20,37 +20,35 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">LtrbPixelRect Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/LtrbRect.cs">LtrbRect.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/LtrbRect.cs">LtrbRect.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-This struct is essentially the same thing as RECT from win32 API
-Unlike our "normal" [PixelRect](xref:Avalonia.PixelRect) which is more human-readable and human-usable
-this struct is optimized for actual processing that doesn't really care
-about Width and Height but pretty much always only cares about
-Right and Bottom edge coordinates
+这个结构本质上与 win32 API 中的 RECT 是一回事。
+我们那个「常规」的 [PixelRect](xref:Avalonia.PixelRect) 更便于人读人用，而这个结构则是为实际处理而优化的——
+那些处理其实并不关心 Width 和 Height，几乎只关心右边缘与下边缘的坐标。
 
-Not having to constantly convert between Width/Height and Right/Bottom for no actual reason
-saves us some perf
+不必在 Width/Height 与 Right/Bottom 之间来回换算（本来也没必要），
+这为我们省下了一些性能开销
 
-This structure is intended to be mostly internal, but it's exposed as a PrivateApi type so it can
-be passed to the drawing backend when needed
+这个结构本意基本是内部用的，但为了需要时能传给绘图后端，
+它被公开为 PrivateApi 类型
 
 </div>
 
@@ -64,7 +62,7 @@ public struct LtrbPixelRect
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> LtrbPixelRect
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> LtrbPixelRect
 </div>
 </div>
 

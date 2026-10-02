@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StandardAssetLoader Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/StandardAssetLoader.cs">StandardAssetLoader.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/StandardAssetLoader.cs">StandardAssetLoader.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Loads assets compiled into the application binary.
+加载编译进应用二进制文件中的资产。
 
 </div>
 
@@ -54,78 +54,78 @@ public class StandardAssetLoader
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> StandardAssetLoader
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> StandardAssetLoader
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iassetloader">IAssetLoader</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iassetloader">IAssetLoader</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [StandardAssetLoader](#uid-091693ee4a) | No summary available. |
+| [StandardAssetLoader](#uid-091693ee4a) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-091693ee4a"></span>
 
-### StandardAssetLoader Constructor
+### StandardAssetLoader 构造函数 {#standardassetloader-constructor}
 
 ```csharp
 public StandardAssetLoader(System.Reflection.Assembly assembly)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `assembly` System.Reflection.Assembly
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Exists](#uid-cd2e4a5b72) | Checks if an asset with the specified URI exists. |
-| [GetAssembly](#uid-7ba9def467) | No summary available. |
-| [GetAssets](#uid-6f83c235fe) | Gets all assets of a folder and subfolders that match specified uri. |
-| [InvalidateAssemblyCache (2 overloads)](#uid-371c85a4f3) | No summary available. |
-| [Open](#uid-11b09534e4) | Opens the asset with the requested URI. |
-| [OpenAndGetAssembly](#uid-11100a9b4f) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
-| [RegisterResUriParsers](#uid-6cffcfb154) | No summary available. |
+| [Exists](#uid-cd2e4a5b72) | 检查指定 URI 的资产是否存在。 |
+| [GetAssembly](#uid-7ba9def467) | 暂无摘要。 |
+| [GetAssets](#uid-6f83c235fe) | 获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。 |
+| [InvalidateAssemblyCache（2 个重载）](#uid-371c85a4f3) | 暂无摘要。 |
+| [Open](#uid-11b09534e4) | 按请求的 URI 打开资产。 |
+| [OpenAndGetAssembly](#uid-11100a9b4f) | 按请求的 URI 打开资产，返回资产流以及承载该资产的程序集。 |
+| [RegisterResUriParsers](#uid-6cffcfb154) | 暂无摘要。 |
 | [SetDefaultAssembly](#uid-a66a77b805) | Sets the default assembly from which to load assets for which no assembly is specified. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cd2e4a5b72"></span>
 
-### Exists Method
+### Exists 方法 {#exists-method}
 
-Checks if an asset with the specified URI exists.
+检查指定 URI 的资产是否存在。
 
 ```csharp
 public bool Exists(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
-True if the asset could be found; otherwise false.
+若能找到该资产则为 true，否则为 false。
 
 
 </section>
@@ -134,13 +134,13 @@ True if the asset could be found; otherwise false.
 
 <span id="uid-7ba9def467"></span>
 
-### GetAssembly Method
+### GetAssembly 方法 {#getassembly-method}
 
 ```csharp
 public System.Reflection.Assembly GetAssembly(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `uri` Uri
 
@@ -148,7 +148,7 @@ public System.Reflection.Assembly GetAssembly(Uri uri, Uri baseUri)
 `baseUri` Uri
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Reflection.Assembly
 
@@ -159,19 +159,19 @@ System.Reflection.Assembly
 
 <span id="uid-6f83c235fe"></span>
 
-### GetAssets Method
+### GetAssets 方法 {#getassets-method}
 
-Gets all assets of a folder and subfolders that match specified uri.
+获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Uri> GetAssets(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
@@ -179,24 +179,24 @@ The URI.
 Base URI that is used if `uri` is relative.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 System.Collections.Generic.IEnumerable&lt;Uri&gt;
 
-All matching assets as a tuple of the absolute path to the asset and the assembly containing the asset
+所有匹配的资产，以“资产绝对路径 + 承载该资产的程序集”元组的形式给出
 
 
 </section>
 
 <span id="uid-371c85a4f3"></span>
 
-### InvalidateAssemblyCache overloads
+### InvalidateAssemblyCache 的重载 {#invalidateassemblycache-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5abc1dba35"></span>
 
-#### InvalidateAssemblyCache Method
+#### InvalidateAssemblyCache 方法 {#invalidateassemblycache-method}
 
 ```csharp
 public void InvalidateAssemblyCache()
@@ -208,13 +208,13 @@ public void InvalidateAssemblyCache()
 
 <span id="uid-ffc7c364a3"></span>
 
-#### InvalidateAssemblyCache Method
+#### InvalidateAssemblyCache 方法 {#invalidateassemblycache-method-1}
 
 ```csharp
 public void InvalidateAssemblyCache(string name)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `name` string
 
@@ -225,36 +225,36 @@ public void InvalidateAssemblyCache(string name)
 
 <span id="uid-11b09534e4"></span>
 
-### Open Method
+### Open 方法 {#open-method}
 
-Opens the asset with the requested URI.
+按请求的 URI 打开资产。
 
 ```csharp
 public System.IO.Stream Open(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.IO.Stream
 
-A stream containing the asset contents.
+一个承载该资产内容的流。
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
-- [The asset could not be found.](xref:System.IO.FileNotFoundException)
+- [找不到该资产。](xref:System.IO.FileNotFoundException)
 
 </section>
 
@@ -262,37 +262,37 @@ A stream containing the asset contents.
 
 <span id="uid-11100a9b4f"></span>
 
-### OpenAndGetAssembly Method
+### OpenAndGetAssembly 方法 {#openandgetassembly-method}
 
-Opens the asset with the requested URI and returns the asset stream and the
-assembly containing the asset.
+按请求的 URI 打开资产，返回资产流以及
+承载该资产的程序集。
 
 ```csharp
 public ValueTuple<System.IO.Stream, System.Reflection.Assembly> OpenAndGetAssembly(Uri uri, Uri baseUri)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 ValueTuple&lt;System.IO.Stream, System.Reflection.Assembly&gt;
 
 The stream containing the resource contents together with the assembly.
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
-- [The asset could not be found.](xref:System.IO.FileNotFoundException)
+- [找不到该资产。](xref:System.IO.FileNotFoundException)
 
 </section>
 
@@ -300,7 +300,7 @@ The stream containing the resource contents together with the assembly.
 
 <span id="uid-6cffcfb154"></span>
 
-### RegisterResUriParsers Method
+### RegisterResUriParsers 方法 {#registerresuriparsers-method}
 
 ```csharp
 public void RegisterResUriParsers()
@@ -312,7 +312,7 @@ public void RegisterResUriParsers()
 
 <span id="uid-a66a77b805"></span>
 
-### SetDefaultAssembly Method
+### SetDefaultAssembly 方法 {#setdefaultassembly-method}
 
 Sets the default assembly from which to load assets for which no assembly is specified.
 
@@ -320,7 +320,7 @@ Sets the default assembly from which to load assets for which no assembly is spe
 public void SetDefaultAssembly(System.Reflection.Assembly assembly)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `assembly` System.Reflection.Assembly
 

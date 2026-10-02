@@ -1,27 +1,27 @@
 ---
 id: custom-panel
 title: Custom Panel
-description: Implement a custom layout panel by overriding MeasureOverride and ArrangeOverride.
+description: 通过重写 MeasureOverride 和 ArrangeOverride 实现自定义布局面板。
 doc-type: how-to
 ---
 
-If you need complex or unique layouts beyond what the [built-in panels](/controls) provide, you can create your own custom panel. A custom panel lets you control exactly how child elements are measured and arranged. This is done by subclassing `Panel` and overriding its layout methods.
+如果你需要的布局比[内置面板](/controls)所能提供的更复杂或更特别，可以自己写一个面板。自定义面板让你精确掌控子元素如何被测量和排列，做法是继承 `Panel` 并重写它的布局方法。
 
-## Layout process
+## 布局过程 {#layout-process}
 
-Avalonia uses a two-pass layout system:
+Avalonia 采用两轮制的布局系统：
 
-1. **Measure pass (`MeasureOverride`):** The panel receives an available size and determines how much space it needs. You must call `child.Measure()` on every child during this pass. Each child then sets its `DesiredSize` property, which you can use to calculate the panel's own desired size.
+1. **测量（`MeasureOverride`）：**面板拿到一个可用尺寸，据此算出自己需要多大空间。这一轮里你必须对每个子元素调用 `child.Measure()`，之后每个子元素都会设好自己的 `DesiredSize` 属性，你可以用它来计算面板自身的期望尺寸。
 
-2. **Arrange pass (`ArrangeOverride`):** The panel receives its final allocated size and positions each child within that space. You must call `child.Arrange()` on every child, passing a `Rect` that defines the child's position and size.
+2. **排列（`ArrangeOverride`）：**面板拿到最终分配给它的尺寸，并在这片空间里给每个子元素定位。你必须对每个子元素调用 `child.Arrange()`，并传入一个 `Rect` 来指定该子元素的位置和大小。
 
-Every panel must participate in both passes.
+任何面板都必须参与这两轮。
 
-For more information on Avalonia's layout system, see [The layout system](/docs/layout/#the-layout-system).
+关于 Avalonia 布局系统的更多内容，请参阅[布局系统](/docs/layout/#the-layout-system)。
 
-## Creating a custom `PlotPanel` with a fixed offset
+## 做一个带固定偏移的自定义 `PlotPanel` {#creating-a-custom-plotpanel-with-a-fixed-offset}
 
-This simple example highlights how to override `MeasureOverride` and `ArrangeOverride` when creating a custom panel. The custom `PlotPanel` positions child elements at a hard-coded offset of (50, 50).
+这个简单的例子重点演示自定义面板时该怎么重写 `MeasureOverride` 和 `ArrangeOverride`。这个自定义 `PlotPanel` 把子元素摆在写死的 (50, 50) 偏移处。
 
 <XamlPreview>
 
@@ -77,9 +77,9 @@ public class PlotPanel : Panel
 
 </XamlPreview>
 
-## Creating a custom `RadialPanel`
+## 做一个自定义 `RadialPanel` {#creating-a-custom-radialpanel}
 
-This is a more advanced example of a custom radial panel that arranges child elements evenly around a circle. Each child is placed at an equal angular offset from the others.
+这是一个更进阶的例子：自定义的径向面板，把子元素沿圆周均匀排布，相邻两个子元素的角度间隔相同。
 
 <XamlPreview>
 
@@ -136,11 +136,11 @@ public class RadialPanel : Panel
 
 </XamlPreview>
 
-## Adding an attached property
+## 添加附加属性 {#adding-an-attached-property}
 
-Add a `Slot` property to `RadialPanel`, so that children can specify their position in the circle. An attached property is chosen to allow data to be specified on a per-child basis.
+给 `RadialPanel` 加一个 `Slot` 属性，让子元素能指定自己在圆周上的位置。这里选用附加属性，是为了能逐个子元素地指定数据。
 
-For further guidance on attached properties, see [Attached Properties](/docs/custom-controls/defining-properties#attached-properties).
+关于附加属性的更多指引，请参阅[附加属性](/docs/custom-controls/defining-properties#attached-properties)。
 
 ```csharp
 public static readonly AttachedProperty<int> SlotProperty =
@@ -150,15 +150,15 @@ public static int GetSlot(Control element) => element.GetValue(SlotProperty);
 public static void SetSlot(Control element, int value) => element.SetValue(SlotProperty, value);
 ```
 
-## Tips
+## 小贴士 {#tips}
 
-- Always call `Measure` on every child in `MeasureOverride`. Children that are not measured will not render correctly.
-- Always call `Arrange` on every child in `ArrangeOverride`. Children that are not arranged will not appear.
-- Use [`AffectsMeasure` or `AffectsArrange`](/docs/custom-controls/custom-drawn-controls#affectsrender-affectsmeasure-and-affectsarrange) when registering styled properties that influence layout. This ensures the panel adjusts its layout when those properties change.
-- Return the size your panel actually needs from `MeasureOverride`. Returning a size larger than necessary wastes space, while returning a size that is too small may clip children.
+- 在 `MeasureOverride` 中务必对每个子元素调用 `Measure`，没被测量的子元素渲染不正常。
+- 在 `ArrangeOverride` 中务必对每个子元素调用 `Arrange`，没被排列的子元素根本不会出现。
+- 注册会影响布局的样式化属性时，请使用 [`AffectsMeasure` 或 `AffectsArrange`](/docs/custom-controls/custom-drawn-controls#affectsrender-affectsmeasure-and-affectsarrange)，这样这些属性一变，面板就会重新布局。
+- 从 `MeasureOverride` 返回面板实际需要的尺寸。返回得太大会浪费空间，太小则可能把子元素裁掉。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Attached properties](/docs/custom-controls/defining-properties#attached-properties): Let child controls carry per-child layout values for your panel.
-- [Layout](/docs/layout): How the measure and arrange system works.
-- [Choosing a layout panel](/docs/layout/choosing-a-layout-panel): Picking the right built-in panel before writing your own.
+- [附加属性](/docs/custom-controls/defining-properties#attached-properties)：让子控件为你的面板携带逐个子元素的布局数据。
+- [布局](/docs/layout)：测量与排列机制的工作方式。
+- [选择布局面板](/docs/layout/choosing-a-layout-panel)：自己动手写之前，先看看能不能用现成的内置面板。

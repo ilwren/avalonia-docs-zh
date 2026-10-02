@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ToolbarTargetAreas Enum</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Adorners</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Adorners</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -51,31 +51,31 @@ public enum ToolbarTargetAreas
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> ToolbarTargetAreas
+<span className="apiref-page__meta-label">继承关系：</span> Enum <span className="apiref-page__relation-separator">-&gt;</span> ToolbarTargetAreas
 </div>
 </div>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [All](#uid-067525899a) | The caret-derived target areas. The released name for [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas), which reads better beside the areas that are opted into by name. |
-| [Block](#uid-e5c7216bb4) | Applies to block-level elements. |
+| [Block](#uid-e5c7216bb4) | 适用于块级元素。 |
 | [CaretAreas](#uid-251ec05923) | The caret-derived target areas. Not every flag: a selection-driven area ([Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.TableCells](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.TableCells)) and the nested-document areas ([Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand), [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.Footnote](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.Footnote)) are opted into by name. |
 | [Footnote](#uid-09cb2356f6) | A footnote: the caret is in a note's document. Like [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand), outside [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas), so a tool opts in to notes. |
-| [Image](#uid-824e58d0d1) | Applies to inline image elements. |
-| [List](#uid-9de1b334f9) | Applies to list elements. |
-| [None](#uid-be15ebeb3f) | No target area. |
+| [Image](#uid-824e58d0d1) | 适用于内联图像元素。 |
+| [List](#uid-9de1b334f9) | 适用于列表元素。 |
+| [None](#uid-be15ebeb3f) | 无目标区域。 |
 | [PageBand](#uid-ba87d936b3) | Applies while the caret is in a page band (a header or footer on a page sheet). A band is text too, so tools targeting the text areas stay available there; deliberately not part of [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas), so a tool that lists this area alone appears only inside a band. |
-| [Table](#uid-14523bac58) | Applies to table elements. |
+| [Table](#uid-14523bac58) | 适用于表格元素。 |
 | [TableCells](#uid-e758afd43e) | Applies while the selection is a set of whole table cells (a table strip selection or a text selection spanning multiple cells). Driven by the selection shape rather than the caret's ancestry, and deliberately not part of [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas): cell tools opt in explicitly so they appear only for cell selections. |
-| [Text](#uid-f67531e7c3) | Applies to inline text editing regions. |
+| [Text](#uid-f67531e7c3) | 适用于内联文本编辑区域。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-067525899a"></span>
 
-### All Field
+### All 字段 {#all-field}
 
 The caret-derived target areas. The released name for [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas),
 which reads better beside the areas that are opted into by name.
@@ -90,9 +90,9 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas All
 
 <span id="uid-e5c7216bb4"></span>
 
-### Block Field
+### Block 字段 {#block-field}
 
-Applies to block-level elements.
+适用于块级元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Block
@@ -104,7 +104,7 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Block
 
 <span id="uid-251ec05923"></span>
 
-### CaretAreas Field
+### CaretAreas 字段 {#caretareas-field}
 
 The caret-derived target areas. Not every flag: a selection-driven area
 ([Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.TableCells](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.TableCells)) and the nested-document areas
@@ -120,7 +120,7 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas CaretA
 
 <span id="uid-09cb2356f6"></span>
 
-### Footnote Field
+### Footnote 字段 {#footnote-field}
 
 A footnote: the caret is in a note's document. Like [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.PageBand),
 outside [Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas](xref:Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas.CaretAreas), so a tool opts in to notes.
@@ -135,9 +135,9 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Footno
 
 <span id="uid-824e58d0d1"></span>
 
-### Image Field
+### Image 字段 {#image-field}
 
-Applies to inline image elements.
+适用于内联图像元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Image
@@ -149,9 +149,9 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Image
 
 <span id="uid-9de1b334f9"></span>
 
-### List Field
+### List 字段 {#list-field}
 
-Applies to list elements.
+适用于列表元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas List
@@ -163,9 +163,9 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas List
 
 <span id="uid-be15ebeb3f"></span>
 
-### None Field
+### None 字段 {#none-field}
 
-No target area.
+无目标区域。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas None
@@ -177,7 +177,7 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas None
 
 <span id="uid-ba87d936b3"></span>
 
-### PageBand Field
+### PageBand 字段 {#pageband-field}
 
 Applies while the caret is in a page band (a header or footer on a page
 sheet). A band is text too, so tools targeting the text areas stay
@@ -194,9 +194,9 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas PageBa
 
 <span id="uid-14523bac58"></span>
 
-### Table Field
+### Table 字段 {#table-field}
 
-Applies to table elements.
+适用于表格元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Table
@@ -208,7 +208,7 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Table
 
 <span id="uid-e758afd43e"></span>
 
-### TableCells Field
+### TableCells 字段 {#tablecells-field}
 
 Applies while the selection is a set of whole table cells (a
 table strip selection or a text selection spanning multiple
@@ -226,9 +226,9 @@ public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas TableC
 
 <span id="uid-f67531e7c3"></span>
 
-### Text Field
+### Text 字段 {#text-field}
 
-Applies to inline text editing regions.
+适用于内联文本编辑区域。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.Adorners.ToolbarTargetAreas Text

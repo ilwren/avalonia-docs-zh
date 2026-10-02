@@ -20,24 +20,24 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">SeriesChangedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.Charts.CartesianChart.SeriesAdded](xref:Avalonia.Controls.Charts.CartesianChart.SeriesAdded) and
-[Avalonia.Controls.Charts.CartesianChart.SeriesRemoved](xref:Avalonia.Controls.Charts.CartesianChart.SeriesRemoved) events.
+为 [Avalonia.Controls.Charts.CartesianChart.SeriesAdded](xref:Avalonia.Controls.Charts.CartesianChart.SeriesAdded) 和
+[Avalonia.Controls.Charts.CartesianChart.SeriesRemoved](xref:Avalonia.Controls.Charts.CartesianChart.SeriesRemoved) 事件提供数据。
 
 </div>
 
@@ -51,48 +51,48 @@ public class SeriesChangedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> SeriesChangedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> SeriesChangedEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SeriesChangedEventArgs](#uid-de70b1eb01) | Initializes a new instance of the [Avalonia.Controls.Charts.SeriesChangedEventArgs](xref:Avalonia.Controls.Charts.SeriesChangedEventArgs) class. |
+| [SeriesChangedEventArgs](#uid-de70b1eb01) | 初始化 [Avalonia.Controls.Charts.SeriesChangedEventArgs](xref:Avalonia.Controls.Charts.SeriesChangedEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-de70b1eb01"></span>
 
-### SeriesChangedEventArgs Constructor
+### SeriesChangedEventArgs 构造函数 {#serieschangedeventargs-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.Charts.SeriesChangedEventArgs](xref:Avalonia.Controls.Charts.SeriesChangedEventArgs) class.
+初始化 [Avalonia.Controls.Charts.SeriesChangedEventArgs](xref:Avalonia.Controls.Charts.SeriesChangedEventArgs) 类的新实例。
 
 ```csharp
 public SeriesChangedEventArgs(Avalonia.Controls.Charts.CartesianSeries series)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `series` [Avalonia.Controls.Charts.CartesianSeries](xref:Avalonia.Controls.Charts.CartesianSeries)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Series](#uid-42f4d35401) | Gets the series that was added or removed. |
+| [Series](#uid-42f4d35401) | 获取被添加或移除的那个系列。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-42f4d35401"></span>
 
-### Series Property
+### Series 属性 {#series-property}
 
-Gets the series that was added or removed.
+获取被添加或移除的那个系列。
 
 ```csharp
 public Avalonia.Controls.Charts.CartesianSeries Series { get; set; }

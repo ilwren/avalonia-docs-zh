@@ -1,32 +1,32 @@
 ---
 id: index
-title: Virtual keyboard overview
+title: 虚拟键盘概述
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-The virtual keyboard component provides an on-screen keyboard for Avalonia applications. It is designed for touch-based or kiosk scenarios where physical keyboards may not be available, enabling text input through touchscreens or mouse clicks.
+虚拟键盘组件为 Avalonia 应用提供一个屏幕键盘。它面向触摸设备和自助终端等没有实体键盘的场景，让用户可以通过触屏或鼠标点击来输入文字。
 
 :::info
-This component is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该组件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 及以上版本。
 :::
 
-The virtual keyboard component includes the following classes:
+虚拟键盘组件包含下列类：
 
-- [`VirtualKeyboardScope`](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope): A container control that manages keyboard visibility and input methods.
-- [`VirtualKeyboard`](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control): The actual keyboard control that can be placed manually.
-- `VirtualKeyboardInputMethod`: Represents a particular input method or keyboard layout.
+- [`VirtualKeyboardScope`](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope)：容器控件，负责管理键盘的显示隐藏和输入法。
+- [`VirtualKeyboard`](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control)：真正的键盘控件，可以手动摆放。
+- `VirtualKeyboardInputMethod`：代表一种具体的输入法或键盘布局。
 
-## Getting started
+## 快速上手 {#getting-started}
 
-1. Install the `Avalonia.Controls.VirtualKeyboard` NuGet package by running `dotnet add package`.
+1. 运行 `dotnet add package` 安装 `Avalonia.Controls.VirtualKeyboard` NuGet 包。
 
 ```bash
 dotnet add package Avalonia.Controls.VirtualKeyboard
 ```
 
-2. Include your Avalonia license key in the executable project file (`.csproj`). Your license key is available from the [Avalonia portal](https://portal.avaloniaui.net).
+2. 在可执行项目文件（`.csproj`）中填入你的 Avalonia 许可证密钥。密钥可以在 [Avalonia 门户](https://portal.avaloniaui.net)中获取。
 
 ```xml
 <ItemGroup>
@@ -35,10 +35,10 @@ dotnet add package Avalonia.Controls.VirtualKeyboard
 ```
 
 :::tip
-For multi-project solutions, you can store your licence key in an [environment variable](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build) or a [shared props file](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example) to avoid duplication.
+对于多项目解决方案，可以把许可证密钥放进[环境变量](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)或[共享 props 文件](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022#directorybuildprops-example)，免得到处重复。
 :::
 
-3. Reference the `VirtualKeyboard` fluent theme via a `StyleInclude` in your `App.axaml` file. This adds the resources needed to properly style the virtual keyboard.
+3. 在 `App.axaml` 文件中用 `StyleInclude` 引用 `VirtualKeyboard` 的 Fluent 主题，这会带入正确呈现虚拟键盘所需的资源。
 
 ```xml
 <Application.Styles>
@@ -47,13 +47,13 @@ For multi-project solutions, you can store your licence key in an [environment v
 </Application.Styles>
 ```
 
-For more information on installing Avalonia Pro controls, see [Installing Avalonia Pro](/tools/installing-avalonia-pro).
+关于安装 Avalonia Pro 控件的更多内容，请参阅[安装 Avalonia Pro](/tools/installing-avalonia-pro)。
 
-## Basic usage
+## 基本用法 {#basic-usage}
 
 ### Using VirtualKeyboardScope (Recommended)
 
-The simplest way to add a virtual keyboard to your application is to use the `VirtualKeyboardScope` control, which automatically shows and hides the keyboard when text input controls are focused:
+给应用加上虚拟键盘最省事的办法是使用 `VirtualKeyboardScope` 控件：文本输入控件获得焦点时，它会自动显示和隐藏键盘：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -75,9 +75,9 @@ The simplest way to add a virtual keyboard to your application is to use the `Vi
 
 ### Using VirtualKeyboard Directly
 
-For more control, you can use the `VirtualKeyboard` control directly and specify the target input element.
+若需要更精细的控制，可以直接使用 `VirtualKeyboard` 控件，并指定目标输入元素。
 
-Input will be directed to the specified `Target` element regardless of the current input focus.
+无论当前焦点在哪里，输入都会送往指定的 `Target` 元素。
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -93,9 +93,9 @@ Input will be directed to the specified `Target` element regardless of the curre
 </Window>
 ```
 
-## Managing input methods
+## 管理输入法 {#managing-input-methods}
 
-The virtual keyboard supports a wide range of input methods and keyboard layouts. Here's how to specify which input methods to include:
+虚拟键盘支持多种输入法和键盘布局。指定要包含哪些输入法的做法如下：
 
 ### XAML
 
@@ -120,7 +120,7 @@ var inputMethods = new List<VirtualKeyboardInputMethod>
 myKeyboardScope.InputMethods = inputMethods;
 ```
 
-### Retrieving input methods
+### 获取输入法 {#retrieving-input-methods}
 
 ```csharp
 // Get all supported languages
@@ -133,32 +133,32 @@ var englishInputMethods = VirtualKeyboardInputMethod.GetInputMethodsForLanguage(
 var japaneseKana = VirtualKeyboardInputMethod.GetInputMethodById("ja:ime:kana");
 ```
 
-## Input method identifiers
+## 输入法标识符 {#input-method-identifiers}
 
-See the [virtual keyboard control](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control#input-methods) page for a table of supported input methods and their identifiers.
+受支持的输入法及其标识符列表，请参阅[虚拟键盘控件](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control#input-methods)页面。
 
-## RIME input method engine
+## RIME 输入法引擎 {#rime-input-method-engine}
 
-The virtual keyboard supports the [RIME](https://rime.im/) input method engine for Chinese text input. RIME support is provided as a separate plugin package.
+虚拟键盘支持用 [RIME](https://rime.im/) 输入法引擎输入中文。RIME 支持以独立插件包的形式提供。
 
-See the [`VirtualKeyboard` control reference](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control#rime-input-method-engine) for installation and configuration instructions.
+安装与配置说明请参阅 [`VirtualKeyboard` 控件参考](/controls/input/text-input/virtualkeyboard/virtualkeyboard-control#rime-input-method-engine)。
 
-## Text input options
+## 文本输入选项 {#text-input-options}
 
-You can customize how the virtual keyboard behaves with different input fields using the `TextInputOptions` attached properties:
+通过 `TextInputOptions` 附加属性，可以为不同的输入字段定制虚拟键盘的行为：
 
 ```xml
 <TextBox TextInputOptions.ContentType="Email" 
          TextInputOptions.ReturnKeyType="Search" />
 ```
 
-Available `ContentType` values:
+`ContentType` 的可选值：
 - `Normal`
 - `Email`
 - `Url`
 - `Digits`
 
-Available `ReturnKeyType` values:
+`ReturnKeyType` 的可选值：
 - `Default`
 - `Done`
 - `Go`
@@ -168,7 +168,7 @@ Available `ReturnKeyType` values:
 - `Search`
 - `Send`
 
-## See also
+## 另请参阅 {#see-also}
 
-- [VirtualKeyboard control](/controls/input/text-input/virtualkeyboard)
-- [VirtualKeyboardScope control](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope)
+- [VirtualKeyboard 控件](/controls/input/text-input/virtualkeyboard)
+- [VirtualKeyboardScope 控件](/controls/input/text-input/virtualkeyboard/virtualkeyboardscope)

@@ -20,24 +20,24 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfPoint Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-A point in PDF user space. Coordinates are in points (1/72 inch) with the origin at the
-page's bottom-left corner; Y increases upward (PDF convention, not screen convention).
+PDF 用户空间中的一个点。坐标以磅（1/72 英寸）为单位，原点在页面左下角；
+Y 轴向上递增（这是 PDF 的约定，与屏幕坐标相反）。
 
 </div>
 
@@ -51,33 +51,33 @@ public struct PdfPoint
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PdfPoint
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> PdfPoint
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;PdfPoint&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;PdfPoint&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [PdfPoint](#uid-499a0e3d83) | A point in PDF user space. Coordinates are in points (1/72 inch) with the origin at the page's bottom-left corner; Y increases upward (PDF convention, not screen convention). |
+| [PdfPoint](#uid-499a0e3d83) | PDF 用户空间中的一个点。坐标以磅（1/72 英寸）为单位，原点在页面左下角；Y 轴向上递增（这是 PDF 的约定，与屏幕坐标相反）。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-499a0e3d83"></span>
 
-### PdfPoint Constructor
+### PdfPoint 构造函数 {#pdfpoint-constructor}
 
-A point in PDF user space. Coordinates are in points (1/72 inch) with the origin at the
-page's bottom-left corner; Y increases upward (PDF convention, not screen convention).
+PDF 用户空间中的一个点。坐标以磅（1/72 英寸）为单位，原点在页面左下角；
+Y 轴向上递增（这是 PDF 的约定，与屏幕坐标相反）。
 
 ```csharp
 public PdfPoint(double X, double Y)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `X` double
 
@@ -87,26 +87,26 @@ public PdfPoint(double X, double Y)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Deconstruct](#uid-3fd98c375c) | No summary available. |
-| [Equals (2 overloads)](#uid-f0d8557895) | No summary available. |
-| [GetHashCode](#uid-ba258eda35) | No summary available. |
-| [ToString](#uid-446b087212) | No summary available. |
+| [Deconstruct](#uid-3fd98c375c) | 暂无摘要。 |
+| [Equals（2 个重载）](#uid-f0d8557895) | 暂无摘要。 |
+| [GetHashCode](#uid-ba258eda35) | 暂无摘要。 |
+| [ToString](#uid-446b087212) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3fd98c375c"></span>
 
-### Deconstruct Method
+### Deconstruct 方法 {#deconstruct-method}
 
 ```csharp
 public void Deconstruct(double& X, double& Y)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `X` double&amp;
 
@@ -118,24 +118,24 @@ public void Deconstruct(double& X, double& Y)
 
 <span id="uid-f0d8557895"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bd3f8dd827"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Controls.Pdf.Core.PdfPoint other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `other` [Avalonia.Controls.Pdf.Core.PdfPoint](xref:Avalonia.Controls.Pdf.Core.PdfPoint)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -146,18 +146,18 @@ bool
 
 <span id="uid-aab024c107"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -168,13 +168,13 @@ bool
 
 <span id="uid-ba258eda35"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -185,31 +185,31 @@ int
 
 <span id="uid-446b087212"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [X](#uid-06c92d42de) | No summary available. |
-| [Y](#uid-fc26572066) | No summary available. |
+| [X](#uid-06c92d42de) | 暂无摘要。 |
+| [Y](#uid-fc26572066) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-06c92d42de"></span>
 
-### X Property
+### X 属性 {#x-property}
 
 ```csharp
 public double X { get; set; }
@@ -221,7 +221,7 @@ public double X { get; set; }
 
 <span id="uid-fc26572066"></span>
 
-### Y Property
+### Y 属性 {#y-property}
 
 ```csharp
 public double Y { get; set; }

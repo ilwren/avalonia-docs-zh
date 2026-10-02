@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridCellSelectionModel&lt;TModel&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,14 +50,14 @@ public class TreeDataGridCellSelectionModel<TModel>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="treedatagridselectionmodel">TreeDataGridSelectionModel</a> <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridCellSelectionModel&lt;TModel&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="treedatagridselectionmodel">TreeDataGridSelectionModel</a> <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridCellSelectionModel&lt;TModel&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="itreedatagridcellselection">ITreeDataGridCellSelection</a>, <a href="itreedatagridselectioninteraction">ITreeDataGridSelectionInteraction</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="itreedatagridcellselection">ITreeDataGridCellSelection</a>, <a href="itreedatagridselectioninteraction">ITreeDataGridSelectionInteraction</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 TreeDataGridCellSelectionModel manages cell selection in a [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid), supporting both
 single and multiple selection modes.
@@ -68,46 +68,46 @@ Cell selection supports the following user interactions:
 - Using arrow keys to navigate between cells
 - Using Shift key to select ranges of cells
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridCellSelectionModel&lt;TModel&gt;](#uid-3d8f85b68d) | No summary available. |
+| [TreeDataGridCellSelectionModel&lt;TModel&gt;](#uid-3d8f85b68d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3d8f85b68d"></span>
 
-### TreeDataGridCellSelectionModel&lt;TModel&gt; Constructor
+### TreeDataGridCellSelectionModel&lt;TModel&gt; 构造函数 {#treedatagridcellselectionmodellttmodelgt-constructor}
 
 ```csharp
 public TreeDataGridCellSelectionModel<TModel>(Avalonia.Controls.TreeDataGridSource<TModel><TModel> source)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `source` [Avalonia.Controls.TreeDataGridSource](xref:Avalonia.Controls.TreeDataGridSource)&lt;TModel&gt;&lt;TModel&gt;
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [BatchUpdate](#uid-805a5b61ea) | Returns a disposable that groups multiple selection operations into a single batch, raising only a single set of change events when disposed. |
-| [BeginBatchUpdate](#uid-33369fa084) | Begins a batch update of the selection. |
-| [Clear](#uid-2a99e8803a) | Clears the selection. |
-| [EndBatchUpdate](#uid-2eacfb3815) | Ends a batch update started by [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridCellSelectionModel%601.BeginBatchUpdate). |
-| [IsSelected (2 overloads)](#uid-ac6ca39f4b) | Checks whether the specified cell is selected. |
-| [SelectAll](#uid-b830b86c94) | Selects all cells in the grid. |
+| [BeginBatchUpdate](#uid-33369fa084) | 开始对选择做一次批量更新。 |
+| [Clear](#uid-2a99e8803a) | 清除选区。 |
+| [EndBatchUpdate](#uid-2eacfb3815) | 结束由 [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridCellSelectionModel%601.BeginBatchUpdate) 开始的批量更新。 |
+| [IsSelected (2 overloads)](#uid-ac6ca39f4b) | 检查指定的单元格是否处于选中状态。 |
+| [SelectAll](#uid-b830b86c94) | 选中表格中的所有单元格。 |
 | [SetSelectedRange](#uid-a0a9c7592b) | Sets the current selection to the specified range of cells. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-805a5b61ea"></span>
 
-### BatchUpdate Method
+### BatchUpdate 方法 {#batchupdate-method}
 
 Returns a disposable that groups multiple selection operations into a single batch,
 raising only a single set of change events when disposed.
@@ -116,12 +116,12 @@ raising only a single set of change events when disposed.
 public Avalonia.Controls.Selection.TreeDataGridCellSelectionModel<TModel>.BatchUpdateOperation<TModel><TModel> BatchUpdate()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;TModel&gt;.BatchUpdateOperation&lt;TModel&gt;&lt;TModel&gt;
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Use this method with a using statement to group multiple selection operations together and
 raise only a single set of change events when the batch is complete. This is equivalent to
@@ -133,15 +133,15 @@ calling [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;.Beg
 
 <span id="uid-33369fa084"></span>
 
-### BeginBatchUpdate Method
+### BeginBatchUpdate 方法 {#beginbatchupdate-method}
 
-Begins a batch update of the selection.
+开始对选择做一次批量更新。
 
 ```csharp
 public void BeginBatchUpdate()
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 During a batch update no changes to the selection will be reflected in the model's
 properties and no events will be raised until [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;.EndBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridCellSelectionModel%601.EndBatchUpdate) is called.
@@ -156,9 +156,9 @@ is already in progress; each call must have a corresponding call to
 
 <span id="uid-2a99e8803a"></span>
 
-### Clear Method
+### Clear 方法 {#clear-method}
 
-Clears the selection.
+清除选区。
 
 ```csharp
 public void Clear()
@@ -170,9 +170,9 @@ public void Clear()
 
 <span id="uid-2eacfb3815"></span>
 
-### EndBatchUpdate Method
+### EndBatchUpdate 方法 {#endbatchupdate-method}
 
-Ends a batch update started by [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridCellSelectionModel%601.BeginBatchUpdate).
+结束由 [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridCellSelectionModel%601.BeginBatchUpdate) 开始的批量更新。
 
 ```csharp
 public void EndBatchUpdate()
@@ -188,22 +188,22 @@ public void EndBatchUpdate()
 
 <span id="uid-d73cb9c915"></span>
 
-#### IsSelected Method
+#### IsSelected 方法 {#isselected-method}
 
-Checks whether the specified cell is selected.
+检查指定的单元格是否处于选中状态。
 
 ```csharp
 public bool IsSelected(Avalonia.Controls.CellIndex index)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `index` [Avalonia.Controls.CellIndex](xref:Avalonia.Controls.CellIndex)
 
-The index of the cell.
+该单元格的索引。
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -214,15 +214,15 @@ bool
 
 <span id="uid-881447ef26"></span>
 
-#### IsSelected Method
+#### IsSelected 方法 {#isselected-method-1}
 
-Checks whether the specified cell is selected.
+检查指定的单元格是否处于选中状态。
 
 ```csharp
 public bool IsSelected(int columnIndex, Avalonia.Controls.IndexPath rowIndex)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `columnIndex` int
 
@@ -234,7 +234,7 @@ The column index of the cell.
 The row index of the cell.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 bool
 
@@ -245,15 +245,15 @@ bool
 
 <span id="uid-b830b86c94"></span>
 
-### SelectAll Method
+### SelectAll 方法 {#selectall-method}
 
-Selects all cells in the grid.
+选中表格中的所有单元格。
 
 ```csharp
 public void SelectAll()
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Only rows that are currently materialized in the source (i.e. visible, taking into
 account the expanded/collapsed state of parent rows) are selected. This method does
@@ -265,7 +265,7 @@ nothing when [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt
 
 <span id="uid-a0a9c7592b"></span>
 
-### SetSelectedRange Method
+### SetSelectedRange 方法 {#setselectedrange-method}
 
 Sets the current selection to the specified range of cells.
 
@@ -273,7 +273,7 @@ Sets the current selection to the specified range of cells.
 public void SetSelectedRange(Avalonia.Controls.CellIndex start, int columnCount, int rowCount)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `start` [Avalonia.Controls.CellIndex](xref:Avalonia.Controls.CellIndex)
 
@@ -292,22 +292,22 @@ The number of rows in the selection.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Count](#uid-80f392fb22) | Gets the number of cells currently selected. |
-| [IsCellSelectionModel](#uid-41a16315c0) | Gets a value indicating whether this is a cell selection model. |
+| [IsCellSelectionModel](#uid-41a16315c0) | 获取该模型是否为单元格级的选择模型。 |
 | [SelectedIndex](#uid-48f7e44756) | Gets or sets the index of the currently selected cell. |
 | [SelectedIndexes](#uid-14221c8b68) | Gets a read-only list of the indices of all selected cells. |
 | [SingleSelect](#uid-5eef67c7c1) | Gets or sets a value indicating whether only a single cell can be selected at a time. |
-| [Source](#uid-8703b78b1d) | Gets the data source for the selection model. |
+| [Source](#uid-8703b78b1d) | 获取选择模型所用的数据源。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-80f392fb22"></span>
 
-### Count Property
+### Count 属性 {#count-property}
 
 Gets the number of cells currently selected.
 
@@ -321,9 +321,9 @@ public int Count { get; set; }
 
 <span id="uid-41a16315c0"></span>
 
-### IsCellSelectionModel Property
+### IsCellSelectionModel 属性 {#iscellselectionmodel-property}
 
-Gets a value indicating whether this is a cell selection model.
+获取该模型是否为单元格级的选择模型。
 
 ```csharp
 public bool IsCellSelectionModel { get; set; }
@@ -335,7 +335,7 @@ public bool IsCellSelectionModel { get; set; }
 
 <span id="uid-48f7e44756"></span>
 
-### SelectedIndex Property
+### SelectedIndex 属性 {#selectedindex-property}
 
 Gets or sets the index of the currently selected cell.
 
@@ -343,7 +343,7 @@ Gets or sets the index of the currently selected cell.
 public Avalonia.Controls.CellIndex SelectedIndex { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 If multiple cells are selected, this property represents the anchor cell of the
 selection. Setting this property will select the cell at the specified index and
@@ -355,7 +355,7 @@ deselect all other cells.
 
 <span id="uid-14221c8b68"></span>
 
-### SelectedIndexes Property
+### SelectedIndexes 属性 {#selectedindexes-property}
 
 Gets a read-only list of the indices of all selected cells.
 
@@ -363,7 +363,7 @@ Gets a read-only list of the indices of all selected cells.
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.CellIndex> SelectedIndexes { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 A read-only list of [Avalonia.Controls.CellIndex](xref:Avalonia.Controls.CellIndex) objects representing the coordinates of
 all selected cells.
@@ -375,7 +375,7 @@ all selected cells.
 
 <span id="uid-5eef67c7c1"></span>
 
-### SingleSelect Property
+### SingleSelect 属性 {#singleselect-property}
 
 Gets or sets a value indicating whether only a single cell can be selected at a time.
 
@@ -383,7 +383,7 @@ Gets or sets a value indicating whether only a single cell can be selected at a 
 public bool SingleSelect { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 When set to true, selecting a cell will deselect any previously selected cells.
 When set to false, additional cells can be selected by holding Shift.
@@ -394,9 +394,9 @@ When set to false, additional cells can be selected by holding Shift.
 
 <span id="uid-8703b78b1d"></span>
 
-### Source Property
+### Source 属性 {#source-property}
 
-Gets the data source for the selection model.
+获取选择模型所用的数据源。
 
 ```csharp
 public System.Collections.IEnumerable Source { get; set; }
@@ -404,28 +404,28 @@ public System.Collections.IEnumerable Source { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IndexesChanged](treedatagridselectionmodel.mdx#uid-c5c2106a08) | Occurs when item indexes change due to insertions or removals in the data source. Inherited from [TreeDataGridSelectionModel](treedatagridselectionmodel.mdx). |
 | [PropertyChanged](treedatagridselectionmodel.mdx#uid-c2ee82eef9) | Inherited from [TreeDataGridSelectionModel](treedatagridselectionmodel.mdx). |
-| [SelectionChanged](#uid-22b5155014) | Occurs when the cell selection changes. |
+| [SelectionChanged](#uid-22b5155014) | 单元格选择发生变化时发生。 |
 | [SourceReset](treedatagridselectionmodel.mdx#uid-eac05c7ba6) | Occurs when the data source is reset. Inherited from [TreeDataGridSelectionModel](treedatagridselectionmodel.mdx). |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-22b5155014"></span>
 
-### SelectionChanged Event
+### SelectionChanged 事件 {#selectionchanged-event}
 
-Occurs when the cell selection changes.
+单元格选择发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Selection.TreeDataGridSelectionChangedEventArgs<T><TModel>> SelectionChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 This event is raised when cells are selected or deselected, either through user
 interaction or programmatically.

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextCharacters Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media.TextFormatting</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media.TextFormatting</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextCharacters.cs">TextCharacters.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/TextFormatting/TextCharacters.cs">TextCharacters.cs</a>
 </div>
 
 </div>
@@ -54,31 +54,31 @@ public class TextCharacters
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textrun">TextRun</a> <span className="apiref-page__relation-separator">-&gt;</span> TextCharacters
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textrun">TextRun</a> <span className="apiref-page__relation-separator">-&gt;</span> TextCharacters
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextCharacters (2 overloads)](#uid-6dcc4e6e43) | No summary available. |
+| [TextCharacters (2 overloads)](#uid-6dcc4e6e43) | 暂无摘要。 |
 
 <span id="uid-6dcc4e6e43"></span>
 
-### TextCharacters overloads
+### TextCharacters 的重载 {#textcharacters-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-31b198d2f7"></span>
 
-#### TextCharacters Constructor
+#### TextCharacters 构造函数 {#textcharacters-constructor}
 
 ```csharp
 public TextCharacters(ReadOnlyMemory<char> text, Avalonia.Media.TextFormatting.TextRunProperties textRunProperties)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `text` ReadOnlyMemory&lt;char&gt;
 
@@ -92,7 +92,7 @@ public TextCharacters(ReadOnlyMemory<char> text, Avalonia.Media.TextFormatting.T
 
 <span id="uid-5d446e4585"></span>
 
-#### TextCharacters Constructor
+#### TextCharacters 构造函数 {#textcharacters-constructor-1}
 
 Constructs a run for text content from a string.
 
@@ -100,7 +100,7 @@ Constructs a run for text content from a string.
 public TextCharacters(string text, Avalonia.Media.TextFormatting.TextRunProperties textRunProperties)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `text` string
 
@@ -110,21 +110,21 @@ public TextCharacters(string text, Avalonia.Media.TextFormatting.TextRunProperti
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Length](#uid-9215b250fe) | Gets the text source length. |
-| [Properties](#uid-0aff051fd3) | A set of properties shared by every characters in the run |
-| [Text](#uid-c4755919b7) | Gets the text run's text. |
+| [Length](#uid-9215b250fe) | 获取文本源的长度。 |
+| [Properties](#uid-0aff051fd3) | 该文本运行中所有字符共有的一组属性 |
+| [Text](#uid-c4755919b7) | 获取该文本运行的文本。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9215b250fe"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
-Gets the text source length.
+获取文本源的长度。
 
 ```csharp
 public int Length { get; set; }
@@ -136,9 +136,9 @@ public int Length { get; set; }
 
 <span id="uid-0aff051fd3"></span>
 
-### Properties Property
+### Properties 属性 {#properties-property}
 
-A set of properties shared by every characters in the run
+该文本运行中所有字符共有的一组属性
 
 ```csharp
 public Avalonia.Media.TextFormatting.TextRunProperties Properties { get; set; }
@@ -150,9 +150,9 @@ public Avalonia.Media.TextFormatting.TextRunProperties Properties { get; set; }
 
 <span id="uid-c4755919b7"></span>
 
-### Text Property
+### Text 属性 {#text-property}
 
-Gets the text run's text.
+获取该文本运行的文本。
 
 ```csharp
 public ReadOnlyMemory<char> Text { get; set; }
@@ -160,11 +160,11 @@ public ReadOnlyMemory<char> Text { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DefaultTextSourceLength](textrun.mdx#uid-f86dc003de) | Inherited from [TextRun](textrun.mdx). |
+| [DefaultTextSourceLength](textrun.mdx#uid-f86dc003de) | 继承自 [TextRun](textrun.mdx)。 |
 
 </ApiRefPage>
 

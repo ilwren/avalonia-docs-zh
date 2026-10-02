@@ -3,30 +3,30 @@ id: linux
 title: Linux
 ---
 
-## Supported distributions
+## 支持的发行版 {#supported-distributions}
 
-The following Linux distributions are comprehensively tested and supported:
+下列 Linux 发行版经过了全面测试，属于受支持之列：
 
-* **Debian**: Version 9 and newer
-* **Ubuntu**: Version 16.04 and newer
-* **Fedora**: Version 30 and newer
+* **Debian**：9 及以上版本
+* **Ubuntu**：16.04 及以上版本
+* **Fedora**：30 及以上版本
 
-### Other distributions
+### 其他发行版 {#other-distributions}
 
-Avalonia XPF can run on many other Linux distributions beyond those listed above. If you are using a distribution that is not officially supported:
+除上面列出的之外，Avalonia XPF 在许多其他 Linux 发行版上同样跑得起来。若你用的发行版不在官方支持之列：
 
-* The Avalonia support team can help ensure compatibility with your chosen distribution
-* Distribution-specific issues are handled on a case-by-case basis
-* Additional configuration or testing may be required
+* Avalonia 支持团队可以帮你确认与所选发行版的兼容性
+* 发行版专属的问题会按具体情况逐一处理
+* 可能需要额外的配置或测试
 
 :::note
-Reach out to the support team early in your development process if you plan to deploy on a non-listed distribution.
+若你打算部署到列表之外的发行版，请在开发早期就联系支持团队。
 :::
 
 
 ## Installing .NET
 
-Many distributions provide a version of .NET in their package repositories, but these **should not** be used as they do not ship the required `Microsoft.NET.Sdk.WindowsDesktop` SDK. You must install .NET from the Microsoft package feed.
+许多发行版的软件仓库里都带有 .NET，但那些版本**不能用**——它们没有附带必需的 `Microsoft.NET.Sdk.WindowsDesktop` SDK。你必须从微软的软件源安装 .NET。
 
 ### Ubuntu
 
@@ -58,15 +58,15 @@ sudo apt install dotnet-sdk-8.0
 sudo dnf install dotnet-sdk-8.0
 ```
 
-Fedora includes Microsoft's .NET packages in its default repositories, and these are compatible with XPF.
+Fedora 的默认仓库中就收录了微软的 .NET 软件包，它们与 XPF 兼容。
 
-### Other distributions
+### 其他发行版 {#other-distributions-1}
 
-For other distributions, add the [Microsoft package feed](https://packages.microsoft.com/) to your package manager and install the .NET SDK from there.
+其他发行版请把 [Microsoft 软件源](https://packages.microsoft.com/)加进包管理器，再从那里安装 .NET SDK。
 
-### Fixing a broken .NET installation
+### 修复装坏了的 .NET {#fixing-a-broken-net-installation}
 
-If you previously installed .NET from your distribution's package repository (rather than from Microsoft), you must uninstall it completely before installing from the Microsoft feed. Mixing package sources causes conflicts and missing SDK components.
+若你此前是从发行版自带仓库（而非微软）装的 .NET，务必先彻底卸载干净，再从微软的源安装。两边的包混在一起会引发冲突，还会缺少 SDK 组件。
 
 ```bash
 # 1. Remove the distribution's .NET packages
@@ -87,12 +87,12 @@ sudo rm /etc/apt/preferences.d/*dotnet* 2>/dev/null
 ```
 
 :::danger
-A mixed installation (some packages from your distro, some from Microsoft) will cause hard-to-diagnose build failures. If `dotnet --list-sdks` does not show `Microsoft.NET.Sdk.WindowsDesktop`, your installation is incorrect.
+混装（一部分包来自发行版、一部分来自微软）会带来极难定位的构建失败。若 `dotnet --list-sdks` 的输出中看不到 `Microsoft.NET.Sdk.WindowsDesktop`，就说明你的安装不对劲。
 :::
 
-## Other dependencies
+## 其他依赖 {#other-dependencies}
 
-The following native libraries are required to run XPF: `libICE`, `libSM`, `fontconfig`, and `libgdiplus`.
+运行 XPF 需要下列原生库：`libICE`、`libSM`、`fontconfig` 和 `libgdiplus`。
 
 ### Debian / Ubuntu
 
@@ -112,82 +112,82 @@ sudo dnf install libICE libSM fontconfig libgdiplus
 sudo dnf install libICE libSM fontconfig
 ```
 
-`libgdiplus` is not available in the default RHEL repositories. Install it from EPEL:
+RHEL 的默认仓库里没有 `libgdiplus`，请从 EPEL 安装：
 
 ```bash
 sudo dnf install epel-release
 sudo dnf install libgdiplus
 ```
 
-### Other distributions
+### 其他发行版 {#other-distributions-2}
 
-Use your distribution's package manager to install the equivalent packages. The library names may vary between distributions (for example, `libice6` on Debian corresponds to `libICE` on Fedora/RHEL).
+请用你所在发行版的包管理器安装对应的软件包。各发行版的库名可能不同（比如 Debian 上的 `libice6` 对应 Fedora/RHEL 上的 `libICE`）。
 
-## Publishing for Linux
+## 为 Linux 发布 {#publishing-for-linux}
 
-Always publish XPF applications from the command line rather than from Visual Studio. Visual Studio publishing can produce incomplete output that is missing native libraries (such as `libSkiaSharp.so`).
+发布 XPF 应用请一律走命令行，不要用 Visual Studio。用 Visual Studio 发布可能产出不完整的输出，缺掉 `libSkiaSharp.so` 这类原生库。
 
 ```bash
 dotnet publish -r linux-x64 -c Release
 ```
 
-For self-contained deployments:
+自包含部署：
 
 ```bash
 dotnet publish -r linux-x64 -c Release --self-contained
 ```
 
 :::caution
-Publishing via Visual Studio may omit critical native dependencies. If you encounter `DllNotFoundException` for `libSkiaSharp` or similar errors, switch to CLI publishing.
+通过 Visual Studio 发布可能漏掉关键的原生依赖。若你遇到针对 `libSkiaSharp` 的 `DllNotFoundException` 或类似错误，请改用 CLI 发布。
 :::
 
-### Native library resolution with ReadyToRun
+### ReadyToRun 下的原生库解析 {#native-library-resolution-with-readytorun}
 
-When using `PublishReadyToRun`, the .NET runtime may alter how native libraries are resolved. If your application fails to locate `.so` files at runtime:
+启用 `PublishReadyToRun` 时，.NET 运行时解析原生库的方式可能有所不同。若应用在运行时找不到 `.so` 文件：
 
-- Ensure native libraries are in the same directory as the executable
-- For relocated native libraries, set `LD_LIBRARY_PATH` to include the library directory
-- Consider using self-contained publishing, which places all dependencies together
+- 确认原生库与可执行文件在同一目录下
+- 若原生库被挪了地方，请设置 `LD_LIBRARY_PATH` 把该目录包含进来
+- 考虑改用自包含发布，它会把所有依赖放在一处
 
-## Debugging on Linux
+## 在 Linux 上调试 {#debugging-on-linux}
 
-### From Windows (Visual Studio)
+### 从 Windows（Visual Studio）调试 {#from-windows-visual-studio}
 
-To debug an XPF application running on Linux from Visual Studio on Windows:
+若要在 Windows 的 Visual Studio 中调试跑在 Linux 上的 XPF 应用：
 
-1. Build for linux-x64 from the command line:
+1. 在命令行为 linux-x64 构建：
    ```bash
    dotnet publish -r linux-x64 -c Debug
    ```
-2. Copy the output to your Linux machine or WSL2 instance
-3. Run the application on Linux
-4. In Visual Studio, use **Debug > Attach to Process**, select the WSL2 or SSH connection type, and attach to your running process
+2. 把输出复制到你的 Linux 机器或 WSL2 实例上
+3. 在 Linux 上运行该应用
+4. 在 Visual Studio 中选**调试 > 附加到进程**，连接类型选 WSL2 或 SSH，然后附加到正在运行的进程
 
-### From VS Code
+### 从 VS Code 调试 {#from-vs-code}
 
-Use VS Code with the C# DevKit extension. Configure a `launch.json` for remote debugging over SSH or WSL2.
+用 VS Code 配合 C# DevKit 扩展，配一个 `launch.json` 以便通过 SSH 或 WSL2 远程调试。
 
-### From JetBrains Rider
+### 从 JetBrains Rider 调试 {#from-jetbrains-rider}
 
-Rider supports remote debugging via SSH natively, and supports WSL2 through the Gateway feature.
+Rider 原生支持通过 SSH 远程调试，并可借助 Gateway 功能支持 WSL2。
 
 :::tip
-The `net8.0-windows` target framework works on non-Windows platforms when using the XPF SDK. You do not need to change the target framework to build for Linux.
+搭配 XPF SDK 时，`net8.0-windows` 目标框架在非 Windows 平台上同样管用。为 Linux 构建时不必改动目标框架。
 :::
 
-## Tray icons
+## 托盘图标 {#tray-icons}
 
-XPF supports system tray icons on Linux through the StatusNotifierItem/AppIndicator protocol.
+XPF 通过 StatusNotifierItem/AppIndicator 协议在 Linux 上支持系统托盘图标。
 
-**GNOME** does not include tray icon support by default. Install the [AppIndicator GNOME Extension](https://extensions.gnome.org/extension/615/appindicator-support/) to enable it.
+**GNOME** 默认不带托盘图标支持，请安装 [AppIndicator GNOME 扩展](https://extensions.gnome.org/extension/615/appindicator-support/)来启用。
 
-**KDE Plasma** supports tray icons natively with no additional configuration.
+**KDE Plasma** 原生支持托盘图标，无需额外配置。
 
-## File dialogs on older distributions
+## 老发行版上的文件对话框 {#file-dialogs-on-older-distributions}
 
-On older Linux distributions (such as RHEL 8), the GNOME version may be too old to support the DBus-based file dialog protocol. This can cause `OpenFolderDialog.InitialDirectory` and similar properties to be ignored.
+在较老的 Linux 发行版上（比如 RHEL 8），GNOME 版本可能太旧，支持不了基于 DBus 的文件对话框协议，这会导致 `OpenFolderDialog.InitialDirectory` 等属性被忽略。
 
-To work around this, disable the DBus file picker in your [custom initialization](/xpf/configuration/customizing-initialization):
+变通办法是在[自定义初始化](/xpf/configuration/customizing-initialization)中关掉 DBus 文件选取器：
 
 ```csharp
 AppBuilder.Configure<AvaloniaUI.Xpf.Helpers.DefaultXpfAvaloniaApplication>()
@@ -200,13 +200,13 @@ AppBuilder.Configure<AvaloniaUI.Xpf.Helpers.DefaultXpfAvaloniaApplication>()
     });
 ```
 
-This falls back to the GTK file dialog, which supports `InitialDirectory` on older systems.
+这样会退回到 GTK 文件对话框，它在老系统上也支持 `InitialDirectory`。
 
-## Win32 API shim conflicts with native APIs
+## Win32 API shim 与原生 API 冲突 {#win32-api-shim-conflicts-with-native-apis}
 
-If your application calls native Linux APIs (such as X11 functions via `DllImport`) and also enables Win32 API shims, the shim layer may intercept those native calls and cause `EntryPointNotFoundException`.
+若你的应用既调用了 Linux 原生 API（比如通过 `DllImport` 调 X11 函数），又启用了 Win32 API shim，shim 层可能把那些原生调用拦下来，从而引发 `EntryPointNotFoundException`。
 
-To resolve this, move native Linux API calls to a separate assembly and exclude it from the Win32 shim:
+解决办法是把调用 Linux 原生 API 的代码挪到一个单独的程序集里，并把它从 Win32 shim 中排除：
 
 ```csharp
 AvaloniaUI.Xpf.WinApiShim.WinApiShimSetup.AutoEnable(asm =>
@@ -218,13 +218,13 @@ AvaloniaUI.Xpf.WinApiShim.WinApiShimSetup.AutoEnable(asm =>
 });
 ```
 
-Alternatively, use `WinApiShimSetup.AddLibrary` to enable shims only for specific assemblies rather than using `AutoEnable`.
+或者用 `WinApiShimSetup.AddLibrary` 只为特定程序集启用 shim，而不是用 `AutoEnable` 一刀切。
 
-## Launching from `systemd`
+## 从 `systemd` 启动 {#launching-from-systemd}
 
-When launching XPF applications as systemd services on X11, a race condition can occur where the application starts before the window manager is fully initialized. This can cause `WindowStyle="None"` to be ignored, resulting in a visible titlebar.
+在 X11 上以 systemd 服务的方式启动 XPF 应用时，可能出现竞态：应用抢在窗口管理器完全就绪之前就起来了，于是 `WindowStyle="None"` 被忽略，标题栏又冒了出来。
 
-Add a startup delay to your systemd service file:
+在 systemd 服务文件中加一段启动延迟：
 
 ```ini
 [Service]
@@ -232,11 +232,11 @@ ExecStartPre=/bin/sleep 5
 ExecStart=/path/to/your/application
 ```
 
-## WebView on Linux
+## Linux 上的 WebView {#webview-on-linux}
 
-XPF provides web content embedding on Linux through `NativeWebDialog` (from the `Avalonia.Xpf.Controls.WebView` NuGet package). The embeddable `NativeWebView` control is not supported on Linux.
+在 Linux 上，XPF 通过 `NativeWebDialog`（来自 `Avalonia.Xpf.Controls.WebView` NuGet 包）提供网页内容嵌入。可内嵌的 `NativeWebView` 控件在 Linux 上不受支持。
 
-`NativeWebDialog` requires webkit2gtk version 4.1:
+`NativeWebDialog` 需要 webkit2gtk 4.1 版：
 
 ### Debian / Ubuntu
 
@@ -256,35 +256,35 @@ sudo dnf install webkit2gtk4.1-devel
 sudo dnf install webkit2gtk4.1-devel
 ```
 
-If `webkit2gtk4.1-devel` is not available on your RHEL version, check whether EPEL or a newer AppStream module provides it.
+若你所用的 RHEL 版本里没有 `webkit2gtk4.1-devel`，不妨看看 EPEL 或更新的 AppStream 模块里有没有。
 
 :::note
-Version 4.1 of webkit2gtk is required. Older versions (4.0) do not support all features needed by `NativeWebDialog`.
+必须是 webkit2gtk 4.1 版。更老的版本（4.0）支持不了 `NativeWebDialog` 所需的全部功能。
 :::
 
-For a comparison of all browser embedding options, see [Web Content Embedding](/xpf/interop/web-content).
+各种浏览器嵌入方案的对比请见[嵌入网页内容](/xpf/interop/web-content)。
 
-## Display server considerations
+## 显示服务器方面的考量 {#display-server-considerations}
 
 ### X11
 
-X11 is the default display server on most Linux distributions. XPF works well on X11, but be aware of the following:
+X11 是多数 Linux 发行版的默认显示服务器。XPF 在 X11 上表现良好，不过有几点要留心：
 
-- **Window manager timing**: When launching XPF applications early in the desktop session (for example, from a systemd service), the window manager may not be fully initialized. This can cause `WindowStyle="None"` to be ignored. See [Launching from systemd](#launching-from-systemd) for a workaround.
-- **Window messages**: Win32 window messages (such as `WM_ACTIVATEAPP`) are emulated by the shim layer to the extent needed by supported third-party controls. Not all messages are generated. If your application relies on specific window messages for cross-window communication, consider using .NET IPC mechanisms instead.
-- **Multi-monitor quirks**: Window positioning and DPI behavior can vary between window managers. Test on your target window manager early.
+- **窗口管理器的时序**：若在桌面会话很早的阶段启动 XPF 应用（比如从 systemd 服务启动），窗口管理器可能尚未完全就绪，导致 `WindowStyle="None"` 被忽略。变通办法请见[从 systemd 启动](#launching-from-systemd)。
+- **窗口消息**：Win32 窗口消息（比如 `WM_ACTIVATEAPP`）由 shim 层模拟，但只覆盖所支持的第三方控件所需的那些，并非全部消息都会生成。若你的应用靠特定窗口消息做跨窗口通信，不妨改用 .NET 的 IPC 机制。
+- **多显示器的怪癖**：窗口定位和 DPI 行为会因窗口管理器而异，请尽早在你的目标窗口管理器上实测。
 
 ### Wayland
 
-Wayland is the newer display protocol used by default on recent versions of Fedora and Ubuntu. XPF supports Wayland through XWayland (the X11 compatibility layer).
+Wayland 是较新的显示协议，近期版本的 Fedora 和 Ubuntu 默认都用它。XPF 通过 XWayland（X11 兼容层）支持 Wayland。
 
-- **Keyboard isolation**: Only the focused window receives keyboard input. There is no mechanism to direct keyboard input to a non-focused window. If your application needs to isolate keyboard input between windows (for example, for kiosk setups with multiple input devices), this is a Wayland protocol limitation.
-- **Window positioning**: Wayland does not allow applications to set absolute window positions. `Window.Left` and `Window.Top` may be ignored by the compositor.
+- **键盘隔离**：只有获得焦点的窗口才能收到键盘输入，没有办法把键盘输入定向到未获焦点的窗口。若你的应用需要在多个窗口之间隔离键盘输入（比如带多个输入设备的自助终端），那这是 Wayland 协议本身的限制。
+- **窗口定位**：Wayland 不允许应用设定窗口的绝对位置，`Window.Left` 和 `Window.Top` 可能被合成器忽略。
 
-## Known limitations
+## 已知限制 {#known-limitations}
 
-- **UI test automation**: Avalonia does not currently support the AT-SPI2 accessibility protocol on Linux. Automated UI testing tools that rely on accessibility APIs (such as pywinauto or Appium) have limited functionality.
-- **Transparent window click-through**: As on macOS, XPF does not support clicking through transparent regions of a window on Linux. Mouse clicks on transparent areas are captured by the window rather than passed through to windows underneath. For overlay scenarios, embed content in a single window rather than layering transparent windows.
-- **Wayland keyboard isolation**: On Wayland compositors, only the focused window receives keyboard input. There is no mechanism to direct keyboard input to a non-focused window.
-- **Remote desktop transparency**: Some remote desktop tools (such as MobaXterm) do not support alpha-channel transparency, which can cause transparent windows to appear with a white background. This is a limitation of the remote desktop tool, not XPF. Verify transparency behavior by testing with a native Linux application (such as Konsole with transparency enabled).
-- **NativeControlHost**: `NativeControlHost` (used for embedding native Linux controls) has limited support on Linux. If you need to embed native content, consider using Avalonia's composition APIs instead.
+- **UI 测试自动化**：Avalonia 目前在 Linux 上还不支持 AT-SPI2 无障碍协议。依赖无障碍 API 的自动化 UI 测试工具（比如 pywinauto 或 Appium）能做的事相当有限。
+- **透明窗口的点击穿透**：与 macOS 上一样，XPF 在 Linux 上也不支持点穿窗口的透明区域。落在透明区域的鼠标点击会被该窗口捕获，不会传到下面的窗口。若要做叠加层，请把内容放进同一个窗口，而不是把若干透明窗口摞在一起。
+- **Wayland 的键盘隔离**：在 Wayland 合成器上，只有获得焦点的窗口才能收到键盘输入，没有办法把键盘输入定向到未获焦点的窗口。
+- **远程桌面下的透明度**：某些远程桌面工具（比如 MobaXterm）不支持 alpha 通道透明，透明窗口因此可能显示成白色背景。这是远程桌面工具的局限，与 XPF 无关。可以用原生 Linux 应用（比如开了透明的 Konsole）测一测，以确认透明度表现。
+- **NativeControlHost**：`NativeControlHost`（用于嵌入 Linux 原生控件）在 Linux 上支持有限。若确需嵌入原生内容，不妨改用 Avalonia 的合成 API。

@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ColumnCreateOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Holds options for configuring a [Avalonia.Controls.TreeDataGridColumn](xref:Avalonia.Controls.TreeDataGridColumn) via the fluent API.
+存放通过流式 API 配置 [Avalonia.Controls.TreeDataGridColumn](xref:Avalonia.Controls.TreeDataGridColumn) 时所用的选项。
 
 </div>
 
@@ -50,24 +50,24 @@ public class ColumnCreateOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> ColumnCreateOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> ColumnCreateOptions
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="checkboxcolumncreateoptions">CheckBoxColumnCreateOptions</a>, <a href="hierarchicalexpandercolumncreateoptions-1">HierarchicalExpanderColumnCreateOptions&lt;TModel&gt;</a>, <a href="templatecolumncreateoptions">TemplateColumnCreateOptions</a>, <a href="textcolumncreateoptions">TextColumnCreateOptions</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="checkboxcolumncreateoptions">CheckBoxColumnCreateOptions</a>, <a href="hierarchicalexpandercolumncreateoptions-1">HierarchicalExpanderColumnCreateOptions&lt;TModel&gt;</a>, <a href="templatecolumncreateoptions">TemplateColumnCreateOptions</a>, <a href="textcolumncreateoptions">TextColumnCreateOptions</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ColumnCreateOptions](#uid-87f5aa9300) | No summary available. |
+| [ColumnCreateOptions](#uid-87f5aa9300) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-87f5aa9300"></span>
 
-### ColumnCreateOptions Constructor
+### ColumnCreateOptions 构造函数 {#columncreateoptions-constructor}
 
 ```csharp
 public ColumnCreateOptions()
@@ -75,12 +75,12 @@ public ColumnCreateOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AllowTriStateSorting](#uid-2d3c781356) | Gets or sets whether the user can cycle through ascending, descending, and unsorted states when clicking the column header. |
-| [BeginEditGestures](#uid-a7d933d9bd) | Gets or sets the gesture(s) that will cause a cell to enter edit mode. |
+| [BeginEditGestures](#uid-a7d933d9bd) | 获取或设置让单元格进入编辑模式的手势。 |
 | [CanUserResize](#uid-265c20fcbb) | Gets or sets a value indicating whether the user can resize a column by dragging. |
 | [CanUserSort](#uid-3860b5729a) | Gets or sets a value indicating whether the user can sort a column by clicking. |
 | [CompareAscending](#uid-5685462157) | Gets or sets a custom comparison for ascending ordered columns. |
@@ -89,13 +89,13 @@ public ColumnCreateOptions()
 | [MaxWidth](#uid-4554236b2f) | Gets or sets the maximum width for a column. |
 | [MinWidth](#uid-1776db3e6c) | Gets or sets the minimum width for a column. |
 | [VerticalContentAlignment](#uid-77a5b34ee7) | Gets or sets the vertical alignment of the cell content. |
-| [Width](#uid-3cd08b17fd) | Gets or sets the column width. |
+| [Width](#uid-3cd08b17fd) | 获取或设置列宽。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2d3c781356"></span>
 
-### AllowTriStateSorting Property
+### AllowTriStateSorting 属性 {#allowtristatesorting-property}
 
 Gets or sets whether the user can cycle through ascending, descending, and unsorted
 states when clicking the column header.
@@ -104,7 +104,7 @@ states when clicking the column header.
 public Nullable<bool> AllowTriStateSorting { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Only applies if [Avalonia.Controls.ColumnCreateOptions.CanUserSort](xref:Avalonia.Controls.ColumnCreateOptions.CanUserSort) is true. If null, the owner
 [Avalonia.Controls.TreeDataGrid.AllowTriStateSorting](xref:Avalonia.Controls.TreeDataGrid.AllowTriStateSorting)
@@ -116,9 +116,9 @@ property value will apply.
 
 <span id="uid-a7d933d9bd"></span>
 
-### BeginEditGestures Property
+### BeginEditGestures 属性 {#begineditgestures-property}
 
-Gets or sets the gesture(s) that will cause a cell to enter edit mode.
+获取或设置让单元格进入编辑模式的手势。
 
 ```csharp
 public Avalonia.Controls.BeginEditGestures BeginEditGestures { get; set; }
@@ -130,7 +130,7 @@ public Avalonia.Controls.BeginEditGestures BeginEditGestures { get; set; }
 
 <span id="uid-265c20fcbb"></span>
 
-### CanUserResize Property
+### CanUserResize 属性 {#canuserresize-property}
 
 Gets or sets a value indicating whether the user can resize a column by dragging.
 
@@ -138,10 +138,10 @@ Gets or sets a value indicating whether the user can resize a column by dragging
 public Nullable<bool> CanUserResize { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-If null, the owner [Avalonia.Controls.TreeDataGrid.CanUserResizeColumns](xref:Avalonia.Controls.TreeDataGrid.CanUserResizeColumns)
-property value will apply.
+若为 null，则采用所有者的 [Avalonia.Controls.TreeDataGrid.CanUserResizeColumns](xref:Avalonia.Controls.TreeDataGrid.CanUserResizeColumns)
+属性值。
 
 </section>
 
@@ -149,7 +149,7 @@ property value will apply.
 
 <span id="uid-3860b5729a"></span>
 
-### CanUserSort Property
+### CanUserSort 属性 {#canusersort-property}
 
 Gets or sets a value indicating whether the user can sort a column by clicking.
 
@@ -157,10 +157,10 @@ Gets or sets a value indicating whether the user can sort a column by clicking.
 public Nullable<bool> CanUserSort { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-If null, the owner [Avalonia.Controls.TreeDataGrid.CanUserSortColumns](xref:Avalonia.Controls.TreeDataGrid.CanUserSortColumns)
-property value will apply.
+若为 null，则采用所有者的 [Avalonia.Controls.TreeDataGrid.CanUserSortColumns](xref:Avalonia.Controls.TreeDataGrid.CanUserSortColumns)
+属性值。
 
 </section>
 
@@ -168,7 +168,7 @@ property value will apply.
 
 <span id="uid-5685462157"></span>
 
-### CompareAscending Property
+### CompareAscending 属性 {#compareascending-property}
 
 Gets or sets a custom comparison for ascending ordered columns.
 
@@ -182,7 +182,7 @@ public Comparison<object> CompareAscending { get; set; }
 
 <span id="uid-49dcda7052"></span>
 
-### CompareDescending Property
+### CompareDescending 属性 {#comparedescending-property}
 
 Gets or sets a custom comparison for descending ordered columns.
 
@@ -196,7 +196,7 @@ public Comparison<object> CompareDescending { get; set; }
 
 <span id="uid-b48fbd7d1b"></span>
 
-### HorizontalContentAlignment Property
+### HorizontalContentAlignment 属性 {#horizontalcontentalignment-property}
 
 Gets or sets the horizontal alignment of the cell content.
 
@@ -210,7 +210,7 @@ public Avalonia.Layout.HorizontalAlignment HorizontalContentAlignment { get; set
 
 <span id="uid-4554236b2f"></span>
 
-### MaxWidth Property
+### MaxWidth 属性 {#maxwidth-property}
 
 Gets or sets the maximum width for a column.
 
@@ -224,7 +224,7 @@ public Nullable<Avalonia.Controls.GridLength> MaxWidth { get; set; }
 
 <span id="uid-1776db3e6c"></span>
 
-### MinWidth Property
+### MinWidth 属性 {#minwidth-property}
 
 Gets or sets the minimum width for a column.
 
@@ -238,7 +238,7 @@ public Avalonia.Controls.GridLength MinWidth { get; set; }
 
 <span id="uid-77a5b34ee7"></span>
 
-### VerticalContentAlignment Property
+### VerticalContentAlignment 属性 {#verticalcontentalignment-property}
 
 Gets or sets the vertical alignment of the cell content.
 
@@ -252,9 +252,9 @@ public Avalonia.Layout.VerticalAlignment VerticalContentAlignment { get; set; }
 
 <span id="uid-3cd08b17fd"></span>
 
-### Width Property
+### Width 属性 {#width-property}
 
-Gets or sets the column width.
+获取或设置列宽。
 
 ```csharp
 public Nullable<Avalonia.Controls.GridLength> Width { get; set; }

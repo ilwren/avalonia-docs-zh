@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridSelectionChangedEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Selection</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Selection</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SelectionChanged](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SelectionChanged) event.
+为 [Avalonia.Controls.Selection.TreeDataGridSelectionModel.SelectionChanged](xref:Avalonia.Controls.Selection.TreeDataGridSelectionModel.SelectionChanged) 事件提供数据。
 
 </div>
 
@@ -50,43 +50,43 @@ public class TreeDataGridSelectionChangedEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridSelectionChangedEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridSelectionChangedEventArgs
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Derived types:</span> <a href="treedatagridselectionchangedeventargs-1">TreeDataGridSelectionChangedEventArgs&lt;T&gt;</a>
+<span className="apiref-page__meta-label">派生类型：</span> <a href="treedatagridselectionchangedeventargs-1">TreeDataGridSelectionChangedEventArgs&lt;T&gt;</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This is the unified base class for selection change events in [TreeDataGrid](xref:Avalonia.Controls.TreeDataGrid), used by both
 row and cell selection models. It provides row-level indexes and items, as well as
 cell-level indexes that expand rows across columns.
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DeselectedCellIndexes](#uid-1403b3bce1) | Gets the cell indexes of the cells that were removed from the selection. |
-| [DeselectedIndexes](#uid-b104cad575) | Gets the row indexes of the items that were removed from the selection. |
-| [DeselectedItems](#uid-44f14d9b02) | Gets the items that were removed from the selection. |
-| [SelectedCellIndexes](#uid-64c01ca0e7) | Gets the cell indexes of the cells that were added to the selection. |
-| [SelectedIndexes](#uid-5003382dfb) | Gets the row indexes of the items that were added to the selection. |
-| [SelectedItems](#uid-621efc5b9d) | Gets the items that were added to the selection. |
+| [DeselectedCellIndexes](#uid-1403b3bce1) | 获取已从选区中移除的那些单元格的索引。 |
+| [DeselectedIndexes](#uid-b104cad575) | 获取已从选区中移除的那些项所在的行索引。 |
+| [DeselectedItems](#uid-44f14d9b02) | 获取已从选区中移除的那些项。 |
+| [SelectedCellIndexes](#uid-64c01ca0e7) | 获取新加入选区的那些单元格的索引。 |
+| [SelectedIndexes](#uid-5003382dfb) | 获取新加入选区的那些项所在的行索引。 |
+| [SelectedItems](#uid-621efc5b9d) | 获取新加入选区的那些项。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-1403b3bce1"></span>
 
-### DeselectedCellIndexes Property
+### DeselectedCellIndexes 属性 {#deselectedcellindexes-property}
 
-Gets the cell indexes of the cells that were removed from the selection.
+获取已从选区中移除的那些单元格的索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.CellIndex> DeselectedCellIndexes { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 For row selection, this expands deselected rows across all columns.
 For cell selection, this contains the specific deselected cells.
@@ -97,15 +97,15 @@ For cell selection, this contains the specific deselected cells.
 
 <span id="uid-b104cad575"></span>
 
-### DeselectedIndexes Property
+### DeselectedIndexes 属性 {#deselectedindexes-property}
 
-Gets the row indexes of the items that were removed from the selection.
+获取已从选区中移除的那些项所在的行索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> DeselectedIndexes { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 When items are removed from the data source, their indexes are no longer valid and
 will not appear in this collection. Use [Avalonia.Controls.Selection.TreeDataGridSelectionChangedEventArgs.DeselectedItems](xref:Avalonia.Controls.Selection.TreeDataGridSelectionChangedEventArgs.DeselectedItems) to identify
@@ -117,15 +117,15 @@ removed items in that case.
 
 <span id="uid-44f14d9b02"></span>
 
-### DeselectedItems Property
+### DeselectedItems 属性 {#deselecteditems-property}
 
-Gets the items that were removed from the selection.
+获取已从选区中移除的那些项。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<object> DeselectedItems { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 When items are removed from the data source, their indexes are no longer valid but
 the items themselves are still available in this collection as a concrete list that
@@ -142,15 +142,15 @@ dispatcher-queued handler) throws [InvalidOperationException](xref:System.Invali
 
 <span id="uid-64c01ca0e7"></span>
 
-### SelectedCellIndexes Property
+### SelectedCellIndexes 属性 {#selectedcellindexes-property}
 
-Gets the cell indexes of the cells that were added to the selection.
+获取新加入选区的那些单元格的索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.CellIndex> SelectedCellIndexes { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 For row selection, this expands selected rows across all columns.
 For cell selection, this contains the specific selected cells.
@@ -161,9 +161,9 @@ For cell selection, this contains the specific selected cells.
 
 <span id="uid-5003382dfb"></span>
 
-### SelectedIndexes Property
+### SelectedIndexes 属性 {#selectedindexes-property}
 
-Gets the row indexes of the items that were added to the selection.
+获取新加入选区的那些项所在的行索引。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> SelectedIndexes { get; set; }
@@ -175,15 +175,15 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> Sel
 
 <span id="uid-621efc5b9d"></span>
 
-### SelectedItems Property
+### SelectedItems 属性 {#selecteditems-property}
 
-Gets the items that were added to the selection.
+获取新加入选区的那些项。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<object> SelectedItems { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 The items in this collection are resolved lazily against the data source, so they
 must be read before the source collection is next modified. Reading them after a

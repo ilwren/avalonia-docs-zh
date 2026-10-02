@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ChartSelectionChangingEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Charts</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Charts</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Charts</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Charts</code>
 </div>
 </div>
 
@@ -51,13 +51,13 @@ public class ChartSelectionChangingEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> CancelEventArgs <span className="apiref-page__relation-separator">-&gt;</span> ChartSelectionChangingEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> CancelEventArgs <span className="apiref-page__relation-separator">-&gt;</span> ChartSelectionChangingEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [ChartSelectionChangingEventArgs](#uid-69c5dbb182) | Creates a new instance of [ChartSelectionChangingEventArgs](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs). |
 
@@ -65,7 +65,7 @@ public class ChartSelectionChangingEventArgs
 
 <span id="uid-69c5dbb182"></span>
 
-### ChartSelectionChangingEventArgs Constructor
+### ChartSelectionChangingEventArgs 构造函数 {#chartselectionchangingeventargs-constructor}
 
 Creates a new instance of [ChartSelectionChangingEventArgs](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs).
 
@@ -73,7 +73,7 @@ Creates a new instance of [ChartSelectionChangingEventArgs](xref:Avalonia.Contro
 public ChartSelectionChangingEventArgs(System.Collections.IList newSelection, System.Collections.IList oldSelection)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `newSelection` System.Collections.IList
 
@@ -83,20 +83,20 @@ public ChartSelectionChangingEventArgs(System.Collections.IList newSelection, Sy
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [NewIndexes](#uid-26f83726b6) | Gets the editable requested indexes for index-based selection surfaces. This aliases [Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.NewSelection](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.NewSelection) and is meaningful only when the sender selects data points by index. |
 | [NewSelection](#uid-51748ce50d) | Gets the editable snapshot that represents the requested new selection. |
 | [OldIndexes](#uid-1908aaf00f) | Gets a snapshot of the previous indexes for index-based selection surfaces. This aliases [Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.OldSelection](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.OldSelection) and is meaningful only when the sender selects data points by index. |
-| [OldSelection](#uid-aab084a31c) | Gets a snapshot of the previous selection. |
+| [OldSelection](#uid-aab084a31c) | 获取先前选择状态的快照。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-26f83726b6"></span>
 
-### NewIndexes Property
+### NewIndexes 属性 {#newindexes-property}
 
 Gets the editable requested indexes for index-based selection surfaces.
 This aliases [Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.NewSelection](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.NewSelection) and is meaningful only when the
@@ -112,7 +112,7 @@ public System.Collections.IList NewIndexes { get; set; }
 
 <span id="uid-51748ce50d"></span>
 
-### NewSelection Property
+### NewSelection 属性 {#newselection-property}
 
 Gets the editable snapshot that represents the requested new selection.
 
@@ -126,7 +126,7 @@ public System.Collections.IList NewSelection { get; set; }
 
 <span id="uid-1908aaf00f"></span>
 
-### OldIndexes Property
+### OldIndexes 属性 {#oldindexes-property}
 
 Gets a snapshot of the previous indexes for index-based selection surfaces.
 This aliases [Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.OldSelection](xref:Avalonia.Controls.Charts.ChartSelectionChangingEventArgs.OldSelection) and is meaningful only when the
@@ -142,9 +142,9 @@ public System.Collections.IList OldIndexes { get; set; }
 
 <span id="uid-aab084a31c"></span>
 
-### OldSelection Property
+### OldSelection 属性 {#oldselection-property}
 
-Gets a snapshot of the previous selection.
+获取先前选择状态的快照。
 
 ```csharp
 public System.Collections.IList OldSelection { get; set; }

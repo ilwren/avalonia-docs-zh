@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StyleQueries Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Styling</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Styling</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Styling/StyleQueries.cs">StyleQueries.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Styling/StyleQueries.cs">StyleQueries.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Extension methods for [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery).
+面向 [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery) 的扩展方法。
 
 </div>
 
@@ -54,17 +54,17 @@ public class StyleQueries
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> StyleQueries
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> StyleQueries
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [And (2 overloads)](#uid-342505de3b) | Returns a query which ANDs queries. |
+| [And (2 overloads)](#uid-342505de3b) | 返回一个把若干查询取与的查询。 |
 | [Height](#uid-cf74e48129) | Returns a query which matches the device height with a value. |
-| [Or (2 overloads)](#uid-d2dc803fe9) | Returns a query which ORs queries. |
+| [Or（2 个重载）](#uid-d2dc803fe9) | 返回一个把若干查询取或的查询。 |
 | [Width](#uid-455754f250) | Returns a query which matches the device width with a value. |
 
 <span id="uid-342505de3b"></span>
@@ -75,26 +75,26 @@ public class StyleQueries
 
 <span id="uid-2d2a6ceb2b"></span>
 
-#### And Method
+#### And 方法 {#and-method}
 
-Returns a query which ANDs queries.
+返回一个把若干查询取与的查询。
 
 ```csharp
 public Avalonia.Styling.StyleQuery And(Avalonia.Styling.StyleQuery[] queries)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `queries` [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)[]
 
 The queries to be AND'd.
 
 
-##### Returns
+##### 返回值 {#returns}
 
 [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
-The query.
+该查询。
 
 
 </section>
@@ -103,18 +103,18 @@ The query.
 
 <span id="uid-dec2e678bb"></span>
 
-#### And Method
+#### And 方法 {#and-method-1}
 
 ```csharp
 public Avalonia.Styling.StyleQuery And(System.Collections.Generic.IReadOnlyList<Avalonia.Styling.StyleQuery> query)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `query` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)&gt;
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
@@ -125,7 +125,7 @@ public Avalonia.Styling.StyleQuery And(System.Collections.Generic.IReadOnlyList<
 
 <span id="uid-cf74e48129"></span>
 
-### Height Method
+### Height 方法 {#height-method}
 
 Returns a query which matches the device height with a value.
 
@@ -133,11 +133,11 @@ Returns a query which matches the device height with a value.
 public Avalonia.Styling.StyleQuery Height(Avalonia.Styling.StyleQuery previous, Avalonia.Styling.StyleQueryComparisonOperator operator, double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `previous` [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
-The previous query.
+先前的查询。
 
 
 `operator` [Avalonia.Styling.StyleQueryComparisonOperator](xref:Avalonia.Styling.StyleQueryComparisonOperator)
@@ -150,43 +150,43 @@ The operator to match the device height
 The height to match
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
-The query.
+该查询。
 
 
 </section>
 
 <span id="uid-d2dc803fe9"></span>
 
-### Or overloads
+### Or 的重载 {#or-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-414f1164b7"></span>
 
-#### Or Method
+#### Or 方法 {#or-method}
 
-Returns a query which ORs queries.
+返回一个把若干查询取或的查询。
 
 ```csharp
 public Avalonia.Styling.StyleQuery Or(Avalonia.Styling.StyleQuery[] queries)
 ```
 
-##### Parameters
+##### 参数 {#parameters-3}
 
 `queries` [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)[]
 
 The queries to be OR'd.
 
 
-##### Returns
+##### 返回值 {#returns-3}
 
 [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
-The query.
+该查询。
 
 
 </section>
@@ -195,18 +195,18 @@ The query.
 
 <span id="uid-e73bf5cae1"></span>
 
-#### Or Method
+#### Or 方法 {#or-method-1}
 
 ```csharp
 public Avalonia.Styling.StyleQuery Or(System.Collections.Generic.IReadOnlyList<Avalonia.Styling.StyleQuery> query)
 ```
 
-##### Parameters
+##### 参数 {#parameters-4}
 
 `query` System.Collections.Generic.IReadOnlyList&lt;[Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)&gt;
 
 
-##### Returns
+##### 返回值 {#returns-4}
 
 [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
@@ -217,7 +217,7 @@ public Avalonia.Styling.StyleQuery Or(System.Collections.Generic.IReadOnlyList<A
 
 <span id="uid-455754f250"></span>
 
-### Width Method
+### Width 方法 {#width-method}
 
 Returns a query which matches the device width with a value.
 
@@ -225,11 +225,11 @@ Returns a query which matches the device width with a value.
 public Avalonia.Styling.StyleQuery Width(Avalonia.Styling.StyleQuery previous, Avalonia.Styling.StyleQueryComparisonOperator operator, double value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `previous` [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
-The previous query.
+先前的查询。
 
 
 `operator` [Avalonia.Styling.StyleQueryComparisonOperator](xref:Avalonia.Styling.StyleQueryComparisonOperator)
@@ -242,11 +242,11 @@ The operator to match the device width
 The width to match
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Styling.StyleQuery](xref:Avalonia.Styling.StyleQuery)
 
-The query.
+该查询。
 
 
 </section>

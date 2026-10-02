@@ -1,19 +1,19 @@
 ---
 id: data-template-collection
-title: Data template collection
-description: Define multiple data templates in a control's DataTemplates collection to match by type.
+title: 数据模板集合
+description: 在控件的 DataTemplates 集合中定义多个数据模板，按类型自动匹配。
 doc-type: explanation
 ---
 
 import DataTemplatesCollectionStudentScreenshot from '/img/concepts/data-concepts/data-templates/data-template-collection/datatemplates-collection-student.png';
 
-Every control in _Avalonia UI_ has a [`DataTemplates`](/api/avalonia/controls/templates/datatemplates) collection where you can place any number of data template definitions. You can then choose the template to use for display by class type. 
+_Avalonia UI_ 中每个控件都有一个 [`DataTemplates`](/api/avalonia/controls/templates/datatemplates) 集合，你可以往里放任意多个数据模板定义，之后便能按类类型挑选显示所用的模板。 
 
-When a control does not have a data template set directly in its `ContentTemplate` property (as on the previous page); then it will choose a template from in its `DataTemplates` collection that matches the class of the object being displayed.  This applies to a window.
+如果控件没有像上一页那样直接设置 `ContentTemplate` 属性，它就会从自己的 `DataTemplates` 集合里挑一个与待显示对象的类相匹配的模板。窗口也适用这条规则。
 
-Data templates are matched by type: a match occurs when the class of the object being displayed is the same as the fully-qualified class name specified in the `DataType` property of a template.
+数据模板按类型匹配：待显示对象的类，与某个模板 `DataType` 属性中指定的完全限定类名一致时，即为匹配成功。
 
-So you can modify the previous sample to use the `DataTemplates` collection, as follows:
+于是可以把前面的示例改成使用 `DataTemplates` 集合，如下：
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
@@ -39,13 +39,13 @@ So you can modify the previous sample to use the `DataTemplates` collection, as 
 </Window>
 ```
 
-This results in exactly the same display as on the previous page:
+显示效果与上一页完全相同：
 
 <Image light={DataTemplatesCollectionStudentScreenshot} alt="Window displaying student first and last name using a data template from the DataTemplates collection" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Multiple data templates by type
+## 按类型配置多个数据模板 {#multiple-data-templates-by-type}
 
-The `DataTemplates` collection can select different templates for different types. When Avalonia encounters an object, it searches the `DataTemplates` collection for a template whose `DataType` matches the object's type:
+`DataTemplates` 集合可以为不同类型选用不同的模板。Avalonia 遇到一个对象时，会在 `DataTemplates` 集合中搜寻 `DataType` 与该对象类型相符的模板：
 
 ```xml
 <Window.DataTemplates>
@@ -67,25 +67,25 @@ The `DataTemplates` collection can select different templates for different type
 </Window.DataTemplates>
 ```
 
-With these templates defined, a `ListBox` or `ContentControl` displaying `Student` objects uses the first template, while `Teacher` objects use the second:
+定义好这些模板之后，显示 `Student` 对象的 `ListBox` 或 `ContentControl` 会用上第一个模板，而 `Teacher` 对象则用第二个：
 
 ```xml
 <ListBox ItemsSource="{Binding People}" />
 ```
 
-## Template search order
+## 模板的搜索顺序 {#template-search-order}
 
-When Avalonia needs a data template for an object, it searches in this order:
+当 Avalonia 需要为某个对象找数据模板时，会按以下顺序搜索：
 
-1. The control's own `DataTemplates` collection.
-2. Each parent control's `DataTemplates` collection, walking up the tree.
-3. The `Window.DataTemplates` collection.
-4. The `Application.DataTemplates` collection.
+1. 控件自身的 `DataTemplates` 集合。
+2. 沿树向上，各级父控件的 `DataTemplates` 集合。
+3. `Window.DataTemplates` 集合。
+4. `Application.DataTemplates` 集合。
 
-The first matching template is used. This lets you override application-wide templates at any level of the tree.
+第一个匹配上的模板即被采用。因此你可以在树的任意一层覆盖应用级的模板。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Introduction to Data Templates](/docs/data-templates/introduction-to-data-templates): Overview of data templates in Avalonia.
-- [Content Templates](/docs/data-templates/content-templates): Using `ContentTemplate` directly.
-- [Reusing Data Templates](/docs/data-templates/reusing-data-templates): Sharing templates across your application.
+- [数据模板入门](/docs/data-templates/introduction-to-data-templates)：Avalonia 数据模板总览。
+- [内容模板](/docs/data-templates/content-templates)：直接使用 `ContentTemplate`。
+- [复用数据模板](/docs/data-templates/reusing-data-templates)：在整个应用中共享模板。

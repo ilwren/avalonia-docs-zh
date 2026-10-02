@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Application Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Application.cs">Application.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Application.cs">Application.cs</a>
 </div>
 
 </div>
@@ -54,38 +54,38 @@ public class Application
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> Application
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="avaloniaobject">AvaloniaObject</a> <span className="apiref-page__relation-separator">-&gt;</span> Application
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="controls/iglobaldatatemplates">IGlobalDataTemplates</a>, <a href="controls/iresourcehost">IResourceHost</a>, <a href="controls/iresourcenode">IResourceNode</a>, <a href="controls/templates/idatatemplatehost">IDataTemplateHost</a>, <a href="idatacontextprovider">IDataContextProvider</a>, <a href="ioptionalfeatureprovider">IOptionalFeatureProvider</a>, <a href="styling/iglobalstyles">IGlobalStyles</a>, <a href="styling/istylehost">IStyleHost</a>, <a href="styling/ithemevarianthost">IThemeVariantHost</a>, IThemeVariantRoot
+<span className="apiref-page__meta-label">实现接口：</span> <a href="controls/iglobaldatatemplates">IGlobalDataTemplates</a>, <a href="controls/iresourcehost">IResourceHost</a>, <a href="controls/iresourcenode">IResourceNode</a>, <a href="controls/templates/idatatemplatehost">IDataTemplateHost</a>, <a href="idatacontextprovider">IDataContextProvider</a>, <a href="ioptionalfeatureprovider">IOptionalFeatureProvider</a>, <a href="styling/iglobalstyles">IGlobalStyles</a>, <a href="styling/istylehost">IStyleHost</a>, <a href="styling/ithemevarianthost">IThemeVariantHost</a>, IThemeVariantRoot
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 The [Avalonia.Application](xref:Avalonia.Application) class encapsulates Avalonia application-specific
 functionality, including:
-- A global set of [Avalonia.Application.DataTemplates](xref:Avalonia.Application.DataTemplates).
-- A global set of [Avalonia.Application.Styles](xref:Avalonia.Application.Styles).
+- 一组全局的 [Avalonia.Application.DataTemplates](xref:Avalonia.Application.DataTemplates)。
+- 一组全局的 [Avalonia.Application.Styles](xref:Avalonia.Application.Styles)。
 - A [Avalonia.Input.FocusManager](xref:Avalonia.Input.FocusManager).
 - An [Avalonia.Application.InputManager](xref:Avalonia.Application.InputManager).
 - Registers services needed by the rest of Avalonia in the [Avalonia.Application.RegisterServices](xref:Avalonia.Application.RegisterServices)
 method.
 - Tracks the lifetime of the application.
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Application](#uid-15ab86e14c) | Creates an instance of the [Avalonia.Application](xref:Avalonia.Application) class. |
+| [Application](#uid-15ab86e14c) | 创建一个 [Avalonia.Application](xref:Avalonia.Application) 类的实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-15ab86e14c"></span>
 
-### Application Constructor
+### Application 构造函数 {#application-constructor}
 
-Creates an instance of the [Avalonia.Application](xref:Avalonia.Application) class.
+创建一个 [Avalonia.Application](xref:Avalonia.Application) 类的实例。
 
 ```csharp
 public Application()
@@ -93,34 +93,34 @@ public Application()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Bind (8 overloads)](avaloniaobject.mdx#uid-1c60c7bda3) | Binds a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) to an [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase). Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [CheckAccess](avaloniaobject.mdx#uid-260ff7a68d) | Returns a value indicating whether the current thread is the UI thread. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [ClearValue (4 overloads)](avaloniaobject.mdx#uid-41de208fbe) | Clears a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)'s local value. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [CoerceValue](avaloniaobject.mdx#uid-3bec32f39e) | Coerces the specified [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty). Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [Equals](avaloniaobject.mdx#uid-a8a8e94305) | Compares two objects using reference equality. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [GetBaseValue](avaloniaobject.mdx#uid-9c615efbba) | Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [GetHashCode](avaloniaobject.mdx#uid-7f7db1e7a2) | Gets the hash code for the object. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [GetValue (3 overloads)](avaloniaobject.mdx#uid-5142cd4792) | Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
+| [Bind（8 个重载）](avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [CheckAccess](avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [ClearValue（4 个重载）](avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [CoerceValue](avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [Equals](avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [GetBaseValue](avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [GetHashCode](avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [GetValue（3 个重载）](avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
 | [Initialize](#uid-52be68244b) | Initializes the application by loading XAML etc. |
-| [IsAnimating](avaloniaobject.mdx#uid-8cbfc7521a) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is animating. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [IsSet](avaloniaobject.mdx#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [OnFrameworkInitializationCompleted](#uid-89a60ec540) | No summary available. |
+| [IsAnimating](avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [IsSet](avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [OnFrameworkInitializationCompleted](#uid-89a60ec540) | 暂无摘要。 |
 | [RegisterServices](#uid-141237462b) | Register's the services needed by Avalonia. |
-| [SetCurrentValue (2 overloads)](avaloniaobject.mdx#uid-38759fd088) | Sets the value of a dependency property without changing its value source. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [SetValue (3 overloads)](avaloniaobject.mdx#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [TryGetFeature](#uid-167f3f3976) | Queries for an optional feature. |
-| [TryGetResource](#uid-0edcd40f5c) | No summary available. |
-| [VerifyAccess](avaloniaobject.mdx#uid-3b9d3c9793) | Checks that the current thread is the UI thread and throws if not. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
+| [SetCurrentValue（2 个重载）](avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [SetValue（3 个重载）](avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [TryGetFeature](#uid-167f3f3976) | 查询某项可选特性。 |
+| [TryGetResource](#uid-0edcd40f5c) | 暂无摘要。 |
+| [VerifyAccess](avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-52be68244b"></span>
 
-### Initialize Method
+### Initialize 方法 {#initialize-method}
 
 Initializes the application by loading XAML etc.
 
@@ -134,7 +134,7 @@ public void Initialize()
 
 <span id="uid-89a60ec540"></span>
 
-### OnFrameworkInitializationCompleted Method
+### OnFrameworkInitializationCompleted 方法 {#onframeworkinitializationcompleted-method}
 
 ```csharp
 public void OnFrameworkInitializationCompleted()
@@ -146,7 +146,7 @@ public void OnFrameworkInitializationCompleted()
 
 <span id="uid-141237462b"></span>
 
-### RegisterServices Method
+### RegisterServices 方法 {#registerservices-method}
 
 Register's the services needed by Avalonia.
 
@@ -160,27 +160,27 @@ public void RegisterServices()
 
 <span id="uid-167f3f3976"></span>
 
-### TryGetFeature Method
+### TryGetFeature 方法 {#trygetfeature-method}
 
-Queries for an optional feature.
+查询某项可选特性。
 
 ```csharp
 public object TryGetFeature(Type featureType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
-`featureType` Type
+`featureType` 类型
 
-Feature type.
+特性类型。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Features currently supported by [Avalonia.Application.TryGetFeature(Type)](xref:Avalonia.Application.TryGetFeature%28System.Type%29):
 
@@ -193,13 +193,13 @@ Features currently supported by [Avalonia.Application.TryGetFeature(Type)](xref:
 
 <span id="uid-0edcd40f5c"></span>
 
-### TryGetResource Method
+### TryGetResource 方法 {#trygetresource-method}
 
 ```csharp
 public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, object& value)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `key` object
 
@@ -210,46 +210,46 @@ public bool TryGetResource(object key, Avalonia.Styling.ThemeVariant theme, obje
 `value` object&amp;
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 bool
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariant](#uid-64e2c748c4) | Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty. |
+| [ActualThemeVariant](#uid-64e2c748c4) | 获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。 |
 | [ApplicationLifetime](#uid-a0da2fa113) | Application lifetime, use it for things like setting the main window and exiting the app from code Currently supported lifetimes are: - [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime) - [Avalonia.Controls.ApplicationLifetimes.ISingleViewApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.ISingleViewApplicationLifetime) - [Avalonia.Controls.ApplicationLifetimes.ISingleTopLevelApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.ISingleTopLevelApplicationLifetime) - [Avalonia.Controls.ApplicationLifetimes.IControlledApplicationLifetime](xref:Avalonia.Controls.ApplicationLifetimes.IControlledApplicationLifetime) |
 | [Current](#uid-6f6086e220) | Gets the current instance of the [Avalonia.Application](xref:Avalonia.Application) class. |
 | [DataContext](#uid-3090ece934) | Gets or sets the Applications's data context. |
 | [DataTemplates](#uid-6a03e04fc3) | Gets or sets the application's global data templates. |
-| [Dispatcher](avaloniaobject.mdx#uid-b25fa51632) | Returns the [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher) that this [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) is associated with. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [Item](avaloniaobject.mdx#uid-c1d1f1bc0f) | Inherited from [AvaloniaObject](avaloniaobject.mdx). |
+| [Dispatcher](avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [Item](avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
 | [Name](#uid-9e435be47d) | Application name to be used for various platform-specific purposes |
 | [PlatformSettings](#uid-37be27508e) | Represents a contract for accessing global platform-specific settings. |
-| [RequestedThemeVariant](#uid-5c366c1387) | Gets or sets the UI theme variant that is used by the control (and its child elements) for resource determination. The UI theme you specify with [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) can override the app-level [ThemeVariant](xref:Avalonia.Styling.ThemeVariant). |
+| [RequestedThemeVariant](#uid-5c366c1387) | 获取或设置该控件（及其子元素）在解析资源时所用的界面主题变体。你用 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) 指定的界面主题可以覆盖应用级的 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant)。 |
 | [Resources](#uid-ad05e868f8) | Gets the application's global resource dictionary. |
-| [Styles](#uid-56724faecc) | Gets the application's global styles. |
+| [Styles](#uid-56724faecc) | 获取应用的全局样式。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-64e2c748c4"></span>
 
-### ActualThemeVariant Property
+### ActualThemeVariant 属性 {#actualthemevariant-property}
 
-Gets the UI theme that is currently used by the element, which might be different than the RequestedThemeVariantProperty.
+获取该元素当前实际使用的界面主题，它未必与 RequestedThemeVariantProperty 一致。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant ActualThemeVariant { get; set; }
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
-If current control is contained in the [ThemeVariantScope](xref:Avalonia.Controls.ThemeVariantScope), [TopLevel](xref:Avalonia.Controls.TopLevel) or Application with non-default RequestedThemeVariant, that value will be returned.
-Otherwise, current OS theme variant is returned.
+若当前控件处在某个 RequestedThemeVariant 非默认值的 [ThemeVariantScope](xref:Avalonia.Controls.ThemeVariantScope)、[TopLevel](xref:Avalonia.Controls.TopLevel) 或 Application 之内，返回的便是那个值。
+否则返回当前操作系统的主题变体。
 
 
 </section>
@@ -258,7 +258,7 @@ Otherwise, current OS theme variant is returned.
 
 <span id="uid-a0da2fa113"></span>
 
-### ApplicationLifetime Property
+### ApplicationLifetime 属性 {#applicationlifetime-property}
 
 Application lifetime, use it for things like setting the main window and exiting the app from code
 Currently supported lifetimes are:
@@ -277,7 +277,7 @@ public Avalonia.Controls.ApplicationLifetimes.IApplicationLifetime ApplicationLi
 
 <span id="uid-6f6086e220"></span>
 
-### Current Property
+### Current 属性 {#current-property}
 
 Gets the current instance of the [Avalonia.Application](xref:Avalonia.Application) class.
 
@@ -285,7 +285,7 @@ Gets the current instance of the [Avalonia.Application](xref:Avalonia.Applicatio
 public Avalonia.Application Current { get; set; }
 ```
 
-#### Value
+#### 值 {#value}
 
 The current instance of the [Avalonia.Application](xref:Avalonia.Application) class.
 
@@ -296,7 +296,7 @@ The current instance of the [Avalonia.Application](xref:Avalonia.Application) cl
 
 <span id="uid-3090ece934"></span>
 
-### DataContext Property
+### DataContext 属性 {#datacontext-property}
 
 Gets or sets the Applications's data context.
 
@@ -304,7 +304,7 @@ Gets or sets the Applications's data context.
 public object DataContext { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 The data context property specifies the default object that will
 be used for data binding.
@@ -315,7 +315,7 @@ be used for data binding.
 
 <span id="uid-6a03e04fc3"></span>
 
-### DataTemplates Property
+### DataTemplates 属性 {#datatemplates-property}
 
 Gets or sets the application's global data templates.
 
@@ -323,7 +323,7 @@ Gets or sets the application's global data templates.
 public Avalonia.Controls.Templates.DataTemplates DataTemplates { get; set; }
 ```
 
-#### Value
+#### 值 {#value-1}
 
 The application's global data templates.
 
@@ -334,7 +334,7 @@ The application's global data templates.
 
 <span id="uid-9e435be47d"></span>
 
-### Name Property
+### Name 属性 {#name-property}
 
 Application name to be used for various platform-specific purposes
 
@@ -348,7 +348,7 @@ public string Name { get; set; }
 
 <span id="uid-37be27508e"></span>
 
-### PlatformSettings Property
+### PlatformSettings 属性 {#platformsettings-property}
 
 Represents a contract for accessing global platform-specific settings.
 
@@ -356,7 +356,7 @@ Represents a contract for accessing global platform-specific settings.
 public Avalonia.Platform.IPlatformSettings PlatformSettings { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 PlatformSettings can be null only if application wasn't initialized yet.
 [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel)'s [Avalonia.Controls.TopLevel.PlatformSettings](xref:Avalonia.Controls.TopLevel.PlatformSettings) is an equivalent API
@@ -369,18 +369,18 @@ as specific top levels might have different settings set-up.
 
 <span id="uid-5c366c1387"></span>
 
-### RequestedThemeVariant Property
+### RequestedThemeVariant 属性 {#requestedthemevariant-property}
 
-Gets or sets the UI theme variant that is used by the control (and its child elements) for resource determination.
-The UI theme you specify with [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) can override the app-level [ThemeVariant](xref:Avalonia.Styling.ThemeVariant).
+获取或设置该控件（及其子元素）在解析资源时所用的界面主题变体。
+你用 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant) 指定的界面主题可以覆盖应用级的 [ThemeVariant](xref:Avalonia.Styling.ThemeVariant)。
 
 ```csharp
 public Avalonia.Styling.ThemeVariant RequestedThemeVariant { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
-Setting RequestedThemeVariant to [Avalonia.Styling.ThemeVariant.Default](xref:Avalonia.Styling.ThemeVariant.Default) will apply parent's actual theme variant on the current scope.
+把 RequestedThemeVariant 设为 [Avalonia.Styling.ThemeVariant.Default](xref:Avalonia.Styling.ThemeVariant.Default)，会在当前作用域内沿用父级的实际主题变体。
 
 </section>
 
@@ -388,7 +388,7 @@ Setting RequestedThemeVariant to [Avalonia.Styling.ThemeVariant.Default](xref:Av
 
 <span id="uid-ad05e868f8"></span>
 
-### Resources Property
+### Resources 属性 {#resources-property}
 
 Gets the application's global resource dictionary.
 
@@ -402,39 +402,39 @@ public Avalonia.Controls.IResourceDictionary Resources { get; set; }
 
 <span id="uid-56724faecc"></span>
 
-### Styles Property
+### Styles 属性 {#styles-property}
 
-Gets the application's global styles.
+获取应用的全局样式。
 
 ```csharp
 public Avalonia.Styling.Styles Styles { get; set; }
 ```
 
-#### Value
+#### 值 {#value-2}
 
 The application's global styles.
 
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Global styles apply to all windows in the application.
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariantProperty](#uid-5045ef9190) | No summary available. |
-| [DataContextProperty](#uid-a7e3346414) | Defines the [Avalonia.Application.DataContext](xref:Avalonia.Application.DataContext) property. |
-| [NameProperty](#uid-de67b6e8cc) | Defines Name property |
-| [RequestedThemeVariantProperty](#uid-021bb71b9e) | No summary available. |
+| [ActualThemeVariantProperty](#uid-5045ef9190) | 暂无摘要。 |
+| [DataContextProperty](#uid-a7e3346414) | 定义 [Avalonia.Application.DataContext](xref:Avalonia.Application.DataContext) 属性。 |
+| [NameProperty](#uid-de67b6e8cc) | 定义 Name 属性 |
+| [RequestedThemeVariantProperty](#uid-021bb71b9e) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5045ef9190"></span>
 
-### ActualThemeVariantProperty Field
+### ActualThemeVariantProperty 字段 {#actualthemevariantproperty-field}
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Styling.ThemeVariant> ActualThemeVariantProperty
@@ -446,9 +446,9 @@ public Avalonia.StyledProperty<Avalonia.Styling.ThemeVariant> ActualThemeVariant
 
 <span id="uid-a7e3346414"></span>
 
-### DataContextProperty Field
+### DataContextProperty 字段 {#datacontextproperty-field}
 
-Defines the [Avalonia.Application.DataContext](xref:Avalonia.Application.DataContext) property.
+定义 [Avalonia.Application.DataContext](xref:Avalonia.Application.DataContext) 属性。
 
 ```csharp
 public Avalonia.StyledProperty<object> DataContextProperty
@@ -460,9 +460,9 @@ public Avalonia.StyledProperty<object> DataContextProperty
 
 <span id="uid-de67b6e8cc"></span>
 
-### NameProperty Field
+### NameProperty 字段 {#nameproperty-field}
 
-Defines Name property
+定义 Name 属性
 
 ```csharp
 public Avalonia.DirectProperty<Avalonia.Application, string> NameProperty
@@ -474,7 +474,7 @@ public Avalonia.DirectProperty<Avalonia.Application, string> NameProperty
 
 <span id="uid-021bb71b9e"></span>
 
-### RequestedThemeVariantProperty Field
+### RequestedThemeVariantProperty 字段 {#requestedthemevariantproperty-field}
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Styling.ThemeVariant> RequestedThemeVariantProperty
@@ -482,21 +482,21 @@ public Avalonia.StyledProperty<Avalonia.Styling.ThemeVariant> RequestedThemeVari
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ActualThemeVariantChanged](#uid-cfaf9aa916) | Raised when the theme variant is changed on the element or an ancestor of the element. |
-| [PropertyChanged](avaloniaobject.mdx#uid-d758e26fae) | Raised when a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value changes on this object. Inherited from [AvaloniaObject](avaloniaobject.mdx). |
-| [ResourcesChanged](#uid-deb388f7cf) | Raised when the resources change on the element or an ancestor of the element. |
+| [ActualThemeVariantChanged](#uid-cfaf9aa916) | 当该元素或其某个祖先上的主题变体发生变化时抛出。 |
+| [PropertyChanged](avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](avaloniaobject.mdx)。 |
+| [ResourcesChanged](#uid-deb388f7cf) | 当该元素或其某个祖先上的资源发生变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cfaf9aa916"></span>
 
-### ActualThemeVariantChanged Event
+### ActualThemeVariantChanged 事件 {#actualthemevariantchanged-event}
 
-Raised when the theme variant is changed on the element or an ancestor of the element.
+当该元素或其某个祖先上的主题变体发生变化时抛出。
 
 ```csharp
 public event EventHandler ActualThemeVariantChanged
@@ -508,9 +508,9 @@ public event EventHandler ActualThemeVariantChanged
 
 <span id="uid-deb388f7cf"></span>
 
-### ResourcesChanged Event
+### ResourcesChanged 事件 {#resourceschanged-event}
 
-Raised when the resources change on the element or an ancestor of the element.
+当该元素或其某个祖先上的资源发生变化时抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ResourcesChangedEventArgs> ResourcesChanged

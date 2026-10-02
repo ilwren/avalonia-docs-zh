@@ -20,23 +20,23 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DeleteTableAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-Action for deleting the entire [Avalonia.Controls.Documents.Table](xref:Avalonia.Controls.Documents.Table) containing the caret.
+删除插入符所在的整个 [Avalonia.Controls.Documents.Table](xref:Avalonia.Controls.Documents.Table) 的操作。
 
 </div>
 
@@ -50,21 +50,21 @@ public class DeleteTableAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> DeleteTableAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> DeleteTableAction
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DeleteTableAction](#uid-6d2b1904ac) | No summary available. |
+| [DeleteTableAction](#uid-6d2b1904ac) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6d2b1904ac"></span>
 
-### DeleteTableAction Constructor
+### DeleteTableAction 构造函数 {#deletetableaction-constructor}
 
 ```csharp
 public DeleteTableAction()
@@ -72,31 +72,31 @@ public DeleteTableAction()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-ce8ba77708) | No summary available. |
-| [Execute](#uid-394bc9bba7) | No summary available. |
-| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | Executes the action asynchronously. Inherited from [EditorAction](editoraction.mdx). |
-| [GetState](editoraction.mdx#uid-e9737aed90) | Gets the current state of the action. Inherited from [EditorAction](editoraction.mdx). |
+| [CanExecute](#uid-ce8ba77708) | 暂无摘要。 |
+| [Execute](#uid-394bc9bba7) | 暂无摘要。 |
+| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
+| [GetState](editoraction.mdx#uid-e9737aed90) | 获取该操作的当前状态。继承自 [EditorAction](editoraction.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-ce8ba77708"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -107,32 +107,32 @@ bool
 
 <span id="uid-394bc9bba7"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DisplayName](#uid-8c85ceba93) | No summary available. |
-| [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
-| [Id](#uid-aad4c6988c) | No summary available. |
+| [DisplayName](#uid-8c85ceba93) | 暂无摘要。 |
+| [Gesture](editoraction.mdx#uid-557e9af400) | 获取该操作可选的键盘手势。继承自 [EditorAction](editoraction.mdx)。 |
+| [Id](#uid-aad4c6988c) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-8c85ceba93"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 ```csharp
 public string DisplayName { get; set; }
@@ -144,7 +144,7 @@ public string DisplayName { get; set; }
 
 <span id="uid-aad4c6988c"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 ```csharp
 public string Id { get; set; }

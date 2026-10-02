@@ -20,29 +20,28 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IValueProvider Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Automation.Provider</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Automation.Provider</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IValueProvider.cs">IValueProvider.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Automation/Provider/IValueProvider.cs">IValueProvider.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Exposes methods and properties to support access by a UI Automation client to controls
-that have an intrinsic value that does not span a range and that can be represented as
-a string.
+向 UI 自动化客户端暴露方法与属性，以便访问那些自身带有一个固有值的控件——
+该值不构成一个取值区间，且可以表示为字符串。
 
 </div>
 
@@ -54,62 +53,61 @@ public interface IValueProvider
 
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SetValue](#uid-771200876a) | Sets the value of a control. |
+| [SetValue](#uid-771200876a) | 设置某个控件的值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-771200876a"></span>
 
-### SetValue Method
+### SetValue 方法 {#setvalue-method}
 
-Sets the value of a control.
+设置某个控件的值。
 
 ```csharp
 public void SetValue(string value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `value` string
 
-The value to set. The provider is responsible for converting the value to the
-appropriate data type.
+要设置的值。提供程序负责把它转换成合适的数据类型。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 - Windows`IValueProvider.SetValue`
 - macOS`NSAccessibilityProtocol.setAccessibilityValue`
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsReadOnly](#uid-c1da945c4f) | Gets a value that indicates whether the value of a control is read-only. |
-| [Value](#uid-4b82af0490) | Gets the value of the control. |
+| [IsReadOnly](#uid-c1da945c4f) | 获取一个值，指示该控件的值是否为只读。 |
+| [Value](#uid-4b82af0490) | 获取该控件的值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c1da945c4f"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
-Gets a value that indicates whether the value of a control is read-only.
+获取一个值，指示该控件的值是否为只读。
 
 ```csharp
 public bool IsReadOnly { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 - Windows`IValueProvider.IsReadOnly`
-- macOSNo mapping.
+- macOS 无对应映射。
 
 </section>
 
@@ -117,15 +115,15 @@ public bool IsReadOnly { get; set; }
 
 <span id="uid-4b82af0490"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
-Gets the value of the control.
+获取该控件的值。
 
 ```csharp
 public string Value { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 - Windows`IValueProvider.Value`
 - macOS`NSAccessibilityProtocol.accessibilityValue`

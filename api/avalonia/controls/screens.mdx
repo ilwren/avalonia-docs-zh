@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">Screens Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Screens.cs">Screens.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Screens.cs">Screens.cs</a>
 </div>
 
 </div>
@@ -54,26 +54,26 @@ public class Screens
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> Screens
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> Screens
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [RequestScreenDetails](#uid-22fd0897f8) | Asks underlying platform to provide detailed screen information. On some platforms it might include non-primary screens, as well as display names. |
 | [ScreenFromBounds](#uid-eaf8a4f3a3) | Retrieves a Screen for the display that contains the rectangle. |
 | [ScreenFromPoint](#uid-33a8414294) | Retrieves a Screen for the display that contains the specified point. |
-| [ScreenFromTopLevel](#uid-8d0ddac6d3) | Retrieves a Screen for the display that contains the specified [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel). |
-| [ScreenFromVisual](#uid-2100666c09) | Retrieves a Screen for the display that contains the specified [Avalonia.Visual](xref:Avalonia.Visual). |
-| [ScreenFromWindow](#uid-303ce34047) | Retrieves a Screen for the display that contains the specified [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase). |
+| [ScreenFromTopLevel](#uid-8d0ddac6d3) | 取得容纳指定 [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel) 的那块显示器所对应的 Screen。 |
+| [ScreenFromVisual](#uid-2100666c09) | 取得容纳指定 [Avalonia.Visual](xref:Avalonia.Visual) 的那块显示器所对应的 Screen。 |
+| [ScreenFromWindow](#uid-303ce34047) | 取得容纳指定 [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase) 的那块显示器所对应的 Screen。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-22fd0897f8"></span>
 
-### RequestScreenDetails Method
+### RequestScreenDetails 方法 {#requestscreendetails-method}
 
 Asks underlying platform to provide detailed screen information.
 On some platforms it might include non-primary screens, as well as display names.
@@ -82,14 +82,14 @@ On some platforms it might include non-primary screens, as well as display names
 public System.Threading.Tasks.Task<bool> RequestScreenDetails()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;bool&gt;
 
 True, if detailed screen information was provided. False, if denied by the platform or user.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 This method is async and might show a dialog to the user asking for a permission.
 
@@ -99,7 +99,7 @@ This method is async and might show a dialog to the user asking for a permission
 
 <span id="uid-eaf8a4f3a3"></span>
 
-### ScreenFromBounds Method
+### ScreenFromBounds 方法 {#screenfrombounds-method}
 
 Retrieves a Screen for the display that contains the rectangle.
 
@@ -107,21 +107,21 @@ Retrieves a Screen for the display that contains the rectangle.
 public Avalonia.Platform.Screen ScreenFromBounds(Avalonia.PixelRect bounds)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `bounds` [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
 Bounds that specifies the area for which to retrieve the display.
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen)
 
 The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 On mobile, this method always returns null.
 
@@ -131,7 +131,7 @@ On mobile, this method always returns null.
 
 <span id="uid-33a8414294"></span>
 
-### ScreenFromPoint Method
+### ScreenFromPoint 方法 {#screenfrompoint-method}
 
 Retrieves a Screen for the display that contains the specified point.
 
@@ -139,21 +139,21 @@ Retrieves a Screen for the display that contains the specified point.
 public Avalonia.Platform.Screen ScreenFromPoint(Avalonia.PixelPoint point)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `point` [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
 A Point that specifies the location for which to retrieve a Screen.
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen)
 
 The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 On mobile, this method always returns null.
 
@@ -163,29 +163,29 @@ On mobile, this method always returns null.
 
 <span id="uid-8d0ddac6d3"></span>
 
-### ScreenFromTopLevel Method
+### ScreenFromTopLevel 方法 {#screenfromtoplevel-method}
 
-Retrieves a Screen for the display that contains the specified [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel).
+取得容纳指定 [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel) 的那块显示器所对应的 Screen。
 
 ```csharp
 public Avalonia.Platform.Screen ScreenFromTopLevel(Avalonia.Controls.TopLevel topLevel)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `topLevel` [Avalonia.Controls.TopLevel](xref:Avalonia.Controls.TopLevel)
 
 The top level for which to retrieve the Screen.
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen)
 
 The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 
-#### Exceptions
+#### 异常 {#exceptions}
 
 - [TopLevel platform implementation was already disposed.](xref:System.ObjectDisposedException)
 
@@ -195,22 +195,22 @@ The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 <span id="uid-2100666c09"></span>
 
-### ScreenFromVisual Method
+### ScreenFromVisual 方法 {#screenfromvisual-method}
 
-Retrieves a Screen for the display that contains the specified [Avalonia.Visual](xref:Avalonia.Visual).
+取得容纳指定 [Avalonia.Visual](xref:Avalonia.Visual) 的那块显示器所对应的 Screen。
 
 ```csharp
 public Avalonia.Platform.Screen ScreenFromVisual(Avalonia.Visual visual)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `visual` [Avalonia.Visual](xref:Avalonia.Visual)
 
 A Visual for which to retrieve a Screen.
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen)
 
@@ -223,47 +223,47 @@ The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 <span id="uid-303ce34047"></span>
 
-### ScreenFromWindow Method
+### ScreenFromWindow 方法 {#screenfromwindow-method}
 
-Retrieves a Screen for the display that contains the specified [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase).
+取得容纳指定 [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase) 的那块显示器所对应的 Screen。
 
 ```csharp
 public Avalonia.Platform.Screen ScreenFromWindow(Avalonia.Controls.WindowBase window)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `window` [Avalonia.Controls.WindowBase](xref:Avalonia.Controls.WindowBase)
 
 The window for which to retrieve the Screen.
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen)
 
 The [Avalonia.Platform.Screen](xref:Avalonia.Platform.Screen).
 
 
-#### Exceptions
+#### 异常 {#exceptions-1}
 
 - [Window platform implementation was already disposed.](xref:System.ObjectDisposedException)
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [All](#uid-a3f5947216) | Gets the list of all screens available on the device. |
-| [Primary](#uid-ed0f4ff833) | Gets the primary screen on the device. |
+| [Primary](#uid-ed0f4ff833) | 获取设备上的主显示器。 |
 | [ScreenCount](#uid-e84cc646f1) | Gets the total number of screens available on the device. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a3f5947216"></span>
 
-### All Property
+### All 属性 {#all-property}
 
 Gets the list of all screens available on the device.
 
@@ -277,9 +277,9 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Screen> All { 
 
 <span id="uid-ed0f4ff833"></span>
 
-### Primary Property
+### Primary 属性 {#primary-property}
 
-Gets the primary screen on the device.
+获取设备上的主显示器。
 
 ```csharp
 public Avalonia.Platform.Screen Primary { get; set; }
@@ -291,7 +291,7 @@ public Avalonia.Platform.Screen Primary { get; set; }
 
 <span id="uid-e84cc646f1"></span>
 
-### ScreenCount Property
+### ScreenCount 属性 {#screencount-property}
 
 Gets the total number of screens available on the device.
 
@@ -301,19 +301,19 @@ public int ScreenCount { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Changed](#uid-34ee15773c) | Event raised when any screen was changed. |
+| [Changed](#uid-34ee15773c) | 任何屏幕发生变化时抛出的事件。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-34ee15773c"></span>
 
-### Changed Event
+### Changed 事件 {#changed-event}
 
-Event raised when any screen was changed.
+任何屏幕发生变化时抛出的事件。
 
 ```csharp
 public event EventHandler Changed

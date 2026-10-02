@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">AvaloniaRuntimeXamlLoader Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Markup.Xaml</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Markup.Xaml</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Markup.Xaml.Loader</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Markup.Xaml.Loader</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Markup.Xaml.Loader</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Markup.Xaml.Loader</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml.Loader/AvaloniaRuntimeXamlLoader.cs">AvaloniaRuntimeXamlLoader.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Markup/Avalonia.Markup.Xaml.Loader/AvaloniaRuntimeXamlLoader.cs">AvaloniaRuntimeXamlLoader.cs</a>
 </div>
 
 </div>
@@ -48,39 +48,39 @@ public class AvaloniaRuntimeXamlLoader
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaRuntimeXamlLoader
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> AvaloniaRuntimeXamlLoader
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Load (3 overloads)](#uid-dd1980b716) | Loads XAML from a stream. |
-| [LoadGroup](#uid-596d84fb43) | No summary available. |
-| [Parse](#uid-bdbb362a91) | Parse XAML from a string. |
+| [Load (3 overloads)](#uid-dd1980b716) | 从流中加载 XAML。 |
+| [LoadGroup](#uid-596d84fb43) | 暂无摘要。 |
+| [Parse](#uid-bdbb362a91) | 从字符串解析 XAML。 |
 
 <span id="uid-dd1980b716"></span>
 
-### Load overloads
+### Load 的重载 {#load-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5c3aa114a8"></span>
 
-#### Load Method
+#### Load 方法 {#load-method}
 
-Loads XAML from a stream.
+从流中加载 XAML。
 
 ```csharp
 public object Load(Avalonia.Markup.Xaml.RuntimeXamlLoaderDocument document, Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration configuration)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `document` [Avalonia.Markup.Xaml.RuntimeXamlLoaderDocument](xref:Avalonia.Markup.Xaml.RuntimeXamlLoaderDocument)
 
-The stream containing the XAML.
+包含该 XAML 的流。
 
 
 `configuration` [Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration](xref:Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration)
@@ -88,11 +88,11 @@ The stream containing the XAML.
 Xaml loader configuration.
 
 
-##### Returns
+##### 返回值 {#returns}
 
 object
 
-The loaded object.
+加载得到的对象。
 
 
 </section>
@@ -101,19 +101,19 @@ The loaded object.
 
 <span id="uid-be4a5cbb27"></span>
 
-#### Load Method
+#### Load 方法 {#load-method-1}
 
-Loads XAML from a stream.
+从流中加载 XAML。
 
 ```csharp
 public object Load(System.IO.Stream stream, System.Reflection.Assembly localAssembly, object rootInstance, Uri uri, bool designMode)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `stream` System.IO.Stream
 
-The stream containing the XAML.
+包含该 XAML 的流。
 
 
 `localAssembly` System.Reflection.Assembly
@@ -123,12 +123,12 @@ Default assembly for clr-namespace:
 
 `rootInstance` object
 
-The optional instance into which the XAML should be loaded.
+XAML 要加载进的目标实例，可选。
 
 
 `uri` Uri
 
-The URI of the XAML being loaded.
+所加载 XAML 的 URI。
 
 
 `designMode` bool
@@ -136,11 +136,11 @@ The URI of the XAML being loaded.
 Indicates whether the XAML is being loaded in design mode.
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 object
 
-The loaded object.
+加载得到的对象。
 
 
 </section>
@@ -149,7 +149,7 @@ The loaded object.
 
 <span id="uid-c87fe483d8"></span>
 
-#### Load Method
+#### Load 方法 {#load-method-2}
 
 Loads XAML from a string.
 
@@ -157,26 +157,26 @@ Loads XAML from a string.
 public object Load(string xaml, System.Reflection.Assembly localAssembly, object rootInstance, Uri uri, bool designMode)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `xaml` string
 
-The string containing the XAML.
+包含该 XAML 的字符串。
 
 
 `localAssembly` System.Reflection.Assembly
 
-Default assembly for clr-namespace:.
+clr-namespace: 所用的默认程序集。
 
 
 `rootInstance` object
 
-The optional instance into which the XAML should be loaded.
+XAML 要加载进的目标实例，可选。
 
 
 `uri` Uri
 
-The URI of the XAML being loaded.
+所加载 XAML 的 URI。
 
 
 `designMode` bool
@@ -184,11 +184,11 @@ The URI of the XAML being loaded.
 Indicates whether the XAML is being loaded in design mode.
 
 
-##### Returns
+##### 返回值 {#returns-2}
 
 object
 
-The loaded object.
+加载得到的对象。
 
 
 </section>
@@ -197,13 +197,13 @@ The loaded object.
 
 <span id="uid-596d84fb43"></span>
 
-### LoadGroup Method
+### LoadGroup 方法 {#loadgroup-method}
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<object> LoadGroup(System.Collections.Generic.IReadOnlyCollection<Avalonia.Markup.Xaml.RuntimeXamlLoaderDocument> documents, Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration configuration)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `documents` System.Collections.Generic.IReadOnlyCollection&lt;[Avalonia.Markup.Xaml.RuntimeXamlLoaderDocument](xref:Avalonia.Markup.Xaml.RuntimeXamlLoaderDocument)&gt;
 
@@ -211,7 +211,7 @@ public System.Collections.Generic.IReadOnlyList<object> LoadGroup(System.Collect
 `configuration` [Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration](xref:Avalonia.Markup.Xaml.RuntimeXamlLoaderConfiguration)
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 System.Collections.Generic.IReadOnlyList&lt;object&gt;
 
@@ -222,31 +222,31 @@ System.Collections.Generic.IReadOnlyList&lt;object&gt;
 
 <span id="uid-bdbb362a91"></span>
 
-### Parse Method
+### Parse 方法 {#parse-method}
 
-Parse XAML from a string.
+从字符串解析 XAML。
 
 ```csharp
 public T Parse<T>(string xaml, System.Reflection.Assembly localAssembly)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `xaml` string
 
-The string containing the XAML.
+包含该 XAML 的字符串。
 
 
 `localAssembly` System.Reflection.Assembly
 
-Default assembly for clr-namespace:.
+clr-namespace: 所用的默认程序集。
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 object
 
-The loaded object.
+加载得到的对象。
 
 
 </section>

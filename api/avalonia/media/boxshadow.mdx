@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">BoxShadow Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/BoxShadow.cs">BoxShadow.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/BoxShadow.cs">BoxShadow.cs</a>
 </div>
 
 </div>
@@ -54,40 +54,40 @@ public struct BoxShadow
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> BoxShadow
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> BoxShadow
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-5cbc5e2b4b) | No summary available. |
-| [GetHashCode](#uid-12d2d1ef29) | No summary available. |
-| [Parse](#uid-6312b75018) | Parses a [Avalonia.Media.BoxShadow](xref:Avalonia.Media.BoxShadow) string. |
-| [ToString](#uid-1801256060) | No summary available. |
-| [TransformBounds](#uid-db7eb6bcbb) | No summary available. |
+| [Equals（2 个重载）](#uid-5cbc5e2b4b) | 暂无摘要。 |
+| [GetHashCode](#uid-12d2d1ef29) | 暂无摘要。 |
+| [Parse](#uid-6312b75018) | 解析 [Avalonia.Media.BoxShadow](xref:Avalonia.Media.BoxShadow) 字符串。 |
+| [ToString](#uid-1801256060) | 暂无摘要。 |
+| [TransformBounds](#uid-db7eb6bcbb) | 暂无摘要。 |
 
 <span id="uid-5cbc5e2b4b"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-630b98c2d3"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Media.BoxShadow& other)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `other` [Avalonia.Media.BoxShadow](xref:Avalonia.Media.BoxShadow)&amp;
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -98,18 +98,18 @@ bool
 
 <span id="uid-8385a54fb4"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -120,13 +120,13 @@ bool
 
 <span id="uid-12d2d1ef29"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -137,34 +137,34 @@ int
 
 <span id="uid-6312b75018"></span>
 
-### Parse Method
+### Parse 方法 {#parse-method}
 
-Parses a [Avalonia.Media.BoxShadow](xref:Avalonia.Media.BoxShadow) string.
+解析 [Avalonia.Media.BoxShadow](xref:Avalonia.Media.BoxShadow) 字符串。
 
 ```csharp
 public Avalonia.Media.BoxShadow Parse(string s)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `s` string
 
-The input string to parse.
+要解析的输入字符串。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Media.BoxShadow](xref:Avalonia.Media.BoxShadow)
 
 A new [Avalonia.Media.BoxShadow](xref:Avalonia.Media.BoxShadow)
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 A box shadow may be specified in multiple formats with separate components:
 
 - Two, three, or four length values.
-- A color value.
+- 一个颜色值。
 - An optional inset keyword.
 
 If only two length values are given they will be interpreted as [Avalonia.Media.BoxShadow.OffsetX](xref:Avalonia.Media.BoxShadow.OffsetX) and [Avalonia.Media.BoxShadow.OffsetY](xref:Avalonia.Media.BoxShadow.OffsetY).
@@ -177,13 +177,13 @@ it is interpreted as [Avalonia.Media.BoxShadow.Spread](xref:Avalonia.Media.BoxSh
 
 <span id="uid-1801256060"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-4}
 
 string
 
@@ -194,30 +194,30 @@ string
 
 <span id="uid-db7eb6bcbb"></span>
 
-### TransformBounds Method
+### TransformBounds 方法 {#transformbounds-method}
 
 ```csharp
 public Avalonia.Rect TransformBounds(Avalonia.Rect& rect)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `rect` [Avalonia.Rect](xref:Avalonia.Rect)&amp;
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Rect](xref:Avalonia.Rect)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Blur](#uid-cdf3e14bf9) | Gets or sets the blur radius. This is used to control the amount of blurring. |
-| [Color](#uid-9742fddd1a) | Gets or sets the color of the shadow. |
+| [Color](#uid-9742fddd1a) | 获取或设置阴影的颜色。 |
 | [IsInset](#uid-fcbf9bad40) | Gets or sets a value indicating whether the shadow is inset and drawn within the element rather than outside of it. |
 | [OffsetX](#uid-5909914467) | Gets or sets the horizontal offset (distance) of the shadow. |
 | [OffsetY](#uid-bdd7383d93) | Gets or sets the vertical offset (distance) of the shadow. |
@@ -227,7 +227,7 @@ public Avalonia.Rect TransformBounds(Avalonia.Rect& rect)
 
 <span id="uid-cdf3e14bf9"></span>
 
-### Blur Property
+### Blur 属性 {#blur-property}
 
 Gets or sets the blur radius.
 This is used to control the amount of blurring.
@@ -236,7 +236,7 @@ This is used to control the amount of blurring.
 public double Blur { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 The larger this value, the bigger the blur effect, so the shadow becomes larger and more transparent.
 Negative values are not allowed. If not specified, the default (zero) is used and the shadow edge is sharp.
@@ -247,9 +247,9 @@ Negative values are not allowed. If not specified, the default (zero) is used an
 
 <span id="uid-9742fddd1a"></span>
 
-### Color Property
+### Color 属性 {#color-property}
 
-Gets or sets the color of the shadow.
+获取或设置阴影的颜色。
 
 ```csharp
 public Avalonia.Media.Color Color { get; set; }
@@ -261,7 +261,7 @@ public Avalonia.Media.Color Color { get; set; }
 
 <span id="uid-fcbf9bad40"></span>
 
-### IsInset Property
+### IsInset 属性 {#isinset-property}
 
 Gets or sets a value indicating whether the shadow is inset and drawn within the element rather than outside of it.
 
@@ -269,7 +269,7 @@ Gets or sets a value indicating whether the shadow is inset and drawn within the
 public bool IsInset { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Inset changes the shadow to inside the element (as if the content was depressed inside the box).
 If false (the default), the shadow is assumed to be a drop shadow (as if the box were raised above the content).
@@ -282,7 +282,7 @@ Inset shadows are drawn inside the element, above the background (even when it's
 
 <span id="uid-5909914467"></span>
 
-### OffsetX Property
+### OffsetX 属性 {#offsetx-property}
 
 Gets or sets the horizontal offset (distance) of the shadow.
 
@@ -290,7 +290,7 @@ Gets or sets the horizontal offset (distance) of the shadow.
 public double OffsetX { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 Positive values place the shadow to the right of the element while
 negative values place the shadow to the left.
@@ -301,7 +301,7 @@ negative values place the shadow to the left.
 
 <span id="uid-bdd7383d93"></span>
 
-### OffsetY Property
+### OffsetY 属性 {#offsety-property}
 
 Gets or sets the vertical offset (distance) of the shadow.
 
@@ -309,7 +309,7 @@ Gets or sets the vertical offset (distance) of the shadow.
 public double OffsetY { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 Positive values place the shadow below the element while
 negative values place the shadow above.
@@ -320,7 +320,7 @@ negative values place the shadow above.
 
 <span id="uid-4dd5886a2c"></span>
 
-### Spread Property
+### Spread 属性 {#spread-property}
 
 Gets or sets the spread radius.
 This is used to control the overall size of the shadow.
@@ -329,7 +329,7 @@ This is used to control the overall size of the shadow.
 public double Spread { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Positive values will cause the shadow to expand and grow larger, negative values will cause the shadow to shrink.
 If not specified, the default (zero) is used and the shadow will be the same size as the element.

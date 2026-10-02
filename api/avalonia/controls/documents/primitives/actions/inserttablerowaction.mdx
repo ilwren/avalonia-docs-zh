@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">InsertTableRowAction Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Actions</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public class InsertTableRowAction
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> InsertTableRowAction
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="editoraction">EditorAction</a> <span className="apiref-page__relation-separator">-&gt;</span> InsertTableRowAction
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Reachable as [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowBefore](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowBefore) and
 [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowAfter](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowAfter).
@@ -62,31 +62,31 @@ Reachable as [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.Inser
 [Avalonia.Controls.Documents.Primitives.Actions.InsertTableRowAction.CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.InsertTableRowAction.CanExecute%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) returns true only when the caret is inside a [Avalonia.Controls.Documents.TableRow](xref:Avalonia.Controls.Documents.TableRow).
 The new row has the same number of cells as the reference row, each containing an empty paragraph.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-cec865503d) | No summary available. |
-| [Execute](#uid-cbb5136036) | No summary available. |
-| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | Executes the action asynchronously. Inherited from [EditorAction](editoraction.mdx). |
-| [GetState](editoraction.mdx#uid-e9737aed90) | Gets the current state of the action. Inherited from [EditorAction](editoraction.mdx). |
+| [CanExecute](#uid-cec865503d) | 暂无摘要。 |
+| [Execute](#uid-cbb5136036) | 暂无摘要。 |
+| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
+| [GetState](editoraction.mdx#uid-e9737aed90) | 获取该操作的当前状态。继承自 [EditorAction](editoraction.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-cec865503d"></span>
 
-### CanExecute Method
+### CanExecute 方法 {#canexecute-method}
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
-#### Returns
+#### 返回值 {#returns}
 
 bool
 
@@ -97,32 +97,32 @@ bool
 
 <span id="uid-cbb5136036"></span>
 
-### Execute Method
+### Execute 方法 {#execute-method}
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DisplayName](#uid-75832c724d) | No summary available. |
-| [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
-| [Id](#uid-267b06e88d) | No summary available. |
+| [DisplayName](#uid-75832c724d) | 暂无摘要。 |
+| [Gesture](editoraction.mdx#uid-557e9af400) | 获取该操作可选的键盘手势。继承自 [EditorAction](editoraction.mdx)。 |
+| [Id](#uid-267b06e88d) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-75832c724d"></span>
 
-### DisplayName Property
+### DisplayName 属性 {#displayname-property}
 
 ```csharp
 public string DisplayName { get; set; }
@@ -134,7 +134,7 @@ public string DisplayName { get; set; }
 
 <span id="uid-267b06e88d"></span>
 
-### Id Property
+### Id 属性 {#id-property}
 
 ```csharp
 public string Id { get; set; }
@@ -142,9 +142,9 @@ public string Id { get; set; }
 
 </section>
 
-## Fields
+## 字段 {#fields}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [After](#uid-d2415c25bc) | The instance that inserts a row after the current one. |
 | [Before](#uid-aeeaa44888) | The instance that inserts a row before the current one. |
@@ -153,7 +153,7 @@ public string Id { get; set; }
 
 <span id="uid-d2415c25bc"></span>
 
-### After Field
+### After 字段 {#after-field}
 
 The instance that inserts a row after the current one.
 
@@ -161,9 +161,9 @@ The instance that inserts a row after the current one.
 public Avalonia.Controls.Documents.Primitives.Actions.InsertTableRowAction After
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-Reach it through [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowAfter](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowAfter).
+可通过 [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowAfter](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowAfter) 取得它。
 
 </section>
 
@@ -171,7 +171,7 @@ Reach it through [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.I
 
 <span id="uid-aeeaa44888"></span>
 
-### Before Field
+### Before 字段 {#before-field}
 
 The instance that inserts a row before the current one.
 
@@ -179,9 +179,9 @@ The instance that inserts a row before the current one.
 public Avalonia.Controls.Documents.Primitives.Actions.InsertTableRowAction Before
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
-Reach it through [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowBefore](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowBefore).
+可通过 [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowBefore](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.InsertRowBefore) 取得它。
 
 </section>
 

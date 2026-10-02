@@ -1,7 +1,7 @@
 ---
 id: pareto-chart
-title: Pareto chart
-description: Combines descending bars with a cumulative line to highlight the most significant factors, based on the 80/20 principle.
+title: 帕累托图
+description: 依照二八法则，把递减的条形与累计折线结合起来，凸显最关键的那几个因素。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsStatisticalPareto from '/img/controls/charts/charts-statistical-pareto.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-A Pareto chart contains both bars and a line graph, where individual values are represented in descending order by bars, and the cumulative total is represented by the line.
+帕累托图同时包含条形和折线：各项数值按降序以条形呈现，累计总量则由折线表示。
 
 <Image light={chartsStatisticalPareto} maxWidth={400} position="center" cornerRadius="true" alt="Pareto chart with descending bars and a cumulative percentage line highlighting the most significant factors." />
 
-## When to use
-- **Quality control**: Identifying the "vital few" causes of defects (80/20 rule).
-- **Resource management**: Pinpointing which categories account for most costs.
-- **Customer service**: Analyzing which complaints are most frequent.
+## 适用场景 {#when-to-use}
+- **质量管控**：找出造成缺陷的「关键少数」（二八法则）。
+- **资源管理**：锁定哪些类别吃掉了大部分成本。
+- **客户服务**：分析哪类投诉最为频繁。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -34,7 +34,7 @@ A Pareto chart contains both bars and a line graph, where individual values are 
                                           ItemsSource="{Binding ParetoData}" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record ParetoItem(string Defect, int Count);
 
@@ -48,15 +48,15 @@ public ObservableCollection<ParetoItem> ParetoData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of categories. | `null` |
-| `ValuePath` | Property determining bar height. | `null` |
-| `LabelPath` | Property for the category names. | `null` |
-| `BarBrush` | Brush for the descending bars. | `#1976D2` |
-| `LineBrush` | Brush for the cumulative percentage line. | `#F44336` |
-| `BarWidth` | Width of each bar as a fraction of the category width. | `0.7` |
-| `ShowCumulativeLine` | Toggles the cumulative percentage line and markers. | `true` |
-| `IsHighlightEnabled` | Enables hover highlighting for Pareto bars. | `false` |
+| `ItemsSource` | 类别的集合。 | `null` |
+| `ValuePath` | 决定条形高度的属性。 | `null` |
+| `LabelPath` | 表示类别名称的属性。 | `null` |
+| `BarBrush` | 递减条形所用的画刷。 | `#1976D2` |
+| `LineBrush` | 累计百分比折线所用的画刷。 | `#F44336` |
+| `BarWidth` | 每根条形的宽度，以类别宽度的比例表示。 | `0.7` |
+| `ShowCumulativeLine` | 开关累计百分比折线及其标记点。 | `true` |
+| `IsHighlightEnabled` | 为帕累托条形启用悬停高亮。 | `false` |

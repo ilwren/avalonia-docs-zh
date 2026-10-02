@@ -1,83 +1,83 @@
 ---
 id: layout
-title: Layout
-description: How the Avalonia layout system measures and arranges controls using panels and bounding boxes.
+title: 布局
+description: Avalonia 布局系统如何借助面板和边界框来测量、排列控件。
 doc-type: explanation
 ---
 
 import LayoutZonesDiagram from '/img/concepts/ui-concepts/layout/layout-zones.png';
 
-The Avalonia layout system positions and sizes controls through a two-pass process of measuring and arranging. This page describes how the system works, the available panel types, and the bounding box model.
+Avalonia 布局系统通过「测量 + 排列」两个阶段来确定控件的位置和尺寸。本文讲解这套机制的工作方式、可用的面板类型，以及边界框模型。
 
 ## Panels
 
-Avalonia includes a group of elements that derive from `Panel`. These `Panel` elements enable many complex layouts. For example, stacking elements can easily be achieved by using the `StackPanel` element, while more complex and free flowing layouts are possible by using a [`Canvas`](/api/avalonia/controls/canvas).
+Avalonia 中有一组派生自 `Panel` 的元素，这些 `Panel` 元素可以实现许多复杂布局。比如堆叠元素用 `StackPanel` 轻而易举，而更复杂、更自由的布局则可以借助 [`Canvas`](/api/avalonia/controls/canvas) 来完成。
 
-The following table summarizes the available `Panel` controls:
+下表汇总了可用的 `Panel` 控件：
 
-| Name            | Description                                                                                                                                                                                                                                                               |
+| 名称            | 说明                                                                                                                                                                                                                                                               |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Panel`         | Lays out all children to fill the bounds of the `Panel`                                                                                                                                                                                                                   |
-| `Canvas`        | Defines an area within which you can explicitly position child elements by coordinates relative to the Canvas area.                                                                                                                                                       |
-| `DockPanel`     | Defines an area within which you can arrange child elements either horizontally or vertically, relative to each other.                                                                                                                                                    |
-| [`Grid`](/api/avalonia/controls/grid)          | Defines a flexible grid area that consists of columns and rows.                                                                                                                                                                                                           |
-| `RelativePanel` | Arranges child elements relative to other elements or the panel itself.                                                                                                                                                                                                   |
-| `StackPanel`    | Arranges child elements into a single line that can be oriented horizontally or vertically.                                                                                                                                                                               |
-| `WrapPanel`     | Positions child elements in sequential position from left to right, breaking content to the next line at the edge of the containing box. Subsequent ordering occurs sequentially from top to bottom or right to left, depending on the value of the Orientation property. |
+| `Panel`         | 把所有子元素铺开，填满 `Panel` 的范围                                                                                                                                                                                                                   |
+| `Canvas`        | 划定一块区域，在其中按相对于 Canvas 区域的坐标显式摆放子元素。                                                                                                                                                       |
+| `DockPanel`     | 划定一块区域，在其中让子元素横向或纵向相对排布。                                                                                                                                                    |
+| [`Grid`](/api/avalonia/controls/grid)          | 定义一块由行与列组成的弹性网格区域。                                                                                                                                                                                                           |
+| `RelativePanel` | 把子元素相对于其他元素或面板自身来排布。                                                                                                                                                                                                   |
+| `StackPanel`    | 把子元素排成一行，可以是横向，也可以是纵向。                                                                                                                                                                               |
+| `WrapPanel`     | 把子元素从左到右依次摆放，到达容器边缘时换到下一行。后续的排列顺序是自上而下还是从右到左，取决于 Orientation 属性的取值。 |
 
-In WPF, `Panel` is an abstract class and laying out multiple controls to fill the available space is usually done with a `Grid` with no rows/columns. In Avalonia `Panel` is a usable control that has the same layout behavior as a `Grid` with no rows/columns, but with a lighter runtime footprint.
+在 WPF 中 `Panel` 是抽象类，要让多个控件铺满可用空间，通常得用一个不设行列的 `Grid`。而在 Avalonia 中 `Panel` 是可以直接使用的控件，布局行为和不设行列的 `Grid` 一致，但运行时开销更小。
 
-## Element bounding boxes
+## 元素的边界框 {#element-bounding-boxes}
 
-When thinking about layout in Avalonia, it is important to understand the bounding box that surrounds all elements. Each `Control` consumed by the layout system can be thought of as a rectangle that is slotted into the layout. The `Bounds` property returns the boundaries of an element's layout allocation. The size of the rectangle is determined by calculating the available screen space, the size of any constraints, layout-specific properties (such as margin and padding), and the individual behavior of the parent `Panel` element. Processing this data, the layout system is able to calculate the position of all the children of a particular `Panel`. It is important to remember that sizing characteristics defined on the parent element, such as a `Border`, affect its children.
+思考 Avalonia 布局时，弄明白包裹每个元素的那个边界框很重要。布局系统处理的每个 `Control`，都可以看作嵌进布局里的一个矩形；`Bounds` 属性返回的就是元素所分到的那块布局区域的边界。矩形的大小由这些因素共同决定：可用的屏幕空间、各种约束的尺寸、布局相关的属性（如外边距和内边距），以及父级 `Panel` 元素自身的行为。把这些数据算完，布局系统就能确定某个 `Panel` 下所有子元素的位置。要记住，父元素上定义的尺寸特性（比如 `Border`）会影响到它的子元素。
 
-## The layout system
+## 布局系统 {#the-layout-system}
 
-At its simplest, layout is a recursive system that leads to an element being sized, positioned, and drawn. More specifically, layout describes the process of measuring and arranging the members of a `Panel` element's `Children` collection. Layout is an intensive process. The larger the `Children` collection, the greater the number of calculations that must be made. Complexity can also be introduced based on the layout behavior defined by the `Panel` element that owns the collection. A relatively simple `Panel`, such as `Canvas`, can have significantly better performance than a more complex `Panel`, such as `Grid`.
+往简单里说，布局就是一套递归机制，最终把元素的尺寸、位置定下来并画出去。说得更具体些，布局描述的是测量并排列某个 `Panel` 元素 `Children` 集合中各成员的过程。布局是个重活：`Children` 集合越大，要做的计算就越多。拥有该集合的 `Panel` 元素所定义的布局行为，也会带来额外的复杂度。相对简单的 `Panel`（如 `Canvas`），性能可以明显优于更复杂的 `Panel`（如 `Grid`）。
 
-Each time that a child control changes its position, it has the potential to trigger a new pass by the layout system. Therefore, it is important to understand the events that can invoke the layout system, as unnecessary invocation can lead to poor application performance. The following describes the process that occurs when the layout system is invoked.
+子控件每改变一次位置，都有可能触发布局系统再跑一轮。因此，弄清哪些事件会唤起布局系统很重要 —— 不必要的触发会拖垮应用性能。下面描述布局系统被唤起时所发生的流程。
 
-1. A child `Control` begins the layout process by first having its core properties measured.
-2. Sizing properties defined on `Control` are evaluated, such as `Width`, `Height`, and `Margin`.
-3. `Panel`-specific logic is applied, such as `Dock` direction or stacking `Orientation`.
-4. Content is arranged after all children have been measured.
-5. The `Children` collection is drawn on the screen.
-6. The process is invoked again if additional `Children` are added to the collection
+1. 子 `Control` 的布局流程从测量它的核心属性开始。
+2. 求值 `Control` 上定义的尺寸属性，如 `Width`、`Height` 和 `Margin`。
+3. 套用 `Panel` 特有的逻辑，比如 `Dock` 的方向，或是 `Orientation` 的堆叠方式。
+4. 所有子元素测量完毕后，开始排列内容。
+5. 把 `Children` 集合绘制到屏幕上。
+6. 若集合中又添了新的 `Children`，整个流程会再跑一遍
 
-This process and how it is invoked are defined in more detail in the following sections.
+下面几节会更详细地说明这个流程，以及它是如何被唤起的。
 
-## Measuring and arranging children
+## 测量与排列子元素 {#measuring-and-arranging-children}
 
-The layout system completes two passes for each member of the `Children` collection, a measure pass and an arrange pass. Each child `Panel` provides its own `MeasureOverride` and `ArrangeOverride` methods to achieve its own specific layout behavior.
+布局系统会为 `Children` 集合中的每个成员跑两趟：测量阶段和排列阶段。每个子 `Panel` 都提供自己的 `MeasureOverride` 和 `ArrangeOverride` 方法，以实现各自特有的布局行为。
 
-During the measure pass, each member of the `Children` collection is evaluated. The process begins with a call to the `Measure` method. This method is called within the implementation of the parent `Panel` element, and does not have to be called explicitly for layout to occur.
+测量阶段会对 `Children` 集合中的每个成员求值，流程始于对 `Measure` 方法的调用。该方法由父级 `Panel` 元素在其内部实现中调用，布局要发生并不需要你显式调用它。
 
-First, native size properties of the `Visual` such as `Clip` and `IsVisible` are evaluated. If `IsVisible` is `false`, the control is excluded from layout entirely: the layout system assigns it a `DesiredSize` of zero and skips its subtree. This also means the renderer does not draw the control. For a comparison of `IsVisible` and `Opacity` as hiding strategies, see [IsVisible vs Opacity](/docs/graphics-animation/effects#isvisible-vs-opacity). The evaluation of these native properties generates a constraint that is passed to `MeasureCore`.
+首先求值 `Visual` 的原生尺寸属性，如 `Clip` 和 `IsVisible`。若 `IsVisible` 为 `false`，该控件会被完全排除在布局之外：布局系统把它的 `DesiredSize` 设为零并跳过它的整棵子树，渲染器自然也就不会绘制它。关于把 `IsVisible` 和 `Opacity` 作为隐藏手段的对比，请见 [IsVisible 与 Opacity 的取舍](/docs/graphics-animation/effects#isvisible-vs-opacity)。这些原生属性求值之后，会生成一个约束，传给 `MeasureCore`。
 
-First, framework properties which affects the value of the constraint are processed. These properties generally describe the sizing characteristics of the underlying `Control`, such as its `Height`, `Width` and `Margin`. Each of these properties can change the space that is necessary to display the element. `MeasureOverride` is then called with the constraint as a parameter.
+接着处理那些会影响约束取值的框架属性。它们通常描述底层 `Control` 的尺寸特性，比如 `Height`、`Width` 和 `Margin` —— 每一个都可能改变显示该元素所需的空间。随后以这个约束为参数调用 `MeasureOverride`。
 
-Because `Bounds` is a calculated value, you should be aware that there could be multiple or incremental reported changes to it as a result of various operations by the layout system. The layout system may be calculating required measure space for child elements, constraints by the parent element, and so on.
+由于 `Bounds` 是算出来的值，要留意：布局系统的各种操作可能导致它被多次、或者增量式地更新。布局系统可能正在计算子元素所需的测量空间、父元素施加的约束，等等。
 
-The ultimate goal of the measure pass is for the child to determine its `DesiredSize`, which occurs during the `MeasureCore` call. The `DesiredSize` value is stored by `Measure` for use during the content arrange pass.
+测量阶段的最终目的，是让子元素在 `MeasureCore` 调用过程中确定自己的 `DesiredSize`。这个 `DesiredSize` 值由 `Measure` 保存下来，供内容排列阶段使用。
 
-The arrange pass begins with a call to the `Arrange` method. During the arrange pass, the parent `Panel` element generates a rectangle that represents the bounds of the child. This value is passed to the `ArrangeCore` method for processing.
+排列阶段始于对 `Arrange` 方法的调用。在这一阶段，父级 `Panel` 元素生成一个代表子元素边界的矩形，并把它传给 `ArrangeCore` 方法去处理。
 
-The `ArrangeCore` method evaluates the `DesiredSize` of the child and evaluates any additional margins that may affect the rendered size of the element. `ArrangeCore` generates an arrange size, which is passed to the `ArrangeOverride` method of the `Panel` as a parameter. `ArrangeOverride` generates the finalSize of the child. Finally, the `ArrangeCore` method does a final evaluation of offset properties, such as margin and alignment, and puts the child within its layout slot. The child does not have to (and frequently does not) fill the entire allocated space. Control is then returned to the parent `Panel` and the layout process is complete.
+`ArrangeCore` 方法会求值子元素的 `DesiredSize`，并把可能影响最终渲染尺寸的各项外边距一并算进去。`ArrangeCore` 生成一个排列尺寸，作为参数传给 `Panel` 的 `ArrangeOverride` 方法；`ArrangeOverride` 则生成子元素的 finalSize。最后，`ArrangeCore` 方法对外边距、对齐方式等偏移属性做最终求值，把子元素摆进它的布局槽位。子元素不一定要填满分到的全部空间（通常也确实不会）。随后控制权交回父级 `Panel`，布局流程至此结束。
 
-## Layout zones
+## 布局区域 {#layout-zones}
 
 <Image light={LayoutZonesDiagram} maxWidth="400" alignment="center" alt="A diagram with four overlapping rectangles, representing the layout zones of a UI window." />
 
-## Overlay layers
+## 覆盖层 {#overlay-layers}
 
-In addition to the normal layout system, Avalonia provides overlay layers that render above the regular control content within a window. These are useful when you need to display content on top of everything else, such as a loading indicator, floating toolbar, or notification panel.
+除了常规布局系统之外，Avalonia 还提供了覆盖层 —— 它们渲染在窗口内常规控件内容之上。当你需要把某些内容显示在一切之上时（比如加载指示器、浮动工具栏或通知面板），它们就派上用场了。
 
-Use `OverlayLayer.GetOverlayLayer(visual)` to access the overlay surface for a given visual. Content added to the `OverlayLayer` appears above all normal controls but beneath popups, menus, and tooltips.
+用 `OverlayLayer.GetOverlayLayer(visual)` 获取给定视觉元素所对应的覆盖面。加进 `OverlayLayer` 的内容会显示在所有常规控件之上，但位于弹出窗口、菜单和工具提示之下。
 
-For details and code examples, see [Overlay Layers](/docs/fundamentals/visual-and-logical-trees#overlay-layers).
+细节与代码示例请见[覆盖层](/docs/fundamentals/visual-and-logical-trees#overlay-layers)。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Positioning Controls](/docs/layout/positioning-controls): Alignment, margins, and positioning.
-- [Responsive Layouts](/docs/layout/responsive-layouts): Adapting layout to different sizes using container queries and reflowing panels.
-- [Overlay Layers](/docs/fundamentals/visual-and-logical-trees#overlay-layers): Adding custom overlay content above normal controls.
+- [控件定位](/docs/layout/positioning-controls)：对齐、外边距与定位。
+- [响应式布局](/docs/layout/responsive-layouts)：用容器查询和自动重排的面板，让布局适应不同尺寸。
+- [覆盖层](/docs/fundamentals/visual-and-logical-trees#overlay-layers)：在常规控件之上添加自定义覆盖内容。

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITextEditorHost Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -50,11 +50,11 @@ public interface ITextEditorHost
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="iinteractivetexthost">IInteractiveTextHost</a>, <a href="itextviewhost">ITextViewHost</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="iinteractivetexthost">IInteractiveTextHost</a>, <a href="itextviewhost">ITextViewHost</a>
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Extends [Avalonia.Controls.Documents.Primitives.IInteractiveTextHost](xref:Avalonia.Controls.Documents.Primitives.IInteractiveTextHost) with editing-specific members:
 read-only gating, return/tab acceptance. Components that perform text
@@ -63,9 +63,9 @@ mutation (typing, delete, paste, undo) require this interface.
 Read-only interactive views should implement [Avalonia.Controls.Documents.Primitives.IInteractiveTextHost](xref:Avalonia.Controls.Documents.Primitives.IInteractiveTextHost)
 directly instead.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Redo](#uid-a69c56af85) | Redoes the most recently undone editing operation and restores any caret/selection state captured with the undo unit. |
 | [Undo](#uid-380b4794da) | Undoes the most recent editing operation and restores any caret/selection state captured with the undo unit. |
@@ -74,7 +74,7 @@ directly instead.
 
 <span id="uid-a69c56af85"></span>
 
-### Redo Method
+### Redo 方法 {#redo-method}
 
 Redoes the most recently undone editing operation and restores
 any caret/selection state captured with the undo unit.
@@ -83,7 +83,7 @@ any caret/selection state captured with the undo unit.
 public void Redo()
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 All callers should route through this method instead of calling
 [Avalonia.Controls.Documents.Undo.UndoManager.Redo](xref:Avalonia.Controls.Documents.Undo.UndoManager.Redo) directly, for the
@@ -95,7 +95,7 @@ same reason [Avalonia.Controls.Documents.Primitives.ITextEditorHost.Undo](xref:A
 
 <span id="uid-380b4794da"></span>
 
-### Undo Method
+### Undo 方法 {#undo-method}
 
 Undoes the most recent editing operation and restores any
 caret/selection state captured with the undo unit.
@@ -104,7 +104,7 @@ caret/selection state captured with the undo unit.
 public void Undo()
 ```
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 All callers (keyboard shortcuts, editor actions, menu items)
 should route through this method instead of calling
@@ -114,9 +114,9 @@ implementation that only forwards to the undo manager produces.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AcceptsReturn](#uid-1970f464e4) | Gets whether the editor accepts the Return/Enter key. |
 | [AcceptsTab](#uid-1b613eb02b) | Gets whether the editor accepts the Tab key. |
@@ -128,7 +128,7 @@ implementation that only forwards to the undo manager produces.
 
 <span id="uid-1970f464e4"></span>
 
-### AcceptsReturn Property
+### AcceptsReturn 属性 {#acceptsreturn-property}
 
 Gets whether the editor accepts the Return/Enter key.
 
@@ -136,7 +136,7 @@ Gets whether the editor accepts the Return/Enter key.
 public bool AcceptsReturn { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 When true, pressing Enter inserts a line break or paragraph.
 When false, Enter may trigger a command or be ignored.
@@ -147,7 +147,7 @@ When false, Enter may trigger a command or be ignored.
 
 <span id="uid-1b613eb02b"></span>
 
-### AcceptsTab Property
+### AcceptsTab 属性 {#acceptstab-property}
 
 Gets whether the editor accepts the Tab key.
 
@@ -155,7 +155,7 @@ Gets whether the editor accepts the Tab key.
 public bool AcceptsTab { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 When true, pressing Tab inserts a tab character.
 When false, Tab moves focus to the next control.
@@ -166,7 +166,7 @@ When false, Tab moves focus to the next control.
 
 <span id="uid-74e9d3e0fd"></span>
 
-### IsReadOnly Property
+### IsReadOnly 属性 {#isreadonly-property}
 
 Gets whether the editor is in read-only mode.
 
@@ -174,7 +174,7 @@ Gets whether the editor is in read-only mode.
 public bool IsReadOnly { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 When true, editing operations are disabled but navigation
 and selection still work.
@@ -185,7 +185,7 @@ and selection still work.
 
 <span id="uid-2bd5a03c53"></span>
 
-### SelectionFlyout Property
+### SelectionFlyout 属性 {#selectionflyout-property}
 
 Gets the selection mini-bar flyout shown when text is selected.
 
@@ -193,7 +193,7 @@ Gets the selection mini-bar flyout shown when text is selected.
 public Avalonia.Controls.Documents.Primitives.EditorSelectionFlyout SelectionFlyout { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-6}
 
 The mini-bar is chrome a control chooses to show, not an editing capability, so a
 host that presents no flyout leaves this null.
@@ -204,7 +204,7 @@ host that presents no flyout leaves this null.
 
 <span id="uid-87ef4b023d"></span>
 
-### ShowSelectionFlyout Property
+### ShowSelectionFlyout 属性 {#showselectionflyout-property}
 
 Gets whether the selection mini-bar flyout is enabled.
 
@@ -214,25 +214,25 @@ public bool ShowSelectionFlyout { get; set; }
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsReadOnlyChanged](#uid-6ef3c8fae7) | Occurs when the [Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly) state changes. |
+| [IsReadOnlyChanged](#uid-6ef3c8fae7) | [Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly) 的状态发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-6ef3c8fae7"></span>
 
-### IsReadOnlyChanged Event
+### IsReadOnlyChanged 事件 {#isreadonlychanged-event}
 
-Occurs when the [Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly) state changes.
+[Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost.IsReadOnly) 的状态发生变化时发生。
 
 ```csharp
 public event EventHandler IsReadOnlyChanged
 ```
 
-#### Remarks
+#### 备注 {#remarks-7}
 
 Toolbar tools and editor actions subscribe to this event to refresh their
 enabled state when read-only mode is toggled at runtime. A host that never

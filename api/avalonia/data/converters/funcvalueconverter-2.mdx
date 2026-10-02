@@ -20,28 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FuncValueConverter&lt;TIn, TOut&gt; Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data.Converters</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data.Converters</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Converters/FuncValueConverter.cs">FuncValueConverter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Converters/FuncValueConverter.cs">FuncValueConverter.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-A general purpose [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter) that uses a [Func&lt;T1, T2&gt;](xref:System.Func%602)
-to provide the converter logic.
+一个通用的 [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter)，它用一个 [Func&lt;T1, T2&gt;](xref:System.Func%602) 来提供转换器的具体逻辑。
 
 </div>
 
@@ -55,22 +54,22 @@ public class FuncValueConverter<TIn, TOut>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> FuncValueConverter&lt;TIn, TOut&gt;
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> FuncValueConverter&lt;TIn, TOut&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="ivalueconverter">IValueConverter</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="ivalueconverter">IValueConverter</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FuncValueConverter&lt;TIn, TOut&gt; (2 overloads)](#uid-13d43d6541) | No summary available. |
+| [FuncValueConverter&lt;TIn, TOut&gt;（2 个重载）](#uid-13d43d6541) | 暂无摘要。 |
 
 <span id="uid-13d43d6541"></span>
 
-### FuncValueConverter&lt;TIn, TOut&gt; overloads
+### FuncValueConverter&lt;TIn, TOut&gt; 的重载 {#funcvalueconverterlttin-toutgt-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -82,7 +81,7 @@ public class FuncValueConverter<TIn, TOut>
 public FuncValueConverter<TIn, TOut>(Func<TIn, TOut> convert)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `convert` Func&lt;TIn, TOut&gt;
 
@@ -99,7 +98,7 @@ public FuncValueConverter<TIn, TOut>(Func<TIn, TOut> convert)
 public FuncValueConverter<TIn, TOut>(Func<TIn, TOut> convert, Func<TOut, TIn> convertBack)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `convert` Func&lt;TIn, TOut&gt;
 
@@ -109,59 +108,57 @@ public FuncValueConverter<TIn, TOut>(Func<TIn, TOut> convert, Func<TOut, TIn> co
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Convert](#uid-95a218e537) | Converts a value. |
-| [ConvertBack](#uid-de2355f1bd) | Converts a value. |
+| [Convert](#uid-95a218e537) | 转换一个值。 |
+| [ConvertBack](#uid-de2355f1bd) | 转换一个值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-95a218e537"></span>
 
-### Convert Method
+### Convert 方法 {#convert-method}
 
-Converts a value.
+转换一个值。
 
 ```csharp
 public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the target.
+目标的类型。
 
 
 `parameter` object
 
-A user-defined parameter.
+用户自定义参数。
 
 
 `culture` System.Globalization.CultureInfo
 
-The culture to use.
+要使用的区域性信息。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
-The converted value.
+转换后的值。
 
 
-#### Remarks
+#### 备注 {#remarks}
 
-This method should not throw exceptions. If the value is not convertible, return
-a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) in an error state. Any exceptions thrown will be
-treated as an application exception.
+此方法不应抛出异常。若值无法转换，请返回一个处于错误状态的 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification)。任何被抛出的异常都会被当作应用程序异常处理。
 
 </section>
 
@@ -169,48 +166,46 @@ treated as an application exception.
 
 <span id="uid-de2355f1bd"></span>
 
-### ConvertBack Method
+### ConvertBack 方法 {#convertback-method}
 
-Converts a value.
+转换一个值。
 
 ```csharp
 public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `value` object
 
-The value to convert.
+待转换的值。
 
 
-`targetType` Type
+`targetType` 类型
 
-The type of the target.
+目标的类型。
 
 
 `parameter` object
 
-A user-defined parameter.
+用户自定义参数。
 
 
 `culture` System.Globalization.CultureInfo
 
-The culture to use.
+要使用的区域性信息。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 object
 
-The converted value.
+转换后的值。
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
-This method should not throw exceptions. If the value is not convertible, return
-a [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification) in an error state. Any exceptions thrown will be
-treated as an application exception.
+此方法不应抛出异常。若值无法转换，请返回一个处于错误状态的 [Avalonia.Data.BindingNotification](xref:Avalonia.Data.BindingNotification)。任何被抛出的异常都会被当作应用程序异常处理。
 
 </section>
 

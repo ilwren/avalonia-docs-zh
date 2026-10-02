@@ -5,23 +5,23 @@ const sidebars: SidebarsConfig = {
   documentationSidebar: [
     {
       type: 'doc',
-      label: 'Home',
+      label: '首页',
       id: 'index',
     },
     {
       type: 'category',
-      label: 'Data display',
+      label: '数据展示',
       collapsed: true,
       items: [
         {
           type: 'category',
-          label: 'Charts',
+          label: '图表',
           collapsed: true,
           items: [
             'data-display/charts/index',
             {
               type: 'category',
-              label: 'Analytics',
+              label: '分析统计',
               collapsed: true,
               items: [
                 'data-display/charts/analytics/bullet-chart',
@@ -42,7 +42,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Bubble',
+              label: '气泡类',
               collapsed: true,
               items: [
                 'data-display/charts/bubble/bubble-chart',
@@ -52,7 +52,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Cartesian',
+              label: '笛卡尔坐标类',
               collapsed: true,
               items: [
                 'data-display/charts/cartesian/area-chart',
@@ -78,7 +78,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Circular',
+              label: '圆形类',
               collapsed: true,
               items: [
                 'data-display/charts/circular/donut-chart',
@@ -88,7 +88,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Comparison',
+              label: '对比类',
               collapsed: true,
               items: [
                 'data-display/charts/comparison/diverging-bar-chart',
@@ -103,7 +103,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Engineering',
+              label: '工程类',
               collapsed: true,
               items: [
                 'data-display/charts/engineering/carpet-plot-chart',
@@ -115,7 +115,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Financial',
+              label: '金融类',
               collapsed: true,
               items: [
                 'data-display/charts/financial/candlestick-chart',
@@ -131,7 +131,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Gauges',
+              label: '仪表盘类',
               collapsed: true,
               items: [
                 'data-display/charts/gauges/circular-gauge-chart',
@@ -144,7 +144,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Hierarchy',
+              label: '层级类',
               collapsed: true,
               items: [
                 'data-display/charts/hierarchy/alluvial-chart',
@@ -169,7 +169,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Maps',
+              label: '地图类',
               collapsed: true,
               items: [
                 'data-display/charts/maps/bubble-map-chart',
@@ -181,7 +181,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Radial',
+              label: '径向类',
               collapsed: true,
               items: [
                 'data-display/charts/radial/nightingale-rose-chart',
@@ -194,7 +194,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Scheduling',
+              label: '排程类',
               collapsed: true,
               items: [
                 'data-display/charts/scheduling/gantt-chart',
@@ -206,7 +206,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Shared elements',
+              label: '共享元素',
               collapsed: true,
               items: [
                 'data-display/charts/shared-elements/annotations-chart',
@@ -223,7 +223,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Statistical',
+              label: '统计类',
               collapsed: true,
               items: [
                 'data-display/charts/statistical/beeswarm-plot-chart',
@@ -242,7 +242,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Collections',
+          label: '集合',
           collapsed: true,
           items:[
               'data-display/collections/carousel',
@@ -267,7 +267,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Structured data',
+          label: '结构化数据',
           collapsed: true,
           items:[
               'data-display/structured-data/tableview',
@@ -291,7 +291,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Text display',
+          label: '文本显示',
           collapsed: true,
           items:[
               'data-display/text-display/label',
@@ -325,7 +325,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Feedback',
+      label: '反馈提示',
       collapsed: true,
       items:[
         'feedback/notification',
@@ -336,12 +336,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Input',
+      label: '输入',
       collapsed: true,
       items: [
         {
           type: 'category',
-          label: 'Buttons',
+          label: '按钮',
           collapsed: true,
           items:[
               'input/buttons/button',
@@ -356,7 +356,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Date and time',
+          label: '日期与时间',
           collapsed: true,
           items:[
             'input/date-and-time/calendar',
@@ -367,7 +367,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Selectors',
+          label: '选择器控件',
           collapsed: true,
           items:[
               'input/selectors/checkbox',
@@ -381,7 +381,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Text input',
+          label: '文本输入',
           collapsed: true,
           items:[
               'input/text-input/autocompletebox',
@@ -407,7 +407,7 @@ const sidebars: SidebarsConfig = {
               },
               {
                 type: 'category',
-                label: 'Virtual keyboard',
+                label: '虚拟键盘',
                 collapsed: true,
                 items: [
                   'input/text-input/virtualkeyboard/index',
@@ -421,12 +421,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Layout',
+      label: '布局',
       collapsed: true,
       items: [
         {
           type: 'category',
-          label: 'Containers',
+          label: '容器',
           collapsed: true,
           items:[
               'layout/containers/border',
@@ -443,7 +443,7 @@ const sidebars: SidebarsConfig = {
         'layout/layouttransformcontrol',
         {
           type: 'category',
-          label: 'Panels',
+          label: '面板',
           collapsed: true,
           items:[
               'layout/panels/canvas',
@@ -461,7 +461,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Media',
+      label: '媒体',
       collapsed: true,
       items:[
         'media/drawingimage',
@@ -482,7 +482,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Menus',
+      label: '菜单',
       collapsed: true,
       items:[
         'menus/contextmenu',
@@ -494,7 +494,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Navigation',
+      label: '导航',
       collapsed: true,
       items:[
         'navigation/commandbar',
@@ -508,7 +508,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Primitives',
+      label: '基础元件',
       collapsed: true,
       items:[
         'primitives/scrollbar',
@@ -518,7 +518,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'System',
+      label: '系统',
       collapsed: true,
       items:[
         'navigation/trayicon',

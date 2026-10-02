@@ -1,31 +1,31 @@
 ---
 id: checkbox
 title: CheckBox
-description: A control that lets users toggle a Boolean value with a check mark, including optional three-state support for indeterminate values.
+description: 一个控件：让用户用勾选标记切换布尔值，还可选配表示不确定值的三态支持。
 doc-type: reference
 ---
 
 import CheckBoxTwoStateScreenshot from '/img/reference/controls/checkbox/checkbox-two-state.gif';
 import CheckBoxThreeStateScreenshot from '/img/reference/controls/checkbox/checkbox-three-state.gif';
 
-The [`CheckBox`](/api/avalonia/controls/checkbox) control presents a Boolean value where the true value is represented using a check mark, and the false value is an empty box. You can also enable three-state mode, where a null value represents "unknown" and is drawn as a shaded box.
+[`CheckBox`](/api/avalonia/controls/checkbox) 控件表示一个布尔值：true 画成勾选标记，false 画成空方框。你还可以启用三态模式，此时 null 表示「未知」，画成一个带底色的方框。
 
-Clicking the control toggles the value in the sequence: checked, unchecked, unknown (if three-state is enabled).
+点击该控件会按以下顺序切换取值：选中、未选中、未知（启用三态时）。
 
-## Useful properties
+## 常用属性 {#useful-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property       | Type    | Description                                                                 |
+| 属性       | 类型    | 说明                                                                 |
 | -------------- | ------- | --------------------------------------------------------------------------- |
-| `IsChecked`    | `bool?` | Gets or sets the checked state. `true` for checked, `false` for unchecked, `null` for indeterminate. |
-| `IsThreeState` | `bool`  | When `true`, the control cycles through three states: checked, unchecked, and indeterminate. |
-| `Content`      | `object`| The label content displayed beside the check mark.                          |
-| `Command`      | `ICommand` | A command invoked when the user toggles the check box.                   |
+| `IsChecked`    | `bool?` | 获取或设置勾选状态：`true` 为选中，`false` 为未选中，`null` 为不确定。 |
+| `IsThreeState` | `bool`  | 为 `true` 时，控件在选中、未选中、不确定三个状态之间循环。 |
+| `Content`      | `object`| 显示在勾选标记旁边的标签内容。                          |
+| `Command`      | `ICommand` | 用户切换复选框时调用的命令。                   |
 
-## Two-state example
+## 两态示例 {#two-state-example}
 
-In the default two-state mode, `IsChecked` alternates between `true` and `false`:
+在默认的两态模式下，`IsChecked` 在 `true` 和 `false` 之间来回切换：
 
 <XamlPreview>
 
@@ -42,9 +42,9 @@ In the default two-state mode, `IsChecked` alternates between `true` and `false`
 
 <Image light={CheckBoxTwoStateScreenshot} alt="Two-state CheckBox" position="center" maxWidth={400} cornerRadius="true"/>
 
-## Three-state example
+## 三态示例 {#three-state-example}
 
-When you set `IsThreeState` to `true`, the control adds an indeterminate state. You can set `IsChecked` to `{x:Null}` to start in the indeterminate state:
+把 `IsThreeState` 设为 `true` 后，控件会多出一个不确定状态。把 `IsChecked` 设为 `{x:Null}` 可让它一开始就处于不确定状态：
 
 <XamlPreview>
 
@@ -63,11 +63,11 @@ When you set `IsThreeState` to `true`, the control adds an indeterminate state. 
 
 <Image light={CheckBoxThreeStateScreenshot} alt="Three-state CheckBox" position="center" maxWidth={400} cornerRadius="true"/>
 
-When binding a three-state `CheckBox` to a view model, use a nullable `bool?` property so the indeterminate state can round-trip correctly.
+把三态的 `CheckBox` 绑定到视图模型时，请使用可空的 `bool?` 属性，这样不确定状态才能正确地来回传递。
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
-Bind `IsChecked` to a `bool` property on your view model. The following example uses the MVVM Toolkit's source generators:
+把 `IsChecked` 绑定到视图模型中的 `bool` 属性。下面的例子用了 MVVM Toolkit 的源生成器：
 
 ```csharp
 public partial class SettingsViewModel : ObservableObject
@@ -87,11 +87,11 @@ public partial class SettingsViewModel : ObservableObject
 </StackPanel>
 ```
 
-If you need to react when the value changes, subscribe to the `PropertyChanged` event or use a partial method such as `OnAutoSaveChanged`.
+若需要在值变化时作出响应，可以订阅 `PropertyChanged` 事件，或使用 `OnAutoSaveChanged` 这样的分部方法。
 
-## CheckBox list from a collection
+## 由集合生成的复选框列表 {#checkbox-list-from-a-collection}
 
-You can create a list of checkable items by combining an `ItemsControl` with a `CheckBox` inside the item template:
+把 `ItemsControl` 与条目模板中的 `CheckBox` 组合起来，就能做出一列可勾选的条目：
 
 ```xml
 <ItemsControl ItemsSource="{Binding Features}">
@@ -103,9 +103,9 @@ You can create a list of checkable items by combining an `ItemsControl` with a `
 </ItemsControl>
 ```
 
-## Select all pattern
+## 「全选」范式 {#select-all-pattern}
 
-A three-state `CheckBox` works well as a "select all" control. Set it to indeterminate when only some child items are selected, and update the children when the user clicks it:
+三态的 `CheckBox` 很适合用作「全选」控件：只有部分子项被选中时把它设为不确定，用户点击时再去更新各个子项：
 
 ```csharp
 [ObservableProperty]
@@ -136,9 +136,9 @@ partial void OnSelectAllChanged(bool? value)
 </StackPanel>
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [ToggleSwitch](/controls/input/selectors/toggleswitch)
 - [RadioButton](/controls/input/buttons/radiobutton)
-- [CheckBox API reference](/api/avalonia/controls/checkbox)
-- [`CheckBox.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CheckBox.cs)
+- [CheckBox API 参考](/api/avalonia/controls/checkbox)
+- [GitHub 上的 `CheckBox.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CheckBox.cs)

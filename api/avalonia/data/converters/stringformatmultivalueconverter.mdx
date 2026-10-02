@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StringFormatMultiValueConverter Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data.Converters</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data.Converters</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Converters/StringFormatMultiValueConverter.cs">StringFormatMultiValueConverter.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/Converters/StringFormatMultiValueConverter.cs">StringFormatMultiValueConverter.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-A multi-value converter which calls [string.Format(string,object)](xref:System.String.Format%28System.String%2CSystem.Object%29)
+一个会调用 [string.Format(string,object)](xref:System.String.Format%28System.String%2CSystem.Object%29) 的多值转换器
 
 </div>
 
@@ -54,67 +54,67 @@ public class StringFormatMultiValueConverter
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> StringFormatMultiValueConverter
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> StringFormatMultiValueConverter
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="imultivalueconverter">IMultiValueConverter</a>
+<span className="apiref-page__meta-label">实现接口：</span> <a href="imultivalueconverter">IMultiValueConverter</a>
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [StringFormatMultiValueConverter](#uid-a6a2b066bf) | Initializes a new instance of the [Avalonia.Data.Converters.StringFormatMultiValueConverter](xref:Avalonia.Data.Converters.StringFormatMultiValueConverter) class. |
+| [StringFormatMultiValueConverter](#uid-a6a2b066bf) | 初始化 [Avalonia.Data.Converters.StringFormatMultiValueConverter](xref:Avalonia.Data.Converters.StringFormatMultiValueConverter) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a6a2b066bf"></span>
 
-### StringFormatMultiValueConverter Constructor
+### StringFormatMultiValueConverter 构造函数 {#stringformatmultivalueconverter-constructor}
 
-Initializes a new instance of the [Avalonia.Data.Converters.StringFormatMultiValueConverter](xref:Avalonia.Data.Converters.StringFormatMultiValueConverter) class.
+初始化 [Avalonia.Data.Converters.StringFormatMultiValueConverter](xref:Avalonia.Data.Converters.StringFormatMultiValueConverter) 类的新实例。
 
 ```csharp
 public StringFormatMultiValueConverter(string format, Avalonia.Data.Converters.IMultiValueConverter inner)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `format` string
 
-The format string.
+格式字符串。
 
 
 `inner` [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter)
 
-An optional inner converter to be called before the format takes place.
+一个可选的内层转换器，会在套用格式之前被调用。
 
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Convert](#uid-c2153c3058) | No summary available. |
+| [Convert](#uid-c2153c3058) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-c2153c3058"></span>
 
-### Convert Method
+### Convert 方法 {#convert-method}
 
 ```csharp
 public object Convert(System.Collections.Generic.IList<object> values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `values` System.Collections.Generic.IList&lt;object&gt;
 
 
-`targetType` Type
+`targetType` 类型
 
 
 `parameter` object
@@ -123,27 +123,27 @@ public object Convert(System.Collections.Generic.IList<object> values, Type targ
 `culture` System.Globalization.CultureInfo
 
 
-#### Returns
+#### 返回值 {#returns}
 
 object
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Format](#uid-d6aeae3bb4) | Gets the format string. |
-| [Inner](#uid-3d5704f24f) | Gets an inner value converter which will be called before the string format takes place. |
+| [Format](#uid-d6aeae3bb4) | 获取格式字符串。 |
+| [Inner](#uid-3d5704f24f) | 获取一个内层值转换器，它会在套用字符串格式之前被调用。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d6aeae3bb4"></span>
 
-### Format Property
+### Format 属性 {#format-property}
 
-Gets the format string.
+获取格式字符串。
 
 ```csharp
 public string Format { get; set; }
@@ -155,9 +155,9 @@ public string Format { get; set; }
 
 <span id="uid-3d5704f24f"></span>
 
-### Inner Property
+### Inner 属性 {#inner-property}
 
-Gets an inner value converter which will be called before the string format takes place.
+获取一个内层值转换器，它会在套用字符串格式之前被调用。
 
 ```csharp
 public Avalonia.Data.Converters.IMultiValueConverter Inner { get; set; }

@@ -1,7 +1,7 @@
 ---
 id: radial-bar-chart
-title: Radial bar chart
-description: Bar chart plotted on a polar coordinate system, offering a space-efficient circular layout for comparing categories or tracking multiple progress goals.
+title: 径向条形图
+description: 绘制在极坐标系上的条形图，以省地方的环形版面比较各类别或追踪多项目标进度。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,19 +10,19 @@ tags:
 import chartsRadialBar from '/img/controls/charts/charts-radial-bar.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Radial bar charts use a polar coordinate system. They are essentially bar charts plotted on a circular grid, offering a distinctive and space-efficient way to compare categories.
+径向条形图采用极坐标系，本质上就是画在环形网格上的条形图，既别致又省地方，很适合用来比较各个类别。
 
 <Image light={chartsRadialBar} maxWidth={400} position="center" cornerRadius="true" alt="Radial bar chart with concentric circular bars of varying arc lengths comparing category progress on a polar grid." />
 
-## When to use
-- **Circular comparisons**: Showing data that has a cyclical nature (e.g., hours in a day).
-- **Dashboard infographics**: Creating compact visual summaries for ranked categories.
-- **Progress tracking**: Visualizing multiple goal tracks in a consolidated radial form.
+## 适用场景 {#when-to-use}
+- **环形对比**：呈现本身带有周期性的数据（比如一天 24 小时）。
+- **仪表板信息图**：为带排名的类别制作紧凑的视觉摘要。
+- **进度追踪**：把多条目标进度汇总到一个径向版面中呈现。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 ```xml
@@ -31,7 +31,7 @@ Radial bar charts use a polar coordinate system. They are essentially bar charts
                                              CategoryPath="Label" ValuePath="Value" />
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 ```csharp
 public record RadialPoint(string Label, double Value);
 
@@ -45,18 +45,18 @@ public ObservableCollection<RadialPoint> RadialBarData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of categorical items. | `null` |
-| `ValuePath` | Numerical property for bar length. | `null` |
-| `CategoryPath` | Property name for category labels. | `null` |
-| `InnerRadiusFactor` | Relative size of the center hole from `0.0` to `1.0`. | `0.2` |
-| `StartAngle` | The start angle in degrees. | `-90.0` |
-| `GapAngle` | Angle gap between bars. | `2.0` |
-| `ShowLabels` | Whether labels are visible. | `true` |
-| `ShowValues` | Whether values are visible. | `true` |
-| `LabelFontSize` | Font size used for category labels. Value labels render one pixel smaller. | `10.0` |
-| `LabelForeground` | Brush used for category labels. When `null`, the chart uses the effective label foreground. | `null` |
-| `IsHighlightEnabled` | Enables hover highlighting for radial bars. | `false` |
+| `ItemsSource` | 分类条目的集合。 | `null` |
+| `ValuePath` | 决定条形长度的数值属性。 | `null` |
+| `CategoryPath` | 类别标签所对应的属性名。 | `null` |
+| `InnerRadiusFactor` | 中心孔洞的相对大小，取值从 `0.0` 到 `1.0`。 | `0.2` |
+| `StartAngle` | 起始角度，单位为度。 | `-90.0` |
+| `GapAngle` | 条形之间的角度间隔。 | `2.0` |
+| `ShowLabels` | 标签是否可见。 | `true` |
+| `ShowValues` | 数值是否可见。 | `true` |
+| `LabelFontSize` | 类别标签所用的字号。数值标签会小一个像素。 | `10.0` |
+| `LabelForeground` | 类别标签所用的画刷。为 `null` 时，图表采用当前生效的标签前景色。 | `null` |
+| `IsHighlightEnabled` | 为径向条形启用悬停高亮。 | `false` |

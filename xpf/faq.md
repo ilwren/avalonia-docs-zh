@@ -3,123 +3,123 @@ id: faq
 title: Frequently Asked Questions
 ---
 
-## .NET version compatibility
+## .NET 版本兼容性 {#net-version-compatibility}
 
-**Which .NET versions does XPF support?**
+**XPF 支持哪些 .NET 版本？**
 
-XPF works with .NET 6, 7, 8, 9, and 10. There is no requirement to use a specific .NET version.
+XPF 支持 .NET 6、7、8、9 和 10，并不要求你必须用某个特定版本。
 
-**Are WPF features from newer .NET versions available?**
+**较新 .NET 版本里的 WPF 新特性能用吗？**
 
-XPF is a fork of WPF from .NET 6. Features added to WPF in later .NET versions (such as the Fluent theme from .NET 9) are not automatically available. However, the XPF team backports selected features. For example, `OpenFolderDialog` (introduced in .NET 8 WPF) is available in XPF.
+XPF 是从 .NET 6 的 WPF 分叉出来的。此后 .NET 新版本给 WPF 添的特性（比如 .NET 9 的 Fluent 主题）不会自动出现在 XPF 中。不过 XPF 团队会择要回移一部分，例如 `OpenFolderDialog`（.NET 8 WPF 引入）在 XPF 中就能用。
 
-## Target frameworks
+## 目标框架 {#target-frameworks}
 
-**Should I use `net8.0` or `net8.0-windows`?**
+**我该用 `net8.0` 还是 `net8.0-windows`？**
 
-Use `net8.0-windows` (or whichever .NET version you prefer with the `-windows` suffix). The XPF SDK makes this target framework work on all platforms, so you do not need to change it when building for Linux or macOS. Many third-party libraries (such as DevExpress) require the Windows-specific TFM to compile.
+用 `net8.0-windows`（或者你偏好的任何带 `-windows` 后缀的 .NET 版本）。XPF SDK 让这个目标框架在所有平台上都能用，因此为 Linux 或 macOS 构建时也不必改动它。许多第三方库（比如 DevExpress）编译时就要求 Windows 专属的 TFM。
 
-You can use the plain `net8.0` TFM, but only if all projects in your solution use the XPF SDK rather than `Microsoft.NET.Sdk`. You cannot use `<EnableWindowsTargeting>` with the plain TFM.
+你也可以用不带后缀的 `net8.0` TFM，但前提是解决方案中所有项目都用 XPF SDK 而非 `Microsoft.NET.Sdk`。另外，`<EnableWindowsTargeting>` 没法与不带后缀的 TFM 搭配。
 
-**Can I use different target frameworks for different platforms?**
+**能针对不同平台使用不同的目标框架吗？**
 
-Yes. You can multi-target (e.g., `net8.0-windows;net8.0-macos`) if you need platform-specific APIs. However, for most XPF applications, a single `net8.0-windows` TFM with the XPF SDK is the simplest approach.
+可以。若你需要平台专属 API，完全可以多目标（例如 `net8.0-windows;net8.0-macos`）。不过对多数 XPF 应用而言，单用一个 `net8.0-windows` TFM 加 XPF SDK 是最省事的做法。
 
-## Win32 API shims
+## Win32 API shim {#win32-api-shims}
 
-**Do I need to enable Win32 API shims?**
+**我需要启用 Win32 API shim 吗？**
 
-You need Win32 API shims if your application uses third-party controls that call Win32 APIs internally. This is common with DevExpress, Actipro, Syncfusion, Telerik, and other major WPF control vendors.
+若你的应用用了内部会调用 Win32 API 的第三方控件，那就需要。DevExpress、Actipro、Syncfusion、Telerik 等主流 WPF 控件厂商的产品大多如此。
 
-**How do I know if I need them?**
+**怎么判断自己需不需要？**
 
-If your application works on Windows but fails on Linux or macOS with errors like `DllNotFoundException: Unable to load shared library 'user32.dll'`, you need to enable Win32 API shims. Add this to your `App` constructor or `Program.Main`:
+若你的应用在 Windows 上一切正常，到了 Linux 或 macOS 上却报 `DllNotFoundException: Unable to load shared library 'user32.dll'` 之类的错，那就得启用 Win32 API shim。把下面的内容加进你的 `App` 构造函数或 `Program.Main` 中：
 
 ```csharp
 AvaloniaUI.Xpf.WinApiShim.WinApiShimSetup.AutoEnable();
 ```
 
-See [Win32 API Shims](/xpf/third-party/win32-api-shims) for details, including how to exclude specific assemblies.
+细节（包括如何排除特定程序集）请见 [Win32 API shim](/xpf/third-party/win32-api-shims)。
 
-**Do shims need to be enabled on Windows too?**
+**在 Windows 上也需要启用 shim 吗？**
 
-Enabling shims on Windows redirects Win32 calls through the shim layer instead of native Win32. This is generally safe and ensures consistent behavior across platforms during development. However, if you only deploy on Windows, you do not need them.
+在 Windows 上启用 shim 会把 Win32 调用改走 shim 层而非原生 Win32。这通常是安全的，还能让开发期间各平台的行为保持一致。不过，若你只在 Windows 上部署，那就不需要它。
 
 ## Licensing
 
-**What identifies my application for licensing?**
+**许可证是靠什么来认定我的应用的？**
 
-XPF validates two identifiers at runtime:
+XPF 在运行时校验两个标识：
 
 1. **Assembly Name**: `Assembly.GetEntryAssembly().GetName().Name`
-2. **Process Executable Name**: The name of the running process
+2. **进程可执行文件名**：运行中进程的名称
 
-Both must match the values registered with your license.
+两者都必须与许可证登记的值一致。
 
-**Can I use the same license for multiple applications?**
+**同一个许可证能用于多个应用吗？**
 
-Each license covers one application (identified by assembly name and process name). Different applications require separate licenses.
+每个许可证只覆盖一个应用（以程序集名和进程名认定），不同应用需要各自的许可证。
 
-**What happens when my license expires?**
+**许可证到期后会怎样？**
 
-XPF licenses are perpetual. Your application will continue to work indefinitely. An expired license means you no longer receive updates or engineering support, but deployed applications are unaffected.
+XPF 许可证是永久的，你的应用会一直正常运行。许可证过期只意味着你不再获得更新和工程支持，已部署的应用不受影响。
 
-**How do I start a trial?**
+**怎么开始试用？**
 
-Free 30-day trials are available for Internal and Business licenses through the [Avalonia website](https://avaloniaui.net/xpf). You can start a new trial at any time from the portal. Enterprise licenses are available by contacting sales.
+Internal 和 Business 许可证可在 [Avalonia 官网](https://avaloniaui.net/xpf)申请 30 天免费试用，你随时都能在门户中开启新的试用。Enterprise 许可证请联系销售。
 
-## Platform support
+## 平台支持 {#platform-support}
 
-**Does XPF support Android and iOS?**
+**XPF 支持 Android 和 iOS 吗？**
 
-Android and iOS support is available with an Enterprise license and is currently in private preview. See [Mobile and Browser](/xpf/platforms/mobile-and-browser) for setup instructions.
+Android 和 iOS 支持随 Enterprise 许可证提供，目前处于私有预览阶段。配置说明请见[移动端与浏览器](/xpf/platforms/mobile-and-browser)。
 
-**Does XPF support WebAssembly?**
+**XPF 支持 WebAssembly 吗？**
 
-WebAssembly support is available with an Enterprise license and is currently in private preview. See [Mobile and Browser](/xpf/platforms/mobile-and-browser) for setup instructions.
+WebAssembly 支持随 Enterprise 许可证提供，目前处于私有预览阶段。配置说明请见[移动端与浏览器](/xpf/platforms/mobile-and-browser)。
 
-**Which Linux distributions are supported?**
+**支持哪些 Linux 发行版？**
 
-All XPF licenses support Tier 1 Linux distributions (the latest versions of Ubuntu, Fedora, and Debian). Enterprise licenses additionally cover Tier 2 and, by arrangement, Tier 3 distributions. See [Supported Platforms](/docs/supported-platforms#desktop-linux) for the full tier breakdown.
+所有 XPF 许可证都支持一级（Tier 1）Linux 发行版（Ubuntu、Fedora 和 Debian 的最新版本）。Enterprise 许可证另外涵盖二级发行版，经协商还可覆盖三级。完整的分级明细请见[支持的平台](/docs/supported-platforms#desktop-linux)。
 
-**Does XPF support RHEL (Red Hat Enterprise Linux)?**
+**XPF 支持 RHEL（Red Hat Enterprise Linux）吗？**
 
-Yes. RHEL 8 and later are supported. Some additional setup is required compared to Ubuntu. See [Linux: Other Dependencies](/xpf/platforms/linux#other-dependencies) for RHEL-specific package installation instructions.
+支持。RHEL 8 及以上都可以，只是比 Ubuntu 多几步配置。RHEL 专属的软件包安装说明请见 [Linux：其他依赖](/xpf/platforms/linux#other-dependencies)。
 
 ## Native AOT
 
-**Does XPF support Native AOT?**
+**XPF 支持 Native AOT 吗？**
 
-Yes. Unlike WPF, which cannot be compiled with Native AOT due to its COM marshalling dependency, XPF includes support for AOT compilation.
+支持。WPF 因为依赖 COM 封送而无法用 Native AOT 编译，XPF 则不同，它支持 AOT 编译。
 
-See the [Native AOT deployment guide](/xpf/deployment/native-aot) for setup and usage instructions.
+配置与使用说明请见 [Native AOT 部署指南](/xpf/deployment/native-aot)。
 
-## Seat assignment
+## 分配席位 {#seat-assignment}
 
-To assign subscription seats to members of your organization, go to the [Avalonia Portal](https://portal.avaloniaui.net/).
+若要把订阅席位分配给组织成员，请前往 [Avalonia 门户](https://portal.avaloniaui.net/)。
 
-See [Assigning seats](/tools/assigning-seats) for details.
+细节请见[分配席位](/tools/assigning-seats)。
 
-## Common issues
+## 常见问题 {#common-issues}
 
-**My application works on Windows but crashes on macOS/Linux. Where do I start?**
+**我的应用在 Windows 上好好的，到 macOS/Linux 就崩，该从哪儿查起？**
 
-1. Check if you need [Win32 API shims](/xpf/third-party/win32-api-shims) (look for `DllNotFoundException` errors)
-2. Ensure all [Linux dependencies](/xpf/platforms/linux#other-dependencies) are installed
-3. Check the [Troubleshooting](/xpf/troubleshooting) page for your specific error
-4. Enable [XPF logging](/xpf/troubleshooting#listening-for-xpf-logs) for detailed diagnostics
+1. 看看是不是需要 [Win32 API shim](/xpf/third-party/win32-api-shims)（留意 `DllNotFoundException` 之类的错误）
+2. 确认 [Linux 依赖](/xpf/platforms/linux#other-dependencies)都装齐了
+3. 到[排查问题](/xpf/troubleshooting)页中找你遇到的具体报错
+4. 启用 [XPF 日志](/xpf/troubleshooting#listening-for-xpf-logs)以获得更详尽的诊断信息
 
-**Why does `Assembly.GetEntryAssembly().Location` return null?**
+**`Assembly.GetEntryAssembly().Location` 为什么返回 null？**
 
-This is a .NET 5+ behavior for single-file published applications, not specific to XPF. Use `AppDomain.CurrentDomain.BaseDirectory` instead.
+这是 .NET 5+ 对单文件发布应用的既定行为，与 XPF 无关。请改用 `AppDomain.CurrentDomain.BaseDirectory`。
 
-**Why do fonts render differently between Windows and Linux?**
+**为什么同样的字体在 Windows 和 Linux 上渲染得不一样？**
 
-Windows and Linux use different text rendering backends, so some visual differences are expected. Ensure your custom fonts are embedded as resources in your `.csproj` and that font family names in XAML match the internal names in your font files. See [Getting Started: Fonts](/xpf/getting-started#fonts) for configuration details.
+Windows 和 Linux 用的文本渲染后端不同，有些视觉差异在所难免。请确认自定义字体已作为资源嵌进你的 `.csproj`，且 XAML 中的字体族名与字体文件里的内部名称一致。配置细节请见[快速上手：字体](/xpf/getting-started#fonts)。
 
-**How do I get the render scaling (DPI) on macOS?**
+**在 macOS 上怎么取得渲染缩放（DPI）？**
 
-The WPF API `VisualTreeHelper.GetDpi()` may not return accurate values on macOS. Use the Avalonia interop API:
+WPF 的 `VisualTreeHelper.GetDpi()` API 在 macOS 上未必给得出准确值，请改用 Avalonia 的互操作 API：
 
 ```csharp
 using Atlantis;
@@ -128,18 +128,18 @@ var topLevel = XpfWpfAbstraction.GetAvaloniaTopLevelForWindow(myWpfWindow);
 double scaling = topLevel.RenderScaling;
 ```
 
-**Can I publish my XPF application from Visual Studio?**
+**能用 Visual Studio 发布我的 XPF 应用吗？**
 
-Publishing from the command line (`dotnet publish`) is strongly recommended. Visual Studio publishing can produce incomplete output missing native libraries (such as `libSkiaSharp`). See the platform-specific deployment guides for the correct publish commands.
+强烈建议从命令行发布（`dotnet publish`）。用 Visual Studio 发布可能产出不完整的输出，缺掉 `libSkiaSharp` 这类原生库。正确的发布命令请见各平台的部署指南。
 
-**How do I enable XPF logging for troubleshooting?**
+**排查问题时怎么启用 XPF 日志？**
 
-Set these environment variables before launching your application:
-- `XPF_LOG_OUTPUT`: `console`, `trace`, or `file=/path/to/log.txt` (combine with `;`)
+启动应用之前设置这几个环境变量：
+- `XPF_LOG_OUTPUT`：`console`、`trace` 或 `file=/path/to/log.txt`（与 `;` 搭配使用）
 - `XPF_LOG_LEVEL`: `Verbose`, `Debug`, `Information`, `Warning`, `Error`, or `Fatal`
 
-See [Troubleshooting: Listening for XPF Logs](/xpf/troubleshooting#listening-for-xpf-logs) for details.
+细节请见[排查问题：收听 XPF 日志](/xpf/troubleshooting#listening-for-xpf-logs)。
 
-**Which web browser control should I use with XPF?**
+**XPF 该配哪个网页浏览器控件？**
 
-It depends on your target platforms. See [Web Content Embedding](/xpf/interop/web-content) for a side-by-side comparison of CefSharp, NativeWebView, NativeWebDialog, and DotNetBrowser.
+这要看你面向哪些平台。CefSharp、NativeWebView、NativeWebDialog 和 DotNetBrowser 的横向对比请见[嵌入网页内容](/xpf/interop/web-content)。

@@ -1,27 +1,27 @@
 ---
 id: properties
-title: Properties
-description: Migrate WPF DependencyProperty usage to Avalonia StyledProperty and DirectProperty types.
+title: 属性
+description: 把 WPF 的 DependencyProperty 用法迁移到 Avalonia 的 StyledProperty 与 DirectProperty。
 doc-type: migration
 ---
 
-Avalonia's property system is conceptually similar to WPF's `DependencyProperty` system but uses a cleaner, strongly-typed generic API. If you are familiar with WPF dependency properties, you will find most of the same concepts in Avalonia: styling, data binding, animation, value inheritance, and default values all work through the property system. The main differences are in registration syntax and how you respond to property changes.
+Avalonia 的属性系统在概念上与 WPF 的 `DependencyProperty` 体系相仿，但 API 更干净、也更强类型。若你熟悉 WPF 的依赖属性，会发现 Avalonia 里大多数概念都还在：样式、数据绑定、动画、值继承和默认值统统经由属性系统实现。主要差别在于注册语法，以及如何响应属性变化。
 
-## Property types comparison
+## 属性类型对照 {#property-types-comparison}
 
-WPF has a single `DependencyProperty` class used for all scenarios. Avalonia splits this into three distinct types, each optimized for a specific use case. All three share a common base class, `AvaloniaProperty`.
+WPF 只有一个 `DependencyProperty` 类，所有场景都用它。Avalonia 把它拆成三种类型，各自针对一类用途作了优化。三者共有一个基类 `AvaloniaProperty`。
 
-| WPF | Avalonia | When to Use |
+| WPF | Avalonia | 适用场景 |
 |---|---|---|
-| `DependencyProperty` | `StyledProperty` | Properties that participate in styling, animation, and value inheritance |
-| `DependencyProperty` (read-only) | `DirectProperty` | Read-only properties, performance-sensitive properties, or properties that wrap a CLR backing field |
-| `DependencyProperty.RegisterAttached` | `AttachedProperty` | Properties set on child elements (for example, `Grid.Row`, `DockPanel.Dock`) |
+| `DependencyProperty` | `StyledProperty` | 参与样式、动画和值继承的属性 |
+| `DependencyProperty` (read-only) | `DirectProperty` | 只读属性、对性能敏感的属性，或者包装某个 CLR 后备字段的属性 |
+| `DependencyProperty.RegisterAttached` | `AttachedProperty` | 设在子元素上的属性（比如 `Grid.Row`、`DockPanel.Dock`） |
 
 ## Registration
 
 ### StyledProperty
 
-In WPF, you register a `DependencyProperty` with a static field and a call to `DependencyProperty.Register`. In Avalonia, you use `AvaloniaProperty.Register<TOwner, TValue>` instead.
+在 WPF 中，你用一个静态字段加一次 `DependencyProperty.Register` 调用来注册 `DependencyProperty`；在 Avalonia 中，则改用 `AvaloniaProperty.Register<TOwner, TValue>`。
 
 **WPF:**
 
@@ -61,11 +61,11 @@ public class MyControl : Control
 }
 ```
 
-Notice that Avalonia uses generics to avoid casting in the `GetValue` call, and the default value is passed as a named parameter rather than through a metadata object.
+注意 Avalonia 借助泛型省去了 `GetValue` 调用中的强制转换，而且默认值是作为具名参数传入的，不必再包一层元数据对象。
 
 ### DirectProperty
 
-A `DirectProperty` reads and writes directly from a CLR backing field instead of going through the Avalonia property system's value store. This makes it useful for read-only properties or properties where you want maximum performance. There is no direct WPF equivalent; the closest comparison is a read-only `DependencyProperty`.
+`DirectProperty` 直接读写 CLR 后备字段，不经 Avalonia 属性系统的值存储。因此它很适合只读属性，或者对性能要求极高的属性。WPF 中没有直接对应者，最接近的大概是只读的 `DependencyProperty`。
 
 ```csharp
 public class MyControl : Control
@@ -85,13 +85,13 @@ public class MyControl : Control
 }
 ```
 
-Key points:
-- Use `SetAndRaise` instead of `SetValue` to update the backing field and raise change notifications.
-- The getter accessor lambda (`o => o.Status`) is required so the property system can read the current value.
+要点：
+- 用 `SetAndRaise` 而不是 `SetValue` 来更新后备字段并引发变更通知。
+- getter 访问器 lambda（`o => o.Status`）是必需的，属性系统靠它读取当前值。
 
 ### AttachedProperty
 
-Attached properties work the same way conceptually. In WPF you use `DependencyProperty.RegisterAttached`; in Avalonia you use `AvaloniaProperty.RegisterAttached`.
+附加属性在概念上的用法一致。WPF 用 `DependencyProperty.RegisterAttached`，Avalonia 则用 `AvaloniaProperty.RegisterAttached`。
 
 **WPF:**
 
@@ -131,11 +131,11 @@ public class DockPanel : Panel
 }
 ```
 
-## Property changed callbacks
+## 属性变更回调 {#property-changed-callbacks}
 
-### WPF approach
+### WPF 的做法 {#wpf-approach}
 
-In WPF, you pass a `PropertyChangedCallback` inside `PropertyMetadata` at registration time:
+在 WPF 中，注册时要在 `PropertyMetadata` 里传一个 `PropertyChangedCallback`：
 
 ```csharp
 public static readonly DependencyProperty IsActiveProperty =
@@ -152,13 +152,13 @@ private static void OnIsActiveChanged(DependencyObject d, DependencyPropertyChan
 }
 ```
 
-### Avalonia approaches
+### Avalonia 的做法 {#avalonia-approaches}
 
-Avalonia offers two ways to respond to property changes.
+Avalonia 提供了两种响应属性变化的方式。
 
 **Option 1: Override `OnPropertyChanged`**
 
-The recommended approach for control authors is to override `OnPropertyChanged` on the control itself:
+对控件作者来说，推荐的做法是在控件自身上重写 `OnPropertyChanged`：
 
 ```csharp
 protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -173,9 +173,9 @@ protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs chang
 }
 ```
 
-**Option 2: Class handler via `Changed.AddClassHandler`**
+**方案二：通过 `Changed.AddClassHandler` 注册类处理程序**
 
-You can also register a static class handler, typically in the control's static constructor. This is similar in spirit to the WPF `PropertyChangedCallback`, but it is registered separately from the property definition:
+你也可以注册一个静态的类处理程序，通常写在控件的静态构造函数里。它在精神上类似 WPF 的 `PropertyChangedCallback`，只是与属性定义分开注册：
 
 ```csharp
 static MyControl()
@@ -187,17 +187,17 @@ static MyControl()
 }
 ```
 
-Both approaches are equivalent in effect. Overriding `OnPropertyChanged` is often cleaner when you need to handle changes to multiple properties in one place.
+两种做法效果等价。若你想把多个属性的变化集中在一处处理，重写 `OnPropertyChanged` 往往更清爽。
 
-## Default values
+## 默认值 {#default-values}
 
-In WPF, default values are supplied through a `PropertyMetadata` object:
+在 WPF 中，默认值通过一个 `PropertyMetadata` 对象提供：
 
 ```csharp
 new PropertyMetadata(defaultValue: Brushes.White)
 ```
 
-In Avalonia, the default value is a named parameter on the `Register` method:
+在 Avalonia 中，默认值是 `Register` 方法上的一个具名参数：
 
 ```csharp
 AvaloniaProperty.Register<MyControl, IBrush>(
@@ -205,7 +205,7 @@ AvaloniaProperty.Register<MyControl, IBrush>(
     defaultValue: Brushes.White);
 ```
 
-If you need to override the default value in a derived class, use `OverrideDefaultValue` in the static constructor of the subclass:
+若要在派生类中改写默认值，请在子类的静态构造函数里调用 `OverrideDefaultValue`：
 
 ```csharp
 static MyDerivedControl()
@@ -214,15 +214,15 @@ static MyDerivedControl()
 }
 ```
 
-## Value coercion
+## 取值强制转换 {#value-coercion}
 
-In WPF, you supply a `CoerceValueCallback` in the `PropertyMetadata`:
+在 WPF 中，你要在 `PropertyMetadata` 里提供一个 `CoerceValueCallback`：
 
 ```csharp
 new PropertyMetadata(0.0, null, CoerceOpacity)
 ```
 
-In Avalonia, pass a `coerce` function when registering the property:
+在 Avalonia 中，注册属性时传入一个 `coerce` 函数即可：
 
 ```csharp
 public static readonly StyledProperty<double> OpacityProperty =
@@ -237,30 +237,30 @@ private static double CoerceOpacity(AvaloniaObject sender, double value)
 }
 ```
 
-The coercion function receives the `AvaloniaObject` instance and the proposed value, and returns the corrected value.
+强制回调会收到 `AvaloniaObject` 实例和待设的值，并返回修正后的值。
 
-## Value precedence
+## 值优先级 {#value-precedence}
 
-Both WPF and Avalonia use a value precedence system to determine the effective value of a property. The general order (highest to lowest) is:
+WPF 和 Avalonia 都用一套值优先级体系来决定属性的最终生效值。大致顺序（由高到低）为：
 
 1. Animation
-2. Local value
-3. Style triggers / Style setters
-4. Template parent
-5. Inherited value
-6. Default value
+2. 本地值
+3. 样式触发器 / 样式 setter
+4. 模板父级
+5. 继承值
+6. 默认值
 
-For a detailed breakdown of how Avalonia resolves property values, see the [Value Precedence](/docs/properties/value-precedence) page.
+想详细了解 Avalonia 如何裁定属性值，请看[值优先级](/docs/properties/value-precedence)页。
 
-## Common gotchas
+## 常见的坑 {#common-gotchas}
 
-### No PropertyMetadata constructor with a default value
+### 没有带默认值的 PropertyMetadata 构造函数 {#no-propertymetadata-constructor-with-a-default-value}
 
-In WPF, you often write `new PropertyMetadata(someDefault)`. In Avalonia, there is no `PropertyMetadata` class. Default values are passed directly to `Register` using the `defaultValue:` named parameter.
+在 WPF 中你常写 `new PropertyMetadata(someDefault)`。Avalonia 根本没有 `PropertyMetadata` 类，默认值直接通过具名参数 `defaultValue:` 传给 `Register`。
 
-### SetAndRaise replaces SetValue for DirectProperty
+### DirectProperty 要用 SetAndRaise 而非 SetValue {#setandraise-replaces-setvalue-for-directproperty}
 
-If you register a `DirectProperty`, you must use `SetAndRaise` in the CLR setter instead of `SetValue`. Calling `SetValue` on a `DirectProperty` will throw an exception.
+若你注册的是 `DirectProperty`，CLR setter 里必须用 `SetAndRaise` 而不是 `SetValue`。对 `DirectProperty` 调用 `SetValue` 会抛异常。
 
 ```csharp
 // Correct for DirectProperty
@@ -271,20 +271,20 @@ public string Status
 }
 ```
 
-### StyledProperty values live in the property system
+### StyledProperty 的值存在属性系统里 {#styledproperty-values-live-in-the-property-system}
 
-Unlike `DirectProperty`, a `StyledProperty` does not use a backing field. Values are stored internally by the Avalonia property system. If you try to add a backing field and read from it, you will get stale data. Always use `GetValue` and `SetValue`.
+与 `DirectProperty` 不同，`StyledProperty` 不使用后备字段，值由 Avalonia 属性系统在内部保存。若你擅自加个后备字段再从中读取，拿到的会是过时数据。请始终使用 `GetValue` 和 `SetValue`。
 
-### Use AddOwner instead of OverrideMetadata for shared properties
+### 共享属性请用 AddOwner，而不是 OverrideMetadata {#use-addowner-instead-of-overridemetadata-for-shared-properties}
 
-In WPF, you might call `OverrideMetadata` to reuse an existing `DependencyProperty` in a subclass with different metadata. In Avalonia, the equivalent pattern for sharing a property across unrelated types is `AddOwner`:
+在 WPF 中，你也许会调用 `OverrideMetadata`，让子类以不同的元数据复用现有的 `DependencyProperty`。在 Avalonia 中，要在互不相关的类型间共享属性，对应的套路是 `AddOwner`：
 
 ```csharp
 public static readonly StyledProperty<IBrush> BackgroundProperty =
     Border.BackgroundProperty.AddOwner<MyControl>();
 ```
 
-This registers the same property on your control type, and you can optionally override the default value at the same time:
+这会把同一个属性注册到你的控件类型上，同时还可以顺带改写默认值：
 
 ```csharp
 public static readonly StyledProperty<IBrush> BackgroundProperty =
@@ -292,8 +292,8 @@ public static readonly StyledProperty<IBrush> BackgroundProperty =
         new StyledPropertyMetadata<IBrush>(Brushes.Gray));
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Avalonia property system](/docs/properties)
-- [Value precedence](/docs/properties/value-precedence)
-- [Defining properties on custom controls](/docs/custom-controls/defining-properties)
+- [Avalonia 属性系统](/docs/properties)
+- [值优先级](/docs/properties/value-precedence)
+- [在自定义控件上定义属性](/docs/custom-controls/defining-properties)

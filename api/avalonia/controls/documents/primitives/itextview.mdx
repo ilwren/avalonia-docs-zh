@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ITextView Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -49,45 +49,45 @@ public interface ITextView
 
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 Rather than forcing synchronous layout, callers can subscribe to [Avalonia.Controls.Documents.Primitives.ITextView.LayoutUpdated](xref:Avalonia.Controls.Documents.Primitives.ITextView.LayoutUpdated)
 to be notified when layout becomes valid.
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [GetLineFromPosition](#uid-81f5cfa503) | Gets the line containing the specified position. |
-| [GetNextLine](#uid-03ba01e289) | Gets the next line after the specified line. |
-| [GetPositionAtLineEnd](#uid-a72ac011b6) | Gets the position at the end of the line containing the specified position. |
-| [GetPositionAtLineStart](#uid-1e40500af3) | Gets the position at the start of the line containing the specified position. |
+| [GetLineFromPosition](#uid-81f5cfa503) | 获取包含指定位置的那一行。 |
+| [GetNextLine](#uid-03ba01e289) | 获取指定行之后的下一行。 |
+| [GetPositionAtLineEnd](#uid-a72ac011b6) | 获取包含指定位置的那一行的行尾位置。 |
+| [GetPositionAtLineStart](#uid-1e40500af3) | 获取包含指定位置的那一行的行首位置。 |
 | [GetPositionAtLineX](#uid-c12d84f8fc) | Returns the text position on `line` closest to the specified X coordinate. The result is guaranteed to stay on `line`; it never crosses into a neighbouring line or block, regardless of how far `x` lies outside the line's horizontal bounds. |
-| [GetPreviousLine](#uid-dfe7d979c9) | Gets the previous line before the specified line. |
-| [GetRectangleFromTextPosition](#uid-a6a7f0d189) | Gets the bounding rectangle for a character at the specified position. |
-| [GetTextPositionFromPoint](#uid-f29386de95) | Gets the text position from a screen point. |
-| [GetVisibleLineAtOrAfter](#uid-e6882b9acd) | Gets the first visible line at or after the specified position. |
+| [GetPreviousLine](#uid-dfe7d979c9) | 获取指定行之前的上一行。 |
+| [GetRectangleFromTextPosition](#uid-a6a7f0d189) | 获取指定位置处某个字符的外接矩形。 |
+| [GetTextPositionFromPoint](#uid-f29386de95) | 由屏幕坐标点取得对应的文本位置。 |
+| [GetVisibleLineAtOrAfter](#uid-e6882b9acd) | 获取位于指定位置处或其后的第一个可见行。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-81f5cfa503"></span>
 
-### GetLineFromPosition Method
+### GetLineFromPosition 方法 {#getlinefromposition-method}
 
-Gets the line containing the specified position.
+获取包含指定位置的那一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetLineFromPosition(Avalonia.Controls.Documents.TextModel.TextPointer position)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
-The text position.
+文本位置。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.Primitives.ITextLine](xref:Avalonia.Controls.Documents.Primitives.ITextLine)
 
@@ -100,22 +100,22 @@ The line containing the position, or null if the position is not visible.
 
 <span id="uid-03ba01e289"></span>
 
-### GetNextLine Method
+### GetNextLine 方法 {#getnextline-method}
 
-Gets the next line after the specified line.
+获取指定行之后的下一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetNextLine(Avalonia.Controls.Documents.Primitives.ITextLine currentLine)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `currentLine` [Avalonia.Controls.Documents.Primitives.ITextLine](xref:Avalonia.Controls.Documents.Primitives.ITextLine)
 
-The current line.
+当前行。
 
 
-#### Returns
+#### 返回值 {#returns-1}
 
 [Avalonia.Controls.Documents.Primitives.ITextLine](xref:Avalonia.Controls.Documents.Primitives.ITextLine)
 
@@ -128,22 +128,22 @@ The next line, or null if at the last line.
 
 <span id="uid-a72ac011b6"></span>
 
-### GetPositionAtLineEnd Method
+### GetPositionAtLineEnd 方法 {#getpositionatlineend-method}
 
-Gets the position at the end of the line containing the specified position.
+获取包含指定位置的那一行的行尾位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer GetPositionAtLineEnd(Avalonia.Controls.Documents.TextModel.TextPointer position)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
-The text position.
+文本位置。
 
 
-#### Returns
+#### 返回值 {#returns-2}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -156,22 +156,22 @@ The position at line end, or null if the position is not visible.
 
 <span id="uid-1e40500af3"></span>
 
-### GetPositionAtLineStart Method
+### GetPositionAtLineStart 方法 {#getpositionatlinestart-method}
 
-Gets the position at the start of the line containing the specified position.
+获取包含指定位置的那一行的行首位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer GetPositionAtLineStart(Avalonia.Controls.Documents.TextModel.TextPointer position)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
-The text position.
+文本位置。
 
 
-#### Returns
+#### 返回值 {#returns-3}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -184,7 +184,7 @@ The position at line start, or null if the position is not visible.
 
 <span id="uid-c12d84f8fc"></span>
 
-### GetPositionAtLineX Method
+### GetPositionAtLineX 方法 {#getpositionatlinex-method}
 
 Returns the text position on `line` closest to the
 specified X coordinate. The result is guaranteed to stay on
@@ -196,19 +196,19 @@ the line's horizontal bounds.
 public Avalonia.Controls.Documents.TextModel.TextPointer GetPositionAtLineX(Avalonia.Controls.Documents.Primitives.ITextLine line, double x)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `line` [Avalonia.Controls.Documents.Primitives.ITextLine](xref:Avalonia.Controls.Documents.Primitives.ITextLine)
 
-The target line.
+目标行。
 
 
 `x` double
 
-The desired X coordinate in view space.
+以视图空间表示的目标 X 坐标。
 
 
-#### Returns
+#### 返回值 {#returns-4}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -216,7 +216,7 @@ A node-aware pointer on `line`, or `null`
 when the line or its containing element cannot be resolved.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 This is the structure-first primitive used by vertical caret
 navigation. It avoids the offset collisions that affect empty
@@ -229,22 +229,22 @@ blocks when `x` is near a block boundary.
 
 <span id="uid-dfe7d979c9"></span>
 
-### GetPreviousLine Method
+### GetPreviousLine 方法 {#getpreviousline-method}
 
-Gets the previous line before the specified line.
+获取指定行之前的上一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetPreviousLine(Avalonia.Controls.Documents.Primitives.ITextLine currentLine)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `currentLine` [Avalonia.Controls.Documents.Primitives.ITextLine](xref:Avalonia.Controls.Documents.Primitives.ITextLine)
 
-The current line.
+当前行。
 
 
-#### Returns
+#### 返回值 {#returns-5}
 
 [Avalonia.Controls.Documents.Primitives.ITextLine](xref:Avalonia.Controls.Documents.Primitives.ITextLine)
 
@@ -257,19 +257,19 @@ The previous line, or null if at the first line.
 
 <span id="uid-a6a7f0d189"></span>
 
-### GetRectangleFromTextPosition Method
+### GetRectangleFromTextPosition 方法 {#getrectanglefromtextposition-method}
 
-Gets the bounding rectangle for a character at the specified position.
+获取指定位置处某个字符的外接矩形。
 
 ```csharp
 public Avalonia.Rect GetRectangleFromTextPosition(Avalonia.Controls.Documents.TextModel.TextPointer position, Avalonia.Controls.Documents.TextModel.LogicalDirection direction)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
-The text position.
+文本位置。
 
 
 `direction` [Avalonia.Controls.Documents.TextModel.LogicalDirection](xref:Avalonia.Controls.Documents.TextModel.LogicalDirection)
@@ -277,14 +277,14 @@ The text position.
 The logical direction for caret placement at element boundaries.
 
 
-#### Returns
+#### 返回值 {#returns-6}
 
 [Avalonia.Rect](xref:Avalonia.Rect)
 
 The bounding rectangle, or a default rect if the position is not visible or layout is invalid.
 
 
-#### Remarks
+#### 备注 {#remarks-2}
 
 Check [Avalonia.Controls.Documents.Primitives.ITextView.IsLayoutValid](xref:Avalonia.Controls.Documents.Primitives.ITextView.IsLayoutValid) before calling this method for accurate results.
 
@@ -294,19 +294,19 @@ Check [Avalonia.Controls.Documents.Primitives.ITextView.IsLayoutValid](xref:Aval
 
 <span id="uid-f29386de95"></span>
 
-### GetTextPositionFromPoint Method
+### GetTextPositionFromPoint 方法 {#gettextpositionfrompoint-method}
 
-Gets the text position from a screen point.
+由屏幕坐标点取得对应的文本位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer GetTextPositionFromPoint(Avalonia.Point point, bool snapToText)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The point in view coordinates.
+以视图坐标表示的点。
 
 
 `snapToText` bool
@@ -314,7 +314,7 @@ The point in view coordinates.
 If true, snaps to the nearest text position even if the point is outside text bounds.
 
 
-#### Returns
+#### 返回值 {#returns-7}
 
 [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
@@ -327,22 +327,22 @@ The text position, or null if no position could be determined.
 
 <span id="uid-e6882b9acd"></span>
 
-### GetVisibleLineAtOrAfter Method
+### GetVisibleLineAtOrAfter 方法 {#getvisiblelineatorafter-method}
 
-Gets the first visible line at or after the specified position.
+获取位于指定位置处或其后的第一个可见行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetVisibleLineAtOrAfter(Avalonia.Controls.Documents.TextModel.TextPointer position)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `position` [Avalonia.Controls.Documents.TextModel.TextPointer](xref:Avalonia.Controls.Documents.TextModel.TextPointer)
 
-The text position to search from.
+开始搜索的文本位置。
 
 
-#### Returns
+#### 返回值 {#returns-8}
 
 [Avalonia.Controls.Documents.Primitives.ITextLine](xref:Avalonia.Controls.Documents.Primitives.ITextLine)
 
@@ -350,7 +350,7 @@ The first visible line at or after the position, or `null` if no
 visible line exists at or beyond `position`.
 
 
-#### Remarks
+#### 备注 {#remarks-3}
 
 In a virtualizing view, [Avalonia.Controls.Documents.Primitives.ITextView.GetLineFromPosition(Avalonia.Controls.Documents.TextModel.TextPointer)](xref:Avalonia.Controls.Documents.Primitives.ITextView.GetLineFromPosition%28Avalonia.Controls.Documents.TextModel.TextPointer%29) returns `null`
 when the target block is not realized. This method skips over unrealized
@@ -359,18 +359,18 @@ implementations may simply delegate to [Avalonia.Controls.Documents.Primitives.I
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [IsLayoutValid](#uid-3466b95141) | Gets whether the view layout is valid and coordinate queries will return accurate results. |
-| [TextDocument](#uid-da7596a94b) | Gets the [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) being rendered. |
+| [TextDocument](#uid-da7596a94b) | 获取正在渲染的那个 [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3466b95141"></span>
 
-### IsLayoutValid Property
+### IsLayoutValid 属性 {#islayoutvalid-property}
 
 Gets whether the view layout is valid and coordinate queries will return accurate results.
 
@@ -378,7 +378,7 @@ Gets whether the view layout is valid and coordinate queries will return accurat
 public bool IsLayoutValid { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-4}
 
 This typically returns true when both measure and arrange have completed.
 Coordinate mapping methods may return stale or default values when this is false.
@@ -389,9 +389,9 @@ Coordinate mapping methods may return stale or default values when this is false
 
 <span id="uid-da7596a94b"></span>
 
-### TextDocument Property
+### TextDocument 属性 {#textdocument-property}
 
-Gets the [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) being rendered.
+获取正在渲染的那个 [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; set; }
@@ -399,9 +399,9 @@ public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; se
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [LayoutUpdated](#uid-3917a64a1e) | Event raised when the view layout has been updated and is now valid. |
 
@@ -409,7 +409,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; se
 
 <span id="uid-3917a64a1e"></span>
 
-### LayoutUpdated Event
+### LayoutUpdated 事件 {#layoutupdated-event}
 
 Event raised when the view layout has been updated and is now valid.
 
@@ -417,7 +417,7 @@ Event raised when the view layout has been updated and is now valid.
 public event EventHandler LayoutUpdated
 ```
 
-#### Remarks
+#### 备注 {#remarks-5}
 
 Subscribe to this event to be notified when layout completes, rather than
 forcing synchronous layout. This integrates with Avalonia's deferred layout system.

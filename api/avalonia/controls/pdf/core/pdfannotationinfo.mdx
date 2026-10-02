@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">PdfAnnotationInfo Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Pdf.Core</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.PdfViewer</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.PdfViewer</code>
 </div>
 </div>
 
@@ -51,36 +51,36 @@ public class PdfAnnotationInfo
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfAnnotationInfo
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> PdfAnnotationInfo
 </div>
 </div>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AnnotationIndex](#uid-526d356c28) | Zero-based index of this annotation on its page. |
-| [Author](#uid-0606e7f095) | The annotation author/title, or `null`. |
+| [Author](#uid-0606e7f095) | 批注的作者/标题，或 `null`。 |
 | [BorderWidth](#uid-4bc86ce1f9) | Border/stroke width in points, or `null` if not set. |
-| [Bounds](#uid-91050198d2) | Bounding rectangle in PDF user space. |
-| [Color](#uid-8b51f4ae27) | Stroke/border color, or `null` if not set. |
+| [Bounds](#uid-91050198d2) | 以 PDF 用户空间表示的外接矩形。 |
+| [Color](#uid-8b51f4ae27) | 描边/边框颜色；未设置时为 `null`。 |
 | [Contents](#uid-00882e0de6) | The annotation's text contents (note text or popup text), or `null`. |
 | [HasArrowHead](#uid-7c37224baa) | Whether a line annotation has an arrowhead at its end point. |
 | [InkStrokes](#uid-d9ec7661bf) | Ink strokes for ink annotations (each stroke is a list of points), or `null`. |
-| [InteriorColor](#uid-2b84795a60) | Fill/interior color, or `null` if not set. |
+| [InteriorColor](#uid-2b84795a60) | 填充/内部颜色；未设置时为 `null`。 |
 | [IsStar](#uid-4cab105a1d) | Whether a polygon annotation represents a star shape. |
-| [LineEnd](#uid-b1d85ae2d9) | End point for line annotations, or `null`. |
-| [LineStart](#uid-4002538702) | Start point for line annotations, or `null`. |
+| [LineEnd](#uid-b1d85ae2d9) | 线条批注的终点；若无则为 `null`。 |
+| [LineStart](#uid-4002538702) | 线条批注的起点；若无则为 `null`。 |
 | [PageIndex](#uid-e0a4414b7a) | Zero-based page index this annotation belongs to. |
 | [Sides](#uid-062b57080c) | Number of sides (polygon) or spikes (star), or `null`. |
-| [Type](#uid-49398e681e) | The annotation subtype. |
+| [Type](#uid-49398e681e) | 批注的子类型。 |
 | [Vertices](#uid-03b4d407bc) | Vertices for polygon/polyline annotations, or `null`. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-526d356c28"></span>
 
-### AnnotationIndex Property
+### AnnotationIndex 属性 {#annotationindex-property}
 
 Zero-based index of this annotation on its page.
 
@@ -94,9 +94,9 @@ public int AnnotationIndex { get; set; }
 
 <span id="uid-0606e7f095"></span>
 
-### Author Property
+### Author 属性 {#author-property}
 
-The annotation author/title, or `null`.
+批注的作者/标题，或 `null`。
 
 ```csharp
 public string Author { get; set; }
@@ -108,7 +108,7 @@ public string Author { get; set; }
 
 <span id="uid-4bc86ce1f9"></span>
 
-### BorderWidth Property
+### BorderWidth 属性 {#borderwidth-property}
 
 Border/stroke width in points, or `null` if not set.
 
@@ -122,9 +122,9 @@ public Nullable<float> BorderWidth { get; set; }
 
 <span id="uid-91050198d2"></span>
 
-### Bounds Property
+### Bounds 属性 {#bounds-property}
 
-Bounding rectangle in PDF user space.
+以 PDF 用户空间表示的外接矩形。
 
 ```csharp
 public Avalonia.Controls.Pdf.Core.PdfRect Bounds { get; set; }
@@ -136,9 +136,9 @@ public Avalonia.Controls.Pdf.Core.PdfRect Bounds { get; set; }
 
 <span id="uid-8b51f4ae27"></span>
 
-### Color Property
+### Color 属性 {#color-property}
 
-Stroke/border color, or `null` if not set.
+描边/边框颜色；未设置时为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfAnnotationColor> Color { get; set; }
@@ -150,7 +150,7 @@ public Nullable<Avalonia.Controls.Pdf.Core.PdfAnnotationColor> Color { get; set;
 
 <span id="uid-00882e0de6"></span>
 
-### Contents Property
+### Contents 属性 {#contents-property}
 
 The annotation's text contents (note text or popup text), or `null`.
 
@@ -164,7 +164,7 @@ public string Contents { get; set; }
 
 <span id="uid-7c37224baa"></span>
 
-### HasArrowHead Property
+### HasArrowHead 属性 {#hasarrowhead-property}
 
 Whether a line annotation has an arrowhead at its end point.
 
@@ -178,7 +178,7 @@ public bool HasArrowHead { get; set; }
 
 <span id="uid-d9ec7661bf"></span>
 
-### InkStrokes Property
+### InkStrokes 属性 {#inkstrokes-property}
 
 Ink strokes for ink annotations (each stroke is a list of points), or `null`.
 
@@ -192,9 +192,9 @@ public System.Collections.Generic.IReadOnlyList<System.Collections.Generic.IRead
 
 <span id="uid-2b84795a60"></span>
 
-### InteriorColor Property
+### InteriorColor 属性 {#interiorcolor-property}
 
-Fill/interior color, or `null` if not set.
+填充/内部颜色；未设置时为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfAnnotationColor> InteriorColor { get; set; }
@@ -206,7 +206,7 @@ public Nullable<Avalonia.Controls.Pdf.Core.PdfAnnotationColor> InteriorColor { g
 
 <span id="uid-4cab105a1d"></span>
 
-### IsStar Property
+### IsStar 属性 {#isstar-property}
 
 Whether a polygon annotation represents a star shape.
 
@@ -220,9 +220,9 @@ public bool IsStar { get; set; }
 
 <span id="uid-b1d85ae2d9"></span>
 
-### LineEnd Property
+### LineEnd 属性 {#lineend-property}
 
-End point for line annotations, or `null`.
+线条批注的终点；若无则为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfPoint> LineEnd { get; set; }
@@ -234,9 +234,9 @@ public Nullable<Avalonia.Controls.Pdf.Core.PdfPoint> LineEnd { get; set; }
 
 <span id="uid-4002538702"></span>
 
-### LineStart Property
+### LineStart 属性 {#linestart-property}
 
-Start point for line annotations, or `null`.
+线条批注的起点；若无则为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfPoint> LineStart { get; set; }
@@ -248,7 +248,7 @@ public Nullable<Avalonia.Controls.Pdf.Core.PdfPoint> LineStart { get; set; }
 
 <span id="uid-e0a4414b7a"></span>
 
-### PageIndex Property
+### PageIndex 属性 {#pageindex-property}
 
 Zero-based page index this annotation belongs to.
 
@@ -262,7 +262,7 @@ public int PageIndex { get; set; }
 
 <span id="uid-062b57080c"></span>
 
-### Sides Property
+### Sides 属性 {#sides-property}
 
 Number of sides (polygon) or spikes (star), or `null`.
 
@@ -276,9 +276,9 @@ public Nullable<int> Sides { get; set; }
 
 <span id="uid-49398e681e"></span>
 
-### Type Property
+### Type 属性 {#type-property}
 
-The annotation subtype.
+批注的子类型。
 
 ```csharp
 public Avalonia.Controls.Pdf.Core.PdfAnnotationType Type { get; set; }
@@ -290,7 +290,7 @@ public Avalonia.Controls.Pdf.Core.PdfAnnotationType Type { get; set; }
 
 <span id="uid-03b4d407bc"></span>
 
-### Vertices Property
+### Vertices 属性 {#vertices-property}
 
 Vertices for polygon/polyline annotations, or `null`.
 

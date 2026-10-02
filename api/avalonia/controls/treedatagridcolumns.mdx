@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TreeDataGridColumns Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.TreeDataGrid</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.TreeDataGrid</code>
 </div>
 </div>
 
@@ -50,24 +50,24 @@ public class TreeDataGridColumns
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Collection&lt;TreeDataGridColumn&gt; <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridColumns
+<span className="apiref-page__meta-label">继承关系：</span> Collection&lt;TreeDataGridColumn&gt; <span className="apiref-page__relation-separator">-&gt;</span> TreeDataGridColumns
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEnumerable&lt;TreeDataGridColumn&gt;, IReadOnlyCollection&lt;TreeDataGridColumn&gt;, IReadOnlyList&lt;TreeDataGridColumn&gt;, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged
+<span className="apiref-page__meta-label">实现接口：</span> IEnumerable&lt;TreeDataGridColumn&gt;, IReadOnlyCollection&lt;TreeDataGridColumn&gt;, IReadOnlyList&lt;TreeDataGridColumn&gt;, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TreeDataGridColumns](#uid-926b843f50) | No summary available. |
+| [TreeDataGridColumns](#uid-926b843f50) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-926b843f50"></span>
 
-### TreeDataGridColumns Constructor
+### TreeDataGridColumns 构造函数 {#treedatagridcolumns-constructor}
 
 ```csharp
 public TreeDataGridColumns()
@@ -75,24 +75,24 @@ public TreeDataGridColumns()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [AddRange](#uid-a7c39dd24a) | No summary available. |
+| [AddRange](#uid-a7c39dd24a) | 暂无摘要。 |
 | [Move](#uid-c374b9fc2b) | Moves the column at the specified index to a new location in the collection. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a7c39dd24a"></span>
 
-### AddRange Method
+### AddRange 方法 {#addrange-method}
 
 ```csharp
 public void AddRange(System.Collections.Generic.IEnumerable<Avalonia.Controls.TreeDataGridColumn> items)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `items` System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.TreeDataGridColumn](xref:Avalonia.Controls.TreeDataGridColumn)&gt;
 
@@ -103,7 +103,7 @@ public void AddRange(System.Collections.Generic.IEnumerable<Avalonia.Controls.Tr
 
 <span id="uid-c374b9fc2b"></span>
 
-### Move Method
+### Move 方法 {#move-method}
 
 Moves the column at the specified index to a new location in the collection.
 
@@ -111,7 +111,7 @@ Moves the column at the specified index to a new location in the collection.
 public void Move(int oldIndex, int newIndex)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `oldIndex` int
 
@@ -123,7 +123,7 @@ The zero-based index of the column to move.
 The zero-based index specifying the new location of the column.
 
 
-#### Remarks
+#### 备注 {#remarks}
 
 Raises a single [System.Collections.Specialized.NotifyCollectionChangedAction.Move](xref:System.Collections.Specialized.NotifyCollectionChangedAction.Move) collection change
 notification. Does nothing if `oldIndex` and
@@ -131,18 +131,18 @@ notification. Does nothing if `oldIndex` and
 
 </section>
 
-## Events
+## 事件 {#events}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [CollectionChanged](#uid-a20de62ba1) | No summary available. |
-| [PropertyChanged](#uid-4c33232fe3) | No summary available. |
+| [CollectionChanged](#uid-a20de62ba1) | 暂无摘要。 |
+| [PropertyChanged](#uid-4c33232fe3) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-a20de62ba1"></span>
 
-### CollectionChanged Event
+### CollectionChanged 事件 {#collectionchanged-event}
 
 ```csharp
 public event System.Collections.Specialized.NotifyCollectionChangedEventHandler CollectionChanged
@@ -154,7 +154,7 @@ public event System.Collections.Specialized.NotifyCollectionChangedEventHandler 
 
 <span id="uid-4c33232fe3"></span>
 
-### PropertyChanged Event
+### PropertyChanged 事件 {#propertychanged-event}
 
 ```csharp
 public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged

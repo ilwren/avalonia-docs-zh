@@ -3,88 +3,88 @@ id: storage-item
 title: Storage Items
 ---
 
-## Common members for StorageFile and StorageFolder
+## StorageFile 与 StorageFolder 的公共成员 {#common-members-for-storagefile-and-storagefolder}
 
-### Name
+### 名称 {#name}
 
-Gets a short name of the item including the file name extension if there is one.
+获取该项的短名称，若有扩展名则一并包含在内。
 
 ### Path
 
-Gets the file-system path of the item.
+获取该项在文件系统中的路径。
 
 :::note
-Android backend might return file path with "content:" scheme.
-Browser and iOS backends might return relative uris.
+Android 后端返回的文件路径可能带 "content:" 方案。
+浏览器和 iOS 后端返回的可能是相对 URI。
 :::
 
 :::caution
-DO NOT use Path property to preserve access to the file or folder. Instead see [Bookmarks](/docs/services/storage/bookmarks) page on how to keep access to the storage items.
+请勿用 Path 属性来保住对文件或文件夹的访问权限。如何长久保持对存储项的访问，请见[书签](/docs/services/storage/bookmarks)页。
 
-DO NOT use Path property to directly read file by its path, as it won't work on most of mobile and browser platforms. Instead use [OpenReadAsync](#openreadasync) and [OpenWriteAsync](#openwriteasync).
+请勿用 Path 属性按路径直接读文件，这在多数移动端和浏览器平台上行不通。请改用 [OpenReadAsync](#openreadasync) 和 [OpenWriteAsync](#openwriteasync)。
 :::
 
 ### CanBookmark
 
-Returns true is item can be bookmarked and reused later.
+若该项能加书签以便日后复用，则返回 true。
 
 ### SaveBookmarkAsync
 
-Saves items to a bookmark.
-Returns identifier of a bookmark. Can be null if OS denied request.
+把项保存为书签。
+返回书签的标识符；若系统拒绝了请求，可能返回 null。
 
 ### GetBasicPropertiesAsync
 
-Gets the basic properties of the current item.
-Currently available properties:
+获取当前项的基本属性。
+目前可用的属性有：
 - Size
 - DateCreated
 - DateModified
 
 ### GetParentAsync
 
-Gets the parent folder of the current storage item.
+获取当前存储项的父文件夹。
 
 ### DeleteAsync
 
-Deletes the current storage item and its contents
+删除当前存储项及其内容
 
 ### MoveAsync
 
-Moves the current storage item and its contents to an `IStorageFolder`
+把当前存储项及其内容移动到 `IStorageFolder`
 
-## StorageFile members
+## StorageFile 的成员 {#storagefile-members}
 
 ### OpenReadAsync
 
-Opens a stream for read access.
+打开一个流以供读取。
 
 ### OpenWriteAsync
 
-Opens stream for writing to the file.
+打开一个流以写入该文件。
 
-## StorageFolder members
+## StorageFolder 的成员 {#storagefolder-members}
 
 ### GetItemsAsync
 
-Gets the files and subfolders in the current folder.
-When this method completes successfully, it returns a list of the files and folders in the current folder. Each item in the list is represented by an IStorageItem implementation object.
+获取当前文件夹中的文件和子文件夹。
+该方法成功完成后，会返回当前文件夹中文件和文件夹的列表，列表里的每一项都由一个 IStorageItem 实现对象表示。
 
 :::note
-This method is lazily evaluate and is async.
+该方法是惰性求值且异步的。
 :::
 
 ### CreateFileAsync
 
-Creates, or truncates and overwrites, a file with the specified name as a child of the current storage folder.
+在当前存储文件夹下，以指定名称创建一个文件；若文件已存在，则清空并覆盖它。
 
 ### CreateFolderAsync
 
-Creates a folder with the specified name as a child of the current storage folder, unless they already exist.
+在当前存储文件夹下，以指定名称创建一个文件夹（若已存在则不再创建）。
 
 ### TryGetSingleFileAsync
 
-Retrieves a single file by name from the current storage folder. Returns the matching `IStorageFile` if found, or null if no file with the specified name exists. This is an extension method that simplifies the common pattern of getting one specific file from a folder.
+按名称从当前存储文件夹中取出单个文件。找到则返回匹配的 `IStorageFile`，若不存在同名文件则返回 null。这是个扩展方法，把「从文件夹里拿某一个文件」这种常见写法简化了一下。
 
 ```csharp
 IStorageFile? file = await folder.TryGetSingleFileAsync("config.json");
@@ -92,25 +92,25 @@ IStorageFile? file = await folder.TryGetSingleFileAsync("config.json");
 
 ### TryGetSingleFolderAsync
 
-Retrieves a single subfolder by name from the current storage folder. Returns the matching `IStorageFolder` if found, or null if no folder with the specified name exists. This is an extension method that simplifies the common pattern of getting one specific subfolder from a folder.
+按名称从当前存储文件夹中取出单个子文件夹。找到则返回匹配的 `IStorageFolder`，若不存在同名文件夹则返回 null。这是个扩展方法，把「从文件夹里拿某一个子文件夹」这种常见写法简化了一下。
 
 ```csharp
 IStorageFolder? subFolder = await folder.TryGetSingleFolderAsync("images");
 ```
 
-## Extension methods
+## 扩展方法 {#extension-methods}
 
 ### TryGetLocalPath
 
-Gets the local file system path of the item as a string.
-Android platform usually uses "content:" virtual file paths and Browser platform has isolated access without full paths, so on these platforms this method will return null.
+以字符串形式获取该项在本地文件系统中的路径。
+Android 平台通常用 "content:" 虚拟文件路径，浏览器平台则是隔离访问、没有完整路径，因此在这两个平台上该方法会返回 null。
 
 :::note
-If you want to save file path to reuse it later (in combination with TryGetFileFromPathAsync), please consider using [Bookmarks](/docs/services/storage/bookmarks) instead as they are designed to work in sandboxed environment, where user app might not have direct access to the physical file system.
+若你想把文件路径存下来日后复用（配合 TryGetFileFromPathAsync），请考虑改用[书签](/docs/services/storage/bookmarks)：它正是为沙箱环境设计的，而在那种环境里用户应用未必能直接访问物理文件系统。
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Storage Provider](/docs/services/storage/storage-provider): Full storage provider API reference.
-- [Bookmarks](/docs/services/storage/bookmarks): Persisting access to picked files and folders.
-- [File Dialogs](/docs/services/file-dialogs): Using file open, save, and folder picker dialogs.
+- [存储提供程序](/docs/services/storage/storage-provider)：完整的存储提供程序 API 参考。
+- [书签](/docs/services/storage/bookmarks)：持久保存对所选文件和文件夹的访问权限。
+- [文件对话框](/docs/services/file-dialogs)：使用打开、保存和文件夹选取对话框。

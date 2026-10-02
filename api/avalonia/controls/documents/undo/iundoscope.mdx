@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">IUndoScope Interface</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Undo</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -53,36 +53,36 @@ public interface IUndoScope
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> IDisposable
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [SetSelectionAfter](#uid-dd33381416) | No summary available. |
+| [SetSelectionAfter](#uid-dd33381416) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-dd33381416"></span>
 
-### SetSelectionAfter Method
+### SetSelectionAfter 方法 {#setselectionafter-method}
 
 ```csharp
 public void SetSelectionAfter(Nullable<Avalonia.Controls.Documents.Undo.SelectionSnapshot> snapshot)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `snapshot` Nullable&lt;[Avalonia.Controls.Documents.Undo.SelectionSnapshot](xref:Avalonia.Controls.Documents.Undo.SelectionSnapshot)&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Unit](#uid-83c47aca9c) | The unit being built (or replayed) by this scope. For empty scopes (undo disabled or replay in progress) this returns the [Avalonia.Controls.Documents.Undo.EmptyUndoUnit](xref:Avalonia.Controls.Documents.Undo.EmptyUndoUnit) sentinel — never — so consumers can read [Avalonia.Controls.Documents.Undo.IUndoUnit.Description](xref:Avalonia.Controls.Documents.Undo.IUndoUnit.Description) without a null check. The [Avalonia.Controls.Documents.TextModel.DocumentChangedEventArgs.UndoUnit](xref:Avalonia.Controls.Documents.TextModel.DocumentChangedEventArgs.UndoUnit) property, in contrast, is for scopes that did not open a real unit, preserving a distinct semantic. |
 
@@ -90,7 +90,7 @@ public void SetSelectionAfter(Nullable<Avalonia.Controls.Documents.Undo.Selectio
 
 <span id="uid-83c47aca9c"></span>
 
-### Unit Property
+### Unit 属性 {#unit-property}
 
 The unit being built (or replayed) by this scope. For empty scopes
 (undo disabled or replay in progress) this returns the

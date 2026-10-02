@@ -1,15 +1,15 @@
 ---
 id: window-management
-title: Window management
-description: Create, configure, and manage windows and dialogs in Avalonia desktop applications.
+title: 窗口管理
+description: 在 Avalonia 桌面应用中创建、配置和管理窗口与对话框。
 doc-type: overview
 ---
 
-Avalonia provides a flexible windowing system for creating single-window and multi-window desktop applications. This page covers common window management patterns.
+Avalonia 提供了灵活的窗口系统，既能做单窗口应用，也能做多窗口应用。本文介绍常见的窗口管理套路。
 
-## Creating windows
+## 创建窗口 {#creating-windows}
 
-Windows are typically defined in XAML with a code-behind class:
+窗口通常用 XAML 定义，再配一个代码隐藏类：
 
 ```xml title="SecondWindow.axaml"
 <Window xmlns="https://github.com/avaloniaui"
@@ -31,14 +31,14 @@ public partial class SecondWindow : Window
 }
 ```
 
-### Opening a window
+### 打开窗口 {#opening-a-window}
 
 ```csharp
 var window = new SecondWindow();
 window.Show(); // Non-modal: both windows remain interactive
 ```
 
-### Opening a modal dialog
+### 打开模态对话框 {#opening-a-modal-dialog}
 
 ```csharp
 var dialog = new SecondWindow();
@@ -46,47 +46,47 @@ var result = await dialog.ShowDialog<string>(parentWindow);
 // Execution resumes here after the dialog closes
 ```
 
-The parent window is disabled while the dialog is open. Pass the owner window as the parameter to `ShowDialog`.
+对话框打开期间父窗口会被禁用。调用 `ShowDialog` 时，把拥有者窗口作为参数传进去。
 
-### Closing with a result
+### 关闭并返回结果 {#closing-with-a-result}
 
-In the dialog, set the result by calling `Close` with a value:
+在对话框中调用 `Close` 并带上一个值，即可设置返回结果：
 
 ```csharp
 // Inside the dialog
 Close("user clicked OK");
 ```
 
-The value is returned from the `ShowDialog<T>` call in the parent.
+这个值会从父窗口中的 `ShowDialog<T>` 调用处返回。
 
-## Window properties
+## 窗口属性 {#window-properties}
 
-| Property | Description |
+| 属性 | 说明 |
 |---|---|
-| `Title` | The text displayed in the window title bar. |
-| `Width`, `Height` | Initial size. |
-| `MinWidth`, `MinHeight` | Minimum allowed size. |
-| `MaxWidth`, `MaxHeight` | Maximum allowed size. |
-| `WindowStartupLocation` | Where the window appears: `Manual`, `CenterScreen`, `CenterOwner`. |
-| `Position` | The window position in screen coordinates (when `WindowStartupLocation` is `Manual`). |
-| `CanResize` | Whether the user can resize the window. |
-| `CanMinimize` | Whether the minimize button is enabled. Defaults to `true`. |
-| `CanMaximize` | Whether the maximize button is enabled. Defaults to `true`. Automatically `false` when `CanResize` is `false`. |
-| `IsDialog` | Read-only. `true` when the window was opened with `ShowDialog`, `false` when opened with `Show`. |
-| `ShowInTaskbar` | Whether the window appears in the OS taskbar. |
-| `Topmost` | Whether the window stays on top of other windows. |
-| `WindowState` | Current state: `Normal`, `Minimized`, `Maximized`, `FullScreen`. |
-| `WindowDecorations` | Title bar and border style: `Full`, `BorderOnly`, `None`. |
-| `ExtendClientAreaToDecorationsHint` | Extends the client area into the title bar area for custom chrome. Uses `WindowDrawnDecorations` for application-drawn decorations. |
-| `Icon` | The window icon displayed in the title bar and taskbar. |
-| `TransparencyLevelHint` | Enables window transparency: `None`, `Transparent`, `AcrylicBlur`, `Mica`. See [How to work with windows](/docs/how-to/window-how-to) for more information. |
-| `ClosingBehavior` | Controls how child windows behave when the owner closes: `OwnerAndChildWindows` (default, children close first and can cancel) or `OwnerWindowOnly` (only the owner's `Closing` event is checked). |
+| `Title` | 显示在窗口标题栏上的文字。 |
+| `Width`, `Height` | 初始尺寸。 |
+| `MinWidth`, `MinHeight` | 允许的最小尺寸。 |
+| `MaxWidth`, `MaxHeight` | 允许的最大尺寸。 |
+| `WindowStartupLocation` | 窗口出现的位置：`Manual`、`CenterScreen`、`CenterOwner`。 |
+| `Position` | 窗口在屏幕坐标系中的位置（当 `WindowStartupLocation` 为 `Manual` 时生效）。 |
+| `CanResize` | 用户能否调整窗口大小。 |
+| `CanMinimize` | 最小化按钮是否可用，默认为 `true`。 |
+| `CanMaximize` | 最大化按钮是否可用，默认为 `true`。当 `CanResize` 为 `false` 时会自动变成 `false`。 |
+| `IsDialog` | 只读。用 `ShowDialog` 打开窗口时为 `true`，用 `Show` 打开时为 `false`。 |
+| `ShowInTaskbar` | 窗口是否出现在操作系统任务栏中。 |
+| `Topmost` | 窗口是否始终置于其他窗口之上。 |
+| `WindowState` | 当前状态：`Normal`、`Minimized`、`Maximized`、`FullScreen`。 |
+| `WindowDecorations` | 标题栏与边框样式：`Full`、`BorderOnly`、`None`。 |
+| `ExtendClientAreaToDecorationsHint` | 把客户区延伸到标题栏区域，以便自绘窗口外框。配合 `WindowDrawnDecorations` 使用，由应用自行绘制装饰。 |
+| `Icon` | 显示在标题栏和任务栏上的窗口图标。 |
+| `TransparencyLevelHint` | 启用窗口透明效果：`None`、`Transparent`、`AcrylicBlur`、`Mica`。详见[如何使用窗口](/docs/how-to/window-how-to)。 |
+| `ClosingBehavior` | 控制拥有者关闭时子窗口的行为：`OwnerAndChildWindows`（默认，子窗口先关闭且可以取消）或 `OwnerWindowOnly`（只检查拥有者自己的 `Closing` 事件）。 |
 
-## Window sizing
+## 窗口尺寸 {#window-sizing}
 
-### Sizing to content
+### 按内容确定尺寸 {#sizing-to-content}
 
-Set `SizeToContent` to let the window size itself based on its content:
+设置 `SizeToContent` 可让窗口根据内容自行确定大小：
 
 ```xml
 <Window SizeToContent="WidthAndHeight">
@@ -97,14 +97,14 @@ Set `SizeToContent` to let the window size itself based on its content:
 </Window>
 ```
 
-| Value | Behavior |
+| 值 | 行为 |
 |---|---|
-| `Manual` | Window uses `Width` and `Height` explicitly (default). |
-| `Width` | Width sizes to content, height is explicit. |
-| `Height` | Height sizes to content, width is explicit. |
-| `WidthAndHeight` | Both dimensions size to content. |
+| `Manual` | 窗口显式使用 `Width` 和 `Height`（默认）。 |
+| `Width` | 宽度随内容自适应，高度显式指定。 |
+| `Height` | 高度随内容自适应，宽度显式指定。 |
+| `WidthAndHeight` | 宽高都随内容自适应。 |
 
-### Saving and restoring window position
+### 保存并恢复窗口位置 {#saving-and-restoring-window-position}
 
 ```csharp
 protected override void OnOpened(EventArgs e)
@@ -132,9 +132,9 @@ protected override void OnClosing(WindowClosingEventArgs e)
 }
 ```
 
-## Multi-window patterns
+## 多窗口套路 {#multi-window-patterns}
 
-### Tracking open windows
+### 跟踪已打开的窗口 {#tracking-open-windows}
 
 ```csharp
 public static class WindowManager
@@ -157,7 +157,7 @@ public static class WindowManager
 }
 ```
 
-### Finding the parent window from a control
+### 从控件找到所属窗口 {#finding-the-parent-window-from-a-control}
 
 ```csharp
 var topLevel = TopLevel.GetTopLevel(myControl);
@@ -167,15 +167,15 @@ if (topLevel is Window window)
 }
 ```
 
-Or using the extension method:
+或者用扩展方法：
 
 ```csharp
 var window = myControl.FindAncestorOfType<Window>();
 ```
 
-## Preventing window close
+## 阻止窗口关闭 {#preventing-window-close}
 
-Handle the `Closing` event to intercept the close action. Set `e.Cancel = true` to prevent closing:
+处理 `Closing` 事件即可拦截关闭动作，把 `e.Cancel = true` 设为 true 就能阻止关闭：
 
 ```csharp
 protected override void OnClosing(WindowClosingEventArgs e)
@@ -191,9 +191,9 @@ protected override void OnClosing(WindowClosingEventArgs e)
 }
 ```
 
-## Custom title bar
+## 自定义标题栏 {#custom-title-bar}
 
-To create a custom title bar, extend the client area into the decorations and use `WindowDecorationProperties.ElementRole` to mark a region as the title bar:
+要做自定义标题栏，先把客户区延伸进窗口装饰区，再用 `WindowDecorationProperties.ElementRole` 标出哪块区域算标题栏：
 
 ```xml
 <Window ExtendClientAreaToDecorationsHint="True"
@@ -213,31 +213,31 @@ To create a custom title bar, extend the client area into the decorations and us
 </Window>
 ```
 
-Elements marked with `WindowDecorationProperties.ElementRole="TitleBar"` support native window dragging and double-click-to-maximize. Interactive controls placed inside a title bar region (buttons, text boxes) receive input normally without triggering drag behavior.
+标有 `WindowDecorationProperties.ElementRole="TitleBar"` 的元素支持原生的窗口拖动和双击最大化。放在标题栏区域内的交互控件（按钮、文本框）照常接收输入，不会触发拖动。
 
-For more details on the `ElementRole` values, see the [custom title bar how-to](/docs/how-to/window-how-to#custom-title-bar-with-drag-region).
+关于 `ElementRole` 各个取值的详细说明，请参阅[自定义标题栏操作指南](/docs/how-to/window-how-to#custom-title-bar-with-drag-region)。
 
-## Window events
+## 窗口事件 {#window-events}
 
-| Event | When it fires |
+| 事件 | 触发时机 |
 |---|---|
-| `Opened` | The window has been shown for the first time. |
-| `Closing` | The window is about to close. Can be cancelled. |
-| `Closed` | The window has closed. |
-| `Activated` | The window received focus. |
-| `Deactivated` | The window lost focus. |
-| `PositionChanged` | The window was moved. |
-| `Resized` | The window was resized. |
+| `Opened` | 窗口首次显示出来。 |
+| `Closing` | 窗口即将关闭，可以取消。 |
+| `Closed` | 窗口已关闭。 |
+| `Activated` | 窗口获得焦点。 |
+| `Deactivated` | 窗口失去焦点。 |
+| `PositionChanged` | 窗口被移动。 |
+| `Resized` | 窗口尺寸发生变化。 |
 
-## Working with screens
+## 与屏幕打交道 {#working-with-screens}
 
-The `Screens` API provides information about connected monitors. Access it from any `TopLevel`:
+`Screens` API 提供已连接显示器的信息，可从任意 `TopLevel` 访问：
 
 ```csharp
 var screens = TopLevel.GetTopLevel(this)?.Screens;
 ```
 
-### Querying screens
+### 查询屏幕 {#querying-screens}
 
 ```csharp
 // All connected screens
@@ -253,22 +253,22 @@ var currentScreen = screens.ScreenFromWindow(this);
 var screenAtPoint = screens.ScreenFromPoint(new PixelPoint(500, 300));
 ```
 
-### Screen properties
+### 屏幕属性 {#screen-properties}
 
-Each `Screen` object exposes:
+每个 `Screen` 对象都暴露以下信息：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `Bounds` | `PixelRect` | Full screen bounds in pixels. |
-| `WorkingArea` | `PixelRect` | Usable area excluding taskbars and docks. |
-| `Scaling` | `double` | DPI scaling factor (e.g., 1.0 for 96 DPI, 1.5 for 144 DPI). |
-| `IsPrimary` | `bool` | Whether this is the primary display. |
-| `DisplayName` | `string?` | The OS-reported display name. |
-| `CurrentOrientation` | `ScreenOrientation` | The screen orientation (Landscape, Portrait, and similar). |
+| `Bounds` | `PixelRect` | 整块屏幕的边界，单位为像素。 |
+| `WorkingArea` | `PixelRect` | 可用区域，不含任务栏和程序坞。 |
+| `Scaling` | `double` | DPI 缩放系数（比如 96 DPI 为 1.0，144 DPI 为 1.5）。 |
+| `IsPrimary` | `bool` | 是否为主显示器。 |
+| `DisplayName` | `string?` | 操作系统报告的显示器名称。 |
+| `CurrentOrientation` | `ScreenOrientation` | 屏幕方向（横向、纵向等）。 |
 
-### Responding to screen changes
+### 响应屏幕变化 {#responding-to-screen-changes}
 
-Subscribe to the `Changed` event to detect when monitors are added, removed, or reconfigured:
+订阅 `Changed` 事件，即可感知显示器的接入、移除或重新配置：
 
 ```csharp
 screens.Changed += (sender, args) =>
@@ -278,17 +278,17 @@ screens.Changed += (sender, args) =>
 };
 ```
 
-## Platform differences
+## 平台差异 {#platform-differences}
 
-| Feature | Windows | macOS | Linux |
+| 特性 | Windows | macOS | Linux |
 |---|---|---|---|
 | `Topmost` | Supported | Supported | Supported |
-| `TransparencyLevelHint` | All levels | `Transparent` only | Depends on compositor |
+| `TransparencyLevelHint` | 所有层级 | `Transparent` only | 取决于合成器 |
 | `WindowDecorations.None` | Supported | Supported | Supported |
-| `ExtendClientAreaToDecorationsHint` | Supported | Supported | Limited support |
-| Modal dialogs | Blocks parent window | Sheet-style on macOS | Blocks parent window |
+| `ExtendClientAreaToDecorationsHint` | Supported | Supported | 支持有限 |
+| 模态对话框 | 阻塞父窗口 | macOS 上呈现为 sheet 样式 | 阻塞父窗口 |
 
-## See also
+## 另请参阅 {#see-also}
 
-- [Main Window](/docs/fundamentals/main-window): The primary application window.
-- [Application Lifetimes](/docs/fundamentals/application-lifetimes): How the application lifecycle manages windows.
+- [主窗口](/docs/fundamentals/main-window)：应用的主要窗口。
+- [应用生命周期](/docs/fundamentals/application-lifetimes)：应用生命周期如何管理窗口。

@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">DeferredImageSource Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
@@ -53,27 +53,27 @@ public class DeferredImageSource
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="richimagesource">RichImageSource</a> <span className="apiref-page__relation-separator">-&gt;</span> DeferredImageSource
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="richimagesource">RichImageSource</a> <span className="apiref-page__relation-separator">-&gt;</span> DeferredImageSource
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DeferredImageSource](#uid-2597cbf7ac) | No summary available. |
+| [DeferredImageSource](#uid-2597cbf7ac) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2597cbf7ac"></span>
 
-### DeferredImageSource Constructor
+### DeferredImageSource 构造函数 {#deferredimagesource-constructor}
 
 ```csharp
 public DeferredImageSource(Func<System.Threading.Tasks.Task<Avalonia.Media.IImage>> resolver, string sourceUri, string mimeType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `resolver` Func&lt;System.Threading.Tasks.Task&lt;[Avalonia.Media.IImage](xref:Avalonia.Media.IImage)&gt;&gt;
 
@@ -86,52 +86,52 @@ public DeferredImageSource(Func<System.Threading.Tasks.Task<Avalonia.Media.IImag
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ResolveAsync](#uid-9d129a041c) | Resolves the decoded image. Embedded sources complete synchronously; deferred sources fetch/decode in the background. Returns when the image cannot be produced. Callers must not dispose the returned image — its lifetime is owned by the source (or its loader); a source that owns a decoded bitmap implements [IDisposable](xref:System.IDisposable). |
-| [TryGetIntrinsicPixelSize](richimagesource.mdx#uid-43234fb232) | Inherited from [RichImageSource](richimagesource.mdx). |
-| [TryGetPixels](richimagesource.mdx#uid-a7a2ec7a6f) | Inherited from [RichImageSource](richimagesource.mdx). |
+| [ResolveAsync](#uid-9d129a041c) | 解析出已解码的图像。内嵌源会同步完成；延迟源则在后台抓取并解码。无法产出图像时返回 null。调用方不得释放返回的图像——它的生命周期归源（或其加载器）所有；持有已解码位图的源会实现 [IDisposable](xref:System.IDisposable)。 |
+| [TryGetIntrinsicPixelSize](richimagesource.mdx#uid-43234fb232) | 继承自 [RichImageSource](richimagesource.mdx)。 |
+| [TryGetPixels](richimagesource.mdx#uid-a7a2ec7a6f) | 继承自 [RichImageSource](richimagesource.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9d129a041c"></span>
 
-### ResolveAsync Method
+### ResolveAsync 方法 {#resolveasync-method}
 
-Resolves the decoded image. Embedded sources complete synchronously;
-deferred sources fetch/decode in the background. Returns
-when the image cannot be produced. Callers must not
-dispose the returned image — its lifetime is owned by the source (or its
-loader); a source that owns a decoded bitmap implements [IDisposable](xref:System.IDisposable).
+解析出已解码的图像。内嵌源会同步完成；
+延迟源则在后台抓取并解码。无法产出图像时
+返回 null。调用方不得释放返回的图像——
+它的生命周期归源（或其加载器）所有；持有已解码位图的源
+会实现 [IDisposable](xref:System.IDisposable)。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Media.IImage> ResolveAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task&lt;[Avalonia.Media.IImage](xref:Avalonia.Media.IImage)&gt;
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [EncodedBytes](richimagesource.mdx#uid-8ee090e2e9) | The encoded image bytes when the payload is embedded in the document, or an empty buffer for reference (URI) sources. Serializers that embed pixel data read this. Inherited from [RichImageSource](richimagesource.mdx). |
-| [MimeType](#uid-d9f6b3c2ae) | The MIME type of [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes), when known. |
+| [MimeType](#uid-d9f6b3c2ae) | 已知时，给出 [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes) 的 MIME 类型。 |
 | [SourceUri](#uid-6968cb35eb) | The reference URI for a deferred/linked source (e.g. an image URL), or for an embedded source. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-d9f6b3c2ae"></span>
 
-### MimeType Property
+### MimeType 属性 {#mimetype-property}
 
-The MIME type of [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes), when known.
+已知时，给出 [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes) 的 MIME 类型。
 
 ```csharp
 public string MimeType { get; set; }
@@ -143,7 +143,7 @@ public string MimeType { get; set; }
 
 <span id="uid-6968cb35eb"></span>
 
-### SourceUri Property
+### SourceUri 属性 {#sourceuri-property}
 
 The reference URI for a deferred/linked source (e.g. an image URL), or
 for an embedded source.

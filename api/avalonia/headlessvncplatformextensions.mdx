@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">HeadlessVncPlatformExtensions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Headless.Vnc</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Headless.Vnc</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Headless.Vnc</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Headless.Vnc</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Headless/Avalonia.Headless.Vnc/HeadlessVncPlatformExtensions.cs">HeadlessVncPlatformExtensions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Headless/Avalonia.Headless.Vnc/HeadlessVncPlatformExtensions.cs">HeadlessVncPlatformExtensions.cs</a>
 </div>
 
 </div>
@@ -48,13 +48,13 @@ public class HeadlessVncPlatformExtensions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> HeadlessVncPlatformExtensions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> HeadlessVncPlatformExtensions
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [StartWithHeadlessVncPlatform (2 overloads)](#uid-406e7f5e5b) | Start Avalonia application with Headless VNC platform with password. |
 
@@ -66,7 +66,7 @@ public class HeadlessVncPlatformExtensions
 
 <span id="uid-3969e7cb8f"></span>
 
-#### StartWithHeadlessVncPlatform Method
+#### StartWithHeadlessVncPlatform 方法 {#startwithheadlessvncplatform-method}
 
 Start Avalonia application with Headless VNC platform with password.
 
@@ -74,7 +74,7 @@ Start Avalonia application with Headless VNC platform with password.
 public int StartWithHeadlessVncPlatform(Avalonia.AppBuilder builder, string host, int port, string password, string[] args, Avalonia.Controls.ShutdownMode shutdownMode)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -88,7 +88,7 @@ VNC Server IP will be bind, if null or empty IPAddress.LoopBack will be used.
 
 `port` int
 
-VNC Server port will be bind
+VNC 服务器将绑定的端口
 
 
 `password` string
@@ -98,20 +98,20 @@ VNC connection auth password
 
 `args` string[]
 
-Avalonia application start args
+Avalonia 应用的启动参数
 
 
 `shutdownMode` [Avalonia.Controls.ShutdownMode](xref:Avalonia.Controls.ShutdownMode)
 
-shut down mode [Avalonia.Controls.ShutdownMode](xref:Avalonia.Controls.ShutdownMode)
+关闭模式 [Avalonia.Controls.ShutdownMode](xref:Avalonia.Controls.ShutdownMode)
 
 
-##### Returns
+##### 返回值 {#returns}
 
 int
 
 
-##### Exceptions
+##### 异常 {#exceptions}
 
 - [InvalidOperationException](xref:System.InvalidOperationException)
 
@@ -121,7 +121,7 @@ int
 
 <span id="uid-d1d8da1ef5"></span>
 
-#### StartWithHeadlessVncPlatform Method
+#### StartWithHeadlessVncPlatform 方法 {#startwithheadlessvncplatform-method-1}
 
 Start Avalonia application with Headless VNC platform without password.
 
@@ -129,7 +129,7 @@ Start Avalonia application with Headless VNC platform without password.
 public int StartWithHeadlessVncPlatform(Avalonia.AppBuilder builder, string host, int port, string[] args, Avalonia.Controls.ShutdownMode shutdownMode)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `builder` [Avalonia.AppBuilder](xref:Avalonia.AppBuilder)
 
@@ -143,20 +143,20 @@ VNC Server IP will be bind, if null or empty IPAddress.LoopBack will be used.
 
 `port` int
 
-VNC Server port will be bind
+VNC 服务器将绑定的端口
 
 
 `args` string[]
 
-Avalonia application start args
+Avalonia 应用的启动参数
 
 
 `shutdownMode` [Avalonia.Controls.ShutdownMode](xref:Avalonia.Controls.ShutdownMode)
 
-shut down mode [Avalonia.Controls.ShutdownMode](xref:Avalonia.Controls.ShutdownMode)
+关闭模式 [Avalonia.Controls.ShutdownMode](xref:Avalonia.Controls.ShutdownMode)
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 int
 

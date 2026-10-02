@@ -1,38 +1,38 @@
 ---
 id: calendardatepicker
 title: CalendarDatePicker
-description: A dropdown calendar control with a text box that lets users select or type a date.
+description: 一个带文本框的下拉日历控件，用户既可以从日历中选日期，也可以直接键入。
 doc-type: reference
 ---
 
 import CalendarDatePickerScreenshot from '/img/gitbook-import/assets/calendardatepicker.gif';
 
-The `CalendarDatePicker` combines a text box and a dropdown button that reveals a full calendar. When you click the button, the calendar opens so you can pick a date visually. Clicking the button again (or selecting a date) closes the calendar and populates the text box with your selection.
+`CalendarDatePicker` 把一个文本框和一个下拉按钮组合在一起，点下拉按钮即可展开完整日历，直观地挑选日期。再点一次按钮（或选定某个日期）日历便收起，所选日期随即填进文本框。
 
-You can also type a date directly into the text box. The control accepts multiple date formats and normalizes them to the format shown as placeholder text when no date is selected.
+你也可以直接在文本框里键入日期。该控件接受多种日期格式，并会把它们统一成未选日期时占位文字所示的那种格式。
 
 :::info
-For details on the calendar portion of this control, see the [Calendar](/controls/input/date-and-time/calendar) reference.
+关于该控件中日历部分的细节，请参阅 [Calendar](/controls/input/date-and-time/calendar) 参考。
 :::
 
-## Common properties
+## 常用属性 {#common-properties}
 
-You will probably use these properties most often:
+下面这些属性你多半会经常用到：
 
-| Property | Type | Description |
+| 属性 | 类型 | 说明 |
 |---|---|---|
-| `SelectedDate` | `DateTime?` | The currently selected date, or `null` if no date is selected. |
-| `DisplayDate` | `DateTime` | The month to display when the calendar opens. |
-| `DisplayDateStart` | `DateTime?` | The earliest date that can be selected. |
-| `DisplayDateEnd` | `DateTime?` | The latest date that can be selected. |
-| `PlaceholderText` | `string` | Placeholder text shown when no date is selected. |
-| `PlaceholderForeground` | `IBrush` | The brush used to render the placeholder text. |
-| `IsTodayHighlighted` | `bool` | Whether today's date is visually highlighted. Default is `true`. |
-| `SelectedDateFormat` | `CalendarDatePickerFormat` | Display format: `Short` or `Long`. |
-| `CustomDateFormatString` | `string` | Custom date format string when using a custom format. |
-| `IsDropDownOpen` | `bool` | Whether the calendar dropdown is currently open. |
+| `SelectedDate` | `DateTime?` | 当前选中的日期；未选中任何日期时为 `null`。 |
+| `DisplayDate` | `DateTime` | 日历展开时显示的月份。 |
+| `DisplayDateStart` | `DateTime?` | 可选的最早日期。 |
+| `DisplayDateEnd` | `DateTime?` | 可选的最晚日期。 |
+| `PlaceholderText` | `string` | 未选中日期时显示的占位文字。 |
+| `PlaceholderForeground` | `IBrush` | 渲染占位文字所用的画刷。 |
+| `IsTodayHighlighted` | `bool` | 是否在视觉上高亮今天的日期，默认值为 `true`。 |
+| `SelectedDateFormat` | `CalendarDatePickerFormat` | 显示格式：`Short` 或 `Long`。 |
+| `CustomDateFormatString` | `string` | 使用自定义格式时所用的日期格式字符串。 |
+| `IsDropDownOpen` | `bool` | 日历下拉当前是否处于展开状态。 |
 
-## Binding to a view model
+## 绑定到视图模型 {#binding-to-a-view-model}
 
 ```xml title="XAML"
 <CalendarDatePicker SelectedDate="{Binding BirthDate}"
@@ -47,9 +47,9 @@ private DateTimeOffset? _birthDate;
 public DateTimeOffset Today { get; } = DateTimeOffset.Now;
 ```
 
-## Date range restriction
+## 限定日期范围 {#date-range-restriction}
 
-You can limit the selectable date range with `DisplayDateStart` and `DisplayDateEnd`:
+用 `DisplayDateStart` 和 `DisplayDateEnd` 可以限定可选的日期范围：
 
 ```xml title="XAML"
 <CalendarDatePicker SelectedDate="{Binding CheckInDate}"
@@ -58,16 +58,16 @@ You can limit the selectable date range with `DisplayDateStart` and `DisplayDate
                     PlaceholderText="Check-in date" />
 ```
 
-## Practical notes
+## 实用提示 {#practical-notes}
 
-- **Typed input**: When a user types a date that falls outside the `DisplayDateStart`/`DisplayDateEnd` range, the control rejects the value and clears the text box.
-- **Null handling**: Bind `SelectedDate` to a nullable `DateTimeOffset?` property so the control can represent "no selection."
-- **Format customization**: Set `SelectedDateFormat` to `CalendarDatePickerFormat.Custom` and provide a `CustomDateFormatString` (for example, `"yyyy-MM-dd"`) to control how the selected date appears in the text box.
-- **Keyboard support**: Users can open the dropdown with `Alt+Down` and close it with `Escape`.
+- **键入输入**：当用户键入的日期落在 `DisplayDateStart`/`DisplayDateEnd` 范围之外时，控件会拒绝该值并清空文本框。
+- **空值处理**：请把 `SelectedDate` 绑定到可空的 `DateTimeOffset?` 属性，这样控件才能表示「未选择」。
+- **格式定制**：把 `SelectedDateFormat` 设为 `CalendarDatePickerFormat.Custom` 并给出 `CustomDateFormatString`（例如 `"yyyy-MM-dd"`），即可控制所选日期在文本框中的呈现方式。
+- **键盘支持**：用户可以用 `Alt+Down` 展开下拉，用 `Escape` 收起。
 
 ## Example
 
-This example shows a basic single-date-selection calendar when you click the button:
+下面的例子展示点击按钮后弹出的基础单日期选择日历：
 
 <XamlPreview>
 
@@ -82,10 +82,10 @@ This example shows a basic single-date-selection calendar when you click the but
 
 </XamlPreview>
 
-## See also
+## 另请参阅 {#see-also}
 
 - [Calendar](/controls/input/date-and-time/calendar)
 - [DatePicker](/controls/input/date-and-time/datepicker)
 - [TimePicker](/controls/input/date-and-time/timepicker)
-- [CalendarDatePicker API reference](/api/avalonia/controls/calendardatepicker)
-- [`CalendarDatePicker.cs` source code on GitHub](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CalendarDatePicker/CalendarDatePicker.cs)
+- [CalendarDatePicker API 参考](/api/avalonia/controls/calendardatepicker)
+- [GitHub 上的 `CalendarDatePicker.cs` 源码](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/CalendarDatePicker/CalendarDatePicker.cs)

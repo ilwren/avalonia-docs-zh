@@ -1,53 +1,53 @@
 ---
 id: controls
-title: Controls
-description: Control hierarchy, naming, and behavioral differences between WPF and Avalonia controls.
+title: 控件
+description: WPF 与 Avalonia 在控件层次结构、命名和行为上的差异。
 doc-type: migration
 ---
 
 import RenderTransformOriginWpfScreenshot from '/img/guides/migration/wpf/rendertransformorigin-wpf.png';
 import RenderTransformOriginAvaloniaScreenshot from '/img/guides/migration/wpf/rendertransformorigin-avalonia.png';
 
-This page covers the key control differences you will encounter when migrating from WPF to Avalonia, including base class changes, renamed controls, and behavioral differences.
+本页介绍从 WPF 迁到 Avalonia 时会碰上的主要控件差异，包括基类变化、改了名的控件，以及行为上的不同。
 
-## UIElement and FrameworkElement
+## UIElement 与 FrameworkElement {#uielement-and-frameworkelement}
 
-WPF's `UIElement` and `FrameworkElement` are non-templated control base classes, which roughly equate to the Avalonia `Control` class. WPF's `Control` class on the other hand is a templated control - Avalonia's equivalent of this is `TemplatedControl`.
+WPF 的 `UIElement` 和 `FrameworkElement` 是非模板化的控件基类，大体相当于 Avalonia 的 `Control` 类。而 WPF 的 `Control` 类则是模板化控件，Avalonia 中与之对应的是 `TemplatedControl`。
 
-- In WPF/UWP you would inherit from the `Control` class to create a new templated control, but in Avalonia you should inherit from `TemplatedControl.`
-- In WPF/UWP you would inherit from the `FrameworkElement` class to create a new custom-drawn control, but in Avalonia you should inherit from `Control.`
+- 在 WPF/UWP 中，你会继承 `Control` 类来做新的模板化控件；在 Avalonia 中，则应当继承 `TemplatedControl.`
+- 在 WPF/UWP 中，你会继承 `FrameworkElement` 类来做新的自绘控件；在 Avalonia 中，则应当继承 `Control.`
 
-So to recap:
+小结一下：
 
 * `UIElement` 🠞 `Control`
 * `FrameworkElement`🠞 `Control`
 * `Control` 🠞 `TemplatedControl`
 
-## RenderTransforms and RenderTransformOrigin
+## RenderTransform 与 RenderTransformOrigin {#rendertransforms-and-rendertransformorigin}
 
-RenderTransformOrigins are different in WPF and Avalonia: If you apply a `RenderTransform`, keep in mind that default value for the RenderTransformOrigin in Avalonia is `RelativePoint.Center`. In WPF the default value is `RelativePoint.TopLeft` \(0, 0\). In controls like Viewbox the same code will lead to a different rendering behavior:
+WPF 和 Avalonia 的 RenderTransformOrigin 并不相同：若你要施加 `RenderTransform`，请记住 Avalonia 中 RenderTransformOrigin 的默认值是 `RelativePoint.Center`，而 WPF 的默认值是 `RelativePoint.TopLeft` \(0, 0\)。在 Viewbox 这类控件上，同样的代码会渲染出不同的结果：
 
-**In WPF:**
+**在 WPF 中：**
 <Image light={RenderTransformOriginWpfScreenshot} alt="WPF" position="center" maxWidth={400} cornerRadius="true"/>
 
-**In Avalonia:**
+**在 Avalonia 中：**
 <Image light={RenderTransformOriginAvaloniaScreenshot} alt="Avalonia" position="center" maxWidth={400} cornerRadius="true"/>
 
-In AvaloniaUI, to get the same scale transform we should indicate that the RenderTransformOrigin is the TopLeft part of the Visual.
+在 AvaloniaUI 中，若想得到同样的缩放效果，就得把 RenderTransformOrigin 指明为该视觉元素的左上角。
 
 ## Grid
 
-Column and row definitions can be specified in Avalonia using strings, avoiding the clunky syntax in WPF:
+在 Avalonia 中，行列定义可以用字符串写出来，省去了 WPF 那套笨重的语法：
 
 ```xml
 <Grid ColumnDefinitions="Auto,*,32" RowDefinitions="*,Auto">
 ```
 
-A common use of `Grid` in WPF is to stack two controls on top of each other. For this purpose in Avalonia you can use a `Panel` which is more lightweight than `Grid`.
+在 WPF 中，`Grid` 常被用来把两个控件叠在一起。在 Avalonia 里，这种场合可以改用 `Panel`，它比 `Grid` 轻量。
 
 ## ToolTip
 
-WPF uses `ToolTip` as a property or child element. Avalonia uses the `ToolTip.Tip` attached property:
+WPF 用的是 `ToolTip` 属性或子元素，Avalonia 用的则是 `ToolTip.Tip` 附加属性：
 
 ```xml title="WPF"
 <Button ToolTip="Save the document" Content="Save" />
@@ -57,9 +57,9 @@ WPF uses `ToolTip` as a property or child element. Avalonia uses the `ToolTip.Ti
 <Button ToolTip.Tip="Save the document" Content="Save" />
 ```
 
-## ItemsControl and ItemsSource
+## ItemsControl 与 ItemsSource {#itemscontrol-and-itemssource}
 
-WPF's `ItemsControl.Items` can be set directly. In Avalonia, use `ItemsSource` for data binding or add children directly in XAML:
+WPF 的 `ItemsControl.Items` 可以直接赋值。在 Avalonia 中，数据绑定请用 `ItemsSource`，或者直接在 XAML 里添加子元素：
 
 ```xml title="Avalonia"
 <ListBox ItemsSource="{Binding MyItems}">
@@ -71,17 +71,17 @@ WPF's `ItemsControl.Items` can be set directly. In Avalonia, use `ItemsSource` f
 </ListBox>
 ```
 
-Note: In Avalonia, `ItemsSource` replaces `ItemsSource` (same name) but `Items` is read-only. You cannot assign a new collection to `Items`.
+注意：在 Avalonia 中，`ItemsSource` 取代了 `ItemsSource`（名字相同），但 `Items` 是只读的——你不能给 `Items` 赋一个新集合。
 
 ## DataGrid
 
-DataGrid is a separate NuGet package in Avalonia:
+在 Avalonia 中，DataGrid 是单独的 NuGet 包：
 
 ```xml
 <PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
 ```
 
-You must also include the DataGrid theme in `App.axaml`:
+你还必须在 `App.axaml` 中引入 DataGrid 主题：
 
 ```xml
 <Application.Styles>
@@ -92,7 +92,7 @@ You must also include the DataGrid theme in `App.axaml`:
 
 ## StatusBar
 
-Avalonia does not have a `StatusBar` control. Use a styled `DockPanel` or `StackPanel` at the bottom of your window:
+Avalonia 没有 `StatusBar` 控件。你可以在窗口底部放一个带样式的 `DockPanel` 或 `StackPanel`：
 
 ```xml
 <DockPanel>
@@ -105,9 +105,9 @@ Avalonia does not have a `StatusBar` control. Use a styled `DockPanel` or `Stack
 
 ## RichTextBox
 
-Avalonia does not include a built-in `RichTextBox`. For rich text editing, use a third-party control such as AvalonEdit.
+Avalonia 不内置 `RichTextBox`。若需要富文本编辑，请使用 AvalonEdit 之类的第三方控件。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [WPF to Avalonia Cheat Sheet](/docs/migration/wpf/cheat-sheet): Quick reference for all control mappings.
-- [Controls Reference](/controls): Full Avalonia controls documentation.
+- [WPF 到 Avalonia 速查表](/docs/migration/wpf/cheat-sheet)：全部控件映射的快速参考。
+- [控件参考](/controls)：Avalonia 控件的完整文档。

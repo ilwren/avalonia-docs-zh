@@ -1,7 +1,7 @@
 ---
 id: sparkline-chart
-title: Sparkline charts
-description: Small, minimalist charts without axes designed to show data trends in a compact space, suitable for embedding in tables, dashboards, or inline text.
+title: 迷你走势图
+description: 不带坐标轴的小巧图表，用来在极小的空间里呈现数据走势，适合嵌进表格、仪表板或正文中。
 doc-type: reference
 tags:
   - avalonia pro
@@ -10,20 +10,20 @@ tags:
 import chartsAnalyticsSparkline from '/img/controls/charts/charts-analytics-sparkline.png';
 
 :::info
-[Charts](/controls/data-display/charts) are available with [Avalonia Pro](https://avaloniaui.net/pricing).
+[图表](/controls/data-display/charts)需要 [Avalonia Pro](https://avaloniaui.net/pricing)。
 :::
 
-Sparklines are compact charts without axes or coordinates, designed to show trends in a series of values in a small space such as a card, table cell, or dashboard tile.
+迷你走势图（Sparkline）是一种不带坐标轴和刻度的紧凑图表，用于在卡片、表格单元格、仪表板磁贴这类狭小空间里呈现一组数值的走势。
 
 <Image light={chartsAnalyticsSparkline} maxWidth={400} position="center" cornerRadius="true" alt="Sparkline chart examples showing line, area, bar, and win/loss trends." />
 
-## When to use
+## 适用场景 {#when-to-use}
 
-- **In-line trends**: Showing data trends inside data grids or text paragraphs.
-- **Dashboard summaries**: Providing high-density visual context for many metrics on one screen.
-- **Compact visualizations**: When the general shape of a trend is more important than specific values.
+- **行内走势**：在数据网格或正文段落中呈现数据走势。
+- **仪表板摘要**：在一屏之内为众多指标提供高密度的视觉参照。
+- **紧凑呈现**：趋势的大致形态比具体数值更重要时。
 
-## Code example
+## 代码示例 {#code-example}
 
 ### XAML
 
@@ -40,7 +40,7 @@ Sparklines are compact charts without axes or coordinates, designed to show tren
 </Grid>
 ```
 
-### Data model (C#)
+### 数据模型（C#） {#data-model-c}
 
 ```csharp
 public ObservableCollection<double> SparklineData { get; } = new()
@@ -54,33 +54,33 @@ public ObservableCollection<double> SparklineWinLossData { get; } = new()
 };
 ```
 
-## Common properties
+## 常用属性 {#common-properties}
 
-| Property | Description | Default |
+| 属性 | 说明 | 默认值 |
 | :--- | :--- | :--- |
-| `ItemsSource` | The collection of trend data. | `null` |
-| `ValuePath` | Property path used when `ItemsSource` contains objects instead of raw numbers. | `null` |
-| `SparklineType` | Style of the sparkline: `Line`, `Area`, `Bar`, or `WinLoss`. | `Line` |
-| `LineBrush` | Brush used for `Line` and `Area` sparklines. | `null` (blue, see Note below) |
-| `AreaFill` | Brush used to fill the area for `Area` sparklines. | `null` (transparent blue, see Note below) |
-| `BarBrush` | Brush used for bars for `Bar` sparklines. | `null` (blue, see Note below) |
-| `WinBrush` | Brush used for positive values in `WinLoss` sparklines. | `null` (green, see Note below) |
-| `LossBrush` | Brush used for negative values in `WinLoss` sparklines. | `null` (red, see Note below) |
-| `ShowMarkers` | Toggles rendering of individual data point markers. | `false` |
-| `ShowMinMax` | Highlights the minimum and maximum values. | `true` |
-| `StrokeThickness` | Width of the line stroke for `Line` and `Area` sparklines. | `2.0` |
+| `ItemsSource` | 走势数据的集合。 | `null` |
+| `ValuePath` | 当 `ItemsSource` 中装的是对象而非原始数字时所使用的属性路径。 | `null` |
+| `SparklineType` | 迷你走势图的样式：`Line`、`Area`、`Bar` 或 `WinLoss`。 | `Line` |
+| `LineBrush` | `Line` 和 `Area` 两种迷你走势图所用的画刷。 | `null`（蓝色，见下方说明） |
+| `AreaFill` | 填充 `Area` 迷你走势图区域所用的画刷。 | `null`（半透明蓝色，见下方说明） |
+| `BarBrush` | `Bar` 迷你走势图中条形所用的画刷。 | `null`（蓝色，见下方说明） |
+| `WinBrush` | `WinLoss` 迷你走势图中正值所用的画刷。 | `null`（绿色，见下方说明） |
+| `LossBrush` | `WinLoss` 迷你走势图中负值所用的画刷。 | `null`（红色，见下方说明） |
+| `ShowMarkers` | 开关各个数据点标记的绘制。 | `false` |
+| `ShowMinMax` | 高亮最小值和最大值。 | `true` |
+| `StrokeThickness` | `Line` 和 `Area` 两种迷你走势图的线条粗细。 | `2.0` |
 
 :::note
-The `Brush`-type properties default to these colors when set to `null`:
+`Brush` 类型的属性设为 `null` 时，分别取下列默认颜色：
 
 - `LineBrush`: Blue
-- `AreaFill`: Blue, at reduced opacity
-- `BarBrush`: Same as `LineBrush`, i.e. blue if both are `null`
+- `AreaFill`：蓝色，不透明度较低
+- `BarBrush`：与 `LineBrush` 相同；若两者都为 `null`，则为蓝色
 - `WinBrush`: Green
 - `LossBrush`: Red
 :::
 
-## See also
+## 另请参阅 {#see-also}
 
-- [KPI cards](/controls/data-display/charts/analytics/kpi-card)
-- [Line chart](/controls/data-display/charts/cartesian/line-chart)
+- [KPI 卡片](/controls/data-display/charts/analytics/kpi-card)
+- [折线图](/controls/data-display/charts/cartesian/line-chart)

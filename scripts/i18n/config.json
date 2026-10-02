@@ -1,0 +1,5 @@
+{
+  "base_ref": "5c7bc48e5f611ff9326f7e84ce3a0209374d2ed5",
+  "locale": "zh-Hans",
+  "note": "base_ref 指向英文原文基线提交；译文始终由该提交渲染生成，可重复执行。"
+}

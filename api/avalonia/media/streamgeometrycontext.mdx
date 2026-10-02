@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">StreamGeometryContext Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Media</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Media</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/StreamGeometryContext.cs">StreamGeometryContext.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Media/StreamGeometryContext.cs">StreamGeometryContext.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Describes a geometry using drawing commands.
+用绘图命令描述一个几何图形。
 
 </div>
 
@@ -54,38 +54,38 @@ public class StreamGeometryContext
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> StreamGeometryContext
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> StreamGeometryContext
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> <a href="../platform/igeometrycontext">IGeometryContext</a>, IDisposable
+<span className="apiref-page__meta-label">实现接口：</span> <a href="../platform/igeometrycontext">IGeometryContext</a>, IDisposable
 </div>
 </div>
 
-## Remarks
+## 备注 {#remarks}
 
 This class is used to define the geometry of a [Avalonia.Media.StreamGeometry](xref:Avalonia.Media.StreamGeometry). An instance
 of [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) is obtained by calling
 [Avalonia.Media.StreamGeometry.Open](xref:Avalonia.Media.StreamGeometry.Open).
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [StreamGeometryContext](#uid-3dc3f4d06a) | Initializes a new instance of the [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) class. |
+| [StreamGeometryContext](#uid-3dc3f4d06a) | 初始化 [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3dc3f4d06a"></span>
 
-### StreamGeometryContext Constructor
+### StreamGeometryContext 构造函数 {#streamgeometrycontext-constructor}
 
-Initializes a new instance of the [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) class.
+初始化 [Avalonia.Media.StreamGeometryContext](xref:Avalonia.Media.StreamGeometryContext) 类的新实例。
 
 ```csharp
 public StreamGeometryContext(Avalonia.Platform.IStreamGeometryContextImpl impl)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `impl` [Avalonia.Platform.IStreamGeometryContextImpl](xref:Avalonia.Platform.IStreamGeometryContextImpl)
 
@@ -94,64 +94,64 @@ The platform-specific implementation.
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ArcTo](#uid-be50654767) | Draws an arc to the specified point. |
-| [BeginFigure](#uid-11ae2a0392) | Begins a new figure. |
-| [CubicBezierTo](#uid-4f50e8a6a8) | Draws a Bezier curve to the specified point. |
-| [Dispose](#uid-944781a4ee) | Finishes the drawing session. |
-| [EndFigure](#uid-f3cfbc992f) | Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29). |
-| [LineTo](#uid-10f817d4ee) | Draws a line to the specified point. |
+| [ArcTo](#uid-be50654767) | 画一段圆弧到指定点。 |
+| [BeginFigure](#uid-11ae2a0392) | 开始一段新图形。 |
+| [CubicBezierTo](#uid-4f50e8a6a8) | 画一条贝塞尔曲线到指定点。 |
+| [Dispose](#uid-944781a4ee) | 结束本次绘制会话。 |
+| [EndFigure](#uid-f3cfbc992f) | 结束由 [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29) 开始的那段图形。 |
+| [LineTo](#uid-10f817d4ee) | 画一条直线到指定点。 |
 | [PreciseArcTo](#uid-06926b62a0) | Draws an arc to the specified point using polylines, quadratic or cubic Bezier curves Significantly more precise when drawing elliptic arcs with extreme width:height ratios. |
-| [QuadraticBezierTo](#uid-d6614fafeb) | Draws a quadratic Bezier curve to the specified point. |
+| [QuadraticBezierTo](#uid-d6614fafeb) | 画一条二次贝塞尔曲线到指定点。 |
 | [SetFillRule](#uid-57a8199e4d) | Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure. If you wonder why, ask Direct2D guys about their design decisions. |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-be50654767"></span>
 
-### ArcTo Method
+### ArcTo 方法 {#arcto-method}
 
-Draws an arc to the specified point.
+画一段圆弧到指定点。
 
 ```csharp
 public void ArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle, bool isLargeArc, Avalonia.Media.SweepDirection sweepDirection, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-1}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The destination point where the arc ends.
+圆弧结束处的目标点。
 
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
 
-The radii of an ellipse whose path is used to draw the arc.
+用于绘制该圆弧的椭圆路径的两个半径。
 
 
 `rotationAngle` double
 
-The rotation angle (in degrees) of the ellipse that specifies the path of the arc; positive values are clockwise.
-This will rotate the entire arc relative to the X-axis and is not commonly used.
+确定弧线路径的那个椭圆的旋转角度（以度计），正值表示顺时针。
+它会把整段弧相对 X 轴整体旋转，平时并不常用。
 
 
 `isLargeArc` bool
 
-Specifies whether the arc should follow the longer path around an ellipse rather than the shorter one.
-`true` to draw the arc greater than 180 degrees; otherwise, `false`.
+指定该圆弧是走椭圆上较长的那条路径，还是较短的那条。
+画大于 180 度的弧时为 `true`，否则为 `false`。
 
 
 `sweepDirection` [Avalonia.Media.SweepDirection](xref:Avalonia.Media.SweepDirection)
 
-A value that indicates whether the arc is drawn in the Clockwise or Counterclockwise direction.
+一个值，指示圆弧按顺时针还是逆时针方向绘制。
 
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -160,24 +160,24 @@ Whether the segment is stroked.
 
 <span id="uid-11ae2a0392"></span>
 
-### BeginFigure Method
+### BeginFigure 方法 {#beginfigure-method}
 
-Begins a new figure.
+开始一段新图形。
 
 ```csharp
 public void BeginFigure(Avalonia.Point startPoint, bool isFilled)
 ```
 
-#### Parameters
+#### 参数 {#parameters-2}
 
 `startPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The starting point for the figure.
+该图形的起点。
 
 
 `isFilled` bool
 
-Whether the figure is filled.
+该图形是否被填充。
 
 
 </section>
@@ -186,34 +186,34 @@ Whether the figure is filled.
 
 <span id="uid-4f50e8a6a8"></span>
 
-### CubicBezierTo Method
+### CubicBezierTo 方法 {#cubicbezierto-method}
 
-Draws a Bezier curve to the specified point.
+画一条贝塞尔曲线到指定点。
 
 ```csharp
 public void CubicBezierTo(Avalonia.Point controlPoint1, Avalonia.Point controlPoint2, Avalonia.Point endPoint, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-3}
 
 `controlPoint1` [Avalonia.Point](xref:Avalonia.Point)
 
-The first control point used to specify the shape of the curve.
+用于确定曲线形状的第一个控制点。
 
 
 `controlPoint2` [Avalonia.Point](xref:Avalonia.Point)
 
-The second control point used to specify the shape of the curve.
+用于确定曲线形状的第二个控制点。
 
 
 `endPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The destination point for the end of the curve.
+曲线终点所在的目标点。
 
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -222,9 +222,9 @@ Whether the segment is stroked.
 
 <span id="uid-944781a4ee"></span>
 
-### Dispose Method
+### Dispose 方法 {#dispose-method}
 
-Finishes the drawing session.
+结束本次绘制会话。
 
 ```csharp
 public void Dispose()
@@ -236,19 +236,19 @@ public void Dispose()
 
 <span id="uid-f3cfbc992f"></span>
 
-### EndFigure Method
+### EndFigure 方法 {#endfigure-method}
 
-Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29).
+结束由 [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29) 开始的那段图形。
 
 ```csharp
 public void EndFigure(bool isClosed)
 ```
 
-#### Parameters
+#### 参数 {#parameters-4}
 
 `isClosed` bool
 
-Whether the figure is closed.
+该图形是否闭合。
 
 
 </section>
@@ -257,24 +257,24 @@ Whether the figure is closed.
 
 <span id="uid-10f817d4ee"></span>
 
-### LineTo Method
+### LineTo 方法 {#lineto-method}
 
-Draws a line to the specified point.
+画一条直线到指定点。
 
 ```csharp
 public void LineTo(Avalonia.Point point, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-5}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The destination point.
+目标点。
 
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -283,7 +283,7 @@ Whether the segment is stroked.
 
 <span id="uid-06926b62a0"></span>
 
-### PreciseArcTo Method
+### PreciseArcTo 方法 {#precisearcto-method}
 
 Draws an arc to the specified point using polylines, quadratic or cubic Bezier curves
 Significantly more precise when drawing elliptic arcs with extreme width:height ratios.
@@ -292,11 +292,11 @@ Significantly more precise when drawing elliptic arcs with extreme width:height 
 public void PreciseArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle, bool isLargeArc, Avalonia.Media.SweepDirection sweepDirection)
 ```
 
-#### Parameters
+#### 参数 {#parameters-6}
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The destination point.
+目标点。
 
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
@@ -316,7 +316,7 @@ true to draw the arc greater than 180 degrees; otherwise, false.
 
 `sweepDirection` [Avalonia.Media.SweepDirection](xref:Avalonia.Media.SweepDirection)
 
-A value that indicates whether the arc is drawn in the Clockwise or Counterclockwise direction.
+一个值，指示圆弧按顺时针还是逆时针方向绘制。
 
 
 </section>
@@ -325,29 +325,29 @@ A value that indicates whether the arc is drawn in the Clockwise or Counterclock
 
 <span id="uid-d6614fafeb"></span>
 
-### QuadraticBezierTo Method
+### QuadraticBezierTo 方法 {#quadraticbezierto-method}
 
-Draws a quadratic Bezier curve to the specified point.
+画一条二次贝塞尔曲线到指定点。
 
 ```csharp
 public void QuadraticBezierTo(Avalonia.Point controlPoint, Avalonia.Point endPoint, bool isStroked)
 ```
 
-#### Parameters
+#### 参数 {#parameters-7}
 
 `controlPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The control point used to specify the shape of the curve.
+用于确定曲线形状的控制点。
 
 
 `endPoint` [Avalonia.Point](xref:Avalonia.Point)
 
-The destination point for the end of the curve.
+曲线终点所在的目标点。
 
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -356,7 +356,7 @@ Whether the segment is stroked.
 
 <span id="uid-57a8199e4d"></span>
 
-### SetFillRule Method
+### SetFillRule 方法 {#setfillrule-method}
 
 Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure. If you wonder why, ask Direct2D guys about their design decisions.
 
@@ -364,7 +364,7 @@ Sets path's winding rule (default is EvenOdd). You should call this method befor
 public void SetFillRule(Avalonia.Media.FillRule fillRule)
 ```
 
-#### Parameters
+#### 参数 {#parameters-8}
 
 `fillRule` [Avalonia.Media.FillRule](xref:Avalonia.Media.FillRule)
 

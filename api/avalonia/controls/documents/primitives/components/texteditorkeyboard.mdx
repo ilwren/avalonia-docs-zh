@@ -20,17 +20,17 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextEditorKeyboard Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.Primitives.Components</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.RichTextEditor</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.RichTextEditor</code>
 </div>
 </div>
 
@@ -51,21 +51,21 @@ public class TextEditorKeyboard
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textviewcomponentbase">TextViewComponentBase</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="textviewkeyboard">TextViewKeyboard</a> <span className="apiref-page__relation-separator">-&gt;</span> TextEditorKeyboard
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="textviewcomponentbase">TextViewComponentBase</a> <span className="apiref-page__relation-separator">-&gt;</span> <a href="textviewkeyboard">TextViewKeyboard</a> <span className="apiref-page__relation-separator">-&gt;</span> TextEditorKeyboard
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [TextEditorKeyboard](#uid-56ccd6be97) | No summary available. |
+| [TextEditorKeyboard](#uid-56ccd6be97) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-56ccd6be97"></span>
 
-### TextEditorKeyboard Constructor
+### TextEditorKeyboard 构造函数 {#texteditorkeyboard-constructor}
 
 ```csharp
 public TextEditorKeyboard()
@@ -73,9 +73,9 @@ public TextEditorKeyboard()
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Copy](textviewkeyboard.mdx#uid-a21dbb1e2e) | Copies the current selection to the clipboard without waiting for the clipboard write. Inherited from [TextViewKeyboard](textviewkeyboard.mdx). |
 | [CopyAsync](#uid-aed0172f2a) | Copies the current selection to the clipboard, including the RTF rich-format payload, by delegating to [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.Copy](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.Copy). |
@@ -86,7 +86,7 @@ public TextEditorKeyboard()
 
 <span id="uid-aed0172f2a"></span>
 
-### CopyAsync Method
+### CopyAsync 方法 {#copyasync-method}
 
 Copies the current selection to the clipboard, including the RTF
 rich-format payload, by delegating to [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.Copy](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.Copy).
@@ -95,14 +95,14 @@ rich-format payload, by delegating to [Avalonia.Controls.Documents.Primitives.Ac
 public System.Threading.Tasks.Task CopyAsync(System.Threading.CancellationToken cancellationToken)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `cancellationToken` System.Threading.CancellationToken
 
-Abandons the copy before the clipboard is written.
+在写入剪贴板之前放弃这次复制。
 
 
-#### Returns
+#### 返回值 {#returns}
 
 System.Threading.Tasks.Task
 
@@ -113,7 +113,7 @@ System.Threading.Tasks.Task
 
 <span id="uid-91f7dd68f3"></span>
 
-### Cut Method
+### Cut 方法 {#cut-method}
 
 Cuts the current selection to the clipboard without waiting for the clipboard write.
 
@@ -121,7 +121,7 @@ Cuts the current selection to the clipboard without waiting for the clipboard wr
 public void Cut()
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
 Await [Avalonia.Controls.Documents.Primitives.Components.TextEditorKeyboard.CutAsync](xref:Avalonia.Controls.Documents.Primitives.Components.TextEditorKeyboard.CutAsync) instead. The clipboard is a platform resource another
 process can hold, so the write can fail after this method has already returned, and
@@ -133,7 +133,7 @@ a caller here cannot sequence anything after it.
 
 <span id="uid-f1266751a5"></span>
 
-### CutAsync Method
+### CutAsync 方法 {#cutasync-method}
 
 Cuts the current selection to the clipboard.
 
@@ -141,14 +141,14 @@ Cuts the current selection to the clipboard.
 public System.Threading.Tasks.Task CutAsync()
 ```
 
-#### Returns
+#### 返回值 {#returns-1}
 
 System.Threading.Tasks.Task
 
 A task that completes when the cut has finished.
 
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Delegates to [Avalonia.Controls.Documents.Primitives.Actions.EditorActions.Cut](xref:Avalonia.Controls.Documents.Primitives.Actions.EditorActions.Cut) so the keyboard shortcut and
 toolbar/menu paths share one implementation, including the rich-format
@@ -160,11 +160,11 @@ after the clipboard write.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [IsAttached](textviewcomponentbase.mdx#uid-7df392cfdc) | Gets whether this component is currently attached to a host. Inherited from [TextViewComponentBase](textviewcomponentbase.mdx). |
+| [IsAttached](textviewcomponentbase.mdx#uid-7df392cfdc) | 获取该组件当前是否已附加到某个宿主上。继承自 [TextViewComponentBase](textviewcomponentbase.mdx)。 |
 
 </ApiRefPage>
 

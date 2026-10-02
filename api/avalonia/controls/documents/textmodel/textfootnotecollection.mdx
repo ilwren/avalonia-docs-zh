@@ -20,26 +20,26 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">TextFootnoteCollection Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls.Documents.TextModel</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia.Controls.Documents</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia.Controls.Documents</code>
 </div>
 </div>
 
 <div className="apiref-page__lead">
 
-The footnotes a text document owns, in anchor order. Adding a note makes the
-document its owner and joins the note's undo to the document's stack; removing it
-releases both, and the membership itself is undoable when the owner records.
-Ownership is exclusive, and a nested document (a page band, a note) owns no notes.
+文本文档所拥有的脚注，按锚点顺序排列。添加一条便签会让该文档成为它的所有者，
+并把这条便签的撤销记录并入文档的撤销栈；移除时两者一并解除。当所有者在记录时，
+这种归属关系本身也是可撤销的。所有权是独占的，而嵌套文档（页眉页脚带状区域、便签）
+不拥有任何便签。
 
 </div>
 
@@ -53,34 +53,34 @@ public class TextFootnoteCollection
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> Collection&lt;TextFootnote&gt; <span className="apiref-page__relation-separator">-&gt;</span> TextFootnoteCollection
+<span className="apiref-page__meta-label">继承关系：</span> Collection&lt;TextFootnote&gt; <span className="apiref-page__relation-separator">-&gt;</span> TextFootnoteCollection
 </div>
 </div>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Find](#uid-4d8c68680a) | The note with `noteId`, or null. |
+| [Find](#uid-4d8c68680a) | 带有 `noteId` 的那条便签，或 null。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4d8c68680a"></span>
 
-### Find Method
+### Find 方法 {#find-method}
 
-The note with `noteId`, or null.
+带有 `noteId` 的那条便签，或 null。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextFootnote Find(int noteId)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `noteId` int
 
 
-#### Returns
+#### 返回值 {#returns}
 
 [Avalonia.Controls.Documents.TextModel.TextFootnote](xref:Avalonia.Controls.Documents.TextModel.TextFootnote)
 

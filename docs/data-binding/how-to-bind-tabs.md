@@ -1,25 +1,25 @@
 ---
 id: how-to-bind-tabs
-title: How to bind tabs
-description: Bind a TabControl to a collection of view models to create dynamic tabbed interfaces.
+title: 如何绑定选项卡
+description: 把 TabControl 绑定到一组视图模型，构建动态的选项卡界面。
 doc-type: how-to
 ---
 
-When your application needs to display a variable number of tabs, you can data-bind a [`TabControl`](/api/avalonia/controls/tabcontrol) to a collection of view models instead of declaring each tab statically in XAML. This approach is useful when the number of tabs is determined at runtime, for example by user actions, loaded data, or plugin systems.
+当应用需要显示数量不定的选项卡时，与其在 XAML 里一个个静态声明，不如把 [`TabControl`](/api/avalonia/controls/tabcontrol) 数据绑定到一组视图模型上。选项卡数量要到运行时才确定的场合（比如由用户操作、载入的数据或插件系统决定），这种做法尤其合适。
 
-The general pattern is:
+总体套路是：
 
-1. Define a view model class that represents each tab (header text, content, and any other state).
-2. Expose an `ObservableCollection` of those view models from your main view model.
-3. Bind `TabControl.ItemsSource` to the collection and use `ItemTemplate` and `ContentTemplate` to control how each tab renders.
+1. 定义一个代表单个选项卡的视图模型类（标题文字、内容，以及其他需要的状态）。
+2. 在主视图模型中暴露一个由这些视图模型组成的 `ObservableCollection`。
+3. 把 `TabControl.ItemsSource` 绑定到该集合，再用 `ItemTemplate` 和 `ContentTemplate` 控制每个选项卡的呈现方式。
 
-## Binding support example
+## 绑定示例 {#binding-support-example}
 
-You can dynamically create tab items with **data binding**. To do this, bind the `ItemsSource` property of a `TabControl` to a collection of objects representing the tab header and content.
+你可以用**数据绑定**动态创建选项卡项：把 `TabControl` 的 `ItemsSource` 属性绑定到一组对象，这些对象分别承载选项卡的标题和内容。
 
-You can then use a **data template** to display the objects.
+然后用**数据模板**来展示这些对象。
 
-This example uses a collection of objects created from this `ItemViewModel` class:
+本例使用的集合，其元素由下面这个 `ItemViewModel` 类创建：
 
 ```csharp
 namespace MyApp.ViewModel;
@@ -36,7 +36,7 @@ public class ItemViewModel
 }
 ```
 
-Create a property that accesses a collection of `ItemViewModel` instances.
+创建一个属性，用于访问由 `ItemViewModel` 实例组成的集合。
 
 ```csharp
 public ObservableCollection<ItemViewModel> Items { get; set; } = new() {
@@ -45,9 +45,9 @@ public ObservableCollection<ItemViewModel> Items { get; set; } = new() {
 };
 ```
 
-The `TabStrip` header content is defined by the `ItemTemplate` property, while the `TabItem` content is defined by the `ContentTemplate` property.
+`TabStrip` 的标题内容由 `ItemTemplate` 属性决定，`TabItem` 的内容则由 `ContentTemplate` 属性决定。
 
-Finally, create a `TabControl` and bind its `ItemsSource` property to `Items`.
+最后创建一个 `TabControl`，把它的 `ItemsSource` 属性绑定到 `Items`。
 
 ```xml
 <TabControl ItemsSource="{Binding Items}">
@@ -73,18 +73,18 @@ Finally, create a `TabControl` and bind its `ItemsSource` property to `Items`.
   </TabControl>
 ```
 
-## Tab lifecycle notes
+## 关于选项卡生命周期 {#tab-lifecycle-notes}
 
-Keep the following points in mind when you work with data-bound tabs:
+使用数据绑定的选项卡时，请留意以下几点：
 
-- **Adding and removing tabs.** Because `ItemsSource` is bound to an `ObservableCollection`, adding or removing items from the collection automatically adds or removes tabs at runtime.
-- **Content recycling.** `TabControl` recreates content visuals when the user switches tabs. If your tab content is expensive to build, consider caching the generated views or using a `UserControl` with its own view model to preserve state.
-- **Selected tab.** Bind `SelectedItem` or `SelectedIndex` on the `TabControl` to track or control which tab is active. When you remove the currently selected item from the collection, the selection resets automatically.
-- **DataType on ContentTemplate.** Always set `DataType` on the `DataTemplate` used inside `ContentTemplate`. Without it, the binding context may not resolve correctly.
+- **增删选项卡。** 由于 `ItemsSource` 绑定的是 `ObservableCollection`，往集合里增删元素，运行时的选项卡也会随之增删。
+- **内容的回收。** 用户切换选项卡时，`TabControl` 会重新创建内容的视觉元素。如果选项卡内容构建起来开销较大，可以考虑缓存已生成的视图，或者改用带有自身视图模型的 `UserControl` 来保留状态。
+- **选中的选项卡。** 绑定 `TabControl` 上的 `SelectedItem` 或 `SelectedIndex`，即可跟踪或控制当前激活的是哪个选项卡。当你把当前选中项从集合中移除时，选中状态会自动重置。
+- **ContentTemplate 上的 DataType。** `ContentTemplate` 里用到的 `DataTemplate` 一定要设置 `DataType`，否则绑定上下文可能解析不正确。
 
-## See also
+## 另请参阅 {#see-also}
 
-- [TabControl](/controls/navigation/tabcontrol): Full reference for the `TabControl` control.
-- [How to: Work with TabControl](/docs/how-to/tabcontrol-how-to): Static tabs, closeable tabs, and tab styling.
-- [Data templates](/docs/data-templates/introduction-to-data-templates): Controlling how items are displayed.
-- [Data binding syntax](/docs/data-binding/data-binding-syntax): Binding paths and modes.
+- [TabControl](/controls/navigation/tabcontrol)：`TabControl` 控件的完整参考。
+- [如何使用 TabControl](/docs/how-to/tabcontrol-how-to)：静态选项卡、可关闭选项卡与选项卡样式。
+- [数据模板](/docs/data-templates/introduction-to-data-templates)：控制数据项的呈现方式。
+- [数据绑定语法](/docs/data-binding/data-binding-syntax)：绑定路径与绑定模式。

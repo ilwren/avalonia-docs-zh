@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">NavigatingFromEventArgs Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Controls</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Controls</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Controls</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Controls</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Page/NavigatingFromEventArgs.cs">NavigatingFromEventArgs.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Controls/Page/NavigatingFromEventArgs.cs">NavigatingFromEventArgs.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Provides data for the [Avalonia.Controls.Page.Navigating](xref:Avalonia.Controls.Page.Navigating) event.
+为 [Avalonia.Controls.Page.Navigating](xref:Avalonia.Controls.Page.Navigating) 事件提供数据。
 
 </div>
 
@@ -54,29 +54,29 @@ public class NavigatingFromEventArgs
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> NavigatingFromEventArgs
+<span className="apiref-page__meta-label">继承关系：</span> EventArgs <span className="apiref-page__relation-separator">-&gt;</span> NavigatingFromEventArgs
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [NavigatingFromEventArgs](#uid-4220efaf72) | Initializes a new instance of the [Avalonia.Controls.NavigatingFromEventArgs](xref:Avalonia.Controls.NavigatingFromEventArgs) class. |
+| [NavigatingFromEventArgs](#uid-4220efaf72) | 初始化 [Avalonia.Controls.NavigatingFromEventArgs](xref:Avalonia.Controls.NavigatingFromEventArgs) 类的新实例。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-4220efaf72"></span>
 
-### NavigatingFromEventArgs Constructor
+### NavigatingFromEventArgs 构造函数 {#navigatingfromeventargs-constructor}
 
-Initializes a new instance of the [Avalonia.Controls.NavigatingFromEventArgs](xref:Avalonia.Controls.NavigatingFromEventArgs) class.
+初始化 [Avalonia.Controls.NavigatingFromEventArgs](xref:Avalonia.Controls.NavigatingFromEventArgs) 类的新实例。
 
 ```csharp
 public NavigatingFromEventArgs(Avalonia.Controls.Page destinationPage, Avalonia.Controls.NavigationType navigationType)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `destinationPage` [Avalonia.Controls.Page](xref:Avalonia.Controls.Page)
 
@@ -85,24 +85,24 @@ The page that will become active after this navigation, or when popping to root.
 
 `navigationType` [Avalonia.Controls.NavigationType](xref:Avalonia.Controls.NavigationType)
 
-The type of navigation that triggered this event.
+触发该事件的导航类型。
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [Cancel](#uid-5c0e510eed) | Gets or sets a value indicating whether the navigation should be cancelled. |
 | [DestinationPage](#uid-6376e3090c) | Gets the page that will become active after this navigation. |
-| [NavigationType](#uid-a12d4711e3) | Gets the type of navigation that triggered this event. |
+| [NavigationType](#uid-a12d4711e3) | 获取触发该事件的导航类型。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-5c0e510eed"></span>
 
-### Cancel Property
+### Cancel 属性 {#cancel-property}
 
 Gets or sets a value indicating whether the navigation should be cancelled.
 
@@ -116,7 +116,7 @@ public bool Cancel { get; set; }
 
 <span id="uid-6376e3090c"></span>
 
-### DestinationPage Property
+### DestinationPage 属性 {#destinationpage-property}
 
 Gets the page that will become active after this navigation.
 
@@ -130,9 +130,9 @@ public Avalonia.Controls.Page DestinationPage { get; set; }
 
 <span id="uid-a12d4711e3"></span>
 
-### NavigationType Property
+### NavigationType 属性 {#navigationtype-property}
 
-Gets the type of navigation that triggered this event.
+获取触发该事件的导航类型。
 
 ```csharp
 public Avalonia.Controls.NavigationType NavigationType { get; set; }

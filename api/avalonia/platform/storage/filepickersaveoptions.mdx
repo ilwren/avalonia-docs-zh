@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">FilePickerSaveOptions Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Platform.Storage</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Platform.Storage</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FilePickerSaveOptions.cs">FilePickerSaveOptions.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Platform/Storage/FilePickerSaveOptions.cs">FilePickerSaveOptions.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Options class for [Avalonia.Platform.Storage.IStorageProvider.SaveFilePickerAsync(Avalonia.Platform.Storage.FilePickerSaveOptions)](xref:Avalonia.Platform.Storage.IStorageProvider.SaveFilePickerAsync%28Avalonia.Platform.Storage.FilePickerSaveOptions%29) method.
+[Avalonia.Platform.Storage.IStorageProvider.SaveFilePickerAsync(Avalonia.Platform.Storage.FilePickerSaveOptions)](xref:Avalonia.Platform.Storage.IStorageProvider.SaveFilePickerAsync%28Avalonia.Platform.Storage.FilePickerSaveOptions%29) 方法所用的选项类。
 
 </div>
 
@@ -54,21 +54,21 @@ public class FilePickerSaveOptions
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="pickeroptions">PickerOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> FilePickerSaveOptions
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> <a href="pickeroptions">PickerOptions</a> <span className="apiref-page__relation-separator">-&gt;</span> FilePickerSaveOptions
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [FilePickerSaveOptions](#uid-9b9bea102b) | No summary available. |
+| [FilePickerSaveOptions](#uid-9b9bea102b) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-9b9bea102b"></span>
 
-### FilePickerSaveOptions Constructor
+### FilePickerSaveOptions 构造函数 {#filepickersaveoptions-constructor}
 
 ```csharp
 public FilePickerSaveOptions()
@@ -76,25 +76,25 @@ public FilePickerSaveOptions()
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [DefaultExtension](#uid-2da5de5240) | Gets or sets the default extension to be used to save the file. |
-| [FileTypeChoices](#uid-34ebeed348) | Gets or sets the collection of valid file types that the user can choose to assign to a file. |
-| [ShowOverwritePrompt](#uid-a80f1bf533) | Gets or sets a value indicating whether file open picker displays a warning if the user specifies the name of a file that already exists. |
-| [SuggestedFileName](pickeroptions.mdx#uid-87696bd66c) | Gets or sets the file name that the file picker suggests to the user. Inherited from [PickerOptions](pickeroptions.mdx). |
-| [SuggestedFileType](#uid-00b8dc37d9) | Gets or sets the file type that should be preselected when the dialog is opened. |
-| [SuggestedStartLocation](pickeroptions.mdx#uid-792044079c) | Gets or sets the initial location where the file open picker looks for files to present to the user. Can be obtained from previously picked folder or using [Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync(Uri)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync%28System.Uri%29) or [Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync%28Avalonia.Platform.Storage.WellKnownFolder%29). Inherited from [PickerOptions](pickeroptions.mdx). |
-| [Title](pickeroptions.mdx#uid-825079a1b0) | Gets or sets the text that appears in the title bar of a picker. Inherited from [PickerOptions](pickeroptions.mdx). |
+| [DefaultExtension](#uid-2da5de5240) | 获取或设置保存文件时使用的默认扩展名。 |
+| [FileTypeChoices](#uid-34ebeed348) | 获取或设置用户可为文件选用的有效文件类型集合。 |
+| [ShowOverwritePrompt](#uid-a80f1bf533) | 获取或设置一个值，指示当用户填写的文件名已存在时，文件打开选取器是否给出警告。 |
+| [SuggestedFileName](pickeroptions.mdx#uid-87696bd66c) | 获取或设置文件选取器向用户建议的文件名。继承自 [PickerOptions](pickeroptions.mdx)。 |
+| [SuggestedFileType](#uid-00b8dc37d9) | 获取或设置对话框打开时预先选中的文件类型。 |
+| [SuggestedStartLocation](pickeroptions.mdx#uid-792044079c) | 获取或设置文件打开选取器呈现给用户时最初查看的位置。该值可以取自此前选过的文件夹，也可以用 [Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync(Uri)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetFolderFromPathAsync%28System.Uri%29) 或 [Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync(Avalonia.Platform.Storage.WellKnownFolder)](xref:Avalonia.Platform.Storage.IStorageProvider.TryGetWellKnownFolderAsync%28Avalonia.Platform.Storage.WellKnownFolder%29) 取得。继承自 [PickerOptions](pickeroptions.mdx)。 |
+| [Title](pickeroptions.mdx#uid-825079a1b0) | 获取或设置显示在选取器标题栏中的文字。继承自 [PickerOptions](pickeroptions.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-2da5de5240"></span>
 
-### DefaultExtension Property
+### DefaultExtension 属性 {#defaultextension-property}
 
-Gets or sets the default extension to be used to save the file.
+获取或设置保存文件时使用的默认扩展名。
 
 ```csharp
 public string DefaultExtension { get; set; }
@@ -106,9 +106,9 @@ public string DefaultExtension { get; set; }
 
 <span id="uid-34ebeed348"></span>
 
-### FileTypeChoices Property
+### FileTypeChoices 属性 {#filetypechoices-property}
 
-Gets or sets the collection of valid file types that the user can choose to assign to a file.
+获取或设置用户可为文件选用的有效文件类型集合。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.FilePickerFileType> FileTypeChoices { get; set; }
@@ -120,9 +120,9 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.FilePi
 
 <span id="uid-a80f1bf533"></span>
 
-### ShowOverwritePrompt Property
+### ShowOverwritePrompt 属性 {#showoverwriteprompt-property}
 
-Gets or sets a value indicating whether file open picker displays a warning if the user specifies the name of a file that already exists.
+获取或设置一个值，指示当用户填写的文件名已存在时，文件打开选取器是否给出警告。
 
 ```csharp
 public Nullable<bool> ShowOverwritePrompt { get; set; }
@@ -134,18 +134,18 @@ public Nullable<bool> ShowOverwritePrompt { get; set; }
 
 <span id="uid-00b8dc37d9"></span>
 
-### SuggestedFileType Property
+### SuggestedFileType 属性 {#suggestedfiletype-property}
 
-Gets or sets the file type that should be preselected when the dialog is opened.
+获取或设置对话框打开时预先选中的文件类型。
 
 ```csharp
 public Avalonia.Platform.Storage.FilePickerFileType SuggestedFileType { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks}
 
-This value should reference one of the items in [Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices](xref:Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices).
-If not set, the first file type in [Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices](xref:Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices) may be selected by default.
+该值应当指向 [Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices](xref:Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices) 中的某一项。
+若不设置，可能会默认选中 [Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices](xref:Avalonia.Platform.Storage.FilePickerSaveOptions.FileTypeChoices) 中的第一个文件类型。
 
 </section>
 

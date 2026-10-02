@@ -1,26 +1,26 @@
 ---
 id: selection-modes
-title: Selection modes
+title: 选择模式
 tags:
   - avalonia pro
   - avalonia enterprise
 ---
 
-Two selection modes are supported:
+支持两种选择类型：
 
-- **Row selection** allows the user to select whole rows
-- **Cell selection** allows the user to select individual cells
+- **行选择**让用户整行整行地选
+- **单元格选择**让用户选中一个个单元格
 
-Both selection types support either single or multiple selection. The default selection type is single row selection.
+两种选择类型都支持单选和多选，默认是单行选择。
 
 
 :::info
-This control is available as part of [Avalonia Pro](https://avaloniaui.net/pricing) or higher.
+该控件需要 [Avalonia Pro](https://avaloniaui.net/pricing) 或更高版本。
 :::
 
-## Setting the selection mode in XAML
+## 在 XAML 中设置选择模式 {#setting-the-selection-mode-in-xaml}
 
-Set the `SelectionMode` attribute directly on the `TreeDataGrid` control. This works with both `ItemsSource` and `Source`:
+直接在 `TreeDataGrid` 控件上设置 `SelectionMode` 特性即可。`ItemsSource` 和 `Source` 两种写法都适用：
 
 ```xml
 <!-- Single row selection (default) -->
@@ -36,9 +36,9 @@ Set the `SelectionMode` attribute directly on the `TreeDataGrid` control. This w
 <TreeDataGrid ItemsSource="{Binding People}" SelectionMode="Cell,Multiple" />
 ```
 
-## SelectionChanged event
+## SelectionChanged 事件 {#selectionchanged-event}
 
-The `TreeDataGrid` control has a `SelectionChanged` event that fires whenever the selection changes:
+`TreeDataGrid` 控件有一个 `SelectionChanged` 事件，选择一有变化就会触发：
 
 ```csharp
 treeDataGrid.SelectionChanged += (sender, e) =>
@@ -56,15 +56,15 @@ treeDataGrid.SelectionChanged += (sender, e) =>
 };
 ```
 
-This event works with both the XAML (`ItemsSource`) and code-behind (`Source`) approaches. (See [the main reference page](/controls/data-display/structured-data/treedatagrid#two-approaches) for details.)
+该事件在 XAML（`ItemsSource`）和代码隐藏（`Source`）两种写法下都可用。（详见[主参考页](/controls/data-display/structured-data/treedatagrid#two-approaches)。）
 
-## Index paths
+## 索引路径 {#index-paths}
 
-Because `TreeDataGrid` supports hierarchical data, using a simple index to identify a row in the data source isn't enough. Instead indexes are represented using the `IndexPath` struct.
+由于 `TreeDataGrid` 支持层级数据，单凭一个简单的索引已不足以定位数据源中的某一行。为此，索引改用 `IndexPath` 结构体表示。
 
-An `IndexPath` is an array of indexes, each element of which specifies the index at a successively deeper level in the hierarchy of the data.
+`IndexPath` 是一个索引数组，其中每个元素依次指明在数据层级中更深一层上的索引。
 
-Consider the following data source:
+来看下面这个数据源：
 
 ```text
 |- A
@@ -74,21 +74,21 @@ Consider the following data source:
 |- E
 ```
 
-- `A` has an index path of `0` as it is the first item at the root of the hierarchy
-- `B` has an index path of `0,0` as it is the first child of the first item
-- `C` has an index path of `0,1` as it is the second child of the first item
-- `D` has an index path of `0,1,0` as it is the first child of `C`
-- `E` has an index path of `1` as it is the second item in the root
+- `A` 的索引路径是 `0`，因为它是层级根部的第一项
+- `B` 的索引路径是 `0,0`，因为它是第一项的第一个子项
+- `C` 的索引路径是 `0,1`，因为它是第一项的第二个子项
+- `D` 的索引路径是 `0,1,0`，因为它是 `C` 的第一个子项
+- `E` 的索引路径是 `1`，因为它是根部的第二项
 
-`IndexPath` is an immutable struct which is constructed with an array of integers, e.g.: `new IndexPath(0, 1, 0)`. There is also an implicit conversion from `int` for when working with a flat data source.
+`IndexPath` 是一个不可变结构体，用一个整数数组来构造，比如 `new IndexPath(0, 1, 0)`。处理扁平数据源时，它还支持从 `int` 隐式转换。
 
-## Row selection (code-behind)
+## 行选择（代码隐藏） {#row-selection-code-behind}
 
-When using the code-behind `Source` approach, row selection is exposed via the `RowSelection` property on the source.
+采用代码隐藏中的 `Source` 写法时，行选择由数据源上的 `RowSelection` 属性对外提供。
 
-Row selection is stored in an instance of the `TreeDataGridRowSelectionModel<TModel>` class.
+行选择状态保存在一个 `TreeDataGridRowSelectionModel<TModel>` 实例中。
 
-The default is single selection. To enable multiple selection, set the `SingleSelect` property to `false`:
+默认是单选。要启用多选，请把 `SingleSelect` 属性设为 `false`：
 
 ```csharp
 Source = new FlatTreeDataGridSource<Person>(_people)
@@ -99,9 +99,9 @@ Source = new FlatTreeDataGridSource<Person>(_people)
 Source.RowSelection!.SingleSelect = false;
 ```
 
-### Getting selected items
+### 获取选中项 {#getting-selected-items}
 
-Access selected items through the selection model:
+通过选择模型访问选中项：
 
 ```csharp
 // Get single selected item
@@ -121,9 +121,9 @@ if (selectedItems != null)
 }
 ```
 
-### Programmatically selecting rows
+### 用代码选中行 {#programmatically-selecting-rows}
 
-You can select rows programmatically using the selection model:
+你可以借助选择模型用代码选中行：
 
 ```csharp
 var selection = Source.RowSelection;
@@ -152,9 +152,9 @@ selection.Deselect(2);
 selection.EndBatchUpdate();
 ```
 
-### Selection changed event
+### 选择变更事件 {#selection-changed-event}
 
-Handle selection changes with the `SelectionChanged` event on the selection model:
+用选择模型上的 `SelectionChanged` 事件处理选择的变化：
 
 ```csharp
 Source.RowSelection.SelectionChanged += (sender, e) =>
@@ -166,9 +166,9 @@ Source.RowSelection.SelectionChanged += (sender, e) =>
 };
 ```
 
-## Cell selection (code-behind)
+## 单元格选择（代码隐藏） {#cell-selection-code-behind}
 
-To enable cell selection when using the code-behind approach, assign an instance of `TreeDataGridCellSelectionModel<TModel>` to the source's `Selection` property:
+采用代码隐藏写法时，把一个 `TreeDataGridCellSelectionModel<TModel>` 实例赋给数据源的 `Selection` 属性，即可启用单元格选择：
 
 ```csharp
 Source = new FlatTreeDataGridSource<Person>(_people)
@@ -179,7 +179,7 @@ Source = new FlatTreeDataGridSource<Person>(_people)
 Source.Selection = new TreeDataGridCellSelectionModel<Person>(Source);
 ```
 
-When multiple cell selection is enabled, a single rectangular range of cells can be selected:
+启用单元格多选后，可以选中一块矩形区域内的单元格：
 
 ```csharp
 Source.Selection = new TreeDataGridCellSelectionModel<Person>(Source)
@@ -187,9 +187,9 @@ Source.Selection = new TreeDataGridCellSelectionModel<Person>(Source)
     SingleSelect = false
 };
 ```
-Cell selection is exposed via the `CellSelection` property on the source.
+单元格选择由数据源上的 `CellSelection` 属性对外提供。
 
-The `CellIndex` struct identifies an individual cell by a combination of an integer column index and an `IndexPath` row index:
+`CellIndex` 结构体用「整数列索引 + `IndexPath` 行索引」的组合来定位单个单元格：
 
 ```csharp
 // Access selected cell
@@ -199,9 +199,9 @@ if (Source.CellSelection?.SelectedIndex is { } selectedCell)
 }
 ```
 
-### Getting selected items
+### 获取选中项 {#getting-selected-items-1}
 
-Access selected items through the selection model:
+通过选择模型访问选中项：
 
 ```csharp
 // Get single selected cell
@@ -231,9 +231,9 @@ foreach (var selected in selection.SelectedIndexes)
 }
 ```
 
-### Programmatically selecting cells
+### 用代码选中单元格 {#programmatically-selecting-cells}
 
-You can select cells programmatically using the selection model:
+你可以借助选择模型用代码选中单元格：
 
 ```csharp
 var selection = Source.CellSelection;
@@ -246,9 +246,9 @@ selection.SelectedIndex = new CellIndex(3, new IndexPath(2));
 selection.SetSelectedRange(new CellIndex(1, 1), columnCount: 2, rowCount: 2);
 ```
 
-### Selection changed event
+### 选择变更事件 {#selection-changed-event-1}
 
-Handle selection changes with the `SelectionChanged` event:
+用 `SelectionChanged` 事件处理选择的变化：
 
 ```csharp
 Source.CellSelection!.SelectionChanged += (s, e) =>
@@ -257,6 +257,6 @@ Source.CellSelection!.SelectionChanged += (s, e) =>
 };
 ```
 
-## See also
+## 另请参阅 {#see-also}
 
 - [TreeDataGrid](/controls/data-display/structured-data/treedatagrid/)

@@ -20,20 +20,20 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">RelativeSource Class</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Data</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Data</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/RelativeSource.cs">RelativeSource.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Data/RelativeSource.cs">RelativeSource.cs</a>
 </div>
 
 </div>
@@ -54,33 +54,33 @@ public class RelativeSource
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> object <span className="apiref-page__relation-separator">-&gt;</span> RelativeSource
+<span className="apiref-page__meta-label">继承关系：</span> object <span className="apiref-page__relation-separator">-&gt;</span> RelativeSource
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [RelativeSource (2 overloads)](#uid-717bf7d302) | Initializes a new instance of the [Avalonia.Data.RelativeSource](xref:Avalonia.Data.RelativeSource) class. |
+| [RelativeSource (2 overloads)](#uid-717bf7d302) | 初始化 [Avalonia.Data.RelativeSource](xref:Avalonia.Data.RelativeSource) 类的新实例。 |
 
 <span id="uid-717bf7d302"></span>
 
-### RelativeSource overloads
+### RelativeSource 的重载 {#relativesource-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-b3c8f31d37"></span>
 
-#### RelativeSource Constructor
+#### RelativeSource 构造函数 {#relativesource-constructor}
 
-Initializes a new instance of the [Avalonia.Data.RelativeSource](xref:Avalonia.Data.RelativeSource) class.
+初始化 [Avalonia.Data.RelativeSource](xref:Avalonia.Data.RelativeSource) 类的新实例。
 
 ```csharp
 public RelativeSource()
 ```
 
-##### Remarks
+##### 备注 {#remarks}
 
 This constructor initializes [Avalonia.Data.RelativeSource.Mode](xref:Avalonia.Data.RelativeSource.Mode) to [Avalonia.Data.RelativeSourceMode.FindAncestor](xref:Avalonia.Data.RelativeSourceMode.FindAncestor).
 
@@ -90,15 +90,15 @@ This constructor initializes [Avalonia.Data.RelativeSource.Mode](xref:Avalonia.D
 
 <span id="uid-ea3be9392a"></span>
 
-#### RelativeSource Constructor
+#### RelativeSource 构造函数 {#relativesource-constructor-1}
 
-Initializes a new instance of the [Avalonia.Data.RelativeSource](xref:Avalonia.Data.RelativeSource) class.
+初始化 [Avalonia.Data.RelativeSource](xref:Avalonia.Data.RelativeSource) 类的新实例。
 
 ```csharp
 public RelativeSource(Avalonia.Data.RelativeSourceMode mode)
 ```
 
-##### Parameters
+##### 参数 {#parameters}
 
 `mode` [Avalonia.Data.RelativeSourceMode](xref:Avalonia.Data.RelativeSourceMode)
 
@@ -107,20 +107,20 @@ The relative source mode.
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
 | [AncestorLevel](#uid-222088beaf) | Gets the level of ancestor to look for when in [Avalonia.Data.RelativeSourceMode.FindAncestor](xref:Avalonia.Data.RelativeSourceMode.FindAncestor) mode. |
 | [AncestorType](#uid-55b6bced12) | Gets the type of ancestor to look for when in [Avalonia.Data.RelativeSourceMode.FindAncestor](xref:Avalonia.Data.RelativeSourceMode.FindAncestor) mode. |
 | [Mode](#uid-ee152f8329) | Gets or sets a value that describes the type of relative source lookup. |
-| [Tree](#uid-aef1da28b8) | No summary available. |
+| [Tree](#uid-aef1da28b8) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-222088beaf"></span>
 
-### AncestorLevel Property
+### AncestorLevel 属性 {#ancestorlevel-property}
 
 Gets the level of ancestor to look for when in [Avalonia.Data.RelativeSourceMode.FindAncestor](xref:Avalonia.Data.RelativeSourceMode.FindAncestor) mode.
 
@@ -128,7 +128,7 @@ Gets the level of ancestor to look for when in [Avalonia.Data.RelativeSourceMode
 public int AncestorLevel { get; set; }
 ```
 
-#### Remarks
+#### 备注 {#remarks-1}
 
 Use the default value of 1 to look for the first ancestor of the specified type.
 
@@ -138,7 +138,7 @@ Use the default value of 1 to look for the first ancestor of the specified type.
 
 <span id="uid-55b6bced12"></span>
 
-### AncestorType Property
+### AncestorType 属性 {#ancestortype-property}
 
 Gets the type of ancestor to look for when in [Avalonia.Data.RelativeSourceMode.FindAncestor](xref:Avalonia.Data.RelativeSourceMode.FindAncestor) mode.
 
@@ -152,7 +152,7 @@ public Type AncestorType { get; set; }
 
 <span id="uid-ee152f8329"></span>
 
-### Mode Property
+### Mode 属性 {#mode-property}
 
 Gets or sets a value that describes the type of relative source lookup.
 
@@ -166,7 +166,7 @@ public Avalonia.Data.RelativeSourceMode Mode { get; set; }
 
 <span id="uid-aef1da28b8"></span>
 
-### Tree Property
+### Tree 属性 {#tree-property}
 
 ```csharp
 public Avalonia.Data.TreeType Tree { get; set; }

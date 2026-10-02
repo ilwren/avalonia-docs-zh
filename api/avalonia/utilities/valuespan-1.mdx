@@ -20,27 +20,27 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <h1 className="apiref-page__title">ValueSpan&lt;T&gt; Struct</h1>
 
-## Definition
+## 定义 {#definition}
 
 <div className="apiref-page__definition-meta">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Namespace:</span> <a href="./">Avalonia.Utilities</a>
+<span className="apiref-page__meta-label">命名空间：</span> <a href="./">Avalonia.Utilities</a>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Assembly:</span> <code>Avalonia.Base</code>
+<span className="apiref-page__meta-label">程序集：</span> <code>Avalonia.Base</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Package:</span> <code>Avalonia</code>
+<span className="apiref-page__meta-label">NuGet 包：</span> <code>Avalonia</code>
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Source:</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/ValueSpan.cs">ValueSpan.cs</a>
+<span className="apiref-page__meta-label">源码：</span> <a href="https://github.com/AvaloniaUI/Avalonia/blob/main/src/Avalonia.Base/Utilities/ValueSpan.cs">ValueSpan.cs</a>
 </div>
 
 </div>
 
 <div className="apiref-page__lead">
 
-Pairing of value and positions sharing that value.
+把某个值与共享该值的那些位置配成一对。
 
 </div>
 
@@ -54,30 +54,30 @@ public struct ValueSpan<T>
 
 <div className="apiref-page__relations">
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Inheritance:</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> ValueSpan&lt;T&gt;
+<span className="apiref-page__meta-label">继承关系：</span> ValueType <span className="apiref-page__relation-separator">-&gt;</span> ValueSpan&lt;T&gt;
 </div>
 <div className="apiref-page__meta-row">
-<span className="apiref-page__meta-label">Implements:</span> IEquatable&lt;ValueSpan&lt;&gt;&gt;
+<span className="apiref-page__meta-label">实现接口：</span> IEquatable&lt;ValueSpan&lt;&gt;&gt;
 </div>
 </div>
 
-## Constructors
+## 构造函数 {#constructors}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [ValueSpan&lt;T&gt;](#uid-bcbda291e2) | No summary available. |
+| [ValueSpan&lt;T&gt;](#uid-bcbda291e2) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-bcbda291e2"></span>
 
-### ValueSpan&lt;T&gt; Constructor
+### ValueSpan&lt;T&gt; 构造函数 {#valuespanlttgt-constructor}
 
 ```csharp
 public ValueSpan<T>(int start, int length, T value)
 ```
 
-#### Parameters
+#### 参数 {#parameters}
 
 `start` int
 
@@ -90,34 +90,34 @@ public ValueSpan<T>(int start, int length, T value)
 
 </section>
 
-## Methods
+## 方法 {#methods}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Equals (2 overloads)](#uid-414e623428) | No summary available. |
-| [GetHashCode](#uid-e30d3aea95) | No summary available. |
-| [ToString](#uid-e4722110af) | No summary available. |
+| [Equals（2 个重载）](#uid-414e623428) | 暂无摘要。 |
+| [GetHashCode](#uid-e30d3aea95) | 暂无摘要。 |
+| [ToString](#uid-e4722110af) | 暂无摘要。 |
 
 <span id="uid-414e623428"></span>
 
-### Equals overloads
+### Equals 的重载 {#equals-overloads}
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-3e3e71b395"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method}
 
 ```csharp
 public bool Equals(Avalonia.Utilities.ValueSpan<T><T> other)
 ```
 
-##### Parameters
+##### 参数 {#parameters-1}
 
 `other` Avalonia.Utilities.ValueSpan&lt;T&gt;&lt;T&gt;
 
 
-##### Returns
+##### 返回值 {#returns}
 
 bool
 
@@ -128,18 +128,18 @@ bool
 
 <span id="uid-a422d90154"></span>
 
-#### Equals Method
+#### Equals 方法 {#equals-method-1}
 
 ```csharp
 public bool Equals(object obj)
 ```
 
-##### Parameters
+##### 参数 {#parameters-2}
 
 `obj` object
 
 
-##### Returns
+##### 返回值 {#returns-1}
 
 bool
 
@@ -150,13 +150,13 @@ bool
 
 <span id="uid-e30d3aea95"></span>
 
-### GetHashCode Method
+### GetHashCode 方法 {#gethashcode-method}
 
 ```csharp
 public int GetHashCode()
 ```
 
-#### Returns
+#### 返回值 {#returns-2}
 
 int
 
@@ -167,34 +167,34 @@ int
 
 <span id="uid-e4722110af"></span>
 
-### ToString Method
+### ToString 方法 {#tostring-method}
 
 ```csharp
 public string ToString()
 ```
 
-#### Returns
+#### 返回值 {#returns-3}
 
 string
 
 
 </section>
 
-## Properties
+## 属性 {#properties}
 
-| Name | Description |
+| 名称 | 说明 |
 | --- | --- |
-| [Length](#uid-40f53e1b44) | Get's the length of the span. |
-| [Start](#uid-3637231974) | Get's the start of the span. |
-| [Value](#uid-6d0373698e) | Get's the value of the span. |
+| [Length](#uid-40f53e1b44) | 获取该区间的长度。 |
+| [Start](#uid-3637231974) | 获取该区间的起始位置。 |
+| [Value](#uid-6d0373698e) | 获取该区间的值。 |
 
 <section className="apiref-page__member-entry">
 
 <span id="uid-40f53e1b44"></span>
 
-### Length Property
+### Length 属性 {#length-property}
 
-Get's the length of the span.
+获取该区间的长度。
 
 ```csharp
 public int Length { get; set; }
@@ -206,9 +206,9 @@ public int Length { get; set; }
 
 <span id="uid-3637231974"></span>
 
-### Start Property
+### Start 属性 {#start-property}
 
-Get's the start of the span.
+获取该区间的起始位置。
 
 ```csharp
 public int Start { get; set; }
@@ -220,9 +220,9 @@ public int Start { get; set; }
 
 <span id="uid-6d0373698e"></span>
 
-### Value Property
+### Value 属性 {#value-property}
 
-Get's the value of the span.
+获取该区间的值。
 
 ```csharp
 public T Value { get; set; }
