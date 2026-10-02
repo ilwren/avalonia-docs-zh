@@ -90,7 +90,7 @@ public PdfPermissions(uint rawValue)
 | [CanExtractForAccessibility](#uid-078b5ecb9e) | Whether content may be extracted for accessibility. |
 | [CanFillForms](#uid-b415556a88) | Whether interactive form fields may be filled. |
 | [CanModify](#uid-f38e9bb385) | Whether the document content may be modified. |
-| [CanPrint](#uid-c46a77bedb) | Whether the document may be printed. |
+| [CanPrint](#uid-c46a77bedb) | 该文档是否允许打印。 |
 | [CanPrintHighQuality](#uid-2f75022bd6) | Whether the document may be printed at high quality. |
 | [RawValue](#uid-a6ce5136fc) | Gets the raw permission bitfield (`0xFFFFFFFF` when unrestricted). |
 
@@ -184,7 +184,7 @@ public bool CanModify { get; set; }
 
 ### CanPrint 属性 {#canprint-property}
 
-Whether the document may be printed.
+该文档是否允许打印。
 
 ```csharp
 public bool CanPrint { get; set; }

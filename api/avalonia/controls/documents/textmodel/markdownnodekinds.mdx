@@ -64,7 +64,7 @@ public class MarkdownNodeKinds
 | [Heading](#uid-8bd5bee9d8) | Node kind for Markdown headings (H1–H6). |
 | [HtmlBlock](#uid-7cadce71ef) | Node kind for an HTML block. Children are the rich elements the HTML converter produced; [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) carries the raw source so an unedited block writes back verbatim. |
 | [HtmlInline](#uid-a3b8595c83) | Node kind for an unrecognized inline HTML tag, preserved as raw source in [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData). Zero-length and invisible in the viewer, emitted verbatim on write. |
-| [Image](#uid-74e3598dfd) | Node kind for inline image elements. |
+| [Image](#uid-74e3598dfd) | 内联图像元素对应的节点类型。 |
 | [Marked](#uid-47d3db43bc) | Node kind for a highlighted span (`==marked==`). The kind is what makes the span a mark, so recolouring the highlight - through a style, a theme, or an editing command - leaves it writing back as `==...==`. |
 | [QuoteBlock](#uid-36731ae34c) | 引用块对应的节点类型。 |
 | [TaskListItem](#uid-469bbad8f9) | Node kind for task list items (checkboxes). |
@@ -166,7 +166,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind HtmlInline
 
 ### Image 字段 {#image-field}
 
-Node kind for inline image elements.
+内联图像元素对应的节点类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Image

@@ -146,7 +146,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ActualThemeVariant](../../styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [AnimationDuration](chartbase.mdx#uid-98c7d80058) | 获取或设置入场动画的时长。继承自 [ChartBase](chartbase.mdx)。 |
 | [AnimationProgress](chartbase.mdx#uid-a985586f7b) | 获取或设置图表的整体动画进度。继承自 [ChartBase](chartbase.mdx)。 |
-| [ArcOpacity](#uid-832d2c7a15) | Gets or sets the opacity of the arcs. |
+| [ArcOpacity](#uid-832d2c7a15) | 获取或设置圆弧的不透明度。 |
 | [ArcThickness](#uid-617549d5ad) | Gets or sets the thickness of the arcs. |
 | [Background](../primitives/templatedcontrol.mdx#uid-50dbd38ef5) | 获取或设置绘制控件背景所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BackgroundSizing](../primitives/templatedcontrol.mdx#uid-07ef33f604) | 获取或设置控件背景相对于其边框的绘制方式。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -204,7 +204,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [LegendOffset](chartbase.mdx#uid-d6aeba2ed7) | 获取或设置浮动图例的偏移量。继承自 [ChartBase](chartbase.mdx)。 |
 | [LegendPosition](chartbase.mdx#uid-07b56208ce) | 获取或设置图表图例的位置。设为 [Avalonia.Controls.Charts.LegendPosition.None](xref:Avalonia.Controls.Charts.LegendPosition.None) 可完全隐藏图例。继承自 [ChartBase](chartbase.mdx)。 |
 | [LetterSpacing](../primitives/templatedcontrol.mdx#uid-2d96a527e6) | 获取或设置控件文本内容的字间距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
-| [Links](#uid-d1bdbcb024) | Gets or sets the links between nodes. |
+| [Links](#uid-d1bdbcb024) | 获取或设置节点之间的连线。 |
 | [LinkValuePath](#uid-11ad176add) | Gets or sets the property path to extract the value for a link. |
 | [Margin](../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxHeight](../../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -250,7 +250,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 
 ### ArcOpacity 属性 {#arcopacity-property}
 
-Gets or sets the opacity of the arcs.
+获取或设置圆弧的不透明度。
 
 ```csharp
 public double ArcOpacity { get; set; }
@@ -278,7 +278,7 @@ public double ArcThickness { get; set; }
 
 ### Links 属性 {#links-property}
 
-Gets or sets the links between nodes.
+获取或设置节点之间的连线。
 
 ```csharp
 public System.Collections.IEnumerable Links { get; set; }

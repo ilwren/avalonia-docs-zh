@@ -123,7 +123,7 @@ public System.Collections.IEnumerable Source { get; set; }
 | [IndexesChanged](#uid-c5c2106a08) | Occurs when item indexes change due to insertions or removals in the data source. |
 | [PropertyChanged](#uid-c2ee82eef9) | 暂无摘要。 |
 | [SelectionChanged](#uid-b83b9267ac) | Occurs when the selection changes, providing unified event args with row and cell index information. |
-| [SourceReset](#uid-eac05c7ba6) | Occurs when the data source is reset. |
+| [SourceReset](#uid-eac05c7ba6) | 数据源被重置时发生。 |
 
 <section className="apiref-page__member-entry">
 
@@ -172,7 +172,7 @@ public event EventHandler<Avalonia.Controls.Selection.TreeDataGridSelectionChang
 
 ### SourceReset 事件 {#sourcereset-event}
 
-Occurs when the data source is reset.
+数据源被重置时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Selection.TreeDataGridItemsResetEventArgs> SourceReset

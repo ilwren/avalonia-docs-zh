@@ -433,8 +433,8 @@ string
 | [Element](#uid-0d2fbdcfb2) | The element at this position, if already realized. May be `null` when the underlying node still holds only a deferred snapshot. Use [Avalonia.Controls.Documents.TextModel.TextPointer.EnsureElement](xref:Avalonia.Controls.Documents.TextModel.TextPointer.EnsureElement) to force materialization. |
 | [IsStale](#uid-2e83c90d1c) | Whether this pointer is stale (document has changed since creation). |
 | [LogicalDirection](#uid-77634a9f01) | The logical direction (gravity) of this pointer. |
-| [Offset](#uid-47a87cde60) | The character offset in the document. |
-| [TextDocument](#uid-2809ef22da) | The document this pointer belongs to. |
+| [Offset](#uid-47a87cde60) | 在文档中的字符偏移量。 |
+| [TextDocument](#uid-2809ef22da) | 该指针所属的文档。 |
 
 <section className="apiref-page__member-entry">
 
@@ -486,7 +486,7 @@ public Avalonia.Controls.Documents.TextModel.LogicalDirection LogicalDirection {
 
 ### Offset 属性 {#offset-property}
 
-The character offset in the document.
+在文档中的字符偏移量。
 
 ```csharp
 public int Offset { get; set; }
@@ -500,7 +500,7 @@ public int Offset { get; set; }
 
 ### TextDocument 属性 {#textdocument-property}
 
-The document this pointer belongs to.
+该指针所属的文档。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; set; }

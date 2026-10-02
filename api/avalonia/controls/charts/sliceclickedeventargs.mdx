@@ -96,10 +96,10 @@ public SliceClickedEventArgs(int sliceIndex, string label, double value, double 
 | 名称 | 说明 |
 | --- | --- |
 | [DataItem](#uid-34ff884ab9) | 若有原始数据项则取得它。 |
-| [Label](#uid-04042cdbdd) | Gets the label of the clicked slice. |
+| [Label](#uid-04042cdbdd) | 获取被点击扇区的标签。 |
 | [Percentage](#uid-f3252e3204) | Gets the percentage of the total that this slice represents. |
-| [SliceIndex](#uid-fe184acfb8) | Gets the index of the clicked slice. |
-| [Value](#uid-72bd523919) | Gets the value of the clicked slice. |
+| [SliceIndex](#uid-fe184acfb8) | 获取被点击扇区的索引。 |
+| [Value](#uid-72bd523919) | 获取被点击扇区的值。 |
 
 <section className="apiref-page__member-entry">
 
@@ -121,7 +121,7 @@ public object DataItem { get; set; }
 
 ### Label 属性 {#label-property}
 
-Gets the label of the clicked slice.
+获取被点击扇区的标签。
 
 ```csharp
 public string Label { get; set; }
@@ -149,7 +149,7 @@ public double Percentage { get; set; }
 
 ### SliceIndex 属性 {#sliceindex-property}
 
-Gets the index of the clicked slice.
+获取被点击扇区的索引。
 
 ```csharp
 public int SliceIndex { get; set; }
@@ -163,7 +163,7 @@ public int SliceIndex { get; set; }
 
 ### Value 属性 {#value-property}
 
-Gets the value of the clicked slice.
+获取被点击扇区的值。
 
 ```csharp
 public double Value { get; set; }

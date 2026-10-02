@@ -102,7 +102,7 @@ public Layoutable()
 | [InvalidateVisual](../visual.mdx#uid-1cd22a7496) | 使视觉元素失效并排入重绘队列。继承自 [Visual](../visual.mdx)。 |
 | [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Measure](#uid-1da410eb81) | Carries out a measure of the control. |
+| [Measure](#uid-1da410eb81) | 对该控件执行一次测量。 |
 | [Render](../visual.mdx#uid-615917604b) | 将该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。继承自 [Visual](../visual.mdx)。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../visual.mdx)。 |
@@ -180,7 +180,7 @@ public void InvalidateMeasure()
 
 ### Measure 方法 {#measure-method}
 
-Carries out a measure of the control.
+对该控件执行一次测量。
 
 ```csharp
 public void Measure(Avalonia.Size availableSize)

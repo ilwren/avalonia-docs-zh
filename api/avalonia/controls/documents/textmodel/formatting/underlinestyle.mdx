@@ -77,7 +77,7 @@ one survives an edit instead of degrading to a plain underline.
 | [Double](#uid-29bb0e82ec) | 两条平行的实线。 |
 | [None](#uid-f76fa1965d) | No underline style. Distinct from an unset (null) style: it records that the source explicitly said "no style", which is what RTF `\ulnone` and DOCX `w:val="none"` produce. Those also leave [Avalonia.Controls.Documents.TextModel.Formatting.TextDecorationFlags.Underline](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextDecorationFlags.Underline) off, so nothing draws. |
 | [Single](#uid-05f4b6d824) | 一条实线。 |
-| [Thick](#uid-876d4452b1) | A single line of increased thickness. |
+| [Thick](#uid-876d4452b1) | 一条加粗的单线。 |
 | [Wave](#uid-a27dc9939b) | A wavy line. Approximated when drawn, because a text decoration is a straight stroke. |
 | [Word](#uid-453eeddde3) | Words are underlined but the spaces between them are not. A scope rather than a line style, so it draws as [Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single](xref:Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle.Single). |
 
@@ -187,7 +187,7 @@ public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Single
 
 ### Thick 字段 {#thick-field}
 
-A single line of increased thickness.
+一条加粗的单线。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.Formatting.UnderlineStyle Thick

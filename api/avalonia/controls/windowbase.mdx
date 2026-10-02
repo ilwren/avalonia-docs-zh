@@ -284,7 +284,7 @@ public void Show()
 | [Opacity](../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../visual.mdx)。 |
 | [OpacityMask](../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../visual.mdx)。 |
 | [OpenedPopups](toplevel.mdx#uid-6cbebc4b62) | 获取当前直接在该顶层中打开的那些弹出层，按打开先后排列。继承自 [TopLevel](toplevel.mdx)。 |
-| [Owner](#uid-90855d7b88) | Gets or sets the owner of the window. |
+| [Owner](#uid-90855d7b88) | 获取或设置该窗口的所有者。 |
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [PlatformImpl](#uid-763833759d) | 暂无摘要。 |
@@ -348,7 +348,7 @@ public bool IsActive { get; set; }
 
 ### Owner 属性 {#owner-property}
 
-Gets or sets the owner of the window.
+获取或设置该窗口的所有者。
 
 ```csharp
 public Avalonia.Controls.WindowBase Owner { get; set; }
@@ -572,7 +572,7 @@ public Avalonia.StyledProperty<bool> TopmostProperty
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [DataContextChanged](../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
-| [Deactivated](#uid-6f5718d6fe) | Fired when the window is deactivated. |
+| [Deactivated](#uid-6f5718d6fe) | 窗口失活时触发。 |
 | [DetachedFromLogicalTree](../styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [DetachedFromVisualTree](../visual.mdx#uid-3f64dafb1c) | 当控件从带根的视觉树中分离时引发。继承自 [Visual](../visual.mdx)。 |
 | [DoubleTapped](../input/inputelement.mdx#uid-ad13083e0c) | 当用户在同一点短暂接触并松开两次、且位移不明显时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -640,7 +640,7 @@ public event EventHandler Activated
 
 ### Deactivated 事件 {#deactivated-event}
 
-Fired when the window is deactivated.
+窗口失活时触发。
 
 ```csharp
 public event EventHandler Deactivated

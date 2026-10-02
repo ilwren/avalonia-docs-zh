@@ -417,7 +417,7 @@ public void SortWindowsByZOrder(Span<Avalonia.Controls.Window> windows)
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalContentAlignment](contentcontrol.mdx#uid-91c4dbcd1a) | 获取或设置内容在控件内的水平对齐方式。继承自 [ContentControl](contentcontrol.mdx)。 |
-| [Icon](#uid-72f195a4e1) | Gets or sets the icon of the window. |
+| [Icon](#uid-72f195a4e1) | 获取或设置该窗口的图标。 |
 | [InputPane](toplevel.mdx#uid-a71bd123e4) | 继承自 [TopLevel](toplevel.mdx)。 |
 | [InsetsManager](toplevel.mdx#uid-a83543123e) | 继承自 [TopLevel](toplevel.mdx)。 |
 | [IsActive](windowbase.mdx#uid-8d625b6fef) | 获取一个值，指示该窗口是否处于活动状态。继承自 [WindowBase](windowbase.mdx)。 |
@@ -476,7 +476,7 @@ public void SortWindowsByZOrder(Span<Avalonia.Controls.Window> windows)
 | [Template](primitives/templatedcontrol.mdx#uid-7a289f7bd4) | 获取或设置定义控件外观的模板。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [TemplatedParent](../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Theme](../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../styledelement.mdx)。 |
-| [Title](#uid-b446f7fa3c) | Gets or sets the title of the window. |
+| [Title](#uid-b446f7fa3c) | 获取或设置该窗口的标题。 |
 | [Topmost](windowbase.mdx#uid-34194331b7) | 获取或设置该窗口是否显示在所有其他窗口之上。继承自 [WindowBase](windowbase.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [TransparencyBackgroundFallback](toplevel.mdx#uid-2e4e3f8e4e) | 获取或设置当平台不支持透明时，透明效果要与之混合的 [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)。默认是一支纯白画刷。继承自 [TopLevel](toplevel.mdx)。 |
@@ -597,7 +597,7 @@ public bool ExtendClientAreaToDecorationsHint { get; set; }
 
 ### Icon 属性 {#icon-property}
 
-Gets or sets the icon of the window.
+获取或设置该窗口的图标。
 
 ```csharp
 public Avalonia.Controls.WindowIcon Icon { get; set; }
@@ -764,7 +764,7 @@ public Avalonia.Controls.WindowDecorations SystemDecorations { get; set; }
 
 ### Title 属性 {#title-property}
 
-Gets or sets the title of the window.
+获取或设置该窗口的标题。
 
 ```csharp
 public string Title { get; set; }

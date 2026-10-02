@@ -632,7 +632,7 @@ public Avalonia.StyledProperty<double> SelectionStrokeThicknessProperty
 | [ScrollGestureEnded](../../input/inputelement.mdx#uid-eb3914c3a8) | 当滚动手势完全停止时发生，其中已计入用户松开指针后继续滚动的惯性过程。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStarting](../../input/inputelement.mdx#uid-c8cd2731a5) | 在滚动手势过程中，当用户松开指针、滚动转入惯性滑动阶段时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [SelectionChanged](#uid-1e87374c58) | Raised after the selection has changed. |
-| [SelectionChanging](#uid-11c5e07706) | Raised before the selection changes. |
+| [SelectionChanging](#uid-11c5e07706) | 选择发生变化之前抛出。 |
 | [SizeChanged](../control.mdx#uid-6cfea6b6c5) | 当控件的边界（实际尺寸）发生变化时发生。继承自 [Control](../control.mdx)。 |
 | [SwipeGesture](../../input/inputelement.mdx#uid-0f4fc613ec) | 当用户在控件上沿单一方向快速拖动指针时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [SwipeGestureEnded](../../input/inputelement.mdx#uid-137ae2fd9d) | 当控件上的滑动手势结束时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -662,7 +662,7 @@ public event EventHandler<Avalonia.Controls.Charts.ChartSelectionChangedEventArg
 
 ### SelectionChanging 事件 {#selectionchanging-event}
 
-Raised before the selection changes.
+选择发生变化之前抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Charts.ChartSelectionChangingEventArgs> SelectionChanging

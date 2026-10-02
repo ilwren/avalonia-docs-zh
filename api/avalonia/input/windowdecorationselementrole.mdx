@@ -70,13 +70,13 @@ public enum WindowDecorationsElementRole
 | [MinimizeButton](#uid-fb6f873eda) | The element acts as the window minimize button. On Win32, maps to HTMINBUTTON for system minimize behavior. On other platforms, treated as an interactive decoration element. |
 | [None](#uid-8ce0744b61) | No special role. The element is invisible to chrome hit-testing. |
 | [ResizeE](#uid-830310a2a9) | Resize grip for the east (right) edge. |
-| [ResizeN](#uid-ac10cd17aa) | Resize grip for the north (top) edge. |
-| [ResizeNE](#uid-3b94c31968) | Resize grip for the northeast corner. |
-| [ResizeNW](#uid-5077e9e3e8) | Resize grip for the northwest corner. |
+| [ResizeN](#uid-ac10cd17aa) | 北（上）边缘的缩放手柄。 |
+| [ResizeNE](#uid-3b94c31968) | 东北角的缩放手柄。 |
+| [ResizeNW](#uid-5077e9e3e8) | 西北角的缩放手柄。 |
 | [ResizeS](#uid-c31bb84981) | Resize grip for the south (bottom) edge. |
-| [ResizeSE](#uid-e350cea064) | Resize grip for the southeast corner. |
-| [ResizeSW](#uid-9940a2763b) | Resize grip for the southwest corner. |
-| [ResizeW](#uid-ceaf9edb7e) | Resize grip for the west (left) edge. |
+| [ResizeSE](#uid-e350cea064) | 东南角的缩放手柄。 |
+| [ResizeSW](#uid-9940a2763b) | 西南角的缩放手柄。 |
+| [ResizeW](#uid-ceaf9edb7e) | 西（左）边缘的缩放手柄。 |
 | [TitleBar](#uid-84c4aed0c3) | The element acts as a titlebar drag area. Clicking and dragging on this element initiates a platform window move. |
 | [User](#uid-7d2b4dd18f) | An interactive element set by user code that should receive input even when overlapping chrome areas. Has the same effect as [Avalonia.Input.WindowDecorationsElementRole.DecorationsElement](xref:Avalonia.Input.WindowDecorationsElementRole.DecorationsElement) but is intended for use by application developers. |
 
@@ -193,7 +193,7 @@ public Avalonia.Input.WindowDecorationsElementRole ResizeE
 
 ### ResizeN 字段 {#resizen-field}
 
-Resize grip for the north (top) edge.
+北（上）边缘的缩放手柄。
 
 ```csharp
 public Avalonia.Input.WindowDecorationsElementRole ResizeN
@@ -207,7 +207,7 @@ public Avalonia.Input.WindowDecorationsElementRole ResizeN
 
 ### ResizeNE 字段 {#resizene-field}
 
-Resize grip for the northeast corner.
+东北角的缩放手柄。
 
 ```csharp
 public Avalonia.Input.WindowDecorationsElementRole ResizeNE
@@ -221,7 +221,7 @@ public Avalonia.Input.WindowDecorationsElementRole ResizeNE
 
 ### ResizeNW 字段 {#resizenw-field}
 
-Resize grip for the northwest corner.
+西北角的缩放手柄。
 
 ```csharp
 public Avalonia.Input.WindowDecorationsElementRole ResizeNW
@@ -249,7 +249,7 @@ public Avalonia.Input.WindowDecorationsElementRole ResizeS
 
 ### ResizeSE 字段 {#resizese-field}
 
-Resize grip for the southeast corner.
+东南角的缩放手柄。
 
 ```csharp
 public Avalonia.Input.WindowDecorationsElementRole ResizeSE
@@ -263,7 +263,7 @@ public Avalonia.Input.WindowDecorationsElementRole ResizeSE
 
 ### ResizeSW 字段 {#resizesw-field}
 
-Resize grip for the southwest corner.
+西南角的缩放手柄。
 
 ```csharp
 public Avalonia.Input.WindowDecorationsElementRole ResizeSW
@@ -277,7 +277,7 @@ public Avalonia.Input.WindowDecorationsElementRole ResizeSW
 
 ### ResizeW 字段 {#resizew-field}
 
-Resize grip for the west (left) edge.
+西（左）边缘的缩放手柄。
 
 ```csharp
 public Avalonia.Input.WindowDecorationsElementRole ResizeW

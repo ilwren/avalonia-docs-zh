@@ -102,17 +102,17 @@ public Matrix(double scaleX, double skewY, double skewX, double scaleY, double o
 
 `skewY` double
 
-The second element of the first row.
+第一行的第二个元素。
 
 
 `skewX` double
 
-The first element of the second row.
+第二行的第一个元素。
 
 
 `scaleY` double
 
-The second element of the second row.
+第二行的第二个元素。
 
 
 `offsetX` double
@@ -122,7 +122,7 @@ The second element of the second row.
 
 `offsetY` double
 
-The second element of the third row.
+第三行的第二个元素。
 
 
 </section>
@@ -148,7 +148,7 @@ public Matrix(double scaleX, double skewY, double perspX, double skewX, double s
 
 `skewY` double
 
-The second element of the first row.
+第一行的第二个元素。
 
 
 `perspX` double
@@ -158,12 +158,12 @@ The third element of the first row.
 
 `skewX` double
 
-The first element of the second row.
+第二行的第一个元素。
 
 
 `scaleY` double
 
-The second element of the second row.
+第二行的第二个元素。
 
 
 `perspY` double
@@ -178,7 +178,7 @@ The third element of the second row.
 
 `offsetY` double
 
-The second element of the third row.
+第三行的第二个元素。
 
 
 `perspZ` double
@@ -206,7 +206,7 @@ The third element of the third row.
 | [Prepend](#uid-c73d3285dd) | Prepends another matrix as pre-multiplication operation. Equivalent to value * this; |
 | [ToRadians](#uid-a7bc401e4e) | Converts an angle in degrees to radians. |
 | [ToString](#uid-ea457313be) | Returns a String representing this matrix instance. |
-| [Transform](#uid-f230dedf09) | Transforms the point with the matrix |
+| [Transform](#uid-f230dedf09) | 用该矩阵变换这个点 |
 | [TryDecomposeTransform](#uid-14ea9cf6a3) | 暂无摘要。 |
 | [TryInvert](#uid-2cb77ea177) | 暂无摘要。 |
 
@@ -728,7 +728,7 @@ string
 
 ### Transform 方法 {#transform-method}
 
-Transforms the point with the matrix
+用该矩阵变换这个点
 
 ```csharp
 public Avalonia.Point Transform(Avalonia.Point p)

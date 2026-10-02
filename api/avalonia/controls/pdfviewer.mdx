@@ -168,7 +168,7 @@ public PdfViewer()
 | [ToggleBookmarkCurrentPage](#uid-ee273f7d0d) | Toggles the bookmark for the current page (the ⌘D / Ctrl+D action). |
 | [TryGetResource](../styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [UnderlineSelectionAsync](#uid-1cab96599f) | 暂无摘要。 |
-| [Undo](#uid-5a6f1d18cc) | Reverts the most recent edit, if any. |
+| [Undo](#uid-5a6f1d18cc) | 撤销最近的一次编辑（若有）。 |
 | [UndoAsync](#uid-d97da18e36) | Reverts the most recent edit and completes when the document has been updated. |
 | [UpdateLayout](../layout/layoutable.mdx#uid-529d4a08ea) | 执行一次布局。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [UpdateStickyNoteAsync](#uid-639b5d6ebd) | 暂无摘要。 |
@@ -1522,7 +1522,7 @@ System.Threading.Tasks.Task&lt;int&gt;
 
 ### Undo 方法 {#undo-method}
 
-Reverts the most recent edit, if any.
+撤销最近的一次编辑（若有）。
 
 ```csharp
 public void Undo()
@@ -1734,7 +1734,7 @@ public void ZoomOut()
 | [MinZoom](#uid-7eb8ba3db9) | Gets or sets the minimum allowed [Avalonia.Controls.PdfViewer.ZoomLevel](xref:Avalonia.Controls.PdfViewer.ZoomLevel) (1.0 == 100%). Default 0.05. |
 | [Name](../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../styledelement.mdx)。 |
 | [NextPageCommand](#uid-791d70997a) | Gets a command that advances to the next page. Disabled on the last page. |
-| [NoteColor](#uid-8c6530f81b) | Gets or sets the default note color. |
+| [NoteColor](#uid-8c6530f81b) | 获取或设置便签的默认颜色。 |
 | [Opacity](../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../visual.mdx)。 |
 | [OpacityMask](../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../visual.mdx)。 |
 | [OpenCommand](#uid-0468827bf7) | Gets a command that opens a document via [Avalonia.Controls.PdfViewer.Open](xref:Avalonia.Controls.PdfViewer.Open) (file picker or [Avalonia.Controls.PdfViewer.OpenRequested](xref:Avalonia.Controls.PdfViewer.OpenRequested)). |
@@ -2821,7 +2821,7 @@ public System.Windows.Input.ICommand NextPageCommand { get; set; }
 
 ### NoteColor 属性 {#notecolor-property}
 
-Gets or sets the default note color.
+获取或设置便签的默认颜色。
 
 ```csharp
 public Avalonia.Controls.Pdf.Core.PdfAnnotationColor NoteColor { get; set; }

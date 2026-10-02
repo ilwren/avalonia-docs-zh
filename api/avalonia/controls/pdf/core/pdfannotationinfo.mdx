@@ -60,9 +60,9 @@ public class PdfAnnotationInfo
 | 名称 | 说明 |
 | --- | --- |
 | [AnnotationIndex](#uid-526d356c28) | Zero-based index of this annotation on its page. |
-| [Author](#uid-0606e7f095) | The annotation author/title, or `null`. |
+| [Author](#uid-0606e7f095) | 批注的作者/标题，或 `null`。 |
 | [BorderWidth](#uid-4bc86ce1f9) | Border/stroke width in points, or `null` if not set. |
-| [Bounds](#uid-91050198d2) | Bounding rectangle in PDF user space. |
+| [Bounds](#uid-91050198d2) | 以 PDF 用户空间表示的外接矩形。 |
 | [Color](#uid-8b51f4ae27) | Stroke/border color, or `null` if not set. |
 | [Contents](#uid-00882e0de6) | The annotation's text contents (note text or popup text), or `null`. |
 | [HasArrowHead](#uid-7c37224baa) | Whether a line annotation has an arrowhead at its end point. |
@@ -96,7 +96,7 @@ public int AnnotationIndex { get; set; }
 
 ### Author 属性 {#author-property}
 
-The annotation author/title, or `null`.
+批注的作者/标题，或 `null`。
 
 ```csharp
 public string Author { get; set; }
@@ -124,7 +124,7 @@ public Nullable<float> BorderWidth { get; set; }
 
 ### Bounds 属性 {#bounds-property}
 
-Bounding rectangle in PDF user space.
+以 PDF 用户空间表示的外接矩形。
 
 ```csharp
 public Avalonia.Controls.Pdf.Core.PdfRect Bounds { get; set; }

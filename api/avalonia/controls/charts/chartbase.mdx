@@ -976,7 +976,7 @@ public Avalonia.StyledProperty<bool> ToggleSeriesVisibilityProperty
 | [ContextCanceled](../../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ContextRequested](../../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [DataContextChanged](../../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [DataPointClicked](#uid-90633e140b) | Occurs when a data point is clicked. |
+| [DataPointClicked](#uid-90633e140b) | 数据点被点击时发生。 |
 | [DataPointHovered](#uid-2ae08f0f6c) | Occurs when the hovered data point changes. Fired after the debounce interval when the pointer moves over a new data point or leaves all data points. |
 | [DetachedFromLogicalTree](../../styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [DetachedFromVisualTree](../../visual.mdx#uid-3f64dafb1c) | 当控件从带根的视觉树中分离时引发。继承自 [Visual](../../visual.mdx)。 |
@@ -1030,7 +1030,7 @@ public Avalonia.StyledProperty<bool> ToggleSeriesVisibilityProperty
 
 ### DataPointClicked 事件 {#datapointclicked-event}
 
-Occurs when a data point is clicked.
+数据点被点击时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Charts.DataPointClickedEventArgs> DataPointClicked

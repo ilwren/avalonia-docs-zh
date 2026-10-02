@@ -98,7 +98,7 @@ public RadarSeries()
 | [GetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [GetMarkerShape](#uid-1124cf531b) | 获取该系列类型在图例中使用的标记形状。可在派生类中重写，以提供合适的标记形状。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [GetValues](#uid-5e77bc027e) | Gets the values from the ItemsSource. |
+| [GetValues](#uid-5e77bc027e) | 从 ItemsSource 中取得各个取值。 |
 | [GetValuesWithItems](#uid-6e31df47e4) | Gets the radar values together with their original source items. |
 | [InvalidateArrange](../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -149,7 +149,7 @@ public Avalonia.Controls.Charts.LegendMarkerShape GetMarkerShape()
 
 ### GetValues 方法 {#getvalues-method}
 
-Gets the values from the ItemsSource.
+从 ItemsSource 中取得各个取值。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<double> GetValues()

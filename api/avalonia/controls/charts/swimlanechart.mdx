@@ -216,7 +216,7 @@ public void ReplayAnimation()
 | [KeyBindings](../../input/inputelement.mdx#uid-827a5420b2) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [LabelForeground](chartbase.mdx#uid-7ba97907ce) | 获取或设置坐标轴及图表级标签所用的画刷。若数据系列或批注自带标签画刷属性，则会在局部覆盖此设置。继承自 [ChartBase](chartbase.mdx)。 |
 | [LaneBackgroundBrush](#uid-51047d701d) | Gets or sets the background brush for lanes (alternating). |
-| [LaneHeight](#uid-e57b092f05) | Gets or sets the height of each lane. |
+| [LaneHeight](#uid-e57b092f05) | 获取或设置每条泳道的高度。 |
 | [LanePath](#uid-6730dbabef) | Gets or sets the property path for grouping items into lanes. |
 | [LaneSeparatorBrush](#uid-6f335ff7db) | Gets or sets the brush for lane separator lines. |
 | [LegendAlignment](chartbase.mdx#uid-8d2828bd19) | 获取或设置图例的对齐方式。继承自 [ChartBase](chartbase.mdx)。 |
@@ -247,7 +247,7 @@ public void ReplayAnimation()
 | [TabIndex](../../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [Tag](../control.mdx#uid-2790b0c958) | 获取或设置附加在控件上的用户自定义对象。继承自 [Control](../control.mdx)。 |
 | [TaskCornerRadius](#uid-27a6e6e76a) | Gets or sets the corner radius of task bars. |
-| [TaskHeight](#uid-a59223cf90) | Gets or sets the height of task bars. |
+| [TaskHeight](#uid-a59223cf90) | 获取或设置任务条的高度。 |
 | [TaskNamePath](#uid-571a788a35) | Gets or sets the property path for task names. |
 | [TaskSpacing](#uid-71c7db014c) | Gets or sets the spacing between tasks in the same lane (if extrapolated to stacked). |
 | [Template](../primitives/templatedcontrol.mdx#uid-7a289f7bd4) | 获取或设置定义控件外观的模板。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -323,7 +323,7 @@ public Avalonia.Media.IBrush LaneBackgroundBrush { get; set; }
 
 ### LaneHeight 属性 {#laneheight-property}
 
-Gets or sets the height of each lane.
+获取或设置每条泳道的高度。
 
 ```csharp
 public double LaneHeight { get; set; }
@@ -407,7 +407,7 @@ public Avalonia.CornerRadius TaskCornerRadius { get; set; }
 
 ### TaskHeight 属性 {#taskheight-property}
 
-Gets or sets the height of task bars.
+获取或设置任务条的高度。
 
 ```csharp
 public double TaskHeight { get; set; }

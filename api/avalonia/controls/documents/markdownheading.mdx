@@ -131,7 +131,7 @@ public MarkdownHeading()
 | [KeepWithNext](block.mdx#uid-f3431d2af3) | 获取或设置分页输出时是否让该块的末尾与下一个块的开头同处一页。连续标记的若干块会作为一条链一起移动，链长超过一页时便放弃。屏幕上的连续排版会忽略它。继承自 [Block](block.mdx)。 |
 | [LastChildElement](richtextelement.mdx#uid-ea00d129b3) | 获取文档树中最后一个直接子元素；若不存在则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [LetterSpacing](richtextelement.mdx#uid-a0f0542ed1) | 获取或设置字间距。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [Level](#uid-2ae9a3596f) | Gets or sets the heading level (1-6). |
+| [Level](#uid-2ae9a3596f) | 获取或设置标题层级（1-6）。 |
 | [LineHeight](block.mdx#uid-0b29471292) | 获取或设置块内各行文本的最小行高。继承自 [Block](block.mdx)。 |
 | [Margin](block.mdx#uid-667a6f2ab4) | 获取或设置块外侧的外边距。继承自 [Block](block.mdx)。 |
 | [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -158,7 +158,7 @@ public MarkdownHeading()
 
 ### Level 属性 {#level-property}
 
-Gets or sets the heading level (1-6).
+获取或设置标题层级（1-6）。
 
 ```csharp
 public int Level { get; set; }

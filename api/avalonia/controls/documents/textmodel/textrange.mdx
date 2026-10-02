@@ -99,7 +99,7 @@ The end position.
 | [Contains（2 个重载）](#uid-f71713cd49) | Checks if the range contains the specified pointer. |
 | [CreateSnapshot](#uid-462c656203) | Creates an immutable, thread-safe snapshot of this range's document structure. The caller chooses a serializer to convert the snapshot to a specific format. |
 | [Delete](#uid-4cc238f628) | 删除该范围内的内容。 |
-| [DeleteCurrentBlock (2 overloads)](#uid-a2fe640aaf) | Deletes the block this range starts in, and collapses the range onto the deletion point. |
+| [DeleteCurrentBlock（2 个重载）](#uid-a2fe640aaf) | Deletes the block this range starts in, and collapses the range onto the deletion point. |
 | [DeleteText](#uid-4266eab3ed) | Deletes the content of this range. Removes whatever the range covers — characters, inline runs, paragraphs, list items, tables, sections — depending on which nodes the range fully encloses. When the deletion crosses block boundaries and both surviving boundary blocks are paragraphs, `mergeBlocks` controls whether the surviving fragments fuse into one paragraph. Manages transaction automatically. |
 | [DeleteTextAt](#uid-9beff62495) | Deletes text at the specified range relative to this range. Manages transaction automatically. |
 | [GetPropertyValue](#uid-71aaf13562) | 暂无摘要。 |
@@ -1006,7 +1006,7 @@ bool
 | [End](#uid-37c972b3f9) | 获取该范围的结束位置。 |
 | [IsEmpty](#uid-313c05b9fc) | Gets a value indicating whether the range is empty. A range is empty only when [Avalonia.Controls.Documents.TextModel.TextRange.Start](xref:Avalonia.Controls.Documents.TextModel.TextRange.Start) and [Avalonia.Controls.Documents.TextModel.TextRange.End](xref:Avalonia.Controls.Documents.TextModel.TextRange.End) refer to the exact same document position (node-aware). Two distinct positions that happen to share the same integer offset — for example pointers into consecutive empty paragraphs — are not considered empty. |
 | [Length](#uid-27d48f7738) | Gets the length of the range in characters. |
-| [Start](#uid-fe0f8d7b6a) | Gets the start position of the range. |
+| [Start](#uid-fe0f8d7b6a) | 获取该范围的起始位置。 |
 | [TextDocument](#uid-fce62d199c) | Gets the document containing this range. |
 
 <section className="apiref-page__member-entry">
@@ -1061,7 +1061,7 @@ public int Length { get; set; }
 
 ### Start 属性 {#start-property}
 
-Gets the start position of the range.
+获取该范围的起始位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextPointer Start { get; set; }

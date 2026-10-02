@@ -144,7 +144,7 @@ public ImageInlineDraft(ReadOnlyMemory<byte> imageData, string imageMimeType, do
 | [FormatMetadata](inlinedraft.mdx#uid-44323a64b0) | 用于往返保真的格式专属元数据（比如 RTF 的下划线变体）。构建文档时会转移到生成的 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) 上。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [Formatting](inlinedraft.mdx#uid-5bc8ad789d) | 内联元素特有的格式设置（文本装饰、基线对齐）。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [Height](#uid-a3a34d3b4e) | Gets or sets the display height in device-independent pixels. [double.NaN](xref:System.Double.NaN) uses the intrinsic pixel size. |
-| [ImageData](#uid-7ade528876) | Gets or sets the encoded image bytes. |
+| [ImageData](#uid-7ade528876) | 获取或设置编码后的图像字节。 |
 | [ImageMimeType](#uid-b0c1561d88) | Gets or sets the MIME type of [Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData](xref:Avalonia.Controls.Documents.Serialization.Authoring.ImageInlineDraft.ImageData). |
 | [Inlines](inlinedraft.mdx#uid-1eaa3c4f70) | 获取可变的子级内联草稿列表。继承自 [InlineDraft](inlinedraft.mdx)。 |
 | [Kind](inlinedraft.mdx#uid-e8bc97d972) | 获取标识该草稿内联类型的 [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind)。继承自 [InlineDraft](inlinedraft.mdx)。 |
@@ -186,7 +186,7 @@ public double Height { get; set; }
 
 ### ImageData 属性 {#imagedata-property}
 
-Gets or sets the encoded image bytes.
+获取或设置编码后的图像字节。
 
 ```csharp
 public ReadOnlyMemory<byte> ImageData { get; set; }

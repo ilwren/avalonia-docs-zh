@@ -56,7 +56,7 @@ public class TextInputMethodClient
 
 | 名称 | 说明 |
 | --- | --- |
-| [ExecuteContextMenuAction](#uid-09a71bff40) | Execute specific context menu actions |
+| [ExecuteContextMenuAction](#uid-09a71bff40) | 执行特定的上下文菜单操作 |
 | [SetPreeditText (2 overloads)](#uid-07ee636bcb) | 设置尚未提交的输入字符串 |
 
 <section className="apiref-page__member-entry">
@@ -65,7 +65,7 @@ public class TextInputMethodClient
 
 ### ExecuteContextMenuAction 方法 {#executecontextmenuaction-method}
 
-Execute specific context menu actions
+执行特定的上下文菜单操作
 
 ```csharp
 public void ExecuteContextMenuAction(Avalonia.Input.TextInput.ContextMenuAction action)
@@ -225,7 +225,7 @@ public Avalonia.Visual TextViewVisual { get; set; }
 | [CursorRectangleChanged](#uid-82e53c08fd) | Fires when the cursor rectangle has changed |
 | [InputPaneActivationRequested](#uid-8ea89f8553) | Fires when client requests the input panel be opened. |
 | [ResetRequested](#uid-57ea1c6a90) | Fires when client wants to reset IME state |
-| [SelectionChanged](#uid-25cfcfdf97) | Fires when the selection has changed |
+| [SelectionChanged](#uid-25cfcfdf97) | 选择发生变化时触发 |
 | [SurroundingTextChanged](#uid-898a8095ac) | Fires when the surrounding text has changed |
 | [TextViewVisualChanged](#uid-a856fcd295) | Fires when the text view visual has changed |
 
@@ -277,7 +277,7 @@ public event EventHandler ResetRequested
 
 ### SelectionChanged 事件 {#selectionchanged-event}
 
-Fires when the selection has changed
+选择发生变化时触发
 
 ```csharp
 public event EventHandler SelectionChanged

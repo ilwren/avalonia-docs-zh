@@ -64,8 +64,8 @@ public enum BindingMode
 | --- | --- |
 | [Default](#uid-4d65cfd7f9) | Uses the default binding mode specified for the property. |
 | [OneTime](#uid-be5396d533) | Updates the target when the application starts or when the data context changes. |
-| [OneWay](#uid-a258a2f721) | Binds one way from source to target. |
-| [OneWayToSource](#uid-7e92b96a74) | Binds one way from target to source. |
+| [OneWay](#uid-a258a2f721) | 单向绑定，从源到目标。 |
+| [OneWayToSource](#uid-7e92b96a74) | 单向绑定，从目标到源。 |
 | [TwoWay](#uid-bd878a280b) | Binds two-way with the initial value coming from the target. |
 
 <section className="apiref-page__member-entry">
@@ -102,7 +102,7 @@ public Avalonia.Data.BindingMode OneTime
 
 ### OneWay 字段 {#oneway-field}
 
-Binds one way from source to target.
+单向绑定，从源到目标。
 
 ```csharp
 public Avalonia.Data.BindingMode OneWay
@@ -116,7 +116,7 @@ public Avalonia.Data.BindingMode OneWay
 
 ### OneWayToSource 字段 {#onewaytosource-field}
 
-Binds one way from target to source.
+单向绑定，从目标到源。
 
 ```csharp
 public Avalonia.Data.BindingMode OneWayToSource
