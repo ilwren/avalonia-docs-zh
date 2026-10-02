@@ -62,12 +62,12 @@ public class Design
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetDataContext (2 overloads)](#uid-730975f9b1) | Gets the design-time data context for a control. |
+| [GetDataContext (2 overloads)](#uid-730975f9b1) | 获取某个控件的设计时数据上下文。 |
 | [GetDesignStyle](#uid-aa9086667b) | Gets the design-time style for a control. |
 | [GetHeight](#uid-d7570e141d) | Gets the design-time height for a control. |
 | [GetPreviewWith (4 overloads)](#uid-3f2107265d) | 在设计时取得指定 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 的预览控件。 |
 | [GetWidth](#uid-93a3ad0a96) | Gets the design-time width for a control. |
-| [SetDataContext (2 overloads)](#uid-e52d4759ea) | Sets the design-time data context for a control. |
+| [SetDataContext (2 overloads)](#uid-e52d4759ea) | 设置某个控件的设计时数据上下文。 |
 | [SetDesignStyle](#uid-ac3a719e27) | Sets the design-time style for a control. |
 | [SetHeight](#uid-44fd86c56e) | Sets the design-time height for a control. |
 | [SetPreviewWith (8 overloads)](#uid-d8dac897b3) | Sets a preview control for the specified [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) at design-time. |
@@ -83,7 +83,7 @@ public class Design
 
 #### GetDataContext 方法 {#getdatacontext-method}
 
-Gets the design-time data context for a control.
+获取某个控件的设计时数据上下文。
 
 ```csharp
 public object GetDataContext(Avalonia.Controls.Control control)
@@ -111,7 +111,7 @@ object
 
 #### GetDataContext 方法 {#getdatacontext-method-1}
 
-Gets the design-time data context for a control.
+获取某个控件的设计时数据上下文。
 
 ```csharp
 public object GetDataContext(Avalonia.Controls.Templates.IDataTemplate control)
@@ -209,7 +209,7 @@ public Avalonia.Controls.Control GetPreviewWith(Avalonia.AvaloniaObject target)
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The target object.
+目标对象。
 
 
 ##### 返回值 {#returns-4}
@@ -265,7 +265,7 @@ public Avalonia.Controls.Control GetPreviewWith(Avalonia.Controls.Templates.IDat
 
 `target` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
-The data template.
+数据模板。
 
 
 ##### 返回值 {#returns-6}
@@ -343,7 +343,7 @@ The width value.
 
 #### SetDataContext 方法 {#setdatacontext-method}
 
-Sets the design-time data context for a control.
+设置某个控件的设计时数据上下文。
 
 ```csharp
 public void SetDataContext(Avalonia.Controls.Control control, object value)
@@ -369,7 +369,7 @@ The control to set the data context for.
 
 #### SetDataContext 方法 {#setdatacontext-method-1}
 
-Sets the design-time data context for a control.
+设置某个控件的设计时数据上下文。
 
 ```csharp
 public void SetDataContext(Avalonia.Controls.Templates.IDataTemplate control, object value)
@@ -461,7 +461,7 @@ public void SetPreviewWith(Avalonia.AvaloniaObject target, Avalonia.Controls.Con
 
 `target` [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject)
 
-The target object.
+目标对象。
 
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
@@ -558,7 +558,7 @@ public void SetPreviewWith(Avalonia.Controls.Templates.IDataTemplate target, Ava
 
 `target` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
-The data template.
+数据模板。
 
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
@@ -609,7 +609,7 @@ public void SetPreviewWith(Avalonia.Styling.IStyle target, Avalonia.Controls.Con
 
 `target` [Avalonia.Styling.IStyle](xref:Avalonia.Styling.IStyle)
 
-The data template.
+数据模板。
 
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)

@@ -117,16 +117,16 @@ Foreground brush used to render text.
 | [BuildGeometry](#uid-806608ebb6) | Obtains geometry for the text, including underlines and strikethroughs. |
 | [BuildHighlightGeometry (2 overloads)](#uid-24a303ae8d) | Builds a highlight geometry object. |
 | [GetMaxTextWidths](#uid-0c2b3daf80) | Obtains a copy of the array of lengths, which will be applied to each line of text in turn. If the text covers more lines than there are entries in the length array, the last entry is reused as many times as required. The maxTextWidths array overrides the MaxTextWidth property. |
-| [SetCulture (2 overloads)](#uid-74b990f385) | Sets or changes the culture for the text object. |
+| [SetCulture (2 overloads)](#uid-74b990f385) | 设置或更改该文本对象的区域性。 |
 | [SetFontFamily (4 overloads)](#uid-253942fbfc) | 为文本对象设置或更改字体族 |
-| [SetFontFeatures (2 overloads)](#uid-19d23fec95) | Sets or changes the font features for the text object |
-| [SetFontSize (2 overloads)](#uid-0548ca8790) | Sets or changes the font em size measured in MIL units |
-| [SetFontStyle (2 overloads)](#uid-0d603b2f82) | Sets or changes the font style |
-| [SetFontTypeface (2 overloads)](#uid-d39bb21641) | Sets or changes the type face |
-| [SetFontWeight (2 overloads)](#uid-c06d7ce529) | Sets or changes the font weight |
-| [SetForegroundBrush (2 overloads)](#uid-6301ed1522) | Sets foreground brush used for drawing text |
+| [SetFontFeatures (2 overloads)](#uid-19d23fec95) | 设置或更改该文本对象的字体特性 |
+| [SetFontSize (2 overloads)](#uid-0548ca8790) | 设置或更改以 MIL 单位计的字体 em 大小 |
+| [SetFontStyle (2 overloads)](#uid-0d603b2f82) | 设置或更改字形 |
+| [SetFontTypeface (2 overloads)](#uid-d39bb21641) | 设置或更改字型 |
+| [SetFontWeight (2 overloads)](#uid-c06d7ce529) | 设置或更改字重 |
+| [SetForegroundBrush (2 overloads)](#uid-6301ed1522) | 设置绘制文本所用的前景画刷 |
 | [SetMaxTextWidths](#uid-613faea176) | Sets the array of lengths, which will be applied to each line of text in turn. If the text covers more lines than there are entries in the length array, the last entry is reused as many times as required. The maxTextWidths array overrides the MaxTextWidth property. |
-| [SetTextDecorations (2 overloads)](#uid-837121285d) | Sets or changes the text decorations |
+| [SetTextDecorations (2 overloads)](#uid-837121285d) | 设置或更改文本装饰 |
 
 <section className="apiref-page__member-entry">
 
@@ -263,7 +263,7 @@ The copy of max text width array
 
 #### SetCulture 方法 {#setculture-method}
 
-Sets or changes the culture for the text object.
+设置或更改该文本对象的区域性。
 
 ```csharp
 public void SetCulture(System.Globalization.CultureInfo culture)
@@ -284,7 +284,7 @@ The new culture for the text object.
 
 #### SetCulture 方法 {#setculture-method-1}
 
-Sets or changes the culture for the text object.
+设置或更改该文本对象的区域性。
 
 ```csharp
 public void SetCulture(System.Globalization.CultureInfo culture, int startIndex, int count)
@@ -427,7 +427,7 @@ Font family name
 
 #### SetFontFeatures 方法 {#setfontfeatures-method}
 
-Sets or changes the font features for the text object
+设置或更改该文本对象的字体特性
 
 ```csharp
 public void SetFontFeatures(Avalonia.Media.FontFeatureCollection fontFeatures)
@@ -448,7 +448,7 @@ Feature collection
 
 #### SetFontFeatures 方法 {#setfontfeatures-method-1}
 
-Sets or changes the font features for the text object
+设置或更改该文本对象的字体特性
 
 ```csharp
 public void SetFontFeatures(Avalonia.Media.FontFeatureCollection fontFeatures, int startIndex, int count)
@@ -483,7 +483,7 @@ Feature collection
 
 #### SetFontSize 方法 {#setfontsize-method}
 
-Sets or changes the font em size measured in MIL units
+设置或更改以 MIL 单位计的字体 em 大小
 
 ```csharp
 public void SetFontSize(double emSize)
@@ -504,7 +504,7 @@ Font em size
 
 #### SetFontSize 方法 {#setfontsize-method-1}
 
-Sets or changes the font em size measured in MIL units
+设置或更改以 MIL 单位计的字体 em 大小
 
 ```csharp
 public void SetFontSize(double emSize, int startIndex, int count)
@@ -539,7 +539,7 @@ Font em size
 
 #### SetFontStyle 方法 {#setfontstyle-method}
 
-Sets or changes the font style
+设置或更改字形
 
 ```csharp
 public void SetFontStyle(Avalonia.Media.FontStyle style)
@@ -560,7 +560,7 @@ public void SetFontStyle(Avalonia.Media.FontStyle style)
 
 #### SetFontStyle 方法 {#setfontstyle-method-1}
 
-Sets or changes the font style
+设置或更改字形
 
 ```csharp
 public void SetFontStyle(Avalonia.Media.FontStyle style, int startIndex, int count)
@@ -595,7 +595,7 @@ public void SetFontStyle(Avalonia.Media.FontStyle style, int startIndex, int cou
 
 #### SetFontTypeface 方法 {#setfonttypeface-method}
 
-Sets or changes the type face
+设置或更改字型
 
 ```csharp
 public void SetFontTypeface(Avalonia.Media.Typeface typeface)
@@ -616,7 +616,7 @@ Typeface
 
 #### SetFontTypeface 方法 {#setfonttypeface-method-1}
 
-Sets or changes the type face
+设置或更改字型
 
 ```csharp
 public void SetFontTypeface(Avalonia.Media.Typeface typeface, int startIndex, int count)
@@ -651,7 +651,7 @@ Typeface
 
 #### SetFontWeight 方法 {#setfontweight-method}
 
-Sets or changes the font weight
+设置或更改字重
 
 ```csharp
 public void SetFontWeight(Avalonia.Media.FontWeight weight)
@@ -672,7 +672,7 @@ public void SetFontWeight(Avalonia.Media.FontWeight weight)
 
 #### SetFontWeight 方法 {#setfontweight-method-1}
 
-Sets or changes the font weight
+设置或更改字重
 
 ```csharp
 public void SetFontWeight(Avalonia.Media.FontWeight weight, int startIndex, int count)
@@ -707,7 +707,7 @@ public void SetFontWeight(Avalonia.Media.FontWeight weight, int startIndex, int 
 
 #### SetForegroundBrush 方法 {#setforegroundbrush-method}
 
-Sets foreground brush used for drawing text
+设置绘制文本所用的前景画刷
 
 ```csharp
 public void SetForegroundBrush(Avalonia.Media.IBrush foregroundBrush)
@@ -728,7 +728,7 @@ Foreground brush
 
 #### SetForegroundBrush 方法 {#setforegroundbrush-method-1}
 
-Sets foreground brush used for drawing text
+设置绘制文本所用的前景画刷
 
 ```csharp
 public void SetForegroundBrush(Avalonia.Media.IBrush foregroundBrush, int startIndex, int count)
@@ -788,7 +788,7 @@ The max text width array
 
 #### SetTextDecorations 方法 {#settextdecorations-method}
 
-Sets or changes the text decorations
+设置或更改文本装饰
 
 ```csharp
 public void SetTextDecorations(Avalonia.Media.TextDecorationCollection textDecorations)
@@ -809,7 +809,7 @@ public void SetTextDecorations(Avalonia.Media.TextDecorationCollection textDecor
 
 #### SetTextDecorations 方法 {#settextdecorations-method-1}
 
-Sets or changes the text decorations
+设置或更改文本装饰
 
 ```csharp
 public void SetTextDecorations(Avalonia.Media.TextDecorationCollection textDecorations, int startIndex, int count)

@@ -113,7 +113,7 @@ The window implementation.
 
 | 名称 | 说明 |
 | --- | --- |
-| [Activate](windowbase.mdx#uid-25b4243aec) | Activates the window. Inherited from [WindowBase](windowbase.mdx). |
+| [Activate](windowbase.mdx#uid-25b4243aec) | 激活该窗口。继承自 [WindowBase](windowbase.mdx)。 |
 | [AddHandler（2 个重载）](../interactivity/interactive.mdx#uid-02518f5b3a) | 为指定的路由事件添加处理程序。继承自 [Interactive](../interactivity/interactive.mdx)。 |
 | [ApplyStyling](../styledelement.mdx#uid-b0f81a6f8f) | 若控件已初始化且尚未应用样式，则为其应用样式。继承自 [StyledElement](../styledelement.mdx)。 |
 | [ApplyTemplate](primitives/templatedcontrol.mdx#uid-cc70dd4d2f) | 按需创建控件的视觉子元素。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
@@ -124,7 +124,7 @@ The window implementation.
 | [Bind（8 个重载）](../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CheckAccess](../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Close (2 overloads)](#uid-c8fe30fd70) | Closes the window. |
+| [Close（2 个重载）](#uid-c8fe30fd70) | Closes the window. |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [EndInit](../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -159,7 +159,7 @@ The window implementation.
 | [SetIsTemplateFocusTarget](primitives/templatedcontrol.mdx#uid-281801c25f) | 设置控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [SetSystemBarColor](toplevel.mdx#uid-1359f0a6ef) | 获取或设置该窗口的键盘导航处理程序。继承自 [TopLevel](toplevel.mdx)。 |
 | [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Show (2 overloads)](#uid-cadc232152) | 显示该窗口。 |
+| [Show（2 个重载）](#uid-cadc232152) | 显示该窗口。 |
 | [ShowDialog](#uid-4355328b25) | Shows the window as a dialog. |
 | [SortWindowsByZOrder](#uid-a899c96091) | 暂无摘要。 |
 | [TryGetPlatformHandle](toplevel.mdx#uid-f886eb2cf2) | 尝试取得这个派生自 [TopLevel](xref:Avalonia.Controls.TopLevel) 的控件所对应的平台句柄。继承自 [TopLevel](toplevel.mdx)。 |
@@ -287,7 +287,7 @@ public void Show()
 
 ##### 异常 {#exceptions}
 
-- [The window has already been closed.](xref:System.InvalidOperationException)
+- [该窗口已经关闭。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -312,7 +312,7 @@ Window that will be the owner of the shown window.
 
 ##### 异常 {#exceptions-1}
 
-- [The window has already been closed.](xref:System.InvalidOperationException)
+- [该窗口已经关闭。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -344,7 +344,7 @@ A task that can be used to track the lifetime of the dialog.
 
 #### 异常 {#exceptions-2}
 
-- [The window has already been closed.](xref:System.InvalidOperationException)
+- [该窗口已经关闭。](xref:System.InvalidOperationException)
 
 </section>
 
@@ -967,7 +967,7 @@ public Avalonia.Controls.WindowState WindowState { get; set; }
 | [TextInputMethodClientRequestedEvent](../input/inputelement.mdx#uid-679852bb37) | 定义 [Avalonia.Input.InputElement.TextInputMethodClientRequested](xref:Avalonia.Input.InputElement.TextInputMethodClientRequested) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ThemeProperty](../styledelement.mdx#uid-05852d7b9a) | 定义 [Avalonia.StyledElement.Theme](xref:Avalonia.StyledElement.Theme) 属性。继承自 [StyledElement](../styledelement.mdx)。 |
 | [TitleProperty](#uid-6fe2ba7c03) | 定义 [Avalonia.Controls.Window.Title](xref:Avalonia.Controls.Window.Title) 属性。 |
-| [TopmostProperty](windowbase.mdx#uid-8d65fc0331) | Inherited from [WindowBase](windowbase.mdx). |
+| [TopmostProperty](windowbase.mdx#uid-8d65fc0331) | 继承自 [WindowBase](windowbase.mdx)。 |
 | [TransitionsProperty](../animation/animatable.mdx#uid-c79f18fac2) | 定义 [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) 属性。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [TransparencyBackgroundFallbackProperty](toplevel.mdx#uid-ac3a27d16b) | 定义 [Avalonia.Controls.TopLevel.TransparencyBackgroundFallback](xref:Avalonia.Controls.TopLevel.TransparencyBackgroundFallback) 属性。继承自 [TopLevel](toplevel.mdx)。 |
 | [TransparencyLevelHintProperty](toplevel.mdx#uid-d088bd6f58) | 定义 [Avalonia.Controls.TopLevel.TransparencyLevelHint](xref:Avalonia.Controls.TopLevel.TransparencyLevelHint) 属性。继承自 [TopLevel](toplevel.mdx)。 |

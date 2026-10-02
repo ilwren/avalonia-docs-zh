@@ -99,7 +99,7 @@ public TreeDataGridCellSelectionModel<TModel>(Avalonia.Controls.TreeDataGridSour
 | [BeginBatchUpdate](#uid-33369fa084) | 开始对选择做一次批量更新。 |
 | [Clear](#uid-2a99e8803a) | 清除选区。 |
 | [EndBatchUpdate](#uid-2eacfb3815) | 结束由 [Avalonia.Controls.Selection.TreeDataGridCellSelectionModel&lt;T&gt;.BeginBatchUpdate](xref:Avalonia.Controls.Selection.TreeDataGridCellSelectionModel%601.BeginBatchUpdate) 开始的批量更新。 |
-| [IsSelected (2 overloads)](#uid-ac6ca39f4b) | Checks whether the specified cell is selected. |
+| [IsSelected (2 overloads)](#uid-ac6ca39f4b) | 检查指定的单元格是否处于选中状态。 |
 | [SelectAll](#uid-b830b86c94) | Selects all cells in the grid. |
 | [SetSelectedRange](#uid-a0a9c7592b) | Sets the current selection to the specified range of cells. |
 
@@ -190,7 +190,7 @@ public void EndBatchUpdate()
 
 #### IsSelected 方法 {#isselected-method}
 
-Checks whether the specified cell is selected.
+检查指定的单元格是否处于选中状态。
 
 ```csharp
 public bool IsSelected(Avalonia.Controls.CellIndex index)
@@ -216,7 +216,7 @@ bool
 
 #### IsSelected 方法 {#isselected-method-1}
 
-Checks whether the specified cell is selected.
+检查指定的单元格是否处于选中状态。
 
 ```csharp
 public bool IsSelected(int columnIndex, Avalonia.Controls.IndexPath rowIndex)

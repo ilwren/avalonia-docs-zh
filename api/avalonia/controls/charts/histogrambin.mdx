@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Represents a computed histogram bin.
+表示一个算好的直方图分箱。
 
 </div>
 
@@ -61,7 +61,7 @@ public struct HistogramBin
 
 | 名称 | 说明 |
 | --- | --- |
-| [HistogramBin](#uid-6408e38dcf) | Represents a computed histogram bin. |
+| [HistogramBin](#uid-6408e38dcf) | 表示一个算好的直方图分箱。 |
 
 <section className="apiref-page__member-entry">
 
@@ -69,7 +69,7 @@ public struct HistogramBin
 
 ### HistogramBin 构造函数 {#histogrambin-constructor}
 
-Represents a computed histogram bin.
+表示一个算好的直方图分箱。
 
 ```csharp
 public HistogramBin(double BinStart, double BinEnd, int Count)
@@ -79,17 +79,17 @@ public HistogramBin(double BinStart, double BinEnd, int Count)
 
 `BinStart` double
 
-The inclusive lower bound of the bin.
+该分箱的下界（含）。
 
 
 `BinEnd` double
 
-The upper bound of the bin.
+该分箱的上界。
 
 
 `Count` int
 
-The number of values in the bin.
+该分箱中的值的个数。
 
 
 </section>
@@ -212,9 +212,9 @@ string
 
 | 名称 | 说明 |
 | --- | --- |
-| [BinEnd](#uid-4d0f801c7c) | The upper bound of the bin. |
-| [BinStart](#uid-00a3514d2a) | The inclusive lower bound of the bin. |
-| [Count](#uid-ab57ec5d2f) | The number of values in the bin. |
+| [BinEnd](#uid-4d0f801c7c) | 该分箱的上界。 |
+| [BinStart](#uid-00a3514d2a) | 该分箱的下界（含）。 |
+| [Count](#uid-ab57ec5d2f) | 该分箱中的值的个数。 |
 
 <section className="apiref-page__member-entry">
 
@@ -222,7 +222,7 @@ string
 
 ### BinEnd 属性 {#binend-property}
 
-The upper bound of the bin.
+该分箱的上界。
 
 ```csharp
 public double BinEnd { get; set; }
@@ -236,7 +236,7 @@ public double BinEnd { get; set; }
 
 ### BinStart 属性 {#binstart-property}
 
-The inclusive lower bound of the bin.
+该分箱的下界（含）。
 
 ```csharp
 public double BinStart { get; set; }
@@ -250,7 +250,7 @@ public double BinStart { get; set; }
 
 ### Count 属性 {#count-property}
 
-The number of values in the bin.
+该分箱中的值的个数。
 
 ```csharp
 public int Count { get; set; }

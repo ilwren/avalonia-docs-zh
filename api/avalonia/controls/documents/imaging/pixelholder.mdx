@@ -98,17 +98,17 @@ The decoded pixel bytes, row-major. Must not be mutated after this call.
 
 `size` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
-The pixel dimensions.
+以像素计的尺寸。
 
 
 `stride` int
 
-The number of bytes per pixel row.
+每一行像素所占的字节数。
 
 
 `format` [Avalonia.Platform.PixelFormat](xref:Avalonia.Platform.PixelFormat)
 
-The pixel format describing the byte layout.
+描述字节布局的像素格式。
 
 
 `alphaFormat` [Avalonia.Platform.AlphaFormat](xref:Avalonia.Platform.AlphaFormat)
@@ -118,7 +118,7 @@ Whether the alpha channel is premultiplied, straight, or absent.
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The intended resolution, in dots per inch.
+期望的分辨率，以每英寸点数计。
 
 
 </section>
@@ -229,12 +229,12 @@ public Avalonia.Platform.ILockedFramebuffer Lock()
 | 名称 | 说明 |
 | --- | --- |
 | [AlphaFormat](#uid-b4779a88b7) | Whether the alpha channel is premultiplied, straight, or absent. |
-| [Dpi](#uid-38677e6352) | The intended resolution, in dots per inch. |
-| [Format](#uid-68f3193c7a) | The pixel format describing the byte layout. |
+| [Dpi](#uid-38677e6352) | 期望的分辨率，以每英寸点数计。 |
+| [Format](#uid-68f3193c7a) | 描述字节布局的像素格式。 |
 | [IsEmpty](#uid-3168db3ed1) | when this holder carries no pixels. |
 | [Pixels](#uid-67d1c08038) | The decoded pixel bytes, row-major with [Avalonia.Controls.Documents.Imaging.PixelHolder.Stride](xref:Avalonia.Controls.Documents.Imaging.PixelHolder.Stride) bytes per row. |
-| [Size](#uid-b49c447a64) | The pixel dimensions. |
-| [Stride](#uid-ad9518700a) | The number of bytes per pixel row. |
+| [Size](#uid-b49c447a64) | 以像素计的尺寸。 |
+| [Stride](#uid-ad9518700a) | 每一行像素所占的字节数。 |
 
 <section className="apiref-page__member-entry">
 
@@ -256,7 +256,7 @@ public Avalonia.Platform.AlphaFormat AlphaFormat { get; set; }
 
 ### Dpi 属性 {#dpi-property}
 
-The intended resolution, in dots per inch.
+期望的分辨率，以每英寸点数计。
 
 ```csharp
 public Avalonia.Vector Dpi { get; set; }
@@ -270,7 +270,7 @@ public Avalonia.Vector Dpi { get; set; }
 
 ### Format 属性 {#format-property}
 
-The pixel format describing the byte layout.
+描述字节布局的像素格式。
 
 ```csharp
 public Avalonia.Platform.PixelFormat Format { get; set; }
@@ -312,7 +312,7 @@ public ReadOnlyMemory<byte> Pixels { get; set; }
 
 ### Size 属性 {#size-property}
 
-The pixel dimensions.
+以像素计的尺寸。
 
 ```csharp
 public Avalonia.PixelSize Size { get; set; }
@@ -326,7 +326,7 @@ public Avalonia.PixelSize Size { get; set; }
 
 ### Stride 属性 {#stride-property}
 
-The number of bytes per pixel row.
+每一行像素所占的字节数。
 
 ```csharp
 public int Stride { get; set; }

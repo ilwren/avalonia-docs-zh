@@ -40,7 +40,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Loads assets compiled into the application binary.
+加载编译进应用二进制文件中的资产。
 
 </div>
 
@@ -91,7 +91,7 @@ public StandardAssetLoader(System.Reflection.Assembly assembly)
 | [Exists](#uid-cd2e4a5b72) | 检查指定 URI 的资产是否存在。 |
 | [GetAssembly](#uid-7ba9def467) | 暂无摘要。 |
 | [GetAssets](#uid-6f83c235fe) | 获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。 |
-| [InvalidateAssemblyCache (2 overloads)](#uid-371c85a4f3) | 暂无摘要。 |
+| [InvalidateAssemblyCache（2 个重载）](#uid-371c85a4f3) | 暂无摘要。 |
 | [Open](#uid-11b09534e4) | 按请求的 URI 打开资产。 |
 | [OpenAndGetAssembly](#uid-11100a9b4f) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
 | [RegisterResUriParsers](#uid-6cffcfb154) | 暂无摘要。 |
@@ -125,7 +125,7 @@ public bool Exists(Uri uri, Uri baseUri)
 
 bool
 
-True if the asset could be found; otherwise false.
+若能找到该资产则为 true，否则为 false。
 
 
 </section>
@@ -190,7 +190,7 @@ All matching assets as a tuple of the absolute path to the asset and the assembl
 
 <span id="uid-371c85a4f3"></span>
 
-### InvalidateAssemblyCache overloads
+### InvalidateAssemblyCache 的重载 {#invalidateassemblycache-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -249,7 +249,7 @@ public System.IO.Stream Open(Uri uri, Uri baseUri)
 
 System.IO.Stream
 
-A stream containing the asset contents.
+一个承载该资产内容的流。
 
 
 #### 异常 {#exceptions}

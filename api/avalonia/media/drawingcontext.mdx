@@ -62,7 +62,7 @@ public class DrawingContext
 | [Custom](#uid-3173939add) | Draws a custom drawing operation |
 | [Dispose](#uid-7e988cb5bd) | 暂无摘要。 |
 | [DrawEllipse (2 overloads)](#uid-20f7294bf2) | 用指定的 Brush 和 Pen 画一个椭圆。 |
-| [DrawGeometry (2 overloads)](#uid-e74ce18cb0) | Draws a geometry. |
+| [DrawGeometry (2 overloads)](#uid-e74ce18cb0) | 绘制一个几何图形。 |
 | [DrawGlyphRun](#uid-35674e50e5) | 绘制一段字形运行。 |
 | [DrawImage (2 overloads)](#uid-492fc6db89) | 绘制一幅图像。 |
 | [DrawLine](#uid-d5a6cf0d81) | 画一条直线。 |
@@ -207,7 +207,7 @@ The bounding rect.
 
 #### DrawGeometry 方法 {#drawgeometry-method}
 
-Draws a geometry.
+绘制一个几何图形。
 
 ```csharp
 public void DrawGeometry(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, Avalonia.Media.Geometry geometry)
@@ -238,7 +238,7 @@ The geometry.
 
 #### DrawGeometry 方法 {#drawgeometry-method-1}
 
-Draws a geometry.
+绘制一个几何图形。
 
 ```csharp
 public void DrawGeometry(Avalonia.Media.IBrush brush, Avalonia.Media.IPen pen, Avalonia.Platform.IGeometryImpl geometry)
@@ -340,7 +340,7 @@ The image.
 
 `sourceRect` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The rect in the image to draw.
+图像中要绘制的那块矩形。
 
 
 `destRect` [Avalonia.Rect](xref:Avalonia.Rect)
@@ -428,7 +428,7 @@ This value will be clamped to the range of 0 to Height/2
 
 `boxShadows` [Avalonia.Media.BoxShadows](xref:Avalonia.Media.BoxShadows)
 
-Box shadow effect parameters
+盒阴影效果的各项参数
 
 
 ##### 备注 {#remarks-2}
@@ -469,7 +469,7 @@ The pen used to stroke the rectangle, or `null` for no stroke.
 
 `boxShadows` [Avalonia.Media.BoxShadows](xref:Avalonia.Media.BoxShadows)
 
-Box shadow effect parameters
+盒阴影效果的各项参数
 
 
 ##### 备注 {#remarks-3}
@@ -587,14 +587,14 @@ public Avalonia.Media.DrawingContext.PushedState PushClip(Avalonia.Rect clip)
 
 `clip` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The clip rectangle.
+裁剪矩形。
 
 
 ##### 返回值 {#returns}
 
 [Avalonia.Media.DrawingContext.PushedState](xref:Avalonia.Media.DrawingContext.PushedState)
 
-A disposable used to undo the clip rectangle.
+一个可释放对象，用于撤销该裁剪矩形。
 
 
 </section>
@@ -615,14 +615,14 @@ public Avalonia.Media.DrawingContext.PushedState PushClip(Avalonia.RoundedRect c
 
 `clip` [Avalonia.RoundedRect](xref:Avalonia.RoundedRect)
 
-The clip rectangle.
+裁剪矩形。
 
 
 ##### 返回值 {#returns-1}
 
 [Avalonia.Media.DrawingContext.PushedState](xref:Avalonia.Media.DrawingContext.PushedState)
 
-A disposable used to undo the clip rectangle.
+一个可释放对象，用于撤销该裁剪矩形。
 
 
 </section>

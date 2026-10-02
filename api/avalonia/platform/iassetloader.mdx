@@ -40,7 +40,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Loads assets compiled into the application binary.
+加载编译进应用二进制文件中的资产。
 
 </div>
 
@@ -59,7 +59,7 @@ public interface IAssetLoader
 | [Exists](#uid-7b66d5fcd8) | 检查指定 URI 的资产是否存在。 |
 | [GetAssembly](#uid-a9cbf6df3d) | 从 URI 中提取程序集信息 |
 | [GetAssets](#uid-124a555456) | 获取某个文件夹及其子文件夹下所有匹配指定 uri 的资产。 |
-| [InvalidateAssemblyCache (2 overloads)](#uid-adac6efb6a) | Removes all assemblies from the cache. |
+| [InvalidateAssemblyCache（2 个重载）](#uid-adac6efb6a) | 把所有程序集从缓存中移除。 |
 | [Open](#uid-1f12830fe4) | 按请求的 URI 打开资产。 |
 | [OpenAndGetAssembly](#uid-1f69abc1fa) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
 | [SetDefaultAssembly](#uid-dab91beb44) | We need a way to override the default assembly selected by the host platform because right now it is selecting the wrong one for PCL based Apps. The [AssetLoader](xref:Avalonia.Platform.AssetLoader) needs a refactor cause right now it lives in 3+ platforms which can all be loaded on Windows. |
@@ -92,7 +92,7 @@ public bool Exists(Uri uri, Uri baseUri)
 
 bool
 
-True if the asset could be found; otherwise false.
+若能找到该资产则为 true，否则为 false。
 
 
 </section>
@@ -165,7 +165,7 @@ All matching assets as a tuple of the absolute path to the asset and the assembl
 
 <span id="uid-adac6efb6a"></span>
 
-### InvalidateAssemblyCache overloads
+### InvalidateAssemblyCache 的重载 {#invalidateassemblycache-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -173,7 +173,7 @@ All matching assets as a tuple of the absolute path to the asset and the assembl
 
 #### InvalidateAssemblyCache 方法 {#invalidateassemblycache-method}
 
-Removes all assemblies from the cache.
+把所有程序集从缓存中移除。
 
 ```csharp
 public void InvalidateAssemblyCache()
@@ -187,7 +187,7 @@ public void InvalidateAssemblyCache()
 
 #### InvalidateAssemblyCache 方法 {#invalidateassemblycache-method-1}
 
-Removes the assembly from the cache.
+把该程序集从缓存中移除。
 
 ```csharp
 public void InvalidateAssemblyCache(string name)
@@ -230,7 +230,7 @@ public System.IO.Stream Open(Uri uri, Uri baseUri)
 
 System.IO.Stream
 
-A stream containing the asset contents.
+一个承载该资产内容的流。
 
 
 #### 异常 {#exceptions}
