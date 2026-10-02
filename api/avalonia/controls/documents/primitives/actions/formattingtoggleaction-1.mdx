@@ -70,11 +70,11 @@ and [Avalonia.Controls.Documents.Primitives.Actions.FormattingToggleAction&lt;T&
 
 | 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-6e9a219254) | Gets whether the action can currently execute. |
-| [Execute](#uid-a96560e647) | Executes the action synchronously. |
-| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | Executes the action asynchronously. Inherited from [EditorAction](editoraction.mdx). |
-| [GetState](#uid-a5f59cdceb) | Gets the current state of the action. |
-| [IsChecked](#uid-8184f94ef5) | Gets whether the action is currently "on" for the selection. |
+| [CanExecute](#uid-6e9a219254) | 获取该操作当前是否可执行。 |
+| [Execute](#uid-a96560e647) | 同步执行该操作。 |
+| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
+| [GetState](#uid-a5f59cdceb) | 获取该操作的当前状态。 |
+| [IsChecked](#uid-8184f94ef5) | 获取该操作对当前选区而言是否处于“开启”状态。 |
 
 <section className="apiref-page__member-entry">
 
@@ -82,7 +82,7 @@ and [Avalonia.Controls.Documents.Primitives.Actions.FormattingToggleAction&lt;T&
 
 ### CanExecute 方法 {#canexecute-method}
 
-Gets whether the action can currently execute.
+获取该操作当前是否可执行。
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -92,20 +92,20 @@ public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost ho
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to check against.
+要对照检查的编辑器宿主。
 
 
 #### 返回值 {#returns}
 
 bool
 
-True if the action can execute; otherwise, false.
+若该操作可执行则为 true，否则为 false。
 
 
 #### 备注 {#remarks-1}
 
-This is called frequently to update UI state (button enabled/disabled).
-Implementations should be fast and avoid heavy computation.
+该方法会被频繁调用以更新界面状态（按钮启用/禁用），
+因此实现应当足够快，别做繁重的计算。
 
 </section>
 
@@ -115,7 +115,7 @@ Implementations should be fast and avoid heavy computation.
 
 ### Execute 方法 {#execute-method}
 
-Executes the action synchronously.
+同步执行该操作。
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -125,13 +125,13 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to execute on.
+要在其上执行的编辑器宿主。
 
 
 #### 备注 {#remarks-2}
 
-For actions that require async operations (like file dialogs),
-use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead.
+若操作中需要异步动作（比如文件对话框），
+请改用 [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29)。
 
 </section>
 
@@ -141,7 +141,7 @@ use [Avalonia.Controls.Documents.Primitives.Actions.IEditorAction.ExecuteAsync(A
 
 ### GetState 方法 {#getstate-method}
 
-Gets the current state of the action.
+获取该操作的当前状态。
 
 ```csharp
 public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -151,22 +151,22 @@ public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost ho
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to query.
+要查询的编辑器宿主。
 
 
 #### 返回值 {#returns-1}
 
 object
 
-The current state, or null if the action has no state. A toggle action returns
-a boolean, a property action the current value.
+当前状态；若该操作没有状态则为 null。切换型操作返回布尔值，
+属性型操作返回当前值。
 
 
 #### 备注 {#remarks-3}
 
-Read [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) or
-[Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead. Both say which family
-the value came from, which an untyped object cannot.
+请改读 [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) 或
+[Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29)。两者都能说明值来自哪一族，
+而无类型的 object 做不到这一点。
 
 </section>
 
@@ -176,7 +176,7 @@ the value came from, which an untyped object cannot.
 
 ### IsChecked 方法 {#ischecked-method}
 
-Gets whether the action is currently "on" for the selection.
+获取该操作对当前选区而言是否处于“开启”状态。
 
 ```csharp
 public bool IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -186,7 +186,7 @@ public bool IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost hos
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to query.
+要查询的编辑器宿主。
 
 
 #### 返回值 {#returns-2}
@@ -208,7 +208,7 @@ has the formatting applied.
 | 名称 | 说明 |
 | --- | --- |
 | [DisplayName](editoraction.mdx#uid-f07298f749) | Gets the display name for UI purposes. Inherited from [EditorAction](editoraction.mdx). |
-| [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
+| [Gesture](editoraction.mdx#uid-557e9af400) | 获取该操作可选的键盘手势。继承自 [EditorAction](editoraction.mdx)。 |
 | [Id](editoraction.mdx#uid-80cef2dbb8) | Gets the unique identifier for this action. Inherited from [EditorAction](editoraction.mdx). |
 
 </ApiRefPage>

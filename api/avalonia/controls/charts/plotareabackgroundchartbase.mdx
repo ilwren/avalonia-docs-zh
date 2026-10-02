@@ -101,7 +101,7 @@ with their computed plot rectangle.
 | [Measure](../../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [RaiseEvent](../../interactivity/interactive.mdx#uid-d6aba452e6) | 引发一个路由事件。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
 | [RemoveHandler（2 个重载）](../../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
-| [Render](chartbase.mdx#uid-35b79a0fd0) | Clears stale hit regions then delegates to the Avalonia render pipeline. All derived chart overrides call base.Render(context), so this runs before every frame. Inherited from [ChartBase](chartbase.mdx). |
+| [Render](chartbase.mdx#uid-35b79a0fd0) | 先清掉过期的命中区域，再交给 Avalonia 的渲染管线。所有派生图表的重写都会调用 base.Render(context)，因此它会在每一帧之前执行。继承自 [ChartBase](chartbase.mdx)。 |
 | [ReplayAnimation](chartbase.mdx#uid-6f1cedd361) | 重新播放入场动画。继承自 [ChartBase](chartbase.mdx)。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../../visual.mdx)。 |
@@ -187,7 +187,7 @@ with their computed plot rectangle.
 | [Padding](../primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Palette](chartbase.mdx#uid-08afc4a5ef) | 获取或设置各数据系列取色所用的调色板。继承自 [ChartBase](chartbase.mdx)。 |
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [PlotAreaBackground](#uid-47fbc2526d) | Gets or sets the background brush for the plot area only. |
+| [PlotAreaBackground](#uid-47fbc2526d) | 获取或设置仅作用于绘图区的背景画刷。 |
 | [PlotAreaContent](chartbase.mdx#uid-3f1e034bab) | 获取或设置覆盖在绘图区之上的自定义内容。该内容会在对应图表类型的有效绘图边界内完成测量与排列。继承自 [ChartBase](chartbase.mdx)。 |
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
@@ -215,7 +215,7 @@ with their computed plot rectangle.
 
 ### PlotAreaBackground 属性 {#plotareabackground-property}
 
-Gets or sets the background brush for the plot area only.
+获取或设置仅作用于绘图区的背景画刷。
 
 ```csharp
 public Avalonia.Media.IBrush PlotAreaBackground { get; set; }
@@ -304,7 +304,7 @@ This fills only the chart's plot rectangle. It does not replace the control back
 | [ParentProperty](../../styledelement.mdx#uid-dc6481a488) | 定义 [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [PinchEndedEvent](../../input/inputelement.mdx#uid-3f6a3485dd) | 定义 [Avalonia.Input.InputElement.PinchEnded](xref:Avalonia.Input.InputElement.PinchEnded) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [PinchEvent](../../input/inputelement.mdx#uid-d109d8c674) | 定义 [Avalonia.Input.InputElement.Pinch](xref:Avalonia.Input.InputElement.Pinch) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [PlotAreaBackgroundProperty](#uid-6af5b172d0) | Identifies the [Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground](xref:Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground) styled property. |
+| [PlotAreaBackgroundProperty](#uid-6af5b172d0) | 标识 [Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground](xref:Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground) 样式化属性。 |
 | [PlotAreaContentProperty](chartbase.mdx#uid-09e03e002b) | 标识 [Avalonia.Controls.Charts.ChartBase.PlotAreaContent](xref:Avalonia.Controls.Charts.ChartBase.PlotAreaContent) Avalonia 属性。继承自 [ChartBase](chartbase.mdx)。 |
 | [PointerCaptureLostEvent](../../input/inputelement.mdx#uid-e76450a6b8) | 定义 [Avalonia.Input.InputElement.PointerCaptureLost](xref:Avalonia.Input.InputElement.PointerCaptureLost) 路由事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [PointerEnteredEvent](../../input/inputelement.mdx#uid-ff4d54fcc4) | 定义 [Avalonia.Input.InputElement.PointerEntered](xref:Avalonia.Input.InputElement.PointerEntered) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -355,7 +355,7 @@ This fills only the chart's plot rectangle. It does not replace the control back
 
 ### PlotAreaBackgroundProperty 字段 {#plotareabackgroundproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground](xref:Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground) styled property.
+标识 [Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground](xref:Avalonia.Controls.Charts.PlotAreaBackgroundChartBase.PlotAreaBackground) 样式化属性。
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Media.IBrush> PlotAreaBackgroundProperty

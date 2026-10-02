@@ -84,15 +84,15 @@ public HeatmapLayer()
 | [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetHashCode](../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [GetLayerBounds](#uid-c73ed793c5) | Gets the geographic bounds (in 0-200, 0-100 viewport units) of the content in this layer. Used for auto-scaling the map to fit content. |
-| [GetPointData](#uid-0a98addc6f) | Gets the data item at the specified screen point. |
+| [GetLayerBounds](#uid-c73ed793c5) | 获取该图层中内容的地理边界（以 0-200、0-100 的视口单位计），用于自动缩放地图以容纳内容。 |
+| [GetPointData](#uid-0a98addc6f) | 获取位于指定屏幕坐标处的数据项。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [OnPointerExited](#uid-3e73a5138a) | Handles pointer exited events. Override this method to handle interactions (e.g. clearing hover effects). |
-| [OnPointerMoved](#uid-78bed441c0) | Handles pointer moved events. Override this method to handle interactions (e.g. hover effects). |
+| [OnPointerExited](#uid-3e73a5138a) | 处理指针离开事件。可重写该方法来处理交互（比如清除悬停效果）。 |
+| [OnPointerMoved](#uid-78bed441c0) | 处理指针移动事件。可重写该方法来处理交互（比如悬停效果）。 |
 | [OnPointerPressed](maplayer.mdx#uid-61476cbbf9) | Handles pointer pressed events. Override this method to handle interactions (e.g. selection). Inherited from [MapLayer](maplayer.mdx). |
-| [Render](#uid-50f662f3e2) | Renders this layer to the drawing context. |
+| [Render](#uid-50f662f3e2) | 把该图层渲染到绘图上下文。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -103,8 +103,8 @@ public HeatmapLayer()
 
 ### GetLayerBounds 方法 {#getlayerbounds-method}
 
-Gets the geographic bounds (in 0-200, 0-100 viewport units) of the content in this layer.
-Used for auto-scaling the map to fit content.
+获取该图层中内容的地理边界（以 0-200、0-100 的视口单位计）。
+用于自动缩放地图以容纳内容。
 
 ```csharp
 public Nullable<Avalonia.Rect> GetLayerBounds()
@@ -123,7 +123,7 @@ Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 ### GetPointData 方法 {#getpointdata-method}
 
-Gets the data item at the specified screen point.
+获取位于指定屏幕坐标处的数据项。
 
 ```csharp
 public object GetPointData(Avalonia.Point point, Avalonia.Rect chartArea)
@@ -133,19 +133,19 @@ public object GetPointData(Avalonia.Point point, Avalonia.Rect chartArea)
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The screen point to test.
+要测试的屏幕坐标点。
 
 
 `chartArea` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The chart area rectangle.
+图表区域矩形。
 
 
 #### 返回值 {#returns-1}
 
 object
 
-The data item if hit; otherwise, null.
+命中时返回该数据项，否则为 null。
 
 
 </section>
@@ -156,8 +156,8 @@ The data item if hit; otherwise, null.
 
 ### OnPointerExited 方法 {#onpointerexited-method}
 
-Handles pointer exited events.
-Override this method to handle interactions (e.g. clearing hover effects).
+处理指针离开事件。
+可重写该方法来处理交互（比如清除悬停效果）。
 
 ```csharp
 public void OnPointerExited()
@@ -171,8 +171,8 @@ public void OnPointerExited()
 
 ### OnPointerMoved 方法 {#onpointermoved-method}
 
-Handles pointer moved events.
-Override this method to handle interactions (e.g. hover effects).
+处理指针移动事件。
+可重写该方法来处理交互（比如悬停效果）。
 
 ```csharp
 public bool OnPointerMoved(Avalonia.Point point, Avalonia.Rect chartArea)
@@ -190,7 +190,7 @@ public bool OnPointerMoved(Avalonia.Point point, Avalonia.Rect chartArea)
 
 bool
 
-True if handled.
+若已处理则为 true。
 
 
 </section>
@@ -201,7 +201,7 @@ True if handled.
 
 ### Render 方法 {#render-method}
 
-Renders this layer to the drawing context.
+把该图层渲染到绘图上下文。
 
 ```csharp
 public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect chartArea, double animationProgress)
@@ -216,12 +216,12 @@ public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect chartAre
 
 `chartArea` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The chart area rectangle.
+图表区域矩形。
 
 
 `animationProgress` double
 
-Animation progress from 0 to 1.
+动画进度，取值 0 到 1。
 
 
 </section>
@@ -233,7 +233,7 @@ Animation progress from 0 to 1.
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [HighBrush](#uid-64e1e8bb86) | Gets or sets the brush for high intensity values. |
 | [IntensityPath](#uid-66a1a4b63a) | Gets or sets the property path for intensity values. |
-| [IsVisible](maplayer.mdx#uid-93a23c42b6) | Gets or sets whether this layer is visible. Inherited from [MapLayer](maplayer.mdx). |
+| [IsVisible](maplayer.mdx#uid-93a23c42b6) | 获取或设置该图层是否可见。继承自 [MapLayer](maplayer.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [ItemsSource](#uid-b61f016316) | Gets or sets the data source for heatmap points. |
 | [LatitudePath](#uid-ce19369e61) | Gets or sets the property path for latitude values. |
@@ -241,9 +241,9 @@ Animation progress from 0 to 1.
 | [LowBrush](#uid-90302dcf1a) | Gets or sets the brush for low intensity values. |
 | [MaxIntensity](#uid-4797bc2f08) | Gets or sets the maximum intensity value for normalization. |
 | [MediumBrush](#uid-54758edebf) | Gets or sets the brush for medium intensity values. |
-| [Opacity](maplayer.mdx#uid-7b32d6b968) | Gets or sets the opacity of this layer. Inherited from [MapLayer](maplayer.mdx). |
+| [Opacity](maplayer.mdx#uid-7b32d6b968) | 获取或设置该图层的不透明度。继承自 [MapLayer](maplayer.mdx)。 |
 | [Radius](#uid-8239a6467c) | Gets or sets the base radius for heatmap points (in pixels). |
-| [TooltipTemplate](maplayer.mdx#uid-f880527475) | Gets or sets the data template used for tooltips. Inherited from [MapLayer](maplayer.mdx). |
+| [TooltipTemplate](maplayer.mdx#uid-f880527475) | 获取或设置工具提示所用的数据模板。继承自 [MapLayer](maplayer.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -377,16 +377,16 @@ public double Radius { get; set; }
 | --- | --- |
 | [HighBrushProperty](#uid-0b8eb59895) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.HighBrush](xref:Avalonia.Controls.Charts.HeatmapLayer.HighBrush) Avalonia 属性。 |
 | [IntensityPathProperty](#uid-7151aaaa78) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.IntensityPath](xref:Avalonia.Controls.Charts.HeatmapLayer.IntensityPath) Avalonia 属性。 |
-| [IsVisibleProperty](maplayer.mdx#uid-74f0177084) | Identifies the [Avalonia.Controls.Charts.MapLayer.IsVisible](xref:Avalonia.Controls.Charts.MapLayer.IsVisible) Avalonia property. Inherited from [MapLayer](maplayer.mdx). |
+| [IsVisibleProperty](maplayer.mdx#uid-74f0177084) | 标识 [Avalonia.Controls.Charts.MapLayer.IsVisible](xref:Avalonia.Controls.Charts.MapLayer.IsVisible) Avalonia 属性。继承自 [MapLayer](maplayer.mdx)。 |
 | [ItemsSourceProperty](#uid-e8889bf9f3) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.ItemsSource](xref:Avalonia.Controls.Charts.HeatmapLayer.ItemsSource) Avalonia 属性。 |
 | [LatitudePathProperty](#uid-f0f3165253) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.LatitudePath](xref:Avalonia.Controls.Charts.HeatmapLayer.LatitudePath) Avalonia 属性。 |
 | [LongitudePathProperty](#uid-c2377ef85f) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.LongitudePath](xref:Avalonia.Controls.Charts.HeatmapLayer.LongitudePath) Avalonia 属性。 |
 | [LowBrushProperty](#uid-49707ab52d) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.LowBrush](xref:Avalonia.Controls.Charts.HeatmapLayer.LowBrush) Avalonia 属性。 |
 | [MaxIntensityProperty](#uid-f35ef3c9e5) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.MaxIntensity](xref:Avalonia.Controls.Charts.HeatmapLayer.MaxIntensity) Avalonia 属性。 |
 | [MediumBrushProperty](#uid-6aeb357673) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.MediumBrush](xref:Avalonia.Controls.Charts.HeatmapLayer.MediumBrush) Avalonia 属性。 |
-| [OpacityProperty](maplayer.mdx#uid-7b17fad341) | Identifies the [Avalonia.Controls.Charts.MapLayer.Opacity](xref:Avalonia.Controls.Charts.MapLayer.Opacity) Avalonia property. Inherited from [MapLayer](maplayer.mdx). |
+| [OpacityProperty](maplayer.mdx#uid-7b17fad341) | 标识 [Avalonia.Controls.Charts.MapLayer.Opacity](xref:Avalonia.Controls.Charts.MapLayer.Opacity) Avalonia 属性。继承自 [MapLayer](maplayer.mdx)。 |
 | [RadiusProperty](#uid-dfaf08bac2) | 标识 [Avalonia.Controls.Charts.HeatmapLayer.Radius](xref:Avalonia.Controls.Charts.HeatmapLayer.Radius) Avalonia 属性。 |
-| [TooltipTemplateProperty](maplayer.mdx#uid-10362b19e1) | Identifies the [Avalonia.Controls.Charts.MapLayer.TooltipTemplate](xref:Avalonia.Controls.Charts.MapLayer.TooltipTemplate) Avalonia property. Inherited from [MapLayer](maplayer.mdx). |
+| [TooltipTemplateProperty](maplayer.mdx#uid-10362b19e1) | 标识 [Avalonia.Controls.Charts.MapLayer.TooltipTemplate](xref:Avalonia.Controls.Charts.MapLayer.TooltipTemplate) Avalonia 属性。继承自 [MapLayer](maplayer.mdx)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -518,7 +518,7 @@ public Avalonia.StyledProperty<double> RadiusProperty
 
 | 名称 | 说明 |
 | --- | --- |
-| [Invalidated](maplayer.mdx#uid-995465c2b4) | Event raised when the layer needs to be redrawn. Inherited from [MapLayer](maplayer.mdx). |
+| [Invalidated](maplayer.mdx#uid-995465c2b4) | 图层需要重绘时抛出的事件。继承自 [MapLayer](maplayer.mdx)。 |
 | [PropertyChanged](../../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 
 </ApiRefPage>

@@ -123,7 +123,7 @@ The position of the rectangle.
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
 
-The size of the rectangle.
+矩形的尺寸。
 
 
 `unit` [Avalonia.RelativeUnit](xref:Avalonia.RelativeUnit)
@@ -175,7 +175,7 @@ public RelativeRect(Avalonia.Size size, Avalonia.RelativeUnit unit)
 
 `size` [Avalonia.Size](xref:Avalonia.Size)
 
-The size of the rectangle.
+矩形的尺寸。
 
 
 `unit` [Avalonia.RelativeUnit](xref:Avalonia.RelativeUnit)
@@ -211,12 +211,12 @@ The Y position.
 
 `width` double
 
-The width.
+宽度。
 
 
 `height` double
 
-The height.
+高度。
 
 
 `unit` [Avalonia.RelativeUnit](xref:Avalonia.RelativeUnit)
@@ -233,7 +233,7 @@ The unit of the rect.
 | [Equals（2 个重载）](#uid-1d312dbd6a) | Checks if the [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) equals another rectangle. |
 | [GetHashCode](#uid-1e60780fc6) | Gets a hashcode for a [Avalonia.RelativeRect](xref:Avalonia.RelativeRect). |
 | [Parse](#uid-d4e9f3070b) | 解析 [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) 字符串。 |
-| [ToPixels (2 overloads)](#uid-4d48b16422) | Converts a [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) into pixels. |
+| [ToPixels (2 overloads)](#uid-4d48b16422) | 把 [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) 换算成像素。 |
 
 <span id="uid-1d312dbd6a"></span>
 
@@ -255,7 +255,7 @@ public bool Equals(Avalonia.RelativeRect p)
 
 `p` [Avalonia.RelativeRect](xref:Avalonia.RelativeRect)
 
-The other rectangle.
+另一个矩形。
 
 
 ##### 返回值 {#returns}
@@ -332,14 +332,14 @@ public Avalonia.RelativeRect Parse(string s)
 
 `s` string
 
-The string.
+该字符串。
 
 
 #### 返回值 {#returns-3}
 
 [Avalonia.RelativeRect](xref:Avalonia.RelativeRect)
 
-The parsed [Avalonia.RelativeRect](xref:Avalonia.RelativeRect).
+解析得到的 [Avalonia.RelativeRect](xref:Avalonia.RelativeRect)。
 
 
 </section>
@@ -354,7 +354,7 @@ The parsed [Avalonia.RelativeRect](xref:Avalonia.RelativeRect).
 
 #### ToPixels 方法 {#topixels-method}
 
-Converts a [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) into pixels.
+把 [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) 换算成像素。
 
 ```csharp
 public Avalonia.Rect ToPixels(Avalonia.Rect boundingBox)
@@ -382,7 +382,7 @@ The origin point in pixels.
 
 #### ToPixels 方法 {#topixels-method-1}
 
-Converts a [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) into pixels.
+把 [Avalonia.RelativeRect](xref:Avalonia.RelativeRect) 换算成像素。
 
 ```csharp
 public Avalonia.Rect ToPixels(Avalonia.Size size)

@@ -148,7 +148,7 @@ bool
 | 名称 | 说明 |
 | --- | --- |
 | [EncodedBytes](#uid-8ee090e2e9) | The encoded image bytes when the payload is embedded in the document, or an empty buffer for reference (URI) sources. Serializers that embed pixel data read this. |
-| [MimeType](#uid-1066542416) | The MIME type of [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes), when known. |
+| [MimeType](#uid-1066542416) | 已知时，给出 [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes) 的 MIME 类型。 |
 | [SourceUri](#uid-be73e8d59d) | The reference URI for a deferred/linked source (e.g. an image URL), or for an embedded source. |
 
 <section className="apiref-page__member-entry">
@@ -173,7 +173,7 @@ public ReadOnlyMemory<byte> EncodedBytes { get; set; }
 
 ### MimeType 属性 {#mimetype-property}
 
-The MIME type of [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes), when known.
+已知时，给出 [Avalonia.Controls.Documents.RichImageSource.EncodedBytes](xref:Avalonia.Controls.Documents.RichImageSource.EncodedBytes) 的 MIME 类型。
 
 ```csharp
 public string MimeType { get; set; }

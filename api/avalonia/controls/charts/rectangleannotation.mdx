@@ -96,14 +96,14 @@ public RectangleAnnotation()
 | --- | --- |
 | [CornerRadius](#uid-c8b622093c) | Gets or sets the corner radius. |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Fill](#uid-b50ea8f07f) | Gets or sets the fill brush. |
+| [Fill](#uid-b50ea8f07f) | 获取或设置填充画刷。 |
 | [FontSize](chartannotation.mdx#uid-2bca046263) | Gets or sets the font size used for annotation text or labels. Inherited from [ChartAnnotation](chartannotation.mdx). |
 | [Foreground](chartannotation.mdx#uid-a5f9417de5) | Gets or sets the brush used for annotation text or labels. When unset, text-capable annotations fall back to their local defaults or to [Avalonia.Controls.Charts.ChartAnnotation.Stroke](xref:Avalonia.Controls.Charts.ChartAnnotation.Stroke) where appropriate. Inherited from [ChartAnnotation](chartannotation.mdx). |
 | [Height](#uid-8775eee548) | Gets or sets the height in vertical axis units. |
 | [IsBandAnnotation](chartannotation.mdx#uid-1ddcc04903) | Gets whether this annotation is a band annotation. Used by the rendering pipeline to distinguish bands from line/text annotations without requiring a cross-assembly type check. Inherited from [ChartAnnotation](chartannotation.mdx). |
 | [IsVisible](chartannotation.mdx#uid-9cb7862105) | Gets or sets whether this annotation is visible. Inherited from [ChartAnnotation](chartannotation.mdx). |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Label](#uid-1bfcfc4413) | Gets or sets the label text. |
+| [Label](#uid-1bfcfc4413) | 获取或设置标签文本。 |
 | [Opacity](chartannotation.mdx#uid-7268bb2a0c) | Gets or sets the opacity applied to the entire annotation. Inherited from [ChartAnnotation](chartannotation.mdx). |
 | [Stroke](chartannotation.mdx#uid-bd5cf8b072) | Gets or sets the stroke brush for annotation geometry. Text-based annotations can also use this as an outline brush. Inherited from [ChartAnnotation](chartannotation.mdx). |
 | [StrokeThickness](chartannotation.mdx#uid-6c46f0e570) | Gets or sets the stroke thickness for annotation geometry or text outlines. Inherited from [ChartAnnotation](chartannotation.mdx). |
@@ -131,7 +131,7 @@ public Avalonia.CornerRadius CornerRadius { get; set; }
 
 ### Fill 属性 {#fill-property}
 
-Gets or sets the fill brush.
+获取或设置填充画刷。
 
 ```csharp
 public Avalonia.Media.IBrush Fill { get; set; }
@@ -159,7 +159,7 @@ public double Height { get; set; }
 
 ### Label 属性 {#label-property}
 
-Gets or sets the label text.
+获取或设置标签文本。
 
 ```csharp
 public string Label { get; set; }
@@ -224,8 +224,8 @@ public double Y { get; set; }
 | [StrokeProperty](chartannotation.mdx#uid-43ce9a58ca) | 标识 [Avalonia.Controls.Charts.ChartAnnotation.Stroke](xref:Avalonia.Controls.Charts.ChartAnnotation.Stroke) Avalonia 属性。继承自 [ChartAnnotation](chartannotation.mdx)。 |
 | [StrokeThicknessProperty](chartannotation.mdx#uid-d2f7496e4c) | 标识 [Avalonia.Controls.Charts.ChartAnnotation.StrokeThickness](xref:Avalonia.Controls.Charts.ChartAnnotation.StrokeThickness) Avalonia 属性。继承自 [ChartAnnotation](chartannotation.mdx)。 |
 | [WidthProperty](#uid-7dc23a8acb) | 标识 [Avalonia.Controls.Charts.RectangleAnnotation.Width](xref:Avalonia.Controls.Charts.RectangleAnnotation.Width) Avalonia 属性。 |
-| [XProperty](#uid-7e94925c8d) | Identifies the [Avalonia.Controls.Charts.RectangleAnnotation.X](xref:Avalonia.Controls.Charts.RectangleAnnotation.X) Avalonia property. |
-| [YProperty](#uid-b675b07fcf) | Identifies the [Avalonia.Controls.Charts.RectangleAnnotation.Y](xref:Avalonia.Controls.Charts.RectangleAnnotation.Y) Avalonia property. |
+| [XProperty](#uid-7e94925c8d) | 标识 [Avalonia.Controls.Charts.RectangleAnnotation.X](xref:Avalonia.Controls.Charts.RectangleAnnotation.X) Avalonia 属性。 |
+| [YProperty](#uid-b675b07fcf) | 标识 [Avalonia.Controls.Charts.RectangleAnnotation.Y](xref:Avalonia.Controls.Charts.RectangleAnnotation.Y) Avalonia 属性。 |
 
 <section className="apiref-page__member-entry">
 
@@ -303,7 +303,7 @@ public Avalonia.StyledProperty<double> WidthProperty
 
 ### XProperty 字段 {#xproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.RectangleAnnotation.X](xref:Avalonia.Controls.Charts.RectangleAnnotation.X) Avalonia property.
+标识 [Avalonia.Controls.Charts.RectangleAnnotation.X](xref:Avalonia.Controls.Charts.RectangleAnnotation.X) Avalonia 属性。
 
 ```csharp
 public Avalonia.StyledProperty<double> XProperty
@@ -317,7 +317,7 @@ public Avalonia.StyledProperty<double> XProperty
 
 ### YProperty 字段 {#yproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.RectangleAnnotation.Y](xref:Avalonia.Controls.Charts.RectangleAnnotation.Y) Avalonia property.
+标识 [Avalonia.Controls.Charts.RectangleAnnotation.Y](xref:Avalonia.Controls.Charts.RectangleAnnotation.Y) Avalonia 属性。
 
 ```csharp
 public Avalonia.StyledProperty<double> YProperty

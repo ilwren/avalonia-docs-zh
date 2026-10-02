@@ -84,7 +84,7 @@ public class ChartSeries
 | [GetIsHoldingEnabled](../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
-| [GetMarkerShape](#uid-c706212040) | Gets the legend marker shape for this series type. Override in derived classes to provide appropriate marker shapes. |
+| [GetMarkerShape](#uid-c706212040) | 获取该系列类型在图例中使用的标记形状。可在派生类中重写，以提供合适的标记形状。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [InvalidateArrange](../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -160,8 +160,8 @@ The legend item for this series.
 
 ### GetMarkerShape 方法 {#getmarkershape-method}
 
-Gets the legend marker shape for this series type.
-Override in derived classes to provide appropriate marker shapes.
+获取该系列类型在图例中使用的标记形状。
+可在派生类中重写，以提供合适的标记形状。
 
 ```csharp
 public Avalonia.Controls.Charts.LegendMarkerShape GetMarkerShape()
@@ -171,7 +171,7 @@ public Avalonia.Controls.Charts.LegendMarkerShape GetMarkerShape()
 
 [Avalonia.Controls.Charts.LegendMarkerShape](xref:Avalonia.Controls.Charts.LegendMarkerShape)
 
-The marker shape to use in the legend.
+图例中使用的标记形状。
 
 
 </section>
@@ -739,11 +739,11 @@ public string ValuePath { get; set; }
 | [ScrollGestureEndedEvent](../../input/inputelement.mdx#uid-5f3e85c372) | 定义 [Avalonia.Input.InputElement.ScrollGestureEnded](xref:Avalonia.Input.InputElement.ScrollGestureEnded) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureEvent](../../input/inputelement.mdx#uid-d098469113) | 定义 [Avalonia.Input.InputElement.ScrollGesture](xref:Avalonia.Input.InputElement.ScrollGesture) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStartingEvent](../../input/inputelement.mdx#uid-02f504d2ea) | 定义 [Avalonia.Input.InputElement.ScrollGestureInertiaStarting](xref:Avalonia.Input.InputElement.ScrollGestureInertiaStarting) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [SelectedIndexProperty](#uid-73bd6135d7) | Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectedIndex](xref:Avalonia.Controls.Charts.ChartSeries.SelectedIndex) Avalonia property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty). |
-| [SelectionBrushProperty](#uid-9cbb996284) | Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionBrush](xref:Avalonia.Controls.Charts.ChartSeries.SelectionBrush) Avalonia property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty). |
-| [SelectionModeProperty](#uid-b63207ab1a) | Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionMode](xref:Avalonia.Controls.Charts.ChartSeries.SelectionMode) Avalonia property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty). |
-| [SelectionStrokeProperty](#uid-43839636da) | Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionStroke](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStroke) Avalonia property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty). |
-| [SelectionStrokeThicknessProperty](#uid-7760bcd6c7) | Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness) Avalonia property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty). |
+| [SelectedIndexProperty](#uid-73bd6135d7) | 标识 [Avalonia.Controls.Charts.ChartSeries.SelectedIndex](xref:Avalonia.Controls.Charts.ChartSeries.SelectedIndex) Avalonia 属性。它与 [Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。 |
+| [SelectionBrushProperty](#uid-9cbb996284) | 标识 [Avalonia.Controls.Charts.ChartSeries.SelectionBrush](xref:Avalonia.Controls.Charts.ChartSeries.SelectionBrush) Avalonia 属性。它与 [Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。 |
+| [SelectionModeProperty](#uid-b63207ab1a) | 标识 [Avalonia.Controls.Charts.ChartSeries.SelectionMode](xref:Avalonia.Controls.Charts.ChartSeries.SelectionMode) Avalonia 属性。它与 [Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。 |
+| [SelectionStrokeProperty](#uid-43839636da) | 标识 [Avalonia.Controls.Charts.ChartSeries.SelectionStroke](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStroke) Avalonia 属性。它与 [Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。 |
+| [SelectionStrokeThicknessProperty](#uid-7760bcd6c7) | 标识 [Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness) Avalonia 属性。它与 [Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。 |
 | [ShowInLegendProperty](#uid-6bf723f05a) | 标识 [Avalonia.Controls.Charts.ChartSeries.ShowInLegend](xref:Avalonia.Controls.Charts.ChartSeries.ShowInLegend) Avalonia 属性。 |
 | [SizeChangedEvent](../control.mdx#uid-7d071894f4) | 定义 [Avalonia.Controls.Control.SizeChanged](xref:Avalonia.Controls.Control.SizeChanged) 事件。继承自 [Control](../control.mdx)。 |
 | [StrokeProperty](#uid-555fa50baa) | 标识 [Avalonia.Controls.Charts.ChartSeries.Stroke](xref:Avalonia.Controls.Charts.ChartSeries.Stroke) Avalonia 属性。 |
@@ -890,9 +890,9 @@ public Avalonia.StyledProperty<string> PointBrushPathProperty
 
 ### SelectedIndexProperty 字段 {#selectedindexproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectedIndex](xref:Avalonia.Controls.Charts.ChartSeries.SelectedIndex) Avalonia property.
-Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as
-[Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty).
+标识 [Avalonia.Controls.Charts.ChartSeries.SelectedIndex](xref:Avalonia.Controls.Charts.ChartSeries.SelectedIndex) Avalonia 属性。
+它与
+[Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectedIndexProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。
 
 ```csharp
 public Avalonia.StyledProperty<int> SelectedIndexProperty
@@ -906,9 +906,9 @@ public Avalonia.StyledProperty<int> SelectedIndexProperty
 
 ### SelectionBrushProperty 字段 {#selectionbrushproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionBrush](xref:Avalonia.Controls.Charts.ChartSeries.SelectionBrush) Avalonia property.
-Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as
-[Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty).
+标识 [Avalonia.Controls.Charts.ChartSeries.SelectionBrush](xref:Avalonia.Controls.Charts.ChartSeries.SelectionBrush) Avalonia 属性。
+它与
+[Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionBrushProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Media.IBrush> SelectionBrushProperty
@@ -922,9 +922,9 @@ public Avalonia.StyledProperty<Avalonia.Media.IBrush> SelectionBrushProperty
 
 ### SelectionModeProperty 字段 {#selectionmodeproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionMode](xref:Avalonia.Controls.Charts.ChartSeries.SelectionMode) Avalonia property.
-Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as
-[Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty).
+标识 [Avalonia.Controls.Charts.ChartSeries.SelectionMode](xref:Avalonia.Controls.Charts.ChartSeries.SelectionMode) Avalonia 属性。
+它与
+[Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionModeProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Controls.Charts.ChartSelectionMode> SelectionModeProperty
@@ -938,9 +938,9 @@ public Avalonia.StyledProperty<Avalonia.Controls.Charts.ChartSelectionMode> Sele
 
 ### SelectionStrokeProperty 字段 {#selectionstrokeproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionStroke](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStroke) Avalonia property.
-Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as
-[Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty).
+标识 [Avalonia.Controls.Charts.ChartSeries.SelectionStroke](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStroke) Avalonia 属性。
+它与
+[Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。
 
 ```csharp
 public Avalonia.StyledProperty<Avalonia.Media.IBrush> SelectionStrokeProperty
@@ -954,9 +954,9 @@ public Avalonia.StyledProperty<Avalonia.Media.IBrush> SelectionStrokeProperty
 
 ### SelectionStrokeThicknessProperty 字段 {#selectionstrokethicknessproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness) Avalonia property.
-Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as
-[Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty).
+标识 [Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness) Avalonia 属性。
+它与
+[Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。
 
 ```csharp
 public Avalonia.StyledProperty<double> SelectionStrokeThicknessProperty

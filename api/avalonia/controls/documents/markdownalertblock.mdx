@@ -108,21 +108,21 @@ public MarkdownAlertBlock()
 | [AlertKind](#uid-0b96811743) | Gets or sets the alert kind in title case ("Note", "Warning", "Tip", "Important", "Caution"). |
 | [Background](richtextelement.mdx#uid-2c999b14d1) | 获取或设置填充控件背景所用的画刷。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [Blocks](section.mdx#uid-ac53a95172) | Gets the blocks contained in this section. Inherited from [Section](section.mdx). |
-| [BorderBrush](block.mdx#uid-d9afa85d5e) | Gets or sets the brush used to paint the block border. Inherited from [Block](block.mdx). |
-| [BorderThickness](block.mdx#uid-c60c403f1e) | Gets or sets the thickness of the block border. Inherited from [Block](block.mdx). |
-| [BreakPageBefore](block.mdx#uid-9e81e629ea) | Gets or sets whether paginated output (print/PDF export) starts a new page before this block. The continuous on-screen flow ignores it. Inherited from [Block](block.mdx). |
+| [BorderBrush](block.mdx#uid-d9afa85d5e) | 获取或设置绘制块边框所用的画刷。继承自 [Block](block.mdx)。 |
+| [BorderThickness](block.mdx#uid-c60c403f1e) | 获取或设置块边框的粗细。继承自 [Block](block.mdx)。 |
+| [BreakPageBefore](block.mdx#uid-9e81e629ea) | 获取或设置分页输出（打印/导出 PDF）时是否在该块之前另起一页。屏幕上的连续排版会忽略它。继承自 [Block](block.mdx)。 |
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [ContentEnd](richtextelement.mdx#uid-dc015a3770) | 获取指向文档内容末尾的文本指针。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [ContentLength](richtextelement.mdx#uid-80c368b77e) | 获取该元素所覆盖的字符长度。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [ContentRange](richtextelement.mdx#uid-65e0d953a5) | 获取表示全部内容的文本范围；若内容为空或不可用，则返回 null。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [ContentStart](richtextelement.mdx#uid-808eaf38d3) | 获取指向文档内容开头的文本指针。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [CornerRadius](block.mdx#uid-330f6d8314) | Gets or sets the corner radius of the block border. Inherited from [Block](block.mdx). |
+| [CornerRadius](block.mdx#uid-330f6d8314) | 获取或设置块边框的圆角半径。继承自 [Block](block.mdx)。 |
 | [DataContext](../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [FirstChildElement](richtextelement.mdx#uid-e1dc680020) | 获取文档树中第一个直接子元素；若不存在则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FirstPageFooter](section.mdx#uid-2d43bc4c62) | Gets or sets the footer counterpart of [Avalonia.Controls.Documents.Section.FirstPageHeader](xref:Avalonia.Controls.Documents.Section.FirstPageHeader). Inherited from [Section](section.mdx). |
 | [FirstPageHeader](section.mdx#uid-0db5de0803) | Gets or sets the header of the section's first page. Setting it is what makes the section's first page special; null starts the section like any page. Inherited from [Section](section.mdx). |
-| [FlowDirection](block.mdx#uid-80c619ecd5) | Gets or sets the flow direction for text within the block. Inherited from [Block](block.mdx). |
+| [FlowDirection](block.mdx#uid-80c619ecd5) | 获取或设置块内文本的排列方向。继承自 [Block](block.mdx)。 |
 | [FontFamily](richtextelement.mdx#uid-128b85f7b7) | 获取或设置显示文本所用的字体族。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FontFeatures](richtextelement.mdx#uid-ec960058b3) | 获取或设置要应用到文本上的字体特性集合。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FontSize](richtextelement.mdx#uid-2052c58cf4) | 获取或设置显示文本所用的字号。继承自 [RichTextElement](richtextelement.mdx)。 |
@@ -135,15 +135,15 @@ public MarkdownAlertBlock()
 | [IsAttachedToDocument](richtextelement.mdx#uid-9e20282634) | 获取一个值，指示该元素当前是否已挂接到 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [KeepTogether](block.mdx#uid-3265e16109) | Gets or sets whether paginated output (print/PDF export) avoids splitting this block across pages. Best effort: a block taller than one page still splits. The continuous on-screen flow ignores it. Inherited from [Block](block.mdx). |
-| [KeepWithNext](block.mdx#uid-f3431d2af3) | Gets or sets whether paginated output keeps this block's end on the same page as the start of the following block. Consecutive flagged blocks move as one chain, giving up when the chain exceeds a page. The continuous on-screen flow ignores it. Inherited from [Block](block.mdx). |
+| [KeepTogether](block.mdx#uid-3265e16109) | 获取或设置分页输出（打印/导出 PDF）时是否避免把该块拆到两页上。此为尽力而为：块本身若高过一页，仍会被拆开。屏幕上的连续排版会忽略它。继承自 [Block](block.mdx)。 |
+| [KeepWithNext](block.mdx#uid-f3431d2af3) | 获取或设置分页输出时是否让该块的末尾与下一个块的开头同处一页。连续标记的若干块会作为一条链一起移动，链长超过一页时便放弃。屏幕上的连续排版会忽略它。继承自 [Block](block.mdx)。 |
 | [LastChildElement](richtextelement.mdx#uid-ea00d129b3) | 获取文档树中最后一个直接子元素；若不存在则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [LetterSpacing](richtextelement.mdx#uid-a0f0542ed1) | 获取或设置字间距。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [LineHeight](block.mdx#uid-0b29471292) | Gets or sets the minimum line height for text lines in the block. Inherited from [Block](block.mdx). |
-| [Margin](block.mdx#uid-667a6f2ab4) | Gets or sets the margin applied outside the block. Inherited from [Block](block.mdx). |
+| [LineHeight](block.mdx#uid-0b29471292) | 获取或设置块内各行文本的最小行高。继承自 [Block](block.mdx)。 |
+| [Margin](block.mdx#uid-667a6f2ab4) | 获取或设置块外侧的外边距。继承自 [Block](block.mdx)。 |
 | [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [NextElement](richtextelement.mdx#uid-ea4a606df4) | 获取文档树中的下一个同级元素；若不存在则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [Padding](block.mdx#uid-ad720ad1be) | Gets or sets the padding applied inside the block border. Inherited from [Block](block.mdx). |
+| [Padding](block.mdx#uid-ad720ad1be) | 获取或设置块边框内侧的内边距。继承自 [Block](block.mdx)。 |
 | [PageHeight](section.mdx#uid-c1dee6598f) | Gets or sets the page height for pages this section spans in paginated output. Same semantics as [Avalonia.Controls.Documents.Section.PageWidth](xref:Avalonia.Controls.Documents.Section.PageWidth). Inherited from [Section](section.mdx). |
 | [PagePadding](section.mdx#uid-74b982cedb) | Gets or sets the page margins (paper edge to content area) for pages this section spans in paginated output. Null (the default) inherits the document's [Avalonia.Controls.Documents.FlowDocument.PagePadding](xref:Avalonia.Controls.Documents.FlowDocument.PagePadding). Same scope rules as [Avalonia.Controls.Documents.Section.PageWidth](xref:Avalonia.Controls.Documents.Section.PageWidth). Inherited from [Section](section.mdx). |
 | [PageWidth](section.mdx#uid-308d9758e1) | Gets or sets the page width, in device-independent pixels, for pages this section spans in paginated output. A section that declares any page geometry starts on a new page. NaN (the default) inherits the document's [Avalonia.Controls.Documents.FlowDocument.PageWidth](xref:Avalonia.Controls.Documents.FlowDocument.PageWidth). The continuous flow and page bands ([Avalonia.Controls.Documents.PageBandRole.Header](xref:Avalonia.Controls.Documents.PageBandRole.Header)/[Avalonia.Controls.Documents.PageBandRole.Footer](xref:Avalonia.Controls.Documents.PageBandRole.Footer)) ignore it. Inherited from [Section](section.mdx). |
@@ -152,11 +152,11 @@ public MarkdownAlertBlock()
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [TabStopPositions](block.mdx#uid-e6c8a3865c) | Gets or sets the block's custom tab stop positions in device-independent pixels, measured from the content edge. Null (the default) means the block uses the default tab interval. Maps to Word's `w:tabs` and RTF `\tx`. Inherited from [Block](block.mdx). |
+| [TabStopPositions](block.mdx#uid-e6c8a3865c) | 获取或设置该块自定义的制表位位置，以设备无关像素计，自内容边缘量起。为 null（默认）时该块采用默认制表间隔。它对应 Word 的 `w:tabs` 和 RTF 的 `\tx`。继承自 [Block](block.mdx)。 |
 | [TemplatedParent](../../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [TextAlignment](block.mdx#uid-a4585af57b) | Gets or sets the horizontal alignment of text within the block. Inherited from [Block](block.mdx). |
+| [TextAlignment](block.mdx#uid-a4585af57b) | 获取或设置块内文本的水平对齐方式。继承自 [Block](block.mdx)。 |
 | [TextDocument](richtextelement.mdx#uid-3a74fef907) | 获取该元素所挂接的 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)；若未挂接则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [TextIndent](block.mdx#uid-514cf7c51b) | Gets or sets the first-line indent in device-independent pixels; a negative value is a hanging indent. [double.NaN](xref:System.Double.NaN) (the default) means not set. Maps to Word's `w:ind w:firstLine`/`w:hanging` and RTF `\fi`. Inherited from [Block](block.mdx). |
+| [TextIndent](block.mdx#uid-514cf7c51b) | 获取或设置首行缩进，以设备无关像素计；负值表示悬挂缩进。[double.NaN](xref:System.Double.NaN)（默认）表示未设置。它对应 Word 的 `w:ind w:firstLine`/`w:hanging` 和 RTF 的 `\fi`。继承自 [Block](block.mdx)。 |
 | [Theme](../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 
@@ -186,8 +186,8 @@ public string AlertKind { get; set; }
 | [BreakPageBeforeProperty](block.mdx#uid-a0d9dfc363) | 定义 [Avalonia.Controls.Documents.Block.BreakPageBefore](xref:Avalonia.Controls.Documents.Block.BreakPageBefore) 属性。继承自 [Block](block.mdx)。 |
 | [CornerRadiusProperty](block.mdx#uid-b9d7690cf6) | 定义 [Avalonia.Controls.Documents.Block.CornerRadius](xref:Avalonia.Controls.Documents.Block.CornerRadius) 属性。继承自 [Block](block.mdx)。 |
 | [DataContextProperty](../../styledelement.mdx#uid-7eefabb929) | 定义 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [FirstPageFooterProperty](section.mdx#uid-8689393a2c) | Defines the [Avalonia.Controls.Documents.Section.FirstPageFooter](xref:Avalonia.Controls.Documents.Section.FirstPageFooter) property. Inherited from [Section](section.mdx). |
-| [FirstPageHeaderProperty](section.mdx#uid-b098af1af1) | Defines the [Avalonia.Controls.Documents.Section.FirstPageHeader](xref:Avalonia.Controls.Documents.Section.FirstPageHeader) property. Inherited from [Section](section.mdx). |
+| [FirstPageFooterProperty](section.mdx#uid-8689393a2c) | 定义 [Avalonia.Controls.Documents.Section.FirstPageFooter](xref:Avalonia.Controls.Documents.Section.FirstPageFooter) 属性。继承自 [Section](section.mdx)。 |
+| [FirstPageHeaderProperty](section.mdx#uid-b098af1af1) | 定义 [Avalonia.Controls.Documents.Section.FirstPageHeader](xref:Avalonia.Controls.Documents.Section.FirstPageHeader) 属性。继承自 [Section](section.mdx)。 |
 | [FlowDirectionProperty](block.mdx#uid-4068b8a8ec) | 定义 [Avalonia.Controls.Documents.Block.FlowDirection](xref:Avalonia.Controls.Documents.Block.FlowDirection) 属性。继承自 [Block](block.mdx)。 |
 | [FontFamilyProperty](richtextelement.mdx#uid-61ff640cdf) | 定义 [Avalonia.Controls.Documents.RichTextElement.FontFamily](xref:Avalonia.Controls.Documents.RichTextElement.FontFamily) 属性。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FontFeaturesProperty](richtextelement.mdx#uid-f72d8f96e2) | 定义 [Avalonia.Controls.Documents.RichTextElement.FontFeatures](xref:Avalonia.Controls.Documents.RichTextElement.FontFeatures) 属性。继承自 [RichTextElement](richtextelement.mdx)。 |
@@ -195,9 +195,9 @@ public string AlertKind { get; set; }
 | [FontStretchProperty](richtextelement.mdx#uid-972a45cbc0) | 定义 [Avalonia.Controls.Documents.RichTextElement.FontStretch](xref:Avalonia.Controls.Documents.RichTextElement.FontStretch) 属性。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FontStyleProperty](richtextelement.mdx#uid-32f20b0829) | 定义 [Avalonia.Controls.Documents.RichTextElement.FontStyle](xref:Avalonia.Controls.Documents.RichTextElement.FontStyle) 属性。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FontWeightProperty](richtextelement.mdx#uid-837218717b) | 定义 [Avalonia.Controls.Documents.RichTextElement.FontWeight](xref:Avalonia.Controls.Documents.RichTextElement.FontWeight) 属性。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [FooterProperty](section.mdx#uid-21d7d3ba49) | Defines the [Avalonia.Controls.Documents.Section.Footer](xref:Avalonia.Controls.Documents.Section.Footer) property. Inherited from [Section](section.mdx). |
+| [FooterProperty](section.mdx#uid-21d7d3ba49) | 定义 [Avalonia.Controls.Documents.Section.Footer](xref:Avalonia.Controls.Documents.Section.Footer) 属性。继承自 [Section](section.mdx)。 |
 | [ForegroundProperty](richtextelement.mdx#uid-b2d4886b1f) | 定义 [Avalonia.Controls.Documents.RichTextElement.Foreground](xref:Avalonia.Controls.Documents.RichTextElement.Foreground) 属性。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [HeaderProperty](section.mdx#uid-0563e79689) | Defines the [Avalonia.Controls.Documents.Section.Header](xref:Avalonia.Controls.Documents.Section.Header) property. Inherited from [Section](section.mdx). |
+| [HeaderProperty](section.mdx#uid-0563e79689) | 定义 [Avalonia.Controls.Documents.Section.Header](xref:Avalonia.Controls.Documents.Section.Header) 属性。继承自 [Section](section.mdx)。 |
 | [KeepTogetherProperty](block.mdx#uid-1c1424bfdf) | 定义 [Avalonia.Controls.Documents.Block.KeepTogether](xref:Avalonia.Controls.Documents.Block.KeepTogether) 属性。继承自 [Block](block.mdx)。 |
 | [KeepWithNextProperty](block.mdx#uid-bacf6cb374) | 定义 [Avalonia.Controls.Documents.Block.KeepWithNext](xref:Avalonia.Controls.Documents.Block.KeepWithNext) 属性。继承自 [Block](block.mdx)。 |
 | [LetterSpacingProperty](richtextelement.mdx#uid-2f77955584) | 定义 [Avalonia.Controls.Documents.RichTextElement.LetterSpacing](xref:Avalonia.Controls.Documents.RichTextElement.LetterSpacing) 属性。继承自 [RichTextElement](richtextelement.mdx)。 |

@@ -68,15 +68,15 @@ public class MapLayer
 | [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetHashCode](../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [GetLayerBounds](#uid-22efed1b64) | Gets the geographic bounds (in 0-200, 0-100 viewport units) of the content in this layer. Used for auto-scaling the map to fit content. |
-| [GetPointData](#uid-16963ec035) | Gets the data item at the specified screen point. |
+| [GetLayerBounds](#uid-22efed1b64) | 获取该图层中内容的地理边界（以 0-200、0-100 的视口单位计），用于自动缩放地图以容纳内容。 |
+| [GetPointData](#uid-16963ec035) | 获取位于指定屏幕坐标处的数据项。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [OnPointerExited](#uid-c8b05fa21c) | Handles pointer exited events. Override this method to handle interactions (e.g. clearing hover effects). |
-| [OnPointerMoved](#uid-d8bb8787d6) | Handles pointer moved events. Override this method to handle interactions (e.g. hover effects). |
+| [OnPointerExited](#uid-c8b05fa21c) | 处理指针离开事件。可重写该方法来处理交互（比如清除悬停效果）。 |
+| [OnPointerMoved](#uid-d8bb8787d6) | 处理指针移动事件。可重写该方法来处理交互（比如悬停效果）。 |
 | [OnPointerPressed](#uid-61476cbbf9) | Handles pointer pressed events. Override this method to handle interactions (e.g. selection). |
-| [Render](#uid-502b626c4d) | Renders this layer to the drawing context. |
+| [Render](#uid-502b626c4d) | 把该图层渲染到绘图上下文。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -87,8 +87,8 @@ public class MapLayer
 
 ### GetLayerBounds 方法 {#getlayerbounds-method}
 
-Gets the geographic bounds (in 0-200, 0-100 viewport units) of the content in this layer.
-Used for auto-scaling the map to fit content.
+获取该图层中内容的地理边界（以 0-200、0-100 的视口单位计）。
+用于自动缩放地图以容纳内容。
 
 ```csharp
 public Nullable<Avalonia.Rect> GetLayerBounds()
@@ -107,7 +107,7 @@ Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 ### GetPointData 方法 {#getpointdata-method}
 
-Gets the data item at the specified screen point.
+获取位于指定屏幕坐标处的数据项。
 
 ```csharp
 public object GetPointData(Avalonia.Point point, Avalonia.Rect chartArea)
@@ -117,19 +117,19 @@ public object GetPointData(Avalonia.Point point, Avalonia.Rect chartArea)
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The screen point to test.
+要测试的屏幕坐标点。
 
 
 `chartArea` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The chart area rectangle.
+图表区域矩形。
 
 
 #### 返回值 {#returns-1}
 
 object
 
-The data item if hit; otherwise, null.
+命中时返回该数据项，否则为 null。
 
 
 </section>
@@ -140,8 +140,8 @@ The data item if hit; otherwise, null.
 
 ### OnPointerExited 方法 {#onpointerexited-method}
 
-Handles pointer exited events.
-Override this method to handle interactions (e.g. clearing hover effects).
+处理指针离开事件。
+可重写该方法来处理交互（比如清除悬停效果）。
 
 ```csharp
 public void OnPointerExited()
@@ -155,8 +155,8 @@ public void OnPointerExited()
 
 ### OnPointerMoved 方法 {#onpointermoved-method}
 
-Handles pointer moved events.
-Override this method to handle interactions (e.g. hover effects).
+处理指针移动事件。
+可重写该方法来处理交互（比如悬停效果）。
 
 ```csharp
 public bool OnPointerMoved(Avalonia.Point point, Avalonia.Rect chartArea)
@@ -174,7 +174,7 @@ public bool OnPointerMoved(Avalonia.Point point, Avalonia.Rect chartArea)
 
 bool
 
-True if handled.
+若已处理则为 true。
 
 
 </section>
@@ -204,7 +204,7 @@ public bool OnPointerPressed(Avalonia.Point point, Avalonia.Rect chartArea)
 
 bool
 
-True if handled.
+若已处理则为 true。
 
 
 </section>
@@ -215,7 +215,7 @@ True if handled.
 
 ### Render 方法 {#render-method}
 
-Renders this layer to the drawing context.
+把该图层渲染到绘图上下文。
 
 ```csharp
 public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect chartArea, double animationProgress)
@@ -230,12 +230,12 @@ public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect chartAre
 
 `chartArea` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The chart area rectangle.
+图表区域矩形。
 
 
 `animationProgress` double
 
-Animation progress from 0 to 1.
+动画进度，取值 0 到 1。
 
 
 </section>

@@ -84,11 +84,11 @@ public TransformGroup()
 | [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Parse](transform.mdx#uid-1be8bdbe67) | Parses a [Avalonia.Media.Transform](xref:Avalonia.Media.Transform) string. Inherited from [Transform](transform.mdx). |
+| [Parse](transform.mdx#uid-1be8bdbe67) | 解析 [Avalonia.Media.Transform](xref:Avalonia.Media.Transform) 字符串。继承自 [Transform](transform.mdx)。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [ToImmutable](transform.mdx#uid-1ae7a66239) | Converts a transform to an immutable transform. Inherited from [Transform](transform.mdx). |
-| [ToString](transform.mdx#uid-582ae45701) | Returns a String representing this transform matrix instance. Inherited from [Transform](transform.mdx). |
+| [ToImmutable](transform.mdx#uid-1ae7a66239) | 把变换转换为不可变变换。继承自 [Transform](transform.mdx)。 |
+| [ToString](transform.mdx#uid-582ae45701) | 返回表示该变换矩阵实例的字符串。继承自 [Transform](transform.mdx)。 |
 | [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 ## 属性 {#properties}
@@ -99,7 +99,7 @@ public TransformGroup()
 | [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
-| [Value](#uid-7903a51bef) | Gets the transform's [Avalonia.Matrix](xref:Avalonia.Matrix). |
+| [Value](#uid-7903a51bef) | 获取该变换的 [Avalonia.Matrix](xref:Avalonia.Matrix)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -126,7 +126,7 @@ The children.
 
 ### Value 属性 {#value-property}
 
-Gets the transform's [Avalonia.Matrix](xref:Avalonia.Matrix).
+获取该变换的 [Avalonia.Matrix](xref:Avalonia.Matrix)。
 
 ```csharp
 public Avalonia.Matrix Value { get; set; }
@@ -159,7 +159,7 @@ public Avalonia.StyledProperty<TValue><Avalonia.Media.Transforms> ChildrenProper
 
 | 名称 | 说明 |
 | --- | --- |
-| [Changed](transform.mdx#uid-59de490f29) | Raised when the transform changes. Inherited from [Transform](transform.mdx). |
+| [Changed](transform.mdx#uid-59de490f29) | 变换发生变化时抛出。继承自 [Transform](transform.mdx)。 |
 | [PropertyChanged](../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
 </ApiRefPage>

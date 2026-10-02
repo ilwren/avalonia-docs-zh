@@ -161,7 +161,7 @@ public NumericUpDown()
 | [HasMirrorTransform](../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../visual.mdx)。 |
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [HorizontalContentAlignment](#uid-77de6af623) | Gets or sets the horizontal alignment of the content within the control. |
+| [HorizontalContentAlignment](#uid-77de6af623) | 获取或设置内容在控件内的水平对齐方式。 |
 | [Increment](#uid-e2bba89058) | Gets or sets the amount in which to increment the [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value). |
 | [InnerLeftContent](#uid-0ed3e00ebf) | Gets or sets custom content that is positioned on the left side of the text layout box |
 | [InnerRightContent](#uid-6ac12ed0c4) | Gets or sets custom content that is positioned on the right side of the text layout box |
@@ -196,7 +196,7 @@ public NumericUpDown()
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [ParsingNumberStyle](#uid-1e38717840) | Gets or sets the parsing style (AllowLeadingWhite, Float, AllowHexSpecifier, ...). By default, Any. Note that Hex style does not work with decimal. For hexadecimal display, use [Avalonia.Controls.NumericUpDown.TextConverter](xref:Avalonia.Controls.NumericUpDown.TextConverter). |
-| [PlaceholderForeground](#uid-96c752c781) | Gets or sets the brush used for the foreground color of the placeholder text. |
+| [PlaceholderForeground](#uid-96c752c781) | 获取或设置占位文本前景色所用的画刷。 |
 | [PlaceholderText](#uid-0afb5abc73) | Gets or sets the object to use as a placeholder if the [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) is null. |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
@@ -216,9 +216,9 @@ public NumericUpDown()
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [Value](#uid-ba4a60a466) | Gets or sets the value. |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [VerticalContentAlignment](#uid-a2ba0c5181) | Gets or sets the vertical alignment of the content within the control. |
+| [VerticalContentAlignment](#uid-a2ba0c5181) | 获取或设置内容在控件内的垂直对齐方式。 |
 | [Watermark](#uid-501e63203b) | Gets or sets the object to use as a placeholder if the [Avalonia.Controls.NumericUpDown.Value](xref:Avalonia.Controls.NumericUpDown.Value) is null. |
-| [WatermarkForeground](#uid-73c9d1da65) | Gets or sets the brush used for the foreground color of the placeholder text. |
+| [WatermarkForeground](#uid-73c9d1da65) | 获取或设置占位文本前景色所用的画刷。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
 
@@ -284,7 +284,7 @@ public string FormatString { get; set; }
 
 ### HorizontalContentAlignment 属性 {#horizontalcontentalignment-property}
 
-Gets or sets the horizontal alignment of the content within the control.
+获取或设置内容在控件内的水平对齐方式。
 
 ```csharp
 public Avalonia.Layout.HorizontalAlignment HorizontalContentAlignment { get; set; }
@@ -412,7 +412,7 @@ public System.Globalization.NumberStyles ParsingNumberStyle { get; set; }
 
 ### PlaceholderForeground 属性 {#placeholderforeground-property}
 
-Gets or sets the brush used for the foreground color of the placeholder text.
+获取或设置占位文本前景色所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush PlaceholderForeground { get; set; }
@@ -512,7 +512,7 @@ public Nullable<decimal> Value { get; set; }
 
 ### VerticalContentAlignment 属性 {#verticalcontentalignment-property}
 
-Gets or sets the vertical alignment of the content within the control.
+获取或设置内容在控件内的垂直对齐方式。
 
 ```csharp
 public Avalonia.Layout.VerticalAlignment VerticalContentAlignment { get; set; }
@@ -540,7 +540,7 @@ public string Watermark { get; set; }
 
 ### WatermarkForeground 属性 {#watermarkforeground-property}
 
-Gets or sets the brush used for the foreground color of the placeholder text.
+获取或设置占位文本前景色所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush WatermarkForeground { get; set; }

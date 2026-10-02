@@ -141,7 +141,7 @@ public InteractiveTextView()
 | [BorderThickness](../../primitives/templatedcontrol.mdx#uid-4e2cc431b4) | 获取或设置控件边框的粗细。继承自 [TemplatedControl](../../primitives/templatedcontrol.mdx)。 |
 | [Bounds](../../../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../../../visual.mdx)。 |
 | [CacheMode](../../../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../../../visual.mdx)。 |
-| [CaretBrush](#uid-7d2334c19f) | Gets or sets the brush used to paint the caret. |
+| [CaretBrush](#uid-7d2334c19f) | 获取或设置绘制插入符所用的画刷。 |
 | [CaretElement](#uid-c0d891e35d) | Gets the caret element discovered from the template, or `null` if the template has not been applied yet. |
 | [Classes](../../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../../styledelement.mdx)。 |
 | [Clip](../../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../../visual.mdx)。 |
@@ -240,7 +240,7 @@ public Avalonia.Controls.Documents.Primitives.Adorners.BlockAdornerLayer Adorner
 
 ### CaretBrush 属性 {#caretbrush-property}
 
-Gets or sets the brush used to paint the caret.
+获取或设置绘制插入符所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush CaretBrush { get; set; }
@@ -284,7 +284,7 @@ public Avalonia.Controls.Documents.Primitives.CaretElement CaretElement { get; s
 | [CursorProperty](../../../input/inputelement.mdx#uid-37a51ae89c) | 获取或设置关联的鼠标指针样式。继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [DataContextProperty](../../../styledelement.mdx#uid-7eefabb929) | 定义 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性。继承自 [StyledElement](../../../styledelement.mdx)。 |
 | [DesiredSizeProperty](../../../layout/layoutable.mdx#uid-b46bed86fe) | 定义 [Avalonia.Layout.Layoutable.DesiredSize](xref:Avalonia.Layout.Layoutable.DesiredSize) 属性。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
-| [DocumentProperty](textviewbase.mdx#uid-7f026e986d) | Defines the [Avalonia.Controls.Documents.Primitives.TextViewBase.Document](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.Document) property. Inherited from [TextViewBase](textviewbase.mdx). |
+| [DocumentProperty](textviewbase.mdx#uid-7f026e986d) | 定义 [Avalonia.Controls.Documents.Primitives.TextViewBase.Document](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.Document) 属性。继承自 [TextViewBase](textviewbase.mdx)。 |
 | [DoubleTappedEvent](../../../input/inputelement.mdx#uid-932047336f) | 定义 [Avalonia.Input.InputElement.DoubleTapped](xref:Avalonia.Input.InputElement.DoubleTapped) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [EffectProperty](../../../visual.mdx#uid-9374086bff) | 定义 [Avalonia.Visual.Effect](xref:Avalonia.Visual.Effect) 属性。继承自 [Visual](../../../visual.mdx)。 |
 | [FlowDirectionProperty](../../../visual.mdx#uid-79d00f257f) | 定义 [Avalonia.Visual.FlowDirection](xref:Avalonia.Visual.FlowDirection) 属性。继承自 [Visual](../../../visual.mdx)。 |
@@ -329,9 +329,9 @@ public Avalonia.Controls.Documents.Primitives.CaretElement CaretElement { get; s
 | [OpacityMaskProperty](../../../visual.mdx#uid-aad2c3f7c2) | 定义 [Avalonia.Visual.OpacityMask](xref:Avalonia.Visual.OpacityMask) 属性。继承自 [Visual](../../../visual.mdx)。 |
 | [OpacityProperty](../../../visual.mdx#uid-2a53e27b1f) | 定义 [Avalonia.Visual.Opacity](xref:Avalonia.Visual.Opacity) 属性。继承自 [Visual](../../../visual.mdx)。 |
 | [PaddingProperty](../../primitives/templatedcontrol.mdx#uid-8836c61358) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.Padding](xref:Avalonia.Controls.Primitives.TemplatedControl.Padding) 属性。继承自 [TemplatedControl](../../primitives/templatedcontrol.mdx)。 |
-| [PageBoundsBrushProperty](textviewbase.mdx#uid-a6ee4c4050) | Defines the [Avalonia.Controls.Documents.Primitives.TextViewBase.PageBoundsBrush](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.PageBoundsBrush) property. Inherited from [TextViewBase](textviewbase.mdx). |
-| [PageBreakMarkerBrushProperty](textviewbase.mdx#uid-213cd0fa15) | Defines the [Avalonia.Controls.Documents.Primitives.TextViewBase.PageBreakMarkerBrush](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.PageBreakMarkerBrush) property. Inherited from [TextViewBase](textviewbase.mdx). |
-| [PagePaddingProperty](textviewbase.mdx#uid-32a4e33c98) | Defines the [Avalonia.Controls.Documents.Primitives.TextViewBase.PagePadding](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.PagePadding) property. Inherited from [TextViewBase](textviewbase.mdx). |
+| [PageBoundsBrushProperty](textviewbase.mdx#uid-a6ee4c4050) | 定义 [Avalonia.Controls.Documents.Primitives.TextViewBase.PageBoundsBrush](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.PageBoundsBrush) 属性。继承自 [TextViewBase](textviewbase.mdx)。 |
+| [PageBreakMarkerBrushProperty](textviewbase.mdx#uid-213cd0fa15) | 定义 [Avalonia.Controls.Documents.Primitives.TextViewBase.PageBreakMarkerBrush](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.PageBreakMarkerBrush) 属性。继承自 [TextViewBase](textviewbase.mdx)。 |
+| [PagePaddingProperty](textviewbase.mdx#uid-32a4e33c98) | 定义 [Avalonia.Controls.Documents.Primitives.TextViewBase.PagePadding](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.PagePadding) 属性。继承自 [TextViewBase](textviewbase.mdx)。 |
 | [ParentProperty](../../../styledelement.mdx#uid-dc6481a488) | 定义 [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) 属性。继承自 [StyledElement](../../../styledelement.mdx)。 |
 | [PinchEndedEvent](../../../input/inputelement.mdx#uid-3f6a3485dd) | 定义 [Avalonia.Input.InputElement.PinchEnded](xref:Avalonia.Input.InputElement.PinchEnded) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [PinchEvent](../../../input/inputelement.mdx#uid-d109d8c674) | 定义 [Avalonia.Input.InputElement.Pinch](xref:Avalonia.Input.InputElement.Pinch) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |
@@ -355,9 +355,9 @@ public Avalonia.Controls.Documents.Primitives.CaretElement CaretElement { get; s
 | [ScrollGestureEndedEvent](../../../input/inputelement.mdx#uid-5f3e85c372) | 定义 [Avalonia.Input.InputElement.ScrollGestureEnded](xref:Avalonia.Input.InputElement.ScrollGestureEnded) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [ScrollGestureEvent](../../../input/inputelement.mdx#uid-d098469113) | 定义 [Avalonia.Input.InputElement.ScrollGesture](xref:Avalonia.Input.InputElement.ScrollGesture) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStartingEvent](../../../input/inputelement.mdx#uid-02f504d2ea) | 定义 [Avalonia.Input.InputElement.ScrollGestureInertiaStarting](xref:Avalonia.Input.InputElement.ScrollGestureInertiaStarting) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |
-| [ShowPageBandsInContinuousLayoutProperty](textviewbase.mdx#uid-c4f9f50256) | Defines the [Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBandsInContinuousLayout](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBandsInContinuousLayout) property. Inherited from [TextViewBase](textviewbase.mdx). |
+| [ShowPageBandsInContinuousLayoutProperty](textviewbase.mdx#uid-c4f9f50256) | 定义 [Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBandsInContinuousLayout](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBandsInContinuousLayout) 属性。继承自 [TextViewBase](textviewbase.mdx)。 |
 | [ShowPageBoundsProperty](textviewbase.mdx#uid-bc1c21ca28) | Defines the [Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBounds](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBounds) property. When true, subtle visual indicators are drawn for the page content area. Inherited from [TextViewBase](textviewbase.mdx). |
-| [ShowPageBreakMarkersProperty](textviewbase.mdx#uid-089541c3e1) | Defines the [Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBreakMarkers](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBreakMarkers) property. Inherited from [TextViewBase](textviewbase.mdx). |
+| [ShowPageBreakMarkersProperty](textviewbase.mdx#uid-089541c3e1) | 定义 [Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBreakMarkers](xref:Avalonia.Controls.Documents.Primitives.TextViewBase.ShowPageBreakMarkers) 属性。继承自 [TextViewBase](textviewbase.mdx)。 |
 | [SizeChangedEvent](../../control.mdx#uid-7d071894f4) | 定义 [Avalonia.Controls.Control.SizeChanged](xref:Avalonia.Controls.Control.SizeChanged) 事件。继承自 [Control](../../control.mdx)。 |
 | [SwipeGestureEndedEvent](../../../input/inputelement.mdx#uid-8492058651) | 定义 [Avalonia.Input.InputElement.SwipeGestureEnded](xref:Avalonia.Input.InputElement.SwipeGestureEnded) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [SwipeGestureEvent](../../../input/inputelement.mdx#uid-e431c01e95) | 定义 [Avalonia.Input.InputElement.SwipeGesture](xref:Avalonia.Input.InputElement.SwipeGesture) 事件。继承自 [InputElement](../../../input/inputelement.mdx)。 |

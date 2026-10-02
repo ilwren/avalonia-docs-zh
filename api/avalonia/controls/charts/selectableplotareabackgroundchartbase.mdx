@@ -76,7 +76,7 @@ Use this base when a chart needs the shared chart-level selection properties fro
 | [BeginInit](../../styledelement.mdx#uid-91c6ccadce) | 继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Bind（8 个重载）](../../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [CheckAccess](../../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [ClearSelection](selectablechartbase.mdx#uid-04cc9d2954) | Clears the current selection. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
+| [ClearSelection](selectablechartbase.mdx#uid-04cc9d2954) | 清除当前选择。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
 | [ClearValue（4 个重载）](../../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [CoerceValue](../../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [EndInit](../../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -96,12 +96,12 @@ Use this base when a chart needs the shared chart-level selection properties fro
 | [InvalidateMeasure](../../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [InvalidateVisual](../../visual.mdx#uid-1cd22a7496) | 使视觉元素失效并排入重绘队列。继承自 [Visual](../../visual.mdx)。 |
 | [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [IsDataPointSelected](selectablechartbase.mdx#uid-9baac08302) | Checks whether the specified data point is selected. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
+| [IsDataPointSelected](selectablechartbase.mdx#uid-9baac08302) | 检查指定的数据点是否处于选中状态。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
 | [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Measure](../../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [RaiseEvent](../../interactivity/interactive.mdx#uid-d6aba452e6) | 引发一个路由事件。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
 | [RemoveHandler（2 个重载）](../../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
-| [Render](chartbase.mdx#uid-35b79a0fd0) | Clears stale hit regions then delegates to the Avalonia render pipeline. All derived chart overrides call base.Render(context), so this runs before every frame. Inherited from [ChartBase](chartbase.mdx). |
+| [Render](chartbase.mdx#uid-35b79a0fd0) | 先清掉过期的命中区域，再交给 Avalonia 的渲染管线。所有派生图表的重写都会调用 base.Render(context)，因此它会在每一帧之前执行。继承自 [ChartBase](chartbase.mdx)。 |
 | [ReplayAnimation](chartbase.mdx#uid-6f1cedd361) | 重新播放入场动画。继承自 [ChartBase](chartbase.mdx)。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../../visual.mdx)。 |
@@ -110,7 +110,7 @@ Use this base when a chart needs the shared chart-level selection properties fro
 | [SetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-281801c25f) | 设置控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [TryGetResource](../../styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](../../styledelement.mdx)。 |
-| [TrySelectDataPoint](selectablechartbase.mdx#uid-eba23db698) | Attempts to select the specified data point. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
+| [TrySelectDataPoint](selectablechartbase.mdx#uid-eba23db698) | 尝试选中指定的数据点。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
 | [UpdateLayout](../../layout/layoutable.mdx#uid-529d4a08ea) | 执行一次布局。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 
@@ -167,7 +167,7 @@ Use this base when a chart needs the shared chart-level selection properties fro
 | [IsMeasureValid](../../layout/layoutable.mdx#uid-2b3ce6ad30) | 获取一个值，指示控件的布局测量结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsPointerOver](../../input/inputelement.mdx#uid-09e1553c00) | 获取一个值，指示指针当前是否悬停在控件上方。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsRenderDiagnosticsEnabled](chartbase.mdx#uid-e04e966225) | 获取或设置是否为该图表采集渲染诊断计数。关闭后，图表会跳过诊断对象分配、计数收集、计时采样与浮层绘制。继承自 [ChartBase](chartbase.mdx)。 |
-| [IsSelectionEnabled](selectablechartbase.mdx#uid-7352366dbd) | Gets or sets whether data point selection is enabled. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
+| [IsSelectionEnabled](selectablechartbase.mdx#uid-7352366dbd) | 获取或设置是否启用数据点选择。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
 | [IsTabStop](../../input/inputelement.mdx#uid-455d73fca4) | 获取或设置一个值，指示该控件是否参与 Tab 键导航。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsTooltipEnabled](chartbase.mdx#uid-43afc0bb1f) | 获取或设置悬停或点按数据点时是否显示工具提示。继承自 [ChartBase](chartbase.mdx)。 |
 | [IsVisible](../../visual.mdx#uid-da2b0ca167) | 获取或设置一个值，指示该控件是否可见。继承自 [Visual](../../visual.mdx)。 |
@@ -189,17 +189,17 @@ Use this base when a chart needs the shared chart-level selection properties fro
 | [Padding](../primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Palette](chartbase.mdx#uid-08afc4a5ef) | 获取或设置各数据系列取色所用的调色板。继承自 [ChartBase](chartbase.mdx)。 |
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [PlotAreaBackground](#uid-0fd3cc87ac) | Gets or sets the background brush for the plot area only. |
+| [PlotAreaBackground](#uid-0fd3cc87ac) | 获取或设置仅作用于绘图区的背景画刷。 |
 | [PlotAreaContent](chartbase.mdx#uid-3f1e034bab) | 获取或设置覆盖在绘图区之上的自定义内容。该内容会在对应图表类型的有效绘图边界内完成测量与排列。继承自 [ChartBase](chartbase.mdx)。 |
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [SelectedIndex](selectablechartbase.mdx#uid-83689e5154) | Gets or sets the index of the primary selected data point. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
-| [SelectedIndexes](selectablechartbase.mdx#uid-c61627586d) | Gets the collection of selected indexes. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
-| [SelectionBrush](selectablechartbase.mdx#uid-a50b907e3a) | Gets or sets the brush used to highlight selected data points. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
-| [SelectionMode](selectablechartbase.mdx#uid-1e3846b169) | Gets or sets the selection behavior. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
-| [SelectionStroke](selectablechartbase.mdx#uid-54749a421b) | Gets or sets the stroke brush used to outline selected data points. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
-| [SelectionStrokeThickness](selectablechartbase.mdx#uid-d5cda12a38) | Gets or sets the stroke thickness for the selection outline. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
+| [SelectedIndex](selectablechartbase.mdx#uid-83689e5154) | 获取或设置主选中数据点的索引。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
+| [SelectedIndexes](selectablechartbase.mdx#uid-c61627586d) | 获取选中索引的集合。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
+| [SelectionBrush](selectablechartbase.mdx#uid-a50b907e3a) | 获取或设置高亮选中数据点所用的画刷。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
+| [SelectionMode](selectablechartbase.mdx#uid-1e3846b169) | 获取或设置选择行为。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
+| [SelectionStroke](selectablechartbase.mdx#uid-54749a421b) | 获取或设置勾勒选中数据点轮廓所用的描边画刷。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
+| [SelectionStrokeThickness](selectablechartbase.mdx#uid-d5cda12a38) | 获取或设置选中轮廓的描边粗细。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -223,7 +223,7 @@ Use this base when a chart needs the shared chart-level selection properties fro
 
 ### PlotAreaBackground 属性 {#plotareabackground-property}
 
-Gets or sets the background brush for the plot area only.
+获取或设置仅作用于绘图区的背景画刷。
 
 ```csharp
 public Avalonia.Media.IBrush PlotAreaBackground { get; set; }
@@ -428,8 +428,8 @@ public Avalonia.StyledProperty<Avalonia.Media.IBrush> PlotAreaBackgroundProperty
 | [ScrollGesture](../../input/inputelement.mdx#uid-b571ab3acc) | 当用户在控件范围内沿同一方向持续移动指针时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureEnded](../../input/inputelement.mdx#uid-eb3914c3a8) | 当滚动手势完全停止时发生，其中已计入用户松开指针后继续滚动的惯性过程。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStarting](../../input/inputelement.mdx#uid-c8cd2731a5) | 在滚动手势过程中，当用户松开指针、滚动转入惯性滑动阶段时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [SelectionChanged](selectablechartbase.mdx#uid-1e87374c58) | Raised after the selection has changed. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
-| [SelectionChanging](selectablechartbase.mdx#uid-11c5e07706) | Raised before the selection changes. Inherited from [SelectableChartBase](selectablechartbase.mdx). |
+| [SelectionChanged](selectablechartbase.mdx#uid-1e87374c58) | 选择变化之后抛出。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
+| [SelectionChanging](selectablechartbase.mdx#uid-11c5e07706) | 选择发生变化之前抛出。继承自 [SelectableChartBase](selectablechartbase.mdx)。 |
 | [SizeChanged](../control.mdx#uid-6cfea6b6c5) | 当控件的边界（实际尺寸）发生变化时发生。继承自 [Control](../control.mdx)。 |
 | [SwipeGesture](../../input/inputelement.mdx#uid-0f4fc613ec) | 当用户在控件上沿单一方向快速拖动指针时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [SwipeGestureEnded](../../input/inputelement.mdx#uid-137ae2fd9d) | 当控件上的滑动手势结束时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |

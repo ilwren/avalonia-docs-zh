@@ -87,12 +87,12 @@ public Size(double width, double height)
 
 `width` double
 
-The width.
+宽度。
 
 
 `height` double
 
-The height.
+高度。
 
 
 </section>
@@ -126,7 +126,7 @@ The vector to take values from.
 | [Deconstruct](#uid-f874a31ae4) | 暂无摘要。 |
 | [Deflate](#uid-eeadea36f8) | Deflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
 | [Equals（2 个重载）](#uid-b9cb8dbbef) | Returns a boolean indicating whether the size is equal to the other given size (bitwise). |
-| [GetHashCode](#uid-0468d68394) | Returns a hash code for a [Avalonia.Size](xref:Avalonia.Size). |
+| [GetHashCode](#uid-0468d68394) | 返回 [Avalonia.Size](xref:Avalonia.Size) 的哈希码。 |
 | [Inflate](#uid-6053fa86c5) | Inflates the size by a [Avalonia.Thickness](xref:Avalonia.Thickness). |
 | [NearlyEquals](#uid-9d4346ca02) | Returns a boolean indicating whether the size is equal to the other given size (numerically). |
 | [Parse](#uid-b50eddb408) | 解析 [Avalonia.Size](xref:Avalonia.Size) 字符串。 |
@@ -262,7 +262,7 @@ public bool Equals(object obj)
 
 `obj` object
 
-The object.
+该对象。
 
 
 ##### 返回值 {#returns-3}
@@ -280,7 +280,7 @@ True if `obj` is a size that equals the current size.
 
 ### GetHashCode 方法 {#gethashcode-method}
 
-Returns a hash code for a [Avalonia.Size](xref:Avalonia.Size).
+返回 [Avalonia.Size](xref:Avalonia.Size) 的哈希码。
 
 ```csharp
 public int GetHashCode()
@@ -290,7 +290,7 @@ public int GetHashCode()
 
 int
 
-The hash code.
+哈希码。
 
 
 </section>
@@ -367,7 +367,7 @@ public Avalonia.Size Parse(string s)
 
 `s` string
 
-The string.
+该字符串。
 
 
 #### 返回值 {#returns-7}
@@ -416,14 +416,14 @@ public Avalonia.Size WithHeight(double height)
 
 `height` double
 
-The height.
+高度。
 
 
 #### 返回值 {#returns-9}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
-The new [Avalonia.Size](xref:Avalonia.Size).
+新的 [Avalonia.Size](xref:Avalonia.Size)。
 
 
 </section>
@@ -444,14 +444,14 @@ public Avalonia.Size WithWidth(double width)
 
 `width` double
 
-The width.
+宽度。
 
 
 #### 返回值 {#returns-10}
 
 [Avalonia.Size](xref:Avalonia.Size)
 
-The new [Avalonia.Size](xref:Avalonia.Size).
+新的 [Avalonia.Size](xref:Avalonia.Size)。
 
 
 </section>
@@ -461,8 +461,8 @@ The new [Avalonia.Size](xref:Avalonia.Size).
 | 名称 | 说明 |
 | --- | --- |
 | [AspectRatio](#uid-84b8e2fcfa) | Gets the aspect ratio of the size. |
-| [Height](#uid-38d775d8b5) | Gets the height. |
-| [Width](#uid-646cb67085) | Gets the width. |
+| [Height](#uid-38d775d8b5) | 获取高度。 |
+| [Width](#uid-646cb67085) | 获取宽度。 |
 
 <section className="apiref-page__member-entry">
 
@@ -484,7 +484,7 @@ public double AspectRatio { get; set; }
 
 ### Height 属性 {#height-property}
 
-Gets the height.
+获取高度。
 
 ```csharp
 public double Height { get; set; }
@@ -498,7 +498,7 @@ public double Height { get; set; }
 
 ### Width 属性 {#width-property}
 
-Gets the width.
+获取宽度。
 
 ```csharp
 public double Width { get; set; }

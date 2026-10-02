@@ -97,17 +97,17 @@ public ScrollGestureRecognizer()
 | 名称 | 说明 |
 | --- | --- |
 | [ActualThemeVariant](../../styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [CanHorizontallyScroll](#uid-ae5de60c49) | Gets or sets a value indicating whether the content can be scrolled horizontally. |
+| [CanHorizontallyScroll](#uid-ae5de60c49) | 获取或设置内容能否水平滚动。 |
 | [CanVerticallyScroll](#uid-5b5a26fdfa) | Gets or sets a value indicating whether the content can be scrolled vertically. |
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [DataContext](../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Extent](#uid-fd3ab94b1a) | Gets the extent of the scrollable content. |
+| [Extent](#uid-fd3ab94b1a) | 获取可滚动内容的范围大小。 |
 | [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [IsScrollInertiaEnabled](#uid-543f53394e) | Gets or sets whether the gesture should include inertia in it's behavior. |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [Offset](#uid-d72dbaa777) | Gets or sets the current scroll offset. |
+| [Offset](#uid-d72dbaa777) | 获取或设置当前的滚动偏移量。 |
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [ScrollStartDistance](#uid-2fd9b73f38) | Gets or sets a value indicating the distance the pointer moves before scrolling is started |
@@ -124,7 +124,7 @@ public ScrollGestureRecognizer()
 
 ### CanHorizontallyScroll 属性 {#canhorizontallyscroll-property}
 
-Gets or sets a value indicating whether the content can be scrolled horizontally.
+获取或设置内容能否水平滚动。
 
 ```csharp
 public bool CanHorizontallyScroll { get; set; }
@@ -152,7 +152,7 @@ public bool CanVerticallyScroll { get; set; }
 
 ### Extent 属性 {#extent-property}
 
-Gets the extent of the scrollable content.
+获取可滚动内容的范围大小。
 
 ```csharp
 public Nullable<Avalonia.Size> Extent { get; set; }
@@ -180,7 +180,7 @@ public bool IsScrollInertiaEnabled { get; set; }
 
 ### Offset 属性 {#offset-property}
 
-Gets or sets the current scroll offset.
+获取或设置当前的滚动偏移量。
 
 ```csharp
 public Nullable<Avalonia.Vector> Offset { get; set; }

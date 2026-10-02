@@ -215,7 +215,7 @@ public void ReplayAnimation()
 | [ItemsSource](#uid-be3b2a7a0c) | 获取或设置数据源。 |
 | [KeyBindings](../../input/inputelement.mdx#uid-827a5420b2) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [LabelForeground](chartbase.mdx#uid-7ba97907ce) | 获取或设置坐标轴及图表级标签所用的画刷。若数据系列或批注自带标签画刷属性，则会在局部覆盖此设置。继承自 [ChartBase](chartbase.mdx)。 |
-| [LabelPath](#uid-021ba8c08d) | Gets or sets the property path for the label. |
+| [LabelPath](#uid-021ba8c08d) | 获取或设置标签所用的属性路径。 |
 | [LegendAlignment](chartbase.mdx#uid-8d2828bd19) | 获取或设置图例的对齐方式。继承自 [ChartBase](chartbase.mdx)。 |
 | [LegendOffset](chartbase.mdx#uid-d6aeba2ed7) | 获取或设置浮动图例的偏移量。继承自 [ChartBase](chartbase.mdx)。 |
 | [LegendPosition](chartbase.mdx#uid-07b56208ce) | 获取或设置图表图例的位置。设为 [Avalonia.Controls.Charts.LegendPosition.None](xref:Avalonia.Controls.Charts.LegendPosition.None) 可完全隐藏图例。继承自 [ChartBase](chartbase.mdx)。 |
@@ -251,7 +251,7 @@ public void ReplayAnimation()
 | [ToggleSeriesVisibility](chartbase.mdx#uid-9c88230ede) | 获取或设置点击图例项是否切换数据系列的可见性。该设置仅对图例代表可隐藏数据系列或类别的图表有效；图例为说明性刻度的图表会将此值强制改回 。继承自 [ChartBase](chartbase.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [ValuePath](#uid-0115be6959) | Gets or sets the property path for the value. |
+| [ValuePath](#uid-0115be6959) | 获取或设置取值所用的属性路径。 |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Width](../../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [ZIndex](../../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../../visual.mdx)。 |
@@ -304,7 +304,7 @@ public System.Collections.IEnumerable ItemsSource { get; set; }
 
 ### LabelPath 属性 {#labelpath-property}
 
-Gets or sets the property path for the label.
+获取或设置标签所用的属性路径。
 
 ```csharp
 public string LabelPath { get; set; }
@@ -360,7 +360,7 @@ public bool ShowLines { get; set; }
 
 ### ValuePath 属性 {#valuepath-property}
 
-Gets or sets the property path for the value.
+获取或设置取值所用的属性路径。
 
 ```csharp
 public string ValuePath { get; set; }

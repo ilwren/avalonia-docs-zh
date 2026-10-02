@@ -59,7 +59,7 @@ public class DocumentSnapshotBuilder
 
 | 名称 | 说明 |
 | --- | --- |
-| [AddBold](#uid-324d03666b) | Adds bold text to the current paragraph. |
+| [AddBold](#uid-324d03666b) | 向当前段落添加粗体文本。 |
 | [AddFootnote](#uid-29886bc9c4) | Adds a footnote - a nested document snapshot, built with its own builder - paired with the [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnoteReference(int)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnoteReference%28System.Int32%29) anchor of the same `noteId`. `label` is the note's name in a format that addresses notes by name (markdown), or null. Notes are kept in the order added, which readers make the anchor order. |
 | [AddFootnoteCitation](#uid-f3971d6d1b) | Adds a further citation of the note `noteId` already anchored elsewhere: one object replacement character showing that note's number, owning no note of its own. Legal inside a note body, where an anchor is not. |
 | [AddFootnoteReference](#uid-27354e6d4d) | Adds a footnote anchor to the current paragraph: one object replacement character, showing the position of its note among the notes when rendered. `noteId` pairs it with the [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnote(int,Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,string)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddFootnote%28System.Int32%2CAvalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CSystem.String%29) body of the same id. |
@@ -139,7 +139,7 @@ public class DocumentSnapshotBuilder
 
 ### AddBold 方法 {#addbold-method}
 
-Adds bold text to the current paragraph.
+向当前段落添加粗体文本。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddBold(string text)

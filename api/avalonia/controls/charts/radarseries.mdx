@@ -96,7 +96,7 @@ public RadarSeries()
 | [GetIsHoldingEnabled](../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
-| [GetMarkerShape](#uid-1124cf531b) | Gets the legend marker shape for this series type. Override in derived classes to provide appropriate marker shapes. |
+| [GetMarkerShape](#uid-1124cf531b) | 获取该系列类型在图例中使用的标记形状。可在派生类中重写，以提供合适的标记形状。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetValues](#uid-5e77bc027e) | Gets the values from the ItemsSource. |
 | [GetValuesWithItems](#uid-6e31df47e4) | Gets the radar values together with their original source items. |
@@ -127,8 +127,8 @@ public RadarSeries()
 
 ### GetMarkerShape 方法 {#getmarkershape-method}
 
-Gets the legend marker shape for this series type.
-Override in derived classes to provide appropriate marker shapes.
+获取该系列类型在图例中使用的标记形状。
+可在派生类中重写，以提供合适的标记形状。
 
 ```csharp
 public Avalonia.Controls.Charts.LegendMarkerShape GetMarkerShape()
@@ -138,7 +138,7 @@ public Avalonia.Controls.Charts.LegendMarkerShape GetMarkerShape()
 
 [Avalonia.Controls.Charts.LegendMarkerShape](xref:Avalonia.Controls.Charts.LegendMarkerShape)
 
-The marker shape to use in the legend.
+图例中使用的标记形状。
 
 
 </section>
@@ -231,7 +231,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Charts.RadarValueWi
 | [IsEffectivelyVisible](../../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../../visual.mdx)。 |
 | [IsEnabled](../../input/inputelement.mdx#uid-31817dbbc9) | 获取或设置一个值，指示控件是否接受用户交互。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsFocused](../../input/inputelement.mdx#uid-e4cd1a3717) | 获取一个值，指示控件当前是否拥有焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [IsHighlightEnabled](chartseries.mdx#uid-8f4089ad90) | Gets or sets whether hover highlighting is enabled for this series. When enabled, hovering over a data point dims the other items. On radial charts (pie, donut, funnel, radial bar), the hovered item also explodes outward. Inherited from [ChartSeries](chartseries.mdx). |
+| [IsHighlightEnabled](chartseries.mdx#uid-8f4089ad90) | 获取或设置该系列是否启用悬停高亮。启用后，鼠标悬停在某个数据点上时，其余项会变暗；在径向图表（饼图、环形图、漏斗图、径向条形图）上，被悬停的项还会向外弹出。继承自 [ChartSeries](chartseries.mdx)。 |
 | [IsHitTestVisible](../../input/inputelement.mdx#uid-11cb006f8b) | 获取或设置一个值，指示该控件是否参与命中测试。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [IsKeyboardFocusWithin](../../input/inputelement.mdx#uid-6e5855b185) | 获取一个值，指示键盘焦点是否位于该元素或其视觉树子元素之中。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -259,7 +259,7 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Controls.Charts.RadarValueWi
 | [OwnerChart](chartseries.mdx#uid-5bb0e98167) | 获取或设置拥有该数据系列的父图表。继承自 [ChartSeries](chartseries.mdx)。 |
 | [Padding](../primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [PointBrushPath](chartseries.mdx#uid-068fc968f7) | Gets or sets the property path to extract a custom [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush) from each data item. When set, individual data points, markers, segments, or slices will use the brush resolved from this property instead of the series default. Inherited from [ChartSeries](chartseries.mdx). |
+| [PointBrushPath](chartseries.mdx#uid-068fc968f7) | 获取或设置属性路径，用于从每个数据项中取出自定义的 [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)。设置后，各个数据点、标记、线段或扇区会改用由该属性解析出的画刷，而不再使用系列的默认画刷。继承自 [ChartSeries](chartseries.mdx)。 |
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -409,7 +409,7 @@ public bool ShowMarkers { get; set; }
 | [LosingFocusEvent](../../input/inputelement.mdx#uid-6ed71d3568) | 定义 [Avalonia.Input.InputElement.LosingFocus](xref:Avalonia.Input.InputElement.LosingFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [LostFocusEvent](../../input/inputelement.mdx#uid-267344bb96) | 定义 [Avalonia.Input.InputElement.LostFocus](xref:Avalonia.Input.InputElement.LostFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [MarginProperty](../../layout/layoutable.mdx#uid-e730ad0d44) | 定义 [Avalonia.Layout.Layoutable.Margin](xref:Avalonia.Layout.Layoutable.Margin) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [MarkerSizeProperty](#uid-befd7412a8) | Identifies the [Avalonia.Controls.Charts.RadarSeries.MarkerSize](xref:Avalonia.Controls.Charts.RadarSeries.MarkerSize) Avalonia property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty](xref:Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty). |
+| [MarkerSizeProperty](#uid-befd7412a8) | 标识 [Avalonia.Controls.Charts.RadarSeries.MarkerSize](xref:Avalonia.Controls.Charts.RadarSeries.MarkerSize) Avalonia 属性。它与 [Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty](xref:Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。 |
 | [MaxHeightProperty](../../layout/layoutable.mdx#uid-0a0a1f20cb) | 定义 [Avalonia.Layout.Layoutable.MaxHeight](xref:Avalonia.Layout.Layoutable.MaxHeight) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxValueProperty](#uid-c1a484884e) | 标识 [Avalonia.Controls.Charts.RadarSeries.MaxValue](xref:Avalonia.Controls.Charts.RadarSeries.MaxValue) Avalonia 属性。 |
 | [MaxWidthProperty](../../layout/layoutable.mdx#uid-febdea8f4d) | 定义 [Avalonia.Layout.Layoutable.MaxWidth](xref:Avalonia.Layout.Layoutable.MaxWidth) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -448,7 +448,7 @@ public bool ShowMarkers { get; set; }
 | [SelectionStrokeProperty](chartseries.mdx#uid-43839636da) | 标识 [Avalonia.Controls.Charts.ChartSeries.SelectionStroke](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStroke) Avalonia 属性。与 [Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。继承自 [ChartSeries](chartseries.mdx)。 |
 | [SelectionStrokeThicknessProperty](chartseries.mdx#uid-7760bcd6c7) | 标识 [Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness](xref:Avalonia.Controls.Charts.ChartSeries.SelectionStrokeThickness) Avalonia 属性。与 [Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty](xref:Avalonia.Controls.Charts.SelectableChartBase.SelectionStrokeThicknessProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。继承自 [ChartSeries](chartseries.mdx)。 |
 | [ShowInLegendProperty](chartseries.mdx#uid-6bf723f05a) | 标识 [Avalonia.Controls.Charts.ChartSeries.ShowInLegend](xref:Avalonia.Controls.Charts.ChartSeries.ShowInLegend) Avalonia 属性。继承自 [ChartSeries](chartseries.mdx)。 |
-| [ShowMarkersProperty](#uid-e20fa50bf8) | Identifies the [Avalonia.Controls.Charts.RadarSeries.ShowMarkers](xref:Avalonia.Controls.Charts.RadarSeries.ShowMarkers) Avalonia property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty](xref:Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty). |
+| [ShowMarkersProperty](#uid-e20fa50bf8) | 标识 [Avalonia.Controls.Charts.RadarSeries.ShowMarkers](xref:Avalonia.Controls.Charts.RadarSeries.ShowMarkers) Avalonia 属性。它与 [Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty](xref:Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。 |
 | [SizeChangedEvent](../control.mdx#uid-7d071894f4) | 定义 [Avalonia.Controls.Control.SizeChanged](xref:Avalonia.Controls.Control.SizeChanged) 事件。继承自 [Control](../control.mdx)。 |
 | [StrokeProperty](chartseries.mdx#uid-555fa50baa) | 标识 [Avalonia.Controls.Charts.ChartSeries.Stroke](xref:Avalonia.Controls.Charts.ChartSeries.Stroke) Avalonia 属性。继承自 [ChartSeries](chartseries.mdx)。 |
 | [StrokeThicknessProperty](chartseries.mdx#uid-f214615370) | 标识 [Avalonia.Controls.Charts.ChartSeries.StrokeThickness](xref:Avalonia.Controls.Charts.ChartSeries.StrokeThickness) Avalonia 属性。继承自 [ChartSeries](chartseries.mdx)。 |
@@ -494,9 +494,9 @@ public Avalonia.StyledProperty<double> FillOpacityProperty
 
 ### MarkerSizeProperty 字段 {#markersizeproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.RadarSeries.MarkerSize](xref:Avalonia.Controls.Charts.RadarSeries.MarkerSize) Avalonia property.
-Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as
-[Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty](xref:Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty).
+标识 [Avalonia.Controls.Charts.RadarSeries.MarkerSize](xref:Avalonia.Controls.Charts.RadarSeries.MarkerSize) Avalonia 属性。
+它与
+[Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty](xref:Avalonia.Controls.Charts.CartesianSeries.MarkerSizeProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。
 
 ```csharp
 public Avalonia.StyledProperty<double> MarkerSizeProperty
@@ -524,9 +524,9 @@ public Avalonia.StyledProperty<double> MaxValueProperty
 
 ### ShowMarkersProperty 字段 {#showmarkersproperty-field}
 
-Identifies the [Avalonia.Controls.Charts.RadarSeries.ShowMarkers](xref:Avalonia.Controls.Charts.RadarSeries.ShowMarkers) Avalonia property.
-Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as
-[Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty](xref:Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty).
+标识 [Avalonia.Controls.Charts.RadarSeries.ShowMarkers](xref:Avalonia.Controls.Charts.RadarSeries.ShowMarkers) Avalonia 属性。
+它与
+[Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty](xref:Avalonia.Controls.Charts.CartesianSeries.ShowMarkersProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。
 
 ```csharp
 public Avalonia.StyledProperty<bool> ShowMarkersProperty

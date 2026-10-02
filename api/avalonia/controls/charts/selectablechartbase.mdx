@@ -96,7 +96,7 @@ public class SelectableChartBase
 | [Measure](../../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [RaiseEvent](../../interactivity/interactive.mdx#uid-d6aba452e6) | 引发一个路由事件。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
 | [RemoveHandler（2 个重载）](../../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
-| [Render](chartbase.mdx#uid-35b79a0fd0) | Clears stale hit regions then delegates to the Avalonia render pipeline. All derived chart overrides call base.Render(context), so this runs before every frame. Inherited from [ChartBase](chartbase.mdx). |
+| [Render](chartbase.mdx#uid-35b79a0fd0) | 先清掉过期的命中区域，再交给 Avalonia 的渲染管线。所有派生图表的重写都会调用 base.Render(context)，因此它会在每一帧之前执行。继承自 [ChartBase](chartbase.mdx)。 |
 | [ReplayAnimation](chartbase.mdx#uid-6f1cedd361) | 重新播放入场动画。继承自 [ChartBase](chartbase.mdx)。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../../visual.mdx)。 |

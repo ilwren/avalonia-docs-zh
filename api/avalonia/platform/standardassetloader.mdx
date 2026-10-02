@@ -92,7 +92,7 @@ public StandardAssetLoader(System.Reflection.Assembly assembly)
 | [GetAssembly](#uid-7ba9def467) | 暂无摘要。 |
 | [GetAssets](#uid-6f83c235fe) | Gets all assets of a folder and subfolders that match specified uri. |
 | [InvalidateAssemblyCache (2 overloads)](#uid-371c85a4f3) | 暂无摘要。 |
-| [Open](#uid-11b09534e4) | Opens the asset with the requested URI. |
+| [Open](#uid-11b09534e4) | 按请求的 URI 打开资产。 |
 | [OpenAndGetAssembly](#uid-11100a9b4f) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
 | [RegisterResUriParsers](#uid-6cffcfb154) | 暂无摘要。 |
 | [SetDefaultAssembly](#uid-a66a77b805) | Sets the default assembly from which to load assets for which no assembly is specified. |
@@ -113,12 +113,12 @@ public bool Exists(Uri uri, Uri baseUri)
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
 #### 返回值 {#returns}
@@ -171,7 +171,7 @@ public System.Collections.Generic.IEnumerable<Uri> GetAssets(Uri uri, Uri baseUr
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
@@ -227,7 +227,7 @@ public void InvalidateAssemblyCache(string name)
 
 ### Open 方法 {#open-method}
 
-Opens the asset with the requested URI.
+按请求的 URI 打开资产。
 
 ```csharp
 public System.IO.Stream Open(Uri uri, Uri baseUri)
@@ -237,12 +237,12 @@ public System.IO.Stream Open(Uri uri, Uri baseUri)
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
 #### 返回值 {#returns-3}
@@ -254,7 +254,7 @@ A stream containing the asset contents.
 
 #### 异常 {#exceptions}
 
-- [The asset could not be found.](xref:System.IO.FileNotFoundException)
+- [找不到该资产。](xref:System.IO.FileNotFoundException)
 
 </section>
 
@@ -275,12 +275,12 @@ public ValueTuple<System.IO.Stream, System.Reflection.Assembly> OpenAndGetAssemb
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
 #### 返回值 {#returns-4}
@@ -292,7 +292,7 @@ The stream containing the resource contents together with the assembly.
 
 #### 异常 {#exceptions-1}
 
-- [The asset could not be found.](xref:System.IO.FileNotFoundException)
+- [找不到该资产。](xref:System.IO.FileNotFoundException)
 
 </section>
 

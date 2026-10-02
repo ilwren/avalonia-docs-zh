@@ -110,18 +110,18 @@ The binding path.
 
 | 名称 | 说明 |
 | --- | --- |
-| [Converter](#uid-1ee9768a6d) | Gets or sets the [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter) to use. |
-| [ConverterCulture](#uid-af235b01d2) | Gets or sets the culture in which to evaluate the converter. |
-| [ConverterParameter](#uid-a66fd908cb) | Gets or sets a parameter to pass to [Avalonia.Data.ReflectionBinding.Converter](xref:Avalonia.Data.ReflectionBinding.Converter). |
+| [Converter](#uid-1ee9768a6d) | 获取或设置要使用的 [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter)。 |
+| [ConverterCulture](#uid-af235b01d2) | 获取或设置执行转换器时所用的区域性。 |
+| [ConverterParameter](#uid-a66fd908cb) | 获取或设置要传给 [Avalonia.Data.ReflectionBinding.Converter](xref:Avalonia.Data.ReflectionBinding.Converter) 的参数。 |
 | [Delay](#uid-5f725d75b9) | Gets or sets the amount of time, in milliseconds, to wait before updating the binding source after the value on the target changes. |
 | [ElementName](#uid-c5576e6ba1) | Gets or sets the name of the element to use as the binding source. |
 | [FallbackValue](#uid-4167f89070) | Gets or sets the value to use when the binding is unable to produce a value. |
-| [Mode](#uid-094aff5586) | Gets or sets the binding mode. |
+| [Mode](#uid-094aff5586) | 获取或设置绑定模式。 |
 | [Path](#uid-9f99936cab) | Gets or sets the binding path. |
-| [Priority](#uid-d52ca0f81c) | Gets or sets the binding priority. |
+| [Priority](#uid-d52ca0f81c) | 获取或设置绑定优先级。 |
 | [RelativeSource](#uid-349a17205a) | Gets or sets the relative source for the binding. |
 | [Source](#uid-0c3d8d9565) | Gets or sets the source for the binding. |
-| [StringFormat](#uid-4dae1cc603) | Gets or sets the string format. |
+| [StringFormat](#uid-4dae1cc603) | 获取或设置字符串格式。 |
 | [TargetNullValue](#uid-ba726385ba) | Gets or sets the value to use when the binding result is null. |
 | [TypeResolver](#uid-878d6742bf) | Gets or sets a function used to resolve types from names in the binding path. |
 | [UpdateSourceTrigger](#uid-4b2dab820f) | Gets or sets a value that determines the timing of binding source updates for [Avalonia.Data.BindingMode.TwoWay](xref:Avalonia.Data.BindingMode.TwoWay) and [Avalonia.Data.BindingMode.OneWayToSource](xref:Avalonia.Data.BindingMode.OneWayToSource) bindings. |
@@ -132,7 +132,7 @@ The binding path.
 
 ### Converter 属性 {#converter-property}
 
-Gets or sets the [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter) to use.
+获取或设置要使用的 [Avalonia.Data.Converters.IValueConverter](xref:Avalonia.Data.Converters.IValueConverter)。
 
 ```csharp
 public Avalonia.Data.Converters.IValueConverter Converter { get; set; }
@@ -146,7 +146,7 @@ public Avalonia.Data.Converters.IValueConverter Converter { get; set; }
 
 ### ConverterCulture 属性 {#converterculture-property}
 
-Gets or sets the culture in which to evaluate the converter.
+获取或设置执行转换器时所用的区域性。
 
 ```csharp
 public System.Globalization.CultureInfo ConverterCulture { get; set; }
@@ -169,7 +169,7 @@ If this property is not set then [System.Globalization.CultureInfo.CurrentCultur
 
 ### ConverterParameter 属性 {#converterparameter-property}
 
-Gets or sets a parameter to pass to [Avalonia.Data.ReflectionBinding.Converter](xref:Avalonia.Data.ReflectionBinding.Converter).
+获取或设置要传给 [Avalonia.Data.ReflectionBinding.Converter](xref:Avalonia.Data.ReflectionBinding.Converter) 的参数。
 
 ```csharp
 public object ConverterParameter { get; set; }
@@ -232,7 +232,7 @@ public object FallbackValue { get; set; }
 
 ### Mode 属性 {#mode-property}
 
-Gets or sets the binding mode.
+获取或设置绑定模式。
 
 ```csharp
 public Avalonia.Data.BindingMode Mode { get; set; }
@@ -260,7 +260,7 @@ public string Path { get; set; }
 
 ### Priority 属性 {#priority-property}
 
-Gets or sets the binding priority.
+获取或设置绑定优先级。
 
 ```csharp
 public Avalonia.Data.BindingPriority Priority { get; set; }
@@ -302,7 +302,7 @@ public object Source { get; set; }
 
 ### StringFormat 属性 {#stringformat-property}
 
-Gets or sets the string format.
+获取或设置字符串格式。
 
 ```csharp
 public string StringFormat { get; set; }

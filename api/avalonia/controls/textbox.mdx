@@ -351,7 +351,7 @@ public void Undo()
 | [HasMirrorTransform](../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../visual.mdx)。 |
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [HorizontalContentAlignment](#uid-aac511c2a6) | Gets or sets the horizontal alignment of the content within the control. |
+| [HorizontalContentAlignment](#uid-aac511c2a6) | 获取或设置内容在控件内的水平对齐方式。 |
 | [InnerLeftContent](#uid-0d69af4ca0) | Gets or sets custom content that is positioned on the left side of the text layout box |
 | [InnerRightContent](#uid-07f1e039b6) | Gets or sets custom content that is positioned on the right side of the text layout box |
 | [IsArrangeValid](../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
@@ -390,7 +390,7 @@ public void Undo()
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [PasswordChar](#uid-6027a307f8) | Gets or sets the [char](xref:System.Char) that should be used for password masking |
 | [PasteGesture](#uid-f5612c2bee) | Gets a platform-specific [Avalonia.Input.KeyGesture](xref:Avalonia.Input.KeyGesture) for the Paste action |
-| [PlaceholderForeground](#uid-5071296137) | Gets or sets the brush used for the foreground color of the placeholder text. |
+| [PlaceholderForeground](#uid-5071296137) | 获取或设置占位文本前景色所用的画刷。 |
 | [PlaceholderText](#uid-1f5fcadea9) | Gets or sets the placeholder or descriptive text that is displayed even if the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) property is not yet set. |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
@@ -417,9 +417,9 @@ public void Undo()
 | [UseFloatingWatermark](#uid-08905d7ad0) | Gets or sets a value indicating whether the [Avalonia.Controls.TextBox.PlaceholderText](xref:Avalonia.Controls.TextBox.PlaceholderText) will still be shown above the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) even after a text value is set. |
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [VerticalContentAlignment](#uid-fd925c0f55) | Gets or sets the vertical alignment of the content within the control. |
+| [VerticalContentAlignment](#uid-fd925c0f55) | 获取或设置内容在控件内的垂直对齐方式。 |
 | [Watermark](#uid-f510bda508) | Gets or sets the placeholder or descriptive text that is displayed even if the [Avalonia.Controls.TextBox.Text](xref:Avalonia.Controls.TextBox.Text) property is not yet set. |
-| [WatermarkForeground](#uid-a7ed10d0d3) | Gets or sets the brush used for the foreground color of the placeholder text. |
+| [WatermarkForeground](#uid-a7ed10d0d3) | 获取或设置占位文本前景色所用的画刷。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
 
@@ -611,7 +611,7 @@ public Avalonia.Input.KeyGesture CutGesture { get; set; }
 
 ### HorizontalContentAlignment 属性 {#horizontalcontentalignment-property}
 
-Gets or sets the horizontal alignment of the content within the control.
+获取或设置内容在控件内的水平对齐方式。
 
 ```csharp
 public Avalonia.Layout.HorizontalAlignment HorizontalContentAlignment { get; set; }
@@ -794,7 +794,7 @@ public Avalonia.Input.KeyGesture PasteGesture { get; set; }
 
 ### PlaceholderForeground 属性 {#placeholderforeground-property}
 
-Gets or sets the brush used for the foreground color of the placeholder text.
+获取或设置占位文本前景色所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush PlaceholderForeground { get; set; }
@@ -998,7 +998,7 @@ public bool UseFloatingWatermark { get; set; }
 
 ### VerticalContentAlignment 属性 {#verticalcontentalignment-property}
 
-Gets or sets the vertical alignment of the content within the control.
+获取或设置内容在控件内的垂直对齐方式。
 
 ```csharp
 public Avalonia.Layout.VerticalAlignment VerticalContentAlignment { get; set; }
@@ -1027,7 +1027,7 @@ public string Watermark { get; set; }
 
 ### WatermarkForeground 属性 {#watermarkforeground-property}
 
-Gets or sets the brush used for the foreground color of the placeholder text.
+获取或设置占位文本前景色所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush WatermarkForeground { get; set; }

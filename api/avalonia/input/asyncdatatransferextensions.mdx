@@ -62,12 +62,12 @@ public class AsyncDataTransferExtensions
 
 | 名称 | 说明 |
 | --- | --- |
-| [Contains](#uid-ea0b329271) | Gets whether a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) supports a specific format. |
+| [Contains](#uid-ea0b329271) | 获取某个 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 是否支持特定格式。 |
 | [GetItems](#uid-821f08e900) | Gets the list of [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) contained in this object, filtered by a given format. |
-| [TryGetBitmapAsync](#uid-b420c53c68) | Returns a bitmap, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance. |
-| [TryGetFileAsync](#uid-f3422d40ae) | Returns a file, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance. |
+| [TryGetBitmapAsync](#uid-b420c53c68) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出位图（若有）。 |
+| [TryGetFileAsync](#uid-f3422d40ae) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文件（若有）。 |
 | [TryGetFilesAsync](#uid-b38149a1db) | Returns a list of files, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance. |
-| [TryGetTextAsync](#uid-73846b8b71) | Returns a text, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance. |
+| [TryGetTextAsync](#uid-73846b8b71) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文本（若有）。 |
 | [TryGetValueAsync](#uid-62e60a821a) | 暂无摘要。 |
 | [TryGetValuesAsync](#uid-7d0c68c4b0) | 暂无摘要。 |
 
@@ -77,7 +77,7 @@ public class AsyncDataTransferExtensions
 
 ### Contains 方法 {#contains-method}
 
-Gets whether a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) supports a specific format.
+获取某个 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 是否支持特定格式。
 
 ```csharp
 public bool Contains(Avalonia.Input.IAsyncDataTransfer dataTransfer, Avalonia.Input.DataFormat format)
@@ -87,7 +87,7 @@ public bool Contains(Avalonia.Input.IAsyncDataTransfer dataTransfer, Avalonia.In
 
 `dataTransfer` [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)
 
-The [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+该 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例。
 
 
 `format` [Avalonia.Input.DataFormat](xref:Avalonia.Input.DataFormat)
@@ -144,7 +144,7 @@ Items returned by this property must stay valid until the [Avalonia.Input.IAsync
 
 ### TryGetBitmapAsync 方法 {#trygetbitmapasync-method}
 
-Returns a bitmap, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出位图（若有）。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> TryGetBitmapAsync(Avalonia.Input.IAsyncDataTransfer dataTransfer)
@@ -154,7 +154,7 @@ public System.Threading.Tasks.Task<Avalonia.Media.Imaging.Bitmap> TryGetBitmapAs
 
 `dataTransfer` [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)
 
-The [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+该 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例。
 
 
 #### 返回值 {#returns-2}
@@ -176,7 +176,7 @@ A [Avalonia.Media.Imaging.Bitmap](xref:Avalonia.Media.Imaging.Bitmap), or null i
 
 ### TryGetFileAsync 方法 {#trygetfileasync-method}
 
-Returns a file, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文件（若有）。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageItem> TryGetFileAsync(Avalonia.Input.IAsyncDataTransfer dataTransfer)
@@ -186,7 +186,7 @@ public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageItem> TryGe
 
 `dataTransfer` [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)
 
-The [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+该 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例。
 
 
 #### 返回值 {#returns-3}
@@ -218,7 +218,7 @@ public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageItem[]> Try
 
 `dataTransfer` [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)
 
-The [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+该 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例。
 
 
 #### 返回值 {#returns-4}
@@ -240,7 +240,7 @@ An array of [Avalonia.Platform.Storage.IStorageItem](xref:Avalonia.Platform.Stor
 
 ### TryGetTextAsync 方法 {#trygettextasync-method}
 
-Returns a text, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文本（若有）。
 
 ```csharp
 public System.Threading.Tasks.Task<string> TryGetTextAsync(Avalonia.Input.IAsyncDataTransfer dataTransfer)
@@ -250,7 +250,7 @@ public System.Threading.Tasks.Task<string> TryGetTextAsync(Avalonia.Input.IAsync
 
 `dataTransfer` [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer)
 
-The [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+该 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例。
 
 
 #### 返回值 {#returns-5}

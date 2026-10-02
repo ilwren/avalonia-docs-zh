@@ -100,7 +100,7 @@ public OhlcSeries()
 | [GetIsHoldingEnabled](../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
-| [GetMarkerShape](#uid-4f17d810df) | Gets the legend marker shape for this series. |
+| [GetMarkerShape](#uid-4f17d810df) | 获取该系列在图例中使用的标记形状。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [InvalidateArrange](../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -131,7 +131,7 @@ public OhlcSeries()
 
 ### GetMarkerShape 方法 {#getmarkershape-method}
 
-Gets the legend marker shape for this series.
+获取该系列在图例中使用的标记形状。
 
 ```csharp
 public Avalonia.Controls.Charts.LegendMarkerShape GetMarkerShape()
@@ -141,7 +141,7 @@ public Avalonia.Controls.Charts.LegendMarkerShape GetMarkerShape()
 
 [Avalonia.Controls.Charts.LegendMarkerShape](xref:Avalonia.Controls.Charts.LegendMarkerShape)
 
-The marker shape to use in the legend.
+图例中使用的标记形状。
 
 
 </section>
@@ -215,7 +215,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [IsEffectivelyVisible](../../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../../visual.mdx)。 |
 | [IsEnabled](../../input/inputelement.mdx#uid-31817dbbc9) | 获取或设置一个值，指示控件是否接受用户交互。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsFocused](../../input/inputelement.mdx#uid-e4cd1a3717) | 获取一个值，指示控件当前是否拥有焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [IsHighlightEnabled](chartseries.mdx#uid-8f4089ad90) | Gets or sets whether hover highlighting is enabled for this series. When enabled, hovering over a data point dims the other items. On radial charts (pie, donut, funnel, radial bar), the hovered item also explodes outward. Inherited from [ChartSeries](chartseries.mdx). |
+| [IsHighlightEnabled](chartseries.mdx#uid-8f4089ad90) | 获取或设置该系列是否启用悬停高亮。启用后，鼠标悬停在某个数据点上时，其余项会变暗；在径向图表（饼图、环形图、漏斗图、径向条形图）上，被悬停的项还会向外弹出。继承自 [ChartSeries](chartseries.mdx)。 |
 | [IsHitTestVisible](../../input/inputelement.mdx#uid-11cb006f8b) | 获取或设置一个值，指示该控件是否参与命中测试。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [IsKeyboardFocusWithin](../../input/inputelement.mdx#uid-6e5855b185) | 获取一个值，指示键盘焦点是否位于该元素或其视觉树子元素之中。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -255,7 +255,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [OwnerChart](chartseries.mdx#uid-5bb0e98167) | 获取或设置拥有该数据系列的父图表。继承自 [ChartSeries](chartseries.mdx)。 |
 | [Padding](../primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [PointBrushPath](chartseries.mdx#uid-068fc968f7) | Gets or sets the property path to extract a custom [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush) from each data item. When set, individual data points, markers, segments, or slices will use the brush resolved from this property instead of the series default. Inherited from [ChartSeries](chartseries.mdx). |
+| [PointBrushPath](chartseries.mdx#uid-068fc968f7) | 获取或设置属性路径，用于从每个数据项中取出自定义的 [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)。设置后，各个数据点、标记、线段或扇区会改用由该属性解析出的画刷，而不再使用系列的默认画刷。继承自 [ChartSeries](chartseries.mdx)。 |
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |

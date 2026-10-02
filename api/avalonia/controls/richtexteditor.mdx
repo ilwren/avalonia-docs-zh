@@ -122,7 +122,7 @@ public RichTextEditor()
 | [Measure](../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [RaiseEvent](../interactivity/interactive.mdx#uid-d6aba452e6) | 引发一个路由事件。继承自 [Interactive](../interactivity/interactive.mdx)。 |
 | [Redo](#uid-9d2baacffe) | Redoes the most recently undone editing operation. |
-| [RegisterComponent](#uid-6b88ee2cd7) | Registers a component with this host. |
+| [RegisterComponent](#uid-6b88ee2cd7) | 向该宿主注册一个组件。 |
 | [RemoveHandler（2 个重载）](../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../interactivity/interactive.mdx)。 |
 | [Render](../visual.mdx#uid-615917604b) | 将该视觉元素渲染到 [Avalonia.Media.DrawingContext](xref:Avalonia.Media.DrawingContext)。继承自 [Visual](../visual.mdx)。 |
 | [Save](#uid-b5907ac0b4) | Saves the document to a stream. |
@@ -137,7 +137,7 @@ public RichTextEditor()
 | [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [TryGetResource](../styledelement.mdx#uid-2046a6b284) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [Undo](#uid-6f1848c508) | Undoes the most recent editing operation. |
-| [UnregisterComponent](#uid-0ef6d1a466) | Unregisters a component from this host. |
+| [UnregisterComponent](#uid-0ef6d1a466) | 从该宿主注销一个组件。 |
 | [UpdateLayout](../layout/layoutable.mdx#uid-529d4a08ea) | 执行一次布局。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 
@@ -240,12 +240,12 @@ public void Load(System.IO.Stream stream, Avalonia.Controls.Documents.Serializat
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 #### 备注 {#remarks-1}
@@ -255,7 +255,7 @@ for a large document, which keeps the parse off it.
 
 #### 异常 {#exceptions}
 
-- [\`stream\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 为 null。](xref:System.ArgumentNullException)
 - [The stream content is invalid for the format.](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
 
 </section>
@@ -276,12 +276,12 @@ public System.Threading.Tasks.Task LoadAsync(System.IO.Stream stream, Avalonia.C
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
@@ -302,7 +302,7 @@ This delegates to [Avalonia.Controls.Documents.FlowDocument.LoadAsync(System.IO.
 
 #### 异常 {#exceptions-1}
 
-- [\`stream\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 为 null。](xref:System.ArgumentNullException)
 - [The stream content is invalid for the format.](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
 
 </section>
@@ -327,7 +327,7 @@ public void Redo()
 
 ### RegisterComponent 方法 {#registercomponent-method}
 
-Registers a component with this host.
+向该宿主注册一个组件。
 
 ```csharp
 public void RegisterComponent(Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent component)
@@ -363,12 +363,12 @@ public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serializat
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 #### 备注 {#remarks-4}
@@ -378,7 +378,7 @@ which keeps the write off it.
 
 #### 异常 {#exceptions-2}
 
-- [\`stream\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 为 null。](xref:System.ArgumentNullException)
 
 </section>
 
@@ -398,12 +398,12 @@ public System.Threading.Tasks.Task SaveAsync(System.IO.Stream stream, Avalonia.C
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
@@ -424,7 +424,7 @@ This is a convenience method that delegates to [Avalonia.Controls.Documents.Flow
 
 #### 异常 {#exceptions-3}
 
-- [\`stream\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 为 null。](xref:System.ArgumentNullException)
 
 </section>
 
@@ -488,7 +488,7 @@ public void Undo()
 
 ### UnregisterComponent 方法 {#unregistercomponent-method}
 
-Unregisters a component from this host.
+从该宿主注销一个组件。
 
 ```csharp
 public void UnregisterComponent(Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent component)
@@ -525,7 +525,7 @@ If the component is currently attached, it receives an
 | [CacheMode](../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../visual.mdx)。 |
 | [CanRedo](#uid-825192594f) | Gets a value indicating whether there are operations that can be redone. |
 | [CanUndo](#uid-a15faab03a) | Gets a value indicating whether there are operations that can be undone. |
-| [CaretBrush](#uid-4b05394724) | Gets or sets the brush used to paint the caret. |
+| [CaretBrush](#uid-4b05394724) | 获取或设置绘制插入符所用的画刷。 |
 | [Classes](../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Clip](../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../visual.mdx)。 |
 | [ClipToBounds](../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../visual.mdx)。 |
@@ -707,7 +707,7 @@ public bool CanUndo { get; set; }
 
 ### CaretBrush 属性 {#caretbrush-property}
 
-Gets or sets the brush used to paint the caret.
+获取或设置绘制插入符所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush CaretBrush { get; set; }
@@ -1553,7 +1553,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.DocumentViewMode> ViewModePrope
 | [GotFocus](../input/inputelement.mdx#uid-d41d7ad59c) | 当控件获得焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [Holding](../input/inputelement.mdx#uid-8cda030fe2) | 当用户单点接触并持续保持超过设定的时间阈值，期间既未松开也未产生新的接触点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [Initialized](../styledelement.mdx#uid-bd6a5e5c0e) | 当该样式化元素完成初始化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
-| [IsReadOnlyChanged](#uid-21986f9c51) | Occurs when the [Avalonia.Controls.RichTextEditor.IsReadOnly](xref:Avalonia.Controls.RichTextEditor.IsReadOnly) property changes. |
+| [IsReadOnlyChanged](#uid-21986f9c51) | 当 [Avalonia.Controls.RichTextEditor.IsReadOnly](xref:Avalonia.Controls.RichTextEditor.IsReadOnly) 属性变化时发生。 |
 | [KeyDown](../input/inputelement.mdx#uid-ee9d987ed5) | 当控件拥有焦点且有按键被按下时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [KeyUp](../input/inputelement.mdx#uid-1131e95f55) | 当控件拥有焦点且有按键被释放时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LayoutUpdated](../layout/layoutable.mdx#uid-05ea32f689) | 当控件完成一次布局时发生。继承自 [Layoutable](../layout/layoutable.mdx)。 |
@@ -1580,7 +1580,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.DocumentViewMode> ViewModePrope
 | [ScrollGesture](../input/inputelement.mdx#uid-b571ab3acc) | 当用户在控件范围内沿同一方向持续移动指针时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ScrollGestureEnded](../input/inputelement.mdx#uid-eb3914c3a8) | 当滚动手势完全停止时发生，其中已计入用户松开指针后继续滚动的惯性过程。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStarting](../input/inputelement.mdx#uid-c8cd2731a5) | 在滚动手势过程中，当用户松开指针、滚动转入惯性滑动阶段时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [SelectionChanged](#uid-a262362f2c) | Occurs when the selection changes. |
+| [SelectionChanged](#uid-a262362f2c) | 选择发生变化时发生。 |
 | [SizeChanged](control.mdx#uid-6cfea6b6c5) | 当控件的边界（实际尺寸）发生变化时发生。继承自 [Control](control.mdx)。 |
 | [SwipeGesture](../input/inputelement.mdx#uid-0f4fc613ec) | 当用户在控件上沿单一方向快速拖动指针时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [SwipeGestureEnded](../input/inputelement.mdx#uid-137ae2fd9d) | 当控件上的滑动手势结束时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -1651,7 +1651,7 @@ This event fires when the [Avalonia.Controls.RichTextEditor.Document](xref:Avalo
 
 ### IsReadOnlyChanged 事件 {#isreadonlychanged-event}
 
-Occurs when the [Avalonia.Controls.RichTextEditor.IsReadOnly](xref:Avalonia.Controls.RichTextEditor.IsReadOnly) property changes.
+当 [Avalonia.Controls.RichTextEditor.IsReadOnly](xref:Avalonia.Controls.RichTextEditor.IsReadOnly) 属性变化时发生。
 
 ```csharp
 public event EventHandler IsReadOnlyChanged
@@ -1665,7 +1665,7 @@ public event EventHandler IsReadOnlyChanged
 
 ### SelectionChanged 事件 {#selectionchanged-event}
 
-Occurs when the selection changes.
+选择发生变化时发生。
 
 ```csharp
 public event EventHandler SelectionChanged

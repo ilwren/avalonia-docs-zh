@@ -154,7 +154,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ActualThemeVariant](../../styledelement.mdx#uid-776bcbe4bf) | 获取该元素当前实际使用的 UI 主题，它可能与 RequestedThemeVariantProperty 不同。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [AnimationDuration](chartbase.mdx#uid-98c7d80058) | 获取或设置入场动画的时长。继承自 [ChartBase](chartbase.mdx)。 |
 | [AnimationProgress](chartbase.mdx#uid-a985586f7b) | 获取或设置图表的整体动画进度。继承自 [ChartBase](chartbase.mdx)。 |
-| [AxisBrush](axisgridchartbase.mdx#uid-301f5c98a6) | Gets or sets the brush used for axis lines and ticks. Inherited from [AxisGridChartBase](axisgridchartbase.mdx). |
+| [AxisBrush](axisgridchartbase.mdx#uid-301f5c98a6) | 获取或设置绘制坐标轴线和刻度所用的画刷。继承自 [AxisGridChartBase](axisgridchartbase.mdx)。 |
 | [Background](../primitives/templatedcontrol.mdx#uid-50dbd38ef5) | 获取或设置绘制控件背景所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BackgroundSizing](../primitives/templatedcontrol.mdx#uid-07ef33f604) | 获取或设置控件背景相对于其边框的绘制方式。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BorderBrush](../primitives/templatedcontrol.mdx#uid-cf666d3678) | 获取或设置绘制控件边框所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -185,7 +185,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [FontWeight](../primitives/templatedcontrol.mdx#uid-967cc71125) | 获取或设置绘制控件文本所用的字重。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [Foreground](../primitives/templatedcontrol.mdx#uid-dff6480679) | 获取或设置绘制控件文本及其他前景元素所用的画刷。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [GestureRecognizers](../../input/inputelement.mdx#uid-ddee464eee) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [GridLineBrush](gridlinechartbase.mdx#uid-58c6e18974) | Gets or sets the default brush used for grid lines. Inherited from [GridLineChartBase](gridlinechartbase.mdx). |
+| [GridLineBrush](gridlinechartbase.mdx#uid-58c6e18974) | 获取或设置绘制网格线所用的默认画刷。继承自 [GridLineChartBase](gridlinechartbase.mdx)。 |
 | [HasMirrorTransform](../../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../../visual.mdx)。 |
 | [Height](../../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -296,7 +296,7 @@ public Avalonia.Controls.Charts.ChartAxis VerticalAxis { get; set; }
 | 名称 | 说明 |
 | --- | --- |
 | [AnimationDurationProperty](chartbase.mdx#uid-4508d2828e) | 标识 [Avalonia.Controls.Charts.ChartBase.AnimationDuration](xref:Avalonia.Controls.Charts.ChartBase.AnimationDuration) Avalonia 属性。继承自 [ChartBase](chartbase.mdx)。 |
-| [AxisBrushProperty](axisgridchartbase.mdx#uid-c696c8e00a) | Identifies the [Avalonia.Controls.Charts.AxisGridChartBase.AxisBrush](xref:Avalonia.Controls.Charts.AxisGridChartBase.AxisBrush) styled property. Shares the same [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) instance as [Avalonia.Controls.Charts.AxisChartBase.AxisBrushProperty](xref:Avalonia.Controls.Charts.AxisChartBase.AxisBrushProperty). Inherited from [AxisGridChartBase](axisgridchartbase.mdx). |
+| [AxisBrushProperty](axisgridchartbase.mdx#uid-c696c8e00a) | 标识 [Avalonia.Controls.Charts.AxisGridChartBase.AxisBrush](xref:Avalonia.Controls.Charts.AxisGridChartBase.AxisBrush) 样式化属性。它与 [Avalonia.Controls.Charts.AxisChartBase.AxisBrushProperty](xref:Avalonia.Controls.Charts.AxisChartBase.AxisBrushProperty) 共用同一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 实例。继承自 [AxisGridChartBase](axisgridchartbase.mdx)。 |
 | [BackgroundProperty](../primitives/templatedcontrol.mdx#uid-dbbd1ffb9b) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.Background](xref:Avalonia.Controls.Primitives.TemplatedControl.Background) 属性。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BackgroundSizingProperty](../primitives/templatedcontrol.mdx#uid-316d7708c4) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.BackgroundSizing](xref:Avalonia.Controls.Primitives.TemplatedControl.BackgroundSizing) 属性。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [BorderBrushProperty](../primitives/templatedcontrol.mdx#uid-a4e6335f37) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.BorderBrush](xref:Avalonia.Controls.Primitives.TemplatedControl.BorderBrush) 属性。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -328,7 +328,7 @@ public Avalonia.Controls.Charts.ChartAxis VerticalAxis { get; set; }
 | [ForegroundProperty](../primitives/templatedcontrol.mdx#uid-65cd93050b) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.Foreground](xref:Avalonia.Controls.Primitives.TemplatedControl.Foreground) 属性。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
 | [GettingFocusEvent](../../input/inputelement.mdx#uid-23a6940484) | 定义 [Avalonia.Input.InputElement.GettingFocus](xref:Avalonia.Input.InputElement.GettingFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GotFocusEvent](../../input/inputelement.mdx#uid-750ce32b53) | 定义 [Avalonia.Input.InputElement.GotFocus](xref:Avalonia.Input.InputElement.GotFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [GridLineBrushProperty](gridlinechartbase.mdx#uid-fa291f4876) | Identifies the [Avalonia.Controls.Charts.GridLineChartBase.GridLineBrush](xref:Avalonia.Controls.Charts.GridLineChartBase.GridLineBrush) styled property. Inherited from [GridLineChartBase](gridlinechartbase.mdx). |
+| [GridLineBrushProperty](gridlinechartbase.mdx#uid-fa291f4876) | 标识 [Avalonia.Controls.Charts.GridLineChartBase.GridLineBrush](xref:Avalonia.Controls.Charts.GridLineChartBase.GridLineBrush) 样式化属性。继承自 [GridLineChartBase](gridlinechartbase.mdx)。 |
 | [HasMirrorTransformProperty](../../visual.mdx#uid-1f37ec4745) | 定义 [Avalonia.Visual.HasMirrorTransform](xref:Avalonia.Visual.HasMirrorTransform) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [HeightProperty](../../layout/layoutable.mdx#uid-78fa90222f) | 定义 [Avalonia.Layout.Layoutable.Height](xref:Avalonia.Layout.Layoutable.Height) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HoldingEvent](../../input/inputelement.mdx#uid-b1eab1bcd8) | 定义 [Avalonia.Input.InputElement.Holding](xref:Avalonia.Input.InputElement.Holding) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |

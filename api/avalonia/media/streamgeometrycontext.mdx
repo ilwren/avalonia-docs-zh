@@ -98,12 +98,12 @@ The platform-specific implementation.
 
 | 名称 | 说明 |
 | --- | --- |
-| [ArcTo](#uid-be50654767) | Draws an arc to the specified point. |
-| [BeginFigure](#uid-11ae2a0392) | Begins a new figure. |
-| [CubicBezierTo](#uid-4f50e8a6a8) | Draws a Bezier curve to the specified point. |
+| [ArcTo](#uid-be50654767) | 画一段圆弧到指定点。 |
+| [BeginFigure](#uid-11ae2a0392) | 开始一段新图形。 |
+| [CubicBezierTo](#uid-4f50e8a6a8) | 画一条贝塞尔曲线到指定点。 |
 | [Dispose](#uid-944781a4ee) | Finishes the drawing session. |
 | [EndFigure](#uid-f3cfbc992f) | Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29). |
-| [LineTo](#uid-10f817d4ee) | Draws a line to the specified point. |
+| [LineTo](#uid-10f817d4ee) | 画一条直线到指定点。 |
 | [PreciseArcTo](#uid-06926b62a0) | Draws an arc to the specified point using polylines, quadratic or cubic Bezier curves Significantly more precise when drawing elliptic arcs with extreme width:height ratios. |
 | [QuadraticBezierTo](#uid-d6614fafeb) | Draws a quadratic Bezier curve to the specified point. |
 | [SetFillRule](#uid-57a8199e4d) | Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure. If you wonder why, ask Direct2D guys about their design decisions. |
@@ -114,7 +114,7 @@ The platform-specific implementation.
 
 ### ArcTo 方法 {#arcto-method}
 
-Draws an arc to the specified point.
+画一段圆弧到指定点。
 
 ```csharp
 public void ArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle, bool isLargeArc, Avalonia.Media.SweepDirection sweepDirection, bool isStroked)
@@ -151,7 +151,7 @@ A value that indicates whether the arc is drawn in the Clockwise or Counterclock
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -162,7 +162,7 @@ Whether the segment is stroked.
 
 ### BeginFigure 方法 {#beginfigure-method}
 
-Begins a new figure.
+开始一段新图形。
 
 ```csharp
 public void BeginFigure(Avalonia.Point startPoint, bool isFilled)
@@ -188,7 +188,7 @@ Whether the figure is filled.
 
 ### CubicBezierTo 方法 {#cubicbezierto-method}
 
-Draws a Bezier curve to the specified point.
+画一条贝塞尔曲线到指定点。
 
 ```csharp
 public void CubicBezierTo(Avalonia.Point controlPoint1, Avalonia.Point controlPoint2, Avalonia.Point endPoint, bool isStroked)
@@ -213,7 +213,7 @@ The destination point for the end of the curve.
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -259,7 +259,7 @@ Whether the figure is closed.
 
 ### LineTo 方法 {#lineto-method}
 
-Draws a line to the specified point.
+画一条直线到指定点。
 
 ```csharp
 public void LineTo(Avalonia.Point point, bool isStroked)
@@ -274,7 +274,7 @@ The destination point.
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -347,7 +347,7 @@ The destination point for the end of the curve.
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>

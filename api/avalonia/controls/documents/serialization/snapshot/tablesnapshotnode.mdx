@@ -58,29 +58,29 @@ public class TableSnapshotNode
 
 | 名称 | 说明 |
 | --- | --- |
-| [ChildrenOfKind](snapshotnode.mdx#uid-b98ce7edb2) | Enumerates child nodes matching a specific kind. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [EnumerateDescendants](snapshotnode.mdx#uid-614ca453c7) | Enumerates this node and all descendants in pre-order (depth-first). Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [GetFormatMetadata](snapshotnode.mdx#uid-1ff906f363) | Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [SetFormatMetadata](snapshotnode.mdx#uid-aa8fc8c6ff) | Inherited from [SnapshotNode](snapshotnode.mdx). |
+| [ChildrenOfKind](snapshotnode.mdx#uid-b98ce7edb2) | 枚举符合指定种类的子节点。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [EnumerateDescendants](snapshotnode.mdx#uid-614ca453c7) | 以先序（深度优先）枚举该节点及其全部后代。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [GetFormatMetadata](snapshotnode.mdx#uid-1ff906f363) | 继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [SetFormatMetadata](snapshotnode.mdx#uid-aa8fc8c6ff) | 继承自 [SnapshotNode](snapshotnode.mdx)。 |
 
 ## 属性 {#properties}
 
 | 名称 | 说明 |
 | --- | --- |
 | [BlockFormatting](blocksnapshotnode.mdx#uid-b6263b5d6e) | Block formatting captured from the element. Inherited from [BlockSnapshotNode](blocksnapshotnode.mdx). |
-| [Children](snapshotnode.mdx#uid-b1710f532c) | Child nodes. Empty array for leaf nodes. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [CustomData](snapshotnode.mdx#uid-36dcca3067) | Extension-specific custom data for custom node kinds. Used by the builder path ([Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)) to propagate custom data from serializer importers to snapshot nodes. Must be immutable or thread-safe for background serialization. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [EndOffset](snapshotnode.mdx#uid-9d03a730e3) | Gets the absolute end offset (exclusive). Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [FormatMetadata](snapshotnode.mdx#uid-a481dfd525) | Format-specific metadata for round-trip fidelity. Serializers (RtfWriter, DocxWriter, etc.) can attach format-specific state here to preserve information that doesn't map cleanly to the semantic snapshot model. Not thread-safe; single-threaded access only. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [IsBlock](snapshotnode.mdx#uid-e26b8c2e53) | Gets whether this is a block-level node. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [IsInline](snapshotnode.mdx#uid-719f57e3e5) | Gets whether this is an inline-level node. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [IsLeaf](snapshotnode.mdx#uid-f246822b7f) | Gets whether this is a leaf node (no children). Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [IsTextRun](snapshotnode.mdx#uid-9cd758e947) | Gets whether this node represents a text run with actual content. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [Kind](snapshotnode.mdx#uid-db297bdaf4) | The kind of document element this node represents. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [Length](snapshotnode.mdx#uid-a57ff5b8bf) | Length of this node's content in characters. Inherited from [SnapshotNode](snapshotnode.mdx). |
-| [StartOffset](snapshotnode.mdx#uid-d01a240b2e) | Absolute offset in the document text where this node starts. Inherited from [SnapshotNode](snapshotnode.mdx). |
+| [Children](snapshotnode.mdx#uid-b1710f532c) | 子节点。叶节点为空数组。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [CustomData](snapshotnode.mdx#uid-36dcca3067) | 面向自定义节点种类的扩展专属数据。构建路径（[Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)）借助它把自定义数据从序列化导入器传递到快照节点。为支持后台序列化，它必须是不可变的或线程安全的。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [EndOffset](snapshotnode.mdx#uid-9d03a730e3) | 获取绝对结束偏移量（不含该位置）。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [FormatMetadata](snapshotnode.mdx#uid-a481dfd525) | 用于往返保真的格式专属元数据。序列化器（RtfWriter、DocxWriter 等）可在此附上各自格式的状态，以保留那些无法妥帖映射到语义快照模型的信息。它不是线程安全的，只能单线程访问。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [IsBlock](snapshotnode.mdx#uid-e26b8c2e53) | 获取该节点是否为块级节点。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [IsInline](snapshotnode.mdx#uid-719f57e3e5) | 获取该节点是否为内联级节点。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [IsLeaf](snapshotnode.mdx#uid-f246822b7f) | 获取该节点是否为叶节点（没有子节点）。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [IsTextRun](snapshotnode.mdx#uid-9cd758e947) | 获取该节点是否代表一段确有内容的文本运行。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [Kind](snapshotnode.mdx#uid-db297bdaf4) | 该节点所代表的文档元素种类。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [Length](snapshotnode.mdx#uid-a57ff5b8bf) | 该节点内容的字符长度。继承自 [SnapshotNode](snapshotnode.mdx)。 |
+| [StartOffset](snapshotnode.mdx#uid-d01a240b2e) | 该节点在文档文本中起始位置的绝对偏移量。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 | [TableFormatting](#uid-df4ddf32a0) | Table formatting captured from the element. |
-| [TextElementFormatting](snapshotnode.mdx#uid-d3de6c54dc) | Base-level formatting from [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement). Carries font, foreground, background, and letter-spacing for every node type. Inherited from [SnapshotNode](snapshotnode.mdx). |
+| [TextElementFormatting](snapshotnode.mdx#uid-d3de6c54dc) | 来自 [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement) 的基础层面格式设置，为每一种节点类型携带字体、前景、背景和字间距。继承自 [SnapshotNode](snapshotnode.mdx)。 |
 
 <section className="apiref-page__member-entry">
 

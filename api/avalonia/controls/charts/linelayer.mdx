@@ -83,15 +83,15 @@ public LineLayer()
 | [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [GetHashCode](../../avaloniaobject.mdx#uid-7f7db1e7a2) | 获取该对象的哈希码。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [GetLayerBounds](#uid-7eb9c048b0) | Gets the geographic bounds (in 0-200, 0-100 viewport units) of the content in this layer. Used for auto-scaling the map to fit content. |
-| [GetPointData](#uid-c3d037c7a6) | Gets the data item at the specified screen point. |
+| [GetLayerBounds](#uid-7eb9c048b0) | 获取该图层中内容的地理边界（以 0-200、0-100 的视口单位计），用于自动缩放地图以容纳内容。 |
+| [GetPointData](#uid-c3d037c7a6) | 获取位于指定屏幕坐标处的数据项。 |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsAnimating](../../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsSet](../../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [OnPointerExited](#uid-566c919cdf) | Handles pointer exited events. Override this method to handle interactions (e.g. clearing hover effects). |
-| [OnPointerMoved](#uid-b200b9f5ee) | Handles pointer moved events. Override this method to handle interactions (e.g. hover effects). |
+| [OnPointerExited](#uid-566c919cdf) | 处理指针离开事件。可重写该方法来处理交互（比如清除悬停效果）。 |
+| [OnPointerMoved](#uid-b200b9f5ee) | 处理指针移动事件。可重写该方法来处理交互（比如悬停效果）。 |
 | [OnPointerPressed](maplayer.mdx#uid-61476cbbf9) | Handles pointer pressed events. Override this method to handle interactions (e.g. selection). Inherited from [MapLayer](maplayer.mdx). |
-| [Render](#uid-b8b7f6f532) | Renders this layer to the drawing context. |
+| [Render](#uid-b8b7f6f532) | 把该图层渲染到绘图上下文。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -102,8 +102,8 @@ public LineLayer()
 
 ### GetLayerBounds 方法 {#getlayerbounds-method}
 
-Gets the geographic bounds (in 0-200, 0-100 viewport units) of the content in this layer.
-Used for auto-scaling the map to fit content.
+获取该图层中内容的地理边界（以 0-200、0-100 的视口单位计）。
+用于自动缩放地图以容纳内容。
 
 ```csharp
 public Nullable<Avalonia.Rect> GetLayerBounds()
@@ -122,7 +122,7 @@ Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 ### GetPointData 方法 {#getpointdata-method}
 
-Gets the data item at the specified screen point.
+获取位于指定屏幕坐标处的数据项。
 
 ```csharp
 public object GetPointData(Avalonia.Point point, Avalonia.Rect chartArea)
@@ -132,19 +132,19 @@ public object GetPointData(Avalonia.Point point, Avalonia.Rect chartArea)
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The screen point to test.
+要测试的屏幕坐标点。
 
 
 `chartArea` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The chart area rectangle.
+图表区域矩形。
 
 
 #### 返回值 {#returns-1}
 
 object
 
-The data item if hit; otherwise, null.
+命中时返回该数据项，否则为 null。
 
 
 </section>
@@ -155,8 +155,8 @@ The data item if hit; otherwise, null.
 
 ### OnPointerExited 方法 {#onpointerexited-method}
 
-Handles pointer exited events.
-Override this method to handle interactions (e.g. clearing hover effects).
+处理指针离开事件。
+可重写该方法来处理交互（比如清除悬停效果）。
 
 ```csharp
 public void OnPointerExited()
@@ -170,8 +170,8 @@ public void OnPointerExited()
 
 ### OnPointerMoved 方法 {#onpointermoved-method}
 
-Handles pointer moved events.
-Override this method to handle interactions (e.g. hover effects).
+处理指针移动事件。
+可重写该方法来处理交互（比如悬停效果）。
 
 ```csharp
 public bool OnPointerMoved(Avalonia.Point point, Avalonia.Rect chartArea)
@@ -189,7 +189,7 @@ public bool OnPointerMoved(Avalonia.Point point, Avalonia.Rect chartArea)
 
 bool
 
-True if handled.
+若已处理则为 true。
 
 
 </section>
@@ -200,7 +200,7 @@ True if handled.
 
 ### Render 方法 {#render-method}
 
-Renders this layer to the drawing context.
+把该图层渲染到绘图上下文。
 
 ```csharp
 public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect chartArea, double animationProgress)
@@ -215,12 +215,12 @@ public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect chartAre
 
 `chartArea` [Avalonia.Rect](xref:Avalonia.Rect)
 
-The chart area rectangle.
+图表区域矩形。
 
 
 `animationProgress` double
 
-Animation progress from 0 to 1.
+动画进度，取值 0 到 1。
 
 
 </section>
@@ -233,17 +233,17 @@ Animation progress from 0 to 1.
 | [FromLatitudePath](#uid-3485755b4e) | Gets or sets the property path for source latitude. |
 | [FromLongitudePath](#uid-94d3b5da57) | Gets or sets the property path for source longitude. |
 | [IsCurved](#uid-11998b7810) | Gets or sets whether to use curved lines. |
-| [IsVisible](maplayer.mdx#uid-93a23c42b6) | Gets or sets whether this layer is visible. Inherited from [MapLayer](maplayer.mdx). |
+| [IsVisible](maplayer.mdx#uid-93a23c42b6) | 获取或设置该图层是否可见。继承自 [MapLayer](maplayer.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [ItemsSource](#uid-298e9024eb) | 获取或设置数据源。 |
 | [MaxLineThickness](#uid-35ff4070d1) | Gets or sets the maximum line thickness. |
 | [MinLineThickness](#uid-4f2fded945) | Gets or sets the minimum line thickness. |
-| [Opacity](maplayer.mdx#uid-7b32d6b968) | Gets or sets the opacity of this layer. Inherited from [MapLayer](maplayer.mdx). |
+| [Opacity](maplayer.mdx#uid-7b32d6b968) | 获取或设置该图层的不透明度。继承自 [MapLayer](maplayer.mdx)。 |
 | [ShowEndpoints](#uid-2a7340fbae) | Gets or sets whether to show endpoint circles. |
-| [Stroke](#uid-8a1562edfb) | Gets or sets the stroke brush. |
+| [Stroke](#uid-8a1562edfb) | 获取或设置描边画刷。 |
 | [ToLatitudePath](#uid-7818584279) | Gets or sets the property path for destination latitude. |
 | [ToLongitudePath](#uid-a001ac0e56) | Gets or sets the property path for destination longitude. |
-| [TooltipTemplate](maplayer.mdx#uid-f880527475) | Gets or sets the data template used for tooltips. Inherited from [MapLayer](maplayer.mdx). |
+| [TooltipTemplate](maplayer.mdx#uid-f880527475) | 获取或设置工具提示所用的数据模板。继承自 [MapLayer](maplayer.mdx)。 |
 | [ValuePath](#uid-38fa87e01d) | Gets or sets the property path for line value (affects thickness). |
 
 <section className="apiref-page__member-entry">
@@ -350,7 +350,7 @@ public bool ShowEndpoints { get; set; }
 
 ### Stroke 属性 {#stroke-property}
 
-Gets or sets the stroke brush.
+获取或设置描边画刷。
 
 ```csharp
 public Avalonia.Media.IBrush Stroke { get; set; }
@@ -407,16 +407,16 @@ public string ValuePath { get; set; }
 | [FromLatitudePathProperty](#uid-8a97b90253) | 标识 [Avalonia.Controls.Charts.LineLayer.FromLatitudePath](xref:Avalonia.Controls.Charts.LineLayer.FromLatitudePath) Avalonia 属性。 |
 | [FromLongitudePathProperty](#uid-fb1ee15785) | 标识 [Avalonia.Controls.Charts.LineLayer.FromLongitudePath](xref:Avalonia.Controls.Charts.LineLayer.FromLongitudePath) Avalonia 属性。 |
 | [IsCurvedProperty](#uid-89c33ec153) | 标识 [Avalonia.Controls.Charts.LineLayer.IsCurved](xref:Avalonia.Controls.Charts.LineLayer.IsCurved) Avalonia 属性。 |
-| [IsVisibleProperty](maplayer.mdx#uid-74f0177084) | Identifies the [Avalonia.Controls.Charts.MapLayer.IsVisible](xref:Avalonia.Controls.Charts.MapLayer.IsVisible) Avalonia property. Inherited from [MapLayer](maplayer.mdx). |
+| [IsVisibleProperty](maplayer.mdx#uid-74f0177084) | 标识 [Avalonia.Controls.Charts.MapLayer.IsVisible](xref:Avalonia.Controls.Charts.MapLayer.IsVisible) Avalonia 属性。继承自 [MapLayer](maplayer.mdx)。 |
 | [ItemsSourceProperty](#uid-0606d53747) | 标识 [Avalonia.Controls.Charts.LineLayer.ItemsSource](xref:Avalonia.Controls.Charts.LineLayer.ItemsSource) Avalonia 属性。 |
 | [MaxLineThicknessProperty](#uid-8a43fa3dfb) | 标识 [Avalonia.Controls.Charts.LineLayer.MaxLineThickness](xref:Avalonia.Controls.Charts.LineLayer.MaxLineThickness) Avalonia 属性。 |
 | [MinLineThicknessProperty](#uid-1d0b57454e) | 标识 [Avalonia.Controls.Charts.LineLayer.MinLineThickness](xref:Avalonia.Controls.Charts.LineLayer.MinLineThickness) Avalonia 属性。 |
-| [OpacityProperty](maplayer.mdx#uid-7b17fad341) | Identifies the [Avalonia.Controls.Charts.MapLayer.Opacity](xref:Avalonia.Controls.Charts.MapLayer.Opacity) Avalonia property. Inherited from [MapLayer](maplayer.mdx). |
+| [OpacityProperty](maplayer.mdx#uid-7b17fad341) | 标识 [Avalonia.Controls.Charts.MapLayer.Opacity](xref:Avalonia.Controls.Charts.MapLayer.Opacity) Avalonia 属性。继承自 [MapLayer](maplayer.mdx)。 |
 | [ShowEndpointsProperty](#uid-493be64c02) | 标识 [Avalonia.Controls.Charts.LineLayer.ShowEndpoints](xref:Avalonia.Controls.Charts.LineLayer.ShowEndpoints) Avalonia 属性。 |
 | [StrokeProperty](#uid-8f3dc07dd9) | 标识 [Avalonia.Controls.Charts.LineLayer.Stroke](xref:Avalonia.Controls.Charts.LineLayer.Stroke) Avalonia 属性。 |
 | [ToLatitudePathProperty](#uid-a90cb8ffeb) | 标识 [Avalonia.Controls.Charts.LineLayer.ToLatitudePath](xref:Avalonia.Controls.Charts.LineLayer.ToLatitudePath) Avalonia 属性。 |
 | [ToLongitudePathProperty](#uid-0060da7c9c) | 标识 [Avalonia.Controls.Charts.LineLayer.ToLongitudePath](xref:Avalonia.Controls.Charts.LineLayer.ToLongitudePath) Avalonia 属性。 |
-| [TooltipTemplateProperty](maplayer.mdx#uid-10362b19e1) | Identifies the [Avalonia.Controls.Charts.MapLayer.TooltipTemplate](xref:Avalonia.Controls.Charts.MapLayer.TooltipTemplate) Avalonia property. Inherited from [MapLayer](maplayer.mdx). |
+| [TooltipTemplateProperty](maplayer.mdx#uid-10362b19e1) | 标识 [Avalonia.Controls.Charts.MapLayer.TooltipTemplate](xref:Avalonia.Controls.Charts.MapLayer.TooltipTemplate) Avalonia 属性。继承自 [MapLayer](maplayer.mdx)。 |
 | [ValuePathProperty](#uid-35b7f2b394) | 标识 [Avalonia.Controls.Charts.LineLayer.ValuePath](xref:Avalonia.Controls.Charts.LineLayer.ValuePath) Avalonia 属性。 |
 
 <section className="apiref-page__member-entry">
@@ -577,7 +577,7 @@ public Avalonia.StyledProperty<string> ValuePathProperty
 
 | 名称 | 说明 |
 | --- | --- |
-| [Invalidated](maplayer.mdx#uid-995465c2b4) | Event raised when the layer needs to be redrawn. Inherited from [MapLayer](maplayer.mdx). |
+| [Invalidated](maplayer.mdx#uid-995465c2b4) | 图层需要重绘时抛出的事件。继承自 [MapLayer](maplayer.mdx)。 |
 | [PropertyChanged](../../avaloniaobject.mdx#uid-d758e26fae) | 当该对象上某个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值发生变化时触发。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 
 </ApiRefPage>

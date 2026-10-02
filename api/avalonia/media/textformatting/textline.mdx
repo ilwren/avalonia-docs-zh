@@ -67,7 +67,7 @@ public class TextLine
 | --- | --- |
 | [Collapse](#uid-0cb83eac03) | Create a collapsed line based on collapsed text properties. |
 | [Dispose](#uid-1dc4bf4e00) | 暂无摘要。 |
-| [Draw](#uid-8e27abbe79) | Draws the [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) at the given origin. |
+| [Draw](#uid-8e27abbe79) | 在给定原点处绘制 [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)。 |
 | [GetBackspaceCaretCharacterHit](#uid-cf081ec739) | Gets the previous character hit after backspacing. |
 | [GetCharacterHitFromDistance](#uid-583907e3e8) | Gets the character hit corresponding to the specified distance from the beginning of the line. |
 | [GetDistanceFromCharacterHit](#uid-4f78360a0a) | Gets the distance from the beginning of the line to the specified character hit. [Avalonia.Media.CharacterHit](xref:Avalonia.Media.CharacterHit). |
@@ -123,7 +123,7 @@ public void Dispose()
 
 ### Draw 方法 {#draw-method}
 
-Draws the [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine) at the given origin.
+在给定原点处绘制 [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.TextLine)。
 
 ```csharp
 public void Draw(Avalonia.Media.DrawingContext drawingContext, Avalonia.Point lineOrigin)
@@ -350,7 +350,7 @@ A [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.Te
 | [FirstTextSourceIndex](#uid-cc4f06cc4e) | Gets the first TextSource position of the current line. |
 | [HasCollapsed](#uid-946498f189) | Gets a value that indicates whether the line is collapsed. |
 | [HasOverflowed](#uid-e491880656) | Gets a value that indicates whether content of the line overflows the specified paragraph width. |
-| [Height](#uid-681e96dc6b) | Gets the height of a line of text. |
+| [Height](#uid-681e96dc6b) | 获取一行文本的高度。 |
 | [Length](#uid-24a2f5d871) | Gets the total number of TextSource positions of the current line. |
 | [NewLineLength](#uid-1153d44e15) | Gets the number of newline characters at the end of a line. |
 | [OverhangAfter](#uid-acfa66abd7) | Gets the distance that black pixels extend beyond the bottom alignment edge of a line. |
@@ -459,7 +459,7 @@ public bool HasOverflowed { get; set; }
 
 ### Height 属性 {#height-property}
 
-Gets the height of a line of text.
+获取一行文本的高度。
 
 ```csharp
 public double Height { get; set; }

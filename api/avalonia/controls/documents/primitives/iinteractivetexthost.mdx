@@ -72,8 +72,8 @@ editing-specific members.
 | --- | --- |
 | [ActivateDocument](#uid-6ec996fa7d) | Makes `document` the document the host's selection covers: a nested document of the main one (a page band, a footnote), or the main document itself when null. The selection moves to `position` when one is given. Components call this when a pointer they resolved belongs to another document than the selection's. Reading needs the switch as much as editing does, so the viewers answer it too; a host without nested documents declines and the move is dropped, which keeps a nested document's text unselectable there. |
 | [GetComponent](#uid-dd6bb02fcf) | 暂无摘要。 |
-| [RegisterComponent](#uid-55e9929d46) | Registers a component with this host. |
-| [UnregisterComponent](#uid-d04f48d374) | Unregisters a component from this host. |
+| [RegisterComponent](#uid-55e9929d46) | 向该宿主注册一个组件。 |
+| [UnregisterComponent](#uid-d04f48d374) | 从该宿主注销一个组件。 |
 
 <section className="apiref-page__member-entry">
 
@@ -138,7 +138,7 @@ T
 
 ### RegisterComponent 方法 {#registercomponent-method}
 
-Registers a component with this host.
+向该宿主注册一个组件。
 
 ```csharp
 public void RegisterComponent(Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent component)
@@ -164,7 +164,7 @@ an immediate [Avalonia.Controls.Documents.Primitives.Components.ITextViewCompone
 
 ### UnregisterComponent 方法 {#unregistercomponent-method}
 
-Unregisters a component from this host.
+从该宿主注销一个组件。
 
 ```csharp
 public void UnregisterComponent(Avalonia.Controls.Documents.Primitives.Components.ITextViewComponent component)
@@ -264,7 +264,7 @@ the document area but excludes UI elements like toolbars.
 | [ActiveDocumentChanged](#uid-f3522e207c) | Occurs when [Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument](xref:Avalonia.Controls.Documents.Primitives.IInteractiveTextHost.ActiveDocument) changes: the selection entered a page band or a footnote, or returned to the main document. A host without nested documents never raises it, but must still declare it - a component that follows the caret across documents has no other way to learn of the move, because a pure activation carries no selection change. |
 | [ContentChanged](#uid-78f3ed8b4a) | Occurs when the document content changes. |
 | [DocumentChanged](#uid-2bf45a283a) | Occurs when the document is replaced. |
-| [SelectionChanged](#uid-d2145c6272) | Occurs when the selection changes. |
+| [SelectionChanged](#uid-d2145c6272) | 选择发生变化时发生。 |
 
 <section className="apiref-page__member-entry">
 
@@ -323,7 +323,7 @@ public event EventHandler DocumentChanged
 
 ### SelectionChanged 事件 {#selectionchanged-event}
 
-Occurs when the selection changes.
+选择发生变化时发生。
 
 ```csharp
 public event EventHandler SelectionChanged

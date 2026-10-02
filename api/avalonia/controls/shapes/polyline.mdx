@@ -100,7 +100,7 @@ public Polyline()
 | [Measure](../../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [RaiseEvent](../../interactivity/interactive.mdx#uid-d6aba452e6) | 引发一个路由事件。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
 | [RemoveHandler（2 个重载）](../../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../../interactivity/interactive.mdx)。 |
-| [Render](shape.mdx#uid-d1cdde6e5d) | Inherited from [Shape](shape.mdx). |
+| [Render](shape.mdx#uid-d1cdde6e5d) | 继承自 [Shape](shape.mdx)。 |
 | [SetCurrentValue（2 个重载）](../../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [SetFlowDirection](../../visual.mdx#uid-a670b680eb) | 设置控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../../visual.mdx)。 |
 | [SetIsHoldingEnabled](../../input/inputelement.mdx#uid-90a47948ad) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -125,11 +125,11 @@ public Polyline()
 | [Cursor](../../input/inputelement.mdx#uid-4222de38cf) | 获取或设置关联的鼠标指针样式。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [DataContext](../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [DataTemplates](../control.mdx#uid-78ff251b26) | 获取或设置控件使用的数据模板。继承自 [Control](../control.mdx)。 |
-| [DefiningGeometry](shape.mdx#uid-d1e64b8618) | Gets a value that represents the [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) of the shape. Inherited from [Shape](shape.mdx). |
+| [DefiningGeometry](shape.mdx#uid-d1e64b8618) | 获取代表该形状 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) 的值。继承自 [Shape](shape.mdx)。 |
 | [DesiredSize](../../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Effect](../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../visual.mdx)。 |
-| [Fill](shape.mdx#uid-2d665bbf70) | Gets or sets the [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush) that specifies how the shape's interior is painted. Inherited from [Shape](shape.mdx). |
+| [Fill](shape.mdx#uid-2d665bbf70) | 获取或设置决定形状内部如何填充的 [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)。继承自 [Shape](shape.mdx)。 |
 | [FillRule](#uid-714b28d8c6) | Gets or sets how the interior of the polyline is determined when a [Avalonia.Controls.Shapes.Shape.Fill](xref:Avalonia.Controls.Shapes.Shape.Fill) is applied. |
 | [FlowDirection](../../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../../visual.mdx)。 |
 | [Focusable](../../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -163,18 +163,18 @@ public Polyline()
 | [OpacityMask](../../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../../visual.mdx)。 |
 | [Parent](../../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Points](#uid-fe1a8609de) | 暂无摘要。 |
-| [RenderedGeometry](shape.mdx#uid-07834338d0) | Gets a value that represents the final rendered [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) of the shape. Inherited from [Shape](shape.mdx). |
+| [RenderedGeometry](shape.mdx#uid-07834338d0) | 获取代表该形状最终渲染结果 [Avalonia.Media.Geometry](xref:Avalonia.Media.Geometry) 的值。继承自 [Shape](shape.mdx)。 |
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [Stretch](shape.mdx#uid-db920455b0) | Gets or sets a [Avalonia.Controls.Shapes.Shape.Stretch](xref:Avalonia.Controls.Shapes.Shape.Stretch) enumeration value that describes how the shape fills its allocated space. Inherited from [Shape](shape.mdx). |
-| [Stroke](shape.mdx#uid-14ca8f2a4d) | Gets or sets the [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush) that specifies how the shape's outline is painted. Inherited from [Shape](shape.mdx). |
-| [StrokeDashArray](shape.mdx#uid-ad26eedd35) | Gets or sets a collection of [double](xref:System.Double) values that indicate the pattern of dashes and gaps that is used to outline shapes. Inherited from [Shape](shape.mdx). |
-| [StrokeDashOffset](shape.mdx#uid-661d24b819) | Gets or sets a value that specifies the distance within the dash pattern where a dash begins. Inherited from [Shape](shape.mdx). |
-| [StrokeJoin](shape.mdx#uid-ce435703c8) | Gets or sets a [Avalonia.Media.PenLineJoin](xref:Avalonia.Media.PenLineJoin) enumeration value that specifies the type of join that is used at the vertices of a Shape. Inherited from [Shape](shape.mdx). |
-| [StrokeLineCap](shape.mdx#uid-9f349e1555) | Gets or sets a [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap) enumeration value that describes the shape at the ends of a line. Inherited from [Shape](shape.mdx). |
-| [StrokeMiterLimit](shape.mdx#uid-dc785a15a8) | Gets or sets the limit on the ratio of the miter length to half the [Avalonia.Controls.Shapes.Shape.StrokeThickness](xref:Avalonia.Controls.Shapes.Shape.StrokeThickness) of the pen. Inherited from [Shape](shape.mdx). |
-| [StrokeThickness](shape.mdx#uid-3c3cdaa5cc) | Gets or sets the width of the shape outline. Inherited from [Shape](shape.mdx). |
+| [Stretch](shape.mdx#uid-db920455b0) | 获取或设置描述形状如何填满其所分得空间的 [Avalonia.Controls.Shapes.Shape.Stretch](xref:Avalonia.Controls.Shapes.Shape.Stretch) 枚举值。继承自 [Shape](shape.mdx)。 |
+| [Stroke](shape.mdx#uid-14ca8f2a4d) | 获取或设置决定形状轮廓如何绘制的 [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)。继承自 [Shape](shape.mdx)。 |
+| [StrokeDashArray](shape.mdx#uid-ad26eedd35) | 获取或设置一组 [double](xref:System.Double) 值，用来指定勾勒形状轮廓时短划与间隙的图案。继承自 [Shape](shape.mdx)。 |
+| [StrokeDashOffset](shape.mdx#uid-661d24b819) | 获取或设置虚线图案中起始短划所在的偏移距离。继承自 [Shape](shape.mdx)。 |
+| [StrokeJoin](shape.mdx#uid-ce435703c8) | 获取或设置描述形状顶点处连接方式的 [Avalonia.Media.PenLineJoin](xref:Avalonia.Media.PenLineJoin) 枚举值。继承自 [Shape](shape.mdx)。 |
+| [StrokeLineCap](shape.mdx#uid-9f349e1555) | 获取或设置描述线端形状的 [Avalonia.Media.PenLineCap](xref:Avalonia.Media.PenLineCap) 枚举值。继承自 [Shape](shape.mdx)。 |
+| [StrokeMiterLimit](shape.mdx#uid-dc785a15a8) | 获取或设置斜接长度与画笔 [Avalonia.Controls.Shapes.Shape.StrokeThickness](xref:Avalonia.Controls.Shapes.Shape.StrokeThickness) 一半之比的上限。继承自 [Shape](shape.mdx)。 |
+| [StrokeThickness](shape.mdx#uid-3c3cdaa5cc) | 获取形状轮廓的宽度。继承自 [Shape](shape.mdx)。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [TabIndex](../../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../../input/inputelement.mdx)。 |

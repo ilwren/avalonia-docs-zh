@@ -233,7 +233,7 @@ PopulateComplete to indicate the drop-down is populated.
 | [OpacityMask](../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../visual.mdx)。 |
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
-| [PlaceholderForeground](#uid-3733bb7934) | Gets or sets the brush used for the foreground color of the placeholder text. |
+| [PlaceholderForeground](#uid-3733bb7934) | 获取或设置占位文本前景色所用的画刷。 |
 | [PlaceholderText](#uid-7610fee8be) | Gets or sets the placeholder or descriptive text that is displayed even if the text is not yet set. |
 | [RenderTransform](../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../visual.mdx)。 |
 | [RenderTransformOrigin](../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../visual.mdx)。 |
@@ -255,7 +255,7 @@ PopulateComplete to indicate the drop-down is populated.
 | [ValueMemberBinding](#uid-ffa31bf8a5) | Gets or sets the [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase) that is used to get the values for display in the text portion of the [Avalonia.Controls.AutoCompleteBox](xref:Avalonia.Controls.AutoCompleteBox) control. |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [Watermark](#uid-f35c587d99) | Gets or sets the placeholder or descriptive text that is displayed even if the text is not yet set. |
-| [WatermarkForeground](#uid-cd5456c1a6) | Gets or sets the brush used for the foreground color of the placeholder text. |
+| [WatermarkForeground](#uid-cd5456c1a6) | 获取或设置占位文本前景色所用的画刷。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
 
@@ -606,7 +606,7 @@ prevent the [AutoCompleteBox](xref:Avalonia.Controls.AutoCompleteBox) from provi
 
 ### PlaceholderForeground 属性 {#placeholderforeground-property}
 
-Gets or sets the brush used for the foreground color of the placeholder text.
+获取或设置占位文本前景色所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush PlaceholderForeground { get; set; }
@@ -793,7 +793,7 @@ public string Watermark { get; set; }
 
 ### WatermarkForeground 属性 {#watermarkforeground-property}
 
-Gets or sets the brush used for the foreground color of the placeholder text.
+获取或设置占位文本前景色所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush WatermarkForeground { get; set; }
@@ -949,7 +949,7 @@ public Avalonia.StyledProperty<Func<string,System.Threading.CancellationToken,Sy
 
 #### 值 {#value-16}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.AsyncPopulator](xref:Avalonia.Controls.AutoCompleteBox.AsyncPopulator) property.
+[Avalonia.Controls.AutoCompleteBox.AsyncPopulator](xref:Avalonia.Controls.AutoCompleteBox.AsyncPopulator) 属性的标识符。
 
 
 </section>
@@ -1038,7 +1038,7 @@ public Avalonia.StyledProperty<bool> IsDropDownOpenProperty
 
 #### 值 {#value-17}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.IsDropDownOpen](xref:Avalonia.Controls.AutoCompleteBox.IsDropDownOpen) property.
+[Avalonia.Controls.AutoCompleteBox.IsDropDownOpen](xref:Avalonia.Controls.AutoCompleteBox.IsDropDownOpen) 属性的标识符。
 
 
 </section>
@@ -1057,7 +1057,7 @@ public Avalonia.StyledProperty<bool> IsTextCompletionEnabledProperty
 
 #### 值 {#value-18}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.IsTextCompletionEnabled](xref:Avalonia.Controls.AutoCompleteBox.IsTextCompletionEnabled) property.
+[Avalonia.Controls.AutoCompleteBox.IsTextCompletionEnabled](xref:Avalonia.Controls.AutoCompleteBox.IsTextCompletionEnabled) 属性的标识符。
 
 
 </section>
@@ -1076,7 +1076,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.AutoCompleteFilterPredicate<T><
 
 #### 值 {#value-19}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.ItemFilter](xref:Avalonia.Controls.AutoCompleteBox.ItemFilter) property.
+[Avalonia.Controls.AutoCompleteBox.ItemFilter](xref:Avalonia.Controls.AutoCompleteBox.ItemFilter) 属性的标识符。
 
 
 </section>
@@ -1095,7 +1095,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.AutoCompleteSelector<T><object>
 
 #### 值 {#value-20}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.ItemSelector](xref:Avalonia.Controls.AutoCompleteBox.ItemSelector) property.
+[Avalonia.Controls.AutoCompleteBox.ItemSelector](xref:Avalonia.Controls.AutoCompleteBox.ItemSelector) 属性的标识符。
 
 
 </section>
@@ -1114,7 +1114,7 @@ public Avalonia.StyledProperty<System.Collections.IEnumerable> ItemsSourceProper
 
 #### 值 {#value-21}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.ItemsSource](xref:Avalonia.Controls.AutoCompleteBox.ItemsSource) property.
+[Avalonia.Controls.AutoCompleteBox.ItemsSource](xref:Avalonia.Controls.AutoCompleteBox.ItemsSource) 属性的标识符。
 
 
 </section>
@@ -1133,7 +1133,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.Templates.IDataTemplate> ItemTe
 
 #### 值 {#value-22}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.ItemTemplate](xref:Avalonia.Controls.AutoCompleteBox.ItemTemplate) property.
+[Avalonia.Controls.AutoCompleteBox.ItemTemplate](xref:Avalonia.Controls.AutoCompleteBox.ItemTemplate) 属性的标识符。
 
 
 </section>
@@ -1152,7 +1152,7 @@ public Avalonia.StyledProperty<double> MaxDropDownHeightProperty
 
 #### 值 {#value-23}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.MaxDropDownHeight](xref:Avalonia.Controls.AutoCompleteBox.MaxDropDownHeight) property.
+[Avalonia.Controls.AutoCompleteBox.MaxDropDownHeight](xref:Avalonia.Controls.AutoCompleteBox.MaxDropDownHeight) 属性的标识符。
 
 
 </section>
@@ -1185,7 +1185,7 @@ public Avalonia.StyledProperty<TimeSpan> MinimumPopulateDelayProperty
 
 #### 值 {#value-24}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.MinimumPopulateDelay](xref:Avalonia.Controls.AutoCompleteBox.MinimumPopulateDelay) property.
+[Avalonia.Controls.AutoCompleteBox.MinimumPopulateDelay](xref:Avalonia.Controls.AutoCompleteBox.MinimumPopulateDelay) 属性的标识符。
 
 
 </section>
@@ -1204,7 +1204,7 @@ public Avalonia.StyledProperty<int> MinimumPrefixLengthProperty
 
 #### 值 {#value-25}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.MinimumPrefixLength](xref:Avalonia.Controls.AutoCompleteBox.MinimumPrefixLength) property.
+[Avalonia.Controls.AutoCompleteBox.MinimumPrefixLength](xref:Avalonia.Controls.AutoCompleteBox.MinimumPrefixLength) 属性的标识符。
 
 
 </section>
@@ -1251,7 +1251,7 @@ public Avalonia.DirectProperty<Avalonia.Controls.AutoCompleteBox, string> Search
 
 #### 值 {#value-26}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.SearchText](xref:Avalonia.Controls.AutoCompleteBox.SearchText) property.
+[Avalonia.Controls.AutoCompleteBox.SearchText](xref:Avalonia.Controls.AutoCompleteBox.SearchText) 属性的标识符。
 
 
 </section>
@@ -1315,7 +1315,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.AutoCompleteFilterPredicate<T><
 
 #### 值 {#value-28}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.TextFilter](xref:Avalonia.Controls.AutoCompleteBox.TextFilter) property.
+[Avalonia.Controls.AutoCompleteBox.TextFilter](xref:Avalonia.Controls.AutoCompleteBox.TextFilter) 属性的标识符。
 
 
 </section>
@@ -1334,7 +1334,7 @@ public Avalonia.StyledProperty<string> TextProperty
 
 #### 值 {#value-29}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.Text](xref:Avalonia.Controls.AutoCompleteBox.Text) property.
+[Avalonia.Controls.AutoCompleteBox.Text](xref:Avalonia.Controls.AutoCompleteBox.Text) 属性的标识符。
 
 
 </section>
@@ -1353,7 +1353,7 @@ public Avalonia.StyledProperty<Avalonia.Controls.AutoCompleteSelector<T><string>
 
 #### 值 {#value-30}
 
-The identifier for the [Avalonia.Controls.AutoCompleteBox.TextSelector](xref:Avalonia.Controls.AutoCompleteBox.TextSelector) property.
+[Avalonia.Controls.AutoCompleteBox.TextSelector](xref:Avalonia.Controls.AutoCompleteBox.TextSelector) 属性的标识符。
 
 
 </section>

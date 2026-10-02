@@ -98,9 +98,9 @@ The Y co-ordinate.
 | 名称 | 说明 |
 | --- | --- |
 | [Equals（2 个重载）](#uid-afb83deb7e) | Returns a boolean indicating whether the point is equal to the other given point. |
-| [FromPoint (2 overloads)](#uid-8439f1d3ad) | Converts a [Avalonia.Point](xref:Avalonia.Point) to device pixels using the specified scaling factor. |
-| [FromPointWithDpi (2 overloads)](#uid-1334c8745d) | Converts a [Avalonia.Point](xref:Avalonia.Point) to device pixels using the specified dots per inch (DPI). |
-| [GetHashCode](#uid-61c5d6442e) | Returns a hash code for a [Avalonia.PixelPoint](xref:Avalonia.PixelPoint). |
+| [FromPoint (2 overloads)](#uid-8439f1d3ad) | 按指定的缩放系数把 [Avalonia.Point](xref:Avalonia.Point) 换算成设备像素。 |
+| [FromPointWithDpi (2 overloads)](#uid-1334c8745d) | 按指定的每英寸点数（DPI）把 [Avalonia.Point](xref:Avalonia.Point) 换算成设备像素。 |
+| [GetHashCode](#uid-61c5d6442e) | 返回 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) 的哈希码。 |
 | [Parse](#uid-ed7841f67e) | 解析 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) 字符串。 |
 | [ToPoint (2 overloads)](#uid-0a49304e51) | Converts the [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) to a device-independent [Avalonia.Point](xref:Avalonia.Point) using the specified scaling factor. |
 | [ToPointWithDpi (2 overloads)](#uid-3c44106e38) | Converts the [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) to a device-independent [Avalonia.Point](xref:Avalonia.Point) using the specified dots per inch (DPI). |
@@ -156,7 +156,7 @@ public bool Equals(object obj)
 
 `obj` object
 
-The object.
+该对象。
 
 
 ##### 返回值 {#returns-1}
@@ -178,7 +178,7 @@ True if `obj` is a point that equals the current point.
 
 #### FromPoint 方法 {#frompoint-method}
 
-Converts a [Avalonia.Point](xref:Avalonia.Point) to device pixels using the specified scaling factor.
+按指定的缩放系数把 [Avalonia.Point](xref:Avalonia.Point) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelPoint FromPoint(Avalonia.Point point, Avalonia.Vector scale)
@@ -188,19 +188,19 @@ public Avalonia.PixelPoint FromPoint(Avalonia.Point point, Avalonia.Vector scale
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The point.
+该点。
 
 
 `scale` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-2}
 
 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -211,7 +211,7 @@ The device-independent point.
 
 #### FromPoint 方法 {#frompoint-method-1}
 
-Converts a [Avalonia.Point](xref:Avalonia.Point) to device pixels using the specified scaling factor.
+按指定的缩放系数把 [Avalonia.Point](xref:Avalonia.Point) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelPoint FromPoint(Avalonia.Point point, double scale)
@@ -221,19 +221,19 @@ public Avalonia.PixelPoint FromPoint(Avalonia.Point point, double scale)
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The point.
+该点。
 
 
 `scale` double
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-3}
 
 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -248,7 +248,7 @@ The device-independent point.
 
 #### FromPointWithDpi 方法 {#frompointwithdpi-method}
 
-Converts a [Avalonia.Point](xref:Avalonia.Point) to device pixels using the specified dots per inch (DPI).
+按指定的每英寸点数（DPI）把 [Avalonia.Point](xref:Avalonia.Point) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelPoint FromPointWithDpi(Avalonia.Point point, Avalonia.Vector dpi)
@@ -258,19 +258,19 @@ public Avalonia.PixelPoint FromPointWithDpi(Avalonia.Point point, Avalonia.Vecto
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The point.
+该点。
 
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-4}
 
 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -281,7 +281,7 @@ The device-independent point.
 
 #### FromPointWithDpi 方法 {#frompointwithdpi-method-1}
 
-Converts a [Avalonia.Point](xref:Avalonia.Point) to device pixels using the specified dots per inch (DPI).
+按指定的每英寸点数（DPI）把 [Avalonia.Point](xref:Avalonia.Point) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelPoint FromPointWithDpi(Avalonia.Point point, double dpi)
@@ -291,19 +291,19 @@ public Avalonia.PixelPoint FromPointWithDpi(Avalonia.Point point, double dpi)
 
 `point` [Avalonia.Point](xref:Avalonia.Point)
 
-The point.
+该点。
 
 
 `dpi` double
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-5}
 
 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -314,7 +314,7 @@ The device-independent point.
 
 ### GetHashCode 方法 {#gethashcode-method}
 
-Returns a hash code for a [Avalonia.PixelPoint](xref:Avalonia.PixelPoint).
+返回 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint) 的哈希码。
 
 ```csharp
 public int GetHashCode()
@@ -324,7 +324,7 @@ public int GetHashCode()
 
 int
 
-The hash code.
+哈希码。
 
 
 </section>
@@ -345,7 +345,7 @@ public Avalonia.PixelPoint Parse(string s)
 
 `s` string
 
-The string.
+该字符串。
 
 
 #### 返回值 {#returns-7}
@@ -378,14 +378,14 @@ public Avalonia.Point ToPoint(Avalonia.Vector scale)
 
 `scale` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-8}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -407,14 +407,14 @@ public Avalonia.Point ToPoint(double scale)
 
 `scale` double
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-9}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -440,14 +440,14 @@ public Avalonia.Point ToPointWithDpi(Avalonia.Vector dpi)
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-10}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -469,14 +469,14 @@ public Avalonia.Point ToPointWithDpi(double dpi)
 
 `dpi` double
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-11}
 
 [Avalonia.Point](xref:Avalonia.Point)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -525,7 +525,7 @@ The X co-ordinate.
 
 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The new [Avalonia.PixelPoint](xref:Avalonia.PixelPoint).
+新的 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)。
 
 
 </section>
@@ -553,7 +553,7 @@ The Y co-ordinate.
 
 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The new [Avalonia.PixelPoint](xref:Avalonia.PixelPoint).
+新的 [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)。
 
 
 </section>

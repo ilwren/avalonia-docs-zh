@@ -168,8 +168,8 @@ True if the scroll offset was changed; otherwise false.
 | [Bounds](../../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../../visual.mdx)。 |
 | [BoxShadow](contentpresenter.mdx#uid-f252c2c892) | Gets or sets the box shadow effect parameters Inherited from [ContentPresenter](contentpresenter.mdx). |
 | [CacheMode](../../visual.mdx#uid-c565afad32) | 获取或设置该视觉元素的缓存模式。继承自 [Visual](../../visual.mdx)。 |
-| [CanHorizontallyScroll](#uid-f8e5e1a3a5) | Gets or sets a value indicating whether the content can be scrolled horizontally. |
-| [CanVerticallyScroll](#uid-54951e3e6b) | Gets or sets a value indicating whether the content can be scrolled horizontally. |
+| [CanHorizontallyScroll](#uid-f8e5e1a3a5) | 获取或设置内容能否水平滚动。 |
+| [CanVerticallyScroll](#uid-54951e3e6b) | 获取或设置内容能否水平滚动。 |
 | [Child](contentpresenter.mdx#uid-e44a35918d) | Gets the control displayed by the presenter. Inherited from [ContentPresenter](contentpresenter.mdx). |
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Clip](../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../visual.mdx)。 |
@@ -185,7 +185,7 @@ True if the scroll offset was changed; otherwise false.
 | [DesiredSize](../../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Effect](../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../visual.mdx)。 |
-| [Extent](#uid-3c158adc6d) | Gets the extent of the scrollable content. |
+| [Extent](#uid-3c158adc6d) | 获取可滚动内容的范围大小。 |
 | [FlowDirection](../../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../../visual.mdx)。 |
 | [Focusable](../../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [FocusAdorner](../control.mdx#uid-96de66ccc5) | 获取或设置控件的焦点修饰元素。继承自 [Control](../control.mdx)。 |
@@ -227,7 +227,7 @@ True if the scroll offset was changed; otherwise false.
 | [MinHeight](../../layout/layoutable.mdx#uid-822cd64c83) | 获取或设置元素的最小高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MinWidth](../../layout/layoutable.mdx#uid-5bd3b5bb2c) | 获取或设置元素的最小宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [Offset](#uid-805830a41a) | Gets or sets the current scroll offset. |
+| [Offset](#uid-805830a41a) | 获取或设置当前的滚动偏移量。 |
 | [Opacity](../../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../../visual.mdx)。 |
 | [OpacityMask](../../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../../visual.mdx)。 |
 | [Padding](contentpresenter.mdx#uid-bd3684f47c) | Gets or sets the space between the border and the [Avalonia.Controls.Presenters.ContentPresenter.Child](xref:Avalonia.Controls.Presenters.ContentPresenter.Child) control. Inherited from [ContentPresenter](contentpresenter.mdx). |
@@ -261,7 +261,7 @@ True if the scroll offset was changed; otherwise false.
 
 ### CanHorizontallyScroll 属性 {#canhorizontallyscroll-property}
 
-Gets or sets a value indicating whether the content can be scrolled horizontally.
+获取或设置内容能否水平滚动。
 
 ```csharp
 public bool CanHorizontallyScroll { get; set; }
@@ -275,7 +275,7 @@ public bool CanHorizontallyScroll { get; set; }
 
 ### CanVerticallyScroll 属性 {#canverticallyscroll-property}
 
-Gets or sets a value indicating whether the content can be scrolled horizontally.
+获取或设置内容能否水平滚动。
 
 ```csharp
 public bool CanVerticallyScroll { get; set; }
@@ -289,7 +289,7 @@ public bool CanVerticallyScroll { get; set; }
 
 ### Extent 属性 {#extent-property}
 
-Gets the extent of the scrollable content.
+获取可滚动内容的范围大小。
 
 ```csharp
 public Avalonia.Size Extent { get; set; }
@@ -351,7 +351,7 @@ This is called scroll chaining.
 
 ### Offset 属性 {#offset-property}
 
-Gets or sets the current scroll offset.
+获取或设置当前的滚动偏移量。
 
 ```csharp
 public Avalonia.Vector Offset { get; set; }
@@ -405,25 +405,25 @@ public Avalonia.Size Viewport { get; set; }
 
 | 名称 | 说明 |
 | --- | --- |
-| [BackgroundProperty](contentpresenter.mdx#uid-f91519f611) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.Background](xref:Avalonia.Controls.Presenters.ContentPresenter.Background) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [BackgroundSizingProperty](contentpresenter.mdx#uid-d7151e21bd) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.BackgroundSizing](xref:Avalonia.Controls.Presenters.ContentPresenter.BackgroundSizing) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [BorderBrushProperty](contentpresenter.mdx#uid-a6779dfd7e) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.BorderBrush](xref:Avalonia.Controls.Presenters.ContentPresenter.BorderBrush) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [BorderThicknessProperty](contentpresenter.mdx#uid-0bfd74a99c) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.BorderThickness](xref:Avalonia.Controls.Presenters.ContentPresenter.BorderThickness) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [BackgroundProperty](contentpresenter.mdx#uid-f91519f611) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.Background](xref:Avalonia.Controls.Presenters.ContentPresenter.Background) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [BackgroundSizingProperty](contentpresenter.mdx#uid-d7151e21bd) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.BackgroundSizing](xref:Avalonia.Controls.Presenters.ContentPresenter.BackgroundSizing) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [BorderBrushProperty](contentpresenter.mdx#uid-a6779dfd7e) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.BorderBrush](xref:Avalonia.Controls.Presenters.ContentPresenter.BorderBrush) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [BorderThicknessProperty](contentpresenter.mdx#uid-0bfd74a99c) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.BorderThickness](xref:Avalonia.Controls.Presenters.ContentPresenter.BorderThickness) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [BoundsProperty](../../visual.mdx#uid-f22a27348f) | 定义 [Avalonia.Visual.Bounds](xref:Avalonia.Visual.Bounds) 属性。继承自 [Visual](../../visual.mdx)。 |
-| [BoxShadowProperty](contentpresenter.mdx#uid-8bb1765b1c) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.BoxShadow](xref:Avalonia.Controls.Presenters.ContentPresenter.BoxShadow) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [BoxShadowProperty](contentpresenter.mdx#uid-8bb1765b1c) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.BoxShadow](xref:Avalonia.Controls.Presenters.ContentPresenter.BoxShadow) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [CacheModeProperty](../../visual.mdx#uid-5c89b0f2fc) | 定义 [Avalonia.Visual.CacheMode](xref:Avalonia.Visual.CacheMode) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [CanHorizontallyScrollProperty](#uid-41c75b6a0e) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.CanHorizontallyScroll](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.CanHorizontallyScroll) 属性。 |
 | [CanVerticallyScrollProperty](#uid-04d7aa8b1c) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.CanVerticallyScroll](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.CanVerticallyScroll) 属性。 |
-| [ChildProperty](contentpresenter.mdx#uid-f3431a11c9) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.Child](xref:Avalonia.Controls.Presenters.ContentPresenter.Child) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [ChildProperty](contentpresenter.mdx#uid-f3431a11c9) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.Child](xref:Avalonia.Controls.Presenters.ContentPresenter.Child) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [ClipProperty](../../visual.mdx#uid-06ffce3308) | 定义 [Avalonia.Visual.Clip](xref:Avalonia.Visual.Clip) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [ClipToBoundsProperty](../../visual.mdx#uid-4bc41df166) | 定义 [Avalonia.Visual.ClipToBounds](xref:Avalonia.Visual.ClipToBounds) 属性。继承自 [Visual](../../visual.mdx)。 |
-| [ContentProperty](contentpresenter.mdx#uid-18575a7ac2) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.Content](xref:Avalonia.Controls.Presenters.ContentPresenter.Content) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [ContentTemplateProperty](contentpresenter.mdx#uid-4d64ea4986) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.ContentTemplate](xref:Avalonia.Controls.Presenters.ContentPresenter.ContentTemplate) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [ContentProperty](contentpresenter.mdx#uid-18575a7ac2) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.Content](xref:Avalonia.Controls.Presenters.ContentPresenter.Content) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [ContentTemplateProperty](contentpresenter.mdx#uid-4d64ea4986) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.ContentTemplate](xref:Avalonia.Controls.Presenters.ContentPresenter.ContentTemplate) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [ContextCanceledEvent](../../input/inputelement.mdx#uid-c58107fdb9) | 为 [Avalonia.Input.InputElement.ContextCanceled](xref:Avalonia.Input.InputElement.ContextCanceled) 事件提供事件数据。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ContextFlyoutProperty](../control.mdx#uid-7adf3cc0e6) | 定义 [Avalonia.Controls.Control.ContextFlyout](xref:Avalonia.Controls.Control.ContextFlyout) 属性。继承自 [Control](../control.mdx)。 |
 | [ContextMenuProperty](../control.mdx#uid-0fd2af59c9) | 定义 [Avalonia.Controls.Control.ContextMenu](xref:Avalonia.Controls.Control.ContextMenu) 属性。继承自 [Control](../control.mdx)。 |
 | [ContextRequestedEvent](../../input/inputelement.mdx#uid-11362fc1dd) | 为 [Avalonia.Input.InputElement.ContextRequested](xref:Avalonia.Input.InputElement.ContextRequested) 事件提供事件数据。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [CornerRadiusProperty](contentpresenter.mdx#uid-b0a42c391a) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.CornerRadius](xref:Avalonia.Controls.Presenters.ContentPresenter.CornerRadius) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [CornerRadiusProperty](contentpresenter.mdx#uid-b0a42c391a) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.CornerRadius](xref:Avalonia.Controls.Presenters.ContentPresenter.CornerRadius) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [CursorProperty](../../input/inputelement.mdx#uid-37a51ae89c) | 获取或设置关联的鼠标指针样式。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [DataContextProperty](../../styledelement.mdx#uid-7eefabb929) | 定义 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [DesiredSizeProperty](../../layout/layoutable.mdx#uid-b46bed86fe) | 定义 [Avalonia.Layout.Layoutable.DesiredSize](xref:Avalonia.Layout.Layoutable.DesiredSize) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -433,19 +433,19 @@ public Avalonia.Size Viewport { get; set; }
 | [FlowDirectionProperty](../../visual.mdx#uid-79d00f257f) | 定义 [Avalonia.Visual.FlowDirection](xref:Avalonia.Visual.FlowDirection) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [FocusableProperty](../../input/inputelement.mdx#uid-402835abd7) | 定义 [Avalonia.Input.InputElement.Focusable](xref:Avalonia.Input.InputElement.Focusable) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [FocusAdornerProperty](../control.mdx#uid-701a7e7e23) | 定义 [Avalonia.Controls.Control.FocusAdorner](xref:Avalonia.Controls.Control.FocusAdorner) 属性。继承自 [Control](../control.mdx)。 |
-| [FontFamilyProperty](contentpresenter.mdx#uid-6ec9507dfd) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.FontFamily](xref:Avalonia.Controls.Presenters.ContentPresenter.FontFamily) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [FontSizeProperty](contentpresenter.mdx#uid-fed6bc5e74) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.FontSize](xref:Avalonia.Controls.Presenters.ContentPresenter.FontSize) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [FontStretchProperty](contentpresenter.mdx#uid-2f02752ec6) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.FontStretch](xref:Avalonia.Controls.Presenters.ContentPresenter.FontStretch) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [FontStyleProperty](contentpresenter.mdx#uid-0ce369ef2c) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.FontStyle](xref:Avalonia.Controls.Presenters.ContentPresenter.FontStyle) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [FontWeightProperty](contentpresenter.mdx#uid-eee65ead30) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.FontWeight](xref:Avalonia.Controls.Presenters.ContentPresenter.FontWeight) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [ForegroundProperty](contentpresenter.mdx#uid-f8e4bbe80d) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.Foreground](xref:Avalonia.Controls.Presenters.ContentPresenter.Foreground) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [FontFamilyProperty](contentpresenter.mdx#uid-6ec9507dfd) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.FontFamily](xref:Avalonia.Controls.Presenters.ContentPresenter.FontFamily) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [FontSizeProperty](contentpresenter.mdx#uid-fed6bc5e74) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.FontSize](xref:Avalonia.Controls.Presenters.ContentPresenter.FontSize) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [FontStretchProperty](contentpresenter.mdx#uid-2f02752ec6) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.FontStretch](xref:Avalonia.Controls.Presenters.ContentPresenter.FontStretch) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [FontStyleProperty](contentpresenter.mdx#uid-0ce369ef2c) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.FontStyle](xref:Avalonia.Controls.Presenters.ContentPresenter.FontStyle) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [FontWeightProperty](contentpresenter.mdx#uid-eee65ead30) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.FontWeight](xref:Avalonia.Controls.Presenters.ContentPresenter.FontWeight) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [ForegroundProperty](contentpresenter.mdx#uid-f8e4bbe80d) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.Foreground](xref:Avalonia.Controls.Presenters.ContentPresenter.Foreground) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [GettingFocusEvent](../../input/inputelement.mdx#uid-23a6940484) | 定义 [Avalonia.Input.InputElement.GettingFocus](xref:Avalonia.Input.InputElement.GettingFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GotFocusEvent](../../input/inputelement.mdx#uid-750ce32b53) | 定义 [Avalonia.Input.InputElement.GotFocus](xref:Avalonia.Input.InputElement.GotFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [HasMirrorTransformProperty](../../visual.mdx#uid-1f37ec4745) | 定义 [Avalonia.Visual.HasMirrorTransform](xref:Avalonia.Visual.HasMirrorTransform) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [HeightProperty](../../layout/layoutable.mdx#uid-78fa90222f) | 定义 [Avalonia.Layout.Layoutable.Height](xref:Avalonia.Layout.Layoutable.Height) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [HoldingEvent](../../input/inputelement.mdx#uid-b1eab1bcd8) | 定义 [Avalonia.Input.InputElement.Holding](xref:Avalonia.Input.InputElement.Holding) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [HorizontalAlignmentProperty](../../layout/layoutable.mdx#uid-43606c2354) | 定义 [Avalonia.Layout.Layoutable.HorizontalAlignment](xref:Avalonia.Layout.Layoutable.HorizontalAlignment) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [HorizontalContentAlignmentProperty](contentpresenter.mdx#uid-f250fe37b1) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.HorizontalContentAlignment](xref:Avalonia.Controls.Presenters.ContentPresenter.HorizontalContentAlignment) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [HorizontalContentAlignmentProperty](contentpresenter.mdx#uid-f250fe37b1) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.HorizontalContentAlignment](xref:Avalonia.Controls.Presenters.ContentPresenter.HorizontalContentAlignment) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [HorizontalSnapPointsAlignmentProperty](#uid-b547f5a261) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.HorizontalSnapPointsAlignment](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.HorizontalSnapPointsAlignment) 属性。 |
 | [HorizontalSnapPointsTypeProperty](#uid-e77a26ea88) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.HorizontalSnapPointsType](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.HorizontalSnapPointsType) 属性。 |
 | [IsEffectivelyEnabledProperty](../../input/inputelement.mdx#uid-df18a2cff1) | 定义 [Avalonia.Input.InputElement.IsEffectivelyEnabled](xref:Avalonia.Input.InputElement.IsEffectivelyEnabled) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -461,14 +461,14 @@ public Avalonia.Size Viewport { get; set; }
 | [IsVisibleProperty](../../visual.mdx#uid-8e0edf21ac) | 定义 [Avalonia.Visual.IsVisible](xref:Avalonia.Visual.IsVisible) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [KeyDownEvent](../../input/inputelement.mdx#uid-71dfb758e3) | 定义 [Avalonia.Input.InputElement.KeyDown](xref:Avalonia.Input.InputElement.KeyDown) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [KeyUpEvent](../../input/inputelement.mdx#uid-e694f9abc6) | 定义 [Avalonia.Input.InputElement.KeyUp](xref:Avalonia.Input.InputElement.KeyUp) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [LetterSpacingProperty](contentpresenter.mdx#uid-3d2ed9eb7f) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.LetterSpacing](xref:Avalonia.Controls.Presenters.ContentPresenter.LetterSpacing) property Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [LineHeightProperty](contentpresenter.mdx#uid-04b0b3245a) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.LineHeight](xref:Avalonia.Controls.Presenters.ContentPresenter.LineHeight) property Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [LetterSpacingProperty](contentpresenter.mdx#uid-3d2ed9eb7f) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.LetterSpacing](xref:Avalonia.Controls.Presenters.ContentPresenter.LetterSpacing) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [LineHeightProperty](contentpresenter.mdx#uid-04b0b3245a) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.LineHeight](xref:Avalonia.Controls.Presenters.ContentPresenter.LineHeight) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [LoadedEvent](../control.mdx#uid-f76afcf3e6) | 定义 [Avalonia.Controls.Control.Loaded](xref:Avalonia.Controls.Control.Loaded) 事件。继承自 [Control](../control.mdx)。 |
 | [LosingFocusEvent](../../input/inputelement.mdx#uid-6ed71d3568) | 定义 [Avalonia.Input.InputElement.LosingFocus](xref:Avalonia.Input.InputElement.LosingFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [LostFocusEvent](../../input/inputelement.mdx#uid-267344bb96) | 定义 [Avalonia.Input.InputElement.LostFocus](xref:Avalonia.Input.InputElement.LostFocus) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [MarginProperty](../../layout/layoutable.mdx#uid-e730ad0d44) | 定义 [Avalonia.Layout.Layoutable.Margin](xref:Avalonia.Layout.Layoutable.Margin) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxHeightProperty](../../layout/layoutable.mdx#uid-0a0a1f20cb) | 定义 [Avalonia.Layout.Layoutable.MaxHeight](xref:Avalonia.Layout.Layoutable.MaxHeight) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [MaxLinesProperty](contentpresenter.mdx#uid-75d6d129da) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.MaxLines](xref:Avalonia.Controls.Presenters.ContentPresenter.MaxLines) property Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [MaxLinesProperty](contentpresenter.mdx#uid-75d6d129da) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.MaxLines](xref:Avalonia.Controls.Presenters.ContentPresenter.MaxLines) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [MaxWidthProperty](../../layout/layoutable.mdx#uid-febdea8f4d) | 定义 [Avalonia.Layout.Layoutable.MaxWidth](xref:Avalonia.Layout.Layoutable.MaxWidth) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MinHeightProperty](../../layout/layoutable.mdx#uid-f78bf9b812) | 定义 [Avalonia.Layout.Layoutable.MinHeight](xref:Avalonia.Layout.Layoutable.MinHeight) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MinWidthProperty](../../layout/layoutable.mdx#uid-ec0935c392) | 定义 [Avalonia.Layout.Layoutable.MinWidth](xref:Avalonia.Layout.Layoutable.MinWidth) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -476,7 +476,7 @@ public Avalonia.Size Viewport { get; set; }
 | [OffsetProperty](#uid-2453b0b303) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.Offset](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.Offset) 属性。 |
 | [OpacityMaskProperty](../../visual.mdx#uid-aad2c3f7c2) | 定义 [Avalonia.Visual.OpacityMask](xref:Avalonia.Visual.OpacityMask) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [OpacityProperty](../../visual.mdx#uid-2a53e27b1f) | 定义 [Avalonia.Visual.Opacity](xref:Avalonia.Visual.Opacity) 属性。继承自 [Visual](../../visual.mdx)。 |
-| [PaddingProperty](contentpresenter.mdx#uid-3588da7be9) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.Padding](xref:Avalonia.Controls.Presenters.ContentPresenter.Padding) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [PaddingProperty](contentpresenter.mdx#uid-3588da7be9) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.Padding](xref:Avalonia.Controls.Presenters.ContentPresenter.Padding) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [ParentProperty](../../styledelement.mdx#uid-dc6481a488) | 定义 [Avalonia.StyledElement.Parent](xref:Avalonia.StyledElement.Parent) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [PinchEndedEvent](../../input/inputelement.mdx#uid-3f6a3485dd) | 定义 [Avalonia.Input.InputElement.PinchEnded](xref:Avalonia.Input.InputElement.PinchEnded) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [PinchEvent](../../input/inputelement.mdx#uid-d109d8c674) | 定义 [Avalonia.Input.InputElement.Pinch](xref:Avalonia.Input.InputElement.Pinch) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -492,7 +492,7 @@ public Avalonia.Size Viewport { get; set; }
 | [PointerWheelChangedEvent](../../input/inputelement.mdx#uid-dcb45add6a) | 定义 [Avalonia.Input.InputElement.PointerWheelChanged](xref:Avalonia.Input.InputElement.PointerWheelChanged) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [PullGestureEndedEvent](../../input/inputelement.mdx#uid-274f53878f) | 定义 [Avalonia.Input.InputElement.PullGestureEnded](xref:Avalonia.Input.InputElement.PullGestureEnded) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [PullGestureEvent](../../input/inputelement.mdx#uid-b9a60d43c7) | 定义 [Avalonia.Input.InputElement.PullGesture](xref:Avalonia.Input.InputElement.PullGesture) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [RecognizesAccessKeyProperty](contentpresenter.mdx#uid-6af75ede1e) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.RecognizesAccessKey](xref:Avalonia.Controls.Presenters.ContentPresenter.RecognizesAccessKey) property Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [RecognizesAccessKeyProperty](contentpresenter.mdx#uid-6af75ede1e) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.RecognizesAccessKey](xref:Avalonia.Controls.Presenters.ContentPresenter.RecognizesAccessKey) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [RenderTransformOriginProperty](../../visual.mdx#uid-963d266cdd) | 定义 [Avalonia.Visual.RenderTransformOrigin](xref:Avalonia.Visual.RenderTransformOrigin) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformProperty](../../visual.mdx#uid-31d20942c2) | 定义 [Avalonia.Visual.RenderTransform](xref:Avalonia.Visual.RenderTransform) 属性。继承自 [Visual](../../visual.mdx)。 |
 | [RequestBringIntoViewEvent](../control.mdx#uid-e52a870608) | 当某个元素希望被滚动到可见区域时引发。继承自 [Control](../control.mdx)。 |
@@ -507,17 +507,17 @@ public Avalonia.Size Viewport { get; set; }
 | [TagProperty](../control.mdx#uid-291b4a3b79) | 定义 [Avalonia.Controls.Control.Tag](xref:Avalonia.Controls.Control.Tag) 属性。继承自 [Control](../control.mdx)。 |
 | [TappedEvent](../../input/inputelement.mdx#uid-15efc26145) | 定义 [Avalonia.Input.InputElement.Tapped](xref:Avalonia.Input.InputElement.Tapped) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [TemplatedParentProperty](../../styledelement.mdx#uid-a2c7149a6b) | 定义 [Avalonia.StyledElement.TemplatedParent](xref:Avalonia.StyledElement.TemplatedParent) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [TextAlignmentProperty](contentpresenter.mdx#uid-0ca6ebbfd6) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.TextAlignment](xref:Avalonia.Controls.Presenters.ContentPresenter.TextAlignment) property Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [TextAlignmentProperty](contentpresenter.mdx#uid-0ca6ebbfd6) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.TextAlignment](xref:Avalonia.Controls.Presenters.ContentPresenter.TextAlignment) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [TextInputEvent](../../input/inputelement.mdx#uid-b82dd03ac9) | 定义 [Avalonia.Input.InputElement.TextInput](xref:Avalonia.Input.InputElement.TextInput) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [TextInputMethodClientRequestedEvent](../../input/inputelement.mdx#uid-679852bb37) | 定义 [Avalonia.Input.InputElement.TextInputMethodClientRequested](xref:Avalonia.Input.InputElement.TextInputMethodClientRequested) 事件。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [TextTrimmingProperty](contentpresenter.mdx#uid-da45e95f85) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.TextTrimming](xref:Avalonia.Controls.Presenters.ContentPresenter.TextTrimming) property Inherited from [ContentPresenter](contentpresenter.mdx). |
-| [TextWrappingProperty](contentpresenter.mdx#uid-9dec323618) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.TextWrapping](xref:Avalonia.Controls.Presenters.ContentPresenter.TextWrapping) property Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [TextTrimmingProperty](contentpresenter.mdx#uid-da45e95f85) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.TextTrimming](xref:Avalonia.Controls.Presenters.ContentPresenter.TextTrimming) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
+| [TextWrappingProperty](contentpresenter.mdx#uid-9dec323618) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.TextWrapping](xref:Avalonia.Controls.Presenters.ContentPresenter.TextWrapping) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [ThemeProperty](../../styledelement.mdx#uid-05852d7b9a) | 定义 [Avalonia.StyledElement.Theme](xref:Avalonia.StyledElement.Theme) 属性。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [TransitionsProperty](../../animation/animatable.mdx#uid-c79f18fac2) | 定义 [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) 属性。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UnloadedEvent](../control.mdx#uid-382a8f6733) | 定义 [Avalonia.Controls.Control.Unloaded](xref:Avalonia.Controls.Control.Unloaded) 事件。继承自 [Control](../control.mdx)。 |
 | [UseLayoutRoundingProperty](../../layout/layoutable.mdx#uid-e6d86b68b5) | 定义 [Avalonia.Layout.Layoutable.UseLayoutRounding](xref:Avalonia.Layout.Layoutable.UseLayoutRounding) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [VerticalAlignmentProperty](../../layout/layoutable.mdx#uid-b50722555e) | 定义 [Avalonia.Layout.Layoutable.VerticalAlignment](xref:Avalonia.Layout.Layoutable.VerticalAlignment) 属性。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [VerticalContentAlignmentProperty](contentpresenter.mdx#uid-7df1651828) | Defines the [Avalonia.Controls.Presenters.ContentPresenter.VerticalContentAlignment](xref:Avalonia.Controls.Presenters.ContentPresenter.VerticalContentAlignment) property. Inherited from [ContentPresenter](contentpresenter.mdx). |
+| [VerticalContentAlignmentProperty](contentpresenter.mdx#uid-7df1651828) | 定义 [Avalonia.Controls.Presenters.ContentPresenter.VerticalContentAlignment](xref:Avalonia.Controls.Presenters.ContentPresenter.VerticalContentAlignment) 属性。继承自 [ContentPresenter](contentpresenter.mdx)。 |
 | [VerticalSnapPointsAlignmentProperty](#uid-10aa1f5cdf) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.VerticalSnapPointsAlignment](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.VerticalSnapPointsAlignment) 属性。 |
 | [VerticalSnapPointsTypeProperty](#uid-a734cee34f) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.VerticalSnapPointsType](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.VerticalSnapPointsType) 属性。 |
 | [ViewportProperty](#uid-fa12bccb0c) | 定义 [Avalonia.Controls.Presenters.ScrollContentPresenter.Viewport](xref:Avalonia.Controls.Presenters.ScrollContentPresenter.Viewport) 属性。 |

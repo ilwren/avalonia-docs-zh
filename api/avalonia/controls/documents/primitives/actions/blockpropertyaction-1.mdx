@@ -77,14 +77,14 @@ Derived classes only need to:
 
 | 名称 | 说明 |
 | --- | --- |
-| [CanExecute](#uid-333fea44db) | Gets whether the action can currently execute. |
+| [CanExecute](#uid-333fea44db) | 获取该操作当前是否可执行。 |
 | [ClearValue](#uid-8eb88fed9c) | Clears the property value for the selection, reverting affected elements to their inherited or default value. |
-| [Execute](#uid-eabe4cfab7) | Executes the action synchronously. |
-| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | Executes the action asynchronously. Inherited from [EditorAction](editoraction.mdx). |
+| [Execute](#uid-eabe4cfab7) | 同步执行该操作。 |
+| [ExecuteAsync](editoraction.mdx#uid-6a0258eff0) | 异步执行该操作。继承自 [EditorAction](editoraction.mdx)。 |
 | [GetAvailableValues](#uid-b8641a532d) | 暂无摘要。 |
-| [GetState](#uid-4dd39cbeb9) | Gets the current state of the action. |
+| [GetState](#uid-4dd39cbeb9) | 获取该操作的当前状态。 |
 | [GetValue](#uid-205f04bd6d) | 暂无摘要。 |
-| [HasConsistentValue](#uid-2690022924) | Gets whether all affected blocks have the same value for this property. |
+| [HasConsistentValue](#uid-2690022924) | 获取受影响的所有块在该属性上取值是否一致。 |
 | [SetValue](#uid-29d3de382e) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">
@@ -93,7 +93,7 @@ Derived classes only need to:
 
 ### CanExecute 方法 {#canexecute-method}
 
-Gets whether the action can currently execute.
+获取该操作当前是否可执行。
 
 ```csharp
 public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -103,20 +103,20 @@ public bool CanExecute(Avalonia.Controls.Documents.Primitives.ITextEditorHost ho
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to check against.
+要对照检查的编辑器宿主。
 
 
 #### 返回值 {#returns}
 
 bool
 
-True if the action can execute; otherwise, false.
+若该操作可执行则为 true，否则为 false。
 
 
 #### 备注 {#remarks-1}
 
-This is called frequently to update UI state (button enabled/disabled).
-Implementations should be fast and avoid heavy computation.
+该方法会被频繁调用以更新界面状态（按钮启用/禁用），
+因此实现应当足够快，别做繁重的计算。
 
 </section>
 
@@ -137,7 +137,7 @@ public void ClearValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost ho
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to modify.
+要修改的编辑器宿主。
 
 
 </section>
@@ -148,7 +148,7 @@ The editor host to modify.
 
 ### Execute 方法 {#execute-method}
 
-Executes the action synchronously.
+同步执行该操作。
 
 ```csharp
 public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -158,7 +158,7 @@ public void Execute(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to execute on.
+要在其上执行的编辑器宿主。
 
 
 #### 备注 {#remarks-2}
@@ -196,7 +196,7 @@ System.Collections.Generic.IEnumerable&lt;T&gt;
 
 ### GetState 方法 {#getstate-method}
 
-Gets the current state of the action.
+获取该操作的当前状态。
 
 ```csharp
 public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -206,22 +206,22 @@ public object GetState(Avalonia.Controls.Documents.Primitives.ITextEditorHost ho
 
 `host` [Avalonia.Controls.Documents.Primitives.ITextEditorHost](xref:Avalonia.Controls.Documents.Primitives.ITextEditorHost)
 
-The editor host to query.
+要查询的编辑器宿主。
 
 
 #### 返回值 {#returns-2}
 
 object
 
-The current state, or null if the action has no state. A toggle action returns
-a boolean, a property action the current value.
+当前状态；若该操作没有状态则为 null。切换型操作返回布尔值，
+属性型操作返回当前值。
 
 
 #### 备注 {#remarks-3}
 
-Read [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) or
-[Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) instead. Both say which family
-the value came from, which an untyped object cannot.
+请改读 [Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IToggleAction.IsChecked%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29) 或
+[Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject(Avalonia.Controls.Documents.Primitives.ITextEditorHost)](xref:Avalonia.Controls.Documents.Primitives.Actions.IPropertyAction.GetValueAsObject%28Avalonia.Controls.Documents.Primitives.ITextEditorHost%29)。两者都能说明值来自哪一族，
+而无类型的 object 做不到这一点。
 
 </section>
 
@@ -253,7 +253,7 @@ T
 
 ### HasConsistentValue 方法 {#hasconsistentvalue-method}
 
-Gets whether all affected blocks have the same value for this property.
+获取受影响的所有块在该属性上取值是否一致。
 
 ```csharp
 public bool HasConsistentValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host)
@@ -308,7 +308,7 @@ public void SetValue(Avalonia.Controls.Documents.Primitives.ITextEditorHost host
 | 名称 | 说明 |
 | --- | --- |
 | [DisplayName](editoraction.mdx#uid-f07298f749) | Gets the display name for UI purposes. Inherited from [EditorAction](editoraction.mdx). |
-| [Gesture](editoraction.mdx#uid-557e9af400) | Gets the optional keyboard gesture for this action. Inherited from [EditorAction](editoraction.mdx). |
+| [Gesture](editoraction.mdx#uid-557e9af400) | 获取该操作可选的键盘手势。继承自 [EditorAction](editoraction.mdx)。 |
 | [Id](editoraction.mdx#uid-80cef2dbb8) | Gets the unique identifier for this action. Inherited from [EditorAction](editoraction.mdx). |
 
 </ApiRefPage>

@@ -81,14 +81,14 @@ public MultiBinding()
 | 名称 | 说明 |
 | --- | --- |
 | [Bindings](#uid-a44d033896) | Gets the collection of child bindings. |
-| [Converter](#uid-4671a72eec) | Gets or sets the [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter) to use. |
-| [ConverterCulture](#uid-14e24a8228) | Gets or sets the culture in which to evaluate the converter. |
-| [ConverterParameter](#uid-b87ccd9ab2) | Gets or sets a parameter to pass to [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter). |
+| [Converter](#uid-4671a72eec) | 获取或设置要使用的 [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter)。 |
+| [ConverterCulture](#uid-14e24a8228) | 获取或设置执行转换器时所用的区域性。 |
+| [ConverterParameter](#uid-b87ccd9ab2) | 获取或设置要传给 [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter) 的参数。 |
 | [FallbackValue](#uid-4b6d87b7c3) | Gets or sets the value to use when the binding is unable to produce a value. |
-| [Mode](#uid-a392fad099) | Gets or sets the binding mode. |
-| [Priority](#uid-ef87706676) | Gets or sets the binding priority. |
+| [Mode](#uid-a392fad099) | 获取或设置绑定模式。 |
+| [Priority](#uid-ef87706676) | 获取或设置绑定优先级。 |
 | [RelativeSource](#uid-314c25786f) | Gets or sets the relative source for the binding. |
-| [StringFormat](#uid-f401114a50) | Gets or sets the string format. |
+| [StringFormat](#uid-f401114a50) | 获取或设置字符串格式。 |
 | [TargetNullValue](#uid-05378b9819) | Gets or sets the value to use when the binding result is null. |
 
 <section className="apiref-page__member-entry">
@@ -111,7 +111,7 @@ public System.Collections.Generic.IList<Avalonia.Data.BindingBase> Bindings { ge
 
 ### Converter 属性 {#converter-property}
 
-Gets or sets the [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter) to use.
+获取或设置要使用的 [Avalonia.Data.Converters.IMultiValueConverter](xref:Avalonia.Data.Converters.IMultiValueConverter)。
 
 ```csharp
 public Avalonia.Data.Converters.IMultiValueConverter Converter { get; set; }
@@ -125,7 +125,7 @@ public Avalonia.Data.Converters.IMultiValueConverter Converter { get; set; }
 
 ### ConverterCulture 属性 {#converterculture-property}
 
-Gets or sets the culture in which to evaluate the converter.
+获取或设置执行转换器时所用的区域性。
 
 ```csharp
 public System.Globalization.CultureInfo ConverterCulture { get; set; }
@@ -148,7 +148,7 @@ If this property is not set then [System.Globalization.CultureInfo.CurrentCultur
 
 ### ConverterParameter 属性 {#converterparameter-property}
 
-Gets or sets a parameter to pass to [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter).
+获取或设置要传给 [Avalonia.Data.MultiBinding.Converter](xref:Avalonia.Data.MultiBinding.Converter) 的参数。
 
 ```csharp
 public object ConverterParameter { get; set; }
@@ -176,7 +176,7 @@ public object FallbackValue { get; set; }
 
 ### Mode 属性 {#mode-property}
 
-Gets or sets the binding mode.
+获取或设置绑定模式。
 
 ```csharp
 public Avalonia.Data.BindingMode Mode { get; set; }
@@ -190,7 +190,7 @@ public Avalonia.Data.BindingMode Mode { get; set; }
 
 ### Priority 属性 {#priority-property}
 
-Gets or sets the binding priority.
+获取或设置绑定优先级。
 
 ```csharp
 public Avalonia.Data.BindingPriority Priority { get; set; }
@@ -218,7 +218,7 @@ public Avalonia.Data.RelativeSource RelativeSource { get; set; }
 
 ### StringFormat 属性 {#stringformat-property}
 
-Gets or sets the string format.
+获取或设置字符串格式。
 
 ```csharp
 public string StringFormat { get; set; }

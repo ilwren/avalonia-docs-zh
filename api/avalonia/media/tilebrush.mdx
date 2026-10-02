@@ -78,7 +78,7 @@ public class TileBrush
 | [GetValue（3 个重载）](../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Parse](brush.mdx#uid-c74b0204df) | Parses a brush string. Inherited from [Brush](brush.mdx). |
+| [Parse](brush.mdx#uid-c74b0204df) | 解析画刷字符串。继承自 [Brush](brush.mdx)。 |
 | [SetCurrentValue（2 个重载）](../avaloniaobject.mdx#uid-38759fd088) | 设置依赖属性的值，但不改变其值的来源。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [SetValue（3 个重载）](../avaloniaobject.mdx#uid-47d14e19d7) | 设置 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
@@ -92,12 +92,12 @@ public class TileBrush
 | [DestinationRect](#uid-62d11cfc8f) | Gets or sets the rectangle on the destination in which to paint a tile. |
 | [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Item](../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [Opacity](brush.mdx#uid-56a58be17e) | Gets or sets the opacity of the brush. Inherited from [Brush](brush.mdx). |
+| [Opacity](brush.mdx#uid-56a58be17e) | 获取或设置画刷的不透明度。继承自 [Brush](brush.mdx)。 |
 | [SourceRect](#uid-7ec3a0bf52) | Gets or sets the rectangle of the source image that will be displayed. |
 | [Stretch](#uid-0f3e8a1b10) | Gets or sets a value controlling how the source rectangle will be stretched to fill the destination rect. |
 | [TileMode](#uid-dc5dc1a38f) | Gets or sets the brush's tile mode. |
-| [Transform](brush.mdx#uid-8d25869723) | Gets or sets the transform of the brush. Inherited from [Brush](brush.mdx). |
-| [TransformOrigin](brush.mdx#uid-406d6c9e88) | Gets or sets the origin of the brush [Avalonia.Media.Brush.Transform](xref:Avalonia.Media.Brush.Transform) Inherited from [Brush](brush.mdx). |
+| [Transform](brush.mdx#uid-8d25869723) | 获取或设置画刷的变换。继承自 [Brush](brush.mdx)。 |
+| [TransformOrigin](brush.mdx#uid-406d6c9e88) | 获取或设置画刷 [Avalonia.Media.Brush.Transform](xref:Avalonia.Media.Brush.Transform) 的原点。继承自 [Brush](brush.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 
 <section className="apiref-page__member-entry">
@@ -192,12 +192,12 @@ public Avalonia.Media.TileMode TileMode { get; set; }
 | [AlignmentXProperty](#uid-b5ca58adcd) | 定义 [Avalonia.Media.TileBrush.AlignmentX](xref:Avalonia.Media.TileBrush.AlignmentX) 属性。 |
 | [AlignmentYProperty](#uid-f8b166babe) | 定义 [Avalonia.Media.TileBrush.AlignmentY](xref:Avalonia.Media.TileBrush.AlignmentY) 属性。 |
 | [DestinationRectProperty](#uid-6fecc189d1) | 定义 [Avalonia.Media.TileBrush.DestinationRect](xref:Avalonia.Media.TileBrush.DestinationRect) 属性。 |
-| [OpacityProperty](brush.mdx#uid-d84302c650) | Defines the [Avalonia.Media.Brush.Opacity](xref:Avalonia.Media.Brush.Opacity) property. Inherited from [Brush](brush.mdx). |
+| [OpacityProperty](brush.mdx#uid-d84302c650) | 定义 [Avalonia.Media.Brush.Opacity](xref:Avalonia.Media.Brush.Opacity) 属性。继承自 [Brush](brush.mdx)。 |
 | [SourceRectProperty](#uid-94d60976da) | 定义 [Avalonia.Media.TileBrush.SourceRect](xref:Avalonia.Media.TileBrush.SourceRect) 属性。 |
 | [StretchProperty](#uid-52077d5dbb) | 定义 [Avalonia.Media.TileBrush.Stretch](xref:Avalonia.Media.TileBrush.Stretch) 属性。 |
 | [TileModeProperty](#uid-03d37e0b80) | 定义 [Avalonia.Media.TileBrush.TileMode](xref:Avalonia.Media.TileBrush.TileMode) 属性。 |
-| [TransformOriginProperty](brush.mdx#uid-3a3c0bc732) | Defines the [Avalonia.Media.Brush.TransformOrigin](xref:Avalonia.Media.Brush.TransformOrigin) property Inherited from [Brush](brush.mdx). |
-| [TransformProperty](brush.mdx#uid-933d2c0564) | Defines the [Avalonia.Media.Brush.Transform](xref:Avalonia.Media.Brush.Transform) property. Inherited from [Brush](brush.mdx). |
+| [TransformOriginProperty](brush.mdx#uid-3a3c0bc732) | 定义 [Avalonia.Media.Brush.TransformOrigin](xref:Avalonia.Media.Brush.TransformOrigin) 属性。继承自 [Brush](brush.mdx)。 |
+| [TransformProperty](brush.mdx#uid-933d2c0564) | 定义 [Avalonia.Media.Brush.Transform](xref:Avalonia.Media.Brush.Transform) 属性。继承自 [Brush](brush.mdx)。 |
 | [TransitionsProperty](../animation/animatable.mdx#uid-c79f18fac2) | 定义 [Avalonia.Animation.Animatable.Transitions](xref:Avalonia.Animation.Animatable.Transitions) 属性。继承自 [Animatable](../animation/animatable.mdx)。 |
 
 <section className="apiref-page__member-entry">

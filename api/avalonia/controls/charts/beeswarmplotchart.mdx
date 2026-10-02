@@ -238,7 +238,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ToggleSeriesVisibility](chartbase.mdx#uid-9c88230ede) | 获取或设置点击图例项是否切换数据系列的可见性。该设置仅对图例代表可隐藏数据系列或类别的图表有效；图例为说明性刻度的图表会将此值强制改回 。继承自 [ChartBase](chartbase.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [ValuePath](#uid-da051d3e17) | Gets or sets the property path for values. |
+| [ValuePath](#uid-da051d3e17) | 获取或设置取值所用的属性路径。 |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Width](../../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [ZIndex](../../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../../visual.mdx)。 |
@@ -361,7 +361,7 @@ public double StrokeThickness { get; set; }
 
 ### ValuePath 属性 {#valuepath-property}
 
-Gets or sets the property path for values.
+获取或设置取值所用的属性路径。
 
 ```csharp
 public string ValuePath { get; set; }

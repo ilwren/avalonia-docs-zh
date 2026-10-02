@@ -83,7 +83,7 @@ public FluentColorPalette()
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetColor](#uid-60efb3c36c) | Gets a color in the palette by index. |
+| [GetColor](#uid-60efb3c36c) | 按索引获取调色板中的某个颜色。 |
 
 <section className="apiref-page__member-entry">
 
@@ -91,7 +91,7 @@ public FluentColorPalette()
 
 ### GetColor 方法 {#getcolor-method}
 
-Gets a color in the palette by index.
+按索引获取调色板中的某个颜色。
 
 ```csharp
 public Avalonia.Media.Color GetColor(int colorIndex, int shadeIndex)
@@ -101,21 +101,21 @@ public Avalonia.Media.Color GetColor(int colorIndex, int shadeIndex)
 
 `colorIndex` int
 
-The index of the color in the palette.
-The index must be between zero and [Avalonia.Controls.IColorPalette.ColorCount](xref:Avalonia.Controls.IColorPalette.ColorCount).
+该颜色在调色板中的索引。
+索引必须介于零与 [Avalonia.Controls.IColorPalette.ColorCount](xref:Avalonia.Controls.IColorPalette.ColorCount) 之间。
 
 
 `shadeIndex` int
 
-The index of the color shade in the palette.
-The index must be between zero and [Avalonia.Controls.IColorPalette.ShadeCount](xref:Avalonia.Controls.IColorPalette.ShadeCount).
+该色度在调色板中的索引。
+索引必须介于零与 [Avalonia.Controls.IColorPalette.ShadeCount](xref:Avalonia.Controls.IColorPalette.ShadeCount) 之间。
 
 
 #### 返回值 {#returns}
 
 [Avalonia.Media.Color](xref:Avalonia.Media.Color)
 
-The color at the specified index or an exception.
+指定索引处的颜色，或抛出异常。
 
 
 </section>
@@ -143,7 +143,7 @@ public int ColorCount { get; set; }
 
 #### 备注 {#remarks}
 
-Represents total columns in a table.
+表示表格的总列数。
 
 </section>
 
@@ -163,7 +163,7 @@ public int ShadeCount { get; set; }
 
 #### 备注 {#remarks-1}
 
-Represents total rows in a table.
+表示表格的总行数。
 
 </section>
 

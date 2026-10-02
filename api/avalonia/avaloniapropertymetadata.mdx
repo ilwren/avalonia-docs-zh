@@ -93,7 +93,7 @@ public AvaloniaPropertyMetadata(Avalonia.Data.BindingMode defaultBindingMode, Nu
 | --- | --- |
 | [Freeze](#uid-db1cdb0cff) | Makes this instance read-only. No further modifications are allowed after this call. |
 | [GenerateTypeSafeMetadata](#uid-2221ececec) | Gets a copy of this object configured for use with any owner type. |
-| [Merge](#uid-92919180d4) | Merges the metadata with the base metadata. |
+| [Merge](#uid-92919180d4) | 把该元数据与基础元数据合并。 |
 
 <section className="apiref-page__member-entry">
 
@@ -139,7 +139,7 @@ For example, delegates which receive the owner object should be removed.
 
 ### Merge 方法 {#merge-method}
 
-Merges the metadata with the base metadata.
+把该元数据与基础元数据合并。
 
 ```csharp
 public void Merge(Avalonia.AvaloniaPropertyMetadata baseMetadata, Avalonia.AvaloniaProperty property)

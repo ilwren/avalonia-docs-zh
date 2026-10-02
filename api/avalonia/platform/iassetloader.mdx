@@ -60,7 +60,7 @@ public interface IAssetLoader
 | [GetAssembly](#uid-a9cbf6df3d) | Extracts assembly information from URI |
 | [GetAssets](#uid-124a555456) | Gets all assets of a folder and subfolders that match specified uri. |
 | [InvalidateAssemblyCache (2 overloads)](#uid-adac6efb6a) | Removes all assemblies from the cache. |
-| [Open](#uid-1f12830fe4) | Opens the asset with the requested URI. |
+| [Open](#uid-1f12830fe4) | 按请求的 URI 打开资产。 |
 | [OpenAndGetAssembly](#uid-1f69abc1fa) | Opens the asset with the requested URI and returns the asset stream and the assembly containing the asset. |
 | [SetDefaultAssembly](#uid-dab91beb44) | We need a way to override the default assembly selected by the host platform because right now it is selecting the wrong one for PCL based Apps. The [AssetLoader](xref:Avalonia.Platform.AssetLoader) needs a refactor cause right now it lives in 3+ platforms which can all be loaded on Windows. |
 
@@ -80,12 +80,12 @@ public bool Exists(Uri uri, Uri baseUri)
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
 #### 返回值 {#returns}
@@ -113,12 +113,12 @@ public System.Reflection.Assembly GetAssembly(Uri uri, Uri baseUri)
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
 #### 返回值 {#returns-1}
@@ -146,7 +146,7 @@ public System.Collections.Generic.IEnumerable<Uri> GetAssets(Uri uri, Uri baseUr
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
@@ -208,7 +208,7 @@ The Assemblies.First().GetName().Name
 
 ### Open 方法 {#open-method}
 
-Opens the asset with the requested URI.
+按请求的 URI 打开资产。
 
 ```csharp
 public System.IO.Stream Open(Uri uri, Uri baseUri)
@@ -218,12 +218,12 @@ public System.IO.Stream Open(Uri uri, Uri baseUri)
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
 #### 返回值 {#returns-3}
@@ -235,7 +235,7 @@ A stream containing the asset contents.
 
 #### 异常 {#exceptions}
 
-- [The asset could not be found.](xref:System.IO.FileNotFoundException)
+- [找不到该资产。](xref:System.IO.FileNotFoundException)
 
 </section>
 
@@ -256,12 +256,12 @@ public ValueTuple<System.IO.Stream, System.Reflection.Assembly> OpenAndGetAssemb
 
 `uri` Uri
 
-The URI.
+该 URI。
 
 
 `baseUri` Uri
 
-A base URI to use if `uri` is relative.
+当 `uri` 为相对路径时所用的基 URI。
 
 
 #### 返回值 {#returns-4}
@@ -273,7 +273,7 @@ The stream containing the asset contents together with the assembly.
 
 #### 异常 {#exceptions-1}
 
-- [The asset could not be found.](xref:System.IO.FileNotFoundException)
+- [找不到该资产。](xref:System.IO.FileNotFoundException)
 
 </section>
 

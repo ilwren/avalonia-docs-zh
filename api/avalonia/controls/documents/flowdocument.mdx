@@ -105,7 +105,7 @@ The [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) to a
 
 ##### 异常 {#exceptions}
 
-- [\`textDocument\` is null.](xref:System.ArgumentNullException)
+- [\`textDocument\` 为 null。](xref:System.ArgumentNullException)
 
 </section>
 
@@ -113,13 +113,13 @@ The [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) to a
 
 | 名称 | 说明 |
 | --- | --- |
-| [ApplyBlockFormatting](#uid-e6d7623c1c) | Applies captured formatting to an element. |
-| [ApplyInlineFormatting](#uid-0531842318) | Applies captured formatting to an element. |
-| [ApplyListItemFormatting](#uid-750f1a81c5) | Applies captured formatting to an element. |
+| [ApplyBlockFormatting](#uid-e6d7623c1c) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyInlineFormatting](#uid-0531842318) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyListItemFormatting](#uid-750f1a81c5) | 把捕获到的格式应用到某个元素上。 |
 | [ApplyStyling](../../styledelement.mdx#uid-b0f81a6f8f) | 若控件已初始化且尚未应用样式，则为其应用样式。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [ApplyTableCellFormatting](#uid-c630c53ae6) | Applies captured formatting to an element. |
-| [ApplyTableRowFormatting](#uid-1b714b165e) | Applies captured formatting to an element. |
-| [ApplyTextElementFormatting](#uid-cbbb04c22b) | Applies captured formatting to an element. |
+| [ApplyTableCellFormatting](#uid-c630c53ae6) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyTableRowFormatting](#uid-1b714b165e) | 把捕获到的格式应用到某个元素上。 |
+| [ApplyTextElementFormatting](#uid-cbbb04c22b) | 把捕获到的格式应用到某个元素上。 |
 | [BeginInit](../../styledelement.mdx#uid-91c6ccadce) | 继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Bind（8 个重载）](../../avaloniaobject.mdx#uid-1c60c7bda3) | 将 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 绑定到 [Avalonia.Data.BindingBase](xref:Avalonia.Data.BindingBase)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [CheckAccess](../../avaloniaobject.mdx#uid-260ff7a68d) | 返回一个值，指示当前线程是否为 UI 线程。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
@@ -153,7 +153,7 @@ The [TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument) to a
 
 ### ApplyBlockFormatting 方法 {#applyblockformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyBlockFormatting(Avalonia.Controls.Documents.Block block, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
@@ -168,12 +168,12 @@ The block to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
 #### 备注 {#remarks}
@@ -190,7 +190,7 @@ It exists to serve element materialization; to format a live document use
 
 ### ApplyInlineFormatting 方法 {#applyinlineformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyInlineFormatting(Avalonia.Controls.Documents.RichInline inline, Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting formatting)
@@ -205,12 +205,12 @@ The inline to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.InlineFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
 #### 备注 {#remarks-1}
@@ -227,7 +227,7 @@ It exists to serve element materialization; to format a live document use
 
 ### ApplyListItemFormatting 方法 {#applylistitemformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyListItemFormatting(Avalonia.Controls.Documents.ListItem item, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
@@ -242,12 +242,12 @@ The list item to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
 #### 备注 {#remarks-2}
@@ -264,7 +264,7 @@ It exists to serve element materialization; to format a live document use
 
 ### ApplyTableCellFormatting 方法 {#applytablecellformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyTableCellFormatting(Avalonia.Controls.Documents.TableCell cell, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
@@ -279,12 +279,12 @@ The cell to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
 #### 备注 {#remarks-3}
@@ -301,7 +301,7 @@ It exists to serve element materialization; to format a live document use
 
 ### ApplyTableRowFormatting 方法 {#applytablerowformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyTableRowFormatting(Avalonia.Controls.Documents.TableRow row, Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting formatting)
@@ -316,12 +316,12 @@ The row to write onto.
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 `element`
 
-The element to write onto.
+要写入的元素。
 
 
 #### 备注 {#remarks-4}
@@ -338,7 +338,7 @@ It exists to serve element materialization; to format a live document use
 
 ### ApplyTextElementFormatting 方法 {#applytextelementformatting-method}
 
-Applies captured formatting to an element.
+把捕获到的格式应用到某个元素上。
 
 ```csharp
 public void ApplyTextElementFormatting(Avalonia.Controls.Documents.RichTextElement element, Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting formatting)
@@ -348,12 +348,12 @@ public void ApplyTextElementFormatting(Avalonia.Controls.Documents.RichTextEleme
 
 `element` [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)
 
-The element to write onto.
+要写入的元素。
 
 
 `formatting` [Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting](xref:Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)
 
-The formatting to apply.
+要应用的格式设置。
 
 
 #### 备注 {#remarks-5}
@@ -547,7 +547,7 @@ public Avalonia.Controls.Documents.FlowDocument Load(System.IO.Stream stream, Av
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
@@ -585,12 +585,12 @@ public Avalonia.Controls.Documents.FlowDocument Load(System.IO.Stream stream, Av
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
@@ -615,7 +615,7 @@ not construct.
 
 ##### 异常 {#exceptions-1}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
 - [The load was cancelled.](xref:System.OperationCanceledException)
 - [The stream content is invalid for the format.](xref:Avalonia.Controls.Documents.Serialization.SerializationException)
 
@@ -637,12 +637,12 @@ public System.Threading.Tasks.Task<Avalonia.Controls.Documents.FlowDocument> Loa
 
 `stream` System.IO.Stream
 
-The stream to read from.
+要读取的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
@@ -680,7 +680,7 @@ and is inherently UI-bound.
 
 #### 异常 {#exceptions-2}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
 - [The load was cancelled.](xref:System.OperationCanceledException)
 
 </section>
@@ -705,7 +705,7 @@ public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serializat
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
@@ -736,12 +736,12 @@ public void Save(System.IO.Stream stream, Avalonia.Controls.Documents.Serializat
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
@@ -757,7 +757,7 @@ pays the whole cost on the UI thread. For a large document use
 
 ##### 异常 {#exceptions-3}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
 - [The save was cancelled.](xref:System.OperationCanceledException)
 
 </section>
@@ -778,12 +778,12 @@ public System.Threading.Tasks.Task SaveAsync(System.IO.Stream stream, Avalonia.C
 
 `stream` System.IO.Stream
 
-The stream to write to.
+要写入的流。
 
 
 `serializer` [Avalonia.Controls.Documents.Serialization.IDocumentSerializer](xref:Avalonia.Controls.Documents.Serialization.IDocumentSerializer)
 
-The serializer to use.
+要使用的序列化器。
 
 
 `cancellationToken` System.Threading.CancellationToken
@@ -807,7 +807,7 @@ thread that owns it.
 
 #### 异常 {#exceptions-4}
 
-- [\`stream\` or \`serializer\` is null.](xref:System.ArgumentNullException)
+- [\`stream\` 或 \`serializer\` 为 null。](xref:System.ArgumentNullException)
 
 </section>
 

@@ -118,7 +118,7 @@ The position of the rectangle.
 
 `size` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
-The size of the rectangle.
+矩形的尺寸。
 
 
 </section>
@@ -139,7 +139,7 @@ public PixelRect(Avalonia.PixelSize size)
 
 `size` [Avalonia.PixelSize](xref:Avalonia.PixelSize)
 
-The size of the rectangle.
+矩形的尺寸。
 
 
 </section>
@@ -170,12 +170,12 @@ The Y position.
 
 `width` int
 
-The width.
+宽度。
 
 
 `height` int
 
-The height.
+高度。
 
 
 </section>
@@ -188,8 +188,8 @@ The height.
 | [Contains (2 overloads)](#uid-a458e3c264) | Determines whether a point in the bounds of the rectangle. |
 | [ContainsExclusive](#uid-3a64b5f0e8) | Determines whether a point is in the bounds of the rectangle, exclusive of the rectangle's bottom/right edge. |
 | [Equals（2 个重载）](#uid-dab286ffc1) | Returns a boolean indicating whether the rect is equal to the other given rect. |
-| [FromRect (2 overloads)](#uid-83a2288e85) | Converts a [Avalonia.Rect](xref:Avalonia.Rect) to device pixels using the specified scaling factor. |
-| [FromRectWithDpi (2 overloads)](#uid-07364607c9) | Converts a [Avalonia.Rect](xref:Avalonia.Rect) to device pixels using the specified dots per inch (DPI). |
+| [FromRect (2 overloads)](#uid-83a2288e85) | 按指定的缩放系数把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。 |
+| [FromRectWithDpi (2 overloads)](#uid-07364607c9) | 按指定的每英寸点数（DPI）把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。 |
 | [GetHashCode](#uid-9c96c5b3a7) | 返回该实例的哈希码。 |
 | [Intersect](#uid-19f3ba3fa5) | Gets the intersection of two rectangles. |
 | [Intersects](#uid-1917bf56e7) | Determines whether a rectangle intersects with this rectangle. |
@@ -252,7 +252,7 @@ public bool Contains(Avalonia.PixelPoint p)
 
 `p` [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The point.
+该点。
 
 
 ##### 返回值 {#returns-1}
@@ -309,7 +309,7 @@ public bool ContainsExclusive(Avalonia.PixelPoint p)
 
 `p` [Avalonia.PixelPoint](xref:Avalonia.PixelPoint)
 
-The point.
+该点。
 
 
 #### 返回值 {#returns-3}
@@ -391,7 +391,7 @@ True if the object is equal to this rectangle; false otherwise.
 
 #### FromRect 方法 {#fromrect-method}
 
-Converts a [Avalonia.Rect](xref:Avalonia.Rect) to device pixels using the specified scaling factor.
+按指定的缩放系数把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelRect FromRect(Avalonia.Rect rect, Avalonia.Vector scale)
@@ -406,14 +406,14 @@ The rect.
 
 `scale` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-6}
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -424,7 +424,7 @@ The device-independent point.
 
 #### FromRect 方法 {#fromrect-method-1}
 
-Converts a [Avalonia.Rect](xref:Avalonia.Rect) to device pixels using the specified scaling factor.
+按指定的缩放系数把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelRect FromRect(Avalonia.Rect rect, double scale)
@@ -439,7 +439,7 @@ The rect.
 
 `scale` double
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-7}
@@ -461,7 +461,7 @@ The device-independent rect.
 
 #### FromRectWithDpi 方法 {#fromrectwithdpi-method}
 
-Converts a [Avalonia.Rect](xref:Avalonia.Rect) to device pixels using the specified dots per inch (DPI).
+按指定的每英寸点数（DPI）把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelRect FromRectWithDpi(Avalonia.Rect rect, Avalonia.Vector dpi)
@@ -476,14 +476,14 @@ The rect.
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-8}
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -494,7 +494,7 @@ The device-independent point.
 
 #### FromRectWithDpi 方法 {#fromrectwithdpi-method-1}
 
-Converts a [Avalonia.Rect](xref:Avalonia.Rect) to device pixels using the specified dots per inch (DPI).
+按指定的每英寸点数（DPI）把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。
 
 ```csharp
 public Avalonia.PixelRect FromRectWithDpi(Avalonia.Rect rect, double dpi)
@@ -509,14 +509,14 @@ The rect.
 
 `dpi` double
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-9}
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The device-independent point.
+设备无关像素坐标点。
 
 
 </section>
@@ -537,7 +537,7 @@ public int GetHashCode()
 
 int
 
-The hash code.
+哈希码。
 
 
 </section>
@@ -558,7 +558,7 @@ public Avalonia.PixelRect Intersect(Avalonia.PixelRect rect)
 
 `rect` [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The other rectangle.
+另一个矩形。
 
 
 #### 返回值 {#returns-11}
@@ -586,7 +586,7 @@ public bool Intersects(Avalonia.PixelRect rect)
 
 `rect` [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The other rectangle.
+另一个矩形。
 
 
 #### 返回值 {#returns-12}
@@ -614,14 +614,14 @@ public Avalonia.PixelRect Parse(string s)
 
 `s` string
 
-The string.
+该字符串。
 
 
 #### 返回值 {#returns-13}
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The parsed [Avalonia.PixelRect](xref:Avalonia.PixelRect).
+解析得到的 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 
 </section>
@@ -647,7 +647,7 @@ public Avalonia.Rect ToRect(Avalonia.Vector scale)
 
 `scale` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-14}
@@ -676,7 +676,7 @@ public Avalonia.Rect ToRect(double scale)
 
 `scale` double
 
-The scaling factor.
+缩放系数。
 
 
 ##### 返回值 {#returns-15}
@@ -709,7 +709,7 @@ public Avalonia.Rect ToRectWithDpi(Avalonia.Vector dpi)
 
 `dpi` [Avalonia.Vector](xref:Avalonia.Vector)
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-16}
@@ -738,7 +738,7 @@ public Avalonia.Rect ToRectWithDpi(double dpi)
 
 `dpi` double
 
-The dots per inch of the device.
+设备的每英寸点数。
 
 
 ##### 返回值 {#returns-17}
@@ -815,7 +815,7 @@ public Avalonia.PixelRect Union(Avalonia.PixelRect rect)
 
 `rect` [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The other rectangle.
+另一个矩形。
 
 
 #### 返回值 {#returns-20}
@@ -843,14 +843,14 @@ public Avalonia.PixelRect WithHeight(int height)
 
 `height` int
 
-The height.
+高度。
 
 
 #### 返回值 {#returns-21}
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The new [Avalonia.PixelRect](xref:Avalonia.PixelRect).
+新的 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 
 </section>
@@ -871,14 +871,14 @@ public Avalonia.PixelRect WithWidth(int width)
 
 `width` int
 
-The width.
+宽度。
 
 
 #### 返回值 {#returns-22}
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The new [Avalonia.PixelRect](xref:Avalonia.PixelRect).
+新的 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 
 </section>
@@ -906,7 +906,7 @@ The x position.
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The new [Avalonia.PixelRect](xref:Avalonia.PixelRect).
+新的 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 
 </section>
@@ -934,7 +934,7 @@ The y position.
 
 [Avalonia.PixelRect](xref:Avalonia.PixelRect)
 
-The new [Avalonia.PixelRect](xref:Avalonia.PixelRect).
+新的 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 
 </section>
@@ -947,15 +947,15 @@ The new [Avalonia.PixelRect](xref:Avalonia.PixelRect).
 | [BottomLeft](#uid-a17dcd1536) | Gets the bottom left point of the rectangle. |
 | [BottomRight](#uid-be536e5c16) | Gets the bottom right point of the rectangle. |
 | [Center](#uid-ae34e432d9) | Gets the center point of the rectangle. |
-| [Height](#uid-51d9d79874) | Gets the height. |
+| [Height](#uid-51d9d79874) | 获取高度。 |
 | [Position](#uid-502dd64523) | Gets the position of the rectangle. |
 | [Right](#uid-bd7518528b) | Gets the right position of the rectangle. |
 | [Size](#uid-a0445e84ef) | Gets the size of the rectangle. |
 | [TopLeft](#uid-9d12b8370b) | Gets the top left point of the rectangle. |
 | [TopRight](#uid-40bad8b70f) | Gets the top right point of the rectangle. |
-| [Width](#uid-6d6da23ec9) | Gets the width. |
-| [X](#uid-8596bffbd8) | Gets the X position. |
-| [Y](#uid-1eb4bdafa1) | Gets the Y position. |
+| [Width](#uid-6d6da23ec9) | 获取宽度。 |
+| [X](#uid-8596bffbd8) | 获取 X 位置。 |
+| [Y](#uid-1eb4bdafa1) | 获取 Y 位置。 |
 
 <section className="apiref-page__member-entry">
 
@@ -1019,7 +1019,7 @@ public Avalonia.PixelPoint Center { get; set; }
 
 ### Height 属性 {#height-property}
 
-Gets the height.
+获取高度。
 
 ```csharp
 public int Height { get; set; }
@@ -1103,7 +1103,7 @@ public Avalonia.PixelPoint TopRight { get; set; }
 
 ### Width 属性 {#width-property}
 
-Gets the width.
+获取宽度。
 
 ```csharp
 public int Width { get; set; }
@@ -1117,7 +1117,7 @@ public int Width { get; set; }
 
 ### X 属性 {#x-property}
 
-Gets the X position.
+获取 X 位置。
 
 ```csharp
 public int X { get; set; }
@@ -1131,7 +1131,7 @@ public int X { get; set; }
 
 ### Y 属性 {#y-property}
 
-Gets the Y position.
+获取 Y 位置。
 
 ```csharp
 public int Y { get; set; }

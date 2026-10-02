@@ -92,7 +92,7 @@ The text document containing the selection.
 | --- | --- |
 | [ApplyPropertyValue](#uid-17ce04d15c) | 暂无摘要。 |
 | [ClearAllProperties](documents/textmodel/textrange.mdx#uid-1d087e30fc) | Clears all inline formatting properties from the range. Content is preserved; only formatting is removed. Produces a single [Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit](xref:Avalonia.Controls.Documents.Undo.BlockSnapshotUndoUnit) for atomic undo/redo. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
-| [ClearPropertyValue](documents/textmodel/textrange.mdx#uid-ecf1a6ea8a) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
+| [ClearPropertyValue](documents/textmodel/textrange.mdx#uid-ecf1a6ea8a) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
 | [ClearSelection](#uid-761fa71ea2) | Clears the selection, placing the caret at the current caret position. |
 | [ClearSpringloadProperties](#uid-f769cc1d42) | Clears all springloaded properties. |
 | [ClearSpringloadProperty](#uid-c84ee1d189) | Clears a springloaded property. |
@@ -104,18 +104,18 @@ The text document containing the selection.
 | [DeleteTextAt](documents/textmodel/textrange.mdx#uid-9beff62495) | Deletes text at the specified range relative to this range. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [ExtendTo](#uid-189ba2e59b) | Extends the selection to a new position while keeping the anchor fixed. |
 | [GetContainingBlock](#uid-e1f67b2c4d) | 暂无摘要。 |
-| [GetPropertyValue](documents/textmodel/textrange.mdx#uid-71aaf13562) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
+| [GetPropertyValue](documents/textmodel/textrange.mdx#uid-71aaf13562) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
 | [GetSpringloadProperties](#uid-b3c7991220) | Gets all springloaded properties. |
 | [GetText](documents/textmodel/textrange.mdx#uid-c626a57a24) | Returns the text content covered by this range. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [InsertFootnote](documents/textmodel/textrange.mdx#uid-17dcc48a9d) | Replaces the range content with a footnote: the anchor (its number as ordinary text) lands at the range position, splitting a run when it sits mid-run, and the note body is created in the document's trailing footnote container with a fresh id - selection delete, anchor, body, and the anchor renumbering are one undo unit. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
-| [InsertImage](documents/textmodel/textrange.mdx#uid-582fca47b6) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
+| [InsertImage](documents/textmodel/textrange.mdx#uid-582fca47b6) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
 | [InsertPageNumberField](documents/textmodel/textrange.mdx#uid-e42dca56bf) | Replaces the range content with a page-number field of `kind`: the field lands at the range position, splitting a run when it sits mid-run, and shows its cached result until a page layout resolves it (a band on a sheet renders the sheet's number) - selection delete and insertion are one undo unit. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [InsertSnapshot](#uid-92247c4d26) | Inserts a document snapshot over the selection, then collapses the selection to the end of the inserted content and resets direction. |
 | [InsertTextAt](documents/textmodel/textrange.mdx#uid-6571a17b59) | Inserts text at the specified offset relative to the range start. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [Load](documents/textmodel/textrange.mdx#uid-1caf2c195a) | Replaces this range with the content of a stream. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [MoveTo](#uid-0c8ed74160) | Moves the caret to the specified position. |
 | [Overlaps](documents/textmodel/textrange.mdx#uid-97e89eec06) | Checks if this range overlaps with another range. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
-| [ReplaceText (2 overloads)](documents/textmodel/textrange.mdx#uid-860443a3a7) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
+| [ReplaceText (2 overloads)](documents/textmodel/textrange.mdx#uid-860443a3a7) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
 | [ReplaceTextAt](documents/textmodel/textrange.mdx#uid-a1020d16a5) | Replaces text at the specified range relative to this range. Manages transaction automatically. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [Save](documents/textmodel/textrange.mdx#uid-0ebfb1caa1) | Writes this range to a stream. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [Select](#uid-6e90cbfdbc) | Selects a range of text between two positions. |
@@ -124,8 +124,8 @@ The text document containing the selection.
 | [SetImageSize](documents/textmodel/textrange.mdx#uid-15eda4245a) | Sets the display size of an existing [Avalonia.Controls.Documents.RichImage](xref:Avalonia.Controls.Documents.RichImage) in a single undoable change. Pass [double.NaN](xref:System.Double.NaN) for a dimension to use the image's intrinsic pixel size. Inherited from [TextRange](documents/textmodel/textrange.mdx). |
 | [SetSpringloadProperty](#uid-a6bfd06000) | 暂无摘要。 |
 | [TogglePropertyValue](#uid-98b69ad8cc) | 暂无摘要。 |
-| [ToString](documents/textmodel/textrange.mdx#uid-2b81309a1f) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
-| [TryGetPropertyValue](documents/textmodel/textrange.mdx#uid-8a1f50a579) | Inherited from [TextRange](documents/textmodel/textrange.mdx). |
+| [ToString](documents/textmodel/textrange.mdx#uid-2b81309a1f) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
+| [TryGetPropertyValue](documents/textmodel/textrange.mdx#uid-8a1f50a579) | 继承自 [TextRange](documents/textmodel/textrange.mdx)。 |
 | [TryGetSpringloadProperty](#uid-892eea8f22) | 暂无摘要。 |
 
 <section className="apiref-page__member-entry">

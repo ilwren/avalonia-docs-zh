@@ -89,9 +89,9 @@ public SelectionModelSelectionChangedEventArgs<T>(System.Collections.Generic.IRe
 | 名称 | 说明 |
 | --- | --- |
 | [DeselectedIndexes](#uid-fcab4fbf13) | Gets the indexes of the items that were removed from the selection. |
-| [DeselectedItems](#uid-b5e7c073a6) | Gets the items that were removed from the selection. |
+| [DeselectedItems](#uid-b5e7c073a6) | 获取已从选区中移除的那些项。 |
 | [SelectedIndexes](#uid-7e486a9f2f) | Gets the indexes of the items that were added to the selection. |
-| [SelectedItems](#uid-6966cb1f81) | Gets the items that were added to the selection. |
+| [SelectedItems](#uid-6966cb1f81) | 获取新加入选区的那些项。 |
 
 <section className="apiref-page__member-entry">
 
@@ -113,7 +113,7 @@ public System.Collections.Generic.IReadOnlyList<int> DeselectedIndexes { get; se
 
 ### DeselectedItems 属性 {#deselecteditems-property}
 
-Gets the items that were removed from the selection.
+获取已从选区中移除的那些项。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<T> DeselectedItems { get; set; }
@@ -141,7 +141,7 @@ public System.Collections.Generic.IReadOnlyList<int> SelectedIndexes { get; set;
 
 ### SelectedItems 属性 {#selecteditems-property}
 
-Gets the items that were added to the selection.
+获取新加入选区的那些项。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<T> SelectedItems { get; set; }

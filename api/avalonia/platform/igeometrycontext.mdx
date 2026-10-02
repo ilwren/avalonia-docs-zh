@@ -62,11 +62,11 @@ public interface IGeometryContext
 
 | 名称 | 说明 |
 | --- | --- |
-| [ArcTo](#uid-528688a318) | Draws an arc to the specified point. |
-| [BeginFigure](#uid-59fecc3071) | Begins a new figure. |
-| [CubicBezierTo](#uid-50f83ecbba) | Draws a Bezier curve to the specified point. |
+| [ArcTo](#uid-528688a318) | 画一段圆弧到指定点。 |
+| [BeginFigure](#uid-59fecc3071) | 开始一段新图形。 |
+| [CubicBezierTo](#uid-50f83ecbba) | 画一条贝塞尔曲线到指定点。 |
 | [EndFigure](#uid-b37d0fd9b8) | Ends the figure started by [Avalonia.Platform.IGeometryContext.BeginFigure(Avalonia.Point,bool)](xref:Avalonia.Platform.IGeometryContext.BeginFigure%28Avalonia.Point%2CSystem.Boolean%29). |
-| [LineTo](#uid-9a46d29fe4) | Draws a line to the specified point. |
+| [LineTo](#uid-9a46d29fe4) | 画一条直线到指定点。 |
 | [QuadraticBezierTo](#uid-1eff7e8afa) | Draws a quadratic Bezier curve to the specified point. |
 | [SetFillRule](#uid-f5a505acea) | Sets path's winding rule (default is EvenOdd). You should call this method before any calls to BeginFigure. |
 
@@ -76,7 +76,7 @@ public interface IGeometryContext
 
 ### ArcTo 方法 {#arcto-method}
 
-Draws an arc to the specified point.
+画一段圆弧到指定点。
 
 ```csharp
 public void ArcTo(Avalonia.Point point, Avalonia.Size size, double rotationAngle, bool isLargeArc, Avalonia.Media.SweepDirection sweepDirection, bool isStroked)
@@ -113,7 +113,7 @@ A value that indicates whether the arc is drawn in the Clockwise or Counterclock
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -124,7 +124,7 @@ Whether the segment is stroked.
 
 ### BeginFigure 方法 {#beginfigure-method}
 
-Begins a new figure.
+开始一段新图形。
 
 ```csharp
 public void BeginFigure(Avalonia.Point startPoint, bool isFilled)
@@ -150,7 +150,7 @@ Whether the figure is filled.
 
 ### CubicBezierTo 方法 {#cubicbezierto-method}
 
-Draws a Bezier curve to the specified point.
+画一条贝塞尔曲线到指定点。
 
 ```csharp
 public void CubicBezierTo(Avalonia.Point controlPoint1, Avalonia.Point controlPoint2, Avalonia.Point endPoint, bool isStroked)
@@ -175,7 +175,7 @@ The destination point for the end of the curve.
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -207,7 +207,7 @@ Whether the figure is closed.
 
 ### LineTo 方法 {#lineto-method}
 
-Draws a line to the specified point.
+画一条直线到指定点。
 
 ```csharp
 public void LineTo(Avalonia.Point point, bool isStroked)
@@ -222,7 +222,7 @@ The destination point.
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>
@@ -253,7 +253,7 @@ The destination point for the end of the curve.
 
 `isStroked` bool
 
-Whether the segment is stroked.
+该线段是否描边。
 
 
 </section>

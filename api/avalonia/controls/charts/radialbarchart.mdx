@@ -189,7 +189,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [IsEffectivelyVisible](../../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../../visual.mdx)。 |
 | [IsEnabled](../../input/inputelement.mdx#uid-31817dbbc9) | 获取或设置一个值，指示控件是否接受用户交互。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsFocused](../../input/inputelement.mdx#uid-e4cd1a3717) | 获取一个值，指示控件当前是否拥有焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [IsHighlightEnabled](highlightablechartbase.mdx#uid-724fb92f04) | Gets or sets whether pointer hover highlighting is enabled. Inherited from [HighlightableChartBase](highlightablechartbase.mdx). |
+| [IsHighlightEnabled](highlightablechartbase.mdx#uid-724fb92f04) | 获取或设置是否启用指针悬停高亮。继承自 [HighlightableChartBase](highlightablechartbase.mdx)。 |
 | [IsHitTestVisible](../../input/inputelement.mdx#uid-11cb006f8b) | 获取或设置一个值，指示该控件是否参与命中测试。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsInitialized](../../styledelement.mdx#uid-59a7cddacb) | 获取一个值，指示该元素是否已完成初始化。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [IsKeyboardFocusWithin](../../input/inputelement.mdx#uid-6e5855b185) | 获取一个值，指示键盘焦点是否位于该元素或其视觉树子元素之中。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -203,7 +203,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [ItemsSource](#uid-9d290d3b1b) | 获取或设置数据源。 |
 | [KeyBindings](../../input/inputelement.mdx#uid-827a5420b2) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [LabelFontSize](#uid-2cf96e4186) | Gets or sets the font size for labels. |
+| [LabelFontSize](#uid-2cf96e4186) | 获取或设置标签的字号。 |
 | [LabelForeground](chartbase.mdx#uid-7ba97907ce) | 获取或设置坐标轴及图表级标签所用的画刷。若数据系列或批注自带标签画刷属性，则会在局部覆盖此设置。继承自 [ChartBase](chartbase.mdx)。 |
 | [LegendAlignment](chartbase.mdx#uid-8d2828bd19) | 获取或设置图例的对齐方式。继承自 [ChartBase](chartbase.mdx)。 |
 | [LegendOffset](chartbase.mdx#uid-d6aeba2ed7) | 获取或设置浮动图例的偏移量。继承自 [ChartBase](chartbase.mdx)。 |
@@ -240,7 +240,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ToggleSeriesVisibility](chartbase.mdx#uid-9c88230ede) | 获取或设置点击图例项是否切换数据系列的可见性。该设置仅对图例代表可隐藏数据系列或类别的图表有效；图例为说明性刻度的图表会将此值强制改回 。继承自 [ChartBase](chartbase.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [ValuePath](#uid-d095f399a5) | Gets or sets the property path for values. |
+| [ValuePath](#uid-d095f399a5) | 获取或设置取值所用的属性路径。 |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Width](../../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [ZIndex](../../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../../visual.mdx)。 |
@@ -307,7 +307,7 @@ public System.Collections.IEnumerable ItemsSource { get; set; }
 
 ### LabelFontSize 属性 {#labelfontsize-property}
 
-Gets or sets the font size for labels.
+获取或设置标签的字号。
 
 ```csharp
 public double LabelFontSize { get; set; }
@@ -363,7 +363,7 @@ public double StartAngle { get; set; }
 
 ### ValuePath 属性 {#valuepath-property}
 
-Gets or sets the property path for values.
+获取或设置取值所用的属性路径。
 
 ```csharp
 public string ValuePath { get; set; }
@@ -418,7 +418,7 @@ public string ValuePath { get; set; }
 | [IsEffectivelyEnabledProperty](../../input/inputelement.mdx#uid-df18a2cff1) | 定义 [Avalonia.Input.InputElement.IsEffectivelyEnabled](xref:Avalonia.Input.InputElement.IsEffectivelyEnabled) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsEnabledProperty](../../input/inputelement.mdx#uid-2f2893a804) | 定义 [Avalonia.Input.InputElement.IsEnabled](xref:Avalonia.Input.InputElement.IsEnabled) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsFocusedProperty](../../input/inputelement.mdx#uid-ec811cc35b) | 定义 [Avalonia.Input.InputElement.IsFocused](xref:Avalonia.Input.InputElement.IsFocused) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [IsHighlightEnabledProperty](highlightablechartbase.mdx#uid-130123fa83) | Identifies the [Avalonia.Controls.Charts.HighlightableChartBase.IsHighlightEnabled](xref:Avalonia.Controls.Charts.HighlightableChartBase.IsHighlightEnabled) styled property. Inherited from [HighlightableChartBase](highlightablechartbase.mdx). |
+| [IsHighlightEnabledProperty](highlightablechartbase.mdx#uid-130123fa83) | 标识 [Avalonia.Controls.Charts.HighlightableChartBase.IsHighlightEnabled](xref:Avalonia.Controls.Charts.HighlightableChartBase.IsHighlightEnabled) 样式化属性。继承自 [HighlightableChartBase](highlightablechartbase.mdx)。 |
 | [IsHitTestVisibleProperty](../../input/inputelement.mdx#uid-e774aa17ad) | 定义 [Avalonia.Input.InputElement.IsHitTestVisible](xref:Avalonia.Input.InputElement.IsHitTestVisible) 属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsHoldingEnabledProperty](../../input/inputelement.mdx#uid-a893be5e44) | 定义 IsHoldingEnabled 附加属性。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [IsHoldWithMouseEnabledProperty](../../input/inputelement.mdx#uid-3f460ccdfe) | 定义 IsHoldWithMouseEnabled 附加属性。继承自 [InputElement](../../input/inputelement.mdx)。 |

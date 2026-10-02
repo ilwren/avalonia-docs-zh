@@ -163,7 +163,7 @@ public ContentControl()
 | [HasMirrorTransform](../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../visual.mdx)。 |
 | [Height](../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [HorizontalAlignment](../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [HorizontalContentAlignment](#uid-91c4dbcd1a) | Gets or sets the horizontal alignment of the content within the control. |
+| [HorizontalContentAlignment](#uid-91c4dbcd1a) | 获取或设置内容在控件内的水平对齐方式。 |
 | [IsArrangeValid](../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [IsEffectivelyEnabled](../input/inputelement.mdx#uid-48ba4c0379) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [IsEffectivelyVisible](../visual.mdx#uid-03d6c15a63) | 获取一个值，指示该控件及其所有父级是否均为可见。继承自 [Visual](../visual.mdx)。 |
@@ -204,7 +204,7 @@ public ContentControl()
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [VerticalAlignment](../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [VerticalContentAlignment](#uid-7225e4abe8) | Gets or sets the vertical alignment of the content within the control. |
+| [VerticalContentAlignment](#uid-7225e4abe8) | 获取或设置内容在控件内的垂直对齐方式。 |
 | [Width](../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [ZIndex](../visual.mdx#uid-a3275ade9d) | 获取或设置控件的 Z 轴层叠顺序。继承自 [Visual](../visual.mdx)。 |
 
@@ -242,7 +242,7 @@ public Avalonia.Controls.Templates.IDataTemplate ContentTemplate { get; set; }
 
 ### HorizontalContentAlignment 属性 {#horizontalcontentalignment-property}
 
-Gets or sets the horizontal alignment of the content within the control.
+获取或设置内容在控件内的水平对齐方式。
 
 ```csharp
 public Avalonia.Layout.HorizontalAlignment HorizontalContentAlignment { get; set; }
@@ -270,7 +270,7 @@ public Avalonia.Controls.Presenters.ContentPresenter Presenter { get; set; }
 
 ### VerticalContentAlignment 属性 {#verticalcontentalignment-property}
 
-Gets or sets the vertical alignment of the content within the control.
+获取或设置内容在控件内的垂直对齐方式。
 
 ```csharp
 public Avalonia.Layout.VerticalAlignment VerticalContentAlignment { get; set; }

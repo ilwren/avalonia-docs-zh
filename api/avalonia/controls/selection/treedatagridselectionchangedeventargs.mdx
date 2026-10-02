@@ -69,10 +69,10 @@ cell-level indexes that expand rows across columns.
 | --- | --- |
 | [DeselectedCellIndexes](#uid-1403b3bce1) | Gets the cell indexes of the cells that were removed from the selection. |
 | [DeselectedIndexes](#uid-b104cad575) | Gets the row indexes of the items that were removed from the selection. |
-| [DeselectedItems](#uid-44f14d9b02) | Gets the items that were removed from the selection. |
+| [DeselectedItems](#uid-44f14d9b02) | 获取已从选区中移除的那些项。 |
 | [SelectedCellIndexes](#uid-64c01ca0e7) | Gets the cell indexes of the cells that were added to the selection. |
 | [SelectedIndexes](#uid-5003382dfb) | Gets the row indexes of the items that were added to the selection. |
-| [SelectedItems](#uid-621efc5b9d) | Gets the items that were added to the selection. |
+| [SelectedItems](#uid-621efc5b9d) | 获取新加入选区的那些项。 |
 
 <section className="apiref-page__member-entry">
 
@@ -119,7 +119,7 @@ removed items in that case.
 
 ### DeselectedItems 属性 {#deselecteditems-property}
 
-Gets the items that were removed from the selection.
+获取已从选区中移除的那些项。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<object> DeselectedItems { get; set; }
@@ -177,7 +177,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.IndexPath> Sel
 
 ### SelectedItems 属性 {#selecteditems-property}
 
-Gets the items that were added to the selection.
+获取新加入选区的那些项。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<object> SelectedItems { get; set; }

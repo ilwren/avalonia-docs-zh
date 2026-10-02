@@ -93,10 +93,10 @@ public DataTransferItem()
 | [CreateFile](#uid-a6832f3a22) | Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) as a single format. |
 | [CreateText](#uid-169cc3837f) | Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) as a single format. |
 | [Set (2 overloads)](#uid-4740848ae2) | 暂无摘要。 |
-| [SetBitmap](#uid-91535d5cb2) | Sets the value for the [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap) format. |
-| [SetFile](#uid-47c5aa5eca) | Sets the value for the [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) format. |
-| [SetText](#uid-d84a6ddf2d) | Sets the value for the [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) format. |
-| [TryGetRaw](#uid-271583d348) | Tries to get a value for a given format. |
+| [SetBitmap](#uid-91535d5cb2) | 为 [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap) 格式设置值。 |
+| [SetFile](#uid-47c5aa5eca) | 为 [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) 格式设置值。 |
+| [SetText](#uid-d84a6ddf2d) | 为 [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) 格式设置值。 |
+| [TryGetRaw](#uid-271583d348) | 尝试取得指定格式的值。 |
 
 <span id="uid-2ae0ae2ff5"></span>
 
@@ -280,7 +280,7 @@ public void Set<T>(Avalonia.Input.DataFormat<T><T> format, T value)
 
 ### SetBitmap 方法 {#setbitmap-method}
 
-Sets the value for the [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap) format.
+为 [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap) 格式设置值。
 
 ```csharp
 public void SetBitmap(Avalonia.Media.Imaging.Bitmap value)
@@ -302,7 +302,7 @@ If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:
 
 ### SetFile 方法 {#setfile-method}
 
-Sets the value for the [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) format.
+为 [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) 格式设置值。
 
 ```csharp
 public void SetFile(Avalonia.Platform.Storage.IStorageItem value)
@@ -324,7 +324,7 @@ If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:
 
 ### SetText 方法 {#settext-method}
 
-Sets the value for the [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) format.
+为 [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) 格式设置值。
 
 ```csharp
 public void SetText(string value)
@@ -346,7 +346,7 @@ If null, the format won't be part of the [Avalonia.Input.DataTransferItem](xref:
 
 ### TryGetRaw 方法 {#trygetraw-method}
 
-Tries to get a value for a given format.
+尝试取得指定格式的值。
 
 ```csharp
 public object TryGetRaw(Avalonia.Input.DataFormat format)
@@ -384,7 +384,7 @@ To retrieve a typed value, use [Avalonia.Input.DataTransferItemExtensions.TryGet
 
 | 名称 | 说明 |
 | --- | --- |
-| [Formats](#uid-0b4edcd38b) | Gets the formats supported by this item. |
+| [Formats](#uid-0b4edcd38b) | 获取该项支持的格式。 |
 
 <section className="apiref-page__member-entry">
 
@@ -392,7 +392,7 @@ To retrieve a typed value, use [Avalonia.Input.DataTransferItemExtensions.TryGet
 
 ### Formats 属性 {#formats-property}
 
-Gets the formats supported by this item.
+获取该项支持的格式。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Input.DataFormat> Formats { get; set; }
