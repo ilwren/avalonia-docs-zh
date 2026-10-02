@@ -62,8 +62,8 @@ public class StorageProviderExtensions
 
 | 名称 | 说明 |
 | --- | --- |
-| [TryGetFileFromPathAsync](#uid-34fe3c9619) | Attempts to read file from the file-system by its path. |
-| [TryGetFolderFromPathAsync](#uid-435b21440b) | Attempts to read folder from the file-system by its path. |
+| [TryGetFileFromPathAsync](#uid-34fe3c9619) | 尝试按路径从文件系统中读取文件。 |
+| [TryGetFolderFromPathAsync](#uid-435b21440b) | 尝试按路径从文件系统中读取文件夹。 |
 | [TryGetLocalPath](#uid-f9f614344d) | Gets the local file system path of the item as a string. |
 
 <section className="apiref-page__member-entry">
@@ -72,7 +72,7 @@ public class StorageProviderExtensions
 
 ### TryGetFileFromPathAsync 方法 {#trygetfilefrompathasync-method}
 
-Attempts to read file from the file-system by its path.
+尝试按路径从文件系统中读取文件。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFile> TryGetFileFromPathAsync(Avalonia.Platform.Storage.IStorageProvider provider, string filePath)
@@ -109,7 +109,7 @@ It also might ask user for the permission, and throw an exception if it was deni
 
 ### TryGetFolderFromPathAsync 方法 {#trygetfolderfrompathasync-method}
 
-Attempts to read folder from the file-system by its path.
+尝试按路径从文件系统中读取文件夹。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> TryGetFolderFromPathAsync(Avalonia.Platform.Storage.IStorageProvider provider, string folderPath)

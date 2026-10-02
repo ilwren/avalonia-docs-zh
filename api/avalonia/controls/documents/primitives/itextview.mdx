@@ -58,15 +58,15 @@ to be notified when layout becomes valid.
 
 | 名称 | 说明 |
 | --- | --- |
-| [GetLineFromPosition](#uid-81f5cfa503) | Gets the line containing the specified position. |
+| [GetLineFromPosition](#uid-81f5cfa503) | 获取包含指定位置的那一行。 |
 | [GetNextLine](#uid-03ba01e289) | 获取指定行之后的下一行。 |
 | [GetPositionAtLineEnd](#uid-a72ac011b6) | Gets the position at the end of the line containing the specified position. |
 | [GetPositionAtLineStart](#uid-1e40500af3) | Gets the position at the start of the line containing the specified position. |
 | [GetPositionAtLineX](#uid-c12d84f8fc) | Returns the text position on `line` closest to the specified X coordinate. The result is guaranteed to stay on `line`; it never crosses into a neighbouring line or block, regardless of how far `x` lies outside the line's horizontal bounds. |
-| [GetPreviousLine](#uid-dfe7d979c9) | Gets the previous line before the specified line. |
+| [GetPreviousLine](#uid-dfe7d979c9) | 获取指定行之前的上一行。 |
 | [GetRectangleFromTextPosition](#uid-a6a7f0d189) | Gets the bounding rectangle for a character at the specified position. |
 | [GetTextPositionFromPoint](#uid-f29386de95) | 由屏幕坐标点取得对应的文本位置。 |
-| [GetVisibleLineAtOrAfter](#uid-e6882b9acd) | Gets the first visible line at or after the specified position. |
+| [GetVisibleLineAtOrAfter](#uid-e6882b9acd) | 获取位于指定位置处或其后的第一个可见行。 |
 
 <section className="apiref-page__member-entry">
 
@@ -74,7 +74,7 @@ to be notified when layout becomes valid.
 
 ### GetLineFromPosition 方法 {#getlinefromposition-method}
 
-Gets the line containing the specified position.
+获取包含指定位置的那一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetLineFromPosition(Avalonia.Controls.Documents.TextModel.TextPointer position)
@@ -231,7 +231,7 @@ blocks when `x` is near a block boundary.
 
 ### GetPreviousLine 方法 {#getpreviousline-method}
 
-Gets the previous line before the specified line.
+获取指定行之前的上一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetPreviousLine(Avalonia.Controls.Documents.Primitives.ITextLine currentLine)
@@ -329,7 +329,7 @@ The text position, or null if no position could be determined.
 
 ### GetVisibleLineAtOrAfter 方法 {#getvisiblelineatorafter-method}
 
-Gets the first visible line at or after the specified position.
+获取位于指定位置处或其后的第一个可见行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetVisibleLineAtOrAfter(Avalonia.Controls.Documents.TextModel.TextPointer position)

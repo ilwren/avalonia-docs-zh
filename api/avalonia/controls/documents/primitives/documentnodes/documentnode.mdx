@@ -81,7 +81,7 @@ public class DocumentNode
 | [GetLineFromPosition](#uid-58c07fbee6) | Returns the line info for the given text position, or if not found. |
 | [GetLines](#uid-3d2fba6808) | 返回该节点内的所有文本行。 |
 | [GetRectFromTextPointer](#uid-26838f00bd) | Returns the caret rectangle for `position` within this node, or if outside. |
-| [GetSelectionRects](#uid-da19f78d47) | Returns selection rectangles within the node's content area. |
+| [GetSelectionRects](#uid-da19f78d47) | 返回该节点内容区域内的各个选区矩形。 |
 | [GetSelectionText](#uid-c6fba18466) | Returns selected text segments within the node's content area. |
 | [GetValue（3 个重载）](../../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
 | [HitTestPoint](#uid-56eac342b5) | Returns the text pointer at the given point, or if outside bounds. |
@@ -179,7 +179,7 @@ Nullable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt;
 
 ### GetSelectionRects 方法 {#getselectionrects-method}
 
-Returns selection rectangles within the node's content area.
+返回该节点内容区域内的各个选区矩形。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Rect> GetSelectionRects(Avalonia.Controls.Documents.TextModel.TextRange selection)

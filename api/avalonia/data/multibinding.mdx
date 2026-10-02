@@ -87,7 +87,7 @@ public MultiBinding()
 | [FallbackValue](#uid-4b6d87b7c3) | 获取或设置绑定无法产出值时所用的替代值。 |
 | [Mode](#uid-a392fad099) | 获取或设置绑定模式。 |
 | [Priority](#uid-ef87706676) | 获取或设置绑定优先级。 |
-| [RelativeSource](#uid-314c25786f) | Gets or sets the relative source for the binding. |
+| [RelativeSource](#uid-314c25786f) | 获取或设置绑定的相对源。 |
 | [StringFormat](#uid-f401114a50) | 获取或设置字符串格式。 |
 | [TargetNullValue](#uid-05378b9819) | 获取或设置绑定结果为 null 时所用的值。 |
 
@@ -138,7 +138,7 @@ public System.Globalization.CultureInfo ConverterCulture { get; set; }
 
 #### 备注 {#remarks}
 
-If this property is not set then [System.Globalization.CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture) will be used.
+若未设置该属性，则采用 [System.Globalization.CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture)。
 
 </section>
 
@@ -204,7 +204,7 @@ public Avalonia.Data.BindingPriority Priority { get; set; }
 
 ### RelativeSource 属性 {#relativesource-property}
 
-Gets or sets the relative source for the binding.
+获取或设置绑定的相对源。
 
 ```csharp
 public Avalonia.Data.RelativeSource RelativeSource { get; set; }

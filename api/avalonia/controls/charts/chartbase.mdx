@@ -104,7 +104,7 @@ public ChartBase()
 | [GetIsHoldingEnabled](../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
-| [GetLegendItems](#uid-2856543d8e) | Gets the legend items for this chart based on its series. |
+| [GetLegendItems](#uid-2856543d8e) | 依据该图表的各个系列取得对应的图例项。 |
 | [GetSeriesBrush](#uid-d4e14c761c) | Gets the brush for a series at the specified index from the palette. |
 | [GetValue（3 个重载）](../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [InvalidateArrange](../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -229,7 +229,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Controls.Charts.ChartExportResult](xref
 
 ### GetLegendItems 方法 {#getlegenditems-method}
 
-Gets the legend items for this chart based on its series.
+依据该图表的各个系列取得对应的图例项。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Charts.ChartLegendItem> GetLegendItems()

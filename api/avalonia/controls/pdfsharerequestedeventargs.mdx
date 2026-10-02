@@ -90,7 +90,7 @@ System.Threading.Tasks.Task&lt;byte[]&gt;
 | 名称 | 说明 |
 | --- | --- |
 | [Document](#uid-6462af8b7a) | 加载得到的文档。 |
-| [Handled](#uid-8d5095ed10) | Set to `true` when the application has handled the request itself. |
+| [Handled](#uid-8d5095ed10) | 当应用已自行处理该请求时，把它设为 `true`。 |
 | [Options](#uid-d132616a1a) | Share options; the viewer pre-fills [Avalonia.Controls.Pdf.Services.ShareOptions.Title](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Title), [Avalonia.Controls.Pdf.Services.ShareOptions.Owner](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Owner) and [Avalonia.Controls.Pdf.Services.ShareOptions.Anchor](xref:Avalonia.Controls.Pdf.Services.ShareOptions.Anchor). |
 
 <section className="apiref-page__member-entry">
@@ -113,7 +113,7 @@ public Avalonia.Controls.Pdf.Core.IPdfDocument Document { get; set; }
 
 ### Handled 属性 {#handled-property}
 
-Set to `true` when the application has handled the request itself.
+当应用已自行处理该请求时，把它设为 `true`。
 
 ```csharp
 public bool Handled { get; set; }

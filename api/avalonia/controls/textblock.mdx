@@ -544,12 +544,12 @@ public void SetTextWrapping(Avalonia.Controls.Control control, Avalonia.Media.Te
 | [FlowDirection](../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../visual.mdx)。 |
 | [Focusable](../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [FocusAdorner](control.mdx#uid-96de66ccc5) | 获取或设置控件的焦点修饰元素。继承自 [Control](control.mdx)。 |
-| [FontFamily](#uid-be6e439365) | Gets or sets the font family used to draw the control's text. |
+| [FontFamily](#uid-be6e439365) | 获取或设置绘制控件文本所用的字体族。 |
 | [FontFeatures](#uid-c5e0a09dc0) | 获取或设置字体特性。 |
-| [FontSize](#uid-824bdb92c4) | Gets or sets the size of the control's text in points. |
-| [FontStretch](#uid-2fb56e104a) | Gets or sets the font stretch used to draw the control's text. |
-| [FontStyle](#uid-e7885ca5ea) | Gets or sets the font style used to draw the control's text. |
-| [FontWeight](#uid-68e93dfc82) | Gets or sets the font weight used to draw the control's text. |
+| [FontSize](#uid-824bdb92c4) | 获取或设置该控件文本的磅值字号。 |
+| [FontStretch](#uid-2fb56e104a) | 获取或设置绘制控件文本所用的字宽。 |
+| [FontStyle](#uid-e7885ca5ea) | 获取或设置绘制控件文本所用的字形。 |
+| [FontWeight](#uid-68e93dfc82) | 获取或设置绘制控件文本所用的字重。 |
 | [Foreground](#uid-80d6d8c758) | Gets or sets the brush used to draw the control's text and other foreground elements. |
 | [GestureRecognizers](../input/inputelement.mdx#uid-ddee464eee) | 继承自 [InputElement](../input/inputelement.mdx)。 |
 | [HasMirrorTransform](../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../visual.mdx)。 |
@@ -598,7 +598,7 @@ public void SetTextWrapping(Avalonia.Controls.Control control, Avalonia.Media.Te
 | [TextDecorations](#uid-64fe8c0662) | Gets or sets the text decorations. |
 | [TextLayout](#uid-b056ac80fb) | 获取渲染该文本所用的 [Avalonia.Controls.TextBlock.TextLayout](xref:Avalonia.Controls.TextBlock.TextLayout)。 |
 | [TextTrimming](#uid-3d00d0001b) | Gets or sets the control's text trimming mode. |
-| [TextWrapping](#uid-5bf193bb6f) | Gets or sets the control's text wrapping mode. |
+| [TextWrapping](#uid-5bf193bb6f) | 获取或设置该控件的文本换行模式。 |
 | [Theme](../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
@@ -640,7 +640,7 @@ public double BaselineOffset { get; set; }
 
 ### FontFamily 属性 {#fontfamily-property}
 
-Gets or sets the font family used to draw the control's text.
+获取或设置绘制控件文本所用的字体族。
 
 ```csharp
 public Avalonia.Media.FontFamily FontFamily { get; set; }
@@ -668,7 +668,7 @@ public Avalonia.Media.FontFeatureCollection FontFeatures { get; set; }
 
 ### FontSize 属性 {#fontsize-property}
 
-Gets or sets the size of the control's text in points.
+获取或设置该控件文本的磅值字号。
 
 ```csharp
 public double FontSize { get; set; }
@@ -682,7 +682,7 @@ public double FontSize { get; set; }
 
 ### FontStretch 属性 {#fontstretch-property}
 
-Gets or sets the font stretch used to draw the control's text.
+获取或设置绘制控件文本所用的字宽。
 
 ```csharp
 public Avalonia.Media.FontStretch FontStretch { get; set; }
@@ -696,7 +696,7 @@ public Avalonia.Media.FontStretch FontStretch { get; set; }
 
 ### FontStyle 属性 {#fontstyle-property}
 
-Gets or sets the font style used to draw the control's text.
+获取或设置绘制控件文本所用的字形。
 
 ```csharp
 public Avalonia.Media.FontStyle FontStyle { get; set; }
@@ -710,7 +710,7 @@ public Avalonia.Media.FontStyle FontStyle { get; set; }
 
 ### FontWeight 属性 {#fontweight-property}
 
-Gets or sets the font weight used to draw the control's text.
+获取或设置绘制控件文本所用的字重。
 
 ```csharp
 public Avalonia.Media.FontWeight FontWeight { get; set; }
@@ -892,7 +892,7 @@ public Avalonia.Media.TextTrimming TextTrimming { get; set; }
 
 ### TextWrapping 属性 {#textwrapping-property}
 
-Gets or sets the control's text wrapping mode.
+获取或设置该控件的文本换行模式。
 
 ```csharp
 public Avalonia.Media.TextWrapping TextWrapping { get; set; }

@@ -90,7 +90,7 @@ System.Threading.Tasks.Task&lt;byte[]&gt;
 | 名称 | 说明 |
 | --- | --- |
 | [Document](#uid-1a8d25c812) | 加载得到的文档。 |
-| [Handled](#uid-3d4e5638b8) | Set to `true` when the application has handled the request itself. |
+| [Handled](#uid-3d4e5638b8) | 当应用已自行处理该请求时，把它设为 `true`。 |
 | [Options](#uid-a2a17a57c9) | Print options; the viewer pre-fills [Avalonia.Controls.Pdf.Services.PrintOptions.Title](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Title) and [Avalonia.Controls.Pdf.Services.PrintOptions.Owner](xref:Avalonia.Controls.Pdf.Services.PrintOptions.Owner). |
 
 <section className="apiref-page__member-entry">
@@ -113,7 +113,7 @@ public Avalonia.Controls.Pdf.Core.IPdfDocument Document { get; set; }
 
 ### Handled 属性 {#handled-property}
 
-Set to `true` when the application has handled the request itself.
+当应用已自行处理该请求时，把它设为 `true`。
 
 ```csharp
 public bool Handled { get; set; }

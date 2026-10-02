@@ -57,7 +57,7 @@ public interface ISelectionItemProvider
 
 | 名称 | 说明 |
 | --- | --- |
-| [AddToSelection](#uid-f5d16c51fc) | Adds the current element to the collection of selected items. |
+| [AddToSelection](#uid-f5d16c51fc) | 把当前元素加入选中项集合。 |
 | [RemoveFromSelection](#uid-9a753f219d) | Removes the current element from the collection of selected items. |
 | [Select](#uid-db41fba969) | Clears any existing selection and then selects the current element. |
 
@@ -67,7 +67,7 @@ public interface ISelectionItemProvider
 
 ### AddToSelection 方法 {#addtoselection-method}
 
-Adds the current element to the collection of selected items.
+把当前元素加入选中项集合。
 
 ```csharp
 public void AddToSelection()
@@ -122,7 +122,7 @@ public void Select()
 
 | 名称 | 说明 |
 | --- | --- |
-| [IsSelected](#uid-5e4e696443) | Gets a value that indicates whether an item is selected. |
+| [IsSelected](#uid-5e4e696443) | 获取一个值，指示是否有项被选中。 |
 | [SelectionContainer](#uid-67657a949b) | Gets the UI Automation provider that implements [Avalonia.Automation.Provider.ISelectionProvider](xref:Avalonia.Automation.Provider.ISelectionProvider) and acts as the container for the calling object. |
 
 <section className="apiref-page__member-entry">
@@ -131,7 +131,7 @@ public void Select()
 
 ### IsSelected 属性 {#isselected-property}
 
-Gets a value that indicates whether an item is selected.
+获取一个值，指示是否有项被选中。
 
 ```csharp
 public bool IsSelected { get; set; }

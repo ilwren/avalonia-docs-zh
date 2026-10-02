@@ -66,7 +66,7 @@ public class AsyncDataTransferExtensions
 | [GetItems](#uid-821f08e900) | Gets the list of [Avalonia.Input.IAsyncDataTransferItem](xref:Avalonia.Input.IAsyncDataTransferItem) contained in this object, filtered by a given format. |
 | [TryGetBitmapAsync](#uid-b420c53c68) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出位图（若有）。 |
 | [TryGetFileAsync](#uid-f3422d40ae) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文件（若有）。 |
-| [TryGetFilesAsync](#uid-b38149a1db) | Returns a list of files, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance. |
+| [TryGetFilesAsync](#uid-b38149a1db) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文件列表（若有）。 |
 | [TryGetTextAsync](#uid-73846b8b71) | 从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文本（若有）。 |
 | [TryGetValueAsync](#uid-62e60a821a) | 暂无摘要。 |
 | [TryGetValuesAsync](#uid-7d0c68c4b0) | 暂无摘要。 |
@@ -208,7 +208,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.IStorageItem](xref:Ava
 
 ### TryGetFilesAsync 方法 {#trygetfilesasync-method}
 
-Returns a list of files, if available, from a [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) instance.
+从 [Avalonia.Input.IAsyncDataTransfer](xref:Avalonia.Input.IAsyncDataTransfer) 实例中取出文件列表（若有）。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageItem[]> TryGetFilesAsync(Avalonia.Input.IAsyncDataTransfer dataTransfer)

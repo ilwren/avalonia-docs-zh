@@ -112,7 +112,7 @@ public ParagraphNode(Avalonia.Controls.Documents.Paragraph paragraph)
 | [GetLineFromPosition](#uid-75145856bc) | Gets line information for the line containing the specified position. |
 | [GetLines](#uid-8fc9822249) | Gets all lines in this paragraph. |
 | [GetRectFromTextPointer](#uid-86754a33b3) | Gets the caret rectangle for the specified text position. |
-| [GetSelectionRects](#uid-d9343182ab) | Returns selection rectangles within the node's content area. |
+| [GetSelectionRects](#uid-d9343182ab) | 返回该节点内容区域内的各个选区矩形。 |
 | [GetSelectionText](documentnode.mdx#uid-c6fba18466) | Returns selected text segments within the node's content area. Inherited from [DocumentNode](documentnode.mdx). |
 | [GetTextRunProperties](#uid-6b677ab570) | Creates text run properties from a [RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement). When [BaselineAlignment](xref:Avalonia.Media.BaselineAlignment) is [RichSuperscript](xref:Avalonia.Controls.Documents.RichSuperscript) or [RichSubscript](xref:Avalonia.Controls.Documents.RichSubscript) the font size is scaled down so the glyphs are visually smaller, matching standard rich-text-editor behaviour regardless of OpenType feature support. |
 | [GetValue（3 个重载）](../../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../../avaloniaobject.mdx)。 |
@@ -225,7 +225,7 @@ Paragraph boundaries (start/end of paragraph) should be handled by the parent ([
 
 ### GetSelectionRects 方法 {#getselectionrects-method}
 
-Returns selection rectangles within the node's content area.
+返回该节点内容区域内的各个选区矩形。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Rect> GetSelectionRects(Avalonia.Controls.Documents.TextModel.TextRange selection)

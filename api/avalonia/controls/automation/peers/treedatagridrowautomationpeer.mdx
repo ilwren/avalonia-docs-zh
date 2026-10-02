@@ -94,11 +94,11 @@ public TreeDataGridRowAutomationPeer(Avalonia.Controls.Primitives.TreeDataGridRo
 
 | 名称 | 说明 |
 | --- | --- |
-| [AddToSelection](#uid-249044e167) | Adds the current element to the collection of selected items. |
+| [AddToSelection](#uid-249044e167) | 把当前元素加入选中项集合。 |
 | [BringIntoView](../../../automation/peers/automationpeer.mdx#uid-0ce0c26ad7) | 尝试将与该自动化对等体关联的元素滚动到可见区域。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [Collapse](#uid-e6bff69dda) | Hides all nodes, controls, or content that are descendants of the control. |
 | [CreatePeerForElement](../../../automation/peers/controlautomationpeer.mdx#uid-01e76040e7) | 获取 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) 对应的 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)，必要时会创建一个。继承自 [ControlAutomationPeer](../../../automation/peers/controlautomationpeer.mdx)。 |
-| [Expand](#uid-e786d85bb0) | Displays all child nodes, controls, or content of the control. |
+| [Expand](#uid-e786d85bb0) | 展示该控件的所有子节点、控件或内容。 |
 | [FromElement](../../../automation/peers/controlautomationpeer.mdx#uid-f0c358c33d) | 获取 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) 已有的 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)。继承自 [ControlAutomationPeer](../../../automation/peers/controlautomationpeer.mdx)。 |
 | [GetAcceleratorKey](../../../automation/peers/automationpeer.mdx#uid-b27b870e23) | 获取与该 UI 自动化对等体关联的元素的快捷键组合。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
 | [GetAccessKey](../../../automation/peers/automationpeer.mdx#uid-0c0606dfaf) | 获取与该自动化对等体关联的元素的访问键。继承自 [AutomationPeer](../../../automation/peers/automationpeer.mdx)。 |
@@ -139,7 +139,7 @@ public TreeDataGridRowAutomationPeer(Avalonia.Controls.Primitives.TreeDataGridRo
 
 ### AddToSelection 方法 {#addtoselection-method}
 
-Adds the current element to the collection of selected items.
+把当前元素加入选中项集合。
 
 ```csharp
 public void AddToSelection()
@@ -177,7 +177,7 @@ public void Collapse()
 
 ### Expand 方法 {#expand-method}
 
-Displays all child nodes, controls, or content of the control.
+展示该控件的所有子节点、控件或内容。
 
 ```csharp
 public void Expand()
@@ -232,8 +232,8 @@ public void Select()
 
 | 名称 | 说明 |
 | --- | --- |
-| [ExpandCollapseState](#uid-e715a8c691) | Gets the state, expanded or collapsed, of the control. |
-| [IsSelected](#uid-5addc6e3b8) | Gets a value that indicates whether an item is selected. |
+| [ExpandCollapseState](#uid-e715a8c691) | 获取该控件处于展开还是折叠状态。 |
+| [IsSelected](#uid-5addc6e3b8) | 获取一个值，指示是否有项被选中。 |
 | [Owner](#uid-8226161734) | 获取所表示的 [Avalonia.Controls.Primitives.TreeDataGridRow](xref:Avalonia.Controls.Primitives.TreeDataGridRow)。 |
 | [SelectionContainer](#uid-ab7f4cd68c) | Gets the UI Automation provider that implements [Avalonia.Automation.Provider.ISelectionProvider](xref:Avalonia.Automation.Provider.ISelectionProvider) and acts as the container for the calling object. |
 | [ShowsMenu](#uid-9da489ce76) | Gets a value indicating whether expanding the element shows a menu of items to the user, such as drop-down list. |
@@ -244,7 +244,7 @@ public void Select()
 
 ### ExpandCollapseState 属性 {#expandcollapsestate-property}
 
-Gets the state, expanded or collapsed, of the control.
+获取该控件处于展开还是折叠状态。
 
 ```csharp
 public Avalonia.Automation.ExpandCollapseState ExpandCollapseState { get; set; }
@@ -263,7 +263,7 @@ public Avalonia.Automation.ExpandCollapseState ExpandCollapseState { get; set; }
 
 ### IsSelected 属性 {#isselected-property}
 
-Gets a value that indicates whether an item is selected.
+获取一个值，指示是否有项被选中。
 
 ```csharp
 public bool IsSelected { get; set; }

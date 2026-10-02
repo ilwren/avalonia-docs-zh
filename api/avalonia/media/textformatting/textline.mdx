@@ -352,7 +352,7 @@ A [Avalonia.Media.TextFormatting.TextLine](xref:Avalonia.Media.TextFormatting.Te
 | [HasOverflowed](#uid-e491880656) | Gets a value that indicates whether content of the line overflows the specified paragraph width. |
 | [Height](#uid-681e96dc6b) | 获取一行文本的高度。 |
 | [Length](#uid-24a2f5d871) | Gets the total number of TextSource positions of the current line. |
-| [NewLineLength](#uid-1153d44e15) | Gets the number of newline characters at the end of a line. |
+| [NewLineLength](#uid-1153d44e15) | 获取一行末尾换行符的个数。 |
 | [OverhangAfter](#uid-acfa66abd7) | Gets the distance that black pixels extend beyond the bottom alignment edge of a line. |
 | [OverhangLeading](#uid-1547e77441) | Gets the distance that black pixels extend prior to the left leading alignment edge of the line. |
 | [OverhangTrailing](#uid-d8979e0c8b) | Gets the distance that black pixels extend following the right trailing alignment edge of the line. |
@@ -492,7 +492,7 @@ public int Length { get; set; }
 
 ### NewLineLength 属性 {#newlinelength-property}
 
-Gets the number of newline characters at the end of a line.
+获取一行末尾换行符的个数。
 
 ```csharp
 public int NewLineLength { get; set; }

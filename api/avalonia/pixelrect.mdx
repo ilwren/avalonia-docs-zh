@@ -192,17 +192,17 @@ Y 位置。
 | [FromRectWithDpi (2 overloads)](#uid-07364607c9) | 按指定的每英寸点数（DPI）把 [Avalonia.Rect](xref:Avalonia.Rect) 换算成设备像素。 |
 | [GetHashCode](#uid-9c96c5b3a7) | 返回该实例的哈希码。 |
 | [Intersect](#uid-19f3ba3fa5) | 获取两个矩形的交集。 |
-| [Intersects](#uid-1917bf56e7) | Determines whether a rectangle intersects with this rectangle. |
+| [Intersects](#uid-1917bf56e7) | 判断某个矩形是否与该矩形相交。 |
 | [Parse](#uid-4a1cfac60a) | 解析 [Avalonia.PixelRect](xref:Avalonia.PixelRect) 字符串。 |
 | [ToRect (2 overloads)](#uid-7369b38e30) | Converts the [Avalonia.PixelRect](xref:Avalonia.PixelRect) to a device-independent [Avalonia.Rect](xref:Avalonia.Rect) using the specified scaling factor. |
 | [ToRectWithDpi (2 overloads)](#uid-4535c004c4) | Converts the [Avalonia.PixelRect](xref:Avalonia.PixelRect) to a device-independent [Avalonia.Rect](xref:Avalonia.Rect) using the specified dots per inch (DPI). |
-| [ToString](#uid-abe42ff357) | Returns the string representation of the rectangle. |
+| [ToString](#uid-abe42ff357) | 返回该矩形的字符串表示形式。 |
 | [Translate](#uid-edd250bd5d) | 按某个偏移量平移该矩形。 |
 | [Union](#uid-a1e9518241) | 获取两个矩形的并集。 |
-| [WithHeight](#uid-910a5ae14b) | Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified height. |
-| [WithWidth](#uid-24f0d2659f) | Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified width. |
-| [WithX](#uid-773a9cfcf4) | Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified X position. |
-| [WithY](#uid-ae85da88f4) | Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified Y position. |
+| [WithHeight](#uid-910a5ae14b) | 返回一个高度为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。 |
+| [WithWidth](#uid-24f0d2659f) | 返回一个宽度为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。 |
+| [WithX](#uid-773a9cfcf4) | 返回一个 X 位置为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。 |
+| [WithY](#uid-ae85da88f4) | 返回一个 Y 位置为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -576,7 +576,7 @@ The intersection.
 
 ### Intersects 方法 {#intersects-method}
 
-Determines whether a rectangle intersects with this rectangle.
+判断某个矩形是否与该矩形相交。
 
 ```csharp
 public bool Intersects(Avalonia.PixelRect rect)
@@ -756,7 +756,7 @@ public Avalonia.Rect ToRectWithDpi(double dpi)
 
 ### ToString 方法 {#tostring-method}
 
-Returns the string representation of the rectangle.
+返回该矩形的字符串表示形式。
 
 ```csharp
 public string ToString()
@@ -833,7 +833,7 @@ The union.
 
 ### WithHeight 方法 {#withheight-method}
 
-Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified height.
+返回一个高度为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 ```csharp
 public Avalonia.PixelRect WithHeight(int height)
@@ -861,7 +861,7 @@ public Avalonia.PixelRect WithHeight(int height)
 
 ### WithWidth 方法 {#withwidth-method}
 
-Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified width.
+返回一个宽度为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 ```csharp
 public Avalonia.PixelRect WithWidth(int width)
@@ -889,7 +889,7 @@ public Avalonia.PixelRect WithWidth(int width)
 
 ### WithX 方法 {#withx-method}
 
-Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified X position.
+返回一个 X 位置为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 ```csharp
 public Avalonia.PixelRect WithX(int x)
@@ -917,7 +917,7 @@ The x position.
 
 ### WithY 方法 {#withy-method}
 
-Returns a new [Avalonia.PixelRect](xref:Avalonia.PixelRect) with the specified Y position.
+返回一个 Y 位置为指定值的新 [Avalonia.PixelRect](xref:Avalonia.PixelRect)。
 
 ```csharp
 public Avalonia.PixelRect WithY(int y)
@@ -945,7 +945,7 @@ The y position.
 | --- | --- |
 | [Bottom](#uid-ffd8bc65d1) | 获取该矩形下边缘的位置。 |
 | [BottomLeft](#uid-a17dcd1536) | 获取该矩形的左下角点。 |
-| [BottomRight](#uid-be536e5c16) | Gets the bottom right point of the rectangle. |
+| [BottomRight](#uid-be536e5c16) | 获取该矩形的右下角点。 |
 | [Center](#uid-ae34e432d9) | 获取该矩形的中心点。 |
 | [Height](#uid-51d9d79874) | 获取高度。 |
 | [Position](#uid-502dd64523) | 获取该矩形的位置。 |
@@ -991,7 +991,7 @@ public Avalonia.PixelPoint BottomLeft { get; set; }
 
 ### BottomRight 属性 {#bottomright-property}
 
-Gets the bottom right point of the rectangle.
+获取该矩形的右下角点。
 
 ```csharp
 public Avalonia.PixelPoint BottomRight { get; set; }

@@ -56,10 +56,10 @@ public interface IInputElement
 
 | 名称 | 说明 |
 | --- | --- |
-| [AddHandler](#uid-4ed662f866) | Adds a handler for the specified routed event. |
+| [AddHandler](#uid-4ed662f866) | 为指定的路由事件添加一个处理程序。 |
 | [Focus](#uid-2aed735c56) | 让该控件获得焦点。 |
 | [RaiseEvent](#uid-55167c193d) | 抛出一个路由事件。 |
-| [RemoveHandler](#uid-580f070f3a) | Removes a handler for the specified routed event. |
+| [RemoveHandler](#uid-580f070f3a) | 移除指定路由事件的某个处理程序。 |
 
 <section className="apiref-page__member-entry">
 
@@ -67,7 +67,7 @@ public interface IInputElement
 
 ### AddHandler 方法 {#addhandler-method}
 
-Adds a handler for the specified routed event.
+为指定的路由事件添加一个处理程序。
 
 ```csharp
 public void AddHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delegate handler, Avalonia.Interactivity.RoutingStrategies routes, bool handledEventsToo)
@@ -123,7 +123,7 @@ public bool Focus(Avalonia.Input.NavigationMethod method, Avalonia.Input.KeyModi
 
 `keyModifiers` [Avalonia.Input.KeyModifiers](xref:Avalonia.Input.KeyModifiers)
 
-Any key modifiers active at the time of focus.
+获得焦点时处于按下状态的修饰键。
 
 
 #### 返回值 {#returns-1}
@@ -160,7 +160,7 @@ public void RaiseEvent(Avalonia.Interactivity.RoutedEventArgs e)
 
 ### RemoveHandler 方法 {#removehandler-method}
 
-Removes a handler for the specified routed event.
+移除指定路由事件的某个处理程序。
 
 ```csharp
 public void RemoveHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delegate handler)
@@ -189,7 +189,7 @@ public void RemoveHandler(Avalonia.Interactivity.RoutedEvent routedEvent, Delega
 | [IsEffectivelyEnabled](#uid-9f6953e853) | 获取一个值，指示该控件及其所有父级是否均处于启用状态。 |
 | [IsEffectivelyVisible](#uid-035cf31db2) | Gets a value indicating whether this control and all its parents are visible. |
 | [IsEnabled](#uid-7937346c85) | 获取或设置一个值，指示该控件是否接受用户交互。 |
-| [IsFocused](#uid-29f406974f) | Gets a value indicating whether the control is focused. |
+| [IsFocused](#uid-29f406974f) | 获取一个值，指示该控件是否持有焦点。 |
 | [IsHitTestVisible](#uid-15e527fdd2) | Gets a value indicating whether the control is considered for hit testing. |
 | [IsKeyboardFocusWithin](#uid-2e257ffd75) | Gets a value indicating whether keyboard focus is anywhere within the element or its visual tree child elements. |
 | [IsPointerOver](#uid-95cf373dfb) | Gets a value indicating whether the pointer is currently over the control. |
@@ -277,7 +277,7 @@ public bool IsEnabled { get; set; }
 
 ### IsFocused 属性 {#isfocused-property}
 
-Gets a value indicating whether the control is focused.
+获取一个值，指示该控件是否持有焦点。
 
 ```csharp
 public bool IsFocused { get; set; }
@@ -346,16 +346,16 @@ public System.Collections.Generic.List<Avalonia.Input.KeyBinding> KeyBindings { 
 | 名称 | 说明 |
 | --- | --- |
 | [GotFocus](#uid-6a2ac4b0e8) | 该控件获得焦点时发生。 |
-| [KeyDown](#uid-307fe4873f) | Occurs when a key is pressed while the control has focus. |
-| [KeyUp](#uid-c9264d8d2f) | Occurs when a key is released while the control has focus. |
+| [KeyDown](#uid-307fe4873f) | 该控件持有焦点时按下按键会发生。 |
+| [KeyUp](#uid-c9264d8d2f) | 该控件持有焦点时松开按键会发生。 |
 | [LostFocus](#uid-96c57250cf) | 该控件失去焦点时发生。 |
 | [PointerEntered](#uid-4b5da6d7d2) | 指针进入该控件时发生。 |
 | [PointerExited](#uid-e2f2721256) | 指针离开该控件时发生。 |
-| [PointerMoved](#uid-449a25b8d3) | Occurs when the pointer moves over the control. |
-| [PointerPressed](#uid-bcc921191c) | Occurs when the pointer is pressed over the control. |
-| [PointerReleased](#uid-d968fd4cc3) | Occurs when the pointer is released over the control. |
+| [PointerMoved](#uid-449a25b8d3) | 指针在该控件上移动时发生。 |
+| [PointerPressed](#uid-bcc921191c) | 指针在该控件上按下时发生。 |
+| [PointerReleased](#uid-d968fd4cc3) | 指针在该控件上松开时发生。 |
 | [PointerWheelChanged](#uid-4e4b9681df) | Occurs when the mouse wheel is scrolled over the control. |
-| [TextInput](#uid-096256fc6d) | Occurs when a user typed some text while the control has focus. |
+| [TextInput](#uid-096256fc6d) | 该控件持有焦点时用户键入文字会发生。 |
 
 <section className="apiref-page__member-entry">
 
@@ -377,7 +377,7 @@ public event EventHandler<Avalonia.Input.FocusChangedEventArgs> GotFocus
 
 ### KeyDown 事件 {#keydown-event}
 
-Occurs when a key is pressed while the control has focus.
+该控件持有焦点时按下按键会发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.KeyEventArgs> KeyDown
@@ -391,7 +391,7 @@ public event EventHandler<Avalonia.Input.KeyEventArgs> KeyDown
 
 ### KeyUp 事件 {#keyup-event}
 
-Occurs when a key is released while the control has focus.
+该控件持有焦点时松开按键会发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.KeyEventArgs> KeyUp
@@ -447,7 +447,7 @@ public event EventHandler<Avalonia.Input.PointerEventArgs> PointerExited
 
 ### PointerMoved 事件 {#pointermoved-event}
 
-Occurs when the pointer moves over the control.
+指针在该控件上移动时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.PointerEventArgs> PointerMoved
@@ -461,7 +461,7 @@ public event EventHandler<Avalonia.Input.PointerEventArgs> PointerMoved
 
 ### PointerPressed 事件 {#pointerpressed-event}
 
-Occurs when the pointer is pressed over the control.
+指针在该控件上按下时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.PointerPressedEventArgs> PointerPressed
@@ -475,7 +475,7 @@ public event EventHandler<Avalonia.Input.PointerPressedEventArgs> PointerPressed
 
 ### PointerReleased 事件 {#pointerreleased-event}
 
-Occurs when the pointer is released over the control.
+指针在该控件上松开时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.PointerReleasedEventArgs> PointerReleased
@@ -503,7 +503,7 @@ public event EventHandler<Avalonia.Input.PointerWheelEventArgs> PointerWheelChan
 
 ### TextInput 事件 {#textinput-event}
 
-Occurs when a user typed some text while the control has focus.
+该控件持有焦点时用户键入文字会发生。
 
 ```csharp
 public event EventHandler<Avalonia.Input.TextInputEventArgs> TextInput

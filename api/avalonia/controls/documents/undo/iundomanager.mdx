@@ -68,7 +68,7 @@ from outside this assembly.
 | [BeginUndoUnit](#uid-e263f4ebab) | 暂无摘要。 |
 | [Clear](#uid-d34df8c5ce) | 丢弃整个历史记录。 |
 | [Record](#uid-63154d596b) | 直接把一个单元记到撤销栈上。 |
-| [Redo](#uid-48ee1222d4) | Redoes the most recently undone unit and returns it. |
+| [Redo](#uid-48ee1222d4) | 重做最近撤销的那个单元并把它返回。 |
 | [Undo](#uid-6871da987f) | 撤销最近的一个单元并把它返回。 |
 
 <section className="apiref-page__member-entry">
@@ -138,7 +138,7 @@ this assembly is rejected. Group edits with [Avalonia.Controls.Documents.Undo.IU
 
 ### Redo 方法 {#redo-method}
 
-Redoes the most recently undone unit and returns it.
+重做最近撤销的那个单元并把它返回。
 
 ```csharp
 public Avalonia.Controls.Documents.Undo.IUndoUnit Redo()
@@ -177,7 +177,7 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
 | [CanRedo](#uid-6a241b58f9) | 获取是否还有可重做的内容。 |
 | [CanUndo](#uid-959ad6a95e) | 获取是否还有可撤销的内容。 |
 | [IsEnabled](#uid-56693517b4) | 获取或设置是否记录编辑。 |
-| [UndoLimit](#uid-eceda7c30d) | Gets or sets how many units the history keeps. |
+| [UndoLimit](#uid-eceda7c30d) | 获取或设置历史记录保留多少个单元。 |
 
 <section className="apiref-page__member-entry">
 
@@ -227,7 +227,7 @@ public bool IsEnabled { get; set; }
 
 ### UndoLimit 属性 {#undolimit-property}
 
-Gets or sets how many units the history keeps.
+获取或设置历史记录保留多少个单元。
 
 ```csharp
 public int UndoLimit { get; set; }
@@ -239,7 +239,7 @@ public int UndoLimit { get; set; }
 
 | 名称 | 说明 |
 | --- | --- |
-| [StateChanged](#uid-7633b26352) | Raised when the ability to undo or redo changes. |
+| [StateChanged](#uid-7633b26352) | 能否撤销或重做的状态变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
@@ -247,7 +247,7 @@ public int UndoLimit { get; set; }
 
 ### StateChanged 事件 {#statechanged-event}
 
-Raised when the ability to undo or redo changes.
+能否撤销或重做的状态变化时抛出。
 
 ```csharp
 public event EventHandler StateChanged

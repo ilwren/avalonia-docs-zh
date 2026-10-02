@@ -182,7 +182,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [GestureRecognizers](../../input/inputelement.mdx#uid-ddee464eee) | 继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [HasMirrorTransform](../../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../../visual.mdx)。 |
 | [Height](../../layout/layoutable.mdx#uid-4334ab83b4) | 获取或设置元素的高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [HighBrush](#uid-227a9f285c) | Gets or sets the brush for high intensity values. |
+| [HighBrush](#uid-227a9f285c) | 获取或设置高强度取值所用的画刷。 |
 | [HorizontalAlignment](../../layout/layoutable.mdx#uid-c621d98d6c) | 获取或设置元素在其父级中期望的水平对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [IsAnimationEnabled](chartbase.mdx#uid-f67aef6214) | 获取或设置是否启用入场动画。继承自 [ChartBase](chartbase.mdx)。 |
 | [IsArrangeValid](../../layout/layoutable.mdx#uid-97d1d86c71) | 获取一个值，指示控件的布局排列结果是否仍然有效。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -210,12 +210,12 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [LegendOffset](chartbase.mdx#uid-d6aeba2ed7) | 获取或设置浮动图例的偏移量。继承自 [ChartBase](chartbase.mdx)。 |
 | [LegendPosition](chartbase.mdx#uid-07b56208ce) | 获取或设置图表图例的位置。设为 [Avalonia.Controls.Charts.LegendPosition.None](xref:Avalonia.Controls.Charts.LegendPosition.None) 可完全隐藏图例。继承自 [ChartBase](chartbase.mdx)。 |
 | [LetterSpacing](../primitives/templatedcontrol.mdx#uid-2d96a527e6) | 获取或设置控件文本内容的字间距。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
-| [LowBrush](#uid-885e4e3482) | Gets or sets the brush for low intensity values. |
+| [LowBrush](#uid-885e4e3482) | 获取或设置低强度取值所用的画刷。 |
 | [Margin](../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxBrush](#uid-f5e3e9c6a2) | Gets or sets the brush for maximum intensity values. |
 | [MaxHeight](../../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MaxWidth](../../layout/layoutable.mdx#uid-ea6041bc57) | 获取或设置元素的最大宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
-| [MediumBrush](#uid-db3ecaab2d) | Gets or sets the brush for medium intensity values. |
+| [MediumBrush](#uid-db3ecaab2d) | 获取或设置中等强度取值所用的画刷。 |
 | [MinHeight](../../layout/layoutable.mdx#uid-822cd64c83) | 获取或设置元素的最小高度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [MinWidth](../../layout/layoutable.mdx#uid-5bd3b5bb2c) | 获取或设置元素的最小宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Name](../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -312,7 +312,7 @@ public Avalonia.Media.IBrush EmptyCellBrush { get; set; }
 
 ### HighBrush 属性 {#highbrush-property}
 
-Gets or sets the brush for high intensity values.
+获取或设置高强度取值所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush HighBrush { get; set; }
@@ -354,7 +354,7 @@ public double LabelFontSize { get; set; }
 
 ### LowBrush 属性 {#lowbrush-property}
 
-Gets or sets the brush for low intensity values.
+获取或设置低强度取值所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush LowBrush { get; set; }
@@ -382,7 +382,7 @@ public Avalonia.Media.IBrush MaxBrush { get; set; }
 
 ### MediumBrush 属性 {#mediumbrush-property}
 
-Gets or sets the brush for medium intensity values.
+获取或设置中等强度取值所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush MediumBrush { get; set; }

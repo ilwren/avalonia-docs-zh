@@ -96,7 +96,7 @@ The Y vector.
 | --- | --- |
 | [Equals（2 个重载）](#uid-49d4c3886f) | 判断两个向量是否相等（按位比较）。 |
 | [GetHashCode](#uid-68ca1c05f6) | 暂无摘要。 |
-| [NearlyEquals](#uid-e34f35193c) | Check if two vectors are nearly equal (numerically). |
+| [NearlyEquals](#uid-e34f35193c) | 判断两个向量是否近似相等（数值比较）。 |
 | [ToString](#uid-69224b05ba) | 返回该点的字符串表示形式。 |
 | [WithX](#uid-90f8cc3018) | Returns a new vector with the specified X coordinate. |
 | [WithY](#uid-6e89ab708f) | Returns a new vector with the specified Y coordinate. |
@@ -174,7 +174,7 @@ int
 
 ### NearlyEquals 方法 {#nearlyequals-method}
 
-Check if two vectors are nearly equal (numerically).
+判断两个向量是否近似相等（数值比较）。
 
 ```csharp
 public bool NearlyEquals(Avalonia.PixelVector other)

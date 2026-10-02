@@ -143,7 +143,7 @@ public SplitView()
 | [DataTemplates](control.mdx#uid-78ff251b26) | 获取或设置控件使用的数据模板。继承自 [Control](control.mdx)。 |
 | [DesiredSize](../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [Dispatcher](../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
-| [DisplayMode](#uid-32a2d0ad40) | Gets or sets the [Avalonia.Controls.SplitViewDisplayMode](xref:Avalonia.Controls.SplitViewDisplayMode) for the [SplitView](xref:Avalonia.Controls.SplitView) |
+| [DisplayMode](#uid-32a2d0ad40) | 获取或设置 [SplitView](xref:Avalonia.Controls.SplitView) 的 [Avalonia.Controls.SplitViewDisplayMode](xref:Avalonia.Controls.SplitViewDisplayMode) |
 | [Effect](../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../visual.mdx)。 |
 | [FlowDirection](../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../visual.mdx)。 |
 | [Focusable](../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -189,7 +189,7 @@ public SplitView()
 | [Padding](primitives/templatedcontrol.mdx#uid-f5271cd58d) | 获取或设置控件边框与其内容之间的内边距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Pane](#uid-da3b028975) | Gets or sets the Pane for the [SplitView](xref:Avalonia.Controls.SplitView) |
 | [PaneBackground](#uid-c1d41d2c0f) | Gets or sets the background of the pane |
-| [PanePlacement](#uid-13f5ae8595) | Gets or sets the [Avalonia.Controls.SplitViewPanePlacement](xref:Avalonia.Controls.SplitViewPanePlacement) for the [SplitView](xref:Avalonia.Controls.SplitView) |
+| [PanePlacement](#uid-13f5ae8595) | 获取或设置 [SplitView](xref:Avalonia.Controls.SplitView) 的 [Avalonia.Controls.SplitViewPanePlacement](xref:Avalonia.Controls.SplitViewPanePlacement) |
 | [PaneTemplate](#uid-84242c0843) | 获取或设置用于显示控件标题内容的数据模板。 |
 | [Parent](../styledelement.mdx#uid-aad2c5c78d) | 获取该样式化元素在逻辑树中的父级。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Presenter](contentcontrol.mdx#uid-9eb95d7b29) | 从控件模板中获取呈现器。继承自 [ContentControl](contentcontrol.mdx)。 |
@@ -202,7 +202,7 @@ public SplitView()
 | [Tag](control.mdx#uid-2790b0c958) | 获取或设置附加在控件上的用户自定义对象。继承自 [Control](control.mdx)。 |
 | [Template](primitives/templatedcontrol.mdx#uid-7a289f7bd4) | 获取或设置定义控件外观的模板。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [TemplatedParent](../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../styledelement.mdx)。 |
-| [TemplateSettings](#uid-308f921024) | Gets or sets the TemplateSettings for the [Avalonia.Controls.SplitView](xref:Avalonia.Controls.SplitView). |
+| [TemplateSettings](#uid-308f921024) | 获取或设置 [Avalonia.Controls.SplitView](xref:Avalonia.Controls.SplitView) 的 TemplateSettings。 |
 | [Theme](../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../layout/layoutable.mdx)。 |
@@ -233,7 +233,7 @@ public double CompactPaneLength { get; set; }
 
 ### DisplayMode 属性 {#displaymode-property}
 
-Gets or sets the [Avalonia.Controls.SplitViewDisplayMode](xref:Avalonia.Controls.SplitViewDisplayMode) for the [SplitView](xref:Avalonia.Controls.SplitView)
+获取或设置 [SplitView](xref:Avalonia.Controls.SplitView) 的 [Avalonia.Controls.SplitViewDisplayMode](xref:Avalonia.Controls.SplitViewDisplayMode)
 
 ```csharp
 public Avalonia.Controls.SplitViewDisplayMode DisplayMode { get; set; }
@@ -303,7 +303,7 @@ public Avalonia.Media.IBrush PaneBackground { get; set; }
 
 ### PanePlacement 属性 {#paneplacement-property}
 
-Gets or sets the [Avalonia.Controls.SplitViewPanePlacement](xref:Avalonia.Controls.SplitViewPanePlacement) for the [SplitView](xref:Avalonia.Controls.SplitView)
+获取或设置 [SplitView](xref:Avalonia.Controls.SplitView) 的 [Avalonia.Controls.SplitViewPanePlacement](xref:Avalonia.Controls.SplitViewPanePlacement)
 
 ```csharp
 public Avalonia.Controls.SplitViewPanePlacement PanePlacement { get; set; }
@@ -331,7 +331,7 @@ public Avalonia.Controls.Templates.IDataTemplate PaneTemplate { get; set; }
 
 ### TemplateSettings 属性 {#templatesettings-property}
 
-Gets or sets the TemplateSettings for the [Avalonia.Controls.SplitView](xref:Avalonia.Controls.SplitView).
+获取或设置 [Avalonia.Controls.SplitView](xref:Avalonia.Controls.SplitView) 的 TemplateSettings。
 
 ```csharp
 public Avalonia.Controls.Primitives.SplitViewTemplateSettings TemplateSettings { get; set; }

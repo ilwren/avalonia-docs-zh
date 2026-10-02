@@ -90,8 +90,8 @@ public DataTransferItem()
 | 名称 | 说明 |
 | --- | --- |
 | [Create（2 个重载）](#uid-2ae0ae2ff5) | 暂无摘要。 |
-| [CreateFile](#uid-a6832f3a22) | Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) as a single format. |
-| [CreateText](#uid-169cc3837f) | Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) as a single format. |
+| [CreateFile](#uid-a6832f3a22) | 以 [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) 为单一格式创建一个新的 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)。 |
+| [CreateText](#uid-169cc3837f) | 以 [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) 为单一格式创建一个新的 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)。 |
 | [Set (2 overloads)](#uid-4740848ae2) | 暂无摘要。 |
 | [SetBitmap](#uid-91535d5cb2) | 为 [Avalonia.Input.DataFormat.Bitmap](xref:Avalonia.Input.DataFormat.Bitmap) 格式设置值。 |
 | [SetFile](#uid-47c5aa5eca) | 为 [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) 格式设置值。 |
@@ -168,7 +168,7 @@ public Avalonia.Input.DataTransferItem Create<T>(Avalonia.Input.DataFormat<T><T>
 
 ### CreateFile 方法 {#createfile-method}
 
-Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) as a single format.
+以 [Avalonia.Input.DataFormat.File](xref:Avalonia.Input.DataFormat.File) 为单一格式创建一个新的 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)。
 
 ```csharp
 public Avalonia.Input.DataTransferItem CreateFile(Avalonia.Platform.Storage.IStorageItem value)
@@ -197,7 +197,7 @@ A [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) instan
 
 ### CreateText 方法 {#createtext-method}
 
-Creates a new [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem) with [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) as a single format.
+以 [Avalonia.Input.DataFormat.Text](xref:Avalonia.Input.DataFormat.Text) 为单一格式创建一个新的 [Avalonia.Input.DataTransferItem](xref:Avalonia.Input.DataTransferItem)。
 
 ```csharp
 public Avalonia.Input.DataTransferItem CreateText(string value)

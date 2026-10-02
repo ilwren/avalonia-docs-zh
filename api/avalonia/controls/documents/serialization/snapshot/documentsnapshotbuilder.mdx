@@ -66,9 +66,9 @@ public class DocumentSnapshotBuilder
 | [AddHyperlink](#uid-30331edb81) | 向当前段落添加一个超链接。 |
 | [AddImage](#uid-a2827cc1f0) | 暂无摘要。 |
 | [AddImageReference](#uid-d32610b919) | Adds an inline image that references an external source (e.g. a URL) instead of embedding pixel bytes. The pixels are resolved at render time by a loader; the document stores only the reference. |
-| [AddInline](#uid-1e70216cc9) | Adds an inline element to the current paragraph. |
+| [AddInline](#uid-1e70216cc9) | 向当前段落添加一个内联元素。 |
 | [AddItalic](#uid-bdd6ff3b9f) | 向当前段落添加斜体文本。 |
-| [AddListItem (3 overloads)](#uid-5df907eea8) | Adds a new empty list item to the current list. |
+| [AddListItem (3 overloads)](#uid-5df907eea8) | 向当前列表添加一个新的空列表项。 |
 | [AddPageBand](#uid-91f574c98e) | 暂无摘要。 |
 | [AddPageBreak](#uid-0f618f2100) | Applies an explicit page break at the current position. The break is a split instruction, not content: a paragraph with content ends here and continues in a clone of itself, and the next committed block receives [Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting.PageBreakBefore](xref:Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting.PageBreakBefore). A block that would commit empty while the break is pending is the break's own remainder (or a break-only carrier paragraph) and is dropped - the break carries forward; at a container boundary or the document end the pending break materializes as an empty flagged landing paragraph. |
 | [AddPageNumberField](#uid-5b3195e88a) | Adds a page-number field to the current paragraph. The field's cached result becomes its text content, so plain rendering and export show it until paginated rendering resolves the field per page. |
@@ -76,13 +76,13 @@ public class DocumentSnapshotBuilder
 | [AddParagraphRange](#uid-bbe99d3a64) | Registers a paragraph that references a range within previously set bulk text. The text at [`offset`, `offset` + `length`) must already exist in the rope via a prior [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.SetBulkText(ReadOnlyMemory&#123;char&#125;)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.SetBulkText%28System.ReadOnlyMemory%7BSystem.Char%7D%29) call. No rope insert is performed; only the snapshot node tree is updated. |
 | [AddRun](#uid-6b489b6651) | 暂无摘要。 |
 | [AddText (2 overloads)](#uid-58cfe76beb) | 暂无摘要。 |
-| [AddUnderline](#uid-c2775c4852) | Adds underlined text to the current paragraph. |
+| [AddUnderline](#uid-c2775c4852) | 向当前段落添加带下划线的文本。 |
 | [BeginDeferredTableCells](#uid-bfd93dc27e) | Switches the current table to deferred finalization: its rows and cells stay editable until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndTable), so a serializer can set each cell's span (and drop merge continuations) once the whole table and its column grid are known. Applies only to the current table; other tables keep the eager path. |
 | [Build](#uid-932d90d3b1) | Builds the [DocumentSnapshot](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot). |
 | [Create（2 个重载）](#uid-ccd7b83233) | Creates a new [DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder). |
 | [DropDeferredTableCell](#uid-7c04072918) | Marks a deferred cell (a vertical-merge continuation folded into the cell above) so it is not emitted when the table finalizes. |
 | [EndContainer](#uid-d1a5b716a5) | Ends the most recent [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) and restores the prior container. |
-| [EndList](#uid-549b89ed1e) | Ends the current list and restores the parent list if nested. |
+| [EndList](#uid-549b89ed1e) | 结束当前列表；若有嵌套则恢复到父级列表。 |
 | [EndSection](#uid-9ced19ffd0) | Ends the current section and adds it as a block to the parent container. |
 | [EndTable](#uid-149074c46b) | 结束当前表格。 |
 | [EndTableCell](#uid-8c8906255e) | 结束当前表格单元格。 |
@@ -115,7 +115,7 @@ public class DocumentSnapshotBuilder
 | [SetSectionPageBandReferences](#uid-a548ee6ea0) | Sets the current section's page-band references (indices from [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddPageBand(Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot,Avalonia.Controls.Documents.PageBandRole,Avalonia.Controls.Documents.PageBandRule,Guid@,string)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.AddPageBand%28Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot%2CAvalonia.Controls.Documents.PageBandRole%2CAvalonia.Controls.Documents.PageBandRule%2CSystem.Guid%40%2CSystem.String%29)). |
 | [SetSectionPageSetup](#uid-0d381c5a56) | Sets the page setup of the section currently open via [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection(Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting,Avalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartSection%28Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.SectionPageSetup%29), replacing any value passed there. For readers whose format declares the setup after the section has started (RTF section control words follow `\sect`; a DOCX section's `sectPr` sits on its LAST paragraph). No effect when the active container is not a section. |
 | [SetTableBlockFormatting](#uid-239ac98cbe) | Sets block formatting for the current table. |
-| [SetTableCellBackground](#uid-5da468b1ea) | Sets the background color of the current table cell. |
+| [SetTableCellBackground](#uid-5da468b1ea) | 设置当前表格单元格的背景色。 |
 | [SetTableCellBorders](#uid-a185a4ecb5) | 暂无摘要。 |
 | [SetTableCellSpan](#uid-32033bc0b6) | Sets how many grid columns and rows the current table cell spans (Word's `w:gridSpan` and `w:vMerge`). Each value is clamped to at least 1; a span of 1 carries nothing, so an un-merged cell stays at the default. |
 | [SetTableCellTextElementFormatting](#uid-010fe20355) | Sets base-level element formatting for the current table cell. |
@@ -127,7 +127,7 @@ public class DocumentSnapshotBuilder
 | [SetTableRowTextElementFormatting](#uid-66e6768a42) | Sets base-level element formatting for the current table row. |
 | [StartContainer](#uid-9248d08dbd) | Starts a generic block container with an arbitrary [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind). Containers nest: calling [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind,Avalonia.Controls.Documents.TextModel.Formatting.BlockFormatting,Avalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting)](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.StartContainer%28Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind%2CAvalonia.Controls.Documents.TextModel.Formatting.BlockFormatting%2CAvalonia.Controls.Documents.TextModel.Formatting.TextElementFormatting%29) while another is active pushes the outer container onto a stack. [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndContainer](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndContainer) pops it. A container opened while a list item or a table cell is open nests inside it - the blocks added to the container are the container's, and the finished container is added back to the item or cell that enclosed it. |
 | [StartList](#uid-9ce411976f) | Starts a new list with the specified marker style. When called inside an active list item, automatically nests the new list inside the current item instead of finalizing it. |
-| [StartNestedList](#uid-637a5fbdac) | Starts a nested list inside the current list item. |
+| [StartNestedList](#uid-637a5fbdac) | 在当前列表项内开始一个嵌套列表。 |
 | [StartSection (2 overloads)](#uid-77ca3ab3da) | Starts a new section container. Blocks added after this call are placed inside the section until [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder.EndSection) is called. |
 | [StartTable](#uid-e1fe530904) | 开始一个新表格。 |
 | [StartTableCell](#uid-a28f1085c9) | 开始一个新的表格单元格。 |
@@ -359,7 +359,7 @@ Optional alternative text describing the image.
 
 ### AddInline 方法 {#addinline-method}
 
-Adds an inline element to the current paragraph.
+向当前段落添加一个内联元素。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddInline(Avalonia.Controls.Documents.Serialization.Authoring.InlineDraft inline)
@@ -411,7 +411,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 #### AddListItem 方法 {#addlistitem-method}
 
-Adds a new empty list item to the current list.
+向当前列表添加一个新的空列表项。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddListItem()
@@ -809,7 +809,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### AddUnderline 方法 {#addunderline-method}
 
-Adds underlined text to the current paragraph.
+向当前段落添加带下划线的文本。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder AddUnderline(string text)
@@ -968,7 +968,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### EndList 方法 {#endlist-method}
 
-Ends the current list and restores the parent list if nested.
+结束当前列表；若有嵌套则恢复到父级列表。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder EndList()
@@ -1773,7 +1773,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### SetTableCellBackground 方法 {#settablecellbackground-method}
 
-Sets the background color of the current table cell.
+设置当前表格单元格的背景色。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder SetTableCellBackground(uint argb)
@@ -2088,7 +2088,7 @@ public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilde
 
 ### StartNestedList 方法 {#startnestedlist-method}
 
-Starts a nested list inside the current list item.
+在当前列表项内开始一个嵌套列表。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder StartNestedList(Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle markerStyle, int startIndex)

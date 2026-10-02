@@ -65,8 +65,8 @@ public class FocusManager
 
 | 名称 | 说明 |
 | --- | --- |
-| [FindFirstFocusableElement (2 overloads)](#uid-bcea3c7c45) | Retrieves the first element that can receive focus. |
-| [FindLastFocusableElement (2 overloads)](#uid-570f89db7f) | Retrieves the last element that can receive focus. |
+| [FindFirstFocusableElement (2 overloads)](#uid-bcea3c7c45) | 取得第一个可获得焦点的元素。 |
+| [FindLastFocusableElement (2 overloads)](#uid-570f89db7f) | 取得最后一个可获得焦点的元素。 |
 | [FindNextElement](#uid-67d3ffd912) | Retrieves the element that should receive focus based on the specified navigation direction. |
 | [Focus](#uid-b3849d7e6b) | 让某个控件获得焦点。 |
 | [GetFocusedElement](#uid-4d67ddec7f) | 获取当前获得焦点的 [Avalonia.Input.IInputElement](xref:Avalonia.Input.IInputElement)。 |
@@ -82,7 +82,7 @@ public class FocusManager
 
 #### FindFirstFocusableElement 方法 {#findfirstfocusableelement-method}
 
-Retrieves the first element that can receive focus.
+取得第一个可获得焦点的元素。
 
 ```csharp
 public Avalonia.Input.IInputElement FindFirstFocusableElement()
@@ -135,7 +135,7 @@ The first focusable element.
 
 #### FindLastFocusableElement 方法 {#findlastfocusableelement-method}
 
-Retrieves the last element that can receive focus.
+取得最后一个可获得焦点的元素。
 
 ```csharp
 public Avalonia.Input.IInputElement FindLastFocusableElement()
@@ -202,7 +202,7 @@ Must be one of [Avalonia.Input.NavigationDirection.Next](xref:Avalonia.Input.Nav
 
 `options` [Avalonia.Input.FindNextElementOptions](xref:Avalonia.Input.FindNextElementOptions)
 
-The options to help identify the next element to receive focus.
+用于确定下一个接收焦点元素的选项。
 
 
 #### 返回值 {#returns-4}
@@ -240,7 +240,7 @@ The control to focus.
 
 `keyModifiers` [Avalonia.Input.KeyModifiers](xref:Avalonia.Input.KeyModifiers)
 
-Any key modifiers active at the time of focus.
+获得焦点时处于按下状态的修饰键。
 
 
 #### 返回值 {#returns-5}
@@ -303,7 +303,7 @@ Must be one of [Avalonia.Input.NavigationDirection.Next](xref:Avalonia.Input.Nav
 
 `options` [Avalonia.Input.FindNextElementOptions](xref:Avalonia.Input.FindNextElementOptions)
 
-The options to help identify the next element to receive focus.
+用于确定下一个接收焦点元素的选项。
 
 
 #### 返回值 {#returns-7}

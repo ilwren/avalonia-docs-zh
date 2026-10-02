@@ -64,8 +64,8 @@ public class BlockNodeKindHandler
 
 | 名称 | 说明 |
 | --- | --- |
-| [ApplyFormatting](#uid-d20214c32d) | Applies formatting from a [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) back to the element. |
-| [CaptureSnapshot](#uid-9ced0bd6b4) | Captures an immutable [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) for the given element state. |
+| [ApplyFormatting](#uid-d20214c32d) | 把 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) 中的格式设置套回到元素上。 |
+| [CaptureSnapshot](#uid-9ced0bd6b4) | 为给定元素的状态捕获一份不可变的 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)。 |
 | [CreateDocumentNode](#uid-15ce740162) | Creates the [Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode](xref:Avalonia.Controls.Documents.Primitives.DocumentNodes.DocumentNode) for the given element, or to use the default. |
 | [CreateElement](#uid-2f5277e3d0) | 为给定的节点种类创建 [Avalonia.Controls.Documents.RichTextElement](xref:Avalonia.Controls.Documents.RichTextElement)。 |
 
@@ -75,7 +75,7 @@ public class BlockNodeKindHandler
 
 ### ApplyFormatting 方法 {#applyformatting-method}
 
-Applies formatting from a [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) back to the element.
+把 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) 中的格式设置套回到元素上。
 
 ```csharp
 public void ApplyFormatting(Avalonia.Controls.Documents.RichTextElement element, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode snapshotNode)
@@ -97,7 +97,7 @@ public void ApplyFormatting(Avalonia.Controls.Documents.RichTextElement element,
 
 ### CaptureSnapshot 方法 {#capturesnapshot-method}
 
-Captures an immutable [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode) for the given element state.
+为给定元素的状态捕获一份不可变的 [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode)。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode CaptureSnapshot(Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind kind, int startOffset, int length, Avalonia.Controls.Documents.RichTextElement element, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode deferredSnapshot, Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren children)

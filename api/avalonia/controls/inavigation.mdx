@@ -535,7 +535,7 @@ System.Threading.Tasks.Task
 | [CanGoBack](#uid-752489894f) | Gets whether a pop operation is possible (stack has more than one entry). |
 | [ModalStack](#uid-b1e7fc8f43) | Gets the current modal stack. Index 0 is the oldest (bottom-most) modal; the last index is the most recently pushed (topmost) modal. |
 | [NavigationStack](#uid-51db62d90a) | Gets the current navigation stack. The root page is at index 0; the visible page is last. |
-| [StackDepth](#uid-6909ce9c57) | Gets the number of pages in the navigation stack. |
+| [StackDepth](#uid-6909ce9c57) | 获取导航栈中的页面数量。 |
 
 <section className="apiref-page__member-entry">
 
@@ -586,7 +586,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Page> Navigati
 
 ### StackDepth 属性 {#stackdepth-property}
 
-Gets the number of pages in the navigation stack.
+获取导航栈中的页面数量。
 
 ```csharp
 public int StackDepth { get; set; }

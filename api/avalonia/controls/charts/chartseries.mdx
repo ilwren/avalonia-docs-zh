@@ -301,10 +301,10 @@ bool
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [SelectedIndex](#uid-58ebc0a860) | Gets or sets the index of the selected data point. -1 means no selection. |
 | [SelectedIndexes](#uid-2691f6f54e) | Gets the collection of selected indexes (for Multiple selection type). |
-| [SelectionBrush](#uid-679a85484b) | Gets or sets the brush used to highlight selected data points. |
+| [SelectionBrush](#uid-679a85484b) | 获取或设置高亮选中数据点所用的画刷。 |
 | [SelectionMode](#uid-88c751521d) | 获取或设置选择行为。 |
 | [SelectionStroke](#uid-05446458ac) | Gets or sets the stroke brush used to outline selected data points. When null, no selection stroke is drawn. |
-| [SelectionStrokeThickness](#uid-9e0838889a) | Gets or sets the stroke thickness for the selection outline. |
+| [SelectionStrokeThickness](#uid-9e0838889a) | 获取或设置选中轮廓的描边粗细。 |
 | [ShowInLegend](#uid-35fe807fbe) | Gets or sets whether this series contributes an item to the chart legend. |
 | [Stroke](#uid-dbb40e7623) | Gets or sets the explicit stroke or outline brush for the series. Line-based series should prefer this property for the rendered line color. |
 | [StrokeThickness](#uid-ff7bc510f1) | Gets or sets the stroke thickness for the series. |
@@ -509,7 +509,7 @@ public System.Collections.Generic.IReadOnlyCollection<int> SelectedIndexes { get
 
 ### SelectionBrush 属性 {#selectionbrush-property}
 
-Gets or sets the brush used to highlight selected data points.
+获取或设置高亮选中数据点所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush SelectionBrush { get; set; }
@@ -552,7 +552,7 @@ public Avalonia.Media.IBrush SelectionStroke { get; set; }
 
 ### SelectionStrokeThickness 属性 {#selectionstrokethickness-property}
 
-Gets or sets the stroke thickness for the selection outline.
+获取或设置选中轮廓的描边粗细。
 
 ```csharp
 public double SelectionStrokeThickness { get; set; }

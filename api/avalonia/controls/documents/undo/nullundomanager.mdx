@@ -71,7 +71,7 @@ second implementation of the contract to exist.
 | [Clear](#uid-25e8017caf) | 丢弃整个历史记录。 |
 | [Dispose](#uid-55dca3de7f) | 暂无摘要。 |
 | [Record](#uid-bed6fae961) | 直接把一个单元记到撤销栈上。 |
-| [Redo](#uid-4158c5200a) | Redoes the most recently undone unit and returns it. |
+| [Redo](#uid-4158c5200a) | 重做最近撤销的那个单元并把它返回。 |
 | [Undo](#uid-8842d461c7) | 撤销最近的一个单元并把它返回。 |
 
 <section className="apiref-page__member-entry">
@@ -153,7 +153,7 @@ this assembly is rejected. Group edits with [Avalonia.Controls.Documents.Undo.IU
 
 ### Redo 方法 {#redo-method}
 
-Redoes the most recently undone unit and returns it.
+重做最近撤销的那个单元并把它返回。
 
 ```csharp
 public Avalonia.Controls.Documents.Undo.IUndoUnit Redo()
@@ -193,9 +193,9 @@ public Avalonia.Controls.Documents.Undo.IUndoUnit Undo()
 | [CanUndo](#uid-8f4aff9147) | 获取是否还有可撤销的内容。 |
 | [Instance](#uid-dfb6ef2900) | The single instance. |
 | [IsEnabled](#uid-62dd4eb853) | 获取或设置是否记录编辑。 |
-| [RedoUnits](#uid-dcdaefe28c) | The units that can be redone, most recent last. |
-| [UndoLimit](#uid-d5e3858fb0) | Gets or sets how many units the history keeps. |
-| [UndoUnits](#uid-580e9e1689) | The units that can be undone, most recent last. |
+| [RedoUnits](#uid-dcdaefe28c) | 可重做的各个单元，最近的排在最后。 |
+| [UndoLimit](#uid-d5e3858fb0) | 获取或设置历史记录保留多少个单元。 |
+| [UndoUnits](#uid-580e9e1689) | 可撤销的各个单元，最近的排在最后。 |
 
 <section className="apiref-page__member-entry">
 
@@ -259,7 +259,7 @@ public bool IsEnabled { get; set; }
 
 ### RedoUnits 属性 {#redounits-property}
 
-The units that can be redone, most recent last.
+可重做的各个单元，最近的排在最后。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo.IUndoUnit> RedoUnits { get; set; }
@@ -273,7 +273,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo
 
 ### UndoLimit 属性 {#undolimit-property}
 
-Gets or sets how many units the history keeps.
+获取或设置历史记录保留多少个单元。
 
 ```csharp
 public int UndoLimit { get; set; }
@@ -287,7 +287,7 @@ public int UndoLimit { get; set; }
 
 ### UndoUnits 属性 {#undounits-property}
 
-The units that can be undone, most recent last.
+可撤销的各个单元，最近的排在最后。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo.IUndoUnit> UndoUnits { get; set; }
@@ -299,7 +299,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo
 
 | 名称 | 说明 |
 | --- | --- |
-| [StateChanged](#uid-1840485c5f) | Raised when the ability to undo or redo changes. |
+| [StateChanged](#uid-1840485c5f) | 能否撤销或重做的状态变化时抛出。 |
 
 <section className="apiref-page__member-entry">
 
@@ -307,7 +307,7 @@ public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Documents.Undo
 
 ### StateChanged 事件 {#statechanged-event}
 
-Raised when the ability to undo or redo changes.
+能否撤销或重做的状态变化时抛出。
 
 ```csharp
 public event EventHandler StateChanged

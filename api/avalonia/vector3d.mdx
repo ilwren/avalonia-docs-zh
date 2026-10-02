@@ -90,7 +90,7 @@ public Vector3D(double X, double Y, double Z)
 | --- | --- |
 | [Abs](#uid-fc1af86743) | Returns a vector whose elements are the absolute values of each of the specified vector's elements. |
 | [Add](#uid-ed5e0e177b) | 把第二个向量加到第一个向量上 |
-| [Clamp](#uid-0467b800d3) | Restricts a vector between a minimum and a maximum value. |
+| [Clamp](#uid-0467b800d3) | 把向量限制在最小值与最大值之间。 |
 | [Deconstruct](#uid-803792bb97) | 暂无摘要。 |
 | [Distance](#uid-ccc54c032e) | 计算给定两点之间的欧几里得距离。 |
 | [DistanceSquared](#uid-4c80d659ae) | Computes the squared Euclidean distance between the two given points. |
@@ -158,7 +158,7 @@ public Avalonia.Vector3D Add(Avalonia.Vector3D left, Avalonia.Vector3D right)
 
 ### Clamp 方法 {#clamp-method}
 
-Restricts a vector between a minimum and a maximum value.
+把向量限制在最小值与最大值之间。
 
 ```csharp
 public Avalonia.Vector3D Clamp(Avalonia.Vector3D value, Avalonia.Vector3D min, Avalonia.Vector3D max)

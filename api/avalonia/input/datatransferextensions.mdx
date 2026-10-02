@@ -66,7 +66,7 @@ public class DataTransferExtensions
 | [GetItems](#uid-12948ec178) | Gets the list of [Avalonia.Input.IDataTransferItem](xref:Avalonia.Input.IDataTransferItem) contained in this object, filtered by a given format. |
 | [TryGetBitmap](#uid-d54ba1699a) | 从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出位图（若有）。 |
 | [TryGetFile](#uid-d8e8d736ce) | 从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出文件（若有）。 |
-| [TryGetFiles](#uid-cd9312c50d) | Returns a list of files, if available, from a [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) instance. |
+| [TryGetFiles](#uid-cd9312c50d) | 从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出文件列表（若有）。 |
 | [TryGetText](#uid-9f804d4370) | 从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出文本（若有）。 |
 | [TryGetValue](#uid-e57a2799cc) | 暂无摘要。 |
 | [TryGetValues](#uid-cb2f49aa26) | 暂无摘要。 |
@@ -208,7 +208,7 @@ public Avalonia.Platform.Storage.IStorageItem TryGetFile(Avalonia.Input.IDataTra
 
 ### TryGetFiles 方法 {#trygetfiles-method}
 
-Returns a list of files, if available, from a [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) instance.
+从 [Avalonia.Input.IDataTransfer](xref:Avalonia.Input.IDataTransfer) 实例中取出文件列表（若有）。
 
 ```csharp
 public Avalonia.Platform.Storage.IStorageItem[] TryGetFiles(Avalonia.Input.IDataTransfer dataTransfer)

@@ -56,8 +56,8 @@ public interface IScrollAnchorProvider
 
 | 名称 | 说明 |
 | --- | --- |
-| [RegisterAnchorCandidate](#uid-3fe9754229) | Registers a control as a potential scroll anchor candidate. |
-| [UnregisterAnchorCandidate](#uid-8e791baa7f) | Unregisters a control as a potential scroll anchor candidate. |
+| [RegisterAnchorCandidate](#uid-3fe9754229) | 把某个控件注册为候选的滚动锚点。 |
+| [UnregisterAnchorCandidate](#uid-8e791baa7f) | 把某个控件从候选滚动锚点中注销。 |
 
 <section className="apiref-page__member-entry">
 
@@ -65,7 +65,7 @@ public interface IScrollAnchorProvider
 
 ### RegisterAnchorCandidate 方法 {#registeranchorcandidate-method}
 
-Registers a control as a potential scroll anchor candidate.
+把某个控件注册为候选的滚动锚点。
 
 ```csharp
 public void RegisterAnchorCandidate(Avalonia.Controls.Control element)
@@ -86,7 +86,7 @@ public void RegisterAnchorCandidate(Avalonia.Controls.Control element)
 
 ### UnregisterAnchorCandidate 方法 {#unregisteranchorcandidate-method}
 
-Unregisters a control as a potential scroll anchor candidate.
+把某个控件从候选滚动锚点中注销。
 
 ```csharp
 public void UnregisterAnchorCandidate(Avalonia.Controls.Control element)

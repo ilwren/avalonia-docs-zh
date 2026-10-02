@@ -252,10 +252,10 @@ bool
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [SelectedIndex](#uid-83689e5154) | Gets or sets the index of the primary selected data point. |
 | [SelectedIndexes](#uid-c61627586d) | Gets the collection of selected indexes. |
-| [SelectionBrush](#uid-a50b907e3a) | Gets or sets the brush used to highlight selected data points. |
+| [SelectionBrush](#uid-a50b907e3a) | 获取或设置高亮选中数据点所用的画刷。 |
 | [SelectionMode](#uid-1e3846b169) | 获取或设置选择行为。 |
 | [SelectionStroke](#uid-54749a421b) | Gets or sets the stroke brush used to outline selected data points. |
-| [SelectionStrokeThickness](#uid-d5cda12a38) | Gets or sets the stroke thickness for the selection outline. |
+| [SelectionStrokeThickness](#uid-d5cda12a38) | 获取或设置选中轮廓的描边粗细。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -321,7 +321,7 @@ public System.Collections.Generic.IReadOnlyCollection<int> SelectedIndexes { get
 
 ### SelectionBrush 属性 {#selectionbrush-property}
 
-Gets or sets the brush used to highlight selected data points.
+获取或设置高亮选中数据点所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush SelectionBrush { get; set; }
@@ -363,7 +363,7 @@ public Avalonia.Media.IBrush SelectionStroke { get; set; }
 
 ### SelectionStrokeThickness 属性 {#selectionstrokethickness-property}
 
-Gets or sets the stroke thickness for the selection outline.
+获取或设置选中轮廓的描边粗细。
 
 ```csharp
 public double SelectionStrokeThickness { get; set; }

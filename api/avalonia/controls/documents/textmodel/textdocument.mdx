@@ -383,8 +383,8 @@ double
 | [DefaultTextFormatting](#uid-58b7627e85) | The document's default text formatting: the font, size, foreground and background every block and inline inherits unless it declares its own. It belongs to the root node, which never realizes an element in a document used model-first, so the model keeps it here and the snapshot carries it on [Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.Root](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshot.Root). |
 | [FootnoteNumberFormat](#uid-f5418f53c5) | Gets or sets how the document numbers its footnotes: the format of the ordinal each anchor renders and its note shows in its number strip. Nothing is stored in the anchors: setting it is one undo unit and raises [Avalonia.Controls.Documents.TextModel.TextDocument.FootnotesChanged](xref:Avalonia.Controls.Documents.TextModel.TextDocument.FootnotesChanged), from which the views re-render. A nested document (a page band, a footnote) has no numbering of its own and refuses any value but the default. |
 | [Footnotes](#uid-aaa11d159d) | The footnotes this document owns, in anchor order: nested documents paired by id with the [Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.FootnoteReference](xref:Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind.FootnoteReference) anchors in the body. The text model is complete without an element facade: the notes snapshot and restore with the document. |
-| [IsPageHeightFixed](#uid-649a89dd0a) | Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight) is fixed rather than advisory. |
-| [IsPageWidthFixed](#uid-80baf281d3) | Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth) is fixed rather than advisory. |
+| [IsPageHeightFixed](#uid-649a89dd0a) | [Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight) 是硬性规定还是仅供参考。 |
+| [IsPageWidthFixed](#uid-80baf281d3) | [Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth) 是硬性规定还是仅供参考。 |
 | [IsUpdating](#uid-7897df3c9b) | Returns true if a change block is in progress. |
 | [Length](#uid-b0d5ceded3) | Gets the total character length of the document text. |
 | [PageBandDistance](#uid-23be7e570a) | Gets or sets the distance from the sheet edge to a page band in DIPs: the header's top sits this far below the sheet top, the footer's bottom this far above the sheet bottom. Null (the default) means [Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance](xref:Avalonia.Controls.Documents.PageBandPolicy.DefaultDistance). |
@@ -533,7 +533,7 @@ public Avalonia.Controls.Documents.TextModel.TextFootnoteCollection Footnotes { 
 
 ### IsPageHeightFixed 属性 {#ispageheightfixed-property}
 
-Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight) is fixed rather than advisory.
+[Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageHeight) 是硬性规定还是仅供参考。
 
 ```csharp
 public bool IsPageHeightFixed { get; set; }
@@ -551,7 +551,7 @@ public bool IsPageHeightFixed { get; set; }
 
 ### IsPageWidthFixed 属性 {#ispagewidthfixed-property}
 
-Whether [Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth) is fixed rather than advisory.
+[Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth](xref:Avalonia.Controls.Documents.TextModel.TextDocument.PageWidth) 是硬性规定还是仅供参考。
 
 ```csharp
 public bool IsPageWidthFixed { get; set; }

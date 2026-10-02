@@ -192,17 +192,17 @@ Y 位置。
 | [GetHashCode](#uid-80cde6e52c) | 返回该实例的哈希码。 |
 | [Inflate (2 overloads)](#uid-c822ee841c) | Inflates the rectangle. |
 | [Intersect](#uid-3fe10318df) | 获取两个矩形的交集。 |
-| [Intersects](#uid-364e7cc562) | Determines whether a rectangle intersects with this rectangle. |
+| [Intersects](#uid-364e7cc562) | 判断某个矩形是否与该矩形相交。 |
 | [Normalize](#uid-3629fbea6d) | Normalizes the rectangle so both the [Avalonia.Rect.Width](xref:Avalonia.Rect.Width) and [Avalonia.Rect.Height](xref:Avalonia.Rect.Height) are positive, without changing the location of the rectangle |
 | [Parse](#uid-9058fe2601) | 解析 [Avalonia.Rect](xref:Avalonia.Rect) 字符串。 |
-| [ToString](#uid-48d1660868) | Returns the string representation of the rectangle. |
+| [ToString](#uid-48d1660868) | 返回该矩形的字符串表示形式。 |
 | [TransformToAABB](#uid-9b40128191) | Returns the axis-aligned bounding box of a transformed rectangle. |
 | [Translate](#uid-1bc7e8335f) | 按某个偏移量平移该矩形。 |
 | [Union](#uid-951f6c32aa) | 获取两个矩形的并集。 |
-| [WithHeight](#uid-304dbb7634) | Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified height. |
-| [WithWidth](#uid-520737bfa4) | Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified width. |
-| [WithX](#uid-1e6448c5ea) | Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified X position. |
-| [WithY](#uid-c3c7b3889d) | Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified Y position. |
+| [WithHeight](#uid-304dbb7634) | 返回一个高度为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。 |
+| [WithWidth](#uid-520737bfa4) | 返回一个宽度为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。 |
+| [WithX](#uid-1e6448c5ea) | 返回一个 X 位置为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。 |
+| [WithY](#uid-c3c7b3889d) | 返回一个 Y 位置为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。 |
 
 <section className="apiref-page__member-entry">
 
@@ -341,7 +341,7 @@ public Avalonia.Rect Deflate(Avalonia.Thickness thickness)
 
 `thickness` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
-The thickness to be subtracted for each side of the rectangle.
+要从矩形各边减去的厚度。
 
 
 ##### 返回值 {#returns-4}
@@ -369,7 +369,7 @@ public Avalonia.Rect Deflate(double thickness)
 
 `thickness` double
 
-The thickness to be subtracted for each side of the rectangle.
+要从矩形各边减去的厚度。
 
 
 ##### 返回值 {#returns-5}
@@ -482,7 +482,7 @@ public Avalonia.Rect Inflate(Avalonia.Thickness thickness)
 
 `thickness` [Avalonia.Thickness](xref:Avalonia.Thickness)
 
-The thickness to be subtracted for each side of the rectangle.
+要从矩形各边减去的厚度。
 
 
 ##### 返回值 {#returns-9}
@@ -510,7 +510,7 @@ public Avalonia.Rect Inflate(double thickness)
 
 `thickness` double
 
-The thickness to be subtracted for each side of the rectangle.
+要从矩形各边减去的厚度。
 
 
 ##### 返回值 {#returns-10}
@@ -556,7 +556,7 @@ The intersection.
 
 ### Intersects 方法 {#intersects-method}
 
-Determines whether a rectangle intersects with this rectangle.
+判断某个矩形是否与该矩形相交。
 
 ```csharp
 public bool Intersects(Avalonia.Rect rect)
@@ -637,7 +637,7 @@ public Avalonia.Rect Parse(string s)
 
 ### ToString 方法 {#tostring-method}
 
-Returns the string representation of the rectangle.
+返回该矩形的字符串表示形式。
 
 ```csharp
 public string ToString()
@@ -742,7 +742,7 @@ The union.
 
 ### WithHeight 方法 {#withheight-method}
 
-Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified height.
+返回一个高度为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。
 
 ```csharp
 public Avalonia.Rect WithHeight(double height)
@@ -770,7 +770,7 @@ public Avalonia.Rect WithHeight(double height)
 
 ### WithWidth 方法 {#withwidth-method}
 
-Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified width.
+返回一个宽度为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。
 
 ```csharp
 public Avalonia.Rect WithWidth(double width)
@@ -798,7 +798,7 @@ public Avalonia.Rect WithWidth(double width)
 
 ### WithX 方法 {#withx-method}
 
-Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified X position.
+返回一个 X 位置为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。
 
 ```csharp
 public Avalonia.Rect WithX(double x)
@@ -826,7 +826,7 @@ The x position.
 
 ### WithY 方法 {#withy-method}
 
-Returns a new [Avalonia.Rect](xref:Avalonia.Rect) with the specified Y position.
+返回一个 Y 位置为指定值的新 [Avalonia.Rect](xref:Avalonia.Rect)。
 
 ```csharp
 public Avalonia.Rect WithY(double y)
@@ -854,7 +854,7 @@ The y position.
 | --- | --- |
 | [Bottom](#uid-9463039512) | 获取该矩形下边缘的位置。 |
 | [BottomLeft](#uid-b1ae4617a3) | 获取该矩形的左下角点。 |
-| [BottomRight](#uid-c3eebdc20d) | Gets the bottom right point of the rectangle. |
+| [BottomRight](#uid-c3eebdc20d) | 获取该矩形的右下角点。 |
 | [Center](#uid-82560a8c5b) | 获取该矩形的中心点。 |
 | [Height](#uid-aec34b0ad3) | 获取高度。 |
 | [Left](#uid-78a4b0ba67) | Gets the left position. |
@@ -902,7 +902,7 @@ public Avalonia.Point BottomLeft { get; set; }
 
 ### BottomRight 属性 {#bottomright-property}
 
-Gets the bottom right point of the rectangle.
+获取该矩形的右下角点。
 
 ```csharp
 public Avalonia.Point BottomRight { get; set; }

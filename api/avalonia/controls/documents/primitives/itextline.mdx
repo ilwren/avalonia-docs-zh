@@ -52,13 +52,13 @@ public interface ITextLine
 
 | 名称 | 说明 |
 | --- | --- |
-| [Baseline](#uid-51ea79b491) | Gets the baseline offset from the top of the line. |
-| [Bounds](#uid-b50c8458ed) | Gets the bounding rectangle of this line in view coordinates. |
+| [Baseline](#uid-51ea79b491) | 获取自行顶部量起的基线偏移量。 |
+| [Bounds](#uid-b50c8458ed) | 获取该行在视图坐标系中的外接矩形。 |
 | [ContainingElement](#uid-1101022e19) | Gets the node whose content this line belongs to, if any. Selection rendering and vertical navigation group lines by it, so a line that reports none is skipped by both. |
-| [EndPosition](#uid-b66caf3cd4) | Gets the end position of this line as a lightweight value type. |
-| [HasLineBreak](#uid-fb809b2c64) | Gets whether this line ends with a hard line break. |
+| [EndPosition](#uid-b66caf3cd4) | 以轻量值类型的形式获取该行的结束位置。 |
+| [HasLineBreak](#uid-fb809b2c64) | 获取该行是否以硬换行结束。 |
 | [Height](#uid-182cd43021) | 获取该行的高度。 |
-| [Length](#uid-cc5ea53799) | Gets the character length of text in this line. |
+| [Length](#uid-cc5ea53799) | 获取该行文本的字符长度。 |
 | [StartPosition](#uid-bd3a8aa765) | Gets the start position of this line as a lightweight value type. |
 | [Width](#uid-dd50ef7964) | 获取该行的宽度。 |
 
@@ -68,7 +68,7 @@ public interface ITextLine
 
 ### Baseline 属性 {#baseline-property}
 
-Gets the baseline offset from the top of the line.
+获取自行顶部量起的基线偏移量。
 
 ```csharp
 public double Baseline { get; set; }
@@ -82,7 +82,7 @@ public double Baseline { get; set; }
 
 ### Bounds 属性 {#bounds-property}
 
-Gets the bounding rectangle of this line in view coordinates.
+获取该行在视图坐标系中的外接矩形。
 
 ```csharp
 public Avalonia.Rect Bounds { get; set; }
@@ -118,7 +118,7 @@ navigation, which is the same treatment it received before the member was added.
 
 ### EndPosition 属性 {#endposition-property}
 
-Gets the end position of this line as a lightweight value type.
+以轻量值类型的形式获取该行的结束位置。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.StaticTextPointer EndPosition { get; set; }
@@ -132,7 +132,7 @@ public Avalonia.Controls.Documents.TextModel.StaticTextPointer EndPosition { get
 
 ### HasLineBreak 属性 {#haslinebreak-property}
 
-Gets whether this line ends with a hard line break.
+获取该行是否以硬换行结束。
 
 ```csharp
 public bool HasLineBreak { get; set; }
@@ -160,7 +160,7 @@ public double Height { get; set; }
 
 ### Length 属性 {#length-property}
 
-Gets the character length of text in this line.
+获取该行文本的字符长度。
 
 ```csharp
 public int Length { get; set; }

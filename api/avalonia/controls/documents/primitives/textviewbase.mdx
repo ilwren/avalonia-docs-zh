@@ -123,16 +123,16 @@ public TextViewBase()
 | [GetIsHoldingEnabled](../../../input/inputelement.mdx#uid-2af9987676) | 继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [GetIsHoldWithMouseEnabled](../../../input/inputelement.mdx#uid-0420943ecd) | 继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [GetIsTemplateFocusTarget](../../primitives/templatedcontrol.mdx#uid-75a788f38f) | 获取控件上 IsTemplateFocusTargetProperty 附加属性的值。继承自 [TemplatedControl](../../primitives/templatedcontrol.mdx)。 |
-| [GetLineFromPosition](#uid-82e6936504) | Gets the line containing the specified position. |
+| [GetLineFromPosition](#uid-82e6936504) | 获取包含指定位置的那一行。 |
 | [GetNextLine](#uid-638192c88b) | 获取指定行之后的下一行。 |
 | [GetPositionAtLineEnd](#uid-c13929f0ea) | Gets the position at the end of the line containing the specified position. |
 | [GetPositionAtLineStart](#uid-dc09cf92fe) | Gets the position at the start of the line containing the specified position. |
 | [GetPositionAtLineX](#uid-9a6aef4836) | Returns the text position on `line` closest to the specified X coordinate. The result is guaranteed to stay on `line`; it never crosses into a neighbouring line or block, regardless of how far `x` lies outside the line's horizontal bounds. |
-| [GetPreviousLine](#uid-4ffd2bc4f4) | Gets the previous line before the specified line. |
+| [GetPreviousLine](#uid-4ffd2bc4f4) | 获取指定行之前的上一行。 |
 | [GetRectangleFromTextPosition](#uid-70aa84398d) | Gets the bounding rectangle for a character at the specified position. |
 | [GetTextPositionFromPoint](#uid-f67cf57d54) | 由屏幕坐标点取得对应的文本位置。 |
 | [GetValue（3 个重载）](../../../avaloniaobject.mdx#uid-5142cd4792) | 获取 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 的值。继承自 [AvaloniaObject](../../../avaloniaobject.mdx)。 |
-| [GetVisibleLineAtOrAfter](#uid-ac58a95270) | Gets the first visible line at or after the specified position. |
+| [GetVisibleLineAtOrAfter](#uid-ac58a95270) | 获取位于指定位置处或其后的第一个可见行。 |
 | [InvalidateArrange](../../../layout/layoutable.mdx#uid-3e9d4ebe35) | 使控件的排列结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
 | [InvalidateMeasure](../../../layout/layoutable.mdx#uid-31c6107bb9) | 使控件的测量结果失效，并排入新一轮布局队列。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
 | [InvalidateVisual](../../../visual.mdx#uid-1cd22a7496) | 使视觉元素失效并排入重绘队列。继承自 [Visual](../../../visual.mdx)。 |
@@ -179,7 +179,7 @@ public void EnsurePositionVisible(Avalonia.Controls.Documents.TextModel.TextPoin
 
 ### GetLineFromPosition 方法 {#getlinefromposition-method}
 
-Gets the line containing the specified position.
+获取包含指定位置的那一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetLineFromPosition(Avalonia.Controls.Documents.TextModel.TextPointer position)
@@ -336,7 +336,7 @@ blocks when `x` is near a block boundary.
 
 ### GetPreviousLine 方法 {#getpreviousline-method}
 
-Gets the previous line before the specified line.
+获取指定行之前的上一行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetPreviousLine(Avalonia.Controls.Documents.Primitives.ITextLine currentLine)
@@ -434,7 +434,7 @@ The text position, or null if no position could be determined.
 
 ### GetVisibleLineAtOrAfter 方法 {#getvisiblelineatorafter-method}
 
-Gets the first visible line at or after the specified position.
+获取位于指定位置处或其后的第一个可见行。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.ITextLine GetVisibleLineAtOrAfter(Avalonia.Controls.Documents.TextModel.TextPointer position)

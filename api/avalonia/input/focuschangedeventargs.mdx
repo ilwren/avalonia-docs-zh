@@ -93,10 +93,10 @@ public FocusChangedEventArgs(Avalonia.Interactivity.RoutedEvent routedEvent)
 | 名称 | 说明 |
 | --- | --- |
 | [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | 获取或设置一个值，指示该路由事件是否已被处理。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
-| [KeyModifiers](#uid-19279b00dc) | Gets or sets any key modifiers active at the time of focus. |
+| [KeyModifiers](#uid-19279b00dc) | 获取或设置获得焦点时处于按下状态的修饰键。 |
 | [NavigationMethod](#uid-ad2094abaf) | Gets or sets a value indicating how the change in focus occurred. |
-| [NewFocusedElement](#uid-ddeb0af8ef) | Gets or sets the element that focus has moved to. |
-| [OldFocusedElement](#uid-f854b172e1) | Gets or sets the element that previously had focus. |
+| [NewFocusedElement](#uid-ddeb0af8ef) | 获取或设置焦点转移到的那个元素。 |
+| [OldFocusedElement](#uid-f854b172e1) | 获取或设置先前持有焦点的那个元素。 |
 | [Route](../interactivity/routedeventargs.mdx#uid-751be73db9) | 获取或设置路由事件的路由策略（直接、冒泡或隧道）。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 | [RoutedEvent](../interactivity/routedeventargs.mdx#uid-4e102999d9) | 获取或设置与这组事件参数关联的路由事件。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
 | [Source](../interactivity/routedeventargs.mdx#uid-4385b523d5) | 获取或设置引发该路由事件的源对象。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
@@ -107,7 +107,7 @@ public FocusChangedEventArgs(Avalonia.Interactivity.RoutedEvent routedEvent)
 
 ### KeyModifiers 属性 {#keymodifiers-property}
 
-Gets or sets any key modifiers active at the time of focus.
+获取或设置获得焦点时处于按下状态的修饰键。
 
 ```csharp
 public Avalonia.Input.KeyModifiers KeyModifiers { get; set; }
@@ -135,7 +135,7 @@ public Avalonia.Input.NavigationMethod NavigationMethod { get; set; }
 
 ### NewFocusedElement 属性 {#newfocusedelement-property}
 
-Gets or sets the element that focus has moved to.
+获取或设置焦点转移到的那个元素。
 
 ```csharp
 public Avalonia.Input.IInputElement NewFocusedElement { get; set; }
@@ -149,7 +149,7 @@ public Avalonia.Input.IInputElement NewFocusedElement { get; set; }
 
 ### OldFocusedElement 属性 {#oldfocusedelement-property}
 
-Gets or sets the element that previously had focus.
+获取或设置先前持有焦点的那个元素。
 
 ```csharp
 public Avalonia.Input.IInputElement OldFocusedElement { get; set; }

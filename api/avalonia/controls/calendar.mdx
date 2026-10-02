@@ -207,7 +207,7 @@ string
 | [AllowTapRangeSelection](#uid-3e1c7ceca7) | Gets or sets a value indicating whether tap-to-select range mode is enabled. When enabled, users can tap a start date and then tap an end date to select a range. |
 | [Background](primitives/templatedcontrol.mdx#uid-50dbd38ef5) | 获取或设置绘制控件背景所用的画刷。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [BackgroundSizing](primitives/templatedcontrol.mdx#uid-07ef33f604) | 获取或设置控件背景相对于其边框的绘制方式。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
-| [BlackoutDates](#uid-e77dc0c11a) | Gets a collection of dates that are marked as not selectable. |
+| [BlackoutDates](#uid-e77dc0c11a) | 获取被标记为不可选的那些日期。 |
 | [BorderBrush](primitives/templatedcontrol.mdx#uid-cf666d3678) | 获取或设置绘制控件边框所用的画刷。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [BorderThickness](primitives/templatedcontrol.mdx#uid-4e2cc431b4) | 获取或设置控件边框的粗细。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Bounds](../visual.mdx#uid-a01c3022f7) | 获取控件相对于其父级的边界。继承自 [Visual](../visual.mdx)。 |
@@ -322,7 +322,7 @@ the end date to complete the range. Tapping a third date starts a new range.
 
 ### BlackoutDates 属性 {#blackoutdates-property}
 
-Gets a collection of dates that are marked as not selectable.
+获取被标记为不可选的那些日期。
 
 ```csharp
 public Avalonia.Controls.Primitives.CalendarBlackoutDatesCollection BlackoutDates { get; set; }

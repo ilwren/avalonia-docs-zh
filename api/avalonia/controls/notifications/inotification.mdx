@@ -58,8 +58,8 @@ public interface INotification
 | --- | --- |
 | [Expiration](#uid-0d99d5ab69) | Gets the expiration time of the notification after which it will automatically close. If the value is [TimeSpan.Zero](xref:System.TimeSpan.Zero) then the notification will remain open until the user closes it. |
 | [Message](#uid-4cc56a4040) | 获取通知的消息内容。 |
-| [OnClick](#uid-79c34b575c) | Gets an Action to be run when the notification is clicked. |
-| [OnClose](#uid-a9aca8b2a7) | Gets an Action to be run when the notification is closed. |
+| [OnClick](#uid-79c34b575c) | 获取通知被点击时要执行的 Action。 |
+| [OnClose](#uid-a9aca8b2a7) | 获取通知关闭时要执行的 Action。 |
 | [Title](#uid-ffb70a14d4) | 获取通知的标题。 |
 | [Type](#uid-608336dff2) | 获取该通知的 [Avalonia.Controls.Notifications.NotificationType](xref:Avalonia.Controls.Notifications.NotificationType)。 |
 
@@ -98,7 +98,7 @@ public string Message { get; set; }
 
 ### OnClick 属性 {#onclick-property}
 
-Gets an Action to be run when the notification is clicked.
+获取通知被点击时要执行的 Action。
 
 ```csharp
 public Action OnClick { get; set; }
@@ -112,7 +112,7 @@ public Action OnClick { get; set; }
 
 ### OnClose 属性 {#onclose-property}
 
-Gets an Action to be run when the notification is closed.
+获取通知关闭时要执行的 Action。
 
 ```csharp
 public Action OnClose { get; set; }

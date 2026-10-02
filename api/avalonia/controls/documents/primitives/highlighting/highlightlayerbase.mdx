@@ -66,7 +66,7 @@ public class HighlightLayerBase
 | 名称 | 说明 |
 | --- | --- |
 | [GetRegions](#uid-144ab4b076) | 获取该图层中的所有高亮区域。 |
-| [GetRegionsInRange](#uid-d2e912ad5d) | Gets highlight regions that intersect with the specified range. |
+| [GetRegionsInRange](#uid-d2e912ad5d) | 获取与指定范围相交的那些高亮区域。 |
 | [Render](#uid-da49a17564) | 渲染该图层。 |
 
 <section className="apiref-page__member-entry">
@@ -96,7 +96,7 @@ A read-only list of highlight regions.
 
 ### GetRegionsInRange 方法 {#getregionsinrange-method}
 
-Gets highlight regions that intersect with the specified range.
+获取与指定范围相交的那些高亮区域。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Documents.Primitives.Highlighting.HighlightRegion> GetRegionsInRange(Avalonia.Controls.Documents.TextModel.TextPointer start, Avalonia.Controls.Documents.TextModel.TextPointer end)
@@ -155,7 +155,7 @@ The text view for coordinate mapping.
 | --- | --- |
 | [IsVisible](#uid-cd67c451b3) | Gets or sets a value indicating whether this layer is currently visible. |
 | [Name](#uid-48a5e007e0) | Gets the name that identifies this layer within a [Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection](xref:Avalonia.Controls.Documents.Primitives.Highlighting.HighlightLayerCollection), which rejects a second layer carrying the same one and looks layers up by it. |
-| [ZIndex](#uid-82f2b21bb7) | Gets the Z-index for rendering order (higher = on top). |
+| [ZIndex](#uid-82f2b21bb7) | 获取决定渲染顺序的 Z 序（值越大越靠上）。 |
 
 <section className="apiref-page__member-entry">
 
@@ -193,7 +193,7 @@ public string Name { get; set; }
 
 ### ZIndex 属性 {#zindex-property}
 
-Gets the Z-index for rendering order (higher = on top).
+获取决定渲染顺序的 Z 序（值越大越靠上）。
 
 ```csharp
 public int ZIndex { get; set; }

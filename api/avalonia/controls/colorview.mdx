@@ -144,7 +144,7 @@ public ColorView()
 | [Clip](../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../visual.mdx)。 |
 | [ClipToBounds](../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../visual.mdx)。 |
 | [Color](#uid-565abe5a2d) | 获取或设置以 RGB 颜色模型表示的当前选中颜色。 |
-| [ColorModel](#uid-4e392ee7fc) | Gets or sets the active color model used by the slider. |
+| [ColorModel](#uid-4e392ee7fc) | 获取或设置该滑块当前所用的颜色模型。 |
 | [ColorSpectrumComponents](#uid-dc82908013) | 获取或设置色谱所显示的那两个 HSV 颜色分量。 |
 | [ColorSpectrumShape](#uid-5dcb631483) | 获取或设置色谱显示成什么形状。 |
 | [ContextFlyout](control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](control.mdx)。 |
@@ -261,7 +261,7 @@ of precision and color drifting.
 
 ### ColorModel 属性 {#colormodel-property}
 
-Gets or sets the active color model used by the slider.
+获取或设置该滑块当前所用的颜色模型。
 
 ```csharp
 public Avalonia.Controls.ColorModel ColorModel { get; set; }
@@ -1268,7 +1268,7 @@ public Avalonia.StyledProperty<int> SelectedIndexProperty
 | [ActualThemeVariantChanged](../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
-| [ColorChanged](#uid-b366faafe7) | Event for when the selected color changes within the slider. |
+| [ColorChanged](#uid-b366faafe7) | 滑块内选中颜色发生变化时的事件。 |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [DataContextChanged](../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../styledelement.mdx)。 |
@@ -1321,7 +1321,7 @@ public Avalonia.StyledProperty<int> SelectedIndexProperty
 
 ### ColorChanged 事件 {#colorchanged-event}
 
-Event for when the selected color changes within the slider.
+滑块内选中颜色发生变化时的事件。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.ColorChangedEventArgs> ColorChanged

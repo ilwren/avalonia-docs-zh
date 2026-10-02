@@ -117,7 +117,7 @@ public ItemsControl()
 | [IsAnimating](../avaloniaobject.mdx#uid-8cbfc7521a) | 判断 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 是否正在执行动画。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [IsSet](../avaloniaobject.mdx#uid-f8bf0bbdcc) | 判断该对象上是否设置了 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty)。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [ItemFromContainer](#uid-3c71c5d6a2) | Returns the item that corresponds to the specified, generated container. |
-| [ItemsControlFromItemContainer](#uid-5c0ca71f4b) | Returns the [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl) that owns the specified container control. |
+| [ItemsControlFromItemContainer](#uid-5c0ca71f4b) | 返回拥有指定容器控件的那个 [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl)。 |
 | [Measure](../layout/layoutable.mdx#uid-1da410eb81) | 对控件执行一次测量。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [RaiseEvent](../interactivity/interactive.mdx#uid-d6aba452e6) | 引发一个路由事件。继承自 [Interactive](../interactivity/interactive.mdx)。 |
 | [RemoveHandler（2 个重载）](../interactivity/interactive.mdx#uid-456e485be9) | 移除指定路由事件的处理程序。继承自 [Interactive](../interactivity/interactive.mdx)。 |
@@ -273,7 +273,7 @@ The contained item, or the container if it does not contain an item.
 
 ### ItemsControlFromItemContainer 方法 {#itemscontrolfromitemcontainer-method}
 
-Returns the [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl) that owns the specified container control.
+返回拥有指定容器控件的那个 [Avalonia.Controls.ItemsControl](xref:Avalonia.Controls.ItemsControl)。
 
 ```csharp
 public Avalonia.Controls.ItemsControl ItemsControlFromItemContainer(Avalonia.Controls.Control container)

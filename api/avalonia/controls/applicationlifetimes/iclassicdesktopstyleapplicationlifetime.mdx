@@ -95,9 +95,9 @@ bool
 | 名称 | 说明 |
 | --- | --- |
 | [Args](#uid-f7541f62f3) | Gets the arguments passed to the [Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime(Avalonia.AppBuilder,string\[\],Avalonia.Controls.ShutdownMode)](xref:Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime%28Avalonia.AppBuilder%2CSystem.String%5B%5D%2CAvalonia.Controls.ShutdownMode%29) method. |
-| [MainWindow](#uid-f42ca673ff) | Gets or sets the main window of the application. |
+| [MainWindow](#uid-f42ca673ff) | 获取或设置该应用的主窗口。 |
 | [ShutdownMode](#uid-eb16069b5f) | Gets or sets the [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode). This property indicates whether the application is shutdown explicitly or implicitly. If [Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode](xref:Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime.ShutdownMode) is set to OnExplicitShutdown the application is only closes if Shutdown is called. The default is OnLastWindowClose |
-| [Windows](#uid-e103f97d1e) | Gets the list of all open windows in the application. |
+| [Windows](#uid-e103f97d1e) | 获取该应用中所有已打开窗口的列表。 |
 
 <section className="apiref-page__member-entry">
 
@@ -121,7 +121,7 @@ public string[] Args { get; set; }
 
 ### MainWindow 属性 {#mainwindow-property}
 
-Gets or sets the main window of the application.
+获取或设置该应用的主窗口。
 
 ```csharp
 public Avalonia.Controls.Window MainWindow { get; set; }
@@ -161,7 +161,7 @@ The shutdown mode.
 
 ### Windows 属性 {#windows-property}
 
-Gets the list of all open windows in the application.
+获取该应用中所有已打开窗口的列表。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Controls.Window> Windows { get; set; }

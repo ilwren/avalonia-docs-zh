@@ -228,7 +228,7 @@ public RuntimeXamlLoaderDocument(Uri baseUri, string xaml)
 | --- | --- |
 | [BaseUri](#uid-b5de20e5af) | 所加载 XAML 的 URI。 |
 | [Document](#uid-ddceede5e2) | Path to the XAML document being loaded. |
-| [RootInstance](#uid-086cd0f9b2) | The optional instance into which the XAML should be loaded. |
+| [RootInstance](#uid-086cd0f9b2) | XAML 要加载进的目标实例，可选。 |
 | [ServiceProvider](#uid-29c6758014) | Parent's service provider to pass to the Build method or type ctor, if available. |
 | [XamlStream](#uid-d73bbd126f) | 包含该 XAML 的流。 |
 
@@ -266,7 +266,7 @@ public string Document { get; set; }
 
 ### RootInstance 属性 {#rootinstance-property}
 
-The optional instance into which the XAML should be loaded.
+XAML 要加载进的目标实例，可选。
 
 ```csharp
 public object RootInstance { get; set; }

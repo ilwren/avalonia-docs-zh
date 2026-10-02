@@ -167,7 +167,7 @@ bool
 | [DataContext](../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [FirstChildElement](richtextelement.mdx#uid-e1dc680020) | 获取文档树中第一个直接子元素；若不存在则返回空。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [FirstPageFooter](#uid-2d43bc4c62) | Gets or sets the footer counterpart of [Avalonia.Controls.Documents.Section.FirstPageHeader](xref:Avalonia.Controls.Documents.Section.FirstPageHeader). |
+| [FirstPageFooter](#uid-2d43bc4c62) | 获取或设置与 [Avalonia.Controls.Documents.Section.FirstPageHeader](xref:Avalonia.Controls.Documents.Section.FirstPageHeader) 对应的页脚部分。 |
 | [FirstPageHeader](#uid-0db5de0803) | Gets or sets the header of the section's first page. Setting it is what makes the section's first page special; null starts the section like any page. |
 | [FlowDirection](block.mdx#uid-80c619ecd5) | 获取或设置块内文本的排列方向。继承自 [Block](block.mdx)。 |
 | [FontFamily](richtextelement.mdx#uid-128b85f7b7) | 获取或设置显示文本所用的字体族。继承自 [RichTextElement](richtextelement.mdx)。 |
@@ -176,7 +176,7 @@ bool
 | [FontStretch](richtextelement.mdx#uid-ec4b0245c4) | 获取或设置字体在水平方向上的拉伸程度。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FontStyle](richtextelement.mdx#uid-e10f1b7020) | 获取或设置显示文本所用的字形样式。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [FontWeight](richtextelement.mdx#uid-6c23d05b42) | 获取或设置显示文本所用字体的字重（粗细）。继承自 [RichTextElement](richtextelement.mdx)。 |
-| [Footer](#uid-8b4fa85e2b) | Gets or sets the footer counterpart of [Avalonia.Controls.Documents.Section.Header](xref:Avalonia.Controls.Documents.Section.Header). |
+| [Footer](#uid-8b4fa85e2b) | 获取或设置与 [Avalonia.Controls.Documents.Section.Header](xref:Avalonia.Controls.Documents.Section.Header) 对应的页脚部分。 |
 | [Foreground](richtextelement.mdx#uid-0c97ada7e3) | 获取或设置绘制控件前景所用的画刷。继承自 [RichTextElement](richtextelement.mdx)。 |
 | [Header](#uid-9e86892c3b) | Gets or sets the section's header for every page the other selectors do not claim. A reference to a [Avalonia.Controls.Documents.PageBand](xref:Avalonia.Controls.Documents.PageBand) the owning document holds in [Avalonia.Controls.Documents.FlowDocument.PageBands](xref:Avalonia.Controls.Documents.FlowDocument.PageBands): one band can serve any number of sections. A section without a reference falls back to the document root's for the same selector. Setting an unowned band adopts it into the owning document (when the section attaches, if it is detached now); a band owned by another document is refused. Null clears the reference. Layout consults top-level sections only. |
 | [IsAttachedToDocument](richtextelement.mdx#uid-9e20282634) | 获取一个值，指示该元素当前是否已挂接到 [Avalonia.Controls.Documents.TextModel.TextDocument](xref:Avalonia.Controls.Documents.TextModel.TextDocument)。继承自 [RichTextElement](richtextelement.mdx)。 |
@@ -227,7 +227,7 @@ public Avalonia.Controls.Documents.BlockCollection Blocks { get; set; }
 
 ### FirstPageFooter 属性 {#firstpagefooter-property}
 
-Gets or sets the footer counterpart of [Avalonia.Controls.Documents.Section.FirstPageHeader](xref:Avalonia.Controls.Documents.Section.FirstPageHeader).
+获取或设置与 [Avalonia.Controls.Documents.Section.FirstPageHeader](xref:Avalonia.Controls.Documents.Section.FirstPageHeader) 对应的页脚部分。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBand FirstPageFooter { get; set; }
@@ -256,7 +256,7 @@ public Avalonia.Controls.Documents.PageBand FirstPageHeader { get; set; }
 
 ### Footer 属性 {#footer-property}
 
-Gets or sets the footer counterpart of [Avalonia.Controls.Documents.Section.Header](xref:Avalonia.Controls.Documents.Section.Header).
+获取或设置与 [Avalonia.Controls.Documents.Section.Header](xref:Avalonia.Controls.Documents.Section.Header) 对应的页脚部分。
 
 ```csharp
 public Avalonia.Controls.Documents.PageBand Footer { get; set; }
@@ -481,7 +481,7 @@ public Avalonia.StyledProperty<double> PageWidthProperty
 | --- | --- |
 | [ActualThemeVariantChanged](../../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [ChildIndexChanged](#uid-7ea44d1a0a) | Occurs when the child index of a logical child changes. |
+| [ChildIndexChanged](#uid-7ea44d1a0a) | 某个逻辑子级的子索引发生变化时发生。 |
 | [DataContextChanged](../../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [DetachedFromLogicalTree](../../styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Initialized](../../styledelement.mdx#uid-bd6a5e5c0e) | 当该样式化元素完成初始化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -494,7 +494,7 @@ public Avalonia.StyledProperty<double> PageWidthProperty
 
 ### ChildIndexChanged 事件 {#childindexchanged-event}
 
-Occurs when the child index of a logical child changes.
+某个逻辑子级的子索引发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.LogicalTree.ChildIndexChangedEventArgs> ChildIndexChanged

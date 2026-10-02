@@ -1438,7 +1438,7 @@ public Avalonia.AttachedProperty<Avalonia.Media.TextAlignment> TextAlignmentProp
 | --- | --- |
 | [ActualThemeVariantChanged](../../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [ChildIndexChanged](#uid-e9c74fd816) | Occurs when the child index of a logical child changes. |
+| [ChildIndexChanged](#uid-e9c74fd816) | 某个逻辑子级的子索引发生变化时发生。 |
 | [DataContextChanged](../../styledelement.mdx#uid-4b1cc873f8) | 当 [Avalonia.StyledElement.DataContext](xref:Avalonia.StyledElement.DataContext) 属性发生变化时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [DetachedFromLogicalTree](../../styledelement.mdx#uid-d9f5afa535) | 当该样式化元素从带根的逻辑树中分离时引发。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [FootnotesChanged](#uid-d0e801538f) | Raised when the set of notes changes, a note's id or label changes, or the numbering format changes: the notes a page shows and the numbers they show follow from these, so views re-place them. |
@@ -1453,7 +1453,7 @@ public Avalonia.AttachedProperty<Avalonia.Media.TextAlignment> TextAlignmentProp
 
 ### ChildIndexChanged 事件 {#childindexchanged-event}
 
-Occurs when the child index of a logical child changes.
+某个逻辑子级的子索引发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.LogicalTree.ChildIndexChangedEventArgs> ChildIndexChanged

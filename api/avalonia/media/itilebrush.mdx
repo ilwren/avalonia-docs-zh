@@ -64,8 +64,8 @@ public interface ITileBrush
 | --- | --- |
 | [AlignmentX](#uid-a415a8b63f) | 获取平铺块在目标区域中的水平对齐方式。 |
 | [AlignmentY](#uid-61add2e369) | 获取平铺块在目标区域中的水平对齐方式。 |
-| [DestinationRect](#uid-aec31396d9) | Gets the rectangle on the destination in which to paint a tile. |
-| [SourceRect](#uid-f98a8fee04) | Gets the rectangle of the source image that will be displayed. |
+| [DestinationRect](#uid-aec31396d9) | 获取目标区域中用于绘制平铺块的那块矩形。 |
+| [SourceRect](#uid-f98a8fee04) | 获取源图像中将被显示出来的那块矩形。 |
 | [Stretch](#uid-1d1438b11b) | Gets a value indicating how the source rectangle will be stretched to fill the destination rect. |
 | [TileMode](#uid-bc086764f6) | 获取该画刷的平铺模式。 |
 
@@ -103,7 +103,7 @@ public Avalonia.Media.AlignmentY AlignmentY { get; set; }
 
 ### DestinationRect 属性 {#destinationrect-property}
 
-Gets the rectangle on the destination in which to paint a tile.
+获取目标区域中用于绘制平铺块的那块矩形。
 
 ```csharp
 public Avalonia.RelativeRect DestinationRect { get; set; }
@@ -117,7 +117,7 @@ public Avalonia.RelativeRect DestinationRect { get; set; }
 
 ### SourceRect 属性 {#sourcerect-property}
 
-Gets the rectangle of the source image that will be displayed.
+获取源图像中将被显示出来的那块矩形。
 
 ```csharp
 public Avalonia.RelativeRect SourceRect { get; set; }

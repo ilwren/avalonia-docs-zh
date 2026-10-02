@@ -67,9 +67,9 @@ public class ImmutableTileBrush
 | --- | --- |
 | [AlignmentX](#uid-8938ce7809) | 获取平铺块在目标区域中的水平对齐方式。 |
 | [AlignmentY](#uid-5ce5d983f2) | 获取平铺块在目标区域中的水平对齐方式。 |
-| [DestinationRect](#uid-c040ea2847) | Gets the rectangle on the destination in which to paint a tile. |
+| [DestinationRect](#uid-c040ea2847) | 获取目标区域中用于绘制平铺块的那块矩形。 |
 | [Opacity](#uid-bc234e730d) | 获取画刷的不透明度。 |
-| [SourceRect](#uid-e832a55183) | Gets the rectangle of the source image that will be displayed. |
+| [SourceRect](#uid-e832a55183) | 获取源图像中将被显示出来的那块矩形。 |
 | [Stretch](#uid-2d17a7a145) | Gets a value indicating how the source rectangle will be stretched to fill the destination rect. |
 | [TileMode](#uid-ff11f8a04a) | 获取该画刷的平铺模式。 |
 | [Transform](#uid-e70e2d1323) | 获取画刷的变换。 |
@@ -109,7 +109,7 @@ public Avalonia.Media.AlignmentY AlignmentY { get; set; }
 
 ### DestinationRect 属性 {#destinationrect-property}
 
-Gets the rectangle on the destination in which to paint a tile.
+获取目标区域中用于绘制平铺块的那块矩形。
 
 ```csharp
 public Avalonia.RelativeRect DestinationRect { get; set; }
@@ -137,7 +137,7 @@ public double Opacity { get; set; }
 
 ### SourceRect 属性 {#sourcerect-property}
 
-Gets the rectangle of the source image that will be displayed.
+获取源图像中将被显示出来的那块矩形。
 
 ```csharp
 public Avalonia.RelativeRect SourceRect { get; set; }

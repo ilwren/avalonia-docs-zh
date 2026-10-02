@@ -57,8 +57,8 @@ public interface IStorageProvider
 | [OpenFolderPickerAsync](#uid-6bb27fee7f) | Opens the folder picker dialog. |
 | [SaveFilePickerAsync](#uid-4e68fc0b1f) | Opens the save file picker dialog. |
 | [SaveFilePickerWithResultAsync](#uid-1a9bca9667) | Opens the save file picker dialog and returns additional information about the result. |
-| [TryGetFileFromPathAsync](#uid-9c134ae673) | Attempts to read file from the file-system by its path. |
-| [TryGetFolderFromPathAsync](#uid-8e5af1db8a) | Attempts to read folder from the file-system by its path. |
+| [TryGetFileFromPathAsync](#uid-9c134ae673) | 尝试按路径从文件系统中读取文件。 |
+| [TryGetFolderFromPathAsync](#uid-8e5af1db8a) | 尝试按路径从文件系统中读取文件夹。 |
 | [TryGetWellKnownFolderAsync](#uid-fc02bb97a0) | Attempts to read folder from the file-system by its path |
 
 <section className="apiref-page__member-entry">
@@ -253,7 +253,7 @@ System.Threading.Tasks.Task&lt;[Avalonia.Platform.Storage.SaveFilePickerResult](
 
 ### TryGetFileFromPathAsync 方法 {#trygetfilefrompathasync-method}
 
-Attempts to read file from the file-system by its path.
+尝试按路径从文件系统中读取文件。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFile> TryGetFileFromPathAsync(Uri filePath)
@@ -287,7 +287,7 @@ It also might ask user for the permission, and throw an exception if it was deni
 
 ### TryGetFolderFromPathAsync 方法 {#trygetfolderfrompathasync-method}
 
-Attempts to read folder from the file-system by its path.
+尝试按路径从文件系统中读取文件夹。
 
 ```csharp
 public System.Threading.Tasks.Task<Avalonia.Platform.Storage.IStorageFolder> TryGetFolderFromPathAsync(Uri folderPath)

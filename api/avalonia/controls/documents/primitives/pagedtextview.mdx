@@ -250,7 +250,7 @@ public void SetPageContext(Avalonia.Controls.Control control, Nullable<Avalonia.
 | [ContextFlyout](../../control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](../../control.mdx)。 |
 | [ContextMenu](../../control.mdx#uid-95e5e3ccc3) | 获取或设置控件的上下文菜单。继承自 [Control](../../control.mdx)。 |
 | [CornerRadius](../../primitives/templatedcontrol.mdx#uid-91a447dd4a) | 获取或设置边框圆角的半径。继承自 [TemplatedControl](../../primitives/templatedcontrol.mdx)。 |
-| [CurrentPageNumber](#uid-ce8ed208a6) | Gets the 1-based page number at the viewport center. |
+| [CurrentPageNumber](#uid-ce8ed208a6) | 获取视口中心处的页码（从 1 开始）。 |
 | [Cursor](../../../input/inputelement.mdx#uid-4222de38cf) | 获取或设置关联的鼠标指针样式。继承自 [InputElement](../../../input/inputelement.mdx)。 |
 | [DataContext](../../../styledelement.mdx#uid-647f924a56) | 获取或设置控件的数据上下文。继承自 [StyledElement](../../../styledelement.mdx)。 |
 | [DataTemplates](../../control.mdx#uid-78ff251b26) | 获取或设置控件使用的数据模板。继承自 [Control](../../control.mdx)。 |
@@ -293,10 +293,10 @@ public void SetPageContext(Avalonia.Controls.Control control, Nullable<Avalonia.
 | [Margin](../../../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
 | [MaxHeight](../../../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
 | [MaxWidth](../../../layout/layoutable.mdx#uid-ea6041bc57) | 获取或设置元素的最大宽度。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
-| [MaxZoom](#uid-f000ef7b76) | Gets or sets the largest allowed effective zoom factor. |
+| [MaxZoom](#uid-f000ef7b76) | 获取或设置允许的最大有效缩放倍数。 |
 | [MinHeight](../../../layout/layoutable.mdx#uid-822cd64c83) | 获取或设置元素的最小高度。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
 | [MinWidth](../../../layout/layoutable.mdx#uid-5bd3b5bb2c) | 获取或设置元素的最小宽度。继承自 [Layoutable](../../../layout/layoutable.mdx)。 |
-| [MinZoom](#uid-b477f4396a) | Gets or sets the smallest allowed effective zoom factor. |
+| [MinZoom](#uid-b477f4396a) | 获取或设置允许的最小有效缩放倍数。 |
 | [Name](../../../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../../../styledelement.mdx)。 |
 | [Opacity](../../../visual.mdx#uid-9eaf1e3d57) | 获取或设置控件的不透明度。继承自 [Visual](../../../visual.mdx)。 |
 | [OpacityMask](../../../visual.mdx#uid-b6579b9244) | 获取或设置控件的不透明度蒙版。继承自 [Visual](../../../visual.mdx)。 |
@@ -340,7 +340,7 @@ public void SetPageContext(Avalonia.Controls.Control control, Nullable<Avalonia.
 
 ### CurrentPageNumber 属性 {#currentpagenumber-property}
 
-Gets the 1-based page number at the viewport center.
+获取视口中心处的页码（从 1 开始）。
 
 ```csharp
 public int CurrentPageNumber { get; set; }
@@ -383,7 +383,7 @@ public bool IsPaginationComplete { get; set; }
 
 ### MaxZoom 属性 {#maxzoom-property}
 
-Gets or sets the largest allowed effective zoom factor.
+获取或设置允许的最大有效缩放倍数。
 
 ```csharp
 public double MaxZoom { get; set; }
@@ -397,7 +397,7 @@ public double MaxZoom { get; set; }
 
 ### MinZoom 属性 {#minzoom-property}
 
-Gets or sets the smallest allowed effective zoom factor.
+获取或设置允许的最小有效缩放倍数。
 
 ```csharp
 public double MinZoom { get; set; }

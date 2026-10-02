@@ -500,11 +500,11 @@ public Avalonia.AppBuilder WithDataAnnotationsValidation()
 | [RenderingSubsystemInitializer](#uid-ad8cee057a) | Gets or sets a method to call the initialize the windowing subsystem. |
 | [RenderingSubsystemName](#uid-eb1c42e656) | Gets the name of the currently selected rendering subsystem. |
 | [RuntimePlatformServicesInitializer](#uid-ea87d2ecfb) | Gets or sets a method to call the initialize the runtime platform services (e. g. [AssetLoader](xref:Avalonia.Platform.AssetLoader)) |
-| [RuntimePlatformServicesName](#uid-41be63bf0d) | Gets the name of the currently selected windowing subsystem. |
+| [RuntimePlatformServicesName](#uid-41be63bf0d) | 获取当前所用窗口子系统的名称。 |
 | [TextShapingSubsystemInitializer](#uid-c1b81b7390) | Gets or sets a method to call the initialize the text shaping subsystem. |
 | [TextShapingSubsystemName](#uid-a3cc06ef06) | Gets the name of the currently selected text shaping subsystem. |
 | [WindowingSubsystemInitializer](#uid-78f8ad74a9) | Gets or sets a method to call the initialize the windowing subsystem. |
-| [WindowingSubsystemName](#uid-7d0f73060a) | Gets the name of the currently selected windowing subsystem. |
+| [WindowingSubsystemName](#uid-7d0f73060a) | 获取当前所用窗口子系统的名称。 |
 
 <section className="apiref-page__member-entry">
 
@@ -608,7 +608,7 @@ public Action RuntimePlatformServicesInitializer { get; set; }
 
 ### RuntimePlatformServicesName 属性 {#runtimeplatformservicesname-property}
 
-Gets the name of the currently selected windowing subsystem.
+获取当前所用窗口子系统的名称。
 
 ```csharp
 public string RuntimePlatformServicesName { get; set; }
@@ -664,7 +664,7 @@ public Action WindowingSubsystemInitializer { get; set; }
 
 ### WindowingSubsystemName 属性 {#windowingsubsystemname-property}
 
-Gets the name of the currently selected windowing subsystem.
+获取当前所用窗口子系统的名称。
 
 ```csharp
 public string WindowingSubsystemName { get; set; }
