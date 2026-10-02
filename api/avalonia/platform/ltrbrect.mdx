@@ -40,11 +40,9 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-This struct is essentially the same thing as MilRectD
-Unlike our "normal" Rect which is more human-readable and human-usable
-this struct is optimized for actual processing that doesn't really care
-about Width and Height but pretty much always only cares about
-Right and Bottom edge coordinates
+这个结构本质上与 MilRectD 是一回事。
+我们那个「常规」的 Rect 更便于人读人用，而这个结构则是为实际处理而优化的——
+那些处理其实并不关心 Width 和 Height，几乎只关心右边缘与下边缘的坐标。
 
 不必在 Width/Height 与 Right/Bottom 之间来回换算（本来也没必要），
 这为我们省下了一些性能开销

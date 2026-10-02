@@ -36,8 +36,8 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Represents an open polyline on the map defined by a series of lat/long points.
-Unlike [MapPolygon](xref:Avalonia.Controls.Charts.MapPolygon), this renders as an open path (not closed).
+表示地图上由一串经纬度点界定的开放折线。
+与 [MapPolygon](xref:Avalonia.Controls.Charts.MapPolygon) 不同，它绘制成不闭合的路径。
 
 </div>
 
@@ -99,7 +99,7 @@ public MapPolyline()
 | --- | --- |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Points](#uid-67698ee0bd) | Gets or sets the collection of lat/long points defining the polyline. |
+| [Points](#uid-67698ee0bd) | 获取或设置界定该折线的那组经纬度点。 |
 | [Stroke](#uid-e20d0fbe81) | 获取或设置描边画刷。 |
 | [StrokeDashStyle](#uid-108ce54097) | 获取或设置虚线所用的线型。 |
 | [StrokeThickness](#uid-e03d87bd6a) | 获取或设置描边粗细。 |
@@ -110,7 +110,7 @@ public MapPolyline()
 
 ### Points 属性 {#points-property}
 
-Gets or sets the collection of lat/long points defining the polyline.
+获取或设置界定该折线的那组经纬度点。
 
 ```csharp
 public System.Collections.Generic.IList<Avalonia.Controls.Charts.MapLatLng> Points { get; set; }

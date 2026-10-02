@@ -36,8 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Exposes chart-level hover highlighting for chart types that support dimming or emphasizing
-data points while the pointer is over a data point.
+为那些支持「指针悬停在数据点上时让其余点变暗或予以强调」的图表类型暴露图表级悬停高亮能力。
 
 </div>
 
@@ -51,8 +50,8 @@ public interface IHighlightableChart
 
 ## 备注 {#remarks}
 
-Implement this contract only when the chart has real hover-highlight rendering behavior.
-This keeps [Avalonia.Controls.Charts.IHighlightableChart.IsHighlightEnabled](xref:Avalonia.Controls.Charts.IHighlightableChart.IsHighlightEnabled) off chart types where it would be a no-op.
+只有当图表确实有悬停高亮的渲染行为时才实现这份契约，
+这样 [Avalonia.Controls.Charts.IHighlightableChart.IsHighlightEnabled](xref:Avalonia.Controls.Charts.IHighlightableChart.IsHighlightEnabled) 就不会出现在那些实现起来形同虚设的图表类型上。
 
 ## 属性 {#properties}
 

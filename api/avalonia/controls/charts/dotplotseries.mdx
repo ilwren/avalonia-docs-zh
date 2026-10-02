@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-A series that displays simple dots for each data point.
+为每个数据点画一个圆点的系列。
 
 </div>
 
@@ -236,7 +236,7 @@ public void RenderSeries(Avalonia.Controls.Charts.SeriesRenderContext& context)
 | [SelectionMode](chartseries.mdx#uid-88c751521d) | 获取或设置选择行为。继承自 [ChartSeries](chartseries.mdx)。 |
 | [SelectionStroke](chartseries.mdx#uid-05446458ac) | 获取或设置用于勾勒选中数据点轮廓的描边画刷。为 null 时不绘制选中轮廓。继承自 [ChartSeries](chartseries.mdx)。 |
 | [SelectionStrokeThickness](chartseries.mdx#uid-9e0838889a) | 获取或设置选中轮廓线的描边粗细。继承自 [ChartSeries](chartseries.mdx)。 |
-| [ShowConnectorLines](#uid-2bc40908be) | Gets or sets whether to show connector lines between dots. |
+| [ShowConnectorLines](#uid-2bc40908be) | 获取或设置是否在圆点之间显示连接线。 |
 | [ShowInLegend](chartseries.mdx#uid-35fe807fbe) | 获取或设置该数据系列是否向图表图例贡献一个条目。继承自 [ChartSeries](chartseries.mdx)。 |
 | [ShowLabels](cartesianseries.mdx#uid-0af65ffcba) | 获取或设置是否显示数据标签。继承自 [CartesianSeries](cartesianseries.mdx)。 |
 | [ShowMarkers](cartesianseries.mdx#uid-d2cec94e0d) | 获取或设置是否在每个数据点上显示标记。继承自 [CartesianSeries](cartesianseries.mdx)。 |
@@ -297,7 +297,7 @@ public double DotSize { get; set; }
 
 ### ShowConnectorLines 属性 {#showconnectorlines-property}
 
-Gets or sets whether to show connector lines between dots.
+获取或设置是否在圆点之间显示连接线。
 
 ```csharp
 public bool ShowConnectorLines { get; set; }

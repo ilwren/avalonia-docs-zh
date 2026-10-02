@@ -61,7 +61,7 @@ public interface ILockedFramebuffer
 | [Dpi](#uid-eb5ccbf69c) | 底层屏幕的 DPI |
 | [Format](#uid-014702d698) | 像素格式 |
 | [RowBytes](#uid-35f667e4ca) | 每一行所占的字节数 |
-| [Size](#uid-b94340b6f4) | Gets the framebuffer size in device pixels. |
+| [Size](#uid-b94340b6f4) | 获取帧缓冲的尺寸，以设备像素计。 |
 
 <section className="apiref-page__member-entry">
 
@@ -139,7 +139,7 @@ public int RowBytes { get; set; }
 
 ### Size 属性 {#size-property}
 
-Gets the framebuffer size in device pixels.
+获取帧缓冲的尺寸，以设备像素计。
 
 ```csharp
 public Avalonia.PixelSize Size { get; set; }

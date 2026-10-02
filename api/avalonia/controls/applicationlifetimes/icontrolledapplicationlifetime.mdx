@@ -56,7 +56,7 @@ public interface IControlledApplicationLifetime
 
 | 名称 | 说明 |
 | --- | --- |
-| [Shutdown](#uid-4097cb3b0a) | Shuts down the application and sets the exit code that is returned to the operating system when the application exits. |
+| [Shutdown](#uid-4097cb3b0a) | 关闭应用，并设置退出时返回给操作系统的退出码。 |
 
 <section className="apiref-page__member-entry">
 
@@ -64,7 +64,7 @@ public interface IControlledApplicationLifetime
 
 ### Shutdown 方法 {#shutdown-method}
 
-Shuts down the application and sets the exit code that is returned to the operating system when the application exits.
+关闭应用，并设置退出时返回给操作系统的退出码。
 
 ```csharp
 public void Shutdown(int exitCode)
@@ -74,7 +74,7 @@ public void Shutdown(int exitCode)
 
 `exitCode` int
 
-An integer exit code for an application. The default exit code is 0.
+应用的整数退出码，默认为 0。
 
 
 </section>

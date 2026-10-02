@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Represents a polygon region on the map defined by a series of lat/long points.
+表示地图上由一串经纬度点界定的多边形区域。
 
 </div>
 
@@ -99,7 +99,7 @@ public MapPolygon()
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Fill](#uid-01ceaa6767) | 获取或设置填充画刷。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Points](#uid-b4def038c0) | Gets or sets the collection of lat/long points defining the polygon. |
+| [Points](#uid-b4def038c0) | 获取或设置界定该多边形的那组经纬度点。 |
 | [Stroke](#uid-2aadc60735) | 获取或设置描边画刷。 |
 | [StrokeThickness](#uid-b7b3c28d10) | 获取或设置描边粗细。 |
 
@@ -123,7 +123,7 @@ public Avalonia.Media.IBrush Fill { get; set; }
 
 ### Points 属性 {#points-property}
 
-Gets or sets the collection of lat/long points defining the polygon.
+获取或设置界定该多边形的那组经纬度点。
 
 ```csharp
 public System.Collections.Generic.IList<Avalonia.Controls.Charts.MapLatLng> Points { get; set; }

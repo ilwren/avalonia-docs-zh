@@ -36,7 +36,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Shared orchestration for moving-average indicators that differ only by their averaging formula.
+为那些仅在求平均公式上有所不同的移动平均指标提供共用的调度逻辑。
 
 </div>
 
@@ -125,7 +125,7 @@ public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect plotArea
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [IsVisible](charttechnicalindicator.mdx#uid-7b26aa00a1) | 获取或设置一个值，指示该指标是否可见。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [Item](../../avaloniaobject.mdx#uid-c1d1f1bc0f) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [Period](#uid-b99423eea2) | Gets or sets the period used for the moving-average calculation. |
+| [Period](#uid-b99423eea2) | 获取或设置移动平均计算所用的周期。 |
 | [Stroke](charttechnicalindicator.mdx#uid-12dd1e33ee) | 获取或设置主指标线所用的画刷。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [StrokeDashStyle](charttechnicalindicator.mdx#uid-0595074efe) | 获取或设置指标线的虚线样式。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
 | [StrokeLineCap](charttechnicalindicator.mdx#uid-1b5b85f7e6) | 获取或设置指标线的线端样式。继承自 [ChartTechnicalIndicator](charttechnicalindicator.mdx)。 |
@@ -140,7 +140,7 @@ public void Render(Avalonia.Media.DrawingContext context, Avalonia.Rect plotArea
 
 ### Period 属性 {#period-property}
 
-Gets or sets the period used for the moving-average calculation.
+获取或设置移动平均计算所用的周期。
 
 ```csharp
 public int Period { get; set; }

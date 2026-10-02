@@ -110,7 +110,7 @@ public PointerReleasedEventArgs(object source, Avalonia.Input.IPointer pointer, 
 | 名称 | 说明 |
 | --- | --- |
 | [Handled](../interactivity/routedeventargs.mdx#uid-204d2af354) | 获取或设置一个值，指示该路由事件是否已被处理。继承自 [RoutedEventArgs](../interactivity/routedeventargs.mdx)。 |
-| [InitialPressMouseButton](#uid-fe1b34a775) | Gets the mouse button that triggered the corresponding PointerPressed event |
+| [InitialPressMouseButton](#uid-fe1b34a775) | 获取触发相应 PointerPressed 事件的那个鼠标键 |
 | [KeyModifiers](pointereventargs.mdx#uid-7cba486a1a) | 获取一个值，指示该指针事件发起时有哪些修饰键处于按下状态。继承自 [PointerEventArgs](pointereventargs.mdx)。 |
 | [Pointer](pointereventargs.mdx#uid-af077cbc78) | 获取由输入设备产生的具体指针。继承自 [PointerEventArgs](pointereventargs.mdx)。 |
 | [Properties](pointereventargs.mdx#uid-4d2cd5033e) | 获取该事件发生时指针设备所处的状态。继承自 [PointerEventArgs](pointereventargs.mdx)。 |
@@ -125,7 +125,7 @@ public PointerReleasedEventArgs(object source, Avalonia.Input.IPointer pointer, 
 
 ### InitialPressMouseButton 属性 {#initialpressmousebutton-property}
 
-Gets the mouse button that triggered the corresponding PointerPressed event
+获取触发相应 PointerPressed 事件的那个鼠标键
 
 ```csharp
 public Avalonia.Input.MouseButton InitialPressMouseButton { get; set; }

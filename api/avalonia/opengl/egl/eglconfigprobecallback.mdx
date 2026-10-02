@@ -39,10 +39,11 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-Given every EGL config matched by eglChooseConfig, returns the one that should be used, or null if none
-are usable. This lets platforms filter out broken configs that can't be distinguished by their attributes
-(e.g. nvidia exposes duplicate, partially broken configs) and impose their own preference order between
-usable ones (e.g. preferring a transparent/32-bit X11 visual, which mesa lists after the opaque ones).
+在 eglChooseConfig 匹配到的所有 EGL 配置中，返回应当采用的那一个；若都不可用则返回 null。
+借此各平台可以筛掉那些单看属性区分不出来的问题配置
+（比如 nvidia 会暴露出重复且部分损坏的配置），
+并在可用配置之间排出自己的偏好顺序
+（比如优先选透明的 32 位 X11 visual——mesa 把它排在不透明配置之后）。
 
 </div>
 

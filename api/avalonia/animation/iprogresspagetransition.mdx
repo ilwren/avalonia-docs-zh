@@ -40,7 +40,7 @@ import ApiRefPage from '@site/src/components/apiref/ApiRefPage';
 
 <div className="apiref-page__lead">
 
-An [Avalonia.Animation.IPageTransition](xref:Avalonia.Animation.IPageTransition) that supports progress-driven updates.
+支持按进度驱动更新的 [Avalonia.Animation.IPageTransition](xref:Avalonia.Animation.IPageTransition)。
 
 </div>
 
@@ -60,9 +60,8 @@ public interface IProgressPageTransition
 
 ## 备注 {#remarks}
 
-Transitions implementing this interface can be driven by a normalized progress value
-(0.0 to 1.0) during swipe gestures or programmatic animations, rather than running
-as a timed animation via [Avalonia.Animation.IPageTransition.Start(Avalonia.Visual,Avalonia.Visual,bool,System.Threading.CancellationToken)](xref:Avalonia.Animation.IPageTransition.Start%28Avalonia.Visual%2CAvalonia.Visual%2CSystem.Boolean%2CSystem.Threading.CancellationToken%29).
+实现该接口的过渡，可在轻扫手势或程序化动画期间由一个归一化的进度值（0.0 到 1.0）驱动，
+而不必通过 [Avalonia.Animation.IPageTransition.Start(Avalonia.Visual,Avalonia.Visual,bool,System.Threading.CancellationToken)](xref:Avalonia.Animation.IPageTransition.Start%28Avalonia.Visual%2CAvalonia.Visual%2CSystem.Boolean%2CSystem.Threading.CancellationToken%29) 以定时动画的方式播放。
 
 ## 方法 {#methods}
 
