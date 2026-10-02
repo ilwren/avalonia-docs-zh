@@ -99,11 +99,11 @@ public AvaloniaObject()
 | [Equals](#uid-a8a8e94305) | Compares two objects using reference equality. |
 | [GetBaseValue](#uid-9c615efbba) | 暂无摘要。 |
 | [GetHashCode](#uid-7f7db1e7a2) | Gets the hash code for the object. |
-| [GetValue（3 个重载）](#uid-5142cd4792) | Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. |
+| [GetValue（3 个重载）](#uid-5142cd4792) | 获取一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 值。 |
 | [IsAnimating](#uid-8cbfc7521a) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is animating. |
 | [IsSet](#uid-f8bf0bbdcc) | Checks whether a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) is set on this object. |
 | [SetCurrentValue（2 个重载）](#uid-38759fd088) | Sets the value of a dependency property without changing its value source. |
-| [SetValue（3 个重载）](#uid-47d14e19d7) | Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value. |
+| [SetValue（3 个重载）](#uid-47d14e19d7) | 设置一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 值。 |
 | [VerifyAccess](#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。 |
 
 <span id="uid-1c60c7bda3"></span>
@@ -509,7 +509,7 @@ public bool Equals(object obj)
 
 `obj` object
 
-The object to compare.
+要比较的对象。
 
 
 #### 返回值 {#returns-9}
@@ -597,7 +597,7 @@ this.
 
 #### GetValue 方法 {#getvalue-method}
 
-Gets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value.
+获取一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 值。
 
 ```csharp
 public object GetValue(Avalonia.AvaloniaProperty property)
@@ -810,7 +810,7 @@ public void SetCurrentValue<T>(Avalonia.StyledProperty<TValue><T> property, T va
 
 #### SetValue 方法 {#setvalue-method}
 
-Sets a [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) value.
+设置一个 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 值。
 
 ```csharp
 public IDisposable SetValue(Avalonia.AvaloniaProperty property, object value, Avalonia.Data.BindingPriority priority)

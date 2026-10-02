@@ -139,8 +139,8 @@ Note that 360 is equivalent to 0 and will be adjusted automatically.
 | [FromHsv](#uid-0e373308db) | 由各个颜色分量值创建一个新的 [Avalonia.Media.HsvColor](xref:Avalonia.Media.HsvColor)。 |
 | [GetHashCode](#uid-bb2d974543) | Gets a hashcode for this object. Hashcode is not guaranteed to be unique. |
 | [Parse](#uid-ef0cfcfed6) | Parses an HSV color string. |
-| [ToHsl (2 overloads)](#uid-923bd57d5e) | Returns the HSL color model equivalent of this HSV color. |
-| [ToRgb (2 overloads)](#uid-f8bb09e288) | Returns the RGB color model equivalent of this HSV color. |
+| [ToHsl（2 个重载）](#uid-923bd57d5e) | Returns the HSL color model equivalent of this HSV color. |
+| [ToRgb（2 个重载）](#uid-f8bb09e288) | Returns the RGB color model equivalent of this HSV color. |
 | [ToString](#uid-6ade8a0d65) | 暂无摘要。 |
 | [TryParse](#uid-6c68960069) | 暂无摘要。 |
 
@@ -534,7 +534,7 @@ public double A { get; set; }
 
 #### 备注 {#remarks-2}
 
-- 0 is fully transparent.
+- 0 表示完全透明。
 - 1 表示完全不透明。
 
 </section>
@@ -555,12 +555,12 @@ public double H { get; set; }
 
 #### 备注 {#remarks-3}
 
-- 0/360 degrees is Red.
-- 60 degrees is Yellow.
-- 120 degrees is Green.
+- 0/360 度为红色。
+- 60 度为黄色。
+- 120 度为绿色。
 - 180 度为青色。
 - 240 度为蓝色。
-- 300 degrees is Magenta.
+- 300 度为洋红色。
 
 </section>
 

@@ -292,7 +292,7 @@ public TextLayout(string text, Avalonia.Media.Typeface typeface, double fontSize
 | 名称 | 说明 |
 | --- | --- |
 | [Dispose](#uid-85f45b4ca9) | 暂无摘要。 |
-| [Draw](#uid-c06aeac108) | Draws the text layout. |
+| [Draw](#uid-c06aeac108) | 绘制该文本布局。 |
 | [GetLineIndexFromCharacterIndex](#uid-7772f5e88c) | 暂无摘要。 |
 | [HitTestPoint](#uid-403b1ef700) | 暂无摘要。 |
 | [HitTestTextPosition](#uid-625e22810e) | Get the pixel location relative to the top-left of the layout box given the text position. |
@@ -316,7 +316,7 @@ public void Dispose()
 
 ### Draw 方法 {#draw-method}
 
-Draws the text layout.
+绘制该文本布局。
 
 ```csharp
 public void Draw(Avalonia.Media.DrawingContext context, Avalonia.Point origin)
@@ -441,15 +441,15 @@ System.Collections.Generic.IEnumerable&lt;[Avalonia.Rect](xref:Avalonia.Rect)&gt
 | [Baseline](#uid-a399cc33c8) | 从第一行顶部到第一行基线的距离。 |
 | [Extent](#uid-cdba7eec5d) | The distance from the topmost black pixel of the first line to the bottommost black pixel of the last line. |
 | [Height](#uid-b0af910e96) | 从第一行顶部到最后一行底部的距离。 |
-| [LetterSpacing](#uid-34ca790fe9) | Gets the text spacing. |
+| [LetterSpacing](#uid-34ca790fe9) | 获取文本间距。 |
 | [LineHeight](#uid-d84fb6d803) | Gets or sets the height of each line of text. |
-| [MaxHeight](#uid-ece983d1ce) | Gets the maximum height. |
+| [MaxHeight](#uid-ece983d1ce) | 获取最大高度。 |
 | [MaxLines](#uid-79084a6d26) | Gets the maximum number of text lines. |
-| [MaxWidth](#uid-5ed97ef0f1) | Gets the maximum width. |
+| [MaxWidth](#uid-5ed97ef0f1) | 获取最大宽度。 |
 | [OverhangAfter](#uid-33e5208f4d) | 从最后一行底部到内容范围底部的距离。 |
 | [OverhangLeading](#uid-b2077de5b8) | 从一行中最靠前的黑色像素到该行前端对齐点的最大距离。 |
 | [OverhangTrailing](#uid-71d80b63be) | 从一行中最靠后的黑色像素到该行末端对齐点的最大距离。 |
-| [TextLines](#uid-50b954b8ca) | Gets the text lines. |
+| [TextLines](#uid-50b954b8ca) | 获取各行文本。 |
 | [Width](#uid-0da390cad0) | The maximum advance width between the leading and trailing alignment points of a line, excluding the width of whitespace characters at the end of the line. |
 | [WidthIncludingTrailingWhitespace](#uid-98963e3c9f) | The maximum advance width between the leading and trailing alignment points of a line, including the width of whitespace characters at the end of the line. |
 
@@ -502,7 +502,7 @@ public double Height { get; set; }
 
 ### LetterSpacing 属性 {#letterspacing-property}
 
-Gets the text spacing.
+获取文本间距。
 
 ```csharp
 public double LetterSpacing { get; set; }
@@ -535,7 +535,7 @@ is determined automatically from the current font characteristics. The default i
 
 ### MaxHeight 属性 {#maxheight-property}
 
-Gets the maximum height.
+获取最大高度。
 
 ```csharp
 public double MaxHeight { get; set; }
@@ -563,7 +563,7 @@ public int MaxLines { get; set; }
 
 ### MaxWidth 属性 {#maxwidth-property}
 
-Gets the maximum width.
+获取最大宽度。
 
 ```csharp
 public double MaxWidth { get; set; }
@@ -619,7 +619,7 @@ public double OverhangTrailing { get; set; }
 
 ### TextLines 属性 {#textlines-property}
 
-Gets the text lines.
+获取各行文本。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<Avalonia.Media.TextFormatting.TextLine> TextLines { get; set; }

@@ -57,10 +57,10 @@ public interface ILockedFramebuffer
 | 名称 | 说明 |
 | --- | --- |
 | [Address](#uid-5086190648) | Address of the first pixel |
-| [AlphaFormat](#uid-a1809d4197) | Gets the alpha format. |
-| [Dpi](#uid-eb5ccbf69c) | DPI of underling screen |
+| [AlphaFormat](#uid-a1809d4197) | 获取 alpha 格式。 |
+| [Dpi](#uid-eb5ccbf69c) | 底层屏幕的 DPI |
 | [Format](#uid-014702d698) | 像素格式 |
-| [RowBytes](#uid-35f667e4ca) | Number of bytes per row |
+| [RowBytes](#uid-35f667e4ca) | 每一行所占的字节数 |
 | [Size](#uid-b94340b6f4) | Gets the framebuffer size in device pixels. |
 
 <section className="apiref-page__member-entry">
@@ -83,7 +83,7 @@ public IntPtr Address { get; set; }
 
 ### AlphaFormat 属性 {#alphaformat-property}
 
-Gets the alpha format.
+获取 alpha 格式。
 
 ```csharp
 public Avalonia.Platform.AlphaFormat AlphaFormat { get; set; }
@@ -97,7 +97,7 @@ public Avalonia.Platform.AlphaFormat AlphaFormat { get; set; }
 
 ### Dpi 属性 {#dpi-property}
 
-DPI of underling screen
+底层屏幕的 DPI
 
 ```csharp
 public Avalonia.Vector Dpi { get; set; }
@@ -125,7 +125,7 @@ public Avalonia.Platform.PixelFormat Format { get; set; }
 
 ### RowBytes 属性 {#rowbytes-property}
 
-Number of bytes per row
+每一行所占的字节数
 
 ```csharp
 public int RowBytes { get; set; }

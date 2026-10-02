@@ -62,12 +62,12 @@ public enum PdfAnnotationOperation
 | [AddInk](#uid-d649247064) | Committing a freehand ink stroke. |
 | [AddMarkup](#uid-530bf22061) | Creating a text markup annotation (highlight, underline, strikeout, squiggly). |
 | [AddShape](#uid-09c08ea3f1) | Creating a shape, line, arrow, polygon or free-text annotation. |
-| [Delete](#uid-1d56cce102) | Deleting an annotation. |
+| [Delete](#uid-1d56cce102) | 正在删除批注。 |
 | [EditText](#uid-1646b07fee) | Editing the text inside an existing annotation. |
 | [Link](#uid-96fbedf709) | Creating, editing or deleting a link. |
 | [Modify](#uid-e568a93626) | Moving, resizing, rotating or restyling an existing annotation. |
 | [Other](#uid-082c567278) | An operation not covered by the other values. |
-| [Redact](#uid-34d4b306c4) | Applying a redaction. |
+| [Redact](#uid-34d4b306c4) | 正在施加密文遮盖。 |
 | [StickyNote](#uid-3d370179a8) | Creating or updating a sticky note. |
 
 <section className="apiref-page__member-entry">
@@ -118,7 +118,7 @@ public Avalonia.Controls.PdfAnnotationOperation AddShape
 
 ### Delete 字段 {#delete-field}
 
-Deleting an annotation.
+正在删除批注。
 
 ```csharp
 public Avalonia.Controls.PdfAnnotationOperation Delete
@@ -188,7 +188,7 @@ public Avalonia.Controls.PdfAnnotationOperation Other
 
 ### Redact 字段 {#redact-field}
 
-Applying a redaction.
+正在施加密文遮盖。
 
 ```csharp
 public Avalonia.Controls.PdfAnnotationOperation Redact

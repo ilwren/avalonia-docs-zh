@@ -71,10 +71,10 @@ public class DrawingContext
 | [FillRectangle](#uid-3a2836cb4a) | 画一个填充矩形。 |
 | [PushClip (2 overloads)](#uid-581bbdf395) | 压入一个裁剪矩形。 |
 | [PushEffect](#uid-5cbe64db83) | 压入一个效果。 |
-| [PushGeometryClip](#uid-54c8cd9487) | Pushes a clip geometry. |
+| [PushGeometryClip](#uid-54c8cd9487) | 压入一个裁剪几何图形。 |
 | [PushOpacity](#uid-b8823fb27f) | 压入一个不透明度值。 |
 | [PushOpacityMask](#uid-f50efb14c4) | 压入一个不透明度蒙版。 |
-| [PushRenderOptions](#uid-8050498062) | Pushes render options. |
+| [PushRenderOptions](#uid-8050498062) | 压入一组渲染选项。 |
 | [PushTextOptions](#uid-15dfd2b97e) | Pushes text options for the drawing context. |
 | [PushTransform](#uid-edfc386ff3) | Pushes a matrix transformation. |
 
@@ -279,7 +279,7 @@ public void DrawGlyphRun(Avalonia.Media.IBrush foreground, Avalonia.Media.GlyphR
 
 `foreground` [Avalonia.Media.IBrush](xref:Avalonia.Media.IBrush)
 
-The foreground brush.
+前景画刷。
 
 
 `glyphRun` [Avalonia.Media.GlyphRun](xref:Avalonia.Media.GlyphRun)
@@ -383,7 +383,7 @@ The second point of the line.
 
 <span id="uid-d05ce290ae"></span>
 
-### DrawRectangle overloads
+### DrawRectangle 的重载 {#drawrectangle-overloads}
 
 <section className="apiref-page__member-entry">
 
@@ -668,7 +668,7 @@ A disposable used to undo the effect.
 
 ### PushGeometryClip 方法 {#pushgeometryclip-method}
 
-Pushes a clip geometry.
+压入一个裁剪几何图形。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushGeometryClip(Avalonia.Media.Geometry clip)
@@ -757,7 +757,7 @@ A disposable to undo the opacity mask.
 
 ### PushRenderOptions 方法 {#pushrenderoptions-method}
 
-Pushes render options.
+压入一组渲染选项。
 
 ```csharp
 public Avalonia.Media.DrawingContext.PushedState PushRenderOptions(Avalonia.Media.RenderOptions renderOptions)
