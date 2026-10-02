@@ -105,7 +105,7 @@ Y 分量。
 | [Distance](#uid-f1e68aa94c) | 计算给定两点之间的欧几里得距离。 |
 | [DistanceSquared](#uid-8f960f5cea) | Returns the Euclidean distance squared between two specified points |
 | [Divide（2 个重载）](#uid-4e3b9274dd) | 用第二个向量去除第一个向量。 |
-| [Dot](#uid-4148913918) | Returns the dot product of two vectors. |
+| [Dot](#uid-4148913918) | 返回两个向量的点积。 |
 | [Equals（2 个重载）](#uid-ce2cfe6ee3) | 判断两个向量是否相等（按位比较）。 |
 | [GetHashCode](#uid-c00d23029d) | 暂无摘要。 |
 | [Max](#uid-2be81d4b1f) | 返回一个向量，其各元素为两个指定向量中对应元素的较大者 |
@@ -364,7 +364,7 @@ public Avalonia.Vector Divide(Avalonia.Vector a, Avalonia.Vector b)
 
 #### Divide 方法 {#divide-method-1}
 
-Divides the vector by the given scalar.
+用给定的标量去除该向量。
 
 ```csharp
 public Avalonia.Vector Divide(Avalonia.Vector vector, double scalar)
@@ -397,7 +397,7 @@ public Avalonia.Vector Divide(Avalonia.Vector vector, double scalar)
 
 ### Dot 方法 {#dot-method}
 
-Returns the dot product of two vectors.
+返回两个向量的点积。
 
 ```csharp
 public double Dot(Avalonia.Vector a, Avalonia.Vector b)

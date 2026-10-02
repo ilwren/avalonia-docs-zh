@@ -172,11 +172,11 @@ public void SetFormatMetadata<T>(T metadata)
 
 | 名称 | 说明 |
 | --- | --- |
-| [Children](#uid-b1710f532c) | Child nodes. Empty array for leaf nodes. |
+| [Children](#uid-b1710f532c) | 子节点。叶节点为空数组。 |
 | [CustomData](#uid-36dcca3067) | Extension-specific custom data for custom node kinds. Used by the builder path ([Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder](xref:Avalonia.Controls.Documents.Serialization.Snapshot.DocumentSnapshotBuilder)) to propagate custom data from serializer importers to snapshot nodes. Must be immutable or thread-safe for background serialization. |
 | [EndOffset](#uid-9d03a730e3) | Gets the absolute end offset (exclusive). |
 | [FormatMetadata](#uid-a481dfd525) | Format-specific metadata for round-trip fidelity. Serializers (RtfWriter, DocxWriter, etc.) can attach format-specific state here to preserve information that doesn't map cleanly to the semantic snapshot model. Not thread-safe; single-threaded access only. |
-| [IsBlock](#uid-e26b8c2e53) | Gets whether this is a block-level node. |
+| [IsBlock](#uid-e26b8c2e53) | 获取该节点是否为块级节点。 |
 | [IsInline](#uid-719f57e3e5) | Gets whether this is an inline-level node. |
 | [IsLeaf](#uid-f246822b7f) | Gets whether this is a leaf node (no children). |
 | [IsTextRun](#uid-9cd758e947) | Gets whether this node represents a text run with actual content. |
@@ -191,7 +191,7 @@ public void SetFormatMetadata<T>(T metadata)
 
 ### Children 属性 {#children-property}
 
-Child nodes. Empty array for leaf nodes.
+子节点。叶节点为空数组。
 
 ```csharp
 public Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNodeChildren Children { get; set; }
@@ -263,7 +263,7 @@ what makes a reader's expectation legible at the call site.
 
 ### IsBlock 属性 {#isblock-property}
 
-Gets whether this is a block-level node.
+获取该节点是否为块级节点。
 
 ```csharp
 public bool IsBlock { get; set; }

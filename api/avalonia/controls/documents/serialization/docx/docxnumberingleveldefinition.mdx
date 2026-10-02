@@ -157,7 +157,7 @@ string
 | [LeftIndentTwips](#uid-a9c1961556) | 左缩进，以缇（twip）计。 |
 | [Level](#uid-cc35fec409) | 层级索引（从 0 开始）。 |
 | [MarkerJustification](#uid-69a6593105) | Marker justification for this level (w:lvlJc): how the number/bullet aligns within its column — "left" (default) or "right" (as Word uses for roman-numeral levels). |
-| [MarkerStyle](#uid-1a7fa61ac1) | List marker style mapped from w:numFmt. |
+| [MarkerStyle](#uid-1a7fa61ac1) | 由 w:numFmt 映射而来的列表标记样式。 |
 | [RightIndentTwips](#uid-708b41a1f2) | 右缩进，以缇（twip）计。 |
 | [StartIndex](#uid-f678e828d0) | 该层级的起始编号。 |
 
@@ -252,7 +252,7 @@ public string MarkerJustification { get; set; }
 
 ### MarkerStyle 属性 {#markerstyle-property}
 
-List marker style mapped from w:numFmt.
+由 w:numFmt 映射而来的列表标记样式。
 
 ```csharp
 public Avalonia.Controls.Documents.Primitives.DocumentNodes.TextMarkerStyle MarkerStyle { get; set; }

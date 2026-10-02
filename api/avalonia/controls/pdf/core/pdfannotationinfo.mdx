@@ -63,13 +63,13 @@ public class PdfAnnotationInfo
 | [Author](#uid-0606e7f095) | 批注的作者/标题，或 `null`。 |
 | [BorderWidth](#uid-4bc86ce1f9) | Border/stroke width in points, or `null` if not set. |
 | [Bounds](#uid-91050198d2) | 以 PDF 用户空间表示的外接矩形。 |
-| [Color](#uid-8b51f4ae27) | Stroke/border color, or `null` if not set. |
+| [Color](#uid-8b51f4ae27) | 描边/边框颜色；未设置时为 `null`。 |
 | [Contents](#uid-00882e0de6) | The annotation's text contents (note text or popup text), or `null`. |
 | [HasArrowHead](#uid-7c37224baa) | Whether a line annotation has an arrowhead at its end point. |
 | [InkStrokes](#uid-d9ec7661bf) | Ink strokes for ink annotations (each stroke is a list of points), or `null`. |
-| [InteriorColor](#uid-2b84795a60) | Fill/interior color, or `null` if not set. |
+| [InteriorColor](#uid-2b84795a60) | 填充/内部颜色；未设置时为 `null`。 |
 | [IsStar](#uid-4cab105a1d) | Whether a polygon annotation represents a star shape. |
-| [LineEnd](#uid-b1d85ae2d9) | End point for line annotations, or `null`. |
+| [LineEnd](#uid-b1d85ae2d9) | 线条批注的终点；若无则为 `null`。 |
 | [LineStart](#uid-4002538702) | Start point for line annotations, or `null`. |
 | [PageIndex](#uid-e0a4414b7a) | Zero-based page index this annotation belongs to. |
 | [Sides](#uid-062b57080c) | Number of sides (polygon) or spikes (star), or `null`. |
@@ -138,7 +138,7 @@ public Avalonia.Controls.Pdf.Core.PdfRect Bounds { get; set; }
 
 ### Color 属性 {#color-property}
 
-Stroke/border color, or `null` if not set.
+描边/边框颜色；未设置时为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfAnnotationColor> Color { get; set; }
@@ -194,7 +194,7 @@ public System.Collections.Generic.IReadOnlyList<System.Collections.Generic.IRead
 
 ### InteriorColor 属性 {#interiorcolor-property}
 
-Fill/interior color, or `null` if not set.
+填充/内部颜色；未设置时为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfAnnotationColor> InteriorColor { get; set; }
@@ -222,7 +222,7 @@ public bool IsStar { get; set; }
 
 ### LineEnd 属性 {#lineend-property}
 
-End point for line annotations, or `null`.
+线条批注的终点；若无则为 `null`。
 
 ```csharp
 public Nullable<Avalonia.Controls.Pdf.Core.PdfPoint> LineEnd { get; set; }

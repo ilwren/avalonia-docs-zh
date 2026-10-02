@@ -61,7 +61,7 @@ public class MarkdownNodeKinds
 | [AlertBlock](#uid-36646b9bbe) | Node kind for GitHub-style alert blocks (note, warning, tip, etc.). |
 | [CodeBlock](#uid-56ed0e5058) | 围栏代码块对应的节点类型。 |
 | [CodeInline](#uid-445ffc5f0f) | 内联代码片段对应的节点类型。 |
-| [Heading](#uid-8bd5bee9d8) | Node kind for Markdown headings (H1–H6). |
+| [Heading](#uid-8bd5bee9d8) | Markdown 标题（H1–H6）对应的节点类型。 |
 | [HtmlBlock](#uid-7cadce71ef) | Node kind for an HTML block. Children are the rich elements the HTML converter produced; [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData) carries the raw source so an unedited block writes back verbatim. |
 | [HtmlInline](#uid-a3b8595c83) | Node kind for an unrecognized inline HTML tag, preserved as raw source in [Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData](xref:Avalonia.Controls.Documents.Serialization.Snapshot.SnapshotNode.CustomData). Zero-length and invisible in the viewer, emitted verbatim on write. |
 | [Image](#uid-74e3598dfd) | 内联图像元素对应的节点类型。 |
@@ -118,7 +118,7 @@ public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind CodeInline
 
 ### Heading 字段 {#heading-field}
 
-Node kind for Markdown headings (H1–H6).
+Markdown 标题（H1–H6）对应的节点类型。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocumentNodeKind Heading

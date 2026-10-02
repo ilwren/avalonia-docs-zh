@@ -157,7 +157,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [Classes](../../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Clip](../../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../../visual.mdx)。 |
 | [ClipToBounds](../../visual.mdx#uid-63c348aebd) | 获取或设置一个值，指示是否将控件裁剪到其边界之内。继承自 [Visual](../../visual.mdx)。 |
-| [ColumnLabels](#uid-c99ee4a127) | Gets or sets the list of column labels. |
+| [ColumnLabels](#uid-c99ee4a127) | 获取或设置列标签的列表。 |
 | [ContextFlyout](../control.mdx#uid-3821ce41c2) | 获取或设置控件的上下文浮出控件。继承自 [Control](../control.mdx)。 |
 | [ContextMenu](../control.mdx#uid-95e5e3ccc3) | 获取或设置控件的上下文菜单。继承自 [Control](../control.mdx)。 |
 | [CornerRadius](../primitives/templatedcontrol.mdx#uid-91a447dd4a) | 获取或设置边框圆角的半径。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -168,7 +168,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Easing](chartbase.mdx#uid-adaaf54336) | 获取或设置图表动画的缓动函数。它通过各类动画图表与数据系列渲染器共用的图表动画进度管线生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [Effect](../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../visual.mdx)。 |
-| [FalseBrush](#uid-2749834eec) | Gets or sets the brush for false values. |
+| [FalseBrush](#uid-2749834eec) | 获取或设置假值所用的画刷。 |
 | [FlowDirection](../../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../../visual.mdx)。 |
 | [Focusable](../../input/inputelement.mdx#uid-20168c45b2) | 获取或设置一个值，指示控件是否可以获得焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [FocusAdorner](../control.mdx#uid-96de66ccc5) | 获取或设置控件的焦点修饰元素。继承自 [Control](../control.mdx)。 |
@@ -240,7 +240,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [Title](chartbase.mdx#uid-139e6bc0b9) | 获取或设置显示在图表上方的标题。继承自 [ChartBase](chartbase.mdx)。 |
 | [ToggleSeriesVisibility](chartbase.mdx#uid-9c88230ede) | 获取或设置点击图例项是否切换数据系列的可见性。该设置仅对图例代表可隐藏数据系列或类别的图表有效；图例为说明性刻度的图表会将此值强制改回 。继承自 [ChartBase](chartbase.mdx)。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
-| [TrueBrush](#uid-0fd153df59) | Gets or sets the brush for true values. |
+| [TrueBrush](#uid-0fd153df59) | 获取或设置真值所用的画刷。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [ValuesPath](#uid-85f6cc1fa8) | Gets or sets the property path for cell values. |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -281,7 +281,7 @@ public double CellSize { get; set; }
 
 ### ColumnLabels 属性 {#columnlabels-property}
 
-Gets or sets the list of column labels.
+获取或设置列标签的列表。
 
 ```csharp
 public System.Collections.Generic.IList<string> ColumnLabels { get; set; }
@@ -295,7 +295,7 @@ public System.Collections.Generic.IList<string> ColumnLabels { get; set; }
 
 ### FalseBrush 属性 {#falsebrush-property}
 
-Gets or sets the brush for false values.
+获取或设置假值所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush FalseBrush { get; set; }
@@ -393,7 +393,7 @@ public bool ShowRowLabels { get; set; }
 
 ### TrueBrush 属性 {#truebrush-property}
 
-Gets or sets the brush for true values.
+获取或设置真值所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush TrueBrush { get; set; }

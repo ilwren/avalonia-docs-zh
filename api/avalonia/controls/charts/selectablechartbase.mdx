@@ -251,7 +251,7 @@ bool
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [SelectedIndex](#uid-83689e5154) | Gets or sets the index of the primary selected data point. |
-| [SelectedIndexes](#uid-c61627586d) | Gets the collection of selected indexes. |
+| [SelectedIndexes](#uid-c61627586d) | 获取选中索引的集合。 |
 | [SelectionBrush](#uid-a50b907e3a) | 获取或设置高亮选中数据点所用的画刷。 |
 | [SelectionMode](#uid-1e3846b169) | 获取或设置选择行为。 |
 | [SelectionStroke](#uid-54749a421b) | Gets or sets the stroke brush used to outline selected data points. |
@@ -307,7 +307,7 @@ public int SelectedIndex { get; set; }
 
 ### SelectedIndexes 属性 {#selectedindexes-property}
 
-Gets the collection of selected indexes.
+获取选中索引的集合。
 
 ```csharp
 public System.Collections.Generic.IReadOnlyCollection<int> SelectedIndexes { get; set; }
@@ -631,7 +631,7 @@ public Avalonia.StyledProperty<double> SelectionStrokeThicknessProperty
 | [ScrollGesture](../../input/inputelement.mdx#uid-b571ab3acc) | 当用户在控件范围内沿同一方向持续移动指针时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureEnded](../../input/inputelement.mdx#uid-eb3914c3a8) | 当滚动手势完全停止时发生，其中已计入用户松开指针后继续滚动的惯性过程。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStarting](../../input/inputelement.mdx#uid-c8cd2731a5) | 在滚动手势过程中，当用户松开指针、滚动转入惯性滑动阶段时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [SelectionChanged](#uid-1e87374c58) | Raised after the selection has changed. |
+| [SelectionChanged](#uid-1e87374c58) | 选择变化之后抛出。 |
 | [SelectionChanging](#uid-11c5e07706) | 选择发生变化之前抛出。 |
 | [SizeChanged](../control.mdx#uid-6cfea6b6c5) | 当控件的边界（实际尺寸）发生变化时发生。继承自 [Control](../control.mdx)。 |
 | [SwipeGesture](../../input/inputelement.mdx#uid-0f4fc613ec) | 当用户在控件上沿单一方向快速拖动指针时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -648,7 +648,7 @@ public Avalonia.StyledProperty<double> SelectionStrokeThicknessProperty
 
 ### SelectionChanged 事件 {#selectionchanged-event}
 
-Raised after the selection has changed.
+选择变化之后抛出。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Charts.ChartSelectionChangedEventArgs> SelectionChanged

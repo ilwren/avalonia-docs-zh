@@ -184,10 +184,10 @@ public NumericUpDown()
 | [LetterSpacing](primitives/templatedcontrol.mdx#uid-2d96a527e6) | 获取或设置控件文本内容的字间距。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [Margin](../layout/layoutable.mdx#uid-3785e24bed) | 获取或设置元素四周的外边距。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MaxHeight](../layout/layoutable.mdx#uid-6ffe996277) | 获取或设置元素的最大高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [Maximum](#uid-e708d275c2) | Gets or sets the maximum allowed value. |
+| [Maximum](#uid-e708d275c2) | 获取或设置允许的最大值。 |
 | [MaxWidth](../layout/layoutable.mdx#uid-ea6041bc57) | 获取或设置元素的最大宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MinHeight](../layout/layoutable.mdx#uid-822cd64c83) | 获取或设置元素的最小高度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
-| [Minimum](#uid-5e459949bc) | Gets or sets the minimum allowed value. |
+| [Minimum](#uid-5e459949bc) | 获取或设置允许的最小值。 |
 | [MinWidth](../layout/layoutable.mdx#uid-5bd3b5bb2c) | 获取或设置元素的最小宽度。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [Name](../styledelement.mdx#uid-245f4ccff5) | 获取或设置该样式化元素的名称。继承自 [StyledElement](../styledelement.mdx)。 |
 | [NumberFormat](#uid-3eea2fc663) | Gets or sets the current NumberFormatInfo |
@@ -209,7 +209,7 @@ public NumericUpDown()
 | [Template](primitives/templatedcontrol.mdx#uid-7a289f7bd4) | 获取或设置定义控件外观的模板。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [TemplatedParent](../styledelement.mdx#uid-dbf6ddacc3) | 获取拥有该样式化元素的无外观模板所属的样式化元素。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Text](#uid-ad5b8cc361) | Gets or sets the formatted string representation of the value. |
-| [TextAlignment](#uid-7f28d035a7) | Gets or sets the [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment) of the [Avalonia.Controls.NumericUpDown](xref:Avalonia.Controls.NumericUpDown) |
+| [TextAlignment](#uid-7f28d035a7) | 获取或设置 [Avalonia.Controls.NumericUpDown](xref:Avalonia.Controls.NumericUpDown) 的 [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment) |
 | [TextConverter](#uid-7f87184668) | Gets or sets the custom bidirectional Text-Value converter. Non-null converter overrides [Avalonia.Controls.NumericUpDown.ParsingNumberStyle](xref:Avalonia.Controls.NumericUpDown.ParsingNumberStyle), providing finer control over string representation of the underlying value. |
 | [Theme](../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../styledelement.mdx)。 |
 | [Transitions](../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../animation/animatable.mdx)。 |
@@ -354,7 +354,7 @@ public bool IsReadOnly { get; set; }
 
 ### Maximum 属性 {#maximum-property}
 
-Gets or sets the maximum allowed value.
+获取或设置允许的最大值。
 
 ```csharp
 public decimal Maximum { get; set; }
@@ -368,7 +368,7 @@ public decimal Maximum { get; set; }
 
 ### Minimum 属性 {#minimum-property}
 
-Gets or sets the minimum allowed value.
+获取或设置允许的最小值。
 
 ```csharp
 public decimal Minimum { get; set; }
@@ -468,7 +468,7 @@ public string Text { get; set; }
 
 ### TextAlignment 属性 {#textalignment-property}
 
-Gets or sets the [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment) of the [Avalonia.Controls.NumericUpDown](xref:Avalonia.Controls.NumericUpDown)
+获取或设置 [Avalonia.Controls.NumericUpDown](xref:Avalonia.Controls.NumericUpDown) 的 [Avalonia.Media.TextAlignment](xref:Avalonia.Media.TextAlignment)
 
 ```csharp
 public Avalonia.Media.TextAlignment TextAlignment { get; set; }

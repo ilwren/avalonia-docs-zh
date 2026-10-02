@@ -1092,7 +1092,7 @@ public Avalonia.StyledProperty<string> ValuePathProperty
 | [ScrollGesture](../../input/inputelement.mdx#uid-b571ab3acc) | 当用户在控件范围内沿同一方向持续移动指针时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureEnded](../../input/inputelement.mdx#uid-eb3914c3a8) | 当滚动手势完全停止时发生，其中已计入用户松开指针后继续滚动的惯性过程。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [ScrollGestureInertiaStarting](../../input/inputelement.mdx#uid-c8cd2731a5) | 在滚动手势过程中，当用户松开指针、滚动转入惯性滑动阶段时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
-| [SelectionChanged](#uid-5fb0c1a5f3) | Occurs after the selection has changed. |
+| [SelectionChanged](#uid-5fb0c1a5f3) | 选择变化之后发生。 |
 | [SelectionChanging](#uid-be441e26bd) | Occurs before the selection changes. This event is cancelable. |
 | [SizeChanged](../control.mdx#uid-6cfea6b6c5) | 当控件的边界（实际尺寸）发生变化时发生。继承自 [Control](../control.mdx)。 |
 | [SwipeGesture](../../input/inputelement.mdx#uid-0f4fc613ec) | 当用户在控件上沿单一方向快速拖动指针时发生。继承自 [InputElement](../../input/inputelement.mdx)。 |
@@ -1109,7 +1109,7 @@ public Avalonia.StyledProperty<string> ValuePathProperty
 
 ### SelectionChanged 事件 {#selectionchanged-event}
 
-Occurs after the selection has changed.
+选择变化之后发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.Charts.ChartSelectionChangedEventArgs> SelectionChanged

@@ -91,7 +91,7 @@ public HistogramSeries()
 | [Equals](../../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [Focus](../../input/inputelement.mdx#uid-6b657af583) | 让控件获得焦点。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [GetBaseValue](../../avaloniaobject.mdx#uid-9c615efbba) | 继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [GetBins](#uid-053be6545e) | Computes histogram bins from raw values. |
+| [GetBins](#uid-053be6545e) | 由原始数据计算出直方图的各个分箱。 |
 | [GetDataPoints](#uid-d6e7a4c57e) | 以类别/值对的形式获取全部数据点。 |
 | [GetDataPointsWithItems](#uid-faa24a05b7) | 获取全部数据点，并一并带上原始数据项。 |
 | [GetFlowDirection](../../visual.mdx#uid-12716acd38) | 获取控件上附加属性 [Avalonia.Visual.FlowDirectionProperty](xref:Avalonia.Visual.FlowDirectionProperty) 的值。继承自 [Visual](../../visual.mdx)。 |
@@ -129,7 +129,7 @@ public HistogramSeries()
 
 ### GetBins 方法 {#getbins-method}
 
-Computes histogram bins from raw values.
+由原始数据计算出直方图的各个分箱。
 
 ```csharp
 public System.Collections.Generic.IEnumerable<Avalonia.Controls.Charts.HistogramBin> GetBins()

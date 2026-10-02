@@ -174,7 +174,7 @@ public PdfViewer()
 | [UpdateStickyNoteAsync](#uid-639b5d6ebd) | 暂无摘要。 |
 | [VerifyAccess](../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [ZoomIn](#uid-4c1ab67ace) | 放大到下一档预设级别。 |
-| [ZoomOut](#uid-e6758c2d91) | Zooms out to the previous preset level. |
+| [ZoomOut](#uid-e6758c2d91) | 缩小到上一档预设级别。 |
 
 <section className="apiref-page__member-entry">
 
@@ -1600,7 +1600,7 @@ public void ZoomIn()
 
 ### ZoomOut 方法 {#zoomout-method}
 
-Zooms out to the previous preset level.
+缩小到上一档预设级别。
 
 ```csharp
 public void ZoomOut()
@@ -1653,7 +1653,7 @@ public void ZoomOut()
 | [DrawStrokeWidth](#uid-ae9c9eae45) | Gets or sets the draw stroke width in PDF points (0.5–20). |
 | [Effect](../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../visual.mdx)。 |
 | [EnableKeyboardShortcuts](#uid-a0caf07e62) | Gets or sets whether the viewer handles its built-in keyboard shortcuts — copy, select-all, the zoom accelerators, save, arrow-key navigation and nudging. Default `true`. Set `false` when a host binds those keystrokes to its own commands and doesn't want the viewer to consume them. Form-field text input and Escape-to-deselect are unaffected. |
-| [ErrorMessage](#uid-5cab5458f8) | Gets the current error message, if any. |
+| [ErrorMessage](#uid-5cab5458f8) | 获取当前的错误消息（若有）。 |
 | [FitPageCommand](#uid-784cb065aa) | Gets a command that fits the whole page to the viewport. |
 | [FitWidthCommand](#uid-d3367cd6ad) | Gets a command that fits the page width to the viewport. |
 | [FlowDirection](../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../visual.mdx)。 |
@@ -2153,7 +2153,7 @@ public bool EnableKeyboardShortcuts { get; set; }
 
 ### ErrorMessage 属性 {#errormessage-property}
 
-Gets the current error message, if any.
+获取当前的错误消息（若有）。
 
 ```csharp
 public string ErrorMessage { get; set; }
@@ -3881,7 +3881,7 @@ public double ZoomStep { get; set; }
 | [MinHeightProperty](../layout/layoutable.mdx#uid-f78bf9b812) | 定义 [Avalonia.Layout.Layoutable.MinHeight](xref:Avalonia.Layout.Layoutable.MinHeight) 属性。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MinWidthProperty](../layout/layoutable.mdx#uid-ec0935c392) | 定义 [Avalonia.Layout.Layoutable.MinWidth](xref:Avalonia.Layout.Layoutable.MinWidth) 属性。继承自 [Layoutable](../layout/layoutable.mdx)。 |
 | [MinZoomProperty](#uid-f9ed955e9e) | 定义 [Avalonia.Controls.PdfViewer.MinZoom](xref:Avalonia.Controls.PdfViewer.MinZoom) 属性。 |
-| [MobileClass](#uid-901ba4b83f) | The compact mobile layout is in effect. |
+| [MobileClass](#uid-901ba4b83f) | 当前生效的是紧凑的移动端布局。 |
 | [NameProperty](../styledelement.mdx#uid-bcdbb9de56) | 定义 [Avalonia.StyledElement.Name](xref:Avalonia.StyledElement.Name) 属性。继承自 [StyledElement](../styledelement.mdx)。 |
 | [NarrowClass](#uid-86b4f46c4d) | The control is narrower than [Avalonia.Controls.PdfViewer.NarrowToolbarWidth](xref:Avalonia.Controls.PdfViewer.NarrowToolbarWidth) (a phone in portrait): the toolbar condenses. |
 | [NarrowToolbarWidth](#uid-b92cdbe415) | Below this width the search field and the right cluster cannot share the toolbar, so the toolbar condenses: the search collapses to an icon and, opened, takes the whole row. |
@@ -4957,7 +4957,7 @@ public Avalonia.StyledProperty<double> MinZoomProperty
 
 ### MobileClass 字段 {#mobileclass-field}
 
-The compact mobile layout is in effect.
+当前生效的是紧凑的移动端布局。
 
 ```csharp
 public string MobileClass

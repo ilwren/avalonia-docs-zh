@@ -1446,7 +1446,7 @@ public Avalonia.DirectProperty<Avalonia.Controls.TreeDataGrid, Avalonia.Controls
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
 | [CellClearing](#uid-20ac8ca23c) | Occurs when a cell is about to be cleared from the visual tree. |
 | [CellPrepared](#uid-c5f8feb0a9) | Occurs when a cell has been prepared for display. |
-| [CellValueChanged](#uid-0c4212a7d4) | Occurs when a cell's value has changed. |
+| [CellValueChanged](#uid-0c4212a7d4) | 某个单元格的值发生变化时发生。 |
 | [ColumnReordered](#uid-a7d9d3220e) | Occurs after the user has moved a column to a new position by dragging its header. |
 | [ColumnReordering](#uid-73a70dbeee) | Occurs when the user drops a dragged column header at a new position, before the column is moved. |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -1548,7 +1548,7 @@ used to customize the appearance or behavior of the cell before it is rendered.
 
 ### CellValueChanged 事件 {#cellvaluechanged-event}
 
-Occurs when a cell's value has changed.
+某个单元格的值发生变化时发生。
 
 ```csharp
 public event EventHandler<Avalonia.Controls.TreeDataGridCellEventArgs> CellValueChanged

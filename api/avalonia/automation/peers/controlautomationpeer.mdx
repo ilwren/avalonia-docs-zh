@@ -90,7 +90,7 @@ public ControlAutomationPeer(Avalonia.Controls.Control owner)
 | --- | --- |
 | [BringIntoView](automationpeer.mdx#uid-0ce0c26ad7) | 尝试将与该自动化对等体关联的元素滚动到可见区域。继承自 [AutomationPeer](automationpeer.mdx)。 |
 | [CreatePeerForElement](#uid-01e76040e7) | Gets the [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) for a [Avalonia.Controls.Control](xref:Avalonia.Controls.Control), creating it if necessary. |
-| [FromElement](#uid-f0c358c33d) | Gets an existing [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) for a [Avalonia.Controls.Control](xref:Avalonia.Controls.Control). |
+| [FromElement](#uid-f0c358c33d) | 取得 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) 已有的 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)。 |
 | [GetAcceleratorKey](automationpeer.mdx#uid-b27b870e23) | 获取与该 UI 自动化对等体关联的元素的快捷键组合。继承自 [AutomationPeer](automationpeer.mdx)。 |
 | [GetAccessKey](automationpeer.mdx#uid-0c0606dfaf) | 获取与该自动化对等体关联的元素的访问键。继承自 [AutomationPeer](automationpeer.mdx)。 |
 | [GetAutomationControlType](automationpeer.mdx#uid-f7daf3a583) | 获取与该 UI 自动化对等体关联的元素的控件类型。继承自 [AutomationPeer](automationpeer.mdx)。 |
@@ -162,7 +162,7 @@ a new peer if one already exists: instead it returns the existing peer.
 
 ### FromElement 方法 {#fromelement-method}
 
-Gets an existing [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer) for a [Avalonia.Controls.Control](xref:Avalonia.Controls.Control).
+取得 [Avalonia.Controls.Control](xref:Avalonia.Controls.Control) 已有的 [Avalonia.Automation.Peers.AutomationPeer](xref:Avalonia.Automation.Peers.AutomationPeer)。
 
 ```csharp
 public Avalonia.Automation.Peers.AutomationPeer FromElement(Avalonia.Controls.Control element)

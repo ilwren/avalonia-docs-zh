@@ -235,13 +235,13 @@ public void ReplayAnimation()
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
-| [ShowNeedle](#uid-afc7c6982c) | Gets or sets whether to show the needle. |
+| [ShowNeedle](#uid-afc7c6982c) | 获取或设置是否显示指针。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowValue](#uid-5e68b064ad) | Gets or sets whether to show the value text. |
 | [StartAngle](#uid-4fbd754f25) | Gets or sets the start angle in degrees (0 = right, 90 = bottom). |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [SweepAngle](#uid-f58857e0a3) | Gets or sets the sweep angle in degrees. |
+| [SweepAngle](#uid-f58857e0a3) | 获取或设置扫掠角度，以度为单位。 |
 | [TabIndex](../../input/inputelement.mdx#uid-82ec6bf9ac) | 获取或设置一个值，决定用户按 Tab 键在控件间移动时元素获得焦点的先后顺序。继承自 [InputElement](../../input/inputelement.mdx)。 |
 | [Tag](../control.mdx#uid-2790b0c958) | 获取或设置附加在控件上的用户自定义对象。继承自 [Control](../control.mdx)。 |
 | [Template](../primitives/templatedcontrol.mdx#uid-7a289f7bd4) | 获取或设置定义控件外观的模板。继承自 [TemplatedControl](../primitives/templatedcontrol.mdx)。 |
@@ -249,12 +249,12 @@ public void ReplayAnimation()
 | [Theme](../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Title](chartbase.mdx#uid-139e6bc0b9) | 获取或设置显示在图表上方的标题。继承自 [ChartBase](chartbase.mdx)。 |
 | [ToggleSeriesVisibility](chartbase.mdx#uid-9c88230ede) | 获取或设置点击图例项是否切换数据系列的可见性。该设置仅对图例代表可隐藏数据系列或类别的图表有效；图例为说明性刻度的图表会将此值强制改回 。继承自 [ChartBase](chartbase.mdx)。 |
-| [TrackBrush](#uid-d4fd5cfa1c) | Gets or sets the track background brush. |
+| [TrackBrush](#uid-d4fd5cfa1c) | 获取或设置轨道的背景画刷。 |
 | [TrackThickness](#uid-1f5ee3e85d) | Gets or sets the thickness of the gauge arc. |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Value](#uid-60b8196d97) | 获取或设置当前值。 |
-| [ValueBrush](#uid-940fcd8715) | Gets or sets the gauge value arc brush. |
+| [ValueBrush](#uid-940fcd8715) | 获取或设置仪表数值弧所用的画刷。 |
 | [ValueFormat](#uid-28a877aa42) | 获取或设置数值的格式字符串。 |
 | [VerticalAlignment](../../layout/layoutable.mdx#uid-9652a1b295) | 获取或设置元素在其父级中期望的垂直对齐方式。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Width](../../layout/layoutable.mdx#uid-491c41475f) | 获取或设置元素的宽度。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
@@ -308,7 +308,7 @@ public Avalonia.Media.IBrush NeedleBrush { get; set; }
 
 ### ShowNeedle 属性 {#showneedle-property}
 
-Gets or sets whether to show the needle.
+获取或设置是否显示指针。
 
 ```csharp
 public bool ShowNeedle { get; set; }
@@ -350,7 +350,7 @@ public double StartAngle { get; set; }
 
 ### SweepAngle 属性 {#sweepangle-property}
 
-Gets or sets the sweep angle in degrees.
+获取或设置扫掠角度，以度为单位。
 
 ```csharp
 public double SweepAngle { get; set; }
@@ -364,7 +364,7 @@ public double SweepAngle { get; set; }
 
 ### TrackBrush 属性 {#trackbrush-property}
 
-Gets or sets the track background brush.
+获取或设置轨道的背景画刷。
 
 ```csharp
 public Avalonia.Media.IBrush TrackBrush { get; set; }
@@ -406,7 +406,7 @@ public double Value { get; set; }
 
 ### ValueBrush 属性 {#valuebrush-property}
 
-Gets or sets the gauge value arc brush.
+获取或设置仪表数值弧所用的画刷。
 
 ```csharp
 public Avalonia.Media.IBrush ValueBrush { get; set; }

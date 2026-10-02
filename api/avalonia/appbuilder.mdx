@@ -69,11 +69,11 @@ public class AppBuilder
 | [SetupWithLifetime](#uid-ee63b9b324) | Sets up the platform-specific services for the application and initialized it with a particular lifetime, but does not run it. |
 | [SetupWithoutStarting](#uid-7a43d023ba) | Sets up the platform-specific services for the application, but does not run it. |
 | [Start](#uid-2cf633e0ab) | 暂无摘要。 |
-| [UseRenderingSubsystem](#uid-49ad9d2a31) | Specifies a rendering subsystem to use. |
+| [UseRenderingSubsystem](#uid-49ad9d2a31) | 指定要使用的渲染子系统。 |
 | [UseRuntimePlatformSubsystem](#uid-7a05af4f10) | Specifies a runtime platform subsystem to use. |
 | [UseStandardRuntimePlatformSubsystem](#uid-dbd65a6582) | Specifies a standard runtime platform subsystem to use. |
 | [UseTextShapingSubsystem](#uid-23c741705f) | Specifies a text shaping subsystem to use. |
-| [UseWindowingSubsystem](#uid-4172c3e4f3) | Specifies a windowing subsystem to use. |
+| [UseWindowingSubsystem](#uid-4172c3e4f3) | 指定要使用的窗口子系统。 |
 | [With (2 overloads)](#uid-dabbace251) | 暂无摘要。 |
 | [WithDataAnnotationsValidation](#uid-eadbb2e8ae) | 加上基于 `System.ComponentModel.DataAnnotations` 的校验支持。 |
 
@@ -265,7 +265,7 @@ public void Start(Avalonia.AppBuilder.AppMainDelegate main, string[] args)
 
 ### UseRenderingSubsystem 方法 {#userenderingsubsystem-method}
 
-Specifies a rendering subsystem to use.
+指定要使用的渲染子系统。
 
 ```csharp
 public Avalonia.AppBuilder UseRenderingSubsystem(Action initializer, string name)
@@ -385,7 +385,7 @@ The name of the text shaping subsystem.
 
 ### UseWindowingSubsystem 方法 {#usewindowingsubsystem-method}
 
-Specifies a windowing subsystem to use.
+指定要使用的窗口子系统。
 
 ```csharp
 public Avalonia.AppBuilder UseWindowingSubsystem(Action initializer, string name)

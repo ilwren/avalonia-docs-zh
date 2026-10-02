@@ -256,7 +256,7 @@ public void ReplayAnimation()
 | [Title](chartbase.mdx#uid-139e6bc0b9) | 获取或设置显示在图表上方的标题。继承自 [ChartBase](chartbase.mdx)。 |
 | [ToggleSeriesVisibility](chartbase.mdx#uid-9c88230ede) | 获取或设置点击图例项是否切换数据系列的可见性。该设置仅对图例代表可隐藏数据系列或类别的图表有效；图例为说明性刻度的图表会将此值强制改回 。继承自 [ChartBase](chartbase.mdx)。 |
 | [TrackBrush](#uid-8f9ba06ef2) | Gets or sets the brush for the track/background. |
-| [TrackThickness](#uid-ff86dca7f2) | Gets or sets the thickness of the track. |
+| [TrackThickness](#uid-ff86dca7f2) | 获取或设置轨道的粗细。 |
 | [Transitions](../../animation/animatable.mdx#uid-1b3138f517) | 获取或设置控件的属性过渡动画。继承自 [Animatable](../../animation/animatable.mdx)。 |
 | [UseLayoutRounding](../../layout/layoutable.mdx#uid-5998a3d47c) | 获取或设置一个值，决定布局时是否将该元素对齐到像素边界。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Value](#uid-aeaa2f288a) | 获取或设置当前值。 |
@@ -455,7 +455,7 @@ public Avalonia.Media.IBrush TrackBrush { get; set; }
 
 ### TrackThickness 属性 {#trackthickness-property}
 
-Gets or sets the thickness of the track.
+获取或设置轨道的粗细。
 
 ```csharp
 public double TrackThickness { get; set; }

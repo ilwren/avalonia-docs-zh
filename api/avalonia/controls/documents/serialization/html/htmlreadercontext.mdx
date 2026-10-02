@@ -60,7 +60,7 @@ public class HtmlReaderContext
 | 名称 | 说明 |
 | --- | --- |
 | [AddLineBreak](#uid-fbdb71263c) | 添加一个内联换行。 |
-| [CloseParagraph](#uid-3eb9acfac2) | Closes the current paragraph (if open). |
+| [CloseParagraph](#uid-3eb9acfac2) | 关闭当前段落（若尚未关闭）。 |
 | [EnsureParagraph](#uid-25f2f4c538) | Ensures a paragraph is open, creating one if needed. |
 | [PopInline](#uid-9b1a3d3ca1) | 弹出当前的格式化内联元素。 |
 | [PushInline](#uid-7cd2b5e196) | Pushes a formatting inline onto the stack. |
@@ -86,7 +86,7 @@ public void AddLineBreak()
 
 ### CloseParagraph 方法 {#closeparagraph-method}
 
-Closes the current paragraph (if open).
+关闭当前段落（若尚未关闭）。
 
 ```csharp
 public void CloseParagraph()
