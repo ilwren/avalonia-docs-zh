@@ -228,7 +228,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowMeanLine](#uid-a299c7eccb) | Gets or sets whether to display the mean line. |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
-| [Stroke](#uid-6413e2138b) | Gets or sets the stroke brush for points. |
+| [Stroke](#uid-6413e2138b) | 获取或设置数据点的描边画刷。 |
 | [StrokeThickness](#uid-4a21ddedd5) | Gets or sets the stroke thickness for points. |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [Styles](../../styledelement.mdx#uid-ae663139cc) | 获取该样式化元素的样式集合。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -378,7 +378,7 @@ public bool ShowMeanLine { get; set; }
 
 ### Stroke 属性 {#stroke-property}
 
-Gets or sets the stroke brush for points.
+获取或设置数据点的描边画刷。
 
 ```csharp
 public Avalonia.Media.IBrush Stroke { get; set; }

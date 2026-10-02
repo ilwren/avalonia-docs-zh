@@ -1668,7 +1668,7 @@ public void ZoomOut()
 | [Foreground](primitives/templatedcontrol.mdx#uid-dff6480679) | 获取或设置绘制控件文本及其他前景元素所用的画刷。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [GestureRecognizers](../input/inputelement.mdx#uid-ddee464eee) | 继承自 [InputElement](../input/inputelement.mdx)。 |
 | [GoToPageCommand](#uid-bbf0a55373) | Gets a command that navigates to the page number supplied as the command parameter (an [int](xref:System.Int32) or a string parseable as one). |
-| [HasBookmarks](#uid-652eef0198) | Gets whether the document has bookmarks. |
+| [HasBookmarks](#uid-652eef0198) | 获取该文档是否带有书签。 |
 | [HasDocument](#uid-c3ec36835a) | Gets whether a document is currently open. The template uses it to show errors as a dismissible banner over an open document instead of the full-canvas error state. |
 | [HasMirrorTransform](../visual.mdx#uid-70dc13a730) | 获取或设置一个值，指示是否对该控件应用镜像变换。继承自 [Visual](../visual.mdx)。 |
 | [HasOutline](#uid-ca4d08311f) | Gets whether the document has an outline (table of contents). |
@@ -1763,7 +1763,7 @@ public void ZoomOut()
 | [SearchResultCount](#uid-51d4a9fa8a) | Gets the number of matches for the current search. |
 | [SearchResults](#uid-0e883b2a7c) | 获取当前的搜索结果。 |
 | [SelectAllCommand](#uid-7d8e6d76df) | Gets a command that selects all text on the current page. |
-| [SelectedShapeType](#uid-3e6d2d9fe9) | Gets or sets the active shape tool type. |
+| [SelectedShapeType](#uid-3e6d2d9fe9) | 获取或设置当前启用的形状工具类型。 |
 | [SelectedText](#uid-15ca7a64a2) | 获取当前选中的文本。 |
 | [SetToolCommand](#uid-dee887ea7f) | Gets a command that activates a tool: the parameter is a [Avalonia.Controls.PdfViewerTool](xref:Avalonia.Controls.PdfViewerTool) (or its name). Lets a host with its own toolbar drive the same tools as the built-in one. |
 | [ShapeFillColor](#uid-7cfbc26f3f) | Gets or sets the default shape fill color. Null means no fill. |
@@ -2210,7 +2210,7 @@ public System.Windows.Input.ICommand GoToPageCommand { get; set; }
 
 ### HasBookmarks 属性 {#hasbookmarks-property}
 
-Gets whether the document has bookmarks.
+获取该文档是否带有书签。
 
 ```csharp
 public bool HasBookmarks { get; set; }
@@ -3151,7 +3151,7 @@ public System.Windows.Input.ICommand SelectAllCommand { get; set; }
 
 ### SelectedShapeType 属性 {#selectedshapetype-property}
 
-Gets or sets the active shape tool type.
+获取或设置当前启用的形状工具类型。
 
 ```csharp
 public Avalonia.Controls.ShapeType SelectedShapeType { get; set; }
@@ -3806,7 +3806,7 @@ public double ZoomStep { get; set; }
 | [FontStyleProperty](primitives/templatedcontrol.mdx#uid-14162a470d) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.FontStyle](xref:Avalonia.Controls.Primitives.TemplatedControl.FontStyle) 属性。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [FontWeightProperty](primitives/templatedcontrol.mdx#uid-b911f20b9f) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.FontWeight](xref:Avalonia.Controls.Primitives.TemplatedControl.FontWeight) 属性。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
 | [ForegroundProperty](primitives/templatedcontrol.mdx#uid-65cd93050b) | 定义 [Avalonia.Controls.Primitives.TemplatedControl.Foreground](xref:Avalonia.Controls.Primitives.TemplatedControl.Foreground) 属性。继承自 [TemplatedControl](primitives/templatedcontrol.mdx)。 |
-| [FormFieldFocusedClass](#uid-bc36bf236e) | Keyboard input is going to a form field. |
+| [FormFieldFocusedClass](#uid-bc36bf236e) | 键盘输入正送往某个表单字段。 |
 | [GettingFocusEvent](../input/inputelement.mdx#uid-23a6940484) | 定义 [Avalonia.Input.InputElement.GettingFocus](xref:Avalonia.Input.InputElement.GettingFocus) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [GotFocusEvent](../input/inputelement.mdx#uid-750ce32b53) | 定义 [Avalonia.Input.InputElement.GotFocus](xref:Avalonia.Input.InputElement.GotFocus) 事件。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [HasBookmarksProperty](#uid-8da2ba29ff) | 定义 [Avalonia.Controls.PdfViewer.HasBookmarks](xref:Avalonia.Controls.PdfViewer.HasBookmarks) 属性。 |
@@ -4296,7 +4296,7 @@ public Avalonia.DirectProperty<Avalonia.Controls.PdfViewer, string> ErrorMessage
 
 ### FormFieldFocusedClass 字段 {#formfieldfocusedclass-field}
 
-Keyboard input is going to a form field.
+键盘输入正送往某个表单字段。
 
 ```csharp
 public string FormFieldFocusedClass

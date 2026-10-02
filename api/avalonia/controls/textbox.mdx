@@ -98,7 +98,7 @@ public TextBox()
 | [ClearValue（4 个重载）](../avaloniaobject.mdx#uid-41de208fbe) | 清除 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 上的本地值。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [CoerceValue](../avaloniaobject.mdx#uid-3bec32f39e) | 对指定的 [Avalonia.AvaloniaProperty](xref:Avalonia.AvaloniaProperty) 执行强制值回调。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Copy](#uid-f24fd0e9d0) | Copies the current text onto the clipboard |
-| [Cut](#uid-e70a0c093f) | Cuts the current text onto the clipboard |
+| [Cut](#uid-e70a0c093f) | 把当前文本剪切到剪贴板 |
 | [EndInit](../styledelement.mdx#uid-17b450469d) | 继承自 [StyledElement](../styledelement.mdx)。 |
 | [Equals](../avaloniaobject.mdx#uid-a8a8e94305) | 按引用相等的方式比较两个对象。继承自 [AvaloniaObject](../avaloniaobject.mdx)。 |
 | [Focus](../input/inputelement.mdx#uid-6b657af583) | 让控件获得焦点。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -182,7 +182,7 @@ public void Copy()
 
 ### Cut 方法 {#cut-method}
 
-Cuts the current text onto the clipboard
+把当前文本剪切到剪贴板
 
 ```csharp
 public void Cut()
@@ -321,7 +321,7 @@ public void Undo()
 | [CanUndo](#uid-17dd5fba71) | Gets a value that indicates whether the undo stack has an action that can be undone |
 | [CaretBlinkInterval](#uid-34b0d666cf) | 获取或设置插入符的闪烁频率 |
 | [CaretBrush](#uid-86d52c1f69) | Gets or sets a brush that is used for the text caret |
-| [CaretIndex](#uid-14d749d5ea) | Gets or sets the index of the text caret |
+| [CaretIndex](#uid-14d749d5ea) | 获取或设置文本插入符的索引 |
 | [Classes](../styledelement.mdx#uid-b7b7edea05) | 获取或设置该样式化元素的样式类。继承自 [StyledElement](../styledelement.mdx)。 |
 | [ClearSelectionOnLostFocus](#uid-796bf39f23) | Gets or sets a value that determines whether the [TextBox](xref:Avalonia.Controls.TextBox) clears its selection after it loses focus. |
 | [Clip](../visual.mdx#uid-7623faaeaf) | 获取或设置该视觉元素的几何裁剪区域。继承自 [Visual](../visual.mdx)。 |
@@ -555,7 +555,7 @@ public Avalonia.Media.IBrush CaretBrush { get; set; }
 
 ### CaretIndex 属性 {#caretindex-property}
 
-Gets or sets the index of the text caret
+获取或设置文本插入符的索引
 
 ```csharp
 public int CaretIndex { get; set; }

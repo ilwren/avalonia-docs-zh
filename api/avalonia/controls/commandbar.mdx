@@ -798,7 +798,7 @@ public Avalonia.StyledProperty<System.Collections.Generic.IList<Avalonia.Control
 | [ActualThemeVariantChanged](../styledelement.mdx#uid-e69ef27e71) | 当该元素或其祖先元素上的主题变体发生改变时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToLogicalTree](../styledelement.mdx#uid-717aa68e85) | 当该样式化元素被挂接到带根的逻辑树时引发。继承自 [StyledElement](../styledelement.mdx)。 |
 | [AttachedToVisualTree](../visual.mdx#uid-df40bddf6b) | 当控件被挂接到带根的视觉树时引发。继承自 [Visual](../visual.mdx)。 |
-| [Closed](#uid-2f5f7183b2) | Occurs when the overflow menu has closed. |
+| [Closed](#uid-2f5f7183b2) | 溢出菜单关闭后发生。 |
 | [Closing](#uid-bbffb594eb) | Occurs when the overflow menu is about to close. |
 | [ContextCanceled](../input/inputelement.mdx#uid-0132e74ca9) | 当上下文输入手势延续为另一种手势，需要通知元素不要打开上下文浮出控件时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [ContextRequested](../input/inputelement.mdx#uid-9067484d6e) | 当用户完成一次上下文输入手势（例如右键单击）时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -817,7 +817,7 @@ public Avalonia.StyledProperty<System.Collections.Generic.IList<Avalonia.Control
 | [Loaded](control.mdx#uid-c0a1ac2bc3) | 当控件在视觉树中完全构建完毕、且布局与渲染均已完成时发生。继承自 [Control](control.mdx)。 |
 | [LosingFocus](../input/inputelement.mdx#uid-425fe24716) | 在控件即将失去焦点前发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [LostFocus](../input/inputelement.mdx#uid-2061fc85a1) | 当控件失去焦点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
-| [Opened](#uid-f11c9d6e38) | Occurs when the overflow menu has opened. |
+| [Opened](#uid-f11c9d6e38) | 溢出菜单打开后发生。 |
 | [Opening](#uid-712f911f76) | Occurs when the overflow menu is about to open. |
 | [Pinch](../input/inputelement.mdx#uid-96b68421dc) | 当用户将两个接触点相向靠拢时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
 | [PinchEnded](../input/inputelement.mdx#uid-50614bd917) | 当用户松开捏合手势所用的两个接触点时发生。继承自 [InputElement](../input/inputelement.mdx)。 |
@@ -854,7 +854,7 @@ public Avalonia.StyledProperty<System.Collections.Generic.IList<Avalonia.Control
 
 ### Closed 事件 {#closed-event}
 
-Occurs when the overflow menu has closed.
+溢出菜单关闭后发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Closed
@@ -882,7 +882,7 @@ public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Closing
 
 ### Opened 事件 {#opened-event}
 
-Occurs when the overflow menu has opened.
+溢出菜单打开后发生。
 
 ```csharp
 public event EventHandler<Avalonia.Interactivity.RoutedEventArgs> Opened

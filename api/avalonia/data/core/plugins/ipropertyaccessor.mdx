@@ -64,7 +64,7 @@ public interface IPropertyAccessor
 | --- | --- |
 | [SetValue](#uid-920c069334) | 设置该属性的值。 |
 | [Subscribe](#uid-c921d7ba8d) | 暂无摘要。 |
-| [Unsubscribe](#uid-b3e34178af) | Unsubscribes to the value of the member. |
+| [Unsubscribe](#uid-b3e34178af) | 取消订阅该成员的值。 |
 
 <section className="apiref-page__member-entry">
 
@@ -122,7 +122,7 @@ public void Subscribe(Action<object> listener)
 
 ### Unsubscribe 方法 {#unsubscribe-method}
 
-Unsubscribes to the value of the member.
+取消订阅该成员的值。
 
 ```csharp
 public void Unsubscribe()

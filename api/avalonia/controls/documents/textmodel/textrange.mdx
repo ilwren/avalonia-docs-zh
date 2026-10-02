@@ -1007,7 +1007,7 @@ bool
 | [IsEmpty](#uid-313c05b9fc) | Gets a value indicating whether the range is empty. A range is empty only when [Avalonia.Controls.Documents.TextModel.TextRange.Start](xref:Avalonia.Controls.Documents.TextModel.TextRange.Start) and [Avalonia.Controls.Documents.TextModel.TextRange.End](xref:Avalonia.Controls.Documents.TextModel.TextRange.End) refer to the exact same document position (node-aware). Two distinct positions that happen to share the same integer offset — for example pointers into consecutive empty paragraphs — are not considered empty. |
 | [Length](#uid-27d48f7738) | Gets the length of the range in characters. |
 | [Start](#uid-fe0f8d7b6a) | 获取该范围的起始位置。 |
-| [TextDocument](#uid-fce62d199c) | Gets the document containing this range. |
+| [TextDocument](#uid-fce62d199c) | 获取包含该范围的那篇文档。 |
 
 <section className="apiref-page__member-entry">
 
@@ -1075,7 +1075,7 @@ public Avalonia.Controls.Documents.TextModel.TextPointer Start { get; set; }
 
 ### TextDocument 属性 {#textdocument-property}
 
-Gets the document containing this range.
+获取包含该范围的那篇文档。
 
 ```csharp
 public Avalonia.Controls.Documents.TextModel.TextDocument TextDocument { get; set; }

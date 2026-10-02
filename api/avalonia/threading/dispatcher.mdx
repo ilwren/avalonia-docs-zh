@@ -1235,7 +1235,7 @@ Control and libraries author are encouraged to use [Avalonia.Threading.Dispatche
 
 | 名称 | 说明 |
 | --- | --- |
-| [ShutdownFinished](#uid-4b5c93e398) | Raised when the dispatcher is shut down. |
+| [ShutdownFinished](#uid-4b5c93e398) | dispatcher 关停时抛出。 |
 | [ShutdownStarted](#uid-8100dd9a72) | Raised when the dispatcher is shutting down. |
 | [UnhandledException](#uid-d01305e223) | Occurs when a thread exception is thrown and uncaught during execution of a delegate by way of [Avalonia.Threading.Dispatcher.Invoke(Action)](xref:Avalonia.Threading.Dispatcher.Invoke%28System.Action%29) or [Avalonia.Threading.Dispatcher.InvokeAsync(Action)](xref:Avalonia.Threading.Dispatcher.InvokeAsync%28System.Action%29). |
 | [UnhandledExceptionFilter](#uid-8559ef4cc2) | Occurs when a thread exception is thrown and uncaught during execution of a delegate by way of [Avalonia.Threading.Dispatcher.Invoke(Action)](xref:Avalonia.Threading.Dispatcher.Invoke%28System.Action%29) or [Avalonia.Threading.Dispatcher.InvokeAsync(Action)](xref:Avalonia.Threading.Dispatcher.InvokeAsync%28System.Action%29) when in the filter stage. |
@@ -1246,7 +1246,7 @@ Control and libraries author are encouraged to use [Avalonia.Threading.Dispatche
 
 ### ShutdownFinished 事件 {#shutdownfinished-event}
 
-Raised when the dispatcher is shut down.
+dispatcher 关停时抛出。
 
 ```csharp
 public event EventHandler ShutdownFinished

@@ -245,7 +245,7 @@ string
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [ShowAxisLine](#uid-3a35faf6c4) | Gets or sets whether to show the axis line. |
 | [ShowGridLines](#uid-88202321db) | Gets or sets whether grid lines are shown. |
-| [ShowLabels](#uid-cd362d7df9) | Gets or sets whether to show axis labels. |
+| [ShowLabels](#uid-cd362d7df9) | 获取或设置是否显示坐标轴标签。 |
 | [ShowMinorGridLines](#uid-6cd40c5be2) | Gets or sets whether minor grid lines are shown. |
 | [ShowTickLines](#uid-e9c3f4b4a9) | Gets or sets whether to show tick marks at each label position. |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -257,7 +257,7 @@ string
 | [Theme](../../styledelement.mdx#uid-1aebed283d) | 获取或设置要应用到该元素的主题。继承自 [StyledElement](../../styledelement.mdx)。 |
 | [TickLineLength](#uid-0942ca320b) | Gets or sets the length of tick marks in pixels. |
 | [TickLineStroke](#uid-7d1f64e961) | 获取或设置刻度线所用的画刷。 |
-| [TickLineStrokeThickness](#uid-5910382824) | Gets or sets the thickness of tick marks. |
+| [TickLineStrokeThickness](#uid-5910382824) | 获取或设置刻度线的粗细。 |
 | [Title](#uid-d8537effdb) | 获取或设置坐标轴标题。 |
 | [TitleFontSize](#uid-c10ed6c943) | Gets or sets the font size for the axis title. |
 | [TitleForeground](#uid-68b44c88fd) | Gets or sets the foreground brush for the axis title. |
@@ -583,7 +583,7 @@ public bool ShowGridLines { get; set; }
 
 ### ShowLabels 属性 {#showlabels-property}
 
-Gets or sets whether to show axis labels.
+获取或设置是否显示坐标轴标签。
 
 ```csharp
 public bool ShowLabels { get; set; }
@@ -653,7 +653,7 @@ public Avalonia.Media.IBrush TickLineStroke { get; set; }
 
 ### TickLineStrokeThickness 属性 {#ticklinestrokethickness-property}
 
-Gets or sets the thickness of tick marks.
+获取或设置刻度线的粗细。
 
 ```csharp
 public double TickLineStrokeThickness { get; set; }

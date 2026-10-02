@@ -130,7 +130,7 @@ public CartesianChart()
 | [ValueToNormalizedPosition](#uid-29f1e10856) | Converts a data value to a normalized position (0 to 1) based on the axis type. |
 | [VerifyAccess](../../avaloniaobject.mdx#uid-3b9d3c9793) | 检查当前线程是否为 UI 线程，若不是则抛出异常。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
 | [ZoomAt](#uid-6fbf754d2c) | Zooms the chart centered at the specified pivot point. |
-| [ZoomTo（2 个重载）](#uid-9e49e45ec3) | Sets the visible range for a single axis. |
+| [ZoomTo（2 个重载）](#uid-9e49e45ec3) | 为单个坐标轴设定可见范围。 |
 
 <section className="apiref-page__member-entry">
 
@@ -325,7 +325,7 @@ The Y coordinate of the pivot point (relative to the chart control).
 
 #### ZoomTo 方法 {#zoomto-method}
 
-Sets the visible range for a single axis.
+为单个坐标轴设定可见范围。
 
 ```csharp
 public void ZoomTo(double newMin, double newMax, Avalonia.Controls.Charts.ChartAxis axis)
@@ -515,7 +515,7 @@ True to add the previous viewport to zoom history before applying the new range.
 | [ZoomFactorX](#uid-628ec3bc1c) | Gets the current horizontal zoom factor (1.0 = 100% = no zoom). |
 | [ZoomFactorY](#uid-0969e0bb00) | Gets the current vertical zoom factor (1.0 = 100% = no zoom). |
 | [ZoomHistoryLimit](#uid-7b08889202) | Gets or sets the maximum number of zoom states kept in history. |
-| [ZoomMode](#uid-5b7e8d52e4) | Gets or sets the zoom mode (X, Y, or XY). |
+| [ZoomMode](#uid-5b7e8d52e4) | 获取或设置缩放模式（X、Y 或 XY）。 |
 | [ZoomSensitivity](#uid-b473d693a9) | Gets or sets the per-wheel-delta zoom sensitivity. Values must be finite and non-negative; invalid values are coerced to 0. A value of 0 disables mouse-wheel zoom. A value of 0.1 means each positive wheel delta reduces the visible range by a factor of 1 / 1.1, and each negative wheel delta expands it by 1.1. |
 
 <section className="apiref-page__member-entry">
@@ -904,7 +904,7 @@ public int ZoomHistoryLimit { get; set; }
 
 ### ZoomMode 属性 {#zoommode-property}
 
-Gets or sets the zoom mode (X, Y, or XY).
+获取或设置缩放模式（X、Y 或 XY）。
 
 ```csharp
 public Avalonia.Controls.Charts.ZoomMode ZoomMode { get; set; }

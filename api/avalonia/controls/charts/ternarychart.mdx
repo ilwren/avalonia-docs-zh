@@ -169,7 +169,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [DataTemplates](../control.mdx#uid-78ff251b26) | 获取或设置控件使用的数据模板。继承自 [Control](../control.mdx)。 |
 | [DesiredSize](../../layout/layoutable.mdx#uid-5eb61af32f) | 获取该元素在布局测量阶段计算得到的尺寸。继承自 [Layoutable](../../layout/layoutable.mdx)。 |
 | [Dispatcher](../../avaloniaobject.mdx#uid-b25fa51632) | 返回与此 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 关联的 [Avalonia.AvaloniaObject.Dispatcher](xref:Avalonia.AvaloniaObject.Dispatcher)。继承自 [AvaloniaObject](../../avaloniaobject.mdx)。 |
-| [DotSize](#uid-062e8b4ffd) | Gets or sets the size of the data points. |
+| [DotSize](#uid-062e8b4ffd) | 获取或设置数据点的大小。 |
 | [Easing](chartbase.mdx#uid-adaaf54336) | 获取或设置图表动画的缓动函数。它通过各类动画图表与数据系列渲染器共用的图表动画进度管线生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [Effect](../../visual.mdx#uid-65e2be6b7c) | 获取或设置应用在控件上的特效。继承自 [Visual](../../visual.mdx)。 |
 | [FlowDirection](../../visual.mdx#uid-c7929bde53) | 获取或设置文本的排版方向。继承自 [Visual](../../visual.mdx)。 |
@@ -225,7 +225,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [ShowGridLines](#uid-7bc2682f62) | Gets or sets whether to display the grid. |
+| [ShowGridLines](#uid-7bc2682f62) | 获取或设置是否显示网格。 |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
 | [StyleKey](../../styledelement.mdx#uid-081584075e) | 获取用于匹配该元素样式的类型。继承自 [StyledElement](../../styledelement.mdx)。 |
@@ -333,7 +333,7 @@ public string CPath { get; set; }
 
 ### DotSize 属性 {#dotsize-property}
 
-Gets or sets the size of the data points.
+获取或设置数据点的大小。
 
 ```csharp
 public double DotSize { get; set; }
@@ -361,7 +361,7 @@ public System.Collections.IEnumerable ItemsSource { get; set; }
 
 ### ShowGridLines 属性 {#showgridlines-property}
 
-Gets or sets whether to display the grid.
+获取或设置是否显示网格。
 
 ```csharp
 public bool ShowGridLines { get; set; }

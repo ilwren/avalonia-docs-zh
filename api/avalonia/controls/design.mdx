@@ -63,15 +63,15 @@ public class Design
 | 名称 | 说明 |
 | --- | --- |
 | [GetDataContext (2 overloads)](#uid-730975f9b1) | 获取某个控件的设计时数据上下文。 |
-| [GetDesignStyle](#uid-aa9086667b) | Gets the design-time style for a control. |
+| [GetDesignStyle](#uid-aa9086667b) | 获取某个控件的设计时样式。 |
 | [GetHeight](#uid-d7570e141d) | Gets the design-time height for a control. |
 | [GetPreviewWith (4 overloads)](#uid-3f2107265d) | 在设计时取得指定 [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) 的预览控件。 |
-| [GetWidth](#uid-93a3ad0a96) | Gets the design-time width for a control. |
+| [GetWidth](#uid-93a3ad0a96) | 获取某个控件的设计时宽度。 |
 | [SetDataContext (2 overloads)](#uid-e52d4759ea) | 设置某个控件的设计时数据上下文。 |
-| [SetDesignStyle](#uid-ac3a719e27) | Sets the design-time style for a control. |
+| [SetDesignStyle](#uid-ac3a719e27) | 设置某个控件的设计时样式。 |
 | [SetHeight](#uid-44fd86c56e) | Sets the design-time height for a control. |
 | [SetPreviewWith (8 overloads)](#uid-d8dac897b3) | Sets a preview control for the specified [Avalonia.AvaloniaObject](xref:Avalonia.AvaloniaObject) at design-time. |
-| [SetWidth](#uid-90374ec669) | Sets the design-time width for a control. |
+| [SetWidth](#uid-90374ec669) | 设置某个控件的设计时宽度。 |
 
 <span id="uid-730975f9b1"></span>
 
@@ -93,7 +93,7 @@ public object GetDataContext(Avalonia.Controls.Control control)
 
 `control` [Avalonia.Controls.Control](xref:Avalonia.Controls.Control)
 
-The control to get the data context from.
+要从中读取数据上下文的那个控件。
 
 
 ##### 返回值 {#returns}
@@ -121,7 +121,7 @@ public object GetDataContext(Avalonia.Controls.Templates.IDataTemplate control)
 
 `control` [Avalonia.Controls.Templates.IDataTemplate](xref:Avalonia.Controls.Templates.IDataTemplate)
 
-The control to get the data context from.
+要从中读取数据上下文的那个控件。
 
 
 ##### 返回值 {#returns-1}
@@ -139,7 +139,7 @@ object
 
 ### GetDesignStyle 方法 {#getdesignstyle-method}
 
-Gets the design-time style for a control.
+获取某个控件的设计时样式。
 
 ```csharp
 public Avalonia.Styling.IStyle GetDesignStyle(Avalonia.Controls.Control control)
@@ -311,7 +311,7 @@ The style.
 
 ### GetWidth 方法 {#getwidth-method}
 
-Gets the design-time width for a control.
+获取某个控件的设计时宽度。
 
 ```csharp
 public double GetWidth(Avalonia.Controls.Control control)
@@ -395,7 +395,7 @@ public void SetDataContext(Avalonia.Controls.Templates.IDataTemplate control, ob
 
 ### SetDesignStyle 方法 {#setdesignstyle-method}
 
-Sets the design-time style for a control.
+设置某个控件的设计时样式。
 
 ```csharp
 public void SetDesignStyle(Avalonia.Controls.Control control, Avalonia.Styling.IStyle value)
@@ -650,7 +650,7 @@ public void SetPreviewWith(Avalonia.Styling.IStyle target, Avalonia.Controls.ITe
 
 ### SetWidth 方法 {#setwidth-method}
 
-Sets the design-time width for a control.
+设置某个控件的设计时宽度。
 
 ```csharp
 public void SetWidth(Avalonia.Controls.Control control, double value)

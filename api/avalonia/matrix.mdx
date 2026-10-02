@@ -204,7 +204,7 @@ The third element of the third row.
 | [Invert](#uid-4b9509b7bc) | 对该矩阵求逆。 |
 | [Parse](#uid-ea5c6d595d) | 解析 [Avalonia.Matrix](xref:Avalonia.Matrix) 字符串。 |
 | [Prepend](#uid-c73d3285dd) | Prepends another matrix as pre-multiplication operation. Equivalent to value * this; |
-| [ToRadians](#uid-a7bc401e4e) | Converts an angle in degrees to radians. |
+| [ToRadians](#uid-a7bc401e4e) | 把以度为单位的角度换算成弧度。 |
 | [ToString](#uid-ea457313be) | Returns a String representing this matrix instance. |
 | [Transform](#uid-f230dedf09) | 用该矩阵变换这个点 |
 | [TryDecomposeTransform](#uid-14ea9cf6a3) | 暂无摘要。 |
@@ -679,7 +679,7 @@ Pre-multiplied matrix.
 
 ### ToRadians 方法 {#toradians-method}
 
-Converts an angle in degrees to radians.
+把以度为单位的角度换算成弧度。
 
 ```csharp
 public double ToRadians(double angle)

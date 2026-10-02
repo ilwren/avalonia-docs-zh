@@ -221,7 +221,7 @@ public void Render(Avalonia.Media.DrawingContext context)
 | [RenderTransform](../../visual.mdx#uid-7ee76ff32a) | 获取或设置控件的渲染变换。继承自 [Visual](../../visual.mdx)。 |
 | [RenderTransformOrigin](../../visual.mdx#uid-3501120c25) | 获取或设置控件变换的原点。继承自 [Visual](../../visual.mdx)。 |
 | [Resources](../../styledelement.mdx#uid-f6488ca4b7) | 获取或设置该样式化元素的资源字典。继承自 [StyledElement](../../styledelement.mdx)。 |
-| [Series](#uid-e35df72fcc) | Gets the collection of series to display. |
+| [Series](#uid-e35df72fcc) | 获取要显示的系列集合。 |
 | [SeriesHeight](#uid-b220a626e7) | Gets or sets the target height for each series. |
 | [ShowLegend](chartbase.mdx#uid-7af7d16f16) | 获取或设置是否显示图例。各图例项的含义取决于图表类型：有些图例代表可隐藏的数据系列，有些则是说明性的刻度标注。继承自 [ChartBase](chartbase.mdx)。 |
 | [ShowRenderDiagnosticsOverlay](chartbase.mdx#uid-b10b5000c1) | 获取或设置是否为该图表显示渲染诊断浮层。除非 [Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled](xref:Avalonia.Controls.Charts.ChartBase.IsRenderDiagnosticsEnabled) 同时为 true，否则此设置不生效。继承自 [ChartBase](chartbase.mdx)。 |
@@ -273,7 +273,7 @@ public double Overlap { get; set; }
 
 ### Series 属性 {#series-property}
 
-Gets the collection of series to display.
+获取要显示的系列集合。
 
 ```csharp
 public Avalonia.Collections.AvaloniaList<Avalonia.Controls.Charts.AreaSeries> Series { get; set; }
